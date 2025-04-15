@@ -30,19 +30,9 @@ sphinx:                                              # Options passed on to the 
         thebe: true                                  # Required for live code: https://teachbooks.io/manual/features/live_code.html
     html_show_copyright: false                       # As the copyright is included in the author field
     html_last_updated_fmt: '%B %-d, %Y'              # Adds the date of the last update to the footer
-    mathjax3_config:
-      chtml: {
-        mtextInheritFont: true                       # To typeset text within math prettier
-      }
-    named_colors_custom_colors: {'attributiongrey':[150,150,150]} # Custom colour for the attribution admonitions
   extra_extensions:                                  # Gives you a starter package of extensions to use in your book
     - jupyterbook_patches                            # Patches by TeachBooks https://github.com/TeachBooks/JupyterBook-Patches
     - download_link_replacer                         # Allows you to replace and add downloadable files to a page header https://teachbooks.io/manual/external/Download-Link-Replacer/README.html
     - sphinx_image_inverter                          # Inverts images for dark mode https://teachbooks.io/manual/external/Sphinx-Image-Inverter/README.html
-    - sphinx_iframes                                 # Eases the embedding of iframes https://teachbooks.io/manual/external/sphinx-iframes/README.html
-    - sphinx_exercise                                # Allows you to add exercise boxes to your book https://ebp-sphinx-exercise.readthedocs.io/en/latest/
     - teachbooks_sphinx_tippy                        # Enables hoover over tips https://teachbooks.io/manual/external/teachbooks-sphinx-tippy/README.html
-    - sphinx_named_colors                            # Allows you to use custom colors in your book https://teachbooks.io/manual/external/Sphinx-Named-Colors/README.html
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
-bibtex_bibfiles: 
-  - references.bib                                   # Required for references
