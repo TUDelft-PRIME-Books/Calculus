@@ -1,5 +1,5 @@
-title: TU Delft OIT GitHub Template                  # Replace this with your own book title
-author: Author from Delft University of Technology, built with <a href="https://teachbooks.io">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
+title: Calculus                  # Replace this with your own book title
+author: Authors from Delft University of Technology, built with <a href="https://teachbooks.io">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
                                                      # Replace Author with your own name in the line above
 execute:
   execute_notebooks: "off"                           # Replace this if you want don't have notebooks with output and you want to add notebook output during build
@@ -8,7 +8,7 @@ only_build_toc_files: true                           # Replace this with false i
 
 
 html:
-  baseurl :  "https://oit.tudelft.nl>/<repo>"        # Replace this with your own URL
+  baseurl :  "https://tudelft-prime-books.github.io/Calculus/"        # Replace this with your own URL
 
 sphinx:                                              # Options passed on to the underlying sphinx-parser
   config:
@@ -19,10 +19,10 @@ sphinx:                                              # Options passed on to the 
       exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb"] # Exclude files which should not be accessible for live code: https://teachbooks.io/manual/features/live_code.html
     html_theme_options:
       logo:
-        text: TU Delft GitHub OIT Template           # Replace this with your own book title
-      repository_url: "https://github.com/TUDelft-books/repo" # Add your own repo URL here
+        text: Calculus           # Replace this with your own book title
+      repository_url: "https://github.com/TUDelft-PRIME-Books/Calculus" # Add your own repo URL here
       path_to_docs: "book"                           # Required for edit_page_button, should be book if you're using TeachBooks package (https://github.com/TeachBooks/TeachBooks) or the TeachBooks deploy book workflow (https://teachbooks.io/manual/external/deploy-book-workflow/README.html)
-      repository_branch: "main"                      # Replace when you change the name of your published branch (required for edit_page_button)
+      repository_branch: "published"                      # Replace when you change the name of your published branch (required for edit_page_button)
       use_edit_page_button: true                     # Replace with false if you don't want the edit page button (i.e. if you don't user to propose changes themselves or have a private repo)
       use_repository_button: true                    # Replace with false if you don't want the repository button (i.e. if you have a private repo)
       use_issues_button : true                       # Replace with false if you don't want the issues button (i.e. if you don't want to use GitHub issues or have a private repo)
