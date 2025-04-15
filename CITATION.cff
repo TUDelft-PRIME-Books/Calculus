@@ -1,0 +1,52 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+message: "If you use this open interactive book, please cite it using these metadata including the TeachBooks reference."
+title: 'Open interactive textbook Template' # replace with your own book title when you use this template
+authors: #replace with your own name(s) if you use this template
+- given-names: Tom
+  name-particle: van
+  family-names: Woudenberg
+  email: t.r.van.woudenberg@tudelft.nl
+  affiliation: 'Delft University of Technology'
+  orcid: 'https://orcid.org/0000-0002-9536-061X'
+preferred-citation:
+  type: book
+  authors: # replace with your own name when you use this template
+  - given-names: Tom
+    name-particle: van
+    family-names: Woudenberg
+    email: t.r.van.woudenberg@tudelft.nl
+    affiliation: 'Delft University of Technology'
+    orcid: 'https://orcid.org/0000-0002-9536-061X'
+  url: 'https://github.com/TUDelft-books/TUDelft-template' # replace with your own URL (book website / publisher link) when you use this template
+  identifiers:
+    - type: url
+      value: 'http://oit.tudelft.nl/TUDelft-template/' # replace with your own URL when you use this template
+      description: 'Published book on GitHub Pages'
+    - type: url
+      value: 'https://github.com/TUDelft-books/TUDelft-template' # replace with your own URL when you use this template
+      description: 'GitHub repository'
+  abstract: >- # replace with your own abstract when you use this template
+    The template allows you to start your own open interactive textbook
+    and hosting that textbook online without knowledge on Git, the
+    Jupyter book package, python or anaconda. It doesn't elaborate on
+    the collaborative functionalities of Git or how to edit the book.
+  keywords: # replace with your own keywords when you use this template
+    - 'Open interactive textbook'
+    - Template
+    - 'Jupyter Book'
+  title: 'Open interactive textbook Template' # replace with your own book title when you use this template
+  institution:
+    name: 'Delft University of Technology' # replace with your own institution when you use this template
+  license: CC-BY-4.0
+  license-url: 'https://creativecommons.org/licenses/by/4.0/'
+  copyright: '© 2025 Delft University of Technology'
+  languages:
+    - en # replace with your book language when you use this template
+  contact: # replace with your own contact information when you use this template
+  - email: t.r.van.woudenberg@tudelft.nl
+    given-names: Tom
+    name-particle: van
+    family-names: Woudenberg
