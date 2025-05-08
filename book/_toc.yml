@@ -2,6 +2,22 @@ format: jb-book
 root: index.md
 
 parts:
+  # - caption: Front matter
+  #   numbered: False
+  - caption: Algebra
+    numbered: True
+    chapters: 
+    - file: "Algebra/Numbers/introduction_numbers.md"
+      sections:
+      - file: "Algebra/Numbers/real_numbers.md"
+      - file: "Algebra/Numbers/complex_numbers.md"
+      - file: "Algebra/Numbers/linear_systems.md"
+  # - caption: Single-variable functions
+  # - caption: Sequences and series
+  # - caption: Multivariable functions
+  # - caption: Differential equations
+  # - caption: Appendices
   - caption: Back matter
+    numbered: False
     chapters:
     - file: credits.md
