@@ -30,4 +30,4 @@ This book is [CC BY 4.0 licensed](https://creativecommons.org/licenses/by/4.0/) 
 
 ### Support and others
 
-[Y. (Yoni) Geubbels](https://www.linkedin.com/in/yoni-geubbels-92b01915a/)
+[Y. (Yoni) Geubbels, B Ed](https://www.linkedin.com/in/yoni-geubbels-92b01915a/)
