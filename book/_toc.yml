@@ -6,17 +6,28 @@ parts:
   #   numbered: False
   - caption: Algebra
     numbered: True
-    chapters: 
+    chapters:
     - file: "Algebra/Numbers/introduction_numbers.md"
       sections:
       - file: "Algebra/Numbers/real_numbers.md"
       - file: "Algebra/Numbers/complex_numbers.md"
-      - file: "Algebra/Numbers/linear_systems.md"
-  # - caption: Single-variable functions
+      - file: "Algebra/Numbers/linear_systems_in_two_variables.md"
+    chapters:
+    - file: "Algebra/Vector algebra/introduction_vector_algebra.md"
+      sections:
+      - file: "Algebra/Vector algebra/vector_arithmetic.md"
+      - file: "Algebra/Vector algebra/dot_product.md"
+      - file: "Algebra/Vector algebra/cross_product.md"
+      - file: "Algebra/Vector algebra/lines_and_planes.md"
+  - caption: Single-variable functions
+    numbered: True
+    chapters:
+    - file: "Single-variable functions/Differentiation/introduction_differentiation.md"
+      sections:
+      - file: "Single-variable functions/Differentiation/approximating_functions.md"
   # - caption: Sequences and series
   # - caption: Multivariable functions
   # - caption: Differential equations
-  # - caption: Appendices
   - caption: Back matter
     numbered: False
     chapters:

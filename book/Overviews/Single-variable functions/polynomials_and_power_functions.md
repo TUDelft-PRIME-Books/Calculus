@@ -1,0 +1,1 @@
+# Polynomials and power functions

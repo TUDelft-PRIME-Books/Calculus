@@ -1,0 +1,1 @@
+# Homogeneous problems with constant coefficients
