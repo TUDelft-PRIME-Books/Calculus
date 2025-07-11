@@ -1,10 +1,16 @@
 # first list the packages you wish to download from PyPI
 teachbooks == 0.2.1 # depends on jupyter-book
 jupyterbook-patches == 1.6.2
-sphinx-image-inverter == 1.1.3
+sphinx-image-inverter == 1.1.9
 download_link_replacer == 1.0.4
 sphinx-tudelft-theme == 1.1.5
 teachbooks-sphinx-tippy == 1.0.11
+teachbooks-sphinx-grasple == 1.1.5
+sphinx-prime-applets == 1.0.5
+sphinx-indexed-definitions == 1.0.4
+sphinx-ref-graph == 1.0.1
+sphinx-dropdown-toggle == 1.2.0
+
 
 # Now list the packages you want to download directly from GitHub
 git+https://github.com/TeachBooks/Sphinx-Thebe
