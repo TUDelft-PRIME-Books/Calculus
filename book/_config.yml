@@ -39,6 +39,6 @@ sphinx:
     - sphinx_exercise                                # Adds exercise environments to your book
     - teachbooks_sphinx_grasple                      # Adds the Grasple exercises to your book 
     - sphinx_prime_applets                           # Adds the Prime applets to your book
-    # - sphinx_indexed_definitions                     # Adds indexed definitions to your book
+    - sphinx_indexed_definitions                     # Adds indexed definitions to your book
     # - sphinx_ref_graph                               # Adds a graph of references to your book
     - sphinx_dropdown_toggle                         # Adds dropdown toggles to your book
