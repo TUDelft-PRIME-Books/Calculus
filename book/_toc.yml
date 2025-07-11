@@ -107,4 +107,5 @@ parts:
   - caption: Back matter
     numbered: False
     chapters:
+    - file: genindex.md
     - file: credits.md
