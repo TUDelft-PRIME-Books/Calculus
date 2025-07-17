@@ -22,7 +22,11 @@ html:
   baseurl :  "https://tudelft-prime-books.github.io/Calculus/"
 
 sphinx:
+  local_extensions:
+    text_replacer: _ext/
   config:
+    text_replacements:
+      '{numref}`Chapter %s <Chapter:Determinants>`': "[Chapter 5 of the book Linear algebra](https://tudelft-prime-books.github.io/Linear-Algebra/Chapter5/intro.html)"
     mathjax3_config:
       tex:
         macros:
