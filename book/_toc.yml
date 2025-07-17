@@ -2,22 +2,26 @@ format: jb-book
 root: index.md
 
 parts:
-  # - caption: Front matter
-  #   numbered: False
+  - caption: Front matter
+    numbered: False
+    chapters:
+    - file: introduction.md
+    - file: graph_of_content.md
   - caption: Algebra
     numbered: True
     chapters:
     - file: "Algebra/Numbers/introduction_numbers.md"
       sections:
       - file: "Algebra/Numbers/real_numbers.md"
-      - file: "Algebra/Numbers/complex_numbers.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersPolar.md"
       - file: "Algebra/Numbers/linear_systems_in_two_variables.md"
     - file: "Algebra/Vector algebra/introduction_vector_algebra.md"
       sections:
-      - file: "Algebra/Vector algebra/vector_arithmetic.md"
-      - file: "Algebra/Vector algebra/dot_product.md"
-      - file: "Algebra/Vector algebra/cross_product.md"
-      - file: "Algebra/Vector algebra/lines_and_planes.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Vectors.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Inner_Product.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Cross_Product.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Lines_and_Planes.md"
   - caption: Single-variable functions
     numbered: True
     chapters: 
@@ -103,7 +107,30 @@ parts:
     - file: "Differential equations/Second-order ordinary differential equations/introduction_second_order_ODE.md"
       sections:
       - file: "Differential equations/Second-order ordinary differential equations/homogeneous_problems_with_constant_coefficients.md"
-      - file: "Differential equations/Second-order ordinary differential equations/inhomogeneous_problems_with_constant_coefficients.md"    
+      - file: "Differential equations/Second-order ordinary differential equations/inhomogeneous_problems_with_constant_coefficients.md"
+  - caption: Appendices
+    numbered: true
+    chapters:
+    - file: "Overviews/Algebra/overviews_from_algebra.md"
+      sections:
+      - file: "Overviews/Algebra/algebraic_identities.md"
+      - file: "Overviews/Algebra/limits.md"
+      - file: "Overviews/Algebra/vector_identities.md"
+    - file: "Overviews/Single-variable functions/overviews_from_single_variable_functions.md"
+      sections:
+      - file: "Overviews/Single-variable functions/polynomials_and_power_functions.md"
+      - file: "Overviews/Single-variable functions/exponential_and_logarithmic_functions.md"
+      - file: "Overviews/Single-variable functions/trigonometric_functions.md"
+      - file: "Overviews/Single-variable functions/other_functions.md"
+    - file: "Overviews/Sequences and series/overviews_from_sequences_and_series.md"
+      sections:
+      - file: "Overviews/Sequences and series/special_sequences.md"
+      - file: "Overviews/Sequences and series/special_series.md"
+    - file: "Overviews/Multivariable functions/overviews_from_multivariable_functions.md"
+      sections:
+      - file: "Overviews/Multivariable functions/common_curves.md"
+      - file: "Overviews/Multivariable functions/common_surfaces.md"
+      - file: "Overviews/Multivariable functions/integral_identities.md"
   - caption: Back matter
     numbered: False
     chapters:

@@ -3,6 +3,19 @@ author: Authors from Delft University of Technology, built with <a href="https:/
 execute:
   execute_notebooks: "off"
 
+parse:
+    myst_enable_extensions:
+      ## don't forget to list any other extensions you want enabled,
+      ## including those that are enabled by default!
+      - colon_fence 
+      - dollarmath
+      - linkify
+      - substitution
+      - tasklist
+      - amsmath
+    myst_dmath_double_inline: true
+    myst_heading_anchors : 5
+
 only_build_toc_files: true
 
 html:
@@ -10,6 +23,19 @@ html:
 
 sphinx:
   config:
+    mathjax3_config:
+      tex:
+        macros:
+          "Re": ["\\operatorname{Re}\\left(#1\\right)",1]
+          "Im": ["\\operatorname{Im}\\left(#1\\right)",1]
+          "vect": ["\\mathbf{#1}",1]
+          "vec": ["\\mathbf{#1}",1]
+          "nicefrac": ["\\frac{#1}{#2}", 2]
+          "R": "\\mathbb{R}"
+          "norm": ["\\left\\Vert #1 \\right\\Vert",1]
+          "ip" : "\\cdot"
+          "cp": ["\\times "]
+    inverter_all: false
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js # Required for live code: https://teachbooks.io/manual/features/live_code.html
     thebe_config:
@@ -31,14 +57,14 @@ sphinx:
   extra_extensions:                                  # Extra extensions to be used in the book
     - jupyterbook_patches                            # Patches by TeachBooks https://github.com/TeachBooks/JupyterBook-Patches
     - download_link_replacer                         # Allows you to replace and add downloadable files to a page header https://teachbooks.io/manual/external/Download-Link-Replacer/README.html
-    - sphinx_image_inverter                          # Inverts images for dark mode https://teachbooks.io/manual/external/Sphinx-Image-Inverter/README.html
     - teachbooks_sphinx_tippy                        # Enables hoover over tips https://teachbooks.io/manual/external/teachbooks-sphinx-tippy/README.html
-    - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
     - sphinx_proof                                   # Adds proof environments to your book
     - sphinx_togglebutton                            # Adds toggle buttons to your book
     - sphinx_exercise                                # Adds exercise environments to your book
     - teachbooks_sphinx_grasple                      # Adds the Grasple exercises to your book 
     - sphinx_prime_applets                           # Adds the Prime applets to your book
     - sphinx_indexed_definitions                     # Adds indexed definitions to your book
-    # - sphinx_ref_graph                               # Adds a graph of references to your book
+    - sphinx_ref_graph                               # Adds a graph of references to your book
     - sphinx_dropdown_toggle                         # Adds dropdown toggles to your book
+    - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
+    - sphinx_image_inverter                          # Inverts images for dark mode https://teachbooks.io/manual/external/Sphinx-Image-Inverter/README.html

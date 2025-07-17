@@ -1,7 +1,7 @@
 (credits)=
 # Credits and License
 
-## Refering to this book
+## Referring to this book
 
 You can refer to this book as:
 
