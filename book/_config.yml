@@ -24,9 +24,12 @@ html:
 sphinx:
   local_extensions:
     text_replacer: _ext/
+    # gated_examples: _ext/
   config:
     text_replacements:
       '{numref}`Chapter %s <Chapter:Determinants>`': "[the chapter on Determinants of the book Linear algebra](https://tudelft-prime-books.github.io/Linear-Algebra/Chapter5/intro.html)"
+      # 'exercise-start': 'prf:example-start'
+      # 'exercise-end': 'prf:example-end'
     mathjax3_config:
       tex:
         macros:
