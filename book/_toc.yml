@@ -2,15 +2,15 @@ format: jb-book
 root: index.md
 
 parts:
-  # - caption: Tests
-  #   numbered: False
-  #   chapters:
-  #   - external: "https://github.com/CIEM5000-2025/book/blob/main/book/workshop1/Workshop_1_Implement.ipynb"
+  - caption: Tests
+    numbered: False
+    chapters:
+    - file: "gated_example_demo.md"
   - caption: Front matter
     numbered: False
     chapters:
     - file: introduction.md
-    - file: graph_of_content.md
+    # - file: graph_of_content.md
   - caption: Algebra
     numbered: True
     chapters:

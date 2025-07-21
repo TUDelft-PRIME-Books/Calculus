@@ -14,3 +14,4 @@ sphinx-exercise == 1.0.1
 
 # Now list the packages you want to download directly from GitHub
 git+https://github.com/TeachBooks/Sphinx-Thebe
+git+https://github.com/TeachBooks/sphinx-proof-examples

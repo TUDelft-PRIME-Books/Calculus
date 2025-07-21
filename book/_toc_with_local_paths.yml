@@ -1,10 +1,13 @@
 # ToC file with localized paths. Used for Teachbooks' external content feature.
 format: jb-book
 parts:
+- caption: Tests
+  chapters:
+  - file: gated_example_demo.md
+  numbered: false
 - caption: Front matter
   chapters:
   - file: introduction.md
-  - file: graph_of_content.md
   numbered: false
 - caption: Algebra
   chapters:
