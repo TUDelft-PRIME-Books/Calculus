@@ -1,0 +1,5 @@
+
+/* Remove content box */
+div.codex p.admonition-title::after {
+  content: "\f121" !important;
+}

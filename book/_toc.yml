@@ -3,9 +3,9 @@ root: index.md
 
 parts:
   - caption: Tests
-    numbered: False
+    numbered: True
     chapters:
-    - file: "gated_example_demo.md"
+    - file: "codex_examples.ipynb"
   - caption: Front matter
     numbered: False
     chapters:

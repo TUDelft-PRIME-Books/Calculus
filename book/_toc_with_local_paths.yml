@@ -3,8 +3,8 @@ format: jb-book
 parts:
 - caption: Tests
   chapters:
-  - file: gated_example_demo.md
-  numbered: false
+  - file: codex_examples.ipynb
+  numbered: true
 - caption: Front matter
   chapters:
   - file: introduction.md
