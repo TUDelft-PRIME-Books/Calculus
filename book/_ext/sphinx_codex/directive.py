@@ -17,12 +17,8 @@ from .nodes import (
     codex_node,
     codex_enumerable_node,
     codex_end_node,
-    solution_node,
-    solution_start_node,
-    solution_end_node,
     codex_title,
     codex_subtitle,
-    solution_title,
 )
 from docutils import nodes
 from sphinx.util import logging
@@ -136,7 +132,13 @@ class CodexDirective(SphinxCodexBaseDirective):
             return []
 
         # Collect Classes
-        classes = [f"proof example {self.name}"]
+        if self.env.config.sphinx_codex_style_from_proof:
+            if self.env.config.sphinx_codex_icon_from_proof:
+                classes = [f"proof example"]
+            else:
+                classes = [f"proof example {self.name}"]
+        else:
+            classes = [f"{self.name}"]
         if self.options.get("class"):
             classes.extend(self.options.get("class"))
 
@@ -168,117 +170,6 @@ class CodexDirective(SphinxCodexBaseDirective):
         # TODO: Could tag this as Hidden to prevent the cell showing
         # rather than removing content
         # https://github.com/executablebooks/sphinx-jupyterbook-latex/blob/8401a27417d8c2dadf0365635bd79d89fdb86550/sphinx_jupyterbook_latex/transforms.py#L108
-        if node.get("hidden", bool):
-            return []
-
-        return [node]
-
-
-class SolutionDirective(SphinxCodexBaseDirective):
-    """
-    A solution directive
-
-    .. solution:: <codex-reference>
-       :label:
-       :class:
-       :hidden:
-
-    Arguments
-    ---------
-    codex-reference : str
-                        Specify a linked codex by label
-
-    Parameters:
-    -----------
-    label : str,
-            A unique identifier for your codex that you can use to reference
-            it with {ref} and {numref}
-    class : str,
-            Value of the codex’s class attribute which can be used to add custom CSS
-    hidden  :   boolean (flag),
-                Removes the directive from the final output.
-
-    Notes:
-    ------
-    Checking for target reference is done in post_transforms for Solution Titles
-    """
-
-    name = "solution"
-    has_content = True
-    required_arguments = 1
-    optional_arguments = 0
-    final_argument_whitespace = False
-    option_spec = {
-        "label": directives.unchanged_required,
-        "class": directives.class_option,
-        "hidden": directives.flag,
-    }
-    solution_node = solution_node
-
-    def run(self) -> List[Node]:
-        self.defaults = {"title_text": "Solution to"}
-        target_label = self.arguments[0]
-        self.serial_number = self.env.new_serialno()
-
-        # Initialise Registry if Required
-        if not hasattr(self.env, "sphinx_codex_registry"):
-            self.env.sphinx_codex_registry = {}
-
-        # Parse :hide-solutions: option
-        if self.env.app.config.hide_solutions:
-            return []
-
-        # Construct Title
-        title = solution_title()
-        title += nodes.Text(self.defaults["title_text"])
-
-        # State Parsing
-        section = nodes.section(ids=["solution-content"])
-        self.state.nested_parse(self.content, self.content_offset, section)
-
-        # Fetch Label or Generate One
-        label = self.options.get("label", "")
-        if label:
-            # TODO: Check how :noindex: is used here
-            self.options["noindex"] = False
-        else:
-            self.options["noindex"] = True
-            label = f"{self.env.docname}-solution-{self.serial_number}"
-
-        # Check for duplicate labels
-        # TODO: Should we just issue a warning rather than skip content?
-        if self.duplicate_labels(label):
-            return []
-
-        self.options["name"] = label
-
-        # Collect Classes
-        classes = [f"{self.name}"]
-        if self.options.get("class"):
-            classes += self.options.get("class")
-
-        # Construct Node
-        node = self.solution_node()
-        node += title
-        node += section
-        node["target_label"] = target_label
-        node["classes"].extend(classes)
-        node["ids"].append(label)
-        node["label"] = label
-        node["docname"] = self.env.docname
-        node["title"] = title.astext()
-        node["type"] = self.name
-        node["hidden"] = True if "hidden" in self.options else False
-        node["serial_number"] = self.serial_number
-        node.document = self.state.document
-
-        self.add_name(node)
-        self.env.sphinx_codex_registry[label] = {
-            "type": self.name,
-            "docname": self.env.docname,
-            "node": node,
-        }
-
         if node.get("hidden", bool):
             return []
 
@@ -357,72 +248,3 @@ class CodexEndDirective(SphinxDirective):
         )
         return [codex_end_node()]
 
-
-class SolutionStartDirective(SolutionDirective):
-    """
-    A gated directive for solution
-
-    .. solution-start:: <codex-reference>
-       :label:
-       :class:
-       :hidden:
-
-    This class is a child of SolutionDirective so it supports
-    all the same options as the base solution node
-    """
-
-    name = "solution-start"
-    solution_node = solution_start_node
-
-    def run(self):
-        # Initialise Gated Registry (if required)
-        if not hasattr(self.env, "sphinx_codex_gated_registry"):
-            self.env.sphinx_codex_gated_registry = {}
-        gated_registry = self.env.sphinx_codex_gated_registry
-        docname = self.env.docname
-        if docname not in gated_registry:
-            gated_registry[docname] = {
-                "start": [],
-                "end": [],
-                "sequence": [],
-                "msg": [],
-                "type": "solution",
-            }
-        gated_registry[self.env.docname]["start"].append(self.lineno)
-        gated_registry[self.env.docname]["sequence"].append("S")
-        gated_registry[self.env.docname]["msg"].append(
-            f"solution-start at line: {self.lineno}"
-        )
-        # Run Parent Methods
-        return super().run()
-
-
-class SolutionEndDirective(SphinxDirective):
-    """
-    A simple gated directive to mark end of solution
-
-    .. solution-end::
-    """
-
-    name = "solution-end"
-
-    def run(self):
-        # Initialise Gated Registry (if required)
-        if not hasattr(self.env, "sphinx_codex_gated_registry"):
-            self.env.sphinx_codex_gated_registry = {}
-        gated_registry = self.env.sphinx_codex_gated_registry
-        docname = self.env.docname
-        if docname not in gated_registry:
-            gated_registry[docname] = {
-                "start": [],
-                "end": [],
-                "sequence": [],
-                "msg": [],
-                "type": "solution",
-            }
-        gated_registry[self.env.docname]["end"].append(self.lineno)
-        gated_registry[self.env.docname]["sequence"].append("E")
-        gated_registry[self.env.docname]["msg"].append(
-            f"solution-end at line: {self.lineno}"
-        )
-        return [solution_end_node()]

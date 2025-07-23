@@ -2,12 +2,8 @@
 """
 sphinx_codex
 ~~~~~~~~~~~~~~~
-This package is an extension for sphinx to support codex and solutions.
-:copyright: Copyright 2020-2021 by the Executable Books team, see AUTHORS.
-:license: MIT, see LICENSE for details.
+This package is an extension for sphinx to support code examples.
 """
-
-__version__ = "1.0.1"
 
 from pathlib import Path
 from typing import Any, Dict, Set, Union, cast
@@ -18,15 +14,13 @@ from sphinx.domains.std import StandardDomain
 from docutils.nodes import Node
 from sphinx.util import logging
 from sphinx.util.fileutil import copy_asset
+import re
 
 from ._compat import findall
 from .directive import (
     CodexDirective,
     CodexStartDirective,
     CodexEndDirective,
-    SolutionDirective,
-    SolutionStartDirective,
-    SolutionEndDirective,
 )
 from .nodes import (
     codex_node,
@@ -36,30 +30,20 @@ from .nodes import (
     visit_codex_enumerable_node,
     depart_codex_enumerable_node,
     codex_end_node,
-    solution_node,
-    visit_solution_node,
-    depart_solution_node,
-    solution_start_node,
-    solution_end_node,
     is_extension_node,
     codex_title,
     codex_subtitle,
-    solution_title,
-    solution_subtitle,
     codex_latex_number_reference,
     visit_codex_latex_number_reference,
     depart_codex_latex_number_reference,
 )
 from .transforms import (
     CheckGatedDirectives,
-    MergeGatedSolutions,
     MergeGatedCodexs,
 )
 from .post_transforms import (
     ResolveTitlesInCodexs,
-    ResolveTitlesInSolutions,
     UpdateReferencesToEnumerated,
-    ResolveLinkTextToSolutions,
 )
 
 logger = logging.getLogger(__name__)
@@ -105,7 +89,7 @@ def init_numfig(app: Sphinx, config: Config) -> None:
     """Initialize numfig"""
 
     config["numfig"] = True
-    numfig_format = {"codex": "Code example %s"}
+    numfig_format = {"codex": f"{app.config.sphinx_codex_name} %s"}
     # Merge with current sphinx settings
     numfig_format.update(config.numfig_format)
     config.numfig_format = numfig_format
@@ -127,12 +111,66 @@ def doctree_read(app: Sphinx, document: Node) -> None:
             domain.anonlabels[name] = docname, label
             domain.labels[name] = docname, label, section_name
 
+def on_config_inited(app: Sphinx, config: Config) -> None:
+    check_config(app, config)
+    init_numfig(app, config)
+
+def check_config(app: Sphinx, config: Config) -> None:
+    # check validity of config  and act accordingly
+    if config.sphinx_codex_merge_with_proof:
+        config.sphinx_codex_name = "New example"
+        config.sphinx_codex_style_from_proof = True
+        config.sphinx_codex_icon_from_proof = True
+
+def on_source_read_replace_prf_example(app, docname, source):
+
+    if app.config.sphinx_codex_merge_with_proof:
+        # If the config is set to merge with proof, replace 'prf:example' with 'codex'
+
+        # Get the source text
+        text = source[0]
+        
+        # Check if this is a Jupyter notebook by looking at the source file
+        # Since docname doesn't include extension, we need to check the app's source file
+        is_notebook = False
+        if hasattr(app.env, 'found_docs') and docname in app.env.found_docs:
+            # Try to get the actual source file path
+            src_path = app.env.doc2path(docname, base=False)
+            is_notebook = src_path.endswith('.ipynb')
+        
+        print(f"Processing source for {docname}, is_notebook: {is_notebook}")
+        
+        # Initialize tracking of example labels if not exists
+        if not hasattr(app.env, 'codex_example_labels'):
+            app.env.codex_example_labels = set()
+        
+        # Find all labels from {prf:example} directives and track them
+        import re
+        example_pattern = re.compile(r'\{prf:example\}.*?:label:\s*([^\s\n]+)', re.DOTALL)
+        for match in example_pattern.finditer(text):
+            label = match.group(1).strip()  # Remove whitespace and newlines
+            if is_notebook:
+                print('Notebook tweak')
+                label = label.replace("\\n\",", "")
+            app.env.codex_example_labels.add(label)
+            print(f"Found prf:example label: {label}")  # Debugging output
+        
+        # Replace all occurrences of '{prf:example}' with '{codex}' in directive contexts
+        text = text.replace('{prf:example}', '{codex}')
+        
+        source[0] = text
 
 def setup(app: Sphinx) -> Dict[str, Any]:
-    # app.add_config_value("hide_solutions", False, "env")
+    app.add_config_value("sphinx_codex_name", "Code example", "html")
+    app.add_config_value("sphinx_codex_style_from_proof", True, "html")
+    app.add_config_value("sphinx_codex_icon_from_proof", False, "html")
+    app.add_config_value("sphinx_codex_merge_with_proof", False, "html")
 
+    app.connect("config-inited", on_config_inited)  # event order - 1
     app.connect("config-inited", init_numfig)  # event order - 1
+    app.connect("builder-inited", set_asset_files)  # event order - 2
     app.connect("env-purge-doc", purge_codexs)  # event order - 5 per file
+    app.connect("source-read", on_source_read_replace_prf_example) # event order - 6 per file
     app.connect("doctree-read", doctree_read)  # event order - 8
     app.connect("env-merge-info", merge_codexs)  # event order - 9
     app.connect("build-finished", copy_asset_files)  # event order - 16
@@ -153,22 +191,11 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         latex=(visit_codex_enumerable_node, depart_codex_enumerable_node),
     )
 
-    # app.add_node(
-    #     solution_node,
-    #     singlehtml=(visit_solution_node, depart_solution_node),
-    #     html=(visit_solution_node, depart_solution_node),
-    #     latex=(visit_solution_node, depart_solution_node),
-    # )
-
     # Internal Title Nodes that don't need visit_ and depart_ methods
     # as they are resolved in post_transforms to docutil and sphinx nodes
     app.add_node(codex_end_node)
-    # app.add_node(solution_start_node)
-    # app.add_node(solution_end_node)
     app.add_node(codex_title)
     app.add_node(codex_subtitle)
-    # app.add_node(solution_title)
-    # app.add_node(solution_subtitle)
 
     app.add_node(
         codex_latex_number_reference,
@@ -181,20 +208,12 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_directive("codex", CodexDirective)
     app.add_directive("codex-start", CodexStartDirective)
     app.add_directive("codex-end", CodexEndDirective)
-    # app.add_directive("solution", SolutionDirective)
-    # app.add_directive("solution-start", SolutionStartDirective)
-    # app.add_directive("solution-end", SolutionEndDirective)
 
     app.add_transform(CheckGatedDirectives)
     app.add_transform(MergeGatedCodexs)
-    app.add_transform(MergeGatedSolutions)
 
     app.add_post_transform(UpdateReferencesToEnumerated)
     app.add_post_transform(ResolveTitlesInCodexs)
-    app.add_post_transform(ResolveTitlesInSolutions)
-    app.add_post_transform(ResolveLinkTextToSolutions)
-
-    app.add_css_file("codex.css")
 
     return {
         "version": "builtin",
@@ -202,14 +221,22 @@ def setup(app: Sphinx) -> Dict[str, Any]:
         "parallel_write_safe": True,
     }
 
+def set_asset_files(app: Sphinx) -> None:
+    """Sets the asset files for the codex extension"""
+
+    if not(app.config.sphinx_codex_icon_from_proof):
+        app.add_css_file("codex.css")
+
 def copy_asset_files(app: Sphinx, exc: Union[bool, Exception]):
     """Copies required assets for formating in HTML"""
 
-    static_path = (
-        Path(__file__).parent.joinpath("assets", "html", "codex.css").absolute()
-    )
-    asset_files = [str(static_path)]
+    if not(app.config.sphinx_codex_icon_from_proof):
 
-    if exc is None:
-        for path in asset_files:
-            copy_asset(path, str(Path(app.outdir).joinpath("_static").absolute()))
+        static_path = (
+            Path(__file__).parent.joinpath("assets", "html", "codex.css").absolute()
+        )
+        asset_files = [str(static_path)]
+
+        if exc is None:
+            for path in asset_files:
+                copy_asset(path, str(Path(app.outdir).joinpath("_static").absolute()))

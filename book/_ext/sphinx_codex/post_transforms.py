@@ -8,10 +8,8 @@ from ._compat import findall
 from .utils import get_node_number, find_parent
 from .nodes import (
     codex_enumerable_node,
-    solution_node,
     codex_title,
     codex_subtitle,
-    solution_title,
     is_codex_node,
     codex_latex_number_reference,
 )
@@ -64,8 +62,17 @@ class UpdateReferencesToEnumerated(SphinxPostTransform):
                         # Get Metadata from Inline
                         inline = node.children[0]
                         classes = inline["classes"]
-                        classes.remove("std-ref")
-                        classes.append("std-numref")
+                        if "std-ref" in classes:
+                            classes.remove("std-ref")
+                            classes.append("std-numref")
+                        # elif "prf-ref" in classes:
+                        #     classes.remove("prf-ref")
+                        #     classes.append("std-numref")
+                        else:
+                            print("!!!! DEBUG !!!!")
+                            print("Warning: 'std-ref' class not found in node classes.")
+                            print("classes", classes)
+                            print("!!!! DEBUG !!!!")
                         # Construct a Literal Node
                         literal = docutil_nodes.literal()
                         literal["classes"] = classes
@@ -117,129 +124,3 @@ class ResolveTitlesInCodexs(SphinxPostTransform):
 
         for node in findall(self.document, is_codex_node):
             node = self.resolve_title(node)
-
-
-# Solution Nodes
-
-
-def resolve_solution_title(app, node, codex_node):
-    """
-    Resolve Titles for Solution Nodes for:
-
-        1. Numbering of Target Codex Nodes
-        2. Formatting Title and Subtitles into docutils.title node
-        3. Ensure mathjax is triggered for pages that include path
-           in titles inherited from Codex Node
-
-    Note: Setup as a resolver function in case we need to resolve titles
-    in references to solution nodes.
-    """
-
-    title = node.children[0]
-    codex_title = codex_node.children[0]
-    if isinstance(title, solution_title):
-        entry_title_text = node.get("title")
-        updated_title_text = " " + codex_title.children[0].astext()
-        if isinstance(codex_node, codex_enumerable_node):
-            node_number = get_node_number(app, codex_node, "codex")
-            updated_title_text += f" {node_number}"
-        # New Title Node
-        updated_title = docutil_nodes.title()
-        wrap_reference = build_reference_node(app, codex_node)
-        wrap_reference += docutil_nodes.Text(updated_title_text)
-        node["title"] = entry_title_text + updated_title_text
-        # Parse Custom Titles from Codex
-        if len(codex_title.children) > 1:
-            subtitle = codex_title.children[1]
-            if isinstance(subtitle, codex_subtitle):
-                wrap_reference += docutil_nodes.Text(" (")
-                for child in subtitle.children:
-                    if isinstance(child, docutil_nodes.math):
-                        # Ensure mathjax is loaded for pages that only contain
-                        # references to nodes that contain math
-                        domain = app.env.get_domain("math")
-                        domain.data["has_equations"][app.env.docname] = True
-                    wrap_reference += child
-                wrap_reference += docutil_nodes.Text(")")
-        updated_title += docutil_nodes.Text(entry_title_text)
-        updated_title += wrap_reference
-        updated_title.parent = title.parent
-        node.children[0] = updated_title
-    node.resolved_title = True
-    return node
-
-
-class ResolveTitlesInSolutions(SphinxPostTransform):
-    default_priority = 21
-
-    def run(self):
-        if not hasattr(self.env, "sphinx_codex_registry"):
-            return
-
-        # Update Solution Directives
-        for node in findall(self.document, solution_node):
-            label = node.get("label")
-            target_label = node.get("target_label")
-            try:
-                target = self.env.sphinx_codex_registry[target_label]
-                target_node = target.get("node")
-                node = resolve_solution_title(self.app, node, target_node)
-                # Update Registry
-                self.env.sphinx_codex_registry[label]["node"] = node
-            except Exception:
-                if isinstance(self.app.builder, LaTeXBuilder):
-                    docname = find_parent(self.app.builder.env, node, "section")
-                else:
-                    try:
-                        docname = self.app.builder.current_docname
-                    except AttributeError:
-                        docname = self.env.docname  # for builder such as JupyterBuilder that don't support current_docname
-                docpath = self.env.doc2path(docname)
-                path = docpath[: docpath.rfind(".")]
-                msg = f"undefined label: {target_label}"
-                logger.warning(msg, location=path, color="red")
-                return
-
-
-class ResolveLinkTextToSolutions(SphinxPostTransform):
-    """
-    Resolve Titles for Solutions Nodes and merge in
-    the main title only from target_nodes
-    """
-
-    default_priority = 22
-
-    def run(self):
-        if not hasattr(self.env, "sphinx_codex_registry"):
-            return
-
-        # Update Solution References
-        for node in findall(self.document, docutil_nodes.reference):
-            refid = node.get("refid")
-            if refid in self.env.sphinx_codex_registry:
-                target = self.env.sphinx_codex_registry[refid]
-                target_node = target.get("node")
-                if self.app.builder.format == "latex":
-                    if isinstance(target_node, codex_enumerable_node):
-                        new_node = codex_latex_number_reference()
-                        new_node.parent = node.parent
-                        new_node.attributes = node.attributes
-                        for child in node.children:
-                            new_node += child
-                        node.replace_self(new_node)
-                if isinstance(target_node, solution_node):
-                    # TODO: Check if this condition is required?
-                    if not target_node.resolved_title:
-                        codex_label = target_node.get("target_label")
-                        codex_target = self.env.sphinx_codex_registry[
-                            codex_label
-                        ]  # noqa: E501
-                        codex_node = codex_target.get("node")
-                        target_node = resolve_solution_title(
-                            self.app, target_node, codex_node
-                        )  # noqa: E501
-                    title_text = target_node.children[0].astext()
-                    inline = node.children[0]
-                    inline.children = []
-                    inline += docutil_nodes.Text(title_text)
-                    node.children[0] = inline

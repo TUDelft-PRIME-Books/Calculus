@@ -12,9 +12,6 @@ from .nodes import (
     codex_node,
     codex_enumerable_node,
     codex_end_node,
-    solution_node,
-    solution_start_node,
-    solution_end_node,
 )
 
 logger = logging.getLogger(__name__)
@@ -22,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 class CheckGatedDirectives(SphinxTransform):
     """
-    This transform checks the structure of the gated solutions
+    This transform checks the structure of the gated directives
     to flag any errors in input
     """
 
@@ -60,69 +57,6 @@ class CheckGatedDirectives(SphinxTransform):
         # Check structure of all -start and -end nodes
         if hasattr(self.env, "sphinx_codex_gated_registry"):
             self.check_structure(self.env.sphinx_codex_gated_registry)
-
-
-class MergeGatedSolutions(SphinxTransform):
-    """
-    Transform Gated Directives into single unified
-    Directives in the Sphinx Abstract Syntax Tree
-
-    Note: The CheckGatedSolutions Transform should ensure the
-    structure of the gated directives is correct before
-    this transform is run.
-    """
-
-    default_priority = 10
-
-    def find_nodes(self, label, node):
-        parent_node = node.parent
-        parent_start, parent_end = None, None
-        for idx1, child in enumerate(parent_node.children):
-            if isinstance(child, solution_start_node) and label == child.get("label"):
-                parent_start = idx1
-                for idx2, child2 in enumerate(parent_node.children[parent_start:]):
-                    if isinstance(child2, solution_end_node):
-                        parent_end = idx1 + idx2
-                        break
-                break
-        return parent_start, parent_end
-
-    def apply(self):
-        # Process all matching solution-start and solution-end nodes
-        for node in findall(self.document, solution_start_node):
-            label = node.get("label")
-            parent_start, parent_end = self.find_nodes(label, node)
-            if not parent_end:
-                continue
-            parent = node.parent
-            # Rebuild Node as a Solution Node
-            new_node = solution_node()
-            new_node.attributes = node.attributes
-            # Update Attributes
-            new_node["classes"] = [
-                attr.replace("solution-start", "solution")
-                for attr in node.attributes["classes"]
-            ]
-            new_node["type"] = "solution"
-            new_node.parent = node.parent
-            for child in node.children:
-                if type(child) is docutils.nodes.section:
-                    pass
-                else:
-                    new_node += child
-            # Collect nodes attached to the Parent Node until :solution-end:
-            content = docutils.nodes.section(
-                ids=["solution-content"]
-            )  # TODO: should id be classes?
-            for child in parent.children[parent_start + 1 : parent_end]:
-                content += child
-            new_node += content
-            # Replace :solution-start: with new solution node
-            node.replace_self(new_node)
-            # Clean up Parent Node including :solution-end:
-            for child in parent.children[parent_start + 1 : parent_end + 1]:
-                parent.remove(child)
-
 
 class MergeGatedCodexs(SphinxTransform):
     """
