@@ -59,20 +59,23 @@ class UpdateReferencesToEnumerated(SphinxPostTransform):
                         if node.get("refexplicit"):
                             continue
                         node["reftype"] = "numref"
+                        node['refdomain'] = 'std'
                         # Get Metadata from Inline
                         inline = node.children[0]
                         classes = inline["classes"]
                         if "std-ref" in classes:
                             classes.remove("std-ref")
                             classes.append("std-numref")
-                        # elif "prf-ref" in classes:
-                        #     classes.remove("prf-ref")
-                        #     classes.append("std-numref")
+                        elif "prf-ref" in classes:
+                            classes.remove("prf")
+                            classes.remove("prf-ref")
+                            classes.append("std")
+                            classes.append("std-numref")
                         else:
-                            print("!!!! DEBUG !!!!")
-                            print("Warning: 'std-ref' class not found in node classes.")
-                            print("classes", classes)
-                            print("!!!! DEBUG !!!!")
+                            msg = f"Pending xref found without 'std-ref' or 'prf-ref':\nNode: {node}"
+                            docpath = self.env.doc2path(self.env.docname)
+                            path = docpath[: docpath.rfind(".")]
+                            logger.warning(msg, location=path, color="red")
                         # Construct a Literal Node
                         literal = docutil_nodes.literal()
                         literal["classes"] = classes
