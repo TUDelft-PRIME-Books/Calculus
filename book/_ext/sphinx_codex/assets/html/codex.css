@@ -1,5 +1,0 @@
-
-/* Add icon */
-div.codex p.admonition-title::after {
-  content: "\f121" !important; /* to overrule the icon from sphinx-proof */
-}
