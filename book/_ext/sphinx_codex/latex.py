@@ -1,5 +1,8 @@
-# Support for LaTeX Markup
+"""
+sphinx_code_examples.latex
+"""
 
+# Support for LaTeX Markup
 
 class LaTeXMarkup(object):
     CR = "\n"

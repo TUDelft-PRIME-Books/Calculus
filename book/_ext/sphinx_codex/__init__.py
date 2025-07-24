@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-sphinx_codex
-~~~~~~~~~~~~~~~
-This package is an extension for sphinx to support code examples.
+sphinx_code_examples
+~~~~~~~~~~~~~~~~~~~~
+
+This package is an extension for sphinx to support examples with runnable code.
+
 """
 
 from pathlib import Path
@@ -176,7 +178,6 @@ def setup(app: Sphinx) -> Dict[str, Any]:
     app.add_config_value("sphinx_codex_merge_with_proof", False, "html")
 
     app.connect("config-inited", on_config_inited)  # event order - 1
-    app.connect("config-inited", init_numfig)  # event order - 1
     app.connect("builder-inited", set_asset_files)  # event order - 2
     app.connect("env-purge-doc", purge_codexs)  # event order - 5 per file
     app.connect("source-read", on_source_read_replace_prf_example) # event order - 6 per file

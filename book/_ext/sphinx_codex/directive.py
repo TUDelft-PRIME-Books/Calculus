@@ -1,11 +1,5 @@
 """
-sphinx_codex.directive
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A custom Sphinx Directive
-
-:copyright: Copyright 2020 by the QuantEcon team, see AUTHORS
-:licences: see LICENSE for details
+sphinx_code_examples.directive
 """
 
 from typing import List
@@ -30,7 +24,7 @@ class SphinxCodexBaseDirective(SphinxDirective):
     def duplicate_labels(self, label):
         """Check for duplicate labels"""
 
-        if not label == "" and label in self.env.sphinx_codex_registry.keys():
+        if label != "" and label in self.env.sphinx_codex_registry:
             docpath = self.env.doc2path(self.env.docname)
             path = docpath[: docpath.rfind(".")]
             other_path = self.env.doc2path(

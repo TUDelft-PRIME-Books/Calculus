@@ -1,11 +1,13 @@
+"""
+sphinx_code_examples.transforms
+"""
+
 import re
 import docutils
 
 from sphinx.transforms import SphinxTransform
 from sphinx.util import logging
 from sphinx.errors import ExtensionError
-
-# from sphinx.errors import ExtensionError
 
 from ._compat import findall
 from .nodes import (

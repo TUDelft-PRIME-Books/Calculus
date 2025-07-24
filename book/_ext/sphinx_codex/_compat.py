@@ -1,3 +1,7 @@
+"""
+sphinx_code_examples._compat
+"""
+
 from docutils.nodes import Element
 from typing import Iterator
 

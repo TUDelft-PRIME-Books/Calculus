@@ -1,17 +1,19 @@
+"""
+sphinx_code_examples.post_transforms
+"""
+
 import sphinx.addnodes as sphinx_nodes
 from sphinx.transforms.post_transforms import SphinxPostTransform
 from sphinx.util import logging
-from sphinx.builders.latex import LaTeXBuilder
 from docutils import nodes as docutil_nodes
 
 from ._compat import findall
-from .utils import get_node_number, find_parent
+from .utils import get_node_number
 from .nodes import (
     codex_enumerable_node,
     codex_title,
     codex_subtitle,
     is_codex_node,
-    codex_latex_number_reference,
 )
 
 logger = logging.getLogger(__name__)

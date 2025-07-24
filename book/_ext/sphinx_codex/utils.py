@@ -1,3 +1,7 @@
+"""
+sphinx_code_examples.utils
+"""
+
 # Utility functions
 
 from sphinx.writers.latex import LaTeXTranslator

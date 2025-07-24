@@ -1,11 +1,5 @@
 """
-sphinx_codex.nodes
-~~~~~~~~~~~~~~~~~~~~~
-
-Sphinx Codex Nodes
-
-:copyright: Copyright 2020-2021 by the Executable Books team, see AUTHORS
-:licences: see LICENSE for details
+sphinx_code_examples.nodes
 """
 
 from sphinx.util import logging
