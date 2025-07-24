@@ -3,7 +3,7 @@ format: jb-book
 parts:
 - caption: Tests
   chapters:
-  - file: codex_examples.ipynb
+  - file: _git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.ipynb
   numbered: true
 - caption: Front matter
   chapters:

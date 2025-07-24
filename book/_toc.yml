@@ -5,7 +5,7 @@ parts:
   - caption: Tests
     numbered: True
     chapters:
-    - file: "codex_examples.ipynb"
+    - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
   - caption: Front matter
     numbered: False
     chapters:
