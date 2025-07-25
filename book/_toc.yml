@@ -145,4 +145,4 @@ parts:
     - external: "https://github.com/executablebooks/sphinx-exercise/blob/main/docs/source/syntax.md"
     - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/manual_docs/README.md"
     - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
-    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md"
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md" #bump
