@@ -1,10 +1,6 @@
 # ToC file with localized paths. Used for Teachbooks' external content feature.
 format: jb-book
 parts:
-- caption: Tests
-  chapters:
-  - file: _git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.ipynb
-  numbered: true
 - caption: Front matter
   chapters:
   - file: introduction.md
@@ -138,4 +134,14 @@ parts:
   - file: genindex.md
   - file: credits.md
   numbered: false
+- caption: Reference pages for development
+  chapters:
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/admonitions.md
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/proofs.md
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/custom.md
+  - file: _git/github.com_executablebooks_sphinx-exercise/main/docs/source/syntax.md
+  - file: _git/github.com_TeachBooks_Sphinx-Grasple-public/manual_docs/README.md
+  - file: _git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.ipynb
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/latex.md
+  numbered: true
 root: index.md

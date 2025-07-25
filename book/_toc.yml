@@ -2,10 +2,6 @@ format: jb-book
 root: index.md
 
 parts:
-  - caption: Tests
-    numbered: True
-    chapters:
-    - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
   - caption: Front matter
     numbered: False
     chapters:
@@ -140,3 +136,13 @@ parts:
     chapters:
     - file: genindex.md
     - file: credits.md
+  - caption: Reference pages for development
+    numbered: True
+    chapters:
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md"
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/proofs.md"
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/custom.md"
+    - external: "https://github.com/executablebooks/sphinx-exercise/blob/main/docs/source/syntax.md"
+    - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/manual_docs/README.md"
+    - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md"

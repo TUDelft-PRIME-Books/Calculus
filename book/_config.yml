@@ -24,10 +24,14 @@ html:
 sphinx:
   local_extensions:
     text_replacer: _ext/
-    # sphinx_codex: _ext/
   config:
+    sphinx_codex_merge_with_proof: true
     text_replacements:
       '{numref}`Chapter %s <Chapter:Determinants>`': "[the chapter on Determinants of the book Linear algebra](https://tudelft-prime-books.github.io/Linear-Algebra/Chapter5/intro.html)"
+      '# Proofs': "# Theorems and examples"
+      '# Admonitions': "# Cautions, notes, and warnings"
+      '# Custom components': "# Proofs and solutions"
+      '# Syntax Guide': "# Exercises"
     mathjax3_config:
       tex:
         macros:
@@ -72,5 +76,5 @@ sphinx:
     - sphinx_dropdown_toggle                         # Adds dropdown toggles to your book
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
     - sphinx_image_inverter                          # Inverts images for dark mode https://teachbooks.io/manual/external/Sphinx-Image-Inverter/README.html
-    - sphinx_code_examples
+    - sphinx_code_examples                           # Adds code examples to your book https://teachbooks.io/manual/external/Sphinx-Code-Examples/MANUAL.html
     - sphinx_indexed_definitions                     # Adds indexed definitions to your book
