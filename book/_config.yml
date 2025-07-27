@@ -32,6 +32,7 @@ sphinx:
       '# Admonitions': "# Cautions, notes, and warnings"
       '# Custom components': "# Proofs and solutions"
       '# Syntax Guide': "# Exercises"
+      '# Sphinx extension: Grasple': "# Grasple exercises"
     mathjax3_config:
       tex:
         macros:

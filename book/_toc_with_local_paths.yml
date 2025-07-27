@@ -4,6 +4,7 @@ parts:
 - caption: Front matter
   chapters:
   - file: introduction.md
+  - file: graph_of_content.md
   numbered: false
 - caption: Algebra
   chapters:
@@ -140,8 +141,8 @@ parts:
   - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/proofs.md
   - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/custom.md
   - file: _git/github.com_executablebooks_sphinx-exercise/main/docs/source/syntax.md
-  - file: _git/github.com_TeachBooks_Sphinx-Grasple-public/manual_docs/README.md
+  - file: _git/github.com_TeachBooks_Sphinx-Grasple-public/main/README.md
   - file: _git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.ipynb
   - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/latex.md
-  numbered: true
+  numbered: false
 root: index.md

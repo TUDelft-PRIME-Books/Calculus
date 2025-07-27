@@ -6,7 +6,7 @@ parts:
     numbered: False
     chapters:
     - file: introduction.md
-    # - file: graph_of_content.md
+    - file: graph_of_content.md
   - caption: Algebra
     numbered: True
     chapters:
@@ -137,12 +137,12 @@ parts:
     - file: genindex.md
     - file: credits.md
   - caption: Reference pages for development
-    numbered: True
+    numbered: False
     chapters:
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md"
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/proofs.md"
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/custom.md"
     - external: "https://github.com/executablebooks/sphinx-exercise/blob/main/docs/source/syntax.md"
-    - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/manual_docs/README.md"
+    - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/main/README.md"
     - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
-    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md" #bump
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md"
