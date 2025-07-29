@@ -38,12 +38,14 @@ parts:
     - file: Single-variable functions/Differentiation/extrema_of_functions.md
     - file: Single-variable functions/Differentiation/implicit_differentiation.md
     - file: Single-variable functions/Differentiation/approximating_functions.md
+    - file: Single-variable functions/Differentiation/l_hospitals_rule.md
     - file: Single-variable functions/Differentiation/graphs_of_single_variable_functions.md
   - file: Single-variable functions/Integration/introduction_integration.md
     sections:
     - file: Single-variable functions/Integration/integrability_and_antiderivatives.md
     - file: Single-variable functions/Integration/substitution_rule.md
     - file: Single-variable functions/Integration/integration_by_parts.md
+    - file: Single-variable functions/Integration/partial_fraction_decomposition.md
     - file: Single-variable functions/Integration/improper_integrals.md
     - file: Single-variable functions/Integration/approximating_integrals.md
   numbered: true

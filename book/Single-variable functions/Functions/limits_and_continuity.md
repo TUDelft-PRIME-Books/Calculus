@@ -13,6 +13,6 @@ In this section we cover
 -Limit at infinity: division by dominant term, square root trick, squeeze theorem
 -Limit at infinity: formal definition
 -Oblique asymptotes
--Continuity: definition, standard continuous functions and basic rules of calculation (including left- and right-continuity?)
+-Continuity: definition (limit definition), standard continuous functions and basic rules of calculation (including left- and right-continuity?)
 -"Taking a limit inside a continuous function"
 -Intermediate value theorem (Willem: ofwel hier, ofwel bij Nonlinear Equations)

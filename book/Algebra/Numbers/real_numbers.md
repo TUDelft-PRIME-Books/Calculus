@@ -9,3 +9,4 @@ In this section we cover
 -Cartesian coordinates
 -Partial fraction decomposition (Willem: of niet, misschien alleen bij integratie?)
 -Trigonometrics
+-Polar coordinates?

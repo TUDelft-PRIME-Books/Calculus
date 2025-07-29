@@ -3,4 +3,4 @@
 In this section we cover
 -Domain and maximal domain
 -Range and codomain
--Graphs
+-Graphs (including vertical line test)
