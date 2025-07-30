@@ -1,6 +1,7 @@
 # Domain, range and graphs
 
 In this section we cover
--Domain and maximal domain
--Range and codomain
--Graphs (including vertical line test)
+
+- Domain and maximal domain
+- Range and codomain
+- Graphs (including vertical line test)
