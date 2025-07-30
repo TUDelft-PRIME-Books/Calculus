@@ -2,8 +2,7 @@ format: jb-book
 root: index.md
 
 parts:
-  - caption: Front matter
-    numbered: False
+  - numbered: False
     chapters:
     - file: introduction.md
     - file: graph_of_content.md
@@ -131,7 +130,7 @@ parts:
       - file: "Overviews/Multivariable functions/common_curves.md"
       - file: "Overviews/Multivariable functions/common_surfaces.md"
       - file: "Overviews/Multivariable functions/integral_identities.md"
-  - caption: Back matter
+  - caption: Colophon
     numbered: False
     chapters:
     - file: genindex.md

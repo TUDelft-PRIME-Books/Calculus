@@ -1,8 +1,7 @@
 # ToC file with localized paths. Used for Teachbooks' external content feature.
 format: jb-book
 parts:
-- caption: Front matter
-  chapters:
+- chapters:
   - file: introduction.md
   - file: graph_of_content.md
   numbered: false
@@ -130,7 +129,7 @@ parts:
     - file: Overviews/Multivariable functions/common_surfaces.md
     - file: Overviews/Multivariable functions/integral_identities.md
   numbered: true
-- caption: Back matter
+- caption: Colophon
   chapters:
   - file: genindex.md
   - file: credits.md
