@@ -25,7 +25,7 @@ sphinx:
   local_extensions:
     text_replacer: _ext/
   config:
-    language: nl
+    language: ms
     sphinx_codex_merge_with_proof: true
     text_replacements:
       '{numref}`Chapter %s <Chapter:Determinants>`': "[the chapter on Determinants of the book Linear algebra](https://tudelft-prime-books.github.io/Linear-Algebra/Chapter5/intro.html)"
