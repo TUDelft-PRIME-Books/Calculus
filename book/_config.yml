@@ -25,7 +25,7 @@ sphinx:
   local_extensions:
     text_replacer: _ext/
   config:
-    language: nl
+    language: en
     sphinx_codex_merge_with_proof: true
     text_replacements:
       '{numref}`Chapter %s <Chapter:Determinants>`': "[the chapter on Determinants of the book Linear algebra](https://tudelft-prime-books.github.io/Linear-Algebra/Chapter5/intro.html)"
@@ -80,3 +80,4 @@ sphinx:
     - sphinx_image_inverter                          # Inverts images for dark mode https://teachbooks.io/manual/external/Sphinx-Image-Inverter/README.html
     - sphinx_code_examples                           # Adds code examples to your book https://teachbooks.io/manual/external/Sphinx-Code-Examples/MANUAL.html
     - sphinx_indexed_definitions                     # Adds indexed definitions to your book
+    - sphinx_iframes

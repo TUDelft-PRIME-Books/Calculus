@@ -143,5 +143,6 @@ parts:
   - file: _git/github.com_TeachBooks_Sphinx-Grasple-public/main/README.md
   - file: _git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.ipynb
   - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/latex.md
+  - file: _ext/tabbed_examples.md
   numbered: false
 root: index.md

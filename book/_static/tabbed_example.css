@@ -1,0 +1,22 @@
+.sd-tab-set.example {
+    margin: 0;
+}
+
+/* Styling for the dual button */
+.dual-btn {
+  color: var(--pst-color-text-base);
+  background: none;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 0.2em 0.5em;
+  z-index: 10001;
+}
+
+div.example button.dual-btn svg {
+    color: var(--tud-yellow);
+}
+
+div.example button.dual-btn span:not(.active) {
+    color: var(--tud-gray-mid);
+}

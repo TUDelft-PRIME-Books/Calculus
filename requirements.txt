@@ -12,9 +12,10 @@ sphinx-ref-graph == 1.0.1
 sphinx-dropdown-toggle == 1.3.1
 # sphinx-exercise == 1.0.1
 sphinx-code-examples == 1.1.0
+sphinx-iframes == 1.0.6
 
 # Now list the packages you want to download directly from GitHub
-git+https://github.com/TeachBooks/Sphinx-Thebe@i18n
+git+https://github.com/TeachBooks/Sphinx-Thebe
 git+https://github.com/TeachBooks/Sphinx-Proof
 git+https://github.com/TeachBooks/sphinx-exercise
 git+https://github.com/TeachBooks/sphinx-togglebutton
