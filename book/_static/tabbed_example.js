@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const header = admonition.querySelector("p.admonition-title");
     const textEl = admonition.querySelector('.example-text');
     const animEl = admonition.querySelector('.example-animation');
+    const infoEl = admonition.querySelector('.example-info');
 
     if (!header) return;
 
@@ -13,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const btn = document.createElement("button");
     btn.className = "dual-btn";
     
-    // Create a temporary element to measure the width of bold "Animated"
+    // Create a temporary element to measure the width of bold "Visual"
     const tempSpan = document.createElement("span");
-    tempSpan.innerHTML = "<strong>Animated</strong>";
+    tempSpan.innerHTML = "<strong>Visual</strong>";
     tempSpan.style.visibility = "hidden";
     tempSpan.style.position = "absolute";
     tempSpan.style.whiteSpace = "nowrap";
@@ -33,18 +34,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const textualWidth = Math.ceil(tempSpan2.offsetWidth) + 5; // Add 5px padding
     document.body.removeChild(tempSpan2);
     
-    btn.innerHTML = `<span class="active" style="display:inline-block;width:${textualWidth}px;text-align:right;"><strong>Textual</strong></span>&nbsp;<i class="fa-solid fa-toggle-off fa-lg"></i>&nbsp;<span style="display:inline-block;width:${animatedWidth}px;text-align:left;">Animated</span>`;
+    btn.innerHTML = `<span class="active" style="display:inline-block;width:${textualWidth}px;text-align:right;"><strong>Textual</strong></span>&nbsp;<i class="fa-solid fa-toggle-off fa-lg"></i>&nbsp;<span style="display:inline-block;width:${animatedWidth}px;text-align:left;">Visual</span>`;
+    infoEl.innerHTML = `<em>This example also has a visual version. Use the button in the top right corner to switch to the visual version.</em>`;
     btn.onclick = function () {
       if (admonition.classList.contains("animated")) {
         admonition.classList.remove("animated");
-        btn.innerHTML = `<span class="active" style="display:inline-block;width:${textualWidth}px;text-align:right;"><strong>Textual</strong></span>&nbsp;<i class="fa-solid fa-toggle-off fa-lg"></i>&nbsp;<span style="display:inline-block;width:${animatedWidth}px;text-align:left;">Animated</span>`;
+        btn.innerHTML = `<span class="active" style="display:inline-block;width:${textualWidth}px;text-align:right;"><strong>Textual</strong></span>&nbsp;<i class="fa-solid fa-toggle-off fa-lg"></i>&nbsp;<span style="display:inline-block;width:${animatedWidth}px;text-align:left;">Visual</span>`;
         textEl.style.display = "block";
         animEl.style.display = "none";
+        infoEl.innerHTML = `<em>This example also has a visual version. Use the button in the top right corner to switch to the visual version.</em>`;
       } else {
-        btn.innerHTML = `<span style="display:inline-block;width:${textualWidth}px;text-align:right;">Textual</span>&nbsp;<i class="fa-solid fa-toggle-off fa-flip-horizontal fa-lg"></i>&nbsp;<span class="active" style="display:inline-block;width:${animatedWidth}px;text-align:left;"><strong>Animated</strong></span>`;
+        btn.innerHTML = `<span style="display:inline-block;width:${textualWidth}px;text-align:right;">Textual</span>&nbsp;<i class="fa-solid fa-toggle-off fa-flip-horizontal fa-lg"></i>&nbsp;<span class="active" style="display:inline-block;width:${animatedWidth}px;text-align:left;"><strong>Visual</strong></span>`;
         admonition.classList.add("animated");
         textEl.style.display = "none";
         animEl.style.display = "block";
+        infoEl.innerHTML = `<em>This example also has a textual version. Use the button in the top right corner to switch to the textual version.</em>`;
       }
     };
 
