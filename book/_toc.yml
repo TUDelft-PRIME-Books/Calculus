@@ -145,4 +145,3 @@ parts:
     - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/main/README.md"
     - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb"
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md"
-    - file: "_ext/tabbed_examples.md"
