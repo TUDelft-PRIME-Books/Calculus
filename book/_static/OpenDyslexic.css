@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'OpenDyslexic';
+  src: url('OpenDyslexic-Regular.woff2') format('woff2'),
+      url('OpenDyslexic-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body.dyslexic {
+  font-family: OpenDyslexic, Helvetica, sans-serif;
+}
+ 
+body.dyslexic h1,
+body.dyslexic h2,
+body.dyslexic h3,
+body.dyslexic h4,
+body.dyslexic h5,
+body.dyslexic h6 {
+  font-family: OpenDyslexic, Arial;
+}
+ 
+body.dyslexic .logo__title {
+  font-family: OpenDyslexic, Arial;
+}
