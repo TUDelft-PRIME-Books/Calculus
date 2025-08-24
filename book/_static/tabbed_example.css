@@ -1,7 +1,0 @@
-div.example button.dual-btn svg {
-    color: var(--tud-yellow);
-}
-
-div.example button.dual-btn span:not(.active) {
-    color: var(--tud-gray);
-}
