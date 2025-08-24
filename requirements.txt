@@ -3,7 +3,7 @@ teachbooks == 0.2.2 # depends on jupyter-book
 jupyterbook-patches == 1.6.2
 sphinx-image-inverter == 1.1.9
 download_link_replacer == 1.0.4
-sphinx-tudelft-theme == 1.1.14
+sphinx-tudelft-theme == 1.1.15
 teachbooks-sphinx-tippy == 1.0.12
 teachbooks-sphinx-grasple == 1.2.2
 sphinx-prime-applets == 1.0.5
