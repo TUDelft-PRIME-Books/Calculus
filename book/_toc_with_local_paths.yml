@@ -1,6 +1,21 @@
 # ToC file with localized paths. Used for Teachbooks' external content feature.
 format: jb-book
 parts:
+- caption: Algebra
+  chapters:
+  - file: Algebra/Numbers/introduction_numbers.md
+    sections:
+    - file: Algebra/Numbers/real_numbers.md
+    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersCartesian.md
+    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersPolar.md
+    - file: Algebra/Numbers/linear_systems_in_two_variables.md
+  - file: Algebra/Vector algebra/introduction_vector_algebra.md
+    sections:
+    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Vectors.md
+    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Inner_Product.md
+    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Cross_Product.md
+    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Lines_and_Planes.md
+  numbered: true
 - caption: Reference pages for development
   chapters:
   - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/admonitions.md

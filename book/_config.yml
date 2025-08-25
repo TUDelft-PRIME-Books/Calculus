@@ -76,7 +76,7 @@ sphinx:
     - sphinx_prime_applets                           # Adds the Prime applets to your book
     - sphinx_ref_graph                               # Adds a graph of references to your book
     - sphinx_dropdown_toggle                         # Adds dropdown toggles to your book
-    - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
+    # - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
     - sphinx_image_inverter                          # Inverts images for dark mode https://teachbooks.io/manual/external/Sphinx-Image-Inverter/README.html
     - sphinx_code_examples                           # Adds code examples to your book https://teachbooks.io/manual/external/Sphinx-Code-Examples/MANUAL.html
     - sphinx_indexed_definitions                     # Adds indexed definitions to your book

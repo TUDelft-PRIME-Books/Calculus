@@ -6,21 +6,21 @@ parts:
   #   chapters:
   #   - file: introduction.md
   #   - file: graph_of_content.md
-  # - caption: Algebra
-  #   numbered: True
-  #   chapters:
-  #   - file: "Algebra/Numbers/introduction_numbers.md"
-  #     sections:
-  #     - file: "Algebra/Numbers/real_numbers.md"
-  #     - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md"
-  #     - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersPolar.md"
-  #     - file: "Algebra/Numbers/linear_systems_in_two_variables.md"
-  #   - file: "Algebra/Vector algebra/introduction_vector_algebra.md"
-  #     sections:
-  #     - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Vectors.md"
-  #     - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Inner_Product.md"
-  #     - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Cross_Product.md"
-  #     - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Lines_and_Planes.md"
+  - caption: Algebra
+    numbered: True
+    chapters:
+    - file: "Algebra/Numbers/introduction_numbers.md"
+      sections:
+      - file: "Algebra/Numbers/real_numbers.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersPolar.md"
+      - file: "Algebra/Numbers/linear_systems_in_two_variables.md"
+    - file: "Algebra/Vector algebra/introduction_vector_algebra.md"
+      sections:
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Vectors.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Inner_Product.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Cross_Product.md"
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Lines_and_Planes.md"
   # - caption: Single-variable functions
   #   numbered: True
   #   chapters: 
