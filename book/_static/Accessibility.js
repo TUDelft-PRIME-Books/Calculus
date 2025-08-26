@@ -1,7 +1,7 @@
 AccessibilitySVG = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--pst-color-text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M7 9L12 10M17 9L12 10M12 10V13M12 13L10 18M12 13L14 18" stroke="var(--pst-color-text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M12 7C11.7239 7 11.5 6.77614 11.5 6.5C11.5 6.22386 11.7239 6 12 6C12.2761 6 12.5 6.22386 12.5 6.5C12.5 6.77614 12.2761 7 12 7Z" fill="var(--pst-color-text-muted)" stroke="var(--pst-color-text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="var(--pst-color-text-muted)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7 9L12 10M17 9L12 10M12 10V13M12 13L10 18M12 13L14 18" stroke="var(--pst-color-text-muted)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12 7C11.7239 7 11.5 6.77614 11.5 6.5C11.5 6.22386 11.7239 6 12 6C12.2761 6 12.5 6.22386 12.5 6.5C12.5 6.77614 12.2761 7 12 7Z" fill="var(--pst-color-text-muted)" stroke="var(--pst-color-text-muted)" stroke-width="2.0" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`
 FontSVG = `<svg fill="var(--pst-color-text-muted)" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 392.619 392.619" xml:space="preserve">
@@ -58,25 +58,29 @@ document.addEventListener("DOMContentLoaded", () => {
                             </span>
                             <span id="fontText" class="btn__text-container">Enable <span style="font-family: OpenDyslexic">OpenDyslexic</span></span>
                         </a></li>
-                        <li><a href="#" class="btn btn-sm dropdown-item" data-action="enableContrast">
+                        <li><a href="#" class="btn btn-sm dropdown-item" data-action="toggleContrast">
                             <span class="btn__icon-container">
                                 ${ContrastSVG}
                             </span>
-                            <span class="btn__text-container">Enable high contrast</span>
+                            <span id="contrastText" class="btn__text-container">Enable high contrast</span>
                         </a></li>
                     </ul>`;
 
         headerEnd.prepend(button);
     }
-    // Load saved font preference next
+    // Load saved font and contrast preference next
     loadFontPreference();
+    loadContrastPreference();
 
+    // Add event listeners
     document.getElementById("AcccessibilityMenu")?.addEventListener("click", (event) => {
         // Handle dropdown menu clicks
         if (event.target.closest('[data-action]')) {
             const action = event.target.closest('[data-action]').getAttribute('data-action');
             if (action === 'toggleFont') {
                 toggleFont();
+            } else if (action === 'toggleContrast') {
+                toggleContrast();
             }
             event.preventDefault();
             return;
@@ -101,6 +105,23 @@ function toggleFont() {
     }
 }
 
+function toggleContrast() {
+    const body = document.body;
+    body.classList.toggle("high-contrast");
+    const contrastText = document.getElementById("contrastText");
+
+    // Save contrast preference to localStorage
+    const isHighContrastEnabled = body.classList.contains("high-contrast");
+    localStorage.setItem("accessibility-contrast", isHighContrastEnabled ? "enabled" : "disabled");
+
+    // Update button text
+    if (isHighContrastEnabled) {
+        contrastText.innerHTML = `Disable high contrast`;
+    } else {
+        contrastText.innerHTML = `Enable high contrast`;
+    }
+}
+
 // Load saved font preference on page load
 function loadFontPreference() {
     const savedFont = localStorage.getItem("accessibility-font");
@@ -119,6 +140,28 @@ function loadFontPreference() {
         // Update button text if it exists
         if (fontText) {
             fontText.innerHTML = `Enable <span style="font-family: OpenDyslexic">OpenDyslexic</span>`;
+        }
+    }
+}
+
+// Load saved contrast preference on page load
+function loadContrastPreference() {
+    const savedContrast = localStorage.getItem("accessibility-contrast");
+    const body = document.body;
+    const contrastText = document.getElementById("contrastText");
+
+    if (savedContrast === "enabled") {
+        body.classList.add("high-contrast");
+        // Update button text if it exists
+        if (contrastText) {
+            contrastText.innerHTML = `Disable high contrast`;
+        }
+    } else {
+        // Handle default case (either "default" or null/undefined)
+        body.classList.remove("high-contrast");
+        // Update button text if it exists
+        if (contrastText) {
+            contrastText.innerHTML = `Enable high contrast`;
         }
     }
 }
