@@ -80,4 +80,4 @@ sphinx:
     - sphinx_image_inverter                          # Inverts images for dark mode https://teachbooks.io/manual/external/Sphinx-Image-Inverter/README.html
     - sphinx_code_examples                           # Adds code examples to your book https://teachbooks.io/manual/external/Sphinx-Code-Examples/MANUAL.html
     - sphinx_indexed_definitions                     # Adds indexed definitions to your book
-    - sphinx_iframes
+    - sphinx_accessibility                            # Adds accessibility features to your book
