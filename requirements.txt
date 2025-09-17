@@ -19,4 +19,4 @@ git+https://github.com/TeachBooks/Sphinx-Thebe
 git+https://github.com/TeachBooks/Sphinx-Proof
 git+https://github.com/TeachBooks/sphinx-exercise
 git+https://github.com/TeachBooks/sphinx-togglebutton
-git+https://github.com/TeachBooks/JupyterBook-Patches/tree/fix_downloads
+git+https://github.com/TeachBooks/JupyterBook-Patches@fix_downloads
