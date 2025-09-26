@@ -136,3 +136,4 @@ _build/
 
 # poetry files
 pyproject.toml
+book/_toc_with_local_paths.yml
