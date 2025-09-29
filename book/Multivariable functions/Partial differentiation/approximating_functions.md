@@ -1,6 +1,7 @@
 # NOTE: Approximating functions
 
-This section needs to be much earlier, preferably as the second section, as you need it for other sections
+This section needs to be much earlier, preferably as the second section, as you need it for other sections. Maybe it is okay if only tangent planes move to earlier paragraphs though.
+
 In this section we cover:
 
 - Tangent planes for graphs

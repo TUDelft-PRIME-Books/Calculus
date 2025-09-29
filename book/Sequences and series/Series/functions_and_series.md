@@ -7,7 +7,7 @@ In this section we cover:
 - Representation of functions as power series using geometric series
 - Rules of calculation (sums, substitutions, differentiation, integration, products)
 - Bessel functions???
-- Taylor series (including series of exponential, sine, cosine, logarithm, arctangent), including connection with Taylor polynomials
+- Taylor and MacLaurin series (including series of exponential, sine, cosine, logarithm, arctangent), including connection with Taylor polynomials
 - Analycity
 - Binomial series
 - Applications: limits, integrals
