@@ -12,6 +12,7 @@ parts:
     sections:
     - file: Algebra/Numbers/real_numbers.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersCartesian.md
+    - file: Algebra/Numbers/trigonometry.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersPolar.md
     - file: Algebra/Numbers/linear_systems_in_two_variables.md
   - file: Algebra/Vector algebra/introduction_vector_algebra.md
