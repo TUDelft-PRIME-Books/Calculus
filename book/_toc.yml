@@ -13,10 +13,10 @@ parts:
     - file: "Algebra/Numbers/introduction_numbers.md" # ref_graph: {'ignore':True}
       sections:
       - file: "Algebra/Numbers/real_numbers.md" # ref_graph: {'tag': 'Number systems'}
-      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md" # ref_graph: {'tag': 'Number systems'}
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md" # ref_graph: {'tag': 'Number systems','refs':['Algebra/Numbers/real_numbers.md']}
       - file: "Algebra/Numbers/trigonometry.md" # ref_graph: {'tag': 'Number systems'}
       - file: "Algebra/Numbers/coordinate_systems.md" # ref_graph: {'tag': 'Number systems'}
-      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersPolar.md" # ref_graph: {'tag': 'Number systems'}
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersPolar.md" # ref_graph: {'tag': 'Number systems','refs':['https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md']}
       - file: "Algebra/Numbers/linear_systems_in_two_variables.md" # ref_graph: {'tag': 'Number systems'}
       - file: "Algebra/Numbers/curves_in_R2.md" # ref_graph: {'tag': 'Number systems'}
       - file: "Algebra/Numbers/surfaces_in_R3.md" # ref_graph: {'tag': 'Number systems'}
