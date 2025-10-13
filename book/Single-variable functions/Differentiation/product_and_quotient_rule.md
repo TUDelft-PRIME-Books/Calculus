@@ -1,7 +1,7 @@
-# Product rule
+# Product and quotient rule
 
 In this section we cover
 
 - The product rule
-- The quotient rule (Willem: ook in titel?)
+- The quotient rule
 - Derivative of tan(x)

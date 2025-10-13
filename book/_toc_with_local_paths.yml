@@ -12,14 +12,19 @@ parts:
     sections:
     - file: Algebra/Numbers/real_numbers.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersCartesian.md
+    - file: Algebra/Numbers/trigonometry.md
+    - file: Algebra/Numbers/coordinate_systems.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersPolar.md
     - file: Algebra/Numbers/linear_systems_in_two_variables.md
+    - file: Algebra/Numbers/curves_in_R2.md
+    - file: Algebra/Numbers/surfaces_in_R3.md
   - file: Algebra/Vector algebra/introduction_vector_algebra.md
     sections:
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Vectors.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Inner_Product.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Cross_Product.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Lines_and_Planes.md
+    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter5/DeterminantsGeometric.md
   numbered: true
 - caption: Single-variable functions
   chapters:
@@ -27,19 +32,23 @@ parts:
     sections:
     - file: Single-variable functions/Functions/functions_of_one_variable.md
     - file: Single-variable functions/Functions/domain_range_and_graphs.md
-    - file: Single-variable functions/Functions/limits_and_continuity.md
-    - file: Single-variable functions/Functions/injectivity_and_surjectivity.md
+    - file: Single-variable functions/Functions/inverse_functions.md
     - file: Single-variable functions/Functions/nonlinear_equations_in_one_variable.md
+    - file: Single-variable functions/Functions/limits_in_point.md
+    - file: Single-variable functions/Functions/limits_at_infinity.md
+    - file: Single-variable functions/Functions/continuity.md
+    - file: Single-variable functions/Functions/rational_functions.md
   - file: Single-variable functions/Differentiation/introduction_differentiation.md
     sections:
-    - file: Single-variable functions/Differentiation/differentiability_and_derivatives.md
+    - file: Single-variable functions/Differentiation/differentiability.md
     - file: Single-variable functions/Differentiation/chain_rule.md
-    - file: Single-variable functions/Differentiation/product_rule.md
+    - file: Single-variable functions/Differentiation/product_and_quotient_rule.md
+    - file: Single-variable functions/Differentiation/graphs_and_derivatives.md
     - file: Single-variable functions/Differentiation/extrema_of_functions.md
-    - file: Single-variable functions/Differentiation/implicit_differentiation.md
+    - file: Single-variable functions/Differentiation/slope_of_curves_in_R2.md
+    - file: Single-variable functions/Differentiation/derivatives_of_inverse_functions.md
     - file: Single-variable functions/Differentiation/approximating_functions.md
     - file: Single-variable functions/Differentiation/l_hospitals_rule.md
-    - file: Single-variable functions/Differentiation/graphs_of_single_variable_functions.md
   - file: Single-variable functions/Integration/introduction_integration.md
     sections:
     - file: Single-variable functions/Integration/integrability_and_antiderivatives.md

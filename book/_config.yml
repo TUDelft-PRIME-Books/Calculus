@@ -28,9 +28,14 @@ sphinx:
   config:
     language: en
     sphinx_indexed_defs_indexed_nodes: ['strong']
+    new_tab_link_show_external_link_icon: true
     numfig_secnum_depth: 2
     text_replacements:
-      '{numref}`Chapter %s <Chapter:Determinants>`': "[the chapter on Determinants of the book Linear algebra](https://tudelft-prime-books.github.io/Linear-Algebra/Chapter5/intro.html)"
+      '# Cartesian form of complex numbers': "# Complex numbers"
+      '{numref}`Chapter %s <Chapter:Determinants>`': "{numref}`Section %s <Sec:DetGeometric>`"
+      '# Determinants as areas or volumes': "# Determinants"
+      'in {numref}`Subsection %s <Subsec:MatrixInv:DefInverse>` we saw': "in [Section 3.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter3/MatrixInverse.html) we will see"
+      'in {numref}`Section %s <Sec:DeterminantsViaCofactors>`': "in [Section 5.1 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter5/DeterminantsViaCofactors.html)"
     mathjax3_config:
       tex:
         inlineMath: [ ['$','$'], ['\(','\)'] ]
@@ -72,3 +77,4 @@ sphinx:
     - sphinx_indexed_definitions                     # Adds indexed definitions to your book
     - sphinx_ref_graph                               # Adds a graph of references to your book
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
+    - sphinx_new_tab_link
