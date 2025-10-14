@@ -1,1 +1,0 @@
-# Nonlinear equations in one variable

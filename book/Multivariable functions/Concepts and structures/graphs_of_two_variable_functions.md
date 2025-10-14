@@ -1,1 +1,0 @@
-# Graphs of two-variable functions

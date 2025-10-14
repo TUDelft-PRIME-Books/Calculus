@@ -1,1 +1,0 @@
-# Integrability and antiderivatives

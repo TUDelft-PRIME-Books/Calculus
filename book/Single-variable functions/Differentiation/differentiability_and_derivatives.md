@@ -1,1 +1,0 @@
-# Differentiability and derivatives

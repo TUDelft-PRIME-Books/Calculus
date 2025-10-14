@@ -1,1 +1,0 @@
-# Graphs of single-variable functions
