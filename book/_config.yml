@@ -21,7 +21,6 @@ only_build_toc_files: true
 
 html:
   baseurl :  "https://tudelft-prime-books.github.io/Calculus/"
-  use_multitoc_numbering: false
 
 sphinx:
   local_extensions:
@@ -77,4 +76,5 @@ sphinx:
     - sphinx_prime_applets                           # Adds the Prime applets to your book
     - sphinx_ref_graph                               # Adds a graph of references to your book
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
+    - sphinx_indexed_definitions
     - sphinx_new_tab_link

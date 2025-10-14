@@ -152,3 +152,13 @@ parts:
     chapters:
     - file: genindex.md # ref_graph: {'ignore':True}
     - file: credits.md # ref_graph: {'ignore':True}
+  - caption: Reference pages for development
+    numbered: False
+    chapters:
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/proofs.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/custom.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/executablebooks/sphinx-exercise/blob/main/docs/source/syntax.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/main/README.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md" # ref_graph: {'ignore':True}
