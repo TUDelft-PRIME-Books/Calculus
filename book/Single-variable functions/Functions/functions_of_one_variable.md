@@ -1,6 +1,6 @@
 # Functions of one variable
 
-In this function we cover:
+In this section we cover:
 
 - What is a function? (notation, (in)dependent variable)
 - Elemental functions (linear/quadratic/cubic,polynommials,power functions, rational functions, algebraic functions, exponential functions, trigonometric functions. NOT YET: logarithms and inverse trigonometric functions)
