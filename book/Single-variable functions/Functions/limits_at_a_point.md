@@ -1,4 +1,4 @@
-# Limits in a point
+# Limits at a point
 
 In this section we cover
 

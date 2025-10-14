@@ -1,4 +1,4 @@
-# NOTE: Curves and surfaces
+# Functions, curves and surfaces
 
 Seems a lot for one paragraph, maybe split it up in two (or more)? Also, parametric surfaces come rather early this way, shouldn't we just place together with the surface integrals?
 

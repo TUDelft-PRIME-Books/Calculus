@@ -2,8 +2,7 @@
 
 In this section we cover:
 
-- Linearization
-- Differentials
+- Linearisation
+- Approximating changes in function values
 - Taylor polynomials
 - Error estimation
-- Newton-Raphson method

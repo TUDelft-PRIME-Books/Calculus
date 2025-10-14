@@ -10,16 +10,13 @@ parts:
   - caption: Algebra
     numbered: True
     chapters:
-    - file: "Algebra/Numbers/introduction_numbers.md" # ref_graph: {'ignore':True}
+    - file: "Algebra/Numbers and coordinate systems/introduction_numbers_and_coordinate_systems.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Algebra/Numbers/real_numbers.md" # ref_graph: {'tag': 'Number systems'}
-      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md" # ref_graph: {'tag': 'Number systems','refs':['Algebra/Numbers/real_numbers.md']}
-      - file: "Algebra/Numbers/trigonometry.md" # ref_graph: {'tag': 'Number systems'}
-      - file: "Algebra/Numbers/coordinate_systems.md" # ref_graph: {'tag': 'Number systems'}
-      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersPolar.md" # ref_graph: {'tag': 'Number systems','refs':['https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md']}
-      - file: "Algebra/Numbers/linear_systems_in_two_variables.md" # ref_graph: {'tag': 'Number systems'}
-      - file: "Algebra/Numbers/curves_in_R2.md" # ref_graph: {'tag': 'Number systems'}
-      - file: "Algebra/Numbers/surfaces_in_R3.md" # ref_graph: {'tag': 'Number systems'}
+      - file: "Algebra/Numbers and coordinate systems/real_numbers.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
+      - file: "Algebra/Numbers and coordinate systems/trigonometry.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
+      - file: "Algebra/Numbers and coordinate systems/coordinate_systems.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
+      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersPolar.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
     - file: "Algebra/Vector algebra/introduction_vector_algebra.md" # ref_graph: {'ignore':True}
       sections:
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Vectors.md" # ref_graph: {'tag': 'Vector algebra'}
@@ -34,9 +31,10 @@ parts:
       sections:
       - file: "Single-variable functions/Functions/functions_of_one_variable.md"
       - file: "Single-variable functions/Functions/domain_range_and_graphs.md"
+      - file: "Single-variable functions/Functions/functions_and_curves.md"
       - file: "Single-variable functions/Functions/inverse_functions.md"
-      - file: "Single-variable functions/Functions/nonlinear_equations_in_one_variable.md"
-      - file: "Single-variable functions/Functions/limits_in_point.md"
+      - file: "Single-variable functions/Functions/nonlinear_equations_of_one_variable.md"
+      - file: "Single-variable functions/Functions/limits_at_a_point.md"
       - file: "Single-variable functions/Functions/limits_at_infinity.md"
       - file: "Single-variable functions/Functions/continuity.md"
       - file: "Single-variable functions/Functions/rational_functions.md"
@@ -45,18 +43,22 @@ parts:
       - file: "Single-variable functions/Differentiation/differentiability.md"
       - file: "Single-variable functions/Differentiation/chain_rule.md"
       - file: "Single-variable functions/Differentiation/product_and_quotient_rule.md"
-      - file: "Single-variable functions/Differentiation/graphs_and_derivatives.md"
-      - file: "Single-variable functions/Differentiation/extrema_of_functions.md"
+      - file: "Single-variable functions/Differentiation/graphs_and_derivatives_of_functions.md"
       - file: "Single-variable functions/Differentiation/slope_of_curves_in_R2.md"
       - file: "Single-variable functions/Differentiation/derivatives_of_inverse_functions.md"
+      - file: "Single-variable functions/Differentiation/extrema_of_functions.md"
       - file: "Single-variable functions/Differentiation/approximating_functions.md"
       - file: "Single-variable functions/Differentiation/l_hospitals_rule.md"
+      - file: "Single-variable functions/Differentiation/newton_raphson_methods.md"
     - file: "Single-variable functions/Integration/introduction_integration.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Single-variable functions/Integration/integrability_and_antiderivatives.md"
+      - file: "Single-variable functions/Integration/definite_integrals.md"
+      - file: "Single-variable functions/Integration/indefinite_integrals.md"
+      - file: "Single-variable functions/Integration/fundamental_theorem_of_calculus.md"
       - file: "Single-variable functions/Integration/substitution_rule.md"
       - file: "Single-variable functions/Integration/integration_by_parts.md"
-      - file: "Single-variable functions/Integration/partial_fraction_decomposition.md"
+      - file: "Single-variable functions/Integration/integration_of_rational_functions.md"
+      - file: "Single-variable functions/Integration/integration_of_trigonometric_functions.md"
       - file: "Single-variable functions/Integration/improper_integrals.md"
       - file: "Single-variable functions/Integration/approximating_integrals.md"
   - caption: Sequences and series
@@ -82,12 +84,10 @@ parts:
       sections:
       - file: "Multivariable functions/Concepts and structures/functions_of_two_or_more_variables.md"
       - file: "Multivariable functions/Concepts and structures/domain_range_and_graphs.md"
-      - file: "Multivariable functions/Concepts and structures/curves_and_surfaces.md"
+      - file: "Multivariable functions/Concepts and structures/functions_curves_and_surfaces.md"
       - file: "Multivariable functions/Concepts and structures/limits_and_continuity.md"
       - file: "Multivariable functions/Concepts and structures/level_curves_and_sets.md"
       - file: "Multivariable functions/Concepts and structures/nonlinear_systems_in_two_variables.md"
-      - file: "Multivariable functions/Concepts and structures/graphs_of_two_variable_functions.md"
-      - file: "Multivariable functions/Concepts and structures/coordinate_systems.md"
     - file: "Multivariable functions/Partial differentiation/introduction_partial_differentiation.md" # ref_graph: {'ignore':True}
       sections:
       - file: "Multivariable functions/Partial differentiation/differentiability_and_partial_derivatives.md"
@@ -128,24 +128,24 @@ parts:
     chapters:
     - file: "Overviews/Algebra/overviews_from_algebra.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Overviews/Algebra/algebraic_identities.md"
-      - file: "Overviews/Algebra/limits.md"
-      - file: "Overviews/Algebra/vector_identities.md"
+      - file: "Overviews/Algebra/algebraic_identities.md" # ref_graph: {'ignore':True}
+      - file: "Overviews/Algebra/limits.md" # ref_graph: {'ignore':True}
+      - file: "Overviews/Algebra/vector_identities.md" # ref_graph: {'ignore':True}
     - file: "Overviews/Single-variable functions/overviews_from_single_variable_functions.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Overviews/Single-variable functions/polynomials_and_power_functions.md"
-      - file: "Overviews/Single-variable functions/exponential_and_logarithmic_functions.md"
-      - file: "Overviews/Single-variable functions/trigonometric_functions.md"
-      - file: "Overviews/Single-variable functions/other_functions.md"
+      - file: "Overviews/Single-variable functions/polynomials_and_power_functions.md" # ref_graph: {'ignore':True}
+      - file: "Overviews/Single-variable functions/exponential_and_logarithmic_functions.md" # ref_graph: {'ignore':True}
+      - file: "Overviews/Single-variable functions/trigonometric_functions.md" # ref_graph: {'ignore':True}
+      - file: "Overviews/Single-variable functions/other_functions.md" # ref_graph: {'ignore':True}
     - file: "Overviews/Sequences and series/overviews_from_sequences_and_series.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Overviews/Sequences and series/special_sequences.md"
-      - file: "Overviews/Sequences and series/special_series.md"
+      - file: "Overviews/Sequences and series/special_sequences.md" # ref_graph: {'ignore':True}
+      - file: "Overviews/Sequences and series/special_series.md" # ref_graph: {'ignore':True}
     - file: "Overviews/Multivariable functions/overviews_from_multivariable_functions.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Overviews/Multivariable functions/common_curves.md"
-      - file: "Overviews/Multivariable functions/common_surfaces.md"
-      - file: "Overviews/Multivariable functions/integral_identities.md"
+      - file: "Overviews/Multivariable functions/common_curves.md" # ref_graph: {'ignore':True}
+      - file: "Overviews/Multivariable functions/common_surfaces.md" # ref_graph: {'ignore':True}
+      - file: "Overviews/Multivariable functions/integral_identities.md" # ref_graph: {'ignore':True}
   - caption: Back matter
     numbered: False
     chapters:

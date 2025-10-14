@@ -1,4 +1,4 @@
-# Graphs and derivatives
+# Graphs and derivatives of functions
 
 In this section we cover:
 

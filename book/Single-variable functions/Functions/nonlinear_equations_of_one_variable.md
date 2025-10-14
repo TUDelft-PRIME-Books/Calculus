@@ -1,4 +1,4 @@
-# Nonlinear equations in one variable
+# Nonlinear equations of one variable
 
 In this section we cover:
 
@@ -6,4 +6,3 @@ In this section we cover:
 - Equations involving rational/algebraic functions
 - Equations involving exponential/logarithmic functions
 - Equations involving trigonometric functions.
-- Intermediate value theorem (Willem: ofwel hier, ofwel bij Limits and Continuity)

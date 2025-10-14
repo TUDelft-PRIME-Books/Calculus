@@ -1,4 +1,4 @@
-# Curves in $\mathbb{R}^2$
+# Functions and curves
 
 - Ellipse
 - Hyperbola

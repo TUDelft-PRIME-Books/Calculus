@@ -8,3 +8,4 @@ In this section we cover
 - Equations (including quadratic)
 - Absolute values
 - Inequalities (including quadratics and absolute values)
+- Linear systems of two variables (solving by "row" reduction, not by back substitution)
