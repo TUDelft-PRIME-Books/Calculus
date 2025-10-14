@@ -26,6 +26,7 @@ parts:
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter5/DeterminantsGeometric.md" # ref_graph: {'tag': 'Vector algebra'}
   - caption: Single-variable functions
     numbered: True
+    numbering_restart: true
     chapters: 
     - file: "Single-variable functions/Functions/introduction_functions.md" # ref_graph: {'ignore':True}
       sections:

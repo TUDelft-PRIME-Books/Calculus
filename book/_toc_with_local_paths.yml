@@ -1,11 +1,6 @@
 # ToC file with localized paths. Used for Teachbooks' external content feature.
 format: jb-book
 parts:
-- caption: Front matter
-  chapters:
-  - file: introduction.md
-  - file: graph_of_content.md
-  numbered: false
 - caption: Algebra
   chapters:
   - file: Algebra/Numbers and coordinate systems/introduction_numbers_and_coordinate_systems.md
