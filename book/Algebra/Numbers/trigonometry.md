@@ -1,9 +1,34 @@
 # Trigonometry
+
+**Thales's theorem**
+```{figure} Images/thales.png
+---
+width: 50%
+name: Thales
+align: center
+---
+Thales's theorem
+```
+::::::{prf:theorem}
+:label: Thm.Thales
+If $AB$ is a diameter of a circle and $C$ is an arbitrary point on the circle, not equal to $A$ or $B$, then the angle $ACB$ equals $90^{\circ}$.
+::::::
+
+::::::{prf:proof} Consider the angles $\alpha$ and $\beta$ as indicated in the picture above. Since the triangle $AMC$ is isosceles ($AM$ and $MC$ are both equal to the radius of the circle), we have: $\angle ACM=\alpha$. Likewise, the triangle $BMC$ is isosceles ($BM$ and $MC$ are both equal to the radius of the circle) and therefore: $\angle BCM=\beta$. So, we have to prove that $\alpha+\beta$ equals $90^{\circ}$.
+
+Now we have: $\angle AMC=180^{\circ}-2\alpha$ and $\angle BMC=180^{\circ}-2\beta$. Further we have: 
+$\angle AMC=\angle BMC=180^{\circ}$. Hence:
+```{math}
+180^{\circ}-2\alpha+180^{\circ}-2\beta=180^{\circ}\quad\Longleftrightarrow\quad 180^{\circ}-2\alpha-2\beta=0
+\quad\Longleftrightarrow\quad\alpha+\beta=90^{\circ}.
+```
+::::::
+
 Angles can be measured in degrees or in radians (abbreviated as rad). The angle given by a complete revolution contains $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
 
 $$\pi\;\text{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\text{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\text{rad}.$$ 
 
-In calculus we use radians to measure angles except when otherwise indicated.
+In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out the "rad".
 
 ```{figure} Images/trig.png
 ---
@@ -14,9 +39,9 @@ align: left
 The angle $\theta$
 ```
 
-The standard position of an angle occurs when we place its vertex at the origin of a coordinate system and its initial side on the positive $x$-axis. A <b>positive</b> angle is obtained by rotating the initial side counterclockwise until it coincides with the terminal side. Likewise, <b>negative</b> angles are obtained by clockwise rotation.
+The standard position of an angle occurs when we place its vertex at the origin of a coordinate system and its initial side on the positive $x$-axis. A **positive** angle is obtained by rotating the initial side counterclockwise until it coincides with the terminal side. Likewise, **negative** angles are obtained by clockwise rotation.
 
-<br /><br />
+<br /><br /><br />
 
 For a general angle $\theta$ in standard position we let $P(x,y)$ be any point on the terminal side of $\theta$ and we let $r>0$ be the distance between $O$ and $P$. Then we define:
 
@@ -59,7 +84,7 @@ The area of the large square is $(a+b)^2$ and that of the small square is $c^2$.
 ```
 ::::::
 
-The <em>law of cosines</em> is a generalization of the Pythagorean theorem:
+The *law of cosines* is a generalization of the Pythagorean theorem:
 ```{figure} Images/sincosrule.png
 ---
 width: 50%
@@ -83,7 +108,7 @@ a^2=b^2+c^2-2bc\cos(\alpha).
 ```
 ::::::
 
-Further we have the <em>law of sines</em>:
+Further we have the *law of sines*:
 
 ::::::{prf:theorem} 
 In an arbitrary triangle as in the figure above we have: $\dfrac{a}{\sin(\alpha)}=\dfrac{b}{\sin(\beta)}$.
@@ -106,7 +131,7 @@ $\dfrac{c}{\sin(\gamma)}=2r$ with $r$ the radius of the circumscribed circle of 
 ::::::
 
 ::::::{prf:proof} 
-Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to the theorem of Thales the triangle $ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have: $\gamma=\delta$. Then we have:
+Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to Thales's theorem {prf:ref}`Thm:Thales` the triangle $ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have: $\gamma=\delta$. Then we have:
 ```{math}
 \sin(\gamma)=\sin(\delta)=\frac{c}{2r}\quad\Longleftrightarrow\quad\frac{c}{\sin(\gamma)}=2r.
 ```
@@ -226,6 +251,7 @@ Show that $1+\tan^2(x)=\dfrac{1}{\cos^2(x)}$.
 ```
 
 :::{admonition} Solution of exercise 1
+:class: solution, dropdown
 $\sin^2(x)+\cos^2(x)=1\quad\Longleftrightarrow\quad\dfrac{\sin^2(x)}{\cos^2(x)}+\dfrac{\cos^2(x)}{\cos^2(x)}=\dfrac{1}{\cos^2(x)}\quad\Longleftrightarrow\quad\tan^2(x)+1=\dfrac{1}{\cos^2(x)}$.
 :::
 
@@ -235,6 +261,7 @@ Show that $1+\dfrac{1}{\tan^2(x)}=\dfrac{1}{\sin^2(x)}$.
 ```
 
 :::{admonition} Solution of exercise 2
+:class: solution, dropdown
 $\sin^2(x)+\cos^2(x)=1\quad\Longleftrightarrow\quad\dfrac{\sin^2(x)}{\sin^2(x)}+\dfrac{\cos^2(x)}{\sin^2(x)}=\dfrac{1}{\sin^2(x)}\quad\Longleftrightarrow\quad1+\dfrac{1}{\tan^2(x)}=\dfrac{1}{\sin^2(x)}$.
 :::
 
@@ -244,6 +271,7 @@ Show that $2\sin(x+y)\cos(x-y)=\sin(2x)+\sin(2y)$.
 ```
 
 :::{admonition} Solution of exercise 3
+:class: solution, dropdown
 Using $\sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)$ and $\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y)$ we obtain
 ```{math}
 \begin{align*}
@@ -264,6 +292,7 @@ Show that $2\cos(x+y)\sin(x-y)=\sin(2x)-\sin(2y)$.
 ```
 
 :::{admonition} Solution of exercise 4
+:class: solution, dropdown
 Using $\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$ and $\sin(x-y)=\sin(x)\cos(y)-\cos(x)\sin(y)$ we obtain
 ```{math}
 \begin{align*}
@@ -284,6 +313,7 @@ Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the ex
 ```
 
 :::{admonition} Solution of exercise 5
+:class: solution, dropdown
 ```{math}
 \begin{align*}
 \sin(\tfrac{1}{12}\pi)=\sin(\tfrac{1}{3}\pi-\tfrac{1}{4}\pi)&=\sin(\tfrac{1}{3}\pi)\cos(\tfrac{1}{4}\pi)-\cos(\tfrac{1}{3}\pi)\sin(\tfrac{1}{4}\pi)\\
@@ -298,6 +328,7 @@ Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the ex
 ```
 
 :::{admonition} Solution of exercise 6
+:class: solution, dropdown
 ```{math}
 \begin{align*}
 \cos(\tfrac{1}{12}\pi)=\cos(\tfrac{1}{3}\pi-\tfrac{1}{4}\pi)&=\cos(\tfrac{1}{3}\pi)\cos(\tfrac{1}{4}\pi)+\sin(\tfrac{1}{3}\pi)\sin(\tfrac{1}{4}\pi)\\
@@ -312,6 +343,7 @@ Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the ex
 ```
 
 :::{admonition} Solution of exercise 7
+:class: solution, dropdown
 ```{math}
 \begin{align*}
 \sin(\tfrac{5}{12}\pi)=\sin(\tfrac{1}{6}\pi+\tfrac{1}{4}\pi)&=\sin(\tfrac{1}{6}\pi)\cos(\tfrac{1}{4}\pi)+\cos(\tfrac{1}{6}\pi)\sin(\tfrac{1}{4}\pi)\\
@@ -326,6 +358,7 @@ Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the ex
 ```
 
 :::{admonition} Solution of exercise 8
+:class: solution, dropdown
 ```{math}
 \begin{align*}
 \cos(\tfrac{5}{12}\pi)=\cos(\tfrac{1}{6}\pi+\tfrac{1}{4}\pi)&=\cos(\tfrac{1}{6}\pi)\cos(\tfrac{1}{4}\pi)-\sin(\tfrac{1}{6}\pi)\sin(\tfrac{1}{4}\pi)\\
@@ -340,6 +373,7 @@ Let $a=\cos(\frac{1}{5}\pi)$ and $b=\cos(\frac{2}{5}\pi)$. Use $\cos(2x)=2\cos^2
 ```
 
 :::{admonition} Solution of exercise 9
+:class: solution, dropdown
 ```{math}
 \cos(\tfrac{2}{5}\pi)=2\cos^2(\tfrac{1}{5}\pi)-1\quad\Longleftrightarrow\quad b=2a^2-1
 ```
@@ -363,6 +397,7 @@ Use the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ the exact 
 ```
 
 :::{admonition} Solution of exercise 10
+:class: solution, dropdown
 Using the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ for $x=\frac{1}{8}\pi$ we find
 ```{math}
 1=\tan(\tfrac{1}{4}\pi)=\frac{2\tan(\frac{1}{8}\pi)}{1-\tan^2(\frac{1}{8}\pi)}\quad\Longleftrightarrow\quad1-\tan^2(\tfrac{1}{8}\pi)=2\tan(\tfrac{1}{8}\pi)\quad\Longleftrightarrow\quad\tan^2(\tfrac{1}{8}\pi)+2\tan(\tfrac{1}{8}\pi)-1=0.
@@ -390,6 +425,7 @@ align: center
 ```
 
 :::{admonition} Solution of exercise 11
+:class: solution, dropdown
 In each of the three equilateral triangles we use a rectangular triangle being half of it to find that $\cos(\frac{1}{7}\pi)=\dfrac{x+y}{2x}$, $\cos(\frac{2}{7}\pi)=\dfrac{x}{2y}$ and $\cos(\frac{3}{7}\pi)=\dfrac{y}{2(x+y)}$. This implies that
 ```{math}
 \cos(\frac{1}{7}\pi)\cos(\frac{2}{7}\pi)\cos(\frac{3}{7}\pi)=\frac{x+y}{2x}\cdot\frac{x}{2y}\cdot\frac{y}{2(x+y)}=\frac{1}{8}.
@@ -402,6 +438,7 @@ Let $\alpha=\frac{1}{7}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos
 ```
 
 :::{admonition} Solution of exercise 12
+:class: solution, dropdown
 Multiply and divide by $2\sin(\alpha)$ to find
 ```{math}
 \cos(\alpha)\cos(2\alpha)\cos(3\alpha)=\frac{\sin(2\alpha)\cos(2\alpha)\cos(3\alpha)}{2\sin(\alpha)}=\frac{\sin(4\alpha)\cos(3\alpha)}{4\sin(\alpha)}=\frac{\sin(7\alpha)+\sin(\alpha)}{8\sin(\alpha)}=\frac{1}{8},
@@ -415,6 +452,7 @@ Let $\alpha=\frac{1}{5}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos
 ```
 
 :::{admonition} Solution of exercise 13
+:class: solution, dropdown
 Multiply and divide by $2\sin(\alpha)$ to find
 ```{math}
 \begin{align*}
@@ -431,6 +469,7 @@ Let $\alpha=\frac{1}{7}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos
 ```
 
 :::{admonition} Solution of exercise 14
+:class: solution, dropdown
 Multiply and divide by $2\sin(\alpha)$ to find
 ```{math}
 \begin{align*}
@@ -448,6 +487,7 @@ Show that $\dfrac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan(\frac
 ```
 
 :::{admonition} Solution of exercise 15
+:class: solution, dropdown
 Setting $x+y=\alpha$ and $x-y=\beta$ in $\sin(x+y)+\sin(x-y)=2\sin(x)\cos(y)$ and $\cos(x+y)+\cos(x-y)=2\cos(x)\cos(y)$, we obtain $x=\dfrac{\alpha+\beta}{2}$ and $y=\dfrac{\alpha-\beta}{2}$ and therefore
 ```{math}
 \sin(\alpha)+\sin(\beta)=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\quad\text{and}\quad
