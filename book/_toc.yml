@@ -26,7 +26,6 @@ parts:
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter5/DeterminantsGeometric.md" # ref_graph: {'tag': 'Vector algebra'}
   - caption: Single-variable functions
     numbered: True
-    numbering_restart: true
     chapters: 
     - file: "Single-variable functions/Functions/introduction_functions.md" # ref_graph: {'ignore':True}
       sections:
@@ -64,6 +63,7 @@ parts:
       - file: "Single-variable functions/Integration/approximating_integrals.md"
   - caption: Sequences and series
     numbered: true
+    style: "alphaupper"
     chapters:
     - file: "Sequences and series/Sequences/introduction_sequences.md" # ref_graph: {'ignore':True}
       sections:
@@ -126,6 +126,8 @@ parts:
       - file: "Differential equations/Second-order ordinary differential equations/inhomogeneous_problems_with_constant_coefficients.md"
   - caption: Appendices
     numbered: true
+    style: [alphaupper,alphalower]
+    restart_numbering: True
     chapters:
     - file: "Overviews/Algebra/overviews_from_algebra.md" # ref_graph: {'ignore':True}
       sections:

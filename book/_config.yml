@@ -21,6 +21,7 @@ only_build_toc_files: true
 
 html:
   baseurl :  "https://tudelft-prime-books.github.io/Calculus/"
+  use_multitoc_numbering: false
 
 sphinx:
   local_extensions:
@@ -28,6 +29,7 @@ sphinx:
   config:
     language: en
     sphinx_indexed_defs_indexed_nodes: ['strong']
+    tud_change_titlesize: true
     new_tab_link_show_external_link_icon: true
     numfig_secnum_depth: 2
     text_replacements:

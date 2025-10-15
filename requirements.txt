@@ -1,7 +1,7 @@
 # first list the packages you wish to download from PyPI
 teachbooks == 0.2.2 # depends on jupyter-book
 
-sphinx-tudelft-theme == 1.1.10
+sphinx-tudelft-theme == 1.1.15
 teachbooks-sphinx-grasple == 1.2.5
 sphinx-prime-applets == 1.0.6
 sphinx-indexed-definitions == 1.0.4
@@ -10,3 +10,4 @@ sphinx-new-tab-link == 0.8.0
 
 # Our favourite Sphinx extensions in one line, replace with individual extensions if you prefer some extensions not to be included (https://github.com/TeachBooks/TeachBooks-Favourites)
 git+https://github.com/TeachBooks/TeachBooks-Favourites
+git+https://github.com/TeachBooks/sphinx-external-toc
