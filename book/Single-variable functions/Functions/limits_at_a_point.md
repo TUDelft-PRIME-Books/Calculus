@@ -48,7 +48,7 @@ Similarly, if $f$ is defined for values of $x>a$ close to $a$, we say that the *
 
 For the left and right limits, several different notation is used throughout the literature. Here, we will stick to the notation used above, but, for completeness, we will list the alternative notation here as well.
 
-::::::{prf:definition}
+::::::{prf:notation}
 :label: Notation:LimitatPoint:Leftrightlimit
 
 $$
