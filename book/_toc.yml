@@ -126,6 +126,7 @@ parts:
       - file: "Differential equations/Second-order ordinary differential equations/inhomogeneous_problems_with_constant_coefficients.md"
   - caption: Appendices
     numbered: true
+    style: alphaupper
     chapters:
     - file: "Overviews/Algebra/overviews_from_algebra.md" # ref_graph: {'ignore':True}
       sections:
@@ -153,7 +154,8 @@ parts:
     - file: genindex.md # ref_graph: {'ignore':True}
     - file: credits.md # ref_graph: {'ignore':True}
   - caption: Reference pages for development
-    numbered: False
+    numbered: True
+    style: romanupper
     chapters:
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md" # ref_graph: {'ignore':True}
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/proofs.md" # ref_graph: {'ignore':True}
