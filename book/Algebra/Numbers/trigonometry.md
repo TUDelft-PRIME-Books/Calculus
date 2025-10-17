@@ -236,8 +236,10 @@ h^2&=b^2-e^2=b^2-\frac{(b^2+c^2-a^2)^2}{4c^2}=\frac{4b^2c^2-(b^2+c^2-a^2)^2}{4c^
 ```
 Now the area of the triangle equals $\frac{1}{2}ch$ which reads
 ```{math}
-\frac{c}{2}\sqrt{\frac{(b-c+a)(b-c-a)(a+b-c)(a-b+c)}{4c^2}}
-=\frac{1}{4}\sqrt{(b-c+a)(b-c-a)(a+b-c)(a-b+c)}.
+\begin{align*}
+&\frac{c}{2}\sqrt{\frac{(b-c+a)(b-c-a)(a+b-c)(a-b+c)}{4c^2}}\\
+&{}\quad{}=\frac{1}{4}\sqrt{(b-c+a)(b-c-a)(a+b-c)(a-b+c)}.
+\end{align*}
 ```
 Let $s=\dfrac{a+b+c}{2}$, then: $s-a=\dfrac{b+c-a}{2}$, $s-b=\dfrac{a+c-b}{2}$ and $s-c=\dfrac{a+b-c}{2}$. Now we conclude that the area of the triangle equals
 ```{math}
@@ -385,28 +387,34 @@ Subtracting we obtain $a+b=2a^2-2b^2=2(a+b)(a-b)$, which implies that $1=2(a-b)$
 ```{math}
 a-\tfrac{1}{2}=2a^2-1\quad\Longleftrightarrow\quad4a^2-4a-1=0\quad\Longleftrightarrow\quad(2a-\tfrac{1}{2})^2=\tfrac{5}{4}\quad\Longleftrightarrow\quad a=\tfrac{1}{2}(1\pm\sqrt{5}). 
 ```
-Since $a=\cos(\frac{1}{5}\pi)>0$, we conclude that $a=\frac{1}{4}(1+\sqrt{5})$. This implies that $b=a-\frac{1}{2}=\frac{1}{4}(\sqrt{5}-1)$. We conclude that
-```{math}
-\cos(\tfrac{1}{5}\pi)=\tfrac{1}{4}(1+\sqrt{5}),\quad\cos(\tfrac{2}{5}\pi)=\tfrac{1}{4}(\sqrt{5}-1),\quad\cos(\tfrac{3}{5}\pi)=-\cos(\tfrac{2}{5}\pi)=\tfrac{1}{4}(1-\sqrt{5})\quad\text{and}\quad\cos(\tfrac{4}{5}\pi)=-\cos(\tfrac{1}{5}\pi)=-\tfrac{1}{4}(1+\sqrt{5}).
+Since $a=\cos(\frac{1}{5}\pi)>0$, we conclude that $a=\frac{1}{4}(1+\sqrt{5})$. This implies that $b=a-\frac{1}{2}=\frac{1}{4}(\sqrt{5}-1)$. We conclude that $\cos(\frac{1}{5}\pi)=\frac{1}{4}(1+\sqrt{5})$, $\cos(\frac{2}{5}\pi)=\frac{1}{4}(\sqrt{5}-1)$, $\cos(\frac{3}{5}\pi)=-\cos(\frac{2}{5}\pi)=\frac{1}{4}(1-\sqrt{5})$ and $\cos(\frac{4}{5}\pi)=-\cos(\frac{1}{5}\pi)=-\frac{1}{4}(1+\sqrt{5})$.
 ```
 :::
 
 ```{exercise} 
 :label: exercise 10
-Use the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ the exact values of $\tan(\frac{1}{8}\pi)$ and $\tan(\frac{3}{8}\pi)$.
+Use the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ to find the exact values of $\tan(\frac{1}{8}\pi)$ and $\tan(\frac{3}{8}\pi)$.
 ```
 
 :::{admonition} Solution of exercise 10
 :class: solution, dropdown
 Using the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ for $x=\frac{1}{8}\pi$ we find
 ```{math}
-1=\tan(\tfrac{1}{4}\pi)=\frac{2\tan(\frac{1}{8}\pi)}{1-\tan^2(\frac{1}{8}\pi)}\quad\Longleftrightarrow\quad1-\tan^2(\tfrac{1}{8}\pi)=2\tan(\tfrac{1}{8}\pi)\quad\Longleftrightarrow\quad\tan^2(\tfrac{1}{8}\pi)+2\tan(\tfrac{1}{8}\pi)-1=0.
+\begin{align*}
+1=\tan(\tfrac{1}{4}\pi)=\frac{2\tan(\frac{1}{8}\pi)}{1-\tan^2(\frac{1}{8}\pi)}
+&\quad\Longleftrightarrow\quad1-\tan^2(\tfrac{1}{8}\pi)=2\tan(\tfrac{1}{8}\pi)\\
+&\quad\Longleftrightarrow\quad\tan^2(\tfrac{1}{8}\pi)+2\tan(\tfrac{1}{8}\pi)-1=0.
+\end{align*}
 ```
 Hence: $(\tan(\frac{1}{8}\pi)+1)^2-2=0$ or equivalently $\tan(\frac{1}{8}\pi)=-1\pm\sqrt{2}$. Since $\tan(\frac{1}{8}\pi)>0$, we conclude that $\cos(\frac{1}{8}\pi)=-1+\sqrt{2}$.
 
 Similarly, for $x=\frac{3}{8}\pi$ we obtain
 ```{math}
--1=\tan(\tfrac{3}{4}\pi)=\frac{2\tan(\frac{3}{8}\pi)}{1-\tan^2(\frac{3}{8}\pi)}\quad\Longleftrightarrow\quad-1+\tan^2(\tfrac{3}{8}\pi)=2\tan(\tfrac{3}{8}\pi)\quad\Longleftrightarrow\quad\tan^2(\tfrac{3}{8}\pi)-2\tan(\tfrac{3}{8}\pi)-1=0.
+\begin{align*}
+-1=\tan(\tfrac{3}{4}\pi)=\frac{2\tan(\frac{3}{8}\pi)}{1-\tan^2(\frac{3}{8}\pi)}
+&\quad\Longleftrightarrow\quad-1+\tan^2(\tfrac{3}{8}\pi)=2\tan(\tfrac{3}{8}\pi)\\
+&\quad\Longleftrightarrow\quad\tan^2(\tfrac{3}{8}\pi)-2\tan(\tfrac{3}{8}\pi)-1=0.
+\end{align*}
 ```
 Hence: $(\tan(\frac{3}{8}\pi)-1)^2-2=0$ or equivalently $\tan(\frac{3}{8}\pi)=1\pm\sqrt{2}$. Since $\tan(\frac{3}{8}\pi)>0$, we conclude that $\cos(\frac{3}{8}\pi)=1+\sqrt{2}$.
 :::
@@ -428,7 +436,7 @@ align: center
 :class: solution, dropdown
 In each of the three equilateral triangles we use a rectangular triangle being half of it to find that $\cos(\frac{1}{7}\pi)=\dfrac{x+y}{2x}$, $\cos(\frac{2}{7}\pi)=\dfrac{x}{2y}$ and $\cos(\frac{3}{7}\pi)=\dfrac{y}{2(x+y)}$. This implies that
 ```{math}
-\cos(\frac{1}{7}\pi)\cos(\frac{2}{7}\pi)\cos(\frac{3}{7}\pi)=\frac{x+y}{2x}\cdot\frac{x}{2y}\cdot\frac{y}{2(x+y)}=\frac{1}{8}.
+\cos(\tfrac{1}{7}\pi)\cos(\tfrac{2}{7}\pi)\cos(\tfrac{3}{7}\pi)=\frac{x+y}{2x}\cdot\frac{x}{2y}\cdot\frac{y}{2(x+y)}=\frac{1}{8}.
 ```
 :::
 
@@ -483,18 +491,128 @@ since $\sin(6\alpha)=\sin(\alpha)$ for $\alpha=\frac{1}{7}\pi$.
 
 ```{exercise} 
 :label: exercise 15
-Show that $\dfrac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan(\frac{\alpha+\beta}{2})$ for $\alpha+\beta\neq\pi$ (mod $2\pi$).
+Show that $\displaystyle\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right)$ for $\alpha+\beta\neq\pi$ (mod $2\pi$).
 ```
 
 :::{admonition} Solution of exercise 15
 :class: solution, dropdown
 Setting $x+y=\alpha$ and $x-y=\beta$ in $\sin(x+y)+\sin(x-y)=2\sin(x)\cos(y)$ and $\cos(x+y)+\cos(x-y)=2\cos(x)\cos(y)$, we obtain $x=\dfrac{\alpha+\beta}{2}$ and $y=\dfrac{\alpha-\beta}{2}$ and therefore
 ```{math}
-\sin(\alpha)+\sin(\beta)=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)\quad\text{and}\quad
+\sin(\alpha)+\sin(\beta)=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)
+```
+and
+```{math}
 \cos(\alpha)+\cos(\beta)=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right),
 ```
 which implies that
 ```{math}
-\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right),\quad\alpha+\beta\ne\pi\;\text{(mod $2\pi$)}.
+\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right),\quad\alpha+\beta\neq\pi\quad(\text{mod}\;2\pi).
+```
+:::
+
+In the exercises below we consider an arbitrary triangle $ABC$ with vertices $A$, $B$ and $C$, sides $a$, $b$ and $c$, and angles $\alpha$, $\beta$ and $\gamma$ as indicated.
+
+```{figure} Images/abctriangle.png
+---
+width: 50%
+name: Triangle $ABC$
+align: center
+---
+```
+
+```{exercise} 
+:label: exercise 16
+Show that $a\sin(\beta-\gamma)+b\sin(\gamma-\alpha)+c\sin(\alpha-\beta)=0$.
+```
+
+:::{admonition} Solution of exercise 16
+:class: solution, dropdown
+Use the law of sines $\dfrac{a}{\sin(\alpha)}=\dfrac{b}{\sin(\beta)}=\dfrac{c}{\sin(\gamma)}=d$, where $d$ denotes the diameter of the circumscribed circle, to obtain
+```{math}
+\begin{align*}
+&a\sin(\beta-\gamma)+b\sin(\gamma-\alpha)+c\sin(\alpha-\beta)\\
+&=d\sin(\alpha)\sin(\beta-\gamma)+d\sin(\beta)\sin(\gamma-\alpha)+d\sin(\gamma)\sin(\alpha-\beta)\\
+&=d\sin(\pi-\alpha)\sin(\beta-\gamma)+d\sin(\pi-\beta)\sin(\gamma-\alpha)+d\sin(\pi-\gamma)\sin(\alpha-\beta)\\
+&=d\sin(\beta+\gamma)\sin(\beta-\gamma)+d\sin(\gamma+\alpha)\sin(\gamma-\alpha)+d\sin(\alpha+\beta)\sin(\alpha-\beta)\\
+&=d\left(\sin^2(\beta)-\sin^2(\gamma)+\sin^2(\gamma)-\sin^2(\alpha)+\sin^2(\alpha)-\sin^2(\beta)\right)=0.
+\end{align*}
+```
+:::
+
+```{exercise} 
+:label: exercise 17
+Show that $\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)=2+2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
+```
+
+:::{admonition} Solution of exercise 17
+:class: solution, dropdown
+```{math}
+\begin{align*}
+&\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)\\
+&=1-\cos^2(\alpha)+1-\cos^2(\beta)+\sin^2(\gamma)
+=2-\left(\cos^2(\alpha)-\sin^2(\gamma)\right)-\cos^2(\beta)\\
+&=2-\cos(\alpha+\gamma)\cos(\alpha-\gamma)-\cos^2(\beta)=2+\cos(\beta)\cos(\alpha-\gamma)-\cos^2(\beta)\\
+&=2+\cos(\beta)\left(\cos(\alpha-\gamma)-\cos(\beta)\right)=2+\cos(\beta)\left(\cos(\alpha-\gamma)+\cos(\alpha+\gamma)\right)\\
+&=2+2\cos(\alpha)\cos(\beta)\cos(\gamma).
+\end{align*}
+```
+Note that this implies that a triangle with angles $\alpha$, $\beta$ and $\gamma$ is a right-angled triangle if and only if $\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)=2$ since then $\cos(\alpha)=0$, $\cos(\beta)=0$ or $\cos(\gamma)=0$.
+:::
+
+```{exercise} 
+:label: exercise 18
+Show that $\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1-2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
+```
+
+:::{admonition} Solution of exercise 18
+:class: solution, dropdown
+```{math}
+\begin{align*}
+&\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)\\
+&=1-\sin^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)
+=1+\left(\cos^2(\beta)-\sin^2(\alpha)\right)+\cos^2(\gamma)\\
+&=1+\cos(\beta+\alpha)\cos(\beta-\alpha)+\cos^2(\gamma)=1-\cos(\gamma)\cos(\beta-\alpha)+\cos^2(\gamma)\\
+&=1-\cos(\gamma)\left(\cos(\beta-\alpha)-\cos(\gamma)\right)=1-\cos(\gamma)\left(\cos(\beta-\alpha)+\cos(\beta+\alpha)\right)\\
+&=1-2\cos(\alpha)\cos(\beta)\cos(\gamma).
+\end{align*}
+```
+Note that this implies that a triangle with angles $\alpha$, $\beta$ and $\gamma$ is a right-angled triangle if and only if $\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1$ since then $\cos(\alpha)=0$, $\cos(\beta)=0$ or $\cos(\gamma)=0$.
+:::
+
+```{exercise} 
+:label: exercise 19
+Show that $\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)=4\sin(\alpha)\sin(\beta)\sin(\gamma)$.
+```
+
+:::{admonition} Solution of exercise 19
+:class: solution, dropdown
+```{math}
+\begin{align*}
+\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)&=2\sin(\alpha+\beta)\cos(\alpha-\beta)+\sin(2\gamma)\\
+&=2\sin(\gamma)\cos(\alpha-\beta)+2\sin(\gamma)\cos(\gamma)\\
+&=2\sin(\gamma)\left(\cos(\alpha-\beta)+\cos(\gamma)\right)\\
+&=2\sin(\gamma)\left(\cos(\alpha-\beta)-\cos(\alpha+\beta)\right)\\
+&=4\sin(\alpha)\sin(\beta)\sin(\gamma).
+\end{align*}
+```
+:::
+
+```{exercise} 
+:label: exercise 20
+Show that $\tan(\alpha)+\tan(\beta)+\tan(\gamma)=\tan(\alpha)\tan(\beta)\tan(\gamma)$.
+```
+
+:::{admonition} Solution of exercise 20
+:class: solution, dropdown
+Note that $\tan(\gamma)=\tan(\pi-\alpha-\beta)=-\tan(\alpha+\beta)=-\dfrac{\tan(\alpha)+\tan(\beta)}{1-\tan(\alpha)\tan(\beta)}$. Hence we have:
+```{math}
+\begin{align*}
+\tan(\alpha)+\tan(\beta)+\tan(\gamma)&=\tan(\alpha)+\tan(\beta)-\frac{\tan(\alpha)+\tan(\beta)}{1-\tan(\alpha)\tan(\beta)}\\
+&=\left(\tan(\alpha)+\tan(\beta)\right)\left(1-\frac{1}{1-\tan(\alpha)\tan(\beta)}\right)\\
+&=\left(\tan(\alpha)+\tan(\beta)\right)\frac{1-\tan(\alpha)\tan(\beta)-1}{1-\tan(\alpha)\tan(\beta)}\\
+&=\left(\tan(\alpha)+\tan(\beta)\right)\left(\frac{-\tan(\alpha)\tan(\beta)}{1-\tan(\alpha)\tan(\beta)}\right)\\
+&=\tan(\alpha)\tan(\beta)\left(-\frac{\tan(\alpha)+\tan(\beta)}{1-\tan(\alpha)\tan(\beta)}\right)\\
+&=\tan(\alpha)\tan(\beta)\tan(\gamma).
+\end{align*}
 ```
 :::
