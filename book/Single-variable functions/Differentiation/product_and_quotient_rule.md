@@ -1,3 +1,5 @@
+(Section:DiffProdQuot)=
+
 # Product and quotient rule
 
 In this section we cover
