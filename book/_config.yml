@@ -28,6 +28,7 @@ sphinx:
   config:
     language: en
     sphinx_indexed_defs_indexed_nodes: ['strong']
+    tud_change_titlesize: true
     new_tab_link_show_external_link_icon: true
     numfig_secnum_depth: 2
     text_replacements:
@@ -74,7 +75,7 @@ sphinx:
     - teachbooks_favourites
     - teachbooks_sphinx_grasple                      # Adds the Grasple exercises to your book 
     - sphinx_prime_applets                           # Adds the Prime applets to your book
-    - sphinx_indexed_definitions                     # Adds indexed definitions to your book
     - sphinx_ref_graph                               # Adds a graph of references to your book
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
+    - sphinx_indexed_definitions
     - sphinx_new_tab_link

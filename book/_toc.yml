@@ -31,7 +31,7 @@ parts:
       sections:
       - file: "Single-variable functions/Functions/functions_of_one_variable.md"
       - file: "Single-variable functions/Functions/domain_range_and_graphs.md"
-      - file: "Single-variable functions/Functions/functions_and_curves.md"
+      - file: "Single-variable functions/Functions/curves.md"
       - file: "Single-variable functions/Functions/inverse_functions.md"
       - file: "Single-variable functions/Functions/nonlinear_equations_of_one_variable.md"
       - file: "Single-variable functions/Functions/limits_at_a_point.md"
@@ -80,14 +80,14 @@ parts:
   - caption: Multivariable functions
     numbered: true
     chapters:
-    - file: "Multivariable functions/Concepts and structures/introduction_concepts_and_structures.md" # ref_graph: {'ignore':True}
+    - file: "Multivariable functions/Functions, curves and surfaces/introduction_functions_curves_and_surfaces.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Multivariable functions/Concepts and structures/functions_of_two_or_more_variables.md"
-      - file: "Multivariable functions/Concepts and structures/domain_range_and_graphs.md"
-      - file: "Multivariable functions/Concepts and structures/functions_curves_and_surfaces.md"
-      - file: "Multivariable functions/Concepts and structures/limits_and_continuity.md"
-      - file: "Multivariable functions/Concepts and structures/level_curves_and_sets.md"
-      - file: "Multivariable functions/Concepts and structures/nonlinear_systems_in_two_variables.md"
+      - file: "Multivariable functions/Functions, curves and surfaces/functions_of_two_or_more_variables.md"
+      - file: "Multivariable functions/Functions, curves and surfaces/domain_range_and_graphs.md"
+      - file: "Multivariable functions/Functions, curves and surfaces/curves_and_surfaces.md"
+      - file: "Multivariable functions/Functions, curves and surfaces/limits_and_continuity.md"
+      - file: "Multivariable functions/Functions, curves and surfaces/level_curves_and_sets.md"
+      - file: "Multivariable functions/Functions, curves and surfaces/nonlinear_systems_in_two_variables.md"
     - file: "Multivariable functions/Partial differentiation/introduction_partial_differentiation.md" # ref_graph: {'ignore':True}
       sections:
       - file: "Multivariable functions/Partial differentiation/differentiability_and_partial_derivatives.md"
@@ -125,6 +125,7 @@ parts:
       - file: "Differential equations/Second-order ordinary differential equations/inhomogeneous_problems_with_constant_coefficients.md"
   - caption: Appendices
     numbered: true
+    style: alphaupper
     chapters:
     - file: "Overviews/Algebra/overviews_from_algebra.md" # ref_graph: {'ignore':True}
       sections:
@@ -151,3 +152,14 @@ parts:
     chapters:
     - file: genindex.md # ref_graph: {'ignore':True}
     - file: credits.md # ref_graph: {'ignore':True}
+  - caption: Reference pages for development
+    numbered: True
+    style: romanupper
+    chapters:
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/proofs.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/custom.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/executablebooks/sphinx-exercise/blob/main/docs/source/syntax.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/main/README.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md" # ref_graph: {'ignore':True}

@@ -145,9 +145,21 @@ parts:
     - file: Overviews/Multivariable functions/common_surfaces.md
     - file: Overviews/Multivariable functions/integral_identities.md
   numbered: true
+  style: alphaupper
 - caption: Back matter
   chapters:
   - file: genindex.md
   - file: credits.md
   numbered: false
+- caption: Reference pages for development
+  chapters:
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/admonitions.md
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/proofs.md
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/custom.md
+  - file: _git/github.com_executablebooks_sphinx-exercise/main/docs/source/syntax.md
+  - file: _git/github.com_TeachBooks_Sphinx-Grasple-public/main/README.md
+  - file: _git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.ipynb
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/latex.md
+  numbered: true
+  style: romanupper
 root: index.md
