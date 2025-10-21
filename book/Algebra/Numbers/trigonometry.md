@@ -47,6 +47,17 @@ For a general angle $\theta$ in standard position we let $P(x,y)$ be any point o
 
 $$\sin(\theta)=\dfrac{y}{r},\quad\cos(\theta)=\dfrac{x}{r}\quad\text{and}\quad\tan(\theta)=\dfrac{\sin(\theta)}{\cos(\theta)}=\dfrac{y}{x}\quad(x\neq0).$$
 
+```{figure} Images/unit_circle.png
+---
+width: 50%
+name: trig
+align: center
+---
+The unit circle
+```
+
+If we take the point $P(x,y)$ on the **unit circle** (the circle with the origin as center and radius $1$), we have: $x=\cos(\theta)$ and $y=\sin(\theta)$.
+
 <b>Standard values</b>
 
 |$\theta$ (in degrees) | $0^{\circ}$ | $30^{\circ}$ | $45^{\circ}$ | $60^{\circ}$ | $90^{\circ}$ | $120^{\circ}$ | $135^{\circ}$ | $150^{\circ}$ | $180^{\circ}$ | $270^{\circ}$ | $360^{\circ}$ |

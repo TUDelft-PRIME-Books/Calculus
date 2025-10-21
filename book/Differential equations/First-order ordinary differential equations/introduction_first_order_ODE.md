@@ -10,7 +10,15 @@ In this chapter and the next one we will study differential equations.
 A **differential equation** is an equation involving an unknown function and one or more of its derivatives. The order of the highest derivative involved is called the **order** of the differential equation.
 ::::::
 
-For the moment we only consider **first-order** differential equations of the form $\dfrac{dy}{dx}=F(x,y)$ with $y=y(x)$.
+In this chapter we only consider **first-order** differential equations of the form $\dfrac{dy}{dx}=F(x,y)$ with $y=y(x)$.
+
+The variable $x$ is called an independent variable, while $y=y(x)$ is called a dependent variable.
+
+A function $f(x)$ is called a **solution** of the differential equation if the equation is satisfied by $y=f(x)$, so if $f'(x)=F(x,f(x))$.
+
+When we are asked to *solve* a differential equation, we are expected to find all possible solutions. However, in general it is not easy to solve a differential equation. There is no systematic approach that enables us to solve differential equations. Only when a differential equation has a specific form, we might have some techniques to find the general solution.
+
+However, in many cases we are not interested in finding all solutions (the *general solution*) as in finding a specific solution that also satisfies some additional requirement. In many physical problems, we need to find a particular solution that also satisfies a condition of the form $y(t_0)=y_0$. This is called an **initial condition**. The problem of finding a solution of a first-order differential equation that also satisfies such an initial condition is called an **initial-value problem**.
 
 **Population growth**
 

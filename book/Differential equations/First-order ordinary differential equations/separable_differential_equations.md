@@ -62,7 +62,7 @@ I'(t)&=-\int_0^{\infty}xe^{-x^2}\sin(xt)\,dx=\frac{1}{2}\int_0^{\infty}\sin(xt)\
 &=0-\frac{1}{2}t\int_0^{\infty}e^{-x^2}\cos(xt)\,dx=-\frac{1}{2}tI(t).
 \end{align*}
 ```
-This is a separable differential equation with general solution $I(t)=ce^{-\frac{1}{4}t^2}$. Now we have $c=I(0)=\frac{1}{2}\sqrt{\pi}$. Hence: $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
+This is a separable differential equation with general solution $I(t)=Ce^{-\frac{1}{4}t^2}$. Now we have $C=I(0)=\frac{1}{2}\sqrt{\pi}$. Hence: $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 ::::::
 
 ## Applications

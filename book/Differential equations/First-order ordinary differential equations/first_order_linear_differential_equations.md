@@ -36,7 +36,7 @@ I'(x)=I(x)P(x).
 ```
 However, this is a separable differential equation. Note that $I(x)=\exp\left(\displaystyle\int P(x)\,dx\right)$ is a solution, where $\displaystyle\int P(x)\,dx$ denotes any antiderivative of $P(x)$.
 
-This leads to the following "recipe":
+This leads to the following 'recipe':
 
 * Write the differential equation in the standard form $\displaystyle\frac{dy}{dx}+P(x)y=Q(x)$.
 
