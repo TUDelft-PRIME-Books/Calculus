@@ -5,9 +5,8 @@ In this section we cover:
 - Intuitive definition of convergence
 - Precise definition of convergence
 - Rules of calculations (i.e. sums, products etc.)
-- Convergence of sequences defined by formulas
+- Convergence of sequences defined by a function
 - Monotone convergence theorem
 - Convergence of recursively defined sequences
-- Simple iteration algorithm to approximate solutions of f(x)=x
-- Cauchy sequences???
-- Limsup and liminf?????
+
+Reference for induction: https://interactivetextbooks.tudelft.nl/delftse-foundations-of-computation/content/logic/induction.html

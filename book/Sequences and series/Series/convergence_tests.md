@@ -1,4 +1,10 @@
-# NOTE: Convergence tests
+# Convergence tests
+
+::::{prf:remark}
+We wanted to separate this section in two sections.
+
+Idea of Paul: first non-absolute convergence tests, then absolute convergence tests.
+::::
 
 In this section we cover:
 
@@ -8,10 +14,8 @@ In this section we cover:
 - Direct comparison test
 - Limit comparison test
 - Alternating series test
-- Conditional and absolute convergence (or do you want this in the previous section)
-- Error estimation for alternating series test
 - Rearrangements???
 - Ratio test
 - Root test
 
-Maybe split off error esimation to next section?
+Error estimations included in each test where applicable.
