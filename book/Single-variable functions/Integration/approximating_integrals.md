@@ -5,4 +5,5 @@ In this section we cover:
 - One-step methods (left endpoint, right endpoint, midpoint)
 - Two step methods (trapezoidal rule)
 - Simpson's rule?
-- Integration by means of a Taylor approximation
+
+Note: base on [Calculus Handouts](https://prime.pages.ewi.tudelft.nl/calculus-handouts/NumericalIntegration/NumericalIntegration.html)

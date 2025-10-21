@@ -7,3 +7,5 @@ In this section we cover (see note in section convergence of series):
 - Geometric series
 - Telescoping series
 - Harmonic series and p-series (i.e. sum 1/n^p)
+- Convergence and divergence
+- Absolute and conditional convergence

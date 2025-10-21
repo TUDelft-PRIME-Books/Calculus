@@ -2,4 +2,5 @@
 
 In this section we cover:
 
-- Not really sure what should go here and not in the other two sections...
+- Increasing and decreasing sequences (incl. monotonic sequences)
+- Sequences that are bounded above and/or below
