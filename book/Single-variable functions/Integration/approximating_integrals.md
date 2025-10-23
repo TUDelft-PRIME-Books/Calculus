@@ -3,6 +3,47 @@
 This page is based on Vuik, K., Vermolen, F., van Gijzen, M., & Vuik, T. (2023). *Numerical Methods for Ordinary Differential Equations*. TU Delft OPEN Books. https://doi.org/10.5074/t.2023.001.
 ```
 
+::::{admonition} Figures that should become applets
+:class: remark
+
+Each applet always should have interactivity features such as Zoom, Pan, and Fullscreen.
+
+The following figures should become applets with these additional interactivity features:
+
+```{list-table}
+:header-rows: 1
+:align: center
+:class: mid-align
+
+* - Figure
+  - Interactivity
+* - {numref}`Fig:NumericalIntegration:riemann`
+  - Dragging each point along the curve/axis (within their relevant intervals)
+
+    Increasing/decreasing the number of points
+* - {numref}`Fig:NumericalIntegration:leftRectangle`
+  - Dragging $x_L$ along the curve/axis
+    
+    Dragging $x_R$ along the axis
+* - {numref}`Fig:NumericalIntegration:Trapezoidal`
+  - Dragging $x_L$ along the curve/axis
+    
+    Dragging $x_R$ along the curve/axis
+* - {numref}`Fig:NumericalIntegration:Simpsons`
+  - Dragging $x_L$ along the curve/axis
+    
+    Dragging $x_M$ along the curve/axis
+
+    Dragging $x_R$ along the curve/axis
+* - {numref}`Fig:NumericalIntegration:composite`
+  - Increasing/decreasing the number of points
+* - {numref}`Fig:NumericalIntegration:errors`
+  - Enabling/disabling each of the curves
+
+```
+
+::::
+
 # Approximating integrals
 
 ## Introduction
