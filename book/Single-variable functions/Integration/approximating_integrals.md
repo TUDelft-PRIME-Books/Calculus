@@ -387,134 +387,76 @@ From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next
 |right Rectangle|$1$|
 |Trapezoidal|$2$|
 
-## Exercises
+## Grasple exercises
 
-
-::::::{exercise}
-:label: Exc:NumericalIntegration:ex1
-
-Approximate $\int\limits_{0.5}^1x^4dx$ with the Trapezoidal rule and compare the result with the exact value of the integral.
-
-::::::
-
-::::::{exercise}
-:label: Exc:NumericalIntegration:ex2
-
-Approximate $\int\limits_{0}^{\pi}\sin(x)dx$ with the left Rectangle rule.
-
-::::::
-
-::::::{exercise}
-:label: Exc:NumericalIntegration:ex3
-
-Approximate $\int\limits_{0}^{3}f(x)dx$ using the left and right Rectangle rule and the Trapezoidal rule, given that $f(0)=1$, $f(3)=2$.
-
-::::::
-
-::::::{exercise}
-:label: Exc:NumericalIntegration:ex4
-
-Approximate $\int\limits_{0.5}^1x^4dx$ with the *composite* Trapezoidal rule with $h=0.25$ and compare the result with the exact value of the integral.
-
-::::::
-
-::::::{exercise}
-:label: Exc:NumericalIntegration:ex5
-
-Approximate $\int\limits_{0}^{\pi}\sin(x)dx$ with the *composite* left Rectangle rule with $h=\frac13\pi$. 
-
-::::::
-
-::::::{exercise}
-:label: Exc:NumericalIntegration:ex6
-
-We used the *composite* right Rectangle rule to approximate $\int\limits_{-2}^{3}f(x)dx$ with $h=1$ and found the error to be $0.48$. What is the expected error of $h=\frac12$, $h=\frac13$ and $h=\frac14$?
-
-::::::
-
-::::::{exercise}
-:label: Exc:NumericalIntegration:ex7
-
-We approximated an integral $\mathcal{I}$ using some composite rule $I$ and determined the errors you can find in the following table and and figure. What is the order $p$ of this method?
-
-| $h$             | $\left\vert\mathcal{I}-I\right\vert$ |
-|-----------------|--------------------------------------|
-| $\frac14\pi$    | $1.9830429833\ldots\times10^{-4}$     |
-| $\frac18\pi$    | $0.1240613425\ldots\times10^{-4}$    |
-| $\frac1{16}\pi$ | $0.0077343898\ldots\times10^{-4}$    |
-| $\frac1{32}\pi$ | $0.0004829868\ldots\times10^{-4}$    |
-
-:::{figure} Images/Fig-NumericalIntegration-ex7.svg
-:figwidth: 90%
-:class: dark-light
-
-:::
-
-::::::
-## Solutions
-
-::::{admonition} Solution to&nbsp;{numref}`Exc:NumericalIntegration:ex1`
-:class: solution, dropdown
-
-$
-\int\limits_{0.5}^{1}x^4dx\approx\frac{17}{64}
-$
-
-$
-\int\limits_{0.5}^{1}x^4dx=\frac{31}{160}
-$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/96be8c57-0314-4896-a632-cc3390b5acb4?id=104235
+:label: Grasple:NumericalIntegration:sincosleftright
+:dropdown:
+:description: Approximate an integral using the left and right Rectangle rules.
 
 ::::
 
-::::{admonition} Solution to&nbsp;{numref}`Exc:NumericalIntegration:ex2`
-:class: solution, dropdown
-
-$
-\int\limits_{0}^{\pi}\sin(x)dx\approx0
-$
-
-
-::::
-
-::::{admonition} Solution to&nbsp;{numref}`Exc:NumericalIntegration:ex3`
-:class: solution, dropdown
-
-$3$, $6$ and $\dfrac92$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/52181c0d-e14d-4823-9ae6-2f5504772632?id=78657
+:label: Grasple:NumericalIntegration:tabletrapezoidal
+:dropdown:
+:description: Approximate an integral using the Trapezoidal rule.
 
 ::::
 
-::::{admonition} Solution to&nbsp;{numref}`Exc:NumericalIntegration:ex4`
-:class: solution, dropdown
-
-$
-\int\limits_{0.5}^{1}x^4dx\approx\frac{217}{104}=0.2119140625
-$
-
-$
-\int\limits_{0.5}^{1}x^4dx=\frac{31}{160}
-$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5874f680-fc98-4b44-87b6-07c31a1a3847?id=104245
+:label: Grasple:NumericalIntegration:leftequalsright
+:dropdown:
+:description: When do two rules give the same result?
 
 ::::
 
-::::{admonition} Solution to&nbsp;{numref}`Exc:NumericalIntegration:ex5`
-:class: solution, dropdown
-
-$
-\int\limits_{0}^{\pi}\sin(x)dx\approx\dfrac{\pi}{\sqrt{3}}
-$
-
-::::
-
-::::{admonition} Solution to&nbsp;{numref}`Exc:NumericalIntegration:ex6`
-:class: solution, dropdown
-
-$0.24$, $0.16$ and $0.12$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5639f3eb-8d0c-4f2f-b16b-0a182ac3c723?id=78665
+:label: Grasple:NumericalIntegration:compositeleft
+:dropdown:
+:description: Approximate an integral with the composite left Rectangle rule.
 
 ::::
 
-::::{admonition} Solution to&nbsp;{numref}`Exc:NumericalIntegration:ex7`
-:class: solution, dropdown
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6a7584af-09ac-4ccf-9ccc-c89033109f3f?id=78859
+:label: Grasple:NumericalIntegration:compositerighttrapezoidal
+:dropdown:
+:description: Approximate an integral with the composite right Rectangle rule and the Trapezoidal rule.
 
-$p=4$
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/72759075-97e9-44fd-8091-5ff1ee43bb6f?id=104303
+:label: Grasple:NumericalIntegration:determine_and_predict
+:dropdown:
+:description: Determine the used composite integration rule and predict the error.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/509288ed-9cd3-4a3b-890a-04baa57ca1ba?id=104264
+:label: Grasple:NumericalIntegration:order_and_predict
+:dropdown:
+:description: Determine the order of a composite integration rule and predict the error.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/958541cf-21e4-4d58-9a17-0dfebf5f357a?id=104296
+:label: Grasple:NumericalIntegration:number_of_intervals
+:dropdown:
+:description: Determine the number of intervals needed to obtain a required accuracy.
 
 ::::
