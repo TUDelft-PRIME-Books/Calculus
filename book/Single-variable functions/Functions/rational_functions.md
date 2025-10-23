@@ -3,5 +3,5 @@
 In this section we cover
 
 - Rational functions
-- Assymptotes
+- Asymptotes
 - Partial fraction decomposition (using complex numbers)
