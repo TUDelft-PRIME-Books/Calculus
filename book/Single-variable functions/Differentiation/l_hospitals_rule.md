@@ -1,4 +1,4 @@
-# NEW: l'Hospital's rule
+# l'Hospital's rule
 
 In this section we cover:
 

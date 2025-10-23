@@ -13,6 +13,7 @@ parse:
       - substitution
       - tasklist
       - amsmath
+      - attrs_inline
     myst_dmath_double_inline: true
     myst_heading_anchors : 5
 
@@ -25,10 +26,26 @@ sphinx:
   local_extensions:
     text_replacer: _ext/
   config:
+    language: en
+    sphinx_indexed_defs_indexed_nodes: ['strong']
+    tud_change_titlesize: true
+    new_tab_link_show_external_link_icon: true
+    numfig_secnum_depth: 2
     text_replacements:
-      '{numref}`Chapter %s <Chapter:Determinants>`': "[the chapter on Determinants of the book Linear algebra](https://tudelft-prime-books.github.io/Linear-Algebra/Chapter5/intro.html)"
+      '# Admonitions': '# General blocks'
+      '# Proofs': "# Theorems, Definitions and Examples"
+      '# Custom components': "# Proofs and Solutions"
+      '# Syntax Guide': "# Exercises"
+      '# Sphinx extension: Grasple': "# Grasple exercises"
+      '# Cartesian form of complex numbers': "# Complex numbers"
+      '{numref}`Chapter %s <Chapter:Determinants>`': "{numref}`Section %s <Sec:DetGeometric>`"
+      '# Determinants as areas or volumes': "# Determinants"
+      'in {numref}`Subsection %s <Subsec:MatrixInv:DefInverse>` we saw': "in [Section 3.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter3/MatrixInverse.html) we will see"
+      'in {numref}`Section %s <Sec:DeterminantsViaCofactors>`': "in [Section 5.1 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter5/DeterminantsViaCofactors.html)"
     mathjax3_config:
       tex:
+        inlineMath: [ ['$','$'], ['\(','\)'] ]
+        displayMath: [ ['$$','$$'], ['\[','\]'] ]
         macros:
           "Re": ["\\operatorname{Re}\\left(#1\\right)",1]
           "Im": ["\\operatorname{Im}\\left(#1\\right)",1]
@@ -36,6 +53,7 @@ sphinx:
           "vec": ["\\mathbf{#1}",1]
           "nicefrac": ["\\frac{#1}{#2}", 2]
           "R": "\\mathbb{R}"
+          "C": "\\mathbb{C}"
           "norm": ["\\left\\Vert #1 \\right\\Vert",1]
           "ip" : "\\cdot"
           "cp": ["\\times "]
@@ -59,16 +77,10 @@ sphinx:
     html_show_copyright: false                       # As the copyright is included in the author field
     html_last_updated_fmt: '%B %-d, %Y'              # Adds the date of the last update to the footer
   extra_extensions:                                  # Extra extensions to be used in the book
-    - jupyterbook_patches                            # Patches by TeachBooks https://github.com/TeachBooks/JupyterBook-Patches
-    - download_link_replacer                         # Allows you to replace and add downloadable files to a page header https://teachbooks.io/manual/external/Download-Link-Replacer/README.html
-    - teachbooks_sphinx_tippy                        # Enables hoover over tips https://teachbooks.io/manual/external/teachbooks-sphinx-tippy/README.html
-    - sphinx_proof                                   # Adds proof environments to your book
-    - sphinx_togglebutton                            # Adds toggle buttons to your book
-    - sphinx_exercise                                # Adds exercise environments to your book
+    - teachbooks_favourites
     - teachbooks_sphinx_grasple                      # Adds the Grasple exercises to your book 
     - sphinx_prime_applets                           # Adds the Prime applets to your book
-    - sphinx_indexed_definitions                     # Adds indexed definitions to your book
-    # - sphinx_ref_graph                               # Adds a graph of references to your book
-    - sphinx_dropdown_toggle                         # Adds dropdown toggles to your book
+    - sphinx_ref_graph                               # Adds a graph of references to your book
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
-    - sphinx_image_inverter                          # Inverts images for dark mode https://teachbooks.io/manual/external/Sphinx-Image-Inverter/README.html
+    - sphinx_indexed_definitions
+    - sphinx_new_tab_link

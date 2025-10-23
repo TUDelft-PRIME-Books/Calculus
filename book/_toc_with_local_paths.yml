@@ -8,19 +8,20 @@ parts:
   numbered: false
 - caption: Algebra
   chapters:
-  - file: Algebra/Numbers/introduction_numbers.md
+  - file: Algebra/Numbers and coordinate systems/introduction_numbers_and_coordinate_systems.md
     sections:
-    - file: Algebra/Numbers/real_numbers.md
+    - file: Algebra/Numbers and coordinate systems/real_numbers.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersCartesian.md
-    - file: Algebra/Numbers/trigonometry.md
+    - file: Algebra/Numbers and coordinate systems/trigonometry.md
+    - file: Algebra/Numbers and coordinate systems/coordinate_systems.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersPolar.md
-    - file: Algebra/Numbers/linear_systems_in_two_variables.md
   - file: Algebra/Vector algebra/introduction_vector_algebra.md
     sections:
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Vectors.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Inner_Product.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Cross_Product.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Lines_and_Planes.md
+    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter5/DeterminantsGeometric.md
   numbered: true
 - caption: Single-variable functions
   chapters:
@@ -28,25 +29,33 @@ parts:
     sections:
     - file: Single-variable functions/Functions/functions_of_one_variable.md
     - file: Single-variable functions/Functions/domain_range_and_graphs.md
-    - file: Single-variable functions/Functions/limits_and_continuity.md
-    - file: Single-variable functions/Functions/injectivity_and_surjectivity.md
-    - file: Single-variable functions/Functions/nonlinear_equations_in_one_variable.md
+    - file: Single-variable functions/Functions/curves.md
+    - file: Single-variable functions/Functions/inverse_functions.md
+    - file: Single-variable functions/Functions/nonlinear_equations_of_one_variable.md
+    - file: Single-variable functions/Functions/limits_at_a_point.md
+    - file: Single-variable functions/Functions/limits_at_infinity.md
+    - file: Single-variable functions/Functions/continuity.md
+    - file: Single-variable functions/Functions/rational_functions.md
   - file: Single-variable functions/Differentiation/introduction_differentiation.md
     sections:
-    - file: Single-variable functions/Differentiation/differentiability_and_derivatives.md
+    - file: Single-variable functions/Differentiation/differentiability.md
     - file: Single-variable functions/Differentiation/chain_rule.md
-    - file: Single-variable functions/Differentiation/product_rule.md
+    - file: Single-variable functions/Differentiation/product_and_quotient_rule.md
+    - file: Single-variable functions/Differentiation/graphs_and_derivatives_of_functions.md
+    - file: Single-variable functions/Differentiation/slope_of_curves_in_R2.md
+    - file: Single-variable functions/Differentiation/derivatives_of_inverse_functions.md
     - file: Single-variable functions/Differentiation/extrema_of_functions.md
-    - file: Single-variable functions/Differentiation/implicit_differentiation.md
     - file: Single-variable functions/Differentiation/approximating_functions.md
     - file: Single-variable functions/Differentiation/l_hospitals_rule.md
-    - file: Single-variable functions/Differentiation/graphs_of_single_variable_functions.md
   - file: Single-variable functions/Integration/introduction_integration.md
     sections:
-    - file: Single-variable functions/Integration/integrability_and_antiderivatives.md
-    - file: Single-variable functions/Integration/substitution_rule.md
+    - file: Single-variable functions/Integration/definite_integrals.md
+    - file: Single-variable functions/Integration/indefinite_integrals.md
+    - file: Single-variable functions/Integration/fundamental_theorem_of_calculus.md
+    - file: Single-variable functions/Integration/integration_by_substitution.md
     - file: Single-variable functions/Integration/integration_by_parts.md
-    - file: Single-variable functions/Integration/partial_fraction_decomposition.md
+    - file: Single-variable functions/Integration/integration_of_rational_functions.md
+    - file: Single-variable functions/Integration/integration_of_trigonometric_functions.md
     - file: Single-variable functions/Integration/improper_integrals.md
     - file: Single-variable functions/Integration/approximating_integrals.md
   numbered: true
@@ -54,13 +63,13 @@ parts:
   chapters:
   - file: Sequences and series/Sequences/introduction_sequences.md
     sections:
-    - file: Sequences and series/Sequences/sequences_and_their_types.md
+    - file: Sequences and series/Sequences/introduction_to_sequences.md
     - file: Sequences and series/Sequences/properties_of_sequences.md
     - file: Sequences and series/Sequences/convergence_of_sequences.md
+    - file: Sequences and series/Sequences/iterative_methods_for_various_problems.md
   - file: Sequences and series/Series/introduction_series.md
     sections:
-    - file: Sequences and series/Series/series_and_their_types.md
-    - file: Sequences and series/Series/convergence_of_series.md
+    - file: Sequences and series/Series/introduction_to_series.md
     - file: Sequences and series/Series/convergence_tests.md
     - file: Sequences and series/Series/functions_and_series.md
     - file: Sequences and series/Series/series_solutions_to_DEs.md
@@ -68,16 +77,14 @@ parts:
   numbered: true
 - caption: Multivariable functions
   chapters:
-  - file: Multivariable functions/Concepts and structures/introduction_concepts_and_structures.md
+  - file: Multivariable functions/Functions, curves and surfaces/introduction_functions_curves_and_surfaces.md
     sections:
-    - file: Multivariable functions/Concepts and structures/functions_of_two_or_more_variables.md
-    - file: Multivariable functions/Concepts and structures/domain_range_and_graphs.md
-    - file: Multivariable functions/Concepts and structures/curves_and_surfaces.md
-    - file: Multivariable functions/Concepts and structures/limits_and_continuity.md
-    - file: Multivariable functions/Concepts and structures/level_curves_and_sets.md
-    - file: Multivariable functions/Concepts and structures/nonlinear_systems_in_two_variables.md
-    - file: Multivariable functions/Concepts and structures/graphs_of_two_variable_functions.md
-    - file: Multivariable functions/Concepts and structures/coordinate_systems.md
+    - file: Multivariable functions/Functions, curves and surfaces/functions_of_two_or_more_variables.md
+    - file: Multivariable functions/Functions, curves and surfaces/domain_range_and_graphs.md
+    - file: Multivariable functions/Functions, curves and surfaces/curves_and_surfaces.md
+    - file: Multivariable functions/Functions, curves and surfaces/limits_and_continuity.md
+    - file: Multivariable functions/Functions, curves and surfaces/level_curves_and_sets.md
+    - file: Multivariable functions/Functions, curves and surfaces/nonlinear_systems_in_two_variables.md
   - file: Multivariable functions/Partial differentiation/introduction_partial_differentiation.md
     sections:
     - file: Multivariable functions/Partial differentiation/differentiability_and_partial_derivatives.md
@@ -127,6 +134,7 @@ parts:
     - file: Overviews/Single-variable functions/exponential_and_logarithmic_functions.md
     - file: Overviews/Single-variable functions/trigonometric_functions.md
     - file: Overviews/Single-variable functions/other_functions.md
+    - file: Overviews/Single-variable functions/decision_tree_integration.md
   - file: Overviews/Sequences and series/overviews_from_sequences_and_series.md
     sections:
     - file: Overviews/Sequences and series/special_sequences.md
@@ -137,9 +145,21 @@ parts:
     - file: Overviews/Multivariable functions/common_surfaces.md
     - file: Overviews/Multivariable functions/integral_identities.md
   numbered: true
+  style: alphaupper
 - caption: Back matter
   chapters:
   - file: genindex.md
   - file: credits.md
   numbered: false
+- caption: Reference pages for development
+  chapters:
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/admonitions.md
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/proofs.md
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/custom.md
+  - file: _git/github.com_executablebooks_sphinx-exercise/main/docs/source/syntax.md
+  - file: _git/github.com_TeachBooks_Sphinx-Grasple-public/main/README.md
+  - file: _git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.ipynb
+  - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/latex.md
+  numbered: true
+  style: romanupper
 root: index.md
