@@ -38,7 +38,7 @@ We will postpone the precise definition of a limit to {numref}`Subsec:Limitsform
 Let $f$ be a function that is defined for values of $x$ close to $x=a$ (except possibly at $x=a$ itself). We say that the **limit** of $f$ as $x$ approaches $a$ is equal to $L$, and we write $\lim\limits_{x\rightarrow a}f(x)=L$, if the function values $f(x)$ approach $L$ as $x$ approaches $a$ (but $x$ not equal to $a$). If no such real number $L$ exists, we say that the limit of the function $f$ as $x$ approaches $a$ does not exist.
 ::::::
 
-Since we only work with an intuitive definition, we will also postpone all proofs in this chapter to {numref}`Subsec:Limitsformaldef`.
+Since we only work with an intuitive definition, we will also postpone all proofs in this section to {numref}`Subsec:Limitsformaldef`.
 
 When trying to evaluate a limit of the form $\lim\limits_{x\rightarrow a}f(x)$, it is sometimes helpful to consider values of $x$ smaller than $a$, and values of $x$ larger than $a$ separately. For this we use **one-sided limits**.
 
@@ -120,6 +120,7 @@ Left and right limits are also convenient when evaluating limits of composite fu
 ::::::{prf:example}
 :label: Ex:LimitatPoint:LimitLeftRightComposite
 Consider the composite function $f(x)=\left\{\begin{array}{ll}x-1,&\text{ if }x<2,\\ 4,&\text{ if }x=2,\\ 3-x,&\text{ if }x>2.\end{array}\right.$ 
+
 We aim to evaluate $\lim\limits_{x\rightarrow 2}f(x)$ and we will do so by evaluating the left and right limits. For $x<2$ the function is given by $f(x)=x-1$, so we can directly evaluate the left limit
 
 $$
@@ -129,10 +130,10 @@ $$
 Similarly, for $x>2$ the function is given by $f(x)=3-x$, so we can directly evaluate the left limit
 
 $$
- \lim_{x\rightarrow 2^+}f(x)=\lim_{x\rightarrow 2^+}3-x=3-1=2
+ \lim_{x\rightarrow 2^+}f(x)=\lim_{x\rightarrow 2^+}3-x=3-2=1
 $$
 
- Using {prf:ref}`Theorem:LimitatPoint:Leftrightequal` we conclude that $\lim\limits_{x\rightarrow 0}f(x)=2$, since both the left and right limit at that point are equal to $2$.
+ Using {prf:ref}`Theorem:LimitatPoint:Leftrightequal` we conclude that $\lim\limits_{x\rightarrow 0}f(x)=1$, since both the left and right limit at that point are equal to $1$.
 
 Hier nog plaatje van deze functie rond x=2, met als onderschrift een samenvatting van bovenstaande.
 
@@ -229,7 +230,7 @@ The limit $\lim\limits_{x\rightarrow a}\frac{r(x)}{s(x)}$ can then be either eva
 
 ::::::{prf:example} Cancelling the common factor
 :label: Ex:LimitatPoint:Cancellingcommonfactor
-Suppose we want to evaluate $\lim\limits_{x\rightarrow 1}\dfrac{x^3-3x^2+3x-1}{x^3-3x^2+5x-2}$. Notice that both the numerator and the denominator, which are both polynomials, are $0$ at $x=1$, so both polynomials contain a factor $x-1$. Using polynomial long division (see {prf:ref}`Ex:LimitatPoint:FirstLimitEx`), we find that $x^3-3x^2+3x-1=(x-1)(x^2-2x+1)$ and $x^3-3x^2+5x-2=(x-1)(x^2-3x+2)$, so we can compute
+Suppose we want to evaluate $\lim\limits_{x\rightarrow 1}\dfrac{x^3-3x^2+3x-1}{x^3-3x^2+5x-2}$. Notice that both the numerator and the denominator, which are both polynomials, are $0$ at $x=1$, so both polynomials contain a factor $x-1$. Using polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionnum`), we find that $x^3-3x^2+3x-1=(x-1)(x^2-2x+1)$ and $x^3-3x^2+5x-2=(x-1)(x^2-3x+2)$, so we can compute
 
 $$
  \lim\limits_{x\rightarrow 1}\frac{x^3-3x^2+3x-1}{x^3-3x^2+5x-2}=\lim\limits_{x\rightarrow 1}\frac{(x-1)(x^2-2x+1)}{(x-1)(x^2-3x+2)}=\lim\limits_{x\rightarrow 1}\frac{x^2-2x+1}{x^2-3x+2}
@@ -267,7 +268,7 @@ $$
 The remaining limit can be evaluated directly and we find
 
 $$
- \lim\limits_{x\rightarrow 0}\dfrac{2-\sqrt{x+4}}{x}=\lim\limits_{x\rightarrow 0}\frac{-1}{2+\sqrt{4+x}}=-\frac{1}{4}
+ \lim\limits_{x\rightarrow 0}\dfrac{2-\sqrt{x+4}}{x}=\lim\limits_{x\rightarrow 0}\frac{-1}{2+\sqrt{4+x}}=\frac{-1}{2+\sqrt{4+0}}=-\frac{1}{4}
 $$
 ::::::
 
@@ -293,24 +294,28 @@ Similarly, we use the corresponding notations $\lim\limits_{x\rightarrow a^-}f(x
 
 ::::::{prf:definition} Vertical asymptote
 :label: Def:LimitatPoint:Verticalasymptote
-Let $f$ be a function that is defined near $x=a$ (except possibly at $x=a$ itself). Then we say that $x=a$ is a **vertical asymptote** of $f$, whenever one (or more) of the following statements is true.
+Let $f$ be a function that is defined near $x=a$ (except possibly at $x=a$ itself). Then we say that $x=a$ is a **vertical asymptote** of $f$, whenever at least one of the following statements is true.
 
 - $\lim\limits_{x\rightarrow a^-}f(x)=\infty$
 - $\lim\limits_{x\rightarrow a^-}f(x)=-\infty$
 - $\lim\limits_{x\rightarrow a^+}f(x)=\infty$
-$\lim\limits_{x\rightarrow a^+}f(x)=-\infty$
+- $\lim\limits_{x\rightarrow a^+}f(x)=-\infty$
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:LimitatPoint:Verticalasymptote1.
 Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}\dfrac{1}{x^2}$. Note that as $x$ approaches $0$, $x^2$ will approach $0$ as well and note that $x^2>0$ for all $x\neq 0$. So for $x$ close to $0$, $\dfrac{1}{x^2}$ is $1$ divided by a very small, positive number, which means that $\dfrac{1}{x^2}$ is a very large, positive number. As such, we find that $\lim\limits_{x\rightarrow 0}\dfrac{1}{x^2}=\infty$. In particular, the function has a vertical asymptote at $x=0$.
+
+Hier een plaatje met deze functie.
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:LimitatPoint:Verticalasymptote2.
-Suppose we want to find all vertical asymptotes of $f(x)=\dfrac{1}{(x-1)(x-2)^2}$. The function is properly defined for $x$ unequal to either $1$ or $2$. For values of $x$ near either $x=1$ or $x=2$, we note that the denominator $(x-1)(x-2)^2$ is close to $0$, so the function blows up there. However, it depends whether it blows up to infinity or to minus infinity. We start near $x=1$. For $x<1$, we see that $\dfrac{1}{(x-1)(x-2)^2}<0$, so we have $\lim\limits_{x\rightarrow 1^-}f(x)=-\infty$. On the other hand, for $x>1$, we have $\dfrac{1}{(x-1)(x-2)}>0$, so we have $\lim\limits_{x\rightarrow 1^+}f(x)=\infty$. Using a similar reasoning, we find that $\lim\limits_{x\rightarrow 2^-}f(x)=\infty$ and $\lim\limits_{x\rightarrow 2^+}f(x)=\infty$.
+Suppose we want to find all vertical asymptotes of $f(x)=\dfrac{1}{(x-1)(x-2)^2}$. The function is properly defined for $x$ unequal to either $1$ or $2$. For values of $x$ near either $x=1$ or $x=2$, we note that the denominator $(x-1)(x-2)^2$ is close to $0$, so the function blows up there. However, it depends whether it blows up to infinity or to minus infinity. We start near $x=1$. For $x<1$, we see that $\dfrac{1}{(x-1)(x-2)^2}<0$, so we have $\lim\limits_{x\rightarrow 1^-}f(x)=-\infty$. On the other hand, for $x>1$, we have $\dfrac{1}{(x-1)(x-2)^2}>0$, so we have $\lim\limits_{x\rightarrow 1^+}f(x)=\infty$. Using a similar reasoning, we find that $\lim\limits_{x\rightarrow 2^-}f(x)=\infty$ and $\lim\limits_{x\rightarrow 2^+}f(x)=\infty$.
 
 We conclude that $f$ has $2$ vertical asymptotes, one at $x=1$ and $x=2$. Moreover, we see that $\lim\limits_{x\rightarrow 2}f(x)=\infty$, since the function values both on the left and right of $x=2$ grow arbitrarily large. Is there also a shorter way we can denote the behaviour near $x=1$? Unfortunately, there is not, since on the left the function values become negative, while on the right the function values become positive. So the only thing we can write down is that $\lim\limits_{x\rightarrow 1}f(x)$ does not exist.
+
+Hier een plaatje met deze functie.
 ::::::
 
 ::::::{warning} 
@@ -327,50 +332,118 @@ So far, we have worked with a more intuitive understanding of what a limit is. H
 
 ::::::{prf:definition} Precise definition of a limit
 :label: Def:LimitatPoint:Precisedef
-Let $f$ be a function that is defined near $x=a$ (except possibly at $x=a$ itself). Then we say that the **limit** of $f$ as $x$ approaches $a$ is equal to $L$, and we write $\lim\limits_{x\rightarrow a}f(x)=L$, whenever for each $\epsilon>0$ there exists a $\delta>0$, such that for all $x$ in the domain of $a$ with $0<|x-a|<\delta$, we have $|f(x)-L|<\epsilon$. If no such value $L$ exists we say that the limit does not exist.
+Let $f$ be a function that is defined near $x=a$ (except possibly at $x=a$ itself). Then we say that the **limit** of $f$ as $x$ approaches $a$ is equal to $L$, and we write $\lim\limits_{x\rightarrow a}f(x)=L$, whenever for each $\varepsilon>0$ there exists a $\delta>0$, such that for all $x$ in the domain of $a$ with $0<|x-a|<\delta$, we have $|f(x)-L|<\varepsilon$. If no such value $L$ exists we say that the limit does not exist.
 ::::::
 
-This definition should be interpreted as follows. The arbitrary constant $\epsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow a}f(x)=L$, we want that, for $x$ close enough to $a$, the function values $f(x)$ are at most distance $\epsilon$ to $a$, i.e. $|f(x)-L|<\epsilon$. Here "$x$ close enough to $a$" means that this inequality should hold true for all $x$ in a (possibly very small) interval centered around $a$, i.e. an interval of the form $(x-\delta,x+\delta)$. Of course, what this $\delta$ is, depends both on the function $f$ and the choice of $\epsilon$. Typically, the smaller $\epsilon$ is, the smaller $\delta$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\epsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\epsilon$ is small. Remember that we cannot choose $\epsilon$ ourselves: for **each** $\epsilon>0$ there should be a corresponding $\delta$. Note that we can make $\delta$ always smaller if we want to: if at least one $\delta$ works for a given $\epsilon$, we are happy. Let us try to see how to work with this definition in practice.
+This definition should be interpreted as follows. The arbitrary constant $\varepsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow a}f(x)=L$, we want that, for $x$ close enough to $a$, the function values $f(x)$ are at most distance $\varepsilon$ to $a$, i.e. $|f(x)-L|<\varepsilon$. Here "$x$ close enough to $a$" means that this inequality should hold true for all $x$ in a (possibly very small) interval centered around $a$, i.e. an interval of the form $(x-\delta,x+\delta)$. Of course, what this $\delta$ is, depends both on the function $f$ and the choice of $\varepsilon$. Typically, the smaller $\varepsilon$ is, the smaller $\delta$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\varepsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\varepsilon$ is small. Remember that we cannot choose $\varepsilon$ ourselves: for **each** $\varepsilon>0$ there should be a corresponding $\delta$. Note that we can make $\delta$ always smaller if we want to: if at least one $\delta$ works for a given $\varepsilon$, we are happy. Let us try to see how to work with this definition in practice.
 
 ::::::{prf:example} 
 :label: Ex:LimitatPoint:Formaldefexists.
-We aim to show that $\lim\limits_{x\rightarrow 2}x^2=4$ using the formal definition of a limit. For this, we let $\epsilon>0$ be an arbitrary positive number. Now, we need to choose $\delta>0$, which will very likely depend on $\epsilon$, in such a way that for any $x$ with $0<|x-2|<\delta$ we have $|x^2-4|<\epsilon$. For this, we note that $|x^2-4|=|x-2||x+2|$. First we consider the term $|x+2|$. Since we want to consider values of $x$ close to $2$, we can at the very least assume that $1<x<3$, i.e. $|x-2|<1$, and for those values of $x$ we know that $3<|x+2|<5. This means that we should choose $\delta$ to be at most $1$. If we do that, we find that for $x$ with $0<|x-2|<1$ we have $|x+2|<5$. In order for the product $|x-2||x+2|$ to be smaller than $\epsilon$, we should then ensure that the other term $|x-2|$ is less than $\dfrac{\epsilon}{5}$. Since choosing $\delta$ precisely restricts the values of $|x-2|$, this means that we should also ensure that $\delta$ is at most $\frac{\epsilon}{5}$.
+We aim to show that $\lim\limits_{x\rightarrow 2}x^2=4$ using the formal definition of a limit. For this, we let $\varepsilon>0$ be an arbitrary positive number. Now, we need to choose $\delta>0$, which will very likely depend on $\varepsilon$, in such a way that for any $x$ with $0<|x-2|<\delta$ we have $|x^2-4|<\varepsilon$. For this, we note that $|x^2-4|=|x-2||x+2|$. First we consider the term $|x+2|$. Since we want to consider values of $x$ close to $2$, we can at the very least assume that $1<x<3$, i.e. $|x-2|<1$, and for those values of $x$ we know that $3<|x+2|<5$. This means that we should choose $\delta$ to be at most $1$. If we do that, we find that for $x$ with $0<|x-2|<1$ we have $|x+2|<5$. In order for the product $|x-2||x+2|$ to be smaller than $\varepsilon$, we should then ensure that the other term $|x-2|$ is less than $\dfrac{\varepsilon}{5}$. Since choosing $\delta$ precisely restricts the values of $|x-2|$, this means that we should also ensure that $\delta$ is at most $\frac{\varepsilon}{5}$.
 
-We find that we have two conditions on $\delta$: $\delta$ should be at most $1$ and $\delta$ should be at most $\dfrac{\epsilon}{5}$. As such, we choose $\delta$ to be the lowest of these two values: $\delta=\mathrm{min}\left(1,\dfrac{\epsilon}{5}\right)$. Then for any $x$ with $0<|x-2|<\delta$ we obtain
+We find that we have two conditions on $\delta$: $\delta$ should be at most $1$ and $\delta$ should be at most $\dfrac{\varepsilon}{5}$. As such, we choose $\delta$ to be the lowest of these two values: $\delta=\mathrm{min}\left(1,\dfrac{\varepsilon}{5}\right)$. Then for any $x$ with $0<|x-2|<\delta$ we obtain
 
 $$
  \begin{array}{lcll}|x^2-a^2|&=&|x-a||x+a|\\
  &<&|x-a|\cdot 5\qquad\qquad&\left(\text{since }|x-a|<\delta\leq 1\right)\\
- &<&\dfrac{\epsilon}{5}\cdot 5&\left(\text{since }|x-a|<\delta\leq\dfrac{\epsilon}{5}\right)\\
- &=&\epsilon&\end{array}
+ &<&\dfrac{\varepsilon}{5}\cdot 5&\left(\text{since }|x-a|<\delta\leq\dfrac{\varepsilon}{5}\right)\\
+ &=&\varepsilon&\end{array}
 $$
 
 With that, we have shown that $\lim\limits_{x\rightarrow 2}x^2=4$.
 
-Hier applet waarbij de functie te zien is en er met een slider in te stellen is wat epsilon is. Die wordt weergegeven als verticale strip. De bijbehorende horizontale strip geeft aan welke waarden er toegestaan zijn (met de keuze van delta uit deze opgave).
+Hier applet waarbij de functie te zien is en er met een slider in te stellen is wat varepsilon is. Die wordt weergegeven als verticale strip. De bijbehorende horizontale strip geeft aan welke waarden er toegestaan zijn (met de keuze van delta uit deze opgave).
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:LimitatPoint:Formaldefdoesnotexist.
-We aim to show that $\lim\limits_{x\rightarrow 0}\dfrac{|x|}{x}$ is not equal to $0$ using the formal definition of a limit (in fact, the limit does not exist at all, see {prf:ref}`Ex:LimitatPoint:LimitLeftRight`). Since this definition states that some property needs to hold for every $\epsilon>0$, we can show that the limit does not exist by showing that this property does not hold for a single choice of $\epsilon$. Note that $\epsilon=2$ is too large: for any $x\neq 0$ we have that $\dfrac{|x|}{x}$ is either $1$ or $-1$, which are both within distance $2$ of $0$. However, choosing $\epsilon=\dfrac{1}{2}$ does work. In order to show this, we need to verify that any choice of $\delta>0$ does not work, so we consider an arbitrary $\delta>0$. Then we take any $x$ with $0<x<\delta$. Since this $x$ is postive, we know that $\dfrac{|x|}{x}=1$, which means that $\left|\dfrac{|x|}{x}-0\right|=1>\dfrac{1}{2}=\epsilon$. We conclude that $\lim\limits_{x\rightarrow 0}\dfrac{|x|}{x}$ is unequal to $0$.
+We aim to show that $\lim\limits_{x\rightarrow 0}\dfrac{|x|}{x}$ is not equal to $0$ using the formal definition of a limit (in fact, the limit does not exist at all, see {prf:ref}`Ex:LimitatPoint:LimitLeftRight`). Since this definition states that some property needs to hold for every $\varepsilon>0$, we can show that the limit does not exist by showing that this property does not hold for a single choice of $\varepsilon$. Note that something like $\varepsilon=2$ is too large: for any $x\neq 0$ we have that $\dfrac{|x|}{x}$ is either $1$ or $-1$, which are both within distance $2$ of $0$. However, choosing $\varepsilon=\dfrac{1}{2}$ does work. In order to show this, we need to verify that any choice of $\delta>0$ does not work, so we consider an arbitrary $\delta>0$. Then we take $x=\frac{\delta}{2}$ which satisfies $0<x<\delta$. Since this $x$ is postive, we know that $\dfrac{|x|}{x}=1$, which means that $\left|\dfrac{|x|}{x}-0\right|=1>\dfrac{1}{2}=\varepsilon$. We conclude that $\lim\limits_{x\rightarrow 0}\dfrac{|x|}{x}$ is unequal to $0$.
 
-Hier applet waarbij de functie te zien is en er met een slider in te stellen is wat epsilon is. Die wordt weergegeven als verticale strip. De bijbehorende horizontale strip geeft aan welke waarden er toegestaan zijn: voor epsilon>1 verschijnt er een horizontale strip, terwijl voor epsilon<1 er niets te zien is.
+Hier applet waarbij de functie te zien is en er met een slider in te stellen is wat varepsilon is. Die wordt weergegeven als verticale strip. De bijbehorende horizontale strip geeft aan welke waarden er toegestaan zijn: voor varepsilon>1 verschijnt er een horizontale strip, terwijl voor varepsilon<1 er niets te zien is.
 ::::::
 
 Let us now consider the precise definitions of the other type of limits we have seen in these sections.
 
 ::::::{prf:definition} Precise definition of a left and right limit
 :label: Def:LimitatPoint:Precisedefleftright
-Let $f$ be a function that is defined for values of $x<a$ close to $x=a$. We say that the **left limit** of $f$ as $x$ approaches $a$ is equal to $L$, and we write $\lim\limits_{x\rightarrow a^-}f(x)=L$, if whenever for each $\epsilon>0$ there exists a $\delta>0$, such that for all $x$ in the domain of $a$ with $a-\delta<x<a$, we have $|f(x)-L|<\epsilon$. If no such value $L$ exists we say that the left limit does not exist.
+Let $f$ be a function that is defined for values of $x<a$ close to $x=a$. We say that the **left limit** of $f$ as $x$ approaches $a$ is equal to $L$, and we write $\lim\limits_{x\rightarrow a^-}f(x)=L$, if whenever for each $\varepsilon>0$ there exists a $\delta>0$, such that for all $x$ in the domain of $a$ with $a-\delta<x<a$, we have $|f(x)-L|<\varepsilon$. If no such value $L$ exists we say that the left limit does not exist.
 
-Similarly, if $f$ is defined for values of $x>a$ close to $x=a$, we say that the **right limit** of $f$ as $x$ approaches $a$ is equal to $L$, and we write $\lim\limits_{x\rightarrow a^+}f(x)=L$, if whenever for each $\epsilon>0$ there exists a $\delta>0$, such that for all $x$ in the domain of $a$ with $a<x<a+\delta$, we have $|f(x)-L|<\epsilon$. If no such value $L$ exists we say that the right limit does not exist.
+Similarly, if $f$ is defined for values of $x>a$ close to $x=a$, we say that the **right limit** of $f$ as $x$ approaches $a$ is equal to $L$, and we write $\lim\limits_{x\rightarrow a^+}f(x)=L$, if whenever for each $\varepsilon>0$ there exists a $\delta>0$, such that for all $x$ in the domain of $a$ with $a<x<a+\delta$, we have $|f(x)-L|<\varepsilon$. If no such value $L$ exists we say that the right limit does not exist.
 ::::::
 
 ::::::{prf:definition} Precise definition of an infinite limit
 :label: Def:LimitatPoint:Precisedefinflimit
-Let $f$ be a function defined near $x=a$ (except possible at $x=a$ itself). Then we say that $f$ has an **infinite limit** at $x=a$, and we write $\lim\limits_{x\rightarrow a}f(x)=\infty$ whenever for each $M>0$ there exists $\delta>0$ such that for all $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $f(x)>M$.
+Let $f$ be a function defined near $x=a$ (except possible at $x=a$ itself). Then we say that $f$ has an **infinite limit** at $x=a$, and we write $\lim\limits_{x\rightarrow a}f(x)=\infty$ whenever for each $M>0$ there exists $\delta>0$ such that for all $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $f(x)\geq M$.
 
-Similarly, we say that $f$ has a **negative infinite limit** at $x=a$, and we write $\lim\limits_{x\rightarrow a}f(x)=-\infty$ whenever for each $M<0$ there exists $\delta>0$ such that for all $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $f(x)<M$.
+Similarly, we say that $f$ has a **negative infinite limit** at $x=a$, and we write $\lim\limits_{x\rightarrow a}f(x)=-\infty$ whenever for each $M<0$ there exists $\delta>0$ such that for all $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $f(x)\leq M$.
 ::::::
+
+Finally we include several proofs of the theorems discussed in these sections. The proof of {prf:ref}`Theorem:LimitatPoint:Directsub` is left to {numref}`Section:Continuity`.
+
+::::::{admonition} Proof of {prf:ref}`Theorem:LimitatPoint:Rewritingworks`
+:class: tudproof 
+Consider two functions $f$ and $g$ with $f(x)=g(x)$ whenever $x\neq a$. Suppose first that $\lim\limits_{x\rightarrow a}g(x)$ exists and is equal to $L$. Let $\varepsilon>0$ be given. Since the limit of $g$ as $x$ approaches $a$ exists, we can pick $\delta>0$ such that for $x$ with $0<|x-a|<\delta$ we have $|g(x)-L|<\varepsilon$. Since $f$ and $g$ coincide outside of $x=a$, we get for any $x$ with $0<|x-a|<\delta$ that $|f(x)-L|=|g(x)-L|<\varepsilon$. So we obtain $\lim\limits_{x\rightarrow a}g(x)=L$.
+
+Now suppose that $\lim\limits_{x\rightarrow a}g(x)$ does not exist. In that case, we let $L$ be any real number. Then we can pick $\varepsilon>0$ such that for all $\delta>0$ there is an $x$ with $0<|x-a|<\delta$ and $|g(x)-L|\geq\varepsilon$. Consider any $\delta>0$ and pick the $x$ with $0<|x-a|<\delta$ and $|g(x)-L|\geq\varepsilon$. Since $x\neq a$, we have $g(x)=f(x)$, so also $|f(x)-L|\geq\varepsilon$. In particular the limit $\lim\limits_{x\rightarrow a}f(x)$ is unequal to $L$ and since this holds for all $L$, the limit does not exist.
+::::::
+
+::::::{admonition} Proof of {prf:ref}`Theorem:LimitatPoint:Basiccomputationrules`
+:class: tudproof 
+We first prove the scalar multiple rule. If $c=0$, then the function $cf$ is constantly $0$, so its limit at the point $a$ must be $0=cL$ as well. As such, we can assume that $c\neq 0$. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow a}f(x)=L$, we can pick $\delta>0$ in such a way that for $x$ with $0<|x-a|<\delta$ we have $|f(x)-L|<\frac{\varepsilon}{|c|}$. Then for $x$ with $0<|x-a|<\delta$ we have
+
+$$
+ |cf(x)-cL|=|c||f(x)-L|<|c|\frac{\varepsilon}{|c|}=\varepsilon
+$$
+
+We conclude that $\lim\limits_{x\rightarrow a}cf(x)=cL$.
+
+Now we prove the sum rule. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow a}f(x)=L$, we can pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have $|f(x)-L|<\frac{\varepsilon}{2}$. Similarly we can pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have $|g(x)-M|<\frac{\varepsilon}{2}$. We set $\delta=\mathrm{min}\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$, so we can estimate
+
+$$
+ |f(x)+g(x)-(L+M)|=|(f(x)-L)+(g(x)-M)|\leq|f(x)-L|+|g(x)-M|<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+$$
+
+Here we used the triangle inequality for absolute values (WILLEM: bron???). We conclude that $\lim\limits_{x\rightarrow a}f(x)+g(x)=L+M$.
+
+Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have both have $|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}$ and $|f(x)-L|<1$. The inequality $|f(x)-L|<1$ means that $1-L<f(x)<1+L$, which implies that $|f(x)|<|L|+1$. Now we pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have both have $|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}$. We set $\delta=\mathrm{min}\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$, so we can estimate
+
+$$
+ |f(x)g(x)-LM|=|f(x)g(x)-f(x)M+f(x)M-LM|\leq |f(x)g(x)-f(x)M|+|f(x)M-LM|=|f(x)||g(x)-M|+|M||f(x)-L|\leq(|L|+1)|g(x)-M|+|M||f(x)-L|<(|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)}<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+$$
+
+Here we again used the triangle inequality for absolute values (WILLEM: bron???). We conclude that $\lim\limits_{x\rightarrow a}f(x)g(x)=LM$.
+
+We prove the quotient rule by writing $\frac{f(x)}{g(x)}=f(x)\frac{1}{g(x)}$ and first showing that $\lim\limits_{x\rightarrow a}\frac{1}{g(x)}=\frac{1}{M}$. Let $\varepsilon>0$ be given. We pick $\delta>0$ in such a way that for $x$ with $0<|x-a|<\delta$ we have both have $|g(x)-M|<2\varepsilon M^2$ and $|g(x)-M|<\frac{1}{2}|M|$. The inequality $|g(x)-M|<\frac{1}{2}|M|$ means that $\frac{1}{2}|M|\leq |g(x)|$ (which, in particular, means that $g(x)\neq 0$). Hence, we can estimate
+
+$$
+ \left|\frac{1}{g(x)}-\frac{1}{M}\right|=\left|\frac{g(x)-M}{g(x)M}\right|=\frac{1}{|g(x)|}\frac{1}{|M|}|g(x)-M|\leq \frac{1}{2|M|}\frac{1}{|M|}|g(x)-M|<\frac{1}{2M^2}2\varepsilon M^2=\varepsilon
+$$
+
+We conclude that $\lim\limits_{x\rightarrow a}\frac{1}{g(x)}=\frac{1}{M}$. By the product rule, we find that $\lim\limits_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim\limits_{x\rightarrow a}f(x)\frac{1}{g(x)}=L\frac{1}{M}=\frac{L}{M}$.
+::::::
+
+::::::{admonition} Proof of {prf:ref}`Theorem:LimitatPoint:Comparison`
+:class: tudproof 
+We argue by contradiction, which means that we assume that $L>M$ and work towards a contradiction. Since $L>M$ we have $L-M>0$ and we can set $\varepsilon=\frac{L-M}{4}>0$. Since we have $\lim\limits_{x\rightarrow a}f(x)=L$ we can pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have have $|f(x)-L|<\varepsilon$. Also, since $\lim\limits_{x\rightarrow a}g(x)=M$ we can pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have have $|g(x)-M|<\varepsilon$. We set $\delta=\mathrm{min}\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$. For these values of $x$ we must have $|f(x)-L|<\varepsilon=\frac{L-M}{4}$, which implies $f(x)\geq L-\frac{L-M}{4}=\frac{3}{4}L+\frac{1}{4}M$. Similarly we must have for these values of $x$ that $|g(x)-M|<\varepsilon=\frac{L-M}{4}$, which implies $g(x)\leq M+\frac{L-M}{4}=\frac{3}{4}M+\frac{1}{4}L$. Since $L>M$ we then obtain
+
+$$
+ g(x)\leq \frac{3}{4}M+\frac{1}{4}L<\frac{3}{4}L+\frac{1}{4}M\leq f(x)
+$$
+
+which is a contradiction, since we assumed that $f(x)\leq g(x)$ for all $x$ close to $a$. So that means that $L\leq M$.
+::::::
+
+::::::{admonition} Proof of {prf:ref}`Theorem:LimitatPoint:Squeezetheorem`
+:class: tudproof 
+We let $\varepsilon>0$ be given. Since we have $\lim\limits_{x\rightarrow a}f(x)=L$ we can pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have have $|f(x)-L|<\frac{\varepsilon}{3}$. Also, since $\lim\limits_{x\rightarrow a}h(x)=L$ we can pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have have $|h(x)-L|<\frac{\varepsilon}{3}$. We set $\delta=\mathrm{min}\left)\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$. Note that $f(x)\leq g(x)\leq h(x)$ implies that $|g(x)-f(x)|=g(x)-f(x)\leq h(x)-f(x)=|h(x)-f(x)|$. As such, we can estimate for $x$ with $0<|x-a|<\delta$
+
+$$
+ |g(x)-L|=|g(x)-f(x)+f(x)-L|\leq |g(x)-f(x)|+|f(x)-L|\leq |h(x)-f(x)|+|f(x)-L|=|h(x)-L+L-f(x)|+|f(x)-L|\leq |h(x)-L|+|L-f(x)|+|f(x)-L|=|h(x)-L|+2|f(x)-L|<\frac{\varepsilon}{3}+2\frac{\varepsilon}{3}=\varepsilon
+$$
+
+Here we used the triangle inequality for absolute values (WILLEM: bron???). We conclude that $\lim\limits_{x\rightarrow a}g(x)=L$.
+::::::
+
+
 
 
