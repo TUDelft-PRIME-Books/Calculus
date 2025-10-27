@@ -1,34 +1,11 @@
 # Trigonometry
 
-**Thales's theorem**
-```{figure} Images/thales.png
----
-width: 50%
-name: Thales
-align: center
----
-Thales's theorem
-```
-::::::{prf:theorem}
-:label: Thm.Thales
-If $AB$ is a diameter of a circle and $C$ is an arbitrary point on the circle, not equal to $A$ or $B$, then the angle $ACB$ equals $90^{\circ}$.
-::::::
-
-::::::{prf:proof} Consider the angles $\alpha$ and $\beta$ as indicated in the picture above. Since the triangle $AMC$ is isosceles ($AM$ and $MC$ are both equal to the radius of the circle), we have: $\angle ACM=\alpha$. Likewise, the triangle $BMC$ is isosceles ($BM$ and $MC$ are both equal to the radius of the circle) and therefore: $\angle BCM=\beta$. So, we have to prove that $\alpha+\beta$ equals $90^{\circ}$.
-
-Now we have: $\angle AMC=180^{\circ}-2\alpha$ and $\angle BMC=180^{\circ}-2\beta$. Further we have: 
-$\angle AMC=\angle BMC=180^{\circ}$. Hence:
-```{math}
-180^{\circ}-2\alpha+180^{\circ}-2\beta=180^{\circ}\quad\Longleftrightarrow\quad 180^{\circ}-2\alpha-2\beta=0
-\quad\Longleftrightarrow\quad\alpha+\beta=90^{\circ}.
-```
-::::::
-
+## Angles
 Angles can be measured in degrees or in radians (abbreviated as rad). The angle given by a complete revolution contains $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
 
 $$\pi\;\text{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\text{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\text{rad}.$$ 
 
-In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out the "rad".
+In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out "rad".
 
 ```{figure} Images/trig.png
 ---
@@ -58,16 +35,38 @@ The unit circle
 
 If we take the point $P(x,y)$ on the **unit circle** (the circle with the origin as center and radius $1$), we have: $x=\cos(\theta)$ and $y=\sin(\theta)$.
 
-<b>Standard values</b>
+Before we proceed with properties of the trigonometric functions we deal with two ancient theorems named after Thales of Miletus (c. 624 - c. 545 BC) and Pythagoras of Samos (c. 570 - c. 495 BC).
 
-|$\theta$ (in degrees) | $0^{\circ}$ | $30^{\circ}$ | $45^{\circ}$ | $60^{\circ}$ | $90^{\circ}$ | $120^{\circ}$ | $135^{\circ}$ | $150^{\circ}$ | $180^{\circ}$ | $270^{\circ}$ | $360^{\circ}$ |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| $\theta$ (in radians) | $0$ | $\frac{1}{6}\pi$ | $\frac{1}{4}\pi$ | $\frac{1}{3}\pi$ | $\frac{1}{2}\pi$ | $\frac{2}{3}\pi$ | $\frac{3}{4}\pi$ | $\frac{5}{6}\pi$ | $\pi$ | $\frac{3}{2}\pi$ | $2\pi$ |
-| $\sin(\theta)$ | $0$ | $\frac{1}{2}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}\sqrt{3}$ | $1$ | $\frac{1}{2}\sqrt{3}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}$ | $0$ | $-1$ | $0$ |
-| $\cos(\theta)$ | $1$ | $\frac{1}{2}\sqrt{3}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}$ | $0$ |$-\frac{1}{2}$ | $-\frac{1}{2}\sqrt{2}$ | $-\frac{1}{2}\sqrt{3}$ | $-1$ | $0$ | $1$ |
-| $\tan(\theta)$ | $0$ | $\frac{1}{3}\sqrt{3}$ | $1$ | $\sqrt{3}$ | $-$ | $-\sqrt{3}$ | $-1$ | $-\frac{1}{3}\sqrt{3}$ | $0$ | $-$ | $0$ |
+## Thales's theorem
+
+
+::::::{prf:theorem} Thales
+:label: Thm:Trigonometry:Thales
+```{figure} Images/thales.png
+---
+width: 50%
+name: Thales
+align: center
+---
+Thales's theorem
+```
+If $AB$ is a diameter of a circle and $C$ is an arbitrary point on the circle, not equal to $A$ or $B$, then the angle $ACB$ equals $90^{\circ}$.
+::::::
+
+::::::{prf:proof} Consider the angles $\alpha$ and $\beta$ as indicated in the picture above. Since the triangle $AMC$ is isosceles ($AM$ and $MC$ are both equal to the radius of the circle), we have: $\angle ACM=\alpha$. Likewise, the triangle $BMC$ is isosceles ($BM$ and $MC$ are both equal to the radius of the circle) and therefore: $\angle BCM=\beta$. So, we have to prove that $\alpha+\beta$ equals $90^{\circ}$.
+
+Now we have: $\angle AMC=180^{\circ}-2\alpha$ and $\angle BMC=180^{\circ}-2\beta$. Further we have: 
+$\angle AMC=\angle BMC=180^{\circ}$. Hence:
+```{math}
+180^{\circ}-2\alpha+180^{\circ}-2\beta=180^{\circ}\quad\Longleftrightarrow\quad 180^{\circ}-2\alpha-2\beta=0
+\quad\Longleftrightarrow\quad\alpha+\beta=90^{\circ}.
+```
+::::::
 
 ## The Pythagorean theorem
+
+::::::{prf:theorem} Pythagoras
+:label: Thm:Trigonometry:Pythagoras
 ```{figure} Images/righttriangle.png
 ---
 width: 50%
@@ -75,8 +74,10 @@ name: right-angled triangle
 align: center
 ---
 ```
-::::::{prf:theorem} 
-In a right-angled triangle as in the figure above we have: $a^2+b^2=c^2$.
+In a right-angled triangle as in the figure above we have: 
+```{math}
+a^2+b^2=c^2.
+```
 ::::::
 
 ::::::{prf:proof} 
@@ -95,20 +96,35 @@ The area of the large square is $(a+b)^2$ and that of the small square is $c^2$.
 ```
 ::::::
 
+## The law of cosines
+
 The *law of cosines* is a generalization of the Pythagorean theorem:
+
+::::::{prf:theorem} Law of cosines
+:label: Thm:Trigonometry:LawOfCosines
+```{figure} Images/abctriangle.png
+---
+width: 50%
+name: Triangle $ABC$
+align: center
+---
+```
+In an arbitrary triangle as in the figure above we have: 
+```{math}
+a^2=b^2+c^2-2bc\cos(\alpha).
+```
+::::::
+
+::::::{prf:proof}
+Consider the perpendicular from $C$ to the opposite side $AB$:
 ```{figure} Images/sincosrule.png
 ---
 width: 50%
 name: law of cosines
 align: center
 ---
-```
-::::::{prf:theorem} 
-In an arbitrary triangle as in the figure above we have: $a^2=b^2+c^2-2bc\cos(\alpha)$.
-::::::
-
-::::::{prf:proof} 
-In the figure above we have according to the Pythagorean theorem:
+``` 
+Then we have according to the Pythagorean theorem:
 $h^2=b^2-e^2$ and $h^2=a^2-(c-e)^2$. Hence
 ```{math}
 b^2-e^2=a^2-c^2+2ce-e^2\quad\Longleftrightarrow\quad b^2=a^2-c^2+2ce.
@@ -119,17 +135,49 @@ a^2=b^2+c^2-2bc\cos(\alpha).
 ```
 ::::::
 
+Note that we also have: $b^2=a^2+c^2-2ac\cos(\beta)$ and $c^2=a^2+b^2-2ab\cos(\gamma)$.
+
+Furthermore, if one of the angles is a right angle the law of cosines reduces to the Pythagorean theorem.
+
+## The law of sines
+
 Further we have the *law of sines*:
 
-::::::{prf:theorem} 
-In an arbitrary triangle as in the figure above we have: $\dfrac{a}{\sin(\alpha)}=\dfrac{b}{\sin(\beta)}$.
+::::::{prf:theorem} Law of sines
+:label: Thm:Trigonometry:LawOfSines
+```{figure} Images/abctriangle_circle.png
+---
+width: 50%
+name: Triangle $ABC$ with circumscribed circle
+align: center
+---
+```
+In an arbitrary triangle as in the figure above we have: 
+```{math}
+\frac{a}{\sin(\alpha)}=\frac{b}{\sin(\beta)}=\frac{c}{\sin(\gamma)}=2r
+```
+with $r$ the radius of the circumscribed circle of the triangle.
 ::::::
 
 ::::::{prf:proof} 
-In the figure above we have: $\sin(\alpha)=\dfrac{b}{h}$ and $\sin(\beta)=\dfrac{a}{h}$. Hence: $b\sin(\alpha)=h=a\sin(\beta)$ or equivalently $\dfrac{a}{\sin(\alpha)}=\dfrac{b}{\sin(\beta)}$.
-::::::
+Consider the perpendicular from $C$ to the opposite side $AB$:
+```{figure} Images/sincosrule.png
+---
+width: 50%
+name: law of sines
+align: center
+---
+``` 
+Then we have: $\sin(\alpha)=\dfrac{h}{b}$ and $\sin(\beta)=\dfrac{h}{a}$. Hence: $b\sin(\alpha)=h=a\sin(\beta)$ or equivalently 
+```{math}
+\frac{a}{\sin(\alpha)}=\frac{b}{\sin(\beta)}.
+```
 
-The last result can be extended with:
+Similarly, drawing the perpendicular from $A$ to the opposite side $BC$ and from $B$ to the opposite side $AC$, we also have $\dfrac{b}{\sin(\beta)}=\dfrac{c}{\sin(\gamma)}$ and $\dfrac{a}{\sin(\alpha)}=\dfrac{c}{\sin(\gamma)}$. So, we conclude that
+```{math}
+\frac{a}{\sin(\alpha)}=\frac{b}{\sin(\beta)}=\frac{c}{\sin(\gamma)}.
+```
+Now we consider the circumscribed circle of the triangle:
 ```{figure} Images/sincosrule2.png
 ---
 width: 50%
@@ -137,39 +185,66 @@ name: law of sines
 align: center
 ---
 ```
-::::::{prf:theorem} 
-$\dfrac{c}{\sin(\gamma)}=2r$ with $r$ the radius of the circumscribed circle of the triangle.
-::::::
-
-::::::{prf:proof} 
-Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to Thales's theorem {prf:ref}`Thm:Thales` the triangle $ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have: $\gamma=\delta$. Then we have:
+Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to Thales's {prf:ref}`Thm:Trigonometry:Thales` the triangle $ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have: $\gamma=\delta$. Then we have:
 ```{math}
 \sin(\gamma)=\sin(\delta)=\frac{c}{2r}\quad\Longleftrightarrow\quad\frac{c}{\sin(\gamma)}=2r.
 ```
+This proves the theorem.
 ::::::
 
+## Standard values
+
+For certain special angles the trigonometric functions can be evaluated exactly. 
+```{figure} Images/triangle1.png
+---
+width: 25%
+name: isosceles triangle
+align: center
+---
+```
+First consider a right-angled isosceles triangle with two equal sides of length $1$. Then the Pythagorean theorem implies that the hypotenuse has length $\sqrt{2}$. The two equal angles are $45^{\circ}$, which implies that $\cos(45^{\circ})=\frac{1}{2}\sqrt{2}=\sin(45^{\circ})$.
+
+```{figure} Images/triangle2.png
+---
+width: 25%
+name: equilateral triangle
+align: center
+---
+```
+Secondly, consider an equilateral triangle with three equal sides of length $2$. Then the line segment from the top perpendicular to the opposite side leads to two right-angled triangles with one side of length $1$ and hypotenuse of length $2$. Then the Pythagorean theorem implies that the vertical line segment has length $\sqrt{3}$. Note that the three equal angles are $60^{\circ}$ and that the angle at the top of each of the two right-angled triangles equals $30^{\circ}$. Then we easily deduce that $\cos(60^{\circ})=\frac{1}{2}=\sin(30^{\circ})$ and $\cos(30^{\circ})=\frac{1}{2}\sqrt{3}=\sin(60^{\circ})$.
+
+This leads to the following table of standard values:
+
+|$\theta$ (in degrees) | $0^{\circ}$ | $30^{\circ}$ | $45^{\circ}$ | $60^{\circ}$ | $90^{\circ}$ | $120^{\circ}$ | $135^{\circ}$ | $150^{\circ}$ | $180^{\circ}$ | $270^{\circ}$ | $360^{\circ}$ |
+|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| $\theta$ (in radians) | $0$ | $\frac{1}{6}\pi$ | $\frac{1}{4}\pi$ | $\frac{1}{3}\pi$ | $\frac{1}{2}\pi$ | $\frac{2}{3}\pi$ | $\frac{3}{4}\pi$ | $\frac{5}{6}\pi$ | $\pi$ | $\frac{3}{2}\pi$ | $2\pi$ |
+| $\sin(\theta)$ | $0$ | $\frac{1}{2}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}\sqrt{3}$ | $1$ | $\frac{1}{2}\sqrt{3}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}$ | $0$ | $-1$ | $0$ |
+| $\cos(\theta)$ | $1$ | $\frac{1}{2}\sqrt{3}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}$ | $0$ |$-\frac{1}{2}$ | $-\frac{1}{2}\sqrt{2}$ | $-\frac{1}{2}\sqrt{3}$ | $-1$ | $0$ | $1$ |
+| $\tan(\theta)$ | $0$ | $\frac{1}{3}\sqrt{3}$ | $1$ | $\sqrt{3}$ | $-$ | $-\sqrt{3}$ | $-1$ | $-\frac{1}{3}\sqrt{3}$ | $0$ | $-$ | $0$ |
+
 ## Identities
+
 The Pythagorean theorem leads to $\sin^2(x)+\cos^2(x)=1$.
 
-The sine and cosine are periodic with period $2\pi$: $\sin(\theta+2\pi)=\sin(\theta)$ and $\cos(\theta+2\pi)=\cos(\theta)$. 
+The sine and cosine are periodic with period $2\pi$: $\sin(\theta+2\pi)=\sin(\theta)$ and $\cos(\theta+2\pi)=\cos(\theta)$. This follows directly from the definition.
 
-The tangent is periodic with period $\pi$: $\tan(\theta+\pi)=\tan(\theta)$.
+Another direct consequence of the definition is: $\sin(-\theta)=-\sin(\theta)$, $\cos(-\theta)=\cos(\theta)$ and $\tan(-\theta)=-\tan(\theta)$.
 
-Further we have: $\sin(-\theta)=-\sin(\theta)$, $\cos(-\theta)=\cos(\theta)$ and $\tan(-\theta)=-\tan(\theta)$.
+Now we list some useful properties, which will be proved afterwards.
 
-<b>Connection formulas</b>
+**Connection formulas**
 
 $\sin(\theta+\frac{1}{2}\pi)=\cos(\theta)$ and $\cos(\theta+\frac{1}{2}\pi)=-\sin(\theta)$.
 
-<b>Symmetry relations</b>
+**Symmetry relations**
 
 $\sin(\pi-\theta)=\sin(\theta)$, $\cos(\pi-\theta)=-\cos(\theta)$ and $\tan(\pi-\theta)=-\tan(\theta)$
 
-<b>Double angle formulas</b>
+**Double angle formulas**
 
 $\sin(2x)=2\sin(x)\cos(x)$ and $\cos(2x)=\cos^2(x)-\sin^2(x)$.
 
-<b>Summation formulas</b>
+**Summation formulas**
 
 $\sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)$ and $\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$
 
@@ -201,7 +276,11 @@ This implies that $\cos(\alpha-\beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\
 
 Replacing $\beta$ with $-\beta$ we obtain that $\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)$.
 
-Using $\sin(\beta+\frac{1}{2}\pi)=\cos(\beta)$ and $\cos(\beta+\frac{1}{2}\pi)=-\sin(\beta)$ we obtain
+Taking $\beta=\frac{1}{2}\pi$ in the latter formula, using $\cos(\frac{1}{2}\pi)=0$ and $\sin(\frac{1}{2}\pi)=1$, we obtain
+```{math}
+\cos(\alpha+\tfrac{1}{2}\pi)=\cos(\alpha)\cos(\tfrac{1}{2}\pi)-\sin(\alpha)\sin(\tfrac{1}{2}\pi)=-\sin(\alpha),
+```
+which leads to
 ```{math}
 \begin{align*}
 \sin(\alpha+\beta)&=-\cos(\alpha+\beta+\tfrac{1}{2}\pi)=\sin(\alpha)\sin(\beta+\tfrac{1}{2}\pi)-\cos(\alpha)\cos(\beta+\tfrac{1}{2}\pi)\\
@@ -209,7 +288,13 @@ Using $\sin(\beta+\frac{1}{2}\pi)=\cos(\beta)$ and $\cos(\beta+\frac{1}{2}\pi)=-
 \end{align*}
 ```
 
-Replacing $\beta$ with $-\beta$ we obtain: $\cos(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
+Taking $\beta=\frac{1}{2}\pi$, using $\cos(\frac{1}{2}\pi)=0$ and $\sin(\frac{1}{2}\pi)=1$, we have
+```{math}
+\sin(\alpha+\tfrac{1}{2}\pi)=\sin(\alpha)\cos(\tfrac{1}{2}\pi)+\cos(\alpha)\sin(\tfrac{1}{2}\pi)=\cos(\alpha).
+```
+
+Replacing $\beta$ with $-\beta$ we obtain: $\sin(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
+
 Now the summation formulas for the tangent follow from these summation formulas for the sine and the cosine:
 
 ```{math}
@@ -222,12 +307,40 @@ Replacing $y$ with $-y$ we obtain: $\tan(x-y)=\dfrac{\tan(x)-\tan(y)}{1+\tan(x)\
 
 The double angle formulas are special cases of these summation formulas.
 
+The symmetry relations also follow from the summation formulas:
+```{math}
+\sin(\pi-\theta)=\sin(\pi)\cos(\theta)-\cos(\pi)\sin(\theta)=\sin(\theta)
+```
+and
+```{math}
+\cos(\pi-\theta)=\cos(\pi)\cos(\theta)+\sin(\pi)\sin(\theta)=-\cos(\theta),
+```
+which implies that $\tan(\pi-\theta)=-\tan(\theta)$.
+
+Now we can show that the tangent is periodic with period $\pi$:
+```{math}
+\tan(x+\pi)=\frac{\sin(x+\pi)}{\cos(x+\pi)}=\frac{\sin(x)\cos(\pi)+\cos(x)\sin(\pi)}{\cos(x)\cos(\pi)-\sin(x)\sin(\pi)}=\frac{-\sin(x)}{-\cos(x)}=\tan(x).
+```
+
 Finally, we have Heron's formula:
 
-::::::{prf:theorem}
-Let $s=\frac{1}{2}(a+b+c)$ be the semiperimeter of the triangle, then the area of the triangle equals $\sqrt{s(s-a)(s-b)(s-c)}$.
+::::::{prf:theorem} Heron
+:label: Thm:Trigonometry:Heron
+```{figure} Images/abctriangle.png
+---
+width: 50%
+name: Triangle $ABC$
+align: center
+---
+```
+Let $s=\frac{1}{2}(a+b+c)$ be the semiperimeter of the triangle, then the area of the triangle equals 
+```{math}
+\sqrt{s(s-a)(s-b)(s-c)}.
+```
 ::::::
 
+::::::{prf:proof} 
+Consider the perpendicular from $C$ to the opposite side $AB$:
 ```{figure} Images/abhtriangle.png
 ---
 width: 50%
@@ -235,8 +348,6 @@ name: Heron's formula
 align: center
 ---
 ```
-
-::::::{prf:proof} 
 Using the Pythagorean theorem we have $h^2=b^2-e^2$ and $h^2=a^2-(c-e)^2$. This implies that $b^2-e^2=a^2-(c-e)^2$ or equivalently $b^2=a^2-c^2+2ce$. Hence we have: $e=\dfrac{b^2+c^2-a^2}{2c}$. Then we have
 ```{math}
 \begin{align*}
@@ -627,3 +738,5 @@ Note that $\tan(\gamma)=\tan(\pi-\alpha-\beta)=-\tan(\alpha+\beta)=-\dfrac{\tan(
 \end{align*}
 ```
 :::
+
+Hier wellicht nog een Grasple-opgave over de formule van Heron, waarbij het plaatje van de driehoek wordt aangepast aan de parameters (de lengtes van de zijden), als dat mogelijk is.
