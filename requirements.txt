@@ -3,7 +3,7 @@ teachbooks == 0.2.2 # depends on jupyter-book
 
 sphinx-tudelft-theme == 1.2.0
 teachbooks-sphinx-grasple == 1.2.5
-sphinx-prime-applets == 1.0.6
+sphinx-prime-applets == 1.1.0
 sphinx-indexed-definitions == 1.1.0
 sphinx-ref-graph == 1.0.2
 sphinx-new-tab-link == 0.8.0
