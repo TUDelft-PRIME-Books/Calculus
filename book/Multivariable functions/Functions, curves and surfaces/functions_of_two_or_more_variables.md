@@ -3,5 +3,6 @@
 In this section we cover:
 
 - Notation
-- Real-life examples? 
-- Not sure what exactly is not covered in the other sections
+- Domain, codomain and range
+- Graphs of functions of two variables
+- Differences and similarities between graphs and surfaces
