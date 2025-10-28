@@ -28,7 +28,7 @@ parts:
   - file: Single-variable functions/Functions/introduction_functions.md
     sections:
     - file: Single-variable functions/Functions/functions_of_one_variable.md
-    - file: Single-variable functions/Functions/domain_range_and_graphs.md
+    - file: Single-variable functions/Functions/properties.md
     - file: Single-variable functions/Functions/curves.md
     - file: Single-variable functions/Functions/inverse_functions.md
     - file: Single-variable functions/Functions/nonlinear_equations_of_one_variable.md
@@ -70,9 +70,9 @@ parts:
   - file: Sequences and series/Series/introduction_series.md
     sections:
     - file: Sequences and series/Series/introduction_to_series.md
-    - file: Sequences and series/Series/convergence_tests.md
-    - file: Sequences and series/Series/functions_and_series.md
-    - file: Sequences and series/Series/series_solutions_to_DEs.md
+    - file: Sequences and series/Series/tests_for_positive_series.md
+    - file: Sequences and series/Series/tests_for_general_series.md
+    - file: Sequences and series/Series/power_series.md
     - file: Sequences and series/Series/fourier_series.md
   numbered: true
 - caption: Multivariable functions
@@ -80,10 +80,11 @@ parts:
   - file: Multivariable functions/Functions, curves and surfaces/introduction_functions_curves_and_surfaces.md
     sections:
     - file: Multivariable functions/Functions, curves and surfaces/functions_of_two_or_more_variables.md
-    - file: Multivariable functions/Functions, curves and surfaces/domain_range_and_graphs.md
-    - file: Multivariable functions/Functions, curves and surfaces/curves_and_surfaces.md
+    - file: Multivariable functions/Functions, curves and surfaces/properties.md
+    - file: Multivariable functions/Functions, curves and surfaces/curves.md
+    - file: Multivariable functions/Functions, curves and surfaces/surfaces.md
+    - file: Multivariable functions/Functions, curves and surfaces/level_curves_and_surfaces.md
     - file: Multivariable functions/Functions, curves and surfaces/limits_and_continuity.md
-    - file: Multivariable functions/Functions, curves and surfaces/level_curves_and_sets.md
     - file: Multivariable functions/Functions, curves and surfaces/nonlinear_systems_in_two_variables.md
   - file: Multivariable functions/Partial differentiation/introduction_partial_differentiation.md
     sections:
@@ -115,11 +116,13 @@ parts:
     - file: Differential equations/First-order ordinary differential equations/separable_differential_equations.md
     - file: Differential equations/First-order ordinary differential equations/first_order_linear_differential_equations.md
     - file: Differential equations/First-order ordinary differential equations/autonomous_equations.md
+    - file: Differential equations/First-order ordinary differential equations/series_solutions_1st.md
     - file: Differential equations/First-order ordinary differential equations/approximating_solutions.md
   - file: Differential equations/Second-order ordinary differential equations/introduction_second_order_ODE.md
     sections:
     - file: Differential equations/Second-order ordinary differential equations/homogeneous_problems_with_constant_coefficients.md
     - file: Differential equations/Second-order ordinary differential equations/inhomogeneous_problems_with_constant_coefficients.md
+    - file: Differential equations/Second-order ordinary differential equations/series_solutions_2nd.md
   numbered: true
 - caption: Appendices
   chapters:
