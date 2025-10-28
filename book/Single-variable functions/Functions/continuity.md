@@ -1,3 +1,5 @@
+(Section:Continuity)=
+
 # Continuity
 
 In this section we cover

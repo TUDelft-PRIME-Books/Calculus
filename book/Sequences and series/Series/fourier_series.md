@@ -1,4 +1,4 @@
-# NEW: Fourier series
+# Fourier series
 
 In this section we cover:
 
