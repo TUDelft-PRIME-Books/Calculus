@@ -2,4 +2,5 @@
 
 In this section we cover:
 
-- Not really sure TBH. Could be useful in combination with implicit function theorem, but then it would need to move to the next chapter.
+- General approach to nonlinear systems, including notation and logic
+- Graphical explanations to nonlinear systems
