@@ -4,7 +4,6 @@ parts:
 - caption: Front matter
   chapters:
   - file: introduction.md
-  - file: graph_of_content.md
   numbered: false
 - caption: Algebra
   chapters:
