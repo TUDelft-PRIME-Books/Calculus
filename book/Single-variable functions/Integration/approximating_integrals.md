@@ -17,28 +17,35 @@ The following figures should become applets with these additional interactivity 
 
 * - Figure
   - Interactivity
+  - Implemented
 * - {numref}`Fig:NumericalIntegration:riemann`
   - Dragging each point along the curve/axis (within their relevant intervals)
 
     Increasing/decreasing the number of points
+  - 
 * - {numref}`Fig:NumericalIntegration:leftRectangle`
   - Dragging $x_L$ along the curve/axis
     
     Dragging $x_R$ along the axis
+  - Yes
 * - {numref}`Fig:NumericalIntegration:Trapezoidal`
   - Dragging $x_L$ along the curve/axis
     
     Dragging $x_R$ along the curve/axis
+  -
 * - {numref}`Fig:NumericalIntegration:Simpsons`
   - Dragging $x_L$ along the curve/axis
     
     Dragging $x_M$ along the curve/axis
 
     Dragging $x_R$ along the curve/axis
+  - 
 * - {numref}`Fig:NumericalIntegration:composite`
   - Increasing/decreasing the number of points
+  - 
 * - {numref}`Fig:NumericalIntegration:errors`
   - Enabling/disabling each of the curves
+  - 
 
 ```
 
@@ -112,14 +119,13 @@ which use the left and the right end point of the interval, respectively.
 
 The left Rectangle rule is depicted in {numref}`Figure %s <Fig:NumericalIntegration:leftRectangle>`.
 
-:::{figure} Images/Fig-NumericalIntegration-leftRectangle.svg
+::::{applet}
+:url: calculus/left_rectangle
 :name: Fig:NumericalIntegration:leftRectangle
-:figwidth: 90%
 :class: dark-light
 
 An illustration of the left Rectangle rule.
-
-:::
+::::
 
 **Trapezoidal rule**
 
@@ -382,7 +388,7 @@ As this is still very far from the exact value (see {prf:ref}`Ex:NumericalIntegr
 
 Do you notice anything that happens in the last column?
 
-You can see that the error in the approximation _halves_ each time the value of $h$ _halves_. Something similar is true for each of our composite intregation rules, which you can see in {numref}`Figure %s <Fig:NumericalIntegration:errors>`.
+You can see that the error in the approximation _halves_ each time the value of $h$ _halves_. Something similar is true for each of our composite integration rules, which you can see in {numref}`Figure %s <Fig:NumericalIntegration:errors>`.
 
 :::{figure} Images/Fig-NumericalIntegration-errors.svg
 :name: Fig:NumericalIntegration:errors
@@ -416,7 +422,7 @@ A proof of this theorem is too much for this book, but you can find it in Vuik, 
 
 ::::{caution}
 
-{prf:ref}`Thm:NumericalIntegration:thm` does not give a way to calculate the real error, only gives an indication how to the error is related to the stepsize $h$. 
+{prf:ref}`Thm:NumericalIntegration:thm` does not give a way to calculate the real error, only gives an indication how to the error is related to the step size $h$. 
 
 ::::
 
