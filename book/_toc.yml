@@ -6,7 +6,7 @@ parts:
     numbered: False
     chapters:
     - file: introduction.md # ref_graph: {'ignore':True}
-    - file: graph_of_content.md # ref_graph: {'ignore':True}
+    # - file: graph_of_content.md # ref_graph: {'ignore':True} # Optional graph of content page, currently disabled
   - caption: Algebra
     numbered: True
     chapters:
