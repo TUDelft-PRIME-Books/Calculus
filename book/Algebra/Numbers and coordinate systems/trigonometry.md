@@ -3,189 +3,319 @@
 ## Angles
 Angles can be measured in degrees or in radians (abbreviated as rad). The angle given by a complete revolution contains $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
 
-$$\pi\;\text{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\text{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\text{rad}.$$ 
+$$\pi\;\operatorname{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\operatorname{rad}.$$ 
 
-In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out "rad".
+In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out "$\operatorname{rad}$".
+
+::::::{prf:definition}
+:label: Def:Trigonometry:Angle
+
+Angles are always measured from an **initial side** to a **terminal side**. The **vertex** of the angle is the common endpoint of the two sides.
+
+The **standard position** of an angle occurs when we place its vertex at the origin of a coordinate system with two variables and its initial side on the positive horizontal axis.
+
+A **positive angle** is obtained by rotating the initial side counterclockwise until it coincides with the terminal side. Likewise, **negative angle**s are obtained by clockwise rotation.
+
+::::::
+
+{numref}`Fig:Trigonometry:trig` shows an angle $\theta$ in standard position within the $xy$-plane.
 
 ```{figure} Images/trig.png
 ---
 width: 65%
-name: trig
-align: left
+name: Fig:Trigonometry:trig
+class: dark-light
 ---
-The angle $\theta$
+An angle $\theta$ in the $xy$-plane in standard position.
 ```
 
-The standard position of an angle occurs when we place its vertex at the origin of a coordinate system and its initial side on the positive $x$-axis. A **positive** angle is obtained by rotating the initial side counterclockwise until it coincides with the terminal side. Likewise, **negative** angles are obtained by clockwise rotation.
+## Trigonometric functions
 
-<br /><br /><br />
+Using angles, we can define three trigonometric functions: the sine, cosine and tangent.
 
-For a general angle $\theta$ in standard position we let $P(x,y)$ be any point on the terminal side of $\theta$ and we let $r>0$ be the distance between $O$ and $P$. Then we define:
+::::::{prf:definition}
+:label: Def:Trigonometry:TrigonometricFunctions
 
-$$\sin(\theta)=\dfrac{y}{r},\quad\cos(\theta)=\dfrac{x}{r}\quad\text{and}\quad\tan(\theta)=\dfrac{\sin(\theta)}{\cos(\theta)}=\dfrac{y}{x}\quad(x\neq0).$$
+For a general angle $\theta$ in standard position in the $xy$-plane we let $P(x,y)$ be any point on the terminal side of $\theta$ and we let $r>0$ be the distance between $O$ and $P$, see {numref}`Fig:Trigonometry:trig`.
+
+Then we define:
+
+- The **sine** of $\theta$ as:
+  
+  $$
+  \sin(\theta)=\dfrac{y}{r}.
+  $$
+- The **cosine** of $\theta$ as:
+  
+  $$
+  \cos(\theta)=\dfrac{x}{r}.
+  $$
+- The **tangent** of $\theta$ as:
+  
+  $$
+  \tan(\theta)=\dfrac{\sin(\theta)}{\cos(\theta)}=\dfrac{y}{x},
+  $$
+
+  provided that $x\neq0$.
+
+::::::
+
+If we take the point $P(x,y)$ on the **unit circle** (the circle with the origin as center and radius $r=1$, see {numref}`Fig:Trigonometry:unit_circle`), we have: $x=\cos(\theta)$ and $y=\sin(\theta)$.
 
 ```{figure} Images/unit_circle.png
 ---
 width: 50%
-name: trig
-align: center
+name: Fig:Trigonometry:unit_circle
+class: dark-light
 ---
-The unit circle
+The unit circle.
 ```
 
-If we take the point $P(x,y)$ on the **unit circle** (the circle with the origin as center and radius $1$), we have: $x=\cos(\theta)$ and $y=\sin(\theta)$.
+::::::{prf:remark} Additional trigonometric functions
+:label: Rem:Trigonometry:AlternativeTrigonometricFunctions
 
-Before we proceed with properties of the trigonometric functions we deal with two ancient theorems named after Thales of Miletus (c. 624 - c. 545 BC) and Pythagoras of Samos (c. 570 - c. 495 BC).
+Next to the three trigonometric functions defined above, there are three more trigonometric functions, which are defined as follows: 
+
+- The **cosecant** of $\theta$ as:
+  
+  $$
+  \csc(\theta)=\dfrac{r}{y}=\dfrac{1}{\sin(\theta)}.
+  $$
+- The **secant** of $\theta$ as:
+  
+  $$
+  \sec(\theta)=\dfrac{r}{x}=\dfrac{1}{\cos(\theta)}.
+  $$
+- The **cotangent** of $\theta$ as:
+  
+  $$
+  \cot(\theta)=\dfrac{\cos(\theta)}{\sin(\theta)}=\dfrac{x}{y},
+  $$
+
+  provided that $y\neq0$.
+
+In this book we will however not use these three trigonometric functions.
+
+::::::
+
+Before we proceed with properties of the trigonometric functions we deal with two ancient theorems named after [Thales of Miletus (c. 624 - c. 545 BC)](https://en.wikipedia.org/wiki/Thales_of_Miletus) and [Pythagoras of Samos (c. 570 - c. 495 BC)](https://en.wikipedia.org/wiki/Pythagoras).
 
 ## Thales's theorem
 
+Consider the circle with centre $M$ shown in {numref}`Fig:Trigonometry:Thales` with three arbitrary points $A$, $B$ and $C$ on the circle such that the straight line from $A$ to $B$ goes through the center $M$ of the circle and $C$ not on this straight line. We will call $AB$ a *diameter* of the circle.
 
-::::::{prf:theorem} Thales
-:label: Thm:Trigonometry:Thales
 ```{figure} Images/thales.png
 ---
 width: 50%
-name: Thales
-align: center
+name: Fig:Trigonometry:Thales
+class: dark-light
 ---
-Thales's theorem
+An illustration for Thales's theorem.
 ```
-If $AB$ is a diameter of a circle and $C$ is an arbitrary point on the circle, not equal to $A$ or $B$, then the angle $ACB$ equals $90^{\circ}$.
+
+In {numref}`Fig:Trigonometry:Thales` you might notice that the angle $\angle ACB$ looks like a right angle. Thales's theorem states that this is indeed the case:
+
+::::::{prf:theorem} Thales's theorem
+:label: Thm:Trigonometry:Thales
+
+If $AB$ is the diameter of a circle and $C$ is an arbitrary point on the circle, not equal to $A$ or $B$, then the angle $ACB$ equals $\dfrac{1}{1}\pi$.
 ::::::
 
-::::::{prf:proof} Consider the angles $\alpha$ and $\beta$ as indicated in the picture above. Since the triangle $AMC$ is isosceles ($AM$ and $MC$ are both equal to the radius of the circle), we have: $\angle ACM=\alpha$. Likewise, the triangle $BMC$ is isosceles ($BM$ and $MC$ are both equal to the radius of the circle) and therefore: $\angle BCM=\beta$. So, we have to prove that $\alpha+\beta$ equals $90^{\circ}$.
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:Thales`
+:class: tudproof, dropdown
 
-Now we have: $\angle AMC=180^{\circ}-2\alpha$ and $\angle BMC=180^{\circ}-2\beta$. Further we have: 
-$\angle AMC=\angle BMC=180^{\circ}$. Hence:
+Consider the angles $\alpha$ and $\beta$ as indicated in {numref}`Fig:Trigonometry:Thales`. Since the triangle $\Delta AMC$ is isosceles ($AM$ and $MC$ are both equal to the radius of the circle), we have $\angle ACM=\alpha$. Likewise, the triangle $\Delta BMC$ is isosceles ($BM$ and $MC$ are both equal to the radius of the circle) and therefore $\angle BCM=\beta$. So, we have to prove that $\alpha+\beta$ equals $\dfrac{1}{1}\pi$.
+
+Because the sum of all angles in a triangle equals $180^{\circ}$, we have in triangle $\Delta AMC$ that $\angle AMC=\pi-2\alpha$. Similarly, using triangle $\Delta BMC$ we find $\angle BMC=\pi-2\beta$. Further we have $\angle AMC+\angle BMC=\pi$. Hence:
+
 ```{math}
-180^{\circ}-2\alpha+180^{\circ}-2\beta=180^{\circ}\quad\Longleftrightarrow\quad 180^{\circ}-2\alpha-2\beta=0
-\quad\Longleftrightarrow\quad\alpha+\beta=90^{\circ}.
+\begin{align*}
+&~ & \angle AMC+\angle BMC &= \pi \\
+&\Longleftrightarrow & (\pi-2\alpha)+(\pi-2\beta) &= \pi \\
+&\Longleftrightarrow & -2\alpha-2\beta &= -\pi \\
+&\Longleftrightarrow & \alpha+\beta &= \dfrac{1}{2}\pi.
+\end{align*}
 ```
 ::::::
 
 ## The Pythagorean theorem
 
-::::::{prf:theorem} Pythagoras
-:label: Thm:Trigonometry:Pythagoras
+Another very important theorem in trigonometry is the Pythagorean theorem, which is about the relation between the lengths of the sides of a right-angled triangle, such shown in {numref}`Fig:Trigonometry:RightTriangle`.
+
 ```{figure} Images/righttriangle.png
 ---
 width: 50%
-name: right-angled triangle
-align: center
+name: Fig:Trigonometry:RightTriangle
+class: dark-light
 ---
+
+A right-angled triangle, with sides $a$, $b$ and $c$. The right angle is indicated by the small square. $a$ and $b$ are commonly referred to as the *legs* and $c$ as the *hypotenuse* of the triangle.
+
 ```
-In a right-angled triangle as in the figure above we have: 
+
+::::::{prf:theorem} Pythagorean theorem
+:label: Thm:Trigonometry:Pythagoras
+
+In a right-angled triangle with legs $a$ and $b$ and hypotenuse $c$ we have:
+
 ```{math}
 a^2+b^2=c^2.
 ```
 ::::::
 
-::::::{prf:proof} 
-An elegant proof of the Pythagorean theorem is based on the following picture:
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:Pythagoras`
+:class: tudproof, dropdown
+
+An elegant proof of the Pythagorean theorem is based on the following figure:
+
 ```{figure} Images/pythagoras.png
 ---
 width: 50%
 name: right-angled triangle
-align: center
+class: dark-light
 ---
+
+A square within a larger square for the proof of the Pythagorean theorem.
 ```
-The area of the large square is $(a+b)^2$ and that of the small square is $c^2$. The area of each of the four triangles is $\frac{1}{2}ab$. So we have:
+
+The area of the large square is $(a+b)^2$ and that of the small square is $c^2$.
+
+The area of each of the four triangles is $\frac{1}{2}ab$.
+
+So we have:
+
 ```{math}
-(a+b)^2=c^2+4\cdot\frac{1}{2}ab\quad\Longleftrightarrow\quad a^2+2ab+b^2=c^2+2ab
-\quad\Longleftrightarrow\quad a^2+b^2=c^2.
+\begin{align*}
+&~ & (a+b)^2 &= c^2+4\cdot\frac{1}{2}ab \\
+&\Longleftrightarrow & a^2+2ab+b^2 &= c^2+2ab \\
+&\Longleftrightarrow & a^2+b^2 &= c^2.
+\end{align*}
 ```
 ::::::
 
 ## The law of cosines
 
-The *law of cosines* is a generalization of the Pythagorean theorem:
+The *law of cosines* is a generalization of the Pythagorean theorem, and regards arbitrary triangles as shown in {numref}`Fig:Trigonometry:LawOfCosines`.
 
-::::::{prf:theorem} Law of cosines
-:label: Thm:Trigonometry:LawOfCosines
 ```{figure} Images/abctriangle.png
 ---
 width: 50%
-name: Triangle $ABC$
-align: center
+name: Fig:Trigonometry:LawOfCosines
+class: dark-light
 ---
+
+An arbitrary triangle $\Delta ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$, respectively.
 ```
-In an arbitrary triangle as in the figure above we have: 
+
+::::::{prf:theorem} Law of cosines
+:label: Thm:Trigonometry:LawOfCosines
+
+In an arbitrary triangle with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$, respectively we have (see {numref}`Fig:Trigonometry:LawOfCosines`):
+
 ```{math}
 a^2=b^2+c^2-2bc\cos(\alpha).
 ```
 ::::::
 
-::::::{prf:proof}
-Consider the perpendicular from $C$ to the opposite side $AB$:
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:LawOfCosines`
+:class: tudproof, dropdown
+
+Consider the perpendicular from $C$ to the opposite side $AB$, as shown in {numref}`Fig:Trigonometry:LawOfCosinesProof`.
+
 ```{figure} Images/sincosrule.png
 ---
 width: 50%
-name: law of cosines
-align: center
+name: Fig:Trigonometry:LawOfCosinesProof
+class: dark-light
 ---
+
+An illustration for the law of cosines.
 ``` 
+
 Then we have according to the Pythagorean theorem:
 $h^2=b^2-e^2$ and $h^2=a^2-(c-e)^2$. Hence
+
 ```{math}
 b^2-e^2=a^2-c^2+2ce-e^2\quad\Longleftrightarrow\quad b^2=a^2-c^2+2ce.
 ```
+
 Now we have: $\cos(\alpha)=\dfrac{e}{b}$, which implies that $e=b\cos(\alpha)$. So:
 ```{math}
 a^2=b^2+c^2-2bc\cos(\alpha).
 ```
 ::::::
 
+::::::{prf:corollary}
+
 Note that we also have: $b^2=a^2+c^2-2ac\cos(\beta)$ and $c^2=a^2+b^2-2ab\cos(\gamma)$.
 
-Furthermore, if one of the angles is a right angle the law of cosines reduces to the Pythagorean theorem.
+Furthermore, if one of the angles is a right angle the law of cosines using that same angle reduces to the Pythagorean theorem.
+::::::
 
 ## The law of sines
 
-Further we have the *law of sines*:
+Further we have the *law of sines*, which relates the lengths of the sides of an arbitrary triangle and the sines of the opposite angles to the radius of the circumscribed circle, as shown in {numref}`Fig:Trigonometry:LawOfSines`.
 
-::::::{prf:theorem} Law of sines
-:label: Thm:Trigonometry:LawOfSines
 ```{figure} Images/abctriangle_circle.png
 ---
 width: 50%
-name: Triangle $ABC$ with circumscribed circle
-align: center
+name: Fig:Trigonometry:LawOfSines
+class: dark-light
 ---
+
+An arbitrary triangle $\Delta ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$, respectively, and its circumscribed circle.
 ```
-In an arbitrary triangle as in the figure above we have: 
+
+::::::{prf:theorem} Law of sines
+:label: Thm:Trigonometry:LawOfSines
+
+In an arbitrary triangle as in {numref}`Fig:Trigonometry:LawOfSines` we have: 
 ```{math}
 \frac{a}{\sin(\alpha)}=\frac{b}{\sin(\beta)}=\frac{c}{\sin(\gamma)}=2r
 ```
 with $r$ the radius of the circumscribed circle of the triangle.
 ::::::
 
-::::::{prf:proof} 
-Consider the perpendicular from $C$ to the opposite side $AB$:
-```{figure} Images/sincosrule.png
----
-width: 50%
-name: law of sines
-align: center
----
-``` 
-Then we have: $\sin(\alpha)=\dfrac{h}{b}$ and $\sin(\beta)=\dfrac{h}{a}$. Hence: $b\sin(\alpha)=h=a\sin(\beta)$ or equivalently 
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:LawOfSines`
+:class: tudproof
+
+Consider the perpendicular from $C$ to the opposite side $AB$, as shown in {numref}`Fig:Trigonometry:LawOfCosinesProof`.
+ 
+Then we have $\sin(\alpha)=\dfrac{h}{b}$ and $\sin(\beta)=\dfrac{h}{a}$. Hence $b\sin(\alpha)=h=a\sin(\beta)$ or equivalently 
 ```{math}
 \frac{a}{\sin(\alpha)}=\frac{b}{\sin(\beta)}.
 ```
 
-Similarly, drawing the perpendicular from $A$ to the opposite side $BC$ and from $B$ to the opposite side $AC$, we also have $\dfrac{b}{\sin(\beta)}=\dfrac{c}{\sin(\gamma)}$ and $\dfrac{a}{\sin(\alpha)}=\dfrac{c}{\sin(\gamma)}$. So, we conclude that
+Similarly, drawing the perpendicular from $A$ to the opposite side $BC$, we also have
+
+$$
+\dfrac{b}{\sin(\beta)}=\dfrac{c}{\sin(\gamma)},
+$$
+
+and from $B$ to the opposite side $AC$ gives
+
+$$
+\dfrac{a}{\sin(\alpha)}=\dfrac{c}{\sin(\gamma)}.
+$$
+
+So, we conclude that
 ```{math}
 \frac{a}{\sin(\alpha)}=\frac{b}{\sin(\beta)}=\frac{c}{\sin(\gamma)}.
 ```
-Now we consider the circumscribed circle of the triangle:
+
+Now we consider the circumscribed circle of the triangle as shown in {numref}`Fig:Trigonometry:LawOfSinesProof`.
+
 ```{figure} Images/sincosrule2.png
 ---
 width: 50%
-name: law of sines
-align: center
+name: Fig:Trigonometry:LawOfSinesProof
+class: dark-light
 ---
+
+An illustration for proof of the law of sines.
 ```
-Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to Thales's {prf:ref}`Thm:Trigonometry:Thales` the triangle $ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have: $\gamma=\delta$. Then we have:
+
+Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to {prf:ref}`Thales's theorem <Thm:Trigonometry:Thales>` the triangle $ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have: $\gamma=\delta$. Then we have:
 ```{math}
 \sin(\gamma)=\sin(\delta)=\frac{c}{2r}\quad\Longleftrightarrow\quad\frac{c}{\sin(\gamma)}=2r.
 ```
@@ -264,7 +394,7 @@ In order to prove these summation formulas, we consider the picture above with b
 ```{math}
 (PQ)^2=(OP)^2+(OQ)^2-2(OP)(OQ)\cos(\alpha-\beta)=2-2\cos(\alpha-\beta).
 ```
-On the other hand, this distance can be computed using the Pythagoran theorem as
+On the other hand, this distance can be computed using the Pythagorean theorem as
 ```{math}
 \begin{align*}
 (PQ)^2&=(\cos(\beta)-\cos(\alpha))^2+(\sin(\beta)-\sin(\alpha))^2\\
@@ -370,7 +500,7 @@ Let $s=\dfrac{a+b+c}{2}$, then: $s-a=\dfrac{b+c-a}{2}$, $s-b=\dfrac{a+c-b}{2}$ a
 ::::::
 
 ```{exercise}
-:label: exercise 1
+:label: exercise_1
 Show that $1+\tan^2(x)=\dfrac{1}{\cos^2(x)}$.
 ```
 
@@ -380,7 +510,7 @@ $\sin^2(x)+\cos^2(x)=1\quad\Longleftrightarrow\quad\dfrac{\sin^2(x)}{\cos^2(x)}+
 :::
 
 ```{exercise} 
-:label: exercise 2
+:label: exercise_2
 Show that $1+\dfrac{1}{\tan^2(x)}=\dfrac{1}{\sin^2(x)}$.
 ```
 
@@ -390,7 +520,7 @@ $\sin^2(x)+\cos^2(x)=1\quad\Longleftrightarrow\quad\dfrac{\sin^2(x)}{\sin^2(x)}+
 :::
 
 ```{exercise} 
-:label: exercise 3
+:label: exercise_3
 Show that $2\sin(x+y)\cos(x-y)=\sin(2x)+\sin(2y)$.
 ```
 
@@ -411,7 +541,7 @@ Now we use $\sin^2(x)+\cos^2(x)=1=\sin^2(y)+\cos^2(y)$, $\sin(2x)=2\sin(x)\cos(y
 :::
 
 ```{exercise} 
-:label: exercise 4
+:label: exercise_4
 Show that $2\cos(x+y)\sin(x-y)=\sin(2x)-\sin(2y)$.
 ```
 
@@ -432,7 +562,7 @@ Now we use $\sin^2(x)+\cos^2(x)=1=\sin^2(y)+\cos^2(y)$, $\sin(2x)=2\sin(x)\cos(y
 :::
 
 ```{exercise} 
-:label: exercise 5
+:label: exercise_5
 Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the exact value of $\sin(\frac{1}{12}\pi)$.
 ```
 
@@ -447,7 +577,7 @@ Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the ex
 :::
 
 ```{exercise} 
-:label: exercise 6
+:label: exercise_6
 Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the exact value of $\cos(\frac{1}{12}\pi)$.
 ```
 
@@ -462,7 +592,7 @@ Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the ex
 :::
 
 ```{exercise} 
-:label: exercise 7
+:label: exercise_7
 Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the exact value of $\sin(\frac{5}{12}\pi)$.
 ```
 
@@ -477,7 +607,7 @@ Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the ex
 :::
 
 ```{exercise} 
-:label: exercise 8
+:label: exercise_8
 Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the exact value of $\cos(\frac{5}{12}\pi)$.
 ```
 
@@ -492,7 +622,7 @@ Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the ex
 :::
 
 ```{exercise} 
-:label: exercise 9
+:label: exercise_9
 Let $a=\cos(\frac{1}{5}\pi)$ and $b=\cos(\frac{2}{5}\pi)$. Use $\cos(2x)=2\cos^2(x)-1$ and $\cos(\pi-x)=-\cos(x)$ to find two equations involving $a$ and $b$. Then find the exact values of $\cos(\frac{1}{5}\pi)$, $\cos(\frac{2}{5})$, $\cos(\frac{3}{5}\pi)$ and $\cos(\frac{4}{5}\pi)$.
 ```
 
@@ -514,7 +644,7 @@ Since $a=\cos(\frac{1}{5}\pi)>0$, we conclude that $a=\frac{1}{4}(1+\sqrt{5})$. 
 :::
 
 ```{exercise} 
-:label: exercise 10
+:label: exercise_10
 Use the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ to find the exact values of $\tan(\frac{1}{8}\pi)$ and $\tan(\frac{3}{8}\pi)$.
 ```
 
@@ -542,7 +672,7 @@ Hence: $(\tan(\frac{3}{8}\pi)-1)^2-2=0$ or equivalently $\tan(\frac{3}{8}\pi)=1\
 :::
 
 ```{exercise} 
-:label: exercise 11
+:label: exercise_11
 In the picture below we have $\alpha=\frac{1}{7}\pi$. Find the exact value of $\cos(\frac{1}{7}\pi)\cos(\frac{2}{7}\pi)\cos(\frac{3}{7}\pi)$.
 ```
 
@@ -563,7 +693,7 @@ In each of the three equilateral triangles we use a rectangular triangle being h
 :::
 
 ```{exercise} 
-:label: exercise 12
+:label: exercise_12
 Let $\alpha=\frac{1}{7}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos(x)$ and the formula $2\sin(x)\cos(y)=\sin(x+y)-\sin(x-y)$ to find the exact value of $\cos(\alpha)\cos(2\alpha)\cos(3\alpha)$.
 ```
 
@@ -577,7 +707,7 @@ since $\sin(7\alpha)=\sin(\pi)=0$.
 :::
 
 ```{exercise} 
-:label: exercise 13
+:label: exercise_13
 Let $\alpha=\frac{1}{5}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos(x)$ and the formula $2\sin(x)\cos(y)=\sin(x+y)-\sin(x-y)$ to find the exact value of $\cos(\alpha)+\cos(3\alpha)$.
 ```
 
@@ -594,7 +724,7 @@ since $\sin(4\alpha)=\sin(\alpha)$ for $\alpha=\frac{1}{5}\pi$.
 :::
 
 ```{exercise} 
-:label: exercise 14
+:label: exercise_14
 Let $\alpha=\frac{1}{7}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos(x)$ and the formula $2\sin(x)\cos(y)=\sin(x+y)-\sin(x-y)$ to find the exact value of $\cos(\alpha)+\cos(3\alpha)+\cos(5\alpha)$.
 ```
 
@@ -612,7 +742,7 @@ since $\sin(6\alpha)=\sin(\alpha)$ for $\alpha=\frac{1}{7}\pi$.
 :::
 
 ```{exercise} 
-:label: exercise 15
+:label: exercise_15
 Show that $\displaystyle\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right)$ for $\alpha+\beta\neq\pi$ (mod $2\pi$).
 ```
 
@@ -628,7 +758,7 @@ and
 ```
 which implies that
 ```{math}
-\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right),\quad\alpha+\beta\neq\pi\quad(\text{mod}\;2\pi).
+\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right),\quad\alpha+\beta\neq\pi\quad(\operatorname{mod}\;2\pi).
 ```
 :::
 
@@ -643,7 +773,7 @@ align: center
 ```
 
 ```{exercise} 
-:label: exercise 16
+:label: exercise_16
 Show that $a\sin(\beta-\gamma)+b\sin(\gamma-\alpha)+c\sin(\alpha-\beta)=0$.
 ```
 
@@ -662,7 +792,7 @@ Use the law of sines $\dfrac{a}{\sin(\alpha)}=\dfrac{b}{\sin(\beta)}=\dfrac{c}{\
 :::
 
 ```{exercise} 
-:label: exercise 17
+:label: exercise_17
 Show that $\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)=2+2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
 ```
 
@@ -682,7 +812,7 @@ Note that this implies that a triangle with angles $\alpha$, $\beta$ and $\gamma
 :::
 
 ```{exercise} 
-:label: exercise 18
+:label: exercise_18
 Show that $\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1-2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
 ```
 
@@ -702,7 +832,7 @@ Note that this implies that a triangle with angles $\alpha$, $\beta$ and $\gamma
 :::
 
 ```{exercise} 
-:label: exercise 19
+:label: exercise_19
 Show that $\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)=4\sin(\alpha)\sin(\beta)\sin(\gamma)$.
 ```
 
@@ -720,7 +850,7 @@ Show that $\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)=4\sin(\alpha)\sin(\beta)\sin
 :::
 
 ```{exercise} 
-:label: exercise 20
+:label: exercise_20
 Show that $\tan(\alpha)+\tan(\beta)+\tan(\gamma)=\tan(\alpha)\tan(\beta)\tan(\gamma)$.
 ```
 
@@ -739,4 +869,8 @@ Note that $\tan(\gamma)=\tan(\pi-\alpha-\beta)=-\tan(\alpha+\beta)=-\dfrac{\tan(
 ```
 :::
 
-Hier wellicht nog een Grasple-opgave over de formule van Heron, waarbij het plaatje van de driehoek wordt aangepast aan de parameters (de lengtes van de zijden), als dat mogelijk is.
+```{exercise} 
+:label: exercise_21
+Perhaps add a Grasple exercise here on Heron’s formula, with the diagram of the triangle adapting to the parameters (the side lengths), if that’s possible.
+```
+
