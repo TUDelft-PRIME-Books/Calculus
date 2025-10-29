@@ -1,6 +1,7 @@
 # Trigonometry
 
 ## Angles
+
 Angles can be measured in degrees or in radians (abbreviated as rad). The angle given by a complete revolution contains $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
 
 $$\pi\;\operatorname{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\operatorname{rad}.$$ 
@@ -60,7 +61,7 @@ Then we define:
 
 ::::::
 
-If we take the point $P(x,y)$ on the **unit circle** (the circle with the origin as center and radius $r=1$, see {numref}`Fig:Trigonometry:unit_circle`), we have: $x=\cos(\theta)$ and $y=\sin(\theta)$.
+If we take the point $P(x,y)$ on the **unit circle** (the circle with the origin as center and radius $r=1$, see {numref}`Fig:Trigonometry:unit_circle`), we have $x=\cos(\theta)$ and $y=\sin(\theta)$.
 
 ```{figure} Images/unit_circle.png
 ---
@@ -98,6 +99,25 @@ In this book we will however not use these three trigonometric functions.
 
 ::::::
 
+Commonly powers of trigonometric functions are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
+
+::::::{prf:notation} Powers of trigonometric functions
+
+For any positive integer $n$ we use the following notation:
+
+$$
+\sin^n(\theta)=(\sin(\theta))^n,
+$$
+
+$$
+\cos^n(\theta)=(\cos(\theta))^n.
+$$
+
+$$
+\tan^n(\theta)=(\tan(\theta))^n.
+$$
+::::::
+
 Before we proceed with properties of the trigonometric functions we deal with two ancient theorems named after [Thales of Miletus (c. 624 - c. 545 BC)](https://en.wikipedia.org/wiki/Thales_of_Miletus) and [Pythagoras of Samos (c. 570 - c. 495 BC)](https://en.wikipedia.org/wiki/Pythagoras).
 
 ## Thales's theorem
@@ -126,7 +146,7 @@ If $AB$ is the diameter of a circle and $C$ is an arbitrary point on the circle,
 
 Consider the angles $\alpha$ and $\beta$ as indicated in {numref}`Fig:Trigonometry:Thales`. Since the triangle $\Delta AMC$ is isosceles ($AM$ and $MC$ are both equal to the radius of the circle), we have $\angle ACM=\alpha$. Likewise, the triangle $\Delta BMC$ is isosceles ($BM$ and $MC$ are both equal to the radius of the circle) and therefore $\angle BCM=\beta$. So, we have to prove that $\alpha+\beta$ equals $\dfrac{1}{1}\pi$.
 
-Because the sum of all angles in a triangle equals $180^{\circ}$, we have in triangle $\Delta AMC$ that $\angle AMC=\pi-2\alpha$. Similarly, using triangle $\Delta BMC$ we find $\angle BMC=\pi-2\beta$. Further we have $\angle AMC+\angle BMC=\pi$. Hence:
+Because the sum of all angles in a triangle equals $180^{\circ}$, we have in triangle $\Delta AMC$ that $\angle AMC=\pi-2\alpha$. Similarly, using triangle $\Delta BMC$ we find $\angle BMC=\pi-2\beta$. Further we have $\angle AMC+\angle BMC=\pi$. Hence
 
 ```{math}
 \begin{align*}
@@ -239,7 +259,7 @@ $h^2=b^2-e^2$ and $h^2=a^2-(c-e)^2$. Hence
 b^2-e^2=a^2-c^2+2ce-e^2\quad\Longleftrightarrow\quad b^2=a^2-c^2+2ce.
 ```
 
-Now we have: $\cos(\alpha)=\dfrac{e}{b}$, which implies that $e=b\cos(\alpha)$. So:
+Now we have $\cos(\alpha)=\dfrac{e}{b}$, which implies that $e=b\cos(\alpha)$. So:
 ```{math}
 a^2=b^2+c^2-2bc\cos(\alpha).
 ```
@@ -247,7 +267,7 @@ a^2=b^2+c^2-2bc\cos(\alpha).
 
 ::::::{prf:corollary}
 
-Note that we also have: $b^2=a^2+c^2-2ac\cos(\beta)$ and $c^2=a^2+b^2-2ab\cos(\gamma)$.
+Note that we also have $b^2=a^2+c^2-2ac\cos(\beta)$ and $c^2=a^2+b^2-2ab\cos(\gamma)$.
 
 Furthermore, if one of the angles is a right angle the law of cosines using that same angle reduces to the Pythagorean theorem.
 ::::::
@@ -269,7 +289,7 @@ An arbitrary triangle $\Delta ABC$ with sides $a$, $b$ and $c$ opposite to angle
 ::::::{prf:theorem} Law of sines
 :label: Thm:Trigonometry:LawOfSines
 
-In an arbitrary triangle as in {numref}`Fig:Trigonometry:LawOfSines` we have: 
+In an arbitrary triangle as in {numref}`Fig:Trigonometry:LawOfSines` we have
 ```{math}
 \frac{a}{\sin(\alpha)}=\frac{b}{\sin(\beta)}=\frac{c}{\sin(\gamma)}=2r
 ```
@@ -277,7 +297,7 @@ with $r$ the radius of the circumscribed circle of the triangle.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:LawOfSines`
-:class: tudproof
+:class: tudproof, dropdown
 
 Consider the perpendicular from $C$ to the opposite side $AB$, as shown in {numref}`Fig:Trigonometry:LawOfCosinesProof`.
  
@@ -315,7 +335,7 @@ class: dark-light
 An illustration for proof of the law of sines.
 ```
 
-Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to {prf:ref}`Thales's theorem <Thm:Trigonometry:Thales>` the triangle $ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have: $\gamma=\delta$. Then we have:
+Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to {prf:ref}`Thales's theorem <Thm:Trigonometry:Thales>` the triangle $ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have $\gamma=\delta$. Then we have
 ```{math}
 \sin(\gamma)=\sin(\delta)=\frac{c}{2r}\quad\Longleftrightarrow\quad\frac{c}{\sin(\gamma)}=2r.
 ```
@@ -324,77 +344,316 @@ This proves the theorem.
 
 ## Standard values
 
-For certain special angles the trigonometric functions can be evaluated exactly. 
+For certain special angles the trigonometric functions can be evaluated exactly.
+
+First consider a right-angled isosceles triangle with two equal sides of length $1$, as shown in {numref}`Fig:Trigonometry:IsoscelesTriangle`. Then the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` implies that the hypotenuse has length $\sqrt{2}$. The two equal angles are $\frac{1}{4}\pi$, which implies that $\cos(\frac{1}{4}\pi)=\frac{1}{2}\sqrt{2}=\sin(\frac{1}{4}\pi)$.
+
 ```{figure} Images/triangle1.png
 ---
 width: 25%
-name: isosceles triangle
-align: center
+name: Fig:Trigonometry:IsoscelesTriangle
+class: dark-light
 ---
+
+A right-angled isosceles triangle with equal sides of length $1$.
 ```
-First consider a right-angled isosceles triangle with two equal sides of length $1$. Then the Pythagorean theorem implies that the hypotenuse has length $\sqrt{2}$. The two equal angles are $45^{\circ}$, which implies that $\cos(45^{\circ})=\frac{1}{2}\sqrt{2}=\sin(45^{\circ})$.
+
+Secondly, consider an equilateral triangle with three equal sides of length $2$, as shown in {numref}`Fig:Trigonometry:EquilateralTriangle`. Then the line segment from the top perpendicular to the opposite side leads to two right-angled triangles with one side of length $1$ and hypotenuse of length $2$. Then the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` implies that the vertical line segment has length $\sqrt{3}$. Note that the three equal angles are $\frac{1}{3}\pi$ and that the angle at the top of each of the two right-angled triangles equals $\frac{1}{6}\pi$. Then we easily deduce that $\cos(\frac{1}{3}\pi)=\frac{1}{2}=\sin(\frac{1}{6}\pi)$ and $\cos(\frac{1}{6}\pi)=\frac{1}{2}\sqrt{3}=\sin(\frac{1}{3}\pi)$.
 
 ```{figure} Images/triangle2.png
 ---
 width: 25%
-name: equilateral triangle
-align: center
+name: Fig:Trigonometry:EquilateralTriangle
+class: dark-light
 ---
+
+An equilateral triangle with three equal sides of length $2$.
 ```
-Secondly, consider an equilateral triangle with three equal sides of length $2$. Then the line segment from the top perpendicular to the opposite side leads to two right-angled triangles with one side of length $1$ and hypotenuse of length $2$. Then the Pythagorean theorem implies that the vertical line segment has length $\sqrt{3}$. Note that the three equal angles are $60^{\circ}$ and that the angle at the top of each of the two right-angled triangles equals $30^{\circ}$. Then we easily deduce that $\cos(60^{\circ})=\frac{1}{2}=\sin(30^{\circ})$ and $\cos(30^{\circ})=\frac{1}{2}\sqrt{3}=\sin(60^{\circ})$.
 
 This leads to the following table of standard values:
 
-|$\theta$ (in degrees) | $0^{\circ}$ | $30^{\circ}$ | $45^{\circ}$ | $60^{\circ}$ | $90^{\circ}$ | $120^{\circ}$ | $135^{\circ}$ | $150^{\circ}$ | $180^{\circ}$ | $270^{\circ}$ | $360^{\circ}$ |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| $\theta$ (in radians) | $0$ | $\frac{1}{6}\pi$ | $\frac{1}{4}\pi$ | $\frac{1}{3}\pi$ | $\frac{1}{2}\pi$ | $\frac{2}{3}\pi$ | $\frac{3}{4}\pi$ | $\frac{5}{6}\pi$ | $\pi$ | $\frac{3}{2}\pi$ | $2\pi$ |
-| $\sin(\theta)$ | $0$ | $\frac{1}{2}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}\sqrt{3}$ | $1$ | $\frac{1}{2}\sqrt{3}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}$ | $0$ | $-1$ | $0$ |
-| $\cos(\theta)$ | $1$ | $\frac{1}{2}\sqrt{3}$ | $\frac{1}{2}\sqrt{2}$ | $\frac{1}{2}$ | $0$ |$-\frac{1}{2}$ | $-\frac{1}{2}\sqrt{2}$ | $-\frac{1}{2}\sqrt{3}$ | $-1$ | $0$ | $1$ |
-| $\tan(\theta)$ | $0$ | $\frac{1}{3}\sqrt{3}$ | $1$ | $\sqrt{3}$ | $-$ | $-\sqrt{3}$ | $-1$ | $-\frac{1}{3}\sqrt{3}$ | $0$ | $-$ | $0$ |
+```{list-table}
+:header-rows: 2
+:align: center
+:class: mid-align center-align
 
-## Identities
+* - $\theta$ (in radians)
+  - $0$
+  - $\frac{1}{6}\pi$
+  - $\frac{1}{4}\pi$
+  - $\frac{1}{3}\pi$
+  - $\frac{1}{2}\pi$
+  - $\frac{2}{3}\pi$
+  - $\frac{3}{4}\pi$
+  - $\frac{5}{6}\pi$
+  - $\pi$
+  - $\frac{3}{2}\pi$
+  - $2\pi$
+* - $\theta$ (in degrees)
+  - $0^{\circ}$
+  - $30^{\circ}$
+  - $45^{\circ}$
+  - $60^{\circ}$
+  - $90^{\circ}$
+  - $120^{\circ}$
+  - $135^{\circ}$
+  - $150^{\circ}$
+  - $180^{\circ}$
+  - $270^{\circ}$
+  - $360^{\circ}$
+* - $\sin(\theta)$
+  - $0$
+  - $\frac{1}{2}$
+  - $\frac{1}{2}\sqrt{2}$
+  - $\frac{1}{2}\sqrt{3}$
+  - $1$
+  - $\frac{1}{2}\sqrt{3}$
+  - $\frac{1}{2}\sqrt{2}$
+  - $\frac{1}{2}$
+  - $0$
+  - $-1$
+  - $0$
+* - $\cos(\theta)$
+  - $1$
+  - $\frac{1}{2}\sqrt{3}$
+  - $\frac{1}{2}\sqrt{2}$
+  - $\frac{1}{2}$
+  - $0$
+  - $-\frac{1}{2}$
+  - $-\frac{1}{2}\sqrt{2}$
+  - $-\frac{1}{2}\sqrt{3}$
+  - $-1$
+  - $0$
+  - $1$
+* - $\tan(\theta)$
+  - $0$
+  - $\frac{1}{3}\sqrt{3}$
+  - $1$
+  - $\sqrt{3}$
+  - 
+  - $-\sqrt{3}$
+  - $-1$
+  - $-\frac{1}{3}\sqrt{3}$
+  - $0$
+  - 
+  - $0$
+```
 
-The Pythagorean theorem leads to $\sin^2(x)+\cos^2(x)=1$.
+Note that $\tan(\frac{1}{2}\pi)$ and $\tan(\frac{3}{2}\pi)$ are not defined since $\cos(\frac{1}{2}\pi)=0$ and $\cos(\frac{3}{2}\pi)=0$. We also omitted in this table the angles within the third and fourth quadrant, since their sine, cosine and tangent values can be derived from the above values using the identities listed in the next section.
 
-The sine and cosine are periodic with period $2\pi$: $\sin(\theta+2\pi)=\sin(\theta)$ and $\cos(\theta+2\pi)=\cos(\theta)$. This follows directly from the definition.
+These standard values can also be visualised using the unit circle, as shown in {numref}`Fig:Trigonometry:UnitCircleStandardValues`.
 
-Another direct consequence of the definition is: $\sin(-\theta)=-\sin(\theta)$, $\cos(-\theta)=\cos(\theta)$ and $\tan(-\theta)=-\tan(\theta)$.
+```{figure} https://study.com/cimages/multimages/16/unit_circle3684925022841182452.png
+---
+width: 50%
+name: Fig:Trigonometry:UnitCircleStandardValues
+class: dark-light
+---
 
-Now we list some useful properties, which will be proved afterwards.
+The unit circle with standard angles marked.
+```
 
-**Connection formulas**
+## Trigonometric identities
 
-$\sin(\theta+\frac{1}{2}\pi)=\cos(\theta)$ and $\cos(\theta+\frac{1}{2}\pi)=-\sin(\theta)$.
+Now we have the basics, we can proceed with some important identities involving the trigonometric functions.
 
-**Symmetry relations**
+::::{prf:theorem}
+:label: Thm:Trigonometry:UnitCircleIdentity
 
-$\sin(\pi-\theta)=\sin(\theta)$, $\cos(\pi-\theta)=-\cos(\theta)$ and $\tan(\pi-\theta)=-\tan(\theta)$
+For any angle $\theta$ we have
 
-**Double angle formulas**
+$$
+\sin^2(\theta)+\cos^2(\theta)=1.
+$$
 
-$\sin(2x)=2\sin(x)\cos(x)$ and $\cos(2x)=\cos^2(x)-\sin^2(x)$.
+::::
 
-**Summation formulas**
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:UnitCircleIdentity`
+:class: tudproof, dropdown
 
-$\sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)$ and $\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$
+Using {numref}`Fig:Trigonometry:unit_circle` and the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` with $a=x=\cos(\theta)$ and $b=y=\sin(\theta)$ and $c=1$ we have:
 
-$\sin(x-y)=\sin(x)\cos(y)-\cos(x)\sin(y)$ and $\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y)$
+$$
+\begin{align*}
+\sin^2(\theta)+\cos^2(\theta) &= y^2+x^2 \\
+&= x^2 +y^2 \\
+&= a^2+b^2 \\
+& = c^2 \\
+& = 1.
+\end{align*}
+$$
 
-$\tan(x+y)=\displaystyle\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}$ and $\tan(x-y)=\displaystyle\frac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}$
+::::::
+
+::::::{prf:theorem}
+:label: Thm:Trigonometry:PeriodicityAndOddEven
+
+For any angle $\theta$ we have
+
+::::{math}
+:label: Eq:Trigonometry:SinePeriodicity
+
+\sin(\theta+2\pi)=\sin(\theta),
+::::
+
+::::{math}
+:label: Eq:Trigonometry:CosinePeriodicity
+
+\cos(\theta+2\pi)=\cos(\theta),
+::::
+
+$$
+\sin(-\theta)=-\sin(\theta),
+$$
+
+$$
+\cos(-\theta)=\cos(\theta),
+$$
+
+$$
+\tan(-\theta)=-\tan(\theta),
+$$
+
+and
+
+::::{math}
+:label: Eq:Trigonometry:TangentPeriodicity
+
+\tan(\theta+\pi)=\tan(\theta).
+::::
+
+::::::
+
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:PeriodicityAndOddEven`
+:class: tudproof, dropdown
+
+Consider the point $P$ in {numref}`Fig:Trigonometry:unit_circle`. Rotating the point $P$ by $2\pi$ leads to the same point $P$. Hence the sine and cosine values do not change, by {prf:ref}`Def:Trigonometry:Angle`.
+
+Next, consider mirroring the point $P$  in {numref}`Fig:Trigonometry:unit_circle` across the $x$-axis to obtain the point $Q$. Then the $x$-coordinate of $Q$ equals the $x$-coordinate of $P$, while the $y$-coordinate of $Q$ equals the negative of the $y$-coordinate of $P$. As a result of the mirroring, the angle also has become $-\theta$. So we find $\sin(-\theta) = -\sin(\theta)$ and $\cos(-\theta) = \cos(\theta)$.
+
+For the tangent function we have $\tan(-\theta)=\dfrac{\sin(-\theta)}{\cos(-\theta)}=\dfrac{-\sin(\theta)}{\cos(\theta)}=-\tan(\theta)$.
+
+Finally, rotating the point $P$ by $\pi$ leads to the point $R$, which has coordinates $(-x,-y)$. Hence we have $\tan(\theta+\pi)=\dfrac{-y}{-x}=\dfrac{y}{x}=\tan(\theta)$.
+
+::::::
+
+::::::{prf:definition} Periodicity of trigonometric functions
+:label: Def:Trigonometry:Period
+
+The value $2\pi$ in Equations {eq}`Eq:Trigonometry:SinePeriodicity` and {eq}`Eq:Trigonometry:CosinePeriodicity` is called the **period** of the sine and cosine functions. This means that the sine and cosine functions repeat their values every $2\pi$.
+
+The value $\pi$ in Equation {eq}`Eq:Trigonometry:TangentPeriodicity` in {prf:ref}`Thm:Trigonometry:PeriodicityAndOddEven` is called the **period** of the tangent function. This means that the tangent function repeats its values every $\pi$.
+
+::::::
+
+Now we list some useful identities, which will be proved afterwards.
+
+::::::{prf:theorem} Connection formulas
+:label: Thm:Trigonometry:ConnectionFormulas
+
+For any angle $\theta$ we have
+
+$$
+\sin(\theta+\frac{1}{2}\pi)=\cos(\theta)
+$$
+
+and
+
+$$
+\cos(\theta+\frac{1}{2}\pi)=-\sin(\theta).
+$$
+::::::
+
+::::::{prf:theorem} Symmetry relations
+:label: Thm:Trigonometry:SymmetryRelations
+
+For any angle $\theta$ we have
+
+$$
+\sin(\pi-\theta)=\sin(\theta),
+$$
+
+$$
+\cos(\pi-\theta)=-\cos(\theta),
+$$
+
+and
+
+$$
+\tan(\pi-\theta)=-\tan(\theta).
+$$
+::::::
+
+::::::{prf:theorem} Double angle formulas
+:label: Thm:Trigonometry:DoubleAngleFormulas
+
+For any angle $\theta$ we have
+
+$$
+\sin(2x)=2\sin(x)\cos(x)
+$$
+
+and
+
+$$
+\cos(2x)=\cos^2(x)-\sin^2(x).
+$$
+
+::::::
+
+::::::{prf:theorem} Summation formulas
+:label: Thm:Trigonometry:SummationFormulas
+
+For any angle $\theta$ we have
+
+$$
+\begin{align*}
+\sin(x+y) &= \sin(x)\cos(y)+\cos(x)\sin(y), \\
+\cos(x+y) &= \cos(x)\cos(y)-\sin(x)\sin(y),
+\end{align*}
+$$
+
+$$
+\begin{align*}
+\sin(x-y)=\sin(x)\cos(y)-\cos(x)\sin(y), \\
+\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y),
+\end{align*}
+$$
+
+and
+
+$$
+\begin{align*}
+\tan(x+y)=\displaystyle\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}, \\
+\tan(x-y)=\displaystyle\frac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}.
+\end{align*}
+$$
+
+::::::
+
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:ConnectionFormulas`, {prf:ref}`Thm:Trigonometry:SymmetryRelations`, {prf:ref}`Thm:Trigonometry:DoubleAngleFormulas` and {prf:ref}`Thm:Trigonometry:SummationFormulas`
+:class: tudproof, dropdown
+
+For this long proof, we need the following figure:
 
 ```{figure} Images/cosdiff.png
 ---
 width: 50%
-name: summation
-align: center
+name: Fig:Trigonometry:CosineDifference
+class: dark-light
 ---
+
+An illustration for the proof of the summation formulas.
 ```
 
-In order to prove these summation formulas, we consider the picture above with blue angle $\beta-\alpha$. Hence we have: $P=(\cos(\alpha),\sin(\alpha))$ and $Q=(\cos(\beta),\sin(\beta))$. The distance between $P$ and $Q$ can be computed using the law of cosines:
+In order to prove these summation formulas, we consider {numref}`Fig:Trigonometry:CosineDifference` above with $\angle QOP=\beta-\alpha$. Hence we have $P=(\cos(\alpha),\sin(\alpha))$ and $Q=(\cos(\beta),\sin(\beta))$. The distance between $P$ and $Q$ can be computed using the {prf:ref}`law of cosines <Thm:Trigonometry:LawOfCosines>` as
+
 ```{math}
 (PQ)^2=(OP)^2+(OQ)^2-2(OP)(OQ)\cos(\alpha-\beta)=2-2\cos(\alpha-\beta).
 ```
-On the other hand, this distance can be computed using the Pythagorean theorem as
+
+On the other hand, this distance can be computed using the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` as
+
 ```{math}
 \begin{align*}
 (PQ)^2&=(\cos(\beta)-\cos(\alpha))^2+(\sin(\beta)-\sin(\alpha))^2\\
@@ -402,6 +661,7 @@ On the other hand, this distance can be computed using the Pythagorean theorem a
 &=2-2\left(\cos(\alpha)\cos(\beta)+\sin(\alpha)\cos(\alpha)\right).
 \end{align*}
 ```
+
 This implies that $\cos(\alpha-\beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)$.
 
 Replacing $\beta$ with $-\beta$ we obtain that $\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)$.
@@ -423,7 +683,7 @@ Taking $\beta=\frac{1}{2}\pi$, using $\cos(\frac{1}{2}\pi)=0$ and $\sin(\frac{1}
 \sin(\alpha+\tfrac{1}{2}\pi)=\sin(\alpha)\cos(\tfrac{1}{2}\pi)+\cos(\alpha)\sin(\tfrac{1}{2}\pi)=\cos(\alpha).
 ```
 
-Replacing $\beta$ with $-\beta$ we obtain: $\sin(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
+Replacing $\beta$ with $-\beta$ we obtain $\sin(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
 
 Now the summation formulas for the tangent follow from these summation formulas for the sine and the cosine:
 
@@ -433,7 +693,7 @@ Now the summation formulas for the tangent follow from these summation formulas 
 &=\frac{\frac{\sin(x)\cos(y)}{\cos(x)\cos(y)}+\frac{\cos(x)\sin(y)}{\cos(x)\cos(y)}}{\frac{\cos(x)\cos(y)}{\cos(x)\cos(y)}-\frac{\sin(x)\sin(y)}{\cos(x)\cos(y)}}=\frac{\frac{\sin(x)}{\cos(y)}+\frac{\sin(y)}{\cos(y)}}{1-\frac{\sin(x)}{\cos(x)}\frac{\sin(y)}{\cos(y)}}=\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}.
 \end{align*}
 ```
-Replacing $y$ with $-y$ we obtain: $\tan(x-y)=\dfrac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}$.
+Replacing $y$ with $-y$ we obtain $\tan(x-y)=\dfrac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}$.
 
 The double angle formulas are special cases of these summation formulas.
 
@@ -447,42 +707,42 @@ and
 ```
 which implies that $\tan(\pi-\theta)=-\tan(\theta)$.
 
-Now we can show that the tangent is periodic with period $\pi$:
-```{math}
-\tan(x+\pi)=\frac{\sin(x+\pi)}{\cos(x+\pi)}=\frac{\sin(x)\cos(\pi)+\cos(x)\sin(\pi)}{\cos(x)\cos(\pi)-\sin(x)\sin(\pi)}=\frac{-\sin(x)}{-\cos(x)}=\tan(x).
-```
+::::::
 
 Finally, we have Heron's formula:
 
 ::::::{prf:theorem} Heron
 :label: Thm:Trigonometry:Heron
+
 ```{figure} Images/abctriangle.png
 ---
 width: 50%
-name: Triangle $ABC$
-align: center
+name: Fig:Trigonometry:Heron
+class: dark-light
 ---
+
+Triangle $ABC$.
 ```
-Let $s=\frac{1}{2}(a+b+c)$ be the semiperimeter of the triangle, then the area of the triangle equals 
+
+Let $s=\frac{1}{2}(a+b+c)$ be the semiperimeter of the triangle in {numref}`Fig:Trigonometry:Heron`, then the area of this triangle equals
 ```{math}
 \sqrt{s(s-a)(s-b)(s-c)}.
 ```
 ::::::
 
-::::::{prf:proof} 
-Consider the perpendicular from $C$ to the opposite side $AB$:
-```{figure} Images/abhtriangle.png
----
-width: 50%
-name: Heron's formula
-align: center
----
-```
-Using the Pythagorean theorem we have $h^2=b^2-e^2$ and $h^2=a^2-(c-e)^2$. This implies that $b^2-e^2=a^2-(c-e)^2$ or equivalently $b^2=a^2-c^2+2ce$. Hence we have: $e=\dfrac{b^2+c^2-a^2}{2c}$. Then we have
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:Heron`
+:class: tudproof, dropdown
+
+Consider the perpendicular from $C$ to the opposite side $AB$, as shown in {numref}`Fig:Trigonometry:LawOfCosinesProof`.
+
+Using the Pythagorean theorem we have $h^2=b^2-e^2$ and $h^2=a^2-(c-e)^2$. This implies that $b^2-e^2=a^2-(c-e)^2$ or equivalently $b^2=a^2-c^2+2ce$. Hence we have $e=\dfrac{b^2+c^2-a^2}{2c}$. Then we have
 ```{math}
 \begin{align*}
-h^2&=b^2-e^2=b^2-\frac{(b^2+c^2-a^2)^2}{4c^2}=\frac{4b^2c^2-(b^2+c^2-a^2)^2}{4c^2}\\
-&=\frac{(2bc+b^2+c^2-a^2)(2bc-b^2-c^2+a^2)}{4c^2}=\frac{((b+c)^2-a^2)(a^2-(b-c)^2)}{4c^2}\\
+h^2&=b^2-e^2 \\
+&= b^2-\frac{(b^2+c^2-a^2)^2}{4c^2} \\
+&= \frac{4b^2c^2-(b^2+c^2-a^2)^2}{4c^2}\\
+&=\frac{(2bc+b^2+c^2-a^2)(2bc-b^2-c^2+a^2)}{4c^2}\\
+&=\frac{((b+c)^2-a^2)(a^2-(b-c)^2)}{4c^2}\\
 &=\frac{(b-c+a)(b-c-a)(a+b-c)(a-b+c)}{4c^2}
 \end{align*}
 ```
@@ -493,11 +753,15 @@ Now the area of the triangle equals $\frac{1}{2}ch$ which reads
 &{}\quad{}=\frac{1}{4}\sqrt{(b-c+a)(b-c-a)(a+b-c)(a-b+c)}.
 \end{align*}
 ```
-Let $s=\dfrac{a+b+c}{2}$, then: $s-a=\dfrac{b+c-a}{2}$, $s-b=\dfrac{a+c-b}{2}$ and $s-c=\dfrac{a+b-c}{2}$. Now we conclude that the area of the triangle equals
+Let $s=\dfrac{a+b+c}{2}$, then $s-a=\dfrac{b+c-a}{2}$, $s-b=\dfrac{a+c-b}{2}$ and $s-c=\dfrac{a+b-c}{2}$.
+
+Now we conclude that the area of the triangle equals
 ```{math}
 \sqrt{\frac{a+b+c}{2}\cdot\frac{b+c-a}{2}\cdot\frac{a+b-c}{2}\cdot\frac{a+c-b}{2}}=\sqrt{s(s-a)(s-b)(s-c)}.
 ```
 ::::::
+
+## Exercises
 
 ```{exercise}
 :label: exercise_1
@@ -658,7 +922,7 @@ Using the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ for $x=\
 &\quad\Longleftrightarrow\quad\tan^2(\tfrac{1}{8}\pi)+2\tan(\tfrac{1}{8}\pi)-1=0.
 \end{align*}
 ```
-Hence: $(\tan(\frac{1}{8}\pi)+1)^2-2=0$ or equivalently $\tan(\frac{1}{8}\pi)=-1\pm\sqrt{2}$. Since $\tan(\frac{1}{8}\pi)>0$, we conclude that $\cos(\frac{1}{8}\pi)=-1+\sqrt{2}$.
+Hence $(\tan(\frac{1}{8}\pi)+1)^2-2=0$ or equivalently $\tan(\frac{1}{8}\pi)=-1\pm\sqrt{2}$. Since $\tan(\frac{1}{8}\pi)>0$, we conclude that $\cos(\frac{1}{8}\pi)=-1+\sqrt{2}$.
 
 Similarly, for $x=\frac{3}{8}\pi$ we obtain
 ```{math}
@@ -668,7 +932,7 @@ Similarly, for $x=\frac{3}{8}\pi$ we obtain
 &\quad\Longleftrightarrow\quad\tan^2(\tfrac{3}{8}\pi)-2\tan(\tfrac{3}{8}\pi)-1=0.
 \end{align*}
 ```
-Hence: $(\tan(\frac{3}{8}\pi)-1)^2-2=0$ or equivalently $\tan(\frac{3}{8}\pi)=1\pm\sqrt{2}$. Since $\tan(\frac{3}{8}\pi)>0$, we conclude that $\cos(\frac{3}{8}\pi)=1+\sqrt{2}$.
+Hence $(\tan(\frac{3}{8}\pi)-1)^2-2=0$ or equivalently $\tan(\frac{3}{8}\pi)=1\pm\sqrt{2}$. Since $\tan(\frac{3}{8}\pi)>0$, we conclude that $\cos(\frac{3}{8}\pi)=1+\sqrt{2}$.
 :::
 
 ```{exercise} 
