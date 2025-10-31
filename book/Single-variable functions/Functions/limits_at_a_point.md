@@ -309,7 +309,7 @@ An illustration of the squeeze theorem, showing the functions $f$, $g$, and $h$ 
 
 ::::::
 
-Now consider a limit of the form $\lim\limits_{x\rightarrow a}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials that have $p(a)=q(a)=0$. We cannot evaluate the limit directly since we get something of the form "$\frac{0}{0}$". Recall that we encountered this situation in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` when evaluating the limit $\lim\limits_{x\rightarrow 1}\frac{x-1}{x^2-1}$. There we evaluated the limit by factoring the denominator. This works in general.
+Now consider a limit of the form $\lim\limits_{x\rightarrow a}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials that have $p(a)=q(a)=0$. We cannot evaluate the limit directly since we cannot divide by $0$. We also say that this limit is of the **indeterminate form** "$\frac{0}{0}$" as $x$ approaches $a$. Recall that we encountered this situation in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` when evaluating the limit $\lim\limits_{x\rightarrow 1}\frac{x-1}{x^2-1}$. There we evaluated the limit by factoring the denominator. This works in general.
 
 Recall from {prf:ref}`Thm:ComplexNumbers:fundamental` that $a$ being a root of the polynomials $p$ and $q$ means that we can take out the factor $x-a$ from both of them, i.e. we can write $p(x)=(x-a)r(x)$ and $q(x)=(x-a)s(x)$ for some polynomials $r$ and $s$, which are 1 degree lower than $p$ and $q$ respectively. As such, we can now evaluate the limit by writing
 
@@ -473,9 +473,9 @@ In order for the product $|x-2||x+2|$ to be smaller than $\varepsilon$, we shoul
 We find that we have two conditions on $\delta$: $\delta$ should be at most $1$ and $\delta$ should be at most $\dfrac{\varepsilon}{5}$. As such, we choose $\delta$ to be the lowest of these two values: $\delta=\min\left(1,\dfrac{\varepsilon}{5}\right)$. Then for any $x$ with $0<|x-2|<\delta$ we obtain
 
 $$
- \begin{array}{lcll}|x^2-a^2|&=&|x-a||x+a|\\
- &<&|x-a|\cdot 5\qquad\qquad&\left(\text{since }|x-a|<\delta\leq 1\right)\\
- &<&\dfrac{\varepsilon}{5}\cdot 5&\left(\text{since }|x-a|<\delta\leq\dfrac{\varepsilon}{5}\right)\\
+ \begin{array}{lcll}|x^2-4|&=&|x-2||x+2|\\
+ &<&|x-2|\cdot 5\qquad\qquad&\left(\text{since }|x-2|<\delta\leq 1,\text{ which implies }|x+2|<5\right)\\
+ &<&\dfrac{\varepsilon}{5}\cdot 5&\left(\text{since }|x-2|<\delta\leq\dfrac{\varepsilon}{5}\right)\\
  &=&\varepsilon.&\end{array}
 $$
 
@@ -549,7 +549,7 @@ Now suppose that $\lim\limits_{x\rightarrow a}g(x)$ does not exist. In that case
 We first prove the scalar multiple rule. If $c=0$, then the function $cf$ is constantly $0$, so its limit at the point $a$ must be $0=cL$ as well. As such, we can assume that $c\neq 0$. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow a}f(x)=L$, we can pick $\delta>0$ in such a way that for $x$ with $0<|x-a|<\delta$ we have $|f(x)-L|<\frac{\varepsilon}{|c|}$. Then for $x$ with $0<|x-a|<\delta$ we have
 
 $$
- |cf(x)-cL|=|c||f(x)-L|<|c|\frac{\varepsilon}{|c|}=\varepsilon
+ |cf(x)-cL|&=&|c||f(x)-L|<|c|\frac{\varepsilon}{|c|}=\varepsilon
 $$
 
 We conclude that $\lim\limits_{x\rightarrow a}cf(x)=cL$.
@@ -570,29 +570,30 @@ Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle
 Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have both have $|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}$ and $|f(x)-L|<1$. The inequality $|f(x)-L|<1$ means that $1-L<f(x)<1+L$, which implies that $|f(x)|<|L|+1$. Now we pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have both have $|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}$. We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$, so we can estimate
 
 $$
-\begin{align*}
- |f(x)g(x)-LM| &= |f(x)g(x)-f(x)M+f(x)M-LM| \\
- &\leq |f(x)g(x)-f(x)M|+|f(x)M-LM| \\
- &= |f(x)||g(x)-M|+|M||f(x)-L| \\
- &\leq (|L|+1)|g(x)-M|+|M||f(x)-L| \\
- &< (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)} \\
- &< \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \\
- &= \varepsilon.
-\end{align*}
+\begin{array}{lcll}
+ |f(x)g(x)-LM| &=& |f(x)g(x)-f(x)M+f(x)M-LM|& \\
+ &\leq& |f(x)g(x)-f(x)M|+|f(x)M-LM| &\\
+ &=& |f(x)||g(x)-M|+|M||f(x)-L|& \\
+ &\leq& (|L|+1)|g(x)-M|+|M||f(x)-L| \qquad\quad &\left(\text{since }0<|x-a|<\delta\leq\delta_1\text{, which implies }|f(x)|<|L|+1\right)\\
+ &\leq& (|L|+1)|g(x)-M|+|M|\frac{\varepsilon}{2(|M|+1)}  &\left(\text{since }0<|x-a|<\delta\leq\delta_1\text{, which implies }|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}\right)\\
+ &<& (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)}&\left(\text{since }0<|x-a|<\delta\leq\delta_2\text{, which implies }|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}\right)\\
+ &<& \frac{\varepsilon}{2}+\frac{\varepsilon}{2} &\\
+ &=& \varepsilon.&
+\end{array}
 $$
 
 Here we again used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow a}f(x)g(x)=LM$.
 
-We prove the quotient rule by writing $\frac{f(x)}{g(x)}=f(x)\frac{1}{g(x)}$ and first showing that $\lim\limits_{x\rightarrow a}\frac{1}{g(x)}=\frac{1}{M}$. Let $\varepsilon>0$ be given. We pick $\delta>0$ in such a way that for $x$ with $0<|x-a|<\delta$ we have both have $|g(x)-M|<2\varepsilon M^2$ and $|g(x)-M|<\frac{1}{2}|M|$. The inequality $|g(x)-M|<\frac{1}{2}|M|$ means that $\frac{1}{2}|M|\leq |g(x)|$ (which, in particular, means that $g(x)\neq 0$). Hence, we can estimate
+We prove the quotient rule by writing $\frac{f(x)}{g(x)}=f(x)\frac{1}{g(x)}$ and first showing that $\lim\limits_{x\rightarrow a}\frac{1}{g(x)}=\frac{1}{M}$. Let $\varepsilon>0$ be given. We pick $\delta>0$ in such a way that for $x$ with $0<|x-a|<\delta$ we have both have $|g(x)-M|<\frac{\varepsilon M^2}{2}$ and $|g(x)-M|<\frac{1}{2}|M|$. The inequality $|g(x)-M|<\frac{1}{2}|M|$ means that $\frac{1}{2}|M|\leq |g(x)|$ (which, in particular, means that $g(x)\neq 0$) and, finally, that $\frac{1}{|g(x)|}\leq\frac{2}{|M|}$. Hence, we can estimate
 
 $$
-\begin{align*}
- \left|\frac{1}{g(x)}-\frac{1}{M}\right| &= \left|\frac{g(x)-M}{g(x)M}\right| \\
- &= \frac{1}{|g(x)|}\frac{1}{|M|}|g(x)-M| \\
- &\leq \frac{1}{2|M|}\frac{1}{|M|}|g(x)-M| \\
- &< \frac{1}{2M^2}2\varepsilon M^2 \\
- &= \varepsilon.
-\end{align*}
+\begin{array}{lcll}
+ \left|\frac{1}{g(x)}-\frac{1}{M}\right| &=& \left|\frac{g(x)-M}{g(x)M}\right| &\\
+ &= &\frac{1}{|g(x)|}\frac{1}{|M|}|g(x)-M|\qquad\quad&\\
+ &\leq &\frac{2}{|M|}\frac{1}{|M|}|g(x)-M|&\left(\text{since }0<|x-a|<\delta\text{, which implies }\frac{1}{2}|M|\leq |g(x)|\right) \\
+ &< &\frac{2}{M^2}\frac{\varepsilon M^2}{2}& \left(\text{since }0<|x-a|<\delta\text{, which implies }|g(x)-M|<\frac{\varepsilon M^2}{2}\right) \\
+ &= &\varepsilon.&
+\end{array}
 $$
 
 We conclude that $\lim\limits_{x\rightarrow a}\frac{1}{g(x)}=\frac{1}{M}$. By the product rule, we find that $\lim\limits_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim\limits_{x\rightarrow a}f(x)\frac{1}{g(x)}=L\frac{1}{M}=\frac{L}{M}$.
