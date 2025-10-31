@@ -243,11 +243,18 @@ Suppose that $\lim\limits_{x\rightarrow a}f(x)=L$ and $\lim\limits_{x\rightarrow
 
 ::::::{prf:remark}
 :label: Remark:LimitAtPoint:Productquotientrule
-The product and quotient rules from {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` should not be confused with the product and quotient rules for differentiation, which will be covered in {numref}`Section:DiffProdQuot`
+The product and quotient rules from {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` should not be confused with the product and quotient rules for differentiation, which will be covered in {numref}`Section:DiffProdQuot`.
 
 ::::::
 
 Intuitively, these computation rules make sense: if the function values $f(x)$ approach $L$ and the function values $g(x)$ approach $M$, both as $x$ approaches $a$, then $f(x)+g(x)$ will approach $L+M$. Still, showing that these rules hold using the formal definition of a limit can be tricky, see {numref}`Subsec:Limitsformaldef`.
+
+::::::{prf:theorem} Substitution
+:label: Theorem:LimitAtPoint:Substitution
+Suppose $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
+::::::
+
+The result above shows that limits can be "taken inside" a nice enough function. In fact, there is a slightly more general version of this result, which will be covered in {numref}`Section:Continuity`.
 
 In addition, we obtain the following comparison result for limits.
 
@@ -400,6 +407,8 @@ Let $f$ be a function that is defined near $x=a$ (except possibly at $x=a$ itsel
 - $\lim\limits_{x\rightarrow a^+}f(x)=-\infty$.
 ::::::
 
+The word asymptote is derived from the Greek word $\grave{\alpha}\sigma\acute{\upsilon}\mu\pi\tau\omega\tau o\varsigma$ (asumptotos), which means "not falling together", from the prefix $\grave{alpha}$ ("not"), $\sigma\acute{\upsilon}\nu$ ("together") and $\pi\tau\omega\tau-\acute{o}\varsigma$ ("fallen").
+
 ::::::{prf:example} 
 :label: Ex:LimitAtPoint:Verticalasymptote1.
 Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}\dfrac{1}{x^2}$. Note that as $x$ approaches $0$, $x^2$ will approach $0$ as well and note that $x^2>0$ for all $x\neq 0$. So for $x$ close to $0$, $\dfrac{1}{x^2}$ is $1$ divided by a very small, positive number, which means that $\dfrac{1}{x^2}$ is a very large, positive number. As such, we find that $\lim\limits_{x\rightarrow 0}\dfrac{1}{x^2}=\infty$. In particular, the function has a vertical asymptote at $x=0$.
@@ -535,7 +544,7 @@ Then we say that $f$ has an **infinite limit** at $x=a$, and we write $\lim\limi
 Similarly, we say that $f$ has a **negative infinite limit** at $x=a$, and we write $\lim\limits_{x\rightarrow a}f(x)=-\infty$ whenever for each $M<0$ there exists $\delta>0$ such that for all $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $f(x)\leq M$.
 ::::::
 
-Finally we include several proofs of the theorems discussed in these sections. The proof of {prf:ref}`Theorem:LimitAtPoint:Directsub` is left to {numref}`Section:Continuity`.
+Finally we include several proofs of the theorems discussed in these sections. The proofs of {prf:ref}`Theorem:LimitAtPoint:Directsub` and {prf:ref}`Theorem:LimitAtPoint:Substitution` are left to {numref}`Section:Continuity`.
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtPoint:Rewritingworks`
 :class: tudproof 
