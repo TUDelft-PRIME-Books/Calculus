@@ -2,7 +2,7 @@
 
 ## Angles
 
-Angles can be measured in degrees or in radians (abbreviated as rad). The angle given by a complete revolution contains $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
+Angles can be measured in degrees or in radians (abbreviated as $\operatorname{rad}$). The angle given by a complete revolution contains $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
 
 $$\pi\;\operatorname{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\operatorname{rad}.$$ 
 
@@ -30,12 +30,12 @@ class: dark-light
 An angle $\theta$ in the $xy$-plane in standard position.
 ```
 
-## Trigonometric functions
+## Trigonometric ratios
 
-Using angles, we can define three trigonometric functions: the sine, cosine and tangent.
+Using angles, we define three trigonometric ratios: the sine, the cosine and the tangent.
 
 ::::::{prf:definition}
-:label: Def:Trigonometry:TrigonometricFunctions
+:label: Def:Trigonometry:TrigonometricRatios
 
 For a general angle $\theta$ in standard position in the $xy$-plane we let $P(x,y)$ be any point on the terminal side of $\theta$ and we let $r>0$ be the distance between $O$ and $P$, see {numref}`Fig:Trigonometry:trig`.
 
@@ -72,10 +72,10 @@ class: dark-light
 The unit circle.
 ```
 
-::::::{prf:remark} Additional trigonometric functions
-:label: Rem:Trigonometry:AlternativeTrigonometricFunctions
+::::::{prf:remark} Additional trigonometric ratios
+:label: Rem:Trigonometry:AlternativeTrigonometricRatios
 
-Next to the three trigonometric functions defined above, there are three more trigonometric functions, which are defined as follows: 
+Next to the three trigonometric ratios defined above, there are three more trigonometric ratios, which are defined as follows: 
 
 - The **cosecant** of $\theta$ as:
   
@@ -95,22 +95,22 @@ Next to the three trigonometric functions defined above, there are three more tr
 
   provided that $y\neq0$.
 
-In this book we will however not use these three trigonometric functions.
+However, in this book we will not use these three trigonometric ratios.
 
 ::::::
 
-Commonly powers of trigonometric functions are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
+Commonly powers of trigonometric ratios are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
 
-::::::{prf:notation} Powers of trigonometric functions
+::::::{prf:notation} Powers of trigonometric ratios
 
 For any positive integer $n$ we use the following notation:
 
 $$
-\sin^n(\theta)=(\sin(\theta))^n,
+\sin^n(\theta)=(\sin(\theta))^n;
 $$
 
 $$
-\cos^n(\theta)=(\cos(\theta))^n.
+\cos^n(\theta)=(\cos(\theta))^n;
 $$
 
 $$
@@ -118,11 +118,11 @@ $$
 $$
 ::::::
 
-Before we proceed with properties of the trigonometric functions we deal with two ancient theorems named after [Thales of Miletus (c. 624 - c. 545 BC)](https://en.wikipedia.org/wiki/Thales_of_Miletus) and [Pythagoras of Samos (c. 570 - c. 495 BC)](https://en.wikipedia.org/wiki/Pythagoras).
+Before we proceed with properties of the sine, the cosine and the tangent we deal with two ancient theorems named after [Thales of Miletus (c. 624 - c. 545 BC)](https://en.wikipedia.org/wiki/Thales_of_Miletus) and [Pythagoras of Samos (c. 570 - c. 495 BC)](https://en.wikipedia.org/wiki/Pythagoras).
 
 ## Thales's theorem
 
-Consider the circle with centre $M$ shown in {numref}`Fig:Trigonometry:Thales` with three arbitrary points $A$, $B$ and $C$ on the circle such that the straight line from $A$ to $B$ goes through the center $M$ of the circle and $C$ not on this straight line. We will call $AB$ a *diameter* of the circle.
+Let $AB$ be any *diameter* of a circle with center $M$, id est, $A$ and $B$ lie on the circle and $M$ lies on the line segment from $A$ to $B$ as shown in {numref}`Fig:Trigonometry:Thales`. Let $C$ be an arbitrary point on the circle not equal to $A$ or $B$.
 
 ```{figure} Images/thales.png
 ---
@@ -133,27 +133,29 @@ class: dark-light
 An illustration for Thales's theorem.
 ```
 
+Idealiter een plaatje met een draaibaar lijnstuk $AB$ door het middelpunt en een vrij beweegbaar punt $C$ aan één kant (bovenkant) over de cirkel tussen $A$ en $B$.
+
 In {numref}`Fig:Trigonometry:Thales` you might notice that the angle $\angle ACB$ looks like a right angle. Thales's theorem states that this is indeed the case:
 
 ::::::{prf:theorem} Thales's theorem
 :label: Thm:Trigonometry:Thales
 
-If $AB$ is the diameter of a circle and $C$ is an arbitrary point on the circle, not equal to $A$ or $B$, then the angle $ACB$ equals $\dfrac{1}{1}\pi$.
+If $AB$ is a diameter of a circle and $C$ is an arbitrary point on the circle, not equal to $A$ or $B$, then the angle $\angle ACB$ equals $\frac{1}{2}\pi$.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:Thales`
 :class: tudproof, dropdown
 
-Consider the angles $\alpha$ and $\beta$ as indicated in {numref}`Fig:Trigonometry:Thales`. Since the triangle $\Delta AMC$ is isosceles ($AM$ and $MC$ are both equal to the radius of the circle), we have $\angle ACM=\alpha$. Likewise, the triangle $\Delta BMC$ is isosceles ($BM$ and $MC$ are both equal to the radius of the circle) and therefore $\angle BCM=\beta$. So, we have to prove that $\alpha+\beta$ equals $\dfrac{1}{1}\pi$.
+Consider the angles $\alpha$ and $\beta$ as indicated in {numref}`Fig:Trigonometry:Thales`. Since the triangle $\triangle AMC$ is isosceles ($AM$ and $MC$ are both equal to the radius of the circle), we have $\angle ACM=\alpha$. Likewise, the triangle $\triangle BMC$ is isosceles ($BM$ and $MC$ are both equal to the radius of the circle) and therefore $\angle BCM=\beta$. So, we have to prove that $\alpha+\beta$ equals $\frac{1}{2}\pi$.
 
-Because the sum of all angles in a triangle equals $180^{\circ}$, we have in triangle $\Delta AMC$ that $\angle AMC=\pi-2\alpha$. Similarly, using triangle $\Delta BMC$ we find $\angle BMC=\pi-2\beta$. Further we have $\angle AMC+\angle BMC=\pi$. Hence
+Because the sum of all angles in a triangle equals $\pi$, we have in triangle $\triangle AMC$ that $\angle AMC=\pi-2\alpha$. Similarly, using triangle $\triangle BMC$ we find $\angle BMC=\pi-2\beta$. Further we have $\angle AMC+\angle BMC=\pi$. Hence
 
 ```{math}
 \begin{align*}
 &~ & \angle AMC+\angle BMC &= \pi \\
 &\Longleftrightarrow & (\pi-2\alpha)+(\pi-2\beta) &= \pi \\
 &\Longleftrightarrow & -2\alpha-2\beta &= -\pi \\
-&\Longleftrightarrow & \alpha+\beta &= \dfrac{1}{2}\pi.
+&\Longleftrightarrow & \alpha+\beta &= \tfrac{1}{2}\pi.
 \end{align*}
 ```
 ::::::
@@ -173,7 +175,7 @@ A right-angled triangle, with sides $a$, $b$ and $c$. The right angle is indicat
 
 ```
 
-::::::{prf:theorem} Pythagorean theorem
+::::::{prf:theorem} Pythagoras
 :label: Thm:Trigonometry:Pythagoras
 
 In a right-angled triangle with legs $a$ and $b$ and hypotenuse $c$ we have:
@@ -224,7 +226,7 @@ name: Fig:Trigonometry:LawOfCosines
 class: dark-light
 ---
 
-An arbitrary triangle $\Delta ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$, respectively.
+An arbitrary triangle $\triangle ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$, respectively.
 ```
 
 ::::::{prf:theorem} Law of cosines
@@ -265,7 +267,7 @@ a^2=b^2+c^2-2bc\cos(\alpha).
 ```
 ::::::
 
-::::::{prf:corollary}
+::::::{prf:corollary} Law of cosines
 
 Note that we also have $b^2=a^2+c^2-2ac\cos(\beta)$ and $c^2=a^2+b^2-2ab\cos(\gamma)$.
 
@@ -283,7 +285,7 @@ name: Fig:Trigonometry:LawOfSines
 class: dark-light
 ---
 
-An arbitrary triangle $\Delta ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$, respectively, and its circumscribed circle.
+An arbitrary triangle $\triangle ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$, respectively, and its circumscribed circle.
 ```
 
 ::::::{prf:theorem} Law of sines
@@ -309,19 +311,20 @@ Then we have $\sin(\alpha)=\dfrac{h}{b}$ and $\sin(\beta)=\dfrac{h}{a}$. Hence $
 Similarly, drawing the perpendicular from $A$ to the opposite side $BC$, we also have
 
 $$
-\dfrac{b}{\sin(\beta)}=\dfrac{c}{\sin(\gamma)},
+\frac{b}{\sin(\beta)}=\frac{c}{\sin(\gamma)},
 $$
 
 and from $B$ to the opposite side $AC$ gives
 
 $$
-\dfrac{a}{\sin(\alpha)}=\dfrac{c}{\sin(\gamma)}.
+\frac{a}{\sin(\alpha)}=\frac{c}{\sin(\gamma)}.
 $$
 
 So, we conclude that
-```{math}
+
+$$
 \frac{a}{\sin(\alpha)}=\frac{b}{\sin(\beta)}=\frac{c}{\sin(\gamma)}.
-```
+$$
 
 Now we consider the circumscribed circle of the triangle as shown in {numref}`Fig:Trigonometry:LawOfSinesProof`.
 
@@ -332,13 +335,16 @@ name: Fig:Trigonometry:LawOfSinesProof
 class: dark-light
 ---
 
-An illustration for proof of the law of sines.
+An illustration for the proof of the law of sines.
 ```
 
-Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to {prf:ref}`Thales's theorem <Thm:Trigonometry:Thales>` the triangle $ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have $\gamma=\delta$. Then we have
-```{math}
+Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to {prf:ref}`Thales's theorem <Thm:Trigonometry:Thales>` the triangle $\triangle ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have $\gamma=\delta$. Then we have
+
+
+$$
 \sin(\gamma)=\sin(\delta)=\frac{c}{2r}\quad\Longleftrightarrow\quad\frac{c}{\sin(\gamma)}=2r.
-```
+$$
+
 This proves the theorem.
 ::::::
 
@@ -358,7 +364,7 @@ class: dark-light
 A right-angled isosceles triangle with equal sides of length $1$.
 ```
 
-Secondly, consider an equilateral triangle with three equal sides of length $2$, as shown in {numref}`Fig:Trigonometry:EquilateralTriangle`. Then the line segment from the top perpendicular to the opposite side leads to two right-angled triangles with one side of length $1$ and hypotenuse of length $2$. Then the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` implies that the vertical line segment has length $\sqrt{3}$. Note that the three equal angles are $\frac{1}{3}\pi$ and that the angle at the top of each of the two right-angled triangles equals $\frac{1}{6}\pi$. Then we easily deduce that $\cos(\frac{1}{3}\pi)=\frac{1}{2}=\sin(\frac{1}{6}\pi)$ and $\cos(\frac{1}{6}\pi)=\frac{1}{2}\sqrt{3}=\sin(\frac{1}{3}\pi)$.
+Secondly, consider an equilateral triangle with three equal sides of length $2$, as shown in {numref}`Fig:Trigonometry:EquilateralTriangle`. Then the line segment from the top perpendicular to the opposite side leads to two right-angled triangles with one side of length $1$ and hypotenuse of length $2$. Then the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` implies that the vertical line segment has length $\sqrt{3}$. Note that the three equal angles are $\frac{1}{3}\pi$ and that the angle at the top of each of the two right-angled triangles is $\frac{1}{6}\pi$. Then we easily deduce that $\cos(\frac{1}{3}\pi)=\frac{1}{2}=\sin(\frac{1}{6}\pi)$ and $\cos(\frac{1}{6}\pi)=\frac{1}{2}\sqrt{3}=\sin(\frac{1}{3}\pi)$.
 
 ```{figure} Images/triangle2.png
 ---
@@ -438,6 +444,7 @@ This leads to the following table of standard values:
   - 
   - $0$
 ```
+De waarden in de eerste twee rijen zouden ook gecentreerd moeten worden.
 
 Note that $\tan(\frac{1}{2}\pi)$ and $\tan(\frac{3}{2}\pi)$ are not defined since $\cos(\frac{1}{2}\pi)=0$ and $\cos(\frac{3}{2}\pi)=0$. We also omitted in this table the angles within the third and fourth quadrant, since their sine, cosine and tangent values can be derived from the above values using the identities listed in the next section.
 
@@ -455,9 +462,9 @@ The unit circle with standard angles marked.
 
 ## Trigonometric identities
 
-Now we have the basics, we can proceed with some important identities involving the trigonometric functions.
+Now we have the basics, we can proceed with some important identities involving the sine, the cosine and the tangent.
 
-::::{prf:theorem}
+::::{prf:theorem} Pythagorean identity
 :label: Thm:Trigonometry:UnitCircleIdentity
 
 For any angle $\theta$ we have
@@ -485,8 +492,8 @@ $$
 
 ::::::
 
-::::::{prf:theorem}
-:label: Thm:Trigonometry:PeriodicityAndOddEven
+::::::{prf:theorem} Periodicity
+:label: Thm:Trigonometry:Periodicity
 
 For any angle $\theta$ we have
 
@@ -502,18 +509,6 @@ For any angle $\theta$ we have
 \cos(\theta+2\pi)=\cos(\theta),
 ::::
 
-$$
-\sin(-\theta)=-\sin(\theta),
-$$
-
-$$
-\cos(-\theta)=\cos(\theta),
-$$
-
-$$
-\tan(-\theta)=-\tan(\theta),
-$$
-
 and
 
 ::::{math}
@@ -524,48 +519,105 @@ and
 
 ::::::
 
-::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:PeriodicityAndOddEven`
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:Periodicity`
 :class: tudproof, dropdown
 
 Consider the point $P$ in {numref}`Fig:Trigonometry:unit_circle`. Rotating the point $P$ by $2\pi$ leads to the same point $P$. Hence the sine and cosine values do not change, by {prf:ref}`Def:Trigonometry:Angle`.
-
-Next, consider mirroring the point $P$  in {numref}`Fig:Trigonometry:unit_circle` across the $x$-axis to obtain the point $Q$. Then the $x$-coordinate of $Q$ equals the $x$-coordinate of $P$, while the $y$-coordinate of $Q$ equals the negative of the $y$-coordinate of $P$. As a result of the mirroring, the angle also has become $-\theta$. So we find $\sin(-\theta) = -\sin(\theta)$ and $\cos(-\theta) = \cos(\theta)$.
-
-For the tangent function we have $\tan(-\theta)=\dfrac{\sin(-\theta)}{\cos(-\theta)}=\dfrac{-\sin(\theta)}{\cos(\theta)}=-\tan(\theta)$.
 
 Finally, rotating the point $P$ by $\pi$ leads to the point $R$, which has coordinates $(-x,-y)$. Hence we have $\tan(\theta+\pi)=\dfrac{-y}{-x}=\dfrac{y}{x}=\tan(\theta)$.
 
 ::::::
 
-::::::{prf:definition} Periodicity of trigonometric functions
+::::::{prf:definition} Periodicity
 :label: Def:Trigonometry:Period
 
-The value $2\pi$ in Equations {eq}`Eq:Trigonometry:SinePeriodicity` and {eq}`Eq:Trigonometry:CosinePeriodicity` is called the **period** of the sine and cosine functions. This means that the sine and cosine functions repeat their values every $2\pi$.
+The value $2\pi$ in Equations {eq}`Eq:Trigonometry:SinePeriodicity` and {eq}`Eq:Trigonometry:CosinePeriodicity` is called the **period** of the sine and the cosine. This means that the sine and the cosine repeat their values every $2\pi$.
 
-The value $\pi$ in Equation {eq}`Eq:Trigonometry:TangentPeriodicity` in {prf:ref}`Thm:Trigonometry:PeriodicityAndOddEven` is called the **period** of the tangent function. This means that the tangent function repeats its values every $\pi$.
+The value $\pi$ in Equation {eq}`Eq:Trigonometry:TangentPeriodicity` is called the **period** of the tangent. This means that the tangent repeats its values every $\pi$.
 
 ::::::
 
-Now we list some useful identities, which will be proved afterwards.
-
-::::::{prf:theorem} Connection formulas
-:label: Thm:Trigonometry:ConnectionFormulas
+::::::{prf:theorem} Negative angles
+:label: Thm:Trigonometry:NegativeAngles
 
 For any angle $\theta$ we have
 
 $$
-\sin(\theta+\frac{1}{2}\pi)=\cos(\theta)
+\sin(-\theta)=-\sin(\theta),
+$$
+
+$$
+\cos(-\theta)=\cos(\theta),
 $$
 
 and
 
 $$
-\cos(\theta+\frac{1}{2}\pi)=-\sin(\theta).
+\tan(-\theta)=-\tan(\theta).
+$$
+
+::::
+
+::::::
+
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:NegativeAngles`
+:class: tudproof, dropdown
+
+```{figure} Images/negative.png
+---
+width: 50%
+name: Fig:Trigonometry:NegativeAnglesProof
+class: dark-light
+---
+
+An illustration for the proof of the negative angles identities.
+```
+
+Consider mirroring the point $P$ in {numref}`Fig:Trigonometry:NegativeAnglesProof` across the $x$-axis to obtain the point $Q$. Then the $x$-coordinate of $Q$ equals the $x$-coordinate of $P$, while the $y$-coordinate of $Q$ equals the negative of the $y$-coordinate of $P$. As a result of the mirroring, the angle has become $-\theta$. So we find $\sin(-\theta) = -\sin(\theta)$ and $\cos(-\theta) = \cos(\theta)$.
+
+For the tangent function we have $\tan(-\theta)=\dfrac{\sin(-\theta)}{\cos(-\theta)}=\dfrac{-\sin(\theta)}{\cos(\theta)}=-\tan(\theta)$.
+
+::::::
+
+Two angles are called **complementary** if their sum is equal to $\frac{1}{2}\pi$.
+
+::::::{prf:theorem} Complementary angle identities
+:label: Thm:Trigonometry:ComplementaryAngles
+
+For any angle $\theta$ we have
+
+$$
+\sin(\tfrac{1}{2}\pi-\theta)=\cos(\theta)
+$$
+
+and
+
+$$
+\cos(\tfrac{1}{2}\pi-\theta)=\sin(\theta).
 $$
 ::::::
 
-::::::{prf:theorem} Symmetry relations
-:label: Thm:Trigonometry:SymmetryRelations
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:ComplementaryAngles`
+:class: tudproof, dropdown
+
+```{figure} Images/complementary.png
+---
+width: 50%
+name: Fig:Trigonometry:ComplementaryAnglesProof
+class: dark-light
+---
+
+An illustration for the proof of the complementary angles identities.
+```
+
+Consider the point $P$ in {numref}`Fig:Trigonometry:ComplementaryAnglesProof` with angle $\theta$ and the point $Q$ with angle $\frac{1}{2}\pi-\theta$. Then the $y$-coordinate of $Q$ equals the $x$-coordinate of $P$, while the $x$-coordinate of $Q$ equals the $y$-coordinate of $P$. So we find $\sin(\frac{1}{2}\pi-\theta) = \cos(\theta)$ and $\cos(\frac{1}{2}\pi-\theta) = \cos(\theta)$.
+
+::::::
+
+Two angles are called **supplementary** if their sum is equal to $\pi$.
+
+::::::{prf:theorem} Supplementary angle identities
+:label: Thm:Trigonometry:SupplementaryAngles
 
 For any angle $\theta$ we have
 
@@ -584,10 +636,141 @@ $$
 $$
 ::::::
 
-::::::{prf:theorem} Double angle formulas
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:SupplementaryAngles`
+:class: tudproof, dropdown
+
+```{figure} Images/supplementary.png
+---
+width: 50%
+name: Fig:Trigonometry:SupplementaryAnglesProof
+class: dark-light
+---
+
+An illustration for the proof of the supplementary angles identities.
+```
+
+Consider mirroring the point $P$ in {numref}`Fig:Trigonometry:SupplementaryAnglesProof` across the $y$-axis to obtain the point $Q$. Then the $y$-coordinate of $Q$ equals the $y$-coordinate of $P$, while the $x$-coordinate of $Q$ equals the negative of the $x$-coordinate of $P$. As a result of the mirroring, the angle has become $\pi-\theta$. So we find $\sin(\pi-\theta) = \sin(\theta)$ and $\cos(\pi-\theta) = -\cos(\theta)$.
+
+For the tangent function we have $\tan(\pi-\theta)=\dfrac{\sin(\pi-\theta)}{\cos(\pi-\theta)}=\dfrac{\sin(\theta)}{-\cos(\theta)}=-\tan(\theta)$.
+
+::::::
+
+::::::{prf:theorem} Addition and subtraction formulas
+:label: Thm:Trigonometry:AdditionSubtractionFormulas
+
+For every $x,y\in\mathbb{R}$ we have
+
+$$
+\begin{align*}
+\sin(x+y) &= \sin(x)\cos(y)+\cos(x)\sin(y), \\
+\cos(x+y) &= \cos(x)\cos(y)-\sin(x)\sin(y),
+\end{align*}
+$$
+
+$$
+\begin{align*}
+\sin(x-y) &=\sin(x)\cos(y)-\cos(x)\sin(y), \\
+\cos(x-y) &=\cos(x)\cos(y)+\sin(x)\sin(y),
+\end{align*}
+$$
+
+and
+
+$$
+\begin{align*}
+\tan(x+y) &=\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}, \\
+\tan(x-y) &=\frac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}.
+\end{align*}
+$$
+
+::::::
+
+::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:AdditionSubtractionFormulas`
+:class: tudproof, dropdown
+
+For this proof, we need the following figure:
+
+```{figure} Images/cosdiff.png
+---
+width: 50%
+name: Fig:Trigonometry:CosineDifference
+class: dark-light
+---
+
+An illustration for the proof of the addition and subtraction formulas.
+```
+
+In order to prove the summation formulas, we consider {numref}`Fig:Trigonometry:CosineDifference` above with $\angle QOP=\beta-\alpha$. Hence we have $P=(\cos(\alpha),\sin(\alpha))$ and $Q=(\cos(\beta),\sin(\beta))$. The distance between $P$ and $Q$ can be computed using the {prf:ref}`law of cosines <Thm:Trigonometry:LawOfCosines>` as
+
+$$
+(PQ)^2=(OP)^2+(OQ)^2-2(OP)(OQ)\cos(\alpha-\beta)=2-2\cos(\alpha-\beta).
+$$
+
+On the other hand, this distance can be computed using the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` as
+
+$$
+\begin{align*}
+(PQ)^2&=(\cos(\beta)-\cos(\alpha))^2+(\sin(\beta)-\sin(\alpha))^2\\
+&=\cos^2(\beta)-2\cos(\alpha)\cos(\beta)+\cos^2(\alpha)+\sin^2(\beta)-2\sin(\alpha)\sin(\beta)+\sin^2(\alpha)\\
+&=2-2\left(\cos(\alpha)\cos(\beta)+\sin(\alpha)\cos(\alpha)\right).
+\end{align*}
+$$
+
+This implies that $\cos(\alpha-\beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)$.
+
+Replacing $\beta$ with $-\beta$ we obtain that $\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)$.
+
+In {prf:ref}`Thm:Trigonometry:ComplementaryAngles` we obtained that $\sin(\frac{1}{2}\pi-\theta)=\cos(\theta)$ and $\cos(\frac{1}{2}\pi-\theta)=\sin(\theta)$. Using these complementary angles formulas, we obtain
+
+$$
+\begin{align*}
+\sin(\alpha+\beta)&=\cos(\tfrac{1}{2}\pi-\alpha-\beta)\\
+&=\cos(\tfrac{1}{2}\pi-\alpha)\cos(\beta)+\sin(\tfrac{1}{2}\pi-\alpha)\sin(\beta)\\
+&=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta).
+\end{align*}
+$$
+
+Replacing $\beta$ with $-\beta$ we obtain $\sin(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
+
+Now the summation formulas for the tangent follow from these summation formulas for the sine and the cosine:
+
+```{math}
+\begin{align*}
+\tan(x+y)&=\frac{\sin(x+y)}{\cos(x+y)}\\
+&=\frac{\sin(x)\cos(y)+\cos(x)\sin(y)}{\cos(x)\cos(y)-\sin(x)\sin(y)}\\
+&=\frac{\dfrac{\sin(x)\cos(y)}{\cos(x)\cos(y)}+\dfrac{\cos(x)\sin(y)}{\cos(x)\cos(y)}}{\dfrac{\cos(x)\cos(y)}{\cos(x)\cos(y)}-\dfrac{\sin(x)\sin(y)}{\cos(x)\cos(y)}}\\
+&=\frac{\dfrac{\sin(x)}{\cos(y)}+\dfrac{\sin(y)}{\cos(y)}}{1-\dfrac{\sin(x)}{\cos(x)}\dfrac{\sin(y)}{\cos(y)}}\\
+&=\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}.
+\end{align*}
+```
+Replacing $y$ with $-y$ we obtain $\tan(x-y)=\dfrac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}$.
+
+::::::
+
+::::::{prf:corollary} Product formulas
+:label: Thm:Trigonometry:ProductFormulas
+For every $x,y\in\mathbb{R}$ we have
+
+$$
+2\sin(x)\cos(y)=\sin(x-y)+\sin(x+y),
+$$
+
+$$
+2\cos(x)\cos(y)=\cos(x-y)+\cos(x+y)
+$$
+
+and
+
+$$
+2\sin(x)\sin(y)=\cos(x-y)-\cos(x+y).
+$$
+
+::::::
+
+::::::{prf:corollary} Double-angle formulas
 :label: Thm:Trigonometry:DoubleAngleFormulas
 
-For any angle $\theta$ we have
+For every $x\in\mathbb{R}$ we have
 
 $$
 \sin(2x)=2\sin(x)\cos(x)
@@ -599,117 +782,32 @@ $$
 \cos(2x)=\cos^2(x)-\sin^2(x).
 $$
 
+Combination of the latter formula with {prf:ref}`Thm:Trigonometry:UnitCircleIdentity` leads to
+
+$$
+\cos(2x)=2\cos^2(x)-1\quad\text{and}\quad\cos(2x)=1-2\sin^2(x).
+$$
+
 ::::::
 
-::::::{prf:theorem} Summation formulas
-:label: Thm:Trigonometry:SummationFormulas
+::::::{prf:corollary} Half-angle formulas
+:label: Thm:Trigonometry:HalfAngleFormulas
 
-For any angle $\theta$ we have
-
-$$
-\begin{align*}
-\sin(x+y) &= \sin(x)\cos(y)+\cos(x)\sin(y), \\
-\cos(x+y) &= \cos(x)\cos(y)-\sin(x)\sin(y),
-\end{align*}
-$$
+For every $x\in\mathbb{R}$ we have
 
 $$
-\begin{align*}
-\sin(x-y)=\sin(x)\cos(y)-\cos(x)\sin(y), \\
-\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y),
-\end{align*}
+\sin^2(x)=\frac{1-\cos(2x)}{2}
 $$
 
 and
 
 $$
-\begin{align*}
-\tan(x+y)=\displaystyle\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}, \\
-\tan(x-y)=\displaystyle\frac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}.
-\end{align*}
+\cos^2(x)=\frac{1+\cos(2x)}{2}.
 $$
 
 ::::::
 
-::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:ConnectionFormulas`, {prf:ref}`Thm:Trigonometry:SymmetryRelations`, {prf:ref}`Thm:Trigonometry:DoubleAngleFormulas` and {prf:ref}`Thm:Trigonometry:SummationFormulas`
-:class: tudproof, dropdown
-
-For this long proof, we need the following figure:
-
-```{figure} Images/cosdiff.png
----
-width: 50%
-name: Fig:Trigonometry:CosineDifference
-class: dark-light
----
-
-An illustration for the proof of the summation formulas.
-```
-
-In order to prove these summation formulas, we consider {numref}`Fig:Trigonometry:CosineDifference` above with $\angle QOP=\beta-\alpha$. Hence we have $P=(\cos(\alpha),\sin(\alpha))$ and $Q=(\cos(\beta),\sin(\beta))$. The distance between $P$ and $Q$ can be computed using the {prf:ref}`law of cosines <Thm:Trigonometry:LawOfCosines>` as
-
-```{math}
-(PQ)^2=(OP)^2+(OQ)^2-2(OP)(OQ)\cos(\alpha-\beta)=2-2\cos(\alpha-\beta).
-```
-
-On the other hand, this distance can be computed using the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` as
-
-```{math}
-\begin{align*}
-(PQ)^2&=(\cos(\beta)-\cos(\alpha))^2+(\sin(\beta)-\sin(\alpha))^2\\
-&=\cos^2(\beta)-2\cos(\alpha)\cos(\beta)+\cos^2(\alpha)+\sin^2(\beta)-2\sin(\alpha)\sin(\beta)+\sin^2(\alpha)\\
-&=2-2\left(\cos(\alpha)\cos(\beta)+\sin(\alpha)\cos(\alpha)\right).
-\end{align*}
-```
-
-This implies that $\cos(\alpha-\beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)$.
-
-Replacing $\beta$ with $-\beta$ we obtain that $\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)$.
-
-Taking $\beta=\frac{1}{2}\pi$ in the latter formula, using $\cos(\frac{1}{2}\pi)=0$ and $\sin(\frac{1}{2}\pi)=1$, we obtain
-```{math}
-\cos(\alpha+\tfrac{1}{2}\pi)=\cos(\alpha)\cos(\tfrac{1}{2}\pi)-\sin(\alpha)\sin(\tfrac{1}{2}\pi)=-\sin(\alpha),
-```
-which leads to
-```{math}
-\begin{align*}
-\sin(\alpha+\beta)&=-\cos(\alpha+\beta+\tfrac{1}{2}\pi)=\sin(\alpha)\sin(\beta+\tfrac{1}{2}\pi)-\cos(\alpha)\cos(\beta+\tfrac{1}{2}\pi)\\
-&=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta).
-\end{align*}
-```
-
-Taking $\beta=\frac{1}{2}\pi$, using $\cos(\frac{1}{2}\pi)=0$ and $\sin(\frac{1}{2}\pi)=1$, we have
-```{math}
-\sin(\alpha+\tfrac{1}{2}\pi)=\sin(\alpha)\cos(\tfrac{1}{2}\pi)+\cos(\alpha)\sin(\tfrac{1}{2}\pi)=\cos(\alpha).
-```
-
-Replacing $\beta$ with $-\beta$ we obtain $\sin(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
-
-Now the summation formulas for the tangent follow from these summation formulas for the sine and the cosine:
-
-```{math}
-\begin{align*}
-\tan(x+y)&=\frac{\sin(x+y)}{\cos(x+y)}=\frac{\sin(x)\cos(y)+\cos(x)\sin(y)}{\cos(x)\cos(y)-\sin(x)\sin(y)}\\
-&=\frac{\frac{\sin(x)\cos(y)}{\cos(x)\cos(y)}+\frac{\cos(x)\sin(y)}{\cos(x)\cos(y)}}{\frac{\cos(x)\cos(y)}{\cos(x)\cos(y)}-\frac{\sin(x)\sin(y)}{\cos(x)\cos(y)}}=\frac{\frac{\sin(x)}{\cos(y)}+\frac{\sin(y)}{\cos(y)}}{1-\frac{\sin(x)}{\cos(x)}\frac{\sin(y)}{\cos(y)}}=\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}.
-\end{align*}
-```
-Replacing $y$ with $-y$ we obtain $\tan(x-y)=\dfrac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}$.
-
-The double angle formulas are special cases of these summation formulas.
-
-The symmetry relations also follow from the summation formulas:
-```{math}
-\sin(\pi-\theta)=\sin(\pi)\cos(\theta)-\cos(\pi)\sin(\theta)=\sin(\theta)
-```
-and
-```{math}
-\cos(\pi-\theta)=\cos(\pi)\cos(\theta)+\sin(\pi)\sin(\theta)=-\cos(\theta),
-```
-which implies that $\tan(\pi-\theta)=-\tan(\theta)$.
-
-::::::
-
-Finally, we have Heron's formula:
+Finally, we have Heron's formula named after the Greek mathematician [Heron of Alexandria (probably 1st century AD)](https://en.wikipedia.org/wiki/Hero_of_Alexandria).
 
 ::::::{prf:theorem} Heron
 :label: Thm:Trigonometry:Heron
@@ -721,7 +819,7 @@ name: Fig:Trigonometry:Heron
 class: dark-light
 ---
 
-Triangle $ABC$.
+Triangle $\triangle ABC$.
 ```
 
 Let $s=\frac{1}{2}(a+b+c)$ be the semiperimeter of the triangle in {numref}`Fig:Trigonometry:Heron`, then the area of this triangle equals
@@ -764,31 +862,31 @@ Now we conclude that the area of the triangle equals
 ## Exercises
 
 ```{exercise}
-:label: exercise_1
+:label: Exc:Trigonometry:Exercise_1
 Show that $1+\tan^2(x)=\dfrac{1}{\cos^2(x)}$.
 ```
 
-:::{admonition} Solution of exercise 1
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_1`
 :class: solution, dropdown
 $\sin^2(x)+\cos^2(x)=1\quad\Longleftrightarrow\quad\dfrac{\sin^2(x)}{\cos^2(x)}+\dfrac{\cos^2(x)}{\cos^2(x)}=\dfrac{1}{\cos^2(x)}\quad\Longleftrightarrow\quad\tan^2(x)+1=\dfrac{1}{\cos^2(x)}$.
 :::
 
 ```{exercise} 
-:label: exercise_2
+:label: Exc:Trigonometry:Exercise_2
 Show that $1+\dfrac{1}{\tan^2(x)}=\dfrac{1}{\sin^2(x)}$.
 ```
 
-:::{admonition} Solution of exercise 2
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_2`
 :class: solution, dropdown
 $\sin^2(x)+\cos^2(x)=1\quad\Longleftrightarrow\quad\dfrac{\sin^2(x)}{\sin^2(x)}+\dfrac{\cos^2(x)}{\sin^2(x)}=\dfrac{1}{\sin^2(x)}\quad\Longleftrightarrow\quad1+\dfrac{1}{\tan^2(x)}=\dfrac{1}{\sin^2(x)}$.
 :::
 
 ```{exercise} 
-:label: exercise_3
+:label: Exc:Trigonometry:Exercise_3
 Show that $2\sin(x+y)\cos(x-y)=\sin(2x)+\sin(2y)$.
 ```
 
-:::{admonition} Solution of exercise 3
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_3`
 :class: solution, dropdown
 Using $\sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)$ and $\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y)$ we obtain
 ```{math}
@@ -805,11 +903,11 @@ Now we use $\sin^2(x)+\cos^2(x)=1=\sin^2(y)+\cos^2(y)$, $\sin(2x)=2\sin(x)\cos(y
 :::
 
 ```{exercise} 
-:label: exercise_4
+:label: Exc:Trigonometry:Exercise_4
 Show that $2\cos(x+y)\sin(x-y)=\sin(2x)-\sin(2y)$.
 ```
 
-:::{admonition} Solution of exercise 4
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_4`
 :class: solution, dropdown
 Using $\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)$ and $\sin(x-y)=\sin(x)\cos(y)-\cos(x)\sin(y)$ we obtain
 ```{math}
@@ -826,11 +924,11 @@ Now we use $\sin^2(x)+\cos^2(x)=1=\sin^2(y)+\cos^2(y)$, $\sin(2x)=2\sin(x)\cos(y
 :::
 
 ```{exercise} 
-:label: exercise_5
+:label: Exc:Trigonometry:Exercise_5
 Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the exact value of $\sin(\frac{1}{12}\pi)$.
 ```
 
-:::{admonition} Solution of exercise 5
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_5`
 :class: solution, dropdown
 ```{math}
 \begin{align*}
@@ -841,11 +939,11 @@ Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the ex
 :::
 
 ```{exercise} 
-:label: exercise_6
+:label: Exc:Trigonometry:Exercise_6
 Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the exact value of $\cos(\frac{1}{12}\pi)$.
 ```
 
-:::{admonition} Solution of exercise 6
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_6`
 :class: solution, dropdown
 ```{math}
 \begin{align*}
@@ -856,11 +954,11 @@ Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the ex
 :::
 
 ```{exercise} 
-:label: exercise_7
+:label: Exc:Trigonometry:Exercise_7
 Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the exact value of $\sin(\frac{5}{12}\pi)$.
 ```
 
-:::{admonition} Solution of exercise 7
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_7`
 :class: solution, dropdown
 ```{math}
 \begin{align*}
@@ -871,11 +969,11 @@ Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the ex
 :::
 
 ```{exercise} 
-:label: exercise_8
+:label: Exc:Trigonometry:Exercise_8
 Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the exact value of $\cos(\frac{5}{12}\pi)$.
 ```
 
-:::{admonition} Solution of exercise 8
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_8`
 :class: solution, dropdown
 ```{math}
 \begin{align*}
@@ -886,11 +984,11 @@ Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the ex
 :::
 
 ```{exercise} 
-:label: exercise_9
+:label: Exc:Trigonometry:Exercise_9
 Let $a=\cos(\frac{1}{5}\pi)$ and $b=\cos(\frac{2}{5}\pi)$. Use $\cos(2x)=2\cos^2(x)-1$ and $\cos(\pi-x)=-\cos(x)$ to find two equations involving $a$ and $b$. Then find the exact values of $\cos(\frac{1}{5}\pi)$, $\cos(\frac{2}{5})$, $\cos(\frac{3}{5}\pi)$ and $\cos(\frac{4}{5}\pi)$.
 ```
 
-:::{admonition} Solution of exercise 9
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_9`
 :class: solution, dropdown
 ```{math}
 \cos(\tfrac{2}{5}\pi)=2\cos^2(\tfrac{1}{5}\pi)-1\quad\Longleftrightarrow\quad b=2a^2-1
@@ -908,11 +1006,11 @@ Since $a=\cos(\frac{1}{5}\pi)>0$, we conclude that $a=\frac{1}{4}(1+\sqrt{5})$. 
 :::
 
 ```{exercise} 
-:label: exercise_10
+:label: Exc:Trigonometry:Exercise_10
 Use the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ to find the exact values of $\tan(\frac{1}{8}\pi)$ and $\tan(\frac{3}{8}\pi)$.
 ```
 
-:::{admonition} Solution of exercise 10
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_10`
 :class: solution, dropdown
 Using the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ for $x=\frac{1}{8}\pi$ we find
 ```{math}
@@ -936,7 +1034,7 @@ Hence $(\tan(\frac{3}{8}\pi)-1)^2-2=0$ or equivalently $\tan(\frac{3}{8}\pi)=1\p
 :::
 
 ```{exercise} 
-:label: exercise_11
+:label: Exc:Trigonometry:Exercise_11
 In the picture below we have $\alpha=\frac{1}{7}\pi$. Find the exact value of $\cos(\frac{1}{7}\pi)\cos(\frac{2}{7}\pi)\cos(\frac{3}{7}\pi)$.
 ```
 
@@ -948,7 +1046,7 @@ align: center
 ---
 ```
 
-:::{admonition} Solution of exercise 11
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_11`
 :class: solution, dropdown
 In each of the three equilateral triangles we use a rectangular triangle being half of it to find that $\cos(\frac{1}{7}\pi)=\dfrac{x+y}{2x}$, $\cos(\frac{2}{7}\pi)=\dfrac{x}{2y}$ and $\cos(\frac{3}{7}\pi)=\dfrac{y}{2(x+y)}$. This implies that
 ```{math}
@@ -957,11 +1055,11 @@ In each of the three equilateral triangles we use a rectangular triangle being h
 :::
 
 ```{exercise} 
-:label: exercise_12
+:label: Exc:Trigonometry:Exercise_12
 Let $\alpha=\frac{1}{7}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos(x)$ and the formula $2\sin(x)\cos(y)=\sin(x+y)-\sin(x-y)$ to find the exact value of $\cos(\alpha)\cos(2\alpha)\cos(3\alpha)$.
 ```
 
-:::{admonition} Solution of exercise 12
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_12`
 :class: solution, dropdown
 Multiply and divide by $2\sin(\alpha)$ to find
 ```{math}
@@ -971,11 +1069,11 @@ since $\sin(7\alpha)=\sin(\pi)=0$.
 :::
 
 ```{exercise} 
-:label: exercise_13
+:label: Exc:Trigonometry:Exercise_13
 Let $\alpha=\frac{1}{5}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos(x)$ and the formula $2\sin(x)\cos(y)=\sin(x+y)-\sin(x-y)$ to find the exact value of $\cos(\alpha)+\cos(3\alpha)$.
 ```
 
-:::{admonition} Solution of exercise 13
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_13`
 :class: solution, dropdown
 Multiply and divide by $2\sin(\alpha)$ to find
 ```{math}
@@ -988,11 +1086,11 @@ since $\sin(4\alpha)=\sin(\alpha)$ for $\alpha=\frac{1}{5}\pi$.
 :::
 
 ```{exercise} 
-:label: exercise_14
+:label: Exc:Trigonometry:Exercise_14
 Let $\alpha=\frac{1}{7}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos(x)$ and the formula $2\sin(x)\cos(y)=\sin(x+y)-\sin(x-y)$ to find the exact value of $\cos(\alpha)+\cos(3\alpha)+\cos(5\alpha)$.
 ```
 
-:::{admonition} Solution of exercise 14
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_14`
 :class: solution, dropdown
 Multiply and divide by $2\sin(\alpha)$ to find
 ```{math}
@@ -1006,11 +1104,11 @@ since $\sin(6\alpha)=\sin(\alpha)$ for $\alpha=\frac{1}{7}\pi$.
 :::
 
 ```{exercise} 
-:label: exercise_15
+:label: Exc:Trigonometry:Exercise_15
 Show that $\displaystyle\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right)$ for $\alpha+\beta\neq\pi$ (mod $2\pi$).
 ```
 
-:::{admonition} Solution of exercise 15
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_15`
 :class: solution, dropdown
 Setting $x+y=\alpha$ and $x-y=\beta$ in $\sin(x+y)+\sin(x-y)=2\sin(x)\cos(y)$ and $\cos(x+y)+\cos(x-y)=2\cos(x)\cos(y)$, we obtain $x=\dfrac{\alpha+\beta}{2}$ and $y=\dfrac{\alpha-\beta}{2}$ and therefore
 ```{math}
@@ -1037,11 +1135,11 @@ align: center
 ```
 
 ```{exercise} 
-:label: exercise_16
+:label: Exc:Trigonometry:Exercise_16
 Show that $a\sin(\beta-\gamma)+b\sin(\gamma-\alpha)+c\sin(\alpha-\beta)=0$.
 ```
 
-:::{admonition} Solution of exercise 16
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_16`
 :class: solution, dropdown
 Use the law of sines $\dfrac{a}{\sin(\alpha)}=\dfrac{b}{\sin(\beta)}=\dfrac{c}{\sin(\gamma)}=d$, where $d$ denotes the diameter of the circumscribed circle, to obtain
 ```{math}
@@ -1056,11 +1154,11 @@ Use the law of sines $\dfrac{a}{\sin(\alpha)}=\dfrac{b}{\sin(\beta)}=\dfrac{c}{\
 :::
 
 ```{exercise} 
-:label: exercise_17
+:label: Exc:Trigonometry:Exercise_17
 Show that $\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)=2+2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
 ```
 
-:::{admonition} Solution of exercise 17
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_17`
 :class: solution, dropdown
 ```{math}
 \begin{align*}
@@ -1076,11 +1174,11 @@ Note that this implies that a triangle with angles $\alpha$, $\beta$ and $\gamma
 :::
 
 ```{exercise} 
-:label: exercise_18
+:label: Exc:Trigonometry:Exercise_18
 Show that $\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1-2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
 ```
 
-:::{admonition} Solution of exercise 18
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_18`
 :class: solution, dropdown
 ```{math}
 \begin{align*}
@@ -1096,11 +1194,11 @@ Note that this implies that a triangle with angles $\alpha$, $\beta$ and $\gamma
 :::
 
 ```{exercise} 
-:label: exercise_19
+:label: Exc:Trigonometry:Exercise_19
 Show that $\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)=4\sin(\alpha)\sin(\beta)\sin(\gamma)$.
 ```
 
-:::{admonition} Solution of exercise 19
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_19`
 :class: solution, dropdown
 ```{math}
 \begin{align*}
@@ -1114,11 +1212,11 @@ Show that $\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)=4\sin(\alpha)\sin(\beta)\sin
 :::
 
 ```{exercise} 
-:label: exercise_20
+:label: Exc:Trigonometry:Exercise_20
 Show that $\tan(\alpha)+\tan(\beta)+\tan(\gamma)=\tan(\alpha)\tan(\beta)\tan(\gamma)$.
 ```
 
-:::{admonition} Solution of exercise 20
+:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_20`
 :class: solution, dropdown
 Note that $\tan(\gamma)=\tan(\pi-\alpha-\beta)=-\tan(\alpha+\beta)=-\dfrac{\tan(\alpha)+\tan(\beta)}{1-\tan(\alpha)\tan(\beta)}$. Hence we have:
 ```{math}
@@ -1134,7 +1232,7 @@ Note that $\tan(\gamma)=\tan(\pi-\alpha-\beta)=-\tan(\alpha+\beta)=-\dfrac{\tan(
 :::
 
 ```{exercise} 
-:label: exercise_21
-Perhaps add a Grasple exercise here on Heron’s formula, with the diagram of the triangle adapting to the parameters (the side lengths), if that’s possible.
+:label: Exc:Trigonometry:Exercise_21
+Perhaps add a Grasple exercise here on Heron’s formula, with the diagram of the triangle adapting to the parameters (the side lengths), if that’s possible. See the area calculator on Wikipedia: https://en.wikipedia.org/wiki/Heron%27s_formula.
 ```
 
