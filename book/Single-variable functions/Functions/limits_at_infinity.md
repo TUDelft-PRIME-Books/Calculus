@@ -103,6 +103,22 @@ Notice that the function values do not seem to tend to some particular value. Th
 Consider the function $f(x)=\sqrt{x}$ and suppose we want to evaluate $\lim\limits_{x\rightarrow -\infty}f(x)$. When we try to make a table of the funcion values for negative values of $x$, we immediately run into trouble as the function is not defined for negative values of $x$. As such, the limit $\lim\limits_{x\rightarrow -\infty}\sqrt{x}$ does not exist.
 ::::::
 
+::::::{warning} 
+:name: Warning:LimitAtInfinity:Tables
+Even though making tables like we did in the preceding examples can help to give an idea what the value of the limit at infinity is going to be, it is not sufficient to only make a table when evaluating a limit (see {prf:ref}`Ex:LimitAtInfinity:Warningtables`).
+::::::
+
+::::::{prf:example} 
+:label: Ex:LimitAtInfinity:Warningtables
+
+Consider the function $f(x)=\cos(2\pi x)$ and suppose we make a table like we did in the previous examples.
+
+Hier een tabel voor de functiewaarden van f voor x=1,10,100,1000,10000,100000,1000000
+
+This would suggest that $\lim\limits_{x\rightarrow\infty}\cos(2\pi x)=1$. However, we know that the function values do not tend to $1$, as they keep on oscillating between $-1$ and $1$. In this case, we simply chose the values of $x$ we inserted into our function rather poorly. Indeed, $f(x)=1$ for all integer values of $x$. If we, on the other hand, would have chosen values of $x$ of the form $x=\frac{1}{2}+n$ for an integer $n$, we may have gotten the idea that the limit would be $-1$. Indeed, the limit  $\lim\limits_{x\rightarrow\infty}\cos(2\pi x)$ does not exist at all.
+::::::
+
+
 (Subsec:LimitinfEvaluating)=
 
 ## Evaluating limits
@@ -230,16 +246,159 @@ $$
  \lim\limits_{x\rightarrow \infty}\dfrac{2x+\sqrt{x}-x^3}{3x^3+x^2}=\lim\limits_{x\rightarrow \infty}\dfrac{\frac{2}{x^2}+\frac{1}{x^{\frac{5}{2}}}-1}{3+\frac{1}{x}}
 $$
 
-We can now use {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
+We can now use {prf:ref}`Theorem:LimitAtInfinity:Standardlimits` and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
 
 $$
  \lim\limits_{x\rightarrow \infty}\dfrac{2x+\sqrt{x}-x^3}{3x^3+x^2}=\lim\limits_{x\rightarrow \infty}\dfrac{\frac{2}{x^2}+\frac{1}{x^{\frac{5}{2}}}-1}{3+\frac{1}{x}}=\dfrac{0+0-1}{3+0}=-\frac{1}{3}
 $$
 ::::::
 
+::::::{prf:example} Division by dominant term
+:label: Ex:LimitAtInfinity:Dominant2
 
-Nu voorbeeld met wortels. Daarna worteltruc. Nog een warning maken onderaan 3.7.1 dat tabellen niet goed werken, zie $\cos(n\pi)$.
+Suppose that we want to evaluate $\lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}$. The highest power of $x$ is $x^4$, but $x^4$ is not the dominant term, since it appears inside of a square root. Note that for very negative values of $x$ we have $\sqrt{1+x^2}\approx \sqrt{x^2}=|x|$, so the term $\sqrt{1+x^2}$ behaves like $|x|$ for very negative values of $x$. As such, the dominant term in this expression is $x$. We evaluate the limit by dividing both parts of the fraction by this dominant term. This gives
+
+$$
+ \lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{1}{x}}
+$$
+
+A very common misktake, is to now write
+
+$$
+ \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{1}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\sqrt{\frac{1}{x^2}+1}+\frac{1}{x}}\qquad\qquad \left(\textbf{INCORRECT}\right)
+$$
+
+Can you spot the error? The computation would have been correct if we would have considered the limit at infinity instead of at minus infinity. Notice that for $x<0$ the expression $\frac{1}{x}\sqrt{1+x^2}$ is negative, while the expression $\sqrt{\frac{1}{x^2}+1}$ is positive, so they can never be equal. Indeed, we can write
+
+$$
+ \frac{1}{x}\sqrt{1+x^2}=\frac{1}{x}\sqrt{x^2}\sqrt{\frac{1}{x^2}+1}=\frac{1}{x}|x|\sqrt{\frac{1}{x^2}+1}=-\sqrt{\frac{1}{x^2}+1}
+$$
+
+Here we used that $\frac{1}{x}|x|=-1$ since $x<0$. As such, the correct computation is
+
+$$
+ \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{1}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{-\sqrt{\frac{1}{x^2}+1}+\frac{1}{x}}
+$$
+
+We can now use {prf:ref}`Theorem:LimitAtInfinity:Standardlimits` and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
+
+$$
+ \lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{-\sqrt{\frac{1}{x^2}+1}+\frac{1}{x}}=\dfrac{0+3}{-\sqrt{0+1}+0}=-\frac{1}{3}
+$$
+::::::
+
+Now consider a limit of the form $\lim\limits_{x\rightarrow \infty}p(x)-q(x)\sqrt{r(x)}$ where both $\lim\limits_{x\rightarrow \infty}p(x)$ and $\lim\limits_{x\rightarrow \infty}q(x)\sqrt{r(x)}$ do not exist (for instance, because they are both infinite). Then it can often help to multiply by the 'conjugate square root' $\dfrac{p(x)+q(x)\sqrt{r(x)}}{p(x)+q(x)\sqrt{r(x)}}$ (effectively, we multiply by the constant function $1$, although it is written a bit uglier than usual, so the value of the limit does not change). This technique is also known as the **square root trick**. The reason that this trick works, is that the product $(p(x)-q(x)\sqrt{r(x)})(p(x)+q(x)\sqrt{r(x)})$ simplifies into $p(x)^2-q(x)^2r(x)$, which no longer involves a square root. If $p$, $q$ and $r$ are polynomials, the previously discussed technique of division by the dominant term can subsequently be used to evaluate the limit.
+
+::::::{prf:example} Square root trick
+:label: Ex:LimitAtInfinity:Squareroottrick.
+Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}x-\sqrt{x^2+1}$. Notice that both the function is of the form described above and that $\lim\limits_{x\rightarrow\infty }x=\lim\limits_{x\rightarrow\infty }\sqrt{x^2+1}=\infty$. Hence, the limit is of the form "$\infty-\infty$" and as such, it is not clear what happens. Using the square root trick we can evaluate the limit by rewriting
+
+$$
+\begin{align*}
+ \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+1} &= \lim\limits_{x\rightarrow \infty}\left(x-\sqrt{x^2+1}\right)\dfrac{x+\sqrt{x^2+1}}{x+\sqrt{x^2+1}} \\
+ &= \lim\limits_{x\rightarrow \infty}\dfrac{x^2-(x^2+1)}{x+\sqrt{x^2+1}} \\
+ &= \lim\limits_{x\rightarrow \infty}\frac{-1}{x+\sqrt{x^2+1}}.
+\end{align*}
+$$
+
+Note that the dominant term in this expression is $x$ and we divide both parts of the fraction by $x$ to evaluate
+
+$$
+ \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+1}=\lim\limits_{x\rightarrow \infty}\frac{-1}{x+\sqrt{x^2+1}}=\lim\limits_{x\rightarrow \infty}\frac{-\frac{1}{x}}{1+\frac{1}{x}\sqrt{x^2+1}}=\lim\limits_{x\rightarrow \infty}\frac{-\frac{1}{x}}{1+\sqrt{1+\frac{1}{x^2}}}.
+$$
+
+The remaining limit can be evaluated directly and we find
+
+$$
+ \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+1}=\lim\limits_{x\rightarrow \infty}\frac{-\frac{1}{x}}{1+\sqrt{1+\frac{1}{x^2}}}=\frac{0}{1+0}=0.
+$$
+
+::::::
+
+(Subsec:LimitinfOblique)=
+
+## Oblique asymptotes
+
+Some functions do not a horizontal line as $x\rightarrow\infty$ or $x\rightarrow-\infty$, but, instead, approach a nonhorizontal (straight) line.
+
+::::::{prf:definition} Oblique asymptote
+:label: Def:LimitAtInfinity:Oblique
+
+Let $f$ be a function that is defined for values of $x>M$ for some $M$. We say that $f$ has an **oblique asymptote** $y=ax+b$ at $\infty$, if $\lim\limits_{x\rightarrow\infty}\left(f(x)-ax-b\right)=0$.
+
+Similarly if $f$ is a function that is defined for values of $x<M$ for some $M$, we say that $f$ has an **oblique asymptote** $y=ax+b$ at $-\infty$, if $\lim\limits_{x\rightarrow-\infty}\left(f(x)-ax-b\right)=0$.
+::::::
+
+::::::{prf:example} 
+:label: Ex:LimitAtInfinity:Oblique.
+Consider the function $f(x)=\frac{x^3+2x^2-4x+8}{x^2-4}$. Using polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`), we can write $f(x)=\frac{16}{x^2-4}+x+2$. Note that $f$ consists of the sum of a straight line, $x+2$, and a part that approaches $0$ as $x$ approaches $\infty$, $\frac{16}{x^2-4}$. This suggests that $f$ approaches the straight line $x+2$ as $x\rightarrow\infty$. Indeed, we find that
+
+$$
+ \lim\limits_{x\rightarrow\infty}f(x)-(x+2)=\lim\limits_{x\rightarrow\infty}\frac{16}{x^2-4}+x+2-(x+2)=\lim\limits_{x\rightarrow\infty}\frac{16}{x^2-4}=0
+$$
+
+So, the function $f$ indeed has the oblique asymptote $y=x+2$ as $x$ approaches infinity. It has this same oblique asymptote as $x$ approaches minus infinity as well.
+
+::::::
+
+So, which functions have oblique asymptotes? A common example is functions of the form $\dfrac{p(x)}{q(x)}$ with $p$ and $q$ polynomials, where the degree of $p$ is $1$ higher than the degree of $q$, as can be seen from the following result.
+
+::::::{prf:theorem} 
+:label: Theorem:LimitAtInfinity:Obliquerational.
+If $f(x)=\dfrac{p(x)}{q(x)}$ with $p$ and $q$ polynomials where $\mathrm{deg}(p)=\mathrm{deg}(q)+1$, then there is a polynomial $r$ with $\mathrm{deg}(r)<\mathrm{deg}(q)$ for which 
+
+$$
+ f(x)=ax+b+\frac{r(x)}{q(x)}
+$$
+
+In that case, $f$ has the oblique asymptote $y=ax+b$ at both infinity and minus infinity.
+::::::
+
+::::::{admonition} Proof
+:class: tudproof, dropdown
+
+The result follows amost directly from polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`). Indeed, this process allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\mathrm{deg}(r)<\mathrm{deg}(q)$ and $\mathrm{deg}(s)=\mathrm{p}-\mathrm{q}$. Since $\mathrm{deg}(p)=\mathrm{deg}(q)+1$, we obtain $\mathrm{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+...+a_1x+a_0$ and $q(x)=b_mx^m+...+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\mathrm{deg}(r)<\mathrm{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
+
+$$
+ \lim_{x\rightarrow\infty}f(x)-(ax+b)=\lim_{x\rightarrow\infty}\frac{r(x)}{q(x)}+s(x)-(ax+b)=\lim_{x\rightarrow\infty}\frac{a_nx^n+...+a_1x+a_0}{b_mx^m+...+b_1x+b_0}+ax+b-(ax+b)=\lim_{x\rightarrow\infty}\frac{\frac{a_n}{x^{m-n}}+...+\frac{a_1}{x^{m-1}}+\frac{a_0}{x^m}}{b_m+...+\frac{b_1}{x^{m-1}}+\frac{b_0}{x^m}}=\frac{0+...+0}{b_m+0+...+0}=0
+$$
+
+As such, $y=ax+b$ is indeed the oblique asymptote of $f$ at infinity. The computation for the oblique asymptote at minus infinity is identical.
+::::::
+
+The following result shows an efficient way to find the coefficients of the oblique asymptote, even in case the function is not a quotient of two polynomials.
+
+::::::{prf:theorem} 
+:label: Theorem:LimitAtInfinity:Obliquecompute.
+If $f$ has an oblique asymptote $y=ax+b$ at infinity, then 
+
+$$
+ a=\lim\limits_{x\rightarrow\infty}\frac{f(x)}{x}\qquad b=\lim_{x\rightarrow\infty}\left(f(x)-ax\right)
+$$
+
+The corresponding result holds for an oblique asymptote at minus infinity.
+::::::
+
+::::::{admonition} Proof
+:class: tudproof, dropdown
+
+Suppose $f$ has an oblique asymptote $y=ax+b$ at infinity. Then $\lim\limits_{x\rightarrow\infty}\left(f(x)-ax-b\right)=0$, so we can evaluate
+
+$$
+ \lim\limits_{x\rightarrow\infty}\frac{f(x)}{x}=\lim\limits_{x\rightarrow\infty}\left(\frac{f(x)-ax-b}{x}+\frac{ax+b}{x}\right)=\lim\limits_{x\rightarrow\infty}\frac{f(x)-ax-b}{x}+\lim\limits_{x\rightarrow\infty}\frac{ax+b}{x}=0+\lim\limits_{x\rightarrow\infty}\frac{a+\frac{b}{x}}{1}=\frac{a+0}{1}=a
+$$
+
+Moreover, we find that
+
+$$
+ \lim_{x\rightarrow\infty}\left(f(x)-ax\right)=\lim_{x\rightarrow\infty}\left(f(x)-ax-b+b\right)=\lim_{x\rightarrow\infty}\left(f(x)-ax-b\right)+\lim_{x\rightarrow\infty}b=0+b=b
+$$
+
+::::::
+
 
 (Subsec:LimitinfPrecise)=
 
 ## Precise definition of limits at infinity
+
+Ook nog ergens growth rates?

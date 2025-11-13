@@ -329,7 +329,7 @@ The limit $\lim\limits_{x\rightarrow a}\frac{r(x)}{s(x)}$ can then be either eva
 
 ::::::{prf:example} Cancelling the common factor
 :label: Ex:LimitAtPoint:Cancellingcommonfactor
-Suppose we want to evaluate $\lim\limits_{x\rightarrow 1}\dfrac{x^3-3x^2+3x-1}{x^3-3x^2+5x-2}$. Notice that both the numerator and the denominator, which are both polynomials, are $0$ at $x=1$, so both polynomials contain a factor $x-1$. Using polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionnum`), we find that $x^3-3x^2+3x-1=(x-1)(x^2-2x+1)$ and $x^3-3x^2+5x-2=(x-1)(x^2-3x+2)$, so we can compute
+Suppose we want to evaluate $\lim\limits_{x\rightarrow 1}\dfrac{x^3-3x^2+3x-1}{x^3-3x^2+5x-2}$. Notice that both the numerator and the denominator, which are both polynomials, are $0$ at $x=1$, so both polynomials contain a factor $x-1$. Using polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`), we find that $x^3-3x^2+3x-1=(x-1)(x^2-2x+1)$ and $x^3-3x^2+5x-2=(x-1)(x^2-3x+2)$, so we can compute
 
 $$
  \lim\limits_{x\rightarrow 1}\frac{x^3-3x^2+3x-1}{x^3-3x^2+5x-2}=\lim\limits_{x\rightarrow 1}\frac{(x-1)(x^2-2x+1)}{(x-1)(x^2-3x+2)}=\lim\limits_{x\rightarrow 1}\frac{x^2-2x+1}{x^2-3x+2}.
