@@ -8,6 +8,7 @@ In this section we cover:
 - Examples of common sequences (arithmetic, geometric, Fibonacci, harmonic)
 
 ::::::{prf:definition}
+:label: Def:Sequences:Definition
 A **sequence** $\{a_n\}_{n=1}^{\infty}$ is an ordered list of (real) numbers $a_1,a_2,a_3,\ldots$. 
 ::::::
 
@@ -35,6 +36,7 @@ $$
 ::::::
 
 ::::::{prf:definition}
+:label: Def:Sequences:ArithmeticSequence
 A sequence is called an **arithmetic sequence** if the difference between two consecutive terms is always the same. This difference is called the **common difference**. 
 ::::::
 
@@ -55,6 +57,7 @@ It can also be defined by the *recursive formula* $a_1=a$ and $a_{n+1}=a_n+d$ fo
 ::::::
 
 ::::::{prf:definition}
+:label: Def:Sequences:HarmonicSequence
 A sequence is called a **harmonic sequence** if the reciprocals of its terms form an arithmetic sequence. 
 ::::::
 
@@ -67,6 +70,7 @@ A sequence is called a **harmonic sequence** if the reciprocals of its terms for
 ::::::
 
 ::::::{prf:definition}
+:label: Def:Sequences:GeometricSequence
 A sequence is called a **geometric sequence** if each term, except for the first one, is obtained by multiplying the previous term by a fixed nonzero number, called the **common ratio**. 
 ::::::
 
@@ -87,6 +91,7 @@ It can also be defined by the *recursive formula* $a_1=a$ and $a_{n+1}=ra_n$ for
 ::::::
 
 ::::::{prf:definition}
+:label: Def:Sequences:AlternatingSequence
 A sequence $\{a_n\}_{n=1}^{\infty}$ is called an **alternating sequence** if $a_na_{n+1}<0$ for all $n=1,2,3,\ldots$, id est if every two consecutive terms have opposite signs. 
 ::::::
 
@@ -101,6 +106,7 @@ A sequence $\{a_n\}_{n=1}^{\infty}$ is called an **alternating sequence** if $a_
 ## The Fibonacci sequence
 
 ::::::{prf:definition} The Fibonacci numbers
+:label: Def:Sequences:FibonacciSequence
 The **Fibonacci sequence** $1,1,2,3,5,8,13,21,34,55,89,\ldots$ is defined by
 
 $F_{n+2}=F_n+F_{n+1}$ for $n=1,2,3,\ldots$ with $F_1=F_2=1$.

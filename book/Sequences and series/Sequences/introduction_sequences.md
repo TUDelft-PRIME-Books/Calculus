@@ -9,6 +9,7 @@ This chapter deals with (infinite) sequences $a_1,a_2,a_3,\ldots$.
 In order to prove statements for all positive integers we often use the **principle of mathematical induction**:
 
 ::::::{topic} The principle of mathematical induction
+:label: Topic:Sequences:MathematicalInduction
 Let $S_n$ be a statement about a positive integer $n$. Suppose that
 
 1) $S_1$ is true,

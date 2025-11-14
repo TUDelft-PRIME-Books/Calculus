@@ -14,6 +14,7 @@ Reference for induction: https://interactivetextbooks.tudelft.nl/delftse-foundat
 In the study of sequences the notion of **convergence** is important. The concept of a limit of a sequence is a special case of the concept of a limit of a function (see: Chapter 3). We say that a sequence $\{a_n\}$ converges to a limit $L$, and we write $\lim\limits_{n\to\infty}a_n=L$, if the distance from $a_n$ to $L$ approaches $0$ as $n$ increases towards $\infty$. Formally we have:
 
 ::::::{prf:definition} Limit of a sequence
+:label: Def:Sequences:LimitSequence
 A sequence $\{a_n\}$ converges to a limit $L$, and we write $\lim\limits_{n\to\infty}a_n=L$, if for every positive real number $\epsilon$ there exists an integer $N$ such that if $n\geq N$, then $|a_n-L|<\epsilon$. 
 ::::::
 
@@ -33,6 +34,7 @@ $$
 ::::::
 
 ::::::{prf:definition} Convergence and divergence of sequence
+:label: Def:Sequences:ConvergenceSequence
 A sequence $\{a_n\}$ is called **convergent** if $\lim\limits_{n\to\infty}a_n$ exists. Otherwise, the sequence is called **divergent**. 
 ::::::
 
@@ -49,6 +51,7 @@ A sequence $\{a_n\}$ either converges or diverges. That is, either $\lim\limits_
 ::::::
 
 ::::::{prf:theorem}
+:label: Thm:Sequences:ConvergenceGeometric
 The geometric sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=r^n$ is convergent for $-1<r\leq1$ and divergent for all other values of $r\in\mathbb{R}$.
 
 Moreover, for $-1<r\leq1$ we have: $\lim\limits_{n\to\infty}r^n=\begin{cases}0, &-1<r<1\\1, &r=1.\end{cases}$
@@ -73,10 +76,12 @@ This proves the theorem.
 ::::::
 
 ::::::{prf:theorem}
+:label: Thm:Sequences:LimitFunctionSequence
 If $\lim\limits_{x\to\infty}f(x)=L$ and $a_n=f(n)$ for all $n=1,2,3,\ldots$, then $\lim\limits_{n\to\infty}a_n=L$.
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:ConvergenceExample1
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is convergent.
 
 ```{figure} Images/sequence1.png
@@ -98,6 +103,7 @@ This implies that the sequence $\{a_n\}_{n=1}^{\infty}$ is convergent and $\lim\
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:ConvergenceExample2
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ is convergent.
 
 ```{figure} Images/sequence2.png
@@ -119,6 +125,7 @@ This implies that the sequence $\{a_n\}_{n=1}^{\infty}$ is convergent and $\lim\
 ::::::
 
 ::::::{prf:theorem}
+:label: Thm:Sequences:SqueezeTheorem
 If $\lim\limits_{n\to\infty}|a_n|=0$, then $\lim\limits_{n\to\infty}a_n=0$.
 ::::::
 
@@ -135,6 +142,7 @@ We can prove this using the *squeeze theorem*, since $-|a_n|\leq a_n\leq|a_n|$.
 ::::::
 
 ::::::{prf:theorem}
+:label: Thm:Sequences:Continuity
 If $\lim\limits_{x\to\infty}f(x)=L$ and the function $f$ is continuous at $L$, then $\lim\limits_{n\to\infty}f(a_n)=f(L)$.
 ::::::
 
@@ -151,6 +159,7 @@ This is an immediate consequence of the continuity of the function $f$.
 ::::::
 
 ::::::{prf:theorem}
+:label: Thm:Sequences:MonotonicBounded
 Every *increasing* sequence that is *bounded above* is convergent and every *decreasing* sequence that is *bounded below* is convergent.
 ::::::
 
@@ -188,6 +197,7 @@ A similar proof, using the greatest lower bound, works for a decreasing sequence
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:MonotonicBoundedExample1
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
 
 Show that the sequence converges and find its limit.
@@ -203,6 +213,7 @@ $$
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:MonotonicBoundedExample2
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=10$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
 
 Show that the sequence converges and find its limit.

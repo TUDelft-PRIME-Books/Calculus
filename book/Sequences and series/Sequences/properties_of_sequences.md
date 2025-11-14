@@ -6,6 +6,7 @@ In this section we cover:
 - Sequences that are bounded above and/or below
 
 ::::::{prf:definition}
+:label: Def:Sequences:IncreasingDecreasing
 A sequence $\{a_n\}_{n=1}^{\infty}$ is called **increasing** if $a_n < a_{n+1}$ for all $n\geq1$, that is $a_1 < a_2 < a_3 <\cdots$. 
 
 It is called **decreasing** if $a_n > a_{n+1}$ for all $n\geq1$, that is $a_1 > a_2 > a_3 >\cdots$. 
@@ -32,6 +33,7 @@ A geometric sequence is *decreasing* if its first term is positive and the commo
 Every *alternating sequence* is not monotonic.
 
 ::::::{prf:example}
+:label: Ex:Sequences:IncreasingExample1
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is increasing.
 
 Proof. We want to show that $\dfrac{n}{n+1}<\dfrac{n+1}{n+2}$ for all $n=1,2,3,\ldots$.
@@ -40,6 +42,7 @@ Since $n>0$ this is equivalent to $n(n+2)<(n+1)^2\;\Longleftrightarrow\;n^2+2n<n
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:IncreasingExample2
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ is decreasing.
 
 Proof. We want to show that $\dfrac{2n}{n^2+1}>\dfrac{2(n+1)}{(n+1)^2+1}$ for all $n=1,2,3,\ldots$. Note that
@@ -59,6 +62,7 @@ This is trivially true for $n\geq1$.
 Note that in both cases the terms of the sequence lie on the graph of a continuous function. It might be easier to study the behaviour of the corresponding function.
 
 ::::::{prf:example}
+:label: Ex:Sequences:IncreasingExample1Function
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is increasing.
 
 ```{figure} Images/sequence1.png
@@ -80,6 +84,7 @@ This implies that $f$ is increasing and therefore that the sequence increases.
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:IncreasingExample2Function
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ is decreasing.
 
 ```{figure} Images/sequence2.png
@@ -109,6 +114,7 @@ The Fibonacci sequence $1,1,2,3,5,8,13,21,34,55,89,\ldots$ is ultimately increas
 In many other situations the principle of mathematical induction might be helpful.
 
 ::::::{prf:example}
+:label: Ex:Sequences:RecurrenceExample1
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
 
 Show that the sequence increases.
@@ -129,6 +135,7 @@ This shows that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$.
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:RecurrenceExample2
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=10$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
 
 Show that the sequence decreases.
@@ -197,6 +204,7 @@ This shows that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$.
 :::
 
 ::::::{prf:definition}
+:label: Def:Sequences:Bounded
 A sequence $\{a_n\}_{n=1}^{\infty}$ is called **bounded above** if there exists a number $M$ such that $a_n\leq M$ for all $n\geq1$.
 
 It is called **bounded below** if there exists a number $m$ such that $m\leq a_n$ for all $n\geq1$.
@@ -217,6 +225,7 @@ A sequence is called **bounded** if it is both *bounded above* and *bounded belo
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:BoundedExample1
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is bounded.
 
 ```{figure} Images/sequence1.png
@@ -242,6 +251,7 @@ This implies that the sequence is bounded with $M\geq1$ and $m\leq\frac{1}{2}$.
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:BoundedExample2
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ is bounded.
 
 ```{figure} Images/sequence2.png
@@ -267,6 +277,7 @@ This implies that the sequence is bounded with $M\geq1$ and $m\leq0$.
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:BoundedExample3
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
 
 Show that the sequence bounded above.
@@ -287,6 +298,7 @@ This shows that $a_n<10$ for all $n=1,2,3,\ldots$.
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Sequences:BoundedExample4
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=10$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
 
 Show that the sequence is bounded below.
