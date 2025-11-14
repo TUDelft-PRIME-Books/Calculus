@@ -109,6 +109,25 @@ We have $\lim\limits_{x\rightarrow a}f(x)=L$ precisely when both $\lim\limits_{x
 the left and right limits at that point both exist and are equal.
 ::::::
 
+::::::{prf:example}
+:label: Ex:LimitAtPoint:Visual
+Consider the function $f$ of which the graph is shown below.
+
+Hier plaatje van functie die $x+2$ is voor $x\leq -2$, $2/(x+2)$ voor $-2< x<-1$, $2x^2-2$ voor $-1\leq x<1$ en $1-x$ voor $x>1$, zonder onderschrift welke functie we het over hebben. Het gaat om het plaatje
+
+Can we read off from the graph at which points $a$ the limit $\lim\limits_{x\rightarrow a}f(x)$ exists? Well, for almost all values of $a$ there is no problem: the function continues smoothly and the function values clearly move towards a certain value. Only the points $a=-2$, $a=-1$ and $a=1$ are potentially problematic. 
+
+When approaching $-2$ from the left, the function values nicely move towards $0$, so the left limit exists. However, when approaching $-2$ from the right, the function values blow up, so the right limit does not exist. 
+
+At $x=-1$, both from the left and the right the function values seem to approach certain values, $2$ from the left and $0$ from the right. So the left and right limits exist, but they are unequal so the regular limit does not exist. 
+
+Finally, at $x=1$ the function values approach the value $0$, both from the left and the right. So not only do the left and right limit exist, they are equal so the regular limit exists as well. You might notice that the function has a sharp edge, but this does not influence the existence of the limit (it does, on the other hand, influence the differentiability of the function, see {numref}`Section:Differentiability`).
+
+We conclude that $\lim\limits_{x\rightarrow a}f(x)$ exists for all values of $a$ except $a=-2$ and $a=-1$.
+
+::::::
+
+
 So how do you evaluate limits (regular, left or right)? There are various techniques, which we will discuss throughout this chapter. In several of these, we evaluate the limit by rewriting or simplifying the function at hand. Indeed, in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` we evaluated the limit $\lim\limits_{x\rightarrow 1}f(x)$ by finding a function $h$ which is equal to $f$ everywhere except at $x=1$ and for which $1$ was in the domain of $h$. The following two results show that this idea works more generally.
 ::::::{prf:theorem}
 :label: Theorem:LimitAtPoint:Rewritingworks
@@ -467,7 +486,7 @@ Then we say that the **limit** of $f$ as $x$ approaches $a$ is equal to $L$, and
 If no such value $L$ exists we say that the limit does not exist.
 ::::::
 
-This definition should be interpreted as follows. The arbitrary constant $\varepsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow a}f(x)=L$, we want that, for $x$ close enough to $a$, the function values $f(x)$ are at most distance $\varepsilon$ to $a$, i.e. $|f(x)-L|<\varepsilon$. Here "$x$ close enough to $a$" means that this inequality should hold true for all $x$ in a (possibly very small) interval centered around $a$, i.e. an interval of the form $(x-\delta,x+\delta)$. Of course, what this $\delta$ is, depends both on the function $f$ and the choice of $\varepsilon$. Typically, the smaller $\varepsilon$ is, the smaller $\delta$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\varepsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\varepsilon$ is small. Remember that we cannot choose $\varepsilon$ ourselves: for **each** $\varepsilon>0$ there should be a corresponding $\delta$. Note that we can make $\delta$ always smaller if we want to: if at least one $\delta$ works for a given $\varepsilon$, we are happy. Let us try to see how to work with this definition in practice.
+This definition should be interpreted as follows. The arbitrary constant $\varepsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow a}f(x)=L$, we want that, for $x$ close enough to $a$, the function values $f(x)$ are at most distance $\varepsilon$ to $L$, i.e. $|f(x)-L|<\varepsilon$. Here "$x$ close enough to $a$" means that this inequality should hold true for all $x$ in a (possibly very small) interval centered around $a$, i.e. an interval of the form $(a-\delta,a+\delta)$. Of course, what this $\delta$ is, depends both on the function $f$ and the choice of $\varepsilon$. Typically, the smaller $\varepsilon$ is, the smaller $\delta$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\varepsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\varepsilon$ is small. Remember that we cannot choose $\varepsilon$ ourselves: for **each** $\varepsilon>0$ there should be a corresponding $\delta$. Note that we can make $\delta$ always smaller if we want to: if at least one $\delta$ works for a given $\varepsilon$, we are happy. Let us try to see how to work with this definition in practice.
 
 ::::::{prf:example} 
 :label: Ex:LimitAtPoint:Formaldefexists.
@@ -558,7 +577,7 @@ Now suppose that $\lim\limits_{x\rightarrow a}g(x)$ does not exist. In that case
 We first prove the scalar multiple rule. If $c=0$, then the function $cf$ is constantly $0$, so its limit at the point $a$ must be $0=cL$ as well. As such, we can assume that $c\neq 0$. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow a}f(x)=L$, we can pick $\delta>0$ in such a way that for $x$ with $0<|x-a|<\delta$ we have $|f(x)-L|<\frac{\varepsilon}{|c|}$. Then for $x$ with $0<|x-a|<\delta$ we have
 
 $$
- |cf(x)-cL|&=&|c||f(x)-L|<|c|\frac{\varepsilon}{|c|}=\varepsilon
+ |cf(x)-cL|=|c||f(x)-L|<|c|\frac{\varepsilon}{|c|}=\varepsilon
 $$
 
 We conclude that $\lim\limits_{x\rightarrow a}cf(x)=cL$.
