@@ -1,3 +1,5 @@
+(Section:Differentiability)=
+
 # Differentiability
 
 In this section we cover:
