@@ -120,7 +120,7 @@ which use the left and the right end point of the interval, respectively.
 The left Rectangle rule is depicted in {numref}`Figure %s <Fig:NumericalIntegration:leftRectangle>`.
 
 ::::{applet}
-:url: calculus/left_rectangle
+:url: calculus/integration/left_rectangle
 :name: Fig:NumericalIntegration:leftRectangle
 :class: dark-light
 
