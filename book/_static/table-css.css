@@ -1,7 +1,9 @@
-table.mid-align td {
+table.mid-align td,
+table.mid-align th {
   vertical-align: middle;
 }
 
-table.center-align td {
+table.center-align td,
+table.center-align th {
   text-align: center;
 }
