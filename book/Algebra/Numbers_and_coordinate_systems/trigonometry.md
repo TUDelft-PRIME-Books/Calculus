@@ -175,7 +175,7 @@ A right-angled triangle, with sides $a$, $b$ and $c$. The right angle is indicat
 
 ```
 
-::::::{prf:theorem} Pythagoras
+::::::{prf:theorem} Pythagorean theorem
 :label: Thm:Trigonometry:Pythagoras
 
 In a right-angled triangle with legs $a$ and $b$ and hypotenuse $c$ we have:
@@ -444,7 +444,6 @@ This leads to the following table of standard values:
   - 
   - $0$
 ```
-De waarden in de eerste twee rijen zouden ook gecentreerd moeten worden.
 
 Note that $\tan(\frac{1}{2}\pi)$ and $\tan(\frac{3}{2}\pi)$ are not defined since $\cos(\frac{1}{2}\pi)=0$ and $\cos(\frac{3}{2}\pi)=0$. We also omitted in this table the angles within the third and fourth quadrant, since their sine, cosine and tangent values can be derived from the above values using the identities listed in the next section.
 
