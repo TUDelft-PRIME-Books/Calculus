@@ -1,6 +1,6 @@
 ```{admonition} Attribution
 :class: attribution
-This page is based on Vuik, K., Vermolen, F., van Gijzen, M., & Vuik, T. (2023). *Numerical Methods for Ordinary Differential Equations*. TU Delft OPEN Books. https://doi.org/10.5074/t.2023.001.
+This page is based on {cite:t}`Vuik_2023`.
 ```
 
 # Approximating integrals
@@ -371,7 +371,7 @@ where $p$ is independent of the function $f$ and is called the **order**.
 
 ::::
 
-A proof of this theorem is too much for this book, but you can find it in Vuik, K., Vermolen, F., van Gijzen, M., & Vuik, T. (2023). Numerical Methods for Ordinary Differential Equations. TU Delft OPEN Books. https://doi.org/10.5074/t.2023.001.
+A proof of this theorem is too much for this book, but you can find it in {cite:t}`Vuik_2023`.
 
 ::::{caution}
 

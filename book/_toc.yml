@@ -153,6 +153,7 @@ parts:
   - caption: Back matter
     numbered: False
     chapters:
+    - file: references.md # ref_graph: {'ignore':True}
     - file: genindex.md # ref_graph: {'ignore':True}
     - file: credits.md # ref_graph: {'ignore':True}
   - caption: Reference pages for development
@@ -166,3 +167,4 @@ parts:
     - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/main/README.md" # ref_graph: {'ignore':True}
     - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb" # ref_graph: {'ignore':True}
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/manual/blob/release/book/features/apa.md" # ref_graph: {'ignore':True}
