@@ -42,6 +42,7 @@ sphinx:
       '# Determinants as areas or volumes': "# Determinants"
       'in {numref}`Subsection %s <Subsec:MatrixInv:DefInverse>` we saw': "in [Section 3.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter3/MatrixInverse.html) we will see"
       'in {numref}`Section %s <Sec:DeterminantsViaCofactors>`': "in [Section 5.1 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter5/DeterminantsViaCofactors.html)"
+      '```{iframe} ../references.html': "```{iframe} ../../../../../references.html"
     mathjax3_config:
       tex:
         inlineMath: [ ['$','$'], ['\(','\)'] ]
@@ -84,3 +85,7 @@ sphinx:
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
     - sphinx_indexed_definitions
     - sphinx_new_tab_link
+    - sphinx_apa_references                     # For APA citations
+
+bibtex_bibfiles: 
+  - references.bib
