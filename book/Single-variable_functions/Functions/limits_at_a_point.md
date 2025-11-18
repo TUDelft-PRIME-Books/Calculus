@@ -113,7 +113,17 @@ the left and right limits at that point both exist and are equal.
 :label: Ex:LimitAtPoint:Visual
 Consider the function $f$ of which the graph is shown below.
 
-Hier plaatje van functie die $x+2$ is voor $x\leq -2$, $2/(x+2)$ voor $-2< x<-1$, $2x^2-2$ voor $-1\leq x<1$ en $1-x$ voor $x>1$, zonder onderschrift welke functie we het over hebben. Het gaat om het plaatje
+::::{figure} Images/Fig-LimitAtPoint-SomeFunction.png
+:name: Fig:LimitAtPoint:SomeFunction
+:class: dark-light
+
+Some function $f$.
+
+:::{prf:remark}
+Do not include function definitions in the final image/applet.
+:::
+
+::::
 
 Can we read off from the graph at which points $a$ the limit $\lim\limits_{x\rightarrow a}f(x)$ exists? Well, for almost all values of $a$ there is no problem: the function continues smoothly and the function values clearly move towards a certain value. Only the points $a=-2$, $a=-1$ and $a=1$ are potentially problematic. 
 
