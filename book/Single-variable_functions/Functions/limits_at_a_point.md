@@ -109,6 +109,25 @@ We have $\lim\limits_{x\rightarrow a}f(x)=L$ precisely when both $\lim\limits_{x
 the left and right limits at that point both exist and are equal.
 ::::::
 
+::::::{prf:example}
+:label: Ex:LimitAtPoint:Visual
+Consider the function $f$ of which the graph is shown below.
+
+Hier plaatje van functie die $x+2$ is voor $x\leq -2$, $2/(x+2)$ voor $-2< x<-1$, $2x^2-2$ voor $-1\leq x<1$ en $1-x$ voor $x>1$, zonder onderschrift welke functie we het over hebben. Het gaat om het plaatje
+
+Can we read off from the graph at which points $a$ the limit $\lim\limits_{x\rightarrow a}f(x)$ exists? Well, for almost all values of $a$ there is no problem: the function continues smoothly and the function values clearly move towards a certain value. Only the points $a=-2$, $a=-1$ and $a=1$ are potentially problematic. 
+
+When approaching $-2$ from the left, the function values nicely move towards $0$, so the left limit exists. However, when approaching $-2$ from the right, the function values blow up, so the right limit does not exist. 
+
+At $x=-1$, both from the left and the right the function values seem to approach certain values, $2$ from the left and $0$ from the right. So the left and right limits exist, but they are unequal so the regular limit does not exist. 
+
+Finally, at $x=1$ the function values approach the value $0$, both from the left and the right. So not only do the left and right limit exist, they are equal so the regular limit exists as well. You might notice that the function has a sharp edge, but this does not influence the existence of the limit (it does, on the other hand, influence the differentiability of the function, see {numref}`Section:Differentiability`).
+
+We conclude that $\lim\limits_{x\rightarrow a}f(x)$ exists for all values of $a$ except $a=-2$ and $a=-1$.
+
+::::::
+
+
 So how do you evaluate limits (regular, left or right)? There are various techniques, which we will discuss throughout this chapter. In several of these, we evaluate the limit by rewriting or simplifying the function at hand. Indeed, in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` we evaluated the limit $\lim\limits_{x\rightarrow 1}f(x)$ by finding a function $h$ which is equal to $f$ everywhere except at $x=1$ and for which $1$ was in the domain of $h$. The following two results show that this idea works more generally.
 ::::::{prf:theorem}
 :label: Theorem:LimitAtPoint:Rewritingworks
@@ -243,11 +262,18 @@ Suppose that $\lim\limits_{x\rightarrow a}f(x)=L$ and $\lim\limits_{x\rightarrow
 
 ::::::{prf:remark}
 :label: Remark:LimitAtPoint:Productquotientrule
-The product and quotient rules from {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` should not be confused with the product and quotient rules for differentiation, which will be covered in {numref}`Section:DiffProdQuot`
+The product and quotient rules from {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` should not be confused with the product and quotient rules for differentiation, which will be covered in {numref}`Section:DiffProdQuot`.
 
 ::::::
 
 Intuitively, these computation rules make sense: if the function values $f(x)$ approach $L$ and the function values $g(x)$ approach $M$, both as $x$ approaches $a$, then $f(x)+g(x)$ will approach $L+M$. Still, showing that these rules hold using the formal definition of a limit can be tricky, see {numref}`Subsec:Limitsformaldef`.
+
+::::::{prf:theorem} Substitution
+:label: Theorem:LimitAtPoint:Substitution
+Suppose $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
+::::::
+
+The result above shows that limits can be "taken inside" a nice enough function. In fact, there is a slightly more general version of this result, which will be covered in {numref}`Section:Continuity`.
 
 In addition, we obtain the following comparison result for limits.
 
@@ -309,7 +335,7 @@ An illustration of the squeeze theorem, showing the functions $f$, $g$, and $h$ 
 
 ::::::
 
-Now consider a limit of the form $\lim\limits_{x\rightarrow a}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials that have $p(a)=q(a)=0$. We cannot evaluate the limit directly since we get something of the form "$\frac{0}{0}$". Recall that we encountered this situation in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` when evaluating the limit $\lim\limits_{x\rightarrow 1}\frac{x-1}{x^2-1}$. There we evaluated the limit by factoring the denominator. This works in general.
+Now consider a limit of the form $\lim\limits_{x\rightarrow a}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials that have $p(a)=q(a)=0$. We cannot evaluate the limit directly since we cannot divide by $0$. We also say that this limit is of the **indeterminate form** "$\frac{0}{0}$" as $x$ approaches $a$. Recall that we encountered this situation in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` when evaluating the limit $\lim\limits_{x\rightarrow 1}\frac{x-1}{x^2-1}$. There we evaluated the limit by factoring the denominator. This works in general.
 
 Recall from {prf:ref}`Thm:ComplexNumbers:fundamental` that $a$ being a root of the polynomials $p$ and $q$ means that we can take out the factor $x-a$ from both of them, i.e. we can write $p(x)=(x-a)r(x)$ and $q(x)=(x-a)s(x)$ for some polynomials $r$ and $s$, which are 1 degree lower than $p$ and $q$ respectively. As such, we can now evaluate the limit by writing
 
@@ -322,7 +348,7 @@ The limit $\lim\limits_{x\rightarrow a}\frac{r(x)}{s(x)}$ can then be either eva
 
 ::::::{prf:example} Cancelling the common factor
 :label: Ex:LimitAtPoint:Cancellingcommonfactor
-Suppose we want to evaluate $\lim\limits_{x\rightarrow 1}\dfrac{x^3-3x^2+3x-1}{x^3-3x^2+5x-2}$. Notice that both the numerator and the denominator, which are both polynomials, are $0$ at $x=1$, so both polynomials contain a factor $x-1$. Using polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionnum`), we find that $x^3-3x^2+3x-1=(x-1)(x^2-2x+1)$ and $x^3-3x^2+5x-2=(x-1)(x^2-3x+2)$, so we can compute
+Suppose we want to evaluate $\lim\limits_{x\rightarrow 1}\dfrac{x^3-3x^2+3x-1}{x^3-3x^2+5x-2}$. Notice that both the numerator and the denominator, which are both polynomials, are $0$ at $x=1$, so both polynomials contain a factor $x-1$. Using polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`), we find that $x^3-3x^2+3x-1=(x-1)(x^2-2x+1)$ and $x^3-3x^2+5x-2=(x-1)(x^2-3x+2)$, so we can compute
 
 $$
  \lim\limits_{x\rightarrow 1}\frac{x^3-3x^2+3x-1}{x^3-3x^2+5x-2}=\lim\limits_{x\rightarrow 1}\frac{(x-1)(x^2-2x+1)}{(x-1)(x^2-3x+2)}=\lim\limits_{x\rightarrow 1}\frac{x^2-2x+1}{x^2-3x+2}.
@@ -400,6 +426,8 @@ Let $f$ be a function that is defined near $x=a$ (except possibly at $x=a$ itsel
 - $\lim\limits_{x\rightarrow a^+}f(x)=-\infty$.
 ::::::
 
+The word asymptote is derived from the Greek word $\grave{\alpha}\sigma\acute{\upsilon}\mu\pi\tau\omega\tau o\varsigma$ (asumptotos), which means "not falling together", from the prefix $\grave{alpha}$ ("not"), $\sigma\acute{\upsilon}\nu$ ("together") and $\pi\tau\omega\tau-\acute{o}\varsigma$ ("fallen").
+
 ::::::{prf:example} 
 :label: Ex:LimitAtPoint:Verticalasymptote1.
 Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}\dfrac{1}{x^2}$. Note that as $x$ approaches $0$, $x^2$ will approach $0$ as well and note that $x^2>0$ for all $x\neq 0$. So for $x$ close to $0$, $\dfrac{1}{x^2}$ is $1$ divided by a very small, positive number, which means that $\dfrac{1}{x^2}$ is a very large, positive number. As such, we find that $\lim\limits_{x\rightarrow 0}\dfrac{1}{x^2}=\infty$. In particular, the function has a vertical asymptote at $x=0$.
@@ -458,7 +486,7 @@ Then we say that the **limit** of $f$ as $x$ approaches $a$ is equal to $L$, and
 If no such value $L$ exists we say that the limit does not exist.
 ::::::
 
-This definition should be interpreted as follows. The arbitrary constant $\varepsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow a}f(x)=L$, we want that, for $x$ close enough to $a$, the function values $f(x)$ are at most distance $\varepsilon$ to $a$, i.e. $|f(x)-L|<\varepsilon$. Here "$x$ close enough to $a$" means that this inequality should hold true for all $x$ in a (possibly very small) interval centered around $a$, i.e. an interval of the form $(x-\delta,x+\delta)$. Of course, what this $\delta$ is, depends both on the function $f$ and the choice of $\varepsilon$. Typically, the smaller $\varepsilon$ is, the smaller $\delta$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\varepsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\varepsilon$ is small. Remember that we cannot choose $\varepsilon$ ourselves: for **each** $\varepsilon>0$ there should be a corresponding $\delta$. Note that we can make $\delta$ always smaller if we want to: if at least one $\delta$ works for a given $\varepsilon$, we are happy. Let us try to see how to work with this definition in practice.
+This definition should be interpreted as follows. The arbitrary constant $\varepsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow a}f(x)=L$, we want that, for $x$ close enough to $a$, the function values $f(x)$ are at most distance $\varepsilon$ to $L$, i.e. $|f(x)-L|<\varepsilon$. Here "$x$ close enough to $a$" means that this inequality should hold true for all $x$ in a (possibly very small) interval centered around $a$, i.e. an interval of the form $(a-\delta,a+\delta)$. Of course, what this $\delta$ is, depends both on the function $f$ and the choice of $\varepsilon$. Typically, the smaller $\varepsilon$ is, the smaller $\delta$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\varepsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\varepsilon$ is small. Remember that we cannot choose $\varepsilon$ ourselves: for **each** $\varepsilon>0$ there should be a corresponding $\delta$. Note that we can make $\delta$ always smaller if we want to: if at least one $\delta$ works for a given $\varepsilon$, we are happy. Let us try to see how to work with this definition in practice.
 
 ::::::{prf:example} 
 :label: Ex:LimitAtPoint:Formaldefexists.
@@ -473,9 +501,9 @@ In order for the product $|x-2||x+2|$ to be smaller than $\varepsilon$, we shoul
 We find that we have two conditions on $\delta$: $\delta$ should be at most $1$ and $\delta$ should be at most $\dfrac{\varepsilon}{5}$. As such, we choose $\delta$ to be the lowest of these two values: $\delta=\min\left(1,\dfrac{\varepsilon}{5}\right)$. Then for any $x$ with $0<|x-2|<\delta$ we obtain
 
 $$
- \begin{array}{lcll}|x^2-a^2|&=&|x-a||x+a|\\
- &<&|x-a|\cdot 5\qquad\qquad&\left(\text{since }|x-a|<\delta\leq 1\right)\\
- &<&\dfrac{\varepsilon}{5}\cdot 5&\left(\text{since }|x-a|<\delta\leq\dfrac{\varepsilon}{5}\right)\\
+ \begin{array}{lcll}|x^2-4|&=&|x-2||x+2|\\
+ &<&|x-2|\cdot 5\qquad\qquad&\left(\text{since }|x-2|<\delta\leq 1,\text{ which implies }|x+2|<5\right)\\
+ &<&\dfrac{\varepsilon}{5}\cdot 5&\left(\text{since }|x-2|<\delta\leq\dfrac{\varepsilon}{5}\right)\\
  &=&\varepsilon.&\end{array}
 $$
 
@@ -535,7 +563,7 @@ Then we say that $f$ has an **infinite limit** at $x=a$, and we write $\lim\limi
 Similarly, we say that $f$ has a **negative infinite limit** at $x=a$, and we write $\lim\limits_{x\rightarrow a}f(x)=-\infty$ whenever for each $M<0$ there exists $\delta>0$ such that for all $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $f(x)\leq M$.
 ::::::
 
-Finally we include several proofs of the theorems discussed in these sections. The proof of {prf:ref}`Theorem:LimitAtPoint:Directsub` is left to {numref}`Section:Continuity`.
+Finally we include several proofs of the theorems discussed in these sections. The proofs of {prf:ref}`Theorem:LimitAtPoint:Directsub` and {prf:ref}`Theorem:LimitAtPoint:Substitution` are left to {numref}`Section:Continuity`.
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtPoint:Rewritingworks`
 :class: tudproof 
@@ -570,29 +598,30 @@ Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle
 Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have both have $|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}$ and $|f(x)-L|<1$. The inequality $|f(x)-L|<1$ means that $1-L<f(x)<1+L$, which implies that $|f(x)|<|L|+1$. Now we pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have both have $|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}$. We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$, so we can estimate
 
 $$
-\begin{align*}
- |f(x)g(x)-LM| &= |f(x)g(x)-f(x)M+f(x)M-LM| \\
- &\leq |f(x)g(x)-f(x)M|+|f(x)M-LM| \\
- &= |f(x)||g(x)-M|+|M||f(x)-L| \\
- &\leq (|L|+1)|g(x)-M|+|M||f(x)-L| \\
- &< (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)} \\
- &< \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \\
- &= \varepsilon.
-\end{align*}
+\begin{array}{lcll}
+ |f(x)g(x)-LM| &=& |f(x)g(x)-f(x)M+f(x)M-LM|& \\
+ &\leq& |f(x)g(x)-f(x)M|+|f(x)M-LM| &\\
+ &=& |f(x)||g(x)-M|+|M||f(x)-L|& \\
+ &\leq& (|L|+1)|g(x)-M|+|M||f(x)-L| \qquad\quad &\left(\text{since }0<|x-a|<\delta\leq\delta_1\text{, which implies }|f(x)|<|L|+1\right)\\
+ &\leq& (|L|+1)|g(x)-M|+|M|\frac{\varepsilon}{2(|M|+1)}  &\left(\text{since }0<|x-a|<\delta\leq\delta_1\text{, which implies }|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}\right)\\
+ &<& (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)}&\left(\text{since }0<|x-a|<\delta\leq\delta_2\text{, which implies }|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}\right)\\
+ &<& \frac{\varepsilon}{2}+\frac{\varepsilon}{2} &\\
+ &=& \varepsilon.&
+\end{array}
 $$
 
 Here we again used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow a}f(x)g(x)=LM$.
 
-We prove the quotient rule by writing $\frac{f(x)}{g(x)}=f(x)\frac{1}{g(x)}$ and first showing that $\lim\limits_{x\rightarrow a}\frac{1}{g(x)}=\frac{1}{M}$. Let $\varepsilon>0$ be given. We pick $\delta>0$ in such a way that for $x$ with $0<|x-a|<\delta$ we have both have $|g(x)-M|<2\varepsilon M^2$ and $|g(x)-M|<\frac{1}{2}|M|$. The inequality $|g(x)-M|<\frac{1}{2}|M|$ means that $\frac{1}{2}|M|\leq |g(x)|$ (which, in particular, means that $g(x)\neq 0$). Hence, we can estimate
+We prove the quotient rule by writing $\frac{f(x)}{g(x)}=f(x)\frac{1}{g(x)}$ and first showing that $\lim\limits_{x\rightarrow a}\frac{1}{g(x)}=\frac{1}{M}$. Let $\varepsilon>0$ be given. We pick $\delta>0$ in such a way that for $x$ with $0<|x-a|<\delta$ we have both have $|g(x)-M|<\frac{\varepsilon M^2}{2}$ and $|g(x)-M|<\frac{1}{2}|M|$. The inequality $|g(x)-M|<\frac{1}{2}|M|$ means that $\frac{1}{2}|M|\leq |g(x)|$ (which, in particular, means that $g(x)\neq 0$) and, finally, that $\frac{1}{|g(x)|}\leq\frac{2}{|M|}$. Hence, we can estimate
 
 $$
-\begin{align*}
- \left|\frac{1}{g(x)}-\frac{1}{M}\right| &= \left|\frac{g(x)-M}{g(x)M}\right| \\
- &= \frac{1}{|g(x)|}\frac{1}{|M|}|g(x)-M| \\
- &\leq \frac{1}{2|M|}\frac{1}{|M|}|g(x)-M| \\
- &< \frac{1}{2M^2}2\varepsilon M^2 \\
- &= \varepsilon.
-\end{align*}
+\begin{array}{lcll}
+ \left|\frac{1}{g(x)}-\frac{1}{M}\right| &=& \left|\frac{g(x)-M}{g(x)M}\right| &\\
+ &= &\frac{1}{|g(x)|}\frac{1}{|M|}|g(x)-M|\qquad\quad&\\
+ &\leq &\frac{2}{|M|}\frac{1}{|M|}|g(x)-M|&\left(\text{since }0<|x-a|<\delta\text{, which implies }\frac{1}{2}|M|\leq |g(x)|\right) \\
+ &< &\frac{2}{M^2}\frac{\varepsilon M^2}{2}& \left(\text{since }0<|x-a|<\delta\text{, which implies }|g(x)-M|<\frac{\varepsilon M^2}{2}\right) \\
+ &= &\varepsilon.&
+\end{array}
 $$
 
 We conclude that $\lim\limits_{x\rightarrow a}\frac{1}{g(x)}=\frac{1}{M}$. By the product rule, we find that $\lim\limits_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim\limits_{x\rightarrow a}f(x)\frac{1}{g(x)}=L\frac{1}{M}=\frac{L}{M}$.
