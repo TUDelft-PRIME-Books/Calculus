@@ -6,7 +6,7 @@ parts:
     numbered: False
     chapters:
     - file: introduction.md # ref_graph: {'ignore':True}
-    # - file: graph_of_content.md # ref_graph: {'ignore':True} # Optional graph of content page, currently disabled
+    - file: graph_of_content.md # ref_graph: {'ignore':True} # Optional graph of content page, currently just an include of the generated graph by sphinx-visualized
   - caption: Algebra
     numbered: True
     chapters:
