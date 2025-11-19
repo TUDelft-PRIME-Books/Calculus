@@ -131,7 +131,10 @@ Substituting $x=0$, $x=\frac{1}{2}$ and $x=-1$ we obtain: $A=1$, $B=-2$ and $C=3
 Hence, we have
 
 $$
-\int\frac{6x^2-4x-1}{2x^3+x^2-x}\,dx=\int\left(\frac{1}{x}-\frac{2}{2x-1}+\frac{3}{x+1}\right)\,dx=\ln|x|-\ln|x-\tfrac{1}{2}|+3\ln|x+1|+C.
+\begin{align*}
+\int\frac{6x^2-4x-1}{2x^3+x^2-x}\,dx&=\int\left(\frac{1}{x}-\frac{2}{2x-1}+\frac{3}{x+1}\right)\,dx\\
+&=\ln|x|-\ln|x-\tfrac{1}{2}|+3\ln|x+1|+C.
+\end{align*}
 $$
 
 Note that $\ln|2x-1|=\ln|2(x-\frac{1}{2})|=\ln(2)+\ln|x-\frac{1}{2}|$. This implies that the answer can also be written as (with a different  constant of integration)
@@ -171,7 +174,8 @@ with $A=\dfrac{1}{2\alpha}$ and $B=-\dfrac{1}{2\alpha}$. Hence, we have
 
 $$
 \begin{align*}
-\int\frac{dx}{x^2-\alpha^2}&=\frac{1}{2\alpha}\int\left(\frac{1}{x-\alpha}-\frac{1}{x+\alpha}\right)\,dx=\frac{1}{2\alpha}\left(\ln|x-\alpha|-\ln|x+\alpha|\right)+C\\
+\int\frac{dx}{x^2-\alpha^2}&=\frac{1}{2\alpha}\int\left(\frac{1}{x-\alpha}-\frac{1}{x+\alpha}\right)\,dx\\
+&=\frac{1}{2\alpha}\left(\ln|x-\alpha|-\ln|x+\alpha|\right)+C\\
 &=\frac{1}{2\alpha}\ln\left|\frac{x-\alpha}{x+\alpha}\right|+C.
 \end{align*}
 $$
@@ -205,7 +209,10 @@ $$
 with $A=2$ and $B=-1$. Hence we have
 
 $$
-\int\frac{x^2}{x^2+2x+1}\,dx=\int\left(1-\frac{2}{x+1}+\frac{1}{(x+1)^2}\right)\,dx=x-2\ln|x+1|-\frac{1}{x+1}+C.
+\begin{align*}
+\int\frac{x^2}{x^2+2x+1}\,dx&=\int\left(1-\frac{2}{x+1}+\frac{1}{(x+1)^2}\right)\,dx\\
+&=x-2\ln|x+1|-\frac{1}{x+1}+C.
+\end{align*}
 $$
 
 ::::::
@@ -217,7 +224,10 @@ Evaluate $\displaystyle\int\frac{x(3x+5)}{(x+1)^3}\,dx$.
 Solution. Note that
 
 $$
-\frac{x(3x+5)}{(x+1)^3}=\frac{A(x+1)^2+B(x+1)+C}{(x+1)^2}=\frac{A}{x+1}+\frac{B}{(x+1)^2}+\frac{C}{(x+1)^3},
+\begin{align*}
+\frac{x(3x+5)}{(x+1)^3}&=\frac{A(x+1)^2+B(x+1)+C}{(x+1)^2}\\
+&=\frac{A}{x+1}+\frac{B}{(x+1)^2}+\frac{C}{(x+1)^3},
+\end{align*}
 $$
 
 which leads to
@@ -280,7 +290,7 @@ which lead to $A=2$ and $C=4$ and to $B=1$ and $D=-8$. We conclude that
 
 $$
 \begin{align*}
-\int\frac{6x^3-7x^2+12x-4}{x^4+5x^2+4}\,dx&=\int\left(\frac{2x+1}{x^2+1}+\frac{4x-8}{x^2+4}\right)\,dx\\
+&\int\frac{6x^3-7x^2+12x-4}{x^4+5x^2+4}\,dx=\int\left(\frac{2x+1}{x^2+1}+\frac{4x-8}{x^2+4}\right)\,dx\\
 &=\ln(x^2+1)+\arctan(x)+2\ln(x^2+4)-4\arctan(\tfrac{1}{2}x)+C.
 \end{align*}
 $$
@@ -321,7 +331,10 @@ Evaluate $\displaystyle\int\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(
 Solution. We have
 
 $$
-\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(x^2+2)^2}=\frac{Ax+B}{x^2+1}+\frac{Cx+D}{(x^2+1)^2}+\frac{Ex+F}{x^2+2}+\frac{Gx+H}{(x^2+2)^2}.
+\begin{align*}
+&\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(x^2+2)^2}\\
+&=\frac{Ax+B}{x^2+1}+\frac{Cx+D}{(x^2+1)^2}+\frac{Ex+F}{x^2+2}+\frac{Gx+H}{(x^2+2)^2}.
+\end{align*}
 $$
  
 In order to find the coefficients we set $2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4$ equal to
@@ -330,9 +343,10 @@ $$
 \begin{align*}
 &(Ax+B)(x^2+1)(x^2+2)^2+(Cx+D)(x^2+2)^2\\
 &{}\quad\quad{}+(Ex+F)(x^2+2)(x^2+1)^2+(Gx+H)(x^2+1)^2\\
-&{}=(A+E)x^7+(B+F)x^6+(5A+C+4E+G)x^5+(5B+D+4F+H)x^4\\
-&{}\quad\quad{}+(8A+4C+5E+2G)x^3+(8B+4D+5F+2H)x^2\\
-&{}\quad\quad\quad\quad\quad{}+(4A+4C+2E+G)x+4B+4D+2F+H
+&{}=(A+E)x^7+(B+F)x^6+(5A+C+4E+G)x^5\\
+&{}\quad\quad{}+(5B+D+4F+H)x^4+(8A+4C+5E+2G)x^3\\
+&{}\quad\quad\quad\quad{}+(8B+4D+5F+2H)x^2+(4A+4C+2E+G)x\\
+&{}\quad\quad\quad\quad\quad\quad{}+4B+4D+2F+H
 \end{align*}
 $$
 
@@ -369,13 +383,19 @@ Evaluate $\displaystyle\int_0^1\frac{dx}{(1+x^2)^2}$.
 Solution. Let $x=\tan(t)$, then we have $dx=(1+\tan^2(t))\,dt$ and therefore
 
 $$
-\int_0^1\frac{dx}{(1+x^2)^2}=\int_0^{\frac{1}{4}\pi}\frac{1+\tan^2(t)}{(1+\tan^2(t))^2}\,dt=\int_0^{\frac{1}{4}\pi}\frac{dt}{1+\tan^2(t)}=\int_0^{\frac{1}{4}\pi}\cos^2(t)\,dt.
+\begin{align*}
+\int_0^1\frac{dx}{(1+x^2)^2}&=\int_0^{\frac{1}{4}\pi}\frac{1+\tan^2(t)}{(1+\tan^2(t))^2}\,dt=\int_0^{\frac{1}{4}\pi}\frac{dt}{1+\tan^2(t)}\\
+&=\int_0^{\frac{1}{4}\pi}\cos^2(t)\,dt.
+\end{align*}
 $$
 
 Now we use $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ to find that
 
 $$
-\int_0^1\frac{dx}{(1+x^2)^2}=\int_0^{\frac{1}{4}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_0^{\frac{1}{4}\pi}(1+\cos(2t))\,dt=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_0^{\frac{1}{4}\pi}=\frac{1}{8}\pi+\frac{1}{4}.
+\begin{align*}
+\int_0^1\frac{dx}{(1+x^2)^2}&=\int_0^{\frac{1}{4}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_0^{\frac{1}{4}\pi}(1+\cos(2t))\,dt\\
+&=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_0^{\frac{1}{4}\pi}=\frac{1}{8}\pi+\frac{1}{4}.
+\end{align*}
 $$
 
 ::::::
@@ -387,13 +407,19 @@ Evaluate $\displaystyle\int_0^1\frac{dx}{(1+x^2)^3}$.
 Solution. Let $x=\tan(t)$, then we have $dx=(1+\tan^2(t))\,dt$ and therefore
 
 $$
-\int_0^1\frac{dx}{(1+x^2)^3}=\int_0^{\frac{1}{4}\pi}\frac{1+\tan^2(t)}{(1+\tan^2(t))^3}\,dt=\int_0^{\frac{1}{4}\pi}\frac{dt}{(1+\tan^2(t))^2}=\int_0^{\frac{1}{4}\pi}\cos^4(t)\,dt.
+\begin{align*}
+\int_0^1\frac{dx}{(1+x^2)^3}&=\int_0^{\frac{1}{4}\pi}\frac{1+\tan^2(t)}{(1+\tan^2(t))^3}\,dt=\int_0^{\frac{1}{4}\pi}\frac{dt}{(1+\tan^2(t))^2}\\
+&=\int_0^{\frac{1}{4}\pi}\cos^4(t)\,dt.
+\end{align*}
 $$
 
 Now we use $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ to find that
 
 $$
-\cos^4(t)=\frac{1}{4}(1+\cos(2t))^2=\frac{1}{4}(1+2\cos(2t)+\cos^2(2t))=\frac{1}{4}+\frac{1}{2}\cos(2t)+\frac{1}{2}\cos^2(2t).
+\begin{align*}
+\cos^4(t)&=\frac{1}{4}(1+\cos(2t))^2=\frac{1}{4}(1+2\cos(2t)+\cos^2(2t))\\
+&=\frac{1}{4}+\frac{1}{2}\cos(2t)+\frac{1}{2}\cos^2(2t).
+\end{align*}
 $$
 
 Finally, using $\cos^2(2t)=\frac{1}{2}(1+\cos(4t))$, we obtain

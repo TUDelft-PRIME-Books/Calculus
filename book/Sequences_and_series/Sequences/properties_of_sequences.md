@@ -18,6 +18,17 @@ A sequence is called **monotonic** if it is either *increasing* or *decreasing*.
 If the inequalities only hold for all $n\geq N$ for some integer $N>1$ the sequence is called **ultimately** increasing or decreasing.
 ::::::
 
+::::::{prf:example}
+:label: Ex:Sequences:UltimateIncreasingExample
+Consider the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n^2}{2^n}$. Then the first terms are
+
+$$
+\frac{1}{2},\quad1,\quad\frac{9}{8},\quad1,\quad\frac{25}{32},\quad\frac{9}{16},\quad\ldots.
+$$
+
+Although the first three terms increase, this sequence is *ultimately decreasing* (for $n\geq3$) since $2^n$ eventually increases faster than $n^2$.
+::::::
+
 ::::::{note}
 In the case that $a_n\leq a_{n+1}$ for all $n\geq1$ the sequence is sometimes called **nondecreasing** and if $a_n\geq a_{n+1}$ for all $n\geq1$ it is called **nonincreasing**.
 ::::::
