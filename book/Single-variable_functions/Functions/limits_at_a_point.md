@@ -499,7 +499,7 @@ If no such value $L$ exists we say that the limit does not exist.
 This definition should be interpreted as follows. The arbitrary constant $\varepsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow a}f(x)=L$, we want that, for $x$ close enough to $a$, the function values $f(x)$ are at most distance $\varepsilon$ to $L$, i.e. $|f(x)-L|<\varepsilon$. Here "$x$ close enough to $a$" means that this inequality should hold true for all $x$ in a (possibly very small) interval centered around $a$, i.e. an interval of the form $(a-\delta,a+\delta)$. Of course, what this $\delta$ is, depends both on the function $f$ and the choice of $\varepsilon$. Typically, the smaller $\varepsilon$ is, the smaller $\delta$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\varepsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\varepsilon$ is small. Remember that we cannot choose $\varepsilon$ ourselves: for **each** $\varepsilon>0$ there should be a corresponding $\delta$. Note that we can make $\delta$ always smaller if we want to: if at least one $\delta$ works for a given $\varepsilon$, we are happy. Let us try to see how to work with this definition in practice.
 
 ::::::{prf:example} 
-:label: Ex:LimitAtPoint:Formaldefexists.
+:label: Ex:LimitAtPoint:Formaldefexists
 We aim to show that $\lim\limits_{x\rightarrow 2}x^2=4$ using the formal definition of a limit.
 
 For this, we let $\varepsilon>0$ be an arbitrary positive number. Now, we need to choose $\delta>0$, which will very likely depend on $\varepsilon$, in such a way that for any $x$ with $0<|x-2|<\delta$ we have $|x^2-4|<\varepsilon$.
@@ -529,7 +529,7 @@ The function $f(x)=x^2$ near the point $x=2$ and the illustration of the formal 
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:LimitAtPoint:Formaldefdoesnotexist.
+:label: Ex:LimitAtPoint:Formaldefdoesnotexist
 We aim to show that $\lim\limits_{x\rightarrow 0}\dfrac{|x|}{x}$ is not equal to $0$ using the formal definition of a limit (in fact, the limit does not exist at all, see {prf:ref}`Ex:LimitAtPoint:LimitLeftRight`).
 
 Since this definition states that some property needs to hold for every $\varepsilon>0$, we can show that the limit does not exist by showing that this property does not hold for a single choice of $\varepsilon$.
