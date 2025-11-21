@@ -45,6 +45,8 @@ sphinx:
       'in {numref}`Section %s <Sec:DeterminantsViaCofactors>`': "in [Section 5.1 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter5/DeterminantsViaCofactors.html)"
       '```{iframe} ../references.html': "```{iframe} ../../../../../references.html"
     mathjax3_config:
+      loader:
+        load: ['ui/lazy']
       tex:
         inlineMath: [ ['$','$'], ['\(','\)'] ]
         displayMath: [ ['$$','$$'], ['\[','\]'] ]
