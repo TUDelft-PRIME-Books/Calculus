@@ -30,6 +30,13 @@ class: dark-light
 An angle $\theta$ in the $xy$-plane in standard position.
 ```
 
+::::::{prf:remark} Angle between two half lines
+:label: Rem:Trigonometry:AngleBetweenTwoLines
+
+An angle between two intersecting half lines is always in $[0,\pi]$. An angle $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. 
+
+::::::
+
 ## Trigonometric ratios
 
 Using angles, we define three trigonometric ratios: the sine, the cosine and the tangent.
@@ -350,7 +357,39 @@ This proves the theorem.
 
 ## Standard values
 
-For certain special angles the trigonometric functions can be evaluated exactly.
+For certain special angles the trigonometric ratios can be evaluated exactly.
+
+{prf:ref}`Def:Trigonometry:TrigonometricRatios` implies that for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`
+
+```{figure} Images/acute.png
+---
+width: 50%
+name: Fig:Trigonometry:AcuteAngle
+class: dark-light
+---
+
+The trigonometric ratios for an acute angle.
+```
+
+In het plaatje "opp", "adj" en "hyp" gebruiken voor de zijden.
+
+If the sides of the triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ as shown in {numref}`Fig:Trigonometry:AcuteAngle` and "hyp" for the hypotenuse of the triangle, then we have:
+
+::::::{prf:corollary}
+-   
+  $$
+  \sin(\theta)=\dfrac{\text{opp}}{\text{hyp}};
+  $$
+- 
+  $$
+  \cos(\theta)=\dfrac{\text{adj}}{\text{hyp}};
+  $$
+- 
+  $$
+  \tan(\theta)=\dfrac{\text{opp}}{\text{adj}}.
+  $$
+
+::::::
 
 First consider a right-angled isosceles triangle with two equal sides of length $1$, as shown in {numref}`Fig:Trigonometry:IsoscelesTriangle`. Then the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` implies that the hypotenuse has length $\sqrt{2}$. The two equal angles are $\frac{1}{4}\pi$, which implies that $\cos(\frac{1}{4}\pi)=\frac{1}{2}\sqrt{2}=\sin(\frac{1}{4}\pi)$.
 
@@ -806,7 +845,23 @@ $$
 
 ::::::
 
-Finally, we have Heron's formula named after the Greek mathematician [Heron of Alexandria (probably 1st century AD)](https://en.wikipedia.org/wiki/Hero_of_Alexandria).
+## The area of a triangle
+
+Using the fact that a right-angled triangle is half of a rectangle, the area equals half the product of its legs. This is easily generalised to half the product of a base and the height of a general triangle. See {numref}`Fig:Trigonometry:Area`.
+
+```{figure} Images/area.png
+---
+width: 50%
+name: Fig:Trigonometry:Area
+class: dark-light
+---
+
+The area of a triangle $\triangle ABC$.
+```
+
+However, it is not always easy to find this height $h=b\sin(\alpha)$ or $h=a\sin(\beta)$.
+
+There is a formula for the area of a triangle, that only needs the lengths of the three sides. This formula is called Heron's formula named after the Greek mathematician [Heron of Alexandria (probably 1st century AD)](https://en.wikipedia.org/wiki/Hero_of_Alexandria).
 
 ::::::{prf:theorem} Heron
 :label: Thm:Trigonometry:Heron

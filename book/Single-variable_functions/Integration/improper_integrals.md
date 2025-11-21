@@ -17,10 +17,10 @@ Now we will extend the concept of integration to the following two cases:
 
 (II): the integrand $f$ may be unbounded as $x$ approaches $a$ or $b$ or both.
 
-Integrals satisfying (I) are called **improper integrals of type I** and integrals satisfying (II) are called **improper integrals of type II**. These kinds of integrals may be finite (*convergent*) or infinite (*divergent*).
+Integrals satisfying (I) and/or (II) are called **improper integrals**. These kinds of integrals will be defined as a limit which may exist or not.
 
-::::::{prf:Definition} Improper integrals of type I
-:label: Def:Integration:ImproperIntegralTypeI
+::::::{prf:Definition} Improper integrals with infinite interval of integration
+:label: Def:Integration:ImproperIntegralInfiniteInterval
 If $f$ is continuous on $[a,\infty)$, then
 
 $$
@@ -47,7 +47,7 @@ for any $c\in\mathbb{R}$. The integral on the left converges if and only if both
 ::::::
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsTypeIExample1
+:label: Ex:Integration:ImproperIntegralsInfiniteIntervalExample1
 Consider $\displaystyle\int_1^{\infty}\frac{dx}{x\sqrt{x}}$.
 ```{figure} Images/improper1.png
 ---
@@ -65,7 +65,7 @@ $$
 ::::::
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsTypeIExample2
+:label: Ex:Integration:ImproperIntegralsInfiniteIntervalExample2
 Consider $\displaystyle\int_1^{\infty}\frac{dx}{\sqrt{x}}$.
 ```{figure} Images/improper2.png
 ---
@@ -83,7 +83,7 @@ $$
 ::::::
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsTypeIExample3
+:label: Ex:Integration:ImproperIntegralsInfiniteIntervalExample3
 Consider $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$.
 ```{figure} Images/improper3.png
 ---
@@ -101,13 +101,19 @@ $$
 Now we have
 
 $$
-\int_0^{\infty}\frac{dx}{1+x^2}=\lim_{R\to\infty}\int_0^R\frac{dx}{1+x^2}=\lim_{R\to\infty}\bigg[\arctan(x)\bigg]_0^R=\lim_{R\to\infty}\arctan(R)=\frac{1}{2}\pi
+\begin{align*}
+\int_0^{\infty}\frac{dx}{1+x^2}&=\lim_{R\to\infty}\int_0^R\frac{dx}{1+x^2}=\lim_{R\to\infty}\bigg[\arctan(x)\bigg]_0^R\\
+&=\lim_{R\to\infty}\arctan(R)=\frac{1}{2}\pi
+\end{align*}
 $$
 
 and
 
 $$
-\int_{-\infty}^0\frac{dx}{1+x^2}=\lim_{R\to-\infty}\int_R^0\frac{dx}{1+x^2}=\lim_{R\to-\infty}\bigg[\arctan(x)\bigg]_R^0=\lim_{R\to-\infty}\left(-\arctan(R)\right)=\frac{1}{2}\pi.
+\begin{align*}
+\int_{-\infty}^0\frac{dx}{1+x^2}&=\lim_{R\to-\infty}\int_R^0\frac{dx}{1+x^2}=\lim_{R\to-\infty}\bigg[\arctan(x)\bigg]_R^0\\
+&=\lim_{R\to-\infty}\left(-\arctan(R)\right)=\frac{1}{2}\pi.
+\end{align*}
 $$
 
 Hence, we have
@@ -132,7 +138,7 @@ In probability and statistics this denotes the (total) **Cauchy distribution**, 
 ::::::
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsTypeIExample4
+:label: Ex:Integration:ImproperIntegralsInfiniteIntervalExample4
 Consider $\displaystyle\int_0^{\infty}\cos(x)\,dx$.
 ```{figure} Images/improper4.png
 ---
@@ -179,8 +185,8 @@ $$
 So, $\displaystyle\int_1^{\infty}\frac{dx}{x}$ is divergent.
 :::
 
-::::::{prf:Definition} Improper integrals of type II
-:label: Def:Integration:ImproperIntegralTypeII
+::::::{prf:Definition} Improper integrals with discontinuous integrand
+:label: Def:Integration:ImproperIntegralDiscontinuousIntegrand
 If $f$ is continuous on $(a,b]$ and possibly unbounded near $a$, then
 
 $$
@@ -207,8 +213,10 @@ $$
 is clearly wrong! Note that the integrand is positive on $[-1,1]$. The evaluation is incorrect because the integrand is not continuous at $x=0$. So, the fundamental theorem of calculus cannot be applied.
 ::::::
 
+If the discontinuity of the integrand appears not at a boundary point of the interval of integration, we need to split up this interval such that the discontinuity is at a boundary point and then apply {prf:ref}`Def:Integration:ImproperIntegralDiscontinuousIntegrand`.
+
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsTypeIIExample1
+:label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample1
 ```{figure} Images/improper5.png
 ---
 width: 50%
@@ -243,7 +251,7 @@ $$
 ::::::
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsTypeIIExample2
+:label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample2
 Since $\dfrac{1}{x-1}$ is continuous for all $x\in\mathbb{R}$ except at $x=1$, we have
 ```{figure} Images/improper6.png
 ---
@@ -261,7 +269,10 @@ $$
 with
 
 $$
-\int_1^3\frac{dx}{x-1}=\lim_{c\downarrow1}\int_c^3\frac{dx}{x-1}=\lim_{c\downarrow1}\bigg[\ln|x-1|\bigg]_c^3=\lim_{c\downarrow1}\left(\ln(2)-\ln|c-1|\right)=\infty
+\begin{align*}
+\int_1^3\frac{dx}{x-1}&=\lim_{c\downarrow1}\int_c^3\frac{dx}{x-1}=\lim_{c\downarrow1}\bigg[\ln|x-1|\bigg]_c^3\\
+&=\lim_{c\downarrow1}\left(\ln(2)-\ln|c-1|\right)=\infty
+\end{align*}
 $$
 
 and
@@ -283,7 +294,7 @@ Since the integrand is discontinuous at $x=1$ the fundamental theorem cannot be 
 ::::::
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsTypeIIExample3
+:label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample3
 Consider $\displaystyle\int_0^1\ln(x)\,dx$. 
 ```{figure} Images/improper7.png
 ---
@@ -321,7 +332,7 @@ $$
 
 ::::{exercise}
 :label: Exc:Integration:ImproperIntegralsExercise3
-The integral $\displaystyle\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}$ is improper both of type I and of type II. Evaluate the integral by splitting it into
+The integral $\displaystyle\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}$ is improper both because of the infinite interval of integration and the discontinuous integrand at $x=0$. Evaluate the integral by splitting it into
 
 $$
 \int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\int_0^1\frac{dx}{(1+x)\sqrt{x}}+\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}.
@@ -334,19 +345,28 @@ $$
 Using the substitution $\sqrt{x}=t$ or $x=t^2$, we have $dx=2t\,dt$ and therefore
 
 $$
-\int\frac{dx}{(1+x)\sqrt{x}}=\int\frac{2t\,dt}{(1+t^2)t}=\int\frac{2}{1+t^2}\,dt=2\arctan(t)+C=2\arctan\left(\sqrt{x}\right)+C.
+\begin{align*}
+\int\frac{dx}{(1+x)\sqrt{x}}&=\int\frac{2t\,dt}{(1+t^2)t}=\int\frac{2}{1+t^2}\,dt=2\arctan(t)+C\\
+&=2\arctan\left(\sqrt{x}\right)+C.
+\end{align*}
 $$
 
 Now we obtain
 
 $$
-\int_0^1\frac{dx}{(1+x)\sqrt{x}}=\lim_{c\downarrow0}\int_c^1\frac{dx}{(1+x)\sqrt{x}}=\lim_{c\downarrow0}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_c^1=2\arctan(1)=\frac{1}{2}\pi
+\begin{align*}
+\int_0^1\frac{dx}{(1+x)\sqrt{x}}&=\lim_{c\downarrow0}\int_c^1\frac{dx}{(1+x)\sqrt{x}}=\lim_{c\downarrow0}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_c^1\\
+&=2\arctan(1)=\frac{1}{2}\pi
+\end{align*}
 $$
 
 and
 
 $$
-\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\lim_{R\to\infty}\int_1^R\frac{dx}{(1+x)\sqrt{x}}=\lim_{R\to\infty}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_1^R=\pi-\frac{1}{2}\pi=\frac{1}{2}\pi.
+\begin{align*}
+\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}&=\lim_{R\to\infty}\int_1^R\frac{dx}{(1+x)\sqrt{x}}=\lim_{R\to\infty}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_1^R\\
+&=\pi-\frac{1}{2}\pi=\frac{1}{2}\pi.
+\end{align*}
 $$
 
 Hence we have
@@ -406,7 +426,10 @@ and use the substitution $x=\dfrac{1}{t}$ to prove the formula for $k\in\{1,2,3,
 (b) For $k\in\{1,2,3,\ldots\}$ we use the substitution $x=\dfrac{1}{t}$ and therefore $dx=-\dfrac{dt}{t^2}$ to find that
 
 $$
-\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^k)}=\int_1^0\frac{1}{(1+t^{-2})(1+t^{-k})}\left(-\frac{1}{t^2}\right)\,dt=\int_0^1\frac{dt}{(t^2+1)(1+t^{-k})}.
+\begin{align*}
+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^k)}&=\int_1^0\frac{1}{(1+t^{-2})(1+t^{-k})}\left(-\frac{1}{t^2}\right)\,dt\\
+&=\int_0^1\frac{dt}{(t^2+1)(1+t^{-k})}.
+\end{align*}
 $$
 
 This implies that
@@ -416,7 +439,8 @@ $$
 \int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}&=\int_0^1\frac{dx}{(1+x^2)(1+x^k)}+\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}\\
 &=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^k}+\frac{1}{1+x^{-k}}\right)\,dx\\
 &=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^k}+\frac{x^k}{x^k+1}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\cdot\frac{1+x^k}{1+x^k}\,dx=\int_0^1\frac{dx}{1+x^2}=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
+&=\int_0^1\frac{1}{1+x^2}\cdot\frac{1+x^k}{1+x^k}\,dx=\int_0^1\frac{dx}{1+x^2}\\
+&=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
 \end{align*}
 $$
 
@@ -429,7 +453,10 @@ $$
 for $k\in\{1,2,3,\dots\}$ and use the substitution $x=\dfrac{1}{t}$ again to find that
 
 $$
-\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}=\int_1^0\frac{1}{(1+t^{-2})(1+t^k)}\left(-\frac{1}{t^2}\right)\,dt=\int_0^1\frac{dt}{(t^2+1)(1+t^k)}.
+\begin{align*}
+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}&=\int_1^0\frac{1}{(1+t^{-2})(1+t^k)}\left(-\frac{1}{t^2}\right)\,dt\\
+&=\int_0^1\frac{dt}{(t^2+1)(1+t^k)}.
+\end{align*}
 $$
 
 Hence, for $k\in\{1,2,3,\ldots\}$ we have
@@ -439,7 +466,8 @@ $$
 \int_0^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}&=\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}+\int_0^1\frac{dx}{(1+x^2)(1+x^k)}\\
 &=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^{-k}}+\frac{1}{1+x^k}\right)\,dx\\
 &=\int_0^1\frac{1}{1+x^2}\left(\frac{x^k}{x^k+1}+\frac{1}{1+x^k}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\cdot\frac{x^k+1}{x^k+1}\,dx=\int_0^1\frac{dx}{1+x^2}=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
+&=\int_0^1\frac{1}{1+x^2}\cdot\frac{x^k+1}{x^k+1}\,dx=\int_0^1\frac{dx}{1+x^2}\\
+&=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
 \end{align*}
 $$
 
@@ -474,7 +502,7 @@ This limit exists if $1-p>0$ (then: $\displaystyle\lim_{c\downarrow0}\frac{c^{1-
 
 ::::::
 
-Sometimes integrals are not easy to evaluate. However, in many cases it is not necessary as long as we can find out whether the integral is convergent or divergent. In case of convergence we might able to find a lower and upper bound for the integral. The following theorem might be helpful.
+Sometimes integrals are not easy to evaluate. However, in many cases evaluation is not necessary as long as we can find out whether the integral is convergent or divergent. In case of convergence we might able to find a lower and upper bound for the integral. The following theorem might be helpful.
 
 ::::::{prf:Theorem} A comparison theorem for improper integrals
 :label: Thm:Integration:ImproperIntegralsComparison
@@ -539,13 +567,19 @@ Evaluate $\displaystyle\int_0^{\infty}\frac{x}{1+x^3}\,dx$ exactly.
 Note that $1+x^3=(1+x)(1-x+x^2)$ and therefore
 
 $$
-\frac{x}{1+x^3}=\frac{x}{(1+x)(1-x+x^2)}=\frac{A}{1+x}+\frac{Bx+C}{1-x+x^2}=\frac{A(1-x+x^2)+Bx(1+x)+C(1+x)}{(1+x)(1-x+x^2)}.
+\begin{align*}
+\frac{x}{1+x^3}&=\frac{x}{(1+x)(1-x+x^2)}=\frac{A}{1+x}+\frac{Bx+C}{1-x+x^2}\\
+&=\frac{A(1-x+x^2)+Bx(1+x)+C(1+x)}{(1+x)(1-x+x^2)}.
+\end{align*}
 $$
 
 Comparing the numerators, we obtain
 
 $$
-x=(A+B)x^2+(-A+B+C)x+A+C\quad\Longrightarrow\quad A=-\frac{1}{3}\quad\text{and}\quad B=C=\frac{1}{3}.
+\begin{align*}
+&x=(A+B)x^2+(-A+B+C)x+A+C\\
+&\quad\Longrightarrow\quad A=-\frac{1}{3}\quad\text{and}\quad B=C=\frac{1}{3}.
+\end{align*}
 $$
 
 Hence, we have
@@ -566,10 +600,13 @@ $$
 and
 
 $$
-\int\frac{dx}{x^2-x+1}=\int\frac{dx}{(x-\frac{1}{2})^2+\frac{3}{4}}=\frac{4}{3}\int\frac{dx}{\left(\frac{2x-1}{\sqrt{3}}\right)^2+1}=\frac{2}{\sqrt{3}}\arctan\left(\frac{2x-1}{\sqrt{3}}\right)+C
+\begin{align*}
+\int\frac{dx}{x^2-x+1}&=\int\frac{dx}{(x-\frac{1}{2})^2+\frac{3}{4}}=\frac{4}{3}\int\frac{dx}{\left(\frac{2x-1}{\sqrt{3}}\right)^2+1}\\
+&=\frac{2}{\sqrt{3}}\arctan\left(\frac{2x-1}{\sqrt{3}}\right)+C
+\end{align*}
 $$
 
-Since $\displaystyle\lim\limits_{x\to\infty}\frac{\sqrt{x^2-x+1}}{1+x}=1$, we obtain using $\displaystyle\lim_{x\to\infty}\arctan(x)=\tfrac{1}{2}\pi$ and $\displaystyle\arctan\left(\frac{1}{\sqrt{3}}\right)=\tfrac{1}{6}\pi$
+Since $\displaystyle\lim\limits_{x\to\infty}\frac{\sqrt{x^2-x+1}}{1+x}=1$, we obtain using $\displaystyle\lim_{x\to\infty}\arctan(x)=\tfrac{1}{2}\pi$ and $\arctan\left(\frac{1}{\sqrt{3}}\right)=\frac{1}{6}\pi$
 
 $$
 \begin{align*}
@@ -718,7 +755,10 @@ Note that $\Gamma(1)=\displaystyle\int_0^{\infty}e^{-t}\,dt=-e^{-t}\bigg|_0^{\in
 Using integration by parts we obtain for $x>0$
 
 $$
-\Gamma(x+1)=\int_0^{\infty}t^xe^{-t}\,dt=-\int_0^{\infty}t^x\,de^{-t}=-t^xe^{-t}\bigg|_0^{\infty}+\int_0^{\infty}e^{-t}\,dt^x=0+x\int_0^{\infty}t^{x-1}e^{-t}\,dt=x\Gamma(x).
+\begin{align*}
+\Gamma(x+1)&=\int_0^{\infty}t^xe^{-t}\,dt=-\int_0^{\infty}t^x\,de^{-t}=-t^xe^{-t}\bigg|_0^{\infty}+\int_0^{\infty}e^{-t}\,dt^x\\
+&=0+x\int_0^{\infty}t^{x-1}e^{-t}\,dt=x\Gamma(x).
+\end{align*}
 $$
 
 This implies that $\Gamma(n+1)=n!$ for $n=0,1,2,\ldots$. So, the gamma function can be seen as a generalization of the factorial.
@@ -784,7 +824,8 @@ Now we have using integration by parts
 $$
 \begin{align*}
 \int_0^{\infty}e^{-y}\cos(ty)\,dy&=-e^{-y}\cos(ty)\bigg|_0^{\infty}-t\int_0^{\infty}e^{-y}\sin(ty)\,dy\\
-&=1+te^{-y}\sin(ty)\bigg|_0^{\infty}-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy=1-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy.
+&=1+te^{-y}\sin(ty)\bigg|_0^{\infty}-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy\\
+&=1-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy.
 \end{align*}
 $$
 
@@ -799,7 +840,11 @@ Hence: $\displaystyle\int_0^1\frac{\sin(\ln(x))}{\ln(x)}\,dx=I(1)=\arctan(1)=\tf
 Consider the integral $I(t)=\displaystyle\int_0^{\infty}\frac{e^{-\alpha x}\sin(xt)}{x}\,dx$ for $\alpha>0$ and $t\geq0$. Since $\displaystyle\lim\limits_{x\downarrow0}\frac{\sin(xt)}{x}=t$, the integral is convergent. Then we have $I(0)=0$ and using integration by parts
 
 $$
-I'(t)=\int_0^{\infty}e^{-\alpha x}\cos(xt)\,dx=\left[\frac{t}{\alpha^2+t^2}e^{-\alpha x}\sin(xt)-\frac{\alpha}{\alpha^2+t^2}e^{-\alpha x}\cos(xt)\right]_0^{\infty}=\frac{\alpha}{\alpha^2+t^2}.
+\begin{align*}
+I'(t)&=\int_0^{\infty}e^{-\alpha x}\cos(xt)\,dx\\
+&=\left[\frac{t}{\alpha^2+t^2}e^{-\alpha x}\sin(xt)-\frac{\alpha}{\alpha^2+t^2}e^{-\alpha x}\cos(xt)\right]_0^{\infty}\\
+&=\frac{\alpha}{\alpha^2+t^2}.
+\end{align*}
 $$
 
 This implies that $I(t)=\displaystyle\arctan\left(\frac{t}{\alpha}\right)$.
@@ -807,7 +852,13 @@ This implies that $I(t)=\displaystyle\arctan\left(\frac{t}{\alpha}\right)$.
 For instance, this implies that $\displaystyle\int_0^{\infty}\frac{e^{-\alpha x}\sin(\alpha x)}{x}\,dx=\arctan(1)=\tfrac{1}{4}\pi$ for all $\alpha>0$. Furthermore, we have
 
 $$
-\int_0^{\infty}\frac{e^{-x\sqrt{3}}\sin(x)}{x}\,dx=\arctan\left(\frac{1}{\sqrt{3}}\right)=\frac{1}{6}\pi\quad\text{and}\quad\int_0^{\infty}\frac{e^{-x}\sin(x\sqrt{3})}{x}\,dx=\arctan(\sqrt{3})=\frac{1}{3}\pi.
+\int_0^{\infty}\frac{e^{-x\sqrt{3}}\sin(x)}{x}\,dx=\arctan\left(\frac{1}{\sqrt{3}}\right)=\frac{1}{6}\pi
+$$
+
+and
+
+$$
+\int_0^{\infty}\frac{e^{-x}\sin(x\sqrt{3})}{x}\,dx=\arctan(\sqrt{3})=\frac{1}{3}\pi.
 $$
 
 ::::::
@@ -826,9 +877,11 @@ Now let: $I(t)=\displaystyle\int_0^{\infty}e^{-xt}\frac{\sin(x)}{x}\,dx$. Then w
 
 $$
 \begin{align*}
-I'(t)&=-\int_0^{\infty}e^{-xt}\sin(x)\,dx=\int_0^{\infty}e^{-xt}\,d\cos(x)=e^{-xt}\cos(x)\bigg|_0^{\infty}-\int_0^{\infty}\cos(x)\,de^{-xt}\\
+I'(t)&=-\int_0^{\infty}e^{-xt}\sin(x)\,dx=\int_0^{\infty}e^{-xt}\,d\cos(x)\\
+&=e^{-xt}\cos(x)\bigg|_0^{\infty}-\int_0^{\infty}\cos(x)\,de^{-xt}\\
 &=-1+t\int_0^{\infty}e^{-xt}\cos(x)\,dx=-1+t\int_0^{\infty}e^{-xt}\,d\sin(x)\\
-&=-1+te^{-xt}\sin(x)\bigg|_0^{\infty}-t\int_0^{\infty}\sin(x)\,de^{-xt}=-1+t^2\int_0^{\infty}e^{-xt}\sin(x)\,dt.
+&=-1+te^{-xt}\sin(x)\bigg|_0^{\infty}-t\int_0^{\infty}\sin(x)\,de^{-xt}\\
+&=-1+t^2\int_0^{\infty}e^{-xt}\sin(x)\,dt.
 \end{align*}
 $$
 

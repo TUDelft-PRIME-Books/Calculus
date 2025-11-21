@@ -27,7 +27,7 @@ For many (standard) functions we are familiar with their derivatives. The other 
 
 |   |   |
 |---|---|
-| $\displaystyle\int e^x\,dx=e^x+C$  | $\displaystyle\int x^{\alpha}\,dx=\tfrac{1}{\alpha+1}x^{\alpha+1}+C,\quad\alpha\neq-1$ |
+| $\displaystyle\int e^x\,dx=e^x+C$  | $\displaystyle\int x^{\alpha}\,dx=\frac{1}{\alpha+1}x^{\alpha+1}+C,\quad\alpha\neq-1$ |
 | $\displaystyle\int\cos(x)\,dx=\sin(x)+C$ | $\displaystyle\int\sin(x)\,dx=-\cos(x)+C$ |
 | $\displaystyle\int\frac{1}{\cos^2(x)}\,dx=\tan(x)+C$ | $\displaystyle\int\frac{1}{x}\,dx=\ln(x)+C,\quad x>0$ |
 | $\displaystyle\int\cosh(x)\,dx=\sinh(x)+C$ | $\displaystyle\int\sinh(x)\,dx=\cosh(x)+C$ |
@@ -52,9 +52,9 @@ Using the chain rule we can also deduce more general formulas:
 
 ::::::{prf:Example}
 :label: Ex:Integration:IndefiniteExamples
-* $\displaystyle\int e^{3x}\,dx=\tfrac{1}{3}e^{3x}+C$;
-* $\displaystyle\int(\cos(2x)-\sin(5x))\,dx=\tfrac{1}{2}\sin(2x)+\tfrac{1}{5}\cos(5x)+C$;
-* $\displaystyle\int(x^3-2x+5)\,dx=\tfrac{1}{4}x^4-x^2+5x+C$;
+* $\displaystyle\int e^{3x}\,dx=\frac{1}{3}e^{3x}+C$;
+* $\displaystyle\int(\cos(2x)-\sin(5x))\,dx=\frac{1}{2}\sin(2x)+\frac{1}{5}\cos(5x)+C$;
+* $\displaystyle\int(x^3-2x+5)\,dx=\frac{1}{4}x^4-x^2+5x+C$;
 * $\displaystyle\int\frac{\sqrt{x}-2+3x\sqrt{x}}{x}\,dx=\int\left(\frac{1}{\sqrt{x}}-\frac{2}{x}+3\sqrt{x}\right)\,dx=2\sqrt{x}-2\ln|x|+2x\sqrt{x}+C,\quad x>0$.
 ::::::
 

@@ -4,11 +4,28 @@
 
 ## Intuitive definition of limits at infinity
 
-Many problems in nature and engineering feature quantities that for, relatively short periods of time, fluctuate or change rapidly, before stabilizing and moving towards a certain equilibrium. In such cases, we are often mainly intersted in what happens in the long term. Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20\,^\circ C$. We place it into a refrigerator, which has a temperature of $5\,^\circ C$ and we want to know how the temperature $T$ (in degrees Celcius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling, it can be shown that $T(t)=T_{\mathrm{env}}+(T(0)-T_{\mathrm{env}})e^{-rt}$. Here, $T_{\mathrm{env}}=5$ is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment. For convenience, we take $r=1$ here. Note that $T(0)=20$, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator $5\,^\circ C$. Indeed, we can also observe this when we plot the temperature as a function of time.
+Many problems in nature and engineering feature quantities that for, relatively short periods of time, fluctuate or change rapidly, before stabilizing and moving towards a certain equilibrium. In such cases, we are often mainly interested in what happens in the long term.
 
-Hier een plot van de functie T(t), waar ook de horizontale asymptoot T=5 is aangegeven.
+:::::{margin}
+::::{figure} Images/Fig-LimitAtInfinity-RefrigeratorCauliflower.png
+:name: Fig:LimitAtInfinity:RefrigeratorCauliflower
 
-We observe that our intuition was correct: the temperature of the object will first decrease rapidly before slowly moving towards the limiting value of $5\,^\circ C$. Notice that the temperature never becomes precisely equal to $5\,^\circ C$; it will always remain slightly above this value. We say that the function $T(t)$ has a **horizontal asymptote** at $T=5$ and we denote this by $\lim\limits_{t\rightarrow\infty}T(t)=5$. As was stated in {numref}`Section:LimitPoint`, the word asymptote comes from the Greek $\grave{\alpha}\sigma\acute{\upsilon}\mu\pi\tau\omega\tau o\varsigma$ (asumptotos), which means "not falling together". The notation $\lim\limits_{t\rightarrow\infty}T(t)=5$ can be pronounced as "the function values $T(t)$ approach the value $5$ as $t$ approaches infinity". The precise definition of such a limit at infinity is rather technical, so we postpone it to {numref}`Subsec:LimitinfPrecise`. Instead, we will use the following more intuitive definition.
+A cauliflower in a refrigerator.
+::::
+:::::
+
+Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling, it can be shown that $T(t)=T_{\mathrm{env}}+(T(0)-T_{\mathrm{env}})e^{-rt}$ °C. Here, $T_{\mathrm{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
+
+For convenience, we take $r=1$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
+
+::::{figure} Images/Fig-LimitAtInfinity-TempCauliflower.png
+:name: Fig:LimitAtInfinity:TempCauliflower
+:class: dark-light
+
+The temperature $T(t)$ in degrees Celsius of the cauliflower within the refrigerator as a function of time $t$.
+::::
+
+We observe that our intuition was correct: the temperature of the object will first decrease rapidly before slowly moving towards the limiting value of $5$ °C. Notice that the temperature never becomes precisely equal to $5$ °C; it will always remain slightly above this value. We say that the function $T(t)$ has a **horizontal asymptote** at $T=5$ °C and we denote this by $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C. As was stated in {numref}`Section:LimitPoint`, the word asymptote comes from the Greek $\grave{\alpha}\sigma\acute{\upsilon}\mu\pi\tau\omega\tau o\varsigma$ (asumptotos), which means "not falling together". The notation $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C can be pronounced as "the function values $T(t)$ approach the value $5$ °C as $t$ approaches infinity". The precise definition of such a limit at infinity is rather technical, so we postpone it to {numref}`Subsec:LimitinfPrecise`. Instead, we will use the following more intuitive definition.
 
 ::::::{prf:definition} Intuitive definition of a limit at plus or minus infinity
 :label: Def:LimitAtInfinity:Intuitivelimit
@@ -29,7 +46,29 @@ Since we only work with an intuitive definition, we will also postpone all proof
 
 Consider the function $f(x)=\dfrac{4+\frac{1}{x}}{2-\frac{3}{x^2}}$ and suppose we want to evaluate $\lim\limits_{x\rightarrow \infty}f(x)$. First, we make a table of the function values for increasing values of $x$.
 
-Hier een tabel voor de functiewaarden van f voor x=1,10,100,1000,10000,100000,1000000
+```{list-table}
+:header-rows: 1
+:align: center
+:class: mid-align
+
+* - $x$
+  - $f(x)$
+* - $1$
+  - $-5$
+* - $10$
+  - $2.0812182741\ldots$
+* - $100$
+  - $2.0053007951\ldots$
+* - $1000$
+  - $2.0005030007\ldots$
+* - $10000$
+  - $2.0000500300\ldots$
+* - $100000$
+  - $2.0000050003\ldots$
+* - $1000000$
+  - $2.0000005000\ldots$
+
+```
 
 Notice that the function values seem to go towards the value $2$. This would suggest that $\lim\limits_{x\rightarrow \infty}f(x)=2$. Let us see if we can find out where this value comes from. If $x$ is very large, notice that $\frac{1}{x}$ and $-\frac{3}{x^2}$ are very close to $0$, since we are dividing a relatively small number by a much larger number. As such, for large values of $x$ we have
 
@@ -39,7 +78,13 @@ $$
 
 Later in this section, we will show that this reasoning is indeed mathematically valid. As such, the function $f$ has a horizontal asymptote at $y=2$. We can also see in the graph of $f$ that the function values tend towards the value $2$ as $x$ gets large.
 
-Hier plot van deze functie voor x groot, met de lijn y=2 ook aangegeven.
+::::{figure} Images/Fig-LimitAtInfinity-Firstexample.png
+:name: Fig:LimitAtInfinity:Firstexample
+:class: dark-light
+
+An illustration of the function $f(x)=\dfrac{4+\frac{1}{x}}{2-\frac{3}{x^2}}$ for large values of $x$.
+::::
+
 ::::::
 
 ::::::{prf:example} 
@@ -47,13 +92,40 @@ Hier plot van deze functie voor x groot, met de lijn y=2 ook aangegeven.
 
 Consider the function $f(x)=\dfrac{\sin(x)}{x^2}$ and suppose we want to evaluate $\lim\limits_{x\rightarrow -\infty}f(x)$. First, we make a table of the function values for increasingly negative values of $x$.
 
-Hier een tabel voor de functiewaarden van f voor x=-1,-10,-100,-1000,-10000,-100000,-1000000
+```{list-table}
+:header-rows: 1
+:align: center
+:class: mid-align
+
+* - $x$
+  - $f(x)$
+* - $-1$
+  - $-0.841470984\ldots$
+* - $-10$
+  - $\phantom{+}0.005440211\ldots$
+* - $-100$
+  - $\phantom{+}5.063656411\ldots\times10^{-5}$
+* - $-1000$
+  - $-8.268795405\ldots\times10^{-7}$
+* - $-10000$
+  - $\phantom{+}3.056143888\ldots\times10^{-9}$
+* - $-100000$
+  - $-3.574879797\ldots\times10^{-12}$
+* - $-1000000$
+  - $\phantom{+}3.499935021\ldots\times10^{-13}$
+
+```
 
 Notice that the function values seem to go towards the value $0$. This would suggest that $\lim\limits_{x\rightarrow -\infty}f(x)=0$. Indeed, we notice that $\sin(x)$ is always between $-1$ and $1$, even if $x$ is very negative. This means that $\dfrac{\sin(x)}{x^2}$ is a number, where something between $-1$ and $1$ is divided by something very large. As such, $\dfrac{\sin(x)}{x^2}$ is very close to $0$. In {prf:ref}`Ex:LimitAtInfinity:SqueezeThm` we will show that this reasoning is indeed valid.
 
-Hier plot van deze functie voor x negatief, met de lijn y=0 ook aangegeven.
+::::{figure} Images/Fig-LimitAtInfinity-Secondexample.png
+:name: Fig:LimitAtInfinity:Secondexample
+:class: dark-light
 
-Notice that the function $f$ actually osciallates around the horizontal asymptote $x=0$. This is no problem, as the function values indeed tends towards $0$. However, this does mean that original Greek meaning of the word asymptote ("not falling together") does not exactly match the modern use.
+An illustration of the function $f(x)=\dfrac{\sin(x)}{x^2}$ for large negative values of $x$.
+::::
+
+Notice that the function $f$ actually oscillates around the horizontal asymptote $x=0$. This is no problem, as the function values indeed tends towards $0$. However, this does mean that original Greek meaning of the word asymptote ("not falling together") does not exactly match the modern use.
 ::::::
 
 ::::::{prf:example} 
@@ -61,7 +133,29 @@ Notice that the function $f$ actually osciallates around the horizontal asymptot
 
 Consider the function $f(x)=x^2$ and suppose we want to evaluate $\lim\limits_{x\rightarrow \infty}f(x)$. First, we make a table of the function values for increasing values of $x$.
 
-Hier een tabel voor de functiewaarden van f voor x=1,10,100,1000,10000,100000,1000000
+```{list-table}
+:header-rows: 1
+:align: center
+:class: mid-align
+
+* - $x$
+  - $f(x)$
+* - $1$
+  - $1$
+* - $10$
+  - $100$
+* - $100$
+  - $10000$
+* - $1000$
+  - $1000000$
+* - $10000$
+  - $100000000$
+* - $100000$
+  - $10000000000$
+* - $1000000$
+  - $1000000000000$
+
+```
 
 Notice that the function values seem to blow up and that they do not towards a certain number. Indeed, as $x$ tends towards infinity, $x^2$ will do so as well. As such, the limit $\lim\limits_{x\rightarrow \infty}x^2$ does not exist. 
 ::::::
@@ -83,24 +177,46 @@ Finally, we have the corresponding notations $\lim\limits_{x\rightarrow -\infty}
 A notation like $\lim\limits_{x\rightarrow \infty}f(x)=\infty$ or $\lim\limits_{x\rightarrow \infty}f(x)=-\infty$ do not mean that $\infty$ and $-\infty$ are numbers, nor do they mean that these limits exist. A correct way to pronounce the notation $\lim\limits_{x\rightarrow \infty}f(x)=\infty$ is **the limit of $f$ at infinity does not exist, because the function values grow without bound**.
 ::::::
 
-Notice that a function can have either $0$, $1$ or $2$ horizontal asymptotes, depending on whether $\lim\limits_{x\rightarrow \infty}f(x)$ and $\lim\limits_{x\rightarrow -\infty}f(x)$ exist. Even if both limits exist, the function might still have only $1$ horizontal asymptotes whenver $\lim\limits_{x\rightarrow \infty}f(x)=\lim\limits_{x\rightarrow -\infty}f(x)$.
+Notice that a function can have either $0$, $1$ or $2$ horizontal asymptotes, depending on whether $\lim\limits_{x\rightarrow \infty}f(x)$ and $\lim\limits_{x\rightarrow -\infty}f(x)$ exist. Even if both limits exist, the function might still have only $1$ horizontal asymptotes whenever $\lim\limits_{x\rightarrow \infty}f(x)=\lim\limits_{x\rightarrow -\infty}f(x)$.
 
-Previously, we saw that a limit at infinity might not exist, because there the function has an infinite or negative limit there. There are other reasons why a limit might not exist, and we will show a few commonly occuring cases.
+Previously, we saw that a limit at infinity might not exist, because there the function has an infinite or negative limit there. There are other reasons why a limit might not exist, and we will show a few commonly occurring cases.
 
 ::::::{prf:example} 
 :label: Ex:LimitAtInfinity:Secondexamplenonexist
 
 Consider the function $f(x)=\cos(x)$ and suppose we want to evaluate $\lim\limits_{x\rightarrow \infty}f(x)$. First, we make a table of the function values for increasing values of $x$.
 
-Hier een tabel voor de functiewaarden van f voor x=1,10,100,1000,10000,100000,1000000
+```{list-table}
+:header-rows: 1
+:align: center
+:class: mid-align
 
-Notice that the function values do not seem to tend to some particular value. This is because the cosine keeps on osciallating between $-1$ and $1$, even if $x$ grows large. As such, the limit $\lim\limits_{x\rightarrow \infty}\cos(x)$ does not exist.
+* - $x$
+  - $f(x)$
+* - $1$
+  - $\phantom{+}0.5403023058681398$
+* - $10$
+  - $-0.8390715290764524$
+* - $100$
+  - $\phantom{+}0.8623188722876839$
+* - $1000$
+  - $\phantom{+}0.5623790762907029$
+* - $10000$
+  - $-0.9521553682590148$
+* - $100000$
+  - $-0.9993608074382124$
+* - $1000000$
+  - $\phantom{+}0.9367521275331447$
+
+```
+
+Notice that the function values do not seem to tend to some particular value. This is because the cosine keeps on oscillating between $-1$ and $1$, even if $x$ grows large. As such, the limit $\lim\limits_{x\rightarrow \infty}\cos(x)$ does not exist.
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:LimitAtInfinity:Thirdexamplenonexist
 
-Consider the function $f(x)=\sqrt{x}$ and suppose we want to evaluate $\lim\limits_{x\rightarrow -\infty}f(x)$. When we try to make a table of the funcion values for negative values of $x$, we immediately run into trouble as the function is not defined for negative values of $x$. As such, the limit $\lim\limits_{x\rightarrow -\infty}\sqrt{x}$ does not exist.
+Consider the function $f(x)=\sqrt{x}$ and suppose we want to evaluate $\lim\limits_{x\rightarrow -\infty}f(x)$. When we try to make a table of the function values for negative values of $x$, we immediately run into trouble as the function is not defined for negative values of $x$. As such, the limit $\lim\limits_{x\rightarrow -\infty}\sqrt{x}$ does not exist.
 ::::::
 
 ::::::{warning} 
@@ -113,7 +229,29 @@ Even though making tables like we did in the preceding examples can help to give
 
 Consider the function $f(x)=\cos(2\pi x)$ and suppose we make a table like we did in the previous examples.
 
-Hier een tabel voor de functiewaarden van f voor x=1,10,100,1000,10000,100000,1000000
+```{list-table}
+:header-rows: 1
+:align: center
+:class: mid-align
+
+* - $x$
+  - $f(x)$
+* - $1$
+  - $1$
+* - $10$
+  - $1$
+* - $100$
+  - $1$
+* - $1000$
+  - $1$
+* - $10000$
+  - $1$
+* - $100000$
+  - $1$
+* - $1000000$
+  - $1$
+
+```
 
 This would suggest that $\lim\limits_{x\rightarrow\infty}\cos(2\pi x)=1$. However, we know that the function values do not tend to $1$, as they keep on oscillating between $-1$ and $1$. In this case, we simply chose the values of $x$ we inserted into our function rather poorly. Indeed, $f(x)=1$ for all integer values of $x$. If we, on the other hand, would have chosen values of $x$ of the form $x=\frac{1}{2}+n$ for an integer $n$, we may have gotten the idea that the limit would be $-1$. Indeed, the limit  $\lim\limits_{x\rightarrow\infty}\cos(2\pi x)$ does not exist at all.
 ::::::
@@ -129,19 +267,26 @@ In order to evaluate limits at infinity, we need two important building blocks: 
 :label: Theorem:LimitAtInfinity:Standardlimits
 We have the following standard limits.
 
+:::::{grid} 2
+:gutter: 1
 
+::::{grid-item}
 - $\lim\limits_{x\rightarrow\infty}x^r=0$ when $r<0$;
 - $\lim\limits_{x\rightarrow\infty}x^r=\infty$ when $r>0$;
 - $\lim\limits_{x\rightarrow-\infty}x^{-r}=0$ when $r$ is a positive integer;
 - $\lim\limits_{x\rightarrow\infty}e^{-ax}=0$ when $a>0$;
 - $\lim\limits_{x\rightarrow\infty}e^{ax}=\infty$ when $a>0$;
+::::
+
+::::{grid-item}
 - $\lim\limits_{x\rightarrow\infty}\frac{1}{\ln(x)}=0$;
 - $\lim\limits_{x\rightarrow\infty}\ln(x)=\infty$;
 - $\lim\limits_{x\rightarrow-\infty}\arctan(x)=-\dfrac{\pi}{2}$;
 - $\lim\limits_{x\rightarrow\infty}\arctan(x)=\dfrac{\pi}{2}$.
+::::
 
+:::::
 
-WILLEM: Waarschijnlijk mooier om in twee kolommen te doen, maar dat kreeg ik niet werkend.
 ::::::
 
 ::::::{prf:theorem} Basic rules of calculation for limits at infinity
@@ -169,7 +314,7 @@ Intuitively, these computation rules make sense: if the function values $f(x)$ a
 :label: Theorem:LimitAtInfinity:Substitution
 Suppose $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
 
-A similar result holds for limits at minus ifinity.
+A similar result holds for limits at minus infinity.
 ::::::
 
 The result above shows that limits can be "taken inside" a nice enough function. In fact, there is a slightly more general version of this result, which will be covered in {numref}`Section:Continuity`.
@@ -214,7 +359,13 @@ The corresponding result also holds for limits at minus infinity.
 
 Consider the function $f(x)=\dfrac{\sin(x)}{x^2}$ from {prf:ref}`Ex:LimitAtInfinity:Secondexample` and suppose that we want to evaluate $\lim\limits_{x\rightarrow -\infty}\dfrac{\sin(x)}{x^2}$. Since the sine always oscillates between $-1$ and $1$, we see that $\dfrac{-1}{x^2}\leq \dfrac{\sin(x)}{x^2}\leq \dfrac{1}{x^2}$ for all $x<0$. Similar to {prf:ref}`Ex:LimitAtInfinityComparison` we find that $\lim\limits_{x\rightarrow -\infty}-\dfrac{1}{x^2}= \lim\limits_{x\rightarrow -\infty}\dfrac{1}{x^2}=0$. By the squeeze theorem, we find that $\lim\limits_{x\rightarrow -\infty}\dfrac{\sin(x)}{x^2}=0$ as well.
 
-Hier nog een plaatje van de drie functies, misschien niet al te erg uitgezoomd omdat het dan niet meer zichtbaar is.
+::::{figure} Images/Fig-LimitAtInfinity-SqueezeThm.png
+:name: Fig:LimitAtInfinity:SqueezeThm
+:class: dark-light
+
+An illustration of the {prf:ref}`Squeeze theorem for limits at infinity <Theorem:LimitAtInfinity:Squeezetheorem>`.
+::::
+
 ::::::
 
 Now consider a limit of the form $\lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials. We write $p(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_0$ and $q(x)=b_mx^m+b_{m-1}x^{m-1}+...+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Whenever both $p$ and $q$ are not constant, i.e. when $n\geq 1$ and $m\geq 1$, we cannot evaluate the limit directly since both $p$ and $q$ have terms that go to infinity and/or minus infinity as $x$ approaches infinity ($a_nx^n$ for $p$ and $b_mx^m$ for $q$). So how does the function $\frac{p(x)}{q(x)}$ behave for large values of $x$? Notice that if $x$ is large enough the term $a_nx^n$ will be much larger (in absolute value) than the other terms $a_{n-1}x^{n-1}+...+a_0$ of $p$. Similarly, the term $b_mx^m$ will dominate the other terms $b_{m-1}x^{m-1}+...+b_0$ of $q$. So for large values of $x$ we have
@@ -262,7 +413,7 @@ $$
  \lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{1}{x}}
 $$
 
-A very common misktake, is to now write
+A very common mistake, is to now write
 
 $$
  \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{1}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\sqrt{\frac{1}{x^2}+1}+\frac{1}{x}}\qquad\qquad \left(\textbf{INCORRECT}\right)
@@ -315,7 +466,7 @@ $$
 
 ::::::
 
-Limits at infinity can also be used to comparte the **growth rate** of two functions, i.e. when can use the to determine whether a function "grows faster" than another function. 
+Limits at infinity can also be used to compare the **growth rate** of two functions, i.e. when can use the to determine whether a function "grows faster" than another function. 
 
 ::::::{prf:definition} Growth rate
 :label: Def:LimitAtInfinity:Growthrate
@@ -344,7 +495,7 @@ Consider the functions $f(x)=e^{ax}$, $g(x)=x^r$ and $h(x)=\ln(bx)$ for some $a>
 
 ## Oblique asymptotes
 
-Some functions do not a horizontal line as $x\rightarrow\infty$ or $x\rightarrow-\infty$, but, instead, approach a nonhorizontal (straight) line.
+Some functions do not a horizontal line as $x\rightarrow\infty$ or $x\rightarrow-\infty$, but, instead, approach a non-horizontal (straight) line.
 
 ::::::{prf:definition} Oblique asymptote
 :label: Def:LimitAtInfinity:Oblique
@@ -382,10 +533,16 @@ In that case, $f$ has the oblique asymptote $y=ax+b$ at both infinity and minus 
 ::::::{admonition} Proof
 :class: tudproof, dropdown
 
-The result follows amost directly from polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`). Indeed, this process allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\mathrm{deg}(r)<\mathrm{deg}(q)$ and $\mathrm{deg}(s)=\mathrm{p}-\mathrm{q}$. Since $\mathrm{deg}(p)=\mathrm{deg}(q)+1$, we obtain $\mathrm{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+...+a_1x+a_0$ and $q(x)=b_mx^m+...+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\mathrm{deg}(r)<\mathrm{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
+The result follows almost directly from polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`). Indeed, this process allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\mathrm{deg}(r)<\mathrm{deg}(q)$ and $\mathrm{deg}(s)=\mathrm{p}-\mathrm{q}$. Since $\mathrm{deg}(p)=\mathrm{deg}(q)+1$, we obtain $\mathrm{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+...+a_1x+a_0$ and $q(x)=b_mx^m+...+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\mathrm{deg}(r)<\mathrm{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
 
 $$
- \lim_{x\rightarrow\infty}f(x)-(ax+b)=\lim_{x\rightarrow\infty}\frac{r(x)}{q(x)}+s(x)-(ax+b)=\lim_{x\rightarrow\infty}\frac{a_nx^n+...+a_1x+a_0}{b_mx^m+...+b_1x+b_0}+ax+b-(ax+b)=\lim_{x\rightarrow\infty}\frac{\frac{a_n}{x^{m-n}}+...+\frac{a_1}{x^{m-1}}+\frac{a_0}{x^m}}{b_m+...+\frac{b_1}{x^{m-1}}+\frac{b_0}{x^m}}=\frac{0+...+0}{b_m+0+...+0}=0
+\begin{align*}
+ \lim_{x\rightarrow\infty}f(x)-(ax+b) &=\lim_{x\rightarrow\infty}\frac{r(x)}{q(x)}+s(x)-(ax+b)\\
+ &= \lim_{x\rightarrow\infty}\frac{a_nx^n+...+a_1x+a_0}{b_mx^m+...+b_1x+b_0}+ax+b-(ax+b)\\
+ &= \lim_{x\rightarrow\infty}\frac{\frac{a_n}{x^{m-n}}+...+\frac{a_1}{x^{m-1}}+\frac{a_0}{x^m}}{b_m+...+\frac{b_1}{x^{m-1}}+\frac{b_0}{x^m}}\\
+ &= \frac{0+...+0}{b_m+0+...+0}\\
+ &= 0.
+ \end{align*}
 $$
 
 As such, $y=ax+b$ is indeed the oblique asymptote of $f$ at infinity. The computation for the oblique asymptote at minus infinity is identical.
@@ -405,7 +562,7 @@ The corresponding result holds for an oblique asymptote at minus infinity.
 ::::::
 
 ::::::{admonition} Proof
-:class: tudproof, dropdown
+:class: tudproof, dropdown, full-width
 
 Suppose $f$ has an oblique asymptote $y=ax+b$ at infinity. Then $\lim\limits_{x\rightarrow\infty}\left(f(x)-ax-b\right)=0$, so we can evaluate
 
@@ -429,7 +586,7 @@ $$
 Notice that {prf:ref}`Def:LimitAtInfinity:Intuitivelimit` contains some mathematically vague terms such as 'approach' and 'arbitrarily large'. This intuitive definition is useful for the interpretation of limits at infinity, but not for proving the rules that we have encountered so far. As such, we use this remaining part of the section to provide the precise definition of limits at infinity and to prove the various results that we have encountered so far.
 
 ::::::{prf:definition} Precise definition of a limit at plus or minus infinity
-:label: Def:LimitAtInfinity:Precisedef
+:label: Def:LimitAtInfinity:Precisedefplusminus
 Let $f$ be a function that is defined for values of $x>d$ for some $d$. We say that the **limit at infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow \infty}f(x)=L$, whenever for each $\varepsilon>0$ there exists an $N\geq d$, such that for all $x$ with $x\geq N$, we have $|f(x)-L|<\varepsilon$. If no such value $L$ exists we say that the limit does not exist.
 
 Similarly, if $f$ is defined for values of $x<d$ for some $d$, we say that the **limit at minus infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow -\infty}f(x)=L$, whenever for each $\varepsilon>0$ there exists an $N\leq d$, such that for all $x$ with $x\leq N$, we have $|f(x)-L|<\varepsilon$. If no such value $L$ exists we say that the limit does not exist.
@@ -443,7 +600,7 @@ Let $f$ be a function that is defined for values of $x>d$ for some $d$. We say t
 
 Similarly, we say that $f$ has a **negative limit at infinity**, and we write $\lim\limits_{x\rightarrow \infty}f(x)=-\infty$, whenever for each $B<0$ there exists an $N\geq d$, such that for all $x$ with $x\geq N$, we have $f(x)\leq B$.
 
-Finally, we have the corresponding nnotations $\lim\limits_{x\rightarrow -\infty}f(x)=\infty$ and $\lim\limits_{x\rightarrow- \infty}f(x)=-\infty$ for a positive or negative **infinite limit at minus infinity**.
+Finally, we have the corresponding notations $\lim\limits_{x\rightarrow -\infty}f(x)=\infty$ and $\lim\limits_{x\rightarrow- \infty}f(x)=-\infty$ for a positive or negative **infinite limit at minus infinity**.
 ::::::
 
 
@@ -465,7 +622,7 @@ $$
 
 We conclude that $\lim\limits_{x\rightarrow \infty}x^r=\infty$.
 
-Now suppose that $f(x)=x^r$ where $r$ is a postive integer. Let $\varepsilon>0$ be given. Since $|x^{-r}|< \varepsilon$ precisely when $|x|>\frac{1}{\varepsilon^{\frac{1}{r}}}$ we choose $N=\frac{1}{\varepsilon^{\frac{1}{r}}}$. Then for $x\leq N$ we have
+Now suppose that $f(x)=x^r$ where $r$ is a positive integer. Let $\varepsilon>0$ be given. Since $|x^{-r}|< \varepsilon$ precisely when $|x|>\frac{1}{\varepsilon^{\frac{1}{r}}}$ we choose $N=\frac{1}{\varepsilon^{\frac{1}{r}}}$. Then for $x\leq N$ we have
 
 $$
  |f(x)-0|=|x^{-r}|<\left(\varepsilon^{\frac{1}{r}}\right)^r=\varepsilon
@@ -516,7 +673,7 @@ We conclude that $\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$. Th
 
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules`
-:class: tudproof 
+:class: tudproof, full-width
 We first prove the scalar multiple rule. If $c=0$, then the function $cf$ is constantly $0$, so its limit at infinity must be $0=cL$ as well. As such, we can assume that $c\neq 0$. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow \infty}f(x)=L$, we can pick $N$ in such a way that for $x\geq N$ we have $|f(x)-L|<\frac{\varepsilon}{|c|}$. Then for $x\geq N$ we have
 
 $$

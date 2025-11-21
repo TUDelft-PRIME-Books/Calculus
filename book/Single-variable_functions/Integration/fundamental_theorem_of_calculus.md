@@ -71,7 +71,8 @@ Solution. Now we have:
 $$
 \begin{align*}
 \frac{d}{dx}\int_x^{x^2}\ln(1+t^2)\,dt&=\frac{d}{dx}\left(\int_0^{x^2}\ln(1+t^2)\,dt-\int_0^x\ln(1+t^2)\,dt\right)\\
-&=\ln\left(1+\left(x^2\right)^2\right)\cdot\frac{d}{dx}(x^2)-\ln(1+x^2)=2x\ln(1+x^4)-\ln(1+x^2).
+&=\ln\left(1+\left(x^2\right)^2\right)\cdot\frac{d}{dx}(x^2)-\ln(1+x^2)\\
+&=2x\ln(1+x^4)-\ln(1+x^2).
 \end{align*}
 $$
 
@@ -107,7 +108,13 @@ $$
 During evaluations of integrals we often use the notation
 
 $$
-\int_a^bf(x)\,dx=\bigg[F(x)\bigg]_a^b=F(b)-F(a)\quad\text{or}\quad\int_a^bf(x)\,dx=F(x)\bigg|_a^b=F(b)-F(a).
+\int_a^bf(x)\,dx=\bigg[F(x)\bigg]_a^b=F(b)-F(a)
+$$
+
+or
+
+$$
+\int_a^bf(x)\,dx=F(x)\bigg|_a^b=F(b)-F(a).
 $$
 
 ::::::

@@ -185,7 +185,8 @@ $$
 
 $$
 \begin{align*}
--\ln\left|\frac{1+\cos(x)}{\sin(x)}\right|&=-\ln\left|\frac{1+\cos(x)}{\sin(x)}\cdot\frac{1-\cos(x)}{1-\cos(x)}\right|=-\ln\left|\frac{1-\cos^2(x)}{\sin(x)(1-\cos(x))}\right|\\
+-\ln\left|\frac{1+\cos(x)}{\sin(x)}\right|&=-\ln\left|\frac{1+\cos(x)}{\sin(x)}\cdot\frac{1-\cos(x)}{1-\cos(x)}\right|\\
+&=-\ln\left|\frac{1-\cos^2(x)}{\sin(x)(1-\cos(x))}\right|\\
 &=-\ln\left|\frac{\sin(x)}{1-\cos(x)}\right|=\ln\left|\frac{1-\cos(x)}{\sin(x)}\right|.
 \end{align*}
 $$
@@ -208,8 +209,9 @@ Use $\displaystyle\frac{1}{\cos(x)}=\frac{\cos(x)}{\cos^2(x)}$ and the substitut
 
 $$
 \begin{align*}
-\int\frac{dx}{\cos(x)}&=\int\frac{\cos(x)}{\cos^2(x)}\,dx=\int\frac{d\sin(x)}{1-\sin^2(x)}=\int\frac{du}{1-u^2}=\frac{1}{2}\int\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du\\
-&=\frac{1}{2}\left(\ln|1+u|-\ln|1-u|\right)+C=\frac{1}{2}\ln\left|\frac{1+u}{1-u}\right|+C=\frac{1}{2}\ln\left|\frac{1+\sin(x)}{1-\sin(x)}\right|+C.
+\int\frac{dx}{\cos(x)}&=\int\frac{\cos(x)}{\cos^2(x)}\,dx=\int\frac{d\sin(x)}{1-\sin^2(x)}=\int\frac{du}{1-u^2}\\
+&=\frac{1}{2}\int\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du=\frac{1}{2}\left(\ln|1+u|-\ln|1-u|\right)+C\\
+&=\frac{1}{2}\ln\left|\frac{1+u}{1-u}\right|+C=\frac{1}{2}\ln\left|\frac{1+\sin(x)}{1-\sin(x)}\right|+C.
 \end{align*}
 $$
 
@@ -237,8 +239,9 @@ Use $\displaystyle\frac{1}{\sin(x)}=\frac{\sin(x)}{\sin^2(x)}$ and the substitut
 
 $$
 \begin{align*}
-\int\frac{dx}{\sin(x)}&=\int\frac{\sin(x)}{\sin^2(x)}\,dx=-\int\frac{d\,\cos(x)}{1-\cos^2(x)}=-\int\frac{du}{1-u^2}=-\frac{1}{2}\int\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du\\
-&=-\frac{1}{2}\left(\ln|1+u|-\ln|1-u|\right)+C=-\frac{1}{2}\ln\left|\frac{1+u}{1-u}\right|+C=-\frac{1}{2}\ln\left|\frac{1+\cos(x)}{1-\cos(x)}\right|+C.
+\int\frac{dx}{\sin(x)}&=\int\frac{\sin(x)}{\sin^2(x)}\,dx=-\int\frac{d\,\cos(x)}{1-\cos^2(x)}=-\int\frac{du}{1-u^2}\\
+&=-\frac{1}{2}\int\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du=-\frac{1}{2}\left(\ln|1+u|-\ln|1-u|\right)+C\\
+&=-\frac{1}{2}\ln\left|\frac{1+u}{1-u}\right|+C=-\frac{1}{2}\ln\left|\frac{1+\cos(x)}{1-\cos(x)}\right|+C.
 \end{align*}
 $$
 
@@ -266,7 +269,8 @@ If $m=2k+1$ with $k\in\{0,1,2,\ldots\}$, then we have using the substitution $u=
 
 $$
 \begin{align*}
-\int\sin^{2k+1}(x)\cos^n(x)\,dx&=-\int\sin^{2k}(x)\cos^n(x)\,d\cos(x)=-\int\left(1-\cos^2(x)\right)^k\cos^n(x)\,d\cos(x)\\
+\int\sin^{2k+1}(x)\cos^n(x)\,dx&=-\int\sin^{2k}(x)\cos^n(x)\,d\cos(x)\\
+&=-\int\left(1-\cos^2(x)\right)^k\cos^n(x)\,d\cos(x)\\
 &=-\int\left(1-u^2\right)^ku^n\,du.
 \end{align*}
 $$
@@ -275,7 +279,8 @@ If $n=2k+1$ with $k\in\{0,1,2,\ldots\}$, then we have using the substitution $u=
 
 $$
 \begin{align*}
-\int\sin^m(x)\cos^{2k+1}(x)\,dx&=\int\sin^m(x)\cos^{2k}(x)\,d\sin(x)=\int\sin^m(x)\left(1-\sin^2(x)\right)^k\,d\sin(x)\\
+\int\sin^m(x)\cos^{2k+1}(x)\,dx&=\int\sin^m(x)\cos^{2k}(x)\,d\sin(x)\\
+&=\int\sin^m(x)\left(1-\sin^2(x)\right)^k\,d\sin(x)\\
 &=\int u^m\left(1-u^2\right)^k\,du.
 \end{align*}
 $$
@@ -290,8 +295,10 @@ Solution. Using $u=\cos(x)$ we obtain
 
 $$
 \begin{align*}
-\int\sin^3(x)\cos^2(x)\,dx&=-\int\sin^2(x)\cos^2(x)\,d\cos(x)=-\int\left(1-\cos^2(x)\right)\cos^2(x)\,d\cos(x)\\
-&=-\int(1-u^2)u^2\,du=-\int\left(u^2-u^4\right)\,du=-\frac{1}{3}u^3+\frac{1}{5}u^5+C\\
+\int\sin^3(x)\cos^2(x)\,dx&=-\int\sin^2(x)\cos^2(x)\,d\cos(x)\\
+&=-\int\left(1-\cos^2(x)\right)\cos^2(x)\,d\cos(x)\\
+&=-\int(1-u^2)u^2\,du=-\int\left(u^2-u^4\right)\,du\\
+&=-\frac{1}{3}u^3+\frac{1}{5}u^5+C\\
 &=-\frac{1}{3}\cos^3(x)+\frac{1}{5}\cos^5(x)+C.
 \end{align*}
 $$
@@ -306,8 +313,10 @@ Solution. Using $u=\sin(x)$ we obtain
 
 $$
 \begin{align*}
-\int\sin^4(x)\cos^3(x)\,dx&=\int\sin^4(x)\cos^2(x)\,d\sin(x)=\int\sin^4(x)\left(1-\sin^2(x)\right)\,d\sin(x)\\
-&=\int u^4(1-u^2)\,du=\int\left(u^4-u^6\right)\,du=\frac{1}{5}u^5-\frac{1}{7}u^7+C\\
+\int\sin^4(x)\cos^3(x)\,dx&=\int\sin^4(x)\cos^2(x)\,d\sin(x)\\
+&=\int\sin^4(x)\left(1-\sin^2(x)\right)\,d\sin(x)\\
+&=\int u^4(1-u^2)\,du=\int\left(u^4-u^6\right)\,du\\
+&=\frac{1}{5}u^5-\frac{1}{7}u^7+C\\
 &=\frac{1}{5}\sin^5(x)-\frac{1}{7}\sin^7(x)+C.
 \end{align*}
 $$
@@ -332,8 +341,10 @@ Consider $\displaystyle\int\sin^3(x)\cos^5(x)\,dx$.
 
 $$
 \begin{align*}
-\int\sin^3(x)\cos^5(x)\,dx&=-\int\sin^2(x)\cos^5(x)\,d\cos(x)=-\int\left(1-\cos^2(x)\right)\cos^5(x)\,d\cos(x)\\
-&=-\int(1-u^2)u^5\,du=-\int(u^5-u^7)\,du=-\frac{1}{6}u^6+\frac{1}{8}u^8+C\\
+\int\sin^3(x)\cos^5(x)\,dx&=-\int\sin^2(x)\cos^5(x)\,d\cos(x)\\
+&=-\int\left(1-\cos^2(x)\right)\cos^5(x)\,d\cos(x)\\
+&=-\int(1-u^2)u^5\,du=-\int(u^5-u^7)\,du\\
+&=-\frac{1}{6}u^6+\frac{1}{8}u^8+C\\
 &=-\frac{1}{6}\cos^6(x)+\frac{1}{8}\cos^8(x)+C.
 \end{align*}
 $$
@@ -342,9 +353,12 @@ $$
 
 $$
 \begin{align*}
-\int\sin^3(x)\cos^5(x)\,dx&=\int\sin^3(x)\cos^4(x)\,d\sin(x)=\int\sin^3(x)\left(1-\sin^2(x)\right)^2\,d\sin(x)\\
-&=\int u^3\left(1-u^2\right)^2\,du=\int u^3\left(1-2u^2+u^4\right)\,du=\int\left(u^3-2u^5+u^7\right)\,du\\
-&=\frac{1}{4}u^4-\frac{1}{3}u^6+\frac{1}{8}u^8+C=\frac{1}{4}\sin^4(x)-\frac{1}{3}\sin^6(x)+\frac{1}{8}\sin^8(x)+C.
+\int\sin^3(x)\cos^5(x)\,dx&=\int\sin^3(x)\cos^4(x)\,d\sin(x)\\
+&=\int\sin^3(x)\left(1-\sin^2(x)\right)^2\,d\sin(x)\\
+&=\int u^3\left(1-u^2\right)^2\,du=\int u^3\left(1-2u^2+u^4\right)\,du\\
+&=\int\left(u^3-2u^5+u^7\right)\,du\\
+&=\frac{1}{4}u^4-\frac{1}{3}u^6+\frac{1}{8}u^8+C\\
+&=\frac{1}{4}\sin^4(x)-\frac{1}{3}\sin^6(x)+\frac{1}{8}\sin^8(x)+C.
 \end{align*}
 $$
 
@@ -374,7 +388,10 @@ $$
 Using the substitution $u=\sin(2x)$ we find that
 
 $$
-\int\sin^2(2x)\cos(2x)\,dx=\frac{1}{2}\int\sin^2(2x)\,d\sin(2x)=\frac{1}{2}\int u^2\,du=\frac{1}{6}u^3+C_2=\frac{1}{6}\sin^2(2x)+C_2.
+\begin{align*}
+\int\sin^2(2x)\cos(2x)\,dx&=\frac{1}{2}\int\sin^2(2x)\,d\sin(2x)=\frac{1}{2}\int u^2\,du\\
+&=\frac{1}{6}u^3+C_2=\frac{1}{6}\sin^2(2x)+C_2.
+\end{align*}
 $$
 
 Finally, we conclude that
@@ -407,8 +424,9 @@ Solution. Using $u=\cos(x)$ we obtain
 
 $$
 \begin{align*}
-\int\frac{\sin^3(x)}{\cos^4(x)}\,dx&=-\int\frac{1-\cos^2(x)}{\cos^4(x)}\,d\cos(x)=-\int\frac{1-u^2}{u^4}\,du=-\int\left(\frac{1}{u^4}-\frac{1}{u^2}\right)\,du\\
-&=\frac{1}{3u^3}-\frac{1}{u}+C=\frac{1}{3\cos^3(x)}-\frac{1}{\cos(x)}+C.
+\int\frac{\sin^3(x)}{\cos^4(x)}\,dx&=-\int\frac{1-\cos^2(x)}{\cos^4(x)}\,d\cos(x)=-\int\frac{1-u^2}{u^4}\,du\\
+&=-\int\left(\frac{1}{u^4}-\frac{1}{u^2}\right)\,du=\frac{1}{3u^3}-\frac{1}{u}+C\\
+&=\frac{1}{3\cos^3(x)}-\frac{1}{\cos(x)}+C.
 \end{align*}
 $$
 
@@ -423,7 +441,10 @@ Evaluate $\displaystyle\int\frac{\sin^2(x)}{\cos^4(x)}\,dx$.
 Solution. Since $\displaystyle\frac{d}{dx}\tan(x)=\frac{1}{\cos^2(x)}$ we use $u=\tan(x)$ to obtain
 
 $$
-\int\frac{\sin^2(x)}{\cos^4(x)}\,dx=\int\tan^2(x)\,d\tan(x)=\int u^2\,du=\frac{1}{3}u^3+C=\frac{1}{3}\tan^3(x)+C.
+\begin{align*}
+\int\frac{\sin^2(x)}{\cos^4(x)}\,dx&=\int\tan^2(x)\,d\tan(x)=\int u^2\,du=\frac{1}{3}u^3+C\\
+&=\frac{1}{3}\tan^3(x)+C.
+\end{align*}
 $$
 
 ::::::
@@ -435,7 +456,10 @@ Evaluate $\displaystyle\int\frac{\cos^2(x)}{\sin^4(x)}\,dx$.
 Solution. Since $\displaystyle\frac{d}{dx}\left(\frac{\cos(x)}{\sin(x)}\right)=-\frac{1}{\sin^2(x)}$ we use $u=\dfrac{\cos(x)}{\sin(x)}$ to obtain
 
 $$
-\int\frac{\cos^2(x)}{\sin^4(x)}\,dx=-\int\frac{\cos^2(x)}{\sin^2(x)}\,d\left(\frac{\cos(x)}{\sin(x)}\right)=-\int u^2\,du=-\frac{1}{3}u^3+C=-\frac{1}{3}\frac{\cos^3(x)}{\sin^3(x)}+C.
+\begin{align*}
+\int\frac{\cos^2(x)}{\sin^4(x)}\,dx&=-\int\frac{\cos^2(x)}{\sin^2(x)}\,d\left(\frac{\cos(x)}{\sin(x)}\right)=-\int u^2\,du\\
+&=-\frac{1}{3}u^3+C=-\frac{1}{3}\frac{\cos^3(x)}{\sin^3(x)}+C.
+\end{align*}
 $$
 
 ::::::
@@ -448,8 +472,8 @@ Solution. Since $\displaystyle\frac{d}{dx}\tan(x)=\frac{1}{\cos^2(x)}=1+\tan^2(x
 
 $$
 \begin{align*}
-\int\frac{\sin^2(x)}{\cos^6(x)}\,dx&=\int\tan^2(x)(1+\tan^2(x))\,d\tan(x)=\int u^2(1+u^2)\,du=\frac{1}{3}u^3+\frac{1}{5}u^5+C\\
-&=\frac{1}{3}\tan^3(x)+\frac{1}{5}\tan^5(x)+C.
+\int\frac{\sin^2(x)}{\cos^6(x)}\,dx&=\int\tan^2(x)(1+\tan^2(x))\,d\tan(x)=\int u^2(1+u^2)\,du\\
+&=\frac{1}{3}u^3+\frac{1}{5}u^5+C=\frac{1}{3}\tan^3(x)+\frac{1}{5}\tan^5(x)+C.
 \end{align*}
 $$
 
@@ -478,7 +502,10 @@ Evaluate $\displaystyle\int\sin(5x)\cos(3x)\,dx$.
 Solution.
 
 $$
-\int\sin(5x)\cos(3x)\,dx=\frac{1}{2}\int(\sin(2x)+\sin(8x))\,dx=-\frac{1}{4}\cos(2x)-\frac{1}{16}\cos(8x)+C.
+\begin{align*}
+\int\sin(5x)\cos(3x)\,dx&=\frac{1}{2}\int(\sin(2x)+\sin(8x))\,dx\\
+&=-\frac{1}{4}\cos(2x)-\frac{1}{16}\cos(8x)+C.
+\end{align*}
 $$
 
 ::::::
@@ -490,7 +517,10 @@ Evaluate $\displaystyle\int\sin(2x)\cos(5x)\,dx$.
 Solution.
 
 $$
-\int\sin(2x)\cos(5x)\,dx=\frac{1}{2}\int(-\sin(3x)+\sin(7x))\,dx=\frac{1}{6}\cos(3x)-\frac{1}{14}\cos(7x)+C.
+\begin{align*}
+\int\sin(2x)\cos(5x)\,dx&=\frac{1}{2}\int(-\sin(3x)+\sin(7x))\,dx\\
+&=\frac{1}{6}\cos(3x)-\frac{1}{14}\cos(7x)+C.
+\end{align*}
 $$
 
 ::::::
@@ -502,7 +532,10 @@ Evaluate $\displaystyle\int\cos(4x)\cos(2x)\,dx$.
 Solution.
 
 $$
-\int\cos(4x)\cos(2x)\,dx=\frac{1}{2}\int(\cos(2x)+\cos(6x))\,dx=\frac{1}{4}\sin(2x)+\frac{1}{12}\sin(6x)+C.
+\begin{align*}
+\int\cos(4x)\cos(2x)\,dx&=\frac{1}{2}\int(\cos(2x)+\cos(6x))\,dx\\
+&=\frac{1}{4}\sin(2x)+\frac{1}{12}\sin(6x)+C.
+\end{align*}
 $$
 
 ::::::
@@ -514,7 +547,10 @@ Evaluate $\displaystyle\int\sin(x)\sin(3x)\,dx$.
 Solution.
 
 $$
-\int\sin(x)\sin(3x)\,dx=\frac{1}{2}\int(\cos(2x)-\cos(4x))\,dx=\frac{1}{4}\sin(2x)-\frac{1}{8}\sin(4x)+C.
+\begin{align*}
+\int\sin(x)\sin(3x)\,dx&=\frac{1}{2}\int(\cos(2x)-\cos(4x))\,dx\\
+&=\frac{1}{4}\sin(2x)-\frac{1}{8}\sin(4x)+C.
+\end{align*}
 $$
 
 ::::::
@@ -538,7 +574,7 @@ and
 
 $$
 \begin{align*}
-\int_{-\pi}^{\pi}\cos(mx)\cos(nx)\,dx&=\frac{1}{2}\int_{-\pi}^{\pi}\left(\cos((m-n)x)+\cos((m+n)x)\right)\,dx\\
+&\int_{-\pi}^{\pi}\cos(mx)\cos(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\left(\cos((m-n)x)+\cos((m+n)x)\right)\,dx\\
 &=\bigg[\frac{1}{2(m-n)}\sin((m-n)x)+\frac{1}{2(m+n)}\sin((m+n)x)\bigg]_{-\pi}^{\pi}=0.
 \end{align*}
 $$
@@ -553,7 +589,7 @@ $$
 
 $$
 \begin{align*}
-\int_{-\pi}^{\pi}\sin(mx)\sin(nx)\,dx&=\frac{1}{2}\int_{-\pi}^{\pi}\left(\cos((m-n)x)-\cos((m+n)x)\right)\,dx\\
+&\int_{-\pi}^{\pi}\sin(mx)\sin(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\left(\cos((m-n)x)-\cos((m+n)x)\right)\,dx\\
 &=\bigg[\frac{1}{2(m-n)}\sin((m-n)x)-\frac{1}{2(m+n)}\sin((m+n)x)\bigg]_{-\pi}^{\pi}=0.
 \end{align*}
 $$
@@ -568,7 +604,7 @@ $$
 
 $$
 \begin{align*}
-\int_{-\pi}^{\pi}\sin(mx)\cos(nx)\,dx&=\frac{1}{2}\int_{-\pi}^{\pi}\left(\sin((m-n)x)+\sin((m+n)x)\right)\,dx\\
+&\int_{-\pi}^{\pi}\sin(mx)\cos(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\left(\sin((m-n)x)+\sin((m+n)x)\right)\,dx\\
 &=\bigg[-\frac{1}{2(m-n)}\cos((m-n)x)-\frac{1}{2(m+n)}\cos((m+n)x)\bigg]_{-\pi}^{\pi}=0.
 \end{align*}
 $$
@@ -596,13 +632,19 @@ Now we consider higher powers of the sine and the cosine.
 For odd powers we use the same method as in the previous subsection. In fact, we deal with special cases of $\displaystyle\sin^m(x)\cos^n(x)\,dx$ with either $m=0$ or $n=0$. For $k\in\{1,2,3,\ldots\}$ we obtain
 
 $$
-\int\sin^{2k+1}(x)\,dx=-\int\sin^{2k}(x)\,d\cos(x)=-\int\left(1-\cos^2(x)\right)^k\,d\cos(x)=-\int\left(1-u^2\right)^k\,du
+\begin{align*}
+\int\sin^{2k+1}(x)\,dx&=-\int\sin^{2k}(x)\,d\cos(x)=-\int\left(1-\cos^2(x)\right)^k\,d\cos(x)\\
+&=-\int\left(1-u^2\right)^k\,du
+\end{align*}
 $$
 
 and
 
 $$
-\int\cos^{2k+1}(x)\,dx=\int\cos^{2k}(x)\,d\sin(x)=\int\left(1-\sin^2(x)\right)^k\,d\sin(x)=\int\left(1-u^2\right)^k\,du.
+\begin{align*}
+\int\cos^{2k+1}(x)\,dx&=\int\cos^{2k}(x)\,d\sin(x)=\int\left(1-\sin^2(x)\right)^k\,d\sin(x)\\
+&=\int\left(1-u^2\right)^k\,du.
+\end{align*}
 $$
 
 In both cases we end up with an integral of a polynomial, which can be directly evaluated using the fundamental theorem of calculus.
@@ -615,8 +657,9 @@ Solution. Using the substitution $u=\cos(x)$ we obtain
 
 $$
 \begin{align*}
-\int\sin^5(x)\,dx&=-\int\sin^4(x)\,d\cos(x)=-\int(1-\cos^2(x))^2\,d\cos(x)=-\int\left(1-u^2\right)^2\,du\\
-&=-\int(1-2u^2+u^4)\,du=-\left(u-\frac{2}{3}u^3+\frac{1}{5}u^5\right)+C\\
+\int\sin^5(x)\,dx&=-\int\sin^4(x)\,d\cos(x)=-\int(1-\cos^2(x))^2\,d\cos(x)\\
+&=-\int\left(1-u^2\right)^2\,du=-\int(1-2u^2+u^4)\,du\\
+&=-\left(u-\frac{2}{3}u^3+\frac{1}{5}u^5\right)+C\\
 &=-\cos(x)+\frac{2}{3}\cos^3(x)-\frac{1}{5}\cos^5(x)+C.
 \end{align*}
 $$
@@ -631,8 +674,8 @@ Solution. Using the substitution $u=\sin(x)$ we obtain
 
 $$
 \begin{align*}
-\int\cos^3(x)\,dx&=\int\cos^2(x)\,d\sin(x)=\int(1-\sin^2(x))\,d\sin(x)=\int(1-u^2)\,du\\
-&=u-\frac{1}{3}u^3+C=\sin(x)-\frac{1}{3}\sin^3(x)+C.
+\int\cos^3(x)\,dx&=\int\cos^2(x)\,d\sin(x)=\int(1-\sin^2(x))\,d\sin(x)\\
+&=\int(1-u^2)\,du=u-\frac{1}{3}u^3+C=\sin(x)-\frac{1}{3}\sin^3(x)+C.
 \end{align*}
 $$
 
@@ -647,7 +690,10 @@ Evaluate $\displaystyle\int\sin^4(x)\,dx$.
 Solution. Using $\sin^2(x)=\dfrac{1}{2}(1-\cos(2x))$ we obtain
 
 $$
-\int\sin^4(x)\,dx=\frac{1}{4}\int\left(1-\cos(2x)\right)^2\,dx=\frac{1}{4}\int\left(1-2\cos(2x)+\cos^2(2x)\right)\,dx.
+\begin{align*}
+\int\sin^4(x)\,dx&=\frac{1}{4}\int\left(1-\cos(2x)\right)^2\,dx\\
+&=\frac{1}{4}\int\left(1-2\cos(2x)+\cos^2(2x)\right)\,dx.
+\end{align*}
 $$
 
 Now we use $\cos^2(2x)=\dfrac{1}{2}(1+\cos(4x))$ to find that
@@ -669,14 +715,18 @@ We have seen that $\displaystyle\int\tan(x)\,dx=-\ln|\cos(x)|+C$.
 Since $\displaystyle\frac{d}{dx}\tan(x)=1+\tan^2(x)$ we have
 
 $$
-\int\tan^2(x)\,dx=\int\left(1+\tan^2(x)-1\right)\,dx=\int\left(1+\tan^2(x)\right)\,dx-\int1\,dx=\tan(x)-x+C.
+\begin{align*}
+\int\tan^2(x)\,dx&=\int\left(1+\tan^2(x)-1\right)\,dx=\int\left(1+\tan^2(x)\right)\,dx-\int1\,dx\\
+&=\tan(x)-x+C.
+\end{align*}
 $$
 
 For higher powers we use a reduction formula for $k\in\{2,3,4,\ldots\}$
 
 $$
 \begin{align*}
-\int\tan^k(x)\,dx&=\int\tan^{k-2}(x)\left(1+\tan^2(x)-1\right)\,dx=\int\tan^{k-2}(x)\,d\tan(x)-\int\tan^{k-2}(x)\,dx\\
+\int\tan^k(x)\,dx&=\int\tan^{k-2}(x)\left(1+\tan^2(x)-1\right)\,dx\\
+&=\int\tan^{k-2}(x)\,d\tan(x)-\int\tan^{k-2}(x)\,dx\\
 &=\frac{1}{k-1}\tan^{k-1}(x)-\int\tan^{k-2}(x)\,dx.
 \end{align*}
 $$
@@ -698,7 +748,10 @@ $$
 For $k=5$ we have
 
 $$
-\int\tan^5(x)\,dx=\frac{1}{4}\tan^2(x)-\int\tan^3(x)\,dx=\frac{1}{4}\tan^4(x)-\frac{1}{2}\tan^2(x)-\ln|\cos(x)|+C.
+\begin{align*}
+\int\tan^5(x)\,dx&=\frac{1}{4}\tan^2(x)-\int\tan^3(x)\,dx\\
+&=\frac{1}{4}\tan^4(x)-\frac{1}{2}\tan^2(x)-\ln|\cos(x)|+C.
+\end{align*}
 $$
 
 ::::{exercise}
@@ -751,7 +804,14 @@ $$
 
 This leads to
 
-$$\sin(x)=2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)=\frac{2t}{1+t^2}\quad\text{and}\quad\cos(x)=\cos^2(\tfrac{1}{2}x)-\sin^2(\tfrac{1}{2}x)=\frac{1-t^2}{1+t^2}.
+$$
+\sin(x)=2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)=\frac{2t}{1+t^2}
+$$
+
+and
+
+$$
+\cos(x)=\cos^2(\tfrac{1}{2}x)-\sin^2(\tfrac{1}{2}x)=\frac{1-t^2}{1+t^2}.
 $$
 
 Furthermore, we have $dx=\dfrac{2\,dt}{1+t^2}$.
@@ -783,7 +843,10 @@ $$
 or
 
 $$
-\frac{d}{dx}\left(\tan(\tfrac{1}{2}x)\right)=\frac{d}{dx}\left(\frac{\sin(\tfrac{1}{2}x)}{\cos(\frac{1}{2}x)}\right)=\frac{\frac{1}{2}\cos^2(\frac{1}{2})+\frac{1}{2}\sin^2(\frac{1}{2}x)}{\cos^2(\frac{1}{2}x)}=\frac{1}{2\cos^2(\frac{1}{2}x)}=\frac{1}{1+\cos(x)}.
+\begin{align*}
+\frac{d}{dx}\left(\tan(\tfrac{1}{2}x)\right)&=\frac{d}{dx}\left(\frac{\sin(\tfrac{1}{2}x)}{\cos(\frac{1}{2}x)}\right)=\frac{\frac{1}{2}\cos^2(\frac{1}{2})+\frac{1}{2}\sin^2(\frac{1}{2}x)}{\cos^2(\frac{1}{2}x)}\\
+&=\frac{1}{2\cos^2(\frac{1}{2}x)}=\frac{1}{1+\cos(x)}.
+\end{align*}
 $$
 
 :::
@@ -877,8 +940,9 @@ Solution. Let $t=\tan(\frac{1}{2}x)$, then we have $\tan(x)=\dfrac{2t}{1-t^2}$ a
 
 $$
 \begin{align*}
-\int\tan(x)\,dx&=\int\frac{2t}{1-t^2}\cdot\frac{2\,dt}{1+t^2}=\int\left(\frac{2t}{1-t^2}+\frac{2t}{1+t^2}\right)\,dt=\ln|1+t^2|-\ln|1-t^2|+C\\
-&=\ln\left|\frac{1+t^2}{1-t^2}\right|+C=\ln\left|\frac{1+\tan^2(\frac{1}{2}x)}{1-\tan^2(\frac{1}{2}x)}\right|+C=\ln\left|\frac{\cos^2(\frac{1}{2}x)+\sin^2(\frac{1}{2}x)}{\cos^2(\frac{1}{2}x)-\sin^2(\frac{1}{2}x)}\right|+C\\
+\int\tan(x)\,dx&=\int\frac{2t}{1-t^2}\cdot\frac{2\,dt}{1+t^2}=\int\left(\frac{2t}{1-t^2}+\frac{2t}{1+t^2}\right)\,dt\\
+&=\ln|1+t^2|-\ln|1-t^2|+C=\ln\left|\frac{1+t^2}{1-t^2}\right|+C\\
+&=\ln\left|\frac{1+\tan^2(\frac{1}{2}x)}{1-\tan^2(\frac{1}{2}x)}\right|+C=\ln\left|\frac{\cos^2(\frac{1}{2}x)+\sin^2(\frac{1}{2}x)}{\cos^2(\frac{1}{2}x)-\sin^2(\frac{1}{2}x)}\right|+C\\
 &=\ln\left|\frac{1}{\cos(x)}\right|+C=-\ln|\cos(x)|+C.
 \end{align*}
 $$
@@ -910,7 +974,10 @@ Show that $\displaystyle\frac{d}{dx}\left(\ln\left|\tan(\tfrac{1}{2}x)\right|\ri
 :class: solution, dropdown
 
 $$
-\frac{d}{dx}\left(\ln\left|\tan(\tfrac{1}{2}x)\right|\right)=\frac{1}{\tan(\frac{1}{2}x)}\cdot\frac{1}{\cos^2(\frac{1}{2}x)}\cdot\frac{1}{2}=\frac{1}{2\sin(\frac{1}{2}x)\cos(\frac{1}{2}x)}=\frac{1}{\sin(x)}.
+\begin{align*}
+\frac{d}{dx}\left(\ln\left|\tan(\tfrac{1}{2}x)\right|\right)&=\frac{1}{\tan(\frac{1}{2}x)}\cdot\frac{1}{\cos^2(\frac{1}{2}x)}\cdot\frac{1}{2}\\
+&=\frac{1}{2\sin(\frac{1}{2}x)\cos(\frac{1}{2}x)}=\frac{1}{\sin(x)}.
+\end{align*}
 $$
 
 :::
@@ -924,7 +991,8 @@ Solution. Let $t=\tan(\frac{1}{2}x)$, then we have $\cos(x)=\dfrac{1-t^2}{1+t^2}
 $$
 \begin{align*}
 \int\frac{dx}{\cos(x)}&=\int\frac{1}{\dfrac{1-t^2}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int\frac{2\,dt}{1-t^2}=\int\left(\frac{1}{1+t}+\frac{1}{1-t}\right)\,dt\\
-&=\ln|1+t|-\ln|1-t|+C=\ln\left|\frac{1+t}{1-t}\right|+C=\ln\left|\frac{1+\tan(\frac{1}{2}x)}{1-\tan(\frac{1}{2}x)}\right|+C.
+&=\ln|1+t|-\ln|1-t|+C=\ln\left|\frac{1+t}{1-t}\right|+C\\
+&=\ln\left|\frac{1+\tan(\frac{1}{2}x)}{1-\tan(\frac{1}{2}x)}\right|+C.
 \end{align*}
 $$
 
@@ -940,7 +1008,7 @@ Show that $\displaystyle\frac{d}{dx}\left(\ln\left|\frac{1+\tan(\frac{1}{2}x)}{1
 
 $$
 \begin{align*}
-\frac{d}{dx}\left(\ln\left|\frac{1+\tan(\frac{1}{2}x)}{1-\tan(\frac{1}{2}x)}\right|\right)&=\frac{1-\tan(\frac{1}{2}x)}{1+\tan(\frac{1}{2}x)}\cdot\frac{\dfrac{1}{2\cos^2(\frac{1}{2}x)}(1-\tan(\frac{1}{2}x))+\dfrac{1}{2\cos^2(\frac{1}{2}x)}(1+\tan(\frac{1}{2}x))}{(1-\tan(\frac{1}{2}x))^2}\\
+&\frac{d}{dx}\left(\ln\left|\frac{1+\tan(\frac{1}{2}x)}{1-\tan(\frac{1}{2}x)}\right|\right)=\frac{1-\tan(\frac{1}{2}x)}{1+\tan(\frac{1}{2}x)}\cdot\frac{\dfrac{1}{2\cos^2(\frac{1}{2}x)}(1-\tan(\frac{1}{2}x))+\dfrac{1}{2\cos^2(\frac{1}{2}x)}(1+\tan(\frac{1}{2}x))}{(1-\tan(\frac{1}{2}x))^2}\\
 &=\frac{1}{2\cos^2(\frac{1}{2}x)}\cdot\frac{2}{1-\tan^2(\frac{1}{2}x)}=\frac{1}{\cos^2(\frac{1}{2}x)-\sin^2(\frac{1}{2}x)}=\frac{1}{\cos(x)}.
 \end{align*}
 $$
@@ -965,9 +1033,11 @@ Hence we have
 $$
 \begin{align*}
 \int\frac{dx}{3\sin(x)+4\cos(x)}&=\int\frac{1}{\dfrac{6t}{1+t^2}+\dfrac{4-4t^2}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int\frac{2}{6t+4-4t^2}\,dt\\
-&=\int\frac{dt}{2+3t-2t^2}=\int\frac{dt}{(2-t)(1+2t)}=\frac{1}{5}\int\left(\frac{2}{1+2t}+\frac{1}{2-t}\right)\,dt\\
+&=\int\frac{dt}{2+3t-2t^2}=\int\frac{dt}{(2-t)(1+2t)}\\
+&=\frac{1}{5}\int\left(\frac{2}{1+2t}+\frac{1}{2-t}\right)\,dt\\
 &=\frac{1}{5}\left(\ln|2t+1|-\ln|2-t|\right)+C=\frac{1}{5}\ln\left|\frac{2t+1}{2-t}\right|+C\\
-&=\frac{1}{5}\ln\left|\frac{2\tan(\frac{1}{2}x)+1}{2-\tan(\frac{1}{2}x)}\right|+C=\frac{1}{5}\ln\left|\frac{2\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)}{2\cos(\frac{1}{2}x)-\sin(\frac{1}{2}x)}\right|+C.
+&=\frac{1}{5}\ln\left|\frac{2\tan(\frac{1}{2}x)+1}{2-\tan(\frac{1}{2}x)}\right|+C\\
+&=\frac{1}{5}\ln\left|\frac{2\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)}{2\cos(\frac{1}{2}x)-\sin(\frac{1}{2}x)}\right|+C.
 \end{align*}
 $$
 
@@ -986,8 +1056,9 @@ Since $1+\cos(x)=2\cos^2(\frac{1}{2}x)$ we obtain
 
 $$
 \begin{align*}
-\int_0^{\frac{1}{2}\pi}\sqrt{1+\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\sqrt{2\cos^2(\tfrac{1}{2}x)}\,dx=\sqrt{2}\int_0^{\frac{1}{2}\pi}\left|\cos(\tfrac{1}{2}x)\right|\,dx=\sqrt{2}\int_0^{\frac{1}{2}\pi}\cos(\tfrac{1}{2}x)\,dx\\
-&=2\sqrt{2}\sin(\tfrac{1}{2}x)\bigg|_0^{\frac{1}{2}\pi}=2\sqrt{2}\cdot\tfrac{1}{2}\sqrt{2}=2.
+\int_0^{\frac{1}{2}\pi}\sqrt{1+\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\sqrt{2\cos^2(\tfrac{1}{2}x)}\,dx=\sqrt{2}\int_0^{\frac{1}{2}\pi}\left|\cos(\tfrac{1}{2}x)\right|\,dx\\
+&=\sqrt{2}\int_0^{\frac{1}{2}\pi}\cos(\tfrac{1}{2}x)\,dx=2\sqrt{2}\sin(\tfrac{1}{2}x)\bigg|_0^{\frac{1}{2}\pi}\\
+&=2\sqrt{2}\cdot\tfrac{1}{2}\sqrt{2}=2.
 \end{align*}
 $$
 
@@ -1004,8 +1075,9 @@ Since $1-\cos(x)=2\sin^2(\frac{1}{2}x)$ we obtain
 
 $$
 \begin{align*}
-\int_0^{\frac{1}{2}\pi}\sqrt{1-\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\sqrt{2\sin^2(\tfrac{1}{2}x)}\,dx=\sqrt{2}\int_0^{\frac{1}{2}\pi}\left|\sin(\tfrac{1}{2}x)\right|\,dx=\sqrt{2}\int_0^{\frac{1}{2}\pi}\sin(\tfrac{1}{2}x)\,dx\\
-&=-2\sqrt{2}\cos(\tfrac{1}{2}x)\bigg|_0^{\frac{1}{2}\pi}=-2\sqrt{2}\cdot\tfrac{1}{2}\sqrt{2}+2\sqrt{2}=2\sqrt{2}-2.
+\int_0^{\frac{1}{2}\pi}\sqrt{1-\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\sqrt{2\sin^2(\tfrac{1}{2}x)}\,dx=\sqrt{2}\int_0^{\frac{1}{2}\pi}\left|\sin(\tfrac{1}{2}x)\right|\,dx\\
+&=\sqrt{2}\int_0^{\frac{1}{2}\pi}\sin(\tfrac{1}{2}x)\,dx=-2\sqrt{2}\cos(\tfrac{1}{2}x)\bigg|_0^{\frac{1}{2}\pi}\\
+&=-2\sqrt{2}\cdot\tfrac{1}{2}\sqrt{2}+2\sqrt{2}=2\sqrt{2}-2.
 \end{align*}
 $$
 
@@ -1013,7 +1085,12 @@ $$
 
 ::::{exercise}
 :label: Exc:Integration:TrigFunctionsExercise3
-Use $1=\sin^2(\theta)+\cos^2(\theta)$ and $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ to evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx$. 
+Use $1=\sin^2(\theta)+\cos^2(\theta)$ and $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ to evaluate 
+
+$$
+\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx.
+$$
+
 ::::
 
 :::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsExercise3`
@@ -1022,7 +1099,7 @@ Since $1-\sin(x)=\sin^2(\frac{1}{2}x)+\cos^2(\frac{1}{2}x)-2\sin(\frac{1}{2}x)\c
 
 $$
 \begin{align*}
-\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\sqrt{\sin^2(\tfrac{1}{2}x)-2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)+\cos^2(\tfrac{1}{2}x)}\,dx\\
+&\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx=\int_0^{\frac{1}{2}\pi}\sqrt{\sin^2(\tfrac{1}{2}x)-2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)+\cos^2(\tfrac{1}{2}x)}\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\sqrt{\left(\sin(\tfrac{1}{2}x)-\cos(\tfrac{1}{2}x)\right)^2}\,dx=\int_0^{\frac{1}{2}\pi}\left|\sin(\tfrac{1}{2}x)-\cos(\tfrac{1}{2}x)\right|\,dx.
 \end{align*}
 $$
@@ -1030,14 +1107,22 @@ $$
 Note that $\sin(\frac{1}{2}x)\leq\cos(\frac{1}{2}x)$ for $0\leq x\leq\tfrac{1}{2}\pi$. Hence we have
 
 $$
-\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx=\int_0^{\frac{1}{2}\pi}\left(\cos(\tfrac{1}{2}x)-\sin(\tfrac{1}{2}x)\right)\,dx=\bigg[2\sin(\tfrac{1}{2}x)+2\cos(\tfrac{1}{2}x)\bigg]_0^{\frac{1}{2}\pi}=2\sqrt{2}-2.
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\left(\cos(\tfrac{1}{2}x)-\sin(\tfrac{1}{2}x)\right)\,dx\\
+&=\bigg[2\sin(\tfrac{1}{2}x)+2\cos(\tfrac{1}{2}x)\bigg]_0^{\frac{1}{2}\pi}=2\sqrt{2}-2.
+\end{align*}
 $$
 
 :::
 
 ::::{exercise}
 :label: Exc:Integration:TrigFunctionsExercise4
-Use $1=\sin^2(\theta)+\cos^2(\theta)$ and $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ to evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx$. 
+Use $1=\sin^2(\theta)+\cos^2(\theta)$ and $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ to evaluate 
+
+$$
+\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx.
+$$
+
 ::::
 
 :::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsExercise4`
@@ -1046,7 +1131,7 @@ Since $1+\sin(x)=\sin^2(\frac{1}{2}x)+\cos^2(\frac{1}{2}x)+2\sin(\frac{1}{2}x)\c
 
 $$
 \begin{align*}
-\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\sqrt{\sin^2(\tfrac{1}{2}x)+2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)+\cos^2(\tfrac{1}{2}x)}\,dx\\
+&\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx=\int_0^{\frac{1}{2}\pi}\sqrt{\sin^2(\tfrac{1}{2}x)+2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)+\cos^2(\tfrac{1}{2}x)}\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\sqrt{\left(\sin(\tfrac{1}{2}x)+\cos(\tfrac{1}{2}x)\right)^2}\,dx=\int_0^{\frac{1}{2}\pi}\left|\sin(\tfrac{1}{2}x)+\cos(\tfrac{1}{2}x)\right|\,dx.
 \end{align*}
 $$
@@ -1054,7 +1139,10 @@ $$
 Note that $\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)\geq0$ for $0\leq x\leq\tfrac{1}{2}\pi$. Hence we have
 
 $$
-\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx=\int_0^{\frac{1}{2}\pi}\left(\cos(\tfrac{1}{2}x)+\sin(\tfrac{1}{2}x)\right)\,dx=\bigg[2\sin(\tfrac{1}{2}x)-2\cos(\tfrac{1}{2}x)\bigg]_0^{\frac{1}{2}\pi}=2.
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\left(\cos(\tfrac{1}{2}x)+\sin(\tfrac{1}{2}x)\right)\,dx\\
+&=\bigg[2\sin(\tfrac{1}{2}x)-2\cos(\tfrac{1}{2}x)\bigg]_0^{\frac{1}{2}\pi}=2.
+\end{align*}
 $$
 
 :::
