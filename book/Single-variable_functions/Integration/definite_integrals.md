@@ -115,9 +115,9 @@ Signed areas
 
 **Properties**
 
-- $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$;
-
 - $\displaystyle\int_a^af(x)\,dx=0$;
+
+- $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$;
 
 - $\displaystyle\int_a^bc\,dx=c(b-a)$ with $c$ a constant;
 

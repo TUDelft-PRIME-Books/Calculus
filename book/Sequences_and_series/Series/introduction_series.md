@@ -31,7 +31,7 @@ $$
 
 :::
 
-In {prf:ref}`Ex:Integration:IntroductionExamplesSum` we have seen that $\displaystyle\sum_{k=1}^nk=\frac{1}{2}n(n+1)$ for all $n\in\{1,2,3,\ldots\}$. This can also be proved using the principle of mathematical induction (see: {numref}`Topic:Sequences:MathematicalInduction`):
+In {prf:ref}`Ex:Integration:IntroductionExamplesSum` we have seen that $\displaystyle\sum_{k=1}^nk=\frac{1}{2}n(n+1)$ for all $n\in\{1,2,3,\ldots\}$. This can also be proved using the principle of mathematical induction:
 
 For $n=1$ this reads: $1=\frac{1}{2}\cdot1\cdot2$, which is true.
 
