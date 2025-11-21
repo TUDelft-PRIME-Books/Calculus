@@ -30,6 +30,7 @@ sphinx:
     sphinx_indexed_defs_indexed_nodes: ['strong']
     tud_change_titlesize: true
     new_tab_link_show_external_link_icon: true
+    visualized_auto_cluster: true
     numfig_secnum_depth: 2
     text_replacements:
       '# Admonitions': '# General blocks'
@@ -45,7 +46,7 @@ sphinx:
       '```{iframe} ../references.html': "```{iframe} ../../../../../references.html"
     mathjax3_config:
       loader:
-        load: ['[tex]/cancel']
+        load: ['[tex]/cancel','ui/lazy']
       tex:
         packages:
           '[+]': ['cancel']
@@ -90,6 +91,7 @@ sphinx:
     - sphinx_indexed_definitions
     - sphinx_new_tab_link
     - sphinx_apa_references                     # For APA citations
+    - sphinx_visualized
 
 bibtex_bibfiles: 
   - references.bib

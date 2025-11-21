@@ -1,4 +1,4 @@
-# NOTE: Differentiability and partial derivatives
+# Partial derivatives
 
 In this section we cover:
 
@@ -8,6 +8,4 @@ In this section we cover:
 - Higher order partial derivatives, including Clairaut's theorem
 - Chain rule
 - Implicit function theorem
-- Application: partial differential equations
-
-NOTE: Differentiability is not possible yet, since you need the concept of linearization there
+- Application: partial differential equations, only introduction of the topic and showing a function is a solution. Not solving PDEs.

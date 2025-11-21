@@ -1,3 +1,5 @@
+(Section:SequenceConvergence)=
+
 # Convergence of sequences
 
 In this section we cover:

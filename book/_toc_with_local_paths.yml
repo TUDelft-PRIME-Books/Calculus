@@ -4,6 +4,7 @@ parts:
 - caption: Front matter
   chapters:
   - file: introduction.md
+  - file: graph_of_content.md
   numbered: false
 - caption: Algebra
   chapters:
@@ -87,12 +88,12 @@ parts:
     - file: Multivariable_functions/Functions_curves_and_surfaces/nonlinear_systems_in_two_variables.md
   - file: Multivariable_functions/Partial_differentiation/introduction_partial_differentiation.md
     sections:
-    - file: Multivariable_functions/Partial_differentiation/differentiability_and_partial_derivatives.md
+    - file: Multivariable_functions/Partial_differentiation/partial_derivatives.md
     - file: Multivariable_functions/Partial_differentiation/directional_derivative_and_gradient.md
-    - file: Multivariable_functions/Partial_differentiation/locally_extreme_values.md
-    - file: Multivariable_functions/Partial_differentiation/globally_extreme_values.md
-    - file: Multivariable_functions/Partial_differentiation/constrained_optimisation.md
     - file: Multivariable_functions/Partial_differentiation/approximating_functions.md
+    - file: Multivariable_functions/Partial_differentiation/local_extrema.md
+    - file: Multivariable_functions/Partial_differentiation/global_extrema.md
+    - file: Multivariable_functions/Partial_differentiation/optimisation_under_equality_constraints.md
   - file: Multivariable_functions/Multivariable_integration/introduction_multivariable_integration.md
     sections:
     - file: Multivariable_functions/Multivariable_integration/multiple_and_repeated_integrals.md
