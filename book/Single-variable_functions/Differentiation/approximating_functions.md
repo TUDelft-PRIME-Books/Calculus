@@ -22,7 +22,7 @@ $$L(x)=f(a)+f'(a)(x-a).$$
 Near the point $(a,f(a))$, the graph of the function and the tangent line are very close to each other, and the tangent line can therefore be used to approximate the graph of the function near that point. In other words, we can approximate the function $f$ by the linear function $L$ when we are close to the value $a$. This leads to the following definition and properties:
 
 ::::{prf:definition}
-:label: Def:TaylorPolynomials:Linearisation
+:label: Def:ApproximatingFunctions:Linearisation
 
 The **linearisation** of a function $f$ at a point $(a,f(a))$ is given by
 
@@ -30,7 +30,7 @@ $$L(x)=f(a)+f'(a)(x-a).$$
 ::::
 
 ::::{prf:property}
-:label: Prop:TaylorPolynomials:Linearisation
+:label: Prop:ApproximatingFunctions:Linearisation
 
 Assume $L$ is the linearisation of a function $f$ at the point $(a,f(a))$. Then:
 - $L$ is the linear function that best approximates $f$ near $a$.
@@ -40,7 +40,7 @@ Assume $L$ is the linearisation of a function $f$ at the point $(a,f(a))$. Then:
 ::::
 
 ::::{prf:example}
-:label: Ex:TaylorPolynomials:cuberoot
+:label: Ex:ApproximatingFunctions:cuberoot
 
 Let's use the function $f(x)=\sqrt[3] x$ as an example and say that $a=8$. Since $f(8)=2$ and $f'(8)  =  \frac{1}{12}$, we have
 
@@ -54,10 +54,10 @@ $$
 \sqrt[3] x \ \approx \  2+\frac{1}{12}(x-8).
 $$
 
-{numref}`Figure %s <Fig:TaylorPolynomials:cuberoot>` shows the graph of $\sqrt[3]{x}$ and the linearisation $L(x)$.
+{numref}`Figure %s <Fig:ApproximatingFunctions:cuberoot>` shows the graph of $\sqrt[3]{x}$ and the linearisation $L(x)$.
 
 :::{figure} Images/Fig-TaylorPolynomials-cuberoot.svg
-:name: Fig:TaylorPolynomials:cuberoot
+:name: Fig:ApproximatingFunctions:cuberoot
 :class: dark-light
 
 The function $\sqrt[3]{x}$ and the linearisation $ L(x)$.
@@ -94,7 +94,7 @@ $$
 In other words, we have the following property:
 
 ::::{prf:property}
-:label: Prop:TaylorPolynomials:LinearisationChange
+:label: Prop:ApproximatingFunctions:LinearisationChange
 
 Assume $L$ is the linearisation of a function $f$ at the point $(a,f(a))$. Then the change in the value of $f$ when we change the input from $a$ to $a+h$ can be approximated by
 $$
@@ -106,7 +106,7 @@ The next example shows how we can use this property to investigate function valu
 
 :::::{margin}
 :::{figure} Images/Construction.png
-:name: Fig:TaylorPolynomials:Construction
+:name: Fig:ApproximatingFunctions:Construction
 :class: dark-light
 
 A set of cylindrical steel beams.
@@ -115,7 +115,7 @@ A set of cylindrical steel beams.
 :::::
 
 :::::{prf:example}
-:label: Ex:TaylorPolynomials:ApproxChange
+:label: Ex:ApproximatingFunctions:ApproxChange
 
 A company constructs cylindrical steel beams with a length of $8$ meter. The diameter of each beam is equal to $0.6$ meter. We wonder how much the volume of a beam approximately would increase if, because of a construction error, the diameter would increase by $0.01$ meter.
 
@@ -176,7 +176,7 @@ $$
 This function will be called the _Taylor polynomial of order 2 centered at_ $x=a$.
 
 ::::{prf:example}
-:label: Ex:TaylorPolynomials:cuberoot-quad
+:label: Ex:ApproximatingFunctions:cuberoot-quad
 
 Let's see how this works out for our function $f(x)=\sqrt[3] x$ when $a=8$. Since $f(8)=2$, $f'(8)=\dfrac{1}{12}$ and $f''(8)=-\dfrac{1}{144}$, we have
 
@@ -190,10 +190,10 @@ $$
 \sqrt[3] x \ \approx \ 2+\frac 1{12}(x-8)-\frac 1{288}(x-8)^2.
 $$
 
-In {numref}`Figure %s <Fig:TaylorPolynomials:cuberootquad>` you can see that this quadratic polynomial is indeed a better approximation than the linearization. 
+In {numref}`Figure %s <Fig:ApproximatingFunctions:cuberootquad>` you can see that this quadratic polynomial is indeed a better approximation than the linearization. 
 
 :::{figure} Images/Fig-TaylorPolynomials-cuberoot-quad.svg
-:name: Fig:TaylorPolynomials:cuberootquad
+:name: Fig:ApproximatingFunctions:cuberootquad
 :class: dark-light
 
 The function $\sqrt[3]{x}$ and the Taylor polynomials $T_1(x)$ and $T_2(x)$.
@@ -225,7 +225,7 @@ The Taylor polynomial $T_n(x)$ of degree $n$ of a function $f(x)$ centered at $a
 The **$n$th-order Taylor polynomial $T_n$ of $f$ with center $a$** is given by 
 
 :::{math} 
-:label: Eq:TaylorPolynomials:Tn
+:label: Eq:ApproximatingFunctions:Tn
 
 T_n(x)= f(a)+f'(a)(x-a)+\frac {f''(a)}{2} (x-a)^2+\frac {f'''(a)}{3!} (x-a)^3+ \ \cdots \ +\dfrac {f^{(n)}(a)}{n!}(x-a)^n,
 
@@ -243,7 +243,7 @@ for integers $k\geq1$ and $0!=1$.
 
 These polynomials are named after the mathematician [Brook Taylor (1685-1731)](https://en.wikipedia.org/wiki/Brook_Taylor), who introduced them in 1715.
 
-Using the summation sign notation, Equation {eq}`Eq:TaylorPolynomials:Tn` can be written as follows:
+Using the summation sign notation, Equation {eq}`Eq:ApproximatingFunctions:Tn` can be written as follows:
 
 $$
 T_n(x)=\sum_{k=0}^n \frac{f^{(k)}(a)}{k!}(x-a)^k.
@@ -252,7 +252,7 @@ $$
 These functions can be used to approximate $f(x)$ if $x$ is not too far from $a$.
 
 ::::{prf:example}
-:label: Ex:TaylorPolynomials:exp
+:label: Ex:ApproximatingFunctions:exp
 
 Taylor polynomials of $e^x$ centered at $0$ are easy to compute since this function is its own derivative. This implies that if $f(x)=e^x$, then $f^{(n)}(0)$ is equal to $1$ for each $n$. If we plug this into the formula for $T_3(x)$, then we find the following polynomial:
 
@@ -269,7 +269,7 @@ $$
 ::::
 
 ::::{prf:example}
-:label: Ex:TaylorPolynomials:cos
+:label: Ex:ApproximatingFunctions:cos
 
 Computing Taylor polynomials of $\cos(x)$ requires a little bit more work. Let's start with an approximation by a second-order Taylor polynomial centered at 0. The derivative of $\cos(x)$ is $-\sin(x)$ and the second derivative is equal to $-\cos(x)$. For $f(x)=\cos(x)$ we therefore have $f(0)=1$, $f'(0)=0$ and $f''(0)=-1$. The Taylor polynomial $T_2(x)$ is equal to
 
@@ -340,7 +340,7 @@ We would like to be able to have an upper bound for the difference between the a
 Consider we have a scooter:
 
 :::{figure} Images/scooter.jpg
-:name: Fig:TaylorPolynomials:cuberoot-quad
+:name: Fig:ApproximatingFunctions:cuberoot-quad
 :figwidth: 50%
 
 A scooter. <a href="https://www.vecteezy.com/free-vector/scooter">Scooter Vectors by Vecteezy</a>
@@ -419,10 +419,10 @@ for all $x$ in $D$.
 
 ::::
 
-This theorem can be visualed as in {numref}`Figure %s <Fig:TaylorPolynomials:error>`, where we use $n=1$.
+This theorem can be visualed as in {numref}`Figure %s <Fig:ApproximatingFunctions:error>`, where we use $n=1$.
 
 :::{figure} Images/Fig-TaylorPolynomials-error.svg
-:name: Fig:TaylorPolynomials:error
+:name: Fig:ApproximatingFunctions:error
 :figwidth: 50%
 :class: dark-light
 
@@ -529,4 +529,110 @@ Since the error is smaller than 0.0001 this means that the actual value of $\sin
 
 ## Grasple exercises
 
-.....
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2286a124-b092-4a23-b292-79c0a03c70b4?id=63715
+:label: Grasple:ApproximatingFunctions:LinArctan
+:dropdown:
+:description: Linearisation of $\arctan(x)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/21d38731-0b57-4fc5-af15-936ef3a414fc?id=63728
+:label: Grasple:ApproximatingFunctions:LinPower
+:dropdown:
+:description: Linearisation of a power of $x$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b36e91ec-7f75-4bd8-9669-e40968b9f15c?id=78767
+:label: Grasple:ApproximatingFunctions:LinApprox
+:dropdown:
+:description: Approximate a function value using a linearisation.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7d9a7257-7c30-4be4-8277-6b57eb17e2c0?id=127213
+:label: Grasple:ApproximatingFunctions:LinChange
+:dropdown:
+:description: Approximate change in function value using a linearisation.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8cd84d06-42ea-4ff2-8a3f-86fe5ac45bd9?id=75827
+:label: Grasple:ApproximatingFunctions:LinRelative
+:dropdown:
+:description: Relative errors.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/282946e0-2d88-41b6-970c-55c26d28d714?id=64606
+:label: Grasple:ApproximatingFunctions:T2Sine
+:dropdown:
+:description: Finding $T_2$ for a sine function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/282946e0-2d88-41b6-970c-55c26d28d714?id=64606
+:label: Grasple:ApproximatingFunctions:T2PolyExp
+:dropdown:
+:description: Finding $T_2$ for a polynomial times an exponential function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0d05a9a9-8d42-4ee3-ac40-706b7ac4844f?id=64953
+:label: Grasple:ApproximatingFunctions:T2PolyExp
+:dropdown:
+:description: Finding $T_2$ for a polynomial times an exponential function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0d05a9a9-8d42-4ee3-ac40-706b7ac4844f?id=64953
+:label: Grasple:ApproximatingFunctions:T2PolyExp
+:dropdown:
+:description: Finding $T_2$ for a polynomial times an exponential function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/523a3822-e8b6-4c85-923f-d8c73dcffee1?id=64629
+:label: Grasple:ApproximatingFunctions:T3Reciprocal
+:dropdown:
+:description: Finding $T_3$ of a reciprocal function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4bec421b-5b79-4159-85c8-e6cfdc203606?id=105586
+:label: Grasple:ApproximatingFunctions:T1Error
+:dropdown:
+:description: Using Taylor's inequality for $T_1$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4d3f51de-2210-4f7d-985a-edddfb121b4f?id=104206
+:label: Grasple:ApproximatingFunctions:T3Error
+:dropdown:
+:description: Using Taylor's inequality for $T_3$.
+
+::::
