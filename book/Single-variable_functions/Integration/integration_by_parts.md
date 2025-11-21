@@ -42,7 +42,10 @@ The purpose of the method is that the latter integral is easier to evaluate than
 Taking $u=x$ and $dv=\cos(x)\,dx=d\sin(x)$ we obtain
 
 $$
-\int x\cos(x)\,dx=\int x\,d\sin(x)=x\sin(x)-\int\sin(x)\,dx=x\sin(x)+\cos(x)+C.
+\begin{align*}
+\int x\cos(x)\,dx&=\int x\,d\sin(x)=x\sin(x)-\int\sin(x)\,dx\\
+&=x\sin(x)+\cos(x)+C.
+\end{align*}
 $$
 
 ::::::
@@ -53,8 +56,10 @@ Sometimes we have to apply the method more than once:
 :label: Ex.Integration:PartsPowerExp
 
 $$
-\int x^2e^{2x}\,dx=\frac{1}{2}\int x^2\,de^{2x}=\frac{1}{2}x^2e^{2x}-\frac{1}{2}\int e^{2x}\,dx^2
-=\frac{1}{2}x^2e^{2x}-\int xe^{2x}\,dx.
+\begin{align*}
+\int x^2e^{2x}\,dx&=\frac{1}{2}\int x^2\,de^{2x}=\frac{1}{2}x^2e^{2x}-\frac{1}{2}\int e^{2x}\,dx^2\\
+&=\frac{1}{2}x^2e^{2x}-\int xe^{2x}\,dx.
+\end{align*}
 $$
 
 Note that the integral $\displaystyle\int xe^{2x}\,dx$ looks easier to evaluate than the original integral $\displaystyle\int x^2e^{2x}\,dx$. However, we still don't know an antiderivative of the integrand. Using integration by parts once more, we obtain
@@ -84,7 +89,10 @@ $$
 Note that the choice $u=x$ and $dv=\cos(x)\,dx$ in the first example was crucial. The other choice $u=\cos(x)$ and $dv=x\,dx$ leads to a more difficult integral:
 
 $$
-\int x\cos(x)\,dx=\frac{1}{2}\int\cos(x)\,dx^2=\frac{1}{2}x^2\cos(x)-\frac{1}{2}\int x^2\,d\cos(x)=\frac{1}{2}x^2\cos(x)+\frac{1}{2}\int x^2\sin(x)\,dx.
+\begin{align*}
+\int x\cos(x)\,dx&=\frac{1}{2}\int\cos(x)\,dx^2=\frac{1}{2}x^2\cos(x)-\frac{1}{2}\int x^2\,d\cos(x)\\
+&=\frac{1}{2}x^2\cos(x)+\frac{1}{2}\int x^2\sin(x)\,dx.
+\end{align*}
 $$
 
 That $\cos(x)$ in the integrand is replaced by $\sin(x)$ does not make the integral more difficult. However, the raise of the power of $x$ does. Note that in the first two examples the power of $x$ was lowered by $1$ in each step.
@@ -97,7 +105,8 @@ In order to find an antiderivative of $\arctan(x)$ we apply integration by parts
 
 $$
 \begin{align*}
-\int\arctan(x)\,dx&=x\arctan(x)-\int x\,d\arctan(x)=x\arctan(x)-\int\frac{x}{1+x^2}\,dx\\
+\int\arctan(x)\,dx&=x\arctan(x)-\int x\,d\arctan(x)\\
+&=x\arctan(x)-\int\frac{x}{1+x^2}\,dx\\
 &=x\arctan(x)-\frac{1}{2}\ln(1+x^2)+C.
 \end{align*}
 $$
@@ -129,7 +138,8 @@ Find an antiderivative of $\arcsin(x)$.
 
 $$
 \begin{align*}
-\int\arcsin(x)\,dx&=x\arcsin(x)-\int x\,d\arcsin(x)=x\arcsin(x)-\int\frac{x}{\sqrt{1-x^2}}\,dx\\
+\int\arcsin(x)\,dx&=x\arcsin(x)-\int x\,d\arcsin(x)\\
+&=x\arcsin(x)-\int\frac{x}{\sqrt{1-x^2}}\,dx\\
 &=x\arcsin(x)+\sqrt{1-x^2}+C.
 \end{align*}
 $$
@@ -146,7 +156,8 @@ Find an antiderivative of $\arccos(x)$.
 
 $$
 \begin{align*}
-\int\arccos(x)\,dx&=x\arccos(x)-\int x\,d\arccos(x)=x\arccos(x)+\int\frac{x}{\sqrt{1-x^2}}\,dx\\
+\int\arccos(x)\,dx&=x\arccos(x)-\int x\,d\arccos(x)\\
+&=x\arccos(x)+\int\frac{x}{\sqrt{1-x^2}}\,dx\\
 &=x\arccos(x)-\sqrt{1-x^2}+C.
 \end{align*}
 $$
@@ -163,8 +174,9 @@ Consider $\displaystyle\int x^3\ln(x)\,dx$ for $x>0$. If we choose $u=\ln(x)$ an
 
 $$
 \begin{align*}
-\int x^3\ln(x)\,dx&=\frac{1}{4}\int\ln(x)\,dx^4=\frac{1}{4}x^4\ln(x)-\frac{1}{4}\int x^4\,d\ln(x)=\frac{1}{4}x^4\ln(x)-\frac{1}{4}\int x^4\cdot\frac{1}{x}\,dx\\
-&=\frac{1}{4}x^4\ln(x)-\frac{1}{4}\int x^3\,dx=\frac{1}{4}x^4\ln(x)-\frac{1}{16}x^4+C.
+\int x^3\ln(x)\,dx&=\frac{1}{4}\int\ln(x)\,dx^4=\frac{1}{4}x^4\ln(x)-\frac{1}{4}\int x^4\,d\ln(x)\\
+&=\frac{1}{4}x^4\ln(x)-\frac{1}{4}\int x^4\cdot\frac{1}{x}\,dx=\frac{1}{4}x^4\ln(x)-\frac{1}{4}\int x^3\,dx\\
+&=\frac{1}{4}x^4\ln(x)-\frac{1}{16}x^4+C.
 \end{align*}
 $$
 
@@ -177,7 +189,10 @@ Note that this method works for every integral of the form $\displaystyle\int x^
 The integral $\displaystyle\int\frac{\ln(x)}{x}\,dx$ can be evaluated using the substitution $u=\ln(x)$, which implies that $du=\displaystyle\frac{1}{x}\,dx$. However, it can also be done using integration by parts:
 
 $$
-\int\frac{\ln(x)}{x}\,dx=\int\ln(x)\,d\ln(x)=\ln(x)\cdot\ln(x)-\int\ln(x)\,d\ln(x)=(\ln(x))^2-\int\frac{\ln(x)}{x}\,dx.
+\begin{align*}
+\int\frac{\ln(x)}{x}\,dx&=\int\ln(x)\,d\ln(x)=\ln(x)\cdot\ln(x)-\int\ln(x)\,d\ln(x)\\
+&=(\ln(x))^2-\int\frac{\ln(x)}{x}\,dx.
+\end{align*}
 $$
 
 Hence, we have: $2\displaystyle\int\frac{\ln(x)}{x}\,dx=(\ln(x))^2$ and therefore $\displaystyle\int\frac{\ln(x)}{x}\,dx=\frac{1}{2}(\ln(x))^2+C$.
@@ -190,7 +205,8 @@ In the next example we deal with a product of a trigonometric function and an ex
 
 $$
 \begin{align*}
-\int e^{-2x}\cos(3x)\,dx&=-\frac{1}{2}\int\cos(3x)\,de^{-2x}=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}\int e^{-2x}\,d\cos(3x)\\
+&\int e^{-2x}\cos(3x)\,dx=-\frac{1}{2}\int\cos(3x)\,de^{-2x}\\
+&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}\int e^{-2x}\,d\cos(3x)\\
 &=-\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int e^{-2x}\sin(3x)\,dx\\
 &=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}\int\sin(3x)\,de^{-2x}\\
 &=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\sin(3x)-\frac{3}{4}\int e^{-2x}\,d\sin(3x)\\
@@ -221,7 +237,8 @@ Here we chose the trigonometric function for $u$ in both the first and the secon
 
 $$
 \begin{align*}
-\int e^{-2x}\cos(3x)\,dx&=-\frac{1}{2}\int\cos(3x)\,de^{-2x}=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}\int e^{-2x}\,d\cos(3x)\\
+&\int e^{-2x}\cos(3x)\,dx=-\frac{1}{2}\int\cos(3x)\,de^{-2x}\\
+&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}\int e^{-2x}\,d\cos(3x)\\
 &=-\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int e^{-2x}\sin(3x)\,dx\\
 &=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}\int e^{-2x}\,d\cos(3x)\\
 &=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}e^{-2x}\cos(3x)-\frac{1}{2}\int\cos(3x)\,de^{-2x}\\
@@ -239,7 +256,8 @@ Evaluate $\displaystyle\int e^{-2x}\cos(3x)\,dx$ by taking $u=e^{-2x}$ in each s
 
 $$
 \begin{align*}
-\int e^{-2x}\cos(3x)\,dx&=\frac{1}{3}\int e^{-2x}\,d\sin(3x)=\frac{1}{3}e^{-2x}\sin(3x)-\frac{1}{3}\int\sin(3x)\,de^{-2x}\\
+&\int e^{-2x}\cos(3x)\,dx=\frac{1}{3}\int e^{-2x}\,d\sin(3x)\\
+&=\frac{1}{3}e^{-2x}\sin(3x)-\frac{1}{3}\int\sin(3x)\,de^{-2x}\\
 &=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\int e^{-2x}\sin(3x)\,dx\\
 &=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}\int e^{-2x}\,d\cos(3x)\\
 &=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)+\frac{2}{9}\int\cos(3x)\,de^{-2x}\\
@@ -290,8 +308,9 @@ $$
 
 $$
 \begin{align*}
-\int_0^{\frac{1}{2}}\arcsin(x)\,dx&=x\arcsin(x)\bigg|_0^{\frac{1}{2}}-\int_0^{\frac{1}{2}}x\,d\arcsin(x)=\frac{1}{2}\cdot\frac{1}{6}\pi-\int_0^{\frac{1}{2}}\frac{x}{\sqrt{1-x^2}}\,dx\\
-&=\frac{1}{12}\pi+\sqrt{1-x^2}\bigg|_0^{\frac{1}{2}}=\frac{1}{12}\pi+\frac{1}{2}\sqrt{3}-1.
+\int_0^{\frac{1}{2}}\arcsin(x)\,dx&=x\arcsin(x)\bigg|_0^{\frac{1}{2}}-\int_0^{\frac{1}{2}}x\,d\arcsin(x)\\
+&=\frac{1}{2}\cdot\frac{1}{6}\pi-\int_0^{\frac{1}{2}}\frac{x}{\sqrt{1-x^2}}\,dx=\frac{1}{12}\pi+\sqrt{1-x^2}\bigg|_0^{\frac{1}{2}}\\
+&=\frac{1}{12}\pi+\frac{1}{2}\sqrt{3}-1.
 \end{align*}
 $$
 
@@ -338,7 +357,8 @@ Now we use integration by parts to find that
 $$
 \begin{align*}
 \int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt&=\frac{1}{2}\int_{\pi/2}^{\pi}u\cos(u)\,du=\frac{1}{2}\int_{\pi/2}^{\pi}u\,d\sin(u)\\
-&=\frac{1}{2}u\sin(u)\bigg|_{\pi/2}^{\pi}-\frac{1}{2}\int_{\pi/2}^{\pi}\sin(u)\,du=-\frac{1}{4}\pi+\frac{1}{2}\cos(u)\bigg|_{\pi/2}^{\pi}=-\frac{1}{4}\pi-\frac{1}{2}.
+&=\frac{1}{2}u\sin(u)\bigg|_{\pi/2}^{\pi}-\frac{1}{2}\int_{\pi/2}^{\pi}\sin(u)\,du\\
+&=-\frac{1}{4}\pi+\frac{1}{2}\cos(u)\bigg|_{\pi/2}^{\pi}=-\frac{1}{4}\pi-\frac{1}{2}.
 \end{align*}
 $$
 
@@ -362,7 +382,8 @@ Now we use integration by parts to find that
 $$
 \begin{align*}
 \int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt&=\frac{1}{2}\int_{\pi/2}^{\pi}u\sin(u)\,du=-\frac{1}{2}\int_{\pi/2}^{\pi}u\,d\cos(u)\\
-&=-\frac{1}{2}u\cos(u)\bigg|_{\pi/2}^{\pi}+\frac{1}{2}\int_{\pi/2}^{\pi}\cos(u)\,du=\frac{1}{2}\pi+\frac{1}{2}\sin(u)\bigg|_{\pi/2}^{\pi}=\frac{1}{2}\pi-\frac{1}{2}.
+&=-\frac{1}{2}u\cos(u)\bigg|_{\pi/2}^{\pi}+\frac{1}{2}\int_{\pi/2}^{\pi}\cos(u)\,du\\
+&=\frac{1}{2}\pi+\frac{1}{2}\sin(u)\bigg|_{\pi/2}^{\pi}=\frac{1}{2}\pi-\frac{1}{2}.
 \end{align*}
 $$
 
@@ -418,7 +439,10 @@ Find a reduction formula for $\displaystyle\int x^ne^{-x}\,dx$.
 :class: solution, dropdown
 
 $$
-\int x^ne^{-x}\,dx=-\int x^n\,de^{-x}=-x^ne^{-x}+\int e^{-x}\,dx^n=-x^ne^{-x}+n\int x^{n-1}e^{-x}\,dx.
+\begin{align*}
+\int x^ne^{-x}\,dx&=-\int x^n\,de^{-x}=-x^ne^{-x}+\int e^{-x}\,dx^n\\
+&=-x^ne^{-x}+n\int x^{n-1}e^{-x}\,dx.
+\end{align*}
 $$
 
 Define $I_n:=\displaystyle\int x^ne^{-x}\,dx$, then we have
@@ -435,14 +459,18 @@ In {prf:ref}`Ex.Integration:PartsPowerCos` we evaluated the integral $\displayst
 Let $n\in\{2,3,4,\ldots\}$, then we obtain using integration by parts
 
 $$
-\int x^n\cos(x)\,dx=\int x^n\,d\sin(x)=x^n\sin(x)-\int\sin(x)\,dx^n=x^n\sin(x)-n\int x^{n-1}\sin(x)\,dx.
+\begin{align*}
+\int x^n\cos(x)\,dx&=\int x^n\,d\sin(x)=x^n\sin(x)-\int\sin(x)\,dx^n\\
+&=x^n\sin(x)-n\int x^{n-1}\sin(x)\,dx.
+\end{align*}
 $$
 
 Applying integration by parts once more, we find that
 
 $$
 \begin{align*}
-\int x^n\cos(x)\,dx&=x^n\sin(x)+n\int x^{n-1}\,d\cos(x)=x^n\sin(x)+nx^{n-1}\cos(x)-n\int\cos(x)\,dx^{n-1}\\
+\int x^n\cos(x)\,dx&=x^n\sin(x)+n\int x^{n-1}\,d\cos(x)\\
+&=x^n\sin(x)+nx^{n-1}\cos(x)-n\int\cos(x)\,dx^{n-1}\\
 &=x^n\sin(x)+nx^{n-1}\cos(x)-n(n-1)\int x^{n-2}\cos(x)\,dx.
 \end{align*}
 $$
@@ -460,7 +488,10 @@ I_2=x^2\sin(x)+2x\cos(x)-2I_0=x^2\sin(x)+2x\cos(x)-2\sin(x)+C,
 $$
 
 $$
-I_3=x^3\sin(x)+3x^2\cos(x)-6I_1=x^3\sin(x)+3x^2\cos(x)-6x\sin(x)-6\cos(x)+C,
+\begin{align*}
+I_3&=x^3\sin(x)+3x^2\cos(x)-6I_1\\
+&=x^3\sin(x)+3x^2\cos(x)-6x\sin(x)-6\cos(x)+C,
+\end{align*}
 $$
 
 and so on.
@@ -475,8 +506,10 @@ Find a reduction formula for $\displaystyle\int x^n\sin(x)\,dx$.
 
 $$
 \begin{align*}
-\int x^n\sin(x)\,dx&=-\int x^n\,d\cos(x)=-x^n\cos(x)+\int\cos(x)\,dx^n=-x^n\cos(x)+n\int x^{n-1}\cos(x)\,dx\\
-&=-x^n\cos(x)+n\int x^{n-1}\,d\sin(x)=-x^n\cos(x)+nx^{n-1}\sin(x)-n\int\sin(x)\,dx^{n-1}\\
+\int x^n\sin(x)\,dx&=-\int x^n\,d\cos(x)=-x^n\cos(x)+\int\cos(x)\,dx^n\\
+&=-x^n\cos(x)+n\int x^{n-1}\cos(x)\,dx\\
+&=-x^n\cos(x)+n\int x^{n-1}\,d\sin(x)\\
+&=-x^n\cos(x)+nx^{n-1}\sin(x)-n\int\sin(x)\,dx^{n-1}\\
 &=-x^n\cos(x)+nx^{n-1}\sin(x)-n(n-1)\int x^{n-2}\sin(x)\,dx.
 \end{align*}
 $$
@@ -490,7 +523,10 @@ $$
 Furthermore, we have $I_0:=\displaystyle\int\sin(x)\,dx=-\cos(x)+C$ and
 
 $$
-I_1:=\int x\sin(x)\,dx-\int x\,d\cos(x)=-x\cos(x)+\int\cos(x)\,dx=-x\cos(x)+\sin(x)+C.
+\begin{align*}
+I_1:&=\int x\sin(x)\,dx-\int x\,d\cos(x)\\
+&=-x\cos(x)+\int\cos(x)\,dx=-x\cos(x)+\sin(x)+C.
+\end{align*}
 $$
 
 :::
@@ -505,7 +541,8 @@ Find a reduction formula for $\displaystyle\int\left(\ln(x)\right)^n\,dx$.
 
 $$
 \begin{align*}
-\int\left(\ln(x)\right)^n\,dx&=x\left(\ln(x)\right)^n-\int x\,d\left(\ln(x)\right)^n=x\left(\ln(x)\right)^n-n\int x\left(\ln(x)\right)^{n-1}\frac{1}{x}\,dx\\
+\int\left(\ln(x)\right)^n\,dx&=x\left(\ln(x)\right)^n-\int x\,d\left(\ln(x)\right)^n\\
+&=x\left(\ln(x)\right)^n-n\int x\left(\ln(x)\right)^{n-1}\frac{1}{x}\,dx\\
 &=x\left(\ln(x)\right)^n-n\int\left(\ln(x)\right)^{n-1}\,dx.
 \end{align*}
 $$
@@ -529,7 +566,8 @@ For $n=2,3,4,\ldots$ we obtain
 
 $$
 \begin{align*}
-\int\sin^n(x)\,dx&=-\int\sin^{n-1}(x)\,\cos(x)=-\cos(x)\sin^{n-1}(x)+\int\cos(x)\,d\sin^{n-1}(x)\\
+\int\sin^n(x)\,dx&=-\int\sin^{n-1}(x)\,\cos(x)\\
+&=-\cos(x)\sin^{n-1}(x)+\int\cos(x)\,d\sin^{n-1}(x)\\
 &=-\cos(x)\sin^{n-1}(x)+(n-1)\int\cos(x)\sin^{n-2}(x)\cos(x)\,dx\\
 &=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\cos^2(x)\,dx.
 \end{align*}
@@ -539,7 +577,8 @@ Now we use $\cos^2(x)=1-\sin^2(x)$ to find
 
 $$
 \begin{align*}
-\int\sin^n(x)\,dx&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\left(1-\sin^2(x)\right)\,dx\\
+&\int\sin^n(x)\,dx\\
+&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\left(1-\sin^2(x)\right)\,dx\\
 &=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\,dx-(n-1)\int\sin^n(x)\,dx.
 \end{align*}
 $$
@@ -579,7 +618,8 @@ Now we use $\sin^2(x)=1-\cos^2(x)$ to find
 
 $$
 \begin{align*}
-\int\cos^n(x)\,dx&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\left(1-\cos^2(x)\right)\,dx\\
+&\int\cos^n(x)\,dx\\
+&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\left(1-\cos^2(x)\right)\,dx\\
 &=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\,dx-(n-1)\int\cos^n(x)\,dx.
 \end{align*}
 $$
@@ -612,7 +652,10 @@ $$
 :class: solution, dropdown
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)\bigg|_0^{\frac{1}{2}\pi}+\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx&=-\frac{1}{n}\cos(x)\sin^{n-1}(x)\bigg|_0^{\frac{1}{2}\pi}+\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx\\
+&=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,
+\end{align*}
 $$
 
 since $\cos(\frac{1}{2}\pi)=0$ and $\sin(0)=0$. Note that $\sin^{n-1}(x)$ contains at least one factor $\sin(x)$ for $n=2,3,4,\ldots$.
@@ -639,7 +682,10 @@ $$
 Iteration now leads to
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2n}{2n+1}\cdot\frac{2n-2}{2n-1}\cdot\frac{2n-4}{2n-3}\cdots\frac{2}{3}\int_0^{\frac{1}{2}\pi}\sin(x)\,dx=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx&=\frac{2n}{2n+1}\cdot\frac{2n-2}{2n-1}\cdot\frac{2n-4}{2n-3}\cdots\frac{2}{3}\int_0^{\frac{1}{2}\pi}\sin(x)\,dx\\
+&=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},
+\end{align*}
 $$
 
 since $\displaystyle\int_0^{\frac{1}{2}\pi}\sin(x)\,dx=-\cos(x)\bigg|_0^{\frac{1}{2}\pi}=1$. Note that the products in the numerator and the denominator are written in the opposite order.
@@ -666,7 +712,10 @@ $$
 Iteration now leads to
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{2n-1}{2n}\cdot\frac{2n-3}{2n-2}\cdot\frac{2n-5}{2n-4}\cdots\frac{1}{2}\int_0^{\frac{1}{2}\pi}1\,dx=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx&=\frac{2n-1}{2n}\cdot\frac{2n-3}{2n-2}\cdot\frac{2n-5}{2n-4}\cdots\frac{1}{2}\int_0^{\frac{1}{2}\pi}1\,dx\\
+&=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},
+\end{align*}
 $$
 
 since $\displaystyle\int_0^{\frac{1}{2}\pi}1\,dx=\frac{\pi}{2}$. Note that the products in the numerator and the denominator are written in the opposite order.
@@ -742,7 +791,10 @@ $$
 (d) Finally, we use the results of {numref}`Exc:Integration:PartsReductionSinDefiniteOdd` and {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to find
 
 $$
-1=\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}=\lim_{n\to\infty}\frac{\dfrac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)}}{\dfrac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\dfrac{\pi}{2}}=\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}\frac{2}{\pi}.
+\begin{align*}
+1=\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}&=\lim_{n\to\infty}\frac{\dfrac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)}}{\dfrac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\dfrac{\pi}{2}}\\
+&=\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}\frac{2}{\pi}.
+\end{align*}
 $$
 
 This implies that
@@ -760,7 +812,8 @@ In the previous section we have seen that $\displaystyle\int_0^1\frac{\ln(1+x)}{
 
 $$
 \begin{align*}
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^1\ln(1+x)\,d\arctan(x)=\ln(1+x)\arctan(x)\bigg|_0^1-\int\arctan(x)\,d\ln(1+x)\\
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^1\ln(1+x)\,d\arctan(x)\\
+&=\ln(1+x)\arctan(x)\bigg|_0^1-\int\arctan(x)\,d\ln(1+x)\\
 &=\frac{1}{4}\pi\ln(2)-\int_0^1\frac{\arctan(x)}{1+x}\,dx.
 \end{align*}
 $$
@@ -774,11 +827,17 @@ This implies that
 
 ::::::{admonition} A different approach to Serret's integral (bonus material)
 :class: solution, dropdown
-The results in {eq}`Eq:Integration:PartsSerret` can also be obtained using the Feynman method (see: the section on imporper integrals).
+The results in {eq}`Eq:Integration:PartsSerret` can also be obtained using the Feynman method (see: the section on improper integrals).
 
 Note that Serret's integral is a special case of $I(\alpha):=\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
 
-Differentiation with respect to $\alpha$ leads to $I'(\alpha)=\displaystyle\frac{\ln(1+\alpha^2)}{1+\alpha^2}+\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx$. Now we use (see the section on integration of rational functions for more details) 
+Differentiation with respect to $\alpha$ leads to 
+
+$$
+I'(\alpha)=\displaystyle\frac{\ln(1+\alpha^2)}{1+\alpha^2}+\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx.
+$$ 
+
+Now we use (see the section on integration of rational functions for more details) 
  
 $$
 \frac{x}{(1+x^2)(1+\alpha x)}=\frac{1}{1+\alpha^2}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)
@@ -788,7 +847,8 @@ to obtain
 
 $$
 \begin{align*}
-\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx&=\frac{1}{1+\alpha^2}\int_0^{\alpha}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)\,dx\\
+&\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx\\
+&=\frac{1}{1+\alpha^2}\int_0^{\alpha}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)\,dx\\
 &=\frac{1}{1+\alpha^2}\bigg[\alpha\arctan(x)+\frac{1}{2}\ln(1+x)-\ln(1+\alpha x)\bigg]_0^{\alpha}\\
 &=\frac{1}{1+\alpha^2}\left(\alpha\arctan(\alpha)+\frac{1}{2}\ln(1+\alpha^2)-\ln(1+\alpha^2)\right)\\
 &=\frac{\alpha}{1+\alpha^2}\arctan(\alpha)-\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}.
@@ -801,8 +861,10 @@ $$
 \begin{align*}
 I(\alpha)&=\int\frac{\alpha}{1+\alpha^2}\arctan(\alpha)\,d\alpha+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
 &=\frac{1}{2}\int\arctan(\alpha)\,d\ln(1+\alpha^2)+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
-&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\ln(1+\alpha^2)\,d\arctan(\alpha)+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
-&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
+&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\ln(1+\alpha^2)\,d\arctan(\alpha)\\
+&{}\quad\quad\quad{}+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
+&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
+&{}\quad\quad\quad{}+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
 &=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)+C\quad\Longrightarrow\quad I(\alpha)=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2).
 \end{align*}
 $$
@@ -825,7 +887,11 @@ $$
 \end{align*}
 $$
 
-This implies that: $\displaystyle\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)=\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
+This implies that: 
+
+$$
+\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)=\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
+$$
 
 For $\alpha=1$ this reads {eq}`Eq:Integration:PartsSerret`.
 
