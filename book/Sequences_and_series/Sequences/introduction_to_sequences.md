@@ -167,8 +167,10 @@ which implies that $c_1=\displaystyle\frac{1}{\sqrt{5}}$ and $c_2=-\displaystyle
 Hence we have
 
 $$
-F_n=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n
-=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}},\quad n=0,1,2,\ldots.
+\begin{align*}
+F_n&=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n\\
+&=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}},\quad n=0,1,2,\ldots.
+\end{align*}
 $$
 
 This formula is remarkable since all numbers in the Fibonacci sequence are integers. In this formula this is far from evident. However we have for instance:
@@ -207,12 +209,20 @@ $\varphi=\lim\limits_{n\to\infty}\dfrac{F_{n+1}}{F_n}$ in nature
 
 Plaatjes naast elkaar
 
-In order to prove that $\displaystyle\lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n}=\varphi$ we use the fact that $-1<\displaystyle\frac{1-\varphi}{\varphi}=\frac{1-\sqrt{5}}{1+\sqrt{5}}<0$ to obtain
+In order to prove that $\displaystyle\lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n}=\varphi$ we use the fact that 
 
 $$
-\lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n}=\lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n}
-=\lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}
-=\frac{\varphi+0}{1+0}=\varphi.
+-1<\frac{1-\varphi}{\varphi}=\frac{1-\sqrt{5}}{1+\sqrt{5}}<0
+$$ 
+
+to obtain
+
+$$
+\begin{align*}
+\lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n}&=\lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n}
+=\lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}\\
+&=\frac{\varphi+0}{1+0}=\varphi.
+\end{align*}
 $$
 
 *Remark*: $\varphi=\dfrac{1+\sqrt{5}}{2}\approx1.618$, $\displaystyle\frac{1}{\varphi}=\varphi-1=\frac{\sqrt{5}-1}{2}\approx0.618$ and $\dfrac{1-\varphi}{\varphi}\approx-0.382$.
@@ -267,12 +277,20 @@ $$
 L_n=\varphi^n+(1-\varphi)^n,\quad n=0,1,2,\ldots.
 $$
 
-Similarly as for the Fibonacci numbers we use that fact that $-1<\displaystyle\frac{1-\varphi}{\varphi}=\frac{1-\sqrt{5}}{1+\sqrt{5}}<0$ to obtain
+Similarly as for the Fibonacci numbers we use that fact that 
 
 $$
-\lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}=\lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n}
-=\lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}
-=\frac{\varphi+0}{1+0}=\varphi.
+-1<\frac{1-\varphi}{\varphi}=\frac{1-\sqrt{5}}{1+\sqrt{5}}<0
+$$ 
+
+to obtain
+
+$$
+\begin{align*}
+\lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}&=\lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n}
+=\lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}\\
+&=\frac{\varphi+0}{1+0}=\varphi.
+\end{align*}
 $$
 
 :::

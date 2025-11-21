@@ -62,7 +62,7 @@ Consider $\displaystyle\int\frac{1}{(1+x)\sqrt{x}}\,dx$ for $x>0$.
 If we set $u=\sqrt{x}$ (or $x=u^2$), we obtain that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $\dfrac{1}{\sqrt{x}}\,dx=2\,du$. Hence, we find that
 
 $$
-\int\frac{1}{(1+x)\sqrt{x}}\,dx=2\int\frac{1}{1+u^2}\,du=2\arctan(u)+C=2\arctan(\sqrt{x})+C.
+\int\frac{1}{(1+x)\sqrt{x}}\,dx=\int\frac{2}{1+u^2}\,du=2\arctan(u)+C=2\arctan(\sqrt{x})+C.
 $$
 
 ::::::
@@ -72,7 +72,13 @@ $$
 Prove that for $\alpha\in\mathbb{R}\setminus\{0\}$ we have
 
 $$
-\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C\quad\text{and}\quad\int\frac{x}{x^2+\alpha^2}\,dx=\frac{1}{2}\ln(x^2+\alpha^2)+C.
+\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C
+$$
+
+and
+
+$$
+\int\frac{x}{x^2+\alpha^2}\,dx=\frac{1}{2}\ln(x^2+\alpha^2)+C.
 $$
 
 These formulas will be used frequently in the section on integration of rational functions.
@@ -152,6 +158,37 @@ $$
 
 ::::::
 
+In the section on definite integrals we have already seen the following intuitively result, which can now be proved using a substitution:
+
+::::::{prf:Theorem}
+Let $f$ be a continuous function defined on $[-a,a]$. Then we have
+
+(a) If $f$ is *odd*, id est $f(-x)=-f(x)$ for all $x$, then: $\displaystyle\int_{-a}^af(x)\,dx=0$.
+
+(b) If $f$ is *even*, id est $f(-x)=f(x)$ for all $x$, then: $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$.
+::::::
+
+::::::{prf:Proof}
+In both cases we use the substitution $x=-t$ with $dx=-dt$:
+
+$$
+\int_{-a}^0f(x)\,dx=-\int_a^0f(-t)\,dt=\int_0^af(-t)\,dt=\int_0^af(-x)\,dx.
+$$
+
+(a) If $f(-x)=-f(x)$ for all $x$, we have $\displaystyle\int_{-a}^0f(x)\,dx=-\int_0^af(x)\,dx$, which implies that 
+
+$$
+\int_{-a}^af(x)\,dx=\int_{-a}^0f(x)\,dx+\int_0^af(x)\,dx=0.
+$$
+
+(b) If $f(-x)=f(x)$ for all $x$, we have $\displaystyle\int_{-a}^0f(x)\,dx=\int_0^af(x)\,dx$, which implies that 
+
+$$
+\int_{-a}^af(x)\,dx=\int_{-a}^0f(x)\,dx+\int_0^af(x)\,dx=2\int_0^af(x)\,dx.
+$$
+
+::::::
+
 ::::{exercise}
 :label: Exc:Integration:SubstitutionCos
 Consider the integral $\displaystyle\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx$.
@@ -216,13 +253,20 @@ $$
 Note that $\cos(t)\geq0$ for $-\frac{1}{2}\pi\leq t\leq\frac{1}{2}\pi$. Using $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ we then obtain
 
 $$
-\int_{-1}^1\sqrt{1-x^2}\,dx=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1+\cos(2t))\,dt=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{2}\pi.
+\begin{align*}
+\int_{-1}^1\sqrt{1-x^2}\,dx&=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1+\cos(2t))\,dt\\
+&=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{2}\pi.
+\end{align*}
 $$
 
 *Remark*: the integral denotes the area of the upper half of the unit circle.
 ::::::
 
-Instead of using the substitution $x=a\sin(t)$ we may also use the substitution $x=a\cos(t)$, which leads to $dx=-a\sin(t)\,dt$ and $\sqrt{a^2-x^2}=\sqrt{a^2-a^2\cos^2(t)}=\sqrt{a^2\sin^2(t)}=|a\sin(t)|$. 
+Instead of using the substitution $x=a\sin(t)$ we may also use the substitution $x=a\cos(t)$, which leads to $dx=-a\sin(t)\,dt$ and 
+
+$$
+\sqrt{a^2-x^2}=\sqrt{a^2-a^2\cos^2(t)}=\sqrt{a^2\sin^2(t)}=|a\sin(t)|.
+$$ 
 
 ::::{exercise}
 :label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution1
@@ -240,7 +284,10 @@ $$
 Note that $\sin(t)\geq0$ for $0\leq t\leq\pi$. Using $\sin^2(t)=\frac{1}{2}(1-\cos(2t))$ we then obtain
 
 $$
-\int_{-1}^1\sqrt{1-x^2}\,dx=\int_0^{\pi}\sin^2(t)\,dt=\frac{1}{2}\int_0^{\pi}(1-\cos(2t))\,dt=\bigg[\frac{1}{2}t-\frac{1}{4}\sin(2t)\bigg]_0^{\pi}=\frac{1}{2}\pi.
+\begin{align*}
+\int_{-1}^1\sqrt{1-x^2}\,dx&=\int_0^{\pi}\sin^2(t)\,dt=\frac{1}{2}\int_0^{\pi}(1-\cos(2t))\,dt\\
+&=\bigg[\frac{1}{2}t-\frac{1}{4}\sin(2t)\bigg]_0^{\pi}=\frac{1}{2}\pi.
+\end{align*}
 $$
 
 :::
@@ -268,7 +315,10 @@ $$
 Finally, we have $\sin^2(2t)=\frac{1}{2}(1-\cos(4t))$ which leads to
 
 $$
-\int_{-1}^1x^2\sqrt{1-x^2}\,dx=\frac{1}{8}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1-\cos(4t))\,dt=\bigg[\frac{1}{8}t-\frac{1}{32}\sin(4t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{8}\pi.
+\begin{align*}
+\int_{-1}^1x^2\sqrt{1-x^2}\,dx&=\frac{1}{8}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1-\cos(4t))\,dt\\
+&=\bigg[\frac{1}{8}t-\frac{1}{32}\sin(4t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{8}\pi.
+\end{align*}
 $$
 
 :::
@@ -324,9 +374,10 @@ $$
 We conclude that
 
 $$
-\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\left[\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|\right]_0^{\frac{1}{4}\pi}=\ln(1+\sqrt{2}).
+\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\left[\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|\right]_0^{\frac{1}{4}\pi}=\ln(1+\sqrt{2}).
 $$
 
+and therefore $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\ln(1+\sqrt{2})$.
 ::::::
 
 ::::{exercise}
@@ -359,7 +410,10 @@ Evaluate $\displaystyle\int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx$.
 Solution. Let $x=\dfrac{1}{\cos(t)}$, then we have $dx=\dfrac{\sin(t)}{\cos^2(t)}\,dt$. Furthermore, if $x=1$ then $t=0$ and if $x=\sqrt{2}$ then $t=\frac{1}{4}\pi$. Hence we find that
 
 $$
-\int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt.
+\begin{align*}
+\int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx&=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt\\
+&=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt.
+\end{align*}
 $$
 
 Now we use $\cos^2(t)=1-\sin^2(t)$ and the substitution $u=\sin(t)$ to find that
@@ -378,7 +432,8 @@ to find that
 
 $$
 \begin{align*}
-\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du&=\frac{1}{4}\int_0^{\frac{1}{2}\sqrt{2}}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,dt\\
+&\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du\\
+&=\frac{1}{4}\int_0^{\frac{1}{2}\sqrt{2}}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,dt\\
 &=\frac{1}{4}\bigg[\ln|1-u|+\frac{1}{1-u}-\ln|1+u|-\frac{1}{1+u}\bigg]_0^{\frac{1}{2}\sqrt{2}}\\
 &=\frac{1}{4}\left(\ln(1-\tfrac{1}{2}\sqrt{2})+\frac{1}{1-\frac{1}{2}\sqrt{2}}-\ln(1+\tfrac{1}{2}\sqrt{2})-\frac{1}{1+\frac{1}{2}\sqrt{2}}\right)\\
 &=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}.
@@ -430,7 +485,14 @@ Hence, we have: $\sin(\frac{1}{2}x)=\pm\dfrac{t}{\sqrt{1+t^2}}$. Since $\sin(\fr
 
 This leads to
 
-$$\sin(x)=2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)=\frac{2t}{1+t^2}\quad\text{and}\quad\cos(x)=\cos^2(\tfrac{1}{2}x)-\sin^2(\tfrac{1}{2}x)=\frac{1-t^2}{1+t^2}.
+$$
+\sin(x)=2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)=\frac{2t}{1+t^2}
+$$
+
+and
+
+$$
+\cos(x)=\cos^2(\tfrac{1}{2}x)-\sin^2(\tfrac{1}{2}x)=\frac{1-t^2}{1+t^2}.
 $$
 
 Furthermore, we have $dx=\dfrac{2\,dt}{1+t^2}$.
@@ -442,7 +504,10 @@ Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)}$.
 Solution. Using $t=\tan(\frac{1}{2}x)$ we obtain
 
 $$
-\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)}=\int_0^1\frac{1}{1+\dfrac{2t}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int_0^1\frac{2\,dt}{(t+1)^2}=-\frac{2}{1+t}\bigg|_0^1=-1+2=1.
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)}&=\int_0^1\frac{1}{1+\dfrac{2t}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int_0^1\frac{2\,dt}{(t+1)^2}\\
+&=-\frac{2}{1+t}\bigg|_0^1=-1+2=1.
+\end{align*}
 $$
 
 ::::::
@@ -455,8 +520,10 @@ Solution. Using $t=\tan(\frac{1}{2}x)$ we obtain
 
 $$
 \begin{align*}
-\int_0^{\frac{1}{2}\pi}\frac{\cos(x)}{1+\cos(x)}\,dx&=\int_0^1\frac{\dfrac{1-t^2}{1+t^2}}{1+\dfrac{1-t^2}{1+t^2}}\cdot\frac{2}{1+t^2}\,dt=\int_0^1\frac{1-t^2}{1+t^2+1-t^2}\cdot\frac{2}{1+t^2}\,dt\\
-&=\int_0^1\frac{1-t^2}{1+t^2}\,dt=\int_0^1\frac{2-(1+t^2)}{1+t^2}\,dt=\bigg[2\arctan(t)-t\bigg]_0^1=\frac{1}{2}\pi-1.
+\int_0^{\frac{1}{2}\pi}\frac{\cos(x)}{1+\cos(x)}\,dx&=\int_0^1\frac{\dfrac{1-t^2}{1+t^2}}{1+\dfrac{1-t^2}{1+t^2}}\cdot\frac{2}{1+t^2}\,dt\\
+&=\int_0^1\frac{1-t^2}{1+t^2+1-t^2}\cdot\frac{2}{1+t^2}\,dt\\
+&=\int_0^1\frac{1-t^2}{1+t^2}\,dt=\int_0^1\frac{2-(1+t^2)}{1+t^2}\,dt\\
+&=\bigg[2\arctan(t)-t\bigg]_0^1=\frac{1}{2}\pi-1.
 \end{align*}
 $$
 
@@ -487,8 +554,9 @@ This can also be done using the Weierstrass substitution: set $u=\tan(\frac{1}{2
 
 $$
 \begin{align*}
-\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt&=\int_0^{\sqrt{2}-1}\frac{1}{\dfrac{1-u^2}{1+u^2}}\cdot\frac{2\,du}{1+u^2}=\int_0^{\sqrt{2}-1}\frac{2}{1-u^2}\,du=\int_0^{\sqrt{2}-1}\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du\\
-&=\bigg[\ln(1+u)-\ln(1-u)\bigg]_0^{\sqrt{2}-1}=\ln(\sqrt{2})-\ln(2-\sqrt{2})=\ln\left(\frac{\sqrt{2}}{2-\sqrt{2}}\right)\\
+\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt&=\int_0^{\sqrt{2}-1}\frac{1}{\dfrac{1-u^2}{1+u^2}}\cdot\frac{2\,du}{1+u^2}=\int_0^{\sqrt{2}-1}\frac{2}{1-u^2}\,du\\
+&=\int_0^{\sqrt{2}-1}\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du=\bigg[\ln(1+u)-\ln(1-u)\bigg]_0^{\sqrt{2}-1}\\
+&=\ln(\sqrt{2})-\ln(2-\sqrt{2})=\ln\left(\frac{\sqrt{2}}{2-\sqrt{2}}\right)\\
 &=\ln\left(\frac{\sqrt{2}}{2-\sqrt{2}}\cdot\frac{2+\sqrt{2}}{2+\sqrt{2}}\right)=\ln\left(\frac{2+2\sqrt{2}}{4-2}\right)=\ln(1+\sqrt{2}).
 \end{align*}
 $$
@@ -498,7 +566,10 @@ $$
 Using the substitution $x=a+b-t$ or $t=a+b-x$ we obtain that:
 
 $$
-\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=-\int_b^a\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt=\int_a^b\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt.
+\begin{align*}
+\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx&=-\int_b^a\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt\\
+&=\int_a^b\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt.
+\end{align*}
 $$
 
 This implies that
@@ -536,7 +607,10 @@ Grasple-opgave met varianten: $\displaystyle\int_a^b\frac{\sqrt{x}}{\sqrt{x}-\sq
 For $a=0$, $b=\frac{1}{2}\pi$ and $f(x)=\sin(x)$ we obtain
 
 $$
-\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\cos(x)}\,dx=\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\sin(\frac{1}{2}\pi-x)}\,dx=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\sin(\frac{1}{2}\pi-x)}\,dx\\
+&=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
+\end{align*}
 $$
 
 ::::::
@@ -545,12 +619,16 @@ Grasple-opgave met varianten: $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{(\sin(x
 
 ::::{exercise}
 :label: Exc:Integration:SubstitutionNiceFormula
-Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{1}{1+\tan(x)}\,dx$.
+Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}$.
 ::::
 
 :::{admonition} Solution of {numref}`Exc:Integration:SubstitutionNiceFormula`
 :class: solution, dropdown
-$\displaystyle\int_0^{\frac{1}{2}\pi}\frac{1}{1+\tan(x)}\,dx=\int_0^{\frac{1}{2}\pi}\frac{1}{1+\frac{\sin(x)}{\cos(x)}}\,dx=\int_0^{\frac{1}{2}\pi}\frac{\frac{1}{\sin(x)}}{\frac{1}{\sin(x)}+\frac{1}{\cos(x)}}\,dx=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi$.
+
+$$
+\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}=\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\frac{\sin(x)}{\cos(x)}}=\int_0^{\frac{1}{2}\pi}\frac{\frac{1}{\sin(x)}}{\frac{1}{\sin(x)}+\frac{1}{\cos(x)}}\,dx=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
+$$
+
 :::
 
 ## Serret's integral
@@ -588,8 +666,10 @@ $$
 In this evaluation we obtained that
 
 $$
-\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt
-\quad\Longrightarrow\quad\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta=0.
+\begin{align*}
+&\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt\\
+&{}\quad\Longrightarrow\quad\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta=0.
+\end{align*}
 $$
 
 The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later.
@@ -623,26 +703,36 @@ $$
 W(x)e^{W(x)}=x.
 $$
 
-Using the substitution $t=W(x)$ or equivalently $x=te^t$ and therefore $dx=(t+1)e^t\,dt$ we have:
+Using the substitution $t=W(x)$ or equivalently $x=te^t$ and therefore $dx=(t+1)e^t\,dt$ we have for $x>-e^{-1}$:
 
 $$
-\int W(x)\,dx=\int t(t+1)e^t\,dt=(t^2-t+1)e^t+C=xW(x)-x+e^{W(x)}+C,\quad x>-e^{-1}.
+\int W(x)\,dx=\int t(t+1)e^t\,dt=(t^2-t+1)e^t+C=xW(x)-x+e^{W(x)}+C.
 $$
 
-For $x>-e^{-1}$ and $x\neq0$ this can also be written as: $\displaystyle\int W(x)\,dx=x\left(W(x)-1+\frac{1}{W(x)}\right)+C$.
+For $x>-e^{-1}$ and $x\neq0$ this can also be written as: 
+
+$$
+\int W(x)\,dx=x\left(W(x)-1+\frac{1}{W(x)}\right)+C.
+$$
 
 Since $W(0)=0$ and $W(e)=1$ it follows that $\displaystyle\int_0^eW(x)\,dx=e-1$.
 
 Similarly we obtain for $x>-e^{-1}$ and $x\neq0$:
 
 $$
-\int\frac{W(x)}{x}\,dx=\int\frac{t}{te^t}(t+1)e^t\,dt=\int(t+1)\,dt=\frac{1}{2}t^2+t+C=\frac{1}{2}\{W(x)\}^2+W(x)+C. 
+\begin{align*}
+\int\frac{W(x)}{x}\,dx&=\int\frac{t}{te^t}(t+1)e^t\,dt=\int(t+1)\,dt=\frac{1}{2}t^2+t+C\\
+&=\frac{1}{2}\{W(x)\}^2+W(x)+C.
+\end{align*} 
 $$
 
 Using $W(x)e^{W(x)}=x$ this can also be obtained in this way:
 
 $$
-\int\frac{W(x)}{x}\,dx=\int e^{-W(x)}\,dx=\int e^{-t}(t+1)e^t\,dt=\int(t+1)\,dt=\frac{1}{2}t^2+t+C=\frac{1}{2}\{W(x)\}^2+W(x)+C. 
+\begin{align*}
+\int\frac{W(x)}{x}\,dx&=\int e^{-W(x)}\,dx=\int e^{-t}(t+1)e^t\,dt=\int(t+1)\,dt\\
+&=\frac{1}{2}t^2+t+C=\frac{1}{2}\{W(x)\}^2+W(x)+C.
+\end{align*}
 $$
 
 Since $W(0)=0$ and $W(e)=1$ it follows that $\displaystyle\int_0^ee^{-W(x)}\,dx=\frac{3}{2}$.

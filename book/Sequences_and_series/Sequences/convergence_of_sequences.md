@@ -28,8 +28,9 @@ A sequence $\{a_n\}$ converges to a limit $L$, and we write $\lim\limits_{n\to\i
 3) 
 
 $$
-\begin{align*}\lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right)&=\lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right)\cdot\frac{n+\sqrt{n(n+2)}}{n+\sqrt{n(n+2)}}=\lim_{n\to\infty}\frac{n^2-n(n+2)}{n+\sqrt{n(n+2)}}\\
-&=\lim_{n\to\infty}\frac{-2n}{n+\sqrt{n(n+2)}}=\lim_{n\to\infty}\frac{-2}{1+\sqrt{1+\dfrac{2}{n}}}=\frac{-2}{1+1}=-1.
+\begin{align*}\lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right)&=\lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right)\cdot\frac{n+\sqrt{n(n+2)}}{n+\sqrt{n(n+2)}}\\
+&=\lim_{n\to\infty}\frac{n^2-n(n+2)}{n+\sqrt{n(n+2)}}=\lim_{n\to\infty}\frac{-2n}{n+\sqrt{n(n+2)}}\\
+&=\lim_{n\to\infty}\frac{-2}{1+\sqrt{1+\dfrac{2}{n}}}=\frac{-2}{1+1}=-1.
 \end{align*}
 $$
 
@@ -225,7 +226,10 @@ Proof. We have seen that the sequence decreases and is bounded below by $0$. Thi
 Let $L=\lim\limits_{n\to\infty}a_n$, then we have $\lim\limits_{n\to\infty}a_{n+1}=L$ and
 
 $$
-L=\sqrt{L+6}\quad\Longrightarrow\quad L^2=L+6\quad\Longleftrightarrow\quad L^2-L-6=0\quad\Longleftrightarrow\quad(L-3)(L+2)=0.
+\begin{align*}
+L=\sqrt{L+6}\quad\Longrightarrow\quad L^2=L+6&\quad\Longleftrightarrow\quad L^2-L-6=0\\
+&\quad\Longleftrightarrow\quad(L-3)(L+2)=0.
+\end{align*}
 $$
 
 Hence: $L=3$ or $L=-2$. Since the sequence is bounded below by $0$, we conclude that $L=3$.
@@ -236,7 +240,7 @@ It is important that we first showed that the limit exists before setting $L=\li
 
 For instance, it is clear that the Fibonacci sequence, which is defined by $F_{n+2}+F_n+F_{n+1}$ for $n=1,2,3,\ldots$ with $F_1=F_2=1$ is divergent. So, the limit $\lim\limits_{n\to\infty}a_n=\infty$ does not exist.
 
-If we would assume that $L=\lim\limits_{n\to\infty}a_n$, then we should have that
+If we would assume that $L=\lim\limits_{n\to\infty}a_n$, then we would have that
 
 $$
 L=L+L\quad\Longleftrightarrow\quad L=0.
@@ -277,7 +281,10 @@ We have seen that the sequence increases and is bounded above. This implies that
 Let $L=\lim\limits_{n\to\infty}a_n$, then we have $\lim\limits_{n\to\infty}a_{n+1}=L$ and
 
 $$
-L=\sqrt{L=6}\quad\Longrightarrow\quad L^2=L+6\quad\Longleftrightarrow\quad L^2-L-6=0\quad\Longleftrightarrow\quad(L-3)(L+2)=0.
+\begin{align*}
+L=\sqrt{L+6}\quad\Longrightarrow\quad L^2=L+6&\quad\Longleftrightarrow\quad L^2-L-6=0\\
+&\quad\Longleftrightarrow\quad(L-3)(L+2)=0.
+\end{align*}
 $$
 
 This implies that $L=3$ or $L=-2$. Since $a_1=1$ and the sequence is increasing, we conclude that $L=3$.
@@ -361,7 +368,10 @@ This proves that the sequence is bounded above by $2$.
 3) Since the sequence is increasing and bounded above, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
 
 $$
-L=\sqrt{2+L}\quad\Longrightarrow\quad L^2=2+L\quad\Longleftrightarrow\quad L^2-L-2=0\quad\Longleftrightarrow\quad(L-2)(L+1)=0.
+\begin{align*}
+L=\sqrt{2+L}\quad\Longrightarrow\quad L^2=2+L&\quad\Longleftrightarrow\quad L^2-L-2=0\\
+&\quad\Longleftrightarrow\quad(L-2)(L+1)=0.
+\end{align*}
 $$
 
 Hence: $L=2$ or $L=-1$. Since $a_1=\sqrt{2}>1$ and the sequence is increasing, we conclude that $L=2$.
@@ -401,7 +411,10 @@ This proves that the sequence is bounded above by $4$.
 3) Since the sequence is increasing and bounded above, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
 
 $$
-L=4-\frac{1}{L}\quad\Longrightarrow\quad L^2=4L-1\quad\Longleftrightarrow\quad L^2-4L+1=0\quad\Longleftrightarrow\quad (L-2)^2=3.
+\begin{align*}
+L=4-\frac{1}{L}\quad\Longrightarrow\quad L^2=4L-1&\quad\Longleftrightarrow\quad L^2-4L+1=0\\
+&\quad\Longleftrightarrow\quad (L-2)^2=3.
+\end{align*}
 $$
 
 Hence: $L=2+\sqrt{3}$ or $L=2-\sqrt{3}$. Since $a_2=3$ and the sequence is increasing, we conclude that $L=2+\sqrt{3}$.
@@ -441,7 +454,10 @@ This proves that the sequence is bounded below by $0$.
 3) Since the sequence is decreasing and bounded below, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
 
 $$
-L=\frac{1}{4-L}\quad\Longrightarrow\quad 4L-L^2=1\quad\Longleftrightarrow\quad L^2-4L+1=0\quad\Longleftrightarrow\quad (L-2)^2=3.
+\begin{align*}
+L=\frac{1}{4-L}\quad\Longrightarrow\quad 4L-L^2=1&\quad\Longleftrightarrow\quad L^2-4L+1=0\\
+&\quad\Longleftrightarrow\quad (L-2)^2=3.
+\end{align*}
 $$
 
 Hence: $L=2+\sqrt{3}$ or $L=2-\sqrt{3}$. Since $a_1=3$ and $a_2=1$ and the sequence is decreasing, we conclude that $L=2-\sqrt{3}$.
@@ -481,7 +497,10 @@ This proves that the sequence is bounded above by $5$.
 3) Since the sequence is increasing and bounded above, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
 
 $$
-L=\sqrt{1+2L}\quad\Longrightarrow\quad L^2=1+2L\quad\Longleftrightarrow\quad L^2-2L-1=0\quad\Longleftrightarrow\quad(L-1)^2=2.
+\begin{align*}
+L=\sqrt{1+2L}\quad\Longrightarrow\quad L^2=1+2L&\quad\Longleftrightarrow\quad L^2-2L-1=0\\
+&\quad\Longleftrightarrow\quad(L-1)^2=2.
+\end{align*}
 $$
 
 Hence: $L=1+\sqrt{2}$ or $L=1-\sqrt{2}$. Since $a_1=1$ and the sequence is increasing, we conclude that $L=1+\sqrt{2}$.
@@ -521,7 +540,10 @@ This proves that the sequence is bounded above by $10$.
 3) Since the sequence is increasing and bounded above, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
 
 $$
-L=\sqrt{15+2L}\quad\Longrightarrow\quad L^2=15+2L\quad\Longleftrightarrow\quad L^2-2L-15=0\quad\Longleftrightarrow\quad(L-5)(L+3)=0.
+\begin{align*}
+L=\sqrt{15+2L}\quad\Longrightarrow\quad L^2=15+2L&\quad\Longleftrightarrow\quad L^2-2L-15=0\\
+&\quad\Longleftrightarrow\quad(L-5)(L+3)=0.
+\end{align*}
 $$
 
 Hence: $L=5$ or $L=-3$. Since $a_1=3$ and the sequence is increasing, we conclude that $L=5$.

@@ -46,8 +46,10 @@ sphinx:
       '```{iframe} ../references.html': "```{iframe} ../../../../../references.html"
     mathjax3_config:
       loader:
-        load: ['ui/lazy']
+        load: ['[tex]/cancel','ui/lazy']
       tex:
+        packages:
+          '[+]': ['cancel']
         inlineMath: [ ['$','$'], ['\(','\)'] ]
         displayMath: [ ['$$','$$'], ['\[','\]'] ]
         macros:
