@@ -46,7 +46,7 @@ sphinx:
       '```{iframe} ../references.html': "```{iframe} ../../../../../references.html"
     mathjax3_config:
       loader:
-        load: ['[tex]/cancel','ui/lazy']
+        load: ['[tex]/cancel']
       tex:
         packages:
           '[+]': ['cancel']
