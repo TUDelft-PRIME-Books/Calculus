@@ -30,12 +30,12 @@ parts:
     - file: Single-variable_functions/Functions/functions_of_one_variable.md
     - file: Single-variable_functions/Functions/properties.md
     - file: Single-variable_functions/Functions/curves.md
+    - file: Single-variable_functions/Functions/rational_functions.md
     - file: Single-variable_functions/Functions/inverse_functions.md
     - file: Single-variable_functions/Functions/nonlinear_equations_of_one_variable.md
     - file: Single-variable_functions/Functions/limits_at_a_point.md
     - file: Single-variable_functions/Functions/limits_at_infinity.md
     - file: Single-variable_functions/Functions/continuity.md
-    - file: Single-variable_functions/Functions/rational_functions.md
   - file: Single-variable_functions/Differentiation/introduction_differentiation.md
     sections:
     - file: Single-variable_functions/Differentiation/differentiability.md
