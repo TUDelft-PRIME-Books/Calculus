@@ -30,6 +30,7 @@ sphinx:
     sphinx_indexed_defs_indexed_nodes: ['strong']
     tud_change_titlesize: true
     new_tab_link_show_external_link_icon: true
+    visualized_auto_cluster: true
     numfig_secnum_depth: 2
     text_replacements:
       '# Admonitions': '# General blocks'
@@ -42,8 +43,13 @@ sphinx:
       '# Determinants as areas or volumes': "# Determinants"
       'in {numref}`Subsection %s <Subsec:MatrixInv:DefInverse>` we saw': "in [Section 3.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter3/MatrixInverse.html) we will see"
       'in {numref}`Section %s <Sec:DeterminantsViaCofactors>`': "in [Section 5.1 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter5/DeterminantsViaCofactors.html)"
+      '```{iframe} ../references.html': "```{iframe} ../../../../../references.html"
     mathjax3_config:
+      loader:
+        load: ['[tex]/cancel']
       tex:
+        packages:
+          '[+]': ['cancel']
         inlineMath: [ ['$','$'], ['\(','\)'] ]
         displayMath: [ ['$$','$$'], ['\[','\]'] ]
         macros:
@@ -80,7 +86,12 @@ sphinx:
     - teachbooks_favourites
     - teachbooks_sphinx_grasple                      # Adds the Grasple exercises to your book 
     - sphinx_prime_applets                           # Adds the Prime applets to your book
-    - sphinx_ref_graph                               # Adds a graph of references to your book
+    # - sphinx_ref_graph                               # Adds a graph of references to your book, breaks the build currently, so disabled for now
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
     - sphinx_indexed_definitions
     - sphinx_new_tab_link
+    - sphinx_apa_references                     # For APA citations
+    - sphinx_visualized
+
+bibtex_bibfiles: 
+  - references.bib
