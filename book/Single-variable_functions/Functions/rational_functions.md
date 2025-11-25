@@ -319,14 +319,14 @@ where $b_1,b_2,\ldots,b_n$ are _distinct_ complex numbers and $a_n$ is the leadi
 Then there exist constants $A_1,A_2,\ldots,A_n$ such that
 
 $$
-R(x) = a_n\left(\frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_n}{x-b_n}\right).
+R(x) = \frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_n}{x-b_n}.
 $$
 
 ::::
 
 Note that in the above theorem we considered complex numbers as roots of the denominator polynomial. This is because, by the {prf:ref}`Fundamental Theorem of algebra <Thm:ComplexNumbers:fundamental>`, every polynomial with complex coefficients can be factored into linear factors over the complex numbers.
 
-First we will take a look at an example where we apply the above theorem where all roots are real numbers. Next we will consider an example where some of the roots are complex numbers, but luckily come in a conjugate pair.
+First we will take a look at an example where we apply the above theorem where all roots are real numbers.
 
 :::::{prf:example}
 :label: Ex:RationalFunctions:PartialFractionDecomposition2
@@ -349,7 +349,7 @@ $$
 R(x) = \frac{A_1}{x} + \frac{A_2}{x-3} + \frac{A_3}{x+1}.
 $$
 
-Or by using the formula for $R(x)$, we want to solve the equation
+Or by using the formula for $R$, we want to solve the equation
 
 $$
 \frac{15x+3}{x(x-3)(x+1)} = \frac{A_1}{x} + \frac{A_2}{x-3} + \frac{A_3}{x+1}
@@ -359,6 +359,280 @@ for $A_1$, $A_2$ and $A_3$. Rewriting the right-hand side to a single rational f
 
 $$
 \frac{15x+3}{x(x-3)(x+1)} = \frac{A_1(x-3)(x+1) + A_2x(x+1) + A_3x(x-3)}{x(x-3)(x+1)}.
+$$
+
+By comparing the nominators on both sides we obtain the equation
+
+:::{math}
+:label: Eq:RationalFunctions:PartialFractionDecomposition2
+
+15x+3 = A_1(x-3)(x+1) + A_2x(x+1) + A_3x(x-3).
+:::
+
+Collecting terms on the right-hand side results in
+
+$$
+15x+3 = (A_1 + A_2 + A_3)x^2 + (-2A_1 +A_2-3A_3)x + (-3A_1).
+$$
+
+By comparing coefficients we obtain the system of equations
+
+$$
+\left\{\begin{array}{lcr}
+\phantom{-3}A_1 + A_2 + A_3 &=& 0,\\
+ -2A_1 + A_2 - 3A_3 &=& 15, \\
+  -3A_1 &=& 3.
+\end{array}\right.
+$$
+
+This system can be solved to find $A_1=-1$, $A_2=4$ and $A_3=-3$. This means we have found the partial fraction decomposition of $R$:
+
+$$
+R(x) = \frac{-1}{x} + \frac{4}{x-3} + \frac{-3}{x+1}.
+$$
+
+:::::
+
+::::{prf:remark}
+:label: Rmk:RationalFunctions:DistinctLinearFactors
+
+If the denominator of a proper rational function can be factored into distinct linear factors over the real numbers, there is another way to find the constants $A_1,A_2,\ldots,A_n$ in {prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearFactors`.
+
+Although the zeros of the denominator are not part of the domain of the rational function, the polynomials on the left-hand side and on the right-hand side of the equation as a result of the comparison of nominators (such as Equation {eq}`Eq:RationalFunctions:PartialFractionDecomposition2` in the previous example) should coincide for all values of $x\in\mathbb{R}$. Even for the roots of the denominator. This means that we can find the constants $A_1,A_2,\ldots,A_n$ by substituting the roots of the denominator into this equation.
+
+For the previous example this would yield the following system of equations:
+
+$$
+\left\{\begin{array}{rcl}
+3 &=& -3A_1,\\
+48 &=& 12A_2, \\
+-12 &=& 4A_3.
+\end{array}\right.
+$$
+
+Solving this system again results in $A_1=-1$, $A_2=4$ and $A_3=-3$.
+
+::::
+
+::::{warning}
+The method in {prf:ref}`Rmk:RationalFunctions:DistinctLinearFactors` only works when the denominator can be factored into distinct linear factors over the real numbers. In other cases you will have to solve the system of equations obtained by comparing coefficients.
+::::
+
+In the next example we will consider a proper rational function where the denominator has complex roots.Feel free to skip this example for now and return to it after studying complex numbers.
+
+::::{prf:example}
+:label: Ex:RationalFunctions:PartialFractionDecomposition3
+:class: dropdown
+
+Consider the proper rational function
+
+$$
+R(x)  = \frac{5x^2+24x+7}{2x^3+2x^2-2x+30}.
+$$
+
+The denominator $Q(x)=2x^3+2x^2-2x+30$ has the roots $b_1=-3$, $b_2= 1-2i$ and $b_3=1+2i$. So $R$ can be factored as 
+
+$$
+R(x) = \frac{A_1}{x+3} + \frac{A_2}{x-(1-2i)} + \frac{A_3}{x-(1+2i)}.
+$$ 
+
+Rewriting the right-hand side to a single rational function and comparing the nominators results in the equation
+
+$$
+\frac52x^2+12x+\frac72 = \left(A_1+A_2+A_3\right)x^2 + \left( -2A_1+(2-2i)A_2+(2+2i)A_3\right)x+\left(5A_1+(-3-6i)A_2+( -3+6i)A_3\right).
+$$
+
+Comparing coefficients results in a system of equations that has the solution
+
+$$
+\left\{\begin{array}{lcr}
+A_1 &=& -\frac12,\\
+A_2 &=& \frac32+\frac54i, \\
+A_3 &=& \frac32-\frac54i,
+\end{array}\right.
+$$
+
+and the partial fraction decomposition of $R$ with complex numbers is
+
+$$
+R(x) = \frac{-\frac12}{x+3} + \frac{\frac32+\frac54i}{x-(1-2i)} + \frac{\frac32-\frac54i}{x-(1+2i)}.
+$$
+
+
+Finding this partial fraction decomposition requires calculations with complex numbers and often leads to errors. To avoid this, it is often better to find a partial fraction decomposition with real coefficients. This can be done by grouping the complex conjugate factors together in the denominator. To see how this works, we first combine the last two terms of the above partial fraction decomposition into a single rational function:
+
+$$
+\frac{\frac32+\frac54i}{x-(1-2i)} + \frac{\frac32-\frac54i}{x-(1+2i)} = \frac{3x+2}{(x-1)^2 + 4}.
+$$
+
+This means we can also write the partial fraction decomposition of $R$ with real coefficients as
+
+$$
+R(x) = \frac{-\frac12}{x+3} + \frac{3x+2}{(x-1)^2 + 4}.
+$$
+
+We could have found this decomposition directly by looking for constants $A_1$, $B_1$ and $C_1$ such that
+
+$$
+R(x) = \frac{A_1}{x+3} + \frac{B_1x + C_1}{(x-1)^2 + 4}.
+$$
+
+We would have know to use this form, if we had known in advance that the original denominator had complex roots that came in a conjugate pairs.
+
+This is summarised in the next definition and theorem.
+
+::::
+
+::::{prf:definition}
+:label: Def:RationalFunctions:IrreducibleQuadratic
+
+A polynomial $p$ of degree two that cannot be factored into linear factors over the real numbers is called an **irreducible quadratic**.
+
+This means that an irreducible quadratic $p$ is a polynomial $p$ that can be written as
+
+$$
+p(x) = (x-c)^2+d^2,
+$$
+
+with $c$ and $d$ real numbers and $d\neq0$.
+
+::::
+
+::::{prf:theorem}
+:label: Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearAndIrreducibleQuadratic
+
+Let $R(x) = \frac{P(x)}{Q(x)}$ be a proper rational function where the denominator $Q(x)$ can be factored into $\ell$ _distinct and real linear factors_ and $q$ _distinct irreducible quadratics_, i.e.
+
+$$
+Q(x) = a_n(x-b_1)(x-b_2)\cdots(x-b_\ell)( (x-c_1)^2 + d_1^2 )( (x-c_2)^2 + d_2^2 ) \cdots ( (x-c_q)^2 + d_q^2 ),
+$$
+
+where $b_1,b_2,\ldots,b_\ell$ are _distinct real numbers_, $(c_1,d_1^2),(c_2,d_2^2),\ldots,(c_q,d_q^2)$ are _distinct real number pairs_ with $d_1,d_2,\ldots,d_q\neq0$, and $a_n$ is the leading coefficient of $Q(x)$.
+
+Then there exist real constants $A_1,A_2,\ldots,A_\ell$, $B_1,\ldots,B_q$ and $C_1,\ldots,C_q$ such that
+
+$$
+R(x)= \frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_\ell}{x-b_\ell} + \frac{B_1x + C_1}{(x-c_1)^2 + d_1^2} + \cdots + \frac{B_qx + C_q}{(x-c_q)^2 + d_q^2}.
+$$
+
+::::
+
+::::{prf:example}
+:label: Ex:RationalFunctions:PartialFractionDecomposition4
+
+Consider the proper rational function
+
+$$
+R(x)  = \frac{5x^2+24x+7}{2x^3+2x^2-2x+30}.
+$$
+
+The denominator $Q(x)=2x^3+2x^2-2x+30$ cab be factorised as
+
+$$
+Q(x) = 2(x+3)\left( (x-1)^2 + 4\right).
+$$
+
+An partial fraction decomposition of $R$ is therefore of the form
+
+$$
+R(x) = \frac{A_1}{x+3} + \frac{B_1x + C_1}{(x-1)^2 + 4}.
+$$ 
+
+Rewriting the right-hand side to a single rational function and comparing the nominators results in the equation
+
+$$
+\frac52x^2+12x+\frac72 = \left(A_1+B_1\right)x^2 + \left( -2A_1+3B_1+C_1\right)x+\left(5A_1+3C_1\right).
+$$
+
+Comparing coefficients results in a system of equations that has the solution
+
+$$
+\left\{\begin{array}{lcr}
+A_1 &=& -\frac12,\\
+B_1 &=& 3, \\
+C_1 &=& 2,
+\end{array}\right.
+$$
+
+and the partial fraction decomposition of $R$ using only real coefficients is
+
+$$
+R(x) = \frac{-\frac12}{x+3} + \frac{3x + 2}{(x-1)^2 + 4}.
+$$
+
+::::
+
+In all of the above examples we have only considered the case where the denominator can be factored into distinct linear factors and distinct irreducible quadratics. If the denominator has repeated factors and/or repeated quadratics, the partial fraction decomposition becomes slightly more complicated.
+
+Consider the proper rational function
+
+$$
+R(x)  = \frac{2x^2+6x+5}{(x+1)^2(x+2)}.
+$$
+
+The denominator $Q(x)=(x+1)^2(x+2)$ of this rational function has a repeated linear factor $(x+1)$. If we would try to apply the previous theorems directly, we would look for constants $A$ and $B$ such that
+
+$$
+R(x) = \frac{A}{x+1} + \frac{B}{x+2}.
+$$
+
+If we would rewrite the right-hand side to a single rational function, we obtain
+
+$$
+R(x) = \frac{A(x+2) + B(x+1)}{(x+1)(x+2)} = \frac{(A+B)x + (2A+B)}{(x+1)(x+2)}.
+$$
+
+The denominator of this expression is not equal to the original denominator of the rational function $R$, so we cannot compare the nominators directly. If we multiply both the denominator and the numerator of the last expression with $x+1$, we obtain
+
+$$
+R(x) = \frac{((A+B)x + (2A+B))(x+1)}{(x+1)^2(x+2)} = \frac{(A+B)x^2 + (3A+2B)x + 2A+B}{(x+1)^2(x+2)}.
+$$
+
+Now the denominator is equal to the original denominator of $R$ and we can compare the nominators. This results in the system of equations
+
+$$
+\left\{\begin{array}{lcr}
+A+B &=& 2, \\
+3A+2B &=& 6, \\
+2A+B &=& 5.
+\end{array}\right.
+$$
+
+Unluckily this system has no solutions, so our initial assumption about the form of the partial fraction decomposition was incorrect.
+
+If we look at the last system, we see that we have three equations for only two unknowns. This is because we did not take into account that the factor $(x+1)$ in the denominator is repeated, which is also evident from the fact that we had to multiply the numerator and denominator by $x+1$ to be able to compare nominators.
+
+The solution to our problem is to introduce an extra term in the partial fraction decomposition to take into account the repeated factor. We first do an example, and then give the general theorem.
+
+::::{prf:example}
+:label: Ex:RationalFunctions:PartialFractionDecomposition5
+
+For the proper rational function
+
+$$
+R(x)  = \frac{2x^2+6x+5}{(x+1)^2(x+2)},
+$$
+
+we now try the following form for the partial fraction decomposition:
+
+$$
+R(x) = \frac{A}{x+1} + \frac{B}{(x+1)^2} + \frac{C}{x+2}.
+$$
+
+Rewriting the right-hand side to a single rational function and comparing the nominators results in the system of equations
+
+$$
+\left\{\begin{array}{lcr}
+A+C&=&2, \\
+3A+B+2C &=& 6, \\
+2A+2B+C &=& 5.
+\end{array}\right.
+$$
+
+This system has a solution (luckily), which is $A=1$, $B=1$ and $C=1$. This means we have found the partial fraction decomposition of $R$:
+
+$$
+R(x) = \frac{1}{x+1} + \frac{1}{(x+1)^2} + \frac{1}{x+2}.
 $$
 
 ::::
