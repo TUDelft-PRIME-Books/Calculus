@@ -18,32 +18,30 @@ The following figures should become applets with these additional interactivity 
 * - Figure
   - Interactivity
   - Implemented
-* - {numref}`Fig:NumericalIntegration:riemann`
+* - {numref}`Fig:ApproximatingIntegrals:riemann`
   - Dragging each point along the curve/axis (within their relevant intervals)
 
     Increasing/decreasing the number of points
   - 
-* - {numref}`Fig:NumericalIntegration:leftRectangle`
+* - {numref}`Fig:ApproximatingIntegrals:leftRectangle`
   - Dragging $x_L$ along the curve/axis
     
     Dragging $x_R$ along the axis
   - Yes
-* - {numref}`Fig:NumericalIntegration:Trapezoidal`
+* - {numref}`Fig:ApproximatingIntegrals:Trapezoidal`
   - Dragging $x_L$ along the curve/axis
     
     Dragging $x_R$ along the curve/axis
-  -
-* - {numref}`Fig:NumericalIntegration:Simpsons`
+  - Yes
+* - {numref}`Fig:ApproximatingIntegrals:Simpsons`
   - Dragging $x_L$ along the curve/axis
-    
-    Dragging $x_M$ along the curve/axis
 
     Dragging $x_R$ along the curve/axis
-  - 
-* - {numref}`Fig:NumericalIntegration:composite`
+  - Yes
+* - {numref}`Fig:ApproximatingIntegrals:composite`
   - Increasing/decreasing the number of points
   - 
-* - {numref}`Fig:NumericalIntegration:errors`
+* - {numref}`Fig:ApproximatingIntegrals:errors`
   - Enabling/disabling each of the curves
   - 
 
@@ -121,7 +119,7 @@ which use the left and the right end point of the interval, respectively.
 The left Rectangle rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:leftRectangle>`.
 
 ::::{applet}
-:url: calculus/integration/left_rectangle
+:url: calculus/integration/simple_methods
 :name: Fig:ApproximatingIntegrals:leftRectangle
 :class: dark-light
 
@@ -146,14 +144,13 @@ The corresponding approximation of the integral is given by
 
 This approximation is called the _Trapezoidal rule_, since Equation {eq}`Eq:ApproximatingIntegrals:single_trap` equals the area of the trapezium with vertices $(x_L, 0), \; (x_R, 0),\; (x_R, f(x_R))$ and $(x_L, f(x_L))$. The Trapezoidal rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:Trapezoidal>`.
 
-:::{figure} Images/Fig-NumericalIntegration-Trapezoidal.svg
+::::{applet}
+:url: calculus/integration/simple_methods?rule=trapezoid
 :name: Fig:ApproximatingIntegrals:Trapezoidal
-:figwidth: 90%
 :class: dark-light
 
 An illustration of the Trapezoidal rule.
-
-:::
+::::
 
 :::{admonition} Two more rules (bonus material)
 :class: bonus, dropdown
@@ -176,13 +173,12 @@ $$
 
 The Simpson's rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:Simpsons>`.
 
-::::{figure} Images/Fig-NumericalIntegration-Simpsons.svg
+::::{applet}
+:url: calculus/integration/simple_methods?rule=simpson
 :name: Fig:ApproximatingIntegrals:Simpsons
-:figwidth: 90%
 :class: dark-light
 
 An illustration of the Simpson's rule.
-
 ::::
 
 :::
