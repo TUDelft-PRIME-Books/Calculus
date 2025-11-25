@@ -98,10 +98,12 @@ parts:
       - file: "Multivariable_functions/Partial_differentiation/optimisation_under_equality_constraints.md"
     - file: "Multivariable_functions/Multivariable_integration/introduction_multivariable_integration.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Multivariable_functions/Multivariable_integration/multiple_and_repeated_integrals.md"
+      - file: "Multivariable_functions/Multivariable_integration/double_integrals.md"
+      - file: "Multivariable_functions/Multivariable_integration/triple_and_multiple_integrals.md.md"
       - file: "Multivariable_functions/Multivariable_integration/coordinate_transformations.md"
-      - file: "Multivariable_functions/Multivariable_integration/surface_integrals.md"
+      - file: "Multivariable_functions/Multivariable_integration/improper_multiple_integrals.md"
       - file: "Multivariable_functions/Multivariable_integration/line_integrals.md"
+      - file: "Multivariable_functions/Multivariable_integration/surface_integrals.md"
     - file: "Multivariable_functions/Vector_calculus/introduction_vector_calculus.md" # ref_graph: {'ignore':True}
       sections:
       - file: "Multivariable_functions/Vector_calculus/vector_fields.md"
