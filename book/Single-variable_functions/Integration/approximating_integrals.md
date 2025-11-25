@@ -3,6 +3,54 @@
 This page is based on {cite:t}`Vuik_2023`.
 ```
 
+::::{admonition} Figures that should become applets
+:class: remark
+
+Each applet always should have interactivity features such as Zoom, Pan, and Fullscreen.
+
+The following figures should become applets with these additional interactivity features:
+
+```{list-table}
+:header-rows: 1
+:align: center
+:class: mid-align
+
+* - Figure
+  - Interactivity
+  - Implemented
+* - {numref}`Fig:NumericalIntegration:riemann`
+  - Dragging each point along the curve/axis (within their relevant intervals)
+
+    Increasing/decreasing the number of points
+  - 
+* - {numref}`Fig:NumericalIntegration:leftRectangle`
+  - Dragging $x_L$ along the curve/axis
+    
+    Dragging $x_R$ along the axis
+  - Yes
+* - {numref}`Fig:NumericalIntegration:Trapezoidal`
+  - Dragging $x_L$ along the curve/axis
+    
+    Dragging $x_R$ along the curve/axis
+  -
+* - {numref}`Fig:NumericalIntegration:Simpsons`
+  - Dragging $x_L$ along the curve/axis
+    
+    Dragging $x_M$ along the curve/axis
+
+    Dragging $x_R$ along the curve/axis
+  - 
+* - {numref}`Fig:NumericalIntegration:composite`
+  - Increasing/decreasing the number of points
+  - 
+* - {numref}`Fig:NumericalIntegration:errors`
+  - Enabling/disabling each of the curves
+  - 
+
+```
+
+::::
+
 (Sec:ApproximatingIntegrals)=
 # Approximating integrals
 
@@ -72,14 +120,13 @@ which use the left and the right end point of the interval, respectively.
 
 The left Rectangle rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:leftRectangle>`.
 
-:::{figure} Images/Fig-NumericalIntegration-leftRectangle.svg
+::::{applet}
+:url: calculus/integration/left_rectangle
 :name: Fig:ApproximatingIntegrals:leftRectangle
-:figwidth: 90%
 :class: dark-light
 
 An illustration of the left Rectangle rule.
-
-:::
+::::
 
 **Trapezoidal rule**
 
