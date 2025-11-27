@@ -1,3 +1,5 @@
+(Section:Functionsintro)=
+
 # Functions of one variable
 
 In this section we cover:
@@ -7,6 +9,6 @@ In this section we cover:
 - Range and codomain
 - Graphs (including vertical line test)
 - Differences and similarities between graphs and curves
-- Elementary functions (linear/quadratic/cubic,polynomials,power functions, rational functions, algebraic functions, exponential functions, trigonometric functions. NOT YET: logarithms and inverse trigonometric functions)
+- Elementary functions (linear/quadratic/cubic,polynomials,power functions, rational functions, algebraic functions, exponential functions (hier moet definitie staan, ook e-macht, rekenregels nog verwijzen bij inverse functies), trigonometric functions. NOT YET: logarithms and inverse trigonometric functions)
 - Hyperbolic functions?
 - Piecewise defined functions (e.g. step functions)
