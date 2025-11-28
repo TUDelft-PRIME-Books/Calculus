@@ -26,6 +26,11 @@ sphinx:
   local_extensions:
     text_replacer: _ext/
   config:
+    metadata_figure_settings:
+      license:
+        substitute_missing: true
+      date:
+        substitute_missing: true
     language: en
     sphinx_indexed_defs_indexed_nodes: ['strong']
     tud_change_titlesize: true
@@ -92,6 +97,7 @@ sphinx:
     - sphinx_new_tab_link
     - sphinx_apa_references                     # For APA citations
     - sphinx_visualized
+    # - sphinx_metadata_figure
 
 bibtex_bibfiles: 
   - references.bib

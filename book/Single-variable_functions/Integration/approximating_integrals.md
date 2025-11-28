@@ -18,32 +18,32 @@ The following figures should become applets with these additional interactivity 
 * - Figure
   - Interactivity
   - Implemented
-* - {numref}`Fig:NumericalIntegration:riemann`
+* - {numref}`Fig:ApproximatingIntegrals:riemann`
   - Dragging each point along the curve/axis (within their relevant intervals)
 
     Increasing/decreasing the number of points
   - 
-* - {numref}`Fig:NumericalIntegration:leftRectangle`
+* - {numref}`Fig:ApproximatingIntegrals:leftRectangle`
   - Dragging $x_L$ along the curve/axis
     
     Dragging $x_R$ along the axis
   - Yes
-* - {numref}`Fig:NumericalIntegration:Trapezoidal`
+* - {numref}`Fig:ApproximatingIntegrals:Trapezoidal`
   - Dragging $x_L$ along the curve/axis
     
     Dragging $x_R$ along the curve/axis
   -
-* - {numref}`Fig:NumericalIntegration:Simpsons`
+* - {numref}`Fig:ApproximatingIntegrals:Simpsons`
   - Dragging $x_L$ along the curve/axis
     
     Dragging $x_M$ along the curve/axis
 
     Dragging $x_R$ along the curve/axis
   - 
-* - {numref}`Fig:NumericalIntegration:composite`
+* - {numref}`Fig:ApproximatingIntegrals:composite`
   - Increasing/decreasing the number of points
   - 
-* - {numref}`Fig:NumericalIntegration:errors`
+* - {numref}`Fig:ApproximatingIntegrals:errors`
   - Enabling/disabling each of the curves
   - 
 
