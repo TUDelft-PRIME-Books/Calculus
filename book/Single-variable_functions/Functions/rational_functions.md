@@ -3,6 +3,7 @@
 This page reuses content from {cite:t}`dekleijn2025longdivision`.
 ```
 
+(Sec:RationalFunctions)=
 # Rational functions
 
 ## Introduction
@@ -602,7 +603,50 @@ Unluckily this system has no solutions, so our initial assumption about the form
 
 If we look at the last system, we see that we have three equations for only two unknowns. This is because we did not take into account that the factor $(x+1)$ in the denominator is repeated, which is also evident from the fact that we had to multiply the numerator and denominator by $x+1$ to be able to compare nominators.
 
-The solution to our problem is to introduce an extra term in the partial fraction decomposition to take into account the repeated factor. We first do an example, and then give the general theorem.
+If we would just consider the factor $(x+1)^2$ in the denominator, we would also arrive at an inconsistent linear system in two variables. However, if we would consider both factors $(x+1)$ and $(x+1)^2$ in the denominator separately, we would have three unknowns instead of two. This is similar to how we handled irreducible quadratics in the previous theorem: there we had a linear and a constant term in the numerator for each irreducible quadratic factor in the denominator. We will do something similar here. We do have to also consider cases where a factor is repeated more than two times, but the idea is the same.
+
+It could also be the case that an irreducible quadratic is repeated in the denominator. In that case we will also have to consider multiple terms in the partial fraction decomposition for that irreducible quadratic. The next theorem summarises all of this.
+
+::::{prf:theorem}
+:label: Thm:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic
+
+Let $R(x) = \frac{P(x)}{Q(x)}$ be a proper rational function where the denominator $Q(x)$ can be factored into $\ell$ real linear factors_ and $q$ _distinct irreducible quadratics_, i.e.
+
+$$
+\begin{split}
+Q(x) &= a_n(x-b_1)^{m_1}(x-b_2)^{m_2}\cdots(x-b_\ell)^{m_\ell}\\
+& \qquad ( (x-c_1)^2 + d_1^2 )^{n_1}( (x-c_2)^2 + d_2^2 )^{n_2} \cdots ( (x-c_q)^2 + d_q^2 )^{n_q},
+\end{split}
+$$
+
+where $b_1,b_2,\ldots,b_\ell$ are _distinct real numbers_, $m_1,m_2,\ldots,m_\ell$ are positive integers, $(c_1,d_1^2),(c_2,d_2^2),\ldots,(c_q,d_q^2)$ are _distinct real number pairs_ with $d_1,d_2,\ldots,d_q\neq0$, $n_1,n_2,\ldots,n_q$ are positive integers, and $a_n$ is the leading coefficient of $Q(x)$.
+
+Then there exist constants $A_{k,j}$, $1\leq j \leq m_k$ for $1\leq k \leq \ell$, and constants $B_{p,j}$ and $C_{p,j}$, $1\leq j \leq n_p$, for $1\leq p \leq q$ such that
+
+$$
+R(x)= L_1(x)+L_2(x)+\cdots+L_\ell(x) + Q_1(x) + Q_2(x) + \cdots + Q_q(x),
+$$
+
+
+where for $1\leq k \leq \ell$, $m_k$ is the multiplicity of the linear factor $(x-b_k)$ in the factorisation of $Q(x)$ and
+
+$$
+L_k(x) = \frac{A_{k,1}}{x-b_k} + \frac{A_{k,2}}{(x-b_k)^2} + \cdots + \frac{A_{k,m_k}}{(x-b_k)^{m_k}}.
+$$
+
+Similarly, for $1\leq p \leq q$, $n_p$ is the multiplicity of the irreducible quadratic factor $((x-c_p)^2 + d_p^2)$ in the factorisation of $Q(x)$ and
+
+$$
+Q_p(x) = \frac{B_{p,1}x + C_{p,1}}{(x-c_p)^2 + d_p^2} + \frac{B_{p,2}x + C_{p,2}}{((x-c_p)^2 + d_p^2)^2} + \cdots + \frac{B_{p,n_p}x + C_{p,n_p}}{((x-c_p)^2 + d_p^2)^{n_p}}.
+$$
+
+::::
+
+::::{prf:remark}
+:label: Rmk:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic
+
+Because of the generality of {prf:ref}`Thm:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic`, we used constants with multi-level indexing. In practice it is often easier to use different letters for the constants in the numerators of the various terms in the partial fraction decomposition, as we will do in the next example.
+::::
 
 ::::{prf:example}
 :label: Ex:RationalFunctions:PartialFractionDecomposition5
@@ -636,3 +680,33 @@ R(x) = \frac{1}{x+1} + \frac{1}{(x+1)^2} + \frac{1}{x+2}.
 $$
 
 ::::
+
+We end this section, before going to the {ref}`Sec:RationalFunctions:GraspleExercises`, with an example that contains everything we have learned so far.
+
+::::{prf:example}
+:label: Ex:RationalFunctions:PartialFractionDecomposition6
+
+Consider the proper rational function
+
+$$
+R(x)  = \frac{84 + 196 x + 282 x^2 + 230 x^3 + 104 x^4 + 22 x^5 - 9 x^6 - 7 x^7 - 2 x^8)}{(-1 + x) (2 + x)^2 (x^2+3) (2 + 2 x + x^2)^2}
+$$
+
+The denominator $Q(x)=(-1 + x) (2 + x)^2 (x^2+3) (2 + 2 x + x^2)^2$ of this rational function has a distinct linear factor $(-1 + x)$, a repeated linear factor $(2 + x)$ with multiplicity $2$, a distinct irreducible quadratic factor $(x^2+3)$ and a repeated irreducible quadratic factor $(2 + 2 x + x^2)$ with multiplicity $2$.
+
+Based on {prf:ref}`Thm:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic`, we try the following form for the partial fraction decomposition:
+
+$$
+R(x) = \frac{A}{x-1}+\frac{B}{x+2}+\frac{C}{(x+2)^2}+\frac{Dx + E}{x^2+3}+\frac{Fx + G}{(2 + 2 x + x^2)^2}+\frac{Hx + I}{2 + 2 x + x^2}.
+$$
+
+Rewriting the right-hand side to a single rational function and comparing the nominators results in a system of equations with 9 unknowns and 9 equations. Solving such a system can be quite tedious (but can be done!), so we used a computer algebra system to find the solution and substituted the values back into the partial fraction decomposition. The result is:
+
+$$
+R(x) = \frac{1}{x-1}+\frac{-2}{x+2}+\frac{3}{(x+2)^2}+\frac{-x}{x^2+3}+\frac{-1}{(x+1)^2+1}+\frac{2x}{((x+1)^2+1)^2}
+$$
+
+::::
+
+(Sec:RationalFunctions:GraspleExercises)=
+## Grasple exercises
