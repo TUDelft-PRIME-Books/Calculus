@@ -268,6 +268,7 @@ Suppose that $\lim\limits_{x\rightarrow a}f(x)=L$ and $\lim\limits_{x\rightarrow
 - $\lim\limits_{x\rightarrow a}f(x)g(x)=LM$ (product rule).
 - $\lim\limits_{x\rightarrow a}\dfrac{f(x)}{g(x)}=\dfrac{L}{M}$ if $M\neq 0$ (quotient rule).
 
+The corresponding rules also hold for left and right limits.
 ::::::
 
 ::::::{prf:remark}
