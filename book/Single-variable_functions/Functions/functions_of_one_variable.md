@@ -48,7 +48,56 @@ From a purely mathematical standpoint, functions are equally fundamental. Indeed
 
 ## Basic concepts
 
+We start off this section by giving a few essential definitions.
 
+::::::{prf:definition} 
+:label: Def:Functions1var:Function
+
+A **function** $f$ is a rule that assigns to each $x$ is a set $D$ a unique element, usually denoted by $f(x)$, in a set $C$. The set $D$ is called the **domain** of the function, while the set $C$ is called the **codomain** of the function.
+
+::::::
+
+::::::{prf:notation} 
+:label: Notation:Functions1var:Function
+
+If $f$ has domain $D$ and codomain $D$ we write $f:D\rightarrow C$. We also write $x\mapsto y$ when $f(x)=y$.
+::::::
+
+So how should you think about a function? There are several different perspectives you can take, but it maybe helpful to think about a function as a machine that takes an **input value** $x$ and turns this into an **output value** or **function value** $f(x)$. We also say that $x$ is **mapped into** $f(x)$ Note that a function only works in one direction: we can always insert an element of the domain to obtain an element of the codomain, but it is not always possible to go back, see {numref}`Section:Inverse`.
+
+In this book, the domain and codomain will almost always be (subsets of) $\mathbb{R}^m$ and $\mathbb{R}^n$ respectively, for some integers $n,m\geq 1$. In the first few chapters, we will specifically focus on functions where the domain and codomain are both (subsets of) the real numbers $\mathbb{R}$. Such a function is usually referred to as a **function of one variable** or a **function of a single variable**. For many such functions, it is possible to define the function by means of a formula, of which an example is given below. 
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Formula
+
+Consider the function $f:\mathbb{R}\rightarrow\mathbb{R}$ given by $f(x)=x^2$. This is the function that for each real number $x$ that is put into the function outputs the real number $x^2$. For instance, for the input value $x=2$, we obtain the output 
+
+$$
+ f(x)=f(2)=2^2=4$.
+$$
+
+Similarly, we obtain 
+
+$$
+ f(-3)=(-3)^2=9
+$$
+
+Note that each input value gives a unique output values, but there are output values that have multiple input values. Indeed, we note that
+
+$$
+ f(3)=3^2=9
+$$
+
+so both the input values $-3$ and $3$ are mapped into the output value $9$. Finally, notice that not all potential output values are actually reached. Indeed, the number $-1$ is in the codomain, but there is no real number $x$ with $f(x)=x^2=-1$ (note that we specified the domain of $f$ to be $\mathbb{R}$, so we are not interested in complex values of $x$ here).
+
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Noformula
+
+Although most functions in this book can be described by means of formula, this does not need to be the case. Moreover, the domain and/or codomain do not need to be part of $\mathbb{R}^n$. For instance, we can let $D$ be the set that contains $3$ people, Alice, Bob and Charlie, and let $f$ be the function that maps a person to their age. So, we could write this down like $f(\mathrm{Alice})=31$, $f(\mathrm{Bob})=66$ and $f(\mathrm{Charlie})=19$. Here, the output is still a number, but even that does not need to be the case. For instance, we could let $g$ be the function that specifies who the person has a crush on, so we could write $g(\mathrm{Alice})=\mathrm{Charlie}$, $f(\mathrm{Bob})=\mathrm{Charlie}$ and $f(\mathrm{Charlie})=\mathrm{Bob}$. This might seem a bit silly, but it actually quite beneficial that a lot of results that we develop in this section can also be applied to any type of domain or codomain, since it makes it possible to directly use these results in a more abstract mathematical setting.
+
+::::::
 
 
 In this section we cover:
