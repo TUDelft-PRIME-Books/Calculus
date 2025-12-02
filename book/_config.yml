@@ -1,5 +1,5 @@
 title: Calculus
-author: Authors from Delft University of Technology, built with <a href="https://teachbooks.io">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
+author: D. den Ouden-van der Horst, W.M. Schouten-Straatman & R. Koekoek from Delft University of Technology, built with <a href="https://teachbooks.io">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
 execute:
   execute_notebooks: "off"
 
@@ -26,6 +26,11 @@ sphinx:
   local_extensions:
     text_replacer: _ext/
   config:
+    metadata_figure_settings:
+      license:
+        substitute_missing: true
+      date:
+        substitute_missing: true
     language: en
     sphinx_indexed_defs_indexed_nodes: ['strong']
     tud_change_titlesize: true
@@ -46,7 +51,7 @@ sphinx:
       '```{iframe} ../references.html': "```{iframe} ../../../../../references.html"
     mathjax3_config:
       loader:
-        load: ['[tex]/cancel','ui/lazy']
+        load: ['[tex]/cancel']
       tex:
         packages:
           '[+]': ['cancel']
@@ -86,7 +91,6 @@ sphinx:
     - teachbooks_favourites
     - teachbooks_sphinx_grasple                      # Adds the Grasple exercises to your book 
     - sphinx_prime_applets                           # Adds the Prime applets to your book
-    # - sphinx_ref_graph                               # Adds a graph of references to your book, breaks the build currently, so disabled for now
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
     - sphinx_indexed_definitions
     - sphinx_new_tab_link

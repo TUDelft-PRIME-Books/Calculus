@@ -3,13 +3,62 @@
 This page is based on {cite:t}`Vuik_2023`.
 ```
 
+::::{admonition} Figures that should become applets
+:class: remark
+
+Each applet always should have interactivity features such as Zoom, Pan, and Fullscreen.
+
+The following figures should become applets with these additional interactivity features:
+
+```{list-table}
+:header-rows: 1
+:align: center
+:class: mid-align
+
+* - Figure
+  - Interactivity
+  - Implemented
+* - {numref}`Fig:ApproximatingIntegrals:riemann`
+  - Dragging each point along the curve/axis (within their relevant intervals)
+
+    Increasing/decreasing the number of points
+  - 
+* - {numref}`Fig:ApproximatingIntegrals:leftRectangle`
+  - Dragging $x_L$ along the curve/axis
+    
+    Dragging $x_R$ along the axis
+  - Yes
+* - {numref}`Fig:ApproximatingIntegrals:Trapezoidal`
+  - Dragging $x_L$ along the curve/axis
+    
+    Dragging $x_R$ along the curve/axis
+  -
+* - {numref}`Fig:ApproximatingIntegrals:Simpsons`
+  - Dragging $x_L$ along the curve/axis
+    
+    Dragging $x_M$ along the curve/axis
+
+    Dragging $x_R$ along the curve/axis
+  - 
+* - {numref}`Fig:ApproximatingIntegrals:composite`
+  - Increasing/decreasing the number of points
+  - 
+* - {numref}`Fig:ApproximatingIntegrals:errors`
+  - Enabling/disabling each of the curves
+  - 
+
+```
+
+::::
+
+(Sec:ApproximatingIntegrals)=
 # Approximating integrals
 
 ## Introduction
 
 Determining the physical quantities of a system (for example volume, mass, or length) often involves the integral of a function. In many cases, an analytic evaluation of the integral is not possible. In such cases one has to resort to numerical quadratures.
 
-As an example, we investigate the production of a spoiler that is mounted onto the cabin of a truck ({numref}`Figure %s <Fig:NumericalIntegration:truck>`). The shape of the spoiler is described by a sine function with a $2\pi$ meter period. The aluminium spoiler is made out of a flat plate by extrusion. The manufacturer wants to know the width of the plate such that the horizontal dimension of the spoiler will be 80 cm. The answer to this question is provided by the arc length of the curve (after a conversion to meters)
+As an example, we investigate the production of a spoiler that is mounted onto the cabin of a truck ({numref}`Figure %s <Fig:ApproximatingIntegrals:truck>`). The shape of the spoiler is described by a sine function with a $2\pi$ meter period. The aluminium spoiler is made out of a flat plate by extrusion. The manufacturer wants to know the width of the plate such that the horizontal dimension of the spoiler will be 80 cm. The answer to this question is provided by the arc length of the curve (after a conversion to meters)
 
 $$
  \left\{ \begin{array}{cl}
@@ -20,7 +69,7 @@ y(t)\hspace{-0.3cm}&=\sin(t), \quad 0 \leq t \leq \frac14\pi.
 $$
 
 :::{figure} Images/Fig-NumericalIntegration-truck.svg
-:name: Fig:NumericalIntegration:truck
+:name: Fig:ApproximatingIntegrals:truck
 :figwidth: 90%
 
 Truck with spoiler on the cabin. Originally from <a href="https://www.vecteezy.com/free-vector/truck" target="_blank">Truck Vectors by Vecteezy</a>.
@@ -37,10 +86,10 @@ is used. However, this integral cannot be evaluated in a simple way using only e
 
 ## Riemann sums and integrals
 
-A Riemann sum and the corresponding set of intermediate points $T_n$ are shown in {numref}`Figure %s <Fig:NumericalIntegration:riemann>`.
+A Riemann sum and the corresponding set of intermediate points $T_n$ are shown in {numref}`Figure %s <Fig:ApproximatingIntegrals:riemann>`.
 
 :::{figure} Images/Fig-NumericalIntegration-riemann.svg
-:name: Fig:NumericalIntegration:riemann
+:name: Fig:ApproximatingIntegrals:riemann
 :figwidth: 90%
 :class: dark-light
 
@@ -69,16 +118,15 @@ $$
 $$
 which use the left and the right end point of the interval, respectively.
 
-The left Rectangle rule is depicted in {numref}`Figure %s <Fig:NumericalIntegration:leftRectangle>`.
+The left Rectangle rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:leftRectangle>`.
 
-:::{figure} Images/Fig-NumericalIntegration-leftRectangle.svg
-:name: Fig:NumericalIntegration:leftRectangle
-:figwidth: 90%
+::::{applet}
+:url: calculus/integration/left_rectangle
+:name: Fig:ApproximatingIntegrals:leftRectangle
 :class: dark-light
 
 An illustration of the left Rectangle rule.
-
-:::
+::::
 
 **Trapezoidal rule**
 
@@ -91,15 +139,15 @@ $$
 The corresponding approximation of the integral is given by 
 
 :::{math}
-:label: Eq:NumericalIntegration:single_trap
+:label: Eq:ApproximatingIntegrals:single_trap
 
 \int_{x_L}^{x_R} f(x) dx \approx \int^{x_R}_{x_L} L_1(x) dx = \frac{x_R - x_L}{2}(f(x_L) + f(x_R)).
 :::
 
-This approximation is called the _Trapezoidal rule_, since Equation {eq}`Eq:NumericalIntegration:single_trap` equals the area of the trapezium with vertices $(x_L, 0), \; (x_R, 0),\; (x_R, f(x_R))$ and $(x_L, f(x_L))$. The Trapezoidal rule is depicted in {numref}`Figure %s <Fig:NumericalIntegration:Trapezoidal>`.
+This approximation is called the _Trapezoidal rule_, since Equation {eq}`Eq:ApproximatingIntegrals:single_trap` equals the area of the trapezium with vertices $(x_L, 0), \; (x_R, 0),\; (x_R, f(x_R))$ and $(x_L, f(x_L))$. The Trapezoidal rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:Trapezoidal>`.
 
 :::{figure} Images/Fig-NumericalIntegration-Trapezoidal.svg
-:name: Fig:NumericalIntegration:Trapezoidal
+:name: Fig:ApproximatingIntegrals:Trapezoidal
 :figwidth: 90%
 :class: dark-light
 
@@ -126,10 +174,10 @@ $$
 \int_{x_L}^{x_R} f(x) dx \approx \frac{x_R - x_L}{6} (f(x_{L}) + 4 f (x_{M}) + f(x_{R})).
 $$
 
-The Simpson's rule is depicted in {numref}`Figure %s <Fig:NumericalIntegration:Simpsons>`.
+The Simpson's rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:Simpsons>`.
 
 ::::{figure} Images/Fig-NumericalIntegration-Simpsons.svg
-:name: Fig:NumericalIntegration:Simpsons
+:name: Fig:ApproximatingIntegrals:Simpsons
 :figwidth: 90%
 :class: dark-light
 
@@ -142,7 +190,7 @@ An illustration of the Simpson's rule.
 To summarize:
 
 ::::{prf:definition}
-:label: Def:NumericalIntegration:simple_rules
+:label: Def:ApproximatingIntegrals:simple_rules
 
 Assume $f$ is continuous on $[x_L,x_R]$.
 
@@ -166,7 +214,7 @@ We define the following **integration rules**:
 Let us apply these rules methods to the example of the spoiler:
 
 ::::{prf:example}
-:label: Ex:NumericalIntegration:spoiler_simple
+:label: Ex:ApproximatingIntegrals:spoiler_simple
 
 We will approximate the integral
 
@@ -238,10 +286,10 @@ $$
  \int_a^b f(x) dx = \sum_{k=1}^n \int_{x_{k-1}}^{x_k} f(x) dx \approx \sum_{k=1}^n I_k = I.
 $$
 
-This is called a _composite integration rule_ and the idea is illustrated in {numref}`Figure %s <Fig:NumericalIntegration:composite>`.
+This is called a _composite integration rule_ and the idea is illustrated in {numref}`Figure %s <Fig:ApproximatingIntegrals:composite>`.
 
 :::{figure} Images/Fig-NumericalIntegration-composite.svg
-:name: Fig:NumericalIntegration:composite
+:name: Fig:ApproximatingIntegrals:composite
 :figwidth: 90%
 :class: dark-light 
 
@@ -252,7 +300,7 @@ An illustration of the composite left Rectangle rule.
 To summarize:
 
 ::::{prf:definition}
-:label: Def:NumericalIntegration:composite_rules
+:label: Def:ApproximatingIntegrals:composite_rules
 
 Assume $f$ is continuous on $[a,b]$, $h=\dfrac{b-a}{n}$ and $x_k=a+kh$ for $k=0,1,\ldots,n$ are given nodes.
 
@@ -310,7 +358,7 @@ $$
 Let us apply one of these composite rules methods to the example of the spoiler:
 
 ::::{prf:example}
-:label: Ex:NumericalIntegration:spoiler_composite
+:label: Ex:ApproximatingIntegrals:spoiler_composite
 
 We will approximate the integral
 
@@ -328,7 +376,7 @@ $$
 \end{align*}
 $$
 
-As this is still very far from the exact value (see {prf:ref}`Ex:NumericalIntegration:spoiler_simple`), we also computed the approximation with some smaller values of $h$:
+As this is still very far from the exact value (see {prf:ref}`Ex:ApproximatingIntegrals:spoiler_simple`), we also computed the approximation with some smaller values of $h$:
 
 |$h$|$I_R$|$\left\vert\mathcal{I}-I_R\right\vert$
 |-|-|-|
@@ -341,10 +389,10 @@ As this is still very far from the exact value (see {prf:ref}`Ex:NumericalIntegr
 
 Do you notice anything that happens in the last column?
 
-You can see that the error in the approximation _halves_ each time the value of $h$ _halves_. Something similar is true for each of our composite intregation rules, which you can see in {numref}`Figure %s <Fig:NumericalIntegration:errors>`.
+You can see that the error in the approximation _halves_ each time the value of $h$ _halves_. Something similar is true for each of our composite integration rules, which you can see in {numref}`Figure %s <Fig:ApproximatingIntegrals:errors>`.
 
 :::{figure} Images/Fig-NumericalIntegration-errors.svg
-:name: Fig:NumericalIntegration:errors
+:name: Fig:ApproximatingIntegrals:errors
 :figwidth: 90%
 :class: dark-light 
 
@@ -354,10 +402,10 @@ An illustration of the errors of three composite integration rules.
 
 ::::
 
-We can even formulate a theorem that states that the observation in {prf:ref}`Ex:NumericalIntegration:spoiler_composite` is always true:
+We can even formulate a theorem that states that the observation in {prf:ref}`Ex:ApproximatingIntegrals:spoiler_composite` is always true:
 
 ::::{prf:theorem} Order of a numerical integration rule
-:label: Thm:NumericalIntegration:thm
+:label: Thm:ApproximatingIntegrals:thm
 
 Assume $f$ is continuous on $[a,b]$, $h=\dfrac{b-a}{n}$, $x_k=a+kh$ for $k=0,1,\ldots,n$ are given nodes and that $\mathcal{I}=\int_{a}^{b}f(x)dx$ is approximated with a composite integration rule $I$.
 
@@ -375,11 +423,11 @@ A proof of this theorem is too much for this book, but you can find it in {cite:
 
 ::::{caution}
 
-{prf:ref}`Thm:NumericalIntegration:thm` does not give a way to calculate the real error, only gives an indication how to the error is related to the stepsize $h$. 
+{prf:ref}`Thm:ApproximatingIntegrals:thm` does not give a way to calculate the real error, only gives an indication how to the error is related to the step size $h$. 
 
 ::::
 
-From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next table:
+From {prf:ref}`Ex:ApproximatingIntegrals:spoiler_composite` we can deduce the next table:
 
 |Composite rule|$p$|
 |-|-|
@@ -392,7 +440,7 @@ From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/96be8c57-0314-4896-a632-cc3390b5acb4?id=104235
-:label: Grasple:NumericalIntegration:sincosleftright
+:label: Grasple:ApproximatingIntegrals:sincosleftright
 :dropdown:
 :description: Approximate an integral using the left and right Rectangle rules.
 
@@ -401,7 +449,7 @@ From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/52181c0d-e14d-4823-9ae6-2f5504772632?id=78657
-:label: Grasple:NumericalIntegration:tabletrapezoidal
+:label: Grasple:ApproximatingIntegrals:tabletrapezoidal
 :dropdown:
 :description: Approximate an integral using the Trapezoidal rule.
 
@@ -410,7 +458,7 @@ From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/5874f680-fc98-4b44-87b6-07c31a1a3847?id=104245
-:label: Grasple:NumericalIntegration:leftequalsright
+:label: Grasple:ApproximatingIntegrals:leftequalsright
 :dropdown:
 :description: When do two rules give the same result?
 
@@ -419,7 +467,7 @@ From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/5639f3eb-8d0c-4f2f-b16b-0a182ac3c723?id=78665
-:label: Grasple:NumericalIntegration:compositeleft
+:label: Grasple:ApproximatingIntegrals:compositeleft
 :dropdown:
 :description: Approximate an integral with the composite left Rectangle rule.
 
@@ -428,7 +476,7 @@ From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/6a7584af-09ac-4ccf-9ccc-c89033109f3f?id=78859
-:label: Grasple:NumericalIntegration:compositerighttrapezoidal
+:label: Grasple:ApproximatingIntegrals:compositerighttrapezoidal
 :dropdown:
 :description: Approximate an integral with the composite right Rectangle rule and the Trapezoidal rule.
 
@@ -437,7 +485,7 @@ From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/72759075-97e9-44fd-8091-5ff1ee43bb6f?id=104303
-:label: Grasple:NumericalIntegration:determine_and_predict
+:label: Grasple:ApproximatingIntegrals:determine_and_predict
 :dropdown:
 :description: Determine the used composite integration rule and predict the error.
 
@@ -446,7 +494,7 @@ From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/509288ed-9cd3-4a3b-890a-04baa57ca1ba?id=104264
-:label: Grasple:NumericalIntegration:order_and_predict
+:label: Grasple:ApproximatingIntegrals:order_and_predict
 :dropdown:
 :description: Determine the order of a composite integration rule and predict the error.
 
@@ -455,7 +503,7 @@ From {prf:ref}`Ex:NumericalIntegration:spoiler_composite` we can deduce the next
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/958541cf-21e4-4d58-9a17-0dfebf5f357a?id=104296
-:label: Grasple:NumericalIntegration:number_of_intervals
+:label: Grasple:ApproximatingIntegrals:number_of_intervals
 :dropdown:
 :description: Determine the number of intervals needed to obtain a required accuracy.
 

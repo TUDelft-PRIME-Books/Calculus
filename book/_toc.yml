@@ -32,12 +32,12 @@ parts:
       - file: "Single-variable_functions/Functions/functions_of_one_variable.md"
       - file: "Single-variable_functions/Functions/properties.md"
       - file: "Single-variable_functions/Functions/curves.md"
+      - file: "Single-variable_functions/Functions/rational_functions.md"
       - file: "Single-variable_functions/Functions/inverse_functions.md"
       - file: "Single-variable_functions/Functions/nonlinear_equations_of_one_variable.md"
       - file: "Single-variable_functions/Functions/limits_at_a_point.md"
       - file: "Single-variable_functions/Functions/limits_at_infinity.md"
       - file: "Single-variable_functions/Functions/continuity.md"
-      - file: "Single-variable_functions/Functions/rational_functions.md"
     - file: "Single-variable_functions/Differentiation/introduction_differentiation.md" # ref_graph: {'ignore':True}
       sections:
       - file: "Single-variable_functions/Differentiation/differentiability.md"
@@ -98,22 +98,31 @@ parts:
       - file: "Multivariable_functions/Partial_differentiation/optimisation_under_equality_constraints.md"
     - file: "Multivariable_functions/Multivariable_integration/introduction_multivariable_integration.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Multivariable_functions/Multivariable_integration/multiple_and_repeated_integrals.md"
+      - file: "Multivariable_functions/Multivariable_integration/double_integrals.md"
+      - file: "Multivariable_functions/Multivariable_integration/triple_and_multiple_integrals.md"
       - file: "Multivariable_functions/Multivariable_integration/coordinate_transformations.md"
-      - file: "Multivariable_functions/Multivariable_integration/surface_integrals.md"
+      - file: "Multivariable_functions/Multivariable_integration/improper_multiple_integrals.md"
       - file: "Multivariable_functions/Multivariable_integration/line_integrals.md"
+      - file: "Multivariable_functions/Multivariable_integration/surface_integrals.md"
     - file: "Multivariable_functions/Vector_calculus/introduction_vector_calculus.md" # ref_graph: {'ignore':True}
       sections:
       - file: "Multivariable_functions/Vector_calculus/vector_fields.md"
-      - file: "Multivariable_functions/Vector_calculus/integrals_of_vector_fields.md"
-      - file: "Multivariable_functions/Vector_calculus/curl_divergence_and_flux.md"
-      - file: "Multivariable_functions/Vector_calculus/Greens_divergence_and_Stokes_theorem.md"
+      - file: "Multivariable_functions/Vector_calculus/line_integrals_of_vector_fields.md"
+      - file: "Multivariable_functions/Vector_calculus/fundamental_theorem_of_line_integrals.md"
+      - file: "Multivariable_functions/Vector_calculus/Greens_theorem.md"
+      - file: "Multivariable_functions/Vector_calculus/surface_integrals_of_vector_fields.md"
+      - file: "Multivariable_functions/Vector_calculus/divergence_and_curl.md"
+      - file: "Multivariable_functions/Vector_calculus/Gauss_theorem.md"
+      - file: "Multivariable_functions/Vector_calculus/Stokes_theorem.md"
   - caption: Differential equations
     numbered: true
     chapters:
+    - file: "Differential_equations/Introduction/introduction_differential_equations.md" # ref_graph: {'ignore':True}
+      sections:
+      - file: "Differential_equations/Introduction/differential_equations.md"
+      - file: "Differential_equations/Introduction/existence_and_uniqueness.md"
     - file: "Differential_equations/First-order_ordinary_differential_equations/introduction_first_order_ODE.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Differential_equations/First-order_ordinary_differential_equations/differential_equations_and_initial_value_problems.md"
       - file: "Differential_equations/First-order_ordinary_differential_equations/direction_fields_and_solutions.md"
       - file: "Differential_equations/First-order_ordinary_differential_equations/separable_differential_equations.md"
       - file: "Differential_equations/First-order_ordinary_differential_equations/first_order_linear_differential_equations.md"
@@ -150,12 +159,14 @@ parts:
       - file: "Overviews/Multivariable_functions/common_curves.md" # ref_graph: {'ignore':True}
       - file: "Overviews/Multivariable_functions/common_surfaces.md" # ref_graph: {'ignore':True}
       - file: "Overviews/Multivariable_functions/integral_identities.md" # ref_graph: {'ignore':True}
+    - file: "Overviews/fundamental_theorems.md" # ref_graph: {'ignore':True}
+    - file: "Overviews/differential_equations.md" # ref_graph: {'ignore':True}
   - caption: Back matter
     numbered: False
     chapters:
     - file: references.md # ref_graph: {'ignore':True}
-    - file: genindex.md # ref_graph: {'ignore':True}
     - file: credits.md # ref_graph: {'ignore':True}
+    - file: genindex.md # ref_graph: {'ignore':True}
   - caption: Reference pages for development
     numbered: True
     style: romanupper

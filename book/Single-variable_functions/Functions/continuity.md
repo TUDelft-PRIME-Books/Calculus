@@ -114,6 +114,22 @@ Let $f$ be one-to-one function, defined on an interval $(a,b)$, that is continuo
 
 The proof of this theorem uses the Intermediate Value Theorem, which is treated later in this section. As such, we postpone the proof for now.
 
+::::::{warning} 
+:name: Warning:Continuity:Inverse
+If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continuous at a point $c$ in the interval $(a,b)$, you might expect that the inverse function $f^{-1}$ is continuous at $f^{-1}$ as well, but this is not the case necessarily. However, coming up with an example is very hard. We provide one below, but it is very technical, so read it at your own risk.
+
+::::::
+
+:::{admonition} Example of one-to-one function where continuity at point does not carry over to inverse
+:class: tudproof, dropdown
+Consider the function $f(x)$, defined for $x$ in the interval $(-1,1)$, which has $f\left(\frac{1}{n}\right)=\frac{1}{2n}$ for all integers $n\geq 2$, $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$ for all integers $n\geq 2$ and $f(x)=x$ for all other values of $x$. First, we note that $f$ is one-to-one. Note that the points of the form $\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ even, while points of the form $1-\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ odd, so these points are not mapped to the same function values. Moreover, if $x$ is not of one of these forms, then $x$ is mapped to itself, which is not of the form $\frac{1}{m}$ for $m$ either even or odd. So indeed, different points are mapped to different function values, so the function is one-to-one.
+
+Now we claim that $f$ is continuous at $0$. Let $\varepsilon>0$ be given (we can assume that $\varepsilon\leq \frac{1}{2}$). We choose $\delta=\varepsilon$. Then for $x$ with $|x|<\delta$ we either have $x=\frac{1}{n}$, which means that $|f(x)|=\frac{1}{2n}\leq \frac{1}{n}<\delta=\varepsilon$, or $x$ is not of this form, in which case $|f(x)|=|x|<\delta=\varepsilon$ ($x=1-\frac{1}{n}$ is not possible since we assumed that $\delta=\varepsilon<\frac{1}{2}$). As such, we must have $\lim\limits_{x\rightarrow 0}f(x)=0$. Since $f(0)=0$, $f$ is continuous at $0$.
+
+Finally, we claim that $f^{-1}$ is not continuous at $0$. Note that $f^{-1}(0)=0$, since $f(0)=0$. Since continuity means that for each $\varepsilon>0$ there is a $\delta>0$ with a certain property, and we want to show that the function is discontinuous, we want to choose $\varepsilon>0$ such that there is no $\delta>0$ with the desired property. In this case we choose $\varepsilon=\frac{1}{4}$. We want to show that no choice of $\delta$ works, so we let $\delta>0$ be given. Then we can choose an integer $n\geq 2$ such that $0<\frac{1}{2n+1}<\delta$. For this $n$, we find that $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}$, since we know that $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$. Since $n\geq 2$, we have $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}>\frac{1}{4}=\varepsilon$. So we found a point $x$ with $0<|x|<\delta$ and $|f^{-1}(x)|\geq \varepsilon$. Since $\delta$ was chosen arbitrarily, no $\delta$ is going to work. As such, the function $f^{-1}$ is not continuous at $f^{-1}(0)=0$, even though $f$ was continous at $0$.
+
+:::
+
 With all these preparations in hand, we are ready to show that most standard functions are continuous.
 
 ::::::{prf:theorem} Continuity of standard functions
@@ -344,10 +360,51 @@ $$
 This means that $|f^{-1}(y)-c|<\varepsilon$, as desired. Hence, $f^{-1}$ is continuous at $c$. Since $c$ was chosen arbitrary, $f^{-1}$ is continuous on its maximal domain.
 :::
 
-Nog te doen: links en rechts.
+(Subsec:ContLeftRigth)=
 
-In this section we cover
+## Left and right continuity
 
-- Definition (limit definition), standard continuous functions and basic rules of calculation (including left- and right-continuity)
-- "Taking a limit inside a continuous function"
-- Intermediate value theorem
+Consider the function from {prf:ref}`Ex:Continuity:Visual`. We saw that this function was not coninuous at $-2$, since the left and right limit were unequal. However, we can read off from the graph that $\lim\limits_{x\rightarrow 2^-}f(x)=f(-2)$. So if we ignore the part of the function to the right of $-2$, the function is continuous. We say that the function is **left continuous** at $-2$. Although left continuity (and the corresponding **right continuity**) is a bit weaker than regular continuity, it is still a useful concept to consider.
+
+::::::{prf:definition} Left and right continuity
+:label: Def:Continuity:Continuityleftright
+
+Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **left continuous** at $a$ whenever $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$. 
+
+Similarly, we say that $f$ is **right continuous** at $a$ whenever $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$. 
+::::::
+
+::::::{prf:theorem} 
+:label: Thm:Continuity:Continuityleftright
+
+Let $f$ be a function and $a$ a point in the domain of $f$. Then $f$ is continuous at $a$ precisely when $f$ is both left and right continuous at $a$.
+::::::
+
+:::{admonition} Proof 
+:class: tudproof
+A function is both left and right continuous at $a$, when both identities $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$ and $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$ hold. By {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` this happens precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$, i.e. when $f$ is continuous at $a$.
+:::
+
+::::::{prf:example} 
+:label: Example:Continuity:Continuityleftright
+
+Consider the function $f(x)=\left\{\begin{array}{ll}3x+4,&\mathrm{if }\,x\leq 0\\ \ln(x)+3,&\mathrm{if }\,0<x<1\\ 3-x,&\mathrm{if }\,x\geq 1. \end{array}\right.$
+We want to find out at which points $f$ is continuous (either regular, left or right). Since the functions $3x+4$, $\ln(x)+3$ and $3-x$ are continuous on their domains, the only problems can arise at the points where we switch between which formula is used to describe the function values, i.e. at $0$ and $1$. We can evaluate
+
+$$
+ \lim\limits_{x\rightarrow 0^-}f(x)=\lim\limits_{x\rightarrow 0^-}3x+4=4, \quad \lim\limits_{x\rightarrow 0^+}f(x)=\lim\limits_{x\rightarrow 0^+}\ln(x)+3=-\infty, \quad f(0)=4
+$$
+
+Hence, the limit $\lim\limits_{x\rightarrow 0}f(x)$ does not exist, so the function is not continuous at $0$. However, we do find that $\lim\limits_{x\rightarrow 0^-}f(x)=f(0)$. As such, the function is left continuous at $0$ (but not right continuous).
+
+Similarly, we can evaluate
+
+$$
+ \lim\limits_{x\rightarrow 1^-}f(x)=\lim\limits_{x\rightarrow 1^-}\ln(x)+3=3, \quad \lim\limits_{x\rightarrow 1^+}f(x)=\lim\limits_{x\rightarrow 1^+}3-x=2, \quad f(1)=2
+$$
+
+Hence, the limit $\lim\limits_{x\rightarrow 1}f(x)$ does not exist, so the function is not continuous at $1$. However, we do find that $\lim\limits_{x\rightarrow 1^+}f(x)=f(1)$. As such, the function is right continuous at $1$ (but not left continuous).
+
+Hier nog een plaatje van deze functie.
+::::::
+
