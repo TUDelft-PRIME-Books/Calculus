@@ -10,4 +10,4 @@ In this section we cover:
 - Derivatives of elemental functions (powers of x, sin, cos, e^x)
 - Sums and scalar multiples
 - Tangent line
-- Higher order derivatives
+- Higher-order derivatives

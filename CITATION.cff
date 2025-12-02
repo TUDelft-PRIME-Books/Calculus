@@ -3,7 +3,7 @@
 
 cff-version: 1.2.0
 message: "If you use this open interactive book, please cite it using these metadata including the TeachBooks reference."
-title: 'Open interactive textbook Template' # replace with your own book title when you use this template
+title: 'Calculus' # replace with your own book title when you use this template
 authors:
 - given-names: Dennis
   name-particle: den
@@ -11,6 +11,17 @@ authors:
   email: d.denouden-vanderhorst@tudelft.nl
   affiliation: 'Delft University of Technology'
   orcid: 'https://orcid.org/0009-0002-2627-8169'
+- given-names: Willem
+  name-particle: 
+  family-names: Schouten-Straatman
+  email: W.M.Schouten-Straatman@tudelft.nl
+  affiliation: 'Delft University of Technology'
+  orcid: 'https://orcid.org/0000-0001-9947-7236'
+- given-names: Roelof
+  name-particle: 
+  family-names: Koekoek
+  email: R.Koekoek@tudelft.nl
+  affiliation: 'Delft University of Technology'
 preferred-citation:
   type: book
   authors: # replace with your own name when you use this template
@@ -20,6 +31,17 @@ preferred-citation:
     email: d.denouden-vanderhorst@tudelft.nl
     affiliation: 'Delft University of Technology'
     orcid: 'https://orcid.org/0009-0002-2627-8169'
+  - given-names: Willem
+    name-particle: 
+    family-names: Schouten-Straatman
+    email: W.M.Schouten-Straatman@tudelft.nl
+    affiliation: 'Delft University of Technology'
+    orcid: 'https://orcid.org/0000-0001-9947-7236'
+  - given-names: Roelof
+    name-particle: 
+    family-names: Koekoek
+    email: R.Koekoek@tudelft.nl
+    affiliation: 'Delft University of Technology'
   url: 'https://tudelft-prime-books.github.io/Calculus' # replace with your own URL (book website / publisher link) when you use this template
   identifiers:
     - type: url

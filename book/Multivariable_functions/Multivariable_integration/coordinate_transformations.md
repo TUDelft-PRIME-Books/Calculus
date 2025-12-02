@@ -1,7 +1,10 @@
 # Coordinate transformations
 
-- Double integral in polar coordinates
-- Triple integral in cylindrical coordinates
-- Triple integral in spherical coordinates
 - Double integral using general coordinate transform
-- Multiple integrals using general coordinate transforms
+  - Double integral in polar coordinates as an example.
+  - Add theorem on Jacobian for polar coordinates.
+- Triple integrals using general coordinate transforms
+  - Triple integral in cylindrical coordinates as an example.
+  - Triple integral in spherical coordinates as an example.
+  - Add theorem on Jacobian for cylindrical and spherical coordinates.
+  - Short remark on multiple integrals with 4 or more variables.

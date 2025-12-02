@@ -4,5 +4,6 @@ I think this should go after line integrals, they have similar ideas but doing 1
 
 In this section we cover:
 
-- Surface integral of scalar function, recap to surface area from earlier section
+- Surface integral of scalar function
 - Rules of calculation
+- Surface area as an example/application

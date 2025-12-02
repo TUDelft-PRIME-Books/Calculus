@@ -9,6 +9,7 @@ In this section we cover:
   - Must be critical point
   - There is at least one curve over the graph of the function through the point where the function has a *strict* local maximum at the point along the curve.
   - There is at least one curve over the graph of the function through the point where the function has a *strict* local minimum at the point along the curve.
-- Other typical points, things such as inflection points, ridges?
+  - Still unclear if this is the best definition; discuss.
 - Second derivatives test for functions of two variables (use directional derivatives)
 - Second derivatives test for functions of three or more variables (use linear algebra)
+- Other typical points, things such as inflection points, ridges in separate section, optional.
