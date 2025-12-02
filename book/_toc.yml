@@ -160,6 +160,7 @@ parts:
       - file: "Overviews/Multivariable_functions/common_surfaces.md" # ref_graph: {'ignore':True}
       - file: "Overviews/Multivariable_functions/integral_identities.md" # ref_graph: {'ignore':True}
     - file: "Overviews/fundamental_theorems.md" # ref_graph: {'ignore':True}
+    - file: "Overviews/differential_equations.md" # ref_graph: {'ignore':True}
   - caption: Back matter
     numbered: False
     chapters:
