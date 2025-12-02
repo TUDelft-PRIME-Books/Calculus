@@ -5,11 +5,11 @@
 
 You can refer to this book as:
 
-> D. den Ouden-van der Horst from Delft University of Technology (2025) _Calculus_. https://tudelft-prime-books.github.io/Calculus/. Source files at https://github.com/TUDelft-PRIME-Books/Calculus. CC BY 4.0. Visited on `insert date visited here`.
+> D. den Ouden-van der Horst, W.M. Schouten-Straatman & R. Koekoek from Delft University of Technology (2025) _Calculus_. https://tudelft-prime-books.github.io/Calculus/. Source files at https://github.com/TUDelft-PRIME-Books/Calculus. CC BY 4.0. Visited on `insert date visited here`.
 
 You can refer to individual chapters or pages within this book as:
 
-> `insert Title of Chapter or Page here`. In D. den Ouden-van der Horst from Delft University of Technology (2025) _Calculus_. https://tudelft-prime-books.github.io/Calculus/. Source files at https://github.com/TUDelft-PRIME-Books/Calculus. CC BY 4.0. Visited on `insert date visited here`.
+> `insert Title of Chapter or Page here`. In D. den Ouden-van der Horst, W.M. Schouten-Straatman & R. Koekoek from Delft University of Technology (2025) _Calculus_. https://tudelft-prime-books.github.io/Calculus/. Source files at https://github.com/TUDelft-PRIME-Books/Calculus. CC BY 4.0. Visited on `insert date visited here`.
 
 We anticipate that the content of this book will change significantly. Therefore, we recommend using the source code directly with the citation above that refers to the GitHub repository and list the date and name of the file. Although content will be added over time, chapter titles and URL's in this book are expected to remain relatively static. However, we make no guarantee, so if it is important for you to reference a specific location/commit within the book.
 
@@ -26,8 +26,28 @@ This book is [CC BY 4.0 licensed](https://creativecommons.org/licenses/by/4.0/) 
 
 [Dr.ir. D. (Dennis) den Ouden-van der Horst](https://www.linkedin.com/in/dennis-den-ouden-614b5813/)
 
+[Dr. R. (Roelof) Koekoek](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/people/dr-r-roelof-koekoek)
+
+[Dr. W.M. (Willem) Schouten-Straatman](https://www.linkedin.com/in/willem-schouten-straatman/)
+
 ### Reviewers
+
+[Dr.ir. N.P.K. (Nelson) Chan](https://www.linkedin.com/in/channelson89/)
+
+[Dr. C.O. (Christophe) Smet](https://www.linkedin.com/in/christophe-smet-34743433a/)
+
+[V. (Valentina) Vaniushkina, MSc](https://www.linkedin.com/in/vvvalentina/)
+
+[Dr. N.D. (Nikolaas) Verhulst](https://www.linkedin.com/in/nikolaas-verhulst-0aa912130/)
+
+[Dr. P.M. (Paul) Visser](https://www.tudelft.nl/ewi/over-de-faculteit/afdelingen/applied-mathematics/visser-pm)
+
+[Dr. T.W.C. (Tom) Vroegrijk](https://www.linkedin.com/in/tomvroegrijk/)
 
 ### Support and others
 
 [Y. (Yoni) Geubbels, B Ed](https://www.linkedin.com/in/yoni-geubbels-92b01915a/)
+
+[B. (Bartosz) Włodarczyk](https://www.linkedin.com/in/bartoszwlodarczyk/)
+
+[Z. (Zhenghan) Zhong](https://www.linkedin.com/in/zh-zhong/)

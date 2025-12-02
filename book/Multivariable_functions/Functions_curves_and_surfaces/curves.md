@@ -4,3 +4,5 @@ In this section we cover:
 
 - Curves in $\mathbb{R}^3$
 - Parametrization of curves
+- Orientation of curves
+- Closed curves

@@ -6,3 +6,5 @@ In this section we cover:
 - Parametric surfaces
 - Surfaces of revolution
 - Intersection of surfaces
+- Orientation of surfaces
+- Closed surfaces

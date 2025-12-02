@@ -2,11 +2,8 @@
 
 In this section we cover:
 
-- Definition of solutions, including general solution
-- Educated guess for solutions
-- Superposition principle for linear differential equations
-- Optional: existence and uniqueness theorem
 - Direction fields
+- Educated guess for solutions
 
 Not every first-order differential equation can be solved easily. However, in many cases there is no need for a *quantitive* solution. A *qualtitive* solution might suffice. For instance, we might look at a so-called **direction field**.
 
