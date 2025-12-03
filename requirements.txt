@@ -12,4 +12,4 @@ sphinx-visualized==0.8.1
 
 # Our favourite Sphinx extensions in one line, replace with individual extensions if you prefer some extensions not to be included (https://github.com/TeachBooks/TeachBooks-Favourites)
 git+https://github.com/TeachBooks/TeachBooks-Favourites@v1.5.0
-git+https://github.com/TeachBooks/Sphinx-PRIME-applets@38b7f45
+git+https://github.com/TeachBooks/Sphinx-PRIME-applets@2662f6954d1b62192d8bf1a7485cc20ff439436d
