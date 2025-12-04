@@ -47,8 +47,9 @@ Notice that in the definition we talk about **the** inverse function. This must 
 
 ::::::
 
-:::{admonition} Proof 
+:::{admonition} Proof of {prf:ref}`Thm:Inverse:InverseInverse`
 :class: tudproof
+
 Suppose $g$ and $h$ are both inverses of the same function $f$, which has domain $D$ and range $R$. Let $y$ in $R$ and write $x_1=g(y)$ and $x_2=h(y)$. Since $x_1=g(y)$ we have by the definition of the inverse that $f(x_1)=y$. Similarly, we must have $f(x_2)=y$ since $x_2=h(y)$. Since $f(x_1)=y$ and $h$ is an inverse of $f$, we must have $h(y)=x_1$, so $x_1=x_2$. This means that $g(y)=x_1=x_2=h(y)$. So $g$ and $h$ must be the same function. Hence, $f$ only has $1$ inverse function.
 
 Suppose the function $g$ with domain $R$ and range $D$ is the inverse function of $f$, which has domain $D$ and range $R$. Then for all $y$ in the domain of $g$ and $x$ in the range of $g$ we have $g(y)=x$ precisely when $f(x)=y$, since $g$ is the inverse of $f$. This precisely means that $f$ is also the inverse function of $g$.
@@ -66,14 +67,14 @@ If $f$ has an inverse function $f^{-1}$, then the graph of $f^{-1}$ can be found
 The interpretation of the inverse function is that it 'undoes' what $f$ does. Indeed, if $x$ is in the domain of a function $f$ which has an inverse function $f^{-1}$, then we have $f^{-1}(f(x))=x$. This follows, since by definition $f^{-1}(f(x))$ is the unique number $\tilde{x}$ in the domain of $f$ with $f(\tilde{x})=f(x)$, which must mean that $\tilde{x}=x$. This also works the other way around: for $y$ in the the domain of $f^{-1}$ we must have $f(f^{-1}(y))=y$, since by definition $f^{-1}(y)$ is the unique number $x$ in the domain of $f$ with $f(x)=y$. The two equations $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ are called the **cancelling equations**. In fact, the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold precisely when $f$ and $g$ are inverses of each other. In fact, verifying that the cancelling equations hold is usually the easiest way to show that two functions are inverses of each other.
 
 ::::::{prf:theorem}
-:label: Thm:Inverse:Cancelling equations
+:label: Thm:Inverse:CancellingEquations
 
 Let $f$ be a function with domain $D$ and range $R$ and let $g$ be a function with domain $R$. Then $g=f^{-1}$ precisely when the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold for all $x$ in $D$ and all $y$ in $R$.
 
 ::::::
-
-:::{admonition} Proof 
+:::{admonition} Proof of {prf:ref}`Thm:Inverse:CancellingEquations`
 :class: tudproof
+
 In the discussion preceding this theorem, we already showed that the cancelling equations hold if $g=f^{-1}$. Hence, we now assume that the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold for all $x$ in $D$ and all $y$ in $R$ and we will show that $g=f^{-1}$. Let $x$ in $D$ and write $y=f(x)$. Then $g(y)=g(f(x))=x$ because of the first cancelling equation. Moreover, let $y$ in $R$ and write $x=g(y)$. Then $f(x)=f(g(y))=y$ because of the second cancelling equation. As such, we have $f(x)=y$ precisely when $g(y)=x$. This means that $g=f^{-1}$.
 :::
 
@@ -154,7 +155,7 @@ Stated differently, $f$ is one-to-one precisely when it does not take the same v
 Let $f$ be a function with domain $D$ and range $R$. Then $f$ has an inverse function (with domain $R$) precisely when $f$ is one-to-one.
 ::::::
 
-:::{admonition} Proof 
+:::{admonition} Proof of {prf:ref}`Thm:Inverse:InverseInjective`
 :class: tudproof
 Assume that $f$ is one-to-one. Let $y$ in $R$. Since $R$ is the range of $f$, there is at least one $x$ with $f(x)=y$ and since $f$ is one-to-one, there is precisely one such $x$. Then we define $g(y)=x$. By construction, we have $f(g(y))=f(x)=y$, so one of the cancelling equations holds. Now we pick an arbitrary $x$ in $D$ and write $y=f(x)$. Since $x$ is the only number that maps to $y$ (since $f$ is one-to-one) we have $g(y)=x$, so we find $g(f(x))=g(y)=x$. Hence, both cancelling equations hold, which means that $g=f^{-1}$. We conclude that $f$ has an inverse function with domain $R$.
 
@@ -200,6 +201,8 @@ Reversely, we know that the domain of the inverse function is always the range o
 In the preceding examples, we have found the inverse function (whenever it exists) by starting with the equation $y=f(x)$ and trying to express $x$ as a function of $y$. This method works in general, so let us present it as an algorithm.
 
 ::::::{prf:algorithm} How to find the inverse of a one-to-one function?
+:label: Alg:Inverse:FindInverse
+
 Let $f$ be a one-to-one function. Then the inverse of $f$ can be found as follows.
 
 1. Start with the equation $y=f(x)$;
@@ -254,7 +257,7 @@ If a function $f$ is strictly monotonic on its domain, then $f$ is one-to-one. I
 
 ::::::
 
-:::{admonition} Proof 
+:::{admonition} Proof of {prf:ref}`Thm:Inverse:MonotonicOnetoone`
 :class: tudproof
 Suppose first that $f$ is strictly increasing on its domain. Then $f(a)<f(b)$ for any $a<b$, but that immediately means that $f$ does not take on the same function value more than once, since $f(a)<f(b)$ implies $f(a)\neq f(b)$. So $f$ must be one-to-one, which means that it must have an inverse function. Now, let $y_1$ and $y_2$ in the domain of $f^{-1}$ with $y_1<y_2$ and write $a=f^{-1}(y_1)$ and $b=f^{-1}(y_2)$. Then we cannot have $a\geq b$, since $a>b$ would imply $y_1=f(a)>f(b)=y_2$, while $a=b$ would imply $y_1=f(a)=f(b)=y_2$. Hence, we must have $a<b$, which means $f^{-1}(y_1)<f^{-1}(y_2)$, which means that $f^{-1}$ is strictly increasing as well.
 
@@ -348,7 +351,7 @@ Let $b>0$ with $b\neq 1$. Then for $x>0$, $y>0$ and a real number $p$ we have
 
 ::::::
 
-:::{admonition} Proof 
+:::{admonition} Proof of {prf:ref}`Thm:Inverse:Logarithmcomputationrules`
 :class: tudproof
 Since the logarithm is the inverse function of the exponential function, we find that $\log_b(xy)$ is the unique number $z$ with $b^z=xy$. We will show that $\log_b(x)+\log_b(y)$ also has this property. Indeed, we find, using the standard computation rules for exponential functions
 
@@ -427,7 +430,7 @@ $$
 
 ::::::
 
-:::{admonition} Proof 
+:::{admonition} Proof of {prf:ref}`Thm:Inverse:Logarithmbasechange`
 :class: tudproof
 We write $y=\log_a(x)$. Then $y$ is the unique number with $a^y=x$. Then we must have
 
