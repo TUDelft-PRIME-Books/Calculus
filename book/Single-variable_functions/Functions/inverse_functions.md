@@ -2,6 +2,16 @@
 
 ## Introduction
 
+::::{figure} Images/Fig-Inverse-Intro.png
+:name: Fig:Inverse:Intro
+:class: dark-light
+:figclass: margin
+
+Easier said than done?
+
+::::
+:::::
+
 So far, we have mainly been interested in evaluating function values, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it also interesting to try to find for which value(s) of $x$, if any, we have $f(x)=y$ for some value of $y$ in the range of $f$. That is, we want to somehow undo the function $f$ and go back to the domain.
 
 In some cases, this is possible. Consider, for instance, the function $f(x)=2x+3$ and say we want to find out for which value of $x$, if any, we have $f(x)=5$. This means that we want to solve the equation $2x+3=5$, which has $x=1$ as a solution. Indeed, we have $f(1)=5$.
