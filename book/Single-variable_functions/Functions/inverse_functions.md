@@ -1,3 +1,5 @@
+(Section:Inverse)=
+
 # Inverse functions
 
 So far, we have mainly been interested in evaluating function values, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it also interesting to try to find for which value(s) of $x$, if any, we have $y=f(x)$. That is, we want to somehow undo the function $f$ and go back to the domain.
@@ -48,7 +50,7 @@ We can also nicely visualise the graph of an inverse function by manipulating th
 ::::::{prf:theorem} Graph of inverse function
 :label: Thm:Inverse:Graphinverse
 
-If $f$ has an inverse function $f^{-1}$, then the graph of $f^{-1}$ can be found by reflecting the graph of $f$ in the line $y=x$.
+If a single-variable $f$ has an inverse function $f^{-1}$, then the graph of $f^{-1}$ can be found by reflecting the graph of $f$ in the line $y=x$.
 
 ::::::
 
