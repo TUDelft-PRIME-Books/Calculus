@@ -119,11 +119,14 @@ Consider the function $f$ of which the graph is shown below.
 
 Some function $f$.
 
+::::
+
 :::{prf:remark}
+:label: Remark:LimitAtPoint:Visualinteractive
+
 Do not include function definitions in the final image/applet.
 :::
 
-::::
 
 Can we read off from the graph at which points $a$ the limit $\lim\limits_{x\rightarrow a}f(x)$ exists? Well, for almost all values of $a$ there is no problem: the function continues smoothly and the function values clearly move towards a certain value. Only the points $a=-2$, $a=-1$ and $a=1$ are potentially problematic. 
 

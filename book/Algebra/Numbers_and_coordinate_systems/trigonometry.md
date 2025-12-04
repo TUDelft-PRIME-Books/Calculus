@@ -2,6 +2,21 @@
 
 # Trigonometry
 
+## Introduction
+
+In this section we will introduce some basic concepts of trigonometry. Trigonometry is the branch of mathematics that studies the relations between the angles and the lengths of the sides of triangles. It has many applications in science and engineering, such as in physics, computer graphics, signal processing and navigation.
+
+```{figure} Images/triangle_angles_diagram.svg
+---
+class: dark-light
+figclass: margin
+name: Fig:Trigonometry:Triangle
+---
+
+A triangle with the angles indicated.
+```
+::::
+
 ## Angles
 
 Angles can be measured in degrees or in radians (abbreviated as $\operatorname{rad}$). The angle given by a complete revolution contains $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
@@ -35,7 +50,7 @@ An angle $\theta$ in the $xy$-plane in standard position.
 ::::::{prf:remark} Angle between two half lines
 :label: Rem:Trigonometry:AngleBetweenTwoLines
 
-An angle between two intersecting half lines is always in $[0,\pi]$. An angle $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. 
+An angle between two intersecting half lines is always in $[0,\pi]$. An angle of $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. 
 
 ::::::
 
@@ -111,6 +126,7 @@ However, in this book we will not use these three trigonometric ratios.
 Commonly powers of trigonometric ratios are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
 
 ::::::{prf:notation} Powers of trigonometric ratios
+:label: Not:Trigonometry:Powers
 
 For any positive integer $n$ we use the following notation:
 
@@ -142,7 +158,11 @@ class: dark-light
 An illustration for Thales's theorem.
 ```
 
-Idealiter een plaatje met een draaibaar lijnstuk $AB$ door het middelpunt en een vrij beweegbaar punt $C$ aan één kant (bovenkant) over de cirkel tussen $A$ en $B$.
+::::{prf:remark}
+:label: Rem:Trigonometry:ThalesInteractive
+
+Ideally, an image with a rotatable line segment $AB$$ through the centre and a freely movable point $C$ on one side (the top) along the circle between $A$ and $B$.
+::::
 
 In {numref}`Fig:Trigonometry:Thales` you might notice that the angle $\angle ACB$ looks like a right angle. Thales's theorem states that this is indeed the case:
 
@@ -202,7 +222,7 @@ An elegant proof of the Pythagorean theorem is based on the following figure:
 ```{figure} Images/pythagoras.png
 ---
 width: 50%
-name: right-angled triangle
+name: Fig:Trigonometry:PythagorasProof
 class: dark-light
 ---
 
@@ -277,6 +297,7 @@ a^2=b^2+c^2-2bc\cos(\alpha).
 ::::::
 
 ::::::{prf:corollary} Law of cosines
+:label: Cor:Trigonometry:LawOfCosinesVariants
 
 Note that we also have $b^2=a^2+c^2-2ac\cos(\beta)$ and $c^2=a^2+b^2-2ab\cos(\gamma)$.
 
@@ -361,7 +382,7 @@ This proves the theorem.
 
 For certain special angles the trigonometric ratios can be evaluated exactly.
 
-{prf:ref}`Def:Trigonometry:TrigonometricRatios` implies that for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`
+{prf:ref}`Def:Trigonometry:TrigonometricRatios` implies that for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`.
 
 ```{figure} Images/acute.png
 ---
@@ -373,23 +394,13 @@ class: dark-light
 The trigonometric ratios for an acute angle.
 ```
 
-In het plaatje "opp", "adj" en "hyp" gebruiken voor de zijden.
-
-If the sides of the triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ as shown in {numref}`Fig:Trigonometry:AcuteAngle` and "hyp" for the hypotenuse of the triangle, then we have:
-
 ::::::{prf:corollary}
--   
-  $$
-  \sin(\theta)=\dfrac{\text{opp}}{\text{hyp}};
-  $$
-- 
-  $$
-  \cos(\theta)=\dfrac{\text{adj}}{\text{hyp}};
-  $$
-- 
-  $$
-  \tan(\theta)=\dfrac{\text{opp}}{\text{adj}}.
-  $$
+:label: Cor:Trigonometry:TrigonometricRatiosTriangle
+
+If the sides of a triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ (as shown in {numref}`Fig:Trigonometry:AcuteAngle`) and "hyp" for the hypotenuse of the triangle, then we have:
+- $\sin(\theta)=\dfrac{\operatorname{opp}}{\operatorname{hyp}}$;
+- $\cos(\theta)=\dfrac{\operatorname{adj}}{\operatorname{hyp}}$;
+- $\tan(\theta)=\dfrac{\operatorname{opp}}{\operatorname{adj}}$.
 
 ::::::
 
@@ -789,6 +800,7 @@ Replacing $y$ with $-y$ we obtain $\tan(x-y)=\dfrac{\tan(x)-\tan(y)}{1+\tan(x)\t
 
 ::::::{prf:corollary} Product formulas
 :label: Thm:Trigonometry:ProductFormulas
+
 For every $x,y\in\mathbb{R}$ we have
 
 $$
@@ -1097,7 +1109,7 @@ In the picture below we have $\alpha=\frac{1}{7}\pi$. Find the exact value of $\
 ```{figure} Images/cosines.png
 ---
 width: 50%
-name: product of cosines
+name: Fig:Trigonometry:Cosines
 align: center
 ---
 ```
@@ -1185,9 +1197,10 @@ In the exercises below we consider an arbitrary triangle $ABC$ with vertices $A$
 ```{figure} Images/abctriangle.png
 ---
 width: 50%
-name: Triangle $ABC$
+name: Fig:Trigonometry:abcTriangle
 align: center
 ---
+Triangle $\triangle ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$ respectively.
 ```
 
 ```{exercise} 
