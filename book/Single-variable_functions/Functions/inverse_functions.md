@@ -1,6 +1,8 @@
 # Inverse functions
 
-So far, we have mainly been interested in evaluating function values, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it also interesting to try to find for which value(s) of $x$, if any, we have $y=f(x)$. That is, we want to somehow undo the function $f$ and go back to the domain.
+## Introduction
+
+So far, we have mainly been interested in evaluating function values, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it also interesting to try to find for which value(s) of $x$, if any, we have $f(x)=y$ for some value of $y$ in the range of $f$. That is, we want to somehow undo the function $f$ and go back to the domain.
 
 In some cases, this is possible. Consider, for instance, the function $f(x)=2x+3$ and say we want to find out for which value of $x$, if any, we have $f(x)=5$. This means that we want to solve the equation $2x+3=5$, which has $x=1$ as a solution. Indeed, we have $f(1)=5$.
 
@@ -8,10 +10,9 @@ In other cases, we can even find multiple values. Indeed, suppose that we have $
 
 Finally, there are also cases where we cannot find any values. If we again consider $f(x)=x^2$ then there are no values of $x$ with $f(x)=-1$. Indeed, such a number $x$ would need to satisfy $x^2=-1$, which does not have any (real) solutions.
 
-If it is always possible to find exactly $1$ value of $x$ with $y=f(x)$ for each $y$, this means we can consider the function that maps each value of $y$ to the unique $x$ with $f(x)=y$. Such a function is called the **inverse function** of $f$. In this section, we will define and anlyse inverse fuctions and show under which conditions they exist. Then, we will consider inverse functions of certain standard functions, logarithms for exponential functions and inverse trigonometric functions for trigonometric functions, that are so well-known that they can be called standard functions themselves.
+If it is always possible to find exactly $1$ value of $x$ with $y=f(x)$ for each $y$, this means we can consider the function that maps each value of $y$ to the unique $x$ with $f(x)=y$. Such a function is called the **inverse function** of $f$. In this section, we will define and analyse inverse functions and show under which conditions they exist. Then, we will consider inverse functions of certain standard functions, logarithms for exponential functions and inverse trigonometric functions for trigonometric functions, that are so well-known that they can be called standard functions themselves.
 
 (Subsec:InverseExistProp)=
-
 ## Existence and properties of inverse functions
 
 ::::::{prf:definition} Inverse function
@@ -29,10 +30,10 @@ Do not confuse $f^{-1}$ with $\frac{1}{f}$. Usually, these are different functio
 Notice that in the definition we talk about **the** inverse function. This must mean that a function cannot have multiple inverse functions. Indeed, we obtain the following result.
 
 ::::::{prf:theorem}
-:label: Thm:Inverse:Inverseinverse
+:label: Thm:Inverse:InverseInverse
 
 - If the inverse function exists, it must be unique. 
-- If $g$ is the inverse function of $f$, then $f$ is the inverse fuction of $g$.
+- If $g$ is the inverse function of $f$, then $f$ is the inverse function of $g$.
 
 ::::::
 
@@ -85,11 +86,18 @@ So the cancelling equations indeed hold and we find that $g$ is the inverse of $
 
 In the graphs of the functions $f$ and $f^{-1}$ shown below, we see that the graph of $f^{-1}$ can be obtained by reflection the graph of $f$ in de line $y=x$, as we expected from {prf:ref}`Thm:Inverse:Graphinverse`.
 
-Hier plaatje van $f$ en $f^{-1}$, met de lijn $y=x$ gedashed aangegeven. 
+::::{figure} Images/Fig-Inverse-FirstEx.png
+:name: Fig:Inverse:FirstEx
+:class: dark-light
+
+The functions $f$, $f^{-1}$ and the line $y=x$.
+
+::::
+
 ::::::
 
 ::::::{note}
-:label: Note:Inverse:Inputnamexory
+:name: Note:Inverse:Inputnamexory
 
 In {prf:ref}`Ex:Inverse:FirstEx` we used the symbol $y$ as the input for $g$, while we use $x$ for $f^{-1}$. This is simply a matter of convenience: since we obtain the expression for $g$ by rewriting the equation $y=f(x)$ it is natural to use $y$ there. On the other hand, $f^{-1}$ is a function of which the domain is the real numbers, so it is customary to use the symbol $x$ there. However, these are still just choices for which letter we use and we could just as well have used a different choice. 
 
@@ -108,7 +116,14 @@ This means that we have two choices for what $x$ should be in terms of $y$, whic
 
 We can also show this visually. Indeed, {prf:ref}`Thm:Inverse:Graphinverse` tells us that the graph of a potential inverse function can be obtained by reflecting the graph of $f$ in the line $x=y$. In the figure below, you see the graph of $f$ and the corresponding reflection. Note that the curve that we obtain this way can never be the graph of function. Indeed, for $x=4$ we see two corresponding values of $y$, namely $y=-2$ and $y=2$, which is not possible if this curve were the graph of a function (it fails the vertical line test).
 
-Hier een plaatje van de grafiek van $f$, de gedashte lijn $x=y$ en de reflectie van de grafiek in deze lijn.
+::::{figure} Images/Fig-Inverse-SecondEx.png
+:name: Fig:Inverse:SecondEx
+:class: dark-light
+
+The functions $f$, the line $y=x$ and the reflection of the graph of $f$ in de line $y=x$.
+
+::::
+
 ::::::
 
 {prf:ref}`Ex:Inverse:SecondEx` shows a major issue we have at this point: we lack a quick way of showing that a function does not have an inverse function. If a function has an inverse function, we can (hopefully) find it and prove that it is an inverse function by, for instance, verifying that the cancelling equations hold, but this does not work the other way around. So the goal now is to develop a criterion to check whether a certain function has an inverse function.
@@ -152,7 +167,15 @@ No wait, that cannot be right, can it? In {prf:ref}`Ex:Inverse:SecondEx` we show
 
 Still, why does this difference in domain make that $h^{-1}$ is invertible, while $f$ is not? The reason why $f$ is not invertible is that it is not one-to-one, since for any $x>0$ we have $f(x)=f(-x)$. However, since the domain of $h^{-1}$ does not contain any negative numbers, it does not run into this issue: for each $y$ there is at most one $x\geq 0$ with $x^2=y$. Indeed, the graph of the function $h^{-1}$ is only the right half of the parabola $y=x^2$, so each value of $y$ corresponds to at most one value of $x$. So the function $h^{-1}$ is one-to-one, which is the reason why it does have an inverse function.
 
-Hier een plaatje van de functies $\sqrt{x}$, $x^2$ met vol domein en $x^2$ met rechterhalf domein. Ik weet niet of dat goed zichbaar te maken is. Ook de lijn $x=y$ er gedasht bij en de opmerking dat we inderdaad $x^2$ met half domein krijgen door $\sqrt{x}$ te reflecteren in de lijn $x=y$.
+::::{figure} Images/Fig-Inverse-ThirdEx.png
+:name: Fig:Inverse:ThirdEx
+:class: dark-light
+
+The functions $h(x)=\sqrt{x}$ and $q(x)=x^2$ with their full domain, $h^{-1}(x)=x^2$ with right-half domain, and the line $x = y$. Note that we indeed obtain $x^2$ with a right-half domain by reflecting $\sqrt{x}$ in the line $x = y$.
+
+::::
+
+
 ::::::
 
 ::::::{prf:remark}
@@ -164,7 +187,7 @@ Reversely, we know that the domain of the inverse function is always the range o
 
 ::::::
 
-In the preceding examples, we have found the inverse function (whenever it exists) by starting with the equation $y=f(x)$ and trying to express $x$ as a function of $y$. This method works in general, so let us present it as an alogrithm.
+In the preceding examples, we have found the inverse function (whenever it exists) by starting with the equation $y=f(x)$ and trying to express $x$ as a function of $y$. This method works in general, so let us present it as an algorithm.
 
 ::::::{prf:algorithm} How to find the inverse of a one-to-one function?
 Let $f$ be a one-to-one function. Then the inverse of $f$ can be found as follows.
@@ -203,10 +226,17 @@ since $x\leq 2$ means that $x-2\leq 0$, so $|x-2|=2-x$. Similarly, we find for $
 
 So indeed, the domain of $f^{-1}$ is the range of $f$ and both cancelling equations hold, which means that our answer must be correct.
 
-Hier nog een plaatje van de grafieken van $f$ en $f^{-1}$, met de lijn $x=y$ er gedasht bij en de opmerking dat we inderdaad de grafiek van $f^{-1}$ krijgen door die van $f$ te reflecteren in de lijn $x=y$.
+::::{figure} Images/Fig-Inverse-FourthEx.png
+:name: Fig:Inverse:FourthEx
+:class: dark-light
+
+The functions $f(x)$ and $f^{-1}$ and the line $x = y$. Note that we indeed obtain the graph of $f^{-1}$ by reflecting the graph of $f$ in the line $x = y$.
+
+::::
+
 ::::::
 
-Since we can determine whether a function has an inverse function by finding out whether it is one-to-one, it is useful to find some conditions on a function which guarantee the function to be one-to-one. It turns out that strictly monotonic function, i.e. functions that are either strictly increasing on thier domain or that are strictly decreasing on their domain, form the most important class of one-to-one functions.
+Since we can determine whether a function has an inverse function by finding out whether it is one-to-one, it is useful to find some conditions on a function which guarantee the function to be one-to-one. It turns out that strictly monotonic function, i.e. functions that are either strictly increasing on their domain or that are strictly decreasing on their domain, form the most important class of one-to-one functions.
 
 ::::::{prf:theorem}
 :label: Thm:Inverse:MonotonicOnetoone
@@ -222,7 +252,7 @@ The case when $f$ is strictly decreasing is similar.
 :::
 
 ::::::{note}
-:label: Note:Inverse:Monotonicnotnecessary
+:name: Note:Inverse:Monotonicnotnecessary
 
 {prf:ref}`Thm:Inverse:MonotonicOnetoone` states that strictly monotonic functions are always one-to-one and, therefore, always have an inverse function. However, there are functions which are one-to-one, but not strictly monotonic. Consider, for instance, the function $f(x)=\dfrac{1}{x}$. Since $\dfrac{1}{x_1}\neq \dfrac{1}{x_2}$ when $x_1\neq x_2$, the function $f$ is one-to-one. However, it is not strictly monotonic on its domain. It is not strictly decreasing, since $f(-1)=\dfrac{1}{-1}=-1$, while $f(1)=\dfrac{1}{1}=1>f(-1)$, but also not strictly increasing, since $f(1)=1$, while $f(2)=\dfrac{1}{2}<f(1)$. 
 
@@ -265,7 +295,7 @@ Logarithms are such commonly used functions that they are usually considered sta
 Using the definition of the inverse function, we find that $y=\log_b(x)$ precisely when $b^y=x$. So the logarithm is a way to "undo" exponentiation.
 
 ::::::{note}
-:label: Note:Inverse:Cancellinglogarthmexp
+:name: Note:Inverse:Cancellinglogarthmexp
 
 Since a logarithmic function is defined as the inverse function of an exponential function, the cancelling equations must hold for these functions. That is, for $x$ in $\mathbb{R}$ and $y>0$ we have
 
@@ -282,9 +312,16 @@ Suppose we want to evaluate $\log_2(8)$. Writing $y=\log_2(8)$, this means that 
 
 Let us first analyse the behaviour of logarithmic functions. Since the graph of an inverse function can be obtained by reflecting the graph of the original function in the line $y=x$, we can use our knowledge of the graphs of the exponential function to sketch the graph of logarithmic function.
 
-Hier twee plaatjes, links $2^x$ en $\log_2(x)$, rechts $(1/2)^x$ en $\log_{1/2}(x)$ met in beide gevallen de lijn $y=x$ er gedasht bij.
+::::{figure} Images/Fig-Inverse-Logarithmbasisbasis.png
+:name: Fig:Inverse:Logarithmbasisbasis
+:class: dark-light
 
-First we note that the logarithm is only defined for $x>0$. This makes sense since the domain of an inverse function is equal to the range of the original function, which for the function $b^x$ is equal to $(0,\infty)$. Next, we notice that the logarithm $\log_b(x)$ is strictly increasing when $b>1$ while it is strictly decreasing if $0<b<1$. This follows from {prf:ref}`Thm:Inverse:MonotonicOnetoone`, since the function $b^x$ has the same properties. Finally, we notice that for $0<x<1$ the function values $\log_b(x)$ blow up as $x$ get closer to $0$. In the terminology that we will introduce in {numref}`Section:LimitPoint` the logarithm has a vertical asymptote at $x=0$. This is, because the graph of the logarithm is obtained by reflecting the graph of $b^x$ in the line $y=x$, and this function has the property that the function values get arbitrarily close to $0$ as $x$ gets very large (in the terminlogy of {numref}`Section:Limitinf`, the function $b^x$ has a horizontal asymptote at $y=0$). For $b>1$, the logarithm has a similar property, but the function values will, instead, blow up in the negative direction as $x$ approaches $0$.
+In the left graph the functions $f(x)=2^x$ and $f^{-1}(x)=\log_2(x)$ and the line $x = y$. In the right graph the functions $f(x)=\left(\frac{1}{2}\right)^x$ and $f^{-1}(x)=\log_{\frac{1}{2}}(x)$ and the line $x = y$.
+
+::::
+
+
+First we note that the logarithm is only defined for $x>0$. This makes sense since the domain of an inverse function is equal to the range of the original function, which for the function $b^x$ is equal to $(0,\infty)$. Next, we notice that the logarithm $\log_b(x)$ is strictly increasing when $b>1$ while it is strictly decreasing if $0<b<1$. This follows from {prf:ref}`Thm:Inverse:MonotonicOnetoone`, since the function $b^x$ has the same properties. Finally, we notice that for $0<x<1$ the function values $\log_b(x)$ blow up as $x$ get closer to $0$. In the terminology that we will introduce in {numref}`Section:LimitPoint` the logarithm has a vertical asymptote at $x=0$. This is, because the graph of the logarithm is obtained by reflecting the graph of $b^x$ in the line $y=x$, and this function has the property that the function values get arbitrarily close to $0$ as $x$ gets very large (in the terminology of {numref}`Section:Limitinf`, the function $b^x$ has a horizontal asymptote at $y=0$). For $b>1$, the logarithm has a similar property, but the function values will, instead, blow up in the negative direction as $x$ approaches $0$.
 
 
 
@@ -402,15 +439,33 @@ So which part of the domain should we choose? Well, we do not want to make sure 
 
 Let us start with $f(x)=\sin(x)$. We want to chose an interval as our domain that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $[-1,1]$. For this, we actually only have one single choice: we restrict the domain to the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$. Indeed, the geometrical interpretation of the sine (see {numref}`Fig:Trigonometry:LawOfSines`) tells us that for $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$ the function $\sin(x)$ takes on each value between $-1$ and $1$ exactly once. This can also be seen in the graph of the function.
 
-Hier plaatje van links $\sin(x)$ op vol domein en rechts $\sin(x)$ op interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$
+::::{figure} Images/Fig-Inverse-RestrictSin.png
+:name: Fig:Inverse:RestrictSin
+:class: dark-light
+
+In the left graph the function $f(x)=\sin(x)$ and in the right graph the function $f(x)=\sin(x)$ restricted to the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
+
+::::
 
 Now we turn our attention to $f(x)=\cos(x)$. Again, we want to chose an interval as our domain that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $[-1,1]$. However, the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ does not work in this case, since 1) $f$ is not one-to-one on this interval, because, for instance, $\cos\left(\frac{\pi}{4}\right)=\cos\left(-\frac{\pi}{4}\right)$ and 2) the range changes when we restrict to this interval, since for $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$ we have $\cos(x)\geq 0$. So we should choose something different. Keeping the geometric interpretation of the cosine in mind, there are actually two choices that work: the intervals $[-\pi,0]$ and $[0,\pi]$. For convenience, we choose the interval $[0,\pi]$, since it is ever so slightly nicer to work with positive input values than with negative ones. We can see that this choice works in the graph of the function.
 
-Hier plaatje van links $\cos(x)$ op vol domein en rechts $\cos(x)$ op interval $\left[0,\pi\right]$
+::::{figure} Images/Fig-Inverse-RestrictCos.png
+:name: Fig:Inverse:RestrictCos
+:class: dark-light
+
+In the left graph the function $f(x)=\cos(x)$ and in the right graph the function $f(x)=\cos(x)$ restricted to the interval $\left[0,\pi\right]$.
+
+::::
 
 Finally, we consider $f(x)=\tan(x)$. Here the range is actually the entire real line $\mathbb{R}$, so our choice should not change this range. As was the case with the sine, there is only one choice for an interval that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $\mathbb{R}$ and that choice is the open interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$. As before, we can see that this choice works in the graph of the function.
 
-Hier plaatje van links $\tan(x)$ op vol domein en rechts $\tan(x)$ op interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$
+::::{figure} Images/Fig-Inverse-RestrictTan.png
+:name: Fig:Inverse:RestrictTan
+:class: dark-light
+
+In the left graph the function $f(x)=\tan(x)$ and in the right graph the function $f(x)=\tan(x)$ restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$.
+
+::::
 
 Since we have now found intervals on which the trigonometric functions are one-to-one, we can define their inverse functions.
 
@@ -426,12 +481,18 @@ The inverse of the function $\tan(x)$, restricted to the interval $\left(-\frac{
 ::::::{prf:notation} 
 :label: Notation:Inverse:Inversetrig
 
-In some literature, the notations $\sin^{-1}(x)$, $\cos^{-1}(x)$ and $\tan^{-1}(x)$ are used to denote $\arcsin(x)$, $\arccos(x)$ and $\arctan(x)$ respectively. Since it is very easy to mistakingly read $\sin^{-1}(x)$ as $\dfrac{1}{\sin(x)}$, while these are very different functions, we will avoid these notations like the plague.
+In some literature, the notations $\sin^{-1}(x)$, $\cos^{-1}(x)$ and $\tan^{-1}(x)$ are used to denote $\arcsin(x)$, $\arccos(x)$ and $\arctan(x)$ respectively. Since it is very easy to mistakenly read $\sin^{-1}(x)$ as $\dfrac{1}{\sin(x)}$, while these are very different functions, we will avoid these notations like the plague.
 ::::::
 
 Since the graph of an inverse function is obtained by reflecting the graph of the original function in the line $y=x$, we can quickly sketch the graphs of the inverse trigonometric functions.
 
-Hier drie plaatjes met $sin(x)/arcsin(x)$ (links), $cos(x)/arccos(x)$ (midden) en $tan(x)/tan(x)$ (rechts), allen op de juiste intervallen. Ook de lijn y=x mag in alledrie de plaatjes gedasht erbij.
+::::{figure} Images/Fig-Inverse-Inversetrig.png
+:name: Fig:Inverse:Inversetrig
+:class: dark-light
+
+The three functions $sin(x)$ (left), $cos(x)$ (middle) and $tan(x)$ (right) and their inverses and the line $x = y$.
+
+::::
 
 ::::::{prf:example} 
 :label: Ex:Inverse:Inversetrig1
@@ -439,7 +500,7 @@ Suppose we want to simplify $\arcsin\left(-\frac{1}{2}\right)$. Writing $y=\arcs
 
 ::::::
 
-The cancelling equations for the (inverse) trigonometric fuctions now become
+The cancelling equations for the (inverse) trigonometric functions now become
 
 $$
  \begin{array}{lcll} \arcsin(\sin(x))&=&x,\quad &\text{for}\,-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}\\
@@ -451,7 +512,7 @@ $$
 ::::::{warning} 
 :name: Warning:Inverse:Inversetrigcancelling
 
-The cancelling equations for the (inverse) trigonomteric functions **only** hold on the intervals stated above. 
+The cancelling equations for the (inverse) trigonometric functions **only** hold on the intervals stated above. 
 ::::::
 
 ::::::{prf:example} 
@@ -474,9 +535,23 @@ Finally, we study expressions like $\cos(\arcsin(x))$. It turns out that often t
 
 ::::::{prf:example} 
 :label: Ex:Inverse:InversetrigSimplify
+:class: overflow
+
 Suppose we want to simplify $\displaystyle\cos(\arcsin(x))$. Writing $y=\arcsin(x)$ we note that $y$ takes the role of an angle. Indeed, it is the unique angle with $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$ and $\sin(y)=x$. We will use two methods to simplify the expression, the first of which uses a geometrical approach, while the second one uses trigonometric identities.
 
-**Method 1 (using geometrical arguments)** Since $y$ takes the role of an angle, we make use of that. Assume, for now that $0<y<\frac{\pi}{2}$. Then we can draw a right triangle where one of the angles is $y$, see the figure on the right (Rechts hiervan dus de driehoek met de hoek y aangegeven, met zijden a (overzijde), b (aanliggen) en c (schuin)). We write $a$ for the side of the triangle opposite to the angle $y$, $b$ for the adjacent side and $c$ for the hypotenus. Since we know that $\sin(y)=x$, the geometrical definition of the sine gives that
+**Method 1 (using geometrical arguments)**
+
+Since $y$ takes the role of an angle, we make use of that. Assume, for now that $0<y<\frac{\pi}{2}$. Then we can draw a right triangle where one of the angles is $y$, see the figure on the right. We write $a$ for the side of the triangle opposite to the angle $y$, $b$ for the adjacent side and $c$ for the hypotenuse. Since we know that $\sin(y)=x$, the geometrical definition of the sine gives that
+
+::::{figure} Images/Fig-Inverse-Simplify1.svg
+:name: Fig:Inverse:Simplify1
+:class: dark-light
+:figclass: margin
+
+Initial triangle with sides $a$, $b$, $c$ and angle $y$ indicated.
+
+::::
+:::::
 
 $$
  x=\sin(y)=\frac{a}{c}
@@ -490,7 +565,14 @@ $$
 
 So how do we find the adjacent side $b$? By using the Pythagorean theorem, of course (you thought you were reading a book on advanced mathematics, but really, we are just doing Pythagoras here). As such, we must have $b=\sqrt{c^2-a^2}=\sqrt{1-x^2}$. We conclude that
 
-Hier rechts van de geupdate driehoek met de ingevulde lengtes
+::::{figure} Images/Fig-Inverse-Simplify2.svg
+:name: Fig:Inverse:Simplify2
+:class: dark-light
+:figclass: margin
+
+Final triangle with sides $x$, $\sqrt{1-x^2}$, $1$ and angle $y$ indicated.
+
+::::
 
 $$
  \cos(\arcsin(x))=\cos(y)=b=\sqrt{1-x^2}
@@ -504,13 +586,23 @@ $$
 
 Finally, if $y=0$ then $x=0$, since $x=\sin(0)=0$. In that case $\cos(\arcsin(x))=\cos(\arcsin(0))=\cos(0)=1=\sqrt{1-0^2}=\sqrt{1-x^2}$. So for all relevant values of $x$ we have $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions.  
 
-**Method 2 (using trigonometric identities)** Recall that we wrote $y=\arcsin(x)$ and that we have $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$ and $\sin(y)=x$. Using the standard identity $\cos(\theta)^2+\sin(\theta)^2$, we find
+**Method 2 (using trigonometric identities)**
+
+Recall that we wrote $y=\arcsin(x)$ and that we have $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$ and $\sin(y)=x$. Using the standard identity $\cos(\theta)^2+\sin(\theta)^2$, we find
 
 $$
  \cos(\arcsin(x))^2=\cos(y)^2=1-\sin(y)^2=1-x^2
 $$
 
+::::{figure} Images/Fig-Inverse-Simplify3.png
+:name: Fig:Inverse:Simplify3
+:class: dark-light
+:figclass: margin
+
+The cosine function where the thicker part is the function on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
+
+::::
+
 Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is nonnegative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
 
-Hier rechts van deze berekening een plaatje van de cosinus, met deel op het interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ dik en de rest dun.
 ::::::
