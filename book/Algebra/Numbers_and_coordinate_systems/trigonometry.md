@@ -1,5 +1,20 @@
 # Trigonometry
 
+## Introduction
+
+In this section we will introduce some basic concepts of trigonometry. Trigonometry is the branch of mathematics that studies the relations between the angles and the lengths of the sides of triangles. It has many applications in science and engineering, such as in physics, computer graphics, signal processing and navigation.
+
+```{figure} Images/triangle_angles_diagram.svg
+---
+class: dark-light
+figclass: margin
+name: Fig:Trigonometry:Triangle
+---
+
+A triangle with the angles indicated.
+```
+::::
+
 ## Angles
 
 Angles can be measured in degrees or in radians (abbreviated as $\operatorname{rad}$). The angle given by a complete revolution contains $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
@@ -33,7 +48,7 @@ An angle $\theta$ in the $xy$-plane in standard position.
 ::::::{prf:remark} Angle between two half lines
 :label: Rem:Trigonometry:AngleBetweenTwoLines
 
-An angle between two intersecting half lines is always in $[0,\pi]$. An angle $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. 
+An angle between two intersecting half lines is always in $[0,\pi]$. An angle of $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. 
 
 ::::::
 
@@ -359,7 +374,7 @@ This proves the theorem.
 
 For certain special angles the trigonometric ratios can be evaluated exactly.
 
-{prf:ref}`Def:Trigonometry:TrigonometricRatios` implies that for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`
+{prf:ref}`Def:Trigonometry:TrigonometricRatios` implies that for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`.
 
 ```{figure} Images/acute.png
 ---
@@ -371,23 +386,12 @@ class: dark-light
 The trigonometric ratios for an acute angle.
 ```
 
-In het plaatje "opp", "adj" en "hyp" gebruiken voor de zijden.
-
-If the sides of the triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ as shown in {numref}`Fig:Trigonometry:AcuteAngle` and "hyp" for the hypotenuse of the triangle, then we have:
-
 ::::::{prf:corollary}
--   
-  $$
-  \sin(\theta)=\dfrac{\text{opp}}{\text{hyp}};
-  $$
-- 
-  $$
-  \cos(\theta)=\dfrac{\text{adj}}{\text{hyp}};
-  $$
-- 
-  $$
-  \tan(\theta)=\dfrac{\text{opp}}{\text{adj}}.
-  $$
+
+If the sides of a triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ (as shown in {numref}`Fig:Trigonometry:AcuteAngle`) and "hyp" for the hypotenuse of the triangle, then we have:
+- $\sin(\theta)=\dfrac{\operatorname{opp}}{\operatorname{hyp}}$;
+- $\cos(\theta)=\dfrac{\operatorname{adj}}{\operatorname{hyp}}$;
+- $\tan(\theta)=\dfrac{\operatorname{opp}}{\operatorname{adj}}$.
 
 ::::::
 
