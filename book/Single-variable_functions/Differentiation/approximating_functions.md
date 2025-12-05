@@ -190,7 +190,7 @@ $$
 \sqrt[3] x \ \approx \ 2+\frac 1{12}(x-8)-\frac 1{288}(x-8)^2.
 $$
 
-In {numref}`Figure %s <Fig:ApproximatingFunctions:cuberootquad>` you can see that this quadratic polynomial is indeed a better approximation than the linearization. 
+In {numref}`Figure %s <Fig:ApproximatingFunctions:cuberootquad>` you can see that this quadratic polynomial is indeed a better approximation than the linearisation. 
 
 :::{figure} Images/Fig-TaylorPolynomials-cuberoot-quad.svg
 :name: Fig:ApproximatingFunctions:cuberootquad
@@ -406,7 +406,7 @@ The next theorem generalises the above examples and gives us the tools to always
 
 ::::{prf:theorem}
 
-Define $D$ as an interval that contains the point $a$, $T_n$ as the $n$<sup>th</sup> order Taytlor polynomial of $f$ around $a$ and $M$ as an upper bound for $|f^{(n+1)}(x)|$ on the interval $D$. Then
+Define $D$ as an interval that contains the point $a$, $T_n$ as the $n$<sup>th</sup> order Taylor polynomial of $f$ around $a$ and $M$ as an upper bound for $|f^{(n+1)}(x)|$ on the interval $D$. Then
 
 :::{math}
 :label: Ex:TaylorPolynomialsAdd:TaylorIneq
@@ -419,7 +419,7 @@ for all $x$ in $D$.
 
 ::::
 
-This theorem can be visualed as in {numref}`Figure %s <Fig:ApproximatingFunctions:error>`, where we use $n=1$.
+This theorem can be visualised as in {numref}`Figure %s <Fig:ApproximatingFunctions:error>`, where we use $n=1$.
 
 :::{figure} Images/Fig-TaylorPolynomials-error.svg
 :name: Fig:ApproximatingFunctions:error
