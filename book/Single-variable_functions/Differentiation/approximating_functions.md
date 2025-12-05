@@ -585,24 +585,6 @@ Since the error is smaller than 0.0001 this means that the actual value of $\sin
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/282946e0-2d88-41b6-970c-55c26d28d714?id=64606
-:label: Grasple:ApproximatingFunctions:T2PolyExp
-:dropdown:
-:description: Finding $T_2$ for a polynomial times an exponential function.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/0d05a9a9-8d42-4ee3-ac40-706b7ac4844f?id=64953
-:label: Grasple:ApproximatingFunctions:T2PolyExp
-:dropdown:
-:description: Finding $T_2$ for a polynomial times an exponential function.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/0d05a9a9-8d42-4ee3-ac40-706b7ac4844f?id=64953
 :label: Grasple:ApproximatingFunctions:T2PolyExp
 :dropdown:
