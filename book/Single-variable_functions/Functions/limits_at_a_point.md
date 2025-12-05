@@ -2,6 +2,18 @@
 
 # Limits at a point
 
+## Introduction
+
+::::{figure} Images/Fig-LimitPoint-Intro.png
+:name: Fig:LimitPoint:Intro
+:class: dark-light
+:figclass: margin
+
+Should we risk it?
+
+::::
+:::::
+
 Often, when a point is not in the domain of a function, this is because this point cannot be entered into the formula describing the function, for instance, because that would involve dividing by $0$, taking square roots or logarithms of negative numbers, and so on. However, in some cases, the function values near the point still approach a certain value as the values of $x$ approach the problematic point. This is illustrated in the following example.
 
 ::::::{prf:example}
@@ -587,7 +599,7 @@ Now suppose that $\lim\limits_{x\rightarrow a}g(x)$ does not exist. In that case
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules`
-:class: tudproof 
+:class: tudproof, full-width
 We first prove the scalar multiple rule. If $c=0$, then the function $cf$ is constantly $0$, so its limit at the point $a$ must be $0=cL$ as well. As such, we can assume that $c\neq 0$. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow a}f(x)=L$, we can pick $\delta>0$ in such a way that for $x$ with $0<|x-a|<\delta$ we have $|f(x)-L|<\frac{\varepsilon}{|c|}$. Then for $x$ with $0<|x-a|<\delta$ we have
 
 $$
