@@ -47,7 +47,7 @@ Every *alternating sequence* is not monotonic.
 :label: Ex:Sequences:IncreasingExample1
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is increasing.
 
-Proof. We want to show that $\dfrac{n}{n+1}<\dfrac{n+1}{n+2}$ for all $n=1,2,3,\ldots$.
+Solution. We want to show that $\dfrac{n}{n+1}<\dfrac{n+1}{n+2}$ for all $n=1,2,3,\ldots$.
 
 Since $n>0$ this is equivalent to $n(n+2)<(n+1)^2\;\Longleftrightarrow\;n^2+2n<n^2+2n+1$, which is true.
 ::::::
@@ -56,7 +56,7 @@ Since $n>0$ this is equivalent to $n(n+2)<(n+1)^2\;\Longleftrightarrow\;n^2+2n<n
 :label: Ex:Sequences:IncreasingExample2
 Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ is decreasing.
 
-Proof. We want to show that $\dfrac{2n}{n^2+1}>\dfrac{2(n+1)}{(n+1)^2+1}$ for all $n=1,2,3,\ldots$. Note that
+Solution. We want to show that $\dfrac{2n}{n^2+1}>\dfrac{2(n+1)}{(n+1)^2+1}$ for all $n=1,2,3,\ldots$. Note that
 
 $$
 \begin{align*}
@@ -85,7 +85,7 @@ align: center
 The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{x}{x+1}$
 ```
 
-Proof. Note that $a_n=f(n)$ with $f(x)=\dfrac{x}{x+1}$. Now we have
+Solution. Note that $a_n=f(n)$ with $f(x)=\dfrac{x}{x+1}$. Now we have
 
 $$
 f'(x)=\frac{x+1-x}{(x+1)^2}=\frac{1}{(x+1)^2}>0.
@@ -107,7 +107,7 @@ align: center
 The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{2x}{x^2+1}$
 ```
 
-Proof. Note that $a_n=f(n)$ with $f(x)=\dfrac{2x}{x^2+1}$. Then we have
+Solution. Note that $a_n=f(n)$ with $f(x)=\dfrac{2x}{x^2+1}$. Then we have
 
 $$
 f'(x)=\frac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}=\frac{2(1-x^2)}{(x^2+1)^2},
@@ -130,7 +130,7 @@ Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\fr
 
 Show that the sequence increases.
 
-Proof. We want to prove that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$.
+Solution. We want to prove that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$.
 
 We use the principle of mathematical induction.
 
@@ -151,7 +151,7 @@ Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=10$ and $a_{n+1}=\s
 
 Show that the sequence decreases.
 
-Proof. We want to prove that $a_n>a_{n+1}$ for all $n=1,2,3,\ldots$.
+Solution. We want to prove that $a_n>a_{n+1}$ for all $n=1,2,3,\ldots$.
 
 We use the principle of mathematical induction.
 
@@ -248,7 +248,7 @@ align: center
 The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{x}{x+1}$
 ```
 
-Proof. Note that $a_n=f(n)$ with $f(x)=\dfrac{x}{x+1}$. Now we have
+Solution. Note that $a_n=f(n)$ with $f(x)=\dfrac{x}{x+1}$. Now we have
 
 $$
 f'(x)=\frac{x+1-x}{(x+1)^2}=\frac{1}{(x+1)^2}>0.
@@ -274,7 +274,7 @@ align: center
 The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{2x}{x^2+1}$
 ```
 
-Proof. Note that $a_n=f(n)$ with $f(x)=\dfrac{2x}{x^2+1}$. Then we have
+Solution. Note that $a_n=f(n)$ with $f(x)=\dfrac{2x}{x^2+1}$. Then we have
 
 $$
 f'(x)=\frac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}=\frac{2(1-x^2)}{(x^2+1)^2},
@@ -293,7 +293,7 @@ Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\fr
 
 Show that the sequence bounded above.
 
-Proof. We want to prove that $a_n<10$ (for instance) for all $n=1,2,3,\ldots$.
+Solution. We want to prove that $a_n<10$ (for instance) for all $n=1,2,3,\ldots$.
 
 We use the principle of mathematical induction.
 
@@ -314,7 +314,7 @@ Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=10$ and $a_{n+1}=\s
 
 Show that the sequence is bounded below.
 
-Proof. We want to prove that $a_n>0$ (for instance) for all $n=1,2,3,\ldots$.
+Solution. We want to prove that $a_n>0$ (for instance) for all $n=1,2,3,\ldots$.
 
 We use the principle of mathematical induction.
 

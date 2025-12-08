@@ -1,3 +1,5 @@
+(Sec:Integration:FundamentalTheorem)=
+
 # Fundamental theorem of calculus
 
 In this section we cover
@@ -19,7 +21,8 @@ $$
 is continuous on $[a,b]$ and differentiable on $(a,b)$, and $g'(x)=f(x)$.
 ::::::
 
-::::::{prf:Proof}
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart1`
+:class: tudproof, dropdown
 Using the definition of the derivative, we obtain
 
 $$
@@ -91,7 +94,8 @@ $$
 where $F$ is any antiderivative of $f$, that is, a function such that $F'=f$.
 ::::::
 
-::::::{prf:Proof}
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart2`
+:class: tudproof, dropdown
 Let $g(x)=\displaystyle\int_a^xf(t)\,dt$. Then part 1 implies that $g'(x)=f(x)$. Hence, $g$ is an antiderivative of $f$.
 So, if $F$ is any antiderivative of $f$ we have: $F(x)=g(x)+C$ for $a<x<b$. However, since $F$ and $g$ are both continuous
 on $[a,b]$ we conclude that $F(x)=g(x)+C$ for all $x$ in $[a,b]$.
