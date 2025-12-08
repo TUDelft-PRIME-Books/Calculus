@@ -176,6 +176,7 @@ parts:
   - file: _git/github.com_TeachBooks_sphinx-code-examples/main/MANUAL.ipynb
   - file: _git/github.com_TeachBooks_TU-Delft-Theme-Example/main/book/content/latex.md
   - file: _git/github.com_TeachBooks_manual/release/book/features/apa.md
+  - file: _git/github.com_TeachBooks_Sphinx-Metadata-Figure/main/MANUAL.ipynb
   numbered: true
   style: romanupper
 root: index.md
