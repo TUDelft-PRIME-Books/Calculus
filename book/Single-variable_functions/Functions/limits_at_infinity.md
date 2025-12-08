@@ -14,7 +14,7 @@ A cauliflower in a refrigerator.
 ::::
 :::::
 
-Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling, it can be shown that $T(t)=T_{\mathrm{env}}+(T(0)-T_{\mathrm{env}})e^{-rt}$ °C. Here, $T_{\mathrm{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
+Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling, it can be shown that $T(t)=T_{\text{env}}+(T(0)-T_{\text{env}})e^{-rt}$ °C. Here, $T_{\text{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
 
 For convenience, we take $r=1$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
 
@@ -524,7 +524,7 @@ So, which functions have oblique asymptotes? A common example is functions of th
 
 ::::::{prf:theorem} 
 :label: Theorem:LimitAtInfinity:Obliquerational
-If $f(x)=\dfrac{p(x)}{q(x)}$ with $p$ and $q$ polynomials where $\mathrm{deg}(p)=\mathrm{deg}(q)+1$, then there is a polynomial $r$ with $\mathrm{deg}(r)<\mathrm{deg}(q)$ for which 
+If $f(x)=\dfrac{p(x)}{q(x)}$ with $p$ and $q$ polynomials where $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, then there is a polynomial $r$ with $\operatorname{deg}(r)<\operatorname{deg}(q)$ for which 
 
 $$
  f(x)=ax+b+\frac{r(x)}{q(x)}
@@ -536,7 +536,7 @@ In that case, $f$ has the oblique asymptote $y=ax+b$ at both infinity and minus 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Obliquerational`
 :class: tudproof, dropdown
 
-The result follows almost directly from polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`). Indeed, this process allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\mathrm{deg}(r)<\mathrm{deg}(q)$ and $\mathrm{deg}(s)=\mathrm{p}-\mathrm{q}$. Since $\mathrm{deg}(p)=\mathrm{deg}(q)+1$, we obtain $\mathrm{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+...+a_1x+a_0$ and $q(x)=b_mx^m+...+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\mathrm{deg}(r)<\mathrm{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
+The result follows almost directly from polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`). Indeed, this process allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\operatorname{deg}(r)<\operatorname{deg}(q)$ and $\operatorname{deg}(s)=\operatorname{p}-\operatorname{q}$. Since $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, we obtain $\operatorname{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+...+a_1x+a_0$ and $q(x)=b_mx^m+...+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\operatorname{deg}(r)<\operatorname{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
 
 $$
 \begin{align*}
