@@ -1,3 +1,5 @@
+(Sec:Integration:Substitution)=
+
 # Integration by substitution
 
 In this section we cover:
@@ -161,6 +163,7 @@ $$
 In the section on definite integrals we have already seen the following intuitively result, which can now be proved using a substitution:
 
 ::::::{prf:Theorem}
+:label: Thm:Integration:OddEven
 Let $f$ be a continuous function defined on $[-a,a]$. Then we have
 
 (a) If $f$ is *odd*, id est $f(-x)=-f(x)$ for all $x$, then: $\displaystyle\int_{-a}^af(x)\,dx=0$.
@@ -168,7 +171,8 @@ Let $f$ be a continuous function defined on $[-a,a]$. Then we have
 (b) If $f$ is *even*, id est $f(-x)=f(x)$ for all $x$, then: $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$.
 ::::::
 
-::::::{prf:Proof}
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:OddEven`
+:class: tudproof, dropdown
 In both cases we use the substitution $x=-t$ with $dx=-dt$:
 
 $$
@@ -442,9 +446,9 @@ $$
 
 ::::::
 
-## The Weierstrass substitution
+## The tangent half-angle substitution
 
-The **Weierstrass substitution** or the **tangent half-angle substitution** converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function. Although integrals of rational functions will be covered later, we can show how it works.
+The **tangent half-angle substitution**, sometimes called the **Weierstrass substitution**, converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function. Although integrals of rational functions will be covered later, we can show how it works.
 
 The method is named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass).
 
@@ -550,7 +554,7 @@ $$
 \int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\ln(1+\sqrt{2}).
 $$
 
-This can also be done using the Weierstrass substitution: set $u=\tan(\frac{1}{2}t)$ or $t=2\arctan(u)$. Then $t=0$ implies that $u=0$ and $t=\frac{1}{4}\pi$ implies that $u=\tan(\frac{1}{8}\pi)=\sqrt{2}-1$ (see: {numref}`Exc:Trigonometry:Exercise_10`). With $\cos(t)=\dfrac{1-u^2}{1+u^2}$ and $dt=\dfrac{2\,du}{1+u^2}$ we obtain
+This can also be done using the tangent half-angle substitution: set $u=\tan(\frac{1}{2}t)$ or $t=2\arctan(u)$. Then $t=0$ implies that $u=0$ and $t=\frac{1}{4}\pi$ implies that $u=\tan(\frac{1}{8}\pi)=\sqrt{2}-1$ (see: {numref}`Exc:Trigonometry:Exercise_10`). With $\cos(t)=\dfrac{1-u^2}{1+u^2}$ and $dt=\dfrac{2\,du}{1+u^2}$ we obtain
 
 $$
 \begin{align*}
@@ -626,7 +630,10 @@ Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}$.
 :class: solution, dropdown
 
 $$
-\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}=\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\frac{\sin(x)}{\cos(x)}}=\int_0^{\frac{1}{2}\pi}\frac{\frac{1}{\sin(x)}}{\frac{1}{\sin(x)}+\frac{1}{\cos(x)}}\,dx=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}&=\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\dfrac{\sin(x)}{\cos(x)}}=\int_0^{\frac{1}{2}\pi}\frac{\dfrac{1}{\sin(x)}}{\dfrac{1}{\sin(x)}+\dfrac{1}{\cos(x)}}\,dx\\
+&=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
+\end{align*}
 $$
 
 :::

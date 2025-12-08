@@ -1,3 +1,5 @@
+(Sec:Integration:DefiniteIntegrals)=
+
 # Definite integrals
 
 In this section we cover
@@ -8,7 +10,7 @@ In this section we cover
 - Comparison rules (for definite integrals)
 - Integrals of piecewise-defined continuous functions
 
-**Areas**
+## Areas
 
 ::::::{prf:Definition}
 :label: Def:Integration:DefiniteIntegral
@@ -183,6 +185,46 @@ $$
 
 Since $e^{-1}\approx0.3679$ we conclude that $0.3679\leq\displaystyle\int_0^1e^{-x^2}\,dx\leq1$.
 ::::::
+
+## Distances
+
+Instead of calculating areas, integration can also be used to find *distances*. Let's consider the **distance** problem: find the distance traveled by an object during a certain time period when the velocity of the object is known at all times.
+
+If the velocity remains constant, then the distance problem is easy to solve: the distance is the product of the velocity and the time.
+
+What if the velocity varies?
+
+::::::{prf:example}
+Consider an athlete during an interval training. She starts walking at a speed of $5\;\text{km/h}$ during $5$ minutes. Then she runs at a speed of $15\;\text{km/h}$ during $2$ minutes, followed by a period of $4$ minutes walking at a speed of $6\;\text{km/h}$. Then she runs at a speed of $20\;\text{km/h}$ during $3$ minutes, followed by $6$ minutes walking at a speed of $4\;\text{km/h}$.
+
+What is the distance traveled by the athlete?
+
+:::{figure} Images/distance.png
+:width: 75%
+:name: distance problem
+:align: center
+
+The distance traveled by the athlete
+:::
+
+:::{margin}:::{figure} Images/filip-mroz-XCkRGOX2VgM-unsplash.jpg
+:width: 75%
+:name: female athlete
+:align: center
+
+Photo by <a href="https://unsplash.com/@mroz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Filip Mroz</a> on <a href="https://unsplash.com/photos/woman-running-wearing-armband-XCkRGOX2VgM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+:::
+
+In order to get the correct units, we change the minutes into hours ($5$ minuties is $\frac{1}{12}$ hour for instance) and add five different areas:
+
+$$
+\tfrac{1}{12}\cdot5+\tfrac{1}{30}\cdot15+\tfrac{1}{15}\cdot5+\tfrac{1}{20}\cdot20+\tfrac{1}{15}\cdot6=\tfrac{25+30+20+60+24}{60}=\tfrac{159}{60}.
+$$
+
+::::::
+
+Note that the speed cannot change suddenly. In fact, the velocity is a continuous function. Then the distance equals the area between the graph of the velocity and the horizontal axis.
 
 ## Grasple exercises
 
