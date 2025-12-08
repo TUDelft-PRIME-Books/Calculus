@@ -157,6 +157,7 @@ parts:
     - file: Overviews/Multivariable_functions/common_surfaces.md
     - file: Overviews/Multivariable_functions/integral_identities.md
   - file: Overviews/fundamental_theorems.md
+  - file: Overviews/differential_equations.md
   numbered: true
   style: alphaupper
 - caption: Back matter
