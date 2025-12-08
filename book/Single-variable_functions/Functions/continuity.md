@@ -11,8 +11,12 @@ In science and engineering, most variables depend on each other in a continuous 
 ```{figure} Images/Fig-Continuity-Circuit.jpg
 ---
 class: dark-light
-figclass: margin
 name: Fig:Continuity-Circuit
+author: L. Usa
+license: CC-BY
+date: 2023-08-03
+copyright: © TU Delft
+placement: caption
 ---
 
 The circuit described above with a resistor with resistance $R$ and an inductor with inductance $L$, where a voltage source of size $V_s$ is turned on at $t=0$. The resulting current $i(t)$ throught the inductor is not continuous at $t=0$.
@@ -177,7 +181,7 @@ The following functions are continuous on their maximal domain.
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:Continuity:Standardfunctions`
 :class: tudproof, dropdown, full-width
-Let $r>0$ and consider the function $f(x)=x^r$. Let $a$ be any point in the domain of $f$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. If $a^r-\varepsilon<0$ the part $a^r-\varepsilon<x^r$ is satisfied automatically, so we can assume that $a^r-\varepsilon\geq 0$ (as we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway). Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. We know that the function $x^{\frac{1}{r}}$ is increasing, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $x_1\leq a-\delta$ and $a+\delta\leq x_2$. Since $f$ is increasing as well, we know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_^_2$, which means that $f(x_1)<f(x)<f(x_2)$, i.e. 
+Let $r>0$ and consider the function $f(x)=x^r$. Let $a$ be any point in the domain of $f$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. If $a^r-\varepsilon<0$ the part $a^r-\varepsilon<x^r$ is satisfied automatically, so we can assume that $a^r-\varepsilon\geq 0$ (as we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway). Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. We know that the function $x^{\frac{1}{r}}$ is increasing, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $x_1\leq a-\delta$ and $a+\delta\leq x_2$. Since $f$ is increasing as well, we know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_2$, which means that $f(x_1)<f(x)<f(x_2)$, i.e. 
 
 $$
  a^r-\varepsilon=\left(\left(a^r-\varepsilon\right)^{\frac{1}{r}}\right)^r=f(x_1)<x^r<f(x_2)=\left(\left(a^r+\varepsilon\right)^{\frac{1}{r}}\right)^r=a^r+\varepsilon
