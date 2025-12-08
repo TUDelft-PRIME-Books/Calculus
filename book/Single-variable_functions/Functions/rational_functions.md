@@ -8,6 +8,16 @@ This page reuses content from {cite:t}`dekleijn2025longdivision`.
 
 ## Introduction
 
+::::{figure} Images/Fig-RationalFunctions-Intro.png
+:name: Fig:RationalFunctions:Intro
+:class: dark-light
+:figclass: margin
+
+Is this proper?
+
+::::
+:::::
+
 Rational functions are functions that are formed by the ratio of two polynomials. They are widely used in various fields of mathematics, including calculus, algebra, and real analysis. Rational functions can exhibit interesting behaviors, such as asymptotes and discontinuities, which are treated in sections further on in this chapter.
 
 We start of with some definitions:
@@ -21,11 +31,11 @@ $$
 r(x) = \frac{p(x)}{q(x)},
 $$
 
-where $p(x)$ and $q(x)$ are polynomials and $q(x) \neq 0$.
+where $p$ and $q$ are polynomials and $q(x) \neq 0$.
 
-A **proper rational function** is a rational function where the degree of the numerator polynomial $p(x)$ is less than the degree of the denominator polynomial $q(x)$.
+A **proper rational function** is a rational function where the degree of the numerator polynomial $p$ is less than the degree of the denominator polynomial $q$.
 
-An **improper rational function** is a rational function where the degree of the numerator polynomial $p(x)$ is greater than or equal to the degree of the denominator polynomial $q(x)$.
+An **improper rational function** is a rational function where the degree of the numerator polynomial $p$ is greater than or equal to the degree of the denominator polynomial $q$.
 
 ::::
 
@@ -44,9 +54,12 @@ r_3(x) &= \frac{-x^2+4x-2}{x^3-2x+1}.
 The function $r_1$ is a rational function, but not a proper rational function since the degree of the numerator ($4$) is greater than the degree of the denominator ($3$), and can be seen directly from its definition as a ratio of two polynomials.
 
 The function $r_2$ is also a rational function. This can be seen by rewriting it to a single ratio:
-$$
-r_2(x) = 2x^2+1 + \frac{-x^2+4x-2}{x^3-2x+1} = \frac{(2x^2+1)(x^3-2x+1) + (-x^2+4x-2)}{x^3-2x+1} = \frac{2x^5-3x^3+x^2+2x-1}{x^3-2x+1}.
-$$
+
+\begin{align*}
+r_2(x) &= 2x^2+1 + \frac{-x^2+4x-2}{x^3-2x+1} \\
+&= \frac{(2x^2+1)(x^3-2x+1) + (-x^2+4x-2)}{x^3-2x+1} \\
+&= \frac{2x^5-3x^3+x^2+2x-1}{x^3-2x+1}.
+\end{align*}
 
 $r_2$ is again not a proper rational function since the degree of the numerator ($5$) is greater than the degree of the denominator ($3$).
 
@@ -54,7 +67,7 @@ $r_3$ is a proper rational function since the degree of the numerator ($2$) is l
 
 ::::
 
-The domain of a rational function is all real numbers except where the denominator is zero, or in other words, the function is undefined where $q(x) = 0$.
+The domain of a rational function is all real numbers except where the denominator is zero, or in other words, the rational function $\frac{p(x)}{q(x)}$ is undefined where $q(x) = 0$.
 
 First we will look at how to simplify rational functions by applying polynomial division. After that we will look at how to decompose proper rational functions into simpler fractions using partial fraction decomposition.
 
@@ -62,11 +75,11 @@ First we will look at how to simplify rational functions by applying polynomial 
 
 When dealing with rational functions where the degree of the numerator is greater than or equal to the degree of the denominator, it is often useful to perform polynomial long division. This allows us to express the rational function as a sum of a polynomial and a proper rational function.
 
-In the method of long division of polynomials we consider quotients of polynomials $p(x)$ and $q(x)$, i.e. $\frac{p(x)}{q(x)}$. When the degree of $p(x)$ is higher than the degree of $q(x)$ it is possible that $p(x) = b(x)q(x)$ for $b(x)$ another polynomial. In this case the long division terminates at $0$. It is also possible that the long division terminates at a polynomial $r(x)$ that whose degree is lower than $q(x)$. In that case $p(x) = r(x) + b(x)q(x)$ for some polynomial $b(x)$. 
+In the method of long division of polynomials we consider quotients of polynomials $p$ and $q$, i.e. $\frac{p(x)}{q(x)}$. When the degree of $p$ is higher than the degree of $q$ it is possible that $p(x) = s(x)q(x)$ for $s$ another polynomial. In this case the long division terminates at $0$. It is also possible that the long division terminates at a polynomial $t$ that whose degree is lower than the degree of the polynomial $q$. In that case $p(x) = t(x) + s(x)q(x)$ for some polynomials $s$ and $t$.
 
-The method works by starting with the highest power of $x$. We consider a monomial $a_1x^{k_1}$  such that the highest powers of $a_1x^{k_1}q(x)$ and $p(x)$ match. Then we consider $p_1(x)=p(x)-a_1x^{k_1}q(x)$ whose degree must be lower than the degree of $p(x)$. If it is also lower than the degree of $q(x)$ the long division terminates. Otherwise we continue by repeating the first step again, but now with respect to the polynomial $p_1(x)$ instead of $p(x)$.
+The method works by starting with the highest power of $x$. We consider a monomial $a_1x^{k_1}$  such that the highest powers of $a_1x^{k_1}q(x)$ and $p(x)$ match. Then we consider $p_1(x)=p(x)-a_1x^{k_1}q(x)$ whose degree must be lower than the degree of $p$. If it is also lower than the degree of $q$ the long division terminates. Otherwise we continue by repeating the first step again, but now with respect to the polynomial $p_1$ instead of $p$.
 
-Below are two examples, one for factoring out a linear factor of which we know that it is a linear factor (so the method is guaranteed to terminate at $0$) and one where we are writing a rational functions as the sum of a polynomial plus a proper rational function. A proper rational function is a quotient of polynomials such that the degree of the denominator is higher than the degree of the numerator. In this case the long division does not terminate at $0$.
+Below are two examples, one for factoring out a linear factor of which we know that it is a linear factor (so the method is guaranteed to terminate at $0$) and one where we are writing a rational functions as the sum of a polynomial plus a proper rational function.  In this case the long division does not terminate at $0$.
 
 ::::{prf:example}
 :label: Ex:RationalFunctions:PolynomialDivision1
@@ -239,6 +252,19 @@ $$\frac{2x^5-3x^3+x^2+2x-1}{x^3-2x+1} = 2x^2+1 + \frac{-x^2+4x-2}{x^3-2x+1}.$$
 
 ::::
 
+We end this section with the general result of polynomial long division in the next theorem.
+
+::::{prf:theorem}
+:label: Thm:RationalFunctions:PolynomialLongDivision
+
+Let $r(x) = \frac{p(x)}{q(x)}$ be a rational function where the nominator $p$ has degree $P$ and the denominator $q$ has degree $Q$. If $P \geq Q$, then there exist a polynomial $s$ of degree $S=P-Q$ and a polynomial $t$ of degree $T<Q$ such that
+
+$$
+r(x) = s(x) + \frac{t(x)}{q(x)}.
+$$
+
+::::
+
 ## Partial fraction decomposition
 
 In the previous examples you have seen how you can use polynomial long division to rewrite an improper rational function as a polynomial plus a proper rational function. In this section we will look at how to decompose proper rational functions into simpler fractions. This technique is called _partial fraction decomposition_.
@@ -276,17 +302,17 @@ We will look at several cases where we can apply partial fraction decomposition,
 Consider the proper rational function
 
 $$
-R(x)  = \frac{P(x)}{Q(x)} = \frac{4x+2}{x^2-1}.
+r(x)  = \frac{p(x)}{q(x)} = \frac{4x+2}{x^2-1}.
 $$
 
-The denominator $Q(x)=x^2-1$ of this rational function can be factored as $Q(x)=(x-1)(x+1)$, i.e. as a product of distinct linear factors. So, based on our previous thinking, let us look for two polynomials $f(x)$ and $g(x)$ such that
+The denominator $q(x)=x^2-1$ of this rational function can be factored as $q(x)=(x-1)(x+1)$, i.e. as a product of distinct linear factors. So, based on our previous thinking, let us look for two polynomials $f$ and $g$ such that
 
 :::{math}
 :label: Eq:RationalFunctions:PartialFractionDecomposition1
-R(x) = \frac{f(x)}{x-1} + \frac{g(x)}{x+1}
+r(x) = \frac{f(x)}{x-1} + \frac{g(x)}{x+1}
 :::
 
-holds. Since $R$ remains the same proper rational function, the ratio between the degrees of the nominator $P(x)=4x+2$ and the denominator $Q(x)=x^2-1$ should also not change. We start by taking the right-hand side of Equation {eq}`Eq:RationalFunctions:PartialFractionDecomposition1` and rewriting it to a single rational function:
+holds. Since $r$ remains the same proper rational function, the ratio between the degrees of the nominator $p(x)=4x+2$ and the denominator $q(x)=x^2-1$ should also not change. We start by taking the right-hand side of Equation {eq}`Eq:RationalFunctions:PartialFractionDecomposition1` and rewriting it to a single rational function:
 
 \begin{align*}
 \frac{f(x)}{x-1} + \frac{g(x)}{x+1} &= \frac{f(x)(x+1)}{(x-1)(x+1)} + \frac{g(x)(x-1)}{(x+1)(x-1)} \\
@@ -294,38 +320,38 @@ holds. Since $R$ remains the same proper rational function, the ratio between th
 &= \frac{(f(x)+g(x))x + (f(x)-g(x))}{x^2-1}.
 \end{align*}
 
-If we compare the nominator $(f(x)+g(x))x + (f(x)-g(x))$ of this result with the original nominator $P(x)=4x+2$ of $R(x)$ we see that we should have that $f(x)+g(x)=4$ and $f(x)-g(x)=2$. Solving this system of equations results in $f(x)=3$ and $g(x)=1$. This means we have found the partial fraction decomposition of $R(x)$:
+If we compare the nominator $(f(x)+g(x))x + (f(x)-g(x))$ of this result with the original nominator $p(x)=4x+2$ of $r(x)$ we see that we should have that $f(x)+g(x)=4$ and $f(x)-g(x)=2$. Solving this system of equations results in $f(x)=3$ and $g(x)=1$. This means we have found the partial fraction decomposition of $r$:
 
 $$
-R(x) = \frac{3}{x-1} + \frac{1}{x+1}.
+r(x) = \frac{3}{x-1} + \frac{1}{x+1}.
 $$
 
 ::::
 
-As you may notice, the degrees of the polynomials $f(x)$ and $g(x)$ in the numerators of the simpler rational functions are less than the degree of the corresponding denominators. This is always the case in partial fraction decomposition, as we always consider proper rational functions in the decomposition.
+As you may notice, the degrees of the polynomials $f$ and $g$ in the numerators of the simpler rational functions are less than the degree of the corresponding denominators. This is always the case in partial fraction decomposition, as we always consider proper rational functions in the decomposition.
 
 This can be summarised by the next theorem.
 
-::::{prf:theorem}
+::::{prf:theorem} Partial fraction decomposition with distinct complex linear factors
 :label: Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearFactors
 
-Let $R(x) = \frac{P(x)}{Q(x)}$ be a proper rational function where the denominator $Q(x)$ can be factored into _distinct linear factors_, i.e.
+Let $r(x) = \frac{p(x)}{q(x)}$ be a proper rational function where the denominator $q$ can be factored into _distinct linear factors_, i.e.
 
 $$
-Q(x) = a_n(x-b_1)(x-b_2)\cdots(x-b_n),
+q(x) = a_n(x-b_1)(x-b_2)\cdots(x-b_n),
 $$
 
-where $b_1,b_2,\ldots,b_n$ are _distinct_ complex numbers and $a_n$ is the leading coefficient of $Q(x)$.
+where $b_1,b_2,\ldots,b_n$ are _distinct_ complex numbers and $a_n$ is the leading coefficient of $q$.
 
 Then there exist constants $A_1,A_2,\ldots,A_n$ such that
 
 $$
-R(x) = \frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_n}{x-b_n}.
+r(x) = \frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_n}{x-b_n}.
 $$
 
 ::::
 
-Note that in the above theorem we considered complex numbers as roots of the denominator polynomial. This is because, by the {prf:ref}`Fundamental Theorem of algebra <Thm:ComplexNumbers:fundamental>`, every polynomial with complex coefficients can be factored into linear factors over the complex numbers.
+Note that in the above theorem we considered complex numbers as roots of the denominator polynomial. This is because, by the {prf:ref}`Fundamental Theorem of algebra <Thm:ComplexNumbers:fundamental>`, every polynomial with complex coefficients can be factored into linear factors over the complex numbers. If you did not yet study complex numbers, see {numref}`Ch:ComplexNumbersCartesian`, you can also consider the theorem only for real numbers as roots of the denominator polynomial. In that case the theorem only holds when the denominator can be factored into distinct linear factors over the real numbers.
 
 First we will take a look at an example where we apply the above theorem where all roots are real numbers.
 
@@ -335,22 +361,22 @@ First we will take a look at an example where we apply the above theorem where a
 Consider the proper rational function
 
 $$
-R(x)  = \frac{15x+3}{x^3-2x^2-3x}.
+r(x)  = \frac{15x+3}{x^3-2x^2-3x}.
 $$
 
-The denominator $Q(x)=x^3-2x^2-3x$ of this rational function can be factored as $Q(x)=x(x-3)(x+1)$, i.e. as a product of three distinct linear factors, so
+The denominator $q(x)=x^3-2x^2-3x$ of this rational function can be factored as $q(x)=x(x-3)(x+1)$, i.e. as a product of three distinct linear factors, so
 
 $$
-R(x) = \frac{15x+3}{x(x-3)(x+1)}.
+r(x) = \frac{15x+3}{x(x-3)(x+1)}.
 $$
 
 Based on our previous thinking, let us look for three numbers $A_1$, $A_2$ and $A_3$ such that
 
 $$
-R(x) = \frac{A_1}{x} + \frac{A_2}{x-3} + \frac{A_3}{x+1}.
+r(x) = \frac{A_1}{x} + \frac{A_2}{x-3} + \frac{A_3}{x+1}.
 $$
 
-Or by using the formula for $R$, we want to solve the equation
+Or by using the formula for $r$, we want to solve the equation
 
 $$
 \frac{15x+3}{x(x-3)(x+1)} = \frac{A_1}{x} + \frac{A_2}{x-3} + \frac{A_3}{x+1}
@@ -386,10 +412,10 @@ $$
 \end{array}\right.
 $$
 
-This system can be solved to find $A_1=-1$, $A_2=4$ and $A_3=-3$. This means we have found the partial fraction decomposition of $R$:
+This system can be solved to find $A_1=-1$, $A_2=4$ and $A_3=-3$. This means we have found the partial fraction decomposition of $r$:
 
 $$
-R(x) = \frac{-1}{x} + \frac{4}{x-3} + \frac{-3}{x+1}.
+r(x) = \frac{-1}{x} + \frac{4}{x-3} + \frac{-3}{x+1}.
 $$
 
 :::::
@@ -419,22 +445,22 @@ Solving this system again results in $A_1=-1$, $A_2=4$ and $A_3=-3$.
 The method in {prf:ref}`Rmk:RationalFunctions:DistinctLinearFactors` only works when the denominator can be factored into distinct linear factors over the real numbers. In other cases you will have to solve the system of equations obtained by comparing coefficients.
 ::::
 
-In the next example we will consider a proper rational function where the denominator has complex roots.Feel free to skip this example for now and return to it after studying complex numbers.
+In the next example we will consider a proper rational function where the denominator has complex roots.Feel free to skip this example for now and return to it after studying complex numbers in {numref}`Ch:ComplexNumbersCartesian`.
 
-::::{prf:example}
+::::{prf:example} Partial fraction decomposition with complex linear factors
 :label: Ex:RationalFunctions:PartialFractionDecomposition3
 :class: dropdown
 
 Consider the proper rational function
 
 $$
-R(x)  = \frac{5x^2+24x+7}{2x^3+2x^2-2x+30}.
+r(x)  = \frac{5x^2+24x+7}{2x^3+2x^2-2x+30}.
 $$
 
-The denominator $Q(x)=2x^3+2x^2-2x+30$ has the roots $b_1=-3$, $b_2= 1-2i$ and $b_3=1+2i$. So $R$ can be factored as 
+The denominator $q(x)=2x^3+2x^2-2x+30$ has the roots $b_1=-3$, $b_2= 1-2i$ and $b_3=1+2i$. So $r$ can be factored as 
 
 $$
-R(x) = \frac{A_1}{x+3} + \frac{A_2}{x-(1-2i)} + \frac{A_3}{x-(1+2i)}.
+r(x) = \frac{A_1}{x+3} + \frac{A_2}{x-(1-2i)} + \frac{A_3}{x-(1+2i)}.
 $$ 
 
 Rewriting the right-hand side to a single rational function and comparing the nominators results in the equation
@@ -453,10 +479,10 @@ A_3 &=& \frac32-\frac54i,
 \end{array}\right.
 $$
 
-and the partial fraction decomposition of $R$ with complex numbers is
+and the partial fraction decomposition of $r$ with complex numbers is
 
 $$
-R(x) = \frac{-\frac12}{x+3} + \frac{\frac32+\frac54i}{x-(1-2i)} + \frac{\frac32-\frac54i}{x-(1+2i)}.
+r(x) = \frac{-\frac12}{x+3} + \frac{\frac32+\frac54i}{x-(1-2i)} + \frac{\frac32-\frac54i}{x-(1+2i)}.
 $$
 
 
@@ -466,16 +492,16 @@ $$
 \frac{\frac32+\frac54i}{x-(1-2i)} + \frac{\frac32-\frac54i}{x-(1+2i)} = \frac{3x+2}{(x-1)^2 + 4}.
 $$
 
-This means we can also write the partial fraction decomposition of $R$ with real coefficients as
+This means we can also write the partial fraction decomposition of $r$ with real coefficients as
 
 $$
-R(x) = \frac{-\frac12}{x+3} + \frac{3x+2}{(x-1)^2 + 4}.
+r(x) = \frac{-\frac12}{x+3} + \frac{3x+2}{(x-1)^2 + 4}.
 $$
 
 We could have found this decomposition directly by looking for constants $A_1$, $B_1$ and $C_1$ such that
 
 $$
-R(x) = \frac{A_1}{x+3} + \frac{B_1x + C_1}{(x-1)^2 + 4}.
+r(x) = \frac{A_1}{x+3} + \frac{B_1x + C_1}{(x-1)^2 + 4}.
 $$
 
 We would have know to use this form, if we had known in advance that the original denominator had complex roots that came in a conjugate pairs.
@@ -483,6 +509,8 @@ We would have know to use this form, if we had known in advance that the origina
 This is summarised in the next definition and theorem.
 
 ::::
+
+To avoid using complex numbers in partial fraction decomposition, we introduce the next definition.
 
 ::::{prf:definition}
 :label: Def:RationalFunctions:IrreducibleQuadratic
@@ -499,21 +527,21 @@ with $c$ and $d$ real numbers and $d\neq0$.
 
 ::::
 
-::::{prf:theorem}
+::::{prf:theorem} Partial fraction decomposition with distinct real linear factors and distinct irreducible quadratics
 :label: Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearAndIrreducibleQuadratic
 
-Let $R(x) = \frac{P(x)}{Q(x)}$ be a proper rational function where the denominator $Q(x)$ can be factored into $\ell$ _distinct and real linear factors_ and $q$ _distinct irreducible quadratics_, i.e.
+Let $r(x) = \frac{p(x)}{q(x)}$ be a proper rational function where the denominator $q$ can be factored into $\ell$ _distinct and real linear factors_ and $m$ _distinct irreducible quadratics_, i.e.
 
 $$
-Q(x) = a_n(x-b_1)(x-b_2)\cdots(x-b_\ell)( (x-c_1)^2 + d_1^2 )( (x-c_2)^2 + d_2^2 ) \cdots ( (x-c_q)^2 + d_q^2 ),
+q(x) = a_n(x-b_1)(x-b_2)\cdots(x-b_\ell)( (x-c_1)^2 + d_1^2 )( (x-c_2)^2 + d_2^2 ) \cdots ( (x-c_m)^2 + d_m^2 ),
 $$
 
-where $b_1,b_2,\ldots,b_\ell$ are _distinct real numbers_, $(c_1,d_1^2),(c_2,d_2^2),\ldots,(c_q,d_q^2)$ are _distinct real number pairs_ with $d_1,d_2,\ldots,d_q\neq0$, and $a_n$ is the leading coefficient of $Q(x)$.
+where $b_1,b_2,\ldots,b_\ell$ are _distinct real numbers_, $(c_1,d_1^2),(c_2,d_2^2),\ldots,(c_m,d_m^2)$ are _distinct real number pairs_ with $d_1,d_2,\ldots,d_m\neq0$, and $a_n$ is the leading coefficient of $q$.
 
-Then there exist real constants $A_1,A_2,\ldots,A_\ell$, $B_1,\ldots,B_q$ and $C_1,\ldots,C_q$ such that
+Then there exist real constants $A_1,A_2,\ldots,A_\ell$, $B_1,\ldots,B_m$ and $C_1,\ldots,C_m$ such that
 
 $$
-R(x)= \frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_\ell}{x-b_\ell} + \frac{B_1x + C_1}{(x-c_1)^2 + d_1^2} + \cdots + \frac{B_qx + C_q}{(x-c_q)^2 + d_q^2}.
+r(x)= \frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_\ell}{x-b_\ell} + \frac{B_1x + C_1}{(x-c_1)^2 + d_1^2} + \cdots + \frac{B_mx + C_m}{(x-c_m)^2 + d_m^2}.
 $$
 
 ::::
@@ -524,19 +552,19 @@ $$
 Consider the proper rational function
 
 $$
-R(x)  = \frac{5x^2+24x+7}{2x^3+2x^2-2x+30}.
+r(x)  = \frac{5x^2+24x+7}{2x^3+2x^2-2x+30}.
 $$
 
-The denominator $Q(x)=2x^3+2x^2-2x+30$ cab be factorised as
+The denominator $q(x)=2x^3+2x^2-2x+30$ can be factorised as
 
 $$
-Q(x) = 2(x+3)\left( (x-1)^2 + 4\right).
+q(x) = 2(x+3)\left( (x-1)^2 + 4\right).
 $$
 
-An partial fraction decomposition of $R$ is therefore of the form
+An partial fraction decomposition of $r$ is therefore of the form
 
 $$
-R(x) = \frac{A_1}{x+3} + \frac{B_1x + C_1}{(x-1)^2 + 4}.
+r(x) = \frac{A_1}{x+3} + \frac{B_1x + C_1}{(x-1)^2 + 4}.
 $$ 
 
 Rewriting the right-hand side to a single rational function and comparing the nominators results in the equation
@@ -555,10 +583,10 @@ C_1 &=& 2,
 \end{array}\right.
 $$
 
-and the partial fraction decomposition of $R$ using only real coefficients is
+and the partial fraction decomposition of $r$ using only real coefficients is
 
 $$
-R(x) = \frac{-\frac12}{x+3} + \frac{3x + 2}{(x-1)^2 + 4}.
+r(x) = \frac{-\frac12}{x+3} + \frac{3x + 2}{(x-1)^2 + 4}.
 $$
 
 ::::
@@ -568,28 +596,28 @@ In all of the above examples we have only considered the case where the denomina
 Consider the proper rational function
 
 $$
-R(x)  = \frac{2x^2+6x+5}{(x+1)^2(x+2)}.
+r(x)  = \frac{2x^2+6x+5}{(x+1)^2(x+2)}.
 $$
 
-The denominator $Q(x)=(x+1)^2(x+2)$ of this rational function has a repeated linear factor $(x+1)$. If we would try to apply the previous theorems directly, we would look for constants $A$ and $B$ such that
+The denominator $q(x)=(x+1)^2(x+2)$ of this rational function has a repeated linear factor $(x+1)$. If we would try to apply the previous theorems directly, we would look for constants $A$ and $B$ such that
 
 $$
-R(x) = \frac{A}{x+1} + \frac{B}{x+2}.
+r(x) = \frac{A}{x+1} + \frac{B}{x+2}.
 $$
 
 If we would rewrite the right-hand side to a single rational function, we obtain
 
 $$
-R(x) = \frac{A(x+2) + B(x+1)}{(x+1)(x+2)} = \frac{(A+B)x + (2A+B)}{(x+1)(x+2)}.
+r(x) = \frac{A(x+2) + B(x+1)}{(x+1)(x+2)} = \frac{(A+B)x + (2A+B)}{(x+1)(x+2)}.
 $$
 
-The denominator of this expression is not equal to the original denominator of the rational function $R$, so we cannot compare the nominators directly. If we multiply both the denominator and the numerator of the last expression with $x+1$, we obtain
+The denominator of this expression is not equal to the original denominator of the rational function $r$, so we cannot compare the nominators directly. If we multiply both the denominator and the numerator of the last expression with $x+1$, we obtain
 
 $$
-R(x) = \frac{((A+B)x + (2A+B))(x+1)}{(x+1)^2(x+2)} = \frac{(A+B)x^2 + (3A+2B)x + 2A+B}{(x+1)^2(x+2)}.
+r(x) = \frac{((A+B)x + (2A+B))(x+1)}{(x+1)^2(x+2)} = \frac{(A+B)x^2 + (3A+2B)x + 2A+B}{(x+1)^2(x+2)}.
 $$
 
-Now the denominator is equal to the original denominator of $R$ and we can compare the nominators. This results in the system of equations
+Now the denominator is equal to the original denominator of $r$ and we can compare the nominators. This results in the system of equations
 
 $$
 \left\{\begin{array}{lcr}
@@ -607,37 +635,37 @@ If we would just consider the factor $(x+1)^2$ in the denominator, we would also
 
 It could also be the case that an irreducible quadratic is repeated in the denominator. In that case we will also have to consider multiple terms in the partial fraction decomposition for that irreducible quadratic. The next theorem summarises all of this.
 
-::::{prf:theorem}
+::::{prf:theorem} Partial fraction decomposition with repeated real linear factors and repeated irreducible quadratics
 :label: Thm:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic
 
-Let $R(x) = \frac{P(x)}{Q(x)}$ be a proper rational function where the denominator $Q(x)$ can be factored into $\ell$ real linear factors_ and $q$ _distinct irreducible quadratics_, i.e.
+Let $r(x) = \frac{p(x)}{q(x)}$ be a proper rational function where the denominator $q$ can be factored into $\ell$ _real linear factors_ and $m$ _irreducible quadratics_, i.e.
 
 $$
 \begin{split}
-Q(x) &= a_n(x-b_1)^{m_1}(x-b_2)^{m_2}\cdots(x-b_\ell)^{m_\ell}\\
-& \qquad ( (x-c_1)^2 + d_1^2 )^{n_1}( (x-c_2)^2 + d_2^2 )^{n_2} \cdots ( (x-c_q)^2 + d_q^2 )^{n_q},
+q(x) &= a_n(x-b_1)^{m_1}(x-b_2)^{m_2}\cdots(x-b_\ell)^{m_\ell}\\
+& \qquad ( (x-c_1)^2 + d_1^2 )^{n_1}( (x-c_2)^2 + d_2^2 )^{n_2} \cdots ( (x-c_m)^2 + d_m^2 )^{n_m},
 \end{split}
 $$
 
-where $b_1,b_2,\ldots,b_\ell$ are _distinct real numbers_, $m_1,m_2,\ldots,m_\ell$ are positive integers, $(c_1,d_1^2),(c_2,d_2^2),\ldots,(c_q,d_q^2)$ are _distinct real number pairs_ with $d_1,d_2,\ldots,d_q\neq0$, $n_1,n_2,\ldots,n_q$ are positive integers, and $a_n$ is the leading coefficient of $Q(x)$.
+where $b_1,b_2,\ldots,b_\ell$ are _distinct real numbers_, $s_1,s_2,\ldots,s_\ell$ are positive integers, $(c_1,d_1^2),(c_2,d_2^2),\ldots,(c_m,d_m^2)$ are _distinct real number pairs_ with $d_1,d_2,\ldots,d_m\neq0$, $t_1,t_2,\ldots,t_m$ are positive integers, and $a_n$ is the leading coefficient of $q$.
 
-Then there exist constants $A_{k,j}$, $1\leq j \leq m_k$ for $1\leq k \leq \ell$, and constants $B_{p,j}$ and $C_{p,j}$, $1\leq j \leq n_p$, for $1\leq p \leq q$ such that
-
-$$
-R(x)= L_1(x)+L_2(x)+\cdots+L_\ell(x) + Q_1(x) + Q_2(x) + \cdots + Q_q(x),
-$$
-
-
-where for $1\leq k \leq \ell$, $m_k$ is the multiplicity of the linear factor $(x-b_k)$ in the factorisation of $Q(x)$ and
+Then there exist constants $A_{k,j}$, $1\leq j \leq s_k$ for $1\leq k \leq \ell$, and constants $B_{h,j}$ and $C_{h,j}$, $1\leq j \leq t_h$, for $1\leq h \leq m$ such that
 
 $$
-L_k(x) = \frac{A_{k,1}}{x-b_k} + \frac{A_{k,2}}{(x-b_k)^2} + \cdots + \frac{A_{k,m_k}}{(x-b_k)^{m_k}}.
+r(x)= L_1(x)+L_2(x)+\cdots+L_\ell(x) + Q_1(x) + Q_2(x) + \cdots + Q_m(x),
 $$
 
-Similarly, for $1\leq p \leq q$, $n_p$ is the multiplicity of the irreducible quadratic factor $((x-c_p)^2 + d_p^2)$ in the factorisation of $Q(x)$ and
+
+where for $1\leq k \leq \ell$, $s_k$ is the multiplicity of the linear factor $(x-b_k)$ in the factorisation of $q$ and
 
 $$
-Q_p(x) = \frac{B_{p,1}x + C_{p,1}}{(x-c_p)^2 + d_p^2} + \frac{B_{p,2}x + C_{p,2}}{((x-c_p)^2 + d_p^2)^2} + \cdots + \frac{B_{p,n_p}x + C_{p,n_p}}{((x-c_p)^2 + d_p^2)^{n_p}}.
+L_k(x) = \frac{A_{k,1}}{x-b_k} + \frac{A_{k,2}}{(x-b_k)^2} + \cdots + \frac{A_{k,s_k}}{(x-b_k)^{s_k}}.
+$$
+
+Similarly, for $1\leq h \leq m$, $t_h$ is the multiplicity of the irreducible quadratic factor $((x-c_h)^2 + d_h^2)$ in the factorisation of $q$ and
+
+$$
+Q_h(x) = \frac{B_{h,1}x + C_{h,1}}{(x-c_h)^2 + d_h^2} + \frac{B_{h,2}x + C_{h,2}}{((x-c_h)^2 + d_h^2)^2} + \cdots + \frac{B_{h,t_h}x + C_{h,t_h}}{((x-c_h)^2 + d_h^2)^{t_h}}.
 $$
 
 ::::
