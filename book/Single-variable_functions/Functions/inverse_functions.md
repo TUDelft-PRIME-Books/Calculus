@@ -1,3 +1,5 @@
+(Section:Inverse)=
+
 # Inverse functions
 
 ## Introduction
@@ -60,7 +62,7 @@ We can also nicely visualise the graph of an inverse function by manipulating th
 ::::::{prf:theorem} Graph of inverse function
 :label: Thm:Inverse:Graphinverse
 
-If $f$ has an inverse function $f^{-1}$, then the graph of $f^{-1}$ can be found by reflecting the graph of $f$ in the line $y=x$.
+If a single-variable $f$ has an inverse function $f^{-1}$, then the graph of $f^{-1}$ can be found by reflecting the graph of $f$ in the line $y=x$.
 
 ::::::
 

@@ -1,3 +1,5 @@
+(Section:Trigonometry)=
+
 # Trigonometry
 
 ## Introduction
