@@ -8,7 +8,7 @@ Almost all functions we have encountered so far have the nice property that it i
 
 In science and engineering, most variables depend on each other in a continuous way. However, that does not need to be the case. Consider, for instance, an electrical circuit, where a DC voltage source is connected to a resistor and an inductor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the current through the inductor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. As such, the current is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
 
-```{figure} Images/Fig-Continuity-Circuit
+```{figure} Images/Fig-Continuity-Circuit.jpg
 ---
 class: dark-light
 figclass: margin
