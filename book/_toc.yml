@@ -179,3 +179,4 @@ parts:
     - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb" # ref_graph: {'ignore':True}
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md" # ref_graph: {'ignore':True}
     - external: "https://github.com/TeachBooks/manual/blob/release/book/features/apa.md" # ref_graph: {'ignore':True}
+    - external: "https://github.com/TeachBooks/Sphinx-Metadata-Figure/blob/main/MANUAL.ipynb" # ref_graph: {'ignore':True}
