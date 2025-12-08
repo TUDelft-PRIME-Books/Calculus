@@ -18,7 +18,6 @@ In this section we cover:
 - Definition solution of a DE/IVP/BVP
 - Superposition principle for linear differential equations
 
-
 It can be shown that a first-order differential equation, that satisfies certain conditions, has a general solution with one degree of freedom; somewhere in the process of solving such a differential equation we have to integrate once which gives rise to a so-called arbitrary **constant of integration**.
 
 Then this arbitrary constant can be chosen in such a way that the solution also satisfies an initial condition of the form $y(t_0)=y_0$.
