@@ -8,15 +8,21 @@ In this section we cover:
   - Mention names of boundary conditions
 - (in)dependent variable
 - Classification of differential equations:
-  - linear/nonlinear
-  - homogeneous/nonhomogeneous
+  - linear/nonlinear (including algorithmic check)
   - order
   - ordinary/partial
-  - autonomous/non-autonomous
-  - homogeneous/non-homogeneous
-  - constant coefficients/variable coefficients
+  - autonomous/non-autonomous (including algorithmic check)
 - Definition solution of a DE/IVP/BVP
-- Superposition principle for linear differential equations
+  - general solution
+  - particular solution
+  - implicit solution
+  - equilibrium solution
+  - checking solutions
+- linear differential equations
+  - constant coefficients/variable coefficients
+  - Superposition principle for linear differential equations
+  - homogeneous/non-homogeneous (including algorithmic check)
+  - nonhomogeneous solution = homogeneous solution + particular solution
 
 It can be shown that a first-order differential equation, that satisfies certain conditions, has a general solution with one degree of freedom; somewhere in the process of solving such a differential equation we have to integrate once which gives rise to a so-called arbitrary **constant of integration**.
 
