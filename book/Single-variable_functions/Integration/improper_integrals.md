@@ -1,3 +1,5 @@
+(Sec:Integration:ImproperIntegrals)=
+
 # Improper integrals
 
 In this section we cover
@@ -474,7 +476,7 @@ $$
 :::
 
 ::::::{prf:Theorem} $p$-integrals
-:label: Thm:Integration:ImproperIntegralsPintegrals
+:label: Thm:Integration:ImproperIntegralsPIntegrals
 For $0<a<\infty$ we have
 
 (a) $\displaystyle\int_a^{\infty}\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{p-1}, &p>1\\\infty, &p\leq1.\end{cases}$
@@ -482,7 +484,8 @@ For $0<a<\infty$ we have
 (b) $\displaystyle\int_0^a\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{1-p}, &p<1\\\infty, &p\geq1.\end{cases}$
 ::::::
 
-::::::{prf:Proof}
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:ImproperIntegralsPIntegrals`
+:class: tudproof, dropdown
 
 (a) We have
 
@@ -865,12 +868,16 @@ $$
 
 ::::::{prf:Theorem} The Dirichlet integral
 :label: Thm:Integration:ImproperIntegralsDirichletIntegral
-$\displaystyle\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\frac{1}{2}\pi$.
+
+$$
+\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\frac{1}{2}\pi.
+$$
 
 This integral is named after the German mathematician [Johann Peter Gustav Lejeune Dirichlet (1805-1859)](https://en.wikipedia.org/wiki/Peter_Gustav_Lejeune_Dirichlet).
 ::::::
 
-::::::{prf:Proof}
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:ImproperIntegralsDirichletIntegral`
+:class: tudproof, dropdown
 Since $\displaystyle\lim\limits_{x\downarrow0}\frac{\sin(x)}{x}=1$, the integrand is continuous and the integral is convergent. 
 
 Now let: $I(t)=\displaystyle\int_0^{\infty}e^{-xt}\frac{\sin(x)}{x}\,dx$. Then we have
@@ -885,7 +892,11 @@ I'(t)&=-\int_0^{\infty}e^{-xt}\sin(x)\,dx=\int_0^{\infty}e^{-xt}\,d\cos(x)\\
 \end{align*}
 $$
 
-This implies that $\displaystyle\int_0^{\infty}e^{-xt}\sin(x)\,dx=\frac{1}{1+t^2}$ and therefore $I'(t)=-\dfrac{1}{1+t^2}$. Hence: $I(t)=-\arctan(t)+C$. Note that $0=\displaystyle\lim\limits_{t\to\infty}I(t)=-\tfrac{1}{2}\pi+C$, which implies that $C=\tfrac{1}{2}\pi$. We conclude that: $I(t)=-\arctan(t)+\frac{1}{2}\pi$. Hence: $\displaystyle\int_0^{\infty}\frac{\sin(x)}{x}\,dx=I(0)=\tfrac{1}{2}\pi$.
+This implies that $\displaystyle\int_0^{\infty}e^{-xt}\sin(x)\,dx=\frac{1}{1+t^2}$ and therefore $I'(t)=-\dfrac{1}{1+t^2}$. Hence: $I(t)=-\arctan(t)+C$. Note that $0=\displaystyle\lim\limits_{t\to\infty}I(t)=-\tfrac{1}{2}\pi+C$, which implies that $C=\tfrac{1}{2}\pi$. We conclude that: $I(t)=-\arctan(t)+\frac{1}{2}\pi$. Hence: 
+
+$$
+\int_0^{\infty}\frac{\sin(x)}{x}\,dx=I(0)=\tfrac{1}{2}\pi.
+$$
 
 ::::::
 

@@ -1,3 +1,5 @@
+(Sec:Integration:IndefiniteIntegrals)=
+
 # Indefinite integrals
 
 In this section we cover
@@ -5,6 +7,8 @@ In this section we cover
 - Indefinite integrals
 - Antiderivatives
 - Basic rules of calculation (e.g. sums and scalars)
+
+## Antiderivatives
 
 ::::::{prf:Definition}
 :label: Def:Integration:IndefiniteIntegral
@@ -27,13 +31,11 @@ For many (standard) functions we are familiar with their derivatives. The other 
 
 |   |   |
 |---|---|
-| $\displaystyle\int e^x\,dx=e^x+C$  | $\displaystyle\int x^{\alpha}\,dx=\frac{1}{\alpha+1}x^{\alpha+1}+C,\quad\alpha\neq-1$ |
+| $\displaystyle\int e^x\,dx=e^x+C$  | $\displaystyle\int x^{\alpha}\,dx=\frac{1}{\alpha+1}x^{\alpha+1}+C,\;\alpha\neq-1$ |
 | $\displaystyle\int\cos(x)\,dx=\sin(x)+C$ | $\displaystyle\int\sin(x)\,dx=-\cos(x)+C$ |
-| $\displaystyle\int\frac{1}{\cos^2(x)}\,dx=\tan(x)+C$ | $\displaystyle\int\frac{1}{x}\,dx=\ln(x)+C,\quad x>0$ |
+| $\displaystyle\int\frac{1}{\cos^2(x)}\,dx=\tan(x)+C$ | $\displaystyle\int\frac{1}{x}\,dx=\ln\lvert x\rvert+C,\;x>0$ |
 | $\displaystyle\int\cosh(x)\,dx=\sinh(x)+C$ | $\displaystyle\int\sinh(x)\,dx=\cosh(x)+C$ |
-| $\displaystyle\int\frac{1}{\sqrt{1-x^2}}\,dx=\arcsin(x)+C,\quad -1<x<1$ | $\displaystyle\int\frac{1}{1+x^2}\,dx=\arctan(x)+C$ |
-
-Het lukt me niet om de absolute waarde in de tabel te krijgen.
+| $\displaystyle\int\frac{1}{\sqrt{1-x^2}}\,dx=\arcsin(x)+C,\;-1<x<1$ | $\displaystyle\int\frac{1}{1+x^2}\,dx=\arctan(x)+C$ |
 
 ::::::{prf:Remark}
 Note that we also have $\displaystyle\int\frac{1}{\sqrt{1-x^2}}\,dx=-\arccos(x)+C$.

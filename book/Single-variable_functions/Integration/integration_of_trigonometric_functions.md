@@ -1,3 +1,5 @@
+(sec:Integration:TrigFunctions)=
+
 # Integration of trigonometric functions
 
 In this section we cover the integration of trigonometric functions with:
@@ -259,7 +261,7 @@ $$
 
 :::
 
-Using the Weierstrass substitution or the tangent half-angle substitution we will derive yet other forms for these integrals.
+Using the tangent half-angle substitution we will derive yet other forms for these integrals.
 
 ## Products of trigonometric functions
 
@@ -790,9 +792,9 @@ $$
 
 :::
 
-## The Weierstrass substitution
+## The tangent half-angle substitution
 
-In the section on integration by substitution we have already seen the **Weierstrass substitution** or the **tangent half-angle substitution**, which converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function.
+In {numref}`Sec:Integration:Substitution` on integration by substitution we have already seen the **tangent half-angle substitution**, sometimes called the **Weierstrass substitution**, which converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function.
 
 The method is named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass).
 
@@ -934,7 +936,7 @@ $$
 
 ::::::{prf:Example}
 :label: Ex:Integration:TrigFunctionsWeierstrassTan
-Evaluate $\displaystyle\int\tan(x)\,dx$ using the Weierstrass substitution.
+Evaluate $\displaystyle\int\tan(x)\,dx$ using the tangent half-angle substitution.
 
 Solution. Let $t=\tan(\frac{1}{2}x)$, then we have $\tan(x)=\dfrac{2t}{1-t^2}$ and $dx=\dfrac{2\,dt}{1+t^2}$. Hence
 
@@ -949,11 +951,11 @@ $$
 
 ::::::
 
-Let us apply the Weierstrass substitution to the integrals $\displaystyle\int\frac{dx}{\sin(x)}$ and $\displaystyle\int\frac{dx}{\cos(x)}$:
+Let us apply the tangent half-angle substitution to the integrals $\displaystyle\int\frac{dx}{\sin(x)}$ and $\displaystyle\int\frac{dx}{\cos(x)}$:
 
 ::::::{prf:Example}
 :label: Ex:Integration:TrigFunctionsWeierstrassSin
-Evaluate $\displaystyle\int\frac{dx}{\sin(x)}$ using the Weierstrass substitution.
+Evaluate $\displaystyle\int\frac{dx}{\sin(x)}$ using the tangent half-angle substitution.
 
 Solution. Let $t=\tan(\frac{1}{2}x)$, then we have $\sin(x)=\dfrac{2t}{1+t^2}$ and $dx=\dfrac{2\,dt}{1+t^2}$ and thus
 
@@ -984,7 +986,7 @@ $$
 
 ::::::{prf:Example}
 :label: Ex:Integration:TrigFunctionsWeierstrassCos
-Evaluate $\displaystyle\int\frac{dx}{\cos(x)}$ using the Weierstrass substitution.
+Evaluate $\displaystyle\int\frac{dx}{\cos(x)}$ using the tangent half-angle substitution.
 
 Solution. Let $t=\tan(\frac{1}{2}x)$, then we have $\cos(x)=\dfrac{1-t^2}{1+t^2}$ and $dx=\dfrac{2\,dt}{1+t^2}$ and thus
 
@@ -1022,7 +1024,7 @@ Evaluate $\displaystyle\int\frac{dx}{3\sin(x)+4\cos(x)}$.
 
 :::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsWeierstrassSinCos`
 :class: solution, dropdown
-Using the Weierstrass substitution $t=\tan(\frac{1}{2}x)$, we have
+Using the tangent half-angle substitution $t=\tan(\frac{1}{2}x)$, we have
 
 $$
 \sin(x)=\frac{2t}{1+t^2},\quad\cos(x)=\frac{1-t^2}{1+t^2}\quad\text{and}\quad dx=\frac{2\,dt}{1+t^2}.
