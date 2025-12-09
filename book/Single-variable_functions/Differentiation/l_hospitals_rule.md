@@ -1,3 +1,5 @@
+(Section:lHospital)=
+
 # l'Hospital's rule
 
 In this section we cover:
