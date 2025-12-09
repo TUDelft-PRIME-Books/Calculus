@@ -7,14 +7,3 @@ table.center-align td,
 table.center-align th {
   text-align: center;
 }
-
-
-div.admonition.overflow {
-  overflow: visible; /* allow margin elements to render outside the box */
-}
-
-@media (min-width: 992px), print {
-  div.admonition.overflow figure.margin {
-  margin-right: -42% !important;
-}
-}
