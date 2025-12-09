@@ -1,4 +1,4 @@
-(Section:Trigonometry)=
+(Sec:Algebra:Trigonometry)=
 
 # Trigonometry
 
@@ -246,7 +246,7 @@ So we have:
 
 ## The law of cosines
 
-The *law of cosines* is a generalization of the Pythagorean theorem, and regards arbitrary triangles as shown in {numref}`Fig:Trigonometry:LawOfCosines`.
+The *law of cosines* is a generalisation of the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>`, and regards arbitrary triangles as shown in {numref}`Fig:Trigonometry:LawOfCosines`.
 
 ```{figure} Images/abctriangle.png
 ---

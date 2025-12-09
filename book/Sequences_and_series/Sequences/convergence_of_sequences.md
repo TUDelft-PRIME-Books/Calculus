@@ -23,7 +23,7 @@ A sequence $\{a_n\}$ converges to a limit $L$, and we write $\lim\limits_{n\to\i
 ::::::{prf:example}
 1) $\displaystyle\lim_{n\to\infty}\frac{2n^2-3n+4}{3n^2+4n+5}=\lim_{n\to\infty}\frac{2-\dfrac{3}{n}+\dfrac{4}{n^2}}{3+\dfrac{4}{n}+\dfrac{5}{n^2}}=\frac{2-0+0}{3+0+0}=\frac{2}{3}$.
 
-2) $\displaystyle\lim_{n\to\infty}\frac{2n-1}{\sqrt{n^2+1}}=\lim_{n\to\infty}=\lim_{n\to\infty}\frac{2-\dfrac{1}{n}}{\sqrt{1+\dfrac{1}{n^2}}}=\frac{2-0}{1+0}=2$.
+2) $\displaystyle\lim_{n\to\infty}\frac{2n-1}{\sqrt{n^2+1}}=\lim_{n\to\infty}\frac{2-\dfrac{1}{n}}{\sqrt{1+\dfrac{1}{n^2}}}=\frac{2-0}{1+0}=2$.
 
 3) 
 
@@ -60,7 +60,8 @@ The geometric sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=r^n$ is convergent for
 Moreover, for $-1<r\leq1$ we have: $\lim\limits_{n\to\infty}r^n=\begin{cases}0, &-1<r<1\\1, &r=1.\end{cases}$
 ::::::
 
-::::::{prf:proof}
+::::::{admonition} Proof of {prf:ref}`Thm:Sequences:ConvergenceGeometric`
+:class: tudproof, dropdown
 We have $\displaystyle\lim_{n\to\infty}r^n=\begin{cases}0, &0<r<1\\ \infty, &r>1.\end{cases}$
 
 Furthermore, we have $\lim\limits_{n\to\infty}0^n=0$ and $\lim\limits_{n\to\infty}1^n=1$.
@@ -132,7 +133,8 @@ This implies that the sequence $\{a_n\}_{n=1}^{\infty}$ is convergent and $\lim\
 If $\lim\limits_{n\to\infty}|a_n|=0$, then $\lim\limits_{n\to\infty}a_n=0$.
 ::::::
 
-::::::{prf:proof}
+::::::{admonition} Proof of {prf:ref}`Thm:Sequences:SqueezeTheorem`
+:class: tudproof, dropdown
 We can prove this using the *squeeze theorem*, since $-|a_n|\leq a_n\leq|a_n|$.
 ::::::
 
@@ -149,7 +151,8 @@ We can prove this using the *squeeze theorem*, since $-|a_n|\leq a_n\leq|a_n|$.
 If $\lim\limits_{x\to\infty}f(x)=L$ and the function $f$ is continuous at $L$, then $\lim\limits_{n\to\infty}f(a_n)=f(L)$.
 ::::::
 
-::::::{prf:proof}
+::::::{admonition} Proof of {prf:ref}`Thm:Sequences:Continuity`
+:class: tudproof, dropdown
 This is an immediate consequence of the continuity of the function $f$.
 ::::::
 
@@ -166,16 +169,17 @@ This is an immediate consequence of the continuity of the function $f$.
 Every *increasing* sequence that is *bounded above* is convergent and every *decreasing* sequence that is *bounded below* is convergent.
 ::::::
 
-```{figure} Images/convergent.png
----
-width: 50%
-name: convergent sequence
-align: center
----
-An increasing sequence that is bounded above
-```
+::::::{admonition} Proof of {prf:ref}`Thm:Sequences:MonotonicBounded`
+:class: tudproof, dropdown
 
-::::::{prf:proof}
+:::{figure} Images/convergent.png
+:width: 50%
+:name: convergent sequence
+:align: center
+
+An increasing sequence that is bounded above
+:::
+
 Suppose that $\{a_n\}$ is an increasing sequence that is bounded above. Then it has a *least upper bound* $L$. Let $\epsilon>0$, then $L-\epsilon$ is *not* an upper bound, since $L$ is the least upper bound. Therefore
 
 $$

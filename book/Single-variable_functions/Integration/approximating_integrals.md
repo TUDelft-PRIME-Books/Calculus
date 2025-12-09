@@ -114,7 +114,7 @@ In this section, we consider the integration of a function $f$ over a single int
 The most simple integration rule is called the _Rectangle rule_. Two different versions exist:
 
 $$
-  \int_{x_L}^{x_R} f(x) dx \approx (x_R - x_L) f(x_L), \text{ and } \int_{x_L}^{x_R} f(x) dx \approx (x_R - x_L) f(x_R),
+  \int_{x_L}^{x_R} f(x) \,dx \approx (x_R - x_L) f(x_L), \text{ and } \int_{x_L}^{x_R} f(x) \,dx \approx (x_R - x_L) f(x_R),
 $$
 which use the left and the right end point of the interval, respectively.
 
@@ -141,7 +141,7 @@ The corresponding approximation of the integral is given by
 :::{math}
 :label: Eq:ApproximatingIntegrals:single_trap
 
-\int_{x_L}^{x_R} f(x) dx \approx \int^{x_R}_{x_L} L_1(x) dx = \frac{x_R - x_L}{2}(f(x_L) + f(x_R)).
+\int_{x_L}^{x_R} f(x) \,dx \approx \int^{x_R}_{x_L} L_1(x) \,dx = \frac{x_R - x_L}{2}(f(x_L) + f(x_R)).
 :::
 
 This approximation is called the _Trapezoidal rule_, since Equation {eq}`Eq:ApproximatingIntegrals:single_trap` equals the area of the trapezium with vertices $(x_L, 0), \; (x_R, 0),\; (x_R, f(x_R))$ and $(x_L, f(x_L))$. The Trapezoidal rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:Trapezoidal>`.
@@ -163,7 +163,7 @@ An illustration of the Trapezoidal rule.
 The Midpoint rule uses the integration point $x_M = \frac{x_L + x_R}{2}$, which leads to
 
 $$
-\int_{x_L}^{x_R} f(x) dx \approx (x_R - x_L)f (x_M).
+\int_{x_L}^{x_R} f(x) \,dx \approx (x_R - x_L)f (x_M).
 $$
 
 **Simpson's rule**
@@ -171,7 +171,7 @@ $$
 Using a quadratic interpolation polynomial with interpolation nodes $x_L$, $x_M = \frac{x_L + x_R}{2}$, and $x_R$, the Simpson's rule can be derived. The integral of $f$ is approximated by
 
 $$
-\int_{x_L}^{x_R} f(x) dx \approx \frac{x_R - x_L}{6} (f(x_{L}) + 4 f (x_{M}) + f(x_{R})).
+\int_{x_L}^{x_R} f(x) \,dx \approx \frac{x_R - x_L}{6} (f(x_{L}) + 4 f (x_{M}) + f(x_{R})).
 $$
 
 The Simpson's rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:Simpsons>`.
@@ -202,11 +202,11 @@ We define the following **integration rules**:
 :class: mid-align
 
 * - **left Rectangle rule**
-  - $\displaystyle\int_{x_L}^{x_R}f(x)dx\approx (x_R-x_L)f(x_L)$
+  - $\displaystyle\int_{x_L}^{x_R}f(x)\,dx\approx (x_R-x_L)f(x_L)$
 * - **right Rectangle rule**
-  - $\displaystyle\int_{x_L}^{x_R}f(x)dx\approx (x_R-x_L)f(x_R)$
+  - $\displaystyle\int_{x_L}^{x_R}f(x)\,dx\approx (x_R-x_L)f(x_R)$
 * - **Trapezoidal rule**
-  - $\displaystyle\int_{x_L}^{x_R}f(x)dx\approx \frac12(x_R-x_L)\left(f(x_L)+f(x_R)\right)$
+  - $\displaystyle\int_{x_L}^{x_R}f(x)\,dx\approx \frac12(x_R-x_L)\left(f(x_L)+f(x_R)\right)$
 ```
 
 ::::
@@ -277,13 +277,13 @@ The integral of $f \in C[a,b]$ will be approximated using a subdivision $a = x_0
 Using that
 
 $$
- \int_a^b f(x) dx = \int_{x_0}^{x_1} f(x) dx + \int_{x_1}^{x_2} f(x) dx  + \cdots + \int_{x_{n-1}}^{x_n} f(x) dx,
+ \int_a^b f(x) \,dx = \int_{x_0}^{x_1} f(x) \,dx + \int_{x_1}^{x_2} f(x) \,dx  + \cdots + \int_{x_{n-1}}^{x_n} f(x) \,dx,
 $$
 
-the integration rules of the previous section can be applied on each subinterval $[x_{k-1}, x_k]$.If $I_k$ is an approximation of the integral $\int_{x_{k-1}}^{x_k} f(x) dx$, for $k=1,\ldots,n$, with $x_L = x_{k-1}$ and $x_R = x_k$, then the integral over $[a,b]$ can be approximated by
+the integration rules of the previous section can be applied on each subinterval $[x_{k-1}, x_k]$.If $I_k$ is an approximation of the integral $\int_{x_{k-1}}^{x_k} f(x) \,dx$, for $k=1,\ldots,n$, with $x_L = x_{k-1}$ and $x_R = x_k$, then the integral over $[a,b]$ can be approximated by
 
 $$
- \int_a^b f(x) dx = \sum_{k=1}^n \int_{x_{k-1}}^{x_k} f(x) dx \approx \sum_{k=1}^n I_k = I.
+ \int_a^b f(x) \,dx = \sum_{k=1}^n \int_{x_{k-1}}^{x_k} f(x) \,dx \approx \sum_{k=1}^n I_k = I.
 $$
 
 This is called a _composite integration rule_ and the idea is illustrated in {numref}`Figure %s <Fig:ApproximatingIntegrals:composite>`.
@@ -304,7 +304,7 @@ To summarize:
 
 Assume $f$ is continuous on $[a,b]$, $h=\dfrac{b-a}{n}$ and $x_k=a+kh$ for $k=0,1,\ldots,n$ are given nodes.
 
-If $I_k$ is an integration rule that approximates $\int_{x_{k-1}}^{x_k}f(x)dx$, we can approximate $\int_{a}^{b}f(x)dx$ with the **composite integration rule**
+If $I_k$ is an integration rule that approximates $\int_{x_{k-1}}^{x_k}f(x)\,dx$, we can approximate $\int_{a}^{b}f(x)\,dx$ with the **composite integration rule**
 
 $$
 I = \sum_{k=1}^{n}I_k.
@@ -407,7 +407,7 @@ We can even formulate a theorem that states that the observation in {prf:ref}`Ex
 ::::{prf:theorem} Order of a numerical integration rule
 :label: Thm:ApproximatingIntegrals:thm
 
-Assume $f$ is continuous on $[a,b]$, $h=\dfrac{b-a}{n}$, $x_k=a+kh$ for $k=0,1,\ldots,n$ are given nodes and that $\mathcal{I}=\int_{a}^{b}f(x)dx$ is approximated with a composite integration rule $I$.
+Assume $f$ is continuous on $[a,b]$, $h=\dfrac{b-a}{n}$, $x_k=a+kh$ for $k=0,1,\ldots,n$ are given nodes and that $\mathcal{I}=\int_{a}^{b}f(x)\,dx$ is approximated with a composite integration rule $I$.
 
 Then there exist a number $C>0$ and an integer $p$ such that
 

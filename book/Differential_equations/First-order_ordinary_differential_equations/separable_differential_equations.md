@@ -3,6 +3,13 @@
 In this section we cover:
 
 - Separable differential equations
+- Algorithmic check
+- Link with first-order linear differential equations, same example?
+
+
+
+
+
 
 ::::::{prf:Definition}
 A first-order differential equation is called **separable** if it can be written in the form:
