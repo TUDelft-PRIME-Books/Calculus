@@ -104,15 +104,109 @@ If $y\geq 0$ and $n\geq 1$ is an even natural number, the unique positive soluti
 
 ::::::
 
-We can now consistently define what we mean by $y^{\frac{p}{q}}$ for integers $p\geq 1$ and $q>0$.
+We can now consistently define what we mean by $y^{\frac{p}{q}}$ for integers $p$ and $q>0$.
 
 
 ::::::{prf:definition} 
 :label: Def:RealNumbers:Powers3
-Let $y\geq 0$ and $r\neq 0$ be a rational number. Write $r=\frac{p}{q}$ with $p$ and $q$ integers and $q>0$. Then we define $y^{\frac{p}{q}}=\sqrt[q]{y^p}=\left(\sqrt[q]{y}\right)^p$.
+Let $y> 0$ and $r\neq 0$ be a rational number. Write $r=\frac{p}{q}$ with $p$ and $q$ integers and $q>0$. Then we define $y^{\frac{p}{q}}=\sqrt[q]{y^p}=\left(\sqrt[q]{y}\right)^p$.
 
-Moreover if $y<0$ and $q$ is odd we define $y^{\frac{p}{p}}=\sqrt[q]{y^p}=\left(\sqrt[q]{y}\right)^p$.
+Moreover if $y<0$ and $q$ is odd we define $y^{\frac{p}{q}}=\sqrt[q]{y^p}=\left(\sqrt[q]{y}\right)^p$. Finally if $y=0$ and $p>0$ we define $y^{\frac{p}{q}}=0$.
 ::::::
+
+Before we move on to irrational powers, we first some general calculation rules for exponents. These will carry over to irrational exponents as well, but we need these rules to properly define irrational powers. Because of this, we will call this result a lemma, which is just a fancy word for an intermediate result that is useful for proving a bigger result, but not necessarily interesting in and by itself.
+
+::::::{prf:lemma} 
+:label: Thm:RealNumbers:ExpCalcRat
+Let $y> 0$ and $z> 0$ and let $p$ and $q$ be rational numbers.
+
+- We have $\left(y^p\right)^q=y^{pq}$.
+- We have $(yz)^p=y^pz^p$.
+- We have $y^{p+q}=y^py^q$.
+- We have $y^{p-q}=\dfrac{y^p}{y^q}$.
+- If $y>1$ and $p<q$ then $y^p<y^q$.
+- If $0<y<1$ and $p<q$ then $y^p>y^q$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:RealNumbers:ExpCalcRat`
+:class: tudproof, dropdown
+
+First we prove $\left(y^p\right)^q=y^{pq}$. For this, we write $p=\frac{a}{b}$ and $q=\frac{c}{d}$ with $a$, $b$, $c$ and $d$ integers with $b>0$ and $d>0$. Then we have
+
+$$
+ \left(y^p\right)^q=\sqrt[d]{\left(y^p\right)^c}=\sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}.
+$$
+
+Note that $pq=\frac{a}{b}\frac{c}{d}=\frac{ac}{bc}$, so we have
+
+$$
+ y^{pq}=\sqrt[bd]{y^{ac}}.
+$$
+
+We set out to show that $\left(\left(y^p\right)^q\right)^{bd}=y^{ac}$, which must imply that $\left(y^p\right)^q=\sqrt[bd]{y^{ac}}=y^{pq}$ For convenience, we assume that $a>0$ and $c>0$. In that case, we find
+
+\begin{align*}
+ \left(\left(y^p\right)^q\right)^{bd}&=\left(\sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}\right)^{bd}\\
+ &=\underbrace{\sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}\cdot...\cdot \sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}}_{bd\text{ times}}\\
+ &=\underbrace{\underbrace{\sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}}_{d\text{ times}}\cdot...\cdot\underbrace{\sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}}_{d\text{ times}}}_{b\text{ times}}\\
+ &=\underbrace{\left(\sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}\right)^d\cdot...\cdot\left(\sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}\right)^d}_{b\text{ times}}\\
+ &=\underbrace{\left(\sqrt[b]{y^a}\right)^c\cdot...\cdot\left(\sqrt[b]{y^a}\right)^c}_{b\text{ times}}\\
+ &=\underbrace{\underbrace{\sqrt[b]{y^a}}_{c\text{ times}}\cdot...\cdot\underbrace{\sqrt[b]{y^a}}_{c\text{ times}}}_{b\text{ times}}\\
+ &=\underbrace{\sqrt[b]{y^a}\cdot ...\cdot \sqrt[b]{y^a}}_{bc\text{ times}}\\
+ &=\underbrace{\underbrace{\sqrt[b]{y^a}}_{b\text{ times}}\cdot...\cdot\underbrace{\sqrt[b]{y^a}}_{b\text{ times}}}_{c\text{ times}}\\
+ &=\underbrace{\left(\sqrt[b]{y^a}\right)^a\cdot...\cdot\left(\sqrt[b]{y^a}\right)^a}_{c\text{ times}}\\
+ &=\underbrace{y^a\cdot...\cdot y^a}_{c\text{ times}}\\
+ &=\underbrace{\underbrace{y\cdot...\cdot y}_{a\text{ times}}\cdot...\cdot\underbrace{y\cdot...\cdot y}_{a\text{ times}}}_{c\text{ times}}\\
+ &=\underbrace{y\cdot...y}_{ac\text{ times}}\\
+ &=y^{ac},
+\end{align*}
+
+as desired. If $a$ and/or $c$ is negative then expressions like $y^a$ should be written like $\underbrace{\frac{1}{y}\cdot...\cdot{1}{y}}_{|a|\text{ times}}$, but otherwise the computation does not change. As such, we find that $\left(y^p\right)^q=\sqrt[bd]{y^{ac}}=y^{pq}$.
+
+We now prove $(yz)^p=y^pz^p$. For this, we write $p=\frac{a}{b}$ with $a$ and $b$ integers and $b>0$. Then we have
+
+$$
+ \left(y^pz^p\right)^b=\underbrace{\left(y^pz^p\right)\cdot...\cdot \left(y^pz^p\right)}_{b\text{ times}}=\underbrace{\left(y^p\right)\cdot...\cdot \left(y^p\right)}_{b\text{ times}}\underbrace{\left(z^p\right)\cdot...\cdot \left(z^p\right)}_{b\text{ times}}=\left(y^p\right)^b\left(z^p\right)^b
+$$
+
+Moreover, we have $\left(y^p\right)^b=\left(\sqrt[b]{y^a}\right)^b=y^a$ since $p=\frac{a}{b}$. Similalrly, we have $\left(z^p\right)^b=z^a$. Combining these equations, we find if $a>0$
+
+
+$$
+ \left(y^pz^p\right)^b=y^az^a=\underbrace{y\cdot...\cdot y}_{a\text{ times}}\underbrace{z\cdot...\cdot z}_{a\text{ times}}=\underbrace{yz\cdot...\cdot yz}_{a\text{ times}}=(yz)^a,
+$$
+
+while if $a<0$ we have
+
+
+$$
+ \left(y^pz^p\right)^b=y^az^a=\underbrace{\frac{1}{y}\cdot...\cdot \frac{1}{y}}_{|a|\text{ times}}\underbrace{\frac{1}{z}\cdot...\cdot \frac{1}{z}}_{|a|\text{ times}}=\underbrace{\frac{1}{yz}\cdot...\cdot \frac{1}{z}}_{|a|\text{ times}}=(yz)^a.
+$$
+
+As such, we find $y^pz^p=\sqrt[b]{(yz)^a}=(yz)^p$, as desired.
+
+We now prove $y^{p+q}=y^py^q$. For this, we write $q=\frac{a}{b}$ with $a$ and $b$ integers and $b>0$. By multiplying both $a$ and $b$ by the same positive integer if necessary (which does not change the value of $q$), we can assume that $pb$ is an integer. Then using the previous properties, we find that
+
+$$
+ \left(\frac{y^{p+q}}{y^p}\right)^b=\frac{y^{bp+bq}}{y^{bp}}=\frac{y^{bp+a}}{y^{bp}}.
+$$
+
+Since both $bp+a$ and $bp$ are integers, the expressions $y^{bp+a}$ and $y^{bp}$ are the product of $bp+a$ respectively $bp$ factors $y$ (where if one of these exponents is negative, we mean the corresponding number of factors $\frac{1}{y}$). This means that both the numerator and the denominator have $bp$ factors $y$ which cancel out to each other. In the numerator, we still have $a$ factors $y$, while in the denominator we have nothing left. As such, we find that 
+
+$$
+ \left(\frac{y^{p+q}}{y^p}\right)^b=\frac{y^{bp+bq}}{y^{bp}}=\frac{y^{bp+a}}{y^{bp}}=\frac{y^a}{1}=y^a.
+$$
+
+By definition, this means that $\frac{y^{p+q}}{y^p}$ is the $b$th square root of $y^a$, so we find 
+
+$$
+ \frac{y^{p+q}}{y^p}=\sqrt[b]{y^a}=y^{\frac{a}{b}}=y^q
+$$
+
+Multiplying both sides of this equation by $y^p$ gives the desired result $y^{p+q}=y^py^q$.
+
+:::
 
 So far, we have been able to define rational powers of nonnegative numbers. So how would we define something like $2^\pi$? Note that our definitions so far give that if $p$ and $q$ are rational numbers with $0<p<q$ we have $2^p<2^q$. Naturally, we want this property to be valid for irrational powers of $x$ as well. So since $3<\pi<4$, we must have
 
@@ -151,8 +245,6 @@ Let $y\geq 0$ and $r\neq 0$ be a real number. The number from {prf:ref}`Thm:Real
 ::::::
 
 
-
-
 ::::::{warning} 
 :name: Warning:Realnumbers:Powersofnegativenumbers
 
@@ -163,6 +255,21 @@ $$
 $$
 
 which is not the case. As such, we will not try to define those powers of negative numbers that we have not already defined.
+::::::
+
+The calculation rules from {prf:ref}`Thm:RealNumbers:ExpCalcRat` remain true for arbitrary exponents.
+
+::::::{prf:theorem} 
+:label: Thm:RealNumbers:ExpCalcReal
+Let $y\geq 0$ and $z\geq 0$ and let $p$ and $q$ be real numbers.
+
+- We have $\left(y^p\right)^q=y^{pq}$.
+- We have $(yz)^p=y^pz^p$.
+- We have $y^{p+q}=y^py^q.
+- We have $y^{p-q}=\dfrac{y^p}{y^q}$.
+- If $y>1$ and $p<q$ then $y^p<y^q$.
+- If $0<y<1$ and $p<q$ then $y^p>y^q$.
+
 ::::::
 
 Het bewijs van die laatste stelling lijkt echt veel te veel en bevat ook veel te veel details en geneuzel. Liever verwijzen.

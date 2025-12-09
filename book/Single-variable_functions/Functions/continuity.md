@@ -390,8 +390,24 @@ Suppose we want to show that the equation $x^5-8x^3+2x^2+1=0$ has at least $1$ s
 The function $f$ with supporting horizontal and vertical lines that we can use with {prf:ref}`Theorem:Continuity:IVT`.
 ::::
 
+
 We could even try to find a better approximation for what the value of $c$ is. Indeed, we can divide the interval $[0,1]$ into two pieces $\left[0,\frac{1}{2}\right]$ and $\left[\frac{1}{2},1\right]$. Note that $f\left(\frac{1}{2}\right)=\frac{33}{32}>0$. So on the interval $\left[\frac{1}{2},1\right]$, $f$ changes from positive to negative, which means that on this interval it must be equal to $0$ somewhere. As such, there is a solution to $x^5-8x^3+2x^2+1=0$ in between $\frac{1}{2}$ and $1$. We can continue this process of dividing the interval in two pieces and looking on which of these intervals we can still apply the Intermediate Value Theorem. The longer we continue this process, the closer we will be to the actual value of the solution. However, we cannot use this method to find the exact value of the solution, as we can only perform finitely many computations.
 ::::::
+
+
+The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the following result and is known as **Bolzano's Theorem** or the **Intermediate Zero Theorem**.
+
+::::::{prf:corollary} Bolzano's Theorem
+:label: Cor:Continuity:IVT
+
+Suppose that $f$ is continuous on the closed interval $[a,b]$. If $f(a)$ and $f(b)$ have opposite signs (so one of them is positive while the other is negative) then there is a point $c$ in the open interval $(a,b)$ with $f(c)=0$.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Cor:Continuity:IVT`
+:class: tudproof
+Since $f(a)$ and $f(b)$ have opposite signs, the number $0$ must be in between these values. Hence, the result follows directly from {prf:ref}`Theorem:Continuity:IVT`.
+:::
+
 
 ::::::{prf:example} 
 :label: Ex:Continuity:IVTnoncont
