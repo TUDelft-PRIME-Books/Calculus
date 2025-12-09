@@ -6,13 +6,23 @@
 
 Almost all functions we have encountered so far have the nice property that it is possible to sketch their graph without lifting your pen, except possibly for skipping over a vertical asymptote. Indeed, all of polynomials, powers of $x$, rational functions, (inverse) trigonometric functions, exponential functions and logarithms have this property. A function with this property is called **continuous**. Stated differently, a function is continuous whenever small changes in the input give rise to small changes in the function values. 
 
-In science and engineering, most variables depend on each other in a continuous way. However, that does not need to be the case. Consider, for instance, a simple electrical circuit, where a DC voltage source is connected to a resistor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the current through the resistor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. As such, the current is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
+In science and engineering, most variables depend on each other in a continuous way. However, that does not need to be the case. Consider, for instance, an electrical circuit, where a DC voltage source is connected to a resistor and an inductor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the current through the inductor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. As such, the current is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
 
-::::{note}
-:name: Note:Continuity:Circuit
+```{figure} Images/Fig-Continuity-Circuit.jpg
+---
+class: dark-light
+name: Fig:Continuity-Circuit
+author: L. Usa
+license: CC-BY
+date: 2023-08-03
+copyright: © TU Delft
+placement: caption
+---
 
-Here an image of the circuit described in the text above. For my EE course, a TA once made some great diagrams, but I don’t know how. I do have examples of what they typically look like. Also, a graph of the current, which is a Heaviside function. Since we haven’t given any numbers, you might not want to include any scale markings on the axes?
-::::
+The circuit described above with a resistor with resistance $R$ and an inductor with inductance $L$, where a voltage source of size $V_s$ is turned on at $t=0$. The resulting current $i(t)$ throught the inductor is not continuous at $t=0$.
+```
+
+Hierbij ook nog een schets van de current i(t) (0 voor $t<0$, daarna van de vorm $i_0+exp(-t)$, maar geef maar geen maatvoering op de assen)
 
 (Subsec:ContProp)=
 
@@ -171,7 +181,7 @@ The following functions are continuous on their maximal domain.
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:Continuity:Standardfunctions`
 :class: tudproof, dropdown, full-width
-Let $r>0$ and consider the function $f(x)=x^r$. Let $a$ be any point in the domain of $f$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. If $a^r-\varepsilon<0$ the part $a^r-\varepsilon<x^r$ is satisfied automatically, so we can assume that $a^r-\varepsilon\geq 0$ (as we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway). Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. We know that the function $x^{\frac{1}{r}}$ is increasing, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $x_1\leq a-\delta$ and $a+\delta\leq x_2$. Since $f$ is increasing as well, we know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_^_2$, which means that $f(x_1)<f(x)<f(x_2)$, i.e. 
+Let $r>0$ and consider the function $f(x)=x^r$. Let $a$ be any point in the domain of $f$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. If $a^r-\varepsilon<0$ the part $a^r-\varepsilon<x^r$ is satisfied automatically, so we can assume that $a^r-\varepsilon\geq 0$ (as we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway). Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. We know that the function $x^{\frac{1}{r}}$ is increasing, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $x_1\leq a-\delta$ and $a+\delta\leq x_2$. Since $f$ is increasing as well, we know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_2$, which means that $f(x_1)<f(x)<f(x_2)$, i.e. 
 
 $$
  a^r-\varepsilon=\left(\left(a^r-\varepsilon\right)^{\frac{1}{r}}\right)^r=f(x_1)<x^r<f(x_2)=\left(\left(a^r+\varepsilon\right)^{\frac{1}{r}}\right)^r=a^r+\varepsilon

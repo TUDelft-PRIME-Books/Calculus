@@ -25,7 +25,9 @@ Finally, there are also cases where we cannot find any values. If we again consi
 If it is always possible to find exactly $1$ value of $x$ with $y=f(x)$ for each $y$, this means we can consider the function that maps each value of $y$ to the unique $x$ with $f(x)=y$. Such a function is called the **inverse function** of $f$. In this section, we will define and analyse inverse functions and show under which conditions they exist. Then, we will consider inverse functions of certain standard functions, logarithms for exponential functions and inverse trigonometric functions for trigonometric functions, that are so well-known that they can be called standard functions themselves.
 
 (Subsec:InverseExistProp)=
+
 ## Existence and properties of inverse functions
+
 
 ::::::{prf:definition} Inverse function
 :label: Def:Inverse:Inverse
@@ -71,13 +73,45 @@ The interpretation of the inverse function is that it 'undoes' what $f$ does. In
 ::::::{prf:theorem}
 :label: Thm:Inverse:CancellingEquations
 
-Let $f$ be a function with domain $D$ and range $R$ and let $g$ be a function with domain $R$. Then $g=f^{-1}$ precisely when the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold for all $x$ in $D$ and all $y$ in $R$.
+Let $f$ be a function with domain $D$ and range $R$ and let $g$ be a function with domain $R$. Then $f$ is invertible with $g=f^{-1}$ precisely when the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold for all $x$ in $D$ and all $y$ in $R$.
 
 ::::::
 :::{admonition} Proof of {prf:ref}`Thm:Inverse:CancellingEquations`
 :class: tudproof
 
 In the discussion preceding this theorem, we already showed that the cancelling equations hold if $g=f^{-1}$. Hence, we now assume that the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold for all $x$ in $D$ and all $y$ in $R$ and we will show that $g=f^{-1}$. Let $x$ in $D$ and write $y=f(x)$. Then $g(y)=g(f(x))=x$ because of the first cancelling equation. Moreover, let $y$ in $R$ and write $x=g(y)$. Then $f(x)=f(g(y))=y$ because of the second cancelling equation. As such, we have $f(x)=y$ precisely when $g(y)=x$. This means that $g=f^{-1}$.
+:::
+
+Now suppose that we have a function $h$ that is a composition of two other functions, so $h=f\circ g$. If $f$ and $g$ both have an inverse, does $h$ automatically have an inverse as well? To determine this, we should really think about having an inverse as being able to undo the action of the original function. So since $f\circ g$ first applies $g$ and then $f$, we can undo this by undoing both, but then **in reverse order**. This is sometimes known as the **socks and shoes rule**, since (normally, at least) you first put on your socks and then your shoes and if you want to undo this composition of two actions, you should undo them in reverse order, so you should take off your shoes first and then take off your socks. As such, we obtain the following result.
+
+Hier rechts van een plaatje van doormiddengescheurde sokken met als caption Undoing the two actions in the incorrect order will result in torn socks, which means that you do not end up where you started.
+
+
+::::::{prf:theorem} Socks and shoes rule
+:label: Thm:Inverse:Composition
+
+Let $f$ and $g$ be invertible functions for which the domain of $f$ is equal to the range of $g$. Then $f\circ g$ is invertible and $(f\circ g)^{-1}=g^{-1}\circ f^{-1}$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Inverse:Composition`
+:class: tudproof
+
+First we show that the function $g^{-1}\circ f^{-1}$ exists and that its domain and range are what they need to be in order for this function to be the inverse of $f\circ g$. Since the domain of $f$ is equal to the range of $g$, the range of $f^{-1}$ (which is the domain of $f$) is equal to the domain of $g^{-1}$ (which is the range of $g$). Hence, the function $g^{-1}\circ f^{-1}$ is defined. Moreover, that the domain of $f$ is equal to the range of $g$, means that the domain and range of $f\circ g$ are the domain of $g$ and the range of $f$ respectively. Similarly, the domain of $g^{-1}\circ f^{-1}$ is the domain of $f^{-1}$, which is the range of $f\circ g$, and the range of $g^{-1}\circ f^{-1}$ is the range of $g^{-1}$, which is the domain of $g$.
+
+Now we show that the cancelling equations hold. For $x$ in the domain of $f\circ g$ we have
+
+$$
+ (g^{-1}\circ f^{-1})\left((f\circ g)(x)\right)=g^{-1}\left(f^{-1}\left(f(g(x))\right)\right)=g^{-1}(g(x))=x,
+$$
+
+while for $y$ in the range of $f\circ g$ we have
+
+$$
+ (f\circ g)\left((g^{-1}\circ f^{-1})(y)\right)=f\left(g\left(g^{-1}\left(f^{-1}(y)\right)\right)\right)=f\left(f^{-1}(y)\right)=y.
+$$
+
+Hence, both cancelling equations holds, so we must have that $f\circ g$ is invertible and $(f\circ g)^{-1}=g^{-1}\circ f^{-1}$
 :::
 
 ::::::{prf:example}
