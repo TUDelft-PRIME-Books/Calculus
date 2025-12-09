@@ -1,3 +1,5 @@
+(sec:Integration:RationalFunctions)=
+
 # Integration of rational functions
 
 In this section we cover the integration of rational functions with:

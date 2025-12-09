@@ -1,3 +1,5 @@
+(Sec:Integration:Parts)=
+
 # Integration by parts
 
 In this section we cover:
@@ -111,7 +113,12 @@ $$
 \end{align*}
 $$
 
-Note that this can also be written as $\displaystyle\int\arctan(x)\,dx=x\arctan(x)-\ln(\sqrt{1+x^2})+C$.
+Note that this can also be written as 
+
+$$
+\int\arctan(x)\,dx=x\arctan(x)-\ln(\sqrt{1+x^2})+C.
+$$
+
 ::::::
 
 ::::{exercise}
@@ -195,7 +202,12 @@ $$
 \end{align*}
 $$
 
-Hence, we have: $2\displaystyle\int\frac{\ln(x)}{x}\,dx=(\ln(x))^2$ and therefore $\displaystyle\int\frac{\ln(x)}{x}\,dx=\frac{1}{2}(\ln(x))^2+C$.
+Hence, we have: $2\displaystyle\int\frac{\ln(x)}{x}\,dx=(\ln(x))^2$ and therefore 
+
+$$
+\int\frac{\ln(x)}{x}\,dx=\frac{1}{2}(\ln(x))^2+C.
+$$
+
 ::::::
 
 In the next example we deal with a product of a trigonometric function and an exponential function. Then the LIATE rule suggests to choose the trigonometric function for $u$.
@@ -559,10 +571,8 @@ Furthermore, we have: $I_0:=\displaystyle\int1\,dx=x+C$.
 ::::::{prf:Example}
 :label: Ex:Integration:PartsReductionSin
 Show that $\displaystyle\int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx$ for $n=2,3,4,\ldots$.
-::::::
 
-::::::{prf:Proof}
-For $n=2,3,4,\ldots$ we obtain
+Solution. For $n=2,3,4,\ldots$ we obtain
 
 $$
 \begin{align*}
@@ -827,7 +837,7 @@ This implies that
 
 ::::::{admonition} A different approach to Serret's integral (bonus material)
 :class: solution, dropdown
-The results in {eq}`Eq:Integration:PartsSerret` can also be obtained using the Feynman method (see: the section on improper integrals).
+The results in {eq}`Eq:Integration:PartsSerret` can also be obtained using the Feynman method (see: {numref}`Sec:Integration:ImproperIntegrals` on improper integrals).
 
 Note that Serret's integral is a special case of $I(\alpha):=\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
 

@@ -10,9 +10,23 @@ In this section we cover (see note in section convergence of series):
 - Convergence and divergence
 - Absolute and conditional convergence
 
+## Introduction
+
+If we add the terms of a finite sum, the order of the terms is not relevant, since by the associative law for addition we have
+
+$$
+(a_1+a_2)+a_3=a_1+(a_2+a_3).
+$$
+
+It turns out that in certain situations, this is no longer true if we try to add an infinite number of terms. So, in that case we use the convention that
+
+$$
+a_1+a_2+a_3+a_4+a_5+\cdots\quad\text{means}\quad \cdots((((a_1+a_2)+a_3)+a_4)+a_5)+\cdots.
+$$
+
 ::::::{prf:definition}
 :label: Def:Series:Definition
-Let $\{a_n\}_{n=1}^{\infty}$ be a sequence of real numbers $a_1,a_2,a_3,\ldots$. If we try to add these numbers we get an expression of the form $a_1+a_2+a_3+\cdots$, which is called an **infinite series** or just **series** and is denoted by $\displaystyle\sum_{n=1}^{\infty}a_n$ or just $\displaystyle\sum a_n$.
+Let $\{a_n\}_{n=1}^{\infty}$ be a sequence of real numbers $a_1,a_2,a_3,\ldots$. If we try to add these numbers we get an expression of the form $a_1+a_2+a_3+\cdots$, which is called an **infinite series** or just **series** and is denoted by $\displaystyle\sum_{n=1}^{\infty}a_n$ or just by $\displaystyle\sum a_n$.
 ::::::
 
 Does this make sense? What does it mean?
@@ -58,7 +72,8 @@ A **geometric series** $\displaystyle\sum_{n=1}^{\infty}ar^{n-1}=a+ar+ar^2+\cdot
 For $|r|<1$ the sum of the series equals $\displaystyle\frac{a}{1-r}$.
 ::::::
 
-::::::{prf:proof}
+::::::{admonition} Proof of {prf:ref}`Thm:Series:GeometricSeries`
+:class: tudproof, dropdown
 For $r=1$ the series trivially diverges. For $r\neq1$ consider the $n$th partial sum
 
 $$
@@ -86,12 +101,12 @@ $$
 \lim\limits_{n\to\infty}r^n=\begin{cases}0, &-1<r<1\\1, &r=1.\end{cases}
 $$
 
-We conclude that the series $\displaystyle\sum_{n=1}^{\infty}ar^{n-1}$ only converges for $|r|<1$ and diverges for $|r|\geq1$.
+We conclude that the series $\displaystyle\sum_{n=1}^{\infty}ar^{n-1}$ converges for $|r|<1$ and diverges for $|r|\geq1$.
 
 Furthermore, for $|r|<1$ the sum of the series equals $\displaystyle\frac{a}{1-r}$.
 ::::::
 
-::::::{note}
+::::::{important}
 The best way to remember the sum of a convergent geometric series is
 
 $$
@@ -100,18 +115,28 @@ $$
 
 ::::::
 
+::::::{note}
+The special case $a=1$ reads
+
+$$
+\sum_{n=0}^{\infty}r^n=1+r+r^2+\cdots=\frac{1}{1-r},\quad|r|<1.
+$$
+
+In {numref}`Sec:Series:PowerSeries` on power series we will often make use of this result.
+::::::
+
 ::::::{prf:example} 
 1) $\displaystyle\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=\sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n=\frac{\frac{1}{2}}{1-\frac{1}{2}}=1$.
 
-2) $\displaystyle\frac{1}{5}-\frac{2}{25}+\frac{4}{125}-\frac{8}{625}+\cdots=\frac{1}{5}\sum_{n=0}^{\infty}\left(-\frac{2}{5}\right)^n=\frac{1}{5}\cdot\frac{1}{1+\frac{2}{5}}=\frac{1}{5}\cdot\frac{5}{7}=\frac{1}{7}$.
+2) $\displaystyle\frac{1}{5}-\frac{2}{25}+\frac{4}{125}-\frac{8}{625}+\cdots=\frac{1}{5}\sum_{n=0}^{\infty}\left(-\frac{2}{5}\right)^n=\frac{1}{5}\cdot\frac{1}{1+\frac{2}{5}}=\frac{1}{7}$.
 
-3) $\displaystyle0.\overline{12}:=0.1212121212\ldots=\sum_{n=1}^{\infty}\frac{12}{100^n}=\frac{\frac{12}{100}}{1-\frac{1}{100}}=\frac{12}{100-1}=\frac{12}{99}=\frac{4}{33}$.
+3) $\displaystyle0.\overline{12}:=0.1212121212\ldots=\sum_{n=1}^{\infty}\frac{12}{100^n}=\frac{\frac{12}{100}}{1-\frac{1}{100}}=\frac{12}{100-1}=\frac{4}{33}$.
 ::::::
 
 In the last example $\overline{12}$ denotes that $12$ is repeated indefinitely. The number $p:=0.\overline{12}$ is an example of a convergent geometric series. However, it is easier to note that
 
 $$
-100p=1.\overline{12}=12+0.\overline{12}=12+p\quad\Longrightarrow\quad99p=12\quad\Longleftrightarrow\quad p=\frac{12}{99}=\frac{4}{33}.
+100p=12.\overline{12}=12+0.\overline{12}=12+p\quad\Longrightarrow\quad99p=12\quad\Longleftrightarrow\quad p=\frac{12}{99}=\frac{4}{33}.
 $$
 
 ::::::{prf:example} 
@@ -132,7 +157,10 @@ $$
 Solution 2. Let $q=0.\overline{135}$, then we have
 
 $$
-1000q=135.\overline{135}=135+0.\overline{135}=135+q\quad\Longrightarrow\quad999q=135\quad\Longleftrightarrow\quad q=\frac{135}{999}.
+\begin{align*}
+&1000q=135.\overline{135}=135+0.\overline{135}=135+q\\
+&\quad\Longrightarrow\quad999q=135\quad\Longleftrightarrow\quad q=\frac{135}{999}=\frac{15}{111}=\frac{5}{37}.
+\end{align*}
 $$
 
 ::::::
@@ -178,10 +206,15 @@ An example of a *telescoping series* is: $\displaystyle\sum_{n=1}^{\infty}\frac{
 Then the $n$th partial sum is: $s_n=\displaystyle\sum_{k=1}^n\frac{1}{k(k+1)}=\sum_{k=1}^n\left(\frac{1}{k}-\frac{1}{k+1}\right)$. Hence we have
 
 $$
-s_n=\frac{1}{1}-\frac{1}{2}+\frac{1}{2}-\frac{1}{3}+\frac{1}{3}-\frac{1}{4}+\cdots+\frac{1}{n}-\frac{1}{n+1}=1-\frac{1}{n+1}.
+s_n=\frac{1}{1}-\cancel{\frac{1}{2}}+\cancel{\frac{1}{2}}-\cancel{\frac{1}{3}}+\cancel{\frac{1}{3}}-\cancel{\frac{1}{4}}+\cdots+\cancel{\frac{1}{n}}-\frac{1}{n+1}=1-\frac{1}{n+1}.
 $$
 
-Hence we have $\lim\limits_{n\to\infty}s_n=1$. This implies that the series is convergent and that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n(n+1)}=1$.
+Hence we have $\lim\limits_{n\to\infty}s_n=1$. This implies that the series is convergent and that 
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n(n+1)}=1.
+$$
+
 ::::::
 
 ::::::{prf:example}
@@ -191,13 +224,19 @@ Another example is: $\displaystyle\sum_{n=2}^{\infty}\frac{1}{n^2-1}$. Then we h
 $$
 \begin{align*}
 \sum_{k=2}^n\frac{1}{k^2-1}&=\sum_{k=2}^n\frac{1}{(k-1)(k+1)}=\frac{1}{2}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+1}\right)\\
-&=\frac{1}{2}\left(\frac{1}{1}-\frac{1}{3}+\frac{1}{2}-\frac{1}{4}+\frac{1}{3}-\frac{1}{5}+\frac{1}{4}-\frac{1}{6}+\cdots+\frac{1}{n-2}-\frac{1}{n}+\frac{1}{n-1}-\frac{1}{n+1}\right)\\
+&=\frac{1}{2}\left(\frac{1}{1}-\cancel{\frac{1}{3}}+\frac{1}{2}-\cancel{\frac{1}{4}}+\cancel{\frac{1}{3}}-\cancel{\frac{1}{5}}+\cancel{\frac{1}{4}}-\cancel{\frac{1}{6}}+\right.\\
+&{}\quad\quad\quad\quad\quad\left.{}\cdots+\cancel{\frac{1}{n-2}}-\frac{1}{n}+\cancel{\frac{1}{n-1}}-\frac{1}{n+1}\right)\\
 &=\frac{1}{2}\left(1+\frac{1}{2}-\frac{1}{n}-\frac{1}{n+1}\right).
 \end{align*}
 $$
 
-This implies that the series converges and that $\displaystyle\sum_{n=2}^{\infty}\frac{1}{n^2-1}
-=\lim\limits_{n\to\infty}\frac{1}{2}\left(\frac{3}{2}-\frac{1}{n}-\frac{1}{n+1}\right)=\frac{3}{4}$.
+This implies that the series converges and that 
+
+$$
+\sum_{n=2}^{\infty}\frac{1}{n^2-1}
+=\lim\limits_{n\to\infty}\frac{1}{2}\left(\frac{3}{2}-\frac{1}{n}-\frac{1}{n+1}\right)=\frac{3}{4}.
+$$
+
 ::::::
 
 ::::::{prf:example}
@@ -206,9 +245,9 @@ A third example is: $\displaystyle\sum_{n=2}^{\infty}\frac{1}{(n-1)(n+2)}$. Then
 
 $$
 \begin{align*}
-\sum_{k=2}^n\frac{1}{(k-1)(k+2)}&=\frac{1}{3}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+2}\right)\\
-&=\frac{1}{3}\left(\frac{1}{1}-\frac{1}{4}+\frac{1}{2}-\frac{1}{5}+\frac{1}{3}-\frac{1}{6}+\frac{1}{4}-\frac{1}{7}+\right.\\
-&\quad\quad\quad\quad\quad\left.+\cdots+\frac{1}{n-3}-\frac{1}{n}+\frac{1}{n-2}-\frac{1}{n+1}+\frac{1}{n-1}-\frac{1}{n+2}\right)\\
+&\sum_{k=2}^n\frac{1}{(k-1)(k+2)}=\frac{1}{3}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+2}\right)\\
+&=\frac{1}{3}\left(\frac{1}{1}-\cancel{\frac{1}{4}}+\frac{1}{2}-\cancel{\frac{1}{5}}+\frac{1}{3}-\cancel{\frac{1}{6}}+\cancel{\frac{1}{4}}-\cancel{\frac{1}{7}}+\right.\\
+&{}\quad\quad\quad\quad\quad\left.{}\cdots+\cancel{\frac{1}{n-3}}-\frac{1}{n}+\cancel{\frac{1}{n-2}}-\frac{1}{n+1}+\cancel{\frac{1}{n-1}}-\frac{1}{n+2}\right)\\
 &=\frac{1}{3}\left(1+\frac{1}{2}+\frac{1}{3}-\frac{1}{n}-\frac{1}{n+1}-\frac{1}{n+2}\right).
 \end{align*}
 $$
@@ -222,6 +261,87 @@ $$
 
 ::::::
 
+::::{exercise}
+:label: Exc:Series:FibonacciExercise
+The sequence $\{F_n\}_{n=1}^{\infty}$ of Fibonacci numbers is defined by $F_{n+2}=F_n+F_{n+1}$ for $n=1,2,3,\ldots$ and $F_1=F_2=2$.
+
+(a) Use partial fractions $\dfrac{1}{F_nF_{n+2}}=\dfrac{A}{F_n}+\dfrac{B}{F_{n+2}}$ to show that
+
+$$
+\frac{1}{F_nF_{n+2}}=\frac{1}{F_nF_{n+1}}-\frac{1}{F_{n+1}F_{n+2}},\quad n=1,2,3,\ldots.
+$$
+
+(b) Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}$.
+
+(c) Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{F_{n+1}}{F_nF_{n+2}}$.
+
+(d) Use partial fractions $\dfrac{1}{F_nF_{n+4}}=\dfrac{A}{F_n}+\dfrac{B}{F_{n+4}}$ to show that
+
+$$
+\frac{1}{F_nF_{n+4}}=\frac{1}{3F_nF_{n+2}}+\frac{1}{3F_{n+2}F_{n+4}},\quad n=1,2,3,\ldots.
+$$
+
+(e) Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+4}}$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Series:FibonacciExercise`
+:class: solution, dropdown
+(a) Note that
+
+$$
+\begin{align*}
+\frac{1}{F_nF_{n+2}}&=\frac{A}{F_n}+\frac{B}{F_{n+2}}=\frac{AF_{n+2}+BF_n}{F_nF_{n+2}}\\
+&=\frac{A\left(F_n+F_{n+1}\right)+BF_n}{F_nF_{n+2}}=\frac{(A+B)F_n+AF_{n+1}}{F_nF_{n+2}}.
+\end{align*}
+$$
+
+This implies that $A=\dfrac{1}{F_{n+1}}$ and $B=-\dfrac{1}{F_{n+1}}$. Hence we have
+
+$$
+\frac{1}{F_nF_{n+2}}=\frac{1}{F_nF_{n+1}}-\frac{1}{F_{n+1}F_{n+2}}.
+$$
+
+(b) Now we use the telescoping property to obtain
+
+$$
+\begin{align*}
+\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}&=\lim\limits_{N\to\infty}\sum_{n=1}^N\left(\frac{1}{F_nF_{n+1}}-\frac{1}{F_{n+1}F_{n+2}}\right)\\
+&=\lim\limits_{N\to\infty}\left(\frac{1}{F_1F_2}-\frac{1}{F_{N+1}F_{N+2}}\right)=1.
+\end{align*}
+$$
+
+(c) Again, we use the telescoping property to obtain
+
+$$
+\begin{align*}
+\sum_{n=1}^{\infty}\frac{F_{n+1}}{F_nF_{n+2}}&=\lim\limits_{N\to\infty}\sum_{n=1}^{\infty}\left(\frac{1}{F_n}-\frac{1}{F_{n+2}}\right)\\
+&=\lim\limits_{N\to\infty}\left(\frac{1}{F_1}+\frac{1}{F_2}-\frac{1}{F_{N+1}}-\frac{1}{F_{N+2}}\right)=1+1=2.
+\end{align*}
+$$
+
+(d) Note that
+
+$$
+\begin{align*}
+\frac{1}{F_nF_{n+4}}&=\frac{A}{F_n}+\frac{B}{F_{n+4}}=\frac{AF_{n+4}+BF_n}{F_nF_{n+4}}=\frac{A\left(F_{n+2}+F_{n+3}\right)+BF_n}{F_nF_{n+4}}\\
+&=\frac{A\left(F_{n+2}+F_{n+1}+F_{n+2}\right)+BF_n}{F_nF_{n+4}}\\
+&=\frac{A\left(2F_{n+2}+F_{n+2}-F_n\right)+BF_n}{F_nF_{n+4}}=\frac{A\left(3F_{n+2}-F_n\right)+BF_n}{F_nF_{n+4}}\\
+&=\frac{3AF_{n+2}+(B-A)F_n}{F_nF_{n+4}}\quad\Longrightarrow\quad A=B=\frac{1}{3F_{n+2}}.
+\end{align*}
+$$
+
+(e) This implies that
+
+$$
+\begin{align*}
+\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+4}}&=\sum_{n=1}^{\infty}\left(\frac{1}{3F_nF_{n+2}}+\frac{1}{3F_{n+2}F_{n+4}}\right)\\
+&=\frac{1}{3}\left(\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}+\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}-\frac{1}{F_1F_3}-\frac{1}{F_2F_4}\right)\\
+&=\frac{1}{3}\left(1+1-\frac{1}{2}-\frac{1}{3}\right)=\frac{7}{18}.
+\end{align*}
+$$
+
+:::
+
 ## Divergence test
 
 If a series is convergent, its general term should tend to zero:
@@ -232,6 +352,7 @@ If the series $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\inf
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Series:GeneralTerm`
+:class: tudproof, dropdown
 Let $\{s_n\}$ be the sequence of partial sums of the series $\displaystyle\sum a_n$.
 
 If $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\infty}s_n=s$ exists. Then we have
@@ -260,6 +381,8 @@ If $\lim\limits_{n\to\infty}a_n$ does not exist or if $\lim\limits_{n\to\infty}a
 3) The series $\displaystyle\sum_{n=1}^{\infty}\sin(n)$ is divergent, since $\displaystyle\lim_{n\to\infty}\sin(n)$ does not exist.
 
 4) The series $\displaystyle\sum_{n=1}^{\infty}\arctan(n)$ is divergent, since $\displaystyle\lim_{n\to\infty}\arctan(n)=\frac{1}{2}\pi\neq0$.
+
+5) The series $\displaystyle\sum_{n=0}^{\infty}\cos(n\pi)$ is divergent, since $\displaystyle\lim_{n\to\infty}\cos(n\pi)$ does not exist.
 ::::::
 
 ::::::{warning}
@@ -269,10 +392,8 @@ The converse is not true: if $\lim\limits_{n\to\infty}a_n=0$ the series needs no
 ::::::{prf:example} The harmonic series
 :label: Ex:Series:HarmonicSeries
 The **harmonic series** $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is divergent.
-::::::
 
-::::::{prf:proof}
-Note that the terms of the *harmonic series* lie on the graph of $f(x)=\dfrac{1}{x}$:
+Proof. Note that the terms of the *harmonic series* lie on the graph of $f(x)=\dfrac{1}{x}$:
 
 ```{figure} Images/harmonic.png
 ---
