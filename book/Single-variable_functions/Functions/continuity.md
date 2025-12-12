@@ -271,6 +271,7 @@ $$
 
 :::{admonition} Proof of {prf:ref}`Theorem:LimitAtPoint:Substitution`
 :class: tudproof, dropdown
+:name: prf:Continuity:Prooflimitpointsub
 If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$, then $f$ is continuous at $b$ by {prf:ref}`Theorem:Continuity:Standardfunctions`, possibly combined with {prf:ref}`Theorem:Continuity:Basiccomputationrules`. As such, the result follows from {prf:ref}`Theorem:Continuity:Substitution`
 
 
@@ -395,7 +396,7 @@ We could even try to find a better approximation for what the value of $c$ is. I
 ::::::
 
 
-The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the following result and is known as **Bolzano's Theorem** or the **Intermediate Zero Theorem**.
+The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the following result and is known as **Bolzano's Theorem**, named after the Bohemian mathematician [Bernardus Placidus Johann Nepomuk Bolzano (1781-1848)](https://en.wikipedia.org/wiki/Bernard_Bolzano), or the **Intermediate Zero Theorem**.
 
 ::::::{prf:corollary} Bolzano's Theorem
 :label: Cor:Continuity:IVT
