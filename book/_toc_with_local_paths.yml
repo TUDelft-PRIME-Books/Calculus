@@ -73,6 +73,7 @@ parts:
     - file: Sequences_and_series/Series/tests_for_positive_series.md
     - file: Sequences_and_series/Series/tests_for_general_series.md
     - file: Sequences_and_series/Series/power_series.md
+    - file: Sequences_and_series/Series/taylor_series.md
     - file: Sequences_and_series/Series/fourier_series.md
   numbered: true
 - caption: Multivariable functions

@@ -401,7 +401,7 @@ We conclude that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$.
 :::
 
 ::::::{note}
-Here we showed that $\displaystyle\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx$ without evaluating the integrals. Later we will see that the value is equal to *Catalan's constant*.
+Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx$ without evaluating the integrals. Later we will see that the value is equal to *Catalan's constant*.
 ::::::
 
 ::::{exercise} A remarkable class of integrals

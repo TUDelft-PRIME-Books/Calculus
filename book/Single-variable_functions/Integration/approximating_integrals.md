@@ -79,7 +79,7 @@ Truck with spoiler on the cabin. Originally from <a href="https://www.vecteezy.c
 To determine the arc length the formula
 
 $$
-\ell = \int\limits_{0}^{\frac14\pi} \sqrt{1 + \left(\frac{dy}{dt}\right)^{2}} dt = \int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} dt
+\ell = \int\limits_{0}^{\frac14\pi} \sqrt{1 + \left(\frac{dy}{dt}\right)^{2}} \,dt = \int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} \,dt
 $$
 
 is used. However, this integral cannot be evaluated in a simple way using only elementary functions. In this chapter, numerical integration methods will be investigated in order to approximate integrals such as the one describing the arc length of the spoiler.
@@ -219,7 +219,7 @@ Let us apply these rules methods to the example of the spoiler:
 We will approximate the integral
 
 $$
-\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} dt.
+\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} \,dt.
 $$
 
 Each of the three rules use the function values in the left point $x_L=0$ and/or the right point $x_R=\frac14\pi$, so let us calculate these to start:
@@ -239,19 +239,19 @@ Now we can apply each of the three rules (scroll to the right to see the numeric
 :class: mid-align
 
 * - left Rectangle rule
-  - $\displaystyle\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} dt$
+  - $\displaystyle\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} \,dt$
   - $\approx$
   - $\displaystyle\left(\frac14\pi-0\right)\cdot\sqrt{1 + \cos^2\left( 0\right)}$
   - $=$
   - $1.11072\ldots$
 * - right Rectangle rule
-  - $\displaystyle\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} dt$
+  - $\displaystyle\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} \,dt$
   - $\approx$
   - $\displaystyle\left(\frac14\pi-0\right)\cdot\sqrt{1 + \cos^2\left( \frac14\pi\right)}$
   - $=$
   - $0.96191\ldots$
 * - Trapezoidal rule
-  - $\displaystyle\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} dt$
+  - $\displaystyle\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} \,dt$
   - $\approx$
   - $\displaystyle\frac{\frac14\pi-0}{2}\cdot\left(\sqrt{1 + \cos^2\left( 0\right)}+\sqrt{1 + \cos^2\left( \frac14\pi\right)}\right)$
   - $=$
@@ -261,7 +261,7 @@ Now we can apply each of the three rules (scroll to the right to see the numeric
 If we would tell you that the exact value of the integral is
 
 $$
-\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} dt = 1.05809\ldots
+\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} \,dt = 1.05809\ldots
 $$
 
 what rule performs best?
@@ -363,7 +363,7 @@ Let us apply one of these composite rules methods to the example of the spoiler:
 We will approximate the integral
 
 $$
-\mathcal{I}=\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} dt,
+\mathcal{I}=\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} \,dt,
 $$
 
 using the composite right Rectangle rule with $h=\frac18\pi$:
