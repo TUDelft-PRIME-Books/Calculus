@@ -83,6 +83,8 @@ Let $f$ be a function and $a$ a point in the domain of $f$. Then $f$ is continuo
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:EpsilonDelta`
 :class: tudproof, dropdown
+:name: Prf:Continuity:EpsilonDelta
+
 This follows directly from rephrasing the statement $\lim\limits_{x\rightarrow a}f(x)=f(a)$ using the precise definition of a limit ({prf:ref}`Def:LimitAtPoint:Precisedef`).
 :::
 
