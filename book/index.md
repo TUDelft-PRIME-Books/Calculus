@@ -1,4 +1,8 @@
 (index)=
 # Calculus
 
-[Test colons](#Prf:Continuity:EpsilonDelta)
+[Test no dropdown](#Prf:Continuity:EpsilonDelta)
+
+[Test dropdown closed](#Prf:Continuity:Basiccomputationrules)
+
+[Test dropdown opened](#Prf:Continuity:Composition)
