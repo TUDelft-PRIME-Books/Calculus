@@ -161,7 +161,7 @@ An illustration for Thales's theorem.
 ::::{prf:remark}
 :label: Rem:Trigonometry:ThalesInteractive
 
-Ideally, an image with a rotatable line segment $AB$$ through the centre and a freely movable point $C$ on one side (the top) along the circle between $A$ and $B$.
+Ideally, an image with a rotatable line segment $AB$ through the centre and a freely movable point $C$ on one side (the top) along the circle between $A$ and $B$.
 ::::
 
 In {numref}`Fig:Trigonometry:Thales` you might notice that the angle $\angle ACB$ looks like a right angle. Thales's theorem states that this is indeed the case:
