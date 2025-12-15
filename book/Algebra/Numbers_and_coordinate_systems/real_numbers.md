@@ -114,6 +114,24 @@ Let $y> 0$ and $r\neq 0$ be a rational number. Write $r=\frac{p}{q}$ with $p$ an
 Moreover if $y<0$ and $q$ is odd we define $y^{\frac{p}{q}}=\sqrt[q]{y^p}=\left(\sqrt[q]{y}\right)^p$. Finally if $y=0$ and $p>0$ we define $y^{\frac{p}{q}}=0$.
 ::::::
 
+::::::{prf:example} 
+:label: Ex:RealNumbers:Squareroots
+Let us try to find out which numbers we mean by $\sqrt{\frac{1}{4}}$ and $\sqrt[3]{-64}$. Using the definition above, $\sqrt{\frac{1}{4}}$ is the unique positive number that, when squared, gives $\frac{1}{4}$. Luckily, we know that 
+
+$$
+ \left(\frac{1}{2}\right)^2=\frac{1}{2}\cdot\frac{1}{2}=\frac{1\cdot1}{2\cdot 2}=\frac{1}{4}.
+$$
+
+This must mean that $\sqrt{\frac{1}{4}}=\frac{1}{2}$. Similarly, $\sqrt[3]{-64}$ must be the unique number that when taken to the third power gives $-64$. Since we know that
+
+$$
+ (-4)^3=(-4)\cdot(-4)\cdot(-4)=-(4\cdot 4\cdot 4)=-64,
+$$
+
+we find that $\sqrt[3]{-64}=-4$.
+
+::::::
+
 Before we move on to irrational powers, we first some general calculation rules for exponents. These will carry over to irrational exponents as well, but we need these rules to properly define irrational powers. Because of this, we will call this result a lemma, which is just a fancy word for an intermediate result that is useful for proving a bigger result, but not necessarily interesting in and by itself.
 
 ::::::{prf:lemma} 
@@ -315,7 +333,7 @@ $$
  Since $d>0$ we have $1+\frac{d}{2y^{u_0}}>1$. As such, we can find a (possibly very large) natural number $n$ with $y<\left(1+\frac{d}{2y^{u_0}}\right)^{10^n}$. By {prf:ref}`Thm:RealNumbers:ExpCalcRat` we have, for this value of $n$, that 
 
 \begin{align*}
- y^{u_n}-y^{l_n}&\leq \left(y^{\frac{1}{10^n}}-1\right)y^{u_0}\\ &\leq \left(\left(\left(1+\frac{d}{2y^{u_0}}\right)^{10^n}\right)^{\frac{1}{10^n}}-1\right)y^{u_0}\\ &\left(1+\frac{d}{2y^{u_0}}-1\right)y^{u_0}\\ &=\frac{d}{2}.
+ y^{u_n}-y^{l_n}&\leq \left(y^{\frac{1}{10^n}}-1\right)y^{u_0}\\ &\leq \left(\left(\left(1+\frac{d}{2y^{u_0}}\right)^{10^n}\right)^{\frac{1}{10^n}}-1\right)y^{u_0}\\ &=\left(1+\frac{d}{2y^{u_0}}-1\right)y^{u_0}\\ &=\frac{d}{2}.
 \end{align*}
 
 However, since $y^{u_n}\geq u_*$ and $y^{l_n}\leq l_*$ we now obtain
@@ -337,17 +355,7 @@ Let $y\geq 0$ and $r\neq 0$ be a real number. The number from {prf:ref}`Thm:Real
 ::::::
 
 
-::::::{warning} 
-:name: Warning:Realnumbers:Powersofnegativenumbers
 
-We have seen how to define things like $(-1)^{2}$, $(-1)^{-4}$ and $(-1)^{\frac{5}{3}}$. Now, what do we mean by $(-1)^{\frac{1}{2}}$? We know that for $x\geq 0$ and real numbers $a$ and $b$ we always have the identity $\left(x^a\right)^b=x^{ab}$. Unfortunately, it is impossible to define $(-1)^{\frac{1}{2}}$ in such a way that it is consistent with this rule. Indeed, if we could define it, we would find that
-
-$$
- -1=(-1)^1=(-1)^{2\cdot{\frac{1}{2}}}=\left((-1)^2\right)^{\frac{1}{2}}=1^{\frac{1}{2}}=1
-$$
-
-which is not the case. As such, we will not try to define those powers of negative numbers that we have not already defined.
-::::::
 
 The calculation rules from {prf:ref}`Thm:RealNumbers:ExpCalcRat` remain true for arbitrary exponents.
 
@@ -366,9 +374,11 @@ Let $y\geq 0$ and $z\geq 0$ and let $p$ and $q$ be real numbers.
 
 :::{admonition} Proof of {prf:ref}`Thm:RealNumbers:ExpCalcReal`
 :class: tudproof, dropdown
-The first four properties use sequences, on which more information can be found in {numref}`Chapter:Sequences`. 
+The first four properties use sequences and their convergence, on which more information can be found in {numref}`Chapter:Sequences`. If you are unfamiliar with sequences, most parts of this proof will be very hard to follow, so you might as well skip the proof in that case.
 
-First we show if $r$ is a real number and $\{r_n\}_{n=1}^\infty$ is any sequence of rational numbers that converges to $r$ that the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. Suppose first that $r$ itself is rational. Let $\varepsilon>0$ be given. Note that $1+\frac{\varepsilon}{y^r}>1$, while $1-\frac{\varepsilon}{y^r}<1$, so we can choose $N$ sufficiently large that $\left(1-\frac{\varepsilon}{y^r}\right)^{N}<y<\left(1+\frac{\varepsilon}{y^r}\right)^{N}$. For this value of $N$ we have
+We do not prove the properties in the order that are the given, but, instead, use an order that is more convenient for the proofs.
+
+First we show if $r$ is a real number and $\{r_n\}_{n=1}^\infty$ is any sequence of rational numbers that converges to $r$ that the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. Suppose first that $r$ itself is rational. Let $\varepsilon>0$ be given. Note that $1+\frac{\varepsilon}{y^r}>1$, while $1-\frac{\varepsilon}{y^r}<1$, so we can choose $N$ sufficiently large that $\left(1-\frac{\varepsilon}{y^r}\right)^{N}<y<\left(1+\frac{\varepsilon}{y^r}\right)^{N}$. For this value of $N$ we have using {prf:ref}`Thm:RealNumbers:ExpCalcRat`
 
 $$
  y^{\frac{1}{N}}<\left(\left(1+\frac{\varepsilon}{y^r}\right)^{N}\right)^{\frac{1}{N}}=1+\frac{\varepsilon}{y^r}.
@@ -377,18 +387,18 @@ $$
 Now we let $M$ be a natural number such that $|r_n-r|<\frac{1}{N}$ for all $n\geq M$. Then for $n\geq M$ we find if $r_n-r>0$ that
 
 $$
- |y^{r_n}-y^r|=y^{r_n}-y^r=y^{r_n-r+r}-y^r=y^{r_n-r}y^r-y^r=\left(y^{r_n-r}-1\right)y^r<\left(y^{\frac{1}{N}}-1\right)y^r<\left(1+\frac{\varepsilon}{y^r}-1\right)y^r=\varepsilon,
+ \begin{array}{lclcl}|y^{r_n}-y^r|&=&y^{r_n}-y^r&=&y^{r_n-r+r}-y^r\\ &=&y^{r_n-r}y^r-y^r&=&\left(y^{r_n-r}-1\right)y^r\\ &<&\left(y^{\frac{1}{N}}-1\right)y^r&<&\left(1+\frac{\varepsilon}{y^r}-1\right)y^r\\ &=&\varepsilon,&&\end{array}
 $$
 
 while if $r-r_n>0$ we find
 
 $$
- |y^{r_n}-y^r|=y^{r}-y^{r_n}=y^r-y^{r_n-r+r}=y^r-y^{r_n-r}y^r=\left(1-y^{r_n-r}\right)y^r<\left(1-y^{\frac{1}{N}}\right)y^r<\left(1-\left(1-\frac{\varepsilon}{y^r}\right)\right)y^r=\varepsilon.
+ \begin{array}{lclcl}|y^{r_n}-y^r|&=&y^{r}-y^{r_n}&=&y^r-y^{r_n-r+r}\\ &=&y^r-y^{r_n-r}y^r&=&\left(1-y^{r_n-r}\right)y^r\\ &<&\left(1-y^{\frac{1}{N}}\right)y^r&<&\left(1-\left(1-\frac{\varepsilon}{y^r}\right)\right)y^r\\ &=&\varepsilon.&&\end{array}
 $$
 
-We conclude that the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$$ converges to $y^r$. 
+We conclude that the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. 
 
-Now suppose that $r$ is irrational and let $\varepsilon>0$ be given. Let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{u_N}-y^{l_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\text{min}\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
+Now suppose that $r$ is irrational and let $\varepsilon>0$ be given. First we assume that $y>1$.  Let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{u_N}-y^{l_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\text{min}\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
 
 $$
  \left|y^{r_n}-y^r\right|=y^{r_n}-y^r\leq y^{u_N}-y^r\leq y^{u_N}-y^{l_N}<\varepsilon,
@@ -400,11 +410,29 @@ $$
  \left|y^{r_n}-y^r\right|=y^{r}-y^{r_n}\leq y^{u_N}-y^{r_n}\leq y^{u_N}-y^{l_N}<\varepsilon.
 $$
 
-As such, the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$$ converges to $y^r$. 
+As such, the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. Now suppose that $0<y<1$. Again, let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{l_N}-y^{u_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\text{min}\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
+
+$$
+ \left|y^{r_n}-y^r\right|=y^{r}-y^{r_n}\leq y^{l_N}-y^{r_n}\leq y^{l_N}-y^{u_N}<\varepsilon,
+$$
+
+while if $r\leq r_n$ we find that
+
+$$
+ \left|y^{r_n}-y^r\right|=y^{r_n}-y^{r}\leq y^{l_N}-y^{r}\leq y^{l_N}-y^{u_N}<\varepsilon.
+$$
+
+As such, the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$.
 
 We now show that $(yz)^p=y^pz^p$. Let $\left\{p_n\right\}_{n=1}^\infty$ be a sequence of rational numbers that converges to $p$. Then the sequences $\left\{y^{p_n}\right\}_{n=1}^\infty$, $\left\{z^{p_n}\right\}_{n=1}^\infty$ and $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converge to $y^p$, $z^p$ and $(yz)^p$ respectively. Since the term by term product of convergent sequences converges to the product of the limits, the sequence $\left\{y^{p_n}z^{p_n}\right\}_{n=1}^\infty$ converges to $y^pz^p$. Since $p_n$ is rational for all $n$, we have using {prf:ref}`Thm:RealNumbers:ExpCalcRat` that $(yz)^{p_n}=y^{p_n}z^{p_n}$. Hence, the seqeunce $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converges to both $(yz)^p$ and to $y^pz^p$. As such, these limits are equal, so we have $(yz)^p=y^pz^p$.
 
-We now show that $y^{p+q}=y^py^q$. Let $\left\{p_n\right\}_{n=1}^\infty$ and $\left\{q_n\right\}_{n=1}^\infty$ be sequences of rational numbers that converge to $p$ respectively $q$.Then the sequence $\left\{p_n+q_n\right\}_{n=1}^\infty$ is a sequence of rational numbers that converges to $p+q$. Hence, the sequence $\left\{y^{p_n+q_n}\right\}_{n=1}^\infty$ converges to $y^{p+q}$. On the other hand, we have $y^{p_n+q_n}=y^{p_n}y^{q_n}$ for all $n$ due to {prf:ref}`Thm:RealNumbers:ExpCalcRat`. The sequences $\left\{y^{p_n}\right\}_{n=1}^\infty$ and $\left\{y^{q_n}\right\}_{n=1}^\infty$ converge to $y^p$ respectively $y^q$. Since the term by term product of convergent sequences converges to the product of the limits, the sequence $\left\{y^{p_n}y^{q_n}\right\}_{n=1}^\infty$ converges to $y^py^q$. Hence, the seqeunce $\left\{y^{p_n}y^{q_n}\right\}_{n=1}^\infty$ converges to both $y^{p+q}$ and to $y^py^q$. As such, these limits are equal, so we have $y^{p+q}=y^py^q$.
+We now show that $y^{p+q}=y^py^q$. Let $\left\{p_n\right\}_{n=1}^\infty$ and $\left\{q_n\right\}_{n=1}^\infty$ be sequences of rational numbers that converge to $p$ respectively $q$.Then the sequence $\left\{p_n+q_n\right\}_{n=1}^\infty$ is a sequence of rational numbers that converges to $p+q$. Hence, the sequence $\left\{y^{p_n+q_n}\right\}_{n=1}^\infty$ converges to $y^{p+q}$. On the other hand, we have $y^{p_n+q_n}=y^{p_n}y^{q_n}$ for all $n$ due to {prf:ref}`Thm:RealNumbers:ExpCalcRat`. The sequences $\left\{y^{p_n}\right\}_{n=1}^\infty$ and $\left\{y^{q_n}\right\}_{n=1}^\infty$ converge to $y^p$ respectively $y^q$. Since the term by term product of convergent sequences converges to the product of the limits, the sequence $\left\{y^{p_n}y^{q_n}\right\}_{n=1}^\infty$ converges to $y^py^q$. Hence, we obtain
+
+$$
+ y^py^q=\lim_{n\rightarrow\infty}y^{p_n}y^{q_n}=\lim_{n\rightarrow\infty}y^{p_n+q_n}=y^{p+q},
+$$
+
+as desired.
 
 
 
@@ -418,7 +446,7 @@ $$
 
 as desired. 
 
-Finally, we assume that $0<y<1$ and $p<q$. Again, we write $u_n$ for the number $p$ rounded up to $n$ decimals and $l_n$ for the number $q$ rounded down to $n$ decimals. Since $p<q$ we must have $u_n<l_n$ for some $n$. For this value of $n$ we find using {prf:ref}`Thm:RealNumbers:ExpCalcRat` that
+Next, we assume that $0<y<1$ and $p<q$. Again, we write $u_n$ for the number $p$ rounded up to $n$ decimals and $l_n$ for the number $q$ rounded down to $n$ decimals. Since $p<q$ we must have $u_n<l_n$ for some $n$. For this value of $n$ we find using {prf:ref}`Thm:RealNumbers:ExpCalcRat` that
 
 $$
  y^p\geq  y^{u_n}>y^{l_n}\geq y^q,
@@ -426,22 +454,128 @@ $$
 
 as desired. 
 
-Now we show that $\left(y^p\right)^q=y^{pq}$. For now, we assume that $y>1$ Let $\left\{p_n\right\}_{n=1}^\infty$ and $\left\{q_n\right\}_{n=1}^\infty$ be sequences of rational numbers that converge to $p$ respectively $q$. Then the sequence $\left\{p_nq_n\right\}_{n=1}^\infty$ is a sequence of rational numbers that converges to $pq$, so the sequence $\left\{y^{p_nq_n}\right\}_{n=1}^\infty$ converges to $y^{pq}$. For any value of $n$ we have, since $p_n$ and $q_n$ are rational numbers, that $y^{p_nq_n}=\left(y^{p_n}\right)^{q_n}$. We claim that the sequence $\left\{\left(y^{p_n}\right)^{q_n}\right\}_{n=1}^\infty$ converge to $\left(y^p\right)^q$. Since the sequence $\left\{\left(y^{p}\right)^{q_n}\right\}_{n=1}^\infty$ converge to $\left(y^p\right)^q$ we can let $N_1$ be such that for all $n\geq N_1$ we have $\left|\left(y^{p}\right)^{q_n}=\left(y^p\right)^q\right|<\frac{\varepsilon}{2}$. Moreover, the sequence $\left\{q_n\right\}_{n=1}^\infty$ converges, so it is bounded, say by a number $K>0$. Similarly, the sequence $\left\{\left(y^{p_n}\right)^{q_n}\right\}_{n=1}^\infty$ also converges, so it bounded, say by a number $L>0$. Since $\left\{p_n\right\}_{n=1}^\infty$ converges to $p$, we can let $N_2$ such that for all $n\geq N_2$ we have $y^{p-p_n}<\left(\frac{1+\frac{\varepsilon}{2}}{L}\right)^{\frac{1}{K}}$ (DIT MOET BETER GEFORMULEERD). Then we let $N=\text{max}\left\{N_1,N_2\right\}$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then using the properties we already proved, we have for $n\geq N$ if $p-p_n>0$ that
+Now, we show that $\left(y^p\right)^q=y^{pq}$. Let $\left\{p_n\right\}_{n=1}^\infty$ and $\left\{q_n\right\}_{n=1}^\infty$ be sequences of rational numbers that converge to $p$ respectively $q$. Then the sequence $\left\{p_nq_n\right\}_{n=1}^\infty$ is a sequence of rational numbers that converges to $pq$, so the sequence $\left\{y^{p_nq_n}\right\}_{n=1}^\infty$ converges to $y^{pq}$. 
+
+We claim that the sequence $\left\{\left(y^{p_n}\right)^{q_n}\right\}_{n=1}^\infty$ converge to $\left(y^p\right)^q$. Since the sequence $\left\{\left(y^{p}\right)^{q_n}\right\}_{n=1}^\infty$ converges to $\left(y^p\right)^q$ we can let $N_1$ be such that for all $n\geq N_1$ we have $\left|\left(y^{p}\right)^{q_n}=\left(y^p\right)^q\right|<\frac{\varepsilon}{2}$. Moreover, the sequence $\left\{q_n\right\}_{n=1}^\infty$ converges, so it is bounded, say by a number $K>0$; that is, $|q_n|\leq K$ for all $n$. Similarly, the sequence $\left\{\left(y^{p_n}\right)^{q_n}\right\}_{n=1}^\infty$ also converges, so it bounded, say by a number $L>0$; that is, $\left|\left(y^{p_n}\right)^{q_n}\right|\leq L$ for all $n$. Since $\left\{p_n\right\}_{n=1}^\infty$ converges to $p$, the sequence $\left\{-p_n\right\}_{n=1}^\infty$ converges to $0$. As such, the sequence $\left\{y^{-p_n}\right\}_{n=1}^\infty$ converges to $y^{-p}$. Since $y^{p-p_n}=y^{p}y^{-p_n}$ for all $n$ by a property have shown previously, the sequence $\left\{y^{p-p_n}\right\}_{n=1}^\infty$ converges to $y^py^{-p}=y^{p+(-p)}=y^0=1$. Hence, since $\left(1+\frac{\varepsilon}{2L}\right)^{\frac{1}{K}}>1$ and $\left(1-\frac{\varepsilon}{2L}\right)^{\frac{1}{K}}<1$ we can let $N_2$ such that for all $n\geq N_2$ we have 
+
+$$
+ \left(1-\frac{\varepsilon}{2L}\right)^{\frac{1}{K}}<y^{p-p_n}<\left(1+\frac{\varepsilon}{2L}\right)^{\frac{1}{K}}.
+$$
+
+Finally, since $\left(1-\frac{\varepsilon}{2L}\right)^{\frac{-1}{K}}>1$ and $\left(1+\frac{\varepsilon}{2L}\right)^{\frac{-1}{K}}<1$ we can let $N_3$ such that for all $n\geq N_3$ we have 
+
+$$
+ \left(1+\frac{\varepsilon}{2L}\right)^{\frac{-1}{K}}<y^{p-p_n}<\left(1-\frac{\varepsilon}{2L}\right)^{\frac{-1}{K}}.
+$$
+
+Then we let $N=\text{max}\left\{N_1,N_2,N_3\right\}$, i.e. $N$ is the largest of the three numbers $N_1$, $N_2$ and $N_3$. Then using the properties we already proved as well as the triangle inequality {prf:ref}`thm:triangle_inequality_real_numbers`, we have for $n\geq N$ that
 
 \begin{align*}
- \left(y^p\right)^q-\left(y^{p_n}\right)^{q_n}=\left(y^p\right)^q-\left(y^{p}\right)^{q_n}+\left(y^{p}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\\
- &<\frac{\varepsilon}{2}+\left(y^{p}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\\
- &=\frac{\varepsilon}{2}+\left(y^{p-p_n+p_n}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\\
- &=\frac{\varepsilon}{2}+\left(y^{p-p_n}y^{p_n}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\\
- &=\frac{\varepsilon}{2}+\left(y^{p-p_n}\right)^{q_n}\left(y^{p_n}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\\
- &=\frac{\varepsilon}{2}+\left(\left(y^{p-p_n}\right)^{q_n}-1\right)\left(y^{p_n}\right)^{q_n}\\
- &\leq\frac{\varepsilon}{2}+\left(\left(y^{p-p_n}\right)^{K}-1\right)\left(y^{p_n}\right)^{q_n}\\
- &\leq\frac{\varepsilon}{2}+\left(\left(\frac{1+\frac{\varepsilon}{2}}{L}\right)^{\frac{1}{K}}^{K}-1\right)\left(y^{p_n}\right)^{q_n}\\
- &=\frac{\varepsilon}{2}+\frac{\epsilon}{2L}\left(y^{p_n}\right)^{q_n}\\
- &\leq \frac{\varepsilon}{2}+\frac{\epsilon}{2L}L\\
- &=\varepsilon
+ \left|\left(y^p\right)^q-\left(y^{p_n}\right)^{q_n}\right|&=\left|\left(y^p\right)^q-\left(y^{p}\right)^{q_n}+\left(y^{p}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
+ &\leq \left|\left(y^p\right)^q-\left(y^{p}\right)^{q_n}\right|+\left|\left(y^{p}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
+ &<\frac{\varepsilon}{2}+\left|\left(y^{p}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
+ &=\frac{\varepsilon}{2}+\left|\left(y^{p-p_n+p_n}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
+ &=\frac{\varepsilon}{2}+\left|\left(y^{p-p_n}y^{p_n}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
+ &=\frac{\varepsilon}{2}+\left|\left(y^{p-p_n}\right)^{q_n}\left(y^{p_n}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
+ &=\frac{\varepsilon}{2}+\left|\left(\left(y^{p-p_n}\right)^{q_n}-1\right)\left(y^{p_n}\right)^{q_n}\right|\\
+ &=\frac{\varepsilon}{2}+\left|\left(y^{p-p_n}\right)^{q_n}-1\right|\left(y^{p_n}\right)^{q_n}.
 \end{align*}
 
-while if $p_n-p>0$ we get 
-DIT STUK MOET NOG AF EN OPGESCHOOND.
+Now if $q_n\geq 0$ we have since $n\geq N_2$ that 
+
+$$
+ \left(1-\frac{\varepsilon}{2L}\right)^{\frac{q_n}{K}}\leq\left(y^{p-p_n}\right)^{q_n}\leq\left(1+\frac{\varepsilon}{2L}\right)^{\frac{q_n}{K}}.
+$$
+
+Note that $\left(1-\frac{\varepsilon}{2L}\right)^{\frac{q_n}{K}}\geq \left(1-\frac{\varepsilon}{2L}\right)^{\frac{K}{K}}=1-\frac{\varepsilon}{2L}$ and $\left(1+\frac{\varepsilon}{2L}\right)^{\frac{q_n}{K}}\leq \left(1+\frac{\varepsilon}{2L}\right)^{\frac{K}{K}}=1+\frac{\varepsilon}{2L}$. Hence, we must have
+
+$$
+ 1-\frac{\varepsilon}{2L}\leq \left(y^{p-p_n}\right)^{q_n}\leq 1+\frac{\varepsilon}{2L},
+$$
+
+which means that $\left|\left(y^{p-p_n}\right)^{q_n}-1\right|\leq \frac{\varepsilon}{2L}$. In addition, if $q_n<0$ we have since $n\geq N_3$ that
+
+$$
+ \left(1-\frac{\varepsilon}{2L}\right)^{\frac{-q_n}{K}}\leq\left(y^{p-p_n}\right)^{q_n}\leq\left(1+\frac{\varepsilon}{2L}\right)^{\frac{-q_n}{K}}.
+$$
+
+Note that $\left(1-\frac{\varepsilon}{2L}\right)^{\frac{-q_n}{K}}\geq \left(1-\frac{\varepsilon}{2L}\right)^{\frac{K}{K}}=1-\frac{\varepsilon}{2L}$ and $\left(1+\frac{\varepsilon}{2L}\right)^{\frac{-q_n}{K}}\leq \left(1+\frac{\varepsilon}{2L}\right)^{\frac{K}{K}}=1+\frac{\varepsilon}{2L}$. Hence, we must have
+
+$$
+ 1-\frac{\varepsilon}{2L}\leq \left(y^{p-p_n}\right)^{q_n}\leq 1+\frac{\varepsilon}{2L},
+$$
+
+which means that $\left|\left(y^{p-p_n}\right)^{q_n}-1\right|\leq \frac{\varepsilon}{2L}$. As such, we find, in both cases, that
+
+\begin{align*}
+ \left|\left(y^p\right)^q-\left(y^{p_n}\right)^{q_n}\right|&\leq\frac{\varepsilon}{2}+\left|\left(y^{p-p_n}\right)^{q_n}-1\right|\left(y^{p_n}\right)^{q_n}\\
+ &\leq\frac{\varepsilon}{2}+\left(\frac{\varepsilon}{2L}\right)\left(y^{p_n}\right)^{q_n}\\
+ &=\frac{\varepsilon}{2}+\frac{\epsilon}{2L}\left(y^{p_n}\right)^{q_n}\\
+ &\leq \frac{\varepsilon}{2}+\frac{\epsilon}{2L}L\\
+ &=\varepsilon.
+\end{align*}
+
+As such, we find that the sequence $\left\{\left(y^{p_n}\right)^{q_n}\right\}_{n=1}^\infty$ converges to $\left(y^p\right)^q$. For any value of $n$ we have, since $p_n$ and $q_n$ are rational numbers, that $y^{p_nq_n}=\left(y^{p_n}\right)^{q_n}$. Hence, we obtain
+
+$$
+ \left(y^p\right)^q=\lim_{n\rightarrow\infty} \left(y^{p_n}\right)^{q_n}=\lim_{n\rightarrow\infty} y^{p_nq_n}=y^{pq},
+$$
+
+as desired.
+
+Finally, we show that $y^{p-q}=\frac{y^p}{y^q}$. By the first property (which we have already established) we have 
+
+$$
+ y^{-q}=y^{(-1)\cdot q}=\left(y^q\right)^{-1}=\frac{1}{y^q}.
+$$
+
+As such, we obtain with the third property (which we also have established already) that
+
+$$
+ y^{p-q}=y^{p+(-q)}=y^py^{-q}=y^p\frac{1}{y^q}=\frac{y^p}{y^q},
+$$ 
+
+as desired.
 :::
+
+::::::{warning} 
+:name: Warning:Realnumbers:Powersofnegativenumbers
+
+We have seen how to define things like $(-1)^{2}$, $(-1)^{-4}$ and $(-1)^{\frac{5}{3}}$. Now, what do we mean by $(-1)^{\frac{1}{2}}$? We know that for $x\geq 0$ and real numbers $a$ and $b$ we always have the identity $\left(x^a\right)^b=x^{ab}$. Unfortunately, it is impossible to define $(-1)^{\frac{1}{2}}$ in such a way that it is consistent with this rule. Indeed, if we could define it, we would find that
+
+$$
+ -1=(-1)^1=(-1)^{2\cdot{\frac{1}{2}}}=\left((-1)^2\right)^{\frac{1}{2}}=1^{\frac{1}{2}}=1
+$$
+
+which is not the case. As such, we will not try to define those powers of negative numbers that we have not already defined.
+::::::
+
+::::::{prf:example} 
+:label: Ex:RealNumbers:ExpCalcRules
+Let $y> 0$ and suppose we want to simplify the expression $\frac{\left(y^2\right)^{3\pi}}{y\sqrt{y^3}}$. We approach this by simplifying each part of this expression step by step, each time using {prf:ref}`Thm:RealNumbers:ExpCalcReal`. We start with the numerator. Then we see that
+
+$$
+ \left(y^2\right)^{3\pi}=y^{2\cdot3\pi}=y^{6\pi}.
+$$
+
+Now for the numerator, we first note that
+
+$$
+ \sqrt{y^3}=\left(y^3\right)^{\frac{1}{2}}=y^{3\cdot\frac{1}{2}}=y^{\frac{3}{2}}.
+$$
+
+Then, we find that
+
+$$
+ y\sqrt{y^3}=y^1y^{\frac{3}{2}}=y^{1+\frac{3}{2}}=y^{\frac{5}{2}}.
+$$
+
+Finally, we obtain
+
+$$
+ \frac{\left(y^2\right)^{3\pi}}{y\sqrt{y^3}}=\frac{y^{6\pi}}{y^{\frac{5}{2}}}=y^{6\pi-\frac{5}{2}}.
+$$
+
+::::::
+
+Nu nog het getal e... en algemeen over exponentiele groei/daling.
