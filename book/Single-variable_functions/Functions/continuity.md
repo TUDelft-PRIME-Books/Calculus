@@ -82,8 +82,7 @@ Let $f$ be a function and $a$ a point in the domain of $f$. Then $f$ is continuo
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:EpsilonDelta`
-:class: tudproof
-:name: Prf:Continuity:EpsilonDelta
+:class: tudproof, dropdown
 
 This follows directly from rephrasing the statement $\lim\limits_{x\rightarrow a}f(x)=f(a)$ using the precise definition of a limit ({prf:ref}`Def:LimitAtPoint:Precisedef`).
 :::
@@ -109,7 +108,6 @@ Consider two functions $f$ and $g$ and let $a$ be a point that is both in the do
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Basiccomputationrules`
 :class: tudproof, dropdown
-:name: Prf:Continuity:Basiccomputationrules
 
 These statements follow directly from {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules`.
 :::
@@ -124,8 +122,6 @@ Consider two functions $f$ and $g$ and let $a$ be a point in the domain of $g$ f
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Composition`
 :class: tudproof, dropdown
-:name: Prf:Continuity:Composition
-:show:
 
 We use the classification of continuity given in {prf:ref}`Theorem:Continuity:EpsilonDelta`. Let $\varepsilon>0$ be given. Since $f$ is continuous at $g(a)$, we can pick $\delta_1>0$ in such a way that for each $x$ in the domain of $f$ with $0<|x-g(a)|<\delta_1$ we have $|f(x)-f(g(a))|<\varepsilon$. Since $g$ is continuous at $a$ and $\delta_1>0$, we can find $\delta_2>0$ in such a way that for each $x$ in the domain of $g$ with $0<|x-a|<\delta_2$ we have $|g(x)-g(a)|<\delta_1$ (so $\delta_1$ takes the role here that $\varepsilon$ usually takes). Consider any $x$ in the domain of $f\circ g$ with $0<|x-a|<\delta_2$. Then $x$ is also in the domain of $g$ and it satisfies $0<|x-a|<\delta_2$, so we must have $|g(x)-g(a)|<\delta_1$. As such, $g(x)$ is an element of the domain of $f$ with $0<|g(x)-g(a)|<\delta_1$, which means that we must have $|f(g(x))-f(g(a))|<\varepsilon$. This precisely means that $f\circ g$ is continuous at $a$.
 :::
