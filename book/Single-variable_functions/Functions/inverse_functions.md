@@ -584,7 +584,6 @@ Finally, we study expressions like $\cos(\arcsin(x))$. It turns out that often t
 
 ::::::{prf:example} 
 :label: Ex:Inverse:InversetrigSimplify
-:class: overflow
 
 Suppose we want to simplify $\displaystyle\cos(\arcsin(x))$. Writing $y=\arcsin(x)$ we note that $y$ takes the role of an angle. Indeed, it is the unique angle with $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$ and $\sin(y)=x$. We will use two methods to simplify the expression, the first of which uses a geometrical approach, while the second one uses trigonometric identities.
 
