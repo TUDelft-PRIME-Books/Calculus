@@ -549,7 +549,7 @@ This function is named after the German mathematician [Georg Friedrich Bernhard 
 
 We will only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. However, in general it is not very easy to find its sum.
 
-Later we will be able to show that 
+Later (see {prf:ref}`Ex:Series:FourierExample3`) we will be able to show that 
 
 $$
 \zeta(2)=\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\quad\text{and}\quad\zeta(4)=\sum_{n=1}^{\infty}\frac{1}{n^4}=\frac{1}{90}\pi^4.
