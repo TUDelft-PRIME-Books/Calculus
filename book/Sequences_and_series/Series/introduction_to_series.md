@@ -199,6 +199,14 @@ So, the notation $0.\overline{9}=0.99999\ldots$ is just a clumsy way to represen
 
 In {eq}`Eq:Series:FibonacciTelescoping` we have seen the *telescoping property* of the (finite) sum of the first $n$ Fibonacci numbers. Sometimes this property can be used to find the sum of a **telescoping series**.
 
+:::::{margin}
+::::{figure} Images/telescope.png
+:name: Fig:Series:Telescope
+
+A pirate using a telescope.
+::::
+:::::
+
 ::::::{prf:example}
 :label: Ex:Series:TelescopingSeries1
 An example of a *telescoping series* is: $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n(n+1)}$.

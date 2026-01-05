@@ -57,7 +57,7 @@ Now we have: $\displaystyle\int_1^{\infty}\frac{1}{x^2}\,dx=\bigg[-\frac{1}{x}\b
 
 This proves that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is convergent and that its sum is a value between $1$ and $2$.
 
-Later we will see that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\approx1.64493$.
+Later we will see that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\approx1.64493$. See: {prf:ref}`Ex:Series:FourierExample2` and {prf:ref}`Ex:Series:FourierExample3`.
 
 This concept can be generalized to the **integral test**:
 

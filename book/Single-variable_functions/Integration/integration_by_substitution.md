@@ -679,7 +679,7 @@ $$
 \end{align*}
 $$
 
-The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later.
+The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later. See: {numref}`Sec:Series:TaylorSeries`. 
 
 ::::{exercise}
 :label: Exc:Integration:SubstitutionTrigForm

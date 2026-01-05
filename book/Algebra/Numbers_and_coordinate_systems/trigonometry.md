@@ -25,6 +25,14 @@ $$\pi\;\operatorname{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\operatorname{
 
 In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out "$\operatorname{rad}$".
 
+::::::{note}
+In surveying, mining and geology angles are sometimes measured in *gradians* or *gons*. Then the angle given by a complete revolution contains $400^{g}$, which is the same as $2\pi$ rad. Therefore:
+
+$$\pi\;\operatorname{rad}=200^{g}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{200}{\pi}\right)^{g}\quad\text{and}\quad 1^{g}=\dfrac{\pi}{200}\;\operatorname{rad}.$$ 
+
+We will not use these *gradians* or *gons* in this book.
+::::::
+
 ::::::{prf:definition}
 :label: Def:Trigonometry:Angle
 
