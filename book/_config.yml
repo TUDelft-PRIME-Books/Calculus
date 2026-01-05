@@ -86,7 +86,7 @@ sphinx:
       launch_buttons:
         thebe: true                                  # Required for live code: https://teachbooks.io/manual/features/live_code.html
     html_show_copyright: false                       # As the copyright is included in the author field
-    html_last_updated_fmt: '%B %-d, %Y'              # Adds the date of the last update to the footer
+    html_last_updated_fmt: ''              # Adds the date of the last update to the footer
   extra_extensions:                                  # Extra extensions to be used in the book
     - teachbooks_favourites
     - teachbooks_sphinx_grasple                      # Adds the Grasple exercises to your book 
