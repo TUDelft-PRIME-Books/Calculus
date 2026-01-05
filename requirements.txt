@@ -1,6 +1,5 @@
 # first list the packages you wish to download from PyPI
-# teachbooks == 0.2.3 # depends on jupyter-book
-git+https://github.com/TeachBooks/TeachBooks@issue-127
+teachbooks == 0.2.4 # depends on jupyter-book
 
 sphinx-tudelft-theme == 1.2.1
 teachbooks-sphinx-grasple == 1.3.0
