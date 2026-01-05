@@ -132,8 +132,10 @@ parts:
       - file: "Differential_equations/First-order_ordinary_differential_equations/approximating_solutions.md"
     - file: "Differential_equations/Second-order_ordinary_differential_equations/introduction_second_order_ODE.md" # ref_graph: {'ignore':True}
       sections:
+      - file: "Differential_equations/Second-order_ordinary_differential_equations/direction_fields_and_solutions_2nd.md"
       - file: "Differential_equations/Second-order_ordinary_differential_equations/homogeneous_problems_with_constant_coefficients.md"
       - file: "Differential_equations/Second-order_ordinary_differential_equations/inhomogeneous_problems_with_constant_coefficients.md"
+      - file: "Differential_equations/Second-order_ordinary_differential_equations/problems_with_nonconstant_coefficients.md"
       - file: "Differential_equations/Second-order_ordinary_differential_equations/series_solutions_2nd.md"
   - caption: Appendices
     numbered: true

@@ -194,16 +194,18 @@ If the velocity remains constant, then the distance problem is easy to solve: th
 
 What if the velocity varies?
 
-:::::{margin}
-::::{figure} Images/filip-mroz-XCkRGOX2VgM-unsplash.jpg
-:name: Fig:DefiniteIntegrals:Athlete
-:source: Photo by <a href="https://unsplash.com/@mroz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Filip Mroz</a> on <a href="https://unsplash.com/photos/woman-running-wearing-armband-XCkRGOX2VgM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-An athlete during an interval training.
-::::
-:::::
-
 ::::::{prf:example}
+
+:::{figure} Images/filip-mroz-XCkRGOX2VgM-unsplash.jpg
+:width: 75%
+:name: Fig:DefiniteIntegrals:Athlete
+:align: center
+:figclass: margin
+
+An athlete during an interval training. Photo by <a href="https://unsplash.com/@mroz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Filip Mroz</a> on <a href="https://unsplash.com/photos/woman-running-wearing-armband-XCkRGOX2VgM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      
+:::
+
 Consider an athlete during an interval training. She starts walking at a speed of $5\;\text{km/h}$ during $5$ minutes. Then she runs at a speed of $15\;\text{km/h}$ during $2$ minutes, followed by a period of $4$ minutes walking at a speed of $6\;\text{km/h}$. Then she runs at a speed of $20\;\text{km/h}$ during $3$ minutes, followed by $6$ minutes walking at a speed of $4\;\text{km/h}$.
 
 What is the distance traveled by the athlete?
@@ -214,15 +216,6 @@ What is the distance traveled by the athlete?
 :align: center
 
 The distance traveled by the athlete
-:::
-
-:::{margin}:::{figure} Images/filip-mroz-XCkRGOX2VgM-unsplash.jpg
-:width: 75%
-:name: female athlete
-:align: center
-
-Photo by <a href="https://unsplash.com/@mroz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Filip Mroz</a> on <a href="https://unsplash.com/photos/woman-running-wearing-armband-XCkRGOX2VgM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      
 :::
 
 In order to get the correct units, we change the minutes into hours ($5$ minuties is $\frac{1}{12}$ hour for instance) and add five different areas:

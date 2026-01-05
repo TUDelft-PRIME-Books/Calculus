@@ -929,7 +929,7 @@ $$
 \end{align*}
 $$
 
-:::{remark}
+:::{prf:remark}
 Note that the binomial coefficients defined in {eq}`Eq:Series:BinomialCoefficients` generalise the binomial coefficients given in {eq}`Eq:Series:BinomialCoefficient`.
 :::
 

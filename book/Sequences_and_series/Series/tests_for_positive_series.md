@@ -71,7 +71,7 @@ $$
 
 ::::::
 
-::::::{remark}
+::::::{prf:remark}
 In other words we have:
 
 1) If $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent, then $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent.

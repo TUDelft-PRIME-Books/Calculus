@@ -50,7 +50,7 @@ Sometimes the alternating series test is called the **Leibniz criterion**, named
 :width: 95%
 :name: alternating series
 :align: center
----
+
 Proof of the alternating series test
 :::
 
