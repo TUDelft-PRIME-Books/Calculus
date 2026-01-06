@@ -1,3 +1,4 @@
+(Section:Realnumbers)=
 
 # Real numbers
 
@@ -351,7 +352,7 @@ Finally, if $0<y<1$ we can follow a very similar approach as for $y>1$, except t
 
 ::::::{prf:definition} 
 :label: Def:RealNumbers:Powers4
-Let $y\geq 0$ and $r\neq 0$ be a real number. The number from {prf:ref}`Thm:RealNumbers:Irrationalexp` is denoted by $y^r$. Moreover, if $r>0$ we define $0^r=0$.
+Let $y\geq 0$ and $r\neq 0$ be a real number. The number from {prf:ref}`Thm:RealNumbers:Irrationalexp` is denoted by $y^r$. We call the number $y$ the **base** and the number $r$ the **exponent**. Moreover, if $r>0$ we define $0^r=0$.
 ::::::
 
 
@@ -578,4 +579,71 @@ $$
 
 ::::::
 
-Nu nog het getal e... en algemeen over exponentiele groei/daling.
+(Subsec:RealnumbersE)=
+
+## The number e
+
+Any positive real number can serve as the base of exponentiation, but in the context of calculus one stands out from the rest. This number is denoted by $e$, and it is approximately equal to $2.7182818$. It will turn out that several problems involving differentiation (see {numref}`Chapter:Differentiation`) or integration (see {numref}`Chapter:Integration`) can be simpliefied when using $e$ as base for an exponential instead of any other positive real number.
+
+The number $e$ was discovered by the Swiss mathematician [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli) in the context of compound interest, that is, the accumulation of interest from an initial saving and previously accumulated interst. The symbol $e$ was first introduced by the Swiss mathematician [Leonhard Euler (1707-1783)], and, therefore, $e$ is sometimes referred to as **Euler's number** (though it should not be confused with [Euler numbers](https://en.wikipedia.org/wiki/Euler_numbers) or [Euler's constant](https://en.wikipedia.org/wiki/Euler%27s_constant)). 
+
+The formal definition of the number $e$ is as the limit of a sequence of numbers, that arises naturally in the context of compound interest. For completeness we include this definition here. More information on (the convergence of) sequences can be found in {numref}`Chapter:Sequences`.
+
+::::::{prf:definition} 
+:label: Def:RealNumbers:Numbere
+The number $e$ is defined as the limit of the sequence $\left\{\left(1+\frac{1}{n}\right)^n\right\}$, i.e. we have $e=\displaystyle \lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^n$.
+::::::
+
+There are several characterisations of the number $e$, all of which use concepts from later chapters. Here, we list a few important ones.
+
+::::::{prf:theorem} Characterisations of $e$ 
+:label: Thm:RealNumbers:Numbere
+
+- $e$ is the sum of the series $\displaystyle e=\sum_{n=0}^\infty \frac{1}{n!}=1+\frac{1}{1}+\frac{1}{2\cdot1}+\frac{1}{3\cdot2\cdot1}+...$, see {numref}`Chapter:Series`.
+- $e$ is the unique value of $b$ such that the exponential function $f(x)=b^x$ has a tangent line at $x=0$ with slope $1$, see {numref}`Chapter:Differentiation`.
+- $e$ is the unique positive value of $b$ such that $\displaystyle \int_1^b\frac{1}{t}\,dt=1$, see {numref}`Chapter:Integration`.
+- If $y(t)$ is the unique solution to the initial-value problem $y'=y$, $y(0)=1$, then $y(1)=e$, see {numref}`Chapter:FirstorderDE`.
+
+::::::
+
+::::::{prf:theorem} 
+:label: Thm:RealNumbers:eIrrational
+
+The number $e$ is irrational, that is, it cannot be written as $\frac{p}{q}$ for integers $p$ and $q\neq 0$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:RealNumbers:eIrrational`
+:class: tudproof, dropdown
+We argue by contradiction, so we assume that $e=\frac{p}{q}$ for some integers $p$ and $q>0$. We can even assume that $q> 1$ by multiplying both $p$ and $q$ by $2$ if necessary. We use the characterisation of $e$ as a series from {prf:ref}`Thm:RealNumbers:Numbere`. This means that we write $\displaystyle \sum_{n=0}^\infty \frac{1}{n!}=e=\frac{p}{q}$. We multiply both sides of this equation by $q!$ to obtain
+
+$$
+ \sum_{n=0}^\infty \frac{q!}{n!}=\frac{p}{q}q!=p\cdot(q-1)!.
+$$
+
+Note that for $n\leq q$ we have $\displaystyle\frac{q!}{n!}=\frac{q\cdot(q-1)\cdot...\cdot 1}{n\cdot(n-1)\cdot...\cdot 1}=q\cdot(q-1)\cdot...(n+1)$, which means that for these values of $n$ we have that $\frac{q!}{n!}$ is an integer. Moreover, $p\cdot(q-1)!$ is an integer as well. So we can write
+
+$$
+ p\cdot(q-1)!=\sum_{n=0}^\infty \frac{q!}{n!}=\sum_{n=0}^q \frac{q!}{n!}+\sum_{n=q+1}^\infty \frac{q!}{n!},
+$$
+
+which gives
+
+$$
+ \sum_{n=q+1}^\infty \frac{q!}{n!}=p\cdot(q-1)!-\sum_{n=0}^q \frac{q!}{n!}.
+$$
+
+As such, $\displaystyle\sum_{n=q+1}^\infty \frac{q!}{n!}$ is an integer, as it is the difference of two integers. However, we also see that
+
+\begin{align*}
+ 0&<\sum_{n=q+1}^\infty \frac{q!}{n!}\\ &=\frac{1}{q+1}+\frac{1}{(q+2)(q+1)}+\frac{1}{(q+3)(q+2)(q+1)}...\\ &<\frac{1}{q+1}+\frac{1}{(q+1)(q+1)}+\frac{1}{(q+1)(q+1)(q+1)}+...\\ &=\sum_{n=1}^\infty \frac{1}{(q+1)^n}.
+\end{align*}
+
+Note that $\displaystyle\sum_{n=1}^\infty \frac{1}{(q+1)^n}$ is a geometric series, so by {prf:ref}`Thm:Series:GeometricSeries`, we find that $\displaystyle\sum_{n=1}^\infty \frac{1}{(q+1)^n}=\frac{\frac{1}{q+1}}{1-\frac{1}{q+1}}=\frac{1}{q}$. Since we assume that $q>1$, we obtain 
+
+$$
+ 0<\sum_{n=q+1}^\infty \frac{q!}{n!}<\sum_{n=1}^\infty \frac{1}{(q+1)^n}=\frac{1}{q}<1.
+$$
+
+This gives a contradiction, since we obtained previously that $\displaystyle\sum_{n=q+1}^\infty \frac{q!}{n!}$ is an integer. As such, $e$ must be irrational.
+:::
