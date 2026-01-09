@@ -71,6 +71,15 @@ there are only three possibilities:
 3) There is a positive number $R$ such that the series absolutely converges for $|x-a|<R$ and diverges for $|x-a|>R$.
 ::::::
 
+::::::{admonition} Proof of {prf:ref}`Thm:Series:PowerSeries`
+:class: tudproof, dropdown
+If the power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ absolutely converges for $x=b$, then $\displaystyle\sum_{n=0}^{\infty}\left|c_n(b-a)^n\right|$ converges. Then the {prf:ref}`comparison test <Thm:Series:DirectComparisonTest>` implies that $\displaystyle\sum_{n=0}^{\infty}\left|c_n(x-a)^n\right|$ converges for all $x$ such that $|x-a|<|b-a|$.
+
+If there are values of $x$ for which the series diverges, then there exists a maximum value of $|b-a|=R$ such that the series absolutely converges for $|x-a|<R$.
+
+This proves the theorem.
+::::::
+
 ::::::{prf:definition}
 :label: Def:Series:RadiusOfConvergence
 
@@ -603,7 +612,7 @@ $$
 \displaystyle\sum_{n=1}^{\infty}\frac{H_n}{n^2}=2\sum_{k=1}^{\infty}\frac{1}{k^3}=2\zeta(3).
 $$
 
-Here $\zeta(s)$ denotes the *Riemann zeta function*, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). The value of $\zeta(3)\approx1.202057$ is also known as **Apéry's constant**, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
+Here $\zeta(s)$ denotes the *Riemann zeta function*, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). The value of $\zeta(3)\approx1.202057$ is also known as *Apéry's constant*, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
 
 The harmonic numbers satisfy the recurrence relation
 

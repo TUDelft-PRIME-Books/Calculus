@@ -320,7 +320,7 @@ Suppose $f$ is a polynomial, rational function, power of $x$, (inverse) trigonom
 A similar result holds for limits at minus infinity.
 ::::::
 
-The result above shows that limits can be "taken inside" a nice enough function. In fact, there is a slightly more general version of this result, which will be covered in {numref}`Section:Continuity`.
+The result above shows that limits can be "taken inside" a nice enough function. In fact, {prf:ref}`Theorem:Continuity:SubstitutionInf` is a slightly more general version of this result. In this part of {numref}`Section:Continuity`, we will also prove {prf:ref}`Theorem:LimitAtInfinity:Substitution`.
 
 In addition, we obtain the following comparison result for limits.
 

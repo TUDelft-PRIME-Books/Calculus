@@ -23,6 +23,8 @@ In this section we cover:
   - Superposition principle for linear differential equations
   - homogeneous/non-homogeneous (including algorithmic check)
   - nonhomogeneous solution = homogeneous solution + particular solution
+  - Linear independent solutions
+
 
 It can be shown that a first-order differential equation, that satisfies certain conditions, has a general solution with one degree of freedom; somewhere in the process of solving such a differential equation we have to integrate once which gives rise to a so-called arbitrary **constant of integration**.
 
