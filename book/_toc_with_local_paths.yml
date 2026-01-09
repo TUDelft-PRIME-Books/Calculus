@@ -10,6 +10,7 @@ parts:
   chapters:
   - file: Algebra/Numbers_and_coordinate_systems/introduction_numbers_and_coordinate_systems.md
     sections:
+    - file: Algebra/Numbers_and_coordinate_systems/sums_and_products.md
     - file: Algebra/Numbers_and_coordinate_systems/real_numbers.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersCartesian.md
     - file: Algebra/Numbers_and_coordinate_systems/trigonometry.md

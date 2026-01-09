@@ -336,7 +336,7 @@ Taking more and more terms this leads to the following approximations:
 Note that this series is absolutely convergent. However, it is not easy to find its sum. We have
 
 $$
-G:=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\approx0.916.
+G=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\approx0.916.
 $$
 
 There are several alternative (integral) representations for this constant. Since 

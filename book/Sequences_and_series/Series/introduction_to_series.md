@@ -1,3 +1,4 @@
+(Chapter:Series:Introduction)=
 # Series and their types
 
 In this section we cover (see note in section convergence of series):
@@ -130,17 +131,17 @@ In {numref}`Sec:Series:PowerSeries` on power series we will often make use of th
 
 2) $\displaystyle\frac{1}{5}-\frac{2}{25}+\frac{4}{125}-\frac{8}{625}+\cdots=\frac{1}{5}\sum_{n=0}^{\infty}\left(-\frac{2}{5}\right)^n=\frac{1}{5}\cdot\frac{1}{1+\frac{2}{5}}=\frac{1}{7}$.
 
-3) $\displaystyle0.\overline{12}:=0.1212121212\ldots=\sum_{n=1}^{\infty}\frac{12}{100^n}=\frac{\frac{12}{100}}{1-\frac{1}{100}}=\frac{12}{100-1}=\frac{4}{33}$.
+3) $\displaystyle0.\overline{12}=0.1212121212\ldots=\sum_{n=1}^{\infty}\frac{12}{100^n}=\frac{\frac{12}{100}}{1-\frac{1}{100}}=\frac{12}{100-1}=\frac{4}{33}$.
 ::::::
 
-In the last example $\overline{12}$ denotes that $12$ is repeated indefinitely. The number $p:=0.\overline{12}$ is an example of a convergent geometric series. However, it is easier to note that
+In the last example $\overline{12}$ denotes that $12$ is repeated indefinitely. The number $p=0.\overline{12}$ is an example of a convergent geometric series. However, it is easier to note that
 
 $$
 100p=12.\overline{12}=12+0.\overline{12}=12+p\quad\Longrightarrow\quad99p=12\quad\Longleftrightarrow\quad p=\frac{12}{99}=\frac{4}{33}.
 $$
 
 ::::::{prf:example} 
-Express the number $0.\overline{135}:=0.135135135\ldots$ as a quotient of integers.
+Express the number $0.\overline{135}=0.135135135\ldots$ as a quotient of integers.
 
 Solution 1. The number can be written as a geometric series:
 

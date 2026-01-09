@@ -579,7 +579,7 @@ $$
 This implies that
 
 $$
-I:=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=\int_a^b\frac{f(a+b-x)}{f(a+b-x)+f(x)}\,dx.
+I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=\int_a^b\frac{f(a+b-x)}{f(a+b-x)+f(x)}\,dx.
 $$
 
 Hence we have

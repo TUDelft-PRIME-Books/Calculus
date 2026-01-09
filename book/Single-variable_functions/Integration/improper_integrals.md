@@ -26,13 +26,13 @@ Integrals satisfying (I) and/or (II) are called **improper integrals**. These ki
 If $f$ is continuous on $[a,\infty)$, then
 
 $$
-\int_a^{\infty}f(x)\,dx:=\lim_{R\to\infty}\int_a^Rf(x)\,dx.
+\int_a^{\infty}f(x)\,dx=\lim_{R\to\infty}\int_a^Rf(x)\,dx.
 $$
 
 If $f$ is continuous on $(-\infty,b]$, then
 
 $$
-\int_{-\infty}^bf(x)\,dx:=\lim_{R\to-\infty}\int_R^bf(x)\,dx.
+\int_{-\infty}^bf(x)\,dx=\lim_{R\to-\infty}\int_R^bf(x)\,dx.
 $$
 
 In either case, if the limit exists (is a finite number), the improper integral is called **convergent**. If the limit does not exist, the improper integral is called **divergent**.
@@ -42,7 +42,7 @@ If the limit is $\infty$ or $-\infty$, we say the improper integral **diverges t
 Furthermore, if $f$ is continuous on $\mathbb{R}$, then
 
 $$
-\int_{-\infty}^{\infty}f(x)\,dx:=\int_{-\infty}^cf(x)\,dx+\int_c^{\infty}f(x)\,dx
+\int_{-\infty}^{\infty}f(x)\,dx=\int_{-\infty}^cf(x)\,dx+\int_c^{\infty}f(x)\,dx
 $$
 
 for any $c\in\mathbb{R}$. The integral on the left converges if and only if both integrals on the right converge.
@@ -734,7 +734,7 @@ $$
 The **gamma function** $\Gamma(x)$ is defined by the improper integral
 
 $$
-\Gamma(x):=\int_0^{\infty}t^{x-1}e^{-t}\,dt,\quad x>0.
+\Gamma(x)=\int_0^{\infty}t^{x-1}e^{-t}\,dt,\quad x>0.
 $$
 
 Let $\displaystyle\int_0^{\infty}t^{x-1}e^{-t}\,dt=\int_0^1t^{x-1}e^{-t}\,dt+\int_1^{\infty}t^{x-1}e^{-t}\,dt$.

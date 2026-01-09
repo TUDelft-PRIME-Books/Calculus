@@ -12,6 +12,7 @@ parts:
     chapters:
     - file: "Algebra/Numbers_and_coordinate_systems/introduction_numbers_and_coordinate_systems.md" # ref_graph: {'ignore':True}
       sections:
+      - file: "Algebra/Numbers_and_coordinate_systems/sums_and_products.md"
       - file: "Algebra/Numbers_and_coordinate_systems/real_numbers.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - file: "Algebra/Numbers_and_coordinate_systems/trigonometry.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}

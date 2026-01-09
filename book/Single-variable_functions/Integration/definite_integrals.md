@@ -2,19 +2,19 @@
 
 # Definite integrals
 
-In this section we cover
+## Introduction
 
-- Riemann sums
-- Definite integrals
-- Basic rules of calculation (e.g. sums and scalars)
-- Comparison rules (for definite integrals)
-- Integrals of piecewise-defined continuous functions
+In {numref}`Chapter:FunctionsAndCurves` we have seen that a function $f$ assigns to each number $x$ in its domain a unique number $f(x)$ in its range. In {numref}`Chapter:Differentiation` we have learned about the derivatives of a function and how to calculate them. In this chapter we introduce the concept of **integration** which can be seen as the *inverse* operation of differentiation.
 
-## Areas
+If we take a visual approach, a derivative of a function at a certain point on the graph of that function gives us the *slope* of the graph of a function at that point. Integration, on the other hand, can be used to calculate the *area* between the graph of a function and the horizontal axis.
+
+We start with only considering positive and continuous functions.
+
+## Definite integrals for positive and continuous functions
 
 ::::::{prf:Definition}
 :label: Def:Integration:DefiniteIntegral
-For a *positive* and *continuous* function $f$ defined on an interval $[a,b]$ the **definite integral**
+For a *positive* and *continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a positive and continuous**
 
 $$
 \int_a^bf(x)\,dx
@@ -25,22 +25,22 @@ is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$:
 ```{figure} Images/integral1.png
 ---
 width: 50%
-name: integral
+name: Fig:Integration:DefiniteIntegral
 align: center
 ---
-The integral $\displaystyle\int_a^bf(x)\,dx$
+The integral $\displaystyle\int_a^bf(x)\,dx$.
 ```
 ::::::
 
-In order to find this area, we start with an approximation: divide the interval $[a,b]$ into subintervals and consider the sum of the areas of the indicated rectangles:
+In order to find this area, we start with an approximation: we divide the interval $[a,b]$ into subintervals and consider the sum of the areas of the indicated rectangles:
 
 ```{figure} Images/integral2.png
 ---
 width: 50%
-name: integral
+name: Fig:Integration:SumRectangles
 align: center
 ---
-Sum of area of rectangles
+Sum of area of rectangles.
 ```
 
 The height of each rectangle is taken to be the value of the function $f$ at an arbitrary point $x_i^*$ in the corresponding subinterval. This point $x_i^*$ is called a **sample point** and might be the left point, the right point or the middle point of the subinterval, for instance. Then we take the sum of the areas of all rectangles.
@@ -54,19 +54,21 @@ $$
 ```{figure} Images/riemann.png
 ---
 width: 50%
-name: integral
+name: Fig:Integration:RiemannSum
 align: center
 ---
-Building a Riemann sum
+Building a Riemann sum.
 ```
 
 Choose a sample point $x_i^*$ in each subinterval $[x_{i-1},x_i]$, then the area equals
 
 $$
-\int_a^bf(x)\,dx:=\lim_{n\to\infty}\,\sum_{i=1}^nf(x_i^*)\Delta x\quad\text{with}\quad\Delta x=x_i-x_{i-1}=\frac{b-a}{n}.
+\int_a^bf(x)\,dx=\lim_{n\to\infty}\,\sum_{k=1}^nf(x_k^*)\Delta x\quad\text{with}\quad\Delta x=x_k-x_{k-1}=\frac{b-a}{n}.
 $$
 
-The sum $\displaystyle\sum_{i=1}^nf(x_i^*)(x_i-x_{i-1})$ is called a **Riemann sum**, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann).
+The sum $\displaystyle\sum_{k=1}^nf(x_k^*)(x_k-x_{k-1})$ is called a **Riemann sum**, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann).
+
+<!-- HIER GEBLEVEN ALS EDITOR -->
 
 **Remarks**
 

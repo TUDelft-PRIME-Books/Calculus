@@ -26,9 +26,9 @@ $$\pi\;\operatorname{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\operatorname{
 In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out "$\operatorname{rad}$".
 
 ::::::{note}
-In surveying, mining and geology angles are sometimes measured in *gradians* or *gons*. Then the angle given by a complete revolution contains $400^{g}$, which is the same as $2\pi$ rad. Therefore:
+In surveying, mining and geology, angles are sometimes measured in *[gradians](https://en.wikipedia.org/wiki/Gradian)* or *gons*. Then the angle given by a complete revolution contains $400^{\operatorname{g}}$, which is the same as $2\pi$ rad. Therefore:
 
-$$\pi\;\operatorname{rad}=200^{g}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{200}{\pi}\right)^{g}\quad\text{and}\quad 1^{g}=\dfrac{\pi}{200}\;\operatorname{rad}.$$ 
+$$\pi\;\operatorname{rad}=200^{\operatorname{g}}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{200}{\pi}\right)^{\operatorname{g}}\quad\text{and}\quad 1^{\operatorname{g}}=\dfrac{\pi}{200}\;\operatorname{rad}.$$ 
 
 We will not use these *gradians* or *gons* in this book.
 ::::::
@@ -933,6 +933,21 @@ Now we conclude that the area of the triangle equals
 ```{math}
 \sqrt{\frac{a+b+c}{2}\cdot\frac{b+c-a}{2}\cdot\frac{a+b-c}{2}\cdot\frac{a+c-b}{2}}=\sqrt{s(s-a)(s-b)(s-c)}.
 ```
+::::::
+
+## The sine as a product
+
+Although we will not cover infinite products in this book we mention the following about the sine.
+
+::::::{prf:Remark}
+:label: Ex:Integration:IntroductionExamplesProductSine
+It can be shown that
+
+$$
+\sin(\pi x)=\pi x\prod_{n=1}^{\infty}\left(1-\frac{x^2}{n^2}\right).
+$$
+
+The factors of this infinite product give rise to all zeros of $\sin(\pi x)$ being $0,\pm1,\pm2,\ldots$.
 ::::::
 
 ## Exercises

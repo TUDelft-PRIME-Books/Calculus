@@ -417,7 +417,7 @@ $$
 \int x^ne^x\,dx=\int x^n\,de^x=x^ne^x-\int e^x\,dx^n=x^ne^x-n\int x^{n-1}e^x\,dx.
 $$
 
-So, if we define $I_n:=\displaystyle\int x^ne^x\,dx$, then we have: $I_n=x^ne^x-nI_{n-1}$ for $n=1,2,3,\ldots$. Furthermore, we have $I_0:=\displaystyle\int e^x\,dx=e^x+C$. Hence, we obtained the **reduction formula**
+So, if we define $I_n=\displaystyle\int x^ne^x\,dx$, then we have: $I_n=x^ne^x-nI_{n-1}$ for $n=1,2,3,\ldots$. Furthermore, we have $I_0=\displaystyle\int e^x\,dx=e^x+C$. Hence, we obtained the **reduction formula**
 
 $$
 I_n=x^ne^x-nI_{n-1},\quad n=1,2,3,\ldots\quad\text{with}\quad I_0=e^x+C.
@@ -457,13 +457,13 @@ $$
 \end{align*}
 $$
 
-Define $I_n:=\displaystyle\int x^ne^{-x}\,dx$, then we have
+Define $I_n=\displaystyle\int x^ne^{-x}\,dx$, then we have
 
 $$
 I_n=-x^ne^{-x}+nI_{n-1},\quad n=1,2,3,\ldots.
 $$
 
-Furthermore, we have $I_0:=\displaystyle\int e^{-x}\,dx=-e^{-x}+C$.
+Furthermore, we have $I_0=\displaystyle\int e^{-x}\,dx=-e^{-x}+C$.
 :::
 
 In {prf:ref}`Ex.Integration:PartsPowerCos` we evaluated the integral $\displaystyle\int x\cos(x)\,dx$ using integration by parts. What happens if we replace $x$ by a higher power of $x$?
@@ -487,13 +487,13 @@ $$
 \end{align*}
 $$
 
-So, if we define $I_n:=\displaystyle\int x^n\cos(x)\,dx$, then we have: 
+So, if we define $I_n=\displaystyle\int x^n\cos(x)\,dx$, then we have: 
 
 $$
 I_n=x^n\sin(x)+nx^{n-1}\cos(x)-n(n-1)I_{n-2},\quad n=2,3,4,\ldots.
 $$
 
-Furthermore, we have $I_0:=\displaystyle\int\cos(x)\,dx=\sin(x)+C$ and in {prf:ref}`Ex.Integration:PartsPowerCos` we found that $I_1:=\displaystyle\int x\cos(x)\,dx=x\sin(x)+\cos(x)+C$. This leads to
+Furthermore, we have $I_0=\displaystyle\int\cos(x)\,dx=\sin(x)+C$ and in {prf:ref}`Ex.Integration:PartsPowerCos` we found that $I_1=\displaystyle\int x\cos(x)\,dx=x\sin(x)+\cos(x)+C$. This leads to
 
 $$
 I_2=x^2\sin(x)+2x\cos(x)-2I_0=x^2\sin(x)+2x\cos(x)-2\sin(x)+C,
@@ -526,13 +526,13 @@ $$
 \end{align*}
 $$
 
-Define $I_n:=\displaystyle\int x^n\sin(x)\,dx$, then we have
+Define $I_n=\displaystyle\int x^n\sin(x)\,dx$, then we have
 
 $$
 I_n=-x^n\cos(x)+nx^{n-1}\sin(x)-n(n-1)I_{n-2},\quad n=2,3,4,\ldots.
 $$
 
-Furthermore, we have $I_0:=\displaystyle\int\sin(x)\,dx=-\cos(x)+C$ and
+Furthermore, we have $I_0=\displaystyle\int\sin(x)\,dx=-\cos(x)+C$ and
 
 $$
 \begin{align*}
@@ -559,13 +559,13 @@ $$
 \end{align*}
 $$
 
-Define $I_n:=\displaystyle\int\left(\ln(x)\right)^n\,dx$, then we have
+Define $I_n=\displaystyle\int\left(\ln(x)\right)^n\,dx$, then we have
 
 $$
 I_n=x\left(\ln(x)\right)^n-nI_{n-1},\quad n=1,2,3,\ldots.
 $$
 
-Furthermore, we have: $I_0:=\displaystyle\int1\,dx=x+C$.
+Furthermore, we have: $I_0=\displaystyle\int1\,dx=x+C$.
 :::
 
 ::::::{prf:Example}
@@ -733,7 +733,7 @@ since $\displaystyle\int_0^{\frac{1}{2}\pi}1\,dx=\frac{\pi}{2}$. Note that the p
 
 ::::{exercise}
 :label: Exc:Integration:PartsWallis
-Let $I_n:=\displaystyle\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx$.
+Let $I_n=\displaystyle\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx$.
 
 (a) Show that $I_{2n+2}\leq I_{2n+1}\leq I_{2n}$.
 
@@ -839,7 +839,7 @@ This implies that
 :class: solution, dropdown
 The results in {eq}`Eq:Integration:PartsSerret` can also be obtained using the Feynman method (see: {numref}`Sec:Integration:ImproperIntegrals` on improper integrals).
 
-Note that Serret's integral is a special case of $I(\alpha):=\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
+Note that Serret's integral is a special case of $I(\alpha)=\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
 
 Differentiation with respect to $\alpha$ leads to 
 
