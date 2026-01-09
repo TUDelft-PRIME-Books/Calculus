@@ -399,7 +399,7 @@ We could even try to find a better approximation for what the value of $c$ is. I
 ::::::
 
 
-The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the following result and is known as **Bolzano's Theorem**, named after the Bohemian mathematician [Bernardus Placidus Johann Nepomuk Bolzano (1781-1848)](https://en.wikipedia.org/wiki/Bernard_Bolzano), or the **Intermediate Zero Theorem**.
+The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the following result and is known as **Bolzano's Theorem**, named after the Bohemian mathematician [Bernardus Placidus Johann Nepomuk Bolzano (1781-1848)](https://en.wikipedia.org/wiki/Bernard_Bolzano), or the **Intermediate Zero Theorem**. 
 
 ::::::{prf:corollary} Bolzano's Theorem
 :label: Cor:Continuity:IVT
@@ -410,6 +410,12 @@ Suppose that $f$ is continuous on the closed interval $[a,b]$. If $f(a)$ and $f(
 :::{admonition} Proof of {prf:ref}`Cor:Continuity:IVT`
 :class: tudproof
 Since $f(a)$ and $f(b)$ have opposite signs, the number $0$ must be in between these values. Hence, the result follows directly from {prf:ref}`Theorem:Continuity:IVT`.
+:::
+
+:::{prf:remark}
+:label: Remark:Continuity:Weierstrass
+
+The name Weierstrass Nullstellensatz, named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass) is sometimes used for either {prf:ref}`Theorem:Continuity:IVT` or {prf:ref}`Cor:Continuity:IVT`. Usually, the Weierstrass Nullstellensatz refers to a version of Bolzano's Theorem specifically for polynomials with coefficients in a [real closed field](https://en.wikipedia.org/wiki/Real_closed_field)
 :::
 
 
