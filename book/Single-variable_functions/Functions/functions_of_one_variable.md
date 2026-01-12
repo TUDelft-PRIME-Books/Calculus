@@ -4,7 +4,6 @@
 
 [^myfootnote1]: If you do not live close to Delft, you should come visit once. Then you can experience all the nice (and maybe also the not so nice) things about cycling through a crowded, old town. 
 
-[^myfootnote2]: Delft is not that big, so it not unrealistic that it takes you $10$ minutes to get to your destination.
 
 Suppose you are riding your bicycle through the city center of Delft.[^myfootnote1] As you move along, your speed might change. For instance, sometimes you have to wait for other traffic, or you speed up because move down a small ramp (we do not have hills here in the Netherlands to use to increase your speed). So, for instance, after cycling for $60$ seconds, your speed might be $5$ meters per second, while after $300$ seconds you are at a traffic light and your speed is $0$. We can denote this by using the symbol $v$ for speed and writing $v(120)=5$ and $v(300)=0$. So a more general equation $v(t)=c$ should be read as that after cycling for $t$ seconds the speed $v$ is equal to $c$. This way, we have written the speed $v$ at a **function** of $t$. The time takes the role of the **input variable**, while the speed takes the role of the **output value** or **function value**. So that means that for each input $t$ we have a corresponding output $v(t)$, i.e. the speed $v$ at that particular point in time $t$.
 
@@ -14,7 +13,7 @@ $$
  v(t)=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi t}{60}\right)
 $$
 
-for $0\leq t\leq 600$. Here $t$ describes the number of second that has passed since we have started cycling and since we consider values of $t$ with $0\leq t\leq 600$ we are describing the first $10$ minutes that we are cycling.[^myfootnote2] At different points in time, we could fill in the value of $t$ to find the corresponding value of $v$. For instance, we find
+for $0\leq t\leq 600$. Here $t$ describes the number of second that has passed since we have started cycling and since we consider values of $t$ with $0\leq t\leq 600$ we are describing the first $10$ minutes that we are cycling. At different points in time, we could fill in the value of $t$ to find the corresponding value of $v$. For instance, we find
 
 \begin{align*}
  v(120)&=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 120}{60}\right)=\frac{5}{2}+\frac{5}{2}\cos(2\pi)=\frac{5}{2}+\frac{5}{2}\cdot 1=5,\\ v(300)&=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 300}{60}\right)=\frac{5}{2}+\frac{5}{2}\cos(5\pi)=\frac{5}{2}+\frac{5}{2}\cdot (-1)=0
@@ -26,13 +25,13 @@ $$
  \tilde{v}(t)=\frac{25}{4}-\frac{t}{48}
 $$
 
-for $0\leq t\leq 600$. Then, we find
+for $0\leq t\leq 600$ (we use the symbol $\tilde{v}$ to distinguish between this formula and the previous one). Then, we find
 
 \begin{align*}
  \tilde{v}(60)=\frac{25}{4}-\frac{60}{48}=5,\qquad \tilde{v}(300)=\frac{25}{4}-\frac{300}{48}=0
 \end{align*}
 
-so this formula also gives the right values at the moments in time $t=120$ and $t=300$ (we use the symbol $\tilde{v}$ to distinguish between this formula and the previous one). So which of these is correct? Without knowing more about are journey, it is impossible to know for sure, but, in this case, one is definitely more realistic than the other. For instance, at $t=600$ we have
+so this formula also gives the right values at the moments in time $t=120$ and $t=300$. So which of these is correct? Without knowing more about are journey, it is impossible to know for sure, but, in this case, one is definitely more realistic than the other. For instance, at $t=600$ we have
 
 $$
  v(600)=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 600}{60}\right)=5,\qquad \tilde{v}(600)=\frac{25}{4}-\frac{600}{48}=-\frac{25}{4}
@@ -40,7 +39,7 @@ $$
 
 So for the formula $\tilde{v}(t)=\frac{25}{4}-\frac{t}{48}$ we obtain a negative speed and since we were not taking into account in which direction we were moving a negative speed does not make any sense. So the first formula is, physically speaking, more realistic. Does that mean that it is correct, though? Probably not, since we have only specified the speed at two points in time and a lot can happen at different points. Hence, it would be a major coincidence that the formula we provided perfectly described our movement. Still, we can use this formula to model our journey. Moreover the more points in time we specify what the speed should be, the realistic we can choose our model.
 
-In fact, in almost all processes in nature, science and engineering one quantity depends on another quantity (or perhaps on multiple quantities) and can, therfore, be described by means of a funciton. The branch of mathematics concerned with finding functions describing natural phenomena is called **mathematical modelling**. In this book, the focus is not on the modelling part. Instead, we usually assume that the function is given to us and by analyzing it, we aim to understand the underlying process. 
+In fact, in almost all processes in nature, science and engineering one quantity depends on another quantity (or perhaps on multiple quantities) and can, therfore, be described by means of a function. The branch of mathematics concerned with finding functions describing natural phenomena is called **mathematical modelling**. In this book, the focus is not on the modelling part. Instead, we usually assume that the function is given to us and by analyzing it, we aim to understand the underlying process. 
 
 From a purely mathematical standpoint, functions are equally fundamental. Indeed, most mathematical procedures where one mathematical object is turned into another object can be described by means of a function. As such, understanding what functions are and what you can and cannot do with them is essentially everything that we do in calculus, and mathematical analysis more broadly.
 
@@ -63,7 +62,7 @@ A **function** $f$ is a rule that assigns to each $x$ is a set $D$ a unique elem
 If $f$ has domain $D$ and codomain $D$ we write $f:D\rightarrow C$. We also write $x\mapsto y$ when $f(x)=y$.
 ::::::
 
-So how should you think about a function? There are several different perspectives you can take, but it maybe helpful to think about a function as a machine that takes an **input value** $x$ and turns this into an **output value** or **function value** $f(x)$. We also say that $x$ is **mapped into** $f(x)$ Note that a function only works in one direction: we can always insert an element of the domain to obtain an element of the codomain, but it is not always possible to go back, see {numref}`Section:Inverse`.
+So how should you think about a function? There are several different perspectives you can take, but it maybe helpful to think about a function as a machine that takes an **input value** $x$ and turns this into an **output value** or **function value** $f(x)$. We also say that $x$ is **mapped into** $f(x)$. Note that a function only works in one direction: we can always insert an element of the domain to obtain an element of the codomain, but it is not always possible to go back, see {numref}`Section:Inverse`.
 
 :::::{margin}
 ::::{figure} Images/Fig-Functions1var-Diagram.png
@@ -138,7 +137,7 @@ The codomain of a function should be thought of as the set of all potential outp
 Let $f$ be a function with domain $D$ and codomain $C$. Then the **range** $R$ of $f$ is the set of all function values of $f$. That is, we have
 
 $$
- R=\left\{y\,\mathrm{in}\,C\,\middle|\,\text{There is an }x\,\mathrm{with}\,f(x)=y\right\}=\left\{f(x)\,\middle|\,x\,\mathrm{in}\,D\right\}
+ R=\left\{y\,\,\mathrm{in}\,\,C\,\middle|\,\text{There is an }x\,\mathrm{with}\,f(x)=y\right\}=\left\{f(x)\,\middle|\,x\,\mathrm{in}\,D\right\}
 $$
 ::::::
 
@@ -151,7 +150,7 @@ The range is a subset of the codomain.
 
 Let $f$ be the function defined by $f(x)=3+\sqrt{x-2}$. Since this function is defined by a formula, we assume that its domain is equal to the maximal domain. So what is the maximal domain is this case? For that, we need to find out for which values of $x$ the expression $3+\sqrt{x-2}$ makes sense. The only restriction we have is that we cannot enter negative numbers into a square root, so the expression is defined precisely when $x-2\geq 0$, i.e. when $x\geq 2$. So the maximal domain is the set of all $x$ with $x\geq 2$, i.e. the interval $[2,\infty)$.
 
-We can also determine the range of this function. Since every nonnegative number has a square root, while negative numbers do not have a square root, the expression $\sqrt{x-2}$ can take on any value in take on any value in the interval $[0,\infty)$. Adding $3$ to this square root raises all output values by $3$, so the function $f$ can take on any value in the interval $[3,\infty)$. This interval must, therefore, be the range of $f$.
+We can also determine the range of this function. Since every nonnegative number has a square root, while negative numbers do not have a square root, the expression $\sqrt{x-2}$ can take on any value in the interval $[0,\infty)$. Adding $3$ to this square root raises all output values by $3$, so the function $f$ can take on any value in the interval $[3,\infty)$. This interval must, therefore, be the range of $f$.
 ::::::
 
 ::::::{prf:example} 
@@ -190,7 +189,7 @@ The graph of a function $f$ can be used to reach of the value $f(a)$ for a given
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Graph
-If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all pairs $(x,f(x))$. That is, it is the set $\left\{(x,f(x))\,\middle|\,x\,\mathrm{in}\,D\right\}$. 
+If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all pairs $(x,f(x))$. That is, it is the set $\left\{(x,f(x))\,\middle|\,x\,\,\mathrm{in}\,\,D\right\}$. 
 ::::::
 
 For most functions that we will encounter in this book, the graph looks like one or several curves in $\mathbb{R}^2$. For instance, the graph of the function $f(x)=x^2$ is the curve of all points $(x,y)$ with $y=x^2$, so the graph is a parabola. So we might wonder: is any curve in $\mathbb{R}^2$ the graph of a certain function? For instance, is the circle with radius $1$, centered around the origin, the graph of some function? Well, suppose that there would be some function $f$ which has this circle as its graph. Since the point $(0,1)$ is on the circle, that should mean that $f(0)=1$. However, the point $(0,-1)$ is also on this circle, so that should mean that $f(0)=-1$. Since for a function, a given input ($0$ in this case) can only have a single output, it is implossible that $f(0)$ is both $1$ and $-1$ at the same time. As such, this circle cannot be the graph of any function.
@@ -266,13 +265,14 @@ where $p(x)$ and $q(x)$ are polynomials and $q(x) \neq 0$.
 
 Rational functions will be discussed more extensively in {numref}`Sec:RationalFunctions`.
 
-In {numref}`Sec:Algebra:Trigonometry` we saw that for an angle $\theta$ we can the trigonometric ratios $\sin(\theta)$, $\cos(\theta)$ and $\tan(\theta)$. As such, the sine, cosine and tangent take an angle as input and give a number back as output, which means that they are actually functions.
+In {numref}`Sec:Algebra:Trigonometry` we saw that for an angle $\theta$ we can consider the trigonometric ratios $\sin(\theta)$, $\cos(\theta)$ and $\tan(\theta)$. As such, the sine, cosine and tangent take an angle as input and give a number back as output, which means that they are actually functions.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Trigonometry
 The functions $f(x)=\sin(x)$, $f(x)=\cos(x)$ and $f(x)=\tan(x)$ are called the **trigonometric functions**.
 ::::::
 
+Note that we always assume that the input of a trigonometric function is measured in radians, not in degrees.
 
 In {numref}`Section:Realnumbers` we saw that for a base $b\geq 0$ and an exponent $r$ in $\mathbb{R}$ we could define the exponentiation $b^r$. This concept actually leads to two different types of functions: one where we vary $b$ and one where we vary $r$. For the second type, the one with base $e$, see {numref}`Subsec:RealnumbersE`, plays a particularly important role in calculus.
 
@@ -288,16 +288,16 @@ For $b\geq 0$ the function $f(x)=b^x$ is called an **exponential function**. The
 
 Other important classes of functions are logarithms and inverse trigonometric functions. These will be covered in {numref}`Section:Inverse`.
 
-::::::{prf:example} 
+::::::{prf:example} Linear function
 :label: Ex:Functions1var:Linear
 Consider the function given by $f(x)=2x+3$. This is a polynomial function; in particular, it is a linear function. Since for any value of $x$ it is possible to compute $2x+3$, the maximal domain of this function is the set of all real numbers $\mathbb{R}$. The graph of this function is shown below.
 
 Hier de grafiek van deze functie.
 
-As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph? We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increase by any value $\Delta x$, $y$ will increase by $\Delta y=2$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope in {numref}`Chapter:Differentiation`.
+As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph? We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increases by any value $\Delta x$, $y$ will increase by $\Delta y=2\Delta x$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope to other curves than straight lines in {numref}`Chapter:Differentiation`.
 ::::::
 
-::::::{prf:example} 
+::::::{prf:example} Quadratic function
 :label: Ex:Functions1var:Quadratic
 Consider the function given by $h(x)=x^2-4x+3$. This is a quadratic function and, therefore, a special type of polynomial function. Since $h(x)$ exists for any real number $x$, the maximal domain of $h$ is $\mathbb{R}$. The graph of this function is shown below.
 
@@ -313,9 +313,9 @@ Hier de grafiek van de functie $k$.
 
 ::::::
 
-::::::{prf:example} 
+::::::{prf:example} Power functions with positive integer power
 :label: Ex:Functions1var:Cubicandhigher
-We now consider a function of the form $g(x)=x^n$ for some positive integer $n\geq 2$. This is both a polynomial and a power function. The behaviour of this function will greatly depend on whether $n$ is even or odd$. 
+We now consider a function of the form $g(x)=x^n$ for some positive integer $n\geq 2$. This is both a polynomial and a power function. The behaviour of this function will greatly depend on whether $n$ is even or odd. 
 
 Hier twee plaatjes naast elkaar. Links: de grafieken van $x^2$, $x^4$, $x^6$ en $x^8$, rechts: de grafieken van $x^3$, $x^5$, $x^7$ en $x^9$; bij beiden moet het stuk tussen -2 en 2 zichtbaar zijn.
 
@@ -326,7 +326,7 @@ Note that as $n$ gets larger the graphs becomes more flat for $x$ between $-1$ a
 
 ::::::
 
-::::::{prf:example} 
+::::::{prf:example} Reciprocal function
 :label: Ex:Functions1var:Idealgas2
 Let us return to the Ideal Gas Law that was discussed in {prf:ref}`Ex:Functions1var:Naturaldomain`. However, instead of assuming that the volume is constant, we now assume that the temperature $T$ is constant. Then the pressure $P$ can be written as a function of the volume $V$ by writing
 
@@ -339,7 +339,7 @@ That is, the pressure is inversely proportional to the volume. This means that i
 Hier $P$ als grafiek van $V$ (geen maatvoering op de assen want we kennen de constanten niet)
 ::::::
 
-::::::{prf:example} 
+::::::{prf:example} Power function with power $-2$
 :label: Ex:Functions1var:Gravity
 Consider two objects with masses $m_1$ and $m_2$ respectively (measured in $kg$). Then [Newton's law of universal gravitation](https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation) states that the gravitational force $F$ (measured in $N$) acting between the two objects is a function of the distance $r$ (measured in $m$) between the two objects
 
@@ -355,7 +355,7 @@ The graphs is, qualitatively speaking, somewhat similar to the one in {prf:ref}`
 
 ::::::
 
-::::::{prf:example} 
+::::::{prf:example} Power functions with negative integer power
 :label: Ex:Functions1var:Negativepowers
 Let us now consider the power functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$. Their graphs are shown below.
 
@@ -370,9 +370,9 @@ Note that the function values of both $f$ and $g$ blow up near $x=0$. In the ter
 Graphs of functions of the form $h(x)=x^{-n}$ with $n\geq 1$ a positive integer have similar qualitative behaviour to the ones of $f$, if $n$ is odd, or of $g$, if $n$ is even.
 ::::::
 
-::::::{prf:example} 
+::::::{prf:example} Exponential function
 :label: Ex:Functions1var:Exponentialgrowth
-Many quantities in nature have the property that their growth rate is propertional to the current size. This can occur in the form of growth, for instance the population size of bacteria, the spread of a virus or the accumulated interest over savings, or in the form of decay, for instance radioactivity, the amplitude of vibrations or the cooling of an object placed in a colder environment. In each of these cases, it is possible to model the physical quantity as an exponential function of time. That is, because exponential functions have that same growth property that their growth rate (or in more mathematical terms, their derivative) is proportional to the function itself, see {numref}`Section:Differentiability`.
+Many quantities in nature have the property that their growth rate is propertional to the current size. This can occur in the form of growth, for instance the population size of bacteria, the spread of a virus or the accumulated interest over savings, or in the form of decay, for instance the intensity of radioactive radiation, the amplitude of vibrations or the cooling of an object placed in a colder environment. In each of these cases, it is possible to model the physical quantity as an exponential function of time. That is, because exponential functions have that same growth property that their growth rate (or in more mathematical terms, their derivative) is proportional to the function itself, see {numref}`Section:Differentiability`.
 
 To show the typical behaviour of exponential functions, let us consider the functions $A(t)=2^t$ and $B(t)=\left(\frac{1}{3}\right)^t$. Using the computation rules for exponentiation, we can write the function $B$ alternatively as $B(t)=3^{-t}$. The graphs of the functions $A$ and $B$ are shown below.
 
@@ -387,15 +387,19 @@ In general, an exponential function $C(t)=a^t$ gives rise to exponential growth 
 
 ::::::
 
-::::::{prf:example} 
+::::::{prf:example} Trigonometric functions
 :label: Ex:Functions1var:Trigonometry
-Apart from their role in geometry, the trigonometric functions $f(x)=\cos(x)$, $g(x)=\sin(x)$ and $h(x)=\tan(x)$ also play an important role in describing certain physical processes. For instance, the amplitude of an undamped mass-spring system as a function of time can be described in terms of sines and/or cosines. In fact, whenever there is osciallatory behaviour, these functions tend to be good candidates to use as model.
+Apart from their role in geometry, the trigonometric functions $f(\theta)=\cos(\theta)$, $g(\theta)=\sin(\theta)$ and $h(\theta)=\tan(\theta)$ also play an important role in describing certain physical processes. For instance, the amplitude of an undamped mass-spring system as a function of time can be described in terms of sines and/or cosines. In fact, whenever there is osciallatory behaviour, these functions tend to be good candidates to use as model.
 
 Let us analyse these functions a bit more in mathematical terms. First, let us consider their graphs.
 
 Hier de grafieken van de drie functies.
 
 One of the first things you might notice is that $f$ and $g$ repeat themselves after each cycle of length $2\pi$, while $h$ repeats itself after each cycle of length $\pi$. We say that these functions are **periodic**. This periodicity follows from {prf:ref}`Thm:Trigonometry:Periodicity`. 
+
+In addition, we note that the cosine and sine only take on values in between $-1$ and $1$. This follows from the geometric interpration of the point $(\cos(\theta),\sin(\theta))$ as a point on the unit circle, which must mean that these values must be in between $-1$ and $1$. As such, the range of the functions $f$ and $g$ is the interval $[-1,1]$. By contrast, the tangent can take on any value, so its range is the set of real numbers $\mathbb{R}$.
+
+Finally, we note that the graphs of the functions $f$ and $g$ intersect for $x$ somewhere between $0$ and $1$. Can find this value of $x$ exactly? For that, we first need to understand what it means that the graphs of two functions intersect. Since the point $(\theta,y)$ is on the graph of $f$ precisely when $f(\theta)=y$, this means that we are looking for a value of $\theta$ for which $\cos(\theta)=\sin(\theta)$. There is only one value of $\theta$ between $0$ and $1$ for which that is the case, and that is $\theta=\frac{\pi}{4}$. Indeed, we have $\cos\left(\frac{\pi}{4}\right)=\sin\left(\frac{\pi}{4}\right)=\frac{1}{2}\sqrt{2}$. So the graphs of $f$ and $g$ intersect at the point $\left(\frac{\pi}{4},\frac{1}{2}\sqrt{2}\right)$. By the periodicity of the sine and cosine, they will intersect at each point of the form $\left(\frac{\pi}{4}+2n\pi,\frac{1}{2}\sqrt{2}+2n\pi\right)$ for integer values of $n$.
 
 ::::::
 
@@ -410,7 +414,7 @@ In most cases, functions are defined in terms of $1$ formula. For instance, for 
 The absolute value $|x|$ of a number $x$ is actually a shorthand for $x$ if $x$ is positive or $-x$ or $x$ is negative. So the function $a(x)=|x|$ can alternatively be written as
 
 $$
- a(x)=\left\{\begin{array}{lll}x,\qquad&\text{if }&x\geq 0,\\ -1,&\text{if }&x<0.\end{array}\right.
+ a(x)=\left\{\begin{array}{lll}x,\qquad&\text{if }&x\geq 0,\\ -x,&\text{if }&x<0.\end{array}\right.
 $$
 
 This notation should be read as that $a$ follows the formula $a(x)=x$ for $x\geq 0$, while $a$ follows the formula $a(x)=-x$ for $x<0$.
