@@ -248,7 +248,7 @@ The sum $\displaystyle\sum_{k=1}^nf(x_k^*)(x_k-x_{k-1})$ is called a **Riemann s
 :::::{prf:definition}
 :label: Def:Integration:RiemannSum
 
-The **Riemann sum** of a function $f$ on the interval $[a,b]$ for a given partition $P=\{x_0,x_1,\ldots,x_n\}$ with sample points $x_k^*$ in each subinterval $[x_{k-1},x_k]$ is defined as
+The **Riemann sum** of a function $f$ on the interval $[a,b]$ for a given partition $P=\{x_0,x_1,\ldots,x_n\}$ with **sample points** $x_k^*$ in each subinterval $[x_{k-1},x_k]$ is defined as
 
 $$
 \sum_{k=1}^nf(x_k^*)(x_k-x_{k-1}).
@@ -294,9 +294,107 @@ Luckily, but without giving a formal proof here, we have the following important
 Every *piecewise continuous* function on an interval $[a,b]$ is integrable.
 ::::
 
+Before we continue to properties of definite integrals, we show one example of calculating a definite integral using Riemann sums.
 
+::::::{prf:example}
+:label: Ex:Integration:RiemannSum
 
+Consider the function $f$ on the interval $[0,1]$ given by $f(x)=x^2$. We want to calculate the integral $\displaystyle\int_0^1x^2\,dx$ using Riemann sums.
 
+We divide the interval $[0,1]$ into $n>0$ subintervals of equal width $\Delta x=\frac{1-0}{n}=\frac{1}{n}$. The endpoints of the subintervals are given by $x_k=0+k\cdot\frac{1}{n}=\frac{k}{n}$ for $k=0,1,2,\ldots,n$.
+
+As sample points we choose the right endpoints of each subinterval, $x_k^*=\frac{k}{n}$ for $k=1,2,\ldots,n$, which gives the function values $f(x_k^*)=\left(\frac{k}{n}\right)^2=\frac{k^2}{n^2}$.
+
+Then the Riemann sum $R$ equals,
+
+\begin{align*}
+R &= \sum_{k=1}^nf(x_k^*)\Delta x \\
+&= \sum_{k=1}^n\frac{k^2}{n^2}\cdot\frac{1}{n}=\frac{1}{n^3}\sum_{k=1}^nk^2 \\
+&= \frac{1}{n^3}\cdot\frac{n(n+1)(2n+1)}{6} \\
+&= \frac{2n^3+3n^2+n}{6n^3} \\
+&= \frac{2n^2+3n+1}{6n^2}.
+\end{align*}
+
+Using techniques from {numref}`Section:Limitinf` we find that
+
+$$
+\lim_{n\rightarrow\infty}R=\lim_{n\rightarrow\infty}\frac{2n^2+3n+1}{6n^2}=\frac{2}{6}=\frac{1}{3}.
+$$
+
+Because the limit of the Riemann sums exists, we conclude that our function $f$ is integrable on the interval $[0,1]$ and that
+
+$$
+\int_0^1x^2\,dx=\frac{1}{3}.
+$$
+
+::::::
+
+Calculating definite integrals using Riemann sums can be quite laborious. In the next sections we will see other techniques to calculate definite integrals more easily. But first we state some important properties of definite integrals.
+
+## Properties of definite integrals
+
+Using {prf:ref}`Def:Integration:DefiniteGeneral` we can derive several useful properties of definite integrals.
+
+::::{prf:theorem}
+:label: Th:Integration:DefinitePropertiesArea
+
+- $\displaystyle\int_a^af(x)\,dx=0$ with $a$ any real number and $f$ defined at $a$;
+
+- $\displaystyle\int_a^bc\,dx=c(b-a)$ with $a$, $b$ and $c$ any real numbers;
+
+- $\displaystyle\int_a^bf(x)\,dx=\int_a^rf(x)\,dx+\int_r^bf(x)\,dx$ for any $r$ in $[a,b]$ and $f$ piecewise continuous on $[a,b]$.
+
+- $\displaystyle\int_{-a}^af(x)\,dx=0$ with $a$ any real number and $f$ *odd* and piecewise continuous on $[-a,a]$.
+
+- $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$ with $a$ any real number and $f$ *even* and piecewise continuous on $[-a,a]$.
+
+::::
+
+The above theorem can be shown by considering the areas involved according to {prf:ref}`Def:Integration:DefiniteGeneral`. We will not give the full proofs here, but illustrate the last two properties with examples.
+
+::::::{prf:Example}
+:label: Ex:Integration:DefiniteOdd
+
+The sine function $\sin(x)$ is an odd function on the interval $\left[-\frac{1}{2}\pi,\frac{1}{2}\pi\right]$, as shown below.
+
+```{figure} Images/sine_odd.png
+---
+width: 50%
+name: Fig:Integration:DefiniteOdd
+align: center
+---
+The graph of the sine function.
+```
+
+Inspection of the graph shows that the area below the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. But because the area below the $x$-axis is taken with a negative sign in {prf:ref}`Def:Integration:DefiniteGeneral`, these two areas cancel each other out, and we find
+
+$$
+\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin(x)\,dx=0.
+$$
+
+::::::
+
+::::::{prf:Example}
+:label: Ex:Integration:DefiniteEven
+
+The absolute value function $|x|$ is an even function on the interval $\left[-1,1\right]$, as shown below.
+
+```{figure} Images/absolute.png
+---
+width: 50%
+name: Fig:Integration:DefiniteEven
+align: center
+---
+The integral of an even function
+```
+
+Inspection of the graph shows that the area above the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Because both areas are taken with a positive sign in {prf:ref}`Def:Integration:DefiniteGeneral`, we find
+
+$$
+\int_{-1}^1|x|\,dx=2\int_0^1|x|\,dx=2\cdot\frac{1}{2}=1.
+$$
+
+::::::
 
 
 <!-- Stop EDIT -->
@@ -309,55 +407,13 @@ $$
 
 **Properties**
 
-- $\displaystyle\int_a^af(x)\,dx=0$;
-
 - $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$;
 
-- $\displaystyle\int_a^bc\,dx=c(b-a)$ with $c$ a constant;
 
 - $\displaystyle\int_a^b\left(f(x)+g(x)\right)\,dx=\int_a^bf(x)\,dx+\int_a^bg(x)\,dx$;
 
 - $\displaystyle\int_a^b cf(x)\,dx=c\int_a^bf(x)\,dx$ with $c$ a constant;
 
-- If $r$ is some point in $(a,b)$, then: $\displaystyle\int_a^bf(x)\,dx=\int_a^rf(x)\,dx+\int_r^bf(x)\,dx$;
-
-- If $f$ is an *odd* function defined on $[-a,a]$, then: $\displaystyle\int_{-a}^af(x)\,dx=0$;
-
-- If $f$ is an *even* function defined on $[-a,a]$, then: $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$.
-
-::::::{prf:Example}
-:label: Ex:Integration:DefiniteOdd
-```{figure} Images/sine_odd.png
----
-width: 50%
-name: odd function
-align: center
----
-The integral of an odd function
-```
-
-$$
-\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin(x)\,dx=0.
-$$
-
-::::::
-
-::::::{prf:Example}
-:label: Ex:Integration:DefiniteEven
-```{figure} Images/absolute.png
----
-width: 50%
-name: even function
-align: center
----
-The integral of an even function
-```
-
-$$
-\int_{-1}^1|x|\,dx=2\int_0^1|x|\,dx=2\cdot\frac{1}{2}=1.
-$$
-
-::::::
 
 **Comparison properties**
 
