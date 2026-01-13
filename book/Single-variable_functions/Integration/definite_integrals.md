@@ -115,11 +115,100 @@ $$
 
 ::::::
 
-<!-- STOP EDIT -->
+Now we know how to handle the definite integral of positive piecewise-continuous functions, we are going to extend {prf:ref}`Def:Integration:DefiniteIntegral` to negative piecewise-continuous functions and after that to piecewise-continuous functions that take on both positive and negative values.
+
+::::::{prf:definition}
+:label: Def:Integration:DefiniteNegative
+
+For a *negative* and *piecewise continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a negative and piecewise-continuous function**
+
+$$
+\int_a^bf(x)\,dx
+$$
+
+is *minus* the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$.
+::::::
+
+Note that this means that we assume that area is always a positive quantity. Hence, for negative piecewise-continuous functions the definite integral will be a negative number.
+
+But what if the function takes on both positive and negative values? Well, in that case we split the interval into several subintervals such that on each subinterval the function is either positive or negative. Then we calculate the area on each subinterval and add them together, taking into account the sign of the function on each subinterval. Or in other words: If $f$ takes on both positive and negative values the integral equals the total area above the $x$-axis minus the total area below the $x$-axis, as illustrated in the following figure.
+
+```{figure} Images/integral3.png
+---
+width: 50%
+name: integral
+align: center
+---
+
+The integral $\displaystyle\int_a^bf(x)\,dx$ for a function that takes on both positive and negative values.
+```
+
+Although the above image contains a continuous function, the same idea applies to piecewise-continuous functions. This leads us to the following final definition of a definite integral.
+
+::::::{prf:definition}
+:label: Def:Integration:DefiniteGeneral
+For a *piecewise continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a piecewise-continuous function**
+
+$$
+\int_a^bf(x)\,dx
+$$
+
+is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$, taking into account the sign of the function on each subinterval:
+
+- If the function is completely positive on a subinterval, the area on that subinterval is added.
+- If the function is completely negative on a subinterval, the area on that subinterval is subtracted.
+- If the function takes on both positive and negative values on a subinterval, the area above the $x$-axis is added and the area below the $x$-axis is subtracted.
+
+::::::
+
+We end this subsection with an example.
+
+::::::{prf:example}
+:label: Ex:Integration:DefiniteBoth
+
+Consider the function $f:[-2,5]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}1, &-2\leq x<0\\2x-4, & 0\leq x<2,\\-x+4, & 2\leq x\leq 5\end{array}\right.$, of which you can find the graph below.
+
+```{figure} Images/Fig-Integration-DefiniteBoth.png
+---
+width: 50%
+name: Fig:Integration:DefiniteBoth
+align: center
+---
+
+The graph of a piecewise continuous function that takes on both positive and negative values.
+```
+
+The integral $\displaystyle\int_{-2}^5f(x)\,dx$ can be calculated as follows:
+
+\begin{align*}
+\int_{-2}^{5}f(x)\,dx &= \int_{-2}^{0}1\,dx+\int_{0}^{2}2x-4\,dx+\int_{2}^{5}(-x+4)\,dx\\
+&= \int_{-2}^{0}1\,dx+\int_{0}^{2}2x-4\,dx+\int_{2}^{5}(-x+4)\,dx+\int_{4}^{5}(-x+4)\,dx \\
+&= 2 \cdot 1-\frac12\cdot2\cdot4+\frac12\cdot2\cdot2-\frac12\cdot1\cdot1 \\
+&= 2 - 4 + 2 - \frac12 \\
+&= \frac12.
+\end{align*}
+
+In the second step we have split the last integral into two parts: one part from $2$ to $4$ where the function is positive and one part from $4$ to $5$ where the function is negative. After that we used the formulas for the areas of rectangles and triangles to calculate the areas and introduced the appropriate signs.
+
+::::::
+
+Now we have {prf:ref}`Def:Integration:DefiniteGeneral`, we can start looking at how to calculate definite integrals for functions that are not so easy to handle geometrically. For this we introduce the concept of Riemann sums.
 
 ## Riemann sums
 
-In order to find this area, we start with an approximation: we divide the interval $[a,b]$ into subintervals and consider the sum of the areas of the indicated rectangles:
+Consider the function shown in the figure below with the indicated area between the graph of the function and the $x$-axis that we want to calculate.
+
+```{figure} Images/Fig-DefiniteIntegrals-General.png
+---
+width: 50%
+name: Fig:DefiniteIntegrals:General
+align: center
+---
+
+A general function with area to be calculated.
+```
+
+Even though the function is continuous on the interval $[a,b]$, it is not composed of a simple geometric shape such as a rectangle or a triangle. Hence we cannot calculate the area directly. In order to find this area, we start with an approximation: we divide the interval $[a,b]$ into subintervals and consider the sum of the areas of the indicated rectangles:
 
 ```{figure} Images/integral2.png
 ---
@@ -127,6 +216,7 @@ width: 50%
 name: Fig:Integration:SumRectangles
 align: center
 ---
+
 Sum of area of rectangles.
 ```
 
@@ -150,7 +240,7 @@ Building a Riemann sum.
 Choose a sample point $x_k^*$ in each subinterval $[x_{k-1},x_k]$, then the area equals
 
 $$
-\int_a^bf(x)\,dx=\lim_{n\to\infty}\,\sum_{k=1}^nf(x_k^*)\Delta x\quad\text{with}\quad\Delta x=x_k-x_{k-1}=\frac{b-a}{n}.
+\sum_{k=1}^nf(x_k^*)\Delta x\quad\text{with}\quad\Delta x=x_k-x_{k-1}=\frac{b-a}{n}.
 $$
 
 The sum $\displaystyle\sum_{k=1}^nf(x_k^*)(x_k-x_{k-1})$ is called a **Riemann sum**, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann):
@@ -161,37 +251,61 @@ The sum $\displaystyle\sum_{k=1}^nf(x_k^*)(x_k-x_{k-1})$ is called a **Riemann s
 The **Riemann sum** of a function $f$ on the interval $[a,b]$ for a given partition $P=\{x_0,x_1,\ldots,x_n\}$ with sample points $x_k^*$ in each subinterval $[x_{k-1},x_k]$ is defined as
 
 $$
-\sum_{k=1}^nf(x_k^*)(x_k-x_{k-1})
+\sum_{k=1}^nf(x_k^*)(x_k-x_{k-1}).
 $$
 
 :::::
 
-**Remarks**
+If we let the number of subintervals $n$ go to infinity, the width of each subinterval $\Delta x$ goes to zero and the Riemann sum approaches the exact area between the graph of the function and the $x$-axis. This leads us to the following theorem for the definite integral in terms of Riemann sums.
 
-- The integral sign $\displaystyle\int$ was introduced by the German mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) and has the form of an elongated (stretched) $S$ which indicates the *limit* of (Riemann) sums.
+::::::{prf:theorem}
+:label: Thm:Integration:DefiniteRiemann
+
+The **definite integral of a piecewise continuous function** $f$ on the interval $[a,b]$ is equal to the limit of the Riemann sums as the number of subintervals $n$ approaches infinity
+
+$$
+\int_a^bf(x)\,dx=\lim_{n\to\infty}\sum_{k=1}^nf(x_k^*)\Delta x\quad\text{with}\quad\Delta x=\frac{b-a}{n}\quad\text{and}\quad x_k=a+k\Delta x,
+$$
+
+provided that this limit exists and is the same for *every* choice of sample points $x_k^*$ in each subinterval $[x_{k-1},x_k]$.
+::::::
+
+::::{prf:remark}
+:label: Remark:Integration:RiemannSum
+
+We have chosen to divide the interval $[a,b]$ into $n$ subintervals of *equal width* $\Delta x=(b-a)/n$, which is not really necessary but makes the theorem a bit more manageable.
+::::
+
+The integral sign $\displaystyle\int$ was introduced by the German mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) and has the form of an elongated (stretched) $S$ which indicates the *limit* of (Riemann) sums.
+
+Because the limit of the Riemann sums might not always exist, we introduce the term **integrable** to indicate that the integral exists:
+
+::::{prf:definition}
+:label: Def:Integration:Integrable
+
+A function for which the limit of the Riemann sums exists is called **integrable**.
+::::
+
+Luckily, but without giving a formal proof here, we have the following important result:
+
+::::{prf:theorem}
+:label: Th:Integration:IntegrablePiecewise
+
+Every *piecewise continuous* function on an interval $[a,b]$ is integrable.
+::::
+
+
+
+
+
+
+<!-- Stop EDIT -->
 
 Another choice of this variable does not change the integral:
 
 $$
 \int_a^bf(x)\,dx=\int_a^bf(t)\,dt=\int_a^bf(u)\,du=\int_a^bf(\square)\,d\square=\int_a^bf(\triangle)\,d\triangle.
 $$
-
-- The definition of the integral of a positive function holds when the function is *continuous* on the interval $[a,b]$, but can easily be extended to *piecewise continuous* functions.
-
-- We have chosen to divide the interval $[a,b]$ into $n$ subintervals of *equal width* $\Delta x=(b-a)/n$ which is not really necessary.
-
-- For *negative* functions the integral is defined as *minus* the area between the graph of $f$ and the $x$-axis. If $f$ takes on both positive and negative values the integral equals the total area above the $x$-axis minus the total area below the $x$-axis.
-
-```{figure} Images/integral3.png
----
-width: 50%
-name: integral
-align: center
----
-Signed areas
-```
-
-- A function for which the limit of the Riemann sums exists is called **integrable**; every *piecewise continuous* function on an interval $[a,b]$ is integrable (its integral exists).
 
 **Properties**
 
