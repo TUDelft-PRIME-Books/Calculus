@@ -16,7 +16,7 @@ This page reuses content from {cite:t}`dekleijn2025longdivision`.
 Is this proper?
 
 ::::
-:::::
+
 
 Rational functions are functions that are formed by the ratio of two polynomials. They are widely used in various fields of mathematics, including calculus, algebra, and real analysis. Rational functions can exhibit interesting behaviors, such as asymptotes and discontinuities, which are treated in sections further on in this chapter.
 

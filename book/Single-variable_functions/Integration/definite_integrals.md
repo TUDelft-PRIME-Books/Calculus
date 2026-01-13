@@ -14,7 +14,7 @@ We start with the definition of the **definite integral** of a function on an in
 
 ::::::{prf:definition}
 :label: Def:Integration:DefiniteIntegral
-For a *positive* and *continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a positive and continuous**
+For a *positive* and *continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a positive and continuous function**
 
 $$
 \int_a^bf(x)\,dx
@@ -61,6 +61,59 @@ $$
 $$
 
 ::::
+
+Of course we do not only have positive and continuous functions, but also many more. First, we extend the concept of the definite integral to positive piecewise-continuous functions. Then we will see how to deal with negative functions and functions that take on both positive and negative values.
+
+::::{prf:definition}
+:label: Def:Integration:DefinitePositivePiecewise
+
+For a *positive* and *piecewise continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a positive piecewise-continuous function**
+
+$$
+\int_a^bf(x)\,dx
+$$
+
+is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$.
+
+::::
+
+As you can see, the definition is the same as for positive continuous functions. The reason is that we can consider each piece of the positive piecewise-continuous function separately as a positive function on each corresponding subinterval and add the areas together.
+
+:::{prf:theorem}
+:label: Th:Integration:DefinitePositivePiecewise
+
+For a *positive* and *piecewise continuous* function $f$ defined on an interval $[a,b]$ that is made up of $n$ continuous pieces on the subintervals $[x_0,x_1]$, $[x_1,x_2]$, $\ldots$, $[x_{n-1},x_n]$ with $a=x_0<x_1<\ldots<x_n=b$, the definite integral equals the sum of the integrals on each subinterval:
+
+$$
+\int_a^bf(x)\,dx=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\,dx.
+$$
+
+::::
+
+The next example illustrates this theorem.
+
+::::::{prf:Example}
+:label: Ex:Integration:DefinitePiecewise
+Consider the function $f:[0,3]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}x, & 0\leq x<1,\\2, & 1\leq x\leq 2,\\x-1, & 2<x\leq 3\end{array}\right.$.
+
+The graph of this piecewise continuous function is shown below.
+
+```{figure} Images/piecewise.png
+---
+width: 50%
+name: a piecewise continuous function
+align: center
+---
+The graph of a piecewise continuous function.
+```
+
+The definite integral of $f$ over the interval $[0,3]$ can be calculated as the sum of three areas:
+
+$$
+\int_0^3f(x)\,dx=\int_0^1x\,dx+\int_1^22\,dx+\int_2^3(x-1)\,dx=\frac{1}{2}+2+\frac{3}{2}=4.
+$$
+
+::::::
 
 <!-- STOP EDIT -->
 
@@ -124,24 +177,6 @@ $$
 $$
 
 - The definition of the integral of a positive function holds when the function is *continuous* on the interval $[a,b]$, but can easily be extended to *piecewise continuous* functions.
-
-::::::{prf:Example}
-:label: Ex:Integration:DefinitePiecewise
-Consider the function $f:[0,3]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}x, & 0\leq x<1\\2, & 1\leq x\leq 2\\x-1, & 2<x\leq 3.\end{array}\right.$
-```{figure} Images/piecewise.png
----
-width: 50%
-name: a piecewise continuous function
-align: center
----
-The integral of a piecewise continuous function
-```
-
-$$
-\int_0^3f(x)\,dx=\int_0^1x\,dx+\int_1^22\,dx+\int_2^3(x-1)\,dx=\frac{1}{2}+2+\frac{3}{2}=4.
-$$
-
-::::::
 
 - We have chosen to divide the interval $[a,b]$ into $n$ subintervals of *equal width* $\Delta x=(b-a)/n$ which is not really necessary.
 
