@@ -108,6 +108,11 @@ The next example shows how we can use this property to investigate function valu
 :::{figure} Images/Construction.png
 :name: Fig:ApproximatingFunctions:Construction
 :class: dark-light
+:placement: caption
+:source: [Pixabay](https://pixabay.com/photos/modern-architecture-roof-construction-100973/)
+:license: Pixabay License
+:date: 2013-04-07
+:author: <a href="https://pixabay.com/users/pixelanarchy-555/">PixelAnarchy</a>
 
 A set of cylindrical steel beams.
 
@@ -342,8 +347,13 @@ Consider we have a scooter:
 :::{figure} Images/scooter.jpg
 :name: Fig:ApproximatingFunctions:cuberoot-quad
 :figwidth: 50%
+:placement: caption
+:source: [Vecteezy](https://www.vecteezy.com/vector-art/1270966-motor-scooter-isolated-on-white-background)
+:license: Vecteezy Free License
+:author: <a href="https://www.vecteezy.com/members/emiltimplaru">Timplaru Emil</a>
+:date: 2020-09-03
 
-A scooter. <a href="https://www.vecteezy.com/free-vector/scooter">Scooter Vectors by Vecteezy</a>
+A scooter.
 
 :::
 

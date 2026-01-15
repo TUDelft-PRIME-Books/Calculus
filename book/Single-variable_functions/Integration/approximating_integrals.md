@@ -71,8 +71,13 @@ $$
 :::{figure} Images/Fig-NumericalIntegration-truck.svg
 :name: Fig:ApproximatingIntegrals:truck
 :figwidth: 90%
+:placement: caption
+:source: [Vecteezy](https://www.vecteezy.com/vector-art/329203-truck-illustration-isolated-on-a-white-background)
+:license: Vecteezy Free License
+:date: 2019-03-01
+:author: <a href="https://www.vecteezy.com/members/callmetak">Takeshi Ishikawa</a>
 
-Truck with spoiler on the cabin. Originally from <a href="https://www.vecteezy.com/free-vector/truck" target="_blank">Truck Vectors by Vecteezy</a>.
+Truck with spoiler on the cabin.
 
 :::
 
