@@ -101,7 +101,7 @@ The graph of this piecewise continuous function is shown below.
 ```{figure} Images/piecewise.png
 ---
 width: 50%
-name: a piecewise continuous function
+name: Fig:Integration:DefinitePiecewise
 align: center
 ---
 The graph of a piecewise continuous function.
@@ -136,7 +136,7 @@ But what if the function takes on both positive and negative values? Well, in th
 ```{figure} Images/integral3.png
 ---
 width: 50%
-name: integral
+name: Fig:Integration:DefiniteBoth
 align: center
 ---
 
@@ -396,51 +396,66 @@ $$
 
 ::::::
 
+The next theorem states that the choice of the variable of integration does not matter.
 
-<!-- Stop EDIT -->
+::::{prf:theorem}
+:label: Th:Integration:VariableOfIntegration
 
-Another choice of this variable does not change the integral:
+For a integrable function $f$ on the interval $[a,b]$, the choice of the variable of integration does not change the value of the integral:
 
 $$
 \int_a^bf(x)\,dx=\int_a^bf(t)\,dt=\int_a^bf(u)\,du=\int_a^bf(\square)\,d\square=\int_a^bf(\triangle)\,d\triangle.
 $$
 
-**Properties**
+::::
 
-- $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$;
+A rigorous proof of this theorem can be given using Riemann sums, but we will not give it here. You can however convince yourself that this is true by considering the definition of the definite integral in {prf:ref}`Def:Integration:DefiniteGeneral`. If you would draw the graph of the function $f$ and shade the area between the graph and the $x$-axis between $a$ and $b$, you would see that the area does not depend on the name of the variable of integration.
 
+Finally, we state some more properties of definite integrals. Proving these properties requires something called the *Fundamental theorem of calculus*, which we will introduce in {numref}`Sec:Integration:FundamentalTheorem`. For now, we just state the properties.
 
-- $\displaystyle\int_a^b\left(f(x)+g(x)\right)\,dx=\int_a^bf(x)\,dx+\int_a^bg(x)\,dx$;
+::::{prf:theorem}
+:label: Th:Integration:DefinitePropertiesFundamental
 
-- $\displaystyle\int_a^b cf(x)\,dx=c\int_a^bf(x)\,dx$ with $c$ a constant;
+- $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$ for any real numbers $a$ and $b$ and $f$ piecewise continuous on $[a,b]$.
 
+- $\displaystyle\int_a^b\left(f(x)+g(x)\right)\,dx=\int_a^bf(x)\,dx+\int_a^bg(x)\,dx$ for any real numbers $a$ and $b$ and $f$ and $g$ piecewise continuous on $[a,b]$.
 
-**Comparison properties**
+- $\displaystyle\int_a^b cf(x)\,dx=c\int_a^bf(x)\,dx$ for any real numbers $a$, $b$ and $c$ and $f$ piecewise continuous on $[a,b]$.
 
-- If $f(x)\geq0$ for $a\leq x\leq b$, then $\displaystyle\int_a^bf(x)\,dx\geq0$.
+::::
 
-- If $f(x)\geq g(x)$ for $a\leq x\leq b$, then $\displaystyle\int_a^bf(x)\geq\int_a^bg(x)\,dx$.
+Finally, we state some important comparison properties of definite integrals. These can be used to estimate the value of definite integrals, as we will do in {prf:ref}`Ex:Integration:DefiniteApproximation`.
 
-- If $m\leq f(x)\leq M$ for $a\leq x\leq b$, then $m(b-a)\leq\displaystyle\int_a^bf(x)\,dx\leq M(b-a)$.
+::::{prf:theorem}
+:label: Th:Integration:DefiniteComparison
+
+- If $f(x)\geq0$ for $a\leq x\leq b$ and $f$ is piecewise continuous on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq0$.
+
+- If $f(x)\geq g(x)$ for $a\leq x\leq b$ and $f$ and $g$ are piecewise continuous on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq\int_a^bg(x)\,dx$.
+
+- If $m\leq f(x)\leq M$ for $a\leq x\leq b$ and $f$ is piecewise continuous on $[a,b]$, then $m(b-a)\leq\displaystyle\int_a^bf(x)\,dx\leq M(b-a)$.
+::::
+
 
 ::::::{prf:Example}
 :label: Ex:Integration:DefiniteApproximation
-In order to find an estimation of $\displaystyle\int_0^1e^{-x^2}\,dx$, we note that the integrand $f(x)=e^{-x^2}$ is a decreasing function on $[0,1]$. Its absolute maximum value is $M=f(0)=1$ and its absolute minimum value is $m=f(1)=e^{-1}$. Hence we have
+
+In order to find estimate the value of $\displaystyle\int_0^1e^{-x^2}\,dx$, we note that the integrand $f(x)=e^{-x^2}$ is a decreasing function on $[0,1]$. Its absolute maximum value is $M=f(0)=1$ and its absolute minimum value is $m=f(1)=e^{-1}$. Hence we have
 
 $$
 e^{-1}=e^{-1}(1-0)\leq\int_0^1e^{-x^2}\,dx\leq1(1-0)=1.
 $$
 
-Since $e^{-1}\approx0.3679$ we conclude that $0.3679\leq\displaystyle\int_0^1e^{-x^2}\,dx\leq1$.
+Since $e^{-1}\approx0.3679$ we conclude that $0.367\leq\displaystyle\int_0^1e^{-x^2}\,dx\leq1$.
 ::::::
 
-## Distances
+## Interpretation of definite integrals
 
-Instead of calculating areas, integration can also be used to find *distances*. Let's consider the **distance** problem: find the distance traveled by an object during a certain time period when the velocity of the object is known at all times.
+Although {prf:ref}`Def:Integration:DefiniteGeneral` defines the definite integral as an area, this area is only an area in the most general sense of the word. In fact, definite integrals can be used in many different contexts and the units of the definite integral depend on the context as well.
 
-If the velocity remains constant, then the distance problem is easy to solve: the distance is the product of the velocity and the time.
+If, for example, the function $f$ represents the height of a fence in meters above the ground along a straight path of length $b-a$ meters, then the definite integral $\displaystyle\int_a^bf(x)\,dx$ truly represents the *area* of the fence in square meters.
 
-What if the velocity varies?
+If, however, the function $f$ represents the *speed* at which an object is moving in meters per second over a time interval $[a,b]$ in seconds then the definite integral $\displaystyle\int_a^bf(t)\,dt$ represents the *distance* traveled by the object in that same time interval, measured in meters. The next examples illustrates this interpretation.
 
 ::::::{prf:example}
 
@@ -449,32 +464,49 @@ What if the velocity varies?
 :name: Fig:DefiniteIntegrals:Athlete
 :align: center
 :figclass: margin
+:author: <a href="https://unsplash.com/@mroz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Filip Mroz</a>
+:placement: caption
+:license: Unsplash License
+:source: [Unsplash](https://unsplash.com/photos/woman-running-wearing-armband-XCkRGOX2VgM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText")
+:date: 2016-11-16
 
-An athlete during an interval training. Photo by <a href="https://unsplash.com/@mroz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Filip Mroz</a> on <a href="https://unsplash.com/photos/woman-running-wearing-armband-XCkRGOX2VgM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-      
+An athlete during an interval training.
+
 :::
 
-Consider an athlete during an interval training. She starts walking at a speed of $5\;\text{km/h}$ during $5$ minutes. Then she runs at a speed of $15\;\text{km/h}$ during $2$ minutes, followed by a period of $4$ minutes walking at a speed of $6\;\text{km/h}$. Then she runs at a speed of $20\;\text{km/h}$ during $3$ minutes, followed by $6$ minutes walking at a speed of $4\;\text{km/h}$.
+Consider an athlete during an interval training. She starts walking at a speed of $5$ km/h during $5$ minutes. Then she runs at a speed of $15$ km/h during $2$ minutes, followed by a period of $4$ minutes walking at a speed of $6$ km/h. Then she runs at a speed of $20$ km/h during $3$ minutes, followed by $6$ minutes walking at a speed of $4$ km/h.
 
 What is the distance traveled by the athlete?
 
 :::{figure} Images/distance.png
 :width: 75%
-:name: distance problem
+:name: Fig:DefiniteIntegrals:Distance
 :align: center
 
-The distance traveled by the athlete
+The speed $v$ at which the athlete is moving during the interval training. On the horizontal axis the time $t$ is shown in minutes.
 :::
 
-In order to get the correct units, we change the minutes into hours ($5$ minuties is $\frac{1}{12}$ hour for instance) and add five different areas:
+In order to get the correct units, we change the minutes into hours ($5$ minutes is $\frac{1}{12}$ hour for instance) and add the five different areas:
 
 $$
-\tfrac{1}{12}\cdot5+\tfrac{1}{30}\cdot15+\tfrac{1}{15}\cdot5+\tfrac{1}{20}\cdot20+\tfrac{1}{15}\cdot6=\tfrac{25+30+20+60+24}{60}=\tfrac{159}{60}.
+\int_{0}^{\frac1{3}}v(t)\,dt = \tfrac{1}{12}\cdot5+\tfrac{1}{30}\cdot15+\tfrac{1}{15}\cdot5+\tfrac{1}{20}\cdot20+\tfrac{1}{15}\cdot6=\tfrac{25+30+20+60+24}{60}=\tfrac{159}{60}.
 $$
+
+This means that the athlete has traveled a distance of $\frac{159}{60}$ km $\approx2.65$ km during her interval training.
+
+We could also have changed the speed into meters per second and the time into seconds. Then the definite integral would have given the same distance, but now measured in meters.
 
 ::::::
 
-Note that the speed cannot change suddenly. In fact, the velocity is a continuous function. Then the distance equals the area between the graph of the velocity and the horizontal axis.
+Note that speed in general cannot change suddenly. In fact, velocity should be a continuous function. Then the distance equals the area between the graph of the velocity and the horizontal axis. Before you learn how to calculate this area exactly, we need to discuss another type of integral in {numref}`Sec:Integration:IndefiniteIntegrals`.
+
+To conclude this section, we give a general theorem about the unit of definite integral.
+
+::::{prf:theorem}
+:label: theorem:Integration:Units
+If $f$ is a piecewise-continuous function defined on an interval $[a,b]$ and if the units of $f(x)$ are $U_f$ and the units of $x$ are $U_x$, then the units of the definite integral $\displaystyle\int_a^bf(x)\,dx$ are given by the product $U_f\cdot U_x$.
+
+::::
 
 ## Grasple exercises
 
