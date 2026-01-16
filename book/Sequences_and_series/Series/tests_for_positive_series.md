@@ -47,7 +47,7 @@ align: center
 Proof of the convergence of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$
 ```
 
-In this case, at each point $n$ we draw a rectangle with width $1$ and height $\dfrac{1}{n}$ to the *left*. Then, the upper side of each rectangle is below the graph of $f$ since $f$ is decreasing. Hence, we have
+In this case, at each point $n$ we draw a rectangle with width $1$ and height $\dfrac{1}{n^2}$ to the *left*. Then, the upper side of each rectangle is below the graph of $f$ since $f$ is decreasing. Hence, we have
 
 $$
 \sum_{n=1}^{\infty}\frac{1}{n^2}=1+\frac{1}{4}+\frac{1}{9}+\cdots < 1+\int_1^{\infty}\frac{1}{x}\,dx.
@@ -522,3 +522,5 @@ Suppose that $\displaystyle\sum a_n$ and $\displaystyle\sum b_n$ are series with
 
 2) If $\dfrac{a_{n+1}}{a_n}\geq\dfrac{b_{n+1}}{b_n}$ for all $n$, then $\dfrac{a_{n+1}}{b_{n+1}}\geq\dfrac{a_n}{b_n}$ for all $n$, which implies that $\dfrac{a_n}{b_n}\geq\dfrac{a_1}{b_1}$ for all $n$. Hence: $a_n\geq\dfrac{a_1}{b_1}b_n$ for all $n$. Then the direct comparison test implies that if $\displaystyle\sum b_n$ diverges, then $\displaystyle\sum a_n$ diverges too.
 ::::::
+
+Dit misschien maar weglaten? Ik kan geen zinnige toepassingen bedenken.

@@ -107,6 +107,11 @@ $$
 is the $n$th-order *Taylor polynomial* of $f$ around $x=a$. 
 :::::: 
 
+::::::{prf:definition} Analytic functions 
+:label: Def:Series:Analytic 
+A function is called **analytic** if it has a Taylor series with a positive radius of convergence.
+::::::
+
 ::::::{prf:example}
 For $f(x)=e^x$ we have: $f^{(n)}(x)=e^x$ for $n=0,1,2,\ldots$. Hence: $f^{(n)}(0)=1$ for $n=0,1,2,\ldots$. This implies that
 
@@ -804,7 +809,7 @@ $$
 
 ::::::
 
-The *Fibonacci numbers* appear in Pascal's traingle as follows:
+The *Fibonacci numbers* appear in Pascal's triangle as follows:
 
 :::{figure} Images/fibonacci.png
 :width: 75%

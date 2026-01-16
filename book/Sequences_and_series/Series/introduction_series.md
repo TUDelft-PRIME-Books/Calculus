@@ -11,7 +11,7 @@ The Fibonacci sequence $\{F_n\}_{n=1}^{\infty}$ is defined by $F_{n+2}=F_n+F_{n+
 :::{math}
 :label: Eq:Series:FibonacciTelescoping
 \begin{align*}
-\sum_{k=1}^nF_k&=\sum_{n=1}^n\left(F_{k+2}-F_{k+1}\right)\\
+\sum_{k=1}^nF_k&=\sum_{k=1}^n\left(F_{k+2}-F_{k+1}\right)\\
 &=F_{n+2}-\cancel{F_{n+1}}+\cancel{F_{n+1}}-\cancel{F_n}+\cdots+\cancel{F_4}-\cancel{F_3}+\cancel{F_3}-F_2\\
 &=F_{n+2}-2.
 \end{align*}

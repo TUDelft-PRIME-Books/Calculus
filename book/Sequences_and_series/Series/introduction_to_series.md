@@ -350,7 +350,7 @@ $$
 
 :::
 
-## Divergence test
+## A divergence test
 
 If a series is convergent, its general term should tend to zero:
 
