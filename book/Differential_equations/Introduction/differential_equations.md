@@ -1,6 +1,6 @@
 (Sec:DE:Intro)=
 
-# Differential equations
+# Differential equations and solutions
 
 In this section we cover:
 

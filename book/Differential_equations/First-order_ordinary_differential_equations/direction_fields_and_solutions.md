@@ -1,4 +1,4 @@
-# Direction fields and solutions
+# Slope fields and solutions
 
 In this section we cover:
 
@@ -12,7 +12,7 @@ In this section we cover:
 
 ## Slope fields
 
-Not every first-order differential equation can be solved easily. However, in many cases there is no need for a *quantitive* solution. A *qualtitive* solution might suffice. For instance, we might look at a so-called **slope field** (or **direction field**).
+Not every first-order differential equation can be solved easily. However, in many cases there is no need for a *quantitive* solution. A *qualitative* solution might suffice. For instance, we might look at a so-called **slope field** (or **direction field**).
 
 For a differential equation of the form $\dfrac{dy}{dx}=F(x,y)$ we might consider points $(x,y)$ where the right-hand side $F(x,y)$ exists. This gives rise to a value for the derivative $\dfrac{dy}{dx}$ of the unknown function $y(x)$ at this point $(x,y)$. This indicates the *slope* of the graph of a solution $y=y(x)$. This leads to a **slope field** of the differential equation.
 
