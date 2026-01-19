@@ -438,7 +438,9 @@ An equilateral triangle with three equal sides of length $2$.
 
 This leads to the following table of standard values:
 
-```{list-table}
+
+```{list-table} Standard values of sine, cosine and tangent.
+:name: Tab:Trigonometry:StandardValues
 :header-rows: 2
 :align: center
 :class: mid-align center-align
@@ -1135,6 +1137,8 @@ width: 50%
 name: Fig:Trigonometry:Cosines
 align: center
 ---
+
+A triangle with angles $3\alpha$, $3\alpha$ and $\alpha$, subdivided into two isosceles triangles.
 ```
 
 :::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_11`

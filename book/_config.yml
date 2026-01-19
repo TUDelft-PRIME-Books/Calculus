@@ -25,7 +25,10 @@ html:
 sphinx:
   local_extensions:
     text_replacer: _ext/
+    check_captions: _ext/
   config:
+    proof_title_format: "&nbsp;&nbsp;&nbsp;&nbsp;*%t*"
+    proof_title_weight: "var(--bs-body-font-weight)"
     metadata_figure_settings:
       license:
         substitute_missing: true

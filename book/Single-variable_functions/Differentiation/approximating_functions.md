@@ -510,6 +510,11 @@ $$
 
 Using this formula, we can make a table with in each row a different value of $n$ and the corresponding upper bound:
 
+```{table} Upper bounds for the approximation error of $\sin(0.8)$ using Taylor polynomials of different orders.
+:widths: auto
+:align: center
+:name: Tab:ApproximatingFunctions:SinBounds
+
 |$n$|$\|R_n(0.8)\|\leq$|
 |-|-|
 |$0$|$0.8$|
@@ -520,6 +525,7 @@ Using this formula, we can make a table with in each row a different value of $n
 |$5$|$0.0003640\overline{88}$|
 |$6$|$0.00004161\overline{015873}$|
 |$7$|$0.000004161\overline{015873}$|
+```
 
 For $n=3$ the right-hand side of the inequality is $0.0170\overline{66}$. This value is not smaller than 0.0001 and thus a Taylor polynomial of order three may not be sufficient to give us an approximation that is good enough. If $n$  is equal to 4 we obtain that the approximation error is smaller than $0.002730\overline{66}$. After a little trial and error we find that for $n=6$ the error is smaller than $0.00004161\overline{015873}$ and therefore also smaller than $0.0001$. A Taylor polynomial of order 6 will give us the approximation that we want. For the sine function this polynomial is equal to
 

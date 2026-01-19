@@ -10,7 +10,7 @@ Each applet always should have interactivity features such as Zoom, Pan, and Ful
 
 The following figures should become applets with these additional interactivity features:
 
-```{list-table}
+```{list-table} Overview of figures to become applets.
 :header-rows: 1
 :align: center
 :class: mid-align
@@ -201,10 +201,11 @@ Assume $f$ is continuous on $[x_L,x_R]$.
 
 We define the following **integration rules**:
 
-```{list-table}
+```{list-table} Overview of simple integration rules.
 :header-rows: 0
 :align: center
 :class: mid-align
+:name: Tab:ApproximatingIntegrals:simple_rules
 
 * - **left Rectangle rule**
   - $\displaystyle\int_{x_L}^{x_R}f(x)\,dx\approx (x_R-x_L)f(x_L)$
@@ -238,10 +239,11 @@ $$
 
 Now we can apply each of the three rules (scroll to the right to see the numerical values if they are not shown (completely)):
 
-```{list-table}
+```{list-table} Approximations of the integral using simple integration rules.
 :header-rows: 0
 :align: center
 :class: mid-align
+:name: Tab:ApproximatingIntegrals:simple_rules_approximations
 
 * - left Rectangle rule
   - $\displaystyle\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( t\right)} \,dt$
@@ -383,6 +385,11 @@ $$
 
 As this is still very far from the exact value (see {prf:ref}`Ex:ApproximatingIntegrals:spoiler_simple`), we also computed the approximation with some smaller values of $h$:
 
+```{table} Approximations of the integral using the composite right Rectangle rule for various values of $h$.
+:widths: auto
+:align: center
+:name: Tab:ApproximatingIntegrals:composite_right_rectangle_approximations
+
 |$h$|$I_R$|$\left\vert\mathcal{I}-I_R\right\vert$
 |-|-|-|
 |$\tfrac14\pi$|$0.96191\ldots$|$0.0961831\ldots$|
@@ -391,6 +398,7 @@ As this is still very far from the exact value (see {prf:ref}`Ex:ApproximatingIn
 |$\tfrac1{32}\pi$|$1.04846\ldots$|$0.0096286\ldots$|
 |$\tfrac1{64}\pi$|$1.05336\ldots$|$0.0047322\ldots$|
 |$\tfrac1{128}\pi$|$1.05574\ldots$|$0.0023456\ldots$|
+```
 
 Do you notice anything that happens in the last column?
 
@@ -434,11 +442,17 @@ A proof of this theorem is too much for this book, but you can find it in {cite:
 
 From {prf:ref}`Ex:ApproximatingIntegrals:spoiler_composite` we can deduce the next table:
 
+```{table} Orders of some composite integration rules.
+:widths: auto
+:align: center
+:name: Tab:ApproximatingIntegrals:composite_rules_orders
+
 |Composite rule|$p$|
 |-|-|
 |left Rectangle|$1$|
 |right Rectangle|$1$|
 |Trapezoidal|$2$|
+```
 
 ## Grasple exercises
 

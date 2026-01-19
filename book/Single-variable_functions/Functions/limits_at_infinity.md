@@ -49,10 +49,11 @@ Since we only work with an intuitive definition, we will also postpone all proof
 
 Consider the function $f(x)=\dfrac{4+\frac{1}{x}}{2-\frac{3}{x^2}}$ and suppose we want to evaluate $\lim\limits_{x\rightarrow \infty}f(x)$. First, we make a table of the function values for increasing values of $x$.
 
-```{list-table}
+```{list-table} Function values of $f$ for increasing values of $x$.
 :header-rows: 1
 :align: center
 :class: mid-align
+:name: Tab:LimitAtInfinity:FirstLimitExValues
 
 * - $x$
   - $f(x)$
@@ -95,10 +96,11 @@ An illustration of the function $f(x)=\dfrac{4+\frac{1}{x}}{2-\frac{3}{x^2}}$ fo
 
 Consider the function $f(x)=\dfrac{\sin(x)}{x^2}$ and suppose we want to evaluate $\lim\limits_{x\rightarrow -\infty}f(x)$. First, we make a table of the function values for increasingly negative values of $x$.
 
-```{list-table}
+```{list-table} Function values of $f$ for decreasing values of $x$.
 :header-rows: 1
 :align: center
 :class: mid-align
+:name: Tab:LimitAtInfinity:SecondLimitExValues
 
 * - $x$
   - $f(x)$
@@ -136,10 +138,11 @@ Notice that the function $f$ actually oscillates around the horizontal asymptote
 
 Consider the function $f(x)=x^2$ and suppose we want to evaluate $\lim\limits_{x\rightarrow \infty}f(x)$. First, we make a table of the function values for increasing values of $x$.
 
-```{list-table}
+```{list-table} Function values of $f$ for increasing values of $x$.
 :header-rows: 1
 :align: center
 :class: mid-align
+:name: Tab:LimitAtInfinity:FirstNonExistLimitExValues
 
 * - $x$
   - $f(x)$
@@ -189,10 +192,11 @@ Previously, we saw that a limit at infinity might not exist, because there the f
 
 Consider the function $f(x)=\cos(x)$ and suppose we want to evaluate $\lim\limits_{x\rightarrow \infty}f(x)$. First, we make a table of the function values for increasing values of $x$.
 
-```{list-table}
+```{list-table} Function values of $f$ for increasing values of $x$.
 :header-rows: 1
 :align: center
 :class: mid-align
+:name: Tab:LimitAtInfinity:SecondNonExistLimitExValues
 
 * - $x$
   - $f(x)$
@@ -232,10 +236,11 @@ Even though making tables like we did in the preceding examples can help to give
 
 Consider the function $f(x)=\cos(2\pi x)$ and suppose we make a table like we did in the previous examples.
 
-```{list-table}
+```{list-table} Function values of $f$ for increasing values of $x$.
 :header-rows: 1
 :align: center
 :class: mid-align
+:name: Tab:LimitAtInfinity:WarningTables
 
 * - $x$
   - $f(x)$

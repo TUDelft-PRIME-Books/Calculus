@@ -29,10 +29,11 @@ An illustration of the functions $f(x)$ and $g(x)$ near the point $x=1$.
 
 Let us try to figure out what is going on here. For the function $g$, the function values seem to blow up near $x=1$, while for the function $f$ nothing bad seems to happen at all. We can make this a bit more explicit by evaluating the functions $f$ and $g$ at values of $x$ close to $1$.
 
-```{list-table}
+```{list-table} Function values of $f$ and $g$ near $x=1$.
 :header-rows: 1
 :align: center
 :class: mid-align
+:name: Tab:LimitAtPoint:FirstLimitExValues
 
 * - $x$
   - $f(x)$

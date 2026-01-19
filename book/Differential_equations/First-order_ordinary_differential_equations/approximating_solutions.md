@@ -568,6 +568,12 @@ where $p$ is independent of the function $y$.
 
 A proof of this theorem is too much for this course, but you can find it in {cite:t}`Vuik_2023`. There you can also find the results in the following table:
 
+
+```{table} Order of accuracy of different time-integration methods.
+:widths: auto
+:align: center
+:name: Tab:ApproximatingSolutions:order
+
 |Method|$p$|
 |-|-|
 |Forward Euler|$1$|
@@ -575,7 +581,7 @@ A proof of this theorem is too much for this course, but you can find it in {cit
 |Trapezoidal|$2$|
 |Modified Euler (see {ref}`Sec:Bonus`)|$2$|
 |RK4 (see {ref}`Sec:Bonus`) |$4$|
-
+```
 
 As you may notice, performing these computations by hand can be a lot of work for one time step, let alone for many time steps. Therefore we commonly use a computer to perform all of the calculations. And that is one of the reasons you will learn a programming language in your education.
 

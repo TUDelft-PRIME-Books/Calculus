@@ -7,3 +7,15 @@ table.center-align td,
 table.center-align th {
   text-align: center;
 }
+
+table caption {
+  color: var(--pst-color-text-muted);
+  font-family: var(--pst-font-family-heading);
+  font-weight: var(--pst-font-weight-caption);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: .3rem;
+  text-align: center;
+  padding: 0.3em;
+  caption-side: bottom;
+}
