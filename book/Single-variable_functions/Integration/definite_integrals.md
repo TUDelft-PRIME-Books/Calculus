@@ -385,7 +385,7 @@ width: 50%
 name: Fig:Integration:DefiniteEven
 align: center
 ---
-The integral of an even function
+The integral of an even function.
 ```
 
 Inspection of the graph shows that the area above the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Because both areas are taken with a positive sign in {prf:ref}`Def:Integration:DefiniteGeneral`, we find

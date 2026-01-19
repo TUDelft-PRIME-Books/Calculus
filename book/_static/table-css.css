@@ -19,3 +19,8 @@ table caption {
   padding: 0.3em;
   caption-side: bottom;
 }
+
+table caption span.caption-number::after{
+  content: "\A";   /* newline */
+  white-space: pre;   /* or pre-line */
+}

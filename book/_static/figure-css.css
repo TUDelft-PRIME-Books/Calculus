@@ -1,0 +1,4 @@
+figcaption > p > span.caption-number::after{
+  content: "\A";   /* newline */
+  white-space: pre;   /* or pre-line */
+}

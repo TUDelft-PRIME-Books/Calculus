@@ -27,6 +27,10 @@ sphinx:
     text_replacer: _ext/
     check_captions: _ext/
   config:
+    language: en
+    numfig_format:
+      figure: Figure %s
+    html_secnumber_suffix: " "
     proof_title_format: "&nbsp;&nbsp;&nbsp;&nbsp;*%t*"
     proof_title_weight: "var(--bs-body-font-weight)"
     metadata_figure_settings:
@@ -34,7 +38,6 @@ sphinx:
         substitute_missing: true
       date:
         substitute_missing: true
-    language: en
     sphinx_indexed_defs_indexed_nodes: ['strong']
     tud_change_titlesize: true
     new_tab_link_show_external_link_icon: true

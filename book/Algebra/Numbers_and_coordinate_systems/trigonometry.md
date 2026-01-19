@@ -15,7 +15,6 @@ name: Fig:Trigonometry:Triangle
 
 A triangle with the angles indicated.
 ```
-::::
 
 ## Angles
 
