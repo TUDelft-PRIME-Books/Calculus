@@ -2,6 +2,8 @@
 
 # Indefinite integrals
 
+## Introduction
+
 In {numref}`Chapter:Differentiation` we saw the concept of the derivative of a function. It turns out that there is a reverse operation, called *integration*, which allows us to find a function if we know its derivative. In this section we introduce the concepts of *antiderivatives* and *indefinite integrals* as the reverse operation of differentiation.
 
 ## Antiderivatives
@@ -185,10 +187,41 @@ Let $f$ be a continuous function on some open interval $I$, and let $\alpha,\bet
 
 $$
 \int f(\alpha x+\beta)\,dx=\frac{1}{\alpha}F(\alpha x+\beta)+C,
-$$`
+$$
 
 where $F$ is any antiderivative of $f$ on $I$ and $C\in\mathbb{R}$ is an arbitrary constant.
 :::
+
+::::{admonition} Proof of {prf:ref}`Th:Integration:IndefiniteLinearSubstitution`
+:class: tudproof
+
+Assume $f$, $F$, $\alpha$, $\beta$ and $C$ are as in the theorem. We differentiate the right-hand side:
+
+\begin{align*}
+\frac{d}{dx}\left[\frac{1}{\alpha}F(\alpha x+\beta)+C\right] &= \frac{1}{\alpha}\cdot F'(\alpha x+\beta)\cdot \alpha + 0 \\
+&= F'(\alpha x+\beta) \\
+&= f(\alpha x+\beta).
+\end{align*}
+
+This shows that the right-hand side is an antiderivative of $f(\alpha x+\beta)$, which proves the theorem.
+::::
+
+:::{prf:Example}
+:label: Ex:Integration:IndefiniteExample3
+
+Using {prf:ref}`Th:Integration:IndefiniteLinearSubstitution` we can determine the next indefinite integral:
+
+\begin{align*}
+\int 3\cos(2x+1)\,dx &= 3\cdot\frac{1}{2}\sin(2x+1)+C \\
+&= \frac{3}{2}\sin(2x+1)+C.
+\end{align*}
+
+:::
+
+::::{warning}
+
+{prf:ref}`Th:Integration:IndefiniteLinearSubstitution` is only valid for *linear substitutions* of the form $\alpha x+\beta$ with $\alpha,\beta\in\mathbb{R}$ and $\alpha\neq0$. For more general substitutions we need the method of *integration by substitution*, which will be explained in {numref}`Sec:Integration:Substitution`.
+::::
 
 ::::::{prf:Remark}
 In the section on integration of rational functions we will frequently use that
