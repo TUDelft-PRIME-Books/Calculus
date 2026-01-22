@@ -136,14 +136,14 @@ Recall that for a function $f$ and a real number $c$ we defined the scalar multi
 
 Let us first consider the case $c>0$. In that case, $(x,y)$ is on the graph of $f$ precisely when $(x,cy)$ is on the graph of $cf$. In terms of the graph, this means that the graph of $f$ is stretched in the $y$-direction with a factor $c$ (for $0<c<1$ this stretching is actually more akin to a compression, but we will call it stretching nonetheless). If $c=0$, then $(cf)(x)=0\cdot f(x)=0$ for all $x$, so then the graph is flattened onto the $x$-axis. Finally, we consider the case $c<0$. For convenience, we first let $c=-1$. In that case $(x,y)$ is on the graph of $f$ precisely when $(x,-y)$ is on the graph of $-f$. This means that we obtain the graph of $-f$ by reflecting the graph of $f$ in the $x$-axis. Now if $c<0$ is any negative scalar, then we notice that $c=-|c|$ so that $cf=-(|c|f)$. This means that we obtain the graph of $cf$ by first stretching it in the $y$ direction with a factor $|c|$ and then reflecting it in the $x$-axis.
 
-So going from $f$ to $cf$ corresponds to vertical stretching and/or reflecting. So what would correspond to horizontal stretching and/or reflecting? For this, let us first consider the function $h$ of which the graph is obtained by reflecting the graph of $f$ in the $y$-axis. That means that $(x,y)$ is on the graph of $h$ precisely when $(-x,y)$ is on the graph of $f$. As such, we must have $h(x)=f(-x)$. Similarly, if we obtain $h$ by stretching the graph of $f$ by a factor $c$ (with $c>0$) in the $x$-direction, then $(x,y)$ is on the graph of $f$ precisely when $(cx,y)$ is on the graph of $h$. Hence, we must have $h(x)=f(cx)$. Combining these two ideas, gives that for $c<0$ the function $h(c)=f(cx)=f(-|c|x)$ is obtained by first stretching in the $x$-direction with a factor $|c|$ and then reflecting it in the $y$-axis.
+So going from $f$ to $cf$ corresponds to vertical stretching and/or reflecting. So what would correspond to horizontal stretching and/or reflecting? For this, let us first consider the function $h$ of which the graph is obtained by reflecting the graph of $f$ in the $y$-axis. That means that $(x,y)$ is on the graph of $h$ precisely when $(-x,y)$ is on the graph of $f$. As such, we must have $h(x)=f(-x)$. Similarly, if we obtain $h$ by stretching the graph of $f$ by a factor $c$ (with $c>0$) in the $x$-direction, then $(x,y)$ is on the graph of $f$ precisely when $(cx,y)$ is on the graph of $h$. Hence, we must have $h(cx)=f(x)$, which we can rewrite to $h(x)=f\left(\frac{x}{c}\right)$. Combining these two ideas, gives that for $c<0$ the function $h(x)=f\left(\frac{x}{c}\right)=f\left(-\frac{x}{|c|}\right)$ is obtained by first stretching in the $x$-direction with a factor $|c|$ and then reflecting it in the $y$-axis.
 
 We combine these results as follows.
 
 ::::::{prf:theorem} 
 :label: Thm:Propertiesfunctions:Reflectionstretching
 
-Let $f$ be a function and $c\neq 0$ a real number. Consider the functions $g(x)=cf(x)$ and $h(x)=f(cx)$. Then, if $c>0$,
+Let $f$ be a function and $c\neq 0$ a real number. Consider the functions $g(x)=cf(x)$ and $h(x)=f\left(\frac{x}{c}\right)$. Then, if $c>0$,
 
 - the graph of $g$ is obtained from the graph of $f$ by **vertically stretching** it by a factor $c$;
 - the graph of $h$ is obtained from the graph of $f$ by **horizontally stretching** it by a factor $c$;
@@ -164,11 +164,11 @@ $$
  f(x)=-3\sin(2x-2)+4=-3\sin(2(x-1))+4.
 $$
 
-Starting with the graph of the sine function, which is given $y=\sin(x)$, we first perform a horizontal stretching by a factor $2$ to obtain the graph given by $y=\sin(2x)$. Then we perform a horizontal shift of $1$ to right to obtain the graph given by $y=\sin(2(x-1))$. Subsequently, we perform a reflection in the $x$-axis and a vertical stretching by a factor $3$ to obtian the graph given by $y=-3\sin(2(x-1))$. Finally, we perform a vertical shift of $4$ upwards to obtain the graph given by $y=-3\sin(2(x-1))+4$, i.e. the graph of $f$.
+Starting with the graph of the sine function, which is given $y=\sin(x)$, we first perform a horizontal stretching by a factor $\frac{1}{2}$ to obtain the graph given by $y=\sin(2x)$. Then we perform a horizontal shift of $1$ to right to obtain the graph given by $y=\sin(2(x-1))$. Subsequently, we perform a reflection in the $x$-axis and a vertical stretching by a factor $3$ to obtian the graph given by $y=-3\sin(2(x-1))$. Finally, we perform a vertical shift of $4$ upwards to obtain the graph given by $y=-3\sin(2(x-1))+4$, i.e. the graph of $f$.
 
 Hier vijf plaatjes naast elkaar van sin(x), sin(x-1), sin(2(x-1)), -3sin(2(x-1)) en -3sin(2(x-1))+4 met pijlen er tussen om de 4 operaties te laten zien.
 
-Notice that if we performed these 4 operations in a different order, we would obtain a different function. Indeed, if we start with the graph given by $y=\sin(x)$ and perform the vertical shift of $4$ upwards first, we obtain the graph given by $y=\sin(x)+4$. If we then perform the reflection in the $x$-axis and the vertical stretching by a factor $3$ we obtain the graph given by $y=-3\left(\sin(x)+4\right)=-3\sin(x)-12$. If we then perform the horizontal shift of $1$ to the right we obtain the graph given by $y=-3\sin(x-1)-12$. Finally, if we then perform the horizontal stretching by a factor $2$ we obtain the graph given by $y=-3\sin(2x-1)-12$. This function is very different from $f$, as can be seen from the graphs shown below.
+Notice that if we performed these 4 operations in a different order, we would obtain a different function. Indeed, if we start with the graph given by $y=\sin(x)$ and perform the vertical shift of $4$ upwards first, we obtain the graph given by $y=\sin(x)+4$. If we then perform the reflection in the $x$-axis and the vertical stretching by a factor $3$ we obtain the graph given by $y=-3\left(\sin(x)+4\right)=-3\sin(x)-12$. If we then perform the horizontal shift of $1$ to the right we obtain the graph given by $y=-3\sin(x-1)-12$. Finally, if we then perform the horizontal stretching by a factor $\frac{1}{2}$ we obtain the graph given by $y=-3\sin(2x-1)-12$. This function is very different from $f$, as can be seen from the graphs shown below.
 
 Hier vijf plaatjes naast elkaar van sin(x), sin(x)+4, -3sin(x)-12, -3sin(x-1)-12 en -3sin(2x-1)-12 met pijlen er tussen om de 4 operaties te laten zien.
 
@@ -197,7 +197,7 @@ Hier de grafiek van $f(x)=x^2$
 
 The graph suggests that the function increases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
 
-Similarly, on the interval $(-\infty,0)$ the function is decreasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2\geq (-x_2^2)=x_2^2=f(x_2)$.
+Similarly, on the interval $(-\infty,0)$ the function is decreasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2^2)=x_2^2=f(x_2)$.
 
 However, on the interval $(-2,2)$ the function is neither increasing, nor decreasing. Indeed, we have $-1$ and $0$ are numbers in this interval with $-1<0$ and we have $f(-1)=1>0=f(0)$, so $f$ is not increasing on this interval. On the other hand, $0$ and $1$ are also numbers in this interval and they have $0<1$ and $f(0)=0<1=f(1)$, so $f$ is not decreasing on this interval.
 
@@ -217,7 +217,7 @@ In fact, the function is increasing on its entire domain. Indeed, we already kno
 
 ::::::
 
-In {prf:ref}`Ex:Propertiesfunctions:Increasingdecreasingflat` we saw that a constant function is both increasing and decreasing. Sometimes, we want to specifically look at functions that actually grow. For this, we adopt some new terminology.
+In {prf:ref}`Ex:Propertiesfunctions:Increasingdecreasingflat` we saw that a constant function is both increasing and decreasing. Sometimes, we want to specifically look at functions that actually grow or decay. For this, we adopt some new terminology.
 
 ::::::{prf:definition} 
 :label: Def:Propertiesfunctions:Strictlyincreasingdecreasing
@@ -231,7 +231,7 @@ In particular, constant functions are increasing and decreasing, but neither str
 ::::::{warning} 
 :name: Warning:Propertiesfunctions:Strictlyincreasingdecreasing
 
-In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those books, constant functions are neither increasing nor decreasing). Usually, the terms **nondecreasing** and **nonincreasing** are then used for what we call increasing and decreasing. We will stick to the terms used in this section, but be aware of this when you read other literature.
+In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those texts, constant functions are neither increasing nor decreasing). Usually, the terms **nondecreasing** and **nonincreasing** are then used for what we call increasing and decreasing. We will stick to the terms used in this section, but be aware of this when you read other literature.
 ::::::
 
 Showing that a function is increasing or decreasing can be tricky in practice. In {numref}`Chapter:Differentiation` we will learn a more efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
@@ -333,7 +333,7 @@ Let $f$ be a function that is defined on a symmetric interval of the form $(-a,a
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Propertiesfunctions:Evenoddparts`
-:class: tudproof,dropdown
+:class: tudproof, dropdown
 We consider the functions given by $f_e(x)=\frac{f(x)+f(-x)}{2}$ and $f_o(x)=\frac{f(x)-f(-x)}{2}$. We first note that for any $x$ we have
 
 $$
@@ -343,7 +343,7 @@ $$
 while
 
 $$
- f_o(-x)=\frac{f(-x)-f(-(-x))}{2}=\frac{f(-x)-f(x)}{2}=-\frac{f(x)-f(-x)}{2}=f_e(x).
+ f_o(-x)=\frac{f(-x)-f(-(-x))}{2}=\frac{f(-x)-f(x)}{2}=-\frac{f(x)-f(-x)}{2}=f_o(x).
 $$
 
 Moreover, we find that
@@ -374,7 +374,7 @@ The even and odd parts of the exponential function are so common that they have 
 ::::::{prf:definition} 
 :label: Def:Propertiesfunctions:Hyperbolic
 
-Consider the exponential function $f(x)=e^x$. The **hyperbolic cosine function**, denoted by $g(x)=\cosh(x)$, is the even part of $f$. That is, we have $\cosh(x)=\frac{e^x+e^{-x}}{2}$. The **hyperbolic sine function**, denoted by $h(x)=\sinh(x), is the odd part of $f$. That is, we have $\sinh(x)=\frac{e^x-e^{-x}}{2}$.
+Consider the exponential function $f(x)=e^x$. The **hyperbolic cosine function**, denoted by $g(x)=\cosh(x)$, is the even part of $f$. That is, we have $\cosh(x)=\frac{e^x+e^{-x}}{2}$. The **hyperbolic sine function**, denoted by $h(x)=\sinh(x)$, is the odd part of $f$. That is, we have $\sinh(x)=\frac{e^x-e^{-x}}{2}$.
 
 Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\frac{\sinh(x)}{\cosh(x)}$.
 
@@ -382,6 +382,98 @@ Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\frac{\sinh
 
 Hier de grafieken van cosh(x), sinh(x) en tanh(x).
 
-The naming of these functions suggests some sort of connection to the trigonometric functions. Indeed, the hyperbolic sine and cosine have an interpretation similar to the regular sine and cosine when using [hyperbolic angles](https://en.wikipedia.org/wiki/Hyperbolic_angle) instead of regular angles. Moreover, the derivatives (see {numref}`Chapter:Differentiation`) of the hyperbolic functions follow a similar, though slightly different, pattern to those of the trigonometric functions. Finally, the sine and the hyperbolic sine are both odd functions, while the cosine and the hyperbolic cosine are both even functions.
+The naming of these functions suggests some sort of connection to the trigonometric functions. Indeed, the hyperbolic sine and cosine have an interpretation similar to the regular sine and cosine when using [hyperbolic angles](https://en.wikipedia.org/wiki/Hyperbolic_angle) instead of regular angles. Moreover, the derivatives (see {numref}`Chapter:Differentiation`) of the hyperbolic functions follow a similar, though slightly different, pattern to those of the trigonometric functions. Finally, the sine and the hyperbolic sine, the tangent and the hyperbolic tangent are all odd functions (the regular tangent only on $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$), while the cosine and the hyperbolic cosine are both even functions.
 
 
+(Subsec:PropertisfunctionsPeriodic)=
+
+## Periodic functions
+
+In {prf:ref}`Ex:Functions1var:Trigonometry` we saw that the trigonometric functions $f(\theta)=\cos(\theta)$, $g(\theta)=\sin(\theta)$ and $h(\theta)=\tan(\theta)$ show periodic behaviour: $f$ and $g$ repeat themselves after every cycle of length $2\pi$, while $h$ repeats itself after every cycle of length $\pi$. We can denote this by writing, for instance, $f(\theta+2\pi)=f(\theta)$ for each value of $\theta$. 
+
+::::::{prf:definition} 
+:label: Def:Propertiesfunctions:Periodic
+
+A function $f$ is **periodic** if there exists a $T>0$ such that $f(x+T)=f(x)$ for all $x$. $T$ is called a **period** of the function $f$. If there is a smallest value of $T$ with this property, it is called the **fundamental period** of $f$.
+
+::::::
+
+::::{figure} Images/periodic.png
+:name: Fig:Propertiesfunctions:Periodic
+:class: dark-light
+
+The graph of function with fundamental period $T$.
+
+::::
+
+Periodic funtions play an important role in many fields of science and engineering, for instance in signal processing and in astronomy. In addition, periodic functions are precisely the functions that can be described by a Fourier series, see {numref}`Section:Fourier`.
+
+Notice that if $T$ is a period of a periodic function $f$, then any number of the form $nT$ with $n\geq 1$ a nonzero natural number is again a period of $f$. For instance, for $n=3$ we have for all $x$ that
+
+$$
+ f(x+3T)=f((x+2T)+T)=f(x+2T)=f((x+T)+T)=f(x+T)=f(x).
+$$
+
+As a small technicality: not all periodic functions have a fundamental period. For instance, a constant function $f(x)=c$ is periodic and any number $T>0$ is a period. Indeed, for any $T>0$ and any $x$ we have
+
+$$
+ f(x+T)=c=f(x).
+$$
+
+As such, the constant function does not have a smallest positive period (in more mathematical terms: the infimum of the set of all periods of $f$ is $0$). In practice, however, most periodic functions you will encounter will have a definable fundamental period.
+
+::::::{prf:theorem} 
+:label: Thm:Propertiesfunctions:TrigPeriodic
+
+The functions $f(x)=\cos(x)$, $g(x)=\sin(x)$ and $h(x)=\tan(x)$ are all periodic. The fundamental period of $f$ and $g$ is $2\pi$, while the fundamental period of $h$ is $\pi$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Propertiesfunctions:TrigPeriodic`
+:class: tudproof
+This follows directly from {prf:ref}`Thm:Trigonometry:Periodicity`.
+:::
+
+::::::{prf:example} 
+:label: Ex:Propertiesfunctions:Periodiccombining
+
+Consider the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$. The graph of these functions is shown below.
+
+Hier de grafieken van deze drie functies.
+
+As we can see in the graph, all of these functions are periodic. Since the sine and cosine have fundamental period $2\pi$, we might expect these functions to have this period as well. So let us find out if that is indeed the case. For any $x$ we can compute
+
+$$
+ f(x+2\pi)=\cos(4(x+2\pi))=\cos(4x+8\pi)=\cos(4x)=f(x)
+$$
+
+and
+
+$$
+ g(x+2\pi)=\sin(6(x+2\pi))=\sin(6x+12\pi)=\sin(6x)=g(x).
+$$
+
+Here we used that any integer multiple of a period is also a period. Finally, we also note that
+
+$$
+ h(x+2\pi)=f(x+2\pi)+g(x+2\pi)=f(x)+g(x)=h(x).
+$$
+
+So indeed, all of the functions $f$, $g$ and $h$ are periodic with period $2\pi$. However, if we look back at the graphs of these functions, their fundamental periods seem to be smaller. From {prf:ref}`Thm:Propertiesfunctions:Reflectionstretching` we obtain that the graph of $f$ is obtained from the graph of the regular cosine by stretching it by a factor $\frac{1}{4}$, i.e. compressing it by a factor $4$, in the horizontal direction. Since the regular cosine repeats itself after $2\pi$, $f$ must already do so after $\frac{2\pi}{4}=\frac{\pi}{2}$. Indeed, for any $x$ we have
+
+$$
+ f\left(x+\frac{\pi}{2}\right)=\cos\left(4\left(x+\frac{\pi}{2}\right)\right)=\cos(4x+2\pi)=\cos(4x).
+$$
+
+So the fundamental period of $f$ is actually $\frac{\pi}{2}$. Similarly, the fundamental period of $g$ is $\frac{2\pi}{6}=\frac{\pi}{3}$. So what is the fundamental period of $h=f+g$? For this, we notice that $h$ has completed a full period whenever $f$ and $g$ have completed a whole number of periods at the same time. Since the fundamental periods of $f$ and $g$ are $\frac{\pi}{2}$ and $\frac{\pi}{3}$ respectively, this happens the first time after a period of $T=\pi$ (when $f$ has completed $2$ periods and $g$ has completed $3$ periods). So the fundamental period of $h$ is $\pi$.
+::::::
+
+::::::{prf:example} 
+:label: Ex:Propertiesfunctions:Periodiccombining2
+
+Consider the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\cos(2x)+\sin(\pi x)$. The graph of these functions is shown below.
+
+Hier de grafieken van deze drie functies.
+
+Following a similar reasoning to {prf:ref}`Ex:Propertiesfunctions:Periodiccombining` the functions $f$ and $g$ are periodic with fundamental periods $\frac{2\pi}{2}=\pi$ and $\frac{2\pi}{\pi}=2$ respectively. So is the function $h$ periodic here as well and if so, what is its period? In order for $h$ to complete a full period, $f$ and $g$ would need to complete number of periods at the same time. So a period $T$ of $h$ should be of the form $T=2m+\pi n$ for some integers $m,n\geq 1$. However, since $\pi$ is irrational, no such numbers $m$ and $n$ exist (otherwise, we would be able to write $\pi$ as a fraction). As such, the function $h$ is not periodic in this case. This can also be seen from the graph of $h$.
+::::::
