@@ -8,7 +8,7 @@ In this section we cover:
 - Algorithmic check
 - Link with first-order linear differential equations, same example?
 
-In {numref}`Sec:DE:Intro` we mentioned that differential equations can only be solved when they have a specific form. In this subsection we consider differential equation which are *separable*.
+In {numref}`Sec:DE:Intro` we mentioned that differential equations can only be solved when they have a specific form. In this subsection we consider differential equations which are *separable*.
 
 ::::::{prf:Definition}
 A first-order differential equation is called **separable** if it can be written in the form:

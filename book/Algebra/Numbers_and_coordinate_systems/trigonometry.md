@@ -6,35 +6,82 @@
 
 In this section we will introduce some basic concepts of trigonometry. Trigonometry is the branch of mathematics that studies the relations between the angles and the lengths of the sides of triangles. It has many applications in science and engineering, such as in physics, computer graphics, signal processing and navigation.
 
-```{figure} Images/triangle_angles_diagram.svg
----
-class: dark-light
-figclass: margin
-name: Fig:Trigonometry:Triangle
----
-
-A triangle with the angles indicated.
-```
-::::
-
 ## Angles
 
-Angles can be measured in degrees or in radians (abbreviated as $\operatorname{rad}$). The angle given by a complete revolution contains $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
+:::{prf:definition}
+:label: Def:Trigonometry:Angle1
+
+An **angle** is a measure for the amount of space between two half lines.
+
+:::
+
+Angles can be measured in degrees or in radians (abbreviated as $\operatorname{rad}$). The angle given by a complete revolution equals $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
 
 $$\pi\;\operatorname{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\operatorname{rad}.$$ 
 
 In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out "$\operatorname{rad}$".
 
-::::::{note}
-In surveying, mining and geology angles are sometimes measured in *gradians* or *gons*. Then the angle given by a complete revolution contains $400^{g}$, which is the same as $2\pi$ rad. Therefore:
+:::{note}
+In geography and navigation a degree is divided into $60$ minutes and a minute into $60$ seconds.
+This is called the DMS (Degrees, Minutes, Seconds) notation: 
+
+$$
+\text{dd}^{\circ}\text{mm}'\text{ss}''.
+$$ 
+
+For instance, the location of the statue of Hugo de Groot (or Hugo Grotius) in the centre of Delft in decimal GPS (Global Positioning System) coordinates is $52.01203^{\circ}$ (N) and $4.35982^{\circ}$ (E), which translates into $52^{\circ}00'43.308''$ (N) and $04^{\circ}21'35.352''$ (E) in DMS notation. 
+:::
+
+:::{admonition} Converting decimal degrees into DMS notation
+:class: tudproof, dropdown
+
+Converting $52.01203^{\circ}$ we start with $52^{\circ}$. Then
+
+$$
+0.01203\times 60=0.7218\quad\longrightarrow\quad 00'
+$$
+
+and
+
+$$
+0.7218\times 60=43.308''.
+$$
+
+Converting $4.35982^{\circ}$ we start with $4^{\circ}$. Then
+
+$$
+0.35982\times 60=21.5892\quad\longrightarrow\quad 21'
+$$
+
+and
+
+$$
+0.5892\times 60=35.352''.
+$$
+
+:::
+
+:::{note}
+In astronomy and celestial navigation also so-called *hour angles* are used. Then a $24$ hour angle corresponds to $360^{\circ}$ or $2\pi$, which implies that $1$ hour equals $15^{\circ}$ or $\frac{1}{12}\pi$.
+:::
+
+:::{note}
+In surveying, mining and geology angles are sometimes measured in *gradians* or *gons*. Then the angle given by a complete revolution equals $400^{g}$, which is the same as $2\pi$ rad. Therefore:
 
 $$\pi\;\operatorname{rad}=200^{g}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{200}{\pi}\right)^{g}\quad\text{and}\quad 1^{g}=\dfrac{\pi}{200}\;\operatorname{rad}.$$ 
 
 We will not use these *gradians* or *gons* in this book.
+:::
+
+::::::{prf:remark} Angle between two half lines
+:label: Rem:Trigonometry:AngleBetweenTwoLines
+
+An angle between two intersecting half lines is always in $[0,\pi]$. An angle of $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. An angle of $\pi$ is called a **stretched angle**.
+
 ::::::
 
 ::::::{prf:definition}
-:label: Def:Trigonometry:Angle
+:label: Def:Trigonometry:Angle2
 
 Angles are always measured from an **initial side** to a **terminal side**. The **vertex** of the angle is the common endpoint of the two sides.
 
@@ -55,16 +102,36 @@ class: dark-light
 An angle $\theta$ in the $xy$-plane in standard position.
 ```
 
-::::::{prf:remark} Angle between two half lines
-:label: Rem:Trigonometry:AngleBetweenTwoLines
-
-An angle between two intersecting half lines is always in $[0,\pi]$. An angle of $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. 
-
-::::::
-
 ## Trigonometric ratios
 
 Using angles, we define three trigonometric ratios: the sine, the cosine and the tangent.
+
+We start with a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`. Then for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of the triangle.
+
+```{figure} Images/acute.png
+---
+width: 50%
+name: Fig:Trigonometry:AcuteAngle
+class: dark-light
+---
+
+The trigonometric ratios for an acute angle.
+```
+
+::::::{prf:definition}
+:label: Def:Trigonometry:TrigonometricRatiosTriangle
+
+If the sides of a triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ (as shown in {numref}`Fig:Trigonometry:AcuteAngle`) and "hyp" for the hypotenuse of the triangle, then we have:
+
+- $\sin(\theta)=\dfrac{\operatorname{opp}}{\operatorname{hyp}}$;
+
+- $\cos(\theta)=\dfrac{\operatorname{adj}}{\operatorname{hyp}}$;
+
+- $\tan(\theta)=\dfrac{\operatorname{opp}}{\operatorname{adj}}$.
+
+::::::
+
+For general angles this is generalised as follows.
 
 ::::::{prf:definition}
 :label: Def:Trigonometry:TrigonometricRatios
@@ -104,6 +171,8 @@ class: dark-light
 The unit circle.
 ```
 
+The tangent is shown on the so-called tangent axis, the vertical line at $x=1$.
+
 ::::::{prf:remark} Additional trigonometric ratios
 :label: Rem:Trigonometry:AlternativeTrigonometricRatios
 
@@ -130,6 +199,17 @@ Next to the three trigonometric ratios defined above, there are three more trigo
 However, in this book we will not use these three trigonometric ratios.
 
 ::::::
+
+All six trigonometric ratios can be displayed in one picture:
+
+```{figure} Images/trig-ratios.png
+---
+width: 50%
+name: Fig:Trigonometry:trig-ratios
+class: dark-light
+---
+The six trigonometric ratios.
+```
 
 Commonly powers of trigonometric ratios are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
 
@@ -390,28 +470,6 @@ This proves the theorem.
 
 For certain special angles the trigonometric ratios can be evaluated exactly.
 
-{prf:ref}`Def:Trigonometry:TrigonometricRatios` implies that for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`.
-
-```{figure} Images/acute.png
----
-width: 50%
-name: Fig:Trigonometry:AcuteAngle
-class: dark-light
----
-
-The trigonometric ratios for an acute angle.
-```
-
-::::::{prf:corollary}
-:label: Cor:Trigonometry:TrigonometricRatiosTriangle
-
-If the sides of a triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ (as shown in {numref}`Fig:Trigonometry:AcuteAngle`) and "hyp" for the hypotenuse of the triangle, then we have:
-- $\sin(\theta)=\dfrac{\operatorname{opp}}{\operatorname{hyp}}$;
-- $\cos(\theta)=\dfrac{\operatorname{adj}}{\operatorname{hyp}}$;
-- $\tan(\theta)=\dfrac{\operatorname{opp}}{\operatorname{adj}}$.
-
-::::::
-
 First consider a right-angled isosceles triangle with two equal sides of length $1$, as shown in {numref}`Fig:Trigonometry:IsoscelesTriangle`. Then the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` implies that the hypotenuse has length $\sqrt{2}$. The two equal angles are $\frac{1}{4}\pi$, which implies that $\cos(\frac{1}{4}\pi)=\frac{1}{2}\sqrt{2}=\sin(\frac{1}{4}\pi)$.
 
 ```{figure} Images/triangle1.png
@@ -470,36 +528,36 @@ This leads to the following table of standard values:
 * - $\sin(\theta)$
   - $0$
   - $\frac{1}{2}$
-  - $\frac{1}{2}\sqrt{2}$
-  - $\frac{1}{2}\sqrt{3}$
+  - $\frac{\sqrt{2}}{2}$
+  - $\frac{\sqrt{3}}{2}$
   - $1$
-  - $\frac{1}{2}\sqrt{3}$
-  - $\frac{1}{2}\sqrt{2}$
+  - $\frac{\sqrt{3}}{2}$
+  - $\frac{\sqrt{2}}{2}$
   - $\frac{1}{2}$
   - $0$
   - $-1$
   - $0$
 * - $\cos(\theta)$
   - $1$
-  - $\frac{1}{2}\sqrt{3}$
-  - $\frac{1}{2}\sqrt{2}$
+  - $\frac{\sqrt{3}}{2}$
+  - $\frac{\sqrt{2}}{2}$
   - $\frac{1}{2}$
   - $0$
   - $-\frac{1}{2}$
-  - $-\frac{1}{2}\sqrt{2}$
-  - $-\frac{1}{2}\sqrt{3}$
+  - $-\frac{\sqrt{2}}{2}$
+  - $-\frac{\sqrt{3}}{2}$
   - $-1$
   - $0$
   - $1$
 * - $\tan(\theta)$
   - $0$
-  - $\frac{1}{3}\sqrt{3}$
+  - $\frac{\sqrt{3}}{3}$
   - $1$
   - $\sqrt{3}$
   - 
   - $-\sqrt{3}$
   - $-1$
-  - $-\frac{1}{3}\sqrt{3}$
+  - $-\frac{\sqrt{3}}{3}$
   - $0$
   - 
   - $0$
@@ -518,6 +576,42 @@ class: dark-light
 
 The unit circle with standard angles marked.
 ```
+
+:::{note}
+It is important the memorise these standard values. It might be helpful to note that
+
+```{list-table}
+:header-rows: 2
+:align: center
+:class: mid-align center-align
+
+* - $\theta$ (in radians)
+  - $0$
+  - $\frac{1}{6}\pi$
+  - $\frac{1}{4}\pi$
+  - $\frac{1}{3}\pi$
+  - $\frac{1}{2}\pi$
+* - $\theta$ (in degrees)
+  - $0^{\circ}$
+  - $30^{\circ}$
+  - $45^{\circ}$
+  - $60^{\circ}$
+  - $90^{\circ}$
+* - $\sin(\theta)$
+  - $\frac{\sqrt{0}}{2}$
+  - $\frac{\sqrt{1}}{2}$
+  - $\frac{\sqrt{2}}{2}$
+  - $\frac{\sqrt{3}}{2}$
+  - $\frac{\sqrt{4}}{2}$
+* - $\cos(\theta)$
+  - $\frac{\sqrt{4}}{2}$
+  - $\frac{\sqrt{3}}{2}$
+  - $\frac{\sqrt{2}}{2}$
+  - $\frac{\sqrt{1}}{2}$
+  - $\frac{\sqrt{0}}{2}$
+```
+
+:::
 
 ## Trigonometric identities
 
@@ -869,9 +963,9 @@ $$
 
 ## The area of a triangle
 
-Using the fact that a right-angled triangle is half of a rectangle, the area equals half the product of its legs. This is easily generalised to half the product of a base and the height of a general triangle. See {numref}`Fig:Trigonometry:Area`.
+Using the fact that a right-angled triangle is half of a rectangle, the area $S$ equals half the product of its legs. This is easily generalised to half the product of a base and the height of a general triangle: $S=\frac{1}{2}hc$. See {numref}`Fig:Trigonometry:Area`.
 
-```{figure} Images/area.png
+```{figure} Images/abhtriangle.png
 ---
 width: 50%
 name: Fig:Trigonometry:Area
@@ -898,10 +992,12 @@ class: dark-light
 Triangle $\triangle ABC$.
 ```
 
-Let $s=\frac{1}{2}(a+b+c)$ be the semiperimeter of the triangle in {numref}`Fig:Trigonometry:Heron`, then the area of this triangle equals
-```{math}
-\sqrt{s(s-a)(s-b)(s-c)}.
-```
+Let $s=\frac{1}{2}(a+b+c)$ be the semiperimeter of the triangle in {numref}`Fig:Trigonometry:Heron`, then the area $S$ of this triangle equals
+
+$$
+S=\sqrt{s(s-a)(s-b)(s-c)}.
+$$
+
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:Heron`
@@ -910,7 +1006,8 @@ Let $s=\frac{1}{2}(a+b+c)$ be the semiperimeter of the triangle in {numref}`Fig:
 Consider the perpendicular from $C$ to the opposite side $AB$, as shown in {numref}`Fig:Trigonometry:LawOfCosinesProof`.
 
 Using the Pythagorean theorem we have $h^2=b^2-e^2$ and $h^2=a^2-(c-e)^2$. This implies that $b^2-e^2=a^2-(c-e)^2$ or equivalently $b^2=a^2-c^2+2ce$. Hence we have $e=\dfrac{b^2+c^2-a^2}{2c}$. Then we have
-```{math}
+
+$$
 \begin{align*}
 h^2&=b^2-e^2 \\
 &= b^2-\frac{(b^2+c^2-a^2)^2}{4c^2} \\
@@ -919,20 +1016,25 @@ h^2&=b^2-e^2 \\
 &=\frac{((b+c)^2-a^2)(a^2-(b-c)^2)}{4c^2}\\
 &=\frac{(b-c+a)(b-c-a)(a+b-c)(a-b+c)}{4c^2}
 \end{align*}
-```
-Now the area of the triangle equals $\frac{1}{2}ch$ which reads
-```{math}
+$$
+
+Now the area $S$ of the triangle equals $S=\frac{1}{2}ch$ which reads
+
+$$
 \begin{align*}
 &\frac{c}{2}\sqrt{\frac{(b-c+a)(b-c-a)(a+b-c)(a-b+c)}{4c^2}}\\
 &{}\quad{}=\frac{1}{4}\sqrt{(b-c+a)(b-c-a)(a+b-c)(a-b+c)}.
 \end{align*}
-```
+$$
+
 Let $s=\dfrac{a+b+c}{2}$, then $s-a=\dfrac{b+c-a}{2}$, $s-b=\dfrac{a+c-b}{2}$ and $s-c=\dfrac{a+b-c}{2}$.
 
-Now we conclude that the area of the triangle equals
-```{math}
+Now we conclude that the area $S$ of the triangle equals
+
+$$
 \sqrt{\frac{a+b+c}{2}\cdot\frac{b+c-a}{2}\cdot\frac{a+b-c}{2}\cdot\frac{a+c-b}{2}}=\sqrt{s(s-a)(s-b)(s-c)}.
-```
+$$
+
 ::::::
 
 ## Exercises

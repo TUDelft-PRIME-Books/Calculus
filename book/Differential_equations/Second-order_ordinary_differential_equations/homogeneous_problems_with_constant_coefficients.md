@@ -74,7 +74,7 @@ Note that it is possible to take certain (complex) linear combinations such that
 The differential equation $y''+4y'+13y=0$ has the characteristic equation $r^2+4r+13=0\;\Longleftrightarrow\;(r+2)^2+9=0$ with nonreal roots $r=-2\pm3i$. Hence, the general solution is $y=c_1e^{-2x}\cos(3x)+c_2e^{-2x}\sin(x)$ with $c_1,c_2\in\mathbb{R}$.
 ::::::
 
-<b>Initial-value problems</b>
+**Initial-value problems**
 
 In {numref}`Sec:DE:ExistenceUniqueness` we have seen that an initial-value problem of the form
 
@@ -95,6 +95,8 @@ $$
 
 Hence, $y(x)=3e^{2x}+2e^{-3x}$ is the unique solution of the initial-value problem.
 ::::::
+
+## Applications
 
 **The pendulum**
 

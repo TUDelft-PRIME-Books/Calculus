@@ -114,9 +114,79 @@ c_{2n}&=-\frac{c_{2n-2}}{(2n)^2}=\frac{c_{2n-4}}{(2n)^2(2n-2)^2}=\cdots=\frac{(-
 $$
 
 This leads to the solution $y=c_0\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{2^{2n}(n!)^2}x^{2n}=c_0J_0(x)$, where $J_0(x)$ denotes the Bessel function of the first kind of order $0$. Compare with {prf:ref}`Ex:Series:Bessel`.
+
+```{figure} Images/besselzero.png
+---
+width: 75%
+name: The Bessel function of the first kind of order $0$
+align: center
+---
+The Bessel function of the first kind of order $0$
+```
+
 ::::::
 
 Here $x=0$ is a so-called *singular point* of the differential equation. In this case a second linear independent solution cannot be written as a power series. We refer to more advanced texts on differential equations for the second solution $Y_0(x)$, which is called the Bessel function of the second kind of order $0$.
+
+Sometimes it is even impossible to find power series solutions. As an example we mention the Bessel differential equation of order $\pm\frac{1}{2}$.
+
+:::::{admonition} The Bessel differential equation of order $\pm\frac{1}{2}$ (bonus material)
+:class: solution, dropdown
+The Bessel differential equation of order $\pm\frac{1}{2}$ reads
+
+:::{math}
+:label: Eq:ODE2:BesselOrderHalf
+x^2y''+xy'+\left(x^2-\frac{1}{4}\right)y=0,\quad x>0.
+:::
+
+There exist no solutions in the form of a power series. However, the substitution $y(x)=\dfrac{u(x)}{\sqrt{x}}$ leads to the general solution. Note that
+
+$$
+y'(x)=\frac{u'(x)\sqrt{x}-\dfrac{u(x)}{2\sqrt{x}}}{x}=\frac{u'(x)}{\sqrt{x}}-\frac{u(x)}{2x\sqrt{x}}
+$$
+
+and
+
+$$
+\begin{align*}
+y''(x)&=\frac{u''(x)\sqrt{x}-\dfrac{u'(x)}{2\sqrt{x}}}{x}-\frac{u'(x)2x\sqrt{x}-u(x)3\sqrt{x}}{4x^3}\\
+&=\frac{u''(x)}{\sqrt{x}}-\frac{u'(x)}{x\sqrt{x}}+\frac{3u(x)}{4x^2\sqrt{x}}.
+\end{align*}
+$$
+
+Substitution into {eq}`Eq:ODE2:BesselOrderHalf` leads to
+
+$$u''(x)x\sqrt{x}-u'(x)\sqrt{x}+\frac{3u(x)}{4\sqrt{x}}+u'(x)\sqrt{x}-\frac{u(x)}{2\sqrt{x}}+u(x)x\sqrt{x}-\frac{u(x)}{4\sqrt{x}}=0.
+$$
+
+Simplifying we end up with $\left(u''(x)+u(x)\right)x\sqrt{x}=0$. Since $x>0$ we conclude that
+
+$$
+u''(x)+u(x)=0
+$$
+
+which has the general solution $u(x)=c_1\cos(x)+c_2\sin(x)$ with $c_1,c_2\in\mathbb{R}$. This leads to the general solution
+
+$$
+y(x)=c_1\frac{\cos(x)}{\sqrt{x}}+c_2\frac{\sin(x)}{\sqrt{x}},\quad c_1,c_2\in\mathbb{R}
+$$
+
+of the Bessel differential equation {eq}`Eq:ODE2:BesselOrderHalf`.
+
+The function $J_{1/2}(x)=\displaystyle\sqrt{\frac{2}{\pi\,x}}\sin(x)$ for $x>0$ is called the Bessel function of the first kind of order $\frac{1}{2}$ and the function $J_{-1/2}(x)=\displaystyle\sqrt{\frac{2}{\pi\,x}}\cos(x)$ for $x>0$ is called the Bessel function of the first kind of order $-\frac{1}{2}$.
+
+```{figure} Images/besselhalf.png
+---
+width: 75%
+name: The Bessel functions of the first kind of order $\pm\frac{1}{2}$
+align: center
+---
+The Bessel functions of the first kind of order $\pm\frac{1}{2}$
+```
+
+:::::
+
+In cases like this we need so-called generalized power series to find the general solution. This method, named after the German mathematician [Ferdinand Georg Frobenius (1849-1917)](https://en.wikipedia.org/wiki/Ferdinand_Georg_Frobenius), does not fit in the scope of this book. We refer to more advanced text on differential equation for this.
 
 ::::::{prf:definition} Ordinary and singular points (1)
 A point $x_0$ is called an **ordinary point** or **regular point** of the differential equation {eq}`Eq:ODE2:Hom` if $P(x_0)\neq0$. Otherwise, so if $P(x_0)=0$, it is called a **singular point**.

@@ -196,12 +196,16 @@ y'+P(x)y=Q(x)y^n,\quad n\in\mathbb{N}
 
 is called a **Bernoulli equation**, named after the Swiss mathematician [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli).
 
+:::{prf:remark}
+Note that $y(x)=0$ is a constant solution of every Bernoulli equation with $n\neq0$. We will ignore this uninteresting solution in the sequel.
+:::
+
 For $n=0$ and $n=1$ this is a linear differential equation. However, for $n\geq2$ the Bernoulli equation is nonlinear. In 1696 [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) was the first one to solve the nonlinear Bernoulli equation using the substitution $u=y^{1-n}$. Note that this implies that $u'=(1-n)y^{-n}\cdot y'$.
 
 If we divide {eq}`Eq:ODE1:Bernoulli` by $y^n$ we obtain
 
 $$
-\frac{y'}{y^n}+\frac{P(x)}{y^{n-1}}=Q(x)\quad\Longleftrightarrow\quad y^{-n}y'+P(x)y^{1-n}+Q(x).
+\frac{y'}{y^n}+\frac{P(x)}{y^{n-1}}=Q(x)\quad\Longleftrightarrow\quad y^{-n}y'+P(x)y^{1-n}=Q(x).
 $$
 
 Applying the substitution $u=y^{1-n}$ this transfers into
@@ -371,6 +375,298 @@ P(t)=\frac{1}{u(t)}=\frac{M}{1+Ke^{-kt}},\quad K\in\mathbb{R}.
 $$
 
 Earlier we have seen that the initial value $P(0)=P_0$ leads to $K=\dfrac{M-P_0}{P_0}$.
+
+## Riccati equations
+
+A differential equation of the form
+
+:::{math}
+:label: Eq:ODE1:Riccati
+y'=P(x)+Q(x)y+R(x)y^2
+:::
+
+is called a **Riccati equation**, named after the Italian mathematician [Jacopo Francesco Riccati (1676-1754)](https://en.wikipedia.org/wiki/Jacopo_Riccati).
+
+If $P(x)=0$ this is a Bernoulli equation. If $R(x)=0$ this is a linear differential equation. For $R(x)\neq0$ this is a nonlinear differential equation.
+
+In 1760 the Swiss mathematician [Leonhard Euler 1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler) introduced the following method. 
+
+If one particular solution $y_1(x)$ is known, a more general solution can be obtained using the substitution $y(x)=y_1(x)+\dfrac{1}{u(x)}$. Since then we have $y'(x)=y_1'(x)-\dfrac{u'(x)}{u^2(x)}$ and substiution into {eq}`Eq:ODE1:Riccati` leads to
+
+$$
+y_1'-\frac{u'}{u^2}=P(x)+Q(x)y_1+\frac{Q(x)}{u}+R(x)\left(y_1^2+\frac{2y_1}{u}+\frac{1}{u^2}\right).
+$$
+
+Since $y_1$ is a solution of {eq}`Eq:ODE1:Riccati` we have $y_1'=P(x)+Q(x)y_1+R(x)y_1^2$. Hence we obtain
+
+$$
+-\frac{u'}{u^2}=\frac{Q(x)}{u}+R(x)\left(\frac{2y_1}{u}+\frac{1}{u^2}\right)\quad\Longrightarrow\quad-u'=Q(x)u+R(x)\left(2y_1u+1\right).
+$$
+
+Note that this is a linear differential equation which can be solved. The general solution of this linear differential equations contains an arbitrary constant of integration. This leads to a more general solution of the Riccati equation containing an arbitrary constant of integration. When the conditions of {prf:ref}`Thm:DE:ExistenceUniquenessODE1Nonlinear` hold, this should be the general solution. 
+
+::::::{prf:example}
+Note that $y_1(x)=\dfrac{2}{x}$ is a solution of the Riccati equation
+
+:::{math}
+:label: Eq:ODE1:RiccatiExample
+y'=\frac{2}{x^2}-y^2,\quad x>0.
+:::
+
+Let $y(x)=\dfrac{2}{x}+\dfrac{1}{u(x)}$, then we have $y'(x)=-\dfrac{2}{x^2}-\dfrac{u'(x)}{u^2(x)}$. Substitution into {eq}`Eq:ODE1:RiccatiExample` leads to
+
+$$
+-\frac{2}{x^2}-\frac{u'}{u^2}=\frac{2}{x^2}-\left(\frac{2}{x}+\frac{1}{u}\right)^2.
+$$
+
+Simplifying we obtain
+
+$$
+-\frac{u'}{u^2}=-\frac{4}{x\,u}-\frac{1}{u^2}\quad\Longrightarrow\quad u'-\frac{4}{x}u=1.
+$$
+
+Using the integrating factor $e^{-\int\frac{4}{x}\,dx}=e^{-4\ln(x)}=x^{-4}$ we find
+
+$$
+\frac{d}{dx}\left(x^{-4}u(x)\right)=x^{-4}\quad\Longrightarrow\quad x^{-4}u(x)=-\frac{1}{3}x^{-3}+C,
+$$
+
+which implies that $u(x)=-\frac{1}{3}x+Cx^4$. This leads to a more general solution
+
+$$
+y(x)=\frac{2}{x}+\frac{1}{Cx^4-\frac{1}{3}x},\quad C\in\mathbb{R}.
+$$
+
+Note that the solution $y(x)=\dfrac{2}{x}$ is retrieved by taking the limit $C\to\infty$. Therefore, it might be slightly better to use $C=\dfrac{1}{K}$ to find
+
+$$
+y(x)=\frac{2}{x}+\frac{K}{x^4-\frac{1}{3}Kx},\quad K\in\mathbb{R}.
+$$
+
+::::::
+
+```{exercise} 
+:label: Exc:ODE1:RiccatiExercise1
+Note that $y_1(x)=x$ is a solution of the Riccati equation $y'=1+x^2-2xy+y^2$.
+
+Find the general solution.
+```
+
+:::{admonition} Solution of {numref}`Exc:ODE1:RiccatiExercise1`
+:class: solution, dropdown
+Note that $f(x,y)=1+x^2-2xy+y^2$ and $\dfrac{\partial}{\partial y}f(x,y)=-2x+2y$ are continuous. Then {prf:ref}`Thm:DE:ExistenceUniquenessODE1Nonlinear` implies that the general solution has one degree of freedom (an arbitrary constant of integration).
+
+We set $y(x)=x+\dfrac{1}{u(x)}$ and therefore $y'(x)=1-\dfrac{u'(x)}{u^2(x)}$ to find
+
+$$
+1-\frac{u'}{u^2}=1+x^2-2x\left(x+\frac{1}{u}\right)+\left(x+\frac{1}{u}\right)^2\quad\Longrightarrow\quad-\frac{u'}{u^2}=\frac{1}{u^2}.
+$$
+
+Multiplying by $u^2$ we obtain $-u'=1$ which implies that $u(x)=-x+C$ with $C\in\mathbb{R}$. Hence, we have
+
+$$
+y(x)=x+\frac{1}{C-x},\quad C\in\mathbb{R}.
+$$
+
+Again, the solution $y(x)=x$ is retrieved by taking the limit $C\to\infty$. Therefore, it might be slightly better to use $C=\dfrac{1}{K}$ to find
+
+$$
+y(x)=x+\frac{K}{1-Kx},\quad K\in\mathbb{R}.
+$$
+
+:::
+
+```{exercise} 
+:label: Exc:ODE1:RiccatiExercise2
+Note that $y_1(x)=\dfrac{1}{x}$ is a solution of the Riccati equation 
+
+$$
+y'=\frac{1}{x^2}-\frac{y}{x}+y^2,\quad x>0.
+$$
+
+Find a more general solution with an arbitrary constant.
+```
+
+:::{admonition} Solution of {numref}`Exc:ODE1:RiccatiExercise2`
+:class: solution, dropdown
+We set $y(x)=\dfrac{1}{x}+\dfrac{1}{u(x)}$ and therefore $y'(x)=-\dfrac{1}{x^2}-\dfrac{u'(x)}{u^2(x)}$ to find
+
+$$
+-\frac{1}{x^2}-\frac{u'}{u^2}=\frac{1}{x^2}-\frac{1}{x}\left(\frac{1}{x}+\frac{1}{u}\right)-\left(\frac{1}{x}+\frac{1}{u}\right)^2
+$$
+
+or equivalently
+
+$$
+-\frac{1}{x^2}-\frac{u'}{u^2}=\frac{1}{x^2}-\frac{1}{x^2}-\frac{1}{x\,u}-\frac{1}{x^2}-\frac{2}{x\,u}-\frac{1}{u^2}.
+$$
+
+Simplifying we obtain
+
+$$
+-\frac{u'}{u^2}=-\frac{3}{x\,u}-\frac{1}{u^2}\quad\Longleftrightarrow\quad u'-\frac{3}{x}u=1.
+$$
+
+Using the integrating factor $e^{-\int\frac{3}{x}\,dx}=x^{-3}$ we obtain
+
+$$
+\frac{d}{dx}\left(x^{-3}u(x)\right)=x^{-3}\quad\Longrightarrow\quad x^{-3}u(x)=-\frac{1}{2}x^{-2}+C.
+$$
+
+This implies that $u(x)=-\frac{1}{2}x+Cx^3$. Hence we have
+
+$$
+y(x)=\frac{1}{x}+\frac{1}{Cx^3-\frac{1}{2}x},\quad C\in\mathbb{R}.
+$$
+
+In order to include the solution $y(x)=\dfrac{1}{x}$ we might use $C=\dfrac{1}{K}$ to find
+
+$$
+y(x)=\frac{1}{x}+\frac{K}{x^3-\frac{1}{2}Kx},\quad K\in\mathbb{R}.
+$$
+
+:::
+
+```{exercise} 
+:label: Exc:ODE1:RiccatiExercise3
+Note that $y_1(x)=x^2$ is a solution of the Riccati equation 
+
+$$
+y'=x^3+\frac{2y}{x}-\frac{y^2}{x},\quad x>0.
+$$
+
+Find a more general solution with an arbitrary constant.
+```
+
+:::{admonition} Solution of {numref}`Exc:ODE1:RiccatiExercise3`
+:class: solution, dropdown
+We set $y(x)=x^2+\dfrac{1}{u(x)}$ and therefore $y'(x)=2x-\dfrac{u'(x)}{u^2(x)}$ to find
+
+$$
+2x-\frac{u'}{u^2}=x^3+\frac{2}{x}\left(x^2+\frac{1}{u}\right)-\frac{1}{x}\left(x^2+\frac{1}{u}\right)^2
+$$
+
+or equivalently
+
+$$
+2x-\frac{u'}{u^2}=x^3+2x+\frac{2}{x\,u}-x^3-\frac{2x}{u}-\frac{1}{x\,u^2}.
+$$
+
+Simplifying we obtain
+
+$$
+-\frac{u'}{u^2}=\frac{2}{x}u-2x\,u-\frac{1}{x}\quad\Longleftrightarrow\quad u'+\left(\frac{2}{x}-2x\right)u=\frac{1}{x}.
+$$
+
+Using the integrating factor $e^{\int\left(\frac{2}{x}-2x\right)\,dx}=x^2e^{-x^2}$ we obtain
+
+$$
+\frac{d}{dx}\left(x^2e^{-x^2}u(x)\right)=xe^{-x^2}\quad\Longrightarrow\quad x^2e^{-x^2}u(x)=-\frac{1}{2}e^{-x^2}+C.
+$$
+
+This implies that $u(x)=-\dfrac{1}{2x^2}+\dfrac{Ce^{x^2}}{x^2}$. Hence we have
+
+$$
+y(x)=x^2+\frac{2x^2}{2Ce^{x^2}-1},\quad C\in\mathbb{R}.
+$$
+
+In order to include the solution $y(x)=x^2$ we might use $C=\dfrac{1}{K}$ to find
+
+$$
+y(x)=x^2+\frac{2Kx^2}{2e^{x^2}-K},\quad K\in\mathbb{R}.
+$$
+
+:::
+
+:::{note}
+If no particular solution is known, there is another method that changes the Riccati equation into a second-order linear differential equation that might be easier to solve.
+
+Using the subsitution $y=-\dfrac{1}{R}\cdot\dfrac{v'}{v}$ and therefore
+
+$$
+y'=-\frac{v''Rv-R'vv'-R(v')^2}{R^2v^2}
+$$
+
+we obtain
+
+$$
+-\frac{v''}{Rv}+\frac{R'v'}{R^2v}+\frac{R(v')^2}{R^2v^2}=P-\frac{Qv'}{Rv}+\frac{(v')^2}{Rv^2}.
+$$
+
+Simplifying and after multiplication by $R^2v$ we find
+
+$$
+-Rv''+R'v'=PR^2v-QRv'\quad\Longleftrightarrow\quad Rv''-(R'+QR)v'+PRv=0.
+$$
+
+This is a second-order linear differential equation in $v(x)$. In the next chapter we will see how these can be solved in case of constant coefficients. In {numref}`Sec:ODE2:Series` we also cover some other cases as well.
+:::
+
+:::::{prf:remark}
+The general solution of the second-order differential equation above has two degrees of freedom, which might lead to an even more general solution of the Riccati equation.
+
+For instance, note that $y(x)=-1$ is a solution of the Riccati equation
+
+:::{math}
+:label: Eq:ODE1:RiccatiRemark
+y'=1+2y+y^2.
+:::
+
+Hence, the substitution $y(x)=-1+\dfrac{1}{u(x)}$ and therefore $y'(x)=-\dfrac{u'(x)}{u^2(x)}$ leads to
+
+$$
+-\frac{u'}{u^2}=1+2\left(-1+\frac{1}{u}\right)+\left(-1+\frac{1}{u}\right)^2
+$$
+
+or equivalently
+
+$$
+-\frac{u'}{u^2}=1-2+\frac{2}{u}+1-\frac{2}{u}+\frac{1}{u^2}.
+$$
+
+Simplifying and multiplying by $u^2$ we obtain $-u'=1$ with general solution $u(x)=-x+C$. This leads to the solution
+
+$$
+y(x)=-1+\frac{1}{C-x}=-\frac{C-x-1}{C-x},\quad C\in\mathbb{R}
+$$
+
+of the Riccati equation {eq}`Eq:ODE1:RiccatiRemark`.
+
+Since in this case we have $P(x)=1$, $Q(x)=2$ and $R(x)=1$ the second-order linear differential equation for $v(x)$ reads
+
+$$
+v''-2v'+v=0.
+$$
+
+As will be explained in the next chapter the general solution of this differential equation is $v(x)=c_1e^x+c_2xe^x$ with $c_1,c_2\in\mathbb{R}$. This leads to
+
+$$
+y(x)=-\frac{1}{R}\cdot\frac{v'}{v}=-\frac{c_1e^x+c_2(x+1)e^x}{c_1e^x+c_2xe^x}=-\frac{c_1+c_2(x+1)}{c_1+c_2x},\quad c_1,c_2\in\mathbb{R}.
+$$
+
+Note that $c_2=0$ leads to the constant solution $y(x)=-1$ and $c_2=-1$ to the earlier obtained solution $y(x)=-\dfrac{c_1-x-1}{c_1-x}$ with $c_1\in\mathbb{R}$.
+
+Note that $f(y)=1+2y+y^2$ and $f'(y)=2+2y$ are continuous. So, {prf:ref}`Thm:DE:ExistenceUniquenessODE1Nonlinear` implies that the general solution should only have one arbitrary constant. In fact, if we divide by $c_2$ and set $K=\dfrac{c_1}{c_2}$ the solution above reduces to
+
+$$
+y(x)=-\frac{c_1+c_2(x+1)}{c_1+c_2x}=-\frac{\dfrac{c_1}{c_2}+x+1}{\dfrac{c_1}{c_2}+x}=-\frac{K+x+1}{K+x},
+$$
+
+where $K$ can be chosen arbitrarily with $K\to\infty$ leading to the constant solution $y(x)=-1$.
+
+Finally, note that the differential equation {eq}`Eq:ODE1:RiccatiRemark` is separable as well. For $y\neq0$ we obtain
+
+$$
+y'=(1+y)^2\quad\Longrightarrow\quad\frac{dy}{(1+y)^2}=dx\quad\Longrightarrow\quad-\frac{1}{1+y}=x+K.
+$$
+
+This leads to
+
+$$
+y(x)=-1-\frac{1}{x+K}=-\frac{x+K+1}{x+K},\quad K\in\mathbb{R}.
+$$
+
+:::::
 
 ## Applications
 
