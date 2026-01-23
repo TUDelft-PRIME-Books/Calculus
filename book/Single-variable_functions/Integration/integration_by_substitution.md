@@ -8,64 +8,176 @@ In this section we cover:
 - Integration by substitution for definite integrals
 - Even and odd functions
 
-The method of **substitution** is based on the chain rule: if $g$ is differentiable at $x$ and $F$ is differentiable at $g(x)$, then
+## Introduction
+
+In the previous section we have seen how to determine definite and indefinite integrals of standard functions and linear combinations of these standard functions.
+
+We have also seen how to apply the fundamental theorem of calculus to evaluate definite integrals. However, in many cases it is not possible to directly use these methods to evaluate (in)definite integrals. For example, consider the following indefinite integral:
+
+$$
+\displaystyle\int\cos(x)e^{\sin(x)}\,dx.
+$$
+
+Although the integrand is composed of three standard functions, we cannot directly apply the formulas from {numref}`Tab:Integration:StandardIndefiniteIntegrals` to evaluate this integral. We can also not use {prf:ref}`Th:Integration:IndefiniteProperties` to split the integral into simpler integrals, since the integrand is a product of functions instead of a sum of functions ánd one standard function is nested inside another standard function.
+
+In this section we introduce the method of **integration by substitution**, which is a very powerful method to evaluate integral such as in the example above.
+
+## Substitution for indefinite integrals
+
+The method of **integration by substitution** is based on the chain rule for differentiation: if $g$ is differentiable at $x$ and $F$ is differentiable at $g(x)$, then
 
 $$
 \frac{d}{dx}F(g(x))=F'(g(x))g'(x).
 $$
 
-This implies that
+Now consider the indefinite integral $\displaystyle\int F'(g(x))g'(x)\,dx$:
+
+\begin{align*}
+\int F'(g(x))g'(x)\,dx &= \int \frac{d}{dx}F(g(x))\,dx\\
+&= F(g(x))+C.
+\end{align*}
+
+If we would assume that $F'=f$, so $F$ is an antiderivative of $f$, then we have $F'(g(x))=f(g(x))$ and therefore
 
 $$
-\int f(g(x))g'(x)\,dx=F(g(x))\quad\text{with}\quad F'=f.
+\int f(g(x))g'(x)\,dx=F(g(x))+C\quad\text{with}.
 $$
 
 This leads to the following theorem:
 
-::::::{prf:Theorem} Substitution for indefinite integrals
+::::::{prf:Theorem} Integration by substitution for indefinite integrals
 :label: Thm:Integration:SubstitutionIndefiniteIntegral
 If $u=g(x)$ is a differentiable function whose range is an interval $I$ and $f$ is continuous on $I$, then
 
-$$
+:::{math}
+:label: Eq:Integration:SubstitutionIndefiniteIntegral
+
 \int f(g(x))g'(x)\,dx=\int f(u)\,du.
+:::
+
+::::::
+
+::::{admonition} Proof of {prf:ref}`Thm:Integration:SubstitutionIndefiniteIntegral`
+:class: tudproof, dropdown
+Let $F$ be an antiderivative of $f$ on $I$, so $F'=f$. Then:
+
+\begin{align*}
+\int f(g(x))g'(x)\,dx &= \int F'(g(x))g'(x)\,dx\\
+&= \int \frac{d}{dx}F(g(x))\,dx\\
+&= F(g(x))+C \\
+&= \left[F(u)+C\right]_{u=g(x)}\\
+&= \left[\int f(u)\,du\right]_{u=g(x)} \\
+&= \int f(u)\,du.
+\end{align*}
+::::
+
+::::::{prf:notation}
+:label: Rm:Integration:SubstitutionNotation
+
+In {prf:ref}`Thm:Integration:SubstitutionIndefiniteIntegral` the indefinite integral on the left in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is expressed in terms of the variable $x$, which means that working out the integral on the left gives a function of $x$.
+
+The indefinite integral on the right in Equation {eqref}`Eq:Integration:SubstitutionIndefiniteIntegral` must therefore also be expressed in terms of the variable $x$. This is done by substituting back $u=g(x)$ after having worked out the integral on the right.
+
+A more concise notation for writing Equation {eqref}`Eq:Integration:SubstitutionIndefiniteIntegral` is to write
+
+$$
+\int f(g(x))g'(x)\,dx=\left[\int f(u)\,du\right]_{u=g(x)}.
 $$
 
-*Remark*: if $u=g(x)$, then $du=g'(x)\,dx$.
+We however will not use this notation in the sequel, and stick to the notation in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral`.
 ::::::
+
+::::::{prf:remark}
+:label: Rm:Integration:SubstitutionDifferential
+If $u=g(x)$, we often use that $du=g'(x)\,dx$.
+
+Furthermore, the method of integration by substitution rests on identifying parts of the integrand as $f(g(\ldots))$ and $g'(\ldots)$. In practice, this means that we look for a part of the integrand:
+
+- that is nested inside another function.
+- whose derivative is also part of the integrand and is multiplied by a differential $d\ldots$ (which depends on the variable of integration).
+
+::::::
+
+Let us return to the indefinite integral at the start of this section:
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionIndefiniteIntegralExample1
-Consider $\displaystyle\int\cos(x)e^{\sin(x)}\,dx$.
+Consider $\displaystyle\int\cos(x)e^{\sin(x)}\,dx$. If we look at the integrand, we see that the term $\sin(x)$ is nested inside the exponential function $e^{ldots}$, and that the derivative of $\sin(x)$, which is $\cos(x)$, is also part of the integrand.
 
-If we set $u=\sin(x)$, we obtain that $du=\cos(x)\,dx$. Hence, we find that
+If we now set $u=\sin(x)$, we obtain that $du=\cos(x)\,dx$. Hence, we find that
 
 $$
-\int\cos(x)e^{\sin(x)}\,dx=\int e^u\,du=e^u+C=e^{\sin(x)}+C.
+\int\cos(x)e^{\sin(x)}\,dx= \int e^{\sin(x)}\,\cos(x)\,dx =\int e^u\,du=e^u+C=e^{\sin(x)}+C.
 $$
 
 ::::::
+
+Sometimes we cannot exactly find the derivative of the inner function in the integrand, but a constant multiple of this derivative. In that case we can often factor out this constant multiple from the integral, which is shown in the next example.
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionIndefiniteIntegralExample2
-Consider $\displaystyle\int\frac{x}{\sqrt{1-x^2}}\,dx$ for $-1<x<1$.
+Consider $\displaystyle\int\frac{t}{\sqrt{1-t^2}}\,dt$ for $-1<t<1$.
 
-If we set $u=1-x^2$, we obtain that $du=-2x\,dx$ or $x\,dx=-\dfrac{1}{2}\,du$. Hence, we find that
+We see that the term $1-t^2$ is nested inside the square root function $\sqrt{ldots}$. The derivative of $1-t^2$ is $-2t$, which we do not see within the integrand. However, we do see the term $t\,dt$ in the integrand, which is equal to $-\dfrac{1}{2}(-2t\,dt)$.
+
+To use this, we first rewrite the integral as
 
 $$
-\int\frac{x}{\sqrt{1-x^2}}\,dx=-\frac{1}{2}\int\frac{1}{\sqrt{u}}\,du=-\sqrt{u}+C=-\sqrt{1-x^2}+C.
+\int\frac{t}{\sqrt{1-t^2}}\,dt=\int-\dfrac{1}{2}\frac{1}{\sqrt{1-t^2}}\,(-2t)\,dt.
 $$
+
+If we set $u=1-t^2$, we obtain that $du=-2t\,dt$. Hence, we find that
+
+\begin{align*}
+\int\frac{t}{\sqrt{1-t^2}}\,dt &= \int-\dfrac{1}{2}\frac{1}{\sqrt{1-t^2}}\,(-2t)\,dt \\
+&=\int-\frac{1}{2}\frac{1}{\sqrt{u}}\,du \\
+&=-\sqrt{u}+C \\
+&=-\sqrt{1-t^2}+C.
+\end{align*}
 
 ::::::
+
+The method of integration by substitution can also be used to evaluate integrals where identifying the inner function is not immediately obvious, as shown in the next example.
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionIndefiniteIntegralExample3
 Consider $\displaystyle\int\frac{1}{(1+x)\sqrt{x}}\,dx$ for $x>0$.
 
-If we set $u=\sqrt{x}$ (or $x=u^2$), we obtain that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $\dfrac{1}{\sqrt{x}}\,dx=2\,du$. Hence, we find that
+Inspection of the integrand does not give an immediate indication of what the inner function could be. To onbtain candidates, we may try to rewrite the integrand. For example, we can write
 
 $$
-\int\frac{1}{(1+x)\sqrt{x}}\,dx=\int\frac{2}{1+u^2}\,du=2\arctan(u)+C=2\arctan(\sqrt{x})+C.
+\int\frac{1}{(1+x)\sqrt{x}}\,dx = \int\frac{1}{\sqrt{x}}\,\frac{1}{1+x}\,dx,
 $$
+
+which might indicate that we could pick $g'(x)\,dx=\dfrac{1}{1+x}\,dx$. We could also write
+
+$$
+\int\frac{1}{(1+x)\sqrt{x}}\,dx = \int\frac{1}{1+x}\,\frac{1}{\sqrt{x}}\,dx,
+$$
+
+which might indicate that we could pick $g'(x)\,dx=\dfrac{1}{\sqrt{x}}\,dx$.
+
+Because we have two options, we will try both options.
+
+If we set $u=\ln(1+x)$, we obtain that $du=\dfrac{1}{1+x}\,dx$, but also $x=e^u-1$. Hence, we find that
+
+\begin{align*}
+\int\frac{1}{(1+x)\sqrt{x}}\,dx &= \int\frac{1}{\sqrt{x}}\,\frac{1}{1+x}\,dx \\
+&= \int\frac{1}{\sqrt{e^u-1}}\,du.
+\end{align*}
+
+This integral is not a standard integral, so processing might be hard. So before continuing, we try the other option.
+
+If we set $u=\sqrt{x}$ (or $x=u^2$), we obtain that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $\dfrac{1}{\sqrt{x}}\,dx=2\,du$. Hence, we find that
+
+\begin{align*}
+\int\frac{1}{(1+x)\sqrt{x}}\,dx &= \int\frac{1}{1+x}\,\frac{1}{\sqrt{x}}\,dx \\
+&= \int\frac{2}{1+u^2}\,du \\
+&= 2\arctan(u)+C \\
+&= 2\arctan(\sqrt{x})+C.
+\end{align*}
+
+Because the second option led to a standard integral, we have found the solution and we do not need to revisit the first option.
 
 ::::::
 
@@ -110,6 +222,8 @@ Note that $\frac{1}{2}\ln(x^2+\alpha^2)$ can also be written as $\ln\sqrt{x^2+\a
 
 Note that the second formula also holds for $\alpha=0$.
 :::
+
+## Substitution for indefinite integrals
 
 For definite integrals we have:
 
