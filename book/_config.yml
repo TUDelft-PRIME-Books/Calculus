@@ -27,11 +27,27 @@ sphinx:
     text_replacer: _ext/
     check_captions: _ext/
   config:
+    prf_realtyp_to_countertyp:
+      "axiom": "theorem"
+      "theorem": "theorem"
+      "lemma": "theorem"
+      "algorithm": "theorem"
+      "definition": "theorem"
+      "remark": "theorem"
+      "conjecture": "theorem"
+      "corollary": "theorem"
+      "criterion": "theorem"
+      "example": "theorem"
+      "property": "theorem"
+      "observation": "theorem"
+      "proposition": "theorem"
+      "assumption": "theorem"
+      "notation": "theorem"
     language: en
     numfig_format:
       figure: Figure %s
     html_secnumber_suffix: " "
-    proof_title_format: "&nbsp;&nbsp;&nbsp;&nbsp;*%t*"
+    proof_title_format: " *%t*"
     proof_title_weight: "var(--bs-body-font-weight)"
     metadata_figure_settings:
       license:

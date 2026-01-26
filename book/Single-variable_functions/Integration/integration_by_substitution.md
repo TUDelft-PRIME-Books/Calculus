@@ -223,9 +223,28 @@ Note that $\frac{1}{2}\ln(x^2+\alpha^2)$ can also be written as $\ln\sqrt{x^2+\a
 Note that the second formula also holds for $\alpha=0$.
 :::
 
-## Substitution for indefinite integrals
+## Substitution for definite integrals
 
-For definite integrals we have:
+Now we have some experience with the method of integration by substitution for indefinite integrals, we can also apply this method to definite integrals.
+
+Consider the definite integral $\displaystyle\int_a^b f(g(x))g'(x)\,dx$ and assume $f$, $g$, $a$ and $b$ are such that the indefinite integral $\displaystyle\int f(g(x))g'(x)\,dx$ can be evaluated using {prf:ref}`Thm:Integration:SubstitutionIndefiniteIntegral`. Also assume that $F$ is an antiderivative of $f$. Then we have:
+
+\begin{align*}
+\int f(g(x))g'(x)\,dx &= \int f(u)\,du \\
+&= F(u)+C \\
+&= F(g(x))+C.
+\end{align*}
+
+For the definite integral we then find that
+
+\begin{align*}
+\int_a^b f(g(x))g'(x)\,dx &= \Big[F(g(x))\Big]_a^b \\
+&= F(g(b))-F(g(a)) \\
+&= \Big[F(u)\Big]_{u=g(a)}^{u=g(b)} \\
+&= \int_{g(a)}^{g(b)} f(u)\,du.
+\end{align*}
+
+But this means that we have proved the following theorem:
 
 ::::::{prf:Theorem} Substitution for definite integrals
 :label: Thm:Integration:SubstitutionDefiniteIntegral
@@ -235,14 +254,31 @@ $$
 \int_a^b f(g(x))g'(x)\,dx=\int_{g(a)}^{g(b)} f(u)\,du.
 $$
 
-*Remark*: if $x=a$ then $u=g(a)$, and if $x=b$ then $u=g(b)$.
 ::::::
+
+
+:::{prf:remark}
+:label: Rm:Integration:NoBacksies
+
+This also means that when we use the method of substitution for definite integrals, we do not need to substitute back to the original variable after having worked out the integral on the right-hand side.
+:::
+
+:::{prf:remark}
+:label: Rm:Integration:Limits
+
+Note that the choice $u=g(x)$ leads to new limits of integration: if $x=a$ then $u=g(a)$, and if $x=b$ then $u=g(b)$.
+
+Be very aware that these new limits may be in descending order if $g(a)>g(b)$ eval if $a>b$ originally.
+:::
+
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralExample1
-Evaluate $\displaystyle\int_1^e\frac{\ln(x)}{x}\,dx$.
+We want to determine $\displaystyle\int_1^e\frac{\ln(x)}{x}\,dx$.
 
-Solution. If we set $u=\ln(x)$, then we have $du=\dfrac{1}{x}\,dx$. Furthermore, we have: if $x=1$ then $u=\ln(1)=0$, and if $x=e$ then $u=\ln(e)=1$. Hence, we find that
+Inspection of the integrand shows two option for the inner function: we could pick either $g(x)=\ln(x)$ or $g(x)=x$. If we would use $g(x)=x$, we would end up with the exact same integral on the right-hand side, so this is not useful. Therefore, we pick $g(x)=\ln(x)$.
+
+If we set $u=\ln(x)$, then we have $du=\dfrac{1}{x}\,dx$. Furthermore, we have if $x=1$ then $u=\ln(1)=0$, and if $x=e$ then $u=\ln(e)=1$. Hence, we find that
 
 $$
 \int_1^e\frac{\ln(x)}{x}\,dx=\int_0^1u\,du=\frac{1}{2}u^2\bigg|_0^1=\frac{1}{2}.
@@ -252,25 +288,30 @@ $$
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralExample2
-Evaluate $\displaystyle\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
+Let us evaluate $\displaystyle\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
 
-Solution. If we set $u=\arcsin(x)$, then we have $du=\dfrac{1}{\sqrt{1-x^2}}\,dx$. Furthermore, we have: if $x=0$ then $u=\arcsin(0)=0$, and if $x=\frac{1}{2}$ then $u=\arcsin(\frac{1}{2})=\frac{1}{6}\pi$. Hence, we find that
+If we set $u=\arcsin(x)$, then we have $du=\dfrac{1}{\sqrt{1-x^2}}\,dx$. Furthermore, we have if $x=0$ then $u=\arcsin(0)=0$, and if $x=\frac{1}{2}$ then $u=\arcsin(\frac{1}{2})=\frac{1}{6}\pi$. Hence, we find that
 
 $$
 \int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx=\int_0^{\frac{1}{6}\pi}u\,du=\frac{1}{2}u^2\bigg|_0^{\frac{1}{6}\pi}=\frac{1}{2}\cdot\frac{1}{36}\pi^2=\frac{1}{72}\pi^2.
 $$
 
+Note that we did not select $u=\sqrt{1-x^2}$, because this would have led to a more complicated integral. Also, we recognised that $\dfrac{1}{\sqrt{1-x^2}}$ is the derivative of $\arcsin(x)$, which led us to the correct choice for the inner function.
+
 ::::::
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralExample3
-Evaluate $\displaystyle\int_1^4\frac{e^{\sqrt{x}}}{\sqrt{x}}\,dx$.
+We are going to calculate $\displaystyle\int_{\frac{1}{4}}^1\frac{e^{\frac{1}{\sqrt{x}}}}{x\sqrt{x}}\,dx$.
 
-Solution. If we set $u=\sqrt{x}$, then we have $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $\dfrac{1}{\sqrt{x}}\,dx=2\,du$. Furthermore, we have: if $x=1$ then $u=\sqrt{1}=1$, and if $x=4$ then $u=\sqrt{4}=2$. Hence, we find that
+If we set $u=\frac{1}{\sqrt{x}}$, then we have $du=-\dfrac{1}{2x\sqrt{x}}\,dx$ or $\dfrac{1}{x\sqrt{x}}\,dx=-2\,du$. Furthermore, we have if $x=\frac{1}{4}$ then $u=\frac{1}{\sqrt{\frac{1}{4}}}=\frac{1}{\frac{1}{2}}=2$, and if $x=1$ then $u=\dfrac{1}{\sqrt{1}}=1$. Now we find that
 
-$$
-\int_1^4\frac{e^{\sqrt{x}}}{\sqrt{x}}\,dx=2\int_1^2e^u\,du=2e^u\bigg|_1^2=2e^2-2e=2e(e-1).
-$$
+\begin{align*}
+\int_{\frac{1}{4}}^1\frac{e^{\frac{1}{\sqrt{x}}}}{x\sqrt{x}}\,dx &= \int_2^1 e^u\left(-2\right)\,du \\
+&= \int_1^2 2e^u\,du \\
+&= 2e^u\bigg|_1^2 \\
+&= 2(e^2-e).
+\end{align*}
 
 ::::::
 
@@ -280,9 +321,9 @@ In the section on definite integrals we have already seen the following intuitiv
 :label: Thm:Integration:OddEven
 Let $f$ be a continuous function defined on $[-a,a]$. Then we have
 
-(a) If $f$ is *odd*, id est $f(-x)=-f(x)$ for all $x$, then: $\displaystyle\int_{-a}^af(x)\,dx=0$.
+(a) If $f$ is *odd*, so $f(-x)=-f(x)$ for all $x$, then $\displaystyle\int_{-a}^af(x)\,dx=0$.
 
-(b) If $f$ is *even*, id est $f(-x)=f(x)$ for all $x$, then: $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$.
+(b) If $f$ is *even*, so $f(-x)=f(x)$ for all $x$, then $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Integration:OddEven`
