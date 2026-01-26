@@ -140,7 +140,7 @@ We want to determine $\displaystyle\frac{d}{dx}\int_x^{x^2}\ln(1+t^2)\,dt$.
 Because both limits of integration depend on $x$, we first rewrite the integral as the sum of two integrals with one constant limit:
 
 $$
-\int_x^{x^2}\ln(1+t^2)\,dt=\int_x^0\ln(1+t^2)\,dt\int_0^{x^2}\ln(1+t^2)\,dt.
+\int_x^{x^2}\ln(1+t^2)\,dt=\int_x^0\ln(1+t^2)\,dt+\int_0^{x^2}\ln(1+t^2)\,dt.
 $$
 
 Note that this even works if $x^2<x$ and if $x>0$. Now we can differentiate both integrals separately using the fundamental theorem of calculus and the chain rule:

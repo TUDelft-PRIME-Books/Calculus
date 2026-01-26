@@ -118,7 +118,7 @@ Sometimes we cannot exactly find the derivative of the inner function in the int
 :label: Ex:Integration:SubstitutionIndefiniteIntegralExample2
 Consider $\displaystyle\int\frac{t}{\sqrt{1-t^2}}\,dt$ for $-1<t<1$.
 
-We see that the term $1-t^2$ is nested inside the square root function $\sqrt{ldots}$. The derivative of $1-t^2$ is $-2t$, which we do not see within the integrand. However, we do see the term $t\,dt$ in the integrand, which is equal to $-\dfrac{1}{2}(-2t\,dt)$.
+We see that the term $1-t^2$ is nested inside the square root function $\sqrt{\ldots}$. The derivative of $1-t^2$ is $-2t$, which we do not see within the integrand. However, we do see the term $t\,dt$ in the integrand, which is equal to $-\dfrac{1}{2}(-2t\,dt)$.
 
 To use this, we first rewrite the integral as
 
@@ -143,7 +143,7 @@ The method of integration by substitution can also be used to evaluate integrals
 :label: Ex:Integration:SubstitutionIndefiniteIntegralExample3
 Consider $\displaystyle\int\frac{1}{(1+x)\sqrt{x}}\,dx$ for $x>0$.
 
-Inspection of the integrand does not give an immediate indication of what the inner function could be. To onbtain candidates, we may try to rewrite the integrand. For example, we can write
+Inspection of the integrand does not give an immediate indication of what the inner function could be. To obtain candidates, we may try to rewrite the integrand. For example, we can write
 
 $$
 \int\frac{1}{(1+x)\sqrt{x}}\,dx = \int\frac{1}{\sqrt{x}}\,\frac{1}{1+x}\,dx,
@@ -168,7 +168,7 @@ If we set $u=\ln(1+x)$, we obtain that $du=\dfrac{1}{1+x}\,dx$, but also $x=e^u-
 
 This integral is not a standard integral, so processing might be hard. So before continuing, we try the other option.
 
-If we set $u=\sqrt{x}$ (or $x=u^2$), we obtain that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $\dfrac{1}{\sqrt{x}}\,dx=2\,du$. Hence, we find that
+If we set $u=\sqrt{x}$, we obtain that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $\dfrac{1}{\sqrt{x}}\,dx=2\,du$. Hence, we find that
 
 \begin{align*}
 \int\frac{1}{(1+x)\sqrt{x}}\,dx &= \int\frac{1}{1+x}\,\frac{1}{\sqrt{x}}\,dx \\
@@ -180,6 +180,48 @@ If we set $u=\sqrt{x}$ (or $x=u^2$), we obtain that $du=\dfrac{1}{2\sqrt{x}}\,dx
 Because the second option led to a standard integral, we have found the solution and we do not need to revisit the first option.
 
 ::::::
+
+Although we have not made it explicit in the examples so far, in many case we used, if $u=g(x)$, that also $x=g^{-1}(u)$. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$. This is not always necessary, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
+
+We summarise this in the next algorithm:
+
+::::::{prf:algorithm}
+:label: Alg:Integration:SubstitutionIndefiniteIntegral
+
+To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by substitution, follow these steps:
+
+1. Select the inner function $g(x)$ in the integrand $I(x)$.
+2. Set $u=g(x)$ and define $h(x)=g^{-1}(x)$.
+3. Compute $dx=h'(x)\,dx$,
+4. Substitute $g(x)$ with $u$, $x$ with $h(u)$, and $dx$ with $h'(u)\,du$ in the integral.
+5. Evaluate the resulting indefinite integral using standard methods.
+
+::::::
+
+We will apply this algorithm in the next example:
+
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionIndefiniteIntegralExample4
+
+Consider $\displaystyle\int\frac{1}{(1+x)\sqrt{x}}\,dx$ for $x>0$ again.
+
+We selected $u=\sqrt{x}$ previously as the inner function, which implies that $x=h(u)=u^2$ and therefore $dx=2u\,du$. The five steps of {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` then lead to:
+
+1. We have $g(x)=\sqrt{x}$.
+2. We set $u=\sqrt{x}$ and define $h(x)=x^2$.
+3. We compute $dx=2u\,du$.
+4. and 5. We substitute in the integral and evaluate:
+
+\begin{align*}
+\int\frac{1}{(1+x)\sqrt{x}}\,dx &= \int\frac{1}{(1+u^2)u}\,2u\,du \\
+&= \int\frac{2}{1+u^2}\,du \\
+&= 2\arctan(u)+C \\
+&= 2\arctan(\sqrt{x})+C.
+\end{align*}
+
+::::::
+
+We will not explicitly use {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` in the sequel, but the steps of this algorithm will be followed implicitly.
 
 ::::{exercise}
 :label: Exc:Integration:SubstitutionIndefiniteIntegralRationalFunctions
@@ -271,6 +313,21 @@ Note that the choice $u=g(x)$ leads to new limits of integration: if $x=a$ then 
 Be very aware that these new limits may be in descending order if $g(a)>g(b)$ eval if $a>b$ originally.
 :::
 
+{prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` can easily be adapted to definite integrals:
+
+::::::{prf:algorithm}
+:label: Alg:Integration:SubstitutionDefiniteIntegral
+
+To evaluate a definite integral of the form $\displaystyle\int_a^b I(x)\,dx$ using the method of integration by substitution, follow these steps:
+
+1. Select the inner function $g(x)$ in the integrand $I(x)$.
+2. Set $u=g(x)$ and define $h(x)=g^{-1}(x)$.
+3. Compute $dx=h'(x)\,dx$,
+4. Substitute $g(x)$ with $u$, $x$ with $h(u)$, $dx$ with $h'(u)\,du$, $a$ with $g(a)$, and $b$ with $g(b)$ in the integral.
+5. Evaluate the resulting definite integral using standard methods.
+
+::::::
+
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralExample1
@@ -315,7 +372,7 @@ If we set $u=\frac{1}{\sqrt{x}}$, then we have $du=-\dfrac{1}{2x\sqrt{x}}\,dx$ o
 
 ::::::
 
-In the section on definite integrals we have already seen the following intuitively result, which can now be proved using a substitution:
+In the section on definite integrals, in {prf:ref}`Th:Integration:DefinitePropertiesArea` we have already seen the following intuitively result, which can now be proved using a substitution:
 
 ::::::{prf:Theorem}
 :label: Thm:Integration:OddEven
@@ -386,518 +443,6 @@ $$
 $$
 
 :::
-
-## Trigonometric substitutions
-
-For certain integrals involving square roots of the form $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$ or $\sqrt{x^2-a^2}$ we might use a **trigonometric substitution** in order to get rid of the square root. This will lead to integrals involving trigonometric functions, which will be treated in the section on integration of trigonometric functions. However, here we will show how the method of trigonometric substitution works.
-
-Note that $1-\sin^2(x)=\cos^2(x)$. So if we set $x=a\sin(t)$ in $\sqrt{a^2-a^2}$ we obtain 
-
-$$
-\sqrt{a^2-a^2\sin^2(t)}=\sqrt{a^2\cos^2(t)}=|a\cos(t)|.
-$$
-
-Combined with $dx=a\cos(t)\,dt$ this leads to an integral involving trigonometric functions.
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1
-Evaluate $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$.
-
-Solution. Let $x=\sin(t)$, then we have $dx=\cos(t)\,dt$. Furthermore, if $x=-1$ then $t=-\frac{1}{2}\pi$ and if $x=1$ then $t=\frac{1}{2}\pi$. Hence we find that
-
-$$
-\int_{-1}^1\sqrt{1-x^2}\,dx=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}|\cos(t)|\cos(t)\,dt.
-$$
-
-Note that $\cos(t)\geq0$ for $-\frac{1}{2}\pi\leq t\leq\frac{1}{2}\pi$. Using $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ we then obtain
-
-$$
-\begin{align*}
-\int_{-1}^1\sqrt{1-x^2}\,dx&=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1+\cos(2t))\,dt\\
-&=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{2}\pi.
-\end{align*}
-$$
-
-*Remark*: the integral denotes the area of the upper half of the unit circle.
-::::::
-
-Instead of using the substitution $x=a\sin(t)$ we may also use the substitution $x=a\cos(t)$, which leads to $dx=-a\sin(t)\,dt$ and 
-
-$$
-\sqrt{a^2-x^2}=\sqrt{a^2-a^2\cos^2(t)}=\sqrt{a^2\sin^2(t)}=|a\sin(t)|.
-$$ 
-
-::::{exercise}
-:label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution1
-Evaluate $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$ using the substitution $x=\cos(t)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution1`
-:class: solution, dropdown
-Let $x=\cos(t)$, then we have $dx=-\sin(t)\,dt$. Furthermore, if $x=-1$ then $t=\pi$ and if $x=1$ then $t=0$. Hence we find that
-
-$$
-\int_{-1}^1\sqrt{1-x^2}\,dx=-\int_{\pi}^0|\sin(t)|\sin(t)\,dt=\int_0^{\pi}|\sin(t)|\sin(t)\,dt.
-$$
-
-Note that $\sin(t)\geq0$ for $0\leq t\leq\pi$. Using $\sin^2(t)=\frac{1}{2}(1-\cos(2t))$ we then obtain
-
-$$
-\begin{align*}
-\int_{-1}^1\sqrt{1-x^2}\,dx&=\int_0^{\pi}\sin^2(t)\,dt=\frac{1}{2}\int_0^{\pi}(1-\cos(2t))\,dt\\
-&=\bigg[\frac{1}{2}t-\frac{1}{4}\sin(2t)\bigg]_0^{\pi}=\frac{1}{2}\pi.
-\end{align*}
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution2
-Evaluate $\displaystyle\int_{-1}^1x^2\sqrt{1-x^2}\,dx$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution2`
-:class: solution, dropdown
-Let $x=\sin(t)$, then we have $dx=\cos(t)\,dt$. Furthermore, if $x=-1$ then $t=-\frac{1}{2}\pi$ and if $x=1$ then $t=\frac{1}{2}\pi$. Hence we find that
-
-$$
-\int_{-1}^1x^2\sqrt{1-x^2}\,dx=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin^2(t)|\cos(t)|\cos(t)\,dt
-=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin^2(t)\cos^2(t)\,dt.
-$$
-
-Now we use $\sin(2t)=2\sin(t)\cos(t)$ to find 
-
-$$
-\int_{-1}^1x^2\sqrt{1-x^2}\,dx=\frac{1}{4}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin^2(2t)\,dt.
-$$
-
-Finally, we have $\sin^2(2t)=\frac{1}{2}(1-\cos(4t))$ which leads to
-
-$$
-\begin{align*}
-\int_{-1}^1x^2\sqrt{1-x^2}\,dx&=\frac{1}{8}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1-\cos(4t))\,dt\\
-&=\bigg[\frac{1}{8}t-\frac{1}{32}\sin(4t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{8}\pi.
-\end{align*}
-$$
-
-:::
-
-For $\sqrt{a^2+x^2}$ we use the fact that for $x=a\tan(t)$ we have
-
-$$
-\sqrt{a^2+x^2}=\sqrt{a^2(1+\tan^2(x))}=\sqrt{\frac{a^2}{\cos^2(t)}}=\left|\frac{a}{\cos(t)}\right|.
-$$
-
-Combined with $dx=\dfrac{a}{\cos^2(t)}\,dt$ this will also give rise to an integral involving trigonometric functions.
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample2
-Evaluate $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx$.
-
-Solution. Let $x=\tan(t)$, then we have $dx=\dfrac{dt}{\cos^2(t)}$. Furthermore, if $x=0$ then $t=0$ and if $x=1$ then $t=\frac{1}{4}\pi$. Hence we find that
-
-$$
-\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\int_0^{\frac{1}{4}\pi}|\cos(t)|\frac{1}{\cos^2(t)}\,dt.
-$$
-
-Note that $\cos(t)\geq0$ for $0\leq t\leq\frac{1}{4}\pi$. Hence we have
-
-$$
-\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\int_0^{\frac{1}{4}\pi}\frac{dt}{\cos(t)}.
-$$
-
-In 1668 the Scottish mathematician [James Gregory (1638-1675)](https://en.wikipedia.org/wiki/James_Gregory_(mathematician)) discovered that
-
-$$
-\int\frac{dt}{\cos(t)}=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
-$$
-
-This can be shown as follows
-
-$$
-\int\frac{dt}{\cos(t)}=\int\frac{1}{\cos(t)}\cdot\frac{\tan(t)+\dfrac{1}{\cos(t)}}{\tan(t)+\dfrac{1}{\cos(t)}}\,dt=\int\frac{\dfrac{\tan(t)}{\cos(t)}+\dfrac{1}{\cos^2(t)}}{\tan(t)+\dfrac{1}{\cos(t)}}\,dt.
-$$
-
-Now we set $u=\tan(t)+\dfrac{1}{\cos(t)}$ which implies that
-
-$$
-\frac{du}{dt}=\frac{1}{\cos^2(t)}-\frac{1}{\cos^2(t)}\cdot(-\sin(t))=\frac{1}{\cos^2(t)}+\frac{\tan(t)}{\cos(t)}.
-$$
-
-Hence we have $du=\left(\dfrac{1}{\cos^2(t)}+\dfrac{\tan(t)}{\cos(t)}\right)\,dt$. Thus
-
-$$
-\int\frac{dt}{\cos(t)}=\int\frac{du}{u}=\ln|u|+C=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
-$$
-
-We conclude that
-
-$$
-\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\left[\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|\right]_0^{\frac{1}{4}\pi}=\ln(1+\sqrt{2}).
-$$
-
-and therefore $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\ln(1+\sqrt{2})$.
-::::::
-
-::::{exercise}
-:label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution3
-Evaluate $\displaystyle\int_0^1\frac{1}{1+x^2}\,dx$ using the substitution $x=\tan(t)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution3`
-:class: solution, dropdown
-Let $x=\tan(t)$, then we have $dx=\left(1+\tan^2(t)\right)\,dt$. Furthermore, if $x=0$ then $t=0$ and if $x=1$ then $t=\frac{1}{4}\pi$. Hence we find that
-
-$$
-\int_0^1\frac{1}{1+x^2}\,dx=\int_0^{\frac{1}{4}\pi}\frac{1}{1+\tan^2(t)}\left(1+\tan^2(t)\right)\,dt=\int_0^{\frac{1}{4}\pi}1\,dt=\frac{1}{4}\pi.
-$$
-
-*Remark*: Of course, it is easier to evaluate the integral directly using the fundamental theorem of calculus (see: {prf:ref}`Ex:Integration:FundamentalTheoremPart2Example3`).
-
-:::
-
-In the case of $\sqrt{x^2-a^2}$ we use the substitution $x=\dfrac{a}{\cos(t)}$. Then we have $dx=\dfrac{a\sin(t)}{\cos^2(t)}$ and
-
-$$
-\sqrt{x^2-a^2}=\sqrt{\frac{a^2}{\cos^2(t)}-a^2}=\sqrt{\frac{a^2-a^2\cos^2(t)}{\cos^2(t)}}=\sqrt{\frac{a^2\sin^2(t)}{\cos^2(t)}}=|a\tan(t)|.
-$$
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample3
-Evaluate $\displaystyle\int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx$.
-
-Solution. Let $x=\dfrac{1}{\cos(t)}$, then we have $dx=\dfrac{\sin(t)}{\cos^2(t)}\,dt$. Furthermore, if $x=1$ then $t=0$ and if $x=\sqrt{2}$ then $t=\frac{1}{4}\pi$. Hence we find that
-
-$$
-\begin{align*}
-\int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx&=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt\\
-&=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt.
-\end{align*}
-$$
-
-Now we use $\cos^2(t)=1-\sin^2(t)$ and the substitution $u=\sin(t)$ to find that
-
-$$
-\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt=\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du.
-$$
-
-Then we use the partial fraction decomposition (see the section on integration of rational functions)
-
-$$
-\frac{u^2}{(1-u^2)^2}=\frac{1}{4}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right),
-$$
-
-to find that
-
-$$
-\begin{align*}
-&\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du\\
-&=\frac{1}{4}\int_0^{\frac{1}{2}\sqrt{2}}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,dt\\
-&=\frac{1}{4}\bigg[\ln|1-u|+\frac{1}{1-u}-\ln|1+u|-\frac{1}{1+u}\bigg]_0^{\frac{1}{2}\sqrt{2}}\\
-&=\frac{1}{4}\left(\ln(1-\tfrac{1}{2}\sqrt{2})+\frac{1}{1-\frac{1}{2}\sqrt{2}}-\ln(1+\tfrac{1}{2}\sqrt{2})-\frac{1}{1+\frac{1}{2}\sqrt{2}}\right)\\
-&=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}.
-\end{align*}
-$$
-
-::::::
-
-## The tangent half-angle substitution
-
-The **tangent half-angle substitution**, sometimes called the **Weierstrass substitution**, converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function. Although integrals of rational functions will be covered later, we can show how it works.
-
-The method is named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass).
-
-For $-\pi<x<\pi$ we set $t=\tan(\frac{1}{2}x)$ or $x=2\arctan(t)$. Then we have
-
-::::{math}
-:label: Eq:Integration:Weierstrass
-
-\sin(\tfrac{1}{2}x)=\frac{t}{\sqrt{1+t^2}}\quad\text{and}\quad\cos(\tfrac{1}{2}x)=\frac{1}{\sqrt{1+t^2}}.
-
-::::
-
-:::{admonition} Proof of {eq}`Eq:Integration:Weierstrass`
-:class: solution, dropdown
-For $0<x<\pi$ consider the right-angled triangle with legs $1$ and $t$ and angle $\theta$ such that $\tan(\theta)=t$. Then the hypotenuse equals $\sqrt{1+t^2}$ and
-
-$$
-\sin(\theta)=\frac{t}{\sqrt{1+t^2}}\quad\text{and}\quad\cos(\theta)=\frac{1}{\sqrt{1+t^2}}.
-$$
-
-This proves the formulas for $0<x<\pi$. For $-\pi<x<0$ we use $\sin(-\theta)=-\sin(\theta)$ and $\cos(-\theta)=\cos(\theta)$. For $x=0$ the formulas (trivially) hold as well.
-
-Alternatively, we have
-
-$$
-\cos^2(\tfrac{1}{2}x)=\frac{1}{1+\tan^2(\frac{1}{2}x)}=\frac{1}{1+t^2}\quad\Longrightarrow\quad\cos(\tfrac{1}{2}x)=\pm\frac{1}{\sqrt{1+t^2}}.
-$$
-
-Since $\cos(\frac{1}{2}x)>0$ for $-\pi<x<\pi$ we conclude that $\cos(\frac{1}{2}x)=\dfrac{1}{\sqrt{1+t^2}}$. Then we have
-
-$$
-\sin^2(\tfrac{1}{2}x)=1-\cos^2(\tfrac{1}{2}x)=1-\frac{1}{1+t^2}=\frac{1+t^2-1}{1+t^2}=\frac{t^2}{1+t^2}.
-$$
-
-Hence, we have: $\sin(\frac{1}{2}x)=\pm\dfrac{t}{\sqrt{1+t^2}}$. Since $\sin(\frac{1}{2}x)$ should have the same sign as $t=\tan(\frac{1}{2}x)$ for $-\pi<x<\pi$ we conclude that $\sin(\frac{1}{2}x)=\dfrac{t}{\sqrt{1+t^2}}$.
-
-:::
-
-This leads to
-
-$$
-\sin(x)=2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)=\frac{2t}{1+t^2}
-$$
-
-and
-
-$$
-\cos(x)=\cos^2(\tfrac{1}{2}x)-\sin^2(\tfrac{1}{2}x)=\frac{1-t^2}{1+t^2}.
-$$
-
-Furthermore, we have $dx=\dfrac{2\,dt}{1+t^2}$.
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionWeierstrassExample1
-Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)}$.
-
-Solution. Using $t=\tan(\frac{1}{2}x)$ we obtain
-
-$$
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)}&=\int_0^1\frac{1}{1+\dfrac{2t}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int_0^1\frac{2\,dt}{(t+1)^2}\\
-&=-\frac{2}{1+t}\bigg|_0^1=-1+2=1.
-\end{align*}
-$$
-
-::::::
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionWeierstrassExample2
-Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{\cos(x)}{1+\cos(x)}\,dx$.
-
-Solution. Using $t=\tan(\frac{1}{2}x)$ we obtain
-
-$$
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\frac{\cos(x)}{1+\cos(x)}\,dx&=\int_0^1\frac{\dfrac{1-t^2}{1+t^2}}{1+\dfrac{1-t^2}{1+t^2}}\cdot\frac{2}{1+t^2}\,dt\\
-&=\int_0^1\frac{1-t^2}{1+t^2+1-t^2}\cdot\frac{2}{1+t^2}\,dt\\
-&=\int_0^1\frac{1-t^2}{1+t^2}\,dt=\int_0^1\frac{2-(1+t^2)}{1+t^2}\,dt\\
-&=\bigg[2\arctan(t)-t\bigg]_0^1=\frac{1}{2}\pi-1.
-\end{align*}
-$$
-
-::::::
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionWeierstrassExample3
-Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)+\cos(x)}$.
-
-Solution. Using $t=\tan(\frac{1}{2}x)$ we obtain
-
-$$
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)+\cos(x)}&=\int_0^1\frac{1}{1+\dfrac{2t}{1+t^2}+\dfrac{1-t^2}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}\\
-&=\int_0^1\frac{dt}{1+t}=\ln(1+t)\bigg|_0^1=\ln(2).
-\end{align*}
-$$
-
-::::::
-
-In {prf:ref}`Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample2` we obtained that
-
-$$
-\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\ln(1+\sqrt{2}).
-$$
-
-This can also be done using the tangent half-angle substitution: set $u=\tan(\frac{1}{2}t)$ or $t=2\arctan(u)$. Then $t=0$ implies that $u=0$ and $t=\frac{1}{4}\pi$ implies that $u=\tan(\frac{1}{8}\pi)=\sqrt{2}-1$ (see: {numref}`Exc:Trigonometry:Exercise_10`). With $\cos(t)=\dfrac{1-u^2}{1+u^2}$ and $dt=\dfrac{2\,du}{1+u^2}$ we obtain
-
-$$
-\begin{align*}
-\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt&=\int_0^{\sqrt{2}-1}\frac{1}{\dfrac{1-u^2}{1+u^2}}\cdot\frac{2\,du}{1+u^2}=\int_0^{\sqrt{2}-1}\frac{2}{1-u^2}\,du\\
-&=\int_0^{\sqrt{2}-1}\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du=\bigg[\ln(1+u)-\ln(1-u)\bigg]_0^{\sqrt{2}-1}\\
-&=\ln(\sqrt{2})-\ln(2-\sqrt{2})=\ln\left(\frac{\sqrt{2}}{2-\sqrt{2}}\right)\\
-&=\ln\left(\frac{\sqrt{2}}{2-\sqrt{2}}\cdot\frac{2+\sqrt{2}}{2+\sqrt{2}}\right)=\ln\left(\frac{2+2\sqrt{2}}{4-2}\right)=\ln(1+\sqrt{2}).
-\end{align*}
-$$
-
-## A nice formula with interesting applications
-
-Using the substitution $x=a+b-t$ or $t=a+b-x$ we obtain that:
-
-$$
-\begin{align*}
-\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx&=-\int_b^a\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt\\
-&=\int_a^b\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt.
-\end{align*}
-$$
-
-This implies that
-
-$$
-I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=\int_a^b\frac{f(a+b-x)}{f(a+b-x)+f(x)}\,dx.
-$$
-
-Hence we have
-
-$$
-2I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx+\int_a^b\frac{f(a+b-x)}{f(a+b-x)+f(x)}\,dx=\int_a^b1\,dx=b-a,
-$$
-
-which implies that
-
-$$
-\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=\frac{b-a}{2}.
-$$
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionNiceFormula1
-For $a=0$, $b=1$ and $f(x)=\sqrt{x}$ we obtain
-
-$$
-\int_0^1\frac{\sqrt{x}}{\sqrt{x}+\sqrt{1-x}}\,dx=\frac{1-0}{2}=\frac{1}{2}.
-$$
-
-::::::
-
-Grasple-opgave met varianten: $\displaystyle\int_a^b\frac{\sqrt{x}}{\sqrt{x}-\sqrt{a+b-x}}\,dx=\frac{b-a}{2}$ met $a\in\{0,1,2,3,4,5,6,7,8\}$ en $b\in\{1,2,3,4,5,6,7,8,9\}$ met $a<b$ (met uitzondering van $a=0$ en $b=1$).
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionNiceFormula2
-For $a=0$, $b=\frac{1}{2}\pi$ and $f(x)=\sin(x)$ we obtain
-
-$$
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\sin(\frac{1}{2}\pi-x)}\,dx\\
-&=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
-\end{align*}
-$$
-
-::::::
-
-Grasple-opgave met varianten: $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{(\sin(x))^a}{(\sin(x))^a+(\cos(x))^a}\,dx=\frac{\frac{1}{2}\pi-0}{2}=\tfrac{1}{4}\pi$ met $a\in\{1/2,2,3,4,5\}$.
-
-::::{exercise}
-:label: Exc:Integration:SubstitutionNiceFormula
-Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionNiceFormula`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}&=\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\dfrac{\sin(x)}{\cos(x)}}=\int_0^{\frac{1}{2}\pi}\frac{\dfrac{1}{\sin(x)}}{\dfrac{1}{\sin(x)}+\dfrac{1}{\cos(x)}}\,dx\\
-&=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
-\end{align*}
-$$
-
-:::
-
-## Serret's integral
-
-Consider the integral $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$, which is named after the French mathematician [Joseph Alfred Serret (1819-1885)](https://en.wikipedia.org/wiki/Joseph-Alfred_Serret).  One way to evaluate the integral is by using the substitution $x=\tan(\theta)$:
-
-$$
-\begin{align*}
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\ln\left(1+\tan(\theta)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\frac{\cos(\theta)+\sin(\theta)}{\cos(\theta)}\right)\,d\theta\\
-&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos(\theta)+\sin(\theta)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta.
-\end{align*}
-$$
-
-Now we use $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$ (see exercise 2) to obtain
-
-$$
-\begin{align*}
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta\\
-&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\right)+\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta.
-\end{align*}
-$$
-
-Finally, the substitution $t=\frac{1}{4}\pi-\theta$ or $\theta=\frac{1}{4}\pi-t$ shows that
-
-$$
-\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=-\int_{\frac{1}{4}\pi}^0\ln\left(\cos(t)\right)\,dt=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt,
-$$
-
-which implies that
-
-$$
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{4}\pi\ln\left(\sqrt{2}\right)=\frac{1}{8}\pi\ln(2).
-$$
-
-In this evaluation we obtained that
-
-$$
-\begin{align*}
-&\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt\\
-&{}\quad\Longrightarrow\quad\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta=0.
-\end{align*}
-$$
-
-The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later. See: {numref}`Sec:Series:TaylorSeries`. 
-
-::::{exercise}
-:label: Exc:Integration:SubstitutionTrigForm
-Show that $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionTrigForm`
-:class: solution, dropdown
-Using $\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y)$ we obtain
-
-$$
-\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)\cos(\tfrac{1}{4}\pi)+\sin(\theta)\sin(\tfrac{1}{4}\pi)=\tfrac{1}{2}\sqrt{2}\cos(\theta)+\tfrac{1}{2}\sqrt{2}\sin(\theta).
-$$
-
-Multiplying by $\sqrt{2}$ we find that
-
-$$
-\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)+\sin(\theta).
-$$
-
-:::
-
-## Integrals involving the Lambert $W$ function
-
-The Lambert $W$ function is the inverse of the function $y=xe^x$ with domain $[-1,\infty)$ and range $[-e^{-1},\infty)$. This implies that 
-
-$$
-W(x)e^{W(x)}=x.
-$$
-
-Using the substitution $t=W(x)$ or equivalently $x=te^t$ and therefore $dx=(t+1)e^t\,dt$ we have for $x>-e^{-1}$:
-
-$$
-\int W(x)\,dx=\int t(t+1)e^t\,dt=(t^2-t+1)e^t+C=xW(x)-x+e^{W(x)}+C.
-$$
-
-For $x>-e^{-1}$ and $x\neq0$ this can also be written as: 
-
-$$
-\int W(x)\,dx=x\left(W(x)-1+\frac{1}{W(x)}\right)+C.
-$$
-
-Since $W(0)=0$ and $W(e)=1$ it follows that $\displaystyle\int_0^eW(x)\,dx=e-1$.
-
-Similarly we obtain for $x>-e^{-1}$ and $x\neq0$:
-
-$$
-\begin{align*}
-\int\frac{W(x)}{x}\,dx&=\int\frac{t}{te^t}(t+1)e^t\,dt=\int(t+1)\,dt=\frac{1}{2}t^2+t+C\\
-&=\frac{1}{2}\{W(x)\}^2+W(x)+C.
-\end{align*} 
-$$
-
-Using $W(x)e^{W(x)}=x$ this can also be obtained in this way:
-
-$$
-\begin{align*}
-\int\frac{W(x)}{x}\,dx&=\int e^{-W(x)}\,dx=\int e^{-t}(t+1)e^t\,dt=\int(t+1)\,dt\\
-&=\frac{1}{2}t^2+t+C=\frac{1}{2}\{W(x)\}^2+W(x)+C.
-\end{align*}
-$$
-
-Since $W(0)=0$ and $W(e)=1$ it follows that $\displaystyle\int_0^ee^{-W(x)}\,dx=\frac{3}{2}$.
 
 ## Grasple exercises
 

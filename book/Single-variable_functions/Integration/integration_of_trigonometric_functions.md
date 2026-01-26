@@ -794,15 +794,44 @@ $$
 
 ## The tangent half-angle substitution
 
-In {numref}`Sec:Integration:Substitution` on integration by substitution we have already seen the **tangent half-angle substitution**, sometimes called the **Weierstrass substitution**, which converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function.
+The **tangent half-angle substitution**, sometimes called the **Weierstrass substitution**, converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function. Although integrals of rational functions will be covered later, we can show how it works.
 
 The method is named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass).
 
-For $-\pi<x<\pi$ we set $t=\tan(\frac{1}{2}x)$ or $x=2\arctan(t)$. Then we have (see {eq}`Eq:Integration:Weierstrass`)
+For $-\pi<x<\pi$ we set $t=\tan(\frac{1}{2}x)$ or $x=2\arctan(t)$. Then we have
+
+::::{math}
+:label: Eq:Integration:Weierstrass
+
+\sin(\tfrac{1}{2}x)=\frac{t}{\sqrt{1+t^2}}\quad\text{and}\quad\cos(\tfrac{1}{2}x)=\frac{1}{\sqrt{1+t^2}}.
+
+::::
+
+:::{admonition} Proof of {eq}`Eq:Integration:Weierstrass`
+:class: solution, dropdown
+For $0<x<\pi$ consider the right-angled triangle with legs $1$ and $t$ and angle $\theta$ such that $\tan(\theta)=t$. Then the hypotenuse equals $\sqrt{1+t^2}$ and
 
 $$
-\sin(\tfrac{1}{2}x)=\frac{t}{\sqrt{1+t^2}}\quad\text{and}\quad\cos(\tfrac{1}{2}x)=\frac{1}{\sqrt{1+t^2}}.
+\sin(\theta)=\frac{t}{\sqrt{1+t^2}}\quad\text{and}\quad\cos(\theta)=\frac{1}{\sqrt{1+t^2}}.
 $$
+
+This proves the formulas for $0<x<\pi$. For $-\pi<x<0$ we use $\sin(-\theta)=-\sin(\theta)$ and $\cos(-\theta)=\cos(\theta)$. For $x=0$ the formulas (trivially) hold as well.
+
+Alternatively, we have
+
+$$
+\cos^2(\tfrac{1}{2}x)=\frac{1}{1+\tan^2(\frac{1}{2}x)}=\frac{1}{1+t^2}\quad\Longrightarrow\quad\cos(\tfrac{1}{2}x)=\pm\frac{1}{\sqrt{1+t^2}}.
+$$
+
+Since $\cos(\frac{1}{2}x)>0$ for $-\pi<x<\pi$ we conclude that $\cos(\frac{1}{2}x)=\dfrac{1}{\sqrt{1+t^2}}$. Then we have
+
+$$
+\sin^2(\tfrac{1}{2}x)=1-\cos^2(\tfrac{1}{2}x)=1-\frac{1}{1+t^2}=\frac{1+t^2-1}{1+t^2}=\frac{t^2}{1+t^2}.
+$$
+
+Hence, we have: $\sin(\frac{1}{2}x)=\pm\dfrac{t}{\sqrt{1+t^2}}$. Since $\sin(\frac{1}{2}x)$ should have the same sign as $t=\tan(\frac{1}{2}x)$ for $-\pi<x<\pi$ we conclude that $\sin(\frac{1}{2}x)=\dfrac{t}{\sqrt{1+t^2}}$.
+
+:::
 
 This leads to
 
@@ -1044,6 +1073,69 @@ $$
 $$
 
 :::
+
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionWeierstrassExample1
+Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)}$.
+
+Solution. Using $t=\tan(\frac{1}{2}x)$ we obtain
+
+$$
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)}&=\int_0^1\frac{1}{1+\dfrac{2t}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int_0^1\frac{2\,dt}{(t+1)^2}\\
+&=-\frac{2}{1+t}\bigg|_0^1=-1+2=1.
+\end{align*}
+$$
+
+::::::
+
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionWeierstrassExample2
+Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{\cos(x)}{1+\cos(x)}\,dx$.
+
+Solution. Using $t=\tan(\frac{1}{2}x)$ we obtain
+
+$$
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\frac{\cos(x)}{1+\cos(x)}\,dx&=\int_0^1\frac{\dfrac{1-t^2}{1+t^2}}{1+\dfrac{1-t^2}{1+t^2}}\cdot\frac{2}{1+t^2}\,dt\\
+&=\int_0^1\frac{1-t^2}{1+t^2+1-t^2}\cdot\frac{2}{1+t^2}\,dt\\
+&=\int_0^1\frac{1-t^2}{1+t^2}\,dt=\int_0^1\frac{2-(1+t^2)}{1+t^2}\,dt\\
+&=\bigg[2\arctan(t)-t\bigg]_0^1=\frac{1}{2}\pi-1.
+\end{align*}
+$$
+
+::::::
+
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionWeierstrassExample3
+Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)+\cos(x)}$.
+
+Solution. Using $t=\tan(\frac{1}{2}x)$ we obtain
+
+$$
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\sin(x)+\cos(x)}&=\int_0^1\frac{1}{1+\dfrac{2t}{1+t^2}+\dfrac{1-t^2}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}\\
+&=\int_0^1\frac{dt}{1+t}=\ln(1+t)\bigg|_0^1=\ln(2).
+\end{align*}
+$$
+
+::::::
+
+In {prf:ref}`Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample2` we obtained that
+
+$$
+\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\ln(1+\sqrt{2}).
+$$
+
+This can also be done using the tangent half-angle substitution: set $u=\tan(\frac{1}{2}t)$ or $t=2\arctan(u)$. Then $t=0$ implies that $u=0$ and $t=\frac{1}{4}\pi$ implies that $u=\tan(\frac{1}{8}\pi)=\sqrt{2}-1$ (see: {numref}`Exc:Trigonometry:Exercise_10`). With $\cos(t)=\dfrac{1-u^2}{1+u^2}$ and $dt=\dfrac{2\,du}{1+u^2}$ we obtain
+
+$$
+\begin{align*}
+\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt&=\int_0^{\sqrt{2}-1}\frac{1}{\dfrac{1-u^2}{1+u^2}}\cdot\frac{2\,du}{1+u^2}=\int_0^{\sqrt{2}-1}\frac{2}{1-u^2}\,du\\
+&=\int_0^{\sqrt{2}-1}\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du=\bigg[\ln(1+u)-\ln(1-u)\bigg]_0^{\sqrt{2}-1}\\
+&=\ln(\sqrt{2})-\ln(2-\sqrt{2})=\ln\left(\frac{\sqrt{2}}{2-\sqrt{2}}\right)\\
+&=\ln\left(\frac{\sqrt{2}}{2-\sqrt{2}}\cdot\frac{2+\sqrt{2}}{2+\sqrt{2}}\right)=\ln\left(\frac{2+2\sqrt{2}}{4-2}\right)=\ln(1+\sqrt{2}).
+\end{align*}
 
 ## (Grasple) exercises
 
