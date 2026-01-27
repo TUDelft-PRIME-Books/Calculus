@@ -2,12 +2,6 @@
 
 # Integration by substitution
 
-In this section we cover:
-
-- Integration by substitution for indefinite integrals
-- Integration by substitution for definite integrals
-- Even and odd functions
-
 ## Introduction
 
 In the previous section we have seen how to determine definite and indefinite integrals of standard functions and linear combinations of these standard functions.
@@ -40,7 +34,7 @@ Now consider the indefinite integral $\displaystyle\int F'(g(x))g'(x)\,dx$:
 If we would assume that $F'=f$, so $F$ is an antiderivative of $f$, then we have $F'(g(x))=f(g(x))$ and therefore
 
 $$
-\int f(g(x))g'(x)\,dx=F(g(x))+C\quad\text{with}.
+\int f(g(x))g'(x)\,dx=F(g(x))+C\quad\text{with}\quad C\in\mathbb{R}.
 $$
 
 This leads to the following theorem:
@@ -76,9 +70,9 @@ Let $F$ be an antiderivative of $f$ on $I$, so $F'=f$. Then:
 
 In {prf:ref}`Thm:Integration:SubstitutionIndefiniteIntegral` the indefinite integral on the left in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is expressed in terms of the variable $x$, which means that working out the integral on the left gives a function of $x$.
 
-The indefinite integral on the right in Equation {eqref}`Eq:Integration:SubstitutionIndefiniteIntegral` must therefore also be expressed in terms of the variable $x$. This is done by substituting back $u=g(x)$ after having worked out the integral on the right.
+The indefinite integral on the right in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` must therefore also be expressed in terms of the variable $x$. This is done by substituting back $u=g(x)$ after having worked out the integral on the right.
 
-A more concise notation for writing Equation {eqref}`Eq:Integration:SubstitutionIndefiniteIntegral` is to write
+A more concise notation for writing Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is to write
 
 $$
 \int f(g(x))g'(x)\,dx=\left[\int f(u)\,du\right]_{u=g(x)}.
@@ -102,7 +96,7 @@ Let us return to the indefinite integral at the start of this section:
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionIndefiniteIntegralExample1
-Consider $\displaystyle\int\cos(x)e^{\sin(x)}\,dx$. If we look at the integrand, we see that the term $\sin(x)$ is nested inside the exponential function $e^{ldots}$, and that the derivative of $\sin(x)$, which is $\cos(x)$, is also part of the integrand.
+Consider $\displaystyle\int\cos(x)e^{\sin(x)}\,dx$. If we look at the integrand, we see that the term $\sin(x)$ is nested inside the exponential function $e^{\ldots}$, and that the derivative of $\sin(x)$, which is $\cos(x)$, is also part of the integrand.
 
 If we now set $u=\sin(x)$, we obtain that $du=\cos(x)\,dx$. Hence, we find that
 
@@ -159,7 +153,7 @@ which might indicate that we could pick $g'(x)\,dx=\dfrac{1}{\sqrt{x}}\,dx$.
 
 Because we have two options, we will try both options.
 
-If we set $u=\ln(1+x)$, we obtain that $du=\dfrac{1}{1+x}\,dx$, but also $x=e^u-1$. Hence, we find that
+If we set $u=\ln(1+x)$, we obtain that $du=\dfrac{1}{1+x}\,dx$. Hence, we find that
 
 \begin{align*}
 \int\frac{1}{(1+x)\sqrt{x}}\,dx &= \int\frac{1}{\sqrt{x}}\,\frac{1}{1+x}\,dx \\
@@ -181,7 +175,7 @@ Because the second option led to a standard integral, we have found the solution
 
 ::::::
 
-Although we have not made it explicit in the examples so far, in many case we used, if $u=g(x)$, that also $x=g^{-1}(u)$. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$. This is not always necessary, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
+Although we have not made it explicit in the examples so far, in many case we used, if $u=g(x)$, that also $x=g^{-1}(u)$. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$, and with the first option $u=\ln(1+x)$ we used $x=e^u-1$. This is not always necessary, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
 
 We summarise this in the next algorithm:
 
@@ -191,8 +185,8 @@ We summarise this in the next algorithm:
 To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
 1. Select the inner function $g(x)$ in the integrand $I(x)$.
-2. Set $u=g(x)$ and define $h(x)=g^{-1}(x)$.
-3. Compute $dx=h'(x)\,dx$,
+2. Set $u=g(x)$ and define $h(u)=g^{-1}(u)$.
+3. Compute $dx=h'(u)\,du$,
 4. Substitute $g(x)$ with $u$, $x$ with $h(u)$, and $dx$ with $h'(u)\,du$ in the integral.
 5. Evaluate the resulting indefinite integral using standard methods.
 
@@ -208,7 +202,7 @@ Consider $\displaystyle\int\frac{1}{(1+x)\sqrt{x}}\,dx$ for $x>0$ again.
 We selected $u=\sqrt{x}$ previously as the inner function, which implies that $x=h(u)=u^2$ and therefore $dx=2u\,du$. The five steps of {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` then lead to:
 
 1. We have $g(x)=\sqrt{x}$.
-2. We set $u=\sqrt{x}$ and define $h(x)=x^2$.
+2. We set $u=\sqrt{x}$ and define $h(u)=u^2$.
 3. We compute $dx=2u\,du$.
 4. and 5. We substitute in the integral and evaluate:
 
@@ -321,8 +315,8 @@ Be very aware that these new limits may be in descending order if $g(a)>g(b)$ ev
 To evaluate a definite integral of the form $\displaystyle\int_a^b I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
 1. Select the inner function $g(x)$ in the integrand $I(x)$.
-2. Set $u=g(x)$ and define $h(x)=g^{-1}(x)$.
-3. Compute $dx=h'(x)\,dx$,
+2. Set $u=g(x)$ and define $h(u)=g^{-1}(u)$.
+3. Compute $dx=h'(u)\,du$,
 4. Substitute $g(x)$ with $u$, $x$ with $h(u)$, $dx$ with $h'(u)\,du$, $a$ with $g(a)$, and $b$ with $g(b)$ in the integral.
 5. Evaluate the resulting definite integral using standard methods.
 

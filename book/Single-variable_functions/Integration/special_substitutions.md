@@ -1,6 +1,6 @@
 # Special substitutions
 
-In the method of integration by substitution from {numref}`Sec:Integration:Substitution` we learned that you have to choose a suitable substitution in order to simplify the integral. In this section we will discuss two special substitutions that are often used in practice: **trigonometric substitutions** and the **tangent half-angle substitution**.
+In the method of integration by substitution from {numref}`Sec:Integration:Substitution` we learned that you have to choose a suitable substitution in order to simplify the integral. In this section we will discuss two special substitutions that are often used in practice: **trigonometric substitutions** and the **midpoint mirror substitution**.
 
 ## Trigonometric substitutions
 
@@ -16,9 +16,9 @@ Combined with $dx=a\cos(t)\,dt$ this leads to an integral involving trigonometri
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1
-Evaluate $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$.
+We want to determine $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$.
 
-Solution. Let $x=\sin(t)$, then we have $dx=\cos(t)\,dt$. Furthermore, if $x=-1$ then $t=-\frac{1}{2}\pi$ and if $x=1$ then $t=\frac{1}{2}\pi$. Hence we find that
+Let $x=\sin(t)$, then we have $dx=\cos(t)\,dt$. Furthermore, if $x=-1$ then $t=-\frac{1}{2}\pi$ and if $x=1$ then $t=\frac{1}{2}\pi$. Hence we find that
 
 $$
 \int_{-1}^1\sqrt{1-x^2}\,dx=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}|\cos(t)|\cos(t)\,dt.
@@ -33,8 +33,13 @@ $$
 \end{align*}
 $$
 
-*Remark*: the integral denotes the area of the upper half of the unit circle.
 ::::::
+
+:::{prf:remark}
+:label: Remark:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1Remark
+
+The integral of {prf:ref}`Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1` denotes the area of the upper half of the unit circle.
+:::
 
 Instead of using the substitution $x=a\sin(t)$ we may also use the substitution $x=a\cos(t)$, which leads to $dx=-a\sin(t)\,dt$ and 
 
@@ -127,6 +132,29 @@ $$
 \int\frac{dt}{\cos(t)}=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
 $$
 
+
+
+We conclude that
+
+$$
+\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\left[\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|\right]_0^{\frac{1}{4}\pi}=\ln(1+\sqrt{2}).
+$$
+
+and therefore $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\ln(1+\sqrt{2})$.
+::::::
+
+:::{prf:theorem}
+:label: Theorem:Integration:GregoryIntegral
+
+$$
+\int\frac{dt}{\cos(t)}=\int\frac{du}{u}=\ln|u|+C=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
+$$
+
+:::
+
+:::{admonition} Proof of {prf:ref}`Theorem:Integration:GregoryIntegral`
+:class: tudproof, dropdown
+
 This can be shown as follows
 
 $$
@@ -145,14 +173,7 @@ $$
 \int\frac{dt}{\cos(t)}=\int\frac{du}{u}=\ln|u|+C=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
 $$
 
-We conclude that
-
-$$
-\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\left[\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|\right]_0^{\frac{1}{4}\pi}=\ln(1+\sqrt{2}).
-$$
-
-and therefore $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\ln(1+\sqrt{2})$.
-::::::
+:::
 
 ::::{exercise}
 :label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution3
@@ -196,7 +217,7 @@ $$
 \int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt=\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du.
 $$
 
-Then we use the partial fraction decomposition (see the section on integration of rational functions)
+Then we use the partial fraction decomposition (see {numref}`sec:PartialFractionDecomposition`)
 
 $$
 \frac{u^2}{(1-u^2)^2}=\frac{1}{4}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right),
@@ -215,6 +236,74 @@ $$
 $$
 
 ::::::
+
+:::{prf:example} Serret's integral
+
+Consider the integral $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$, which is named after the French mathematician [Joseph Alfred Serret (1819-1885)](https://en.wikipedia.org/wiki/Joseph-Alfred_Serret).
+
+One way to evaluate the integral is by using the substitution $x=\tan(\theta)$:
+
+$$
+\begin{align*}
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\ln\left(1+\tan(\theta)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\frac{\cos(\theta)+\sin(\theta)}{\cos(\theta)}\right)\,d\theta\\
+&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos(\theta)+\sin(\theta)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta.
+\end{align*}
+$$
+
+Now we use $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$ (see exercise 2) to obtain
+
+$$
+\begin{align*}
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta\\
+&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\right)+\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta.
+\end{align*}
+$$
+
+Finally, the substitution $t=\frac{1}{4}\pi-\theta$ or $\theta=\frac{1}{4}\pi-t$ shows that
+
+$$
+\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=-\int_{\frac{1}{4}\pi}^0\ln\left(\cos(t)\right)\,dt=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt,
+$$
+
+which implies that
+
+$$
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{4}\pi\ln\left(\sqrt{2}\right)=\frac{1}{8}\pi\ln(2).
+$$
+
+In this evaluation we obtained that
+
+$$
+\begin{align*}
+&\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt\\
+&{}\quad\Longrightarrow\quad\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta=0.
+\end{align*}
+$$
+
+The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later in {numref}`sec:CatalansConstant`. 
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:SubstitutionTrigForm
+Show that $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionTrigForm`
+:class: solution, dropdown
+Using $\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y)$ we obtain
+
+$$
+\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)\cos(\tfrac{1}{4}\pi)+\sin(\theta)\sin(\tfrac{1}{4}\pi)=\tfrac{1}{2}\sqrt{2}\cos(\theta)+\tfrac{1}{2}\sqrt{2}\sin(\theta).
+$$
+
+Multiplying by $\sqrt{2}$ we find that
+
+$$
+\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)+\sin(\theta).
+$$
+
+:::
 
 ## Midpoint mirror substitution
 
@@ -301,70 +390,6 @@ $$
 \int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}&=\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\dfrac{\sin(x)}{\cos(x)}}=\int_0^{\frac{1}{2}\pi}\frac{\dfrac{1}{\sin(x)}}{\dfrac{1}{\sin(x)}+\dfrac{1}{\cos(x)}}\,dx\\
 &=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
 \end{align*}
-$$
-
-:::
-
-## Serret's integral
-
-Consider the integral $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$, which is named after the French mathematician [Joseph Alfred Serret (1819-1885)](https://en.wikipedia.org/wiki/Joseph-Alfred_Serret).  One way to evaluate the integral is by using the substitution $x=\tan(\theta)$:
-
-$$
-\begin{align*}
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\ln\left(1+\tan(\theta)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\frac{\cos(\theta)+\sin(\theta)}{\cos(\theta)}\right)\,d\theta\\
-&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos(\theta)+\sin(\theta)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta.
-\end{align*}
-$$
-
-Now we use $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$ (see exercise 2) to obtain
-
-$$
-\begin{align*}
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta\\
-&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\right)+\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta.
-\end{align*}
-$$
-
-Finally, the substitution $t=\frac{1}{4}\pi-\theta$ or $\theta=\frac{1}{4}\pi-t$ shows that
-
-$$
-\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=-\int_{\frac{1}{4}\pi}^0\ln\left(\cos(t)\right)\,dt=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt,
-$$
-
-which implies that
-
-$$
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{4}\pi\ln\left(\sqrt{2}\right)=\frac{1}{8}\pi\ln(2).
-$$
-
-In this evaluation we obtained that
-
-$$
-\begin{align*}
-&\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt\\
-&{}\quad\Longrightarrow\quad\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta=0.
-\end{align*}
-$$
-
-The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later. See: {numref}`Sec:Series:TaylorSeries`. 
-
-::::{exercise}
-:label: Exc:Integration:SubstitutionTrigForm
-Show that $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionTrigForm`
-:class: solution, dropdown
-Using $\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y)$ we obtain
-
-$$
-\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)\cos(\tfrac{1}{4}\pi)+\sin(\theta)\sin(\tfrac{1}{4}\pi)=\tfrac{1}{2}\sqrt{2}\cos(\theta)+\tfrac{1}{2}\sqrt{2}\sin(\theta).
-$$
-
-Multiplying by $\sqrt{2}$ we find that
-
-$$
-\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)+\sin(\theta).
 $$
 
 :::

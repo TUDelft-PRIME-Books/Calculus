@@ -329,6 +329,7 @@ Taking more and more terms this leads to the following approximations:
 
 ::::::
 
+(sec:CatalansConstant)=
 ## Catalan's constant
 
 **Catalan's constant** $G$ is defined as the sum of the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}$.

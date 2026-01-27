@@ -265,6 +265,7 @@ $$
 
 ::::
 
+(sec:PartialFractionDecomposition)=
 ## Partial fraction decomposition
 
 In the previous examples you have seen how you can use polynomial long division to rewrite an improper rational function as a polynomial plus a proper rational function. In this section we will look at how to decompose proper rational functions into simpler fractions. This technique is called _partial fraction decomposition_.

@@ -155,8 +155,8 @@ $$
 
 is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$, taking into account the sign of the function on each subinterval:
 
-- If the function is completely positive on a subinterval, the area on that subinterval is added.
-- If the function is completely negative on a subinterval, the area on that subinterval is subtracted.
+- If the function is completely positive on a subinterval, the area on that subinterval is added;
+- If the function is completely negative on a subinterval, the area on that subinterval is subtracted;
 - If the function takes on both positive and negative values on a subinterval, the area above the $x$-axis is added and the area below the $x$-axis is subtracted.
 
 ::::::
@@ -342,9 +342,9 @@ Using {prf:ref}`Def:Integration:DefiniteGeneral` we can derive several useful pr
 
 - $\displaystyle\int_a^bc\,dx=c(b-a)$ with $a$, $b$ and $c$ any real numbers;
 
-- $\displaystyle\int_a^bf(x)\,dx=\int_a^rf(x)\,dx+\int_r^bf(x)\,dx$ for any $r$ in $[a,b]$ and $f$ piecewise continuous on $[a,b]$.
+- $\displaystyle\int_a^bf(x)\,dx=\int_a^rf(x)\,dx+\int_r^bf(x)\,dx$ for any $r$ in $[a,b]$ and $f$ piecewise continuous on $[a,b]$;
 
-- $\displaystyle\int_{-a}^af(x)\,dx=0$ with $a$ any real number and $f$ *odd* and piecewise continuous on $[-a,a]$.
+- $\displaystyle\int_{-a}^af(x)\,dx=0$ with $a$ any real number and $f$ *odd* and piecewise continuous on $[-a,a]$;
 
 - $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$ with $a$ any real number and $f$ *even* and piecewise continuous on $[-a,a]$.
 
@@ -416,9 +416,9 @@ Finally, we state some more properties of definite integrals. Proving these prop
 ::::{prf:theorem}
 :label: Th:Integration:DefinitePropertiesFundamental
 
-- $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$ for any real numbers $a$ and $b$ and $f$ piecewise continuous on $[a,b]$.
+- $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$ for any real numbers $a$ and $b$ and $f$ piecewise continuous on $[a,b]$;
 
-- $\displaystyle\int_a^b\left(f(x)+g(x)\right)\,dx=\int_a^bf(x)\,dx+\int_a^bg(x)\,dx$ for any real numbers $a$ and $b$ and $f$ and $g$ piecewise continuous on $[a,b]$.
+- $\displaystyle\int_a^b\left(f(x)+g(x)\right)\,dx=\int_a^bf(x)\,dx+\int_a^bg(x)\,dx$ for any real numbers $a$ and $b$ and $f$ and $g$ piecewise continuous on $[a,b]$;
 
 - $\displaystyle\int_a^b cf(x)\,dx=c\int_a^bf(x)\,dx$ for any real numbers $a$, $b$ and $c$ and $f$ piecewise continuous on $[a,b]$.
 
@@ -429,9 +429,9 @@ Finally, we state some important comparison properties of definite integrals. Th
 ::::{prf:theorem}
 :label: Th:Integration:DefiniteComparison
 
-- If $f(x)\geq0$ for $a\leq x\leq b$ and $f$ is piecewise continuous on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq0$.
+- If $f(x)\geq0$ for $a\leq x\leq b$ and $f$ is piecewise continuous on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq0$;
 
-- If $f(x)\geq g(x)$ for $a\leq x\leq b$ and $f$ and $g$ are piecewise continuous on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq\int_a^bg(x)\,dx$.
+- If $f(x)\geq g(x)$ for $a\leq x\leq b$ and $f$ and $g$ are piecewise continuous on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq\int_a^bg(x)\,dx$;
 
 - If $m\leq f(x)\leq M$ for $a\leq x\leq b$ and $f$ is piecewise continuous on $[a,b]$, then $m(b-a)\leq\displaystyle\int_a^bf(x)\,dx\leq M(b-a)$.
 ::::

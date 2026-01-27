@@ -146,7 +146,7 @@ Just like definite integrals have several properties, indefinite integrals also 
 ::::{prf:theorem}
 :label: Th:Integration:IndefiniteProperties
 
-- $\displaystyle\int\left(f(x)+g(x)\right)\,dx=\int f(x)\,dx+\int g(x)\,dx$ for $f$ and $g$ continuous on some open interval $I$.
+- $\displaystyle\int\left(f(x)+g(x)\right)\,dx=\int f(x)\,dx+\int g(x)\,dx$ for $f$ and $g$ continuous on some open interval $I$;
 
 - $\displaystyle\int cf(x)\,dx=c\int f(x)\,dx$ for any real number $c$ and $f$ continuous on some open interval $I$.
 
