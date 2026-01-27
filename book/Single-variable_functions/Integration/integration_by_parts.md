@@ -10,10 +10,33 @@ In this section we cover:
 - Reduction formulas
 - LIATE rule for choosing (including exceptions)
 
+
+## Introduction
+
+In the previous sections we have seen how to determine definite and indefinite integrals of standard functions and linear combinations of these standard functions, and also how to apply the method of integration by substitution.
+
+Now consider the following indefinite integral:
+
+$$
+\displaystyle\int x\cos(x)\,dx.
+$$
+
+Although the integrand is composed of two standard functions, $x$ and $\cos(x)$, we cannot directly apply the formulas from {numref}`Tab:Integration:StandardIndefiniteIntegrals` to evaluate this integral. We can also not use {prf:ref}`Th:Integration:IndefiniteProperties` to split the integral into simpler integrals, since the integrand is a product of functions instead of a sum of functions ánd one standard function is nested inside another standard function. Finally, the method of integration by substitution is not applicable here either, since there is no part of the integrand that is nested inside another function.
+
+In this section we introduce the method of **integration by parts**, which is a very powerful method to evaluate integral such as in the example above.
+
+## Integration by parts
+
 The method **integration by parts** is based on the product rule: if $f$ and $g$ are both differentiable, then
 
 $$
 \frac{d}{dx}\left(f(x)g(x)\right)=f(x)g'(x)+g(x)f'(x).
+$$
+
+Switching the left-hand and right-hand sides and integrating leads to
+
+$$
+\int f(x)g'(x)+g(x)f'(x) \,dx= \int \frac{d}{dx}\left(f(x)g(x)\right) \, dx.
 $$
 
 This implies that
@@ -28,63 +51,89 @@ This leads to the following theorem:
 :label: Thm:Integration:PartsIndefiniteIntegral
 If $f$ and $g$ are differentiable and $f'$ and $g'$ are continuous, then
 
-$$
+:::{math}
+:label: eq:Integration:PartsIndefiniteIntegral
 \int f(x)g'(x)\,dx=f(x)g(x)-\int g(x)f'(x)\,dx.
-$$
+:::
 
-*Remark*: if $u=f(x)$ then $du=df(x)=f'(x)\,dx$, and if $v=g(x)$ then $dv=dg(x)=g'(x)\,dx$.
 ::::::
 
-Note that the formula can also be written as $\displaystyle\int u\,dv=uv-\int v\,du$.
 
-The purpose of the method is that the latter integral is easier to evaluate than the original integral.
+:::{prf:notation}
+
+If $u=f(x)$ then $du=f'(x)\,dx$, and if $v=g(x)$ then $dv=g'(x)\,dx$.
+
+Note that Equation {eq}`eq:Integration:PartsIndefiniteIntegral` can also be written as
+
+:::{math}
+:label: eq:Integration:PartsIndefiniteIntegralDifferentialNotation
+\displaystyle\int u\,dv=uv-\int v\,du
+:::
+
+using this differential notation.
+:::
+
+The purpose of the method of integration by parts is that the new integral is not harder to evaluate than the original integral. We explicitly state *not harder* instead of *easier* because sometimes the new integral is equally hard to evaluate as the original integral, but at least we have made some progress.
+
+Before we apply the method of integration by parts to the integral $\displaystyle\int x\cos(x)\,dx$, we will give you an algorithm to apply the method:
+
+::::::{prf:algorithm}
+:label: Alg:Integration:IngtegrationByPartsIndefiniteIntegral
+
+To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by parts, follow these steps:
+
+1. Select the function $f(x)$ in the integrand $I(x)$.
+2. Determine the function $g'(x)$ such that $I(x)=f(x)g'(x)$.
+3. Set $u=f(x)$ and compute $du=f'(x)\,dx$.
+4. Set $dv=g'(x)\,dx$ and compute $v=g(x)$.
+5. Apply Equation {eq}`eq:Integration:PartsIndefiniteIntegralDifferentialNotation` to rewrite the integral.
+6. Evaluate the remaining indefinite integral using standard methods.
+
+::::::
 
 ::::::{prf:Example}
 :label: Ex.Integration:PartsPowerCos
-Taking $u=x$ and $dv=\cos(x)\,dx=d\sin(x)$ we obtain
+
+Let us revisit the integral $\displaystyle\int x\cos(x)\,dx$ introduced at the beginning of this section.
+
+Taking $u=x$ and $dv=\cos(x)\,dx$ we obtain $du=dx$ and $v=\sin(x)$. Applying this to Equation {eq}`eq:Integration:PartsIndefiniteIntegralDifferentialNotation` leads to
 
 $$
 \begin{align*}
-\int x\cos(x)\,dx&=\int x\,d\sin(x)=x\sin(x)-\int\sin(x)\,dx\\
+\int x\cos(x)\,dx&=x\sin(x)-\int\sin(x)\,dx\\
 &=x\sin(x)+\cos(x)+C.
 \end{align*}
 $$
 
 ::::::
 
-Sometimes we have to apply the method more than once:
+Sometimes we have to apply the method more than once, or more concise: we can apply the method of integration by parts to each new integral we obtain. This is shown in the next example.
 
 ::::::{prf:Example}
 :label: Ex.Integration:PartsPowerExp
 
+We start with applying the method of integration by parts to the integral $\displaystyle\int x^2e^{2x}\,dx$. Taking $u=x^2$ and $dv=e^{2x}\,dx$ we obtain $du=2x\,dx$ and $v=\dfrac{1}{2}e^{2x}$. Applying this to Equation {eq}`eq:Integration:PartsIndefiniteIntegralDifferentialNotation` leads to
+
 $$
 \begin{align*}
-\int x^2e^{2x}\,dx&=\frac{1}{2}\int x^2\,de^{2x}=\frac{1}{2}x^2e^{2x}-\frac{1}{2}\int e^{2x}\,dx^2\\
+\int x^2e^{2x}\,dx&=\frac{1}{2}x^2e^{2x}-\int \frac{1}{2}e^{2x}\,2x\,dx\\
 &=\frac{1}{2}x^2e^{2x}-\int xe^{2x}\,dx.
 \end{align*}
 $$
 
-Note that the integral $\displaystyle\int xe^{2x}\,dx$ looks easier to evaluate than the original integral $\displaystyle\int x^2e^{2x}\,dx$. However, we still don't know an antiderivative of the integrand. Using integration by parts once more, we obtain
+Note that the integral $\displaystyle\int xe^{2x}\,dx$ looks easier to evaluate than the original integral $\displaystyle\int x^2e^{2x}\,dx$. However, we still don't know an antiderivative of the integrand. Using integration by parts once more on the remaining indefinite integral, we obtain, by choosing $u=x$ and $dv=e^{2x}\,dx$ (which implies that $du=dx$ and $v=\dfrac{1}{2}e^{2x}$):
 
-$$
-\int xe^{2x}\,dx=\frac{1}{2}\int x\,de^{2x}=\frac{1}{2}xe^{2x}-\frac{1}{2}\int e^{2x}\,dx=\frac{1}{2}xe^{2x}-\frac{1}{4}e^{2x}+C.
-$$
+\begin{align*}
+\int xe^{2x}\,dx &= \frac{1}{2}xe^{2x}-\int \frac{1}{2}e^{2x}\,dx \\
+&= \frac{1}{2}xe^{2x}-\frac{1}{4}e^{2x}+C.
+\end{align*}
 
 We conclude that
 
-$$
-\int x^2e^{2x}\,dx=\frac{1}{2}x^2e^{2x}-\frac{1}{2}xe^{2x}+\frac{1}{4}e^{2x}-C.
-$$
-
-Note that the choice of the constant of integration is not important. We could have written
-
-$$
 \begin{align*}
-\int x^2e^{2x}\,dx&=\frac{1}{2}x^2e^{2x}-\int xe^{2x}\,dx=\frac{1}{2}x^2e^{2x}-\frac{1}{2}\int x\,de^{2x}\\
-&=\frac{1}{2}x^2e^{2x}-\frac{1}{2}xe^{2x}+\frac{1}{2}\int e^{2x}\,dx\\
-&=\frac{1}{2}x^2e^{2x}-\frac{1}{2}xe^{2x}+\frac{1}{4}e^{2x}+C.
+\int x^2e^{2x}\,dx &= \frac{1}{2}x^2e^{2x}-\left(\frac{1}{2}xe^{2x}-\frac{1}{4}e^{2x}+C\right) \\
+&= \frac{1}{2}x^2e^{2x}-\frac{1}{2}xe^{2x}+\frac{1}{4}e^{2x}-C.
 \end{align*}
-$$
 
 ::::::
 
@@ -107,7 +156,7 @@ In order to find an antiderivative of $\arctan(x)$ we apply integration by parts
 
 $$
 \begin{align*}
-\int\arctan(x)\,dx&=x\arctan(x)-\int x\,d\arctan(x)\\
+\int\arctan(x)\,dx&=x\arctan(x)-\int x\,\frac{1}{1+x^2}\,dx\\
 &=x\arctan(x)-\int\frac{x}{1+x^2}\,dx\\
 &=x\arctan(x)-\frac{1}{2}\ln(1+x^2)+C.
 \end{align*}
@@ -130,7 +179,7 @@ Find an antiderivative of $\ln(x)$.
 :class: solution, dropdown
 
 $$
-\int\ln(x)\,dx=x\ln(x)-\int x\,d\ln(x)=x\ln(x)-\int 1\,dx=x\ln(x)-x+C.
+\int\ln(x)\,dx=x\ln(x)-\int x\,\frac{1}{x}\,dx=x\ln(x)-\int 1\,dx=x\ln(x)-x+C.
 $$
 
 :::
@@ -145,7 +194,7 @@ Find an antiderivative of $\arcsin(x)$.
 
 $$
 \begin{align*}
-\int\arcsin(x)\,dx&=x\arcsin(x)-\int x\,d\arcsin(x)\\
+\int\arcsin(x)\,dx&=x\arcsin(x)-\int x\,\frac{1}{\sqrt{1-x^2}}\,dx\\
 &=x\arcsin(x)-\int\frac{x}{\sqrt{1-x^2}}\,dx\\
 &=x\arcsin(x)+\sqrt{1-x^2}+C.
 \end{align*}
@@ -163,13 +212,16 @@ Find an antiderivative of $\arccos(x)$.
 
 $$
 \begin{align*}
-\int\arccos(x)\,dx&=x\arccos(x)-\int x\,d\arccos(x)\\
+\int\arccos(x)\,dx&=x\arccos(x)-\int x\,\frac{-1}{\sqrt{1-x^2}}\,dx\\
 &=x\arccos(x)+\int\frac{x}{\sqrt{1-x^2}}\,dx\\
 &=x\arccos(x)-\sqrt{1-x^2}+C.
 \end{align*}
 $$
 
 :::
+
+<!-- EDITOR: Hier gebleven -->
+
 
 If we have a choice, which part of the integrand should be chosen as $u$ and which part as $dv$? In many cases the so-called **LIATE rule** will help to make the right choice. If possible we choose for $u$ a **L**ogarithm, an **I**nverse trigonometric function, an **A**lgebraic function (a power of $x$), a **T**rigonometric function or an **E**xponential function, in that order.
 
