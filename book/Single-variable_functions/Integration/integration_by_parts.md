@@ -25,7 +25,7 @@ Although the integrand is composed of two standard functions, $x$ and $\cos(x)$,
 
 In this section we introduce the method of **integration by parts**, which is a very powerful method to evaluate integral such as in the example above.
 
-## Integration by parts
+## Indefinite integrals
 
 The method **integration by parts** is based on the product rule: if $f$ and $g$ are both differentiable, then
 
@@ -223,21 +223,39 @@ $$
 <!-- EDITOR: Hier gebleven -->
 
 
-If we have a choice, which part of the integrand should be chosen as $u$ and which part as $dv$? In many cases the so-called **LIATE rule** will help to make the right choice. If possible we choose for $u$ a **L**ogarithm, an **I**nverse trigonometric function, an **A**lgebraic function (a power of $x$), a **T**rigonometric function or an **E**xponential function, in that order.
+If we have a choice, which part of the integrand should be chosen as $u$ and which part as $dv$? In many cases the so-called **LIATE rule** will help to make the right choice. If possible we choose for $u$ a **L**ogarithm, an **I**nverse trigonometric function, an **A**lgebraic function (a power of $x$), a **T**rigonometric function or an **E**xponential function, in that order. We can incorporate this rule in our algorithm {prf:ref}`Alg:Integration:IngtegrationByPartsIndefiniteIntegral` as follows:
+
+::::::{prf:algorithm}
+:label: Alg:Integration:IngtegrationByPartsIndefiniteIntegralLIATE
+
+To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by parts, follow these steps:
+
+1. Select the function $f(x)$ in the integrand $I(x)$:
+    - If there is a logarithmic function, choose it for $f(x)$.
+    - Otherwise, if there is an inverse trigonometric function, choose it for $f(x)$.
+    - Otherwise, if there is an algebraic function (a power of $x$), choose it for $f(x)$.
+    - Otherwise, if there is a trigonometric function, choose it for $f(x)$.
+    - Otherwise, choose an exponential function for $f(x)$.
+    - Otherwise, choose another part of the integrand for $f(x)$.
+2. Determine the function $g'(x)$ such that $I(x)=f(x)g'(x)$.
+3. Set $u=f(x)$ and compute $du=f'(x)\,dx$.
+4. Set $dv=g'(x)\,dx$ and compute $v=g(x)$.
+5. Apply Equation {eq}`eq:Integration:PartsIndefiniteIntegralDifferentialNotation` to rewrite the integral.
+6. Evaluate the remaining indefinite integral using standard methods.
+
+::::::
 
 In {prf:ref}`Ex.Integration:PartsPowerCos` and {prf:ref}`Ex.Integration:PartsPowerExp` we chose the algebraic function ($x$ and $x^2$) for $u$ instead of the trigonometric function ($\cos(x)$) or the exponential function ($e^{2x}$).
 
 ::::::{prf:Example}
 :label: Ex:Integration:PartsPowerCosWrong
-Consider $\displaystyle\int x^3\ln(x)\,dx$ for $x>0$. If we choose $u=\ln(x)$ and $dv=x^3\,dx$, we obtain that $\displaystyle du=d\ln(x)=\frac{1}{x}\,dx$ which can easily be combined with any power of $x$. We have
+Consider $\displaystyle\int x^3\ln(x)\,dx$ for $x>0$. If we choose $u=\ln(x)$ and $dv=x^3\,dx$, we obtain that $\displaystyle du=\frac{1}{x}\,dx$ which can easily be combined with any power of $x$, and $v=\frac14x^4$. We have
 
-$$
 \begin{align*}
-\int x^3\ln(x)\,dx&=\frac{1}{4}\int\ln(x)\,dx^4=\frac{1}{4}x^4\ln(x)-\frac{1}{4}\int x^4\,d\ln(x)\\
-&=\frac{1}{4}x^4\ln(x)-\frac{1}{4}\int x^4\cdot\frac{1}{x}\,dx=\frac{1}{4}x^4\ln(x)-\frac{1}{4}\int x^3\,dx\\
+\int x^3\ln(x)\,dx&=\frac{1}{4}x^4\ln(x)-\int \frac{1}{4}x^4\,\frac{1}{x}\,dx\\
+&=\frac{1}{4}x^4\ln(x)-\int \frac{1}{4}x^3\,dx\\
 &=\frac{1}{4}x^4\ln(x)-\frac{1}{16}x^4+C.
 \end{align*}
-$$
 
 ::::::
 
@@ -245,48 +263,59 @@ Note that this method works for every integral of the form $\displaystyle\int x^
 
 ::::::{prf:Example}
 :label: Ex:Integration:PartsLn
-The integral $\displaystyle\int\frac{\ln(x)}{x}\,dx$ can be evaluated using the substitution $u=\ln(x)$, which implies that $du=\displaystyle\frac{1}{x}\,dx$. However, it can also be done using integration by parts:
+The integral $\displaystyle\int\frac{\ln(x)}{x}\,dx$ can be evaluated using the substitution $u=\ln(x)$, which implies that $du=\displaystyle\frac{1}{x}\,dx$, see {prf:ref}`Ex:Integration:SubstitutionDefiniteIntegralExample1`.
+
+However, it can also be done using integration by parts. The LIATE rule suggests to use $u=\ln(x)$ and $dv=\dfrac{1}{x}\,dx$, which implies that $du=\dfrac{1}{x}\,dx$ and $v=\ln(x)$. We have
 
 $$
 \begin{align*}
-\int\frac{\ln(x)}{x}\,dx&=\int\ln(x)\,d\ln(x)=\ln(x)\cdot\ln(x)-\int\ln(x)\,d\ln(x)\\
+\int\frac{\ln(x)}{x}\,dx&=\ln(x)\cdot\ln(x)-\int\ln(x)\,\dfrac{1}{x}\,dx\\
 &=(\ln(x))^2-\int\frac{\ln(x)}{x}\,dx.
 \end{align*}
 $$
 
-Hence, we have: $2\displaystyle\int\frac{\ln(x)}{x}\,dx=(\ln(x))^2$ and therefore 
+Hence, we have
+
+:::{math}
+:label: eq:Integration:PartsLnIntermediate
+\displaystyle 2\int\frac{\ln(x)}{x}\,dx=(\ln(x))^2
+:::
+
+and therefore 
 
 $$
 \int\frac{\ln(x)}{x}\,dx=\frac{1}{2}(\ln(x))^2+C.
 $$
 
+Note that in this case, we only include the constant of integration at the end. If you would have included it one step earlier, in Equation {eq}`eq:Integration:PartsLnIntermediate`, you would have ended up with $\frac12C$ instead of $C$ in your answer. This would also have been correct, because if $C$ is an arbitrary constant, then so is $\frac12C$.
+
 ::::::
 
-In the next example we deal with a product of a trigonometric function and an exponential function. Then the LIATE rule suggests to choose the trigonometric function for $u$.
+In the next example we deal with a product of a trigonometric function and an exponential function.
 
 ::::::{prf:Example}
 :label: Ex:Integration:PartsExpCos
 
-$$
-\begin{align*}
-&\int e^{-2x}\cos(3x)\,dx=-\frac{1}{2}\int\cos(3x)\,de^{-2x}\\
-&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}\int e^{-2x}\,d\cos(3x)\\
-&=-\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int e^{-2x}\sin(3x)\,dx\\
-&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}\int\sin(3x)\,de^{-2x}\\
-&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\sin(3x)-\frac{3}{4}\int e^{-2x}\,d\sin(3x)\\
-&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\sin(3x)-\frac{9}{4}\int e^{-2x}\cos(3x)\,dx.
-\end{align*}
-$$
-
-Let $I=\displaystyle\int e^{-2x}\cos(3x)\,dx$, then we have:
+For the integral $I=\displaystyle\int e^{-2x}\cos(3x)\,dx$, the LIATE rule suggests to choose the trigonometric function for $u$. So we pick $u=\cos(3x)$ and $dv=e^{-2x}\,dx$, which implies that $du=-3\sin(3x)\,dx$ and $v=-\dfrac{1}{2}e^{-2x}$. We have
 
 $$
-\begin{align*}
-&I=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\cos(3x)-\frac{9}{4}I\\
-&{}\quad\Longrightarrow\quad
-\left(1+\frac{9}{4}\right)I=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\cos(3x).
-\end{align*}
+\int e^{-2x}\cos(3x)\,dx =-\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int  e^{-2x}\sin(3x)\,dx
 $$
+
+In the new indefinite integral, which is not harder than the original, we again choose the trigonometric function for $u$. So we pick $u=\sin(3x)$ and $dv=e^{-2x}\,dx$, which implies that $du=3\cos(3x)\,dx$ and $v=-\dfrac{1}{2}e^{-2x}$. We continue:
+
+\begin{align*}
+\int e^{-2x}\cos(3x)\,dx &= -\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int  e^{-2x}\sin(3x)\,dx \\
+&= -\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\left(-\dfrac{1}{2}e^{-2x}\sin(3x)+\dfrac{3}{2}\int e^{-2x}\cos(3x)\,dx \right) \\
+&= -\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\sin(3x)-\dfrac{9}{4}\int e^{-2x}\cos(3x)\,dx.
+\end{align*}
+
+This means we have:
+
+\begin{align*}
+&~ & I &=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\sin(3x)-\frac{9}{4}I\\
+&\Longrightarrow & \left(1+\frac{9}{4}\right)I &= -\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\sin(3x).
+\end{align*}
 
 Since $1+\dfrac{9}{4}=\dfrac{13}{4}$ we conclude that
 
@@ -298,6 +327,8 @@ Note that we can wait to add the constant of integration till the last step.
 ::::::
 
 Here we chose the trigonometric function for $u$ in both the first and the second step. In this case we could have chosen the exponential function instead. However, it is important to stick to the same choice (trigonometric or exponential function) in the second step. Otherwise, we return to the original integral without any result:
+
+% EDITOR: Continue here
 
 $$
 \begin{align*}

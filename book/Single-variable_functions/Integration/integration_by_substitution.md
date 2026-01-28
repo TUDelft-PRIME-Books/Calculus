@@ -16,7 +16,7 @@ Although the integrand is composed of three standard functions, we cannot direct
 
 In this section we introduce the method of **integration by substitution**, which is a very powerful method to evaluate integral such as in the example above.
 
-## Substitution for indefinite integrals
+## Indefinite integrals
 
 The method of **integration by substitution** is based on the chain rule for differentiation: if $g$ is differentiable at $x$ and $F$ is differentiable at $g(x)$, then
 
@@ -259,7 +259,7 @@ Note that $\frac{1}{2}\ln(x^2+\alpha^2)$ can also be written as $\ln\sqrt{x^2+\a
 Note that the second formula also holds for $\alpha=0$.
 :::
 
-## Substitution for definite integrals
+## Definite integrals
 
 Now we have some experience with the method of integration by substitution for indefinite integrals, we can also apply this method to definite integrals.
 
