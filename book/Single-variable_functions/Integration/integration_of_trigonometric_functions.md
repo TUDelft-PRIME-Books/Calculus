@@ -1294,3 +1294,254 @@ $$
 $$
 
 :::
+
+
+## Reduction formulas
+
+::::::{prf:Example}
+:label: Ex:Integration:PartsReductionSin
+We will show that $\displaystyle\int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx$ for $n=2,3,4,\ldots$.
+
+For $n=2,3,4,\ldots$ we obtain
+
+$$
+\begin{align*}
+\int\sin^n(x)\,dx&=-\int\sin^{n-1}(x)\,\cos(x)\\
+&=-\cos(x)\sin^{n-1}(x)+\int\cos(x)\,d\sin^{n-1}(x)\\
+&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\cos(x)\sin^{n-2}(x)\cos(x)\,dx\\
+&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\cos^2(x)\,dx.
+\end{align*}
+$$
+
+Now we use $\cos^2(x)=1-\sin^2(x)$ to find
+
+$$
+\begin{align*}
+&\int\sin^n(x)\,dx\\
+&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\left(1-\sin^2(x)\right)\,dx\\
+&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\,dx-(n-1)\int\sin^n(x)\,dx.
+\end{align*}
+$$
+
+This implies that
+
+$$
+n\int\sin^n(x)\,dx=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\,dx
+$$
+
+and therefore
+
+$$
+\int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx.
+$$
+
+::::::
+
+::::{exercise}
+:label: Exc:Integration:PartsReductionCos
+Find a reduction formula for $\displaystyle\int\cos^n(x)\,dx$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionCos`
+:class: solution, dropdown
+For $n=2,3,4,\ldots$ we obtain
+
+$$
+\begin{align*}
+\int\cos^n(x)\,dx&=\int\cos^{n-1}(x)\,\sin(x)=\sin(x)\cos^{n-1}(x)-\int\sin(x)\,d\cos^{n-1}(x)\\
+&=\sin(x)\cos^{n-1}(x)+(n-1)\int\sin(x)\cos^{n-2}(x)\sin(x)\,dx\\
+&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\sin^2(x)\,dx.
+\end{align*}
+$$
+
+Now we use $\sin^2(x)=1-\cos^2(x)$ to find
+
+$$
+\begin{align*}
+&\int\cos^n(x)\,dx\\
+&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\left(1-\cos^2(x)\right)\,dx\\
+&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\,dx-(n-1)\int\cos^n(x)\,dx.
+\end{align*}
+$$
+
+This implies that
+
+$$
+n\int\cos^n(x)\,dx=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\,dx
+$$
+
+and therefore
+
+$$
+\int\cos^n(x)\,dx=\frac{1}{n}\sin(x)\cos^{n-1}(x)+\frac{n-1}{n}\int\cos^{n-2}(x)\,dx.
+$$
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsReductionSinDefinite
+Use the reduction formula of {prf:ref}`Ex:Integration:PartsReductionSin` to show that
+
+$$
+\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,\quad n=2,3,4,\ldots.
+$$
+
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionSinDefinite`
+:class: solution, dropdown
+
+$$
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx&=-\frac{1}{n}\cos(x)\sin^{n-1}(x)\bigg|_0^{\frac{1}{2}\pi}+\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx\\
+&=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,
+\end{align*}
+$$
+
+since $\cos(\frac{1}{2}\pi)=0$ and $\sin(0)=0$. Note that $\sin^{n-1}(x)$ contains at least one factor $\sin(x)$ for $n=2,3,4,\ldots$.
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsReductionSinDefiniteOdd
+Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefinite` to show that
+
+$$
+\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},\quad n=1,2,3,\ldots.
+$$
+
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionSinDefiniteOdd`
+:class: solution, dropdown
+Replacing $n$ by $2n+1$ in {numref}`Exc:Integration:PartsReductionSinDefinite` we find
+
+$$
+\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2n}{2n+1}\int_0^{\frac{1}{2}\pi}\sin^{2n-1}(x)\,dx,\quad n=1,2,3,\ldots.
+$$
+
+Iteration now leads to
+
+$$
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx&=\frac{2n}{2n+1}\cdot\frac{2n-2}{2n-1}\cdot\frac{2n-4}{2n-3}\cdots\frac{2}{3}\int_0^{\frac{1}{2}\pi}\sin(x)\,dx\\
+&=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},
+\end{align*}
+$$
+
+since $\displaystyle\int_0^{\frac{1}{2}\pi}\sin(x)\,dx=-\cos(x)\bigg|_0^{\frac{1}{2}\pi}=1$. Note that the products in the numerator and the denominator are written in the opposite order.
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsReductionSinDefiniteEven
+Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefinite` to show that
+
+$$
+\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},\quad n=1,2,3,\ldots.
+$$
+
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionSinDefiniteEven`
+:class: solution, dropdown
+Replacing $n$ by $2n$ in {numref}`Exc:Integration:PartsReductionSinDefinite` we find
+
+$$
+\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{2n-1}{2n}\int_0^{\frac{1}{2}\pi}\sin^{2n-2}(x)\,dx,\quad n=1,2,3,\ldots.
+$$
+
+Iteration now leads to
+
+$$
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx&=\frac{2n-1}{2n}\cdot\frac{2n-3}{2n-2}\cdot\frac{2n-5}{2n-4}\cdots\frac{1}{2}\int_0^{\frac{1}{2}\pi}1\,dx\\
+&=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},
+\end{align*}
+$$
+
+since $\displaystyle\int_0^{\frac{1}{2}\pi}1\,dx=\frac{\pi}{2}$. Note that the products in the numerator and the denominator are written in the opposite order.
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsWallis
+Let $I_n=\displaystyle\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx$.
+
+(a) Show that $I_{2n+2}\leq I_{2n+1}\leq I_{2n}$.
+
+(b) Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to show that
+
+$$
+\frac{I_{2n+2}}{I_{2n}}=\frac{2n+1}{2n+2}.
+$$
+
+(c) Use parts (a) and (b) to show that
+
+$$
+\frac{2n+1}{2n+2}\leq\frac{I_{2n+1}}{I_{2n}}\leq1
+$$
+
+and deduce that $\displaystyle\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}=1$.
+
+(d) Use part (c) and {numref}`Exc:Integration:PartsReductionSinDefiniteOdd` and {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to show that
+
+$$
+\lim_{n\to\infty}\frac{2}{1}\frac{2}{3}\frac{4}{3}\frac{4}{5}\frac{6}{5}\frac{6}{7}\cdots\frac{2n}{2n-1}\frac{2n}{2n+1}=\frac{\pi}{2}.
+$$
+
+This result is sometimes written as an infinite product
+
+$$
+\prod_{n=1}^{\infty}\frac{2n}{2n-1}\frac{2n}{2n+1}=\frac{\pi}{2},
+$$
+
+which is called the *Wallis product*. This formula is named after the English mathematician [John Wallis (1616-1703)](https://en.wikipedia.org/wiki/John_Wallis).
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsWallis`
+:class: solution, dropdown
+(a) Note that $0\leq\sin(x)\leq1$ for $x\in[0,\frac{1}{2}\pi]$. Hence we have for $x\in[0,\frac{1}{2}\pi]$:
+
+$$
+\sin^{2n+2}(x)\leq\sin^{2n+1}(x)\leq\sin^{2n}(x)\quad\Longrightarrow\quad I_{2n+2}\leq I_{2n+1}\leq I_{2n}.
+$$
+
+(b) Using the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefiniteEven` we obtain
+
+$$
+\frac{I_{2n+2}}{I_{2n}}=\frac{\dfrac{1\cdot3\cdot5\cdots(2n-1)\cdot(2n+1)}{2\cdot4\cdot6\cdots2n\cdot(2n+2)}\dfrac{\pi}{2}}{\dfrac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\dfrac{\pi}{2}}=\frac{2n+1}{2n+2}.
+$$
+
+(c) Now divide the inequality of part (a) by $I_{2n}$ to find
+
+$$
+\frac{I_{2n+2}}{I_{2n}}\leq\frac{I_{2n+1}}{I_{2n}}\leq\frac{I_{2n}}{I_{2n}},
+$$
+
+which implies, by using the result of part (b), that
+
+$$
+\frac{2n+1}{2n+2}\leq\frac{I_{2n+1}}{I_{2n}}\leq1.
+$$
+
+Since $\displaystyle\lim_{n\to\infty}\frac{2n+1}{2n+2}=1$, the squeeze theorm implies that
+
+$$
+\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}=1.
+$$
+
+(d) Finally, we use the results of {numref}`Exc:Integration:PartsReductionSinDefiniteOdd` and {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to find
+
+$$
+\begin{align*}
+1=\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}&=\lim_{n\to\infty}\frac{\dfrac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)}}{\dfrac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\dfrac{\pi}{2}}\\
+&=\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}\frac{2}{\pi}.
+\end{align*}
+$$
+
+This implies that
+
+$$
+\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}=\frac{\pi}{2},
+$$
+
+which proves the Wallis product.
+:::

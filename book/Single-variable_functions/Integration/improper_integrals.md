@@ -900,4 +900,79 @@ $$
 
 ::::::
 
+::::::{admonition} A different approach to Serret's integral (bonus material)
+:class: bonus, dropdown
+The results in {eq}`Eq:Integration:PartsSerret` can also be obtained using the Feynman method (see: {numref}`Sec:Integration:ImproperIntegrals` on improper integrals).
+
+Note that Serret's integral is a special case of $I(\alpha)=\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
+
+Differentiation with respect to $\alpha$ leads to 
+
+$$
+I'(\alpha)=\displaystyle\frac{\ln(1+\alpha^2)}{1+\alpha^2}+\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx.
+$$ 
+
+Now we use (see the section on integration of rational functions for more details) 
+ 
+$$
+\frac{x}{(1+x^2)(1+\alpha x)}=\frac{1}{1+\alpha^2}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)
+$$
+
+to obtain
+
+$$
+\begin{align*}
+&\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx\\
+&=\frac{1}{1+\alpha^2}\int_0^{\alpha}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)\,dx\\
+&=\frac{1}{1+\alpha^2}\bigg[\alpha\arctan(x)+\frac{1}{2}\ln(1+x)-\ln(1+\alpha x)\bigg]_0^{\alpha}\\
+&=\frac{1}{1+\alpha^2}\left(\alpha\arctan(\alpha)+\frac{1}{2}\ln(1+\alpha^2)-\ln(1+\alpha^2)\right)\\
+&=\frac{\alpha}{1+\alpha^2}\arctan(\alpha)-\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}.
+\end{align*}
+$$ 
+ 
+Hence we have: $I'(\alpha)=\displaystyle\frac{\alpha}{1+\alpha^2}\arctan(\alpha)+\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}$. Since $I(0)=0$, this implies that
+
+$$
+\begin{align*}
+I(\alpha)&=\int\frac{\alpha}{1+\alpha^2}\arctan(\alpha)\,d\alpha+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
+&=\frac{1}{2}\int\arctan(\alpha)\,d\ln(1+\alpha^2)+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
+&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\ln(1+\alpha^2)\,d\arctan(\alpha)\\
+&{}\quad\quad\quad{}+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
+&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
+&{}\quad\quad\quad{}+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
+&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)+C\quad\Longrightarrow\quad I(\alpha)=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2).
+\end{align*}
+$$
+
+Hence we have: $\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)$.
+
+The special case $\alpha=1$ now reads
+
+$$
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{2}\arctan(1)\ln(2)=\frac{1}{2}\cdot\frac{1}{4}\pi\cdot\ln(2)=\frac{1}{8}\pi\ln(2).
+$$
+
+Similarly, the integral $\displaystyle\int_0^1\frac{\arctan(x)}{1+x}\,dx$ is a special case of
+
+$$
+\begin{align*}
+\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx&=\int_0^{\alpha}\arctan(x)\,d\ln(1+\alpha x)\\
+&=\arctan(x)\ln(1+\alpha x)\bigg|_0^{\alpha}-\int_0^{\alpha}\ln(1+\alpha x)\,d\arctan(x)\\
+&=\arctan(\alpha)\ln(1+\alpha^2)-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
+\end{align*}
+$$
+
+This implies that: 
+
+$$
+\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)=\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
+$$
+
+For $\alpha=1$ this reads {eq}`Eq:Integration:PartsSerret`.
+
+::::::
+
+
 ## (Grasple) exercises
+
+

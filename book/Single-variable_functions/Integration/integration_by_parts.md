@@ -60,6 +60,7 @@ If $f$ and $g$ are differentiable and $f'$ and $g'$ are continuous, then
 
 
 :::{prf:notation}
+:label: Not:Integration:PartsIndefiniteIntegral
 
 If $u=f(x)$ then $du=f'(x)\,dx$, and if $v=g(x)$ then $dv=g'(x)\,dx$.
 
@@ -328,15 +329,10 @@ Note that we can wait to add the constant of integration till the last step.
 
 Here we chose the trigonometric function for $u$ in both the first and the second step. In this case we could have chosen the exponential function instead. However, it is important to stick to the same choice (trigonometric or exponential function) in the second step. Otherwise, we return to the original integral without any result:
 
-% EDITOR: Continue here
-
 $$
 \begin{align*}
-&\int e^{-2x}\cos(3x)\,dx=-\frac{1}{2}\int\cos(3x)\,de^{-2x}\\
-&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}\int e^{-2x}\,d\cos(3x)\\
-&=-\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int e^{-2x}\sin(3x)\,dx\\
-&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}\int e^{-2x}\,d\cos(3x)\\
-&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}e^{-2x}\cos(3x)-\frac{1}{2}\int\cos(3x)\,de^{-2x}\\
+\int e^{-2x}\cos(3x)\,dx &=-\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int e^{-2x}\sin(3x)\,dx\\
+&=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}e^{-2x}\cos(3x)+\int e^{-2x}\cos(3x)\,dx.\\
 &=\int e^{-2x}\cos(3x)\,dx.
 \end{align*}
 $$
@@ -351,11 +347,8 @@ Evaluate $\displaystyle\int e^{-2x}\cos(3x)\,dx$ by taking $u=e^{-2x}$ in each s
 
 $$
 \begin{align*}
-&\int e^{-2x}\cos(3x)\,dx=\frac{1}{3}\int e^{-2x}\,d\sin(3x)\\
-&=\frac{1}{3}e^{-2x}\sin(3x)-\frac{1}{3}\int\sin(3x)\,de^{-2x}\\
-&=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\int e^{-2x}\sin(3x)\,dx\\
-&=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}\int e^{-2x}\,d\cos(3x)\\
-&=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)+\frac{2}{9}\int\cos(3x)\,de^{-2x}\\
+\int e^{-2x}\cos(3x)\,dx &=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\int e^{-2x}\sin(3x)\,dx\\
+&=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\left(-\frac{1}{3}e^{-2x}\cos(3x)+\frac{2}{3}\int e^{-2x}\cos(3x)\,dx \right) \\
 &=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}\int e^{-2x}\cos(3x)\,dx.
 \end{align*}
 $$
@@ -364,13 +357,12 @@ Let $I=\displaystyle\int e^{-2x}\cos(3x)\,dx$, then we have:
 
 $$
 \begin{align*}
-&I=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}I\\
-&{}\quad\Longrightarrow\quad
-\left(1+\frac{4}{9}\right)I=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x).
+&~ & I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}I\\
+&\Longrightarrow & \left(1+\frac{4}{9}\right)I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x).
 \end{align*}
 $$
 
-Since $1+\dfrac{4}{9}=\dfrac{13}{9}$ we conclude that
+Since $1+\dfrac{4}{9}=\dfrac{13}{9}$ we can again conclude that
 
 $$
 I=\frac{3}{13}e^{-2x}\sin(3x)-\frac{2}{13}e^{-2x}\cos(3x)+C.
@@ -378,7 +370,28 @@ $$
 
 :::
 
-For definite integrals we have:
+## Definite integrals
+
+The method of integration by parts can also be applied to definite integrals. We derive the formula starting from the product rule: if $f$ and $g$ are both differentiable, then
+
+$$
+\frac{d}{dx}\left(f(x)g(x)\right)=f(x)g'(x)+g(x)f'(x).
+$$
+
+Switching the left-hand and right-hand sides and integrating both sides from $a$ to $b$ leads to
+
+$$
+\int_a^b f(x)g'(x)+g(x)f'(x) \,dx= \int_a^b \frac{d}{dx}\left(f(x)g(x)\right) \, dx.
+$$
+
+This implies that
+
+$$
+\int_a^b f(x)g'(x)\,dx+\int_a^b g(x)f'(x)\,dx=f(x)g(x)\bigg|_a^b.
+$$
+
+In conclusion, we have the following theorem:
+
 ::::::{prf:Theorem} Integration by parts for definite integrals
 :label: Thm:Integration:PartsDefiniteIntegral
 If $f$ and $g$ are continuous on $[a,b]$, integrable and differentiable on $(a,b)$ and $f'$ and $g'$ are continuous on $[a,b]$, then
@@ -389,11 +402,44 @@ $$
 
 ::::::
 
+Similar to {prf:ref}`Not:Integration:PartsIndefiniteIntegral`, we can use the differential notation to rewrite the formula in {prf:ref}`Thm:Integration:PartsDefiniteIntegral` as
+
+:::{math}
+:label: eq:Integration:PartsDefiniteIntegralDifferentialNotation
+\displaystyle\int_a^b u\,dv=uv\bigg|_a^b-\int_a^b v\,du.
+:::
+
+This formula we can use in an algorithm similar to {prf:ref}`Alg:Integration:IngtegrationByPartsIndefiniteIntegralLIATE` to evaluate definite integrals:
+
+::::::{prf:algorithm}
+:label: Alg:Integration:IngtegrationByPartsDefiniteIntegralLIATE
+
+To evaluate a definite integral of the form $\displaystyle\int_{a}^{b} I(x)\,dx$ using the method of integration by parts, follow these steps:
+
+1. Select the function $f(x)$ in the integrand $I(x)$:
+    - If there is a logarithmic function, choose it for $f(x)$.
+    - Otherwise, if there is an inverse trigonometric function, choose it for $f(x)$.
+    - Otherwise, if there is an algebraic function (a power of $x$), choose it for $f(x)$.
+    - Otherwise, if there is a trigonometric function, choose it for $f(x)$.
+    - Otherwise, choose an exponential function for $f(x)$.
+    - Otherwise, choose another part of the integrand for $f(x)$.
+2. Determine the function $g'(x)$ such that $I(x)=f(x)g'(x)$.
+3. Set $u=f(x)$ and compute $du=f'(x)\,dx$.
+4. Set $dv=g'(x)\,dx$ and compute $v=g(x)$.
+5. Apply Equation {eq}`eq:Integration:PartsDefiniteIntegralDifferentialNotation` to rewrite the integral.
+6. Evaluate the remaining definite integral using standard methods.
+
+::::::
+
+
+
 ::::::{prf:Example}
 :label: Ex:Integration:PartsDefiniteLn
 
+We apply the method of integration by parts for definite integrals to $\displaystyle\int_1^e\ln(x)\,dx$:
+
 $$
-\int_1^e\ln(x)\,dx=x\ln(x)\bigg|_1^e-\int_1^ex\,d\ln(x)=e-\int_1^e1\,dx=e-(e-1)=1.
+\int_1^e\ln(x)\,dx=x\ln(x)\bigg|_1^e-\int_1^ex\,\frac{1}{x}\,dx=e-\int_1^e1\,dx=e-(e-1)=1.
 $$
 
 ::::::
@@ -401,34 +447,42 @@ $$
 ::::::{prf:Example}
 :label: Ex:Integration:PartsDefiniteArcsin
 
+The method of integration by parts for (in)definite integrals can also be used to evaluate integrals involving inverse trigonometric functions, such as $\displaystyle\int_0^{\frac{1}{2}}\arcsin(x)\,dx$:
+
 $$
 \begin{align*}
-\int_0^{\frac{1}{2}}\arcsin(x)\,dx&=x\arcsin(x)\bigg|_0^{\frac{1}{2}}-\int_0^{\frac{1}{2}}x\,d\arcsin(x)\\
-&=\frac{1}{2}\cdot\frac{1}{6}\pi-\int_0^{\frac{1}{2}}\frac{x}{\sqrt{1-x^2}}\,dx=\frac{1}{12}\pi+\sqrt{1-x^2}\bigg|_0^{\frac{1}{2}}\\
+\int_0^{\frac{1}{2}}\arcsin(x)\,dx&=x\arcsin(x)\bigg|_0^{\frac{1}{2}}-\int_0^{\frac{1}{2}}x\,\frac{1}{\sqrt{1-x^2}}\,dx\\
+&=\frac{1}{2}\cdot\frac{1}{6}\pi-\int_0^{\frac{1}{2}}\frac{x}{\sqrt{1-x^2}}\,dx \\
+&=\frac{1}{12}\pi+\sqrt{1-x^2}\bigg|_0^{\frac{1}{2}}\\
 &=\frac{1}{12}\pi+\frac{1}{2}\sqrt{3}-1.
 \end{align*}
 $$
 
+Note that we evaluated the remaining integral using the substitution $u=1-x^2$. So combining all techniques you can learn in this book is often necessary to solve integrals.
+
 ::::::
 
-Sometimes we might combine the methods of substitution and integration by parts:
+Sometimes we should first perform an integration by substitution and then apply integration by parts:
 
 ::::::{prf:Example}
 :label: Ex:Integration:PartsSubstitution
-Evaluate $\displaystyle\int_4^9e^{\sqrt{x}}\,dx$.
+Let us $\displaystyle\int_4^9e^{\sqrt{x}}\,dx$.
 
-Solution. First apply the substitution $u=\sqrt{x}$ which implies that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $dx=2u\,du$:
+First apply the substitution $u=\sqrt{x}$ which implies that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $dx=2u\,du$:
 
 $$
 \int_4^9e^{\sqrt{x}}\,dx=2\int_2^3ue^u\,du.
 $$
 
-Now we use integration by parts to obtain
+Now we use integration by parts, with $f(u)=e^u$, to obtain
 
 $$
 \begin{align*}
-\int_4^9e^{\sqrt{x}}\,dx&=2\int_2^3ue^u\,du=2\int_2^3u\,de^u=2ue^u\bigg|_2^3-2\int_2^3e^u\,du\\
-&=6e^3-4e^2-2e^u\bigg|_2^3=6e^3-4e^2-2e^3+2e^2=4e^3-2e^2.
+\int_4^9e^{\sqrt{x}}\,dx&=2\int_2^3ue^u\,du \\
+&=2ue^u\bigg|_2^3-2\int_2^3e^u\,du\\
+&=6e^3-4e^2-2e^u\bigg|_2^3 \\
+&=6e^3-4e^2-2e^3+2e^2\\
+&=4e^3-2e^2.
 \end{align*}
 $$
 
@@ -443,19 +497,19 @@ Evaluate $\displaystyle\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt$.
 :class: solution, dropdown
 First apply the substitution $u=t^2$ which implies that $du=2t\,dt$:
 
-$$
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt=\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^2\cos(t^2)t\,dt=\frac{1}{2}\int_{\pi/2}^{\pi}u\cos(u)\,du.
-$$
+\begin{align*}
+\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt&=\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^2\cos(t^2)t\,dt\\
+&=\frac{1}{2}\int_{\pi/2}^{\pi}u\cos(u)\,du.
+\end{align*}
 
 Now we use integration by parts to find that
 
-$$
 \begin{align*}
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt&=\frac{1}{2}\int_{\pi/2}^{\pi}u\cos(u)\,du=\frac{1}{2}\int_{\pi/2}^{\pi}u\,d\sin(u)\\
+\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt&=\frac{1}{2}\int_{\pi/2}^{\pi}u\cos(u)\,du \\
 &=\frac{1}{2}u\sin(u)\bigg|_{\pi/2}^{\pi}-\frac{1}{2}\int_{\pi/2}^{\pi}\sin(u)\,du\\
-&=-\frac{1}{4}\pi+\frac{1}{2}\cos(u)\bigg|_{\pi/2}^{\pi}=-\frac{1}{4}\pi-\frac{1}{2}.
+&=-\frac{1}{4}\pi+\frac{1}{2}\cos(u)\bigg|_{\pi/2}^{\pi}\\
+&=-\frac{1}{4}\pi-\frac{1}{2}.
 \end{align*}
-$$
 
 :::
 
@@ -468,28 +522,52 @@ Evaluate $\displaystyle\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt$.
 :class: solution, dropdown
 First apply the substitution $u=t^2$ which implies that $du=2t\,dt$:
 
-$$
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt=\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^2\sin(t^2)t\,dt=\frac{1}{2}\int_{\pi/2}^{\pi}u\sin(u)\,du.
-$$
+\begin{align*}
+\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt&=\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^2\sin(t^2)t\,dt\\
+&=\frac{1}{2}\int_{\pi/2}^{\pi}u\sin(u)\,du.
+\end{align*}
 
 Now we use integration by parts to find that
 
+\begin{align*}
+\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt &= \frac{1}{2}\int_{\pi/2}^{\pi}u\sin(u)\,du \\
+&=-\frac{1}{2}u\cos(u)\bigg|_{\pi/2}^{\pi}+\frac{1}{2}\int_{\pi/2}^{\pi}\cos(u)\,du\\
+&=\frac{1}{2}\pi+\frac{1}{2}\sin(u)\bigg|_{\pi/2}^{\pi}\\
+&=\frac{1}{2}\pi-\frac{1}{2}.
+\end{align*}
+
+:::
+
+In the previous section in {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we have seen that $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{8}\pi\ln(2)$. This result can also be used to evaluate a similar integral involving the inverse tangent function:
+
+:::::{prf:example} Serret's integral
+:label: Ex:Integration:IntegrationByPartsSerretsIntegral
+
+If we recognize $\dfrac{1}{1+x^2}$ as the derivative of $\arctan(x)$, we can use integration by parts to evaluate Serret's integral:
+
 $$
 \begin{align*}
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt&=\frac{1}{2}\int_{\pi/2}^{\pi}u\sin(u)\,du=-\frac{1}{2}\int_{\pi/2}^{\pi}u\,d\cos(u)\\
-&=-\frac{1}{2}u\cos(u)\bigg|_{\pi/2}^{\pi}+\frac{1}{2}\int_{\pi/2}^{\pi}\cos(u)\,du\\
-&=\frac{1}{2}\pi+\frac{1}{2}\sin(u)\bigg|_{\pi/2}^{\pi}=\frac{1}{2}\pi-\frac{1}{2}.
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\ln(1+x)\arctan(x)\bigg|_0^1-\int_0^1\frac{\arctan(x)}{1+x}\,dx\\
+&=\frac{1}{4}\pi\ln(2)-\int_0^1\frac{\arctan(x)}{1+x}\,dx.
 \end{align*}
 $$
 
-:::
+This implies that
+
+::::{math}
+:label: Eq:Integration:PartsSerret
+\int_0^1\frac{\arctan(x)}{1+x}\,dx=\frac{1}{8}\pi\ln(2)=\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx.
+::::
+
+:::::
+
 
 ## Reduction formulas
 
 In {prf:ref}`Ex.Integration:PartsPowerExp` we evaluated the integral $\displaystyle\int x^2e^{2x}\,dx$ using integration by parts twice. What happens if we replace $x^2$ by a higher power of $x$? For instance, consider:
 
 $$
-\int x^{10}e^x\,dx=\int x^{10}\,de^x=x^{10}e^x-\int e^x\,dx^{10}=x^{10}e^x-10\int x^9e^x\,dx.
+\int x^{10}e^x\,dx=x^{10}e^x-10\int x^9e^x\,dx.
 $$
 
 Note that the latter integral has the same form as the original one with a power of $x$ one less. If we apply the same technique once more to the latter integral we will end up with a similar integral with a power of $x$ one less again. We may proceed in this way until the power of $x$ equals $x^0=1$ and the integral reads $\displaystyle\int e^x\,dx$, which can be evaluated directly using the fundamental theorem of calculus.
@@ -497,7 +575,7 @@ Note that the latter integral has the same form as the original one with a power
 More general, let $n\in\{1,2,3,\ldots\}$. Then we obtain
 
 $$
-\int x^ne^x\,dx=\int x^n\,de^x=x^ne^x-\int e^x\,dx^n=x^ne^x-n\int x^{n-1}e^x\,dx.
+\int x^ne^x\,dx=x^ne^x-n\int x^{n-1}e^x\,dx.
 $$
 
 So, if we define $I_n=\displaystyle\int x^ne^x\,dx$, then we have: $I_n=x^ne^x-nI_{n-1}$ for $n=1,2,3,\ldots$. Furthermore, we have $I_0=\displaystyle\int e^x\,dx=e^x+C$. Hence, we obtained the **reduction formula**
@@ -516,7 +594,7 @@ $$
 I_2=x^2e^x-2I_1=x^2e^x-2xe^x+2e^x+2C=(x^2-2x+2)e^x+2C,
 $$
 
-and so on. Note that we might add the constant of integration only in the last step. Moreover, if we put the factor $e^x$ outside the brackets, we find that
+and so on. Note that we might add the constant of integration only in the last step. Moreover, if we put the factor $e^x$ outside the brackets, we find that, for example,
 
 $$
 \begin{align*}
@@ -534,10 +612,7 @@ Find a reduction formula for $\displaystyle\int x^ne^{-x}\,dx$.
 :class: solution, dropdown
 
 $$
-\begin{align*}
-\int x^ne^{-x}\,dx&=-\int x^n\,de^{-x}=-x^ne^{-x}+\int e^{-x}\,dx^n\\
-&=-x^ne^{-x}+n\int x^{n-1}e^{-x}\,dx.
-\end{align*}
+\int x^ne^{-x}\,dx = -x^ne^{-x}+n\int x^{n-1}e^{-x}\,dx.
 $$
 
 Define $I_n=\displaystyle\int x^ne^{-x}\,dx$, then we have
@@ -554,18 +629,14 @@ In {prf:ref}`Ex.Integration:PartsPowerCos` we evaluated the integral $\displayst
 Let $n\in\{2,3,4,\ldots\}$, then we obtain using integration by parts
 
 $$
-\begin{align*}
-\int x^n\cos(x)\,dx&=\int x^n\,d\sin(x)=x^n\sin(x)-\int\sin(x)\,dx^n\\
-&=x^n\sin(x)-n\int x^{n-1}\sin(x)\,dx.
-\end{align*}
+\int x^n\cos(x)\,dx = x^n\sin(x)-n\int x^{n-1}\sin(x)\,dx.
 $$
 
 Applying integration by parts once more, we find that
 
 $$
 \begin{align*}
-\int x^n\cos(x)\,dx&=x^n\sin(x)+n\int x^{n-1}\,d\cos(x)\\
-&=x^n\sin(x)+nx^{n-1}\cos(x)-n\int\cos(x)\,dx^{n-1}\\
+\int x^n\cos(x)\,dx&=x^n\sin(x)-n\int x^{n-1}\sin(x)\,dx\\
 &=x^n\sin(x)+nx^{n-1}\cos(x)-n(n-1)\int x^{n-2}\cos(x)\,dx.
 \end{align*}
 $$
@@ -599,15 +670,10 @@ Find a reduction formula for $\displaystyle\int x^n\sin(x)\,dx$.
 :::{admonition} Solution of {numref}`Exc:Integration:PartsReductionPowerSin`
 :class: solution, dropdown
 
-$$
 \begin{align*}
-\int x^n\sin(x)\,dx&=-\int x^n\,d\cos(x)=-x^n\cos(x)+\int\cos(x)\,dx^n\\
-&=-x^n\cos(x)+n\int x^{n-1}\cos(x)\,dx\\
-&=-x^n\cos(x)+n\int x^{n-1}\,d\sin(x)\\
-&=-x^n\cos(x)+nx^{n-1}\sin(x)-n\int\sin(x)\,dx^{n-1}\\
+\int x^n\sin(x)\,dx &= -x^n\cos(x)+n\int x^{n-1}\cos(x)\,dx\\
 &=-x^n\cos(x)+nx^{n-1}\sin(x)-n(n-1)\int x^{n-2}\sin(x)\,dx.
 \end{align*}
-$$
 
 Define $I_n=\displaystyle\int x^n\sin(x)\,dx$, then we have
 
@@ -617,12 +683,11 @@ $$
 
 Furthermore, we have $I_0=\displaystyle\int\sin(x)\,dx=-\cos(x)+C$ and
 
-$$
 \begin{align*}
-I_1:&=\int x\sin(x)\,dx-\int x\,d\cos(x)\\
-&=-x\cos(x)+\int\cos(x)\,dx=-x\cos(x)+\sin(x)+C.
+I_1&= \int x\sin(x)\,dx\\
+&=-x\cos(x)+\int\cos(x)\,dx\\
+&=-x\cos(x)+\sin(x)+C.
 \end{align*}
-$$
 
 :::
 
@@ -636,8 +701,7 @@ Find a reduction formula for $\displaystyle\int\left(\ln(x)\right)^n\,dx$.
 
 $$
 \begin{align*}
-\int\left(\ln(x)\right)^n\,dx&=x\left(\ln(x)\right)^n-\int x\,d\left(\ln(x)\right)^n\\
-&=x\left(\ln(x)\right)^n-n\int x\left(\ln(x)\right)^{n-1}\frac{1}{x}\,dx\\
+\int\left(\ln(x)\right)^n\,dx&=x\left(\ln(x)\right)^n-n\int x\left(\ln(x)\right)^{n-1}\frac{1}{x}\,dx\\
 &=x\left(\ln(x)\right)^n-n\int\left(\ln(x)\right)^{n-1}\,dx.
 \end{align*}
 $$
@@ -650,344 +714,5 @@ $$
 
 Furthermore, we have: $I_0=\displaystyle\int1\,dx=x+C$.
 :::
-
-::::::{prf:Example}
-:label: Ex:Integration:PartsReductionSin
-Show that $\displaystyle\int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx$ for $n=2,3,4,\ldots$.
-
-Solution. For $n=2,3,4,\ldots$ we obtain
-
-$$
-\begin{align*}
-\int\sin^n(x)\,dx&=-\int\sin^{n-1}(x)\,\cos(x)\\
-&=-\cos(x)\sin^{n-1}(x)+\int\cos(x)\,d\sin^{n-1}(x)\\
-&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\cos(x)\sin^{n-2}(x)\cos(x)\,dx\\
-&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\cos^2(x)\,dx.
-\end{align*}
-$$
-
-Now we use $\cos^2(x)=1-\sin^2(x)$ to find
-
-$$
-\begin{align*}
-&\int\sin^n(x)\,dx\\
-&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\left(1-\sin^2(x)\right)\,dx\\
-&=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\,dx-(n-1)\int\sin^n(x)\,dx.
-\end{align*}
-$$
-
-This implies that
-
-$$
-n\int\sin^n(x)\,dx=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\,dx
-$$
-
-and therefore
-
-$$
-\int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx.
-$$
-
-::::::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionCos
-Find a reduction formula for $\displaystyle\int\cos^n(x)\,dx$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionCos`
-:class: solution, dropdown
-For $n=2,3,4,\ldots$ we obtain
-
-$$
-\begin{align*}
-\int\cos^n(x)\,dx&=\int\cos^{n-1}(x)\,\sin(x)=\sin(x)\cos^{n-1}(x)-\int\sin(x)\,d\cos^{n-1}(x)\\
-&=\sin(x)\cos^{n-1}(x)+(n-1)\int\sin(x)\cos^{n-2}(x)\sin(x)\,dx\\
-&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\sin^2(x)\,dx.
-\end{align*}
-$$
-
-Now we use $\sin^2(x)=1-\cos^2(x)$ to find
-
-$$
-\begin{align*}
-&\int\cos^n(x)\,dx\\
-&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\left(1-\cos^2(x)\right)\,dx\\
-&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\,dx-(n-1)\int\cos^n(x)\,dx.
-\end{align*}
-$$
-
-This implies that
-
-$$
-n\int\cos^n(x)\,dx=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\,dx
-$$
-
-and therefore
-
-$$
-\int\cos^n(x)\,dx=\frac{1}{n}\sin(x)\cos^{n-1}(x)+\frac{n-1}{n}\int\cos^{n-2}(x)\,dx.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionSinDefinite
-Use the reduction formula of {prf:ref}`Ex:Integration:PartsReductionSin` to show that
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,\quad n=2,3,4,\ldots.
-$$
-
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionSinDefinite`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx&=-\frac{1}{n}\cos(x)\sin^{n-1}(x)\bigg|_0^{\frac{1}{2}\pi}+\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx\\
-&=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,
-\end{align*}
-$$
-
-since $\cos(\frac{1}{2}\pi)=0$ and $\sin(0)=0$. Note that $\sin^{n-1}(x)$ contains at least one factor $\sin(x)$ for $n=2,3,4,\ldots$.
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionSinDefiniteOdd
-Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefinite` to show that
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},\quad n=1,2,3,\ldots.
-$$
-
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionSinDefiniteOdd`
-:class: solution, dropdown
-Replacing $n$ by $2n+1$ in {numref}`Exc:Integration:PartsReductionSinDefinite` we find
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2n}{2n+1}\int_0^{\frac{1}{2}\pi}\sin^{2n-1}(x)\,dx,\quad n=1,2,3,\ldots.
-$$
-
-Iteration now leads to
-
-$$
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx&=\frac{2n}{2n+1}\cdot\frac{2n-2}{2n-1}\cdot\frac{2n-4}{2n-3}\cdots\frac{2}{3}\int_0^{\frac{1}{2}\pi}\sin(x)\,dx\\
-&=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},
-\end{align*}
-$$
-
-since $\displaystyle\int_0^{\frac{1}{2}\pi}\sin(x)\,dx=-\cos(x)\bigg|_0^{\frac{1}{2}\pi}=1$. Note that the products in the numerator and the denominator are written in the opposite order.
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionSinDefiniteEven
-Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefinite` to show that
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},\quad n=1,2,3,\ldots.
-$$
-
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionSinDefiniteEven`
-:class: solution, dropdown
-Replacing $n$ by $2n$ in {numref}`Exc:Integration:PartsReductionSinDefinite` we find
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{2n-1}{2n}\int_0^{\frac{1}{2}\pi}\sin^{2n-2}(x)\,dx,\quad n=1,2,3,\ldots.
-$$
-
-Iteration now leads to
-
-$$
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx&=\frac{2n-1}{2n}\cdot\frac{2n-3}{2n-2}\cdot\frac{2n-5}{2n-4}\cdots\frac{1}{2}\int_0^{\frac{1}{2}\pi}1\,dx\\
-&=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},
-\end{align*}
-$$
-
-since $\displaystyle\int_0^{\frac{1}{2}\pi}1\,dx=\frac{\pi}{2}$. Note that the products in the numerator and the denominator are written in the opposite order.
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsWallis
-Let $I_n=\displaystyle\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx$.
-
-(a) Show that $I_{2n+2}\leq I_{2n+1}\leq I_{2n}$.
-
-(b) Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to show that
-
-$$
-\frac{I_{2n+2}}{I_{2n}}=\frac{2n+1}{2n+2}.
-$$
-
-(c) Use parts (a) and (b) to show that
-
-$$
-\frac{2n+1}{2n+2}\leq\frac{I_{2n+1}}{I_{2n}}\leq1
-$$
-
-and deduce that $\displaystyle\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}=1$.
-
-(d) Use part (c) and {numref}`Exc:Integration:PartsReductionSinDefiniteOdd` and {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to show that
-
-$$
-\lim_{n\to\infty}\frac{2}{1}\frac{2}{3}\frac{4}{3}\frac{4}{5}\frac{6}{5}\frac{6}{7}\cdots\frac{2n}{2n-1}\frac{2n}{2n+1}=\frac{\pi}{2}.
-$$
-
-This result is sometimes written as an infinite product
-
-$$
-\prod_{n=1}^{\infty}\frac{2n}{2n-1}\frac{2n}{2n+1}=\frac{\pi}{2},
-$$
-
-which is called the *Wallis product*. This formula is named after the English mathematician [John Wallis (1616-1703)](https://en.wikipedia.org/wiki/John_Wallis).
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsWallis`
-:class: solution, dropdown
-(a) Note that $0\leq\sin(x)\leq1$ for $x\in[0,\frac{1}{2}\pi]$. Hence we have for $x\in[0,\frac{1}{2}\pi]$:
-
-$$
-\sin^{2n+2}(x)\leq\sin^{2n+1}(x)\leq\sin^{2n}(x)\quad\Longrightarrow\quad I_{2n+2}\leq I_{2n+1}\leq I_{2n}.
-$$
-
-(b) Using the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefiniteEven` we obtain
-
-$$
-\frac{I_{2n+2}}{I_{2n}}=\frac{\dfrac{1\cdot3\cdot5\cdots(2n-1)\cdot(2n+1)}{2\cdot4\cdot6\cdots2n\cdot(2n+2)}\dfrac{\pi}{2}}{\dfrac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\dfrac{\pi}{2}}=\frac{2n+1}{2n+2}.
-$$
-
-(c) Now divide the inequality of part (a) by $I_{2n}$ to find
-
-$$
-\frac{I_{2n+2}}{I_{2n}}\leq\frac{I_{2n+1}}{I_{2n}}\leq\frac{I_{2n}}{I_{2n}},
-$$
-
-which implies, by using the result of part (b), that
-
-$$
-\frac{2n+1}{2n+2}\leq\frac{I_{2n+1}}{I_{2n}}\leq1.
-$$
-
-Since $\displaystyle\lim_{n\to\infty}\frac{2n+1}{2n+2}=1$, the squeeze theorm implies that
-
-$$
-\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}=1.
-$$
-
-(d) Finally, we use the results of {numref}`Exc:Integration:PartsReductionSinDefiniteOdd` and {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to find
-
-$$
-\begin{align*}
-1=\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}&=\lim_{n\to\infty}\frac{\dfrac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)}}{\dfrac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\dfrac{\pi}{2}}\\
-&=\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}\frac{2}{\pi}.
-\end{align*}
-$$
-
-This implies that
-
-$$
-\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}=\frac{\pi}{2},
-$$
-
-which proves the Wallis product.
-:::
-
-## Serret's integral
-
-In the previous section we have seen that $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{8}\pi\ln(2)$. If we apply integration by parts we obtain
-
-$$
-\begin{align*}
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^1\ln(1+x)\,d\arctan(x)\\
-&=\ln(1+x)\arctan(x)\bigg|_0^1-\int\arctan(x)\,d\ln(1+x)\\
-&=\frac{1}{4}\pi\ln(2)-\int_0^1\frac{\arctan(x)}{1+x}\,dx.
-\end{align*}
-$$
-
-This implies that
-
-::::{math}
-:label: Eq:Integration:PartsSerret
-\int_0^1\frac{\arctan(x)}{1+x}\,dx=\frac{1}{8}\pi\ln(2)=\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx.
-::::
-
-::::::{admonition} A different approach to Serret's integral (bonus material)
-:class: solution, dropdown
-The results in {eq}`Eq:Integration:PartsSerret` can also be obtained using the Feynman method (see: {numref}`Sec:Integration:ImproperIntegrals` on improper integrals).
-
-Note that Serret's integral is a special case of $I(\alpha)=\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
-
-Differentiation with respect to $\alpha$ leads to 
-
-$$
-I'(\alpha)=\displaystyle\frac{\ln(1+\alpha^2)}{1+\alpha^2}+\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx.
-$$ 
-
-Now we use (see the section on integration of rational functions for more details) 
- 
-$$
-\frac{x}{(1+x^2)(1+\alpha x)}=\frac{1}{1+\alpha^2}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)
-$$
-
-to obtain
-
-$$
-\begin{align*}
-&\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx\\
-&=\frac{1}{1+\alpha^2}\int_0^{\alpha}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)\,dx\\
-&=\frac{1}{1+\alpha^2}\bigg[\alpha\arctan(x)+\frac{1}{2}\ln(1+x)-\ln(1+\alpha x)\bigg]_0^{\alpha}\\
-&=\frac{1}{1+\alpha^2}\left(\alpha\arctan(\alpha)+\frac{1}{2}\ln(1+\alpha^2)-\ln(1+\alpha^2)\right)\\
-&=\frac{\alpha}{1+\alpha^2}\arctan(\alpha)-\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}.
-\end{align*}
-$$ 
- 
-Hence we have: $I'(\alpha)=\displaystyle\frac{\alpha}{1+\alpha^2}\arctan(\alpha)+\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}$. Since $I(0)=0$, this implies that
-
-$$
-\begin{align*}
-I(\alpha)&=\int\frac{\alpha}{1+\alpha^2}\arctan(\alpha)\,d\alpha+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
-&=\frac{1}{2}\int\arctan(\alpha)\,d\ln(1+\alpha^2)+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
-&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\ln(1+\alpha^2)\,d\arctan(\alpha)\\
-&{}\quad\quad\quad{}+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
-&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
-&{}\quad\quad\quad{}+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
-&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)+C\quad\Longrightarrow\quad I(\alpha)=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2).
-\end{align*}
-$$
-
-Hence we have: $\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)$.
-
-The special case $\alpha=1$ now reads
-
-$$
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{2}\arctan(1)\ln(2)=\frac{1}{2}\cdot\frac{1}{4}\pi\cdot\ln(2)=\frac{1}{8}\pi\ln(2).
-$$
-
-Similarly, the integral $\displaystyle\int_0^1\frac{\arctan(x)}{1+x}\,dx$ is a special case of
-
-$$
-\begin{align*}
-\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx&=\int_0^{\alpha}\arctan(x)\,d\ln(1+\alpha x)\\
-&=\arctan(x)\ln(1+\alpha x)\bigg|_0^{\alpha}-\int_0^{\alpha}\ln(1+\alpha x)\,d\arctan(x)\\
-&=\arctan(\alpha)\ln(1+\alpha^2)-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
-\end{align*}
-$$
-
-This implies that: 
-
-$$
-\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)=\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
-$$
-
-For $\alpha=1$ this reads {eq}`Eq:Integration:PartsSerret`.
-
-::::::
 
 ## Grasple exercises

@@ -238,6 +238,7 @@ $$
 ::::::
 
 :::{prf:example} Serret's integral
+:label: Ex:Integration:SubstitutionTrigSerretsIntegral
 
 Consider the integral $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$, which is named after the French mathematician [Joseph Alfred Serret (1819-1885)](https://en.wikipedia.org/wiki/Joseph-Alfred_Serret).
 
@@ -250,7 +251,7 @@ $$
 \end{align*}
 $$
 
-Now we use $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$ (see exercise 2) to obtain
+Now we use $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$ (see {numref}`Exc:Integration:SubstitutionTrigForm`) to obtain
 
 $$
 \begin{align*}
