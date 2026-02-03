@@ -2,6 +2,10 @@
 
 # Functions of one variable
 
+(Subsec:Functions1dIntro)=
+
+## Introduction
+
 [^myfootnote1]: If you do not live close to Delft, you should come visit once. Then you can experience all the nice (and maybe also the not so nice) things about cycling through a crowded, old town. 
 
 
@@ -319,7 +323,7 @@ We now consider a function of the form $g(x)=x^n$ for some positive integer $n\g
 
 Hier twee plaatjes naast elkaar. Links: de grafieken van $x^2$, $x^4$, $x^6$ en $x^8$, rechts: de grafieken van $x^3$, $x^5$, $x^7$ en $x^9$; bij beiden moet het stuk tussen -2 en 2 zichtbaar zijn.
 
-Indeed, for even values of $n$, the graph of $g(x)=x^n$ resembles the parabola $y=x^2$, while for odd values of $n$, the graph is similar to that of $x^3$. In particular, for even values of $n$ the graph of the function is symmetric around the $y$-axis. In {numref}`Section:Propertiesfunctions` we will call a function with this property **even** (so now you already know where that name comes from). Similarly, for odd values of $n$ the graph of the function is symmetric in the line $y=-x$ and such a function will be called **odd**.
+Indeed, for even values of $n$, the graph of $g(x)=x^n$ resembles the parabola $y=x^2$, while for odd values of $n$, the graph is similar to that of $x^3$. In particular, for even values of $n$ the graph of the function is symmetric around the $y$-axis. In {numref}`Section:Propertiesfunctions` we will call a function with this property **even** (so now you already know where that name comes from). Similarly, for odd values of $n$ the graph of the function is symmetric in the origin and such a function will be called **odd**.
 
 Note that as $n$ gets larger the graphs becomes more flat for $x$ between $-1$ and $1$. This is because for these values of $x$ we have $|x^2|>|x^3|>|x^4|>...$. On the other hand, for values of $x$ larger than $1$ or smaller than $-1$, the function blows up quicker for larger values of $n$, since then we have $|x^2|<|x^3|<|x^4|<...$
 

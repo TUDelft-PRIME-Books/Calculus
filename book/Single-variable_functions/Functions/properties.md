@@ -2,6 +2,10 @@
 
 # Properties of functions
 
+(Subsec:Propertiesfunctionsintro)=
+
+## Introduction
+
 In {numref}`Section:Functionsintro` we encountered several types of functions that we called standard functions (for instance, polynomial functions, trigonometric functions and exponential functions). In this section, we try to find in what ways we can combine these standard functions to obtain other, perhaps more complicated functions. In addition, we saw that these standard functions show some very different qualitative behaviour. For instance, exponential functions either always grow or always decay, while the sine and the cosine show periodic behaviour. We will, therefore, also use this section to define various classifications of functions and we will try to find out, if possible, which standard functions fall under which class of functions.
 
 (Subsec:PropertisfunctionsCombinations)=
