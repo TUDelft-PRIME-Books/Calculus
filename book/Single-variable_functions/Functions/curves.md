@@ -64,7 +64,7 @@ Intuitively, a curve is a line that is not necessarily straight. However, turnin
 
 A **parametric curve**, or simply **curve**, $\mathcal{C}$ in $\mathbb{R}^2$ is a set of points $(x,y)$ whose positions are given by **parametric equations** $x=f(t)$ and $y=g(t)$ for $t$ in some interval $I$. Here $t$ is called a **parameter**.
 
-If $I$ is the closed interval $[a,b]$, then the point $(x,y)=(f(a),g(a))$ is called the **start point** or **initial point** of $\mathcal{C}$, while the point $(x,y)=(f(b),g(b))$ is called the **end point** or **terminal point** of $\mathcal{C}$.
+If $I$ is the closed interval $[a,b]$, then the point $(x,y)=(f(a),g(a))$ is called the **start point** or **initial point** of $\mathcal{C}$, while the point $(x,y)=(f(b),g(b))$ is called the **end point** or **terminal point** of $\mathcal{C}$. Whenever the start point and the end point of the curve coincide, we say that the curve is **closed**.
 
 ::::::
 
@@ -187,7 +187,414 @@ Note that for $t<-1$, $x$ is positive, while $y$ is negative. So these values of
 
 ## Circles and ellipses
 
+A very common type of curves that cannot be described as the graph of some function is that of ellipses, which included the circles. First, we give a geometrical description of these objects and then we try to find useful equations and parametrisations describing them.
 
+::::::{prf:definition} 
+:label: Def:Curves:Ellipse
+
+An **ellipse** is a curve in $\mathbb{R}^2$ surrounding two points, called the **focal points** of the ellipse, such that for all points on the curve, the sum of the distances to the two focal points is a constant $2a$ that is greater than the distance between the focal points. A **circle** is an ellipse for which the two focal points coincide.
+
+The midpoint of the line segment joining the two focal points is called the **center** of the ellipse. In case the ellipse is not a circle, the line through the focal points is called the **major axis** of the ellipse, while the line perpendicular to the major axis is called the **minor axis** of the ellipse. The intersection points of the major axis with the ellipse are called the **vertices** of the ellipse, while the intersection points of the minor axis with the ellipse are called the **co-vertices**.
+
+If $c$ denotes the distance from any focal point to the center, the number $e=\frac{c}{a}$ is called the **eccentricity** of the ellipse.
+::::::
+
+```{figure} Images/ellipse.png
+---
+width: 100%
+name: Fig:Curves:Ellipse
+class: dark-light
+---
+Hier een mooiere versie van dit plaatje.
+An ellipse with focal points $F_1$ and $F_2$ such that for each point $A$ on the ellipse the sum of the distances to $F_1$ and $F_2$ is $2a$. The center $C$ and the distance $c$ between the center and any focal point are also shown, as are the vertices $V_1$ and $V_2$ and the co-vertices $W_1$ and $W_2$ of the ellipse.
+```
+
+In order to find an equation for an ellipse, we will, for convenience, first assume that the center of the ellipse is the origin and that the major axis is either the $x$-axis or $y$-axis. In that case we obtain the following result.
+
+::::::{prf:theorem} 
+:label: Thm:Curves:Ellipse
+
+Let $a>0$ and $b>0$ and consider an ellipse with of which the vertices and covertices are $(a,0)$, $(-a,0)$, $(0,b)$ and $(0,-b)$ (so that the center of the ellipse is at the origin and the major axis is either the $x$-axis (when $a\geq b$) or the $y$-axis (when $a\leq b$)). Then the ellipse is described by the equation
+
+$$
+ \frac{x^2}{a^2}+\frac{y^2}{b^2}=1.
+$$
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves:Ellipse`
+:class: tudproof, dropdown
+For convenience, we assume that the major axis of the ellipse is the $x$-axis. In that case, the focal points are $(c,0)$ and $(-c,0)$ for some $0\leq c<a$. Since the sum of the distances from $(a,0)$ to $(c,0)$ and to $(-c,0)$ is $(a-c)+(a-(-c))=2a$, we find that the ellipse consists of all points of which the sum of the distances to $(c,0)$ and $(-c,0)$ is $2a$. By symmetry the distance from $(0,b)$ to $(c,0)$ and to $(-c,0)$ must be equal, so both distances must be $a$ (as their sum should be $2a$ since $(0,b)$ is on the ellipse). By considering the triangle in {numref}`Fig:Curves:Ellipse2` and using the Pythagorean theorem ({prf:ref}`Thm:Trigonometry:Pythagoras`), we find that $b^2+c^2=a^2$, which we will use later in the proof.
+
+```{figure} Images/ellipse2.png
+---
+width: 100%
+name: Fig:Curves:Ellipse2
+class: dark-light
+---
+Hier een mooiere versie van dit plaatje.
+Illustration of the ellipse used in this proof.
+```
+
+For any point $(x,y)$ on the ellipse, the distance to $(c,0)$ is $\sqrt{(x-c)^2+(y-0)^2}=\sqrt{(x-c)^2+y^2}$, while the distance to $(-c,0)$ is $\sqrt{(x-(-c))^2+(y-0)^2}=\sqrt{(x+c)^2+y^2}$. Hence, $(x,y)$ is on the ellipse precisely when
+
+$$
+ \sqrt{(x-c)^2+y^2}+\sqrt{(x+c)^2+y^2}=2a.
+$$
+
+We bring $\sqrt{(x+c)^2+y^2}$ to the other side of the equation and take the square of both sides of the equation to obtain
+
+$$
+ \begin{array}{lcl}(x-c)^2+y^2&=&\left(2a-\sqrt{(x+c)^2+y^2}\right)^2\\ &=& 4a^2-4a\sqrt{(x+c)^2+y^2}+(x+c)^2+y^2. \end{array}
+$$
+
+We work out the brackets on both sides of the equation to obtain 
+
+$$
+ x^2-2cx+c^2+y^2=4a^2-4a\sqrt{(x+c)^2+y^2}+x^2+2cx+c^2+y^2.
+$$
+
+Several of these terms cancel out, and we are left with
+
+$$
+ 4a\sqrt{(x+c)^2+y^2}=4a^2+4cx.
+$$
+
+Now we divide both sides of the equation by $4a$ and square again to obtain
+
+$$
+ (x+c)^2+y^2=\left(a+\frac{c}{a}x\right)^2=a^2+2cx+\frac{c^2}{a^2}x^2.
+$$
+
+Working out the brackets on the left-hand side of the equation and bringing several terms to the other side of the equation gives
+
+$$
+ x^2\left(1-\frac{c^2}{a^2}\right)+y^2=a^2-c^2.
+$$
+
+Note that $1-\frac{c^2}{a^2}=\frac{a^2-c^2}{a^2}$. As such, we can divide the equation by $a^2-c^2$ to obtain
+
+$$
+ \frac{x^2}{a^2}+\frac{y^2}{a^2-c^2}=1.
+$$
+
+Finally, we recall that $b^2=a^2-c^2$ to obtain the desired formula
+
+$$
+ \frac{x^2}{a^2}+\frac{y^2}{b^2}=1.
+$$
+:::
+
+::::::{prf:corollary} 
+:label: Cor:Curves:Ellipse
+
+Let $a>0$ and $b>0$ and consider an ellipse with of which the vertices and covertices are $(x_0+a,y_0)$, $(x_0-a,y_0)$, $(x_0+b,y_0)$ and $(x_0-b,y_0)$ (so that the center of the ellipse is at the point $(x_0,y_0)$ and the axes are the lines $x=x_0$ and $y=y_0$). Then the ellipse is described by the equation
+
+$$
+ \frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1.
+$$
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Cor:Curves:Ellipse`
+:class: tudproof, dropdown
+
+Writing $p=x-x_0$ and $q=y-y_0$, we note that in the $pq$-plane, the curve becomes an ellipse with focal points $(c,0)$ and $(-c,0)$ and vertices $(a,0)$ and $(-a,0)$. By {prf:ref}`Thm:Curves:Ellipse`, the equation for this ellipse is
+
+$$
+ \frac{p^2}{a^2}+\frac{q^2}{b^2}=1.
+$$
+
+Substituting back in $p=x-x_0$ and $q=y-y_0$, we obtain the desired formula
+
+$$
+ \frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1.
+$$
+:::
+
+::::::{prf:theorem} 
+:label: Thm:Curves:Ellipseparam
+
+LLet $a>0$ and $b>0$ and consider an ellipse with of which the vertices and covertices are $(x_0+a,y_0)$, $(x_0-a,y_0)$, $(x_0+b,y_0)$ and $(x_0-b,y_0)$ (so that the center of the ellipse is at the point $(x_0,y_0)$ and the axes are the lines $x=x_0$ and $y=y_0$). Then 
+
+$$
+ x(t)=x_0+a\cos(t),\qquad y(t)=y_0+b\sin(t),\qquad 0\leq t\leq 2\pi
+$$ 
+
+is a parametrisation for the ellipse that traverses the ellipse once in counterclockwise direction for which the start and endpoint are both the (co-)vertex $(x_0+a,y_0)$. 
+
+This parametrisation is called the **standard parametrisation** of the ellipse.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves:Ellipseparam`
+:class: tudproof, dropdown
+By {prf:ref}`Cor:Curves:Ellipse` the equation for this ellipse is $\displaystyle \frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1$. Writing $x(t)=x_0+a\cos(t)$ and $y(t)=y_0+b\sin(t)$, we find
+
+$$
+ \frac{\left(x(t)-x_0)^2}{a^2}+\frac{\left(y(t)-y_0\right)^2}{b^2}=\frac{a^2\cos^2(t)}{a^2}+\frac{b^2\sin^2(t)}{b^2}=\cos^2(t)+\sin^2(t)=1.
+$$
+
+As such, any point of the form $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ satisfies the equation of the ellipse, so we are indeed dealing with a parametrisation of (possibly a part of) the ellipse. Note that $t=0$ we have $(x(0),y(0))=(x_0+a\cos(0),y_0+b\sin(0))=(x_0+a,y_0)$ and at $t=2\pi$ we have $(x(2\pi),y(2\pi))=(x_0+a\cos(2\pi),y_0+b\sin(2\pi))=(x_0+a,y_0)$, so that the start and endpoint are, indeed, both the (co-)vertex $(x_0+a,y_0)$. 
+
+Now we show that this parametrisation covers the ellips exactly once (except the (co-)vertex $(x_0+a,y_0)$, which is both the start and end point). Consider any point $(x,y)$ on the ellipse. We claim that the point $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)$ lies on the unit circle. Indeed, we have
+
+$$
+ \left(\frac{x-x_0}{a}\right)+\left(\frac{y-y_0}{b}\right)=\frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1,
+$$
+
+since $(x,y)$ lies on the ellipse. As such, the point $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)$ satisfies the equation defining the unit circle. From {numref}`Subsec:TrigonRatio` we know that there is exactly one value of $t$ with $0\leq t<2\pi$ for which $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)=\left(\cos(t),\sin(t)\right)$. For this value of $t$ we find that $x=x_0+a\cos(t)$ and $y=y_0+b\sin(t)$, as desired.
+
+Finally, we notice that for $0<t<\frac{\pi}{2}$ we have $y(t)=y_0+b\sin(t)>0$, which must mean that the we parametrise the circle in counterclockwise direction.
+
+:::
+
+::::::{prf:remark} 
+:label: Remark:Curves:Ellipseparam
+
+Consider the parametrisation of an ellipse from {prf:ref}`Thm:Curves:Ellipseparam`. If the ellipse is actually a circle (so when $a=b$, or, equivalently, $c=0$), the parameter $t$ has the interpretation as the angle between the positive $x$-axis and the line segement from the origin to the point $(x(t),y(t))$ measured counterclockwise, as usual. However, for ellipses that are not circles this is not the case. The French painter and mathematician  [Philippe de la Hire (1640-1718)](https://en.wikipedia.org/wiki/Philippe_de_La_Hire) discovered the following interpretation of the parameter $t$. Consider two circles with the same center as the ellipse with radius $b$ and $a$ respectively. If we draw the line segement which has angle $t$ with the positive $x$-axis, then this line segment crosses the first circle at the point $B:(x_0+b\cos(t),y_0+b\sin(t))$ and the second circle at the point $A:(x_0+a\cos(t),y_0+b\sin(t))$. Then the point $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ on the ellipse is found by intersecting the line through $B$ parallel to the major axis of the ellipse with the line through $A$ parallel to the minor axis of the ellipse, see the figure below.
+
+```{figure} Images/delaHire.png
+---
+width: 100%
+name: Fig:Curves:delaHire
+class: dark-light
+---
+Plaatje gejat van wikipedia dus moet ofwel nagemaakt ofwel verwezen. Er staat op wikipedia ook een animatie hiervan, dat is misschien ook nuttig om zoiets erbij te doen (https://en.wikipedia.org/wiki/File:Parametric_ellipse.gif)
+```
+::::::
+
+
+::::::{prf:example} 
+:label: Example:Curves:Ellipse
+
+Consider the ellipse with vertices $(-1,2)$ and $(-1,8)$ and co-vertices $(-3,5)$ and $(1,5)$. Then the major axis of the ellipse is the line $x=-1$, while the minor axis is the line $y=5$. As such, the center of the ellipse is the intersection of these axes, which is the point $(-1,5)$. The distance from the center to the vertices is $3$, while the distance from the center to the covertices is $2$. According to {prf:ref}`Cor:Curves:Ellipse`, the ellipse is defined by the equation
+
+$$
+ \frac{\left(x-(-1)\right)^2}{2^2}+\frac{\left(y-5\right)^2}{3^2}=1,
+$$
+
+which we can rewrite to
+$$
+ \frac{\left(x+1\right)^2}{4}+\frac{\left(y-5\right)^2}{9}=1.
+$$
+
+The standard parametrisation for this ellipse is given by 
+
+$$
+ x=-1+2\cos(t),\qquad y=5+3\sin(t),\qquad 0\leq t\leq 2\pi,
+$$
+
+which corresponds to traversing the ellipse once in counterclockwise direction, starting and ending at the co-vertex $(1,5)$.
+
+A different parametrisation for this circle would be to have
+
+$$
+ x=-1+2\sin(2t),\qquad y=5+3\cos(2t),\qquad 0\leq t\leq 2\pi.
+$$
+
+Note that both at $t=0$ and at $t=2\pi$ we have $(x(t),y(t))=(-1,8)$, so this curve starts and ends at the vertex $(-1,8)$. Moreover, since the fundamental period of the sine and cosine is $2\pi$, the fudamental period of $\sin(2t)$ and $\cos(2t)$ must be $\pi$ (see {numref}`Subsec:PropertisfunctionsPeriodic`). So the parametrisation covers the ellipse **twice**. Indeed, for any $0\leq t\leq \pi$ we have
+
+$$
+ (x(t+\pi),y(t+\pi))=\left(-1+2\sin(2(t+\pi)),5+3\cos(2(t+\pi))\right)=\left(-1+2\sin(2t+2\pi),5+3\cos(2t+2\pi)\right)=\left(-1+2\sin(2t),5+3\cos(2t)\right)=(x(t),y(t)).
+$$
+
+Finally, we notice that for $0<t<\frac{\pi}{4}$ we have $x(t)>-1=x(0)$, so the parametrisation describes a clockwise traversion of the ellipse.
+
+Hier nog een plaatje van de ellips in kwestie.
+::::::
+
+It is also possible to find equations and parametrisations for ellipses of which the major axis is not a horizontal or vertical line. However, this requires quite some knowledge of linear algebra. More information on this can be found in the relevant section of the [Open Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter8/QuadraticForms.html#conic-sections).
+
+(Subsec:CurvesHyperbola)=
+
+## Hyperbolas
+
+Hyperbolas are another common type of curves that are (often) not the graph of a function. Hyperbola share quite some similarities with ellipses in terms of the definition and the equations describing them, though they look very differently geometrically. As such, we will mainly follow the same structure as in the previous section.
+
+
+::::::{prf:definition} 
+:label: Def:Curves:Hyperbola
+
+A **hyperbola** is a curve in $\mathbb{R}^2$ such that there are two points, called the **focal points** of the hyperbola, such that for all points on the curve, the absolute difference of the distances to the two focal points is a constant $2a$. 
+
+The midpoint of the line segment joining the two focal points is called the **center** of the hyperbola. The line through the focal points is called the **major axis** of the hyperbola. The intersection points of the major axis with the hyperbola are called the **vertices** of the hyperbola.
+
+If $c$ denotes the distance from any focal point to the center, the number $e=\frac{c}{a}$ is called the **eccentricity** of the hyperbola.
+::::::
+
+```{figure} Images/hyperbola.png
+---
+width: 100%
+name: Fig:Curves:Hyperbola
+class: dark-light
+---
+Hier een mooiere versie van dit plaatje.
+A hyperbola with focal points $F_1$ and $F_2$ such that for each point $A$ on the hyperbola the sum of the distances to $F_1$ and $F_2$ is $2a$. The center $C$ and the vertices $V_1$ and $V_2$ and of the hyperbola are also shown.
+```
+
+In order to find an equation for a hyperbola, we will, for convenience, first assume that the center of the hyperbola is the origin and that the major axis is the $x$-axis. In that case we obtain the following result.
+
+::::::{prf:theorem} 
+:label: Thm:Curves:Hyperbola
+
+Let $0<a<c$ and consider a hyperbola of which the vertices are $(a,0)$ and $(-a,0)$ and the focal points are $(c,0)$ and $(-c,0)$ (so that the center of the hyperbola is at the origin and the major axis is the $x$-axis). Then the hyperbola is described by the equation
+
+$$
+ \frac{x^2}{a^2}-\frac{y^2}{b^2}=1,
+$$
+
+where $b^2=c^2-a^2$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves:Hyperbola`
+:class: tudproof, dropdown
+Since the absolute difference of the distances from $(a,0)$ to $(c,0)$ and to $(-c,0)$ is $\left|(c-a)-(a-(-c))\right|=2a$, we find that the hyperbola consists of all points of which the absolute difference of the distances to $(c,0)$ and $(-c,0)$ is $2a$. 
+
+Consider any point $(x,y)$ on the hyperbola. Assume, for convenience, that the point $(-c,0)$ is the point closes to $(x,y)$. Then the distance to $(c,0)$ is $\sqrt{(x-c)^2+(y-0)^2}=\sqrt{(x-c)^2+y^2}$, while the distance to $(-c,0)$ is $\sqrt{(x-(-c))^2+(y-0)^2}=\sqrt{(x+c)^2+y^2}$. Hence, $(x,y)$ is on the hyperbola precisely when
+
+$$
+ \left|\sqrt{(x-c)^2+y^2}-\sqrt{(x+c)^2+y^2}\right|=2a.
+$$
+
+Since we assumed that $(-c,0)$ is the closest point to $(x,y)$, we can ignore the absoute value. We bring $\sqrt{(x+c)^2+y^2}$ to the other side of the equation and take the square of both sides of the equation to obtain
+
+$$
+ \begin{array}{lcl}(x-c)^2+y^2&=&\left(2a+\sqrt{(x+c)^2+y^2}\right)^2\\ &=& 4a^2+4a\sqrt{(x+c)^2+y^2}+(x+c)^2+y^2. \end{array}
+$$
+
+We work out the brackets on both sides of the equation to obtain 
+
+$$
+ x^2-2cx+c^2+y^2=4a^2+4a\sqrt{(x+c)^2+y^2}+x^2+2cx+c^2+y^2.
+$$
+
+Several of these terms cancel out, and we are left with
+
+$$
+ -4a\sqrt{(x+c)^2+y^2}=4a^2+4cx.
+$$
+
+Now we divide both sides of the equation by $4a$ and square again to obtain
+
+$$
+ (x+c)^2+y^2=\left(a+\frac{c}{a}x\right)^2=a^2+2cx+\frac{c^2}{a^2}x^2.
+$$
+
+Working out the brackets on the left-hand side of the equation and bringing several terms to the other side of the equation gives
+
+$$
+ x^2\left(1-\frac{c^2}{a^2}\right)+y^2=a^2-c^2.
+$$
+
+Note that $1-\frac{c^2}{a^2}=\frac{a^2-c^2}{a^2}$. As such, we can divide the equation by $a^2-c^2$ to obtain
+
+$$
+ \frac{x^2}{a^2}+\frac{y^2}{a^2-c^2}=1.
+$$
+
+Finally, we set $b^2=c^2-a^2$ to obtain the desired formula
+
+$$
+ \frac{x^2}{a^2}-\frac{y^2}{b^2}=1.
+$$
+:::
+
+::::::{prf:corollary} 
+:label: Cor:Curves:Hyperbola
+
+Let $0<a<c$ and write $b^2=c^2-a^2$. 
+
+Consider a hyperbola of which the vertices are $(x_0-a,y_0)$ and $(x_0+a,y_0)$ and the focal points are $(x_0-c,y_0)$ and $(x_0+c,y_0)$ (so that the center of the hyperbola is at the point $(x_0,y_0)$ and the major axis is the line $y=y_0$). Then the hyperbola is described by the equation
+
+$$
+ \frac{\left(x-x_0\right)^2}{a^2}-\frac{\left(y-y_0\right)^2}{b^2}=1.
+$$
+
+Similarly, the hyperbola of which the vertices are $(x_0,y_0-a)$ and $(x_0,y_0+a)$ and the focal points are $(x_0,y_0-c)$ and $(x_0,y_0+c)$ (so that the center of the hyperbola is at the point $(x_0,y_0)$ and the major axis is the line $x=x_0$). Then the hyperbola is described by the equation
+
+$$
+ \frac{\left(y-y_0\right)^2}{a^2}-\frac{\left(x-x_0\right)^2}{b^2}=1.
+$$
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Cor:Curves:Hyperbola`
+:class: tudproof, dropdown
+
+We first consdier the hyperbola of which the vertices are $(x_0-a,y_0)$ and $(x_0+a,y_0)$ and the focal points are $(x_0-c,y_0)$ and $(x_0+c,y_0)$. Writing $p=x-x_0$ and $q=y-y_0$, we note that in the $pq$-plane, the curve becomes a hyperbola with vertices $(-a,0)$ and $(a,0)$ and focal points $(-c,0)$ and $(c,0)$. By {prf:ref}`Thm:Curves:Hyperbola`, the equation for this hyperbola is
+
+$$
+ \frac{p^2}{a^2}-\frac{q^2}{b^2}=1.
+$$
+
+Substituting back in $p=x-x_0$ and $q=y-y_0$, we obtain the desired formula
+
+$$
+ \frac{\left(x-x_0\right)^2}{a^2}-\frac{\left(y-y_0\right)^2}{b^2}=1.
+$$
+
+Now we consider the hyperbola of which the vertices are $(x_0,y_0-a)$ and $(x_0,y_0+a)$ and the focal points are $(x_0,y_0-c)$ and $(x_0,y_0+c)$. Writing $r=y$ and $s=x$, we obtain a hyperbola in the $rs$-plane with vertices $(y_0-a,x_0)$ and $(y_0+a,x_0)$ and focal points $(y_0-c,x_0)$ and $(y_0+c,x_0)$. By the first part of this proof, the equation for this hyperbola is
+
+$$
+ \frac{\left(r-y_0\right)^2}{a^2}-\frac{\left(s-x_0\right)^2}{b^2}=1.
+$$
+
+Substituting back in $r=y$ and $s=x$, we obtain the desired formula
+
+$$
+ \frac{\left(y-y_0\right)^2}{a^2}-\frac{\left(x-x_0\right)^2}{b^2}=1.
+$$
+
+:::
+
+A common parametrisation of an hyperbola uses the hyperbolic cosine and sine functions, see {prf:ref}`Def:Propertiesfunctions:Hyperbolic`.
+
+::::::{prf:theorem} 
+:label: Thm:Curves:Hyperbolaparam
+
+Let $0<a<c$ and consider a hyperbola of which the vertices are $(x_0-a,y_0)$ and $(x_0+a,y_0)$ and the focal points are $(x_0-c,y_0)$ and $(x_0+c,y_0)$ (so that the center of the hyperbola is at the point $(x_0,y_0)$ and the major axis is the line $y=y_0$). Then 
+
+$$
+ x(t)=x_0-a\cosh(t),\qquad y(t)=y_0+b\sinh(t),\qquad -\infty<t<\infty
+$$ 
+
+is a parametrisation of the part of the hyperbola with $x<x_0$, while
+
+$$
+ x(t)=x_0+a\cosh(t),\qquad y(t)=y_0+b\sinh(t),\qquad -\infty<t<\infty
+$$ 
+
+is a parametrisation of the part of the hyperbola with $x>x_0$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves:Hyperbolaparam`
+:class: tudproof, dropdown
+
+
+TOT HIER!
+
+By {prf:ref}`Cor:Curves:Hyperbola` the equation for this hyperbola is $\displaystyle \frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1$. Writing $x(t)=x_0+a\cos(t)$ and $y(t)=y_0+b\sin(t)$, we find
+
+$$
+ \frac{\left(x(t)-x_0)^2}{a^2}+\frac{\left(y(t)-y_0\right)^2}{b^2}=\frac{a^2\cos^2(t)}{a^2}+\frac{b^2\sin^2(t)}{b^2}=\cos^2(t)+\sin^2(t)=1.
+$$
+
+As such, any point of the form $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ satisfies the equation of the ellipse, so we are indeed dealing with a parametrisation of (possibly a part of) the ellipse. Note that $t=0$ we have $(x(0),y(0))=(x_0+a\cos(0),y_0+b\sin(0))=(x_0+a,y_0)$ and at $t=2\pi$ we have $(x(2\pi),y(2\pi))=(x_0+a\cos(2\pi),y_0+b\sin(2\pi))=(x_0+a,y_0)$, so that the start and endpoint are, indeed, both the (co-)vertex $(x_0+a,y_0)$. 
+
+Now we show that this parametrisation covers the ellips exactly once (except the (co-)vertex $(x_0+a,y_0)$, which is both the start and end point). Consider any point $(x,y)$ on the ellipse. We claim that the point $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)$ lies on the unit circle. Indeed, we have
+
+$$
+ \left(\frac{x-x_0}{a}\right)+\left(\frac{y-y_0}{b}\right)=\frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1,
+$$
+
+since $(x,y)$ lies on the ellipse. As such, the point $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)$ satisfies the equation defining the unit circle. From {numref}`Subsec:TrigonRatio` we know that there is exactly one value of $t$ with $0\leq t<2\pi$ for which $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)=\left(\cos(t),\sin(t)\right)$. For this value of $t$ we find that $x=x_0+a\cos(t)$ and $y=y_0+b\sin(t)$, as desired.
+
+Finally, we notice that for $0<t<\frac{\pi}{2}$ we have $y(t)=y_0+b\sin(t)>0$, which must mean that the we parametrise the circle in counterclockwise direction.
+
+:::
 
 - Ellipse
 - Hyperbola

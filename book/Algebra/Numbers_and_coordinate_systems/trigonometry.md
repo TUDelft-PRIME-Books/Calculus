@@ -54,6 +54,8 @@ An angle between two intersecting half lines is always in $[0,\pi]$. An angle of
 
 ::::::
 
+(Subsec:TrigonRatio)=
+
 ## Trigonometric ratios
 
 Using angles, we define three trigonometric ratios: the sine, the cosine and the tangent.
