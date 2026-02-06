@@ -386,7 +386,56 @@ Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\frac{\sinh
 
 Hier de grafieken van cosh(x), sinh(x) en tanh(x).
 
+::::::{prf:notation} Powers of hyperbolic functions
+:label: Not:Propertiesfunctions:Hyperbolic
+
+$$
+\cosh^n(x)=(\cosh(x))^n;
+$$
+
+$$
+\sinh^n(x)=(\sinh(x))^n;
+$$
+
+$$
+\tanh^n(x)=(\tanh(x))^n.
+$$
+
+::::::
+
 The naming of these functions suggests some sort of connection to the trigonometric functions. Indeed, the hyperbolic sine and cosine have an interpretation similar to the regular sine and cosine when using [hyperbolic angles](https://en.wikipedia.org/wiki/Hyperbolic_angle) instead of regular angles. They can also be used to paramterise a hyperbola, see {numref}`Subsec:CurvesHyperbola`. Moreover, the derivatives (see {numref}`Chapter:Differentiation`) of the hyperbolic functions follow a similar, though slightly different, pattern to those of the trigonometric functions. Finally, the sine and the hyperbolic sine, the tangent and the hyperbolic tangent are all odd functions (the regular tangent only on $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$), while the cosine and the hyperbolic cosine are both even functions.
+
+::::::{prf:theorem} 
+:label: Thm:Propertiesfunctions:Hyperbolicproperties
+
+- The function $f(x)=\cosh(x)$ is even, while the functions $g(x)=\sinh(x)$ and $h(x)=\tanh(x)$ are odd. 
+- The function $f(x)=\cosh(x)$ is strictly decreasing on the interval $(-\infty,0)$ and strictly increasing on the interval $(0,\infty)$.
+- The functions $g(x)=\sinh(x)$ and $h(x)=\tanh(x)$ are strictly increasing on $\mathbb{R}$.
+- For any $x$ we have $\cosh^2(x)-\sinh^2(x)=1$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Propertiesfunctions:Hyperbolicproperties`
+:class: tudproof, dropdown
+That the hyperbolic cosine is even and the hyperbolic sine is even follows directly from their definitions as the even and odd parts respectively of the exponential function. As such, for any $x$ we have
+
+$$
+ h(-x)=\tanh(-x)=\frac{\cosh(-x)}{\sinh(-x)}=\frac{\cosh(x)}{-\sinh(x)}=-\tanh(x)=-h(x),
+$$
+
+which means that the hyperbolic tangent is odd.
+
+We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are increasing and decreasing. This will do in {numref}`Section:GraphsDerivatives`.
+
+By {prf:ref}`Thm:Propertiesfunctions:Expincrdecr`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $g(x)=\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
+
+The final property follows from the definition of the hyperbolic cosine and sine functions, which gives that
+
+$$
+ \cosh^2(x)-\sinh^2(x)=\left(\frac{e^x+e^{-x}}{2}\right)^2-\left(\frac{e^x-e^{-x}}{2}\right)^2=\frac{e^{2x}+2+e^{-2x}}{4}-\frac{e^{2x}-2+e^{-2x}}{4}=\frac{4}{4}=1.
+$$
+
+:::
 
 
 (Subsec:PropertisfunctionsPeriodic)=
