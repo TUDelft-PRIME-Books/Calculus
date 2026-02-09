@@ -102,7 +102,7 @@ We can generalise this concept as follows.
 ::::::{prf:definition} 
 :label: Def:Propertiesfunctions:Composition
 
-Let $f$ and $g$ be functions. Then we can the **composition** of $f$ with $g$, which we denote by $f\circ g$, to be defined by
+Let $f$ and $g$ be functions. Then we can the **composition** of $f$ with $g$, which we denote by $f\circ g$ (this notation is pronounced as "$f$ after $g$"), to be defined by
 
 $$
  (f\circ g)(x)=f(g(x)).
