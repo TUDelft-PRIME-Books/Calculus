@@ -2,15 +2,6 @@
 
 # Integration by parts
 
-In this section we cover:
-
-- Integration by parts for indefinite integrals
-- Integration by parts for definite integrals
-- Advanced cases (e.g. x^3*sin(x), arctan(x), e^x*cos(x), combination with substitution)
-- Reduction formulas
-- LIATE rule for choosing (including exceptions)
-
-
 ## Introduction
 
 In the previous sections we have seen how to determine definite and indefinite integrals of standard functions and linear combinations of these standard functions, and also how to apply the method of integration by substitution.

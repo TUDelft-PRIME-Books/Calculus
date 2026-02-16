@@ -58,8 +58,8 @@ parts:
       - file: "Single-variable_functions/Integration/integration_by_substitution.md"
       - file: "Single-variable_functions/Integration/special_substitutions.md"
       - file: "Single-variable_functions/Integration/integration_by_parts.md"
-      - file: "Single-variable_functions/Integration/integration_of_rational_functions.md"
       - file: "Single-variable_functions/Integration/integration_of_trigonometric_functions.md"
+      - file: "Single-variable_functions/Integration/integration_of_rational_functions.md"
       - file: "Single-variable_functions/Integration/improper_integrals.md"
       - file: "Single-variable_functions/Integration/approximating_integrals.md"
   - caption: Sequences and series
