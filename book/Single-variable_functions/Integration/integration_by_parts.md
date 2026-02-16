@@ -162,59 +162,6 @@ $$
 
 ::::::
 
-::::{exercise}
-:label: Exc:Integration:PartsAntiderivativeOfLn
-Find an antiderivative of $\ln(x)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfLn`
-:class: solution, dropdown
-
-$$
-\int\ln(x)\,dx=x\ln(x)-\int x\,\frac{1}{x}\,dx=x\ln(x)-\int 1\,dx=x\ln(x)-x+C.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsAntiderivativeOfArcsin
-Find an antiderivative of $\arcsin(x)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfArcsin`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\int\arcsin(x)\,dx&=x\arcsin(x)-\int x\,\frac{1}{\sqrt{1-x^2}}\,dx\\
-&=x\arcsin(x)-\int\frac{x}{\sqrt{1-x^2}}\,dx\\
-&=x\arcsin(x)+\sqrt{1-x^2}+C.
-\end{align*}
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsAntiderivativeOfArccos
-Find an antiderivative of $\arccos(x)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfArccos`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\int\arccos(x)\,dx&=x\arccos(x)-\int x\,\frac{-1}{\sqrt{1-x^2}}\,dx\\
-&=x\arccos(x)+\int\frac{x}{\sqrt{1-x^2}}\,dx\\
-&=x\arccos(x)-\sqrt{1-x^2}+C.
-\end{align*}
-$$
-
-:::
-
-<!-- EDITOR: Hier gebleven -->
-
-
 If we have a choice, which part of the integrand should be chosen as $u$ and which part as $dv$? In many cases the so-called **LIATE rule** will help to make the right choice. If possible we choose for $u$ a **L**ogarithm, an **I**nverse trigonometric function, an **A**lgebraic function (a power of $x$), a **T**rigonometric function or an **E**xponential function, in that order. We can incorporate this rule in our algorithm {prf:ref}`Alg:Integration:IngtegrationByPartsIndefiniteIntegral` as follows:
 
 ::::::{prf:algorithm}
@@ -327,39 +274,6 @@ $$
 &=\int e^{-2x}\cos(3x)\,dx.
 \end{align*}
 $$
-
-::::{exercise}
-:label: Exc:Integration:PartsOtherChoice
-Evaluate $\displaystyle\int e^{-2x}\cos(3x)\,dx$ by taking $u=e^{-2x}$ in each step.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsOtherChoice`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\int e^{-2x}\cos(3x)\,dx &=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\int e^{-2x}\sin(3x)\,dx\\
-&=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\left(-\frac{1}{3}e^{-2x}\cos(3x)+\frac{2}{3}\int e^{-2x}\cos(3x)\,dx \right) \\
-&=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}\int e^{-2x}\cos(3x)\,dx.
-\end{align*}
-$$
-
-Let $I=\displaystyle\int e^{-2x}\cos(3x)\,dx$, then we have:
-
-$$
-\begin{align*}
-&~ & I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}I\\
-&\Longrightarrow & \left(1+\frac{4}{9}\right)I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x).
-\end{align*}
-$$
-
-Since $1+\dfrac{4}{9}=\dfrac{13}{9}$ we can again conclude that
-
-$$
-I=\frac{3}{13}e^{-2x}\sin(3x)-\frac{2}{13}e^{-2x}\cos(3x)+C.
-$$
-
-:::
 
 ## Definite integrals
 
@@ -479,56 +393,6 @@ $$
 
 ::::::
 
-::::{exercise}
-:label: Exc:Integration:PartsSubstitutionCos
-Evaluate $\displaystyle\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsSubstitutionCos`
-:class: solution, dropdown
-First apply the substitution $u=t^2$ which implies that $du=2t\,dt$:
-
-\begin{align*}
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt&=\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^2\cos(t^2)t\,dt\\
-&=\frac{1}{2}\int_{\pi/2}^{\pi}u\cos(u)\,du.
-\end{align*}
-
-Now we use integration by parts to find that
-
-\begin{align*}
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt&=\frac{1}{2}\int_{\pi/2}^{\pi}u\cos(u)\,du \\
-&=\frac{1}{2}u\sin(u)\bigg|_{\pi/2}^{\pi}-\frac{1}{2}\int_{\pi/2}^{\pi}\sin(u)\,du\\
-&=-\frac{1}{4}\pi+\frac{1}{2}\cos(u)\bigg|_{\pi/2}^{\pi}\\
-&=-\frac{1}{4}\pi-\frac{1}{2}.
-\end{align*}
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsSubstitutionSin
-Evaluate $\displaystyle\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsSubstitutionSin`
-:class: solution, dropdown
-First apply the substitution $u=t^2$ which implies that $du=2t\,dt$:
-
-\begin{align*}
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt&=\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^2\sin(t^2)t\,dt\\
-&=\frac{1}{2}\int_{\pi/2}^{\pi}u\sin(u)\,du.
-\end{align*}
-
-Now we use integration by parts to find that
-
-\begin{align*}
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt &= \frac{1}{2}\int_{\pi/2}^{\pi}u\sin(u)\,du \\
-&=-\frac{1}{2}u\cos(u)\bigg|_{\pi/2}^{\pi}+\frac{1}{2}\int_{\pi/2}^{\pi}\cos(u)\,du\\
-&=\frac{1}{2}\pi+\frac{1}{2}\sin(u)\bigg|_{\pi/2}^{\pi}\\
-&=\frac{1}{2}\pi-\frac{1}{2}.
-\end{align*}
-
-:::
-
 In the previous section in {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we have seen that $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{8}\pi\ln(2)$. This result can also be used to evaluate a similar integral involving the inverse tangent function:
 
 :::::{prf:example} Serret's integral
@@ -594,27 +458,6 @@ I_{10}&=\left(x^{10}-10x^9+90x^8-720x^7+5040x^6-30240x^5+151200x^4\right.\\
 \end{align*}
 $$
 
-::::{exercise}
-:label: Exc:Integration:PartsReductionPowerExpNeg
-Find a reduction formula for $\displaystyle\int x^ne^{-x}\,dx$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionPowerExpNeg`
-:class: solution, dropdown
-
-$$
-\int x^ne^{-x}\,dx = -x^ne^{-x}+n\int x^{n-1}e^{-x}\,dx.
-$$
-
-Define $I_n=\displaystyle\int x^ne^{-x}\,dx$, then we have
-
-$$
-I_n=-x^ne^{-x}+nI_{n-1},\quad n=1,2,3,\ldots.
-$$
-
-Furthermore, we have $I_0=\displaystyle\int e^{-x}\,dx=-e^{-x}+C$.
-:::
-
 In {prf:ref}`Ex.Integration:PartsPowerCos` we evaluated the integral $\displaystyle\int x\cos(x)\,dx$ using integration by parts. What happens if we replace $x$ by a higher power of $x$?
 
 Let $n\in\{2,3,4,\ldots\}$, then we obtain using integration by parts
@@ -652,6 +495,162 @@ I_3&=x^3\sin(x)+3x^2\cos(x)-6I_1\\
 $$
 
 and so on.
+
+## Exercises
+
+::::{exercise}
+:label: Exc:Integration:PartsAntiderivativeOfLn
+Find an antiderivative of $\ln(x)$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfLn`
+:class: solution, dropdown
+
+$$
+\int\ln(x)\,dx=x\ln(x)-\int x\,\frac{1}{x}\,dx=x\ln(x)-\int 1\,dx=x\ln(x)-x+C.
+$$
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsAntiderivativeOfArcsin
+Find an antiderivative of $\arcsin(x)$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfArcsin`
+:class: solution, dropdown
+
+$$
+\begin{align*}
+\int\arcsin(x)\,dx&=x\arcsin(x)-\int x\,\frac{1}{\sqrt{1-x^2}}\,dx\\
+&=x\arcsin(x)-\int\frac{x}{\sqrt{1-x^2}}\,dx\\
+&=x\arcsin(x)+\sqrt{1-x^2}+C.
+\end{align*}
+$$
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsAntiderivativeOfArccos
+Find an antiderivative of $\arccos(x)$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfArccos`
+:class: solution, dropdown
+
+$$
+\begin{align*}
+\int\arccos(x)\,dx&=x\arccos(x)-\int x\,\frac{-1}{\sqrt{1-x^2}}\,dx\\
+&=x\arccos(x)+\int\frac{x}{\sqrt{1-x^2}}\,dx\\
+&=x\arccos(x)-\sqrt{1-x^2}+C.
+\end{align*}
+$$
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsOtherChoice
+Evaluate $\displaystyle\int e^{-2x}\cos(3x)\,dx$ by taking $u=e^{-2x}$ in each step.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsOtherChoice`
+:class: solution, dropdown
+
+$$
+\begin{align*}
+\int e^{-2x}\cos(3x)\,dx &=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\int e^{-2x}\sin(3x)\,dx\\
+&=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\left(-\frac{1}{3}e^{-2x}\cos(3x)+\frac{2}{3}\int e^{-2x}\cos(3x)\,dx \right) \\
+&=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}\int e^{-2x}\cos(3x)\,dx.
+\end{align*}
+$$
+
+Let $I=\displaystyle\int e^{-2x}\cos(3x)\,dx$, then we have:
+
+$$
+\begin{align*}
+&~ & I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}I\\
+&\Longrightarrow & \left(1+\frac{4}{9}\right)I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x).
+\end{align*}
+$$
+
+Since $1+\dfrac{4}{9}=\dfrac{13}{9}$ we can again conclude that
+
+$$
+I=\frac{3}{13}e^{-2x}\sin(3x)-\frac{2}{13}e^{-2x}\cos(3x)+C.
+$$
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsSubstitutionCos
+Evaluate $\displaystyle\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsSubstitutionCos`
+:class: solution, dropdown
+First apply the substitution $u=t^2$ which implies that $du=2t\,dt$:
+
+\begin{align*}
+\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt&=\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^2\cos(t^2)t\,dt\\
+&=\frac{1}{2}\int_{\pi/2}^{\pi}u\cos(u)\,du.
+\end{align*}
+
+Now we use integration by parts to find that
+
+\begin{align*}
+\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\cos(t^2)\,dt&=\frac{1}{2}\int_{\pi/2}^{\pi}u\cos(u)\,du \\
+&=\frac{1}{2}u\sin(u)\bigg|_{\pi/2}^{\pi}-\frac{1}{2}\int_{\pi/2}^{\pi}\sin(u)\,du\\
+&=-\frac{1}{4}\pi+\frac{1}{2}\cos(u)\bigg|_{\pi/2}^{\pi}\\
+&=-\frac{1}{4}\pi-\frac{1}{2}.
+\end{align*}
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsSubstitutionSin
+Evaluate $\displaystyle\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsSubstitutionSin`
+:class: solution, dropdown
+First apply the substitution $u=t^2$ which implies that $du=2t\,dt$:
+
+\begin{align*}
+\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt&=\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^2\sin(t^2)t\,dt\\
+&=\frac{1}{2}\int_{\pi/2}^{\pi}u\sin(u)\,du.
+\end{align*}
+
+Now we use integration by parts to find that
+
+\begin{align*}
+\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt &= \frac{1}{2}\int_{\pi/2}^{\pi}u\sin(u)\,du \\
+&=-\frac{1}{2}u\cos(u)\bigg|_{\pi/2}^{\pi}+\frac{1}{2}\int_{\pi/2}^{\pi}\cos(u)\,du\\
+&=\frac{1}{2}\pi+\frac{1}{2}\sin(u)\bigg|_{\pi/2}^{\pi}\\
+&=\frac{1}{2}\pi-\frac{1}{2}.
+\end{align*}
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:PartsReductionPowerExpNeg
+Find a reduction formula for $\displaystyle\int x^ne^{-x}\,dx$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionPowerExpNeg`
+:class: solution, dropdown
+
+$$
+\int x^ne^{-x}\,dx = -x^ne^{-x}+n\int x^{n-1}e^{-x}\,dx.
+$$
+
+Define $I_n=\displaystyle\int x^ne^{-x}\,dx$, then we have
+
+$$
+I_n=-x^ne^{-x}+nI_{n-1},\quad n=1,2,3,\ldots.
+$$
+
+Furthermore, we have $I_0=\displaystyle\int e^{-x}\,dx=-e^{-x}+C$.
+:::
 
 ::::{exercise}
 :label: Exc:Integration:PartsReductionPowerSin

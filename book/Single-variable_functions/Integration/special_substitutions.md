@@ -47,61 +47,6 @@ $$
 \sqrt{a^2-x^2}=\sqrt{a^2-a^2\cos^2(t)}=\sqrt{a^2\sin^2(t)}=|a\sin(t)|.
 $$ 
 
-::::{exercise}
-:label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution1
-Evaluate $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$ using the substitution $x=\cos(t)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution1`
-:class: solution, dropdown
-Let $x=\cos(t)$, then we have $dx=-\sin(t)\,dt$. Furthermore, if $x=-1$ then $t=\pi$ and if $x=1$ then $t=0$. Hence we find that
-
-$$
-\int_{-1}^1\sqrt{1-x^2}\,dx=-\int_{\pi}^0|\sin(t)|\sin(t)\,dt=\int_0^{\pi}|\sin(t)|\sin(t)\,dt.
-$$
-
-Note that $\sin(t)\geq0$ for $0\leq t\leq\pi$. Using $\sin^2(t)=\frac{1}{2}(1-\cos(2t))$ we then obtain
-
-$$
-\begin{align*}
-\int_{-1}^1\sqrt{1-x^2}\,dx&=\int_0^{\pi}\sin^2(t)\,dt=\frac{1}{2}\int_0^{\pi}(1-\cos(2t))\,dt\\
-&=\bigg[\frac{1}{2}t-\frac{1}{4}\sin(2t)\bigg]_0^{\pi}=\frac{1}{2}\pi.
-\end{align*}
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution2
-Evaluate $\displaystyle\int_{-1}^1x^2\sqrt{1-x^2}\,dx$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution2`
-:class: solution, dropdown
-Let $x=\sin(t)$, then we have $dx=\cos(t)\,dt$. Furthermore, if $x=-1$ then $t=-\frac{1}{2}\pi$ and if $x=1$ then $t=\frac{1}{2}\pi$. Hence we find that
-
-$$
-\int_{-1}^1x^2\sqrt{1-x^2}\,dx=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin^2(t)|\cos(t)|\cos(t)\,dt
-=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin^2(t)\cos^2(t)\,dt.
-$$
-
-Now we use $\sin(2t)=2\sin(t)\cos(t)$ to find 
-
-$$
-\int_{-1}^1x^2\sqrt{1-x^2}\,dx=\frac{1}{4}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin^2(2t)\,dt.
-$$
-
-Finally, we have $\sin^2(2t)=\frac{1}{2}(1-\cos(4t))$ which leads to
-
-$$
-\begin{align*}
-\int_{-1}^1x^2\sqrt{1-x^2}\,dx&=\frac{1}{8}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1-\cos(4t))\,dt\\
-&=\bigg[\frac{1}{8}t-\frac{1}{32}\sin(4t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{8}\pi.
-\end{align*}
-$$
-
-:::
-
 For $\sqrt{a^2+x^2}$ we use the fact that for $x=a\tan(t)$ we have
 
 $$
@@ -172,23 +117,6 @@ Hence we have $du=\left(\dfrac{1}{\cos^2(t)}+\dfrac{\tan(t)}{\cos(t)}\right)\,dt
 $$
 \int\frac{dt}{\cos(t)}=\int\frac{du}{u}=\ln|u|+C=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
 $$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution3
-Evaluate $\displaystyle\int_0^1\frac{1}{1+x^2}\,dx$ using the substitution $x=\tan(t)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution3`
-:class: solution, dropdown
-Let $x=\tan(t)$, then we have $dx=\left(1+\tan^2(t)\right)\,dt$. Furthermore, if $x=0$ then $t=0$ and if $x=1$ then $t=\frac{1}{4}\pi$. Hence we find that
-
-$$
-\int_0^1\frac{1}{1+x^2}\,dx=\int_0^{\frac{1}{4}\pi}\frac{1}{1+\tan^2(t)}\left(1+\tan^2(t)\right)\,dt=\int_0^{\frac{1}{4}\pi}1\,dt=\frac{1}{4}\pi.
-$$
-
-*Remark*: Of course, it is easier to evaluate the integral directly using the fundamental theorem of calculus (see: {prf:ref}`Ex:Integration:FundamentalTheoremPart2Example3`).
 
 :::
 
@@ -285,27 +213,6 @@ The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\
 
 :::
 
-::::{exercise}
-:label: Exc:Integration:SubstitutionTrigForm
-Show that $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionTrigForm`
-:class: solution, dropdown
-Using $\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y)$ we obtain
-
-$$
-\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)\cos(\tfrac{1}{4}\pi)+\sin(\theta)\sin(\tfrac{1}{4}\pi)=\tfrac{1}{2}\sqrt{2}\cos(\theta)+\tfrac{1}{2}\sqrt{2}\sin(\theta).
-$$
-
-Multiplying by $\sqrt{2}$ we find that
-
-$$
-\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)+\sin(\theta).
-$$
-
-:::
-
 ## Midpoint mirror substitution
 
 Using the substitution $x=a+b-t$ or $t=a+b-x$ we obtain that a definite integral of the form $I=\displaystyle\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx$ can be evaluated as follows. First apply the substitution:
@@ -351,13 +258,6 @@ $$
 
 ::::::
 
-:::{prf:remark}
-:label: Remark:Integration:GraspleExercise
-
-Grasple-opgave met varianten: $\displaystyle\int_a^b\frac{\sqrt{x}}{\sqrt{x}-\sqrt{a+b-x}}\,dx=\frac{b-a}{2}$ met $a\in\{0,1,2,3,4,5,6,7,8\}$ en $b\in\{1,2,3,4,5,6,7,8,9\}$ met $a<b$ (met uitzondering van $a=0$ en $b=1$).
-:::
-
-
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionNiceFormula2
 For $a=0$, $b=\frac{1}{2}\pi$ and $f(x)=\sin(x)$ we obtain
@@ -371,12 +271,100 @@ $$
 
 ::::::
 
-:::{prf:remark}
-:label: Remark:Integration:GraspleExercise2
+## Exercises
 
-Grasple-opgave met varianten: $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{(\sin(x))^a}{(\sin(x))^a+(\cos(x))^a}\,dx=\frac{\frac{1}{2}\pi-0}{2}=\tfrac{1}{4}\pi$ met $a\in\{1/2,2,3,4,5\}$.
+::::{exercise}
+:label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution1
+Evaluate $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$ using the substitution $x=\cos(t)$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution1`
+:class: solution, dropdown
+Let $x=\cos(t)$, then we have $dx=-\sin(t)\,dt$. Furthermore, if $x=-1$ then $t=\pi$ and if $x=1$ then $t=0$. Hence we find that
+
+$$
+\int_{-1}^1\sqrt{1-x^2}\,dx=-\int_{\pi}^0|\sin(t)|\sin(t)\,dt=\int_0^{\pi}|\sin(t)|\sin(t)\,dt.
+$$
+
+Note that $\sin(t)\geq0$ for $0\leq t\leq\pi$. Using $\sin^2(t)=\frac{1}{2}(1-\cos(2t))$ we then obtain
+
+$$
+\begin{align*}
+\int_{-1}^1\sqrt{1-x^2}\,dx&=\int_0^{\pi}\sin^2(t)\,dt=\frac{1}{2}\int_0^{\pi}(1-\cos(2t))\,dt\\
+&=\bigg[\frac{1}{2}t-\frac{1}{4}\sin(2t)\bigg]_0^{\pi}=\frac{1}{2}\pi.
+\end{align*}
+$$
+
 :::
 
+::::{exercise}
+:label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution2
+Evaluate $\displaystyle\int_{-1}^1x^2\sqrt{1-x^2}\,dx$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution2`
+:class: solution, dropdown
+Let $x=\sin(t)$, then we have $dx=\cos(t)\,dt$. Furthermore, if $x=-1$ then $t=-\frac{1}{2}\pi$ and if $x=1$ then $t=\frac{1}{2}\pi$. Hence we find that
+
+$$
+\int_{-1}^1x^2\sqrt{1-x^2}\,dx=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin^2(t)|\cos(t)|\cos(t)\,dt
+=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin^2(t)\cos^2(t)\,dt.
+$$
+
+Now we use $\sin(2t)=2\sin(t)\cos(t)$ to find 
+
+$$
+\int_{-1}^1x^2\sqrt{1-x^2}\,dx=\frac{1}{4}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin^2(2t)\,dt.
+$$
+
+Finally, we have $\sin^2(2t)=\frac{1}{2}(1-\cos(4t))$ which leads to
+
+$$
+\begin{align*}
+\int_{-1}^1x^2\sqrt{1-x^2}\,dx&=\frac{1}{8}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1-\cos(4t))\,dt\\
+&=\bigg[\frac{1}{8}t-\frac{1}{32}\sin(4t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{8}\pi.
+\end{align*}
+$$
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution3
+Evaluate $\displaystyle\int_0^1\frac{1}{1+x^2}\,dx$ using the substitution $x=\tan(t)$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionDefiniteIntegralTrigSubstitution3`
+:class: solution, dropdown
+Let $x=\tan(t)$, then we have $dx=\left(1+\tan^2(t)\right)\,dt$. Furthermore, if $x=0$ then $t=0$ and if $x=1$ then $t=\frac{1}{4}\pi$. Hence we find that
+
+$$
+\int_0^1\frac{1}{1+x^2}\,dx=\int_0^{\frac{1}{4}\pi}\frac{1}{1+\tan^2(t)}\left(1+\tan^2(t)\right)\,dt=\int_0^{\frac{1}{4}\pi}1\,dt=\frac{1}{4}\pi.
+$$
+
+*Remark*: Of course, it is easier to evaluate the integral directly using the fundamental theorem of calculus (see: {prf:ref}`Ex:Integration:FundamentalTheoremPart2Example3`).
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:SubstitutionTrigForm
+Show that $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionTrigForm`
+:class: solution, dropdown
+Using $\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y)$ we obtain
+
+$$
+\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)\cos(\tfrac{1}{4}\pi)+\sin(\theta)\sin(\tfrac{1}{4}\pi)=\tfrac{1}{2}\sqrt{2}\cos(\theta)+\tfrac{1}{2}\sqrt{2}\sin(\theta).
+$$
+
+Multiplying by $\sqrt{2}$ we find that
+
+$$
+\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)=\cos(\theta)+\sin(\theta).
+$$
+
+:::
 
 ::::{exercise}
 :label: Exc:Integration:SubstitutionNiceFormula
@@ -393,4 +381,18 @@ $$
 \end{align*}
 $$
 
+:::
+
+## Grasple exercises
+
+:::{prf:remark}
+:label: Remark:Integration:GraspleExercise
+
+Grasple-opgave met varianten: $\displaystyle\int_a^b\frac{\sqrt{x}}{\sqrt{x}-\sqrt{a+b-x}}\,dx=\frac{b-a}{2}$ met $a\in\{0,1,2,3,4,5,6,7,8\}$ en $b\in\{1,2,3,4,5,6,7,8,9\}$ met $a<b$ (met uitzondering van $a=0$ en $b=1$).
+:::
+
+:::{prf:remark}
+:label: Remark:Integration:GraspleExercise2
+
+Grasple-opgave met varianten: $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{(\sin(x))^a}{(\sin(x))^a+(\cos(x))^a}\,dx=\frac{\frac{1}{2}\pi-0}{2}=\tfrac{1}{4}\pi$ met $a\in\{1/2,2,3,4,5\}$.
 :::

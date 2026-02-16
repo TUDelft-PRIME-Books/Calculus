@@ -217,48 +217,6 @@ We selected $u=\sqrt{x}$ previously as the inner function, which implies that $x
 
 We will not explicitly use {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` in the sequel, but the steps of this algorithm will be followed implicitly.
 
-::::{exercise}
-:label: Exc:Integration:SubstitutionIndefiniteIntegralRationalFunctions
-Prove that for $\alpha\in\mathbb{R}\setminus\{0\}$ we have
-
-$$
-\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C
-$$
-
-and
-
-$$
-\int\frac{x}{x^2+\alpha^2}\,dx=\frac{1}{2}\ln(x^2+\alpha^2)+C.
-$$
-
-These formulas will be used frequently in the section on integration of rational functions.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionIndefiniteIntegralRationalFunctions`
-:class: solution, dropdown
-Using the substitution $\dfrac{x}{\alpha}=t$ or $x=\alpha t$, which implies that $dx=\alpha\,dt$, we find that
-
-$$
-\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha^2}\int\frac{1}{\left(\frac{x}{\alpha}\right)^2+1}\,dx=\frac{1}{\alpha^2}\int\frac{1}{t^2+1}\alpha\,dt=\frac{1}{\alpha}\arctan(t)+C=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C
-$$
-
-and
-
-$$
-\begin{align*}
-\int\frac{x}{x^2+\alpha^2}\,dx&=\frac{1}{\alpha^2}\int\frac{x}{\left(\frac{x}{\alpha}\right)^2+1}\,dx=\frac{1}{\alpha^2}\int\frac{\alpha t}{t^2+1}\alpha\,dt=\int\frac{t}{t^2+1}\,dt\\
-&=\frac{1}{2}\ln(t^2+1)+C=\frac{1}{2}\ln\left(\left(\frac{x}{\alpha}\right)^2+1\right)+C\\
-&=\frac{1}{2}\ln\left(\frac{x^2+\alpha^2}{\alpha^2}\right)+C=\frac{1}{2}\ln(x^2+\alpha^2)-\frac{1}{2}\ln(\alpha^2)+C.
-\end{align*}
-$$
-
-Note that $-\frac{1}{2}\ln(\alpha^2)$ is a constant. So $-\frac{1}{2}\ln(\alpha^2)+C$ can be replaced by another arbitrary constant of integration.
-
-Note that $\frac{1}{2}\ln(x^2+\alpha^2)$ can also be written as $\ln\sqrt{x^2+\alpha^2}$.
-
-Note that the second formula also holds for $\alpha=0$.
-:::
-
 ## Definite integrals
 
 Now we have some experience with the method of integration by substitution for indefinite integrals, we can also apply this method to definite integrals.
@@ -398,6 +356,50 @@ $$
 $$
 
 ::::::
+
+## Exercises
+
+::::{exercise}
+:label: Exc:Integration:SubstitutionIndefiniteIntegralRationalFunctions
+Prove that for $\alpha\in\mathbb{R}\setminus\{0\}$ we have
+
+$$
+\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C
+$$
+
+and
+
+$$
+\int\frac{x}{x^2+\alpha^2}\,dx=\frac{1}{2}\ln(x^2+\alpha^2)+C.
+$$
+
+These formulas will be used frequently in the section on integration of rational functions.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionIndefiniteIntegralRationalFunctions`
+:class: solution, dropdown
+Using the substitution $\dfrac{x}{\alpha}=t$ or $x=\alpha t$, which implies that $dx=\alpha\,dt$, we find that
+
+$$
+\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha^2}\int\frac{1}{\left(\frac{x}{\alpha}\right)^2+1}\,dx=\frac{1}{\alpha^2}\int\frac{1}{t^2+1}\alpha\,dt=\frac{1}{\alpha}\arctan(t)+C=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C
+$$
+
+and
+
+$$
+\begin{align*}
+\int\frac{x}{x^2+\alpha^2}\,dx&=\frac{1}{\alpha^2}\int\frac{x}{\left(\frac{x}{\alpha}\right)^2+1}\,dx=\frac{1}{\alpha^2}\int\frac{\alpha t}{t^2+1}\alpha\,dt=\int\frac{t}{t^2+1}\,dt\\
+&=\frac{1}{2}\ln(t^2+1)+C=\frac{1}{2}\ln\left(\left(\frac{x}{\alpha}\right)^2+1\right)+C\\
+&=\frac{1}{2}\ln\left(\frac{x^2+\alpha^2}{\alpha^2}\right)+C=\frac{1}{2}\ln(x^2+\alpha^2)-\frac{1}{2}\ln(\alpha^2)+C.
+\end{align*}
+$$
+
+Note that $-\frac{1}{2}\ln(\alpha^2)$ is a constant. So $-\frac{1}{2}\ln(\alpha^2)+C$ can be replaced by another arbitrary constant of integration.
+
+Note that $\frac{1}{2}\ln(x^2+\alpha^2)$ can also be written as $\ln\sqrt{x^2+\alpha^2}$.
+
+Note that the second formula also holds for $\alpha=0$.
+:::
 
 ::::{exercise}
 :label: Exc:Integration:SubstitutionCos

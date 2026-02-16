@@ -11,6 +11,10 @@ In this section we cover the integration of trigonometric functions with:
 - Using complex exponentials
 - Tangent half-angle substitution (do not call it the Weierstrass substitution, see https://en.wikipedia.org/wiki/Tangent_half-angle_substitution)
 
+## Introduction
+
+Integrals, both definite and indefinite, may contain trigonometric functions. In this section we will see how to evaluate such integrals. We will start with integrating the basic trigonometric functions and then we will use these identities to evaluate more complicated integrals.
+
 ## Basic trigonometric identities
 
 Using the fundamental theorem of calculus we have already seen that
