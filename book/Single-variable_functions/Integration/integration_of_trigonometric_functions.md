@@ -2,20 +2,11 @@
 
 # Integration of trigonometric functions
 
-In this section we cover the integration of trigonometric functions with:
-
-- Basic trigonometric identities
-- Products of trigonometric functions
-- Powers of sine and cosine
-- Powers of tangent
-- Using complex exponentials
-- Tangent half-angle substitution (do not call it the Weierstrass substitution, see https://en.wikipedia.org/wiki/Tangent_half-angle_substitution)
-
 ## Introduction
 
 Integrals, both definite and indefinite, may contain trigonometric functions. In this section we will see how to evaluate such integrals. We will start with integrating the trigonometric functions and then we will use these integrals to evaluate more complicated integrals.
 
-## Integrals of trigonometric functions
+## Integrals of simple trigonometric functions
 
 In {numref}`Sec:Integration:IndefiniteIntegrals`, and more specifically in {numref}`Tab:Integration:StandardIndefiniteIntegrals`, we already encountered some indefinite integrals involving trigonometric functions.
 
@@ -517,6 +508,7 @@ For $k=5$ we have
 \int\tan^5(x)\,dx&=\frac{1}{4}\tan^2(x)-\int\tan^3(x)\,dx\\
 &=\frac{1}{4}\tan^4(x)-\frac{1}{2}\tan^2(x)-\ln|\cos(x)|+C.
 \end{align*}
+
 (sec:Integration:HalfAngle)=
 ## The tangent half-angle substitution
 
