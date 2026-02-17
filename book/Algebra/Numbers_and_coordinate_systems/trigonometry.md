@@ -540,7 +540,6 @@ $$
 
 Using {numref}`Fig:Trigonometry:unit_circle` and the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` with $a=x=\cos(\theta)$ and $b=y=\sin(\theta)$ and $c=1$ we have:
 
-$$
 \begin{align*}
 \sin^2(\theta)+\cos^2(\theta) &= y^2+x^2 \\
 &= x^2 +y^2 \\
@@ -548,8 +547,6 @@ $$
 & = c^2 \\
 & = 1.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{prf:theorem} Periodicity
@@ -720,29 +717,20 @@ For the tangent function we have $\tan(\pi-\theta)=\dfrac{\sin(\pi-\theta)}{\cos
 
 For every $x,y\in\mathbb{R}$ we have
 
-$$
 \begin{align*}
 \sin(x+y) &= \sin(x)\cos(y)+\cos(x)\sin(y), \\
 \cos(x+y) &= \cos(x)\cos(y)-\sin(x)\sin(y),
 \end{align*}
-$$
-
-$$
 \begin{align*}
 \sin(x-y) &=\sin(x)\cos(y)-\cos(x)\sin(y), \\
 \cos(x-y) &=\cos(x)\cos(y)+\sin(x)\sin(y),
 \end{align*}
-$$
-
 and
 
-$$
 \begin{align*}
 \tan(x+y) &=\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}, \\
 \tan(x-y) &=\frac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:AdditionSubtractionFormulas`
@@ -768,28 +756,22 @@ $$
 
 On the other hand, this distance can be computed using the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` as
 
-$$
 \begin{align*}
 (PQ)^2&=(\cos(\beta)-\cos(\alpha))^2+(\sin(\beta)-\sin(\alpha))^2\\
 &=\cos^2(\beta)-2\cos(\alpha)\cos(\beta)+\cos^2(\alpha)+\sin^2(\beta)-2\sin(\alpha)\sin(\beta)+\sin^2(\alpha)\\
 &=2-2\left(\cos(\alpha)\cos(\beta)+\sin(\alpha)\cos(\alpha)\right).
 \end{align*}
-$$
-
 This implies that $\cos(\alpha-\beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)$.
 
 Replacing $\beta$ with $-\beta$ we obtain that $\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)$.
 
 In {prf:ref}`Thm:Trigonometry:ComplementaryAngles` we obtained that $\sin(\frac{1}{2}\pi-\theta)=\cos(\theta)$ and $\cos(\frac{1}{2}\pi-\theta)=\sin(\theta)$. Using these complementary angles formulas, we obtain
 
-$$
 \begin{align*}
 \sin(\alpha+\beta)&=\cos(\tfrac{1}{2}\pi-\alpha-\beta)\\
 &=\cos(\tfrac{1}{2}\pi-\alpha)\cos(\beta)+\sin(\tfrac{1}{2}\pi-\alpha)\sin(\beta)\\
 &=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta).
 \end{align*}
-$$
-
 Replacing $\beta$ with $-\beta$ we obtain $\sin(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
 
 Now the summation formulas for the tangent follow from these summation formulas for the sine and the cosine:

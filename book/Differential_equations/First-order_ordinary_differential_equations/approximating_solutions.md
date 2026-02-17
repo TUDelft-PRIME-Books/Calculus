@@ -163,24 +163,18 @@ First, we note that $t_0=-0.2$, $\tilde{y}_0=y(t_0)=y(-0.2)=1$ and $f(t,y)=-2ty^
 
 Then we calculate $\tilde{y}_1$, which is an approximation of $y_1=y(t_1)=y(t_0+\Delta t)=y(-0.2+0.1)=y(-0.1)$:
 
-$$
 \begin{align*}
 	\tilde{y}_1 &= \tilde{y}_0 + \Delta t f(t_0,\tilde{y}_0) \\
 	&= 1 + 0.1\cdot\left(-2\cdot(-0.2)\cdot(1)^2\right) \\
 	&= 1.04.
 \end{align*}
-$$
-
 Then we calculate $\tilde{y}_2$, which is an approximation to $y_2=y(t_2)=y(t_0+2\Delta t)=y(-0.2+2\cdot0.1)=y(0)$:
 
-$$
 \begin{align*}
 	\tilde{y}_2 &= \tilde{y}_1 + \Delta t f(t_1,\tilde{y}_1) \\
 	&= 1.04 + 0.1\cdot\left(-2\cdot(-0.1)\cdot(1.04)^2\right) \\
 	&= 1.06.
 \end{align*}
-$$
-
 We can keep doing time steps, and if we do, we would obtain the approximation shown in {numref}`Figure %s <Fig:ApproximatingSolutions:eulerPolygon>`.
 
 ::::
@@ -753,13 +747,10 @@ k_4&=\Delta tf(t_n+\Delta t,\tilde{y}_n+k_3).
 
 Note that the corrector formula is based on _Simpson's rule_ for numerical integration:
 
-$$
 \begin{align*}
 y(t_{n+1}) &= y(t_n) + \int_{t_n}^{t_{n+1}} f(t,y(t))dt \\
 &\approx y(t_n) + \frac{\Delta t}{6}\left(f(t_n, y(t_n)) + 4 f\left(t_n + \frac{1}{2} \Delta t, y\left(t_n+\frac{1}{2}\Delta t\right)\right) + f(t_n + \Delta t, y(t_n + \Delta t))\right).
 \end{align*}
-$$
-
 Here, $y(t_n)$ is approximated by $\tilde{y}_n$, and the values of $y(t_n+\frac12\Delta t)$ and $y(t_n+\Delta t)$ have to be predicted. From Equation {eq}`Eq:ApproximatingSolutions:RK4` it follows that both $\tilde{y}_n + \frac12k_1$ and $\tilde{y}_n + \frac12k_2$ approximate $y(t_n + \frac12\Delta t)$, and that $y(t_n+\Delta t)$ is predicted by $\tilde{y}_n + k_3$.
 
 To summarize:
@@ -802,7 +793,6 @@ We will perform one time step with the RK4 method with $\Delta t=0.1$. Note that
 
 We first calculate $k_1, k_2, k_3$ and $k_4$, in that order, with $n=0$:
 
-$$
 \begin{align*}
 k_1 &= \Delta t f\left(t_0,\tilde{y}_0\right) \\
 &= 0.1 f\left(-0.2,1\right) \\
@@ -823,18 +813,13 @@ k_4 &= \Delta t f\left(t_0+\Delta t,\tilde{y}_0+k_3\right) \\
 &= 0.0214826265805546899869303610314528 \\
 &\approx 0.021483
 \end{align*}
-$$
-
 Now we calculate $\tilde{y}_1$:
 
-$$
 \begin{align*}
 \tilde{y}_1 &= \tilde{y}_0 + \frac{1}{6}\left(k_1+2k_2+2k_3+k_4\right) \\
 &= 1.0327854619848160483311550601719088 \\
 &\approx 1.032785
 \end{align*}
-$$
-
 ::::
 
 ::::{grasple}

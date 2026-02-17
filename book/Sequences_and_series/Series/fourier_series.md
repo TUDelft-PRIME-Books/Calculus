@@ -51,55 +51,40 @@ Define an **inner product**: $\langle f,g\rangle=\displaystyle\int_{\alpha}^{\be
 :class: solution, dropdown
 Using the product formula $\cos(a)\cos(b)=\frac{1}{2}\left(\cos(a-b)+\cos(a+b)\right)$ (see {prf:ref}`Thm:Trigonometry:ProductFormulas`) we obtain
 
-$$
 \begin{align*}
 &\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m-n)\pi x}{L}\right)\,dx+\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m+n)\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\left[\frac{L}{(m-n)\pi}\sin\left(\frac{(m-n)\pi x}{L}\right)+\frac{L}{(m+n)\pi}\sin\left(\frac{(m+n)\pi x}{L}\right)\right]_{-L}^L\\
 &=0,\quad m\neq n
 \end{align*}
-$$
-
 and for $m=n$ we use $\cos(2a)=2\cos^2(a)-1$ to find that
 
-$$
 \begin{align*}
 \int_{-L}^L\left\{\cos\left(\frac{n\pi x}{L}\right)\right\}^2\,dx&=\frac{1}{2}\int_{-L}^L\left\{1+\cos\left(\frac{2n\pi x}{L}\right)\right\}\,dx\\
 &=\frac{1}{2}\left[x+\frac{L}{2n\pi}\sin\left(\frac{2n\pi x}{L}\right)\right]_{-L}^L=L.
 \end{align*}
-$$
-
 Using the product formula $\sin(a)\sin(b)=\frac{1}{2}\left(\cos(a-b)-\cos(a+b)\right)$ (see  {prf:ref}`Thm:Trigonometry:ProductFormulas`) we obtain
 
-$$
 \begin{align*}
 &\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m-n)\pi x}{L}\right)\,dx-\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m+n)\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\left[\frac{L}{(m-n)\pi}\sin\left(\frac{(m-n)\pi x}{L}\right)-\frac{L}{(m+n)\pi}\sin\left(\frac{(m+n)\pi x}{L}\right)\right]_{-L}^L\\
 &=0,\quad m\neq n
 \end{align*}
-$$
-
 and for $m=n$ we use $\cos(2a)=1-2\sin^2(a)$ to find that
 
-$$
 \begin{align*}
 \int_{-L}^L\left\{\sin\left(\frac{n\pi x}{L}\right)\right\}^2\,dx&=\frac{1}{2}\int_{-L}^L\left\{1-\cos\left(\frac{2n\pi x}{L}\right)\right\}\,dx\\
 &=\frac{1}{2}\left[x-\frac{L}{2n\pi}\sin\left(\frac{2n\pi x}{L}\right)\right]_{-L}^L=L.
 \end{align*}
-$$
-
 Finally we use the product formula $\cos(a)\sin(b)=\frac{1}{2}\left(\sin(a+b)-\sin(a-b)\right)$ (see  {prf:ref}`Thm:Trigonometry:ProductFormulas`) to obtain
 
-$$
 \begin{align*}
 &\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\int_{-L}^L\sin\left(\frac{(m+n)\pi x}{L}\right)\,dx-\frac{1}{2}\int_{-L}^L\sin\left(\frac{(m-n)\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\left[-\frac{L}{(m+n)\pi}\cos\left(\frac{(m+n)\pi x}{L}\right)+\frac{L}{(m-n)\pi}\cos\left(\frac{(m-n)\pi x}{L}\right)\right]_{-L}^L\\
 &=0,\quad m\neq n
 \end{align*}
-$$
-
 and
 
 $$
@@ -144,13 +129,10 @@ These are called the **Euler-Fourier formulas**, named after the Swiss mathemati
 :class: solution, dropdown
 Let $f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)$, then integration gives
 
-$$
 \begin{align*}
 \int_{-L}^Lf(x)\,dx&=\frac{a_0}{2}\int_{-L}^L\,dx\\
 &{}\quad{}+\sum_{n=1}^{\infty}\left(a_n\int_{-L}^L\cos\left(\frac{n\pi x}{L}\right)\,dx+b_n\int_{-L}^L\sin\left(\frac{n\pi x}{L}\right)\,dx\right).
 \end{align*}
-$$
-
 Note that $\displaystyle\int_{-L}^L\,dx=2L$, $\displaystyle\int_{-L}^L\cos\left(\frac{n\pi x}{L}\right)\,dx=0$ and $\displaystyle\int_{-L}^L\sin\left(\frac{n\pi x}{L}\right)\,dx=0$. Hence we have
 
 $$
@@ -159,14 +141,11 @@ $$
 
 If we multiply by $\displaystyle\cos\left(\frac{m\pi x}{L}\right)$ and then integrate, we obtain
 
-$$
 \begin{align*}
 \int_{-L}^Lf(x)\cos\left(\frac{m\pi x}{L}\right)\,dx&=\frac{a_0}{2}\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\,dx\\
 &{}\quad{}+\sum_{n=1}^{\infty}a_n\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
 &{}\quad{}+\sum_{n=1}^{\infty}b_n\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx.
 \end{align*}
-$$
-
 Then {prf:ref}`Thm:Series:Orthogonality` implies that for $m=1,2,3,\ldots$
 
 $$
@@ -175,14 +154,11 @@ $$
 
 If we multiply by $\displaystyle\sin\left(\frac{m\pi x}{L}\right)$ and then integrate, we obtain
 
-$$
 \begin{align*}
 \int_{-L}^Lf(x)\sin\left(\frac{m\pi x}{L}\right)\,dx&=\frac{a_0}{2}\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\,dx\\
 &{}\quad{}+\sum_{n=1}^{\infty}a_n\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
 &{}\quad{}+\sum_{n=1}^{\infty}b_n\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx.
 \end{align*}
-$$
-
 Then {prf:ref}`Thm:Series:Orthogonality` implies that for $m=1,2,3,\ldots$
 
 $$
@@ -217,15 +193,12 @@ This is called **Parseval's identity**, named after the French mathematician [Ma
 :class: solution, dropdown
 Let $f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)$, then multiplication by $f(x)$ and integration gives
 
-$$
 \begin{align*}
 \frac{1}{L}\int_{-L}^L\left\{f(x)\right\}^2\,dx&=\frac{a_0}{2}\cdot\frac{1}{L}\int_{-L}^Lf(x)\,dx\\
 &{}\quad{}+\sum_{n=1}^{\infty}a_n\cdot\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
 &{}\quad{}+\sum_{n=1}^{\infty}b_n\cdot\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{a_0^2}{2}+\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right).
 \end{align*}
-$$
-
 :::
 
 ## Fourier cosine and sine series
@@ -306,8 +279,6 @@ $$\begin{align*}
 b_n&=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx=\frac{1}{\pi}\int_0^{\pi}\sin(nx)\,dx=-\frac{1}{n\pi}\cos(nx)\bigg|_0^{\pi}\\
 &=\frac{1-\cos(n\pi)}{n\pi}=\frac{1-(-1)^n}{n\pi}.
 \end{align*}
-$$
-
 Note that $b_{2k}=0$ and $b_{2k-1}=\displaystyle\frac{2}{(2k-1)\pi}$ for $k=1,2,3,\ldots$. Then we have that
 
 $$
@@ -327,24 +298,18 @@ This is an example of a *square wave*. Around the jump points the **Gibbs phenom
 
 For $x=\frac{1}{2}\pi$ Fourier's theorem implies:
 
-$$
 \begin{align*}
 1=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin(k-\frac{1}{2})\pi}{2k-1}&\quad\Longleftrightarrow\quad
 \frac{1}{2}=\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}\\
 &\quad\Longleftrightarrow\quad
 \sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}=\frac{1}{4}\pi.
 \end{align*}
-$$
-
 Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
 
-$$
 \begin{align*}
 &\frac{1}{2}+\frac{4}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{\pi}\int_{-\pi}^{\pi}\{f(x)\}^2\,dx=\frac{1}{\pi}\int_0^{\pi}dx=1\\
 &{}\quad\Longrightarrow\quad\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{8}\pi^2.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{prf:remark} Gibbs phenomenon
@@ -363,15 +328,12 @@ Consider $f(x)=2x$ for $-1\leq x\leq 1$ and $f(x+2)=f(x)$.
 
 Then: $L=1$ and $f$ is odd, so $a_n=0$ for $n=0,1,2,\ldots$ and
 
-$$
 \begin{align*}
 b_n&=\frac{1}{1}\int_{-1}^1f(x)\sin(n\pi x)\,dx=\int_{-1}^12x\sin(n\pi x)\,dx\\
 &=-\frac{1}{n\pi}\int_{-1}^12x\,d\cos(n\pi x)\\
 &=-\frac{2x\cos(n\pi x)}{n\pi}\bigg|_{-1}^1+\frac{2}{n\pi}\int_{-1}^1\cos(n\pi x)\,dx\\
 &=-\frac{4\cos(n\pi)}{n\pi}=\frac{4(-1)^{n+1}}{n\pi},\quad n=1,2,3,\ldots.
 \end{align*}
-$$
-
 Hence: $f(x)=\displaystyle\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(n\pi x)$.
 
 :::{figure} Images/fourier2.png
@@ -385,22 +347,16 @@ This is an example of a *sawtooth wave*. Around the jump points the Gibbs phenom
 
 For $x=\frac{1}{2}\pi$ {prf:ref}`Fourier's convergence theorem <Thm:Series:Convergence>` implies:
 
-$$
 \begin{align*}
 &1=\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin\left(\frac{n\pi}{2}\right)=\frac{4}{\pi}\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}\\
 &{}\quad\Longrightarrow\quad\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}=\frac{1}{4}\pi.
 \end{align*}
-$$
-
 Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
 
-$$
 \begin{align*}
 &\frac{16}{\pi^2}\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{1}\int_{-1}^1\{f(x)\}^2\,dx=\int_{-1}^14x^2\,dx=\frac{4}{3}x^3\bigg|_{-1}^1=\frac{8}{3}\\
 &{}\quad\Longrightarrow\quad\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{prf:example}
@@ -416,7 +372,6 @@ $$
 
 and
 
-$$
 \begin{align*}
 a_n&=\frac{1}{1}\int_{-1}^1f(x)\cos(n\pi x)\,dx=\int_{-1}^1(1-x^2)\cos(n\pi x)\,dx\\
 &=\frac{1}{n\pi}\int_{-1}^1(1-x^2)\,d\sin(n\pi x)\\
@@ -425,8 +380,6 @@ a_n&=\frac{1}{1}\int_{-1}^1f(x)\cos(n\pi x)\,dx=\int_{-1}^1(1-x^2)\cos(n\pi x)\,
 &=-\frac{2x\cos(n\pi x)}{n^2\pi^2}+\frac{2}{n^2\pi^2}\int_{-1}^1\cos(n\pi x)\,dx\\
 &=-\frac{4\cos(n\pi)}{n^2\pi^2}=\frac{4(-1)^{n+1}}{n^2\pi^2},\quad n=1,2,3,\ldots.
 \end{align*}
-$$
-
 Hence: $f(x)=\displaystyle\frac{2}{3}+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}\cos(n\pi x)$.
 
 :::{figure} Images/fourier3.png
@@ -452,13 +405,10 @@ $$
 
 Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
 
-$$
 \begin{align*}
 \frac{8}{9}+\frac{16}{\pi^4}\sum_{n=1}^{\infty}\frac{1}{n^4}&=\frac{1}{1}\int_{-1}^1\{f(x)\}^2\,dx=\int_{-1}^1(1-x^2)^2\,dx\\
 &=\int_{-1}^1(1-2x^2+x^4)\,dx=\left[x-\frac{2}{3}x^3+\frac{1}{5}x^5\right]_{-1}^1=\frac{16}{15}
 \end{align*}
-$$
-
 or equivalently
 
 $$
@@ -474,15 +424,12 @@ Consider $f(x)=x$ for $0\leq x\leq 1$.
 
 If we define $f$ such that it is odd and periodic, then we have: $L=1$ and
 
-$$
 \begin{align*}
 b_n&=\frac{2}{1}\int_0^1f(x)\sin(n\pi x)\,dx=2\int_0^1x\sin(n\pi x)\,dx\\
 &=-\frac{2}{n\pi}\int_0^1x\,d\cos(n\pi x)\\
 &=-\frac{2x\cos(n\pi x)}{n\pi}\bigg|_0^1+\frac{2}{n\pi}\int_0^1\cos(n\pi x)\,dx\\
 &=-\frac{2\cos(n\pi)}{n\pi}=\frac{2(-1)^{n+1}}{n\pi},\quad n=1,2,3,\ldots
 \end{align*}
-$$
-
 and therefore: $f(x)=\displaystyle\frac{2}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(n\pi x)$.
 
 :::{figure} Images/fourier4.png
@@ -502,7 +449,6 @@ $$
 
 and
 
-$$
 \begin{align*}
 a_n&=\frac{2}{1}\int_0^1f(x)\cos(n\pi x)\,dx=2\int_0^1x\cos(n\pi x)\,dx\\
 &=\frac{2}{n\pi}\int_0^1x\,d\sin(n\pi x)\\
@@ -510,8 +456,6 @@ a_n&=\frac{2}{1}\int_0^1f(x)\cos(n\pi x)\,dx=2\int_0^1x\cos(n\pi x)\,dx\\
 &=\frac{2}{n^2\pi^2}\cos(n\pi x)\bigg|_0^1
 =\frac{2\left((-1)^{n}-1\right)}{n^2\pi^2},\quad n=1,2,3,\ldots
 \end{align*}
-$$
-
 and therefore: $f(x)=\displaystyle\frac{1}{2}+\frac{2}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos(n\pi x)$.
 
 :::{figure} Images/fourier5.png
@@ -525,13 +469,10 @@ This is an example of a *triangular wave*. In this case the function is continuo
 
 For $x=1$ {prf:ref}`Fourier's convergence theorem <Thm:Series:Convergence>` implies:
 
-$$
 \begin{align*}
 &1=\frac{1}{2}+\frac{2}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}(-1)^n=\frac{1}{2}+\frac{4}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}\\
 &{}\quad\Longrightarrow\quad\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{8}\pi^2.
 \end{align*}
-$$
-
 Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
 
 $$

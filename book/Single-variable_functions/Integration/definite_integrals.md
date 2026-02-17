@@ -458,6 +458,7 @@ If, for example, the function $f$ represents the height of a fence in meters abo
 If, however, the function $f$ represents the *speed* at which an object is moving in meters per second over a time interval $[a,b]$ in seconds then the definite integral $\displaystyle\int_a^bf(t)\,dt$ represents the *distance* traveled by the object in that same time interval, measured in meters. The next examples illustrates this interpretation.
 
 ::::::{prf:example}
+:label: Ex:Integration:DefiniteDistance
 
 :::{figure} Images/filip-mroz-XCkRGOX2VgM-unsplash.jpg
 :width: 75%

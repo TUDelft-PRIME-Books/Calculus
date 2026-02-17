@@ -386,14 +386,11 @@ $$
 
 and
 
-$$
 \begin{align*}
 \int\frac{x}{x^2+\alpha^2}\,dx&=\frac{1}{\alpha^2}\int\frac{x}{\left(\frac{x}{\alpha}\right)^2+1}\,dx=\frac{1}{\alpha^2}\int\frac{\alpha t}{t^2+1}\alpha\,dt=\int\frac{t}{t^2+1}\,dt\\
 &=\frac{1}{2}\ln(t^2+1)+C=\frac{1}{2}\ln\left(\left(\frac{x}{\alpha}\right)^2+1\right)+C\\
 &=\frac{1}{2}\ln\left(\frac{x^2+\alpha^2}{\alpha^2}\right)+C=\frac{1}{2}\ln(x^2+\alpha^2)-\frac{1}{2}\ln(\alpha^2)+C.
 \end{align*}
-$$
-
 Note that $-\frac{1}{2}\ln(\alpha^2)$ is a constant. So $-\frac{1}{2}\ln(\alpha^2)+C$ can be replaced by another arbitrary constant of integration.
 
 Note that $\frac{1}{2}\ln(x^2+\alpha^2)$ can also be written as $\ln\sqrt{x^2+\alpha^2}$.

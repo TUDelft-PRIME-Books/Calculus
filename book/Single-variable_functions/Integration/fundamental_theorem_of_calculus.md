@@ -31,15 +31,12 @@ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $g'(x)=f(x)$.
 
 Using the definition of the derivative, we obtain
 
-$$
 \begin{align*}
 g'(x)&=\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x}f(t)\,dt+\int_x^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)\,dt.
 \end{align*}
-$$
-
 Because $f$ is continuous on $[a,b]$, we can use the third comparison test from {prf:ref}`Th:Integration:DefiniteComparison` to conclude that there exists values $c$ and $d$ between $x$ and $x+h$ such that $f(d)\leq f(x)\leq f(c)$ for all $x$ between $x$ and $x+h$ and that we have
 
 $$

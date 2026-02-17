@@ -161,14 +161,11 @@ $$
 
 with $A=\dfrac{1}{2\alpha}$ and $B=-\dfrac{1}{2\alpha}$. Hence, we have
 
-$$
 \begin{align*}
 \int\frac{dx}{x^2-\alpha^2}&=\frac{1}{2\alpha}\int\left(\frac{1}{x-\alpha}-\frac{1}{x+\alpha}\right)\,dx\\
 &=\frac{1}{2\alpha}\left(\ln|x-\alpha|-\ln|x+\alpha|\right)+C\\
 &=\frac{1}{2\alpha}\ln\left|\frac{x-\alpha}{x+\alpha}\right|+C.
 \end{align*}
-$$
-
 :::
 
 ## Repeated linear factors
@@ -193,13 +190,10 @@ $$
 
 Hence we have
 
-$$
 \begin{align*}
 \int\frac{x^2}{x^2+2x+1}\,dx&=\int\left(1-\frac{2}{x+1}+\frac{1}{(x+1)^2}\right)\,dx\\
 &=x-2\ln|x+1|-\frac{1}{x+1}+C.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{prf:Example}
@@ -214,13 +208,10 @@ $$
 
 We conclude that
 
-$$
 \begin{align*}
 \int\frac{x(3x+5)}{(x+1)^3}\,dx&=\int\left(\frac{3}{x+1}-\frac{1}{(x+1)^2}-\frac{2}{(x+1)^3}\right)\,dx\\
 &=3\ln|x+1|+\frac{1}{x+1}+\frac{1}{(x+1)^2}+C.
 \end{align*}
-$$
-
 ::::::
 
 ## Unrepeated irreducible quadratic factors
@@ -288,14 +279,11 @@ $$
 
 Hence we have
 
-$$
 \begin{align*}
 &\int\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(x^2+2)^2}\,dx\\
 &{}\quad\quad{}=\int\left(\frac{2x+1}{x^2+1}-\frac{2x}{(x^2+1)^2}+\frac{4x}{(x^2+2)^2}\right)\,dx\\
 &{}\quad\quad{}=\ln(x^2+1)+\arctan(x)+\frac{1}{2(x^2+1)^2}-\frac{1}{(x^2+2)^2}+C.
 \end{align*}
-$$
-
 ::::::
 
 Note that we were lucky that the partial fraction decomposition did not contain terms for the sixth case in {prf:ref}`Thm:RationalFunctions:Cases`. Otherwise, we had to deal with multiples of the integrals 
@@ -318,14 +306,11 @@ $$
 
 Now we use $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ to find that
 
-$$
 \begin{align*}
 \int_0^1\frac{1}{(1+x^2)^2}\,dx&=\int_0^{\frac{1}{4}\pi}\cos^2(t)\,dt \\
 &=\frac{1}{2}\int_0^{\frac{1}{4}\pi}(1+\cos(2t))\,dt\\
 &=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_0^{\frac{1}{4}\pi}=\frac{1}{8}\pi+\frac{1}{4}.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{prf:Example}
@@ -340,13 +325,10 @@ $$
 
 Now we use $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ to find that
 
-$$
 \begin{align*}
 \cos^4(t)&=\frac{1}{4}(1+\cos(2t))^2=\frac{1}{4}(1+2\cos(2t)+\cos^2(2t))\\
 &=\frac{1}{4}+\frac{1}{2}\cos(2t)+\frac{1}{2}\cos^2(2t).
 \end{align*}
-$$
-
 Finally, using $\cos^2(2t)=\frac{1}{2}(1+\cos(4t))$, we obtain
 
 $$
@@ -355,14 +337,11 @@ $$
 
 Hence, we have
 
-$$
 \begin{align*}
 \int_1^{\sqrt{3}}\frac{dx}{(1+x^2)^3}&=\int_{\frac{\pi}{4}}^{\frac{\pi}{3}}\cos^4(t)\,dt=\int_{\frac{\pi}{4}}^{\frac{\pi}{3}}\left(\frac{3}{8}+\frac{1}{2}\cos(2t)+\frac{1}{8}\cos(4t)\right)\,dt\\
 &=\bigg[\frac{3}{8}t+\frac{1}{4}\sin(2t)+\frac{1}{32}\sin(4t)\bigg]_{\frac{\pi}{4}}^{\frac{\pi}{3}}
 &= \frac{\pi}{32} + \frac{7\sqrt{3} - 16}{64}.
 \end{align*}
-$$
-
 ::::::
 
 ## Grasple exercises

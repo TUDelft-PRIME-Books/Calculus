@@ -82,15 +82,12 @@ $$
 
 Using the linearisation, we can approximate this change by performing the following calculation:
 
-$$
 \begin{align*}
 \Delta f &= f(a+h)-f(a) \\
 & \approx L(a+h)-f(a) \\
 & = \left( f(a) + f'(a)(a+h-a) \right) -f(a) \\
 & = f'(a) \cdot h.
 \end{align*}
-$$
-
 In other words, we have the following property:
 
 ::::{prf:property}
@@ -470,7 +467,6 @@ $$\cos(\class{red}{0.5})=f(\class{red}{0.5}) \ \approx T_4(\class{red}{0.5}) \ 1
 
 In order to find an upper bound for the approximation error we will need to find an $M$ such that the fifth derivative $f^{(5)}$ of the cosine function is smaller than $M$ for all numbers $x$ in the interval $[0, 0.5]$. The fifth derivative of $f(x)=\cos(x)$ is equal to $f^{(5)}(x)=-\sin(x)$. We know that $|-\sin(x)|\leq 1$ for all values of $x$, so we can choose $M$ to be equal to $1$. We get the following upper bound for the remainder:
 
-$$
 \begin{align*}
 \left|R_4\left(\class{red}{0.5}\right)\right| &= |f(\class{red}{0.5})-T_4(\class{red}{0.5})| \\
 &\leq \frac{1\cdot |\class{red}{0.5}-0|^{4+1}}{(4+1)!} \\
@@ -478,8 +474,6 @@ $$
 &= \frac{0.03125}{120} \\
 &= 0.00026\ldots.
 \end{align*}
-$$
-
 Thus, the approximation error is at most $0.00027$, as we must round up to ensure a proper upper bound.
 
 Now we have an upper bound for the _absolute_ value of the error, we can even find an interval in between the _exact_ value of $\cos(0.5)$ lies:

@@ -37,13 +37,10 @@ We can show that the sum $S$ of the first $n$ positive integers equals $\frac{1}
 
 Let $S=\displaystyle\sum_{k=1}^nk$, then we have:
 
-$$
 \begin{align*}
 S&=1&+2&+\ldots&+(n-1)&+n\\
 S&=n&+(n-1)&+\ldots&+2&+1.
 \end{align*}
-$$
-
 Adding the two expressions we obtain
 
 $$
@@ -59,13 +56,10 @@ Let $S=\displaystyle\sum_{k=1}^nar^{k-1}=a+ar+ar^2+\ldots+ar^{n-1}$ with $r\neq1
 
 Then we have:
 
-$$
 \begin{align*}
 S&=a&+ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&\\
 rS&=&ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&+ar^n.
 \end{align*}
-$$
-
 Subtracting the two equations we obtain
 
 $$

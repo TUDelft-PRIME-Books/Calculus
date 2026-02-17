@@ -452,14 +452,11 @@ Now consider a limit of the form $\lim\limits_{x\rightarrow \infty}p(x)-q(x)\sqr
 :label: Ex:LimitAtInfinity:Squareroottrick.
 Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}x-\sqrt{x^2+1}$. Notice that both the function is of the form described above and that $\lim\limits_{x\rightarrow\infty }x=\lim\limits_{x\rightarrow\infty }\sqrt{x^2+1}=\infty$. Hence, the limit is of the form "$\infty-\infty$" and as such, it is not clear what happens. Using the square root trick we can evaluate the limit by rewriting
 
-$$
 \begin{align*}
  \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+1} &= \lim\limits_{x\rightarrow \infty}\left(x-\sqrt{x^2+1}\right)\dfrac{x+\sqrt{x^2+1}}{x+\sqrt{x^2+1}} \\
  &= \lim\limits_{x\rightarrow \infty}\dfrac{x^2-(x^2+1)}{x+\sqrt{x^2+1}} \\
  &= \lim\limits_{x\rightarrow \infty}\frac{-1}{x+\sqrt{x^2+1}}.
 \end{align*}
-$$
-
 Note that the dominant term in this expression is $x$ and we divide both parts of the fraction by $x$ to evaluate
 
 $$
@@ -543,16 +540,13 @@ In that case, $f$ has the oblique asymptote $y=ax+b$ at both infinity and minus 
 
 The result follows almost directly from polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`). Indeed, this process allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\operatorname{deg}(r)<\operatorname{deg}(q)$ and $\operatorname{deg}(s)=\operatorname{p}-\operatorname{q}$. Since $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, we obtain $\operatorname{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+...+a_1x+a_0$ and $q(x)=b_mx^m+...+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\operatorname{deg}(r)<\operatorname{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
 
-$$
 \begin{align*}
  \lim_{x\rightarrow\infty}f(x)-(ax+b) &=\lim_{x\rightarrow\infty}\frac{r(x)}{q(x)}+s(x)-(ax+b)\\
  &= \lim_{x\rightarrow\infty}\frac{a_nx^n+...+a_1x+a_0}{b_mx^m+...+b_1x+b_0}+ax+b-(ax+b)\\
  &= \lim_{x\rightarrow\infty}\frac{\frac{a_n}{x^{m-n}}+...+\frac{a_1}{x^{m-1}}+\frac{a_0}{x^m}}{b_m+...+\frac{b_1}{x^{m-1}}+\frac{b_0}{x^m}}\\
  &= \frac{0+...+0}{b_m+0+...+0}\\
  &= 0.
- \end{align*}
-$$
-
+\end{align*}
 As such, $y=ax+b$ is indeed the oblique asymptote of $f$ at infinity. The computation for the oblique asymptote at minus infinity is identical.
 ::::::
 
@@ -692,15 +686,12 @@ We conclude that $\lim\limits_{x\rightarrow \infty}cf(x)=cL$.
 
 Now we prove the sum rule. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow a}f(x)=L$, we can pick $N_1$ in such a way that for $x$ with $x\geq N_1$ we have $|f(x)-L|<\frac{\varepsilon}{2}$. Similarly we can pick $N_2$ in such a way that for $x$ with $x\geq N_2$ we have $|g(x)-M|<\frac{\varepsilon}{2}$. We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x$ with $x\geq N$ we have both $x\geq N_1$ and $x\geq N_2$, so we can estimate
 
-$$
 \begin{align*}
  |f(x)+g(x)-(L+M)| &= |(f(x)-L)+(g(x)-M)| \\
  &\leq |f(x)-L|+|g(x)-M| \\
  &< \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \\
  &= \varepsilon.
 \end{align*}
-$$
-
 Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow \infty}f(x)+g(x)=L+M$.
 
 Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $N_1$ in such a way that for $x$ with $x\geq N_1$ we have both have $|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}$ and $|f(x)-L|<1$. The inequality $|f(x)-L|<1$ means that $1-L<f(x)<1+L$, which implies that $|f(x)|<|L|+1$. Now we pick $N_2$ in such a way that for $x$ with $x\geq N_2$ we have both have $|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}$. We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x$ with $x\geq N$ we have both $x\geq N_1$ and $x\geq N_2$, so we can estimate
@@ -760,7 +751,6 @@ We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers 
 
 As such, we can estimate for $x$ with $x\geq N$:
 
-$$
 \begin{align*}
  |g(x)-L| &= |g(x)-f(x)+f(x)-L| \\
  &\leq |g(x)-f(x)|+|f(x)-L| \\
@@ -771,7 +761,5 @@ $$
  &< \frac{\varepsilon}{3}+2\frac{\varepsilon}{3} \\
  &= \varepsilon.
 \end{align*}
-$$
-
 Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow \infty}g(x)=L$.
 ::::::

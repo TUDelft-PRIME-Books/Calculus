@@ -127,10 +127,13 @@ We can transform {numref}`Tab:Integration:StandardAntiderivatives` into a table 
 ```
 
 ::::::{prf:Remark}
+:label: Rk:Integration:IndefiniteIntegrals
+
 Note that we also have $\displaystyle\int\frac{1}{\sqrt{1-x^2}}\,dx=-\arccos(x)+C$.
 ::::::
 
 ::::::{prf:Notation}
+:label: Not:Integration:IndefiniteIntegralNotation
 Sometimes we combine the differential $dx$ with the numerator of the integrand, such as
 
 $$
@@ -224,6 +227,8 @@ Using {prf:ref}`Th:Integration:IndefiniteLinearSubstitution` we can determine th
 ::::
 
 ::::::{prf:Remark}
+:label: Rk:Integration:IndefiniteLinearSubstitution
+
 In the section on integration of rational functions we will frequently use that
 
 $$

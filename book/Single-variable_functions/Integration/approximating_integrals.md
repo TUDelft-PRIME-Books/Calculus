@@ -230,13 +230,10 @@ $$
 
 Each of the three rules use the function values in the left point $x_L=0$ and/or the right point $x_R=\frac14\pi$, so let us calculate these to start:
 
-$$
 \begin{align*}
 \sqrt{1 + \cos^2\left( 0\right)} &=          1.414213\ldots \\
 \sqrt{1 + \cos^2\left(\frac14\pi\right)} &= 1.224744\ldots
 \end{align*}
-$$
-
 Now we can apply each of the three rules (scroll to the right to see the numerical values if they are not shown (completely)):
 
 ```{list-table} Approximations of the integral using simple integration rules.
@@ -323,13 +320,10 @@ $$
 
 The left and right composite Rectangle rules are given by
 
-$$
 \begin{align*}
  I_{L} &=  \sum_{k=0}^{n-1}h f(x_k) = h\left(f(a) + f(a + h) + \ldots + f(b - h)\right), \\
  I_{R} &= \sum_{k=1}^nh f(x_k)= h\left(f(a+h) + f(a + 2h) + \ldots + f(b)\right).
 \end{align*}
-$$
-
 **Trapezoidal rule**
 
 For the Trapezoidal rule, the composite version is  
@@ -353,13 +347,10 @@ $$
 
 The repeated Simpson's rule is given by
 
-$$
 \begin{align*}
   I_S &= \frac{h}{6} \sum_{k=1}^n \left( f(x_{k-1}) + 4 f\left( \frac{x_{k-1} + x_k}{2} \right)  + f(x_k) \right) \\
 &= h\left( \frac{1}{6} f(a) + \frac{2}{3} f(a + \frac{1}{2} h) + \frac{1}{3} f(a + h) +  \frac{2}{3} f(a + \frac{3}{2} h) +  \ldots + \frac{1}{3}f(b-h)+\frac{2}{3} f(b - \frac{1}{2} h) + \frac{1}{6} f(b) \right).
 \end{align*}
-$$
-
 :::
 
 Let us apply one of these composite rules methods to the example of the spoiler:
@@ -375,14 +366,11 @@ $$
 
 using the composite right Rectangle rule with $h=\frac18\pi$:
 
-$$
 \begin{align*}
 \mathcal{I} &\approx I_R \\
 &= \tfrac18\pi\left(\sqrt{1 + \cos^2\left(\tfrac18\pi\right)}+\sqrt{1 + \cos^2\left(\tfrac14\pi\right)}\right) \\
 &= 1.01559\ldots
 \end{align*}
-$$
-
 As this is still very far from the exact value (see {prf:ref}`Ex:ApproximatingIntegrals:spoiler_simple`), we also computed the approximation with some smaller values of $h$:
 
 ```{table} Approximations of the integral using the composite right Rectangle rule for various values of $h$.

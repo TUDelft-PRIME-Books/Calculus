@@ -90,13 +90,10 @@ Let us revisit the integral $\displaystyle\int x\cos(x)\,dx$ introduced at the b
 
 Taking $u=x$ and $dv=\cos(x)\,dx$ we obtain $du=dx$ and $v=\sin(x)$. Applying this to Equation {eq}`eq:Integration:PartsIndefiniteIntegralDifferentialNotation` leads to
 
-$$
 \begin{align*}
 \int x\cos(x)\,dx&=x\sin(x)-\int\sin(x)\,dx\\
 &=x\sin(x)+\cos(x)+C.
 \end{align*}
-$$
-
 ::::::
 
 Sometimes we have to apply the method more than once, or more concise: we can apply the method of integration by parts to each new integral we obtain. This is shown in the next example.
@@ -106,13 +103,10 @@ Sometimes we have to apply the method more than once, or more concise: we can ap
 
 We start with applying the method of integration by parts to the integral $\displaystyle\int x^2e^{2x}\,dx$. Taking $u=x^2$ and $dv=e^{2x}\,dx$ we obtain $du=2x\,dx$ and $v=\dfrac{1}{2}e^{2x}$. Applying this to Equation {eq}`eq:Integration:PartsIndefiniteIntegralDifferentialNotation` leads to
 
-$$
 \begin{align*}
 \int x^2e^{2x}\,dx&=\frac{1}{2}x^2e^{2x}-\int \frac{1}{2}e^{2x}\,2x\,dx\\
 &=\frac{1}{2}x^2e^{2x}-\int xe^{2x}\,dx.
 \end{align*}
-$$
-
 Note that the integral $\displaystyle\int xe^{2x}\,dx$ looks easier to evaluate than the original integral $\displaystyle\int x^2e^{2x}\,dx$. However, we still don't know an antiderivative of the integrand. Using integration by parts once more on the remaining indefinite integral, we obtain, by choosing $u=x$ and $dv=e^{2x}\,dx$ (which implies that $du=dx$ and $v=\dfrac{1}{2}e^{2x}$):
 
 \begin{align*}
@@ -131,13 +125,10 @@ We conclude that
 
 Note that the choice $u=x$ and $dv=\cos(x)\,dx$ in the first example was crucial. The other choice $u=\cos(x)$ and $dv=x\,dx$ leads to a more difficult integral:
 
-$$
 \begin{align*}
 \int x\cos(x)\,dx&=\frac{1}{2}\int\cos(x)\,dx^2=\frac{1}{2}x^2\cos(x)-\frac{1}{2}\int x^2\,d\cos(x)\\
 &=\frac{1}{2}x^2\cos(x)+\frac{1}{2}\int x^2\sin(x)\,dx.
 \end{align*}
-$$
-
 That $\cos(x)$ in the integrand is replaced by $\sin(x)$ does not make the integral more difficult. However, the raise of the power of $x$ does. Note that in the first two examples the power of $x$ was lowered by $1$ in each step.
 
 If the integrand does not consist of more than one part, we may choose $u$ to be the integrand and $dv=dx$: 
@@ -146,14 +137,11 @@ If the integrand does not consist of more than one part, we may choose $u$ to be
 :label: Ex:Integration:PartsAntiderivativeArctan
 In order to find an antiderivative of $\arctan(x)$ we apply integration by parts using $u=\arctan(x)$ and $dv=dx$:
 
-$$
 \begin{align*}
 \int\arctan(x)\,dx&=x\arctan(x)-\int x\,\frac{1}{1+x^2}\,dx\\
 &=x\arctan(x)-\int\frac{x}{1+x^2}\,dx\\
 &=x\arctan(x)-\frac{1}{2}\ln(1+x^2)+C.
 \end{align*}
-$$
-
 Note that this can also be written as 
 
 $$
@@ -206,13 +194,10 @@ The integral $\displaystyle\int\frac{\ln(x)}{x}\,dx$ can be evaluated using the 
 
 However, it can also be done using integration by parts. The LIATE rule suggests to use $u=\ln(x)$ and $dv=\dfrac{1}{x}\,dx$, which implies that $du=\dfrac{1}{x}\,dx$ and $v=\ln(x)$. We have
 
-$$
 \begin{align*}
 \int\frac{\ln(x)}{x}\,dx&=\ln(x)\cdot\ln(x)-\int\ln(x)\,\dfrac{1}{x}\,dx\\
 &=(\ln(x))^2-\int\frac{\ln(x)}{x}\,dx.
 \end{align*}
-$$
-
 Hence, we have
 
 :::{math}
@@ -267,14 +252,11 @@ Note that we can wait to add the constant of integration till the last step.
 
 Here we chose the trigonometric function for $u$ in both the first and the second step. In this case we could have chosen the exponential function instead. However, it is important to stick to the same choice (trigonometric or exponential function) in the second step. Otherwise, we return to the original integral without any result:
 
-$$
 \begin{align*}
 \int e^{-2x}\cos(3x)\,dx &=-\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int e^{-2x}\sin(3x)\,dx\\
 &=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}e^{-2x}\cos(3x)+\int e^{-2x}\cos(3x)\,dx.\\
 &=\int e^{-2x}\cos(3x)\,dx.
 \end{align*}
-$$
-
 ## Definite integrals
 
 The method of integration by parts can also be applied to definite integrals. We derive the formula starting from the product rule: if $f$ and $g$ are both differentiable, then
@@ -354,15 +336,12 @@ $$
 
 The method of integration by parts for (in)definite integrals can also be used to evaluate integrals involving inverse trigonometric functions, such as $\displaystyle\int_0^{\frac{1}{2}}\arcsin(x)\,dx$:
 
-$$
 \begin{align*}
 \int_0^{\frac{1}{2}}\arcsin(x)\,dx&=x\arcsin(x)\bigg|_0^{\frac{1}{2}}-\int_0^{\frac{1}{2}}x\,\frac{1}{\sqrt{1-x^2}}\,dx\\
 &=\frac{1}{2}\cdot\frac{1}{6}\pi-\int_0^{\frac{1}{2}}\frac{x}{\sqrt{1-x^2}}\,dx \\
 &=\frac{1}{12}\pi+\sqrt{1-x^2}\bigg|_0^{\frac{1}{2}}\\
 &=\frac{1}{12}\pi+\frac{1}{2}\sqrt{3}-1.
 \end{align*}
-$$
-
 Note that we evaluated the remaining integral using the substitution $u=1-x^2$. So combining all techniques you can learn in this book is often necessary to solve integrals.
 
 ::::::
@@ -381,7 +360,6 @@ $$
 
 Now we use integration by parts, with $f(u)=e^u$, to obtain
 
-$$
 \begin{align*}
 \int_4^9e^{\sqrt{x}}\,dx&=2\int_2^3ue^u\,du \\
 &=2ue^u\bigg|_2^3-2\int_2^3e^u\,du\\
@@ -389,8 +367,6 @@ $$
 &=6e^3-4e^2-2e^3+2e^2\\
 &=4e^3-2e^2.
 \end{align*}
-$$
-
 ::::::
 
 In the previous section in {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we have seen that $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{8}\pi\ln(2)$. This result can also be used to evaluate a similar integral involving the inverse tangent function:
@@ -400,13 +376,10 @@ In the previous section in {prf:ref}`Ex:Integration:SubstitutionTrigSerretsInteg
 
 If we recognize $\dfrac{1}{1+x^2}$ as the derivative of $\arctan(x)$, we can use integration by parts to evaluate Serret's integral:
 
-$$
 \begin{align*}
 \int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\ln(1+x)\arctan(x)\bigg|_0^1-\int_0^1\frac{\arctan(x)}{1+x}\,dx\\
 &=\frac{1}{4}\pi\ln(2)-\int_0^1\frac{\arctan(x)}{1+x}\,dx.
 \end{align*}
-$$
-
 This implies that
 
 ::::{math}
@@ -451,13 +424,10 @@ $$
 
 and so on. Note that we might add the constant of integration only in the last step. Moreover, if we put the factor $e^x$ outside the brackets, we find that, for example,
 
-$$
 \begin{align*}
 I_{10}&=\left(x^{10}-10x^9+90x^8-720x^7+5040x^6-30240x^5+151200x^4\right.\\
 &{}\quad\quad\quad\left.{}-604800x^3+1814400x^2-3628800x+3628800\right)e^x+C.
 \end{align*}
-$$
-
 In {prf:ref}`Ex.Integration:PartsPowerCos` we evaluated the integral $\displaystyle\int x\cos(x)\,dx$ using integration by parts. What happens if we replace $x$ by a higher power of $x$?
 
 Let $n\in\{2,3,4,\ldots\}$, then we obtain using integration by parts
@@ -468,13 +438,10 @@ $$
 
 Applying integration by parts once more, we find that
 
-$$
 \begin{align*}
 \int x^n\cos(x)\,dx&=x^n\sin(x)-n\int x^{n-1}\sin(x)\,dx\\
 &=x^n\sin(x)+nx^{n-1}\cos(x)-n(n-1)\int x^{n-2}\cos(x)\,dx.
 \end{align*}
-$$
-
 So, if we define $I_n=\displaystyle\int x^n\cos(x)\,dx$, then we have: 
 
 $$
@@ -487,13 +454,10 @@ $$
 I_2=x^2\sin(x)+2x\cos(x)-2I_0=x^2\sin(x)+2x\cos(x)-2\sin(x)+C,
 $$
 
-$$
 \begin{align*}
 I_3&=x^3\sin(x)+3x^2\cos(x)-6I_1\\
 &=x^3\sin(x)+3x^2\cos(x)-6x\sin(x)-6\cos(x)+C,
 \end{align*}
-$$
-
 and so on.
 
 ## Exercises
@@ -520,14 +484,11 @@ Find an antiderivative of $\arcsin(x)$.
 :::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfArcsin`
 :class: solution, dropdown
 
-$$
 \begin{align*}
 \int\arcsin(x)\,dx&=x\arcsin(x)-\int x\,\frac{1}{\sqrt{1-x^2}}\,dx\\
 &=x\arcsin(x)-\int\frac{x}{\sqrt{1-x^2}}\,dx\\
 &=x\arcsin(x)+\sqrt{1-x^2}+C.
 \end{align*}
-$$
-
 :::
 
 ::::{exercise}
@@ -538,14 +499,11 @@ Find an antiderivative of $\arccos(x)$.
 :::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfArccos`
 :class: solution, dropdown
 
-$$
 \begin{align*}
 \int\arccos(x)\,dx&=x\arccos(x)-\int x\,\frac{-1}{\sqrt{1-x^2}}\,dx\\
 &=x\arccos(x)+\int\frac{x}{\sqrt{1-x^2}}\,dx\\
 &=x\arccos(x)-\sqrt{1-x^2}+C.
 \end{align*}
-$$
-
 :::
 
 ::::{exercise}
@@ -556,23 +514,17 @@ Evaluate $\displaystyle\int e^{-2x}\cos(3x)\,dx$ by taking $u=e^{-2x}$ in each s
 :::{admonition} Solution of {numref}`Exc:Integration:PartsOtherChoice`
 :class: solution, dropdown
 
-$$
 \begin{align*}
 \int e^{-2x}\cos(3x)\,dx &=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\int e^{-2x}\sin(3x)\,dx\\
 &=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\left(-\frac{1}{3}e^{-2x}\cos(3x)+\frac{2}{3}\int e^{-2x}\cos(3x)\,dx \right) \\
 &=\frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}\int e^{-2x}\cos(3x)\,dx.
 \end{align*}
-$$
-
 Let $I=\displaystyle\int e^{-2x}\cos(3x)\,dx$, then we have:
 
-$$
 \begin{align*}
 &~ & I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}I\\
 &\Longrightarrow & \left(1+\frac{4}{9}\right)I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x).
 \end{align*}
-$$
-
 Since $1+\dfrac{4}{9}=\dfrac{13}{9}$ we can again conclude that
 
 $$
@@ -689,13 +641,10 @@ Find a reduction formula for $\displaystyle\int\left(\ln(x)\right)^n\,dx$.
 :::{admonition} Solution of {numref}`Exc:Integration:PartsReductionLn`
 :class: solution, dropdown
 
-$$
 \begin{align*}
 \int\left(\ln(x)\right)^n\,dx&=x\left(\ln(x)\right)^n-n\int x\left(\ln(x)\right)^{n-1}\frac{1}{x}\,dx\\
 &=x\left(\ln(x)\right)^n-n\int\left(\ln(x)\right)^{n-1}\,dx.
 \end{align*}
-$$
-
 Define $I_n=\displaystyle\int\left(\ln(x)\right)^n\,dx$, then we have
 
 $$
