@@ -1,3 +1,5 @@
+(Subsec:Invdiff)=
+
 # Derivatives of inverse functions
 
 In this section we cover:
