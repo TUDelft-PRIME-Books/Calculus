@@ -136,7 +136,7 @@ But what if the function takes on both positive and negative values? Well, in th
 ```{figure} Images/integral3.png
 ---
 width: 50%
-name: Fig:Integration:DefiniteBoth
+name: Fig:Integration:Integral3
 align: center
 ---
 

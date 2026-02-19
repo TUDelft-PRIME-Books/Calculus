@@ -11,112 +11,190 @@ In this section we cover
 
 Note: do not use the term "Type I/1" and "Type II/2" improper integrals.
 
-We have defined an integral $\displaystyle\int_a^bf(x)\,dx$, where the integrand $f$ is *continuous* on the *closed* and *finite* interval $[a,b]$. Such a function is *bounded*, which implies that the integral is a finite number. Such integrals are called **proper integrals**.
+## Introduction
 
-Now we will extend the concept of integration to the following two cases:
+We have defined a definite integral $\displaystyle\int_a^bf(x)\,dx$ in {numref}`Sec:Integration:DefiniteIntegrals`, where the integrand $f$ is a *piecewise-continuous function* on the *closed* and *finite* interval $[a,b]$. Such a function is always *bounded*, which implies that the integral is a finite number. This coincides with the idea behind definite integrals being *finite* areas.
 
-(I): the interval of integration is infinite ($(-\infty,b]$, $[a,\infty)$ or $(-\infty,\infty)$).
+In this section we will extend the concept of definite integrals to more general functions and intervals.
 
-(II): the integrand $f$ may be unbounded as $x$ approaches $a$ or $b$ or both.
+## Proper and improper
 
-Integrals satisfying (I) and/or (II) are called **improper integrals**. These kinds of integrals will be defined as a limit which may exist or not.
+To this end we need the following definition to make a distinction between the integrals we have defined so far and the more general integrals we will define in this section:
 
-::::::{prf:Definition} Improper integrals with infinite interval of integration
-:label: Def:Integration:ImproperIntegralInfiniteInterval
-If $f$ is continuous on $[a,\infty)$, then
+::::{prf:definition}
+:label: Def:Integration:ProperIntegrals
+
+A **proper integral** is a definite integral $\displaystyle\int_a^bf(x)\,dx$ where $f$ is a *continuous function* on the *finite interval* $[a,b]$.
+
+Any other definite integral $\displaystyle\int_a^bf(x)\,dx$ is called an **improper integral**.
+::::
+
+Note that $[a,b]$ is always considered closed for all definite integrals from now on, so we will not explicitly mention that anymore.
+
+But this means that an integral is improper if
+
+- the interval of integration is not closed and/or not finite,
+
+and/or
+
+- the integrand is not continuous.
+
+In the next sections we will consider first the two cases separately and then the combination of both cases.
+
+## Infinite interval of integration
+
+Let us first focus on the term *not finite*. This means that the interval of integration is infinite, i.e., it is of the form $(-\infty,b]$, $[a,\infty)$ or $(-\infty,\infty)$. Note that these intervals remain closed.
+
+Improper integral over such intervals are defined as a (sum of) limit(s) which may or may not exist. We will give a definition for each of the three types of infinite intervals of integration.
+
+::::::{prf:Definition} Improper integrals with right-infinite interval of integration
+:label: Def:Integration:ImproperIntegralInfiniteIntervalRight
+
+If $f$ is continuous on the interval $[a,\infty)$, then
 
 $$
-\int_a^{\infty}f(x)\,dx=\lim_{R\to\infty}\int_a^Rf(x)\,dx.
+\int_a^{\infty}f(x)\,dx=\lim_{R\to\infty}\int_a^Rf(x)\,dx,
 $$
+provided the limit exists.
 
-If $f$ is continuous on $(-\infty,b]$, then
+If the limit exists, we say that the proper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ is **convergent**.
+
+If the limit does not exist, we say that the improper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ is **divergent**. If the limit does not exist but approaches $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
+::::::
+
+
+::::::{prf:Definition} Improper integrals with left-infinite interval of integration
+:label: Def:Integration:ImproperIntegralInfiniteIntervalLeft
+
+If $f$ is continuous on the interval $(-\infty,b]$, then
 
 $$
-\int_{-\infty}^bf(x)\,dx=\lim_{R\to-\infty}\int_R^bf(x)\,dx.
+\int_{-\infty}^bf(x)\,dx=\lim_{R\to-\infty}\int_R^bf(x)\,dx,
 $$
+provided the limit exists.
 
-In either case, if the limit exists (is a finite number), the improper integral is called **convergent**. If the limit does not exist, the improper integral is called **divergent**.
+If the limit exists, we say that the proper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ is **convergent**.
 
-If the limit is $\infty$ or $-\infty$, we say the improper integral **diverges to infinity** or **diverges to negative infinity**.
+If the limit does not exist, we say that the improper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ is **divergent**. If the limit does not exist but approaches $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
+::::::
 
-Furthermore, if $f$ is continuous on $\mathbb{R}$, then
+::::::{prf:Definition} Improper integrals with double-infinite interval of integration
+:label: Def:Integration:ImproperIntegralInfiniteIntervalDouble
+
+If $f$ is continuous on the interval $(-\infty,\infty)$, then
 
 $$
 \int_{-\infty}^{\infty}f(x)\,dx=\int_{-\infty}^cf(x)\,dx+\int_c^{\infty}f(x)\,dx
 $$
+provided the two improper integrals on the right converge for some value of $c\in\mathbb{R}$.
 
-for any $c\in\mathbb{R}$. The integral on the left converges if and only if both integrals on the right converge.
+If the two improper integrals converge, we say that the proper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ is **convergent**.
+
+If at least one of the two improper integrals does not converge, we say that the improper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ is **divergent**.
+
+If both improper integrals on the right diverge to infinity, we say that the improper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ **diverges to infinity**. If both improper integrals on the right diverge to negative infinity, we say that the improper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ **diverges to negative infinity**.
+
 ::::::
+
+So how do we evaluate an improper integral? We will see that in some cases we can evaluate the limit(s) and therefore the improper integral. In other cases we cannot evaluate the limit(s) but we can still determine whether the improper integral is convergent or divergent. In yet other cases we cannot even determine whether the improper integral is convergent or divergent.
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsInfiniteIntervalExample1
-Consider $\displaystyle\int_1^{\infty}\frac{dx}{x\sqrt{x}}$.
+
+Consider the function $\displaystyle\frac{1}{x\sqrt{x}}$ on the interval $[1,\infty)$:
+
 ```{figure} Images/improper1.png
 ---
 width: 50%
-name: improper integral
+name: Fig:Integration:ImproperIntegral1
 align: center
 ---
-The integral $\displaystyle\int_1^{\infty}\frac{dx}{x\sqrt{x}}$
+The function $\displaystyle\frac{1}{x\sqrt{x}}$ on the interval $[1,\infty)$.
 ```
 
-$$
-\int_1^{\infty}\frac{dx}{x\sqrt{x}}=\lim_{R\to\infty}\int_1^R\frac{dx}{x\sqrt{x}}=\lim_{R\to\infty}\bigg[-\frac{2}{\sqrt{x}}\bigg]_1^R=\lim_{R\to\infty}\left(2-\frac{2}{\sqrt{R}}\right)=2.
-$$
+This function $f$ is continuous on $[1,\infty)$ and therefore we can define the improper integral $\displaystyle\int_1^{\infty}\frac{dx}{x\sqrt{x}}$ as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight`. We have
+
+\begin{align*}
+\int_1^{\infty}\frac{dx}{x\sqrt{x}} &= \lim_{R\to\infty}\int_1^R\frac{dx}{x\sqrt{x}} \\
+&= \lim_{R\to\infty}\bigg[-\frac{2}{\sqrt{x}}\bigg]_1^R \\
+&= \lim_{R\to\infty}\left(2-\frac{2}{\sqrt{R}}\right) \\
+&= 2.
+\end{align*}
 
 ::::::
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsInfiniteIntervalExample2
-Consider $\displaystyle\int_1^{\infty}\frac{dx}{\sqrt{x}}$.
+Now consider the function $\displaystyle\frac{1}{\sqrt{x}}$ on the same interval $[1,\infty)$:
+
 ```{figure} Images/improper2.png
 ---
 width: 50%
-name: improper integral
+name: Fig:Integration:ImproperIntegral2
 align: center
 ---
-The integral $\displaystyle\int_1^{\infty}\frac{dx}{\sqrt{x}}$
+The function $\displaystyle\frac{1}{\sqrt{x}}$ on the interval $[1,\infty)$.
 ```
 
-$$
-\int_1^{\infty}\frac{dx}{\sqrt{x}}=\lim_{R\to\infty}\int_1^R\frac{dx}{\sqrt{x}}=\lim_{R\to\infty}\bigg[2\sqrt{x}\bigg]_1^R=\lim_{R\to\infty}\left(2\sqrt{R}-2\right)=\infty.
-$$
+In this case we have another function that is continuous on $[1,\infty)$ and therefore we can define the improper integral $\displaystyle\int_1^{\infty}\frac{dx}{\sqrt{x}}$ as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight`. We have 
+
+\begin{align*}
+\int_1^{\infty}\frac{dx}{\sqrt{x}} &= \lim_{R\to\infty}\int_1^R\frac{dx}{\sqrt{x}} \\
+&= \lim_{R\to\infty}\bigg[2\sqrt{x}\bigg]_1^R \\
+&= \lim_{R\to\infty}\left(2\sqrt{R}-2\right) \\
+\end{align*}
+
+This last limit does not exist, but approaches $\infty$. In this case we say that the improper integral diverges to infinity.
 
 ::::::
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsInfiniteIntervalExample3
-Consider $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$.
+
+Now we consider the function $\dfrac{dx}{1+x^2}$ that is continuous on $(-\infty,\infty)$ and therefore we can define the improper integral $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$ as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalDouble`.
+
 ```{figure} Images/improper3.png
 ---
 width: 50%
-name: improper integral
+name: Fig:Integration:ImproperIntegral3
 align: center
 ---
-The integral $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$
+The function $\displaystyle\frac{1}{1+x^2}$ on the interval $(-\infty,\infty)$.
 ```
+
+We start by splitting the integral into two integrals as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalDouble`:
 
 $$
 \int_{-\infty}^{\infty}\frac{dx}{1+x^2}=\int_{-\infty}^0\frac{dx}{1+x^2}+\int_0^{\infty}\frac{dx}{1+x^2}.
 $$
 
-Now we have
+In this case we choose the central point $c=0$ but we could have chosen any other value of $c\in\mathbb{R}$ as well. The value of the integral does, ultimately, not depend on the choice of $c$. 
+
+Now we have for the first integral
 
 \begin{align*}
-\int_0^{\infty}\frac{dx}{1+x^2}&=\lim_{R\to\infty}\int_0^R\frac{dx}{1+x^2}=\lim_{R\to\infty}\bigg[\arctan(x)\bigg]_0^R\\
-&=\lim_{R\to\infty}\arctan(R)=\frac{1}{2}\pi
+\int_{-\infty}^0\frac{dx}{1+x^2} &= \lim_{R\to-\infty}\int_R^0\frac{dx}{1+x^2} \\
+&= \lim_{R\to-\infty}\bigg[\arctan(x)\bigg]_R^0\\
+&= \lim_{R\to-\infty}\left(-\arctan(R)\right) \\
+&=\frac{1}{2}\pi
 \end{align*}
-and
+
+and for the second integral
 
 \begin{align*}
-\int_{-\infty}^0\frac{dx}{1+x^2}&=\lim_{R\to-\infty}\int_R^0\frac{dx}{1+x^2}=\lim_{R\to-\infty}\bigg[\arctan(x)\bigg]_R^0\\
-&=\lim_{R\to-\infty}\left(-\arctan(R)\right)=\frac{1}{2}\pi.
+\int_0^{\infty}\frac{dx}{1+x^2}&=\lim_{R\to\infty}\int_0^R\frac{dx}{1+x^2}\\
+&=\lim_{R\to\infty}\bigg[\arctan(x)\bigg]_0^R\\
+&=\lim_{R\to\infty}\arctan(R)\\
+&=\frac{1}{2}\pi.
 \end{align*}
+
 Hence, we have
 
-$$
-\int_{-\infty}^{\infty}\frac{dx}{1+x^2}=\int_{-\infty}^0\frac{dx}{1+x^2}+\int_0^{\infty}\frac{dx}{1+x^2}=\frac{1}{2}\pi+\frac{1}{2}\pi=\pi.
-$$
+\begin{align*}
+\int_{-\infty}^{\infty}\frac{dx}{1+x^2} &= \int_{-\infty}^0\frac{dx}{1+x^2}+\int_0^{\infty}\frac{dx}{1+x^2} \\
+&= \frac{1}{2}\pi+\frac{1}{2}\pi \\
+&= \pi.
+\end{align*}
 
 ::::::
 
@@ -125,102 +203,126 @@ $$
 ```{figure} Images/cauchy.png
 ---
 width: 50%
-name: the Cauchy distribution
+name: Fig:Integration:CauchyDistribution
 align: center
 ---
-The Cauchy distribution $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}=\pi$
+The probability density function of the standard Cauchy distribution.
 ```
-In probability and statistics this denotes the (total) **Cauchy distribution**, named after the French mathematician [Augustin-Louis Cauchy (1789-1857)](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy).
+
+In probability and statistics the function $\displaystyle\frac{1}{\pi}\cdot\frac{1}{1+x^2}$ is the probability density function of the standard Cauchy distribution, which is named after the French mathematician [Augustin-Louis Cauchy (1789-1857)](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy).
+
+{prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalDouble` implies that the integral $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$ is convergent and equal to $\pi$. Hence, the total area under the curve of the probability density function of the standard Cauchy distribution is equal to $1$ as expected for a probability density function.
+
 ::::::
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsInfiniteIntervalExample4
-Consider $\displaystyle\int_0^{\infty}\cos(x)\,dx$.
+
+We can also attempt to integrate trigonometric functions over infinite intervals, for example the cosine function over the interval $[0,\infty)$:
+
 ```{figure} Images/improper4.png
 ---
 width: 50%
-name: improper integral
+name: Fig:Integration:ImproperIntegral4
 align: center
 ---
-The integral $\displaystyle\int_0^{\infty}\cos(x)\,dx$
+The function $\displaystyle\cos(x)$ on the interval $[0,\infty)$.
 ```
 
-$$\int_0^{\infty}\cos(x)\,dx=\lim_{R\to\infty}\int_0^R\cos(x)\,dx=\lim_{R\to\infty}\bigg[\sin(x)\bigg]_0^R=\lim_{R\to\infty}\sin(R).
-$$
+\begin{align*}
+\int_0^{\infty}\cos(x)\,dx &= \lim_{R\to\infty}\int_0^R\cos(x)\,dx \\
+&= \lim_{R\to\infty}\bigg[\sin(x)\bigg]_0^R \\
+&=\lim_{R\to\infty}\sin(R).
+\end{align*}
 
-This limit does not exist and is not $\infty$ or $-\infty$. In this case we can only say that the integral diverges.
-::::::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsExercise1
-Determine whether $\displaystyle\int\frac{dx}{x^2}$ is convergent or divergent. 
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise1`
-:class: solution, dropdown
-
-$$
-\int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\int_1^R\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(1-\frac{1}{R}\right)=1.
-$$
-
-So, $\displaystyle\int_1^{\infty}\frac{dx}{x^2}$ is convergent.
-:::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsExercise2
-Determine whether $\displaystyle\int\frac{dx}{x}$ is convergent or divergent. 
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise2`
-:class: solution, dropdown
-
-$$
-\int_1^{\infty}\frac{dx}{x}=\lim_{R\to\infty}\int_1^R\frac{dx}{x}=\lim_{R\to\infty}\bigg[\ln(x)\bigg]_1^R=\lim_{R\to\infty}\ln(R)=\infty.
-$$
-
-So, $\displaystyle\int_1^{\infty}\frac{dx}{x}$ is divergent.
-:::
-
-::::::{prf:Definition} Improper integrals with discontinuous integrand
-:label: Def:Integration:ImproperIntegralDiscontinuousIntegrand
-If $f$ is continuous on $(a,b]$ and possibly unbounded near $a$, then
-
-$$
-\int_a^bf(x)\,dx=\lim_{c\downarrow a}\int_c^bf(x)\,dx.
-$$
-
-If $f$ is continuous on $[a,b)$ and possibly unbounded near $b$, then
-
-$$
-\int_a^bf(x)\,dx=\lim_{c\uparrow b}\int_a^cf(x)\,dx.
-$$
+This limit does not exist and is neither $\infty$ nor $-\infty$. In this case we can only say that the integral diverges.
 
 ::::::
 
-::::::{note}
-These improper integrals may converge, diverge, diverge to infinity, or diverge to negative infinity.
+## Discontinuous integrands
+
+Now we have covered the intervals, it is time to consider the integrand. For this subsection we assume that the interval of integration is closed and finite, i.e., of the form $[a,b]$.
+
+{numref}`Section:Continuity` discusses what we consider to be continuity with respect to a function. As continuity is a local property, we will focus on three possible cases of discontinuity of the integrand $f$ on the interval $[a,b]$:
+
+- the integrand $f$ is not right-continuous at $x=a$ (i.e. at the left of the interval).
+- the integrand $f$ is not left-continuous at $x=b$ (i.e. at the right of the interval).
+- the integrand $f$ is discontinuous at some point $c\in(a,b)$ (i.e. in the interior of the interval).
+
+Note that we consider discontinuity or (not continuity) in general. Examples of discontinuity include jump discontinuity, infinite discontinuity and removable discontinuity.
+
+In particular, we do not require the integrand to be unbounded near the point of discontinuity, but it may be unbounded as well.
+
+Note that also piecewise-continuity of the integrand is not required, but is one, or even a combination, of the above  cases.
+
+This way of defining improper integrals with discontinuous integrand is more general than the way it is often defined in other textbooks, where the integrand is required to be unbounded near the point of discontinuity.
+
+For each of the three cases we will define how to handle the improper integral $\displaystyle\int_a^bf(x)\,dx$.
+
+::::::{prf:Definition} Improper integrals with discontinuous integrand at left endpoint
+:label: Def:Integration:ImproperIntegralLeftDiscontinuousIntegrand
+
+If $f$ is continuous on the interval $(a,b]$, then
+
+$$
+\int_a^bf(x)\,dx=\lim_{c\downarrow a}\int_c^bf(x)\,dx,
+$$
+provided the limit exists.
+
+If the limit exists, we say that the proper integral $\displaystyle\int_a^bf(x)\,dx$ is **convergent**.
+
+If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist but approaches $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{warning}
-$$
-\int_{-1}^1\frac{dx}{x^2}=-\frac{1}{x}\bigg|_{-1}^1=-1-1=-2
-$$
+::::::{prf:Definition} Improper integrals with discontinuous integrand at right endpoint
+:label: Def:Integration:ImproperIntegralRightDiscontinuousIntegrand
 
-is clearly wrong! Note that the integrand is positive on $[-1,1]$. The evaluation is incorrect because the integrand is not continuous at $x=0$. So, the fundamental theorem of calculus cannot be applied.
+If $f$ is continuous on the interval $[a,b)$, then
+
+$$
+\int_a^bf(x)\,dx=\lim_{c\uparrow b}\int_a^cf(x)\,dx,
+$$
+provided the limit exists.
+
+If the limit exists, we say that the proper integral $\displaystyle\int_a^bf(x)\,dx$ is **convergent**.
+
+If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist but approaches $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-If the discontinuity of the integrand appears not at a boundary point of the interval of integration, we need to split up this interval such that the discontinuity is at a boundary point and then apply {prf:ref}`Def:Integration:ImproperIntegralDiscontinuousIntegrand`.
+::::::{prf:Definition} Improper integrals with discontinuous integrand at internal point
+:label: Def:Integration:ImproperIntegralInternalDiscontinuousIntegrand
+
+If $f$ is discontinuous at some point $c\in(a,b)$, then
+
+$$
+\int_a^bf(x)\,dx=\int_a^cf(x)\,dx+\int_c^bf(x)\,dx
+$$
+provided the two improper integrals on the right converge for some value of $c\in\mathbb{R}$.
+
+If the two improper integrals converge, we say that the proper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ is **convergent**.
+
+If at least one of the two improper integrals does not converge, we say that the improper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ is **divergent**.
+
+If both improper integrals on the right diverge to infinity, we say that the improper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ **diverges to infinity**. If both improper integrals on the right diverge to negative infinity, we say that the improper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ **diverges to negative infinity**.
+
+::::::
+
+We start with an example of an improper integral with a discontinuous integrand at an internal point of the interval of integration.
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample1
+
 ```{figure} Images/improper5.png
 ---
 width: 50%
-name: improper integral
+name: Fig:Integration:ImproperIntegral5
 align: center
+figclass: margin
 ---
-The integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$
+The function $\displaystyle\frac{1}{x^2}$.
 ```
+
+We integrate the function $\displaystyle\frac{1}{x^2}$ on the interval $[-1,1]$. This function is continuous on $[-1,0)$ and on $(0,1]$ but is not continuous at $x=0$. Hence, we can define the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ as in {prf:ref}`Def:Integration:ImproperIntegralInternalDiscontinuousIntegrand`. We have
 
 $$
 \int_{-1}^1\frac{dx}{x^2}=\int_{-1}^0\frac{dx}{x^2}+\int_0^1\frac{dx}{x^2}.
@@ -228,35 +330,56 @@ $$
 
 Now we have
 
-$$
-\int_0^1\frac{dx}{x^2}=\lim_{c\downarrow0}\int_c^1\frac{dx}{x^2}=\lim_{c\downarrow0}\bigg[-\frac{1}{x}\bigg]_c^1=\lim_{c\downarrow0}\left(-1+\frac{1}{c}\right)=\infty
-$$
+\begin{align*}
+\int_{-1}^0\frac{dx}{x^2} &= \lim_{c\uparrow0}\int_{-1}^c\frac{dx}{x^2} \\
+&= \lim_{c\uparrow0}\bigg[-\frac{1}{x}\bigg]_{-1}^c \\
+&= \lim_{c\uparrow0}\left(-\frac{1}{c}+1\right) \\
+&= \infty.
+\end{align*}
 
-and
+At this point we can already conclude that the integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ is divergent, but we will also evaluate the second integral to see that it also diverges to infinity:
+
+\begin{align*}
+\int_0^1\frac{dx}{x^2} &= \lim_{c\downarrow0}\int_c^1\frac{dx}{x^2} \\
+&= \lim_{c\downarrow0}\bigg[-\frac{1}{x}\bigg]_c^1 \\
+&= \lim_{c\downarrow0}\left(-1+\frac{1}{c}\right) \\
+&=\infty.
+\end{align*}
+
+Because both integrals diverge to infinity, we say that the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ diverges to infinity, which we can write (informally) as
 
 $$
-\int_{-1}^0\frac{dx}{x^2}=\lim_{c\uparrow0}\int_{-1}^c\frac{dx}{x^2}=\lim_{c\uparrow0}\bigg[-\frac{1}{x}\bigg]_{-1}^c=\lim_{c\uparrow0}\left(-\frac{1}{c}+1\right)=\infty.
-$$
-
-Hence, we have
-
-$$
-\int_{-1}^1\frac{dx}{x^2}=\int_{-1}^0\frac{dx}{x^2}+\int_0^1\frac{dx}{x^2}=\infty+\infty=\infty.
+\int_{-1}^1\frac{dx}{x^2}=\infty.
 $$
 
 ::::::
 
+::::::{warning}
+:name: Warning:Integration:ImproperIntegralsDiscontinuousIntegrandWarning1
+
+The calculation
+
+$$
+\int_{-1}^1\frac{dx}{x^2}=-\frac{1}{x}\bigg|_{-1}^1=-1-1=-2
+$$
+
+is clearly wrong! Note that the integrand is positive on $[-1,1]$. The evaluation is incorrect because the integrand is not continuous at $x=0$. So, the fundamental theorem of calculus cannot be applied directly.
+::::::
+
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample2
-Since $\dfrac{1}{x-1}$ is continuous for all $x\in\mathbb{R}$ except at $x=1$, we have
+
 ```{figure} Images/improper6.png
 ---
 width: 50%
-name: improper integral
+name: Fig:Integration:ImproperIntegral6
 align: center
+figclass: margin
 ---
-The integral $\displaystyle\int_0^3\frac{dx}{x-1}$
+The function $\displaystyle\frac{1}{x-1}$.
 ```
+
+Since $\dfrac{1}{x-1}$ is continuous for all $x\in\mathbb{R}$ except at $x=1$, we have
 
 $$
 \int_0^3\frac{dx}{x-1}=\int_0^1\frac{dx}{x-1}+\int_1^3\frac{dx}{x-1}
@@ -265,14 +388,22 @@ $$
 with
 
 \begin{align*}
-\int_1^3\frac{dx}{x-1}&=\lim_{c\downarrow1}\int_c^3\frac{dx}{x-1}=\lim_{c\downarrow1}\bigg[\ln|x-1|\bigg]_c^3\\
-&=\lim_{c\downarrow1}\left(\ln(2)-\ln|c-1|\right)=\infty
+\int_0^1\frac{dx}{x-1} &= \lim_{c\uparrow1}\int_0^c\frac{dx}{x-1} \\
+&= \lim_{c\uparrow1}\bigg[\ln|x-1|\bigg]_0^c \\
+&= \lim_{c\uparrow1}\ln|c-1| \\
+&= -\infty
 \end{align*}
+
 and
 
-$$
-\int_0^1\frac{dx}{x-1}=\lim_{c\uparrow1}\int_0^c\frac{dx}{x-1}=\lim_{c\uparrow1}\bigg[\ln|x-1|\bigg]_0^c=\lim_{c\uparrow1}\ln|c-1|=-\infty.
-$$
+\begin{align*}
+\int_1^3\frac{dx}{x-1} &= \lim_{c\downarrow1}\int_c^3\frac{dx}{x-1} \\
+&= \lim_{c\downarrow1}\bigg[\ln|x-1|\bigg]_c^3 \\
+&= \lim_{c\downarrow1}\left(\ln(2)-\ln|c-1|\right) \\
+&= \infty.
+\end{align*}
+
+Because both integrals diverge, we say that the improper integral $\displaystyle\int_0^3\frac{dx}{x-1}$ diverges to infinity.
 
 ::::::
 
@@ -288,32 +419,40 @@ Since the integrand is discontinuous at $x=1$ the fundamental theorem cannot be 
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample3
-Consider $\displaystyle\int_0^1\ln(x)\,dx$. 
 ```{figure} Images/improper7.png
 ---
 width: 50%
-name: improper integral
+name: Fig:Integration:ImproperIntegral7
 align: center
+figclass: margin
 ---
-The integral $\displaystyle\int_0^1\ln(x)\,dx$
+The function $\displaystyle\ln(x)$.
 ```
+
+Consider $\displaystyle\int_0^1\ln(x)\,dx$. 
+
 Using integration by parts, we have
 
-$$
-\int\ln(x)\,dx=x\ln(x)-\int\ln x\cdot\frac{1}{x}\,dx=x\ln(x)-x+C.
-$$
+\begin{align*}
+\int\ln(x)\,dx &= x\ln(x)-\int\ln x\cdot\frac{1}{x}\,dx \\
+&= x\ln(x)-x+C.
+\end{align*}
 
 Hence, we have
 
-$$
-\int_0^1\ln(x)\,dx=\lim_{c\downarrow0}\bigg[x\ln(x)-x\bigg]_c^1=\lim_{c\downarrow0}\left(-1-c\ln(c)+c\right).
-$$
+\begin{align*}
+\int_0^1\ln(x)\,dx &= \lim_{c\downarrow0}\bigg[x\ln(x)-x\bigg]_c^1 \\
+&= \lim_{c\downarrow0}\left(-1-c\ln(c)+c\right).
+\end{align*}
 
 Using l'Hospital's rule we obtain
 
-$$
-\lim_{c\downarrow0}c\ln(c)=\lim_{c\downarrow0}\frac{\ln(c)}{\frac{1}{c}}=\lim_{c\downarrow0}\frac{\frac{1}{c}}{-\frac{1}{c^2}}=\lim_{c\downarrow0}\left(-c\right)=0.
-$$
+\begin{align*}
+\lim_{c\downarrow0}c\ln(c) &= \lim_{c\downarrow0}\frac{\ln(c)}{\frac{1}{c}} \\
+&= \lim_{c\downarrow0}\frac{\frac{1}{c}}{-\frac{1}{c^2}} \\
+&= \lim_{c\downarrow0}\left(-c\right) \\
+&=0.
+\end{align*}
 
 We conclude that
 
@@ -323,127 +462,7 @@ $$
 
 ::::::
 
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsExercise3
-The integral $\displaystyle\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}$ is improper both because of the infinite interval of integration and the discontinuous integrand at $x=0$. Evaluate the integral by splitting it into
-
-$$
-\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\int_0^1\frac{dx}{(1+x)\sqrt{x}}+\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}.
-$$
-
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise3`
-:class: solution, dropdown
-Using the substitution $\sqrt{x}=t$ or $x=t^2$, we have $dx=2t\,dt$ and therefore
-
-\begin{align*}
-\int\frac{dx}{(1+x)\sqrt{x}}&=\int\frac{2t\,dt}{(1+t^2)t}=\int\frac{2}{1+t^2}\,dt=2\arctan(t)+C\\
-&=2\arctan\left(\sqrt{x}\right)+C.
-\end{align*}
-Now we obtain
-
-\begin{align*}
-\int_0^1\frac{dx}{(1+x)\sqrt{x}}&=\lim_{c\downarrow0}\int_c^1\frac{dx}{(1+x)\sqrt{x}}=\lim_{c\downarrow0}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_c^1\\
-&=2\arctan(1)=\frac{1}{2}\pi
-\end{align*}
-and
-
-\begin{align*}
-\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}&=\lim_{R\to\infty}\int_1^R\frac{dx}{(1+x)\sqrt{x}}=\lim_{R\to\infty}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_1^R\\
-&=\pi-\frac{1}{2}\pi=\frac{1}{2}\pi.
-\end{align*}
-Hence we have
-
-$$
-\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\int_0^1\frac{dx}{(1+x)\sqrt{x}}+\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\frac{1}{2}\pi+\frac{1}{2}\pi=\pi.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsExercise4
-Show that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$ by splitting it into
-
-$$
-\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=\int_0^1\frac{\ln(x)}{1+x^2}\,dx+\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx.
-$$
-
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise4`
-:class: solution, dropdown
-Use the substitution $x=\dfrac{1}{t}$ and therefore $dx=-\dfrac{dt}{t^2}$ to find that
-
-$$
-\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx=-\int_1^0\frac{\ln\left(\frac{1}{t}\right)}{1+\dfrac{1}{t^2}}\cdot\frac{dt}{t^2}=\int_0^1\frac{-\ln(t)}{t^2+1}\,dt=-\int_0^1\frac{\ln(t)}{1+t^2}\,dt.
-$$
-
-We conclude that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$.
-:::
-
-::::::{note}
-Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx$ without evaluating the integrals. Later we will see that the value is equal to *Catalan's constant*.
-::::::
-
-::::{exercise} A remarkable class of integrals
-:label: Exc:Integration:ImproperIntegralsExercise5
-Show that $\displaystyle\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}=\frac{1}{4}\pi$ for all $k\in\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ using the following steps:
-
-(a) Prove the formula for $k=0$.
-
-(b) Split the integral into
-
-$$
-\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}=\int_0^1\frac{dx}{(1+x^2)(1+x^k)}+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^k)}
-$$
-
-and use the substitution $x=\dfrac{1}{t}$ to prove the formula for $k\in\{1,2,3,\ldots\}$.
-
-(c) Replace $k$ by $-k$ and use the substitution $x=\dfrac{1}{t}$ again to prove the formula for $k\in\{\ldots,-3,-2,-1\}$ as well.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise5`
-:class: solution, dropdown
-(a) For $k=0$ we obtain: $\displaystyle\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^0)}=\frac{1}{2}\int_0^{\infty}\frac{dx}{1+x^2}=\frac{1}{2}\arctan(x)\bigg|_0^{\infty}=\frac{1}{4}\pi$.
-
-(b) For $k\in\{1,2,3,\ldots\}$ we use the substitution $x=\dfrac{1}{t}$ and therefore $dx=-\dfrac{dt}{t^2}$ to find that
-
-\begin{align*}
-\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^k)}&=\int_1^0\frac{1}{(1+t^{-2})(1+t^{-k})}\left(-\frac{1}{t^2}\right)\,dt\\
-&=\int_0^1\frac{dt}{(t^2+1)(1+t^{-k})}.
-\end{align*}
-This implies that
-
-\begin{align*}
-\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}&=\int_0^1\frac{dx}{(1+x^2)(1+x^k)}+\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}\\
-&=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^k}+\frac{1}{1+x^{-k}}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^k}+\frac{x^k}{x^k+1}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\cdot\frac{1+x^k}{1+x^k}\,dx=\int_0^1\frac{dx}{1+x^2}\\
-&=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
-\end{align*}
-(c) Similarly, we consider
-
-$$
-\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}=\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}
-$$
-
-for $k\in\{1,2,3,\dots\}$ and use the substitution $x=\dfrac{1}{t}$ again to find that
-
-\begin{align*}
-\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}&=\int_1^0\frac{1}{(1+t^{-2})(1+t^k)}\left(-\frac{1}{t^2}\right)\,dt\\
-&=\int_0^1\frac{dt}{(t^2+1)(1+t^k)}.
-\end{align*}
-Hence, for $k\in\{1,2,3,\ldots\}$ we have
-
-\begin{align*}
-\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}&=\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}+\int_0^1\frac{dx}{(1+x^2)(1+x^k)}\\
-&=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^{-k}}+\frac{1}{1+x^k}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\left(\frac{x^k}{x^k+1}+\frac{1}{1+x^k}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\cdot\frac{x^k+1}{x^k+1}\,dx=\int_0^1\frac{dx}{1+x^2}\\
-&=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
-\end{align*}
-:::
+<!-- HIER GEBLEVEN -->
 
 ::::::{prf:Theorem} $p$-integrals
 :label: Thm:Integration:ImproperIntegralsPIntegrals
@@ -612,7 +631,7 @@ By symmetry, we also have: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sq
 ```{figure} Images/normal.png
 ---
 width: 50%
-name: the normal distribution
+name: Fig:Integration:NormalDistribution
 align: center
 ---
 The normal distribution $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}=\sqrt{\pi}$
@@ -910,3 +929,158 @@ For $\alpha=1$ this reads {eq}`Eq:Integration:PartsSerret`.
 ## (Grasple) exercises
 
 
+
+## Exercises moved to the end
+
+::::{exercise}
+:label: Exc:Integration:ImproperIntegralsExercise1
+Determine whether $\displaystyle\int\frac{dx}{x^2}$ is convergent or divergent. 
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise1`
+:class: solution, dropdown
+
+$$
+\int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\int_1^R\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(1-\frac{1}{R}\right)=1.
+$$
+
+So, $\displaystyle\int_1^{\infty}\frac{dx}{x^2}$ is convergent.
+:::
+
+::::{exercise}
+:label: Exc:Integration:ImproperIntegralsExercise2
+Determine whether $\displaystyle\int\frac{dx}{x}$ is convergent or divergent. 
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise2`
+:class: solution, dropdown
+
+$$
+\int_1^{\infty}\frac{dx}{x}=\lim_{R\to\infty}\int_1^R\frac{dx}{x}=\lim_{R\to\infty}\bigg[\ln(x)\bigg]_1^R=\lim_{R\to\infty}\ln(R)=\infty.
+$$
+
+So, $\displaystyle\int_1^{\infty}\frac{dx}{x}$ is divergent.
+:::
+
+
+::::{exercise}
+:label: Exc:Integration:ImproperIntegralsExercise3
+The integral $\displaystyle\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}$ is improper both because of the infinite interval of integration and the discontinuous integrand at $x=0$. Evaluate the integral by splitting it into
+
+$$
+\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\int_0^1\frac{dx}{(1+x)\sqrt{x}}+\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}.
+$$
+
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise3`
+:class: solution, dropdown
+Using the substitution $\sqrt{x}=t$ or $x=t^2$, we have $dx=2t\,dt$ and therefore
+
+\begin{align*}
+\int\frac{dx}{(1+x)\sqrt{x}}&=\int\frac{2t\,dt}{(1+t^2)t}=\int\frac{2}{1+t^2}\,dt=2\arctan(t)+C\\
+&=2\arctan\left(\sqrt{x}\right)+C.
+\end{align*}
+Now we obtain
+
+\begin{align*}
+\int_0^1\frac{dx}{(1+x)\sqrt{x}}&=\lim_{c\downarrow0}\int_c^1\frac{dx}{(1+x)\sqrt{x}}=\lim_{c\downarrow0}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_c^1\\
+&=2\arctan(1)=\frac{1}{2}\pi
+\end{align*}
+and
+
+\begin{align*}
+\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}&=\lim_{R\to\infty}\int_1^R\frac{dx}{(1+x)\sqrt{x}}=\lim_{R\to\infty}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_1^R\\
+&=\pi-\frac{1}{2}\pi=\frac{1}{2}\pi.
+\end{align*}
+Hence we have
+
+$$
+\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\int_0^1\frac{dx}{(1+x)\sqrt{x}}+\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\frac{1}{2}\pi+\frac{1}{2}\pi=\pi.
+$$
+
+:::
+
+::::{exercise}
+:label: Exc:Integration:ImproperIntegralsExercise4
+Show that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$ by splitting it into
+
+$$
+\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=\int_0^1\frac{\ln(x)}{1+x^2}\,dx+\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx.
+$$
+
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise4`
+:class: solution, dropdown
+Use the substitution $x=\dfrac{1}{t}$ and therefore $dx=-\dfrac{dt}{t^2}$ to find that
+
+$$
+\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx=-\int_1^0\frac{\ln\left(\frac{1}{t}\right)}{1+\dfrac{1}{t^2}}\cdot\frac{dt}{t^2}=\int_0^1\frac{-\ln(t)}{t^2+1}\,dt=-\int_0^1\frac{\ln(t)}{1+t^2}\,dt.
+$$
+
+We conclude that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$.
+:::
+
+::::::{note}
+Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx$ without evaluating the integrals. Later we will see that the value is equal to *Catalan's constant*.
+::::::
+
+::::{exercise} A remarkable class of integrals
+:label: Exc:Integration:ImproperIntegralsExercise5
+Show that $\displaystyle\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}=\frac{1}{4}\pi$ for all $k\in\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ using the following steps:
+
+(a) Prove the formula for $k=0$.
+
+(b) Split the integral into
+
+$$
+\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}=\int_0^1\frac{dx}{(1+x^2)(1+x^k)}+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^k)}
+$$
+
+and use the substitution $x=\dfrac{1}{t}$ to prove the formula for $k\in\{1,2,3,\ldots\}$.
+
+(c) Replace $k$ by $-k$ and use the substitution $x=\dfrac{1}{t}$ again to prove the formula for $k\in\{\ldots,-3,-2,-1\}$ as well.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise5`
+:class: solution, dropdown
+(a) For $k=0$ we obtain: $\displaystyle\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^0)}=\frac{1}{2}\int_0^{\infty}\frac{dx}{1+x^2}=\frac{1}{2}\arctan(x)\bigg|_0^{\infty}=\frac{1}{4}\pi$.
+
+(b) For $k\in\{1,2,3,\ldots\}$ we use the substitution $x=\dfrac{1}{t}$ and therefore $dx=-\dfrac{dt}{t^2}$ to find that
+
+\begin{align*}
+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^k)}&=\int_1^0\frac{1}{(1+t^{-2})(1+t^{-k})}\left(-\frac{1}{t^2}\right)\,dt\\
+&=\int_0^1\frac{dt}{(t^2+1)(1+t^{-k})}.
+\end{align*}
+This implies that
+
+\begin{align*}
+\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}&=\int_0^1\frac{dx}{(1+x^2)(1+x^k)}+\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}\\
+&=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^k}+\frac{1}{1+x^{-k}}\right)\,dx\\
+&=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^k}+\frac{x^k}{x^k+1}\right)\,dx\\
+&=\int_0^1\frac{1}{1+x^2}\cdot\frac{1+x^k}{1+x^k}\,dx=\int_0^1\frac{dx}{1+x^2}\\
+&=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
+\end{align*}
+(c) Similarly, we consider
+
+$$
+\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}=\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}
+$$
+
+for $k\in\{1,2,3,\dots\}$ and use the substitution $x=\dfrac{1}{t}$ again to find that
+
+\begin{align*}
+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}&=\int_1^0\frac{1}{(1+t^{-2})(1+t^k)}\left(-\frac{1}{t^2}\right)\,dt\\
+&=\int_0^1\frac{dt}{(t^2+1)(1+t^k)}.
+\end{align*}
+Hence, for $k\in\{1,2,3,\ldots\}$ we have
+
+\begin{align*}
+\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}&=\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}+\int_0^1\frac{dx}{(1+x^2)(1+x^k)}\\
+&=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^{-k}}+\frac{1}{1+x^k}\right)\,dx\\
+&=\int_0^1\frac{1}{1+x^2}\left(\frac{x^k}{x^k+1}+\frac{1}{1+x^k}\right)\,dx\\
+&=\int_0^1\frac{1}{1+x^2}\cdot\frac{x^k+1}{x^k+1}\,dx=\int_0^1\frac{dx}{1+x^2}\\
+&=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
+\end{align*}
+:::
