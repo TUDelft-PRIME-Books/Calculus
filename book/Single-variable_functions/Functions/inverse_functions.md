@@ -14,19 +14,19 @@ Easier said than done?
 ::::
 :::::
 
-So far, we have mainly been interested in evaluating function values, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it also interesting to try to find for which value(s) of $x$, if any, we have $f(x)=y$ for some value of $y$ in the range of $f$. That is, we want to somehow undo the function $f$ and go back to the domain.
+So far, we have mainly been interested in evaluating functions, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it is also interesting for some value of $y$ in the range of $f$ to try to find for which value(s) of $x$, if any, we have $f(x)=y$. That is, we want to somehow undo the function $f$ and go back to the domain.
 
 In some cases, this is possible. Consider, for instance, the function $f(x)=2x+3$ and say we want to find out for which value of $x$, if any, we have $f(x)=5$. This means that we want to solve the equation $2x+3=5$, which has $x=1$ as a solution. Indeed, we have $f(1)=5$.
 
-In other cases, we can even find multiple values. Indeed, suppose that we have $f(x)=x^2$ and we want to find for which values of $x$ we have $f(x)=4$. Then we need to solve $x^2=4$, which has both $x=2$ and $x=-2$ as a solution. Indeed, we have $f(2)=f(-2)=4$. However, this does pose a problem: we cannot really undo the function $f$, since if we know that $f(x)=y$ then there are two choices for $x$ and there is no way of knowing which of the two choices is the correct one.
+In other cases, we can even find multiple values. Indeed, suppose that we have $f(x)=x^2$ and we want to find for which values of $x$ we have $f(x)=4$. Then we need to solve $x^2=4$, which has both $x=2$ and $x=-2$ as solutions. Indeed, we have $f(2)=f(-2)=4$. However, this does pose a problem: we cannot really undo the function $f$, since if we know that $f(x)=y$ then there are two choices for $x$ and there is no way of knowing which of the two choices is the correct one.
 
 Finally, there are also cases where we cannot find any values. If we again consider $f(x)=x^2$ then there are no values of $x$ with $f(x)=-1$. Indeed, such a number $x$ would need to satisfy $x^2=-1$, which does not have any (real) solutions.
 
-If it is always possible to find exactly $1$ value of $x$ with $y=f(x)$ for each $y$, this means we can consider the function that maps each value of $y$ to the unique $x$ with $f(x)=y$. Such a function is called the **inverse function** of $f$. In this section, we will define and analyse inverse functions and show under which conditions they exist. Then, we will consider inverse functions of certain standard functions, logarithms for exponential functions and inverse trigonometric functions for trigonometric functions, that are so well-known that they can be called standard functions themselves.
+If it is always possible to find exactly $1$ value of $x$ with $y=f(x)$ for each $y$, this means we can consider the function that maps each value of $y$ to the unique $x$ with $f(x)=y$. Such a function is called the **inverse function** of $f$. In this section, we will define and analyse inverse functions and show under which conditions they exist. Then, we will consider inverse functions of certain standard functions: logarithms for exponential functions and inverse trigonometric functions for trigonometric functions. These are so well-known that they can be called standard functions themselves.
 
 (Subsec:InverseExistProp)=
 
-## Existence and properties of inverse functions
+## Definition, existence and properties
 
 
 ::::::{prf:definition} Inverse function
@@ -41,46 +41,90 @@ Let $f$ be a function with domain $D$ and range $R$. A function $g$ with domain 
 Do not confuse $f^{-1}$ with $\frac{1}{f}$. Usually, these are different functions.
 ::::::
 
-Notice that in the definition we talk about **the** inverse function. This must mean that a function cannot have multiple inverse functions. Indeed, we obtain the following result.
+Notice that in the definition we talk about *the* inverse function. This must mean that a function cannot have multiple inverse functions. Indeed, we obtain the following result.
 
 ::::::{prf:theorem}
 :label: Thm:Inverse:InverseInverse
 
-- If the inverse function exists, it must be unique. 
-- If $g$ is the inverse function of $f$, then $f$ is the inverse function of $g$.
+- If the inverse function of $f$ exists, it must be unique. 
+- If $g$ is the inverse function of $f$, then $f$ is the inverse function of $g$. This means that $\left(f^{-1}\right)^{-1}=f$.
 
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Inverse:InverseInverse`
 :class: tudproof
 
-Suppose $g$ and $h$ are both inverses of the same function $f$, which has domain $D$ and range $R$. Let $y$ in $R$ and write $x_1=g(y)$ and $x_2=h(y)$. Since $x_1=g(y)$ we have by the definition of the inverse that $f(x_1)=y$. Similarly, we must have $f(x_2)=y$ since $x_2=h(y)$. Since $f(x_1)=y$ and $h$ is an inverse of $f$, we must have $h(y)=x_1$, so $x_1=x_2$. This means that $g(y)=x_1=x_2=h(y)$. So $g$ and $h$ must be the same function. Hence, $f$ only has $1$ inverse function.
+Suppose $g$ and $h$ are both inverses of the same function $f$, which has domain $D$ and range $R$. Let $y$ be in $R$ and write $x_1=g(y)$ and $x_2=h(y)$. Since $x_1=g(y)$ we have by the definition of the inverse that $f(x_1)=y$. Similarly, we must have $f(x_2)=y$ since $x_2=h(y)$. Since $f(x_1)=y$ and $h$ is an inverse of $f$, we must have $h(y)=x_1$, so $x_1=x_2$. This means that $g(y)=x_1=x_2=h(y)$. Since this holds for every $y$ in $R$, $g$ and $h$ must be the same function. Hence, $f$ only has $1$ inverse function.
 
-Suppose the function $g$ with domain $R$ and range $D$ is the inverse function of $f$, which has domain $D$ and range $R$. Then for all $y$ in the domain of $g$ and $x$ in the range of $g$ we have $g(y)=x$ precisely when $f(x)=y$, since $g$ is the inverse of $f$. This precisely means that $f$ is also the inverse function of $g$.
+Suppose the function $g$ with domain $R$ and range $D$ is the inverse function of $f$, which has domain $D$ and range $R$. Then for all $y$ in the domain of $g$ and $x$ in the range of $g$ we have $g(y)=x$ precisely when $f(x)=y$, since $g$ is the inverse of $f$. This precisely means that $f$ is also the inverse function of $g$. As such, $\left(f^{-1}\right)^{-1}$ is the inverse function of $f^{-1}=g$, which must be $f$, so we find $\left(f^{-1}\right)^{-1}=f$.
 :::
 
-We can also nicely visualise the graph of an inverse function by manipulating the graph of the original function. Indeed, if $f$ has an inverse function $f^{-1}$, then $(x,y)$ is on the graph of $f$ precisely when $f(x)=y$. By definition of the inverse function, for such a point $(x,y)$ we must have $f^{-1}(y)=x$. This precisely means that the point $(y,x)$ is on the graph of $f^{-1}$. This also works the other way around, so $(x,y)$ is on the graph of $f$ precisely when $(y,x)$ is on the graph of $f^{-1}$. As such, we find the graph of $f^{-1}$ by reflecting the graph of $f$ in the line $y=x$ (since this reflection maps a point $(x,y)$ to $(y,x)$). With that, we have shown the following result.
+::::::{prf:example}
+:label: Ex:Inverse:FirstEx
+
+Consider the function $f(x)=2x+5$. We want to try to find an inverse of this function. For this we want to find a function $g$ such that $g(y)=x$ precisely when $y=f(x)=2x+5$. As such, we write $y=2x+5$ and aim to express $x$ as a function of $y$. For this, we rewrite
+
+$$
+ y=2x+5,\quad\Longleftrightarrow\quad y-5=2x,\quad\Longleftrightarrow\quad \frac{y-5}{2}=x
+$$
+
+This means that the function $g(y)=\frac{y-5}{2}$ is the inverse of $f$. Indeed, we have $y=f(x)=2x+5$ precisely when $x=g(y)=\frac{y-5}{2}$.
+::::::
+
+We can also nicely visualise the graph of an inverse function by manipulating the graph of the original function. Indeed, if $f$ has an inverse function $f^{-1}$, then $(x,y)$ is on the graph of $f$ precisely when $f(x)=y$. By definition of the inverse function, for such a point $(x,y)$ we must have $f^{-1}(y)=x$. This means that the point $(y,x)$ is on the graph of $f^{-1}$. This also works the other way around, so $(x,y)$ is on the graph of $f$ precisely when $(y,x)$ is on the graph of $f^{-1}$. As such, we find the graph of $f^{-1}$ by reflecting the graph of $f$ along the line $y=x$ (since this reflection maps a point $(x,y)$ to $(y,x)$). With that, we have shown the following result.
 
 ::::::{prf:theorem} Graph of inverse function
 :label: Thm:Inverse:Graphinverse
 
-If a single-variable $f$ has an inverse function $f^{-1}$, then the graph of $f^{-1}$ can be found by reflecting the graph of $f$ in the line $y=x$.
+If a single-variable function $f$ has an inverse function $f^{-1}$, then the graph of $f^{-1}$ can be found by reflecting the graph of $f$ along the line $y=x$.
 
 ::::::
 
-The interpretation of the inverse function is that it 'undoes' what $f$ does. Indeed, if $x$ is in the domain of a function $f$ which has an inverse function $f^{-1}$, then we have $f^{-1}(f(x))=x$. This follows, since by definition $f^{-1}(f(x))$ is the unique number $\tilde{x}$ in the domain of $f$ with $f(\tilde{x})=f(x)$, which must mean that $\tilde{x}=x$. This also works the other way around: for $y$ in the the domain of $f^{-1}$ we must have $f(f^{-1}(y))=y$, since by definition $f^{-1}(y)$ is the unique number $x$ in the domain of $f$ with $f(x)=y$. The two equations $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ are called the **cancelling equations**. In fact, the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold precisely when $f$ and $g$ are inverses of each other. In fact, verifying that the cancelling equations hold is usually the easiest way to show that two functions are inverses of each other.
+The interpretation of the inverse function is that it 'undoes' what $f$ does. Indeed, if $x$ is in the domain of a function $f$ which has an inverse function $f^{-1}$, then we have $f^{-1}(f(x))=x$. This follows, since if we write $y=f(x)$ then the definition of the inverse function tells us that $f^{-1}(f(x))=f^{-1}(y)=x$. This also works the other way around: for $y$ in the the domain of $f^{-1}$ we must have $f(f^{-1}(y))=y$, since if we write $x=f^{-1}(y)$ then the definition of the inverse function tells us that $f(x)=f(f^{-1}(y))=x$. The two equations $f^{-1}(f(x))=x$ and $f(f^{-1}(y))=y$ are called the **cancelling equations**. In fact, the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold precisely when $f$ and $g$ are inverses of each other. Moreover, verifying that the cancelling equations hold is usually the easiest way to show that two functions are inverses of each other.
 
 ::::::{prf:theorem}
 :label: Thm:Inverse:CancellingEquations
 
-Let $f$ be a function with domain $D$ and range $R$ and let $g$ be a function with domain $R$. Then $f$ is invertible with $g=f^{-1}$ precisely when the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold for all $x$ in $D$ and all $y$ in $R$.
+Let $f$ be a function with domain $D$ and range $R$ and let $g$ be a function with domain $R$. Then $f$ is invertible with $g=f^{-1}$ precisely when the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ both hold for all $x$ in $D$ and all $y$ in $R$.
 
 ::::::
 :::{admonition} Proof of {prf:ref}`Thm:Inverse:CancellingEquations`
 :class: tudproof
 
-In the discussion preceding this theorem, we already showed that the cancelling equations hold if $g=f^{-1}$. Hence, we now assume that the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold for all $x$ in $D$ and all $y$ in $R$ and we will show that $g=f^{-1}$. Let $x$ in $D$ and write $y=f(x)$. Then $g(y)=g(f(x))=x$ because of the first cancelling equation. Moreover, let $y$ in $R$ and write $x=g(y)$. Then $f(x)=f(g(y))=y$ because of the second cancelling equation. As such, we have $f(x)=y$ precisely when $g(y)=x$. This means that $g=f^{-1}$.
+In the discussion preceding this theorem, we already showed that the cancelling equations hold if $g=f^{-1}$. Hence, we now assume that the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ hold for all $x$ in $D$ and all $y$ in $R$ and we will show that $g=f^{-1}$. Let $x$ be in $D$ and write $y=f(x)$. Then $g(y)=g(f(x))=x$ because of the first cancelling equation. Moreover, let $y$ be in $R$ and write $x=g(y)$. Then $f(x)=f(g(y))=y$ because of the second cancelling equation. As such, we have $f(x)=y$ precisely when $g(y)=x$. This means that $g=f^{-1}$.
 :::
+
+
+
+::::::{prf:example} {prf:ref}`Ex:Inverse:FirstEx` continued
+:label: Ex:Inverse:FirstExContinued
+
+Again consider the function $f(x)=2x+5$. We saw that the function $g(y)=\frac{y-5}{2}$ is the inverse of $f$. In order to check that this is correct, we verify that the cancelling equations hold. Note that the domain and range of $f$ are both $\mathbb{R}$. Hence, for $x$ and $y$ in $\mathbb{R}$ we find
+
+$$
+ \begin{array}{lclclclcl}g(f(x))&=&g(2x+5)&=&\dfrac{(2x+5)-5}{2}&=&\dfrac{2x}{2}&=&x,\\ f(g(y))&=&f\left(\dfrac{y-5}{2}\right)&=&2\dfrac{y-5}{2}+5&=&(y-5)+5&=&y\end{array}
+$$
+
+So the cancelling equations indeed hold and we find that $g$ is the inverse of $f$. As such, we find $f^{-1}(x)=\frac{x-5}{2}$.
+
+In the graphs of the functions $f$ and $f^{-1}$ shown below, we see that the graph of $f^{-1}$ can be obtained by reflection the graph of $f$ along the line $y=x$, as we expected from {prf:ref}`Thm:Inverse:Graphinverse`.
+
+::::{figure} Images/Fig-Inverse-FirstEx.png
+:name: Fig:Inverse:FirstEx
+:class: dark-light
+
+The functions $f$, $f^{-1}$ and the line $y=x$.
+
+::::
+
+::::::
+
+::::::{note}
+:name: Note:Inverse:Inputnamexory
+
+In {prf:ref}`Ex:Inverse:FirstEx` we used the symbol $y$ as the input for $g$, while we use $x$ for $f^{-1}$. This is simply a matter of convenience: since we obtain the expression for $g$ by rewriting the equation $y=f(x)$ it is natural to use $y$ there. On the other hand, $f^{-1}$ is a function of which the domain is the real numbers, so it is customary to use the symbol $x$ there. However, these are still just choices for which letter we use and we could just as well have used a different choice. 
+
+::::::
 
 Now suppose that we have a function $h$ that is a composition of two other functions, so $h=f\circ g$. If $f$ and $g$ both have an inverse, does $h$ automatically have an inverse as well? To determine this, we should really think about having an inverse as being able to undo the action of the original function. So since $f\circ g$ first applies $g$ and then $f$, we can undo this by undoing both, but then **in reverse order**. This is sometimes known as the **socks and shoes rule**, since (normally, at least) you first put on your socks and then your shoes and if you want to undo this composition of two actions, you should undo them in reverse order, so you should take off your shoes first and then take off your socks. As such, we obtain the following result.
 
@@ -111,42 +155,27 @@ $$
  (f\circ g)\left((g^{-1}\circ f^{-1})(y)\right)=f\left(g\left(g^{-1}\left(f^{-1}(y)\right)\right)\right)=f\left(f^{-1}(y)\right)=y.
 $$
 
-Hence, both cancelling equations holds, so we must have that $f\circ g$ is invertible and $(f\circ g)^{-1}=g^{-1}\circ f^{-1}$
+Hence, both cancelling equations hold, so we must have that $f\circ g$ is invertible and $(f\circ g)^{-1}=g^{-1}\circ f^{-1}$.
 :::
 
-::::::{prf:example}
-:label: Ex:Inverse:FirstEx
+::::::{prf:example} 
+:label: Ex:Inverse:Socksshoes
 
-Consider the function $f(x)=2x+5$. We want to try to find an inverse of this function. For this we want to find a function $g$ such that $g(y)=x$ precisely when $y=f(x)=2x+5$. As such, we write $y=2x+5$ and aim to express $x$ as a function of $y$. For this, we rewrite
-
-$$
- y=2x+5,\quad\Longleftrightarrow\quad y-5=2x,\quad\Longleftrightarrow\quad \frac{y-5}{2}=x
-$$
-
-This suggests that the function $g(y)=\frac{y-5}{2}$ is the inverse of $f$. In order to check that this is correct, we verify that the cancelling equations hold. Note that the domain and range of $f$ are both $\mathbb{R}$. Hence, for $x$ and $y$ in $\mathbb{R}$ we find
+Again consider the function $f(x)=2x+5$. We saw that the function $f^{-1}(x)=\frac{x-5}{2}$ is the inverse of $f$. Moreover, consider the function $g(x)=x^3$. Then we have $x^3=y$ precisely when $x=\sqrt[3]{y}$, so the function $g$ is also invertible with inverse function $g^{-1}(x)=\sqrt[3]{x}$. Now consider the composition $f\circ g$, which is given by
 
 $$
- \begin{array}{lclclclcl}g(f(x))&=&g(2x+5)&=&\dfrac{(2x+5)-5}{2}&=&\dfrac{2x}{2}&=&x,\\ f(g(y))&=&f\left(\dfrac{y-5}{2}\right)&=&2\dfrac{y-5}{2}+5&=&(y-5)+5&=&y\end{array}
+ (g\circ f)(x)=g(f(x))=\left(2x+5\right)^3.
 $$
 
-So the cancelling equations indeed hold and we find that $g$ is the inverse of $f$. As such, we find $f^{-1}(x)=\frac{x-5}{2}$.
+According to {prf:ref}`Thm:Inverse:Composition`, the function $g\circ f$ is also invertible and we can find its inverse by evaluating
 
-In the graphs of the functions $f$ and $f^{-1}$ shown below, we see that the graph of $f^{-1}$ can be obtained by reflection the graph of $f$ in de line $y=x$, as we expected from {prf:ref}`Thm:Inverse:Graphinverse`.
+$$
+ (g\circ f)^{-1}(x)=(f^{-1}\circ g^{-1})(x)=f^{-1}\left(g^{-1}(x)\right)=\frac{\sqrt[3]{x}-5}{2}.
+$$
 
-::::{figure} Images/Fig-Inverse-FirstEx.png
-:name: Fig:Inverse:FirstEx
-:class: dark-light
+Note that we switched the order from $g\circ f$ to $f^{-1}\circ g^{-1}$ when finding the inverse function, since we do not want to tear our socks by trying to take them off before taking off our shoes.
 
-The functions $f$, $f^{-1}$ and the line $y=x$.
-
-::::
-
-::::::
-
-::::::{note}
-:name: Note:Inverse:Inputnamexory
-
-In {prf:ref}`Ex:Inverse:FirstEx` we used the symbol $y$ as the input for $g$, while we use $x$ for $f^{-1}$. This is simply a matter of convenience: since we obtain the expression for $g$ by rewriting the equation $y=f(x)$ it is natural to use $y$ there. On the other hand, $f^{-1}$ is a function of which the domain is the real numbers, so it is customary to use the symbol $x$ there. However, these are still just choices for which letter we use and we could just as well have used a different choice. 
+Hier nog een grafiek van de functies $g\circ f$ en zijn inverse
 
 ::::::
 
@@ -161,13 +190,13 @@ $$
 
 This means that we have two choices for what $x$ should be in terms of $y$, which does not sound very promising. Since mathematicians tend to be very stubborn people, we choose to not give up here (yet) and just make a choice and see where we end up. So here, we define $g(y)=\sqrt{y}$. Then for any $y$ in the domain of $g$ we have $f(g(y))=f(\sqrt{y})=(\sqrt{y})^2=y$, so at least one of the cancelling equations holds. However, the other cancelling equation does not hold. Indeed, we have, for instance, that $g(f(-2))=g\left((-2)^2\right)=g(4)=\sqrt{4}=2$. So $g$ cannot be the inverse of $f$. The other choice for $g$ does not fare any better, so we are ready to conclude that the function $f$ does not have an inverse. How can we be sure of that, though? In general, failing to show that something is true does not mean that it is not true. Maybe we were just not creative enough. Well, let us take any function $g$ with domain $[0,\infty)$ (the domain of an inverse function should always be the range of the original function). We will show that this function $g$ runs into the same issues as the choices we have made before. Indeed, if $g$ were to be the inverse function of $f$, then since $f(2)=2^2=4$, we would need to have $g(4)=2$. On the other hand, since $f(-2)=(-2)^2=4$, we would also need to have $g(4)=-2$. However, $g(4)$ cannot at the same time be $2$ and $-2$, so such a function $g$ does not exist.
 
-We can also show this visually. Indeed, {prf:ref}`Thm:Inverse:Graphinverse` tells us that the graph of a potential inverse function can be obtained by reflecting the graph of $f$ in the line $x=y$. In the figure below, you see the graph of $f$ and the corresponding reflection. Note that the curve that we obtain this way can never be the graph of function. Indeed, for $x=4$ we see two corresponding values of $y$, namely $y=-2$ and $y=2$, which is not possible if this curve were the graph of a function (it fails the vertical line test).
+We can also show this visually. Indeed, {prf:ref}`Thm:Inverse:Graphinverse` tells us that the graph of a potential inverse function can be obtained by reflecting the graph of $f$ along the line $x=y$. In the figure below, you see the graph of $f$ and the corresponding reflection. Note that the curve that we obtain this way can never be the graph of function. Indeed, for $x=4$ we see two corresponding values of $y$, namely $y=-2$ and $y=2$, which is not possible if this curve were the graph of a function (it fails the vertical line test).
 
 ::::{figure} Images/Fig-Inverse-SecondEx.png
 :name: Fig:Inverse:SecondEx
 :class: dark-light
 
-The functions $f$, the line $y=x$ and the reflection of the graph of $f$ in de line $y=x$.
+The functions $f$, the line $y=x$ and the reflection of the graph of $f$ along the line $y=x$.
 
 ::::
 
@@ -175,7 +204,7 @@ The functions $f$, the line $y=x$ and the reflection of the graph of $f$ in de l
 
 {prf:ref}`Ex:Inverse:SecondEx` shows a major issue we have at this point: we lack a quick way of showing that a function does not have an inverse function. If a function has an inverse function, we can (hopefully) find it and prove that it is an inverse function by, for instance, verifying that the cancelling equations hold, but this does not work the other way around. So the goal now is to develop a criterion to check whether a certain function has an inverse function.
 
-The main reason why we could not find an inverse function for the function $f(x)=x^2$ in {prf:ref}`Ex:Inverse:SecondEx` was that $f(2)=f(-2)=4$, so we there was no way to determine whether, if $g$ were an inverse of $f$, $g(4)$ should be $2$ or $-2$. In fact, the reason a function $f$ does not have an inverse will **always** be that there are two different points, $a$ and $b$, with $f(a)=f(b)$, since in such a case it is impossible to determine what the inverse should in do in this point $f(a)=f(b)$. Indeed, the reflection of the graph of such a function in the line $x=y$ (which would be the graph of the inverse function if an inverse function exists) can never be the graph of a function, as multiple values of $y$ correspond to the same value of $x$. This idea will allow us to find a criterion to determine invertibility. Before we formulate this, we will introduce some terminology.
+The main reason why we could not find an inverse function for the function $f(x)=x^2$ in {prf:ref}`Ex:Inverse:SecondEx` was that $f(2)=f(-2)=4$, so we there was no way to determine whether, if $g$ were an inverse of $f$, $g(4)$ should be $2$ or $-2$. In fact, the reason a function $f$ does not have an inverse will **always** be that there are two different points, $a$ and $b$, with $f(a)=f(b)$, since in such a case it is impossible to determine what the inverse should in do in this point $f(a)=f(b)$. Indeed, the reflection of the graph of such a function along the line $x=y$ (which would be the graph of the inverse function if an inverse function exists) can never be the graph of a function, as multiple values of $y$ correspond to the same value of $x$. This idea will allow us to find a criterion to determine invertibility. Before we formulate this, we will introduce some terminology.
 
 ::::::{prf:definition}
 :label: Def:Inverse:Onetoone
@@ -218,7 +247,7 @@ Still, why does this difference in domain make that $h^{-1}$ is invertible, whil
 :name: Fig:Inverse:ThirdEx
 :class: dark-light
 
-The functions $h(x)=\sqrt{x}$ and $q(x)=x^2$ with their full domain, $h^{-1}(x)=x^2$ with right-half domain, and the line $x = y$. Note that we indeed obtain $x^2$ with a right-half domain by reflecting $\sqrt{x}$ in the line $x = y$.
+The functions $h(x)=\sqrt{x}$ and $q(x)=x^2$ with their full domain, $h^{-1}(x)=x^2$ with right-half domain, and the line $x = y$. Note that we indeed obtain $x^2$ with a right-half domain by reflecting $\sqrt{x}$ along the line $x = y$.
 
 ::::
 
@@ -279,7 +308,7 @@ So indeed, the domain of $f^{-1}$ is the range of $f$ and both cancelling equati
 :name: Fig:Inverse:FourthEx
 :class: dark-light
 
-The functions $f(x)$ and $f^{-1}$ and the line $x = y$. Note that we indeed obtain the graph of $f^{-1}$ by reflecting the graph of $f$ in the line $x = y$.
+The functions $f(x)$ and $f^{-1}$ and the line $x = y$. Note that we indeed obtain the graph of $f^{-1}$ by reflecting the graph of $f$ along the line $x = y$.
 
 ::::
 
@@ -359,7 +388,7 @@ $$
 Suppose we want to evaluate $\log_2(8)$. Writing $y=\log_2(8)$, this means that we try to find a number $y$ with $2^y=8$. Luckily, we know that $2^3=8$, so we find that $\log_2(8)=3$.
 ::::::
 
-Let us first analyse the behaviour of logarithmic functions. Since the graph of an inverse function can be obtained by reflecting the graph of the original function in the line $y=x$, we can use our knowledge of the graphs of the exponential function to sketch the graph of logarithmic function.
+Let us first analyse the behaviour of logarithmic functions. Since the graph of an inverse function can be obtained by reflecting the graph of the original function along the line $y=x$, we can use our knowledge of the graphs of the exponential function to sketch the graph of logarithmic function.
 
 ::::{figure} Images/Fig-Inverse-Logarithmbasisbasis.png
 :name: Fig:Inverse:Logarithmbasisbasis
@@ -370,7 +399,7 @@ In the left graph the functions $f(x)=2^x$ and $f^{-1}(x)=\log_2(x)$ and the lin
 ::::
 
 
-First we note that the logarithm is only defined for $x>0$. This makes sense since the domain of an inverse function is equal to the range of the original function, which for the function $b^x$ is equal to $(0,\infty)$. Next, we notice that the logarithm $\log_b(x)$ is strictly increasing when $b>1$ while it is strictly decreasing if $0<b<1$. This follows from {prf:ref}`Thm:Inverse:MonotonicOnetoone`, since the function $b^x$ has the same properties. Finally, we notice that for $0<x<1$ the function values $\log_b(x)$ blow up as $x$ get closer to $0$. In the terminology that we will introduce in {numref}`Section:LimitPoint` the logarithm has a vertical asymptote at $x=0$. This is, because the graph of the logarithm is obtained by reflecting the graph of $b^x$ in the line $y=x$, and this function has the property that the function values get arbitrarily close to $0$ as $x$ gets very large (in the terminology of {numref}`Section:Limitinf`, the function $b^x$ has a horizontal asymptote at $y=0$). For $b>1$, the logarithm has a similar property, but the function values will, instead, blow up in the negative direction as $x$ approaches $0$.
+First we note that the logarithm is only defined for $x>0$. This makes sense since the domain of an inverse function is equal to the range of the original function, which for the function $b^x$ is equal to $(0,\infty)$. Next, we notice that the logarithm $\log_b(x)$ is strictly increasing when $b>1$ while it is strictly decreasing if $0<b<1$. This follows from {prf:ref}`Thm:Inverse:MonotonicOnetoone`, since the function $b^x$ has the same properties. Finally, we notice that for $0<x<1$ the function values $\log_b(x)$ blow up as $x$ get closer to $0$. In the terminology that we will introduce in {numref}`Section:LimitPoint` the logarithm has a vertical asymptote at $x=0$. This is, because the graph of the logarithm is obtained by reflecting the graph of $b^x$ along the line $y=x$, and this function has the property that the function values get arbitrarily close to $0$ as $x$ gets very large (in the terminology of {numref}`Section:Limitinf`, the function $b^x$ has a horizontal asymptote at $y=0$). For $b>1$, the logarithm has a similar property, but the function values will, instead, blow up in the negative direction as $x$ approaches $0$.
 
 
 
@@ -533,7 +562,7 @@ The inverse of the function $\tan(x)$, restricted to the interval $\left(-\frac{
 In some literature, the notations $\sin^{-1}(x)$, $\cos^{-1}(x)$ and $\tan^{-1}(x)$ are used to denote $\arcsin(x)$, $\arccos(x)$ and $\arctan(x)$ respectively. Since it is very easy to mistakenly read $\sin^{-1}(x)$ as $\dfrac{1}{\sin(x)}$, while these are very different functions, we will avoid these notations like the plague.
 ::::::
 
-Since the graph of an inverse function is obtained by reflecting the graph of the original function in the line $y=x$, we can quickly sketch the graphs of the inverse trigonometric functions.
+Since the graph of an inverse function is obtained by reflecting the graph of the original function along the line $y=x$, we can quickly sketch the graphs of the inverse trigonometric functions.
 
 ::::{figure} Images/Fig-Inverse-Inversetrig.png
 :name: Fig:Inverse:Inversetrig

@@ -600,6 +600,7 @@ There are several characterisations of the number $e$, all of which use concepts
 :label: Thm:RealNumbers:Numbere
 
 - $e$ is the sum of the series $\displaystyle e=\sum_{n=0}^\infty \frac{1}{n!}=1+\frac{1}{1}+\frac{1}{2\cdot1}+\frac{1}{3\cdot2\cdot1}+...$, see {numref}`Chapter:Series`.
+- $e$ is the unique number with the property that $\displaystyle \lim_{h\rightarrow 0}\frac{e^h-1}{h}=1$, see {numref}`Chapter:Functions1d`.
 - $e$ is the unique value of $b$ such that the exponential function $f(x)=b^x$ has a tangent line at $x=0$ with slope $1$, see {numref}`Chapter:Differentiation`.
 - $e$ is the unique positive value of $b$ such that $\displaystyle \int_1^b\frac{1}{t}\,dt=1$, see {numref}`Chapter:Integration`.
 - If $y(t)$ is the unique solution to the initial-value problem $y'=y$, $y(0)=1$, then $y(1)=e$, see {numref}`Chapter:FirstorderDE`.
