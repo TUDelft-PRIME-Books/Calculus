@@ -12,7 +12,7 @@
 Easier said than done?
 
 ::::
-:::::
+
 
 So far, we have mainly been interested in evaluating functions, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it is also interesting for some value of $y$ in the range of $f$ to try to find for which value(s) of $x$, if any, we have $f(x)=y$. That is, we want to somehow undo the function $f$ and go back to the domain.
 
@@ -28,11 +28,25 @@ If it is always possible to find exactly $1$ value of $x$ with $y=f(x)$ for each
 
 ## Definition, existence and properties
 
+Before we can introduce the definition of an inverse function, we need one more concept.
+
+::::::{prf:definition}
+:label: Def:Inverse:Onto
+A function $f$ is called **onto** or **surjective** whenever the codomain of $f$ coincides with the range of $f$. That is, the equation $f(x)=y$ should have at least one solution $x$ for each $y$ in the codomain of $f$.
+::::::
+
+::::{note}
+:name: Note:Inverse:Onto
+
+In order for any function to have an inverse function, it needs to be onto. However, we do not put emphasis on this now and you should not worry too much about it. Indeed, if a function is not onto, we can make it onto by restricting its codomain to be equal to its range, without changing the behaviour of the function. At the end of {numref}`Subsec:InverseExistProp`, we go more into detail on this. For now, we just assume that all functions that we are dealing with are onto.
+::::
+
+
 
 ::::::{prf:definition} Inverse function
 :label: Def:Inverse:Inverse
 
-Let $f$ be a function with domain $D$ and range $R$. A function $g$ with domain $R$ and range $D$ is called the **inverse function** of $f$ if for all $x$ in $D$ and $y$ in $R$ we have $f(x)=y$ precisely when $g(y)=x$. If the inverse function exists, we denote it by $f^{-1}$. A function which has an inverse function is called **invertible**.
+Let $f$ be an onto function with domain $D$ and range $R$. An onto function $g$ with domain $R$ and range $D$ is called the **inverse function** of $f$ if for all $x$ in $D$ and $y$ in $R$ we have $f(x)=y$ precisely when $g(y)=x$. If the inverse function exists, we denote it by $f^{-1}$. A function which has an inverse function is called **invertible**.
 ::::::
 
 ::::::{warning} 
@@ -62,10 +76,10 @@ Suppose the function $g$ with domain $R$ and range $D$ is the inverse function o
 ::::::{prf:example}
 :label: Ex:Inverse:FirstEx
 
-Consider the function $f(x)=2x+5$. We want to try to find an inverse of this function. For this we want to find a function $g$ such that $g(y)=x$ precisely when $y=f(x)=2x+5$. As such, we write $y=2x+5$ and aim to express $x$ as a function of $y$. For this, we rewrite
+Consider the function $f(x)=2x+5$. We want to try to find the inverse of this function. For this, we want to find a function $g$ such that $g(y)=x$ precisely when $y=f(x)=2x+5$. As such, we write $y=2x+5$ and aim to express $x$ as a function of $y$. We rewrite
 
 $$
- y=2x+5,\quad\Longleftrightarrow\quad y-5=2x,\quad\Longleftrightarrow\quad \frac{y-5}{2}=x
+ y=2x+5\quad\Longleftrightarrow\quad y-5=2x\quad\Longleftrightarrow\quad \frac{y-5}{2}=x.
 $$
 
 This means that the function $g(y)=\frac{y-5}{2}$ is the inverse of $f$. Indeed, we have $y=f(x)=2x+5$ precisely when $x=g(y)=\frac{y-5}{2}$.
@@ -85,7 +99,7 @@ The interpretation of the inverse function is that it 'undoes' what $f$ does. In
 ::::::{prf:theorem}
 :label: Thm:Inverse:CancellingEquations
 
-Let $f$ be a function with domain $D$ and range $R$ and let $g$ be a function with domain $R$. Then $f$ is invertible with $g=f^{-1}$ precisely when the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ both hold for all $x$ in $D$ and all $y$ in $R$.
+Let $f$ be an onto function with domain $D$ and range $R$ and let $g$ be a function with domain $R$. Then $f$ is invertible with $g=f^{-1}$ precisely when the cancelling equations $g(f(x))=x$ and $f(g(y))=y$ both hold for all $x$ in $D$ and all $y$ in $R$.
 
 ::::::
 :::{admonition} Proof of {prf:ref}`Thm:Inverse:CancellingEquations`
@@ -102,12 +116,12 @@ In the discussion preceding this theorem, we already showed that the cancelling 
 Again consider the function $f(x)=2x+5$. We saw that the function $g(y)=\frac{y-5}{2}$ is the inverse of $f$. In order to check that this is correct, we verify that the cancelling equations hold. Note that the domain and range of $f$ are both $\mathbb{R}$. Hence, for $x$ and $y$ in $\mathbb{R}$ we find
 
 $$
- \begin{array}{lclclclcl}g(f(x))&=&g(2x+5)&=&\dfrac{(2x+5)-5}{2}&=&\dfrac{2x}{2}&=&x,\\ f(g(y))&=&f\left(\dfrac{y-5}{2}\right)&=&2\dfrac{y-5}{2}+5&=&(y-5)+5&=&y\end{array}
+ \begin{array}{lclclclcl}g(f(x))&=&g(2x+5)&=&\dfrac{(2x+5)-5}{2}&=&\dfrac{2x}{2}&=&x,\\ f(g(y))&=&f\left(\dfrac{y-5}{2}\right)&=&2\dfrac{y-5}{2}+5&=&(y-5)+5&=&y.\end{array}
 $$
 
-So the cancelling equations indeed hold and we find that $g$ is the inverse of $f$. As such, we find $f^{-1}(x)=\frac{x-5}{2}$.
+So the cancelling equations indeed hold and we reaffirm that $g$ is the inverse of $f$. Hence, we have $f^{-1}(x)=\frac{x-5}{2}$.
 
-In the graphs of the functions $f$ and $f^{-1}$ shown below, we see that the graph of $f^{-1}$ can be obtained by reflection the graph of $f$ along the line $y=x$, as we expected from {prf:ref}`Thm:Inverse:Graphinverse`.
+In the graphs of the functions $f$ and $f^{-1}$ shown below, we see that the graph of $f^{-1}$ can be obtained by reflecting the graph of $f$ along the line $y=x$, as we expected from {prf:ref}`Thm:Inverse:Graphinverse`.
 
 ::::{figure} Images/Fig-Inverse-FirstEx.png
 :name: Fig:Inverse:FirstEx
@@ -161,7 +175,7 @@ Hence, both cancelling equations hold, so we must have that $f\circ g$ is invert
 ::::::{prf:example} 
 :label: Ex:Inverse:Socksshoes
 
-Again consider the function $f(x)=2x+5$. We saw that the function $f^{-1}(x)=\frac{x-5}{2}$ is the inverse of $f$. Moreover, consider the function $g(x)=x^3$. Then we have $x^3=y$ precisely when $x=\sqrt[3]{y}$, so the function $g$ is also invertible with inverse function $g^{-1}(x)=\sqrt[3]{x}$. Now consider the composition $f\circ g$, which is given by
+Again consider the function $f(x)=2x+5$. We saw that the function $f^{-1}(x)=\frac{x-5}{2}$ is the inverse of $f$. Moreover, consider the function $g(x)=x^3$. Then we have $x^3=y$ precisely when $x=\sqrt[3]{y}$, so the function $g$ is also invertible with inverse function $g^{-1}(x)=\sqrt[3]{x}$. Note, in addition, that the range of $f$ and the domain of $g$ are both $\mathbb{R}$. Now consider the composition $g\circ f$, which is given by
 
 $$
  (g\circ f)(x)=g(f(x))=\left(2x+5\right)^3.
@@ -182,15 +196,27 @@ Hier nog een grafiek van de functies $g\circ f$ en zijn inverse
 ::::::{prf:example}
 :label: Ex:Inverse:SecondEx
 
-Consider the function $f(x)=x^2$. We want to try to find an inverse of this function. For this we want to find a function $g$ such that $g(y)=x$ precisely when $y=f(x)=x^2$. As such, we write $y=x^2$ and aim to express $x$ as a function of $y$. For this, we rewrite
+Consider the function $f(x)=x^2$ with codomain equal to its range $[0,\infty)$, so that it is onto. We want to try to find the inverse of this function. For this, we want to find a function $g$ such that $g(y)=x$ precisely when $y=f(x)=x^2$. As such, we write $y=x^2$ and aim to express $x$ as a function of $y$. For this, we rewrite
 
 $$
- y=x^2,\quad\Longleftrightarrow\quad x=\pm\sqrt{y}
+ y=x^2\\quad\Longleftrightarrow\quad x=\pm\sqrt{y}.
 $$
 
-This means that we have two choices for what $x$ should be in terms of $y$, which does not sound very promising. Since mathematicians tend to be very stubborn people, we choose to not give up here (yet) and just make a choice and see where we end up. So here, we define $g(y)=\sqrt{y}$. Then for any $y$ in the domain of $g$ we have $f(g(y))=f(\sqrt{y})=(\sqrt{y})^2=y$, so at least one of the cancelling equations holds. However, the other cancelling equation does not hold. Indeed, we have, for instance, that $g(f(-2))=g\left((-2)^2\right)=g(4)=\sqrt{4}=2$. So $g$ cannot be the inverse of $f$. The other choice for $g$ does not fare any better, so we are ready to conclude that the function $f$ does not have an inverse. How can we be sure of that, though? In general, failing to show that something is true does not mean that it is not true. Maybe we were just not creative enough. Well, let us take any function $g$ with domain $[0,\infty)$ (the domain of an inverse function should always be the range of the original function). We will show that this function $g$ runs into the same issues as the choices we have made before. Indeed, if $g$ were to be the inverse function of $f$, then since $f(2)=2^2=4$, we would need to have $g(4)=2$. On the other hand, since $f(-2)=(-2)^2=4$, we would also need to have $g(4)=-2$. However, $g(4)$ cannot at the same time be $2$ and $-2$, so such a function $g$ does not exist.
+This means that we have two choices for what $x$ should be in terms of $y$, which does not sound very promising. Since mathematicians tend to be very stubborn people, we choose to not give up here (yet) and just make a choice and see where we end up. So here, we define $g(y)=\sqrt{y}$. Then for any $y$ in the domain of $g$ we have 
 
-We can also show this visually. Indeed, {prf:ref}`Thm:Inverse:Graphinverse` tells us that the graph of a potential inverse function can be obtained by reflecting the graph of $f$ along the line $x=y$. In the figure below, you see the graph of $f$ and the corresponding reflection. Note that the curve that we obtain this way can never be the graph of function. Indeed, for $x=4$ we see two corresponding values of $y$, namely $y=-2$ and $y=2$, which is not possible if this curve were the graph of a function (it fails the vertical line test).
+$$
+ f(g(y))=f(\sqrt{y})=(\sqrt{y})^2=y,
+$$
+
+so at least one of the cancelling equations holds. However, the other cancelling equation does not hold. Indeed, we have, for instance, that 
+
+$$
+ g(f(-2))=g\left((-2)^2\right)=g(4)=\sqrt{4}=2\neq -2.
+$$
+
+So $g$ cannot be the inverse of $f$. The other choice for $g$ does not fare any better, so we are ready to conclude that the function $f$ does not have an inverse. How can we be sure of that, though? In general, failing to show that something is true does not mean that it is not true. Maybe we were just not creative enough. Well, let us take any function $g$ with domain $[0,\infty)$ (the domain of an inverse function should always be the range of the original function). We will show that this function $g$ runs into the same issues as the choices we have made before. Indeed, if $g$ were to be the inverse function of $f$, then since $f(2)=2^2=4$, we would need to have $g(4)=2$. On the other hand, since $f(-2)=(-2)^2=4$, we would also need to have $g(4)=-2$. However, $g(4)$ cannot at the same time be $2$ and $-2$, so such a function $g$ does not exist.
+
+We can also show this visually. Indeed, {prf:ref}`Thm:Inverse:Graphinverse` tells us that the graph of a potential inverse function can be obtained by reflecting the graph of $f$ along the line $x=y$. In the figure below, you see the graph of $f$ and the corresponding reflection. Note that the curve that we obtain this way can never be the graph of function. Indeed, for $x=4$ we see two corresponding values of $y$, namely $y=-2$ and $y=2$, which is not possible if this curve were the graph of a function (it fails the vertical line test {prf:ref}`Thm:Functions1var:Verticallinetest`).
 
 ::::{figure} Images/Fig-Inverse-SecondEx.png
 :name: Fig:Inverse:SecondEx
@@ -204,7 +230,7 @@ The functions $f$, the line $y=x$ and the reflection of the graph of $f$ along t
 
 {prf:ref}`Ex:Inverse:SecondEx` shows a major issue we have at this point: we lack a quick way of showing that a function does not have an inverse function. If a function has an inverse function, we can (hopefully) find it and prove that it is an inverse function by, for instance, verifying that the cancelling equations hold, but this does not work the other way around. So the goal now is to develop a criterion to check whether a certain function has an inverse function.
 
-The main reason why we could not find an inverse function for the function $f(x)=x^2$ in {prf:ref}`Ex:Inverse:SecondEx` was that $f(2)=f(-2)=4$, so we there was no way to determine whether, if $g$ were an inverse of $f$, $g(4)$ should be $2$ or $-2$. In fact, the reason a function $f$ does not have an inverse will **always** be that there are two different points, $a$ and $b$, with $f(a)=f(b)$, since in such a case it is impossible to determine what the inverse should in do in this point $f(a)=f(b)$. Indeed, the reflection of the graph of such a function along the line $x=y$ (which would be the graph of the inverse function if an inverse function exists) can never be the graph of a function, as multiple values of $y$ correspond to the same value of $x$. This idea will allow us to find a criterion to determine invertibility. Before we formulate this, we will introduce some terminology.
+The main reason why we could not find an inverse function for the function $f(x)=x^2$ in {prf:ref}`Ex:Inverse:SecondEx` was that $f(2)=f(-2)=4$, so there was no way to determine whether, if $g$ were an inverse of $f$, $g(4)$ should be $2$ or $-2$. In fact, the reason a function $f$ does not have an inverse will **always** be that there are two different points, $a$ and $b$, with $f(a)=f(b)$, since in such a case it is impossible to determine what the inverse should in do in the point $f(a)=f(b)$. Indeed, the reflection of the graph of such a function along the line $x=y$ (which would be the graph of the inverse function if an inverse function exists) can never be the graph of a function, as multiple values of $y$ correspond to the same value of $x$. This idea will allow us to find a criterion to determine invertibility. Before we formulate this, we will introduce some terminology.
 
 ::::::{prf:definition}
 :label: Def:Inverse:Onetoone
@@ -212,17 +238,24 @@ The main reason why we could not find an inverse function for the function $f(x)
 A function $f$ is called **one-to-one** or **injective** if for every two different points $a$ and $b$ in the domain of $f$ we have $f(a)\neq f(b)$. 
 ::::::
 
-Stated differently, $f$ is one-to-one precisely when it does not take the same value more than once. For a one-to-one function the problem of having a choice which value to assign to a certain number can never arise. As such, we finally obtain our desired criterion.
+Stated differently, $f$ is one-to-one precisely when it does not take the same value more than once. Visually, we can consider this concept as follows. Consider the horizontal line $y=b$. This line intersects the graph of a function $f$ precisely at points $(x,b)$ with $f(x)=b$. For one-to-one functions, there is at most one such value of $x$, so the horizontal line intersects the graph at most once.
+
+::::::{prf:theorem} Horizontal line test 
+:label: Thm:Inverse:Horizontallinetest
+A function $f$ is one-to-one precisely when each vertical line $y=b$ intersects the graph of $f$ at most once.
+::::::
+
+For a one-to-one function the problem of having a choice which value to assign to a certain number when attempting to find an inverse function can never arise. As such, we finally obtain our desired criterion.
 
 ::::::{prf:theorem} 
 :label: Thm:Inverse:InverseInjective
 
-Let $f$ be a function with domain $D$ and range $R$. Then $f$ has an inverse function (with domain $R$) precisely when $f$ is one-to-one.
+Let $f$ be an onto function with domain $D$ and range $R$. Then $f$ has an inverse function (with domain $R$) precisely when $f$ is one-to-one.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Inverse:InverseInjective`
 :class: tudproof
-Assume that $f$ is one-to-one. Let $y$ in $R$. Since $R$ is the range of $f$, there is at least one $x$ with $f(x)=y$ and since $f$ is one-to-one, there is precisely one such $x$. Then we define $g(y)=x$. By construction, we have $f(g(y))=f(x)=y$, so one of the cancelling equations holds. Now we pick an arbitrary $x$ in $D$ and write $y=f(x)$. Since $x$ is the only number that maps to $y$ (since $f$ is one-to-one) we have $g(y)=x$, so we find $g(f(x))=g(y)=x$. Hence, both cancelling equations hold, which means that $g=f^{-1}$. We conclude that $f$ has an inverse function with domain $R$.
+Assume that $f$ is one-to-one. Let $y$ in $R$. Since $R$ is the range of $f$, there is at least one $x$ with $f(x)=y$ and since $f$ is one-to-one, there is exactly one such $x$. Then we define $g(y)=x$. By construction, we have $f(g(y))=f(x)=y$, so one of the cancelling equations holds. Now we pick an arbitrary $x$ in $D$ and write $y=f(x)$. Since $x$ is the only number that maps to $y$ (since $f$ is one-to-one) we have $g(y)=x$, so we find $g(f(x))=g(y)=x$. Hence, both cancelling equations hold, which means that $g=f^{-1}$. We conclude that $f$ has an inverse function with domain $R$.
 
 Now we assume that $f$ has an inverse function. Let $a$ and $b$ be different points in the domain of $f$ and suppose that $f(a)=f(b)$. Then we find that
 
@@ -241,13 +274,13 @@ Consider the function $h(x)=\sqrt{x}$. Then we know that $\sqrt{a}=\sqrt{b}$ pre
 
 No wait, that cannot be right, can it? In {prf:ref}`Ex:Inverse:SecondEx` we showed that the function $f(x)=x^2$ did not have an inverse function, so how can it be the inverse function of $h$? The point here is that the functions $f$ and $h^{-1}$ do not have the same domain. For the function $f$ we simply assume it is defined on its maximal domain, which is the real line $\mathbb{R}$. On the other hand, the domain of the inverse function is always equal to the range of the original function. Since the range of $h$ is equal to $[0,\infty)$, this must be the the domain of the function $h^{-1}$. 
 
-Still, why does this difference in domain make that $h^{-1}$ is invertible, while $f$ is not? The reason why $f$ is not invertible is that it is not one-to-one, since for any $x>0$ we have $f(x)=f(-x)$. However, since the domain of $h^{-1}$ does not contain any negative numbers, it does not run into this issue: for each $y$ there is at most one $x\geq 0$ with $x^2=y$. Indeed, the graph of the function $h^{-1}$ is only the right half of the parabola $y=x^2$, so each value of $y$ corresponds to at most one value of $x$. So the function $h^{-1}$ is one-to-one, which is the reason why it does have an inverse function.
+Still, why does this difference in domain make that $h^{-1}$ is invertible, while $f$ is not? The reason why $f$ is not invertible is that it is not one-to-one, since for any $x\neq 0$ we have $f(x)=f(-x)$. However, since the domain of $h^{-1}$ does not contain any negative numbers, it does not run into this issue: for each $y$ there is at most one $x\geq 0$ with $x^2=y$. Indeed, the graph of the function $h^{-1}$ is only the right half of the parabola $y=x^2$, so each value of $y$ corresponds to at most one value of $x$. So the function $h^{-1}$ is one-to-one, which is the reason why it does have an inverse function.
 
 ::::{figure} Images/Fig-Inverse-ThirdEx.png
 :name: Fig:Inverse:ThirdEx
 :class: dark-light
 
-The functions $h(x)=\sqrt{x}$ and $q(x)=x^2$ with their full domain, $h^{-1}(x)=x^2$ with right-half domain, and the line $x = y$. Note that we indeed obtain $x^2$ with a right-half domain by reflecting $\sqrt{x}$ along the line $x = y$.
+The functions $h(x)=\sqrt{x}$ and $q(x)=x^2$ with their full domain, $h^{-1}(x)=x^2$ with domain $[0,\infty)$, and the line $x = y$. Note that we indeed obtain $x^2$ with domain $[0,\infty)$ by reflecting $\sqrt{x}$ along the line $x = y$.
 
 ::::
 
@@ -257,18 +290,18 @@ The functions $h(x)=\sqrt{x}$ and $q(x)=x^2$ with their full domain, $h^{-1}(x)=
 ::::::{prf:remark}
 :label: Remark:Inverse:Restrictdomain
 
-As we experienced in {prf:ref}`Ex:Inverse:ThirdEx` restricting the domain of a function can make it one-to-one, and, therefore, have an inverse function, even if the function does not have an inverse when it is defined on its maximal domain.
+As we experienced in {prf:ref}`Ex:Inverse:ThirdEx`, restricting the domain of a function can make it one-to-one, and, therefore, have an inverse function, even if the function does not have an inverse when it is defined on its maximal domain.
 
-Reversely, we know that the domain of the inverse function is always the range of the original function. Hence, it can happen that the domain of the inverse function is not its maximal domain.
+Conversely, we know that the domain of the inverse function is always the range of the original function. Hence, it can happen that the domain of the inverse function is not its maximal domain.
 
 ::::::
 
-In the preceding examples, we have found the inverse function (whenever it exists) by starting with the equation $y=f(x)$ and trying to express $x$ as a function of $y$. This method works in general, so let us present it as an algorithm.
+In the preceding examples, we found the inverse function (whenever it exists) by starting with the equation $y=f(x)$ and trying to express $x$ as a function of $y$. This method works in general, so let us present it as an algorithm.
 
 ::::::{prf:algorithm} How to find the inverse of a one-to-one function?
 :label: Alg:Inverse:FindInverse
 
-Let $f$ be a one-to-one function. Then the inverse of $f$ can be found as follows.
+Let $f$ be a function that is both onto and one-to-one function. Then the inverse of $f$ can be found as follows.
 
 1. Start with the equation $y=f(x)$;
 2. Solve this equation for $x$ (in terms of $y$);
@@ -280,7 +313,7 @@ Let $f$ be a one-to-one function. Then the inverse of $f$ can be found as follow
 ::::::{prf:example}
 :label: Ex:Inverse:FourthEx
 
-Consider the function $f(x)=x^2-4x$, defined for $x\leq 2$. Then the bottom of the parabola $y=x^2-4x$ is at $x=2$, so the graph of $f$ is the left half of a parabola. Hence, the function $f$ is one-to-one on this domain (note that it is not one-to-one on its maximal domain). We follow the algorithm presented above to find the inverse function of $f$.
+Consider the function $f(x)=x^2-4x=(x-2)^2-4$, defined for $x\leq 2$ with codomain equal to its range, so that it is onto. Then the vertex of the parabola $y=x^2-4x$ is at $x=2$, so the graph of $f$ is the left half of a parabola. Hence, the function $f$ is one-to-one on this domain (note that it is not one-to-one on its maximal domain). We follow the algorithm presented above to find the inverse function of $f$.
 
 We start with the equation $y=f(x)$, i.e. $y=x^2-4x$. We write this equation to $x^2-4x-y=0$, which is a quadratic equation in $x$. As such, we can find the solutions by the quadratic formula or by completing the square and we find
 
@@ -288,18 +321,18 @@ $$
  x=\frac{4\pm\sqrt{(-4)^2-4\cdot1\cdot(-y)}}{2\cdot 1}=2\pm\sqrt{4+y}
 $$
 
-Now we wonder whether we should have $x=2+\sqrt{4+y}$ or $x=2-\sqrt{4+y}$. For this we use that $f$ is only defined for $x\leq 2$, so our choice must ensure that $x\leq 2$. Since a square root is always nonnegative, we must choose $x=2-\sqrt{4+y}$. Now we can interchange the roles of $x$ and $y$ and we find that $f^{-1}(x)=2-\sqrt{4+x}$. 
+Now we wonder whether we should have $x=2+\sqrt{4+y}$ or $x=2-\sqrt{4+y}$. For this, we use that $f$ is only defined for $x\leq 2$, so our choice must ensure that $x\leq 2$. Since a square root is always nonnegative, we must choose $x=2-\sqrt{4+y}$. Now we can interchange the roles of $x$ and $y$, so $y=2-\sqrt{4+x}$, and we find that $f^{-1}(x)=2-\sqrt{4+x}$. 
 
 In order to check that our answer is correct, we first note that the domain of $2-\sqrt{4+x}$ is the interval $[-4,\infty)$, since $\sqrt{4+x}$ is only defined when $4+x\geq 0$, i.e. when $x\geq -4$. This interval is also equal to the range of $f$, since we already noticed that the graph of $f$ is the left half of the parabola $y=x^2-4x$. The lowest value of $y$ on this parabola is at $x=2$, where $y=2^2-4\cdot2=-4$. So indeed, the range of $f$ is also equal to $[-4,\infty)$. Moreover, the cancelling equations hold: for $x\leq 2$ we have
 
 \begin{align*}
- f^{-1}(f(x))&=f^{-1}\left(x^2-4x\right)=2=2-\sqrt{4+x^2-4x}\\ &=2-\sqrt{(x-2)^2}=2-|x-2|=2-(2-x)=x
+ f^{-1}(f(x))&=f^{-1}\left(x^2-4x\right)=2-\sqrt{4+x^2-4x}\\ &=2-\sqrt{(x-2)^2}=2-|x-2|=2-(2-x)=x,
 \end{align*}
 
-since $x\leq 2$ means that $x-2\leq 0$, so $|x-2|=2-x$. Similarly, we find for $y\geq -4$ that
+since $x\leq 2$ implies $|x-2|=2-x$. Similarly, we find for $y\geq -4$ that
 
 \begin{align*}
- f\left(f^{-1}(y)\right)&=f\left(2-\sqrt{4+y}\right)=\left(2-\sqrt{4+y}\right)^2-4\left(2-\sqrt{4+y}\right)\\ &=2-4\sqrt{4+y}+(4+y)-8+4\sqrt{4+y}=y
+ f\left(f^{-1}(y)\right)&=f\left(2-\sqrt{4+y}\right)=\left(2-\sqrt{4+y}\right)^2-4\left(2-\sqrt{4+y}\right)\\ &=4-4\sqrt{4+y}+(4+y)-8+4\sqrt{4+y}=y.
 \end{align*}
 
 So indeed, the domain of $f^{-1}$ is the range of $f$ and both cancelling equations hold, which means that our answer must be correct.
@@ -308,23 +341,23 @@ So indeed, the domain of $f^{-1}$ is the range of $f$ and both cancelling equati
 :name: Fig:Inverse:FourthEx
 :class: dark-light
 
-The functions $f(x)$ and $f^{-1}$ and the line $x = y$. Note that we indeed obtain the graph of $f^{-1}$ by reflecting the graph of $f$ along the line $x = y$.
+The functions $f$ and $f^{-1}$ and the line $x = y$. Note that we indeed obtain the graph of $f^{-1}$ by reflecting the graph of $f$ along the line $x = y$.
 
 ::::
 
 ::::::
 
-Since we can determine whether a function has an inverse function by finding out whether it is one-to-one, it is useful to find some conditions on a function which guarantee the function to be one-to-one. It turns out that strictly monotonic function, i.e. functions that are either strictly increasing on their domain or that are strictly decreasing on their domain, form the most important class of one-to-one functions.
+Since we can determine whether a function has an inverse function by finding out whether it is one-to-one, it is useful to find some conditions on a function which guarantee the function to be one-to-one. It turns out that strictly monotonic functions, i.e. functions that are either strictly increasing or strictly decreasing on their domain, form an important class of one-to-one functions.
 
 ::::::{prf:theorem}
 :label: Thm:Inverse:MonotonicOnetoone
-If a function $f$ is strictly monotonic on its domain, then $f$ is one-to-one. In particular, such a function $f$ is invertible. In such a case, the inverse function is strictly monotonic as well.
+If an onto function $f$ is strictly monotonic on its domain, then $f$ is one-to-one. In particular, such a function $f$ is invertible. In such a case, the inverse function is strictly monotonic as well.
 
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Inverse:MonotonicOnetoone`
 :class: tudproof
-Suppose first that $f$ is strictly increasing on its domain. Then $f(a)<f(b)$ for any $a<b$, but that immediately means that $f$ does not take on the same function value more than once, since $f(a)<f(b)$ implies $f(a)\neq f(b)$. So $f$ must be one-to-one, which means that it must have an inverse function. Now, let $y_1$ and $y_2$ in the domain of $f^{-1}$ with $y_1<y_2$ and write $a=f^{-1}(y_1)$ and $b=f^{-1}(y_2)$. Then we cannot have $a\geq b$, since $a>b$ would imply $y_1=f(a)>f(b)=y_2$, while $a=b$ would imply $y_1=f(a)=f(b)=y_2$. Hence, we must have $a<b$, which means $f^{-1}(y_1)<f^{-1}(y_2)$, which means that $f^{-1}$ is strictly increasing as well.
+Suppose first that $f$ is strictly increasing on its domain. Then $f(x_1)<f(x_2)$ for any $x_1<x_2$, but that immediately means that $f$ does not take on the same function value more than once, since $f(x_1)<f(x_2)$ implies $f(x_1)\neq f(x_2)$. So $f$ must be one-to-one, which means that it must have an inverse function. Now, let $y_1$ and $y_2$ in the domain of $f^{-1}$ with $y_1<y_2$ and write $x_1=f^{-1}(y_1)$ and $x_2=f^{-1}(y_2)$. Then we cannot have $x_1\geq x_2$, since $x_1>x_2$ would imply $y_1=f(x_1)>f(x_2)=y_2$, while $x_1=x_2$ would imply $y_1=f(x_1)=f(x_2)=y_2$. Hence, we must have $x_1<x_2$, which means $f^{-1}(y_1)<f^{-1}(y_2)$, which means that $f^{-1}$ is strictly increasing as well.
 
 The case when $f$ is strictly decreasing is similar.
 :::
@@ -336,23 +369,22 @@ The case when $f$ is strictly decreasing is similar.
 
 ::::::
 
-So far, we have not talked about the codomain of a function in relation to invertibility. We avoided this, by specifying that the domain of the inverse function should be the range of the function. However, if the range of the function is not equal to the codomain, the equation $f(x)=y$ does not have a solution $x$ for each $y$ in the codomain of $f$ (it only has a solution for $y$ in the range of $f$). So, technically speaking, a function can only have an inverse function if the range and the codomain coincide. This is not a real problem in practice though, since we can always change the codomain of the function to be equal to the range, without changing the behaviour of the function. First, we introduce some terminology and then reformulate these considerations into a theorem.
+So far, we have not put emphasis on the codomain of a function in relation to invertibility. However, if the range of the function is not equal to the codomain, i.e. if the function is not onto, the equation $f(x)=y$ does not have a solution $x$ for each $y$ in the codomain of $f$ (it only has a solution for $y$ in the range of $f$). So a function can only have an inverse function if the range and the codomain coincide. This is not a real problem in practice though, since we can always change the codomain of the function to be equal to the range, without changing the behaviour of the function. First, we introduce some terminology and then reformulate these considerations into a theorem.
 
 ::::::{prf:definition}
-:label: Def:Inverse:Onto
-A function $f$ is called **onto** or **surjective** whenever the codomain of $f$ coincides with the range of $f$. That is, the equation $f(x)=y$ should have at least one solution $x$ for each $y$ in the codomain of $f$.
-
+:label: Def:Inverse:Bijective
+A function $f$ is called **bijective** whenever it is both one-to-one and onto.
 ::::::
 
 ::::::{prf:theorem}
 :label: Thm:Inverse:Onto
-A function $f$ is invertible precisely when it is both one-to-one and onto. If it is only one-to-one, it can be made invertible by restricting the codomain to be equal to the range.
+A function $f$ is invertible precisely when it is bijective. If it is only one-to-one, it can be made invertible by restricting the codomain to be equal to the range.
 
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Inverse:Onto
-Consider the function $h(x)=\sqrt{x}$ with domain $[0,\infty)$ and codomain $\mathbb{R}$. Since $\sqrt{x}\geq 0$ for all $x\geq 0$, the range of $f$ cannot coincide with the codomain $\mathbb{R}$. Indeed, the equation $\sqrt{x}=-1$ does not have any solutions for $x\geq 0$. So, this function is not invertible when $\mathbb{R}$ is the codomain. However, in {prf:ref}`Ex:Inverse:ThirdEx` we saw that this function is one-to-one. So, if we restrict the domain of $h$ to be equal to the range of $h$, which is the interval $[0,\infty)$, it becomes invertible as we saw in this previous example.
+Consider the function $h(x)=\sqrt{x}$ with domain $[0,\infty)$ and codomain $\mathbb{R}$. Since $\sqrt{x}\geq 0$ for all $x\geq 0$, the range of $f$ cannot coincide with the codomain $\mathbb{R}$. Indeed, the equation $\sqrt{x}=-1$ does not have any solutions for $x\geq 0$. So, this function is not invertible when $\mathbb{R}$ is the codomain. However, in {prf:ref}`Ex:Inverse:ThirdEx` we saw that this function is one-to-one. So, if we restrict the codomain of $h$ to be equal to the range of $h$, which is the interval $[0,\infty)$, it becomes invertible as we saw in this previous example.
 
 ::::::
 
@@ -364,11 +396,18 @@ In {numref}`Section:Functionsintro` we considered functions of the form $f(x)=b^
 
 ::::::{prf:definition}
 :label: Thm:Inverse:Logarithm
-Let $b>0$ with $b\neq 1$ and consider the function $f(x)=b^x$. Then the inverse function is called the **logarithmic function with base $b$** and is denoted by $f^{-1}(x)=\log_b(x)$. In the special case when $b=e$, we write $\log_e(x)=\ln(x)$ and we call this function the **natural logarithmic function**.
+Let $b>0$ with $b\neq 1$ and consider the function $f(x)=b^x$. Then the inverse function of $f$ is called the **logarithmic function with base $b$** and is denoted by $f^{-1}(x)=\log_b(x)$. 
 
+In the special case when $b=e$, we write $\log_e(x)=\ln(x)$ and we call this function the **natural logarithmic function** or the **Napierian logarithmic function** (named after the Scottish mathematician [John Napier (1550-1617)](https://en.wikipedia.org/wiki/John_Napier)). In the special case when $b=10$, we call this function the **common logarithm** or **Briggsian logarithm** (named after the English mathematician [Henry Briggs (1561-1630)](https://en.wikipedia.org/wiki/Henry_Briggs_(mathematician))).
 ::::::
 
-Logarithms are such commonly used functions that they are usually considered standard functions, in the same vein as polynomials, trigonometric functions or exponential functions. 
+::::{note}
+:name: Note:Inverse:Base10log
+
+In some literature, the notation $\log(x)$ (so without a subscript) is used for the common logarithm $\log_{10}(x)$. In other literature, this same notation is used for the natural logarithm $\ln(x)=\log_e(x)$. To avoid confusion, we will not use this notation. If you use this notation in the Grasple exercises, it will be interpreted as the common logarithm.
+::::
+
+Logarithms are so commonly used that they are usually considered standard functions, in the same vein as polynomials, trigonometric functions or exponential functions. 
 
 Using the definition of the inverse function, we find that $y=\log_b(x)$ precisely when $b^y=x$. So the logarithm is a way to "undo" exponentiation.
 
@@ -385,10 +424,10 @@ $$
 
 ::::::{prf:example}
 :label: Ex:Inverse:Logarithmbasisbasis
-Suppose we want to evaluate $\log_2(8)$. Writing $y=\log_2(8)$, this means that we try to find a number $y$ with $2^y=8$. Luckily, we know that $2^3=8$, so we find that $\log_2(8)=3$.
+Suppose we want to evaluate $\log_2(8)$. Writing $y=\log_2(8)$, this means that we try to find a number $y$ with $2^y=8$. Fortunately, we know that $2^3=8$, so we find that $\log_2(8)=3$.
 ::::::
 
-Let us first analyse the behaviour of logarithmic functions. Since the graph of an inverse function can be obtained by reflecting the graph of the original function along the line $y=x$, we can use our knowledge of the graphs of the exponential function to sketch the graph of logarithmic function.
+Let us first analyse the behaviour of logarithmic functions. Since the graph of an inverse function can be obtained by reflecting the graph of the original function along the line $y=x$, we can use our knowledge of the graphs of exponential functions to sketch the graphs of logarithmic functions.
 
 ::::{figure} Images/Fig-Inverse-Logarithmbasisbasis.png
 :name: Fig:Inverse:Logarithmbasisbasis
@@ -399,7 +438,7 @@ In the left graph the functions $f(x)=2^x$ and $f^{-1}(x)=\log_2(x)$ and the lin
 ::::
 
 
-First we note that the logarithm is only defined for $x>0$. This makes sense since the domain of an inverse function is equal to the range of the original function, which for the function $b^x$ is equal to $(0,\infty)$. Next, we notice that the logarithm $\log_b(x)$ is strictly increasing when $b>1$ while it is strictly decreasing if $0<b<1$. This follows from {prf:ref}`Thm:Inverse:MonotonicOnetoone`, since the function $b^x$ has the same properties. Finally, we notice that for $0<x<1$ the function values $\log_b(x)$ blow up as $x$ get closer to $0$. In the terminology that we will introduce in {numref}`Section:LimitPoint` the logarithm has a vertical asymptote at $x=0$. This is, because the graph of the logarithm is obtained by reflecting the graph of $b^x$ along the line $y=x$, and this function has the property that the function values get arbitrarily close to $0$ as $x$ gets very large (in the terminology of {numref}`Section:Limitinf`, the function $b^x$ has a horizontal asymptote at $y=0$). For $b>1$, the logarithm has a similar property, but the function values will, instead, blow up in the negative direction as $x$ approaches $0$.
+First we note that the logarithm is only defined for $x>0$. This makes sense since the domain of an inverse function is equal to the range of the original function, which for the function $b^x$ is equal to $(0,\infty)$. Next, we recall that the logarithm $\log_b(x)$ is strictly increasing when $b>1$ while it is strictly decreasing if $0<b<1$. This follows from {prf:ref}`Thm:Inverse:MonotonicOnetoone`, since the function $b^x$ has the same properties. Finally, we notice that for $0<b<1$ the function values $\log_b(x)$ blow up as $x$ gets closer to $0$. In the terminology that we will introduce in {numref}`Section:LimitPoint` the logarithm has a vertical asymptote at $x=0$. This is because the graph of the logarithm is obtained by reflecting the graph of $b^x$ along the line $y=x$, and this function has the property that the function values get arbitrarily close to $0$ as $x$ gets very large (in the terminology of {numref}`Section:Limitinf`, the function $b^x$ has a horizontal asymptote at $y=0$). For $b>1$, the logarithm has a similar property, but the function values will, instead, blow up in the negative direction as $x$ approaches $0$.
 
 
 
@@ -418,10 +457,10 @@ Let $b>0$ with $b\neq 1$. Then for $x>0$, $y>0$ and a real number $p$ we have
 
 :::{admonition} Proof of {prf:ref}`Thm:Inverse:Logarithmcomputationrules`
 :class: tudproof
-Since the logarithm is the inverse function of the exponential function, we find that $\log_b(xy)$ is the unique number $z$ with $b^z=xy$. We will show that $\log_b(x)+\log_b(y)$ also has this property. Indeed, we find, using the standard computation rules for exponential functions
+Since a logarithm is the inverse function of an exponential function, we find that $\log_b(xy)$ is the unique number $z$ with $b^z=xy$. We will show that $\log_b(x)+\log_b(y)$ also has this property. Indeed, we find, using the standard computation rules for exponential functions, that
 
 $$
- b^{\log_b(x)+\log_b(y)}=b^{\log_b(x)}b^{\log_b(y)}=xy
+ b^{\log_b(x)+\log_b(y)}=b^{\log_b(x)}b^{\log_b(y)}=xy,
 $$
 
 using the cancelling equations for the logarithm and the exponential function. As such, $z=\log_b(x)+\log_b(y)$ also satisfies $b^z=xy$, so we must have $\log_b(xy)=\log_b(x)+\log_b(y)$.
@@ -429,7 +468,7 @@ using the cancelling equations for the logarithm and the exponential function. A
 We first prove the third property, since the second follows from combining the first and the third. As before, $\log_b\left(x^p\right)$ is the unique number $z$ with $b^z=x^p$. Using the standard computation rules for exponential functions, we find
 
 $$
- b^{p\log_b(x)}=\left(b^{\log_b(x)}\right)^p=x^p
+ b^{p\log_b(x)}=\left(b^{\log_b(x)}\right)^p=x^p.
 $$
 
 Hence, $z=p\log_b(x)$ also satisfies $b^z=x^p$, so we must have $\log_b\left(x^p\right)=p\log_b(x)$.
@@ -437,7 +476,7 @@ Hence, $z=p\log_b(x)$ also satisfies $b^z=x^p$, so we must have $\log_b\left(x^p
 To prove the second property, we rewrite and use the first and third properties to find
 
 \begin{align*}
- \log_b\left(\frac{x}{y}\right)&=\log_b\left(x\frac{1}{y}\right)=\log_b(x)+\log_b\left(\frac{1}{y}\right)\\ &=\log_b(x)+\log_b\left(y^{-1}\right)=\log_b(x)-\log_b(y)
+ \log_b\left(\frac{x}{y}\right)&=\log_b\left(x\frac{1}{y}\right)=\log_b(x)+\log_b\left(\frac{1}{y}\right)\\ &=\log_b(x)+\log_b\left(y^{-1}\right)=\log_b(x)-\log_b(y).
 \end{align*}
 
 :::
@@ -448,7 +487,7 @@ Suppose we want to simplify the expression $\ln\left(\frac{x^3}{x\sqrt{1+x}}\rig
 
 $$
  \begin{array}{lcl}\ln\left(\frac{x^3}{(x+2)\sqrt{1+x}}\right)&=&\ln\left(x^3\right)-\ln\left((x+2)\sqrt{1+x}\right)\\
- &=&\ln\left(x^3\right)-\ln\left(x+2\right)-\ln\left(\sqrt{1+x}\right)\\ &=&3\ln(x)-\ln\left(x+2\right)-\ln\left(\left(1+x\right)^{\frac{1}{2}}\right)\\ &=&3\ln(x)-\ln\left(x+2\right)-\frac{1}{2}\ln\left(1+x\right) \end{array}
+ &=&\ln\left(x^3\right)-\ln\left(x+2\right)-\ln\left(\sqrt{1+x}\right)\\ &=&3\ln(x)-\ln\left(x+2\right)-\ln\left(\left(1+x\right)^{\frac{1}{2}}\right)\\ &=&3\ln(x)-\ln\left(x+2\right)-\frac{1}{2}\ln\left(1+x\right). \end{array}
 $$
 
 Note that we cannot simplify this expression any further, since there are no rules to simplify an expression of the form $\ln(a+b)$.
@@ -459,38 +498,38 @@ Note that we cannot simplify this expression any further, since there are no rul
 Suppose we want to solve the equation $2^{x-3}=5$. Since $\log_2(x)$ is the inverse function of $2^x$ we find that $2^{x-3}=5$ precisely when $x-3=\log_2(5)$. Alternatively, we can find this equation by taking the $\log_2$ of both sides of the equation $2^{x-3}=5$. Since $x-3=\log_2(5)$ we find $x=3+\log_2(5)$, which cannot be simplified any further. Using a calculator, we find $3+\log_2(5)\approx 5.4219...$.
 ::::::
 
-Actually, the base of the logarithm does not play as an important role as you might be tempted to think at first. For example, consider the two numbers $x=\log_2(64)$ and $y=\log_3(64)$. $x$ is the unique number with $2^x=64$, while $y$ is the unique number with $8^y=64$. Now we notice that
+Actually, the base of the logarithm does not play as important a role as you might be tempted to think at first. For example, consider the two numbers $x=\log_2(64)$ and $y=\log_8(64)$. Then $x$ is the unique number with $2^x=64$, while $y$ is the unique number with $8^y=64$. Now we notice that
 
 $$
  64=8^y=\left(2^3\right)^y=2^{3y}
 $$
 
-which must mean that $3y=x$. Of course, we knew this already, since the unique solution of $2^x=64$ is $x=6$, while the unique solution of $8^y=64$ is $y=6$ and we indeed have $3\cdot 2=6$. However, this calculation works more general, since for $z>0$ we have
+which must mean that $3y=x$. Of course, we knew this already, since the unique solution of $2^x=64$ is $x=6$, while the unique solution of $8^y=64$ is $y=2$ and we indeed have $3\cdot 2=6$. However, this calculation works more generally, since for $z>0$ we have
 
 $$
  z=8^{\log_8(z)}=\left(2^3\right)^{\log_8(z)}=2^{3\log_8(z)}
 $$
 
-which must mean that $\log_2(z)=3\log_8(z)$. So for the functions $f(x)=\log_2(x)$ and $g(x)=\log_8(z)$ we find $f=3g$, so the one logarithm is a constant multiple of the other. Now, where does this number $3$ come from? Well, in the computation above we note that it comes from the fact that $8=2^3$. This equation can be written to $3=\log_2(8)$. So, in fact, we find that for all $x>0$ we have
+which must mean that $\log_2(z)=3\log_8(z)$. So for the functions $f(x)=\log_2(x)$ and $g(x)=\log_8(x)$ we find $f=3g$, so the one logarithm is a constant multiple of the other. Now, where does this number $3$ come from? Well, in the computation above we note that it comes from the fact that $8=2^3$. This equation can be written to $3=\log_2(8)$. So, in fact, we find that for all $x>0$ we have
 
 $$
  \log_2(x)=\log_2(8)\log_8(x)
 $$
 
-The general version of this result is stated as follows.
+The general version of this result is as follows.
 
 ::::::{prf:theorem} Change of base in a logarithm
 :label: Thm:Inverse:Logarithmbasechange
 Consider two numbers $a>0$ and $b>0$ with $a\neq1$ and $b\neq 1$. Then, for all $x>0$ we have
 
 $$
- \log_b(x)=\log_b(a)\log_a(x)
+ \log_b(x)=\log_b(a)\log_a(x).
 $$
 
 As a consequence, each logarithm can be expressed in terms of the natural logarithm by writing
 
 $$
- \log_a(x)=\frac{\ln(x)}{\ln(a)}
+ \log_a(x)=\frac{\ln(x)}{\ln(a)}.
 $$
 
 ::::::
