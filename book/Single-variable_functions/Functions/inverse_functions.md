@@ -550,11 +550,11 @@ as desired. The consequence directly follows by taking $b=e$.
 
 ## Inverse trigonometric functions
 
-When trying to find inverses of the common trigonometric functions (sine, cosine and tangent) we run into the ever so slight problem that these functions are not one-to-one, so they not have an inverse function. Indeed, for any value of $x$ we have $\sin(x)=\sin(x+2\pi)$, $\cos(x)=\cos(x+2\pi)$ and $\tan(x)=\tan\left(x+\pi\right)$ (the latter one assuming $\tan(x)$ exists for this value of $x$), so these functions definitely take on some function values more than once. In fact, each number in the range is taken on infinitely often by each of these three functions. Luckily, we have noticed before in {prf:ref}`Remark:Inverse:Restrictdomain` that we can restrict the domain of a function to make it invertible. 
+When trying to find inverses of the common trigonometric functions (sine, cosine and tangent) we run into the ever so slight problem that these functions are not one-to-one, so they do not have an inverse function. Indeed, for any value of $x$ we have $\sin(x)=\sin(x+2\pi)$, $\cos(x)=\cos(x+2\pi)$ and $\tan(x)=\tan\left(x+\pi\right)$ (the latter one assuming $\tan(x)$ exists for this value of $x$), so these functions definitely take on function values more than once. In fact, each number in the range is taken on infinitely often by each of these three functions. Fortunately, we have noticed before in {prf:ref}`Remark:Inverse:Restrictdomain` that we can restrict the domain of a function to make it invertible. 
 
-So which part of the domain should we choose? Well, we do not want to make sure that we do not lose too much behaviour of the function, so at the very least we want to ensure that the range does not change, so that we do not suddenly go from $\sin(x)=y$ having infinitely many solutions to the same equation having no solutions in the restricted domain. Moreover, for values of $x$ close to $0$ we have the geometric interpretation of $x$ as an angle, so it makes sense to include $0$ in the restricted domains.
+So which part of the domain should we choose? Well, we want to make sure that we do not lose too much behaviour of the function, so at the very least we want to ensure that the range does not change, so that we do not suddenly go from $\sin(x)=y$ having infinitely many solutions to the same equation having no solutions in the restricted domain. Moreover, for values of $x$ close to $0$ we have the geometric interpretation of $x$ as an angle, so it makes sense to include $0$ in the restricted domains.
 
-Let us start with $f(x)=\sin(x)$. We want to chose an interval as our domain that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $[-1,1]$. For this, we actually only have one single choice: we restrict the domain to the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$. Indeed, the geometrical interpretation of the sine (see {numref}`Fig:Trigonometry:LawOfSines`) tells us that for $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$ the function $\sin(x)$ takes on each value between $-1$ and $1$ exactly once. This can also be seen in the graph of the function.
+Let us start with $f(x)=\sin(x)$. We want to choose an interval as our domain that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $[-1,1]$. For this, we actually only have one single choice: we restrict the domain to the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$. Indeed, the geometrical interpretation of the sine (see {numref}`Fig:Trigonometry:LawOfSines`) tells us that for $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$ the function $\sin(x)$ takes on each value between $-1$ and $1$ exactly once. This can also be seen in the graph of the function.
 
 ::::{figure} Images/Fig-Inverse-RestrictSin.png
 :name: Fig:Inverse:RestrictSin
@@ -564,7 +564,7 @@ In the left graph the function $f(x)=\sin(x)$ and in the right graph the functio
 
 ::::
 
-Now we turn our attention to $f(x)=\cos(x)$. Again, we want to chose an interval as our domain that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $[-1,1]$. However, the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ does not work in this case, since 1) $f$ is not one-to-one on this interval, because, for instance, $\cos\left(\frac{\pi}{4}\right)=\cos\left(-\frac{\pi}{4}\right)$ and 2) the range changes when we restrict to this interval, since for $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$ we have $\cos(x)\geq 0$. So we should choose something different. Keeping the geometric interpretation of the cosine in mind, there are actually two choices that work: the intervals $[-\pi,0]$ and $[0,\pi]$. For convenience, we choose the interval $[0,\pi]$, since it is ever so slightly nicer to work with positive input values than with negative ones. We can see that this choice works in the graph of the function.
+Now we turn our attention to $f(x)=\cos(x)$. Again, we want to choose an interval as our domain that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $[-1,1]$. However, the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ does not work in this case, since 1) $f$ is not one-to-one on this interval, because, for instance, $\cos\left(\frac{\pi}{4}\right)=\cos\left(-\frac{\pi}{4}\right)$ and 2) the range changes when we restrict to this interval, since for $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$ we have $\cos(x)\geq 0$. So we should choose something different. Keeping the geometric interpretation of the cosine in mind, there are actually two choices that work: the intervals $[-\pi,0]$ and $[0,\pi]$. For convenience, we choose the interval $[0,\pi]$, since it is a little nicer to work with positive input values than with negative ones. We can see that this choice works in the graph of the function.
 
 ::::{figure} Images/Fig-Inverse-RestrictCos.png
 :name: Fig:Inverse:RestrictCos
@@ -574,7 +574,7 @@ In the left graph the function $f(x)=\cos(x)$ and in the right graph the functio
 
 ::::
 
-Finally, we consider $f(x)=\tan(x)$. Here the range is actually the entire real line $\mathbb{R}$, so our choice should not change this range. As was the case with the sine, there is only one choice for an interval that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $\mathbb{R}$ and that choice is the open interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$. As before, we can see that this choice works in the graph of the function.
+Finally, we consider $f(x)=\tan(x)$. Here the range is actually the entire real line $\mathbb{R}$, so want to make sure we cover the entire range. As was the case with the sine, there is only one choice for an interval that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $\mathbb{R}$ and that choice is the open interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$. As before, we can see that this choice works in the graph of the function.
 
 ::::{figure} Images/Fig-Inverse-RestrictTan.png
 :name: Fig:Inverse:RestrictTan
@@ -588,17 +588,17 @@ Since we have now found intervals on which the trigonometric functions are one-t
 
 ::::::{prf:definition} Inverse trigonometric functions
 :label: Def:Inverse:Inversetrig
-The inverse of the function $\sin(x)$, restricted to the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$, is called the **arcsine function** or **inverse sine function** and is denoted by $\arcsin(x)$. That is, we have $\sin(x)=y$ precisely when $x=\arcsin(y)$ for $-\frac{\pi}{2}\leq x\leq \frac{\pi}{2}$ and $-1\leq y\leq 1$.
+The inverse of the function $\sin(x)$, restricted to the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$, is called the **arcsine function** or **inverse sine function** and is denoted by $\arcsin(x)$. That is, we have $x=\arcsin(y)$ precisely when $\sin(x)=y$ for $-\frac{\pi}{2}\leq x\leq \frac{\pi}{2}$ and $-1\leq y\leq 1$.
 
-The inverse of the function $\cos(x)$, restricted to the interval $\left[0,\pi\right]$, is called the **arccosine function** or **inverse cosine function** and is denoted by $\arccos(x)$. That is, we have $\cos(x)=y$ precisely when $x=\arccos(y)$ for $0\leq x\leq \pi$ and $-1\leq y\leq 1$.
+The inverse of the function $\cos(x)$, restricted to the interval $\left[0,\pi\right]$, is called the **arccosine function** or **inverse cosine function** and is denoted by $\arccos(x)$. That is, we have $x=\arccos(y)$ precisely when $\cos(x)=y$ for $0\leq x\leq \pi$ and $-1\leq y\leq 1$.
 
-The inverse of the function $\tan(x)$, restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, is called the **arctangent function** or **inverse tangent function** and is denoted by $\arctan(x)$. That is, we have $\tan(x)=y$ precisely when $x=\arctan(y)$ for $-\frac{\pi}{2}<x< \frac{\pi}{2}$ and $y$ in $\mathbb{R}$.
+The inverse of the function $\tan(x)$, restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, is called the **arctangent function** or **inverse tangent function** and is denoted by $\arctan(x)$. That is, we have $x=\arctan(y)$ precisely when $\tan(x)=y$ for $-\frac{\pi}{2}<x< \frac{\pi}{2}$ and $y$ in $\mathbb{R}$.
 ::::::
 
 ::::::{prf:notation} 
 :label: Notation:Inverse:Inversetrig
 
-In some literature, the notations $\sin^{-1}(x)$, $\cos^{-1}(x)$ and $\tan^{-1}(x)$ are used to denote $\arcsin(x)$, $\arccos(x)$ and $\arctan(x)$ respectively. Since it is very easy to mistakenly read $\sin^{-1}(x)$ as $\dfrac{1}{\sin(x)}$, while these are very different functions, we will avoid these notations like the plague.
+In some literature (and most calculators), the notations $\sin^{-1}(x)$, $\cos^{-1}(x)$ and $\tan^{-1}(x)$ are used to denote $\arcsin(x)$, $\arccos(x)$ and $\arctan(x)$ respectively. Since it is very easy to mistakenly read $\sin^{-1}(x)$ as $\dfrac{1}{\sin(x)}$, while these are very different functions, we will avoid these notations like the plague.
 ::::::
 
 Since the graph of an inverse function is obtained by reflecting the graph of the original function along the line $y=x$, we can quickly sketch the graphs of the inverse trigonometric functions.
@@ -607,7 +607,7 @@ Since the graph of an inverse function is obtained by reflecting the graph of th
 :name: Fig:Inverse:Inversetrig
 :class: dark-light
 
-The three functions $sin(x)$ (left), $cos(x)$ (middle) and $tan(x)$ (right) and their inverses and the line $x = y$.
+The three functions $\sin(x)$ (left), $\cos(x)$ (middle) and $\tan(x)$ (right) and their inverses and the line $x = y$.
 
 ::::
 
@@ -634,21 +634,37 @@ The cancelling equations for the (inverse) trigonometric functions **only** hold
 
 ::::::{prf:example} 
 :label: Ex:Inverse:Inversetrig2
-Suppose we want to simplify $\displaystyle\arctan\left(\tan\left(\frac{5\pi}{4}\right)\right)$. Although it is very tempting to think to think that the answer should be $\displaystyle\frac{5\pi}{4}$, this is not correct. Indeed, the arctangent only outputs values between $\displaystyle-\frac{\pi}{2}$ and $\displaystyle\frac{\pi}{2}$, so it can never output $\displaystyle\frac{5\pi}{4}$. In order to find the correct value, we notice that the tangent is periodic with period $\pi$, so we can compute
+Suppose we want to simplify $\displaystyle\arctan\left(\tan\left(\frac{5\pi}{4}\right)\right)$. Although it is very tempting to think to think that the answer should be $\displaystyle\frac{5\pi}{4}$, this is not correct. Indeed, the arctangent only outputs values between $\displaystyle-\frac{\pi}{2}$ and $\displaystyle\frac{\pi}{2}$, so it can never output $\displaystyle\frac{5\pi}{4}$. In order to find the correct value, we notice that the tangent is periodic with fundamental period $\pi$, so we can compute
 
 $$
- \arctan\left(\tan\left(\frac{5\pi}{4}\right)\right)=\arctan\left(\tan\left(\frac{5\pi}{4}-\pi\right)\right)=\arctan\left(\tan\left(\frac{\pi}{4}\right)\right)
+ \arctan\left(\tan\left(\frac{5\pi}{4}\right)\right)=\arctan\left(\tan\left(\frac{5\pi}{4}-\pi\right)\right)=\arctan\left(\tan\left(\frac{\pi}{4}\right)\right).
 $$
 
 Notice that $\dfrac{\pi}{4}$ is in between $-\dfrac{\pi}{2}$ and $\dfrac{\pi}{2}$ so the cancelling equations are valid there. As such, we find
 
 $$ 
- \arctan\left(\tan\left(\frac{5\pi}{4}\right)\right)=\arctan\left(\tan\left(\frac{\pi}{4}\right)\right)=\frac{\pi}{4}
+ \arctan\left(\tan\left(\frac{5\pi}{4}\right)\right)=\arctan\left(\tan\left(\frac{\pi}{4}\right)\right)=\frac{\pi}{4}.
 $$
 
 ::::::
 
-Finally, we study expressions like $\cos(\arcsin(x))$. It turns out that often these type of expressions can be simplified into an expression that does not involve any inverse trigonometric functions. In the following example, we will show two different methods of approaching these types of problems.
+::::::{prf:example} 
+:label: Ex:Inverse:Inversetrig3
+Suppose we want to simplify $\displaystyle\arcsin\left(\sin\left(\frac{11\pi}{12}\right)\right)$. Not falling in the same trap that was pointed out in {prf:ref}`Ex:Inverse:Inversetrig2`, we already know that the answer is definitely not going to be $\dfrac{11\pi}{12}$. However, the method we used in {prf:ref}`Ex:Inverse:Inversetrig2` does not work here. Indeed, the fundamental period of the sine is $2\pi$ and if we subtract $2\pi$ from $\dfrac{11\pi}{12}$, we obtain $-\dfrac{13\pi}{12}$, which is still not in the region where the cancelling equations hold. Instead, we can use another property of the sine. Indeed, {prf:ref}`Thm:Trigonometry:SupplementaryAngles` tells us that $\sin\left(\pi-\theta\right)=\sin(\theta)$ for any angle $\theta$. This identity can be used to get us into the region where the cancelling equations hold. Indeed, we obtain that 
+
+$$
+ \sin\left(\frac{11\pi}{12}\right)=\sin\left(\pi-\frac{11\pi}{12}\right)=\sin\left(\frac{\pi}{12}\right)
+$$
+
+and $\dfrac{\pi}{12}$ is in the region where the cancelling equations hold. Hence, we obtain
+
+$$
+ \arcsin\left(\sin\left(\frac{11\pi}{12}\right)\right)=\arcsin\left(\sin\left(\frac{\pi}{12}\right)\right)=\frac{\pi}{12}.
+$$
+
+::::::
+
+Finally, we study expressions like $\cos(\arcsin(x))$. It turns out that these type of expressions can often be simplified into an expression that does not involve any inverse trigonometric functions. In the following example, we will show two different methods of approaching these types of problems.
 
 ::::::{prf:example} 
 :label: Ex:Inverse:InversetrigSimplify
@@ -670,13 +686,13 @@ Initial triangle with sides $a$, $b$, $c$ and angle $y$ indicated.
 :::::
 
 $$
- x=\sin(y)=\frac{a}{c}
+ x=\sin(y)=\frac{a}{c}.
 $$
 
-So we know that the ratio between $a$ and $c$ must be $x$, but we still have some freedom in how we choose them. Indeed, we can scale the triangle without changing the angles and all of these triangles are valid representations of the current situation. For convenience, we set $c=1$, but there are other choices possible that, in the end, give the same result. This means that $a=c\cdot x=1\cdot x=x$. Because of all the talk about triangles, you might have almost forgotten by now that the goal was to simplify $\cos(\arcsin(x))=\cos(y)$. Luckily, we can also use the geometrical interpretation of the cosine to find
+So we know that the ratio between $a$ and $c$ must be $x$, but we still have some freedom in how we choose them. Indeed, we can scale the triangle without changing the angles and all of these triangles are valid representations of the current situation. For convenience, we set $c=1$, but there are other choices possible that, in the end, give the same result. This means that $a=c\cdot x=1\cdot x=x$. Because of all the talk about triangles, you might have almost forgotten by now that the goal was to simplify $\cos(\arcsin(x))=\cos(y)$. Fortunately, we can also use the geometrical interpretation of the cosine to find
 
 $$
- \cos(y)=\frac{b}{c}=\frac{b}{1}=b
+ \cos(y)=\frac{b}{c}=\frac{b}{1}=b.
 $$
 
 So how do we find the adjacent side $b$? By using the Pythagorean theorem, of course (you thought you were reading a book on advanced mathematics, but really, we are just doing Pythagoras here). As such, we must have $b=\sqrt{c^2-a^2}=\sqrt{1-x^2}$. We conclude that
@@ -691,23 +707,31 @@ Final triangle with sides $x$, $\sqrt{1-x^2}$, $1$ and angle $y$ indicated.
 ::::
 
 $$
- \cos(\arcsin(x))=\cos(y)=b=\sqrt{1-x^2}
+ \cos(\arcsin(x))=\cos(y)=b=\sqrt{1-x^2}.
 $$
 
-Now what happens if $-\frac{\pi}{2}\leq y\leq 0$? In that case, the triangle we drew does not make as much sense, but, luckily, we have already done the hard work. First we suppose that $y\neq 0$. Notice that in that case $0<-y<\frac{\pi}{2}$ and $\sin(-y)=-\sin(y)=-x$, so $-y=\arcsin(-x)$, so by the previous computation we have $\cos(-y)=\cos(\arcsin(-x))=\sqrt{1-(-x)^2}$. As such, we must have
+Now what happens if $-\frac{\pi}{2}< y<0$? In that case, the triangle we drew does not make as much sense, but, fortunately, we have already done the hard work. Notice that in that case $0<-y<\frac{\pi}{2}$ and $\sin(-y)=-\sin(y)=-x$, so $-y=\arcsin(-x)$, so by the previous computation we have $\cos(-y)=\cos(\arcsin(-x))=\sqrt{1-(-x)^2}$. As such, we must have
 
 $$
- \cos(\arcsin(x))=\cos(y)=\cos(-y)=\sqrt{1-(-x)^2}=\sqrt{1-x^2}
+ \cos(\arcsin(x))=\cos(y)=\cos(-y)=\sqrt{1-(-x)^2}=\sqrt{1-x^2}.
 $$
 
-Finally, if $y=0$ then $x=0$, since $x=\sin(0)=0$. In that case $\cos(\arcsin(x))=\cos(\arcsin(0))=\cos(0)=1=\sqrt{1-0^2}=\sqrt{1-x^2}$. So for all relevant values of $x$ we have $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions.  
+All that remains are the cases $y=-\frac{\pi}{2}$, $y=0$ and $y=\frac{\pi}{2}$. 
+
+If $y=-\frac{\pi}{2}$ then $x=-1$, since $x=\sin\left(-\frac{\pi}{2}\right)=-1$. In that case $\cos(\arcsin(x))=\cos(\arcsin(-1))=\cos\left(-\frac{\pi}{2}\right)=0=\sqrt{1-(-1)^2}=\sqrt{1-x^2}$. 
+
+If $y=0$ then $x=0$, since $x=\sin(0)=0$. In that case $\cos(\arcsin(x))=\cos(\arcsin(0))=\cos(0)=1=\sqrt{1-0^2}=\sqrt{1-x^2}$. 
+
+Finally, if $y=\frac{\pi}{2}$ then $x=1$, since $x=\sin\left(\frac{\pi}{2}\right)=-1$. In that case $\cos(\arcsin(x))=\cos(\arcsin(1))=\cos\left(\frac{\pi}{2}\right)=0=\sqrt{1-1^2}=\sqrt{1-x^2}$.
+
+So for all relevant values of $x$ we have $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions.  
 
 **Method 2 (using trigonometric identities)**
 
-Recall that we wrote $y=\arcsin(x)$ and that we have $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$ and $\sin(y)=x$. Using the standard identity $\cos(\theta)^2+\sin(\theta)^2$, we find
+Recall that we wrote $y=\arcsin(x)$ and that we had $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$ and $\sin(y)=x$. Using the standard identity $\cos(\theta)^2+\sin(\theta)^2$, we find
 
 $$
- \cos(\arcsin(x))^2=\cos(y)^2=1-\sin(y)^2=1-x^2
+ \cos(\arcsin(x))^2=\cos(y)^2=1-\sin(y)^2=1-x^2.
 $$
 
 ::::{figure} Images/Fig-Inverse-Simplify3.png
