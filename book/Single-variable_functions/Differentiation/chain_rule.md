@@ -1,5 +1,4 @@
 (Sec:Differentiation:ChainRule)=
-
 # Chain rule
 
 In this section we cover:

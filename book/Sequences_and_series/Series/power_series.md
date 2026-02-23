@@ -38,13 +38,10 @@ The power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is a *geometric series* w
 ::::::{prf:example}
 The series $\displaystyle\sum_{n=1}^{\infty}\frac{(x-2)^{n-1}}{n}$ is a power series about $2$. Note that the series converges for $x=2$ (with sum $1$). For $x\neq2$ we might apply the ratio test: let $a_n=\displaystyle\frac{(x-2)^{n-1}}{n}$, then we have:
 
-$$ 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(x-2)^n}{n+1}\cdot\frac{n}{(x-2)^{n-1}}\right|\\
 &=\lim\limits_{n\to\infty}\frac{n}{n+1}\cdot|x-2|=|x-2|.
-\end{align*} 
-$$ 
- 
+\end{align*}
 Hence, the series is absolutely convergent if $|x-2|<1$ and is divergent if $|x-2|>1$. The ratio test is inconclusive if  $|x-2|=1$.
 
 For $x=3$ the series equals the harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is divergent.
@@ -69,6 +66,15 @@ there are only three possibilities:
 2) The series converges for all $x\in\mathbb{R}$;
 
 3) There is a positive number $R$ such that the series absolutely converges for $|x-a|<R$ and diverges for $|x-a|>R$.
+::::::
+
+::::::{admonition} Proof of {prf:ref}`Thm:Series:PowerSeries`
+:class: tudproof, dropdown
+If the power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ absolutely converges for $x=b$, then $\displaystyle\sum_{n=0}^{\infty}\left|c_n(b-a)^n\right|$ converges. Then the {prf:ref}`comparison test <Thm:Series:DirectComparisonTest>` implies that $\displaystyle\sum_{n=0}^{\infty}\left|c_n(x-a)^n\right|$ converges for all $x$ such that $|x-a|<|b-a|$.
+
+If there are values of $x$ for which the series diverges, then there exists a maximum value of $|b-a|=R$ such that the series absolutely converges for $|x-a|<R$.
+
+This proves the theorem.
 ::::::
 
 ::::::{prf:definition}
@@ -109,28 +115,24 @@ This implies that the series absolutely converges for $|x| < 1$ and diverges for
 
 4) The series $\displaystyle\sum_{n=0}^{\infty}\frac{(3-x)^n}{n+1}$ is a power series about $3$. Hence, the series converges for $x=3$ (with sum $1$). For $x\neq3$ we might apply the ratio test: let $a_n=\displaystyle\frac{(3-x)^n}{n+1}$, then we have:
 
-$$ 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(3-x)^{n+1}}{n+2}\cdot\frac{n+1}{(3-x)^n}\right|\\
 &=\lim\limits_{n\to\infty}\frac{n+1}{n+2}\cdot|3-x|=|3-x|.
-\end{align*} 
-$$ 
- 
+\end{align*}
 Hence, the series is absolutely convergent if $|3-x| < 1$ and is divergent if $|3-x| > 1$. So the radius of convergence is $R=1$. For $x=2$ the series equals the harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n+1}$, which is divergent and for $x=4$ the series equals the alternating harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}$, which is (conditionally) convergent. Hence, the interval of convergence is $(2,4]$.
 
 5) The series $\displaystyle\sum_{n=1}^{\infty}n\left(\frac{x-5}{2}\right)^n$ is a power series about $5$. Hence, the series converges for $x=5$ (with sum $0$). For $x\neq5$ we might apply the ratio test: let $a_n=\displaystyle n\left(\frac{x-5}{2}\right)^n$, then we have:
 
-$$ 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|(n+1)\left(\frac{x-5}{2}\right)^{n+1}\cdot\frac{1}{n}\left(\frac{2}{x-5}\right)^n\right|\\
 &=\lim\limits_{n\to\infty}\frac{n+1}{n}\cdot\left|\frac{x-5}{2}\right|=\left|\frac{x-5}{2}\right|.
-\end{align*} 
-$$ 
- 
+\end{align*}
 Hence, the series is absolutely convergent if $\displaystyle\left|\frac{x-5}{2}\right| < 1$ or $|x-5| < 2$ and is divergent if $\displaystyle\left|\frac{x-5}{2}\right| > 1$ or $|x-5| > 2$. So the radius of convergence is $R=2$. For $x=7$ the series reads $\displaystyle\sum_{n=1}^{\infty}n$, which is divergent and for $x=3$ the series reads $\displaystyle\sum_{n=1}^{\infty}n(-1)^n$, which is divergent as well. Hence, the interval of convergence is $(3,7)$.
 ::::::
 
 ::::::{prf:example} Bessel functions
+:label: Ex:Series:Bessel
+
 Bessel functions are defined in terms of power series. The German mathematician [Friedrich Wilhelm Bessel (1784-1846)](https://en.wikipedia.org/wiki/Friedrich_Wilhelm_Bessel) introduced these functions when solving Kepler's equation for describing planetary motion. Later, these Bessel functions have been applied in many different physical situations, including the temperature distribution in a circular plate and the shape of a vibrating drumhead.
 
 :::{figure} Images/bessel.gif
@@ -252,13 +254,10 @@ $$
 
 and
 
-$$
 \begin{align*}
 \int f(x)\,dx&=C+c_0(x-a)+\frac{1}{2}c_1(x-a)^2+\frac{1}{3}c_2(x-a)^3+\cdots\\
 &=C+\sum_{n=0}^{\infty}\frac{c_n}{n+1}(x-a)^{n+1}.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{note}
@@ -268,15 +267,13 @@ After differentiating or integrating a power series representation of a function
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Series:LogTwo
 Consider the power series representation $\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$. Differentiation leads to
 
-$$
 \begin{align*}
 &-\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^nx^{n-1}\\
 &{}\quad\Longleftrightarrow\quad\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^{n-1}x^{n-1}=\sum_{n=0}^{\infty}(n+1)(-1)^nx^n.
 \end{align*}
-$$
-
 Note that this power series is only convergent for $-1<x<1$. For instance, this implies that
 
 $$
@@ -377,23 +374,17 @@ Consider the integral $\displaystyle\int_0^{0.5}\frac{x^2}{1+x^8}\,dx$.
 
 It is difficult to evaluate this integral exactly. However, we may use a power series representation of the integrand to find an approximation. Start with $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$. This implies that
 
-$$ 
 \begin{align*}
 &\frac{1}{1+x^8}=\sum_{n=0}^{\infty}(-1)^nx^{8n}\quad\Longrightarrow\quad\frac{x^2}{1+x^8}=\sum_{n=0}^{\infty}(-1)^nx^{8n+2}\\
 &{}\quad\Longrightarrow\quad\int\frac{x^2}{1+x^8}\,dx=C+\sum_{n=0}^{\infty}\frac{(-1)^n}{8n+3}x^{8n+3},\quad |x| < 1. 
 \end{align*}
-$$ 
- 
 This implies that
 
-$$
 \begin{align*}
 \int_0^{0.5}\frac{x^2}{1+x^8}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n(0.5)^{8n+3}}{8n+3}\\
 &=\frac{(0.5)^3}{3}-\frac{(0.5)^{11}}{11}+\frac{(0.5)^{19}}{19}-\frac{(0.5)^{27}}{27}+\cdots\\
 &\approx\frac{(0.5)^3}{3}=0.041666\ldots.
 \end{align*}
-$$
-
 ::::::
 
 :::{admonition} Remarkable decimal fractions (bonus material)
@@ -422,13 +413,10 @@ $$
 
 Since we have $10^9-1=999999999=9^2\cdot12345679$, this implies that
 
-$$
 \begin{align*}
 (10^9-1)p=12345679&\quad\Longleftrightarrow\quad9^2\cdot12345679p=12345679\\
 &\quad\Longleftrightarrow\quad p=\frac{1}{9^2}=\frac{1}{81}.
 \end{align*}
-$$
-
 Similarly, the substitution $x=\displaystyle\frac{1}{100}$ leads to $\displaystyle\sum_{n=1}^{\infty}\frac{n}{100^{n+1}}=\left(\frac{1}{99}\right)^2=\frac{1}{9801}$.
 
 For the first ninety-nine terms we now have
@@ -445,23 +433,17 @@ $$
  
 Now suppose that $q=0.\overline{0001020304\ldots95969799}$, then we have:
 
-$$
 \begin{align*}
 100^{99}q&=1020304\ldots95969799.\overline{0001020304\ldots95969799}\\
 &=1020304\ldots95969799+q.
 \end{align*}
-$$
- 
 Since we have $100^{99}-1=99^2\cdot1020304\ldots95969799$, this implies that
 
-$$
 \begin{align*}
 &(100^{99}-1)q=1020304\ldots95969799\\
 &\quad\Longleftrightarrow\quad99^2\cdot1020304\ldots95969799q=1020304\ldots95969799\\
 &\quad\Longleftrightarrow\quad q=\frac{1}{99^2}=\frac{1}{9801}.
 \end{align*}
-$$ 
- 
 Similarly if follows that
 
 $$
@@ -472,13 +454,10 @@ $$
 \frac{1}{99980001}=\frac{1}{9999^2}=0.\overline{000001000200030004\ldots9995999699979999},
 $$
 
-$$
 \begin{align*}
 \frac{1}{9999800001}&=\frac{1}{99999^2}\\
 &=0.\overline{0000001000020000300004\ldots99995999969999799999}
 \end{align*}
-$$
-
 and so on.
 :::
 
@@ -499,13 +478,10 @@ This is called the **Cauchy product** of the two power series, named after the F
 :class: tudproof, dropdown
 Note that we have by setting $i+j=n$
 
-$$
 \begin{align*}
 \left(\sum_{i=0}^{\infty}a_i(x-a)^i\right)\left(\sum_{j=0}^{\infty}b_j(x-a)^j\right)&=\sum_{i=0}^{\infty}\sum_{j=0}^{\infty}a_ib_j(x-a)^{i+j}\\
 &=\sum_{n=0}^{\infty}\sum_{k=0}^na_kb_{n-k}(x-a)^n.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{prf:example}
@@ -566,27 +542,20 @@ $$
 
 are called the **harmonic numbers**. The first ten are
 
-$$
 \begin{align*}
 &H_1=1,\quad H_2=1+\tfrac{1}{2}=\tfrac{3}{2},\quad H_3=\tfrac{3}{2}+\tfrac{1}{3}=\tfrac{11}{6},\quad H_4=\tfrac{11}{6}+\tfrac{1}{4}=\tfrac{25}{12},\\
 &\quad H_5=\tfrac{25}{12}+\tfrac{1}{5}=\tfrac{137}{60},\quad H_6=\tfrac{137}{60}+\tfrac{1}{6}=\tfrac{49}{20},\quad H_7=\tfrac{49}{20}+\tfrac{1}{7}=\tfrac{363}{140},\\
 &\quad\quad H_8=\tfrac{363}{140}+\tfrac{1}{8}=\tfrac{761}{280},\quad H_9=\tfrac{761}{280}+\tfrac{1}{9}=\tfrac{7129}{2520},\quad H_{10}=\tfrac{7129}{2520}+\tfrac{1}{10}=\tfrac{7381}{2520}.
 \end{align*}
-$$
-
 Note that
 
-$$
 \begin{align*}
 \sum_{n=1}^{\infty}\frac{H_n}{n^2}&=\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}
 =\sum_{k=1}^{\infty}\sum_{n=k}^{\infty}\frac{1}{kn^2}=\sum_{k=1}^{\infty}\sum_{n=0}^{\infty}\frac{1}{k(n+k)^2}\\
 &=\sum_{k=1}^{\infty}\frac{1}{k^3}+\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{k(n+k)^2}.
 \end{align*}
-$$
-
 Now we have
 
-$$
 \begin{align*}
 \sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{k(n+k)^2}
 &=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\left(\frac{1}{k(n+k)^2}+\frac{1}{n(k+n)^2}\right)\\
@@ -595,15 +564,13 @@ $$
 &=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{n^2}\left(\frac{1}{k}-\frac{1}{k+n}\right)=\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^{\infty}\left(\frac{1}{k}-\frac{1}{k+n}\right)\\
 &=\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}=\frac{1}{2}\sum_{n=1}^{\infty}\frac{H_n}{n^2}.
 \end{align*}
-$$
-
 So we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{H_n}{n^2}=\sum_{k=1}^{\infty}\frac{1}{k^3}+\frac{1}{2}\sum_{n=1}^{\infty}\frac{H_n}{n^2}$, which implies that
 
 $$
 \displaystyle\sum_{n=1}^{\infty}\frac{H_n}{n^2}=2\sum_{k=1}^{\infty}\frac{1}{k^3}=2\zeta(3).
 $$
 
-Here $\zeta(s)$ denotes the *Riemann zeta function*, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). The value of $\zeta(3)\approx1.202057$ is also known as **Apéry's constant**, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
+Here $\zeta(s)$ denotes the *Riemann zeta function*, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). The value of $\zeta(3)\approx1.202057$ is also known as *Apéry's constant*, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
 
 The harmonic numbers satisfy the recurrence relation
 
@@ -655,14 +622,11 @@ $$
 
 Since $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ and $-\ln(1-x)=\displaystyle\sum_{k=1}^{\infty}\frac{x^k}{k}$, the Cauchy product implies that
 
-$$
 \begin{align*}
 -\frac{\ln(1-x)}{1-x}&=\sum_{n=0}^{\infty}x^n\sum_{k=1}^{\infty}\frac{x^k}{k}=\sum_{n=0}^{\infty}\sum_{k=1}^{\infty}\frac{x^{n+k}}{k}
 =\sum_{k=1}^{\infty}\sum_{n=0}^{\infty}\frac{x^{n+k}}{k}=\sum_{k=1}^{\infty}\sum_{n=k}^{\infty}\frac{x^n}{k}\\
 &=\sum_{n=1}^{\infty}\left(\sum_{k=1}^n\frac{1}{k}\right)x^n=\sum_{n=1}^{\infty}H_nx^n,\quad |x| < 1.
 \end{align*}
-$$
-
 Differentiation leads to
 
 $$
@@ -673,13 +637,10 @@ For instance, this implies that $\displaystyle\sum_{n=1}^{\infty}\frac{nH_n}{2^n
 
 Differentiation once more gives
 
-$$
 \begin{align*}
 \sum_{n=2}^{\infty}n(n-1)H_nx^{n-2}&=\frac{1-x+2(1-x)\left(1-\ln(1-x)\right)}{(1-x)^4}\\
 &=\frac{1+2\left(1-\ln(1-x)\right)}{(1-x)^3}=\frac{3-2\ln(1-x)}{(1-x)^3},\quad|x|<1.
 \end{align*}
-$$
-
 For instance, this implies that $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)H_n}{2^n}=\frac{1}{4}\cdot\frac{3-2\ln(\frac{1}{2})}{(\frac{1}{2})^3}=6+4\ln(2)$.
 
 ## A generating function for the Fibonacci numbers
@@ -696,13 +657,10 @@ For computational reasons we use $F_{n+2}=F_n+F_{n+1}$ for $n=0,1,2,\ldots$ with
 
 Now we consider the *generating function* $G(x)=\displaystyle\sum_{n=1}^{\infty}F_nx^n=\sum_{n=0}^{\infty}F_nx^n$, then we have
 
-$$ 
 \begin{align*}
 x^2G(x)&=\sum_{n=0}^{\infty}F_nx^{n+2}=\sum_{n=0}^{\infty}F_{n+2}x^{n+2}-\sum_{n=0}^{\infty}F_{n+1}x^{n+2}\\
 &=\sum_{n=1}^{\infty}F_nx^n-F_1x-x\sum_{n=1}^{\infty}F_nx^n=G(x)-x-xG(x). 
 \end{align*}
-$$ 
- 
 This implies that
 
 $$
@@ -732,26 +690,20 @@ For instance, this implies that $\displaystyle\sum_{n=1}^{\infty}\frac{nF_n}{2^n
 
 Differentiating once more we obtain
 
-$$
 \begin{align*}
 \sum_{n=2}^{\infty}n(n-1)F_nx^{n-2}&=G''(x)\\
 &=\frac{2x(1-x-x^2)^2-2(1-x-x^2)(-1-2x)(1+x^2)}{(1-x-x^2)^4}\\
 &=\frac{2(x-x^2-x^3+1+x^2+2x+2x^3)}{(1-x-x^2)^3}=\frac{2(1+3x+x^3)}{(1-x-x^2)^3}.
 \end{align*}
-$$
-
 For instance, this implies that $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)F_n}{2^n}=\tfrac{1}{4}G''(\tfrac{1}{2})=\frac{2\left(1+\frac{3}{2}+\frac{1}{8}\right)}{4\left(1-\frac{1}{2}-\frac{1}{4}\right)^3}=84$.
 
 Finally, let's try to solve $G(x)=1$ with $\displaystyle|x|<\frac{1}{\varphi}=\varphi-1\approx0.618$:
 
-$$
 \begin{align*}
 \frac{x}{1-x-x^2}=1&\quad\Longleftrightarrow\quad x=1-x-x^2\\
 &\quad\Longleftrightarrow\quad(x+1)^2=2\\
 &\quad\Longleftrightarrow\quad x=-1\pm\sqrt{2}.
 \end{align*}
-$$
- 
 Since $\sqrt{2}-1\approx0.414$ this leads to the remarkable result that $\displaystyle\sum_{n=1}^{\infty}\left(\sqrt{2}-1\right)^nF_n=1$.
 
 ::::{exercise}
@@ -804,14 +756,11 @@ For computational reasons we use $L_{n+2}=L_n+L_{n+1}$ for $n=0,1,2,\ldots$ with
 :class: solution, dropdown
 (a) Using $F(x)=\displaystyle\sum_{n=0}^{\infty}L_nx^n$ we obtain
 
-$$
 \begin{align*}
 x^2F(x)&=\sum_{n=0}^{\infty}L_nx^{n+2}=\sum_{n=0}^{\infty}L_{n+2}x^{n+2}-x\sum_{n=0}^{\infty}L_{n+1}x^{n+1}\\
 &=\sum_{n=0}^{\infty}L_nx^n-L_0-L_1x-x\left(\sum_{n=0}^{\infty}L_nx^n-L_0\right)\\
 &=F(x)-2-x-x\left(F(x)-2\right).
 \end{align*}
-$$
-
 This implies that
 
 $$
@@ -841,14 +790,11 @@ Hence, we have $\displaystyle\sum_{n=1}^{\infty}\frac{nL_n}{2^n}=\tfrac{1}{2}F'(
 
 Differentiating once more, we obtain
 
-$$
 \begin{align*}
 &\sum_{n=2}^{\infty}n(n-1)L_nx^{n-2}=F''(x)\\
 &=\frac{(4-2x)(1-x-x^2)^2-2(1-x-x^2)(-1-2x)(1+4x-x^2)}{(1-x-x^2)^4}\\
 &=\frac{2(2-x+1+4x-x^2+2x+8x^2-2x^3)}{(1-x-x^2)^3}=\frac{2(3+3x+6x^2-x^3)}{(1-x-x^2)^3}.
 \end{align*}
-$$
-
 Hence, we have $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)L_n}{2^n}=\tfrac{1}{4}F''(\tfrac{1}{2})=\frac{2\left(3+\frac{3}{2}+\frac{3}{2}-\frac{1}{8}\right)}{4\left(1-\frac{1}{2}-\frac{1}{4}\right)^3}=188$.
 
 (c) For $x=-\frac{1}{2}$ we obtain: $\displaystyle\sum_{n=0}^{\infty}\left(-\tfrac{1}{2}\right)^nL_n=F(-\tfrac{1}{2})=2$. This implies that $\displaystyle\sum_{n=1}^{\infty}\left(-\tfrac{1}{2}\right)^nL_n=0$ and therefore $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{L_n}{2^n}=0$.

@@ -29,10 +29,11 @@ An illustration of the functions $f(x)$ and $g(x)$ near the point $x=1$.
 
 Let us try to figure out what is going on here. For the function $g$, the function values seem to blow up near $x=1$, while for the function $f$ nothing bad seems to happen at all. We can make this a bit more explicit by evaluating the functions $f$ and $g$ at values of $x$ close to $1$.
 
-```{list-table}
+```{list-table} Function values of $f$ and $g$ near $x=1$.
 :header-rows: 1
 :align: center
 :class: mid-align
+:name: Tab:LimitAtPoint:FirstLimitExValues
 
 * - $x$
   - $f(x)$
@@ -399,14 +400,11 @@ Now consider a limit of the form $\lim\limits_{x\rightarrow a}\frac{f(x)}{g(x)}$
 :label: Ex:LimitAtPoint:Squareroottrick.
 Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}\dfrac{2-\sqrt{x+4}}{x}$. Notice that both the numerator and the denominator are $0$ at $x=0$, and that the numerator is of the form described above. Using the square root trick we can evaluate the limit by rewriting
 
-$$
 \begin{align*}
  \lim\limits_{x\rightarrow 0}\dfrac{2-\sqrt{x+4}}{x} &= \lim\limits_{x\rightarrow 0}\dfrac{2-\sqrt{x+4}}{x}\dfrac{2+\sqrt{x+4}}{2+\sqrt{x+4}} \\
  &= \lim\limits_{x\rightarrow 0}\dfrac{4-(x+4)}{2x+x\sqrt{x+4}} \\
  &= \lim\limits_{x\rightarrow 0}\frac{-x}{x(2+\sqrt{x+4})}.
 \end{align*}
-$$
-
 Note that the new numerator and denominator both contain the common factor $x$, so we can cancel out this factor and evaluate
 
 $$
@@ -610,15 +608,12 @@ We conclude that $\lim\limits_{x\rightarrow a}cf(x)=cL$.
 
 Now we prove the sum rule. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow a}f(x)=L$, we can pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have $|f(x)-L|<\frac{\varepsilon}{2}$. Similarly we can pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have $|g(x)-M|<\frac{\varepsilon}{2}$. We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$, so we can estimate
 
-$$
 \begin{align*}
  |f(x)+g(x)-(L+M)| &= |(f(x)-L)+(g(x)-M)| \\
  &\leq |f(x)-L|+|g(x)-M| \\
  &< \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \\
  &= \varepsilon.
 \end{align*}
-$$
-
 Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow a}f(x)+g(x)=L+M$.
 
 Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have both have $|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}$ and $|f(x)-L|<1$. The inequality $|f(x)-L|<1$ means that $1-L<f(x)<1+L$, which implies that $|f(x)|<|L|+1$. Now we pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have both have $|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}$. We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$, so we can estimate
@@ -678,7 +673,6 @@ We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smalles
 
 As such, we can estimate for $x$ with $0<|x-a|<\delta$:
 
-$$
 \begin{align*}
  |g(x)-L| &= |g(x)-f(x)+f(x)-L| \\
  &\leq |g(x)-f(x)|+|f(x)-L| \\
@@ -689,8 +683,6 @@ $$
  &< \frac{\varepsilon}{3}+2\frac{\varepsilon}{3} \\
  &= \varepsilon.
 \end{align*}
-$$
-
 Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow a}g(x)=L$.
 ::::::
 

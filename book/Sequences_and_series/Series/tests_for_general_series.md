@@ -50,7 +50,7 @@ Sometimes the alternating series test is called the **Leibniz criterion**, named
 :width: 95%
 :name: alternating series
 :align: center
----
+
 Proof of the alternating series test
 :::
 
@@ -129,13 +129,10 @@ Use the first $10$ terms of the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-
 
 Solution. The $10$th partial sum is
 
-$$
 \begin{align*}
 s_{10}=\sum_{n=1}^{10}\frac{(-1)^{n-1}}{n^2}&=1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+\frac{1}{25}-\frac{1}{36}+\frac{1}{49}-\frac{1}{64}\\
 &{}\quad{}+\frac{1}{81}-\frac{1}{100}=\frac{5194387}{6350400}\approx0.81796.
 \end{align*}
-$$
-
 Then: $|R_{10}|=|s-s_{10}|\leq\dfrac{1}{121}\approx0.00826$. 
 ::::::
 
@@ -163,7 +160,7 @@ $$
 ::::::
 
 ::::::{note}
-Later we will be able to show that $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}=e^{-1}\approx0.36788$.
+Later we will be able to show that $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}=e^{-1}\approx0.36788$. See {prf:ref}`Ex:Series:LogTwo`.
 ::::::
 
 ## Absolute and conditional convergence
@@ -262,13 +259,10 @@ Sometimes the ratio test is called **d'Alembert's criterion**, named after the F
 :class: tudproof, dropdown
 1) If $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L<1$ we can choose a number $r$ such that $L<r<1$. Then $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L$ implies that there exists an integer $N$ such that $\displaystyle\left|\frac{a_{n+1}}{a_n}\right| < r$ for all $n\geq N$ or equivalently $|a_{n+1}| < |a_n|r$ for all $n\geq N$. Hence we have:
 
-$$
 \begin{align*}
 &|a_{N+1}| < |a_N|r,\quad |a_{N+2}| < |a_{N+1}|r < |a_N|r^2,\\
 &{}\quad|a_{N+3}| < |a_{N+2}|r < |a_N|r^3,\quad\ldots.
 \end{align*}
-$$
-
 So we have: $|a_{N+k}| < |a_N|r^k$ for $k=1,2,3,\ldots$. Now the series $\displaystyle\sum_{k=1}^{\infty}|a_N|r^k$ is convergent because it is a geometric series with common ratio $r$ and $0 < r < 1$. This implies that the series $\displaystyle\sum_{n=N+1}^{\infty}|a_n|=\sum_{k=1}^{\infty}|a_{N+k}|$ is convergent. Hence the series $\displaystyle\sum|a_n|$ is convergent.
 
 2) If $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L>1$ or $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\infty$ we can choose a number $r$ such that $1<r<L$. Then $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L$ implies that the ratio $\displaystyle\left|\frac{a_{n+1}}{a_n}\right|$ will eventually be greater than $r$, that is: there exists an integer $N$ such that $\displaystyle\left|\frac{a_{n+1}}{a_n}\right|>r$ for all $n\geq N$. This implies that $|a_{N+k}|>r^{N+k}$ for $k=0,1,2,\ldots$. This implies that $\displaystyle\sum_{k=0}^{\infty}|a_{N+k}|$ is divergent, since $\displaystyle\sum_{k=1}^{\infty}r^{N+k}$ is a geometric series with common ratio $r>1$ which is divergent.
@@ -290,13 +284,10 @@ $$
 ::::::{prf:example}
 1) Consider the alternating series $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{2n+1}{2^n}$. Let $a_n=\displaystyle(-1)^n\frac{2n+1}{2^n}$, then we have:
 
-$$ 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|(-1)^{n+1}\frac{2n+3}{2^{n+1}}\cdot(-1)^n\frac{2^n}{2n+1}\right|\\
 &=\lim\limits_{n\to\infty}\frac{2n+3}{2n+1}\cdot\frac{1}{2}=\frac{1}{2}<1.
 \end{align*}
-$$ 
- 
 This implies that the series is absolutely convergent.
 
 2) Consider the series $\displaystyle\sum_{n=0}^{\infty}\frac{n!}{5^n}$. Let $a_n=\displaystyle\frac{n!}{5^n}$, then we have:
@@ -358,13 +349,10 @@ $$
 
 The series $\displaystyle\sum a_n$ is convergent due to the integral test, since by using the substitution $x=t^2$ and integration by parts we have
 
-$$
 \begin{align*}
 \int_0^{\infty}e^{-\sqrt{x}}\,dx&=\int_0^{\infty}e^{-t}\,2t\,dt=-\int_0^{\infty}2t\,de^{-t}\\
 &=-2te^{-t}\bigg|_0^{\infty}+2\int_0^{\infty}e^{-t}\,dt=0-2e^{-t}\bigg|_0^{\infty}=2.
 \end{align*}
-$$
-
 The series $\displaystyle\sum b_n$ is divergent, since 
 
 $$

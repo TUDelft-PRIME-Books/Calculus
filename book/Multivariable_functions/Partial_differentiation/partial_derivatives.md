@@ -1,3 +1,4 @@
+(Sec:PartialDerivatives)=
 # Partial derivatives
 
 In this section we cover:
