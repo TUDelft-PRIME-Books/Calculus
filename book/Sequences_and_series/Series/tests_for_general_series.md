@@ -160,7 +160,7 @@ $$
 ::::::
 
 ::::::{note}
-Later we will be able to show that $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}=e^{-1}\approx0.36788$.
+Later we will be able to show that $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}=e^{-1}\approx0.36788$. See {prf:ref}`Ex:Series:LogTwo`.
 ::::::
 
 ## Absolute and conditional convergence
