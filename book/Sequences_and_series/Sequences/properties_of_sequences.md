@@ -58,15 +58,12 @@ Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ is 
 
 Solution. We want to show that $\dfrac{2n}{n^2+1}>\dfrac{2(n+1)}{(n+1)^2+1}$ for all $n=1,2,3,\ldots$. Note that
 
-$$
 \begin{align*}
 \frac{2n}{n^2+1}>\frac{2n+2}{n^2+2n+2}&\quad\Longleftrightarrow\quad2n(n^2+2n+2)>(2n+2)(n^2+1)\\
 &\quad\Longleftrightarrow\quad2n^3+4n^2+4n>2n^3+2n^2+2n+2\\
 &\quad\Longleftrightarrow\quad2n^2+2n>2\\
 &\quad\Longleftrightarrow\quad n(n+1)>1.
 \end{align*}
-$$
-
 This is trivially true for $n\geq1$.
 ::::::
 

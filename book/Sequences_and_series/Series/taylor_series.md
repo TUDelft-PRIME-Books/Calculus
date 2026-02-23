@@ -15,47 +15,32 @@ In the previous section we have seen some power series representations of certai
 
 Let $f$ be such an infinitely differentiable function and suppose that $f$ can be represented by a power series: 
 
-$$ 
 \begin{align*}
 f(x)&=c_0+c_1(x-a)+c_2(x-a)^2+c_3(x-a)^3+c_4(x-a)^4+\cdots\\
 &=\sum_{n=0}^{\infty}c_n(x-a)^n,\quad|x-a| < R
-\end{align*} 
-$$ 
-
+\end{align*}
 with *positive* radius of convergence $R$. Then we have 
 
-$$ 
 \begin{align*}
 f'(x)&=c_1+2c_2(x-a)+3c_3(x-a)^2+4c_4(x-a)^3+5c_5(x-a)^4+\cdots\\
 &=\sum_{n=1}^{\infty}n(x-a)^{n-1},\quad|x-a| < R, 
 \end{align*}
-$$ 
-
-$$ 
 \begin{align*}
 f''(x)&=2c_2+2\cdot3c_3(x-a)+3\cdot4c_4(x-a)^2+4\cdot5c_5(x-a)^3+\cdots\\
 &=\sum_{n=2}^{\infty}n(n-1)(x-a)^{n-2},\quad|x-a| < R, 
 \end{align*}
-$$ 
-
-$$ 
 \begin{align*}
 f^{(3)}(x)&=2\cdot3c_3+2\cdot3\cdot4c_4(x-a)+3\cdot4\cdot5c_5(x-a)^2+4\cdot5\cdot6c_6(x-a)^3+\cdots\\
 &=\sum_{n=3}^{\infty}n(n-1)(n-2)(x-a)^{n-3},\quad|x-a| < R, 
 \end{align*}
-$$ 
-
 and so on. Since all these power series converge at least at $x=a$ 
 we substitute $x=a$ to obtain that 
 
-$$ 
 \begin{align*}
 &f(a)=c_0,\quad f'(a)=c_1,\quad f''(a)=2c_2,\quad f^{(3)}(a)=2\cdot3c_3,\quad\ldots\\
 &\quad\Longrightarrow\quad f^{(n)}(a)=1\cdot2\cdot3\cdot4\cdots nc_n=n!c_n,\quad 
 n=1,2,3,\ldots. 
 \end{align*}
-$$ 
-
 This leads to the following theorem. 
 
 ::::::{prf:theorem} Taylor series 
@@ -79,13 +64,10 @@ $$
 :label: Def:Series:TaylorSeries 
 The series 
 
-$$ 
 \begin{align*}
 &\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n\\
 &\quad{}=f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3+\cdots
 \end{align*}
-$$ 
-
 is called the **Taylor series** or the **Taylor expansion** of the function $f$ at $x=a$. This Taylor series is named after the English mathematician [Brook Taylor (1685-1731)](https://en.wikipedia.org/wiki/Brook_Taylor). 
 
 The special case with $a=0$ 
@@ -206,13 +188,10 @@ $$
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n+1)!}x^{2n+1}$, then we have
 
-$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+3}}{(2n+3)!}\cdot\frac{(2n+1)!}{(-1)^nx^{2n+1}}\right|\\
 &=\lim\limits_{n\to\infty}\frac{x^2}{(2n+2)(2n+3)}=0.
 \end{align*}
-$$
-
 This implies that the Taylor series for $\sin(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$. 
 
 ::::::
@@ -226,13 +205,10 @@ $$
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n)!}x^{2n}$, then we have
 
-$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+2}}{(2n+2)!}\cdot\frac{(2n)!}{(-1)^nx^{2n}}\right|\\
 &=\lim\limits_{n\to\infty}\frac{x^2}{(2n+1)(2n+2)}=0.
 \end{align*}
-$$
-
 This implies that the Taylor series for $\cos(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$.
 ::::::
 
@@ -258,33 +234,24 @@ It is worthwhile to remember these formulas.
 ::::::{prf:example} Applications
 1) Using $e^x=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\cdots$ for all $x\in\mathbb{R}$ we find that
 
-$$
 \begin{align*}
 \lim\limits_{x\to 0}\frac{e^x-1-x}{x^2}&=\lim\limits_{x\to 0}\frac{1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\cdots-1-x}{x^2}\\
 &=\lim\limits_{x\to 0}\frac{\frac{1}{2}x^2+\frac{1}{6}x^3+\cdots}{x^2}=\lim\limits_{x\to 0}\left(\frac{1}{2}+\frac{1}{6}x+\cdots\right)\\
 &=\frac{1}{2}+0+0=\frac{1}{2}.
 \end{align*}
-$$
-
 2) Using $\cos(x)=1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\cdots$ for all $x\in\mathbb{R}$ we find that
 
-$$
 \begin{align*}
 \lim\limits_{x\to 0}\frac{\cos(x)-1+\frac{1}{2}x^2}{x^4}&=\lim\limits_{x\to 0}\frac{1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\cdots-1+\frac{1}{2}x^2}{x^4}\\
 &=\lim\limits_{x\to 0}\frac{\frac{1}{24}x^4-\frac{1}{720}x^6+\cdots}{x^4}\\
 &=\lim\limits_{x\to 0}\left(\frac{1}{24}-\frac{1}{720}x^2+\cdots\right)=\frac{1}{24}-0+0=\frac{1}{24}.
 \end{align*}
-$$
-
 3) Using $\sin(x)=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ for all $x\in\mathbb{R}$ we obtain that
 
-$$
 \begin{align*}
 \int_0^1x\sin(x^3)\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\int_0^1x^{6n+4}\,dx=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\cdot\frac{1}{6n+5}\\
 &=\frac{1}{5}-\frac{1}{66}+\frac{1}{2040}-\frac{1}{115920}+\cdots.
 \end{align*}
-$$
-
 Taking more and more terms this leads to the following approximations:
 
 ```{list-table}
@@ -306,13 +273,10 @@ Taking more and more terms this leads to the following approximations:
 
 4) Using $e^x=\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$ for all $x\in\mathbb{R}$ we obtain that
 
-$$
 \begin{align*}
 \int_0^{\frac{1}{2}}xe^{-x^4}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\int_0^{\frac{1}{2}}x^{4n+1}\,dx=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\cdot\frac{(\frac{1}{2})^{4n+2}}{4n+2}\\
 &=\frac{1}{8}-\frac{1}{384}+\frac{1}{20480}-\frac{1}{1376256}+\cdots.
 \end{align*}
-$$
-
 Taking more and more terms this leads to the following approximations:
 
 ```{list-table}
@@ -334,6 +298,7 @@ Taking more and more terms this leads to the following approximations:
 
 ::::::
 
+(sec:CatalansConstant)=
 ## Catalan's constant
 
 **Catalan's constant** $G$ is defined as the sum of the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}$.
@@ -341,7 +306,7 @@ Taking more and more terms this leads to the following approximations:
 Note that this series is absolutely convergent. However, it is not easy to find its sum. We have
 
 $$
-G:=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\approx0.916.
+G=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\approx0.916.
 $$
 
 There are several alternative (integral) representations for this constant. Since 
@@ -352,13 +317,10 @@ $$
 
 we have
 
-$$
 \begin{align*}
 \int_0^1\frac{\arctan(x)}{x}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\int_0^1x^{2n}\,dx=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\cdot\frac{x^{2n+1}}{2n+1}\bigg|_0^1\\
 &=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}=G.
 \end{align*}
-$$
-
 Using $x=e^{-t}$ we obtain
 
 $$
@@ -368,13 +330,10 @@ $$
 
 The substitution $\arctan{x}=t$ or $x=\tan(t)$ leads to
 
-$$
 \begin{align*}
 \int_0^1\frac{\arctan(x)}{x}\,dx&=\int_0^{\frac{1}{4}\pi}\frac{t}{\tan(t)}d\tan(t)=\int_0^{\frac{1}{4}\pi}\frac{t}{\tan(t)}\cdot\frac{1}{\cos^2(t)}\,dt\\
 &=\int_0^{\frac{1}{4}\pi}\frac{t}{\sin(t)\cos(t)}\,dt.
 \end{align*}
-$$
-
 This can be rewritten as
 
 $$
@@ -383,15 +342,12 @@ $$
 
 Using integration by parts we obtain
 
-$$
 \begin{align*}
 \int_0^1x^n\ln(x)\,dx&=\int_0^1\frac{1}{n+1}\ln(x)\,dx^{n+1}\\
 &=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\,d\ln(x)\\
 &=0-\frac{1}{n+1}\int_0^1x^n\,dx=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
 &=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots.
 \end{align*}
-$$
-
 With $\displaystyle\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-x^2)^n$ for $|x|<1$ this implies that
 
 $$
@@ -421,13 +377,10 @@ $$
  
 Setting $\ln(t)=x$ or $t=e^x$ we obtain
 
-$$ 
 \begin{align*}
 G&=\int_1^{\infty}\frac{\ln(t)}{1+t^2}\,dt=\int_0^{\infty}\frac{x}{1+e^{2x}}\cdot e^x\,dx=\int_0^{\infty}\frac{x}{e^{-x}+e^x}\,dx\\
 &=\frac{1}{2}\int_0^{\infty}\frac{x}{\cosh(x)}\,dx.
 \end{align*}
-$$ 
- 
 The relation
 
 $$
@@ -436,13 +389,10 @@ $$
  
 leads to another interesting representation
 
-$$
 \begin{align*}
 G&=-\int_0^{\frac{1}{4}\pi}\ln\left(\tan(\theta)\right)\,d\theta=-\frac{1}{2}\int_0^{\frac{1}{4}\pi}\ln\left(\tan^2(\theta)\right)\,d\theta\\
 &=-\frac{1}{2}\int_0^{\frac{1}{4}\pi}\ln\left(\frac{1-\cos(2\theta)}{1+\cos(2\theta)}\right)\,d\theta,
 \end{align*}
-$$ 
- 
 which is equivalent to
 
 $$
@@ -476,13 +426,10 @@ $$
  
 If we apply the substitution $2x=t$ we find that
 
-$$
 \begin{align*}
 \int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx&=\frac{1}{2}\int_0^{\pi}\ln(\sin(t))\,dt\\
 &=\frac{1}{2}\int_0^{\frac{1}{2}\pi}\ln(\sin(t))\,dt+\frac{1}{2}\int_{\frac{1}{2}\pi}^{\pi}\ln(\sin(t))\,dt.
 \end{align*}
-$$ 
- 
 Then we apply the substitution $t=\pi-x$ to the latter integral to find that
 
 $$ 
@@ -493,14 +440,11 @@ Hence we have $\displaystyle\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx=\int_0^{\fr
  
 Finally, we derive for $I=\displaystyle\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx$ that 
 
-$$
 \begin{align*}
 I&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(2\sin(x)\cos(x))\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\left(\ln(2)+\ln(\sin(x))+\ln(\cos(x))\right)\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\ln(2)\,dx+\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx+\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx=\frac{1}{2}\pi\ln(2)+2I,
 \end{align*}
-$$
- 
 which implies that $I=-\frac{1}{2}\pi\ln(2)$. The substitution $x=\frac{1}{2}\pi-t$ now leads to
 
 $$ 
@@ -515,13 +459,10 @@ $$
 
 Hence we have
 
-$$
 \begin{align*}
 \int_0^{\frac{1}{4}\pi}\ln(\sin(x))\,dx+\int_0^{\frac{1}{4}\pi}\ln(\cos(x))\,dx&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx=-\frac{1}{2}\pi\ln(2)
 \end{align*}
-$$
-
 and
 
 $$
@@ -584,41 +525,29 @@ $$
 
 and
 
-$$
 \begin{align*}
 \sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^s}&=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}=\sum_{n=1}^{\infty}\frac{1}{n^s}-2\sum_{n=1}^{\infty}\frac{1}{(2n)^s}\\
 &=\left(1-\frac{1}{2^{s-1}}\right)\zeta(s).
 \end{align*}
-$$
-
 Using integration by parts we find that
 
-$$
 \begin{align*}
 \int_0^1x^n\ln(x)\,dx&=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\cdot\frac{1}{x}\,dx\\
 &=0-\frac{1}{n+1}\int_0^1x^n\,dx=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
 &=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots.
 \end{align*}
-$$ 
- 
 Now we use the series representation $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$ to find that
 
-$$
 \begin{align*}
 \int_0^1\frac{\ln(x)}{1-x}\,dt&=\sum_{n=0}^{\infty}\int_0^1x^n\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}=-\sum_{n=1}^{\infty}\frac{1}{n^2}\\
 &=-\zeta(2)=-\frac{1}{6}\pi^2.
 \end{align*}
-$$ 
- 
 Furthermore using integration by parts we find that
 
-$$
 \begin{align*}
 \int_0^1x^n\left(\ln(x)\right)^2\,dx&=\frac{1}{n+1}x^{n+1}\left(\ln(x)\right)^2\bigg|_0^1-\frac{2}{n+1}\int_0^1x^{n+1}\ln(x)\cdot\frac{1}{x}\,dx\\
 &=0-\frac{2}{n+1}\int_0^1x^n\ln(x)\,dx=\frac{2}{(n+1)^3},\quad n=0,1,2,\ldots.
 \end{align*}
-$$ 
- 
 Again we use the series representation $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$ to find that
 
 $$
@@ -628,48 +557,33 @@ $$
 
 Similarly, we have
 
-$$
 \begin{align*}
 \int_0^1\frac{\ln(x)}{1+x}\,dx&=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^n\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}\\
 &=-\left(1-\frac{1}{2}\right)\zeta(2)=-\frac{1}{12}\pi^2
 \end{align*}
-$$
- 
 and
 
-$$
 \begin{align*}
 \int_0^1\frac{\left(\ln(x)\right)^2}{1+x}\,dx&=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^n\left(\ln(x)\right)^2\,dx=2\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^3}\\
 &=2\left(1-\frac{1}{4}\right)\zeta(3)=\frac{3}{2}\zeta(3).
 \end{align*}
-$$ 
-
 Using the Taylor series $\displaystyle\ln(1-x)=-\sum_{n=1}^{\infty}\frac{x^n}{n}$ for $|x|<1$ we find that
 
-$$
 \begin{align*}
 \int_0^1\frac{\ln(1-x)}{x}\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^{n-1}\,dx=-\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{n}x^n\bigg|_0^1=-\sum_{n=1}^{\infty}\frac{1}{n^2}\\
 &=-\zeta(2)=-\frac{1}{6}\pi^2,
 \end{align*}
-$$
-
-$$
 \begin{align*}
 \int_0^1\ln(x)\ln(1-x)\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^n\ln(x)\,dx=\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{(n+1)^2}\\
 &=\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+1}-\frac{1}{(n+1)^2}\right)=1-\sum_{n=1}^{\infty}\frac{1}{(n+1)^2}\\
 &=2-\sum_{n=1}^{\infty}\frac{1}{n^2}=2-\zeta(2)=2-\frac{1}{6}\pi^2
 \end{align*}
-$$
-
 and
 
-$$
 \begin{align*}
 \int_0^1\frac{\ln(x)\ln(1-x)}{x}\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^{n-1}\ln(x)\,dx=\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{n^2}\\
 &=\sum_{n=1}^{\infty}\frac{1}{n^3}=\zeta(3).
 \end{align*}
-$$
-
 By symmetry (or a substitution) we also have $\displaystyle\int_0^1\frac{\ln(x)\ln(1-x)}{1-x}\,dx=\zeta(3)$ and therefore
 
 $$
@@ -682,7 +596,6 @@ $$
 \int_0^1\frac{\ln(1+x)}{x}\,dx=\sum_{n=0}^{\infty}\int_0^1\frac{(-1)^n}{n+1}x^n\,dx=\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}=\left(1-\frac{1}{2}\right)\zeta(2)=\frac{1}{12}\pi^2,
 $$
 
-$$
 \begin{align*}
 \int_0^1\ln(x)\ln(1+x)\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\int_0^1x^{n+1}\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\cdot\frac{1}{(n+2)^2}\\
 &=\sum_{n=0}^{\infty}\left(\frac{(-1)^n}{n+2}-\frac{(-1)^n}{n+1}+\frac{(-1)^n}{(n+2)^2}\right)\\
@@ -690,17 +603,12 @@ $$
 &=1-2\ln(2)+1-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}\\
 &=2-2\ln(2)-\left(1-\frac{1}{2}\right)\zeta(2)=2-2\ln(2)-\frac{1}{12}\pi^2
 \end{align*}
-$$
-
 and
 
-$$
 \begin{align*}
 \int_0^1\frac{\ln(x)\ln(1+x)}{x}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\int_0^1x^n\ln(x)\,dx=-\sum_{n=1}^{\infty}\frac{(-1)^n}{n+1}\cdot\frac{1}{(n+1)^2}\\
 &=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^3}=-\left(1-\frac{1}{4}\right)\zeta(3)=-\frac{3}{4}\zeta(3).
 \end{align*}
-$$
-
 ## Pascal's triangle and the binomium theorem
 
 If we define *factorials* as $0!=1$ and $n!=n(n-1)!$ for $n=1,2,3,\ldots$, then the **binomial coefficient** $\displaystyle\binom{n}{k}$ (pronounced as "$n$ choose $k$") is defined as
@@ -750,19 +658,15 @@ for positive integers $n$.
 :::{admonition} Proof of {eq}`Eq:Series:Pascal`
 :class: solution, dropdown
 
-$$
 \begin{align*}
 \binom{n-1}{k-1}+\binom{n-1}{k}&=\frac{(n-1)!}{(k-1)!\,(n-k)!}+\frac{(n-1)!}{k!\,(n-k-1)!}\\
 &=\frac{(n-1)!}{k!\,(n-k)!}\left[k+(n-k)\right]\\
 &=\frac{n\,(n-1)!}{k!\,(n-k)!}=\frac{n!}{k!\,(n-k)!}=\binom{n}{k}.
 \end{align*}
-$$
-
 :::
 
 Starting at the top, the rows in Pascal's theorem correspond to
 
-$$
 \begin{align*}
 (a+b)^0&=1,\\[2.5mm]
 (a+b)^1&=a+b,\\[2.5mm]
@@ -771,8 +675,6 @@ $$
 (a+b)^4&=a^4+4a^3b+6a^2b^2+4ab^3+b^4,\\[2.5mm]
 \text{etcetera.}
 \end{align*}
-$$
-
 The numbers in Pascal's triangle are the coefficients of the terms on the right. This leads to the binomial theorem:
 
 ::::::{prf:theorem} Binomial theorem
@@ -788,7 +690,6 @@ $$
 :class: solution, dropdown
 By mathematical induction: for $n=0$ it reads $(a+b)^0=1=\displaystyle\binom{0}{0}a^0b^0$ which is true by definition. Suppose that the formula is true for certain value of $n$, then we have:
 
-$$
 \begin{align*}
 (a+b)^{n+1}&=(a+b)(a+b)^n=(a+b)\sum_{k=0}^n\binom{n}{k}a^{n-k}b^k\\
 &=\sum_{k=0}^n\binom{n}{k}a^{n-k+1}b^k+\sum_{k=0}^n\binom{n}{k}a^{n-k}b^{k+1}\\
@@ -796,8 +697,6 @@ $$
 &=a^{n+1}+\sum_{k=1}^n\left\{\binom{n}{k}+\binom{n}{k-1}\right\}a^{n-k+1}b^k+b^{n+1}\\
 &=a^{n+1}+\sum_{k=1}^n\binom{n+1}{k}a^{n+1-k}b^k+b^{n+1}=\sum_{k=0}^{n+1}\binom{n+1}{k}a^{n+1-k}b^k.
 \end{align*}
-$$
-
 Since this is exactly the formula with $n$ replaced by $n+1$, this proves the theorem.
 :::
 
@@ -839,22 +738,16 @@ $$
 
 for a certain value of $n$, then we have
 
-$$
 \begin{align*}
 \sum_{k=0}^n\binom{2n-k}{k}&=1+\sum_{k=1}^n\binom{2n-k-1}{k}+\sum_{k=1}^n\binom{2n-k-1}{k-1}\\
 &=\sum_{k=0}^n\binom{2n-k-1}{k}+\sum_{k=0}^{n-1}\binom{2n-k-2}{k}=F_{2n}+F_{2n-1}=F_{2n+1}
 \end{align*}
-$$
-
 and
 
-$$
 \begin{align*}
 \sum_{k=0}^{n+1}\binom{2n-k+1}{k}&=1+\sum_{k=1}^{n+1}\binom{2n-k}{k}+\sum_{k=1}^{n+1}\binom{2n-k}{k-1}\\
 &=\sum_{k=0}^{n+1}\binom{2n-k}{k}+\sum_{k=0}^n\binom{2n-k-1}{k}=F_{2n+1}+F_{2n}=F_{2n+2}.
 \end{align*}
-$$
-
 For each $m\in\mathbb{N}$ we also have
 
 :::{math}
@@ -872,14 +765,11 @@ $$
 
 for a certain value of $n$. Then we have
 
-$$
 \begin{align*}
 \sum_{k=0}^{n+1}\binom{n+1}{k}F_{m+k}&=F_m+\sum_{k=1}^{n+1}\left\{\binom{n}{k}+\binom{n}{k-1}\right\}F_{m+k}\\
 &=\sum_{k=0}^n\binom{n}{k}F_{m+k}+\sum_{k=0}^n\binom{n}{k}F_{m+k+1}\\
 &=F_{m+2n}+F_{m+2n+1}=F_{m+2n+2}.
 \end{align*}
-$$
-
 This is the original formula with $n$ replaced by $n+1$, which proves {eq}`Eq:Series:Fibonacci`.
 :::
 
@@ -893,13 +783,10 @@ $$
 
 Consider the function $f(x)=(1+x)^{\alpha}$ with $\alpha\in\mathbb{R}$, then we have
 
-$$
 \begin{align*}
 &f'(x)=\alpha(1+x)^{\alpha-1},\quad f''(x)=\alpha(\alpha-1)(1+x)^{\alpha-2},\\
 &\quad f^{(3)}(x)=\alpha(\alpha-1)(\alpha-2)(1+x)^{\alpha-3},\quad\ldots.
 \end{align*}
-$$
-
 This implies that $f^{(n)}(0)=\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)$ for $n=1,2,3,\ldots$. So, if we define the **binomial coefficients**
 
 :::{math}
@@ -914,71 +801,53 @@ then we have:
 :label: Thm:Series:BinomialSeries
 If $\alpha\in\mathbb{R}$, then we have
 
-$$
 \begin{align*}
 (1+x)^{\alpha}&=\sum_{n=0}^{\infty}\binom{\alpha}{n}x^n\\
 &=1+\frac{\alpha}{1!}x+\frac{\alpha(\alpha-1)}{2!}x^2+\frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3+\cdots,\quad|x| < 1.
 \end{align*}
-$$
-
 This series is called a **binomial series**.
 ::::::
 
 In order to see that the radius of convergence equals $R=1$ we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\binom{\alpha}{n}x^n$, then we have:
 
-$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\binom{\alpha}{n+1}x^{n+1}\bigg/\binom{\alpha}{n}x^n\right|\\
 &=\lim\limits_{n\to\infty}\left|\frac{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)(\alpha-n)}{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)}\frac{n!}{(n+1)!}x\right|\\
 &=\lim\limits_{n\to\infty}\left|\frac{\alpha-n}{n+1}x\right|=|x|.
 \end{align*}
-$$
-
-:::{remark}
+:::{prf:remark}
 Note that the binomial coefficients defined in {eq}`Eq:Series:BinomialCoefficients` generalise the binomial coefficients given in {eq}`Eq:Series:BinomialCoefficient`.
 :::
 
 ::::{prf:example}
 Consider $\displaystyle\sqrt{1+x}=(1+x)^{\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^n$ for $|x|<1$. Then we have
 
-$$
 \begin{align*}
 &\binom{\frac{1}{2}}{0}=1,\quad\binom{\frac{1}{2}}{1}=\frac{1}{2},\quad\binom{\frac{1}{2}}{2}=\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)}{2!}=-\frac{1}{8},\\
 &\quad\binom{\frac{1}{2}}{3}=\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}=\frac{1}{16},\\
 &\quad\binom{\frac{1}{2}}{4}=\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}=-\frac{5}{128},\quad\ldots
 \end{align*}
-$$
-
 and therefore
 
-$$
 \begin{align*}
 \sqrt{1+x}&=(1+x)^{\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^n\\
 &=1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\cdots,\quad |x|<1.
 \end{align*}
-$$
-
 ::::
 
 ::::{prf:example}
 Consider $\displaystyle\frac{1}{\sqrt{1+x}}=(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{-\frac{1}{2}}{n}x^n$ for $|x|<1$. Then we have
 
-$$
 \begin{align*}
 &\binom{-\frac{1}{2}}{0}=1,\quad\binom{-\frac{1}{2}}{1}=-\frac{1}{2},\quad\binom{-\frac{1}{2}}{2}=\frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)}{2!}=\frac{3}{8},\\
 &\quad\binom{-\frac{1}{2}}{3}=\frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)\left(-\frac{1}{2}-2\right)}{3!}=\frac{5}{16},\quad\ldots
 \end{align*}
-$$
-
 and therefore
 
-$$
 \begin{align*}
 \frac{1}{\sqrt{1+x}}&=(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{-\frac{1}{2}}{n}x^n\\
 &=1-\frac{1}{2}x+\frac{3}{8}x^2-\frac{5}{16}x^3+\cdots,\quad |x|<1.
 \end{align*}
-$$
-
 ::::
 
 Replacing $x$ by $-x^2$ in the last example implies that 
@@ -1021,11 +890,8 @@ $$
 
 2) Using $\displaystyle\sqrt{1+x^3}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{3n}=1+\frac{1}{2}x^3-\frac{1}{8}x^6+\cdots$ for $|x|<1$ we find that
 
-$$
 \begin{align*}
 \int_0^{\frac{1}{2}}\sqrt{1+x^3}\,dx&=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}\int_0^{\frac{1}{2}}x^{3n}\,dx=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}\frac{(\frac{1}{2})^{3n+1}}{3n+1}\\
 &=\frac{1}{2}+\frac{1}{64}-\frac{1}{14680064}+\cdots\approx0.515625.
 \end{align*}
-$$
-
 ::::::

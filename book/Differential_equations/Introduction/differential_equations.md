@@ -1,6 +1,5 @@
 (Sec:DE:Intro)=
-
-# Differential equations and solutions
+# Classifications and solutions
 
 In this section we cover:
 
@@ -25,6 +24,8 @@ In this section we cover:
   - Superposition principle for linear differential equations
   - homogeneous/non-homogeneous (including algorithmic check)
   - nonhomogeneous solution = homogeneous solution + particular solution
+  - Linear independent solutions
+
 
 ## Introduction
 

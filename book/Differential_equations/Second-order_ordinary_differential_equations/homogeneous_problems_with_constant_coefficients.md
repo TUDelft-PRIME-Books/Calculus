@@ -4,8 +4,14 @@
 
 In this section we cover:
 
-- Linear independent solutions
 - Ansatz method: three cases (two distinct real, single real, complex)
+  - Be careful with using thew word Ansatz.
+- Application examples:
+  - Mass-spring
+  - RLC electrical circuits 
+- Mention third and higher order.
+  - Example with fifth order to indicate that it is possible (example with 5th order with 1 double real root, 1 single real root, 1 pair of complex conjugate roots).
+- Include IVPs and BVPs examples.
 
 A homogeneous first-order linear differential equation with constant coefficients
 

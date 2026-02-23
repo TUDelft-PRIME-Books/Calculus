@@ -157,7 +157,7 @@ We can also determine the range of this function. Since every nonnegative number
 ::::::{prf:example} 
 :label: Ex:Functions1var:Naturaldomain
 
-Consider a container full of gas of constant volume $V_0$, measure in cubic meters. Then the Ideal Gas Law states that the temperature $T$ of the gas, measured in kelvins, is related to the pressure $P$, measured in pascals, by 
+Consider a container full of gas of constant volume $V_0$, measure in cubic meters. Then the [Ideal Gas Law](https://en.wikipedia.org/wiki/Ideal_gas_law) states that the temperature $T$ of the gas, measured in kelvins, is related to the pressure $P$, measured in pascals, by 
 
 $$
  PV_0=nRT
@@ -225,7 +225,7 @@ $$
  x^2-y^3=0,\quad \Longleftrightarrow\quad y^3=x^2,\quad \Longleftrightarrow\quad y=\sqrt[3]{x^2}=x^{\frac{2}{3}}
 $$
 
-So each point $(x,y)$ on the curve actually satisfies $y=x^{\frac{2}{3}}$. So that means that $C_1$ is the graph of the function $f$ with $f(x)=x^{\frac{{2}{3}}}$.
+So each point $(x,y)$ on the curve actually satisfies $y=x^{\frac{2}{3}}$. So that means that $C_1$ is the graph of the function $f$ with $f(x)=x^{\frac{2}{3}}$.
 
 Similarly, we can let $C_2$ be the curve given by all points $(x,y)$ that satisfy the equation $x^2-y^2=0$. Here, we could try a similar approach and write
 
@@ -244,7 +244,7 @@ Hier een plaatje van de twee krommen.
 
 ## Standard functions
 
-Many functions can be expressed in terms of other functions. In {numref}`Section:Propertiesfunctions` we will see several ways we can combine two functions into another function (for instance, by addition, multiplication or composition). As such, we use this section to define the 'building blocks', that is, the most commonly occuring functions that can be used to build more complicated functions. Several of these we have already encoutered in {numref}`Section:Numbersandcoordinate` though we did not call them functions back then. The functions we will discuss in this section are often referred to as standard functions (though there are functions that are called standard functions that are not discussed in this section, such as logarithms).
+Many functions can be expressed in terms of other functions. In {numref}`Section:Propertiesfunctions` we will see several ways we can combine two functions into another function (for instance, by addition, multiplication or composition). As such, we use this section to define the 'building blocks', that is, the most commonly occuring functions that can be used to build more complicated functions. Several of these we have already encoutered in {numref}`Chapter:Numbersandcoordinate` though we did not call them functions back then. The functions we will discuss in this section are often referred to as standard functions.
 
 The most standard of standard functions are the polynomials. These come in various flavours, of which we will give the most important ones their own names.
 
@@ -266,7 +266,7 @@ where $p(x)$ and $q(x)$ are polynomials and $q(x) \neq 0$.
 
 Rational functions will be discussed more extensively in {numref}`Sec:RationalFunctions`.
 
-In {numref}`Section:Trigonometry` we saw that for an angle $\theta$ we can the trigonometric ratios $\sin(\theta)$, $\cos(\theta)$ and $\tan(\theta)$. As such, the sine, cosine and tangent take an angle as input and give a number back as output, which means that they are actually functions.
+In {numref}`Sec:Algebra:Trigonometry` we saw that for an angle $\theta$ we can the trigonometric ratios $\sin(\theta)$, $\cos(\theta)$ and $\tan(\theta)$. As such, the sine, cosine and tangent take an angle as input and give a number back as output, which means that they are actually functions.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Trigonometry
@@ -274,14 +274,178 @@ The functions $f(x)=\sin(x)$, $f(x)=\cos(x)$ and $f(x)=\tan(x)$ are called the *
 ::::::
 
 
+In {numref}`Section:Realnumbers` we saw that for a base $b\geq 0$ and an exponent $r$ in $\mathbb{R}$ we could define the exponentiation $b^r$. This concept actually leads to two different types of functions: one where we vary $b$ and one where we vary $r$. For the second type, the one with base $e$, see {numref}`Subsec:RealnumbersE`, plays a particularly important role in calculus.
 
-In this section we cover:
+::::::{prf:definition} 
+:label: Def:Functions1var:Powerfunction
+If $r$ is a real number, then the function $f(x)=x^r$ is called a **power function**. If $r=-1$ then the function $f(x)=x^{-1}=\frac{1}{x}$ is sometimes referred to as the **reciprocal function**.
+::::::
 
-- What is a function? (notation, (in)dependent variable)
-- Domain and maximal domain
-- Range and codomain
-- Graphs (including vertical line test)
-- Differences and similarities between graphs and curves
-- Elementary functions (linear/quadratic/cubic,polynomials,power functions, rational functions, algebraic functions, exponential functions (hier moet definitie staan, ook e-macht, rekenregels nog verwijzen bij inverse functies), trigonometric functions. NOT YET: logarithms and inverse trigonometric functions)
-- Hyperbolic functions?
-- Piecewise defined functions (e.g. step functions)
+::::::{prf:definition} 
+:label: Def:Functions1var:Exponentialfunction
+For $b\geq 0$ the function $f(x)=b^x$ is called an **exponential function**. The function $f(x)=e^x$ is referred to as the **natural exponential function**, or sometimes simply **the exponential function**.
+::::::
+
+Other important classes of functions are logarithms and inverse trigonometric functions. These will be covered in {numref}`Section:Inverse`.
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Linear
+Consider the function given by $f(x)=2x+3$. This is a polynomial function; in particular, it is a linear function. Since for any value of $x$ it is possible to compute $2x+3$, the maximal domain of this function is the set of all real numbers $\mathbb{R}$. The graph of this function is shown below.
+
+Hier de grafiek van deze functie.
+
+As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph? We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increase by any value $\Delta x$, $y$ will increase by $\Delta y=2$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope in {numref}`Chapter:Differentiation`.
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Quadratic
+Consider the function given by $h(x)=x^2-4x+3$. This is a quadratic function and, therefore, a special type of polynomial function. Since $h(x)$ exists for any real number $x$, the maximal domain of $h$ is $\mathbb{R}$. The graph of this function is shown below.
+
+Hier de grafiek van de functie $h$.
+
+The graph of this function is a **parabola**. The graph crosses the $x$-axis at $x=1$ and $x=3$, which can be seen from the fact that $h(x)=x^2-4x+3=(x-1)(x-3)$, so that $h(x)=0$ precisely when $x=1$ or $x=3$. 
+
+Notice that the lowest value of $y$ occurs at $x=2$, where $h(2)=-1$. That is, $h(x)\geq -1$ for all values of $x$. In the terminology of {numref}`Section:Extrema1d`, the absolute minimum of the function function $h$ is $-1$ and occurs at $x=2$. As a result, the range of $h$ is not the full set of real numbers $\mathbb{R}$. Since $h(x)$ can get as large as we want to by increasing $x$, we find that the range of $h$ is the interval $[-1,\infty)$.
+
+Since the graph of $h$ has a lowest value and then grows for both very large and very negative values of $x$, we say that the graph of $h$ is a parabola that **opens upwards**.  On the other hand, the graph of the function $k(x)=2-3x^2$ is also a parabola, as can be seen below. However, this one has a highest value and it becomes very negative for both very large and very negative values of $x$. As such, the graph of $k$ is a parabola that **opens downwards**.
+
+Hier de grafiek van de functie $k$.
+
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Cubicandhigher
+We now consider a function of the form $g(x)=x^n$ for some positive integer $n\geq 2$. This is both a polynomial and a power function. The behaviour of this function will greatly depend on whether $n$ is even or odd$. 
+
+Hier twee plaatjes naast elkaar. Links: de grafieken van $x^2$, $x^4$, $x^6$ en $x^8$, rechts: de grafieken van $x^3$, $x^5$, $x^7$ en $x^9$; bij beiden moet het stuk tussen -2 en 2 zichtbaar zijn.
+
+Indeed, for even values of $n$, the graph of $g(x)=x^n$ resembles the parabola $y=x^2$, while for odd values of $n$, the graph is similar to that of $x^3$. In particular, for even values of $n$ the graph of the function is symmetric around the $y$-axis. In {numref}`Section:Propertiesfunctions` we will call a function with this property **even** (so now you already know where that name comes from). Similarly, for odd values of $n$ the graph of the function is symmetric in the line $y=-x$ and such a function will be called **odd**.
+
+Note that as $n$ gets larger the graphs becomes more flat for $x$ between $-1$ and $1$. This is because for these values of $x$ we have $|x^2|>|x^3|>|x^4|>...$. On the other hand, for values of $x$ larger than $1$ or smaller than $-1$, the function blows up quicker for larger values of $n$, since then we have $|x^2|<|x^3|<|x^4|<...$
+
+
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Idealgas2
+Let us return to the Ideal Gas Law that was discussed in {prf:ref}`Ex:Functions1var:Naturaldomain`. However, instead of assuming that the volume is constant, we now assume that the temperature $T$ is constant. Then the pressure $P$ can be written as a function of the volume $V$ by writing
+
+$$
+ P=\frac{nRT}{V}=nRTV^{-1}.
+$$
+
+That is, the pressure is inversely proportional to the volume. This means that if $V$ doubles, $P$ will halve and vice versa. The graph of $P$ as a function of $V$ is shown below. Note that $P$ becomes very large if $V$ is close to $0$, while, reversely, $P$ is very close to $0$ whenever $V$ is very large. This makes sense from a physical point of view: when $V$ is small, the gas is compressed into a small amount of space, which means that the pressure must be very high, while if $V$ is large, the gas is distributed over a large amount of space, which means the pressure is much lower.
+
+Hier $P$ als grafiek van $V$ (geen maatvoering op de assen want we kennen de constanten niet)
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Gravity
+Consider two objects with masses $m_1$ and $m_2$ respectively (measured in $kg$). Then [Newton's law of universal gravitation](https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation) states that the gravitational force $F$ (measured in $N$) acting between the two objects is a function of the distance $r$ (measured in $m$) between the two objects
+
+$$
+ F(r)=G\frac{m_1m_2}{r^2}=Gm_1m_2r^{-2}.
+$$
+
+Here $G$ is the [gravitational constant](https://en.wikipedia.org/wiki/Gravitational_constant). The graph of the function is shown below. Since $F$ is proportional to $r^{-2}$, this law is a prime example of an **inverse square law**. This means that if the distance between the masses is doubled, the gravitational force drops by a factor $\frac{1}{4}$. Inverse square laws are rather common in nature, for example in certain electric, light and sound effects.
+
+Hier grafiek van F. Geen maatvoering op de assen want we kennen de constanten niet.
+
+The graphs is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:Idealgas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
+
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Negativepowers
+Let us now consider the power functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$. Their graphs are shown below.
+
+Hier grafieken van f en g.
+
+Note that the graph of $f$ is very similar to the one in {prf:ref}`Ex:Functions1var:Idealgas2`, except that, since there are no physical restrictions, the function $f$ is also defined for negative values of $x$. In fact, whenever two (physical) quantities are inversely propertional to each other, the graph of one quantity as a function of the other one will be similar to the graph of $f$. Since the graph of $f$ is the set of all points $(x,y)$ with $y=\frac{1}{x}$, we can rewrite this equation to $xy=1$. This means that the graph of $f$ is a hyperbola. 
+
+Similarly, the graph of $g$ is very similar to the one in {prf:ref}`Ex:Functions1var:Gravity` with again the main distinction that we now allow for negative imput values. This does make the disctinction between the graphs of $f$ and $g$ more clear, though, as $f$ is negative for negative input values, while $g$ is positive.
+
+Note that the function values of both $f$ and $g$ blow up near $x=0$. In the terminology of {numref}`Section:LimitPoint`, both functions have a **vertical asymptote** at $x=0$.
+
+Graphs of functions of the form $h(x)=x^{-n}$ with $n\geq 1$ a positive integer have similar qualitative behaviour to the ones of $f$, if $n$ is odd, or of $g$, if $n$ is even.
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Exponentialgrowth
+Many quantities in nature have the property that their growth rate is propertional to the current size. This can occur in the form of growth, for instance the population size of bacteria, the spread of a virus or the accumulated interest over savings, or in the form of decay, for instance radioactivity, the amplitude of vibrations or the cooling of an object placed in a colder environment. In each of these cases, it is possible to model the physical quantity as an exponential function of time. That is, because exponential functions have that same growth property that their growth rate (or in more mathematical terms, their derivative) is proportional to the function itself, see {numref}`Section:Differentiability`.
+
+To show the typical behaviour of exponential functions, let us consider the functions $A(t)=2^t$ and $B(t)=\left(\frac{1}{3}\right)^t$. Using the computation rules for exponentiation, we can write the function $B$ alternatively as $B(t)=3^{-t}$. The graphs of the functions $A$ and $B$ are shown below.
+
+Hier de grafieken van A en B
+
+For the function $A$, we notice that it is very close to $0$ for negative values of $t$, while it grows very fast for positive $t$. In fact, it grows faster the larger $t$ gets, which is indeed the **exponential growth** behaviour that we were trying to model. Reversely, the function $B$ is very large for negative values of $t$, while it get very close to $0$ for positive values of $t$. In fact, the decay rate decreases when $t$ gets larger, so again this function describes **exponential decay**.
+
+In a physical context, $t$ often models time, so it is often not interesting to look at negative values of $t$. In such cases, the process starts at $t=0$ and evolves for $t>0$ giving either growth or decay.
+
+In general, an exponential function $C(t)=a^t$ gives rise to exponential growth when $a>1$ and exponential decay when $0<a<1$. In the edge case where $a=1$, we find that $C(t)=1$ for all values of $t$.
+
+
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Trigonometry
+Apart from their role in geometry, the trigonometric functions $f(x)=\cos(x)$, $g(x)=\sin(x)$ and $h(x)=\tan(x)$ also play an important role in describing certain physical processes. For instance, the amplitude of an undamped mass-spring system as a function of time can be described in terms of sines and/or cosines. In fact, whenever there is osciallatory behaviour, these functions tend to be good candidates to use as model.
+
+Let us analyse these functions a bit more in mathematical terms. First, let us consider their graphs.
+
+Hier de grafieken van de drie functies.
+
+One of the first things you might notice is that $f$ and $g$ repeat themselves after each cycle of length $2\pi$, while $h$ repeats itself after each cycle of length $\pi$. We say that these functions are **periodic**. This periodicity follows from {prf:ref}`Thm:Trigonometry:Periodicity`. 
+
+::::::
+
+(Subsec:Functions1dPiecewise)=
+
+## Piecewise defined functions
+
+In most cases, functions are defined in terms of $1$ formula. For instance, for functions like $f(x)=\sin\left(x^2+2\right)$, $g(x)=\frac{1}{3e^{2x}}$ or $h(x)=\sqrt{x^3+1}$, the function value corresponding to a certain value of $x$ can be found by plugging in $x$ into the one and only formula describing the function. However, sometimes you want the function to behave differently on different parts of the domain. In such a case, it is possible to use different formulas describing the function on different parts of the domain. If a function is defined using different formulas, we usually refer to it as a **piecewise defined function**.
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Abs
+The absolute value $|x|$ of a number $x$ is actually a shorthand for $x$ if $x$ is positive or $-x$ or $x$ is negative. So the function $a(x)=|x|$ can alternatively be written as
+
+$$
+ a(x)=\left\{\begin{array}{lll}x,\qquad&\text{if }&x\geq 0,\\ -1,&\text{if }&x<0.\end{array}\right.
+$$
+
+This notation should be read as that $a$ follows the formula $a(x)=x$ for $x\geq 0$, while $a$ follows the formula $a(x)=-x$ for $x<0$.
+
+Hier nog de grafiek van a(x)
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Heaviside
+The **Heaviside step function** or **unit step function** is the function defined by
+
+$$
+ H(t)=\left\{\begin{array}{lll}1,\qquad&\text{if }&t\geq 0,\\ 0,&\text{if }&t<0.\end{array}\right.
+$$
+
+That is, the Heaviside function outputs the value $0$ when the input is negative and it outputs the value $1$ when the input is positive. It can be used to model a process that starts off (i.e. at state $0$) and is instantaneously turned on (i.e. state $1$), for instances when flipping a switch. The function is named after the British mathematician and electrical engineer [Oliver Heaviside (1850-1925)](https://en.wikipedia.org/wiki/Oliver_Heaviside).
+
+Hier de grafiek van H(t)
+::::::
+
+::::::{prf:example} 
+:label: Ex:Functions1var:Piecewise
+Consider the piecesie defined function
+
+$$
+ f(x)=\left\{\begin{array}{lll}2x+3,\qquad&\text{if }&x\leq -1,\\ 3,&\text{if }&0<x\leq 1,\\ 2-x^2,&\text{if }&x>1.\end{array}\right.
+$$
+
+This means that in order to evaluate $f(-2)$, we should look in which of the defining intervals $-2$ lies. In this case, we have $-2\leq -1$, so on this part of the domain the function follows the formula $2x+3$. This means that $f(-2)=2(-2)+3=-1$. 
+
+Similarly, in order to evaluate $f(4)$, we note that $4>1$ so that $f(4)=2-4^2=-14$.
+
+Finally, we note that the function is undefined for $-1<x\leq 0$. These values of $x$ simply do not lie in the domain of this function.
+
+Hier nog de grafiek van de functie.
+::::::
+
+
