@@ -131,6 +131,8 @@ Hence, the series is absolutely convergent if $\displaystyle\left|\frac{x-5}{2}\
 ::::::
 
 ::::::{prf:example} Bessel functions
+:label: Ex:Series:Bessel
+
 Bessel functions are defined in terms of power series. The German mathematician [Friedrich Wilhelm Bessel (1784-1846)](https://en.wikipedia.org/wiki/Friedrich_Wilhelm_Bessel) introduced these functions when solving Kepler's equation for describing planetary motion. Later, these Bessel functions have been applied in many different physical situations, including the temperature distribution in a circular plate and the shape of a vibrating drumhead.
 
 :::{figure} Images/bessel.gif
@@ -265,6 +267,7 @@ After differentiating or integrating a power series representation of a function
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Series:LogTwo
 Consider the power series representation $\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$. Differentiation leads to
 
 \begin{align*}
