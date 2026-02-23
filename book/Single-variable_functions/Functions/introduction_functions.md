@@ -1,4 +1,4 @@
-(Chapter:Functions1d)=
+(Chapter:FunctionsAndCurves)=
 
 # Functions and curves
 
