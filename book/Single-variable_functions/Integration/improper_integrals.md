@@ -2,15 +2,6 @@
 
 # Improper integrals
 
-In this section we cover
-
-- Integrals with infinite limits
-- Integrals over intervals that contain a point where the function is discontinuous (infinite or jump discontinuity)
-- Combinations of the above
-- Comparison theorem
-
-Note: do not use the term "Type I/1" and "Type II/2" improper integrals.
-
 ## Introduction
 
 We have defined a definite integral $\displaystyle\int_a^bf(x)\,dx$ in {numref}`Sec:Integration:DefiniteIntegrals`, where the integrand $f$ is a *piecewise-continuous function* on the *closed* and *finite* interval $[a,b]$. Such a function is always *bounded*, which implies that the integral is a finite number. This coincides with the idea behind definite integrals being *finite* areas.

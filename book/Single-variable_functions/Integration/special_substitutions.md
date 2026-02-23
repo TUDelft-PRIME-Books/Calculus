@@ -1,5 +1,7 @@
 # Special substitutions
 
+## Introduction
+
 In the method of integration by substitution from {numref}`Sec:Integration:Substitution` we learned that you have to choose a suitable substitution in order to simplify the integral. In this section we will discuss two special substitutions that are often used in practice: **trigonometric substitutions** and the **midpoint mirror substitution**.
 
 ## Trigonometric substitutions
