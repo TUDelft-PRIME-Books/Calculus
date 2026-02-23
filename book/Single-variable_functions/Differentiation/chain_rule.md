@@ -1,4 +1,4 @@
-(Section:Chainrule1d)=
+(Sec:Differentiation:ChainRule)=
 
 # Chain rule
 
