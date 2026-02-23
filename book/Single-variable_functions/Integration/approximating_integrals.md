@@ -3,52 +3,6 @@
 This page is based on {cite:t}`Vuik_2023`.
 ```
 
-::::{admonition} Figures that should become applets
-:class: remark
-
-Each applet always should have interactivity features such as Zoom, Pan, and Fullscreen.
-
-The following figures should become applets with these additional interactivity features:
-
-```{list-table}
-:header-rows: 1
-:align: center
-:class: mid-align
-
-* - Figure
-  - Interactivity
-  - Implemented
-* - {numref}`Fig:ApproximatingIntegrals:riemann`
-  - Dragging each point along the curve/axis (within their relevant intervals)
-
-    Increasing/decreasing the number of points
-  - 
-* - {numref}`Fig:ApproximatingIntegrals:leftRectangle`
-  - Dragging $x_L$ along the curve/axis
-    
-    Dragging $x_R$ along the axis
-  - Yes
-* - {numref}`Fig:ApproximatingIntegrals:Trapezoidal`
-  - Dragging $x_L$ along the curve/axis
-    
-    Dragging $x_R$ along the curve/axis
-  - Yes
-* - {numref}`Fig:ApproximatingIntegrals:Simpsons`
-  - Dragging $x_L$ along the curve/axis
-
-    Dragging $x_R$ along the curve/axis
-  - Yes
-* - {numref}`Fig:ApproximatingIntegrals:composite`
-  - Increasing/decreasing the number of points
-  - 
-* - {numref}`Fig:ApproximatingIntegrals:errors`
-  - Enabling/disabling each of the curves
-  - Yes
-
-```
-
-::::
-
 (Sec:ApproximatingIntegrals)=
 # Approximating integrals
 
@@ -90,16 +44,15 @@ However, this integral cannot be evaluated in a simple way using only elementary
 
 ## Riemann sums and integrals
 
-A Riemann sum and the corresponding set of intermediate points $T_n$ are shown in {numref}`Figure %s <Fig:ApproximatingIntegrals:riemann>`.
+A Riemann sum and a corresponding set of intermediate points $x_k^*$ are shown in {numref}`Figure %s <Fig:ApproximatingIntegrals:riemann>`.
 
-:::{figure} Images/Fig-NumericalIntegration-riemann.svg
+::::{applet}
+:url: calculus/riemann_sum/riemann_sum_2d?rule=random
 :name: Fig:ApproximatingIntegrals:riemann
-:figwidth: 90%
 :class: dark-light
 
-A Riemann sum and the corresponding set of intermediate points $T_n$.
-
-:::
+A Riemann sum and a corresponding set of intermediate points $x_k^*$.
+::::
 
 Riemann sums are usually used to study integrability theoretically, but they are not very useful in practice. _Numerical integration rules_ constitute different ways to approximate definite integrals. Usually, a numerical integration rule, denoted by $I$, has a similar structure to a Riemann sum:
 
@@ -301,16 +254,15 @@ $$
 
 This is called a _composite integration rule_ and the idea is illustrated in {numref}`Figure %s <Fig:ApproximatingIntegrals:composite>`.
 
-:::{figure} Images/Fig-NumericalIntegration-composite.svg
+::::{applet}
+:url: calculus/riemann_sum/riemann_sum_2d?rule=left
 :name: Fig:ApproximatingIntegrals:composite
-:figwidth: 90%
-:class: dark-light 
+:class: dark-light
 
 An illustration of the composite left Rectangle rule.
+::::
 
-:::
-
-To summarize:
+To summarise:
 
 ::::{prf:definition}
 :label: Def:ApproximatingIntegrals:composite_rules
@@ -389,7 +341,17 @@ $$
 \end{align*}
 $$
 
-As this is still very far from the exact value (see {prf:ref}`Ex:ApproximatingIntegrals:spoiler_simple`), we also computed the approximation with some smaller values of $h$:
+You can see the approximation also in {numref}`Fig:ApproximatingIntegrals:spoiler_composite`.
+
+:::{applet}
+:url: calculus/riemann_sum/riemann_sum_2d_custom?xR=\frac{\pi}{4}&xL=0&function=\sqrt{1+\cos(x)^2}&n=2&rule=right
+:name: Fig:ApproximatingIntegrals:spoiler_composite
+:class: dark-light
+
+Application of the composite right Rectangle rule with $h=\frac18\pi$ to approximate the integral for the spoiler. You can change the value of $n$ to see how the approximation changes. You can also change the integration rule to see how the approximation changes.
+:::
+
+As this is still very far from the exact value (see {prf:ref}`Ex:ApproximatingIntegrals:spoiler_simple`), we also computed the approximation with some smaller values of $h$, which are shown in the next table:
 
 |$h$|$I_R$|$\left\vert\mathcal{I}-I_R\right\vert$
 |-|-|-|
@@ -469,8 +431,8 @@ From {prf:ref}`Ex:ApproximatingIntegrals:spoiler_composite` we can deduce the ne
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/5874f680-fc98-4b44-87b6-07c31a1a3847?id=78665
-:label: Grasple:78665
+:url: https://embed.grasple.com/exercises/5874f680-fc98-4b44-87b6-07c31a1a3847?id=104245
+:label: Grasple:104245
 :dropdown:
 :description: When do two rules give the same result?
 
