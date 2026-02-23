@@ -82,15 +82,12 @@ $$
 
 Using the linearisation, we can approximate this change by performing the following calculation:
 
-$$
 \begin{align*}
 \Delta f &= f(a+h)-f(a) \\
 & \approx L(a+h)-f(a) \\
 & = \left( f(a) + f'(a)(a+h-a) \right) -f(a) \\
 & = f'(a) \cdot h.
 \end{align*}
-$$
-
 In other words, we have the following property:
 
 ::::{prf:property}
@@ -108,6 +105,11 @@ The next example shows how we can use this property to investigate function valu
 :::{figure} Images/Construction.png
 :name: Fig:ApproximatingFunctions:Construction
 :class: dark-light
+:placement: caption
+:source: [Pixabay](https://pixabay.com/photos/modern-architecture-roof-construction-100973/)
+:license: Pixabay License
+:date: 2013-04-07
+:author: <a href="https://pixabay.com/users/pixelanarchy-555/">PixelAnarchy</a>
 
 A set of cylindrical steel beams.
 
@@ -342,8 +344,13 @@ Consider we have a scooter:
 :::{figure} Images/scooter.jpg
 :name: Fig:ApproximatingFunctions:cuberoot-quad
 :figwidth: 50%
+:placement: caption
+:source: [Vecteezy](https://www.vecteezy.com/vector-art/1270966-motor-scooter-isolated-on-white-background)
+:license: Vecteezy Free License
+:author: <a href="https://www.vecteezy.com/members/emiltimplaru">Timplaru Emil</a>
+:date: 2020-09-03
 
-A scooter. <a href="https://www.vecteezy.com/free-vector/scooter">Scooter Vectors by Vecteezy</a>
+A scooter.
 
 :::
 
@@ -460,7 +467,6 @@ $$\cos(\class{red}{0.5})=f(\class{red}{0.5}) \ \approx T_4(\class{red}{0.5}) \ 1
 
 In order to find an upper bound for the approximation error we will need to find an $M$ such that the fifth derivative $f^{(5)}$ of the cosine function is smaller than $M$ for all numbers $x$ in the interval $[0, 0.5]$. The fifth derivative of $f(x)=\cos(x)$ is equal to $f^{(5)}(x)=-\sin(x)$. We know that $|-\sin(x)|\leq 1$ for all values of $x$, so we can choose $M$ to be equal to $1$. We get the following upper bound for the remainder:
 
-$$
 \begin{align*}
 \left|R_4\left(\class{red}{0.5}\right)\right| &= |f(\class{red}{0.5})-T_4(\class{red}{0.5})| \\
 &\leq \frac{1\cdot |\class{red}{0.5}-0|^{4+1}}{(4+1)!} \\
@@ -468,8 +474,6 @@ $$
 &= \frac{0.03125}{120} \\
 &= 0.00026\ldots.
 \end{align*}
-$$
-
 Thus, the approximation error is at most $0.00027$, as we must round up to ensure a proper upper bound.
 
 Now we have an upper bound for the _absolute_ value of the error, we can even find an interval in between the _exact_ value of $\cos(0.5)$ lies:
@@ -500,6 +504,11 @@ $$
 
 Using this formula, we can make a table with in each row a different value of $n$ and the corresponding upper bound:
 
+```{table} Upper bounds for the approximation error of $\sin(0.8)$ using Taylor polynomials of different orders.
+:widths: auto
+:align: center
+:name: Tab:ApproximatingFunctions:SinBounds
+
 |$n$|$\|R_n(0.8)\|\leq$|
 |-|-|
 |$0$|$0.8$|
@@ -510,6 +519,7 @@ Using this formula, we can make a table with in each row a different value of $n
 |$5$|$0.0003640\overline{88}$|
 |$6$|$0.00004161\overline{015873}$|
 |$7$|$0.000004161\overline{015873}$|
+```
 
 For $n=3$ the right-hand side of the inequality is $0.0170\overline{66}$. This value is not smaller than 0.0001 and thus a Taylor polynomial of order three may not be sufficient to give us an approximation that is good enough. If $n$  is equal to 4 we obtain that the approximation error is smaller than $0.002730\overline{66}$. After a little trial and error we find that for $n=6$ the error is smaller than $0.00004161\overline{015873}$ and therefore also smaller than $0.0001$. A Taylor polynomial of order 6 will give us the approximation that we want. For the sine function this polynomial is equal to
 
