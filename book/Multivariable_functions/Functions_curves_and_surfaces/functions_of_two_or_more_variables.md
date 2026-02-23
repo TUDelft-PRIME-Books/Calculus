@@ -1,4 +1,4 @@
-(Section:Function2var)=
+(Sec:MultivariableFunctions)=
 
 # Functions of two or more variables
 

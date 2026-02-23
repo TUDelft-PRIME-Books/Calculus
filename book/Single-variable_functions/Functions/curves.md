@@ -82,7 +82,7 @@ When writing down a parametrisation of a curve, you should always explicitly wri
 
 ::::::
 
-Recall that the unit circle can also represented as the set of all points $(x,y)$ satisfying the implicit equation $x^2+y^2=1$. Alternatively, we can write this equation as $x^2+y^2-1=0$. In order to generalise this concept to other curves, we first need to define what we mean by a function of two variables. These function will be studied in way more depth in {numref}`Section:Function2var`.
+Recall that the unit circle can also represented as the set of all points $(x,y)$ satisfying the implicit equation $x^2+y^2=1$. Alternatively, we can write this equation as $x^2+y^2-1=0$. In order to generalise this concept to other curves, we first need to define what we mean by a function of two variables. These function will be studied in way more depth in {numref}`Sec:MultivariableFunctions`.
 
 
 ::::::{prf:definition} 
