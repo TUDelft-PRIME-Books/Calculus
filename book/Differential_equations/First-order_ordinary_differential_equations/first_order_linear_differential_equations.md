@@ -2,8 +2,23 @@
 
 In this section we cover:
 
+- standard form
 - Integrating factor
 - Solving linear first order differential equations
+- Mention name Bernouilli equations
+- Link with separable equations, same example?
+
+
+
+
+
+
+
+
+
+
+
+
 
 ::::::{prf:Definition}
 A first-order differential equation is called **linear** if it can be written in the form:

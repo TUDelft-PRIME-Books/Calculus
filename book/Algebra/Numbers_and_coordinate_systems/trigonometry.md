@@ -1,4 +1,20 @@
+(Sec:Algebra:Trigonometry)=
+
 # Trigonometry
+
+## Introduction
+
+In this section we will introduce some basic concepts of trigonometry. Trigonometry is the branch of mathematics that studies the relations between the angles and the lengths of the sides of triangles. It has many applications in science and engineering, such as in physics, computer graphics, signal processing and navigation.
+
+```{figure} Images/triangle_angles_diagram.svg
+---
+class: dark-light
+figclass: margin
+name: Fig:Trigonometry:Triangle
+---
+
+A triangle with the angles indicated.
+```
 
 ## Angles
 
@@ -7,6 +23,14 @@ Angles can be measured in degrees or in radians (abbreviated as $\operatorname{r
 $$\pi\;\operatorname{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\operatorname{rad}.$$ 
 
 In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out "$\operatorname{rad}$".
+
+::::::{note}
+In surveying, mining and geology, angles are sometimes measured in *[gradians](https://en.wikipedia.org/wiki/Gradian)* or *gons*. Then the angle given by a complete revolution contains $400^{\operatorname{g}}$, which is the same as $2\pi$ rad. Therefore:
+
+$$\pi\;\operatorname{rad}=200^{\operatorname{g}}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{200}{\pi}\right)^{\operatorname{g}}\quad\text{and}\quad 1^{\operatorname{g}}=\dfrac{\pi}{200}\;\operatorname{rad}.$$ 
+
+We will not use these *gradians* or *gons* in this book.
+::::::
 
 ::::::{prf:definition}
 :label: Def:Trigonometry:Angle
@@ -33,7 +57,7 @@ An angle $\theta$ in the $xy$-plane in standard position.
 ::::::{prf:remark} Angle between two half lines
 :label: Rem:Trigonometry:AngleBetweenTwoLines
 
-An angle between two intersecting half lines is always in $[0,\pi]$. An angle $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. 
+An angle between two intersecting half lines is always in $[0,\pi]$. An angle of $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. 
 
 ::::::
 
@@ -109,6 +133,7 @@ However, in this book we will not use these three trigonometric ratios.
 Commonly powers of trigonometric ratios are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
 
 ::::::{prf:notation} Powers of trigonometric ratios
+:label: Not:Trigonometry:Powers
 
 For any positive integer $n$ we use the following notation:
 
@@ -140,7 +165,11 @@ class: dark-light
 An illustration for Thales's theorem.
 ```
 
-Idealiter een plaatje met een draaibaar lijnstuk $AB$ door het middelpunt en een vrij beweegbaar punt $C$ aan één kant (bovenkant) over de cirkel tussen $A$ en $B$.
+::::{prf:remark}
+:label: Rem:Trigonometry:ThalesInteractive
+
+Ideally, an image with a rotatable line segment $AB$ through the centre and a freely movable point $C$ on one side (the top) along the circle between $A$ and $B$.
+::::
 
 In {numref}`Fig:Trigonometry:Thales` you might notice that the angle $\angle ACB$ looks like a right angle. Thales's theorem states that this is indeed the case:
 
@@ -200,7 +229,7 @@ An elegant proof of the Pythagorean theorem is based on the following figure:
 ```{figure} Images/pythagoras.png
 ---
 width: 50%
-name: right-angled triangle
+name: Fig:Trigonometry:PythagorasProof
 class: dark-light
 ---
 
@@ -224,7 +253,7 @@ So we have:
 
 ## The law of cosines
 
-The *law of cosines* is a generalization of the Pythagorean theorem, and regards arbitrary triangles as shown in {numref}`Fig:Trigonometry:LawOfCosines`.
+The *law of cosines* is a generalisation of the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>`, and regards arbitrary triangles as shown in {numref}`Fig:Trigonometry:LawOfCosines`.
 
 ```{figure} Images/abctriangle.png
 ---
@@ -275,6 +304,7 @@ a^2=b^2+c^2-2bc\cos(\alpha).
 ::::::
 
 ::::::{prf:corollary} Law of cosines
+:label: Cor:Trigonometry:LawOfCosinesVariants
 
 Note that we also have $b^2=a^2+c^2-2ac\cos(\beta)$ and $c^2=a^2+b^2-2ab\cos(\gamma)$.
 
@@ -359,7 +389,7 @@ This proves the theorem.
 
 For certain special angles the trigonometric ratios can be evaluated exactly.
 
-{prf:ref}`Def:Trigonometry:TrigonometricRatios` implies that for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`
+{prf:ref}`Def:Trigonometry:TrigonometricRatios` implies that for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`.
 
 ```{figure} Images/acute.png
 ---
@@ -371,23 +401,13 @@ class: dark-light
 The trigonometric ratios for an acute angle.
 ```
 
-In het plaatje "opp", "adj" en "hyp" gebruiken voor de zijden.
-
-If the sides of the triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ as shown in {numref}`Fig:Trigonometry:AcuteAngle` and "hyp" for the hypotenuse of the triangle, then we have:
-
 ::::::{prf:corollary}
--   
-  $$
-  \sin(\theta)=\dfrac{\text{opp}}{\text{hyp}};
-  $$
-- 
-  $$
-  \cos(\theta)=\dfrac{\text{adj}}{\text{hyp}};
-  $$
-- 
-  $$
-  \tan(\theta)=\dfrac{\text{opp}}{\text{adj}}.
-  $$
+:label: Cor:Trigonometry:TrigonometricRatiosTriangle
+
+If the sides of a triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ (as shown in {numref}`Fig:Trigonometry:AcuteAngle`) and "hyp" for the hypotenuse of the triangle, then we have:
+- $\sin(\theta)=\dfrac{\operatorname{opp}}{\operatorname{hyp}}$;
+- $\cos(\theta)=\dfrac{\operatorname{adj}}{\operatorname{hyp}}$;
+- $\tan(\theta)=\dfrac{\operatorname{opp}}{\operatorname{adj}}$.
 
 ::::::
 
@@ -417,7 +437,9 @@ An equilateral triangle with three equal sides of length $2$.
 
 This leads to the following table of standard values:
 
-```{list-table}
+
+```{list-table} Standard values of sine, cosine and tangent.
+:name: Tab:Trigonometry:StandardValues
 :header-rows: 2
 :align: center
 :class: mid-align center-align
@@ -518,7 +540,6 @@ $$
 
 Using {numref}`Fig:Trigonometry:unit_circle` and the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` with $a=x=\cos(\theta)$ and $b=y=\sin(\theta)$ and $c=1$ we have:
 
-$$
 \begin{align*}
 \sin^2(\theta)+\cos^2(\theta) &= y^2+x^2 \\
 &= x^2 +y^2 \\
@@ -526,8 +547,6 @@ $$
 & = c^2 \\
 & = 1.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{prf:theorem} Periodicity
@@ -698,29 +717,20 @@ For the tangent function we have $\tan(\pi-\theta)=\dfrac{\sin(\pi-\theta)}{\cos
 
 For every $x,y\in\mathbb{R}$ we have
 
-$$
 \begin{align*}
 \sin(x+y) &= \sin(x)\cos(y)+\cos(x)\sin(y), \\
 \cos(x+y) &= \cos(x)\cos(y)-\sin(x)\sin(y),
 \end{align*}
-$$
-
-$$
 \begin{align*}
 \sin(x-y) &=\sin(x)\cos(y)-\cos(x)\sin(y), \\
 \cos(x-y) &=\cos(x)\cos(y)+\sin(x)\sin(y),
 \end{align*}
-$$
-
 and
 
-$$
 \begin{align*}
 \tan(x+y) &=\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}, \\
 \tan(x-y) &=\frac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:AdditionSubtractionFormulas`
@@ -746,28 +756,22 @@ $$
 
 On the other hand, this distance can be computed using the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` as
 
-$$
 \begin{align*}
 (PQ)^2&=(\cos(\beta)-\cos(\alpha))^2+(\sin(\beta)-\sin(\alpha))^2\\
 &=\cos^2(\beta)-2\cos(\alpha)\cos(\beta)+\cos^2(\alpha)+\sin^2(\beta)-2\sin(\alpha)\sin(\beta)+\sin^2(\alpha)\\
 &=2-2\left(\cos(\alpha)\cos(\beta)+\sin(\alpha)\cos(\alpha)\right).
 \end{align*}
-$$
-
 This implies that $\cos(\alpha-\beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)$.
 
 Replacing $\beta$ with $-\beta$ we obtain that $\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)$.
 
 In {prf:ref}`Thm:Trigonometry:ComplementaryAngles` we obtained that $\sin(\frac{1}{2}\pi-\theta)=\cos(\theta)$ and $\cos(\frac{1}{2}\pi-\theta)=\sin(\theta)$. Using these complementary angles formulas, we obtain
 
-$$
 \begin{align*}
 \sin(\alpha+\beta)&=\cos(\tfrac{1}{2}\pi-\alpha-\beta)\\
 &=\cos(\tfrac{1}{2}\pi-\alpha)\cos(\beta)+\sin(\tfrac{1}{2}\pi-\alpha)\sin(\beta)\\
 &=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta).
 \end{align*}
-$$
-
 Replacing $\beta$ with $-\beta$ we obtain $\sin(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
 
 Now the summation formulas for the tangent follow from these summation formulas for the sine and the cosine:
@@ -787,6 +791,7 @@ Replacing $y$ with $-y$ we obtain $\tan(x-y)=\dfrac{\tan(x)-\tan(y)}{1+\tan(x)\t
 
 ::::::{prf:corollary} Product formulas
 :label: Thm:Trigonometry:ProductFormulas
+
 For every $x,y\in\mathbb{R}$ we have
 
 $$
@@ -911,6 +916,21 @@ Now we conclude that the area of the triangle equals
 ```{math}
 \sqrt{\frac{a+b+c}{2}\cdot\frac{b+c-a}{2}\cdot\frac{a+b-c}{2}\cdot\frac{a+c-b}{2}}=\sqrt{s(s-a)(s-b)(s-c)}.
 ```
+::::::
+
+## The sine as a product
+
+Although we will not cover infinite products in this book we mention the following about the sine.
+
+::::::{prf:Remark}
+:label: Ex:Integration:IntroductionExamplesProductSine
+It can be shown that
+
+$$
+\sin(\pi x)=\pi x\prod_{n=1}^{\infty}\left(1-\frac{x^2}{n^2}\right).
+$$
+
+The factors of this infinite product give rise to all zeros of $\sin(\pi x)$ being $0,\pm1,\pm2,\ldots$.
 ::::::
 
 ## Exercises
@@ -1095,9 +1115,11 @@ In the picture below we have $\alpha=\frac{1}{7}\pi$. Find the exact value of $\
 ```{figure} Images/cosines.png
 ---
 width: 50%
-name: product of cosines
+name: Fig:Trigonometry:Cosines
 align: center
 ---
+
+A triangle with angles $3\alpha$, $3\alpha$ and $\alpha$, subdivided into two isosceles triangles.
 ```
 
 :::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_11`
@@ -1183,9 +1205,10 @@ In the exercises below we consider an arbitrary triangle $ABC$ with vertices $A$
 ```{figure} Images/abctriangle.png
 ---
 width: 50%
-name: Triangle $ABC$
+name: Fig:Trigonometry:abcTriangle
 align: center
 ---
+Triangle $\triangle ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$ respectively.
 ```
 
 ```{exercise} 

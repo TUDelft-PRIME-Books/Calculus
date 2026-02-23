@@ -82,15 +82,12 @@ $$
 
 Using the linearisation, we can approximate this change by performing the following calculation:
 
-$$
 \begin{align*}
 \Delta f &= f(a+h)-f(a) \\
 & \approx L(a+h)-f(a) \\
 & = \left( f(a) + f'(a)(a+h-a) \right) -f(a) \\
 & = f'(a) \cdot h.
 \end{align*}
-$$
-
 In other words, we have the following property:
 
 ::::{prf:property}
@@ -108,6 +105,11 @@ The next example shows how we can use this property to investigate function valu
 :::{figure} Images/Construction.png
 :name: Fig:ApproximatingFunctions:Construction
 :class: dark-light
+:placement: caption
+:source: [Pixabay](https://pixabay.com/photos/modern-architecture-roof-construction-100973/)
+:license: Pixabay License
+:date: 2013-04-07
+:author: <a href="https://pixabay.com/users/pixelanarchy-555/">PixelAnarchy</a>
 
 A set of cylindrical steel beams.
 
@@ -190,7 +192,7 @@ $$
 \sqrt[3] x \ \approx \ 2+\frac 1{12}(x-8)-\frac 1{288}(x-8)^2.
 $$
 
-In {numref}`Figure %s <Fig:ApproximatingFunctions:cuberootquad>` you can see that this quadratic polynomial is indeed a better approximation than the linearization. 
+In {numref}`Figure %s <Fig:ApproximatingFunctions:cuberootquad>` you can see that this quadratic polynomial is indeed a better approximation than the linearisation. 
 
 :::{figure} Images/Fig-TaylorPolynomials-cuberoot-quad.svg
 :name: Fig:ApproximatingFunctions:cuberootquad
@@ -342,8 +344,13 @@ Consider we have a scooter:
 :::{figure} Images/scooter.jpg
 :name: Fig:ApproximatingFunctions:cuberoot-quad
 :figwidth: 50%
+:placement: caption
+:source: [Vecteezy](https://www.vecteezy.com/vector-art/1270966-motor-scooter-isolated-on-white-background)
+:license: Vecteezy Free License
+:author: <a href="https://www.vecteezy.com/members/emiltimplaru">Timplaru Emil</a>
+:date: 2020-09-03
 
-A scooter. <a href="https://www.vecteezy.com/free-vector/scooter">Scooter Vectors by Vecteezy</a>
+A scooter.
 
 :::
 
@@ -406,7 +413,7 @@ The next theorem generalises the above examples and gives us the tools to always
 
 ::::{prf:theorem}
 
-Define $D$ as an interval that contains the point $a$, $T_n$ as the $n$<sup>th</sup> order Taytlor polynomial of $f$ around $a$ and $M$ as an upper bound for $|f^{(n+1)}(x)|$ on the interval $D$. Then
+Define $D$ as an interval that contains the point $a$, $T_n$ as the $n$<sup>th</sup> order Taylor polynomial of $f$ around $a$ and $M$ as an upper bound for $|f^{(n+1)}(x)|$ on the interval $D$. Then
 
 :::{math}
 :label: Ex:TaylorPolynomialsAdd:TaylorIneq
@@ -419,7 +426,7 @@ for all $x$ in $D$.
 
 ::::
 
-This theorem can be visualed as in {numref}`Figure %s <Fig:ApproximatingFunctions:error>`, where we use $n=1$.
+This theorem can be visualised as in {numref}`Figure %s <Fig:ApproximatingFunctions:error>`, where we use $n=1$.
 
 :::{figure} Images/Fig-TaylorPolynomials-error.svg
 :name: Fig:ApproximatingFunctions:error
@@ -460,7 +467,6 @@ $$\cos(\class{red}{0.5})=f(\class{red}{0.5}) \ \approx T_4(\class{red}{0.5}) \ 1
 
 In order to find an upper bound for the approximation error we will need to find an $M$ such that the fifth derivative $f^{(5)}$ of the cosine function is smaller than $M$ for all numbers $x$ in the interval $[0, 0.5]$. The fifth derivative of $f(x)=\cos(x)$ is equal to $f^{(5)}(x)=-\sin(x)$. We know that $|-\sin(x)|\leq 1$ for all values of $x$, so we can choose $M$ to be equal to $1$. We get the following upper bound for the remainder:
 
-$$
 \begin{align*}
 \left|R_4\left(\class{red}{0.5}\right)\right| &= |f(\class{red}{0.5})-T_4(\class{red}{0.5})| \\
 &\leq \frac{1\cdot |\class{red}{0.5}-0|^{4+1}}{(4+1)!} \\
@@ -468,8 +474,6 @@ $$
 &= \frac{0.03125}{120} \\
 &= 0.00026\ldots.
 \end{align*}
-$$
-
 Thus, the approximation error is at most $0.00027$, as we must round up to ensure a proper upper bound.
 
 Now we have an upper bound for the _absolute_ value of the error, we can even find an interval in between the _exact_ value of $\cos(0.5)$ lies:
@@ -500,6 +504,11 @@ $$
 
 Using this formula, we can make a table with in each row a different value of $n$ and the corresponding upper bound:
 
+```{table} Upper bounds for the approximation error of $\sin(0.8)$ using Taylor polynomials of different orders.
+:widths: auto
+:align: center
+:name: Tab:ApproximatingFunctions:SinBounds
+
 |$n$|$\|R_n(0.8)\|\leq$|
 |-|-|
 |$0$|$0.8$|
@@ -510,6 +519,7 @@ Using this formula, we can make a table with in each row a different value of $n
 |$5$|$0.0003640\overline{88}$|
 |$6$|$0.00004161\overline{015873}$|
 |$7$|$0.000004161\overline{015873}$|
+```
 
 For $n=3$ the right-hand side of the inequality is $0.0170\overline{66}$. This value is not smaller than 0.0001 and thus a Taylor polynomial of order three may not be sufficient to give us an approximation that is good enough. If $n$  is equal to 4 we obtain that the approximation error is smaller than $0.002730\overline{66}$. After a little trial and error we find that for $n=6$ the error is smaller than $0.00004161\overline{015873}$ and therefore also smaller than $0.0001$. A Taylor polynomial of order 6 will give us the approximation that we want. For the sine function this polynomial is equal to
 
@@ -580,24 +590,6 @@ Since the error is smaller than 0.0001 this means that the actual value of $\sin
 :label: Grasple:ApproximatingFunctions:T2Sine
 :dropdown:
 :description: Finding $T_2$ for a sine function.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/282946e0-2d88-41b6-970c-55c26d28d714?id=64606
-:label: Grasple:ApproximatingFunctions:T2PolyExp
-:dropdown:
-:description: Finding $T_2$ for a polynomial times an exponential function.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/0d05a9a9-8d42-4ee3-ac40-706b7ac4844f?id=64953
-:label: Grasple:ApproximatingFunctions:T2PolyExp
-:dropdown:
-:description: Finding $T_2$ for a polynomial times an exponential function.
 
 ::::
 

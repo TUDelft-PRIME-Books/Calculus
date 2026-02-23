@@ -1,5 +1,5 @@
 title: Calculus
-author: Authors from Delft University of Technology, built with <a href="https://teachbooks.io">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
+author: D. den Ouden-van der Horst, W.M. Schouten-Straatman & R. Koekoek from Delft University of Technology, built with <a href="https://teachbooks.io">TeachBooks</a> and <a href="https://jupyterbook.org/">Jupyter Book</a>, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer"">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""></a>
 execute:
   execute_notebooks: "off"
 
@@ -25,8 +25,35 @@ html:
 sphinx:
   local_extensions:
     text_replacer: _ext/
+    check_captions: _ext/
   config:
+    prf_realtyp_to_countertyp:
+      "axiom": "theorem"
+      "theorem": "theorem"
+      "lemma": "theorem"
+      "algorithm": "theorem"
+      "definition": "theorem"
+      "remark": "theorem"
+      "conjecture": "theorem"
+      "corollary": "theorem"
+      "criterion": "theorem"
+      "example": "theorem"
+      "property": "theorem"
+      "observation": "theorem"
+      "proposition": "theorem"
+      "assumption": "theorem"
+      "notation": "theorem"
     language: en
+    numfig_format:
+      figure: Figure %s
+    html_secnumber_suffix: " "
+    proof_title_format: " *%t*"
+    proof_title_weight: "var(--bs-body-font-weight)"
+    metadata_figure_settings:
+      license:
+        substitute_missing: true
+      date:
+        substitute_missing: true
     sphinx_indexed_defs_indexed_nodes: ['strong']
     tud_change_titlesize: true
     new_tab_link_show_external_link_icon: true
@@ -63,6 +90,7 @@ sphinx:
           "norm": ["\\left\\Vert #1 \\right\\Vert",1]
           "ip" : "\\cdot"
           "cp": ["\\times "]
+          "erf": "\\operatorname{erf}"
     inverter_all: false
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js # Required for live code: https://teachbooks.io/manual/features/live_code.html
@@ -81,12 +109,11 @@ sphinx:
       launch_buttons:
         thebe: true                                  # Required for live code: https://teachbooks.io/manual/features/live_code.html
     html_show_copyright: false                       # As the copyright is included in the author field
-    html_last_updated_fmt: '%B %-d, %Y'              # Adds the date of the last update to the footer
+    html_last_updated_fmt: ''              # Adds the date of the last update to the footer
   extra_extensions:                                  # Extra extensions to be used in the book
     - teachbooks_favourites
     - teachbooks_sphinx_grasple                      # Adds the Grasple exercises to your book 
     - sphinx_prime_applets                           # Adds the Prime applets to your book
-    # - sphinx_ref_graph                               # Adds a graph of references to your book, breaks the build currently, so disabled for now
     - sphinx_tudelft_theme                           # Adds the TU Delft theme to your book https://teachbooks.io/manual/external/Sphinx-TUDelft-theme/README.html
     - sphinx_indexed_definitions
     - sphinx_new_tab_link

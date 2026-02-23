@@ -1,3 +1,5 @@
+(Section:Curves)=
+
 # Curves in $\mathbb{R}^2$
 
 - Ellipse

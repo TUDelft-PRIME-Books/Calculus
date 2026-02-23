@@ -23,8 +23,13 @@ $$
 :::{figure} Images/Fig-NumericalIntegration-truck.svg
 :name: Fig:ApproximatingIntegrals:truck
 :figwidth: 90%
+:placement: caption
+:source: [Vecteezy](https://www.vecteezy.com/vector-art/329203-truck-illustration-isolated-on-a-white-background)
+:license: Vecteezy Free License
+:date: 2019-03-01
+:author: <a href="https://www.vecteezy.com/members/callmetak">Takeshi Ishikawa</a>
 
-Truck with spoiler on the cabin. Originally from <a href="https://www.vecteezy.com/free-vector/truck" target="_blank">Truck Vectors by Vecteezy</a>.
+Truck with spoiler on the cabin.
 
 :::
 
@@ -151,10 +156,11 @@ Assume $f$ is continuous on $[x_L,x_R]$.
 
 We define the following **integration rules**:
 
-```{list-table}
+```{list-table} Overview of simple integration rules.
 :header-rows: 0
 :align: center
 :class: mid-align
+:name: Tab:ApproximatingIntegrals:simple_rules
 
 * - **left Rectangle rule**
   - $\displaystyle\int_{x_L}^{x_R}f(x)\,dx\approx (x_R-x_L)f(x_L)$
@@ -180,19 +186,17 @@ $$
 
 Each of the three rules use the function values in the left point $x_L=0$ and/or the right point $x_R=\frac14\pi$, so let us calculate these to start:
 
-$$
 \begin{align*}
 \sqrt{1 + \cos^2\left( 0\right)} &=          1.414213\ldots \\
 \sqrt{1 + \cos^2\left(\frac14\pi\right)} &= 1.224744\ldots
 \end{align*}
-$$
-
 Now we can apply each of the three rules (scroll to the right to see the numerical values if they are not shown (completely)):
 
-```{list-table}
+```{list-table} Approximations of the integral using simple integration rules.
 :header-rows: 0
 :align: center
 :class: mid-align
+:name: Tab:ApproximatingIntegrals:simple_rules_approximations
 
 * - left Rectangle rule
   - $\displaystyle\int\limits_{0}^{\frac14\pi}\sqrt{1 + \cos^2\left( x\right)}\,dx$
@@ -281,13 +285,10 @@ $$
 
 The left and right composite Rectangle rules are given by
 
-$$
 \begin{align*}
  I_{L} &=  \sum_{k=0}^{n-1}h f(x_k) = h\left(f(a) + f(a + h) + \ldots + f(b - h)\right), \\
  I_{R} &= \sum_{k=1}^nh f(x_k)= h\left(f(a+h) + f(a + 2h) + \ldots + f(b)\right).
 \end{align*}
-$$
-
 **Trapezoidal rule**
 
 For the Trapezoidal rule, the composite version is  
@@ -311,13 +312,10 @@ $$
 
 The composite Simpson's rule is given by
 
-$$
 \begin{align*}
   I_S &= \frac{h}{6} \sum_{k=1}^n \left( f(x_{k-1}) + 4 f\left( \frac{x_{k-1} + x_k}{2} \right)  + f(x_k) \right) \\
 &= h\left( \frac{1}{6} f(a) + \frac{2}{3} f(a + \frac{1}{2} h) + \frac{1}{3} f(a + h) +  \frac{2}{3} f(a + \frac{3}{2} h) +  \ldots + \frac{1}{3}f(b-h)+\frac{2}{3} f(b - \frac{1}{2} h) + \frac{1}{6} f(b) \right).
 \end{align*}
-$$
-
 :::
 
 Let us apply one of these composite rules methods to the example of the spoiler:
@@ -333,7 +331,6 @@ $$
 
 using the composite right Rectangle rule with $h=\frac18\pi$:
 
-$$
 \begin{align*}
 \mathcal{I} &\approx I_R \\
 &= \tfrac18\pi\left(\sqrt{1 + \cos^2\left(\tfrac18\pi\right)}+\sqrt{1 + \cos^2\left(\tfrac14\pi\right)}\right) \\
@@ -353,6 +350,11 @@ Application of the composite right Rectangle rule with $h=\frac18\pi$ to approxi
 
 As this is still very far from the exact value (see {prf:ref}`Ex:ApproximatingIntegrals:spoiler_simple`), we also computed the approximation with some smaller values of $h$, which are shown in the next table:
 
+```{table} Approximations of the integral using the composite right Rectangle rule for various values of $h$.
+:widths: auto
+:align: center
+:name: Tab:ApproximatingIntegrals:composite_right_rectangle_approximations
+
 |$h$|$I_R$|$\left\vert\mathcal{I}-I_R\right\vert$
 |-|-|-|
 |$\tfrac14\pi$|$0.96191\ldots$|$0.0961831\ldots$|
@@ -361,6 +363,7 @@ As this is still very far from the exact value (see {prf:ref}`Ex:ApproximatingIn
 |$\tfrac1{32}\pi$|$1.04846\ldots$|$0.0096286\ldots$|
 |$\tfrac1{64}\pi$|$1.05336\ldots$|$0.0047322\ldots$|
 |$\tfrac1{128}\pi$|$1.05574\ldots$|$0.0023456\ldots$|
+```
 
 Do you notice anything that happens in the last column?
 
@@ -403,11 +406,17 @@ A proof of this theorem is too much for this book, but you can find it in {cite:
 
 From {prf:ref}`Ex:ApproximatingIntegrals:spoiler_composite` we can deduce the next table:
 
+```{table} Orders of some composite integration rules.
+:widths: auto
+:align: center
+:name: Tab:ApproximatingIntegrals:composite_rules_orders
+
 |Composite rule|$p$|
 |-|-|
 |left Rectangle|$1$|
 |right Rectangle|$1$|
 |Trapezoidal|$2$|
+```
 
 ## Grasple exercises
 
