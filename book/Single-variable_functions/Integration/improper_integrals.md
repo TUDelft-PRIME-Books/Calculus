@@ -199,6 +199,7 @@ Hence, we have
 ::::::
 
 ::::::{note}
+:name: Note:Integration:ImproperIntegralsInfiniteIntervalExample3
 
 ```{figure} Images/cauchy.png
 ---
@@ -408,7 +409,15 @@ Because both integrals diverge, we say that the improper integral $\displaystyle
 ::::::
 
 ::::::{warning}
-It would be wrong to conclude that $\displaystyle\int_0^3\frac{dx}{x-1}=\infty-\infty=0$ and it is also incorrect to state that
+:name: Warning:Integration:ImproperIntegralsDiscontinuousIntegrandWarning2
+
+It would be wrong to conclude that
+
+$$
+\int_0^3\frac{dx}{x-1}=\infty-\infty=0
+$$
+
+and it is also incorrect to state that
 
 $$
 \int_0^3\frac{dx}{x-1}=\ln|x-1|\bigg|_0^3=\ln(2)-\ln(1)=\ln(2).
@@ -434,7 +443,7 @@ Consider $\displaystyle\int_0^1\ln(x)\,dx$.
 Using integration by parts, we have
 
 \begin{align*}
-\int\ln(x)\,dx &= x\ln(x)-\int\ln x\cdot\frac{1}{x}\,dx \\
+\int\ln(x)\,dx &= x\ln(x)-\int x\cdot\frac{1}{x}\,dx \\
 &= x\ln(x)-x+C.
 \end{align*}
 
@@ -462,43 +471,13 @@ $$
 
 ::::::
 
-<!-- HIER GEBLEVEN -->
-
-::::::{prf:Theorem} $p$-integrals
-:label: Thm:Integration:ImproperIntegralsPIntegrals
-For $0<a<\infty$ we have
-
-(a) $\displaystyle\int_a^{\infty}\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{p-1}, &p>1\\\infty, &p\leq1.\end{cases}$
-
-(b) $\displaystyle\int_0^a\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{1-p}, &p<1\\\infty, &p\geq1.\end{cases}$
-::::::
-
-::::::{admonition} Proof of {prf:ref}`Thm:Integration:ImproperIntegralsPIntegrals`
-:class: tudproof, dropdown
-
-(a) We have
-
-$$
-\int_a^{\infty}\frac{dx}{x^p}=\lim_{R\to\infty}\int_a^R\frac{dx}{x^p}=\lim_{R\to\infty}\bigg[\frac{x^{1-p}}{1-p}\bigg]_a^R=\lim_{R\to\infty}\left(\frac{R^{1-p}}{1-p}-\frac{a^{1-p}}{1-p}\right).
-$$
-
-This limit exists if $1-p<0$ (then: $\displaystyle\lim_{R\to\infty}\frac{R^{1-p}}{1-p}=0$) and $\displaystyle\lim_{R\to\infty}\frac{R^{1-p}}{1-p}$ equals $\infty$ if $1-p>0$. For $p=1$ the integral reads $\displaystyle\int_a^{\infty}\frac{dx}{x}$ which is divergent.
-
-(b) We have
-
-$$
-\int_0^a\frac{dx}{x^p}=\lim_{c\downarrow0}\int_c^a\frac{dx}{x^p}=\lim_{c\downarrow0}\bigg[\frac{x^{1-p}}{1-p}\bigg]_c^a=\lim_{c\downarrow0}\left(\frac{a^{1-p}}{1-p}-\frac{c^{1-p}}{1-p}\right).
-$$
-
-This limit exists if $1-p>0$ (then: $\displaystyle\lim_{c\downarrow0}\frac{c^{1-p}}{1-p}=0$) and $\displaystyle\lim_{c\downarrow0}\frac{c^{1-p}}{1-p}$ equals $-\infty$ if $1-p<0$. For $p=1$ the integral reads $\displaystyle\int_0^a\frac{dx}{x}$ which is divergent.
-
-::::::
+## Comparing improper integrals
 
 Sometimes integrals are not easy to evaluate. However, in many cases evaluation is not necessary as long as we can find out whether the integral is convergent or divergent. In case of convergence we might able to find a lower and upper bound for the integral. The following theorem might be helpful.
 
-::::::{prf:Theorem} A comparison theorem for improper integrals
+::::::{prf:Theorem} Comparison theorem for improper integrals
 :label: Thm:Integration:ImproperIntegralsComparison
-If $f$ and $g$ are continuous on $(a,b)$ with $-\infty\leq a<b\leq\infty$ and $0\leq f(x)\leq g(x)$, then:
+Assume $f$ and $g$ are continuous on $(a,b)$ with $-\infty\leq a<b\leq\infty$ and $0\leq f(x)\leq g(x)$, then:
 
 (a) If $\displaystyle\int_a^bg(x)\,dx$ is convergent, then $\displaystyle\int_a^bf(x)\,dx$ is convergent.
 
@@ -508,19 +487,19 @@ If $f$ and $g$ are continuous on $(a,b)$ with $-\infty\leq a<b\leq\infty$ and $0
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsComparisonExample1
-Without evaluating the integral, determine whether $\displaystyle\int_0^{\infty}\frac{x}{1+x^3}\,dx$ is convergent or divergent.
+Without evaluating the integral, we determine whether $\displaystyle\int_0^{\infty}\frac{x}{1+x^3}\,dx$ is convergent or divergent and give an interval containing its value.
 
 First, let $\displaystyle\int_0^{\infty}\frac{x}{1+x^3}\,dx=\int_0^1\frac{x}{1+x^3}\,dx+\int_1^{\infty}\frac{x}{1+x^3}\,dx$.
 
-The first integral involves a continuous function on a finite interval, which is convergent. 
+The first integral on the right involves a continuous function on a finite interval, which is convergent. 
 
-Since $0<\dfrac{x}{1+x^3}<\dfrac{1}{1+x^3}<1$ we have
+Since $0\leq\dfrac{x}{1+x^3}\le\dfrac{1}{1+x^3}<1$ for $0\le x\le 1$, we have
 
 $$
-0<\int_0^1\frac{x}{1+x^3}\,dx<1.
+0 \leq \int_0^1\frac{x}{1+x^3}\,dx<1.
 $$
 
-Note that $0\leq\dfrac{x}{1+x^3}\leq\dfrac{1}{x^2}$ for $x\geq1$ and since
+Note that $0\leq\dfrac{x}{1+x^3}\leq\dfrac{x}{x^3}=\dfrac{1}{x^2}$ for $x\geq1$ and since
 
 $$
 \int_1^{\infty}\frac{dx}{x^2}=\bigg[-\frac{1}{x}\bigg]_1^{\infty}=1,
@@ -529,18 +508,20 @@ $$
 we conclude that the second integral is convergent as well and that 
 
 $$
-0<\int_1^{\infty}\frac{x}{1+x^3}\,dx<1.
+0 \leq \int_1^{\infty}\frac{x}{1+x^3}\,dx\le 1.
 $$
 
 We conclude that $\displaystyle\int_0^{\infty}\frac{x}{1+x^3}\,dx$ is convergent and that
 
 $$
-0<\int_0^{\infty}\frac{x}{1+x^3}\,dx<2.
+0 \leq \int_0^{\infty}\frac{x}{1+x^3}\,dx<2.
 $$
 
 ::::::
 
 ::::::{note}
+:name: Note:Integration:ImproperIntegralsComparisonExample1
+
 We will often use the short notation $\displaystyle\int_1^{\infty}\frac{dx}{x^2}=\bigg[-\frac{1}{x}\bigg]_1^{\infty}=1$ instead of
 
 $$
@@ -548,51 +529,6 @@ $$
 $$
 
 ::::::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsComparisonExercise1
-Evaluate $\displaystyle\int_0^{\infty}\frac{x}{1+x^3}\,dx$ exactly. 
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsComparisonExercise1`
-:class: solution, dropdown
-Note that $1+x^3=(1+x)(1-x+x^2)$ and therefore
-
-\begin{align*}
-\frac{x}{1+x^3}&=\frac{x}{(1+x)(1-x+x^2)}=\frac{A}{1+x}+\frac{Bx+C}{1-x+x^2}\\
-&=\frac{A(1-x+x^2)+Bx(1+x)+C(1+x)}{(1+x)(1-x+x^2)}.
-\end{align*}
-Comparing the numerators, we obtain
-
-\begin{align*}
-&x=(A+B)x^2+(-A+B+C)x+A+C\\
-&\quad\Longrightarrow\quad A=-\frac{1}{3}\quad\text{and}\quad B=C=\frac{1}{3}.
-\end{align*}
-Hence, we have
-
-\begin{align*}
-\int\frac{x}{1+x^3}\,dx&=\frac{1}{3}\int\left(-\frac{1}{1+x}+\frac{x+1}{x^2-x+1}\right)\,dx\\
-&=\frac{1}{3}\int\left(-\frac{1}{1+x}+\frac{1}{2}\frac{2x-1}{x^2-x+1}+\frac{3}{2}\frac{1}{x^2-x+1}\right)\,dx.
-\end{align*}
-Now we have
-
-$$
-\int\left(-\frac{1}{1+x}+\frac{1}{2}\frac{2x-1}{x^2-x+1}\right)\,dx=\ln\left(\frac{\sqrt{x^2-x+1}}{1+x}\right)+C
-$$
-
-and
-
-\begin{align*}
-\int\frac{dx}{x^2-x+1}&=\int\frac{dx}{(x-\frac{1}{2})^2+\frac{3}{4}}=\frac{4}{3}\int\frac{dx}{\left(\frac{2x-1}{\sqrt{3}}\right)^2+1}\\
-&=\frac{2}{\sqrt{3}}\arctan\left(\frac{2x-1}{\sqrt{3}}\right)+C
-\end{align*}
-Since $\displaystyle\lim\limits_{x\to\infty}\frac{\sqrt{x^2-x+1}}{1+x}=1$, we obtain using $\displaystyle\lim_{x\to\infty}\arctan(x)=\tfrac{1}{2}\pi$ and $\arctan\left(\frac{1}{\sqrt{3}}\right)=\frac{1}{6}\pi$
-
-\begin{align*}
-\int_0^{\infty}\frac{x}{1+x^3}\,dx&=\bigg[\frac{1}{3}\ln\left(\frac{\sqrt{x^2-x+1}}{1+x}\right)+\frac{1}{\sqrt{3}}\arctan\left(\frac{2x-1}{\sqrt{3}}\right)\bigg]_0^{\infty}\\
-&=\frac{1}{\sqrt{3}}\left(\frac{1}{2}\pi+\frac{1}{6}\pi\right)=\frac{2}{3}\pi\sqrt{3}\approx1.2092.
-\end{align*}
-:::
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsComparisonExample2
@@ -625,18 +561,22 @@ $$
 ::::::
 
 ::::::{note}
+:name: Note:Integration:ImproperIntegralsGaussianIntegral
+
 Later we will see that $\displaystyle\int_0^{\infty}e^{-x^2}\,dx=\tfrac{1}{2}\sqrt{\pi}\approx0.88623$.
 
 By symmetry, we also have: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sqrt{\pi}$, which is called the **Gaussian integral**, named after the German mathematician [Johann Carl Friedrich Gauss (1777-1855)](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss).
+
 ```{figure} Images/normal.png
 ---
 width: 50%
 name: Fig:Integration:NormalDistribution
 align: center
 ---
-The normal distribution $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}=\sqrt{\pi}$
+The probability density function of the standard normal distribution.
 ```
-In probability and statistics this is known as the (standard) **normal distribution** or **Gaussian distribution**. The curve is sometimes referred to as the **bell curve**.
+
+In probability and statistics the function $\displaystyle\frac{1}{\sqrt{2\pi}}\cdot e^{-\frac12x^2}$ is known as the probability density function of the **standard normal distribution** or **Gaussian distribution**. The curve is sometimes referred to as the **bell curve**.
 ::::::
 
 ::::::{prf:Example}
@@ -666,120 +606,79 @@ $$
 We conclude that $\displaystyle\int_1^{\infty}\frac{1+e^{-x}}{\sqrt{x}}\,dx$ is divergent.
 ::::::
 
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsComparisonExercise1
-Determine whether the integral $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{\sqrt{x}}\,dx$ is convergent or divergent.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsComparisonExercise1`
-:class: solution, dropdown
-Note that for all $x\geq1$ we have $\frac{1}{4}\pi\leq\arctan(x)<\frac{1}{2}\pi$. Hence we have
-$\displaystyle\frac{\arctan(x)}{\sqrt{x}}\geq\frac{1}{4}\pi\cdot\frac{1}{\sqrt{x}}$ and
-$$
-\int_1^{\infty}\frac{dx}{\sqrt{x}}=2\sqrt{x}\bigg|_1^{\infty}=\infty.
-$$
-
-We conclude that $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{\sqrt{x}}\,dx$ is divergent.
-:::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsComparisonExercise2
-Determine whether the integral $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}\,dx$ is convergent or divergent.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsComparisonExercise2`
-:class: solution, dropdown
-Note that for all $x\geq1$ we have $\frac{1}{4}\pi\leq\arctan(x)<\frac{1}{2}\pi$. Further we have
-
-$$
-\int_1^{\infty}\frac{dx}{x\sqrt{x}}=-\frac{2}{\sqrt{x}}\bigg|_1^{\infty}=2.
-$$
-
-We conclude that $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}\,dx$ is convergent and that
-
-$$
-\frac{1}{2}\pi\leq\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}<\pi.
-$$
-
-:::
-
-## The gamma function
-
-The **gamma function** $\Gamma(x)$ is defined by the improper integral
-
-$$
-\Gamma(x)=\int_0^{\infty}t^{x-1}e^{-t}\,dt,\quad x>0.
-$$
-
-Let $\displaystyle\int_0^{\infty}t^{x-1}e^{-t}\,dt=\int_0^1t^{x-1}e^{-t}\,dt+\int_1^{\infty}t^{x-1}e^{-t}\,dt$.
-
-For $0\leq t\leq1$ we have: $t^{x-1}e^{-1}\leq t^{x-1}e^{-t}\leq t^{x-1}$ and 
-
-$$
-\int_0^1t^{x-1}\,dt=\frac{t^x}{x}\bigg|_0^1=\frac{1}{x},\quad x>0.
-$$
-
-For $t\geq1$ we have: $0<t^{x-1}e^{-t}\leq e^{-t}$ and
-
-$$
-\int_1^{\infty}e^{-t}\,dt=-e^{-t}\bigg|_1^{\infty}=e^{-1}.
-$$
-
-We conclude that $\displaystyle\int_0^{\infty}t^{x-1}e^{-t}\,dt$ converges for $x>0$.
-
-Note that $\Gamma(1)=\displaystyle\int_0^{\infty}e^{-t}\,dt=-e^{-t}\bigg|_0^{\infty}=1$.
-
-Using integration by parts we obtain for $x>0$
-
-\begin{align*}
-\Gamma(x+1)&=\int_0^{\infty}t^xe^{-t}\,dt=-\int_0^{\infty}t^x\,de^{-t}=-t^xe^{-t}\bigg|_0^{\infty}+\int_0^{\infty}e^{-t}\,dt^x\\
-&=0+x\int_0^{\infty}t^{x-1}e^{-t}\,dt=x\Gamma(x).
-\end{align*}
-This implies that $\Gamma(n+1)=n!$ for $n=0,1,2,\ldots$. So, the gamma function can be seen as a generalization of the factorial.
-
-Furthermore, using the substitution $t=x^2$ we have
-
-$$
-\Gamma(\tfrac{1}{2})=\int_0^{\infty}t^{-\frac{1}{2}}e^{-t}\,dt=\int_0^{\infty}x^{-1}e^{-x^2}\cdot2x\,dx=2\int_0^{\infty}e^{-x^2}\,dx.
-$$
- 
-Later we will prove that $\displaystyle\int_0^{\infty}e^{-x^2}\,dx=\tfrac{1}{2}\sqrt{\pi}$. This implies that $\Gamma(\frac{1}{2})=\sqrt{\pi}$.
-
 ## The Feynman method
 
-Sometimes an integral is easier to evaluate if we modify the integrand using a parameter such that a specific value of this parameter leads to the original integral. This trick was developed by the American theoretical physicist [Richard Phillips Feynman (1918-1988)](https://en.wikipedia.org/wiki/Richard_Feynman) and is based on the following theorem.
+Sometimes an integral is easier to evaluate if we modify the integrand using a parameter such that a specific value of this parameter leads to the original integral. This method was developed by the American theoretical physicist [Richard Phillips Feynman (1918-1988)](https://en.wikipedia.org/wiki/Richard_Feynman) and is based on the following theorem.
 
-::::::{prf:Theorem} The Feyman method
+::::::{prf:Theorem}
 :label: Thm:Integration:ImproperIntegralsFeynmanMethod
-If $f(x,t)$ and $\displaystyle\frac{\partial}{\partial t}f(x,t)$ are both continuous for all $x\in[a,b]$, then
+If $g(x,t)$ and $\displaystyle\frac{\partial}{\partial t}g(x,t)$ are both continuous for all $x\in[a,b]$, then
 
 $$
-\frac{d}{dt}\int_a^bf(x,t)\,dx=\int_a^b\frac{\partial}{\partial t}f(x,t)\,dx.
+\frac{d}{dt}\int_a^bg(x,t)\,dx=\int_a^b\frac{\partial}{\partial t}g(x,t)\,dx.
 $$
 
 ::::::
 
 ::::::{note}
-The notation $\dfrac{\partial}{\partial t}$ denotes the derivative with respect to $t$ and will be explained in the section on partial derivatives.
+:name: Note:Integration:ImproperIntegralsMultivariableFunctionsAndPartialDerivatives
+
+The notation $g(x,t)$ indicates that $g$ is a function of two variables, $x$ and $t$ and will be explained in more detail in {numref}`Sec:MultivariableFunctions`. For now, just assume that $g(x,t)$ is a function of two variables and that $g(x,t_0)$ means that you must substitute $t$ with $t_0$ in the function $g$.
+
+The notation $\dfrac{\partial}{\partial t}$ denotes the derivative with respect to $t$ and will be explained in {numref}`Sec:PartialDerivatives`. For now, just assume that $\dfrac{\partial}{\partial t}$ means that you must take the derivative of the function with respect to $t$ while treating $x$ as a constant. For example, if $f(x,t)=x^t$, then $\dfrac{\partial}{\partial t}f(x,t)=x^t\ln(x)$.
 ::::::
+
+The Feynman method itself is captured best in an algorithmic way:
+
+:::{prf:algorithm} Feynman method
+For any definite integral of the form $\displaystyle\int_a^bf(x)\,dx$ perform the following steps:
+
+1. Introduce new function $g$ based on the integrand $f$ and define $I(t)=\displaystyle\int_a^bg(x,t)\,dx$ such that
+
+    - $I(t_0)=\alpha$ for some value of $t_0$ and some constant $\alpha\in\mathbb{R}$.
+
+    - $g(x,t_1)=f(x)$ for some value of $t_1$. This implies that $I(t_1)=\displaystyle\int_a^bf(x)\,dx$.
+
+3. Compute the partial derivative $\displaystyle\frac{d}{dt}g(x,t)$.
+
+4. Compute the integral $I'(t)=\displaystyle\int_a^b\frac{d}{dt}g(x,t)\,dx$.
+
+5. Integrate $I'(t)$ with respect to $t$ to find $I(t)$ (including a constant of integration).
+
+6. Determine the value of the constant of integration using the value of $I(t_0)=\alpha$.
+
+6. Evaluate $I(t_1)$ to find the value of the original integral $\displaystyle\int_a^bf(x)\,dx$.
+:::
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsFeynmanExample1
 Consider the improper integral $\displaystyle\int_0^1\frac{x-1}{\ln(x)}\,dx$, which is extremely difficult to evaluate.
 
-Define $I(t)=\displaystyle\int_0^1\frac{x^t-1}{\ln(x)}\,dx$ for $t\geq0$, then we have $I(0)=0$ and
+Define $g(t,x)=\frac{x^t-1}{\ln(x)}$ and $I(t)=\displaystyle\int_0^1\frac{x^t-1}{\ln(x)}\,dx$ for $t\geq0$, then we have $I(0)=0$,
+
+$$
+\frac{\partial}{\partial t}g(t,x)=\frac{x^t\ln(x)}{\ln(x)}=x^t,
+$$
+
+and
 
 $$
 I'(t)=\int_0^1\frac{\partial}{\partial t}\frac{x^t-1}{\ln(x)}\,dx=\int_0^1x^t\,dx=\frac{x^{t+1}}{t+1}\bigg|_0^1=\frac{1}{t+1}.
 $$
 
-This implies that $I(t)=\ln|t+1|+C$ with $C=I(0)=0$. Hence: $\displaystyle I(t)=\int_0^1\frac{x^t-1}{\ln(x)}\,dx=\ln(t+1)$ for $t\geq0$. We conclude that
+This implies that $I(t)=\ln|t+1|+C$ with $C=I(0)=0$. This gives
+
+$$
+I(t)=\int_0^1\frac{x^t-1}{\ln(x)}\,dx=\ln(t+1)
+$$
+
+for $t\geq0$. We conclude that
 
 $$
 \int_0^1\frac{x-1}{\ln(x)}\,dx=\ln(2).
 $$
 
-Similarly, we find that $\displaystyle\int_0^1\frac{x^2-1}{\ln(x)}\,dx=\ln(3)$ and $\displaystyle\int_0^1\frac{\sqrt{x}-1}{\ln(x)}\,dx=\ln\left(\tfrac{3}{2}\right)$, for instance.
+Similarly, we find that $\displaystyle I(2)=\int_0^1\frac{x^2-1}{\ln(x)}\,dx=\ln(3)$ and $\displaystyle I(\tfrac{1}{2})=\int_0^1\frac{\sqrt{x}-1}{\ln(x)}\,dx=\ln\left(\tfrac{3}{2}\right)$, for instance.
 
 ::::::
 
@@ -800,9 +699,20 @@ Now we have using integration by parts
 &=1+te^{-y}\sin(ty)\bigg|_0^{\infty}-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy\\
 &=1-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy.
 \end{align*}
-Hence: $I'(t)=\displaystyle\int_0^{\infty}e^{-y}\cos(ty)\,dy=\frac{1}{1+t^2}$. Since $I(0)=0$ this implies that $I(t)=\arctan(t)$.
 
-Hence: $\displaystyle\int_0^1\frac{\sin(\ln(x))}{\ln(x)}\,dx=I(1)=\arctan(1)=\tfrac{1}{4}\pi$.
+Because the integral $I'(t)$ appears on both sides of the equation, we can solve for $I'(t)$ to find that
+
+$$
+I'(t)=\int_0^{\infty}e^{-y}\cos(ty)\,dy=\frac{1}{1+t^2}+C.
+$$
+
+Since $I(0)=0$ this implies that $I(t)=\arctan(t)$.
+
+We finally arrive at
+
+$$
+\int_0^1\frac{\sin(\ln(x))}{\ln(x)}\,dx=I(1)=\arctan(1)=\tfrac{1}{4}\pi.
+$$
 
 ::::::
 
@@ -826,10 +736,123 @@ $$
 and
 
 $$
-\int_0^{\infty}\frac{e^{-x}\sin(x\sqrt{3})}{x}\,dx=\arctan(\sqrt{3})=\frac{1}{3}\pi.
+\int_0^{\infty}\frac{e^{-x}\sin(x\sqrt{3})}{x}\,dx=\arctan\left(\sqrt{3}\right)=\frac{1}{3}\pi.
 $$
 
 ::::::
+
+## Special improper integrals
+
+There exist many special improper integrals that are often used in various applications. We will discuss some of them here.
+
+We start with the so-called $p$-integrals:
+
+:::{prf:definition} $p$-integrals
+:label: Def:Integration:ImproperIntegralsPIntegrals
+An integral of the form $\displaystyle\int_a^{\infty}\frac{dx}{x^p}$ or $\displaystyle\int_0^a\frac{dx}{x^p}$ for some $a>0$ and $p\in\mathbb{R}$ is called a **$p$-integral**.
+:::
+
+$p$-integrals can easily be analysed using the next theorem.
+
+::::::{prf:Theorem}
+:label: Thm:Integration:ImproperIntegralsPIntegrals
+For $0<a<\infty$ we have
+
+(a) $\displaystyle\int_a^{\infty}\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{p-1}, &p>1\\\infty, &p\leq1.\end{cases}$
+
+(b) $\displaystyle\int_0^a\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{1-p}, &p<1\\\infty, &p\geq1.\end{cases}$
+::::::
+
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:ImproperIntegralsPIntegrals`
+:class: tudproof, dropdown
+:name: Proof:Integration:ImproperIntegralsPIntegrals
+
+(a) We have
+
+$$
+\int_a^{\infty}\frac{dx}{x^p}=\lim_{R\to\infty}\int_a^R\frac{dx}{x^p}=\lim_{R\to\infty}\bigg[\frac{x^{1-p}}{1-p}\bigg]_a^R=\lim_{R\to\infty}\left(\frac{R^{1-p}}{1-p}-\frac{a^{1-p}}{1-p}\right).
+$$
+
+This limit exists if $1-p<0$ (then: $\displaystyle\lim_{R\to\infty}\frac{R^{1-p}}{1-p}=0$) and $\displaystyle\lim_{R\to\infty}\frac{R^{1-p}}{1-p}$ equals $\infty$ if $1-p>0$. For $p=1$ the integral reads $\displaystyle\int_a^{\infty}\frac{dx}{x}$ which is divergent.
+
+(b) We have
+
+$$
+\int_0^a\frac{dx}{x^p}=\lim_{c\downarrow0}\int_c^a\frac{dx}{x^p}=\lim_{c\downarrow0}\bigg[\frac{x^{1-p}}{1-p}\bigg]_c^a=\lim_{c\downarrow0}\left(\frac{a^{1-p}}{1-p}-\frac{c^{1-p}}{1-p}\right).
+$$
+
+This limit exists if $1-p>0$ (then: $\displaystyle\lim_{c\downarrow0}\frac{c^{1-p}}{1-p}=0$) and $\displaystyle\lim_{c\downarrow0}\frac{c^{1-p}}{1-p}$ equals $-\infty$ if $1-p<0$. For $p=1$ the integral reads $\displaystyle\int_0^a\frac{dx}{x}$ which is divergent.
+
+::::::
+
+Next up is the gamma function:
+
+:::{prf:definition} The gamma function
+:label: Def:Integration:ImproperIntegralsGammaFunction
+
+The **gamma function** $\Gamma(x)$ is defined by the improper integral
+
+$$
+\Gamma(x)=\int_0^{\infty}t^{x-1}e^{-t}\,dt,\quad x>0.
+$$
+:::
+
+This gamma function converges for all $x>0$ and has many interesting properties. We start by showing this convergence and then we will discuss some of its properties.
+
+Let $\displaystyle\int_0^{\infty}t^{x-1}e^{-t}\,dt=\int_0^1t^{x-1}e^{-t}\,dt+\int_1^{\infty}t^{x-1}e^{-t}\,dt$.
+
+For $0\leq t\leq1$ we have: $t^{x-1}e^{-1}\leq t^{x-1}e^{-t}\leq t^{x-1}$ and 
+
+$$
+\int_0^1t^{x-1}\,dt=\frac{t^x}{x}\bigg|_0^1=\frac{1}{x},\quad x>0.
+$$
+
+For $t\geq1$ we have: $0<t^{x-1}e^{-t}\leq e^{-t}$ and
+
+$$
+\int_1^{\infty}e^{-t}\,dt=-e^{-t}\bigg|_1^{\infty}=e^{-1}.
+$$
+
+We conclude that $\displaystyle\int_0^{\infty}t^{x-1}e^{-t}\,dt$ converges for $x>0$.
+
+Note that $\Gamma(1)=\displaystyle\int_0^{\infty}e^{-t}\,dt=-e^{-t}\bigg|_0^{\infty}=1$.
+
+Using integration by parts we obtain for $x>0$
+
+\begin{align*}
+\Gamma(x+1)&=\int_0^{\infty}t^xe^{-t}\,dt\\
+&=-\int_0^{\infty}t^x\,de^{-t}\\
+&=-t^xe^{-t}\bigg|_0^{\infty}+\int_0^{\infty}e^{-t}\,dt^x\\
+&=0+x\int_0^{\infty}t^{x-1}e^{-t}\,dt\\
+&=x\Gamma(x).
+\end{align*}
+
+This implies that $\Gamma(n+1)=n!$ for $n=0,1,2,\ldots$. So, the gamma function can be seen as a generalisation of the factorial.
+
+Furthermore, using the substitution $t=x^2$ we have
+
+$$
+\Gamma(\tfrac{1}{2})=\int_0^{\infty}t^{-\frac{1}{2}}e^{-t}\,dt=\int_0^{\infty}x^{-1}e^{-x^2}\cdot2x\,dx=2\int_0^{\infty}e^{-x^2}\,dx.
+$$
+ 
+Later we will prove that $\displaystyle\int_0^{\infty}e^{-x^2}\,dx=\tfrac{1}{2}\sqrt{\pi}$. This implies that $\Gamma(\frac{1}{2})=\sqrt{\pi}$.
+
+Now we turn our attention to the Dirichlet integral:
+
+:::{prf:definition} The Dirichlet integral
+:label: Def:Integration:ImproperIntegralsDirichletIntegral
+
+The **Dirichlet integral** is defined by the improper integral
+
+$$
+\int_0^{\infty}\frac{\sin(x)}{x}\,dx.
+$$
+
+:::
+
+This integral is named after the German mathematician [Johann Peter Gustav Lejeune Dirichlet (1805-1859)](https://en.wikipedia.org/wiki/Peter_Gustav_Lejeune_Dirichlet).
+
+This special integral can be evaluated using the Feynman method, which leads to the following result.
 
 ::::::{prf:Theorem} The Dirichlet integral
 :label: Thm:Integration:ImproperIntegralsDirichletIntegral
@@ -838,23 +861,39 @@ $$
 \int_0^{\infty}\frac{\sin(x)}{x}\,dx=\frac{1}{2}\pi.
 $$
 
-This integral is named after the German mathematician [Johann Peter Gustav Lejeune Dirichlet (1805-1859)](https://en.wikipedia.org/wiki/Peter_Gustav_Lejeune_Dirichlet).
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Integration:ImproperIntegralsDirichletIntegral`
 :class: tudproof, dropdown
+:name: Proof:Integration:ImproperIntegralsDirichletIntegral
+
 Since $\displaystyle\lim\limits_{x\downarrow0}\frac{\sin(x)}{x}=1$, the integrand is continuous and the integral is convergent. 
 
 Now let: $I(t)=\displaystyle\int_0^{\infty}e^{-xt}\frac{\sin(x)}{x}\,dx$. Then we have
 
 \begin{align*}
-I'(t)&=-\int_0^{\infty}e^{-xt}\sin(x)\,dx=\int_0^{\infty}e^{-xt}\,d\cos(x)\\
+I'(t)&=-\int_0^{\infty}e^{-xt}\sin(x)\,dx\\
+&=\int_0^{\infty}e^{-xt}\,d\cos(x)\\
 &=e^{-xt}\cos(x)\bigg|_0^{\infty}-\int_0^{\infty}\cos(x)\,de^{-xt}\\
-&=-1+t\int_0^{\infty}e^{-xt}\cos(x)\,dx=-1+t\int_0^{\infty}e^{-xt}\,d\sin(x)\\
+&=-1+t\int_0^{\infty}e^{-xt}\cos(x)\,dx\\
+&=-1+t\int_0^{\infty}e^{-xt}\,d\sin(x)\\
 &=-1+te^{-xt}\sin(x)\bigg|_0^{\infty}-t\int_0^{\infty}\sin(x)\,de^{-xt}\\
 &=-1+t^2\int_0^{\infty}e^{-xt}\sin(x)\,dt.
 \end{align*}
-This implies that $\displaystyle\int_0^{\infty}e^{-xt}\sin(x)\,dx=\frac{1}{1+t^2}$ and therefore $I'(t)=-\dfrac{1}{1+t^2}$. Hence: $I(t)=-\arctan(t)+C$. Note that $0=\displaystyle\lim\limits_{t\to\infty}I(t)=-\tfrac{1}{2}\pi+C$, which implies that $C=\tfrac{1}{2}\pi$. We conclude that: $I(t)=-\arctan(t)+\frac{1}{2}\pi$. Hence: 
+
+This implies that $\displaystyle\int_0^{\infty}e^{-xt}\sin(x)\,dx=\frac{1}{1+t^2}$ and therefore $I'(t)=-\dfrac{1}{1+t^2}$. So
+
+$$
+I(t)=-\arctan(t)+C.
+$$
+
+Note that $0=\displaystyle\lim\limits_{t\to\infty}I(t)=-\tfrac{1}{2}\pi+C$, which implies that $C=\tfrac{1}{2}\pi$. We conclude that
+
+$$
+I(t)=-\arctan(t)+\frac{1}{2}\pi
+$$
+
+and finally that
 
 $$
 \int_0^{\infty}\frac{\sin(x)}{x}\,dx=I(0)=\tfrac{1}{2}\pi.
@@ -862,9 +901,13 @@ $$
 
 ::::::
 
+In {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` and {prf:ref}`Ex:Integration:IntegrationByPartsSerretsIntegral` we already evaluated Serret's integral $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$ using substitution and integration by parts, respectively. The Feynman method also leads to the same result.
+
 ::::::{admonition} A different approach to Serret's integral (bonus material)
 :class: bonus, dropdown
-The results in {eq}`Eq:Integration:PartsSerret` can also be obtained using the Feynman method (see: {numref}`Sec:Integration:ImproperIntegrals` on improper integrals).
+:name: Bonus:Integration:SerretsIntegralFeynmanMethod
+
+The results in Equation {eq}`Eq:Integration:PartsSerret` can also be obtained using the Feynman method.
 
 Note that Serret's integral is a special case of $I(\alpha)=\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
 
@@ -921,16 +964,12 @@ $$
 \alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)=\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
 $$
 
-For $\alpha=1$ this reads {eq}`Eq:Integration:PartsSerret`.
+For $\alpha=1$ this gives Equation {eq}`Eq:Integration:PartsSerret`.
 
 ::::::
 
 
-## (Grasple) exercises
-
-
-
-## Exercises moved to the end
+## Exercises
 
 ::::{exercise}
 :label: Exc:Integration:ImproperIntegralsExercise1
@@ -939,6 +978,7 @@ Determine whether $\displaystyle\int\frac{dx}{x^2}$ is convergent or divergent.
 
 :::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise1`
 :class: solution, dropdown
+:name: Solution:Integration:ImproperIntegralsExercise1
 
 $$
 \int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\int_1^R\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(1-\frac{1}{R}\right)=1.
@@ -954,6 +994,7 @@ Determine whether $\displaystyle\int\frac{dx}{x}$ is convergent or divergent.
 
 :::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise2`
 :class: solution, dropdown
+:name: Solution:Integration:ImproperIntegralsExercise2
 
 $$
 \int_1^{\infty}\frac{dx}{x}=\lim_{R\to\infty}\int_1^R\frac{dx}{x}=\lim_{R\to\infty}\bigg[\ln(x)\bigg]_1^R=\lim_{R\to\infty}\ln(R)=\infty.
@@ -975,6 +1016,8 @@ $$
 
 :::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise3`
 :class: solution, dropdown
+:name: Solution:Integration:ImproperIntegralsExercise3
+
 Using the substitution $\sqrt{x}=t$ or $x=t^2$, we have $dx=2t\,dt$ and therefore
 
 \begin{align*}
@@ -1013,6 +1056,8 @@ $$
 
 :::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise4`
 :class: solution, dropdown
+:name: Solution:Integration:ImproperIntegralsExercise4
+
 Use the substitution $x=\dfrac{1}{t}$ and therefore $dx=-\dfrac{dt}{t^2}$ to find that
 
 $$
@@ -1023,6 +1068,8 @@ We conclude that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$.
 :::
 
 ::::::{note}
+:name: Note:Integration:CatalansConstant
+
 Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx$ without evaluating the integrals. Later we will see that the value is equal to *Catalan's constant*.
 ::::::
 
@@ -1045,6 +1092,8 @@ and use the substitution $x=\dfrac{1}{t}$ to prove the formula for $k\in\{1,2,3,
 
 :::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise5`
 :class: solution, dropdown
+:name: Solution:Integration:ImproperIntegralsExercise5
+
 (a) For $k=0$ we obtain: $\displaystyle\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^0)}=\frac{1}{2}\int_0^{\infty}\frac{dx}{1+x^2}=\frac{1}{2}\arctan(x)\bigg|_0^{\infty}=\frac{1}{4}\pi$.
 
 (b) For $k\in\{1,2,3,\ldots\}$ we use the substitution $x=\dfrac{1}{t}$ and therefore $dx=-\dfrac{dt}{t^2}$ to find that
@@ -1084,3 +1133,95 @@ Hence, for $k\in\{1,2,3,\ldots\}$ we have
 &=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
 \end{align*}
 :::
+
+::::{exercise}
+:label: Exc:Integration:ImproperIntegralsComparisonExercise1
+Evaluate $\displaystyle\int_0^{\infty}\frac{x}{1+x^3}\,dx$ exactly. 
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsComparisonExercise1`
+:class: solution, dropdown
+:name: Solution:Integration:ImproperIntegralsComparisonExercise1
+
+Note that $1+x^3=(1+x)(1-x+x^2)$ and therefore
+
+\begin{align*}
+\frac{x}{1+x^3}&=\frac{x}{(1+x)(1-x+x^2)}=\frac{A}{1+x}+\frac{Bx+C}{1-x+x^2}\\
+&=\frac{A(1-x+x^2)+Bx(1+x)+C(1+x)}{(1+x)(1-x+x^2)}.
+\end{align*}
+Comparing the numerators, we obtain
+
+\begin{align*}
+&x=(A+B)x^2+(-A+B+C)x+A+C\\
+&\quad\Longrightarrow\quad A=-\frac{1}{3}\quad\text{and}\quad B=C=\frac{1}{3}.
+\end{align*}
+Hence, we have
+
+\begin{align*}
+\int\frac{x}{1+x^3}\,dx&=\frac{1}{3}\int\left(-\frac{1}{1+x}+\frac{x+1}{x^2-x+1}\right)\,dx\\
+&=\frac{1}{3}\int\left(-\frac{1}{1+x}+\frac{1}{2}\frac{2x-1}{x^2-x+1}+\frac{3}{2}\frac{1}{x^2-x+1}\right)\,dx.
+\end{align*}
+Now we have
+
+$$
+\int\left(-\frac{1}{1+x}+\frac{1}{2}\frac{2x-1}{x^2-x+1}\right)\,dx=\ln\left(\frac{\sqrt{x^2-x+1}}{1+x}\right)+C
+$$
+
+and
+
+\begin{align*}
+\int\frac{dx}{x^2-x+1}&=\int\frac{dx}{(x-\frac{1}{2})^2+\frac{3}{4}}=\frac{4}{3}\int\frac{dx}{\left(\frac{2x-1}{\sqrt{3}}\right)^2+1}\\
+&=\frac{2}{\sqrt{3}}\arctan\left(\frac{2x-1}{\sqrt{3}}\right)+C
+\end{align*}
+Since $\displaystyle\lim\limits_{x\to\infty}\frac{\sqrt{x^2-x+1}}{1+x}=1$, we obtain using $\displaystyle\lim_{x\to\infty}\arctan(x)=\tfrac{1}{2}\pi$ and $\arctan\left(\frac{1}{\sqrt{3}}\right)=\frac{1}{6}\pi$
+
+\begin{align*}
+\int_0^{\infty}\frac{x}{1+x^3}\,dx&=\bigg[\frac{1}{3}\ln\left(\frac{\sqrt{x^2-x+1}}{1+x}\right)+\frac{1}{\sqrt{3}}\arctan\left(\frac{2x-1}{\sqrt{3}}\right)\bigg]_0^{\infty}\\
+&=\frac{1}{\sqrt{3}}\left(\frac{1}{2}\pi+\frac{1}{6}\pi\right)=\frac{2}{3}\pi\sqrt{3}\approx1.2092.
+\end{align*}
+:::
+
+::::{exercise}
+:label: Exc:Integration:ImproperIntegralsComparisonExercise2
+Determine whether the integral $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{\sqrt{x}}\,dx$ is convergent or divergent.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsComparisonExercise2`
+:class: solution, dropdown
+:name: Solution:Integration:ImproperIntegralsComparisonExercise2
+
+Note that for all $x\geq1$ we have $\frac{1}{4}\pi\leq\arctan(x)<\frac{1}{2}\pi$. Hence we have
+$\displaystyle\frac{\arctan(x)}{\sqrt{x}}\geq\frac{1}{4}\pi\cdot\frac{1}{\sqrt{x}}$ and
+$$
+\int_1^{\infty}\frac{dx}{\sqrt{x}}=2\sqrt{x}\bigg|_1^{\infty}=\infty.
+$$
+
+We conclude that $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{\sqrt{x}}\,dx$ is divergent.
+:::
+
+::::{exercise}
+:label: Exc:Integration:ImproperIntegralsComparisonExercise3
+Determine whether the integral $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}\,dx$ is convergent or divergent.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsComparisonExercise3`
+:class: solution, dropdown
+:name: Solution:Integration:ImproperIntegralsComparisonExercise3
+
+Note that for all $x\geq1$ we have $\frac{1}{4}\pi\leq\arctan(x)<\frac{1}{2}\pi$. Further we have
+
+$$
+\int_1^{\infty}\frac{dx}{x\sqrt{x}}=-\frac{2}{\sqrt{x}}\bigg|_1^{\infty}=2.
+$$
+
+We conclude that $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}\,dx$ is convergent and that
+
+$$
+\frac{1}{2}\pi\leq\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}<\pi.
+$$
+
+:::
+
+
+## Grasple exercises
+

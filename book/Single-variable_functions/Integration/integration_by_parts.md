@@ -70,7 +70,7 @@ The purpose of the method of integration by parts is that the new integral is no
 Before we apply the method of integration by parts to the integral $\displaystyle\int x\cos(x)\,dx$, we will give you an algorithm to apply the method:
 
 ::::::{prf:algorithm}
-:label: Alg:Integration:IngtegrationByPartsIndefiniteIntegral
+:label: Alg:Integration:IntegrationByPartsIndefiniteIntegral
 
 To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by parts, follow these steps:
 
@@ -150,10 +150,10 @@ $$
 
 ::::::
 
-If we have a choice, which part of the integrand should be chosen as $u$ and which part as $dv$? In many cases the so-called **LIATE rule** will help to make the right choice. If possible we choose for $u$ a **L**ogarithm, an **I**nverse trigonometric function, an **A**lgebraic function (a power of $x$), a **T**rigonometric function or an **E**xponential function, in that order. We can incorporate this rule in our algorithm {prf:ref}`Alg:Integration:IngtegrationByPartsIndefiniteIntegral` as follows:
+If we have a choice, which part of the integrand should be chosen as $u$ and which part as $dv$? In many cases the so-called **LIATE rule** will help to make the right choice. If possible we choose for $u$ a **L**ogarithm, an **I**nverse trigonometric function, an **A**lgebraic function (a power of $x$), a **T**rigonometric function or an **E**xponential function, in that order. We can incorporate this rule in our algorithm {prf:ref}`Alg:Integration:IntegrationByPartsIndefiniteIntegral` as follows:
 
 ::::::{prf:algorithm}
-:label: Alg:Integration:IngtegrationByPartsIndefiniteIntegralLIATE
+:label: Alg:Integration:IntegrationByPartsIndefiniteIntegralLIATE
 
 To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by parts, follow these steps:
 
@@ -296,10 +296,10 @@ Similar to {prf:ref}`Not:Integration:PartsIndefiniteIntegral`, we can use the di
 \displaystyle\int_a^b u\,dv=uv\bigg|_a^b-\int_a^b v\,du.
 :::
 
-This formula we can use in an algorithm similar to {prf:ref}`Alg:Integration:IngtegrationByPartsIndefiniteIntegralLIATE` to evaluate definite integrals:
+This formula we can use in an algorithm similar to {prf:ref}`Alg:Integration:IntegrationByPartsIndefiniteIntegralLIATE` to evaluate definite integrals:
 
 ::::::{prf:algorithm}
-:label: Alg:Integration:IngtegrationByPartsDefiniteIntegralLIATE
+:label: Alg:Integration:IntegrationByPartsDefiniteIntegralLIATE
 
 To evaluate a definite integral of the form $\displaystyle\int_{a}^{b} I(x)\,dx$ using the method of integration by parts, follow these steps:
 

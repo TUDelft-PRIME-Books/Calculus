@@ -54,9 +54,9 @@ Combined with $dx=\dfrac{a}{\cos^2(t)}\,dt$ this will also give rise to an integ
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample2
-Evaluate $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx$.
+We evaluate $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx$.
 
-Solution. Let $x=\tan(t)$, then we have $dx=\dfrac{dt}{\cos^2(t)}$. Furthermore, if $x=0$ then $t=0$ and if $x=1$ then $t=\frac{1}{4}\pi$. Hence we find that
+Let $x=\tan(t)$, then we have $dx=\dfrac{dt}{\cos^2(t)}$. Furthermore, if $x=0$ then $t=0$ and if $x=1$ then $t=\frac{1}{4}\pi$. Hence we find that
 
 $$
 \int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\int_0^{\frac{1}{4}\pi}|\cos(t)|\frac{1}{\cos^2(t)}\,dt.
@@ -125,9 +125,9 @@ $$
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample3
-Evaluate $\displaystyle\int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx$.
+We evaluate $\displaystyle\int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx$.
 
-Solution. Let $x=\dfrac{1}{\cos(t)}$, then we have $dx=\dfrac{\sin(t)}{\cos^2(t)}\,dt$. Furthermore, if $x=1$ then $t=0$ and if $x=\sqrt{2}$ then $t=\frac{1}{4}\pi$. Hence we find that
+Let $x=\dfrac{1}{\cos(t)}$, then we have $dx=\dfrac{\sin(t)}{\cos^2(t)}\,dt$. Furthermore, if $x=1$ then $t=0$ and if $x=\sqrt{2}$ then $t=\frac{1}{4}\pi$. Hence we find that
 
 \begin{align*}
 \int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx&=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt\\
