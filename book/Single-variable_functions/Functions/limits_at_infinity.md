@@ -4,7 +4,7 @@
 
 ## Introduction 
 
-Many problems in nature and engineering feature quantities that for, relatively short periods of time, fluctuate or change rapidly, before stabilizing and moving towards a certain equilibrium. In such cases, we are often mainly interested in what happens in the long term.
+Many problems in nature and engineering feature quantities that for relatively short periods of time, fluctuate or change rapidly, before stabilizing and moving towards a certain equilibrium. In such cases, we are often mainly interested in what happens in the long term.
 
 :::::{margin}
 ::::{figure} Images/Fig-LimitAtInfinity-RefrigeratorCauliflower.png
@@ -14,15 +14,16 @@ A cauliflower in a refrigerator.
 ::::
 :::::
 
-Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling, it can be shown that $T(t)=T_{\text{env}}+(T(0)-T_{\text{env}})e^{-rt}$ °C. Here, $T_{\text{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
+Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling, it can be shown that $T(t)=T_{\text{env}}+(T(0)-T_{\text{env}})e^{-rt}$. Here, $T_{\text{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
 
-For convenience, we take $r=1$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
+For convenience, let us take, for example, $r=1\ \text{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
 
 ::::{figure} Images/Fig-LimitAtInfinity-TempCauliflower.png
 :name: Fig:LimitAtInfinity:TempCauliflower
 :class: dark-light
 
 The temperature $T(t)$ in degrees Celsius of the cauliflower within the refrigerator as a function of time $t$.
+Plaatje moet alleen voor $t\geq 0$.
 ::::
 
 We observe that our intuition was correct: the temperature of the object will first decrease rapidly before slowly moving towards the limiting value of $5$ °C. Notice that the temperature never becomes precisely equal to $5$ °C; it will always remain slightly above this value. We say that the function $T(t)$ has a **horizontal asymptote** at $T=5$ °C and we denote this by $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C. As was stated in {numref}`Section:LimitPoint`, the word asymptote comes from the Greek $\grave{\alpha}\sigma\acute{\upsilon}\mu\pi\tau\omega\tau o\varsigma$ (asumptotos), which means "not falling together". The notation $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C can be pronounced as "the function values $T(t)$ approach the value $5$ °C as $t$ approaches infinity". The precise definition of such a limit at infinity is rather technical, so we postpone it to {numref}`Subsec:LimitinfPrecise`. Instead, we will use the following more intuitive definition.
@@ -130,7 +131,7 @@ Notice that the function values seem to go towards the value $0$. This would sug
 An illustration of the function $f(x)=\dfrac{\sin(x)}{x^2}$ for large negative values of $x$.
 ::::
 
-Notice that the function $f$ actually oscillates around the horizontal asymptote $x=0$. This is no problem, as the function values indeed tends towards $0$. However, this does mean that original Greek meaning of the word asymptote ("not falling together") does not exactly match the modern use.
+Notice that the function $f$ actually oscillates around the horizontal asymptote $x=0$. This is not a problem, as the function values indeed tends towards $0$. However, this does mean that original Greek meaning of the word asymptote ("not falling together") does not exactly match the modern use.
 ::::::
 
 ::::::{prf:example} 
