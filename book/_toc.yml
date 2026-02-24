@@ -12,6 +12,7 @@ parts:
     chapters:
     - file: "Algebra/Numbers_and_coordinate_systems/introduction_numbers_and_coordinate_systems.md" # ref_graph: {'ignore':True}
       sections:
+      - file: "Algebra/Numbers_and_coordinate_systems/sums_and_products.md"
       - file: "Algebra/Numbers_and_coordinate_systems/real_numbers.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - file: "Algebra/Numbers_and_coordinate_systems/trigonometry.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
@@ -55,9 +56,10 @@ parts:
       - file: "Single-variable_functions/Integration/indefinite_integrals.md"
       - file: "Single-variable_functions/Integration/fundamental_theorem_of_calculus.md"
       - file: "Single-variable_functions/Integration/integration_by_substitution.md"
+      - file: "Single-variable_functions/Integration/special_substitutions.md"
       - file: "Single-variable_functions/Integration/integration_by_parts.md"
-      - file: "Single-variable_functions/Integration/integration_of_rational_functions.md"
       - file: "Single-variable_functions/Integration/integration_of_trigonometric_functions.md"
+      - file: "Single-variable_functions/Integration/integration_of_rational_functions.md"
       - file: "Single-variable_functions/Integration/improper_integrals.md"
       - file: "Single-variable_functions/Integration/approximating_integrals.md"
   - caption: Sequences and series
@@ -132,8 +134,10 @@ parts:
       - file: "Differential_equations/First-order_ordinary_differential_equations/approximating_solutions.md"
     - file: "Differential_equations/Second-order_ordinary_differential_equations/introduction_second_order_ODE.md" # ref_graph: {'ignore':True}
       sections:
+      - file: "Differential_equations/Second-order_ordinary_differential_equations/direction_fields_and_solutions_2nd.md"
       - file: "Differential_equations/Second-order_ordinary_differential_equations/homogeneous_problems_with_constant_coefficients.md"
       - file: "Differential_equations/Second-order_ordinary_differential_equations/inhomogeneous_problems_with_constant_coefficients.md"
+      - file: "Differential_equations/Second-order_ordinary_differential_equations/problems_with_nonconstant_coefficients.md"
       - file: "Differential_equations/Second-order_ordinary_differential_equations/series_solutions_2nd.md"
   - caption: Appendices
     numbered: true

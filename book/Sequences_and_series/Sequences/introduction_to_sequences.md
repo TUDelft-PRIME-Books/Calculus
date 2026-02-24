@@ -166,13 +166,10 @@ which implies that $c_1=\displaystyle\frac{1}{\sqrt{5}}$ and $c_2=-\displaystyle
 
 Hence we have
 
-$$
 \begin{align*}
 F_n&=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n\\
 &=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}},\quad n=0,1,2,\ldots.
 \end{align*}
-$$
-
 This formula is remarkable since all numbers in the Fibonacci sequence are integers. In this formula this is far from evident. However we have for instance:
 
 $$
@@ -217,14 +214,11 @@ $$
 
 to obtain
 
-$$
 \begin{align*}
 \lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n}&=\lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n}
 =\lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}\\
 &=\frac{\varphi+0}{1+0}=\varphi.
 \end{align*}
-$$
-
 *Remark*: $\varphi=\dfrac{1+\sqrt{5}}{2}\approx1.618$, $\displaystyle\frac{1}{\varphi}=\varphi-1=\frac{\sqrt{5}-1}{2}\approx0.618$ and $\dfrac{1-\varphi}{\varphi}\approx-0.382$.
 ::::::
 
@@ -285,14 +279,11 @@ $$
 
 to obtain
 
-$$
 \begin{align*}
 \lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}&=\lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n}
 =\lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}\\
 &=\frac{\varphi+0}{1+0}=\varphi.
 \end{align*}
-$$
-
 :::
 
 ::::{exercise} Relations between Fibonacci and Lucas numbers
@@ -324,15 +315,12 @@ $$
 
 (c) For $n=1,2,3,\ldots$ we obtain
 
-$$
 \begin{align*}
 F_{n-1}+F_{n+1}&=\frac{\varphi^{n-1}-(1-\varphi)^{n-1}}{\sqrt{5}}+\frac{\varphi^{n+1}-(1-\varphi)^{n+1}}{\sqrt{5}}\\
 &=\frac{\varphi^{n-1}+\varphi^{n+1}-(1-\varphi)^{n-1}-(1-\varphi)^{n+1}}{\sqrt{5}}\\
 &=\frac{\varphi^n\left(\dfrac{1}{\varphi}+\varphi\right)-(1-\varphi)^n\left(\dfrac{1}{1-\varphi}+1-\varphi\right)}{\sqrt{5}}\\
 &=\varphi^n+(1-\varphi)^n=L_n.
 \end{align*}
-$$
-
 :::
 
 ::::::{admonition} Collatz sequences (bonus material)

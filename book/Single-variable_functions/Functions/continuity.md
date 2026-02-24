@@ -194,7 +194,7 @@ This means that $|x^r-a^r|<\varepsilon$, as desired. Hence, $f$ is continuous at
 
 Now consider the function $f(x)=|x|$. For $a>0$, we have $\lim\limits_{x\rightarrow a}|x|=\lim\limits_{x\rightarrow a}x=a=|a|$, since the function $x$ is continuous at $a$. Similarly, for $a<0$, we have $\lim\limits_{x\rightarrow a}|x|=\lim\limits_{x\rightarrow a}-x=-a=|a|$, since the function $-x$ is continuous at $a$. Finally, we consider $a=0$. Then we have $\lim\limits_{x\rightarrow 0^+}|x|=\lim\limits_{x\rightarrow 0^+}-x=0=|0|$, since the function $x$ is continuous at $0$. Similarly, we have $\lim\limits_{x\rightarrow 0^-}|x|=\lim\limits_{x\rightarrow 0^-}-x=-0=|0|$, since the function $-x$ is continuous at $0$. We conclude that $\lim\limits_{x\rightarrow 0}|x|=0=|0|$, so $f$ is continuous at $0$. Hence, $f$ is continuous on its maximal domain.
 
-Let $b>0$ be given and consider the function $f(x)=b^x$. Recall how this function was defined: for a rational number $a=\frac{p}{q}$ (so with $p$ and $q$ integers), we defined $b^a=b^{\frac{p}{q}}=\sqrt[q]{b^p}$. Then for an irrational number $a$ we 'filled in the gap' by approximating $b^a$ from below by a sequence of numbers $b^{x_1},b^{x_2},b^{x_3},...$ and from above by $b^{y_1},b^{y_2},b^{y_3},...$ where $x_1,x_2,x_3,...$ and $y_1,y_2,y_3,...$ are rational and approach the value $a$ (more mathematically: the sequences $\left\{x_n\right\}_{n=1}^\infty$ and $\left\{y_n\right\}_{n=1}^\infty$ converge to $a$, see {numref}`Section:SequenceConvergence`). Stated differently, we constructed $b^a$ in such a way that the function $f$ is continuous at $a$. As such, this function is continuous everywhere.
+Let $b>0$ be given and consider the function $f(x)=b^x$. Recall from {numref}`Subsec:RealnumbersExp` how this function was defined: for a rational number $a=\frac{p}{q}$ (so with $p$ and $q$ integers), we defined $b^a=b^{\frac{p}{q}}=\sqrt[q]{b^p}$. Then for an irrational number $a$ we 'filled in the gap' by approximating $b^a$ from below by a sequence of numbers $b^{x_1},b^{x_2},b^{x_3},...$ and from above by $b^{y_1},b^{y_2},b^{y_3},...$ where $x_1,x_2,x_3,...$ and $y_1,y_2,y_3,...$ are rational and approach the value $a$ (more mathematically: the sequences $\left\{x_n\right\}_{n=1}^\infty$ and $\left\{y_n\right\}_{n=1}^\infty$ converge to $a$, see {numref}`Section:SequenceConvergence`). Stated differently, we constructed $b^a$ in such a way that the function $f$ is continuous at $a$. As such, this function is continuous everywhere.
 
 Let $b>0$ with $b\neq 1$ and consider $f(x)=\log_b(x)$. Then $f$ is the inverse function of the continuous function $b^x$. So by {prf:ref}`Theorem:Continuity:Inverse` $f$ is continuous.
 
@@ -274,6 +274,7 @@ $$
 
 :::{admonition} Proof of {prf:ref}`Theorem:LimitAtPoint:Substitution`
 :class: tudproof, dropdown
+:name: prf:Continuity:Prooflimitpointsub
 If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$, then $f$ is continuous at $b$ by {prf:ref}`Theorem:Continuity:Standardfunctions`, possibly combined with {prf:ref}`Theorem:Continuity:Basiccomputationrules`. As such, the result follows from {prf:ref}`Theorem:Continuity:Substitution`
 
 
@@ -393,8 +394,30 @@ Suppose we want to show that the equation $x^5-8x^3+2x^2+1=0$ has at least $1$ s
 The function $f$ with supporting horizontal and vertical lines that we can use with {prf:ref}`Theorem:Continuity:IVT`.
 ::::
 
+
 We could even try to find a better approximation for what the value of $c$ is. Indeed, we can divide the interval $[0,1]$ into two pieces $\left[0,\frac{1}{2}\right]$ and $\left[\frac{1}{2},1\right]$. Note that $f\left(\frac{1}{2}\right)=\frac{33}{32}>0$. So on the interval $\left[\frac{1}{2},1\right]$, $f$ changes from positive to negative, which means that on this interval it must be equal to $0$ somewhere. As such, there is a solution to $x^5-8x^3+2x^2+1=0$ in between $\frac{1}{2}$ and $1$. We can continue this process of dividing the interval in two pieces and looking on which of these intervals we can still apply the Intermediate Value Theorem. The longer we continue this process, the closer we will be to the actual value of the solution. However, we cannot use this method to find the exact value of the solution, as we can only perform finitely many computations.
 ::::::
+
+
+The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the following result and is known as **Bolzano's Theorem**, named after the Bohemian mathematician [Bernardus Placidus Johann Nepomuk Bolzano (1781-1848)](https://en.wikipedia.org/wiki/Bernard_Bolzano), or the **Intermediate Zero Theorem**. 
+
+::::::{prf:corollary} Bolzano's Theorem
+:label: Cor:Continuity:IVT
+
+Suppose that $f$ is continuous on the closed interval $[a,b]$. If $f(a)$ and $f(b)$ have opposite signs (so one of them is positive while the other is negative) then there is a point $c$ in the open interval $(a,b)$ with $f(c)=0$.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Cor:Continuity:IVT`
+:class: tudproof
+Since $f(a)$ and $f(b)$ have opposite signs, the number $0$ must be in between these values. Hence, the result follows directly from {prf:ref}`Theorem:Continuity:IVT`.
+:::
+
+:::{prf:remark}
+:label: Remark:Continuity:Weierstrass
+
+The name Weierstrass Nullstellensatz, named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass) is sometimes used for either {prf:ref}`Theorem:Continuity:IVT` or {prf:ref}`Cor:Continuity:IVT`. Usually, the Weierstrass Nullstellensatz refers to a version of Bolzano's Theorem specifically for polynomials with coefficients in a [real closed field](https://en.wikipedia.org/wiki/Real_closed_field)
+:::
+
 
 ::::::{prf:example} 
 :label: Ex:Continuity:IVTnoncont

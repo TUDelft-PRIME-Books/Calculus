@@ -16,7 +16,7 @@ This page reuses content from {cite:t}`dekleijn2025longdivision`.
 Is this proper?
 
 ::::
-:::::
+
 
 Rational functions are functions that are formed by the ratio of two polynomials. They are widely used in various fields of mathematics, including calculus, algebra, and real analysis. Rational functions can exhibit interesting behaviors, such as asymptotes and discontinuities, which are treated in sections further on in this chapter.
 
@@ -265,6 +265,7 @@ $$
 
 ::::
 
+(sec:PartialFractionDecomposition)=
 ## Partial fraction decomposition
 
 In the previous examples you have seen how you can use polynomial long division to rewrite an improper rational function as a polynomial plus a proper rational function. In this section we will look at how to decompose proper rational functions into simpler fractions. This technique is called _partial fraction decomposition_.

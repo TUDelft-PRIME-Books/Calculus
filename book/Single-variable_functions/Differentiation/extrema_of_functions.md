@@ -1,3 +1,5 @@
+(Section:Extrema1d)=
+
 # Extrema of functions
 
 In this section we cover:

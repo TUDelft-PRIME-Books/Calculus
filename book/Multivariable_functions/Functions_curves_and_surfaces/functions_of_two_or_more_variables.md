@@ -1,3 +1,4 @@
+(Sec:MultivariableFunctions)=
 # Functions of two or more variables
 
 In this section we cover:

@@ -6,7 +6,11 @@ In this section we cover:
 
 - Method of undetermined coefficients: basic cases
 - Method of undetermined coefficients: advanced cases (sums, products, guess is already solution, etc.)
-- Variation of parameters???
+- Application examples:
+  - Mass-spring
+  - RLC electrical circuits 
+- Include IVPs and BVPs examples.
+- Include examples that show when method of undetermined coefficients cannot be used and not always work (e.g. $\ldots=\sqrt{t}$).
 
 We consider inhomogeneous second-order differential equations with *constant coefficients*
 

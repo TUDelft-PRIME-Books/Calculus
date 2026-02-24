@@ -1,3 +1,4 @@
+(Chapter:Series:Introduction)=
 # Series and their types
 
 In this section we cover (see note in section convergence of series):
@@ -82,13 +83,10 @@ $$
 
 Then we have (compare with {prf:ref}`Ex:Integration:IntroductionFiniteGeometric`)
 
-$$
 \begin{align*}
 s_n&=a&+ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&\\
 rs_n&=&ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&+ar^n.
 \end{align*}
-$$
-
 Subtracting the two equations we obtain
 
 $$
@@ -130,17 +128,17 @@ In {numref}`Sec:Series:PowerSeries` on power series we will often make use of th
 
 2) $\displaystyle\frac{1}{5}-\frac{2}{25}+\frac{4}{125}-\frac{8}{625}+\cdots=\frac{1}{5}\sum_{n=0}^{\infty}\left(-\frac{2}{5}\right)^n=\frac{1}{5}\cdot\frac{1}{1+\frac{2}{5}}=\frac{1}{7}$.
 
-3) $\displaystyle0.\overline{12}:=0.1212121212\ldots=\sum_{n=1}^{\infty}\frac{12}{100^n}=\frac{\frac{12}{100}}{1-\frac{1}{100}}=\frac{12}{100-1}=\frac{4}{33}$.
+3) $\displaystyle0.\overline{12}=0.1212121212\ldots=\sum_{n=1}^{\infty}\frac{12}{100^n}=\frac{\frac{12}{100}}{1-\frac{1}{100}}=\frac{12}{100-1}=\frac{4}{33}$.
 ::::::
 
-In the last example $\overline{12}$ denotes that $12$ is repeated indefinitely. The number $p:=0.\overline{12}$ is an example of a convergent geometric series. However, it is easier to note that
+In the last example $\overline{12}$ denotes that $12$ is repeated indefinitely. The number $p=0.\overline{12}$ is an example of a convergent geometric series. However, it is easier to note that
 
 $$
 100p=12.\overline{12}=12+0.\overline{12}=12+p\quad\Longrightarrow\quad99p=12\quad\Longleftrightarrow\quad p=\frac{12}{99}=\frac{4}{33}.
 $$
 
 ::::::{prf:example} 
-Express the number $0.\overline{135}:=0.135135135\ldots$ as a quotient of integers.
+Express the number $0.\overline{135}=0.135135135\ldots$ as a quotient of integers.
 
 Solution 1. The number can be written as a geometric series:
 
@@ -156,13 +154,10 @@ $$
 
 Solution 2. Let $q=0.\overline{135}$, then we have
 
-$$
 \begin{align*}
 &1000q=135.\overline{135}=135+0.\overline{135}=135+q\\
 &\quad\Longrightarrow\quad999q=135\quad\Longleftrightarrow\quad q=\frac{135}{999}=\frac{15}{111}=\frac{5}{37}.
 \end{align*}
-$$
-
 ::::::
 
 ::::{exercise}
@@ -229,15 +224,12 @@ $$
 :label: Ex:Series:TelescopingSeries2
 Another example is: $\displaystyle\sum_{n=2}^{\infty}\frac{1}{n^2-1}$. Then we have
 
-$$
 \begin{align*}
 \sum_{k=2}^n\frac{1}{k^2-1}&=\sum_{k=2}^n\frac{1}{(k-1)(k+1)}=\frac{1}{2}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+1}\right)\\
 &=\frac{1}{2}\left(\frac{1}{1}-\cancel{\frac{1}{3}}+\frac{1}{2}-\cancel{\frac{1}{4}}+\cancel{\frac{1}{3}}-\cancel{\frac{1}{5}}+\cancel{\frac{1}{4}}-\cancel{\frac{1}{6}}+\right.\\
 &{}\quad\quad\quad\quad\quad\left.{}\cdots+\cancel{\frac{1}{n-2}}-\frac{1}{n}+\cancel{\frac{1}{n-1}}-\frac{1}{n+1}\right)\\
 &=\frac{1}{2}\left(1+\frac{1}{2}-\frac{1}{n}-\frac{1}{n+1}\right).
 \end{align*}
-$$
-
 This implies that the series converges and that 
 
 $$
@@ -251,15 +243,12 @@ $$
 :label: Ex:Series:TelescopingSeries3
 A third example is: $\displaystyle\sum_{n=2}^{\infty}\frac{1}{(n-1)(n+2)}$. Then we have
 
-$$
 \begin{align*}
 &\sum_{k=2}^n\frac{1}{(k-1)(k+2)}=\frac{1}{3}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+2}\right)\\
 &=\frac{1}{3}\left(\frac{1}{1}-\cancel{\frac{1}{4}}+\frac{1}{2}-\cancel{\frac{1}{5}}+\frac{1}{3}-\cancel{\frac{1}{6}}+\cancel{\frac{1}{4}}-\cancel{\frac{1}{7}}+\right.\\
 &{}\quad\quad\quad\quad\quad\left.{}\cdots+\cancel{\frac{1}{n-3}}-\frac{1}{n}+\cancel{\frac{1}{n-2}}-\frac{1}{n+1}+\cancel{\frac{1}{n-1}}-\frac{1}{n+2}\right)\\
 &=\frac{1}{3}\left(1+\frac{1}{2}+\frac{1}{3}-\frac{1}{n}-\frac{1}{n+1}-\frac{1}{n+2}\right).
 \end{align*}
-$$
-
 This implies that the series converges and that 
 
 $$
@@ -296,13 +285,10 @@ $$
 :class: solution, dropdown
 (a) Note that
 
-$$
 \begin{align*}
 \frac{1}{F_nF_{n+2}}&=\frac{A}{F_n}+\frac{B}{F_{n+2}}=\frac{AF_{n+2}+BF_n}{F_nF_{n+2}}\\
 &=\frac{A\left(F_n+F_{n+1}\right)+BF_n}{F_nF_{n+2}}=\frac{(A+B)F_n+AF_{n+1}}{F_nF_{n+2}}.
 \end{align*}
-$$
-
 This implies that $A=\dfrac{1}{F_{n+1}}$ and $B=-\dfrac{1}{F_{n+1}}$. Hence we have
 
 $$
@@ -311,43 +297,31 @@ $$
 
 (b) Now we use the telescoping property to obtain
 
-$$
 \begin{align*}
 \sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}&=\lim\limits_{N\to\infty}\sum_{n=1}^N\left(\frac{1}{F_nF_{n+1}}-\frac{1}{F_{n+1}F_{n+2}}\right)\\
 &=\lim\limits_{N\to\infty}\left(\frac{1}{F_1F_2}-\frac{1}{F_{N+1}F_{N+2}}\right)=1.
 \end{align*}
-$$
-
 (c) Again, we use the telescoping property to obtain
 
-$$
 \begin{align*}
 \sum_{n=1}^{\infty}\frac{F_{n+1}}{F_nF_{n+2}}&=\lim\limits_{N\to\infty}\sum_{n=1}^{\infty}\left(\frac{1}{F_n}-\frac{1}{F_{n+2}}\right)\\
 &=\lim\limits_{N\to\infty}\left(\frac{1}{F_1}+\frac{1}{F_2}-\frac{1}{F_{N+1}}-\frac{1}{F_{N+2}}\right)=1+1=2.
 \end{align*}
-$$
-
 (d) Note that
 
-$$
 \begin{align*}
 \frac{1}{F_nF_{n+4}}&=\frac{A}{F_n}+\frac{B}{F_{n+4}}=\frac{AF_{n+4}+BF_n}{F_nF_{n+4}}=\frac{A\left(F_{n+2}+F_{n+3}\right)+BF_n}{F_nF_{n+4}}\\
 &=\frac{A\left(F_{n+2}+F_{n+1}+F_{n+2}\right)+BF_n}{F_nF_{n+4}}\\
 &=\frac{A\left(2F_{n+2}+F_{n+2}-F_n\right)+BF_n}{F_nF_{n+4}}=\frac{A\left(3F_{n+2}-F_n\right)+BF_n}{F_nF_{n+4}}\\
 &=\frac{3AF_{n+2}+(B-A)F_n}{F_nF_{n+4}}\quad\Longrightarrow\quad A=B=\frac{1}{3F_{n+2}}.
 \end{align*}
-$$
-
 (e) This implies that
 
-$$
 \begin{align*}
 \sum_{n=1}^{\infty}\frac{1}{F_nF_{n+4}}&=\sum_{n=1}^{\infty}\left(\frac{1}{3F_nF_{n+2}}+\frac{1}{3F_{n+2}F_{n+4}}\right)\\
 &=\frac{1}{3}\left(\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}+\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}-\frac{1}{F_1F_3}-\frac{1}{F_2F_4}\right)\\
 &=\frac{1}{3}\left(1+1-\frac{1}{2}-\frac{1}{3}\right)=\frac{7}{18}.
 \end{align*}
-$$
-
 :::
 
 ## A divergence test

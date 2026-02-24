@@ -70,7 +70,7 @@ Maybe we should leave out the notes above and below...
 :::{note}
 In surveying, mining and geology angles are sometimes measured in *gradians* or *gons*. Then the angle given by a complete revolution equals $400^{g}$, which is the same as $2\pi$ rad. Therefore:
 
-$$\pi\;\operatorname{rad}=200^{g}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{200}{\pi}\right)^{g}\quad\text{and}\quad 1^{g}=\dfrac{\pi}{200}\;\operatorname{rad}.$$ 
+$$\pi\;\operatorname{rad}=200^{\operatorname{g}}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{200}{\pi}\right)^{\operatorname{g}}\quad\text{and}\quad 1^{\operatorname{g}}=\dfrac{\pi}{200}\;\operatorname{rad}.$$ 
 
 We will not use these *gradians* or *gons* in this book.
 :::
@@ -104,6 +104,7 @@ class: dark-light
 An angle $\theta$ in the $xy$-plane in standard position.
 ```
 
+(Subsec:TrigonRatio)=
 ## Trigonometric ratios
 
 Using angles, we define three trigonometric ratios: the sine, the cosine and the tangent.
@@ -509,7 +510,9 @@ An equilateral triangle with three equal sides of length $2$.
 
 This leads to the following table of standard values:
 
-```{list-table}
+
+```{list-table} Standard values of sine, cosine and tangent.
+:name: Tab:Trigonometry:StandardValues
 :header-rows: 2
 :align: center
 :class: mid-align center-align
@@ -647,7 +650,6 @@ $$
 
 Using {numref}`Fig:Trigonometry:unit_circle` and the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` with $a=x=\cos(\theta)$ and $b=y=\sin(\theta)$ and $c=1$ we have:
 
-$$
 \begin{align*}
 \sin^2(\theta)+\cos^2(\theta) &= y^2+x^2 \\
 &= x^2 +y^2 \\
@@ -655,8 +657,6 @@ $$
 & = c^2 \\
 & = 1.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{prf:theorem} Periodicity
@@ -847,29 +847,20 @@ $$
 
 For every $x,y\in\mathbb{R}$ we have
 
-$$
 \begin{align*}
 \sin(x+y) &= \sin(x)\cos(y)+\cos(x)\sin(y), \\
 \cos(x+y) &= \cos(x)\cos(y)-\sin(x)\sin(y),
 \end{align*}
-$$
-
-$$
 \begin{align*}
 \sin(x-y) &=\sin(x)\cos(y)-\cos(x)\sin(y), \\
 \cos(x-y) &=\cos(x)\cos(y)+\sin(x)\sin(y),
 \end{align*}
-$$
-
 and
 
-$$
 \begin{align*}
 \tan(x+y) &=\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}, \\
 \tan(x-y) &=\frac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}.
 \end{align*}
-$$
-
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:AdditionSubtractionFormulas`
@@ -895,29 +886,23 @@ $$
 
 On the other hand, this distance can be computed using the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` as
 
-$$
 \begin{align*}
 (PQ)^2&=(\cos(\beta)-\cos(\alpha))^2+(\sin(\beta)-\sin(\alpha))^2\\
 &=\cos^2(\beta)-2\cos(\alpha)\cos(\beta)+\cos^2(\alpha)\\
 &{}\hspace{25mm}{}+\sin^2(\beta)-2\sin(\alpha)\sin(\beta)+\sin^2(\alpha)\\
 &=2-2\left(\cos(\alpha)\cos(\beta)+\sin(\alpha)\cos(\alpha)\right).
 \end{align*}
-$$
-
 This implies that $\cos(\alpha-\beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)$.
 
 Replacing $\beta$ with $-\beta$ we obtain that $\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)$.
 
 In {prf:ref}`Thm:Trigonometry:ComplementaryAngles` we obtained that $\sin(\frac{1}{2}\pi-\theta)=\cos(\theta)$ and $\cos(\frac{1}{2}\pi-\theta)=\sin(\theta)$. Using these complementary angles formulas, we obtain
 
-$$
 \begin{align*}
 \sin(\alpha+\beta)&=\cos(\tfrac{1}{2}\pi-\alpha-\beta)\\
 &=\cos(\tfrac{1}{2}\pi-\alpha)\cos(\beta)+\sin(\tfrac{1}{2}\pi-\alpha)\sin(\beta)\\
 &=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta).
 \end{align*}
-$$
-
 Replacing $\beta$ with $-\beta$ we obtain $\sin(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
 
 Now the summation formulas for the tangent follow from these summation formulas for the sine and the cosine:
@@ -1071,6 +1056,21 @@ $$
 \sqrt{\frac{a+b+c}{2}\cdot\frac{b+c-a}{2}\cdot\frac{a+b-c}{2}\cdot\frac{a+c-b}{2}}=\sqrt{s(s-a)(s-b)(s-c)}.
 $$
 
+::::::
+
+## The sine as a product
+
+Although we will not cover infinite products in this book we mention the following about the sine.
+
+::::::{prf:Remark}
+:label: Ex:Integration:IntroductionExamplesProductSine
+It can be shown that
+
+$$
+\sin(\pi x)=\pi x\prod_{n=1}^{\infty}\left(1-\frac{x^2}{n^2}\right).
+$$
+
+The factors of this infinite product give rise to all zeros of $\sin(\pi x)$ being $0,\pm1,\pm2,\ldots$.
 ::::::
 
 ## Exercises
@@ -1359,6 +1359,8 @@ width: 50%
 name: Fig:Trigonometry:Cosines
 align: center
 ---
+
+A triangle with angles $3\alpha$, $3\alpha$ and $\alpha$, subdivided into two isosceles triangles.
 ```
 
 :::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_11`

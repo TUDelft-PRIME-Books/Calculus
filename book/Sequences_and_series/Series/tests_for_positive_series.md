@@ -71,7 +71,7 @@ $$
 
 ::::::
 
-::::::{remark}
+::::::{prf:remark}
 In other words we have:
 
 1) If $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent, then $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent.
@@ -315,13 +315,10 @@ Consider $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n^2+1}$ and let $s$ denote it
 
 Let's use $s_{10}$ as an approximation of $s\approx2.07667$ (see a note above):
 
-$$
 \begin{align*}
 s_{10}=\sum_{n=0}^{10}\frac{1}{n^2+1}&=1+\frac{1}{2}+\frac{1}{5}+\frac{1}{10}+\frac{1}{17}+\frac{1}{26}+\frac{1}{37}+\frac{1}{50}\\
 &{}\quad\quad{}+\frac{1}{65}+\frac{1}{82}+\frac{1}{101}=\frac{3355270077}{1693047850}\approx1.98179.
 \end{align*}
-$$
-
 How good is this approximation? Let
 
 $$
@@ -472,35 +469,26 @@ Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}$ is divergent ($p$-ser
 
 3) Consider $\displaystyle\sum_{n=1}^{\infty}\frac{2n+3}{n^3-2n+5}$. Let $a_n=\dfrac{2n+3}{n^3-2n+5}$, then for large $n$ we have $a_n\sim\dfrac{2n}{n^3}=\dfrac{2}{n^2}$. So, let $b_n=\dfrac{1}{n^2}$, then
 
-$$
 \begin{align*}
 \lim_{n\to\infty}\frac{a_n}{b_n}&=\lim_{n\to\infty}\frac{\dfrac{2n+3}{n^3-2n+5}}{\dfrac{1}{n^2}}=\lim_{n\to\infty}\frac{(2n+3)n^2}{n^3-2n+5}\\
 &=\lim_{n\to\infty}\frac{2+\dfrac{3}{n}}{1-\dfrac{2}{n^2}+\dfrac{5}{n^3}}=\frac{2+0}{1-0+0}=2.
 \end{align*}
-$$
-
 Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ converges ($p$-series with $p=2>1$), we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{2n+3}{n^3-2n+5}$ converges as well.
 
 4) Consider $\displaystyle\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$. Let $a_n=\displaystyle\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$ and $b_n=\displaystyle\frac{\sqrt{n^4}}{n^5}=\frac{n^2}{n^5}=\frac{1}{n^3}$, then
 
-$$
 \begin{align*}
 \lim\limits_{n\to\infty}\frac{a_n}{b_n}&=\lim\limits_{n\to\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}\cdot\frac{n^3}{1}=\lim\limits_{n\to\infty}\frac{\sqrt{1+4n^{-3}+5n^{-4}}}{2+3n^{-3}+n^{-5}}\\
 &=\frac{\sqrt{1+0+0}}{2+0+0}=\frac{1}{2}>0.
 \end{align*}
-$$
-
 Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^3}$ is a $p$-series with $p=3>1$, which is convergent, we concluse that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$ is convergent too.
 
 5) Consider $\displaystyle\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$. Let $a_n=\displaystyle\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ and $b_n=\displaystyle\frac{n^2}{\sqrt{n^5}}=\frac{n^2}{n^{\frac{5}{2}}}=\frac{1}{n^{\frac{1}{2}}}$, then
 
-$$
 \begin{align*}
 \lim\limits_{n\to\infty}\frac{a_n}{b_n}&=\lim\limits_{n\to\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}\cdot\frac{n^{\frac{1}{2}}}{1}=\lim\limits_{n\to\infty}\frac{3+5n^{-1}+2n^{-2}}{\sqrt{2+4n^{-2}+3n^{-5}}}\\
 &=\frac{3+0+0}{\sqrt{2+0+0}}=\frac{3}{\sqrt{2}}>0.
 \end{align*}
-$$
-
 Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^{\frac{1}{2}}}$ is a $p$-series with $p=\displaystyle\frac{1}{2}\leq1$, which is divergent, we conclude that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ is divergent too.
 ::::::
 
