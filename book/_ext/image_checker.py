@@ -44,7 +44,7 @@ def check_images(app, exception):
     # Find unused images
     unused_images = image_files - image_uris
     for img in sorted(unused_images):
-        logger.warning(f"Unused image file: {img}")
+        logger.info(f"Unused image file: {img}",color="fuchsia")
 
 
 def setup(app):
