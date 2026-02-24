@@ -26,6 +26,7 @@ sphinx:
   local_extensions:
     text_replacer: _ext/
     check_captions: _ext/
+    image_checker: _ext/
   config:
     prf_realtyp_to_countertyp:
       "axiom": "theorem"
