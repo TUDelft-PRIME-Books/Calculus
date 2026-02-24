@@ -596,7 +596,7 @@ The unit circle with standard angles marked.
 :::{note}
 It is important to memorise these standard values. It might be helpful to note that
 
-```{list-table}
+```{list-table} Standard values of sine and cosine for angles in the first quadrant.
 :header-rows: 2
 :align: center
 :class: mid-align center-align

@@ -1,4 +1,4 @@
-(Section:Functionsintro)=
+(Section:FunctionsIntro)=
 
 # Functions of one variable
 
@@ -6,10 +6,10 @@
 
 ## Introduction
 
-[^myfootnote1]: If you do not live close to Delft, you should come visit once. Then you can experience all the nice (and maybe also the not so nice) things about cycling through a crowded, old town. 
+[^MyFootnote1]: If you do not live close to Delft, you should come visit once. Then you can experience all the nice (and maybe also the not so nice) things about cycling through a crowded, old town. 
 
 
-Suppose you are riding your bicycle through the city center of Delft.[^myfootnote1] As you move along, your speed might change. For instance, sometimes you have to wait for other traffic, or you speed up because move down a small ramp (we do not have hills here in the Netherlands to use to increase your speed). So, for instance, after cycling for $60$ seconds, your speed might be $5$ meters per second, while after $300$ seconds you are at a traffic light and your speed is $0$. We can denote this by using the symbol $v$ for speed and writing $v(120)=5$ and $v(300)=0$. So a more general equation $v(t)=c$ should be read as that after cycling for $t$ seconds the speed $v$ is equal to $c$. This way, we have written the speed $v$ at a **function** of $t$. The time takes the role of the **input variable**, while the speed takes the role of the **output value** or **function value**. So that means that for each input $t$ we have a corresponding output $v(t)$, i.e. the speed $v$ at that particular point in time $t$.
+Suppose you are riding your bicycle through the city center of Delft.[^MyFootnote1] As you move along, your speed might change. For instance, sometimes you have to wait for other traffic, or you speed up because move down a small ramp (we do not have hills here in the Netherlands to use to increase your speed). So, for instance, after cycling for $60$ seconds, your speed might be $5$ meters per second, while after $300$ seconds you are at a traffic light and your speed is $0$. We can denote this by using the symbol $v$ for speed and writing $v(120)=5$ and $v(300)=0$. So a more general equation $v(t)=c$ should be read as that after cycling for $t$ seconds the speed $v$ is equal to $c$. This way, we have written the speed $v$ at a **function** of $t$. The time takes the role of the **input variable**, while the speed takes the role of the **output value** or **function value**. So that means that for each input $t$ we have a corresponding output $v(t)$, i.e. the speed $v$ at that particular point in time $t$.
 
 Instead of prescribing what the speed is at several different points in time, we could also try to be more efficient. Often, it is possible to give a formula that expresses the speed in terms of the time that has passed. For instance, we could have that
 
@@ -43,7 +43,7 @@ $$
 
 So for the formula $\tilde{v}(t)=\frac{25}{4}-\frac{t}{48}$ we obtain a negative speed and since we were not taking into account in which direction we were moving a negative speed does not make any sense. So the first formula is, physically speaking, more realistic. Does that mean that it is correct, though? Probably not, since we have only specified the speed at two points in time and a lot can happen at different points. Hence, it would be a major coincidence that the formula we provided perfectly described our movement. Still, we can use this formula to model our journey. Moreover the more points in time we specify what the speed should be, the realistic we can choose our model.
 
-In fact, in almost all processes in nature, science and engineering one quantity depends on another quantity (or perhaps on multiple quantities) and can, therfore, be described by means of a function. The branch of mathematics concerned with finding functions describing natural phenomena is called **mathematical modelling**. In this book, the focus is not on the modelling part. Instead, we usually assume that the function is given to us and by analyzing it, we aim to understand the underlying process. 
+In fact, in almost all processes in nature, science and engineering one quantity depends on another quantity (or perhaps on multiple quantities) and can, therefore, be described by means of a function. The branch of mathematics concerned with finding functions describing natural phenomena is called **mathematical modelling**. In this book, the focus is not on the modelling part. Instead, we usually assume that the function is given to us and by analyzing it, we aim to understand the underlying process. 
 
 From a purely mathematical standpoint, functions are equally fundamental. Indeed, most mathematical procedures where one mathematical object is turned into another object can be described by means of a function. As such, understanding what functions are and what you can and cannot do with them is essentially everything that we do in calculus, and mathematical analysis more broadly.
 
@@ -106,23 +106,23 @@ so both the input values $-3$ and $3$ are mapped into the output value $9$. Fina
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:Functions1var:Noformula
+:label: Ex:Functions1var:NoFormula
 
 Although most functions in this book can be described by means of formula, this does not need to be the case. Moreover, the domain and/or codomain do not need to be part of $\mathbb{R}^n$. For instance, we can let $D$ be the set that contains $3$ people, Alice, Bob and Charlie, and let $f$ be the function that maps a person to their age. So, we could write this down like $f(\mathrm{Alice})=31$, $f(\mathrm{Bob})=66$ and $f(\mathrm{Charlie})=19$. Here, the output is still a number, but even that does not need to be the case. For instance, we could let $g$ be the function that gives the first letter of a person's name, so we could write $g(\mathrm{Alice})=\mathrm{A}$, $f(\mathrm{Bob})=\mathrm{B}$ and $f(\mathrm{Charlie})=\mathrm{C}$. This might seem a bit silly, but it actually quite beneficial that a lot of results that we develop in this section can also be applied to any type of domain or codomain, since it makes it possible to directly use these results in a more abstract mathematical setting.
 
 ::::::
 
-Although the domain and codomain of a function are integral parts of the function, we often do not explicitly state them. Most functions that we will encounter are defined by a formula and for those functions we will implicitly assume that the domain consists precisely of those values of $x$ for which the formula 'makes sense'. In addition, almost all functions in this course will have $\mathbb{R}$ as the codomain (exceptions can be found in {numref}`Section:VerctorCalculusIntro`), so we will implicitly assume that we are always dealing with these type of functions. Let us make these conventions a bit more explicit.
+Although the domain and codomain of a function are integral parts of the function, we often do not explicitly state them. Most functions that we will encounter are defined by a formula and for those functions we will implicitly assume that the domain consists precisely of those values of $x$ for which the formula 'makes sense'. In addition, almost all functions in this course will have $\mathbb{R}$ as the codomain (exceptions can be found in {numref}`Section:VectorCalculusIntro`), so we will implicitly assume that we are always dealing with these type of functions. Let us make these conventions a bit more explicit.
 
 ::::::{prf:definition} 
-:label: Def:Functions1var:Maxdomain
+:label: Def:Functions1var:MaxDomain
 
 Let $f$ be a function with codomain $\mathbb{R}$ that is defined by a formula. Then the **maximal domain** or **natural domain** is the set of all values of $x$ for which this formula makes sense.
 
 ::::::
 
 ::::::{important}
-Whenever we do not specifiy the codomain of a function, we assume this codomain is the real numbers $\mathbb{R}$.
+Whenever we do not specify the codomain of a function, we assume this codomain is the real numbers $\mathbb{R}$.
 ::::::
 
 ::::::{important}
@@ -150,7 +150,7 @@ The range is a subset of the codomain.
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:Functions1var:MaxdomRange
+:label: Ex:Functions1var:MaxDomRange
 
 Let $f$ be the function defined by $f(x)=3+\sqrt{x-2}$. Since this function is defined by a formula, we assume that its domain is equal to the maximal domain. So what is the maximal domain is this case? For that, we need to find out for which values of $x$ the expression $3+\sqrt{x-2}$ makes sense. The only restriction we have is that we cannot enter negative numbers into a square root, so the expression is defined precisely when $x-2\geq 0$, i.e. when $x\geq 2$. So the maximal domain is the set of all $x$ with $x\geq 2$, i.e. the interval $[2,\infty)$.
 
@@ -158,15 +158,20 @@ We can also determine the range of this function. Since every nonnegative number
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:Functions1var:Naturaldomain
+:label: Ex:Functions1var:NaturalDomain
+
+:::{figure} Images/Fig-Functions1var-GasTank.png
+:name: Fig:Functions1var:GasTank
+:figclass: margin
+
+A gas tank.
+:::
 
 Consider a container full of gas of constant volume $V_0$, measure in cubic meters. Then the [Ideal Gas Law](https://en.wikipedia.org/wiki/Ideal_gas_law) states that the temperature $T$ of the gas, measured in kelvins, is related to the pressure $P$, measured in pascals, by 
 
 $$
  PV_0=nRT
 $$
-
-Hier in de margin een ChatGPT foto van een gastank.
 
 Here $n$ is the amount of substance of gas, measured in moles, and $R$ is the ideal gas constant. By writing
 
@@ -184,7 +189,7 @@ we see that if the pressure increases the temperature increases, while if the pr
 An essential part of understanding functions of a single variable is to try to visualise their behaviour. In principle, a function is a rule that maps an element $x$ to another element $f(x)$, so how is it possible to visualise this? Since each $x$ in the domain corresponds to exactly one $f(x)$, we could try to plot the point $(x,f(x))$ in $\mathbb{R}^2$. Then, if we do this for each value of $x$, we have captured the full behaviour of the function in one picture. Such a plot is called the **graph** of a function. So for each point $(x,y)$ on the graph of $f$ we necessarily have $f(x)=y$. However, there is one major restriction here, and that is that we only have a finite amount of space to draw the plot on. So, for instance, if the function is defined for all $x$ in $\mathbb{R}$ it is impossible to plot the full graph of the function, since we would need an infinite amount of space to do so. Still, in such a case it is possible to plot only part of the graph and try to make sure that this part captures as much qualitative behaviour of the function as possible.
 
 :::::{margin}
-::::{figure} Images/Fig-Functions1var-Graphbasic.png
+::::{figure} Images/Fig-Functions1var-GraphBasic.png
 :name: Fig:Functions1var:Graph
 
 The graph of a function $f$ can be used to reach of the value $f(a)$ for a given value $a$. The domain and range of $f$ can also be read off from the graph.
@@ -196,12 +201,12 @@ The graph of a function $f$ can be used to reach of the value $f(a)$ for a given
 If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all pairs $(x,f(x))$. That is, it is the set $\left\{(x,f(x))\,\middle|\,x\,\,\mathrm{in}\,\,D\right\}$. 
 ::::::
 
-For most functions that we will encounter in this book, the graph looks like one or several curves in $\mathbb{R}^2$. For instance, the graph of the function $f(x)=x^2$ is the curve of all points $(x,y)$ with $y=x^2$, so the graph is a parabola. So we might wonder: is any curve in $\mathbb{R}^2$ the graph of a certain function? For instance, is the circle with radius $1$, centered around the origin, the graph of some function? Well, suppose that there would be some function $f$ which has this circle as its graph. Since the point $(0,1)$ is on the circle, that should mean that $f(0)=1$. However, the point $(0,-1)$ is also on this circle, so that should mean that $f(0)=-1$. Since for a function, a given input ($0$ in this case) can only have a single output, it is implossible that $f(0)$ is both $1$ and $-1$ at the same time. As such, this circle cannot be the graph of any function.
+For most functions that we will encounter in this book, the graph looks like one or several curves in $\mathbb{R}^2$. For instance, the graph of the function $f(x)=x^2$ is the curve of all points $(x,y)$ with $y=x^2$, so the graph is a parabola. So we might wonder: is any curve in $\mathbb{R}^2$ the graph of a certain function? For instance, is the circle with radius $1$, centered around the origin, the graph of some function? Well, suppose that there would be some function $f$ which has this circle as its graph. Since the point $(0,1)$ is on the circle, that should mean that $f(0)=1$. However, the point $(0,-1)$ is also on this circle, so that should mean that $f(0)=-1$. Since for a function, a given input ($0$ in this case) can only have a single output, it is impossible that $f(0)$ is both $1$ and $-1$ at the same time. As such, this circle cannot be the graph of any function.
 
 So how could we have seen this in advance? Well, the reason why the circle was not the graph of a function was that there were two different points on this circle which had the same $x$-coordinate. That means that the vertical line $x=0$ intersects the circle at two different points. This idea can be generalized as follows: the only reason a curve is not the graph of some function, is that there are two different points on the curve that have the same $x$-coordinate. In such a case, there would be a vertical line that intersects the curve at more than once. Reversely, a vertical line $x=a$ intersect the graph of a function $f$ exactly once if $a$ is in the domain of $f$ (they intersect at the point $(a,f(a))$), while such a vertical line does not intersect the graph at all if $a$ is not in the domain of $f$. We can formulate this result as follows.
 
 ::::::{prf:theorem} Vertical line test 
-:label: Thm:Functions1var:Verticallinetest
+:label: Thm:Functions1var:VerticalLineTest
 A curve in $\mathbb{R}^2$ is the graph of a function precisely when each vertical line of the form $x=a$ for some real number $a$ intersects the curve at most once.
 ::::::
 
@@ -212,7 +217,16 @@ You will learn more about curves that are not (necessarily) the graph of a funct
 
 Consider the two curves shown below.
 
-Hier twee plaatjes, links de grafiek van sin(x)+x, rechts de krome x^3+y^3-3xy. Niet erbij zetten wat ze zijn. Misschien nuttig om een versleepbare verticale lijn in beiden te hebben die goed de snijdpunten laat zien.
+::::{figure} Images/Fig-Functions1var-Verticalline.png
+:name: Fig:Functions1var:Verticalline
+
+Two curves in $\mathbb{R}^2$ a vertical line for the vertical line test.
+::::
+
+::::{prf:remark}
+:label: Rem:Functions1var:Verticalline
+Do not show the functions in the final image.
+::::
 
 Can we check whether these curves are the graph of a function? For the curve on the left, each vertical line intersects the curve exactly once, so this curve is the graph function. You might wonder which function this curve is the graph of. Without further knowledge of the function, this is impossible, unfortunately. Still, for a given value of $x$, we can read off what the function value $f(x)$ will be approximately. For instance, we can read off that $f(0)=0$ (or maybe something very close to $0$), while $f(1)\approx 2$.
 
@@ -220,7 +234,7 @@ The curve on the right, on the other hand, is not the graph of a function. Some 
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:Functions1var:Verticalline2
+:label: Ex:Functions1var:VerticalLine2
 
 Let $C_1$ be the curve given by all points $(x,y)$ that satisfy the equation $x^2-y^3=0$. Is this curve the graph of a function, and if so, of which function? We could try to plot this function and apply the vertical line test, but that is rather hard to do without plotting software. It is also not necessary. Indeed, we can rewrite the equation as
 
@@ -240,14 +254,19 @@ Now, the expression $\pm x$ might look like a formula describing a function to y
 
 This result is also visible in the plot of the two curves, shown below.
 
-Hier een plaatje van de twee krommen.
+:::{figure} Images/Fig-Functions1var-VerticalLine2.png
+:name: Fig:Functions1var:VerticalLine2
+
+The curves $C_1$ and $C_2$.
+:::
+
 ::::::
 
 (Subsec:Functions1dElementary)=
 
 ## Standard functions
 
-Many functions can be expressed in terms of other functions. In {numref}`Section:Propertiesfunctions` we will see several ways we can combine two functions into another function (for instance, by addition, multiplication or composition). As such, we use this section to define the 'building blocks', that is, the most commonly occuring functions that can be used to build more complicated functions. Several of these we have already encoutered in {numref}`Chapter:Numbersandcoordinate` though we did not call them functions back then. The functions we will discuss in this section are often referred to as standard functions.
+Many functions can be expressed in terms of other functions. In {numref}`Section:PropertiesFunctions` we will see several ways we can combine two functions into another function (for instance, by addition, multiplication or composition). As such, we use this section to define the 'building blocks', that is, the most commonly occurring functions that can be used to build more complicated functions. Several of these we have already encountered in {numref}`Chapter:NumbersAndCoordinate` though we did not call them functions back then. The functions we will discuss in this section are often referred to as standard functions.
 
 The most standard of standard functions are the polynomials. These come in various flavours, of which we will give the most important ones their own names.
 
@@ -278,15 +297,15 @@ The functions $f(x)=\sin(x)$, $f(x)=\cos(x)$ and $f(x)=\tan(x)$ are called the *
 
 Note that we always assume that the input of a trigonometric function is measured in radians, not in degrees.
 
-In {numref}`Section:Realnumbers` we saw that for a base $b\geq 0$ and an exponent $r$ in $\mathbb{R}$ we could define the exponentiation $b^r$. This concept actually leads to two different types of functions: one where we vary $b$ and one where we vary $r$. For the second type, the one with base $e$, see {numref}`Subsec:RealnumbersE`, plays a particularly important role in calculus.
+In {numref}`Section:RealNumbers` we saw that for a base $b\geq 0$ and an exponent $r$ in $\mathbb{R}$ we could define the exponentiation $b^r$. This concept actually leads to two different types of functions: one where we vary $b$ and one where we vary $r$. For the second type, the one with base $e$, see {numref}`Subsec:RealNumbersE`, plays a particularly important role in calculus.
 
 ::::::{prf:definition} 
-:label: Def:Functions1var:Powerfunction
+:label: Def:Functions1var:PowerFunction
 If $r$ is a real number, then the function $f(x)=x^r$ is called a **power function**. If $r=-1$ then the function $f(x)=x^{-1}=\frac{1}{x}$ is sometimes referred to as the **reciprocal function**.
 ::::::
 
 ::::::{prf:definition} 
-:label: Def:Functions1var:Exponentialfunction
+:label: Def:Functions1var:ExponentialFunction
 For $b\geq 0$ the function $f(x)=b^x$ is called an **exponential function**. The function $f(x)=e^x$ is referred to as the **natural exponential function**, or sometimes simply **the exponential function**.
 ::::::
 
@@ -296,7 +315,11 @@ Other important classes of functions are logarithms and inverse trigonometric fu
 :label: Ex:Functions1var:Linear
 Consider the function given by $f(x)=2x+3$. This is a polynomial function; in particular, it is a linear function. Since for any value of $x$ it is possible to compute $2x+3$, the maximal domain of this function is the set of all real numbers $\mathbb{R}$. The graph of this function is shown below.
 
-Hier de grafiek van deze functie.
+:::{figure} Images/Fig-Functions1var-Linear.png
+:name: Fig:Functions1var:Linear
+
+The graph of the linear function $f(x)=2x+3$.
+:::
 
 As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph? We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increases by any value $\Delta x$, $y$ will increase by $\Delta y=2\Delta x$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope to other curves than straight lines in {numref}`Chapter:Differentiation`.
 ::::::
@@ -305,7 +328,11 @@ As you can see, the graph of this function is a straight line, which is always t
 :label: Ex:Functions1var:Quadratic
 Consider the function given by $h(x)=x^2-4x+3$. This is a quadratic function and, therefore, a special type of polynomial function. Since $h(x)$ exists for any real number $x$, the maximal domain of $h$ is $\mathbb{R}$. The graph of this function is shown below.
 
-Hier de grafiek van de functie $h$.
+:::{figure} Images/Fig-Functions1var-QuadraticH.png
+:name: Fig:Functions1var:QuadraticH
+
+The graph of the quadratic function $h(x)=x^2-4x+3$.
+:::
 
 The graph of this function is a **parabola**. The graph crosses the $x$-axis at $x=1$ and $x=3$, which can be seen from the fact that $h(x)=x^2-4x+3=(x-1)(x-3)$, so that $h(x)=0$ precisely when $x=1$ or $x=3$. 
 
@@ -313,17 +340,25 @@ Notice that the lowest value of $y$ occurs at $x=2$, where $h(2)=-1$. That is, $
 
 Since the graph of $h$ has a lowest value and then grows for both very large and very negative values of $x$, we say that the graph of $h$ is a parabola that **opens upwards**.  On the other hand, the graph of the function $k(x)=2-3x^2$ is also a parabola, as can be seen below. However, this one has a highest value and it becomes very negative for both very large and very negative values of $x$. As such, the graph of $k$ is a parabola that **opens downwards**.
 
-Hier de grafiek van de functie $k$.
+:::{figure} Images/Fig-Functions1var-QuadraticK.png
+:name: Fig:Functions1var:QuadraticK
+
+The graph of the quadratic function $k(x)=2-3x^2$.
+:::
 
 ::::::
 
 ::::::{prf:example} Power functions with positive integer power
-:label: Ex:Functions1var:Cubicandhigher
+:label: Ex:Functions1var:CubicAndHigher
 We now consider a function of the form $g(x)=x^n$ for some positive integer $n\geq 2$. This is both a polynomial and a power function. The behaviour of this function will greatly depend on whether $n$ is even or odd. 
 
-Hier twee plaatjes naast elkaar. Links: de grafieken van $x^2$, $x^4$, $x^6$ en $x^8$, rechts: de grafieken van $x^3$, $x^5$, $x^7$ en $x^9$; bij beiden moet het stuk tussen -2 en 2 zichtbaar zijn.
+:::{figure} Images/Fig-Functions1var-CubicAndHigher.png
+:name: Fig:Functions1var:CubicAndHigher
 
-Indeed, for even values of $n$, the graph of $g(x)=x^n$ resembles the parabola $y=x^2$, while for odd values of $n$, the graph is similar to that of $x^3$. In particular, for even values of $n$ the graph of the function is symmetric around the $y$-axis. In {numref}`Section:Propertiesfunctions` we will call a function with this property **even** (so now you already know where that name comes from). Similarly, for odd values of $n$ the graph of the function is symmetric in the origin and such a function will be called **odd**.
+On the left the functions $x^2$, $x^4$, $x^6$ and $x^8$ are plotted, while on the right the functions $x^3$, $x^5$, $x^7$ and $x^9$ are plotted. In both cases, the part of the graph between $-2$ and $2$ is shown.
+::: 
+
+Indeed, for even values of $n$, the graph of $g(x)=x^n$ resembles the parabola $y=x^2$, while for odd values of $n$, the graph is similar to that of $x^3$. In particular, for even values of $n$ the graph of the function is symmetric around the $y$-axis. In {numref}`Section:PropertiesFunctions` we will call a function with this property **even** (so now you already know where that name comes from). Similarly, for odd values of $n$ the graph of the function is symmetric in the origin and such a function will be called **odd**.
 
 Note that as $n$ gets larger the graphs becomes more flat for $x$ between $-1$ and $1$. This is because for these values of $x$ we have $|x^2|>|x^3|>|x^4|>...$. On the other hand, for values of $x$ larger than $1$ or smaller than $-1$, the function blows up quicker for larger values of $n$, since then we have $|x^2|<|x^3|<|x^4|<...$
 
@@ -331,8 +366,8 @@ Note that as $n$ gets larger the graphs becomes more flat for $x$ between $-1$ a
 ::::::
 
 ::::::{prf:example} Reciprocal function
-:label: Ex:Functions1var:Idealgas2
-Let us return to the Ideal Gas Law that was discussed in {prf:ref}`Ex:Functions1var:Naturaldomain`. However, instead of assuming that the volume is constant, we now assume that the temperature $T$ is constant. Then the pressure $P$ can be written as a function of the volume $V$ by writing
+:label: Ex:Functions1var:IdealGas2
+Let us return to the Ideal Gas Law that was discussed in {prf:ref}`Ex:Functions1var:NaturalDomain`. However, instead of assuming that the volume is constant, we now assume that the temperature $T$ is constant. Then the pressure $P$ can be written as a function of the volume $V$ by writing
 
 $$
  P=\frac{nRT}{V}=nRTV^{-1}.
@@ -340,7 +375,13 @@ $$
 
 That is, the pressure is inversely proportional to the volume. This means that if $V$ doubles, $P$ will halve and vice versa. The graph of $P$ as a function of $V$ is shown below. Note that $P$ becomes very large if $V$ is close to $0$, while, reversely, $P$ is very close to $0$ whenever $V$ is very large. This makes sense from a physical point of view: when $V$ is small, the gas is compressed into a small amount of space, which means that the pressure must be very high, while if $V$ is large, the gas is distributed over a large amount of space, which means the pressure is much lower.
 
-Hier $P$ als grafiek van $V$ (geen maatvoering op de assen want we kennen de constanten niet)
+
+:::{figure} Images/Fig-Functions1var-IdealGas2.svg
+:name: Fig:Functions1var:IdealGas2
+
+Several graphs of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for different values of the constant $nRT$.
+:::
+
 ::::::
 
 ::::::{prf:example} Power function with power $-2$
@@ -353,21 +394,29 @@ $$
 
 Here $G$ is the [gravitational constant](https://en.wikipedia.org/wiki/Gravitational_constant). The graph of the function is shown below. Since $F$ is proportional to $r^{-2}$, this law is a prime example of an **inverse square law**. This means that if the distance between the masses is doubled, the gravitational force drops by a factor $\frac{1}{4}$. Inverse square laws are rather common in nature, for example in certain electric, light and sound effects.
 
-Hier grafiek van F. Geen maatvoering op de assen want we kennen de constanten niet.
+::::{figure} Images/Fig-Functions1var-Gravity.svg
+:name: Fig:Functions1var:Gravity
 
-The graphs is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:Idealgas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
+Several graphs of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for different values of the constant $Gm_1m_2$.
+::::
+
+The graphs is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
 
 ::::::
 
 ::::::{prf:example} Power functions with negative integer power
-:label: Ex:Functions1var:Negativepowers
+:label: Ex:Functions1var:NegativePowers
 Let us now consider the power functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$. Their graphs are shown below.
 
-Hier grafieken van f en g.
+:::{figure} Images/Fig-Functions1var-NegativePowers.png
+:name: Fig:Functions1var:NegativePowers
 
-Note that the graph of $f$ is very similar to the one in {prf:ref}`Ex:Functions1var:Idealgas2`, except that, since there are no physical restrictions, the function $f$ is also defined for negative values of $x$. In fact, whenever two (physical) quantities are inversely propertional to each other, the graph of one quantity as a function of the other one will be similar to the graph of $f$. Since the graph of $f$ is the set of all points $(x,y)$ with $y=\frac{1}{x}$, we can rewrite this equation to $xy=1$. This means that the graph of $f$ is a hyperbola. 
+The graphs of the functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$.
+:::
 
-Similarly, the graph of $g$ is very similar to the one in {prf:ref}`Ex:Functions1var:Gravity` with again the main distinction that we now allow for negative imput values. This does make the disctinction between the graphs of $f$ and $g$ more clear, though, as $f$ is negative for negative input values, while $g$ is positive.
+Note that the graph of $f$ is very similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`, except that, since there are no physical restrictions, the function $f$ is also defined for negative values of $x$. In fact, whenever two (physical) quantities are inversely proportional to each other, the graph of one quantity as a function of the other one will be similar to the graph of $f$. Since the graph of $f$ is the set of all points $(x,y)$ with $y=\frac{1}{x}$, we can rewrite this equation to $xy=1$. This means that the graph of $f$ is a hyperbola. 
+
+Similarly, the graph of $g$ is very similar to the one in {prf:ref}`Ex:Functions1var:Gravity` with again the main distinction that we now allow for negative input values. This does make the distinction between the graphs of $f$ and $g$ more clear, though, as $f$ is negative for negative input values, while $g$ is positive.
 
 Note that the function values of both $f$ and $g$ blow up near $x=0$. In the terminology of {numref}`Section:LimitPoint`, both functions have a **vertical asymptote** at $x=0$.
 
@@ -375,12 +424,16 @@ Graphs of functions of the form $h(x)=x^{-n}$ with $n\geq 1$ a positive integer 
 ::::::
 
 ::::::{prf:example} Exponential function
-:label: Ex:Functions1var:Exponentialgrowth
-Many quantities in nature have the property that their growth rate is propertional to the current size. This can occur in the form of growth, for instance the population size of bacteria, the spread of a virus or the accumulated interest over savings, or in the form of decay, for instance the intensity of radioactive radiation, the amplitude of vibrations or the cooling of an object placed in a colder environment. In each of these cases, it is possible to model the physical quantity as an exponential function of time. That is, because exponential functions have that same growth property that their growth rate (or in more mathematical terms, their derivative) is proportional to the function itself, see {numref}`Section:Differentiability`.
+:label: Ex:Functions1var:ExponentialGrowth
+Many quantities in nature have the property that their growth rate is proportional to the current size. This can occur in the form of growth, for instance the population size of bacteria, the spread of a virus or the accumulated interest over savings, or in the form of decay, for instance the intensity of radioactive radiation, the amplitude of vibrations or the cooling of an object placed in a colder environment. In each of these cases, it is possible to model the physical quantity as an exponential function of time. That is, because exponential functions have that same growth property that their growth rate (or in more mathematical terms, their derivative) is proportional to the function itself, see {numref}`Section:Differentiability`.
 
 To show the typical behaviour of exponential functions, let us consider the functions $A(t)=2^t$ and $B(t)=\left(\frac{1}{3}\right)^t$. Using the computation rules for exponentiation, we can write the function $B$ alternatively as $B(t)=3^{-t}$. The graphs of the functions $A$ and $B$ are shown below.
 
-Hier de grafieken van A en B
+:::{figure} Images/Fig-Functions1var-ExponentialGrowth.png
+:name: Fig:Functions1var:ExponentialGrowth
+
+The graphs of the functions $A(t)=2^t$ and $B(t)=\left(\frac{1}{3}\right)^t$.
+:::
 
 For the function $A$, we notice that it is very close to $0$ for negative values of $t$, while it grows very fast for positive $t$. In fact, it grows faster the larger $t$ gets, which is indeed the **exponential growth** behaviour that we were trying to model. Reversely, the function $B$ is very large for negative values of $t$, while it get very close to $0$ for positive values of $t$. In fact, the decay rate decreases when $t$ gets larger, so again this function describes **exponential decay**.
 
@@ -393,15 +446,19 @@ In general, an exponential function $C(t)=a^t$ gives rise to exponential growth 
 
 ::::::{prf:example} Trigonometric functions
 :label: Ex:Functions1var:Trigonometry
-Apart from their role in geometry, the trigonometric functions $f(\theta)=\cos(\theta)$, $g(\theta)=\sin(\theta)$ and $h(\theta)=\tan(\theta)$ also play an important role in describing certain physical processes. For instance, the amplitude of an undamped mass-spring system as a function of time can be described in terms of sines and/or cosines. In fact, whenever there is osciallatory behaviour, these functions tend to be good candidates to use as model.
+Apart from their role in geometry, the trigonometric functions $f(\theta)=\cos(\theta)$, $g(\theta)=\sin(\theta)$ and $h(\theta)=\tan(\theta)$ also play an important role in describing certain physical processes. For instance, the amplitude of an undamped mass-spring system as a function of time can be described in terms of sines and/or cosines. In fact, whenever there is oscillatory behaviour, these functions tend to be good candidates to use as model.
 
 Let us analyse these functions a bit more in mathematical terms. First, let us consider their graphs.
 
-Hier de grafieken van de drie functies.
+:::{figure} Images/Fig-Functions1var-Trigonometry.png
+:name: Fig:Functions1var:Trigonometry
+
+The graphs of the trigonometric functions $f(\theta)=\cos(\theta)$, $g(\theta)=\sin(\theta)$ and $h(\theta)=\tan(\theta)$.
+:::
 
 One of the first things you might notice is that $f$ and $g$ repeat themselves after each cycle of length $2\pi$, while $h$ repeats itself after each cycle of length $\pi$. We say that these functions are **periodic**. This periodicity follows from {prf:ref}`Thm:Trigonometry:Periodicity`. 
 
-In addition, we note that the cosine and sine only take on values in between $-1$ and $1$. This follows from the geometric interpration of the point $(\cos(\theta),\sin(\theta))$ as a point on the unit circle, which must mean that these values must be in between $-1$ and $1$. As such, the range of the functions $f$ and $g$ is the interval $[-1,1]$. By contrast, the tangent can take on any value, so its range is the set of real numbers $\mathbb{R}$.
+In addition, we note that the cosine and sine only take on values in between $-1$ and $1$. This follows from the geometric interpretation of the point $(\cos(\theta),\sin(\theta))$ as a point on the unit circle, which must mean that these values must be in between $-1$ and $1$. As such, the range of the functions $f$ and $g$ is the interval $[-1,1]$. By contrast, the tangent can take on any value, so its range is the set of real numbers $\mathbb{R}$.
 
 Finally, we note that the graphs of the functions $f$ and $g$ intersect for $x$ somewhere between $0$ and $1$. Can find this value of $x$ exactly? For that, we first need to understand what it means that the graphs of two functions intersect. Since the point $(\theta,y)$ is on the graph of $f$ precisely when $f(\theta)=y$, this means that we are looking for a value of $\theta$ for which $\cos(\theta)=\sin(\theta)$. There is only one value of $\theta$ between $0$ and $1$ for which that is the case, and that is $\theta=\frac{\pi}{4}$. Indeed, we have $\cos\left(\frac{\pi}{4}\right)=\sin\left(\frac{\pi}{4}\right)=\frac{1}{2}\sqrt{2}$. So the graphs of $f$ and $g$ intersect at the point $\left(\frac{\pi}{4},\frac{1}{2}\sqrt{2}\right)$. By the periodicity of the sine and cosine, they will intersect at each point of the form $\left(\frac{\pi}{4}+2n\pi,\frac{1}{2}\sqrt{2}+2n\pi\right)$ for integer values of $n$.
 
@@ -423,7 +480,13 @@ $$
 
 This notation should be read as that $a$ follows the formula $a(x)=x$ for $x\geq 0$, while $a$ follows the formula $a(x)=-x$ for $x<0$.
 
-Hier nog de grafiek van a(x)
+:::{figure} Images/Fig-Functions1var-Abs.png
+:name: Fig:Functions1var:Abs
+
+The graph of the piecewise defined function $a(x)=|x|$.
+:::
+
+
 ::::::
 
 ::::::{prf:example} 
@@ -436,12 +499,17 @@ $$
 
 That is, the Heaviside function outputs the value $0$ when the input is negative and it outputs the value $1$ when the input is positive. It can be used to model a process that starts off (i.e. at state $0$) and is instantaneously turned on (i.e. state $1$), for instances when flipping a switch. The function is named after the British mathematician and electrical engineer [Oliver Heaviside (1850-1925)](https://en.wikipedia.org/wiki/Oliver_Heaviside).
 
-Hier de grafiek van H(t)
+:::{figure} Images/Fig-Functions1var-Heaviside.png
+:name: Fig:Functions1var:Heaviside
+
+The graph of the piecewise defined function $H(t)$.
+:::
+
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:Functions1var:Piecewise
-Consider the piecesie defined function
+Consider the piecewise defined function
 
 $$
  f(x)=\left\{\begin{array}{lll}2x+3,\qquad&\text{if }&x\leq -1,\\ 3,&\text{if }&0<x\leq 1,\\ 2-x^2,&\text{if }&x>1.\end{array}\right.
@@ -453,7 +521,12 @@ Similarly, in order to evaluate $f(4)$, we note that $4>1$ so that $f(4)=2-4^2=-
 
 Finally, we note that the function is undefined for $-1<x\leq 0$. These values of $x$ simply do not lie in the domain of this function.
 
-Hier nog de grafiek van de functie.
+:::{figure} Images/Fig-Functions1var-Piecewise.png
+:name: Fig:Functions1var:Piecewise
+
+The graph of the piecewise defined function $f$.
+:::
+
 ::::::
 
 

@@ -1,4 +1,4 @@
-(Chapter:Numbersandcoordinate)=
+(Chapter:NumbersAndCoordinate)=
 
 # Numbers and coordinate systems
 
