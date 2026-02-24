@@ -354,10 +354,10 @@ Finally, we notice that for $0<t<\frac{\pi}{2}$ we have $y(t)=y_0+b\sin(t)>0$, w
 
 Consider the parametrisation of an ellipse from {prf:ref}`Thm:Curves:Ellipseparam`. If the ellipse is actually a circle (so when $a=b$, or, equivalently, $c=0$), the parameter $t$ has the interpretation as the angle between the positive $x$-axis and the line segement from the origin to the point $(x(t),y(t))$ measured counterclockwise, as usual. However, for ellipses that are not circles this is not the case. The French painter and mathematician  [Philippe de la Hire (1640-1718)](https://en.wikipedia.org/wiki/Philippe_de_La_Hire) discovered the following interpretation of the parameter $t$. Consider two circles with the same center as the ellipse with radius $b$ and $a$ respectively. If we draw the line segement which has angle $t$ with the positive $x$-axis, then this line segment crosses the first circle at the point $B:(x_0+b\cos(t),y_0+b\sin(t))$ and the second circle at the point $A:(x_0+a\cos(t),y_0+b\sin(t))$. Then the point $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ on the ellipse is found by intersecting the line through $B$ parallel to the major axis of the ellipse with the line through $A$ parallel to the minor axis of the ellipse, see the figure below.
 
-```{figure} Images/delaHire.png
+```{figure} Images/deLaHire.png
 ---
 width: 100%
-name: Fig:Curves:delaHire
+name: Fig:Curves:deLaHire
 class: dark-light
 ---
 Plaatje gejat van wikipedia dus moet ofwel nagemaakt ofwel verwezen. Er staat op wikipedia ook een animatie hiervan, dat is misschien ook nuttig om zoiets erbij te doen (https://en.wikipedia.org/wiki/File:Parametric_ellipse.gif)
@@ -550,7 +550,7 @@ $$
 
 :::
 
-A common parametrisation of an hyperbola uses the hyperbolic cosine and sine functions, see {prf:ref}`Def:Propertiesfunctions:Hyperbolic`.
+A common parametrisation of an hyperbola uses the hyperbolic cosine and sine functions, see {prf:ref}`Def:PropertiesFunctions:Hyperbolic`.
 
 ::::::{prf:theorem} 
 :label: Thm:Curves:Hyperbolaparam
@@ -580,9 +580,9 @@ $$
  \frac{\left(x(t)-x_0\right)^2}{a^2}-\frac{\left(y(t)-y_0\right)^2}{b^2}=\frac{a^2\cosh(t)^2}{a^2}+\frac{b^2\sinh(t)^2}{b^2}=\cosh(t)^2-\sinh(t)^2=1.
 $$
 
-The final step follows from {prf:ref}`Thm:Propertiesfunctions:Hyperbolicproperties`. As such, any point of the form $(x,y)=(x_0-a\cosh(t),y_0+b\sinh(t))$ satisfies the equation of the hyperbola, so we are indeed dealing with a parametrisation of a part of the hyperbola. Note that since $\cosh(t)=\frac{e^t+e^{-t}}{2}\geq 0$, we have $x(t)=x_0-a\cosh(t)\leq x_0$ for all values of $t$. So this parametrisation covers only (possibly a part of) the part of the hyperbola with $x<x_0$.
+The final step follows from {prf:ref}`Thm:PropertiesFunctions:Hyperbolicproperties`. As such, any point of the form $(x,y)=(x_0-a\cosh(t),y_0+b\sinh(t))$ satisfies the equation of the hyperbola, so we are indeed dealing with a parametrisation of a part of the hyperbola. Note that since $\cosh(t)=\frac{e^t+e^{-t}}{2}\geq 0$, we have $x(t)=x_0-a\cosh(t)\leq x_0$ for all values of $t$. So this parametrisation covers only (possibly a part of) the part of the hyperbola with $x<x_0$.
 
-Now we show that this parametrisation covers the left half of the parabola exactly once.  From {prf:ref}`Thm:Propertiesfunctions:Hyperbolicproperties` we know that the hyperbolic sine is strictly increasing on $\mathbb{R}$, so two different values of $t$ will also always give two different values of $y$, so two different points. Moreover, if $t$ becomes very large positive, $\sinh(t)=\frac{1}{2}e^{t}-\frac{1}{2}e^{-t}$ becomes very large positive as well, while if $t$ becomes very large negative, $\sinh(t)=\frac{1}{2}e^{t}-\frac{1}{2}e^{-t}$ becomes very large negative as well (in the terminology of {numref}`Section:Limitinf` we have $\lim\limits_{t\rightarrow\infty}\sinh(t)=\infty$ and $\lim\limits_{t\rightarrow-\infty}\sinh(t)=-\infty$.) Finally, the function $t\mapsto \sinh(t)$ does not make any jumps, so its range is the entire real line (in the terminology of {numref}`Section:Continuity`, the hyperbolic sine is continuous). As such, this parametrisation covers each value of $y$ exactly once. Since on the left half of the hyperbola each value of $y$ occurs exactly once, this means that the parametrisation covers the left half of the parabola exactly once.
+Now we show that this parametrisation covers the left half of the parabola exactly once.  From {prf:ref}`Thm:PropertiesFunctions:Hyperbolicproperties` we know that the hyperbolic sine is strictly increasing on $\mathbb{R}$, so two different values of $t$ will also always give two different values of $y$, so two different points. Moreover, if $t$ becomes very large positive, $\sinh(t)=\frac{1}{2}e^{t}-\frac{1}{2}e^{-t}$ becomes very large positive as well, while if $t$ becomes very large negative, $\sinh(t)=\frac{1}{2}e^{t}-\frac{1}{2}e^{-t}$ becomes very large negative as well (in the terminology of {numref}`Section:Limitinf` we have $\lim\limits_{t\rightarrow\infty}\sinh(t)=\infty$ and $\lim\limits_{t\rightarrow-\infty}\sinh(t)=-\infty$.) Finally, the function $t\mapsto \sinh(t)$ does not make any jumps, so its range is the entire real line (in the terminology of {numref}`Section:Continuity`, the hyperbolic sine is continuous). As such, this parametrisation covers each value of $y$ exactly once. Since on the left half of the hyperbola each value of $y$ occurs exactly once, this means that the parametrisation covers the left half of the parabola exactly once.
 
 The proof for the right half of the parabola is identical.
 

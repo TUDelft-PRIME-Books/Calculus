@@ -313,7 +313,7 @@ Other important classes of functions are logarithms and inverse trigonometric fu
 
 ::::::{prf:example} Linear function
 :label: Ex:Functions1var:Linear
-Consider the function given by $f(x)=2x+3$. This is a polynomial function; in particular, it is a linear function. Since for any value of $x$ it is possible to compute $2x+3$, the maximal domain of this function is the set of all real numbers $\mathbb{R}$. The graph of this function is shown below.
+Consider the function given by $f(x)=2x+3$. This is a polynomial function, in particular, it is a linear function. Since for any value of $x$ it is possible to compute $2x+3$, the maximal domain of this function is the set of all real numbers $\mathbb{R}$. The graph of this function is shown below.
 
 :::{figure} Images/Fig-Functions1var-Linear.png
 :name: Fig:Functions1var:Linear

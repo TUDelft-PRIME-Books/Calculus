@@ -5,6 +5,6 @@
 In this section we cover:
 
 - Relationship between graphs and derivatives
-- Increasing and decreasing functions (hier een stukje {prf:ref}`Thm:Propertiesfunctions:Hyperbolicproperties` bewijzen en terugverwijzen)
+- Increasing and decreasing functions (hier een stukje {prf:ref}`Thm:PropertiesFunctions:Hyperbolicproperties` bewijzen en terugverwijzen)
 - Convexity and inflection points
 - Mean value theorem
