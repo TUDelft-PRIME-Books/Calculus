@@ -1,4 +1,4 @@
-(Section:Realnumbers)=
+(Section:RealNumbers)=
 
 # Real numbers
 
@@ -579,7 +579,7 @@ $$
 
 ::::::
 
-(Subsec:RealnumbersE)=
+(Subsec:RealNumbersE)=
 
 ## The number e
 

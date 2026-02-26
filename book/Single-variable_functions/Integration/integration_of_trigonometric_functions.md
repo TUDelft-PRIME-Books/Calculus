@@ -186,7 +186,7 @@ Using $u=\sin(x)$ we obtain
 If both powers are even, it is more difficult. We may use the half-angle formulas (see: {prf:ref}`Thm:Trigonometry:HalfAngleFormulas`) and sometimes $\sin(x)\cos(x)=\frac{1}{2}\sin(2x)$ might help.
 
 ::::::{prf:Example}
-:label: Ex:Integration:TrigFunctionsPowerEvenSinOddCos
+:label: Ex:Integration:TrigFunctionsPowerEvenSinOddCos2
 We compute $\displaystyle\int\sin^2(x)\cos^4(x)\,dx$.
 
 Using $\sin(x)\cos(x)=\frac{1}{2}\sin(2x)$ and $\cos^2(x)=\frac{1}{2}(1+\cos(2x))$ we have
