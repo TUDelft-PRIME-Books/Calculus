@@ -223,7 +223,7 @@ $$
 \sum_{n=1}^{\infty}\frac{1}{n^p}\;\text{is convergent}\quad\Longleftrightarrow\quad\int_1^{\infty}\frac{dx}{x^p}\;\text{is convergent.}
 $$
 
-In {prf:ref}`Thm:Integration:ImproperIntegralsPintegrals` we have seen that the integral $\displaystyle\int_1^{\infty}\frac{dx}{x^p}$ is convergent for $p>1$ and divergent for $p\leq1$.
+In {prf:ref}`Thm:Integration:ImproperIntegralsPIntegrals` we have seen that the integral $\displaystyle\int_1^{\infty}\frac{dx}{x^p}$ is convergent for $p>1$ and divergent for $p\leq1$.
 
 This proves the theorem.
 ::::::
