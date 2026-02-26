@@ -1,0 +1,14 @@
+/* Admonition-todo */
+  div.admonition-todo {
+    border-color: var(--tud-pink) !important;
+    background-color: var(--tud-pink-min) !important;
+  }
+   div.admonition-todo > .admonition-title {
+    background-color: var(--tud-pink-mid) !important;
+  }
+   div.admonition-todo > .admonition-title::after {
+    color: var(--tud-pink) !important;
+  }
+  div.admonition-todo > .admonition-title::after {
+  content: "\f7d9" !important;
+}

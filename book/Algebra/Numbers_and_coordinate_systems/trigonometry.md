@@ -33,7 +33,7 @@ For instance, the location of the statue of Hugo de Groot (or Hugo Grotius) in t
 :::
 
 :::{admonition} Converting decimal degrees into DMS notation
-:class: tudproof, dropdown
+:class: bonus, dropdown
 
 Converting $52.01203^{\circ}$ we start with $52^{\circ}$. Then
 
@@ -62,12 +62,16 @@ $$
 :::
 
 :::{note}
+:name: Note:Trigonometry:HourAngles
 In astronomy and celestial navigation also so-called *hour angles* are used. Then a $24$ hour angle corresponds to $360^{\circ}$ or $2\pi$, which implies that $1$ hour equals $15^{\circ}$ or $\frac{1}{12}\pi$.
 :::
 
-Maybe we should leave out the notes above and below...
+:::{todo}
+Maybe we should leave out the [above](#Note:Trigonometry:HourAngles) and [below](#Note:Trigonometry:Gradians)...
+:::
 
 :::{note}
+:name: Note:Trigonometry:Gradians
 In surveying, mining and geology angles are sometimes measured in *gradians* or *gons*. Then the angle given by a complete revolution equals $400^{g}$, which is the same as $2\pi$ rad. Therefore:
 
 $$\pi\;\operatorname{rad}=200^{\operatorname{g}}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{200}{\pi}\right)^{\operatorname{g}}\quad\text{and}\quad 1^{\operatorname{g}}=\dfrac{\pi}{200}\;\operatorname{rad}.$$ 
@@ -93,16 +97,19 @@ A **positive angle** is obtained by rotating the initial side counterclockwise u
 
 ::::::
 
-{numref}`Fig:Trigonometry:trig` shows an angle $\theta$ in standard position within the $xy$-plane.
+{numref}`Fig:Trigonometry:Trig` shows an angle $\theta$ in standard position within the $xy$-plane.
 
-```{figure} Images/trig.png
+```{figure} Images/Fig-Trigonometry-Trig.png
 ---
 width: 65%
-name: Fig:Trigonometry:trig
+name: Fig:Trigonometry:Trig
 class: dark-light
 ---
 An angle $\theta$ in the $xy$-plane in standard position.
 ```
+:::{todo}
+Convert {numref}`Fig:Trigonometry:Trig` into an applet.
+:::
 
 (Subsec:TrigonRatio)=
 ## Trigonometric ratios
@@ -111,7 +118,7 @@ Using angles, we define three trigonometric ratios: the sine, the cosine and the
 
 We start with a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`. Then for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of the triangle.
 
-```{figure} Images/acute.png
+```{figure} Images/Fig-Trigonometry-AcuteAngle.png
 ---
 width: 50%
 name: Fig:Trigonometry:AcuteAngle
@@ -120,6 +127,9 @@ class: dark-light
 
 The trigonometric ratios for an acute angle.
 ```
+:::{todo}
+Convert {numref}`Fig:Trigonometry:AcuteAngle` into an applet.
+:::
 
 ::::::{prf:definition}
 :label: Def:Trigonometry:TrigonometricRatiosTriangle
@@ -139,7 +149,7 @@ For general angles this is generalised as follows.
 ::::::{prf:definition}
 :label: Def:Trigonometry:TrigonometricRatios
 
-For a general angle $\theta$ in standard position in the $xy$-plane we let $P(x,y)$ be any point on the terminal side of $\theta$ and we let $r>0$ be the distance between $O$ and $P$, see {numref}`Fig:Trigonometry:trig`.
+For a general angle $\theta$ in standard position in the $xy$-plane we let $P(x,y)$ be any point on the terminal side of $\theta$ and we let $r>0$ be the distance between $O$ and $P$, see {numref}`Fig:Trigonometry:Trig`.
 
 Then we define:
 
@@ -163,16 +173,19 @@ Then we define:
 
 ::::::
 
-If we take the point $P(x,y)$ on the **unit circle** (the circle with the origin as center and radius $r=1$, see {numref}`Fig:Trigonometry:unit_circle`), we have $x=\cos(\theta)$ and $y=\sin(\theta)$.
+If we take the point $P(x,y)$ on the **unit circle** (the circle with the origin as center and radius $r=1$, see {numref}`Fig:Trigonometry:UnitCircle`), we have $x=\cos(\theta)$ and $y=\sin(\theta)$.
 
-```{figure} Images/unit_circle.png
+```{figure} Images/Fig-Trigonometry-UnitCircle.png
 ---
 width: 50%
-name: Fig:Trigonometry:unit_circle
+name: Fig:Trigonometry:UnitCircle
 class: dark-light
 ---
 The unit circle.
 ```
+:::{todo}
+Convert {numref}`Fig:Trigonometry:UnitCircle` into an applet.
+:::
 
 The tangent is shown on the so-called *tangent axis*, the vertical line at $x=1$.
 
@@ -205,16 +218,20 @@ However, in this book we will not use these three trigonometric ratios.
 
 All six trigonometric ratios can be displayed in one picture:
 
-```{figure} Images/trig-ratios.png
+```{figure} Images/Fig-Trigonometry-TrigRatios.png
 ---
 width: 50%
-name: Fig:Trigonometry:trig-ratios
+name: Fig:Trigonometry:TrigRatios
 class: dark-light
 ---
 The six trigonometric ratios.
 ```
+:::{todo}
+Convert {numref}`Fig:Trigonometry:TrigRatios` into an applet.
 
-In het plaatje zouden $\sin(\theta)$, $\cos(\theta)$, etc. gebruikt moeten worden.
+In the applet $\sin(\theta)$, $\cos(\theta)$, etc. should be used.
+:::
+
 
 Commonly powers of trigonometric ratios are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
 
@@ -242,7 +259,7 @@ Before we proceed with properties of the sine, the cosine and the tangent we dea
 
 Let $AB$ be any *diameter* of a circle with center $M$, id est, $A$ and $B$ lie on the circle and $M$ lies on the line segment from $A$ to $B$ as shown in {numref}`Fig:Trigonometry:Thales`. Let $C$ be an arbitrary point on the circle not equal to $A$ or $B$.
 
-```{figure} Images/thales.png
+```{figure} Images/Fig-Trigonometry-Thales.png
 ---
 width: 50%
 name: Fig:Trigonometry:Thales
@@ -250,6 +267,9 @@ class: dark-light
 ---
 An illustration for Thales's theorem.
 ```
+:::{todo}
+Convert {numref}`Fig:Trigonometry:Thales` into an applet.
+:::
 
 ::::{prf:remark}
 :label: Rem:Trigonometry:ThalesInteractive
@@ -287,7 +307,7 @@ $$
 
 Another very important theorem in trigonometry is the Pythagorean theorem, which is about the relation between the lengths of the sides of a right-angled triangle, such shown in {numref}`Fig:Trigonometry:RightTriangle`.
 
-```{figure} Images/righttriangle.png
+```{figure} Images/Fig-Trigonometry-RightTriangle.png
 ---
 width: 50%
 name: Fig:Trigonometry:RightTriangle
@@ -295,8 +315,11 @@ class: dark-light
 ---
 
 A right-angled triangle, with sides $a$, $b$ and $c$. The right angle is indicated by the small square. $a$ and $b$ are commonly referred to as the *legs* and $c$ as the *hypotenuse* of the triangle.
-
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:RightTriangle` into an applet.
+:::
 
 ::::::{prf:theorem} Pythagorean theorem
 :label: Thm:Trigonometry:Pythagoras
@@ -314,7 +337,7 @@ $$
 
 An elegant proof of the Pythagorean theorem is based on the following figure:
 
-```{figure} Images/pythagoras.png
+```{figure} Images/Fig-Trigonometry-PythagorasProof.png
 ---
 width: 50%
 name: Fig:Trigonometry:PythagorasProof
@@ -323,6 +346,10 @@ class: dark-light
 
 A square within a larger square for the proof of the Pythagorean theorem.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:PythagorasProof` into an applet.
+:::
 
 The area of the large square is $(a+b)^2$ and that of the small square is $c^2$.
 
@@ -344,7 +371,7 @@ $$
 
 The *law of cosines* is a generalisation of the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>`, and regards arbitrary triangles as shown in {numref}`Fig:Trigonometry:LawOfCosines`.
 
-```{figure} Images/abctriangle.png
+```{figure} Images/Fig-Trigonometry-ABCTriangle.png
 ---
 width: 50%
 name: Fig:Trigonometry:LawOfCosines
@@ -353,6 +380,10 @@ class: dark-light
 
 An arbitrary triangle $\triangle ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$, respectively.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:LawOfCosines` into an applet.
+:::
 
 ::::::{prf:theorem} Law of cosines
 :label: Thm:Trigonometry:LawOfCosines
@@ -370,7 +401,7 @@ $$
 
 Consider the perpendicular from $C$ to the opposite side $AB$, as shown in {numref}`Fig:Trigonometry:LawOfCosinesProof`.
 
-```{figure} Images/sincosrule.png
+```{figure} Images/Fig-Trigonometry-LawOfCosinesProof.png
 ---
 width: 50%
 name: Fig:Trigonometry:LawOfCosinesProof
@@ -379,6 +410,10 @@ class: dark-light
 
 An illustration for the law of cosines.
 ``` 
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:LawOfCosinesProof` into an applet.
+:::
 
 Then we have according to the Pythagorean theorem:
 $h^2=b^2-e^2$ and $h^2=a^2-(c-e)^2$. Hence
@@ -407,7 +442,7 @@ Furthermore, if one of the angles is a right angle the law of cosines using that
 
 Further we have the *law of sines*, which relates the lengths of the sides of an arbitrary triangle and the sines of the opposite angles to the radius of the circumscribed circle, as shown in {numref}`Fig:Trigonometry:LawOfSines`.
 
-```{figure} Images/abctriangle_circle.png
+```{figure} Images/Fig-Trigonometry-ABCTriangle-Circle.png
 ---
 width: 50%
 name: Fig:Trigonometry:LawOfSines
@@ -416,6 +451,10 @@ class: dark-light
 
 An arbitrary triangle $\triangle ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$, respectively, and its circumscribed circle.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:LawOfSines` into an applet.
+:::
 
 ::::::{prf:theorem} Law of sines
 :label: Thm:Trigonometry:LawOfSines
@@ -460,7 +499,7 @@ $$
 
 Now we consider the circumscribed circle of the triangle as shown in {numref}`Fig:Trigonometry:LawOfSinesProof`.
 
-```{figure} Images/sincosrule2.png
+```{figure} Images/Fig-Trigonometry-LawOfSinesProof.png
 ---
 width: 50%
 name: Fig:Trigonometry:LawOfSinesProof
@@ -469,6 +508,10 @@ class: dark-light
 
 An illustration for the proof of the law of sines.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:LawOfSinesProof` into an applet.
+:::
 
 Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to {prf:ref}`Thales's theorem <Thm:Trigonometry:Thales>` the triangle $\triangle ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have $\gamma=\delta$. Then we have
 
@@ -486,7 +529,7 @@ For certain special angles the trigonometric ratios can be evaluated exactly.
 
 First consider a right-angled isosceles triangle with two equal sides of length $1$, as shown in {numref}`Fig:Trigonometry:IsoscelesTriangle`. Then the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` implies that the hypotenuse has length $\sqrt{2}$. The two equal angles are $\frac{1}{4}\pi$, which implies that $\cos(\frac{1}{4}\pi)=\frac{1}{2}\sqrt{2}=\sin(\frac{1}{4}\pi)$.
 
-```{figure} Images/triangle1.png
+```{figure} Images/Fig-Trigonometry-IsoscelesTriangle.png
 ---
 width: 25%
 name: Fig:Trigonometry:IsoscelesTriangle
@@ -496,9 +539,13 @@ class: dark-light
 A right-angled isosceles triangle with equal sides of length $1$.
 ```
 
+:::{todo}
+Convert {numref}`Fig:Trigonometry:IsoscelesTriangle` into an applet.
+:::
+
 Secondly, consider an equilateral triangle with three equal sides of length $2$, as shown in {numref}`Fig:Trigonometry:EquilateralTriangle`. Then the line segment from the top perpendicular to the opposite side leads to two right-angled triangles with one side of length $1$ and hypotenuse of length $2$. Then the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` implies that the vertical line segment has length $\sqrt{3}$. Note that the three equal angles are $\frac{1}{3}\pi$ and that the angle at the top of each of the two right-angled triangles is $\frac{1}{6}\pi$. Then we easily deduce that $\cos(\frac{1}{3}\pi)=\frac{1}{2}=\sin(\frac{1}{6}\pi)$ and $\cos(\frac{1}{6}\pi)=\frac{1}{2}\sqrt{3}=\sin(\frac{1}{3}\pi)$.
 
-```{figure} Images/triangle2.png
+```{figure} Images/Fig-Trigonometry-EquilateralTriangle.png
 ---
 width: 25%
 name: Fig:Trigonometry:EquilateralTriangle
@@ -507,6 +554,10 @@ class: dark-light
 
 An equilateral triangle with three equal sides of length $2$.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:EquilateralTriangle` into an applet.
+:::
 
 This leads to the following table of standard values:
 
@@ -592,6 +643,10 @@ class: dark-light
 
 The unit circle with standard angles marked.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:UnitCircleStandardValues` into an applet.
+:::
 
 :::{note}
 It is important to memorise these standard values. It might be helpful to note that
@@ -730,7 +785,7 @@ $$
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:NegativeAngles`
 :class: tudproof, dropdown
 
-```{figure} Images/negative.png
+```{figure} Images/Fig-Trigonometry-NegativeAnglesProof.png
 ---
 width: 50%
 name: Fig:Trigonometry:NegativeAnglesProof
@@ -739,6 +794,10 @@ class: dark-light
 
 An illustration for the proof of the negative angles identities.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:NegativeAnglesProof` into an applet.
+:::
 
 Consider mirroring the point $P$ in {numref}`Fig:Trigonometry:NegativeAnglesProof` across the $x$-axis to obtain the point $Q$. Then the $x$-coordinate of $Q$ equals the $x$-coordinate of $P$, while the $y$-coordinate of $Q$ equals the negative of the $y$-coordinate of $P$. As a result of the mirroring, the angle has become $-\theta$. So we find 
 
@@ -775,7 +834,7 @@ $$
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:ComplementaryAngles`
 :class: tudproof, dropdown
 
-```{figure} Images/complementary.png
+```{figure} Images/Fig-Trigonometry-ComplementaryAnglesProof.png
 ---
 width: 50%
 name: Fig:Trigonometry:ComplementaryAnglesProof
@@ -784,6 +843,10 @@ class: dark-light
 
 An illustration for the proof of the complementary angles identities.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:ComplementaryAnglesProof` into an applet.
+:::
 
 Consider the point $P$ in {numref}`Fig:Trigonometry:ComplementaryAnglesProof` with angle $\theta$ and the point $Q$ with angle $\frac{1}{2}\pi-\theta$. Then the $y$-coordinate of $Q$ equals the $x$-coordinate of $P$, while the $x$-coordinate of $Q$ equals the $y$-coordinate of $P$. So we find 
 
@@ -818,7 +881,7 @@ $$
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:SupplementaryAngles`
 :class: tudproof, dropdown
 
-```{figure} Images/supplementary.png
+```{figure} Images/Fig-Trigonometry-SupplementaryAnglesProof.png
 ---
 width: 50%
 name: Fig:Trigonometry:SupplementaryAnglesProof
@@ -827,6 +890,10 @@ class: dark-light
 
 An illustration for the proof of the supplementary angles identities.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:SupplementaryAnglesProof` into an applet.
+:::
 
 Consider mirroring the point $P$ in {numref}`Fig:Trigonometry:SupplementaryAnglesProof` across the $y$-axis to obtain the point $Q$. Then the $y$-coordinate of $Q$ equals the $y$-coordinate of $P$, while the $x$-coordinate of $Q$ equals the negative of the $x$-coordinate of $P$. As a result of the mirroring, the angle has become $\pi-\theta$. So we find 
 
@@ -868,7 +935,7 @@ and
 
 For this proof, we need the following figure:
 
-```{figure} Images/cosdiff.png
+```{figure} Images/Fig-Trigonometry-CosineDifference.png
 ---
 width: 50%
 name: Fig:Trigonometry:CosineDifference
@@ -877,6 +944,10 @@ class: dark-light
 
 An illustration for the proof of the addition and subtraction formulas.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:CosineDifference` into an applet.
+:::
 
 In order to prove the summation formulas, we consider {numref}`Fig:Trigonometry:CosineDifference` above with $\angle QOP=\beta-\alpha$. Hence we have $P=(\cos(\alpha),\sin(\alpha))$ and $Q=(\cos(\beta),\sin(\beta))$. The distance between $P$ and $Q$ can be computed using the {prf:ref}`law of cosines <Thm:Trigonometry:LawOfCosines>` as
 
@@ -986,7 +1057,7 @@ $$
 
 Using the fact that a right-angled triangle is half of a rectangle, the area $S$ equals half the product of its legs. This is easily generalised to half the product of a base and the height of a general triangle: $S=\frac{1}{2}ch$. See {numref}`Fig:Trigonometry:Area`.
 
-```{figure} Images/abhtriangle.png
+```{figure} Images/Fig-Trigonometry-ABHTriangle.png
 ---
 width: 50%
 name: Fig:Trigonometry:Area
@@ -996,6 +1067,10 @@ class: dark-light
 The area of a triangle $\triangle ABC$.
 ```
 
+:::{todo}
+Convert {numref}`Fig:Trigonometry:UnitCircleStandardValues` into an applet.
+:::
+
 However, it is not always easy to find this height $h=b\sin(\alpha)$ or $h=a\sin(\beta)$.
 
 There is a formula for the area of a triangle, that only needs the lengths of the three sides. This formula is called Heron's formula named after the Greek mathematician [Heron of Alexandria (probably 1st century AD)](https://en.wikipedia.org/wiki/Hero_of_Alexandria).
@@ -1003,7 +1078,7 @@ There is a formula for the area of a triangle, that only needs the lengths of th
 ::::::{prf:theorem} Heron
 :label: Thm:Trigonometry:Heron
 
-```{figure} Images/abctriangle.png
+```{figure} Images/Fig-Trigonometry-ABCTriangle.png
 ---
 width: 50%
 name: Fig:Trigonometry:Heron
@@ -1012,6 +1087,10 @@ class: dark-light
 
 Triangle $\triangle ABC$.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:Heron` into an applet.
+:::
 
 Let $s=\frac{1}{2}(a+b+c)$ be the semiperimeter of the triangle in {numref}`Fig:Trigonometry:Heron`, then the area $S$ of this triangle equals
 
@@ -1353,7 +1432,7 @@ Hence $(\tan(\frac{3}{8}\pi)-1)^2-2=0$ or equivalently $\tan(\frac{3}{8}\pi)=1\p
 In the picture below we have $\alpha=\frac{1}{7}\pi$. Find the exact value of $\cos(\frac{1}{7}\pi)\cos(\frac{2}{7}\pi)\cos(\frac{3}{7}\pi)$.
 ```
 
-```{figure} Images/cosines.png
+```{figure} Images/Fig-Trigonometry-Cosines.png
 ---
 width: 50%
 name: Fig:Trigonometry:Cosines
@@ -1362,6 +1441,10 @@ align: center
 
 A triangle with angles $3\alpha$, $3\alpha$ and $\alpha$, subdivided into two isosceles triangles.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:Cosines` into an applet.
+:::
 
 :::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_11`
 :class: solution, dropdown
@@ -1473,14 +1556,18 @@ $$
 
 In the exercises below we consider an arbitrary triangle $ABC$ with vertices $A$, $B$ and $C$, sides $a$, $b$ and $c$, and angles $\alpha$, $\beta$ and $\gamma$ as indicated.
 
-```{figure} Images/abctriangle.png
+```{figure} Images/Fig-Trigonometry-ABCTriangle.png
 ---
 width: 50%
-name: Fig:Trigonometry:abcTriangle
+name: Fig:Trigonometry:ABCTriangle
 align: center
 ---
 Triangle $\triangle ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$, $\beta$ and $\gamma$ respectively.
 ```
+
+:::{todo}
+Convert {numref}`Fig:Trigonometry:ABCTriangle` into an applet.
+:::
 
 ```{exercise} 
 :label: Exc:Trigonometry:Exercise_16
@@ -1595,8 +1682,7 @@ $$
 
 :::
 
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_21
+```{todo} 
 Perhaps add a Grasple exercise here on Heron’s formula, with the diagram of the triangle adapting to the parameters (the side lengths), if that’s possible. See the area calculator on Wikipedia: https://en.wikipedia.org/wiki/Heron%27s_formula.
 ```
 

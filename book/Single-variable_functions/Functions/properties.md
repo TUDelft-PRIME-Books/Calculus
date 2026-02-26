@@ -34,6 +34,10 @@ An illustration of the sum of two functions.
 
 ```
 
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:Sum` with an applet.
+:::
+
 ::::::
 
 In the previous example we saw that we can take two functions and make a new function by adding the two functions. In general, we can perform arithmetic operations to functions just like we can with numbers. 
@@ -74,6 +78,10 @@ So what is the domain of the product function? You might be tempted to think tha
 
 The graphs of the functions $r$, $s$ and $rs$.
 
+:::
+
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:ProductsAndDomains` with an applet.
 :::
 
 ::::::
@@ -180,12 +188,20 @@ Starting with the graph of the sine function, which is given $y=\sin(x)$, we fir
 The four steps to obtain the graph of $f$ from the graph of $\sin(x)$ visualised.
 :::
 
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching` with an applet.
+:::
+
 Notice that if we performed these 4 operations in a different order, we would obtain a different function. Indeed, if we start with the graph given by $y=\sin(x)$ and perform the vertical shift of $4$ upwards first, we obtain the graph given by $y=\sin(x)+4$. If we then perform the reflection in the $x$-axis and the vertical stretching by a factor $3$ we obtain the graph given by $y=-3\left(\sin(x)+4\right)=-3\sin(x)-12$. If we then perform the horizontal shift of $1$ to the right we obtain the graph given by $y=-3\sin(x-1)-12$. Finally, if we then perform the horizontal stretching by a factor $\frac{1}{2}$ we obtain the graph given by $y=-3\sin(2x-1)-12$. This function is very different from $f$, as can be seen from the graphs shown below.
 
 :::{figure} Images/Fig-PropertiesFunctions-ReflectionStretching2.png
 :name: Fig:PropertiesFunctions:ReflectionStretching2
 
 The result of performing the four steps in a different order visualised.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching2` with an applet.
 :::
 
 ::::::
@@ -215,6 +231,10 @@ A function can be increasing on some parts on its domain, while it is decreasing
 The graph of the function $f(x)=x^2$.
 :::
 
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:IncreasingDecreasing` with an applet.
+:::
+
 The graph suggests that the function increases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
 
 Similarly, on the interval $(-\infty,0)$ the function is decreasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2^2)=x_2^2=f(x_2)$.
@@ -238,6 +258,10 @@ The graph of this function is shown below.
 :name: Fig:PropertiesFunctions:IncreasingDecreasingFlat
 
 The graph of the function $k$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:IncreasingDecreasingFlat` with an applet.
 :::
 
 From the graph of the function, we see that the function is definitely increasing on the intervals $(-\infty,0)$ and $(1,\infty)$, but what about the interval $[0,1]$? The graph of the function is horizontal there, so it does not seem to "grow" on this interval. Still, according to the definition that we used, the function is increasing on this interval. Indeed, for any $0<t_1<t_2<1$ we have $k(t_1)=2\leq 2=k(t_2)$. We conclude that the function is indeed increasing on this interval. Moreover, it is also decreasing on the same interval as for any $0<t_1<t_2<1$ we have $k(t_1)=2\geq 2=k(t_2)$. In general, a function is both increasing and decreasing on a certain interval precisely when it is constant on that interval.
@@ -313,6 +337,10 @@ The graph of an even function is symmetric in the $y$-axis.
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:Even` with an applet.
+:::
+
 ::::{figure} Images/odd.png
 :name: Fig:PropertiesFunctions:Odd
 :class: dark-light
@@ -320,6 +348,10 @@ The graph of an even function is symmetric in the $y$-axis.
 The graph of an odd function is symmetric in the origin.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:Odd` with an applet.
+:::
 
 
 ::::::{prf:example} 
@@ -339,6 +371,10 @@ As such, the function $f$ is odd. Note that $f=gh$ with $g(x)=|x|$ and $h(x)=\si
 The graph of the function $f(x)=|x|\sin(x)$. Note that the graph is symmetric in the origin, which is a consequence of the fact that $f$ is odd.
 :::
 
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:EvenOdd` with an applet.
+:::
+
 ::::::
 
 ::::::{prf:example} 
@@ -356,6 +392,10 @@ and this is not (necessarily) equal to $f(x)$ or to $-f(x)$. Indeed, we find $f(
 :name: Fig:PropertiesFunctions:NotEvenOdd
 
 The graph of the function $f(x)=x^2+x$. Note that the graph is not symmetric in the $y$-axis, nor is it symmetric in the origin, which is a consequence of the fact that $f$ is neither even nor odd.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:NotEvenOdd` with an applet.
 :::
 
 ::::::
@@ -385,23 +425,31 @@ $$
 
 Moreover, we find that
 
-$$
- f_e(x)+f_o(x)=\frac{f(x)+f(-x)}{2}+\frac{f(x)-f(-x)}{2}=\frac{f(x)+f(-x)+f(x)-f(-x)}{2}=\frac{2f(x)}{2}=f(x).
-$$
+\begin{align*}
+ f_e(x)+f_o(x) &= \frac{f(x)+f(-x)}{2}+\frac{f(x)-f(-x)}{2} \\
+ &= \frac{f(x)+f(-x)+f(x)-f(-x)}{2} \\
+ &= \frac{2f(x)}{2} \\
+ &= f(x).
+\end{align*}
 
 So we obtain that $f=f_e+f_o$ and that $f_e$ is even and $f_o$ is odd.
 
 Now we show that this decomposition is unique, so we write $f=g+h$ with $g$ even and $h$ odd and aim to show that $g=f_e$ and $h=f_o$. Then we find
 
-$$
- 2f_e(x)=f(x)+f(-x)=\left(g(x)+h(x)\right)+\left(g(-x)+h(-x)\right)=\left(g(x)+h(x)\right)+\left(g(x)-h(x)\right)=2g(x)
-$$
-
+\begin{align*}
+2f_e(x) &= f(x)+f(-x) \\
+&= \left(g(x)+h(x)\right)+\left(g(-x)+h(-x)\right) \\
+&= \left(g(x)+h(x)\right)+\left(g(x)-h(x)\right) \\
+&= 2g(x)
+\end{align*}
 and
 
-$$
- 2f_o(x)=f(x)-f(-x)=\left(g(x)+h(x)\right)-\left(g(-x)+h(-x)\right)=\left(g(x)+h(x)\right)-\left(g(x)-h(x)\right)=2h(x).
-$$
+\begin{align*}
+ 2f_o(x) &= f(x)-f(-x) \\
+ &= \left(g(x)+h(x)\right)-\left(g(-x)+h(-x)\right) \\
+ &= \left(g(x)+h(x)\right)-\left(g(x)-h(x)\right) \\
+ &= 2h(x).
+\end{align*}
 
 Hence, we must have $g=f_e$ and $h=f_0$, as desired.
 :::
@@ -411,9 +459,13 @@ The even and odd parts of the exponential function are so common that they have 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:Hyperbolic
 
-Consider the exponential function $f(x)=e^x$. The **hyperbolic cosine function**, denoted by $g(x)=\cosh(x)$, is the even part of $f$. That is, we have $\cosh(x)=\frac{e^x+e^{-x}}{2}$. The **hyperbolic sine function**, denoted by $h(x)=\sinh(x)$, is the odd part of $f$. That is, we have $\sinh(x)=\frac{e^x-e^{-x}}{2}$.
+Consider the exponential function $f(x)=e^x$.
 
-Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\frac{\sinh(x)}{\cosh(x)}$.
+The **hyperbolic cosine function**, denoted by $g(x)=\cosh(x)$, is the even part of $f$. That is, we have $\cosh(x)=\frac{e^x+e^{-x}}{2}$.
+
+The **hyperbolic sine function**, denoted by $h(x)=\sinh(x)$, is the odd part of $f$. That is, we have $\sinh(x)=\frac{e^x-e^{-x}}{2}$.
+
+Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\dfrac{\sinh(x)}{\cosh(x)}$.
 
 ::::::
 
@@ -421,6 +473,10 @@ Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\frac{\sinh
 :name: Fig:PropertiesFunctions:Hyperbolic
 
 The graphs of the hyperbolic cosine, sine and tangent functions.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:Hyperbolic` with an applet.
 :::
 
 ::::::{prf:notation} Powers of hyperbolic functions
@@ -468,9 +524,12 @@ By {prf:ref}`Thm:PropertiesFunctions:ExpIncreaseDecrease`, the function $x\mapst
 
 The final property follows from the definition of the hyperbolic cosine and sine functions, which gives that
 
-$$
- \cosh^2(x)-\sinh^2(x)=\left(\frac{e^x+e^{-x}}{2}\right)^2-\left(\frac{e^x-e^{-x}}{2}\right)^2=\frac{e^{2x}+2+e^{-2x}}{4}-\frac{e^{2x}-2+e^{-2x}}{4}=\frac{4}{4}=1.
-$$
+\begin{align*}
+ \cosh^2(x)-\sinh^2(x) &= \left(\frac{e^x+e^{-x}}{2}\right)^2-\left(\frac{e^x-e^{-x}}{2}\right)^2 \\
+ &= \frac{e^{2x}+2+e^{-2x}}{4}-\frac{e^{2x}-2+e^{-2x}}{4} \\
+ &= \frac{4}{4} \\
+ &= 1.
+\end{align*}
 
 :::
 
@@ -494,6 +553,10 @@ A function $f$ is **periodic** if there exists a $T>0$ such that $f(x+T)=f(x)$ f
 The graph of function with fundamental period $T$.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:Periodic` with an applet.
+:::
 
 Periodic functions play an important role in many fields of science and engineering, for instance in signal processing and in astronomy. In addition, periodic functions are precisely the functions that can be described by a Fourier series, see {numref}`Section:Fourier`.
 
@@ -534,6 +597,10 @@ Consider the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(
 The graph of the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$.
 :::
 
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:PeriodicCombining` with an applet.
+:::
+
 As we can see in the graph, all of these functions are periodic. Since the sine and cosine have fundamental period $2\pi$, we might expect these functions to have this period as well. So let us find out if that is indeed the case. For any $x$ we can compute
 
 $$
@@ -570,6 +637,10 @@ Consider the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\c
 :name: Fig:PropertiesFunctions:PeriodicCombining2
 
 The graph of the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\cos(2x)+\sin(\pi x)$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PropertiesFunctions:PeriodicCombining2` with an applet.
 :::
 
 Following a similar reasoning to {prf:ref}`Ex:PropertiesFunctions:PeriodicCombining` the functions $f$ and $g$ are periodic with fundamental periods $\frac{2\pi}{2}=\pi$ and $\frac{2\pi}{\pi}=2$ respectively. So is the function $h$ periodic here as well and if so, what is its period? In order for $h$ to complete a full period, $f$ and $g$ would need to complete number of periods at the same time. So a period $T$ of $h$ should be of the form $T=2m+\pi n$ for some integers $m,n\geq 1$. However, since $\pi$ is irrational, no such numbers $m$ and $n$ exist (otherwise, we would be able to write $\pi$ as a fraction). As such, the function $h$ is not periodic in this case. This can also be seen from the graph of $h$.

@@ -76,6 +76,10 @@ A diagram can be used to graphically represent that a function $f$ maps an eleme
 ::::
 :::::
 
+:::{todo}
+Replace {numref}`Fig:Functions1var:Diagram` with an applet.
+:::
+
 Alternatively, for a function that is defined by $f(x)=y$, we see that $y$ is determined by $x$. That means that the value of $y$ depends on the value of $x$, while the value of $x$ can be chosen freely (within the domain of $f$). As such, for this formula $f(x)=y$ the variable $y$ is referred to as the **dependent variable**, while $x$ is an **independent variable**.
 
 In this book, the domain and codomain will almost always be (subsets of) $\mathbb{R}^m$ and $\mathbb{R}^n$ respectively, for some integers $n,m\geq 1$. In the first few chapters, we will specifically focus on functions where the domain and codomain are both (subsets of) the real numbers $\mathbb{R}$. Such a function is usually referred to as a **function of one variable** or a **function of a single variable**. For many such functions, it is possible to define the function by means of a formula, of which an example is given below. 
@@ -196,6 +200,10 @@ The graph of a function $f$ can be used to reach of the value $f(a)$ for a given
 ::::
 :::::
 
+:::{todo}
+Replace {numref}`Fig:Functions1var:Graph` with an applet.
+:::
+
 ::::::{prf:definition} 
 :label: Def:Functions1var:Graph
 If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all pairs $(x,f(x))$. That is, it is the set $\left\{(x,f(x))\,\middle|\,x\,\,\mathrm{in}\,\,D\right\}$. 
@@ -223,10 +231,11 @@ Consider the two curves shown below.
 Two curves in $\mathbb{R}^2$ a vertical line for the vertical line test.
 ::::
 
-::::{prf:remark}
-:label: Rem:Functions1var:Verticalline
+:::{todo}
+Replace {numref}`Fig:Functions1var:Verticalline` with an applet.
+
 Do not show the functions in the final image.
-::::
+:::
 
 Can we check whether these curves are the graph of a function? For the curve on the left, each vertical line intersects the curve exactly once, so this curve is the graph function. You might wonder which function this curve is the graph of. Without further knowledge of the function, this is impossible, unfortunately. Still, for a given value of $x$, we can read off what the function value $f(x)$ will be approximately. For instance, we can read off that $f(0)=0$ (or maybe something very close to $0$), while $f(1)\approx 2$.
 
@@ -239,7 +248,7 @@ The curve on the right, on the other hand, is not the graph of a function. Some 
 Let $C_1$ be the curve given by all points $(x,y)$ that satisfy the equation $x^2-y^3=0$. Is this curve the graph of a function, and if so, of which function? We could try to plot this function and apply the vertical line test, but that is rather hard to do without plotting software. It is also not necessary. Indeed, we can rewrite the equation as
 
 $$
- x^2-y^3=0,\quad \Longleftrightarrow\quad y^3=x^2,\quad \Longleftrightarrow\quad y=\sqrt[3]{x^2}=x^{\frac{2}{3}}
+ x^2-y^3=0\quad \Longleftrightarrow\quad y^3=x^2\quad \Longleftrightarrow\quad y=\sqrt[3]{x^2}=x^{\frac{2}{3}}.
 $$
 
 So each point $(x,y)$ on the curve actually satisfies $y=x^{\frac{2}{3}}$. So that means that $C_1$ is the graph of the function $f$ with $f(x)=x^{\frac{2}{3}}$.
@@ -247,7 +256,7 @@ So each point $(x,y)$ on the curve actually satisfies $y=x^{\frac{2}{3}}$. So th
 Similarly, we can let $C_2$ be the curve given by all points $(x,y)$ that satisfy the equation $x^2-y^2=0$. Here, we could try a similar approach and write
 
 $$
- x^2-y^2=0,\quad \Longleftrightarrow\quad y^2=x^2,\quad \Longleftrightarrow\quad y=\pm x
+ x^2-y^2=0\quad \Longleftrightarrow\quad y^2=x^2\quad \Longleftrightarrow\quad y=\pm x.
 $$
 
 Now, the expression $\pm x$ might look like a formula describing a function to you, but it is not. Indeed, for $x=1$, we obtain $y=\pm 1$, so we obtain two different output values for a single input value, which is impossible. So this curve cannot be the graph of a function.
@@ -258,6 +267,10 @@ This result is also visible in the plot of the two curves, shown below.
 :name: Fig:Functions1var:VerticalLine2
 
 The curves $C_1$ and $C_2$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Functions1var:VerticalLine2` with an applet.
 :::
 
 ::::::
@@ -272,7 +285,15 @@ The most standard of standard functions are the polynomials. These come in vario
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Polynomial
-A function $f$ is called a **polynomial function** if $f(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$ for some integer $n\geq 0$ and real numbers $a_0,a_1,...,a_n$. If $a_n\neq 0$ (so that $x^n$ is highest power of $x$ that occurs in the formula describing $f$), we say that the **degree of the polynomial** is $n$. A **linear function** is a polynomial function of degree $1$, i.e. one that can be written as $f(x)=a_1x+a_0$, a **quadratic function** is a polynomial function of degree $2$, i.e. one that can be written as $f(x)=a_2x^2+a_1x+a_0$, and a **cubic function** is polynomial function of degree $3$, i.e. one that can be written as $f(x)=a_3x^3+a_2x^2+a_1x+a_0$.
+A function $f$ is called a **polynomial function** if $f(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$ for some integer $n\geq 0$ and real numbers $a_0,a_1,...,a_n$.
+
+If $a_n\neq 0$ (so that $x^n$ is highest power of $x$ that occurs in the formula describing $f$), we say that the **degree of the polynomial** is $n$.
+
+A **linear function** is a polynomial function of degree $1$, i.e. one that can be written as $f(x)=a_1x+a_0$.
+
+A **quadratic function** is a polynomial function of degree $2$, i.e. one that can be written as $f(x)=a_2x^2+a_1x+a_0$
+
+A **cubic function** is polynomial function of degree $3$, i.e. one that can be written as $f(x)=a_3x^3+a_2x^2+a_1x+a_0$.
 ::::::
 
 ::::::{prf:definition} 
@@ -301,12 +322,16 @@ In {numref}`Section:RealNumbers` we saw that for a base $b\geq 0$ and an exponen
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:PowerFunction
-If $r$ is a real number, then the function $f(x)=x^r$ is called a **power function**. If $r=-1$ then the function $f(x)=x^{-1}=\frac{1}{x}$ is sometimes referred to as the **reciprocal function**.
+If $r$ is a real number, then the function $f(x)=x^r$ is called a **power function**.
+
+If $r=-1$ then the function $f(x)=x^{-1}=\frac{1}{x}$ is sometimes referred to as the **reciprocal function**.
 ::::::
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:ExponentialFunction
-For $b\geq 0$ the function $f(x)=b^x$ is called an **exponential function**. The function $f(x)=e^x$ is referred to as the **natural exponential function**, or sometimes simply **the exponential function**.
+For $b\geq 0$ the function $f(x)=b^x$ is called an **exponential function**.
+
+The function $f(x)=e^x$ is referred to as the **natural exponential function**, or sometimes simply **the exponential function**.
 ::::::
 
 Other important classes of functions are logarithms and inverse trigonometric functions. These will be covered in {numref}`Section:Inverse`.
@@ -319,6 +344,10 @@ Consider the function given by $f(x)=2x+3$. This is a polynomial function, in pa
 :name: Fig:Functions1var:Linear
 
 The graph of the linear function $f(x)=2x+3$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Functions1var:Linear` with an applet.
 :::
 
 As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph? We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increases by any value $\Delta x$, $y$ will increase by $\Delta y=2\Delta x$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope to other curves than straight lines in {numref}`Chapter:Differentiation`.
@@ -334,6 +363,10 @@ Consider the function given by $h(x)=x^2-4x+3$. This is a quadratic function and
 The graph of the quadratic function $h(x)=x^2-4x+3$.
 :::
 
+:::{todo}
+Replace {numref}`Fig:Functions1var:QuadraticH` with an applet.
+:::
+
 The graph of this function is a **parabola**. The graph crosses the $x$-axis at $x=1$ and $x=3$, which can be seen from the fact that $h(x)=x^2-4x+3=(x-1)(x-3)$, so that $h(x)=0$ precisely when $x=1$ or $x=3$. 
 
 Notice that the lowest value of $y$ occurs at $x=2$, where $h(2)=-1$. That is, $h(x)\geq -1$ for all values of $x$. In the terminology of {numref}`Section:Extrema1d`, the absolute minimum of the function function $h$ is $-1$ and occurs at $x=2$. As a result, the range of $h$ is not the full set of real numbers $\mathbb{R}$. Since $h(x)$ can get as large as we want to by increasing $x$, we find that the range of $h$ is the interval $[-1,\infty)$.
@@ -346,6 +379,10 @@ Since the graph of $h$ has a lowest value and then grows for both very large and
 The graph of the quadratic function $k(x)=2-3x^2$.
 :::
 
+:::{todo}
+Replace {numref}`Fig:Functions1var:QuadraticK` with an applet.
+:::
+
 ::::::
 
 ::::::{prf:example} Power functions with positive integer power
@@ -356,7 +393,11 @@ We now consider a function of the form $g(x)=x^n$ for some positive integer $n\g
 :name: Fig:Functions1var:CubicAndHigher
 
 On the left the functions $x^2$, $x^4$, $x^6$ and $x^8$ are plotted, while on the right the functions $x^3$, $x^5$, $x^7$ and $x^9$ are plotted. In both cases, the part of the graph between $-2$ and $2$ is shown.
-::: 
+:::
+
+:::{todo}
+Replace {numref}`Fig:Functions1var:CubicAndHigher` with an applet.
+:::
 
 Indeed, for even values of $n$, the graph of $g(x)=x^n$ resembles the parabola $y=x^2$, while for odd values of $n$, the graph is similar to that of $x^3$. In particular, for even values of $n$ the graph of the function is symmetric around the $y$-axis. In {numref}`Section:PropertiesFunctions` we will call a function with this property **even** (so now you already know where that name comes from). Similarly, for odd values of $n$ the graph of the function is symmetric in the origin and such a function will be called **odd**.
 
@@ -382,6 +423,10 @@ That is, the pressure is inversely proportional to the volume. This means that i
 Several graphs of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for different values of the constant $nRT$.
 :::
 
+:::{todo}
+Replace {numref}`Fig:Functions1var:IdealGas2` with an applet.
+:::
+
 ::::::
 
 ::::::{prf:example} Power function with power $-2$
@@ -400,6 +445,10 @@ Here $G$ is the [gravitational constant](https://en.wikipedia.org/wiki/Gravitati
 Several graphs of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for different values of the constant $Gm_1m_2$.
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Functions1var:Gravity` with an applet.
+:::
+
 The graphs is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
 
 ::::::
@@ -412,6 +461,10 @@ Let us now consider the power functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$. Their g
 :name: Fig:Functions1var:NegativePowers
 
 The graphs of the functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Functions1var:NegativePowers` with an applet.
 :::
 
 Note that the graph of $f$ is very similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`, except that, since there are no physical restrictions, the function $f$ is also defined for negative values of $x$. In fact, whenever two (physical) quantities are inversely proportional to each other, the graph of one quantity as a function of the other one will be similar to the graph of $f$. Since the graph of $f$ is the set of all points $(x,y)$ with $y=\frac{1}{x}$, we can rewrite this equation to $xy=1$. This means that the graph of $f$ is a hyperbola. 
@@ -435,6 +488,10 @@ To show the typical behaviour of exponential functions, let us consider the func
 The graphs of the functions $A(t)=2^t$ and $B(t)=\left(\frac{1}{3}\right)^t$.
 :::
 
+:::{todo}
+Replace {numref}`Fig:Functions1var:ExponentialGrowth` with an applet.
+:::
+
 For the function $A$, we notice that it is very close to $0$ for negative values of $t$, while it grows very fast for positive $t$. In fact, it grows faster the larger $t$ gets, which is indeed the **exponential growth** behaviour that we were trying to model. Reversely, the function $B$ is very large for negative values of $t$, while it get very close to $0$ for positive values of $t$. In fact, the decay rate decreases when $t$ gets larger, so again this function describes **exponential decay**.
 
 In a physical context, $t$ often models time, so it is often not interesting to look at negative values of $t$. In such cases, the process starts at $t=0$ and evolves for $t>0$ giving either growth or decay.
@@ -454,6 +511,10 @@ Let us analyse these functions a bit more in mathematical terms. First, let us c
 :name: Fig:Functions1var:Trigonometry
 
 The graphs of the trigonometric functions $f(\theta)=\cos(\theta)$, $g(\theta)=\sin(\theta)$ and $h(\theta)=\tan(\theta)$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Functions1var:Trigonometry` with an applet.
 :::
 
 One of the first things you might notice is that $f$ and $g$ repeat themselves after each cycle of length $2\pi$, while $h$ repeats itself after each cycle of length $\pi$. We say that these functions are **periodic**. This periodicity follows from {prf:ref}`Thm:Trigonometry:Periodicity`. 
@@ -486,6 +547,10 @@ This notation should be read as that $a$ follows the formula $a(x)=x$ for $x\geq
 The graph of the piecewise defined function $a(x)=|x|$.
 :::
 
+:::{todo}
+Replace {numref}`Fig:Functions1var:Abs` with an applet.
+:::
+
 
 ::::::
 
@@ -503,6 +568,10 @@ That is, the Heaviside function outputs the value $0$ when the input is negative
 :name: Fig:Functions1var:Heaviside
 
 The graph of the piecewise defined function $H(t)$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Functions1var:Heaviside` with an applet.
 :::
 
 ::::::
@@ -527,6 +596,9 @@ Finally, we note that the function is undefined for $-1<x\leq 0$. These values o
 The graph of the piecewise defined function $f$.
 :::
 
-::::::
+:::{todo}
+Replace {numref}`Fig:Functions1var:Piecewise` with an applet.
+:::
 
+::::::
 
