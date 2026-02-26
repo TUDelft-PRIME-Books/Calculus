@@ -23,7 +23,7 @@ so that the function value $f(x)$ is the sum of the function values $g(x)$ and $
 
 So what does the graph of $f$ look like in terms of the graphs of $g$ and $h$? For each value of $x$, we know that $f(x)=g(x)+h(x)$, so $f(x)$ is $h(x)$ higher than $g(x)$. That means that if we start from the graph of $g$, we obtain the graph of $f$ by rising the function value $x^2$ by $e^x$ for each value of $x$. This can be seen in the figure below. We can also think of this as that the graph of $g$ is stacked on top of the graph of $f$. 
 
-```{figure} Images/SketchSumFunction.png
+```{figure} Images/Fig-PropertiesFunctions-Sum.png
 ---
 width: 100%
 name: Fig:PropertiesFunctions:Sum
@@ -329,7 +329,7 @@ Let $f$ be a function. Then $f$ is called **even** if $f(-x)=f(x)$ for all $x$ i
 
 ::::::
 
-::::{figure} Images/even.png
+::::{figure} Images/Fig-PropertiesFunctions-Even.png
 :name: Fig:PropertiesFunctions:Even
 :class: dark-light
 
@@ -341,7 +341,7 @@ The graph of an even function is symmetric in the $y$-axis.
 Replace {numref}`Fig:PropertiesFunctions:Even` with an applet.
 :::
 
-::::{figure} Images/odd.png
+::::{figure} Images/Fig-PropertiesFunctions-Odd.png
 :name: Fig:PropertiesFunctions:Odd
 :class: dark-light
 
@@ -546,7 +546,7 @@ A function $f$ is **periodic** if there exists a $T>0$ such that $f(x+T)=f(x)$ f
 
 ::::::
 
-::::{figure} Images/periodic.png
+::::{figure} Images/Fig-PropertiesFunctions-Periodic.png
 :name: Fig:PropertiesFunctions:Periodic
 :class: dark-light
 

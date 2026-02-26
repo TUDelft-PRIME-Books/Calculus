@@ -703,7 +703,7 @@ $$
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:UnitCircleIdentity`
 :class: tudproof, dropdown
 
-Using {numref}`Fig:Trigonometry:unit_circle` and the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` with $a=x=\cos(\theta)$ and $b=y=\sin(\theta)$ and $c=1$ we have:
+Using {numref}`Fig:Trigonometry:UnitCircle` and the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` with $a=x=\cos(\theta)$ and $b=y=\sin(\theta)$ and $c=1$ we have:
 
 \begin{align*}
 \sin^2(\theta)+\cos^2(\theta) &= y^2+x^2 \\
@@ -744,7 +744,7 @@ and
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:Periodicity`
 :class: tudproof, dropdown
 
-Consider the point $P$ in {numref}`Fig:Trigonometry:unit_circle`. Rotating the point $P$ by $2\pi$ leads to the same point $P$. Hence the sine and cosine values do not change, by {prf:ref}`Def:Trigonometry:Angle`.
+Consider the point $P$ in {numref}`Fig:Trigonometry:UnitCircle`. Rotating the point $P$ by $2\pi$ leads to the same point $P$. Hence the sine and cosine values do not change, by {prf:ref}`Def:Trigonometry:Angle`.
 
 Finally, rotating the point $P$ by $\pi$ leads to the point $R$, which has coordinates $(-x,-y)$. Hence we have $\tan(\theta+\pi)=\dfrac{-y}{-x}=\dfrac{y}{x}=\tan(\theta)$.
 
