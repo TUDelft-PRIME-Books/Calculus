@@ -327,7 +327,7 @@ for all $x$ close to $a$, so the function $g$ is squeezed in between the functio
 
 Well, since $f(x)\leq g(x)$ and $\lim\limits_{x\rightarrow a}f(x)=L$, we know that $\lim\limits_{x\rightarrow a}g(x)$, if it exists, should be **at least** equal to $L$. On the other hand, since $g(x)\leq h(x)$ and $\lim\limits_{x\rightarrow a}h(x)=L$, we find that $\lim\limits_{x\rightarrow a}g(x)$, again if it exists, should be **at most** equal to $L$.
 
-We conclude that the limit $\lim\limits_{x\rightarrow a}g(x)$ is forced to be equal to $L$, provided the limit exists. The following theorem, known as the **squeeze theorem**, or alternatively the **sandwich theorem** or **pinching theorem**, shows that we do not need to worry about the existence of the limit $\lim\limits_{x\rightarrow a}g(x)$.
+We conclude that the limit $\lim\limits_{x\rightarrow a}g(x)$ is forced to be equal to $L$, provided the limit exists. The following theorem, known as the **squeeze theorem** (or alternatively the **sandwich theorem** or **pinching theorem**) shows that we do not need to worry about the existence of the limit $\lim\limits_{x\rightarrow a}g(x)$.
 
 ::::::{prf:theorem} Squeeze theorem for limits
 :label: Theorem:LimitAtPoint:Squeezetheorem
@@ -686,6 +686,132 @@ As such, we can estimate for $x$ with $0<|x-a|<\delta$:
 Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow a}g(x)=L$.
 ::::::
 
+(Subsec:LimitAtPointGrasple)=
 
+## Grasple exercises
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/91d07329-447a-43c3-885d-68ac1c4be6e7?id=69268
+:label: Grasple:LimitAtPoint:Linearoverquadratic
+:dropdown:
+:description: Limit of a rational function
 
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1154e298-928d-4b6c-9477-1f11b77edcf7?id=69272
+:label: Grasple:LimitAtPoint:Quadraticoverlinear
+:dropdown:
+:description: Limit of a rational function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ea4c6045-801f-4626-8e1c-d6e3617716ed?id=69310
+:label: Grasple:LimitAtPoint:Quadraticoverquadratic
+:dropdown:
+:description: Limit of a rational function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/695aeb4b-2a38-4aba-8500-cdc722c46cef?id=69337
+:label: Grasple:LimitAtPoint:Quadricoverquadric
+:dropdown:
+:description: Limit of a rational function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/37e981e0-e019-4273-9e51-04140aa7b0c0?id=69355
+:label: Grasple:LimitAtPoint:Unsimplifiedquadraticovercubic
+:dropdown:
+:description: Limit of a rational function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e0619537-b68d-43b2-83c6-12f2fb35213f?id=71999
+:label: Grasple:LimitAtPoint:Leftratabs
+:dropdown:
+:description: Left limit with an absolute value
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/332e0d51-f836-4bf6-a192-99fce2de442d?id=69301
+:label: Grasple:LimitAtPoint:linoversqlin
+:dropdown:
+:description: Limit of expression with square root
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7165477d-5ea8-4461-84dd-340217392b58?id=69265
+:label: Grasple:LimitAtPoint:sqlinoverlin
+:dropdown:
+:description: Limit of expression with square root
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f12ee6d1-2cd8-420e-839b-8684d3d42c6a?id=69262
+:label: Grasple:LimitAtPoint:sqlinoversqlin
+:dropdown:
+:description: Limit of expression with two square roots
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/431b71e1-167e-48d5-8847-81ae1074bf41?id=69260
+:label: Grasple:LimitAtPoint:standardlimit
+:dropdown:
+:description: Deriving a standard limit
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/33d84623-d5fa-4513-b3fd-55188578881e?id=69424
+:label: Grasple:LimitAtPoint:consequencessinxoverx
+:dropdown:
+:description: Four limits that follow from a standard limit
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f93999f2-7b38-4745-9798-63b46aa416ae?id=71995
+:label: Grasple:LimitAtPoint:sinarcsin
+:dropdown:
+:description: Two limits with (inverse) trigonometric functions
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2cf8ba56-f9e5-4ee3-863d-9ca95a359f8a?id=69297
+:label: Grasple:LimitAtPoint:4timessqueeze
+:dropdown:
+:description: Four limits using squeeze theorem
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/58bbe698-e0f4-467c-8da1-26dfb27a8c8c?id=71997
+:label: Grasple:LimitAtPoint:limitwithsqrt3sqrt5
+:dropdown:
+:description: A limit with third and fifth square roots
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9a58ceb6-7ca3-4fe6-9693-1acff5f3ea77?id=72000
+:label: Grasple:LimitAtPoint:rounding
+:dropdown:
+:description: Limits of rounding function using formal definition
+::::

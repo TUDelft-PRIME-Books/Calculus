@@ -746,3 +746,468 @@ The cosine function where the thicker part is the function on the interval $\lef
 Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is nonnegative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
 
 ::::::
+
+(Subsec:InverseGrasple)=
+
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/60bcd474-3239-4e71-8946-cee3a7637bcd?id=70819
+:label: Grasple:Inverse:Graphinverse
+:dropdown:
+:description: Graph of an inverse function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8a519661-0c39-4d97-9557-8ff1733f51cb?id=70839
+:label: Grasple:Inverse:Checkinginj
+:dropdown:
+:description: Checking whether three functions are one-to-one
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/aa012c3c-6c14-48d6-a2f6-c53da9c30ac6?id=63408
+:label: Grasple:Inverse:Quaddomaininv
+:dropdown:
+:description: Checking on which domain a function is invertible
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/72d35828-d237-4037-b971-c2556ff5ccee?id=63410
+:label: Grasple:Inverse:Inversequadhalf
+:dropdown:
+:description: Finding inverse of quadratic function on half domain
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6a9dd364-6d70-482e-882b-bdd6e21e1f25?id=63411
+:label: Grasple:Inverse:Inverselinoverlin
+:dropdown:
+:description: Finding inverse of rational function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c24ee782-910e-4004-b300-1e0a00fb6da6?id=70842
+:label: Grasple:Inverse:Inversequadfull
+:dropdown:
+:description: Finding inverse of quadratic function on full domain
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c8969c93-0ace-4865-a212-87a26495a911?id=63122
+:label: Grasple:Inverse:Inverselinoverlinplusdomrange
+:dropdown:
+:description: Finding maximal domain + inverse of rational function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c8969c93-0ace-4865-a212-87a26495a911?id=63122
+:label: Grasple:Inverse:Inverseselfinv
+:dropdown:
+:description: Making a self-inverse function
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e2160262-6257-4f0b-94ff-1267eed83a62?id=63125
+:label: Grasple:Inverse:Logstatements
+:dropdown:
+:description: Two statements about logarithms
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/582e83c2-9982-4531-8616-053fc9af3cc4?id=63127
+:label: Grasple:Inverse:Inverseexponentialbasenote
+:dropdown:
+:description: Finding inverse of exponential function with base different from $e$
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f0b8a169-2217-43ed-8c87-00384fa431e7?id=63129
+:label: Grasple:Inverse:Inverseexponentialsquareroot
+:dropdown:
+:description: Finding maximal domain + inverse of exponential function composed with a square root
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/18f05192-771d-4586-94f5-62a05967ce6a?id=63133
+:label: Grasple:Inverse:Inverselinearlog
+:dropdown:
+:description: Finding maximal domain + inverse of logarithm
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f6d59bf9-b8e3-4ab1-ba5b-1e638f4288d7?id=63065
+:label: Grasple:Inverse:Inverseloginlog
+:dropdown:
+:description: Finding maximal domain + inverse of logarithm composed with logarithm
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/92f70639-7718-4894-922e-fabd8f446459?id=76291
+:label: Grasple:Inverse:arcsineasy
+:dropdown:
+:description: Finding $\arcsin(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/aae81382-48c0-459d-a5c1-7bca0cde1adc?id=76292
+:label: Grasple:Inverse:arccoseasy
+:dropdown:
+:description: Finding $\arccos(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7cbcea4e-9acf-4b2f-9655-80c806e73dfe?id=76293
+:label: Grasple:Inverse:arcsinpretty
+:dropdown:
+:description: Finding $\arcsin(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0a6e8840-b3c0-4794-ac3e-6aeb0147b989?id=76294
+:label: Grasple:Inverse:arccospretty
+:dropdown:
+:description: Finding $\arccos(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/60f540d8-e5ea-4698-8003-0a7e48934bea?id=76295
+:label: Grasple:Inverse:arctanpretty
+:dropdown:
+:description: Finding $\arctan(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0614ebe8-eeca-4302-a383-09552e8e6510?id=76296
+:label: Grasple:Inverse:sinarcsinnoshift
+:dropdown:
+:description: Finding $\sin(\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4807abf6-1c06-44c5-b5da-f46a72c8144c?id=76297
+:label: Grasple:Inverse:cosarccosnoshift
+:dropdown:
+:description: Finding $\cos(\arccos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/29236142-b0f0-45b3-b6be-64e7566e6294?id=76298
+:label: Grasple:Inverse:tanarctannoshift
+:dropdown:
+:description: Finding $\tan(\arctan(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9cec25fb-66a4-4c1d-9a84-b3b8890a1663?id=76299
+:label: Grasple:Inverse:arcsinsinnoshift
+:dropdown:
+:description: Finding $\arcsin(\sin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3407acde-0574-4d2e-8953-b78d60e90308?id=76327
+:label: Grasple:Inverse:arcsinsin2pishift
+:dropdown:
+:description: Finding $\arcsin(\sin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cc2b528d-6ddc-4129-ad4d-f75795ba584c?id=76337
+:label: Grasple:Inverse:arcsinsin2pishiftandreflect
+:dropdown:
+:description: Finding $\arcsin(\sin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7cd1cc53-2795-4e95-ab3c-a741dbabe0b0?id=76417
+:label: Grasple:Inverse:arccoscos2pishiftandreflect
+:dropdown:
+:description: Finding $\arccos(\cos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cb640771-58ae-401e-8d2c-08bb3adab1bd?id=76416
+:label: Grasple:Inverse:arccoscos2pishift
+:dropdown:
+:description: Finding $\arccos(\cos(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9422563f-f242-4347-9782-2a1211df789e?id=76300
+:label: Grasple:Inverse:arccoscosnoshift
+:dropdown:
+:description: Finding $\arccos(\cos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3e477d9d-43e8-442d-aaa8-335a37aec458?id=76418
+:label: Grasple:Inverse:arctantanpishift
+:dropdown:
+:description: Finding $\arctan(\tan(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/59a91832-fbc0-4679-b505-ca44359c0b28?id=76318
+:label: Grasple:Inverse:arctantannoshift
+:dropdown:
+:description: Finding $\arctan(\tan(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/33fccbbd-7097-4d46-aa91-e5f5cee2c767?id=76643
+:label: Grasple:Inverse:sinarccos
+:dropdown:
+:description: Finding $\sin(\arccos(a))$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fde17784-4aee-4dc7-9677-57458daeb2f3?id=76644
+:label: Grasple:Inverse:tanarccos
+:dropdown:
+:description: Finding $\tan(\arccos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/accb1d37-1ff1-41a5-9ae6-d47d197d909e?id=76645
+:label: Grasple:Inverse:cosarcsin
+:dropdown:
+:description: Finding $\cos(\arcsin(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ce1f5503-af66-4522-b736-fd2fb1cb036b?id=76646
+:label: Grasple:Inverse:tanarcsin
+:dropdown:
+:description: Finding $\tan(\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7d035172-e80d-42d8-a82a-0fc02bea8d28?id=76647
+:label: Grasple:Inverse:sinarctan
+:dropdown:
+:description: Finding $\sin(\arctan(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/70d2c0b0-d1ff-494b-a27e-61c049745da3?id=70734
+:label: Grasple:Inverse:tanarcsinaxb
+:dropdown:
+:description: Simplifying expresion of the form $\tan(\arcsin(ax+b))$ 
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/92ad8603-2d81-410e-a353-ce2f488f6ab7?id=76760
+:label: Grasple:Inverse:arcsincos2pishiftrefl
+:dropdown:
+:description: Finding $\arcsin(\cos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9b94b891-8843-4c0a-a220-b011963637b1?id=76762
+:label: Grasple:Inverse:arcsincos2pishift
+:dropdown:
+:description: Finding $\arcsin(\cos(a))$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/af1de926-d272-4a64-bd5f-2e0663b70395?id=76763
+:label: Grasple:Inverse:arccossin2pishift
+:dropdown:
+:description: Finding $\arccos(\sin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/86a4a21d-b196-442c-8555-037b5dc4ab80?id=76759
+:label: Grasple:Inverse:arccossin2pishiftrefl
+:dropdown:
+:description: Finding $\arccos(\sin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2fd9249e-ea57-4e78-9059-21d532050afc?id=76767
+:label: Grasple:Inverse:cos2arcsin
+:dropdown:
+:description: Finding $\cos(2\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f60a5f16-6f93-4a94-971c-881114053625?id=76768
+:label: Grasple:Inverse:cos2arccos
+:dropdown:
+:description: Finding $\cos(2\arccos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/47631c23-5c8d-4635-ad93-ac5229f6b28d?id=76772
+:label: Grasple:Inverse:tan2arctan
+:dropdown:
+:description: Finding $\tan(2\arctan(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bc484860-d226-4197-aee9-eb2b94dfd2be?id=76766
+:label: Grasple:Inverse:sin2arctan
+:dropdown:
+:description: Finding $\sin(2\arctan(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/248fd92a-2a93-4683-9c2c-4f1dbc6f6c81?id=76769
+:label: Grasple:Inverse:cos2arctan
+:dropdown:
+:description: Finding $\cos(2\arctan(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/170eaec5-2c53-4f0e-beb6-6a3000405d9b?id=76764
+:label: Grasple:Inverse:sin2arcsin
+:dropdown:
+:description: Finding $\sin(2\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/83944556-70e7-4fd0-84b6-fda11dedc5a7?id=76765
+:label: Grasple:Inverse:sin2arccos
+:dropdown:
+:description: Finding $\sin(2\arccos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3b37b0a9-6cd0-4644-923a-b0ba267d6348?id=76770
+:label: Grasple:Inverse:tan2arcsin
+:dropdown:
+:description: Finding $\tan(2\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7ae0935c-e566-4248-9130-9c4484b6a587?id=76771
+:label: Grasple:Inverse:tan2arccos
+:dropdown:
+:description: Finding $\tan(2\arccos(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/467d06b4-26be-4de5-93fa-4aae7acb33bd?id=70788
+:label: Grasple:Inverse:arcsinplusarccos
+:dropdown:
+:description: Simplify $\arcsin(a)+\arccos(a)$
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fe2885ec-92fe-4fe8-949d-0173ab2da53b?id=70735
+:label: Grasple:Inverse:Inverscosarctanplusarcsin
+:dropdown:
+:description: Simplify $\cos(\arctan(x)+\arcsin(x))$
+
+::::
