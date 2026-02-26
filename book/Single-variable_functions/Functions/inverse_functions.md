@@ -216,7 +216,7 @@ $$
 
 So $g$ cannot be the inverse of $f$. The other choice for $g$ does not fare any better, so we are ready to conclude that the function $f$ does not have an inverse. How can we be sure of that, though? In general, failing to show that something is true does not mean that it is not true. Maybe we were just not creative enough. Well, let us take any function $g$ with domain $[0,\infty)$ (the domain of an inverse function should always be the range of the original function). We will show that this function $g$ runs into the same issues as the choices we have made before. Indeed, if $g$ were to be the inverse function of $f$, then since $f(2)=2^2=4$, we would need to have $g(4)=2$. On the other hand, since $f(-2)=(-2)^2=4$, we would also need to have $g(4)=-2$. However, $g(4)$ cannot at the same time be $2$ and $-2$, so such a function $g$ does not exist.
 
-We can also show this visually. Indeed, {prf:ref}`Thm:Inverse:Graphinverse` tells us that the graph of a potential inverse function can be obtained by reflecting the graph of $f$ along the line $x=y$. In the figure below, you see the graph of $f$ and the corresponding reflection. Note that the curve that we obtain this way can never be the graph of function. Indeed, for $x=4$ we see two corresponding values of $y$, namely $y=-2$ and $y=2$, which is not possible if this curve were the graph of a function (it fails the vertical line test {prf:ref}`Thm:Functions1var:Verticallinetest`).
+We can also show this visually. Indeed, {prf:ref}`Thm:Inverse:Graphinverse` tells us that the graph of a potential inverse function can be obtained by reflecting the graph of $f$ along the line $x=y$. In the figure below, you see the graph of $f$ and the corresponding reflection. Note that the curve that we obtain this way can never be the graph of function. Indeed, for $x=4$ we see two corresponding values of $y$, namely $y=-2$ and $y=2$, which is not possible if this curve were the graph of a function (it fails the vertical line test {prf:ref}`Thm:Functions1var:VerticalLineTest`).
 
 ::::{figure} Images/Fig-Inverse-SecondEx.png
 :name: Fig:Inverse:SecondEx
@@ -392,7 +392,7 @@ Consider the function $h(x)=\sqrt{x}$ with domain $[0,\infty)$ and codomain $\ma
 
 ## Logarithms
 
-In {numref}`Section:Functionsintro` we considered functions of the form $f(x)=b^x$ for $b\geq 0$. In {prf:ref}`Thm:Propertiesfunctions:Expincrdecr` we saw that such a function is strictly decreasing for $0<b<1$, while it is strictly increasing for $b>1$. From {prf:ref}`Thm:Inverse:MonotonicOnetoone` we find that for these values of $b$ the function $f(x)=b^x$ is invertible.
+In {numref}`Section:FunctionsIntro` we considered functions of the form $f(x)=b^x$ for $b\geq 0$. In {prf:ref}`Thm:PropertiesFunctions:ExpIncreaseDecrease` we saw that such a function is strictly decreasing for $0<b<1$, while it is strictly increasing for $b>1$. From {prf:ref}`Thm:Inverse:MonotonicOnetoone` we find that for these values of $b$ the function $f(x)=b^x$ is invertible.
 
 ::::::{prf:definition}
 :label: Thm:Inverse:Logarithm

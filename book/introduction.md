@@ -1,4 +1,9 @@
+(Chapter:Introduction)=
 # Introduction
+
+:::{todo}
+Write a more detailed {ref}`Chapter:Introduction` to the book, including the intended audience, the structure and the content of the book, the funding sources.
+:::
 
 This book is suited for a standard calculus course for engineering students at a bachelor level. Except for some basic skills generally taught in secondary education, no prior knowledge is expected.
 

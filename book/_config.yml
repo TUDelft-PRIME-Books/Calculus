@@ -26,7 +26,11 @@ sphinx:
   local_extensions:
     text_replacer: _ext/
     check_captions: _ext/
+    image_checker: _ext/
   config:
+    tippy_skip_urls:
+      - https://en.wikipedia.org/wiki/File:Parametric_ellipse.gif
+    todo_include_todos: true
     prf_realtyp_to_countertyp:
       "axiom": "theorem"
       "theorem": "theorem"
@@ -119,6 +123,7 @@ sphinx:
     - sphinx_new_tab_link
     - sphinx_apa_references                     # For APA citations
     - sphinx_visualized
+    - sphinx.ext.todo
 
 bibtex_bibfiles: 
   - references.bib

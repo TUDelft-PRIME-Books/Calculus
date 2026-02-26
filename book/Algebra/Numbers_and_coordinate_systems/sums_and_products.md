@@ -4,7 +4,7 @@ In this section we introduce the notation for sums and products which will be us
 
 We assume that the reader is familiar with basic operations on rational numbers such as addition, multiplication, subtraction, and division.
 
-These operations can be extended to rational real numbers ({numref}`Section:Realnumbers`) and complex numbers ({numref}`Ch:ComplexNumbersCartesian`).
+These operations can be extended to rational real numbers ({numref}`Section:RealNumbers`) and complex numbers ({numref}`Ch:ComplexNumbersCartesian`).
 
 ## Sums
 
