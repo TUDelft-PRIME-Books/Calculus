@@ -10,3 +10,7 @@ The graph below depicts the relations between the different main sections within
     :width: 100%
     :height: 600px
 :::
+
+:::{todo}
+Replace with a graph styled as [sphinx-ref-graph](https://github.com/TeachBooks/Sphinx-ref-graph), but based on the json of [sphinx-visualized](https://sphinx-visualized.readthedocs.io/en/latest/).
+:::

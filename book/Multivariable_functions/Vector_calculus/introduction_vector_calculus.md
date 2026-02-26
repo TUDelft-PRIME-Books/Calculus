@@ -1,4 +1,4 @@
-(Section:VerctorCalculusIntro)=
+(Section:VectorCalculusIntro)=
 
 # Vector calculus
 In this chapter: Under Construction
