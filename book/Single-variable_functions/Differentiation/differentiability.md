@@ -367,7 +367,7 @@ This means that $f+g$ is also differentiable at $a$ and that $(f+g)'(a)=f'(a)+g'
 
 {prf:ref}`Thm:Differentiability:Sumscalar` allows us to find derivatives of linear combinations of functions of which we know the derivative. However, for this to work, we need have the derivatives of at least some functions ready to use. Indeed, needing to find the derivative of a function using the limit definition is rather tedious. For this, we now provide the derivatives of some standard functions. It is highly recommended to know these by heart.
 
-::::::{prf:theorem} Standard derivatives, part 1 out of 3
+::::::{prf:theorem} Standard derivatives, part 1 out of 4
 :label: Thm:Differentiability:Standard1
 We have the following standard derivatives.
 

@@ -115,7 +115,127 @@ $$
 Make sure to avoid both errors and use the chain rule as stated.
 ::::
 
-In this section we cover:
+Let us see how we can use the chain rule in practice, by considering a few examples.
 
-- The chain rule
-- Derivative of b^x
+::::::{prf:example} 
+:label: Thm:Chainrule:Example1
+Consider the function $h(x)=\sin\left(x^3\right)$. Then we note that $h=f\circ g$ with $f(x)=\sin(x)$ and $g(x)=x^3$. That means that $h$ is the composition of two functions of which we know the derivative. As such, we can use the chain rule to find the derivative. Indeed, we have $f'(x)=\cos(x)$ and $g'(x)=3x^{3-2}=3x^2$, so we obtain
+
+$$
+ h'(x)=f'(g(x))g'(x)=\cos\left(x^3\right)3x^2.
+$$
+
+::::::
+
+::::::{prf:example} 
+:label: Thm:Chainrule:Example2
+Consider the function $f(t)=e^{3\cos(t)}$. Again, this function can be written as the composition of two other functions of which we know the derivative. Indeed, we have $f=g\circ h$ with $g(t)=e^{t}$ and $h(t)=3\cos(t)$. We know that $g'(t)=e^t$ and $h'(t)=-3\sin(t)$. Then, with the chain rule, we obtain
+
+$$
+ f'(t)=g'(h(t))h'(t)=e^{3\cos(t)}(-3\sin(t))=-3\sin(t)e^{3\cos(t)}.
+$$
+
+::::::
+
+
+
+
+::::::{prf:example} 
+:label: Thm:Chainrule:Highpower
+Suppose we want to know the derivative of the function $p(t)=\left(t^2+1\right)^{10}$. We could try to work out the brackets, but then we get quite a large number of terms. It is also not necessary to do so. Instead, we can use the chain rule. Indeed, we note that $p=r\circ s$ with $r(t)=t^{10}$ and $s(t)=t^2+1$. We know the derivatives of both of these functions, since we have $r'(t)=10t^{10-1}=10t^9$ and $s'(t)=2t^{2-1}+0=2t$, so we obtain
+
+$$
+ p'(t)=r'(s(t))s'(t)=10\left(t^2+1\right)^92t=20t\left(t^2+1\right)^9.
+$$
+
+In general, if $n$ is a natural number, the chain rule can be used to find the derivative of functions of the form $p(t)=\left(q(t)\right)^n$ and that derivative becomes $p'(t)=n\left(q(t)\right)^{n-1}q'(t)$.
+::::::
+
+::::::{prf:example} 
+:label: Thm:Chainrule:Introbtox
+Now consider the function $f(x)=2^x$. In {numref}`Section:Differentiability` we saw how we can differentiate the exponential function with base $e$, but not with any other base. Fortunately, the chain rule allows us to do just that. For this, we first want to rewrite the function $f$ in terms of functions of which we know the derivative. In this case, the important thing to use is that $2=e^{\ln(2)}$, since the natural logarithm is the inverse of the exponential function. This means that for any $x$ we have
+
+$$
+ f(x)=2^x=\left(e^{\ln(2)}\right)^x=e^{\ln(2)x}.
+$$
+
+Now, the function $f$ is written as the composition $f=g\circ h$ with $g(x)=e^x$ and $h(x)=\ln(2)x$ and of both these functions we know the derivative (note that $\ln(2)$ is just a number, so $h$ is a linear function). Then the chain rule gives
+
+$$
+ \frac{d}{dx}2^x=\frac{d}{dx}e^{\ln(2)x}=g'(h(x))h'(x)=e^{\ln(2)x}\ln(2)=\ln(2)2^x.
+$$
+
+::::::
+
+{prf:ref}`Thm:Chainrule:Introbtox` suggests that we can use the chain rule to find the derivative of exponential functions with base different from $e$. In addition, we can use the chain rule to find the derivative of the hyperbolic functions (see {prf:ref}`Def:PropertiesFunctions:Hyperbolic`)
+
+::::::{prf:theorem} Standard derivatives, part 2 out of 4
+:label: Thm:Chain rule:Standard2
+We have the following standard derivatives.
+
+- If $a>0$ is a real number, then we have $\dfrac{d}{dx}a^x=\ln(a)a^x$.
+- We have $\dfrac{d}{dx}\sinh(x)=\cosh(x)$.
+- We have $\dfrac{d}{dx}\cosh(x)=\sinh(x)$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Chain rule:Standard2`
+:class: tudproof, dropdown
+Let $a>0$ be a real number and consider the function $f(x)=a^x$. Since $a=e^{\ln(a)}$, we have
+
+$$
+ f(x)=a^x=\left(e^{\ln(a)}\right)^x=e^{\ln(a)x}.
+$$
+
+As such, we have $f=g\circ h$ with $g(x)=e^{x}$ and $h(x)=\ln(a)x$. Then $g'(x)=e^x$ and $h'(x)=\ln(a)$ (recall that $\ln(a)$ is simply a number), so with the chain rule we find
+
+$$
+ f'(x)=g'(h(x))h'(x)=e^{\ln(a)x}\ln(a)=\ln(a)a^x.
+$$
+
+Now consider the function $f(x)=\sinh(x)=\dfrac{e^{x}-e^{-x}}{2}$. We will use the chain rule to find the derivative $\dfrac{d}{dx}e^{-x}$. Indeed, we, if $p(x)=e^{-x}$ then $p=s\circ t$ with $s(x)=e^x$ and $t(x)=-x$. Then we obtain with the chain rule that
+
+$$
+ p'(x)=s'(t(x))t'(x)=e^{-x}(-1)=-e^{-x}.
+$$
+
+As such, we find that
+
+$$
+ \frac{d}{dx}\sinh(x)=\frac{d}{dx}\dfrac{e^{x}-e^{-x}}{2}=\dfrac{e^{x}-\left(-e^{-x}\right)}{2}=\dfrac{e^x+e^{-x}}{2}=\cosh(x).
+$$
+
+Similarly, we find
+
+$$
+ \frac{d}{dx}\cosh(x)=\frac{d}{dx}\dfrac{e^{x}+e^{-x}}{2}=\dfrac{e^{x}+\left(-e^{-x}\right)}{2}=\dfrac{e^x-e^{-x}}{2}=\sinh(x).
+$$
+
+:::
+
+So why is the chain rule called the chain rule? This becomes clear when we note that we can use it as well to differentiate a chain of functions of the form $f\circ g\circ h$ (or even longer expressions). Indeed, if we have $z=z(y)$, $y=y(x)$ and $x=x(t)$, then the chain rule gives (in Leibniz notation)
+
+$$
+ \frac{dz}{dt}=\frac{dz}{dy}\frac{dy}{dx}\frac{dx}{dt}.
+$$
+
+If we were to think (incorrectly!) of expressions like $dz$ as numbers, then the equation above is just a matter of simplifying a product of fractions. Of course, an expression of the form $\dfrac{dz}{dy}$ is not an actual fraction, but simply a notation for the derivative. Still, we can use this to remember what the chain rule looks like for longer chains of functions.
+
+{prf:ref}`Thm:Chainrule:chain` how we can find the derivative of a chain of functions in practice.
+
+::::::{prf:example} 
+:label: Thm:Chainrule:chain
+Consider the function $f(x)=\sin\left(3^{x^2+1}\right)$. Then we note that $f=g\circ h\circ k$ with $g(x)=\sin(x)$, $h(x)=3^x$ and $k(x)=x^2+1$. We first apply the chain rule to $f=g\circ (h\circ k)$ to obtain
+
+$$
+ f'(x)=f'((g\circ h)(x))(g\circ h)'(x)=f'(g(h(x)))(g\circ h)'(x).
+$$
+
+Now we can use the chain rule again to find the derivative $(g\circ h)'(x)$. This gives
+
+$$
+ f'(x)=f'(g(h(x)))(g\circ h)'(x)=f'(g(h(x)))g'(h(x))h'(x)=\cos\left(3^{x^2+1}\right)\ln(3)3^{x^2+1}\left(2x+1\right).
+$$
+
+
+::::::
