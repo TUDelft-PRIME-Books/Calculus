@@ -483,7 +483,7 @@ To prove the second property, we rewrite and use the first and third properties 
 
 ::::::{prf:example}
 :label: Ex:Inverse:Logarithmbasiccomputation
-Suppose we want to simplify the expression $\ln\left(\frac{x^3}{x\sqrt{1+x}}\right)$ (recall that $\ln(x)=\log_e(x)$ is the natural logarithm, i.e. the logarithm with base number $e$). Using the rules from {prf:ref}`Thm:Inverse:Logarithmcomputationrules` we find that
+Suppose we want to simplify the expression $\ln\left(\frac{x^3}{(x+2)\sqrt{1+x}}\right)$ (recall that $\ln(x)=\log_e(x)$ is the natural logarithm, i.e. the logarithm with base number $e$). Using the rules from {prf:ref}`Thm:Inverse:Logarithmcomputationrules` we find that
 
 $$
  \begin{array}{lcl}\ln\left(\frac{x^3}{(x+2)\sqrt{1+x}}\right)&=&\ln\left(x^3\right)-\ln\left((x+2)\sqrt{1+x}\right)\\
