@@ -46,7 +46,7 @@ $$
  \frac{f(g(x))-f(g(a))}{x-a}=\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\frac{g(x)-g(a)}{x-a}.
 $$
 
-If there is some interval $(a-h,a+h)$ such that for each $x$ in $(a-h,a+h)$ we have $g(x)\neq g(a)$, then we can directly evalute the limit as $x$ approaches $a$ as
+If there is some interval $(a-\delta,a+\delta)$ such that for each $x$ in $(a-\delta,a+\delta)$ we have $g(x)\neq g(a)$, then we can directly evalute the limit as $x$ approaches $a$ as
 
 $$
  \lim_{x\rightarrow a}\frac{h(x)-h(a)}{x-a}=\lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{x-a}=\lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\frac{g(x)-g(a)}{x-a}=\lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\lim_{x\rightarrow a}\frac{g(x)-g(a)}{x-a}=f'(g(a))\cdot g'(a)
@@ -54,7 +54,7 @@ $$
 
 using {prf:ref}`Thm:Differentiability:Derivativealt`. In that case, we would directly obtain $h'(a)=f'(g(a))\cdot g'(a)$.
 
-However, we cannot make the assumption that there is such an interval $(a-h,a+h)$, in general. And if we cannot make this assumption, the preceding computation does not work as we are committing the sin of dividing by $0$. So to avoid this, we define a real function $k$ that is given by
+However, we cannot make the assumption that there is such an interval $(a-\delta,a+\delta)$, in general. And if we cannot make this assumption, the preceding computation does not work as we are committing the sin of dividing by $0$. So to avoid this, we define a real function $k$ that is given by
 
 $$
  k(x)=\left\{\begin{array}{l}\frac{f(x)-f(g(a))}{x-g(a)},\qquad&\text{if}\ x\neq g(a),\\

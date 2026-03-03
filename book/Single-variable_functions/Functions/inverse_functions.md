@@ -13,6 +13,9 @@ Easier said than done?
 
 ::::
 
+:::{todo}
+Pollingvragen
+:::
 
 So far, we have mainly been interested in evaluating functions, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it is also interesting for some value of $y$ in the range of $f$ to try to find for which value(s) of $x$, if any, we have $f(x)=y$. That is, we want to somehow undo the function $f$ and go back to the domain.
 
@@ -142,7 +145,10 @@ In {prf:ref}`Ex:Inverse:FirstEx` we used the symbol $y$ as the input for $g$, wh
 
 Now suppose that we have a function $h$ that is a composition of two other functions, so $h=f\circ g$. If $f$ and $g$ both have an inverse, does $h$ automatically have an inverse as well? To determine this, we should really think about having an inverse as being able to undo the action of the original function. So since $f\circ g$ first applies $g$ and then $f$, we can undo this by undoing both, but then **in reverse order**. This is sometimes known as the **socks and shoes rule**, since (normally, at least) you first put on your socks and then your shoes and if you want to undo this composition of two actions, you should undo them in reverse order, so you should take off your shoes first and then take off your socks. As such, we obtain the following result.
 
+:::{todo}
 Hier rechts van een plaatje van doormiddengescheurde sokken met als caption Undoing the two actions in the incorrect order will result in torn socks, which means that you do not end up where you started.
+:::
+
 
 
 ::::::{prf:theorem} Socks and shoes rule
@@ -189,7 +195,11 @@ $$
 
 Note that we switched the order from $g\circ f$ to $f^{-1}\circ g^{-1}$ when finding the inverse function, since we do not want to tear our socks by trying to take them off before taking off our shoes.
 
+
+:::{todo}
 Hier nog een grafiek van de functies $g\circ f$ en zijn inverse
+:::
+
 
 ::::::
 
@@ -751,6 +761,12 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ## Grasple exercises
 
+:::{todo}
+Voeg Grasple exercises logaritmes toe nadat deze gereviewd zijn.
+:::
+
+### Exercises on inverses of general functions.
+
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/60bcd474-3239-4e71-8946-cee3a7637bcd?id=70819
@@ -823,6 +839,98 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ::::
 
+### Exercises on logarithms.
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/44e2b007-c172-41e5-bd5a-8048f699e407?id=130661
+:label: Grasple:Inverse:Exactlog
+:dropdown:
+:description: Finding exact values of expressions with logarithms.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/72fd9d97-9f93-45e9-adb5-b0bed0ff089e?id=130648
+:label: Grasple:Inverse:Expandlog
+:dropdown:
+:description: Expanding an expression involving logarithms
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f92f31b2-292c-4417-95ec-a60fb3168943?id=130649
+:label: Grasple:Inverse:Singlelog
+:dropdown:
+:description: Writing an expression as a single logarithm
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b489c899-aa03-40ce-95e4-25f56486164a?id=130640
+:label: Grasple:Inverse:Easyexp
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3bd2251c-d349-40f8-bc4b-1bf2ddf93ca4?id=130641
+:label: Grasple:Inverse:Easyexplesseasy
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ad1638df-2fc3-444b-8179-d587b95da3f0?id=130636
+:label: Grasple:Inverse:Explinear
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ffa4ab1e-e00d-4051-85d2-09008bea23c8?id=130642
+:label: Grasple:Inverse:Expquad
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a2a59639-0069-4bbb-bc8f-5b13817028a0?id=130637
+:label: Grasple:Inverse:Explinearnosol
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4d0ef697-c0cc-403e-8288-bf69f7fa5757?id=130646
+:label: Grasple:Inverse:Expquaduglysol
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d730ecaf-01a1-440c-b7a6-fe4673701273?id=130664
+:label: Grasple:Inverse:Solgquad
+:dropdown:
+:description: Solving an equation with a logarithmic function
+
+::::
+
 
 ::::{grasple}
 :iframeclass: dark-light
@@ -830,6 +938,15 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 :label: Grasple:Inverse:Logstatements
 :dropdown:
 :description: Two statements about logarithms
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/abe00184-8aca-474b-a39d-6d1bd51b4e63?id=130665
+:label: Grasple:Inverse:Solgquad1sol
+:dropdown:
+:description: Solving an equation with a logarithmic function
 
 ::::
 
@@ -869,6 +986,8 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ::::
 
+### Exercises on inverse trigonometric functions.
+
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/92f70639-7718-4894-922e-fabd8f446459?id=76291
@@ -878,32 +997,7 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ::::
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/aae81382-48c0-459d-a5c1-7bca0cde1adc?id=76292
-:label: Grasple:Inverse:arccoseasy
-:dropdown:
-:description: Finding $\arccos(a)$ without a calculator
 
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/7cbcea4e-9acf-4b2f-9655-80c806e73dfe?id=76293
-:label: Grasple:Inverse:arcsinpretty
-:dropdown:
-:description: Finding $\arcsin(a)$ without a calculator
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/0a6e8840-b3c0-4794-ac3e-6aeb0147b989?id=76294
-:label: Grasple:Inverse:arccospretty
-:dropdown:
-:description: Finding $\arccos(a)$ without a calculator
-
-::::
 
 ::::{grasple}
 :iframeclass: dark-light
@@ -942,28 +1036,12 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 ::::
 
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/9cec25fb-66a4-4c1d-9a84-b3b8890a1663?id=76299
-:label: Grasple:Inverse:arcsinsinnoshift
-:dropdown:
-:description: Finding $\arcsin(\sin(a))$ without a calculator
 
-::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/3407acde-0574-4d2e-8953-b78d60e90308?id=76327
 :label: Grasple:Inverse:arcsinsin2pishift
-:dropdown:
-:description: Finding $\arcsin(\sin(a))$ without a calculator
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/cc2b528d-6ddc-4129-ad4d-f75795ba584c?id=76337
-:label: Grasple:Inverse:arcsinsin2pishiftandreflect
 :dropdown:
 :description: Finding $\arcsin(\sin(a))$ without a calculator
 
@@ -978,33 +1056,8 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ::::
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/cb640771-58ae-401e-8d2c-08bb3adab1bd?id=76416
-:label: Grasple:Inverse:arccoscos2pishift
-:dropdown:
-:description: Finding $\arccos(\cos(a))$ without a calculator
-
-::::
 
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/9422563f-f242-4347-9782-2a1211df789e?id=76300
-:label: Grasple:Inverse:arccoscosnoshift
-:dropdown:
-:description: Finding $\arccos(\cos(a))$ without a calculator
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/3e477d9d-43e8-442d-aaa8-335a37aec458?id=76418
-:label: Grasple:Inverse:arctantanpishift
-:dropdown:
-:description: Finding $\arctan(\tan(a))$ without a calculator
-
-::::
 
 ::::{grasple}
 :iframeclass: dark-light
@@ -1016,14 +1069,6 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 ::::
 
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/33fccbbd-7097-4d46-aa91-e5f5cee2c767?id=76643
-:label: Grasple:Inverse:sinarccos
-:dropdown:
-:description: Finding $\sin(\arccos(a))$ without a calculator
-
-::::
 
 
 
@@ -1036,24 +1081,7 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ::::
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/accb1d37-1ff1-41a5-9ae6-d47d197d909e?id=76645
-:label: Grasple:Inverse:cosarcsin
-:dropdown:
-:description: Finding $\cos(\arcsin(a))$ without a calculator
 
-::::
-
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/ce1f5503-af66-4522-b736-fd2fb1cb036b?id=76646
-:label: Grasple:Inverse:tanarcsin
-:dropdown:
-:description: Finding $\tan(\arcsin(a))$ without a calculator
-
-::::
 
 ::::{grasple}
 :iframeclass: dark-light
@@ -1082,14 +1110,7 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ::::
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/9b94b891-8843-4c0a-a220-b011963637b1?id=76762
-:label: Grasple:Inverse:arcsincos2pishift
-:dropdown:
-:description: Finding $\arcsin(\cos(a))$ without a calculator
 
-::::
 
 
 
@@ -1099,6 +1120,169 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 :label: Grasple:Inverse:arccossin2pishift
 :dropdown:
 :description: Finding $\arccos(\sin(a))$ without a calculator
+
+::::
+
+
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f60a5f16-6f93-4a94-971c-881114053625?id=76768
+:label: Grasple:Inverse:cos2arccos
+:dropdown:
+:description: Finding $\cos(2\arccos(a))$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3b37b0a9-6cd0-4644-923a-b0ba267d6348?id=76770
+:label: Grasple:Inverse:tan2arcsin
+:dropdown:
+:description: Finding $\tan(2\arcsin(a))$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/467d06b4-26be-4de5-93fa-4aae7acb33bd?id=70788
+:label: Grasple:Inverse:arcsinplusarccos
+:dropdown:
+:description: Simplify $\arcsin(a)+\arccos(a)$
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fe2885ec-92fe-4fe8-949d-0173ab2da53b?id=70735
+:label: Grasple:Inverse:Inverscosarctanplusarcsin
+:dropdown:
+:description: Simplify $\cos(\arctan(x)+\arcsin(x))$
+
+::::
+
+
+:::::::::{admonition} Bonus: more exercises on inverse trigonometric functions
+:class: bonus
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/aae81382-48c0-459d-a5c1-7bca0cde1adc?id=76292
+:label: Grasple:Inverse:arccoseasy
+:dropdown:
+:description: Finding $\arccos(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7cbcea4e-9acf-4b2f-9655-80c806e73dfe?id=76293
+:label: Grasple:Inverse:arcsinpretty
+:dropdown:
+:description: Finding $\arcsin(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0a6e8840-b3c0-4794-ac3e-6aeb0147b989?id=76294
+:label: Grasple:Inverse:arccospretty
+:dropdown:
+:description: Finding $\arccos(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9cec25fb-66a4-4c1d-9a84-b3b8890a1663?id=76299
+:label: Grasple:Inverse:arcsinsinnoshift
+:dropdown:
+:description: Finding $\arcsin(\sin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cb640771-58ae-401e-8d2c-08bb3adab1bd?id=76416
+:label: Grasple:Inverse:arccoscos2pishift
+:dropdown:
+:description: Finding $\arccos(\cos(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9422563f-f242-4347-9782-2a1211df789e?id=76300
+:label: Grasple:Inverse:arccoscosnoshift
+:dropdown:
+:description: Finding $\arccos(\cos(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3e477d9d-43e8-442d-aaa8-335a37aec458?id=76418
+:label: Grasple:Inverse:arctantanpishift
+:dropdown:
+:description: Finding $\arctan(\tan(a))$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cc2b528d-6ddc-4129-ad4d-f75795ba584c?id=76337
+:label: Grasple:Inverse:arcsinsin2pishiftandreflect
+:dropdown:
+:description: Finding $\arcsin(\sin(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/33fccbbd-7097-4d46-aa91-e5f5cee2c767?id=76643
+:label: Grasple:Inverse:sinarccos
+:dropdown:
+:description: Finding $\sin(\arccos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/accb1d37-1ff1-41a5-9ae6-d47d197d909e?id=76645
+:label: Grasple:Inverse:cosarcsin
+:dropdown:
+:description: Finding $\cos(\arcsin(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ce1f5503-af66-4522-b736-fd2fb1cb036b?id=76646
+:label: Grasple:Inverse:tanarcsin
+:dropdown:
+:description: Finding $\tan(\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9b94b891-8843-4c0a-a220-b011963637b1?id=76762
+:label: Grasple:Inverse:arcsincos2pishift
+:dropdown:
+:description: Finding $\arcsin(\cos(a))$ without a calculator
 
 ::::
 
@@ -1113,19 +1297,19 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/2fd9249e-ea57-4e78-9059-21d532050afc?id=76767
-:label: Grasple:Inverse:cos2arcsin
+:url: https://embed.grasple.com/exercises/7ae0935c-e566-4248-9130-9c4484b6a587?id=76771
+:label: Grasple:Inverse:tan2arccos
 :dropdown:
-:description: Finding $\cos(2\arcsin(a))$ without a calculator
+:description: Finding $\tan(2\arccos(a))$ without a calculator
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/f60a5f16-6f93-4a94-971c-881114053625?id=76768
-:label: Grasple:Inverse:cos2arccos
+:url: https://embed.grasple.com/exercises/2fd9249e-ea57-4e78-9059-21d532050afc?id=76767
+:label: Grasple:Inverse:cos2arcsin
 :dropdown:
-:description: Finding $\cos(2\arccos(a))$ without a calculator
+:description: Finding $\cos(2\arcsin(a))$ without a calculator
 
 ::::
 
@@ -1174,40 +1358,4 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ::::
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/3b37b0a9-6cd0-4644-923a-b0ba267d6348?id=76770
-:label: Grasple:Inverse:tan2arcsin
-:dropdown:
-:description: Finding $\tan(2\arcsin(a))$ without a calculator
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/7ae0935c-e566-4248-9130-9c4484b6a587?id=76771
-:label: Grasple:Inverse:tan2arccos
-:dropdown:
-:description: Finding $\tan(2\arccos(a))$ without a calculator
-
-::::
-
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/467d06b4-26be-4de5-93fa-4aae7acb33bd?id=70788
-:label: Grasple:Inverse:arcsinplusarccos
-:dropdown:
-:description: Simplify $\arcsin(a)+\arccos(a)$
-
-::::
-
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/fe2885ec-92fe-4fe8-949d-0173ab2da53b?id=70735
-:label: Grasple:Inverse:Inverscosarctanplusarcsin
-:dropdown:
-:description: Simplify $\cos(\arctan(x)+\arcsin(x))$
-
-::::
+:::::::::
