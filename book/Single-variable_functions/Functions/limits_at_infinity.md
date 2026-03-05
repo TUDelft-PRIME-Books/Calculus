@@ -4,7 +4,7 @@
 
 ## Introduction 
 
-Many problems in nature and engineering feature quantities that for relatively short periods of time, fluctuate or change rapidly, before stabilizing and moving towards a certain equilibrium. In such cases, we are often mainly interested in what happens in the long term.
+Many problems in nature and engineering feature quantities that, for relatively short periods of time, fluctuate or change rapidly, before stabilizing and moving towards a certain equilibrium. In such cases, we are often mainly interested in what happens in the long term.
 
 :::::{margin}
 ::::{figure} Images/Fig-LimitAtInfinity-RefrigeratorCauliflower.png
@@ -14,9 +14,9 @@ A cauliflower in a refrigerator.
 ::::
 :::::
 
-Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling, it can be shown that $T(t)=T_{\text{env}}+(T(0)-T_{\text{env}})e^{-rt}$. Here, $T_{\text{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
+Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling (see {numref}`SubSec:ODE1:SeparableAppl`), it can be shown that $T(t)=T_{\text{env}}+(T(0)-T_{\text{env}})e^{-rt}$. Here, $T_{\text{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
 
-For convenience, let us take, for example, $r=1\ \text{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
+Let us take, for example, $r=1\ \text{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator, which is $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
 
 ::::{figure} Images/Fig-LimitAtInfinity-TempCauliflower.png
 :name: Fig:LimitAtInfinity:TempCauliflower
@@ -26,7 +26,7 @@ The temperature $T(t)$ in degrees Celsius of the cauliflower within the refriger
 Plaatje moet alleen voor $t\geq 0$.
 ::::
 
-We observe that our intuition was correct: the temperature of the object will first decrease rapidly before slowly moving towards the limiting value of $5$ °C. Notice that the temperature never becomes precisely equal to $5$ °C; it will always remain slightly above this value. We say that the function $T(t)$ has a **horizontal asymptote** at $T=5$ °C and we denote this by $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C. As was stated in {numref}`Section:LimitPoint`, the word asymptote comes from the Greek $\grave{\alpha}\sigma\acute{\upsilon}\mu\pi\tau\omega\tau o\varsigma$ (asumptotos), which means "not falling together". The notation $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C can be pronounced as "the function values $T(t)$ approach the value $5$ °C as $t$ approaches infinity". The precise definition of such a limit at infinity is rather technical, so we postpone it to {numref}`Subsec:LimitinfPrecise`. Instead, we will use the following more intuitive definition.
+We observe that our intuition was correct: the temperature of the object will first decrease rapidly before slowly moving towards the limiting value of $5$ °C. Notice that the temperature never becomes precisely equal to $5$ °C; it will always remain slightly above this value. We say that the function $T(t)$ has a **horizontal asymptote** at $T=5$ °C and we denote this by $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C. As was stated in {numref}`Section:LimitPoint`, the word asymptote comes from the Greek ἀσύμπτωτος  (asumptotos), which means "not falling together". The notation $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C can be pronounced as "the function values $T(t)$ approach the value $5$ °C as $t$ approaches infinity". The precise definition of such a limit at infinity is rather technical, so we postpone it to {numref}`Subsec:LimitinfPrecise`. Instead, we will use the following more intuitive definition.
 
 (Subsec:LimitinfIntuitive)=
 ## Intuitive definition of limits at infinity
@@ -34,15 +34,35 @@ We observe that our intuition was correct: the temperature of the object will fi
 ::::::{prf:definition} Intuitive definition of a limit at plus or minus infinity
 :label: Def:LimitAtInfinity:Intuitivelimit
 
-Let $f$ be a function that is defined for values of $x>d$ for some $d$. We say that the **limit at infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow \infty}f(x)=L$, if the function values $f(x)$ approach $L$ as $x$ grows arbitrarily large. If no such real number $L$ exists, we say that the limit of the function $f$ at infinity does not exist.
+Let $f$ be a function that is defined on some interval $[d,\infty)$. We say that the **limit at infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow \infty}f(x)=L$, if the function values $f(x)$ approach $L$ as $x$ grows arbitrarily large. If no such real number $L$ exists, we say that the limit of the function $f$ at infinity does not exist.
 
-Similarly, if $f$ is defined for values of $x<d$ for some $d$, we say that the **limit at minus infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow -\infty}f(x)=L$, if the function values $f(x)$ approach $L$ as $x$ grows arbitrarily large negative. If no such real number $L$ exists, we say that the limit of the function $f$ at minus infinity does not exist.
+Similarly, if $f$ is defined on some interval $(-\infty,d]$, we say that the **limit at minus infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow -\infty}f(x)=L$, if the function values $f(x)$ approach $L$ as $x$ grows arbitrarily large negative. If no such real number $L$ exists, we say that the limit of the function $f$ at minus infinity does not exist.
 
 If either $\lim\limits_{x\rightarrow \infty}f(x)=L$ or $\lim\limits_{x\rightarrow -\infty}f(x)=L$, we say that the function $f$ has a **horizontal asymptote** at $y=L$.
 ::::::
 
+::::::{prf:notation} Shorthand notations for limits
+:label: Notation:LimitAtInfinity:Shorthand
+
+Instead of writing $\lim\limits_{x\rightarrow \infty}f(x)=L$, we sometimes use the short hand notations
+
+$$
+ f(x)\rightarrow L\ \text{as}\ x\rightarrow \infty
+$$
+
+or
+
+$$
+ f(x)\xrightarrow{x\rightarrow \infty}L.
+$$
+
+We use a similar notation for limits at minus infinity.
+::::::
+
 
 Since we only work with an intuitive definition, we will also postpone all proofs in this section to {numref}`Subsec:LimitinfPrecise`.
+
+
 
 
 ::::::{prf:example} 
@@ -78,7 +98,7 @@ Consider the function $f(x)=\dfrac{4+\frac{1}{x}}{2-\frac{3}{x^2}}$ and suppose 
 Notice that the function values seem to go towards the value $2$. This would suggest that $\lim\limits_{x\rightarrow \infty}f(x)=2$. Let us see if we can find out where this value comes from. If $x$ is very large, notice that $\frac{1}{x}$ and $-\frac{3}{x^2}$ are very close to $0$, since we are dividing a relatively small number by a much larger number. As such, for large values of $x$ we have
 
 $$
- f(x)=\dfrac{4+\frac{1}{x}}{2-\frac{3}{x^2}}\approx \dfrac{4+0}{2-0}=\dfrac{4}{2}=2
+ f(x)=\dfrac{4+\frac{1}{x}}{2-\frac{3}{x^2}}\approx \dfrac{4+0}{2-0}=\dfrac{4}{2}=2.
 $$
 
 Later in this section, we will show that this reasoning is indeed mathematically valid. As such, the function $f$ has a horizontal asymptote at $y=2$. We can also see in the graph of $f$ that the function values tend towards the value $2$ as $x$ gets large.
@@ -131,7 +151,7 @@ Notice that the function values seem to go towards the value $0$. This would sug
 An illustration of the function $f(x)=\dfrac{\sin(x)}{x^2}$ for large negative values of $x$.
 ::::
 
-Notice that the function $f$ actually oscillates around the horizontal asymptote $x=0$. This is not a problem, as the function values indeed tends towards $0$. However, this does mean that original Greek meaning of the word asymptote ("not falling together") does not exactly match the modern use.
+Notice that the function $f$ actually oscillates around the horizontal asymptote $x=0$. This is not a problem, as the function values indeed tends towards $0$. However, this does mean that the original Greek meaning of the word asymptote ("not falling together") does not exactly match the modern use.
 ::::::
 
 ::::::{prf:example} 
@@ -164,7 +184,7 @@ Consider the function $f(x)=x^2$ and suppose we want to evaluate $\lim\limits_{x
 
 ```
 
-Notice that the function values seem to blow up and that they do not towards a certain number. Indeed, as $x$ tends towards infinity, $x^2$ will do so as well. As such, the limit $\lim\limits_{x\rightarrow \infty}x^2$ does not exist. 
+Notice that the function values seem to blow up and that they do not tend towards a certain number. Indeed, as $x$ tends towards infinity, $x^2$ will do so as well. As such, the limit $\lim\limits_{x\rightarrow \infty}x^2$ does not exist. 
 ::::::
 
 In {prf:ref}`Ex:LimitAtInfinity:Firstexamplenonexist` the limit of the function at infinity did not exist, because the function values blew up as $x$ grew. This is actually a very common situation, so it deserves its own notation.
@@ -181,10 +201,10 @@ Finally, we have the corresponding notations $\lim\limits_{x\rightarrow -\infty}
 ::::::{warning} 
 :name: Warning:LimitAtInfinity:Infinitelimit
 
-A notation like $\lim\limits_{x\rightarrow \infty}f(x)=\infty$ or $\lim\limits_{x\rightarrow \infty}f(x)=-\infty$ do not mean that $\infty$ and $-\infty$ are numbers, nor do they mean that these limits exist. A correct way to pronounce the notation $\lim\limits_{x\rightarrow \infty}f(x)=\infty$ is **the limit of $f$ at infinity does not exist, because the function values grow without bound**.
+A notation like $\lim\limits_{x\rightarrow \infty}f(x)=\infty$ or $\lim\limits_{x\rightarrow \infty}f(x)=-\infty$ does not mean that $\infty$ and $-\infty$ are numbers, nor do they mean that these limits exist. A correct way to pronounce the notation $\lim\limits_{x\rightarrow \infty}f(x)=\infty$ is **the limit of $f$ at infinity does not exist, because the function values grow without bound**.
 ::::::
 
-Notice that a function can have either $0$, $1$ or $2$ horizontal asymptotes, depending on whether $\lim\limits_{x\rightarrow \infty}f(x)$ and $\lim\limits_{x\rightarrow -\infty}f(x)$ exist. Even if both limits exist, the function might still have only $1$ horizontal asymptotes whenever $\lim\limits_{x\rightarrow \infty}f(x)=\lim\limits_{x\rightarrow -\infty}f(x)$.
+Notice that a function can have either $0$, $1$ or $2$ horizontal asymptotes, depending on whether $\lim\limits_{x\rightarrow \infty}f(x)$ and $\lim\limits_{x\rightarrow -\infty}f(x)$ exist. Even if both limits exist, the function might still have only $1$ horizontal asymptote whenever $\lim\limits_{x\rightarrow \infty}f(x)=\lim\limits_{x\rightarrow -\infty}f(x)$.
 
 Previously, we saw that a limit at infinity might not exist, because there the function has an infinite or negative limit there. There are other reasons why a limit might not exist, and we will show a few commonly occurring cases.
 
@@ -235,7 +255,7 @@ Even though making tables like we did in the preceding examples can help to give
 ::::::{prf:example} 
 :label: Ex:LimitAtInfinity:Warningtables
 
-Consider the function $f(x)=\cos(2\pi x)$ and suppose we make a table like we did in the previous examples.
+Consider the function $f(x)=\cos(\pi x)$ and suppose we make a table like we did in the previous examples.
 
 ```{list-table} Function values of $f$ for increasing values of $x$.
 :header-rows: 1
@@ -246,7 +266,7 @@ Consider the function $f(x)=\cos(2\pi x)$ and suppose we make a table like we di
 * - $x$
   - $f(x)$
 * - $1$
-  - $1$
+  - $-1$
 * - $10$
   - $1$
 * - $100$
@@ -262,7 +282,7 @@ Consider the function $f(x)=\cos(2\pi x)$ and suppose we make a table like we di
 
 ```
 
-This would suggest that $\lim\limits_{x\rightarrow\infty}\cos(2\pi x)=1$. However, we know that the function values do not tend to $1$, as they keep on oscillating between $-1$ and $1$. In this case, we simply chose the values of $x$ we inserted into our function rather poorly. Indeed, $f(x)=1$ for all integer values of $x$. If we, on the other hand, would have chosen values of $x$ of the form $x=\frac{1}{2}+n$ for an integer $n$, we may have gotten the idea that the limit would be $-1$. Indeed, the limit  $\lim\limits_{x\rightarrow\infty}\cos(2\pi x)$ does not exist at all.
+This would suggest that $\lim\limits_{x\rightarrow\infty}\cos(\pi x)=1$. However, we know that the function values do not tend to $1$, as they keep on oscillating between $-1$ and $1$. In this case, we simply chose the values of $x$ we inserted into our function rather poorly. Indeed, $f(x)=1$ for all even integer values of $x$. If we, on the other hand, had chosen values of $x$ of the form $x=n$ for an odd integer $n$, we might have got the idea that the limit would be $-1$. Indeed, the limit  $\lim\limits_{x\rightarrow\infty}\cos(\pi x)$ does not exist at all.
 ::::::
 
 
@@ -270,7 +290,7 @@ This would suggest that $\lim\limits_{x\rightarrow\infty}\cos(2\pi x)=1$. Howeve
 
 ## Evaluating limits
 
-In order to evaluate limits at infinity, we need two important building blocks: standard limits and calculation rules. Combining these will allow us to evaluate most limits that you will encounter in practice. In particular, combining these two results, shows that the we evaluated the limit in {prf:ref}`Ex:LimitAtInfinity:Firstexample` correctly. As can be expected, many results are very similar to those in {numref}`Subsec:Limitsrules`, so we follow a very similar structure.
+In order to evaluate limits at infinity, we need two important building blocks: standard limits and calculation rules. Combining these will allow us to evaluate most limits that you will encounter in practice. In particular, combining these two results, shows that we evaluated the limit in {prf:ref}`Ex:LimitAtInfinity:Firstexample` correctly. As can be expected, many results are very similar to those in {numref}`Subsec:Limitsrules`, so we follow a very similar structure.
 
 ::::::{prf:theorem} Standard limits
 :label: Theorem:LimitAtInfinity:Standardlimits
@@ -280,14 +300,17 @@ We have the following standard limits.
 :gutter: 1
 
 ::::{grid-item}
+- $\lim\limits_{x\rightarrow\infty}1=1$;
+- $\lim\limits_{x\rightarrow-\infty}1=1$;
 - $\lim\limits_{x\rightarrow\infty}x^r=0$ when $r<0$;
 - $\lim\limits_{x\rightarrow\infty}x^r=\infty$ when $r>0$;
 - $\lim\limits_{x\rightarrow-\infty}x^{-r}=0$ when $r$ is a positive integer;
-- $\lim\limits_{x\rightarrow\infty}e^{-ax}=0$ when $a>0$;
-- $\lim\limits_{x\rightarrow\infty}e^{ax}=\infty$ when $a>0$;
+
 ::::
 
 ::::{grid-item}
+- $\lim\limits_{x\rightarrow\infty}e^{-ax}=0$ when $a>0$;
+- $\lim\limits_{x\rightarrow\infty}e^{ax}=\infty$ when $a>0$;
 - $\lim\limits_{x\rightarrow\infty}\frac{1}{\ln(x)}=0$;
 - $\lim\limits_{x\rightarrow\infty}\ln(x)=\infty$;
 - $\lim\limits_{x\rightarrow-\infty}\arctan(x)=-\dfrac{\pi}{2}$;
@@ -319,24 +342,81 @@ The product and quotient rules from {prf:ref}`Theorem:LimitAtInfinity:Basiccompu
 
 Intuitively, these computation rules make sense: if the function values $f(x)$ approach $L$ and the function values $g(x)$ approach $M$, both as $x$ gets very large, then $f(x)+g(x)$ will approach $L+M$. Still, showing that these rules hold using the formal definition of a limit at infinity can be tricky, see {numref}`Subsec:LimitinfPrecise`.
 
+
+
 ::::::{prf:theorem} Substitution
 :label: Theorem:LimitAtInfinity:Substitution
-Suppose $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
+Suppose $f$ is a polynomial, rational function, power function, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
+
+In addition, suppose  $h$ is any function for which the composition $f\circ h$. If $\lim\limits_{x\rightarrow\infty}h(x)=\infty$, then we also have the limit $\lim\limits_{x\rightarrow \infty}f(h(x))=\lim\limits_{x\rightarrow\infty}f(x)$. Similarly, if $\lim\limits_{x\rightarrow\infty}h(x)=-\infty$, then we have $\lim\limits_{x\rightarrow \infty}f(h(x))=\lim\limits_{x\rightarrow-\infty}f(x)$.
 
 A similar result holds for limits at minus infinity.
 ::::::
 
 The result above shows that limits can be "taken inside" a nice enough function. In fact, {prf:ref}`Theorem:Continuity:SubstitutionInf` is a slightly more general version of this result. In this part of {numref}`Section:Continuity`, we will also prove {prf:ref}`Theorem:LimitAtInfinity:Substitution`.
 
+For compositions $f\circ g$ with $\lim\limits_{x\rightarrow\infty}g(x)=\infty$ or $\lim\limits_{x\rightarrow\infty}g(x)=-\infty$ we do not even need any conditions on $f$.
+
+::::::{prf:theorem} Substitution of infinite limits
+:label: Theorem:LimitAtInfinity:Substitution2
+Let $f$ and $g$ be any two functions for which the composition $f\circ g$ exists. If $\lim\limits_{x\rightarrow\infty}g(x)=\infty$ and $\lim\limits_{x\rightarrow\infty}f(x)$ exists, then we have the limit $\lim\limits_{x\rightarrow \infty}f(g(x))=\lim\limits_{x\rightarrow\infty}f(x)$. Similarly, if $\lim\limits_{x\rightarrow\infty}g(x)=-\infty$ and $\lim\limits_{x\rightarrow-\infty}f(x)$ exists, then we have $\lim\limits_{x\rightarrow \infty}f(g(x))=\lim\limits_{x\rightarrow-\infty}f(x)$.
+
+In addition, if $\lim\limits_{x\rightarrow\infty}g(x)=\infty$ and $\lim\limits_{x\rightarrow\infty}f(x)=\infty$, then we also have $\lim\limits_{x\rightarrow \infty}f(g(x))=\infty$. Similarly, if $\lim\limits_{x\rightarrow\infty}g(x)=-\infty$ and $\lim\limits_{x\rightarrow-\infty}f(x)=\infty$, then we have $\lim\limits_{x\rightarrow \infty}f(g(x))=\lim\limits_{x\rightarrow-\infty}f(x)=-\infty$.
+
+A similar result holds for limits of $f$ at minus infinity, or when the limit of $f$ is $-\infty$.
+::::::
+
+::::::{prf:example} 
+:label: Ex:LimitAtInfinityComputationrules
+Consider the function $f(x)=\dfrac{1}{1+e^{-x}}$ and suppose we want to find out whether it has horizontal asymptotes.
+
+First we consider the limit at infinity. Note that $f$ can be written as the composition $f=g\circ h$ with $g(x)=\frac{1}{x}$ and $h(x)=1+e^{-x}$. Then we can use {prf:ref}`Theorem:LimitAtInfinity:Substitution` to evaluate
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{1+e^{-x}}=\frac{1}{\lim_{x\rightarrow\infty}\left(1+e^{-x}\right)}.
+$$
+
+Using the basic computation rules {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to rewrite
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{1+e^{-x}}=\frac{1}{\lim_{x\rightarrow\infty}1+\lim_{x\rightarrow\infty}e^{-x}}.
+$$
+
+Finally, we use the standard limits {prf:ref}`Theorem:LimitAtInfinity:Standardlimits` to evaluate
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{1+e^{-x}}=\frac{1}{\lim_{x\rightarrow\infty}1+\lim_{x\rightarrow\infty}e^{-x}}=\frac{1}{1+0}=1.
+$$
+
+For the limit at minus infinity, we can, similarly, use {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` and {prf:ref}`Theorem:LimitAtInfinity:Substitution` to write
+
+$$
+ \lim_{x\rightarrow-\infty}\frac{1}{1+e^{-x}}=\frac{1}{\lim_{x\rightarrow-\infty}1+\lim_{x\rightarrow-\infty}e^{-x}}.
+$$
+
+With {prf:ref}`Theorem:LimitAtInfinity:Standardlimits` we find $\displaystyle \lim_{x\rightarrow-\infty}1$ and $\lim_{x\rightarrow-\infty}e^{-x}=\infty$. Hence, we obtain with {prf:ref}`Theorem:LimitAtInfinity:Substitution2` that
+
+$$
+ \lim_{x\rightarrow-\infty}\frac{1}{1+e^{-x}}=\lim_{x\rightarrow\infty}\frac{1}{x}=0.
+$$
+
+So this function $f$ has two horizontal asymptotes: one at $y=1$ corresponding to the limit at infinity and one at $y=0$ corresponding to the limit at minus infinity.
+
+:::{todo}
+Make an applet with the graph of this function, clearly showing the two horizontal asymptotes.
+:::
+::::::
+
 In addition, we obtain the following comparison result for limits.
 
 ::::::{prf:theorem} Comparison of limits at infinity
 :label: Theorem:LimitAtInfinity:Comparison
-Suppose that $\lim\limits_{x\rightarrow \infty}f(x)=L$ and $\lim\limits_{x\rightarrow \infty}g(x)=M$. Also suppose that $f(x)\leq g(x)$ for all $x\geq d$ for a certain $d$. Then $L\leq M$.
+Suppose that $\lim\limits_{x\rightarrow \infty}f(x)=L$ and $\lim\limits_{x\rightarrow \infty}g(x)=M$. Also suppose that $f(x)\leq g(x)$ for all $x$ in some interval $[d,\infty)$. Then $L\leq M$.
 
+A similar result holds for the limit at minus infinity.
 ::::::
 
-Again, this result makes sense intuitively: if the function values $f(x)$ are always below $g(x)$, how could the limit $L$ suddenly become larger than $M$? However, in the situation of {prf:ref}`Theorem:LimitAtInfinity:Comparison` you might expect if we knew that $f(x)<g(x)$ for all $x$ close to $a$ that it should follow that $L<M$. This is not true, in general, as can be seen from the following example.
+Again, this result makes sense intuitively: if the function values $f(x)$ are always below $g(x)$, how could the limit $L$ suddenly become larger than $M$? However, in the situation of {prf:ref}`Theorem:LimitAtInfinity:Comparison` you might expect if we knew that $f(x)<g(x)$ for all $x$ close to $a$ that it should follow that $L<M$. This is not true in general, as can be seen from the following example.
 
 ::::::{prf:example} 
 :label: Ex:LimitAtInfinityComparison
@@ -349,7 +429,7 @@ $$
 f(x)\leq g(x)\leq h(x)
 $$
 
-for all $x$ close to $a$, so the function $g$ is squeezed in between the functions $f$ and $h$. Suppose that, in addition, we know that $\lim\limits_{x\rightarrow \infty}f(x)$ and $\lim\limits_{x\rightarrow \infty}h(x)$ are **equal**, say they are both $L$. What does that tell us about $\lim\limits_{x\rightarrow \infty}g(x)$?
+for all $x$ in some interval $[d\infty)$, so the function $g$ is squeezed in between the functions $f$ and $h$. Suppose that, in addition, we know that $\lim\limits_{x\rightarrow \infty}f(x)$ and $\lim\limits_{x\rightarrow \infty}h(x)$ are **equal**, say they are both $L$. What does that tell us about $\lim\limits_{x\rightarrow \infty}g(x)$?
 
 Well, since $f(x)\leq g(x)$ and $\lim\limits_{x\rightarrow \infty}f(x)=L$, we know that $\lim\limits_{x\rightarrow \infty}g(x)$, if it exists, should be **at least** equal to $L$. On the other hand, since $g(x)\leq h(x)$ and $\lim\limits_{x\rightarrow \infty}h(x)=L$, we find that $\lim\limits_{x\rightarrow \infty}g(x)$, again if it exists, should be **at most** equal to $L$.
 
@@ -357,7 +437,7 @@ We conclude that the limit $\lim\limits_{x\rightarrow \infty}g(x)$ is forced to 
 
 ::::::{prf:theorem} Squeeze theorem for limits at infinity
 :label: Theorem:LimitAtInfinity:Squeezetheorem
-Suppose that $\lim\limits_{x\rightarrow \infty}f(x)=\lim\limits_{x\rightarrow \infty}h(x)=L$. Also suppose that $f(x)\leq g(x)\leq h(x)$ for all $x\geq d$ for some $d$. Then $\lim\limits_{x\rightarrow \infty}g(x)$ also exists and $\lim\limits_{x\rightarrow \infty}g(x)=L$.
+Suppose that $\lim\limits_{x\rightarrow \infty}f(x)=\lim\limits_{x\rightarrow \infty}h(x)=L$. Also suppose that $f(x)\leq g(x)\leq h(x)$ for all $x$ in some interval $[d,\infty)$. Then $\lim\limits_{x\rightarrow \infty}g(x)$ also exists and $\lim\limits_{x\rightarrow \infty}g(x)=L$.
 
 The corresponding result also holds for limits at minus infinity.
 
@@ -377,7 +457,7 @@ An illustration of the {prf:ref}`Squeeze theorem for limits at infinity <Theorem
 
 ::::::
 
-Now consider a limit of the form $\lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials. We write $p(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_0$ and $q(x)=b_mx^m+b_{m-1}x^{m-1}+...+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Whenever both $p$ and $q$ are not constant, i.e. when $n\geq 1$ and $m\geq 1$, we cannot evaluate the limit directly since both $p$ and $q$ have terms that go to infinity and/or minus infinity as $x$ approaches infinity ($a_nx^n$ for $p$ and $b_mx^m$ for $q$). So how does the function $\frac{p(x)}{q(x)}$ behave for large values of $x$? Notice that if $x$ is large enough the term $a_nx^n$ will be much larger (in absolute value) than the other terms $a_{n-1}x^{n-1}+...+a_0$ of $p$. Similarly, the term $b_mx^m$ will dominate the other terms $b_{m-1}x^{m-1}+...+b_0$ of $q$. So for large values of $x$ we have
+Now consider a limit of a rational function, i.e. a limit of the form $\lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials. We write $p(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_0$ and $q(x)=b_mx^m+b_{m-1}x^{m-1}+...+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Whenever both $p$ and $q$ are not constant, i.e. when $n\geq 1$ and $m\geq 1$, we cannot evaluate the limit directly since both $p$ and $q$ have terms that go to infinity and/or minus infinity as $x$ approaches infinity ($a_nx^n$ for $p$ and $b_mx^m$ for $q$). So how does the function $\frac{p(x)}{q(x)}$ behave for large values of $x$? Notice that if $x$ is large enough the term $a_nx^n$ will be much larger (in absolute value) than the other terms $a_{n-1}x^{n-1}+...+a_0$ of $p$. Similarly, the term $b_mx^m$ will dominate the other terms $b_{m-1}x^{m-1}+...+b_0$ of $q$. So for large values of $x$ we have
 
 $$
  \frac{p(x)}{q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+...+a_0}{b_mx^m+b_{m-1}x^{m-1}+...+b_0}\approx \frac{a_nx^n}{b_mx^m}=\frac{a_n}{b_m}x^{n-m}
@@ -386,16 +466,18 @@ $$
 It now depends on whether $n-m\leq  0$ or $n-m> 0$ whether the limit $\lim\limits_{x\rightarrow \infty}\frac{a_n}{b_m}x^{n-m}$ on whether this limit exists or not, but at least, it gives us an idea of how to compute this limit. In fact, we can make the computation a bit more rigorous. Suppose, for now, that $n< m$. That means that $x^m$ is the dominant term in the fraction. In that case we divide both parts of the fraction by $x^m$ to write
 
 $$
- \frac{p(x)}{q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+...+a_0}{b_mx^m+b_{m-1}x^{m-1}+...+b_0}=\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n-1}}+...+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+...+\frac{b_0}{x^m}}
+ \frac{p(x)}{q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+...+a_0}{b_mx^m+b_{m-1}x^{m-1}+...+b_0}=\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n+1}}+...+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+...+\frac{b_0}{x^m}}.
 $$
 
 Since $n< m$, we can evaluate now evaluate the limit by using {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
 
 $$
- \lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}=\lim\limits_{x\rightarrow \infty}\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n+1}}+...+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+...+\frac{b_0}{x^m}}=\frac{0+0+...+0}{b_m+0+...+0}=0
+ \lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}=\lim\limits_{x\rightarrow \infty}\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n+1}}+...+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+...+\frac{b_0}{x^m}}=\frac{0+0+...+0}{b_m+0+...+0}=0.
 $$
 
 This technique also works when $n=m$, in which case the limit is $\frac{a_n}{b_m}$, or when $n>m$, in which case the limit does not exist. This technique is known as **division by the dominant term**. It also works when $p$ and $q$ are not polynomials, but contain other powers of $x$ like $\sqrt[3]{x}$ or $\sqrt{x^2+x}$. In these cases it is sometimes a bit harder to see what the dominant term is. For instance, in the function $f(x)=\dfrac{x^2+1}{\sqrt{x^3+1}}$ the dominant power is **not** $x^3$, as this one is inside a square root. Indeed, for large values of $x$ we have $\sqrt{x^3+1}\approx \sqrt{x^3}=x^{\frac{3}{2}}$. As such, the dominant term is $x^2$ in this case.
+
+The technique even works when we are evaluating limits of expressions like $\dfrac{1+e^{2x}}{e^x+e^{2x}}$ or $\dfrac{3\ln(x)+\ln(x)^2}{4+\ln(x)^2}$, where the numerator and denominator are polynomials in $e^x$ or $\ln(x)$ instead of $x$, see {prf:ref}`Ex:LimitAtInfinity:Dominant3`.
 
 ::::::{prf:example} Division by dominant term
 :label: Ex:LimitAtInfinity:Dominant
@@ -403,87 +485,113 @@ This technique also works when $n=m$, in which case the limit is $\frac{a_n}{b_m
 Suppose that we want to evaluate $\lim\limits_{x\rightarrow \infty}\dfrac{2x+\sqrt{x}-x^3}{3x^3+x^2}$. The highest power of $x$ is $x^3$, so that will be the dominant term. We evaluate the limit by dividing both parts of the fraction by this dominant term. This gives
 
 $$
- \lim\limits_{x\rightarrow \infty}\dfrac{2x+\sqrt{x}-x^3}{3x^3+x^2}=\lim\limits_{x\rightarrow \infty}\dfrac{\frac{2}{x^2}+\frac{1}{x^{\frac{5}{2}}}-1}{3+\frac{1}{x}}
+ \lim\limits_{x\rightarrow \infty}\dfrac{2x+\sqrt{x}-x^3}{3x^3+x^2}=\lim\limits_{x\rightarrow \infty}\dfrac{\frac{2}{x^2}+\frac{1}{x^{\frac{5}{2}}}-1}{3+\frac{1}{x}}.
 $$
 
 We can now use {prf:ref}`Theorem:LimitAtInfinity:Standardlimits` and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
 
 $$
- \lim\limits_{x\rightarrow \infty}\dfrac{2x+\sqrt{x}-x^3}{3x^3+x^2}=\lim\limits_{x\rightarrow \infty}\dfrac{\frac{2}{x^2}+\frac{1}{x^{\frac{5}{2}}}-1}{3+\frac{1}{x}}=\dfrac{0+0-1}{3+0}=-\frac{1}{3}
+ \lim\limits_{x\rightarrow \infty}\dfrac{2x+\sqrt{x}-x^3}{3x^3+x^2}=\lim\limits_{x\rightarrow \infty}\dfrac{\frac{2}{x^2}+\frac{1}{x^{\frac{5}{2}}}-1}{3+\frac{1}{x}}=\dfrac{0+0-1}{3+0}=-\frac{1}{3}.
 $$
 ::::::
 
 ::::::{prf:example} Division by dominant term
 :label: Ex:LimitAtInfinity:Dominant2
 
-Suppose that we want to evaluate $\lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}$. The highest power of $x$ is $x^4$, but $x^4$ is not the dominant term, since it appears inside of a square root. Note that for very negative values of $x$ we have $\sqrt{1+x^2}\approx \sqrt{x^2}=|x|$, so the term $\sqrt{1+x^2}$ behaves like $|x|$ for very negative values of $x$. As such, the dominant term in this expression is $x$. We evaluate the limit by dividing both parts of the fraction by this dominant term. This gives
+Suppose that we want to evaluate $\lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}$. The highest power of $x$ is $x^2$, but $x^2$ is not the dominant term, since it appears inside of a square root. Note that for very negative values of $x$ we have $\sqrt{1+x^2}\approx \sqrt{x^2}=|x|=-x$, so the term $\sqrt{1+x^2}$ behaves like $-x$ for large negative values of $x$. As such, the dominant term in this expression is $x$. We evaluate the limit by dividing both parts of the fraction by this dominant term. This gives
 
 $$
- \lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{1}{x}}
+ \lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{2}{x}}.
 $$
 
 A very common mistake, is to now write
 
 $$
- \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{1}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\sqrt{\frac{1}{x^2}+1}+\frac{1}{x}}\qquad\qquad \left(\textbf{INCORRECT}\right)
+ \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{2}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\sqrt{\frac{1}{x^2}+1}+\frac{2}{x}}.\qquad\qquad \left(\textbf{INCORRECT}\right)
 $$
 
-Can you spot the error? The computation would have been correct if we would have considered the limit at infinity instead of at minus infinity. Notice that for $x<0$ the expression $\frac{1}{x}\sqrt{1+x^2}$ is negative, while the expression $\sqrt{\frac{1}{x^2}+1}$ is positive, so they can never be equal. Indeed, we can write
+Can you spot the error? The computation would have been correct if we had considered the limit at infinity instead of at minus infinity. Notice that for $x<0$ the expression $\frac{1}{x}\sqrt{1+x^2}$ is negative, while the expression $\sqrt{\frac{1}{x^2}+1}$ is positive, so they can never be equal. Indeed, we can write
 
 $$
- \frac{1}{x}\sqrt{1+x^2}=\frac{1}{x}\sqrt{x^2}\sqrt{\frac{1}{x^2}+1}=\frac{1}{x}|x|\sqrt{\frac{1}{x^2}+1}=-\sqrt{\frac{1}{x^2}+1}
+ \frac{1}{x}\sqrt{1+x^2}=\frac{1}{x}\sqrt{x^2}\sqrt{\frac{1}{x^2}+1}=\frac{1}{x}|x|\sqrt{\frac{1}{x^2}+1}=-\sqrt{\frac{1}{x^2}+1}.
 $$
 
 Here we used that $\frac{1}{x}|x|=-1$ since $x<0$. As such, the correct computation is
 
 $$
- \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{1}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{-\sqrt{\frac{1}{x^2}+1}+\frac{1}{x}}
+ \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{2}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{-\sqrt{\frac{1}{x^2}+1}+\frac{2}{x}}
 $$
 
 We can now use {prf:ref}`Theorem:LimitAtInfinity:Standardlimits` and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
 
 $$
- \lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{-\sqrt{\frac{1}{x^2}+1}+\frac{1}{x}}=\dfrac{0+3}{-\sqrt{0+1}+0}=-\frac{1}{3}
+ \lim\limits_{x\rightarrow -\infty}\dfrac{1+3x}{\sqrt{1+x^2}+2}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{-\sqrt{\frac{1}{x^2}+1}+\frac{2}{x}}=\dfrac{0+3}{-\sqrt{0+1}+0}=-3
 $$
 ::::::
 
-Now consider a limit of the form $\lim\limits_{x\rightarrow \infty}p(x)-q(x)\sqrt{r(x)}$ where both $\lim\limits_{x\rightarrow \infty}p(x)$ and $\lim\limits_{x\rightarrow \infty}q(x)\sqrt{r(x)}$ do not exist (for instance, because they are both infinite). Then it can often help to multiply by the 'conjugate square root' $\dfrac{p(x)+q(x)\sqrt{r(x)}}{p(x)+q(x)\sqrt{r(x)}}$ (effectively, we multiply by the constant function $1$, although it is written a bit uglier than usual, so the value of the limit does not change). This technique is also known as the **square root trick**. The reason that this trick works, is that the product $(p(x)-q(x)\sqrt{r(x)})(p(x)+q(x)\sqrt{r(x)})$ simplifies into $p(x)^2-q(x)^2r(x)$, which no longer involves a square root. If $p$, $q$ and $r$ are polynomials, the previously discussed technique of division by the dominant term can subsequently be used to evaluate the limit.
+::::::{prf:example} Division by dominant term
+:label: Ex:LimitAtInfinity:Dominant3
+
+Suppose that we want to evaluate $\lim\limits_{x\rightarrow \infty}\dfrac{1+e^{2x}}{e^x+e^{2x}}$. Then we note that $e^{2x}=\left(e^x\right)^2$, so we can view this function as a rational function in $e^x$. The highest power of $e^x$ is $\left(e^x\right)^2=e^{2x}$. So we divide both parts of the fraction by this highest power to obtain
+
+$$
+ \lim\limits_{x\rightarrow \infty}\dfrac{1+e^{2x}}{e^x+e^{2x}}=\lim\limits_{x\rightarrow \infty}\dfrac{e^{-2x}+1}{e^{-x}+1}.
+$$
+
+We can now use {prf:ref}`Theorem:LimitAtInfinity:Standardlimits` and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
+
+$$
+ \lim\limits_{x\rightarrow \infty}\dfrac{1+e^{2x}}{e^x+e^{2x}}=\lim\limits_{x\rightarrow \infty}\dfrac{e^{-2x}+1}{e^{-x}+1}=\dfrac{0+1}{0+1}=1.
+$$
+::::::
+
+
+Now consider a limit of the form $\lim\limits_{x\rightarrow \infty}\left(p(x)-q(x)\sqrt{r(x)}\right)$ where both $\lim\limits_{x\rightarrow \infty}p(x)$ and $\lim\limits_{x\rightarrow \infty}q(x)\sqrt{r(x)}$ do not exist (for instance, because they are both infinite). Then it can often help to multiply by the 'conjugate square root' $\dfrac{p(x)+q(x)\sqrt{r(x)}}{p(x)+q(x)\sqrt{r(x)}}$ (effectively, we multiply by the constant function $1$, although it is written a bit uglier than usual, so the value of the limit does not change). This technique is also known as the **square root trick**. The reason that this trick works, is that the product $(p(x)-q(x)\sqrt{r(x)})(p(x)+q(x)\sqrt{r(x)})$ simplifies into $p(x)^2-q(x)^2r(x)$, which no longer involves a square root. If $p$, $q$ and $r$ are polynomials, the previously discussed technique of division by the dominant term can subsequently be used to evaluate the limit.
 
 ::::::{prf:example} Square root trick
 :label: Ex:LimitAtInfinity:Squareroottrick.
-Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}x-\sqrt{x^2+1}$. Notice that both the function is of the form described above and that $\lim\limits_{x\rightarrow\infty }x=\lim\limits_{x\rightarrow\infty }\sqrt{x^2+1}=\infty$. Hence, the limit is of the form "$\infty-\infty$" and as such, it is not clear what happens. Using the square root trick we can evaluate the limit by rewriting
+Suppose we want to evaluate $\lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+x}$. Notice that both the function is of the form described above and that $\lim\limits_{x\rightarrow\infty }x=\lim\limits_{x\rightarrow\infty }\sqrt{x^2+x}=\infty$. Hence, the limit is of the form "$\infty-\infty$" and as such, it is not clear what happens. Using the square root trick we can evaluate the limit by rewriting
 
 \begin{align*}
- \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+1} &= \lim\limits_{x\rightarrow \infty}\left(x-\sqrt{x^2+1}\right)\dfrac{x+\sqrt{x^2+1}}{x+\sqrt{x^2+1}} \\
- &= \lim\limits_{x\rightarrow \infty}\dfrac{x^2-(x^2+1)}{x+\sqrt{x^2+1}} \\
- &= \lim\limits_{x\rightarrow \infty}\frac{-1}{x+\sqrt{x^2+1}}.
+ \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+x} &= \lim\limits_{x\rightarrow \infty}\left(x-\sqrt{x^2+x}\right)\dfrac{x+\sqrt{x^2+x}}{x+\sqrt{x^2+x}} \\
+ &= \lim\limits_{x\rightarrow \infty}\dfrac{x^2-(x^2+x)}{x+\sqrt{x^2+1x}} \\
+ &= \lim\limits_{x\rightarrow \infty}\frac{-x}{x+\sqrt{x^2+x}}.
 \end{align*}
 Note that the dominant term in this expression is $x$ and we divide both parts of the fraction by $x$ to evaluate
 
 $$
- \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+1}=\lim\limits_{x\rightarrow \infty}\frac{-1}{x+\sqrt{x^2+1}}=\lim\limits_{x\rightarrow \infty}\frac{-\frac{1}{x}}{1+\frac{1}{x}\sqrt{x^2+1}}=\lim\limits_{x\rightarrow \infty}\frac{-\frac{1}{x}}{1+\sqrt{1+\frac{1}{x^2}}}.
+ \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+x}=\lim\limits_{x\rightarrow \infty}\frac{-x}{x+\sqrt{x^2+x}}=\lim\limits_{x\rightarrow \infty}\frac{-1}{1+\frac{1}{x}\sqrt{x^2+x}}=\lim\limits_{x\rightarrow \infty}\frac{-1}{1+\sqrt{1+\frac{1}{x}}}.
 $$
 
 The remaining limit can be evaluated directly and we find
 
 $$
- \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+1}=\lim\limits_{x\rightarrow \infty}\frac{-\frac{1}{x}}{1+\sqrt{1+\frac{1}{x^2}}}=\frac{0}{1+0}=0.
+ \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+x}=\lim\limits_{x\rightarrow \infty}\frac{-1}{1+\sqrt{1+\frac{1}{x}}}=\frac{-1}{1+1}=-\frac{1}{2}.
 $$
 
 ::::::
 
-Limits at infinity can also be used to compare the **growth rate** of two functions, i.e. when can use the to determine whether a function "grows faster" than another function. 
+Limits at infinity can also be used to compare the **growth rate** of two functions, i.e. whe can use them to determine whether a function "grows faster" than another function. 
 
 ::::::{prf:definition} Growth rate
 :label: Def:LimitAtInfinity:Growthrate
 
 Consider two functions $f$ and $g$ with $\lim\limits_{x\rightarrow\infty}f(x)=\infty$ and $\lim\limits_{x\rightarrow\infty}g(x)=\infty$. Then we say that
 
-- $f$ **grows faster** than $g$ if $\lim\limits_{x\rightarrow\infty}\dfrac{f(x)}{g(x)}=\infty$.
-- $g$ **grows faster** than $f$ if $\lim\limits_{x\rightarrow\infty}\dfrac{f(x)}{g(x)}=0$.
+- $g$ **grows faster** than $f$ if $\lim\limits_{x\rightarrow\infty}\dfrac{g(x)}{f(x)}=\infty$, or, equivalently, if $\lim\limits_{x\rightarrow\infty}\dfrac{f(x)}{g(x)}=0$.
 - $f$ and $g$ **grow at a comparable rate** if $\lim\limits_{x\rightarrow\infty}\dfrac{f(x)}{g(x)}=c$ for some $c\neq 0$.
 
 ::::::
+
+:::{note}
+Suppose we have two functions with $f$ and $g$ with $\lim\limits_{x\rightarrow\infty}f(x)=\infty$ and $\lim\limits_{x\rightarrow\infty}g(x)=\infty$. If $g$ grows faster than $f$, we can write $f(x)=o(g(x))$ as $x\rightarrow \infty$, which reads "$f(x)$ is little o of $g(x)$".
+
+Similarly, if $f$ and $g$ grow at a comparable rate, we write $f(x)=O(g(x))$, which reads "$f(x)$ is big O of $g(x)$". 
+
+However, the little o and big O notations are not used exclusively for functions that grow to infinity. In general, we write $f(x)=o(g(x))$ whenever $\lim\limits_{x\rightarrow\infty}\dfrac{f(x)}{g(x)}=0$ and we write $f(x)=O(g(x))$ whenever there is a positive real number $M$ such that $|f(x)|\leq Mg(x)$ for all $x$. 
+
+In computer science, the big O notation is commonly used to classify the complexity of algorithms, i.e. to classify how much time or space their run time needs.
+:::
 
 ::::::{prf:theorem} Standard growth rates
 :label: Theorem:LimitAtInfinity:Standardgrowthrates
@@ -496,6 +604,8 @@ Consider the functions $f(x)=e^{ax}$, $g(x)=x^r$ and $h(x)=\ln(bx)$ for some $a>
 
 
 ::::::
+
+In order to prove {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates` we need some tools that are beyond the scope of this section. We will prove it later in {prf:ref}`Section:lHospital`.
 
 (Subsec:LimitinfOblique)=
 
@@ -609,6 +719,20 @@ Finally, we have the corresponding notations $\lim\limits_{x\rightarrow -\infty}
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`
 :class: tudproof 
+First consider $f(x)=1$. Let $\varepsilon>0$ be given. Since $f$ is constant, we can take $N$ whatever we want, so we choose $N=0$. Then for all $x\geq N$ we have
+
+$$
+ |f(x)-1|=|1-1|=0<\varepsilon.
+$$
+
+Hence, we obtain $\lim\limits_{x\rightarrow \infty}1=1$. Similarly, for $x\leq N$ we have
+
+$$
+ |f(x)-1|=|1-1|=0<\varepsilon.
+$$
+
+Hence, we obtain $\lim\limits_{x\rightarrow -\infty}1=1$.
+
 Consider $f(x)=x^r$ with $r<0$. Let $\varepsilon>0$ be given. Since $x^r< \varepsilon$ precisely when $x>\frac{1}{\varepsilon^{\frac{1}{r}}}$ we choose $N=\frac{1}{\varepsilon^{\frac{1}{r}}}$. Then for $x\geq N$ we have
 
 $$
@@ -725,6 +849,20 @@ $$
 $$
 
 We conclude that $\lim\limits_{x\rightarrow \infty}\frac{1}{g(x)}=\frac{1}{M}$. By the product rule, we find that $\lim\limits_{x\rightarrow \infty}\frac{f(x)}{g(x)}=\lim\limits_{x\rightarrow \infty}f(x)\frac{1}{g(x)}=L\frac{1}{M}=\frac{L}{M}$.
+::::::
+
+
+
+::::::{admonition} {prf:ref}`Theorem:LimitAtInfinity:Substitution2`
+:class: tudproof 
+We first assume that $\lim\limits_{x\rightarrow\infty}g(x)=\infty$. Let $\varepsilon>0$ be given. We write $\lim\limits_{x\rightarrow\infty}f(x)=L$ and we pick $N$ in such a way that for $x$ with $x\geq N_1$ we have $|f(x)-L|<\varepsilon$. Since $\lim\limits_{x\rightarrow\infty}g(x)=\infty$, we can pick $N_2$ such that for all $x\geq N_2$ we have $g(x)\geq N_1$. Then for $x\geq N_2$ we have $|f(g(x))-L|<\varepsilon$, since $g(x)\geq N_1$. As such, we find that $\lim\limits_{x\rightarrow\infty}f(g(x))=L$. 
+
+
+Now suppose that $\lim\limits_{x\rightarrow\infty}g(x)=\infty$ and $\lim\limits_{x\rightarrow\infty}f(x)=\infty$. Let $B$ be given. Since $\lim\limits_{x\rightarrow\infty}f(x)=\infty$ we can pick $N_1$ such that for $x$ with $x\geq N_1$ we have $f(x)\geq N_1$. Since $\lim\limits_{x\rightarrow\infty}g(x)=\infty$, we can pick $N_2$ such that for all $x\geq N_2$ we have $g(x)\geq N_1$. Then for $x\geq N_2$ we have $f(g(x))\geq B$, since $g(x)\geq N_1$. As such, we find that $\lim\limits_{x\rightarrow\infty}f(g(x))=\infty$. 
+
+
+The proof for the other cases follow similarly.
+
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Comparison`

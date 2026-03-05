@@ -27,6 +27,10 @@ Consider the functions $f(x)=\dfrac{x-1}{x^2-1}$ and $g(x)=\dfrac{x}{x^2-2x+1}$.
 An illustration of the functions $f(x)$ and $g(x)$ near the point $x=1$.
 ::::
 
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:FirstLimitEx1` into an applet.
+:::
+
 Let us try to figure out what is going on here. For the function $g$, the function values seem to blow up near $x=1$, while for the function $f$ nothing bad seems to happen at all. We can make this a bit more explicit by evaluating the functions $f$ and $g$ at values of $x$ close to $1$.
 
 ```{list-table} Function values of $f$ and $g$ near $x=1$.
@@ -150,6 +154,10 @@ Some function $f$.
 
 ::::
 
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:SomeFunction` into an applet.
+:::
+
 :::{prf:remark}
 :label: Remark:LimitAtPoint:Visualinteractive
 
@@ -168,6 +176,25 @@ Finally, at $x=1$ the function values approach the value $0$, both from the left
 We conclude that $\lim\limits_{x\rightarrow a}f(x)$ exists for all values of $a$ except $a=-2$ and $a=-1$.
 
 ::::::
+
+::::{todo}
+**Polling question**
+Consider the function $f$ that rounds a number to the nearest integer. So, for instance, $f(4.2)=4$, $f(6.5)=7$ and $f(-1.88)=-2$. What can we say about the limit $\displaystyle\lim_{x\rightarrow 3.5}f(x)$?
+
+A. Only the left limit $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$ exists.
+B. Only the right limit $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ exists.
+C. The limit $\displaystyle\lim_{x\rightarrow 3.5}f(x)$ exists.
+D. The left limit $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ both exist, but are unequal.
+E. The left limit $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ both do not exist.
+
+:::{admonition} Solution
+:class: dropdown
+The correct answer is D.
+
+Note that for values of close to $3.5$ with $x<3.5$ we have $f(x)=3$. So we find that $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)=3$. On the other hand, for values of close to $3.5$ with $x>3.5$ we have $f(x)=4$. So find find that $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)=4$. So the left and right limits both exist, but are unequal. In particular, the limit $\displaystyle\lim_{x\rightarrow 3.5}f(x)$ does not exist.
+
+:::
+::::
 
 
 So how do you evaluate limits (regular, left or right)? There are various techniques, which we will discuss throughout this chapter. In several of these, we evaluate the limit by rewriting or simplifying the function at hand. Indeed, in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` we evaluated the limit $\lim\limits_{x\rightarrow 1}f(x)$ by finding a function $h$ which is equal to $f$ everywhere except at $x=1$ and for which $1$ was in the domain of $h$. The following two results show that this idea works more generally.
@@ -219,6 +246,10 @@ We conclude that the left and right limit of $f$ as $x$ approaches $0$ both exis
 An illustration of the function $f(x)=\frac{|x|}{x}$ near the point $x=0$, showing that the left and right limits are unequal.
 ::::
 
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:LimitLeftRight` into an applet.
+:::
+
 ::::::
 
 Left and right limits are also convenient when evaluating limits of piecewise defined functions, as can be seen from the following example.
@@ -249,6 +280,10 @@ An illustration of the piecewice defined function $f(x)$ near the point $x=2$, s
 
 ::::
 
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:LimitLeftRightPiecewise` into an applet.
+:::
+
 ::::::
 
 Note that in {prf:ref}`Ex:LimitAtPoint:LimitLeftRightPiecewise` the function $f$ was defined in the point $x=2$, but that did not influence the value of the limit at all; in fact, the limit $\lim\limits_{x\rightarrow 2}f(x)$ is unequal to $f(2)$. This is because, when evaluating a limit, we are only interested in the behaviour of the function values $f(x)$ for $x$ close to, but *unequal to* $a$. We can summarize this observation as follows.
@@ -271,6 +306,10 @@ Consider the function $f(x)=\sqrt{x-3}$ and suppose we want to evaluate the limi
 An illustration of the function $f(x)=\sqrt{x-3}$, showing that it is undefined for $x<3$.
 :::
 
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:Limitoutsidedomain` into an applet.
+:::
+
 ::::::
 
 ::::::{prf:example}
@@ -283,6 +322,10 @@ Consider the function $f(x)=\sin\left(\frac{1}{x}\right)$ and suppose we want to
 
 An illustration of the function $f(x)=\sin\left(\frac{1}{x}\right)$, showing the oscillation between $-1$ and $1$ as $x$ approaches $0$.
 
+:::
+
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:Limitsinoneoverx` into an applet.
 :::
 
 ::::::
@@ -394,6 +437,10 @@ so $g$ is squeezed in between the functions $f$ and $h$. Moreover, we note that 
 An illustration of the squeeze theorem, showing the functions $f$, $g$, and $h$ around the point $0$.
 ::::
 
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:Squeezetheorem` into an applet.
+:::
+
 ::::::
 
 Now consider a limit of the form $\lim\limits_{x\rightarrow a}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials that have $p(a)=q(a)=0$. We cannot evaluate the limit directly since we cannot divide by $0$. We also say that this limit is of the **indeterminate form** "$\frac{0}{0}$" as $x$ approaches $a$. Recall that we encountered this situation in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` when evaluating the limit $\lim\limits_{x\rightarrow 1}\frac{x-1}{x^2-1}$. There, we evaluated the limit by factoring the denominator. This works in general.
@@ -453,6 +500,34 @@ $$
 
 ::::::
 
+::::{todo}
+**Polling question**
+Consider the limit $\displaystyle \lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}$. Knowing the identity $a^3-b^3=(a-b)\left(a^2+ab+b^2\right)$, by which factor should you multiply the numerator and denominator of $\displaystyle \frac{x^2-4}{1-\sqrt[3]{x^3-7}}$ to simplify the limit?
+
+A. $\sqrt[3]{x^3-7}+1$
+B. $\sqrt[3]{\left(x^3-7\right)^2}+1$
+C. $\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1$
+D. It is impossible to simplify this limit.
+
+:::{admonition} Solution
+:class: dropdown
+The correct answer is C.
+
+We want to use the identity $a^3-b^3=(a-b)\left(a^2+ab+b^2\right)$. As such, we let $a=1$ and $b=\sqrt[3]{x^3-7}$, so that the denominator of the function in the limit is $a-b$. Then we multiply both parts of the fraction by $a^2+ab+b^2=\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1$ to obtain
+
+$$
+ \begin{array}{lcl}\lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}&=&\lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}\cdot\frac{\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1}{\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1}\\ &=&\lim_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{\left(\sqrt[3]{x^2-7}\right)^3-1^3}\\ &=&\lim_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^3-8}.\end{array}
+$$
+
+Now in order to evaluate the resulting limit, we note that $x^2-4=(x-2)(x+2)$ and $x^3-8=(x-2)(x^2+2x+4)$. This gives
+
+$$
+ \begin{array}{lcl}\lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}&=&\lim_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^3-8}\\ &=&\lim_{x\rightarrow 2}\frac{\left(x+2\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^2+2x+4}\\ &=&\frac{(2+2)\left(\sqrt[3]{1}+\sqrt[3]{1}+1\right)}{12}\\&=&1. \end{array}
+$$
+
+:::
+::::
+
 (Subsec:Limitsvertical)=
 
 ## Vertical asymptotes
@@ -497,6 +572,10 @@ Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}\dfrac{1}{x^2}$. Note t
 An illustration of the function $f(x)=\frac{1}{x^2}$ near the point $x=0$, showing the vertical asymptote at $x=0$.
 ::::
 
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:Verticalasymptote1` into an applet.
+:::
+
 ::::::
 
 ::::::{prf:example} 
@@ -517,6 +596,11 @@ We conclude that $f$ has $2$ vertical asymptotes, one at $x=1$ and $x=2$. Moreov
 
 An illustration of the function $f(x)=\frac{1}{(x-1)(x-2)^2}$ near the points $x=1$ and $x=2$, showing the vertical asymptotes at these points.
 ::::
+
+
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:Verticalasymptote2` into an applet.
+:::
 
 ::::::
 
@@ -550,6 +634,10 @@ If no such value $L$ exists we say that the limit does not exist.
 
 An illustration of the formal definition of a limit.
 ::::
+
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:Limitepsilondelta` into an applet.
+:::
 
 This definition should be interpreted as follows. The arbitrary constant $\varepsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow a}f(x)=L$, we want that, for $x$ close enough to $a$, the function values $f(x)$ are at most distance $\varepsilon$ to $L$, i.e. $|f(x)-L|<\varepsilon$. Here "$x$ close enough to $a$" means that this inequality should hold true for all $x$ in a (possibly very small) interval centered around $a$, i.e. an interval of the form $(a-\delta,a+\delta)$, except for $x=a$. Of course, what this $\delta$ is, depends both on the function $f$ and the choice of $\varepsilon$. Typically, the smaller $\varepsilon$ is, the smaller $\delta$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\varepsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\varepsilon$ is small. Remember that we cannot choose $\varepsilon$ ourselves: for **each** $\varepsilon>0$ there should be a corresponding $\delta$. Note that we can make $\delta$ always smaller if we want to: if at least one $\delta$ works for a given $\varepsilon$, we are happy. Let us try to see how to work with this definition in practice.
 
@@ -613,6 +701,10 @@ With that, we have shown that $\lim\limits_{x\rightarrow 2}x^2=4$.
 The function $f(x)=x^2$ near the point $x=2$ and the illustration of the formal definition of the limit. You can use the slider to change the value of $\varepsilon$, which is represented by the horizontal dotted lines. The corresponding vertical dashed lines show the values of $x$ that are allowed (with the choice of $\delta$ from this example).
 ::::
 
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:Formaldefexists` into an applet.
+:::
+
 ::::::
 
 ::::::{prf:example} 
@@ -633,6 +725,10 @@ We conclude that $\lim\limits_{x\rightarrow 0}\dfrac{|x|}{x}$ is unequal to $0$.
 
 The function $f(x)=\dfrac{|x|}{x}$ near the point $x=0$ and the illustration of the formal definition of the limit. You can use the slider to change the value of $\varepsilon$, which is represented by the horizontal dotted lines. The corresponding vertical dashed lines show the values of $x$ that are allowed (with the choice of $\delta$ from this example). Note that for $\varepsilon<1$ there are no allowed values of $x$, so no vertical dashed lines are shown.
 ::::
+
+:::{todo}
+Make {numref}`Fig:LimitAtPoint:Formaldefdoesnotexist` into an applet.
+:::
 
 ::::::
 
