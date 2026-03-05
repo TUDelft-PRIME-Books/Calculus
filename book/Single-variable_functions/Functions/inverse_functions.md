@@ -13,9 +13,7 @@ Easier said than done?
 
 ::::
 
-:::{todo}
-Pollingvragen
-:::
+
 
 So far, we have mainly been interested in evaluating functions, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it is also interesting for some value of $y$ in the range of $f$ to try to find for which value(s) of $x$, if any, we have $f(x)=y$. That is, we want to somehow undo the function $f$ and go back to the domain.
 
@@ -134,6 +132,10 @@ The functions $f$, $f^{-1}$ and the line $y=x$.
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:FirstEx` with an applet.
+:::
+
 ::::::
 
 ::::::{note}
@@ -236,6 +238,10 @@ The functions $f$, the line $y=x$ and the reflection of the graph of $f$ along t
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:SecondEx` with an applet.
+:::
+
 ::::::
 
 {prf:ref}`Ex:Inverse:SecondEx` shows a major issue we have at this point: we lack a quick way of showing that a function does not have an inverse function. If a function has an inverse function, we can (hopefully) find it and prove that it is an inverse function by, for instance, verifying that the cancelling equations hold, but this does not work the other way around. So the goal now is to develop a criterion to check whether a certain function has an inverse function.
@@ -293,6 +299,10 @@ Still, why does this difference in domain make that $h^{-1}$ is invertible, whil
 The functions $h(x)=\sqrt{x}$ and $q(x)=x^2$ with their full domain, $h^{-1}(x)=x^2$ with domain $[0,\infty)$, and the line $x = y$. Note that we indeed obtain $x^2$ with domain $[0,\infty)$ by reflecting $\sqrt{x}$ along the line $x = y$.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:ThirdEx` with an applet.
+:::
 
 
 ::::::
@@ -355,6 +365,10 @@ The functions $f$ and $f^{-1}$ and the line $x = y$. Note that we indeed obtain 
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:FourthEx` with an applet.
+:::
+
 ::::::
 
 Since we can determine whether a function has an inverse function by finding out whether it is one-to-one, it is useful to find some conditions on a function which guarantee the function to be one-to-one. It turns out that strictly monotonic functions, i.e. functions that are either strictly increasing or strictly decreasing on their domain, form an important class of one-to-one functions.
@@ -379,6 +393,40 @@ The case when $f$ is strictly decreasing is similar.
 
 ::::::
 
+::::{todo}
+**Polling question (multiselect?)**
+Which of these functions is/are equal to its own inverse function?
+
+A. $f(x)=\pi-x$ with domain $\mathbb{R}$
+B. $f(x)=2x$ with domain $\mathbb{R}$
+C. $f(x)=\dfrac{1}{x}$ with domain $(0,\infty)$
+D. $f(x)=\dfrac{-1}{x}$ with domain $(0,\infty)$
+E. $f(x)=1$ with domain $\mathbb{R}$
+F. $f(x)=\sqrt{1-x^2}$ with domain $[0,1]$
+
+*Note*: a function which is its own inverse function is called a **self-inverse** function.
+
+:::{admonition} Solution
+:class: dropdown
+The correct answers are A, C and F.
+
+For each of these functions, we will attempt to find an inverse function.
+
+A. The equation $y=\pi-x$ gives $x=\pi-y$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\pi-x$. In addition, the range of the original function $f$ is $\mathbb{R}$. So $f$ is its own inverse function.
+
+B. The equation $y=2x$ gives $x=\dfrac{y}{2}$. This means that this function is invertible, but its inverse is $f^{-1}(x)=\dfrac{x}{2}$. So this function is not its own inverse function.
+
+C. The equation $y=\dfrac{1}{x}$ gives $x=\dfrac{1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{1}{x}$. In addition, the range of the original function $f$ is $(0,\infty)$. So $f$ is its own inverse function.
+
+D. The equation $y=\dfrac{-1}{x}$ gives $x=\dfrac{-1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{-1}{x}$. However, the range of the original function is $(-\infty,0)$, which is the domain of the inverse function. So the inverse function is defined by the same formula as the original function, but their domains are different, so they are not the same functions.
+
+E. The equation $y=1$ cannot be solved for $x$. Indeed, the function $f$ is not one-to-one, as all values of $x$ are mapped to the same number $1$. So this function does not have an inverse function.
+
+F. The equation $y=\sqrt{1-x^2}$ gives $y^2=1-x^2$, which means $x=\pm\sqrt{1-y^2}$. Since the domain of the function in $[0,1]$, we know that any input $x$ is nonnegative, so we need the positive square root. So for $x$ in the domain of $f$ we have $y=\sqrt{1-x^2}$ precisely when $x=\sqrt{1-y^2}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\sqrt{1-x^2}$. In addition, the range of the original function $f$ is $[0,1]$. So $f$ is its own inverse function.
+
+:::
+::::
+
 So far, we have not put emphasis on the codomain of a function in relation to invertibility. However, if the range of the function is not equal to the codomain, i.e. if the function is not onto, the equation $f(x)=y$ does not have a solution $x$ for each $y$ in the codomain of $f$ (it only has a solution for $y$ in the range of $f$). So a function can only have an inverse function if the range and the codomain coincide. This is not a real problem in practice though, since we can always change the codomain of the function to be equal to the range, without changing the behaviour of the function. First, we introduce some terminology and then reformulate these considerations into a theorem.
 
 ::::::{prf:definition}
@@ -397,6 +445,8 @@ A function $f$ is invertible precisely when it is bijective. If it is only one-t
 Consider the function $h(x)=\sqrt{x}$ with domain $[0,\infty)$ and codomain $\mathbb{R}$. Since $\sqrt{x}\geq 0$ for all $x\geq 0$, the range of $f$ cannot coincide with the codomain $\mathbb{R}$. Indeed, the equation $\sqrt{x}=-1$ does not have any solutions for $x\geq 0$. So, this function is not invertible when $\mathbb{R}$ is the codomain. However, in {prf:ref}`Ex:Inverse:ThirdEx` we saw that this function is one-to-one. So, if we restrict the codomain of $h$ to be equal to the range of $h$, which is the interval $[0,\infty)$, it becomes invertible as we saw in this previous example.
 
 ::::::
+
+
 
 (Subsec:InverseLog)=
 
@@ -446,6 +496,10 @@ Let us first analyse the behaviour of logarithmic functions. Since the graph of 
 In the left graph the functions $f(x)=2^x$ and $f^{-1}(x)=\log_2(x)$ and the line $x = y$. In the right graph the functions $f(x)=\left(\frac{1}{2}\right)^x$ and $f^{-1}(x)=\log_{\frac{1}{2}}(x)$ and the line $x = y$.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:Logarithmbasisbasis` with an applet.
+:::
 
 
 First we note that the logarithm is only defined for $x>0$. This makes sense since the domain of an inverse function is equal to the range of the original function, which for the function $b^x$ is equal to $(0,\infty)$. Next, we recall that the logarithm $\log_b(x)$ is strictly increasing when $b>1$ while it is strictly decreasing if $0<b<1$. This follows from {prf:ref}`Thm:Inverse:MonotonicOnetoone`, since the function $b^x$ has the same properties. Finally, we notice that for $0<b<1$ the function values $\log_b(x)$ blow up as $x$ gets closer to $0$. In the terminology that we will introduce in {numref}`Section:LimitPoint` the logarithm has a vertical asymptote at $x=0$. This is because the graph of the logarithm is obtained by reflecting the graph of $b^x$ along the line $y=x$, and this function has the property that the function values get arbitrarily close to $0$ as $x$ gets very large (in the terminology of {numref}`Section:Limitinf`, the function $b^x$ has a horizontal asymptote at $y=0$). For $b>1$, the logarithm has a similar property, but the function values will, instead, blow up in the negative direction as $x$ approaches $0$.
@@ -556,6 +610,30 @@ as desired. The consequence directly follows by taking $b=e$.
 
 :::
 
+::::{todo}
+**Polling question**
+Using that $2^{10}=1024$, which of the following numbers is closest to $\log_2\left(1\,000\,000\,000\,000\right)$?
+
+A. $12$
+B. $40$
+C. $1000$
+D. $10\,000$
+
+:::{admonition} Solution
+:class: dropdown
+The correct answer is B.
+
+We have $1\,000\,000\,000\,000=(1000)^4$, so using the rule of calculation for logarithms we find
+
+$$
+ \log_2\left(1\,000\,000\,000\,000\right)=\log_2\left(1000^4\right)=4\log_2\left(1000\right).
+$$
+
+Now, $2^{10}=1024$ precisely means that $\log_2(1024)=10$. So $\log_2\left(1000\right)$ will be close to $10$, which means that $\log_2\left(1\,000\,000\,000\,000\right)=4\log_2\left(1000\right)$ will be close to $40$.
+
+:::
+::::
+
 (Subsec:InverseTrig)=
 
 ## Inverse trigonometric functions
@@ -574,6 +652,10 @@ In the left graph the function $f(x)=\sin(x)$ and in the right graph the functio
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:RestrictSin` with an applet.
+:::
+
 Now we turn our attention to $f(x)=\cos(x)$. Again, we want to choose an interval as our domain that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $[-1,1]$. However, the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ does not work in this case, since 1) $f$ is not one-to-one on this interval, because, for instance, $\cos\left(\frac{\pi}{4}\right)=\cos\left(-\frac{\pi}{4}\right)$ and 2) the range changes when we restrict to this interval, since for $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$ we have $\cos(x)\geq 0$. So we should choose something different. Keeping the geometric interpretation of the cosine in mind, there are actually two choices that work: the intervals $[-\pi,0]$ and $[0,\pi]$. For convenience, we choose the interval $[0,\pi]$, since it is a little nicer to work with positive input values than with negative ones. We can see that this choice works in the graph of the function.
 
 ::::{figure} Images/Fig-Inverse-RestrictCos.png
@@ -584,6 +666,10 @@ In the left graph the function $f(x)=\cos(x)$ and in the right graph the functio
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:RestrictCos` with an applet.
+:::
+
 Finally, we consider $f(x)=\tan(x)$. Here the range is actually the entire real line $\mathbb{R}$, so want to make sure we cover the entire range. As was the case with the sine, there is only one choice for an interval that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $\mathbb{R}$ and that choice is the open interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$. As before, we can see that this choice works in the graph of the function.
 
 ::::{figure} Images/Fig-Inverse-RestrictTan.png
@@ -593,6 +679,10 @@ Finally, we consider $f(x)=\tan(x)$. Here the range is actually the entire real 
 In the left graph the function $f(x)=\tan(x)$ and in the right graph the function $f(x)=\tan(x)$ restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:RestrictTan` with an applet.
+:::
 
 Since we have now found intervals on which the trigonometric functions are one-to-one, we can define their inverse functions.
 
@@ -619,6 +709,33 @@ Since the graph of an inverse function is obtained by reflecting the graph of th
 
 The three functions $\sin(x)$ (left), $\cos(x)$ (middle) and $\tan(x)$ (right) and their inverses and the line $x = y$.
 
+::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:Inversetrig` with an applet.
+:::
+
+::::{todo}
+**Polling question**
+Consider the cotangent function $\cot(x)=\frac{\cos(x)}{\sin(x)}$. How would you restrict its domain to make it one-to-one?
+
+A. $(0,\pi)$
+B. $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$
+C. $[0,\pi]$
+D. $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$
+E. None of the above
+
+
+
+:::{admonition} Solution
+:class: dropdown
+The correct answer is A.
+
+Note that $0$ is not in the domain of the cotangent, since $\sin(0)=0$ and we cannot divide by $0$. So any interval which contains $0$ cannot be the correct answer, so that already eliminates options B, C and D.
+
+Now to check that option $A$ does work, we note that for $0<x<\pi$ with $x\neq \frac{\pi}{2}$ we have $\cot(x)=\frac{\cos(x)}{\sin(x)}=\frac{1}{\tan(x)}$. Now we know that the tangent is strictly increasing on the intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$. In addition, the tangent is positive on the first of these intervals and negative on the second one. That means that the cotangent is strictly decreasing on both intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$ and that it is positive on the first of the intervals and negative on the second of these intervals. So the cotangent does not take the same value twice on the union of the intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$. Finally, we note that $\cot\left(\frac{\pi}{2}\right)=\frac{\cos\left(\frac{\pi}{2}\right)}{\sin\left(\frac{\pi}{2}\right)}=\frac{0}{1}=0$. So we conclude that the cotangent never takes the same value twice on the full interval $(0,\pi)$, so it is one-to-one on this interval. In particular, we could use this interval to define the inverse cotangent function, the arccotangent $\arccot(x)$.
+
+:::
 ::::
 
 ::::::{prf:example} 
@@ -693,6 +810,10 @@ Since $y$ takes the role of an angle, we make use of that. Assume, for now that 
 Initial triangle with sides $a$, $b$, $c$ and angle $y$ indicated.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:Simplify1` with an applet.
+:::
 :::::
 
 $$
@@ -715,6 +836,10 @@ So how do we find the adjacent side $b$? By using the Pythagorean theorem, of co
 Final triangle with sides $x$, $\sqrt{1-x^2}$, $1$ and angle $y$ indicated.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:Simplify2` with an applet.
+:::
 
 $$
  \cos(\arcsin(x))=\cos(y)=b=\sqrt{1-x^2}.
@@ -753,6 +878,10 @@ The cosine function where the thicker part is the function on the interval $\lef
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:Simplify3` with an applet.
+:::
+
 Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is nonnegative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
 
 ::::::
@@ -761,9 +890,6 @@ Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{
 
 ## Grasple exercises
 
-:::{todo}
-Voeg Grasple exercises logaritmes toe nadat deze gereviewd zijn.
-:::
 
 ### Exercises on inverses of general functions.
 

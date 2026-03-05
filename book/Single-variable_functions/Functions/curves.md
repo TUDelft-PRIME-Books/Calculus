@@ -174,7 +174,7 @@ In order to ensure that we only parametrise the lower half of the circle, we sho
 ::::::{prf:example} 
 :label: Ex:Curves:FoliumDescartes
 
-One of the most famous examples of curves defined by an implicit equation is the **folium of Descartes**. It is named after the French philosopher and mathematician [René Descartes (1596-1650)](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). One version of this curve, is the one given by the equation $x^3+y^3=3xy$. A plot of this curve is shown below.
+One of the most famous examples of curves defined by an implicit equation is the **folium of Descartes**. It is named after the French philosopher and mathematician [René Descartes (1596-1650)](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). One version of this curve is the one given by the equation $x^3+y^3=3xy$. A plot of this curve is shown below.
 
 :::{figure} Images/Fig-Curves-FoliumOfDescartes.png
 :name: Fig:Curves:FoliumOfDescartes
