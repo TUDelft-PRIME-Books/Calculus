@@ -842,7 +842,7 @@ which is a contradiction, since we assumed that $f(x)\leq g(x)$ for all $x$ clos
 :class: tudproof 
 We let $\varepsilon>0$ be given. Since we have $\lim\limits_{x\rightarrow a}f(x)=L$ we can pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have have $|f(x)-L|<\varepsilon$. Also, since $\lim\limits_{x\rightarrow a}h(x)=L$ we can pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have have $|h(x)-L|<\varepsilon$.
 
-We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$. For these values of $x$ we have $|f(x)-L|<\varepsilon$, which implies that $L-\varepsilon< f(x)$. Similarly, for these values of $x$ we have $|h(x)-L|$, which implies that $h(x)> L+\varepsilon$.
+We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$. For these values of $x$ we have $|f(x)-L|<\varepsilon$, which implies that $L-\varepsilon< f(x)$. Similarly, for these values of $x$ we have $|h(x)-L|<\varepsilon$, which implies that $h(x)> L+\varepsilon$.
 
 As such, we can estimate for $x$ with $0<|x-a|<\delta$:
 

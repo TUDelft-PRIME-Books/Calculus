@@ -23,8 +23,12 @@ Let us take, for example, $r=1\ \text{min}^{-1}$ here. Note that $T(0)=20$ °C, 
 :class: dark-light
 
 The temperature $T(t)$ in degrees Celsius of the cauliflower within the refrigerator as a function of time $t$.
-Plaatje moet alleen voor $t\geq 0$.
+
 ::::
+
+:::{todo}
+Turn {numref}`Fig:LimitAtInfinity:TempCauliflower` into an applet. Graph should only be for $t\geq 0$.
+:::
 
 We observe that our intuition was correct: the temperature of the object will first decrease rapidly before slowly moving towards the limiting value of $5$ °C. Notice that the temperature never becomes precisely equal to $5$ °C; it will always remain slightly above this value. We say that the function $T(t)$ has a **horizontal asymptote** at $T=5$ °C and we denote this by $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C. As was stated in {numref}`Section:LimitPoint`, the word asymptote comes from the Greek ἀσύμπτωτος  (asumptotos), which means "not falling together". The notation $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C can be pronounced as "the function values $T(t)$ approach the value $5$ °C as $t$ approaches infinity". The precise definition of such a limit at infinity is rather technical, so we postpone it to {numref}`Subsec:LimitinfPrecise`. Instead, we will use the following more intuitive definition.
 
@@ -110,6 +114,11 @@ Later in this section, we will show that this reasoning is indeed mathematically
 An illustration of the function $f(x)=\dfrac{4+\frac{1}{x}}{2-\frac{3}{x^2}}$ for large values of $x$.
 ::::
 
+:::{todo}
+Turn {numref}`Fig:LimitAtInfinity:Firstexample` into an applet.
+:::
+
+
 ::::::
 
 ::::::{prf:example} 
@@ -150,6 +159,10 @@ Notice that the function values seem to go towards the value $0$. This would sug
 
 An illustration of the function $f(x)=\dfrac{\sin(x)}{x^2}$ for large negative values of $x$.
 ::::
+
+:::{todo}
+Turn {numref}`Fig:LimitAtInfinity:Secondexample` into an applet. 
+:::
 
 Notice that the function $f$ actually oscillates around the horizontal asymptote $x=0$. This is not a problem, as the function values indeed tends towards $0$. However, this does mean that the original Greek meaning of the word asymptote ("not falling together") does not exactly match the modern use.
 ::::::
@@ -313,8 +326,8 @@ We have the following standard limits.
 - $\lim\limits_{x\rightarrow\infty}e^{ax}=\infty$ when $a>0$;
 - $\lim\limits_{x\rightarrow\infty}\frac{1}{\ln(x)}=0$;
 - $\lim\limits_{x\rightarrow\infty}\ln(x)=\infty$;
-- $\lim\limits_{x\rightarrow-\infty}\arctan(x)=-\dfrac{\pi}{2}$;
-- $\lim\limits_{x\rightarrow\infty}\arctan(x)=\dfrac{\pi}{2}$.
+- $\lim\limits_{x\rightarrow\infty}\arctan(x)=\dfrac{\pi}{2}$;
+- $\lim\limits_{x\rightarrow-\infty}\arctan(x)=-\dfrac{\pi}{2}$.
 ::::
 
 :::::
@@ -355,7 +368,7 @@ A similar result holds for limits at minus infinity.
 
 The result above shows that limits can be "taken inside" a nice enough function. In fact, {prf:ref}`Theorem:Continuity:SubstitutionInf` is a slightly more general version of this result. In this part of {numref}`Section:Continuity`, we will also prove {prf:ref}`Theorem:LimitAtInfinity:Substitution`.
 
-For compositions $f\circ g$ with $\lim\limits_{x\rightarrow\infty}g(x)=\infty$ or $\lim\limits_{x\rightarrow\infty}g(x)=-\infty$ we do not even need any conditions on $f$.
+For compositions $f\circ g$ with $\lim\limits_{x\rightarrow\infty}g(x)=\infty$ or $\lim\limits_{x\rightarrow\infty}g(x)=-\infty$ we do not even need any conditions on $f$. 
 
 ::::::{prf:theorem} Substitution of infinite limits
 :label: Theorem:LimitAtInfinity:Substitution2
@@ -365,6 +378,8 @@ In addition, if $\lim\limits_{x\rightarrow\infty}g(x)=\infty$ and $\lim\limits_{
 
 A similar result holds for limits of $f$ at minus infinity, or when the limit of $f$ is $-\infty$.
 ::::::
+
+Basically, this result states that there is no difference between $\lim\limits_{x\rightarrow\infty}e^{-x}$ and $\lim\limits_{x\rightarrow\infty}e^{-x^2}$, since in both cases the input of the exponential tends towards $-\infty$. Similarly, there is no difference between $\lim\limits_{x\rightarrow\infty}e^{x}$ and $\lim\limits_{x\rightarrow\infty}e^{x^2}$, or even something like $\lim\limits_{x\rightarrow\infty}e^{e^x}$, since in all cases the input of the exponential tends towards $\infty$.
 
 ::::::{prf:example} 
 :label: Ex:LimitAtInfinityComputationrules
@@ -454,6 +469,10 @@ Consider the function $f(x)=\dfrac{\sin(x)}{x^2}$ from {prf:ref}`Ex:LimitAtInfin
 
 An illustration of the {prf:ref}`Squeeze theorem for limits at infinity <Theorem:LimitAtInfinity:Squeezetheorem>`.
 ::::
+
+:::{todo}
+Turn {numref}`Fig:LimitAtInfinity:SqueezeThm` into an applet. 
+:::
 
 ::::::
 
@@ -605,28 +624,28 @@ Consider the functions $f(x)=e^{ax}$, $g(x)=x^r$ and $h(x)=\ln(bx)$ for some $a>
 
 ::::::
 
-In order to prove {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates` we need some tools that are beyond the scope of this section. We will prove it later in {prf:ref}`Section:lHospital`.
+In order to prove {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates` we need some tools that are beyond the scope of this section. We will prove it later in {numref}`Section:lHospital`.
 
 (Subsec:LimitinfOblique)=
 
 ## Oblique asymptotes
 
-Some functions do not a horizontal line as $x\rightarrow\infty$ or $x\rightarrow-\infty$, but, instead, approach a non-horizontal (straight) line.
+Some functions do not approach a horizontal line as $x\rightarrow\infty$ or $x\rightarrow-\infty$, but, instead, approach a non-horizontal (straight) line.
 
 ::::::{prf:definition} Oblique asymptote
 :label: Def:LimitAtInfinity:Oblique
 
-Let $f$ be a function that is defined for values of $x>d$ for some $d$. We say that $f$ has an **oblique asymptote** $y=ax+b$ at $\infty$, if $\lim\limits_{x\rightarrow\infty}\left(f(x)-ax-b\right)=0$.
+Let $f$ be a function that is defined on some interval $[d,\infty)$. We say that $f$ has an **oblique asymptote** (sometimes called a **slant asymptote**) $y=ax+b$ with $a\neq 0$ at $\infty$, if $\lim\limits_{x\rightarrow\infty}\left(f(x)-ax-b\right)=0$.
 
-Similarly if $f$ is a function that is defined for values of $x<d$ for some $d$, we say that $f$ has an **oblique asymptote** $y=ax+b$ at $-\infty$, if $\lim\limits_{x\rightarrow-\infty}\left(f(x)-ax-b\right)=0$.
+Similarly if $f$ is a function that is defined on some interval $(-\infty,d]$, we say that $f$ has an **oblique asymptote** $y=ax+b$ with $a\neq 0$ at $-\infty$, if $\lim\limits_{x\rightarrow-\infty}\left(f(x)-ax-b\right)=0$.
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:LimitAtInfinity:Oblique.
-Consider the function $f(x)=\frac{x^3+2x^2-4x+8}{x^2-4}$. Using polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`), we can write $f(x)=\frac{16}{x^2-4}+x+2$. Note that $f$ consists of the sum of a straight line, $x+2$, and a part that approaches $0$ as $x$ approaches $\infty$, $\frac{16}{x^2-4}$. This suggests that $f$ approaches the straight line $x+2$ as $x\rightarrow\infty$. Indeed, we find that
+Consider the function $f(x)=\frac{x^3+2x^2-4x+8}{x^2-4}$. Using polynomial long division (see {numref}`Subsec:RationalFunctions:PolynomialDivision`), we can write $f(x)=x+2+\frac{16}{x^2-4}$. Note that $f(x)$ consists of the sum of $x+2$, and a part that approaches $0$ as $x$ approaches $\infty$, $\frac{16}{x^2-4}$. This suggests that $f$ approaches the straight line $y=x+2$ as $x\rightarrow\infty$. Indeed, we find that
 
 $$
- \lim\limits_{x\rightarrow\infty}f(x)-(x+2)=\lim\limits_{x\rightarrow\infty}\frac{16}{x^2-4}+x+2-(x+2)=\lim\limits_{x\rightarrow\infty}\frac{16}{x^2-4}=0
+ \lim\limits_{x\rightarrow\infty}f(x)-(x+2)=\lim\limits_{x\rightarrow\infty}\frac{16}{x^2-4}+x+2-(x+2)=\lim\limits_{x\rightarrow\infty}\frac{16}{x^2-4}=0.
 $$
 
 So, the function $f$ indeed has the oblique asymptote $y=x+2$ as $x$ approaches infinity. It has this same oblique asymptote as $x$ approaches minus infinity as well.
@@ -649,7 +668,7 @@ In that case, $f$ has the oblique asymptote $y=ax+b$ at both infinity and minus 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Obliquerational`
 :class: tudproof, dropdown
 
-The result follows almost directly from polynomial long division (see {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`). Indeed, this process allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\operatorname{deg}(r)<\operatorname{deg}(q)$ and $\operatorname{deg}(s)=\operatorname{p}-\operatorname{q}$. Since $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, we obtain $\operatorname{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+...+a_1x+a_0$ and $q(x)=b_mx^m+...+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\operatorname{deg}(r)<\operatorname{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
+The result follows almost directly from {prf:ref}`Thm:RationalFunctions:PolynomialLongDivision`. Indeed, this result allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\operatorname{deg}(r)<\operatorname{deg}(q)$ and $\operatorname{deg}(s)=\operatorname{p}-\operatorname{q}$. Since $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, we obtain $\operatorname{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+...+a_1x+a_0$ and $q(x)=b_mx^m+...+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\operatorname{deg}(r)<\operatorname{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
 
 \begin{align*}
  \lim_{x\rightarrow\infty}f(x)-(ax+b) &=\lim_{x\rightarrow\infty}\frac{r(x)}{q(x)}+s(x)-(ax+b)\\
@@ -668,7 +687,7 @@ The following result shows an efficient way to find the coefficients of the obli
 If $f$ has an oblique asymptote $y=ax+b$ at infinity, then 
 
 $$
- a=\lim\limits_{x\rightarrow\infty}\frac{f(x)}{x}\qquad b=\lim_{x\rightarrow\infty}\left(f(x)-ax\right)
+ a=\lim\limits_{x\rightarrow\infty}\frac{f(x)}{x}\qquad\text{and}\qquad b=\lim_{x\rightarrow\infty}\left(f(x)-ax\right).
 $$
 
 The corresponding result holds for an oblique asymptote at minus infinity.
@@ -700,32 +719,35 @@ Notice that {prf:ref}`Def:LimitAtInfinity:Intuitivelimit` contains some mathemat
 
 ::::::{prf:definition} Precise definition of a limit at plus or minus infinity
 :label: Def:LimitAtInfinity:Precisedefplusminus
-Let $f$ be a function that is defined for values of $x>d$ for some $d$. We say that the **limit at infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow \infty}f(x)=L$, whenever for each $\varepsilon>0$ there exists an $N\geq d$, such that for all $x$ with $x\geq N$, we have $|f(x)-L|<\varepsilon$. If no such value $L$ exists we say that the limit does not exist.
+Let $f$ be a function that is defined on some interval $[d,\infty)$. We say that the **limit at infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow \infty}f(x)=L$, whenever for each $\varepsilon>0$ there exists an $N\geq d$, such that for all $x$ with $x> N$, we have $|f(x)-L|<\varepsilon$. If no such value $L$ exists we say that the limit does not exist.
 
-Similarly, if $f$ is defined for values of $x<d$ for some $d$, we say that the **limit at minus infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow -\infty}f(x)=L$, whenever for each $\varepsilon>0$ there exists an $N\leq d$, such that for all $x$ with $x\leq N$, we have $|f(x)-L|<\varepsilon$. If no such value $L$ exists we say that the limit does not exist.
+Similarly, if $f$ is defined on some interval $(-\infty,d]$, we say that the **limit at minus infinity** of $f$ is equal to $L$, and we write $\lim\limits_{x\rightarrow -\infty}f(x)=L$, whenever for each $\varepsilon>0$ there exists an $N\leq d$, such that for all $x$ with $x< N$, we have $|f(x)-L|<\varepsilon$. If no such value $L$ exists we say that the limit does not exist.
 ::::::
 
 This definition should be interpreted as follows. The arbitrary constant $\varepsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow \infty}f(x)=L$, we want that, for $x$ large enough, the function values $f(x)$ are at most distance $\varepsilon$ to $L$, i.e. $|f(x)-L|<\varepsilon$. Here "$x$ large enough" means that this inequality should hold true for all $x$ from a certain point onwards, i.e. an interval of the form $[N,\infty)$. Of course, what this $N$ is, depends both on the function $f$ and the choice of $\varepsilon$. Typically, the smaller $\varepsilon$ is, the larger $N$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\varepsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\varepsilon$ is small. Remember that we cannot choose $\varepsilon$ ourselves: for **each** $\varepsilon>0$ there should be a corresponding $N$. Note that we can make $N$ always larger if we want to: if at least one $N$ works for a given $\varepsilon$, we are happy. Before showing how to work with this definition in practice, we first provide the precise definition of infinite limits at infinity.
 
 ::::::{prf:definition} Precise definition of an infinite limit at infinity
 :label: Def:LimitAtInfinity:Precisedef
-Let $f$ be a function that is defined for values of $x>d$ for some $d$. We say that $f$ has an **infinite limit at infinity**, and we write $\lim\limits_{x\rightarrow \infty}f(x)=\infty$, whenever for each $B>0$ there exists an $N\geq d$, such that for all $x$ with $x\geq N$, we have $f(x)\geq B$.
+Let $f$ be a function that is defined for values of $x>d$ for some $d$. We say that $f$ has an **infinite limit at infinity**, and we write $\lim\limits_{x\rightarrow \infty}f(x)=\infty$, whenever for each $B$ there exists an $N\geq d$, such that for all $x$ with $x> N$, we have $f(x)\geq B$.
 
-Similarly, we say that $f$ has a **negative limit at infinity**, and we write $\lim\limits_{x\rightarrow \infty}f(x)=-\infty$, whenever for each $B<0$ there exists an $N\geq d$, such that for all $x$ with $x\geq N$, we have $f(x)\leq B$.
+Similarly, we say that $f$ has a **negative limit at infinity**, and we write $\lim\limits_{x\rightarrow \infty}f(x)=-\infty$, whenever for each $B$ there exists an $N\geq d$, such that for all $x$ with $x> N$, we have $f(x)\leq B$.
 
 Finally, we have the corresponding notations $\lim\limits_{x\rightarrow -\infty}f(x)=\infty$ and $\lim\limits_{x\rightarrow- \infty}f(x)=-\infty$ for a positive or negative **infinite limit at minus infinity**.
 ::::::
 
+We now procede with proving the results from the earlier parts of this section.
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`
 :class: tudproof 
-First consider $f(x)=1$. Let $\varepsilon>0$ be given. Since $f$ is constant, we can take $N$ whatever we want, so we choose $N=0$. Then for all $x\geq N$ we have
+$\lim\limits_{x\rightarrow \infty}1=1$: First consider $f(x)=1$. Let $\varepsilon>0$ be given. Since $f$ is constant, we can take $N$ whatever we want, so we choose $N=0$. Then for all $x> N$ we have
 
 $$
  |f(x)-1|=|1-1|=0<\varepsilon.
 $$
 
-Hence, we obtain $\lim\limits_{x\rightarrow \infty}1=1$. Similarly, for $x\leq N$ we have
+Hence, we obtain $\lim\limits_{x\rightarrow \infty}1=1$. 
+
+$\lim\limits_{x\rightarrow -\infty}1=1$: Similarly, for $x< N$ we have
 
 $$
  |f(x)-1|=|1-1|=0<\varepsilon.
@@ -733,83 +755,96 @@ $$
 
 Hence, we obtain $\lim\limits_{x\rightarrow -\infty}1=1$.
 
-Consider $f(x)=x^r$ with $r<0$. Let $\varepsilon>0$ be given. Since $x^r< \varepsilon$ precisely when $x>\frac{1}{\varepsilon^{\frac{1}{r}}}$ we choose $N=\frac{1}{\varepsilon^{\frac{1}{r}}}$. Then for $x\geq N$ we have
+$\lim\limits_{x\rightarrow \infty}x^r=0$: Consider $f(x)=x^r$ with $r<0$. Let $\varepsilon>0$ be given. Since $x^r< \varepsilon$ precisely when $x>\varepsilon^{\frac{1}{r}}$ we choose $N=\varepsilon^{\frac{1}{r}}$. Then for $x> N$ we have
 
 $$
- |f(x)-0|=x^r<\left(\varepsilon^{\frac{1}{r}}\right)^r=\varepsilon
+ |f(x)-0|=x^r<\left(\varepsilon^{\frac{1}{r}}\right)^r=\varepsilon.
 $$
 
 Hence, we obtain $\lim\limits_{x\rightarrow \infty}x^r=0$.
 
-Now consider $f(x)=x^r$ with $r>0$. Let $B>0$ be given. We choose $N=B^{\frac{1}{r}}$. Then for $x\geq N$ we have
+$\lim\limits_{x\rightarrow \infty}x^r=\infty$: Now consider $f(x)=x^r$ with $r>0$. Let $B>0$ be given. We choose $N=B^{\frac{1}{r}}$. Then for $x> N$ we have
 
 $$
- f(x)=x^r\geq N^r=\left(B^{\frac{1}{r}}\right)^r=B
+ f(x)=x^r\geq N^r=\left(B^{\frac{1}{r}}\right)^r=B.
 $$
 
 We conclude that $\lim\limits_{x\rightarrow \infty}x^r=\infty$.
 
-Now suppose that $f(x)=x^r$ where $r$ is a positive integer. Let $\varepsilon>0$ be given. Since $|x^{-r}|< \varepsilon$ precisely when $|x|>\frac{1}{\varepsilon^{\frac{1}{r}}}$ we choose $N=\frac{1}{\varepsilon^{\frac{1}{r}}}$. Then for $x\leq N$ we have
+$\lim\limits_{x\rightarrow -\infty}x^{-r}=0$: Now suppose that $f(x)=x^{-r}$ where $r$ is a positive integer. Let $\varepsilon>0$ be given. Since $|x^{-r}|< \varepsilon$ precisely when $|x|>\frac{1}{\varepsilon^{\frac{1}{r}}}$ we choose $N=\frac{1}{\varepsilon^{\frac{1}{r}}}$. Then for $x< N$ we have
 
 $$
- |f(x)-0|=|x^{-r}|<\left(\varepsilon^{\frac{1}{r}}\right)^r=\varepsilon
+ |f(x)-0|=|x^{-r}|=\frac{1}{|x|^r}<\left(\varepsilon^{\frac{1}{r}}\right)^r=\varepsilon.
 $$
 
 We conclude that $\lim\limits_{x\rightarrow -\infty}x^{-r}=0$.
 
-Now consider $f(x)=e^{-ax}$ with $a>0$. Let $\varepsilon>0$ be given. Since $e^{-ax}< \varepsilon$ precisely when $-ax<\ln(\varepsilon)$, i.e. $x>\frac{\ln(\varepsilon)}{-a}$ we choose $N=\frac{\ln(\varepsilon)}{-a}$. Then for $x\geq N$ we have
+$\lim\limits_{x\rightarrow \infty}e^{-ax}=0$: Now consider $f(x)=e^{-ax}$ with $a>0$. Let $\varepsilon>0$ be given. Since $e^{-ax}< \varepsilon$ precisely when $-ax<\ln(\varepsilon)$, i.e. $x>\frac{\ln(\varepsilon)}{-a}$ we choose $N=\frac{\ln(\varepsilon)}{-a}$. Then for $x> N$ we have
 
 $$
- |f(x)-0|=e^{-ax}<e^{-a\frac{\ln(\varepsilon)}{-a}}=\varepsilon
+ |f(x)-0|=e^{-ax}<e^{-a\frac{\ln(\varepsilon)}{-a}}=\varepsilon.
 $$
 
 We conclude that $\lim\limits_{x\rightarrow \infty}e^{-ax}=0$.
 
-Now consider $f(x)=e^{ax}$ with $a>0$. Let $B>0$ be given. Since $e^{ax}> B$ precisely when $ax>\ln(B)$, i.e. $x>\frac{\ln(B)}{a}$, we choose $N=\frac{\ln(B)}{a}$. Then for $x\geq N$ we have
+$\lim\limits_{x\rightarrow \infty}e^{ax}=\infty$: Now consider $f(x)=e^{ax}$ with $a>0$. Let $B>0$ be given. Since $e^{ax}> B$ precisely when $ax>\ln(B)$, i.e. $x>\frac{\ln(B)}{a}$, we choose $N=\frac{\ln(B)}{a}$. Then for $x> N$ we have
 
 $$
- f(x)=e^{ax}>e^{a\frac{\ln(B)}{a}}=B
+ f(x)=e^{ax}>e^{a\frac{\ln(B)}{a}}=B.
 $$
 
 We conclude that $\lim\limits_{x\rightarrow \infty}e^{ax}=\infty$. 
 
-Now consider $f(x)=\frac{1}{\ln(x)}$. Let $\varepsilon>0$ be given. Since $\frac{1}{\ln(x)}< \varepsilon$ precisely when $\ln(x)>\frac{1}{\varepsilon}$, i.e. $x>e^{\frac{1}{\varepsilon}}$ we choose $N=e^{\frac{1}{\varepsilon}}$. Then for $x\geq N$ we have
+$\lim\limits_{x\rightarrow \infty}\frac{1}{\ln(x)}=0$: Now consider $f(x)=\frac{1}{\ln(x)}$. Let $\varepsilon>0$ be given. Since $\frac{1}{\ln(x)}< \varepsilon$ precisely when $\ln(x)>\frac{1}{\varepsilon}$, i.e. $x>e^{\frac{1}{\varepsilon}}$ we choose $N=e^{\frac{1}{\varepsilon}}$. Note that $N>1$ so that for $x>N$ we have $x>1$ which gives $\ln(x)>0$. Then for $x> N$ we have
 
 $$
- |f(x)-0|=\ln(x)<\ln\left(e^{\frac{1}{\varepsilon}}\right)=\varepsilon
+ |f(x)-0|=\frac{1}{\ln(x)}<\frac{1}{\ln\left(e^{\frac{1}{\varepsilon}}\right)}=\varepsilon.
 $$
 
 We conclude that $\lim\limits_{x\rightarrow \infty}\frac{1}{\ln(x)}=0$.
 
-Now consider $f(x)=\ln(x)$. Let $B>0$ be given. Since $\ln(x)> B$ precisely when $x>e^B$, we choose $N=e^B$. Then for $x\geq N$ we have
+$\lim\limits_{x\rightarrow \infty}\ln(x)=\infty$: Now consider $f(x)=\ln(x)$. Let $B>0$ be given. Since $\ln(x)> B$ precisely when $x>e^B$, we choose $N=e^B$. Then for $x> N$ we have
 
 $$
- f(x)=\ln(x)>\ln\left(e^B\right)=B
+ f(x)=\ln(x)>\ln\left(e^B\right)=B.
 $$
 
 We conclude that $\lim\limits_{x\rightarrow \infty}\ln(x)=\infty$. 
 
-Finally, we consider $f(x)=\arctan(x)$. Let $\varepsilon>0$ be given. If $\varepsilon\geq \pi$ then $|f(x)-\frac{\pi}{2}|<\varepsilon$, since the arctangent only takes values between $-\frac{\pi}{2}$ and $\frac{\pi}{2}$. As such, we assume that $\varepsilon<\pi$. Notice that $\frac{\pi}{2}-\arctan(x)<\varepsilon$ precisely when $x>\tan\left(\frac{\pi}{2}-\varepsilon\right)$ and that $-\frac{\pi}{2}<\frac{\pi}{2}-\varepsilon<\frac{\pi}{2}$, since $\varepsilon<\pi$. So we choose $N=\tan\left(\frac{\pi}{2}-\varepsilon\right)$. Then for $x\geq N$ we have
+$\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$: Finally, we consider $f(x)=\arctan(x)$. Let $\varepsilon>0$ be given. If $\varepsilon\geq \pi$ then $|f(x)-\frac{\pi}{2}|<\varepsilon$, since the arctangent only takes values between $-\frac{\pi}{2}$ and $\frac{\pi}{2}$. As such, we assume that $\varepsilon<\pi$. Notice that $\frac{\pi}{2}-\arctan(x)<\varepsilon$ precisely when $x>\tan\left(\frac{\pi}{2}-\varepsilon\right)$, since the tangent is increasing on $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$, and that $-\frac{\pi}{2}<\frac{\pi}{2}-\varepsilon<\frac{\pi}{2}$, since $\varepsilon<\pi$. So we choose $N=\tan\left(\frac{\pi}{2}-\varepsilon\right)$. Then for $x>N$ we have
 
 $$
  \left|f(x)-\frac{\pi}{2}\right|=\frac{\pi}{2}-\arctan(x)<\frac{\pi}{2}-\arctan\left(\tan\left(\frac{\pi}{2}-\varepsilon\right)\right)=\frac{\pi}{2}-\left(\frac{\pi}{2}-\varepsilon\right)=\varepsilon
 $$
 
-We conclude that $\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$. This argument can be repeated for the limit at minus infinity, using $N=-\tan\left(\frac{\pi}{2}-\varepsilon\right)$.
+We conclude that $\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$. 
+
+$\lim\limits_{x\rightarrow -\infty}\arctan(x)=\frac{-\pi}{2}$: This argument can be repeated for the limit at minus infinity, using $N=-\tan\left(\frac{\pi}{2}-\varepsilon\right)$.
+
+::::{figure} Images/Fig-LimitAtInfinity-Illustrationarctanlimit.png
+:name: Fig:LimitAtInfinity:ArctanLimit
+:class: dark-light
+
+An illustration of the choice $N$ when evaluating $\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$.
+::::
+
+:::{todo}
+Turn {numref}`Fig:LimitAtInfinity:ArctanLimit` into an applet. 
+:::
 ::::::
 
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules`
 :class: tudproof, full-width
-We first prove the scalar multiple rule. If $c=0$, then the function $cf$ is constantly $0$, so its limit at infinity must be $0=cL$ as well. As such, we can assume that $c\neq 0$. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow \infty}f(x)=L$, we can pick $N$ in such a way that for $x\geq N$ we have $|f(x)-L|<\frac{\varepsilon}{|c|}$. Then for $x\geq N$ we have
+We first prove the scalar multiple rule. If $c=0$, then the function $cf$ is constantly $0$, so its limit at infinity must be $0=cL$ as well. As such, we can assume that $c\neq 0$. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow \infty}f(x)=L$, we can pick $N$ in such a way that for $x> N$ we have $|f(x)-L|<\frac{\varepsilon}{|c|}$. Then for $x>N$ we have
 
 $$
- |cf(x)-cL|=|c||f(x)-L|<|c|\frac{\varepsilon}{|c|}=\varepsilon
+ |cf(x)-cL|=|c||f(x)-L|<|c|\frac{\varepsilon}{|c|}=\varepsilon.
 $$
 
 We conclude that $\lim\limits_{x\rightarrow \infty}cf(x)=cL$.
 
-Now we prove the sum rule. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow a}f(x)=L$, we can pick $N_1$ in such a way that for $x$ with $x\geq N_1$ we have $|f(x)-L|<\frac{\varepsilon}{2}$. Similarly we can pick $N_2$ in such a way that for $x$ with $x\geq N_2$ we have $|g(x)-M|<\frac{\varepsilon}{2}$. We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x$ with $x\geq N$ we have both $x\geq N_1$ and $x\geq N_2$, so we can estimate
+Now we prove the sum rule. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow \infty}f(x)=L$, we can pick $N_1$ in such a way that for $x$ with $x> N_1$ we have $|f(x)-L|<\frac{\varepsilon}{2}$. Similarly we can pick $N_2$ in such a way that for $x$ with $x> N_2$ we have $|g(x)-M|<\frac{\varepsilon}{2}$. We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x$ with $x> N$ we have both $x> N_1$ and $x> N_2$, so we can estimate
 
 \begin{align*}
  |f(x)+g(x)-(L+M)| &= |(f(x)-L)+(g(x)-M)| \\
@@ -817,14 +852,14 @@ Now we prove the sum rule. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\r
  &< \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \\
  &= \varepsilon.
 \end{align*}
-Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow \infty}f(x)+g(x)=L+M$.
+Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow \infty}\left(f(x)+g(x)\right)=L+M$.
 
-Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $N_1$ in such a way that for $x$ with $x\geq N_1$ we have both have $|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}$ and $|f(x)-L|<1$. The inequality $|f(x)-L|<1$ means that $1-L<f(x)<1+L$, which implies that $|f(x)|<|L|+1$. Now we pick $N_2$ in such a way that for $x$ with $x\geq N_2$ we have both have $|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}$. We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x$ with $x\geq N$ we have both $x\geq N_1$ and $x\geq N_2$, so we can estimate
+Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $N_1$ in such a way that for $x$ with $x> N_1$ we have both $|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}$ and $|f(x)-L|<1$. The inequality $|f(x)-L|<1$ means that $L-1<f(x)<1+L$, which implies that $|f(x)|<|L|+1$. Now we pick $N_2$ in such a way that for $x$ with $x> N_2$ we hav $|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}$. We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x$ with $x> N$ we have both $x>N_1$ and $x> N_2$, so we can estimate
 
 $$
 \begin{array}{lcll}
  |f(x)g(x)-LM| &=& |f(x)g(x)-f(x)M+f(x)M-LM|& \\
- &\leq& |f(x)g(x)-f(x)M|+|f(x)M-LM| &\\
+ &\leq& |f(x)g(x)-f(x)M|+|f(x)M-LM| \qquad\quad &\left(\text{using the triangle inequality}\right)\\
  &=& |f(x)||g(x)-M|+|M||f(x)-L|& \\
  &\leq& (|L|+1)|g(x)-M|+|M||f(x)-L| \qquad\quad &\left(\text{since }x\geq N_1\text{, which implies }|f(x)|<|L|+1\right)\\
  &\leq& (|L|+1)|g(x)-M|+|M|\frac{\varepsilon}{2(|M|+1)}  &\left(\text{since }x\geq N_1\text{, which implies }|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}\right)\\
@@ -836,7 +871,7 @@ $$
 
 Here we again used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow \infty}f(x)g(x)=LM$.
 
-We prove the quotient rule by writing $\frac{f(x)}{g(x)}=f(x)\frac{1}{g(x)}$ and first showing that $\lim\limits_{x\rightarrow \infty}\frac{1}{g(x)}=\frac{1}{M}$. Let $\varepsilon>0$ be given. We pick $N$ in such a way that for $x$ with $x\geq N$ we have both have $|g(x)-M|<\frac{\varepsilon M^2}{2}$ and $|g(x)-M|<\frac{1}{2}|M|$. The inequality $|g(x)-M|<\frac{1}{2}|M|$ means that $\frac{1}{2}|M|\leq |g(x)|$ (which, in particular, means that $g(x)\neq 0$) and, finally, that $\frac{1}{|g(x)|}\leq\frac{2}{|M|}$. Hence, we can estimate
+We prove the quotient rule by writing $\frac{f(x)}{g(x)}=f(x)\frac{1}{g(x)}$ and first showing that $\lim\limits_{x\rightarrow \infty}\frac{1}{g(x)}=\frac{1}{M}$. Let $\varepsilon>0$ be given. We pick $N$ in such a way that for $x$ with $x> N$ we have both have $|g(x)-M|<\frac{\varepsilon M^2}{2}$ and $|g(x)-M|<\frac{1}{2}|M|$. The inequality $|g(x)-M|<\frac{1}{2}|M|$ means that $\frac{1}{2}|M|\leq |g(x)|$ (which, in particular, means that $g(x)\neq 0$) and, finally, that $\frac{1}{|g(x)|}\leq\frac{2}{|M|}$. Hence, we can estimate
 
 $$
 \begin{array}{lcll}
@@ -861,7 +896,7 @@ We first assume that $\lim\limits_{x\rightarrow\infty}g(x)=\infty$. Let $\vareps
 Now suppose that $\lim\limits_{x\rightarrow\infty}g(x)=\infty$ and $\lim\limits_{x\rightarrow\infty}f(x)=\infty$. Let $B$ be given. Since $\lim\limits_{x\rightarrow\infty}f(x)=\infty$ we can pick $N_1$ such that for $x$ with $x\geq N_1$ we have $f(x)\geq N_1$. Since $\lim\limits_{x\rightarrow\infty}g(x)=\infty$, we can pick $N_2$ such that for all $x\geq N_2$ we have $g(x)\geq N_1$. Then for $x\geq N_2$ we have $f(g(x))\geq B$, since $g(x)\geq N_1$. As such, we find that $\lim\limits_{x\rightarrow\infty}f(g(x))=\infty$. 
 
 
-The proof for the other cases follow similarly.
+The other cases follow similarly.
 
 ::::::
 
@@ -876,7 +911,7 @@ We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers 
 Similarly we must have for these values of $x$ that $|g(x)-M|<\varepsilon=\frac{L-M}{4}$, which implies $g(x)\leq M+\frac{L-M}{4}=\frac{3}{4}M+\frac{1}{4}L$. Since $L>M$ we then obtain
 
 $$
- g(x)\leq \frac{3}{4}M+\frac{1}{4}L<\frac{3}{4}L+\frac{1}{4}M\leq f(x),
+ g(x)\leq \frac{3}{4}M+\frac{1}{4}L=\frac{1}{4}\left(L+M\right)+\frac{M}{2}<\frac{1}{4}\left(L+M\right)+\frac{L}{2}=\frac{3}{4}L+\frac{1}{4}M\leq f(x),
 $$
 
 which is a contradiction, since we assumed that $f(x)\leq g(x)$ for all $x\geq d$. So that means that $L\leq M$.
@@ -884,23 +919,20 @@ which is a contradiction, since we assumed that $f(x)\leq g(x)$ for all $x\geq d
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Squeezetheorem`
 :class: tudproof 
-We let $\varepsilon>0$ be given. Since we have $\lim\limits_{x\rightarrow \infty}f(x)=L$ we can pick $N_1$ in such a way that for $x$ with $x\geq N_1$ we have have $|f(x)-L|<\frac{\varepsilon}{3}$. Also, since $\lim\limits_{x\rightarrow \infty}h(x)=L$ we can pick $N_2$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have have $|h(x)-L|<\frac{\varepsilon}{3}$.
+We let $\varepsilon>0$ be given. Since we have $\lim\limits_{x\rightarrow \infty}f(x)=L$ we can pick $N_1$ in such a way that for $x$ with $x\geq N_1$ we have have $|f(x)-L|<\varepsilon$. Also, since $\lim\limits_{x\rightarrow \infty}h(x)=L$ we can pick $N_2$ in such a way that for $x$ with $x>N_2$ we have have $|h(x)-L|<\varepsilon$.
 
-We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x$ with $x\geq N$ we have both $x\geq N_1$ and $x\geq N_2$. Note that $f(x)\leq g(x)\leq h(x)$ implies that $|g(x)-f(x)|=g(x)-f(x)\leq h(x)-f(x)=|h(x)-f(x)|$.
+We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x>N$ we both have $x>N_1$ and $x>N_2$. For these values of $x$ we have $|f(x)-L|<\varepsilon$, which implies that $L-\varepsilon< f(x)$. Similarly, for these values of $x$ we have $|h(x)-L|<\varepsilon$, which implies that $h(x)> L+\varepsilon$.
 
-As such, we can estimate for $x$ with $x\geq N$:
+As such, we can estimate for $x$ with $x>N$:
 
 \begin{align*}
- |g(x)-L| &= |g(x)-f(x)+f(x)-L| \\
- &\leq |g(x)-f(x)|+|f(x)-L| \\
- &\leq |h(x)-f(x)|+|f(x)-L| \\
- &= |h(x)-L+L-f(x)|+|f(x)-L| \\
- &\leq |h(x)-L|+|L-f(x)|+|f(x)-L| \\
- &= |h(x)-L|+2|f(x)-L| \\
- &< \frac{\varepsilon}{3}+2\frac{\varepsilon}{3} \\
- &= \varepsilon.
+ L-\varepsilon &< f(x) \\
+ &\leq g(x) \\
+ &\leq h(x) \\
+ &< L+\varepsilon.
 \end{align*}
-Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow \infty}g(x)=L$.
+
+In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varepsilon$, which yields $|g(x)-L|<\varepsilon$. We conclude that $\lim\limits_{x\rightarrow \infty}g(x)=L$.
 ::::::
 
 (Subsec:LimitAtInfinityGrasple)=
@@ -1123,6 +1155,15 @@ Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle
 :label: Grasple:LimitAtInfinity:Growthrategraph
 :dropdown:
 :description: Comparing growth rates in a graph
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/05f0d460-1708-457d-b6fc-525460cf1679?id=75714
+:label: Grasple:LimitAtInfinity:Growthratecompute
+:dropdown:
+:description: Comparing growth between some functions
 
 ::::
 
