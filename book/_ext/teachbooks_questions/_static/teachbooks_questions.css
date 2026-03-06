@@ -1,0 +1,41 @@
+/* variable definitions for the colors */
+:root {
+    --question-blue: rgb(0, 118, 194,0.5);
+    --question-orange: rgb(236, 104, 66,0.5);
+    --question-green: rgb(108, 194, 74,0.5);
+}
+
+html[data-theme="dark"] {
+    --question-blue: rgb(9, 186, 255, 0.5);
+    --question-orange: rgb(255, 88, 31,0.5);
+    --question-green: rgb(0, 128, 0,0.5);
+}
+
+/* General background for the question options */
+section.question-options div.sd-card.option {
+    background-color: var( --pst-color-background);
+}
+
+/* Styling of the feedback in the footers */
+section.question-options div.sd-card-footer:not(.correct):not(.incorrect) {
+    display: none;
+}
+section.question-options div.sd-card-footer.correct {
+    display: block;
+    background-color: var(--question-green);
+}
+section.question-options div.sd-card-footer.incorrect {
+    display: block;
+    background-color: var(--question-orange);
+}
+
+/* Styling of the options on selection */
+section.question-options div.sd-card-body.selected {
+    background-color: var(--question-blue);
+}
+
+/* to make sure any adminition within the card is styled correctly */
+/* add a background */
+section.question-options div.sd-card div.wrap-admonition {
+    background-color: var(--pst-color-background);
+}

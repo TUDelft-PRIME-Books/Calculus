@@ -27,6 +27,7 @@ sphinx:
     text_replacer: _ext/
     check_captions: _ext/
     image_checker: _ext/
+    teachbooks_questions: _ext/
   config:
     tippy_skip_urls:
       - https://en.wikipedia.org/wiki/File:Parametric_ellipse.gif

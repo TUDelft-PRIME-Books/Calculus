@@ -183,6 +183,7 @@ parts:
   - file: _git/github.com_TeachBooks_manual/release/book/features/apa.md
   - file: _git/github.com_TeachBooks_Sphinx-Metadata-Figure/main/MANUAL.ipynb
   - file: todos.md
+  - file: questions.md
   numbered: true
   style: romanupper
 root: index.md
