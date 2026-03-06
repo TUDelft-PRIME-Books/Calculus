@@ -48,6 +48,10 @@ section.question-options div.sd-card.option:hover {
   transform: translateY(-2px);
 }
 
+section.question-options div.sd-card.option:has(div.sd-card-body.selected) {
+    transform: translateY(2px) translateX(2px);
+}
+
 /* Styling of the feedback in the footers */
 section.question-options div.sd-card-footer:not(.correct):not(.incorrect) {
     display: none;
@@ -59,7 +63,7 @@ section.question-options div.sd-card-footer.correct {
 section.question-options div.sd-card-footer.correct:hover {
     background-color: var(--question-green-hover);
 }
-section.question-options:has(div.sd-card-footer.correct:hover) div.sd-card-body {
+section.question-options:has(div.sd-card-footer.correct:hover) div.sd-card-body.selected {
     background-color: var(--question-blue-hover);
 }
 section.question-options div.sd-card-footer.incorrect {
@@ -69,6 +73,9 @@ section.question-options div.sd-card-footer.incorrect {
 section.question-options div.sd-card-footer.incorrect:hover {
     background-color: var(--question-red-hover);
 }
+section.question-options:has(div.sd-card-footer.incorrect:hover) div.sd-card-body.selected {
+    background-color: var(--question-blue-hover);
+}
 
 /* Styling of the options on selection */
 section.question-options div.sd-card-body.selected {
@@ -77,6 +84,12 @@ section.question-options div.sd-card-body.selected {
 /* Styling of the options on selection */
 section.question-options div.sd-card-body.selected:hover {
     background-color: var(--question-blue-hover);
+}
+section.question-options:has(div.sd-card-body.selected:hover) div.sd-card-footer.correct {
+    background-color: var(--question-green-hover);
+}
+section.question-options:has(div.sd-card-body.selected:hover) div.sd-card-footer.incorrect {
+    background-color: var(--question-red-hover);
 }
 
 /* to make sure any adminition within the card is styled correctly */
