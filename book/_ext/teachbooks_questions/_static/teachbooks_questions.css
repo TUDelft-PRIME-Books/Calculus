@@ -1,19 +1,51 @@
 /* variable definitions for the colors */
 :root {
-    --question-blue: rgb(0, 118, 194,0.5);
-    --question-orange: rgb(236, 104, 66,0.5);
-    --question-green: rgb(108, 194, 74,0.5);
+    --question-blue: #c9e0f6;
+    --question-blue-hover: #b0d4f0;
+    --question-red: #fbd7d8;
+    --question-red-hover: #f0b0b2;
+    --question-green: #b6e4ce;
+    --question-green-hover: #a0d8c0;
+    --question-gray: #dddddd;
+    --question-gray-border: #d0d0d0;
+    --question-white: #eeeeee;
+    --question-white-border: #c6c6c6;
 }
 
 html[data-theme="dark"] {
-    --question-blue: rgb(9, 186, 255, 0.5);
-    --question-orange: rgb(255, 88, 31,0.5);
-    --question-green: rgb(0, 128, 0,0.5);
+    --question-blue: #2f496b;
+    --question-blue-hover: #3a5a80;
+    --question-red: #6b3236;
+    --question-red-hover: #7e3f43;
+    --question-green: #2a5e4d;
+    --question-green-hover: #3a7a67;
+    --question-gray: #444444;
+    --question-gray-border: #555555;
+    --question-white: #666666;
+    --question-white-border: #777777;
 }
 
-/* General background for the question options */
+/* General style for the question options */
 section.question-options div.sd-card.option {
-    background-color: var( --pst-color-background);
+
+  cursor: pointer;
+  border-radius: 0.6rem;
+
+  /* Button‑like visuals */
+  border: 2px solid var(--question-gray-border);
+  background-color: var(--question-gray);
+  transition: 
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
+  overflow: hidden;
+}
+
+section.question-options div.sd-card.option:hover {
+  background: var(--question-white);
+  border-color: var(--question-gray-border);
+  transform: translateY(-2px);
 }
 
 /* Styling of the feedback in the footers */
@@ -24,14 +56,27 @@ section.question-options div.sd-card-footer.correct {
     display: block;
     background-color: var(--question-green);
 }
+section.question-options div.sd-card-footer.correct:hover {
+    background-color: var(--question-green-hover);
+}
+section.question-options:has(div.sd-card-footer.correct:hover) div.sd-card-body {
+    background-color: var(--question-blue-hover);
+}
 section.question-options div.sd-card-footer.incorrect {
     display: block;
-    background-color: var(--question-orange);
+    background-color: var(--question-red);
+}
+section.question-options div.sd-card-footer.incorrect:hover {
+    background-color: var(--question-red-hover);
 }
 
 /* Styling of the options on selection */
 section.question-options div.sd-card-body.selected {
     background-color: var(--question-blue);
+}
+/* Styling of the options on selection */
+section.question-options div.sd-card-body.selected:hover {
+    background-color: var(--question-blue-hover);
 }
 
 /* to make sure any adminition within the card is styled correctly */
