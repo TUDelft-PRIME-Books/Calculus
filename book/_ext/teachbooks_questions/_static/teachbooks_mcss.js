@@ -6,18 +6,11 @@ document.addEventListener('click', function(event) {
   if (optionDiv) {
     // Check if it is a multiple-choice single-select questions
     // Get the parent div with class admonition and class question
-    const questionDiv = optionDiv.closest('div.admonition.question');
+    const questionDiv = optionDiv.closest('div.multiple-choice.single-select');
     if (!questionDiv) {
       return; // not a question, do nothing
     }
-    if (!questionDiv.classList.contains('multiple-choice')) {
-      return; // not a multiple-choice question, do nothing
-    }
-    if (!questionDiv.classList.contains('single-select')) {
-      return; // not a single-select question, do nothing
-    }
-
-  
+    
     // if already selected, unselect it and return
     if (optionDiv.querySelector('div.sd-card-body.selected')) {
       optionDiv.querySelector('div.sd-card-body').classList.remove('selected');
@@ -68,21 +61,12 @@ document.addEventListener('click', function(event) {
   if (resetButton) {
     // Check if it is a multiple-choice single-select questions
     // Get the parent div with class admonition and class question
-    const questionDiv = resetButton.closest('div.admonition.question');
+    const questionDiv = resetButton.closest('div.multiple-choice.single-select');
     if (!questionDiv) {
-      console.log("Reset button clicked, but no question div found.");
       return; // not a question, do nothing
     }
-    if (!questionDiv.classList.contains('multiple-choice')) {
-      console.log("Reset button clicked, but no multiple-choice question found.");
-      return; // not a multiple-choice question, do nothing
-    }
-    if (!questionDiv.classList.contains('single-select')) {
-      console.log("Reset button clicked, but no single-select question found.");
-      return; // not a single-select question, do nothing
-    }    const questionSection = resetButton.closest('section.question-buttons');
     // extract the id
-    const questionId = questionSection.id.replace('-buttons', '');
+    const questionId = questionDiv.id;
     const questionOptionsSection = document.querySelector(`section.question-options#${questionId}-options`);
     if (questionOptionsSection) {
       // deselect all selected options

@@ -10,9 +10,9 @@ from sphinx.util import logging
 logger = logging.getLogger(__name__)
 
 TYPES = ["multiple-choice"]
-VARIANTS = {"multiple-choice": ["single-select"]}
-FEEDBACKS = {"multiple-choice": {"single-select": {True: "Correct!", False: "Incorrect. Try again."}}}
-COLUMNS =  {"multiple-choice": {"single-select": 2}}
+VARIANTS = {"multiple-choice": ["single-select","multiple-select"]}
+FEEDBACKS = {"multiple-choice": {"single-select": {True: "Correct!", False: "Incorrect. Try again."}, "multiple-select": {True: "Correct!", False: "Incorrect. Try again."}}}
+COLUMNS =  {"multiple-choice": {"single-select": 2, "multiple-select": 2}}
 
 class QuestionDirective(SphinxDirective):
     has_content = True
@@ -24,12 +24,13 @@ class QuestionDirective(SphinxDirective):
         "label": directives.unchanged,
         "type": directives.unchanged,
         "variant": directives.unchanged,
-        "columns": directives.positive_int
+        "columns": directives.positive_int,
+        "admonition": directives.flag
     }
 
     def run(self) -> List[Node]:
 
-        # check if the type is supported:
+        # check if the type is supported and get values:
         Type = self.options.get("type", "multiple-choice")
         if Type not in TYPES:
             message = f"Unsupported question type {Type} at line {self.lineno} in {self.env.docname}. Supported types are: {TYPES}"
@@ -40,17 +41,24 @@ class QuestionDirective(SphinxDirective):
             raise ValueError(message)
         Columns = self.options.get("columns", COLUMNS[Type][Variant])
         Feedback = self.options.get("feedback", FEEDBACKS[Type][Variant])
+
+        # see if a class has to be added to the question
+        Class = self.options.get("class", ["question"])
+        Admonition = "admonition" in self.options
         
         # just create a node and store some stuff
         node = question_node()
         node["type"] = Type
         node["variant"] = Variant
+        node["class"] = Class
+        node["admonition"] = Admonition
         # create a unique id for the node, if not provided by the user:
         if self.options.get("label"):
             node_id = self.options["label"]
         else:
-            # unique within the document, but not globally unique
-            node_id = f"question-{self.env.new_serialno('question')}"
+            # unique within the document, and hopefully globally unique
+            docname = self.env.docname.replace("/", "-") # replace / with - to avoid issues with html ids
+            node_id = f"question-{docname}-{self.env.new_serialno('question')}"
         node["ids"] = [node_id]
         # add the title:
         title_text = ""
@@ -61,24 +69,27 @@ class QuestionDirective(SphinxDirective):
         node_title = nodes.title(title_text, "", *textnodes,ids=[node_id + "-title"])
         node += node_title
 
-        # change the content so that cards are inserted for multiple choice questions:
-        if Type == "multiple-choice" and Variant == "single-select":
-            return self._handle_multiple_choice_single_select(node, node_id, Columns, Feedback)
-
-    def _handle_multiple_choice_single_select(self, node, node_id, Columns, Feedback):
+        # change the content so that cards are inserted for multiple-choice questions:
+        if Type == "multiple-choice":
+            if Variant == "single-select":
+                return self._handle_multiple_choice_single_select(node, node_id, Columns, Feedback)
+            elif Variant == "multiple-select":
+                return self._handle_multiple_choice_multiple_select(node, node_id, Columns, Feedback)
+            
+    def _handle_multiple_choice_shared(self, node, node_id, Columns, Feedback):
         mc_list = []
         fb_list = []
         ci_list = []
         # first get the content between --- and ---, which is the content for options.
         indexes = [i for i, val in enumerate(self.content) if val.strip() == "---"]
         if len(indexes) == 0:
-            message = f"No options provided for multiple choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
+            message = f"No options provided for multiple-choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
             raise ValueError(message)
         elif len(indexes) == 1:
-            message = f"Only one --- found for multiple choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
+            message = f"Only one --- found for multiple-choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
             raise ValueError(message)
         elif len(indexes) > 2:
-            message = f"More than two --- found for multiple choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---. Extra --- found at lines: {', '.join([str(self.lineno + i) for i in indexes[2:]])}"
+            message = f"More than two --- found for multiple-choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---. Extra --- found at lines: {', '.join([str(self.lineno + i) for i in indexes[2:]])}"
             raise ValueError(message)
         
         # split in pre-text, options and post-text:
@@ -105,6 +116,13 @@ class QuestionDirective(SphinxDirective):
                     fb_content = [Feedback[ci_list[-1]]] # use default feedback based on correct/incorrect status
                 mc_list.append(mc_content)
                 fb_list.append(fb_content)
+        
+        # check the number of correct answers
+        logger.info(f"ci_list: {ci_list}",color="green")
+        logger.info(f"node_type: {node["variant"]}",color='blue')
+        if sum(ci_list)==0 and node["variant"]=="single-select":
+            message = f"No correct options provided for multiple-choice single-select question at line {self.lineno} in {self.env.docname}. Please provide at least one correct option between --- and ---."
+            raise ValueError(message)
                 
         # Start the grid for the cards:
         cards = [f"::::{{grid}} {Columns}",":gutter: 3",""]
@@ -153,8 +171,14 @@ class QuestionDirective(SphinxDirective):
             self.state.nested_parse(post_text, self.content_offset, post_section)
             node += post_section
 
+        return node
+
+    def _handle_multiple_choice_single_select(self, node, node_id, Columns, Feedback):
+        
+        node = self._handle_multiple_choice_shared(node, node_id, Columns, Feedback)
+
         # include a button inside a section to reset the question
-        reset_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
+        button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
         grid = [f"::::{{grid}} 3",":gutter: 3",""]
         left_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
         grid.extend(left_button)
@@ -163,8 +187,46 @@ class QuestionDirective(SphinxDirective):
         right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
         grid.extend(right_button)
         grid.extend(["::::"])
-        self.state.nested_parse(grid, self.content_offset, reset_section)
-        node += reset_section
+        self.state.nested_parse(grid, self.content_offset, button_section)
+        node += button_section
+
+        return [node]
+    
+    def _handle_multiple_choice_multiple_select(self, node, node_id, Columns, Feedback):
+        
+        node = self._handle_multiple_choice_shared(node, node_id, Columns, Feedback)
+
+        # include a section to show feedback for the whole question (instead of per option as in single-select)
+        # the content of the feedback will be determined by the frontend based on the selected options and the correct options.
+        feedback_section = nodes.section(classes=[f"question-feedback overall-feedback"],ids=[node_id + "-overall-feedback"])
+        grid = [f"::::{{grid}} 1",":gutter: 3",""]
+        # add cards:
+        # - Correct
+        # - Incorrect
+        correct_card = [":::{grid-item-card}", ":shadow: lg", ":class-card: correct","","Well done!",":::"]
+        incorrect_card = [":::{grid-item-card}", ":shadow: lg", ":class-card: incorrect","","Try again! You selected at least one incorrect option.",":::"]
+        missed_card = [":::{grid-item-card}", ":shadow: lg", ":class-card: missed","","Try again! You missed at least one correct option.",":::"]
+        grid.extend(correct_card)
+        grid.extend(incorrect_card)
+        grid.extend(missed_card)
+        grid.extend(["::::"])
+        self.state.nested_parse(grid, self.content_offset, feedback_section)
+        node += feedback_section
+
+        # include a button inside a section to reset the question and to submit the question
+        # (for multiple select, we need a submit button to show feedback, instead of showing
+        # feedback immediately after selecting an option as in single select)
+        button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
+        grid = [f"::::{{grid}} 3",":gutter: 3",""]
+        left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: submit-button","","Submit answer",":::"]
+        grid.extend(left_button)
+        middle_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
+        grid.extend(middle_button)
+        right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
+        grid.extend(right_button)
+        grid.extend(["::::"])
+        self.state.nested_parse(grid, self.content_offset, button_section)
+        node += button_section
 
         return [node]
 
@@ -172,7 +234,12 @@ class question_node(nodes.Admonition, nodes.Element):
     pass
 
 def visit_question_node(self, node: question_node) -> None:
-    self.body.append(self.starttag(node, "div", CLASS=f"admonition question {node['type']} {node['variant']}",ids=node["ids"]))
+    classes = " ".join(node["class"])
+    classes += " {}".format(" ".join([node["type"], node["variant"]]))
+    if node["admonition"]:
+        self.body.append(self.starttag(node, "div", CLASS=f"admonition {classes}",ids=node["ids"]))
+    else:
+        self.body.append(self.starttag(node, "div", CLASS=f"{classes}",ids=node["ids"]))
 
 def depart_question_node(self, node: question_node) -> None:
     id = node.attributes.get("ids", [""])[0]
@@ -188,9 +255,8 @@ def setup(app):
     app.add_node(question_node, html=(visit_question_node, depart_question_node))
     app.add_css_file("teachbooks_questions.css")
     app.add_js_file("teachbooks_wrapadmonition.js")
-    app.add_js_file("teachbooks_decrypt.js")
     app.add_js_file("teachbooks_mcss.js")
-    
+    app.add_js_file("teachbooks_mcms.js")
     
     static_path = os.path.join(os.path.dirname(__file__), "_static")
     app.config.html_static_path.append(static_path)

@@ -119,3 +119,17 @@ section.question-buttons div.sd-card:hover {
   border-color: var(--question-gray-border);
   transform: translateY(-2px);
 }
+
+/* styling of the feedback in the general section of a mcms question */
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-card.correct {
+    background-color: var(--question-green);
+}
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-card:not(.correct) {
+    background-color: var(--question-red);
+}
+section.question-feedback.overall-feedback div.sd-col.sd-d-flex-row:has(div.sd-card.show) {
+    display: flex !important;
+}
+section.question-feedback.overall-feedback div.sd-col.sd-d-flex-row:has(div.sd-card:not(.show)) {
+    display: none !important;
+}
