@@ -2,21 +2,22 @@
 document.addEventListener('click', function(event) {
   // Find the closest div with both sd-card and option classes
   const optionDiv = event.target.closest('div.sd-card.option');
-
-  // Check if it is a multiple-choice single-select questions
-  // Get the parent div with class admonition and class question
-  const questionDiv = optionDiv.closest('div.admonition.question');
-  if (!questionDiv) {
-    return; // not a question, do nothing
-  }
-  if (!questionDiv.classList.contains('multiple-choice')) {
-    return; // not a multiple-choice question, do nothing
-  }
-  if (!questionDiv.classList.contains('single-select')) {
-    return; // not a single-select question, do nothing
-  }
-
+  
   if (optionDiv) {
+    // Check if it is a multiple-choice single-select questions
+    // Get the parent div with class admonition and class question
+    const questionDiv = optionDiv.closest('div.admonition.question');
+    if (!questionDiv) {
+      return; // not a question, do nothing
+    }
+    if (!questionDiv.classList.contains('multiple-choice')) {
+      return; // not a multiple-choice question, do nothing
+    }
+    if (!questionDiv.classList.contains('single-select')) {
+      return; // not a single-select question, do nothing
+    }
+
+  
     // if already selected, unselect it and return
     if (optionDiv.querySelector('div.sd-card-body.selected')) {
       optionDiv.querySelector('div.sd-card-body').classList.remove('selected');
@@ -59,6 +60,38 @@ document.addEventListener('click', function(event) {
           optionFooter.classList.add('incorrect');
         }
       }
+    }
+  }
+
+  // if the click is outside of any option, maybe it was the reset button, so we check if it was the reset button and if so, we reset all options in the question
+  const resetButton = event.target.closest('div.sd-card.reset-button');
+  if (resetButton) {
+    // Check if it is a multiple-choice single-select questions
+    // Get the parent div with class admonition and class question
+    const questionDiv = resetButton.closest('div.admonition.question');
+    if (!questionDiv) {
+      console.log("Reset button clicked, but no question div found.");
+      return; // not a question, do nothing
+    }
+    if (!questionDiv.classList.contains('multiple-choice')) {
+      console.log("Reset button clicked, but no multiple-choice question found.");
+      return; // not a multiple-choice question, do nothing
+    }
+    if (!questionDiv.classList.contains('single-select')) {
+      console.log("Reset button clicked, but no single-select question found.");
+      return; // not a single-select question, do nothing
+    }    const questionSection = resetButton.closest('section.question-buttons');
+    // extract the id
+    const questionId = questionSection.id.replace('-buttons', '');
+    const questionOptionsSection = document.querySelector(`section.question-options#${questionId}-options`);
+    if (questionOptionsSection) {
+      // deselect all selected options
+      const optionCards = questionOptionsSection.querySelectorAll('div.sd-card.option');
+      optionCards.forEach(function(optionCard) {
+        optionCard.querySelector('div.sd-card-body').classList.remove('selected');
+        optionCard.querySelector('div.sd-card-footer').classList.remove('correct');
+        optionCard.querySelector('div.sd-card-footer').classList.remove('incorrect');
+      });
     }
   }
 });

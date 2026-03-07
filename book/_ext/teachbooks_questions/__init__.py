@@ -9,8 +9,10 @@ from sphinx.util import logging
 
 logger = logging.getLogger(__name__)
 
-TYPE_LIST = ["multiple-choice"]
+TYPES = ["multiple-choice"]
 VARIANTS = {"multiple-choice": ["single-select"]}
+FEEDBACKS = {"multiple-choice": {"single-select": {True: "Correct!", False: "Incorrect. Try again."}}}
+COLUMNS =  {"multiple-choice": {"single-select": 2}}
 
 class QuestionDirective(SphinxDirective):
     has_content = True
@@ -27,19 +29,17 @@ class QuestionDirective(SphinxDirective):
 
     def run(self) -> List[Node]:
 
-        logger.info("Processing question directive",color="blue")
-
         # check if the type is supported:
         Type = self.options.get("type", "multiple-choice")
-        if Type not in TYPE_LIST:
-            message = f"Unsupported question type {Type} at line {self.lineno} in {self.env.docname}. Supported types are: {TYPE_LIST}"
+        if Type not in TYPES:
+            message = f"Unsupported question type {Type} at line {self.lineno} in {self.env.docname}. Supported types are: {TYPES}"
             raise ValueError(message)
         Variant = self.options.get("variant", VARIANTS[Type][0])
         if Variant not in VARIANTS[Type]:
             message = f"Unsupported question variant {Variant} for type {Type} at line {self.lineno} in {self.env.docname}. Supported variants are: {VARIANTS[Type]}"
             raise ValueError(message)
-        Columns = self.options.get("columns", 2)
-        Feedback = self.options.get("feedback", {True: "Correct!", False: "Incorrect. Try again."})
+        Columns = self.options.get("columns", COLUMNS[Type][Variant])
+        Feedback = self.options.get("feedback", FEEDBACKS[Type][Variant])
         
         # just create a node and store some stuff
         node = question_node()
@@ -63,101 +63,108 @@ class QuestionDirective(SphinxDirective):
 
         # change the content so that cards are inserted for multiple choice questions:
         if Type == "multiple-choice" and Variant == "single-select":
-            mc_list = []
-            fb_list = []
-            ci_list = []
-            # first get the content between --- and ---, which is the content for options.
-            indexes = [i for i, val in enumerate(self.content) if val.strip() == "---"]
-            if len(indexes) == 0:
-                message = f"No options provided for multiple choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
-                raise ValueError(message)
-            elif len(indexes) == 1:
-                message = f"Only one --- found for multiple choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
-                raise ValueError(message)
-            elif len(indexes) > 2:
-                message = f"More than two --- found for multiple choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---. Extra --- found at lines: {', '.join([str(self.lineno + i) for i in indexes[2:]])}"
-                raise ValueError(message)
-            
-            options_raw = self.content[indexes[0]+1:indexes[1]]
-            # split in pre-text, options and post-text:
-            pre_text = self.content[:indexes[0]]
-            post_text = self.content[indexes[1]+1:]
+            return self._handle_multiple_choice_single_select(node, node_id, Columns, Feedback)
 
-            if options_raw:
-                    
-                # find all the options, which start with a line that starts with "[ ] " or "[x] " (possible with leading spaces)
-                indexes = [i for i, val in enumerate(options_raw) if val.strip().startswith("[ ] ") or val.strip().startswith("[x] ")]
-                for i in range(len(indexes)):
-                    raw_option = options_raw[indexes[i]:indexes[i+1]] if i < len(indexes)-1 else options_raw[indexes[i]:]
-                    logger.info(f"Raw option:\n{raw_option}",color="yellow")
-                    fb_index = [f for f, val in enumerate(raw_option) if val.strip().startswith("> ")]
-                    ci_list.append(raw_option[0].strip()[1] == "x") # correct if it starts with [x]
-                    if fb_index:
-                        mc_content = raw_option[:fb_index[0]]
-                        mc_content[0] = mc_content[0].strip()[3:] # remove the [ ] or [x] and leading spaces
-                        fb_content = raw_option[fb_index[0]:]
-                        fb_content[0] = fb_content[0].strip()[2:] # remove the "> " and leading spaces
-                    else:
-                        mc_content = raw_option
-                        mc_content[0] = mc_content[0].strip()[3:] # remove the [ ] or [x] and leading spaces
-                        fb_content = [Feedback[ci_list[-1]]] # use default feedback based on correct/incorrect status
-                    mc_list.append(mc_content)
-                    fb_list.append(fb_content)
-                    
+    def _handle_multiple_choice_single_select(self, node, node_id, Columns, Feedback):
+        mc_list = []
+        fb_list = []
+        ci_list = []
+        # first get the content between --- and ---, which is the content for options.
+        indexes = [i for i, val in enumerate(self.content) if val.strip() == "---"]
+        if len(indexes) == 0:
+            message = f"No options provided for multiple choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
+            raise ValueError(message)
+        elif len(indexes) == 1:
+            message = f"Only one --- found for multiple choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
+            raise ValueError(message)
+        elif len(indexes) > 2:
+            message = f"More than two --- found for multiple choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---. Extra --- found at lines: {', '.join([str(self.lineno + i) for i in indexes[2:]])}"
+            raise ValueError(message)
+        
+        # split in pre-text, options and post-text:
+        options_raw = self.content[indexes[0]+1:indexes[1]]
+        pre_text = self.content[:indexes[0]]
+        post_text = self.content[indexes[1]+1:]
 
-            logger.info(f"MC options:\n{[list(mc) for mc in mc_list]}",color="red")
-            logger.info(f"Feedback options:\n{fb_list}",color="green")
-            logger.info(f"Correct/Incorrect:\n{list(ci_list)}",color="yellow")
+        if options_raw:
+                
+            # find all the options, which start with a line that starts with "[ ] " or "[x] " (possible with leading spaces)
+            indexes = [i for i, val in enumerate(options_raw) if val.strip().startswith("[ ] ") or val.strip().startswith("[x] ")]
+            for i in range(len(indexes)):
+                raw_option = options_raw[indexes[i]:indexes[i+1]] if i < len(indexes)-1 else options_raw[indexes[i]:]
+                fb_index = [f for f, val in enumerate(raw_option) if val.strip().startswith("> ")]
+                ci_list.append(raw_option[0].strip()[1] == "x") # correct if it starts with [x]
+                if fb_index:
+                    mc_content = raw_option[:fb_index[0]]
+                    mc_content[0] = mc_content[0].strip()[3:] # remove the [ ] or [x] and leading spaces
+                    fb_content = raw_option[fb_index[0]:]
+                    fb_content[0] = fb_content[0].strip()[2:] # remove the "> " and leading spaces
+                else:
+                    mc_content = raw_option
+                    mc_content[0] = mc_content[0].strip()[3:] # remove the [ ] or [x] and leading spaces
+                    fb_content = [Feedback[ci_list[-1]]] # use default feedback based on correct/incorrect status
+                mc_list.append(mc_content)
+                fb_list.append(fb_content)
+                
+        # Start the grid for the cards:
+        cards = [f"::::{{grid}} {Columns}",":gutter: 3",""]
+        # create empty cards for each of the options
+        for mc in mc_list:
+            cards.append(":::{grid-item-card}")
+            cards.append(":shadow: lg")
+            cards.append(":class-card: option")
+            cards.append("+++")
+            cards.append(":::")   
+        # end the grid
+        cards.append("::::")
 
-            # Start the grid for the cards:
-            cards = [f"::::{{grid}} {Columns}",":gutter: 3",":class-row: feedback",""]
-            # create empty cards for each of the options
-            for mc in mc_list:
-                cards.append(":::{grid-item-card}")
-                cards.append(":shadow: lg")
-                cards.append(":class-card: option")
-                cards.append("+++")
-                cards.append(":::")   
-            # end the grid
-            cards.append("::::")
+        # add the first text if any
+        if pre_text:
+            pre_section = nodes.section(classes=[f"question-pretext"],ids=[node_id + "-pretext"])
+            self.state.nested_parse(pre_text, self.content_offset, pre_section)
+            node += pre_section
+        
+        # add the mc options section (should be given)
+        mc_section = nodes.section(classes=[f"question-options"],ids=[node_id + "-options"])
+        self.state.nested_parse(cards, self.content_offset, mc_section)
+        node += mc_section
+        # loop over the options and add the content of the option (parsed) to the card:
+        current_card = -1
+        for nd in mc_section.findall():
+            if isinstance(nd,nodes.container):
+                if "sd-card-body" in nd.get("classes", []):
+                    current_card += 1
+                    # add the content of the option to the card:
+                    option_content = mc_list[current_card]
+                    option_content_section = nodes.section(classes=["question-option"],ids=[f"{node_id}-option-{current_card}"])
+                    self.state.nested_parse(option_content, self.content_offset, option_content_section)
+                    nd += option_content_section
+                if "sd-card-footer" in nd.get("classes", []):
+                    # add the content of the feedback to the card:
+                    feedback_content = fb_list[current_card]
+                    feedback_content_section = nodes.section(classes=[f"question-feedback {'' if ci_list[current_card] else 'in'}correct"],ids=[f"{node_id}-feedback-{current_card}"])
+                    self.state.nested_parse(feedback_content, self.content_offset, feedback_content_section)
+                    feedback_content_section["data-correct"] = ci_list[current_card] # add data attribute for correct/incorrect status, which can be used by the frontend to show feedback
+                    nd += feedback_content_section
 
-            # add the first text if any
-            if pre_text:
-                pre_section = nodes.section(classes=[f"question-pretext"],ids=[node_id + "-pretext"])
-                self.state.nested_parse(pre_text, self.content_offset, pre_section)
-                node += pre_section
-            
-            # add the mc options section (should be given)
-            mc_section = nodes.section(classes=[f"question-options"],ids=[node_id + "-options"])
-            self.state.nested_parse(cards, self.content_offset, mc_section)
-            node += mc_section
-            logger.info(f"Cards section:\n{mc_section.pformat()}",color="blue")
-            # loop over the options and add the content of the option (parsed) to the card:
-            current_card = -1
-            for nd in mc_section.findall():
-                if isinstance(nd,nodes.container):
-                    if "sd-card-body" in nd.get("classes", []):
-                        current_card += 1
-                        # add the content of the option to the card:
-                        option_content = mc_list[current_card]
-                        option_content_section = nodes.section(classes=["question-option"],ids=[f"{node_id}-option-{current_card}"])
-                        self.state.nested_parse(option_content, self.content_offset, option_content_section)
-                        nd += option_content_section
-                        logger.info(f"Processing card node:\n{nd.pformat()}",color="green")
-                    if "sd-card-footer" in nd.get("classes", []):
-                        # add the content of the feedback to the card:
-                        feedback_content = fb_list[current_card]
-                        feedback_content_section = nodes.section(classes=[f"question-feedback {'' if ci_list[current_card] else 'in'}correct"],ids=[f"{node_id}-feedback-{current_card}"])
-                        self.state.nested_parse(feedback_content, self.content_offset, feedback_content_section)
-                        feedback_content_section["data-correct"] = ci_list[current_card] # add data attribute for correct/incorrect status, which can be used by the frontend to show feedback
-                        nd += feedback_content_section
-                        logger.info(f"Processing card node:\n{nd.pformat()}",color="yellow")
+        # include the final text, if any
+        if post_text:
+            post_section = nodes.section(classes=[f"question-posttext"],ids=[node_id + "-posttext"])
+            self.state.nested_parse(post_text, self.content_offset, post_section)
+            node += post_section
 
-            # include the final text, if any
-            if post_text:
-                post_section = nodes.section(classes=[f"question-posttext"],ids=[node_id + "-posttext"])
-                self.state.nested_parse(post_text, self.content_offset, post_section)
-                node += post_section
+        # include a button inside a section to reset the question
+        reset_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
+        grid = [f"::::{{grid}} 3",":gutter: 3",""]
+        left_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
+        grid.extend(left_button)
+        middle_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
+        grid.extend(middle_button)
+        right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
+        grid.extend(right_button)
+        grid.extend(["::::"])
+        self.state.nested_parse(grid, self.content_offset, reset_section)
+        node += reset_section
 
         return [node]
 

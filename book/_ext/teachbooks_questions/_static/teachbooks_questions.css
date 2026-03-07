@@ -81,7 +81,6 @@ section.question-options:has(div.sd-card-footer.incorrect:hover) div.sd-card-bod
 section.question-options div.sd-card-body.selected {
     background-color: var(--question-blue);
 }
-/* Styling of the options on selection */
 section.question-options div.sd-card-body.selected:hover {
     background-color: var(--question-blue-hover);
 }
@@ -92,8 +91,31 @@ section.question-options:has(div.sd-card-body.selected:hover) div.sd-card-footer
     background-color: var(--question-red-hover);
 }
 
-/* to make sure any adminition within the card is styled correctly */
+/* to make sure any admonition within the card is styled correctly */
 /* add a background */
 section.question-options div.sd-card div.wrap-admonition {
     background-color: var(--pst-color-background);
+}
+
+/* Style the buttons */
+section.question-buttons div.sd-card.hidden-button {
+    display: none
+}
+section.question-buttons div.sd-card {
+    cursor: pointer;
+    border-radius: 0.6rem;
+    
+    /* Button‑like visuals */
+    border: 2px solid var(--question-gray-border);
+    background-color: var(--question-gray);
+    transition: 
+        background 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+section.question-buttons div.sd-card:hover {
+  background: var(--question-white);
+  border-color: var(--question-gray-border);
+  transform: translateY(-2px);
 }
