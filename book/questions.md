@@ -39,7 +39,7 @@ For `multiple-select` variants some overall feedback will be shown.
 - `:type:` for now, only `multiple-choice` is available (and the default), so the option can be omitted.
 - `:variant:` for now, only `single-select`  (the default) and `multiple-select` are available.
 - `:columns:` number of columns to use for the options, 2 by default, so the option can be omitted.
-- `:class:` The class(es) to add to the containing `<div>` for styling.
+- `:class:` The class(es) to add to the containing `<div>` for styling. Adding a class might trigger existing css, so be careful. Default value is nothing/empty.
 - `:admonition:` If included, `admonition` will be added to the classes of the containing `<div>`. Can also be done through the `:class:` option.
 
 ## Examples
@@ -52,7 +52,6 @@ For `multiple-select` variants some overall feedback will be shown.
 :type: multiple-choice
 :variant: single-select
 :columns: 2
-:admonition:
 
 This is a question with direct feedback. Select one of the options below by clicking.
 
@@ -90,7 +89,6 @@ You can reset the question with the button.
 :type: multiple-choice
 :variant: single-select
 :columns: 2
-:admonition:
 
 This is a question with direct feedback. Select one of the options below by clicking.
 
@@ -131,8 +129,9 @@ You can reset the question with the button.
 :variant: multiple-select
 :columns: 2
 :admonition:
+:class: example
 
-This is a question with direct feedback. Select one of the options below by clicking.
+This is a question with feedback on submission. Select zero or more of the options below by clicking.
 
 ---
 [x] Answer A
@@ -163,7 +162,7 @@ You can submit your selection using the submit button.
 ::::
 ``````
 
-::::{question} Multiple-choice Single-select
+::::{question} Multiple-choice Multiple-select
 :label: reference2
 :type: multiple-choice
 :variant: multiple-select
@@ -171,7 +170,7 @@ You can submit your selection using the submit button.
 :admonition:
 :class: example
 
-This is a question with direct feedback. Select one of the options below by clicking.
+This is a question with feedback on submission. Select zero or more of the options below by clicking.
 
 ---
 [x] Answer A

@@ -43,7 +43,7 @@ class QuestionDirective(SphinxDirective):
         Feedback = self.options.get("feedback", FEEDBACKS[Type][Variant])
 
         # see if a class has to be added to the question
-        Class = self.options.get("class", ["question"])
+        Class = self.options.get("class", [])
         Admonition = "admonition" in self.options
         
         # just create a node and store some stuff
