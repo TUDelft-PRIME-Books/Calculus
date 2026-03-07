@@ -118,8 +118,6 @@ class QuestionDirective(SphinxDirective):
                 fb_list.append(fb_content)
         
         # check the number of correct answers
-        logger.info(f"ci_list: {ci_list}",color="green")
-        logger.info(f"node_type: {node["variant"]}",color='blue')
         if sum(ci_list)==0 and node["variant"]=="single-select":
             message = f"No correct options provided for multiple-choice single-select question at line {self.lineno} in {self.env.docname}. Please provide at least one correct option between --- and ---."
             raise ValueError(message)
