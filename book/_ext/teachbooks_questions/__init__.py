@@ -9,10 +9,10 @@ from sphinx.util import logging
 
 logger = logging.getLogger(__name__)
 
-TYPES = ["multiple-choice"]
-VARIANTS = {"multiple-choice": ["single-select","multiple-select"]}
-FEEDBACKS = {"multiple-choice": {"single-select": {True: "Correct!", False: "Incorrect. Try again."}, "multiple-select": {True: "Correct!", False: "Incorrect. Try again."}}}
-COLUMNS =  {"multiple-choice": {"single-select": "1 1 2 2", "multiple-select": "1 1 2 2"}}
+TYPES = ["multiple-choice","short-answer"]
+VARIANTS = {"multiple-choice": ["single-select","multiple-select"], "short-answer": ["blocks"]}
+FEEDBACKS = {"multiple-choice": {"single-select": {True: "Correct!", False: "Incorrect. Try again."},"multiple-select": {True: "Correct!", False: "Incorrect. Try again."}}, "short-answer": {"blocks": {True: "Correct!", False: "Incorrect. Try again."}}}
+COLUMNS =  {"multiple-choice": {"single-select": "1 1 2 2", "multiple-select": "1 1 2 2"}, "short-answer": {"blocks": "not used"}}
 
 class QuestionDirective(SphinxDirective):
     has_content = True
@@ -75,27 +75,26 @@ class QuestionDirective(SphinxDirective):
         node_title = nodes.title(title_text, "", *textnodes,ids=[node_id + "-title"])
         node += node_title
 
-        # change the content so that cards are inserted for multiple-choice questions:
         if Type == "multiple-choice":
             if Variant == "single-select":
                 return self._handle_multiple_choice_single_select(node, node_id, Columns, Feedback)
             elif Variant == "multiple-select":
                 return self._handle_multiple_choice_multiple_select(node, node_id, Columns, Feedback)
+        elif Type == "short-answer":
+            if Variant == "blocks":
+                return self._handle_short_answer_blocks(node, node_id, Feedback)
             
-    def _handle_multiple_choice_shared(self, node, node_id, Columns, Feedback):
-        mc_list = []
-        fb_list = []
-        ci_list = []
+    def _split_input(self):
         # first get the content between --- and ---, which is the content for options.
         indexes = [i for i, val in enumerate(self.content) if val.strip() == "---"]
         if len(indexes) == 0:
-            message = f"No options provided for multiple-choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
+            message = f"No options provided for question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
             raise ValueError(message)
         elif len(indexes) == 1:
-            message = f"Only one --- found for multiple-choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
+            message = f"Only one --- found for question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
             raise ValueError(message)
         elif len(indexes) > 2:
-            message = f"More than two --- found for multiple-choice question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---. Extra --- found at lines: {', '.join([str(self.lineno + i) for i in indexes[2:]])}"
+            message = f"More than two --- found for question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---. Extra --- found at lines: {', '.join([str(self.lineno + i) for i in indexes[2:]])}"
             raise ValueError(message)
         
         # split in pre-text, options and post-text:
@@ -103,8 +102,151 @@ class QuestionDirective(SphinxDirective):
         pre_text = self.content[:indexes[0]]
         post_text = self.content[indexes[1]+1:]
 
+        return pre_text, options_raw, post_text
+
+    def _handle_short_answer_blocks(self, node, node_id, Feedback):
+
+        # split the content into pre-text, options and post-text
+        pre_text, options_raw, post_text = self._split_input()
+
+        # add the first text if any
+        if pre_text:
+            pre_section = nodes.section(classes=[f"question-pretext"],ids=[node_id + "-pretext"])
+            self.state.nested_parse(pre_text, self.content_offset, pre_section)
+            node += pre_section
+
+        # parse the options (just include currently)
+        
+        type_list = []
+        answer_list = []
+        label_list = []
+        correct_list = []
+        incorrect_list = []
         if options_raw:
+            # find all the options, which start with a line that starts with "T[ " or "N[" or "M[" (possible with leading spaces)
+            indexes = [i for i, val in enumerate(options_raw) if val.strip()[1:].startswith("[")]
+            for i in range(len(indexes)):
+                block = options_raw[indexes[i]:indexes[i+1]] if i < len(indexes)-1 else options_raw[indexes[i]:]
                 
+                logger.info(f"Option found at line {self.lineno + indexes[i] + 1} in {self.env.docname}:",color='blue')
+                logger.info("\n".join(block),color='yellow')
+
+                # get the type of the question from the first line, which should start with "T[" or "N[" or "M["
+                type_list.append(block[0].strip()[0])
+
+                # get correct answer from first line
+                answer = block[0].strip()[2:]
+                answer = answer.split(']')[0].strip()
+                logger.info(f"Answer parsed as: '{answer}'",color='green')
+                answer_list.append(answer)
+
+                # Get the label from the first line if it exists (after the answer and between parentheses)
+                label = block[0].strip()[2:]
+                label = [label.split(']')[1].strip()]
+                line = 1
+                while line < len(block):
+                    if block[line].strip().startswith("> ") or block[line].strip().startswith("= "):
+                        break
+                    label.append(block[line].strip())
+                    line += 1
+                logger.info(f"Label parsed as:\n'{"\n".join(label)}'",color='fuchsia')
+                label_list.append(label)
+
+                # get feedback from lines starting with > (incorrect) or = (correct)
+                correct_feedback = []
+                incorrect_feedback = []
+                if line < len(block):
+                    while line < len(block):
+                        if block[line].strip().startswith("> "):
+                            if len(incorrect_feedback) > 0:
+                                incorrect_feedback.append("") # add an empty line between different feedback blocks for better readability
+                            incorrect_feedback.append(block[line].strip()[2:])
+                            last = "incorrect"
+                        elif block[line].strip().startswith("= "):
+                            if len(correct_feedback) > 0:
+                                correct_feedback.append("") # add an empty line between different feedback blocks for better readability
+                            correct_feedback.append(block[line].strip()[2:])
+                            last = "correct"
+                        else:
+                            if last == "incorrect":
+                                incorrect_feedback.append(block[line].strip())
+                            else:
+                                correct_feedback.append(block[line].strip())
+                        line += 1
+                else: # this means that no feedback is provided after an optional label, so we use default feedback based on correct/incorrect status
+                    correct_feedback = [Feedback[True]]
+                    incorrect_feedback = [Feedback[False]]
+                logger.info(f"Correct feedback:\n{"\n".join(correct_feedback)}",color='green')
+                logger.info(f"Incorrect feedback:\n{"\n".join(incorrect_feedback)}",color='red')
+                correct_list.append(correct_feedback)
+                incorrect_list.append(incorrect_feedback)
+
+        # Create the lines that will render a full-width card with
+        # - the label in the header
+        # - the input field in the body
+        # - the feedback in the footer
+        options_content = []
+        for label in label_list:
+            card = [":::{card}", ":shadow: lg", ":width: 100%",":class-card: option",":class-body: input"]
+            if label == ['']:
+                card.append(":class-header: hidden")
+            card.extend(["^^^","+++",":::"])
+            options_content.extend(card)
+
+        # add the options section
+        options_section = nodes.section(classes=[f"question-options"],ids=[node_id + "-options"])
+        self.state.nested_parse(options_content, self.content_offset, options_section)
+        node += options_section
+
+        # loop over the cards in the section, and add the label, input field and feedback to the correct place in the card:
+        current_card = -1
+        for nd in options_section.findall():
+            if isinstance(nd,nodes.container):
+                if "sd-card-header" in nd.get("classes", []):
+                    current_card += 1
+                    # add the label to the header:
+                    label_content = label_list[current_card]
+                    label_content_section = nodes.section(classes=["question-option-label"],ids=[f"{node_id}-option-{current_card}-label"])
+                    self.state.nested_parse(label_content, self.content_offset, label_content_section)
+                    nd += label_content_section
+                if "sd-card-body" in nd.get("classes", []):
+                    # add the input field to the body, based on the type of the answer:
+                    if type_list[current_card] == "T":
+                        raw_html = f"<textarea class='question-option-input' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'></textarea>"
+                    elif type_list[current_card] == "M":
+                        raw_html = f"<input type='number' class='question-option-input' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'>"
+                    else: 
+                        message = f"Unsupported question type {type_list[current_card]} for short answer question at line {self.lineno + indexes[current_card] + 1} in {self.env.docname}. Supported types are: T, N and M."
+                        raise ValueError(message)
+                    input_field = nodes.raw(raw_html, raw_html, format="html")
+                    nd += input_field
+                if "sd-card-footer" in nd.get("classes", []):
+                    # add the content of the correct feedback to the footer:
+                    correct_feedback_content = correct_list[current_card]
+                    correct_feedback_content_section = nodes.section(classes=["question-feedback correct"],ids=[f"{node_id}-option-{current_card}-feedback"])
+                    self.state.nested_parse(correct_feedback_content, self.content_offset, correct_feedback_content_section)
+                    nd += correct_feedback_content_section
+                    incorrect_feedback_content = incorrect_list[current_card]
+                    incorrect_feedback_content_section = nodes.section(classes=["question-feedback incorrect"],ids=[f"{node_id}-option-{current_card}-feedback-incorrect"])
+                    self.state.nested_parse(incorrect_feedback_content, self.content_offset, incorrect_feedback_content_section)
+                    nd += incorrect_feedback_content_section
+
+        # include the final text, if any
+        if post_text:
+            post_section = nodes.section(classes=[f"question-posttext"],ids=[node_id + "-posttext"])
+            self.state.nested_parse(post_text, self.content_offset, post_section)
+            node += post_section
+
+        return [node]
+            
+    def _handle_multiple_choice_shared(self, node, node_id, Columns, Feedback):
+        # split the content into pre-text, options and post-text
+        pre_text, options_raw, post_text = self._split_input()
+
+        mc_list = []
+        fb_list = []
+        ci_list = []
+        if options_raw:
             # find all the options, which start with a line that starts with "[ ] " or "[x] " (possible with leading spaces)
             indexes = [i for i, val in enumerate(options_raw) if val.strip().startswith("[ ] ") or val.strip().startswith("[x] ")]
             for i in range(len(indexes)):
@@ -262,6 +404,7 @@ def setup(app):
     app.add_js_file("teachbooks_wrapadmonition.js")
     app.add_js_file("teachbooks_mcss.js")
     app.add_js_file("teachbooks_mcms.js")
+    app.add_js_file("teachbooks_sab.js")
     
     static_path = os.path.join(os.path.dirname(__file__), "_static")
     app.config.html_static_path.append(static_path)

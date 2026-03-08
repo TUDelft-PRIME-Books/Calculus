@@ -28,8 +28,7 @@ html[data-theme="dark"] {
 /* General style for the question options */
 section.question-options div.sd-card.option {
 
-  cursor: pointer;
-  border-radius: 0.6rem;
+    border-radius: 0.6rem;
 
   /* Button‑like visuals */
   border: 2px solid var(--question-gray-border);
@@ -41,14 +40,18 @@ section.question-options div.sd-card.option {
     transform 0.1s ease;
   overflow: hidden;
 }
+div.multiple-choice section.question-options div.sd-card.option {
 
-section.question-options div.sd-card.option:hover {
+  cursor: pointer;
+}
+
+div.multiple-choice section.question-options div.sd-card.option:hover {
   background: var(--question-white);
   border-color: var(--question-gray-border);
   transform: translateY(-2px);
 }
 
-section.question-options div.sd-card.option:has(div.sd-card-body.selected) {
+div.multiple-choice section.question-options div.sd-card.option:has(div.sd-card-body.selected) {
     transform: translateY(2px) translateX(2px);
 }
 
@@ -60,48 +63,48 @@ section.question-options div.sd-card-footer.correct {
     display: block;
     background-color: var(--question-green);
 }
-section.question-options div.sd-card-footer.correct:hover {
+div.multiple-choice section.question-options div.sd-card-footer.correct:hover {
     background-color: var(--question-green-hover);
 }
-section.question-options:has(div.sd-card-footer.correct:hover) div.sd-card-body.selected {
+div.multiple-choice section.question-options:has(div.sd-card-footer.correct:hover) div.sd-card-body.selected {
     background-color: var(--question-blue-hover);
 }
 section.question-options div.sd-card-footer.incorrect {
     display: block;
     background-color: var(--question-red);
 }
-section.question-options div.sd-card-footer.incorrect:hover {
+div.multiple-choice section.question-options div.sd-card-footer.incorrect:hover {
     background-color: var(--question-red-hover);
 }
-section.question-options:has(div.sd-card-footer.incorrect:hover) div.sd-card-body.selected {
+div.multiple-choice section.question-options:has(div.sd-card-footer.incorrect:hover) div.sd-card-body.selected {
     background-color: var(--question-blue-hover);
 }
 
 /* Styling of the options on selection */
-section.question-options div.sd-card-body.selected {
+div.multiple-choice section.question-options div.sd-card-body.selected {
     background-color: var(--question-blue);
 }
-section.question-options div.sd-card-body.selected:hover {
+div.multiple-choice section.question-options div.sd-card-body.selected:hover {
     background-color: var(--question-blue-hover);
 }
-section.question-options:has(div.sd-card-body.selected:hover) div.sd-card-footer.correct {
+div.multiple-choice section.question-options:has(div.sd-card-body.selected:hover) div.sd-card-footer.correct {
     background-color: var(--question-green-hover);
 }
-section.question-options:has(div.sd-card-body.selected:hover) div.sd-card-footer.incorrect {
+div.multiple-choice section.question-options:has(div.sd-card-body.selected:hover) div.sd-card-footer.incorrect {
     background-color: var(--question-red-hover);
 }
 
 /* to make sure any admonition within the card is styled correctly */
 /* add a background */
-section.question-options div.sd-card div.wrap-admonition {
+div.multiple-choice section.question-options div.sd-card div.wrap-admonition {
     background-color: var(--pst-color-background);
 }
 
 /* Style the buttons */
-section.question-buttons div.sd-card.hidden-button {
+div.multiple-choice section.question-buttons div.sd-card.hidden-button {
     display: none
 }
-section.question-buttons div.sd-card {
+div.multiple-choice section.question-buttons div.sd-card {
     cursor: pointer;
     border-radius: 0.6rem;
     
@@ -114,7 +117,7 @@ section.question-buttons div.sd-card {
         box-shadow 0.15s ease,
         transform 0.1s ease;
 }
-section.question-buttons div.sd-card:hover {
+div.multiple-choice section.question-buttons div.sd-card:hover {
   background: var(--question-white);
   border-color: var(--question-gray-border);
   transform: translateY(-2px);
@@ -127,9 +130,49 @@ div.multiple-choice.multiple-select section.question-feedback.overall-feedback d
 div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-card:not(.correct) {
     background-color: var(--question-red);
 }
-section.question-feedback.overall-feedback div.sd-col.sd-d-flex-row:has(div.sd-card.show) {
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-col.sd-d-flex-row:has(div.sd-card.show) {
     display: flex !important;
 }
-section.question-feedback.overall-feedback div.sd-col.sd-d-flex-row:has(div.sd-card:not(.show)) {
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-col.sd-d-flex-row:has(div.sd-card:not(.show)) {
     display: none !important;
+}
+
+/* short-answer stuff */
+div.short-answer.blocks section.question-options div.sd-card-header.hidden {
+    display: none;
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input {
+    padding: 0;
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input{
+    display: block;           /* avoid inline quirks */
+    box-sizing: border-box;   /* include padding/border in width/height */
+    width: 100%;
+    height: 100%;             /* match container if container has a height */
+    min-height: 6rem;         /* initial size; adjust to taste */
+    resize: vertical;         /* allow vertical resize only */
+    overflow-y: auto;         /* vertical scrollbar if needed */
+    overflow-x: hidden;       /* no horizontal scrollbar */
+    border: none;             /* optional: match card’s border instead */
+    padding: .6rem .8rem;     /* optional */
+    font: inherit;
+    background-color: var(--question-white);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input:focus {
+    outline: none;
+    background-color: var(--question-blue);
+}
+div.short-answer.blocks section.question-options div.sd-card:has(textarea.question-option-input:focus) {
+    border-color: var(--question-blue);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input::placeholder {
+    color: var(--sd-color-card-text);
+    opacity: 0.5; /* ensure placeholder is visible */
+}
+div.short-answer.blocks section.question-options div.sd-card-footer.correct section.incorrect {
+    display: none;
+}
+
+div.short-answer.blocks section.question-options div.sd-card-footer.incorrect section.correct {
+    display: none;
 }

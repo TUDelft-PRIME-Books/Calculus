@@ -32,14 +32,35 @@ All correct options is allowed for `multiple-select` and `single-select`.
 
 For `multiple-select` variants some overall feedback will be shown.
 
+### Short-answer Blocks
+
+Within an options part, a new answer is indicated with a line starting with one of the following options, where `Answer` is the correct answer. `Answer` cannot be empty, but can be any length of characters, and can be textual, numerical and/or include $\LaTeX$ math:
+
+- `T[Answer] ` for a short answer question with a text input field.
+- `M[Answer] ` for a short answer question with a math input field.
+
+This can be optionally followed with a label that will be placed above the input field in th rendering. These can be multi lined.
+
+A line starting with `= ` after the answer line is considered feedback for that answer if correctly answered. The feedback is associated with the most recently opened option.
+
+A line starting with `> ` after an answer line is considered feedback for that answer if incorrectly answered. The feedback is associated with the most recently opened option.
+
+Feedback is optional, and if not provided, the feedback will be `Correct!` or `Incorrect. Try again.`.
+
+The lines starting with `[Answer]  `, `= ` or `> ` cannot be empty (after the indicator, if present).
+
+Lines following `[Answer]  `, `= ` or `> ` that do not start with one of these indicators are considered part of the answer or feedback, and can be used to include multiple lines in the answer or feedback.
+
+If multiple `= ` or `> ` lines are provided, these will be concatenated together to form the feedback for correctly or incorrectly answered questions, respectively.
+
 ## Options
 
 - A title is optional, and is the first argument.
 
 - `:label:` for use with `{ref}`, can be omitted.
-- `:type:` for now, only `multiple-choice` is available (and the default), so the option can be omitted.
-- `:variant:` for now, only `single-select`  (the default) and `multiple-select` are available.
-- `:columns:` number of columns to use for the options for multiple-choice questions. Default value is `1 1 2 2`. See [Grids](https://sphinx-design.readthedocs.io/en/latest/grids.html), second paragraph for more details. Either one single number or 4 numbers can be provided. If one single number is provided, it will be used for all screen sizes. If 4 numbers are provided, they will be used for the 4 screen sizes (small, medium, large and extra large) in that order. 
+- `:type:` for now, only `multiple-choice` (the default) and `short-answer` are available.
+- `:variant:` for now, only `single-select` (the default for `multiple-choice`), `multiple-select` (the alternative for `multiple-choice`) and `blocks` (the default for `short-answer`) are available.
+- `:columns:` number of columns to use for the options for `multiple-choice` questions. Default value is `1 1 2 2`. See [Grids](https://sphinx-design.readthedocs.io/en/latest/grids.html), second paragraph for more details. Either one single number or 4 numbers can be provided. If one single number is provided, it will be used for all screen sizes. If 4 numbers are provided, they will be used for the 4 screen sizes (small, medium, large and extra large) in that order. 
 - `:class:` The class(es) to add to the containing `<div>` for styling. Adding a class might trigger existing css, so be careful. Default value is nothing/empty.
 - `:admonition:` If included, `admonition` will be added to the classes of the containing `<div>`. Can also be done through the `:class:` option.
 - `:nocaption:` If included, no caption will be added to the question. By default, a caption is added with the text "Question". This option can be used to hide the caption. If also no title is provided, the question will have neither a title nor a caption shown. If a title is provided, the title will be shown without surrounding brackets.
@@ -199,5 +220,39 @@ You can deselect the option by clicking the same option.
 You can select another option by clicking another option. The previous selected option will be deselected.
 
 You can reset the question with the button.
+
+::::
+
+### Short-answer Blocks
+
+::::{question} Short-answer Blocks
+:label: reference3
+:type: short-answer
+:variant: blocks
+:admonition:
+
+This is a short-answer question with a single wide text input per defined answer. Type your answer in the text box and press the submit button.
+
+The correct answers are **Answer A** and _Omnia bona_ and `no feedback`.
+
+---
+T[Answer A] Type your answer here:
+> Negative feedback for Answer A.
+= Positive feedback for Answer A.
+
+with multiple lines.
+T[Omnia bona]
+> Negative feedback for Omnia bona.
+= Positive feedback for Omnia bona.
+> More negative feedback if the answer is incorrect.
+= More positive feedback if the answer is correct.
+M[No feedback] A label
+
+that has 2 lines.
+---
+
+Text after the options part.
+
+You can reset the question with the reset button.
 
 ::::

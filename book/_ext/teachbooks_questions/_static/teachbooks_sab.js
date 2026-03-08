@@ -1,0 +1,1 @@
+// Placeholder for the JavaScript file that will handle the short answer block questions.
