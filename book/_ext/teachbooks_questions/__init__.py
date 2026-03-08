@@ -128,16 +128,12 @@ class QuestionDirective(SphinxDirective):
             for i in range(len(indexes)):
                 block = options_raw[indexes[i]:indexes[i+1]] if i < len(indexes)-1 else options_raw[indexes[i]:]
                 
-                logger.info(f"Option found at line {self.lineno + indexes[i] + 1} in {self.env.docname}:",color='blue')
-                logger.info("\n".join(block),color='yellow')
-
                 # get the type of the question from the first line, which should start with "T[" or "N[" or "M["
                 type_list.append(block[0].strip()[0])
 
                 # get correct answer from first line
                 answer = block[0].strip()[2:]
                 answer = answer.split(']')[0].strip()
-                logger.info(f"Answer parsed as: '{answer}'",color='green')
                 answer_list.append(answer)
 
                 # Get the label from the first line if it exists (after the answer and between parentheses)
@@ -149,7 +145,6 @@ class QuestionDirective(SphinxDirective):
                         break
                     label.append(block[line].strip())
                     line += 1
-                logger.info(f"Label parsed as:\n'{"\n".join(label)}'",color='fuchsia')
                 label_list.append(label)
 
                 # get feedback from lines starting with > (incorrect) or = (correct)
@@ -176,8 +171,6 @@ class QuestionDirective(SphinxDirective):
                 else: # this means that no feedback is provided after an optional label, so we use default feedback based on correct/incorrect status
                     correct_feedback = [Feedback[True]]
                     incorrect_feedback = [Feedback[False]]
-                logger.info(f"Correct feedback:\n{"\n".join(correct_feedback)}",color='green')
-                logger.info(f"Incorrect feedback:\n{"\n".join(incorrect_feedback)}",color='red')
                 correct_list.append(correct_feedback)
                 incorrect_list.append(incorrect_feedback)
 
