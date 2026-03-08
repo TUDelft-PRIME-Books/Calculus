@@ -34,13 +34,15 @@ For `multiple-select` variants some overall feedback will be shown.
 
 ## Options
 
-- A title is optional
+- A title is optional, and is the first argument.
+
 - `:label:` for use with `{ref}`, can be omitted.
 - `:type:` for now, only `multiple-choice` is available (and the default), so the option can be omitted.
 - `:variant:` for now, only `single-select`  (the default) and `multiple-select` are available.
-- `:columns:` number of columns to use for the options, 2 by default, so the option can be omitted.
+- `:columns:` number of columns to use for the options for multiple-choice questions. Default value is `1 1 2 2`. See [Grids](https://sphinx-design.readthedocs.io/en/latest/grids.html), second paragraph for more details. Either one single number or 4 numbers can be provided. If one single number is provided, it will be used for all screen sizes. If 4 numbers are provided, they will be used for the 4 screen sizes (small, medium, large and extra large) in that order. 
 - `:class:` The class(es) to add to the containing `<div>` for styling. Adding a class might trigger existing css, so be careful. Default value is nothing/empty.
 - `:admonition:` If included, `admonition` will be added to the classes of the containing `<div>`. Can also be done through the `:class:` option.
+- `:nocaption:` If included, no caption will be added to the question. By default, a caption is added with the text "Question". This option can be used to hide the caption. If also no title is provided, the question will have neither a title nor a caption shown. If a title is provided, the title will be shown without surrounding brackets.
 
 ## Examples
 
@@ -51,7 +53,7 @@ For `multiple-select` variants some overall feedback will be shown.
 :label: reference
 :type: multiple-choice
 :variant: single-select
-:columns: 2
+:nocaption:
 
 This is a question with direct feedback. Select one of the options below by clicking.
 
@@ -88,7 +90,7 @@ You can reset the question with the button.
 :label: reference
 :type: multiple-choice
 :variant: single-select
-:columns: 2
+:nocaption:
 
 This is a question with direct feedback. Select one of the options below by clicking.
 
@@ -166,7 +168,7 @@ You can submit your selection using the submit button.
 :label: reference2
 :type: multiple-choice
 :variant: multiple-select
-:columns: 4
+:columns: 1 2 3 4
 :admonition:
 :class: example
 

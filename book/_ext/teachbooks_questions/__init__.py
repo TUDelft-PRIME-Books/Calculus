@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 TYPES = ["multiple-choice"]
 VARIANTS = {"multiple-choice": ["single-select","multiple-select"]}
 FEEDBACKS = {"multiple-choice": {"single-select": {True: "Correct!", False: "Incorrect. Try again."}, "multiple-select": {True: "Correct!", False: "Incorrect. Try again."}}}
-COLUMNS =  {"multiple-choice": {"single-select": 2, "multiple-select": 2}}
+COLUMNS =  {"multiple-choice": {"single-select": "1 1 2 2", "multiple-select": "1 1 2 2"}}
 
 class QuestionDirective(SphinxDirective):
     has_content = True
@@ -24,8 +24,9 @@ class QuestionDirective(SphinxDirective):
         "label": directives.unchanged,
         "type": directives.unchanged,
         "variant": directives.unchanged,
-        "columns": directives.positive_int,
-        "admonition": directives.flag
+        "columns": directives.unchanged,
+        "admonition": directives.flag,
+        "nocaption": directives.flag
     }
 
     def run(self) -> List[Node]:
@@ -42,10 +43,11 @@ class QuestionDirective(SphinxDirective):
         Columns = self.options.get("columns", COLUMNS[Type][Variant])
         Feedback = self.options.get("feedback", FEEDBACKS[Type][Variant])
 
-        # see if a class has to be added to the question
+        # see if a class and a caption has to be added to the question
         Class = self.options.get("class", [])
         Admonition = "admonition" in self.options
-        
+        NoCaption = "nocaption" in self.options
+
         # just create a node and store some stuff
         node = question_node()
         node["type"] = Type
@@ -60,11 +62,15 @@ class QuestionDirective(SphinxDirective):
             docname = self.env.docname.replace("/", "-") # replace / with - to avoid issues with html ids
             node_id = f"question-{docname}-{self.env.new_serialno('question')}"
         node["ids"] = [node_id]
-        # add the title:
+        # add the title, if needed
         title_text = ""
         if self.arguments != []:
-            title_format = " (%t)"
+            if NoCaption:
+                title_format = "%t"
+            else:
+                title_format = " (%t)"
             title_text += title_format.replace("%t", self.arguments[0])
+        node["nocaption"] = NoCaption
         textnodes, _ = self.state.inline_text(title_text, self.lineno)
         node_title = nodes.title(title_text, "", *textnodes,ids=[node_id + "-title"])
         node += node_title
@@ -240,12 +246,13 @@ def visit_question_node(self, node: question_node) -> None:
         self.body.append(self.starttag(node, "div", CLASS=f"{classes}",ids=node["ids"]))
 
 def depart_question_node(self, node: question_node) -> None:
-    id = node.attributes.get("ids", [""])[0]
-    # use the id to find the correct title location
-    search_str = f'<p class="admonition-title" id="{id}-title">'
-    idx = list_rindex(self.body, search_str) + 1
-    element = f'<span class="caption-number">Question </span>'
-    self.body.insert(idx, element)
+    if not node["nocaption"]:
+        id = node.attributes.get("ids", [""])[0]
+        # use the id to find the correct title location
+        search_str = f'<p class="admonition-title" id="{id}-title">'
+        idx = list_rindex(self.body, search_str) + 1
+        element = f'<span class="caption-number">Question </span>'
+        self.body.insert(idx, element)
     self.body.append("</div>")
 
 def setup(app):
