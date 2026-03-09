@@ -1,81 +1,128 @@
-// Functionality for multiple-choice single-select questions in Teachbooks
-document.addEventListener('click', function(event) {
-  // Find the closest div with both sd-card and option classes
-  const optionDiv = event.target.closest('div.sd-card.option');
-  
-  if (optionDiv) {
-    // Check if it is a multiple-choice single-select questions
-    // Get the parent div with class admonition and class question
-    const questionDiv = optionDiv.closest('div.multiple-choice.single-select');
-    if (!questionDiv) {
-      return; // not a question, do nothing
-    }
-    
-    // if already selected, unselect it and return
-    if (optionDiv.querySelector('div.sd-card-body.selected')) {
-      optionDiv.querySelector('div.sd-card-body').classList.remove('selected');
-      optionDiv.querySelector('div.sd-card-footer').classList.remove('correct');
-      optionDiv.querySelector('div.sd-card-footer').classList.remove('incorrect');
+// Functionality for multiple-choice single-select questions in Teachbooks.
+(function () {
+  function getQuestionDiv(element) {
+    return element.closest('div.multiple-choice.single-select');
+  }
+
+  function getQuestionOptionsSection(questionDiv) {
+    return document.querySelector(`section.question-options#${questionDiv.id}-options`);
+  }
+
+  function clearAllOptions(questionSection) {
+    questionSection.querySelectorAll('div.sd-card.option').forEach(function (optionCard) {
+      const body = optionCard.querySelector('div.sd-card-body');
+      const footer = optionCard.querySelector('div.sd-card-footer');
+      if (body) {
+        body.classList.remove('selected', 'correct', 'incorrect');
+      }
+      if (footer) {
+        footer.classList.remove('correct', 'incorrect');
+      }
+    });
+  }
+
+  function markOptionWithFeedback(optionCard) {
+    const body = optionCard.querySelector('div.sd-card-body');
+    const footer = optionCard.querySelector('div.sd-card-footer');
+
+    if (!body || !footer) {
       return;
     }
 
-    // find the parent section with class question-options
-    const questionSection = optionDiv.closest('section.question-options');
-    if (questionSection) {
-      // if anything is selected, deselect it
-      // so all div.sd-card-body with "selected" class should have it removed
-      const selectedOptions = questionSection.querySelectorAll('div.sd-card-body.selected');
-      selectedOptions.forEach(function(selectedOption) {
-        selectedOption.classList.remove('selected');
-      });
-      // and for all div.sd-card-footer with "correct" or "incorrect" class should have it removed
-      const feedbackOptions = questionSection.querySelectorAll('div.sd-card-footer.correct, div.sd-card-footer.incorrect');
-      feedbackOptions.forEach(function(feedbackOption) {
-        feedbackOption.classList.remove('correct');
-        feedbackOption.classList.remove('incorrect');
-      });
-    }
-    // Now find the div.sd-card-body inside the clicked option and add "selected" class to it
-    const optionBody = optionDiv.querySelector('div.sd-card-body');
-    if (optionBody) {
-      optionBody.classList.add('selected');
-    }
-    // find the div.sd-card-footer inside the clicked option and add "correct" or "incorrect" class to it based on the class of child section
-    const optionFooter = optionDiv.querySelector('div.sd-card-footer');
-    if (optionFooter) {
-      // get the section with class question-options that contains this option
-      optionFooterSection = optionFooter.querySelector('section.question-feedback');
-      if (optionFooterSection) {
-        const isCorrect = optionFooterSection.classList.contains('correct');
-        if (isCorrect) {
-          optionFooter.classList.add('correct');
-        } else {
-          optionFooter.classList.add('incorrect');
-        }
-      }
+    body.classList.add('selected');
+
+    const feedbackSection = footer.querySelector('section.question-feedback');
+    const isCorrect = !!feedbackSection && feedbackSection.classList.contains('correct');
+
+    if (isCorrect) {
+      footer.classList.add('correct');
+    } else {
+      footer.classList.add('incorrect');
     }
   }
 
-  // if the click is outside of any option, maybe it was the reset button, so we check if it was the reset button and if so, we reset all options in the question
-  const resetButton = event.target.closest('div.sd-card.reset-button');
-  if (resetButton) {
-    // Check if it is a multiple-choice single-select questions
-    // Get the parent div with class admonition and class question
-    const questionDiv = resetButton.closest('div.multiple-choice.single-select');
+  function handleOptionClick(optionCard) {
+    const questionDiv = getQuestionDiv(optionCard);
     if (!questionDiv) {
-      return; // not a question, do nothing
+      return;
     }
-    // extract the id
-    const questionId = questionDiv.id;
-    const questionOptionsSection = document.querySelector(`section.question-options#${questionId}-options`);
+
+    const body = optionCard.querySelector('div.sd-card-body');
+    const footer = optionCard.querySelector('div.sd-card-footer');
+
+    if (body && body.classList.contains('selected')) {
+      // Toggle unselect
+      body.classList.remove('selected', 'correct', 'incorrect');
+      if (footer) {
+        footer.classList.remove('correct', 'incorrect');
+      }
+      return;
+    }
+
+    const questionSection = optionCard.closest('section.question-options');
+    if (questionSection) {
+      clearAllOptions(questionSection);
+    }
+
+    markOptionWithFeedback(optionCard);
+  }
+
+  function handleResetClick(resetButton) {
+    const questionDiv = getQuestionDiv(resetButton);
+    if (!questionDiv) {
+      return;
+    }
+
+    const questionOptionsSection = getQuestionOptionsSection(questionDiv);
     if (questionOptionsSection) {
-      // deselect all selected options
-      const optionCards = questionOptionsSection.querySelectorAll('div.sd-card.option');
-      optionCards.forEach(function(optionCard) {
-        optionCard.querySelector('div.sd-card-body').classList.remove('selected');
-        optionCard.querySelector('div.sd-card-footer').classList.remove('correct');
-        optionCard.querySelector('div.sd-card-footer').classList.remove('incorrect');
-      });
+      clearAllOptions(questionOptionsSection);
     }
   }
-});
+
+  function handleShowClick(showButton) {
+    const questionDiv = getQuestionDiv(showButton);
+    if (!questionDiv) {
+      return;
+    }
+
+    const questionOptionsSection = getQuestionOptionsSection(questionDiv);
+    if (!questionOptionsSection) {
+      return;
+    }
+
+    questionOptionsSection.querySelectorAll('div.sd-card.option').forEach(function (optionCard) {
+      const footer = optionCard.querySelector('div.sd-card-footer');
+      const body = optionCard.querySelector('div.sd-card-body');
+
+      if (!footer || !body) {
+        return;
+      }
+
+      const feedbackSection = footer.querySelector('section.question-feedback');
+      const isCorrect = !!feedbackSection && feedbackSection.classList.contains('correct');
+
+      footer.classList.remove('correct', 'incorrect');
+      body.classList.remove('selected', 'correct', 'incorrect');
+      body.classList.add(isCorrect ? 'correct' : 'incorrect');
+    });
+  }
+
+  document.addEventListener('click', function (event) {
+    const optionCard = event.target.closest('div.sd-card.option');
+    if (optionCard) {
+      handleOptionClick(optionCard);
+      return;
+    }
+
+    const resetButton = event.target.closest('div.sd-card.reset-button');
+    if (resetButton) {
+      handleResetClick(resetButton);
+      return;
+    }
+
+    const showButton = event.target.closest('div.sd-card.show-button');
+    if (showButton) {
+      handleShowClick(showButton);
+    }
+  });
+})();

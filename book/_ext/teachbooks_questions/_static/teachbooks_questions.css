@@ -101,10 +101,13 @@ div.multiple-choice section.question-options div.sd-card div.wrap-admonition {
 }
 
 /* Style the buttons */
-div.multiple-choice section.question-buttons div.sd-card.hidden-button {
+section.question-buttons div.sd-card.hidden-button {
     display: none
 }
-div.multiple-choice section.question-buttons div.sd-card {
+div.multiple-choice section.question-buttons div.sd-card,
+section.question-buttons div.sd-card.submit-button,
+section.question-buttons div.sd-card.reset-button,
+section.question-buttons div.sd-card.show-button {
     cursor: pointer;
     border-radius: 0.6rem;
     
@@ -117,17 +120,22 @@ div.multiple-choice section.question-buttons div.sd-card {
         box-shadow 0.15s ease,
         transform 0.1s ease;
 }
-div.multiple-choice section.question-buttons div.sd-card:hover {
+div.multiple-choice section.question-buttons div.sd-card:hover,
+section.question-buttons div.sd-card.submit-button:hover,
+section.question-buttons div.sd-card.reset-button:hover,
+section.question-buttons div.sd-card.show-button:hover {
   background: var(--question-white);
   border-color: var(--question-gray-border);
   transform: translateY(-2px);
 }
 
 /* styling of the feedback in the general section of a mcms question */
-div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-card.correct {
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-card.correct,
+div.multiple-choice section.question-options div.sd-card-body.correct {
     background-color: var(--question-green);
 }
-div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-card:not(.correct) {
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-card:not(.correct),
+div.multiple-choice section.question-options div.sd-card-body.incorrect {
     background-color: var(--question-red);
 }
 div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-col.sd-d-flex-row:has(div.sd-card.show) {
@@ -165,6 +173,9 @@ div.short-answer.blocks section.question-options div.sd-card-body.input textarea
 div.short-answer.blocks section.question-options div.sd-card:has(textarea.question-option-input:focus) {
     border-color: var(--question-blue);
 }
+div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input.show-answer {
+    background-color: var(--question-green);
+}
 div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input::placeholder {
     color: var(--sd-color-card-text);
     opacity: 0.5; /* ensure placeholder is visible */
@@ -174,5 +185,8 @@ div.short-answer.blocks section.question-options div.sd-card-footer.correct sect
 }
 
 div.short-answer.blocks section.question-options div.sd-card-footer.incorrect section.correct {
+    display: none;
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input section.question-option-answer {
     display: none;
 }

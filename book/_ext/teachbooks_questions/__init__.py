@@ -26,7 +26,8 @@ class QuestionDirective(SphinxDirective):
         "variant": directives.unchanged,
         "columns": directives.unchanged,
         "admonition": directives.flag,
-        "nocaption": directives.flag
+        "nocaption": directives.flag,
+        "showanswer": directives.flag
     }
 
     def run(self) -> List[Node]:
@@ -47,6 +48,7 @@ class QuestionDirective(SphinxDirective):
         Class = self.options.get("class", [])
         Admonition = "admonition" in self.options
         NoCaption = "nocaption" in self.options
+        ShowAnswer = "showanswer" in self.options
 
         # just create a node and store some stuff
         node = question_node()
@@ -54,6 +56,7 @@ class QuestionDirective(SphinxDirective):
         node["variant"] = Variant
         node["class"] = Class
         node["admonition"] = Admonition
+        node["show_answer"] = ShowAnswer
         # create a unique id for the node, if not provided by the user:
         if self.options.get("label"):
             node_id = self.options["label"]
@@ -123,16 +126,16 @@ class QuestionDirective(SphinxDirective):
         correct_list = []
         incorrect_list = []
         if options_raw:
-            # find all the options, which start with a line that starts with "T[ " or "N[" or "M[" (possible with leading spaces)
-            indexes = [i for i, val in enumerate(options_raw) if val.strip()[1:].startswith("[")]
+            # find all the options, which start with a line that starts with "T[", "TI[", "TF[" or "M[" (possible with leading spaces)
+            indexes = [i for i, val in enumerate(options_raw) if val.strip()[1:].startswith("[") or val.strip()[2:].startswith("[")]
             for i in range(len(indexes)):
                 block = options_raw[indexes[i]:indexes[i+1]] if i < len(indexes)-1 else options_raw[indexes[i]:]
                 
-                # get the type of the question from the first line, which should start with "T[" or "N[" or "M["
-                type_list.append(block[0].strip()[0])
+                # get the type of the question from the first line, which should start with "T[", "TI[", "TF[" or "M["
+                type_list.append(block[0].strip().split("[")[0].strip())
 
                 # get correct answer from first line
-                answer = block[0].strip()[2:]
+                answer = block[0].strip().split("[")[1].strip()
                 answer = answer.split(']')[0].strip()
                 answer_list.append(answer)
 
@@ -204,8 +207,8 @@ class QuestionDirective(SphinxDirective):
                     nd += label_content_section
                 if "sd-card-body" in nd.get("classes", []):
                     # add the input field to the body, based on the type of the answer:
-                    if type_list[current_card] == "T":
-                        raw_html = f"<textarea class='question-option-input' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'></textarea>"
+                    if type_list[current_card] in ["T", "TI", "TF"]:
+                        raw_html = f"<textarea class='question-option-input type-{type_list[current_card]}' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'></textarea>"
                     elif type_list[current_card] == "M":
                         raw_html = f"<input type='number' class='question-option-input' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'>"
                     else: 
@@ -213,6 +216,11 @@ class QuestionDirective(SphinxDirective):
                         raise ValueError(message)
                     input_field = nodes.raw(raw_html, raw_html, format="html")
                     nd += input_field
+                    # add a section with the correct answer with plain content (not parsed, to avoid issues with parsing math or other content in the correct answer)
+                    answer_content = answer_list[current_card]
+                    answer_content_section = nodes.section(classes=["question-option-answer"],ids=[f"{node_id}-option-{current_card}-answer"])
+                    answer_content_section += nodes.paragraph(text=answer_content)
+                    nd += answer_content_section
                 if "sd-card-footer" in nd.get("classes", []):
                     # add the content of the correct feedback to the footer:
                     correct_feedback_content = correct_list[current_card]
@@ -229,6 +237,22 @@ class QuestionDirective(SphinxDirective):
             post_section = nodes.section(classes=[f"question-posttext"],ids=[node_id + "-posttext"])
             self.state.nested_parse(post_text, self.content_offset, post_section)
             node += post_section
+
+        # include a button inside a section to reset the question and to submit the question
+        button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
+        grid = [f"::::{{grid}} 3",":gutter: 3",""]
+        left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: submit-button","","Submit answer(s)",":::"]
+        grid.extend(left_button)
+        if node["show_answer"]:
+            middle_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: show-button","","Show answer(s)",":::"]
+        else:
+            middle_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
+        grid.extend(middle_button)
+        right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
+        grid.extend(right_button)
+        grid.extend(["::::"])
+        self.state.nested_parse(grid, self.content_offset, button_section)
+        node += button_section
 
         return [node]
             
@@ -319,7 +343,10 @@ class QuestionDirective(SphinxDirective):
         # include a button inside a section to reset the question
         button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
         grid = [f"::::{{grid}} 3",":gutter: 3",""]
-        left_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
+        if node["show_answer"]:
+            left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: show-button","","Show answer(s)",":::"]
+        else:
+            left_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
         grid.extend(left_button)
         middle_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
         grid.extend(middle_button)
@@ -357,9 +384,12 @@ class QuestionDirective(SphinxDirective):
         # feedback immediately after selecting an option as in single select)
         button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
         grid = [f"::::{{grid}} 3",":gutter: 3",""]
-        left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: submit-button","","Submit answer",":::"]
+        left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: submit-button","","Submit answer(s)",":::"]
         grid.extend(left_button)
-        middle_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
+        if node["show_answer"]:
+            middle_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: show-button","","Show answer(s)",":::"]
+        else:
+            middle_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
         grid.extend(middle_button)
         right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
         grid.extend(right_button)

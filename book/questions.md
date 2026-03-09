@@ -36,7 +36,9 @@ For `multiple-select` variants some overall feedback will be shown.
 
 Within an options part, a new answer is indicated with a line starting with one of the following options, where `Answer` is the correct answer. `Answer` cannot be empty, but can be any length of characters, and can be textual, numerical and/or include $\LaTeX$ math:
 
-- `T[Answer] ` for a short answer question with a text input field.
+- `T[Answer] ` for a short answer question with a text input field, which will be checked for an exact match with the provided answer.
+- `TI[Answer] ` for a short answer question with a text input field, which will be checked for a case-insensitive match with the provided answer.
+- `TF[Answer] ` for a short answer question with a text input field, which will be checked for a fuzzy case-insensitive match with the provided answer. Be aware that this can lead to some unexpected answers being marked as (in)correct, and it is recommended to use this option only for longer answers where minor typos are more likely to occur, and to check the provided answer carefully for potential issues with the fuzzy matching.
 - `M[Answer] ` for a short answer question with a math input field.
 
 This can be optionally followed with a label that will be placed above the input field in th rendering. These can be multi lined.
@@ -47,9 +49,9 @@ A line starting with `> ` after an answer line is considered feedback for that a
 
 Feedback is optional, and if not provided, the feedback will be `Correct!` or `Incorrect. Try again.`.
 
-The lines starting with `[Answer]  `, `= ` or `> ` cannot be empty (after the indicator, if present).
+The lines starting with `..[Answer]  `, `= ` or `> ` cannot be empty (after the indicator, if present).
 
-Lines following `[Answer]  `, `= ` or `> ` that do not start with one of these indicators are considered part of the answer or feedback, and can be used to include multiple lines in the answer or feedback.
+Lines following `..[Answer]  `, `= ` or `> ` that do not start with one of these indicators are considered part of the answer or feedback, and can be used to include multiple lines in the answer or feedback.
 
 If multiple `= ` or `> ` lines are provided, these will be concatenated together to form the feedback for correctly or incorrectly answered questions, respectively.
 
@@ -64,6 +66,7 @@ If multiple `= ` or `> ` lines are provided, these will be concatenated together
 - `:class:` The class(es) to add to the containing `<div>` for styling. Adding a class might trigger existing css, so be careful. Default value is nothing/empty.
 - `:admonition:` If included, `admonition` will be added to the classes of the containing `<div>`. Can also be done through the `:class:` option.
 - `:nocaption:` If included, no caption will be added to the question. By default, a caption is added with the text "Question". This option can be used to hide the caption. If also no title is provided, the question will have neither a title nor a caption shown. If a title is provided, the title will be shown without surrounding brackets.
+- `:show:` If included, a button will be added to show the correct answer.
 
 ## Examples
 
@@ -112,6 +115,7 @@ You can reset the question with the button.
 :type: multiple-choice
 :variant: single-select
 :nocaption:
+:showanswer:
 
 This is a question with direct feedback. Select one of the options below by clicking.
 
@@ -192,6 +196,7 @@ You can submit your selection using the submit button.
 :columns: 1 2 3 4
 :admonition:
 :class: example
+:showanswer:
 
 This is a question with feedback on submission. Select zero or more of the options below by clicking.
 
@@ -230,10 +235,11 @@ You can reset the question with the button.
 :type: short-answer
 :variant: blocks
 :admonition:
+:showanswer:
 
 This is a short-answer question with a single wide text input per defined answer. Type your answer in the text box and press the submit button.
 
-The correct answers are **Answer A** and _Omnia bona_ and `no feedback`.
+The correct answers are **Answer A** and _Omnia bona_ and `no feedback is not better than any feedback`.
 
 ---
 T[Answer A] Type your answer here:
@@ -241,12 +247,12 @@ T[Answer A] Type your answer here:
 = Positive feedback for Answer A.
 
 with multiple lines.
-T[Omnia bona]
+TI[Omnia bona]
 > Negative feedback for Omnia bona.
 = Positive feedback for Omnia bona.
 > More negative feedback if the answer is incorrect.
 = More positive feedback if the answer is correct.
-M[No feedback] A label
+TF[No feedback is not better than any feedback] A label
 
 that has 2 lines.
 ---
