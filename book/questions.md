@@ -236,6 +236,7 @@ You can reset the question with the button.
 :variant: blocks
 :admonition:
 :showanswer:
+:class: question
 
 This is a short-answer question with a single wide text input per defined answer. Type your answer in the text box and press the submit button.
 
