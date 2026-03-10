@@ -374,11 +374,14 @@ class QuestionDirective(SphinxDirective):
                 option = options[current_card]
                 
                 # Add input field
-                input_html = (
-                    f"<textarea class='question-option-input type-{option['type']}' "
-                    f"id='{node_id}-option-{current_card}-input' "
-                    f"placeholder='Insert your answer here...'></textarea>"
-                )
+                if option["type"] != "M":
+                    input_html = (
+                        f"<textarea class='question-option-input type-{option['type']}' "
+                        f"id='{node_id}-option-{current_card}-input' "
+                        f"placeholder='Insert your answer here...'></textarea>"
+                    )
+                else:
+                    input_html = "<math-field>f(x) = \sin(x+\pi)</math-field>"
                 container += nodes.raw(input_html, input_html, format="html")
                 
                 # Add answer (hidden)
@@ -676,6 +679,7 @@ def setup(app) -> Dict[str, Any]:
     
     # Add CSS and JavaScript files
     app.add_css_file("teachbooks_questions.css")
+    app.add_js_file("https://cdn.jsdelivr.net/npm/mathlive", type="module")
     js_files = [
         "teachbooks_wrapadmonition.js",
         "teachbooks_mcss.js",

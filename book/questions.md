@@ -243,19 +243,23 @@ This is a short-answer question with a single wide text input per defined answer
 The correct answers are **Answer A** and _Omnia bona_ and `no feedback is not better than any feedback`.
 
 ---
-T[Answer A] Type your answer here:
+T[Answer A] A math input field with exact matching.
 > Negative feedback for Answer A.
 = Positive feedback for Answer A.
 
 with multiple lines.
-TI[Omnia bona]
+TI[Omnia bona] A text input field with case-insensitive matching.
 > Negative feedback for Omnia bona.
 = Positive feedback for Omnia bona.
 > More negative feedback if the answer is incorrect.
 = More positive feedback if the answer is correct.
-TF[No feedback is not better than any feedback] A label
+TF[No feedback is not better than any feedback] A text input field with
 
-that has 2 lines.
+fuzzy case-insensitive matching.
+
+M[x^2 + y^2 = z^2] A math input field with mathematical equivalence checking.
+> Negative feedback for the math question.
+= Positive feedback for the math question.
 ---
 
 Text after the options part.
