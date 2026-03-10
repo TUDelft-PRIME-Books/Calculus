@@ -381,7 +381,12 @@ class QuestionDirective(SphinxDirective):
                         f"placeholder='Insert your answer here...'></textarea>"
                     )
                 else:
-                    input_html = "<math-field>f(x) = \sin(x+\pi)</math-field>"
+                    input_html = (
+                        f"<math-field class='question-option-input type-{option['type']}' "
+                        f"id='{node_id}-option-{current_card}-input' "
+                        f"placeholder='\\text{{Insert your answer here...}}'>"
+                        f"</math-field>"
+                    )
                 container += nodes.raw(input_html, input_html, format="html")
                 
                 # Add answer (hidden)

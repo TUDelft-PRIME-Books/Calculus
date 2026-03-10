@@ -10,6 +10,7 @@
     --question-gray-border: #d0d0d0;
     --question-white: #eeeeee;
     --question-white-border: #c6c6c6;
+    --_placeholder-color: var(--pst-color-text-base);
 }
 
 html[data-theme="dark"] {
@@ -159,7 +160,7 @@ div.short-answer.blocks section.question-options div.sd-card-header.hidden {
 div.short-answer.blocks section.question-options div.sd-card-body.input {
     padding: 0;
 }
-div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input{
+div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input {
     display: block;           /* avoid inline quirks */
     box-sizing: border-box;   /* include padding/border in width/height */
     width: 100%;
@@ -196,4 +197,35 @@ div.short-answer.blocks section.question-options div.sd-card-footer.incorrect se
 }
 div.short-answer.blocks section.question-options div.sd-card-body.input section.question-option-answer {
     display: none;
+}
+/* math stuff */
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input {
+    display: inline-block;           /* avoid inline quirks */
+    box-sizing: border-box;   /* include padding/border in width/height */
+    width: 100%;
+    height: 100%;             /* match container if container has a height */
+    min-height: 6rem;         /* initial size; adjust to taste */
+    border: none;             /* optional: match card’s border instead */
+    padding: .6rem .8rem;     /* optional */
+    font: inherit;
+    background-color: var(--question-white);
+}
+/* math-field icon colors (shadow DOM) */
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input::part(virtual-keyboard-toggle),
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input::part(menu-toggle) {
+    color: var(--sd-color-card-text);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input:focus {
+    outline: none;
+    background-color: var(--question-blue);
+}
+div.short-answer.blocks section.question-options div.sd-card:has(math-field.question-option-input:focus) {
+    border-color: var(--question-blue);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input.show-answer {
+    background-color: var(--question-green);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input::part(placeholder) {
+    color: var(--sd-color-card-text);
+    opacity: 0.5; /* ensure placeholder is visible */
 }
