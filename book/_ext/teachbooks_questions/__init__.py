@@ -679,8 +679,8 @@ def setup(app) -> Dict[str, Any]:
     
     # Add CSS and JavaScript files
     app.add_css_file("teachbooks_questions.css")
-    app.add_js_file("https://cdn.jsdelivr.net/npm/mathlive", type="module")
     js_files = [
+        "https://cdn.jsdelivr.net/npm/mathlive",
         "teachbooks_wrapadmonition.js",
         "teachbooks_mcss.js",
         "teachbooks_mcms.js",
