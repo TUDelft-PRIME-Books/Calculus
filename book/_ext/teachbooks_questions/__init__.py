@@ -1,20 +1,41 @@
 import os
+from typing import List, Tuple, Dict, Any
 
 from docutils import nodes
 from sphinx.util.docutils import SphinxDirective
-from typing import List
 from docutils.nodes import Node
 from docutils.parsers.rst import directives
 from sphinx.util import logging
 
 logger = logging.getLogger(__name__)
 
-TYPES = ["multiple-choice","short-answer"]
-VARIANTS = {"multiple-choice": ["single-select","multiple-select"], "short-answer": ["blocks"]}
-FEEDBACKS = {"multiple-choice": {"single-select": {True: "Correct!", False: "Incorrect. Try again."},"multiple-select": {True: "Correct!", False: "Incorrect. Try again."}}, "short-answer": {"blocks": {True: "Correct!", False: "Incorrect. Try again."}}}
-COLUMNS =  {"multiple-choice": {"single-select": "1 1 2 2", "multiple-select": "1 1 2 2"}, "short-answer": {"blocks": "not used"}}
 
 class QuestionDirective(SphinxDirective):
+    # Configuration
+    TYPES = ["multiple-choice", "short-answer"]
+    VARIANTS = {
+        "multiple-choice": ["single-select", "multiple-select"],
+        "short-answer": ["blocks"],
+    }
+    FEEDBACKS = {
+        "multiple-choice": {
+            "single-select": {True: "Correct!", False: "Incorrect. Try again."},
+            "multiple-select": {True: "Correct!", False: "Incorrect. Try again."},
+        },
+        "short-answer": {"blocks": {True: "Correct!", False: "Incorrect. Try again."}},
+    }
+    COLUMNS = {
+        "multiple-choice": {"single-select": "1 1 2 2", "multiple-select": "1 1 2 2"},
+        "short-answer": {"blocks": "not used"},
+    }
+    
+    # Patterns
+    OPTION_CHECKBOX_UNCHECKED = "[ ] "
+    OPTION_CHECKBOX_CHECKED = "[x] "
+    FEEDBACK_WRONG_PREFIX = "> "
+    FEEDBACK_CORRECT_PREFIX = "= "
+    SEPARATOR = "---"
+    
     has_content = True
     required_arguments = 0
     optional_arguments = 1
@@ -31,447 +52,640 @@ class QuestionDirective(SphinxDirective):
     }
 
     def run(self) -> List[Node]:
+        """Main directive handler."""
+        # Validate and get question type and variant
+        question_type = self.options.get("type", "multiple-choice")
+        if question_type not in self.TYPES:
+            raise ValueError(
+                f"Unsupported question type {question_type} at line {self.lineno} in "
+                f"{self.env.docname}. Supported types are: {self.TYPES}"
+            )
+        
+        variant = self.options.get("variant", self.VARIANTS[question_type][0])
+        if variant not in self.VARIANTS[question_type]:
+            raise ValueError(
+                f"Unsupported question variant {variant} for type {question_type} at line "
+                f"{self.lineno} in {self.env.docname}. Supported variants are: "
+                f"{self.VARIANTS[question_type]}"
+            )
+        
+        columns = self.options.get("columns", self.COLUMNS[question_type][variant])
+        feedback = self.options.get("feedback", self.FEEDBACKS[question_type][variant])
 
-        # check if the type is supported and get values:
-        Type = self.options.get("type", "multiple-choice")
-        if Type not in TYPES:
-            message = f"Unsupported question type {Type} at line {self.lineno} in {self.env.docname}. Supported types are: {TYPES}"
-            raise ValueError(message)
-        Variant = self.options.get("variant", VARIANTS[Type][0])
-        if Variant not in VARIANTS[Type]:
-            message = f"Unsupported question variant {Variant} for type {Type} at line {self.lineno} in {self.env.docname}. Supported variants are: {VARIANTS[Type]}"
-            raise ValueError(message)
-        Columns = self.options.get("columns", COLUMNS[Type][Variant])
-        Feedback = self.options.get("feedback", FEEDBACKS[Type][Variant])
+        # Get flags
+        css_class = self.options.get("class", [])
+        is_admonition = "admonition" in self.options
+        no_caption = "nocaption" in self.options
+        show_answer = "showanswer" in self.options
 
-        # see if a class and a caption has to be added to the question
-        Class = self.options.get("class", [])
-        Admonition = "admonition" in self.options
-        NoCaption = "nocaption" in self.options
-        ShowAnswer = "showanswer" in self.options
-
-        # just create a node and store some stuff
+        # Create and configure node
         node = question_node()
-        node["type"] = Type
-        node["variant"] = Variant
-        node["class"] = Class
-        node["admonition"] = Admonition
-        node["show_answer"] = ShowAnswer
-        # create a unique id for the node, if not provided by the user:
-        if self.options.get("label"):
-            node_id = self.options["label"]
-        else:
-            # unique within the document, and hopefully globally unique
-            docname = self.env.docname.replace("/", "-") # replace / with - to avoid issues with html ids
-            node_id = f"question-{docname}-{self.env.new_serialno('question')}"
+        node["type"] = question_type
+        node["variant"] = variant
+        node["class"] = css_class
+        node["admonition"] = is_admonition
+        node["show_answer"] = show_answer
+        
+        # Create unique ID
+        node_id = self._create_node_id()
         node["ids"] = [node_id]
-        # add the title, if needed
-        title_text = ""
-        if self.arguments != []:
-            if NoCaption:
-                title_format = "%t"
-            else:
-                title_format = " (%t)"
-            title_text += title_format.replace("%t", self.arguments[0])
-        node["nocaption"] = NoCaption
-        textnodes, _ = self.state.inline_text(title_text, self.lineno)
-        node_title = nodes.title(title_text, "", *textnodes,ids=[node_id + "-title"])
-        node += node_title
+        
+        # Add title if provided
+        if self.arguments:
+            title_text = self._format_title(self.arguments[0], no_caption)
+            textnodes, _ = self.state.inline_text(title_text, self.lineno)
+            node_title = nodes.title(title_text, "", *textnodes, ids=[node_id + "-title"])
+            node += node_title
+        
+        node["nocaption"] = no_caption
 
-        if Type == "multiple-choice":
-            if Variant == "single-select":
-                return self._handle_multiple_choice_single_select(node, node_id, Columns, Feedback)
-            elif Variant == "multiple-select":
-                return self._handle_multiple_choice_multiple_select(node, node_id, Columns, Feedback)
-        elif Type == "short-answer":
-            if Variant == "blocks":
-                return self._handle_short_answer_blocks(node, node_id, Feedback)
+        # Dispatch to appropriate handler
+        if question_type == "multiple-choice":
+            if variant == "single-select":
+                return self._handle_multiple_choice_single_select(node, node_id, columns, feedback)
+            else:  # multiple-select
+                return self._handle_multiple_choice_multiple_select(node, node_id, columns, feedback)
+        else:  # short-answer
+            return self._handle_short_answer_blocks(node, node_id, feedback)
+
+    def _create_node_id(self) -> str:
+        """Create a unique ID for the node."""
+        if self.options.get("label"):
+            return self.options["label"]
+        # Make docname safe for HTML IDs by replacing / with -
+        docname = self.env.docname.replace("/", "-")
+        return f"question-{docname}-{self.env.new_serialno('question')}"
+
+    def _format_title(self, title: str, no_caption: bool) -> str:
+        """Format the title based on caption setting."""
+        if no_caption:
+            return title
+        return f" ({title})"
             
-    def _split_input(self):
-        # first get the content between --- and ---, which is the content for options.
-        indexes = [i for i, val in enumerate(self.content) if val.strip() == "---"]
-        if len(indexes) == 0:
-            message = f"No options provided for question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
-            raise ValueError(message)
-        elif len(indexes) == 1:
-            message = f"Only one --- found for question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---."
-            raise ValueError(message)
-        elif len(indexes) > 2:
-            message = f"More than two --- found for question at line {self.lineno} in {self.env.docname}. Please provide options between --- and ---. Extra --- found at lines: {', '.join([str(self.lineno + i) for i in indexes[2:]])}"
-            raise ValueError(message)
+    def _calculate_button_distribution(self, button_count: int) -> str:
+        """Calculate grid distribution for buttons.
         
-        # split in pre-text, options and post-text:
-        options_raw = self.content[indexes[0]+1:indexes[1]]
-        pre_text = self.content[:indexes[0]]
-        post_text = self.content[indexes[1]+1:]
-
-        return pre_text, options_raw, post_text
-
-    def _handle_short_answer_blocks(self, node, node_id, Feedback):
-
-        # split the content into pre-text, options and post-text
-        pre_text, options_raw, post_text = self._split_input()
-
-        # add the first text if any
-        if pre_text:
-            pre_section = nodes.section(classes=[f"question-pretext"],ids=[node_id + "-pretext"])
-            self.state.nested_parse(pre_text, self.content_offset, pre_section)
-            node += pre_section
-
-        # parse the options (just include currently)
+        Distributes buttons evenly across 4 grid positions.
+        """
+        if button_count == 0:
+            return "1 1 1 1"
         
-        type_list = []
-        answer_list = []
-        label_list = []
-        correct_list = []
-        incorrect_list = []
-        if options_raw:
-            # find all the options, which start with a line that starts with "T[", "TI[", "TF[" (possible with leading spaces)
-            indexes = [i for i, val in enumerate(options_raw) if val.strip()[1:].startswith("[") or val.strip()[2:].startswith("[")]
-            for i in range(len(indexes)):
-                block = options_raw[indexes[i]:indexes[i+1]] if i < len(indexes)-1 else options_raw[indexes[i]:]
-                
-                # get the type of the question from the first line, which should start with "T[", "TI[", "TF["
-                type_list.append(block[0].strip().split("[")[0].strip())
-
-                # get correct answer from first line
-                answer = block[0].strip().split("[")[1].strip()
-                answer = answer.split(']')[0].strip()
-                answer_list.append(answer)
-
-                # Get the label from the first line if it exists (after the answer and between parentheses)
-                label = block[0].strip()[2:]
-                label = [label.split(']')[1].strip()]
-                line = 1
-                while line < len(block):
-                    if block[line].strip().startswith("> ") or block[line].strip().startswith("= "):
-                        break
-                    label.append(block[line].strip())
-                    line += 1
-                label_list.append(label)
-
-                # get feedback from lines starting with > (incorrect) or = (correct)
-                correct_feedback = []
-                incorrect_feedback = []
-                if line < len(block):
-                    while line < len(block):
-                        if block[line].strip().startswith("> "):
-                            if len(incorrect_feedback) > 0:
-                                incorrect_feedback.append("") # add an empty line between different feedback blocks for better readability
-                            incorrect_feedback.append(block[line].strip()[2:])
-                            last = "incorrect"
-                        elif block[line].strip().startswith("= "):
-                            if len(correct_feedback) > 0:
-                                correct_feedback.append("") # add an empty line between different feedback blocks for better readability
-                            correct_feedback.append(block[line].strip()[2:])
-                            last = "correct"
-                        else:
-                            if last == "incorrect":
-                                incorrect_feedback.append(block[line].strip())
-                            else:
-                                correct_feedback.append(block[line].strip())
-                        line += 1
-                else: # this means that no feedback is provided after an optional label, so we use default feedback based on correct/incorrect status
-                    correct_feedback = [Feedback[True]]
-                    incorrect_feedback = [Feedback[False]]
-                correct_list.append(correct_feedback)
-                incorrect_list.append(incorrect_feedback)
-
-        # Create the lines that will render a full-width card with
-        # - the label in the header
-        # - the input field in the body
-        # - the feedback in the footer
-        options_content = []
-        for label in label_list:
-            card = [":::{card}", ":shadow: lg", ":width: 100%",":class-card: option",":class-body: input"]
-            if label == ['']:
-                card.append(":class-header: hidden")
-            card.extend(["^^^","+++",":::"])
-            options_content.extend(card)
-
-        # add the options section
-        options_section = nodes.section(classes=[f"question-options"],ids=[node_id + "-options"])
-        self.state.nested_parse(options_content, self.content_offset, options_section)
-        node += options_section
-
-        # loop over the cards in the section, and add the label, input field and feedback to the correct place in the card:
-        current_card = -1
-        for nd in options_section.findall():
-            if isinstance(nd,nodes.container):
-                if "sd-card-header" in nd.get("classes", []):
-                    current_card += 1
-                    # add the label to the header:
-                    label_content = label_list[current_card]
-                    label_content_section = nodes.section(classes=["question-option-label"],ids=[f"{node_id}-option-{current_card}-label"])
-                    self.state.nested_parse(label_content, self.content_offset, label_content_section)
-                    nd += label_content_section
-                if "sd-card-body" in nd.get("classes", []):
-                    # add the input field to the body, based on the type of the answer:
-                    if type_list[current_card] in ["T", "TI", "TF"]:
-                        raw_html = f"<textarea class='question-option-input type-{type_list[current_card]}' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'></textarea>"
-                    # elif type_list[current_card] == "M":
-                        # raw_html = f"<input type='number' class='question-option-input' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'>"
-                    else: 
-                        message = f"Unsupported question type {type_list[current_card]} for short answer question at line {self.lineno + indexes[current_card] + 1} in {self.env.docname}. Supported types are: T, N and M."
-                        raise ValueError(message)
-                    input_field = nodes.raw(raw_html, raw_html, format="html")
-                    nd += input_field
-                    # add a section with the correct answer with plain content (not parsed, to avoid issues with parsing math or other content in the correct answer)
-                    answer_content = answer_list[current_card]
-                    answer_content_section = nodes.section(classes=["question-option-answer"],ids=[f"{node_id}-option-{current_card}-answer"])
-                    answer_content_section += nodes.paragraph(text=answer_content)
-                    nd += answer_content_section
-                if "sd-card-footer" in nd.get("classes", []):
-                    # add the content of the correct feedback to the footer:
-                    correct_feedback_content = correct_list[current_card]
-                    correct_feedback_content_section = nodes.section(classes=["question-feedback correct"],ids=[f"{node_id}-option-{current_card}-feedback"])
-                    self.state.nested_parse(correct_feedback_content, self.content_offset, correct_feedback_content_section)
-                    nd += correct_feedback_content_section
-                    incorrect_feedback_content = incorrect_list[current_card]
-                    incorrect_feedback_content_section = nodes.section(classes=["question-feedback incorrect"],ids=[f"{node_id}-option-{current_card}-feedback-incorrect"])
-                    self.state.nested_parse(incorrect_feedback_content, self.content_offset, incorrect_feedback_content_section)
-                    nd += incorrect_feedback_content_section
-
-        # include the final text, if any
-        if post_text:
-            post_section = nodes.section(classes=[f"question-posttext"],ids=[node_id + "-posttext"])
-            self.state.nested_parse(post_text, self.content_offset, post_section)
-            node += post_section
-
-        # include a button inside a section to reset the question and to submit the question
-        button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
-        # calculate number of buttons (at most)
-        buttonCount = 2 # always the submit and reset button
-        if node["show_answer"]:
-            buttonCount += 1 # if show answer button is needed
-        # create four values, where the lowest is 1, the highest is buttonCount
-        # and the two middle values are linear interpolated between 1 and buttonCount
-        # and afterward rounded to the nearest integer
-        buttonDist = [1]
-        if buttonCount > 1:
-            buttonDist.append(round(1 + (buttonCount - 1) / 3))
-            buttonDist.append(round(1 + 2 * (buttonCount - 1) / 3))
-            buttonDist.append(buttonCount)
+        positions = [1]
+        if button_count > 1:
+            positions.append(round(1 + (button_count - 1) / 3))
+            positions.append(round(1 + 2 * (button_count - 1) / 3))
+            positions.append(button_count)
         else:
-            buttonDist.extend([1,1,1])
-        # convert to string
-        buttonDist = " ".join([str(x) for x in buttonDist])
-        grid = [f"::::{{grid}} {buttonDist}",":gutter: 3",""]
-        left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: submit-button","","Submit answer(s)",":::"]
-        grid.extend(left_button)
-        if node["show_answer"]:
-            middle_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: show-button","","Show answer(s)",":::"]
-            grid.extend(middle_button)
-        right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
-        grid.extend(right_button)
-        grid.extend(["::::"])
+            positions.extend([1, 1, 1])
+        
+        return " ".join(str(p) for p in positions)
+
+    def _create_button_grid(
+        self, button_dist: str, buttons: List[Tuple[str, str]]
+    ) -> List[str]:
+        """Create grid markup for buttons.
+        
+        Args:
+            button_dist: Grid distribution string
+            buttons: List of (css_class, label) tuples
+            
+        Returns:
+            List of grid markup lines
+        """
+        grid = [f"::::{{grid}} {button_dist}", ":gutter: 3", ""]
+        for css_class, label in buttons:
+            grid.extend([
+                ":::{grid-item-card}",
+                ":shadow: lg",
+                ":text-align: center",
+                f":class-card: {css_class}",
+                "",
+                label,
+                ":::",
+            ])
+        grid.append("::::")
+        return grid
+
+    def _add_text_section(
+        self, node: Node, node_id: str, text: List[str], section_type: str
+    ) -> None:
+        """Add a text section to the node."""
+        if text:
+            section = nodes.section(
+                classes=[f"question-{section_type}"],
+                ids=[f"{node_id}-{section_type}"]
+            )
+            self.state.nested_parse(text, self.content_offset, section)
+            node += section
+
+    def _add_button_section(
+        self,
+        node: Node,
+        node_id: str,
+        buttons: List[Tuple[str, str]],
+        show_answer: bool,
+        button_count: int,
+    ) -> None:
+        """Add button section to node."""
+        button_section = nodes.section(
+            classes=["question-buttons"],
+            ids=[f"{node_id}-buttons"]
+        )
+        button_dist = self._calculate_button_distribution(button_count)
+        grid = self._create_button_grid(button_dist, buttons)
         self.state.nested_parse(grid, self.content_offset, button_section)
         node += button_section
 
-        return [node]
-            
-    def _handle_multiple_choice_shared(self, node, node_id, Columns, Feedback):
-        # split the content into pre-text, options and post-text
+    def _split_input(self) -> Tuple[List[str], List[str], List[str]]:
+        """Split directive content into pre-text, options, and post-text."""
+        separators = [i for i, line in enumerate(self.content) if line.strip() == self.SEPARATOR]
+        
+        if len(separators) < 2:
+            raise ValueError(
+                f"Malformed question at line {self.lineno} in {self.env.docname}. "
+                f"Please provide options between '{self.SEPARATOR}' and '{self.SEPARATOR}'. "
+                f"Found {len(separators)} separator(s), expected 2."
+            )
+        if len(separators) > 2:
+            extra_lines = ", ".join(str(self.lineno + i) for i in separators[2:])
+            raise ValueError(
+                f"Too many separators in question at line {self.lineno} in {self.env.docname}. "
+                f"Extra separators at lines: {extra_lines}"
+            )
+        
+        pre_text = self.content[:separators[0]]
+        options_raw = self.content[separators[0] + 1:separators[1]]
+        post_text = self.content[separators[1] + 1:]
+        
+        return pre_text, options_raw, post_text
+
+    def _handle_short_answer_blocks(self, node: Node, node_id: str, feedback: Dict) -> List[Node]:
+        """Handle short-answer block questions."""
         pre_text, options_raw, post_text = self._split_input()
 
-        mc_list = []
-        fb_list = []
-        ci_list = []
-        if options_raw:
-            # find all the options, which start with a line that starts with "[ ] " or "[x] " (possible with leading spaces)
-            indexes = [i for i, val in enumerate(options_raw) if val.strip().startswith("[ ] ") or val.strip().startswith("[x] ")]
-            for i in range(len(indexes)):
-                raw_option = options_raw[indexes[i]:indexes[i+1]] if i < len(indexes)-1 else options_raw[indexes[i]:]
-                fb_index = [f for f, val in enumerate(raw_option) if val.strip().startswith("> ")]
-                ci_list.append(raw_option[0].strip()[1] == "x") # correct if it starts with [x]
-                if fb_index:
-                    mc_content = raw_option[:fb_index[0]]
-                    mc_content[0] = mc_content[0].strip()[3:] # remove the [ ] or [x] and leading spaces
-                    fb_content = raw_option[fb_index[0]:]
-                    fb_content[0] = fb_content[0].strip()[2:] # remove the "> " and leading spaces
+        # Add pre-text if present
+        self._add_text_section(node, node_id, pre_text, "pretext")
+
+        # Parse options
+        options_data = self._parse_short_answer_options(options_raw, feedback, node_id)
+        
+        # Render options as cards
+        self._render_short_answer_cards(node, node_id, options_data)
+
+        # Add post-text if present
+        self._add_text_section(node, node_id, post_text, "posttext")
+
+        # Add buttons
+        button_count = 3 if node["show_answer"] else 2
+        buttons = [
+            ("submit-button", "Submit answer(s)"),
+        ]
+        if node["show_answer"]:
+            buttons.append(("show-button", "Show answer(s)"))
+        buttons.append(("reset-button", "Try again"))
+
+        self._add_button_section(node, node_id, buttons, node["show_answer"], button_count)
+
+        return [node]
+
+    def _parse_short_answer_options(
+        self, options_raw: List[str], feedback: Dict, node_id: str
+    ) -> List[Dict[str, Any]]:
+        """Parse short-answer options from raw content."""
+        if not options_raw:
+            return []
+
+        # Find option markers (lines starting with T[, TI[, or TF[)
+        option_starts = [
+            i for i, line in enumerate(options_raw)
+            if len(line.strip()) > 2 and (
+                line.strip()[1:].startswith("[") or line.strip()[2:].startswith("[")
+            )
+        ]
+
+        options = []
+        for idx, start in enumerate(option_starts):
+            end = option_starts[idx + 1] if idx + 1 < len(option_starts) else len(options_raw)
+            block = options_raw[start:end]
+            option = self._parse_single_short_answer_option(block, feedback)
+            options.append(option)
+
+        return options
+
+    def _parse_single_short_answer_option(self, block: List[str], feedback: Dict) -> Dict[str, Any]:
+        """Parse a single short-answer option."""
+        first_line = block[0].strip()
+        
+        # Extract option type and answer
+        option_type = first_line.split("[")[0].strip()
+        answer_str = first_line.split("[")[1].split("]")[0].strip()
+        
+        # Extract label (text after ] on first line and subsequent lines until feedback)
+        label_start = first_line.split("]", 1)[1].strip()
+        label = [label_start] if label_start else []
+        
+        line_idx = 1
+        while line_idx < len(block):
+            line = block[line_idx].strip()
+            if line.startswith(self.FEEDBACK_WRONG_PREFIX) or line.startswith(
+                self.FEEDBACK_CORRECT_PREFIX
+            ):
+                break
+            label.append(line)
+            line_idx += 1
+
+        # Extract feedback
+        correct_fb = []
+        incorrect_fb = []
+        
+        if line_idx < len(block):
+            last_type = None
+            while line_idx < len(block):
+                line = block[line_idx].strip()
+                if line.startswith(self.FEEDBACK_WRONG_PREFIX):
+                    if incorrect_fb:
+                        incorrect_fb.append("")
+                    incorrect_fb.append(line[2:])
+                    last_type = "incorrect"
+                elif line.startswith(self.FEEDBACK_CORRECT_PREFIX):
+                    if correct_fb:
+                        correct_fb.append("")
+                    correct_fb.append(line[2:])
+                    last_type = "correct"
                 else:
-                    mc_content = raw_option
-                    mc_content[0] = mc_content[0].strip()[3:] # remove the [ ] or [x] and leading spaces
-                    fb_content = [Feedback[ci_list[-1]]] # use default feedback based on correct/incorrect status
-                mc_list.append(mc_content)
-                fb_list.append(fb_content)
-        
-        # check the number of correct answers
-        if sum(ci_list)==0 and node["variant"]=="single-select":
-            message = f"No correct options provided for multiple-choice single-select question at line {self.lineno} in {self.env.docname}. Please provide at least one correct option between --- and ---."
-            raise ValueError(message)
-                
-        # Start the grid for the cards:
-        cards = [f"::::{{grid}} {Columns}",":gutter: 3",""]
-        # create empty cards for each of the options
-        for mc in mc_list:
-            cards.append(":::{grid-item-card}")
-            cards.append(":shadow: lg")
-            cards.append(":class-card: option")
-            cards.append("+++")
-            cards.append(":::")   
-        # end the grid
-        cards.append("::::")
+                    if last_type == "incorrect":
+                        incorrect_fb.append(line)
+                    elif last_type == "correct":
+                        correct_fb.append(line)
+                line_idx += 1
+        else:
+            correct_fb = [feedback[True]]
+            incorrect_fb = [feedback[False]]
 
-        # add the first text if any
-        if pre_text:
-            pre_section = nodes.section(classes=[f"question-pretext"],ids=[node_id + "-pretext"])
-            self.state.nested_parse(pre_text, self.content_offset, pre_section)
-            node += pre_section
-        
-        # add the mc options section (should be given)
-        mc_section = nodes.section(classes=[f"question-options"],ids=[node_id + "-options"])
-        self.state.nested_parse(cards, self.content_offset, mc_section)
-        node += mc_section
-        # loop over the options and add the content of the option (parsed) to the card:
+        return {
+            "type": option_type,
+            "answer": answer_str,
+            "label": label or [""],
+            "correct_feedback": correct_fb,
+            "incorrect_feedback": incorrect_fb,
+        }
+
+    def _render_short_answer_cards(self, node: Node, node_id: str, options: List[Dict]) -> None:
+        """Render short-answer options as cards."""
+        # Create card markup
+        cards_markup = []
+        for option in options:
+            label = option["label"]
+            cards_markup.append(":::{card}")
+            cards_markup.append(":shadow: lg")
+            cards_markup.append(":width: 100%")
+            cards_markup.append(":class-card: option")
+            cards_markup.append(":class-body: input")
+            if label == [""]:
+                cards_markup.append(":class-header: hidden")
+            cards_markup.extend(["^^^", "+++", ":::"])
+
+        # Render cards
+        options_section = nodes.section(
+            classes=["question-options"],
+            ids=[f"{node_id}-options"]
+        )
+        self.state.nested_parse(cards_markup, self.content_offset, options_section)
+        node += options_section
+
+        # Populate card content
         current_card = -1
-        for nd in mc_section.findall():
-            if isinstance(nd,nodes.container):
-                if "sd-card-body" in nd.get("classes", []):
-                    current_card += 1
-                    # add the content of the option to the card:
-                    option_content = mc_list[current_card]
-                    option_content_section = nodes.section(classes=["question-option"],ids=[f"{node_id}-option-{current_card}"])
-                    self.state.nested_parse(option_content, self.content_offset, option_content_section)
-                    nd += option_content_section
-                if "sd-card-footer" in nd.get("classes", []):
-                    # add the content of the feedback to the card:
-                    feedback_content = fb_list[current_card]
-                    feedback_content_section = nodes.section(classes=[f"question-feedback {'' if ci_list[current_card] else 'in'}correct"],ids=[f"{node_id}-feedback-{current_card}"])
-                    self.state.nested_parse(feedback_content, self.content_offset, feedback_content_section)
-                    feedback_content_section["data-correct"] = ci_list[current_card] # add data attribute for correct/incorrect status, which can be used by the frontend to show feedback
-                    nd += feedback_content_section
+        for container in options_section.findall(nodes.container):
+            card_classes = container.get("classes", [])
+            
+            if "sd-card-header" in card_classes:
+                current_card += 1
+                option = options[current_card]
+                label_section = nodes.section(
+                    classes=["question-option-label"],
+                    ids=[f"{node_id}-option-{current_card}-label"]
+                )
+                self.state.nested_parse(
+                    option["label"], self.content_offset, label_section
+                )
+                container += label_section
+                
+            elif "sd-card-body" in card_classes:
+                option = options[current_card]
+                
+                # Add input field
+                input_html = (
+                    f"<textarea class='question-option-input type-{option['type']}' "
+                    f"id='{node_id}-option-{current_card}-input' "
+                    f"placeholder='Insert your answer here...'></textarea>"
+                )
+                container += nodes.raw(input_html, input_html, format="html")
+                
+                # Add answer (hidden)
+                answer_section = nodes.section(
+                    classes=["question-option-answer"],
+                    ids=[f"{node_id}-option-{current_card}-answer"]
+                )
+                answer_section += nodes.paragraph(text=option["answer"])
+                container += answer_section
+                
+            elif "sd-card-footer" in card_classes:
+                option = options[current_card]
+                
+                # Add correct feedback
+                correct_section = nodes.section(
+                    classes=["question-feedback", "correct"],
+                    ids=[f"{node_id}-option-{current_card}-feedback"]
+                )
+                self.state.nested_parse(
+                    option["correct_feedback"], self.content_offset, correct_section
+                )
+                container += correct_section
+                
+                # Add incorrect feedback
+                incorrect_section = nodes.section(
+                    classes=["question-feedback", "incorrect"],
+                    ids=[f"{node_id}-option-{current_card}-feedback-incorrect"]
+                )
+                self.state.nested_parse(
+                    option["incorrect_feedback"], self.content_offset, incorrect_section
+                )
+                container += incorrect_section
+            
+    def _handle_multiple_choice_shared(
+        self, node: Node, node_id: str, columns: str, feedback: Dict
+    ) -> Node:
+        """Shared logic for multiple-choice question types."""
+        pre_text, options_raw, post_text = self._split_input()
 
-        # include the final text, if any
-        if post_text:
-            post_section = nodes.section(classes=[f"question-posttext"],ids=[node_id + "-posttext"])
-            self.state.nested_parse(post_text, self.content_offset, post_section)
-            node += post_section
+        # Parse options
+        options = self._parse_multiple_choice_options(options_raw, feedback)
+
+        # Validate (single-select requires at least one correct answer)
+        if node["variant"] == "single-select" and not any(opt["is_correct"] for opt in options):
+            raise ValueError(
+                f"No correct options provided for single-select question at line "
+                f"{self.lineno} in {self.env.docname}. Please provide at least one "
+                f"correct option."
+            )
+
+        # Add pre-text
+        self._add_text_section(node, node_id, pre_text, "pretext")
+
+        # Render options as cards
+        self._render_multiple_choice_cards(node, node_id, options, columns)
+
+        # Add post-text
+        self._add_text_section(node, node_id, post_text, "posttext")
 
         return node
 
-    def _handle_multiple_choice_single_select(self, node, node_id, Columns, Feedback):
-        
-        node = self._handle_multiple_choice_shared(node, node_id, Columns, Feedback)
+    def _parse_multiple_choice_options(
+        self, options_raw: List[str], feedback: Dict
+    ) -> List[Dict[str, Any]]:
+        """Parse multiple-choice options from raw content."""
+        if not options_raw:
+            return []
 
-        # include a button inside a section to reset the question
-        button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
-        # calculate number of buttons (at most)
-        buttonCount = 1 # always the reset button
-        if node["show_answer"]:
-            buttonCount += 1 # if show answer button is needed
-        # create four values, where the lowest is 1, the highest is buttonCount
-        # and the two middle values are linear interpolated between 1 and buttonCount
-        # and afterward rounded to the nearest integer
-        buttonDist = [1]
-        if buttonCount > 1:
-            buttonDist.append(round(1 + (buttonCount - 1) / 3))
-            buttonDist.append(round(1 + 2 * (buttonCount - 1) / 3))
-            buttonDist.append(buttonCount)
+        # Find option markers
+        option_starts = [
+            i for i, line in enumerate(options_raw)
+            if line.strip().startswith(self.OPTION_CHECKBOX_UNCHECKED) or
+            line.strip().startswith(self.OPTION_CHECKBOX_CHECKED)
+        ]
+
+        options = []
+        for idx, start in enumerate(option_starts):
+            end = option_starts[idx + 1] if idx + 1 < len(option_starts) else len(options_raw)
+            block = options_raw[start:end]
+            option = self._parse_single_multiple_choice_option(block, feedback)
+            options.append(option)
+
+        return options
+
+    def _parse_single_multiple_choice_option(
+        self, block: List[str], feedback: Dict
+    ) -> Dict[str, Any]:
+        """Parse a single multiple-choice option."""
+        first_line = block[0].strip()
+        is_correct = first_line[1] == "x"
+        
+        # Extract option content and feedback
+        fb_starts = [
+            i for i, line in enumerate(block)
+            if line.strip().startswith(self.FEEDBACK_WRONG_PREFIX)
+        ]
+
+        if fb_starts:
+            fb_start = fb_starts[0]
+            option_content = block[:fb_start]
+            option_content[0] = option_content[0].strip()[3:]  # Remove [ ] or [x]
+            option_feedback = block[fb_start:]
+            option_feedback[0] = option_feedback[0].strip()[2:]  # Remove "> "
         else:
-            buttonDist.extend([1,1,1])
-        # convert to string
-        buttonDist = " ".join([str(x) for x in buttonDist])
-        grid = [f"::::{{grid}} {buttonDist}",":gutter: 3",""]
-        # Only add the show button if requested
+            option_content = block
+            option_content[0] = option_content[0].strip()[3:]  # Remove [ ] or [x]
+            option_feedback = [feedback[is_correct]]
+
+        return {
+            "is_correct": is_correct,
+            "content": option_content,
+            "feedback": option_feedback,
+        }
+
+    def _render_multiple_choice_cards(
+        self, node: Node, node_id: str, options: List[Dict], columns: str
+    ) -> None:
+        """Render multiple-choice options as cards."""
+        # Create card grid markup
+        cards_markup = [
+            f"::::{{grid}} {columns}",
+            ":gutter: 3",
+            "",
+        ]
+        for _ in options:
+            cards_markup.extend([
+                ":::{grid-item-card}",
+                ":shadow: lg",
+                ":class-card: option",
+                "+++",
+                ":::",
+            ])
+        cards_markup.append("::::")
+
+        # Render cards
+        options_section = nodes.section(
+            classes=["question-options"],
+            ids=[f"{node_id}-options"]
+        )
+        self.state.nested_parse(cards_markup, self.content_offset, options_section)
+        node += options_section
+
+        # Populate card content
+        current_card = -1
+        for container in options_section.findall(nodes.container):
+            card_classes = container.get("classes", [])
+            
+            if "sd-card-body" in card_classes:
+                current_card += 1
+                option = options[current_card]
+                option_section = nodes.section(
+                    classes=["question-option"],
+                    ids=[f"{node_id}-option-{current_card}"]
+                )
+                self.state.nested_parse(
+                    option["content"], self.content_offset, option_section
+                )
+                container += option_section
+                
+            elif "sd-card-footer" in card_classes:
+                option = options[current_card]
+                feedback_class = "correct" if option["is_correct"] else "incorrect"
+                feedback_section = nodes.section(
+                    classes=["question-feedback", feedback_class],
+                    ids=[f"{node_id}-feedback-{current_card}"]
+                )
+                self.state.nested_parse(
+                    option["feedback"], self.content_offset, feedback_section
+                )
+                feedback_section["data-correct"] = option["is_correct"]
+                container += feedback_section
+
+    def _handle_multiple_choice_single_select(
+        self, node: Node, node_id: str, columns: str, feedback: Dict
+    ) -> List[Node]:
+        """Handle single-select multiple-choice questions."""
+        node = self._handle_multiple_choice_shared(node, node_id, columns, feedback)
+
+        # Add buttons
+        button_count = 2 if node["show_answer"] else 1
+        buttons = []
         if node["show_answer"]:
-            left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: show-button","","Show answer(s)",":::"]
-            grid.extend(left_button)
-        # Always add the reset button
-        right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
-        grid.extend(right_button)
-        grid.extend(["::::"])
-        self.state.nested_parse(grid, self.content_offset, button_section)
-        node += button_section
+            buttons.append(("show-button", "Show answer(s)"))
+        buttons.append(("reset-button", "Try again"))
+
+        self._add_button_section(node, node_id, buttons, node["show_answer"], button_count)
 
         return [node]
-    
-    def _handle_multiple_choice_multiple_select(self, node, node_id, Columns, Feedback):
-        
-        node = self._handle_multiple_choice_shared(node, node_id, Columns, Feedback)
 
-        # include a section to show feedback for the whole question (instead of per option as in single-select)
-        # the content of the feedback will be determined by the frontend based on the selected options and the correct options.
-        feedback_section = nodes.section(classes=[f"question-feedback overall-feedback"],ids=[node_id + "-overall-feedback"])
-        grid = [f"::::{{grid}} 1",":gutter: 3",""]
-        # add cards:
-        # - Correct
-        # - Incorrect
-        correct_card = [":::{grid-item-card}", ":shadow: lg", ":class-card: correct","","Well done!",":::"]
-        incorrect_card = [":::{grid-item-card}", ":shadow: lg", ":class-card: incorrect","","Try again! You selected at least one incorrect option.",":::"]
-        missed_card = [":::{grid-item-card}", ":shadow: lg", ":class-card: missed","","Try again! You missed at least one correct option.",":::"]
-        grid.extend(correct_card)
-        grid.extend(incorrect_card)
-        grid.extend(missed_card)
-        grid.extend(["::::"])
-        self.state.nested_parse(grid, self.content_offset, feedback_section)
+    def _handle_multiple_choice_multiple_select(
+        self, node: Node, node_id: str, columns: str, feedback: Dict
+    ) -> List[Node]:
+        """Handle multiple-select multiple-choice questions."""
+        node = self._handle_multiple_choice_shared(node, node_id, columns, feedback)
+
+        # Add overall feedback section
+        feedback_section = nodes.section(
+            classes=["question-feedback", "overall-feedback"],
+            ids=[f"{node_id}-overall-feedback"]
+        )
+        feedback_grid = [
+            "::::{grid} 1",
+            ":gutter: 3",
+            "",
+            ":::{grid-item-card}",
+            ":shadow: lg",
+            ":class-card: correct",
+            "",
+            "Well done!",
+            ":::",
+            ":::{grid-item-card}",
+            ":shadow: lg",
+            ":class-card: incorrect",
+            "",
+            "Try again! You selected at least one incorrect option.",
+            ":::",
+            ":::{grid-item-card}",
+            ":shadow: lg",
+            ":class-card: missed",
+            "",
+            "Try again! You missed at least one correct option.",
+            ":::",
+            "::::",
+        ]
+        self.state.nested_parse(feedback_grid, self.content_offset, feedback_section)
         node += feedback_section
 
-        # include a button inside a section to reset the question and to submit the question
-        # (for multiple select, we need a submit button to show feedback, instead of showing
-        # feedback immediately after selecting an option as in single select)
-        button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
-        # calculate number of buttons (at most)
-        buttonCount = 2 # always the submit and reset button
+        # Add buttons
+        button_count = 3 if node["show_answer"] else 2
+        buttons = [
+            ("submit-button", "Submit answer(s)"),
+        ]
         if node["show_answer"]:
-            buttonCount += 1 # if show answer button is needed
-        # create four values, where the lowest is 1, the highest is buttonCount
-        # and the two middle values are linear interpolated between 1 and buttonCount
-        # and afterward rounded to the nearest integer
-        buttonDist = [1]
-        if buttonCount > 1:
-            buttonDist.append(round(1 + (buttonCount - 1) / 3))
-            buttonDist.append(round(1 + 2 * (buttonCount - 1) / 3))
-            buttonDist.append(buttonCount)
-        else:
-            buttonDist.extend([1,1,1])
-        # convert to string
-        buttonDist = " ".join([str(x) for x in buttonDist])
-        grid = [f"::::{{grid}} {buttonDist}",":gutter: 3",""]
-        left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: submit-button","","Submit answer(s)",":::"]
-        grid.extend(left_button)
-        # Only add when requested
-        if node["show_answer"]:
-            middle_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: show-button","","Show answer(s)",":::"]
-            grid.extend(middle_button)
-        right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
-        grid.extend(right_button)
-        grid.extend(["::::"])
-        self.state.nested_parse(grid, self.content_offset, button_section)
-        node += button_section
+            buttons.append(("show-button", "Show answer(s)"))
+        buttons.append(("reset-button", "Try again"))
+
+        self._add_button_section(node, node_id, buttons, node["show_answer"], button_count)
 
         return [node]
 
 class question_node(nodes.Admonition, nodes.Element):
+    """Custom node for question directives."""
     pass
 
+
 def visit_question_node(self, node: question_node) -> None:
-    classes = " ".join(node["class"])
-    classes += " {}".format(" ".join([node["type"], node["variant"]]))
+    """Visit handler for question nodes."""
+    css_classes = " ".join(node["class"])
+    css_classes += f" {node['type']} {node['variant']}"
+    
+    tag_name = "div"
     if node["admonition"]:
-        self.body.append(self.starttag(node, "div", CLASS=f"admonition {classes}",ids=node["ids"]))
-    else:
-        self.body.append(self.starttag(node, "div", CLASS=f"{classes}",ids=node["ids"]))
+        css_classes = f"admonition {css_classes}"
+    
+    self.body.append(self.starttag(node, tag_name, CLASS=css_classes, ids=node["ids"]))
+
 
 def depart_question_node(self, node: question_node) -> None:
+    """Depart handler for question nodes."""
     if not node["nocaption"]:
-        id = node.attributes.get("ids", [""])[0]
-        # use the id to find the correct title location
-        search_str = f'<p class="admonition-title" id="{id}-title">'
-        idx = list_rindex(self.body, search_str) + 1
-        element = f'<span class="caption-number">Question </span>'
-        self.body.insert(idx, element)
+        node_id = node.attributes.get("ids", [""])[0]
+        search_str = f'<p class="admonition-title" id="{node_id}-title">'
+        idx = _find_last_index(self.body, search_str)
+        if idx >= 0:
+            element = '<span class="caption-number">Question </span>'
+            self.body.insert(idx + 1, element)
+    
     self.body.append("</div>")
 
-def setup(app):
+
+def _find_last_index(lst: List[str], value: str, skip: int = 0) -> int:
+    """Find the last occurrence of a value in a list, optionally skipping occurrences.
+    
+    Args:
+        lst: The list to search
+        value: The value to find
+        skip: Number of occurrences to skip from the end
+        
+    Returns:
+        The index of the occurrence, or -1 if not found
+    """
+    skip_count = skip
+    for i in reversed(range(len(lst))):
+        if lst[i] == value:
+            if skip_count == 0:
+                return i
+            skip_count -= 1
+    return -1
+
+
+def setup(app) -> Dict[str, Any]:
+    """Setup function for Sphinx extension."""
     app.add_directive("question", QuestionDirective)
     app.add_node(question_node, html=(visit_question_node, depart_question_node))
-    app.add_css_file("teachbooks_questions.css")
-    app.add_js_file("teachbooks_wrapadmonition.js")
-    app.add_js_file("teachbooks_mcss.js")
-    app.add_js_file("teachbooks_mcms.js")
-    app.add_js_file("teachbooks_sab.js")
     
+    # Add CSS and JavaScript files
+    app.add_css_file("teachbooks_questions.css")
+    js_files = [
+        "teachbooks_wrapadmonition.js",
+        "teachbooks_mcss.js",
+        "teachbooks_mcms.js",
+        "teachbooks_sab.js",
+    ]
+    for js_file in js_files:
+        app.add_js_file(js_file)
+    
+    # Add static files path
     static_path = os.path.join(os.path.dirname(__file__), "_static")
     app.config.html_static_path.append(static_path)
     
@@ -479,14 +693,3 @@ def setup(app):
         "parallel_read_safe": True,
         "parallel_write_safe": True,
     }
-
-def list_rindex(li, x, skip=0) -> int:
-    """Getting the last occurrence of an item in a list."""
-    """Skipping the first skip occurrences from the end."""
-    for i in reversed(range(len(li))):
-        if li[i] == x:
-            if skip == 0:
-                return i
-            else:
-                skip -= 1
-    raise ValueError("{} is not in list".format(x))
