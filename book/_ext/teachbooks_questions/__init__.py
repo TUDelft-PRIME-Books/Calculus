@@ -126,12 +126,12 @@ class QuestionDirective(SphinxDirective):
         correct_list = []
         incorrect_list = []
         if options_raw:
-            # find all the options, which start with a line that starts with "T[", "TI[", "TF[" or "M[" (possible with leading spaces)
+            # find all the options, which start with a line that starts with "T[", "TI[", "TF[" (possible with leading spaces)
             indexes = [i for i, val in enumerate(options_raw) if val.strip()[1:].startswith("[") or val.strip()[2:].startswith("[")]
             for i in range(len(indexes)):
                 block = options_raw[indexes[i]:indexes[i+1]] if i < len(indexes)-1 else options_raw[indexes[i]:]
                 
-                # get the type of the question from the first line, which should start with "T[", "TI[", "TF[" or "M["
+                # get the type of the question from the first line, which should start with "T[", "TI[", "TF["
                 type_list.append(block[0].strip().split("[")[0].strip())
 
                 # get correct answer from first line
@@ -209,8 +209,8 @@ class QuestionDirective(SphinxDirective):
                     # add the input field to the body, based on the type of the answer:
                     if type_list[current_card] in ["T", "TI", "TF"]:
                         raw_html = f"<textarea class='question-option-input type-{type_list[current_card]}' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'></textarea>"
-                    elif type_list[current_card] == "M":
-                        raw_html = f"<input type='number' class='question-option-input' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'>"
+                    # elif type_list[current_card] == "M":
+                        # raw_html = f"<input type='number' class='question-option-input' id='{node_id}-option-{current_card}-input' placeholder='Insert your answer here...'>"
                     else: 
                         message = f"Unsupported question type {type_list[current_card]} for short answer question at line {self.lineno + indexes[current_card] + 1} in {self.env.docname}. Supported types are: T, N and M."
                         raise ValueError(message)
@@ -240,14 +240,28 @@ class QuestionDirective(SphinxDirective):
 
         # include a button inside a section to reset the question and to submit the question
         button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
-        grid = [f"::::{{grid}} 3",":gutter: 3",""]
+        # calculate number of buttons (at most)
+        buttonCount = 2 # always the submit and reset button
+        if node["show_answer"]:
+            buttonCount += 1 # if show answer button is needed
+        # create four values, where the lowest is 1, the highest is buttonCount
+        # and the two middle values are linear interpolated between 1 and buttonCount
+        # and afterward rounded to the nearest integer
+        buttonDist = [1]
+        if buttonCount > 1:
+            buttonDist.append(round(1 + (buttonCount - 1) / 3))
+            buttonDist.append(round(1 + 2 * (buttonCount - 1) / 3))
+            buttonDist.append(buttonCount)
+        else:
+            buttonDist.extend([1,1,1])
+        # convert to string
+        buttonDist = " ".join([str(x) for x in buttonDist])
+        grid = [f"::::{{grid}} {buttonDist}",":gutter: 3",""]
         left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: submit-button","","Submit answer(s)",":::"]
         grid.extend(left_button)
         if node["show_answer"]:
             middle_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: show-button","","Show answer(s)",":::"]
-        else:
-            middle_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
-        grid.extend(middle_button)
+            grid.extend(middle_button)
         right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
         grid.extend(right_button)
         grid.extend(["::::"])
@@ -342,14 +356,28 @@ class QuestionDirective(SphinxDirective):
 
         # include a button inside a section to reset the question
         button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
-        grid = [f"::::{{grid}} 3",":gutter: 3",""]
+        # calculate number of buttons (at most)
+        buttonCount = 1 # always the reset button
+        if node["show_answer"]:
+            buttonCount += 1 # if show answer button is needed
+        # create four values, where the lowest is 1, the highest is buttonCount
+        # and the two middle values are linear interpolated between 1 and buttonCount
+        # and afterward rounded to the nearest integer
+        buttonDist = [1]
+        if buttonCount > 1:
+            buttonDist.append(round(1 + (buttonCount - 1) / 3))
+            buttonDist.append(round(1 + 2 * (buttonCount - 1) / 3))
+            buttonDist.append(buttonCount)
+        else:
+            buttonDist.extend([1,1,1])
+        # convert to string
+        buttonDist = " ".join([str(x) for x in buttonDist])
+        grid = [f"::::{{grid}} {buttonDist}",":gutter: 3",""]
+        # Only add the show button if requested
         if node["show_answer"]:
             left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: show-button","","Show answer(s)",":::"]
-        else:
-            left_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
-        grid.extend(left_button)
-        middle_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
-        grid.extend(middle_button)
+            grid.extend(left_button)
+        # Always add the reset button
         right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
         grid.extend(right_button)
         grid.extend(["::::"])
@@ -383,14 +411,29 @@ class QuestionDirective(SphinxDirective):
         # (for multiple select, we need a submit button to show feedback, instead of showing
         # feedback immediately after selecting an option as in single select)
         button_section = nodes.section(classes=[f"question-buttons"],ids=[node_id + "-buttons"])
-        grid = [f"::::{{grid}} 3",":gutter: 3",""]
+        # calculate number of buttons (at most)
+        buttonCount = 2 # always the submit and reset button
+        if node["show_answer"]:
+            buttonCount += 1 # if show answer button is needed
+        # create four values, where the lowest is 1, the highest is buttonCount
+        # and the two middle values are linear interpolated between 1 and buttonCount
+        # and afterward rounded to the nearest integer
+        buttonDist = [1]
+        if buttonCount > 1:
+            buttonDist.append(round(1 + (buttonCount - 1) / 3))
+            buttonDist.append(round(1 + 2 * (buttonCount - 1) / 3))
+            buttonDist.append(buttonCount)
+        else:
+            buttonDist.extend([1,1,1])
+        # convert to string
+        buttonDist = " ".join([str(x) for x in buttonDist])
+        grid = [f"::::{{grid}} {buttonDist}",":gutter: 3",""]
         left_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: submit-button","","Submit answer(s)",":::"]
         grid.extend(left_button)
+        # Only add when requested
         if node["show_answer"]:
             middle_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: show-button","","Show answer(s)",":::"]
-        else:
-            middle_button = [":::{grid-item-card}", ":shadow: lg", ":class-card: hidden-button","",":::"]
-        grid.extend(middle_button)
+            grid.extend(middle_button)
         right_button = [":::{grid-item-card}", ":shadow: lg",":text-align: center", ":class-card: reset-button","", "Try again",":::"]
         grid.extend(right_button)
         grid.extend(["::::"])

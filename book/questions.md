@@ -39,7 +39,7 @@ Within an options part, a new answer is indicated with a line starting with one 
 - `T[Answer] ` for a short answer question with a text input field, which will be checked for an exact match with the provided answer.
 - `TI[Answer] ` for a short answer question with a text input field, which will be checked for a case-insensitive match with the provided answer.
 - `TF[Answer] ` for a short answer question with a text input field, which will be checked for a fuzzy case-insensitive match with the provided answer. Be aware that this can lead to some unexpected answers being marked as (in)correct, and it is recommended to use this option only for longer answers where minor typos are more likely to occur, and to check the provided answer carefully for potential issues with the fuzzy matching.
-- `M[Answer] ` for a short answer question with a math input field.
+<!-- - `M[Answer] ` for a short answer question with a math input field. -->
 
 This can be optionally followed with a label that will be placed above the input field in th rendering. These can be multi lined.
 
