@@ -100,9 +100,10 @@ parts:
   - file: Multivariable_functions/Multivariable_integration/introduction_multivariable_integration.md
     sections:
     - file: Multivariable_functions/Multivariable_integration/double_integrals.md
-    - file: Multivariable_functions/Multivariable_integration/triple_and_multiple_integrals.md
     - file: Multivariable_functions/Multivariable_integration/coordinate_transformations.md
-    - file: Multivariable_functions/Multivariable_integration/improper_multiple_integrals.md
+    - file: Multivariable_functions/Multivariable_integration/triple_integrals.md
+    - file: Multivariable_functions/Multivariable_integration/coordinate_transformations_R3.md
+    - file: Multivariable_functions/Multivariable_integration/multivariable_integrals.md
     - file: Multivariable_functions/Multivariable_integration/line_integrals.md
     - file: Multivariable_functions/Multivariable_integration/surface_integrals.md
   - file: Multivariable_functions/Vector_calculus/introduction_vector_calculus.md

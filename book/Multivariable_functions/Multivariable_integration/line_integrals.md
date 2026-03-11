@@ -1,6 +1,4 @@
-# NOTE: Line integrals
-
-I think this should go before surface integrals, they have similar ideas but doing 1d before 2d makes sense to me.
+# Line integrals
 
 In this section we cover:
 
