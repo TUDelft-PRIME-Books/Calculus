@@ -87,6 +87,8 @@ $$
 This is a separable differential equation with general solution $I(t)=Ce^{-\frac{1}{4}t^2}$. Now we have $C=I(0)=\frac{1}{2}\sqrt{\pi}$. Hence: $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 ::::::
 
+(SubSec:ODE1:SeparableAppl)=
+
 ## Applications
 
 **The logistic equation**

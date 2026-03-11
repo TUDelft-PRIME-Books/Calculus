@@ -41,7 +41,7 @@ $$
  v(600)=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 600}{60}\right)=5,\qquad \tilde{v}(600)=\frac{25}{4}-\frac{600}{48}=-\frac{25}{4}
 $$
 
-So for the formula $\tilde{v}(t)=\frac{25}{4}-\frac{t}{48}$ we obtain a negative speed and since we were not taking into account in which direction we were moving a negative speed does not make any sense. So the first formula is, physically speaking, more realistic. Does that mean that it is correct, though? Probably not, since we have only specified the speed at two points in time and a lot can happen at different points. Hence, it would be a major coincidence that the formula we provided perfectly described our movement. Still, we can use this formula to model our journey. Moreover the more points in time we specify what the speed should be, the realistic we can choose our model.
+So for the formula $\tilde{v}(t)=\frac{25}{4}-\frac{t}{48}$ we obtain a negative speed and since we were not taking into account in which direction we were moving a negative speed does not make any sense. So the first formula is, physically speaking, more realistic. Does that mean that it is correct, though? Probably not, since we have only specified the speed at two points in time and a lot can happen at different points. Hence, it would be a major coincidence that the formula we provided perfectly described our movement. Still, we can use this formula to model our journey. Moreover the more points in time we specify what the speed should be, the more realistic we can choose our model.
 
 In fact, in almost all processes in nature, science and engineering one quantity depends on another quantity (or perhaps on multiple quantities) and can, therefore, be described by means of a function. The branch of mathematics concerned with finding functions describing natural phenomena is called **mathematical modelling**. In this book, the focus is not on the modelling part. Instead, we usually assume that the function is given to us and by analyzing it, we aim to understand the underlying process. 
 
@@ -112,11 +112,11 @@ so both the input values $-3$ and $3$ are mapped into the output value $9$. Fina
 ::::::{prf:example} 
 :label: Ex:Functions1var:NoFormula
 
-Although most functions in this book can be described by means of formula, this does not need to be the case. Moreover, the domain and/or codomain do not need to be part of $\mathbb{R}^n$. For instance, we can let $D$ be the set that contains $3$ people, Alice, Bob and Charlie, and let $f$ be the function that maps a person to their age. So, we could write this down like $f(\mathrm{Alice})=31$, $f(\mathrm{Bob})=66$ and $f(\mathrm{Charlie})=19$. Here, the output is still a number, but even that does not need to be the case. For instance, we could let $g$ be the function that gives the first letter of a person's name, so we could write $g(\mathrm{Alice})=\mathrm{A}$, $f(\mathrm{Bob})=\mathrm{B}$ and $f(\mathrm{Charlie})=\mathrm{C}$. This might seem a bit silly, but it actually quite beneficial that a lot of results that we develop in this section can also be applied to any type of domain or codomain, since it makes it possible to directly use these results in a more abstract mathematical setting.
+Although most functions in this book can be described by means of formula, this does not need to be the case. Moreover, the domain and/or codomain do not need to be part of $\mathbb{R}^n$. For instance, we can let $D$ be the set that contains $3$ people, Alice, Bob and Charlie, and let $f$ be the function that maps a person to their age. So, we could write this down like $f(\mathrm{Alice})=31$, $f(\mathrm{Bob})=66$ and $f(\mathrm{Charlie})=19$. Here, the output is still a number, but even that does not need to be the case. For instance, we could let $g$ be the function that gives the first letter of a person's name, so we could write $g(\mathrm{Alice})=\mathrm{A}$, $g(\mathrm{Bob})=\mathrm{B}$ and $g(\mathrm{Charlie})=\mathrm{C}$. This might seem a bit silly, but it actually quite beneficial that a lot of results that we develop in this section can also be applied to any type of domain or codomain, since it makes it possible to directly use these results in a more abstract mathematical setting.
 
 ::::::
 
-Although the domain and codomain of a function are integral parts of the function, we often do not explicitly state them. Most functions that we will encounter are defined by a formula and for those functions we will implicitly assume that the domain consists precisely of those values of $x$ for which the formula 'makes sense'. In addition, almost all functions in this course will have $\mathbb{R}$ as the codomain (exceptions can be found in {numref}`Section:VectorCalculusIntro`), so we will implicitly assume that we are always dealing with these type of functions. Let us make these conventions a bit more explicit.
+Although the domain and codomain of a function are integral parts of the function, we often do not explicitly state them. Most functions that we will encounter are defined by a formula and for those functions we will implicitly assume that the domain consists precisely of those values of $x$ for which the formula 'makes sense'. In addition, almost all functions in this book will have $\mathbb{R}$ as the codomain (exceptions can be found in {numref}`Section:VectorCalculusIntro`), so we will implicitly assume that we are always dealing with these type of functions. Let us make these conventions a bit more explicit.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:MaxDomain
@@ -316,7 +316,11 @@ In {numref}`Sec:Algebra:Trigonometry` we saw that for an angle $\theta$ we can c
 The functions $f(x)=\sin(x)$, $f(x)=\cos(x)$ and $f(x)=\tan(x)$ are called the **trigonometric functions**.
 ::::::
 
-Note that we always assume that the input of a trigonometric function is measured in radians, not in degrees.
+
+:::{Note}
+We always assume that the input of a trigonometric function is measured in radians, not in degrees.
+:::
+
 
 In {numref}`Section:RealNumbers` we saw that for a base $b\geq 0$ and an exponent $r$ in $\mathbb{R}$ we could define the exponentiation $b^r$. This concept actually leads to two different types of functions: one where we vary $b$ and one where we vary $r$. For the second type, the one with base $e$, see {numref}`Subsec:RealNumbersE`, plays a particularly important role in calculus.
 
@@ -372,6 +376,8 @@ The graph of this function is a **parabola**. The graph crosses the $x$-axis at 
 Notice that the lowest value of $y$ occurs at $x=2$, where $h(2)=-1$. That is, $h(x)\geq -1$ for all values of $x$. In the terminology of {numref}`Section:Extrema1d`, the absolute minimum of the function function $h$ is $-1$ and occurs at $x=2$. As a result, the range of $h$ is not the full set of real numbers $\mathbb{R}$. Since $h(x)$ can get as large as we want to by increasing $x$, we find that the range of $h$ is the interval $[-1,\infty)$.
 
 Since the graph of $h$ has a lowest value and then grows for both very large and very negative values of $x$, we say that the graph of $h$ is a parabola that **opens upwards**.  On the other hand, the graph of the function $k(x)=2-3x^2$ is also a parabola, as can be seen below. However, this one has a highest value and it becomes very negative for both very large and very negative values of $x$. As such, the graph of $k$ is a parabola that **opens downwards**.
+
+For more information on parabolas, see {numref}`Subsec:CurvesParabola`.
 
 :::{figure} Images/Fig-Functions1var-QuadraticK.png
 :name: Fig:Functions1var:QuadraticK
@@ -467,7 +473,7 @@ The graphs of the functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$.
 Replace {numref}`Fig:Functions1var:NegativePowers` with an applet.
 :::
 
-Note that the graph of $f$ is very similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`, except that, since there are no physical restrictions, the function $f$ is also defined for negative values of $x$. In fact, whenever two (physical) quantities are inversely proportional to each other, the graph of one quantity as a function of the other one will be similar to the graph of $f$. Since the graph of $f$ is the set of all points $(x,y)$ with $y=\frac{1}{x}$, we can rewrite this equation to $xy=1$. This means that the graph of $f$ is a hyperbola. 
+Note that the graph of $f$ is very similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`, except that, since there are no physical restrictions, the function $f$ is also defined for negative values of $x$. In fact, whenever two (physical) quantities are inversely proportional to each other, the graph of one quantity as a function of the other one will be similar to the graph of $f$. Since the graph of $f$ is the set of all points $(x,y)$ with $y=\frac{1}{x}$, we can rewrite this equation to $xy=1$. This means that the graph of $f$ is a hyperbola. For more information on hyperbolas, see {numref}`Subsec:CurvesHyperbola`.
 
 Similarly, the graph of $g$ is very similar to the one in {prf:ref}`Ex:Functions1var:Gravity` with again the main distinction that we now allow for negative input values. This does make the distinction between the graphs of $f$ and $g$ more clear, though, as $f$ is negative for negative input values, while $g$ is positive.
 
@@ -494,7 +500,7 @@ Replace {numref}`Fig:Functions1var:ExponentialGrowth` with an applet.
 
 For the function $A$, we notice that it is very close to $0$ for negative values of $t$, while it grows very fast for positive $t$. In fact, it grows faster the larger $t$ gets, which is indeed the **exponential growth** behaviour that we were trying to model. Reversely, the function $B$ is very large for negative values of $t$, while it get very close to $0$ for positive values of $t$. In fact, the decay rate decreases when $t$ gets larger, so again this function describes **exponential decay**.
 
-In a physical context, $t$ often models time, so it is often not interesting to look at negative values of $t$. In such cases, the process starts at $t=0$ and evolves for $t>0$ giving either growth or decay.
+In a physical context, $t$ often models time, so it is this case not interesting to look at negative values of $t$. In such cases, the process starts at $t=0$ and evolves for $t>0$ giving either growth or decay.
 
 In general, an exponential function $C(t)=a^t$ gives rise to exponential growth when $a>1$ and exponential decay when $0<a<1$. In the edge case where $a=1$, we find that $C(t)=1$ for all values of $t$.
 
