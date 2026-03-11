@@ -6,3 +6,4 @@ In this section we cover:
 - Differentiability
 - Differentials
 - Approximating changes in function values
+- Multivariable Taylor polynomials

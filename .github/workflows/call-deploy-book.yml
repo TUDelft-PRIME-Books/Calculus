@@ -16,10 +16,9 @@ on:
 
 jobs: 
   call-workflow:
-    uses: TeachBooks/deploy-book-workflow/.github/workflows/deploy-book.yml@main
+    uses: TeachBooks/deploy-book-workflow/.github/workflows/deploy-book.yml@upgrade_actions
     secrets: inherit
     permissions:
       contents: read
       pages: write
       id-token: write
-
