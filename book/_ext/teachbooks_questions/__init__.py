@@ -374,13 +374,13 @@ class QuestionDirective(SphinxDirective):
                 option = options[current_card]
                 
                 # Add input field
-                if option["type"] != "M":
+                if option["type"][0] == "T":
                     input_html = (
                         f"<textarea class='question-option-input type-{option['type']}' "
                         f"id='{node_id}-option-{current_card}-input' "
                         f"placeholder='Insert your answer here...'></textarea>"
                     )
-                else:
+                elif option["type"][0] == "M":
                     input_html = (
                         f"<math-field class='question-option-input type-{option['type']}' "
                         f"id='{node_id}-option-{current_card}-input' "
@@ -686,6 +686,7 @@ def setup(app) -> Dict[str, Any]:
     app.add_css_file("teachbooks_questions.css")
     js_files = [
         "https://cdn.jsdelivr.net/npm/mathlive",
+        "https://cdn.jsdelivr.net/npm/@cortex-js/compute-engine/dist/compute-engine.min.js",
         "teachbooks_wrapadmonition.js",
         "teachbooks_mcss.js",
         "teachbooks_mcms.js",

@@ -1,5 +1,8 @@
 // Functionality for short-answer block questions in Teachbooks
 
+// Define the compute engine for math questions
+const ce = new ComputeEngine.ComputeEngine();
+
 function jaroWinkler(a, b) {
   if (a === b) return 1;
 
@@ -131,8 +134,36 @@ function tunedSimilarity(student, correct) {
       case 'TF':
         return tunedSimilarity(stripped, correctAnswer) >= 0.95;
       case 'M':
-        return false;
+        // convert both to Expressions and compare
+        try {
+          const studentExpr = ce.parse(stripped);
+          const correctExpr = ce.parse(correctAnswer);
+          const studentEquation = studentExpr.head === 'Equal';
+          const correctEquation = correctExpr.head === 'Equal';
+          if (studentEquation && correctEquation) {
+            const evalStudentExpr = ce.box(["Subtract", studentExpr.ops[0], studentExpr.ops[1]]).simplify();
+            const evalCorrectExpr = ce.box(["Subtract", correctExpr.ops[0], correctExpr.ops[1]]).simplify();
+            if (evalStudentExpr.is(evalCorrectExpr)) {
+              return true;
+            }
+            negateStudent = ce.box(["Negate", evalStudentExpr]).simplify();
+            if (negateStudent.is(evalCorrectExpr)) {
+              return true;
+            }
+            return false;
+          } else if (!studentEquation && !correctEquation) {
+            return studentExpr.is(correctExpr);
+          } else {
+            return false;
+          }
+
+        }
+        catch (e) {
+          console.error('Error parsing math input: ', e);
+          return false;
+        }
       default:
+        console.log('Answer checking for type '+answerType+' is not implemented yet');
         return false;
     }
   }
@@ -148,6 +179,7 @@ function tunedSimilarity(student, correct) {
       questionOptionsSection.querySelectorAll('div.sd-card.option').forEach(function (optionCard) {
         const footer = optionCard.querySelector('div.sd-card-footer');
         const textArea = optionCard.querySelector('textarea.question-option-input');
+        const mathField = optionCard.querySelector('math-field.question-option-input');
 
         if (footer) {
           footer.classList.remove('correct', 'incorrect');
@@ -155,6 +187,10 @@ function tunedSimilarity(student, correct) {
         if (textArea) {
           textArea.value = '';
           textArea.classList.remove('show-answer');
+        }
+        if (mathField) {
+          mathField.value = '';
+          mathField.classList.remove('show-answer');
         }
       });
     }
@@ -171,6 +207,10 @@ function tunedSimilarity(student, correct) {
       ta.value = '';
       ta.classList.remove('show-answer');
     });
+    document.querySelectorAll('math-field.question-option-input.show-answer').forEach(function (ta) {
+      ta.value = '';
+      ta.classList.remove('show-answer');
+    });
 
     const questionOptionsSection = getQuestionOptionsSection(questionDiv);
     if (!questionOptionsSection) {
@@ -180,17 +220,21 @@ function tunedSimilarity(student, correct) {
     questionOptionsSection.querySelectorAll('div.sd-card.option').forEach(function (optionCard) {
       const footer = optionCard.querySelector('div.sd-card-footer');
       const textArea = optionCard.querySelector('textarea.question-option-input');
+      const mathField = optionCard.querySelector('math-field.question-option-input');
       const answerSection = optionCard.querySelector('section.question-option-answer');
 
-      if (!footer || !textArea) {
+      
+      if (!footer || (!textArea && !mathField)) {
         return;
       }
 
       footer.classList.remove('correct', 'incorrect');
 
-      const answerType = getAnswerType(textArea);
+      const answerType = getAnswerType(textArea || mathField);
       const correctAnswer = answerSection ? answerSection.textContent.trim() : null;
-      const isCorrect = checkAnswer(textArea.value, correctAnswer, answerType);
+      console.log('Correct answer extracted: '+correctAnswer);
+      const isCorrect = checkAnswer(textArea ? textArea.value : mathField.value, correctAnswer, answerType);
+      console.log('Is correct: '+isCorrect);
 
       footer.classList.add(isCorrect ? 'correct' : 'incorrect');
     });
@@ -210,25 +254,50 @@ function tunedSimilarity(student, correct) {
     questionOptionsSection.querySelectorAll('div.sd-card.option').forEach(function (optionCard) {
       const footer = optionCard.querySelector('div.sd-card-footer');
       const textArea = optionCard.querySelector('textarea.question-option-input');
+      const mathField = optionCard.querySelector('math-field.question-option-input');
       const answerSection = optionCard.querySelector('section.question-option-answer');
 
-      if (!footer || !textArea) {
+      if (!footer || (!textArea && !mathField)) {
         return;
       }
 
       footer.classList.remove('correct', 'incorrect');
-      textArea.classList.add('show-answer');
+      if (textArea) {
+        textArea.classList.add('show-answer');
+      }
+      if (mathField) {
+        mathField.classList.add('show-answer');
+      }
 
       if (answerSection) {
-        textArea.value = answerSection.textContent.trim();
+        if (textArea) {
+          textArea.value = answerSection.textContent.trim();
+        }
+        if (mathField) {
+          mathField.value = answerSection.textContent.trim();
+        }
       }
     });
   }
 
-  function handleTextareaFocus(textArea) {
-    document.querySelectorAll('textarea.question-option-input.show-answer').forEach(function (ta) {
+  function handleFocus(element) {
+    // get the parent question div
+    const questionDiv = getQuestionDiv(element);
+    if (!questionDiv) {
+      return;
+    }
+    // Remove all answers
+    questionDiv.querySelectorAll('textarea.question-option-input.show-answer').forEach(function (ta) {
       ta.value = '';
       ta.classList.remove('show-answer');
+    });
+    questionDiv.querySelectorAll('math-field.question-option-input.show-answer').forEach(function (mf) {
+      mf.value = '';
+      mf.classList.remove('show-answer');
+    });
+    // Remove all feedback
+    questionDiv.querySelectorAll('div.sd-card-footer').forEach(function (footer) {
+      footer.classList.remove('correct', 'incorrect');
     });
   }
 
@@ -253,7 +322,10 @@ function tunedSimilarity(student, correct) {
 
   document.addEventListener('focus', function (event) {
     if (event.target.tagName === 'TEXTAREA') {
-      handleTextareaFocus(event.target);
+      handleFocus(event.target);
+    }
+    if (event.target.tagName === 'MATH-FIELD') {
+      handleFocus(event.target);
     }
   }, true);
 })();
