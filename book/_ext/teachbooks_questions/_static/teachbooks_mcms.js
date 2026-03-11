@@ -172,6 +172,7 @@
 
       footer.classList.remove('correct', 'incorrect');
       body.classList.remove('selected', 'correct', 'incorrect');
+      footer.classList.add(isCorrect ? 'correct' : 'incorrect');
       body.classList.add(isCorrect ? 'correct' : 'incorrect');
     });
 

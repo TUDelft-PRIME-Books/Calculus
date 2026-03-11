@@ -261,7 +261,9 @@ function tunedSimilarity(student, correct) {
         return;
       }
 
-      footer.classList.remove('correct', 'incorrect');
+      footer.classList.remove('incorrect');
+      footer.classList.add('correct');
+
       if (textArea) {
         textArea.classList.add('show-answer');
       }
