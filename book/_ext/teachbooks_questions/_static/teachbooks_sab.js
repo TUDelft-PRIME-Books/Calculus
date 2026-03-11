@@ -3,6 +3,45 @@
 // Define the compute engine for math questions
 const ce = new ComputeEngine.ComputeEngine();
 
+function valueInInterval(value, interval) {
+  // parse the interval string and evaluate the bounds
+  // format for possible strings:
+  // - `x < a` for values less than `a`.
+  // - `x <= a` for values less than or equal to `a`.
+  // - `x > a` for values greater than `a`.
+  // - `x >= a` for values greater than or equal to `a`.
+  // - `a < x < b` for values between `a` and `b`,
+  // - `a <= x < b` for values between `a` and `b`, including `a` but not `b`.
+  // - `a < x <= b` for values between `a` and `b`, including `b` but not `a`.
+  // - `a <= x <= b` for values between `a` and `b`, including both `a` and `b`.
+  const regex = /(?:(-?\d*\.?\d+)\s*(<=|<)\s*x\s*(<=|<)\s*(-?\d*\.?\d+))|(?:(x)\s*(<=|<|>=|>)\s*(-?\d*\.?\d+))/;
+  const match = interval.replace(/\s+/g, '').match(regex);
+  if (!match) {
+    console.error('Invalid interval format: ', interval);
+    return false;
+  }
+  eval_value = ce.parse(value).evaluate();
+  if (!eval_value.isReal) {
+    return false;
+  }
+  if (match[1] !== undefined) {
+    const a = ce.parse(match[1]).evaluate();
+    const b = ce.parse(match[4]).evaluate();
+    if (match[2] === '<' && !(eval_value > a)) return false;
+    if (match[2] === '<=' && !(eval_value >= a)) return false;
+    if (match[3] === '<' && !(eval_value < b)) return false;
+    if (match[3] === '<=' && !(eval_value <= b)) return false;
+  } else {
+    const a = ce.parse(match[6]).evaluate();
+    if (match[5] === '<' && !(eval_value < a)) return false;
+    if (match[5] === '<=' && !(eval_value <= a)) return false;
+    if (match[5] === '>' && !(eval_value > a)) return false;
+    if (match[5] === '>=' && !(eval_value >= a)) return false;
+  }
+
+  return true;
+}
+
 function jaroWinkler(a, b) {
   if (a === b) return 1;
 
@@ -112,6 +151,7 @@ function tunedSimilarity(student, correct) {
     if (textArea.classList.contains('type-TI')) return 'TI';
     if (textArea.classList.contains('type-TF')) return 'TF';
     if (textArea.classList.contains('type-M')) return 'M';
+    if (textArea.classList.contains('type-MR')) return 'MR';
     return null;
   }
 
@@ -162,8 +202,16 @@ function tunedSimilarity(student, correct) {
           console.error('Error parsing math input: ', e);
           return false;
         }
+      case 'MR':
+        try {
+          return valueInInterval(stripped, correctAnswer);
+        }
+        catch (e) {
+          console.error('Error parsing math input for range checking: ', e);
+          return false;
+        }
       default:
-        console.log('Answer checking for type '+answerType+' is not implemented yet');
+        console.error('Answer checking for type '+answerType+' is not implemented yet');
         return false;
     }
   }
@@ -232,9 +280,7 @@ function tunedSimilarity(student, correct) {
 
       const answerType = getAnswerType(textArea || mathField);
       const correctAnswer = answerSection ? answerSection.textContent.trim() : null;
-      console.log('Correct answer extracted: '+correctAnswer);
       const isCorrect = checkAnswer(textArea ? textArea.value : mathField.value, correctAnswer, answerType);
-      console.log('Is correct: '+isCorrect);
 
       footer.classList.add(isCorrect ? 'correct' : 'incorrect');
     });

@@ -34,12 +34,22 @@ For `multiple-select` variants some overall feedback will be shown.
 
 ### Short-answer Blocks
 
-Within an options part, a new answer is indicated with a line starting with one of the following options, where `Answer` is the correct answer. `Answer` cannot be empty, but can be any length of characters, and can be textual, numerical and/or include $\LaTeX$ math:
+Within an options part, a new answer is indicated with a line starting with one of the following options, where `Answer` is the correct answer (indicator). `Answer` cannot be empty, but can be any length of characters, and can be textual, numerical and/or include $\LaTeX$ math:
 
 - `T[Answer] ` for a short answer question with a text input field, which will be checked for an exact match with the provided answer.
 - `TI[Answer] ` for a short answer question with a text input field, which will be checked for a case-insensitive match with the provided answer.
 - `TF[Answer] ` for a short answer question with a text input field, which will be checked for a fuzzy case-insensitive match with the provided answer. Be aware that this can lead to some unexpected answers being marked as (in)correct, and it is recommended to use this option only for longer answers where minor typos are more likely to occur, and to check the provided answer carefully for potential issues with the fuzzy matching.
 - `M[Answer] ` for a short answer question with a math input field, which will check for a (simple) equality check with the provided answer using the function [`is()`](https://mathlive.io/compute-engine/guides/symbolic-computing/#smart-comparison-is) from the [MathLive Compute Engine](https://mathlive.io/compute-engine/).
+- `MR[Answer]` for a short answer question with a math input field, which will check whether the provided answer is falls within the range defined by `Answer`. In this case `Answer` should be given as one of the following, where `a` and/or `b` should be replaced with the desired numbers, which can also include $\LaTeX$ math expressions that will be evaluated using the [MathLive Compute Engine](https://mathlive.io/compute-engine/). The value provided by the user will also be evaluated using the MathLive Compute Engine, and it will be checked whether this value falls within the defined range.
+
+  - `x < a` for values less than `a`.
+  - `x <= a` for values less than or equal to `a`.
+  - `x > a` for values greater than `a`.
+  - `x >= a` for values greater than or equal to `a`.
+  - `a < x < b` for values between `a` and `b`,
+  - `a <= x < b` for values between `a` and `b`, including `a` but not `b`.
+  - `a < x <= b` for values between `a` and `b`, including `b` but not `a`.
+  - `a <= x <= b` for values between `a` and `b`, including both `a` and `b`.
 
 This can be optionally followed with a label that will be placed above the input field in the rendering. These can be multi lined.
 
@@ -260,6 +270,10 @@ fuzzy case-insensitive matching.
 M[x^2 + y^2 - z^2] A math input field with mathematical equivalence checking.
 > Negative feedback for the math question.
 = Positive feedback for the math question.
+
+MR[3<x<=4] A math input field with range checking.
+> Negative feedback for the range question.
+= Positive feedback for the range question.
 ---
 
 Text after the options part.
