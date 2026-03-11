@@ -4,7 +4,7 @@
 
 The structure inside the admonition is always
 
-```
+```text
 text
 ---
 options
@@ -40,7 +40,7 @@ Within an options part, a new answer is indicated with a line starting with one 
 - `TI[Answer] ` for a short answer question with a text input field, which will be checked for a case-insensitive match with the provided answer.
 - `TF[Answer] ` for a short answer question with a text input field, which will be checked for a fuzzy case-insensitive match with the provided answer. Be aware that this can lead to some unexpected answers being marked as (in)correct, and it is recommended to use this option only for longer answers where minor typos are more likely to occur, and to check the provided answer carefully for potential issues with the fuzzy matching.
 - `M[Answer] ` for a short answer question with a math input field, which will check for a (simple) equality check with the provided answer using the function [`is()`](https://mathlive.io/compute-engine/guides/symbolic-computing/#smart-comparison-is) from the [MathLive Compute Engine](https://mathlive.io/compute-engine/).
-- `MR[Answer]` for a short answer question with a math input field, which will check whether the provided answer is falls within the range defined by `Answer`. In this case `Answer` should be given as one of the following, where `a` and/or `b` should be replaced with the desired numbers, which can also include $\LaTeX$ math expressions that will be evaluated using the [MathLive Compute Engine](https://mathlive.io/compute-engine/). The value provided by the user will also be evaluated using the MathLive Compute Engine, and it will be checked whether this value falls within the defined range. Note that some expression will not evaluate to a number, unless explicitly numerically evaluated, and these will not be accepted as correct answers for `MR` type questions (see the `MNR` type for this). Examples of valid formats for `Answer` for `MR` type questions are:
+- `MR[Answer]` for a short answer question with a math input field, which will check whether the provided answer falls within the range defined by `Answer`. In this case `Answer` should be given as one of the following, where `a` and/or `b` should be replaced with the desired numbers, which can also include $\LaTeX$ math expressions that will be evaluated using the [MathLive Compute Engine](https://mathlive.io/compute-engine/). The value provided by the user will also be evaluated using the MathLive Compute Engine, and it will be checked whether this value falls within the defined range. Note that some expression will not evaluate to a number, unless explicitly numerically evaluated, and these will not be accepted as correct answers for `MR` type questions (see the `MNR` type for this). Examples of valid formats for `Answer` for `MR` type questions are:
 
   - `x < a` for values less than `a`.
   - `x <= a` for values less than or equal to `a`.
@@ -50,6 +50,8 @@ Within an options part, a new answer is indicated with a line starting with one 
   - `a <= x < b` for values between `a` and `b`, including `a` but not `b`.
   - `a < x <= b` for values between `a` and `b`, including `b` but not `a`.
   - `a <= x <= b` for values between `a` and `b`, including both `a` and `b`.
+
+- `MNR[Answer]` is similar to `MR[Answer]`, but the evaluation of the provided answer and the values in `Answer` will be explicitly numerically. This may cause unexpected results due to rounding errors. 
 
 This can be optionally followed with a label that will be placed above the input field in the rendering. These can be multi lined.
 
@@ -82,7 +84,7 @@ If multiple `= ` or `> ` lines are provided, these will be concatenated together
 
 ### Multiple-choice Single-select
 
-``````
+``````text
 ::::{question} Multiple-choice Single-select
 :label: reference
 :type: multiple-choice
@@ -159,7 +161,7 @@ You can reset the question with the button.
 
 ### Multiple-choice Multiple-select
 
-``````
+``````text
 ::::{question} Multiple-choice Multiple-select
 :label: reference2
 :type: multiple-choice
@@ -240,6 +242,7 @@ You can reset the question with the button.
 
 ### Short-answer Blocks
 
+``````text
 ::::{question} Short-answer Blocks
 :label: reference3
 :type: short-answer
@@ -250,8 +253,7 @@ You can reset the question with the button.
 
 This is a short-answer question with a single wide text input per defined answer. Type your answer in the text box and press the submit button.
 
-The correct answers are **Answer A** and _Omnia bona_ and `no feedback is not better than any feedback`.
-
+See the code above for the correct answers.
 ---
 T[Answer A] A math input field with exact matching.
 > Negative feedback for Answer A.
@@ -274,6 +276,56 @@ M[x^2 + y^2 - z^2] A math input field with mathematical equivalence checking.
 MR[3<x<=4] A math input field with range checking.
 > Negative feedback for the range question.
 = Positive feedback for the range question.
+
+MNR[e<x<4] A math input field with numerical range checking.
+> Negative feedback for the numerical range question.
+= Positive feedback for the numerical range question.
+---
+
+Text after the options part.
+
+You can reset the question with the reset button.
+
+::::
+``````
+
+::::{question} Short-answer Blocks
+:label: reference3
+:type: short-answer
+:variant: blocks
+:admonition:
+:showanswer:
+:class: question
+
+This is a short-answer question with a single wide text input per defined answer. Type your answer in the text box and press the submit button.
+
+See the code above for the correct answers.
+---
+T[Answer A] A math input field with exact matching.
+> Negative feedback for Answer A.
+= Positive feedback for Answer A.
+
+with multiple lines.
+TI[Omnia bona] A text input field with case-insensitive matching.
+> Negative feedback for Omnia bona.
+= Positive feedback for Omnia bona.
+> More negative feedback if the answer is incorrect.
+= More positive feedback if the answer is correct.
+TF[No feedback is not better than any feedback] A text input field with
+
+fuzzy case-insensitive matching.
+
+M[x^2 + y^2 - z^2] A math input field with mathematical equivalence checking.
+> Negative feedback for the math question.
+= Positive feedback for the math question.
+
+MR[3<x<=4] A math input field with range checking.
+> Negative feedback for the range question.
+= Positive feedback for the range question.
+
+MNR[e<x<4] A math input field with numerical range checking.
+> Negative feedback for the numerical range question.
+= Positive feedback for the numerical range question.
 ---
 
 Text after the options part.

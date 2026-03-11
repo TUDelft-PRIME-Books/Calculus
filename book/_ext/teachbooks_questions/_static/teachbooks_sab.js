@@ -14,32 +14,115 @@ function valueInInterval(value, interval) {
   // - `a <= x < b` for values between `a` and `b`, including `a` but not `b`.
   // - `a < x <= b` for values between `a` and `b`, including `b` but not `a`.
   // - `a <= x <= b` for values between `a` and `b`, including both `a` and `b`.
-  const regex = /(?:(-?\d*\.?\d+)\s*(<=|<)\s*x\s*(<=|<)\s*(-?\d*\.?\d+))|(?:(x)\s*(<=|<|>=|>)\s*(-?\d*\.?\d+))/;
-  const match = interval.replace(/\s+/g, '').match(regex);
-  if (!match) {
+  
+  // first split the interval into parts based on the x. We expect either "x < a" or "a < x < b" type formats
+  const parts = interval.replace(/\s+/g, '').split('x');
+  Nvalue = ce.parse(value).evaluate().valueOf();
+  // If the first part is empty, we have a format with one bound
+  if (parts[0] === '') {
+    // first get the operator and the number
+    if (parts[1].startsWith('<=')) {
+      bound = ce.parse(parts[1].split('<=')[1]).evaluate().valueOf();
+      return (Nvalue <= bound);
+    } else if (parts[1].startsWith('<')) {
+      bound = ce.parse(parts[1].split('<')[1]).evaluate().valueOf();
+      return (Nvalue < bound);
+    } else if (parts[1].startsWith('>=')) {
+      bound = ce.parse(parts[1].split('>=')[1]).evaluate().valueOf();
+      return (Nvalue >= bound);
+    } else if (parts[1].startsWith('>')) {
+      bound = ce.parse(parts[1].split('>')[1]).evaluate().valueOf();
+      return (Nvalue > bound);
+    } else {
+      console.error('Invalid interval format: ', interval);
+      return false;
+    }
+  } else if (parts[1] === '') {
     console.error('Invalid interval format: ', interval);
     return false;
-  }
-  eval_value = ce.parse(value).evaluate();
-  if (!eval_value.isReal) {
-    return false;
-  }
-  if (match[1] !== undefined) {
-    const a = ce.parse(match[1]).evaluate();
-    const b = ce.parse(match[4]).evaluate();
-    if (match[2] === '<' && !(eval_value > a)) return false;
-    if (match[2] === '<=' && !(eval_value >= a)) return false;
-    if (match[3] === '<' && !(eval_value < b)) return false;
-    if (match[3] === '<=' && !(eval_value <= b)) return false;
   } else {
-    const a = ce.parse(match[6]).evaluate();
-    if (match[5] === '<' && !(eval_value < a)) return false;
-    if (match[5] === '<=' && !(eval_value <= a)) return false;
-    if (match[5] === '>' && !(eval_value > a)) return false;
-    if (match[5] === '>=' && !(eval_value >= a)) return false;
+    // we have a format with two bounds, so we need to check both
+    // start with the left part
+    let left = false;
+    let right = false;
+    if (parts[0].endsWith('<=')) {
+      bound = ce.parse(parts[0].split('<=')[0]).evaluate().valueOf();
+      if (Nvalue >= bound) left = true;
+    } else if (parts[0].endsWith('<')) {
+      bound = ce.parse(parts[0].split('<')[0]).evaluate().valueOf();
+      if (Nvalue > bound) left = true;
+    }
+    // now check the right part
+    if (parts[1].startsWith('<=')) {
+      bound = ce.parse(parts[1].split('<=')[1]).evaluate().valueOf();
+      if (Nvalue <= bound) right = true;
+    } else if (parts[1].startsWith('<')) {
+      bound = ce.parse(parts[1].split('<')[1]).evaluate().valueOf();
+      if (Nvalue < bound) right = true;
+    }
+    return (left && right);
   }
+}
 
-  return true;
+function valueInIntervalNumerical(value, interval) {
+  // parse the interval string and evaluate the bounds
+  // format for possible strings:
+  // - `x < a` for values less than `a`.
+  // - `x <= a` for values less than or equal to `a`.
+  // - `x > a` for values greater than `a`.
+  // - `x >= a` for values greater than or equal to `a`.
+  // - `a < x < b` for values between `a` and `b`,
+  // - `a <= x < b` for values between `a` and `b`, including `a` but not `b`.
+  // - `a < x <= b` for values between `a` and `b`, including `b` but not `a`.
+  // - `a <= x <= b` for values between `a` and `b`, including both `a` and `b`.
+  
+  // first split the interval into parts based on the x. We expect either "x < a" or "a < x < b" type formats
+  const parts = interval.replace(/\s+/g, '').split('x');
+  Nvalue = ce.parse(value).N().valueOf();
+  // If the first part is empty, we have a format with one bound
+  if (parts[0] === '') {
+    // first get the operator and the number
+    if (parts[1].startsWith('<=')) {
+      bound = ce.parse(parts[1].split('<=')[1]).N().valueOf();
+      return (Nvalue <= bound);
+    } else if (parts[1].startsWith('<')) {
+      bound = ce.parse(parts[1].split('<')[1]).N().valueOf();
+      return (Nvalue < bound);
+    } else if (parts[1].startsWith('>=')) {
+      bound = ce.parse(parts[1].split('>=')[1]).N().valueOf();
+      return (Nvalue >= bound);
+    } else if (parts[1].startsWith('>')) {
+      bound = ce.parse(parts[1].split('>')[1]).N().valueOf();
+      return (Nvalue > bound);
+    } else {
+      console.error('Invalid interval format: ', interval);
+      return false;
+    }
+  } else if (parts[1] === '') {
+    console.error('Invalid interval format: ', interval);
+    return false;
+  } else {
+    // we have a format with two bounds, so we need to check both
+    // start with the left part
+    let left = false;
+    let right = false;
+    if (parts[0].endsWith('<=')) {
+      bound = ce.parse(parts[0].split('<=')[0]).N().valueOf();
+      if (Nvalue >= bound) left = true;
+    } else if (parts[0].endsWith('<')) {
+      bound = ce.parse(parts[0].split('<')[0]).N().valueOf();
+      if (Nvalue > bound) left = true;
+    }
+    // now check the right part
+    if (parts[1].startsWith('<=')) {
+      bound = ce.parse(parts[1].split('<=')[1]).N().valueOf();
+      if (Nvalue <= bound) right = true;
+    } else if (parts[1].startsWith('<')) {
+      bound = ce.parse(parts[1].split('<')[1]).N().valueOf();
+      if (Nvalue < bound) right = true;
+    }
+    return (left && right);
+  }
 }
 
 function jaroWinkler(a, b) {
@@ -152,6 +235,7 @@ function tunedSimilarity(student, correct) {
     if (textArea.classList.contains('type-TF')) return 'TF';
     if (textArea.classList.contains('type-M')) return 'M';
     if (textArea.classList.contains('type-MR')) return 'MR';
+    if (textArea.classList.contains('type-MNR')) return 'MNR';
     return null;
   }
 
@@ -208,6 +292,14 @@ function tunedSimilarity(student, correct) {
         }
         catch (e) {
           console.error('Error parsing math input for range checking: ', e);
+          return false;
+        }
+      case 'MNR':
+        try {
+          return valueInIntervalNumerical(stripped, correctAnswer);
+        }
+        catch (e) {
+          console.error('Error parsing math input for numerical range checking: ', e);
           return false;
         }
       default:
@@ -322,7 +414,12 @@ function tunedSimilarity(student, correct) {
           textArea.value = answerSection.textContent.trim();
         }
         if (mathField) {
-          mathField.value = answerSection.textContent.trim();
+          if (mathField.classList.contains('type-M')) {
+            mathField.value = answerSection.textContent.trim();
+          } else if (mathField.classList.contains('type-MR') || mathField.classList.contains('type-MNR')) {
+            // for M(N)R type, we want to show some extra text to indicate the correct answer is a range
+            mathField.value = '\\text\{any number \}x\\text\{ such that \}' + answerSection.textContent.trim();
+          }
         }
       }
     });
