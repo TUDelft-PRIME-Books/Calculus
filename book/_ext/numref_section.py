@@ -52,6 +52,7 @@ class replace_section_names(SphinxPostTransform):
                 # a subsection or deeper, so replace with "Subsection"
                 child.clear()
                 child += nodes.Text(f"Subsection {label}")
+                ref["title"] = ref["title"].replace("Section ","Subsection ")
             # other wise a section, so keep as is.
 
 
