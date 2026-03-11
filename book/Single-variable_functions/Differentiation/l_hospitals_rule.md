@@ -7,3 +7,4 @@ In this section we cover:
 - Indeterminate forms
 - l'Hospital's rule
 - Indeterminate products and powers
+- Proof of {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates`

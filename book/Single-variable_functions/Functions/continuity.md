@@ -6,7 +6,7 @@
 
 Almost all functions we have encountered so far have the nice property that it is possible to sketch their graph without lifting your pen, except possibly for skipping over a vertical asymptote. Indeed, all of polynomials, powers of $x$, rational functions, (inverse) trigonometric functions, exponential functions and logarithms have this property. A function with this property is called **continuous**. Stated differently, a function is continuous whenever small changes in the input give rise to small changes in the output values. 
 
-In science and engineering, most variables depend on each other in a continuous way. However, that does not need to be the case. Consider, for instance, an electrical circuit, where a DC voltage source is connected to a resistor and an inductor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the current through the inductor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. As such, the current is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
+In science and engineering, most variables depend on each other in a continuous way. However, that does not always need to be the case. Consider, for instance, an electrical circuit, where a DC voltage source is connected to a resistor and an inductor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the current through the inductor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. As such, the current is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
 
 ```{figure} Images/Fig-Continuity-Circuit.jpg
 ---
@@ -154,12 +154,13 @@ If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continu
 :label: Example:Continuity:InverseDiscontinuity
 :class: dropdown
 
-Consider the function $f(x)$, defined for $x$ in the interval $(-1,1)$, which has $f\left(\frac{1}{n}\right)=\frac{1}{2n}$ for all integers $n\geq 2$, $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$ for all integers $n\geq 2$ and $f(x)=x$ for all other values of $x$. First, we note that $f$ is one-to-one. Note that the points of the form $\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ even, while points of the form $1-\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ odd, so these points are not mapped to the same function values. Moreover, if $x$ is not of one of these forms, then $x$ is mapped to itself, which is not of the form $\frac{1}{m}$ for $m$ either even or odd. So indeed, different points are mapped to different function values, so the function is one-to-one.
+Consider the function $f(x)$, defined for $x$ in the interval $(-1,1)$, which has $f\left(\frac{1}{n}\right)=\frac{1}{2n}$ for all integers $n\geq 3$, $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$ for all integers $n\geq 3$ and $f(x)=x$ for all other values of $x$. First, we note that $f$ is one-to-one. Note that the points of the form $\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ even, while points of the form $1-\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ odd, so these points are not mapped to the same function values. Moreover, if $x$ is not of one of these forms, then $x$ is mapped to itself, which is not of the form $\frac{1}{m}$ for $m$ either even or odd. So indeed, different points are mapped to different function values, so the function is one-to-one.
 
 Now we claim that $f$ is continuous at $0$. Let $\varepsilon>0$ be given (we can assume that $\varepsilon\leq \frac{1}{2}$). We choose $\delta=\varepsilon$. Then for $x$ with $|x|<\delta$ we either have $x=\frac{1}{n}$, which means that $|f(x)|=\frac{1}{2n}\leq \frac{1}{n}<\delta=\varepsilon$, or $x$ is not of this form, in which case $|f(x)|=|x|<\delta=\varepsilon$ ($x=1-\frac{1}{n}$ is not possible since we assumed that $\delta=\varepsilon<\frac{1}{2}$). As such, we must have $\lim\limits_{x\rightarrow 0}f(x)=0$. Since $f(0)=0$, $f$ is continuous at $0$.
 
-Finally, we claim that $f^{-1}$ is not continuous at $0$. Note that $f^{-1}(0)=0$, since $f(0)=0$. Since continuity means that for each $\varepsilon>0$ there is a $\delta>0$ with a certain property, and we want to show that the function is discontinuous, we want to choose $\varepsilon>0$ such that there is no $\delta>0$ with the desired property. In this case we choose $\varepsilon=\frac{1}{4}$. We want to show that no choice of $\delta$ works, so we let $\delta>0$ be given. Then we can choose an integer $n\geq 2$ such that $0<\frac{1}{2n+1}<\delta$. For this $n$, we find that $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}$, since we know that $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$. Since $n\geq 2$, we have $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}>\frac{1}{4}=\varepsilon$. So we found a point $x$ with $0<|x|<\delta$ and $|f^{-1}(x)|\geq \varepsilon$. Since $\delta$ was chosen arbitrarily, no $\delta$ is going to work. As such, the function $f^{-1}$ is not continuous at $f^{-1}(0)=0$, even though $f$ was continuous at $0$.
+Finally, we claim that $f^{-1}$ is not continuous at $0$. Note that $f^{-1}(0)=0$, since $f(0)=0$. Since continuity means that for each $\varepsilon>0$ there is a $\delta>0$ with a certain property, and we want to show that the function is discontinuous, we want to choose $\varepsilon>0$ such that there is no $\delta>0$ with the desired property. In this case we choose $\varepsilon=\frac{1}{4}$. We want to show that no choice of $\delta$ works, so we let $\delta>0$ be given. Then we can choose an integer $n\geq 3$ such that $0<\frac{1}{2n+1}<\delta$. For this $n$, we find that $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}$, since we know that $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$. Since $n\geq 2$, we have $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}>\frac{1}{4}=\varepsilon$. So we found a point $x$ with $0<|x|<\delta$ and $|f^{-1}(x)|\geq \varepsilon$. Since $\delta$ was chosen arbitrarily, no $\delta$ is going to work. As such, the function $f^{-1}$ is not continuous at $f^{-1}(0)=0$, even though $f$ was continuous at $0$.
 
+Hier ook nog een schets van de functie, met alle discrete waarden als gevulde stippen gehighlight en alle gaten met open stippen.
 :::
 
 With all these preparations in hand, we are ready to show that most standard functions are continuous.
@@ -514,3 +515,145 @@ The function $f$ as an example for continuity from the right.
 
 ::::::
 
+(Subsec:LimitAtInfinityGrasple)=
+
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/516eefd5-6e4d-42f0-9cf7-ea54159a3262?id=126101
+:label: Grasple:Continuity:Piecewisemakingcont
+:dropdown:
+:description: Continuity of piecewise defined function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2e8691ba-b5cd-48c7-bbc5-ca6a94481eda?id=126174
+:label: Grasple:Continuity:Piecewisenotccontwithlimit
+:dropdown:
+:description: Continuity of piecewise defined function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/445e61d2-3524-494b-b2de-86e6ce4afdfb?id=71061
+:label: Grasple:Continuity:Piecewisenotccontnolimit
+:dropdown:
+:description: Continuity of piecewise defined function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/720c95b4-58da-476e-a7a6-489a0c11c98e?id=71067
+:label: Grasple:Continuity:Piecewisecont
+:dropdown:
+:description: Continuity of piecewise defined function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1a52582e-aa31-4c85-907e-8f9d2dbfa64a?id=71084
+:label: Grasple:Continuity:Rounding
+:dropdown:
+:description: Continuity of rounding function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7a20b481-0633-4bbe-9ddd-ab543f3a8419?id=71860
+:label: Grasple:Continuity:Fractionalpart
+:dropdown:
+:description: Continuity of fractional part
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c142b871-cbf8-4b80-8d9e-4482a373fed3?id=71152
+:label: Grasple:Continuity:Sin1overx
+:dropdown:
+:description: Continuity of $\sin\left(\frac{1}{x}\right)$
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d41b9b5f-ed30-4ff7-bf03-8fad78f2dc14?id=71154
+:label: Grasple:Continuity:xsin1overx
+:dropdown:
+:description: Continuity of $x\sin\left(\frac{1}{x}\right)$
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/db5adbfb-cc9f-4fdb-9192-204dad31bddd?id=70561
+:label: Grasple:Continuity:product
+:dropdown:
+:description: Continuity of product function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/50052d0d-a89a-4096-9d81-72c898a37d50?id=74182
+:label: Grasple:Continuity:Inflimitinsidecontsinexp
+:dropdown:
+:description: Limit at infinity involving sines and exponentials
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/69d04f22-bf0e-4c08-ab3e-3644096d2ffe?id=74229
+:label: Grasple:Continuity:Inflimitinsidecontcoslog
+:dropdown:
+:description: Limit at infinity involving cosines and logarithms
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/99ca75a4-5529-4236-96e4-612120d08955?id=75748
+:label: Grasple:Continuity:Inflimitinsidecontcosexp
+:dropdown:
+:description: Limit at infinity involving cosines and exponentials
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4f72dd27-5d72-47a2-8ef1-f11f6c49ea7a?id=74228
+:label: Grasple:Continuity:Inflimitinsidecontratexp
+:dropdown:
+:description: Limit at infinity involving exponentials
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/987e6761-2501-491b-b264-d649431f68ad?id=75627
+:label: Grasple:Continuity:Inflimitinside+squeeze
+:dropdown:
+:description: Limit at infinity (inverse) trigonometric function
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3e95271d-2875-4061-96e4-53be7714d50b?id=71159
+:label: Grasple:Continuity:IVTGamma
+:dropdown:
+:description: The gamma function
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/498dd0b8-dee0-4907-978e-ac7abda596a8?id=71156
+:label: Grasple:Continuity:IVTtemperature
+:dropdown:
+:description: Application: temperature on earth
+::::

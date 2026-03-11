@@ -1,0 +1,14 @@
+/* Question admonition */
+  div.admonition.question {
+    border-color: var(--tud-raspberry) !important;
+    background-color: var(--tud-raspberry-min) !important;
+  }
+   div.admonition.question > .admonition-title {
+    background-color: var(--tud-raspberry-mid) !important;
+  }
+   div.admonition.question .admonition-title::after {
+    color: var(--tud-raspberry) !important;
+    font-weight: 400 !important;
+    content: "\f4ad" !important;
+  }
+  
