@@ -367,11 +367,11 @@ This means that $f+g$ is also differentiable at $a$ and that $(f+g)'(a)=f'(a)+g'
 
 {prf:ref}`Thm:Differentiability:Sumscalar` allows us to find derivatives of linear combinations of functions of which we know the derivative. However, for this to work, we need have the derivatives of at least some functions ready to use. Indeed, needing to find the derivative of a function using the limit definition is rather tedious. For this, we now provide the derivatives of some standard functions. It is highly recommended to know these by heart.
 
-::::::{prf:theorem} Standard derivatives, part 1 out of 3
+::::::{prf:theorem} Standard derivatives, part 1 out of 4
 :label: Thm:Differentiability:Standard1
 We have the following standard derivatives.
 
-- If $n$ is a natural number, then $\dfrac{d}{dx}\left[x^n\right]=nx^{n-1}$. In particular, we have $\dfrac{d}{dx}\left[1\right]=0$, $\dfrac{d}{dx}\left[x\right]=1$ and $\dfrac{d}{dx}\left[x^2\right]=2x$.
+- If $n$ is an integer, then $\dfrac{d}{dx}\left[x^n\right]=nx^{n-1}$. In particular, we have $\dfrac{d}{dx}\left[1\right]=0$, $\dfrac{d}{dx}\left[x\right]=1$ and $\dfrac{d}{dx}\left[x^2\right]=2x$ and, if $n\geq 1$, we have $\dfrac{d}{dx}\left[\frac{1}{x^n}\right]=\dfrac{d}{dx}\left[x^{-n}\right]=-nx^{-n-1}$.
 - We have $\dfrac{d}{dx}\left[\sin(x)\right]=\cos(x)$ and $\dfrac{d}{dx}\left[\cos(x)\right]=-\sin(x)$.
 - We have $\dfrac{d}{dx}\left[e^x\right]=e^x$.
 ::::::
@@ -415,11 +415,31 @@ $$
  &=&\displaystyle\lim_{x\rightarrow a}\frac{(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)}{x-a}\\
  &=&\displaystyle\lim_{x\rightarrow a}\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)\\
  &=&\displaystyle a^{n-1}+a^{n-2}a+a^{n-3}a^2+...+aa^{n-2}+a^{n-1}\\
- &=&\displaystyle\underbrace{a^{n-1}+...+a^{n-1}}_{n-1\text{ times}}\\
- &=&\displaystyle(n-1)a^{n-1}.\end{array}
+ &=&\displaystyle\underbrace{a^{n-1}+...+a^{n-1}}_{n\text{ times}}\\
+ &=&\displaystyle na^{n-1}.\end{array}
 $$
 
-So $f$ is differentiable in $a$ and we find $f'(a)=(n-1)a^{n-1}$. 
+So $f$ is differentiable in $a$ and we find $f'(a)=na^{n-1}$. 
+
+Finally we let $n\geq 1$ and consider the function $f(x)=x^{-n}$. Consider any real number $a\neq 0$. We will use the limit from {prf:ref}`Thm:Differentiability:Derivativealt` to find the derivative $f'(a)$. This means that we need to evaluate the limit
+
+$$
+ \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}=\lim_{x\rightarrow a}\frac{\frac{1}{x^n}-\frac{1}{a^n}}{x-a}=\lim_{x\rightarrow a}\frac{a^n-x^n}{\left(x-a\right)x^na^n}.
+$$
+
+Previously in this proof, we showed that $(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)=x^n-a^n$. So we can use this to evaluate the limit and we find
+
+$$
+ \begin{array}{lcl} \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}&=&\lim_{x\rightarrow a}\frac{a^n-x^n}{\left(x-a\right)x^na^n}\\
+ &=&\lim_{x\rightarrow a}\frac{-(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)}{\left(x-a\right)x^na^n}\\
+ &=&\lim_{x\rightarrow a}\frac{-\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)}{x^na^n}\\
+ &=&\frac{-\left(a^{n-1}+a^{n-2}a+a^{n-3}a^2+...+aa^{n-2}+a^{n-1}\right)}{a^na^n}\\
+ &=&\frac{-na^{n-1}}{a^2n}\\
+ &=&-na^{-n-1}.\end{array}
+$$
+
+So $f$ is differentiable in $a$ and we find $f'(a)=-na^{n-1}$. 
+
 
 Next, we consider the function $f(x)=\sin(x)$. Then for any value of $x$ we can use the addition formula for the sine {prf:ref}`Thm:Trigonometry:AdditionSubtractionFormulas` to compute
 

@@ -71,6 +71,8 @@ The domain of a rational function is all real numbers except where the denominat
 
 First we will look at how to simplify rational functions by applying polynomial division. After that we will look at how to decompose proper rational functions into simpler fractions using partial fraction decomposition.
 
+(Subsec:RationalFunctions:PolynomialDivision)=
+
 ## Polynomial division
 
 When dealing with rational functions where the degree of the numerator is greater than or equal to the degree of the denominator, it is often useful to perform polynomial long division. This allows us to express the rational function as a sum of a polynomial and a proper rational function.
