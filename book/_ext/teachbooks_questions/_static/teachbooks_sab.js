@@ -125,6 +125,21 @@ function valueInIntervalNumerical(value, interval) {
   }
 }
 
+function checkAbsolutePrecision(value, correct, precision) {
+  // Convert to interval format and use the valueInIntervalNumerical function
+  const lowerBound = ce.box(["Subtract", ce.parse(correct), ce.parse(precision)]).valueOf();
+  const upperBound = ce.box(["Add", ce.parse(correct), ce.parse(precision)]).valueOf();
+  const interval = `${lowerBound} <= x <= ${upperBound}`;
+  return valueInIntervalNumerical(value, interval);
+}
+
+function checkRelativePrecision(value, correct, precision) {
+  // Reuse absolute precision checking by calculating the absolute precision from the relative precision
+  const absCenter = ce.box(["Abs", ce.parse(correct)]).evaluate().valueOf();
+  const absPrecision = ce.box(["Multiply", absCenter, ce.parse(precision)]).valueOf();
+  return checkAbsolutePrecision(value, correct, absPrecision);
+}
+
 function jaroWinkler(a, b) {
   if (a === b) return 1;
 
@@ -236,6 +251,8 @@ function tunedSimilarity(student, correct) {
     if (textArea.classList.contains('type-M')) return 'M';
     if (textArea.classList.contains('type-MR')) return 'MR';
     if (textArea.classList.contains('type-MNR')) return 'MNR';
+    if (textArea.classList.contains('type-MAP')) return 'MAP';
+    if (textArea.classList.contains('type-MRP')) return 'MRP';
     return null;
   }
 
@@ -300,6 +317,32 @@ function tunedSimilarity(student, correct) {
         }
         catch (e) {
           console.error('Error parsing math input for numerical range checking: ', e);
+          return false;
+        }
+      case 'MAP':
+        try {
+          const parts = correctAnswer.split(';');
+          if (parts.length !== 2) {
+            console.error('Invalid correct answer format for MAP type. Expected "centre;precision". Got: ', correctAnswer);
+            return false;
+          }
+          return checkAbsolutePrecision(stripped, parts[0], parts[1]);
+        }
+        catch (e) {
+          console.error('Error parsing math input for absolute precision checking: ', e);
+          return false;
+        }
+      case 'MRP':
+        try {
+          const parts = correctAnswer.split(';');
+          if (parts.length !== 2) {
+            console.error('Invalid correct answer format for MRP type. Expected "centre;precision". Got: ', correctAnswer);
+            return false;
+          }
+          return checkRelativePrecision(stripped, parts[0], parts[1]);
+        }
+        catch (e) {
+          console.error('Error parsing math input for absolute precision checking: ', e);
           return false;
         }
       default:
@@ -418,7 +461,19 @@ function tunedSimilarity(student, correct) {
             mathField.value = answerSection.textContent.trim();
           } else if (mathField.classList.contains('type-MR') || mathField.classList.contains('type-MNR')) {
             // for M(N)R type, we want to show some extra text to indicate the correct answer is a range
-            mathField.value = '\\text\{any number \}x\\text\{ such that \}' + answerSection.textContent.trim();
+            mathField.value = '\\text\{any number \}x\\text\{ such that \}' + answerSection.textContent.trim().replace(">=", "\\geq").replace("<=", "\\leq");
+          } else if (mathField.classList.contains('type-MAP')) {
+            // for MAP type, we want to show some extra text to indicate the correct answer is a range
+            parts = answerSection.textContent.trim().split(';');
+            centre = parts[0].trim();
+            radius = parts[1].trim();
+            mathField.value = '\\text\{any number \}x\\text\{ such that \} |x - ' + centre + '| \\leq ' + radius;
+          } else if (mathField.classList.contains('type-MRP')) {
+            // for MRP type, we want to show some extra text to indicate the correct answer is a range
+            parts = answerSection.textContent.trim().split(';');
+            centre = parts[0].trim();
+            radius = parts[1].trim();
+            mathField.value = '\\text\{any number \}x\\text\{ such that \} |x - ' + centre + '| \\leq ' + radius + '\\cdot |' + centre + '|';
           }
         }
       }

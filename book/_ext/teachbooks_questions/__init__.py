@@ -255,7 +255,7 @@ class QuestionDirective(SphinxDirective):
         if not options_raw:
             return []
 
-        # Find option markers (lines starting with T[, TI[, or TF[, or M[, MR[, MNR[)
+        # Find option markers (lines starting with T[, TI[, or TF[, or M[, MR[, MNR[, MAP[, MRP[)
         option_starts = [
             i for i, line in enumerate(options_raw)
             if len(line.strip()) > 2 and (

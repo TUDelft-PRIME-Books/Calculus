@@ -51,7 +51,11 @@ Within an options part, a new answer is indicated with a line starting with one 
   - `a < x <= b` for values between `a` and `b`, including `b` but not `a`.
   - `a <= x <= b` for values between `a` and `b`, including both `a` and `b`.
 
-- `MNR[Answer]` is similar to `MR[Answer]`, but the evaluation of the provided answer and the values in `Answer` will be explicitly numerically. This may cause unexpected results due to rounding errors. 
+- `MNR[Answer]` is similar to `MR[Answer]`, but the evaluation of the provided answer and the values in `Answer` will be explicitly numerically. This may cause unexpected results due to rounding errors.
+
+- `MAP[Answer]` for a short answer question with a math input field, which will check for numerical equivalence between the provided answer and the correct answer up to a given absolute precision. In this case, `Answer` should be given in the format `CorrectAnswer;Precision`, where `CorrectAnswer` is the correct answer, which can include $\LaTeX$ math expressions that will be evaluated numerically using the [MathLive Compute Engine](https://mathlive.io/compute-engine/), and `Precision` is the desired absolute precision for the comparison, which should be a number (which can also include $\LaTeX$ math expressions that will be numerically evaluated using the MathLive Compute Engine). The provided answer will also be evaluated numerically using the MathLive Compute Engine, and it will be checked whether the absolute difference between the provided answer and the correct answer is less than or equal to the defined precision.
+
+- `MRP[Answer]` is similar to `MAP[Answer]`, but it will check for numerical equivalence between the provided answer and the correct answer up to a given relative precision. In this case, `Answer` should be given in the format `CorrectAnswer;Precision`, where `CorrectAnswer` is the correct answer, which can include $\LaTeX$ math expressions that will be evaluated numerically using the [MathLive Compute Engine](https://mathlive.io/compute-engine/), and `Precision` is the desired relative precision for the comparison, which should be a number (which can also include $\LaTeX$ math expressions that will be numerically evaluated using the MathLive Compute Engine). The provided answer will also be evaluated numerically using the MathLive Compute Engine, and it will be checked whether the absolute value of the difference between the provided answer and the correct answer divided by the absolute value of the correct answer is less than or equal to the defined precision.
 
 This can be optionally followed with a label that will be placed above the input field in the rendering. These can be multi lined.
 
@@ -280,6 +284,12 @@ MR[3<x<=4] A math input field with range checking.
 MNR[e<x<4] A math input field with numerical range checking.
 > Negative feedback for the numerical range question.
 = Positive feedback for the numerical range question.
+
+MAP[3;0.5] A math input field with absolute precision check.
+
+MRP[5;0.01] A math input field with relative precision check.
+
+M[5 km] A question where units can be entered.
 ---
 
 Text after the options part.
@@ -326,6 +336,10 @@ MR[3<x<=4] A math input field with range checking.
 MNR[e<x<4] A math input field with numerical range checking.
 > Negative feedback for the numerical range question.
 = Positive feedback for the numerical range question.
+
+MAP[3;0.5] A math input field with absolute precision check.
+
+MRP[5;0.01] A math input field with relative precision check.
 ---
 
 Text after the options part.
