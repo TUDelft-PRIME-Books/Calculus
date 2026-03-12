@@ -26,7 +26,7 @@ class QuestionDirective(SphinxDirective):
     }
     COLUMNS = {
         "multiple-choice": {"single-select": "1 1 2 2", "multiple-select": "1 1 2 2"},
-        "short-answer": {"blocks": "not used"},
+        "short-answer": {"blocks": "1 1 1 1"},
     }
     
     # Patterns
@@ -106,7 +106,7 @@ class QuestionDirective(SphinxDirective):
             else:  # multiple-select
                 return self._handle_multiple_choice_multiple_select(node, node_id, columns, feedback)
         else:  # short-answer
-            return self._handle_short_answer_blocks(node, node_id, feedback)
+            return self._handle_short_answer_blocks(node, node_id, feedback,columns)
 
     def _create_node_id(self) -> str:
         """Create a unique ID for the node."""
@@ -219,7 +219,7 @@ class QuestionDirective(SphinxDirective):
         
         return pre_text, options_raw, post_text
 
-    def _handle_short_answer_blocks(self, node: Node, node_id: str, feedback: Dict) -> List[Node]:
+    def _handle_short_answer_blocks(self, node: Node, node_id: str, feedback: Dict, columns: str) -> List[Node]:
         """Handle short-answer block questions."""
         pre_text, options_raw, post_text = self._split_input()
 
@@ -230,7 +230,7 @@ class QuestionDirective(SphinxDirective):
         options_data = self._parse_short_answer_options(options_raw, feedback, node_id)
         
         # Render options as cards
-        self._render_short_answer_cards(node, node_id, options_data)
+        self._render_short_answer_cards(node, node_id, options_data, columns)
 
         # Add post-text if present
         self._add_text_section(node, node_id, post_text, "posttext")
@@ -330,13 +330,17 @@ class QuestionDirective(SphinxDirective):
             "incorrect_feedback": incorrect_fb,
         }
 
-    def _render_short_answer_cards(self, node: Node, node_id: str, options: List[Dict]) -> None:
+    def _render_short_answer_cards(self, node: Node, node_id: str, options: List[Dict], columns: str) -> None:
         """Render short-answer options as cards."""
         # Create card markup
-        cards_markup = []
+        cards_markup = [
+            f"::::{{grid}} {columns}",
+            ":gutter: 3",
+            "",
+        ]
         for option in options:
             label = option["label"]
-            cards_markup.append(":::{card}")
+            cards_markup.append(":::{grid-item-card}")
             cards_markup.append(":shadow: lg")
             cards_markup.append(":width: 100%")
             cards_markup.append(":class-card: option")
@@ -344,6 +348,7 @@ class QuestionDirective(SphinxDirective):
             if label == [""]:
                 cards_markup.append(":class-header: hidden")
             cards_markup.extend(["^^^", "+++", ":::"])
+        cards_markup.append("::::")
 
         # Render cards
         options_section = nodes.section(

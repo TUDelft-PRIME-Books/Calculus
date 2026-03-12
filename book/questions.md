@@ -306,6 +306,7 @@ You can reset the question with the reset button.
 :admonition:
 :showanswer:
 :class: question
+:columns: 1 1 2 2
 
 This is a short-answer question with a single wide text input per defined answer. Type your answer in the text box and press the submit button.
 
