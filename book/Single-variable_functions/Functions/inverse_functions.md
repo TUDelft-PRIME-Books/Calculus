@@ -14,6 +14,7 @@ Easier said than done?
 ::::
 
 
+
 So far, we have mainly been interested in evaluating functions, i.e. for a given function $f$ and $x$ in the domain of $f$, we want to find $y=f(x)$. However, often it is also interesting for some value of $y$ in the range of $f$ to try to find for which value(s) of $x$, if any, we have $f(x)=y$. That is, we want to somehow undo the function $f$ and go back to the domain.
 
 In some cases, this is possible. Consider, for instance, the function $f(x)=2x+3$ and say we want to find out for which value of $x$, if any, we have $f(x)=5$. This means that we want to solve the equation $2x+3=5$, which has $x=1$ as a solution. Indeed, we have $f(1)=5$.
@@ -131,6 +132,10 @@ The functions $f$, $f^{-1}$ and the line $y=x$.
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:FirstEx` with an applet.
+:::
+
 ::::::
 
 ::::::{note}
@@ -142,7 +147,10 @@ In {prf:ref}`Ex:Inverse:FirstEx` we used the symbol $y$ as the input for $g$, wh
 
 Now suppose that we have a function $h$ that is a composition of two other functions, so $h=f\circ g$. If $f$ and $g$ both have an inverse, does $h$ automatically have an inverse as well? To determine this, we should really think about having an inverse as being able to undo the action of the original function. So since $f\circ g$ first applies $g$ and then $f$, we can undo this by undoing both, but then **in reverse order**. This is sometimes known as the **socks and shoes rule**, since (normally, at least) you first put on your socks and then your shoes and if you want to undo this composition of two actions, you should undo them in reverse order, so you should take off your shoes first and then take off your socks. As such, we obtain the following result.
 
+:::{todo}
 Hier rechts van een plaatje van doormiddengescheurde sokken met als caption Undoing the two actions in the incorrect order will result in torn socks, which means that you do not end up where you started.
+:::
+
 
 
 ::::::{prf:theorem} Socks and shoes rule
@@ -189,7 +197,11 @@ $$
 
 Note that we switched the order from $g\circ f$ to $f^{-1}\circ g^{-1}$ when finding the inverse function, since we do not want to tear our socks by trying to take them off before taking off our shoes.
 
+
+:::{todo}
 Hier nog een grafiek van de functies $g\circ f$ en zijn inverse
+:::
+
 
 ::::::
 
@@ -225,6 +237,10 @@ We can also show this visually. Indeed, {prf:ref}`Thm:Inverse:Graphinverse` tell
 The functions $f$, the line $y=x$ and the reflection of the graph of $f$ along the line $y=x$.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:SecondEx` with an applet.
+:::
 
 ::::::
 
@@ -283,6 +299,10 @@ Still, why does this difference in domain make that $h^{-1}$ is invertible, whil
 The functions $h(x)=\sqrt{x}$ and $q(x)=x^2$ with their full domain, $h^{-1}(x)=x^2$ with domain $[0,\infty)$, and the line $x = y$. Note that we indeed obtain $x^2$ with domain $[0,\infty)$ by reflecting $\sqrt{x}$ along the line $x = y$.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:ThirdEx` with an applet.
+:::
 
 
 ::::::
@@ -345,6 +365,10 @@ The functions $f$ and $f^{-1}$ and the line $x = y$. Note that we indeed obtain 
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:FourthEx` with an applet.
+:::
+
 ::::::
 
 Since we can determine whether a function has an inverse function by finding out whether it is one-to-one, it is useful to find some conditions on a function which guarantee the function to be one-to-one. It turns out that strictly monotonic functions, i.e. functions that are either strictly increasing or strictly decreasing on their domain, form an important class of one-to-one functions.
@@ -369,6 +393,40 @@ The case when $f$ is strictly decreasing is similar.
 
 ::::::
 
+::::{todo}
+**Polling question (multiselect?)**
+Which of these functions is/are equal to its own inverse function?
+
+A. $f(x)=\pi-x$ with domain $\mathbb{R}$
+B. $f(x)=2x$ with domain $\mathbb{R}$
+C. $f(x)=\dfrac{1}{x}$ with domain $(0,\infty)$
+D. $f(x)=\dfrac{-1}{x}$ with domain $(0,\infty)$
+E. $f(x)=1$ with domain $\mathbb{R}$
+F. $f(x)=\sqrt{1-x^2}$ with domain $[0,1]$
+
+*Note*: a function which is its own inverse function is called a **self-inverse** function.
+
+:::{admonition} Solution
+:class: dropdown
+The correct answers are A, C and F.
+
+For each of these functions, we will attempt to find an inverse function.
+
+A. The equation $y=\pi-x$ gives $x=\pi-y$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\pi-x$. In addition, the range of the original function $f$ is $\mathbb{R}$. So $f$ is its own inverse function.
+
+B. The equation $y=2x$ gives $x=\dfrac{y}{2}$. This means that this function is invertible, but its inverse is $f^{-1}(x)=\dfrac{x}{2}$. So this function is not its own inverse function.
+
+C. The equation $y=\dfrac{1}{x}$ gives $x=\dfrac{1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{1}{x}$. In addition, the range of the original function $f$ is $(0,\infty)$. So $f$ is its own inverse function.
+
+D. The equation $y=\dfrac{-1}{x}$ gives $x=\dfrac{-1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{-1}{x}$. However, the range of the original function is $(-\infty,0)$, which is the domain of the inverse function. So the inverse function is defined by the same formula as the original function, but their domains are different, so they are not the same functions.
+
+E. The equation $y=1$ cannot be solved for $x$. Indeed, the function $f$ is not one-to-one, as all values of $x$ are mapped to the same number $1$. So this function does not have an inverse function.
+
+F. The equation $y=\sqrt{1-x^2}$ gives $y^2=1-x^2$, which means $x=\pm\sqrt{1-y^2}$. Since the domain of the function in $[0,1]$, we know that any input $x$ is nonnegative, so we need the positive square root. So for $x$ in the domain of $f$ we have $y=\sqrt{1-x^2}$ precisely when $x=\sqrt{1-y^2}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\sqrt{1-x^2}$. In addition, the range of the original function $f$ is $[0,1]$. So $f$ is its own inverse function.
+
+:::
+::::
+
 So far, we have not put emphasis on the codomain of a function in relation to invertibility. However, if the range of the function is not equal to the codomain, i.e. if the function is not onto, the equation $f(x)=y$ does not have a solution $x$ for each $y$ in the codomain of $f$ (it only has a solution for $y$ in the range of $f$). So a function can only have an inverse function if the range and the codomain coincide. This is not a real problem in practice though, since we can always change the codomain of the function to be equal to the range, without changing the behaviour of the function. First, we introduce some terminology and then reformulate these considerations into a theorem.
 
 ::::::{prf:definition}
@@ -387,6 +445,8 @@ A function $f$ is invertible precisely when it is bijective. If it is only one-t
 Consider the function $h(x)=\sqrt{x}$ with domain $[0,\infty)$ and codomain $\mathbb{R}$. Since $\sqrt{x}\geq 0$ for all $x\geq 0$, the range of $f$ cannot coincide with the codomain $\mathbb{R}$. Indeed, the equation $\sqrt{x}=-1$ does not have any solutions for $x\geq 0$. So, this function is not invertible when $\mathbb{R}$ is the codomain. However, in {prf:ref}`Ex:Inverse:ThirdEx` we saw that this function is one-to-one. So, if we restrict the codomain of $h$ to be equal to the range of $h$, which is the interval $[0,\infty)$, it becomes invertible as we saw in this previous example.
 
 ::::::
+
+
 
 (Subsec:InverseLog)=
 
@@ -437,6 +497,10 @@ In the left graph the functions $f(x)=2^x$ and $f^{-1}(x)=\log_2(x)$ and the lin
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:Logarithmbasisbasis` with an applet.
+:::
+
 
 First we note that the logarithm is only defined for $x>0$. This makes sense since the domain of an inverse function is equal to the range of the original function, which for the function $b^x$ is equal to $(0,\infty)$. Next, we recall that the logarithm $\log_b(x)$ is strictly increasing when $b>1$ while it is strictly decreasing if $0<b<1$. This follows from {prf:ref}`Thm:Inverse:MonotonicOnetoone`, since the function $b^x$ has the same properties. Finally, we notice that for $0<b<1$ the function values $\log_b(x)$ blow up as $x$ gets closer to $0$. In the terminology that we will introduce in {numref}`Section:LimitPoint` the logarithm has a vertical asymptote at $x=0$. This is because the graph of the logarithm is obtained by reflecting the graph of $b^x$ along the line $y=x$, and this function has the property that the function values get arbitrarily close to $0$ as $x$ gets very large (in the terminology of {numref}`Section:Limitinf`, the function $b^x$ has a horizontal asymptote at $y=0$). For $b>1$, the logarithm has a similar property, but the function values will, instead, blow up in the negative direction as $x$ approaches $0$.
 
@@ -483,7 +547,7 @@ To prove the second property, we rewrite and use the first and third properties 
 
 ::::::{prf:example}
 :label: Ex:Inverse:Logarithmbasiccomputation
-Suppose we want to simplify the expression $\ln\left(\frac{x^3}{x\sqrt{1+x}}\right)$ (recall that $\ln(x)=\log_e(x)$ is the natural logarithm, i.e. the logarithm with base number $e$). Using the rules from {prf:ref}`Thm:Inverse:Logarithmcomputationrules` we find that
+Suppose we want to simplify the expression $\ln\left(\frac{x^3}{(x+2)\sqrt{1+x}}\right)$ (recall that $\ln(x)=\log_e(x)$ is the natural logarithm, i.e. the logarithm with base number $e$). Using the rules from {prf:ref}`Thm:Inverse:Logarithmcomputationrules` we find that
 
 $$
  \begin{array}{lcl}\ln\left(\frac{x^3}{(x+2)\sqrt{1+x}}\right)&=&\ln\left(x^3\right)-\ln\left((x+2)\sqrt{1+x}\right)\\
@@ -546,6 +610,30 @@ as desired. The consequence directly follows by taking $b=e$.
 
 :::
 
+::::{todo}
+**Polling question**
+Using that $2^{10}=1024$, which of the following numbers is closest to $\log_2\left(1\,000\,000\,000\,000\right)$?
+
+A. $12$
+B. $40$
+C. $1000$
+D. $10\,000$
+
+:::{admonition} Solution
+:class: dropdown
+The correct answer is B.
+
+We have $1\,000\,000\,000\,000=(1000)^4$, so using the rule of calculation for logarithms we find
+
+$$
+ \log_2\left(1\,000\,000\,000\,000\right)=\log_2\left(1000^4\right)=4\log_2\left(1000\right).
+$$
+
+Now, $2^{10}=1024$ precisely means that $\log_2(1024)=10$. So $\log_2\left(1000\right)$ will be close to $10$, which means that $\log_2\left(1\,000\,000\,000\,000\right)=4\log_2\left(1000\right)$ will be close to $40$.
+
+:::
+::::
+
 (Subsec:InverseTrig)=
 
 ## Inverse trigonometric functions
@@ -564,6 +652,10 @@ In the left graph the function $f(x)=\sin(x)$ and in the right graph the functio
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:RestrictSin` with an applet.
+:::
+
 Now we turn our attention to $f(x)=\cos(x)$. Again, we want to choose an interval as our domain that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $[-1,1]$. However, the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ does not work in this case, since 1) $f$ is not one-to-one on this interval, because, for instance, $\cos\left(\frac{\pi}{4}\right)=\cos\left(-\frac{\pi}{4}\right)$ and 2) the range changes when we restrict to this interval, since for $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$ we have $\cos(x)\geq 0$. So we should choose something different. Keeping the geometric interpretation of the cosine in mind, there are actually two choices that work: the intervals $[-\pi,0]$ and $[0,\pi]$. For convenience, we choose the interval $[0,\pi]$, since it is a little nicer to work with positive input values than with negative ones. We can see that this choice works in the graph of the function.
 
 ::::{figure} Images/Fig-Inverse-RestrictCos.png
@@ -574,6 +666,10 @@ In the left graph the function $f(x)=\cos(x)$ and in the right graph the functio
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:RestrictCos` with an applet.
+:::
+
 Finally, we consider $f(x)=\tan(x)$. Here the range is actually the entire real line $\mathbb{R}$, so want to make sure we cover the entire range. As was the case with the sine, there is only one choice for an interval that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $\mathbb{R}$ and that choice is the open interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$. As before, we can see that this choice works in the graph of the function.
 
 ::::{figure} Images/Fig-Inverse-RestrictTan.png
@@ -583,6 +679,10 @@ Finally, we consider $f(x)=\tan(x)$. Here the range is actually the entire real 
 In the left graph the function $f(x)=\tan(x)$ and in the right graph the function $f(x)=\tan(x)$ restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:RestrictTan` with an applet.
+:::
 
 Since we have now found intervals on which the trigonometric functions are one-to-one, we can define their inverse functions.
 
@@ -609,6 +709,33 @@ Since the graph of an inverse function is obtained by reflecting the graph of th
 
 The three functions $\sin(x)$ (left), $\cos(x)$ (middle) and $\tan(x)$ (right) and their inverses and the line $x = y$.
 
+::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:Inversetrig` with an applet.
+:::
+
+::::{todo}
+**Polling question**
+Consider the cotangent function $\cot(x)=\frac{\cos(x)}{\sin(x)}$. How would you restrict its domain to make it one-to-one?
+
+A. $(0,\pi)$
+B. $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$
+C. $[0,\pi]$
+D. $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$
+E. None of the above
+
+
+
+:::{admonition} Solution
+:class: dropdown
+The correct answer is A.
+
+Note that $0$ is not in the domain of the cotangent, since $\sin(0)=0$ and we cannot divide by $0$. So any interval which contains $0$ cannot be the correct answer, so that already eliminates options B, C and D.
+
+Now to check that option $A$ does work, we note that for $0<x<\pi$ with $x\neq \frac{\pi}{2}$ we have $\cot(x)=\frac{\cos(x)}{\sin(x)}=\frac{1}{\tan(x)}$. Now we know that the tangent is strictly increasing on the intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$. In addition, the tangent is positive on the first of these intervals and negative on the second one. That means that the cotangent is strictly decreasing on both intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$ and that it is positive on the first of the intervals and negative on the second of these intervals. So the cotangent does not take the same value twice on the union of the intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$. Finally, we note that $\cot\left(\frac{\pi}{2}\right)=\frac{\cos\left(\frac{\pi}{2}\right)}{\sin\left(\frac{\pi}{2}\right)}=\frac{0}{1}=0$. So we conclude that the cotangent never takes the same value twice on the full interval $(0,\pi)$, so it is one-to-one on this interval. In particular, we could use this interval to define the inverse cotangent function, the arccotangent $\arccot(x)$.
+
+:::
 ::::
 
 ::::::{prf:example} 
@@ -683,6 +810,10 @@ Since $y$ takes the role of an angle, we make use of that. Assume, for now that 
 Initial triangle with sides $a$, $b$, $c$ and angle $y$ indicated.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:Simplify1` with an applet.
+:::
 :::::
 
 $$
@@ -705,6 +836,10 @@ So how do we find the adjacent side $b$? By using the Pythagorean theorem, of co
 Final triangle with sides $x$, $\sqrt{1-x^2}$, $1$ and angle $y$ indicated.
 
 ::::
+
+:::{todo}
+Replace {numref}`Fig:Inverse:Simplify2` with an applet.
+:::
 
 $$
  \cos(\arcsin(x))=\cos(y)=b=\sqrt{1-x^2}.
@@ -743,6 +878,610 @@ The cosine function where the thicker part is the function on the interval $\lef
 
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Inverse:Simplify3` with an applet.
+:::
+
 Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is nonnegative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
 
 ::::::
+
+(Subsec:InverseGrasple)=
+
+## Grasple exercises
+
+
+### Exercises on inverses of general functions.
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/60bcd474-3239-4e71-8946-cee3a7637bcd?id=70819
+:label: Grasple:Inverse:Graphinverse
+:dropdown:
+:description: Graph of an inverse function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8a519661-0c39-4d97-9557-8ff1733f51cb?id=70839
+:label: Grasple:Inverse:Checkinginj
+:dropdown:
+:description: Checking whether three functions are one-to-one
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/aa012c3c-6c14-48d6-a2f6-c53da9c30ac6?id=63408
+:label: Grasple:Inverse:Quaddomaininv
+:dropdown:
+:description: Checking on which domain a function is invertible
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/72d35828-d237-4037-b971-c2556ff5ccee?id=63410
+:label: Grasple:Inverse:Inversequadhalf
+:dropdown:
+:description: Finding inverse of quadratic function on half domain
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6a9dd364-6d70-482e-882b-bdd6e21e1f25?id=63411
+:label: Grasple:Inverse:Inverselinoverlin
+:dropdown:
+:description: Finding inverse of rational function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c24ee782-910e-4004-b300-1e0a00fb6da6?id=70842
+:label: Grasple:Inverse:Inversequadfull
+:dropdown:
+:description: Finding inverse of quadratic function on full domain
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c8969c93-0ace-4865-a212-87a26495a911?id=63122
+:label: Grasple:Inverse:Inverselinoverlinplusdomrange
+:dropdown:
+:description: Finding maximal domain + inverse of rational function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c8969c93-0ace-4865-a212-87a26495a911?id=63122
+:label: Grasple:Inverse:Inverseselfinv
+:dropdown:
+:description: Making a self-inverse function
+
+::::
+
+### Exercises on logarithms.
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/44e2b007-c172-41e5-bd5a-8048f699e407?id=130661
+:label: Grasple:Inverse:Exactlog
+:dropdown:
+:description: Finding exact values of expressions with logarithms.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/72fd9d97-9f93-45e9-adb5-b0bed0ff089e?id=130648
+:label: Grasple:Inverse:Expandlog
+:dropdown:
+:description: Expanding an expression involving logarithms
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f92f31b2-292c-4417-95ec-a60fb3168943?id=130649
+:label: Grasple:Inverse:Singlelog
+:dropdown:
+:description: Writing an expression as a single logarithm
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b489c899-aa03-40ce-95e4-25f56486164a?id=130640
+:label: Grasple:Inverse:Easyexp
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3bd2251c-d349-40f8-bc4b-1bf2ddf93ca4?id=130641
+:label: Grasple:Inverse:Easyexplesseasy
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ad1638df-2fc3-444b-8179-d587b95da3f0?id=130636
+:label: Grasple:Inverse:Explinear
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ffa4ab1e-e00d-4051-85d2-09008bea23c8?id=130642
+:label: Grasple:Inverse:Expquad
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a2a59639-0069-4bbb-bc8f-5b13817028a0?id=130637
+:label: Grasple:Inverse:Explinearnosol
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4d0ef697-c0cc-403e-8288-bf69f7fa5757?id=130646
+:label: Grasple:Inverse:Expquaduglysol
+:dropdown:
+:description: Solving an equation with an exponential function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d730ecaf-01a1-440c-b7a6-fe4673701273?id=130664
+:label: Grasple:Inverse:Solgquad
+:dropdown:
+:description: Solving an equation with a logarithmic function
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e2160262-6257-4f0b-94ff-1267eed83a62?id=63125
+:label: Grasple:Inverse:Logstatements
+:dropdown:
+:description: Two statements about logarithms
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/abe00184-8aca-474b-a39d-6d1bd51b4e63?id=130665
+:label: Grasple:Inverse:Solgquad1sol
+:dropdown:
+:description: Solving an equation with a logarithmic function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/582e83c2-9982-4531-8616-053fc9af3cc4?id=63127
+:label: Grasple:Inverse:Inverseexponentialbasenote
+:dropdown:
+:description: Finding inverse of exponential function with base different from $e$
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f0b8a169-2217-43ed-8c87-00384fa431e7?id=63129
+:label: Grasple:Inverse:Inverseexponentialsquareroot
+:dropdown:
+:description: Finding maximal domain + inverse of exponential function composed with a square root
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/18f05192-771d-4586-94f5-62a05967ce6a?id=63133
+:label: Grasple:Inverse:Inverselinearlog
+:dropdown:
+:description: Finding maximal domain + inverse of logarithm
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f6d59bf9-b8e3-4ab1-ba5b-1e638f4288d7?id=63065
+:label: Grasple:Inverse:Inverseloginlog
+:dropdown:
+:description: Finding maximal domain + inverse of logarithm composed with logarithm
+
+::::
+
+### Exercises on inverse trigonometric functions.
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/92f70639-7718-4894-922e-fabd8f446459?id=76291
+:label: Grasple:Inverse:arcsineasy
+:dropdown:
+:description: Finding $\arcsin(a)$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/60f540d8-e5ea-4698-8003-0a7e48934bea?id=76295
+:label: Grasple:Inverse:arctanpretty
+:dropdown:
+:description: Finding $\arctan(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0614ebe8-eeca-4302-a383-09552e8e6510?id=76296
+:label: Grasple:Inverse:sinarcsinnoshift
+:dropdown:
+:description: Finding $\sin(\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4807abf6-1c06-44c5-b5da-f46a72c8144c?id=76297
+:label: Grasple:Inverse:cosarccosnoshift
+:dropdown:
+:description: Finding $\cos(\arccos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/29236142-b0f0-45b3-b6be-64e7566e6294?id=76298
+:label: Grasple:Inverse:tanarctannoshift
+:dropdown:
+:description: Finding $\tan(\arctan(a))$ without a calculator
+
+::::
+
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3407acde-0574-4d2e-8953-b78d60e90308?id=76327
+:label: Grasple:Inverse:arcsinsin2pishift
+:dropdown:
+:description: Finding $\arcsin(\sin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7cd1cc53-2795-4e95-ab3c-a741dbabe0b0?id=76417
+:label: Grasple:Inverse:arccoscos2pishiftandreflect
+:dropdown:
+:description: Finding $\arccos(\cos(a))$ without a calculator
+
+::::
+
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/59a91832-fbc0-4679-b505-ca44359c0b28?id=76318
+:label: Grasple:Inverse:arctantannoshift
+:dropdown:
+:description: Finding $\arctan(\tan(a))$ without a calculator
+
+::::
+
+
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fde17784-4aee-4dc7-9677-57458daeb2f3?id=76644
+:label: Grasple:Inverse:tanarccos
+:dropdown:
+:description: Finding $\tan(\arccos(a))$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7d035172-e80d-42d8-a82a-0fc02bea8d28?id=76647
+:label: Grasple:Inverse:sinarctan
+:dropdown:
+:description: Finding $\sin(\arctan(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/70d2c0b0-d1ff-494b-a27e-61c049745da3?id=70734
+:label: Grasple:Inverse:tanarcsinaxb
+:dropdown:
+:description: Simplifying expresion of the form $\tan(\arcsin(ax+b))$ 
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/92ad8603-2d81-410e-a353-ce2f488f6ab7?id=76760
+:label: Grasple:Inverse:arcsincos2pishiftrefl
+:dropdown:
+:description: Finding $\arcsin(\cos(a))$ without a calculator
+
+::::
+
+
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/af1de926-d272-4a64-bd5f-2e0663b70395?id=76763
+:label: Grasple:Inverse:arccossin2pishift
+:dropdown:
+:description: Finding $\arccos(\sin(a))$ without a calculator
+
+::::
+
+
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f60a5f16-6f93-4a94-971c-881114053625?id=76768
+:label: Grasple:Inverse:cos2arccos
+:dropdown:
+:description: Finding $\cos(2\arccos(a))$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3b37b0a9-6cd0-4644-923a-b0ba267d6348?id=76770
+:label: Grasple:Inverse:tan2arcsin
+:dropdown:
+:description: Finding $\tan(2\arcsin(a))$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/467d06b4-26be-4de5-93fa-4aae7acb33bd?id=70788
+:label: Grasple:Inverse:arcsinplusarccos
+:dropdown:
+:description: Simplify $\arcsin(a)+\arccos(a)$
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fe2885ec-92fe-4fe8-949d-0173ab2da53b?id=70735
+:label: Grasple:Inverse:Inverscosarctanplusarcsin
+:dropdown:
+:description: Simplify $\cos(\arctan(x)+\arcsin(x))$
+
+::::
+
+
+:::::::::{admonition} Bonus: more exercises on inverse trigonometric functions
+:class: bonus
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/aae81382-48c0-459d-a5c1-7bca0cde1adc?id=76292
+:label: Grasple:Inverse:arccoseasy
+:dropdown:
+:description: Finding $\arccos(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7cbcea4e-9acf-4b2f-9655-80c806e73dfe?id=76293
+:label: Grasple:Inverse:arcsinpretty
+:dropdown:
+:description: Finding $\arcsin(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0a6e8840-b3c0-4794-ac3e-6aeb0147b989?id=76294
+:label: Grasple:Inverse:arccospretty
+:dropdown:
+:description: Finding $\arccos(a)$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9cec25fb-66a4-4c1d-9a84-b3b8890a1663?id=76299
+:label: Grasple:Inverse:arcsinsinnoshift
+:dropdown:
+:description: Finding $\arcsin(\sin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cb640771-58ae-401e-8d2c-08bb3adab1bd?id=76416
+:label: Grasple:Inverse:arccoscos2pishift
+:dropdown:
+:description: Finding $\arccos(\cos(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9422563f-f242-4347-9782-2a1211df789e?id=76300
+:label: Grasple:Inverse:arccoscosnoshift
+:dropdown:
+:description: Finding $\arccos(\cos(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3e477d9d-43e8-442d-aaa8-335a37aec458?id=76418
+:label: Grasple:Inverse:arctantanpishift
+:dropdown:
+:description: Finding $\arctan(\tan(a))$ without a calculator
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cc2b528d-6ddc-4129-ad4d-f75795ba584c?id=76337
+:label: Grasple:Inverse:arcsinsin2pishiftandreflect
+:dropdown:
+:description: Finding $\arcsin(\sin(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/33fccbbd-7097-4d46-aa91-e5f5cee2c767?id=76643
+:label: Grasple:Inverse:sinarccos
+:dropdown:
+:description: Finding $\sin(\arccos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/accb1d37-1ff1-41a5-9ae6-d47d197d909e?id=76645
+:label: Grasple:Inverse:cosarcsin
+:dropdown:
+:description: Finding $\cos(\arcsin(a))$ without a calculator
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ce1f5503-af66-4522-b736-fd2fb1cb036b?id=76646
+:label: Grasple:Inverse:tanarcsin
+:dropdown:
+:description: Finding $\tan(\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9b94b891-8843-4c0a-a220-b011963637b1?id=76762
+:label: Grasple:Inverse:arcsincos2pishift
+:dropdown:
+:description: Finding $\arcsin(\cos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/86a4a21d-b196-442c-8555-037b5dc4ab80?id=76759
+:label: Grasple:Inverse:arccossin2pishiftrefl
+:dropdown:
+:description: Finding $\arccos(\sin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7ae0935c-e566-4248-9130-9c4484b6a587?id=76771
+:label: Grasple:Inverse:tan2arccos
+:dropdown:
+:description: Finding $\tan(2\arccos(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2fd9249e-ea57-4e78-9059-21d532050afc?id=76767
+:label: Grasple:Inverse:cos2arcsin
+:dropdown:
+:description: Finding $\cos(2\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/47631c23-5c8d-4635-ad93-ac5229f6b28d?id=76772
+:label: Grasple:Inverse:tan2arctan
+:dropdown:
+:description: Finding $\tan(2\arctan(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bc484860-d226-4197-aee9-eb2b94dfd2be?id=76766
+:label: Grasple:Inverse:sin2arctan
+:dropdown:
+:description: Finding $\sin(2\arctan(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/248fd92a-2a93-4683-9c2c-4f1dbc6f6c81?id=76769
+:label: Grasple:Inverse:cos2arctan
+:dropdown:
+:description: Finding $\cos(2\arctan(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/170eaec5-2c53-4f0e-beb6-6a3000405d9b?id=76764
+:label: Grasple:Inverse:sin2arcsin
+:dropdown:
+:description: Finding $\sin(2\arcsin(a))$ without a calculator
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/83944556-70e7-4fd0-84b6-fda11dedc5a7?id=76765
+:label: Grasple:Inverse:sin2arccos
+:dropdown:
+:description: Finding $\sin(2\arccos(a))$ without a calculator
+
+::::
+
+:::::::::

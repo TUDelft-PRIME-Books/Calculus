@@ -1,12 +1,14 @@
-# Multiple and repeated integrals
+# Double integrals
 
 In this section we cover:
 
-- Double integrals: Riemann sums
-- Double integrals: repeated integral and Fubini's theorem
-- Double integrals: rules of calculation
-- Double integrals: general regions
-- Double integrals: changing order of integration
+- Double integrals
+- Riemann sums
+- Repeated integral and Fubini's theorem
+- Rules of calculation
+- Improper double integrals (discontinuous integrand)
+- General regions
+- Changing order of integration
 
 ## Introduction
 

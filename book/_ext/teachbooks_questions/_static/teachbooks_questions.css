@@ -1,0 +1,231 @@
+/* variable definitions for the colors */
+:root {
+    --question-blue: #c9e0f6;
+    --question-blue-hover: #b0d4f0;
+    --question-red: #fbd7d8;
+    --question-red-hover: #f0b0b2;
+    --question-green: #b6e4ce;
+    --question-green-hover: #a0d8c0;
+    --question-gray: #dddddd;
+    --question-gray-border: #d0d0d0;
+    --question-white: #eeeeee;
+    --question-white-border: #c6c6c6;
+    --_placeholder-color: var(--pst-color-text-base);
+}
+
+html[data-theme="dark"] {
+    --question-blue: #2f496b;
+    --question-blue-hover: #3a5a80;
+    --question-red: #6b3236;
+    --question-red-hover: #7e3f43;
+    --question-green: #2a5e4d;
+    --question-green-hover: #3a7a67;
+    --question-gray: #444444;
+    --question-gray-border: #555555;
+    --question-white: #666666;
+    --question-white-border: #777777;
+}
+
+/* General style for the question options */
+section.question-options div.sd-card.option {
+
+    border-radius: 0.6rem;
+
+  /* Button‑like visuals */
+  border: 2px solid var(--question-gray-border);
+  background-color: var(--question-gray);
+  transition: 
+    background 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.1s ease;
+  overflow: hidden;
+}
+div.multiple-choice section.question-options div.sd-card.option {
+  cursor: pointer;
+}
+
+div.multiple-choice section.question-options div.sd-card.option:hover {
+  background: var(--question-white);
+  border-color: var(--question-gray-border);
+  transform: translateY(-2px);
+}
+
+div.multiple-choice section.question-options div.sd-card.option:has(div.sd-card-body.selected) {
+    transform: translateY(2px) translateX(2px);
+}
+
+/* Styling of the feedback in the footers */
+section.question-options div.sd-card-footer:not(.correct):not(.incorrect) {
+    display: none;
+}
+section.question-options div.sd-card-footer.correct {
+    display: block;
+    background-color: var(--question-green);
+}
+div.multiple-choice section.question-options div.sd-card-footer.correct:hover {
+    background-color: var(--question-green-hover);
+}
+div.multiple-choice section.question-options div.sd-card:has(div.sd-card-footer.correct:hover) div.sd-card-body.selected {
+    background-color: var(--question-blue-hover);
+}
+section.question-options div.sd-card-footer.incorrect {
+    display: block;
+    background-color: var(--question-red);
+}
+div.multiple-choice section.question-options div.sd-card-footer.incorrect:hover {
+    background-color: var(--question-red-hover);
+}
+div.multiple-choice section.question-options div.sd-card:has(div.sd-card-footer.incorrect:hover) div.sd-card-body.selected {
+    background-color: var(--question-blue-hover);
+}
+
+/* Styling of the options on selection */
+div.multiple-choice section.question-options div.sd-card-body.selected {
+    background-color: var(--question-blue);
+}
+div.multiple-choice section.question-options div.sd-card-body.selected:hover {
+    background-color: var(--question-blue-hover);
+}
+div.multiple-choice section.question-options div.sd-card:has(div.sd-card-body.selected:hover) div.sd-card-footer.correct {
+    background-color: var(--question-green-hover);
+}
+div.multiple-choice section.question-options div.sd-card:has(div.sd-card-body.selected:hover) div.sd-card-footer.incorrect {
+    background-color: var(--question-red-hover);
+}
+
+/* to make sure any admonition within the card is styled correctly */
+/* add a background */
+div.multiple-choice section.question-options div.sd-card div.wrap-admonition {
+    background-color: var(--pst-color-background);
+}
+
+/* Style the buttons */
+section.question-buttons div.sd-card.hidden-button {
+    display: none
+}
+section.question-buttons div.sd-card.submit-button,
+section.question-buttons div.sd-card.reset-button,
+section.question-buttons div.sd-card.show-button {
+    cursor: pointer;
+    border-radius: 0.6rem;
+    height: fit-content !important;
+    
+    /* Button‑like visuals */
+    border: 2px solid var(--question-gray-border);
+    background-color: var(--question-blue);
+    transition: 
+        background 0.15s ease,
+        border-color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.1s ease;
+}
+section.question-buttons div.sd-card.submit-button:hover,
+section.question-buttons div.sd-card.reset-button:hover,
+section.question-buttons div.sd-card.show-button:hover {
+  background: var(--question-blue-hover);
+  border-color: var(--question-white-border);
+  transform: translateY(-2px);
+}
+section.question-buttons div.sd-card.submit-button div.sd-card-body,
+section.question-buttons div.sd-card.reset-button div.sd-card-body,
+section.question-buttons div.sd-card.show-button div.sd-card-body {
+    padding: 0.5rem;
+}
+section.question-buttons div.sd-col.sd-d-flex-row.docutils {
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+}
+
+/* styling of the feedback in the general section of a mcms question */
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-card.correct,
+div.multiple-choice section.question-options div.sd-card-body.correct {
+    background-color: var(--question-green);
+}
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-card:not(.correct),
+div.multiple-choice section.question-options div.sd-card-body.incorrect {
+    background-color: var(--question-red);
+}
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-col.sd-d-flex-row:has(div.sd-card.show) {
+    display: flex !important;
+}
+div.multiple-choice.multiple-select section.question-feedback.overall-feedback div.sd-col.sd-d-flex-row:has(div.sd-card:not(.show)) {
+    display: none !important;
+}
+
+/* short-answer stuff */
+div.short-answer.blocks section.question-options div.sd-card-header.hidden {
+    display: none;
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input {
+    padding: 0;
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input {
+    display: block;           /* avoid inline quirks */
+    box-sizing: border-box;   /* include padding/border in width/height */
+    width: 100%;
+    height: 100%;             /* match container if container has a height */
+    min-height: 6rem;         /* initial size; adjust to taste */
+    resize: vertical;         /* allow vertical resize only */
+    overflow-y: auto;         /* vertical scrollbar if needed */
+    overflow-x: hidden;       /* no horizontal scrollbar */
+    border: none;             /* optional: match card’s border instead */
+    padding: .6rem .8rem;     /* optional */
+    font: inherit;
+    background-color: var(--question-white);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input:focus {
+    outline: none;
+    background-color: var(--question-blue);
+}
+div.short-answer.blocks section.question-options div.sd-card:has(textarea.question-option-input:focus) {
+    border-color: var(--question-blue);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input.show-answer {
+    background-color: var(--question-green);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input textarea.question-option-input::placeholder {
+    color: var(--sd-color-card-text);
+    opacity: 0.5; /* ensure placeholder is visible */
+}
+div.short-answer.blocks section.question-options div.sd-card-footer.correct section.incorrect {
+    display: none;
+}
+
+div.short-answer.blocks section.question-options div.sd-card-footer.incorrect section.correct {
+    display: none;
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input section.question-option-answer {
+    display: none;
+}
+/* math stuff */
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input {
+    display: inline-block;           /* avoid inline quirks */
+    box-sizing: border-box;   /* include padding/border in width/height */
+    width: 100%;
+    height: 100%;             /* match container if container has a height */
+    min-height: 6rem;         /* initial size; adjust to taste */
+    border: none;             /* optional: match card’s border instead */
+    padding: .6rem .8rem;     /* optional */
+    font: inherit;
+    background-color: var(--question-white);
+}
+/* math-field icon colors (shadow DOM) */
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input::part(virtual-keyboard-toggle),
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input::part(menu-toggle) {
+    color: var(--sd-color-card-text);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input:focus {
+    outline: none;
+    background-color: var(--question-blue);
+}
+div.short-answer.blocks section.question-options div.sd-card:has(math-field.question-option-input:focus) {
+    border-color: var(--question-blue);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input.show-answer {
+    background-color: var(--question-green);
+}
+div.short-answer.blocks section.question-options div.sd-card-body.input math-field.question-option-input::part(placeholder) {
+    color: var(--sd-color-card-text);
+    opacity: 0.5; /* ensure placeholder is visible */
+}
