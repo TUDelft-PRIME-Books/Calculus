@@ -284,16 +284,16 @@ function tunedSimilarity(student, correct) {
           if (studentEquation && correctEquation) {
             const evalStudentExpr = ce.box(["Subtract", studentExpr.ops[0], studentExpr.ops[1]]).simplify();
             const evalCorrectExpr = ce.box(["Subtract", correctExpr.ops[0], correctExpr.ops[1]]).simplify();
-            if (evalStudentExpr.is(evalCorrectExpr)) {
+            if (evalStudentExpr.isEqual(evalCorrectExpr)) {
               return true;
             }
             negateStudent = ce.box(["Negate", evalStudentExpr]).simplify();
-            if (negateStudent.is(evalCorrectExpr)) {
+            if (negateStudent.isEqual(evalCorrectExpr)) {
               return true;
             }
             return false;
           } else if (!studentEquation && !correctEquation) {
-            return studentExpr.is(correctExpr);
+            return studentExpr.isEqual(correctExpr);
           } else {
             return false;
           }
