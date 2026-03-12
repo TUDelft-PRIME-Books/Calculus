@@ -273,7 +273,7 @@ function tunedSimilarity(student, correct) {
       case 'TI':
         return stripped.toLowerCase() === correctAnswer.toLowerCase();
       case 'TF':
-        return tunedSimilarity(stripped, correctAnswer) >= 0.95;
+        return tunedSimilarity(stripped, correctAnswer) >= 0.9;
       case 'M':
         // convert both to Expressions and compare
         try {
