@@ -27,7 +27,6 @@ sphinx:
     text_replacer: _ext/
     check_captions: _ext/
     image_checker: _ext/
-    teachbooks_questions: _ext/
     numref_section: _ext/
   config:
     tippy_skip_urls:
@@ -126,6 +125,7 @@ sphinx:
     - sphinx_apa_references                     # For APA citations
     - sphinx_visualized
     - sphinx.ext.todo
+    - teachbooks_questions
 
 bibtex_bibfiles: 
   - references.bib
