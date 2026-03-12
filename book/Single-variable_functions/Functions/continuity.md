@@ -4,9 +4,9 @@
 
 ## Introduction
 
-Almost all functions we have encountered so far have the nice property that it is possible to sketch their graph without lifting your pen, except possibly for skipping over a vertical asymptote. Indeed, all of polynomials, powers of $x$, rational functions, (inverse) trigonometric functions, exponential functions and logarithms have this property. A function with this property is called **continuous**. Stated differently, a function is continuous whenever small changes in the input give rise to small changes in the output values. 
+Almost all functions we have encountered so far have the useful property that it is possible to sketch their graph without lifting your pen, except possibly for skipping over a vertical asymptote. Indeed, all of polynomials, powers of $x$, rational functions, (inverse) trigonometric functions, exponential functions and logarithms have this property. A function with this property is called **continuous**. Stated differently, a function is continuous whenever small changes in the input give rise to small changes in the output values. 
 
-In science and engineering, most variables depend on each other in a continuous way. However, that does not always need to be the case. Consider, for instance, an electrical circuit, where a DC voltage source is connected to a resistor and an inductor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the current through the inductor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. As such, the current is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
+In science and engineering, most variables depend on each other in a continuous way. However, that does not always need to be the case. Consider, for instance, an electrical circuit, where a DC voltage source is connected to a resistor and an inductor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the voltage across the capacitor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in voltage. As such, the voltage is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
 
 ```{figure} Images/Fig-Continuity-Circuit.jpg
 ---
@@ -19,10 +19,12 @@ copyright: © TU Delft
 placement: caption
 ---
 
-The circuit described above with a resistor with resistance $R$ and an inductor with inductance $L$, where a voltage source of size $V_s$ is turned on at $t=0$. The resulting current $i(t)$ throught the inductor is not continuous at $t=0$.
+The circuit described above with a resistor with resistance $R$ and an inductor with inductance $L$, where a voltage source of size $V_s$ is turned on at $t=0$. The resulting voltage $V(t)$ across the capacitor is not continuous at $t=0$.
 ```
 
-Hierbij ook nog een schets van de current i(t) (0 voor $t<0$, daarna van de vorm $i_0+exp(-t)$, maar geef maar geen maatvoering op de assen)
+:::{todo}
+Hierbij ook nog een schets van de current V(t) (0 voor $t<0$, daarna van de vorm $V_0+exp(-t)$, maar geef maar geen maatvoering op de assen)
+:::
 
 (Subsec:ContProp)=
 
@@ -37,6 +39,13 @@ Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$
 
 If a function $f$ is continuous at each points in each point in its domain, we say that $f$ is **continuous**. 
 ::::::
+
+::::::{prf:remark} 
+:label: Theorem:Continuity:EpsilonDelta
+
+Using the precise definition of a limit ({prf:ref}`Def:LimitAtPoint:Precisedef`), we can also say that a function $f$ is continuous at $a$ precisely when for every $\varepsilon>0$ there exists a $\delta>0$ such that for every $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $|f(x)-f(a)|<\varepsilon$.
+::::::
+
 
 You might be tempted to think that this definition means that a function $f$ is continuous at a point $a$, whenever $\lim\limits_{x\rightarrow a}f(x)$ exists. However, this is not the case. In the definition, it stated explicitly that this limit should not only exist, but it should also be equal to the function value $f(a)$. For instance, for the function $f$ defined in {prf:ref}`Ex:LimitAtPoint:LimitLeftRightComposite`, the limit $\lim\limits_{x\rightarrow 2}f(x)$ exists, but it is unequal to $f(2)$. Hence this function $f$ is not continuous at the point $2$.
 
@@ -75,17 +84,7 @@ Basically, {prf:ref}`Theorem:LimitAtPoint:Directsub` states that most functions 
 
 Since the definition of the continuity involves limits, we can use the precise definition of a limit ({prf:ref}`Def:LimitAtPoint:Precisedef`) to rephrase the condition for continuity as follows.
 
-::::::{prf:theorem} 
-:label: Theorem:Continuity:EpsilonDelta
 
-Let $f$ be a function and $a$ a point in the domain of $f$. Then $f$ is continuous at $a$ if, and only if, for every $\varepsilon>0$ there exists a $\delta>0$ such that for every $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $|f(x)-f(a)|<\varepsilon$.
-::::::
-
-:::{admonition} Proof of {prf:ref}`Theorem:Continuity:EpsilonDelta`
-:class: tudproof, dropdown
-
-This follows directly from rephrasing the statement $\lim\limits_{x\rightarrow a}f(x)=f(a)$ using the precise definition of a limit ({prf:ref}`Def:LimitAtPoint:Precisedef`).
-:::
 
 ::::::{prf:example} 
 :label: Ex:Continuity:Firstexample
@@ -158,7 +157,7 @@ Consider the function $f(x)$, defined for $x$ in the interval $(-1,1)$, which ha
 
 Now we claim that $f$ is continuous at $0$. Let $\varepsilon>0$ be given (we can assume that $\varepsilon\leq \frac{1}{2}$). We choose $\delta=\varepsilon$. Then for $x$ with $|x|<\delta$ we either have $x=\frac{1}{n}$, which means that $|f(x)|=\frac{1}{2n}\leq \frac{1}{n}<\delta=\varepsilon$, or $x$ is not of this form, in which case $|f(x)|=|x|<\delta=\varepsilon$ ($x=1-\frac{1}{n}$ is not possible since we assumed that $\delta=\varepsilon<\frac{1}{2}$). As such, we must have $\lim\limits_{x\rightarrow 0}f(x)=0$. Since $f(0)=0$, $f$ is continuous at $0$.
 
-Finally, we claim that $f^{-1}$ is not continuous at $0$. Note that $f^{-1}(0)=0$, since $f(0)=0$. Since continuity means that for each $\varepsilon>0$ there is a $\delta>0$ with a certain property, and we want to show that the function is discontinuous, we want to choose $\varepsilon>0$ such that there is no $\delta>0$ with the desired property. In this case we choose $\varepsilon=\frac{1}{4}$. We want to show that no choice of $\delta$ works, so we let $\delta>0$ be given. Then we can choose an integer $n\geq 3$ such that $0<\frac{1}{2n+1}<\delta$. For this $n$, we find that $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}$, since we know that $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$. Since $n\geq 2$, we have $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}>\frac{1}{4}=\varepsilon$. So we found a point $x$ with $0<|x|<\delta$ and $|f^{-1}(x)|\geq \varepsilon$. Since $\delta$ was chosen arbitrarily, no $\delta$ is going to work. As such, the function $f^{-1}$ is not continuous at $f^{-1}(0)=0$, even though $f$ was continuous at $0$.
+Finally, we claim that $f^{-1}$ is not continuous at $0$. Note that $f^{-1}(0)=0$, as $f(0)=0$. Since continuity means that for each $\varepsilon>0$ there is a $\delta>0$ with a certain property, and we want to show that the function is discontinuous, we want to choose $\varepsilon>0$ such that there is no $\delta>0$ with the desired property. Here, we choose $\varepsilon=\frac{1}{4}$. We want to show that no choice of $\delta$ works, so we let $\delta>0$ be given. Then we can choose an integer $n\geq 3$ such that $0<\frac{1}{2n+1}<\delta$. For this $n$, we find that $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}$, since we know that $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$. Since $n\geq 2$, we have $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}>\frac{1}{4}=\varepsilon$. So we found a point $x$ with $0<|x|<\delta$ and $|f^{-1}(x)|\geq \varepsilon$. Since $\delta$ was chosen arbitrarily, no $\delta$ is going to work. As such, the function $f^{-1}$ is not continuous at $f^{-1}(0)=0$, even though $f$ was continuous at $0$.
 
 Hier ook nog een schets van de functie, met alle discrete waarden als gevulde stippen gehighlight en alle gaten met open stippen.
 :::
@@ -519,6 +518,10 @@ The function $f$ as an example for continuity from the right.
 
 ## Grasple exercises
 
+:::{todo}
+Grasple exercises on left- and right continuity
+:::
+
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/516eefd5-6e4d-42f0-9cf7-ea54159a3262?id=126101
@@ -600,6 +603,25 @@ The function $f$ as an example for continuity from the right.
 
 ::::
 
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e5d12e97-b986-442c-9352-e38d034d61c7?id=130757
+:label: Grasple:Continuity:leftright1
+:dropdown:
+:description: Left and right continuity
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8a96a8e7-62aa-40dc-bb17-2b3a76f579cd?id=130761
+:label: Grasple:Continuity:leftright2
+:dropdown:
+:description: Left and right continuity
+
+::::
+
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/50052d0d-a89a-4096-9d81-72c898a37d50?id=74182
@@ -641,6 +663,13 @@ The function $f$ as an example for continuity from the right.
 :description: Limit at infinity (inverse) trigonometric function
 ::::
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ed59a9d8-4ba9-4d64-a252-1314e8265571?id=130748
+:label: Grasple:Continuity:IVTroot
+:dropdown:
+:description: Location of root of polynomial
+::::
 
 ::::{grasple}
 :iframeclass: dark-light
