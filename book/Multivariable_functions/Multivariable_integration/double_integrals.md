@@ -10,11 +10,15 @@ In this section we cover:
 - General regions
 - Changing order of integration
 
+## Introduction
+
+In Chapter 5 we introduced single integrals by considering the area between the $x$-axis and the graph of a positive function. See {prf:ref}`Def:Integration:DefiniteIntegral`.
+
+In this chapter we start considering the volume between a rectangular domain in the $xy$-plane and the graph of a positive function.
+
 ## Volumes
 
-In {numref}`Sec:Integration:DefiniteIntegrals` we introduced single integrals by considering the area between the $x$-axis and the graph of a positive function. See {prf:ref}`Def:Integration:DefiniteIntegral`.
-
-Similarly, consider a function $f$ of two variables defined on a closed rectangle
+Consider a function $f$ of two variables defined on a closed rectangle
 
 $$
 R=[a,b]\times[c,d]=\{(x,y)\,|\,a\leq x\leq b,\;c\leq y\leq d\}

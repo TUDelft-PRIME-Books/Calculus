@@ -8,7 +8,7 @@ In this section we explain the relation between definite and indefinite integral
 
 In {numref}`Sec:Integration:IndefiniteIntegrals` we introduced the concept of the indefinite integral $\displaystyle \int f(x)\,dx$ of a function $f$ on an open interval $I$ and made a relation between indefinite integrals and derivatives.
 
-Such a relation als exists between definite integrals and derivatives, which is the subject of the fundamental theorem of calculus. This theorem consists of two parts.
+Such a relation also exists between definite integrals and derivatives, which is the subject of the fundamental theorem of calculus. This theorem consists of two parts.
 
 ## Part 1 of the fundamental theorem of calculus
 
@@ -29,7 +29,7 @@ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $g'(x)=f(x)$.
 :class: tudproof
 :name: Prf:Integration:FundamentalTheoremPart1
 
-Using the definition of the derivative, we obtain
+Using {prf:ref}`Def:Differentiability:Derivative`, we obtain
 
 \begin{align*}
 g'(x)&=\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\\
@@ -37,7 +37,7 @@ g'(x)&=\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x}f(t)\,dt+\int_x^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)\,dt.
 \end{align*}
-Because $f$ is continuous on $[a,b]$, we can use the third comparison test from {prf:ref}`Th:Integration:DefiniteComparison` to conclude that there exists values $c$ and $d$ between $x$ and $x+h$ such that $f(d)\leq f(x)\leq f(c)$ for all $x$ between $x$ and $x+h$ and that we have
+Because $f$ is continuous on $[a,b]$, we can use the third comparison test from {prf:ref}`Th:Integration:DefiniteComparison` to conclude that there exists values $c$ and $d$ between $x$ and $x+h$ such that $f(d)\leq f(t)\leq f(c)$ for all $t$ between $x$ and $x+h$ and that we have
 
 $$
 \int_x^{x+h}f(t)\,dt\geq\int_x^{x+h}f(d)\,dt=f(d)\cdot ((x+h)-x)=hf(d).
@@ -94,7 +94,7 @@ $$
 
 ::::::
 
-Before we do a final example for part 1 of the fundamental theorem of calculus, we note that the theorem can also be used if the upper limit of integration is $x$:
+Before we do a final example for part 1 of the fundamental theorem of calculus, we note that the theorem can also be used if the lower limit of integration is $x$:
 
 ::::{prf:theorem}
 :label: Thm:Integration:FundamentalTheoremPart1LowerLimit
@@ -153,7 +153,7 @@ Note that this even works if $x^2<x$ and if $x>0$. Now we can differentiate both
 
 ## Part 2 of the fundamental theorem of calculus
 
-Now we have finished the first part of the fundamental theorem of calculus, we can state the second part, which finally gives as a way to really calculate definite integrals:
+Now we have finished the first part of the fundamental theorem of calculus, we can state the second part, which finally gives us a way to really calculate definite integrals:
 
 ::::::{prf:Theorem} The fundamental theorem of calculus, part 2
 :label: Thm:Integration:FundamentalTheoremPart2
@@ -195,7 +195,7 @@ This means that:
 &= F(b)-F(a),
 \end{align*}
 
-which concludes the proof.
+which completes the proof.
 
 ::::::
 
@@ -350,10 +350,10 @@ Consider the integrals $\displaystyle\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx$ and $
 
 (a) Use the double-angle formula $\cos(2x)=\cos^2(x)-\sin^2(x)$ to show that both integrals are equal.
 
-(b) Use the Pythagorean identity $\cos^2(x)+\sin^2(x)=1$ to prove that
+(b) Use the {prf:ref}`Pythagorean identity <Thm:Trigonometry:UnitCircleIdentity>` $\sin^2(x)+\cos^2(x)=1$ to prove that
 
 $$
-\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\tfrac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx.
+\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\tfrac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx.
 $$
 
 ::::
@@ -370,16 +370,16 @@ $$
 
 which implies that $\displaystyle\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx$.
 
-(b) Using $\cos^2(x)+\sin^2(x)=1$ we find that
+(b) Using $\sin^2(x)+\cos^2(x)=1$ we find that
 
 $$
-\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx+\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\int_0^{\frac{1}{2}\pi}1\,dx=\tfrac{1}{2}\pi.
+\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx+\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\int_0^{\frac{1}{2}\pi}1\,dx=\tfrac{1}{2}\pi.
 $$
 
 We conclude that
 
 $$
-\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\tfrac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx.
+\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\tfrac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx.
 $$
 
 :::
