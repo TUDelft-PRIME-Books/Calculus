@@ -4,4 +4,3 @@
   - Triple integral in cylindrical coordinates as an example.
   - Triple integral in spherical coordinates as an example.
   - Add theorem on Jacobian for cylindrical and spherical coordinates.
-  - Short remark on multiple integrals with 4 or more variables.
