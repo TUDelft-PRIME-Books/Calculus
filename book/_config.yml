@@ -125,7 +125,6 @@ sphinx:
     - sphinx_apa_references                     # For APA citations
     - sphinx_visualized
     - sphinx.ext.todo
-    - teachbooks_questions
 
 bibtex_bibfiles: 
   - references.bib
