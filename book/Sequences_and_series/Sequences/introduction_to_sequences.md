@@ -434,7 +434,7 @@ $$
 \cos(n\pi)=1\quad\text{if $n$ is even or zero}\quad\text{and}\quad\cos(n\pi)=-1\quad\text{if $n$ is odd}.   
 $$
 
-This means that the terms of the sequence alternate between $1$ and $-1$, and the product of two consequtive terms is always $-1$.
+This means that the terms of the sequence alternate between $1$ and $-1$, and the product of two consecutive terms is always $-1$.
 
 So the sequence is an alternating sequence.
 ::::::
@@ -665,25 +665,70 @@ to obtain
 
 ::::
 
-::::::{admonition} Collatz sequences (bonus material)
-:class: bonus, dropdown
+## Collatz sequences
 
-Consider the **Collatz sequence** defined by $a_1=N$ and $a_{n+1}=\begin{cases}a_n/2 &\text{if }a_n \text{ is even}\\3a_n+1 &\text{if } a_n \text{ is odd.}\end{cases}$
+We end this section with a special set of sequences, which are called Collatz sequences. These sequences are defined by a simple recursive formula, but they give rise to a very difficult problem in mathematics. It is so difficult, you can even win a price if you solve it[^Bakuage].
 
-For every choice of $N\in\{1,2,3,\ldots\}$ we obtain a different sequence.
+[^Bakuage]: See [Bakuage Offers Prize of 120 Million JPY to Whoever Solves Collatz Conjecture, Math Problem Unsolved for 84 Years](https://www.prnewswire.com/news-releases/bakuage-offers-prize-of-120-million-jpy-to-whoever-solves-collatz-conjecture-math-problem-unsolved-for-84-years-301326629.html).
+
+
+::::{prf:definition} Collatz sequences
+:label: Def:SeqAndTypes:CollatzSequences
+
+A **Collatz sequence** for some number $N$ is defined by the recursive relation $a_1=N$ and
+
+$$
+a_{n+1}=\begin{cases}\dfrac{a_n}{2} &\text{if }a_n \text{ is even}\\3a_n+1 &\text{if } a_n \text{ is odd.}\end{cases}
+$$
+
+::::
 
 These *Collatz sequences* are named after the German mathematician [Lothar Collatz (1910-1990)](https://en.wikipedia.org/wiki/Lothar_Collatz).
 
-For $N=1$ we obtain: $\{1,4,2,1,4,2,1,\ldots\}$. Hence, we end up in the cycle $\{4,2,1\}$, which is clearly also the case for $N=2$ and $N=4$.
+For every choice of $N\in\{1,2,3,\ldots\}$ we obtain a different sequence, but they all seem to have the same behavior. Let's look at some examples.
 
-For $N=6$ we obtain: $\{6,3,10,5,16,8,4,2,1,4,2,1,\ldots\}$ and we end up in the same cycle, which also holds for $N=3$, $N=5$, $N=8$ and $N=10$ for instance.
+For $N=1$ we obtain:
 
-For $N=9$ we obtain: $\{9,28,14,7,22,11,32,16,8,4,2,1,4,2,1,\ldots\}$ and we end up in the same cycle, which also holds for $N=7$ for instance.
+$$
+1,4,2,1,4,2,1,\ldots
+$$
 
-This gives rise to the **Collatz conjecture**: *for every choice of $N$ we eventually end up in the cylce $\{4,2,1\}$*.
+As you can see, we end up in the cycle $\{4,2,1\}$. This means that if we encounter $1$, $4$ or $2$ anywhere in a Collatz sequence, we will end up in the cycle $\{4,2,1\}$ again. Obviously this is the case if $N=2$ and $N=4$ for instance.
+
+For $N=3$ we obtain:
+
+$$
+3,10,5,16,8,4,2,1,4,2,1,\ldots
+$$
+
+and we end up in the same cycle $\{4,2,1\}$ as for $N=1$. If you look at the sequence, you can see that we encounter $4$ at the sixth term, so we end up in the cycle $\{4,2,1\}$ from there on. This also holds for $N=5$, $N=8$, $N=10$ and $N=16$, as these are the first (reordered) terms of the sequence for $N=3$.
+
+For $N=6$ we obtain
+
+$$
+6,3,10,5,16,8,4,2,1,4,2,1
+$$
+
+and we end up in the same cycle, as the second term of the sequence is $3$.
+
+For $N=7$ we obtain:
+
+$$
+7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4,2,1\ldots
+$$
+
+and we end up in the same cycle again!
+
+This gives rise to the **Collatz conjecture**:
+
+::::{prf:conjecture} Collatz conjecture
+:label: Conj:SeqAndTypes:Collatz
+For every choice of $N\in\{1,2,3,\ldots\}$ we eventually end up in the cycle $\{4,2,1\}$.
+
+::::::
 
 This Collatz conjecture is still an open, unsolved, problem in mathematics.
-::::::
+
 
 ## Exercises
 
