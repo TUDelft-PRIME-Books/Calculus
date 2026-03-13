@@ -628,6 +628,10 @@ Two stages of the Fibonacci spiral.
 :::{figure-end}
 :::
 
+:::{todo}
+Replace {numref}`Fig:SeqAndTypes:FibonacciSpiral` with an applet or animation?
+:::
+
 It turns out, that the ratio of the side lengths of the squares approaches the golden ratio as we continue to add squares. Or in mathematical words:
 
 ::::{prf:theorem}
