@@ -94,7 +94,7 @@ The next example illustrates this theorem.
 
 ::::::{prf:Example}
 :label: Ex:Integration:DefinitePiecewise
-Consider the function $f:[0,3]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}x, & 0\leq x<1,\\2, & 1\leq x\leq 2,\\x-1, & 2<x\leq 3\end{array}\right.$.
+Consider the function $f:[0,3]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}x, & 0\leq x<1,\\2, & 1\leq x\leq 2,\\x-1, & 2<x\leq 3.\end{array}\right.$
 
 The graph of this piecewise continuous function is shown below.
 
@@ -115,7 +115,7 @@ $$
 
 ::::::
 
-Now we know how to handle the definite integral of positive piecewise-continuous functions, we are going to extend {prf:ref}`Def:Integration:DefiniteIntegral` to negative piecewise-continuous functions and after that to piecewise-continuous functions that take on both positive and negative values.
+Now we know how to handle the definite integral of a positive piecewise-continuous function, we are going to extend {prf:ref}`Def:Integration:DefiniteIntegral` to negative piecewise-continuous functions and after that to piecewise-continuous functions that take on both positive and negative values.
 
 ::::::{prf:definition}
 :label: Def:Integration:DefiniteNegative
@@ -129,7 +129,7 @@ $$
 is *minus* the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$.
 ::::::
 
-Note that this means that we assume that area is always a positive quantity. Hence, for negative piecewise-continuous functions the definite integral will be a negative number.
+Note that this means that we assume that an area is a nonnegative quantity. Hence, for negative piecewise-continuous functions the definite integral will be a negative number.
 
 But what if the function takes on both positive and negative values? Well, in that case we split the interval into several subintervals such that on each subinterval the function is either positive or negative. Then we calculate the area on each subinterval and add them together, taking into account the sign of the function on each subinterval. Or in other words: If $f$ takes on both positive and negative values the integral equals the total area above the $x$-axis minus the total area below the $x$-axis, as illustrated in the following figure.
 
@@ -166,7 +166,7 @@ We end this subsection with an example.
 ::::::{prf:example}
 :label: Ex:Integration:DefiniteBoth
 
-Consider the function $f:[-2,5]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}1, &-2\leq x<0\\2x-4, & 0\leq x<2,\\-x+4, & 2\leq x\leq 5\end{array}\right.$, of which you can find the graph below.
+Consider the function $f:[-2,5]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}1, &-2\leq x<0\\2x-4, & 0\leq x<2,\\-x+4, & 2\leq x\leq 5,\end{array}\right.$ of which you can find the graph below.
 
 ```{figure} Images/Fig-Integration-DefiniteBoth.png
 ---
@@ -181,8 +181,9 @@ The graph of a piecewise continuous function that takes on both positive and neg
 The integral $\displaystyle\int_{-2}^5f(x)\,dx$ can be calculated as follows:
 
 \begin{align*}
-\int_{-2}^{5}f(x)\,dx &= \int_{-2}^{0}1\,dx+\int_{0}^{2}2x-4\,dx+\int_{2}^{5}(-x+4)\,dx\\
-&= \int_{-2}^{0}1\,dx+\int_{0}^{2}2x-4\,dx+\int_{2}^{5}(-x+4)\,dx+\int_{4}^{5}(-x+4)\,dx \\
+\int_{-2}^{5}f(x)\,dx &= \int_{-2}^{0}1\,dx+\int_{0}^{2}(2x-4)\,dx+\int_{2}^{5}(-x+4)\,dx\\
+&= \int_{-2}^{0}1\,dx+\int_{0}^{2}(2x-4)\,dx\\
+&{}\quad{}+\int_{2}^{4}(-x+4)\,dx+\int_{4}^{5}(-x+4)\,dx \\
 &= 2 \cdot 1-\frac12\cdot2\cdot4+\frac12\cdot2\cdot2-\frac12\cdot1\cdot1 \\
 &= 2 - 4 + 2 - \frac12 \\
 &= \frac12.
@@ -256,7 +257,7 @@ $$
 
 :::::
 
-If we let the number of subintervals $n$ go to infinity, the width of each subinterval $\Delta x$ goes to zero and the Riemann sum approaches the exact area between the graph of the function and the $x$-axis. This leads us to the following theorem for the definite integral in terms of Riemann sums.
+If we let the number of subintervals $n$ go to infinity, the width of each subinterval $\Delta x$ tends to zero and the Riemann sum approaches the exact area between the graph of the function and the $x$-axis. This leads us to the following theorem for the definite integral in terms of Riemann sums.
 
 ::::::{prf:theorem}
 :label: Thm:Integration:DefiniteRiemann
@@ -278,7 +279,7 @@ We have chosen to divide the interval $[a,b]$ into $n$ subintervals of *equal wi
 
 The integral sign $\displaystyle\int$ was introduced by the German mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) and has the form of an elongated (stretched) $S$ which indicates the *limit* of (Riemann) sums.
 
-Because the limit of the Riemann sums might not always exist, we introduce the term **integrable** to indicate that the integral exists:
+Because the limit of the Riemann sums might not exist, we introduce the term **integrable** to indicate that the integral exists:
 
 ::::{prf:definition}
 :label: Def:Integration:Integrable
@@ -321,7 +322,7 @@ $$
 \lim_{n\rightarrow\infty}R=\lim_{n\rightarrow\infty}\frac{2n^2+3n+1}{6n^2}=\frac{2}{6}=\frac{1}{3}.
 $$
 
-Because the limit of the Riemann sums exists, we conclude that our function $f$ is integrable on the interval $[0,1]$ and that
+Because the limit of the Riemann sums exists, we conclude that the function $f$ is integrable on the interval $[0,1]$ and that
 
 $$
 \int_0^1x^2\,dx=\frac{1}{3}.
@@ -329,7 +330,7 @@ $$
 
 ::::::
 
-Calculating definite integrals using Riemann sums can be quite laborious. In the next sections we will see other techniques to calculate definite integrals more easily. But first we state some important properties of definite integrals.
+Calculating definite integrals using Riemann sums can be quite laborious. In the next sections we will see other techniques to evaluate definite integrals more easily. But first we state some important properties of definite integrals.
 
 ## Properties of definite integrals
 
@@ -355,7 +356,7 @@ The above theorem can be shown by considering the areas involved according to {p
 ::::::{prf:Example}
 :label: Ex:Integration:DefiniteOdd
 
-The sine function $\sin(x)$ is an odd function on the interval $\left[-\frac{1}{2}\pi,\frac{1}{2}\pi\right]$, as shown below.
+The sine function $\sin(x)$ is an odd function on the interval $\left[-\frac{1}{2}\pi,\frac{1}{2}\pi\right]$, of which the graph is shown below.
 
 ```{figure} Images/sine_odd.png
 ---
@@ -366,7 +367,7 @@ align: center
 The graph of the sine function.
 ```
 
-Inspection of the graph shows that the area below the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. But because the area below the $x$-axis is taken with a negative sign in {prf:ref}`Def:Integration:DefiniteGeneral`, these two areas cancel each other out, and we find
+Inspection of the graph shows that the area below the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Since the area below the $x$-axis is taken with a negative sign in {prf:ref}`Def:Integration:DefiniteGeneral`, these two areas cancel, and we find
 
 $$
 \int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin(x)\,dx=0.
@@ -377,7 +378,7 @@ $$
 ::::::{prf:Example}
 :label: Ex:Integration:DefiniteEven
 
-The absolute value function $|x|$ is an even function on the interval $\left[-1,1\right]$, as shown below.
+The absolute value function $|x|$ is an even function on the interval $\left[-1,1\right]$ with graph shown below.
 
 ```{figure} Images/absolute.png
 ---
@@ -411,7 +412,7 @@ $$
 
 A rigorous proof of this theorem can be given using Riemann sums, but we will not give it here. You can however convince yourself that this is true by considering the definition of the definite integral in {prf:ref}`Def:Integration:DefiniteGeneral`. If you would draw the graph of the function $f$ and shade the area between the graph and the $x$-axis between $a$ and $b$, you would see that the area does not depend on the name of the variable of integration.
 
-Finally, we state some more properties of definite integrals. Proving these properties requires something called the *Fundamental theorem of calculus*, which we will introduce in {numref}`Sec:Integration:FundamentalTheorem`. For now, we just state the properties.
+Finally, we state some more properties of definite integrals. Proving these properties requires something called the *fundamental theorem of calculus*, which we will introduce in {numref}`Sec:Integration:FundamentalTheorem`. For now, we just state the properties.
 
 ::::{prf:theorem}
 :label: Th:Integration:DefinitePropertiesFundamental
@@ -440,7 +441,7 @@ Finally, we state some important comparison properties of definite integrals. Th
 ::::::{prf:Example}
 :label: Ex:Integration:DefiniteApproximation
 
-In order to find estimate the value of $\displaystyle\int_0^1e^{-x^2}\,dx$, we note that the integrand $f(x)=e^{-x^2}$ is a decreasing function on $[0,1]$. Its absolute maximum value is $M=f(0)=1$ and its absolute minimum value is $m=f(1)=e^{-1}$. Hence we have
+In order to estimate the value of $\displaystyle\int_0^1e^{-x^2}\,dx$, we note that the integrand $f(x)=e^{-x^2}$ is a decreasing function on $[0,1]$. Its absolute maximum value is $M=f(0)=1$ and its absolute minimum value is $m=f(1)=e^{-1}$. Hence we have
 
 $$
 e^{-1}=e^{-1}(1-0)\leq\int_0^1e^{-x^2}\,dx\leq1(1-0)=1.
@@ -490,16 +491,19 @@ The speed $v$ at which the athlete is moving during the interval training. On th
 In order to get the correct units, we change the minutes into hours ($5$ minutes is $\frac{1}{12}$ hour for instance) and add the five different areas:
 
 $$
-\int_{0}^{\frac1{3}}v(t)\,dt = \tfrac{1}{12}\cdot5+\tfrac{1}{30}\cdot15+\tfrac{1}{15}\cdot5+\tfrac{1}{20}\cdot20+\tfrac{1}{15}\cdot6=\tfrac{25+30+20+60+24}{60}=\tfrac{159}{60}.
+\begin{align*}
+\int_{0}^{\frac1{3}}v(t)\,dt &= \tfrac{1}{12}\cdot5+\tfrac{1}{30}\cdot15+\tfrac{1}{15}\cdot5+\tfrac{1}{20}\cdot20+\tfrac{1}{15}\cdot6\\
+&=\tfrac{25+30+20+60+24}{60}=\tfrac{159}{60}.
+\end{align*}
 $$
 
 This means that the athlete has traveled a distance of $\frac{159}{60}$ km $\approx2.65$ km during her interval training.
 
-We could also have changed the speed into meters per second and the time into seconds. Then the definite integral would have given the same distance, but now measured in meters.
+We could also have changed the speed into meters per second and the time into seconds. Then the definite integral would have given the same distance measured in meters.
 
 ::::::
 
-Note that speed in general cannot change suddenly. In fact, velocity should be a continuous function. Then the distance equals the area between the graph of the velocity and the horizontal axis. Before you learn how to calculate this area exactly, we need to discuss another type of integral in {numref}`Sec:Integration:IndefiniteIntegrals`.
+Note that speed in general cannot change suddenly. In fact, the velocity should be a continuous function. Then the distance equals the area between the graph of the velocity and the horizontal axis. Before you learn how to calculate this area exactly, we need to discuss another type of integral in {numref}`Sec:Integration:IndefiniteIntegrals`.
 
 To conclude this section, we give a general theorem about the unit of definite integral.
 

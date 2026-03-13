@@ -67,7 +67,7 @@ In astronomy and celestial navigation also so-called *hour angles* are used. The
 :::
 
 :::{todo}
-Maybe we should leave out the [above](#Note:Trigonometry:HourAngles) and [below](#Note:Trigonometry:Gradians)...
+Add a reference to the section on triple integrals in spherical coordinates. 
 :::
 
 :::{note}
@@ -269,13 +269,9 @@ An illustration for Thales's theorem.
 ```
 :::{todo}
 Convert {numref}`Fig:Trigonometry:Thales` into an applet.
-:::
-
-::::{prf:remark}
-:label: Rem:Trigonometry:ThalesInteractive
 
 Ideally, an image with a rotatable line segment $AB$ through the centre and a freely movable point $C$ on one side (the top) along the circle between $A$ and $B$.
-::::
+:::
 
 In {numref}`Fig:Trigonometry:Thales` you might notice that the angle $\angle ACB$ looks like a right angle. Thales's theorem states that this is indeed the case:
 

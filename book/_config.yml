@@ -25,9 +25,8 @@ html:
 sphinx:
   local_extensions:
     text_replacer: _ext/
-    # check_captions: _ext/
-    # image_checker: _ext/
-    teachbooks_questions: _ext/
+    check_captions: _ext/
+    image_checker: _ext/
     numref_section: _ext/
   config:
     tippy_skip_urls:
