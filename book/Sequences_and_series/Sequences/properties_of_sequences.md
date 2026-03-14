@@ -32,6 +32,8 @@ The first 10 terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plott
 
 :::{todo}
 Make an applet from {numref}`Fig:PropertiesOfSequences:Introduction` that allows the user to change the number of terms plotted and to zoom in and out.
+
+The applet should have a parameter in the url to set the initial number of terms shown.
 :::
 
 As you can see, the terms of the sequence $\{a_n\}$ seem to keep going up, the terms of the sequence $\{b_n\}$ seem to keep going down, but are staying above zero,  and the terms of the sequence $\{c_n\}$ seem the switch between two values. These observations can also be described using some terminology, which we will define next:
@@ -254,6 +256,12 @@ $$
 The first 10 terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above, including the three functions $f$, $g$ and $h$ associated with these sequences.
 ```
 
+:::{todo}
+Make an applet from {numref}`Fig:PropertiesOfSequences:Functions` that allows the user to change the number of terms plotted and to zoom in and out.
+
+The applet should have a parameter in the url to set the initial number of terms shown.
+:::
+
 As you can see, the function $f$, just like the sequence $\{a_n\}$, is increasing. Even better, the function $g$ is decreasing, similar to how the sequence $\{b_n\}$ is decreasing. Finally, the non-monotonic nature of the sequence $\{c_n\}$ is also reflected in the function $h$.
 
 This relation between sequences and functions can be formalised in the next theorem:
@@ -284,11 +292,15 @@ We show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is 
 ```{figure} Images/sequence1.png
 ---
 width: 50%
-name: increasing sequence
+name: Fig:Sequences:IncreasingExample1Function
 align: center
 ---
 The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
 ```
+
+:::{todo}
+Replace {numref}`Fig:Sequences:IncreasingExample1Function` by an applet.
+:::
 
 Note that $a_n=f(n)$ if we (simply) choose $f(x)=\dfrac{x}{x+1}$. Now we have
 
@@ -306,11 +318,16 @@ We show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ 
 ```{figure} Images/sequence2.png
 ---
 width: 50%
-name: decreasing sequence
+name: Fig:Sequences:IncreasingExample2Function
 align: center
 ---
 The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{2x}{x^2+1}$.
 ```
+
+:::{todo}
+Replace {numref}`Fig:Sequences:IncreasingExample2Function` by an applet.
+:::
+
 
 Note that $a_n=f(n)$ if $f(x)=\dfrac{2x}{x^2+1}$. Then we have
 
@@ -408,11 +425,11 @@ $$
 This shows that $a_n>a_{n+1}$ for all $n=1,2,3,\ldots$.
 ::::::
 
-Even if a sequence is increasing or decreasing, this does not mean that a sequence will always attain a very positive or a very negative value. This concept is called the boundnessnes of sequences, which we will discuss next. 
+Even if a sequence is increasing or decreasing, this does not mean that a sequence will always attain a very positive or a very negative value. This concept is called the boundedness of sequences, which we will discuss next. 
 
 ## Bounded sequences
 
-Again we consider the same sequence as before:
+Again we consider the same sequences as before:
 
 $$
 \begin{array}{rcl}
@@ -430,41 +447,81 @@ $$
 The first 50 terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above.
 ```
 
-::::::{prf:definition}
+:::{todo}
+Make an applet from {numref}`Fig:PropertiesOfSequences:Bounds` that allows the user to change the number of terms plotted and to zoom in and out.
+
+The applet should have a parameter in the url to set the initial number of terms shown.
+:::
+
+In this figure, you can clearly see that the first sequence keeps on increasing and does not seem to stop. The other two sequences do stay within some bounds. Let us formalise these observations:
+
+:::{prf:definition}
 :label: Def:Sequences:Bounded
-A sequence $\{a_n\}_{n=1}^{\infty}$ is called **bounded above** if there exists a number $M$ such that $a_n\leq M$ for all $n\geq1$.
 
-It is called **bounded below** if there exists a number $m$ such that $m\leq a_n$ for all $n\geq1$.
+We define the follow affirming terms:
 
-A sequence is called **bounded** if it is both *bounded above* and *bounded below*.
+- A sequence $\{a_n\}_{n=p}^{\infty}$ is called **bounded above** if there exists a number $M$ such that $a_n\leq M$ for all $n\geq p$.
+
+- A sequence $\{a_n\}_{n=p}^{\infty}$ is called **bounded below** if there exists a number $m$ such that $m\leq a_n$ for all $n\geq p$.
+
+- A sequence is called **bounded** if it is *both bounded above and bounded below*.
+
+We define the follow invalidating terms:
+
+- A sequence is called **unbounded above** if it is *not bounded above*.
+
+- A sequence is called **unbounded below** if it is *not bounded below*.
+
+- A sequence is called **unbounded** if it is *either unbounded below or unbounded below*.
+
 ::::::
 
+For several of the common types of sequences of {numref}`Sec:SeqAndTypes:Types` we can easily determine whether they are bounded above, bounded below or both.
+
+::::{prf:theorem}
+:label: Thm:PropertiesOfSequences:CommonTypes
+
+- An *arithmetic sequence* with a positive common difference is bounded below by the first term, but not bounded above.
+
+- An *arithmetic sequence* with a negative common difference is bounded above by the first term, but not bounded below.
+
+- A *geometric sequence* is bounded if the common ratio $r$ satisfies $|r|\leq 1$.
+
+- A *geometric sequence* is neither bounded above nor bounded below if the common ratio $r$ satisfies $|r|>1$.
+::::
+
+The next example gives some quick examples of sequences and their bounds.
+
 ::::::{prf:example}
-1) The sequence $1,2,3,4,5,\ldots$ of positive integers is *bounded below* with $m\leq1$.
+1) The sequence $1,2,3,4,5,\ldots$ of positive integers is *bounded below* with $m\leq1$ and *unbounded above*, making it also *unbounded*.
 
-2) The geometric sequence $1,\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{!}{16},\ldots$ is *bounded above* with $M\geq1$.
+2) The geometric sequence $1,\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16},\ldots$ is *bounded above* with $M\geq1$ and *bounded below* with $m=0$, making it *bounded*.
 
-3) The arithmetic sequence $5,3,1,-1,-3,\ldots$ is *bounded above* with $M\geq5$.
+3) The arithmetic sequence $5,3,1,-1,-3,\ldots$ is *bounded above* with $M\geq5$ and *unbounded below*, making it *unbounded* too.
 
-4) The arithmetic sequence $1,3,5,7,9,\ldots$ is *bounded below* with $m\leq1$.
+4) The arithmetic sequence $1,3,5,7,9,\ldots$ is *bounded below* with $m\leq1$ and *unbounded above*, which makes another *unbounded* sequence.
 
 5) The harmonic sequence $1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\frac{1}{5},\ldots$ is *bounded* with $M\geq1$ and $m\leq0$.
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:BoundedExample1
-Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is bounded.
+We investigate wether the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ has bounds.
 
 ```{figure} Images/sequence1.png
 ---
 width: 50%
-name: increasing sequence
+name: Fig:Sequences:BoundedExample1
 align: center
 ---
-The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{x}{x+1}$
+The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
 ```
 
-Solution. Note that $a_n=f(n)$ with $f(x)=\dfrac{x}{x+1}$. Now we have
+:::{todo}
+Replace {numref}`Fig:Sequences:BoundedExample1` by an applet.
+:::
+
+Note that $a_n=f(n)$ with $f(x)=\dfrac{x}{x+1}$. Now we have
 
 $$
 f'(x)=\frac{x+1-x}{(x+1)^2}=\frac{1}{(x+1)^2}>0.
@@ -475,22 +532,27 @@ This implies that $f$ is increasing. Further we have $f(1)=\frac{1}{2}$ and $\li
 Hence, we have $\frac{1}{2}\leq f(x)<1$ for $x\geq1$.
 
 This implies that the sequence is bounded with $M\geq1$ and $m\leq\frac{1}{2}$.
+
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:BoundedExample2
-Show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ is bounded.
+Now consider the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ and it's bounds.
 
 ```{figure} Images/sequence2.png
 ---
 width: 50%
-name: decreasing sequence
+name: Fig:Sequences:BoundedExample2
 align: center
 ---
-The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{2x}{x^2+1}$
+The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{2x}{x^2+1}$.
 ```
 
-Solution. Note that $a_n=f(n)$ with $f(x)=\dfrac{2x}{x^2+1}$. Then we have
+:::{todo}
+Replace {numref}`Fig:Sequences:BoundedExample2` by an applet.
+:::
+
+Again we turn to a function $f$. In this case we choose $f(x)=\dfrac{2x}{x^2+1}$ so that $f(n)=a_n$ as required. Then we have
 
 $$
 f'(x)=\frac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}=\frac{2(1-x^2)}{(x^2+1)^2},
@@ -507,91 +569,40 @@ This implies that the sequence is bounded with $M\geq1$ and $m\leq0$.
 :label: Ex:Sequences:BoundedExample3
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
 
-Show that the sequence bounded above.
+We show that the sequence is bounded above.
 
-Solution. We want to prove that $a_n<10$ (for instance) for all $n=1,2,3,\ldots$.
+We want to prove that $a_n<M$ for some number $M$ for all $n=1,2,3,\ldots$. Let's take $M=10$ and use the principle of mathematical induction to show that $a_n<10$ for $n\geq 1$.
 
-We use the principle of mathematical induction.
+For $n=1$ we have $a_1=1$, which definitely satisfies $a_1<10$.
 
-For $n=1$ we have $a_1=1<10$.
-
-Suppose that $a_k<10$ for certain value of $k$, then we have
+Now suppose that $a_k<10$ for certain value of $k\geq 1$, then we have
 
 $$
-a_{k+1}=\frac{1}{2}(a_k+5)<\frac{1}{2}(10+5)<10.
+a_{k+1}=\frac{1}{2}(a_k+5)<\frac{1}{2}(10+5)=\frac{15}{2}<10.
 $$
 
 This shows that $a_n<10$ for all $n=1,2,3,\ldots$.
+
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:BoundedExample4
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=10$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
 
-Show that the sequence is bounded below.
+Now we show that the sequence is bounded below.
 
-Solution. We want to prove that $a_n>0$ (for instance) for all $n=1,2,3,\ldots$.
-
-We use the principle of mathematical induction.
+Again we use the principle of mathematical induction to show that $a_n>0$ for all $n=1,2,3,\ldots$.
 
 For $n=1$ we have $a_1=10>0$.
 
-Suppose that $a_k>0$ for certain value of $k$, then we have
+Suppose that $a_k>0$ for certain value of $k\geq1$, then we have
 
 $$
-a_{k+1}=\sqrt{a_k+6}>\sqrt{0+6}>0.
+a_{k+1}=\sqrt{a_k+6}>\sqrt{0+6}=\sqrt{6}>0.
 $$
 
 This shows that $a_n>0$ for all $n=1,2,3,\ldots$.
 ::::::
-
-::::{exercise}
-:label: Exc:Sequences:PropertiesExercise3
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=7$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
-
-Show that the sequence is bounded below.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Sequences:PropertiesExercise3`
-:class: solution, dropdown
-We want to prove that $a_n>1$ (for instance) for all $n=1,2,3,\ldots$.
-
-We use the principle of mathematical induction.
-
-For $n=1$ we have $a_1=7>1$.
-
-Suppose that $a_k>1$ for certain value of $k$, then we have
-
-$$
-a_{k+1}=\frac{1}{2}(a_k+5)>\frac{1}{2}(1+5)>1.
-$$
-
-This shows that $a_n>1$ for all $n=1,2,3,\ldots$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:PropertiesExercise4
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=2$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
-
-Show that the sequence is bounded above.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Sequences:PropertiesExercise4`
-:class: solution, dropdown
-We want to prove that $a_n<10$ (for instance) for all $n=1,2,3,\ldots$.
-
-We use the principle of mathematical induction.
-
-For $n=1$ we have $a_1=2<10$.
-
-Suppose that $a_k<10$ for certain value of $k$, then we have
-
-$$
-a_{k+1}=\sqrt{a_k+6}<\sqrt{10+6}<10.
-$$
-
-This shows that $a_n<10$ for all $n=1,2,3,\ldots$.
-:::
 
 ## Exercises
 
@@ -641,4 +652,52 @@ a_{k+1}=\sqrt{a_k+6}<\sqrt{a_{k+1}+6}=a_{k+2}.
 $$
 
 This shows that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$.
+:::
+
+::::{exercise}
+:label: Exc:Sequences:PropertiesExercise3
+Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=7$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
+
+Show that the sequence is bounded below.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Sequences:PropertiesExercise3`
+:class: solution, dropdown
+We want to prove that $a_n>1$ (for instance) for all $n=1,2,3,\ldots$.
+
+We use the principle of mathematical induction.
+
+For $n=1$ we have $a_1=7>1$.
+
+Suppose that $a_k>1$ for certain value of $k$, then we have
+
+$$
+a_{k+1}=\frac{1}{2}(a_k+5)>\frac{1}{2}(1+5)>1.
+$$
+
+This shows that $a_n>1$ for all $n=1,2,3,\ldots$.
+:::
+
+::::{exercise}
+:label: Exc:Sequences:PropertiesExercise4
+Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=2$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
+
+Show that the sequence is bounded above.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Sequences:PropertiesExercise4`
+:class: solution, dropdown
+We want to prove that $a_n<10$ (for instance) for all $n=1,2,3,\ldots$.
+
+We use the principle of mathematical induction.
+
+For $n=1$ we have $a_1=2<10$.
+
+Suppose that $a_k<10$ for certain value of $k$, then we have
+
+$$
+a_{k+1}=\sqrt{a_k+6}<\sqrt{10+6}<10.
+$$
+
+This shows that $a_n<10$ for all $n=1,2,3,\ldots$.
 :::
