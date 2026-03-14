@@ -171,31 +171,7 @@ $$
 
 ::::
 
-Before we give some types of common sequences, we will introduce the concept of mathematical induction, which is a powerful tool to prove statements for all integers larger than or equal to an initial integer.
-
-## Mathematical Induction
-
-::::::{prf:theorem} Mathematical induction
-:label: Thm:SeqAndTypes:MathInduction
-
-Let $S_n$ be a statement for all integers $n$ larger than or equal to $p$.
-
-If 
-
-1) $S_p$ is true,
-
-and
-
-2) $S_{k+1}$ is true whenever $S_k$ is true for a $k\leq p$,
-
-then $S_n$ is true for all integers $n\geq p$.
-
-::::::
-
-::::::{note}
-This procedure describes the *domino effect*. Since $S_p$ is true, the second condition with $k=p$ implies that $S_{p+1}$ is true as well. Then, using the second condition with $k=p+1$ we conclude that $S_{p+2}$ is true. Again, using the second condition with $k=p+2$, we conclude that $S_{p+3}$ is true. This procedure can be followed indefinitely.
-::::::
-
+(Sec:SeqAndTypes:Types)=
 ## Types of common sequences
 
 We start with an easy type of sequence, which is the arithmetic sequence.
@@ -468,6 +444,7 @@ $$
 Similar as in the previous example we can show that the product of two consecutive terms is negative for all integers $n\geq1$ to conclude that the sequence is an alternating sequence.
 ::::::
 
+(Sec:SeqAndTypes:Fibonacci)=
 ## The Fibonacci sequence
 
 On of the most famous sequences is the Fibonacci sequence.
