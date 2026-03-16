@@ -547,12 +547,12 @@ $$
 
 which gives that $c_1=\displaystyle\frac{1}{\sqrt{5}}$ and $c_2=-\displaystyle\frac{1}{\sqrt{5}}$.
 
-This means we have
+This means we have for $n=0,1,2,\ldots$ that
 
 \begin{align*}
 F_n&=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n\\
-&=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}},\quad n=0,1,2,\ldots.
-&= \frac{\varphi^n-(1-\varphi)^n}{\sqrt{5}}\quad\text{for}\quad n=0,1,2,\ldots.
+&=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}} \\
+&= \frac{\varphi^n-(1-\varphi)^n}{\sqrt{5}}
 \end{align*}
 
 with

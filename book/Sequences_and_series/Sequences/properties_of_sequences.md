@@ -1,11 +1,6 @@
 (Sec:PropertiesOfSequences)=
 # Properties of sequences
 
-In this section we cover:
-
-- Increasing and decreasing sequences (incl. monotonic sequences)
-- Sequences that are bounded above and/or below
-
 ## Introduction
 
 In the previous section we have seen that a sequence is an ordered list of numbers. We have also seen that there are many different types of sequences, such as arithmetic, geometric, harmonic and alternating sequences. These sequences have different properties, such as being increasing or decreasing, being bounded above or below, and so on. In this section we will study these properties in more detail.
@@ -26,6 +21,7 @@ Although these sequences are all infinite, we can graph several of their terms t
 
 ```{figure} Images/Fig-PropertiesOfSequences-Introduction.png
 :name: Fig:PropertiesOfSequences:Introduction
+:class: dark-light
 
 The first 10 terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above.
 ```
@@ -143,7 +139,7 @@ We must conclude that the sequence $\{c_n\}$ is *non-monotonic*, as it is neithe
 For several of the common types of sequences of {numref}`Sec:SeqAndTypes:Types` we can easily determine whether they are increasing, decreasing or non-monotonic:
 
 ::::{prf:theorem}
-:label: Thm:PropertiesOfSequences:CommonTypes
+:label: Thm:PropertiesOfSequences:CommonTypesBehaviour
 
 - An *arithmetic* sequence is *increasing* if the common difference $d$ is *positive*, and *decreasing* if the common difference $d$ is *negative*.
 
@@ -196,12 +192,12 @@ To investigate this, we consider the ratio between two consecutive terms:
 If this sequence would be ultimately decreasing, then we should be able to find an integer $N\geq 1$ such $\dfrac{1}{2}\cdot\dfrac{(n+1)^2}{n^2}<1$ for all $n\geq N$. We will solve this inequality to find such an integer $N$:
 
 \begin{align*}
-&~ & \dfrac{1}{2}\cdot\dfrac{(n+1)^2}{n^2} < & 1  \\
-&\Rightarrow & \dfrac{(n+1)^2}{n^2} < & 2 \\
-&\Rightarrow & (n+1)^2 < & 2n^2 \\
-&\Rightarrow & n^2 + 2n + 1 < & 2n^2 \\
-&\Rightarrow & 2n + 1 < & n^2 \\
-&\Rightarrow & 0 < & n^2 - 2n - 1.
+&~ & \dfrac{1}{2}\cdot\dfrac{(n+1)^2}{n^2} &< 1  \\
+&\Rightarrow & \dfrac{(n+1)^2}{n^2} &< 2 \\
+&\Rightarrow & (n+1)^2 &< 2n^2 \\
+&\Rightarrow & n^2 + 2n + 1 &< 2n^2 \\
+&\Rightarrow & 2n + 1 &< n^2 \\
+&\Rightarrow & 0 &< n^2 - 2n - 1.
 \end{align*}
 
 The quadratic expression on the right of the last equality would be zero if $n=1-\sqrt{2}\approx -0.414<0$ or if $n=1+\sqrt{2}\approx 2.414>0$. Since $n$ is a positive integer, we conclude that $n^2 - 2n - 1>0$ for all $n\geq3$. Hence, we have $\dfrac{1}{2}\cdot\dfrac{(n+1)^2}{n^2}<1$ for all $n\geq3$.
@@ -217,12 +213,14 @@ We will show that $\dfrac{2n}{n^2+1}>\dfrac{2(n+1)}{(n+1)^2+1}$ for all $n=1,2,3
 
 Note that
 
-\begin{align*}
-\frac{2n}{n^2+1}>\frac{2n+2}{n^2+2n+2}&\quad\Longleftrightarrow\quad2n(n^2+2n+2)>(2n+2)(n^2+1)\\
-&\quad\Longleftrightarrow\quad2n^3+4n^2+4n>2n^3+2n^2+2n+2\\
-&\quad\Longleftrightarrow\quad2n^2+2n>2\\
-&\quad\Longleftrightarrow\quad n(n+1)>1.
-\end{align*}
+$$
+\begin{array}{rclcrcl}
+\frac{2n}{n^2+1} & > & \frac{2n+2}{n^2+2n+2} & \Longleftrightarrow & 2n(n^2+2n+2) & > & (2n+2)(n^2+1)\\
+&&& \Longleftrightarrow & 2n^3+4n^2+4n & > & 2n^3+2n^2+2n+2\\
+&&& \Longleftrightarrow & 2n^2+2n & > & 2\\
+&&& \Longleftrightarrow & n(n+1) & > & 1.
+\end{array}
+$$
 
 This is true for $n\geq1$, so the sequence is *increasing*.
 
@@ -252,6 +250,7 @@ $$
 
 ```{figure} Images/Fig-PropertiesOfSequences-Functions.png
 :name: Fig:PropertiesOfSequences:Functions
+:class: dark-light
 
 The first 10 terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above, including the three functions $f$, $g$ and $h$ associated with these sequences.
 ```
@@ -283,7 +282,12 @@ Let $\{a_n\}_{p}^{\infty}$ be a sequence and $f:\mathbb{R}\rightarrow\mathbb{R}$
 
 ::::
 
+::::{warning}
+:name: Warn:PropertiesOfSequences:Functions
+
 Note that this theorem only states a relation between the affirmative properties of functions and sequences. For the invalidating properties of {prf:ref}`Def:PropertiesOfSequences:Invalidating` no such theorem exists.
+
+::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:IncreasingExample1Function
@@ -320,6 +324,7 @@ We show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ 
 width: 50%
 name: Fig:Sequences:IncreasingExample2Function
 align: center
+class: dark-light
 ---
 The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{2x}{x^2+1}$.
 ```
@@ -358,7 +363,7 @@ $$
 
 Because we start with two positive numbers, and keep adding these positive numbers, every term in the Fibonacci sequence will be positive. But this means that two consecutive terms will have a positive difference number as soon as we are allowed to use the recursive formula.
 
-This is the case if $n\geq1$, and indeed we see that $F_3-F_2 = 2 - 1 = 1 > 0$. Thsi results in the conclusion that $F_2<F_3$, $F_3<F_4$ and so on. In conclusion we can say that the Fibonacci sequence is *ultimately increasing*.
+This is the case if $n\geq1$, and indeed we see that $F_3-F_2 = 2 - 1 = 1 > 0$. This results in the conclusion that $F_2<F_3$, $F_3<F_4$ and so on. In conclusion we can say that the Fibonacci sequence is *ultimately increasing*.
 
 ::::::
 
@@ -393,9 +398,9 @@ We will apply the principle of mathematical induction to show that the sequence 
 
 To do that, we first need to reformulate what we want to show. Using {prf:ref}`Thm:PropertiesOfSequences:Affirming`, we see that we must show that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$. So our statement $S_n$ is $a_n<a_{n+1}$.
 
-First, consider $n=1$ (because $p=1$ for this sequence). So statement $S_1$ is $a_1<a_2$. Because we have $a_1=1$ and $a_2=3$, we also have $a_2-a_1=3-2=1$ and therefor $a_1<a_2$. This means our first statement $S_1$ is true.
+First, consider $n=1$ (because $p=1$ for this sequence). So statement $S_1$ is $a_1<a_2$. Because we have $a_1=1$ and $a_2=3$, we also have $a_2-a_1=3-2=1$ and therefore $a_1<a_2$. This means our first statement $S_1$ is true.
 
-Second, assume that the stamtent $S_k$ given by $a_k<a_{k+1}$ is true for a $k\geq 1$. Then we must show that the statement $S_{k+1}$ given by $a_{k+1}<a_{k+2}$ is also true, which we will do next:
+Second, assume that the statement $S_k$ given by $a_k<a_{k+1}$ is true for a $k\geq 1$. Then we must show that the statement $S_{k+1}$ given by $a_{k+1}<a_{k+2}$ is also true, which we will do next:
 
 $$
 a_{k+1}=\frac{1}{2}(a_k+5)<\frac{1}{2}(a_{k+1}+5)=a_{k+2}.
@@ -443,6 +448,7 @@ $$
 
 ```{figure} Images/Fig-PropertiesOfSequences-Bounds.png
 :name: Fig:PropertiesOfSequences:Bounds
+:class: dark-light
 
 The first 50 terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above.
 ```
@@ -479,7 +485,7 @@ We define the follow invalidating terms:
 For several of the common types of sequences of {numref}`Sec:SeqAndTypes:Types` we can easily determine whether they are bounded above, bounded below or both.
 
 ::::{prf:theorem}
-:label: Thm:PropertiesOfSequences:CommonTypes
+:label: Thm:PropertiesOfSequences:CommonTypesBounds
 
 - An *arithmetic sequence* with a positive common difference is bounded below by the first term, but not bounded above.
 
@@ -513,6 +519,7 @@ We investigate wether the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{
 width: 50%
 name: Fig:Sequences:BoundedExample1
 align: center
+class: dark-light
 ---
 The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
 ```
@@ -544,6 +551,7 @@ Now consider the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ 
 width: 50%
 name: Fig:Sequences:BoundedExample2
 align: center
+class: dark-light
 ---
 The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{2x}{x^2+1}$.
 ```
