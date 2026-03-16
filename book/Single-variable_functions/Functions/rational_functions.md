@@ -412,9 +412,10 @@ Let $k$ be any integer such that $1\leq k \leq n$. We will show that the constan
 
 We multiply Equation {eq}`Eq:RationalFunctions:ToShow` by $x-b_k$, to obtain
 
-$$
-\frac{A_1(x-b_k)}{x-b_1} + \ldots + \frac{A_{k-1}(x-b_k)}{x-b_{k-1}} + A_k + \frac{A_{k+1}(x-b_k)}{x-b_{k+1}} \cdots + \frac{A_n}{x-b_n} = \frac{p(x)}{a_n(x-b_1)(x-b_2)\cdots(x-b_{k-1})(x-b_{k+1})\cdots(x-b_n)}.
-$$
+\begin{align*}
+\frac{A_1(x-b_k)}{x-b_1} &+ \ldots + \frac{A_{k-1}(x-b_k)}{x-b_{k-1}} + A_k + \frac{A_{k+1}(x-b_k)}{x-b_{k+1}} \cdots + \frac{A_n}{x-b_n} \\
+&= \frac{p(x)}{a_n(x-b_1)(x-b_2)\cdots(x-b_{k-1})(x-b_{k+1})\cdots(x-b_n)}.
+\end{align*}
 
 Note that we have canceled the common factor $x-b_k$ on both sides of the equation. Now we substitute $x=b_k$ in the above expression to obtain
 
@@ -528,9 +529,6 @@ Solving this system again results in $A_1=-1$, $A_2=4$ and $A_3=-3$.
 The method in {prf:ref}`Rmk:RationalFunctions:DistinctLinearFactors` only works when the denominator can be factored into distinct linear factors over the real numbers. In other cases you will have to solve the system of equations obtained by comparing coefficients.
 ::::
 
-
-## Irreducible quadratics
-
 To avoid complex numbers in partial fraction decomposition, we will now look at the case where the denominator can be factored into distinct linear factors and distinct irreducible quadratics over the real numbers. Before we do this, we need the definition of an irreducible quadratic:
 
 ::::{prf:definition}
@@ -576,7 +574,7 @@ $$
 
 The last term $x^2-2x+5$ is an irreducible quadratic since its discriminant is negative, i.e. $(-2)^2-4\cdot1\cdot5=-16<0$. So the denominator can be factored into one distinct linear factor and one distinct irreducible quadratic over the real numbers.
 
-{prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearFactors` does not apply to this case, since the denominator cannot be factored into distinct linear factors. However, we can still find a partial fraction decomposition of $r$ by attempting to find something with a similar structure as for the case of distinct linear factors.
+{prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearFactors` does not apply to this case if we limit the theorem to real linear factors, since the denominator cannot be factored into distinct real linear factors. However, we can still find a partial fraction decomposition of $r$ by attempting to find something with a similar structure as for the case of distinct linear factors.
 
 In the case of a linear factor, such as $x+3$, we had a constant $A_1$ in the numerator of the corresponding simpler rational function $\frac{A_1}{x+3}$. In other words, the degree of the numerator was zero, which is one less than the degree of the denominator, which is one. This is because we want to have a proper rational function in the decomposition.
 
@@ -632,7 +630,7 @@ $$
 r(x)  = \frac{5x^2+24x+7}{2x^3+2x^2-2x+30}.
 $$
 
-The denominator $q(x)=2x^3+2x^2-2x+30$ has the roots $b_1=-3$, $b_2= 1-2i$ and $b_3=1+2i$. So $r$ can be factored by {prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionComplexLinearFactors` as
+The denominator $q(x)=2x^3+2x^2-2x+30$ has the roots $b_1=-3$, $b_2= 1-2i$ and $b_3=1+2i$. So $r$ can be factored by {prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearFactors` as
 
 $$
 r(x) = \frac{A_1}{x+3} + \frac{A_2}{x-(1-2i)} + \frac{A_3}{x-(1+2i)}.
@@ -640,9 +638,11 @@ $$
 
 Rewriting the right-hand side to a single rational function and comparing the numerators results in the equation
 
-$$
-\frac52x^2+12x+\frac72 = \left(A_1+A_2+A_3\right)x^2 + \left( -2A_1+(2-2i)A_2+(2+2i)A_3\right)x+\left(5A_1+(-3-6i)A_2+( -3+6i)A_3\right).
-$$
+\begin{align*}
+\frac52x^2+12x+\frac72 &= \left(A_1+A_2+A_3\right)x^2 \\
+&~ \qquad + \left( -2A_1+(2-2i)A_2+(2+2i)A_3\right)x \\
+&~ \qquad +\left(5A_1+(-3-6i)A_2+( -3+6i)A_3\right).
+\end{align*}
 
 Comparing coefficients results in a system of equations that has the solution
 
@@ -673,32 +673,47 @@ $$
 r(x) = \frac{-\frac12}{x+3} + \frac{3x+2}{(x-1)^2 + 4}.
 $$
 
-This is the same partial fraction decomposition as in {prf:ref}`Ex:RationalFunctions:PartialFractionDecomposition4`, which means that we have found the same partial fraction decomposition of $r$ using only real coefficients and using complex numbers. This is not a coincidence, and is always the case when the denominator can be factored into distinct linear factors and distinct irreducible quadratics over the real numbers. The next theorem states this result in general.
+This is the same partial fraction decomposition as in {prf:ref}`Ex:RationalFunctions:PartialFractionDecomposition4`, which means that we have found the same partial fraction decomposition of $r$ using only real coefficients and using complex numbers. This is not a coincidence, and is always the case when the denominator can be factored into distinct linear factors and distinct irreducible quadratics over the real numbers.
+
 ::::
 
-<!-- <Hier gebleven> -->
-
+The next theorem states that the idea of {prf:ref}`Ex:RationalFunctions:PartialFractionDecomposition4` can be applied in general when the denominator can be factored into distinct linear factors and distinct irreducible quadratics over the real numbers. 
 
 ::::{prf:theorem} Partial fraction decomposition with distinct real linear factors and distinct irreducible quadratics
 :label: Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearAndIrreducibleQuadratic
 
 Let $r(x) = \frac{p(x)}{q(x)}$ be a proper rational function where the denominator $q$ can be factored into $\ell$ _distinct and real linear factors_ and $m$ _distinct irreducible quadratics_, i.e.
 
-$$
-q(x) = a_n(x-b_1)(x-b_2)\cdots(x-b_\ell)( (x-c_1)^2 + d_1^2 )( (x-c_2)^2 + d_2^2 ) \cdots ( (x-c_m)^2 + d_m^2 ),
-$$
+\begin{align*}
+q(x) &= a_n(x-b_1)(x-b_2)\cdots(x-b_\ell) \\
+&~ \qquad \cdot ( (x-c_1)^2 + d_1^2 )( (x-c_2)^2 + d_2^2 ) \cdots ( (x-c_m)^2 + d_m^2 ),
+\end{align*}
 
 where $b_1,b_2,\ldots,b_\ell$ are _distinct real numbers_, $(c_1,d_1^2),(c_2,d_2^2),\ldots,(c_m,d_m^2)$ are _distinct real number pairs_ with $d_1,d_2,\ldots,d_m\neq0$, and $a_n$ is the leading coefficient of $q$.
 
 Then there exist real constants $A_1,A_2,\ldots,A_\ell$, $B_1,\ldots,B_m$ and $C_1,\ldots,C_m$ such that
 
-$$
-r(x)= \frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_\ell}{x-b_\ell} + \frac{B_1x + C_1}{(x-c_1)^2 + d_1^2} + \cdots + \frac{B_mx + C_m}{(x-c_m)^2 + d_m^2}.
-$$
+\begin{align*}
+r(x) &= \frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_\ell}{x-b_\ell} \\
+&~ \qquad + \frac{B_1x + C_1}{(x-c_1)^2 + d_1^2} + \cdots + \frac{B_mx + C_m}{(x-c_m)^2 + d_m^2}.
+\end{align*}
 
 ::::
 
+::::{admonition} Proof of Theorem {prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearAndIrreducibleQuadratic`
+:class: tudproof, dropdown
 
+This proof is similar to the proof of {prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearFactors`, but now we also have to take into account the irreducible quadratics in the denominator. We will not give a full proof here, but we will give the main ideas and conclusions.
+
+By multiplication of the two representations of $r$ by the denominator $q$, we can show that if the constants $A_1,A_2,\ldots,A_\ell$, $B_1,\ldots,B_m$ and $C_1,\ldots,C_m$ exist, then the right-hand side of the equation in the theorem is a polynomial of degree less than $n$. Since the right-hand side should be equal to the left-hand side, which is also a polynomial of degree less than $n$, this means that if the constants exist, then the equation in the theorem holds.
+
+Next we focus on the linear factors in the denominator. We can use multiplication by $x-b_k$ and subsequent substitution of $x=b_k$as in the proof of {prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearFactors` to show that the constants $A_1,A_2,\ldots,A_\ell$ exist.
+
+Finally we focus on the irreducible quadratics in the denominator. We can use multiplication by $(x-c_h)^2 + d_h^2$ and subsequent substitution of $x=c_h\pm id_h$to show that the constants $B_1,\ldots,B_m$ and $C_1,\ldots,C_m$ exist.
+
+These three (large) steps show that the theorem holds.
+
+::::
 
 In all of the above examples we have only considered the case where the denominator can be factored into distinct linear factors and distinct irreducible quadratics. If the denominator has repeated factors and/or repeated quadratics, the partial fraction decomposition becomes slightly more complicated.
 
@@ -708,13 +723,13 @@ $$
 r(x)  = \frac{2x^2+6x+5}{(x+1)^2(x+2)}.
 $$
 
-The denominator $q(x)=(x+1)^2(x+2)$ of this rational function has a repeated linear factor $(x+1)$. If we would try to apply the previous theorems directly, we would look for constants $A$ and $B$ such that
+The denominator $q(x)=(x+1)^2(x+2)$ of this rational function has a repeated linear factor $(x+1)$. If tried to apply the previous theorems directly, we would look for constants $A$ and $B$ such that
 
 $$
 r(x) = \frac{A}{x+1} + \frac{B}{x+2}.
 $$
 
-If we would rewrite the right-hand side to a single rational function, we obtain
+If we rewrite the right-hand side to a single rational function, we obtain
 
 $$
 r(x) = \frac{A(x+2) + B(x+1)}{(x+1)(x+2)} = \frac{(A+B)x + (2A+B)}{(x+1)(x+2)}.
@@ -723,7 +738,7 @@ $$
 The denominator of this expression is not equal to the original denominator of the rational function $r$, so we cannot compare the numerators directly. If we multiply both the denominator and the numerator of the last expression with $x+1$, we obtain
 
 $$
-r(x) = \frac{((A+B)x + (2A+B))(x+1)}{(x+1)^2(x+2)} = \frac{(A+B)x^2 + (3A+2B)x + 2A+B}{(x+1)^2(x+2)}.
+r(x) = \frac{((A+B)x + (2A+B))(x+1)}{(x+1)^2(x+2)} = \frac{(A+B)x^2 + (3A+2B)x + (2A+B)}{(x+1)^2(x+2)}.
 $$
 
 Now the denominator is equal to the original denominator of $r$ and we can compare the numerators. This results in the system of equations
@@ -736,11 +751,11 @@ A+B &=& 2, \\
 \end{array}\right.
 $$
 
-Unluckily this system has no solutions, so our initial assumption about the form of the partial fraction decomposition was incorrect.
+Unfortunately, this system has no solutions, so our initial assumption about the form of the partial fraction decomposition was incorrect.
 
 If we look at the last system, we see that we have three equations for only two unknowns. This is because we did not take into account that the factor $(x+1)$ in the denominator is repeated, which is also evident from the fact that we had to multiply the numerator and denominator by $x+1$ to be able to compare numerators.
 
-If we would just consider the factor $(x+1)^2$ in the denominator, we would also arrive at an inconsistent linear system in two variables. However, if we would consider both factors $(x+1)$ and $(x+1)^2$ in the denominator separately, we would have three unknowns instead of two. This is similar to how we handled irreducible quadratics in the previous theorem: there we had a linear and a constant term in the numerator for each irreducible quadratic factor in the denominator. We will do something similar here. We do have to also consider cases where a factor is repeated more than two times, but the idea is the same.
+If we just consider the factor $(x+1)^2$ in the denominator, we would also arrive at an inconsistent linear system in two variables. However, if we consider both factors $(x+1)$ and $(x+1)^2$ in the denominator separately, we will have three unknowns instead of two. This is similar to how we handled irreducible quadratics in the previous theorem: there we had a linear and a constant term in the numerator for each irreducible quadratic factor in the denominator. We will do something similar here. We do have to also consider cases where a factor is repeated more than two times, but the idea is the same.
 
 It could also be the case that an irreducible quadratic is repeated in the denominator. In that case we will also have to consider multiple terms in the partial fraction decomposition for that irreducible quadratic. The next theorem summarises all of this.
 
@@ -751,8 +766,8 @@ Let $r(x) = \frac{p(x)}{q(x)}$ be a proper rational function where the denominat
 
 $$
 \begin{split}
-q(x) &= a_n(x-b_1)^{m_1}(x-b_2)^{m_2}\cdots(x-b_\ell)^{m_\ell}\\
-& \qquad ( (x-c_1)^2 + d_1^2 )^{n_1}( (x-c_2)^2 + d_2^2 )^{n_2} \cdots ( (x-c_m)^2 + d_m^2 )^{n_m},
+q(x) &= a_n(x-b_1)^{s_1}(x-b_2)^{s_2}\cdots(x-b_\ell)^{s_\ell}\\
+& \qquad ( (x-c_1)^2 + d_1^2 )^{t_1}( (x-c_2)^2 + d_2^2 )^{t_2} \cdots ( (x-c_m)^2 + d_m^2 )^{t_m},
 \end{split}
 $$
 
@@ -765,19 +780,21 @@ r(x)= L_1(x)+L_2(x)+\cdots+L_\ell(x) + Q_1(x) + Q_2(x) + \cdots + Q_m(x),
 $$
 
 
-where for $1\leq k \leq \ell$, $s_k$ is the multiplicity of the linear factor $(x-b_k)$ in the factorisation of $q$ and
+where for $1\leq k \leq \ell$
 
 $$
 L_k(x) = \frac{A_{k,1}}{x-b_k} + \frac{A_{k,2}}{(x-b_k)^2} + \cdots + \frac{A_{k,s_k}}{(x-b_k)^{s_k}}.
 $$
 
-Similarly, for $1\leq h \leq m$, $t_h$ is the multiplicity of the irreducible quadratic factor $((x-c_h)^2 + d_h^2)$ in the factorisation of $q$ and
+and for $1\leq h \leq m$
 
 $$
 Q_h(x) = \frac{B_{h,1}x + C_{h,1}}{(x-c_h)^2 + d_h^2} + \frac{B_{h,2}x + C_{h,2}}{((x-c_h)^2 + d_h^2)^2} + \cdots + \frac{B_{h,t_h}x + C_{h,t_h}}{((x-c_h)^2 + d_h^2)^{t_h}}.
 $$
 
 ::::
+
+We will not give a proof of the above theorem, but the main idea is similar to the proofs of the previous two theorems. The main difference is that we have to take into account the repeated factors in the denominator, which results in more unknowns in the system of equations obtained by comparing coefficients.
 
 ::::{prf:remark}
 :label: Rmk:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic
@@ -791,16 +808,23 @@ Because of the generality of {prf:ref}`Thm:RationalFunctions:RepeatedLinearAndIr
 For the proper rational function
 
 $$
-R(x)  = \frac{2x^2+6x+5}{(x+1)^2(x+2)},
+r(x)  = \frac{2x^2+6x+5}{(x+1)^2(x+2)},
 $$
 
 we now try the following form for the partial fraction decomposition:
 
 $$
-R(x) = \frac{A}{x+1} + \frac{B}{(x+1)^2} + \frac{C}{x+2}.
+r(x) = \frac{A}{x+1} + \frac{B}{(x+1)^2} + \frac{C}{x+2}.
 $$
 
-Rewriting the right-hand side to a single rational function and comparing the numerators results in the system of equations
+Rewriting the right-hand side to a single rational function gives:
+
+\begin{align*}
+r(x) &= \frac{A(x+1)(x+2) + B(x+2) + C(x+1)^2}{(x+1)^2(x+2)} \\
+&= \frac{(A+C)x^2 + (3A+B+2C)x + (2A+2B+C)}{(x+1)^2(x+2)}.
+\end{align*}
+
+Comparing the numerators results in the system of equations
 
 $$
 \left\{\begin{array}{lcr}
@@ -810,10 +834,10 @@ A+C&=&2, \\
 \end{array}\right.
 $$
 
-This system has a solution (luckily), which is $A=1$, $B=1$ and $C=1$. This means we have found the partial fraction decomposition of $R$:
+This system has a solution (fortunately), which is $A=1$, $B=1$ and $C=1$. This means we have found the partial fraction decomposition of $r$:
 
 $$
-R(x) = \frac{1}{x+1} + \frac{1}{(x+1)^2} + \frac{1}{x+2}.
+r(x) = \frac{1}{x+1} + \frac{1}{(x+1)^2} + \frac{1}{x+2}.
 $$
 
 ::::
@@ -826,22 +850,31 @@ We end this section, before going to the {ref}`Sec:RationalFunctions:GraspleExer
 Consider the proper rational function
 
 $$
-R(x)  = \frac{84 + 196 x + 282 x^2 + 230 x^3 + 104 x^4 + 22 x^5 - 9 x^6 - 7 x^7 - 2 x^8)}{(-1 + x) (2 + x)^2 (x^2+3) (2 + 2 x + x^2)^2}
+r(x)  = \frac{ 2 x^8+ 7 x^7+ 9 x^6- 22 x^5 - 104 x^4 - 230 x^3 - 282 x^2 - 196 x -84  }{(x - 1) (x + 2)^2 (x^2+3) (2 + 2 x + x^2)^2}
 $$
 
-The denominator $Q(x)=(-1 + x) (2 + x)^2 (x^2+3) (2 + 2 x + x^2)^2$ of this rational function has a distinct linear factor $(-1 + x)$, a repeated linear factor $(2 + x)$ with multiplicity $2$, a distinct irreducible quadratic factor $(x^2+3)$ and a repeated irreducible quadratic factor $(2 + 2 x + x^2)$ with multiplicity $2$.
+The denominator $q(x)=(x - 1) (x + 2)^2 (x^2+3) (2 + 2 x + x^2)^2$ of this rational function has a distinct linear factor $(x - 1)$, a repeated linear factor $(x + 2)$ with multiplicity $2$, a distinct irreducible quadratic factor $(x^2+3)$ and a repeated irreducible quadratic factor $(2 + 2 x + x^2)$ with multiplicity $2$.
 
 Based on {prf:ref}`Thm:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic`, we try the following form for the partial fraction decomposition:
 
 $$
-R(x) = \frac{A}{x-1}+\frac{B}{x+2}+\frac{C}{(x+2)^2}+\frac{Dx + E}{x^2+3}+\frac{Fx + G}{(2 + 2 x + x^2)^2}+\frac{Hx + I}{2 + 2 x + x^2}.
+r(x) = \frac{A}{x-1}+\frac{B}{x+2}+\frac{C}{(x+2)^2}+\frac{Dx + E}{x^2+3}+\frac{Fx + G}{2 + 2 x + x^2}+\frac{Hx + I}{(2 + 2 x + x^2)^2}.
 $$
 
-Rewriting the right-hand side to a single rational function and comparing the numerators results in a system of equations with 9 unknowns and 9 equations. Solving such a system can be quite tedious (but can be done!), so we used a computer algebra system to find the solution and substituted the values back into the partial fraction decomposition. The result is:
+Rewriting the right-hand side to a single rational function and comparing the numerators results in a system of $9$ equations with $9$ unknowns. Solving such a system can be quite tedious (but can be done!), so we used a computer algebra system to find the solution and substituted the values back into the partial fraction decomposition. The result is:
 
 $$
-R(x) = \frac{1}{x-1}+\frac{-2}{x+2}+\frac{3}{(x+2)^2}+\frac{-x}{x^2+3}+\frac{-1}{(x+1)^2+1}+\frac{2x}{((x+1)^2+1)^2}
+r(x) = \frac{1}{x-1}+\frac{-2}{x+2}+\frac{3}{(x+2)^2}+\frac{-x}{x^2+3}+\frac{-1}{2 + 2 x + x^2}+\frac{2x}{(2 + 2 x + x^2)^2}.
 $$
+
+In the figure below you can see the graph of the proper rational function $r$. Can you detect any relation between the graph of $r$ and the factors in the denominator of $r$?
+
+:::{figure} Images/Fig-RationalFunctions-PartialFractionDecomposition6.png
+:label: Fig:RationalFunctions:PartialFractionDecomposition6
+:class: dark-light
+
+The graph of the proper rational function $r$.
+:::
 
 ::::
 
