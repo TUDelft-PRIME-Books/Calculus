@@ -467,6 +467,8 @@ $$
 $$
 
 ::::::{note}
+:name: Note:SeqAndTypes:FibonacciSequenceAlternativeDefinition
+
 Some books define the Fibonacci sequence by $F_{n+2}=F_n+F_{n+1}$ for $n=0,1,2,\ldots$ with $F_0=0$ and $F_1=1$.
 
 This results in _nearly_ the same sequence, but with an extra $0$ at the beginning.

@@ -388,6 +388,8 @@ then $S_n$ is true for all integers $n\geq p$.
 
 ::::::{note}
 This procedure describes the *domino effect*. Since $S_p$ is true, the second condition with $k=p$ implies that $S_{p+1}$ is true as well. Then, using the second condition with $k=p+1$ we conclude that $S_{p+2}$ is true. Again, using the second condition with $k=p+2$, we conclude that $S_{p+3}$ is true. This procedure can be followed indefinitely.
+
+More information about the principle of mathematical induction can be found in [Section 3.4. Mathematical Induction of the book Delftse Foundations of Computation](https://interactivetextbooks.tudelft.nl/delftse-foundations-of-computation/content/logic/induction.html).
 ::::::
 
 ::::::{prf:example}
