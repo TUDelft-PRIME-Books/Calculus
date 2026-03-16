@@ -343,6 +343,7 @@ Suppose that $f$ is continuous on the closed interval $[a,b]$. Then for any $d$ 
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:IVT`
 :class: tudproof, dropdown
+
 The proof of this result is a bit beyond the scope of this book as it used the completeness of the real numbers, but we include it for completeness (of the book, that is). Feel free to skip the proof.
 
 We assume that $f(a)<f(b)$ (the case where $f(b)<f(a)$ is very similar, so we will omit it). Consider any $d$ with $f(a)<d<f(b)$. Let $S$ be the set of all $x$ in $[a,b]$ that have $f(x)<d$. Then the set $S$ is non-empty, since $a$ is in this set (as $f(a)<d$). Moreover, the set $S$ is bounded, as it is contained in the interval $[a,b]$. As such, the set $S$ has a *supremum* $c$, i.e. $c$ is the smallest number that satisfies $c\geq x$ for all $x$ in $S$. The fact that this supremum exists follows from the completeness of the real numbers. 
@@ -455,6 +456,14 @@ $$
 
 This means that $|f^{-1}(y)-c|<\varepsilon$, as desired. Hence, $f^{-1}$ is continuous at $c$. Since $c$ was chosen arbitrary, $f^{-1}$ is continuous on its maximal domain.
 :::
+
+(Subsec:ContEVT)=
+
+## Extreme value theorem
+
+Consider a function $f$ that is continuous on a closed interval $[a,b]$. Is it possible for $f$ to have a vertical asymptote on this interval? The answer is no, since if the function has a vertical asymptote at a point $c$, the function values would need to make a jump from very large or very negative values to the value $f(c)$, which would make the function discontinuous. In principle, continuous functions can have vertical asymtotes. For instance, the function $f(x)=\dfrac{1}{x}$ has a vertical asymptote at $x=0$. However, this function is not continuous on any closed interval that contains $0$, since it is undefined there. So the fact that we are dealing with a closed interval is essential here.
+
+This idea suggests that continuous functions cannot "blow up" on closed intervals.
 
 (Subsec:ContLeftRight)=
 
