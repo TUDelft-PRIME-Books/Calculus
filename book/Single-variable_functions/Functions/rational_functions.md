@@ -45,7 +45,7 @@ f_3(x) &= \frac{-x^2+4x-2}{x^3-2x+1}, \\
 f_4(x) &= \frac{x+\sqrt{x}+3}{x^2-5}.
 \end{align*}
 
-The function $f_1$ is a rational function, which can be seen directly from its definition as a ratio of two polynomials, but it is not a proper rational function since the degree of the numerator ($4$) is greater than the degree of the denominator ($3$).
+The function $f_1$ is a rational function, as can be seen directly from its definition as a ratio of two polynomials, but it is not a proper rational function since the degree of the numerator ($4$) is greater than the degree of the denominator ($3$).
 
 The function $f_2$ is also a rational function. This can be seen by rewriting it to a single fraction:
 
@@ -63,21 +63,29 @@ $f_4$ is not a rational function since the numerator is not a polynomial. The nu
 
 ::::
 
-The domain of a rational function is all real numbers except where the denominator is zero, or in other words, the rational function $\frac{p(x)}{q(x)}$ is undefined where $q(x) = 0$.
+:::{prf:remark}
+:label: Rmk:RationalFunctions:Domain
+The domain of a rational function is the set of all real numbers except those for which the denominator is zero In other words, the rational function $\frac{p(x)}{q(x)}$ is undefined where $q(x) = 0$.
 
-First we will look at how to simplify rational functions by applying polynomial division. After that we will look at how to decompose proper rational functions into simpler fractions using partial fraction decomposition.
+The co-domain of a rational function is the set of all real numbers. The range of the rational function is the set of all real numbers that are actually attained by the function, i.e. the set of all $y\in\mathbb{R}$ such that there exists an $x\in\mathbb{R}$ with $f(x)=y$.
+
+The range can be the entire set of real numbers, but it can also be a proper subset of the real numbers. For instance, the rational function $f(x)=\frac{1}{x^2+1}$ has range $(0,1]$ since $f(x)$ is always positive and attains it's maximum value $1$ at $x=0$. It is also possible that the range of a rational function is all real numbers except for a single value. For instance, the rational function $f(x)=\frac{1}{x}$ has range $\mathbb{R}\setminus\{0\}$ since $f(x)$ can be any real number except for $0$.
+
+:::
+
+In the coming subsections we will first look at how to simplify rational functions by applying polynomial division. After that we will look at how to decompose proper rational functions into simpler fractions using partial fraction decomposition.
 
 (Subsec:RationalFunctions:PolynomialDivision)=
 
 ## Polynomial division
 
-When dealing with *improper* rational functions, it is often useful to perform polynomial long division[^othersection]. This allows us to express the rational function as a sum of a polynomial and a proper rational function.
+When dealing with *improper* rational functions, it is often useful to express the rational function as a sum of a polynomial and a proper rational function. To do so, we perform polynomial long division[^othersection].
 
 [^othersection]: The method of long division of polynomials has been very briefly treated in {prf:ref}`Ex:ComplexNumbers:longdivisionpoly`.
 
 In the method of long division of polynomials we consider quotients of polynomials $p$ and $q$, i.e. $\frac{p(x)}{q(x)}$. When the degree of $p$ is higher than the degree of $q$ it is possible that $p(x) = s(x)q(x)$ for another polynomial $s$. It is also possible that $p(x) = r(x) + s(x)q(x)$ for some polynomials $s$ and $r$.
 
-The method works by starting with the highest power of $x$. We consider a monomial $a_1x^{k_1}$  such that the term with the highest power of $a_1x^{k_1}q(x)$ matches the term with the highest power of $p(x)$. Then we consider $p_1(x)=p(x)-a_1x^{k_1}q(x)$ whose degree must be lower than the degree of $p$. If it is also lower than the degree of $q$ the long division stops. Otherwise we continue by repeating the first step again, but now with respect to the polynomial $p_1$ instead of $p$. We continue this procedure until we have a polynomial $p_n$ whose degree is lower than the degree of $q$. This means that we have found polynomials $s$ and $r$ such that $p(x) = r(x) + s(x)q(x)$, where $s(x)=a_1x^{k_1}+a_2x^{k_2}+\cdots + a_nx^{k_n}$.
+The method works by starting with the highest power of $x$. We consider a monomial $a_1x^{k_1}$  such that the term with the highest power of $a_1x^{k_1}q(x)$ matches the term with the highest power of $p(x)$. Then we consider $p_1(x)=p(x)-a_1x^{k_1}q(x)$ which has lower degree than  $p$. If the degree of $p_1$ is lower than the degree of $q$ the long division stops. Otherwise we repeat the first step again, but now with respect to the polynomial $p_1$ instead of $p$. We continue this procedure until we have a polynomial $p_n$ whose degree is lower than the degree of $q$. This means that we have found polynomials $s$ and $r$ such that $p(x) = r(x) + s(x)q(x)$, where $s(x)=a_1x^{k_1}+a_2x^{k_2}+\cdots + a_nx^{k_n}$.
 
 This is summarised in the next algorithm.
 
@@ -118,7 +126,7 @@ x-2 & \Big/ & x^4-4x^3+3x^2+4x-4 & \Big\\ &
 \end{array}
 $$
 
-Now we consider by what monomial $ax^n$ we should multiply the polynomial on the left in order to match the highest order term of the polynomial in the middle. In this case we find it should be $x^3$. We multiply $x^3$ by $x-2$ and subtract the obtained polynomial from the polynomial in the middle as indicated. We write the monomial we had to multiply by on the right:
+Now we consider by what monomial $ax^n$ we should multiply the polynomial on the left in order to match the highest order term of the polynomial in the middle. In this case we find it should be $x^3$. We multiply $x^3$ by $x-2$ and subtract the obtained polynomial from the polynomial in the middle as indicated. We write the monomial we had to multiply with on the right:
 
 $$
 \begin{array}{rclcl}
@@ -154,7 +162,7 @@ x-2 & \Big/ & x^4-4x^3+3x^2+4x-4 & \Big\backslash & x^3-2x^2-x \\
 \end{array}
 $$
 
-We repeat one more time and this time we find $+2$. Note that the result of subtracting is now of lower degree then the polynomial on the left. This means our long division is done:
+We repeat one more time and this time we find $+2$:
 
 $$
 \begin{array}{rclcl}
@@ -170,7 +178,9 @@ x-2 & \Big/ & x^4-4x^3+3x^2+4x-4 & \Big\backslash & x^3-2x^2-x+2 \\
 \end{array}
 $$
 
-Since our long division terminates at $0$ this means that indeed the polynomial on the left is a factor for the polynomial in the middle. Indeed the polynomial in the middle factors as a product of the left and polynomials on the right, i.e. 
+Note that the result of subtracting is now of lower degree then the polynomial on the left. This means our long division is done.
+
+Since our long division terminates at $0$ this means that the polynomial on the left is indeed a factor for the polynomial in the middle. The polynomial in the middle factors as a product of the left and polynomials on the right, i.e. 
 
 $$
 x^4-4x^3+3x^2+4x-4 = (x-2)(x^3-2x^2-x+2).
@@ -190,7 +200,7 @@ $$
 
 ::::
 
-Not all long divisions will terminate at $0$. In general, rational functions are not actually similar to polynomials and so long division will terminate at some non-zero remainder.
+Not all long divisions will terminate at $0$, as in general, rational functions are, on their domain, not actually equal to polynomials and so long division will terminate at some non-zero remainder.
 
 ::::{prf:example}
 :label: Ex:RationalFunctions:PolynomialDivision2
@@ -237,7 +247,7 @@ x^2-25 & \Big/ & \frac12x^3+x^2-\frac{23}{2}x-24 & \Big\backslash & \frac12x+1 \
 \end{array}
 $$
 
-This means, as in general, that the polynomial in the middle divided by the polynomial on the left is equal to the polynomial on the right plus the remainder (on the bottom) divided by the polynomial on the left, i.e.
+This means that the polynomial in the middle divided by the polynomial on the left is equal to the polynomial on the right plus the remainder (on the bottom) divided by the polynomial on the left, i.e.
 
 $$
 \frac{\frac{1}{2}x^3+x^2-\frac{23}{2}x-24}{x^2-25} = \frac{1}{2}x+1 + \frac{x+1}{x^2-25}.
@@ -266,7 +276,7 @@ x^3-2x+1 & \Big/ & 2x^5-3x^3+\phantom{2}x^2+2x-1 & \Big\backslash & 2x^2+1 \\
 \end{array}
 $$
 
-This means, as in general, that the polynomial in the middle divided by the polynomial on the left is equal to  the polynomial on the right plus the remainder (on the bottom) divided by the polynomial on the left, i.e. 
+This means that the polynomial in the middle divided by the polynomial on the left is equal to  the polynomial on the right plus the remainder (on the bottom) divided by the polynomial on the left, i.e. 
 
 $$\frac{2x^5-3x^3+x^2+2x-1}{x^3-2x+1} = 2x^2+1 + \frac{-x^2+4x-2}{x^3-2x+1}.$$
 
@@ -303,9 +313,11 @@ The degree of the polynomial $r$ is $R<Q$ since the algorithm terminates when we
 (sec:PartialFractionDecomposition)=
 ## Partial fraction decomposition
 
-In the previous examples you have seen how you can use polynomial long division to rewrite an improper rational function as a polynomial plus a proper rational function. In this section we will look at how to decompose proper rational functions into simpler fractions. This technique is called _partial fraction decomposition_.
+In the previous examples, you have seen how you can use polynomial long division to rewrite an improper rational function as a polynomial plus a proper rational function. In this section we will look at how to decompose proper rational functions into simpler fractions. This technique is called _partial fraction decomposition_.
 
-Before we look at a first example, we take a look at regular fractions, such as
+We often apply the method of partial fraction decomposition in order to be able to determine the antiderivative of a rational function, as the antiderivative of a proper rational function is often easier to determine when the rational function is decomposed into simpler fractions. We will look at the method of partial fraction decomposition in more detail in {numref}`sec:Integration:RationalFunctions`.
+
+Before we look at a first example, we take a look at (proper) regular fractions, such as
 
 $$
 \frac{1}{3}\text{ and }\frac{3}{7}.
@@ -326,7 +338,7 @@ If we have two rational functions, we can do the same. For instance consider the
 &= \frac{4x+1}{x^2-3x-10}.
 \end{align*}
 
-This method of rewriting the sum of the rational functions into a single rational function is exactly the opposite of the method of partial fraction decomposition. In partial fraction decomposition we start with a proper rational function, such as $\frac{4x+1}{x^2-3x-10}$ and we want to rewrite it as the sum of simpler rational functions, such as $\frac{1}{x+2}+\frac{3}{x-5}$.
+This method of rewriting the sum of rational functions into a single rational function is exactly the opposite of the method of partial fraction decomposition. In partial fraction decomposition we start with a proper rational function, such as $\frac{4x+1}{x^2-3x-10}$ and we want to rewrite it as the sum of simpler rational functions, such as $\frac{1}{x+2}+\frac{3}{x-5}$.
 
 If we look at the previous calculation, we see that the roots of the denominator $x^2-3x-10$ are $x=-2$ and $x=5$. These roots correspond to the denominators of the simpler rational functions $\frac{1}{x+2}$ and $\frac{3}{x-5}$. The entire concept of partial fraction decomposition is based on this observation in combination with the {prf:ref}`Fundamental Theorem of Algebra <Thm:ComplexNumbers:fundamental>`.
 
@@ -341,22 +353,22 @@ $$
 r(x)  = \frac{p(x)}{q(x)} = \frac{4x+2}{x^2-1}.
 $$
 
-The denominator $q(x)=x^2-1$ of this rational function can be factored as $q(x)=(x-1)(x+1)$, i.e. as a product of distinct linear factors. So, based on our previous thinking, let us look for two factors $f$ and $g$ such that
+The denominator $q(x)=x^2-1$ of this rational function can be factored as $q(x)=(x-1)(x+1)$, i.e. as a product of distinct linear factors. So, based on our previous thinking, let us look for two constants $A$ and $B$ such that
 
 :::{math}
 :label: Eq:RationalFunctions:PartialFractionDecomposition1
-r(x) = \frac{f}{x-1} + \frac{g}{x+1}
+r(x) = \frac{A}{x-1} + \frac{B}{x+1}
 :::
 
-holds. Since $r$ remains the same proper rational function, the ratio between the degrees of the numerator $p(x)=4x+2$ and the denominator $q(x)=x^2-1$ should also not change. We start by taking the right-hand side of Equation {eq}`Eq:RationalFunctions:PartialFractionDecomposition1` and rewriting it to a single rational function:
+holds. We start by taking the right-hand side of Equation {eq}`Eq:RationalFunctions:PartialFractionDecomposition1` and rewriting it as a single rational function:
 
 \begin{align*}
-\frac{f}{x-1} + \frac{g}{x+1} &= \frac{f(x+1)}{(x-1)(x+1)} + \frac{g(x-1)}{(x+1)(x-1)} \\
-&= \frac{f(x+1) + g(x-1)}{(x-1)(x+1)} \\
-&= \frac{(f+g)x + (f-g)}{x^2-1}.
+\frac{A}{x-1} + \frac{B}{x+1} &= \frac{A(x+1)}{(x-1)(x+1)} + \frac{B(x-1)}{(x+1)(x-1)} \\
+&= \frac{A(x+1) + B(x-1)}{(x-1)(x+1)} \\
+&= \frac{(A+B)x + (A-B)}{x^2-1}.
 \end{align*}
 
-If we compare the numerator $(f+g)x + (f-g)$ of this result with the original numerator $p(x)=4x+2$ of $r(x)$ we see that we should have that $f+g=4$ and $f-g=2$. Solving this system of equations results in $f=3$ and $g=1$. This means we have found the partial fraction decomposition of $r$:
+If we compare the numerator $(A+B)x + (A-B)$ of this result with the original numerator $p(x)=4x+2$ of $r(x)$ we see that we should have that $A+B=4$ and $A-B=2$. Solving this system of equations results in $A=3$ and $B=1$. This means we have found the partial fraction decomposition of $r$:
 
 $$
 r(x) = \frac{3}{x-1} + \frac{1}{x+1}.
@@ -364,7 +376,7 @@ $$
 
 ::::
 
-If we consider that the factors $f$ and $g$ in the numerators of the simpler rational functions are constants, then we can see that the degree of the numerator of the simpler rational functions is less than the degree of the denominator. This is not a coincidence, and is always the case in partial fraction decomposition, as we always consider proper rational functions in the decomposition.
+If we consider that the constants $A$ and $B$ in the numerators of the simpler rational functions are in fact also polynomials, then we can see that the degree of the numerator of the simpler rational functions is less than the degree of the denominator. This is not a coincidence, and is always the case in partial fraction decomposition, as we always consider proper rational functions in the decomposition.
 
 This can be summarised by the next theorem.
 
@@ -429,7 +441,7 @@ This shows that $A_k$ exists for all $k=1,2,\ldots,n$. This means that there exi
 
 ::::
 
-Note that in the above theorem we considered complex numbers as roots of the denominator polynomial. This is because, by the {prf:ref}`Fundamental Theorem of Algebra <Thm:ComplexNumbers:fundamental>`, every polynomial with complex coefficients can be factored into linear factors over the complex numbers. If you did not yet study complex numbers, see {numref}`Ch:ComplexNumbersCartesian`, you can also consider the theorem only for real numbers as roots of the denominator polynomial. In that case the theorem only holds when the denominator can be factored into distinct linear factors over the real numbers.
+Note that in the above theorem we considered complex numbers as roots of the denominator polynomial. This is because, by the {prf:ref}`Fundamental Theorem of Algebra <Thm:ComplexNumbers:fundamental>`, every polynomial with complex coefficients can be factored into linear factors over the complex numbers. If you did not yet study complex numbers, you can study {numref}`Ch:ComplexNumbersCartesian`. You can also consider the theorem only for real numbers as roots of the denominator polynomial. In that case the theorem only holds when the denominator can be factored into distinct linear factors over the real numbers.
 
 First we will take a look at an example where we apply the above theorem where all roots are real numbers.
 
@@ -448,13 +460,13 @@ $$
 r(x) = \frac{15x+3}{x(x-3)(x+1)}.
 $$
 
-Based on our previous thinking, let us look for three numbers $A_1$, $A_2$ and $A_3$ such that
+Let us look for three numbers $A_1$, $A_2$ and $A_3$ such that
 
 $$
 r(x) = \frac{A_1}{x} + \frac{A_2}{x-3} + \frac{A_3}{x+1}.
 $$
 
-Or by using the formula for $r$, we want to solve the equation
+By substituting the formula for $r$ in the left-hand side, we obtain the equation
 
 $$
 \frac{15x+3}{x(x-3)(x+1)} = \frac{A_1}{x} + \frac{A_2}{x-3} + \frac{A_3}{x+1}
@@ -507,9 +519,9 @@ $$
 ::::{prf:remark}
 :label: Rmk:RationalFunctions:DistinctLinearFactors
 
-If the denominator of a proper rational function can be factored into distinct linear factors over the real numbers, there is another way to find the constants $A_1,A_2,\ldots,A_n$ in {prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearFactors`.
+If the denominator of a proper rational function can be factored into distinct linear factors, there is another way to find the constants $A_1,A_2,\ldots,A_n$ in {prf:ref}`Thm:RationalFunctions:PartialFractionDecompositionDistinctLinearFactors`.
 
-Although the roots of the denominator are not part of the domain of the rational function, the polynomials on the left-hand side and on the right-hand side of the equation as a result of the comparison of numerators (such as Equation {eq}`Eq:RationalFunctions:PartialFractionDecomposition2` in the previous example) should coincide for all values of $x\in\mathbb{R}$. Even for the roots of the denominator. This means that we can find the constants $A_1,A_2,\ldots,A_n$ by substituting the roots of the denominator into this equation.
+Although the roots of the denominator are not part of the domain of the rational function, the polynomials on the left-hand side and on the right-hand side of the equation as a result of the comparison of numerators (such as Equation {eq}`Eq:RationalFunctions:PartialFractionDecomposition2` in the previous example) should coincide for all values. Even for the roots of the denominator. This means that we can find the constants $A_1,A_2,\ldots,A_n$ by substituting the roots of the denominator into this equation.
 
 For the previous example, substituting the roots $x=0$, $x=3$ and $x=-1$ into Equation {eq}`Eq:RationalFunctions:PartialFractionDecomposition2`, respectively, would yield the following system of equations:
 
@@ -586,7 +598,7 @@ $$
 
 where $B_1$ and $C_1$ are constants. So let us try this.
 
-An partial fraction decomposition of $r$ could be of the form
+A partial fraction decomposition of $r$ could be of the form
 
 $$
 r(x) = \frac{A_1}{x+3} + \frac{B_1x + C_1}{x^2-2x+5}.
@@ -723,31 +735,32 @@ $$
 r(x)  = \frac{2x^2+6x+5}{(x+1)^2(x+2)}.
 $$
 
-The denominator $q(x)=(x+1)^2(x+2)$ of this rational function has a repeated linear factor $(x+1)$. If tried to apply the previous theorems directly, we would look for constants $A$ and $B$ such that
+The denominator $q(x)=(x+1)^2(x+2)$ of this rational function has a repeated linear factor $(x+1)$. If tried to apply the previous theorems directly, we would look for constants $A$, $B$ and $C$ such that
 
 $$
-r(x) = \frac{A}{x+1} + \frac{B}{x+2}.
+r(x) = \frac{A}{x+1} + \frac{B}{x+1} + \frac{C}{x+2}.
 $$
 
-If we rewrite the right-hand side to a single rational function, we obtain
+If we rewrite the right-hand side as a single rational function, we obtain
 
 $$
-r(x) = \frac{A(x+2) + B(x+1)}{(x+1)(x+2)} = \frac{(A+B)x + (2A+B)}{(x+1)(x+2)}.
+r(x) = \frac{(A+B)(x+2) + C(x+1)}{(x+1)(x+2)} = \frac{(A+B+C)x + (2A+2B+C)}{(x+1)(x+2)}.
 $$
 
 The denominator of this expression is not equal to the original denominator of the rational function $r$, so we cannot compare the numerators directly. If we multiply both the denominator and the numerator of the last expression with $x+1$, we obtain
 
-$$
-r(x) = \frac{((A+B)x + (2A+B))(x+1)}{(x+1)^2(x+2)} = \frac{(A+B)x^2 + (3A+2B)x + (2A+B)}{(x+1)^2(x+2)}.
-$$
+\begin{align*}
+r(x) &= \frac{((A+B+C)x + (2A+2B+C))(x+1)}{(x+1)^2(x+2)} \\
+&= \frac{(A+B+C)x^2 + (3A+2B+C)x + (2A+2B+C)}{(x+1)^2(x+2)}.
+\end{align*}
 
 Now the denominator is equal to the original denominator of $r$ and we can compare the numerators. This results in the system of equations
 
 $$
 \left\{\begin{array}{lcr}
-A+B &=& 2, \\
-3A+2B &=& 6, \\
-2A+B &=& 5.
+A+B+C &=& 2, \\
+3A+3B+2C &=& 6, \\
+2A+2B+C &=& 5.
 \end{array}\right.
 $$
 
@@ -755,7 +768,7 @@ Unfortunately, this system has no solutions, so our initial assumption about the
 
 If we look at the last system, we see that we have three equations for only two unknowns. This is because we did not take into account that the factor $(x+1)$ in the denominator is repeated, which is also evident from the fact that we had to multiply the numerator and denominator by $x+1$ to be able to compare numerators.
 
-If we just consider the factor $(x+1)^2$ in the denominator, we would also arrive at an inconsistent linear system in two variables. However, if we consider both factors $(x+1)$ and $(x+1)^2$ in the denominator separately, we will have three unknowns instead of two. This is similar to how we handled irreducible quadratics in the previous theorem: there we had a linear and a constant term in the numerator for each irreducible quadratic factor in the denominator. We will do something similar here. We do have to also consider cases where a factor is repeated more than two times, but the idea is the same.
+If we just consider the factor $(x+1)^2$ in the denominator, we would also arrive at an inconsistent linear system in two variables. However, if we consider both factors $(x+1)$ and $(x+1)^2$ in the denominator separately, we will have three unknowns instead of two. This is similar to how we handled irreducible quadratics in the previous theorem: there we had a linear and a constant term in the numerator for each irreducible quadratic factor in the denominator. We will do something similar here. We also do have to consider cases where a factor is repeated more than two times, but the idea is the same.
 
 It could also be the case that an irreducible quadratic is repeated in the denominator. In that case we will also have to consider multiple terms in the partial fraction decomposition for that irreducible quadratic. The next theorem summarises all of this.
 
