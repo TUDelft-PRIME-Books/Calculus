@@ -287,7 +287,7 @@ We end this section with the general result of polynomial long division in the n
 ::::{prf:theorem}
 :label: Thm:RationalFunctions:PolynomialLongDivision
 
-Let $f(x) = \frac{p(x)}{q(x)}$ be a rational function where the numerator $p$ has degree $P$ and the denominator $q$ has degree $Q$. If $P \geq Q$, then there exist a polynomial $s$ of degree $S=P-Q$ and a polynomial $r$ of degree $R<Q$ such that
+Let $f(x) = \frac{p(x)}{q(x)}$ be a rational function where the numerator $p$ has degree $P$ and the denominator $q$ has degree $Q$. Then there exist a polynomial $s$ of degree $S=P-Q$ and a polynomial $r$ of degree $R<Q$ such that
 
 $$
 f(x) = s(x) + \frac{r(x)}{q(x)}.
@@ -300,6 +300,10 @@ $$
 
 Consider {prf:ref}`Alg:RationalFunctions:PolynomialDivision`. If we can prove that the algorithm terminates, then we have found the polynomials $s$ and $r$ such that $p(x) = r(x) + s(x)q(x)$. If we then also can deduce that the degrees are as required, the proof is complete.
 
+If $P<Q$ then we can simply define $s(x)=0$ and $r(x)=p(x)$ and we are done.
+
+In the remainder of this proof we will assume that $P\geq Q$.
+
 In step 1 and 2 of the algorithm the degree of $p_{n+1}$ is strictly lower than the degree of $p_n$ since we are subtracting a monomial $a_nx^{k_n}q(x)$ from $p_n$ where the term with the highest power of $a_nx^{k_n}q(x)$ matches the term with the highest power of $p_n$.
 
 This means that the degree of $p_{n+1}$ is at least one less than the degree of $p_n$. Since the degree of $p_0$ is $P$, this means that after at most $P-Q$ iterations we have a polynomial whose degree is lower than the degree of $q$. This means that the algorithm terminates and we have found polynomials $s$ and $r$ such that $p(x) = r(x) + s(x)q(x)$.
@@ -307,6 +311,30 @@ This means that the degree of $p_{n+1}$ is at least one less than the degree of 
 The degree of the polynomial $s$ is $S=P-Q$ since in each iteration we are adding a monomial $a_nx^{k_n}$ to $s$ where the term with the highest power of $a_nx^{k_n}q(x)$ matches the term with the highest power of $p_n$. Since the degree of $p_0$ is $P$, this means that the degree of the first monomial we add to $s$ is $P-Q$. Since in each iteration we are adding a monomial of lower degree, this means that the degree of $s$ is indeed $S=P-Q$.
 
 The degree of the polynomial $r$ is $R<Q$ since the algorithm terminates when we have a polynomial $p_{n+1}$ whose degree is lower than the degree of $q$. Since we define $r(x)=p_{n+1}(x)$, this means that the degree of $r$ is indeed $R<Q$.
+
+::::
+
+
+::::{question} Multiple-choice Multiple-select
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+
+When applying polynomial long division to divide a polynomial $p$ by a second degree polynomial $q$, what can the remainder $r$ be?
+
+Pick all correct options, then press _Submit answer(s)_.
+
+---
+[ ] A second degree polynomial.
+> If $q$ is a second degree polynomial, then the degree of the remainder $r$ will be less than $2$. So $r$ can be a first degree polynomial, a non-zero constant or zero, but it cannot be a second degree polynomial.
+[x] A first degree polynomial.
+> That is correct! The degree of the remainder $r$ will be less than the degree of $q$. Since $q$ is a second degree polynomial, the degree of $r$ must be less than $2$, so it can be a first degree polynomial.
+[x] A non-zero constant.
+> That is correct! The degree of the remainder $r$ will be less than the degree of $q$. Since $q$ is a second degree polynomial, the degree of $r$ must be less than $2$, so it can be a non-zero constant.
+[x] Zero.
+> That is correct! The degree of the remainder $r$ will be less than the degree of $q$. Since $q$ is a second degree polynomial, the degree of $r$ must be less than $2$, so it can be zero. In this case, the original polynomial $p$ is a multiple of $q$ and the rational function $\frac{p(x)}{q(x)}$ can be simplified to a polynomial (on the domain where $q(x) \neq 0$).
+---
 
 ::::
 
@@ -883,12 +911,34 @@ $$
 In the figure below you can see the graph of the proper rational function $r$. Can you detect any relation between the graph of $r$ and the factors in the denominator of $r$?
 
 :::{figure} Images/Fig-RationalFunctions-PartialFractionDecomposition6.png
-:label: Fig:RationalFunctions:PartialFractionDecomposition6
+:name: Fig:RationalFunctions:PartialFractionDecomposition6
 :class: dark-light
 
 The graph of the proper rational function $r$.
 :::
 
+::::
+
+::::{question} Multiple-choice Single-select
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+
+A partial fraction decomposition for $f(x)=\dfrac{x^2+4}{x(x-1)^2}$ is asked.
+
+Someone suggests the decomposition $f(x)=\dfrac{A}{x} + \dfrac{Bx+C}{(x-1)^2}$.
+
+Will this lead _directly_, _indirectly_ or _neither_ to a correct partial fraction decomposition?
+
+---
+[ ] Directly.
+> The suggested decomposition will not lead directly to a correct partial fraction decomposition, since the term $\dfrac{Bx+C}{(x-1)^2}$ is not directly of the form $\dfrac{B}{x-1} + \dfrac{C}{(x-1)^2}\text{.}$ Is rewriting to obtain a correct partial fraction decomposition possible?
+[x] Indirectly.
+> The suggested decomposition will not lead directly to a correct partial fraction decomposition, since the term $\dfrac{Bx+C}{(x-1)^2}$ is not directly of the form $\dfrac{B}{x-1} + \dfrac{C}{(x-1)^2}\text{.}$ However, if we rewrite this term, after determining $A$, $B$ and $C$, as $\dfrac{B}{x-1} + \dfrac{B+C}{(x-1)^2}$, we obtain a correct partial fraction decomposition of $f$.
+[ ] Neither directly nor indirectly.
+> The suggested decomposition will not lead directly to a correct partial fraction decomposition, since the term $\dfrac{Bx+C}{(x-1)^2}$ is not directly of the form $\dfrac{B}{x-1} + \dfrac{C}{(x-1)^2}\text{.}$ Is rewriting to obtain a correct partial fraction decomposition possible?
+---
 ::::
 
 (Sec:RationalFunctions:GraspleExercises)=
