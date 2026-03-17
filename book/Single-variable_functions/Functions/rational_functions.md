@@ -338,6 +338,54 @@ Pick all correct options, then press _Submit answer(s)_.
 
 ::::
 
+::::{prf:example-start}
+:label: Ex:RationalFunctions:LongDivisionCode
+
+Performing long division of polynomials can be a bit tedious, especially when the polynomials are of high degree. Fortunately, there are computer algebra systems that can perform long division for us. Below is an example of how to perform long division of polynomials using the Python. In this example we will perform long division to rewrite the rational function
+
+$$
+f(x) = \frac{x^{8} + 2 x^{7} - x^{5} + 4 x^{4} - 3 x^{2} + 10}{x^{3} - 2 x + 1}.
+$$
+
+::::
+
+
+:::{code-cell} python
+---
+tags: [auto-execute-page]
+---
+# Import a symbolic mathematics library
+import sympy as sp
+# import a function to display the result in LaTeX format
+from IPython.display import Latex
+# Define the variable and the constants
+x = sp.symbols('x')
+# define the parts of the rational function 
+p = (x**8+2*x**7-x**5+4*x**4-3*x**2+10)
+q = (x**3-2*x+1)
+
+# perform the long division of the numerator by the denominator
+s , r = sp.div(p, q, domain='QQ')
+
+# Display the result
+display(Latex("The long division of"))
+display(Latex("$$p(x) = "+sp.latex(p)+"$$"))
+display(Latex("by"))
+display(Latex("$$q(x) = "+sp.latex(q)+"$$"))
+display(Latex("gives quotient"))
+display(Latex("$$s(x) = "+sp.latex(s)+"$$"))
+display(Latex("and remainder"))
+display(Latex("$$r(x) = "+sp.latex(r)+".$$"))
+display(Latex("""This means that the original rational function $f$
+ can be rewritten as"""))
+display(Latex("$$f(x) = "+sp.latex(s)+" + \\frac{"+sp.latex(r)+"}{"
+    +sp.latex(q)+"}.$$"))
+:::
+
+::::{prf:example-end}
+::::
+
+
 (sec:PartialFractionDecomposition)=
 ## Partial fraction decomposition
 
@@ -885,7 +933,7 @@ $$
 
 We end this section, before going to the {ref}`Sec:RationalFunctions:GraspleExercises`, with an example that contains everything we have learned so far.
 
-::::{prf:example}
+::::{prf:example-start}
 :label: Ex:RationalFunctions:PartialFractionDecomposition6
 
 Consider the proper rational function
@@ -902,21 +950,31 @@ $$
 r(x) = \frac{A}{x-1}+\frac{B}{x+2}+\frac{C}{(x+2)^2}+\frac{Dx + E}{x^2+3}+\frac{Fx + G}{2 + 2 x + x^2}+\frac{Hx + I}{(2 + 2 x + x^2)^2}.
 $$
 
-Rewriting the right-hand side to a single rational function and comparing the numerators results in a system of $9$ equations with $9$ unknowns. Solving such a system can be quite tedious (but can be done!), so we used a computer algebra system to find the solution and substituted the values back into the partial fraction decomposition. The result is:
+Rewriting the right-hand side to a single rational function and comparing the numerators results in a system of $9$ equations with $9$ unknowns. Solving such a system can be quite tedious, so we turn to some Python code. Run the code and see what happens.
 
-$$
-r(x) = \frac{1}{x-1}+\frac{-2}{x+2}+\frac{3}{(x+2)^2}+\frac{-x}{x^2+3}+\frac{-1}{2 + 2 x + x^2}+\frac{2x}{(2 + 2 x + x^2)^2}.
-$$
+::::
 
-In the figure below you can see the graph of the proper rational function $r$. Can you detect any relation between the graph of $r$ and the factors in the denominator of $r$?
+:::{code-cell} python
+# Import a symbolic mathematics library
+import sympy as sp
+from IPython.display import Latex
+# Define the variable and the constants
+x = sp.symbols('x')
+# define the rational function 
+r = (2*x**8 + 7*x**7 + 9*x**6 - 22*x**5 - 104*x**4 \
+     - 230*x**3 - 282*x**2 - 196*x -84) / ((x - 1) \
+     * (x + 2)**2 * (x**2 + 3) * (2 + 2*x + x**2)**2)
+# perform the partial fraction decomposition
+decomp = sp.apart(r)
 
-:::{figure} Images/Fig-RationalFunctions-PartialFractionDecomposition6.png
-:name: Fig:RationalFunctions:PartialFractionDecomposition6
-:class: dark-light
-
-The graph of the proper rational function $r$.
+# Display the result
+display(Latex("A partial fraction decomposition of"))
+display(Latex("$$r(x) = "+sp.latex(r)+".$$"))
+display(Latex("is"))
+display(Latex("$$r(x) = "+sp.latex(decomp)+".$$"))
 :::
 
+::::{prf:example-end}
 ::::
 
 ::::{question} Multiple-choice Single-select

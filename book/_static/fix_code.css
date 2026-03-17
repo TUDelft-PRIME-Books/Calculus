@@ -1,0 +1,18 @@
+.jp-RenderedLatex {
+    color: unset !important;
+    font-size: unset !important;
+    line-height: unset !important;
+}
+
+
+/* --- Remove scroll from CodeMirror editors (input) --- */
+.thebe-cell .CodeMirror {
+  height: auto !important;          /* expand to content */
+  max-height: none !important;
+}
+
+.thebe-cell .CodeMirror-scroll {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
