@@ -1,4 +1,3 @@
-
 ::::{admonition} Attribution
 :class: attribution
 This page reuses content from {cite:t}`dekleijn2025longdivision`.
@@ -350,7 +349,7 @@ $$
 ::::
 
 
-:::{code-cell} python
+:::{code-cell} ipython3
 ---
 tags: [auto-execute-page]
 ---
@@ -380,7 +379,32 @@ display(Latex("""This means that the original rational function $f$
  can be rewritten as"""))
 display(Latex("$$f(x) = "+sp.latex(s)+" + \\frac{"+sp.latex(r)+"}{"
     +sp.latex(q)+"}.$$"))
+display(Latex("""The entire long division is:"""))
+display_string = ["$$",r"\begin{array}{rcrcl}"]
+first_line = sp.latex(q)
+first_line += r" & \Big/ & "
+first_line += sp.latex(p)
+first_line += r" & \Big\backslash & "
+first_line += sp.latex(s)
+first_line += r"\\"
+display_string.append(first_line)
+# Split in the separate monomials of s
+s_monomials = sp.Poly(s).all_terms()
+rem = p
+for st in s_monomials:
+  if st[1] != 0:
+    stimesp = st[1]*x**st[0][0]*q
+    new_lines = ["&&" + sp.latex(stimesp.expand()) + r"&&\\"]
+    rem -= stimesp
+    new_lines.extend([r"&&\overline{"+sp.latex(rem.expand())+r"}&\overline{\phantom{x^5}}&\\"])
+    display_string.extend(new_lines)
+
+final_lines = [r"\end{array}","$$"]
+display_string.extend(final_lines)
+display_string = "\n".join(display_string)
+display(Latex(display_string))
 :::
+
 
 ::::{prf:example-end}
 ::::
@@ -624,26 +648,76 @@ To avoid complex numbers in partial fraction decomposition, we will now look at 
 
 A polynomial $p$ of degree two that cannot be factored into linear factors over the real numbers is called an **irreducible quadratic**.
 
-This means that an irreducible quadratic $p$ is a polynomial $p$ that can be written as
-
-$$
-p(x) = a\left((x-c)^2+d^2\right),
-$$
-
-with $a$, $c$ and $d$ real numbers, $a\neq0$ and $d\neq0$.
-
 ::::
 
 To relate this to theory you already may have learned, we have the following theorem:
 
-
 ::::{prf:theorem}
 :label: Thm:RationalFunctions:IrreducibleQuadratic
 
-A quadratic polynomial $p(x)=ax^2+bx+c$ is irreducible over the real numbers if and only if its discriminant $b^2-4ac$ is negative.
+A quadratic polynomial $p(x)=Ax^2+Bx+C$ is irreducible over the real numbers if and only if its discriminant $B^2-4AC$ is negative.
+
 ::::
 
-With this definition, we first look at an example of a proper rational function where the denominator can be factored into one distinct linear factor and one distinct irreducible quadratics over the real numbers.
+::::{admonition} Proof of Theorem {prf:ref}`Thm:RationalFunctions:IrreducibleQuadratic`
+:class: tudproof, dropdown
+
+First we will show that if the discriminant of a quadratic polynomial is negative, then the polynomial is irreducible over the real numbers. Let $p(x)=Ax^2+Bx+C$ be a quadratic polynomial with discriminant $B^2-4AC<0$. This means that if we define $c=-\frac{B}{2A}$ and $d=\frac{\sqrt{4AC-B^2}}{2A}>0$, then we have that
+
+$$
+r_1 = c + id \quad\text{and}\quad r_2 = c - id
+$$
+
+are the roots of $p$. Since $d>0$, these roots are complex conjugates and not real numbers. This means that $p$ cannot be factored into linear factors over the real numbers, by the Fundamental Theorem of Algebra, so $p$ is irreducible over the real numbers.
+
+If on the other hand $p$ is irreducible over the real numbers, then $p$ cannot be factored into linear factors over the real numbers. This means that the roots of $p$ are not real numbers. Since the roots of a quadratic polynomial are given by the formula
+
+$$
+x = \frac{-B \pm \sqrt{B^2-4AC}}{2A},
+$$
+
+and these roots must have a non-zero imaginary part, this means that the discriminant $B^2-4AC$ must be negative. This completes the proof.
+
+::::
+
+In the next part we need a special way of writing an irreducible quadratic. We can always rewrite an irreducible quadratic in the form given in the next theorem.
+
+::::{prf:theorem}
+:label: Thm:RationalFunctions:IrreducibleQuadraticForm
+
+Let $p$ be an irreducible quadratic polynomial with $p(x)=Ax^2+Bx+C$. Then there exist real numbers $c$ and $d$ such that
+
+$$
+p(x) = A\left((x-c)^2+d^2\right).
+$$
+
+::::
+
+::::{admonition} Proof of Theorem {prf:ref}`Thm:RationalFunctions:IrreducibleQuadraticForm`
+:class: tudproof, dropdown
+
+Let $p(x)=Ax^2+Bx+C$ be an irreducible quadratic polynomial. Since $p$ is irreducible, the discriminant $B^2-4AC$ is negative. This means that if we define $c=-\frac{B}{2A}$ and $d=\frac{\sqrt{4AC-B^2}}{2A}>0$, then we have that
+
+\begin{align*}
+-2c &= -2\left(-\frac{B}{2A}\right) = \frac{B}{A}, \\
+c^2 &= \left(-\frac{B}{2A}\right)^2 = \frac{B^2}{4A^2}, \\
+d^2 &= \left(\frac{\sqrt{4AC-B^2}}{2A}\right)^2 = \frac{4AC-B^2}{4A^2}, \\
+c^2 + d^2 &= \frac{B^2}{4A^2} + \frac{4AC-B^2}{4A^2} = \frac{4AC}{4A^2} = \frac{C}{A}.
+\end{align*}
+
+This means that we also have that
+
+\begin{align*}
+A\left((x-c)^2+d^2\right) &= A\left(x^2-2cx+c^2+d^2\right) \\
+&= Ax^2 + A\left(-2c\right)x + A\left(c^2+d^2\right) \\
+&= Ax^2 + Bx + C \\
+&= p(x).
+\end{align*}
+
+This completes the proof.
+::::
+
+With this definition and these theorems, we first look at an example of a proper rational function where the denominator can be factored into one distinct linear factor and one distinct irreducible quadratics over the real numbers.
 
 ::::{prf:example}
 :label: Ex:RationalFunctions:PartialFractionDecomposition4
