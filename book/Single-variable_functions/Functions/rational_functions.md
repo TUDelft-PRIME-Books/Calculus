@@ -1035,9 +1035,11 @@ from IPython.display import Latex
 # Define the variable and the constants
 x = sp.symbols('x')
 # define the rational function 
-r = (2*x**8 + 7*x**7 + 9*x**6 - 22*x**5 - 104*x**4 \
-     - 230*x**3 - 282*x**2 - 196*x -84) / ((x - 1) \
+p = (2*x**8 + 7*x**7 + 9*x**6 - 22*x**5 - 104*x**4 \
+     - 230*x**3 - 282*x**2 - 196*x -84)
+q = ((x - 1) \
      * (x + 2)**2 * (x**2 + 3) * (2 + 2*x + x**2)**2)
+r = p / q
 # perform the partial fraction decomposition
 decomp = sp.apart(r)
 
@@ -1046,6 +1048,29 @@ display(Latex("A partial fraction decomposition of"))
 display(Latex("$$r(x) = "+sp.latex(r)+".$$"))
 display(Latex("is"))
 display(Latex("$$r(x) = "+sp.latex(decomp)+".$$"))
+A, B, C, D, E, F, G, H, I = sp.symbols('A B C D E F G H I')
+rform = A/(x - 1) \
++ B/(x + 2) \
++ C/(x + 2)**2 \
++ (D*x + E)/(x**2 + 3) \
++ (F*x + G)/(2 + 2*x + x**2) \
++ (H*x + I)/(2 + 2*x + x**2)**2
+num, den = rform.cancel().as_numer_denom()
+pterms = sp.Poly(p,x).all_terms()
+nterms = sp.Poly(num,x).all_terms()
+display(Latex("""The systems of equations that would result in this
+ partial fraction decomposition (based on the form above):"""))
+eq_str = [r"$$\left\{\begin{array}{rcr}"]
+for i in range(len(pterms)):
+  if i+1<len(pterms):
+    eq_str.append(f"{sp.latex(nterms[i][1])} & = & {pterms[i][1]}, \\\\")
+  else:
+    eq_str.append(f"{sp.latex(nterms[i][1])} & = & {pterms[i][1]}.")
+  
+
+eq_str.append(r"\end{array}\right.$$")
+eq_str = "\n".join(eq_str)
+display(Latex(eq_str))
 :::
 
 ::::{prf:example-end}
@@ -1061,15 +1086,51 @@ A partial fraction decomposition for $f(x)=\dfrac{x^2+4}{x(x-1)^2}$ is asked.
 
 Someone suggests the decomposition $f(x)=\dfrac{A}{x} + \dfrac{Bx+C}{(x-1)^2}$.
 
-Will this lead _directly_, _indirectly_ or _neither_ to a correct partial fraction decomposition?
+Will this suggestion lead to a partial fraction decomposition of $f$?
 
 ---
-[ ] Directly.
-> The suggested decomposition will not lead directly to a correct partial fraction decomposition, since the term $\dfrac{Bx+C}{(x-1)^2}$ is not directly of the form $\dfrac{B}{x-1} + \dfrac{C}{(x-1)^2}\text{.}$ Is rewriting to obtain a correct partial fraction decomposition possible?
-[x] Indirectly.
-> The suggested decomposition will not lead directly to a correct partial fraction decomposition, since the term $\dfrac{Bx+C}{(x-1)^2}$ is not directly of the form $\dfrac{B}{x-1} + \dfrac{C}{(x-1)^2}\text{.}$ However, if we rewrite this term, after determining $A$, $B$ and $C$, as $\dfrac{B}{x-1} + \dfrac{B+C}{(x-1)^2}$, we obtain a correct partial fraction decomposition of $f$.
-[ ] Neither directly nor indirectly.
-> The suggested decomposition will not lead directly to a correct partial fraction decomposition, since the term $\dfrac{Bx+C}{(x-1)^2}$ is not directly of the form $\dfrac{B}{x-1} + \dfrac{C}{(x-1)^2}\text{.}$ Is rewriting to obtain a correct partial fraction decomposition possible?
+[ ] No, because the proposed decomposition is incorrect.
+> Although you are not wrong, nothing is directly wrong with the proposed decomposition, so this is not the best answer.
+[ ] No, because we will not find a solution for $A$, $B$ and $C$.
+> If you would try to find $A$, $B$ and $C$ by comparing coefficients, you would find that $A$, $B$ and $C$ satisfy the system of equations
+
+$$
+\begin{cases}
+A + B &= 1, \\
+-2A+C &= 0, \\
+A &= 4.
+\end{cases}
+$$
+
+Investigate yourself whether this system has a solution or not.
+
+[ ] No, because we will find infinitely many solutions for $A$, $B$ and $C$.
+> If you would try to find $A$, $B$ and $C$ by comparing coefficients, you would find that $A$, $B$ and $C$ satisfy the system of equations
+
+$$
+\begin{cases}
+A + B &= 1, \\
+-2A+C &= 0, \\
+A &= 4.
+\end{cases}
+$$
+
+Investigate yourself whether this system has one or infinitely many solutions or not.
+
+[x] Yes, because we will find a unique solution for $A$, $B$ and $C$.
+> Although the suggested decomposition is not a standard partial fraction decomposition, we can show that for this particular rational function, we will find $A=4$, $B=-3$ and $C=8$ as the unique solution for $A$, $B$ and $C$. The notice that
+
+\begin{align*}
+\dfrac{Bx+C}{(x-1)^2} &= \dfrac{-3x+8}{(x-1)^2} \\
+&=  \dfrac{-3(x-1)+5}{(x-1)^2} \\
+&=  \dfrac{-3}{x-1} + \dfrac{5}{(x-1)^2}.
+\end{align*}
+
+So after this step, the suggested decomposition can be rewritten to the standard form of a partial fraction decomposition, which turns out to be
+
+$$
+f(x) = \dfrac{4}{x} + \dfrac{-3}{x-1} + \dfrac{5}{(x-1)^2}.
+$$
 ---
 ::::
 
