@@ -1137,4 +1137,152 @@ $$
 (Sec:RationalFunctions:GraspleExercises)=
 ## Grasple exercises
 
-Todo
+### Domain and range
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/debe9205-dc80-4e2d-88e4-e9a90671b5a5?id=131205
+:label: Grasple:131205
+:dropdown:
+:description: Find the domain of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2e95a962-8482-40a6-9c9a-5e2f34adaf5e?id=70778
+:label: Grasple:70778
+:dropdown:
+:description: Find the domain of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e5683704-3cac-4cb6-8535-bc4ba03deb4b?id=70802
+:label: Grasple:70802
+:dropdown:
+:description: Find the domain of a rational function.
+
+::::
+
+### Long division
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4700075b-46b4-4872-944e-52abcedd453f?id=131208
+:label: Grasple:131208
+:dropdown:
+:description: Perform long division of polynomials.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/aa4ce0bf-388f-4bd9-b399-547f5caf1dc1?id=131209
+:label: Grasple:131209
+:dropdown:
+:description: Perform long division of polynomials.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c4940371-5342-4c15-b2dd-511806136e45?id=70065
+:label: Grasple:
+:dropdown:
+:description: Perform long division of polynomials.
+
+::::
+
+### Partial fraction decomposition
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7e93a9ec-efc0-41b5-915a-7859bc8ef483?id=76961
+:label: Grasple:76961
+:dropdown:
+:description: Find the form for a partial fraction decomposition of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ac5587d0-c069-4b20-9d2a-60a622b0ff53?id=76964
+:label: Grasple:76964
+:dropdown:
+:description: Find the form for a partial fraction decomposition of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/51e48a0d-7e14-41ee-9197-1b672d901946?id=76965
+:label: Grasple:76965
+:dropdown:
+:description: Find the form for a partial fraction decomposition of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fa880403-1aed-481d-b0fc-f33aff7a5f18?id=76966
+:label: Grasple:76966
+:dropdown:
+:description: Find the form for a partial fraction decomposition of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b8410be6-4f2a-4677-8534-76cb52b111ab?id=76967
+:label: Grasple:76967
+:dropdown:
+:description: Find the form for a partial fraction decomposition of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a04d2783-b937-4cbd-944d-3010badaf13b?id=64098
+:label: Grasple:64098
+:dropdown:
+:description: Find a partial fraction decomposition of a rational function step-by-step.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/58b43c58-7ec7-471e-a2f1-f45e074cf9dc?id=64101
+:label: Grasple:64101
+:dropdown:
+:description: Find a partial fraction decomposition of a rational function step-by-step.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/509e7e82-2e3c-4fc0-b481-57e6f73335c5?id=64105
+:label: Grasple:64105
+:dropdown:
+:description: Find a partial fraction decomposition of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/03079bd7-acfc-4d79-bbbf-51343cce6b40?id=64104
+:label: Grasple:64104
+:dropdown:
+:description: Find a partial fraction decomposition of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c956a099-e66d-4aac-8285-7fba11239b8a?id=64242
+:label: Grasple:64242
+:dropdown:
+:description: Find a partial fraction decomposition of a rational function.
+
+::::
