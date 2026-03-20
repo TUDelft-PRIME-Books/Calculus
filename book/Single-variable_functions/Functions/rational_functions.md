@@ -74,7 +74,7 @@ The range can be the entire set of real numbers, but it can also be a proper sub
 ::::{prf:example}
 :label: Ex:RationalFunctions:DomainAndRange1
 
-For instance, the rational function $f(x)=\frac{1}{x^2+1}$ has domain $\mathbb{R}$ since the denominator $x^2+1$ is never zero for any real number $x$.
+For instance, the rational function $f(x)=\dfrac{1}{x^2+1}$ has domain $\mathbb{R}$ since the denominator $x^2+1$ is never zero for any real number $x$.
 
 The range of this function is the range $(0,1]$ since $f(x)$ is always positive and attains it's maximum value $1$ at $x=0$.
 
@@ -85,7 +85,7 @@ The range of this function is the range $(0,1]$ since $f(x)$ is always positive 
 :name: Fig:RationalFunctions:DomainAndRange1
 :class: dark-light
 
-The function $f(x)=\frac{1}{x^2+1}$ has domain $\mathbb{R}$ and range $(0,1]$.
+The function $f(x)=\dfrac{1}{x^2+1}$ has domain $\mathbb{R}$ and range $(0,1]$.
 :::
 
 This curve has many names, but it sometimes called the _Witch of Agnesi_, named after [Maria Gaetana Agnesi](https://en.wikipedia.org/wiki/Maria_Gaetana_Agnesi).
@@ -95,7 +95,7 @@ This curve has many names, but it sometimes called the _Witch of Agnesi_, named 
 ::::{prf:example}
 :label: Ex:RationalFunctions:DomainAndRange2
 
-It is also possible that the range of a rational function is all real numbers except for a single value. For instance, the rational function $f(x)=\frac{1}{x}$ has range $\mathbb{R}\setminus\{0\}$ since $f(x)$ can be any real number except $0$.
+It is also possible that the range of a rational function is all real numbers except for a single value. The rational function $f(x)=\dfrac{1}{x}$ has range $\mathbb{R}\setminus\{0\}$ since $f(x)$ can be any real number except $0$.
 
 {numref}`Fig:RationalFunctions:DomainAndRange2` shows the graph of this function.
 
@@ -112,11 +112,11 @@ The function $f(x)=\frac{1}{x}$ has domain $\mathbb{R}\setminus\{0\}$ and range 
 ::::{prf:example}
 :label: Ex:RationalFunctions:DomainAndRange3
 
-Consider the rational function $f(x)=\frac{2x^2+7x-15}{2x^2-x-3}$.
+Consider the rational function $f(x)=\dfrac{2x^2+7x-15}{2x^2-x-3}$.
 
-The domain of this function is $\mathbb{R}\setminus\{-1, -\frac{3}{2}\}$ since the denominator is zero at $x=-1$ and $x=-\frac{3}{2}$ and so the function is undefined at these points.
+The domain of this function is $\mathbb{R}\setminus\{-1, \dfrac{3}{2}\}$ since the denominator is zero at $x=-1$ and $x=\dfrac{3}{2}$ and so the function is undefined at these points.
 
-The range of this function is $\mathbb{R}\setminus\{1\}$ since $f(x)$ can be any real number except $1$.
+The range of this function is $\mathbb{R}\setminus\{1,\dfrac{13}{5}\}$ since $f(x)$ can be any real number except $1$.
 
 {numref}`Fig:RationalFunctions:DomainAndRange3` shows the graph of this function.
 
@@ -125,10 +125,10 @@ The range of this function is $\mathbb{R}\setminus\{1\}$ since $f(x)$ can be any
 :name: Fig:RationalFunctions:DomainAndRange3
 :class: dark-light
 
-The function $f(x)=\frac{2x^2+7x-15}{2x^2-x-3}$ has domain $\mathbb{R}\setminus\{-1, -\frac{3}{2}\}$ and range $\mathbb{R}\setminus\{1,\frac{13}{5}\}$.
+The function $f(x)=\dfrac{2x^2+7x-15}{2x^2-x-3}$ has domain $\mathbb{R}\setminus\{-1, \dfrac{3}{2}\}$ and range $\mathbb{R}\setminus\{1,\dfrac{13}{5}\}$.
 :::
 
-Note that the graph has a vertical asymptote at $x=-1$ and a perforation at $(x,y)=\left(-\frac{3}{2}, \frac{13}{5}\right)$, which are the points where the function is undefined. The graph also has a horizontal asymptote at $y=1$ which is the value that the function approaches as $x$ goes to positive or negative infinity. The function never attains the value $1$, which is why the range does not include $1$.
+Note that the graph has a vertical asymptote at $x=-1$ and a perforation at $(x,y)=\left(\dfrac{3}{2}, \dfrac{13}{5}\right)$, which are the points where the function is undefined. The graph also has a horizontal asymptote at $y=1$ which is the value that the function approaches as $x$ goes to positive or negative infinity. The function never attains the value $1$, which is why the range does not include $1$.
 
 ::::
 
