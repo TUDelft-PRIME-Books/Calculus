@@ -13,6 +13,236 @@ In this section we cover (see note in section convergence of series):
 
 ## Introduction
 
+In {numref}`Chapter:Sequences` we have studied sequences, which are ordered lists of numbers. In this chapter we will study what happens if we add the terms of a sequence.Because sequences can be finite or infinite, we will have to distinguish between the addition of a finite number of numbers and the addition of an infinite number of numbers.
+
+We start with defining the term series, which is the addition of a sequence of numbers. We will also introduce the notation $\sum$ to denote the addition of a finite or an infinite number of numbers. We will then study the convergence of series, which is the question whether the sum of a(n in)finite number of numbers makes sense.
+
+## Series and sums
+
+In {numref}`Sec:SumsAndProducts:Sums` we have already introduced the summation symbol $\sum$ (capital Greek letter sigma) to denote the addition of any number of numbers. As sequences are (ordered) sets of numbers, we can use the summation symbol to denote the addition of the terms of a sequence. This is called a series:
+
+::::{prf:definition}
+:label: Def:Series:Definition
+
+A **series** is the addition of all of the terms of a sequence.
+
+A series is called a **finite series** if the sequence is finite.
+
+A series is called an **infinite series** if the sequence is infinite.
+::::
+
+::::{prf:notation}
+:label: Not:Series:Definition
+
+For a finite sequence $\{a_n\}_{n=p}^q$, the corresponding finite series is denoted by
+
+$$
+\sum_{n=p}^q a_n.
+$$
+
+For an infinite sequence $\{a_n\}_{n=p}^{\infty}$, the corresponding infinite series is denoted by
+
+$$
+\sum_{n=p}^{\infty}a_n.
+$$
+
+::::
+
+::::{prf:definition}
+:label: Def:Series:SummationIndex
+
+The letter $n$ in the notation $\displaystyle\sum_{n=p}^qa_n$ or $\displaystyle\sum_{n=p}^{\infty}a_n$ is called the **index of summation**.
+::::
+
+Because the index of summation is just a dummy variable, we can replace it by any other letter. For example, we can write $\displaystyle\sum_{k=p}^qa_k$ or $\displaystyle\sum_{m=p}^{\infty}a_m$ instead of $\displaystyle\sum_{n=p}^qa_n$ or $\displaystyle\sum_{n=p}^{\infty}a_n$, respectively.
+
+The result of a series can be a number, but it can also be a function, but it can also result nothing. To distinguish between these cases, we will use the following terminology:
+
+::::{prf:definition}
+:label: Def:Series:Sum
+
+If a series results in a number or a function, then we call this number or function the **sum** of the series.
+::::
+
+We will first turn our attention to finite series, which is just the addition of a finite number of numbers. We will then turn our attention to the sum of an infinite series, which is more complicated and requires the notion of convergence.
+
+## Finite series
+
+In {prf:ref}`Ex:Integration:IntroductionExamplesSum` we have seen the following result, which we summarise in a theorem:
+
+::::{prf:theorem}
+:label: Thm:Series:SumOfIntegers
+
+The finite sequence of the first $n$ positive integers, $\{k\}_{k=1}^n$ and the related finite series $\displaystyle\sum_{k=1}^nk$ have the following sum:
+
+$$
+\sum_{k=1}^nk=\frac{1}{2}n(n+1)
+$$
+
+for all $n\in\{1,2,3,\ldots\}$.
+
+::::
+
+This theorem can also be proved using the principle of mathematical induction:
+
+::::{admonition} Proof of {prf:ref}`Thm:Series:SumOfIntegers`
+:class: tudproof, dropdown
+
+For $n=1$ we obtain
+
+$$
+\sum_{k=1}^1k = 1
+$$
+
+and 
+
+$$
+\frac{1}{2}\cdot1\cdot2 = 1,
+$$
+
+which makes the statement true for $n=1$.
+
+Now suppose that $\displaystyle\sum_{k=1}^nk=\frac{1}{2}n(n+1)$ holds for certain value of $n$. Then we have
+
+\begin{align*}
+\sum_{k=1}^{n+1}k &= \left(\sum_{k=1}^nk\right)+(n+1) \\
+&= \frac{1}{2}n(n+1)+(n+1) \\
+&= \frac12n^2+\frac12n+n+1 \\
+&= \frac12n^2+\frac32n+1 \\
+&= \frac12(n^2+3n+2) \\
+&= \frac12(n+1)(n+2) \\
+&= \frac12(n+1)((n+1)+1).
+\end{align*}
+
+Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
+
+::::
+
+## Old stuff
+
+
+
+The Fibonacci sequence $\{F_n\}_{n=1}^{\infty}$ is defined by $F_{n+2}=F_n+F_{n+1}$ for $n=1,2,3,\ldots$ with $F_1=F_2=1$. Then we have
+
+:::{math}
+:label: Eq:Series:FibonacciTelescoping
+\begin{align*}
+\sum_{k=1}^nF_k&=\sum_{k=1}^n\left(F_{k+2}-F_{k+1}\right)\\
+&=F_{n+2}-\cancel{F_{n+1}}+\cancel{F_{n+1}}-\cancel{F_n}+\cdots+\cancel{F_4}-\cancel{F_3}+\cancel{F_3}-F_2\\
+&=F_{n+2}-2.
+\end{align*}
+:::
+
+This is called a **telescoping sum**.
+
+::::{exercise}
+:label: Exc:Series:LucasTelescoping
+The Lucas sequence $\{L_n\}_{n=1}^{\infty}$ is defined by $L_{n+2}=L_n+L_{n+1}$ for $n=1,2,3,\ldots$ with $L_1=1$ and $L_2=3$.
+
+Simplify $\displaystyle\sum_{k=1}^nL_k$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Series:LucasTelescoping`
+:class: solution, dropdown
+Again we use the *telescoping property* to find
+
+\begin{align*}
+\sum_{k=1}^nL_k&=\sum_{n=1}^n\left(L_{k+2}-L_{k+1}\right)\\
+&=L_{n+2}-\cancel{L_{n+1}}+\cancel{L_{n+1}}-\cancel{L_n}+\ldots+\cancel{L_4}-\cancel{L_3}+\cancel{L_3}-L_2\\
+&=L_{n+2}-3.
+\end{align*}
+:::
+
+::::{exercise}
+:label: Exc:Series:TelescopingExercise
+Use the facts that $n^4+n^2+1=n^4+2n^2+1-n^2=(n^2+1)^2-n^2$ and $2n=n^2+1+n-(n^2+1-n)$ to find the sum of
+
+$$
+\sum_{n=1}^{100}\frac{n}{n^4+n^2+1}.
+$$
+
+::::
+
+:::{admonition} Solution of {numref}`Exc:Series:TelescopingExercise`
+:class: solution, dropdown
+Using $n^4+n^2+1=(n^2+1)^2-n^2=(n^2+1+n)(n^2+1-n)$ and $2n=n^2+1+n-(n^2+1-n)$ we obtain
+
+\begin{align*}
+\sum_{n=1}^{100}\frac{n}{n^4+n^2+1}&=\frac{1}{2}\sum_{n=1}^{100}\frac{n^2+1+n-(n^2+1-n)}{(n^2+1+n)(n^2+1-n)}\\
+&=\frac{1}{2}\sum_{n=1}^{100}\left(\frac{1}{n^2+1-n}-\frac{1}{n^2+1+n}\right).
+\end{align*}
+In order to see that this is a telescoping sum, let $f(n)=n^2+1-n$, then $f(n+1)=(n+1)^2+1-(n+1)=n^2+2n+1+1-n-1=n^2+1+n$. Hence, we have
+
+\begin{align*}
+&\sum_{n=1}^{100}\left(\frac{1}{n^2+1-n}-\frac{1}{n^2+1+n}\right)=\sum_{n=1}^{100}\left(\frac{1}{f(n)}-\frac{1}{f(n+1)}\right)\\
+&{}=\frac{1}{f(1)}-\cancel{\frac{1}{f(2)}}+\cancel{\frac{1}{f(2)}}-\cancel{\frac{1}{f(3)}}+\cdots+\cancel{\frac{1}{f(100)}}-\frac{1}{f(101)}\\
+&=\frac{1}{f(1)}-\frac{1}{f(101)}.
+\end{align*}
+We conclude that
+
+\begin{align*}
+\sum_{n=1}^{100}\frac{n}{n^4+n^2+1}&=\frac{1}{2}\left(\frac{1}{f(1)}-\frac{1}{f(101)}\right)=\frac{1}{2}\left(1-\frac{1}{100^2+1+100}\right)\\
+&=\frac{1}{2}\cdot\frac{10101-1}{10101}=\frac{5050}{10101}.
+\end{align*}
+:::
+
+
+
+
+
+
+::::{exercise}
+:label: Exc:Series:IntroductionInduction1
+Show that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ for all $n\in\{1,2,3,\ldots\}$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Series:IntroductionInduction1`
+:class: solution, dropdown
+For $n=1$ this reads: $1=\frac{1}{6}\cdot1\cdot2\cdot3$, which is true. 
+
+Suppose that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ holds for certain value of $n$. Then we have
+
+\begin{align*}
+\sum_{k=1}^{n+1}k^2&=\sum_{k=1}^nk^2+(n+1)^2=\frac{1}{6}n(n+1)(2n+1)+(n+1)^2\\
+&=\frac{1}{6}(n+1)\left\{n(2n+1)+6(n+1)\right\}\\
+&=\frac{1}{6}(n+1)(2n^2+7n+6)=\frac{1}{6}(n+1)(n+2)(2n+3).
+\end{align*}
+Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
+:::
+
+::::{exercise}
+:label: Exc:Series:IntroductionInduction2
+Show that $\displaystyle\sum_{k=1}^nk^3=\left(\sum_{k=1}^nk\right)^2=\frac{1}{4}n^2(n+1)^2$ for all $n\in\{1,2,3,\ldots\}$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Series:IntroductionInduction2`
+:class: solution, dropdown
+For $n=1$ this reads: $1=\frac{1}{4}\cdot1^2\cdot2^2$, which is true. 
+
+Suppose that $\displaystyle\sum_{k=1}^nk^3=\frac{1}{4}n^2(n+1)^2$ holds for certain value of $n$. Then we have
+
+\begin{align*}
+\sum_{k=1}^{n+1}k^3&=\sum_{k=1}^nk^3+(n+1)^3=\frac{1}{4}n^2(n+1)^2+(n+1)^3\\
+&=\frac{1}{4}(n+1)^2\left\{n^2+4(n+1)\right\}\\
+&=\frac{1}{4}(n+1)^2(n^2+4n+4)=\frac{1}{4}(n+1)^2(n+2)^2.
+\end{align*}
+Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
+:::
+
+::::::{prf:example} Another interesting result
+Prove that $\displaystyle\sum_{k=n^2+1}^{(n+1)^2}k=n^3+(n+1)^3$ for all $n\in\{1,2,3,\ldots\}$.
+
+Solution. This can be shown directly: note that the sum has $2n+1$ terms, so we have
+
+\begin{align*}
+\sum_{k=n^2+1}^{(n+1)^2}k&=\frac{1}{2}(2n+1)\left\{n^2+1+(n+1)^2\right\}=(2n+1)(n^2+n+1)\\
+&=2n^3+3n^2+3n+1=n^3+(n+1)^3.
+\end{align*}
+::::::
+
+
+## Introduction
+
 If we add the terms of a finite sum, the order of the terms is not relevant, since by the associative law for addition we have
 
 $$
