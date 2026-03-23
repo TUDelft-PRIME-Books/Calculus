@@ -230,6 +230,10 @@ align: center
 The function $\sin(x)$ on the interval $[0,\pi]$.
 ```
 
+:::{todo}
+Replace {numref}`Fig:Integration:SineArea` with an applet.
+:::
+
 This is the same as calculating the area under one positive arc of the sine function, which is shown in the figure above, and this area is:
 
 $$
@@ -293,6 +297,11 @@ align: center
 ---
 Graph of $\erf(x)$ for $x\geq0$.
 ```
+
+:::{todo}
+Replace {numref}`Fig:Integration:ErrorFunction` with an applet.
+:::
+
 ::::::
 
 ::::::{prf:Example} Fresnel integrals
@@ -340,6 +349,11 @@ align: center
 ---
 Graphs of $C(x)$ and $S(x)$ for $0\leq x\leq4$.
 ```
+
+:::{todo}
+Replace {numref}`Fig:Integration:FresnelFunctions` with an applet.
+:::
+
 ::::::
 
 ## Exercises
