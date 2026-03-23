@@ -31,6 +31,10 @@ align: center
 The integral $\displaystyle\int_a^bf(x)\,dx$.
 ```
 
+:::{todo}
+Replace {numref}`Fig:Integration:DefiniteIntegral` with an applet.
+:::
+
 The numbers $a$ and $b$ are called the **limits of integration**, where $a$ is called the **lower limit** and $b$ the **upper limit**.
 
 The function $f$ is called the **integrand** and $x$ is the **variable of integration**. 
@@ -53,6 +57,10 @@ align: center
 
 The graph of the function $f(x)=2x+1$ on the interval $[0,3]$.
 ```
+
+:::{todo}
+Replace {numref}`Fig:DefiniteIntegrals:LinearFunction` with an applet.
+:::
 
 We can see that the area under the graph consists of a rectangle and a triangle. The area of the rectangle equals base times height: $3\cdot1=3$. The area of the triangle equals one half times base times height: $\frac{1}{2}\cdot3\cdot(7-1)=9$. Hence the total area equals $3+9=12$ and we conclude that
 
@@ -107,6 +115,10 @@ align: center
 The graph of a piecewise continuous function.
 ```
 
+:::{todo}
+Replace {numref}`Fig:Integration:DefinitePiecewise` with an applet.
+:::
+
 The definite integral of $f$ over the interval $[0,3]$ can be calculated as the sum of three areas:
 
 $$
@@ -140,8 +152,13 @@ name: Fig:Integration:Integral3
 align: center
 ---
 
+
 The integral $\displaystyle\int_a^bf(x)\,dx$ for a function that takes on both positive and negative values.
 ```
+
+:::{todo}
+Replace {numref}`Fig:Integration:Integral3` with an applet.
+:::
 
 Although the above image contains a continuous function, the same idea applies to piecewise-continuous functions. This leads us to the following final definition of a definite integral.
 
@@ -178,6 +195,10 @@ align: center
 The graph of a piecewise continuous function that takes on both positive and negative values.
 ```
 
+:::{todo}
+Replace {numref}`Fig:Integration:DefiniteBoth` with an applet.
+:::
+
 The integral $\displaystyle\int_{-2}^5f(x)\,dx$ can be calculated as follows:
 
 \begin{align*}
@@ -209,6 +230,10 @@ align: center
 A general function with area to be calculated.
 ```
 
+:::{todo}
+Replace {numref}`Fig:DefiniteIntegrals:General` with an applet.
+:::
+
 Even though the function is continuous on the interval $[a,b]$, it is not composed of a simple geometric shape such as a rectangle or a triangle. Hence we cannot calculate the area directly. In order to find this area, we start with an approximation: we divide the interval $[a,b]$ into subintervals and consider the sum of the areas of the indicated rectangles:
 
 ```{figure} Images/integral2.png
@@ -220,6 +245,10 @@ align: center
 
 Sum of area of rectangles.
 ```
+
+:::{todo}
+Replace {numref}`Fig:Integration:SumRectangles` with an applet.
+:::
 
 The height of each rectangle is taken to be the value of the function $f$ at an arbitrary point $x_k^*$ in the corresponding subinterval. This point $x_k^*$ is called a **sample point** and might be the left point, the right point or the middle point of the subinterval, for instance. Then we take the sum of the areas of all rectangles.
 
@@ -237,6 +266,10 @@ align: center
 ---
 Building a Riemann sum.
 ```
+
+:::{todo}
+Replace {numref}`Fig:Integration:RiemannSum` with an applet.
+:::
 
 Choose a sample point $x_k^*$ in each subinterval $[x_{k-1},x_k]$, then the area equals
 
@@ -310,7 +343,8 @@ Then the Riemann sum $R$ equals,
 
 \begin{align*}
 R &= \sum_{k=1}^nf(x_k^*)\Delta x \\
-&= \sum_{k=1}^n\frac{k^2}{n^2}\cdot\frac{1}{n}=\frac{1}{n^3}\sum_{k=1}^nk^2 \\
+&= \sum_{k=1}^n\frac{k^2}{n^2}\cdot\frac{1}{n} \\
+&= \frac{1}{n^3}\sum_{k=1}^nk^2 \\
 &= \frac{1}{n^3}\cdot\frac{n(n+1)(2n+1)}{6} \\
 &= \frac{2n^3+3n^2+n}{6n^3} \\
 &= \frac{2n^2+3n+1}{6n^2}.
@@ -367,6 +401,10 @@ align: center
 The graph of the sine function.
 ```
 
+:::{todo}
+Replace {numref}`Fig:Integration:DefiniteOdd` with an applet.
+:::
+
 Inspection of the graph shows that the area below the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Since the area below the $x$-axis is taken with a negative sign in {prf:ref}`Def:Integration:DefiniteGeneral`, these two areas cancel, and we find
 
 $$
@@ -388,6 +426,10 @@ align: center
 ---
 The integral of an even function.
 ```
+
+:::{todo}
+Replace {numref}`Fig:Integration:DefiniteEven` with an applet.
+:::
 
 Inspection of the graph shows that the area above the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Because both areas are taken with a positive sign in {prf:ref}`Def:Integration:DefiniteGeneral`, we find
 
@@ -466,7 +508,7 @@ If, however, the function $f$ represents the *speed* at which an object is movin
 :name: Fig:DefiniteIntegrals:Athlete
 :align: center
 :figclass: margin
-:author: <a href="https://unsplash.com/@mroz?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Filip Mroz</a>
+:author: Filip Mroz
 :placement: caption
 :license: Unsplash License
 :source: [Unsplash](https://unsplash.com/photos/woman-running-wearing-armband-XCkRGOX2VgM?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText")
@@ -488,6 +530,10 @@ What is the distance traveled by the athlete?
 The speed $v$ at which the athlete is moving during the interval training. On the horizontal axis the time $t$ is shown in minutes.
 :::
 
+:::{todo}
+Replace {numref}`Fig:DefiniteIntegrals:Distance` with an applet.
+:::
+
 In order to get the correct units, we change the minutes into hours ($5$ minutes is $\frac{1}{12}$ hour for instance) and add the five different areas:
 
 $$
@@ -505,7 +551,7 @@ We could also have changed the speed into meters per second and the time into se
 
 Note that speed in general cannot change suddenly. In fact, the velocity should be a continuous function. Then the distance equals the area between the graph of the velocity and the horizontal axis. Before you learn how to calculate this area exactly, we need to discuss another type of integral in {numref}`Sec:Integration:IndefiniteIntegrals`.
 
-To conclude this section, we give a general theorem about the unit of definite integral.
+To conclude this section, we give a general theorem about the unit of a definite integral.
 
 ::::{prf:theorem}
 :label: theorem:Integration:Units
