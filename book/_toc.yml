@@ -8,7 +8,7 @@ parts:
     - file: introduction.md # ref_graph: {'ignore':True}
     - file: graph_of_content.md # ref_graph: {'ignore':True} # Optional graph of content page, currently just an include of the generated graph by sphinx-visualized
   - caption: Algebra
-    numbered: True
+    numbered: 3
     chapters:
     - file: "Algebra/Numbers_and_coordinate_systems/introduction_numbers_and_coordinate_systems.md" # ref_graph: {'ignore':True}
       sections:
@@ -26,7 +26,7 @@ parts:
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Lines_and_Planes.md" # ref_graph: {'tag': 'Vector algebra'}
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter5/DeterminantsGeometric.md" # ref_graph: {'tag': 'Vector algebra'}
   - caption: Single-variable functions
-    numbered: True
+    numbered: 3
     chapters: 
     - file: "Single-variable_functions/Functions/introduction_functions.md" # ref_graph: {'ignore':True}
       sections:
@@ -63,7 +63,7 @@ parts:
       - file: "Single-variable_functions/Integration/improper_integrals.md"
       - file: "Single-variable_functions/Integration/approximating_integrals.md"
   - caption: Sequences and series
-    numbered: true
+    numbered: 3
     chapters:
     - file: "Sequences_and_series/Sequences/introduction_sequences.md" # ref_graph: {'ignore':True}
       sections:
@@ -80,7 +80,7 @@ parts:
       - file: "Sequences_and_series/Series/taylor_series.md"
       - file: "Sequences_and_series/Series/fourier_series.md"
   - caption: Multivariable functions
-    numbered: true
+    numbered: 3
     chapters:
     - file: "Multivariable_functions/Functions_curves_and_surfaces/introduction_functions_curves_and_surfaces.md" # ref_graph: {'ignore':True}
       sections:
@@ -119,7 +119,7 @@ parts:
       - file: "Multivariable_functions/Vector_calculus/Gauss_theorem.md"
       - file: "Multivariable_functions/Vector_calculus/Stokes_theorem.md"
   - caption: Differential equations
-    numbered: true
+    numbered: 3
     chapters:
     - file: "Differential_equations/Introduction/introduction_differential_equations.md" # ref_graph: {'ignore':True}
       sections:
@@ -141,7 +141,7 @@ parts:
       - file: "Differential_equations/Second-order_ordinary_differential_equations/problems_with_nonconstant_coefficients.md"
       - file: "Differential_equations/Second-order_ordinary_differential_equations/series_solutions_2nd.md"
   - caption: Appendices
-    numbered: true
+    numbered: 3
     style: alphaupper
     chapters:
     - file: "Overviews/Algebra/overviews_from_algebra.md" # ref_graph: {'ignore':True}
@@ -174,7 +174,7 @@ parts:
     - file: credits.md # ref_graph: {'ignore':True}
     - file: genindex.md # ref_graph: {'ignore':True}
   - caption: Reference pages for development
-    numbered: True
+    numbered: 3
     style: romanupper
     chapters:
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md" # ref_graph: {'ignore':True}
