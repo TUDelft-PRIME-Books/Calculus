@@ -71,7 +71,7 @@ $$
 
 So we conclude that the small area with the $\left(\Delta x\right)^2$ term had no influence on the rate of change of the area, but both other areas did. As such, the rate of change of the area is the sum of the two terms $w(x)\ell'(x)$ and $\ell(x)w'(x)$ (and in particular, it is **not** equal to $w'(x)\ell'(x)$). 
 
-The general version of this rule is called the **product rule**, or sometimes the **Leibniz rule**. The product rule and the chain rule (which has been discussed in {numref}`Sec:Differentiation:ChainRule`) are the most important rules that we can use to find derivatives of complicated functions. In this section, we will state and prove the product rule and show how it is used. We will also consider another rule, called the **quotient rule**, which is a combination of the product and chain rules. We will use these rules to find yet another standard derivative, the one of the tangent.
+The general version of this rule is called the **product rule**, or sometimes the **Leibniz rule**. The product rule and the chain rule (which has been discussed in {numref}`Sec:Differentiation:ChainRule`) are the most important rules that we can use to find derivatives of complicated functions. In this section, we will state and prove the product rule and show how it is used. We will also consider another rule, called the **quotient rule**, which is a combination of the product and chain rules. We will use these rules to find yet another standard two derivatives, the ones of the tangent and the hyperbolic tangent.
 
 
 ## The product rule
@@ -240,13 +240,14 @@ $$
 So $q$ is differentiable in $a$ and $\displaystyle q'(a)=\frac{f'(a)g(a)-g'(a)f(a)}{g(a)^2}$.
 :::
 
-With the quotient rule in hand, we can find another standard derivative.
+With the quotient rule in hand, we can find another two standard derivatives.
 
 ::::::{prf:theorem} Standard derivatives, part 3 out of 4
 :label: Thm:Productquotientrule:Standard3
-We have the following standard derivative.
+We have the following standard derivatives.
 
 - We have $\dfrac{d}{dx}\left[\tan(x)\right]=\dfrac{1}{\cos^2(x)}=1+\tan^2(x).$
+- We have $\dfrac{d}{dx}\left[\tanh(x)\right]=\dfrac{1}{\cosh^2(x)}=1-\tanh^2(x).$
 
 ::::::
 
@@ -264,6 +265,17 @@ $$
  \dfrac{d}{dx}\left[\tan(x)\right]=\frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)}=\frac{\cos^2(x)}{\cos^2(x)}+\frac{\sin^2(x)}{\cos^2(x)}=1+\left(\frac{\sin(x)}{\cos(x)}\right)^2=1+\tan^2(x).
 $$
 
+Similarly, we know that that $\tanh(x)=\dfrac{\sinh(x)}{\cosh(x)}$, so we can use the quotient rule to evaluate
+
+$$
+ \dfrac{d}{dx}\left[\tanh(x)\right]=\frac{\cosh(x)\frac{d}{dx}[\sinh(x)]-\sinh(x)\frac{d}{dx}[\cosh(x)]}{\cosh(x)^2}=\frac{\cosh(x)\cosh(x)-\sinh(x)\sinh(x)}{\cosh^2(x)}=\frac{\cosh^2(x)-\sinh^2(x)}{\cosh^2(x)}=\frac{1}{\cosh^2(x)}.
+$$
+
+Alternatively, we can rewrite this expression to
+
+$$
+ \dfrac{d}{dx}\left[\tanh(x)\right]=\frac{\cosh^2(x)-\sinh^2(x)}{\cosh^2(x)}=\frac{\cosh^2(x)}{\cosh^2(x)}-\frac{\sinh^2(x)}{\cosh^2(x)}=1-\left(\frac{\sinh(x)}{\cosh(x)}\right)^2=1-\tanh^2(x).
+$$
 :::
 
 ::::::{prf:example} 
