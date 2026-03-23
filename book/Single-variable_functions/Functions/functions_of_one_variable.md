@@ -285,7 +285,9 @@ The most standard of standard functions are the polynomials. These come in vario
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Polynomial
-A function $f$ is called a **polynomial function** if $f(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$ for some integer $n\geq 0$ and real numbers $a_0,a_1,...,a_n$.
+A function $f$ is called a **polynomial function** if $f(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$ for some integer $n\geq 0$ and real numbers $a_0,a_1,...,a_n$. 
+
+If the polynomial function consists of only one term, so if $f(x)=a_nx^n$, then we call it a **monomial function**.
 
 If $a_n\neq 0$ (so that $x^n$ is highest power of $x$ that occurs in the formula describing $f$), we say that the **degree of the polynomial** is $n$.
 
