@@ -4,7 +4,7 @@ Use the following base codes to create polling questions in your book.
 
 Details for the syntax and options can be found in the manual: [TeachBooks Questions](https://teachbooks.io/manual/_git/github.com_TeachBooks_TeachBooks-Questions/main/MANUAL.html).
 
-### Multiple-choice single-select question
+## Multiple-choice single-select question
 
 ````text
 ::::{question} Multiple-choice Single-select
@@ -48,7 +48,7 @@ That is not correct.
 Did you find all correct answers?
 ::::
 
-### Multiple-choice multiple-select question
+## Multiple-choice multiple-select question
 
 ````text
 ::::{question} Multiple-choice Multiple-select
@@ -92,7 +92,7 @@ That is not correct.
 Did you find all correct answers?
 ::::
 
-### Short-answer blocks question
+## Short-answer blocks question
 
 For this example we will only show case two input blocks, but more can be added if needed.
 

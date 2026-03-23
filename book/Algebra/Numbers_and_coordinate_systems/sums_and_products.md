@@ -1,26 +1,48 @@
-# Sums and products
+# Summation and products
 
-In this section we introduce the notation for sums and products which will be used in the rest of this book.
+In this section we introduce the notation for summations and products which will be used in the rest of this book.
 
 We assume that the reader is familiar with basic operations on rational numbers such as addition, multiplication, subtraction, and division.
 
 These operations can be extended to rational real numbers ({numref}`Section:RealNumbers`) and complex numbers ({numref}`Ch:ComplexNumbersCartesian`).
 
+This chapter is not meant to be an exhaustive introduction to summations and products, but rather a brief introduction to the notation that will be used in the rest of this book.
+
+(Sec:SumsAndProducts:Sums)=
 ## Sums
 
-The notation $\sum$ (capital Greek letter sigma) is used to denote a (finite) sum:
+The summation symbol $\sum$ (the capital Greek letter sigma) is used to denote the addition of any number of numbers:
 
-::::::{prf:Definition}
+::::::{prf:definition}
 :label: Def:Integration:IntroductionNotationSum
+
+The **summation symbol** $\sum$ is used to denote the addition of a set of ordered numbers.
+::::::
+
+
 If $a_m,a_{m+1},\ldots,a_n$ are numbers and $m$ and $n$ are integers with $m\leq n$, then
 
 $$
-\sum_{k=m}^na_k=a_m+a_{m+1}+\ldots+a_n.
+\sum_{k=m}^na_k
 $$
 
-The letter $k$ is called the **index of summation**.
+is an abbreviation for the addition of the numbers $a_m,a_{m+1},\ldots,a_n$, that is
+
+$$
+a_m+a_{m+1}+\ldots+a_n.
+$$
+
+We also allow the addition of an infinite number of numbers, which can be written as
+
+$$
+\sum_{k=m}^\infty a_k,
+$$
+
+where $a_k$ is a number for each integer $k\geq m$.
 
 ::::::
+
+The next examples only consider the addition of a finite number of numbers.
 
 ::::::{prf:Example}
 :label: Ex:Integration:IntroductionExamplesSum
@@ -33,7 +55,7 @@ The letter $k$ is called the **index of summation**.
 ::::::{prf:Example}
 :label: Ex:Integration:IntroductionSumIntegers
 
-We can show that the sum $S$ of the first $n$ positive integers equals $\frac{1}{2}n(n+1)$.
+We can show that the addition of the first $n$ positive integers equals $\frac{1}{2}n(n+1)$.
 
 Let $S=\displaystyle\sum_{k=1}^nk$, then we have:
 
@@ -41,13 +63,14 @@ Let $S=\displaystyle\sum_{k=1}^nk$, then we have:
 S&=1&+2&+\ldots&+(n-1)&+n\\
 S&=n&+(n-1)&+\ldots&+2&+1.
 \end{align*}
+
 Adding the two expressions we obtain
 
 $$
 2S=\underbrace{(n+1)+(n+1)+\ldots+(n+1)+(n+1)}_{n\;\text{times}}.
 $$
 
-Hence we have: $2S=n(n+1)$ and therefore $S=\frac{1}{2}n(n+1)$.
+Hence we have $2S=n(n+1)$ and therefore $S=\frac{1}{2}n(n+1)$.
 ::::::
 
 ::::::{prf:Example}
@@ -68,7 +91,7 @@ $$
 
 ::::::
 
-See {numref}`Chapter:Series:Introduction` for more details about finite sums and series (infinite sums).
+See {numref}`Chapter:Series:Introduction` for more details about the addition of a finite or an infinite number of numbers.
 
 ## Products
 
