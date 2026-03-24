@@ -380,6 +380,7 @@ The degree of the polynomial $r$ is $R<Q$ since the algorithm terminates when we
 :variant: multiple-select
 :admonition:
 :class: question
+:showanswer:
 
 When applying polynomial long division to divide a polynomial $p$ by a second degree polynomial $q$, what can the remainder $r$ be?
 
@@ -1142,6 +1143,7 @@ display(Latex(eq_str))
 :variant: single-select
 :admonition:
 :class: question
+:showanswer:
 
 A partial fraction decomposition for $f(x)=\dfrac{x^2+4}{x(x-1)^2}$ is asked.
 
