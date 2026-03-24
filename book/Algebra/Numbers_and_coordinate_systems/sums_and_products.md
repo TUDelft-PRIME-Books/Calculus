@@ -1,4 +1,4 @@
-# Summation and products
+# Summation and product symbols
 
 In this section we introduce the notation for summations and products which will be used in the rest of this book.
 
@@ -9,7 +9,7 @@ These operations can be extended to rational real numbers ({numref}`Section:Real
 This chapter is not meant to be an exhaustive introduction to summations and products, but rather a brief introduction to the notation that will be used in the rest of this book.
 
 (Sec:SumsAndProducts:Sums)=
-## Sums
+## Summation symbol
 
 The summation symbol $\sum$ (the capital Greek letter sigma) is used to denote the addition of any number of numbers:
 
@@ -93,20 +93,39 @@ $$
 
 See {numref}`Chapter:Series:Introduction` for more details about the addition of a finite or an infinite number of numbers.
 
-## Products
+## Product symbol
 
-Similarly, the notation $\prod$ (capital Greek letter pi) is used to denote a (finite) product:
+Similarly, the product symbol $\prod$ (capital Greek letter pi) is used to denote multiplication of a any number of numbers:
+
 ::::::{prf:Definition}
 :label: Def:Integration:IntroductionNotationProduct
+
+The **product symbol** $\prod$ is used to denote the multiplication of a set of ordered numbers.
+
+::::::
+
+
 If $a_m,a_{m+1},\ldots,a_n$ are numbers and $m$ and $n$ are integers with $m\leq n$, then
 
 $$
-\prod_{k=m}^na_k=a_m\cdot a_{m+1}\cdots a_n.
+\prod_{k=m}^na_k
 $$
 
-In this case the letter $k$ is called the **index of multiplication**.
+is an abbreviation for the multiplication of the numbers $a_m,a_{m+1},\ldots,a_n$, that is
 
-::::::
+$$
+a_m\cdot a_{m+1}\cdots a_n.
+$$
+
+We also allow the multiplication of an infinite number of numbers, which can be written as
+
+$$
+\prod_{k=m}^\infty a_k,
+$$
+
+where $a_k$ is a number for each integer $k\geq m$.
+
+The next examples only consider the multiplication of a finite number of numbers.
 
 ::::::{prf:Example}
 :label: Ex:Integration:IntroductionExamplesProduct

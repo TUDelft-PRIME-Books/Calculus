@@ -64,9 +64,105 @@ The result of a series can be a number, but it can also be a function, but it ca
 If a series results in a number or a function, then we call this number or function the **sum** of the series.
 ::::
 
+To have a simple notation for the sum of a series, we will use the following notation:
+
+::::{prf:notation}
+:label: Not:Series:Sum
+
+If a series $\displaystyle\sum_{n=p}^qa_n$ or $\displaystyle\sum_{n=p}^{\infty}a_n$ has the sum $S$, then we write
+
+$$
+\sum_{n=p}^qa_n=S \quad\text{or}\quad \sum_{n=p}^{\infty}a_n=S,
+$$
+
+respectively.
+::::
+
 We will first turn our attention to finite series, which is just the addition of a finite number of numbers. We will then turn our attention to the sum of an infinite series, which is more complicated and requires the notion of convergence.
 
 ## Finite series
+
+We start with a short but important theorem about the sum of a finite series, which will be used in the next section to find the sum of an infinite series:
+
+::::{prf:theorem}
+:label: Thm:Series:FiniteSeries
+
+The sum of a finite series exists.
+::::
+
+::::{admonition} Proof of {prf:ref}`Thm:Series:FiniteSeries`
+:class: tudproof, dropdown
+
+Assume $\{a_n\}_{n=p}^q$ is a finite sequence of terms, then we have
+
+$$
+\sum_{n=p}^qa_n=a_p+a_{p+1}+a_{p+2}+\cdots+a_q.
+$$
+
+Using brackets, we can write this as
+
+$$
+\sum_{n=p}^qa_n=\left(\cdots\left(\left(a_p+a_{p+1}\right)+a_{p+2}\right)+\cdots\right)+a_q.
+$$
+
+Since the addition of two numbers is well-defined, we can add $a_p$ and $a_{p+1}$ to get a number, which we can then add to $a_{p+2}$ to get another number, and so on until we have added all the terms of the series. Hence, the sum of a finite series exists.
+
+::::
+
+
+
+Without stating a formal proof, we will also state some important properties of the sum of a finite series:
+
+::::{prf:theorem}
+:label: Thm:Series:PropertiesFiniteSeries
+
+If $\displaystyle\sum_{n=p}^qa_n=A$ and $\sum_{n=p}^qb_n=B$, then we have
+
+$$
+\sum_{n=p}^q(a_n+b_n)=A+B.
+$$
+
+If $\displaystyle\sum_{n=p}^qa_n=A$ and $c$ is a number, then we have
+
+$$
+\sum_{n=p}^qc a_n=cA.
+$$
+
+If $\displaystyle\sum_{n=p}^qa_n=A$ and $\displaystyle\sum_{n=q+1}^ra_n=B$, then we have
+
+$$
+\sum_{n=p}^ra_n=A+B.
+$$
+
+If $\displaystyle\sum_{n=p}^qa_n=A$ and $t$ is an integer, then we have
+
+$$
+\sum_{n=p-t}^{q-t} a_{n+t} = A.
+$$
+
+::::
+
+::::::{prf:remark}
+:label: Rem:Series:PropertiesFiniteSeries
+
+In {prf:ref}`Thm:Series:PropertiesFiniteSeries` the first and third property are focussed on addition of series, the second property is focussed on multiplication of a series by a number, and the fourth property is focussed on the change of the index of summation.
+
+Combining the second property with the first property, we can also find the following property: if $\displaystyle\sum_{n=p}^qa_n=A$ and $\displaystyle\sum_{n=p}^qb_n=B$, then we have
+
+$$
+\sum_{n=p}^q(a_n-b_n)=A-B,
+$$
+
+and
+
+$$
+\sum_{n=p}^q(ca_n+db_n)
+$$
+
+for any numbers $c$ and $d$.
+
+Likewise, the third property can also be used for subtraction and the fourth property can also be used for a change of the index of summation in the opposite direction.
+::::::
 
 In {prf:ref}`Ex:Integration:IntroductionExamplesSum` we have seen the following result, which we summarise in a theorem:
 
@@ -118,11 +214,50 @@ Since this is exactly the formula with $n$ replaced by $n+1$, this proves the st
 
 ::::
 
-## Old stuff
+::::::{prf:example}
+:label: Ex:Series:SumOfIntegersSquares
+Using the previous theorem, we can show that
 
+$$
+\sum_{k=n^2+1}^{(n+1)^2}k=n^3+(n+1)^3
+$$
 
+for all $n\in\{1,2,3,\ldots\}$.
 
-The Fibonacci sequence $\{F_n\}_{n=1}^{\infty}$ is defined by $F_{n+2}=F_n+F_{n+1}$ for $n=1,2,3,\ldots$ with $F_1=F_2=1$. Then we have
+First, consider the series that starts at $1$ and ends at $(n+1)^2$, then we have
+
+:::{math}
+:label: Eq:Series:SumOfIntegersSquares1
+\sum_{k=1}^{(n+1)^2}k=\frac{1}{2}(n+1)^2((n+1)^2+1) = \frac12(n^4+4n^3+7n^2+6n+2).
+:::
+
+Next, consider the series that starts at $1$ and ends at $n^2$, then we have
+
+:::{math}
+:label: Eq:Series:SumOfIntegersSquares2
+\sum_{k=1}^{n^2}k=\frac{1}{2}n^2(n^2+1) = \frac12(n^4+n^2).
+:::
+
+If we subtract Equation {eq}`Eq:Series:SumOfIntegersSquares2` from Equation {eq}`Eq:Series:SumOfIntegersSquares1`, we obtain the sum
+
+\begin{align*}
+\sum_{k=n^2+1}^{(n+1)^2}k&=\sum_{k=1}^{(n+1)^2}k-\sum_{k=1}^{n^2}k\\
+&=\frac12(n^4+4n^3+7n^2+6n+2)-\frac12(n^4+n^2)\\
+&=\frac12(4n^3+6n^2+6n+2)\\
+&=2n^3+3n^2+3n+1 \\
+&=n^3+(n+1)^3.
+\end{align*}
+
+::::::
+
+We now look at the sum of the first $n$ terms of the Fibonacci sequence to introduce the concept of a telescoping sum:
+
+::::{prf:example}
+:label: Ex:Series:FibonacciTelescoping
+
+The Fibonacci sequence $\{F_n\}_{n=1}^{\infty}$ is defined by $F_{n+2}=F_n+F_{n+1}$ for $n=1,2,3,\ldots$ with $F_1=F_2=1$. Note that this also implies that $F_k=F_{k+2}-F_{k+1}$ for all $k\in\{1,2,3,\ldots\}$.
+
+If we only consider the _finite_ sequence $\{F_k\}_{k=1}^n$, then we can find the sum of the related finite series $\displaystyle\sum_{k=1}^nF_k$ as follows:
 
 :::{math}
 :label: Eq:Series:FibonacciTelescoping
@@ -133,7 +268,52 @@ The Fibonacci sequence $\{F_n\}_{n=1}^{\infty}$ is defined by $F_{n+2}=F_n+F_{n+
 \end{align*}
 :::
 
-This is called a **telescoping sum**.
+So the sum of the first $n$ terms of the Fibonacci sequence equals $F_{n+2}-2$. Note that in the second line of Equation {eq}`Eq:Series:FibonacciTelescoping` we have _cancelled_ many terms because those terms appear twice with opposite signs.
+
+::::
+
+As you may have observed, we could _cancel_ many terms in the sum because those terms appear twice with opposite signs. Obviously, this is not a coincidence. This has lead to the following definition:
+
+::::{prf:definition}
+:label: Def:Series:TelescopingSum
+
+A finite series $\displaystyle\sum_{k=m}^na_k$ is called a **telescoping sum** if there exists a sequence $\{b_k\}_{k=m}^{n+p}$ and an integer $p\geq1$ such that $a_k=b_{k+p}-b_k$ for all $k\in\{m,m+1,\ldots,n\}$.
+
+The property that allows us to cancel many terms in a telescoping sum is called the **telescoping property**.
+::::
+
+In {prf:ref}`Def:Series:TelescopingSum` the number $p$ is often equal to $1$, but it can also be larger than $1$, as the next example shows:
+
+::::{prf:example}
+:label: Ex:Series:TelescopingSumExample
+
+Consider the finite series $\displaystyle\sum_{k=2}^n\frac{1}{k^2-1}$.
+
+Using a partial fraction decomposition, we can find for $k\in\{2,3,\ldots\}$ that
+
+\begin{align*}
+a_k &= \frac{1}{k^2-1} \\
+&= \frac{1}{(k-1)(k+1)} \\
+&= \frac{1}{2}\frac{1}{k-1}-\frac{1}{2}\frac{1}{k+1}.
+\end{align*}
+
+So if we take $p=2$ and $b_k=-\frac{1}{2}\frac{1}{k-1}$ for $k\in\{2,3,\ldots,n+2\}$, then we have $a_k=b_{k+2}-b_k$ for all $k\in\{2,3,\ldots,n\}$, which means that $\displaystyle\sum_{k=2}^n\frac{1}{k^2-1}$ is a telescoping sum.
+
+Using the telescoping property, we can also determine the sum of this telescoping sum as follows:
+
+\begin{align*}
+\sum_{k=2}^n\frac{1}{k^2-1}&=\sum_{k=2}^n\left(\frac{1}{2}\frac{1}{k-1}-\frac{1}{2}\frac{1}{k+1}\right) \\
+&=\frac{1}{2}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+1}\right) \\
+&=\frac{1}{2}\left(\sum_{k=2}^n\frac{1}{k-1}-\sum_{k=2}^n\frac{1}{k+1}\right) \\
+&=\frac{1}{2}\left(\sum_{k=0}^{n-2}\frac{1}{k+1}-\sum_{k=2}^n\frac{1}{k+1}\right) \\
+&=\frac{1}{2}\left(\sum_{k=0}^{1}\frac{1}{k+1}-\sum_{k=n-1}^n\frac{1}{k+1}\right) \\
+&=\frac{1}{2}\left(\left(1+\frac{1}{2}\right)-\left(\frac{1}{n}+\frac{1}{n+1}\right)\right) \\
+&= \frac{3}{4}-\frac{1}{2}\frac{2n+1}{n^2+n}.
+\end{align*}
+::::
+
+## Old stuff
+
 
 ::::{exercise}
 :label: Exc:Series:LucasTelescoping
@@ -228,17 +408,6 @@ Suppose that $\displaystyle\sum_{k=1}^nk^3=\frac{1}{4}n^2(n+1)^2$ holds for cert
 \end{align*}
 Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
 :::
-
-::::::{prf:example} Another interesting result
-Prove that $\displaystyle\sum_{k=n^2+1}^{(n+1)^2}k=n^3+(n+1)^3$ for all $n\in\{1,2,3,\ldots\}$.
-
-Solution. This can be shown directly: note that the sum has $2n+1$ terms, so we have
-
-\begin{align*}
-\sum_{k=n^2+1}^{(n+1)^2}k&=\frac{1}{2}(2n+1)\left\{n^2+1+(n+1)^2\right\}=(2n+1)(n^2+n+1)\\
-&=2n^3+3n^2+3n+1=n^3+(n+1)^3.
-\end{align*}
-::::::
 
 
 ## Introduction
@@ -629,4 +798,5 @@ This proves that the harmonic series is divergent.
 
 This proof uses the *integral test*, which will be treated in more details in the next section.
 
-## (Grasple) exercises
+## Exercises
+
