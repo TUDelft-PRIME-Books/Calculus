@@ -66,7 +66,7 @@ $$
  \mathrm{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(201)-x(200)}{1}\approx 2.356.
 $$
 
-So we can say that the volicity at $t=200$ is approximately equal to $2.356$ meter per second and by taking $\Delta t$ smaller, we get a better and better result. As before, the velocity can be thought of as the slope of the function at this point in time.
+So we can say that the velocity at $t=200$ is approximately equal to $2.356$ meter per second and by taking $\Delta t$ smaller, we get a better and better result. As before, the velocity can be thought of as the slope of the function at this point in time.
 
 The expression $\frac{\Delta x}{\Delta t}$ is called a **difference quotient** and we conclude that it can be used to approximate the slope of the function. So how can we compute the exact slope of the function? Well, since as $\Delta t$ becomes small, the approximation gets better, we get the best result when taking the limit $\Delta t\rightarrow 0$. This means that we must have
 
@@ -372,6 +372,7 @@ This means that $f+g$ is also differentiable at $a$ and that $(f+g)'(a)=f'(a)+g'
 We have the following standard derivatives.
 
 - If $n$ is an integer, then $\dfrac{d}{dx}\left[x^n\right]=nx^{n-1}$. In particular, we have $\dfrac{d}{dx}\left[1\right]=0$, $\dfrac{d}{dx}\left[x\right]=1$ and $\dfrac{d}{dx}\left[x^2\right]=2x$ and, if $n\geq 1$, we have $\dfrac{d}{dx}\left[\frac{1}{x^n}\right]=\dfrac{d}{dx}\left[x^{-n}\right]=-nx^{-n-1}$.
+- We have $\dfrac{d}{dx}\left[\sqrt{x}\right]=\frac{1}{2\sqrt{x}}$ for $x>0$.
 - We have $\dfrac{d}{dx}\left[\sin(x)\right]=\cos(x)$ and $\dfrac{d}{dx}\left[\cos(x)\right]=-\sin(x)$.
 - We have $\dfrac{d}{dx}\left[e^x\right]=e^x$.
 ::::::
@@ -440,6 +441,24 @@ $$
 
 So $f$ is differentiable in $a$ and we find $f'(a)=-na^{n-1}$. 
 
+Now, we consider the function $f(x)=\sqrt{x}$. Then for any $x>0$ we can evaluate
+
+$$
+ \begin{array}{lcl}f'(x)&=&\displaystyle\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}\\
+ &=&\displaystyle\lim_{h\rightarrow 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}.
+$$
+
+In order to evaluate this limit, we use the square root trick (see {numref}`Subsec:Limitsrules`) and we obtain
+
+$$
+ \begin{array}{lcl}f'(x)&=&\displaystyle\lim_{h\rightarrow 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}\frac{\sqrt{x+h}+\sqrt{x}}{\sqrt{x+h}+\sqrt{x}}\\
+ &=&\displaystyle\lim_{h\rightarrow 0}\frac{h}{h\left(\sqrt{x+h}+\sqrt{x}\right)}\\
+ &=&\displaystyle\lim_{h\rightarrow 0}\frac{1}{\left(\sqrt{x+h}+\sqrt{x}\right)}\\
+ &=&\frac{1}{\sqrt{x+0}+\sqrt{x}}\\
+ &=&\frac{1}{2\sqrt{x}}.
+$$
+
+In the final step we used the continuity of the function $f$. Hence, we obtain $f'(x)=\dfrac{1}{2\sqrt{x}}$, as desired.
 
 Next, we consider the function $f(x)=\sin(x)$. Then for any value of $x$ we can use the addition formula for the sine {prf:ref}`Thm:Trigonometry:AdditionSubtractionFormulas` to compute
 
