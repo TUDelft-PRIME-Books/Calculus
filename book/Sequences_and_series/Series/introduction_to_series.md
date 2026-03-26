@@ -1,15 +1,5 @@
 (Chapter:Series:Introduction)=
-# Series and their types
-
-In this section we cover (see note in section convergence of series):
-
-- Series and partial sums
-- Convergence of sum(a_n+b_n)
-- Geometric series
-- Telescoping series
-- Harmonic series and p-series (i.e. sum 1/n^p)
-- Convergence and divergence
-- Absolute and conditional convergence
+# Series, sums and convergence
 
 ## Introduction
 
@@ -382,7 +372,7 @@ $$
 
 With this we end our treatment of finite series.
 
-## Infinite series
+## Convergence and divergence of infinite series
 
 We will now turn our attention to infinite series, or by {prf:ref}`Rem:Series:FiniteSeries` just series, which is more complicated and requires some extra definitions to handle the summation of an infinite number of terms.
 
@@ -430,291 +420,7 @@ If the limit $\lim\limits_{n\to\infty}s_n$ exists and equals $S$, then we say th
 If the limit $\lim\limits_{n\to\infty}s_n$ does not exist, then we say that the series $\displaystyle\sum_{n=p}^{\infty}a_n$ **diverges**.
 ::::
 
-One of the most important examples of an infinite series is the geometric series, which is the sum of the terms of a geometric sequence.
-
-### Geometric series
-
-::::::{prf:example} 
-:label: Ex:Series:GeometricSeries1
-
-Consider the _geometric series_
-
-$$
-\sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n.
-$$
-
-The $n$th partial sum of this series is, using $a=1$ and $r=\frac{1}{2}$ in {prf:ref}`Ex:Integration:IntroductionFiniteGeometric`:
-
-\begin{align*}
-s_n &= \sum_{k=1}^n\left(\frac{1}{2}\right)^k \\
-&= \frac{1}{2}\cdot\frac{1-\left(\frac{1}{2}\right)^n}{1-\frac{1}{2}} \\
-&= 1-\left(\frac{1}{2}\right)^n.
-\end{align*}
-
-
-This means that
-
-$$
-\lim_{n\to\infty}s_n=\lim_{n\to\infty}\left(1-\left(\frac{1}{2}\right)^n\right)=1,
-$$
-
-and so the geometric series $\displaystyle\sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n$ converges and its sum equals $1$. In other words, we have
-
-$$
-\sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n=1.
-$$
-
-This result can also be visualised as shown in {numref}`Fig:Series:GeometricSeries`, which gives a visual proof of the fact that $\displaystyle\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1$. The idea behind the visualisation is that when you take a unit square, which has area $1$, and you cut half of it off, then you are left with a rectangle with area $\frac{1}{2}$. If you cut half of this rectangle off, then you are left with a square with area $\frac{1}{4}$. If you cut half of this square off, then you are left with a rectangle with area $\frac{1}{8}$, and so on. If you keep cutting half of the remaining rectangle/square off, then the total area of the cut off rectangles/squares will be $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots$, which in the end approaches to the area of the original unit square, which is $1$.
-
-```{figure} Images/geometric.png
----
-width: 50%
-name: Fig:Series:GeometricSeries
-align: center
----
-A visual proof of $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1$.
-```
-
-:::{todo}
-Replace {numref}`Fig:Series:GeometricSeries` with an applet.
-::: 
-
-::::::
-
-The result of {prf:ref}`Ex:Integration:IntroductionFiniteGeometric` can be used to find the sum of any infinite geometric series:
-
-::::::{prf:theorem} Geometric series
-:label: Thm:Series:GeometricSeries
-A **geometric series** $\displaystyle\sum_{n=1}^{\infty}ar^{n-1}=a+ar+ar^2+\cdots$ with $a\neq0$ and **common ratio** $r$ is convergent if $|r|<1$ and divergent if $|r|\geq1$.
-
-For $|r|<1$ the sum of the series equals $\displaystyle\frac{a}{1-r}$.
-::::::
-
-::::::{admonition} Proof of {prf:ref}`Thm:Series:GeometricSeries`
-:class: tudproof, dropdown
-For $r=1$ the series trivially diverges. For $r\neq1$ consider the $n$th partial sum
-
-$$
-s_n=\displaystyle\sum_{k=1}^nar^{k-1}=a+ar+ar^2+\cdots+ar^{n-1}.
-$$
-
-Then we have (compare with {prf:ref}`Ex:Integration:IntroductionFiniteGeometric`)
-
-\begin{align*}
-s_n&=a&+ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&\\
-rs_n&=&ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&+ar^n.
-\end{align*}
-Subtracting the two equations we obtain
-
-$$
-(1-r)s_n=a-ar^n=a(1-r^n)\quad\Longrightarrow\quad s_n=\frac{a(1-r^n)}{1-r},\quad r\neq1.
-$$
-
-In {prf:ref}`Thm:Sequences:ConvergenceGeometric` we have seen that $\lim\limits_{n\to\infty}r^n$ only converges for $-1<r\leq1$ and 
-
-$$
-\lim\limits_{n\to\infty}r^n=\begin{cases}0, &-1<r<1\\1, &r=1.\end{cases}
-$$
-
-We conclude that the series $\displaystyle\sum_{n=1}^{\infty}ar^{n-1}$ converges for $|r|<1$ and diverges for $|r|\geq1$.
-
-Furthermore, for $|r|<1$ the sum of the series equals $\displaystyle\frac{a}{1-r}$.
-::::::
-
-::::::{important}
-The best way to remember the sum of a convergent geometric series is
-
-$$
-\text{sum}=\frac{\text{first term}}{1-\text{common ratio}}.
-$$
-
-Do remember that the series should have starting index $1$ and the power of the common ration should be $n-1$ for this formula to work. If the series does not have this form, then you can always use the properties of finite series to rewrite the series in a form that does have this form, and then apply the formula.
-
-::::::
-
-::::::{note}
-:name: Note:Series:GeometricSeries
-
-The special case $a=1$ reads
-
-$$
-\sum_{n=0}^{\infty}r^n=1+r+r^2+\cdots=\frac{1}{1-r},\quad|r|<1.
-$$
-
-In {numref}`Sec:Series:PowerSeries` on power series we will often make use of this result.
-::::::
-
-::::{prf:example}
-:label: Ex:Series:GeometricSeriesExample1
-
-Consider the following infinite sequence:
-
-$$
-\frac{1}{5},-\frac{2}{25},\frac{4}{125},-\frac{8}{625},\cdots
-$$
-
-In this sequence each next term is the previous term multiplied by $-\frac{2}{5}$, so the common ratio is $r=-\frac{2}{5}$. The first term of the sequence is $a=\frac{1}{5}$, so we can write the series related to this sequence as
-
-$$
-\frac{1}{5}-\frac{2}{25}+\frac{4}{125}-\frac{8}{625}+\cdots = \sum_{n=1}^{\infty}\frac{1}{5}\left(-\frac{2}{5}\right)^{n-1}.
-$$
-
-Because the common ratio $r=-\frac{2}{5}$ satisfies $|r|<1$, the geometric series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{5}\left(-\frac{2}{5}\right)^{n-1}$ converges and its sum equals
-
-$$
-\frac{\frac{1}{5}}{1-\left(-\frac{2}{5}\right)} = \frac{\frac{1}{5}}{1+\frac{2}{5}} = \frac{\frac{1}{5}}{\frac{7}{5}} = \frac{1}{7},
-$$
-
-so we can conclude that
-
-$$
-\frac{1}{5}-\frac{2}{25}+\frac{4}{125}-\frac{8}{625}+\cdots=\frac{1}{7}.
-$$
-
-::::
-
-In your previous studies you may have already encountered the notation $0.\overline{12}=0.1212121212\ldots$ to represent the number that has $12$ repeated indefinitely after the decimal point. We can convert this number into a quotient of integers by using the sum of a geometric series:
-
-::::::{prf:example}
-:label: Ex:Series:GeometricSeriesExample2
-
-Notice that $0.\overline{12}$ can be written as:
-
-\begin{align*}
-0.\overline{12} &= 0.12121212\ldots \\
-&= 0.12 + 0.0012 + 0.000012 + 0.00000012 \cdots \\
-&= \frac{12}{100} + \frac{12}{100^2} + \frac{12}{100^3} + \frac{12}{100^4} + \cdots \\
-&= \sum_{n=1}^{\infty}\frac{12}{100}\left(\frac{1}{100}\right)^{n-1}.
-\end{align*}
-
-By {prf:ref}`Thm:Series:GeometricSeries` the geometric series $\displaystyle\sum_{n=1}^{\infty}\frac{12}{100}\left(\frac{1}{100}\right)^{n-1}$ converges and its sum equals
-
-\begin{align*}
-\displaystyle\sum_{n=1}^{\infty}\frac{12}{100}\left(\frac{1}{100}\right)^{n-1} &= \frac{\frac{12}{100}}{1-\frac{1}{100}} \\
-&= \frac{\frac{12}{100}}{\frac{99}{100}} \\
-&= \frac{12}{99} \\
-&= \frac{4}{33}.
-\end{align*}
-
-Although this shows the power of geometric series, it is a bit of an overkill to use the formula for the sum of a geometric series to find a fraction for $0.\overline{12}$. The next method is much more straightforward:
-
-$$
-100p=12.\overline{12}=12+0.\overline{12}=12+p\quad\Longrightarrow\quad99p=12\quad\Longleftrightarrow\quad p=\frac{12}{99}=\frac{4}{33}.
-$$
-
-
-::::::
-
-
-::::::{prf:example} 
-We express the number $0.\overline{135}=0.135135135\ldots$ as a quotient of integers in two different ways.
-
-First, the number can be written as a geometric series:
-
-$$
-0.\overline{135}=\sum_{n=1}^{\infty}\frac{135}{1000^n}.
-$$
- 
-Then, the common ratio is $\dfrac{1}{1000}$ and therefore the geometric series converges and
-
-$$
-0.\overline{135}=\frac{\dfrac{135}{1000}}{1-\dfrac{1}{1000}}=\frac{135}{1000-1}=\frac{135}{999}=\frac{15}{111}=\frac{5}{37}.
-$$
-
-Second, let $q=0.\overline{135}$, then we have
-
-\begin{align*}
-&1000q=135.\overline{135}=135+0.\overline{135}=135+q\\
-&\quad\Longrightarrow\quad999q=135\quad\Longleftrightarrow\quad q=\frac{135}{999}=\frac{15}{111}=\frac{5}{37}.
-\end{align*}
-
-::::::
-
-### Telescoping series
-
-In {numref}`Sec:Series:FiniteSeries` we already encountered _telescoping sums_, which were finite series that have the _telescoping property_. We now extend that concept to infinite series, which are called _telescoping series_:
-
-::::{prf:definition}
-:label: Def:Series:TelescopingSeries
-
-An infinite series $\displaystyle\sum_{n=m}^{\infty}a_n$ is called a **telescoping series** if there exists a sequence $\{b_n\}_{n=m}^{\infty}$ and a positive integer $p$ such that $a_n=b_{n}-b_{n+p}$ for all $n\in\{m,m+1,m+2,\ldots\}$.
-::::
-
-::::::{prf:example}
-:label: Ex:Series:TelescopingSeries1
-
-An example of a *telescoping series* is: $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n(n+1)}$.
-
-Then the $n$th partial sum is: $s_n=\displaystyle\sum_{k=1}^n\frac{1}{k(k+1)}=\sum_{k=1}^n\left(\frac{1}{k}-\frac{1}{k+1}\right)$. Hence we have
-
-$$
-s_n=\frac{1}{1}-\cancel{\frac{1}{2}}+\cancel{\frac{1}{2}}-\cancel{\frac{1}{3}}+\cancel{\frac{1}{3}}-\cancel{\frac{1}{4}}+\cdots+\cancel{\frac{1}{n}}-\frac{1}{n+1}=1-\frac{1}{n+1}.
-$$
-
-Hence we have $\lim\limits_{n\to\infty}s_n=1$. This implies that the series is convergent and that 
-
-$$
-\sum_{n=1}^{\infty}\frac{1}{n(n+1)}=1.
-$$
-
-::::::
-
-::::::{prf:example}
-:label: Ex:Series:TelescopingSeries2
-Another example is: $\displaystyle\sum_{n=2}^{\infty}\frac{1}{n^2-1}$. Then we have
-
-\begin{align*}
-\sum_{k=2}^n\frac{1}{k^2-1}&=\sum_{k=2}^n\frac{1}{(k-1)(k+1)}=\frac{1}{2}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+1}\right)\\
-&=\frac{1}{2}\left(\frac{1}{1}-\cancel{\frac{1}{3}}+\frac{1}{2}-\cancel{\frac{1}{4}}+\cancel{\frac{1}{3}}-\cancel{\frac{1}{5}}+\cancel{\frac{1}{4}}-\cancel{\frac{1}{6}}+\right.\\
-&{}\quad\quad\quad\quad\quad\left.{}\cdots+\cancel{\frac{1}{n-2}}-\frac{1}{n}+\cancel{\frac{1}{n-1}}-\frac{1}{n+1}\right)\\
-&=\frac{1}{2}\left(1+\frac{1}{2}-\frac{1}{n}-\frac{1}{n+1}\right).
-\end{align*}
-This implies that the series converges and that 
-
-$$
-\sum_{n=2}^{\infty}\frac{1}{n^2-1}
-=\lim\limits_{n\to\infty}\frac{1}{2}\left(\frac{3}{2}-\frac{1}{n}-\frac{1}{n+1}\right)=\frac{3}{4}.
-$$
-
-::::::
-
-::::::{prf:example}
-:label: Ex:Series:TelescopingSeries3
-A third example is: $\displaystyle\sum_{n=2}^{\infty}\frac{1}{(n-1)(n+2)}$. Then we have
-
-\begin{align*}
-&\sum_{k=2}^n\frac{1}{(k-1)(k+2)}=\frac{1}{3}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+2}\right)\\
-&=\frac{1}{3}\left(\frac{1}{1}-\cancel{\frac{1}{4}}+\frac{1}{2}-\cancel{\frac{1}{5}}+\frac{1}{3}-\cancel{\frac{1}{6}}+\cancel{\frac{1}{4}}-\cancel{\frac{1}{7}}+\right.\\
-&{}\quad\quad\quad\quad\quad\left.{}\cdots+\cancel{\frac{1}{n-3}}-\frac{1}{n}+\cancel{\frac{1}{n-2}}-\frac{1}{n+1}+\cancel{\frac{1}{n-1}}-\frac{1}{n+2}\right)\\
-&=\frac{1}{3}\left(1+\frac{1}{2}+\frac{1}{3}-\frac{1}{n}-\frac{1}{n+1}-\frac{1}{n+2}\right).
-\end{align*}
-This implies that the series converges and that 
-
-$$
-\sum_{n=2}^{\infty}\frac{1}{(n-1)(n+2)}
-=\lim\limits_{n\to\infty}\frac{1}{3}\left(\frac{11}{6}-\frac{1}{n}-\frac{1}{n+1}-\frac{1}{n+2}\right)=\frac{11}{18}.
-$$
-
-::::::
-
-If we inspect the last three examples, we see that the sum of a telescoping series is the addition of the first $p$ terms of the sequence $\{b_n\}$ minus $p$ times the limit of the sequence $\{b_n\}$, which is a direct consequence of the telescoping property. We have already summarised this in {prf:ref}`Thm:Series:SumTelescopingSum` for finite telescoping sums, but a similar theorem also holds for infinite telescoping series:
-
-::::{prf:theorem}
-:label: Thm:Series:SumTelescopingSeries
-If $\displaystyle\sum_{n=m}^{\infty}a_n$ is a telescoping series with $a_n=b_{n}-b_{n+p}$ for all $n\in\{m,m+1,m+2,\ldots\}$ and some integer $p\geq1$, then we have
-
-$$
-\sum_{n=m}^{\infty}a_n=\sum_{n=m}^{m+p-1}b_n-p\cdot\lim_{n\to\infty}b_n,
-$$
-
-provided that the limit $\lim\limits_{n\to\infty}b_n$ exists.
-::::
-
-## Convergence and divergence of series
-
-If we look at all of the examples of geometric series and telescoping series that we have seen so far, we see that the general term of the series tends to zero ánd the series converges to a sum. This close relation between the general term of a series and the convergence of the series is not a coincidence, but it is not a two-way relation either.
-
-We start with a simple observation that if a series is convergent, then its general term should tend to zero. This is summarised in the next theorem:
+One major result for of this definition of converges using partial sums, is that we can proof the next theorem:
 
 ::::::{prf:theorem}
 :label: Thm:Series:GeneralTerm
@@ -722,7 +428,7 @@ If the series $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\inf
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Series:GeneralTerm`
-:class: tudproof, dropdown
+:class: tudproof
 Let $\{s_n\}$ be the sequence of partial sums of the series $\displaystyle\sum a_n$.
 
 If $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\infty}s_n=s$ exists. Then we have
@@ -848,9 +554,7 @@ so by the _test for divergence_, the series $\displaystyle\sum_{n=1}^{\infty}\fr
 ::::{prf:example}
 :label: Ex:Series:DivergenceTest2
 
-The geometric series $\displaystyle\sum_{n=0}^{\infty}\left(\frac{3}{2}\right)^n$ has common ratio $r=\frac{3}{2}$, which satisfies $|r|>1$, so by {prf:ref}`Thm:Series:GeometricSeries` the series $\displaystyle\sum_{n=0}^{\infty}\left(\frac{3}{2}\right)^n$ is divergent.
-
-This is supported by the _test for divergence_, since $\displaystyle\lim_{n\to\infty}\left(\frac{3}{2}\right)^n$ does not exist.
+The geometric series $\displaystyle\sum_{n=0}^{\infty}\left(\frac{3}{2}\right)^n$ is divergent, since, by the _test for divergence_, $\displaystyle\lim_{n\to\infty}\left(\frac{3}{2}\right)^n$ does not exist.
 
 ::::
 
@@ -872,6 +576,204 @@ $$
 
 So by the _test for divergence_ the series $\displaystyle\sum_{n=1}^{\infty}\arctan(n)$ is divergent.
 ::::
+
+The test for divergence only gives us a test for divergence, but it does not give us a test for convergence. In most cases one has to resort to other tests for convergence/divergence, which we will discuss in the next sections. For three special types of series, however, we can already determine whether they are convergent or divergent and find their sum if they are convergent, which we will treat in {numref}`Sec:Series:SpecialSeries`.
+
+## Absolute and conditional convergence
+
+In many cases the terms of a series do not have to be positive, but they can also be (sometimes) negative. Sometimes it is useful to consider a new series which has as terms the absolute values of the terms of the original series, which is called the **absolute value series** of the original series. If such an absolute value series converges or diverges, then we can also deduce something about the convergence/divergence of the original series.
+
+We start with a new definition:
+
+::::::{prf:definition} Absolute convergence
+:label: Def:Series:AbsoluteConvergence
+A series $\displaystyle\sum a_n$ is called **absolutely convergent** if the series of absolute values $\displaystyle\sum|a_n|$ is convergent.
+::::::
+
+One of the most important results about absolute convergence is that if a series is absolutely convergent, then it is convergent:
+
+::::::{prf:theorem}
+:label: Thm:Series:AbsoluteConvergence
+If a series $\displaystyle\sum a_n$ is absolutely convergent, then it is convergent.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Series:AbsoluteConvergence`
+:class: tudproof, dropdown
+
+Without loss of generality we can assume that the series $\displaystyle\sum a_n$ starts at $n=1$.[^changeIndex]
+
+[^changeIndex]: If the series $\displaystyle\sum a_n$ starts at $n=p$ with $p\ne1$, then we can change the index of summation to make the series start at $n=1$.
+
+First we define two new series $\displaystyle\sum a_n^+$ with $a_n^+=\max\{a_n,0\}$ for all $n$ and $\displaystyle\sum a_n^-$ with $a_n^-=\max\{-a_n,0\}$ for all $n$. Note that $a_n=a_n^+-a_n^-$ for all $n$ and $|a_n|=a_n^++a_n^-$ for all $n$.
+
+Now consider the following three partials sums:
+
+\begin{align*}
+t_n = \sum_{k=1}^n |a_k| \\
+p_n = \sum_{k=1}^n a_k^+ \\
+q_n = \sum_{k=1}^n a_k^-.
+\end{align*}
+
+From the convergence of $\displaystyle\sum|a_n|$ we have that $\lim\limits_{n\to\infty}t_n=t$ exists. We also have that 
+
+$$
+t_{n+1}-t_n = \sum_{k=1}^{n+1}|a_k|-\sum_{k=1}^n|a_k| = |a_{n+1}|\geq0,
+$$
+
+so the sequence $\{t_n\}$ is non-decreasing with $t$ as an upper bound: $t_n\leq t$ for all $n$.
+
+For the partial sum $p_n$ we have
+
+$$
+p_{n+1}-p_n = \sum_{k=1}^{n+1}a_k^+-\sum_{k=1}^na_k^+ = a_{n+1}^+=\max\{a_{n+1},0\}\geq0,
+$$
+
+so the sequence $\{p_n\}$ is non-decreasing. Also,
+
+$$
+p_n = \sum_{k=1}^n a_k^+ \leq \sum_{k=1}^n (a_k^++a_k^-) = \sum_{k=1}^n |a_k| = t_n \leq t,
+$$
+
+which makes the sequence $\{p_n\}$ bounded from above. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\{p_n\}$ is convergent, so $\lim\limits_{n\to\infty}p_n=p$ exists.
+
+For the partial sum $q_n$ we have
+
+$$
+q_{n+1}-q_n = \sum_{k=1}^{n+1}a_k^- - \sum_{k=1}^na_k^- = a_{n+1}^-=\max\{-a_{n+1},0\}\geq0,
+$$
+
+so the sequence $\{q_n\}$ is also non-decreasing. Also,
+
+$$
+q_n = \sum_{k=1}^n a_k^- \leq \sum_{k=1}^n (a_k^++a_k^-) = \sum_{k=1}^n |a_k| = t_n \leq t,
+$$
+
+so the sequence $\{q_n\}$ is also bounded from above. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\{q_n\}$ is also convergent, so $\lim\limits_{n\to\infty}q_n=q$ exists.
+
+Now can turn to the original series $\displaystyle\sum a_n$. The $n$th partial sum of this series is
+
+\begin{align*}
+s_n&=\sum_{k=1}^na_k=\sum_{k=1}^n(a_k^+-a_k^-)\\
+&=\sum_{k=1}^na_k^+-\sum_{k=1}^na_k^-\\
+&=p_n-q_n.
+\end{align*}
+
+Because $\lim\limits_{n\to\infty}p_n=p$ and $\lim\limits_{n\to\infty}q_n=q$, we have
+
+$$
+\lim_{n\to\infty}s_n = \lim_{n\to\infty}p_n - q_n = \lim_{n\to\infty}p_n - \lim_{n\to\infty}q_n = p-q.
+$$
+
+This shows that $\displaystyle\sum a_n$ is convergent, which proves the theorem.
+
+:::
+
+::::::{prf:example}
+:label: Ex:Series:AbsoluteConvergence1
+
+Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}$. The absolute value series of this series is $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$.
+
+In {numref}`Fig:Series:AbsoluteConvergence1` we have a visualisation of the $n$th partial sum $t_n$ of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$.
+
+```{figure} Images/temp_2series.png
+:name: Fig:Series:AbsoluteConvergence1
+
+Visualisation of the $n$th partial sum $t_n$ of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\frac{1}{(x-1)^2}$ is also given for comparison.
+```
+
+:::{todo}
+Replace {numref}`Fig:Series:AbsoluteConvergence1` with an applet.
+:::
+
+Note that for the $n$th rectangle the top right corner aligns with the graph of $f(x)=\frac{1}{(x-1)^2}$ for $x\geq1$. This means that the area of each rectangle is less than the area under the graph of $f$ between $n$ and $n+1$. Hence, we have
+
+\begin{align*}
+t_n &= \sum_{k=1}^n\frac{1}{k^2} \\
+&= 1+\sum_{k=2}^n\frac{1}{k^2} \\
+&< 1+\sum_{k=2}^n\int_{k}^{k+1}\frac{1}{(x-1)^2}\,dx \\
+&= 1+\int_2^{n+1}\frac{1}{(x-1)^2}\,dx \\
+&= 1+\bigg[-\frac{1}{x-1}\bigg]_2^{n+1} \\
+&= 2-\frac{1}{n} < 2.
+\end{align*}
+
+This means that the sequence of partial sums $\{t_n\}$ is bounded from above by $2$. Also, we have
+
+$$
+t_{n+1}-t_n = \frac{1}{(n+1)^2} > 0,
+$$
+
+so the sequence $\{t_n\}$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\{t_n\}$ is convergent, so $\lim\limits_{n\to\infty}t_n=t$ exists.
+
+This means that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is convergent, so the original series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}$ is absolutely convergent by {prf:ref}`Def:Series:AbsoluteConvergence`, which means that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}$ is also convergent by {prf:ref}`Thm:Series:AbsoluteConvergence`.
+
+::::::
+
+
+::::::{prf:example}
+:label: Ex:Series:AbsoluteConvergence2
+Now we consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$. The absolute value series of this series is $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is the harmonic series, which we have shown to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`.
+
+So the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is not absolutely convergent.
+
+But, we can show something more about this series. Consider the $n$th partial sum of this series:
+
+$$
+s_n = \sum_{k=1}^n\frac{(-1)^{k-1}}{k}.
+$$
+
+For these partial sums we have the following property:
+
+\begin{align*}
+s_{2n+2}-s_{2n} &= \sum_{k=1}^{2n+2}\frac{(-1)^{k-1}}{k}-\sum_{k=1}^{2n}\frac{(-1)^{k-1}}{k} \\
+&= \sum_{k=2n+1}^{2n+2}\frac{(-1)^{k-1}}{k} \\
+&= \frac{(-1)^{2n}}{2n+1}+\frac{(-1)^{2n+1}}{2n+2} \\
+&= \frac{1}{2n+1}-\frac{1}{2n+2} \\
+&= \frac{1}{(2n+1)(2n+2)}.
+\end{align*}
+
+As the last value is positive, the sequence $\{s_{2n}\}$ is strictly increasing. If  we now consider only the partial sum $s_{2n}$ we find
+
+\begin{align*}
+s_{2n} &= \sum_{k=1}^{2n}\frac{(-1)^{k-1}}{k} \\
+&= 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} - \frac{1}{7} + \cdots - \frac{1}{2n-2} + \frac{1}{2n-1} - \frac{1}{2n} \\
+&= 1 - \left(\frac{1}{2} - \frac{1}{3}\right) - \left(\frac{1}{4} - \frac{1}{5}\right) - \left(\frac{1}{6} - \frac{1}{7}\right) - \cdots - \left(\frac{1}{2n-2} - \frac{1}{2n-1}\right) - \frac{1}{2n} \\
+&= 1 - \sum_{k=1}^{n-1}\left(\frac{1}{2k} - \frac{1}{2k+1}\right) - \frac{1}{2n} \\
+&= 1 - \sum_{k=1}^{n-1}\frac{1}{(2k)(2k+1)} - \frac{1}{2n}.
+\end{align*}
+
+Because of the positivity of all terms in the sum $\displaystyle\sum_{k=1}^{n-1}\frac{1}{(2k)(2k+1)}$ and the term $\frac{1}{2n}$, we have found that $\{s_n\}$ is bounded from above by $1$. Also, we have already found that $\{s_{2n}\}$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\{s_{2n}\}$ is convergent, so $\lim\limits_{n\to\infty}s_{2n}=s$ exists.
+
+Now we turn to the sequence $\{s_{2n+1}\}$. We have
+
+\begin{align*}
+s_{2n+1} &= \sum_{k=1}^{2n+1}\frac{(-1)^{k-1}}{k} \\
+&= \sum_{k=1}^{2n}\frac{(-1)^{k-1}}{k} + \frac{(-1)^{2n}}{2n+1} \\
+&= s_{2n} + \frac{1}{2n+1}.
+\end{align*}
+
+But this means that
+
+$$
+\lim_{n\to\infty}s_{2n+1} = \lim_{n\to\infty}s_{2n} + \lim_{n\to\infty}\frac{1}{2n+1} = s + 0 = s.
+$$
+
+This tells us that all even partial sums ánd all odd partial sums converge to the same limit $s$, so all partial sums converge to $s$. Hence, the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is convergent.
+
+::::::
+
+{prf:ref}`Ex:Series:AbsoluteConvergence2` shows that a series can be convergent, but not absolutely convergent. In that case we say that the series is conditionally convergent:
+
+::::::{prf:definition} Conditional convergence
+:label: Def:Series:RelativeConvergence
+A series $\displaystyle\sum a_n$ is called **conditionally convergent** if it is convergent, but not absolute convergent.
+::::::
+
+
+::::::{note}
+Later we will be able to show that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}=\ln(2)$.
+::::::
+
+This concludes our treatment of absolute and conditional convergence. As you may have noticed, showing (absolute/conditional) convergence can be a lot of work. In {numref}`Sec:Series:SpecialSeries`, we will see some special types of series for which we can easily determine whether they are convergent or divergent and find their sum if they are convergent. For other series, we will need to use more advanced tests for convergence/divergence, which we will discuss in the sections after that.
 
 ## Grasple exercises
 
