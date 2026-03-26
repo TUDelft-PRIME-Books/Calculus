@@ -95,7 +95,25 @@ $$
  \frac{d}{dx}\left[3xy\right]=3y+3x\frac{dy}{dx}.
 $$
 
-Here we used that the derivative of $y$ is $\frac{dy}{dx}$ (which is of course what the notation $\frac{dy}{dx}$ means in the first place, )
+Here we used that the derivative of $y$ is $\frac{dy}{dx}$ (which is of course what the notation $\frac{dy}{dx}$ means in the first place, but if you see this for the first time it might not be so clear immediately). Combining all of these, we find
+
+$$
+ 3x^2+3y^2\frac{dy}{dx}=3y+3x\frac{dy}{dx}.
+$$
+
+If we want to solve this equation for $\dfrac{dy}{dx}$, we first rewrite it to
+
+$$
+ \left(3y^2-3x\right)\frac{dy}{dx}=3y-3x^2
+$$
+
+and then we obtain
+
+$$
+ \frac{dy}{dx}=\frac{3y-3x^2}{3y^2-3x}.
+$$
+
+We can use this expression to find the point on the curve where the tangent line is horizontal. 
 ::::::
 
 In this section we cover:
