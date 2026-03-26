@@ -712,3 +712,7 @@ Hence: $L=5$ or $L=-3$. Since $a_1=3$ and the sequence is increasing, we conclud
 :::
 
 ## Grasple exercises
+
+:::{todo}
+Add exercises from Grasple.
+:::

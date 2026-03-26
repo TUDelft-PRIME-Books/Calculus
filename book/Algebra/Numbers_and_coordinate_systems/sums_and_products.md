@@ -47,7 +47,7 @@ The next examples only consider the addition of a finite number of numbers.
 ::::::{prf:Example}
 :label: Ex:Integration:IntroductionExamplesSum
 
-* $\displaystyle\sum_{i=3}^5i^2=3^2+4^2+5^2=9+16+25=50$;
+* $\displaystyle\sum_{p=3}^5p^2=3^2+4^2+5^2=9+16+25=50$;
 * $\displaystyle\sum_{j=-1}^15^{j}=5^{-1}+5^0+5^{1}=\frac{1}{5}+1+5=\frac{31}{5}$;
 * $\displaystyle\sum_{k=0}^32^k=2^0+2^1+2^2+2^3=1+2+4+8=15$.
 ::::::
@@ -71,24 +71,6 @@ $$
 $$
 
 Hence we have $2S=n(n+1)$ and therefore $S=\frac{1}{2}n(n+1)$.
-::::::
-
-::::::{prf:Example}
-:label: Ex:Integration:IntroductionFiniteGeometric
-Let $S=\displaystyle\sum_{k=1}^nar^{k-1}=a+ar+ar^2+\ldots+ar^{n-1}$ with $r\neq1$ and $n$ a positive integer. 
-
-Then we have:
-
-\begin{align*}
-S&=a&+ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&\\
-rS&=&ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&+ar^n.
-\end{align*}
-Subtracting the two equations we obtain
-
-$$
-(1-r)S=a-ar^n=a(1-r^n)\quad\Longrightarrow\quad S=\frac{a(1-r^n)}{1-r},\quad r\neq1.
-$$
-
 ::::::
 
 See {numref}`Chapter:Series:Introduction` for more details about the addition of a finite or an infinite number of numbers.
