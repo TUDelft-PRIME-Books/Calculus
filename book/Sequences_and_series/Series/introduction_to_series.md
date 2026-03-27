@@ -145,7 +145,7 @@ $$
 
 In {prf:ref}`Thm:Series:PropertiesFiniteSeries` the first and third property are focussed on addition of series, the second property is focussed on multiplication of a series by a number, and the fourth property is focussed on the change of the index of summation.
 
-Combining the second property with the first property, we can also find the following property: if $\displaystyle\sum_{n=p}^qa_n=A$ and $\displaystyle\sum_{n=p}^qb_n=B$, then we have
+Combining the second property with the first property, we can also find the following properties if $\displaystyle\sum_{n=p}^qa_n=A$ and $\displaystyle\sum_{n=p}^qb_n=B$, then we have
 
 $$
 \sum_{n=p}^q(a_n-b_n)=A-B,
@@ -154,7 +154,7 @@ $$
 and
 
 $$
-\sum_{n=p}^q(ca_n+db_n)
+\sum_{n=p}^q(ca_n+db_n)=cA+dB
 $$
 
 for any numbers $c$ and $d$.
@@ -372,7 +372,9 @@ $$
 
 With this we end our treatment of finite series.
 
-## Convergence and divergence of infinite series
+## Infinite series
+
+### Convergence and divergence
 
 We will now turn our attention to infinite series, or by {prf:ref}`Rem:Series:FiniteSeries` just series, which is more complicated and requires some extra definitions to handle the summation of an infinite number of terms.
 
@@ -395,7 +397,7 @@ Using these  partial sums we can now look at the infinite series:
 &= \lim_{n\to\infty}s_n.
 \end{align*}
 
-So if $\lim\limits_{n\to\infty}s_n$ would exist, then we the sum of the infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$ would be equal to this limit. If $\lim\limits_{n\to\infty}s_n$ does not exist, then we cannot determine the sum of the infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$. This is summarised in the next theorem:
+So if $\lim\limits_{n\to\infty}s_n$ would exist, then the sum of the infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$ would be equal to this limit. If $\lim\limits_{n\to\infty}s_n$ does not exist, then we cannot determine the sum of the infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$. This is summarised in the next theorem:
 
 ::::{prf:theorem}
 :label: Thm:Series:ConvergenceSum
@@ -577,9 +579,45 @@ $$
 So by the _test for divergence_ the series $\displaystyle\sum_{n=1}^{\infty}\arctan(n)$ is divergent.
 ::::
 
-The test for divergence only gives us a test for divergence, but it does not give us a test for convergence. In most cases one has to resort to other tests for convergence/divergence, which we will discuss in the next sections. For three special types of series, however, we can already determine whether they are convergent or divergent and find their sum if they are convergent, which we will treat in {numref}`Sec:Series:SpecialSeries`.
+The test for divergence only gives us a test for divergence, but it does not give us a test for convergence. In most cases one has to resort to other tests for convergence/divergence, which we will discuss in the next sections. For several special types of series, however, we can already determine whether they are convergent or divergent and find their sum if they are convergent, which we will treat in {numref}`Sec:Series:SpecialSeries`.
 
-## Absolute and conditional convergence
+### Calculating with sums of series
+
+If you have determined that an infinite series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent with sum $S$, then you could also ask yourself whether the new series $\displaystyle\sum_{n=1}^{\infty}ca_n$ for some number $c$ is also convergent and if so, what its sum is. The next theorem gives us the answer to this question and even some more useful properties of sums of infinite series:
+
+::::{prf:theorem}
+:label: Thm:Series:CalculatingSums
+If the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is convergent with sum $A$, the series $\displaystyle\sum_{n=p}^{\infty}b_n$ is convergent with sum $B$, $c$ is a number and $t$ is an integer, then we have
+
+$$
+\sum_{n=p}^{\infty}(a_n+b_n) = A+B,
+$$
+
+$$
+\sum_{n=p}^{\infty}ca_n = cA
+$$
+
+and
+
+$$
+\sum_{n=1+t}^{\infty}a_{n-t} = A.
+$$
+
+::::
+
+Because of the last properties in {prf:ref}`Thm:Series:PropertiesFiniteSeries` and {prf:ref}`Thm:Series:CalculatingSums`, we will make the following convention:
+
+::::{admonition} Convention: _Index of summation_
+:name: Conv:Series:IndexOfSummation
+:class: assumption
+
+All definitions, theorems and similar texts about series will be stated for series that start at $n=1$ unless otherwise specified.
+
+::::
+
+This will make subsequent definitions, theorems and similar texts easier to state and understand.
+
+### Absolute and conditional convergence
 
 In many cases the terms of a series do not have to be positive, but they can also be (sometimes) negative. Sometimes it is useful to consider a new series which has as terms the absolute values of the terms of the original series, which is called the **absolute value series** of the original series. If such an absolute value series converges or diverges, then we can also deduce something about the convergence/divergence of the original series.
 
@@ -675,25 +713,27 @@ Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}$. Th
 
 In {numref}`Fig:Series:AbsoluteConvergence1` we have a visualisation of the $n$th partial sum $t_n$ of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$.
 
-```{figure} Images/temp_2series.png
+```{figure} Images/integral.png
 :name: Fig:Series:AbsoluteConvergence1
 
-Visualisation of the $n$th partial sum $t_n$ of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\frac{1}{(x-1)^2}$ is also given for comparison.
+Visualisation of the $n$th partial sum $t_n$ of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\frac{1}{x^2}$ is also given for comparison.
 ```
 
 :::{todo}
 Replace {numref}`Fig:Series:AbsoluteConvergence1` with an applet.
 :::
 
-Note that for the $n$th rectangle the top right corner aligns with the graph of $f(x)=\frac{1}{(x-1)^2}$ for $x\geq1$. This means that the area of each rectangle is less than the area under the graph of $f$ between $n$ and $n+1$. Hence, we have
+Note that for the $n$th rectangle the top right corner aligns with the graph of $f(x)=\frac{1}{x^2}$ for $x\geq1$. This means that the area of each rectangle is less than the area under the graph of $f$ between $n-1$ and $n$ for $n\geq2$. Hence, we have
 
 \begin{align*}
 t_n &= \sum_{k=1}^n\frac{1}{k^2} \\
 &= 1+\sum_{k=2}^n\frac{1}{k^2} \\
-&< 1+\sum_{k=2}^n\int_{k}^{k+1}\frac{1}{(x-1)^2}\,dx \\
-&= 1+\int_2^{n+1}\frac{1}{(x-1)^2}\,dx \\
-&= 1+\bigg[-\frac{1}{x-1}\bigg]_2^{n+1} \\
-&= 2-\frac{1}{n} < 2.
+&< 1+\sum_{k=2}^n\int_{k-1}^{k}\frac{1}{x^2}\,dx \\
+&= 1+\int_1^{n}\frac{1}{x^2}\,dx \\
+&= 1+\bigg[-\frac{1}{x}\bigg]_1^{n} \\
+&= 2+\left(-\frac{1}{n}+1) \\
+&= 2-\frac{1}{n} \\
+&< 2.
 \end{align*}
 
 This means that the sequence of partial sums $\{t_n\}$ is bounded from above by $2$. Also, we have
@@ -885,36 +925,6 @@ Hence, we have by {prf:ref}`Thm:Series:SumTelescopingSum` that
 :::
 
 ### Infinite series
-
-::::{exercise}
-:label: Exc:Series:DecimalsOne
-Is the number $r=0.\overline{9}=0.99999\ldots$ smaller than $1$?
-
-Find an easier expression for $r$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Series:DecimalsOne`
-:class: solution, dropdown
-Solution 1. Write $r=0.\overline{9}$ as a geometric series:
-
-$$
-r=0.\overline{9}=\sum_{n=1}^{\infty}\frac{9}{10^n}.
-$$
-
-This is a geometric series with common ratio $\dfrac{1}{10}$. Therefore, it is convergent and
-
-$$
-r=0.\overline{9}=\frac{\dfrac{9}{10}}{1-\dfrac{1}{10}}=\frac{9}{10-1}=\frac{9}{9}=1.
-$$
-
-Solution 2. If $r=0.\overline{9}$, then we have
-
-$$
-10r=9.\overline{9}=9+0.\overline{9}=9+r\quad\Longrightarrow\quad9r=9\quad\Longleftrightarrow\quad r=1.
-$$
-
-So, the notation $0.\overline{9}=0.99999\ldots$ is just a clumsy way to represent the number $1$.
-:::
 
 ::::{exercise}
 :label: Exc:Series:FibonacciExercise
