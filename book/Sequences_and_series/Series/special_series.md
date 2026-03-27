@@ -3,7 +3,7 @@
 
 ## Introduction
 
-In this section we consider several special types of series. These types of series are important because they often appear in applications, we know under which conditions they converge or diverge, and because they can be used to find the sum of some series that do not belong to these types.
+In this section we consider several special types of series. These types of series are important because they often appear in applications, we know under which conditions they converge or diverge, and because they can be used to find the convergence of some series that do not belong to these types in later sections.
 
 ## Geometric series
 
