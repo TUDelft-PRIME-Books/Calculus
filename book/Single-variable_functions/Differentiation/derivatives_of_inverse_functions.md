@@ -6,6 +6,73 @@
 
 The one major thing missing in our lives right know is a way to find the derivatives of the remaining standard functions. To recall, we have found the derivatives of the other standard functions in {prf:ref}`Thm:Differentiability:Standard1`, {prf:ref}`Thm:Chain rule:Standard2` and {prf:ref}`Thm:Productquotientrule:Standard3`. The ones that are missing are the derivatives of logarithms, inverse trigonometric functions and non-integer powers of $x$. So without further ado, let us get to work and find these derivatives.
 
+
+## The inverse function theorem
+
+Many famous calculus books derive the derivatives of logarithms and inverse trigonomteric functions by means of implicit differentiation. However, in order to apply this technique, you need to know **in advance** that these functions are differentiable. If you do not know that, you cannot use implicit differentiation. As such, we first derive the following general result, which shows how we can check when the inverses of invertible functions are differentiable.
+
+
+::::::{prf:theorem} Inverse function theorem
+:label: Thm:Diffinverse:IFT
+Let $f$ be a continuously differentiable function. Let $a$ with $f'(a)\neq 0$ and write $b=f(a)$. Then $f$ is invertible on an interval that contains $a$. In addition, $f^{-1}$ is continuously differentiable on an interval that contains $b$ and we have
+
+$$
+ \left(f^{-1}\right)'(b)=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}.
+$$
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Diffinverse:IFT`
+:class: tudproof, dropdown
+We assume that $f'(a)>0$ (the case where $f'(a)<0$ follows similarly). We write $\varepsilon=\frac{f'(a)}{2}>0$. Since $f'$ is continuous, we can find $\delta>0$ such that for the interval $(a-\delta,a+\delta)$ is contained in the domain of $f$ and such that for all $x$ with $0<|x-a|<\delta$ we have 
+
+$$
+ |f'(x)-f(a)|<\varepsilon=\frac{f'(a)}{2}.
+$$
+
+Then for any $x$ with $0<|x-a|<\delta$ we have 
+
+$$
+ -\frac{f'(a)}{2}< f'(x)-f(a)<\frac{f'(a)}{2},
+$$
+
+which means 
+
+$$
+ f'(x)>\frac{f'(a)}{2}>0.
+$$
+
+By {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`, the function $f$ is strictly increasing on $(a-\delta,a+\delta)$. So by {prf:ref}`Thm:Inverse:MonotonicOnetoone` the function $f$ must be invertible on this interval. In addition, we claim that $f$ maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$. Since $f$ is strictly increasing on $(a-\delta,a+\delta)$, we have for any $a-\delta<x<a+\delta$ that
+
+$$
+ f(a-\delta)<f(x)<f(a+\delta).
+$$
+
+Now let $y$ in $(f(a-\delta),f(a+\delta))$. Since $f$ continuous on $[a-\delta,a+\delta]$ we can use {prf:ref}`Theorem:Continuity:IVT` to find $c$ in $(a-\delta,a+\delta)$ with $f(c)=y$. As such, $f$ indeed maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$.
+
+Now consider any $c$ in $(a-\delta,a+\delta)$ and let $d=f(c)$. We will show that $f{-1}$ is differentiable in $d$. For this we first write
+
+$$
+ \frac{1}{f'(c)}=\frac{1}{\lim_{x\rightarrow c}\frac{f(x)-f(c)}{x-c}}=\lim_{x\rightarrow c}\frac{x-c}{f(x)-f(c)}=\lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d}.
+$$
+
+We let $g(y)=\dfrac{f^{-1}(y)-c}{y-d}$. Then we note that $x\rightarrow c$ precisely when $f(x)\rightarrow d$. However, we do not know a priori that $g$ can be defined in such a way in $y=d$ to make it continuous, so we cannot use the regular substitution for limits. Instead, we use {prf:ref}`Theorem:Continuity:SubstitutionAlt` to obtain
+
+$$
+ \frac{1}{f'(c)}=\lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d}=\lim_{x\rightarrow c}g(f(x))=\lim_{y\rightarrow d}g(y)=\lim_{y\rightarrow d}\frac{f^{-1}(y)-c}{y-d}=\lim_{y\rightarrow d}\frac{f^{-1}(y)-f^{-1}(d)}{y-d}=(f^{-1})'(d).
+$$
+
+So $f^{-1}$ is differentiable in $d$. Moreover, since $f'$ is continuous we see that $(f^{-1})'$ is continuous. In particular, when $c=a$ we have $d=b$ and we have
+
+$$
+ \left(f^{-1}\right)'(b)=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}.
+$$
+
+
+
+:::
+
+
 ## Derivatives of logarithms and inverse trigonometric functions
 
 In {numref}`Subsec:ImplicitDiff` we studied the technique of implicit differentiation. It is perhaps surprising that we can use this technique to find derivatives of explicitly defined functions like logarithms and inverse trigonometric functions.
@@ -202,74 +269,3 @@ $$
  &=&\frac{3\arctan(x)(1+x^2)-\log_2(x)\ln(2)x}{\ln(2)x(1+x^2)\left(\arctan(x)\right)^{\frac{4}{3}}}.\end{array}
 $$
 ::::::
-
-## The inverse function theorem
-
-We foud the derivatives of logarithms and inverse trigonometric functions by using that we know the derivatives of their inverse functions. This idea can be generalised to the following theorem.
-
-
-::::::{prf:theorem} Inverse function theorem
-:label: Thm:Diffinverse:IFT
-Let $f$ be a continuously differentiable function. Let $a$ with $f'(a)\neq 0$ and write $b=f(a)$. Then $f$ is invertible on an interval that contains $a$. In addition, $f^{-1}$ is continuously differentiable on an interval that contains $b$ and we have
-
-$$
- \left(f^{-1}\right)'(b)=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}.
-$$
-
-::::::
-
-:::{admonition} Proof of {prf:ref}`Thm:Diffinverse:IFT`
-:class: tudproof, dropdown
-We assume that $f'(a)>0$ (the case where $f'(a)<0$ follows similarly). We write $\varepsilon=\frac{f'(a)}{2}>0$. Since $f'$ is continuous, we can find $\delta>0$ such that for the interval $(a-\delta,a+\delta)$ is contained in the domain of $f$ and such that for all $x$ with $0<|x-a|<\delta$ we have 
-
-$$
- |f'(x)-f(a)|<\varepsilon=\frac{f'(a)}{2}.
-$$
-
-Then for any $x$ with $0<|x-a|<\delta$ we have 
-
-$$
- -\frac{f'(a)}{2}< f'(x)-f(a)<\frac{f'(a)}{2},
-$$
-
-which means 
-
-$$
- f'(x)>\frac{f'(a)}{2}>0.
-$$
-
-By {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`, the function $f$ is strictly increasing on $(a-\delta,a+\delta)$. So by {prf:ref}`Thm:Inverse:MonotonicOnetoone` the function $f$ must be invertible on this interval. In addition, we claim that $f$ maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$. Since $f$ is strictly increasing on $(a-\delta,a+\delta)$, we have for any $a-\delta<x<a+\delta$ that
-
-$$
- f(a-\delta)<f(x)<f(a+\delta).
-$$
-
-Now let $y$ in $(f(a-\delta),f(a+\delta))$. Since $f$ continuous on $[a-\delta,a+\delta]$ we can use {prf:ref}`Theorem:Continuity:IVT` to find $c$ in $(a-\delta,a+\delta)$ with $f(c)=y$. As such, $f$ indeed maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$.
-
-Now consider any $c$ in $(a-\delta,a+\delta)$ and let $d=f(c)$. We will show that $f{-1}$ is differentiable in $d$. For this we first write
-
-$$
- \frac{1}{f'(c)}=\frac{1}{\lim_{x\rightarrow c}\frac{f(x)-f(c)}{x-c}}=\lim_{x\rightarrow c}\frac{x-c}{f(x)-f(c)}=\lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d}.
-$$
-
-We let $g(y)=\dfrac{f^{-1}(y)-c}{y-d}$. Then we note that $x\rightarrow c$ precisely when $f(x)\rightarrow d$. However, we do not know a priori that $g$ can be defined in such a way in $y=d$ to make it continuous, so we cannot use the regular substitution for limits. Instead, we use {prf:ref}`Theorem:Continuity:SubstitutionAlt` to obtain
-
-$$
- \frac{1}{f'(c)}=\lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d}=\lim_{x\rightarrow c}g(f(x))=\lim_{y\rightarrow d}g(y)=\lim_{y\rightarrow d}\frac{f^{-1}(y)-c}{y-d}=\lim_{y\rightarrow d}\frac{f^{-1}(y)-f^{-1}(d)}{y-d}=(f^{-1})'(d).
-$$
-
-So $f^{-1}$ is differentiable in $d$. Moreover, since $f'$ is continuous we see that $(f^{-1})'$ is continuous. In particular, when $c=a$ we have $d=b$ and we have
-
-$$
- \left(f^{-1}\right)'(b)=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}.
-$$
-
-
-
-:::
-
-In this section we cover:
-
-- Inverse function theorem
-- Derivatives of $ln(x)$, $log_b(x)$, $arcsin(x)$, $arccos(x)$ and $arctan(x)$
-- Corollary: derivatives of $x^r$ for $r$ not positive integer
