@@ -296,6 +296,55 @@ Unfortunately, since we are dealing with a limit at infinity, we cannot refer to
 :class: tudproof, dropdown
 If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$, then $f$ is continuous at $b$ by {prf:ref}`Theorem:Continuity:Standardfunctions`, possibly combined with {prf:ref}`Theorem:Continuity:Basiccomputationrules`. As such, the result follows from {prf:ref}`Theorem:Continuity:SubstitutionInf`
 
+:::
+
+In case the outer function is not continuous, we need additional assumptions on the inner function to use the substitution rule for limits.
+
+::::::{prf:theorem} Substitution for limit at a point when outer function is not continuous
+:label: Theorem:Continuity:SubstitutionAlt
+Let $f$ and $g$ be functions such that $g$ is one-to-one and continuous on an open interval $I$ containing a number $a$. Then $\displaystyle\lim_{x\rightarrow a}f(g(x))$ exists precisely when $\displaystyle \lim_{y\rightarrow g(a)}f(y)$ exists. In case these limits exist, they are equal.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Theorem:Continuity:SubstitutionAlt`
+:class: tudproof, dropdown
+
+Suppose first that $\displaystyle\lim_{x\rightarrow a}f(g(x))=L$. Let $\varepsilon>0$ be given. Then we can find $\delta>0$ such that for all $x$ with $0<|x-a|<\delta$ we have 
+
+$$
+ |f(g(x))-L|<\varepsilon$.
+$$  
+
+We write $g(I)$ for the set of all values of the form $g(x)$ for $x$ in $I$ and we note that $g(a)$ is in $g(I)$. Since $g$ is one-to-one, the restriction of $g$ from $I$ to $g(I)$ is bijective. Then by {prf:ref}`Theorem:Continuity:Inverse`, the inverse function $g^{-1}$ is continuous on $g(I)$. So we can find $\tilde{\delta}>0$ such that for all $y$ with $0<|y-g(a)|<\tilde{\delta}$ we have 
+
+$$
+ |g^{-1}(y)-a|=|g^{-1}(y)-g^{-1}(g(a))|<\delta.
+$$
+
+Note that for any $y$ with $0<|y-g(a)|<\tilde{\delta}$ we have $g^{-1}(y)\neq g{^{-1}}(g(a))=a$, so $|g^{-1}(y)-a|\neq 0$, since $g^{-1}$ is one-to-one. This means that for any $y$ with $0<|y-g(a)|<\tilde{\delta}$ we have $0<|g^{-1}(y)-a|<\delta$, from which it follows that
+
+$$
+ |f(g(g^{-1}(y)))-L|<\varepsilon.
+$$
+
+As such, we find that $\displaystyle \lim_{y\rightarrow g(a)}f(y)=L$.
+
+Now suppose that $\displaystyle \lim_{y\rightarrow g(a)}f(y)=L$. We write $h=f\circ g$. Then we find that $f=f\circ g\circ g^{-1}=h\circ g^{-1}$, so we have
+
+$$
+ \lim_{y\rightarrow g(a)}f(y)=\lim_{y\rightarrow g(a)}h(g^{-1}(y)).
+$$
+
+In addition, we find that
+
+$$
+ \lim_{x\rightarrow a}f(g(x))=\lim_{x\rightarrow a}h(x)=\lim_{x\rightarrow g^{-1}(g(a))}h(x).
+$$
+
+Note that $g^{-1}$ is one-to-one and continuous on an interval that contains $g(a)$. So now we can apply the first half of this proof to the function $h$ instead of $f$ and $g^{-1}$ instead of $g$ to conclude that 
+
+$$
+ \lim_{x\rightarrow a}f(g(x))=\lim_{x\rightarrow a}h(x)=\lim_{x\rightarrow g^{-1}(g(a))}h(x)=\lim_{y\rightarrow g(a)}h(g^{-1}(y))=\lim_{y\rightarrow g(a)}f(y)=L.
+$$
 
 :::
 
@@ -328,6 +377,8 @@ The function $f(x)$ and a slider for the parameter $b$. Can you recreate the res
 
 ::::
 ::::::
+
+
 
 (Subsec:ContIVT)=
 
@@ -438,17 +489,25 @@ The function $f$ on the left, the function $g$ on the right.
 
 ::::::
 
-As a final application of the intermediate value theorem, we provide the proof of {prf:ref}`Theorem:Continuity:Inverse`, which we postponed before.
+As a final application of the intermediate value theorem, we provide the proof of {prf:ref}`Theorem:Continuity:Inverse`, which we postponed before. For this we first need the following result.
 
-:::{admonition} Proof of {prf:ref}`Theorem:Continuity:Inverse`
+::::::{prf:theorem} 
+:label: Thm:Continuity:InverseMonotonic
+Let $f$ be an invertible function, defined on an interval $(a,b)$, that is continuous. Then $f$ is either increasing or decreasing on the interval $(a,b)$.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Continuity:InverseMonotonic`
 :class: tudproof, dropdown
-Let $f$ be a one-to-one function with inverse function $f^{-1}$ and suppose that $f$ is continuous. We first claim that $f$ is either increasing or decreasing on the interval $(a,b)$. Suppose this is not the case. Then there are three points $a<x_1<x_2<x_3<b$ such that $f(x_2)$ does not lie in between $f(x_1)$ and $f(x_3)$. Then either $f(x_1)$ is in between $f(x_2)$ and $f(x_3)$ or $f(x_3)$ is in between $f(x_1)$ and $f(x_2)$.
+Suppose that is $f$ is neither increasing nor increasing on $(a,b)$. Then there are three points $a<x_1<x_2<x_3<b$ such that $f(x_2)$ does not lie in between $f(x_1)$ and $f(x_3)$. Then either $f(x_1)$ is in between $f(x_2)$ and $f(x_3)$ or $f(x_3)$ is in between $f(x_1)$ and $f(x_2)$.
 
 First suppose that $f(x_1)$ is in between $f(x_2)$ and $f(x_3)$. By the Intermediate Value Theorem, there is a $c$ in between $x_2$ and $x_3$ with $f(c)=f(x_1)$. However, since $x_1<x_2<x_3$ and $c$ is in between $x_2$ and $x_3$, $c$ cannot be equal to $x_1$. Therefore, $c$ and $x_1$ are different numbers with the same function value, which contradicts the invertibility of $f$.
 
 Similarly, suppose that $f(x_3)$ is in between $f(x_1)$ and $f(x_2)$. By the Intermediate Value Theorem, there is a $c$ in between $x_1$ and $x_2$ with $f(c)=f(x_3)$. However, since $x_1<x_2<x_3$ and $c$ is in between $x_1$ and $x_2$, $c$ cannot be equal to $x_3$. Therefore, $c$ and $x_3$ are different numbers with the same function value, which contradicts the invertibility of $f$.
+:::
 
-As such, $f$ must be either increasing or decreasing on $(a,b)$. For the remainder of the proof, we assume that $f$ is increasing (the case where $f$ is decreasing is similar). Let $d$ be any point in the domain of $f^{-1}$ and write $c=f^{-1}(d)$. Let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $y$ with $0<|y-d|<\delta$ we have $|f^{-1}(y)-f^{-1}(d)|<\varepsilon$, i.e. $c-\varepsilon=f^{-1}(d)-\varepsilon<f^{-1}(y)<f^{-1}(d)+\varepsilon=c+\varepsilon$. If $\varepsilon$ is too large $c-\varepsilon$ and/or $c+\varepsilon$ might be outside of the interval of $(a,b)$, so we assume that $\varepsilon$ is sufficiently small (as we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway). Define $y_1=f(c-\varepsilon)$ and $y_2=f(c+\varepsilon)$. We know that $f$ is increasing, so we must have $y_1<d<y_2$. Now we choose $\delta>0$ in such a way that $y_1\leq d-\delta$ and $d+\delta\leq y_2$. Since $f$ is increasing, $f^{-1}$ must be increasing as well, so we know that for any $y$ with $|y-d|<\delta$ we have $y_1\leq d-\delta<y<d+\delta\leq y_2$, which means that $f^{-1}(y_1)<f^{-1}(y)<f^{-1}(y_2)$, i.e. 
+:::{admonition} Proof of {prf:ref}`Theorem:Continuity:Inverse`
+:class: tudproof, dropdown
+By {prf:ref}`Thm:Continuity:InverseMonotonic` $f$ must be either increasing or decreasing on $(a,b)$. We assume that $f$ is increasing (the case where $f$ is decreasing is similar). Let $d$ be any point in the domain of $f^{-1}$ and write $c=f^{-1}(d)$. Let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $y$ with $0<|y-d|<\delta$ we have $|f^{-1}(y)-f^{-1}(d)|<\varepsilon$, i.e. $c-\varepsilon=f^{-1}(d)-\varepsilon<f^{-1}(y)<f^{-1}(d)+\varepsilon=c+\varepsilon$. If $\varepsilon$ is too large $c-\varepsilon$ and/or $c+\varepsilon$ might be outside of the interval of $(a,b)$, so we assume that $\varepsilon$ is sufficiently small (as we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway). Define $y_1=f(c-\varepsilon)$ and $y_2=f(c+\varepsilon)$. We know that $f$ is increasing, so we must have $y_1<d<y_2$. Now we choose $\delta>0$ in such a way that $y_1\leq d-\delta$ and $d+\delta\leq y_2$. Since $f$ is increasing, $f^{-1}$ must be increasing as well, so we know that for any $y$ with $|y-d|<\delta$ we have $y_1\leq d-\delta<y<d+\delta\leq y_2$, which means that $f^{-1}(y_1)<f^{-1}(y)<f^{-1}(y_2)$, i.e. 
 
 $$
  c-\varepsilon=f^{-1}(y_1)<f^{-1}(y)<f^{-1}(y_2)=c+\varepsilon

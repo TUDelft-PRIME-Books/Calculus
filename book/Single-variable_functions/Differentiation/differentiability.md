@@ -142,6 +142,7 @@ The notation $\dfrac{df}{dx}$ is called the **Leibniz notation**, named after th
 In physics, when considering a quantity $y$ that is a function of **time** $t$, the notation $\dot{y}(t)$ represents the derivative $y'(t)$
 ::::::
 
+
 So what does the derivative represent geomtrically? For this, we need the definition of a tangent line.
 
 ::::::{prf:definition} 
@@ -283,6 +284,13 @@ class: dark-light
 ---
 Hier een mooiere versie van dit plaatje.
 ```
+
+The derivative of a differentiable function does not need to be continuous. For instance, we will see in {prf:ref}`Def:Differentiability:Higherorderderivative3` that the function $f(x)=\left\{\begin{array}{l}0,\qquad&\text{if}\,x\leq 0,\\ 2x,\qquad &\text{if}\,x>0.\end{array}\right.$ is differentiable, but not continuously differentiable. Since "a differentiable function for which the derivative is continuous" is such a mouthful, we give this concept a name.
+
+::::::{prf:definition} 
+:label: Def:Differentiability:ContDiff
+A function $f$ is called **continuously differentiable** if it is differentiable and the derivative $f'$ is continuous.
+::::::
 
 Before we go over to computing derivatives, we need to introduce on more concept.
 

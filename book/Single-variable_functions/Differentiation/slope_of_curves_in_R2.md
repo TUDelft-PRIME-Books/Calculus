@@ -29,6 +29,8 @@ Show the unit circle with the tangent line at $\left(\frac{1}{2},\frac{1}{2}\sqr
 
 We conclude that when it is possible to write (part of) a curve as the graph of a function, we can find the slope of a curve. However, what should we do if that is not the case, either because it is hard (or even impossible) to explicitly express $y$ as a function of $x$, or because our curve is defined by a parametrisation? In those cases, we need other tools, which will be the main topic of this section.
 
+(Subsec:ImplicitDiff)=
+
 ## Implicit differentiation
 
 [^FootnoteImplicit]: To give a proper mathematical motivation of why this technique works, we need the concept of a partial derivative, see {numref}`Sec:PartialDerivatives`
