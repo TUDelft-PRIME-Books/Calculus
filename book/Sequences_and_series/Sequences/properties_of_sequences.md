@@ -85,6 +85,16 @@ A sequence $\{a_n\}_{n=p}^{\infty}$ is **non-decreasing** if and only if $a_n \l
 
 ::::::
 
+Because of the similarity of the behavior of (non)-decreasing and (non-)increasing sequences, we will often use the term *monotonic* to refer to both of these types of sequences:
+
+::::{prf:definition}
+:label: Def:PropertiesOfSequences:Monotonic
+
+A sequence is called **monotonic** if it is either non-increasing or non-decreasing.
+
+A sequence is called **non-monotonic** if it is not monotonic, which means that it is neither non-increasing nor non-decreasing.
+::::
+
 Let us revisit the three sequences we introduced at the beginning of this section:
 
 ::::{prf:example}
