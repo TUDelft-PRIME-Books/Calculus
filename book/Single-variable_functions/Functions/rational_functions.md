@@ -178,64 +178,80 @@ $$
 \frac{x^4-4x^3+3x^2+4x-4}{x^3-2x^2-x+2}
 $$
 
-we can apply the technique of _canceling common factors_. Indeed we see that both the numerator and denominator are $0$ at $x=2$. This means both expressions can be written as $x-2$ times some other polynomial. We will show how to obtain this factorisation for the numerator by long division. We start by denoting the polynomial we want to factor out, i.e. by which we want to divide, on the left and the polynomial which we want to factor , i.e. which we want to divide, in the middle as follows:
+we can apply the technique of _canceling common factors_. Indeed we see that both the numerator and denominator are $0$ at $x=2$. This means both expressions can be written as $x-2$ times some other polynomial. We will show how to obtain this factorisation for the numerator by long division. We start by denoting the polynomial we want to factor, i.e. the numerator, on the left and the polynomial which we want to factor out, i.e. the denominator, on the right as follows:
 
 $$
-\begin{array}{rclcl}
-x-2 & \Big/ & x^4-4x^3+3x^2+4x-4 & \Big\\ & 
+\class{longdivision}{
+\begin{array}{lcl}
+x^4-4x^3+3x^2+4x-4 & / & x-2 \\
+\phantom{\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4}} & \phantom{|} & \overline{\phantom{x^3-2x^2-x+2}}    \\
 \end{array}
+}
 $$
 
-Now we consider by what monomial $ax^n$ we should multiply the polynomial on the left in order to match the highest order term of the polynomial in the middle. In this case we find it should be $x^3$. We multiply $x^3$ by $x-2$ and subtract the obtained polynomial from the polynomial in the middle as indicated. We write the monomial we had to multiply with on the right:
+[^longdivision]: The notation for long division of polynomials we use here is a combination of the various notations for long division in non-English speaking Europe and Asia, where we have chosen to use the slanted line for indicating a division, instead of a vertical line $|$, a percentage $%$ or a colon $:$, and the many vertical lines for indicating the separation between the calculations and the result, instead of a horizontal line. You can use your own notation of course, but we will use this notation for the rest of this chapter.
+
+In between the denominator and the numerator we have a slanted line which indicates that we are performing a division[^longdivision]. On the right we have a horizontal line below the denominator, which will separate the result of the long division (which we will write also on the right) from the denominator. We will write the result of the long division on the right as we go along.
+
+Now we consider by what monomial $ax^n$ we should multiply the polynomial at the top on the right in order to match the highest order term of the polynomial on the left. In this case we find it should be $x^3$. We multiply $x^3$ by $x-2$ and subtract the obtained polynomial from the polynomial in the middle as indicated. We write the monomial we had to multiply with on the right below on the second line.
 
 $$
-\begin{array}{rclcl}
-x-2 & \Big/ & x^4-4x^3+3x^2+4x-4 & \Big\backslash & x^3 \\
-    &       & x^4-2x^3           &        &     \\
-&          & \overline{\phantom{x^4}-2x^3+3x^2+4x-4} & \overline{\phantom{x^4}} & \\
+\class{longdivision}{
+\begin{array}{lcl}
+x^4-4x^3+3x^2+4x-4 & / & x-2 \\
+\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \overline{x^3\phantom{-2x^2-x+2}}    \\
+\phantom{x^4}-2x^3+3x^2+4x-4 & | & \\
 \end{array}
+}
 $$
 
-Now we repeat this step with the same polynomial on the left, but the new polynomial in the middle. For this second step we find that we should multiply by $-2x^2$.
+
+Now we repeat this step with the same polynomial at the top on the right, but the new polynomial at the bottom on the left. For this second step we find that we should multiply by $-2x^2$ which we add on the second line on the right:
 
 $$
-\begin{array}{rclcl}
-x-2 & \Big/ & x^4-4x^3+3x^2+4x-4 & \Big\backslash & x^3-2x^2 \\
-    &       & x^4-2x^3           &        &     \\
-&          & \overline{\phantom{x^4}-2x^3+3x^2+4x-4} & \overline{\phantom{x^4}} & \\
-&           & \phantom{x^4}-2x^3+4x^2           &        &     \\
-&          & \overline{\phantom{x^4-2x^32}-x^2+4x-4} & \overline{\phantom{x^4}} & \\
+\class{longdivision}{
+\begin{array}{lcl}
+x^4-4x^3+3x^2+4x-4 & / & x-2 \\
+\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \overline{x^3-2x^2\phantom{-x+2}}    \\
+\phantom{x^4}-2x^3+3x^2+4x-4 & | & \\
+\phantom{x^4}\dropsign{-}\kern1pt\underline{\,-\,2x^3+4x^2} & | &  \\
+\phantom{x^4-2x^34}-x^2+4x-4 & | & \\
 \end{array}
+}
 $$
 
 We repeat the step again and this time we find $-x$.
 
 $$
-\begin{array}{rclcl}
-x-2 & \Big/ & x^4-4x^3+3x^2+4x-4 & \Big\backslash & x^3-2x^2-x \\
-    &       & x^4-2x^3           &        &     \\
-&          & \overline{\phantom{x^4}-2x^3+3x^2+4x-4} & \overline{\phantom{x^4}} & \\
-&           & \phantom{x^4}-2x^3+4x^2           &        &     \\
-&          & \overline{\phantom{x^4-2x^32}-x^2+4x-4} & \overline{\phantom{x^4}} & \\
-&           & \phantom{x^4-2x^32}-x^2+2x           &        &     \\
-&          & \overline{\phantom{x^4-2x^3-2x^2+\,}2x-4} & \overline{\phantom{x^4}} & \\
+\class{longdivision}{
+\begin{array}{lcl}
+x^4-4x^3+3x^2+4x-4 & / & x-2 \\
+\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \overline{x^3-2x^2-x\phantom{+2}}    \\
+\phantom{x^4}-2x^3+3x^2+4x-4 & | & \\
+\phantom{x^4}\dropsign{-}\kern1pt\underline{\,-\,2x^3+4x^2} & | &  \\
+\phantom{x^4-2x^34}-x^2+4x-4 & | & \\
+\phantom{x^4-2x^32}\dropsign{-}\kern1pt\underline{\,-\,x^2+2x} & | & \\
+\phantom{x^4-2x^32-x^2\,+}\kern2pt2x-4 & | & \\
 \end{array}
+}
 $$
 
 We repeat one more time and this time we find $+2$:
 
 $$
-\begin{array}{rclcl}
-x-2 & \Big/ & x^4-4x^3+3x^2+4x-4 & \Big\backslash & x^3-2x^2-x+2 \\
-    &       & x^4-2x^3           &        &     \\
-&          & \overline{\phantom{x^4}-2x^3+3x^2+4x-4} & \overline{\phantom{x^4}} & \\
-&           & \phantom{x^4}-2x^3+4x^2           &        &     \\
-&          & \overline{\phantom{x^4-2x^32}-x^2+4x-4} & \overline{\phantom{x^4}} & \\
-&           & \phantom{x^4-2x^32}-x^2+2x           &        &     \\
-&          & \overline{\phantom{x^4-2x^3-2x^2+\,}2x-4} & \overline{\phantom{x^4}} & \\
-&          & \phantom{x^4-2x^3-2x^2+\,}2x-4 &  & \\
-&          & \overline{\phantom{x^4-2x^3-2x^2+\,2x-}\,0} & \overline{\phantom{x^4}} & \\
+\class{longdivision}{
+\begin{array}{lcl}
+x^4-4x^3+3x^2+4x-4 & / & x-2 \\
+\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \overline{x^3-2x^2-x+2}    \\
+\phantom{x^4}-2x^3+3x^2+4x-4 & | & \\
+\phantom{x^4}\dropsign{-}\kern1pt\underline{\,-\,2x^3+4x^2} & | &  \\
+\phantom{x^4-2x^34}-x^2+4x-4 & | & \\
+\phantom{x^4-2x^32}\dropsign{-}\kern1pt\underline{\,-\,x^2+2x} & | & \\
+\phantom{x^4-2x^32-x^2\,+}\kern2pt2x-4 & | & \\
+\phantom{x^4-2x^32-x^2\,+}\kern2pt\dropsign{-}\underline{2x-4} & | & \\
+\phantom{x^4-2x^32-x^2\,+\kern2pt2x-}0 & | & \\
 \end{array}
+}
 $$
 
 Note that the result of subtracting is now of lower degree then the polynomial on the left. This means our long division is done.
@@ -271,43 +287,43 @@ $$
 \frac{\frac{1}{2}x^3+x^2-\frac{23}{2}x-24}{x^2-25}.
 $$
 
-In order to write this as a linear function plus a proper rational function we can apply long division. Again we put the denominator on the left and the numerator in the middle.
+In order to write this as a linear function plus a proper rational function we can apply long division. Again we put the denominator on the right and the numerator on the left with a slanted line in between and a horizontal line below the denominator.
 
 $$
-\begin{array}{rclcl}
-x^2-25 & \Big/ & \frac12x^3+x^2-\frac{23}{2}x-24 & \Big\backslash & \phantom{\frac12x+1} \\
-%     &       & \frac12x^3\phantom{+x^2\,\,\,}-\frac{25}{2}x           &        &     \\
-% &          & \overline{\phantom{\frac12x^3+\,\,}x^2\phantom{\frac{25}{2}}+x-24} & \overline{\phantom{\frac{5}{2}}} & \\
-% &           & \phantom{\frac12x^3+\,\,}x^2\phantom{\frac{25}{2}+x}-25         &        &     \\
-% &           & \overline{\phantom{\frac12x^3+\,\,x^2}\phantom{\frac{25}{2}+\,}x\phantom{2}+1}         &    \overline{\phantom{\frac{5}{2}}}    &     \\
+\class{longdivision}{
+\begin{array}{lcl}
+\frac12x^3+x^2-\frac{23}{2}x-24 & / & \underline{x^2-25}
 \end{array}
+}
 $$
 
-This time the first monomial on the right should be $\frac{1}{2}x$. 
+This time the first monomial on the right in the second line should be $\frac{1}{2}x$. 
 
 $$
-\begin{array}{rclcl}
-x^2-25 & \Big/ & \frac12x^3+x^2-\frac{23}{2}x-24 & \Big\backslash & \frac12x\phantom{+1} \\
-    &       & \frac12x^3\phantom{+x^2\,\,\,}-\frac{25}{2}x           &        &     \\
-&          & \overline{\phantom{\frac12x^3+\,\,}x^2\phantom{\frac{25}{2}}+x-24} & \overline{\phantom{\frac{5}{2}}} & \\
-% &           & \phantom{\frac12x^3+\,\,}x^2\phantom{\frac{25}{2}+x}-25         &        &     \\
-% &           & \overline{\phantom{\frac12x^3+\,\,x^2}\phantom{\frac{25}{2}+\,}x\phantom{2}+1}         &    \overline{\phantom{\frac{5}{2}}}    &     \\
+\class{longdivision}{
+\begin{array}{lcl}
+\frac12x^3+x^2-\frac{23}{2}x-24 & / & \underline{x^2-25} \\
+\dropsign{-}\underline{\frac12x^3\phantom{+x^2\,\,}\kern1pt-\frac{25}{2}x} & | & \frac12x    \\
+\phantom{\frac12+x^3}x^2\phantom{\frac{25}{2}}+x-24 & | & \\
 \end{array}
+}
 $$
 
 Then we proceed with the monomial $+1$. After this the remainder is lower in degree than the polynomial on the left so the long division terminates. 
 
 $$
-\begin{array}{rclcl}
-x^2-25 & \Big/ & \frac12x^3+x^2-\frac{23}{2}x-24 & \Big\backslash & \frac12x+1 \\
-    &       & \frac12x^3\phantom{+x^2\,\,\,}-\frac{25}{2}x           &        &     \\
-&          & \overline{\phantom{\frac12x^3+\,\,}x^2\phantom{\frac{25}{2}}+x-24} & \overline{\phantom{\frac{5}{2}}} & \\
-&           & \phantom{\frac12x^3+\,\,}x^2\phantom{\frac{25}{2}+x}-25         &        &     \\
-&           & \overline{\phantom{\frac12x^3+\,\,x^2}\phantom{\frac{25}{2}+\,}x\phantom{2}+1}         &    \overline{\phantom{\frac{5}{2}}}    &     \\
+\class{longdivision}{
+\begin{array}{lcl}
+\frac12x^3+x^2-\frac{23}{2}x-24 & / & \underline{x^2-25} \\
+\dropsign{-}\underline{\frac12x^3\phantom{+x^2\,\,}\kern1pt-\frac{25}{2}x} & | & \frac12x+1    \\
+\phantom{\frac12+x^3}x^2\phantom{\frac{25}{2}}+x-24 & | & \\
+\phantom{2+x^3\kern1pt}\dropsign{-}\kern2pt\underline{x^2\phantom{25+x}\kern1pt-25} & | &  \\
+\phantom{2+x^3+x^22}\kern10pt x\kern5pt +1 & | &  \\
 \end{array}
+}
 $$
 
-This means that the polynomial in the middle divided by the polynomial on the left is equal to the polynomial on the right plus the remainder (on the bottom) divided by the polynomial on the left, i.e.
+This means that the polynomial in the first line on the left divided by the polynomial in the first line on the right is equal to the polynomial in the second line on the right plus the remainder (at the bottom on the left) divided by the polynomial on the right in the first line, i.e.
 
 $$
 \frac{\frac{1}{2}x^3+x^2-\frac{23}{2}x-24}{x^2-25} = \frac{1}{2}x+1 + \frac{x+1}{x^2-25}.
@@ -327,18 +343,22 @@ $$\frac{2x^5-3x^3+x^2+2x-1}{x^3-2x+1}.$$
 The long division results in
 
 $$
-\begin{array}{rclcl}
-x^3-2x+1 & \Big/ & 2x^5-3x^3+\phantom{2}x^2+2x-1 & \Big\backslash & 2x^2+1 \\
-    &       & 2x^5-4x^3+2x^2           &        &     \\
-    &       & \overline{\phantom{2x^5-4}x^3\phantom{2}-x^2+2x-1} & \overline{\phantom{x^5}} & \\
-    &       & \phantom{2x^5-4}x^3\phantom{-2x^2\,\,}-2x+1         &        &     \\
-    &       & \overline{\phantom{2x^5-4x^3\,\,}-x^2+4x-2}         & \overline{\phantom{x^5}} &     \\
+\class{longdivision}{
+\begin{array}{lcl}
+2x^5-3x^3+\phantom{2}x^2+2x-1 & / & \underline{x^3-2x+1} \\
+\dropsign{-}\underline{2x^5-4x^3+2x^2} & | & 2x^2+1    \\
+\phantom{2x^5-4}x^3-\phantom{2}x^2+2x-1 & | & \\
+\phantom{2x^5-4}\dropsign{-}\underline{x^3\phantom{-2x^2}\kern5pt-2x+1} & | &  \\
+\phantom{2x^5-4x^32}-x^2+4x-2 & | &  \\
 \end{array}
+}
 $$
 
-This means that the polynomial in the middle divided by the polynomial on the left is equal to  the polynomial on the right plus the remainder (on the bottom) divided by the polynomial on the left, i.e. 
+This means that the polynomial on the top left divided by the polynomial on the top right is equal to  the polynomial on the right  in the second line plus the remainder (on the bottom) divided by the polynomial on the top right, i.e. 
 
-$$\frac{2x^5-3x^3+x^2+2x-1}{x^3-2x+1} = 2x^2+1 + \frac{-x^2+4x-2}{x^3-2x+1}.$$
+$$
+\frac{2x^5-3x^3+x^2+2x-1}{x^3-2x+1} = 2x^2+1 + \frac{-x^2+4x-2}{x^3-2x+1}.
+$$
 
 ::::
 
@@ -380,6 +400,7 @@ The degree of the polynomial $r$ is $R<Q$ since the algorithm terminates when we
 :variant: multiple-select
 :admonition:
 :class: question
+:showanswer:
 
 When applying polynomial long division to divide a polynomial $p$ by a second degree polynomial $q$, what can the remainder $r$ be?
 
@@ -438,32 +459,11 @@ display(Latex("and remainder"))
 display(Latex("$$r(x) = "+sp.latex(r)+".$$"))
 display(Latex("""This means that the original rational function $f$
  can be rewritten as"""))
-display(Latex("$$f(x) = "+sp.latex(s)+" + \\frac{"+sp.latex(r)+"}{"
-    +sp.latex(q)+"}.$$"))
-display(Latex("""The entire long division is:"""))
-display_string = ["$$",r"\begin{array}{rcrcl}"]
-first_line = sp.latex(q)
-first_line += r" & \Big/ & "
-first_line += sp.latex(p)
-first_line += r" & \Big\backslash & "
-first_line += sp.latex(s)
-first_line += r"\\"
-display_string.append(first_line)
-# Split in the separate monomials of s
-s_monomials = sp.Poly(s).all_terms()
-rem = p
-for st in s_monomials:
-  if st[1] != 0:
-    stimesp = st[1]*x**st[0][0]*q
-    new_lines = ["&&" + sp.latex(stimesp.expand()) + r"&&\\"]
-    rem -= stimesp
-    new_lines.extend([r"&&\overline{"+sp.latex(rem.expand())+r"}&\overline{\phantom{x^5}}&\\"])
-    display_string.extend(new_lines)
-
-final_lines = [r"\end{array}","$$"]
-display_string.extend(final_lines)
-display_string = "\n".join(display_string)
-display(Latex(display_string))
+if r==0:
+    display(Latex("$$f(x) = "+sp.latex(s)+".$$"))
+else:
+    display(Latex("$$f(x) = "+sp.latex(s)+" + \\frac{"+sp.latex(r)+"}{"
+        +sp.latex(q)+"}.$$"))
 :::
 
 
@@ -1142,6 +1142,7 @@ display(Latex(eq_str))
 :variant: single-select
 :admonition:
 :class: question
+:showanswer:
 
 A partial fraction decomposition for $f(x)=\dfrac{x^2+4}{x(x-1)^2}$ is asked.
 
