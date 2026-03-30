@@ -20,7 +20,20 @@ Let $f$ be a function that is continuous on a closed interval $[a,b]$ and differ
 
 ::::::
 
-Unfortunately, we cannot prove Rolle's theorem yet, since the proof uses some other results that we have not obtained yet. We will give the proof in {numref}`Subsec:Extrema1dEVT`.
+Unfortunately, we cannot prove Rolle's theorem yet, since the proof uses some other results that we have not obtained yet. We will give the proof in {numref}`Subsec:Extrema1dEVT`. An illustration of the theorem is shown in {numref}`Fig:Graphsderivatives:Rolle`.
+
+:::{figure} Images/Fig-Graph1d-Rolle.png
+---
+width: 100%
+name: Fig:Graphsderivatives:Rolle
+class: dark-light
+---
+An illustration of Rolle's theorem. Note that in this case there are multiple points where the derivative is equal to $0$ (for instance, for the function on the left any point will do).
+:::
+
+:::{todo}
+Replace {numref}`Fig:Graphsderivatives:Rolle` with an applet.
+:::
 
 ::::::{prf:theorem} The mean value theorem
 :label: Thm:Graphsderivatives:MVT
