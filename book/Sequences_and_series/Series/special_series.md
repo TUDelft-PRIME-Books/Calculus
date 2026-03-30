@@ -300,6 +300,7 @@ Finally, for $p\leq0$ the general term of the series $\dfrac{1}{n^p}$ does not e
 This proves that the $p$-series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ is convergent if $p>1$ and divergent if $p\leq1$.
 ::::::
 
+Later we will see that for $p=2$ the $p$-series evaluates to $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\approx1.64493$. We wil do this in {prf:ref}`Ex:Series:FourierExample2` and {prf:ref}`Ex:Series:FourierExample3`.
 
 ## Telescoping series
 

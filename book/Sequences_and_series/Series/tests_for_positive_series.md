@@ -10,67 +10,117 @@ In this section we cover:
 
 Error estimations included in each test where applicable.
 
-In this section we consider series with *positive terms*, which are called **positive series**.
+
+## Introduction
+
+In {numref}`Sec:Series:InfiniteSeries` we have talked about infinite series, wether they are convergent or divergent. We also introduced the concept of absolute convergence and conditional convergence. In this section we will give some tests to determine whether a series is convergent or divergent. These tests only work for series with *positive terms*, which we call **positive series**:
+
+:::{prf:definition} Positive series
+A series $\displaystyle\sum a_n$ is called a **positive series** if $a_n>0$ for all $n$.
+:::
 
 (Sec:Series:PositiveSeries:IntegralTest)=
 ## The integral test
 
-In the previous section we showed that the *harmonic series* $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is divergent using the fact that the terms lie on the graph of $f(x)=\dfrac{1}{x}$:
+In {prf:ref}`Ex:Series:HarmonicSeries`, {prf:ref}`Ex:Series:AbsoluteConvergence1` and the proof of {prf:ref}`Thm:Series:pSeries` we investigate $p$-series, which are series of the form $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$, where $p$ is a positive real number. In the two examples and the proof, we compared the series with the integral of an appropriate function.
 
-```{figure} Images/harmonic.png
----
-width: 50%
-name: harmonic series
-align: center
----
-Proof of the divergence of the harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$
-```
+This concept can be generalized to the **integral test**. {numref}`Fig:Series:IntegralTest` gives the idea behind the integral test: you either search for a function that always lies above the rectangles (for convergence) or a function that always lies below the rectangles (for divergence). In both cases, the function should be continuous, positive and decreasing on $[1,\infty)$ and $a_n=f(n)$.
 
-At each point $n$ we draw a rectangle with width $1$ and height $\dfrac{1}{n}$ to the *right*. Then, the upper side of each rectangle is above the graph of $f$ since $f$ is decreasing. Hence, we have
+:::{figure-start}
+:width: 100%
+:name: Fig:Series:IntegralTest
 
-$$
-\sum_{n=1}^{\infty}\frac{1}{n}=1+\frac{1}{2}+\frac{1}{3}+\cdots > \int_1^{\infty}\frac{1}{x}\,dx.
-$$
+The two cases for the integral test are illustrated in the following two figures. In both cases we have $a_n=f(n)$, where $f$ is a continuous, positive and decreasing function on $[1,\infty)$. The rectangles represent the terms of the series $\displaystyle\sum a_n$ and the area under the graph of $f$ represents the integral $\displaystyle\int_1^nf(x)\,dx$.
+:::
 
-Now we have: $\displaystyle\int_1^{\infty}\frac{1}{x}\,dx=\bigg[\ln(x)\bigg]_1^{\infty}=\infty$.
+::::{grid} 2
+:gutter: 5
 
-This proves that the harmonic series is divergent.
+:::{grid-item}
+![number1](Images/integral1.png)
++++
+(_a_) $\displaystyle a_2+a_3+a_4+\cdots+a_n\leq\int_1^nf(x)\,dx$.
+:::
 
-Similarly, we show that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is convergent using the fact that the terms lie on the graph of $f(x)=\dfrac{1}{x^2}$:
+:::{grid-item}
+![number2](Images/integral2.png)
++++ 
+(_b_) $\displaystyle\int_1^nf(x)\,dx\leq a_1+a_2+a_3+\cdots+a_{n-1}$.
+:::
 
+::::
 
-```{figure} Images/integral.png
----
-width: 50%
-name: convergent series
-align: center
----
-Proof of the convergence of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$
-```
+:::{figure-end}
+:::
 
-In this case, at each point $n$ we draw a rectangle with width $1$ and height $\dfrac{1}{n^2}$ to the *left*. Then, the upper side of each rectangle is below the graph of $f$ since $f$ is decreasing. Hence, we have
-
-$$
-\sum_{n=1}^{\infty}\frac{1}{n^2}=1+\frac{1}{4}+\frac{1}{9}+\cdots < 1+\int_1^{\infty}\frac{1}{x}\,dx.
-$$
-
-Now we have: $\displaystyle\int_1^{\infty}\frac{1}{x^2}\,dx=\bigg[-\frac{1}{x}\bigg]_1^{\infty}=1$.
-
-This proves that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is convergent and that its sum is a value between $1$ and $2$.
-
-Later we will see that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\approx1.64493$. See: {prf:ref}`Ex:Series:FourierExample2` and {prf:ref}`Ex:Series:FourierExample3`.
-
-This concept can be generalized to the **integral test**:
+::::{todo}
+Replace the two figures in {numref}`Fig:Series:IntegralTest` with applets.
+::::
 
 ::::::{prf:Theorem} Integral test
 :label: Thm:Series:IntegralTest
-Suppose $f$ is a continuous, positive and decreasing function on $[1,\infty)$ and let $a_n=f(n)$. Then we have:
+Suppose $f$ is a _continuous_, _positive_ and _non-increasing_ function on $[1,\infty)$, $\displaystyle\sum_{n=1}^{\infty} a_n$ is a _positive series_ and let $a_n=f(n)$. Then we have:
 
 $$
 \sum_{n=1}^{\infty}a_n\;\text{is convergent}\quad\Longleftrightarrow\quad\int_1^{\infty}f(x)\,dx\;\text{is convergent.}
 $$
 
 ::::::
+
+::::::{admonition} Proof of {prf:ref}`Thm:Series:IntegralTest`
+:class: tudproof, dropdown
+The proof follows the same idea as in {prf:ref}`Ex:Series:HarmonicSeries`, {prf:ref}`Ex:Series:AbsoluteConvergence1` and the proof of {prf:ref}`Thm:Series:pSeries`. For *convergence* we draw the rectangles to the *left* (below the graph of $f$) and for *divergence* we draw the rectangles to the *right* (above the graph of $f$), see {numref}`Fig:Series:IntegralTest`.
+
+Let us start with the convergent case. If we draw the rectangles to the left, then we have, see {numref}`Fig:Series:IntegralTest`(a):
+
+\begin{align*}
+s_n &= \sum_{k=1}^na_k \\
+&= a_1 + \sum_{k=2}^na_k \\
+&= a_1 + \sum_{k=2}^n f(k) \\
+&\leq a_1 + \sum_{k=2}^n\int_{k}^{k+1}f(x)\,dx \\
+&= a_1 + \int_1^nf(x)\,dx.
+\end{align*}
+
+This follows from the fact that $a_n=f(n)$ and $f$ is non-increasing on $[1,\infty)$. Now, if $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent, then we have
+
+
+$$
+\int_{1}^{\infty}f(x)\,dx = \int_{1}^{n}f(x)\,dx + \int_{n}^{\infty}f(x)\,dx > \int_{1}^{n}f(x)\,dx,
+$$
+
+since $f$ is positive on $[1,\infty)$. Therefore, if $\displaystyle\int_1^{\infty}f(x)\,dx=M$, then
+
+$$
+s_n\leq a_1+\int_1^{\infty}f(x)\,dx\leq a_1+M.
+$$
+
+This means that $\{s_n\}$ is bounded above. Further we have
+
+$$
+s_{n+1}=s_n+a_{n+1} > s_n,
+$$
+
+since $a_{n+1}=f(n+1) > 0$. Thus, $\{s_n\}$ is an increasing sequence that is bounded above. Hence, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded`. This means by {prf:ref}`Thm:Series:ConvergenceSum` that $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent if $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent.
+
+
+Now we prove the divergent case. If we draw the rectangles to the right, then we have, see {numref}`Fig:Series:IntegralTest`(b):
+
+\begin{align*}
+s_n &= \sum_{k=1}^na_k \\
+&> \sum_{k=1}^{n-1}a_k \\
+&\geq \int_1^nf(x)\,dx.
+\end{align*}
+
+If $\displaystyle\int_1^{\infty}f(x)\,dx$ is divergent, then
+
+$$
+\lim_{n\to\infty}\int_1^nf(x)\,dx=\infty
+$$
+
+since $f$ is positive on $[1,\infty)$. Because $s_{n}>\displaystyle\int_1^nf(x)\,dx$ for all $n$, we must have $\lim\limits_{n\to\infty}s_{n}=\infty$. So $\displaystyle\sum a_n$ diverges if $\displaystyle\int_1^{\infty}f(x)\,dx$ is divergent.
+
+::::::
+
 
 ::::::{prf:remark}
 In other words we have:
@@ -81,106 +131,49 @@ In other words we have:
 
 ::::::
 
-```{figure} Images/integral1.png
----
-width: 50%
-name: integral1
-align: right
----
-$\displaystyle a_2+a_3+a_4+\cdots+a_n\leq\int_1^nf(x)\,dx$
-```
 
-```{figure} Images/integral2.png
----
-width: 50%
-name: integral2
-align: left
----
-$\displaystyle\int_1^nf(x)\,dx\leq a_1+a_2+a_3+\cdots+a_{n-1}$
-```
-
-::::::{admonition} Proof of {prf:ref}`Thm:Series:IntegralTest`
-:class: tudproof, dropdown
-The proof follows the same idea as in the two examples given above. For *convergence* we draw the rectangles to the *left* (below the graph of $f$) and for *divergence* we draw the rectangles to the *right* (above the graph of $f$).
-
-So, for a general continuous, positive and decreasing function $f$ on $[1,\infty)$ we have
-
-$$
-\int_1^nf(x)\,dx\leq a_1+a_2+a_3+\cdots+a_{n-1}=\sum_{k=1}^{n-1}a_k
-$$
-
-and
-
-$$
-\sum_{k=2}^na_k=a_2+a_3+a_4+\cdots+a_n\leq\int_1^nf(x)\,dx.
-$$
-
-Now, if $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent, then we have
-
-$$
-\sum_{k=2}^na_k\leq\int_1^nf(x)\,dx\leq\int_1^{\infty}f(x)\,dx,
-$$
-
-since $f$ is positive on $[1,\infty)$. Therefore, if $\displaystyle\int_1^{\infty}f(x)\,dx=M$, then
-
-$$
-s_n=a_1+\sum_{k=2}^na_k\leq a_1+\int_1^{\infty}f(x)\,dx\leq a_1+M.
-$$
-
-Since $s_n\leq a_1+M$ for all $n$, the sequence $\{s_n\}$ is bounded above. Further we have
-
-$$
-s_{n+1}=s_n+a_{n+1} > s_n,
-$$
-since $a_{n+1}=f(n+1) > 0$. Thus, $\{s_n\}$ is an increasing sequence that is bounded above. Hence, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded`. This implies that $\displaystyle\sum a_n$ is convergent.
-
-If $\displaystyle\int_1^{\infty}f(x)\,dx$ is divergent, then
-
-$$
-\lim_{n\to\infty}\int_1^nf(x)\,dx=\infty
-$$
-
-since $f$ is positive on $[1,\infty)$. However, now we have
-
-$$
-\int_1^nf(x)\,dx\leq\sum_{k=1}^{n-1}a_k=s_{n-1}
-$$
-
-and so $\lim\limits_{n\to\infty}s_{n-1}=\infty$. This implies that $\lim\limits_{n\to\infty}s_n=\infty$ and so $\displaystyle\sum a_n$ diverges.
-::::::
-
-::::::{note}
-It is not necessary to start at $1$ (both for the series and the integral) and $f$ should only be *ultimately* decreasing.
-::::::
+We apply the integral test in the following examples.
 
 ::::::{prf:Example}
 :label: Ex:Series:IntegralTestExample1
 
-Consider the series $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n^2+1}$.
+Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$.
 
-The function $f(x)=\displaystyle\frac{1}{x^2+1}$ is continuous, positive and decreasing on $[0,\infty)$ and
+The function $f(x)=\displaystyle\frac{1}{x^2+1}$ is continuous, positive and non-increasing on $[1,\infty)$ and
 
 $$
-\int_0^{\infty}\frac{1}{x^2+1}\,dx=\arctan(x)\bigg|_0^{\infty}=\frac{1}{2}\pi.
+\int_1^{\infty}\frac{1}{x^2+1}\,dx=\arctan(x)\bigg|_1^{\infty}=\frac{1}{2}\pi-\frac{\pi}{4}=\frac{\pi}{4}.
 $$ 
- 
-Hence: the integral $\displaystyle\int_0^{\infty}\frac{1}{x^2+1}\,dx$ is convergent, which implies that the series $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n^2+1}$ is convergent as well.
 
-In order to find a rough estimate, we note that the first rectangle corresponding to $n=0$ has an area $1$. The next rectangle corresponding to $n=1$ has area $\frac{1}{2}$ and is the first one below the graph of $f(x)=\dfrac{1}{x^2+1}$. So we have
+The integral $\displaystyle\int_1^{\infty}\frac{1}{x^2+1}\,dx$ is therefore convergent, which implies that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is convergent as well.
 
-$$
-0<\sum_{n=0}^{\infty}\frac{1}{n^2+1}<1+\int_0^{\infty}\frac{1}{x^2+1}\,dx=1+\frac{1}{2}\pi\approx2.57080.
-$$
+In order to find an upper bound for the sum of the series, we note that the first rectangle corresponding to $n=1$ has an area $\frac{1}{2}$. Since the rectangles are drawn to the left, we have
+
+\begin{align*}
+\sum_{n=1}^{\infty}\frac{1}{n^2+1} &= \frac12+\sum_{n=2}^{\infty}\frac{1}{n^2+1} \\
+&\leq \frac12+\int_1^{\infty}\frac{1}{x^2+1}\,dx \\
+=&\frac12+\frac{\pi}{4}=\frac{1}{2}+\frac{\pi}{4} \\
+&\approx 1.28540.
+\end{align*}
 
 ::::::
 
 ::::::{note}
-It is not easy to find the sum of the series $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n^2+1}$. Using more advanced methods, which are beyond the scope of this book, it can be shown that
+It is not easy to find the sum of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$. Using more advanced methods, which are beyond the scope of this book, it can be shown that
 
 $$
-\sum_{n=0}^{\infty}\frac{1}{n^2+1}=\frac{1}{2}+\frac{\pi}{2}\cdot\frac{e^{\pi}+e^{-\pi}}{e^{\pi}-e^{-\pi}}=\frac{1}{2}+\frac{\pi}{2}\cdot\frac{e^{2\pi}+1}{e^{2\pi}-1}\approx2.07667.
+\sum_{n=1}^{\infty}\frac{1}{n^2+1}=-\frac{1}{2}+\frac{\pi}{2}\cdot\frac{e^{\pi}+e^{-\pi}}{e^{\pi}-e^{-\pi}}=-\frac{1}{2}+\frac{\pi}{2}\cdot\frac{e^{2\pi}+1}{e^{2\pi}-1}\approx1.0767.
 $$
 
+::::::
+
+:::{todo}
+Rewrite everything below this point.
+::: 
+
+::::::{prf:remark}
+:label: Remark:IntegralTest
+It is not necessary to start at $1$ (both for the series and the integral). The integral test can be applied to $\displaystyle\sum_{n=p}^{\infty}a_n$ and $\displaystyle\int_p^{\infty}f(x)\,dx$ for any fixed integer $p$ as long as $f$ is continuous, positive and non-increasing on $[p,\infty)$ and $a_n=f(n)$ for all $n\geq p$.
 ::::::
 
 ::::::{prf:Example}
@@ -188,58 +181,23 @@ $$
 
 Consider the series $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$.
 
-First note that the function $f(x)=\displaystyle\frac{\ln(x)}{x}$ is positive and continuous for $x > e$. Further we have:
+First note that the function $f(x)=\displaystyle\frac{\ln(x)}{x}$ is positive and continuous for $x > 1$. Further we have:
 
 $$
-f'(x)=\frac{\dfrac{1}{x}\cdot x-\ln(x)}{x^2}=\frac{1-\ln(x)}{x^2} < 0\quad\text{for}\quad x > e.
+f'(x)=\frac{\dfrac{1}{x}\cdot x-\ln(x)}{x^2}=\frac{1-\ln(x)}{x^2}.
 $$ 
  
-This implies that the function $f$ is decreasing for $x > e$ and that we can apply the integral test:
+This implies that the function $f$ is non-increasing for $x > e$ and that we can apply the integral test with $p=\lceil e\rceil=3$. We have
 
 $$
-\int_1^{\infty}\frac{\ln(x)}{x}\,dx=\frac{1}{2}(\ln(x))^2\bigg|_1^{\infty}=\infty.
+\int_3^{\infty}\frac{\ln(x)}{x}\,dx=\frac{1}{2}(\ln(x))^2\bigg|_3^{\infty}=\infty.
 $$
 
-This implies that the series $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$ is divergent.
+This implies that the series $\displaystyle\sum_{n=3}^{\infty}\frac{\ln(n)}{n}$ is divergent.
+
+Because $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}=\frac{\ln(2)}{2}+\displaystyle\sum_{n=3}^{\infty}\frac{\ln(n)}{n}$, we conclude that $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$ is divergent as well.
 ::::::
 
-The harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ and the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ are special cases of a series of the form
-
-$$
-\sum_{n=1}^{\infty}\frac{1}{n^p}.
-$$
-
-Such a series is called a **$p$-series**. Now we have
-
-::::::{prf:Theorem}
-:label: Thm:Series:pSeries
-The *$p$-series* $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ is convergent if $p>1$ and divergent if $p\leq1$.
-::::::
-
-::::::{admonition} Proof of {prf:ref}`Thm:Series:pSeries`
-:class: tudproof, dropdown
-We use the integral test:
-
-$$
-\sum_{n=1}^{\infty}\frac{1}{n^p}\;\text{is convergent}\quad\Longleftrightarrow\quad\int_1^{\infty}\frac{dx}{x^p}\;\text{is convergent.}
-$$
-
-In {prf:ref}`Thm:Integration:ImproperIntegralsPIntegrals` we have seen that the integral $\displaystyle\int_1^{\infty}\frac{dx}{x^p}$ is convergent for $p>1$ and divergent for $p\leq1$.
-
-This proves the theorem.
-::::::
-
-::::::{note}
-The *harmonic series* $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is a $p$-series with $p=1$, which is divergent. The series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is a $p$-series with $p=2>1$, which is convergent.
-::::::
-
-These $p$-series will often be used in *comparison tests* in order to determine whether a more difficult series is convergent or divergent. As an example we note that
-
-$$
-\frac{1}{n^2+1}<\frac{1}{n^2}\quad\Longrightarrow\quad\sum_{n=1}^{\infty}\frac{1}{n^2+1}<\sum_{n=1}^{\infty}\frac{1}{n^2}.
-$$
-
-Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is a $p$-series with $p=2>1$, which is convergent, we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is convergent as well.
 
 The integral test can be used to find an estimation of the sum of a convergent series that satisfies the integral test.
 
@@ -365,6 +323,17 @@ $$
 ::::::
 
 ## Direct comparison tests
+
+::::{admonition} Moved from integral test section
+These $p$-series will often be used in *comparison tests* in order to determine whether a more difficult series is convergent or divergent. As an example we note that
+
+$$
+\frac{1}{n^2+1}<\frac{1}{n^2}\quad\Longrightarrow\quad\sum_{n=1}^{\infty}\frac{1}{n^2+1}<\sum_{n=1}^{\infty}\frac{1}{n^2}.
+$$
+
+Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is a $p$-series with $p=2>1$, which is convergent, we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is convergent as well.
+
+::::
 
 Earlier we compared the series $\displaystyle\sum_{n=1}^{\infty}$ with the $p$-series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$:
 

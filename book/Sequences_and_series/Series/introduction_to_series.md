@@ -372,6 +372,7 @@ $$
 
 With this we end our treatment of finite series.
 
+(Sec:Series:InfiniteSeries)=
 ## Infinite series
 
 ### Convergence and divergence
