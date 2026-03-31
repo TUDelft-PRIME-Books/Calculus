@@ -205,6 +205,7 @@ Second, let $q=0.\overline{135}$, then we have
 
 ::::::
 
+(Sec:Series:pSeries)=
 ## $p$-series
 
 Another type of series are _$p$-series_, which are series of the form $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ for some real number $p$. The _harmonic series_ is the special case of a $p$-series with $p=1$, which you have already seen to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`. You also have seen a $p$-series with $p=2$ in {prf:ref}`Ex:Series:AbsoluteConvergence1`, which is convergent and has sum $\frac{3}{4}$.

@@ -13,11 +13,8 @@ Error estimations included in each test where applicable.
 
 ## Introduction
 
-In {numref}`Sec:Series:InfiniteSeries` we have talked about infinite series, wether they are convergent or divergent. We also introduced the concept of absolute convergence and conditional convergence. In this section we will give some tests to determine whether a series is convergent or divergent. These tests only work for series with *positive terms*, which we call **positive series**:
+In {numref}`Sec:Series:InfiniteSeries` we have talked about infinite series, wether they are convergent or divergent. We also introduced the concept of absolute convergence and conditional convergence. In this section we will give some tests to determine whether a series is convergent or divergent. These tests only work for series with *positive terms*, which we call **positive series**, or series that eventually only have positive terms:
 
-:::{prf:definition} Positive series
-A series $\displaystyle\sum a_n$ is called a **positive series** if $a_n>0$ for all $n$.
-:::
 
 (Sec:Series:PositiveSeries:IntegralTest)=
 ## The integral test
@@ -30,7 +27,7 @@ This concept can be generalized to the **integral test**. {numref}`Fig:Series:In
 :width: 100%
 :name: Fig:Series:IntegralTest
 
-The two cases for the integral test are illustrated in the following two figures. In both cases we have $a_n=f(n)$, where $f$ is a continuous, positive and decreasing function on $[1,\infty)$. The rectangles represent the terms of the series $\displaystyle\sum a_n$ and the area under the graph of $f$ represents the integral $\displaystyle\int_1^nf(x)\,dx$.
+The two cases for the integral test are illustrated in the two figures above. In both cases we have $a_n=f(n)$, where $f$ is a continuous, positive and decreasing function on $[1,\infty)$. The rectangles represent the terms of the series $\displaystyle\sum a_n$ and the area under the graph of $f$ represents the integral $\displaystyle\int_1^nf(x)\,dx$.
 :::
 
 ::::{grid} 2
@@ -147,165 +144,191 @@ $$
 
 The integral $\displaystyle\int_1^{\infty}\frac{1}{x^2+1}\,dx$ is therefore convergent, which implies that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is convergent as well.
 
-In order to find an upper bound for the sum of the series, we note that the first rectangle corresponding to $n=1$ has an area $\frac{1}{2}$. Since the rectangles are drawn to the left, we have
-
-\begin{align*}
-\sum_{n=1}^{\infty}\frac{1}{n^2+1} &= \frac12+\sum_{n=2}^{\infty}\frac{1}{n^2+1} \\
-&\leq \frac12+\int_1^{\infty}\frac{1}{x^2+1}\,dx \\
-=&\frac12+\frac{\pi}{4}=\frac{1}{2}+\frac{\pi}{4} \\
-&\approx 1.28540.
-\end{align*}
-
 ::::::
 
-::::::{note}
+::::::{prf:remark}
+:label: Rem:Series:IntegralTestExample1
+
 It is not easy to find the sum of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$. Using more advanced methods, which are beyond the scope of this book, it can be shown that
 
 $$
-\sum_{n=1}^{\infty}\frac{1}{n^2+1}=-\frac{1}{2}+\frac{\pi}{2}\cdot\frac{e^{\pi}+e^{-\pi}}{e^{\pi}-e^{-\pi}}=-\frac{1}{2}+\frac{\pi}{2}\cdot\frac{e^{2\pi}+1}{e^{2\pi}-1}\approx1.0767.
+\sum_{n=1}^{\infty}\frac{1}{n^2+1}=-\frac{1}{2}+\frac{\pi}{2}\cdot\frac{e^{\pi}+e^{-\pi}}{e^{\pi}-e^{-\pi}}=-\frac{1}{2}+\frac{\pi}{2}\cdot\frac{e^{2\pi}+1}{e^{2\pi}-1}\approx1.07667.
 $$
 
 ::::::
 
-:::{todo}
-Rewrite everything below this point.
-::: 
+It is not necessary that the series starts at $1$ or that all terms of the series are positive, as long as the terms are _eventually_ positive. The conditions on the function $f$ can also be relaxed. This is given by the next theorem.
 
-::::::{prf:remark}
-:label: Remark:IntegralTest
-It is not necessary to start at $1$ (both for the series and the integral). The integral test can be applied to $\displaystyle\sum_{n=p}^{\infty}a_n$ and $\displaystyle\int_p^{\infty}f(x)\,dx$ for any fixed integer $p$ as long as $f$ is continuous, positive and non-increasing on $[p,\infty)$ and $a_n=f(n)$ for all $n\geq p$.
+::::::{prf:Theorem} Integral test (generalised)
+:label: Thm:Series:IntegralTestGeneralized
+
+Let $\displaystyle\sum_{n=p}^{\infty} a_n$ be a series with terms $a_n\geq 0$ for $n\geq N$, where $N\geq p$ is some fixed integer. Suppose that $f$ is a continuous, positive and non-increasing function on $[F,\infty)$ such that $a_n=f(n)$ for all integers $n\geq F$ for some integer $F$. Then we have:
+
+$$
+\sum_{n=p}^{\infty}a_n\;\text{is convergent}\quad\Longleftrightarrow\quad\int_F^{\infty}f(x)\,dx\;\text{is convergent.}
+$$
+
 ::::::
+
+We omit a proof of this theorem. The idea is the same as for the integral test, but we have to be careful with the indices. Note that the conditions only need to hold for $n\geq N$, where $N$ is some fixed integer.
+
+We apply this generalised integral test in the following example.
 
 ::::::{prf:Example}
 :label: Ex:Series:IntegralTestExample2
 
-Consider the series $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$.
+Consider the series $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$. This series has starting index $2$, so $p=2$ in the theorem.
 
-First note that the function $f(x)=\displaystyle\frac{\ln(x)}{x}$ is positive and continuous for $x > 1$. Further we have:
+Because $\ln(n)>0$ for $n>1$, the terms of the series are positive for $n\geq2$. This indicates that $N=p=2$ in the theorem.
 
-$$
-f'(x)=\frac{\dfrac{1}{x}\cdot x-\ln(x)}{x^2}=\frac{1-\ln(x)}{x^2}.
-$$ 
- 
-This implies that the function $f$ is non-increasing for $x > e$ and that we can apply the integral test with $p=\lceil e\rceil=3$. We have
+Now take $f(x)=\displaystyle\frac{\ln(x)}{x}$, which is continuous for $x>0$ and it is positive for $x>1$. The derivative of $f$ is given by
 
 $$
-\int_3^{\infty}\frac{\ln(x)}{x}\,dx=\frac{1}{2}(\ln(x))^2\bigg|_3^{\infty}=\infty.
+f'(x) = \frac{d}{dx}\left[\frac{\ln(x)}{x}\right] = \frac{\frac{1}{x}\cdot x - \ln(x)\cdot 1}{x^2} = \frac{1-\ln(x)}{x^2}.
 $$
 
-This implies that the series $\displaystyle\sum_{n=3}^{\infty}\frac{\ln(n)}{n}$ is divergent.
+This derivative is non-positive for $x\geq e\approx 2.718$, which means $f$ is non-increasing for $x\geq e$. Since $N=p=2 < e < 3$, we can apply the integral test with $F=3$ in the theorem. We have
 
-Because $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}=\frac{\ln(2)}{2}+\displaystyle\sum_{n=3}^{\infty}\frac{\ln(n)}{n}$, we conclude that $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$ is divergent as well.
+$$
+\int_{3}^\infty\frac{\ln(x)}{x}\,dx=\int_{3}^\infty\ln(x)\,d(\ln(x))=\frac{1}{2}\ln^2(x)\bigg|_3^{\infty}=\infty.
+$$
+
+This implies that the series $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$ is divergent.
+
 ::::::
 
 
-The integral test can be used to find an estimation of the sum of a convergent series that satisfies the integral test.
+The generalised integral test can be used to find an estimation of the sum of a convergent series that satisfies the generalised integral test.
 
-::::::{prf:Theorem} Estimating the sum of a series
+:::{figure-start}
+:width: 100%
+:name: Fig:Series:IntegralTestEstimatingSum
+
+The two cases for estimating the sum of a series using the integral test are illustrated in the above two figures. In both cases we have $a_n=f(n)$ for $n\geq F$, where $f$ is a continuous, positive and decreasing function on $[F,\infty)$.
+:::
+
+::::{grid} 2
+:gutter: 5
+
+:::{grid-item}
+![number3](Images/remainder1.png)
++++
+(_a_) $R_F\leq\displaystyle\int_F^{\infty}f(x)\,dx$.
+:::
+
+:::{grid-item}
+![number4](Images/remainder2.png)
++++ 
+(_b_) $\displaystyle\int_{F+1}^{\infty}f(x)\,dx\leq R_F$.
+:::
+
+::::
+
+:::{figure-end}
+:::
+
+::::{todo}
+Replace the two figures in {numref}`Fig:Series:IntegralTestEstimatingSum` with applets.
+::::
+
+::::::{prf:Theorem}
 :label: Thm:Series:IntegralTestEstimatingSum
-Suppose that $a_n=f(n)$, where $f$ is a continuous, positive and decreasing function for $x\geq N$ and $\displaystyle\sum a_n$ is convergent. If $s$ is the sum of the series and $s_N=\displaystyle\sum_{n=1}^Na_n$ is the $N$th partial sum with remainder $R_N=s-s_N$, then
+
+Let $\displaystyle\sum_{n=p}^{\infty} a_n$ be a series with terms $a_n\geq 0$ for $n\geq N$, where $N\geq p$ is some fixed integer. Suppose that $f$ is a continuous, positive and non-increasing function on $[F,\infty)$ such that $a_n=f(n)$ for all integers $n\geq F$ for some integer $F$.
+
+Finally, assume that $\displaystyle\sum_{n=p}^{\infty}a_n$ is convergent with sum $s$ and let $s_M=\displaystyle\sum_{n=p}^M a_n$ be the $M$th partial sum with $M\geq F$ and define the **remainder** $R_M=s-s_M$. Then
 
 $$
-\int_{N+1}^{\infty}f(x)\,dx\leq R_N\leq\int_N^{\infty}f(x)\,dx.
+\int_{M+1}^{\infty}f(x)\,dx\leq R_M\leq\int_F^{\infty}f(x)\,dx.
 $$
 
 ::::::
-
-```{figure} Images/remainder1.png
----
-width: 50%
-name: remainder1
-align: right
----
-$R_N\leq\displaystyle\int_N^{\infty}f(x)\,dx$
-```
-
-```{figure} Images/remainder2.png
----
-width: 50%
-name: remainder2
-align: left
----
-$\displaystyle\int_{N+1}^{\infty}f(x)\,dx\leq R_N$
-```
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Series:IntegralTestEstimatingSum`
 :class: tudproof, dropdown
 Note that
 
 $$
-R_N=s-s_N=a_{N+1}+a_{N+2}+a_{N+3}+\cdots
+R_M=s-s_M=a_{M+1}+a_{M+2}+a_{M+3}+\cdots
 $$
 
-is the **remainder**, id est the error made when the $N$th partial sum $s_N$ is used as an approximation of the sum $s$.
+is the **remainder**, so the error made when the $M$th partial sum $s_M$ is used as an approximation of the sum $s$.
 
-We use the same idea as for the integral test, assuming that $f$ is decreasing on $[N,\infty)$. Comparing the areas of the rectangles with the area under the graph of $f$ on $[N,\infty)$, we obtain
+We use the same idea as for the integral test, assuming that $f$ is decreasing on $[M,\infty)\subseteq[F,\infty)$. Comparing the areas of the rectangles with the area under the graph of $f$ on $[F,\infty)$, we obtain
 
 $$
-R_N=a_{N+1}+a_{N+2}+a_{N+3}+\cdots\leq\int_N^{\infty}f(x)\,dx
+R_M=a_{M+1}+a_{M+2}+a_{M+3}+\cdots\leq\int_M^{\infty}f(x)\,dx
 $$
 
 and
 
 $$
-R_N=a_{N+1}+a_{N+2}+a_{N+3}+\cdots\geq\int_{N+1}^{\infty}f(x)\,dx.
+R_M=a_{M+1}+a_{M+2}+a_{M+3}+\cdots\geq\int_{M+1}^{\infty}f(x)\,dx.
 $$
 
 This proves the theorem.
 ::::::
 
-::::::{note}
-For $\displaystyle\sum_{n=1}^{\infty}a_n$ the $N$th partial sum $s_N$ is the sum of the first $N$ terms. However, we call $s_N$ the $N$th partial sum of the series even when the series $\displaystyle\sum a_n$ does not start at $n=1$. So, for instance, if $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$ then $s_N=\displaystyle\sum_{n=2}^N\frac{\ln(n)}{n}$ is the sum of the first $N-1$ terms and if $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n^2+1}$ then $s_N=\displaystyle\sum_{n=0}^N\frac{1}{n^2+1}$ is the sum of the first $N+1$ terms.
-::::::
+Using {prf:ref}`Thm:Series:IntegralTestEstimatingSum` we can find a range for the sum of a convergent series. The true value of the sum lies somewhere between the two bounds given by the integrals. In most cases we would like to have a better approximation of the sum than just the $M$th partial sum $s_M$. The next corollary gives an improved estimation of the sum of a convergent series that satisfies the generalised integral test.
 
-::::::{prf:Corollary} Improved estimation of the sum of a series
+::::::{prf:Corollary}
 :label: Thm:Series:IntegralTestImprovedEstimation
-Let $T_N=\displaystyle\int_N^{\infty}f(x)\,dx$, then the error $|s-s^*|$ in the approximation
+
+Assume all conditions of {prf:ref}`Thm:Series:IntegralTestEstimatingSum` hold.
+
+Let $T_M=\displaystyle\int_M^{\infty}f(x)\,dx$ and 
 
 $$
-s\approx s^*=s_N+\frac{T_N+T_{N+1}}{2}
+s^* = s_M+\frac{T_M+T_{M+1}}{2}.
 $$
 
-satisfies $|s-s^*|\leq\displaystyle\frac{T_N-T_{N+1}}{2}$.
+Then the error $|s-s^*|$ satisfies
+
+$$
+|s-s^*|\leq\frac{T_M-T_{M+1}}{2}.
+$$
 ::::::
 
 ::::::{prf:Example}
-Consider $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n^2+1}$ and let $s$ denote its sum.
+Consider $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ and let $s$ denote its sum. Note from {prf:ref}`Ex:Series:IntegralTestExample1` that the function $f(x)=\displaystyle\frac{1}{x^2+1}$ satisfies the conditions of the generalised integral test and we have $p=N=F=1$ in the theorems.
 
-Let's use $s_{10}$ as an approximation of $s\approx2.07667$ (see a note above):
+Let's take $M=10$ and use $s_{10}$ as an approximation of $s\approx1.07667$ (see {prf:ref}`Rem:Series:IntegralTestExample1`). We find:
 
 \begin{align*}
-s_{10}=\sum_{n=0}^{10}\frac{1}{n^2+1}&=1+\frac{1}{2}+\frac{1}{5}+\frac{1}{10}+\frac{1}{17}+\frac{1}{26}+\frac{1}{37}+\frac{1}{50}\\
-&{}\quad\quad{}+\frac{1}{65}+\frac{1}{82}+\frac{1}{101}=\frac{3355270077}{1693047850}\approx1.98179.
+s_{10}=\sum_{n=1}^{10}\frac{1}{n^2+1}&=\frac{1}{2}+\frac{1}{5}+\frac{1}{10}+\frac{1}{17}+\frac{1}{26}+\frac{1}{37}+\frac{1}{50}\\
+&{}\quad\quad{}+\frac{1}{65}+\frac{1}{82}+\frac{1}{101} \\
+&= \frac{1662222227}{1693047850} \\
+&\approx 0.98179.
 \end{align*}
+
 How good is this approximation? Let
 
 $$
-T_N=\int_N^{\infty}\frac{dx}{x^2+1}=\arctan(x)\bigg|_N^{\infty}=\frac{1}{2}\pi-\arctan(N).
+T_M=\int_M^{\infty}\frac{dx}{x^2+1}=\arctan(x)\bigg|_M^{\infty}=\frac{1}{2}\pi-\arctan(M).
 $$
 
-Then, for $R_N=s-s_N$ we have
+Then, by {prf:ref}`Thm:Series:IntegralTestEstimatingSum`, for $R_M=s-s_M$ we have
 
 $$
-T_{N+1}\leq R_N\leq T_N.
+T_{M+1}\leq R_M\leq T_M.
 $$
 
-For $N=10$ we obtain
+For $M=10$ we obtain $T_11=\displaystyle\int_{11}^{\infty}\frac{dx}{x^2+1}=\dfrac12\pi-\arctan(11)\approx0.09066$ and $T_{10}=\displaystyle\int_{10}^{\infty}\frac{dx}{x^2+1}=\dfrac12\pi-\arctan(10)\approx0.09967$. Hence, we have
 
 $$
-0.09066\approx T_{11}\leq R_{10}\leq T_{10}\approx0.09967.
+0.09066 \lesssim R_{10}\lesssim  0.09967.
 $$
 
-Since $s=S_{10}+R_{10}$ this implies that
+Since $s=s_{10}+R_{10}$ and $s_{10}\approx 0.98179$, this implies that
 
 $$
-1.98179+0.09066\leq s\leq1.98179+0.09967
+0.98179+0.09066\lesssim s\lesssim 0.98179+0.09967
 $$
 
 or
 
 $$
-2.07245\leq s\leq2.08146.
+1.07245\lesssim s\lesssim 1.08146.
 $$
 
 Finally, we have
@@ -317,56 +340,89 @@ $$
 and therefore
 
 $$
-s^*=s_{10}+\frac{T_{10}+T_{11}}{2}\approx1.98179+0.09516\approx2.07695.
+s^*=s_{10}+\frac{T_{10}+T_{11}}{2}\approx0.98179+0.09516\approx1.07695.
 $$
 
 ::::::
 
 ## Direct comparison tests
 
-::::{admonition} Moved from integral test section
-These $p$-series will often be used in *comparison tests* in order to determine whether a more difficult series is convergent or divergent. As an example we note that
+Instead of comparing series with integrals, we can also compare series with other series for which it is easier to determine whether they are convergent or divergent.
+
+For example, the $p$-series, see {numref}`Sec:Series:pSeries`, will often be used in in such comparisons in order to determine whether a more difficult series is convergent or divergent.
+
+We start with an example to illustrate the idea of direct comparison tests.
+
+::::{prf:example}
+:label: Ex:Series:DirectComparisonTest1
+
+Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$. Because $n^2+1>n^2$ for all $n\geq1$, we have
 
 $$
-\frac{1}{n^2+1}<\frac{1}{n^2}\quad\Longrightarrow\quad\sum_{n=1}^{\infty}\frac{1}{n^2+1}<\sum_{n=1}^{\infty}\frac{1}{n^2}.
+0<\frac{1}{n^2+1}<\frac{1}{n^2}
 $$
 
-Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is a $p$-series with $p=2>1$, which is convergent, we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is convergent as well.
+for all $n\geq1$. This means that every term in the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is smaller than the corresponding term in the $p$-series (with $p=2$) $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$.
+
+Hence, if $s_N$ is the $N$th partial sum of $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ and $t_N$ is the $N$th partial sum of $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$, then we have $s_N<t_N$ for all $N$. Note that we also have $s_N>0$ for all $N$ since the terms of the series are positive.
+
+Using the squeeze theorem for limits at infinity, see {prf:ref}`Theorem:LimitAtInfinity:Squeezetheorem`, we have
+
+$$
+0 < \lim_{N\to\infty}s_N \leq \lim_{N\to\infty}t_N.
+$$
+
+Hence, the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is smaller than the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ _provided_ the latter is convergent. Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is a $p$-series with $p=2>1$, which is convergent, we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is convergent as well.
 
 ::::
 
-Earlier we compared the series $\displaystyle\sum_{n=1}^{\infty}$ with the $p$-series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$:
-
-$$
-\frac{1}{n^2+1}<\frac{1}{n^2}\quad\Longrightarrow\quad\sum_{n=1}^{\infty}\frac{1}{n^2+1}<\sum_{n=1}^{\infty}\frac{1}{n^2}.
-$$
-
-Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is a $p$-series with $p=2>1$ it is convergent, which implies that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is convergent as well.
-
-Now we generalize this concept in the following theorem.
+This concept of comparing two series with each other can be used to determine whether a series is convergent or divergent and is generalised in the following theorem. Note that we did have to use that the terms of the series are positive in order to apply the squeeze theorem for limits at infinity. This is why the direct comparison test only works for positive series.
 
 ::::::{prf:Theorem} Direct comparison tests
 :label: Thm:Series:DirectComparisonTest
-Suppose that $\displaystyle\sum a_n$ and $\displaystyle\sum b_n$ are series with *positive terms*.
+Suppose that $\displaystyle\sum_{n=1}^{\infty} a_n$ and $\displaystyle\sum_{n=1}^{\infty} b_n$ are series with $a_n>0$ and $b_n>0$ for all $n\geq 1$. Then we have:
 
-1) If $a_n\leq b_n$ for all $n$ and $\displaystyle\sum b_n$ is convergent, then $\displaystyle\sum a_n$ is also convergent.
+If $a_n\leq b_n$ for all $n\geq 1$ and $\displaystyle\sum_{n=1}^{\infty} b_n$ is convergent, then $\displaystyle\sum_{n=1}^{\infty} a_n$ is also convergent.
 
-2) If $a_n\geq b_n$ for all $n$ and $\displaystyle\sum b_n$ is divergent, then $\displaystyle\sum a_n$ is also divergent.
-::::::
-
-::::::{note}
-Since the sum of a finite number of terms is finite, the conditions only need to hold for $n\geq N$, where $N$ is some fixed integer.
+If $a_n\geq b_n$ for all $n\geq 1$ and $\displaystyle\sum_{n=1}^{\infty} b_n$ is divergent, then $\displaystyle\sum_{n=1}^{\infty} a_n$ is also divergent.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Series:DirectComparisonTest`
 :class: tudproof, dropdown
-Consider $s_n=\displaystyle\sum_{k=1}^na_k$ and $t_n=\displaystyle\sum_{k=1}^nb_k$. 
+We define $s_n$ and $t_n$ as the $n$th partial sums of $\displaystyle\sum_{n=1}^{\infty} a_n$ and $\displaystyle\sum_{n=1}^{\infty} b_n$, respectively:
 
-1) Since $\displaystyle\sum b_n$ is convergent, the limit $\lim\limits_{n\to\infty}t_n=t$ exists.
-Since $a_k\leq b_k$ for all $k$ we conclude that $s_n\leq t_n\leq t$ for all $n$. Furthermore, $s_{n+1}=s_n+a_{n+1}>s_n$ since $a_{n+1}$ is positive. Hence, $\{s_n\}$ is an increasing sequence that is bounded above which is convergent. This implies that $\displaystyle\sum a_n$ is convergent.
+\begin{align*}
+s_n &=\sum_{k=1}^n a_k, \\
+t_n &= \sum_{k=1}^n b_k.
+\end{align*}
 
-2) If $\displaystyle\sum b_n$ is divergent, then $\lim\limits_{n\to\infty}t_n=\infty$ since $\{t_n\}$ is an increasing sequence ($b_n$ is positive for all $n$). Now, since $a_n\geq b_n$ for all $n$, we have $s_n\geq t_n$ for all $n$. Thus $\lim\limits_{n\to\infty}s_n=\infty$ and therefore $\displaystyle\sum a_n$ is divergent.
+_We first prove the convergent case._ Assume that $0<a_n\leq b_n$ for all $n\geq 1$ and $\displaystyle\sum_{n=1}^{\infty} b_n$ is convergent with sum $t$. Since $\displaystyle\sum_{n=1}^{\infty} b_n$ is convergent with sum $t$, the limit $\lim\limits_{n\to\infty}t_n=t$ exists.
+
+Because $b_n>0$ for all $n\geq 1$, we have $t_{n+1}=t_n+b_{n+1}>t_n $ for all $n\geq 1$,. which makes $\{t_n\}$ an increasing sequence. Since $\{t_n\}$ is an increasing sequence that converges to $t$, it is bounded above by $t$. Hence, we have $t_n<t$ for all $n\geq 1$.
+
+For the partial sum $s_n$ we have
+
+$$
+s_n = \sum_{k=1}^n a_k \leq \sum_{k=1}^n b_k = t_n.
+$$
+
+As a consequence, we have $s_n<t$ for all $n\geq 1$. $\{s_n\}$ is also an increasing sequence since $a_n>0$ for all $n\geq 1$ and $s_{n+1}=s_n+a_{n+1}>s_n$ for all $n\geq 1$.
+
+Since $\{s_n\}$ is an increasing sequence that is bounded above by $t$, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded` with $\lim\limits_{n\to\infty}s_n=s<t$ for some number $s$. Hence, $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent.
+
+_Now we prove the divergent case._ Assume that $a_n\geq b_n>0$ for all $n\geq 1$ and $\displaystyle\sum_{n=1}^{\infty} b_n$ is divergent. This indicates that for every number $M>0$ there exists an integer $N$ such that $t_N>M$. Since $a_n\geq b_n$ for all $n\geq 1$, we have
+
+$$
+s_N = \sum_{k=1}^N a_k \geq \sum_{k=1}^N b_k = t_N > M.
+$$
+
+This means that for every number $M>0$ there exists an integer $N$ such that $s_N>M$. Hence, $\lim\limits_{n\to\infty}s_n=\infty$, which makes $\displaystyle\sum_{n=1}^{\infty} a_n$ a divergent series.
+
 ::::::
+
+:::{todo}
+Rewrite examples below.
+:::
 
 We often use standard series such as $p$-series or geometric series to compare with. For a $p$-series $\displaystyle\sum\frac{1}{n^p}$ we know that it is convergent for $p>1$ and divergent for $p\leq1$. For a geometric series $\displaystyle\sum ar^{n-1}$ we know that it is convergent for $|r|<1$ and divergent for $|r|\geq1$.
 
