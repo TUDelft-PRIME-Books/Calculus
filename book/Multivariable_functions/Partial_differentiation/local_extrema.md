@@ -1,3 +1,5 @@
+(Section:LocalExtremaMulti)=
+
 # Local extrema
 
 In this section we cover:
