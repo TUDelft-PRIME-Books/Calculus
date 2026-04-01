@@ -29,6 +29,8 @@ sphinx:
     # image_checker: _ext/
     numref_section: _ext/
   config:
+    sticky_margin:
+      trigger: partial
     tippy_skip_urls:
       - https://en.wikipedia.org/wiki/File:Parametric_ellipse.gif
     todo_include_todos: true
