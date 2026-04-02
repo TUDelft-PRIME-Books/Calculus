@@ -429,7 +429,17 @@ $$
 ::::::{prf:corollary} Law of cosines
 :label: Cor:Trigonometry:LawOfCosinesVariants
 
-Note that we also have $b^2=a^2+c^2-2ac\cos(\beta)$ and $c^2=a^2+b^2-2ab\cos(\gamma)$.
+Note that we also have 
+
+$$
+b^2=a^2+c^2-2ac\cos(\beta)
+$$ 
+
+and 
+
+$$
+c^2=a^2+b^2-2ab\cos(\gamma).
+$$
 
 Furthermore, if one of the angles is a right angle the law of cosines using that same angle reduces to the Pythagorean theorem.
 ::::::
@@ -1378,7 +1388,7 @@ $$
 -\cos(\tfrac{1}{5}\pi)=\cos(\tfrac{4}{5}\pi)=2\cos^2(\tfrac{2}{5}\pi)-1\quad\Longleftrightarrow\quad -a=2b^2-1.
 $$
 
-Subtracting we obtain $a+b=2a^2-2b^2=2(a+b)(a-b)$, which implies that $1=2(a-b)$ since $a+b\neq0$, Substituting $b=a-\frac{1}{2}$ we obtain
+Subtracting we obtain $a+b=2a^2-2b^2=2(a+b)(a-b)$, which implies that $1=2(a-b)$ since $a+b\neq0$. Substituting $b=a-\frac{1}{2}$ we obtain
 
 $$
 \begin{align*}
@@ -1408,7 +1418,7 @@ $$
 \end{align*}
 $$
 
-Hence $(\tan(\frac{1}{8}\pi)+1)^2-2=0$ or equivalently $\tan(\frac{1}{8}\pi)=-1\pm\sqrt{2}$. Since $\tan(\frac{1}{8}\pi)>0$, we conclude that $\cos(\frac{1}{8}\pi)=-1+\sqrt{2}$.
+Hence $(\tan(\frac{1}{8}\pi)+1)^2-2=0$ or equivalently $\tan(\frac{1}{8}\pi)=-1\pm\sqrt{2}$. Since $\tan(\frac{1}{8}\pi)>0$, we conclude that $\tan(\frac{1}{8}\pi)=-1+\sqrt{2}$.
 
 Similarly, for $x=\frac{3}{8}\pi$ we obtain
 
@@ -1420,7 +1430,7 @@ $$
 \end{align*}
 $$
 
-Hence $(\tan(\frac{3}{8}\pi)-1)^2-2=0$ or equivalently $\tan(\frac{3}{8}\pi)=1\pm\sqrt{2}$. Since $\tan(\frac{3}{8}\pi)>0$, we conclude that $\cos(\frac{3}{8}\pi)=1+\sqrt{2}$.
+Hence $(\tan(\frac{3}{8}\pi)-1)^2-2=0$ or equivalently $\tan(\frac{3}{8}\pi)=1\pm\sqrt{2}$. Since $\tan(\frac{3}{8}\pi)>0$, we conclude that $\tan(\frac{3}{8}\pi)=1+\sqrt{2}$.
 :::
 
 ```{exercise} 
@@ -1444,7 +1454,7 @@ Convert {numref}`Fig:Trigonometry:Cosines` into an applet.
 
 :::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_11`
 :class: solution, dropdown
-In each of the three equilateral triangles we use a rectangular triangle being half of it to find that $\cos(\frac{1}{7}\pi)=\dfrac{x+y}{2x}$, $\cos(\frac{2}{7}\pi)=\dfrac{x}{2y}$ and $\cos(\frac{3}{7}\pi)=\dfrac{y}{2(x+y)}$. This implies that
+In each of the three isosceles triangles we use a rectangular triangle being half of it to find that $\cos(\frac{1}{7}\pi)=\dfrac{x+y}{2x}$, $\cos(\frac{2}{7}\pi)=\dfrac{x}{2y}$ and $\cos(\frac{3}{7}\pi)=\dfrac{y}{2(x+y)}$. This implies that
 
 $$
 \cos(\tfrac{1}{7}\pi)\cos(\tfrac{2}{7}\pi)\cos(\tfrac{3}{7}\pi)=\frac{x+y}{2x}\cdot\frac{x}{2y}\cdot\frac{y}{2(x+y)}=\frac{1}{8}.
@@ -1482,7 +1492,7 @@ Multiply and divide by $2\sin(\alpha)$ to find
 
 $$
 \begin{align*}
-\cos(\alpha)+\cos(3\alpha)&=\frac{2\sin(a)\cos(\alpha)+2\sin(\alpha)\cos(3\alpha)}{2\sin(\alpha)}\\
+\cos(\alpha)+\cos(3\alpha)&=\frac{2\sin(\alpha)\cos(\alpha)+2\sin(\alpha)\cos(3\alpha)}{2\sin(\alpha)}\\
 &=\frac{\sin(2\alpha)+\sin(4\alpha)-\sin(2\alpha)}{2\sin(\alpha)}=\frac{\sin(4\alpha)}{2\sin(\alpha)}=\frac{1}{2},
 \end{align*}
 $$
@@ -1501,7 +1511,7 @@ Multiply and divide by $2\sin(\alpha)$ to find
 
 $$
 \begin{align*}
-&\cos(\alpha)+\cos(3\alpha)+\cos(3\alpha)\\
+&\cos(\alpha)+\cos(3\alpha)+\cos(5\alpha)\\
 &{}\quad{}=\frac{2\sin(\alpha)\cos(\alpha)+2\sin(\alpha)\cos(3\alpha)+2\sin(\alpha)\cos(5\alpha)}{2\sin(\alpha)}\\
 &{}\quad{}=\frac{\sin(2\alpha)+\sin(4\alpha)-\sin(2\alpha)+\sin(6\alpha)-\sin(4\alpha)}{2\sin(\alpha)}\\
 &{}\quad{}=\frac{\sin(6\alpha)}{2\sin(\alpha)}=\frac{1}{2},
