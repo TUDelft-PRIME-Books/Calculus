@@ -103,7 +103,7 @@ $$
 \text{sum}=\frac{\text{first term}}{1-\text{common ratio}}.
 $$
 
-Do remember that the series should have starting index $1$ and the power of the common ration should be $n-1$ for this formula to work. If the series does not have this form, then you can always use the properties of finite series to rewrite the series in a form that does have this form, and then apply the formula.
+Do remember that the series should have starting index $1$ and the power of the common ration should be $n-1$ for this formula to work. If the series does not have this form, then you can always use the properties of series to rewrite the series in a form that does have this form, and then apply the formula.
 
 ::::::
 
@@ -727,7 +727,7 @@ Later we will be able to show that $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n
 ## Grasple exercises
 
 :::{todo}
-Add Grasple exercises for this section.
+Add Grasple exercises for {numref}`Sec:Series:SpecialSeries`.
 :::
 
 ## Exercises

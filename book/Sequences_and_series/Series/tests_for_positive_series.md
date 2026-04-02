@@ -1,5 +1,4 @@
 (Sec:Series:PositiveSeries)=
-    
 # Tests for positive series
 
 In this section we cover:
@@ -420,71 +419,124 @@ This means that for every number $M>0$ there exists an integer $N$ such that $s_
 
 ::::::
 
-:::{todo}
-Rewrite examples below.
-:::
+The series in {prf:ref}`Thm:Series:DirectComparisonTest` have starting index $1$, but this can be relaxed as well. As long as both series satisfy the next conditions, the direct comparison test can be applied:
 
-We often use standard series such as $p$-series or geometric series to compare with. For a $p$-series $\displaystyle\sum\frac{1}{n^p}$ we know that it is convergent for $p>1$ and divergent for $p\leq1$. For a geometric series $\displaystyle\sum ar^{n-1}$ we know that it is convergent for $|r|<1$ and divergent for $|r|\geq1$.
+- $a_n>0$ for all $n\geq N$ for some index $N$.
+- $b_n>0$ for all $n\geq M$ for some index $M$.
+- $a_n\leq b_n$ for all $n\geq C$ for some index $C\geq\max\{N,M\}$ for the convergent case.
+- $a_n\geq b_n$ for all $n\geq D$ for some index $D\geq\max\{N,M\}$ for the divergent case.
 
-::::::{prf:Example}
-1) $\displaystyle\frac{1}{n^2+1}\leq\frac{1}{n^2}$ for all $n\geq1$ and $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is a $p$-series with $p=2>1$ which is convergent. This implies that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ is convergent.
+::::::{prf:example}
+:label: Ex:Series:DirectComparisonTest2
 
-2) $\displaystyle\frac{\ln(n)}{n}\geq\frac{1}{n}$ for all $n\geq3$ and $\displaystyle\sum_{n=3}^{\infty}\frac{1}{n}$ is a $p$-series with $p=1$ which is divergent. This implies that $\displaystyle\sum_{n=3}^{\infty}\frac{\ln(n)}{n}$ is divergent.
+Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{\ln(n)}{n}$.
 
-3) $\displaystyle\frac{1}{2^n+1}\leq\frac{1}{2^n}$ for all $n\geq0$ and $\displaystyle\sum_{n=0}^{\infty}\frac{1}{2^n}$ is a geometric series with common ratio $r=\dfrac{1}{2}$ which is convergent. This implies that $\displaystyle\sum_{n=0}^{\infty}\frac{1}{2^n+1}$ is convergent.
+Because $\ln(n)>0$ for $n>1$, the terms of the series are positive for $n\geq2$.
+
+For $n>e$ we have even $\ln(n)>1$, which implies that $\displaystyle\frac{\ln(n)}{n}>\frac{1}{n}$ for $n>e$. Since $e<3$, we have
+
+$$
+\frac{\ln(n)}{n}>\frac{1}{n}
+$$
+
+for all $n\geq3$.
+
+$\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is a $p$-series with $p=1$, which is divergent by {prf:ref}`Thm:Series:pSeries`. So $\displaystyle\sum_{n=1}^{\infty}\frac{\ln(n)}{n}$ is divergent by the direct comparison test.
+
 ::::::
+
+::::::{prf:example}
+:label: Ex:Series:DirectComparisonTest3
+
+Consider the series $\displaystyle\sum_{n=0}^{\infty}\frac{1}{2^n+1}$.
+
+For $n\geq0$ we have $2^n+1>2^n$, which implies that
+
+$$
+\frac{1}{2^n+1}\leq\frac{1}{2^n}
+$$
+
+for all $n\geq0$.
+
+$\displaystyle\sum_{n=0}^{\infty}\frac{1}{2^n}$ is a geometric series with common ratio $r=\dfrac{1}{2}$ which is convergent by {prf:ref}`Thm:Series:GeometricSeries`. This implies that $\displaystyle\sum_{n=0}^{\infty}\frac{1}{2^n+1}$ is convergent by the direct comparison test.
+::::::
+
+Sometimes the direct comparison test does not work. For example, consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$. For $n\geq1$ we have $2^n-1<2^n$, which implies that
+
+$$
+\frac{1}{2^n-1}>\frac{1}{2^n}
+$$
+
+for all $n\geq1$. Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ is a geometric series with common ratio $r=\dfrac{1}{2}$ which is convergent by {prf:ref}`Thm:Series:GeometricSeries`, the direct comparison test does not work in this case. We need to use a different test to determine whether $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ is convergent or divergent, which we will do next.
 
 ## The limit comparison test
 
-Since $\displaystyle\frac{1}{2^n+1}<\frac{1}{2^n}$ and $\displaystyle\sum\frac{1}{2^n}$ is a geometric series with common ratio $r=\dfrac{1}{2}$, we easily conclude that $\displaystyle\sum\frac{1}{2^n+1}$ is convergent as well.
+For large values of $n$ the fraction $\dfrac{1}{2^n-1}$ becomes very close to $\dfrac{1}{2^n}$, which you can see in {numref}`Fig:Series:LimitComparisonTest`. This suggests that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ and $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ have the same behaviour, i.e. they are either both convergent or both divergent. The limit comparison test formalises this idea.
 
-However, what can be said about $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$? Now we have $\displaystyle\frac{1}{2^n-1}>\frac{1}{2^n}$, which implies that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ is larger than $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$. The convergence of the latter series does not imply that the larger series is finite as well. So, the direct comparison test doesn't work in this case. However, for large values of $n$ the fraction $\dfrac{1}{2^n-1}$ becomes very close to $\dfrac{1}{2^n}$.
+:::{figure} Images/Fig-Series-LimitComparisonTest.png
+:class: dark-light
+:width: 100%
+:name: Fig:Series:LimitComparisonTest
+
+The graph of $a_n=\dfrac{1}{2^n-1}$ and $b_n=\dfrac{1}{2^n}$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Series:LimitComparisonTest` with an applet.
+::: 
 
 ::::::{prf:Theorem} Limit comparison test
 :label: Thm:Series:LimitComparisonTest
 Suppose that $\displaystyle\sum a_n$ and $\displaystyle\sum b_n$ are series with *positive terms*. Let
 
-$$
-\lim_{n\to\infty}\frac{a_n}{b_n}=L,
-$$
 
-where $L\geq0$ or $L=\infty$.
+If $\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n}<\infty$ and $\displaystyle\sum b_n$ converges, then $\displaystyle\sum a_n$ also converges.
 
-1) If $L<\infty$ and $\displaystyle\sum b_n$ converges, then $\displaystyle\sum a_n$ also converges.
-
-2) If $L>0$ and $\displaystyle\sum b_n$ diverges, then $\displaystyle\sum a_n$ also diverges.
+If $\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n}>0$ and $\displaystyle\sum b_n$ diverges, then $\displaystyle\sum a_n$ also diverges.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Series:LimitComparisonTest`
 :class: tudproof, dropdown
 
-1) If $L<\infty$, then
+_We first prove the convergent case._ Assume that $\displaystyle\sum a_n$ and $\displaystyle\sum b_n$ are series with positive terms and $\lim_{n\to\infty}\frac{a_n}{b_n}=L<\infty$. This means that
 
 $$
 0<\frac{a_n}{b_n}<L+1
 $$
 
-for $n$ sufficiently large. Hence, we have $0<a_n<(L+1)b_n$ for $n$ sufficiently large. This implies that $\displaystyle\sum a_n$ converges whenever $\displaystyle\sum b_n$ converges.
+for $n$ sufficiently large. Hence by the positivity of $a_n$ and $b_n$, we have $0<a_n<(L+1)b_n$ for $n$ sufficiently large. If $\displaystyle\sum b_n$ is convergent, then $\displaystyle\sum (L+1)b_n$ is also convergent since $L+1$ is just a constant. Hence, $\displaystyle\sum a_n$ is convergent by the direct comparison test.
 
-2) If $L>0$, then
+_Now we prove the divergent case._ Assume that $\displaystyle\sum a_n$ and $\displaystyle\sum b_n$ are series with positive terms and $\lim_{n\to\infty}\frac{a_n}{b_n}=L>0$. This means that
 
 $$
 \frac{a_n}{b_n}>\frac{L}{2}
 $$
 
-for $n$ sufficiently large. Hence, we have $0<b_n<\dfrac{2}{L}a_n$ for $n$ sufficiently large. This implies that $\displaystyle\sum a_n$ diverges whenever $\displaystyle\sum b_n$ diverges.
+for $n$ sufficiently large. Hence, we have $0<b_n<\dfrac{2}{L}a_n$ for $n$ sufficiently large. This implies that $\displaystyle\sum \dfrac{2}{L}a_n$ diverges whenever $\displaystyle\sum b_n$ diverges by the direct comparison test. Since $\displaystyle\sum \dfrac{2}{L}a_n$ is just a constant multiple of $\displaystyle\sum a_n$, we conclude that $\displaystyle\sum a_n$ also diverges by the direct comparison test.
+
 ::::::
 
-::::::{prf:Example}
-1) Consider $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$. Let $a_n=\dfrac{1}{2^n-1}$ and $b_n=\dfrac{1}{2^n}$, then
+:::{note}
+The limit comparison test can be applied to series with starting index different from $1$ as well, as long as the conditions of the test are satisfied for $n\geq N$ for some fixed integer $N$ and the terms of the series are positive for $n\geq N$.
+:::
+
+::::::{prf:example}
+:label: Ex:Series:LimitComparisonTest1
+
+Consider the two series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ and $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ from the end of the previous subsection. Let $a_n=\dfrac{1}{2^n-1}$ and $b_n=\dfrac{1}{2^n}$, then
 
 $$
 \lim_{n\to\infty}\frac{a_n}{b_n}=\lim_{n\to\infty}\frac{\dfrac{1}{2^n-1}}{\dfrac{1}{2^n}}=\lim_{n\to\infty}\frac{2^n}{2^n-1}=\lim_{n\to\infty}\frac{1}{1-\dfrac{1}{2^n}}=\frac{1}{1-0}=1.
 $$
 
-Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ converges (geometric series with common ratio $\frac{1}{2}$), we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ converges too.
+Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ converges (geometric series with common ratio $\frac{1}{2}$), we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ converges too, as we expected from the graph in {numref}`Fig:Series:LimitComparisonTest`.
 
-2) Consider $\displaystyle\sum_{n=1}^{\infty}\frac{1}{1+\sqrt{n}}$. Let $a_n=\dfrac{1}{1+\sqrt{n}}$ and $b_n=\dfrac{1}{\sqrt{n}}$, then
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:LimitComparisonTest2
+
+Consider $\displaystyle\sum_{n=1}^{\infty}\frac{1}{1+\sqrt{n}}$. Let $a_n=\dfrac{1}{1+\sqrt{n}}$ and $b_n=\dfrac{1}{\sqrt{n}}$, then
 
 $$
 \lim_{n\to\infty}\frac{a_n}{b_n}=\lim_{n\to\infty}\frac{\dfrac{1}{1+\sqrt{n}}}{\dfrac{1}{\sqrt{n}}}=\lim_{n\to\infty}\frac{\sqrt{n}}{1+\sqrt{n}}=\lim_{n\to\infty}\frac{1}{\dfrac{1}{\sqrt{n}}+1}=\frac{1}{0+1}=1.
@@ -492,33 +544,91 @@ $$
 
 Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}$ is divergent ($p$-series with $p=\frac{1}{2}\leq1$), we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{1+\sqrt{n}}$ is also divergent.
 
+This conclusion is also clear from the graph of the partial sums $\displaystyle\sum_{n=1}^n a_k$ and $\displaystyle\sum_{n=1}^n b_k$. For large values of $n$, the two graphs are very close to each other, which indicates that the two series have the same behaviour.
 
-3) Consider $\displaystyle\sum_{n=1}^{\infty}\frac{2n+3}{n^3-2n+5}$. Let $a_n=\dfrac{2n+3}{n^3-2n+5}$, then for large $n$ we have $a_n\sim\dfrac{2n}{n^3}=\dfrac{2}{n^2}$. So, let $b_n=\dfrac{1}{n^2}$, then
+:::{figure} Images/Fig-Series-LimitComparisonTest2.png
+:name: Fig:Series:LimitComparisonTest2
 
-\begin{align*}
-\lim_{n\to\infty}\frac{a_n}{b_n}&=\lim_{n\to\infty}\frac{\dfrac{2n+3}{n^3-2n+5}}{\dfrac{1}{n^2}}=\lim_{n\to\infty}\frac{(2n+3)n^2}{n^3-2n+5}\\
-&=\lim_{n\to\infty}\frac{2+\dfrac{3}{n}}{1-\dfrac{2}{n^2}+\dfrac{5}{n^3}}=\frac{2+0}{1-0+0}=2.
-\end{align*}
-Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ converges ($p$-series with $p=2>1$), we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{2n+3}{n^3-2n+5}$ converges as well.
+The graph of the partial sums $\displaystyle\sum_{n=1}^N a_k$ and $\displaystyle\sum_{n=1}^N b_k$ for $a_n=\dfrac{1}{1+\sqrt{n}}$ and $b_n=\dfrac{1}{\sqrt{n}}$.
+:::
 
-4) Consider $\displaystyle\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$. Let $a_n=\displaystyle\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$ and $b_n=\displaystyle\frac{\sqrt{n^4}}{n^5}=\frac{n^2}{n^5}=\frac{1}{n^3}$, then
+:::{todo}
+Replace {numref}`Fig:Series:LimitComparisonTest2` with an applet showing both in the same plot.
+:::
 
-\begin{align*}
-\lim\limits_{n\to\infty}\frac{a_n}{b_n}&=\lim\limits_{n\to\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}\cdot\frac{n^3}{1}=\lim\limits_{n\to\infty}\frac{\sqrt{1+4n^{-3}+5n^{-4}}}{2+3n^{-3}+n^{-5}}\\
-&=\frac{\sqrt{1+0+0}}{2+0+0}=\frac{1}{2}>0.
-\end{align*}
-Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^3}$ is a $p$-series with $p=3>1$, which is convergent, we concluse that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$ is convergent too.
-
-5) Consider $\displaystyle\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$. Let $a_n=\displaystyle\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ and $b_n=\displaystyle\frac{n^2}{\sqrt{n^5}}=\frac{n^2}{n^{\frac{5}{2}}}=\frac{1}{n^{\frac{1}{2}}}$, then
-
-\begin{align*}
-\lim\limits_{n\to\infty}\frac{a_n}{b_n}&=\lim\limits_{n\to\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}\cdot\frac{n^{\frac{1}{2}}}{1}=\lim\limits_{n\to\infty}\frac{3+5n^{-1}+2n^{-2}}{\sqrt{2+4n^{-2}+3n^{-5}}}\\
-&=\frac{3+0+0}{\sqrt{2+0+0}}=\frac{3}{\sqrt{2}}>0.
-\end{align*}
-Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^{\frac{1}{2}}}$ is a $p$-series with $p=\displaystyle\frac{1}{2}\leq1$, which is divergent, we conclude that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ is divergent too.
 ::::::
 
+In most cases the series $\displaystyle\sum a_n$ is given, and we have to find a suitable series $\displaystyle\sum b_n$ to compare it with. If $a_n$ is a rational function of $n$ (i.e. a ratio of two polynomials in $n$), or is a root of a rational function, then it is often a good idea to compare it with a $p$-series $\displaystyle\sum \frac{1}{n^p}$ for some $p>0$. The value of $p$ in this case is determined by taking the highest power of $n$ in the numerator and the highest power of $n$ in the denominator.
+
+The idea behind this, is that for (very) large values of $n$, the lower degree terms in $a_n$ will become negligible compared to the higher degree terms, so $a_n$ will behave like a (root of a) rational function of $n$ that only contains the highest degree terms in the numerator and denominator. This new function will then be a $p$-series, which we can use for the limit comparison test.
+
+::::::{prf:example}
+:label: Ex:Series:LimitComparisonTest3
+
+Consider $\displaystyle\sum_{n=1}^{\infty}\frac{2n+3}{n^3-2n+5}$. Let $a_n=\dfrac{2n+3}{n^3-2n+5}$, which is a rational function of $n$, then for (very) large $n$ we have $a_n\approx\dfrac{2n}{n^3}=\dfrac{2}{n^2}$.
+
+So, let $b_n=\dfrac{1}{n^2}$, then
+
+\begin{align*}
+\lim_{n\to\infty}\frac{a_n}{b_n} &= \lim_{n\to\infty}\frac{\dfrac{2n+3}{n^3-2n+5}}{\dfrac{1}{n^2}} \\
+&= \lim_{n\to\infty}\frac{(2n+3)n^2}{n^3-2n+5}\\
+&= \lim_{n\to\infty}\frac{2+\dfrac{3}{n}}{1-\dfrac{2}{n^2}+\dfrac{5}{n^3}} \\
+&= \frac{2+0}{1-0+0} \\
+&= 2.
+\end{align*}
+
+Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ converges ($p$-series with $p=2>1$), we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{2n+3}{n^3-2n+5}$ converges as well.
+
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:LimitComparisonTest4
+
+Consider $\displaystyle\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$. Let $a_n=\displaystyle\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$.
+
+In this case we have
+
+$$
+\left(a_n\right)^2 = \left(\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}\right)^2 = \frac{n^4+4n+5}{(2n^5+3n^2+1)^2} = \frac{n^4+4n+5}{4 n^10 + 12 n^7 + 4 n^5 + 9 n^4 + 6 n^2 + 1},
+$$
+
+which is a rational function in $n$, so $a_n$ is a root of a rational function in $n$.
+
+Now take $b_n=\displaystyle\frac{\sqrt{n^4}}{n^5}=\frac{n^2}{n^5}=\frac{1}{n^3}$, then
+
+\begin{align*}
+\lim\limits_{n\to\infty}\frac{a_n}{b_n} &= \lim\limits_{n\to\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}\cdot\frac{n^3}{1} \\
+&= \lim\limits_{n\to\infty}\frac{\sqrt{1+4n^{-3}+5n^{-4}}}{2+3n^{-3}+n^{-5}} \\
+&= \frac{\sqrt{1+0+0}}{2+0+0} \\
+&= \frac{1}{2}.
+\end{align*}
+
+Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^3}$ is a $p$-series with $p=3>1$, which is convergent, we conclude that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$ is convergent too.
+
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:LimitComparisonTest5
+
+Consider $\displaystyle\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$. Let $a_n=\displaystyle\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ and $b_n=\displaystyle\frac{n^2}{\sqrt{n^5}}=\frac{n^2}{n^{\frac{5}{2}}}=\frac{1}{n^{\frac{1}{2}}}$, then
+
+\begin{align*}
+\lim\limits_{n\to\infty}\frac{a_n}{b_n} &= \lim\limits_{n\to\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}\cdot\frac{n^{\frac{1}{2}}}{1} \\
+&= \lim\limits_{n\to\infty}\frac{3+5n^{-1}+2n^{-2}}{\sqrt{2+4n^{-2}+3n^{-5}}} \\
+&=\frac{3+0+0}{\sqrt{2+0+0}} \\
+&= \frac{3}{\sqrt{2}}.
+\end{align*}
+
+Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^{\frac{1}{2}}}$ is a $p$-series with $p=\displaystyle\frac{1}{2}\leq1$, which is divergent, we conclude that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ is divergent too.
+
+::::::
+
+(Sec:Series:RatioComparisonTest)=
 ## The ratio comparison test
+
+:::{todo}
+Decide whether {numref}`Sec:Series:RatioComparisonTest` {ref}`Sec:Series:RatioComparisonTest` should be included at all. It is not very common and it is not very useful either, since the limit comparison test is usually easier to apply.
+:::
 
 ::::::{prf:Theorem} Ratio comparison test
 :label: Thm:Series:RatioComparisonTest
@@ -537,4 +647,8 @@ Suppose that $\displaystyle\sum a_n$ and $\displaystyle\sum b_n$ are series with
 2) If $\dfrac{a_{n+1}}{a_n}\geq\dfrac{b_{n+1}}{b_n}$ for all $n$, then $\dfrac{a_{n+1}}{b_{n+1}}\geq\dfrac{a_n}{b_n}$ for all $n$, which implies that $\dfrac{a_n}{b_n}\geq\dfrac{a_1}{b_1}$ for all $n$. Hence: $a_n\geq\dfrac{a_1}{b_1}b_n$ for all $n$. Then the direct comparison test implies that if $\displaystyle\sum b_n$ diverges, then $\displaystyle\sum a_n$ diverges too.
 ::::::
 
-Dit misschien maar weglaten? Ik kan geen zinnige toepassingen bedenken.
+## Grasple exercises
+
+:::{todo}
+Add Grasple exercises for the integral test, direct comparison test and limit comparison test in {numref}`Sec:Series:PositiveSeries`.  
+:::

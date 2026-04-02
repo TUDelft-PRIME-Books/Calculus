@@ -823,7 +823,7 @@ This concludes our treatment of absolute and conditional convergence. As you may
 ## Grasple exercises
 
 :::{todo}
-Add Grasple exercises.
+Add Grasple exercises for {numref}`Chapter:Series:Introduction`.
 :::
 
 ## Exercises
