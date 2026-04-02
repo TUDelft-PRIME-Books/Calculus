@@ -2,15 +2,6 @@
 
 # Convergence of sequences
 
-In this section we cover:
-
-- Intuitive definition of convergence
-- Precise definition of convergence
-- Rules of calculations (i.e. sums, products etc.)
-- Convergence of sequences defined by a function
-- Monotone convergence theorem
-- Convergence of recursively defined sequences
-
 ## Introduction
 
 In the previous section we have seen that it is sometimes useful to think of a sequence $\{a_n\}$ as a function $f:\mathbb{N}\to\mathbb{R}$ with $f(n)=a_n$ for every $n=1,2,3,\ldots$. This allowed us to use the tools of calculus to study the properties of sequences, such as whether a sequence is increasing or decreasing and whether it is bounded above or below.
@@ -304,7 +295,7 @@ As you may expect this is no coincidence, and in fact we have the following impo
 
 ::::::{prf:theorem} Monotone convergence theorem
 :label: Thm:Sequences:MonotonicBounded
-Every *increasing* sequence that is *bounded above* is convergent and every *decreasing* sequence that is *bounded below* is convergent.
+Every *non-decreasing* sequence that is *bounded above* is convergent and every *non-increasing* sequence that is *bounded below* is convergent.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Sequences:MonotonicBounded`
@@ -315,14 +306,14 @@ Every *increasing* sequence that is *bounded above* is convergent and every *dec
 :name: Fig:Sequences:MonotonicBounded
 :align: center
 
-An increasing sequence that is bounded above.
+A non-decreasing sequence that is bounded above.
 :::
 
 :::{todo}
 Replace {numref}`Fig:Sequences:MonotonicBounded` with an applet.
 :::
 
-Suppose that $\{a_n\}$ is an increasing sequence that is bounded above. Then it has a *least upper bound* $L$. Let $\epsilon>0$, then $L-\epsilon$ is *not* an upper bound, since $L$ is the least upper bound. Therefore
+Suppose that $\{a_n\}$ is a non-decreasing sequence that is bounded above. Then it has a *least upper bound* $L$. Let $\epsilon>0$, then $L-\epsilon$ is *not* an upper bound, since $L$ is the least upper bound. Therefore
 
 $$
 a_N>L-\epsilon
@@ -330,7 +321,7 @@ $$
 
 for some integer $N$.
 
-However, since the sequence is increasing, we have $a_n>a_N$ for every $n>N$. Thus, if $n>N$, we have
+However, since the sequence is non-decreasing, we have $a_n\geq a_N$ for every $n>N$. Thus, if $n>N$, we have
 
 $$
 a_n>L-\epsilon\quad\Longrightarrow\quad0\leq L-a_n<\epsilon,
@@ -344,7 +335,7 @@ $$
 
 So, $\lim\limits_{n\to\infty}a_n=L$.
 
-A similar proof, using the greatest lower bound, works for a decreasing sequence that is bounded below.
+A similar proof, using the greatest lower bound, works for a non-increasing sequence that is bounded below.
 ::::::
 
 ::::::{prf:example}
@@ -712,3 +703,7 @@ Hence: $L=5$ or $L=-3$. Since $a_1=3$ and the sequence is increasing, we conclud
 :::
 
 ## Grasple exercises
+
+:::{todo}
+Add exercises from Grasple.
+:::

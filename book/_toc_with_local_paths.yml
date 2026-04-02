@@ -72,6 +72,7 @@ parts:
   - file: Sequences_and_series/Series/introduction_series.md
     sections:
     - file: Sequences_and_series/Series/introduction_to_series.md
+    - file: Sequences_and_series/Series/special_series.md
     - file: Sequences_and_series/Series/tests_for_positive_series.md
     - file: Sequences_and_series/Series/tests_for_general_series.md
     - file: Sequences_and_series/Series/power_series.md

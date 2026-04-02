@@ -1,14 +1,48 @@
 /* Question admonition */
   div.admonition.question {
-    border-color: var(--tud-raspberry) !important;
-    background-color: var(--tud-raspberry-min) !important;
+    border-color: var(--tud-cyan) !important;
+    background-color: var(--tud-cyan-min) !important;
   }
    div.admonition.question > .admonition-title {
-    background-color: var(--tud-raspberry-mid) !important;
+    background-color: var(--tud-cyan-mid) !important;
   }
    div.admonition.question > .admonition-title::after {
-    color: var(--tud-raspberry) !important;
+    color: var(--tud-cyan) !important;
     font-weight: 400 !important;
     content: "\f4ad" !important;
   }
   
+/* Grasple */
+  div.grasple > p.admonition-title::after {
+    content: "\f12e" !important;
+    color: var(--tud-cyan) !important;
+  }
+  div.grasple > p.admonition-title::before {
+    content: "" !important;
+  }
+  div.grasple {
+    border-color: var(--tud-cyan) !important;
+    background-color: var(--tud-cyan-min) !important;
+  }
+  div.grasple > p.admonition-title {
+    background-color: var(--tud-cyan-mid) !important;
+  }
+  div.grasple button.fullscreen-btn {
+    color: var(--tud-cyan) !important;
+  }
+
+  /* Exercise */
+  div.exercise > p.admonition-title::after {
+    content: "\f12e" !important;
+    color: var(--tud-cyan) !important;
+  }
+  div.exercise > p.admonition-title::before {
+    content: "" !important;
+  }
+  div.exercise {
+    border-color: var(--tud-cyan) !important;
+    background-color: var(--tud-cyan-min) !important;
+  }
+  div.exercise > p.admonition-title {
+    background-color: var(--tud-cyan-mid) !important;
+  }

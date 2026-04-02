@@ -12,6 +12,7 @@ Details for the syntax and options can be found in the manual: [TeachBooks Quest
 :variant: single-select
 :admonition:
 :class: question
+:showanswer:
 
 Select a correct answer.
 ---
@@ -33,6 +34,7 @@ Did you find all correct answers?
 :variant: single-select
 :admonition:
 :class: question
+:showanswer:
 
 Select a correct answer.
 ---
@@ -56,6 +58,7 @@ Did you find all correct answers?
 :variant: multiple-select
 :admonition:
 :class: question
+:showanswer:
 
 Select a correct answer.
 ---
@@ -77,6 +80,7 @@ Did you find all correct answers?
 :variant: multiple-select
 :admonition:
 :class: question
+:showanswer:
 
 Select a correct answer.
 ---
@@ -102,6 +106,7 @@ For this example we will only show case two input blocks, but more can be added 
 :variant: blocks
 :admonition:
 :class: question
+:showanswer:
 
 Fill in the correct answer in the input fields.
 ---
@@ -120,6 +125,7 @@ What do you think?
 :variant: blocks
 :admonition:
 :class: question
+:showanswer:
 
 Fill in the correct answer in the input fields.
 ---

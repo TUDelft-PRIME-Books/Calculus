@@ -12,6 +12,7 @@ Error estimations included in each test where applicable.
 
 In this section we consider series with *positive terms*, which are called **positive series**.
 
+(Sec:Series:PositiveSeries:IntegralTest)=
 ## The integral test
 
 In the previous section we showed that the *harmonic series* $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is divergent using the fact that the terms lie on the graph of $f(x)=\dfrac{1}{x}$:
