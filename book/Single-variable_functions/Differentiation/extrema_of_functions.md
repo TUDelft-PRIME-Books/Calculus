@@ -506,7 +506,7 @@ A function does not need to have a global maximum value (or a global minimum val
 :::
 
 :::{note}
-If a function has a global maximum value, there is only $1$ such value. After all, the global maximum value is the highest function value that is attained and there can only be $1$ highest value. Still, this heighest value can be attained in multiple points. For instance, consider the function $f(x)=3x^2$ for $-1\leq x\leq 1$. Then the global maximum value is $3$, which is attained at both $x=-1$ and at $x=1$.
+If a function has a global maximum value, there is only $1$ such value. After all, the global maximum value is the highest function value that is attained and there can only be $1$ highest value. Still, this highest value can be attained in multiple points. For instance, consider the function $f(x)=3x^2$ for $-1\leq x\leq 1$. Then the global maximum value is $3$, which is attained at both $x=-1$ and at $x=1$.
 
 :::
 
@@ -652,9 +652,9 @@ First suppose that the function is constant on the interval $[a,b]$. Since the f
 Now suppose that the function is not constant on the interval $[a,b]$. By {prf:ref}`Thm:MinMax:EVT`, $f$ attains both a local maximum and a local minimum on the interval $[a,b]$. Since $f(a)=f(b)$ and $f$ is not constant, at least one of these two must occur at a point $c$ in the open interval $(a,b)$. Indeed, if they were to both occur at the edge values $a$ or $b$, then $f(a)=f(b)$ would both be the highest value and the lowest value of $f$ on $[a,b]$, which would mean that $f$ is constant on $[a,b]$. By {prf:ref}`Thm:MinMax:Fermat` we have that $f'(c)=0$, as desired.
 :::
 
-[^FootnoteCIM]: If the function has infinitely many critical points, then this method does not work, usually.
+[^FootnoteCIM]: If the function has infinitely many critical points, then this method may fail to work.
 
-So how do we find the locations of the global maximum and global minimum values of a continuous function on a closed interval $[a,b]$? If a global extremum is in the open interval $(a,b)$ then we can apply {prf:ref}`Cor:MinMax:Critical` to conclude that the global extremum is attained at a critical point. And if not, then, well, there are not an awful lot of options left, since the only points that we have not considered are the points $a$ and $b$. So this gives us a way to find all *candidate locations* for the global extreme values. So how do we then determine which of these corresponds to the global maximum and which to the global minimum? You might expect that we need to perform all sorts of tests, like {prf:ref}`Thm:MinMax:Firstdertest` or {prf:ref}`Thm:MinMax:Seconddertest`, but that is not the case. Indeed, if I know that the global maximum occurs at one of, say, five points[^FootnoteCIM], then I can just evaluate the function at each five points. The largest value I obtain this way **must** be the global maximum value, as this value cannot be attained anywhere else. Similarly, the lowest value **must** be the global minimum value. With that, we have motivated the following algorithm, called the **closed interval method** to find the global extrema.
+So how do we find the locations of the global maximum and global minimum values of a continuous function on a closed interval $[a,b]$? If a global extremum is in the open interval $(a,b)$ then we can apply {prf:ref}`Cor:MinMax:Critical` to conclude that the global extremum is attained at a critical point. And if not, then, well, there are not an awful lot of options left, since the only points that we have not considered are the points $a$ and $b$. So this gives us a way to find all *candidate locations* for the global extreme values. So how do we then determine which of these corresponds to the global maximum and which to the global minimum? You might expect that we need to perform all sorts of tests, like {prf:ref}`Thm:MinMax:Firstdertest` or {prf:ref}`Thm:MinMax:Seconddertest`, but that is not the case. Indeed, if I know that the global maximum occurs at one of, say, five points[^FootnoteCIM], then I can just evaluate the function at each of these five points. The largest value I obtain this way **must** be the global maximum value, as this value cannot be attained anywhere else. Similarly, the lowest value **must** be the global minimum value. With that, we have motivated the following algorithm, called the **closed interval method** to find the global extrema.
 
 ::::::{prf:algorithm} Closed interval method.
 :label: Alg:MinMax:Globalextrema
@@ -667,16 +667,92 @@ Let $f$ be a continuous function on a closed interval $[a,b]$. Then we can find 
 4. Find the function values of $f$ at the end points $a$ and $b$ of the interval.
 5. The highest value from steps 3. and 4. is the global maximum value; the lowest value is the global minimum value.
 
+
+
 ::::::
 
 :::{warning}
-When performing {prf:ref}`Alg:MinMax:Globalextrema` there is no need to classify the critical points.
+When performing {prf:ref}`Alg:MinMax:Globalextrema`, there is no need to classify the critical points.
 :::
 
-In this section we cover:
-s
-- Local minima and maxima
-- First derivative test
-- Second derivative test
-- Extreme value theorem
-- Global minimum and maximum on closed intervals
+:::{warning}
+When performing {prf:ref}`Alg:MinMax:Globalextrema`, make sure to only consider those critical points that lie in the interval $(a,b)$. Any critical point outside of this interval should be ignored.
+:::
+
+Let us see how this method works in practice by considering a few examples.
+
+::::::{prf:example} Closed interval method.
+:label: Ex:MinMax:Globalextrema1
+Consider the function $f(x)=2x^3+3x^2-12x-5$ on the closed interval $[-4,2]$. Suppose we want to find the location and the value of the global maximum and the global minimum on this interval. For this, we perform {prf:ref}`Alg:MinMax:Globalextrema`.
+
+1. The function $f$ is differentiable on the entire domain $(-4,2)$, so we do not obtain any new candidate points in this step.
+2. In order to find the points where the derivative is $0$, we first evaluate
+
+$$
+ f'(x)=6x^2+6x-12.
+$$
+
+The equation $f'(x)=0$ becomes $6x^2+6x-12=0$, which is a quadratic equation, so we know how to solve this equation. We obtain the solutions $x=1$ and $x=-2$, which both lie in the interval $(-4,2)$. So these two points are the first two candidate points for the location of the global maximum and the global minimum.
+
+3. We need to evaluate $f$ at the points found in steps 1. and 2. We obtain
+
+$$
+ f(-2)=15,\qquad f(1)=-12.
+$$
+
+4. We know evaluate $f$ at the boundary points, which gives
+
+$$
+ f(-4)=-37,\qquad f(2)=-1.
+$$
+
+5. According to {prf:ref}`Cor:MinMax:Critical`, the location of the global maximum and the location of the global minimum must be one of the points $x=-4$, $x=-2$, $x=1$ and $x=2$. As such, the lowest value that we obtained in steps 3. and 4. must be the global minimum value, which means that $f$ attains its global minimum of $-37$ at the boundary point $x=-4$. Similarly, the highest value is the global maximum value, so $f$ attains its global maximum of $15$ at the critical point $x=-2$.
+
+:::{todo}
+Include an applet with the graph of this function on the specified interval. Make sure to highlight all candidate points.
+:::
+::::::
+
+::::::{prf:example} Closed interval method.
+:label: Ex:MinMax:Globalextrema2
+Consider the function $f(x)=\dfrac{|x|}{2}-\cos(x)$ on the closed interval $[-2\pi,2\pi]$ and suppose we want to find the global minimum and global maximum values. We again perform {prf:ref}`Alg:MinMax:Globalextrema`.
+
+1. The function $f$ is not differentiable in $0$ (since $|x|$ is not differentiable there, while the cosine is differentiable), so the point $x=0$ is a candidate location.
+2. In order to find the values of $x$ where $f'(x)=0$, we need to separate between the cases $x>0$ and $x<0$. For $x<0$, we have $|x|=-x$, so we obtain
+
+$$
+ f'(x)=-\frac{1}{2}+\sin(x).
+$$
+
+Setting $f'(x)=0$ gives $\sin(x)=\dfrac{1}{2}$, which means that $x=\dfrac{\pi}{6}+k2\pi$ of $x=\dfrac{5\pi}{6}+k2\pi$ for some integer $k$. Of these values of $x$, we are only interested in those that lie in the interval $[-2\pi,2\pi]$ **and** have $x<0$, so this leaves us with $x=-\dfrac{11\pi}{6}$ and $x=-\dfrac{7\pi}{6}$.
+
+For $x>0$, we have $|x|=x$, so we obtain 
+
+$$
+ f'(x)=\frac{1}{2}+\sin(x).
+$$
+
+Setting $f'(x)=0$ gives $\sin(x)=-\dfrac{1}{2}$, which means that $x=\dfrac{7\pi}{6}+k2\pi$ of $x=\dfrac{11\pi}{6}+k2\pi$ for some integer $k$. Of these values of $x$, we are only interested in those that lie in the interval $[-2\pi,2\pi]$ **and** have $x>0$, so this leaves us with $x=\dfrac{7\pi}{6}$ and $x=\dfrac{11\pi}{6}$. With that, we have found all critical points.
+
+3. We evaluate the function on the point we found in the first two steps. This gives.
+
+$$
+ f\left(-\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3},\quad f\left(-\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\quad f(0)=-1
+$$
+
+$$
+ f\left(\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\qquad f\left(\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3}.
+$$
+
+4. We evaluate the function on the boundary points to obtain
+
+$$
+ f(-2\pi)=\pi-1,\qquad f(2\pi)=\pi-1.
+$$
+
+5. The largest value that we found in steps 3. and 4. must be the global maximum value (since this value cannot be attained at any point that we did not check). This highest value is $\dfrac{1}{2}\sqrt{3}+\dfrac{7\pi}{12}$, which is attained at both $x=-\dfrac{7\pi}{6}$ and at $x=\dfrac{7\pi}{6}$. The lowest value is the global minimum value. This lowest value is $-1$, which is attained at $x=0$.
+
+:::{todo}
+Include an applet with the graph of this function on the specified interval. Make sure to highlight all candidate points.
+:::
+::::::
