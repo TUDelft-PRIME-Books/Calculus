@@ -453,7 +453,7 @@ Now, we consider the function $f(x)=\sqrt{x}$. Then for any $x>0$ we can evaluat
 
 $$
  \begin{array}{lcl}f'(x)&=&\displaystyle\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}\\
- &=&\displaystyle\lim_{h\rightarrow 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}.
+ &=&\displaystyle\lim_{h\rightarrow 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}.\end{array}
 $$
 
 In order to evaluate this limit, we use the square root trick (see {numref}`Subsec:Limitsrules`) and we obtain
@@ -463,7 +463,7 @@ $$
  &=&\displaystyle\lim_{h\rightarrow 0}\frac{h}{h\left(\sqrt{x+h}+\sqrt{x}\right)}\\
  &=&\displaystyle\lim_{h\rightarrow 0}\frac{1}{\left(\sqrt{x+h}+\sqrt{x}\right)}\\
  &=&\frac{1}{\sqrt{x+0}+\sqrt{x}}\\
- &=&\frac{1}{2\sqrt{x}}.
+ &=&\frac{1}{2\sqrt{x}}.\end{array}
 $$
 
 In the final step we used the continuity of the function $f$. Hence, we obtain $f'(x)=\dfrac{1}{2\sqrt{x}}$, as desired.
