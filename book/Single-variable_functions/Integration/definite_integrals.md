@@ -14,7 +14,9 @@ We start with the definition of the **definite integral** of a function on an in
 
 ::::::{prf:definition}
 :label: Def:Integration:DefiniteIntegral
-For a *positive* and *continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a positive and continuous function**
+For a *positive* and *continuous* function $f$ defined on an interval $[a,b]\subset D_f$ the **definite integral of a positive[^nonnegative] and continuous function**
+
+[^nonnegative]: In fact, nonnegative would suffice.
 
 $$
 \int_a^bf(x)\,dx
@@ -59,10 +61,10 @@ The graph of the function $f(x)=2x+1$ on the interval $[0,3]$.
 ```
 
 :::{todo}
-Replace {numref}`Fig:DefiniteIntegrals:LinearFunction` with an applet.
+Replace {numref}`Fig:DefiniteIntegrals:LinearFunction` with an applet with the region under the graph shaded.
 :::
 
-We can see that the area under the graph consists of a rectangle and a triangle. The area of the rectangle equals base times height: $3\cdot1=3$. The area of the triangle equals one half times base times height: $\frac{1}{2}\cdot3\cdot(7-1)=9$. Hence the total area equals $3+9=12$ and we conclude that
+We can see that the region under the graph is a trapezoid. The area of this trapezoid equals base times the average height: $3\cdot\frac{1+7}{2}=12$. Hence
 
 $$
 \int_0^3(2x+1)\,dx=12.
@@ -70,12 +72,12 @@ $$
 
 ::::
 
-Of course we do not only have positive and continuous functions, but also many more. First, we extend the concept of the definite integral to positive piecewise-continuous functions. Then we will see how to deal with negative functions and functions that take on both positive and negative values.
+Of course we do not always deal with positive and continuous functions, so we need a generalisation. First, we extend the concept of the definite integral to positive piecewise-continuous functions. Then we will see how to deal with negative functions and functions that take on both positive and negative values.
 
 ::::{prf:definition}
 :label: Def:Integration:DefinitePositivePiecewise
 
-For a *positive* and *piecewise continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a positive piecewise-continuous function**
+For a *positive* and *piecewise-continuous* function $f$ defined on an interval $[a,b]\subset D_f$ the **definite integral of a positive piecewise-continuous function**
 
 $$
 \int_a^bf(x)\,dx
@@ -85,26 +87,13 @@ is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$.
 
 ::::
 
-As you can see, the definition is the same as for positive continuous functions. The reason is that we can consider each piece of the positive piecewise-continuous function separately as a positive function on each corresponding subinterval and add the areas together.
-
-:::{prf:theorem}
-:label: Th:Integration:DefinitePositivePiecewise
-
-For a *positive* and *piecewise continuous* function $f$ defined on an interval $[a,b]$ that is made up of $n$ continuous pieces on the subintervals $[x_0,x_1]$, $[x_1,x_2]$, $\ldots$, $[x_{n-1},x_n]$ with $a=x_0<x_1<\ldots<x_n=b$, the definite integral equals the sum of the integrals on each subinterval:
-
-$$
-\int_a^bf(x)\,dx=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\,dx.
-$$
-
-::::
-
-The next example illustrates this theorem.
+As you can see, the definition is the same as for positive continuous functions. The reason is that we can consider each piece of the positive piecewise-continuous function separately as a positive function on each corresponding subinterval and sum the corresponding areas.
 
 ::::::{prf:Example}
 :label: Ex:Integration:DefinitePiecewise
 Consider the function $f:[0,3]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}x, & 0\leq x<1,\\2, & 1\leq x\leq 2,\\x-1, & 2<x\leq 3.\end{array}\right.$
 
-The graph of this piecewise continuous function is shown below.
+The graph of this piecewise-continuous function is shown below.
 
 ```{figure} Images/piecewise.png
 ---
@@ -112,7 +101,7 @@ width: 50%
 name: Fig:Integration:DefinitePiecewise
 align: center
 ---
-The graph of a piecewise continuous function.
+The graph of a piecewise-continuous function.
 ```
 
 :::{todo}
@@ -127,12 +116,25 @@ $$
 
 ::::::
 
+This example illustrates the following theorem.
+
+:::{prf:theorem}
+:label: Th:Integration:DefinitePositivePiecewise
+
+For a *positive* and *piecewise-continuous* function $f$ defined on an interval $[a,b]$ that is made up of $n$ continuous pieces on the subintervals $[x_0,x_1]$, $[x_1,x_2]$, $\ldots$, $[x_{n-1},x_n]$ with $a=x_0<x_1<\ldots<x_n=b$, the definite integral equals the sum of the integrals on each subinterval:
+
+$$
+\int_a^bf(x)\,dx=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\,dx.
+$$
+
+::::
+
 Now we know how to handle the definite integral of a positive piecewise-continuous function, we are going to extend {prf:ref}`Def:Integration:DefiniteIntegral` to negative piecewise-continuous functions and after that to piecewise-continuous functions that take on both positive and negative values.
 
 ::::::{prf:definition}
 :label: Def:Integration:DefiniteNegative
 
-For a *negative* and *piecewise continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a negative and piecewise-continuous function**
+For a *negative* and *piecewise-continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a negative and piecewise-continuous function**
 
 $$
 \int_a^bf(x)\,dx
@@ -152,7 +154,6 @@ name: Fig:Integration:Integral3
 align: center
 ---
 
-
 The integral $\displaystyle\int_a^bf(x)\,dx$ for a function that takes on both positive and negative values.
 ```
 
@@ -160,21 +161,37 @@ The integral $\displaystyle\int_a^bf(x)\,dx$ for a function that takes on both p
 Replace {numref}`Fig:Integration:Integral3` with an applet.
 :::
 
-Although the above image contains a continuous function, the same idea applies to piecewise-continuous functions. This leads us to the following final definition of a definite integral.
+::::{prf:example}
+:label: Ex:Integration:IntegralCos
+
+```{figure} Images/cosine_area.png
+---
+width: 50%
+name: Fig:Integration:IntegralCos
+align: center
+---
+
+The integral $\displaystyle\int_0^{2\pi}\cos(x)\,dx$.
+```
+
+\begin{align*}
+\int_0^{2\pi}\cos(x)\,dx&=\int_0^{\frac{1}{2}\pi}\cos(x)\,dx+\int_{\frac{1}{2}\pi}^{\pi}\cos(x)\,dx\\
+&{}\quad{}+\int_{\pi}^{\frac{3}{2}\pi}\cos(x)\,dx+\int_{\frac{3}{2}\pi}^{2\pi}\cos(x)\,dx=0.
+\end{align*}
+
+::::
+
+The same idea applies to piecewise-continuous functions. This leads us to the following final definition of a definite integral.
 
 ::::::{prf:definition}
 :label: Def:Integration:DefiniteGeneral
-For a *piecewise continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a piecewise-continuous function**
+For a *piecewise-continuous* function $f$ defined on an interval $[a,b]\subset D_f$ the **definite integral of a piecewise-continuous function**
 
 $$
 \int_a^bf(x)\,dx
 $$
 
-is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$, taking into account the sign of the function on each subinterval:
-
-- If the function is completely positive on a subinterval, the area on that subinterval is added;
-- If the function is completely negative on a subinterval, the area on that subinterval is subtracted;
-- If the function takes on both positive and negative values on a subinterval, the area above the $x$-axis is added and the area below the $x$-axis is subtracted.
+is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$, taking into account the sign of the function on each subinterval: if the function takes on positive values on a subinterval, the area above the $x$-axis is added and if the function takes on negative values the area below the $x$-axis is subtracted. This is sometimes called the **signed area** between the graph of $f$ and the $x$-axis.
 
 ::::::
 
@@ -192,7 +209,7 @@ name: Fig:Integration:DefiniteBoth
 align: center
 ---
 
-The graph of a piecewise continuous function that takes on both positive and negative values.
+The graph of a piecewise-continuous function that takes on both positive and negative values.
 ```
 
 :::{todo}
@@ -207,7 +224,7 @@ The integral $\displaystyle\int_{-2}^5f(x)\,dx$ can be calculated as follows:
 &{}\quad{}+\int_{2}^{4}(-x+4)\,dx+\int_{4}^{5}(-x+4)\,dx \\
 &= 2 \cdot 1-\frac12\cdot2\cdot4+\frac12\cdot2\cdot2-\frac12\cdot1\cdot1 \\
 &= 2 - 4 + 2 - \frac12 \\
-&= \frac12.
+&= -\frac12.
 \end{align*}
 
 In the second step we have split the last integral into two parts: one part from $2$ to $4$ where the function is positive and one part from $4$ to $5$ where the function is negative. After that we used the formulas for the areas of rectangles and triangles to calculate the areas and introduced the appropriate signs.
@@ -218,7 +235,7 @@ Now we have {prf:ref}`Def:Integration:DefiniteGeneral`, we can start looking at 
 
 ## Riemann sums
 
-Consider the function shown in the figure below with the indicated area between the graph of the function and the $x$-axis that we want to calculate.
+Consider the graph of a function shown in the figure below with the indicated area between the graph of the function and the $x$-axis that we want to calculate.
 
 ```{figure} Images/Fig-DefiniteIntegrals-General.png
 ---
@@ -227,7 +244,7 @@ name: Fig:DefiniteIntegrals:General
 align: center
 ---
 
-A general function with area to be calculated.
+A general function with the area to be calculated.
 ```
 
 :::{todo}
@@ -243,19 +260,19 @@ name: Fig:Integration:SumRectangles
 align: center
 ---
 
-Sum of area of rectangles.
+Sum of areas of rectangles.
 ```
 
 :::{todo}
 Replace {numref}`Fig:Integration:SumRectangles` with an applet.
 :::
 
-The height of each rectangle is taken to be the value of the function $f$ at an arbitrary point $x_k^*$ in the corresponding subinterval. This point $x_k^*$ is called a **sample point** and might be the left point, the right point or the middle point of the subinterval, for instance. Then we take the sum of the areas of all rectangles.
+The height of each rectangle is taken to be the value of the function $f$ at an arbitrary point $x_n^*$ in the corresponding subinterval. This point $x_n^*$ is called a **sample point** and might be any point in the subinterval such as the left point, the right point or the middle point, for instance. Then we take the sum of the areas of all rectangles.
 
-In fact, let us divide the interval $[a,b]$ into $n$ subintervals of equal width $(b-a)/n$:
+In fact, let us divide the interval $[a,b]$ into $N$ subintervals of equal width $(b-a)/N$:
 
 $$
-a=x_0 < x_1 < x_2 < \ldots < x_{n-1} < x_n=b.
+a=x_0 < x_1 < x_2 < \ldots < x_{n-1} < x_N=b.
 $$
 
 ```{figure} Images/riemann.png
@@ -271,43 +288,43 @@ Building a Riemann sum.
 Replace {numref}`Fig:Integration:RiemannSum` with an applet.
 :::
 
-Choose a sample point $x_k^*$ in each subinterval $[x_{k-1},x_k]$, then the area equals
+If we choose as sample point $x_n^*=x_n$ the right point in each subinterval $[x_{n-1},x_n]$, then the area equals
 
 $$
-\sum_{k=1}^nf(x_k^*)\Delta x\quad\text{with}\quad\Delta x=x_k-x_{k-1}=\frac{b-a}{n}.
+\sum_{n=1}^Nf(x_n)\Delta x\quad\text{with}\quad x_n=a+n\Delta x\quad\text{and}\quad\Delta x=x_n-x_{n-1}=\frac{b-a}{N}.
 $$
 
-The sum $\displaystyle\sum_{k=1}^nf(x_k^*)(x_k-x_{k-1})$ is called a **Riemann sum**, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann):
+The sum $\displaystyle\sum_{n=1}^Nf(x_n)(x_n-x_{n-1})$ is called a **Riemann sum**, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann):
 
 :::::{prf:definition}
 :label: Def:Integration:RiemannSum
 
-The **Riemann sum** of a function $f$ on the interval $[a,b]$ for a given partition $P=\{x_0,x_1,\ldots,x_n\}$ with **sample points** $x_k^*$ in each subinterval $[x_{k-1},x_k]$ is defined as
+The **Riemann sum** $R_N$ of a function $f$ on the interval $[a,b]$ for a given partition $P=\{x_0,x_1,\ldots,x_N\}$ with **sample points** $x_n^*$ in each subinterval $[x_{n-1},x_n]$ is defined as
 
 $$
-\sum_{k=1}^nf(x_k^*)(x_k-x_{k-1}).
+R_N=\sum_{n=1}^Nf(x_n^*)(x_n-x_{n-1}).
 $$
 
 :::::
 
-If we let the number of subintervals $n$ go to infinity, the width of each subinterval $\Delta x$ tends to zero and the Riemann sum approaches the exact area between the graph of the function and the $x$-axis. This leads us to the following theorem for the definite integral in terms of Riemann sums.
+If we let the number of subintervals $N$ go to infinity, the width of each subinterval $\Delta x$ tends to zero and the Riemann sum approaches the exact area between the graph of the function and the $x$-axis. This leads us to the following theorem for the definite integral in terms of Riemann sums.
 
 ::::::{prf:theorem}
 :label: Thm:Integration:DefiniteRiemann
 
-The **definite integral of a piecewise continuous function** $f$ on the interval $[a,b]$ is equal to the limit of the Riemann sums as the number of subintervals $n$ approaches infinity
+The **definite integral of a piecewise-continuous function** $f$ on the interval $[a,b]\subset D_f$ is equal to the limit of the Riemann sums as the number of subintervals $N$ approaches infinity
 
 $$
-\int_a^bf(x)\,dx=\lim_{n\to\infty}\sum_{k=1}^nf(x_k^*)\Delta x\quad\text{with}\quad\Delta x=\frac{b-a}{n}\quad\text{and}\quad x_k=a+k\Delta x,
+\int_a^bf(x)\,dx=\lim_{N\to\infty}\sum_{n=1}^Nf(x_n)\Delta x\;\text{with}\;\Delta x=\frac{b-a}{N}\;\text{and}\;x_n=a+n\Delta x,
 $$
 
-provided that this limit exists and is the same for *every* choice of sample points $x_k^*$ in each subinterval $[x_{k-1},x_k]$.
+provided that this limit exists and is the same for *every* choice of sample points $x_n^*$ in each subinterval $[x_{n-1},x_n]$.
 ::::::
 
 ::::{prf:remark}
 :label: Remark:Integration:RiemannSum
 
-We have chosen to divide the interval $[a,b]$ into $n$ subintervals of *equal width* $\Delta x=(b-a)/n$, which is not really necessary but makes the theorem a bit more manageable.
+We have chosen to divide the interval $[a,b]$ into $N$ subintervals of *equal width* $\Delta x=(b-a)/N$, which is not really necessary but makes the formulas somewhat easier.
 ::::
 
 The integral sign $\displaystyle\int$ was introduced by the German mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) and has the form of an elongated (stretched) $S$ which indicates the *limit* of (Riemann) sums.
@@ -325,7 +342,7 @@ Luckily, but without giving a formal proof here, we have the following important
 ::::{prf:theorem}
 :label: Th:Integration:IntegrablePiecewise
 
-Every *piecewise continuous* function on an interval $[a,b]$ is integrable.
+Every *piecewise-continuous* function on an interval $[a,b]$ is integrable.
 ::::
 
 Before we continue to properties of definite integrals, we show one example of calculating a definite integral using Riemann sums.
@@ -335,25 +352,27 @@ Before we continue to properties of definite integrals, we show one example of c
 
 Consider the function $f$ on the interval $[0,1]$ given by $f(x)=x^2$. We want to calculate the integral $\displaystyle\int_0^1x^2\,dx$ using Riemann sums.
 
-We divide the interval $[0,1]$ into $n>0$ subintervals of equal width $\Delta x=\frac{1-0}{n}=\frac{1}{n}$. The endpoints of the subintervals are given by $x_k=0+k\cdot\frac{1}{n}=\frac{k}{n}$ for $k=0,1,2,\ldots,n$.
+We divide the interval $[0,1]$ into $N>0$ subintervals of equal width $\Delta x=\frac{1-0}{N}=\frac{1}{N}$. The endpoints of the subintervals are given by $x_n=0+n\cdot\frac{1}{N}=\frac{n}{N}$ for $n=0,1,2,\ldots,N$.
 
-As sample points we choose the right endpoints of each subinterval, $x_k^*=\frac{k}{n}$ for $k=1,2,\ldots,n$, which gives the function values $f(x_k^*)=\left(\frac{k}{n}\right)^2=\frac{k^2}{n^2}$.
+As sample points we choose the right endpoints of each subinterval, $x_n^*=\frac{n}{N}$ for $n=1,2,\ldots,N$, which gives the function values $f(x_n^*)=\left(\frac{n}{N}\right)^2=\frac{n^2}{N^2}$.
 
-Then the Riemann sum $R$ equals,
+Then the Riemann sum $R_N$ equals,
 
 \begin{align*}
-R &= \sum_{k=1}^nf(x_k^*)\Delta x \\
-&= \sum_{k=1}^n\frac{k^2}{n^2}\cdot\frac{1}{n} \\
-&= \frac{1}{n^3}\sum_{k=1}^nk^2 \\
-&= \frac{1}{n^3}\cdot\frac{n(n+1)(2n+1)}{6} \\
-&= \frac{2n^3+3n^2+n}{6n^3} \\
-&= \frac{2n^2+3n+1}{6n^2}.
+R_N&= \sum_{n=1}^Nf(x_n^*)\Delta x \\
+&= \sum_{n=1}^N\frac{n^2}{N^2}\cdot\frac{1}{N} \\
+&= \frac{1}{N^3}\sum_{n=1}^Nn^2 \\
+&= \frac{1}{N^3}\left(1^2+2^2+3^2+\cdots+N^2\right) \\
+&= \frac{1}{N^3}\cdot\frac{N(N+1)(2N+1)}{6} \\
+&= \frac{2N^3+3N^2+N}{6N^3} \\
+&= \frac{2N^2+3N+1}{6N^2}.
 \end{align*}
 
 Using techniques from {numref}`Section:Limitinf` we find that
 
 $$
-\lim_{n\rightarrow\infty}R=\lim_{n\rightarrow\infty}\frac{2n^2+3n+1}{6n^2}=\frac{2}{6}=\frac{1}{3}.
+\int_0^1x^2\,dx=\lim_{N\rightarrow\infty}R_N=\lim_{N\rightarrow\infty}\frac{2N^2+3N+1}{6N^2}
+=\frac{2}{6}=\frac{1}{3}.
 $$
 
 Because the limit of the Riemann sums exists, we conclude that the function $f$ is integrable on the interval $[0,1]$ and that
@@ -364,6 +383,18 @@ $$
 
 ::::::
 
+Since the width of each subinterval $[x_{n-1},x_n]$ tends to zero, the choice of the *sample point* $x_n^*$ in $[x_{n-1},x_n]$ is arbitrary. Except for this choice of the sample point, there are other ways to define a definite integral. We chose the definition of a so-called **Riemann integral**. Instead one could take the *lower sum* of all areas with as height the minimum of $f$ in each subinterval and the *upper sum* of all areas with as height the maximum of $f$ in each subinterval. A function $f$ is then called integrable if the *supremum* of all lower sums equals the *infimum* of all upper sums, being the value of the integral. This is the definition of a so-called **Darboux integral**, named after the French mathematician [Jean-Gaston Darboux (1842-1917)](https://en.wikipedia.org/wiki/Jean_Gaston_Darboux).
+
+A function $f$ is Darboux integrable if and only if it is Riemann integrable. Moreover, the values of the integrals are the same.
+
+:::{note}
+There is a more general way to define definite integrals due to the French mathematician [Henri Léon Lebesgue (1875-1941)](https://en.wikipedia.org/wiki/Henri_Lebesgue). The **Lebesgue integral** is a generalisation of the Riemann integral that extends integration to a broader class of functions by partitioning the range (the $y$-axis) instead of the domain (the $x$-axis). It uses *measure theory* to calculate the "area" under a curve by measuring the size of the set of $x$-values for given $y$-values, rather than summing rectangle areas.
+
+All functions that are Riemann integrable are also Lebesgue integrable. 
+
+In this book we do only use the definition of Riemann integrals.
+:::
+
 Calculating definite integrals using Riemann sums can be quite laborious. In the next sections we will see other techniques to evaluate definite integrals more easily. But first we state some important properties of definite integrals.
 
 ## Properties of definite integrals
@@ -373,19 +404,19 @@ Using {prf:ref}`Def:Integration:DefiniteGeneral` we can derive several useful pr
 ::::{prf:theorem}
 :label: Th:Integration:DefinitePropertiesArea
 
-- $\displaystyle\int_a^af(x)\,dx=0$ with $a$ any real number and $f$ defined at $a$;
+- $\displaystyle\int_a^af(x)\,dx=0$ for $a\in D_f$;
 
 - $\displaystyle\int_a^bc\,dx=c(b-a)$ with $a$, $b$ and $c$ any real numbers;
 
 - $\displaystyle\int_a^bf(x)\,dx=\int_a^rf(x)\,dx+\int_r^bf(x)\,dx$ for any $r$ in $[a,b]$ and $f$ piecewise continuous on $[a,b]$;
 
-- $\displaystyle\int_{-a}^af(x)\,dx=0$ with $a$ any real number and $f$ *odd* and piecewise continuous on $[-a,a]$;
+- $\displaystyle\int_{-a}^af(x)\,dx=0$ for $a\in D_f$ and $f$ *odd* and piecewise continuous on $[-a,a]$;
 
-- $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$ with $a$ any real number and $f$ *even* and piecewise continuous on $[-a,a]$.
+- $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$ for $a\in D_f$ and $f$ *even* and piecewise continuous on $[-a,a]$.
 
 ::::
 
-The above theorem can be shown by considering the areas involved according to {prf:ref}`Def:Integration:DefiniteGeneral`. We will not give the full proofs here, but illustrate the last two properties with examples.
+The above theorem can be proved by considering the areas involved according to {prf:ref}`Def:Integration:DefiniteGeneral`. We will not give the full proofs here, but illustrate the last two properties with examples.
 
 ::::::{prf:Example}
 :label: Ex:Integration:DefiniteOdd
@@ -402,7 +433,7 @@ The graph of the sine function.
 ```
 
 :::{todo}
-Replace {numref}`Fig:Integration:DefiniteOdd` with an applet.
+Replace {numref}`Fig:Integration:DefiniteOdd` with an applet with $\tfrac{1}{2}\pi$ instead of $\tfrac{\pi}{2}$.
 :::
 
 Inspection of the graph shows that the area below the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Since the area below the $x$-axis is taken with a negative sign in {prf:ref}`Def:Integration:DefiniteGeneral`, these two areas cancel, and we find
@@ -416,7 +447,7 @@ $$
 ::::::{prf:Example}
 :label: Ex:Integration:DefiniteEven
 
-The absolute value function $|x|$ is an even function on the interval $\left[-1,1\right]$ with graph shown below.
+The absolute value function $|x|$ is an even function on the interval $\left[-a,a\right]$ with $a>0$ and its graph is shown below.
 
 ```{figure} Images/absolute.png
 ---
@@ -428,13 +459,13 @@ The integral of an even function.
 ```
 
 :::{todo}
-Replace {numref}`Fig:Integration:DefiniteEven` with an applet.
+Replace {numref}`Fig:Integration:DefiniteEven` with an applet with every $1$ replaced by $a$.
 :::
 
 Inspection of the graph shows that the area above the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Because both areas are taken with a positive sign in {prf:ref}`Def:Integration:DefiniteGeneral`, we find
 
 $$
-\int_{-1}^1|x|\,dx=2\int_0^1|x|\,dx=2\cdot\frac{1}{2}=1.
+\int_{-a}^a|x|\,dx=2\int_0^ax\,dx=x^2\bigg|_0^a=a^2.
 $$
 
 ::::::
@@ -444,10 +475,10 @@ The next theorem states that the choice of the variable of integration does not 
 ::::{prf:theorem}
 :label: Th:Integration:VariableOfIntegration
 
-For a integrable function $f$ on the interval $[a,b]$, the choice of the variable of integration does not change the value of the integral:
+For an integrable function $f$ on the interval $[a,b]\subset D_f$, the choice of the variable of integration does not change the value of the integral:
 
 $$
-\int_a^bf(x)\,dx=\int_a^bf(t)\,dt=\int_a^bf(u)\,du=\int_a^bf(\square)\,d\square=\int_a^bf(\triangle)\,d\triangle.
+\int_a^bf(x)\,dx=\int_a^bf(t)\,dt=\int_a^bf(u)\,du.
 $$
 
 ::::
@@ -458,6 +489,8 @@ Finally, we state some more properties of definite integrals. Proving these prop
 
 ::::{prf:theorem}
 :label: Th:Integration:DefinitePropertiesFundamental
+
+- $\displaystyle\int_a^bf(x)\,dx+\int_b^cf(x)\,dx=\int_a^cf(x)\,dx$ for any real numbers $a$, $b$ and $c$ and $f$ piecewise continuous on $[a,c]$;
 
 - $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$ for any real numbers $a$ and $b$ and $f$ piecewise continuous on $[a,b]$;
 
@@ -518,7 +551,7 @@ An athlete during an interval training.
 
 :::
 
-Consider an athlete during an interval training. She starts walking at a speed of $5$ km/h during $5$ minutes. Then she runs at a speed of $15$ km/h during $2$ minutes, followed by a period of $4$ minutes walking at a speed of $6$ km/h. Then she runs at a speed of $20$ km/h during $3$ minutes, followed by $6$ minutes walking at a speed of $4$ km/h.
+Consider an athlete during an interval training. She starts walking at a speed of $5$ km/h during $5$ minutes($\frac{1}{12}$ hours). Then she runs at a speed of $15$ km/h during $2$ minutes ($\frac{1}{30}$ hours), followed by a period of $4$ minutes ($\frac{1}{15}$ hours) walking at a speed of $6$ km/h. Then she runs at a speed of $20$ km/h during $3$ minutes ($\frac{1}{20}$ hours), followed by $6$ minutes ($\frac{1}{10}$ hours) walking at a speed of $4$ km/h.
 
 What is the distance traveled by the athlete?
 
@@ -527,18 +560,18 @@ What is the distance traveled by the athlete?
 :name: Fig:DefiniteIntegrals:Distance
 :align: center
 
-The speed $v$ at which the athlete is moving during the interval training. On the horizontal axis the time $t$ is shown in minutes.
+The speed $v$ at which the athlete is moving during the interval training. On the horizontal axis the time $t$ is shown in minutes. On the vertical axis the speed in kilometers per hour.
 :::
 
 :::{todo}
 Replace {numref}`Fig:DefiniteIntegrals:Distance` with an applet.
 :::
 
-In order to get the correct units, we change the minutes into hours ($5$ minutes is $\frac{1}{12}$ hour for instance) and add the five different areas:
+Note that the athlete is active for $20$ minutes, which equals $\frac{1}{3}$ hours. In order to find the total distance traveled by the athlete we add the five different areas:
 
 $$
 \begin{align*}
-\int_{0}^{\frac1{3}}v(t)\,dt &= \tfrac{1}{12}\cdot5+\tfrac{1}{30}\cdot15+\tfrac{1}{15}\cdot5+\tfrac{1}{20}\cdot20+\tfrac{1}{15}\cdot6\\
+\int_0^{\frac{1}{3}}v(t)\,dt &= \tfrac{1}{12}\cdot5+\tfrac{1}{30}\cdot15+\tfrac{1}{15}\cdot5+\tfrac{1}{20}\cdot20+\tfrac{1}{15}\cdot6\\
 &=\tfrac{25+30+20+60+24}{60}=\tfrac{159}{60}.
 \end{align*}
 $$
@@ -549,15 +582,7 @@ We could also have changed the speed into meters per second and the time into se
 
 ::::::
 
-Note that speed in general cannot change suddenly. In fact, the velocity should be a continuous function. Then the distance equals the area between the graph of the velocity and the horizontal axis. Before you learn how to calculate this area exactly, we need to discuss another type of integral in {numref}`Sec:Integration:IndefiniteIntegrals`.
-
-To conclude this section, we give a general theorem about the unit of a definite integral.
-
-::::{prf:theorem}
-:label: theorem:Integration:Units
-If $f$ is a piecewise-continuous function defined on an interval $[a,b]$ and if the units of $f(x)$ are $U_f$ and the units of $x$ are $U_x$, then the units of the definite integral $\displaystyle\int_a^bf(x)\,dx$ are given by the product $U_f\cdot U_x$.
-
-::::
+Note that the velocity in general cannot change suddenly. In fact, the velocity should be a continuous function. Then the distance equals the area between the graph of the velocity and the horizontal axis. Before you learn how to calculate this area exactly, we need to discuss another type of integral in {numref}`Sec:Integration:IndefiniteIntegrals`.
 
 ## Grasple exercises
 

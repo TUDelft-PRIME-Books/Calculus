@@ -1,4 +1,4 @@
-(sec:Integration:TrigFunctions)=
+(Sec:Integration:TrigFunctions)=
 
 # Integration of trigonometric functions
 
@@ -67,7 +67,7 @@ The sine and cosine do not really give new results, but the reciprocal of the si
 | $\displaystyle \int \cos(x) \,dx= \sin(x)+C$ | |
 | $\displaystyle \int \tan(x) \,dx= -\ln\lvert\cos(x)\rvert+C$ | |
 | $\displaystyle \int \frac{1}{\sin(x)} \,dx= \frac{1}{2}\ln\left\lvert\frac{\cos(x)-1}{\cos(x)+1}\right\rvert+C$ | |
-| $\displaystyle \int \frac{1}{\cos(x)} \,dx= \frac{1}{2}\ln\lvert\frac{1+\sin(x)}{1-\sin(x)}\rvert+C$ | |
+| $\displaystyle \int \frac{1}{\cos(x)} \,dx= \frac{1}{2}\ln\left\lvert\frac{1+\sin(x)}{1-\sin(x)}\right\rvert+C$ | |
 | $\displaystyle \int \frac{1}{\tan(x)} \,dx= \ln\lvert\sin(x)\rvert+C$ | |
 | $\displaystyle \int \frac{1}{\cos^2(x)} \,dx= \tan(x)+C$| $\displaystyle \frac{1}{\cos^2(x)}=1+\tan^2(x)$ |
 | $\displaystyle \int \frac{1}{\sin(x)\tan(x)} \,dx= \frac{1}{\sin(x)}+C$ | $\displaystyle\frac{1}{\sin(x)\tan(x)}=\frac{\cos(x)}{\sin^2(x)}$ |
@@ -76,7 +76,7 @@ The sine and cosine do not really give new results, but the reciprocal of the si
 
 ```
 
-In {prf:ref}`Theorem:Integration:GregoryIntegral` we have seen that
+In {prf:ref}`Thm:Integration:GregoryIntegralCos` we have seen that
 
 $$
 \int\frac{dx}{\cos(x)}=\ln\left|\tan(x)+\frac{1}{\cos(x)}\right|+C.
@@ -86,7 +86,7 @@ This formula was discovered in 1668 by the Scottish mathematician [James Gregory
 
 
 :::{prf:theorem}
-:label: Theorem:Integration:GregoryIntegralSin
+:label: Thm:Integration:GregoryIntegralSin
 
 $$
 \int\frac{dx}{\sin(x)}=-\ln\left|\frac{\cos(x)}{\sin(x)}+\frac{1}{\sin(x)}\right|+C.
@@ -96,7 +96,7 @@ $$
 
 The proof is also similar:
 
-:::{admonition} Proof of {prf:ref}`Theorem:Integration:GregoryIntegralSin`
+:::{admonition} Proof of {prf:ref}`Thm:Integration:GregoryIntegralSin`
 :class: dropdown, tudproof
 
 $$
@@ -115,13 +115,7 @@ $$
 \int\frac{dx}{\sin(x)}=-\int\frac{du}{u}=-\ln|u|+C=-\ln\left|\frac{\cos(x)}{\sin(x)}+\frac{1}{\sin(x)}\right|+C.
 $$
 
-These formulas can also be written as:
-
-$$
-\int\frac{dx}{\cos(x)}=\ln\left|\frac{1+\sin(x)}{\cos(x)}\right|+C=-\ln\left|\frac{1-\sin(x)}{\cos(x)}\right|+C
-$$
-
-and
+Note that is can also be written as:
 
 $$
 \int\frac{dx}{\sin(x)}=-\ln\left|\frac{1+\cos(x)}{\sin(x)}\right|+C=\ln\left|\frac{1-\cos(x)}{\sin(x)}\right|+C.
@@ -512,7 +506,7 @@ For $k=5$ we have
 (sec:Integration:HalfAngle)=
 ## The tangent half-angle substitution
 
-The **tangent half-angle substitution**, sometimes (misattributed[^misattributed]) as the **Weierstrass substitution**, converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function. Although integrals of rational functions will be covered in {numref}`sec:Integration:RationalFunctions`, we will show how the substitution works.
+The **tangent half-angle substitution**, sometimes (misattributed[^misattributed]) as the **Weierstrass substitution**, converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function. Although integrals of rational functions will be covered in {numref}`Sec:Integration:RationalFunctions`, we will show how the substitution works.
 
 [^misattributed]: See for an explanation [Note 7](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution#cite_note-weierstrass-7) in [Tangent half-angle substitution](https://en.wikipedia.org/wiki/Tangent_half-angle_substitution).
 
@@ -539,7 +533,7 @@ If we use this substitution, we can also use $dx=\dfrac{2\,dt}{1+t^2}$.
 The relation between $t$ and the sine and cosine is given by the following theorem:
 
 :::::{prf:theorem}
-:label: Theorem:Integration:TangentHalfAngleSubstitution
+:label: Thm:Integration:TangentHalfAngleSubstitution
 For $-\pi<x<\pi$ we have
 
 $$
@@ -554,7 +548,7 @@ $$
 
 :::::
 
-:::{admonition} Proof of {prf:ref}`Theorem:Integration:TangentHalfAngleSubstitution`
+:::{admonition} Proof of {prf:ref}`Thm:Integration:TangentHalfAngleSubstitution`
 :class: tudproof
 
 For $0<x<\pi$ consider the right-angled triangle with legs $1$ and $t$ and angle $\theta$ such that $\tan(\theta)=t$. Then the hypotenuse equals $\sqrt{1+t^2}$ and

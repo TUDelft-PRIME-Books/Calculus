@@ -1,4 +1,4 @@
-(sec:Integration:RationalFunctions)=
+(Sec:Integration:RationalFunctions)=
 
 # Integration of rational functions
 
@@ -6,7 +6,7 @@
 
 In {numref}`Sec:RationalFunctions` we covered rational functions and more specifically polynomial division and partial fraction decomposition. In this section we will use these techniques to evaluate integrals of rational functions.
 
-In {numref}`sec:PartialFractionDecomposition` we encountered in {prf:ref}`Thm:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic` that any _proper_ rational function can be written as a sum of partial fractions, where each is one of the following general forms:
+In {numref}`Sec:PartialFractionDecomposition` we encountered in {prf:ref}`Thm:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic` that any _proper_ rational function can be written as a sum of partial fractions, where each is one of the following general forms:
 
 - $\displaystyle\frac{A}{(x-a)^k}$ with $A,a\in\mathbb{R}$ and $k\in\{1,2,3,\ldots\}$.
 - $\displaystyle\frac{Bx+C}{((x-b)^2+c^2)^m}$ with $B,C,b,c\in\mathbb{R}$ and $m\in\{1,2,3,\ldots\}$.
