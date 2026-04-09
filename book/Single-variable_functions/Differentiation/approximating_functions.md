@@ -356,11 +356,11 @@ A scooter.
 
 Let's assume that this scooter has
 
-- position $x(0)=5\,\mathrm{m}$ at $t=0\,\mathrm{s}$;
+- position $x(0)=5\,\text{m}$ at $t=0\,\text{s}$;
 
-- velocity $v(t)=10\,\dfrac{\mathrm{m}}{\mathrm{s}}$ for all $t$.
+- velocity $v(t)=10\,\dfrac{\text{m}}{\text{s}}$ for all $t$.
 
-Using this information we can determine the position of the scooter after $10$ seconds, as in $10$ seconds the scooter will have traveled $10\,\mathrm{s}\cdot10\,\dfrac{\mathrm{m}}{\mathrm{s}}=100\,\mathrm{m}$, so $x(10)=x(0)+100\,\mathrm{m}=105\,\mathrm{m}$.
+Using this information we can determine the position of the scooter after $10$ seconds, as in $10$ seconds the scooter will have traveled $10\,\text{s}\cdot10\,\dfrac{\text{m}}{\text{s}}=100\,\text{m}$, so $x(10)=x(0)+100\,\text{m}=105\,\text{m}$.
 
 ::::
 
@@ -369,23 +369,23 @@ Using this information we can determine the position of the scooter after $10$ s
 
 Consider we have the same scooter, but now assume that this scooter has
 
-- position $x(0)=5\,\mathrm{m}$ at $t=0\,\mathrm{s}$;
+- position $x(0)=5\,\text{m}$ at $t=0\,\text{s}$;
 
-- velocity $v(0)=10\,\dfrac{\mathrm{m}}{\mathrm{s}}$  at $t=0\,\mathrm{s}$;
+- velocity $v(0)=10\,\dfrac{\text{m}}{\text{s}}$  at $t=0\,\text{s}$;
 
-- acceleration $a(t)$ with $0\,\dfrac{\mathrm{m}}{\mathrm{s}^2}\leq a(t)\leq 0.1\,\dfrac{\mathrm{m}}{\mathrm{s}^2}$ for all $t$.
+- acceleration $a(t)$ with $0\,\dfrac{\text{m}}{\text{s}^2}\leq a(t)\leq 0.1\,\dfrac{\text{m}}{\text{s}^2}$ for all $t$.
 
 Using this information we cannot determine the position of the scooter after $10$ seconds _exactly_, as we do not know the _exact_ velocity of the scooter in those 10 seconds.
 
 What we can do, is _estimate_ the position after $10$ seconds.
 
-To do this, we consider the information we have on the acceleration: it is at _minimum_ $0\,\dfrac{\mathrm{m}}{\mathrm{s}^2}$ during those 10 seconds. If we assume the acceleration equals $0\,\dfrac{\mathrm{m}}{\mathrm{s}^2}$ during those 10 seconds, the velocity will be the lowest during the time frame, which also indicates the least distance traveled by the scooter. So in this case, the velocity will remain $10\,\dfrac{\mathrm{m}}{\mathrm{s}}$ and the distance traveled will be again $100\,\mathrm{m}$. So at _minimum_ the scooter will have position $105\,\mathrm{m}$, or in symbols:
+To do this, we consider the information we have on the acceleration: it is at _minimum_ $0\,\dfrac{\text{m}}{\text{s}^2}$ during those 10 seconds. If we assume the acceleration equals $0\,\dfrac{\text{m}}{\text{s}^2}$ during those 10 seconds, the velocity will be the lowest during the time frame, which also indicates the least distance traveled by the scooter. So in this case, the velocity will remain $10\,\dfrac{\text{m}}{\text{s}}$ and the distance traveled will be again $100\,\text{m}$. So at _minimum_ the scooter will have position $105\,\text{m}$, or in symbols:
 
 $$
 x(10) \ge 105.
 $$
 
-Now we focus on the _maximum_ acceleration, which is $0.1\,\dfrac{\mathrm{m}}{\mathrm{s}^2}$. If we assume the acceleration equals $0.1\,\dfrac{\mathrm{m}}{\mathrm{s}^2}$ during those 10 seconds, the velocity will be the highest during the time frame, which also indicates the most distance traveled by the scooter. In this case this means that the velocity increases linearly from $10\,\dfrac{\mathrm{m}}{\mathrm{s}}$ to $10\,\dfrac{\mathrm{m}}{\mathrm{s}}+0.1\,\dfrac{\mathrm{m}}{\mathrm{s}^2}\cdot10\,\mathrm{s}=11\,\dfrac{\mathrm{m}}{\mathrm{s}^2}$ in $10$ seconds. In formula form:
+Now we focus on the _maximum_ acceleration, which is $0.1\,\dfrac{\text{m}}{\text{s}^2}$. If we assume the acceleration equals $0.1\,\dfrac{\text{m}}{\text{s}^2}$ during those 10 seconds, the velocity will be the highest during the time frame, which also indicates the most distance traveled by the scooter. In this case this means that the velocity increases linearly from $10\,\dfrac{\text{m}}{\text{s}}$ to $10\,\dfrac{\text{m}}{\text{s}}+0.1\,\dfrac{\text{m}}{\text{s}^2}\cdot10\,\text{s}=11\,\dfrac{\text{m}}{\text{s}^2}$ in $10$ seconds. In formula form:
 
 $$
 v(t)=10+0.1\cdot t.

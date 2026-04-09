@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Suppose you are walking from your house to your favorite coffee shop to buy an XXL iced pumpkin spice latte (or a regular old cup of coffee, or the things you typically buy at Dutch "coffee shops", whichever you prefer). For simplicity, we assume that you walk in a straight line, so that your position $x$ (in meters) can be descibed as a function of time $t$ (in seconds). If you were to walk at a constant speed, you walk a fixed amount of meters each secons, so the graph of your position would look like a straight line. Say your house would be at position $x=0$ while the coffee shop is at position $x=600$ and that it takes you $400$ seconds to walk this distance. So what would be the function describing your position in this case? Since the graph should be a straight line, the function should be of the form
+Suppose you are walking from your house to your favorite coffee shop to buy an XXL iced pumpkin spice latte (or a regular old cup of coffee, or the things you typically buy at Dutch "coffee shops", whichever you prefer). For simplicity, we assume that you walk in a straight line, so that your position $x$ (in meters) can be described as a function of time $t$ (in seconds). If you were to walk at a constant speed, you walk a fixed amount of meters each second, so the graph of your position would look like a straight line. Say your house would be at position $x=0$ while the coffee shop is at position $x=600$ and that it takes you $400$ seconds to walk this distance. So what would be the function describing your position in this case? Since the graph should be a straight line, the function should be of the form
 
 $$
  x(t)=at+b, \qquad 0\leq t\leq 400
@@ -27,13 +27,13 @@ $$
 Suppose we want to know the velocity at which we were walking. In this case, we were walking at a constant speed, so the velocity can be computed by dividing the distance we traveled, which we will denote by $\Delta x$, by the time that has passed, which we will denote by $\Delta t$. Then, the velocity at any point in time is given by
 
 $$
- \mathrm{velocity}=\frac{\Delta x}{\Delta t}=\frac{600}{400}=\frac{3}{2}.
+ \text{velocity}=\frac{\Delta x}{\Delta t}=\frac{600}{400}=\frac{3}{2}.
 $$
 
 Notice that this $\frac{3}{2}$ is the same as the coefficient of the $t$ term in the function $x(t)=\frac{3}{2}t$. This is no coincidence. Whenever we the position is a function of time of the form $x(t)=at+b$ and we measure the position at two points in time $t_1<t_2$, then the velocity can be found as the difference in position divided by the difference in time and we find
 
 $$
- \mathrm{velocity}=\frac{\Delta x}{\Delta t}=\frac{\left(at_2+b\right)-\left(at_1+b\right)}{t_2-t_1}=\frac{at_2-at_1}{t_2-t_1}=a,
+ \text{velocity}=\frac{\Delta x}{\Delta t}=\frac{\left(at_2+b\right)-\left(at_1+b\right)}{t_2-t_1}=\frac{at_2-at_1}{t_2-t_1}=a,
 $$
 
 so that $a$ is the velocity at any point in time. In particular, $a$ is the slope of the line $y=at+b$, so the slope has the interpretation of a velocity in this setting.
@@ -46,24 +46,32 @@ $$
 
 of which the graph is shown below.
 
-Hier naast elkaar de grafieken van de twee functies $x(t)=\frac{3}{2}t$ en $x(t)=300\sin\left(\frac{3\pi t}{1200}-\frac{\pi}{2}\right)+300$. 
+:::{figure} Images/Fig-Differentiability-Intro.png
+:name: Fig:Differentiability:Intro
+
+The graph of the function $x(t)=\frac{3}{2}t$ on the left and $x(t)=300\sin\left(\frac{3\pi t}{1200}-\frac{\pi}{2}\right)+300$ on the right.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Differentiability:Intro` with an applet showing the graphs of the two functions $x(t)=\frac{3}{2}t$ and $x(t)=300\sin\left(\frac{3\pi t}{1200}-\frac{\pi}{2}\right)+300$.
+:::
 
 In this case, we can find the **average velocity** during our walk (where going back counts as a negative velocity) by dividing the difference in position $\Delta x$ by the difference in time. This gives that the average velocity is
 
 $$
- \mathrm{average}\,\,\mathrm{velocity}=\frac{\Delta x}{\Delta t}=\frac{x(1200)-x(0)}{1200-0}=\frac{600-0}{1200}=\frac{1}{2}.
+ \text{average}\,\,\text{velocity}=\frac{\Delta x}{\Delta t}=\frac{x(1200)-x(0)}{1200-0}=\frac{600-0}{1200}=\frac{1}{2}.
 $$
 
 An important question now remains: can we somehow determine our velocity at a certain moment in time, say at $t=200$? Note that we are not walking with a constant velocity, so very likely at most point in time the velocity is not going to be equal to the average velocity of $\frac{1}{2}$ meters per second. The main idea to resolve this, is that if just zoom in very close to $t=200$, the graph of the function is approximately a straight line. The velocity at $t=200$ can then be approximated by dividing the difference in position by the difference in time. For $\Delta t=10$, we would be comparing the positions at $t=200$ with the one $10$ time steps further, so at $t=210$, and we would obtain
 
 $$
- \mathrm{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(210)-x(200)}{1}\approx 2.354.
+ \text{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(210)-x(200)}{1}\approx 2.354.
 $$
 
 If we zoom in more, we should get a better approximation. Repeating these steps for $\Delta t=1$, we would obtain
 
 $$
- \mathrm{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(201)-x(200)}{1}\approx 2.356.
+ \text{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(201)-x(200)}{1}\approx 2.356.
 $$
 
 So we can say that the velocity at $t=200$ is approximately equal to $2.356$ meter per second and by taking $\Delta t$ smaller, we get a better and better result. As before, the velocity can be thought of as the slope of the function at this point in time.
@@ -71,13 +79,13 @@ So we can say that the velocity at $t=200$ is approximately equal to $2.356$ met
 The expression $\frac{\Delta x}{\Delta t}$ is called a **difference quotient** and we conclude that it can be used to approximate the slope of the function. So how can we compute the exact slope of the function? Well, since as $\Delta t$ becomes small, the approximation gets better, we get the best result when taking the limit $\Delta t\rightarrow 0$. This means that we must have
 
 $$
- \mathrm{velocity}=\lim_{\Delta t\rightarrow 0} \frac{\Delta x}{\Delta t}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}.
+ \text{velocity}=\lim_{\Delta t\rightarrow 0} \frac{\Delta x}{\Delta t}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}.
 $$
 
 We call the value of the limit $\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}$ the **derivative** of the function $x$ at $t=200$. Evaluating this limit is a bit tricky, but later we will learn some powerful tools which allow us to find
 
 $$
- \mathrm{velocity}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}=\frac{3\pi}{4}\approx 2.356.
+ \text{velocity}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}=\frac{3\pi}{4}\approx 2.356.
 $$
 
 So we saw that our approximation by means of a difference quotient was actually correct up to at least $3$ decimal positions, which is pretty good.
@@ -126,7 +134,7 @@ Note that for a given function $f$, we can try to evaluate the derivative at eac
 
 ::::::{prf:definition} 
 :label: Def:Differentiability:Derivativefunction
-The **derivative** $f'$, pronounced: $f$-prime, of a function $f$ is the function that associates to each value $x$ at which $f$ is differentiable the derivative $f'(x)$. The process of finding a derivative of a function is called **differentiating** the function.
+The **derivative** $f'$, pronounced as $f$-prime, of a function $f$ is the function that associates to each value $x$ at which $f$ is differentiable the derivative $f'(x)$. The process of finding a derivative of a function is called **differentiating** the function.
 ::::::
 
 ::::::{prf:notation} 
@@ -137,22 +145,31 @@ $$
  f'(x)=\frac{d}{dx}f(x)=\frac{df}{dx}(x)=\frac{df(x)}{dx}=Df(x).
 $$
 
-The notation $\dfrac{df}{dx}$ is called the **Leibniz notation**, named after the German philosopher and mathematician [Gottfried Wilhelm Leiniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz). The notation $Df(x)$ is sometimes called the **Euler notation**, although there is no indication that the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler) ever used this notation.
+The notation $\dfrac{df}{dx}$ is called the **Leibniz notation**, named after the German philosopher and mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz). The notation $Df(x)$ is sometimes called the **Euler notation**, although there is no indication that the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler) ever used this notation.
 
 In physics, when considering a quantity $y$ that is a function of **time** $t$, the notation $\dot{y}(t)$ represents the derivative $y'(t)$
 ::::::
 
 
-So what does the derivative represent geomtrically? For this, we need the definition of a tangent line.
+So what does the derivative represent geometrically? For this, we need the definition of a tangent line.
 
 ::::::{prf:definition} 
 :label: Def:Differentiability:Tangentline
-Let $f$ be a function and let $a$ be a point in the domain of $a$ such that $f$ is differentiable at $a$. Then the tangent line of $f$ at $a$ is the straight line that goes through the point $(a,f(a))$ and has slope $f'(a)$.
+Let $f$ be a function and let $a$ be a point in the domain of $a$ such that $f$ is differentiable at $a$. Then the **tangent line** of $f$ at $a$ is the straight line that goes through the point $(a,f(a))$ and has slope $f'(a)$.
 ::::::
 
 The idea here is that the tangent line **touches the graph of the function at the specified point**. Indeed, consider the difference quotient $\dfrac{f(a+h)-f(a)}{h}$ for a small value of $h$. Since we can write $\dfrac{f(a+h)-f(a)}{h}=\dfrac{f(a+h)-f(a)}{(a+h)-a}$, this difference quotient is the slope of the straight line through the points $(a,f(a))$ and $(a+h,f(a+h))$. By taking taking the limit $h$ to $0$, this slope goes towards $f'(a)$, which is the slope of the tangent line. As such, we can think of the slope of the tangent line as the slope of function at the point, which means that we can also think of the derivative in this way.
 
-Hier een applet. De functie $x^3$ moet geplot zijn, net als de lijn door $(1,1)$ en $(1+h,(1+h)^3)$ met een schuifje voor wat $h$ is (zeg $h$ tussen $-1$ en $1$).  
+:::{figure} Images/Fig-Differentiability-Tangentline.png
+:name: Fig:Differentiability:Tangentline
+
+The function $x^3$ and the line through the points $(1,1)$ and $(1+h,(1+h)^3)$ for a value of $h$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Differentiability:Tangentline` with an applet showing the function $x^3$ and the line through the points $(1,1)$ and $(1+h,(1+h)^3)$ for a value of $h$. The applet should have a slider for $h$ that allows the user to change the value of $h$ between $-1$ and $1$.
+:::
+
 
 ::::::{prf:theorem} 
 :label: Thm:Differentiability:Tangentline
@@ -179,13 +196,27 @@ as desired. So this equation defines the unique line with slope $f'(a)$ that pas
 :label: Ex:Differentiability:Usinglimit
 Consider the function $f(x)=x^2$. We will use the definition of the derivative to find the derivative of this function. For any value of $x$ we can evaluate the limit
 
-$$
- f'(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}=\lim_{h\rightarrow 0}\frac{(x+h)^2-x^2}{h}=\lim_{h\rightarrow 0}\frac{x^2+2xh+h^2-x^2}{h}=\lim_{h\rightarrow 0}\frac{2xh+h^2}{h}=\lim_{h\rightarrow 0}2x+h=2x+0=2x.
-$$
+\begin{align*}
+ f'(x) &= \lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{(x+h)^2-x^2}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{x^2+2xh+h^2-x^2}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{2xh+h^2}{h} \\
+ &= \lim_{h\rightarrow 0}2x+h \\
+ &= 2x+0 \\
+ &= 2x.
+\end{align*}
 
 As such, we find that the function $f(x)=x^2$ is differentiable everywhere and that the derivative is given by $f'(x)=2x$.
 
-Hier een applet met de functie en de raaklijn aan deze functie in een door de gebruiker in te voeren punt.
+:::{figure} Images/Fig-Differentiability-Usinglimit.png
+:name: Fig:Differentiability:Usinglimit
+
+The graph of the function $f(x)=x^2$ and the tangent line at the selected point.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Differentiability:Usinglimit` with an applet showing the function and the tangent to this function at a point entered by the user.
+:::
 ::::::
 
 ::::::{prf:example} 
@@ -198,9 +229,17 @@ $$
 
 which is a limit that does not exist (the function $g(h)=h^{-\frac{2}{3}}$ has a vertical asymptote at $h=0$). So the function is not differentiable at $h=0$. 
 
-We will see later that this function is differentiable at any other point and that $f'(x)=\frac{1}{3}x^{-\frac{2}{3}}$ for $x\neq 0$. The idea here is that the tangent lines of the function at $a$ become steeper and steeper as $a\rightarrow 0$. In some sense, the function $f$ has a **vertical tangent line** at $x=0$ (althought this is not a tangent line in the sense of {prf:ref}`Def:Differentiability:Tangentline`). Whenever a fuction has a vertical tangent line at a point, it will not be differentiable at this point (otherwise its derivative would need to $\infty$ or $-\infty$ at that point, but $\infty$ or $-\infty$ are not numbers, so a derivative can never have one of these values)
+We will see later that this function is differentiable at any other point and that $f'(x)=\frac{1}{3}x^{-\frac{2}{3}}$ for $x\neq 0$. The idea here is that the tangent lines of the function at $a$ become steeper and steeper as $a\rightarrow 0$. In some sense, the function $f$ has a **vertical tangent line** at $x=0$ (although this is not a tangent line in the sense of {prf:ref}`Def:Differentiability:Tangentline`). Whenever a function has a vertical tangent line at a point, it will not be differentiable at this point (otherwise its derivative would need to $\infty$ or $-\infty$ at that point, but $\infty$ or $-\infty$ are not numbers, so a derivative can never have one of these values).
 
-Hier een applet met de functie, de verticale 'raaklijn' rond 0 en de raaklijn aan deze functie in een door de gebruiker in te voeren punt.
+:::{figure} Images/Fig-Differentiability-Usinglimit2.png
+:name: Fig:Differentiability:Usinglimit2
+
+The graph of the function $f(x)=x^{\frac{1}{3}}$ and the vertical tangent line at $x=0$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Differentiability:Usinglimit2` with an applet showing the function, the vertical ‘tangent’ around 0, and the tangent to this function at a point entered by the user.
+:::
 ::::::
 
 
@@ -210,27 +249,43 @@ Consider the function $k(t)=|t|$. We will try use the definition of the derivati
 
 First consider any $t>0$. If $h$ is close enough to $0$, we can ensure that $t+h>0$ as well. In that case, we will have $|t|=t$ and $|t+h|=t+h$. Hence, we can find the derivative by evaluating
 
-$$
- \frac{dk}{dt}(t)=\lim_{h\rightarrow 0}\frac{k(t+h)-k(t)}{h}=\lim_{h\rightarrow 0}\frac{|t+h|-|t|}{h}=\lim_{h\rightarrow 0}\frac{t+h-t}{h}=\lim_{h\rightarrow 0}\frac{h}{h}=\lim_{h\rightarrow 0}1=1.
-$$
+\begin{align*}
+ \frac{dk}{dt}(t) &= \lim_{h\rightarrow 0}\frac{k(t+h)-k(t)}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{|t+h|-|t|}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{t+h-t}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{h}{h} \\
+ &= \lim_{h\rightarrow 0}1 \\
+ &= 1.
+\end{align*}
 
 Now we consider any $t<0$. If $h$ is close enough to $0$, we can ensure that $t+h<0$ as well. In that case, we will have $|t|=-t$ and $|t+h|=-(t+h)=-t-h$. Hence, we can find the derivative by evaluating
 
-$$
- \frac{dk}{dt}(t)=\lim_{h\rightarrow 0}\frac{k(t+h)-k(t)}{h}=\lim_{h\rightarrow 0}\frac{|t+h|-|t|}{h}=\lim_{h\rightarrow 0}\frac{-t-h-(-t)}{h}=\lim_{h\rightarrow 0}\frac{-h}{h}=\lim_{h\rightarrow 0}-1=-1.
-$$
+\begin{align*}
+ \frac{dk}{dt}(t) &= \lim_{h\rightarrow 0}\frac{k(t+h)-k(t)}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{|t+h|-|t|}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{-t-h-(-t)}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{-h}{h} \\
+ &= \lim_{h\rightarrow 0}-1 \\
+ &= -1.
+\end{align*}
 
 Finally, we consider $t=0$. Here, we need to consider the left and right limits separately, because for $h<0$ we have $|0+h|=|h|=-h$, while for $h>0$ we have $|0+h|=|h|=h$. Then we find
 
-$$
- \lim_{h\rightarrow 0^-}\frac{k(0+h)-k(0)}{h}=\lim_{h\rightarrow 0^-}\frac{|0+h|-|0|}{h}=\lim_{h\rightarrow 0^-}\frac{-h}{h}=-1
-$$
+\begin{align*}
+ \lim_{h\rightarrow 0^-}\frac{k(0+h)-k(0)}{h} &= \lim_{h\rightarrow 0^-}\frac{|0+h|-|0|}{h} \\
+ &= \lim_{h\rightarrow 0^-}\frac{-h}{h} \\
+ &= \lim_{h\rightarrow 0^-}-1 \\
+ &= -1
+\end{align*}
 
 and
 
-$$
- \lim_{h\rightarrow 0^+}\frac{k(0+h)-k(0)}{h}=\lim_{h\rightarrow 0^+}\frac{|0+h|-|0|}{h}=\lim_{h\rightarrow 0^+}\frac{h}{h}=1.
-$$
+\begin{align*}
+ \lim_{h\rightarrow 0^+}\frac{k(0+h)-k(0)}{h} &= \lim_{h\rightarrow 0^+}\frac{|0+h|-|0|}{h} \\
+ &= \lim_{h\rightarrow 0^+}\frac{h}{h} \\
+ &= \lim_{h\rightarrow 0^+}1 \\
+ &= 1.
+\end{align*}
 
 Since the left and right limits are unequal, we know from {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` that the limit $\displaystyle\lim_{h\rightarrow 0}\frac{k(t+h)-k(t)}{h}$ does not exist.
 
@@ -260,9 +315,12 @@ $$
 
 On account of {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` the limit of the product of these functions exists and is equal to the product of the limits. This means that
 
-$$
- \lim_{x\rightarrow a}f(x)-f(a)=\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}(x-a)=\lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}\cdot\lim_{x\rightarrow a}(x-a)=f'(a)\cdot0=0.
-$$
+\begin{align*}
+ \lim_{x\rightarrow a}f(x)-f(a) &= \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}(x-a) \\
+ &= \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}\cdot\lim_{x\rightarrow a}(x-a) \\
+ &= f'(a)\cdot0 \\
+ &= 0.
+\end{align*}
 
 By definition, this means that $f$ is continuous at $a$.
 
@@ -274,7 +332,7 @@ By definition, this means that $f$ is continuous at $a$.
 The reverse statement of {prf:ref}`Thm:Differentiability:Diffimpliescont` is not true. That is, there are functions $f$ which are continuous at a point $a$, but not differentiable at $a$, see {prf:ref}`Ex:Differentiability:Usinglimit3`.
 ::::::
 
-In fact, we have now seen the most typical ways a function can fail to be differentiable at a point $a$: the function has a sharp corner at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit3`), it has a vertical asymptote at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit2`) or it is not continuous at $a$. A mathematician can provide you with examples that do not necessarily look like on of these three cases (such as the [Weierstrass function](https://en.wikipedia.org/wiki/Weierstrass_function)), but in practice, most nondifferentiable functions will be of one of these three forms.
+In fact, we have now seen the most typical ways a function can fail to be differentiable at a point $a$: the function has a sharp corner at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit3`), it has a vertical asymptote at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit2`) or it is not continuous at $a$. A mathematician can provide you with examples that do not necessarily look like on of these three cases (such as the [Weierstrass function](https://en.wikipedia.org/wiki/Weierstrass_function)), but in practice, most non-differentiable functions will be of one of these three forms.
 
 ```{figure} Images/majorcasesnondiff.png
 ---
@@ -282,8 +340,13 @@ width: 100%
 name: Fig:Differentiability:majorcasesnondiff
 class: dark-light
 ---
-Hier een mooiere versie van dit plaatje.
+
+The three major cases in which a function can fail to be differentiable at a point $a$: the function has a sharp corner at $a$ (left), it has a vertical asymptote at $a$ (middle) or it is not continuous at $a$ (right).
 ```
+
+:::{todo}
+Replace {numref}`Fig:Differentiability:majorcasesnondiff` with an applet.
+:::
 
 The derivative of a differentiable function does not need to be continuous. For instance, we will see in {prf:ref}`Def:Differentiability:Higherorderderivative3` that the function $f(x)=\left\{\begin{array}{l}0,\qquad&\text{if}\,x\leq 0,\\ 2x,\qquad &\text{if}\,x>0.\end{array}\right.$ is differentiable, but not continuously differentiable. Since "a differentiable function for which the derivative is continuous" is such a mouthful, we give this concept a name.
 
@@ -294,9 +357,11 @@ A function $f$ is called **continuously differentiable** if it is differentiable
 
 Before we go over to computing derivatives, we need to introduce on more concept.
 
+[^infinitesimal]: An infinitesimal change is a change that is so small that it cannot be measured, so it is an infinitely small change.
+
 ::::::{prf:definition} 
 :label: Def:Differentiability:Differential
-Let $f$ be a differentiable function and write $y=f(x)$. The notation $dx$ represents an **infinitesimal change** ("infinitely small") change in $x$. Then the **differential** $dy$ is given by
+Let $f$ be a differentiable function and write $y=f(x)$. The notation $dx$ represents an **infinitesimal change**[^infinitesimal] change in $x$. Then the **differential** $dy$ is given by
 
 $$
  dy=f'(x)\,dx.
@@ -328,8 +393,14 @@ width: 100%
 name: Fig:Differentiability:Differential
 class: dark-light
 ---
-Hier een mooiere versie van dit plaatje.
+
+A visual representation of the approximation $\Delta y\approx f'(a)\Delta x$ for a function $f$ at a point $a$.
 ```
+
+:::{todo}
+Replace {numref}`Fig:Differentiability:Differential` with an applet.
+:::
+
 ::::::
 
 (Subsec:Derivativestangent)=
@@ -357,17 +428,21 @@ $$
 :class: tudproof
 Because of {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` we find that
 
-$$
- \lim_{h\rightarrow 0}\frac{(cf)(x+h)-(cf)(x)}{h}=\lim_{h\rightarrow 0}\frac{c\left(f(x+h)-f(x)\right)}{h}=c\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}=cf'(a).
-$$
+\begin{align*}
+ \lim_{h\rightarrow 0}\frac{(cf)(x+h)-(cf)(x)}{h} &= \lim_{h\rightarrow 0}\frac{c\left(f(x+h)-f(x)\right)}{h} \\
+ &= c\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h} \\
+ &= cf'(a).
+\end{align*}
 
 This means that $cf$ is also differentiable at $a$ and that $(cf)'(a)=cf'(a)$.
 
 Similarly, we find that
 
-$$
- \lim_{h\rightarrow 0}\frac{(f+g)(x+h)-(f+g)(x)}{h}=\lim_{h\rightarrow 0}\frac{f(x+h)+g(x+h)-f(x)-g(x)}{h}=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}+\lim_{h\rightarrow 0}\frac{g(x+h)-g(x)}{h}=f'(a)+g'(a).
-$$
+\begin{align*}
+ \lim_{h\rightarrow 0}\frac{(f+g)(x+h)-(f+g)(x)}{h} &= \lim_{h\rightarrow 0}\frac{f(x+h)+g(x+h)-f(x)-g(x)}{h} \\
+ &= \lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}+\lim_{h\rightarrow 0}\frac{g(x+h)-g(x)}{h} \\
+ &= f'(a)+g'(a).
+\end{align*}
 
 This means that $f+g$ is also differentiable at $a$ and that $(f+g)'(a)=f'(a)+g'(a)$.
 
@@ -377,15 +452,19 @@ This means that $f+g$ is also differentiable at $a$ and that $(f+g)'(a)=f'(a)+g'
 
 ::::::{prf:theorem} Standard derivatives, part 1 out of 4
 :label: Thm:Differentiability:Standard1
-We have the following standard derivatives.
+We have the following standard derivatives:
 
-- If $n$ is an integer, then $\dfrac{d}{dx}\left[x^n\right]=nx^{n-1}$. In particular, we have $\dfrac{d}{dx}\left[1\right]=0$, $\dfrac{d}{dx}\left[x\right]=1$ and $\dfrac{d}{dx}\left[x^2\right]=2x$ and, if $n\geq 1$, we have $\dfrac{d}{dx}\left[\frac{1}{x^n}\right]=\dfrac{d}{dx}\left[x^{-n}\right]=-nx^{-n-1}$.
+- If $n$ is an integer, then $\dfrac{d}{dx}\left[x^n\right]=nx^{n-1}$. In particular, we have:
+  - $\dfrac{d}{dx}\left[1\right]=0$,
+  - $\dfrac{d}{dx}\left[x\right]=1$,
+  - $\dfrac{d}{dx}\left[x^2\right]=2x$,
+  - if $n\geq 1$, we have $\dfrac{d}{dx}\left[\frac{1}{x^n}\right]=\dfrac{d}{dx}\left[x^{-n}\right]=-nx^{-n-1}$.
 - We have $\dfrac{d}{dx}\left[\sqrt{x}\right]=\frac{1}{2\sqrt{x}}$ for $x>0$.
 - We have $\dfrac{d}{dx}\left[\sin(x)\right]=\cos(x)$ and $\dfrac{d}{dx}\left[\cos(x)\right]=-\sin(x)$.
 - We have $\dfrac{d}{dx}\left[e^x\right]=e^x$.
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:Differentiability:Standard1`
+::::{admonition} Proof of {prf:ref}`Thm:Differentiability:Standard1`
 :class: tudproof, dropdown
 First we consider the case $n=0$. Then $f(x)=x^0=1$ and we can directly evaluate the derivative using the limit definition
 
@@ -411,20 +490,23 @@ $$
 
 Now we use a common trick to rewrite $x^n-a^n$. Indeed, we can compute
 
-$$
- \begin{array}{lcl}(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)&=&x\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)-a\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)\\
- &=&\left(a^{n-1}x+a^{n-2}x^2+a^{n-3}x^3+...+ax^{n-1}+x^{n}\right)-\left(a^{n}+a^{n-1}x+a^{n-2}x^2+...+a^2x^{n-2}+ax^{n-1}\right)\\
- &=&x^n-a^n.\end{array}
-$$
+\begin{align*}
+&\phantom{=} (x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right) \\
+&= \quad x\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right) \\
+&\phantom{=} \quad\quad\quad -a\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)\\
+ &= \left(a^{n-1}x+a^{n-2}x^2+a^{n-3}x^3+\ldots+ax^{n-1}+x^{n}\right) \\
+&\phantom{=} \quad\quad\quad -\left(a^{n}+a^{n-1}x+a^{n-2}x^2+\ldots+a^2x^{n-2}+ax^{n-1}\right) \\
+ &= x^n-a^n.
+\end{align*}
 
 We use this formula to evaluate the limit. Indeed, we find
 
 $$
  \begin{array}{lcl}f'(a)&=&\displaystyle\lim_{x\rightarrow a}\frac{x^n-a^n}{x-a}\\
- &=&\displaystyle\lim_{x\rightarrow a}\frac{(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)}{x-a}\\
- &=&\displaystyle\lim_{x\rightarrow a}\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)\\
- &=&\displaystyle a^{n-1}+a^{n-2}a+a^{n-3}a^2+...+aa^{n-2}+a^{n-1}\\
- &=&\displaystyle\underbrace{a^{n-1}+...+a^{n-1}}_{n\text{ times}}\\
+ &=&\displaystyle\lim_{x\rightarrow a}\frac{(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)}{x-a}\\
+ &=&\displaystyle\lim_{x\rightarrow a}\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)\\
+ &=&\displaystyle a^{n-1}+a^{n-2}a+a^{n-3}a^2+\ldots+aa^{n-2}+a^{n-1}\\
+ &=&\displaystyle\underbrace{a^{n-1}+\ldots+a^{n-1}}_{n\text{ times}}\\
  &=&\displaystyle na^{n-1}.\end{array}
 $$
 
@@ -436,13 +518,13 @@ $$
  \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}=\lim_{x\rightarrow a}\frac{\frac{1}{x^n}-\frac{1}{a^n}}{x-a}=\lim_{x\rightarrow a}\frac{a^n-x^n}{\left(x-a\right)x^na^n}.
 $$
 
-Previously in this proof, we showed that $(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)=x^n-a^n$. So we can use this to evaluate the limit and we find
+Previously in this proof, we showed that $(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)=x^n-a^n$. So we can use this to evaluate the limit and we find
 
 $$
  \begin{array}{lcl} \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}&=&\lim_{x\rightarrow a}\frac{a^n-x^n}{\left(x-a\right)x^na^n}\\
- &=&\lim_{x\rightarrow a}\frac{-(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)}{\left(x-a\right)x^na^n}\\
- &=&\lim_{x\rightarrow a}\frac{-\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+...+ax^{n-2}+x^{n-1}\right)}{x^na^n}\\
- &=&\frac{-\left(a^{n-1}+a^{n-2}a+a^{n-3}a^2+...+aa^{n-2}+a^{n-1}\right)}{a^na^n}\\
+ &=&\lim_{x\rightarrow a}\frac{-(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)}{\left(x-a\right)x^na^n}\\
+ &=&\lim_{x\rightarrow a}\frac{-\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)}{x^na^n}\\
+ &=&\frac{-\left(a^{n-1}+a^{n-2}a+a^{n-3}a^2+\ldots+aa^{n-2}+a^{n-1}\right)}{a^na^n}\\
  &=&\frac{-na^{n-1}}{a^2n}\\
  &=&-na^{-n-1}.\end{array}
 $$
@@ -477,7 +559,7 @@ $$
  &=&\displaystyle\sin(x)\lim_{h\rightarrow 0}\frac{\cos(h)-1}{h}+\cos(x)\lim_{h\rightarrow 0}\frac{\sin(h)}{h}.\end{array}
 $$
 
-So in order to find the derivative of the sine, we need to evaluate the two limits $\displaystyle\lim_{h\rightarrow 0}\frac{\cos(h)-1}{h}$ and $\displaystyle\lim_{h\rightarrow 0}\frac{\sin(h)}{h}$. We first evaluate the second of these two limits and for this, we first consider the right limit, which we evaluate using the squeeze theorem. From the proof of {prf:ref}`Theorem:Continuity:Standardfunctions`, we recall that $\sin(h)\leq h$ for any $0<h<\frac{\pi}{2}$. This inequality can be rewritten as $\frac{\sin(h)}{h}\leq 1$ for any $0<h<\frac{\pi}{2}$. In order to find a lower bound on the function $\frac{\sin(h)}{h}$, we will fix $0<h<\frac{\pi}{2}$ show that $h\leq \tan(h)$.  For this, consider the triangle shown in {numref}`Fig:Differentiability:tanhgreaterh`. The point $A$ lies on the circle with center at the origin and radius $1$. The point $B$ is the point directly above $A$ such that the angle between $OA$ and $OB$ is $h$. The line segment $OB$ intersect the circle at the point $C$. The point $D$ is chosen on the line segement $AB$ in such a way that the line segments $CD$ and $CB$ make a right angle.
+So in order to find the derivative of the sine, we need to evaluate the two limits $\displaystyle\lim_{h\rightarrow 0}\frac{\cos(h)-1}{h}$ and $\displaystyle\lim_{h\rightarrow 0}\frac{\sin(h)}{h}$. We first evaluate the second of these two limits and for this, we first consider the right limit, which we evaluate using the squeeze theorem. From the proof of {prf:ref}`Theorem:Continuity:Standardfunctions`, we recall that $\sin(h)\leq h$ for any $0<h<\frac{\pi}{2}$. This inequality can be rewritten as $\frac{\sin(h)}{h}\leq 1$ for any $0<h<\frac{\pi}{2}$. In order to find a lower bound on the function $\frac{\sin(h)}{h}$, we will fix $0<h<\frac{\pi}{2}$ show that $h\leq \tan(h)$.  For this, consider the triangle shown in {numref}`Fig:Differentiability:tanhgreaterh`. The point $A$ lies on the circle with center at the origin and radius $1$. The point $B$ is the point directly above $A$ such that the angle between $OA$ and $OB$ is $h$. The line segment $OB$ intersect the circle at the point $C$. The point $D$ is chosen on the line segment $AB$ in such a way that the line segments $CD$ and $CB$ make a right angle.
 
 ```{figure} Images/tanhgreaterh.png
 ---
@@ -485,10 +567,15 @@ width: 100%
 name: Fig:Differentiability:tanhgreaterh
 class: dark-light
 ---
-Hier een mooiere versie van dit plaatje.
+
+An illustration of the proof that $h\leq \tan(h)$ for any $0<h<\frac{\pi}{2}$.
 ```
 
-Recall that the lenght of the part of the circle from $A$ to $C$ is equal to $h$. Indeed, the full circumference of the circle is $2\pi$, so since we only consider $\frac{h}{2\pi}$ part of this, the length of this piece is $\frac{h}{2\pi}2\pi=h$. From the picture, we immediately see that the this length is less than the sum of the distances $|AD|+|CD|$. Since the line segments $CD$ and $CB$ make a right angle, it follows from the Pythagorean theorem that $|CD|\leq |BD|$. As such, we find
+:::{todo}
+Replace {numref}`Fig:Differentiability:tanhgreaterh` with an applet.
+:::
+
+Recall that the length of the part of the circle from $A$ to $C$ is equal to $h$. Indeed, the full circumference of the circle is $2\pi$, so since we only consider $\frac{h}{2\pi}$ part of this, the length of this piece is $\frac{h}{2\pi}2\pi=h$. From the picture, we immediately see that the this length is less than the sum of the distances $|AD|+|CD|$. Since the line segments $CD$ and $CB$ make a right angle, it follows from the Pythagorean theorem that $|CD|\leq |BD|$. As such, we find
 
 $$
  \begin{array}{lcl}h&\leq&|AD|+|DC|\\
@@ -555,7 +642,7 @@ $$
 $$
 
 Now from {prf:ref}`Thm:RealNumbers:Numbere`, we recall that the final limit was one of the defining properties of the number $e$. As such, we find that $f'(x)=e^x$, as desired.
-:::
+::::
 
 ::::::{prf:remark}
 :label: Remark:Differentiability:Powerfunctions
@@ -568,30 +655,36 @@ Derivatives of power functions of the form $f(x)=x^r$ for $r$ any real number fo
 :label: Ex:Differentiability:Usingrules
 Consider the function $f(x)=6x^3+5x-4$. We will find the derivative of this function using the basic computation rules {prf:ref}`Thm:Differentiability:Sumscalar` and the standard derivatives {prf:ref}`Thm:Differentiability:Standard1`. First, we note that we have
 
-$$
- f'(x)=\frac{d}{dx}\left[6x^3+5x^2-4\right]=6\frac{d}{dx}\left[x^3\right]+5\frac{d}{dx}\left[x^2\right]-4\frac{d}{dx}\left[1\right].
-$$
+\begin{align*}
+ f'(x) &= \frac{d}{dx}\left[6x^3+5x^2-4\right] \\
+ &= 6\frac{d}{dx}\left[x^3\right]+5\frac{d}{dx}\left[x^2\right]-4\frac{d}{dx}\left[1\right].
+\end{align*}
 
 Each of the derivatives of $x^3$, $x^2$ and $1$ are standard derivatives, and we find
 
-$$
- f'(x)=6\frac{d}{dx}\left[x^3\right]+5\frac{d}{dx}\left[x^2\right]-4\frac{d}{dx}\left[1\right]=6\left(3x^{3-1}\right)+5\left(2x^{2-1}\right)-4\cdot 0=18x^2+10x.
-$$
+\begin{align*}
+ f'(x) &= 6\frac{d}{dx}\left[x^3\right]+5\frac{d}{dx}\left[x^2\right]-4\frac{d}{dx}\left[1\right] \\
+ &= 6\left(3x^{3-1}\right)+5\left(2x^{2-1}\right)-4\cdot 0 \\
+ &= 18x^2+10x.
+\end{align*}
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:Differentiability:Usingrules2
 Consider the function $h(t)=2\cos(t)-3\sin(t)$. We will find the derivative of this function using the basic computation rules {prf:ref}`Thm:Differentiability:Sumscalar` and the standard derivatives {prf:ref}`Thm:Differentiability:Standard1`. First, we note that we have
 
-$$
- h'(t)=\frac{d}{dt}\left[2\cos(t)-3\sin(t)\right]=2\frac{d}{dt}\left[\cos(t)\right]-3\frac{d}{dt}\left[\sin(t)\right].
-$$
+\begin{align*}
+ h'(t) &=\frac{d}{dt}\left[2\cos(t)-3\sin(t)\right] \\
+ &=2\frac{d}{dt}\left[\cos(t)\right]-3\frac{d}{dt}\left[\sin(t)\right].
+\end{align*}
 
 As we know the derivatives of $\cos(t)$ and $\sin(t)$, we find
 
-$$
- h'(t)=2\frac{d}{dt}\left[\cos(t)\right]-3\frac{d}{dt}\left[\sin(t)\right]=2(-\sin(t))-3(\cos(t))=-2\sin(t)-3\cos(t).
-$$
+\begin{align*}
+ h'(t) &= 2\frac{d}{dt}\left[\cos(t)\right]-3\frac{d}{dt}\left[\sin(t)\right] \\
+ &= 2(-\sin(t))-3(\cos(t)) \\
+ &= -2\sin(t)-3\cos(t).
+\end{align*}
 ::::::
 
 ::::::{prf:example} 
@@ -608,15 +701,21 @@ $$
  \lim_{h\rightarrow 0^+}\frac{f(h)-f(0)}{h}=\lim_{h\rightarrow 0^+}\frac{h^2-0}{h}=\lim_{h\rightarrow 0^-}h=0.
 $$
 
-Since the left and right limits are equal, the total limit exists and we find that $f'(0)=\displaystyle \lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}=0$.
+Since the left and right limits are equal, the total limit exists and we find that
+
+$$
+f'(0)=\displaystyle \lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}=0.
+$$
 
 For $x=1$, we obtain on the other hand
 
-$$
- \lim_{h\rightarrow 1^-}\frac{f(1+h)-f(1)}{h}=\lim_{h\rightarrow 0^-}\frac{(1+h)^2-(-2)}{h}=\lim_{h\rightarrow 0^-}\frac{1+2h+h^2+2}{h}=\lim_{h\rightarrow 0^-}\frac{3+2h+h^2}{h},
-$$
+\begin{align*}
+ \lim_{h\rightarrow 1^-}\frac{f(1+h)-f(1)}{h} &= \lim_{h\rightarrow 0^-}\frac{(1+h)^2-(-2)}{h} \\
+ &=\lim_{h\rightarrow 0^-}\frac{1+2h+h^2+2}{h} \\
+ &=\lim_{h\rightarrow 0^-}\frac{3+2h+h^2}{h},
+\end{align*}
 
-which does not exist (the limit $\lim_{h\rightarrow 1^+}\frac{f(1+h)-f(1)}{h}$ does exist and is equal to to $-2$). So this means that $f$ is not differentiable in $x=1$. We could have seen this coming, since the function is also not continuous at $x=1$, so it had no cahnce of being differentiable on account of {prf:ref}`Thm:Differentiability:Diffimpliescont`.
+which does not exist (the limit $\lim_{h\rightarrow 1^+}\frac{f(1+h)-f(1)}{h}$ does exist and is equal to to $-2$). So this means that $f$ is not differentiable in $x=1$. We could have seen this coming, since the function is also not continuous at $x=1$, so it had no chance of being differentiable on account of {prf:ref}`Thm:Differentiability:Diffimpliescont`.
 ::::::
 
 ## Higher order derivatives
@@ -653,27 +752,48 @@ For notational convenience, specifically when considering Taylor polynomials (se
 
 ::::::{prf:definition} 
 :label: Def:Differentiability:Higherorderderivative
-For any function $f$, the **zeroth derivative** of $f$, is the function itself. We write $\displaystyle f^{(0)}=\frac{d^0}{dx^0}f=D^0f=f$.
+For any function $f$, the **zeroth derivative** of $f$, is the function itself. We write
+
+$$
+f^{(0)}=\frac{d^0}{dx^0}f=D^0f=f.
+$$
+
 ::::::
 
 ::::::{prf:example} 
 :label: Def:Differentiability:Higherorderderivative1
 Consider the function $g(t)=-3\cos(t)+4t^3-t$. Using the basic computation rules {prf:ref}`Thm:Differentiability:Sumscalar` and the standard derivatives {prf:ref}`Thm:Differentiability:Standard1` we find that
 
-$$
-\frac{dg}{dt}=-3\frac{d\cos(t)}{dt}+4\frac{dt^3}{dt}-\frac{dt}{dt}=-3(-\sin(t))+4(3t^{3-1})-1=-3\sin(t)+12t^2-1.
-$$
+\begin{align*}
+\frac{dg}{dt} &= -3\frac{d\cos(t)}{dt}+4\frac{dt^3}{dt}-\frac{dt}{dt} \\
+&=-3(-\sin(t))+4(3t^{3-1})-1 \\
+&=-3\sin(t)+12t^2-1.
+\end{align*}
 
 The resulting function is again differentiable and we obtain
 
-$$
-\frac{d^2g}{dt^2}=\frac{d}{dt}\left[\frac{dg}{dt}\right]=-3\frac{d\sin(t)}{dt}+12\frac{dt^2}{dt}-\frac{d1}{dt}=-3\cos(t)+12(2t^{2-1})-0=-3\cos(t)+24t.
-$$
+\begin{align*}
+\frac{d^2g}{dt^2} &=\frac{d}{dt}\left[\frac{dg}{dt}\right] \\
+&= -3\frac{d\sin(t)}{dt}+12\frac{dt^2}{dt}-\frac{d1}{dt} \\
+&= -3\cos(t)+12(2t^{2-1})-0 \\
+&= -3\cos(t)+24t.
+\end{align*}
 ::::::
 
 ::::::{prf:example} 
 :label: Def:Differentiability:Higherorderderivative2
-Consider the function $h(\theta)=\sin(\theta)$. Then we find $h'(\theta)=\cos(\theta)$, $h''(\theta)=-\sin(\theta)$, $h^{(3)}(\theta)=-\cos(\theta)$ and $h^{(4)}(\theta)=\sin(\theta)$. So after differentiating $4$ times, we obtain the original function again. This allows us to find high order derivatives of this function very quickly. Indeed, if we want to know the $1001$st derivative of $h$, we notice that $1000$ is divisible by $4$, so if we compute the thousandth derivative we make $250$ full loops of $4$ derivatives and end up with the original function. This means that $h^{(1000)}(\theta)=\sin(\theta)$. As such, we find that $h^{(1001)}(\theta)=\cos(\theta)$.
+Consider the function $h(\theta)=\sin(\theta)$. Then we find
+
+\begin{align*}
+h'(\theta)&=\cos(\theta), \\
+h''(\theta)&=-\sin(\theta), \\
+h^{(3)}(\theta)&=-\cos(\theta), \\
+h^{(4)}(\theta)&=\sin(\theta).
+\end{align*}
+
+So after differentiating $4$ times, we obtain the original function again. This allows us to find high order derivatives of this function very quickly.
+
+Indeed, if we want to know the $1001$st derivative of $h$, we notice that $1000$ is divisible by $4$, so if we compute the thousandth derivative we make $250$ full loops of $4$ derivatives and end up with the original function. This means that $h^{(1000)}(\theta)=\sin(\theta)$. As such, we find that $h^{(1001)}(\theta)=\cos(\theta)$.
 ::::::
 
 ::::::{prf:example} 

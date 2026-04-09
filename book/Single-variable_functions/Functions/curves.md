@@ -291,7 +291,7 @@ Replace {numref}`Fig:Curves:Ellipse2` with an applet.
 For any point $P:(x,y)$ on the ellipse, the distance to $F_1:(c,0)$ is $\sqrt{(x-c)^2+(y-0)^2}=\sqrt{(x-c)^2+y^2}$, while the distance to $F_2:(-c,0)$ is $\sqrt{(x-(-c))^2+(y-0)^2}=\sqrt{(x+c)^2+y^2}$. Hence, $(x,y)$ is on the ellipse precisely when
 
 $$
- \mathrm{dist}(P,F_1)+\mathrm{dist}(P,F_2)=\sqrt{(x-c)^2+y^2}+\sqrt{(x+c)^2+y^2}=2a.
+ \text{dist}(P,F_1)+\text{dist}(P,F_2)=\sqrt{(x-c)^2+y^2}+\sqrt{(x+c)^2+y^2}=2a.
 $$
 
 We bring $\sqrt{(x+c)^2+y^2}$ to the other side of the equation and take the square of both sides of the equation to obtain
@@ -779,7 +779,7 @@ $$
 As such, if $x>0$ the absolute difference of the distances between $P$ and the focal points is
 
 \begin{align*}
- \left|\mathrm{dist}(P,F_1)-\mathrm{dist}(P,F_2)\right| &= \left|\left(x+x^{-1}\right)+\sqrt{2}\right|-\left|\left(x+x^{-1}\right)-\sqrt{2}\right| \\
+ \left|\text{dist}(P,F_1)-\text{dist}(P,F_2)\right| &= \left|\left(x+x^{-1}\right)+\sqrt{2}\right|-\left|\left(x+x^{-1}\right)-\sqrt{2}\right| \\
  &= \left(\left(x+x^{-1}\right)+\sqrt{2}\right)-\left(\left(x+x^{-1}\right)-\sqrt{2}\right) \\
  &=2\sqrt{2}.
 \end{align*}
@@ -868,7 +868,7 @@ $$
 Consider any point $P:(x_0,y_0)$. Then the distance to the focus point is given by
 
 $$
- \mathrm{dist}(P,F)=\sqrt{\left(x_0-p\right)^2+\left(y_0-q\right)^2}.
+ \text{dist}(P,F)=\sqrt{\left(x_0-p\right)^2+\left(y_0-q\right)^2}.
 $$
 
 In order to compute the distance from $P$ to the line, we use some ideas from {numref}`Sec:LinesAndPlanes`. Note that the directrix can be written in vector form as $\begin{pmatrix}a\\ b\end{pmatrix}\cdot\begin{pmatrix}x\\ y\end{pmatrix}=-c$. As such, the line $\begin{pmatrix}a\\ b\end{pmatrix}\cdot\begin{pmatrix}x\\ y\end{pmatrix}=0$ is parallel to the directrix and from this we can read off that the vector $\begin{pmatrix}a\\ b\end{pmatrix}$ is perpendicular to the directrix. Hence, the line $\mathcal{L}$ with parametric vector equation $\begin{pmatrix}x\\ y\end{pmatrix}=\begin{pmatrix}x_0\\ y_0\end{pmatrix}+t\begin{pmatrix} a\\ b\end{pmatrix}$ passes through $(x_0,y_0)$ and is perpendicular to the directrix. As such, the intersection point of this line $\mathcal{L}$ and the directrix will give the point on the directrix closest to $(x_0,y_0)$. Plugging in the parametric vector equation into the equation for the directrix gives
@@ -892,14 +892,14 @@ $$
 which gives that the requested distance is
 
 \begin{align*}
- \mathrm{dist}(d,P) &= \sqrt{\left(x_0+\frac{-ax_0-by_0-c}{a^2+b^2}a-x_0\right)^2+\left(y_0+\frac{-ax_0-by_0-c}{a^2+b^2}b-y_0\right)^2} \\
+ \text{dist}(d,P) &= \sqrt{\left(x_0+\frac{-ax_0-by_0-c}{a^2+b^2}a-x_0\right)^2+\left(y_0+\frac{-ax_0-by_0-c}{a^2+b^2}b-y_0\right)^2} \\
  &~ \quad\cdot\sqrt{\left(-ax_0-by_0-c\right)\frac{a^2}{\left(a^2+b^2\right)^2}+\left(-ax_0-by_0-c\right)\frac{b^2}{\left(a^2+b^2\right)^2}} \\
  &= \sqrt{\left(-ax_0-by_0-c\right)^2\frac{a^2+b^2}{\left(a^2+b^2\right)^2}} \\
  &= \sqrt{\left(-ax_0-by_0-c\right)^2\frac{1}{a^2+b^2}} \\
  &= \frac{|-ax_0-by_0-c|}{\sqrt{a^2+b^2}}.
 \end{align*}
 
-Since the parabola consists of those points for which $\mathrm{dist}(d,P)=\mathrm{dist}(P,F)$, or equivalently when $\left(\mathrm{dist}(d,P)\right)^2=\left(\mathrm{dist}(P,F)\right)^2$ we find that $(x_0,y_0)$ lies on the parabola precisely when
+Since the parabola consists of those points for which $\text{dist}(d,P)=\text{dist}(P,F)$, or equivalently when $\left(\text{dist}(d,P)\right)^2=\left(\text{dist}(P,F)\right)^2$ we find that $(x_0,y_0)$ lies on the parabola precisely when
 
 $$
  \left(x_0-p\right)^2+\left(y_0-q\right)^2=\left(\frac{|-ax_0-by_0-c}{\sqrt{a^2+b^2}}\right)^2=\frac{\left(ax_0+by_0+c\right)}{a^2+b^2},
