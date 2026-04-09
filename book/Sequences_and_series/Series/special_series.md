@@ -103,7 +103,7 @@ $$
 \text{sum}=\frac{\text{first term}}{1-\text{common ratio}}.
 $$
 
-Do remember that the series should have starting index $1$ and the power of the common ration should be $n-1$ for this formula to work. If the series does not have this form, then you can always use the properties of finite series to rewrite the series in a form that does have this form, and then apply the formula.
+Do remember that the series should have starting index $1$ and the power of the common ration should be $n-1$ for this formula to work. If the series does not have this form, then you can always use the properties of series to rewrite the series in a form that does have this form, and then apply the formula.
 
 ::::::
 
@@ -205,6 +205,7 @@ Second, let $q=0.\overline{135}$, then we have
 
 ::::::
 
+(Sec:Series:pSeries)=
 ## $p$-series
 
 Another type of series are _$p$-series_, which are series of the form $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ for some real number $p$. The _harmonic series_ is the special case of a $p$-series with $p=1$, which you have already seen to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`. You also have seen a $p$-series with $p=2$ in {prf:ref}`Ex:Series:AbsoluteConvergence1`, which is convergent and has sum $\frac{3}{4}$.
@@ -300,6 +301,7 @@ Finally, for $p\leq0$ the general term of the series $\dfrac{1}{n^p}$ does not e
 This proves that the $p$-series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ is convergent if $p>1$ and divergent if $p\leq1$.
 ::::::
 
+Later we will see that for $p=2$ the $p$-series evaluates to $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\approx1.64493$. We wil do this in {prf:ref}`Ex:Series:FourierExample2` and {prf:ref}`Ex:Series:FourierExample3`.
 
 ## Telescoping series
 
@@ -725,7 +727,7 @@ Later we will be able to show that $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n
 ## Grasple exercises
 
 :::{todo}
-Add Grasple exercises for this section.
+Add Grasple exercises for {numref}`Sec:Series:SpecialSeries`.
 :::
 
 ## Exercises

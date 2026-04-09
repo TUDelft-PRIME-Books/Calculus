@@ -372,6 +372,7 @@ $$
 
 With this we end our treatment of finite series.
 
+(Sec:Series:InfiniteSeries)=
 ## Infinite series
 
 ### Convergence and divergence
@@ -388,7 +389,11 @@ s_n=\displaystyle\sum_{k=p}^{n+p-1}a_k=a_p+a_{p+1}+a_{p+2}+\cdots+a_{n+p-1}.
 $$
 ::::
 
-In other words, the $n$th partial sum of a series is the sum of the first $n$ terms of the series.
+In other words, the $n$th partial sum of a series is the sum of the first $n-p+1$ terms of the series.
+
+::::::{note}
+For $\displaystyle\sum_{n=1}^{\infty}a_n$ the $N$th partial sum $s_N$ is the sum of the first $N$ terms. However, we call $s_N$ still the $N$th partial sum of the series even when the series $\displaystyle\sum a_n$ does not start at $n=1$. So, for instance, if $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$ then $s_N=\displaystyle\sum_{n=2}^N\frac{\ln(n)}{n}$ is the sum of the first $N-1$ terms and if $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n^2+1}$ then $s_N=\displaystyle\sum_{n=0}^N\frac{1}{n^2+1}$ is the sum of the first $N+1$ terms.
+::::::
 
 Using these  partial sums we can now look at the infinite series:
 
@@ -818,7 +823,7 @@ This concludes our treatment of absolute and conditional convergence. As you may
 ## Grasple exercises
 
 :::{todo}
-Add Grasple exercises.
+Add Grasple exercises for {numref}`Chapter:Series:Introduction`.
 :::
 
 ## Exercises
