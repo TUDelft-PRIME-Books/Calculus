@@ -383,6 +383,10 @@ $$
 
 ::::::
 
+:::{todo}
+Add a reference to $1^2+2^2+3^2+\cdots+n^2=\frac{1}{6}n(n+1)(2n+1)$.
+:::
+
 Since the width of each subinterval $[x_{n-1},x_n]$ tends to zero, the choice of the *sample point* $x_n^*$ in $[x_{n-1},x_n]$ is arbitrary. Except for this choice of the sample point, there are other ways to define a definite integral. We chose the definition of a so-called **Riemann integral**. Instead one could take the *lower sum* of all areas with as height the minimum of $f$ in each subinterval and the *upper sum* of all areas with as height the maximum of $f$ in each subinterval. A function $f$ is then called integrable if the *supremum* of all lower sums equals the *infimum* of all upper sums, being the value of the integral. This is the definition of a so-called **Darboux integral**, named after the French mathematician [Jean-Gaston Darboux (1842-1917)](https://en.wikipedia.org/wiki/Jean_Gaston_Darboux).
 
 A function $f$ is Darboux integrable if and only if it is Riemann integrable. Moreover, the values of the integrals are the same.

@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Integrals, both definite and indefinite, may contain trigonometric functions. In this section we will see how to evaluate such integrals. We will start with integrating the trigonometric functions and then we will use these integrals to evaluate more complicated integrals.
+In this section we will see how to evaluate integrals, both definite and indefinite, for which the integrand consists of trigonometric functions only (except possibly for an additive constant). We will start with integrating the trigonometric functions and then we will use these integrals to evaluate more complicated integrals.
 
 ## Integrals of simple trigonometric functions
 
@@ -28,7 +28,7 @@ $$
 \int\frac{1}{\tan(x)}\,dx=\int\frac{\cos(x)}{\sin(x)}\,dx=\int\frac{du}{u}=\ln|u|+C=\ln|\sin(x)|+C.
 $$
 
-We can also integrate the reciprocal of the sine. For the this we need the Pythagorean identity $\sin^2(x)+\cos^2(x)=1$ and the substitution $u=\cos(x)$:
+We can also integrate the reciprocal of the sine. For this we need the {prf:ref}`Pythagorean identity <Thm:Trigonometry:UnitCircleIdentity>` $\sin^2(x)+\cos^2(x)=1$ and the substitution $u=\cos(x)$:
 
 \begin{align*}
 \int\frac{1}{\sin(x)}\,dx &= \int\frac{\sin(x)}{\sin^2(x)}\,dx \\
@@ -47,10 +47,10 @@ $$
 \int\frac{1}{\cos(x)}\,dx = \frac{1}{2}\ln\left|\frac{1+\sin(x)}{1-\sin(x)}\right|+C.
 $$
 
-Instead of integrating the (reciprocals of the) sine, cosine and tangent, we can also differentiate them and using the concept of antiderivatives from {numref}`Sec:Integration:IndefiniteIntegrals` we can find the integrals. For example, since $\displaystyle\frac{d}{dx}\tan(x)=\frac{1}{\cos^2(x)}=1+\tan^2(x)$ we have
+Instead of integrating the (reciprocals of the) sine, cosine and tangent, we can also differentiate them and using the concept of antiderivatives from {numref}`Sec:Integration:IndefiniteIntegrals` we can evaluate the integrals. For example, since $\displaystyle\frac{d}{dx}\tan(x)=\frac{1}{\cos^2(x)}=1+\tan^2(x)$ we have
 
 $$
-\int\frac{1}{\cos^2(x)}\,dx=\int 1+\tan^2(x)\,dx=\tan(x)+C.
+\int\frac{1}{\cos^2(x)}\,dx=\int\left(1+\tan^2(x)\right)\,dx=\tan(x)+C.
 $$
 
 The sine and cosine do not really give new results, but the reciprocal of the sine, cosine and tangent do, for which you can find the result (and all others until now) in {numref}`Tab:Integration:TrigonometricIndefiniteIntegrals`.
@@ -115,7 +115,7 @@ $$
 \int\frac{dx}{\sin(x)}=-\int\frac{du}{u}=-\ln|u|+C=-\ln\left|\frac{\cos(x)}{\sin(x)}+\frac{1}{\sin(x)}\right|+C.
 $$
 
-Note that is can also be written as:
+Note that this can also be written as:
 
 $$
 \int\frac{dx}{\sin(x)}=-\ln\left|\frac{1+\cos(x)}{\sin(x)}\right|+C=\ln\left|\frac{1-\cos(x)}{\sin(x)}\right|+C.
@@ -127,23 +127,24 @@ As you may notice, the definite integral of a reciprocal of the (co)sine has sev
 
 ## Products of trigonometric functions
 
-We consider integrals of the form $\displaystyle\int\sin^m(x)\cos^n(x)\,dx$ for integer values of $m$ and $n$. If (at least) one of these integers is odd, we can use a substitution and the Pythagorean identity (see {prf:ref}`Thm:Trigonometry:UnitCircleIdentity`).
+We consider integrals of the form $\displaystyle\int\sin^m(x)\cos^n(x)\,dx$ for integer values of $m$ and $n$. If (at least) one of these integers is odd, we can use a substitution and the {prf:ref}`Pythagorean identity <Thm:Trigonometry:UnitCircleIdentity>`.
 
 If $m=2k+1$ with $k\in\{0,1,2,\ldots\}$, so $m$ is odd, then we have using the substitution $u=\cos(x)$
 
 \begin{align*}
 \int\sin^{2k+1}(x)\cos^n(x)\,dx &= \int\left(\sin^{2}(x)\right)^k\cos^n(x)\sin(x)\,dx \\
 &= \int\left(1-\cos^{2}(x)\right)^k\cos^n(x)\sin(x)\,dx \\
-&=-\int\left(1-u^2\right)^ku^n\,du.
+&= -\int\left(1-u^2\right)^ku^n\,du.
 \end{align*}
 
 If $n=2k+1$ with $k\in\{0,1,2,\ldots\}$, so $n$ is odd, then we have using the substitution $u=\sin(x)$
 
 \begin{align*}
 \int\sin^m(x)\cos^{2k+1}(x)\,dx &= \int \sin^m(x)\left(\cos^{2}(x)\right)^k\cos(x)\,dx \\
-\int \sin^m(x)\left(1-\sin^{2}(x)\right)^k\cos(x)\,dx \\
-&=\int u^m\left(1-u^2\right)^k\,du.
+&= \int \sin^m(x)\left(1-\sin^{2}(x)\right)^k\cos(x)\,dx \\
+&= \int u^m\left(1-u^2\right)^k\,du.
 \end{align*}
+
 In both cases we end up with an integral of a polynomial, which can be directly evaluated. If both powers are odd, both methods will work.
 
 ::::::{prf:Example}
@@ -163,7 +164,7 @@ Using $u=\cos(x)$ we obtain
 
 ::::::{prf:Example}
 :label: Ex:Integration:TrigFunctionsPowerEvenSinOddCos
-Let us determine $\displaystyle\int\sin^4(x)\cos^3(x)\,dx$.
+Let us evaluate $\displaystyle\int\sin^4(x)\cos^3(x)\,dx$.
 
 Using $u=\sin(x)$ we obtain
 
@@ -181,7 +182,7 @@ If both powers are even, it is more difficult. We may use the half-angle formula
 
 ::::::{prf:Example}
 :label: Ex:Integration:TrigFunctionsPowerEvenSinOddCos2
-We compute $\displaystyle\int\sin^2(x)\cos^4(x)\,dx$.
+Consider $\displaystyle\int\sin^2(x)\cos^4(x)\,dx$.
 
 Using $\sin(x)\cos(x)=\frac{1}{2}\sin(2x)$ and $\cos^2(x)=\frac{1}{2}(1+\cos(2x))$ we have
 
@@ -189,6 +190,7 @@ Using $\sin(x)\cos(x)=\frac{1}{2}\sin(2x)$ and $\cos^2(x)=\frac{1}{2}(1+\cos(2x)
 \int\sin^2(x)\cos^4(x)\,dx&=\frac{1}{8}\int\sin^2(2x)(1+\cos(2x))\,dx\\
 &=\frac{1}{8}\int\sin^2(2x)\,dx+\frac{1}{8}\int\sin^2(2x)\cos(2x)\,dx.
 \end{align*}
+
 Now we might use $\sin^2(2x)=\frac{1}{2}(1-\cos(4x))$ to obtain
 
 $$
@@ -202,6 +204,7 @@ Using the substitution $u=\sin(2x)$ we find that
 &=\frac{1}{6}u^3+C_2\\
 &=\frac{1}{6}\sin^3(2x)+C_2.
 \end{align*}
+
 Finally, we conclude that
 
 $$
@@ -214,7 +217,7 @@ Sometimes, these techniques also work in case of quotients instead of products.
 
 ::::::{prf:Example}
 :label: Ex:Integration:TrigFunctionsPowerNegative1
-We investigate the indefinite integral of $\displaystyle\frac{\cos(x)}{\sin^2(x)}$.
+We evaluate the indefinite integral of $\displaystyle\frac{\cos(x)}{\sin^2(x)}$.
 
 Using $u=\sin(x)$ we obtain
 
@@ -249,7 +252,8 @@ Since $\displaystyle\frac{d}{dx}\tan(x)=\frac{1}{\cos^2(x)}$ we use $u=\tan(x)$ 
 \begin{align*}
 \int\frac{\sin^2(x)}{\cos^4(x)}\,dx &= \int\frac{\sin^2(x)}{\cos^2(x)}\frac{1}{\cos^2(x)}\,dx \\
 &=\int\tan^2(x)\frac{1}{\cos^2(x)}\,dx \\
-&=\int u^2\,du=\frac{1}{3}u^3+C\\
+&=\int u^2\,du\\
+&=\frac{1}{3}u^3+C\\
 &=\frac{1}{3}\tan^3(x)+C.
 \end{align*}
 ::::::
@@ -271,7 +275,7 @@ Since $\displaystyle\frac{d}{dx}\left(\frac{1}{\tan(x)}\right)=-\frac{1}{\sin^2(
 
 ::::::{prf:Example}
 :label: Ex:Integration:TrigFunctionsPowerNegative5
-We now calculate $\displaystyle\int\frac{\sin^2(x)}{\cos^6(x)}\,dx$.
+We now evaluate $\displaystyle\int\frac{\sin^2(x)}{\cos^6(x)}\,dx$.
 
 Since $\displaystyle\frac{d}{dx}\tan(x)=\frac{1}{\cos^2(x)}=1+\tan^2(x)$ we use $u=\tan(x)$ to obtain
 
@@ -312,7 +316,7 @@ We integrate $\displaystyle\sin(5x)\cos(3x)$:
 
 ::::::{prf:Example}
 :label: Ex:Integration:TrigFunctionsProductFormulas2
-We determine $\displaystyle\int\sin(2x)\cos(5x)\,dx$:
+We evaluate $\displaystyle\int\sin(2x)\cos(5x)\,dx$:
 
 \begin{align*}
 \int\sin(2x)\cos(5x)\,dx&=\frac{1}{2}\int(-\sin(3x)+\sin(7x))\,dx\\
@@ -379,7 +383,7 @@ and
 \int\cos^{2k+1}(x)\,dx&=\int\left(1-u^2\right)^k\,du & \text{using }u=\cos(x).
 \end{align*}
 
-In both cases we end up with an integral of a polynomial, which can be directly evaluated.
+In both cases we end up with an integral of a polynomial, which can be evaluated directly.
 
 ::::::{prf:Example}
 :label: Ex:Integration:TrigFunctionsPowerOddSin
@@ -415,6 +419,7 @@ Using $\sin^2(x)=\dfrac{1}{2}(1-\cos(2x))$ the indefinite integral of $\sin^4(x)
 \int\sin^4(x)\,dx&=\frac{1}{4}\int\left(1-\cos(2x)\right)^2\,dx\\
 &=\frac{1}{4}\int\left(1-2\cos(2x)+\cos^2(2x)\right)\,dx.
 \end{align*}
+
 Now we use $\cos^2(2x)=\dfrac{1}{2}(1+\cos(4x))$ to find that
 
 \begin{align*}
@@ -428,7 +433,10 @@ Another option for powers of sine, is to use integration by parts to find a redu
 
 ::::::{prf:Example}
 :label: Ex:Integration:PartsReductionSin
-We will show that $\displaystyle\int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx$ for $n=2,3,4,\ldots$.
+We will show that 
+$$
+\int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx, \quad n=2,3,4,\ldots.
+$$ 
 
 For $n=2,3,4,\ldots$ we obtain
 
@@ -438,6 +446,7 @@ For $n=2,3,4,\ldots$ we obtain
 &=-\cos(x)\sin^{n-1}(x)+(n-1)\int\cos(x)\sin^{n-2}(x)\cos(x)\,dx\\
 &=-\cos(x)\sin^{n-1}(x)+(n-1)\int\sin^{n-2}(x)\cos^2(x)\,dx.
 \end{align*}
+
 Now we use $\cos^2(x)=1-\sin^2(x)$ to find
 
 \begin{align*}
@@ -470,6 +479,7 @@ Since $\displaystyle\frac{d}{dx}\tan(x)=1+\tan^2(x)$ we have
 &=\int\left(1+\tan^2(x)\right)\,dx-\int1\,dx\\
 &=\tan(x)-x+C.
 \end{align*}
+
 For higher powers we use a reduction formula for $k\in\{2,3,4,\ldots\}$
 
 \begin{align*}
@@ -478,7 +488,8 @@ For higher powers we use a reduction formula for $k\in\{2,3,4,\ldots\}$
 &=\int\tan^{k-2}(x)\,d\tan(x)-\int\tan^{k-2}(x)\,dx\\
 &=\frac{1}{k-1}\tan^{k-1}(x)-\int\tan^{k-2}(x)\,dx.
 \end{align*}
-For $k=2$ this results in the same result as before:
+
+For $k=2$ this gives the same result as before:
 
 $$
 \int\tan^2(x)\,dx=\tan(x)-\int1\,dx=\tan(x)-x+C.
@@ -503,7 +514,7 @@ For $k=5$ we have
 &=\frac{1}{4}\tan^4(x)-\frac{1}{2}\tan^2(x)-\ln|\cos(x)|+C.
 \end{align*}
 
-(sec:Integration:HalfAngle)=
+(Sec:Integration:HalfAngle)=
 ## The tangent half-angle substitution
 
 The **tangent half-angle substitution**, sometimes (misattributed[^misattributed]) as the **Weierstrass substitution**, converts an integral of a rational function of trigonometric functions into an integral of an ordinary rational function. Although integrals of rational functions will be covered in {numref}`Sec:Integration:RationalFunctions`, we will show how the substitution works.
@@ -517,7 +528,7 @@ We start with the definition of the tangent half-angle substitution:
 The **tangent half-angle substitution** is the substitution
 
 $$
-t=\tan(\frac{1}{2}x)\quad\text{for}\quad-\pi<x<\pi
+t=\tan(\tfrac{1}{2}x)\quad\text{for}\quad-\pi<x<\pi
 $$
 
 or equivalently
@@ -528,7 +539,7 @@ $$
 
 :::
 
-If we use this substitution, we can also use $dx=\dfrac{2\,dt}{1+t^2}$.
+If we use this substitution, we also have $dx=\dfrac{2\,dt}{1+t^2}$.
 
 The relation between $t$ and the sine and cosine is given by the following theorem:
 
@@ -543,7 +554,7 @@ $$
 and
 
 $$
-\sin(x)=\frac{2t}{1+t^2}\quad\text{and}\quad\cos(x)=\frac{1-t^2}{1+t^2}\quad\text{and}\quad\tan(x)=\frac{2t}{1-t^2}.
+\sin(x)=\frac{2t}{1+t^2},\quad\cos(x)=\frac{1-t^2}{1+t^2}\quad\text{and}\quad\tan(x)=\frac{2t}{1-t^2}.
 $$
 
 :::::
@@ -576,13 +587,11 @@ Hence, we have: $\sin(\frac{1}{2}x)=\pm\dfrac{t}{\sqrt{1+t^2}}$. Since $\sin(\fr
 This leads to
 
 $$
-\sin(x)=2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)=\frac{2t}{1+t^2}
+\sin(x)=2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)=\frac{2t}{1+t^2},
 $$
 
-and
-
 $$
-\cos(x)=\cos^2(\tfrac{1}{2}x)-\sin^2(\tfrac{1}{2}x)=\frac{1-t^2}{1+t^2}.
+\cos(x)=\cos^2(\tfrac{1}{2}x)-\sin^2(\tfrac{1}{2}x)=\frac{1-t^2}{1+t^2}
 $$
 
 and
@@ -626,7 +635,7 @@ Let $t=\tan(\frac{1}{2}x)$, then we have $\tan(x)=\dfrac{2t}{1-t^2}$ and $dx=\df
 &=-\ln|\cos(x)|+C.
 \end{align*}
 
-In the second step, directly after the substitution, we have used a partial fraction decomposition, which you can read all about in {numref}`sec:PartialFractionDecomposition`. In the last step we have used $\cos(x)=\cos^2(\frac{1}{2}x)-\sin^2(\frac{1}{2}x)$.
+In the second step, directly after the substitution, we have used a partial fraction decomposition, which you can read all about in {numref}`sec:PartialFractionDecomposition`. In a later step we have used $\cos(x)=\cos^2(\frac{1}{2}x)-\sin^2(\frac{1}{2}x)$.
 
 ::::::
 
@@ -653,15 +662,16 @@ Let $t=\tan(\frac{1}{2}x)$, then we have $\cos(x)=\dfrac{1-t^2}{1+t^2}$ and $dx=
 \int\frac{dx}{\cos(x)}&=\int\frac{1}{\dfrac{1-t^2}{1+t^2}}\cdot\frac{2\,dt}{1+t^2} \\
 &=\int\frac{2\,dt}{1-t^2} \\
 &=\int\left(\frac{1}{1+t}+\frac{1}{1-t}\right)\,dt\\
-&=\ln|1+t|-\ln|1-t|+C=\ln\left|\frac{1+t}{1-t}\right|+C\\
+&=\ln|1+t|-\ln|1-t|+C\\
+&=\ln\left|\frac{1+t}{1-t}\right|+C\\
 &=\ln\left|\frac{1+\tan(\frac{1}{2}x)}{1-\tan(\frac{1}{2}x)}\right|+C.
 \end{align*}
 
-Here we again used a partial fraction decomposition in the third step, which you can read all about in {numref}`sec:PartialFractionDecomposition`. 
+Here again we used a partial fraction decomposition in the third step, which you can read all about in {numref}`sec:PartialFractionDecomposition`. 
 
 ::::::
 
-We give some more exampled of how you can use the tangent half-angle substitution in definite integrals:
+We give some more examples of how you can use the tangent half-angle substitution in definite integrals:
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionTangentHalfAngleExample1
@@ -824,6 +834,7 @@ Use $\displaystyle\frac{1}{\cos(x)}=\frac{\cos(x)}{\cos^2(x)}$ and the substitut
 &=\frac{1}{2}\int\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du=\frac{1}{2}\left(\ln|1+u|-\ln|1-u|\right)+C\\
 &=\frac{1}{2}\ln\left|\frac{1+u}{1-u}\right|+C=\frac{1}{2}\ln\left|\frac{1+\sin(x)}{1-\sin(x)}\right|+C.
 \end{align*}
+
 Note that
 
 $$
@@ -851,6 +862,7 @@ Use $\displaystyle\frac{1}{\sin(x)}=\frac{\sin(x)}{\sin^2(x)}$ and the substitut
 &=-\frac{1}{2}\int\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du=-\frac{1}{2}\left(\ln|1+u|-\ln|1-u|\right)+C\\
 &=-\frac{1}{2}\ln\left|\frac{1+u}{1-u}\right|+C=-\frac{1}{2}\ln\left|\frac{1+\cos(x)}{1-\cos(x)}\right|+C.
 \end{align*}
+
 Note that
 
 $$
@@ -886,6 +898,7 @@ Consider $\displaystyle\int\sin^3(x)\cos^5(x)\,dx$.
 &=-\frac{1}{6}u^6+\frac{1}{8}u^8+C\\
 &=-\frac{1}{6}\cos^6(x)+\frac{1}{8}\cos^8(x)+C.
 \end{align*}
+
 (b) Using $=\sin(x)$ we have
 
 \begin{align*}
@@ -919,6 +932,7 @@ and
 &\int_{-\pi}^{\pi}\cos(mx)\cos(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\left(\cos((m-n)x)+\cos((m+n)x)\right)\,dx\\
 &=\bigg[\frac{1}{2(m-n)}\sin((m-n)x)+\frac{1}{2(m+n)}\sin((m+n)x)\bigg]_{-\pi}^{\pi}=0.
 \end{align*}
+
 For $m=n$ we use a half-angle formula to obtain
 
 $$
@@ -931,6 +945,7 @@ $$
 &\int_{-\pi}^{\pi}\sin(mx)\sin(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\left(\cos((m-n)x)-\cos((m+n)x)\right)\,dx\\
 &=\bigg[\frac{1}{2(m-n)}\sin((m-n)x)-\frac{1}{2(m+n)}\sin((m+n)x)\bigg]_{-\pi}^{\pi}=0.
 \end{align*}
+
 For $m=n$ we use a half-angle formula to obtain
 
 $$
@@ -943,6 +958,7 @@ $$
 &\int_{-\pi}^{\pi}\sin(mx)\cos(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\left(\sin((m-n)x)+\sin((m+n)x)\right)\,dx\\
 &=\bigg[-\frac{1}{2(m-n)}\cos((m-n)x)-\frac{1}{2(m+n)}\cos((m+n)x)\bigg]_{-\pi}^{\pi}=0.
 \end{align*}
+
 Moreover, if $m=n$ we also have
 
 $$
@@ -1016,6 +1032,7 @@ Let $t=\tan(\frac{1}{2}x)$, then we have $\sin(x)=\dfrac{2t}{1+t^2}$ and $dx=\df
 \int\frac{dx}{1+\sin(x)}&=\int\frac{1}{1+\dfrac{2t}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int\frac{2}{(1+t)^2}\,dt=-\frac{2}{1+t}+C\\
 &=-\frac{2}{1+\tan(\tfrac{1}{2}x)}+C=-\frac{2\cos(\frac{1}{2}x)}{\cos(\frac{1}{2}x)+\sin(\frac{1}{2}x)}+C.
 \end{align*}
+
 Note that, since $-2\cos(\frac{1}{2}x)=-2\cos(\frac{1}{2}x)-2\sin(\frac{1}{2}x)+2\sin(\frac{1}{2}x)$, we have
 
 $$
@@ -1055,12 +1072,14 @@ and therefore
 4t&=A(1+t)(1+t^2)+B(1+t^2)+Ct(1+t)^2+D(1+t)^2\\
 &=(A+C)t^3+(A+B+2C+D)t^2+(A+C+2D)t+A+B+D.
 \end{align*}
+
 This implies that $A=0$, $B=-2$, $C=0$ and $D=2$. Hence we have
 
 \begin{align*}
 \int\frac{\sin(x)}{1+\sin(x)}\,dx&=\int\left(\frac{2}{1+t^2}-\frac{2}{(1+t)^2}\right)\,dt=2\arctan(t)+\frac{2}{1+t}+C\\
 &=x+\frac{2}{1+\tan(\frac{1}{2}x)}+C=x+\frac{2\cos(\frac{1}{2}x)}{\cos(\frac{1}{2}x)+\sin(\frac{1}{2}x)}+C.
 \end{align*}
+
 Note that, since $2\cos(\frac{1}{2}x)=2\cos(\frac{1}{2}x)+2\sin(\frac{1}{2}x)-2\sin(\frac{1}{2}x)$, we have
 
 $$
@@ -1178,6 +1197,7 @@ Since $1-\sin(x)=\sin^2(\frac{1}{2}x)+\cos^2(\frac{1}{2}x)-2\sin(\frac{1}{2}x)\c
 &\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx=\int_0^{\frac{1}{2}\pi}\sqrt{\sin^2(\tfrac{1}{2}x)-2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)+\cos^2(\tfrac{1}{2}x)}\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\sqrt{\left(\sin(\tfrac{1}{2}x)-\cos(\tfrac{1}{2}x)\right)^2}\,dx=\int_0^{\frac{1}{2}\pi}\left|\sin(\tfrac{1}{2}x)-\cos(\tfrac{1}{2}x)\right|\,dx.
 \end{align*}
+
 Note that $\sin(\frac{1}{2}x)\leq\cos(\frac{1}{2}x)$ for $0\leq x\leq\tfrac{1}{2}\pi$. Hence we have
 
 \begin{align*}
@@ -1204,6 +1224,7 @@ Since $1+\sin(x)=\sin^2(\frac{1}{2}x)+\cos^2(\frac{1}{2}x)+2\sin(\frac{1}{2}x)\c
 &\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx=\int_0^{\frac{1}{2}\pi}\sqrt{\sin^2(\tfrac{1}{2}x)+2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)+\cos^2(\tfrac{1}{2}x)}\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\sqrt{\left(\sin(\tfrac{1}{2}x)+\cos(\tfrac{1}{2}x)\right)^2}\,dx=\int_0^{\frac{1}{2}\pi}\left|\sin(\tfrac{1}{2}x)+\cos(\tfrac{1}{2}x)\right|\,dx.
 \end{align*}
+
 Note that $\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)\geq0$ for $0\leq x\leq\tfrac{1}{2}\pi$. Hence we have
 
 \begin{align*}
@@ -1225,6 +1246,7 @@ Note that $\cos(x)\cos(2x)=\frac{1}{2}\left(\cos(x)+\cos(3x)\right)$ and therefo
 \cos(x)\cos(2x)\cos(3x)&=\frac{1}{2}\cos(x)\cos(3x)+\frac{1}{2}\cos(3x)\cos(3x)\\
 &=\frac{1}{4}\cos(2x)+\frac{1}{4}\cos(4x)+\frac{1}{4}+\frac{1}{4}\cos(6x).
 \end{align*}
+
 Hence, we have
 
 \begin{align*}
@@ -1246,6 +1268,7 @@ Note that $\sin(x)\sin(2x)=\frac{1}{2}\left(\cos(x)-\cos(3x)\right)$ and therefo
 \sin(x)\sin(2x)\sin(3x)&=\frac{1}{2}\cos(x)\sin(3x)-\frac{1}{2}\cos(3x)\sin(3x)\\
 &=\frac{1}{4}\sin(2x)+\frac{1}{4}\sin(4x)-\frac{1}{4}\sin(6x).
 \end{align*}
+
 Hence, we have
 
 \begin{align*}
@@ -1268,6 +1291,7 @@ For $n=2,3,4,\ldots$ we obtain
 &=\sin(x)\cos^{n-1}(x)+(n-1)\int\sin(x)\cos^{n-2}(x)\sin(x)\,dx\\
 &=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\sin^2(x)\,dx.
 \end{align*}
+
 Now we use $\sin^2(x)=1-\cos^2(x)$ to find
 
 \begin{align*}
@@ -1275,6 +1299,7 @@ Now we use $\sin^2(x)=1-\cos^2(x)$ to find
 &=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\left(1-\cos^2(x)\right)\,dx\\
 &=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\,dx-(n-1)\int\cos^n(x)\,dx.
 \end{align*}
+
 This implies that
 
 $$
@@ -1306,6 +1331,7 @@ $$
 \int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx&=-\frac{1}{n}\cos(x)\sin^{n-1}(x)\bigg|_0^{\frac{1}{2}\pi}+\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx\\
 &=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,
 \end{align*}
+
 since $\cos(\frac{1}{2}\pi)=0$ and $\sin(0)=0$. Note that $\sin^{n-1}(x)$ contains at least one factor $\sin(x)$ for $n=2,3,4,\ldots$.
 :::
 
@@ -1333,6 +1359,7 @@ Iteration now leads to
 \int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx&=\frac{2n}{2n+1}\cdot\frac{2n-2}{2n-1}\cdot\frac{2n-4}{2n-3}\cdots\frac{2}{3}\int_0^{\frac{1}{2}\pi}\sin(x)\,dx\\
 &=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},
 \end{align*}
+
 since $\displaystyle\int_0^{\frac{1}{2}\pi}\sin(x)\,dx=-\cos(x)\bigg|_0^{\frac{1}{2}\pi}=1$. Note that the products in the numerator and the denominator are written in the opposite order.
 :::
 
@@ -1360,6 +1387,7 @@ Iteration now leads to
 \int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx&=\frac{2n-1}{2n}\cdot\frac{2n-3}{2n-2}\cdot\frac{2n-5}{2n-4}\cdots\frac{1}{2}\int_0^{\frac{1}{2}\pi}1\,dx\\
 &=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},
 \end{align*}
+
 since $\displaystyle\int_0^{\frac{1}{2}\pi}1\,dx=\frac{\pi}{2}$. Note that the products in the numerator and the denominator are written in the opposite order.
 :::
 
@@ -1436,6 +1464,7 @@ $$
 1=\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}&=\lim_{n\to\infty}\frac{\dfrac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)}}{\dfrac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\dfrac{\pi}{2}}\\
 &=\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}\frac{2}{\pi}.
 \end{align*}
+
 This implies that
 
 $$
