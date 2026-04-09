@@ -37,22 +37,23 @@ g'(x)&=\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x}f(t)\,dt+\int_x^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)\,dt.
 \end{align*}
-Because $f$ is continuous on $[a,b]$, we can use the third comparison test from {prf:ref}`Th:Integration:DefiniteComparison` to conclude that there exists values $c$ and $d$ between $x$ and $x+h$ such that $f(d)\leq f(t)\leq f(c)$ for all $t$ between $x$ and $x+h$ and that we have
+
+Because $f$ is continuous on $[a,b]$, we can use the third comparison test from {prf:ref}`Th:Integration:DefiniteComparison` to conclude that there exists values $c$ and $d$ between $x$ and $x+h$ such that $f(c)\leq f(t)\leq f(d)$ for all $t$ between $x$ and $x+h$ and that we have
 
 $$
-\int_x^{x+h}f(t)\,dt\geq\int_x^{x+h}f(d)\,dt=f(d)\cdot ((x+h)-x)=hf(d).
+\int_x^{x+h}f(t)\,dt\geq\int_x^{x+h}f(c)\,dt=f(c)\cdot ((x+h)-x)=hf(c).
 $$
 
 and
 
 $$
-\int_x^{x+h}f(t)\,dt\leq\int_x^{x+h}f(c)\,dt=f(c)\cdot ((x+h)-x)=hf(c).
+\int_x^{x+h}f(t)\,dt\leq\int_x^{x+h}f(d)\,dt=f(d)\cdot ((x+h)-x)=hf(d).
 $$
 
-Note that if $h\rightarrow0$, then both $c$ and $d$ approach $x$ and $f(d)$ and $f(c)$ approach $f(x)$. Hence, we can use {prf:ref}`Theorem:LimitAtPoint:Squeezetheorem` to conclude that because
+Note that if $h\rightarrow0$, then both $c$ and $d$ approach $x$ and $f(c)$ and $f(d)$ approach $f(x)$. Hence, we can use {prf:ref}`Theorem:LimitAtPoint:Squeezetheorem` to conclude that because
 
 $$
-f(d)\leq \frac{1}{h}\int_x^{x+h}f(t)\,dt\leq f(c),
+f(c)\leq \frac{1}{h}\int_x^{x+h}f(t)\,dt\leq f(d),
 $$
 
 we have
@@ -205,7 +206,7 @@ which completes the proof.
 During evaluations of integrals we often use the notation
 
 $$
-\int_a^bf(x)\,dx=\bigg[F(x)\bigg]_a^b=F(b)-F(a)
+\int_a^bf(x)\,dx=\Big[F(x)\Big]_a^b=F(b)-F(a)
 $$
 
 or
@@ -256,10 +257,10 @@ $$
 ::::::{prf:Example}
 :label: Ex:Integration:FundamentalTheoremPart2Example3
 
-Integration of the function $\displaystyle f(x)=\frac{1}{1+x^2}$ from $0$ to $\frac{1}{4}\pi$ gives:
+Integration of the function $\displaystyle f(x)=\frac{1}{1+x^2}$ from $0$ to $1$ gives:
 
 $$
-\int_0^{\frac{1}{4}\pi}\frac{1}{1+x^2}\,dx=\bigg[\arctan(x)\bigg]_0^{\frac{1}{4}\pi}=\arctan(\tfrac{1}{4}\pi)-\arctan(0)=1-0=1.
+\int_0^1\frac{1}{1+x^2}\,dx=\arctan(x)\bigg|_0^1=\arctan(1)-\arctan(0)=\tfrac{1}{4}\pi-0=\tfrac{1}{4}\pi.
 $$
 
 ::::::

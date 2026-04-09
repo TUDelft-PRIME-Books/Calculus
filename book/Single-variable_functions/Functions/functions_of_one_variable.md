@@ -112,7 +112,7 @@ so both the input values $-3$ and $3$ are mapped into the output value $9$. Fina
 ::::::{prf:example} 
 :label: Ex:Functions1var:NoFormula
 
-Although most functions in this book can be described by means of formula, this does not need to be the case. Moreover, the domain and/or codomain do not need to be part of $\mathbb{R}^n$. For instance, we can let $D$ be the set that contains $3$ people, Alice, Bob and Charlie, and let $f$ be the function that maps a person to their age. So, we could write this down like $f(\mathrm{Alice})=31$, $f(\mathrm{Bob})=66$ and $f(\mathrm{Charlie})=19$. Here, the output is still a number, but even that does not need to be the case. For instance, we could let $g$ be the function that gives the first letter of a person's name, so we could write $g(\mathrm{Alice})=\mathrm{A}$, $g(\mathrm{Bob})=\mathrm{B}$ and $g(\mathrm{Charlie})=\mathrm{C}$. This might seem a bit silly, but it actually quite beneficial that a lot of results that we develop in this section can also be applied to any type of domain or codomain, since it makes it possible to directly use these results in a more abstract mathematical setting.
+Although most functions in this book can be described by means of formula, this does not need to be the case. Moreover, the domain and/or codomain do not need to be part of $\mathbb{R}^n$. For instance, we can let $D$ be the set that contains $3$ people, Alice, Bob and Charlie, and let $f$ be the function that maps a person to their age. So, we could write this down like $f(\text{Alice})=31$, $f(\text{Bob})=66$ and $f(\text{Charlie})=19$. Here, the output is still a number, but even that does not need to be the case. For instance, we could let $g$ be the function that gives the first letter of a person's name, so we could write $g(\text{Alice})=\text{A}$, $g(\text{Bob})=\text{B}$ and $g(\text{Charlie})=\text{C}$. This might seem a bit silly, but it actually quite beneficial that a lot of results that we develop in this section can also be applied to any type of domain or codomain, since it makes it possible to directly use these results in a more abstract mathematical setting.
 
 ::::::
 
@@ -145,7 +145,7 @@ The codomain of a function should be thought of as the set of all potential outp
 Let $f$ be a function with domain $D$ and codomain $C$. Then the **range** $R$ of $f$ is the set of all function values of $f$. That is, we have
 
 $$
- R=\left\{y\,\,\mathrm{in}\,\,C\,\middle|\,\text{There is an }x\,\mathrm{with}\,f(x)=y\right\}=\left\{f(x)\,\middle|\,x\,\mathrm{in}\,D\right\}
+ R=\left\{y\,\,\text{in}\,\,C\,\middle|\,\text{There is an }x\,\text{with}\,f(x)=y\right\}=\left\{f(x)\,\middle|\,x\,\text{in}\,D\right\}
 $$
 ::::::
 
@@ -206,7 +206,7 @@ Replace {numref}`Fig:Functions1var:Graph` with an applet.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Graph
-If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all pairs $(x,f(x))$. That is, it is the set $\left\{(x,f(x))\,\middle|\,x\,\,\mathrm{in}\,\,D\right\}$. 
+If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all pairs $(x,f(x))$. That is, it is the set $\left\{(x,f(x))\,\middle|\,x\,\,\text{in}\,\,D\right\}$. 
 ::::::
 
 For most functions that we will encounter in this book, the graph looks like one or several curves in $\mathbb{R}^2$. For instance, the graph of the function $f(x)=x^2$ is the curve of all points $(x,y)$ with $y=x^2$, so the graph is a parabola. So we might wonder: is any curve in $\mathbb{R}^2$ the graph of a certain function? For instance, is the circle with radius $1$, centered around the origin, the graph of some function? Well, suppose that there would be some function $f$ which has this circle as its graph. Since the point $(0,1)$ is on the circle, that should mean that $f(0)=1$. However, the point $(0,-1)$ is also on this circle, so that should mean that $f(0)=-1$. Since for a function, a given input ($0$ in this case) can only have a single output, it is impossible that $f(0)$ is both $1$ and $-1$ at the same time. As such, this circle cannot be the graph of any function.
@@ -285,7 +285,7 @@ The most standard of standard functions are the polynomials. These come in vario
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Polynomial
-A function $f$ is called a **polynomial function** if $f(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_1x+a_0$ for some integer $n\geq 0$ and real numbers $a_0,a_1,...,a_n$. 
+A function $f$ is called a **polynomial function** if $f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_1x+a_0$ for some integer $n\geq 0$ and real numbers $a_0,a_1,\ldots,a_n$. 
 
 If the polynomial function consists of only one term, so if $f(x)=a_nx^n$, then we call it a **monomial function**.
 
@@ -409,7 +409,7 @@ Replace {numref}`Fig:Functions1var:CubicAndHigher` with an applet.
 
 Indeed, for even values of $n$, the graph of $g(x)=x^n$ resembles the parabola $y=x^2$, while for odd values of $n$, the graph is similar to that of $x^3$. In particular, for even values of $n$ the graph of the function is symmetric around the $y$-axis. In {numref}`Section:PropertiesFunctions` we will call a function with this property **even** (so now you already know where that name comes from). Similarly, for odd values of $n$ the graph of the function is symmetric in the origin and such a function will be called **odd**.
 
-Note that as $n$ gets larger the graphs becomes more flat for $x$ between $-1$ and $1$. This is because for these values of $x$ we have $|x^2|>|x^3|>|x^4|>...$. On the other hand, for values of $x$ larger than $1$ or smaller than $-1$, the function blows up quicker for larger values of $n$, since then we have $|x^2|<|x^3|<|x^4|<...$
+Note that as $n$ gets larger the graphs becomes more flat for $x$ between $-1$ and $1$. This is because for these values of $x$ we have $|x^2|>|x^3|>|x^4|>\ldots$. On the other hand, for values of $x$ larger than $1$ or smaller than $-1$, the function blows up quicker for larger values of $n$, since then we have $|x^2|<|x^3|<|x^4|<\ldots$
 
 
 ::::::

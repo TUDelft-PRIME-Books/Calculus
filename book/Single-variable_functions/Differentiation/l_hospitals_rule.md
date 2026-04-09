@@ -245,7 +245,7 @@ We prove both versions of l'Hospital's rule in one go. However, this proof is ra
 First, we consider either one of the cases
 
 $$
- \lim_{x\rightarrow a^-}\frac{f(x)}{g(x)},\qquad\mathrm{or}\qquad \lim_{x\rightarrow \infty}\frac{f(x)}{g(x)}.
+ \lim_{x\rightarrow a^-}\frac{f(x)}{g(x)},\qquad\text{or}\qquad \lim_{x\rightarrow \infty}\frac{f(x)}{g(x)}.
 $$
 
 To handle these cases together, we write $c=a$ or $c=\infty$, depending on the case we are in and we write $\displaystyle\lim_{x\rightarrow c}$ whenever we mean $\displaystyle\lim_{x\rightarrow a^-}$ or $\displaystyle\lim_{x\rightarrow \infty}$. We can write $I=(b,c)$. 
@@ -449,13 +449,13 @@ $$
 This time, the limit is $\infty$ whenever $r-2\leq 0$, while it is an indeterminate form of type $\dfrac{\infty}{\infty}$ otherwise. As such, we let $n$ be the smallest integer with $n\geq r$ (that is, we round $r$ up to $n$). Then each of the limits
 
 $$
- \lim_{x\rightarrow\infty}\frac{f^{(k)}(x)}{g^{(k)}(x)}=\lim_{x\rightarrow\infty}\frac{a^ke^{ax}}{r(r-1)...(r-k+1)x^{r-k}}
+ \lim_{x\rightarrow\infty}\frac{f^{(k)}(x)}{g^{(k)}(x)}=\lim_{x\rightarrow\infty}\frac{a^ke^{ax}}{r(r-1)\ldots(r-k+1)x^{r-k}}
 $$
 
 for $0\leq k<n$ is an indeterminate form of type $\dfrac{\infty}{\infty}$. In addition,
 
 $$
- \lim_{x\rightarrow\infty}\frac{f^{(n)}(x)}{g^{(n)}(x)}=\lim_{x\rightarrow\infty}\frac{a^ne^{ax}}{r(r-1)...(r-n+1)x^{r-n}}=\infty,
+ \lim_{x\rightarrow\infty}\frac{f^{(n)}(x)}{g^{(n)}(x)}=\lim_{x\rightarrow\infty}\frac{a^ne^{ax}}{r(r-1)\ldots(r-n+1)x^{r-n}}=\infty,
 $$
 
 since $r-n\leq 0$. Then by applying l'Hospital's rule $n$ times, we find that

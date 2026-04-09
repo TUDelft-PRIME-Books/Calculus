@@ -476,22 +476,22 @@ Turn {numref}`Fig:LimitAtInfinity:SqueezeThm` into an applet.
 
 ::::::
 
-Now consider a limit of a rational function, i.e. a limit of the form $\lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials. We write $p(x)=a_nx^n+a_{n-1}x^{n-1}+...+a_0$ and $q(x)=b_mx^m+b_{m-1}x^{m-1}+...+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Whenever both $p$ and $q$ are not constant, i.e. when $n\geq 1$ and $m\geq 1$, we cannot evaluate the limit directly since both $p$ and $q$ have terms that go to infinity and/or minus infinity as $x$ approaches infinity ($a_nx^n$ for $p$ and $b_mx^m$ for $q$). So how does the function $\frac{p(x)}{q(x)}$ behave for large values of $x$? Notice that if $x$ is large enough the term $a_nx^n$ will be much larger (in absolute value) than the other terms $a_{n-1}x^{n-1}+...+a_0$ of $p$. Similarly, the term $b_mx^m$ will dominate the other terms $b_{m-1}x^{m-1}+...+b_0$ of $q$. So for large values of $x$ we have
+Now consider a limit of a rational function, i.e. a limit of the form $\lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials. We write $p(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_0$ and $q(x)=b_mx^m+b_{m-1}x^{m-1}+\ldots+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Whenever both $p$ and $q$ are not constant, i.e. when $n\geq 1$ and $m\geq 1$, we cannot evaluate the limit directly since both $p$ and $q$ have terms that go to infinity and/or minus infinity as $x$ approaches infinity ($a_nx^n$ for $p$ and $b_mx^m$ for $q$). So how does the function $\frac{p(x)}{q(x)}$ behave for large values of $x$? Notice that if $x$ is large enough the term $a_nx^n$ will be much larger (in absolute value) than the other terms $a_{n-1}x^{n-1}+\ldots+a_0$ of $p$. Similarly, the term $b_mx^m$ will dominate the other terms $b_{m-1}x^{m-1}+\ldots+b_0$ of $q$. So for large values of $x$ we have
 
 $$
- \frac{p(x)}{q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+...+a_0}{b_mx^m+b_{m-1}x^{m-1}+...+b_0}\approx \frac{a_nx^n}{b_mx^m}=\frac{a_n}{b_m}x^{n-m}
+ \frac{p(x)}{q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+\ldots+a_0}{b_mx^m+b_{m-1}x^{m-1}+\ldots+b_0}\approx \frac{a_nx^n}{b_mx^m}=\frac{a_n}{b_m}x^{n-m}
 $$
 
 It now depends on whether $n-m\leq  0$ or $n-m> 0$ whether the limit $\lim\limits_{x\rightarrow \infty}\frac{a_n}{b_m}x^{n-m}$ on whether this limit exists or not, but at least, it gives us an idea of how to compute this limit. In fact, we can make the computation a bit more rigorous. Suppose, for now, that $n< m$. That means that $x^m$ is the dominant term in the fraction. In that case we divide both parts of the fraction by $x^m$ to write
 
 $$
- \frac{p(x)}{q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+...+a_0}{b_mx^m+b_{m-1}x^{m-1}+...+b_0}=\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n+1}}+...+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+...+\frac{b_0}{x^m}}.
+ \frac{p(x)}{q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+\ldots+a_0}{b_mx^m+b_{m-1}x^{m-1}+\ldots+b_0}=\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n+1}}+\ldots+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+\ldots+\frac{b_0}{x^m}}.
 $$
 
 Since $n< m$, we can evaluate now evaluate the limit by using {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
 
 $$
- \lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}=\lim\limits_{x\rightarrow \infty}\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n+1}}+...+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+...+\frac{b_0}{x^m}}=\frac{0+0+...+0}{b_m+0+...+0}=0.
+ \lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}=\lim\limits_{x\rightarrow \infty}\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n+1}}+\ldots+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+\ldots+\frac{b_0}{x^m}}=\frac{0+0+\ldots+0}{b_m+0+\ldots+0}=0.
 $$
 
 This technique also works when $n=m$, in which case the limit is $\frac{a_n}{b_m}$, or when $n>m$, in which case the limit does not exist. This technique is known as **division by the dominant term**. It also works when $p$ and $q$ are not polynomials, but contain other powers of $x$ like $\sqrt[3]{x}$ or $\sqrt{x^2+x}$. In these cases it is sometimes a bit harder to see what the dominant term is. For instance, in the function $f(x)=\dfrac{x^2+1}{\sqrt{x^3+1}}$ the dominant power is **not** $x^3$, as this one is inside a square root. Indeed, for large values of $x$ we have $\sqrt{x^3+1}\approx \sqrt{x^3}=x^{\frac{3}{2}}$. As such, the dominant term is $x^2$ in this case.
@@ -668,13 +668,13 @@ In that case, $f$ has the oblique asymptote $y=ax+b$ at both infinity and minus 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Obliquerational`
 :class: tudproof, dropdown
 
-The result follows almost directly from {prf:ref}`Thm:RationalFunctions:PolynomialLongDivision`. Indeed, this result allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\operatorname{deg}(r)<\operatorname{deg}(q)$ and $\operatorname{deg}(s)=\operatorname{p}-\operatorname{q}$. Since $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, we obtain $\operatorname{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+...+a_1x+a_0$ and $q(x)=b_mx^m+...+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\operatorname{deg}(r)<\operatorname{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
+The result follows almost directly from {prf:ref}`Thm:RationalFunctions:PolynomialLongDivision`. Indeed, this result allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\operatorname{deg}(r)<\operatorname{deg}(q)$ and $\operatorname{deg}(s)=\operatorname{p}-\operatorname{q}$. Since $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, we obtain $\operatorname{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+\ldots+a_1x+a_0$ and $q(x)=b_mx^m+\ldots+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\operatorname{deg}(r)<\operatorname{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
 
 \begin{align*}
  \lim_{x\rightarrow\infty}f(x)-(ax+b) &=\lim_{x\rightarrow\infty}\frac{r(x)}{q(x)}+s(x)-(ax+b)\\
- &= \lim_{x\rightarrow\infty}\frac{a_nx^n+...+a_1x+a_0}{b_mx^m+...+b_1x+b_0}+ax+b-(ax+b)\\
- &= \lim_{x\rightarrow\infty}\frac{\frac{a_n}{x^{m-n}}+...+\frac{a_1}{x^{m-1}}+\frac{a_0}{x^m}}{b_m+...+\frac{b_1}{x^{m-1}}+\frac{b_0}{x^m}}\\
- &= \frac{0+...+0}{b_m+0+...+0}\\
+ &= \lim_{x\rightarrow\infty}\frac{a_nx^n+\ldots+a_1x+a_0}{b_mx^m+\ldots+b_1x+b_0}+ax+b-(ax+b)\\
+ &= \lim_{x\rightarrow\infty}\frac{\frac{a_n}{x^{m-n}}+\ldots+\frac{a_1}{x^{m-1}}+\frac{a_0}{x^m}}{b_m+\ldots+\frac{b_1}{x^{m-1}}+\frac{b_0}{x^m}}\\
+ &= \frac{0+\ldots+0}{b_m+0+\ldots+0}\\
  &= 0.
 \end{align*}
 As such, $y=ax+b$ is indeed the oblique asymptote of $f$ at infinity. The computation for the oblique asymptote at minus infinity is identical.
