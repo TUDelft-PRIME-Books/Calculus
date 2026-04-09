@@ -453,7 +453,7 @@ Now, we consider the function $f(x)=\sqrt{x}$. Then for any $x>0$ we can evaluat
 
 $$
  \begin{array}{lcl}f'(x)&=&\displaystyle\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}\\
- &=&\displaystyle\lim_{h\rightarrow 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}.
+ &=&\displaystyle\lim_{h\rightarrow 0}\frac{\sqrt{x+h}-\sqrt{x}}{h}.\end{array}
 $$
 
 In order to evaluate this limit, we use the square root trick (see {numref}`Subsec:Limitsrules`) and we obtain
@@ -463,7 +463,7 @@ $$
  &=&\displaystyle\lim_{h\rightarrow 0}\frac{h}{h\left(\sqrt{x+h}+\sqrt{x}\right)}\\
  &=&\displaystyle\lim_{h\rightarrow 0}\frac{1}{\left(\sqrt{x+h}+\sqrt{x}\right)}\\
  &=&\frac{1}{\sqrt{x+0}+\sqrt{x}}\\
- &=&\frac{1}{2\sqrt{x}}.
+ &=&\frac{1}{2\sqrt{x}}.\end{array}
 $$
 
 In the final step we used the continuity of the function $f$. Hence, we obtain $f'(x)=\dfrac{1}{2\sqrt{x}}$, as desired.
@@ -477,7 +477,7 @@ $$
  &=&\displaystyle\sin(x)\lim_{h\rightarrow 0}\frac{\cos(h)-1}{h}+\cos(x)\lim_{h\rightarrow 0}\frac{\sin(h)}{h}.\end{array}
 $$
 
-So in order to find the derivative of the sine, we need to evaluate the two limits $\displaystyle\lim_{h\rightarrow 0}\frac{\cos(h)-1}{h}$ and $\displaystyle\frac{\sin(h)}{h}$. We first evaluate the second of these two limits and for this, we first consider the right limit, which we evaluate using the squeeze theorem. From the proof of {prf:ref}`Theorem:Continuity:Standardfunctions`, we recall that $\sin(h)\leq h$ for any $0<h<\frac{\pi}{2}$. This inequality can be rewritten as $\frac{\sin(h)}{h}\leq 1$ for any $0<h<\frac{\pi}{2}$. In order to find a lower bound on the function $\frac{\sin(h)}{h}$, we will fix $0<h<\frac{\pi}{2}$ show that $h\leq \tan(h)$.  For this, consider the triangle shown in {numref}`Fig:Differentiability:tanhgreaterh`. The point $A$ lies on the circle with center at the origin and radius $1$. The point $B$ is the point directly above $A$ such that the angle between $OA$ and $OB$ is $h$. The line segment $OB$ intersect the circle at the point $C$. The point $D$ is chosen on the line segement $AB$ in such a way that the line segments $CD$ and $CB$ make a right angle.
+So in order to find the derivative of the sine, we need to evaluate the two limits $\displaystyle\lim_{h\rightarrow 0}\frac{\cos(h)-1}{h}$ and $\displaystyle\lim_{h\rightarrow 0}\frac{\sin(h)}{h}$. We first evaluate the second of these two limits and for this, we first consider the right limit, which we evaluate using the squeeze theorem. From the proof of {prf:ref}`Theorem:Continuity:Standardfunctions`, we recall that $\sin(h)\leq h$ for any $0<h<\frac{\pi}{2}$. This inequality can be rewritten as $\frac{\sin(h)}{h}\leq 1$ for any $0<h<\frac{\pi}{2}$. In order to find a lower bound on the function $\frac{\sin(h)}{h}$, we will fix $0<h<\frac{\pi}{2}$ show that $h\leq \tan(h)$.  For this, consider the triangle shown in {numref}`Fig:Differentiability:tanhgreaterh`. The point $A$ lies on the circle with center at the origin and radius $1$. The point $B$ is the point directly above $A$ such that the angle between $OA$ and $OB$ is $h$. The line segment $OB$ intersect the circle at the point $C$. The point $D$ is chosen on the line segement $AB$ in such a way that the line segments $CD$ and $CB$ make a right angle.
 
 ```{figure} Images/tanhgreaterh.png
 ---

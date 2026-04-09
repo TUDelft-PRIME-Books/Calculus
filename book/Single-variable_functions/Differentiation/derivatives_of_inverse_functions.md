@@ -4,73 +4,11 @@
 
 ## Introduction
 
-The one major thing missing in our lives right know is a way to find the derivatives of the remaining standard functions. To recall, we have found the derivatives of the other standard functions in {prf:ref}`Thm:Differentiability:Standard1`, {prf:ref}`Thm:Chain rule:Standard2` and {prf:ref}`Thm:Productquotientrule:Standard3`. The ones that are missing are the derivatives of logarithms, inverse trigonometric functions and non-integer powers of $x$. So without further ado, let us get to work and find these derivatives.
+[^FootnoteDiffInv]: Maybe apart from world peace
+
+The one major thing missing in our lives right know[^FootnoteDiffInv] is a way to find the derivatives of the remaining standard functions. To recall, we have found the derivatives of the other standard functions in {prf:ref}`Thm:Differentiability:Standard1`, {prf:ref}`Thm:Chain rule:Standard2` and {prf:ref}`Thm:Productquotientrule:Standard3`. The ones that are missing are the derivatives of logarithms, inverse trigonometric functions and non-integer powers of $x$. So without further ado, let us get to work and find these derivatives.
 
 
-## The inverse function theorem
-
-Many famous calculus books derive the derivatives of logarithms and inverse trigonomteric functions by means of implicit differentiation. However, in order to apply this technique, you need to know **in advance** that these functions are differentiable. If you do not know that, you cannot use implicit differentiation. As such, we first derive the following general result, which shows how we can check when the inverses of invertible functions are differentiable.
-
-
-::::::{prf:theorem} Inverse function theorem
-:label: Thm:Diffinverse:IFT
-Let $f$ be a continuously differentiable function. Let $a$ with $f'(a)\neq 0$ and write $b=f(a)$. Then $f$ is invertible on an interval that contains $a$. In addition, $f^{-1}$ is continuously differentiable on an interval that contains $b$ and we have
-
-$$
- \left(f^{-1}\right)'(b)=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}.
-$$
-
-::::::
-
-:::{admonition} Proof of {prf:ref}`Thm:Diffinverse:IFT`
-:class: tudproof, dropdown
-We assume that $f'(a)>0$ (the case where $f'(a)<0$ follows similarly). We write $\varepsilon=\frac{f'(a)}{2}>0$. Since $f'$ is continuous, we can find $\delta>0$ such that for the interval $(a-\delta,a+\delta)$ is contained in the domain of $f$ and such that for all $x$ with $0<|x-a|<\delta$ we have 
-
-$$
- |f'(x)-f(a)|<\varepsilon=\frac{f'(a)}{2}.
-$$
-
-Then for any $x$ with $0<|x-a|<\delta$ we have 
-
-$$
- -\frac{f'(a)}{2}< f'(x)-f(a)<\frac{f'(a)}{2},
-$$
-
-which means 
-
-$$
- f'(x)>\frac{f'(a)}{2}>0.
-$$
-
-By {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`, the function $f$ is strictly increasing on $(a-\delta,a+\delta)$. So by {prf:ref}`Thm:Inverse:MonotonicOnetoone` the function $f$ must be invertible on this interval. In addition, we claim that $f$ maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$. Since $f$ is strictly increasing on $(a-\delta,a+\delta)$, we have for any $a-\delta<x<a+\delta$ that
-
-$$
- f(a-\delta)<f(x)<f(a+\delta).
-$$
-
-Now let $y$ in $(f(a-\delta),f(a+\delta))$. Since $f$ continuous on $[a-\delta,a+\delta]$ we can use {prf:ref}`Theorem:Continuity:IVT` to find $c$ in $(a-\delta,a+\delta)$ with $f(c)=y$. As such, $f$ indeed maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$.
-
-Now consider any $c$ in $(a-\delta,a+\delta)$ and let $d=f(c)$. We will show that $f{-1}$ is differentiable in $d$. For this we first write
-
-$$
- \frac{1}{f'(c)}=\frac{1}{\lim_{x\rightarrow c}\frac{f(x)-f(c)}{x-c}}=\lim_{x\rightarrow c}\frac{x-c}{f(x)-f(c)}=\lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d}.
-$$
-
-We let $g(y)=\dfrac{f^{-1}(y)-c}{y-d}$. Then we note that $x\rightarrow c$ precisely when $f(x)\rightarrow d$. However, we do not know a priori that $g$ can be defined in such a way in $y=d$ to make it continuous, so we cannot use the regular substitution for limits. Instead, we use {prf:ref}`Theorem:Continuity:SubstitutionAlt` to obtain
-
-$$
- \frac{1}{f'(c)}=\lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d}=\lim_{x\rightarrow c}g(f(x))=\lim_{y\rightarrow d}g(y)=\lim_{y\rightarrow d}\frac{f^{-1}(y)-c}{y-d}=\lim_{y\rightarrow d}\frac{f^{-1}(y)-f^{-1}(d)}{y-d}=(f^{-1})'(d).
-$$
-
-So $f^{-1}$ is differentiable in $d$. Moreover, since $f'$ is continuous we see that $(f^{-1})'$ is continuous. In particular, when $c=a$ we have $d=b$ and we have
-
-$$
- \left(f^{-1}\right)'(b)=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}.
-$$
-
-
-
-:::
 
 
 ## Derivatives of logarithms and inverse trigonometric functions
@@ -89,7 +27,7 @@ $$
  e^y=x.
 $$
 
-In this new equation, $y$ is implicitly defined as a function of $x$. We know how to make it explicit (that is the equation that we started with), but working with the implicit equation allows us to use the derivatives that we already know. We will now apply implicit differentiation. For this, we take the derivative with respect to $x$ on both sides of this equation to obtain
+In this new equation, $y$ is implicitly defined as a differentiable function of $x$ on account of {prf:ref}`Thm:SlopeCurves:IFT`. We know how to make it explicit (that is the equation that we started with), but working with the implicit equation allows us to use the derivatives that we already know. We will now apply implicit differentiation. For this, we take the derivative with respect to $x$ on both sides of this equation to obtain
 
 $$
   \frac{d}{dx}\left[e^y\right]=\frac{d}{dx}[x]=1.
@@ -143,7 +81,9 @@ $$
  f'(x)=\frac{1}{\ln(b)}\frac{d}{dx}[\ln(x)]=\dfrac{1}{\ln(b)x}.
 $$
 
-**Derivatives of inverse trigonometric functions.** Now we turn to the inverse trigonometric functions. First consider the function $f(x)=\arcsin(x)$. Then the graph of $f$ is defined by the equation
+**Derivatives of inverse trigonometric functions.** Now we turn to the inverse trigonometric functions. For each of these functions, we will use {prf:ref}`Thm:SlopeCurves:IFT` to justify the use of implicit differentiation.
+
+First consider the function $f(x)=\arcsin(x)$. Then the graph of $f$ is defined by the equation
 
 $$
  y=\arcsin(x),
@@ -269,3 +209,169 @@ $$
  &=&\frac{3\arctan(x)(1+x^2)-\log_2(x)\ln(2)x}{\ln(2)x(1+x^2)\left(\arctan(x)\right)^{\frac{4}{3}}}.\end{array}
 $$
 ::::::
+
+::::::{prf:example} 
+:label: Ex:Diffinverse:Newdiff2
+Consider the function $f(x)=x^x$. The way we found the derivative of $x^r$ for any real number $r$ can, in general, be applied when considering 'weird' powers of $x$. Indeed, we have for $x> 0$ that $x=e^{\ln(x)}$, so we can write
+
+$$
+ f(x)=x^x=\left(e^{\ln(x)}\right)^x=e^{\ln(x)x}.
+$$
+
+Then we can use the chain rule and the product rule to evaluate the derivative
+
+$$
+ f'(x)=e^{\ln(x)x}\left(\ln(x)\cdot 1+\frac{1}{x}x\right)=e^{\ln(x)x}\left(\ln(x)+1\right)=x^x\left(\ln(x)+1\right).
+$$
+::::::
+
+
+## The inverse function theorem
+
+
+
+::::::{prf:theorem} Inverse function theorem
+:label: Thm:Diffinverse:IFT
+Let $f$ be a continuously differentiable function. Let $a$ with $f'(a)\neq 0$ and write $b=f(a)$. Then $f$ is invertible on an interval that contains $a$. In addition, $f^{-1}$ is continuously differentiable on an interval that contains $b$ and we have
+
+$$
+ \left(f^{-1}\right)'(b)=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}.
+$$
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Diffinverse:IFT`
+:class: tudproof, dropdown
+We assume that $f'(a)>0$ (the case where $f'(a)<0$ follows similarly). We write $\varepsilon=\frac{f'(a)}{2}>0$. Since $f'$ is continuous, we can find $\delta>0$ such that for the interval $(a-\delta,a+\delta)$ is contained in the domain of $f$ and such that for all $x$ with $0<|x-a|<\delta$ we have 
+
+$$
+ |f'(x)-f(a)|<\varepsilon=\frac{f'(a)}{2}.
+$$
+
+Then for any $x$ with $0<|x-a|<\delta$ we have 
+
+$$
+ -\frac{f'(a)}{2}< f'(x)-f(a)<\frac{f'(a)}{2},
+$$
+
+which means 
+
+$$
+ f'(x)>\frac{f'(a)}{2}>0.
+$$
+
+By {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`, the function $f$ is strictly increasing on $(a-\delta,a+\delta)$. So by {prf:ref}`Thm:Inverse:MonotonicOnetoone` the function $f$ must be invertible on this interval. In addition, we claim that $f$ maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$. Since $f$ is strictly increasing on $(a-\delta,a+\delta)$, we have for any $a-\delta<x<a+\delta$ that
+
+$$
+ f(a-\delta)<f(x)<f(a+\delta).
+$$
+
+Now let $y$ in $(f(a-\delta),f(a+\delta))$. Since $f$ continuous on $[a-\delta,a+\delta]$ we can use {prf:ref}`Theorem:Continuity:IVT` to find $c$ in $(a-\delta,a+\delta)$ with $f(c)=y$. As such, $f$ indeed maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$.
+
+Now consider any $c$ in $(a-\delta,a+\delta)$ and let $d=f(c)$. We will show that $f^{-1}$ is differentiable in $d$. For this we first write
+
+$$
+ \frac{1}{f'(c)}=\frac{1}{\lim_{x\rightarrow c}\frac{f(x)-f(c)}{x-c}}=\lim_{x\rightarrow c}\frac{x-c}{f(x)-f(c)}=\lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d}.
+$$
+
+We let $g(y)=\dfrac{f^{-1}(y)-c}{y-d}$. Then we note that $x\rightarrow c$ precisely when $f(x)\rightarrow d$. However, we do not know a priori that $g$ can be defined in such a way in $y=d$ to make it continuous, so we cannot use the regular substitution for limits. Instead, we use {prf:ref}`Theorem:Continuity:SubstitutionAlt` to obtain
+
+$$
+ \frac{1}{f'(c)}=\lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d}=\lim_{x\rightarrow c}g(f(x))=\lim_{y\rightarrow d}g(y)=\lim_{y\rightarrow d}\frac{f^{-1}(y)-c}{y-d}=\lim_{y\rightarrow d}\frac{f^{-1}(y)-f^{-1}(d)}{y-d}=(f^{-1})'(d).
+$$
+
+So $f^{-1}$ is differentiable in $d$. Moreover, since $f'$ is continuous we see that $(f^{-1})'$ is continuous. In particular, when $c=a$ we have $d=b$ and we have
+
+$$
+ \left(f^{-1}\right)'(b)=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}.
+$$
+
+:::
+
+:::{note}
+{prf:ref}`Thm:Diffinverse:IFT` also justifies the differentiability of logarithms and inverse trigonometric functions, which we previously justified using {prf:ref}`Thm:SlopeCurves:IFT`, of which we have not given a proof of yet.
+:::
+
+
+Although we know that derivatives of all combinations of standard functions, {prf:ref}`Thm:Diffinverse:IFT` can still save us some work if we only want to find the derivative of an inverse function in one point.
+
+::::::{prf:example} 
+:label: Ex:Diffinverse:IFT
+Consider the function $f(x)=\sqrt[5]{31+x^2}$. This function is not invertible on its entire domain, for instance, since $f(1)=f(-1)=\sqrt[5]{32}=2$. We can find its derivative by writing $f(x)=\left(31+x^2\right)^{\frac{1}{5}}$ and using the chain rule to evaluate
+
+$$
+ f'(x)=\frac{1}{5}\left(31+x^2\right)^{\frac{1}{5}-1}\left(0+2x\right)=\frac{2x}{5}\left(31+x^2\right)^{-\frac{4}{5}}.
+$$
+
+Then we notice that $f'(1)=\displaystyle \frac{2\cdot 1}{5}\cdot 32^{-\frac{4}{5}}=\frac{2}{5}\frac{1}{16}=\frac{1}{40}\neq 0$. So by {prf:ref}`Thm:Diffinverse:IFT`, $f$ is invertible on an open interval that contains $1$ and the inverse function $f^{-1}$ is differentiable on an open interval that contains $f(1)=2$ and we find that
+
+$$
+ \left(f^{-1}\right)'(2)=\frac{1}{f'(f^{-1}(2))}=\frac{1}{f'(1)}=\frac{1}{\frac{1}{40}}=40.
+$$
+
+::::::
+
+
+::::::{prf:remark}
+:label: Rem:Diffinverse:IFT1
+The condition in {prf:ref}`Thm:Diffinverse:IFT` that $f'(a)\neq 0$ is necessary, even if we know that the function is invertible. Consider, for instance, $f(x)=(x-1)^3$. Then $f$ is strictly increasing on $\mathbb{R}$, so it is invertible with inverse function $f^{-1}(x)=\sqrt[3]{x}+1$. In addition, $f$ is differentiable on its domain with $f'(x)=3(x-1)^2$. Then we see that $f'(1)=0$. The inverse function is differentiable everywhere except in $x=0$ (for $x\neq 0$ we have $\left(f^{-1}\right)'(x)=\frac{1}{3}x^{-\frac{2}{3}}$, but the function has a vertical tangent in $x=0$). Since $f(1)=0$, $x=0$ is precisely the value of $x$ in the domain of $f^{-1}$ that corresponds to the value of $x$ in the domain of $f$ where the derivative of $f$ is $0$.
+
+In fact, when $f$ is invertible on an open interval that contains $a$ and $f'(a)=0$, it is impossible for $f^{-1}$ to be differentiable in $a$. Indeed, if it were differentiable, for $x$ close to $a$ we have $(f^{-1}\circ f)(x)=x$, so we would find that
+
+$$
+ \left(f^{-1}\circ f\right)'(a)=\left.\frac{d}{dx}[x]\right|_{x=a}=\left.1\right|_{x=a}=1.
+$$
+
+However, with the chain rule, we would obtain
+
+$$
+ \left(f^{-1}\circ f\right)(a)=\left(f^{-1}\right)'(f(a))f'(a)=0,
+$$
+
+which gives a contradiction. So $f^{-1}$ can never be invertible in $a$.
+
+
+::::::
+
+
+::::::{prf:remark}
+:label: Rem:Diffinverse:IFT2
+The condition in {prf:ref}`Thm:Diffinverse:IFT` that the derivative of $f$ is continuous is also necessary. Consider the function 
+
+$$
+ f(x)=\left\{\begin{array}{l}-x+4x^2\sin\left(\frac{1}{x}\right),\qquad&\text{if}\ x\neq 0\\
+ 0,&\text{if}\ x=0.\end{array}\right.
+$$
+
+Then for $x\neq 0$, we can use the product rule and the chain rule to find
+
+$$
+ f'(x)=-1+8x\sin\left(\frac{1}{x}\right)+4x^2\cos\left(\frac{1}{x}\right)\frac{-1}{x^2}=-1+8x\sin\left(\frac{1}{x}\right)-4\cos\left(\frac{1}{x}\right).
+$$
+
+For $x=0$, we use the limit definition of the derivative to find
+
+$$
+ f'(0)=\lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}=\lim_{h\rightarrow 0}\frac{-h+4h^2\sin\left(\frac{1}{h}\right)}{h}=\lim_{h\rightarrow 0}-1+4h\sin\left(\frac{1}{h}\right).
+$$
+
+We can evaluate this limit using the squeeze theorem ({prf:ref}`Theorem:LimitAtPoint:Squeezetheorem`). Indeed, we notice that since the sine is always in between $-1$ and $1$, we have
+
+$$
+ -1-4|h|\leq -1+4h\sin\left(\frac{1}{h}\right)\leq -1+4|h|
+$$
+
+for all values of $h$. Since we have $\displaystyle\lim_{h\rightarrow 0}-1-4|h|=\lim_{h\rightarrow 0}-1+4|h|=-1$, we obtain with the squeeze theorem that
+
+$$
+ f'(0)=\lim_{h\rightarrow 0}-1+4h\sin\left(\frac{1}{h}\right)=-1.
+$$
+
+Note that the derivative is not continuous in $0$. Indeed, with the squeeze theorem we do have $\displaystyle \lim_{x\rightarrow 0}-1+8x\sin\left(\frac{1}{x}\right)=-1$, but the limit $\displaystyle \lim_{x\rightarrow 0}-4\cos\left(\frac{1}{x}\right)$ does not exist as the cosine keeps oscillating between $-4$ and $4$. 
+
+The function $f$ is also not invertible in any interval that contains $0$. Indeed, the derivative $f'(x)=-1+2x\sin\left(\frac{1}{x}\right)-4\cos\left(\frac{1}{x}\right)$ will both take on positive and negative values on any interval that contains $0$, as $-4\cos\left(\frac{1}{x}\right)$ keeps on oscillating between $-4$ and $4$, while $-1+2x\sin\left(\frac{1}{x}\right)$ approaches $-1$ as $x\rightarrow 0$. So the function $f$ will alternate between increasing and decreasing on any such interval, which means that it cannot be invertible there.
+
+:::{todo}
+Include an applet with the graph of this function.
+:::
+:::

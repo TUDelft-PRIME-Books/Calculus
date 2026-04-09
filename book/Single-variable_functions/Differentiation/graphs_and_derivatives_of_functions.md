@@ -20,7 +20,20 @@ Let $f$ be a function that is continuous on a closed interval $[a,b]$ and differ
 
 ::::::
 
-Unfortunately, we cannot prove Rolle's theorem yet, since the proof uses some other results that we have not obtained yet. We will give the proof in {numref}`Subsec:Extrema1dEVT`.
+Unfortunately, we cannot prove Rolle's theorem yet, since the proof uses some other results that we have not obtained yet. We will give the proof in {numref}`Subsec:Extrema1dEVT`. An illustration of the theorem is shown in {numref}`Fig:Graphsderivatives:Rolle`.
+
+:::{figure} Images/Fig-Graph1d-Rolle.png
+---
+width: 100%
+name: Fig:Graphsderivatives:Rolle
+class: dark-light
+---
+An illustration of Rolle's theorem. Note that in this case there are multiple points where the derivative is equal to $0$ (for instance, for the function on the left any point will do).
+:::
+
+:::{todo}
+Replace {numref}`Fig:Graphsderivatives:Rolle` with an applet.
+:::
 
 ::::::{prf:theorem} The mean value theorem
 :label: Thm:Graphsderivatives:MVT
@@ -69,6 +82,58 @@ An illustration of the mean value theorem. Note that in this case there are mult
 :::{todo}
 Replace {numref}`Fig:Graphsderivatives:MVT` with an applet.
 :::
+
+There is a more general version of the mean value theorem, called Cauchy's mean value theorem. This result is named after the French mathematician and engineer [Augustin-Louis Cauchy](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy). This general version is usually a bit overkill when it comes to proving what the derivative says about a functions. Still, we will need this general version when proving l'Hospital's rule in {numref}`Section:lHospital`.
+
+::::::{prf:theorem} The Cauchy mean value theorem
+:label: Thm:Graphsderivatives:MVTCauchy
+Let $f$ and $g$ be functions that are continuous on a closed interval $[a,b]$ and differentiable on the open interval $(a,b)$. Then there exists a point $c$ in $(a,b)$ with
+
+$$
+ (f(b)-f(a))g'(c)=(g(b)-g(a))f'(c).
+$$
+
+If $g(a)\neq g(b)$ and $g'(c)$, this can be rewritten in the form
+
+$$
+ \frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)}
+$$
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Graphsderivatives:MVTCauchy`
+:class: tudproof, dropdown
+The idea of proving this theorem is similar to the ones used in the proof of {prf:ref}`Thm:Graphsderivatives:MVT`. Here, we define the function
+
+$$
+ h(x)=(g(b)-g(a))f(x)-(f(b)-f(a))g(x).
+$$
+
+This function is a linear combination of two functions that are continuous on $[a,b]$ and differentiable on $(a,b)$, so the new function $h$ has these properties as well. In addition, we see that
+
+$$
+ h(a)=(g(b)-g(a))f(a)-(f(b)-f(a))g(a)=g(b)f(a)-f(b)g(a)=(g(b)-g(a))f(b)-(f(b)-f(a))g(b)=h(b).
+$$
+
+As such, we can use Rolle's theorem to obtain $c$ in $(a,b)$ with $h'(c)=0$. We can evaluate the derivative of $h$ as
+
+$$
+ h'(x)=(g(b)-g(a))f'(x)-(f(b)-f(a))g'(x).
+$$
+
+Hence, we find, since $h'(c)=0$, that
+
+$$
+ 0=h'(c)=(g(b)-g(a))f'(c)-(f(b)-f(a))g'(c),
+$$
+
+which gives $(f(b)-f(a))g'(c)=(g(b)-g(a))f'(c)$, as desired.
+:::
+
+:::{note}
+We obtain {prf:ref}`Thm:Graphsderivatives:MVT` back from {prf:ref}`Thm:Graphsderivatives:MVTCauchy` when choosing the function $g$ to be given by $g(x)=x$.
+:::
+
 
 Let us see how the mean value theorem can be used in practice.
 

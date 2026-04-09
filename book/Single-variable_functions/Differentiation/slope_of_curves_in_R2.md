@@ -33,9 +33,9 @@ We conclude that when it is possible to write (part of) a curve as the graph of 
 
 ## Implicit differentiation
 
-[^FootnoteImplicit]: To give a proper mathematical motivation of why this technique works, we need the concept of a partial derivative, see {numref}`Sec:PartialDerivatives`
 
-Consider a curve that is implicitly defined by an equation of the form $f(x,y)=0$. If it is possible to turn this into an explicit equation $y=g(x)$ (on at least some part of the curve) we can explicitly find the derivative using regular differentiation techniques. However, in most cases that is not neccesary. We can, instead, work with the assumption that, at least if zoom in enough, it is theoretically possible to obtain an explicit equation $y=g(x)$, but by using the chain rule, we can actually avoid ever having to find this explicit equation. This technique is called **implicit differentiation**. Even for curves where an explicit form can be found (such as for the unit circle) it is typically easier and quicker to use implicit differentiation. This technique is best explained[^FootnoteImplicit] by means of several examples.
+
+Consider a curve that is implicitly defined by an equation of the form $f(x,y)=0$. If it is possible to turn this into an explicit equation $y=g(x)$ (on at least some part of the curve) we can explicitly find the derivative using regular differentiation techniques. However, in most cases that is not neccesary. We can, instead, work with the assumption that, at least if zoom in enough, it is theoretically possible to obtain an explicit equation $y=g(x)$, but by using the chain rule, we can actually avoid ever having to find this explicit equation. This technique is called **implicit differentiation**. Even for curves where an explicit form can be found (such as for the unit circle) it is typically easier and quicker to use implicit differentiation. This technique is best explained by means of several examples.
 
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Circle
@@ -82,6 +82,8 @@ $$
 
 
 ::::::
+
+
 
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Folium
@@ -139,6 +141,29 @@ Then we must have either $x=0$ or $x^3=2$, which gives $x=\sqrt[3]{2}$. This wou
 Here sketch of the folium with the point with a horizontal tangent highlighted. Label of figure should be: Fig:SlopeCurve:Folium
 :::
 ::::::
+
+In the previous examples, we have assumed each time that on the curve $y$ is implicitly a differentiable function of $x$, but is that always the case? Unfortunately, this is not always the case. Indeed, we saw in {prf:ref}`Ex:SlopeCurves:Folium` that the expression for $\dfrac{dy}{dx}$ did not exist at the point $(0,0)$, which does lie on the curve. This is because the curve self-intersects at this point, so there is no meaningful way to define a slope there. Similarly, the expression we found for $\dfrac{dy}{dx}$ does not exist at the point $\left(\sqrt[3]{4},\sqrt[3]{2}\right)$, which also lies on the curve. This is because the tangent line to the curve at that point is vertical. 
+
+Even worse, we could be dealing with an implicit equation that does not even define a curve. For instance, the equation
+
+$$
+ x^2+y^2=0
+$$
+
+only defines the point $(0,0)$ and it is impossible to meaningfully define the slope at a single point. The equation
+
+$$
+ x^2+y^2=-1
+$$
+
+does not even contain any points at all. So is there a way to know, in advance, whether it is allowed to assume that on the curve $y$ is implicitly a differentiable function of $x$? The good news is that the answer is yes. This result is a very important theorem in analysis, called the **implicit function theorem**. The bad news is that proving this result is way beyond our current capabilities. We will state the theorem now, and we will postpone the proof to {numref}`Sec:DE:ExistenceUniqueness`.
+
+::::::{prf:theorem} Implicit function theorem
+:label: Thm:SlopeCurves:IFT
+Consider a curve that is implicitly defined by an equation $F(x,y)=0$ and let $(x_0,y_0)$ be a point on the curve. Let $f(x)=F(x,y_0)$ and $g(y)=F(x_0,y)$. If $f$ is continuously differentiable on an open interval containing $x_0$ and $g$ is continuously differentiable on an open interval containing $y_0$ and $g'(y_0)\neq 0$, then there exists a unique differentiable function $h$ with $h(x_0)=y_0$ and $F(x,h(x))=0$ on an open interval containing $x_0$. That is, on this interval, $y$ is implicitly defined as a differentiable function of $x$.
+::::::
+
+This result shows that we can apply implicit differentiation as long as we we can take the derivatives we want to and we subsequently do not divide by $0$ (it should not come as a surprise that we want to avoid dividing by $0$).
 
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Seconddiv
@@ -265,9 +290,3 @@ since the numerator goes to $3$ while the denominator goes to $0$ as $t\rightarr
 Show curve with the specified point highlighted, including the tangent line there.
 :::
 ::::::
-
-
-In this section we cover:
-
-- Slopes of curves in $\mathbb{R}^2$
-- Implicit differentiation (without using partial derivatives)

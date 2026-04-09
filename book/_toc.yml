@@ -190,4 +190,4 @@ parts:
     - file: todos.md # ref_graph: {'ignore':True}
     - file: questions.md # ref_graph: {'ignore':True}
     - external: https://github.com/TeachBooks/Sphinx-PRIME-applets/blob/main/README.md # ref_graph: {'ignore':True}
-    - external: https://github.com/TeachBooks/Sphinx-Sticky-Margin/blob/trigger_and_figlxass/MANUAL.md # ref_graph: {'ignore':True}
+    - external: https://github.com/TeachBooks/Sphinx-Sticky-Margin/blob/main/MANUAL.md # ref_graph: {'ignore':True}
