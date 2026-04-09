@@ -599,7 +599,7 @@ There are several characterisations of the number $e$, all of which use concepts
 ::::::{prf:theorem} Characterisations of $e$ 
 :label: Thm:RealNumbers:Numbere
 
-- $e$ is the sum of the series $\displaystyle e=\sum_{n=0}^\infty \frac{1}{n!}=1+\frac{1}{1}+\frac{1}{2\cdot1}+\frac{1}{3\cdot2\cdot1}+...$, see {numref}`Chapter:Series`.
+- $e$ is the sum of the series $\displaystyle e=\sum_{n=0}^\infty \frac{1}{n!}=1+\frac{1}{1}+\frac{1}{2\cdot1}+\frac{1}{3\cdot2\cdot1}+\ldots$, see {numref}`Chapter:Series`.
 - $e$ is the unique number with the property that $\displaystyle \lim_{h\rightarrow 0}\frac{e^h-1}{h}=1$, see {numref}`Chapter:FunctionsAndCurves`.
 - $e$ is the unique value of $b$ such that the exponential function $f(x)=b^x$ has a tangent line at $x=0$ with slope $1$, see {numref}`Chapter:Differentiation`.
 - $e$ is the unique positive value of $b$ such that $\displaystyle \int_1^b\frac{1}{t}\,dt=1$, see {numref}`Chapter:Integration`.
@@ -626,7 +626,7 @@ $$
  \sum_{n=0}^\infty \frac{q!}{n!}=\frac{p}{q}q!=p\cdot(q-1)!.
 $$
 
-Note that for $n\leq q$ we have $\displaystyle\frac{q!}{n!}=\frac{q\cdot(q-1)\cdot...\cdot 1}{n\cdot(n-1)\cdot...\cdot 1}=q\cdot(q-1)\cdot...(n+1)$, which means that for these values of $n$ we have that $\frac{q!}{n!}$ is an integer. Moreover, $p\cdot(q-1)!$ is an integer as well. So we can write
+Note that for $n\leq q$ we have $\displaystyle\frac{q!}{n!}=\frac{q\cdot(q-1)\cdot\ldots\cdot 1}{n\cdot(n-1)\cdot\ldots\cdot 1}=q\cdot(q-1)\cdot\ldots(n+1)$, which means that for these values of $n$ we have that $\frac{q!}{n!}$ is an integer. Moreover, $p\cdot(q-1)!$ is an integer as well. So we can write
 
 $$
  p\cdot(q-1)!=\sum_{n=0}^\infty \frac{q!}{n!}=\sum_{n=0}^q \frac{q!}{n!}+\sum_{n=q+1}^\infty \frac{q!}{n!},
@@ -641,7 +641,7 @@ $$
 As such, $\displaystyle\sum_{n=q+1}^\infty \frac{q!}{n!}$ is an integer, as it is the difference of two integers. However, we also see that
 
 \begin{align*}
- 0&<\sum_{n=q+1}^\infty \frac{q!}{n!}\\ &=\frac{1}{q+1}+\frac{1}{(q+2)(q+1)}+\frac{1}{(q+3)(q+2)(q+1)}...\\ &<\frac{1}{q+1}+\frac{1}{(q+1)(q+1)}+\frac{1}{(q+1)(q+1)(q+1)}+...\\ &=\sum_{n=1}^\infty \frac{1}{(q+1)^n}.
+ 0&<\sum_{n=q+1}^\infty \frac{q!}{n!}\\ &=\frac{1}{q+1}+\frac{1}{(q+2)(q+1)}+\frac{1}{(q+3)(q+2)(q+1)}\ldots\\ &<\frac{1}{q+1}+\frac{1}{(q+1)(q+1)}+\frac{1}{(q+1)(q+1)(q+1)}+\ldots\\ &=\sum_{n=1}^\infty \frac{1}{(q+1)^n}.
 \end{align*}
 
 Note that $\displaystyle\sum_{n=1}^\infty \frac{1}{(q+1)^n}$ is a geometric series, so by {prf:ref}`Thm:Series:GeometricSeries`, we find that $\displaystyle\sum_{n=1}^\infty \frac{1}{(q+1)^n}=\frac{\frac{1}{q+1}}{1-\frac{1}{q+1}}=\frac{1}{q}$. Since we assume that $q>1$, we obtain 

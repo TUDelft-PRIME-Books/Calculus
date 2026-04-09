@@ -134,7 +134,7 @@ Then the **Forward Euler method** is defined by the discrete dynamical system
 
 $$
 \left\{\begin{array}{rclll}
-	\tilde{y}_{n+1} & = & \tilde{y}_n+\Delta t f(t_n,\tilde{y}_n), & {\rm for} & n\geq 0, \\
+	\tilde{y}_{n+1} & = & \tilde{y}_n+\Delta t f(t_n,\tilde{y}_n), & \text{for} & n\geq 0, \\
 	\tilde{y}_0 & = & y_0,
 \end{array}\right.
 $$
@@ -152,7 +152,7 @@ Consider the following initial-value problem:
 
 $$
 \left\{\begin{array}{rclll}
-	y'(t) & = & -2ty^2, & {\rm for} & t\geq -0.2, \\
+	y'(t) & = & -2ty^2, & \text{for} & t\geq -0.2, \\
 	y(-0.2) & = & 1.
 \end{array}\right.
 $$
@@ -190,7 +190,7 @@ Consider the initial value problem
 :label: Eq:ApproximatingSolutions:EX2
 
 \left\{\begin{array}{rclll}
-	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & {\rm for} & t\geq 0, \\
+	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & \text{for} & t\geq 0, \\
 	y(0) & = & 30.
 \end{array}\right.
 
@@ -281,7 +281,7 @@ Then the **Backward Euler method** is defined by the discrete dynamical system
 
 $$
 \left\{\begin{array}{rclll}
-	\tilde{y}_{n+1} & = & \tilde{y}_n+\Delta t f(t_{n+1},\tilde{y}_{n+1}), & {\rm for} & n\geq 0, \\
+	\tilde{y}_{n+1} & = & \tilde{y}_n+\Delta t f(t_{n+1},\tilde{y}_{n+1}), & \text{for} & n\geq 0, \\
 	\tilde{y}_0 & = & y_0,
 \end{array}\right.
 $$
@@ -299,7 +299,7 @@ Consider again the initial value problem given in Equation {eq}`Eq:Approximating
 %:label: Eq:ApproximatingSolutions:EX2
 $$
 \left\{\begin{array}{rclll}
-	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & {\rm for} & t\geq 0, \\
+	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & \text{for} & t\geq 0, \\
 	y(0) & = & 30.
 \end{array}\right.
 $$
@@ -410,7 +410,7 @@ Then the **Trapezoidal method** is defined by the discrete dynamical system
 
 $$
 \left\{\begin{array}{rclll}
-	\tilde{y}_{n+1} & = & \tilde{y}_n+\frac12\Delta t\left(f(t_{n},\tilde{y}_{n})+f(t_{n+1},\tilde{y}_{n+1})\right), & {\rm for} & n\geq 0, \\
+	\tilde{y}_{n+1} & = & \tilde{y}_n+\frac12\Delta t\left(f(t_{n},\tilde{y}_{n})+f(t_{n+1},\tilde{y}_{n+1})\right), & \text{for} & n\geq 0, \\
 	\tilde{y}_0 & = & y_0,
 \end{array}\right.
 $$
@@ -428,7 +428,7 @@ Consider again the initial value problem given in Equation {eq}`Eq:Approximating
 %:label: Eq:ApproximatingSolutions:EX2
 $$
 \left\{\begin{array}{rclll}
-	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & {\rm for} & t\geq 0, \\
+	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & \text{for} & t\geq 0, \\
 	y(0) & = & 30.
 \end{array}\right.
 $$
@@ -501,7 +501,7 @@ Consider again the initial value problem
 :::{math}
 
 \left\{\begin{array}{rclll}
-	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & {\rm for} & t\geq 0, \\
+	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & \text{for} & t\geq 0, \\
 	y(0) & = & 30.
 \end{array}\right.
 
@@ -702,8 +702,8 @@ Then the **Modified Euler method** is defined by the discrete dynamical system
 
 $$
 \left\{\begin{array}{rclll}
-	\overline{y}_{n+1} & = & \tilde{y}_n+\Delta tf(t_{n},\tilde{y}_{n}), & {\rm for} & n\geq 0, \\
-	\tilde{y}_{n+1} & = & \tilde{y}_n+\frac12\Delta t\left(f(t_{n},\tilde{y}_{n})+f(t_{n+1},\overline{y}_{n+1})\right), & {\rm for} & n\geq 0, \\
+	\overline{y}_{n+1} & = & \tilde{y}_n+\Delta tf(t_{n},\tilde{y}_{n}), & \text{for} & n\geq 0, \\
+	\tilde{y}_{n+1} & = & \tilde{y}_n+\frac12\Delta t\left(f(t_{n},\tilde{y}_{n})+f(t_{n+1},\overline{y}_{n+1})\right), & \text{for} & n\geq 0, \\
 	\tilde{y}_0 & = & y_0,
 \end{array}\right.
 $$
@@ -764,11 +764,11 @@ Then the **Fourth-order method of Runge-Kutta** (a.k.a. _RK4 method_) is defined
 
 $$
 \left\{\begin{array}{rclll}
-k_1 & = & \Delta tf(t_{n},\tilde{y}_{n}), & {\rm for} & n\geq 0, \\
-k_2 & = & \Delta tf(t_{n}+\frac12\Delta t,\tilde{y}_{n}+\frac12k_1), & {\rm for} & n\geq 0, \\
-k_3 & = & \Delta tf(t_{n}+\frac12\Delta t,\tilde{y}_{n}+\frac12k_2), & {\rm for} & n\geq 0, \\
-k_4 & = & \Delta tf(t_{n}+\Delta t,\tilde{y}_{n}+k_3), & {\rm for} & n\geq 0, \\
-\tilde{y}_{n+1} & = & \tilde{y}_n+\frac16\left(k_1+2k_2+2k_3+k_4\right), & {\rm for} & n\geq 0,\\
+k_1 & = & \Delta tf(t_{n},\tilde{y}_{n}), & \text{for} & n\geq 0, \\
+k_2 & = & \Delta tf(t_{n}+\frac12\Delta t,\tilde{y}_{n}+\frac12k_1), & \text{for} & n\geq 0, \\
+k_3 & = & \Delta tf(t_{n}+\frac12\Delta t,\tilde{y}_{n}+\frac12k_2), & \text{for} & n\geq 0, \\
+k_4 & = & \Delta tf(t_{n}+\Delta t,\tilde{y}_{n}+k_3), & \text{for} & n\geq 0, \\
+\tilde{y}_{n+1} & = & \tilde{y}_n+\frac16\left(k_1+2k_2+2k_3+k_4\right), & \text{for} & n\geq 0,\\
 \tilde{y}_0 & = & y_0,
 \end{array}\right.
 $$
@@ -784,7 +784,7 @@ Consider the following initial-value problem:
 
 $$
 \left\{\begin{array}{rclll}
-y'(t) & = & -2ty^2, & {\rm for} & t\geq -0.2, \\
+y'(t) & = & -2ty^2, & \text{for} & t\geq -0.2, \\
 y(-0.2) & = & 1.
 \end{array}\right.
 $$
