@@ -119,6 +119,11 @@ Then every function in the sequence $\{\phi_n(t)\}_{n=0}^{\infty}$ satisfies the
 Furthermore, it can be shown that this solution $\phi(t)$ is unique.
 ::::::
 
+:::{todo}
+Include proof of {prf:ref}`Thm:SlopeCurves:IFT`.
+
+:::
+
 ## Second-order differential equations
 
 In the case of a linear second-order differential equation we have:
