@@ -1,8 +1,10 @@
+(Sec:Integration:SpecialSubstitutions)=
+
 # Special substitutions
 
 ## Introduction
 
-In the method of integration by substitution from {numref}`Sec:Integration:Substitution` we learned that you have to choose a suitable substitution in order to simplify the integral. In this section we will discuss two special substitutions that are often used in practice: **trigonometric substitutions** and the **midpoint mirror substitution**.
+In the method of integration by substitution from {numref}`Sec:Integration:Substitution` we learned that you have to choose a suitable substitution in order to simplify the integral. In this section we will discuss two special substitutions that are often used in practice: **trigonometric substitutions** and the **midpoint mirror substitution**. In {numref}`Sec:Integration:TrigFunctions` on integration of trigonometric functions we will also cover the so-called *tangent half-angle substitution*. See {numref}`Sec:Integration:HalfAngle`.
 
 ## Trigonometric substitutions
 
@@ -30,7 +32,7 @@ Note that $\cos(t)\geq0$ for $-\frac{1}{2}\pi\leq t\leq\frac{1}{2}\pi$. Using $\
 
 \begin{align*}
 \int_{-1}^1\sqrt{1-x^2}\,dx&=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1+\cos(2t))\,dt\\
-&=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{2}\pi.
+&=\left[\frac{1}{2}t+\frac{1}{4}\sin(2t)\right]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{2}\pi.
 \end{align*}
 ::::::
 
@@ -70,13 +72,13 @@ $$
 \int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\int_0^{\frac{1}{4}\pi}\frac{dt}{\cos(t)}.
 $$
 
-In 1668 the Scottish mathematician [James Gregory (1638-1675)](https://en.wikipedia.org/wiki/James_Gregory_(mathematician)) discovered that
+In 1668 the Scottish mathematician [James Gregory (1638-1675)](https://en.wikipedia.org/wiki/James_Gregory_(mathematician)) discovered that[^Gregory]
+
+[^Gregory]: See {prf:ref}`Thm:Integration:GregoryIntegralCos` below.
 
 $$
 \int\frac{dt}{\cos(t)}=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
 $$
-
-
 
 We conclude that
 
@@ -88,7 +90,9 @@ and therefore $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\ln(1+\sqrt{2})$.
 ::::::
 
 :::{prf:theorem}
-:label: Theorem:Integration:GregoryIntegral
+:label: Thm:Integration:GregoryIntegralCos
+
+The substitution $u=\tan(t)+\dfrac{1}{\cos(t)}$ leads to 
 
 $$
 \int\frac{dt}{\cos(t)}=\int\frac{du}{u}=\ln|u|+C=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
@@ -96,10 +100,16 @@ $$
 
 :::
 
-:::{admonition} Proof of {prf:ref}`Theorem:Integration:GregoryIntegral`
+:::{admonition} Proof of {prf:ref}`Thm:Integration:GregoryIntegralCos`
 :class: tudproof, dropdown
 
-This can be shown as follows
+Multiplying both the numerator and the denominator of the integrand by 
+
+$$
+\tan(t)+\frac{1}{\cos(t)}
+$$
+
+we obtain
 
 $$
 \int\frac{dt}{\cos(t)}=\int\frac{1}{\cos(t)}\cdot\frac{\tan(t)+\dfrac{1}{\cos(t)}}{\tan(t)+\dfrac{1}{\cos(t)}}\,dt=\int\frac{\dfrac{\tan(t)}{\cos(t)}+\dfrac{1}{\cos^2(t)}}{\tan(t)+\dfrac{1}{\cos(t)}}\,dt.
@@ -111,10 +121,16 @@ $$
 \frac{du}{dt}=\frac{1}{\cos^2(t)}-\frac{1}{\cos^2(t)}\cdot(-\sin(t))=\frac{1}{\cos^2(t)}+\frac{\tan(t)}{\cos(t)}.
 $$
 
-Hence we have $du=\left(\dfrac{1}{\cos^2(t)}+\dfrac{\tan(t)}{\cos(t)}\right)\,dt$. Thus
+Hence we have $du=\left(\dfrac{\tan(t)}{\cos(t)}+\dfrac{1}{\cos^2(t)}\right)\,dt$. Thus
 
 $$
 \int\frac{dt}{\cos(t)}=\int\frac{du}{u}=\ln|u|+C=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
+$$
+
+Note that this can also be written as:
+
+$$
+\int\frac{dt}{\cos(t)}=\ln\left|\frac{1+\sin(t)}{\cos(t)}\right|+C=-\ln\left|\frac{1-\sin(t)}{\cos(t)}\right|+C
 $$
 
 :::
@@ -127,14 +143,15 @@ $$
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample3
-We evaluate $\displaystyle\int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx$.
+We evaluate $\displaystyle\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx$.
 
 Let $x=\dfrac{1}{\cos(t)}$, then we have $dx=\dfrac{\sin(t)}{\cos^2(t)}\,dt$. Furthermore, if $x=1$ then $t=0$ and if $x=\sqrt{2}$ then $t=\frac{1}{4}\pi$. Hence we find that
 
 \begin{align*}
-\int_0^{\sqrt{2}}\sqrt{x^2-1}\,dx&=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt\\
+\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx&=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt\\
 &=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt.
 \end{align*}
+
 Now we use $\cos^2(t)=1-\sin^2(t)$ and the substitution $u=\sin(t)$ to find that
 
 $$
@@ -152,21 +169,24 @@ to find that
 \begin{align*}
 &\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du\\
 &=\frac{1}{4}\int_0^{\frac{1}{2}\sqrt{2}}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,dt\\
-&=\frac{1}{4}\bigg[\ln|1-u|+\frac{1}{1-u}-\ln|1+u|-\frac{1}{1+u}\bigg]_0^{\frac{1}{2}\sqrt{2}}\\
+&=\frac{1}{4}\left[\ln|1-u|+\frac{1}{1-u}-\ln|1+u|-\frac{1}{1+u}\right]_0^{\frac{1}{2}\sqrt{2}}\\
 &=\frac{1}{4}\left(\ln(1-\tfrac{1}{2}\sqrt{2})+\frac{1}{1-\frac{1}{2}\sqrt{2}}-\ln(1+\tfrac{1}{2}\sqrt{2})-\frac{1}{1+\frac{1}{2}\sqrt{2}}\right)\\
 &=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}.
 \end{align*}
+
+We conclude that $\displaystyle\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}$.
 ::::::
 
 :::{prf:example} Serret's integral
 :label: Ex:Integration:SubstitutionTrigSerretsIntegral
 
-Consider the integral $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$, which is named after the French mathematician [Joseph Alfred Serret (1819-1885)](https://en.wikipedia.org/wiki/Joseph-Alfred_Serret).
+Consider Serret's integral $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$, which is named after the French mathematician [Joseph Alfred Serret (1819-1885)](https://en.wikipedia.org/wiki/Joseph-Alfred_Serret).
 
 One way to evaluate the integral is by using the substitution $x=\tan(\theta)$:
 
 \begin{align*}
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\ln\left(1+\tan(\theta)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\frac{\cos(\theta)+\sin(\theta)}{\cos(\theta)}\right)\,d\theta\\
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\ln\left(1+\tan(\theta)\right)\,d\theta\\
+&=\int_0^{\frac{1}{4}\pi}\ln\left(\frac{\cos(\theta)+\sin(\theta)}{\cos(\theta)}\right)\,d\theta\\
 &=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos(\theta)+\sin(\theta)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta.
 \end{align*}
 Now we use $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$ (see {numref}`Exc:Integration:SubstitutionTrigForm`) to obtain
@@ -193,7 +213,7 @@ In this evaluation we obtained that
 &\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt\\
 &{}\quad\Longrightarrow\quad\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta=0.
 \end{align*}
-The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later in {numref}`sec:CatalansConstant`. 
+The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later in {numref}`Sec:CatalansConstant`. 
 
 :::
 
@@ -268,7 +288,7 @@ Note that $\sin(t)\geq0$ for $0\leq t\leq\pi$. Using $\sin^2(t)=\frac{1}{2}(1-\c
 
 \begin{align*}
 \int_{-1}^1\sqrt{1-x^2}\,dx&=\int_0^{\pi}\sin^2(t)\,dt=\frac{1}{2}\int_0^{\pi}(1-\cos(2t))\,dt\\
-&=\bigg[\frac{1}{2}t-\frac{1}{4}\sin(2t)\bigg]_0^{\pi}=\frac{1}{2}\pi.
+&=\left[\frac{1}{2}t-\frac{1}{4}\sin(2t)\right]_0^{\pi}=\frac{1}{2}\pi.
 \end{align*}
 :::
 
@@ -296,7 +316,7 @@ Finally, we have $\sin^2(2t)=\frac{1}{2}(1-\cos(4t))$ which leads to
 
 \begin{align*}
 \int_{-1}^1x^2\sqrt{1-x^2}\,dx&=\frac{1}{8}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1-\cos(4t))\,dt\\
-&=\bigg[\frac{1}{8}t-\frac{1}{32}\sin(4t)\bigg]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{8}\pi.
+&=\left[\frac{1}{8}t-\frac{1}{32}\sin(4t)\right]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{8}\pi.
 \end{align*}
 :::
 

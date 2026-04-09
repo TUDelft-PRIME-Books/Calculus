@@ -1,4 +1,4 @@
-(sec:Integration:RationalFunctions)=
+(Sec:Integration:RationalFunctions)=
 
 # Integration of rational functions
 
@@ -6,7 +6,7 @@
 
 In {numref}`Sec:RationalFunctions` we covered rational functions and more specifically polynomial division and partial fraction decomposition. In this section we will use these techniques to evaluate integrals of rational functions.
 
-In {numref}`sec:PartialFractionDecomposition` we encountered in {prf:ref}`Thm:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic` that any _proper_ rational function can be written as a sum of partial fractions, where each is one of the following general forms:
+In {numref}`Sec:PartialFractionDecomposition` we encountered in {prf:ref}`Thm:RationalFunctions:RepeatedLinearAndIrreducibleQuadratic` that any _proper_ rational function can be written as a sum of partial fractions, where each is one of the following general forms:
 
 - $\displaystyle\frac{A}{(x-a)^k}$ with $A,a\in\mathbb{R}$ and $k\in\{1,2,3,\ldots\}$.
 - $\displaystyle\frac{Bx+C}{((x-b)^2+c^2)^m}$ with $B,C,b,c\in\mathbb{R}$ and $m\in\{1,2,3,\ldots\}$.
@@ -29,16 +29,16 @@ The six cases can be integrated using the following theorem:
 
 Let $a,b,c\in\mathbb{R}$, $c\neq0$ and $k,m\in\{2,3,\ldots\}$. Then we have
 
-1. $\displaystyle\int\frac{1}{x-a}\,dx = \ln|x-a|+C$ with $C\in\mathbb{R}$.<br><br>
-2. $\displaystyle\int\frac{1}{(x-a)^k}\,dx = \frac{-1}{k-1}\cdot\frac{1}{(x-a)^{k-1}}+C$ with $C\in\mathbb{R}$.<br><br>
-3. $\displaystyle\int\frac{x-b}{(x-b)^2+c^2}\,dx = \frac{1}{2}\ln((x-b)^2+c^2)+C$ with $C\in\mathbb{R}$.<br><br>
-4. $\displaystyle\int\frac{1}{(x-b)^2+c^2}\,dx = \frac{1}{c}\arctan\left(\frac{x-b}{c}\right)+C$ with $C\in\mathbb{R}$.<br><br>
-5. $\displaystyle\int\frac{x-b}{((x-b)^2+c^2)^m}\,dx = \frac{-1}{2(m-1)}\cdot\frac{1}{((x-b)^2+c^2)^{m-1}}+C$ with $C\in\mathbb{R}$.<br><br>
-6. $\displaystyle\int\frac{1}{((x-b)^2+c^2)^m}\,dx = \int\frac{1}{c}\cos^{2m-2}(t)\,dt$ with $x=b+c\tan(t)$ and $C\in\mathbb{R}$.
+1. $\displaystyle\int\frac{1}{x-a}\,dx = \ln|x-a|+C$.<br><br>
+2. $\displaystyle\int\frac{1}{(x-a)^k}\,dx = \frac{-1}{k-1}\cdot\frac{1}{(x-a)^{k-1}}+C$.<br><br>
+3. $\displaystyle\int\frac{x-b}{(x-b)^2+c^2}\,dx = \frac{1}{2}\ln((x-b)^2+c^2)+C$.<br><br>
+4. $\displaystyle\int\frac{1}{(x-b)^2+c^2}\,dx = \frac{1}{c}\arctan\left(\frac{x-b}{c}\right)+C$.<br><br>
+5. $\displaystyle\int\frac{x-b}{((x-b)^2+c^2)^m}\,dx = \frac{-1}{2(m-1)}\cdot\frac{1}{((x-b)^2+c^2)^{m-1}}+C$.<br><br>
+6. $\displaystyle\int\frac{1}{((x-b)^2+c^2)^m}\,dx = \frac{1}{c}\int\cos^{2m-2}(t)\,dt$ with $x=b+c\tan(t)$.
 
 ::::::
 
-The last integrand in the sixth case can be evaluated using the techniques for trigonometric integrals, which is covered in {numref}`sec:Integration:TrigFunctions`.
+The last integral in the sixth case can be evaluated using the techniques for trigonometric integrals, which is covered in {numref}`Sec:Integration:TrigFunctions`.
 
 ::::{admonition} Proof of {prf:ref}`Thm:RationalFunctions:Cases`
 :class: tudproof
@@ -47,14 +47,14 @@ Cases 1 and 2 follow from the substitution $u=x-a$ and {numref}`Tab:Integration:
 
 Cases 3 and 5 follow from the substitution $u=(x-b)^2+c^2$ and {numref}`Tab:Integration:StandardIndefiniteIntegrals`.
 
-Case 4 follows from the substitution $u=\frac{x-b}{c}$ and {numref}`Tab:Integration:StandardIndefiniteIntegrals`.
+Case 4 follows from the substitution $u=\dfrac{x-b}{c}$ and {numref}`Tab:Integration:StandardIndefiniteIntegrals`.
 
 Finally, case 6 follows from the substitution $x=b+c\tan(t)$, which leads to $dx=c(1+\tan^2(t))\,dt$ and therefore
 
 \begin{align*}
 \int\frac{1}{((x-b)^2+c^2)^m}\,dx&=\int\frac{c(1+\tan^2(t))}{(c^2(1+\tan^2(t)))^m}\,dt\\
 &= \int\frac{1}{c}\cdot\frac{1}{(1+\tan^2(t))^{m-1}}\,dt\\
-&=\int\frac{1}{c}\cos^{2m-2}(t)\,dt,
+&=\frac{1}{c}\int\cos^{2m-2}(t)\,dt,
 \end{align*}
 
 where in the last step we used the identity $1+\tan^2(t)=\dfrac{1}{\cos^2(t)}$.
@@ -72,16 +72,16 @@ Integrating a rational function always consists of the same steps, which means w
 
 Assume $f$ is a rational function. Then we can evaluate $\displaystyle\int f(x)\,dx$ as follows:
 
-1. Determine polynomials $P$ and $Q$ such that $f(x)=\frac{P(x)}{Q(x)}$ for all $x\in\mathbb{R}$ with $Q(x)\neq0$.
-2. Perform a long division to find polynomials $S$ and $R$ with $\deg(R)<\deg(Q)$ such that $f(x)=S(x)+\frac{R(x)}{Q(x)}$.
-3. Perform a partial fraction decomposition to write $\frac{R(x)}{Q(x)}$ as a sum of partial fractions.
+1. Determine polynomials $P$ and $Q$ such that $f(x)=\dfrac{P(x)}{Q(x)}$ for all $x\in\mathbb{R}$ with $Q(x)\neq0$.
+2. Perform a long division to find polynomials $S$ and $R$ with $\deg(R)<\deg(Q)$ such that $f(x)=S(x)+\dfrac{R(x)}{Q(x)}$.
+3. Perform a partial fraction decomposition to write $\dfrac{R(x)}{Q(x)}$ as a sum of partial fractions.
 4. Split each of the partial fractions into multiples of the six cases in {prf:ref}`Thm:RationalFunctions:Cases`.
 5. Integrate each of the separate terms (remember to also integrate the polynomial $S$).
 6. Add the results together and add a constant of integration.
 
 ::::::
 
-In the next sections we will apply this algorithm to various examples.
+In the next subsections we will apply this algorithm to various examples.
 
 :::{prf:remark}
 :label: Rmk:RationalFunctions:IntegrationAlgorithm
@@ -92,7 +92,7 @@ In the next sections we will apply this algorithm to various examples.
 
 ## Unrepeated linear factors
 
-If the partial fraction decomposition of a proper rational function only contains unrepeated linear factors, then we can directly apply the first case of {prf:ref}`Thm:RationalFunctions:Cases` to find the answer. We give two examples.
+If the partial fraction decomposition of a proper rational function only contains unrepeated linear factors, then we can directly apply the first case of {prf:ref}`Thm:RationalFunctions:Cases`. We give two examples.
 
 ::::::{prf:Example}
 :label: Ex:Integration:RationalFunctionsExample1
@@ -123,7 +123,7 @@ Hence, we have
 :label: Ex:Integration:RationalFunctionsExample2
 Now we take a look at $\displaystyle\int\frac{6x^2-4x-1}{2x^3+x^2-x}\,dx$.
 
-Note that the integrand is a proper rational function since the degree of the numerator is less than the degree of the denominator, and $2x^3+x^2-x=2x(x-\frac12)(x+1)$ and therefore
+Note that the integrand is a proper rational function since the degree of the numerator is less than the degree of the denominator. Furthermore, we have $2x^3+x^2-x=2x(x-\frac12)(x+1)$ and therefore
 
 \begin{align*}
 \frac{6x^2-4x-1}{2x^3+x^2-x} &= \frac{6x^2-4x-1}{2x(x-\frac12)(x+1)} \\
@@ -138,7 +138,7 @@ This leads to
 &=\ln|x|-\ln|x-\tfrac{1}{2}|+3\ln|x+1|+C.
 \end{align*}
 
-Note that $\ln|x-\tfrac12|=\ln|\frac12(2x-1)|=\ln(\tfrac12)+\ln|2x-1|$. This implies that the answer can also be written as (with a different  constant of integration)
+Note that $\ln|x-\tfrac12|=\ln|\frac12(2x-1)|=\ln(\tfrac12)+\ln|2x-1|$. This implies that the result can also be written as (with a different  constant of integration)
 
 $$
 \int\frac{6x^2-4x-1}{2x^3+x^2-x}\,dx=\ln|x|-\ln|2x-1|+3\ln|x+1|+C.
@@ -170,7 +170,7 @@ with $A=\dfrac{1}{2\alpha}$ and $B=-\dfrac{1}{2\alpha}$. Hence, we have
 
 ## Repeated linear factors
 
-If the partial fraction decomposition of a proper rational function contains repeated linear factors, then we can directly apply the second case of {prf:ref}`Thm:RationalFunctions:Cases` to find the answer. We give two examples.
+If the partial fraction decomposition of a proper rational function contains repeated linear factors, then we can directly apply the second case of {prf:ref}`Thm:RationalFunctions:Cases`. We give two examples.
 
 ::::::{prf:Example}
 :label: Ex:Integration:RationalFunctionsExample3
@@ -185,7 +185,7 @@ $$
 In this case we obtain
 
 $$
-\frac{2x+1}{(x+1)^2}=-\frac{2}{x+1}+\frac{1}{(x+1)^2}.
+-\frac{2x+1}{(x+1)^2}=-\frac{2}{x+1}+\frac{1}{(x+1)^2}.
 $$
 
 Hence we have
@@ -216,12 +216,16 @@ We conclude that
 
 ## Unrepeated irreducible quadratic factors
 
-If the partial fraction decomposition of a proper rational function contains unrepeated irreducible quadratic factors, then we can directly apply the third and fourth case of {prf:ref}`Thm:RationalFunctions:Cases` to find the answer. We give two examples.
+If the partial fraction decomposition of a proper rational function contains unrepeated irreducible quadratic factors, then we can directly apply the third and fourth case of {prf:ref}`Thm:RationalFunctions:Cases`. We give two examples.
 
 ::::::{prf:Example}
 :label: Ex:Integration:RationalFunctionsExample5
 
-We will compute the indefinite integral of the rational function $\dfrac{6x^3-7x^2+12x-4}{x^4+5x^2+4}$.
+We will evaluate the indefinite integral of the rational function 
+
+$$
+\frac{6x^3-7x^2+12x-4}{x^4+5x^2+4}.
+$$
 
 We have
 
@@ -241,7 +245,7 @@ which implies that
 
 ::::::{prf:Example}
 :label: Ex:Integration:RationalFunctionsExample6
-We evaluate $\displaystyle\int\frac{2x+5}{x^2+4x+8}\,dx$.
+Consider $\displaystyle\int\frac{2x+5}{x^2+4x+8}\,dx$.
 
 Note that $x^2+4x+8=(x+2)^2+4$ and with that the integrand already becomes a partial fraction decomposition. Hence, we have
 
@@ -252,7 +256,7 @@ Note that $x^2+4x+8=(x+2)^2+4$ and with that the integrand already becomes a par
 &= \ln(x^2+4x+8)+\frac{1}{2}\arctan\left(\frac{x+2}{2}\right)+C.
 \end{align*}
 
-Note that in this case we also could have used the substitution $u=x+2$ to find the answer:
+Note that in this case we also could have used the substitution $u=x+2$:
 
 \begin{align*}
 \int\frac{2x+5}{x^2+4x+8}\,dx&=\int\frac{2u+1}{u^2+4}\,du\\
@@ -265,23 +269,24 @@ Note that in this case we also could have used the substitution $u=x+2$ to find 
 
 ## Repeated irreducible quadratic factors
 
-If the partial fraction decomposition of a proper rational function contains repeated irreducible quadratic factors, then we can directly apply the fifth and sixth case of {prf:ref}`Thm:RationalFunctions:Cases` to find the answer. We give several examples.
+If the partial fraction decomposition of a proper rational function contains repeated irreducible quadratic factors, then we can directly apply the fifth and sixth case of {prf:ref}`Thm:RationalFunctions:Cases`. We give a few examples.
 
 ::::::{prf:Example}
 :label: Ex:Integration:RationalFunctionsExample7
 Consider $\displaystyle\int\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(x^2+2)^2}\,dx$.
 
-We have, using some tedious computations, that the partial fraction decomposition of the integrand is
+Using some tedious computations, the partial fraction decomposition of the integrand gives
 
-$$
-\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(x^2+2)^2} = \frac{2x+1}{x^2+1}-\frac{2x}{(x^2+1)^2}+\frac{4x}{(x^2+2)^2}.
-$$
+\begin{align*}
+&\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(x^2+2)^2}\\
+&{}\quad{} = \frac{2x+1}{x^2+1}-\frac{2x}{(x^2+1)^2}+\frac{4x}{(x^2+2)^2}.
+\end{align*}
 
 Hence we have
 
 \begin{align*}
 &\int\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(x^2+2)^2}\,dx\\
-&{}\quad\quad{}=\int\left(\frac{2x+1}{x^2+1}-\frac{2x}{(x^2+1)^2}+\frac{4x}{(x^2+2)^2}\right)\,dx\\
+&{}\quad\quad{}=\int\left(\frac{2x}{x^2+1}+\frac{1}{x^2+1}-\frac{2x}{(x^2+1)^2}+\frac{4x}{(x^2+2)^2}\right)\,dx\\
 &{}\quad\quad{}=\ln(x^2+1)+\arctan(x)+\frac{1}{2(x^2+1)^2}-\frac{1}{(x^2+2)^2}+C.
 \end{align*}
 ::::::
@@ -308,27 +313,30 @@ Now we use $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ to find that
 
 \begin{align*}
 \int_0^1\frac{1}{(1+x^2)^2}\,dx&=\int_0^{\frac{1}{4}\pi}\cos^2(t)\,dt \\
-&=\frac{1}{2}\int_0^{\frac{1}{4}\pi}(1+\cos(2t))\,dt\\
-&=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_0^{\frac{1}{4}\pi}=\frac{1}{8}\pi+\frac{1}{4}.
+&=\int_0^{\frac{1}{4}\pi}\frac{1}{2}(1+\cos(2t))\,dt\\
+&=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_0^{\frac{1}{4}\pi}\\
+&=\frac{1}{8}\pi+\frac{1}{4}.
 \end{align*}
 ::::::
 
 ::::::{prf:Example}
 :label: Ex:Integration:RationalFunctionsRepeatedExample2
-We determine $\displaystyle\int_{1}^{\sqrt{3}}\frac{dx}{(1+x^2)^3}$.
+We evaluate $\displaystyle\int_{1}^{\sqrt{3}}\frac{dx}{(1+x^2)^3}$.
 
 Again we use $x=\tan(t)$ and therefore
 
 $$
-\int_1^{\sqrt{3}}\frac{dx}{(1+x^2)^3}=\int_{\frac{\pi}{4}}^{\frac{\pi}{3}}\cos^4(t)\,dt.
+\int_1^{\sqrt{3}}\frac{dx}{(1+x^2)^3}=\int_{\frac{1}{4}\pi}^{\frac{1}{3}\pi}\cos^4(t)\,dt.
 $$
 
 Now we use $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ to find that
 
 \begin{align*}
-\cos^4(t)&=\frac{1}{4}(1+\cos(2t))^2=\frac{1}{4}(1+2\cos(2t)+\cos^2(2t))\\
-&=\frac{1}{4}+\frac{1}{2}\cos(2t)+\frac{1}{2}\cos^2(2t).
+\cos^4(t)&=\frac{1}{4}(1+\cos(2t))^2\\
+&=\frac{1}{4}(1+2\cos(2t)+\cos^2(2t))\\
+&=\frac{1}{4}+\frac{1}{2}\cos(2t)+\frac{1}{4}\cos^2(2t).
 \end{align*}
+
 Finally, using $\cos^2(2t)=\frac{1}{2}(1+\cos(4t))$, we obtain
 
 $$
@@ -338,9 +346,11 @@ $$
 Hence, we have
 
 \begin{align*}
-\int_1^{\sqrt{3}}\frac{dx}{(1+x^2)^3}&=\int_{\frac{\pi}{4}}^{\frac{\pi}{3}}\cos^4(t)\,dt=\int_{\frac{\pi}{4}}^{\frac{\pi}{3}}\left(\frac{3}{8}+\frac{1}{2}\cos(2t)+\frac{1}{8}\cos(4t)\right)\,dt\\
-&=\bigg[\frac{3}{8}t+\frac{1}{4}\sin(2t)+\frac{1}{32}\sin(4t)\bigg]_{\frac{\pi}{4}}^{\frac{\pi}{3}}
-&= \frac{\pi}{32} + \frac{7\sqrt{3} - 16}{64}.
+\int_1^{\sqrt{3}}\frac{dx}{(1+x^2)^3}&=\int_{\frac{1}{4}\pi}^{\frac{1}{3}\pi}\cos^4(t)\,dt\\
+&=\int_{\frac{1}{4}\pi}^{\frac{1}{3}\pi}\left(\frac{3}{8}+\frac{1}{2}\cos(2t)+\frac{1}{8}\cos(4t)\right)\,dt\\
+&=\bigg[\frac{3}{8}t+\frac{1}{4}\sin(2t)+\frac{1}{32}\sin(4t)\bigg]_{\frac{1}{4}\pi}^{\frac{1}{3}\pi}\\
+&=\frac{1}{8}\pi+\frac{1}{8}\sqrt{3}-\frac{1}{64}\sqrt{3}-\frac{3}{32}\pi-\frac{1}{4}\\
+&= \frac{1}{32}\pi + \frac{7}{64}\sqrt{3} - \frac{1}{4}.
 \end{align*}
 ::::::
 
