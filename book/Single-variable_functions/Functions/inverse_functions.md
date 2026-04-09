@@ -559,7 +559,7 @@ Note that we cannot simplify this expression any further, since there are no rul
 
 ::::::{prf:example}
 :label: Ex:Inverse:Logarithmbasicsolving
-Suppose we want to solve the equation $2^{x-3}=5$. Since $\log_2(x)$ is the inverse function of $2^x$ we find that $2^{x-3}=5$ precisely when $x-3=\log_2(5)$. Alternatively, we can find this equation by taking the $\log_2$ of both sides of the equation $2^{x-3}=5$. Since $x-3=\log_2(5)$ we find $x=3+\log_2(5)$, which cannot be simplified any further. Using a calculator, we find $3+\log_2(5)\approx 5.4219...$.
+Suppose we want to solve the equation $2^{x-3}=5$. Since $\log_2(x)$ is the inverse function of $2^x$ we find that $2^{x-3}=5$ precisely when $x-3=\log_2(5)$. Alternatively, we can find this equation by taking the $\log_2$ of both sides of the equation $2^{x-3}=5$. Since $x-3=\log_2(5)$ we find $x=3+\log_2(5)$, which cannot be simplified any further. Using a calculator, we find $3+\log_2(5)\approx 5.4219\ldots$.
 ::::::
 
 Actually, the base of the logarithm does not play as important a role as you might be tempted to think at first. For example, consider the two numbers $x=\log_2(64)$ and $y=\log_8(64)$. Then $x$ is the unique number with $2^x=64$, while $y$ is the unique number with $8^y=64$. Now we notice that

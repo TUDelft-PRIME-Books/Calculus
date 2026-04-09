@@ -187,7 +187,7 @@ parts:
   - file: todos.md
   - file: questions.md
   - file: _git/github.com_TeachBooks_Sphinx-PRIME-applets/main/README.md
-  - file: _git/github.com_TeachBooks_Sphinx-Sticky-Margin/trigger_and_figlxass/MANUAL.md
+  - file: _git/github.com_TeachBooks_Sphinx-Sticky-Margin/main/MANUAL.md
   numbered: 3
   style: romanupper
 root: index.md
