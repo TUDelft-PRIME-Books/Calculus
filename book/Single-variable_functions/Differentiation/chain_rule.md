@@ -6,12 +6,12 @@
 
 ## Introduction
 
-Consider a diver who is diviving in the sea. Let $x$ be the depth (measured in meters) and $p(x)$ the pressure at that depth $x$ (measured in pascals). In addition, the depth is a function of time $t$ (measured in seconds), i.e., we have $x=x(t)$. To avoid decompression sickness, the diver should not go to the surface too fast. The main issue at hand here is not the change in height, but the change in pressure. So the main quantity that should be restricted here is the rate of change of the pressure with respect to time, i.e. $\frac{dp}{dt}$. However, $p$ is a function of $x$, and not of $t$, so how should we interpret this? Fortunately, $x$ is a function of $t$, so, indirectly, $p$ is a function of time and we can write $p=p(x(t))$. 
+Consider a diver who is diving in the sea. Let $x$ be the depth (measured in meters) and $p(x)$ the pressure at that depth $x$ (measured in pascals). In addition, the depth is a function of time $t$ (measured in seconds), i.e., we have $x=x(t)$. To avoid decompression sickness, the diver should not go to the surface too fast. The main issue at hand here is not the change in height, but the change in pressure. So the main quantity that should be restricted here is the rate of change of the pressure with respect to time, i.e. $\frac{dp}{dt}$. However, $p$ is a function of $x$, and not of $t$, so how should we interpret this? Fortunately, $x$ is a function of $t$, so, indirectly, $p$ is a function of time and we can write $p=p(x(t))$. 
 
-So how would we then evalute $\frac{dp}{dt}$? In a very short period of time $\Delta t$, the change in pressure $\Delta p$ equals the change in pressure per meter, which is $\frac{\Delta p}{\Delta x}$, times the change in depth $\Delta x$ in this short period of time. Written differently, we have
+So how would we then evaluate $\frac{dp}{dt}$? In a very short period of time $\Delta t$, the change in pressure $\Delta p$ equals the change in pressure per meter, which is $\frac{\Delta p}{\Delta x}$, times the change in depth $\Delta x$ in this short period of time. Written differently, we have
 
 $$
- \frac{\Delta p}{\Delta t}=\frac{\Delta p}{\Delta x}\frac{\Delta x}{\Delta t}.
+ \frac{\Delta p}{\Delta t}=\Delta p\cdot\frac{1}{\Delta t}=\frac{\Delta p}{\Delta x}\cdot\Delta x\cdot\frac{1}{\Delta t}=\frac{\Delta p}{\Delta x}\frac{\Delta x}{\Delta t}.
 $$
 
 Taking the limit as $\Delta t$ approaches $0$ of this expression, we obtain the expression
@@ -20,9 +20,9 @@ $$
  \frac{d p}{d t}=\frac{d p}{d x}\frac{d x}{d t}.
 $$
 
-Here we used that if $\Delta t\rightarrow 0$ we have $\Delta x\rightarrow 0$ as well. So the rate of change of the pressure with respect to time is the product of the rate of change of pressure with respect to depth times the velocity at which the depth changes. This makes sense intuitively: if we move twice as fast, we would expect the pressure to change twice as fast as well, and if the pressure decreases three times as fast with respect to depth, it will also change three times as fast with respect to time.
+Here we used that if $\Delta t\rightarrow 0$, we must have $\Delta x\rightarrow 0$ as well. So the rate of change of the pressure with respect to time is the product of the rate of change of pressure with respect to depth times the velocity at which the depth changes. This makes sense intuitively: if we move twice as fast, we would expect the pressure to change twice as fast as well, and if the pressure decreases three times as fast with respect to depth, it will also change three times as fast with respect to time.
 
-The general version of this result is known as the **chain rule**. It is used to find derivatives of compositions of functions. It is a very important and commonly used tool when finding derivatives. In this section, we will state and prove the chain rule and show how it is used. We will also use the chain rule to find the derivative of functions of the form $f(x)=b^x$ for $b>0$.
+The general version of this result is known as the **chain rule**. It is used to find derivatives of compositions of functions. It is a very important and commonly used tool when finding derivatives. In this section, we will state and prove the chain rule and show how it is used. We will also use the chain rule to find the derivative of functions of the form $f(x)=b^x$ for $b>0$, as we promised in {prf:ref}`Remark:Differentiability:Powerfunctions`.
 
 (Subsec:ChainruleIntro)=
 
@@ -46,28 +46,31 @@ $$
  \frac{f(g(x))-f(g(a))}{x-a}=\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\frac{g(x)-g(a)}{x-a}.
 $$
 
-If there is some interval $(a-\delta,a+\delta)$ such that for each $x$ in $(a-\delta,a+\delta)$ we have $g(x)\neq g(a)$, then we can directly evalute the limit as $x$ approaches $a$ as
+If there is some interval $(a-\delta,a+\delta)$ such that for each $x$ in $(a-\delta,a+\delta)$ we have $g(x)\neq g(a)$, then we can directly evaluate the limit as $x$ approaches $a$ as
 
-$$
- \lim_{x\rightarrow a}\frac{h(x)-h(a)}{x-a}=\lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{x-a}=\lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\frac{g(x)-g(a)}{x-a}=\lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\lim_{x\rightarrow a}\frac{g(x)-g(a)}{x-a}=f'(g(a))\cdot g'(a)
-$$
+\begin{align*}
+ \lim_{x\rightarrow a}\frac{h(x)-h(a)}{x-a} &= \lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{x-a} \\
+ &= \lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\frac{g(x)-g(a)}{x-a} \\
+ &= \lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\lim_{x\rightarrow a}\frac{g(x)-g(a)}{x-a} \\
+ &= f'(g(a))\cdot g'(a)
+\end{align*}
 
 using {prf:ref}`Thm:Differentiability:Derivativealt`. In that case, we would directly obtain $h'(a)=f'(g(a))\cdot g'(a)$.
 
 However, we cannot make the assumption that there is such an interval $(a-\delta,a+\delta)$, in general. And if we cannot make this assumption, the preceding computation does not work as we are committing the sin of dividing by $0$. So to avoid this, we define a real function $k$ that is given by
 
 $$
- k(x)=\left\{\begin{array}{l}\frac{f(x)-f(g(a))}{x-g(a)},\qquad&\text{if}\ x\neq g(a),\\
- f'(g(a)),\qquad&\text{if}\ x=g(a)\end{array}\right.
+ k(u)=\left\{\begin{array}{ll}\dfrac{f(u)-f(g(a))}{u-g(a)},&\text{if}\quad u\neq g(a),\\
+ f'(g(a)),&\text{if}\quad u=g(a).\end{array}\right.
 $$
 
 Then we have, since $f$ is differentiable at $g(a)$,
 
 $$
- \lim_{x\rightarrow g(a)}k(x)=\lim_{x\rightarrow g(a)}\frac{f(x)-f(g(a))}{x-g(a)}=f'(g(a))=k(a),
+ \lim_{u\rightarrow g(a)}k(u)=\lim_{u\rightarrow g(a)}\frac{f(u)-f(g(a))}{u-g(a)}=f'(g(a))=k(g(a)),
 $$
 
-so we have constructed $k$ in such a way that $k$ is continuous at $g(a)$. According to {prf:ref}`Thm:Differentiability:Diffimpliescont`, $g$ is continuous at $a$, since it is differentiable at $a$. So by {prf:ref}`Theorem:Continuity:Composition`, $\phi\circ g$ is continuous at $a$. 
+so we have constructed $k$ in such a way that $k$ is continuous at $g(a)$. According to {prf:ref}`Thm:Differentiability:Diffimpliescont`, $g$ is continuous at $a$, since it is differentiable at $a$. So by {prf:ref}`Theorem:Continuity:Composition`, $k\circ g$ is continuous at $a$. 
 
 Now for any $x$ for which $g(x)\neq g(a)$ we have
 
@@ -83,9 +86,11 @@ $$
 
 So the identity $\displaystyle k(g(x))\frac{g(x)-g(a)}{x-a}=\frac{f(g(x))-f(g(a))}{x-a}$ holds for all $x\neq a$. Then, we find that
 
-$$
- \lim_{x\rightarrow a}\frac{h(x)-h(a)}{x-a}=\lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{x-a}=\lim_{x\rightarrow a}k(g(x))\frac{g(x)-g(a)}{x-a}=\lim_{x\rightarrow a}k(g(x))\cdot \lim_{x\rightarrow a}\frac{g(x)-g(a)}{x-a}.
-$$
+\begin{align*}
+ \lim_{x\rightarrow a}\frac{h(x)-h(a)}{x-a} &= \lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{x-a} \\
+ &= \lim_{x\rightarrow a}k(g(x))\frac{g(x)-g(a)}{x-a} \\
+ &= \lim_{x\rightarrow a}k(g(x))\cdot \lim_{x\rightarrow a}\frac{g(x)-g(a)}{x-a}.
+\end{align*}
 
 Now since $k\circ g$ is continuous at $a$, we obtain
 
@@ -115,11 +120,28 @@ $$
 Make sure to avoid both errors and use the chain rule as stated.
 ::::
 
+::::{prf:notation}
+:label: Thm:Chainrule:Notation
+
+A few notations that might help you remember the chain rule is seeing $f$ as a function of a variable $u$ and $g$ as a function of a different variable $x$. Then
+
+$$
+(f\circ g)(x) = \Bigg[ f(u) \Bigg]_{u=g(x)}.
+$$
+
+Using this notation, the chain rule can be remembered as
+
+$$
+(f\circ g)'(x) = \Bigg[ f'(u) \Bigg]_{u=g(x)} g'(x) = \left[ \dfrac{df}{du} \right]_{u=g(x)} g'(x).
+$$
+
+::::
+
 Let us see how we can use the chain rule in practice, by considering a few examples.
 
 ::::::{prf:example} 
 :label: Thm:Chainrule:Example1
-Consider the function $h(x)=\sin\left(x^3\right)$. Then we note that $h=f\circ g$ with $f(x)=\sin(x)$ and $g(x)=x^3$. That means that $h$ is the composition of two functions of which we know the derivative. As such, we can use the chain rule to find the derivative. Indeed, we have $f'(x)=\cos(x)$ and $g'(x)=3x^{3-2}=3x^2$, so we obtain
+Consider the function $h(x)=\sin\left(x^3\right)$. Then we note that $h=f\circ g$ with $f(u)=\sin(u)$ and $g(x)=x^3$. That means that $h$ is the composition of two functions of which we know the derivative. As such, we can use the chain rule to find the derivative. Indeed, we have $f'(u)=\cos(u)$ and $g'(x)=3x^{3-2}=3x^2$, so we obtain
 
 $$
  h'(x)=f'(g(x))g'(x)=\cos\left(x^3\right)3x^2.
@@ -129,7 +151,7 @@ $$
 
 ::::::{prf:example} 
 :label: Thm:Chainrule:Example2
-Consider the function $f(t)=e^{3\cos(t)}$. Again, this function can be written as the composition of two other functions of which we know the derivative. Indeed, we have $f=g\circ h$ with $g(t)=e^{t}$ and $h(t)=3\cos(t)$. We know that $g'(t)=e^t$ and $h'(t)=-3\sin(t)$. Then, with the chain rule, we obtain
+Consider the function $f(t)=e^{3\cos(t)}$. Again, this function can be written as the composition of two other functions of which we know the derivative. Indeed, we have $f=g\circ h$ with $g(u)=e^{u}$ and $h(t)=3\cos(t)$. We know that $g'(u)=e^{u}$ and $h'(t)=-3\sin(t)$. Then, with the chain rule, we obtain
 
 $$
  f'(t)=g'(h(t))h'(t)=e^{3\cos(t)}(-3\sin(t))=-3\sin(t)e^{3\cos(t)}.
@@ -142,7 +164,7 @@ $$
 
 ::::::{prf:example} 
 :label: Thm:Chainrule:Highpower
-Suppose we want to know the derivative of the function $p(t)=\left(t^2+1\right)^{10}$. We could try to work out the brackets, but then we get quite a large number of terms. It is also not necessary to do so. Instead, we can use the chain rule. Indeed, we note that $p=r\circ s$ with $r(t)=t^{10}$ and $s(t)=t^2+1$. We know the derivatives of both of these functions, since we have $r'(t)=10t^{10-1}=10t^9$ and $s'(t)=2t^{2-1}+0=2t$, so we obtain
+Suppose we want to know the derivative of the function $p(t)=\left(t^2+1\right)^{10}$. We could try to work out the brackets, but then we get quite a large number of terms. It is also not necessary to do so. Instead, we can use the chain rule. Indeed, we note that $p=r\circ s$ with $r(u)=u^{10}$ and $s(t)=t^2+1$. We know the derivatives of both of these functions, since we have $r'(u)=10u^{9}$ and $s'(t)=2t$, so we obtain
 
 $$
  p'(t)=r'(s(t))s'(t)=10\left(t^2+1\right)^92t=20t\left(t^2+1\right)^9.
@@ -150,6 +172,8 @@ $$
 
 In general, if $n$ is a natural number, the chain rule can be used to find the derivative of functions of the form $p(t)=\left(q(t)\right)^n$ and that derivative becomes $p'(t)=n\left(q(t)\right)^{n-1}q'(t)$.
 ::::::
+
+## Standard derivatives
 
 ::::::{prf:example} 
 :label: Thm:Chainrule:Introbtox
@@ -159,7 +183,7 @@ $$
  f(x)=2^x=\left(e^{\ln(2)}\right)^x=e^{\ln(2)x}.
 $$
 
-Now, the function $f$ is written as the composition $f=g\circ h$ with $g(x)=e^x$ and $h(x)=\ln(2)x$ and of both these functions we know the derivative (note that $\ln(2)$ is just a number, so $h$ is a linear function). Then the chain rule gives
+Now, the function $f$ is written as the composition $f=g\circ h$ with $g(u)=e^u$ and $h(x)=\ln(2)x$ and of both these functions we know the derivative (note that $\ln(2)$ is just a number, so $h$ is a linear function). Then the chain rule gives
 
 $$
  \frac{d}{dx}2^x=\frac{d}{dx}e^{\ln(2)x}=g'(h(x))h'(x)=e^{\ln(2)x}\ln(2)=\ln(2)2^x.
@@ -187,13 +211,13 @@ $$
  f(x)=a^x=\left(e^{\ln(a)}\right)^x=e^{\ln(a)x}.
 $$
 
-As such, we have $f=g\circ h$ with $g(x)=e^{x}$ and $h(x)=\ln(a)x$. Then $g'(x)=e^x$ and $h'(x)=\ln(a)$ (recall that $\ln(a)$ is simply a number), so with the chain rule we find
+As such, we have $f=g\circ h$ with $g(u)=e^{u}$ and $h(x)=\ln(a)x$. Then $g'(u)=e^{u}$ and $h'(x)=\ln(a)$ (recall that $\ln(a)$ is simply a number), so with the chain rule we find
 
 $$
  f'(x)=g'(h(x))h'(x)=e^{\ln(a)x}\ln(a)=\ln(a)a^x.
 $$
 
-Now consider the function $f(x)=\sinh(x)=\dfrac{e^{x}-e^{-x}}{2}$. We will use the chain rule to find the derivative $\dfrac{d}{dx}e^{-x}$. Indeed, we, if $p(x)=e^{-x}$ then $p=s\circ t$ with $s(x)=e^x$ and $t(x)=-x$. Then we obtain with the chain rule that
+Now consider the function $f(x)=\sinh(x)=\dfrac{e^{x}-e^{-x}}{2}$. We will use the chain rule to find the derivative $\dfrac{d}{dx}e^{-x}$. Indeed, we, if $p(x)=e^{-x}$ then $p=s\circ t$ with $s(u)=e^u$ and $t(x)=-x$. Then we obtain with the chain rule that
 
 $$
  p'(x)=s'(t(x))t'(x)=e^{-x}(-1)=-e^{-x}.
@@ -213,6 +237,8 @@ $$
 
 :::
 
+## Longer chains of functions
+
 So why is the chain rule called the chain rule? This becomes clear when we note that we can use it as well to differentiate a chain of functions of the form $f\circ g\circ h$ (or even longer expressions). Indeed, if we have $z=z(y)$, $y=y(x)$ and $x=x(t)$, then the chain rule gives (in Leibniz notation)
 
 $$
@@ -221,21 +247,51 @@ $$
 
 If we were to think (incorrectly!) of expressions like $dz$ as numbers, then the equation above is just a matter of simplifying a product of fractions. Of course, an expression of the form $\dfrac{dz}{dy}$ is not an actual fraction, but simply a notation for the derivative. Still, we can use this to remember what the chain rule looks like for longer chains of functions.
 
-{prf:ref}`Thm:Chainrule:chain` how we can find the derivative of a chain of functions in practice.
+{prf:ref}`Thm:Chainrule:chain` shows how we can find the derivative of a chain of functions in practice.
 
 ::::::{prf:example} 
 :label: Thm:Chainrule:chain
-Consider the function $f(x)=\sin\left(3^{x^2+1}\right)$. Then we note that $f=g\circ h\circ k$ with $g(x)=\sin(x)$, $h(x)=3^x$ and $k(x)=x^2+1$. We first apply the chain rule to $f=g\circ (h\circ k)$ to obtain
+Consider the function $f(x)=\sin\left(3^{x^2+1}\right)$. Then we note that $f=g\circ(h\circ k)$ with $g(w)=\sin(w)$, $h(u)=3^u$ and $k(x)=x^2+1$. We first apply the chain rule to $f=g\circ (h\circ k)$ to obtain
 
 $$
- f'(x)=f'((g\circ h)(x))(g\circ h)'(x)=f'(g(h(x)))(g\circ h)'(x).
+ f'(x)=f'((h\circ k)(x))(g\circ h)'(x)=f'(h(k(x)))(h\circ k)'(x).
 $$
 
-Now we can use the chain rule again to find the derivative $(g\circ h)'(x)$. This gives
+Now we can use the chain rule again to find the derivative $(h\circ k)'(x)$. This gives
 
-$$
- f'(x)=f'(g(h(x)))(g\circ h)'(x)=f'(g(h(x)))g'(h(x))h'(x)=\cos\left(3^{x^2+1}\right)\ln(3)3^{x^2+1}\left(2x+1\right).
-$$
-
+\begin{align*}
+ f'(x) &= f'(k(k(x)))(h\circ k)'(x) \\
+ &= f'(h(k(x)))h'(k(x))k'(x) \\
+&= \cos\left(3^{x^2+1}\right)\ln(3)3^{x^2+1}\left(2x+1\right).
+\end{align*}
 
 ::::::
+
+The basic rule you need to remember is that if you have a chain of functions, you can apply the chain rule repeatedly to find the derivative of that entire chain. To do so, you work from the outside in.
+
+A concise, but a little hard to read theorem that summarises this is the following.
+
+::::{prf:corollary}
+Let $f_1,f_2,\ldots,f_n$ be functions such that the composition $h=f_1\circ f_{2}\circ \cdots \circ f_n$ exists. Let $a$ be in the domain of $h$. Assume that for each $i=2,3,\ldots,n$, the function $f_i$ is differentiable at $(f_{i-1}\circ f_{i-2}\circ\cdots\circ f_n)(a)$ and that $f_n$ is differentiable at $a$. Then the $h$ is differentiable at $a$ and we have
+
+$$
+h'(a)=f_1'\left(f_2\circ f_3\circ\cdots\circ f_n(a)\right)f_2'\left(f_3\circ f_4\circ\cdots\circ f_n(a)\right)\cdots f_{n-1}'(f_n(a))f_n'(a).
+$$
+
+::::
+
+If we define
+
+$$
+h_i = f_i\circ f_{i+1}\circ\cdots\circ f_n,
+$$
+
+for each $i=1,2,\ldots,n$, then the expression for $h'(a)$ in the corollary above can be written more compactly as
+
+$$
+h'(a) = \prod_{i=1}^n f_{i}'\left(h_{i+1}(a)\right),
+$$
+
+where $h_{n+1}(a) = a$.
+
+We omit the proof of this corollary, since it is just a matter of applying the chain rule repeatedly. The main thing to remember is that if you have a chain of functions, you can apply the chain rule repeatedly to find the derivative of that entire chain.
