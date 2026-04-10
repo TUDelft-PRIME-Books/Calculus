@@ -127,7 +127,17 @@ $$
  \frac{f(x)-f(a)}{x-a}=\frac{f(a+h)-f(a)}{a+h-a}=\frac{f(a+h)-f(a)}{h}.
 $$
 
-This means that for any number $L$ we have $\displaystyle\left|\frac{f(x)-f(a)}{x-a}-L\right|<\varepsilon$ precisely when $\displaystyle\left|\frac{f(a+h)-f(a)}{h}-L\right|<\varepsilon$. We find that the limits $\displaystyle\lim\limits_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}$ and $\displaystyle\lim\limits_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}$ either both exist or both do not exist, and if they exist, that they must be equal.
+This means that for any number $L$ we have
+
+$$
+\left|\frac{f(x)-f(a)}{x-a}-L\right|<\varepsilon\quad\text{precisely when}\quad\left|\frac{f(a+h)-f(a)}{h}-L\right|<\varepsilon.
+$$
+
+We find that the limits
+
+$$\lim\limits_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}\quad\text{and}\quad\lim\limits_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}$$
+
+either both exist or both do not exist, and if they exist, that they must be equal.
 :::
 
 Note that for a given function $f$, we can try to evaluate the derivative at each point in the domain. This means we can interpret the derivative itself as a function again: for each $x$ for which the derivative exists, the derivative function gives the value of the derivative at that point. This gives the following definition.
@@ -158,7 +168,11 @@ So what does the derivative represent geometrically? For this, we need the defin
 Let $f$ be a function and let $a$ be a point in the domain of $a$ such that $f$ is differentiable at $a$. Then the **tangent line** of $f$ at $a$ is the straight line that goes through the point $(a,f(a))$ and has slope $f'(a)$.
 ::::::
 
-The idea here is that the tangent line **touches the graph of the function at the specified point**. Indeed, consider the difference quotient $\dfrac{f(a+h)-f(a)}{h}$ for a small value of $h$. Since we can write $\dfrac{f(a+h)-f(a)}{h}=\dfrac{f(a+h)-f(a)}{(a+h)-a}$, this difference quotient is the slope of the straight line through the points $(a,f(a))$ and $(a+h,f(a+h))$. By taking taking the limit $h$ to $0$, this slope goes towards $f'(a)$, which is the slope of the tangent line. As such, we can think of the slope of the tangent line as the slope of function at the point, which means that we can also think of the derivative in this way.
+The idea here is that the tangent line **touches the graph of the function at the specified point**.
+
+Indeed, consider the difference quotient $\dfrac{f(a+h)-f(a)}{h}$ for a small value of $h$. Since we can write $\dfrac{f(a+h)-f(a)}{h}=\dfrac{f(a+h)-f(a)}{(a+h)-a}$, this difference quotient is the slope of the straight line through the points $(a,f(a))$ and $(a+h,f(a+h))$., see {numref}`Fig:Differentiability:Tangentline`.
+
+By taking taking the limit $h$ to $0$, this slope goes towards $f'(a)$, which is the slope of the tangent line. As such, we can think of the slope of the tangent line as the slope of function at the point, which means that we can also think of the derivative in this way.
 
 :::{figure} Images/Fig-Differentiability-Tangentline.png
 :name: Fig:Differentiability:Tangentline
@@ -287,7 +301,13 @@ and
  &= 1.
 \end{align*}
 
-Since the left and right limits are unequal, we know from {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` that the limit $\displaystyle\lim_{h\rightarrow 0}\frac{k(t+h)-k(t)}{h}$ does not exist.
+Since the left and right limits are unequal, we know from {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` that the limit
+
+$$
+\lim_{h\rightarrow 0}\frac{k(t+h)-k(t)}{h}
+$$
+
+does not exist.
 
 We conclude that $k$ is differentiable at any point $t\neq0$, but that it is not differentiable at $t=0$. In addition, we have found that
 
@@ -332,7 +352,7 @@ By definition, this means that $f$ is continuous at $a$.
 The reverse statement of {prf:ref}`Thm:Differentiability:Diffimpliescont` is not true. That is, there are functions $f$ which are continuous at a point $a$, but not differentiable at $a$, see {prf:ref}`Ex:Differentiability:Usinglimit3`.
 ::::::
 
-In fact, we have now seen the most typical ways a function can fail to be differentiable at a point $a$: the function has a sharp corner at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit3`), it has a vertical asymptote at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit2`) or it is not continuous at $a$. A mathematician can provide you with examples that do not necessarily look like on of these three cases (such as the [Weierstrass function](https://en.wikipedia.org/wiki/Weierstrass_function)), but in practice, most non-differentiable functions will be of one of these three forms.
+In fact, we have now seen the most typical ways a function can fail to be differentiable at a point $a$: the function has a sharp corner at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit3`), it has a vertical asymptote at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit2`) or it is not continuous at $a$. {numref}`Fig:Differentiability:majorcasesnondiff` shows these three cases. A mathematician can provide you with examples that do not necessarily look like on of these three cases (such as the [Weierstrass function](https://en.wikipedia.org/wiki/Weierstrass_function)), but in practice, most non-differentiable functions will be of one of these three forms.
 
 ```{figure} Images/majorcasesnondiff.png
 ---
@@ -368,14 +388,14 @@ $$
 $$
 ::::::
 
-Using the Leibniz notation $f'(x)=\frac{dy}{dx}$ we can write the differential in the form $dy=\frac{dy}{dx}\,dx$. This equation sort of seems to arise from regular calculation rules for numbers (indeed, if $a$ and $b\neq 0$ are numbers then $\frac{a}{b}b=a$), but remember that $\frac{dy}{dx}$ is not actually a fraction. It is just notation for the derivative. Moreover, since $dx$ is infinitesimal, it is not an actual number, so the usual rules of calculation do not apply. The formula $dy=\frac{dy}{dx}\,dx$ simply represents consistency in the notation that we use.
+Using the Leibniz notation $f'(x)=\frac{dy}{dx}$ we can write the differential in the form $dy=\frac{dy}{dx}\,dx$. This equation sort of seems to arise from regular calculation rules for numbers (indeed, if $a$ and $b\neq 0$ are numbers then $\frac{a}{b}b=a\text{),}$ but remember that $\frac{dy}{dx}$ is not actually a fraction. It is just notation for the derivative. Moreover, since $dx$ is infinitesimal, it is not an actual number, so the usual rules of calculation do not apply. The formula $dy=\frac{dy}{dx}\,dx$ simply represents consistency in the notation that we use.
 
 However, even though the differential is just a notation, it will pop up from time to time. It is featured most prominently in {numref}`Sec:Integration:Substitution`, where it will be used to rewrite an integral over one variable into an integral over another variable. 
 
 ::::::{warning} 
 :name: Warning:Differentiability:Differential
 
-Some authors try to give meaning to the differential by pretending $dx$ can be an actual number. However, in the way we have defined the differential, $dx$ is not a number and cannot be assigned any value. 
+Some authors try to give meaning to the differential by treating $dx$ in some cases as an actual number. However, in the way we have defined the differential, $dx$ is not a number and cannot be assigned any value. 
 
 Still, it is useful to discuss this interpretation, since you might encounter it elsewhere. However, to avoid confusion, we use a different notation. Consider a differentiable function $f$ and let $a$ be a point in the domain of $f$. Let $\Delta x>0$ be a small number. Writing $\Delta y=f(a+\Delta x)-f(a)$, a common way to approximate $\Delta y$ is given by
 
@@ -385,7 +405,7 @@ $$
 
 Indeed, the tangent line of $f$ at $a$ is given by $y=f(a)+f'(a)(x-a)$. This line goes through the point $(a+\Delta x,f(a)+f'(a)\Delta x)$, so on the tangent line we have if $x$ changes from $a$ to $a+\Delta x$ that $y$ changes from $f(a)$ to $f(a)+f'(a)\Delta x$. The difference between these two values is exactly $f'(a)\Delta x$. So the idea here is that the difference between $f(a+\Delta x)$ and $f(a)$ can be approximated by the difference between the points of the tangent line at $a$ with $x$-values $x=a+\Delta x$ and $x=a$, see the picture below.
 
-As such, authors who do not use our definition of a differential might say that the differential has the interpretation that if $x$ changes by $dx$, $y=f(x)$ will change by $dy=f'(x)dx$.
+As such, authors who do not use our definition of a differential might say that the differential has the interpretation that if $x$ changes by $dx$, $y=f(x)$ will change by $dy=f'(x)dx$. We however will not do that and stick to our definition of a differential.
 
 ```{figure} Images/differential.png
 ---
