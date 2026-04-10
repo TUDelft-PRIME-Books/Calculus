@@ -396,8 +396,14 @@ $$
 
 In order to establish when we have $f'(x)>0$ and when we have $f'(x)<0$ we first solve $f'(x)=0$, i.e. $-6x^2-6x+12=0$. This is a quadratic equation with solutions $x=1$ and $x=-2$. Since the coefficient of $x^2$ is negative, the graph of $f'$ is a parabola opening downwards. As such, we find that $f'(x)<0$ for $x<-2$ and for $x>1$, while $f'(x)>0$ for $-2<x<1$. We conclude that $f$ is strictly increasing on the intervals $(-\infty,-2)$ and $(1,\infty)$, while it is strictly decreasing on the interval $(-2,1)$. This can also be seen in the graph of the function.
 
+:::{figure} Images/Fig-Graphsderivatives-Increasingdecreasing1.png
+:name: Fig:Graphsderivatives:Increasingdecreasing1
+
+The graph of the function $f(x)=-2x^3-3x^2+12x+3$.
+:::
+
 :::{todo}
-Here an applet with the graph of the function.
+Replace {numref}`Fig:Graphsderivatives:Increasingdecreasing1` with an applet.
 :::
 
 ::::::
@@ -417,8 +423,14 @@ In {numref}`Subsec:Graphsderivatives:Incrdecr` we saw how we can use the first d
 
 Consider the functions $f(x)=\sin\left(\frac{\pi}{2}x\right)$ and $g(x)=x^2$ on the interval $[0,1]$. Both functions are strictly increasing on this interval, but they still show very different behaviour in their growth. Indeed, the function $f$ first grows quickly and then slows down, while for the function $g$ it is the other way around.
 
+:::{figure} Images/Fig-Graph1d-Intro.png
+:name: Fig:Graphsderivatives:Intro
+
+On the left the graphs of the functions $f(x)=\sin\left(\frac{\pi}{2}x\right)$ and $g(x)=x^2$ on the interval $[0,1]$. On the right the graphs of their derivatives.
+:::
+
 :::{todo}
-Here an applet with the graph of these functions, as well as the graphs of their derivatives.
+Replace {numref}`Fig:Graphsderivatives:Intro` with an applet. Maybe nice if you can slide the point $(x,0)$ and see the corresponding points on the graphs of $f$ and $g$ and their derivatives.
 :::
 
 We can see this behaviour back in the derivatives of these functions. If we look at the graphs of the derivatives of these functions, we see that the function $f'$ is decreasing, while the function $g'$ is increasing. This matches the behaviour that we observed in the original function. Indeed, the fact that the function $f'$ is decreasing, means that the slope of the original function get lower so that it grows slower. On the other hand, the function $g'$ is increasing, so the slope of the function $g$ increases as well, which means that the function grows quicker. So how can we establish that $f'$ decreases and $g'$ increases? The same way you would do that for any other function: you take a look whether the derivative is positive or negative. This means that in order to distinguish between the behaviour of the functions $f$ and $g$, we should take a look at the derivatives of their derivatives, so at their second derivatives. 
@@ -507,9 +519,11 @@ $$
 
 Then we can subtract $f(a)$ from both sides of the inequality to obtain
 
-$$
- f(ta+(1-t)b)-f(a)\leq tf(a)+(1-t)f(b)-f(a)=(t-1)f(a)+(1-t)f(b)=(1-t)(f(b)-f(a)).
-$$
+\begin{align*}
+ f(ta+(1-t)b)-f(a) &\leq tf(a)+(1-t)f(b)-f(a) \\
+ &= (t-1)f(a)+(1-t)f(b) \\
+ &= (1-t)(f(b)-f(a)).
+\end{align*}
 
 Now we divide this inequality by the positive number $(1-t)(b-a)$ to obtain
 
@@ -551,21 +565,33 @@ as desired.
 
 Now suppose that for all $x$ and $y$ in the interval we have $f(y)\geq f(x)+f'(x)(y-x)$. Let $a<b$ in $I$ and let $0\leq t\leq 1$. Then we want to show $tf(a)+(1-t)f(b)\geq f(ta+(1-t)b)$, i.e. $tf(a)+(1-t)f(b)- f(ta+(1-t)b)\geq 0$. Then we can write 
 
-$$
- f(ta+(1-t)b)=1\cdot f(ta+(1-t)b)=(t+(1-t))f(ta+(1-t)b)=tf(ta+(1-t)b)+(1-t)f(ta+(1-t)b).
-$$
+\begin{align*}
+ f(ta+(1-t)b) &= 1\cdot f(ta+(1-t)b) \\
+ &= (t+(1-t))f(ta+(1-t)b) \\
+ &= tf(ta+(1-t)b)+(1-t)f(ta+(1-t)b).
+\end{align*}
 
 With this, we have 
 
-$$
- tf(a)+(1-t)f(b)-f(ta+(1-t)b)=tf(a)+(1-t)f(b)-\left(tf(ta+(1-t)b)+(1-t)f(ta+(1-t)b)\right)=t\left(f(a)-f(ta+(1-t)b)\right)+(1-t)\left(f(b)-f(ta+(1-t)b)\right).
-$$
+\begin{align*}
+ tf(a)+(1-t)f(b)-f(ta+(1-t)b) &= tf(a)+(1-t)f(b) \\
+ &\phantom{=} \quad\quad\quad-\left(tf(ta+(1-t)b)+(1-t)f(ta+(1-t)b)\right)\\
+ &=t\left(f(a)-f(ta+(1-t)b)\right) \\
+ &\phantom{=} \quad\quad\quad +(1-t)\left(f(b)-f(ta+(1-t)b)\right).
+\end{align*}
 
 Since $a$, $b$ and $ta+(1-t)b$ are all points in the interval $I$, we can use our assumption to obtain the estimate
 
-$$
- \begin{array}{lcl}tf(a)+(1-t)f(b)-f(ta+(1-t)b)&=&t\left(f(a)-f(ta+(1-t)b)\right)+(1-t)\left(f(b)-f(ta+(1-t)b)\right)\\ &\geq& t\left(f(a)-\left(f(a)-f'(ta+(1-t)b)(a-(ta+(1-t)b))\right)\right)+(1-t)\left(f(b)-\left(f(b)-f'(ta+(1-t)b)(b-(ta+(1-t)b))\right)\right)\\ &=&tf'(ta+(1-t)b)(a-(ta+(1-t)b))+(1-t)f'(ta+(1-t)b)(b-(ta+(1-t)b))\\ &=&tf'(ta+(1-t)b)((1-t)a-(1-t)b)+(1-t)f'(ta+(1-t)b)(tb-ta)\\ &=&t(1-t)f'(ta+(1-t)b)(a-b)+(1-t)tf'(ta+(1-t)b)(b-a)\\ &=&0.\end{array}
-$$
+\begin{align*}
+&\phantom{=} tf(a)+(1-t)f(b)-f(ta+(1-t)b) \\
+&= t\left(f(a)-f(ta+(1-t)b)\right)+(1-t)\left(f(b)-f(ta+(1-t)b)\right) \\
+&\geq t\left(f(a)-\left(f(a)-f'(ta+(1-t)b)(a-(ta+(1-t)b))\right)\right) \\
+&\phantom{=} \quad\quad\quad+(1-t)\left(f(b)-\left(f(b)-f'(ta+(1-t)b)(b-(ta+(1-t)b))\right)\right) \\
+&= tf'(ta+(1-t)b)(a-(ta+(1-t)b))+(1-t)f'(ta+(1-t)b)(b-(ta+(1-t)b)) \\
+&= tf'(ta+(1-t)b)((1-t)a-(1-t)b)+(1-t)f'(ta+(1-t)b)(tb-ta) \\
+&= t(1-t)f'(ta+(1-t)b)(a-b)+(1-t)tf'(ta+(1-t)b)(b-a) \\
+&= 0.
+\end{align*}
 
 Hence, we must have $tf(a)+(1-t)f(b)\geq f(ta+(1-t)b)$, which means that $f$ is convex.
 
@@ -585,7 +611,7 @@ An illustration of the classification of a convex function (left) and a concave 
 Turn {numref}`Fig:Graphsderivatives:Convextangent` into an applet. 
 :::
 
-For many functions, both the definition and the classification from {prf:ref}`Thm:Graphsderivatives:Concavitytangent` are rather hard to check. Fortunately, for functions that are twice differentiable we have a criterion, similar to {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`, that is much easier to check.
+For many functions, both {prf:ref}`Def:Graphsderivatives:Concavity` and the classification from {prf:ref}`Thm:Graphsderivatives:Concavitytangent` are rather hard to check. Fortunately, for functions that are twice differentiable we have a criterion, similar to {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`, that is much easier to check.
 
 ::::::{prf:theorem} 
 :label: Thm:Graphsderivatives:Concaveseconddiv
@@ -653,9 +679,11 @@ $$
 
 Now we subtract $(b-a)f(a)$ from both sides of the inequality to obtain
 
-$$
- (b-a)f(p)-(b-a)f(a)\leq (b-p)f(a)+(p-a)f(b)-(b-a)f(a)=(a-p)f(a)+(p-a)f(b)=(p-a)f(b)-(p-a)f(a).
-$$
+\begin{align*}
+ (b-a)f(p)-(b-a)f(a) &\leq (b-p)f(a)+(p-a)f(b)-(b-a)f(a) \\
+ &= (a-p)f(a)+(p-a)f(b) \\
+ &= (p-a)f(b)-(p-a)f(a).
+\end{align*}
 
 Then we divide both sides of the inequality by the positive term $(b-a)(p-a)$ to obtain
 
@@ -677,9 +705,10 @@ $$
 
 Then, we add $(b-p)f(b)$ to both sides of the equation to obtain
 
-$$
- (b-p)f(b)-(b-p)f(a)\leq (p-a)f(b)-(b-a)f(p)+(b-p)f(b)=(b-a)f(b)-(b-a)f(p).
-$$
+\begin{align*}
+ (b-p)f(b)-(b-p)f(a) &\leq (p-a)f(b)-(b-a)f(p)+(b-p)f(b) \\
+ &= (b-a)f(b)-(b-a)f(p).
+\end{align*}
 
 Then we divide both sides of the inequality by the positive term $(b-a)(b-p)$ to obtain
 
@@ -731,7 +760,7 @@ This follows directly from combining {prf:ref}`Thm:Graphsderivatives:Concaveseco
 Before we move on to discussing an example, we need one more definition.
 
 ::::::{prf:definition} 
-:label: Thm:Graphsderivatives:Inflection
+:label: Def:Graphsderivatives:Inflection
 Let $x$ be a point in the domain of a function $f$. Then $x$ is called an **inflection point** if is a point where the function changes from being convex to concave or vice versa.
 ::::::
 
@@ -765,8 +794,14 @@ $$
 
 In order to find out where $f''$ is positive or negative, we first look where it is $0$. Solving $12x^2+12x-72=0$ gives $x=-3$ and $x=2$. Since the graph of $f''$ is a parabola opening upwards, we find that $f''(x)>0$ for $x<-3$ and for $x>2$, while $f''(x)<0$ for $-3<x<2$. By {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv`, the function $f$ is strictly convex on the intervals $(-\infty,-3)$ and $(2,\infty)$, while it is strictly concave on the interval $(-3,2)$. At $x=-3$ the function changes from convex to concave, while at $x=2$ it changes from concave back to convex. So both points are inflection points.
 
+:::{figure} Images/Fig-Graphsderivatives-Convex.png
+:name: Fig:Graphsderivatives:Convex
+
+The graph of the function $f(x)=x^4+2x^3-36x^2+3x+4$, and the first and second derivatives of this function.
+:::
+
 :::{todo}
-Applet with the graph of the function.
+Replace {numref}`Fig:Graphsderivatives:Convex` with an applet.
 :::
 
 ::::::
