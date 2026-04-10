@@ -39,7 +39,7 @@ Now, what do we mean by more complicated powers like $2^0$, $2^{-5}$ or $2^{\fra
 :label: Def:RealNumbers:Powers1
 Let $y$ be a real number. 
 
-- If $n\geq 1$ is a natural number, then $y^n=\underbrace{y\cdot y\cdot\cdots\cdot y}_{n\text{ times}}$
+- If $n\geq 1$ is a natural number, then $y^n=\underbrace{y\cdot y\cdot\cdots\cdot y}_{n\text{ times}}$.
 - We have $y^0=1$.
 - If $y\neq 0$ and $n\geq 1$ is a natural number then $y^{-n}=\frac{1}{y^n}$.
 
@@ -101,7 +101,7 @@ Finally, since the product of an even amount of positive numbers is always posit
 
 ::::::{prf:definition} 
 :label: Def:RealNumbers:Powers2
-If $y\geq 0$ and $n\geq 1$ is an even natural number, the unique positive solution of the equation $x^n=y$ is called the  $\mathbf{n}$**th square root** of $y$ and is denoted by $\sqrt[n]{y}=y^{\frac{1}{n}}$. If $n=2$, we call this number the **square root** of $y$ and write $\sqrt{y}$ instead of $\sqrt[2]{y}$. In addition, if $y$ is a real number and $n\geq 1$ is an odd natural number, then the unique solution of the equation $x^n=y$ is called the $\mathbf{n}$**th square root** of $y$ and is denoted by $\sqrt[n]{y}=y^{\frac{1}{n}}$.
+If $y\geq 0$ and $n\geq 1$ is an even natural number, the unique positive solution of the equation $x^n=y$ is called the $\mathbf{n}$**th square root** of $y$ and is denoted by $\sqrt[n]{y}=y^{\frac{1}{n}}$. If $n=2$, we call this number the **square root** of $y$ and write $\sqrt{y}$ instead of $\sqrt[2]{y}$. In addition, if $y$ is a real number and $n\geq 1$ is an odd natural number, then the unique solution of the equation $x^n=y$ is called the $\mathbf{n}$**th square root** of $y$ and is denoted by $\sqrt[n]{y}=y^{\frac{1}{n}}$.
 
 ::::::
 
