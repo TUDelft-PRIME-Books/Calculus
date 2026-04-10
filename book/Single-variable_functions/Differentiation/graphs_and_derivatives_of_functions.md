@@ -20,7 +20,7 @@ Let $f$ be a function that is continuous on a closed interval $[a,b]$ and differ
 
 ::::::
 
-Unfortunately, we cannot prove Rolle's theorem yet, since the proof uses some other results that we have not obtained yet. We will give the proof in {numref}`Subsec:Extrema1dEVT`. An illustration of the theorem is shown in {numref}`Fig:Graphsderivatives:Rolle`.
+Unfortunately, we cannot prove Rolle's theorem yet, since the proof uses some other results that we have not obtained yet. We will give the proof in {numref}`Subsec:Extrema1dEVT`. An illustration of the theorem is shown in {numref}`Fig:Graphsderivatives:Rolle`. Note that {prf:ref}`Thm:Graphsderivatives:Rolle` also includes the case that there can be multiple points where the derivative is equal to $0$, for instance, for the function on the left in {numref}`Fig:Graphsderivatives:Rolle` any point will do, and for the right function there are two points where the derivative is equal to $0$.
 
 :::{figure} Images/Fig-Graph1d-Rolle.png
 ---
@@ -28,12 +28,14 @@ width: 100%
 name: Fig:Graphsderivatives:Rolle
 class: dark-light
 ---
-An illustration of Rolle's theorem. Note that in this case there are multiple points where the derivative is equal to $0$ (for instance, for the function on the left any point will do).
+An illustration of Rolle's theorem.
 :::
 
 :::{todo}
 Replace {numref}`Fig:Graphsderivatives:Rolle` with an applet.
 :::
+
+The mean value theorem is in essence an extension of Rolle's theorem, and formalises what we discussed in the introduction of this section.
 
 ::::::{prf:theorem} The mean value theorem
 :label: Thm:Graphsderivatives:MVT
@@ -45,18 +47,24 @@ $$
 
 ::::::
 
+[^checkpoints]: Note that $L(a)=f(a)+\dfrac{f(b)-f(a)}{b-a}(a-a)=f(a)$ and $L(b)=f(a)+\dfrac{f(b)-f(a)}{b-a}(b-a)=f(b)$, so the function $L$ indeed goes through the points $(a,f(a))$ and $(b,f(b))$.
+
 :::{admonition} Proof of {prf:ref}`Thm:Graphsderivatives:MVT`
 :class: tudproof, dropdown
-We want to apply Rolle's theorem, so we need to construct some function $g$, related to $f$, that has $g(a)=g(b)$. As such, we subtract from $f$ the linear function that goes through the points $(a,f(a))$ and $(b,f(b))$. This linear function is given by $L(x)=f(a)+\dfrac{f(b)-f(a)}{b-a}(x-a)$ (make sure to check that this function goes through the specified points). Hence, we will consider the function
+We want to apply Rolle's theorem, so we need to construct some function $g$, related to $f$, that has $g(a)=g(b)$. As such, we subtract from $f$ the linear function that goes through the points $(a,f(a))$ and $(b,f(b))$. This linear function is given by $L(x)=f(a)+\dfrac{f(b)-f(a)}{b-a}(x-a)$. Note that this function goes through the specified points[^checkpoints].
+
+Now consider the function
 
 $$
  g(x)=f(x)-L(x)=f(x)-f(a)-\dfrac{f(b)-f(a)}{b-a}(x-a).
 $$
 
-This function is the difference between two functions that are continuous on $[a,b]$ and differentiable on $(a,b)$, so the new function $g$ has these properties as well. As such, we can use Rolle's theorem to obtain $c$ in $(a,b)$ with $g'(c)=0$. We can evaluate the derivative of $g$ as
+This function satisfies $g(a)=f(a)-L(a)=f(a)-f(a)=0$ and $g(b)=f(b)-L(b)=f(b)-f(b)=0$.
+
+This function is the difference between two functions that are continuous on $[a,b]$ and differentiable on $(a,b)$, so the new function $g$ has these properties as well. As such, we can use Rolle's theorem to obtain $c$ in $(a,b)$ with $g'(c)=0$ and $g(a)=g(b)=0$. We can evaluate the derivative of $g$ as
 
 $$
- g'(x)=f'(x)-0-\frac{f(b)-f(a)}{b-a}\cdot1=f'(x)-\frac{f(b)-f(a)}{b-a}.
+ g'(x)=f'(x)-L'(x)=f'(x)-\frac{f(b)-f(a)}{b-a}.
 $$
 
 Hence, we find, since $g'(c)=0$, that
@@ -96,8 +104,14 @@ $$
 If $g(a)\neq g(b)$ and $g'(c)$, this can be rewritten in the form
 
 $$
- \frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)}
+ \frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)},
 $$
+
+and if $f(a)\neq f(b)$ and $f'(c)\neq 0$, this can be rewritten in the form
+
+$$
+ \frac{g'(c)}{f'(c)}=\frac{g(b)-g(a)}{f(b)-f(a)}.
+ $$
 
 ::::::
 
@@ -111,9 +125,12 @@ $$
 
 This function is a linear combination of two functions that are continuous on $[a,b]$ and differentiable on $(a,b)$, so the new function $h$ has these properties as well. In addition, we see that
 
-$$
- h(a)=(g(b)-g(a))f(a)-(f(b)-f(a))g(a)=g(b)f(a)-f(b)g(a)=(g(b)-g(a))f(b)-(f(b)-f(a))g(b)=h(b).
-$$
+\begin{align*}
+ h(a) &= (g(b)-g(a))f(a)-(f(b)-f(a))g(a) \\
+ &= g(b)f(a)-f(b)g(a) \\
+ &= (g(b)-g(a))f(b)-(f(b)-f(a))g(b) \\
+ &= h(b).
+\end{align*}
 
 As such, we can use Rolle's theorem to obtain $c$ in $(a,b)$ with $h'(c)=0$. We can evaluate the derivative of $h$ as
 
@@ -147,16 +164,22 @@ $$
  f'(x)=3x^2+6x+6.
 $$
 
-However, the equation $3x^2+6x+6=0$ does not have any real solutions. So our assumption that there would be another solution must be incorrect. Hence, there is only one solution between $-1$ and $0$.
+However, the equation $3x^2+6x+6=0$ does not have any real solutions. So our assumption that there would be another solution must be incorrect. Hence, there is only one solution between $-1$ and $0$. This is supported by the graph of the function, which is shown in {numref}`Fig:Graphsderivatives:MVT1`.
 
+
+:::{figure} Images/Fig-Graphsderivatives-MVT1.png
+:name: Fig:Graphsderivatives:MVT1
+
+The graph of the function $f(x)=x^3+3x^2+6x+3$. Note that there is only one solution of the equation $f(x)=0$ in between $-1$ and $0$.
+:::
 
 :::{todo}
-Show the graph of the function.
+Replace {numref}`Fig:Graphsderivatives:MVT1` with an applet.
 :::
 
 ::::::
 
-One of the most important consequences of the mean value theorem are the following two results. These results form an essential part of finding antiderivatives, see {numref}`Sec:Integration:IndefiniteIntegrals`. Indeed, these results that any two functions that have the same derivative must be different by a constant.
+One of the most important consequences of the mean value theorem are the following two results. These results form an essential part of finding antiderivatives, see {numref}`Sec:Integration:IndefiniteIntegrals`. Indeed, these results indicate that any two functions that have the same derivative must be different by a constant.
 
 ::::::{prf:corollary} 
 :label: Cor:Graphsderivatives:Zeroderivative
@@ -165,7 +188,7 @@ Let $f$ be a differentiable function such that $f'(x)=0$ for all $x$ in some int
 
 :::{admonition} Proof of {prf:ref}`Cor:Graphsderivatives:Zeroderivative`
 :class: tudproof
-Suppose $f$ is not constant. Then we can find two points $p<q$ in the interval $(a,b)$ with $f(p)\neq f(q)$. Then $f$ is continuous on the interval $[p,q]$ and differentiable on the interval $(p,q)$, so by {prf:ref}`Thm:Graphsderivatives:MVT` we can find $c$ in $(p,q)$ with
+Suppose $f$ is not constant, but $f'(x)=0$ for all $x$ in $(a,b)$. Then we can find two points $p<q$ in the interval $(a,b)$ with $f(p)\neq f(q)$. Then $f$ is continuous on the interval $[p,q]$ and differentiable on the interval $(p,q)$, so by {prf:ref}`Thm:Graphsderivatives:MVT` we can find $c$ in $(p,q)$ with
 
 $$
  f'(c)=\frac{f(q)-f(p)}{q-p}.
@@ -184,13 +207,49 @@ Let $f$ and $g$ be differentiable functions such that $f'(x)=g'(x)$ for all $x$ 
 Consider the function $h=f-g$. Then $h$ is differentiable and for $x\in (a,b)$ we have $h'(x)=f'(x)-g'(x)=0$, since $f'(x)=g'(x)$. Hence, the function $h$ is constant by {prf:ref}`Cor:Graphsderivatives:Zeroderivative`, say $h=C$. Then $f=g+C$ for this same constant $C$.
 :::
 
+The mean value theorem can also be used to translate any restriction on the possible values of the derivative into a limitation on the values of the function itself.
+
+Suppose, that for some function $f$ we know that
+
+$$
+f(2)=5
+$$
+
+and that
+
+$$
+3\leq f'(x)\leq 7\quad\text{for}\quad2\leq x\leq 6.
+$$
+
+ What are the smallest and largest possible values of $f(6)$?
+
+Let us start with the smallest possible value. Since the slope of the function is always at least $3$, intuitively it makes sense that we obtain the lowest value of $f(6)$ whenever $f'(x)=3$ for **all** $2\leq x\leq 6$.
+
+So consider a function $\tilde{f}$ with $\tilde{f}(2)=f(2)=5$ and $\tilde{f}'(x)=3$ for all $2\leq x\leq 6$. Our intuition tells us that then $f(6)\geq\tilde{f}(6)$, since the slope of $f$ is always at least as large as the slope of $\tilde{f}$.
+
+The function $\tilde{f}$ has the same derivative as $g(x)=3x$ on the interval $(2,6)$. So by {prf:ref}`Cor:Graphsderivatives:Samederivative` we find that $\tilde{f}(x)=g(x)+C$ for some constant $C$. Since $5=\tilde{f}(2)=g(2)+C=6+C$, we must have $C=-1$, so then $\tilde{f}(x)=3x-1$ on this interval. In that case we would have $\tilde{f}(6)=3\cdot 6-1=17$.
+
+So, intuitively at least, we have shown that $f(6)$ must be at least $\tilde{f}(6)=17$ and we know for certain that there is at least one possible formula for $f$ for which the value of $f(6)$ is precisely $17$ (and this is the function $\tilde{f}$). Hence, we have found the smallest possible value of $f(6)$, which is $17$.
+
+However, can we make this a bit more rigorous?
+
+Of course we can! The next example shows how to use the mean value theorem to establish that $f(6)\geq 17$ and $f(6)\leq 33$.
+
 ::::::{prf:example}
 :label: EX:Graphsderivatives:MVT2
-The mean value theorem can also be used to translate any restriction on the possible values of the derivative into a limitation on the values of the function itself. Suppose, for instance, that for some function $f$ we know that $f(2)=5$ and that $3\leq f'(x)\leq 7$ for $2\leq x\leq 6$. What are the smallest and largest possible values of $f(6)$?
+Assume we have any function $f$ that satisfies the assumptions
 
-Let us start with the smallest possible value. Since the slope of the function is always at least $3$, intuitively it makes sense that we obtain the lowest value of $f(6)$ whenever $f'(x)=3$ for **all** $2\leq x\leq 6$. In that case, the function $f$ has the same derivative as $g(x)=3x$ on the interval $(2,6)$. So by {prf:ref}`Cor:Graphsderivatives:Samederivative` we find that $f(x)=g(x)+C$ for some constant $C$. Since $5=f(2)=g(2)+C=6+C$, we must have $C=-1$, so then $f(x)=3x-1$ on this interval. In that case we would have $f(6)=3\cdot 6-1=17$. So, intuitively at least, we have shown that $f(6)$ must be at least $17$ and we know for certain that there is at least one function where the value of $f(6)$ is precisely $17$. 
+$$
+f(2) = 5
+$$
 
-However, can we make this a bit more rigorous? Of course we can! Assume we now have any function $f$ that satisfies out assumptions. Then by {prf:ref}`Thm:Graphsderivatives:MVT`, there would be a $c$ in the interval $[2,6]$ with
+and
+
+$$
+3\leq f'(x)\leq 7\quad\text{for}\quad2\leq x\leq 6.
+$$
+
+Then by {prf:ref}`Thm:Graphsderivatives:MVT`, there would be a $c$ in the interval $[2,6]$ with
 
 $$
  f'(c)=\frac{f(6)-f(2)}{6-2}=\frac{f(6)-5}{4}.
@@ -216,7 +275,24 @@ $$
  f(6)=4f'(c)+5\leq 4\cdot 7+5=33.
 $$
 
-This value of $f(6)=33$ is obtained when $f'(x)=7$ for all $x$ in the interval $(2,6)$, in which case we are dealing with the function $f(x)=7x-9$.
+This value of $f(6)=33$ is obtained when $f'(x)=7$ for all $x$ in the interval $(2,6)$, in which case we would have been dealing with the function $f(x)=7x-9$.
+
+{numref}`Fig:Graphsderivatives:MVT2` shows the graph of the function $3x-1$ , the graph of the function $7x-9$ and the graph of an example of a function that satisfies the assumptions on $f$. The graph of any function that satisfies the assumptions must lie in between these two graphs, so in particular, the value of $f(6)$ must be in between $17$ and $33$.
+
+:::{figure} Images/Fig-Graphsderivatives-MVT2.png
+:name: Fig:Graphsderivatives:MVT2
+
+The graph of the function $3x-1$ , the graph of the function $7x-9$ and the graph of an example of a function that satisfies the assumptions on $f$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Graphsderivatives:MVT2` with an applet. The function that satisfies the assumptions on $f$ is given by
+
+$$
+f(x)=\frac{1}{8}(x-2)^4 - \frac{3}{2}(x-2)^3 + \frac{9}{2}(x-2)^2 + 3(x-2) + 5.
+$$
+:::
+
 ::::::
 
 {prf:ref}`Cor:Graphsderivatives:Samederivative` can also be used to establish certain trigonometric identities.
@@ -241,7 +317,17 @@ $$
  f(x)=f(-1)=\arctan(-1)+\arctan\left(\frac{1}{-1}\right)=-\frac{\pi}{4}-\frac{\pi}{4}=-\frac{\pi}{2}.
 $$
 
-We conclude that $\arctan(x)+\arctan\left(\frac{1}{x}\right)=\frac{\pi}{2}$ for $x>0$, while $\arctan(x)+\arctan\left(\frac{1}{x}\right)=-\frac{\pi}{2}$ for $x<0$.
+We conclude that $\arctan(x)+\arctan\left(\frac{1}{x}\right)=\frac{\pi}{2}$ for $x>0$, while $\arctan(x)+\arctan\left(\frac{1}{x}\right)=-\frac{\pi}{2}$ for $x<0$. {numref}`Fig:Graphsderivatives:MVT2` shows the graph of this special function.
+
+:::{figure} Images/Fig-Graphsderivatives-MVT3.png
+:name: Fig:Graphsderivatives:MVT3
+
+The graph of the function $f(x)=\arctan(x)+\arctan\left(\frac{1}{x}\right)$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Graphsderivatives:MVT3` with an applet. Make sure no vertical line element is shown.
+:::
 
 ::::::
 
@@ -356,7 +442,7 @@ $$
 
 ::::::
 
-Since the line segement between points $(a,f(a))$ and $(b,f(b))$ can be parametrised by $x(t)=ta+(1-t)b$ and $y(t)=tf(a)+(1-t)f(b)$ for $0\leq t\leq 1$, if the line segment between any two distinct points on the graph of $f$ lies above the graph of $f$.
+Since the line segment between points $(a,f(a))$ and $(b,f(b))$ can be parametrised by $x(t)=ta+(1-t)b$ and $y(t)=tf(a)+(1-t)f(b)$ for $0\leq t\leq 1$, if the line segment between any two distinct points on the graph of $f$ lies above the graph of $f$.
 
 Similarly, $f$ is concave on an interval precisely when for any two points $a<b$ in that interval the line segment between any two distinct points on the graph of $f$ lies below the graph of $f$.
 
@@ -449,7 +535,7 @@ $$
  f'(a)\leq \frac{f(b)-f(a)}{b-a}.
 $$
 
-Since $b-a>0$ we can mulitply both parts of the inequality by $b-a$ to obtain
+Since $b-a>0$ we can multiply both parts of the inequality by $b-a$ to obtain
 
 $$
  f'(a)(b-a)\leq f(b)-f(a),
@@ -583,7 +669,7 @@ $$
  f'(a)=\lim_{p\rightarrow a^+}\frac{f(p)-f(a)}{p-a}\leq \frac{f(b)-f(a)}{b-a}.
 $$
 
-Now we return to a previous inquality: $(b-a)f(p)\leq (b-p)f(a)+(p-a)f(b)$. This time, we first bring a few terms to the other side of the equation, which gives
+Now we return to a previous inequality: $(b-a)f(p)\leq (b-p)f(a)+(p-a)f(b)$. This time, we first bring a few terms to the other side of the equation, which gives
 
 $$
  -(b-p)f(a)\leq (p-a)f(b)-(b-a)f(p).
@@ -649,7 +735,7 @@ Before we move on to discussing an example, we need one more definition.
 Let $x$ be a point in the domain of a function $f$. Then $x$ is called an **inflection point** if is a point where the function changes from being convex to concave or vice versa.
 ::::::
 
-For a twice differentiable function $f$, we see from {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv` that an inflection point occurs if the second derivative changes from positive (meaning $f$ is convex) to negative (meaning $f$ is concave). If $f''$ is itself continuous, this can only happen if the second derivative is $0$ at this point. Hence, we obtian the following result.
+For a twice differentiable function $f$, we see from {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv` that an inflection point occurs if the second derivative changes from positive (meaning $f$ is convex) to negative (meaning $f$ is concave). If $f''$ is itself continuous, this can only happen if the second derivative is $0$ at this point. Hence, we obtain the following result.
 
 ::::::{prf:theorem} 
 :label: Thm:Graphsderivatives:Inflection
