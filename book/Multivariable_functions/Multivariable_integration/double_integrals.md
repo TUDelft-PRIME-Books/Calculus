@@ -107,9 +107,9 @@ More generally, this is true if we assume that $f$ is bounded on $R$, $f$ is dis
 :::::
 
 :::::{prf:example}
-Evaluate $\displaystyle\iint\limits_R(x-3y^2)\,dA$, where $R=[0,2]\times[1,2]$.
+We evaluate $\displaystyle\iint\limits_R(x-3y^2)\,dA$, where $R=[0,2]\times[1,2]$.
 
-Solution. We have
+We have
 
 $$
 \begin{align*}
@@ -130,9 +130,9 @@ $$
 :::::
 
 :::::{prf:example}
-Evaluate $\displaystyle\iint\limits_Ry\sin(xy)\,dA$, where $R=[1,2]\times[0,\pi]$.
+Consider $\displaystyle\iint\limits_Ry\sin(xy)\,dA$, where $R=[1,2]\times[0,\pi]$.
 
-Solution. We have
+We have
 
 $$
 \begin{align*}
@@ -146,7 +146,7 @@ Here the other order is much more difficult. Using integration by parts we have
 
 $$ 
 \begin{align*}
-\int y\sin(xy)\,dy&=-\frac{1}{x}\int y\,d\cos(xy)=-\frac{y}{x}\cos(xy)+\frac{1}{x}\int\cos(xy)\,dy\\
+\int y\sin(xy)\,dy&=-\frac{y}{x}\cos(xy)+\frac{1}{x}\int\cos(xy)\,dy\\
 &=-\frac{y}{x}\cos(xy)+\frac{1}{x^2}\sin(xy)+C.
 \end{align*}
 $$ 
@@ -213,7 +213,8 @@ The proof is straightforward:
 
 $$
 \begin{align*}
-\int_0^1\int_0^1\frac{dx\,dy}{1+x^2y^2}&=\int_0^1\int_0^1\frac{dy\,dx}{1+x^2y^2}=\int_0^1\bigg[\frac{\arctan(xy)}{x}\bigg]_{y=0}^1\,dx\\
+\int_0^1\int_0^1\frac{dx\,dy}{1+x^2y^2}&=\int_0^1\int_0^1\frac{dy\,dx}{1+x^2y^2}\\
+&=\int_0^1\bigg[\frac{\arctan(xy)}{x}\bigg]_{y=0}^1\,dx\\
 &=\int_0^1\frac{\arctan(x)}{x}\,dx=G.
 \end{align*}
 $$ 
@@ -222,9 +223,10 @@ Alternatively, we might use $\displaystyle\frac{1}{1-t}=\sum_{n=0}^{\infty}t^n$ 
 
 $$
 \begin{align*}
-\int_0^1\int_0^1\frac{dx\,dy}{1+x^2y^2}&=\sum_{n=0}^{\infty}(-1)^n\int_0^1\int_0^1(xy)^{2n}\,dx\,dy
-=\sum_{n=0}^{\infty}(-1)^n\left(\int_0^1t^{2n}\,dt\right)^2\\
-&=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}=G.
+\int_0^1\int_0^1\frac{dx\,dy}{1+x^2y^2}&=\sum_{n=0}^{\infty}(-1)^n\int_0^1\int_0^1(xy)^{2n}\,dx\,dy\\
+&=\sum_{n=0}^{\infty}(-1)^n\left(\int_0^1t^{2n}\,dt\right)^2\\
+&=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\\
+&=G.
 \end{align*}
 $$ 
 
@@ -244,7 +246,7 @@ A general region in $\mathbb{R}^2$.
 Now we define a new function $F$ with domain $R$ by:
 
 $$
-F(x,y)=\left\{\begin{array}{ll}f(x,y),&(x,y)\in D\\[2.5mm]0,&(x,y)\notin D.\end{array}\right.
+F(x,y)=\left\{\begin{array}{ll}f(x,y),&(x,y)\in D\\0,&(x,y)\notin D.\end{array}\right.
 $$
  
 If $f$ is integrable over $R$, then we define the integral of $f$ over $D$ by:
@@ -402,7 +404,7 @@ $D=D_1\cup D_2$, where $D_1$ is $x$-simple and $D_2$ is $y$-simple.
 ## Examples
 
 :::{prf:example}
-Evaluate $\displaystyle\iint_D(x+2y)\,dA$, where $D$ is the region bounded by the parabolas $y=3x^2$ and $y=1+2x^2$.
+Let us evaluate $\displaystyle\iint_D(x+2y)\,dA$, where $D$ is the region bounded by the parabolas $y=3x^2$ and $y=1+2x^2$.
 
 ```{figure} Images/example1.png
 ---
@@ -413,7 +415,7 @@ align: center
 
 ```
 
-Solution. The parabolas intersect when $3x^2=1+2x^2$ or equivalently $x^2=1$, so when $x=\pm1$. Note that the region $D$ is $x$-simple and not $y$-simple:
+The parabolas intersect when $3x^2=1+2x^2$ or equivalently $x^2=1$, so when $x=\pm1$. Note that the region $D$ is $x$-simple and not $y$-simple:
 
 $$
 D=\{(x,y)\,|\,-1\leq x\leq 1,\;3x^2\leq y\leq 1+2x^2\}.
@@ -423,18 +425,20 @@ Hence we have
 
 $$
 \begin{align*}
-\iint\limits_D(x+2y)\,dA&=\int_{-1}^1\int_{3x^2}^{1+2x^2}(x+2y)\,dy\,dx=\int_{-1}^1\bigg[xy+y^2\bigg]_{y=3x^2}^{1+2x^2}\,dx\\
+\iint\limits_D(x+2y)\,dA&=\int_{-1}^1\int_{3x^2}^{1+2x^2}(x+2y)\,dy\,dx\\
+&=\int_{-1}^1\bigg[xy+y^2\bigg]_{y=3x^2}^{1+2x^2}\,dx\\
 &=\int_{-1}^1\left(x(1+2x^2)+(1+2x^2)^2-x\cdot3x^2-(3x^2)^2\right)\,dx\\
 &=\int_{-1}^1\left(1+x+4x^2-x^3-5x^4\right)\,dx\\
-&=\bigg[x+\frac{1}{2}x^2+\frac{4}{3}x^3-\frac{1}{4}x^4-x^5\bigg]_{-1}^1
-=2\cdot\frac{4}{3}=\frac{8}{3}.
+&=\bigg[x+\frac{1}{2}x^2+\frac{4}{3}x^3-\frac{1}{4}x^4-x^5\bigg]_{-1}^1\\
+&=2\cdot\frac{4}{3}\\
+&=\frac{8}{3}.
 \end{align*}
 $$
 
 :::
 
 :::{prf:example}
-Find the volume of the solid that lies under the paraboloid $z=x^2+y^2$ and above the region $D$ in the $xy$-plane bounded by the line $y=x$ and the parabola $y=x^2$.
+Let us find the volume of the solid that lies under the paraboloid $z=x^2+y^2$ and above the region $D$ in the $xy$-plane bounded by the line $y=x$ and the parabola $y=x^2$.
 
 ```{figure} Images/example2.png
 ---
@@ -445,7 +449,7 @@ align: center
 
 ```
 
-Solution. Note that the region $D$ is both $x$-simple and $y$-simple. As an $x$-simple region we have:
+Note that the region $D$ is both $x$-simple and $y$-simple. As an $x$-simple region we have:
 
 $$
 D=\{(x,y)\,|\,0\leq x\leq 1,\;x^2\leq y\leq x\}.
@@ -455,10 +459,14 @@ Therefore the volume under $z=x^2+y^2$ and above $D$ is
 
 $$
 \begin{align*}
-V&=\iint\limits_D(x^2+y^2)\,dA=\int_0^1\int_{x^2}^x(x^2+y^2)\,dy\,dx=\int_0^1\bigg[x^2y+\frac{1}{3}y^3\bigg]_{y=x^2}^x\,dx\\
+V&=\iint\limits_D(x^2+y^2)\,dA=\int_0^1\int_{x^2}^x(x^2+y^2)\,dy\,dx\\
+&=\int_0^1\bigg[x^2y+\frac{1}{3}y^3\bigg]_{y=x^2}^x\,dx\\
 &=\int_0^1\left(x^2\cdot x+\frac{1}{3}x^3-x^2\cdot x^2-\frac{1}{3}(x^2)^3\right)\,dx\\
 &=\int_0^1\left(\frac{4}{3}x^3-x^4-\frac{1}{3}x^6\right)\,dx=\bigg[\frac{1}{3}x^4-\frac{1}{5}x^5-\frac{1}{21}x^7\bigg]_{x=0}^1\\
-&=\frac{1}{3}-\frac{1}{5}-\frac{1}{21}=\frac{35-21-5}{105}=\frac{9}{105}=\frac{3}{35}.
+&=\frac{1}{3}-\frac{1}{5}-\frac{1}{21}\\
+&=\frac{35-21-5}{105}\\
+&=\frac{9}{105}\\
+&=\frac{3}{35}.
 \end{align*}
 $$ 
  
@@ -472,17 +480,22 @@ Therefore the volume can also be obtained as
 
 $$
 \begin{align*}
-V&=\iint\limits_D(x^2+y^2)\,dA=\int_0^1\int_{y}^{\sqrt{y}}(x^2+y^2)\,dx\,dy=\int_0^1\bigg[\frac{1}{3}x^3+xy^2\bigg]_{x=y}^{\sqrt{y}}\,dy\\
+V&=\iint\limits_D(x^2+y^2)\,dA=\int_0^1\int_{y}^{\sqrt{y}}(x^2+y^2)\,dx\,dy\\
+&=\int_0^1\bigg[\frac{1}{3}x^3+xy^2\bigg]_{x=y}^{\sqrt{y}}\,dy\\
 &=\int_0^1\left(\frac{1}{3}(\sqrt{y})^3+y^2\sqrt{y}-\frac{1}{3}y^3-y^3\right)\,dy\\
-&=\int_0^1\left(\frac{1}{3}y\sqrt{y}+y^2\sqrt{y}-\frac{4}{3}y^3\right)\,dy=\bigg[\frac{2}{15}y^2\sqrt{y}+\frac{2}{7}y^3\sqrt{y}-\frac{1}{3}y^4\bigg]_{y=0}^1\\
-&=\frac{2}{15}+\frac{2}{7}-\frac{1}{3}=\frac{14+30-35}{105}=\frac{9}{105}=\frac{3}{35}.
+&=\int_0^1\left(\frac{1}{3}y\sqrt{y}+y^2\sqrt{y}-\frac{4}{3}y^3\right)\,dy\\
+&=\bigg[\frac{2}{15}y^2\sqrt{y}+\frac{2}{7}y^3\sqrt{y}-\frac{1}{3}y^4\bigg]_{y=0}^1\\
+&=\frac{2}{15}+\frac{2}{7}-\frac{1}{3}\\
+&=\frac{14+30-35}{105}\\
+&=\frac{9}{105}\\
+&=\frac{3}{35}.
 \end{align*}
 $$
 
 :::
 
 :::{prf:example}
-Evaluate $\displaystyle\iint\limits_Dxy\,dA$, where $D$ is the region bounded by the line $y=x-1$ and the parabola $y^2=x+5$.
+We evaluate $\displaystyle\iint\limits_Dxy\,dA$, where $D$ is the region bounded by the line $y=x-1$ and the parabola $y^2=x+5$.
 
 ```{figure} Images/example3.png
 ---
@@ -493,7 +506,7 @@ align: center
 
 ```
 
-Solution. Again the region $D$ is both $x$-simple and $y$-simple. As an $x$-simple region we have to split the integral into two parts:
+Again the region $D$ is both $x$-simple and $y$-simple. As an $x$-simple region we have to split the integral into two parts:
 
 $$
 \iint\limits_Dxy\,dA=\int_{-5}^{-1}\int_{-\sqrt{x+5}}^{\sqrt{x+5}}xy\,dy\,dx+\int_{-1}^4\int_{x-1}^{\sqrt{x+5}}xy\,dy\,dx.
@@ -509,19 +522,22 @@ Therefore we obtain
 
 $$
 \begin{align*}
-\iint\limits_Dxy\,dA&=\int_{-2}^3\int_{y^2-5}^{y+1}xy\,dx\,dy=\int_{-2}^3\bigg[\frac{1}{2}x^2y\bigg]_{x=y^2-5}^{y+1}\,dy\\
+\iint\limits_Dxy\,dA&=\int_{-2}^3\int_{y^2-5}^{y+1}xy\,dx\,dy\\
+&=\int_{-2}^3\bigg[\frac{1}{2}x^2y\bigg]_{x=y^2-5}^{y+1}\,dy\\
 &=\frac{1}{2}\int_{-2}^3y\left((y+1)^2-\left(y^2-5\right)^2\right)\,dy\\
 &=\frac{1}{2}\int_{-2}^3\left(-24y+2y^2+11y^3-y^5\right)\,dy\\
 &=\frac{1}{2}\bigg[-12y^2+\frac{2}{3}y^3+\frac{11}{4}y^4-\frac{1}{6}y^6\bigg]_{y=-2}^3\\
 &=\frac{1}{2}\left(-108+18+\frac{891}{4}-\frac{243}{2}+48+\frac{16}{3}-44+\frac{32}{3}\right)\\
-&=\frac{1}{2}\left(-70+\frac{891}{4}-\frac{243}{2}\right)=\frac{-280+891-486}{8}=\frac{125}{8}.
+&=\frac{1}{2}\left(-70+\frac{891}{4}-\frac{243}{2}\right)\\
+&=\frac{-280+891-486}{8}\\
+&=\frac{125}{8}.
 \end{align*}
 $$
 
 :::
 
 :::{prf:example}
-Find the volume of the tetrahedron bounded by the planes $2x+y+z=2$, $y=2x$, $y=0$ and $z=0$.
+Let us find the volume of the tetrahedron bounded by the planes $2x+y+z=2$, $y=2x$, $y=0$ and $z=0$.
 
 ```{figure} Images/example4.png
 ---
@@ -532,7 +548,7 @@ align: center
 
 ```
 
-Solution. Note that, since the plane $2x+y+z=2$ intersects the $xy$-plane ($z=0$) in the line $2x+y=2$, the volume of the tetrahedron $T$ is the volume under the graph of the function $z=2-2x-y$ above the triangular region $D$ given by
+Note that, since the plane $2x+y+z=2$ intersects the $xy$-plane ($z=0$) in the line $2x+y=2$, the volume of the tetrahedron $T$ is the volume under the graph of the function $z=2-2x-y$ above the triangular region $D$ given by
 
 $$
 D=\{(x,y)\,|\,0\leq x\leq \tfrac{1}{2},\;2x\leq y\leq2-2x\}.
@@ -542,18 +558,21 @@ Therefore the volume equals
 
 $$
 \begin{align*}
-V&=\iint\limits_D(2-2x-y)\,dA=\int_0^{\frac{1}{2}}\int_{2x}^{2-2x}(2-2x-y)\,dy\,dx\\
+V&=\iint\limits_D(2-2x-y)\,dA\\
+&=\int_0^{\frac{1}{2}}\int_{2x}^{2-2x}(2-2x-y)\,dy\,dx\\
 &=\int_0^{\frac{1}{2}}\bigg[2y-2xy-\frac{1}{2}y^2\bigg]_{y=2x}^{2-2x}\,dx
 =\int_0^{\frac{1}{2}}\bigg[(2-2x)y-\frac{1}{2}y^2\bigg]_{y=2x}^{2-2x}\,dx\\
 &=\int_0^{\frac{1}{2}}\left(\frac{1}{2}(2-2x)^2-(2-2x)\cdot2x+\frac{1}{2}(2x)^2\right)\,dx\\
-&=\int_0^{\frac{1}{2}}(2-8x+8x^2)\,dx=\bigg[2x-4x^2+\frac{8}{3}x^3\bigg]_0^{\frac{1}{2}}=\frac{1}{3}.
+&=\int_0^{\frac{1}{2}}(2-8x+8x^2)\,dx\\
+&=\bigg[2x-4x^2+\frac{8}{3}x^3\bigg]_0^{\frac{1}{2}}\\
+&=\frac{1}{3}.
 \end{align*}
 $$
 
 :::
 
 :::{prf:example}
-Evaluate the iterated integral $\displaystyle\int_0^1\int_x^1\cos(y^2)\,dy\,dx$.
+Consider the iterated integral $\displaystyle\int_0^1\int_x^1\cos(y^2)\,dy\,dx$.
 
 ```{figure} Images/example5.png
 ---
@@ -564,7 +583,7 @@ align: center
 
 ```
 
-Solution. The inner integral $\displaystyle\int\cos(y^2)\,dy$ cannot be evaluated in terms of elementary functions. However, note that
+The inner integral $\displaystyle\int\cos(y^2)\,dy$ cannot be evaluated in terms of elementary functions. However, note that
 
 $$
 \int_0^1\int_x^1\sin(y^2)\,dy\,dx=\iint\limits_D\sin(y^2)\,dA,
@@ -586,8 +605,11 @@ Hence we have
 
 $$
 \begin{align*}
-\int_0^1\int_x^1\cos(y^2)\,dy\,dx&=\iint\limits_D\cos(y^2)\,dA=\int_0^1\int_0^y\cos(y^2)\,dx\,dy\\
-&=\int_0^1y\cos(y^2)\,dy=\bigg[\frac{1}{2}\sin(y^2)\bigg]_{y=0}^1=\frac{1}{2}\sin(1).
+\int_0^1\int_x^1\cos(y^2)\,dy\,dx&=\iint\limits_D\cos(y^2)\,dA\\
+&=\int_0^1\int_0^y\cos(y^2)\,dx\,dy\\
+&=\int_0^1y\cos(y^2)\,dy\\
+&=\bigg[\frac{1}{2}\sin(y^2)\bigg]_{y=0}^1\\
+&=\frac{1}{2}\sin(1).
 \end{align*}
 $$
 
@@ -626,8 +648,7 @@ Consider the region $D$ in $\mathbb{R}^2$ bounded by the graphs of $y=x^2$ and $
 Then we have:
 
 $$
-\textrm{area}(D)=\iint\limits_D1\,dA=\int_0^1\int_{x^2}^{\sqrt{x}}1\,dy\,dx=\int_0^1\left(\sqrt{x}-x^2\right)\,dx
-=\bigg[\frac{2}{3}x\sqrt{x}-\frac{1}{3}x^3\bigg]_{x=0}^1=\frac{1}{3}.
+\textrm{area}(D)=\iint\limits_D1\,dA=\int_0^1\int_{x^2}^{\sqrt{x}}1\,dy\,dx=\int_0^1\left(\sqrt{x}-x^2\right)\,dx=\bigg[\frac{2}{3}x\sqrt{x}-\frac{1}{3}x^3\bigg]_{x=0}^1=\frac{1}{3}.
 $$
 
 :::
