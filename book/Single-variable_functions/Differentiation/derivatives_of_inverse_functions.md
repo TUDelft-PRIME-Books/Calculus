@@ -6,7 +6,7 @@
 
 [^FootnoteDiffInv]: Maybe apart from world peace
 
-The one major thing missing in our lives right know[^FootnoteDiffInv] is a way to find the derivatives of the remaining standard functions. To recall, we have found the derivatives of the other standard functions in {prf:ref}`Thm:Differentiability:Standard1`, {prf:ref}`Thm:Chain rule:Standard2` and {prf:ref}`Thm:Productquotientrule:Standard3`. The ones that are missing are the derivatives of logarithms, inverse trigonometric functions and non-integer powers of $x$. So without further ado, let us get to work and find these derivatives.
+The one major thing missing in our lives right know[^FootnoteDiffInv] is a way to find the derivatives of the remaining standard functions. To recall, we have found the derivatives of the other standard functions in {prf:ref}`Thm:Differentiability:Standard1`, {prf:ref}`Thm:Chain rule:Standard2` and {prf:ref}`Thm:Productquotientrule:Standard3`. The ones that are missing are the derivatives of logarithms, inverse trigonometric functions and non-integer powers of $x$, as we promised in {prf:ref}`Remark:Differentiability:Powerfunctions`. So without further ado, let us get to work and find these derivatives.
 
 
 

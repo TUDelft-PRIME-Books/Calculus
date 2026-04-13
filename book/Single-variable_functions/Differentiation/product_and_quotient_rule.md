@@ -72,7 +72,7 @@ Taking the limit as $\Delta x\rightarrow 0$, we obtain an expression for the rat
  &= w(x)\ell'(x)+\ell(x)w'(x).
 \end{align*}
 
-It turns out that because $\Delta w\rightarrow w'(x)\Delta x$ and $\Delta \ell\rightarrow \ell'(x)\Delta x$ as $\Delta x\rightarrow 0$, this expression is in fact exact, so we have found
+It turns out that because $\dfrac{\Delta w}{\Delta x}\rightarrow w'(x)$ and $\dfrac{\Delta \ell}{\Delta x}\rightarrow \ell'(x)$ as $\Delta x\rightarrow 0$, this expression is in fact exact, so we have found
 
 $$
 A'(x)=w(x)\ell'(x)+\ell(x)w'(x)
