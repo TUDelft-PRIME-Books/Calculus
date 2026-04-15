@@ -481,7 +481,7 @@ Visualisation of the $n$th partial sum of the harmonic series, which is given by
 Replace {numref}`Fig:Series:HarmonicSeries` with an applet.
 :::
 
-Note that the top left corner of each rectangle aligns with the function $f(x)=\frac{1}{x}$. Because $f$ is a decreasing function, the upper right corner of each rectangle is above the graph of $f$. This means that the area of each rectangle is greater than the area under the graph of $f$ between $n$ and $n+1$. Hence, we have
+Note that the top left corner of each rectangle aligns with the function $f(x)=\frac{1}{x}$. Because $f$ is a strictly decreasing function, the upper right corner of each rectangle is above the graph of $f$. This means that the area of each rectangle is greater than the area under the graph of $f$ between $n$ and $n+1$. Hence, we have
 
 $$
 s_n = \sum_{k=1}^n\frac{1}{k} > \sum_{k=1}^n\int_{k}^{k+1}\frac{1}{x}\,dx = \int_1^{n+1}\frac{1}{x}\,dx.
@@ -736,7 +736,7 @@ t_n &= \sum_{k=1}^n\frac{1}{k^2} \\
 &< 1+\sum_{k=2}^n\int_{k-1}^{k}\frac{1}{x^2}\,dx \\
 &= 1+\int_1^{n}\frac{1}{x^2}\,dx \\
 &= 1+\bigg[-\frac{1}{x}\bigg]_1^{n} \\
-&= 2+\left(-\frac{1}{n}+1) \\
+&= 2+\left(-\frac{1}{n}+1\right) \\
 &= 2-\frac{1}{n} \\
 &< 2.
 \end{align*}
