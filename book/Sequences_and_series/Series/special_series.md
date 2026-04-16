@@ -5,6 +5,7 @@
 
 In this section we consider several special types of series. These types of series are important because they often appear in applications, we know under which conditions they converge or diverge, and because they can be used to find the convergence of some series that do not belong to these types in later sections.
 
+(Sec:Series:GeometricSeries)=
 ## Geometric series
 
 One of the most important examples of an infinite series is the geometric series, which is the sum of the terms of a geometric sequence.
