@@ -173,7 +173,11 @@ The good news is that the answer is yes. This result is a very important theorem
 
 ::::::{prf:theorem} Implicit function theorem
 :label: Thm:SlopeCurves:IFT
-Consider a curve that is implicitly defined by an equation $F(x,y)=0$ and let $(x_0,y_0)$ be a point on the curve. Let $f(x)=F(x,y_0)$ and $g(y)=F(x_0,y)$. If $f$ is continuously differentiable on an open interval containing $x_0$ and $g$ is continuously differentiable on an open interval containing $y_0$ and $g'(y_0)\neq 0$, then there exists a unique differentiable function $h$ with $h(x_0)=y_0$ and $F(x,h(x))=0$ on an open interval containing $x_0$. That is, on this interval, $y$ is implicitly defined as a differentiable function of $x$.
+Consider a curve that is implicitly defined by an equation $F(x,y)=0$ and let $(x_0,y_0)$ be a point on the curve. Let $f(x)=F(x,y_0)$ and $g(y)=F(x_0,y)$.
+
+If $f$ is continuously differentiable on an open interval containing $x_0$ and $g$ is continuously differentiable on an open interval containing $y_0$ and $g'(y_0)\neq 0$, then there exists a unique differentiable function $h$ with $h(x_0)=y_0$ and $F(x,h(x))=0$ on an open interval containing $x_0$.
+
+That is, on this interval, $y$ is implicitly defined as a differentiable function of $x$.
 ::::::
 
 This result shows that we can apply implicit differentiation as long as we we can take the derivatives we want to and we subsequently do not divide by $0$ (it should not come as a surprise that we want to avoid dividing by $0$).
@@ -242,7 +246,9 @@ In {numref}`Section:Curves` we saw that for many curves it is easier or more con
 
 ::::::{prf:theorem} 
 :label: Thm:SlopeCurves:Param
-Let $\mathcal{C}$ be curve with parametrisation $x=f(t)$ and $y=g(t)$ for $t_0\leq t\leq t_1$. Suppose $f$ and $g$ are both differentiable. Then for any $t$ with $f'(t)\neq 0$ we have 
+Let $\mathcal{C}$ be curve with parametrisation $x=f(t)$ and $y=g(t)$ for $t_0\leq t\leq t_1$. Suppose $f$ and $g$ are both differentiable.
+
+Then for any $t$ with $f'(t)\neq 0$ we have 
 
 $$
  \frac{dy}{dx}=\frac{g'(t)}{f'(t)}.
