@@ -30,13 +30,13 @@ and/or
 
 - the integrand is not continuous.
 
-In the next sections we will consider first the two cases separately and then the combination of both cases.
+In the next subsections we will first consider the two cases separately and then the combination of both cases.
 
 ## Infinite interval of integration
 
-Let us first focus on the term *not finite*. This means that the interval of integration is infinite, i.e., it is of the form $(-\infty,b]$, $[a,\infty)$ or $(-\infty,\infty)$. Note that these intervals remain closed.
+Let us first focus on the term *not finite* for the interval of integration. This means that the interval of integration is infinite, i.e., it is of the form $(-\infty,b]$, $[a,\infty)$ or $(-\infty,\infty)$. Note that these intervals remain closed.
 
-Improper integral over such intervals are defined as a (sum of) limit(s) which may or may not exist. We will give a definition for each of the three types of infinite intervals of integration.
+Improper integrals over such intervals are defined as a (sum of) limit(s) which may or may not exist. We will give a definition for each of the three types of infinite intervals of integration.
 
 ::::::{prf:Definition} Improper integrals with right-infinite interval of integration
 :label: Def:Integration:ImproperIntegralInfiniteIntervalRight
@@ -48,7 +48,7 @@ $$
 $$
 provided the limit exists.
 
-If the limit exists, we say that the proper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ is **convergent**.
+If the limit exists, we say that the improper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ is **convergent**.
 
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ is **divergent**. If the limit does not exist but approaches $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
@@ -64,7 +64,7 @@ $$
 $$
 provided the limit exists.
 
-If the limit exists, we say that the proper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ is **convergent**.
+If the limit exists, we say that the improper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ is **convergent**.
 
 If the limit does not exist, we say that the improper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ is **divergent**. If the limit does not exist but approaches $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
@@ -79,9 +79,9 @@ $$
 $$
 provided the two improper integrals on the right converge for some value of $c\in\mathbb{R}$.
 
-If the two improper integrals converge, we say that the proper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ is **convergent**.
+If the two improper integrals on the right converge, we say that the improper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ is **convergent**.
 
-If at least one of the two improper integrals does not converge, we say that the improper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ is **divergent**.
+If at least one of the two improper integrals on the right does not converge, we say that the improper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ is **divergent**.
 
 If both improper integrals on the right diverge to infinity, we say that the improper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ **diverges to infinity**. If both improper integrals on the right diverge to negative infinity, we say that the improper integral $\displaystyle\int_{-\infty}^{\infty}f(x)\,dx$ **diverges to negative infinity**.
 
@@ -159,7 +159,7 @@ $$
 \int_{-\infty}^{\infty}\frac{dx}{1+x^2}=\int_{-\infty}^0\frac{dx}{1+x^2}+\int_0^{\infty}\frac{dx}{1+x^2}.
 $$
 
-In this case we choose the central point $c=0$ but we could have chosen any other value of $c\in\mathbb{R}$ as well. The value of the integral does, ultimately, not depend on the choice of $c$. 
+In this case we choose the central point $c=0$ but we could have chosen any other value of $c\in\mathbb{R}$ as well. The value of the integral does not depend on the choice of $c$. 
 
 Now we have for the first integral
 
@@ -241,13 +241,13 @@ Now we have covered the intervals, it is time to consider the integrand. For thi
 - the integrand $f$ is not left-continuous at $x=b$ (i.e. at the right of the interval).
 - the integrand $f$ is discontinuous at some point $c\in(a,b)$ (i.e. in the interior of the interval).
 
-Note that we consider discontinuity or (not continuity) in general. Examples of discontinuity include jump discontinuity, infinite discontinuity and removable discontinuity.
+Note that we consider discontinuity (or not continuity) in general. Examples of discontinuity include jump discontinuity, infinite discontinuity and removable discontinuity.
 
 In particular, we do not require the integrand to be unbounded near the point of discontinuity, but it may be unbounded as well.
 
 Note that also piecewise-continuity of the integrand is not required, but is one, or even a combination, of the above  cases.
 
-This way of defining improper integrals with discontinuous integrand is more general than the way it is often defined in other textbooks, where the integrand is required to be unbounded near the point of discontinuity.
+This way of defining improper integrals with a discontinuous integrand is more general than the way it is often defined in other textbooks, where the integrand is required to be unbounded near the point of discontinuity.
 
 For each of the three cases we will define how to handle the improper integral $\displaystyle\int_a^bf(x)\,dx$.
 
@@ -261,7 +261,7 @@ $$
 $$
 provided the limit exists.
 
-If the limit exists, we say that the proper integral $\displaystyle\int_a^bf(x)\,dx$ is **convergent**.
+If the limit exists, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **convergent**.
 
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist but approaches $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
@@ -276,7 +276,7 @@ $$
 $$
 provided the limit exists.
 
-If the limit exists, we say that the proper integral $\displaystyle\int_a^bf(x)\,dx$ is **convergent**.
+If the limit exists, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **convergent**.
 
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist but approaches $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
@@ -291,9 +291,9 @@ $$
 $$
 provided the two improper integrals on the right converge for some value of $c\in\mathbb{R}$.
 
-If the two improper integrals converge, we say that the proper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ is **convergent**.
+If the two improper integrals on the right converge, we say that the improper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ is **convergent**.
 
-If at least one of the two improper integrals does not converge, we say that the improper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ is **divergent**.
+If at least one of the two improper integrals on the right does not converge, we say that the improper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ is **divergent**.
 
 If both improper integrals on the right diverge to infinity, we say that the improper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ **diverges to infinity**. If both improper integrals on the right diverge to negative infinity, we say that the improper integral $\displaystyle\int_{a}^{b}f(x)\,dx$ **diverges to negative infinity**.
 
@@ -304,17 +304,19 @@ We start with an example of an improper integral with a discontinuous integrand 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample1
 
+We integrate the function $\displaystyle\frac{1}{x^2}$ on the interval $[-1,1]$. 
+
 ```{figure} Images/improper5.png
 ---
 width: 50%
 name: Fig:Integration:ImproperIntegral5
 align: center
-figclass: margin
+figclass: center
 ---
 The function $\displaystyle\frac{1}{x^2}$.
 ```
 
-We integrate the function $\displaystyle\frac{1}{x^2}$ on the interval $[-1,1]$. This function is continuous on $[-1,0)$ and on $(0,1]$ but is not continuous at $x=0$. Hence, we can define the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ as in {prf:ref}`Def:Integration:ImproperIntegralInternalDiscontinuousIntegrand`. We have
+This function is continuous on $[-1,0)$ and on $(0,1]$ but is not continuous at $x=0$. Hence, we can define the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ as in {prf:ref}`Def:Integration:ImproperIntegralInternalDiscontinuousIntegrand`. We have
 
 $$
 \int_{-1}^1\frac{dx}{x^2}=\int_{-1}^0\frac{dx}{x^2}+\int_0^1\frac{dx}{x^2}.
@@ -361,12 +363,14 @@ is clearly wrong! Note that the integrand is positive on $[-1,1]$. The evaluatio
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample2
 
+Consider the function $\dfrac{1}{x-1}$ on the interval $[0,3]$.
+
 ```{figure} Images/improper6.png
 ---
 width: 50%
 name: Fig:Integration:ImproperIntegral6
 align: center
-figclass: margin
+figclass: center
 ---
 The function $\displaystyle\frac{1}{x-1}$.
 ```
@@ -395,7 +399,7 @@ and
 &= \infty.
 \end{align*}
 
-Because both integrals diverge, we say that the improper integral $\displaystyle\int_0^3\frac{dx}{x-1}$ diverges to infinity.
+Because both integrals diverge, we say that the improper integral $\displaystyle\int_0^3\frac{dx}{x-1}$ diverges.
 
 ::::::
 
@@ -419,17 +423,18 @@ Since the integrand is discontinuous at $x=1$ the fundamental theorem cannot be 
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample3
+
+Consider $\displaystyle\int_0^1\ln(x)\,dx$. 
+
 ```{figure} Images/improper7.png
 ---
 width: 50%
 name: Fig:Integration:ImproperIntegral7
 align: center
-figclass: margin
+figclass: center
 ---
 The function $\displaystyle\ln(x)$.
 ```
-
-Consider $\displaystyle\int_0^1\ln(x)\,dx$. 
 
 Using integration by parts, we have
 
@@ -464,7 +469,7 @@ $$
 
 ## Comparing improper integrals
 
-Sometimes integrals are not easy to evaluate. However, in many cases evaluation is not necessary as long as we can find out whether the integral is convergent or divergent. In case of convergence we might able to find a lower and upper bound for the integral. The following theorem might be helpful.
+Sometimes integrals are not easy to evaluate. However, in many cases evaluation is not necessary as long as we can find out whether the integral is convergent or divergent. In case of convergence we might be able to find a lower and upper bound for the integral. The following theorem might be helpful.
 
 ::::::{prf:Theorem} Comparison theorem for improper integrals
 :label: Thm:Integration:ImproperIntegralsComparison
@@ -624,15 +629,15 @@ The Feynman method itself is captured best in an algorithmic way:
 :::{prf:algorithm} Feynman method
 For any definite integral of the form $\displaystyle\int_a^bf(x)\,dx$ perform the following steps:
 
-1. Introduce new function $g$ based on the integrand $f$ and define $I(t)=\displaystyle\int_a^bg(x,t)\,dx$ such that
+1. Introduce a new function $g$ based on the integrand $f$ and define $I(t)=\displaystyle\int_a^bg(x,t)\,dx$ such that
 
     - $I(t_0)=\alpha$ for some value of $t_0$ and some constant $\alpha\in\mathbb{R}$.
 
     - $g(x,t_1)=f(x)$ for some value of $t_1$. This implies that $I(t_1)=\displaystyle\int_a^bf(x)\,dx$.
 
-3. Compute the partial derivative $\displaystyle\frac{d}{dt}g(x,t)$.
+3. Find the partial derivative $\displaystyle\frac{\partial}{\partial t}g(x,t)$.
 
-4. Compute the integral $I'(t)=\displaystyle\int_a^b\frac{d}{dt}g(x,t)\,dx$.
+4. Evaluate the integral $I'(t)=\displaystyle\int_a^b\frac{\partial}{\partial t}g(x,t)\,dx$.
 
 5. Integrate $I'(t)$ with respect to $t$ to find $I(t)$ (including a constant of integration).
 
@@ -645,10 +650,10 @@ For any definite integral of the form $\displaystyle\int_a^bf(x)\,dx$ perform th
 :label: Ex:Integration:ImproperIntegralsFeynmanExample1
 Consider the improper integral $\displaystyle\int_0^1\frac{x-1}{\ln(x)}\,dx$, which is extremely difficult to evaluate.
 
-Define $g(t,x)=\frac{x^t-1}{\ln(x)}$ and $I(t)=\displaystyle\int_0^1\frac{x^t-1}{\ln(x)}\,dx$ for $t\geq0$, then we have $I(0)=0$,
+Define $g(x,t)=\dfrac{x^t-1}{\ln(x)}$ and $I(t)=\displaystyle\int_0^1\frac{x^t-1}{\ln(x)}\,dx$ for $t\geq0$, then we have $I(0)=0$,
 
 $$
-\frac{\partial}{\partial t}g(t,x)=\frac{x^t\ln(x)}{\ln(x)}=x^t,
+\frac{\partial}{\partial t}g(x,t)=\frac{x^t\ln(x)}{\ln(x)}=x^t,
 $$
 
 and
@@ -666,10 +671,22 @@ $$
 for $t\geq0$. We conclude that
 
 $$
-\int_0^1\frac{x-1}{\ln(x)}\,dx=\ln(2).
+I(1)=\int_0^1\frac{x-1}{\ln(x)}\,dx=\ln(2).
 $$
 
-Similarly, we find that $\displaystyle I(2)=\int_0^1\frac{x^2-1}{\ln(x)}\,dx=\ln(3)$ and $\displaystyle I(\tfrac{1}{2})=\int_0^1\frac{\sqrt{x}-1}{\ln(x)}\,dx=\ln\left(\tfrac{3}{2}\right)$, for instance.
+Similarly, we find that 
+
+$$
+I(2)=\int_0^1\frac{x^2-1}{\ln(x)}\,dx=\ln(3)
+$$ 
+
+and 
+
+$$
+I(\tfrac{1}{2})=\int_0^1\frac{\sqrt{x}-1}{\ln(x)}\,dx=\ln\left(\tfrac{3}{2}\right),
+$$ 
+
+for instance.
 
 ::::::
 
@@ -694,7 +711,7 @@ Now we have using integration by parts
 Because the integral $I'(t)$ appears on both sides of the equation, we can solve for $I'(t)$ to find that
 
 $$
-I'(t)=\int_0^{\infty}e^{-y}\cos(ty)\,dy=\frac{1}{1+t^2}+C.
+I'(t)=\int_0^{\infty}e^{-y}\cos(ty)\,dy=\frac{1}{1+t^2}.
 $$
 
 Since $I(0)=0$ this implies that $I(t)=\arctan(t)$.
@@ -721,13 +738,13 @@ This implies that $I(t)=\displaystyle\arctan\left(\frac{t}{\alpha}\right)$.
 For instance, this implies that $\displaystyle\int_0^{\infty}\frac{e^{-\alpha x}\sin(\alpha x)}{x}\,dx=\arctan(1)=\tfrac{1}{4}\pi$ for all $\alpha>0$. Furthermore, we have
 
 $$
-\int_0^{\infty}\frac{e^{-x\sqrt{3}}\sin(x)}{x}\,dx=\arctan\left(\frac{1}{\sqrt{3}}\right)=\frac{1}{6}\pi
+\int_0^{\infty}\frac{e^{-x\sqrt{3}}\sin(x)}{x}\,dx=\arctan\left(\tfrac{1}{\sqrt{3}}\right)=\tfrac{1}{6}\pi
 $$
 
 and
 
 $$
-\int_0^{\infty}\frac{e^{-x}\sin(x\sqrt{3})}{x}\,dx=\arctan\left(\sqrt{3}\right)=\frac{1}{3}\pi.
+\int_0^{\infty}\frac{e^{-x}\sin(x\sqrt{3})}{x}\,dx=\arctan\left(\sqrt{3}\right)=\tfrac{1}{3}\pi.
 $$
 
 ::::::
@@ -736,7 +753,7 @@ $$
 
 There exist many special improper integrals that are often used in various applications. We will discuss some of them here.
 
-We start with the so-called $p$-integrals:
+We start with the so-called *$p$-integrals*:
 
 :::{prf:definition} $p$-integrals
 :label: Def:Integration:ImproperIntegralsPIntegrals
@@ -776,7 +793,7 @@ This limit exists if $1-p>0$ (then: $\displaystyle\lim_{c\downarrow0}\frac{c^{1-
 
 ::::::
 
-Next up is the gamma function:
+Next up is the *gamma function*:
 
 :::{prf:definition} The gamma function
 :label: Def:Integration:ImproperIntegralsGammaFunction
@@ -788,14 +805,14 @@ $$
 $$
 :::
 
-This gamma function converges for all $x>0$ and has many interesting properties. We start by showing this convergence and then we will discuss some of its properties.
+This gamma function converges for all $x>0$ and has many interesting properties. We start by showing its convergence and then we will discuss some of its properties.
 
 Let $\displaystyle\int_0^{\infty}t^{x-1}e^{-t}\,dt=\int_0^1t^{x-1}e^{-t}\,dt+\int_1^{\infty}t^{x-1}e^{-t}\,dt$.
 
 For $0\leq t\leq1$ we have: $t^{x-1}e^{-1}\leq t^{x-1}e^{-t}\leq t^{x-1}$ and 
 
 $$
-\int_0^1t^{x-1}\,dt=\frac{t^x}{x}\bigg|_0^1=\frac{1}{x},\quad x>0.
+\int_0^1t^{x-1}\,dt=\frac{t^x}{x}\bigg|_{t=0}^1=\frac{1}{x},\quad x>0.
 $$
 
 For $t\geq1$ we have: $0<t^{x-1}e^{-t}\leq e^{-t}$ and
@@ -812,8 +829,7 @@ Using integration by parts we obtain for $x>0$
 
 \begin{align*}
 \Gamma(x+1)&=\int_0^{\infty}t^xe^{-t}\,dt\\
-&=-\int_0^{\infty}t^x\,de^{-t}\\
-&=-t^xe^{-t}\bigg|_0^{\infty}+\int_0^{\infty}e^{-t}\,dt^x\\
+&=-t^xe^{-t}\bigg|_0^{\infty}+\int_0^{\infty}e^{-t}\,xt^{x-1}\,dt\\
 &=0+x\int_0^{\infty}t^{x-1}e^{-t}\,dt\\
 &=x\Gamma(x).
 \end{align*}
@@ -828,7 +844,7 @@ $$
  
 Later we will prove that $\displaystyle\int_0^{\infty}e^{-x^2}\,dx=\tfrac{1}{2}\sqrt{\pi}$. This implies that $\Gamma(\frac{1}{2})=\sqrt{\pi}$.
 
-Now we turn our attention to the Dirichlet integral:
+Now we turn our attention to the *Dirichlet integral*:
 
 :::{prf:definition} The Dirichlet integral
 :label: Def:Integration:ImproperIntegralsDirichletIntegral
@@ -864,11 +880,9 @@ Now let: $I(t)=\displaystyle\int_0^{\infty}e^{-xt}\frac{\sin(x)}{x}\,dx$. Then w
 
 \begin{align*}
 I'(t)&=-\int_0^{\infty}e^{-xt}\sin(x)\,dx\\
-&=\int_0^{\infty}e^{-xt}\,d\cos(x)\\
-&=e^{-xt}\cos(x)\bigg|_0^{\infty}-\int_0^{\infty}\cos(x)\,de^{-xt}\\
+&=e^{-xt}\cos(x)\bigg|_0^{\infty}-\int_0^{\infty}\cos(x)\,(-t)e^{-xt}\,dx\\
 &=-1+t\int_0^{\infty}e^{-xt}\cos(x)\,dx\\
-&=-1+t\int_0^{\infty}e^{-xt}\,d\sin(x)\\
-&=-1+te^{-xt}\sin(x)\bigg|_0^{\infty}-t\int_0^{\infty}\sin(x)\,de^{-xt}\\
+&=-1+te^{-xt}\sin(x)\bigg|_0^{\infty}-t\int_0^{\infty}\sin(x)\,(-t)e^{-xt}\,dx\\
 &=-1+t^2\int_0^{\infty}e^{-xt}\sin(x)\,dt.
 \end{align*}
 
@@ -887,7 +901,7 @@ $$
 and finally that
 
 $$
-\int_0^{\infty}\frac{\sin(x)}{x}\,dx=I(0)=\tfrac{1}{2}\pi.
+\int_0^{\infty}\frac{\sin(x)}{x}\,dx=I(0)=\frac{1}{2}\pi.
 $$
 
 ::::::
@@ -923,17 +937,16 @@ to obtain
 &=\frac{1}{1+\alpha^2}\left(\alpha\arctan(\alpha)+\frac{1}{2}\ln(1+\alpha^2)-\ln(1+\alpha^2)\right)\\
 &=\frac{\alpha}{1+\alpha^2}\arctan(\alpha)-\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}.
 \end{align*}
+
 Hence we have: $I'(\alpha)=\displaystyle\frac{\alpha}{1+\alpha^2}\arctan(\alpha)+\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}$. Since $I(0)=0$, this implies that
 
 \begin{align*}
 I(\alpha)&=\int\frac{\alpha}{1+\alpha^2}\arctan(\alpha)\,d\alpha+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
-&=\frac{1}{2}\int\arctan(\alpha)\,d\ln(1+\alpha^2)+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
-&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\ln(1+\alpha^2)\,d\arctan(\alpha)\\
-&{}\quad\quad\quad{}+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
 &=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
 &{}\quad\quad\quad{}+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
 &=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)+C\quad\Longrightarrow\quad I(\alpha)=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2).
 \end{align*}
+
 Hence we have: $\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)$.
 
 The special case $\alpha=1$ now reads
@@ -945,8 +958,7 @@ $$
 Similarly, the integral $\displaystyle\int_0^1\frac{\arctan(x)}{1+x}\,dx$ is a special case of
 
 \begin{align*}
-\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx&=\int_0^{\alpha}\arctan(x)\,d\ln(1+\alpha x)\\
-&=\arctan(x)\ln(1+\alpha x)\bigg|_0^{\alpha}-\int_0^{\alpha}\ln(1+\alpha x)\,d\arctan(x)\\
+\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx&=\arctan(x)\ln(1+\alpha x)\bigg|_0^{\alpha}-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx\\
 &=\arctan(\alpha)\ln(1+\alpha^2)-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
 \end{align*}
 This implies that: 
@@ -1061,7 +1073,7 @@ We conclude that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$.
 ::::::{note}
 :name: Note:Integration:CatalansConstant
 
-Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx$ without evaluating the integrals. Later we will see that the value is equal to *Catalan's constant*.
+Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx$ without evaluating the integrals. Later we will see that the value is equal to *Catalan's constant*. See: {numref}`sec:CatalansConstant`.
 ::::::
 
 ::::{exercise} A remarkable class of integrals

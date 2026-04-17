@@ -22,7 +22,7 @@ $$
 
 Here we used that if $\Delta t\rightarrow 0$, we must have $\Delta x\rightarrow 0$ as well. So the rate of change of the pressure with respect to time is the product of the rate of change of pressure with respect to depth times the velocity at which the depth changes. This makes sense intuitively: if we move twice as fast, we would expect the pressure to change twice as fast as well, and if the pressure decreases three times as fast with respect to depth, it will also change three times as fast with respect to time.
 
-The general version of this result is known as the **chain rule**. It is used to find derivatives of compositions of functions. It is a very important and commonly used tool when finding derivatives. In this section, we will state and prove the chain rule and show how it is used. We will also use the chain rule to find the derivative of functions of the form $f(x)=b^x$ for $b>0$, as we promised in {prf:ref}`Remark:Differentiability:Powerfunctions`.
+The general version of this result is known as the **chain rule**. It is used to find derivatives of compositions of functions. It is a very important and commonly used tool when finding derivatives. In this section, we will state and prove the chain rule and show how it is used. We will also use the chain rule to find the derivative of functions of the form $f(x)=b^x$ for $b>0$.
 
 (Subsec:ChainruleIntro)=
 
@@ -260,7 +260,7 @@ $$
 Now we can use the chain rule again to find the derivative $(h\circ k)'(x)$. This gives
 
 \begin{align*}
- f'(x) &= f'(k(k(x)))(h\circ k)'(x) \\
+ f'(x) &= f'(h(k(x)))(h\circ k)'(x) \\
  &= f'(h(k(x)))h'(k(x))k'(x) \\
 &= \cos\left(3^{x^2+1}\right)\ln(3)3^{x^2+1}\left(2x+1\right).
 \end{align*}
