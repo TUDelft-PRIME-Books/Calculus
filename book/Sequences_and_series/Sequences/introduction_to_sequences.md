@@ -37,7 +37,9 @@ The lists in Equations {eq}`Eq:SeqAndTypes:PositiveIntegersFiniteList`, {eq}`Eq:
 
 ## Sequences
 
-We start of with the definition of sequences and some relevant terminology.
+We start of with the definition of sequences and some relevant terminology.[^extensionCh1]
+
+[^extensionCh1]: The content of this section is an extension of the content of {numref}`Sec:SumsAndProducts:FiniteSequences`.
 
 ::::::{prf:definition}
 :label: Def:SeqAndTypes:Definition
@@ -82,12 +84,12 @@ Sometimes we just write $\{a_n\}$ to denote a sequence, so if we do, please be a
 In this book we nearly never consider _finite_ sequences, so if we use the term _sequence_, we often mean an _infinite_ sequence.
 :::
 
-In many cases the terms of an _infinite_ sequence are defined by an explicit formula for the general term in terms of the index:
+In many cases the terms of an sequence are defined by an explicit formula for the general term in terms of the index:
 
 ::::{prf:definition}
 :label: Def:SeqAndTypes:ExplicitFormula
 
-An **explicit formula for a sequence** $\{a_n\}_{n=p}^{\infty}$ is a formula that gives the $n$th term $a_n$ of the sequence directly in terms of the index $n$ for all integers $n\geq p$.
+An **explicit formula for a sequence** $\{a_n\}$ is a formula that gives the $n$th term $a_n$ of the sequence directly in terms of the index $n$ for all integers $n$ larger than the starting index.
 ::::
 
 ::::{prf:example}

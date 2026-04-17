@@ -5,6 +5,7 @@
 
 In this section we consider several special types of series. These types of series are important because they often appear in applications, we know under which conditions they converge or diverge, and because they can be used to find the convergence of some series that do not belong to these types in later sections.
 
+(Sec:Series:GeometricSeries)=
 ## Geometric series
 
 One of the most important examples of an infinite series is the geometric series, which is the sum of the terms of a geometric sequence.
@@ -526,7 +527,7 @@ $$
 s_{2n}=b_1-(b_2-b_3)-(b_4-b_5)-\cdots-(b_{2n-2}-b_{2n-1})-b_{2n}\leq b_1.
 $$
 
-Hence the sequence $\{s_{2n}\}$ of even partial sums is increasing and bounded above and therefore convergent. Say: $\lim\limits_{n\to\infty}s_{2n}=s$. Then we have
+Hence the sequence $\{s_{2n}\}$ of even partial sums is strictly increasing and bounded above and therefore convergent. Say: $\lim\limits_{n\to\infty}s_{2n}=s$. Then we have
 
 $$
 \lim\limits_{n\to\infty}s_{2n+1}=\lim\limits_{n\to\infty}(s_{2n}+b_{2n+1})=\lim\limits_{n\to\infty}s_{2n}+\lim\limits_{n\to\infty}b_{2n+1}=s+0=s.
@@ -549,7 +550,7 @@ $$
 f'(x)=\frac{2x(x^3+1)-3x^4}{(x^3+1)^2}=\frac{x(2-x^3)}{(x^3+1)^2}<0\quad\text{for}\quad x>1.
 $$
 
-This implies that $b_{n+1}\leq b_n$ for $n\geq2$. We also have that $b_1=\frac{1}{2}$ and $b_2=\frac{4}{9}$, so the sequence $\{b_n\}$ is decreasing for $n\geq1$.
+This implies that $b_{n+1}\leq b_n$ for $n\geq2$. We also have that $b_1=\frac{1}{2}$ and $b_2=\frac{4}{9}$, so the sequence $\{b_n\}$ is non-increasing for $n\geq1$.
 
 Finally, we have
 
@@ -614,7 +615,7 @@ $$
 \lim\limits_{n\to\infty}b_{2n}=\lim\limits_{n\to\infty}\frac{4}{(2n+2)^2} = 0
 $$
 
-So all terms of the sequence $\{b_n\}$ tend to zero, and the first condition of the alternating series test is satisfied. Next we check whether the sequence $\{b_n\}$ is decreasing.
+So all terms of the sequence $\{b_n\}$ tend to zero, and the first condition of the alternating series test is satisfied. Next we check whether the sequence $\{b_n\}$ is non-increasing.
 
 The first terms of the sequence $\{b_n\}$ are
 
@@ -628,7 +629,7 @@ $$
 \frac{1}{2},\frac{1}{2^2},\frac{1}{3},\frac{1}{3^2},\frac{1}{4},\frac{1}{4^2},\ldots
 $$
 
-As $\frac{1}{k+1}>\frac{1}{(k+1)^2}$ for all $k\geq1$, we have $b_{2n+1}>b_{2n}$ for all $n\geq1$. Hence the sequence $\{b_n\}$ is not _always_ decreasing, so the second condition of the alternating series test is not satisfied. Therefore, we cannot conclude that the series $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}b_n$ is convergent by the alternating series test.
+As $\frac{1}{k+1}>\frac{1}{(k+1)^2}$ for all $k\geq1$, we have $b_{2n+1}>b_{2n}$ for all $n\geq1$. Hence the sequence $\{b_n\}$ is not _always_ non-increasing, so the second condition of the alternating series test is not satisfied. Therefore, we cannot conclude that the series $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}b_n$ is convergent by the alternating series test.
 
 To further investigate the convergence of this series, we need more tests that we do not have yet.
 
