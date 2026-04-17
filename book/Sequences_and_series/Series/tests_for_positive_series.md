@@ -20,13 +20,13 @@ In {numref}`Sec:Series:InfiniteSeries` we have talked about infinite series, wet
 
 In {prf:ref}`Ex:Series:HarmonicSeries`, {prf:ref}`Ex:Series:AbsoluteConvergence1` and the proof of {prf:ref}`Thm:Series:pSeries` we investigate $p$-series, which are series of the form $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$, where $p$ is a positive real number. In the two examples and the proof, we compared the series with the integral of an appropriate function.
 
-This concept can be generalized to the **integral test**. {numref}`Fig:Series:IntegralTest` gives the idea behind the integral test: you either search for a function that always lies above the rectangles (for convergence) or a function that always lies below the rectangles (for divergence). In both cases, the function should be continuous, positive and decreasing on $[1,\infty)$ and $a_n=f(n)$.
+This concept can be generalized to the **integral test**. {numref}`Fig:Series:IntegralTest` gives the idea behind the integral test: you either search for a function that always lies above the rectangles (for convergence) or a function that always lies below the rectangles (for divergence). In both cases, the function should be continuous, positive and non-increasing on $[1,\infty)$ and $a_n=f(n)$.
 
 :::{figure-start}
 :width: 100%
 :name: Fig:Series:IntegralTest
 
-The two cases for the integral test are illustrated in the two figures above. In both cases we have $a_n=f(n)$, where $f$ is a continuous, positive and decreasing function on $[1,\infty)$. The rectangles represent the terms of the series $\displaystyle\sum a_n$ and the area under the graph of $f$ represents the integral $\displaystyle\int_1^nf(x)\,dx$.
+The two cases for the integral test are illustrated in the two figures above. In both cases we have $a_n=f(n)$, where $f$ is a continuous, positive and non-increasing function on $[1,\infty)$. The rectangles represent the terms of the series $\displaystyle\sum a_n$ and the area under the graph of $f$ represents the integral $\displaystyle\int_1^nf(x)\,dx$.
 :::
 
 ::::{grid} 2
@@ -96,7 +96,7 @@ $$
 s_{n+1}=s_n+a_{n+1} > s_n,
 $$
 
-since $a_{n+1}=f(n+1) > 0$. Thus, $\{s_n\}$ is an increasing sequence that is bounded above. Hence, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded`. This means by {prf:ref}`Thm:Series:ConvergenceSum` that $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent if $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent.
+since $a_{n+1}=f(n+1) > 0$. Thus, $\{s_n\}$ is a strictly increasing sequence that is bounded above. Hence, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded`. This means by {prf:ref}`Thm:Series:ConvergenceSum` that $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent if $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent.
 
 
 Now we prove the divergent case. If we draw the rectangles to the right, then we have, see {numref}`Fig:Series:IntegralTest`(b):
@@ -203,7 +203,7 @@ The generalised integral test can be used to find an estimation of the sum of a 
 :width: 100%
 :name: Fig:Series:IntegralTestEstimatingSum
 
-The two cases for estimating the sum of a series using the integral test are illustrated in the above two figures. In both cases we have $a_n=f(n)$ for $n\geq F$, where $f$ is a continuous, positive and decreasing function on $[F,\infty)$.
+The two cases for estimating the sum of a series using the integral test are illustrated in the above two figures. In both cases we have $a_n=f(n)$ for $n\geq F$, where $f$ is a continuous, positive and non-increasing function on $[F,\infty)$.
 :::
 
 ::::{grid} 2
@@ -253,7 +253,7 @@ $$
 
 is the **remainder**, so the error made when the $M$th partial sum $s_M$ is used as an approximation of the sum $s$.
 
-We use the same idea as for the integral test, assuming that $f$ is decreasing on $[M,\infty)\subseteq[F,\infty)$. Comparing the areas of the rectangles with the area under the graph of $f$ on $[F,\infty)$, we obtain
+We use the same idea as for the integral test, assuming that $f$ is non-increasing on $[M,\infty)\subseteq[F,\infty)$. Comparing the areas of the rectangles with the area under the graph of $f$ on $[F,\infty)$, we obtain
 
 $$
 R_M=a_{M+1}+a_{M+2}+a_{M+3}+\cdots\leq\int_M^{\infty}f(x)\,dx
@@ -397,7 +397,7 @@ t_n &= \sum_{k=1}^n b_k.
 
 _We first prove the convergent case._ Assume that $0<a_n\leq b_n$ for all $n\geq 1$ and $\displaystyle\sum_{n=1}^{\infty} b_n$ is convergent with sum $t$. Since $\displaystyle\sum_{n=1}^{\infty} b_n$ is convergent with sum $t$, the limit $\lim\limits_{n\to\infty}t_n=t$ exists.
 
-Because $b_n>0$ for all $n\geq 1$, we have $t_{n+1}=t_n+b_{n+1}>t_n $ for all $n\geq 1$,. which makes $\{t_n\}$ an increasing sequence. Since $\{t_n\}$ is an increasing sequence that converges to $t$, it is bounded above by $t$. Hence, we have $t_n<t$ for all $n\geq 1$.
+Because $b_n>0$ for all $n\geq 1$, we have $t_{n+1}=t_n+b_{n+1}>t_n $ for all $n\geq 1$,. which makes $\{t_n\}$ a strictly increasing sequence. Since $\{t_n\}$ is a strictly increasing sequence that converges to $t$, it is bounded above by $t$. Hence, we have $t_n<t$ for all $n\geq 1$.
 
 For the partial sum $s_n$ we have
 
@@ -405,9 +405,9 @@ $$
 s_n = \sum_{k=1}^n a_k \leq \sum_{k=1}^n b_k = t_n.
 $$
 
-As a consequence, we have $s_n<t$ for all $n\geq 1$. $\{s_n\}$ is also an increasing sequence since $a_n>0$ for all $n\geq 1$ and $s_{n+1}=s_n+a_{n+1}>s_n$ for all $n\geq 1$.
+As a consequence, we have $s_n<t$ for all $n\geq 1$. $\{s_n\}$ is also a strictly increasing sequence since $a_n>0$ for all $n\geq 1$ and $s_{n+1}=s_n+a_{n+1}>s_n$ for all $n\geq 1$.
 
-Since $\{s_n\}$ is an increasing sequence that is bounded above by $t$, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded` with $\lim\limits_{n\to\infty}s_n=s<t$ for some number $s$. Hence, $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent.
+Since $\{s_n\}$ is a strictly increasing sequence that is bounded above by $t$, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded` with $\lim\limits_{n\to\infty}s_n=s<t$ for some number $s$. Hence, $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent.
 
 _Now we prove the divergent case._ Assume that $a_n\geq b_n>0$ for all $n\geq 1$ and $\displaystyle\sum_{n=1}^{\infty} b_n$ is divergent. This indicates that for every number $M>0$ there exists an integer $N$ such that $t_N>M$. Since $a_n\geq b_n$ for all $n\geq 1$, we have
 

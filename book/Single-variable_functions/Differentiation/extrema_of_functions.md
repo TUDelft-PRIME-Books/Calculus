@@ -8,13 +8,13 @@
 
 One of the most important applications of differentiation is that it can be used to solve a certain type of optimisation problems. In optimisation problems, you want to either maximise a certain quantity (like profit, or size) or minimise a quantity (like costs, or material usage), sometimes under some additional constraints.
 
-Suppose, for instance, that you have a large piece on land and you have fences with a total length of $400\ m$. You want to build a rectangular region closed off by these fences. What shape would give the largest area? Since the region is rectangular, we let $\ell$ denote its lenght and $w$ its width (both in meters). Then the area $A$ (in square meters) is given by
+Suppose, for instance, that you have a large piece on land and you have fences with a total length of $400\ m$. You want to build a rectangular region closed off by these fences. What shape would give the largest area? Since the region is rectangular, we let $\ell$ denote its length and $w$ its width (both in meters). Then the area $A$ (in square meters) is given by
 
 $$
  A=w\ell.
 $$
 
-The total circumference of the region is $2\ell+2w$. Since we have only $400\ m$ of fence, we obtain the contstraint
+The total circumference of the region is $2\ell+2w$. Since we have only $400\ m$ of fence, we obtain the constraint
 
 $$
  2\ell+2w=400.
@@ -158,12 +158,21 @@ $$
  f'(x)=\left\{\begin{array}{l}-1,\qquad&\text{if}\ x<0,\\ 1,\qquad &\text{if}\ x>0,\end{array}\right.,
 $$
 
-while the function is not differentiable in $x=0$. In particular, the derivative of this function is never $0$. Still, if we consider the graph of this function, it clearly has a local minimum in $0$. This is precisely the point where the function is not differentiable. We conclude that functions can also attain local extrema in points where the function is not differentiable. Let us introduce some terminology for this.
+while the function is not differentiable in $x=0$. In particular, the derivative of this function is never $0$. Still, if we consider the graph of this function, it clearly has a local minimum in $0$. This is precisely the point where the function is not differentiable. This is supported by the graph of $|x|$ shown in {numref}`Fig:MinMax:IntroLocExtr`.
 
+:::{figure} Images/Fig-MinMax-IntroLocExtr.png
+:name: Fig:MinMax:IntroLocExtr
+
+The graph of the function $f(x)=|x|$ and it's local extremum at $0$.
+:::
 
 :::{todo}
-Make an applet with the graph of $f(x)=|x|$.
+Make an applet of {numref}`Fig:MinMax:IntroLocExtr`.
 :::
+
+
+We conclude that functions can also attain local extrema in points where the function is not differentiable. Let us introduce some terminology for this.
+
 
 ::::::{prf:definition} 
 :label: Def:MinMax:Critical
@@ -205,6 +214,19 @@ We find that $f'(x)=0$ only for $x=-1$, so $-1$ is another critical point of $f$
 We conclude that $f$ has three critical points: $-1$, $0$ and $1$. So how would we find out if $f$ has a local extremum in any of these points? One way to do this, is to note that $f'(x)>0$ for $x<-1$, while $f'(x)<0$ for $-1<x<0$. This means that the function increases on the interval $(-\infty,-1)$, while it decreases on the interval $(-1,0)$. Since $f$ is continuous in $-1$, this can only happen if $f(-1)\geq f(x)$ for all $x$ in $(-\infty,0)$. So $f$ has a local maximum in $-1$. 
 
 Similarly, we find that $f'(x)>0$ for $0<x<1$ and $f'(x)<0$ for $x>1$. This means that $f$ is increasing on the interval $(0,1)$ and decreasing on $(1,\infty)$. Using a similar reasoning, this means that $f$ has a local minimum in $0$ and a local maximum in $1$.
+
+{numref}`Fig:MinMax:Critical` shows the graph of the function $f$ and indicates the points where the function has a local extremum.
+
+:::{figure} Images/Fig-MinMax-Critical.png
+:name: Fig:MinMax:Critical
+
+The graph of the function $f$ from {prf:ref}`Ex:MinMax:Critical`.
+:::
+
+:::{todo}
+Turn {numref}`Fig:MinMax:Critical` into an applet.
+:::
+
 ::::::
 
 The reasoning we used in {prf:ref}`Ex:MinMax:Critical` to determine whether the critical points were local maxima, local minima or neither of these can be applied in general. This result is known as the first derivative test (in contrast to the second derivative test that we will discuss later).
@@ -217,6 +239,24 @@ Let $c$ be a point in the domain of a continuous function $f$.
 - If $f'$ changes from positive to negative at $c$, i.e. $f'(x)\geq 0$ for $x<c$ near $c$ and $f'(x)\leq 0$ for $x>c$ near $c$, then $f(c)$ is a local maximum of $f$.
 - If $f'(x)>0$ for all $x$ near $c$ (excluding $x=c$) or if $f'(x)<0$ for all $x$ near $c$ (excluding $x=c$) then $f(c)$ is neither a local minimum nor a local maximum of $f$.
 ::::::
+
+Before we turn to the proof of {prf:ref}`Thm:MinMax:Firstdertest`, we illustrate the different cases of this theorem in {numref}`Fig:MinMax:Firstdertest`.
+
+:::{figure} Images/Fig-MinMax-Firstdiv.png
+:name: Fig:MinMax:Firstdiv
+:class: dark-light
+
+Illustration of {prf:ref}`Thm:MinMax:Firstdiv`.
+(a) $f'$ changes from negative to positive at $c$; (b) $f'$ changes from positive to negative at $c$; (c) $f'(x)>0$ for all $x\neq c$; $f'(x)<0$ for all $x\neq c$.
+:::
+
+:::{todo}
+Turn {numref}`Fig:MinMax:Firstdiv` into an applet.
+:::
+
+{numref}`Fig:MinMax:Firstdiv`(a) clearly shows a local minimum at $x=c$. If you drag the point along the graph, you can see that the slope of the tangent line changes from negative to positive at $x=c$. Similarly, {numref}`Fig:MinMax:Firstdiv`(b) clearly shows a local maximum at $c$, and the slope of the tangent line changes from positive to negative at $c$. Finally, {numref}`Fig:MinMax:Firstdiv`(c) and (d) show graphs that neither have a local minimum nor a local maximum, and the slope of the tangent line is either positive or negative on both sides of $c$. These cases illustrate the different cases of {prf:ref}`Thm:MinMax:Firstdertest`.
+
+Now you can read the proof of {prf:ref}`Thm:MinMax:Firstdertest`.
 
 :::{admonition} Proof of {prf:ref}`Thm:MinMax:Firstdertest`
 :class: tudproof, dropdown
@@ -297,11 +337,23 @@ for all $x$ in $I$ with $x> c$. So $f$ cannot have a local maximum at $c$ either
 Finally, we suppose that $f'(x)<0$ for all $x$ in $I$ with $x\neq c$. Then $-f'(x)>0$ for all $x$ in $I$ with $x\neq c$, so by the previous part, $-f$ cannot have a local minimum or a local maximum at $c$. Then $f$ cannot have a local extremum at $c$ either.
 :::
 
-:::{note}
+::::{note}
+
+:::{figure} Images/Fig-MinMax-NoteCont.png
+:name: Fig:MinMax:NoteCont
+:figclass: margin
+
+The graph of the function $f$ from the note. The function is not continuous at $0$, so we cannot apply {prf:ref}`Thm:MinMax:Firstdertest`. Still, the function has a local maximum at $0$.
+:::
+
+:::{todo}
+Turn {numref}`Fig:MinMax:NoteCont` into an applet.
+:::
+
 The continuity of $f$ at the point $c$ is necessary for {prf:ref}`Thm:MinMax:Firstdertest` to work. Indeed, consider the function 
 
 $$
- f(x)=\left\{\begin{array}{l}x^2,\qquad&\text{if}\ x\neq 0\\ 1,\qquad &\text{if}\ $x=0.\end{array}\right.
+ f(x)=\left\{\begin{array}{l}x^2,\qquad&\text{if}\ x\neq 0\\ 1,\qquad &\text{if}\ x=0.\end{array}\right.
 $$
 
 Then we see that $f'(x)=2x<0$ for $x<0$, while $f'(x)=2x>0$ for $x>0$. On account of {prf:ref}`Thm:MinMax:Firstdertest` (which we cannot apply here since $f$ is not continuous at $0$) you would expect $f$ to have a local minimum at $0$. However, the function actually has a local maximum there, since for any $-1<x<1$ with $x\neq 0$ we have
@@ -310,21 +362,9 @@ $$
  f(x)=x^2<1=f(0).
 $$
 
-:::
+The graph of $f$ also supports this conclusion, see {numref}`Fig:MinMax:NoteCont`.
 
-:::{figure} Images/Fig-MinMax-Firstdiv.png
----
-width: 100%
-name: Fig:MinMax:Firstdiv
-class: dark-light
----
-Illustration of {prf:ref}`Thm:MinMax:Firstdertest`.
-(a) $f'$ changes from negative to positive at $c$; (b) $f'$ changes from positive to negative at $c$; (c) $f'(x)>0$ for all $x\neq c$; $f'(x)<0$ for all $x\neq c$.
-:::
-
-:::{todo}
-Turn {numref}`Fig:MinMax:Firstdiv` into an applet.
-:::
+::::
 
 ::::::{prf:example} 
 :label: Ex:MinMax:Firstdivtest
@@ -367,8 +407,14 @@ Turn {numref}`Fig:MinMax:Signchart` into an applet.
 
 According to {prf:ref}`Thm:MinMax:Firstdertest` the function attains a local maximum at $x=\dfrac{\pi}{3}$ and $x=\dfrac{4\pi}{3}$, while it attains a local minimum at $x=\dfrac{2\pi}{3}$ and $x=\dfrac{5\pi}{3}$. This can also be seen in the graph of the function.
 
+:::{figure} Images/Fig-MinMax-Firstdivtest2.png
+:name: Fig:MinMax:Firstdivtest2
+
+The graph of the function $f$ from {prf:ref}`Ex:MinMax:Firstdivtest` and its local extrema.
+:::
+
 :::{todo}
-Include an applet with the graph of $f$ shown on $(0,2\pi)$.
+Convert {numref}`Fig:MinMax:Firstdivtest2` into an applet.
 :::
 
 ::::::
@@ -426,15 +472,24 @@ An advantage the second derivative test has over the first derivative test is th
 :::
 
 ::::{note}
-A major disadvantage of the second derivative test is that it can never be used to show that a critical point is **not** a local extremum. Indeed, anything can happen when the second derivative is $0$ in a critical point. For instance, if we consider the functions $f(x)=x^4$, $g(x)=x^5$ and $h(x)=-x^6$, then $0$ is a critical point for each of these and the second derivative of each of these functions is $0$ in $0$. However, using the first derivative test we can show that $f$ has a local minimum in $0$, $g$ does not have a local extremum in $0$, while $h$ has a local maximum in $0$. This can also be seen in the graphs of these functions.
+A major disadvantage of the second derivative test is that it can never be used to show that a critical point is **not** a local extremum. Indeed, anything can happen when the second derivative is $0$ in a critical point. For instance, if we consider the functions $f(x)=x^4$, $g(x)=5x^5$ and $h(x)=-\frac16x^6$, then $0$ is a critical point for each of these and the second derivative of each of these functions is $0$ in $0$. However, using the first derivative test we can show that $f$ has a local minimum in $0$, $g$ does not have a local extremum in $0$, while $h$ has a local maximum in $0$. This can also be seen in the graphs of these functions.
+
+
+:::{figure} Images/Fig-MinMax-SeconddivNote.png
+:name: Fig:MinMax:SeconddivNote
+
+Three functions with a critical point in $0$ and a second derivative of $0$ in $0$. The function $f(x)=x^4$ has a local minimum at $0$, the function $g(x)=5x^5$ does not have a local extremum at $0$, while the function $h(x)=-\frac16x^6$ has a local maximum at $0$.
+
+:::
 
 :::{todo}
-Include an applet with the graphs of these functions.
+Replace {numref}`Fig:MinMax:SeconddivNote` with an applet.
 :::
+
 ::::
 
 :::{note}
-If you have trouble remembering whether, say, a positive value of the second derivative gives a local maximum or a local minimum, it might be worthwile to consider the functions $f(x)=x^2$ and $g(x)=-x^2$. Both have a critical point at $0$ and finding their second derivatives is easy: we have $f''(x)=2$, which is positive, while $g''(x)=-2$, which is negative. For these function, you already **know** whether they have a local maximum or a local minimum, as their graphs are an upward opening and downward opening parabola respectively. 
+If you have trouble remembering whether, say, a positive value of the second derivative gives a local maximum or a local minimum, it might be worthwhile to consider the functions $f(x)=x^2$ and $g(x)=-x^2$. Both have a critical point at $0$ and finding their second derivatives is easy: we have $f''(x)=2$, which is positive, while $g''(x)=-2$, which is negative. For these function, you already **know** whether they have a local maximum or a local minimum, as their graphs are an upward opening and downward opening parabola respectively. 
 
 :::
 
@@ -467,8 +522,16 @@ $$
 
 So according to {prf:ref}`Thm:MinMax:Seconddertest`, $f$ has a local maximum at $0$.
 
+Our conclusion are supported by the graphs of $f$, $f'$ and $f''$ shown in {numref}`Fig:MinMax:SeconddivEx`.
+
+:::{figure} Images/Fig-MinMax-SeconddivEx.png
+:name: Fig:MinMax:SeconddivEx
+
+The graph of the function $f$, $f'$ and $f''$ from {prf:ref}`Ex:MinMax:Seconddiv` and the local extrema of $f$.
+:::
+
 :::{todo}
-Include an applet with the graphs of this function.
+Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :::
 ::::::
 
@@ -476,25 +539,30 @@ Include an applet with the graphs of this function.
 
 ## Global extrema
 
-Recall that local extrema only consider the behaviour of a function near a critical point. However, if a function has a local maximum at a critical point, it might still have function values that are even larger somewhere far away from the critical point. As such, it is also interesting to consider the highest and lowest values a function can attain without looking only locally. 
+Recall that local extrema only consider the behaviour of a function near a critical point. However, if a function has a local maximum at a critical point, it might still have function values that are even larger somewhere far away from the critical point, see for example the function shown in {numref}`Fig:MinMax:SeconddivEx`.
+
+As such, it is also interesting to consider the highest and lowest values a function can attain without looking only locally, or in other words, to look globally. This leads us to the following definition.
 
 ::::::{prf:definition} 
 :label: Def:MinMax:GlobExtr
-Let $c$ be in the domain of a function $f$. Then we say that $f$ has a **global maximum** at $c$, or that $f(c)$ is the **global maximum** value of $f$, if $f(c)\geq f(x)$ for all $x$ in the domain of $f$. Similarly, we say that $f$ has a **global minimum** at $c$, or that $f(c)$ is the **global minimum** value of $f$, if $f(c)\leq f(x)$ for all $x$ in the domain of $f$.
+Let $c$ be in the domain of a function $f$.
+
+Then we say that $f$ has a **global maximum** at $c$, or that $f(c)$ is the **global maximum** value of $f$, if $f(c)\geq f(x)$ for all $x$ in the domain of $f$. 
+
+Similarly, we say that $f$ has a **global minimum** at $c$, or that $f(c)$ is the **global minimum** value of $f$, if $f(c)\leq f(x)$ for all $x$ in the domain of $f$.
 
 A **global extremum** or **global extreme value** is a global maximum or a global minimum.
 ::::::
 
-Global maxima and minima are sometimes called **absolute** maxima and minima.
+Global maxima and minima are sometimes called **absolute** maxima and minima. We however have opted for the term global maximum and global minimum, since the term absolute can cause confusion with the absolute value function.
 
+{numref}`Fig:MinMax:GlobExtr` shows a graph of a function with some local and global extrema. This function attains its global minimum value in $a$. It does not attain a local minimum there, since $a$ is on the boundary of the domain. It attains its global maximum in $b$, which is also a local maximum. It has a local minimum in $c$. The point $d$ is neither a local nor a global extremum.
 
 :::{figure} Images/Fig-MinMax-GlobExtr.png
----
-width: 100%
-name: Fig:MinMax:GlobExtr
-class: dark-light
----
-This function attains its global minimum value in $a$. It does not attain a local minimum there, since $a$ is on the boundary of the domain. It attains its global maximum in $b$, which is also a local maximum. It has a local minimum in $c$. The point $d$ is neither a local nor a global extremum.
+:name: Fig:MinMax:GlobExtr
+:class: dark-light
+
+A graph to illustrate the difference between local and global extrema.
 :::
 
 :::{todo}
@@ -510,7 +578,7 @@ If a function has a global maximum value, there is only $1$ such value. After al
 
 :::
 
-Consider a function $f$ that is continuous on a closed interval $[a,b]$. Is it possible for $f$ to have a vertical asymptote on this interval? The answer is no, since if the function has a vertical asymptote at a point $c$, the function values would need to make a jump from very large or very negative values to the value $f(c)$, which is impossible for a continuous function. In principle, continuous functions can have vertical asymtotes. For instance, the function $f(x)=\dfrac{1}{x}$ has a vertical asymptote at $x=0$. However, although this function is continuous on its domain, is not continuous on any closed interval that contains $0$, since it is undefined there. So the fact that we are dealing with a closed interval is essential here.
+Consider a function $f$ that is continuous on a closed interval $[a,b]$. Is it possible for $f$ to have a vertical asymptote on this interval? The answer is no, since if the function has a vertical asymptote at a point $c$, the function values would need to make a jump from very large or very negative values to the value $f(c)$, which is impossible for a continuous function. In principle, continuous functions can have vertical asymptotes. For instance, the function $f(x)=\dfrac{1}{x}$ has a vertical asymptote at $x=0$. However, although this function is continuous on its domain, is not continuous on any closed interval that contains $0$, since it is undefined there. So the fact that we are dealing with a closed interval is essential here.
 
 This idea suggests that continuous functions cannot "blow up" on closed intervals. The precise version of this idea is known as the **boundedness theorem**.
 
@@ -573,7 +641,7 @@ $$
 Just like earlier, we find that $f$ must be bounded on $\left[b-\frac{\delta_3}{2},b\right]$. Since $b$ is the supremum of $S$, we can find $t$ in $S$ with $b-\frac{\delta_3}{2}\leq t$. Since $t$ is in $S$, $f$ is bounded on $[a,t]$. Then $f$ is bounded on both $[a,t]$ and $\left[b-\frac{\delta_3}{2},b\right]$ and since $b-\frac{\delta_3}{2}\leq t$, we find that $f$ is bounded on $\left[a,b\right]$, as desired.
 :::
 
-We can use the fact that continuous functions on closed intervals are bounded to show that these functions must attain their global extreme values. This resultis known as the **extreme value theorem** and is considered a very important theorem in calculus.
+We can use the fact that continuous functions on closed intervals are bounded to show that these functions must attain their global extreme values. This result is known as the **extreme value theorem** and is considered a very important theorem in calculus.
 
 ::::::{prf:theorem} Extreme value theorem
 :label: Thm:MinMax:EVT
@@ -621,7 +689,7 @@ So that means that $N$ is not an upper bound of $g$ on $[a,b]$. Since this holds
 Since the function $-f$ is continuous, we can find $d$ in $[a,b]$ with $-f(x)\leq -f(d)$ for all $x$ in $[a,b]$. This means that $f(x)\geq f(d)$ for all $x$ in $[a,b]$, so $f$ also attains an absolute minimum on $[a,b]$.
 :::
 
-Both conditions that we are working with a continuous function on a closed interval are necessary for the theorem to work, as can be seen in {numref}`Fig:MinMax:EVT`.
+Both conditions that we are working with a continuous function on a closed interval are necessary for the theorem to work, as can be seen in {numref}`Fig:MinMax:EVT`. In (a) the continuous function $f(x)=\dfrac{1}{x}$ does not attain a global maximum on the non-closed interval $(0,1)$. In (b) for the non-continuous function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$, the function values can get arbitrarily close to $2$, but they never actually become $2$, so this function does not attain a global maximum. It does attain a global minimum at $0$.
 
 :::{figure} Images/Fig-MinMax-EVT.png
 ---
@@ -629,7 +697,7 @@ width: 100%
 name: Fig:MinMax:EVT
 class: dark-light
 ---
-(a) The continuous function $f(x)=\dfrac{1}{x}$ does not attain a global maximum on the non-closed interval $(0,1)$. (b) For the non-continuous function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$, the function values can get arbitrarily close to $2$, but they never actually become $2$, so this function does not attain a global maximum. It does attain a global minimum at $0$.
+(a) The continuous function $f(x)=\dfrac{1}{x}$ on the non-closed interval $(0,1)$.<br>(b) The function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$. 
 :::
 
 :::{todo}
@@ -643,7 +711,7 @@ Even though you are reading the chapter on differentiation and we usually like t
 
 :::
 
-With the Extreme value theorem, we can now finally prove Rolle's theorem.
+With the {prf:ref}`Thm:MinMax:EVT`, we can now finally prove Rolle's theorem.
 
 :::{admonition} Proof of {prf:ref}`Thm:Graphsderivatives:Rolle`
 :class: tudproof, dropdown
@@ -654,9 +722,17 @@ Now suppose that the function is not constant on the interval $[a,b]$. By {prf:r
 
 [^FootnoteCIM]: If the function has infinitely many critical points, then this method may fail to work.
 
-So how do we find the locations of the global maximum and global minimum values of a continuous function on a closed interval $[a,b]$? If a global extremum is in the open interval $(a,b)$ then we can apply {prf:ref}`Cor:MinMax:Critical` to conclude that the global extremum is attained at a critical point. And if not, then, well, there are not an awful lot of options left, since the only points that we have not considered are the points $a$ and $b$. So this gives us a way to find all *candidate locations* for the global extreme values. So how do we then determine which of these corresponds to the global maximum and which to the global minimum? You might expect that we need to perform all sorts of tests, like {prf:ref}`Thm:MinMax:Firstdertest` or {prf:ref}`Thm:MinMax:Seconddertest`, but that is not the case. Indeed, if I know that the global maximum occurs at one of, say, five points[^FootnoteCIM], then I can just evaluate the function at each of these five points. The largest value I obtain this way **must** be the global maximum value, as this value cannot be attained anywhere else. Similarly, the lowest value **must** be the global minimum value. With that, we have motivated the following algorithm, called the **closed interval method** to find the global extrema.
+So how do we find the locations of the global maximum and global minimum values of a continuous function on a closed interval $[a,b]$?
 
-::::::{prf:algorithm} Closed interval method.
+If a global extremum is in the open interval $(a,b)$ then we can apply {prf:ref}`Cor:MinMax:Critical` to conclude that the global extremum is attained at a critical point. And if not, then, well, there are not an awful lot of options left, since the only points that we have not considered are the points $a$ and $b$. So this gives us a way to find all *candidate locations* for the global extreme values.
+
+So how do we then determine which of these corresponds to the global maximum and which to the global minimum?
+
+You might expect that we need to perform all sorts of tests, like {prf:ref}`Thm:MinMax:Firstdertest` or {prf:ref}`Thm:MinMax:Seconddertest`, but that is not the case. Indeed, if I know that the global maximum occurs at one of, say, five points[^FootnoteCIM], then I can just evaluate the function at each of these five points. The largest value I obtain this way **must** be the global maximum value, as this value cannot be attained anywhere else. Similarly, the lowest value **must** be the global minimum value.
+
+With that, we have motivated the following algorithm, called the **closed interval method** to find the global extrema.
+
+::::::{prf:algorithm} Closed interval method
 :label: Alg:MinMax:Globalextrema
 
 Let $f$ be a continuous function on a closed interval $[a,b]$. Then we can find the global extreme values of $f$ as follows:
@@ -681,58 +757,67 @@ When performing {prf:ref}`Alg:MinMax:Globalextrema`, make sure to only consider 
 
 Let us see how this method works in practice by considering a few examples.
 
-::::::{prf:example} Closed interval method.
+::::::{prf:example} Closed interval method
 :label: Ex:MinMax:Globalextrema1
 Consider the function $f(x)=2x^3+3x^2-12x-5$ on the closed interval $[-4,2]$. Suppose we want to find the location and the value of the global maximum and the global minimum on this interval. For this, we perform {prf:ref}`Alg:MinMax:Globalextrema`.
 
 1. The function $f$ is differentiable on the entire domain $(-4,2)$, so we do not obtain any new candidate points in this step.
 2. In order to find the points where the derivative is $0$, we first evaluate
 
-$$
- f'(x)=6x^2+6x-12.
-$$
+   $$
+   f'(x)=6x^2+6x-12.
+   $$
 
-The equation $f'(x)=0$ becomes $6x^2+6x-12=0$, which is a quadratic equation, so we know how to solve this equation. We obtain the solutions $x=1$ and $x=-2$, which both lie in the interval $(-4,2)$. So these two points are the first two candidate points for the location of the global maximum and the global minimum.
+   The equation $f'(x)=0$ becomes $6x^2+6x-12=0$, which is a quadratic equation, so we know how to solve this equation. We obtain the solutions $x=1$ and $x=-2$, which both lie in the interval $(-4,2)$. So these two points are the first two candidate points for the location of the global maximum and the global minimum.
 
 3. We need to evaluate $f$ at the points found in steps 1. and 2. We obtain
 
-$$
- f(-2)=15,\qquad f(1)=-12.
-$$
+   $$
+   f(-2)=15,\qquad f(1)=-12.
+   $$
 
 4. We know evaluate $f$ at the boundary points, which gives
 
-$$
- f(-4)=-37,\qquad f(2)=-1.
-$$
+   $$
+   f(-4)=-37,\qquad f(2)=-1.
+   $$
 
 5. According to {prf:ref}`Cor:MinMax:Critical`, the location of the global maximum and the location of the global minimum must be one of the points $x=-4$, $x=-2$, $x=1$ and $x=2$. As such, the lowest value that we obtained in steps 3. and 4. must be the global minimum value, which means that $f$ attains its global minimum of $-37$ at the boundary point $x=-4$. Similarly, the highest value is the global maximum value, so $f$ attains its global maximum of $15$ at the critical point $x=-2$.
 
+The graph of the function is shown in {numref}`Fig:MinMax:Globalextrema1`. Do our conclusions match what we see in the graph?
+
+:::{figure} Images/Fig-MinMax-Globalextrema1.png
+:name: Fig:MinMax:Globalextrema1
+
+The graph of the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema1` and its local and global extrema.
+:::
+
 :::{todo}
-Include an applet with the graph of this function on the specified interval. Make sure to highlight all candidate points.
+Convert {numref}`Fig:MinMax:Globalextrema1` to an applet Make sure to highlight all candidate points and make difference between local and global extrema clear.
 :::
 ::::::
 
-::::::{prf:example} Closed interval method.
+::::::{prf:example} Closed interval method
 :label: Ex:MinMax:Globalextrema2
 Consider the function $f(x)=\dfrac{|x|}{2}-\cos(x)$ on the closed interval $[-2\pi,2\pi]$ and suppose we want to find the global minimum and global maximum values. We again perform {prf:ref}`Alg:MinMax:Globalextrema`.
 
 1. The function $f$ is not differentiable in $0$ (since $|x|$ is not differentiable there, while the cosine is differentiable), so the point $x=0$ is a candidate location.
+
 2. In order to find the values of $x$ where $f'(x)=0$, we need to separate between the cases $x>0$ and $x<0$. For $x<0$, we have $|x|=-x$, so we obtain
 
-$$
- f'(x)=-\frac{1}{2}+\sin(x).
-$$
+   $$
+   f'(x)=-\frac{1}{2}+\sin(x).
+   $$
 
-Setting $f'(x)=0$ gives $\sin(x)=\dfrac{1}{2}$, which means that $x=\dfrac{\pi}{6}+k2\pi$ of $x=\dfrac{5\pi}{6}+k2\pi$ for some integer $k$. Of these values of $x$, we are only interested in those that lie in the interval $[-2\pi,2\pi]$ **and** have $x<0$, so this leaves us with $x=-\dfrac{11\pi}{6}$ and $x=-\dfrac{7\pi}{6}$.
+   Setting $f'(x)=0$ gives $\sin(x)=\dfrac{1}{2}$, which means that $x=\dfrac{\pi}{6}+k2\pi$ of $x=\dfrac{5\pi}{6}+k2\pi$ for some integer $k$. Of these values of $x$, we are only interested in those that lie in the interval $[-2\pi,2\pi]$ **and** have $x<0$, so this leaves us with $x=-\dfrac{11\pi}{6}$ and $x=-\dfrac{7\pi}{6}$.
 
-For $x>0$, we have $|x|=x$, so we obtain 
+   For $x>0$, we have $|x|=x$, so we obtain 
 
-$$
- f'(x)=\frac{1}{2}+\sin(x).
-$$
+   $$
+   f'(x)=\frac{1}{2}+\sin(x).
+   $$
 
-Setting $f'(x)=0$ gives $\sin(x)=-\dfrac{1}{2}$, which means that $x=\dfrac{7\pi}{6}+k2\pi$ of $x=\dfrac{11\pi}{6}+k2\pi$ for some integer $k$. Of these values of $x$, we are only interested in those that lie in the interval $[-2\pi,2\pi]$ **and** have $x>0$, so this leaves us with $x=\dfrac{7\pi}{6}$ and $x=\dfrac{11\pi}{6}$. With that, we have found all critical points.
+   Setting $f'(x)=0$ gives $\sin(x)=-\dfrac{1}{2}$, which means that $x=\dfrac{7\pi}{6}+k2\pi$ of $x=\dfrac{11\pi}{6}+k2\pi$ for some integer $k$. Of these values of $x$, we are only interested in those that lie in the interval $[-2\pi,2\pi]$ **and** have $x>0$, so this leaves us with $x=\dfrac{7\pi}{6}$ and $x=\dfrac{11\pi}{6}$. With that, we have found all critical points.
 
 3. We evaluate the function on the point we found in the first two steps. This gives.
 
@@ -752,7 +837,13 @@ $$
 
 5. The largest value that we found in steps 3. and 4. must be the global maximum value (since this value cannot be attained at any point that we did not check). This highest value is $\dfrac{1}{2}\sqrt{3}+\dfrac{7\pi}{12}$, which is attained at both $x=-\dfrac{7\pi}{6}$ and at $x=\dfrac{7\pi}{6}$. The lowest value is the global minimum value. This lowest value is $-1$, which is attained at $x=0$.
 
+:::{figure} Images/Fig-MinMax-Globalextrema2.png
+:name: Fig:MinMax:Globalextrema2
+
+The graph of the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema2` and its local and global extrema.
+:::
+
 :::{todo}
-Include an applet with the graph of this function on the specified interval. Make sure to highlight all candidate points.
+Convert {numref}`Fig:MinMax:Globalextrema2` to an applet Make sure to highlight all candidate points and make difference between local and global extrema clear.
 :::
 ::::::

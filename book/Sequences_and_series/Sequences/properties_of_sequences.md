@@ -37,11 +37,9 @@ As you can see, the terms of the sequence $\{a_n\}$ seem to keep going up, the t
 ::::{prf:definition}
 :label: Def:PropertiesOfSequences:Affirming
 
-A sequence is called **increasing** if the difference between consecutive terms is always positive.
+A sequence is called **strictly increasing** if the difference between consecutive terms is always positive.
 
 A sequence is called **decreasing** if the difference between consecutive terms is always negative.
-
-A sequence that is *increasing or decreasing* is called **monotonic**.
 
 A sequence is called **ultimately increasing** if there is a term after which the sequence is increasing.
 
@@ -54,9 +52,9 @@ As sometimes symbols feel better than words, we can also give you the next theor
 ::::::{prf:theorem}
 :label: Thm:PropertiesOfSequences:Affirming
 
-A sequence $\{a_n\}_{n=p}^{\infty}$ is **increasing** if and only if $a_n < a_{n+1}$ for all $n\geq p$.
+A sequence $\{a_n\}_{n=p}^{\infty}$ is **strictly increasing** if and only if $a_n < a_{n+1}$ for all $n\geq p$.
 
-A sequence $\{a_n\}_{n=p}^{\infty}$ is **decreasing** if and only if $a_n > a_{n+1}$ for all $n\geq p$.
+A sequence $\{a_n\}_{n=p}^{\infty}$ is **strictly decreasing** if and only if $a_n > a_{n+1}$ for all $n\geq p$.
 
 A sequence $\{a_n\}_{n=p}^{\infty}$ is **ultimately increasing** if and only if there exists a number $N\geq p$ such that $a_n < a_{n+1}$ for all $n\geq N$.
 
@@ -72,8 +70,6 @@ Next to the affirming definitions of {prf:ref}`Def:PropertiesOfSequences:Affirmi
 A sequence is called **non-increasing** if the difference between consecutive terms is always non-positive.
 
 A sequence is called **non-decreasing** if the difference between consecutive terms is always non-negative.
-
-A sequence that is *neither increasing nor decreasing* is called **non-monotonic**.
 ::::
 
 ::::::{prf:theorem}
@@ -106,7 +102,7 @@ $$
 a_{n+1} - a_n = \dfrac{n+1}{2} - \dfrac{n}{2} = \dfrac{1}{2}>0.
 $$
 
-As this difference is always positive, we conclude that the sequence $\{a_n\}$ is _increasing_.
+As this difference is always positive, we conclude that the sequence $\{a_n\}$ is _strictly increasing_.
 ::::
 
 ::::{prf:example}
@@ -124,7 +120,7 @@ b_{n+1} - b_n &= \dfrac{5}{(n+1)^2} - \dfrac{5}{n^2} \\
 
 Because the denominator is always positive, the sign of this difference is determined by the numerator, which is always negative.
 
-As this difference is always negative, we conclude that the sequence $\{b_n\}$ is _decreasing_.
+As this difference is always negative, we conclude that the sequence $\{b_n\}$ is _strictly decreasing_.
 ::::
 
 ::::{prf:example}
@@ -143,30 +139,30 @@ c_{n+1} - c_n &= \left(\dfrac52+\cos((n+1)\pi)\right)-\left(\dfrac52+\cos(n\pi)\
 
 Because $(-1)^n$ is either $1$ or $-1$, the sign of this difference is alternating between positive and negative.
 
-We must conclude that the sequence $\{c_n\}$ is *non-monotonic*, as it is neither increasing nor decreasing.
+We must conclude that the sequence $\{c_n\}$ is *non-monotonic*, as it is neither non-increasing nor non-decreasing.
 ::::
 
-For several of the common types of sequences of {numref}`Sec:SeqAndTypes:Types` we can easily determine whether they are increasing, decreasing or non-monotonic:
+For several of the common types of sequences of {numref}`Sec:SeqAndTypes:Types` we can easily determine whether they are strictly increasing, strictly decreasing or non-monotonic:
 
 ::::{prf:theorem}
 :label: Thm:PropertiesOfSequences:CommonTypesBehaviour
 
-- An *arithmetic* sequence is *increasing* if the common difference $d$ is *positive*, and *decreasing* if the common difference $d$ is *negative*.
+- An *arithmetic* sequence is *strictly increasing* if the common difference $d$ is *positive*, and *strictly decreasing* if the common difference $d$ is *negative*.
 
-- A *harmonic* sequence is *decreasing* if the reciprocals of its terms form an *increasing* arithmetic sequence, and *increasing* if the reciprocals of its terms form a *decreasing* arithmetic sequence.
+- A *harmonic* sequence is *strictly decreasing* if the reciprocals of its terms form an *strictly increasing* arithmetic sequence, and *strictly increasing* if the reciprocals of its terms form a *strictly decreasing* arithmetic sequence.
 
-- A *geometric* sequence is *increasing* if its first term is positive and the common ratio $r>1$, or if its first term is negative and the common ratio $0<r<1$.
+- A *geometric* sequence is *strictly increasing* if its first term is positive and the common ratio $r>1$, or if its first term is negative and the common ratio $0<r<1$.
 
-- A *geometric* sequence is *decreasing* if its first term is positive and the common ratio $0<r<1$, or if its first term is positive and the common ratio $r>1$.
+- A *geometric* sequence is *strictly decreasing* if its first term is positive and the common ratio $0<r<1$, or if its first term is positive and the common ratio $r>1$.
 
 - An *alternating sequence* is always non-monotonic.
 ::::
 
-For sequence that are not of the common type, it sometimes is harder to show whether they are increasing, decreasing, monotonic or one of the other classifications, as the next examples show.
+For sequence that are not of the common type, it sometimes is harder to show whether they are strictly increasing, strictly decreasing, monotonic or one of the other classifications, as the next examples show.
 
 ::::::{prf:example}
 :label: Ex:Sequences:IncreasingExample1
-We show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is increasing.
+We show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing.
 
 To do so, we want to show that $\dfrac{n}{n+1}<\dfrac{n+1}{n+2}$ for all $n=1,2,3,\ldots$.
 
@@ -176,7 +172,7 @@ $$
 n(n+2)<(n+1)^2\;\Longleftrightarrow\;n^2+2n<n^2+2n+1.
 $$
 
-The last inequality reduces to $0<1$, which definitely is true. This shows that the sequence is *increasing*.
+The last inequality reduces to $0<1$, which definitely is true. This shows that the sequence is *strictly increasing*.
 
 ::::::
 
@@ -232,7 +228,7 @@ $$
 \end{array}
 $$
 
-This is true for $n\geq1$, so the sequence is *increasing*.
+This is true for $n\geq1$, so the sequence is *strictly increasing*.
 
 ::::::
 
@@ -271,7 +267,7 @@ Make an applet from {numref}`Fig:PropertiesOfSequences:Functions` that allows th
 The applet should have a parameter in the url to set the initial number of terms shown.
 :::
 
-As you can see, the function $f$, just like the sequence $\{a_n\}$, is increasing. Even better, the function $g$ is decreasing, similar to how the sequence $\{b_n\}$ is decreasing. Finally, the non-monotonic nature of the sequence $\{c_n\}$ is also reflected in the function $h$.
+As you can see, the function $f$, just like the sequence $\{a_n\}$, is strictly increasing. Even better, the function $g$ is strictly decreasing, similar to how the sequence $\{b_n\}$ is strictly decreasing. Finally, the non-monotonic nature of the sequence $\{c_n\}$ is also reflected in the function $h$.
 
 This relation between sequences and functions can be formalised in the next theorem:
 
@@ -280,15 +276,15 @@ This relation between sequences and functions can be formalised in the next theo
 
 Let $\{a_n\}_{p}^{\infty}$ be a sequence and $f:\mathbb{R}\rightarrow\mathbb{R}$ a function such that $f(n)=a_n$ for $n=p,p+1,p+2,\ldots$
 
-- If $f$ is an increasing function for $x\geq p$, then $\{a_n\}_{p}^{\infty}$ is an increasing sequence.
+- If $f$ is a strictly increasing function for $x\geq p$, then $\{a_n\}_{p}^{\infty}$ is a strictly increasing sequence.
 
-- If $f$ is a decreasing function for $x\geq p$, then $\{a_n\}_{p}^{\infty}$ is a decreasing sequence.
+- If $f$ is a strictly decreasing function for $x\geq p$, then $\{a_n\}_{p}^{\infty}$ is a strictly decreasing sequence.
 
 - If $f$ is a monotonic function for $x\geq p$, then $\{a_n\}_{p}^{\infty}$ is a monotonic sequence.
 
-- If $f$ is an increasing function for $x\geq N>p$ for some integer $N$, then $\{a_n\}_{p}^{\infty}$ is an ultimately increasing sequence (for $n\geq N$).
+- If $f$ is a strictly increasing function for $x\geq N>p$ for some integer $N$, then $\{a_n\}_{p}^{\infty}$ is an ultimately increasing sequence (for $n\geq N$).
 
-- If $f$ is a decreasing function for $x\geq N>p$ for some integer $N$, then $\{a_n\}_{p}^{\infty}$ is an ultimately decreasing sequence (for $n\geq N$).
+- If $f$ is a strictly decreasing function for $x\geq N>p$ for some integer $N$, then $\{a_n\}_{p}^{\infty}$ is an ultimately decreasing sequence (for $n\geq N$).
 
 ::::
 
@@ -322,7 +318,7 @@ $$
 f'(x)=\frac{x+1-x}{(x+1)^2}=\frac{1}{(x+1)^2}>0.
 $$
 
-This implies that $f$ is increasing and therefore that the sequence increases also.
+This implies that $f$ is strictly increasing and therefore that the sequence increases strictly also.
 ::::::
 
 ::::::{prf:example}
@@ -350,7 +346,7 @@ $$
 f'(x)=\frac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}=\frac{2(1-x^2)}{(x^2+1)^2},
 $$
 
-which is negative for $x>1$. This implies that $f$ is decreasing on $(1,\infty)$ and so $f(n)>f(n+1)$. Therefore $\{a_n\}$ is decreasing.
+which is negative for $x>1$. This implies that $f$ is strictly decreasing on $(1,\infty)$ and so $f(n)>f(n+1)$. Therefore $\{a_n\}$ is strictly decreasing.
 ::::::
 
 If a sequence is defined by a recursive formula, it is often somewhat more difficult to show any of the properties. This is of course not always, as in the next example:
@@ -365,7 +361,7 @@ $$
 1,1,2,3,5,8,13,21,34,55,89,\ldots
 $$
 
-from which we can see that after the second term it seems to keep increasing. We take a look at the difference of two consecutive terms, with $n\geq1:
+from which we can see that after the second term it seems to keep increasing. We take a look at the difference of two consecutive terms, with $n\geq1$:
 
 $$
 F_{n+2} - F_{n+1} = \left(F_{n+1}+F_n\right)-F_{n+1} = F_n.
@@ -373,7 +369,7 @@ $$
 
 Because we start with two positive numbers, and keep adding these positive numbers, every term in the Fibonacci sequence will be positive. But this means that two consecutive terms will have a positive difference number as soon as we are allowed to use the recursive formula.
 
-This is the case if $n\geq1$, and indeed we see that $F_3-F_2 = 2 - 1 = 1 > 0$. This results in the conclusion that $F_2<F_3$, $F_3<F_4$ and so on. In conclusion we can say that the Fibonacci sequence is *ultimately increasing*.
+This is the case if $n\geq1$, and indeed we see that $F_3-F_2 = 2 - 1 = 1 > 0$. This results in the conclusion that $F_2<F_3$, $F_3<F_4$ and so on. In conclusion we can say that the Fibonacci sequence is *ultimately increasing*. Because this occurs for $n\geq2$, and $F_1=F_2$, we can also say that the Fibonacci sequence is *non-decreasing*.
 
 ::::::
 
@@ -406,7 +402,7 @@ More information about the principle of mathematical induction can be found in [
 :label: Ex:Sequences:RecurrenceExample1
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
 
-We will apply the principle of mathematical induction to show that the sequence increases.
+We will apply the principle of mathematical induction to show that the sequence increases strictly.
 
 To do that, we first need to reformulate what we want to show. Using {prf:ref}`Thm:PropertiesOfSequences:Affirming`, we see that we must show that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$. So our statement $S_n$ is $a_n<a_{n+1}$.
 
@@ -420,7 +416,7 @@ $$
 
 As this shows that $S_{k+1}$ is true if $S_{k}$ is true, we can conclude that our general statement $S_n$ is true for $n\geq 1$.
 
-This shows that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$ and so the sequence is *increasing*.
+This shows that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$ and so the sequence is *strictly increasing*.
 ::::::
 
 ::::::{prf:example}
@@ -439,10 +435,10 @@ $$
 a_{k+1}=\sqrt{a_k+6}>\sqrt{a_{k+1}+6}=a_{k+2}.
 $$
 
-This shows that $a_n>a_{n+1}$ for all $n=1,2,3,\ldots$.
+This shows that $a_n>a_{n+1}$ for all $n=1,2,3,\ldots$ and so the sequence is *strictly decreasing*.
 ::::::
 
-Even if a sequence is increasing or decreasing, this does not mean that a sequence will always attain a very positive or a very negative value. This concept is called the boundedness of sequences, which we will discuss next. 
+Even if a sequence is strictly increasing, strictly decreasing, non-increasing or non-decreasing, this does not mean that a sequence will always attain a very positive or a very negative value. This concept is called the boundedness of sequences, which we will discuss next. 
 
 ## Bounded sequences
 

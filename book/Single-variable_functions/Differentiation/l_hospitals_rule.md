@@ -54,10 +54,14 @@ Note that in the final step, we obtained the limit $\displaystyle \lim_{x\righta
 
 L'Hospital's rule is named after the French mathematician [Guillaume François Antoine, Marquis de l'Hospital (1661-1704)](https://en.wikipedia.org/wiki/Guillaume_de_l%27H%C3%B4pital), who first published the result. However, he did not come up with it himself. That honour goes to the Swiss mathematician [Johan Bernoulli (1667-1748)](https://en.wikipedia.org/wiki/Johann_Bernoulli).
 
+:::{figure} Images/Fig-lHospital-Motivation.png
+:name: Fig:lHospital:Motivation
 
+The graphs of the functions $f$, $g$ and $h$ and the graphs of the linearisations $L_g$ and $L_h$. You can toggle between the graphs of $g$ and $h$ and their linearisations to see how they behave close to $x=1$.
+:::
 
 :::{todo}
-Make an applet showing the graphs of the functions $f$, $g$ and $h$ with label Fig:lHospital:Motivation. Make a toggle, that switches $g$ and $h$ to their linarisations around $1$ (with $g$ and $h$ shown faded out in the background)
+Make an applet showing the graphs of the functions $f$, $g$ and $h$ with label Fig:lHospital:Motivation. Make a toggle, that switches $g$ and $h$ to their linearisations around $1$ (with $g$ and $h$ shown faded out in the background)
 :::
 
 If you ask a student what their favorite rule is to evaluate limits, most students will answer that it is l'Hospital's rule. There is a good reason for this: it is a rule that is applicable to various different limits and the execution is often straightforward. However, l'Hospital's rule is not the catch-all rule that many students seem to think it is. So usually, when we discuss a new technique, we mainly focus on what you **can** do with it. Here, we will also put a lot of focus on what limits **cannot** be evaluated with this technique.
@@ -83,7 +87,7 @@ So without further ado, let us state this rule.
 
 ::::::{prf:theorem} l'Hospital's rule for limits at a point
 :label: Thm:lHospital:lHospital
-Let $I$ be an open interval containing a point $a$. Supppose that the functions $f$ and $g$ are differentiable on $I$, except possibly at $a$, and that $g'(x)\neq0$ for all $x$ in $I$ with $x\neq a$. Suppose that 
+Let $I$ be an open interval containing a point $a$. Suppose that the functions $f$ and $g$ are differentiable on $I$, except possibly at $a$, and that $g'(x)\neq0$ for all $x$ in $I$ with $x\neq a$. Suppose that 
 
 $$
  \lim_{x\rightarrow a}\frac{f'(x)}{g'(x)}=L
@@ -107,7 +111,7 @@ $$
  \lim_{x\rightarrow a}\frac{f(x)}{g(x)}=\lim_{x\rightarrow a}\frac{f'(x)}{g'(x)}=L.
 $$
 
-The result also holds when replacing all occurences of $\displaystyle \lim_{x\rightarrow a}$ by the left limit $\displaystyle \lim_{x\rightarrow a^-}$, or by replacing all of them by the right limit $\displaystyle \lim_{x\rightarrow a^+}$. For the left limits, $I$ can also be an open interval of the form $(z,a)$, while for the right limits, $I$ can also be an open interval of the form $(a,b)$.
+The result also holds when replacing all occurrences of $\displaystyle \lim_{x\rightarrow a}$ by the left limit $\displaystyle \lim_{x\rightarrow a^-}$, or by replacing all of them by the right limit $\displaystyle \lim_{x\rightarrow a^+}$. For the left limits, $I$ can also be an open interval of the form $(z,a)$, while for the right limits, $I$ can also be an open interval of the form $(a,b)$.
 ::::::
 
 [^FootnoteShorthand]: This notation is a shorthand for the four types $\dfrac{\infty}{\infty}$, $\dfrac{-\infty}{\infty}$, $\dfrac{\infty}{-\infty}$ and $\dfrac{-\infty}{-\infty}$.
@@ -185,7 +189,7 @@ $$
 
 [^FootnotePrevEx]: This limit is a constant multiple of the one in {prf:ref}`Ex:lHospital:lHospital1`, so we, actually, do know its value. For the sake of the argument, we now pretend that we do not know this result.
 
-However, we now run into an issue, since this again an indeterminate form of type $\dfrac{0}{0}$, so we do not know if the limit exists[^FootnotePrevEx]. For this, we will again use l'Hopsital's rule. Since $f'$ and $g'$ are differentiable, we can check the limit of the quotient of their derivatives by evaluating
+However, we now run into an issue, since this again an indeterminate form of type $\dfrac{0}{0}$, so we do not know if the limit exists[^FootnotePrevEx]. For this, we will again use l'Hospital's rule. Since $f'$ and $g'$ are differentiable, we can check the limit of the quotient of their derivatives by evaluating
 
 $$
  \lim_{x\rightarrow 0}\frac{f''(x)}{g''(x)}=\lim_{x\rightarrow 0}\frac{-\cos(x)}{2}=-\frac{1}{2}.
@@ -211,7 +215,7 @@ L'Hospital's rule can also be used to evaluate limits at plus or minus infinity.
 
 ::::::{prf:theorem} l'Hospital's rule for limits at $\pm\infty$
 :label: Thm:lHospital:lHospitalinf
-Consider the interval $I=(a,\infty)$. Supppose that the functions $f$ and $g$ are differentiable on $I$, and that $g'(x)\neq0$ for all $x$ in $I$. Suppose that 
+Consider the interval $I=(a,\infty)$. Suppose that the functions $f$ and $g$ are differentiable on $I$, and that $g'(x)\neq0$ for all $x$ in $I$. Suppose that 
 
 $$
  \lim_{x\rightarrow \infty}\frac{f'(x)}{g'(x)}=L
@@ -235,7 +239,7 @@ $$
  \lim_{x\rightarrow \infty}\frac{f(x)}{g(x)}=\lim_{x\rightarrow \infty}\frac{f'(x)}{g'(x)}=L.
 $$
 
-The result also holds when replacing all occurences of $\displaystyle \lim_{x\rightarrow \infty}$ by $\displaystyle \lim_{x\rightarrow -\infty}$ with $I=(-\infty,a)$.
+The result also holds when replacing all occurrences of $\displaystyle \lim_{x\rightarrow \infty}$ by $\displaystyle \lim_{x\rightarrow -\infty}$ with $I=(-\infty,a)$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:lHospital:lHospital` and {prf:ref}`Thm:lHospital:lHospitalinf`
@@ -252,7 +256,7 @@ To handle these cases together, we write $c=a$ or $c=\infty$, depending on the c
 
 First we show that we can make $I$ smaller so that $g$ is never $0$ on $I$. If there were two points $x\neq y$ in $I$ with $g(x)=g(y)=0$, then by {prf:ref}`Thm:Graphsderivatives:Rolle`, there would be $z$ in $I$ with $g'(z)=0$. This is not possible, since we assumed that $g'\neq 0$ on $I$. As such, there is at most one $x$ in $I$ with $g(x)=0$. By making $I$ smaller, if necessary, we can ensure that $g$ is never $0$ on $I$. With the same reasoning, we also see that we have $g(x)\neq g(y)$ whenever $x\neq y$ are in $I$.
 
-The infimum of a set $S$ is its largest lower bound. That is $m=\inf(S)$ precisely when $m\leq s$ for all $s$ in $S$ and $m\geq n$ for all $n$ which have $n\leq s$ for all $s$ in $S$. Similarly, the supremum of $S$ is the smallest upper bound. That is $M=\sup(S)$ precisely when $M\geq s$ for all $s$ in $S$ and $M\leq N$ for all $N$ which have $N\geq s$ for all $s$ in $S$. The completeness of the real numbers states that each bounded subset of the real numbers has an infinum and a supremum. In this proof, we make the convention that $\inf(S)=-\infty$ and $\sup(S)=\infty$ whenver $S$ does not have a lower respectively upper bound. 
+The infimum of a set $S$ is its largest lower bound. That is $m=\inf(S)$ precisely when $m\leq s$ for all $s$ in $S$ and $m\geq n$ for all $n$ which have $n\leq s$ for all $s$ in $S$. Similarly, the supremum of $S$ is the smallest upper bound. That is $M=\sup(S)$ precisely when $M\geq s$ for all $s$ in $S$ and $M\leq N$ for all $N$ which have $N\geq s$ for all $s$ in $S$. The completeness of the real numbers states that each bounded subset of the real numbers has an infimum and a supremum. In this proof, we make the convention that $\inf(S)=-\infty$ and $\sup(S)=\infty$ whenever $S$ does not have a lower respectively upper bound. 
 
 For each $x$ in $I$, we can now let 
 
@@ -599,15 +603,17 @@ $$
 
 so we are dealing with an indeterminate form of type $\dfrac{\infty}{\infty}$. In addition, the functions $f(x)=x+\sin(x)\cos(x)$ and $g(x)=\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}$ are differentiable everywhere. We evaluate
 
-$$
- g'(x)=\left(1+\cos^2(x)-\sin^2(x)\right)e^{\sin(x)}+\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}\cos(x)=\left(2\cos^2(x)\right)e^{\sin(x)}+\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}\cos(x),
-$$
+\begin{align*}
+ g'(x) &= \left(1+\cos^2(x)-\sin^2(x)\right)e^{\sin(x)}+\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}\cos(x) \\
+ &= \left(2\cos^2(x)\right)e^{\sin(x)}+\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}\cos(x),
+\end{align*}
 
 which is $0$ for each $x$ for which $\cos(x)=0$, i.e. for $x=\dfrac{\pi}{2}+k\pi$ for some integer $k$. This means that there is no interval of the form $(a,\infty)$ on which $g'(x)\neq 0$. We will check that l'Hospital's rule indeed gives the incorrect conclusion here. First, we evaluate
 
-$$
- \lim_{x\rightarrow \infty}\frac{f'(x)}{g'(x)}=\lim_{x\rightarrow \infty}\frac{2\cos^2(x)}{\left(2\cos^2(x)\right)e^{\sin(x)}+\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}\cos(x)}=\lim_{x\rightarrow \infty}\frac{2\cos(x)}{2\cos(x)+\left(x+\sin(x)\cos(x)\right)}e^{-\sin(x)}.
-$$
+\begin{align*}
+ \lim_{x\rightarrow \infty}\frac{f'(x)}{g'(x)} &= \lim_{x\rightarrow \infty}\frac{2\cos^2(x)}{\left(2\cos^2(x)\right)e^{\sin(x)}+\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}\cos(x)} \\
+ &= \lim_{x\rightarrow \infty}\frac{2\cos(x)}{2\cos(x)+\left(x+\sin(x)\cos(x)\right)}e^{-\sin(x)}.
+\end{align*}
 
 Note that for sufficiently large values of $x$ we have
 
@@ -708,7 +714,7 @@ $$
 
 ::::::
 
-We conclude that it is very important to check all the conditions of l'Hopsital's rule and to keep in mind that, while l'Hospital's rule is a very strong and broadly applicable method, it is sometimes a lot easier to use other techniques like division by the dominant term or the square root trick.
+We conclude that it is very important to check all the conditions of l'Hospital's rule and to keep in mind that, while l'Hospital's rule is a very strong and broadly applicable method, it is sometimes a lot easier to use other techniques like division by the dominant term or the square root trick.
 
 ## Indeterminate products and powers
 
@@ -726,7 +732,7 @@ $$
  \lim_{x\rightarrow a}f(x)g(x)=\lim_{x\rightarrow a}f(x)\frac{1}{h(x)}=\lim_{x\rightarrow a}\frac{f(x)}{h(x)}.
 $$
 
-Moreover, since $\displaystyle \lim_{x\rightarrow a}g(x)=\infty$ we know that $\displaystyle \lim_{x\rightarrow a}h(x)=0$. As such, we have rewritten the product into a quotient AND we can apply l'Hospital's rule to the newly obtained quotient (after having checked all other conditions, of course). Let us consider an example showcasing this idea.
+Moreover, since $\displaystyle \lim_{x\rightarrow a}g(x)=\infty$ we know that $\displaystyle \lim_{x\rightarrow a}h(x)=0$. As such, we have rewritten the product into a quotient _and_ we can apply l'Hospital's rule to the newly obtained quotient (after having checked all other conditions, of course). Let us consider an example showcasing this idea.
 
 ::::::{prf:example} Indeterminate form of type $0\cdot \infty$
 :label: Ex:lHospital:0infty

@@ -4,11 +4,9 @@
 
 ## Introduction
 
-[^FootnoteDiffInv]: Maybe apart from world peace
+[^FootnoteDiffInv]: Maybe apart from world peace.
 
 The one major thing missing in our lives right know[^FootnoteDiffInv] is a way to find the derivatives of the remaining standard functions. To recall, we have found the derivatives of the other standard functions in {prf:ref}`Thm:Differentiability:Standard1`, {prf:ref}`Thm:Chain rule:Standard2` and {prf:ref}`Thm:Productquotientrule:Standard3`. The ones that are missing are the derivatives of logarithms, inverse trigonometric functions and non-integer powers of $x$, as we promised in {prf:ref}`Remark:Differentiability:Powerfunctions`. So without further ado, let us get to work and find these derivatives.
-
-
 
 
 ## Derivatives of logarithms and inverse trigonometric functions
@@ -57,7 +55,7 @@ Now that we know what our approach should be, let us find the derivatives of all
 
 ::::::{prf:theorem} Standard derivatives, part 4 out of 4
 :label: Thm:Diffinverse:Standard4
-We have the following standard derivatives.
+We have the following standard derivatives:
 
 - We have $\dfrac{d}{dx}\left[\log_b(x)\right]=\dfrac{1}{\ln(b)x}$ for any $b>0$. In particular, we have $\dfrac{d}{dx}\left[\ln(x)\right]=\dfrac{1}{x}$.
 - We have $\dfrac{d}{dx}\left[\arcsin(x)\right]=\dfrac{1}{\sqrt{1-x^2}}.$
@@ -152,16 +150,14 @@ $$
 We use implicit differentiation to find
 
 $$
- \frac{1}{\cos^2(y)}\frac{dy}{dx}=1.
+ \left(1+\tan^2(y)\right)\frac{dy}{dx}=1.
 $$
 
 This gives
 
 $$
- \frac{dy}{dx}=\cos^2(y)=\cos^2(\arctan(x))=\left(\frac{1}{\sqrt{x^2+1}}\right)^2=\frac{1}{1+x^2}.
+ \frac{dy}{dx}=\frac{1}{1+\tan^2(y)}=\frac{1}{1+x^2}.
 $$
-
-The final identity follows using a similar approach to {prf:ref}`Ex:Inverse:InversetrigSimplify`.
 
 **Derivatives of powers of $x$**. As a consequence of our newly found derivatives, we can now also find the derivative of $f(x)=x^r$ where $r$ is any real number. For this, we note that $x=e^{\ln(x)}$ for any $x>0$. This means that we can write
 
@@ -228,11 +224,15 @@ $$
 
 ## The inverse function theorem
 
-
+In the proof of the previous theorem, we used implicit differentiation to find the derivatives of several functions that are defined as inverse functions. The following theorem, which is known as the inverse function theorem, justifies this approach and gives us a formula for the derivative of an inverse function in terms of the derivative of the original function.
 
 ::::::{prf:theorem} Inverse function theorem
 :label: Thm:Diffinverse:IFT
-Let $f$ be a continuously differentiable function. Let $a$ with $f'(a)\neq 0$ and write $b=f(a)$. Then $f$ is invertible on an interval that contains $a$. In addition, $f^{-1}$ is continuously differentiable on an interval that contains $b$ and we have
+Let $f$ be a continuously differentiable function. Let $a$ with $f'(a)\neq 0$ and write $b=f(a)$.
+
+Then $f$ is invertible on an interval that contains $a$.
+
+In addition, $f^{-1}$ is continuously differentiable on an interval that contains $b$ and we have
 
 $$
  \left(f^{-1}\right)'(b)=\frac{1}{f'(a)}=\frac{1}{f'(f^{-1}(b))}.
@@ -276,9 +276,14 @@ $$
 
 We let $g(y)=\dfrac{f^{-1}(y)-c}{y-d}$. Then we note that $x\rightarrow c$ precisely when $f(x)\rightarrow d$. However, we do not know a priori that $g$ can be defined in such a way in $y=d$ to make it continuous, so we cannot use the regular substitution for limits. Instead, we use {prf:ref}`Theorem:Continuity:SubstitutionAlt` to obtain
 
-$$
- \frac{1}{f'(c)}=\lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d}=\lim_{x\rightarrow c}g(f(x))=\lim_{y\rightarrow d}g(y)=\lim_{y\rightarrow d}\frac{f^{-1}(y)-c}{y-d}=\lim_{y\rightarrow d}\frac{f^{-1}(y)-f^{-1}(d)}{y-d}=(f^{-1})'(d).
-$$
+\begin{align*}
+ \frac{1}{f'(c)} &= \lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d} \\
+ &= \lim_{x\rightarrow c}g(f(x)) \\
+ &= \lim_{y\rightarrow d}g(y) \\
+ &= \lim_{y\rightarrow d}\frac{f^{-1}(y)-c}{y-d} \\
+ &= \lim_{y\rightarrow d}\frac{f^{-1}(y)-f^{-1}(d)}{y-d} \\
+ &= (f^{-1})'(d).
+\end{align*}
 
 So $f^{-1}$ is differentiable in $d$. Moreover, since $f'$ is continuous we see that $(f^{-1})'$ is continuous. In particular, when $c=a$ we have $d=b$ and we have
 
@@ -371,7 +376,13 @@ Note that the derivative is not continuous in $0$. Indeed, with the squeeze theo
 
 The function $f$ is also not invertible in any interval that contains $0$. Indeed, the derivative $f'(x)=-1+2x\sin\left(\frac{1}{x}\right)-4\cos\left(\frac{1}{x}\right)$ will both take on positive and negative values on any interval that contains $0$, as $-4\cos\left(\frac{1}{x}\right)$ keeps on oscillating between $-4$ and $4$, while $-1+2x\sin\left(\frac{1}{x}\right)$ approaches $-1$ as $x\rightarrow 0$. So the function $f$ will alternate between increasing and decreasing on any such interval, which means that it cannot be invertible there.
 
+:::{figure} Images/Fig-Diffinverse-IFT2.png
+:name: Fig:Diffinverse:IFT2
+
+The graph of the function $f$ from {prf:ref}`Rem:Diffinverse:IFT2`.
+:::
+
 :::{todo}
-Include an applet with the graph of this function.
+Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet.
 :::
 :::

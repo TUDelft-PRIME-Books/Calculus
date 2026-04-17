@@ -23,8 +23,14 @@ $$
 
 is tangent to the unit circle at $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$. 
 
+:::{figure} Images/Fig-SlopeCurveIntro-Circle.png
+:name: Fig-SlopeCurveIntro-Circle
+
+The unit circle with the tangent line at $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$.
+:::
+
 :::{todo}
-Show the unit circle with the tangent line at $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$.
+Replace {numref}`Fig-SlopeCurveIntro-Circle` with an applet. Make the point draggable along the circle and show the tangent line at that point. Make the circle one color. Make the tangent line another color.
 :::
 
 We conclude that when it is possible to write (part of) a curve as the graph of a function, we can find the slope of a curve. However, what should we do if that is not the case, either because it is hard (or even impossible) to explicitly express $y$ as a function of $x$, or because our curve is defined by a parametrisation? In those cases, we need other tools, which will be the main topic of this section.
@@ -33,9 +39,7 @@ We conclude that when it is possible to write (part of) a curve as the graph of 
 
 ## Implicit differentiation
 
-
-
-Consider a curve that is implicitly defined by an equation of the form $f(x,y)=0$. If it is possible to turn this into an explicit equation $y=g(x)$ (on at least some part of the curve) we can explicitly find the derivative using regular differentiation techniques. However, in most cases that is not neccesary. We can, instead, work with the assumption that, at least if zoom in enough, it is theoretically possible to obtain an explicit equation $y=g(x)$, but by using the chain rule, we can actually avoid ever having to find this explicit equation. This technique is called **implicit differentiation**. Even for curves where an explicit form can be found (such as for the unit circle) it is typically easier and quicker to use implicit differentiation. This technique is best explained by means of several examples.
+Consider a curve that is implicitly defined by an equation of the form $f(x,y)=0$. If it is possible to turn this into an explicit equation $y=g(x)$ (on at least some part of the curve) we can explicitly find the derivative using regular differentiation techniques. However, in most cases that is not necessary. We can, instead, work with the assumption that, at least if zoom in enough, it is theoretically possible to obtain an explicit equation $y=g(x)$, but by using the chain rule, we can actually avoid ever having to find this explicit equation. This technique is called **implicit differentiation**. Even for curves where an explicit form can be found (such as for the unit circle) it is typically easier and quicker to use implicit differentiation. This technique is best explained by means of several examples.
 
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Circle
@@ -54,7 +58,7 @@ $$
  2x+\frac{d}{dx}\left[y^2\right]=0.
 $$
 
-This is where the 'implicit' part of implicit differentiation comes in: we assume that, when we zoom in enough, $y$ is a function of $x$, so that $y=y(x)$. Then we can use the chain rule to find the derivative $\frac{d}{dx}\left[y^2\right]$. Indeed, if we write $y^2=f(g(x))$ with $f(x)=x^2$ and $g(x)=y$ then the chain rule gives $\frac{d}{dx}\left[y^2\right]=f'(g(x))g'(x)$. We can quickly commpute $f'(x)=2x$, so $f'(g(x))=f'(y)=2y$, but what about $g'(x)$? Since we have $g(x)=y$, $g'(x)$ is the derivative of $g$, meaning the derivative of $y$. That is, we have $g'(x)=\dfrac{dy}{dx}$. As such, we find $\frac{d}{dx}\left[y^2\right]=2y\frac{dy}{dx}$[^FootnoteImplicit2]. Plugging this back into the equation above, we find
+This is where the 'implicit' part of implicit differentiation comes in: we assume that, when we zoom in enough, $y$ is a function of $x$, so that $y=y(x)$. Then we can use the chain rule to find the derivative $\frac{d}{dx}\left[y^2\right]$. Indeed, if we write $y^2=f(g(x))$ with $f(x)=x^2$ and $g(x)=y$ then the chain rule gives $\frac{d}{dx}\left[y^2\right]=f'(g(x))g'(x)$. We can quickly compute $f'(x)=2x$, so $f'(g(x))=f'(y)=2y$, but what about $g'(x)$? Since we have $g(x)=y$, $g'(x)$ is the derivative of $g$, meaning the derivative of $y$. That is, we have $g'(x)=\dfrac{dy}{dx}$. As such, we find $\frac{d}{dx}\left[y^2\right]=2y\frac{dy}{dx}$[^FootnoteImplicit2]. Plugging this back into the equation above, we find
 
 $$
  2x+2y\frac{dy}{dx}=0.
@@ -123,7 +127,7 @@ $$
  0=\frac{dy}{dx}=\frac{3y-3x^2}{3y^2-3x},
 $$
 
-which gives $3y-3x^2=0$, i.e. $y=x^2$. That would suggest that there would be an entire curve of points where the tangent line is horizontal. This is clearly not the case when we consider a sketch of the curve, see {numref}`Fig:SlopeCurve:Folium`. So what is the issue here? The problem here is that most points on the curve $y=x^2$ do not lie on the folium. So we are actually only interested in those points that satsify both $x^3+y^3=3xy$ **and** $y=x^2$. In order to find these points, we substitute $y=x^2$ into the equation describing the folium and we obtian
+which gives $3y-3x^2=0$, i.e. $y=x^2$. That would suggest that there would be an entire curve of points where the tangent line is horizontal. This is clearly not the case when we consider a sketch of the curve, see {numref}`Fig:SlopeCurve:Folium`. So what is the issue here? The problem here is that most points on the curve $y=x^2$ do not lie on the folium. So we are actually only interested in those points that satisfy both $x^3+y^3=3xy$ **and** $y=x^2$. In order to find these points, we substitute $y=x^2$ into the equation describing the folium and we obtain
 
 $$
  x^3+x^6=3x^3,
@@ -137,8 +141,15 @@ $$
 
 Then we must have either $x=0$ or $x^3=2$, which gives $x=\sqrt[3]{2}$. This would give the two points $(0,0)$ and $\left(\sqrt[3]{2},\sqrt[3]{4}\right)$. However, at $(0,0)$ the expression for $\dfrac{dy}{dx}$ does not exist, so we should ignore this point. Indeed, the curve self-intersects at this point, so it is impossible to define a slope there. So the only point on the curve with a horizontal tangent is the point $\left(\sqrt[3]{2},\sqrt[3]{4}\right)$.
 
+:::{figure} Images/Fig-Curves-FoliumOfDescartes.png
+:name: Fig:SlopeCurve:Folium
+
+The folium of Descartes with a point with a horizontal tangent.
+:::
+
+
 :::{todo}
-Here sketch of the folium with the point with a horizontal tangent highlighted. Label of figure should be: Fig:SlopeCurve:Folium
+Replace {numref}`Fig:SlopeCurve:Folium` with an applet. Make the point with the horizontal tangent draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color.
 :::
 ::::::
 
@@ -156,11 +167,17 @@ $$
  x^2+y^2=-1
 $$
 
-does not even contain any points at all. So is there a way to know, in advance, whether it is allowed to assume that on the curve $y$ is implicitly a differentiable function of $x$? The good news is that the answer is yes. This result is a very important theorem in analysis, called the **implicit function theorem**. The bad news is that proving this result is way beyond our current capabilities. We will state the theorem now, and we will postpone the proof to {numref}`Sec:DE:ExistenceUniqueness`.
+does not even contain any points at all. So is there a way to know, in advance, whether it is allowed to assume that on the curve $y$ is implicitly a differentiable function of $x$?
+
+The good news is that the answer is yes. This result is a very important theorem in analysis, called the **implicit function theorem**. The bad news is that proving this result is way beyond our current capabilities. We will state the theorem now, and we will postpone the proof to {numref}`Sec:DE:ExistenceUniqueness`.
 
 ::::::{prf:theorem} Implicit function theorem
 :label: Thm:SlopeCurves:IFT
-Consider a curve that is implicitly defined by an equation $F(x,y)=0$ and let $(x_0,y_0)$ be a point on the curve. Let $f(x)=F(x,y_0)$ and $g(y)=F(x_0,y)$. If $f$ is continuously differentiable on an open interval containing $x_0$ and $g$ is continuously differentiable on an open interval containing $y_0$ and $g'(y_0)\neq 0$, then there exists a unique differentiable function $h$ with $h(x_0)=y_0$ and $F(x,h(x))=0$ on an open interval containing $x_0$. That is, on this interval, $y$ is implicitly defined as a differentiable function of $x$.
+Consider a curve that is implicitly defined by an equation $F(x,y)=0$ and let $(x_0,y_0)$ be a point on the curve. Let $f(x)=F(x,y_0)$ and $g(y)=F(x_0,y)$.
+
+If $f$ is continuously differentiable on an open interval containing $x_0$ and $g$ is continuously differentiable on an open interval containing $y_0$ and $g'(y_0)\neq 0$, then there exists a unique differentiable function $h$ with $h(x_0)=y_0$ and $F(x,h(x))=0$ on an open interval containing $x_0$.
+
+That is, on this interval, $y$ is implicitly defined as a differentiable function of $x$.
 ::::::
 
 This result shows that we can apply implicit differentiation as long as we we can take the derivatives we want to and we subsequently do not divide by $0$ (it should not come as a surprise that we want to avoid dividing by $0$).
@@ -223,13 +240,15 @@ $$
 
 ::::::
 
-## Slopes of parametrised cuves
+## Slopes of parametrised curves
 
 In {numref}`Section:Curves` we saw that for many curves it is easier or more convenient to describe them using a parametrisation than using an implicit equation. In addition, if you only have a parametrisation of a curve, it can be hard, or even impossible, to turn this into an implicit equation. Still, for those types of curves, we could still want to find the slope. In that case, we have the following result.
 
 ::::::{prf:theorem} 
 :label: Thm:SlopeCurves:Param
-Let $\mathcal{C}$ be curve with parametrisation $x=f(t)$ and $y=g(t)$ for $t_0\leq t\leq t_1$. Suppose $f$ and $g$ are both differentiable. Then for any $t$ with $f'(t)\neq 0$ we have 
+Let $\mathcal{C}$ be curve with parametrisation $x=f(t)$ and $y=g(t)$ for $t_0\leq t\leq t_1$. Suppose $f$ and $g$ are both differentiable.
+
+Then for any $t$ with $f'(t)\neq 0$ we have 
 
 $$
  \frac{dy}{dx}=\frac{g'(t)}{f'(t)}.
@@ -254,7 +273,7 @@ $$
 
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Param
-Let $\mathcal{C}$ be curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}$ for $-1\leq t\leq 1$. Suppose we want to find the slope at $t=0$, i.e. at the point $(x,y)=\left(1,5\right)$. It does not seem feasible to find an implicit equation for this curve and to use implicit differentiaton, so we will use {prf:ref}`Thm:SlopeCurves:Param`. Using this theorem, we find
+Let $\mathcal{C}$ be curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}$ for $-1\leq t\leq 1$. Suppose we want to find the slope at $t=0$, i.e. at the point $(x,y)=\left(0,5\right)$. It does not seem feasible to find an implicit equation for this curve and to use implicit differentiation, so we will use {prf:ref}`Thm:SlopeCurves:Param`. Using this theorem, we find
 
 $$
  \frac{dy}{dx}=\frac{\frac{d}{dt}\left[e^{3t}+4e^{-2t}\right]}{\frac{d}{dt}\left[e^{2t}-e^t\right]}=\frac{3e^{3t}-8e^{-2t}}{2e^{2t}-e^t}.
@@ -263,11 +282,17 @@ $$
 Plugging in $t=0$ gives
 
 $$
- \left.\frac{dy}{dx}\right|_{(x,y)=(1,5)}=\frac{3e^{3\cdot 0}-8e^{-2\cdot 0}}{2e^{2\cdot 0}-e^0}=\frac{-5}{1}=-5.
+ \left.\frac{dy}{dx}\right|_{(x,y)=(0,5)}=\frac{3e^{3\cdot 0}-8e^{-2\cdot 0}}{2e^{2\cdot 0}-e^0}=\frac{-5}{1}=-5.
 $$
 
+:::{figure} Images/Fig-SlopeCurve-Param.png
+:name: Fig:SlopeCurve:Param
+
+The curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}$ for $-1\leq t\leq 1$ with the tangent line at $t=0$.
+:::
+
 :::{todo}
-Show curve with the specified point highlighted, including the tangent line there.
+Replace {numref}`Fig:SlopeCurve:Param` with an applet. Make the point with the specified tangent line draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color.
 :::
 ::::::
 
@@ -286,7 +311,15 @@ $$
 $$
 
 since the numerator goes to $3$ while the denominator goes to $0$ as $t\rightarrow -1$. As such, we obtain a vertical tangent line whenever $t=-1$, which corresponds to the point $(-1,-1)$.
-:::{todo}
-Show curve with the specified point highlighted, including the tangent line there.
+
+:::{figure} Images/Fig-SlopeCurve-ParamVert.png
+:name: Fig:SlopeCurve:ParamVert
+
+The curve with parametrisation $x=t^2+2t$ and $y=t^3$ for $-2\leq t\leq 2$ with the tangent line at $t=-1$.
 :::
+
+:::{todo}
+Replace {numref}`Fig:SlopeCurve:ParamVert` with an applet. Make the point with the specified tangent line draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color.
+:::
+
 ::::::
