@@ -35,6 +35,10 @@ An illustration of Rolle's theorem.
 Replace {numref}`Fig:Graphsderivatives:Rolle` with an applet.
 :::
 
+:::{note}
+Rolle's theorem even applies when the derivative is not continuous (so when $f$ is differentiable, but not continuously differentiable.) So even if the derivative is allowed to make jumps, it can never avoid being $0$ at at least one point.
+:::
+
 The mean value theorem is in essence an extension of Rolle's theorem, and formalises what we discussed in the introduction of this section.
 
 ::::::{prf:theorem} The mean value theorem
@@ -117,7 +121,7 @@ $$
 
 :::{admonition} Proof of {prf:ref}`Thm:Graphsderivatives:MVTCauchy`
 :class: tudproof, dropdown
-The idea of proving this theorem is similar to the ones used in the proof of {prf:ref}`Thm:Graphsderivatives:MVT`. Here, we define the function
+The idea of proving this theorem is similar to the proof of {prf:ref}`Thm:Graphsderivatives:MVT`. Here, we define the function
 
 $$
  h(x)=(g(b)-g(a))f(x)-(f(b)-f(a))g(x).
@@ -164,7 +168,7 @@ $$
  f'(x)=3x^2+6x+6.
 $$
 
-However, the equation $3x^2+6x+6=0$ does not have any real solutions. So our assumption that there would be another solution must be incorrect. Hence, there is only one solution between $-1$ and $0$. This is supported by the graph of the function, which is shown in {numref}`Fig:Graphsderivatives:MVT1`.
+The equation $3x^2+6x+6=0$ does not have any real solutions. So our assumption that there would be another solution must be incorrect. Hence, there is only one solution between $-1$ and $0$. This is supported by the graph of the function, which is shown in {numref}`Fig:Graphsderivatives:MVT1`.
 
 
 :::{figure} Images/Fig-Graphsderivatives-MVT1.png
@@ -183,28 +187,28 @@ One of the most important consequences of the mean value theorem are the followi
 
 ::::::{prf:corollary} 
 :label: Cor:Graphsderivatives:Zeroderivative
-Let $f$ be a differentiable function such that $f'(x)=0$ for all $x$ in some interval $(a,b)$. Then $f$ is constant on that interval.
+Let $f$ be a differentiable function such that $f'(x)=0$ for all $x$ in some interval $I$. Then $f$ is constant on that interval.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Cor:Graphsderivatives:Zeroderivative`
 :class: tudproof
-Suppose $f$ is not constant, but $f'(x)=0$ for all $x$ in $(a,b)$. Then we can find two points $p<q$ in the interval $(a,b)$ with $f(p)\neq f(q)$. Then $f$ is continuous on the interval $[p,q]$ and differentiable on the interval $(p,q)$, so by {prf:ref}`Thm:Graphsderivatives:MVT` we can find $c$ in $(p,q)$ with
+Suppose $f$ is not constant, but $f'(x)=0$ for all $x$ in $I$. Then we can find two points $p<q$ in the interval $I$ with $f(p)\neq f(q)$. Then $f$ is continuous on the interval $[p,q]$ and differentiable on the interval $(p,q)$, so by {prf:ref}`Thm:Graphsderivatives:MVT` we can find $c$ in $(p,q)$ with
 
 $$
  f'(c)=\frac{f(q)-f(p)}{q-p}.
 $$
 
-Since $f(p)\neq f(q)$ we have $f'(c)=\dfrac{f(q)-f(p)}{q-p}\neq 0$. However, this contradicts the assumption that $f'(x)=0$ for all $x$ in $(a,b)$. Hence, $f$ must be constant on this interval.
+Since $f(p)\neq f(q)$ we have $f'(c)=\dfrac{f(q)-f(p)}{q-p}\neq 0$. However, this contradicts the assumption that $f'(x)=0$ for all $x$ in $I$. Hence, $f$ must be constant on this interval.
 :::
 
 ::::::{prf:corollary} 
 :label: Cor:Graphsderivatives:Samederivative
-Let $f$ and $g$ be differentiable functions such that $f'(x)=g'(x)$ for all $x$ in some interval $(a,b)$. Then $f=g+C$ for some constant $C$ on this interval.
+Let $f$ and $g$ be differentiable functions such that $f'(x)=g'(x)$ for all $x$ in some interval $I$. Then $f=g+C$ for some constant $C$ on this interval.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Cor:Graphsderivatives:Samederivative`
 :class: tudproof
-Consider the function $h=f-g$. Then $h$ is differentiable and for $x\in (a,b)$ we have $h'(x)=f'(x)-g'(x)=0$, since $f'(x)=g'(x)$. Hence, the function $h$ is constant by {prf:ref}`Cor:Graphsderivatives:Zeroderivative`, say $h=C$. Then $f=g+C$ for this same constant $C$.
+Consider the function $h=f-g$. Then $h$ is differentiable and for $x\in I$ we have $h'(x)=f'(x)-g'(x)=0$, since $f'(x)=g'(x)$. Hence, the function $h$ is constant by {prf:ref}`Cor:Graphsderivatives:Zeroderivative`, say $h=C$. Then $f=g+C$ for this same constant $C$.
 :::
 
 The mean value theorem can also be used to translate any restriction on the possible values of the derivative into a limitation on the values of the function itself.
@@ -289,7 +293,7 @@ The graph of the function $3x-1$ , the graph of the function $7x-9$ and the grap
 Replace {numref}`Fig:Graphsderivatives:MVT2` with an applet. The function that satisfies the assumptions on $f$ is given by
 
 $$
-f(x)=\frac{1}{8}(x-2)^4 - \frac{3}{2}(x-2)^3 + \frac{9}{2}(x-2)^2 + 3(x-2) + 5.
+f(x)=\frac{1}{32} (-2 x^3 + 24 x^2 - 72 x + 64 + (x^2 + 4 x + 68) x)
 $$
 :::
 
@@ -394,7 +398,7 @@ $$
  f'(x)=-6x^2-6x+12.
 $$
 
-In order to establish when we have $f'(x)>0$ and when we have $f'(x)<0$ we first solve $f'(x)=0$, i.e. $-6x^2-6x+12=0$. This is a quadratic equation with solutions $x=1$ and $x=-2$. Since the coefficient of $x^2$ is negative, the graph of $f'$ is a parabola opening downwards. As such, we find that $f'(x)<0$ for $x<-2$ and for $x>1$, while $f'(x)>0$ for $-2<x<1$. We conclude that $f$ is strictly increasing on the intervals $(-\infty,-2)$ and $(1,\infty)$, while it is strictly decreasing on the interval $(-2,1)$. This can also be seen in the graph of the function.
+In order to establish when we have $f'(x)>0$ and when we have $f'(x)<0$ we first solve $f'(x)=0$, i.e. $-6x^2-6x+12=0$. This is a quadratic equation with solutions $x=1$ and $x=-2$. Since the coefficient of $x^2$ is negative, the graph of $f'$ is a parabola opening downwards. As such, we find that $f'(x)<0$ for $x<-2$ and for $x>1$, while $f'(x)>0$ for $-2<x<1$. We conclude that $f$ is strictly decreasing on the intervals $(-\infty,-2)$ and $(1,\infty)$, while it is strictly increasing on the interval $(-2,1)$. This can also be seen in the graph of the function.
 
 :::{figure} Images/Fig-Graphsderivatives-Increasingdecreasing1.png
 :name: Fig:Graphsderivatives:Increasingdecreasing1
@@ -414,7 +418,7 @@ We postponed a small piece of the proof of {prf:ref}`Thm:PropertiesFunctions:Hyp
 :class: tudproof, dropdown
 If $f(x)=\cosh(x)$, then we have $f'(x)=\sinh(x)$. Since $f'(x)<0$ when $x<0$, the hyperbolic cosine must be strictly decreasing on $(-\infty,0)$. Similarly, since $f'(x)>0$ when $x>0$, the hyperbolic cosine is strictly increasing on $(0,\infty)$.
 
-If $h(x)=\tanh(x)$, then we have $fh'(x)=\dfrac{1}{\cosh(x)^2}$. We see that $h'(x)>0$ for all $x$, so the hyperbolic tangent is strictly increasing on $\mathbb{R}$.
+If $h(x)=\tanh(x)$, then we have $h'(x)=\dfrac{1}{\cosh(x)^2}$. We see that $h'(x)>0$ for all $x$, so the hyperbolic tangent is strictly increasing on $\mathbb{R}$.
 :::
 
 ## Convexity, concavity and inflection points
@@ -734,7 +738,7 @@ The other cases follow similarly.
 :::
 
 :::{warning}
-A function $f$ can be strictly convex on an interval even if its second derivative is $0$ somewhere. For instance, consider the function $f(x)=x^4$. Then $f''(x)=12x^3$, which is $0$ at $x=0$. Still, this function is strictly convex on $\mathbb{R}$, which can be seen from the graph of the function.
+A function $f$ can be strictly convex on an interval even if its second derivative is $0$ somewhere. For instance, consider the function $f(x)=x^4$. Then $f''(x)=12x^2$, which is $0$ at $x=0$. Still, this function is strictly convex on $\mathbb{R}$, which can be seen from the graph of the function.
 :::
 
 As a consequence, we can also check for convexity by checking whether the derivative is increasing or decreasing. In fact, we already used this in the proof of {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv`.
@@ -764,7 +768,7 @@ Before we move on to discussing an example, we need one more definition.
 Let $x$ be a point in the domain of a function $f$. Then $x$ is called an **inflection point** if is a point where the function changes from being convex to concave or vice versa.
 ::::::
 
-For a twice differentiable function $f$, we see from {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv` that an inflection point occurs if the second derivative changes from positive (meaning $f$ is convex) to negative (meaning $f$ is concave). If $f''$ is itself continuous, this can only happen if the second derivative is $0$ at this point. Hence, we obtain the following result.
+For a twice differentiable function $f$, we see from {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv` that an inflection point occurs if the second derivative changes from positive (meaning $f$ is convex) to negative (meaning $f$ is concave) or vice versa. If $f''$ is itself continuous, this can only happen if the second derivative is $0$ at this point. Hence, we obtain the following result.
 
 ::::::{prf:theorem} 
 :label: Thm:Graphsderivatives:Inflection

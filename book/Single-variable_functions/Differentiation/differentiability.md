@@ -62,7 +62,7 @@ $$
  \text{average}\,\,\text{velocity}=\frac{\Delta x}{\Delta t}=\frac{x(1200)-x(0)}{1200-0}=\frac{600-0}{1200}=\frac{1}{2}.
 $$
 
-An important question now remains: can we somehow determine our velocity at a certain moment in time, say at $t=200$? Note that we are not walking with a constant velocity, so very likely at most point in time the velocity is not going to be equal to the average velocity of $\frac{1}{2}$ meters per second. The main idea to resolve this, is that if just zoom in very close to $t=200$, the graph of the function is approximately a straight line. The velocity at $t=200$ can then be approximated by dividing the difference in position by the difference in time. For $\Delta t=10$, we would be comparing the positions at $t=200$ with the one $10$ time steps further, so at $t=210$, and we would obtain
+An important question now remains: can we somehow determine our velocity at a certain moment in time, say at $t=200$? Note that we are not walking with a constant velocity, so very likely at most points in time the velocity is not going to be equal to the average velocity of $\frac{1}{2}$ meters per second. The main idea to resolve this, is that if just zoom in very close to $t=200$, the graph of the function is approximately a straight line. The velocity at $t=200$ can then be approximated by dividing the difference in position by the difference in time. For $\Delta t=10$, we would be comparing the positions at $t=200$ with the one $10$ time steps further, so at $t=210$, and we would obtain
 
 $$
  \text{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(210)-x(200)}{1}\approx 2.354.
@@ -82,7 +82,7 @@ $$
  \text{velocity}=\lim_{\Delta t\rightarrow 0} \frac{\Delta x}{\Delta t}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}.
 $$
 
-We call the value of the limit $\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}$ the **derivative** of the function $x$ at $t=200$. Evaluating this limit is a bit tricky, but later we will learn some powerful tools which allow us to find
+We call the value of the limit $\displaystyle\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}$ the **derivative** of the function $x$ at $t=200$. Evaluating this limit is a bit tricky, but later we will learn some powerful tools which allow us to find
 
 $$
  \text{velocity}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}=\frac{3\pi}{4}\approx 2.356.
@@ -157,7 +157,7 @@ $$
 
 The notation $\dfrac{df}{dx}$ is called the **Leibniz notation**, named after the German philosopher and mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz). The notation $Df(x)$ is sometimes called the **Euler notation**, although there is no indication that the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler) ever used this notation.
 
-In physics, when considering a quantity $y$ that is a function of **time** $t$, the notation $\dot{y}(t)$ represents the derivative $y'(t)$
+In physics, when considering a quantity $y$ that is a function of **time** $t$, the notation $\dot{y}(t)$ represents the derivative $y'(t)$.
 ::::::
 
 
@@ -427,7 +427,7 @@ Replace {numref}`Fig:Differentiability:Differential` with an applet.
 
 ## Computation rules and standard derivatives
 
-In this section we will study some basic computation rules for derivatives. However, some important computation rules will be left for the upcoming sections {numref}`Sec:Differentiation:ChainRule` and {numref}`Section:DiffProdQuot`. In addition, although we will provide some derivatives of standard functions here (polynomials, the sine, cosine and the natural exponential function), we will leave others to later sections. For derivatives of other exponential functions, see {numref}`Sec:Differentiation:ChainRule`, for the derivative of the tangent function, see {numref}`Section:DiffProdQuot` and for the derivatives of logarithms, inverse trigonometric functions and power functions, see {numref}`Subsec:Invdiff`.
+In this section we will study some basic computation rules for derivatives. However, some important computation rules will be left for the upcoming sections {numref}`Sec:Differentiation:ChainRule` and {numref}`Section:DiffProdQuot`. In addition, although we will provide some derivatives of standard functions here (polynomials, the sine, cosine and the natural exponential function), we will leave others to later sections. For derivatives of other exponential functions, see {numref}`Sec:Differentiation:ChainRule`, for the derivatives of the tangent and hyperbolic tangent functions, see {numref}`Section:DiffProdQuot` and for the derivatives of logarithms, inverse trigonometric functions and power functions, see {numref}`Subsec:Invdiff`.
 
 ::::::{prf:theorem} Scalar products and sums
 :label: Thm:Differentiability:Sumscalar
@@ -661,7 +661,7 @@ $$
  &=&\displaystyle e^x \lim_{h\rightarrow 0}\frac{e^h-1}{h}.\end{array}
 $$
 
-Now from {prf:ref}`Thm:RealNumbers:Numbere`, we recall that the final limit was one of the defining properties of the number $e$. As such, we find that $f'(x)=e^x$, as desired.
+Now from {prf:ref}`Thm:RealNumbers:Numbere`, we recall that the final limit being equal to $1$ was one of the defining properties of the number $e$. As such, we find that $f'(x)=e^x$, as desired.
 ::::
 
 ::::::{prf:remark}
@@ -735,7 +735,7 @@ For $x=1$, we obtain on the other hand
  &=\lim_{h\rightarrow 0^-}\frac{3+2h+h^2}{h},
 \end{align*}
 
-which does not exist (the limit $\lim_{h\rightarrow 1^+}\frac{f(1+h)-f(1)}{h}$ does exist and is equal to to $-2$). So this means that $f$ is not differentiable in $x=1$. We could have seen this coming, since the function is also not continuous at $x=1$, so it had no chance of being differentiable on account of {prf:ref}`Thm:Differentiability:Diffimpliescont`.
+which does not exist (the limit $\displaystyle\lim_{h\rightarrow 1^+}\frac{f(1+h)-f(1)}{h}$ does exist and is equal to to $-2$). So this means that $f$ is not differentiable in $x=1$. We could have seen this coming, since the function is also not continuous at $x=1$, so it had no chance of being differentiable on account of {prf:ref}`Thm:Differentiability:Diffimpliescont`.
 ::::::
 
 ## Higher order derivatives
