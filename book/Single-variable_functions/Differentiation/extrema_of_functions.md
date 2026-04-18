@@ -240,13 +240,13 @@ Let $c$ be a point in the domain of a continuous function $f$.
 - If $f'(x)>0$ for all $x$ near $c$ (excluding $x=c$) or if $f'(x)<0$ for all $x$ near $c$ (excluding $x=c$) then $f(c)$ is neither a local minimum nor a local maximum of $f$.
 ::::::
 
-Before we turn to the proof of {prf:ref}`Thm:MinMax:Firstdertest`, we illustrate the different cases of this theorem in {numref}`Fig:MinMax:Firstdertest`.
+Before we turn to the proof of {prf:ref}`Thm:MinMax:Firstdertest`, we illustrate the different cases of this theorem in {numref}`Fig:MinMax:Firstdiv`.
 
 :::{figure} Images/Fig-MinMax-Firstdiv.png
 :name: Fig:MinMax:Firstdiv
 :class: dark-light
 
-Illustration of {prf:ref}`Thm:MinMax:Firstdiv`.
+Illustration of {prf:ref}`Thm:MinMax:Firstdertest`.
 (a) $f'$ changes from negative to positive at $c$; (b) $f'$ changes from positive to negative at $c$; (c) $f'(x)>0$ for all $x\neq c$; $f'(x)<0$ for all $x\neq c$.
 :::
 
