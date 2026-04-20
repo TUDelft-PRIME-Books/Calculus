@@ -206,45 +206,48 @@ Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching2` with an applet.
 
 ::::::
 
-(Subsec:PropertiesFunctionsIncreasingDecreasing)=
+(Subsec:PropertiesFunctionsincreasingdecreasing)=
 
 ## Increasing and decreasing functions
 
-When analysing the graph of a function, one of the most eye-catching properties is where the graph goes up and where it goes down. In more mathematical terms, we say that the function increases when the graph goes up and the function decreases when the graph goes down. 
+[^FootnoteNondecr]: Or perhaps it is better to say that a function nonincreases when the graph does not go down, and it nondecreases when the graph does not go up.
+
+When analysing the graph of a function, one of the most eye-catching properties is where the graph goes up and where it goes down. In more mathematical terms, we say that the function nonincreases when the graph goes up and the function nondecreases when the graph goes down. [^FootnoteNondecr]
 
 ::::::{prf:definition} 
-:label: Def:PropertiesFunctions:IncreasingDecreasing
+:label: Def:PropertiesFunctions:increasingdecreasing
 
-Let $f$ be a function and $(a,b)$ be an interval that is contained in the domain of $f$. Then we say that $f$ is **increasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)\leq f(x_2)$. Similarly, we say that $f$ is **decreasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)\geq f(x_2)$.
+Let $f$ be a function and $(a,b)$ be an interval that is contained in the domain of $f$. Then we say that $f$ is **nondecreasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)\leq f(x_2)$. Similarly, we say that $f$ is **nonincreasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)\geq f(x_2)$.
 
+A function that is either nondecreasing or nonincreasing on an interval, is called **monotonic** on that interval.
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:PropertiesFunctions:IncreasingDecreasing
+:label: Ex:PropertiesFunctions:increasingdecreasing
 
 
-A function can be increasing on some parts on its domain, while it is decreasing on other parts of its domain. For instance, consider the function $f(x)=x^2$, of which the graph is shown below.
+A function can be nondecreasing on some parts on its domain, while it is nonincreasing on other parts of its domain. For instance, consider the function $f(x)=x^2$, of which the graph is shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-IncreasingDecreasing.png
-:name: Fig:PropertiesFunctions:IncreasingDecreasing
+:::{figure} Images/Fig-PropertiesFunctions-increasingdecreasing.png
+:name: Fig:PropertiesFunctions:increasingdecreasing
 
 The graph of the function $f(x)=x^2$.
 :::
 
 :::{todo}
-Replace {numref}`Fig:PropertiesFunctions:IncreasingDecreasing` with an applet.
+Replace {numref}`Fig:PropertiesFunctions:increasingdecreasing` with an applet.
 :::
 
-The graph suggests that the function increases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
+The graph suggests that the function nondecreases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
 
-Similarly, on the interval $(-\infty,0)$ the function is decreasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2^2)=x_2^2=f(x_2)$.
+Similarly, on the interval $(-\infty,0)$ the function is nonincreasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2^2)=x_2^2=f(x_2)$.
 
-However, on the interval $(-2,2)$ the function is neither increasing, nor decreasing. Indeed, we have $-1$ and $0$ are numbers in this interval with $-1<0$ and we have $f(-1)=1>0=f(0)$, so $f$ is not increasing on this interval. On the other hand, $0$ and $1$ are also numbers in this interval and they have $0<1$ and $f(0)=0<1=f(1)$, so $f$ is not decreasing on this interval.
+However, on the interval $(-2,2)$ the function is neither nondecreasing, nor nonincreasing. Indeed, we have $-1$ and $0$ are numbers in this interval with $-1<0$ and we have $f(-1)=1>0=f(0)$, so $f$ is not nondecreasing on this interval. On the other hand, $0$ and $1$ are also numbers in this interval and they have $0<1$ and $f(0)=0<1=f(1)$, so $f$ is not nonincreasing on this interval.
 
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:PropertiesFunctions:IncreasingDecreasingFlat
+:label: Ex:PropertiesFunctions:increasingdecreasingFlat
 
 Consider the piecewise defined function
 
@@ -254,49 +257,51 @@ $$
 
 The graph of this function is shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-IncreasingDecreasingFlat.png
-:name: Fig:PropertiesFunctions:IncreasingDecreasingFlat
+:::{figure} Images/Fig-PropertiesFunctions-increasingdecreasingFlat.png
+:name: Fig:PropertiesFunctions:increasingdecreasingFlat
 
 The graph of the function $k$.
 :::
 
 :::{todo}
-Replace {numref}`Fig:PropertiesFunctions:IncreasingDecreasingFlat` with an applet.
+Replace {numref}`Fig:PropertiesFunctions:increasingdecreasingFlat` with an applet.
 :::
 
-From the graph of the function, we see that the function is definitely increasing on the intervals $(-\infty,0)$ and $(1,\infty)$, but what about the interval $[0,1]$? The graph of the function is horizontal there, so it does not seem to "grow" on this interval. Still, according to the definition that we used, the function is increasing on this interval. Indeed, for any $0<t_1<t_2<1$ we have $k(t_1)=2\leq 2=k(t_2)$. We conclude that the function is indeed increasing on this interval. Moreover, it is also decreasing on the same interval as for any $0<t_1<t_2<1$ we have $k(t_1)=2\geq 2=k(t_2)$. In general, a function is both increasing and decreasing on a certain interval precisely when it is constant on that interval.
+From the graph of the function, we see that the function is definitely nondecreasing on the intervals $(-\infty,0)$ and $(1,\infty)$, but what about the interval $[0,1]$? The graph of the function is horizontal there, so it does not seem to "grow" on this interval. Still, according to the definition that we used, the function is nondecreasing on this interval. Indeed, for any $0<t_1<t_2<1$ we have $k(t_1)=2\leq 2=k(t_2)$. We conclude that the function is indeed nondecreasing on this interval. Moreover, it is also nonincreasing on the same interval as for any $0<t_1<t_2<1$ we have $k(t_1)=2\geq 2=k(t_2)$. In general, a function is both nondecreasing and nonincreasing on a certain interval precisely when it is constant on that interval.
 
-In fact, the function is increasing on its entire domain. Indeed, we already know that it is increasing on each of the intervals $(-\infty,0)$, $[0,1]$ and $(1,\infty)$. So we only need to consider what happens if we have two values of $t$ that are in different intervals. First consider $t_1$ in $(-\infty,0)$ and $t_2$ in $[0,1]$. Then $t_1<0$, so $k(t_1)=t-3\leq -3<2=k(t_2)$. Similarly if $t_1$ is in $[0,1]$ and $t_2$ is in $(1,\infty)$ then $t_2>1$, so we find $k(t_2)=t+4>5>2=k(t_1)$. Finally, if $t_1$ is in $(-\infty,0)$ and $t_2$ is in $(1,\infty)$, then $t_1<t_2$, so we must have $k(t_1)=t_1-3<t_2-3<t_2+4=k(t_2)$. We find that $k$ is increasing on its entire domain.
+In fact, the function is nondecreasing on its entire domain. Indeed, we already know that it is nondecreasing on each of the intervals $(-\infty,0)$, $[0,1]$ and $(1,\infty)$. So we only need to consider what happens if we have two values of $t$ that are in different intervals. First consider $t_1$ in $(-\infty,0)$ and $t_2$ in $[0,1]$. Then $t_1<0$, so $k(t_1)=t-3\leq -3<2=k(t_2)$. Similarly if $t_1$ is in $[0,1]$ and $t_2$ is in $(1,\infty)$ then $t_2>1$, so we find $k(t_2)=t+4>5>2=k(t_1)$. Finally, if $t_1$ is in $(-\infty,0)$ and $t_2$ is in $(1,\infty)$, then $t_1<t_2$, so we must have $k(t_1)=t_1-3<t_2-3<t_2+4=k(t_2)$. We find that $k$ is nondecreasing on its entire domain.
 
 ::::::
 
-In {prf:ref}`Ex:PropertiesFunctions:IncreasingDecreasingFlat` we saw that a constant function is both increasing and decreasing. Sometimes, we want to specifically look at functions that actually grow or decay. For this, we adopt some new terminology.
+In {prf:ref}`Ex:PropertiesFunctions:increasingdecreasingFlat` we saw that a constant function is both nondecreasing and nonincreasing. Sometimes, we want to specifically look at functions that actually grow or decay. For this, we adopt some new terminology.
 
 ::::::{prf:definition} 
-:label: Def:PropertiesFunctions:StrictlyIncreasingDecreasing
+:label: Def:PropertiesFunctions:Strictlyincreasingdecreasing
 
 Let $f$ be a function and $(a,b)$ be an interval that is contained in the domain of $f$. Then we say that $f$ is **strictly increasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)< f(x_2)$. Similarly, we say that $f$ is **strictly decreasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)> f(x_2)$.
 
+
+A function that is either strictly increasing or strictly decreasing on an interval, is called **strictly monotonic** on that interval.
 ::::::
 
-In particular, constant functions are increasing and decreasing, but neither strictly increasing nor strictly decreasing.
+In particular, constant functions are nondecreasing and nonincreasing, but neither strictly increasing nor strictly decreasing.
 
 ::::::{warning} 
-:name: Warning:PropertiesFunctions:StrictlyIncreasingDecreasing
+:name: Warning:PropertiesFunctions:Strictlyincreasingdecreasing
 
-In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those texts, constant functions are neither increasing nor decreasing). Usually, the terms **non-decreasing** and **non-increasing** are then used for what we call increasing and decreasing. We will stick to the terms used in this section, but be aware of this when you read other literature.
+In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those texts, constant functions are neither increasing nor decreasing). In other literature, the terminology increasing and decreasing is used for what we call nondecreasing and nonincreasing. This makes the terms increasing and decreasing ambiguous, and we will not use these terms. Be aware of this when you read other literature.
 ::::::
 
-Showing that a function is increasing or decreasing can be tricky in practice. In {numref}`Chapter:Differentiation` we will learn a more efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
+Showing that a function is nondecreasing or nonincreasing can be tricky in practice. In {numref}`Chapter:Differentiation` we will learn a more efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
 
 ::::::{prf:theorem} 
-:label: Thm:PropertiesFunctions:ExpIncreaseDecrease
+:label: Thm:PropertiesFunctions:Expnondecreasenonincrease
 
-Let $a>0$ and consider the exponential function $f(x)=a^x$. If $0<a<1$, the function $f$ is strictly decreasing on $\mathbb{R}$. If $a>1$, the function $f$ is strictly increasing on $\mathbb{R}$. If $a=1$, the function $f$ is constant, and, therefore, both increasing and decreasing on $\mathbb{R}$.
+Let $a>0$ and consider the exponential function $f(x)=a^x$. If $0<a<1$, the function $f$ is strictly decreasing on $\mathbb{R}$. If $a>1$, the function $f$ is strictly increasing on $\mathbb{R}$. If $a=1$, the function $f$ is constant, and, therefore, both nondecreasing and nonincreasing on $\mathbb{R}$.
 
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:ExpIncreaseDecrease`
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`
 :class: tudproof
 This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
 :::
@@ -518,9 +523,9 @@ $$
 
 which means that the hyperbolic tangent is odd.
 
-We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are increasing and decreasing. This will do in {numref}`Section:GraphsDerivatives`.
+We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are nondecreasing and nonincreasing. This will do in {numref}`Section:GraphsDerivatives`.
 
-By {prf:ref}`Thm:PropertiesFunctions:ExpIncreaseDecrease`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $g(x)=\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
+By {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $g(x)=\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
 
 The final property follows from the definition of the hyperbolic cosine and sine functions, which gives that
 

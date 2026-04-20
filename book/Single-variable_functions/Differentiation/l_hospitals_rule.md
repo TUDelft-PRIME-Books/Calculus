@@ -68,19 +68,70 @@ If you ask a student what their favorite rule is to evaluate limits, most studen
 
 ## Indeterminate forms and l'Hospital's rule
 
-There are various reasons why it takes effort to evaluate a limit. For instance, we might we dealing with a fraction where both the numerator and denominator approach $0$, or one where they both approach $\infty$. In order to better help us distinguish between these general categories of limits, we will give them names. For instance, a limit of the form
+There are various reasons why it takes effort to evaluate a limit. For instance, we might we dealing with a fraction where both the numerator and denominator approach $0$, or one where they both approach $\infty$. In order to better help us distinguish between these general categories of limits, we will give them names. 
+
+::::::{prf:definition}
+:label: Def:lHospital:Indeterminateform
+A limit of the form
 
 $$
  \lim_{x\rightarrow a}\frac{f(x)}{g(x)}
 $$
 
-with $\displaystyle\lim_{x\rightarrow a}f(x)=\lim_{x\rightarrow a}g(x)=0$ is called an **indeterminate form of type** $\dfrac{0}{0}$. Similarly, a limit of the form 
+with $\displaystyle\lim_{x\rightarrow a}f(x)=\lim_{x\rightarrow a}g(x)=0$ is called an **indeterminate form of type** $\dfrac{0}{0}$. 
+
+A limit of the form 
 
 $$
  \lim_{x\rightarrow a}\frac{f(x)}{g(x)}
 $$
 
-with $\displaystyle\lim_{x\rightarrow a}f(x)=\infty$ and $\displaystyle\lim_{x\rightarrow a}g(x)=-\infty$ is called an **indeterminate form of type** $\dfrac{\infty}{-\infty}$. In general, an indeterminate form is a type of limit involving a combination of two or more functions (such as a difference or a quotient) where knowing the limits of the separate functions is not enough to find the limit of the combination. Other types of indeterminate forms include $0\cdot \infty$, $\infty-\infty$, $1^\infty$, $\infty^0$ and $0^0$. For these limits, techniques like cancelling the common factor, the square root trick and, of course, l'Hospital's rule can sometimes be used to turn the limit into something that can be evaluated directly. In this section, we will consider examples of many of these indeterminate forms. Many, but definitely not all, can be solve using l'Hospital's rule.
+with $\displaystyle\lim_{x\rightarrow a}f(x)=\infty$ and $\displaystyle\lim_{x\rightarrow a}g(x)=\infty$ is called an **indeterminate form of type** $\dfrac{\infty}{\infty}$. In a similar way, we can define an **indeterminate form of type** $\dfrac{-\infty}{\infty}$, $\dfrac{\infty}{-\infty}$ or $\dfrac{-\infty}{-\infty}$.
+
+A limit of the form 
+
+$$
+ \lim_{x\rightarrow a}f(x)g(x)
+$$
+
+with $\displaystyle\lim_{x\rightarrow a}f(x)=0$ and $\displaystyle\lim_{x\rightarrow a}g(x)=-\infty$ is called an **indeterminate form of type** $0\cdot \infty$.
+
+A limit of the form 
+
+$$
+ \lim_{x\rightarrow a}f(x)-g(x)
+$$
+
+with $\displaystyle\lim_{x\rightarrow a}f(x)=\infty$ and $\displaystyle\lim_{x\rightarrow a}g(x)=\infty$ is called an **indeterminate form of type** $\infty-\infty$. 
+
+A limit of the form 
+
+$$
+ \lim_{x\rightarrow a}\left(f(x)\right)^{g(x)}
+$$
+
+with $\displaystyle\lim_{x\rightarrow a}f(x)=1$ and $\displaystyle\lim_{x\rightarrow a}g(x)=\infty$ is called an **indeterminate form of type** $1^\infty$. In a similar way, we can define an **indeterminate form** of type $1^{-\infty}$.
+
+A limit of the form 
+
+$$
+ \lim_{x\rightarrow a}\left(f(x)\right)^{g(x)}
+$$
+
+with $\displaystyle\lim_{x\rightarrow a}f(x)=\infty$ and $\displaystyle\lim_{x\rightarrow a}g(x)=0$ is called an **indeterminate form of type** $\infty^0$.
+
+A limit of the form 
+
+$$
+ \lim_{x\rightarrow a}\left(f(x)\right)^{g(x)}
+$$
+
+with $\displaystyle\lim_{x\rightarrow a}f(x)=0$ and $\displaystyle\lim_{x\rightarrow a}g(x)=0$ is called an **indeterminate form of type** $0^0$.
+
+This terminology also applies to left limits, right limits and limits at plus or minus infinity.
+::::::
+
+In general, an indeterminate form is a type of limit involving a combination of two or more functions (such as a difference or a quotient) where knowing the limits of the separate functions is not enough to find the limit of the combination. For these limits, techniques like cancelling the common factor, the square root trick and, of course, l'Hospital's rule can sometimes be used to turn the limit into something that can be evaluated directly. In this section, we will consider examples of many of these indeterminate forms. Many, but definitely not all, can be solve using l'Hospital's rule.
 
 So without further ado, let us state this rule.
 
@@ -187,7 +238,7 @@ $$
  \lim_{x\rightarrow 0}\frac{f'(x)}{g'(x)}=\lim_{x\rightarrow 0}\frac{-\sin(x)}{2x}.
 $$
 
-[^FootnotePrevEx]: This limit is a constant multiple of the one in {prf:ref}`Ex:lHospital:lHospital1`, so we, actually, do know its value. For the sake of the argument, we now pretend that we do not know this result.
+[^FootnotePrevEx]: This limit is a constant multiple of the one in {prf:ref}`Ex:lHospital:lHospital1`, so, actually, we do know its value. For the sake of the argument, we now pretend that we do not know this result.
 
 However, we now run into an issue, since this again an indeterminate form of type $\dfrac{0}{0}$, so we do not know if the limit exists[^FootnotePrevEx]. For this, we will again use l'Hospital's rule. Since $f'$ and $g'$ are differentiable, we can check the limit of the quotient of their derivatives by evaluating
 
@@ -270,7 +321,7 @@ $$
  \lim_{x\rightarrow c}m(x)=\lim_{x\rightarrow c}\frac{f'(x)}{g'(x)}=\lim_{x\rightarrow c}M(x).
 $$
 
-This can be seen as follows. Since $m$ is an increasing function and $M$ is a decreasing function, the limits $\displaystyle \lim_{x\rightarrow c}m(x)$ and $\displaystyle \lim_{x\rightarrow c}M(x)$ must either exist or be equal to $\pm\infty$. For any $x$ we have 
+This can be seen as follows. Since $m$ is a nondecreasing function and $M$ is a nonincreasing function, the limits $\displaystyle \lim_{x\rightarrow c}m(x)$ and $\displaystyle \lim_{x\rightarrow c}M(x)$ must either exist or be equal to $\pm\infty$. For any $x$ we have 
 
 $$
  m(x)\leq \frac{f'(x)}{g'(x)}\leq M(x),
@@ -485,7 +536,7 @@ $$
 We conclude that $g$ grows faster than $h$.
 :::
 
-Let us now see how this version of l'Hospital's rule is used in practice.
+Let us now see how the version of l'Hospital's rule at infinity is used in practice.
 
 ::::::{prf:example} 
 :label: Ex:lHospital:lHospitalinf
@@ -513,7 +564,6 @@ $$
  \lim_{x\rightarrow \infty}\frac{\ln\left(x^3+1\right)}{\ln\left(x^2+1\right)}=\lim_{x\rightarrow \infty}\frac{f(x)}{g(x)}=\lim_{x\rightarrow \infty}\frac{f'(x)}{g'(x)}=\frac{3}{2}.
 $$
 
-This is also the result we obtained in {numref}`Subsec:lHospitalintro`.
 
 ::::::
 
@@ -803,7 +853,7 @@ $$
  \lim_{x\rightarrow 1^+}\left(\frac{1}{x}\right)^{\frac{1}{x-1}}.
 $$
 
-[^Footnote1inf]: For this particular type of indeterminate form, some students have an issue believing that there is even a problem here, since $1$ to the power something is always $1$, right? That is the case, but that no longer holds when I am taking a high power of something that is close, but unequal to $1$. For instance, we have $0.9999999^{1000000000}=3.72\times 10^{-44}$, which is a smaller number than the [Planck constant](https://en.wikipedia.org/wiki/Planck_constant) in standard units. Also, we have $1.0000001^{10000000000}=1.97\times 10^{434}$, which is a larger number than the number of atoms in the observable universe. The point here is that these type of limits can go anywhere between $0$ and $\infty$ (including $\infty$).
+[^Footnote1inf]: For this particular type of indeterminate form, some students have an issue believing that there is even a problem here, since $1$ to the power something is always $1$, right? That is the case, but that no longer holds when I am taking a high power of something that is close, but unequal to $1$. For instance, we have $0.9999999^{1000000000}=3.72\times 10^{-44}$, which is a smaller number than the [Planck constant](https://en.wikipedia.org/wiki/Planck_constant) in standard units. Also, we have $1.0000001^{10000000000}=1.97\times 10^{434}$, which is a larger number than the number of atoms in the observable universe. The point here is that these type of limits can go anywhere between $0$ and $\infty$ (including $0$ or $\infty$).
 
 Then we have $\displaystyle\lim_{x\rightarrow 1^+} \frac{1}{x}=1$ and $\displaystyle\lim_{x\rightarrow 1^+}\frac{1}{x-1}=\infty$, so we are dealing with an indeterminate form of the type $1^\infty$[^Footnote1inf]. Using the trick described above, we rewrite this limit into
 
