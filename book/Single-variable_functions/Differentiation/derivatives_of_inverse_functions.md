@@ -374,7 +374,7 @@ $$
 
 Note that the derivative is not continuous in $0$. Indeed, with the squeeze theorem we do have $\displaystyle \lim_{x\rightarrow 0}-1+8x\sin\left(\frac{1}{x}\right)=-1$, but the limit $\displaystyle \lim_{x\rightarrow 0}-4\cos\left(\frac{1}{x}\right)$ does not exist as the cosine keeps oscillating between $-4$ and $4$. 
 
-The function $f$ is also not invertible in any interval that contains $0$. Indeed, the derivative $f'(x)=-1+2x\sin\left(\frac{1}{x}\right)-4\cos\left(\frac{1}{x}\right)$ will both take on positive and negative values on any interval that contains $0$, as $-4\cos\left(\frac{1}{x}\right)$ keeps on oscillating between $-4$ and $4$, while $-1+2x\sin\left(\frac{1}{x}\right)$ approaches $-1$ as $x\rightarrow 0$. So the function $f$ will alternate between increasing and decreasing on any such interval, which means that it cannot be invertible there.
+The function $f$ is also not invertible in any interval that contains $0$. Indeed, the derivative $f'(x)=-1+2x\sin\left(\frac{1}{x}\right)-4\cos\left(\frac{1}{x}\right)$ will both take on positive and negative values on any interval that contains $0$, as $-4\cos\left(\frac{1}{x}\right)$ keeps on oscillating between $-4$ and $4$, while $-1+2x\sin\left(\frac{1}{x}\right)$ approaches $-1$ as $x\rightarrow 0$. So the function $f$ will alternate between strictly increasing and strictly decreasing on any such interval, which means that it cannot be invertible there.
 
 :::{figure} Images/Fig-Diffinverse-IFT2.png
 :name: Fig:Diffinverse:IFT2
