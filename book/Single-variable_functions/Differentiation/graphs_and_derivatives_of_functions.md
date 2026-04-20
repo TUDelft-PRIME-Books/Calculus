@@ -339,15 +339,15 @@ Replace {numref}`Fig:Graphsderivatives:MVT3` with an applet. Make sure no vertic
 
 ## Increasing and decreasing functions
 
-One of the main features of derivatives is that they can be used to establish on which intervals a function is increasing and on which intervals it is decreasing. We defined what it means for a function to be increasing or decreasing on an interval in {numref}`Subsec:PropertiesFunctionsIncreasingDecreasing`, but we saw there that without derivatives it is very hard to establish these properties. So how can we use the derivative? Intuitively speaking, if a function is increasing on an interval, then at any point on this interval the function values must grow. So if we consider the tangent line at such a point, we would expect a line with a positive slope. Similarly, we would expect a tangent line with a negative slope on an interval where the function is decreasing. We can make this precise in the following way.
+One of the main features of derivatives is that they can be used to establish on which intervals a function is nondecreasing and on which intervals it is nonincreasing. We defined what it means for a function to be nondecreasing or nonincreasing on an interval in {numref}`Subsec:PropertiesFunctionsIncreasingDecreasing`, but we saw there that without derivatives it is very hard to establish these properties. So how can we use the derivative? Intuitively speaking, if a function is nondecreasing on an interval, then at any point on this interval the function values must grow. So if we consider the tangent line at such a point, we would expect a line with a nonnegative slope. Similarly, we would expect a tangent line with a nonpositive slope on an interval where the function is nonincreasing. We can make this precise in the following way.
 
 
 ::::::{prf:theorem} 
 :label: Thm:Graphsderivatives:Increasingdecreasing
 Let $f$ be a differentiable function.
 
-- $f$ is increasing on an interval precisely when $f'(x)\geq 0$ on that interval.
-- $f$ is decreasing on an interval precisely when $f'(x)\leq 0$ on that interval.
+- $f$ is nondecreasing on an interval precisely when $f'(x)\geq 0$ on that interval.
+- $f$ is nonincreasing on an interval precisely when $f'(x)\leq 0$ on that interval.
 - If $f'(x)> 0$ on an interval, then $f$ is strictly increasing on that interval.
 - If $f'(x)< 0$ on an interval, then $f$ is strictly decreasing on that interval.
 
@@ -361,9 +361,9 @@ $$
  f'(c)=\frac{f(b)-f(a)}{b-a}.
 $$
 
-By assumption, we have $f'(c)\geq 0$, so we find that $\dfrac{f(b)-f(a)}{b-a}\geq 0$. Since $a<b$, this can only happen if $f(a)\leq f(b)$. So we find that $f$ is increasing on this interval.
+By assumption, we have $f'(c)\geq 0$, so we find that $\dfrac{f(b)-f(a)}{b-a}\geq 0$. Since $a<b$, this can only happen if $f(a)\leq f(b)$. So we find that $f$ is nondecreasing on this interval.
 
-Now suppose that $f$ is increasing on an interval. Consider any point $x$ in that interval. Then for any $h>0$ for which $x+h$ is in the interval we have $f(x+h)\geq f(x)$. As such, we must have
+Now suppose that $f$ is nondecreasing on an interval. Consider any point $x$ in that interval. Then for any $h>0$ for which $x+h$ is in the interval we have $f(x+h)\geq f(x)$. As such, we must have
 
 $$
  \frac{f(x+h)-f(x)}{h}\geq 0.
@@ -392,7 +392,7 @@ A function $f$ can be strictly increasing on an interval even if its derivative 
 
 ::::::{prf:example} 
 :label: Ex:Graphsderivatives:Increasingdecreasing1
-Consider the function $f(x)=-2x^3-3x^2+12x+3$ and suppose we want to know on which intervals the function is increasing and on which intervals it is decreasing. For this, we evaluate the derivative, which is given by
+Consider the function $f(x)=-2x^3-3x^2+12x+3$ and suppose we want to know on which intervals the function is nondecreasing and on which intervals it is nonincreasing. For this, we evaluate the derivative, which is given by
 
 $$
  f'(x)=-6x^2-6x+12.
@@ -437,7 +437,7 @@ On the left the graphs of the functions $f(x)=\sin\left(\frac{\pi}{2}x\right)$ a
 Replace {numref}`Fig:Graphsderivatives:Intro` with an applet. Maybe nice if you can slide the point $(x,0)$ and see the corresponding points on the graphs of $f$ and $g$ and their derivatives.
 :::
 
-We can see this behaviour back in the derivatives of these functions. If we look at the graphs of the derivatives of these functions, we see that the function $f'$ is decreasing, while the function $g'$ is increasing. This matches the behaviour that we observed in the original function. Indeed, the fact that the function $f'$ is decreasing, means that the slope of the original function get lower so that it grows slower. On the other hand, the function $g'$ is increasing, so the slope of the function $g$ increases as well, which means that the function grows quicker. So how can we establish that $f'$ decreases and $g'$ increases? The same way you would do that for any other function: you take a look whether the derivative is positive or negative. This means that in order to distinguish between the behaviour of the functions $f$ and $g$, we should take a look at the derivatives of their derivatives, so at their second derivatives. 
+We can see this behaviour back in the derivatives of these functions. If we look at the graphs of the derivatives of these functions, we see that the function $f'$ is strictly decreasing, while the function $g'$ is strictly increasing. This matches the behaviour that we observed in the original function. Indeed, the fact that the function $f'$ is strictly decreasing, means that the slope of the original function get lower so that it grows slower. On the other hand, the function $g'$ is strictly increasing, so the slope of the function $g$ strictly increases as well, which means that the function grows quicker. So how can we establish that $f'$ strictly decreases and $g'$ strictly increases? The same way you would do that for any other function: you take a look whether the derivative is positive or negative. This means that in order to distinguish between the behaviour of the functions $f$ and $g$, we should take a look at the derivatives of their derivatives, so at their second derivatives. 
 
 Let us first give these concepts a name and then we will see how we can use the second derivative to establish the right behaviour.
 
@@ -637,7 +637,7 @@ $$
  f'(c)=\frac{f(b)-f(a)}{b-a}.
 $$
 
-Since $f''(x)\geq 0$ for all $x$, it follows from {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing` that $f'$ is increasing on $I$. Hence, we find that 
+Since $f''(x)\geq 0$ for all $x$, it follows from {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing` that $f'$ is nondecreasing on $I$. Hence, we find that 
 
 $$
  f'(a)\leq f'(c).
@@ -657,7 +657,7 @@ $$
 
 Then we obtain that $f$ must be convex by {prf:ref}`Thm:Graphsderivatives:Concavitytangent`.
 
-Now suppose that $f$ is convex on an interval $I$. We will show that $f''(x)\geq 0$ on $I$ by showing that $f''$ is increasing on $I$ and then using {prf:ref}`Thm:Graphsderivatives:Concavitytangent`. Let $a<b$ be two distinct points in $I$. Consider any point $a<p<b$. Write $t=\frac{b-p}{b-a}$. Since $a<p<b$, we must have $0<t<1$. Note, in addition, that 
+Now suppose that $f$ is convex on an interval $I$. We will show that $f''(x)\geq 0$ on $I$ by showing that $f'$ is nondecreasing on $I$ and then using {prf:ref}`Thm:Graphsderivatives:Concavitytangent`. Let $a<b$ be two distinct points in $I$. Consider any point $a<p<b$. Write $t=\frac{b-p}{b-a}$. Since $a<p<b$, we must have $0<t<1$. Note, in addition, that 
 
 $$
  1-t=1-\frac{b-p}{b-a}=\frac{p-a}{b-a}
@@ -732,7 +732,7 @@ $$
  f'(a)\leq \frac{f(b)-f(a)}{b-a}\leq f'(b).
 $$
 
-This means that $f'$ is increasing, so by {prf:ref}`Thm:Graphsderivatives:Concavitytangent` we must have $f''(x)\geq 0$ on $I$, as desired.
+This means that $f'$ is nondecreasing, so by {prf:ref}`Thm:Graphsderivatives:Concavitytangent` we must have $f''(x)\geq 0$ on $I$, as desired.
 
 The other cases follow similarly.
 :::
@@ -741,14 +741,14 @@ The other cases follow similarly.
 A function $f$ can be strictly convex on an interval even if its second derivative is $0$ somewhere. For instance, consider the function $f(x)=x^4$. Then $f''(x)=12x^2$, which is $0$ at $x=0$. Still, this function is strictly convex on $\mathbb{R}$, which can be seen from the graph of the function.
 :::
 
-As a consequence, we can also check for convexity by checking whether the derivative is increasing or decreasing. In fact, we already used this in the proof of {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv`.
+As a consequence, we can also check for convexity by checking whether the derivative is nondecreasing or nonincreasing. In fact, we already used this in the proof of {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv`.
 
 ::::::{prf:theorem} 
 :label: Thm:Graphsderivatives:Concaveseconddiv
 Let $f$ be a twice differentiable function. 
 
-- $f$ is convex on an interval precisely when $f'$ is increasing on that interval.
-- $f$ is concave on an interval precisely when $f'$ is decreasing on that interval.
+- $f$ is convex on an interval precisely when $f'$ is nondecreasing on that interval.
+- $f$ is concave on an interval precisely when $f'$ is nonincreasing on that interval.
 - If $f'$ is strictly increasing on an interval, then $f$ is strictly convex on that interval.
 - If $f'$ is strictly decreasing on an interval, then $f$ is strictly concave on that interval.
 

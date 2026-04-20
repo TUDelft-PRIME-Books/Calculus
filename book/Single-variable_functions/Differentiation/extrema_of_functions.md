@@ -32,7 +32,7 @@ $$
  A(w)=w\ell=w\left(200-w\right).
 $$
 
-So how should we continue from here? From {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing` we know that a function is increasing when the derivative is positive and decreasing when it is negative. So we evaluate the derivative of $A$ to obtain
+So how should we continue from here? From {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing` we know that a function is nondecreasing when the derivative is positive and nonincreasing when it is negative. So we evaluate the derivative of $A$ to obtain
 
 $$
  \frac{dA}{dw}=200-2w.
@@ -211,9 +211,9 @@ $$
 
 We find that $f'(x)=0$ only for $x=-1$, so $-1$ is another critical point of $f$.
 
-We conclude that $f$ has three critical points: $-1$, $0$ and $1$. So how would we find out if $f$ has a local extremum in any of these points? One way to do this, is to note that $f'(x)>0$ for $x<-1$, while $f'(x)<0$ for $-1<x<0$. This means that the function increases on the interval $(-\infty,-1)$, while it decreases on the interval $(-1,0)$. Since $f$ is continuous in $-1$, this can only happen if $f(-1)\geq f(x)$ for all $x$ in $(-\infty,0)$. So $f$ has a local maximum in $-1$. 
+We conclude that $f$ has three critical points: $-1$, $0$ and $1$. So how would we find out if $f$ has a local extremum in any of these points? One way to do this, is to note that $f'(x)>0$ for $x<-1$, while $f'(x)<0$ for $-1<x<0$. This means that the function strictly increases on the interval $(-\infty,-1)$, while it strictly decreases on the interval $(-1,0)$. Since $f$ is continuous in $-1$, this can only happen if $f(-1)\geq f(x)$ for all $x$ in $(-\infty,0)$. So $f$ has a local maximum in $-1$. 
 
-Similarly, we find that $f'(x)>0$ for $0<x<1$ and $f'(x)<0$ for $x>1$. This means that $f$ is increasing on the interval $(0,1)$ and decreasing on $(1,\infty)$. Using a similar reasoning, this means that $f$ has a local minimum in $0$ and a local maximum in $1$.
+Similarly, we find that $f'(x)>0$ for $0<x<1$ and $f'(x)<0$ for $x>1$. This means that $f$ is strictly increasing on the interval $(0,1)$ and strictly decreasing on $(1,\infty)$. Using a similar reasoning, this means that $f$ has a local minimum in $0$ and a local maximum in $1$.
 
 {numref}`Fig:MinMax:Critical` shows the graph of the function $f$ and indicates the points where the function has a local extremum.
 
@@ -260,7 +260,7 @@ Now you can read the proof of {prf:ref}`Thm:MinMax:Firstdertest`.
 
 :::{admonition} Proof of {prf:ref}`Thm:MinMax:Firstdertest`
 :class: tudproof, dropdown
-Let $I=(a,b)$ be an open interval that contains $c$ and suppose $f'(x)\leq 0$ for $x$ in $I$ with $x<c$ and $f'(x)\geq 0$ for $x$ in $I$ with $x>c$. We will show that $f(c)$ is a local minimum of $f$. For this, we first show that $f$ is decreasing on $(a,c]$ (so including at the point $c$). On account of {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`, the function $f$ is decreasing on $(a,c)$. We argue by contradiction and assume that we can find $d$ in $(a,c)$ with $f(d)<f(c)$. Since $f$ is decreasing on $[d,c)$, we must have
+Let $I=(a,b)$ be an open interval that contains $c$ and suppose $f'(x)\leq 0$ for $x$ in $I$ with $x<c$ and $f'(x)\geq 0$ for $x$ in $I$ with $x>c$. We will show that $f(c)$ is a local minimum of $f$. For this, we first show that $f$ is nonincreasing on $(a,c]$ (so including at the point $c$). On account of {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`, the function $f$ is nonincreasing on $(a,c)$. We argue by contradiction and assume that we can find $d$ in $(a,c)$ with $f(d)<f(c)$. Since $f$ is nonincreasing on $[d,c)$, we must have
 
 $$
  f(x)\leq f(d)<f(c)
@@ -286,7 +286,7 @@ $$
 
 for all $x$ in $I$ with $x\leq c$. 
 
-Now we show that $f$ is increasing on $[c,b)$. {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing` gives that the function $f$ is increasing on $(c,b)$. We again argue by contradiction and assume that we can find $d$ in $(c,b)$ with $f(d)<f(c)$. Then $f$ is increasing on $(c,d)$, so we must have
+Now we show that $f$ is nondecreasing on $[c,b)$. {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing` gives that the function $f$ is nondecreasing on $(c,b)$. We again argue by contradiction and assume that we can find $d$ in $(c,b)$ with $f(d)<f(c)$. Then $f$ is nondecreasing on $(c,d)$, so we must have
 
 $$
  f(x)\leq f(d)<f(c)
@@ -314,7 +314,7 @@ $$
 
 for $x$ near $c$. This means that $f(c)$ is a local maximal value of $f$.
 
-Now suppose that $f'(x)>0$ for all $x$ in $I$ with $x\neq c$. By the first part of the proof $f$ is increasing on $(a,c]$, so we have 
+Now suppose that $f'(x)>0$ for all $x$ in $I$ with $x\neq c$. By the first part of the proof $f$ is nondecreasing on $(a,c]$, so we have 
 
 $$
  f(x)\leq f(c)
@@ -398,7 +398,7 @@ width: 100%
 name: Fig:MinMax:Signchart
 class: dark-light
 ---
-A sign chart shows on which intervals the derivative is positive and on which it is negative.
+A sign chart shows on which intervals the derivative is positive and on which it is negative. Replace the words increasing and decreasing by strictly increasing and strictly decreasing.
 :::
 
 :::{todo}
@@ -554,7 +554,7 @@ Similarly, we say that $f$ has a **global minimum** at $c$, or that $f(c)$ is th
 A **global extremum** or **global extreme value** is a global maximum or a global minimum.
 ::::::
 
-Global maxima and minima are sometimes called **absolute** maxima and minima. We however have opted for the term global maximum and global minimum, since the term absolute can cause confusion with the absolute value function.
+Global maxima and minima are sometimes called **absolute** maxima and minima. We have opted for the term global maximum and global minimum, since the term absolute can cause confusion with the absolute value function.
 
 {numref}`Fig:MinMax:GlobExtr` shows a graph of a function with some local and global extrema. This function attains its global minimum value in $a$. It does not attain a local minimum there, since $a$ is on the boundary of the domain. It attains its global maximum in $b$, which is also a local maximum. It has a local minimum in $c$. The point $d$ is neither a local nor a global extremum.
 
