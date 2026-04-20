@@ -468,7 +468,7 @@ Consider the function $h(x)=\sqrt{x}$ with domain $[0,\infty)$ and codomain $\ma
 
 ## Logarithms
 
-In {numref}`Section:FunctionsIntro` we considered functions of the form $f(x)=b^x$ for $b\geq 0$. In {prf:ref}`Thm:PropertiesFunctions:ExpIncreaseDecrease` we saw that such a function is strictly decreasing for $0<b<1$, while it is strictly increasing for $b>1$. From {prf:ref}`Thm:Inverse:MonotonicOnetoone` we find that for these values of $b$ the function $f(x)=b^x$ is invertible.
+In {numref}`Section:FunctionsIntro` we considered functions of the form $f(x)=b^x$ for $b\geq 0$. In {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease` we saw that such a function is strictly decreasing for $0<b<1$, while it is strictly increasing for $b>1$. From {prf:ref}`Thm:Inverse:MonotonicOnetoone` we find that for these values of $b$ the function $f(x)=b^x$ is invertible.
 
 ::::::{prf:definition}
 :label: Thm:Inverse:Logarithm
