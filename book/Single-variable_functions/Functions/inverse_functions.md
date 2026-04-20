@@ -124,16 +124,12 @@ So the cancelling equations indeed hold and we reaffirm that $g$ is the inverse 
 
 In the graphs of the functions $f$ and $f^{-1}$ shown below, we see that the graph of $f^{-1}$ can be obtained by reflecting the graph of $f$ along the line $y=x$, as we expected from {prf:ref}`Thm:Inverse:Graphinverse`.
 
-::::{figure} Images/Fig-Inverse-FirstEx.png
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_linear_function
 :name: Fig:Inverse:FirstEx
 :class: dark-light
 
 The functions $f$, $f^{-1}$ and the line $y=x$.
-
-::::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:FirstEx` with applet `calculus/inverse_functions/reflection_of_linear_function`.
 :::
 
 ::::::
@@ -200,16 +196,13 @@ $$
 
 Note that we switched the order from $g\circ f$ to $f^{-1}\circ g^{-1}$ when finding the inverse function, since we do not want to tear our socks by trying to take them off before taking off our shoes.
 
-:::{figure} Images/Fig-Inverse-SocksshoesEx.png
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_composite_function
 :name: Fig:Inverse:SocksshoesEx
+:class: dark-light
 
 The graphs of the functions $g\circ f$ and $(g\circ f)^{-1}$ with the line $y=x$.
 :::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:SocksshoesEx` with applet `calculus/inverse_functions/reflection_of_composite_function`.
-:::
-
 
 ::::::
 
@@ -238,16 +231,12 @@ So $g$ cannot be the inverse of $f$. The other choice for $g$ does not fare any 
 
 We can also show this visually. Indeed, {prf:ref}`Thm:Inverse:Graphinverse` tells us that the graph of a potential inverse function can be obtained by reflecting the graph of $f$ along the line $x=y$. In the figure below, you see the graph of $f$ and the corresponding reflection. Note that the curve that we obtain this way can never be the graph of function. Indeed, for $x=4$ we see two corresponding values of $y$, namely $y=-2$ and $y=2$, which is not possible if this curve were the graph of a function (it fails the vertical line test {prf:ref}`Thm:Functions1var:VerticalLineTest`).
 
-::::{figure} Images/Fig-Inverse-SecondEx.png
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_quadratic_function
 :name: Fig:Inverse:SecondEx
 :class: dark-light
 
 The functions $f$, the line $y=x$ and the reflection of the graph of $f$ along the line $y=x$.
-
-::::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:SecondEx` with applet `calculus/inverse_functions/reflection_of_quadratic_function`.
 :::
 
 ::::::
@@ -300,18 +289,13 @@ No wait, that cannot be right, can it? In {prf:ref}`Ex:Inverse:SecondEx` we show
 
 Still, why does this difference in domain make that $h^{-1}$ is invertible, while $f$ is not? The reason why $f$ is not invertible is that it is not one-to-one, since for any $x\neq 0$ we have $f(x)=f(-x)$. However, since the domain of $h^{-1}$ does not contain any negative numbers, it does not run into this issue: for each $y$ there is at most one $x\geq 0$ with $x^2=y$. Indeed, the graph of the function $h^{-1}$ is only the right half of the parabola $y=x^2$, so each value of $y$ corresponds to at most one value of $x$. So the function $h^{-1}$ is one-to-one, which is the reason why it does have an inverse function.
 
-::::{figure} Images/Fig-Inverse-ThirdEx.png
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_square_root_function
 :name: Fig:Inverse:ThirdEx
 :class: dark-light
 
 The functions $h(x)=\sqrt{x}$ and $q(x)=x^2$ with their full domain, $h^{-1}(x)=x^2$ with domain $[0,\infty)$, and the line $x = y$. Note that we indeed obtain $x^2$ with domain $[0,\infty)$ by reflecting $\sqrt{x}$ along the line $x = y$.
-
-::::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:ThirdEx` with applet `calculus/inverse_functions/reflection_of_square_root_function`.
 :::
-
 
 ::::::
 
@@ -365,16 +349,12 @@ since $x\leq 2$ implies $|x-2|=2-x$. Similarly, we find for $y\geq -4$ that
 
 So indeed, the domain of $f^{-1}$ is the range of $f$ and both cancelling equations hold, which means that our answer must be correct.
 
-::::{figure} Images/Fig-Inverse-FourthEx.png
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_restricted_polynomial
 :name: Fig:Inverse:FourthEx
 :class: dark-light
 
 The functions $f$ and $f^{-1}$ and the line $x = y$. Note that we indeed obtain the graph of $f^{-1}$ by reflecting the graph of $f$ along the line $x = y$.
-
-::::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:FourthEx` with applet `calculus/inverse_functions/reflection_of_restricted_polynomial`.
 :::
 
 ::::::
@@ -401,89 +381,67 @@ The case when $f$ is strictly decreasing is similar.
 
 ::::::
 
-:::::{todo}
-**Polling question (multiselect?)**
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+
 Which of these functions is/are equal to its own inverse function?
-
-A. $f(x)=\pi-x$ with domain $\mathbb{R}$
-B. $f(x)=2x$ with domain $\mathbb{R}$
-C. $f(x)=\dfrac{1}{x}$ with domain $(0,\infty)$
-D. $f(x)=\dfrac{-1}{x}$ with domain $(0,\infty)$
-E. $f(x)=1$ with domain $\mathbb{R}$
-F. $f(x)=\sqrt{1-x^2}$ with domain $[0,1]$
-
-*Note*: a function which is its own inverse function is called a **self-inverse** function.
-
-::::{admonition} Solution
-
-The correct answers are A, C and F.
-
-For each of these functions, we will attempt to find an inverse function.
-
-A. The equation $y=\pi-x$ gives $x=\pi-y$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\pi-x$. In addition, the range of the original function $f$ is $\mathbb{R}$. So $f$ is its own inverse function.
-
-B. The equation $y=2x$ gives $x=\dfrac{y}{2}$. This means that this function is invertible, but its inverse is $f^{-1}(x)=\dfrac{x}{2}$. So this function is not its own inverse function.
-
-C. The equation $y=\dfrac{1}{x}$ gives $x=\dfrac{1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{1}{x}$. In addition, the range of the original function $f$ is $(0,\infty)$. So $f$ is its own inverse function.
-
-D. The equation $y=\dfrac{-1}{x}$ gives $x=\dfrac{-1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{-1}{x}$. However, the range of the original function is $(-\infty,0)$, which is the domain of the inverse function. So the inverse function is defined by the same formula as the original function, but their domains are different, so they are not the same functions.
-
-E. The equation $y=1$ cannot be solved for $x$. Indeed, the function $f$ is not one-to-one, as all values of $x$ are mapped to the same number $1$. So this function does not have an inverse function.
-
-F. The equation $y=\sqrt{1-x^2}$ gives $y^2=1-x^2$, which means $x=\pm\sqrt{1-y^2}$. Since the domain of the function in $[0,1]$, we know that any input $x$ is nonnegative, so we need the positive square root. So for $x$ in the domain of $f$ we have $y=\sqrt{1-x^2}$ precisely when $x=\sqrt{1-y^2}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\sqrt{1-x^2}$. In addition, the range of the original function $f$ is $[0,1]$. So $f$ is its own inverse function.
-
-:::{figure} Images/Fig-Inverse-Selfinverse-A.png
+---
+[x] $f(x)=\pi-x$ with domain $\mathbb{R}$.
+> The equation $y=\pi-x$ gives $x=\pi-y$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\pi-x$. In addition, the range of the original function $f$ is $\mathbb{R}$. So $f$ is its own inverse function.
+:::{applet}
+:url: calculus/inverse_functions/Polling_Question_A
 :name: Fig:Inverse:Selfinverse:A
-
+:class: dark-light
 The graph of the function $f(x)=\pi-x$ and the line $x=y$.
 :::
-
-:::{figure} Images/Fig-Inverse-Selfinverse-B.png
+[ ] $f(x)=2x$ with domain $\mathbb{R}$.
+> The equation $y=2x$ gives $x=\dfrac{y}{2}$. This means that this function is invertible, but its inverse is $f^{-1}(x)=\dfrac{x}{2}$. So this function is not its own inverse function.
+:::{applet}
+:url: calculus/inverse_functions/Polling_Question_B
 :name: Fig:Inverse:Selfinverse:B
-
-The graph of the function $f(x)=2x$ and the line $x=y$.
+:class: dark-light
+The graph of the function $f(x)=2x$, its reflection across the line $x=y$, and the line $x=y$.
 :::
-
-:::{figure} Images/Fig-Inverse-Selfinverse-C.png
+[x] $f(x)=\dfrac{1}{x}$ with domain $(0,\infty)$.
+> The equation $y=\dfrac{1}{x}$ gives $x=\dfrac{1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{1}{x}$. In addition, the range of the original function $f$ is $(0,\infty)$. So $f$ is its own inverse function.
+:::{applet}
+:url: calculus/inverse_functions/Polling_Question_C
 :name: Fig:Inverse:Selfinverse:C
-
-The graph of the function $f(x)=\frac{1}{x}$ on $(0,\infty)$ and the line $x=y$.
+:class: dark-light
+The graph of the function $f(x)=\dfrac{1}{x}$ on $(0,\infty)$ and the line $x=y$.
 :::
-
-:::{figure} Images/Fig-Inverse-Selfinverse-D.png
+[ ] $f(x)=\dfrac{-1}{x}$ with domain $(0,\infty)$.
+> The equation $y=\dfrac{-1}{x}$ gives $x=\dfrac{-1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{-1}{x}$. However, the range of the original function is $(-\infty,0)$, which is the domain of the inverse function. So the inverse function is defined by the same formula as the original function, but their domains are different, so they are not the same functions.
+:::{applet}
+:url: calculus/inverse_functions/Polling_Question_D
 :name: Fig:Inverse:Selfinverse:D
-
-The graph of the function $f(x)=\frac{-1}{x}$ on $(0,\infty)$ and the line $x=y$.
+:class: dark-light
+The graph of the function $f(x)=\dfrac{-1}{x}$ on $(0,\infty)$, its reflection across the line $x=y$, and the line $x=y$.
 :::
-
-:::{figure} Images/Fig-Inverse-Selfinverse-E.png
+[ ] $f(x)=1$ with domain $\mathbb{R}$.
+> The equation $y=1$ cannot be solved for $x$. Indeed, the function $f$ is not one-to-one, as all values of $x$ are mapped to the same number $1$. So this function does not have an inverse function.
+:::{applet}
+:url: calculus/inverse_functions/Polling_Question_E
 :name: Fig:Inverse:Selfinverse:E
-
-The graph of the function $f(x)=1$ and the line $x=y$.
+:class: dark-light
+The graph of the function $f(x)=1$, its reflection across the line $x=y$, and the line $x=y$.
 :::
-
-:::{figure} Images/Fig-Inverse-Selfinverse-F.png
+[x] $f(x)=\sqrt{1-x^2}$ with domain $[0,1]$.
+> The equation $y=\sqrt{1-x^2}$ gives $y^2=1-x^2$, which means $x=\pm\sqrt{1-y^2}$. Since the domain of the function in $[0,1]$, we know that any input $x$ is nonnegative, so we need the positive square root. So for $x$ in the domain of $f$ we have $y=\sqrt{1-x^2}$ precisely when $x=\sqrt{1-y^2}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\sqrt{1-x^2}$. In addition, the range of the original function $f$ is $[0,1]$. So $f$ is its own inverse function.
+:::{applet}
+:url: calculus/inverse_functions/Polling_Question_F
 :name: Fig:Inverse:Selfinverse:F
-
+:class: dark-light
 The graph of the function $f(x)=\sqrt{1-x^2}$ on $[0,1]$ and the line $x=y$.
 :::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:Selfinverse:A` with applet `calculus/inverse_functions/Polling_Question_A`.
-
-Replace {numref}`Fig:Inverse:Selfinverse:B` with applet `calculus/inverse_functions/Polling_Question_B`.
-
-Replace {numref}`Fig:Inverse:Selfinverse:C` with applet `calculus/inverse_functions/Polling_Question_C`.
-
-Replace {numref}`Fig:Inverse:Selfinverse:D` with applet `calculus/inverse_functions/Polling_Question_D`.
-
-Replace {numref}`Fig:Inverse:Selfinverse:E` with applet `calculus/inverse_functions/Polling_Question_E`.
-
-Replace {numref}`Fig:Inverse:Selfinverse:F` with applet `calculus/inverse_functions/Polling_Question_F`.
-:::
-
+---
+*Note*: a function which is its own inverse function is called a **self-inverse** function.
 ::::
-:::::
 
 So far, we have not put emphasis on the codomain of a function in relation to invertibility. However, if the range of the function is not equal to the codomain, i.e. if the function is not onto, the equation $f(x)=y$ does not have a solution $x$ for each $y$ in the codomain of $f$ (it only has a solution for $y$ in the range of $f$). So a function can only have an inverse function if the range and the codomain coincide. This is not a real problem in practice though, since we can always change the codomain of the function to be equal to the range, without changing the behaviour of the function. First, we introduce some terminology and then reformulate these considerations into a theorem.
 
@@ -549,33 +507,32 @@ Let us first analyse the behaviour of logarithmic functions. Since the graph of 
 
 :::::{grid} 2
 :gutter: 1
+:class-container: full-width
 
 ::::{grid-item}
 
-:::{figure} Images/Fig-Inverse-LogarithmbasisbasisLeft.png
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_exponential_with_base_2
 :name: Fig:Inverse:LogarithmbasisbasisLeft
 :class: dark-light
 
 The functions $f(x)=2^x$ and $f^{-1}(x)=\log_2(x)$ and the line $x = y$.
 :::
+
 ::::
 
 ::::{grid-item}
 
-:::{figure} Images/Fig-Inverse-LogarithmbasisbasisRight.png
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_exponential_with_base_1_over_2
 :name: Fig:Inverse:LogarithmbasisbasisRight
 :class: dark-light
 
  The functions $f(x)=\left(\frac{1}{2}\right)^x$ and $f^{-1}(x)=\log_{\frac{1}{2}}(x)$ and the line $x = y$.
-
 :::
+
 ::::
 :::::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:LogarithmbasisbasisLeft` with applet `calculus/inverse_functions/reflection_of_exponential_with_base_2` and {numref}`Fig:Inverse:LogarithmbasisbasisRight` with applet `calculus/inverse_functions/reflection_of_exponential_with_base_1_over_2`.
-:::
-
 
 First we note that the logarithm is only defined for $x>0$. This makes sense since the domain of an inverse function is equal to the range of the original function, which for the function $b^x$ is equal to $(0,\infty)$. Next, we recall that the logarithm $\log_b(x)$ is strictly increasing when $b>1$ while it is strictly decreasing if $0<b<1$. This follows from {prf:ref}`Thm:Inverse:MonotonicOnetoone`, since the function $b^x$ has the same properties. Finally, we notice that for $0<b<1$ the function values $\log_b(x)$ blow up as $x$ gets closer to $0$. In the terminology that we will introduce in {numref}`Section:LimitPoint` the logarithm has a vertical asymptote at $x=0$. This is because the graph of the logarithm is obtained by reflecting the graph of $b^x$ along the line $y=x$, and this function has the property that the function values get arbitrarily close to $0$ as $x$ gets very large (in the terminology of {numref}`Section:Limitinf`, the function $b^x$ has a horizontal asymptote at $y=0$). For $b>1$, the logarithm has a similar property, but the function values will, instead, blow up in the negative direction as $x$ approaches $0$.
 
@@ -685,28 +642,31 @@ as desired. The consequence directly follows by taking $b=e$.
 
 :::
 
-::::{todo}
-**Polling question**
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+
 Using that $2^{10}=1024$, which of the following numbers is closest to $\log_2\left(1\,000\,000\,000\,000\right)$?
-
-A. $12$
-B. $40$
-C. $1000$
-D. $10\,000$
-
-:::{admonition} Solution
-:class: dropdown
-The correct answer is B.
-
-We have $1\,000\,000\,000\,000=(1000)^4$, so using the rule of calculation for logarithms we find
+---
+[ ] $12$
+> Hint: Write $1\,000\,000\,000\,000$ as a power of $1000$ and write $2^{10}=1024$ as a logarithm.
+[x] $40$
+> We have $1\,000\,000\,000\,000=(1000)^4$, so using the rule of calculation for logarithms we find
 
 $$
  \log_2\left(1\,000\,000\,000\,000\right)=\log_2\left(1000^4\right)=4\log_2\left(1000\right).
 $$
 
 Now, $2^{10}=1024$ precisely means that $\log_2(1024)=10$. So $\log_2\left(1000\right)$ will be close to $10$, which means that $\log_2\left(1\,000\,000\,000\,000\right)=4\log_2\left(1000\right)$ will be close to $40$.
-
-:::
+[ ] $1000$
+> Hint: Write $1\,000\,000\,000\,000$ as a power of $1000$ and write $2^{10}=1024$ as a logarithm.
+[ ] $10\,000$
+> Hint: Write $1\,000\,000\,000\,000$ as a power of $1000$ and write $2^{10}=1024$ as a logarithm.
+---
 ::::
 
 (Subsec:InverseTrig)=
@@ -721,46 +681,53 @@ Let us start with $f(x)=\sin(x)$. We want to choose an interval as our domain th
 
 :::::{grid} 2
 :gutter: 1
+:class-container: full-width
 
 ::::{grid-item}
-:::{figure} Images/Fig-Inverse-RestrictSinLeft.png
+
+:::{applet}
+:url: calculus/inverse_functions/graph_of_sine_function
 :name: Fig:Inverse:RestrictSinLeft
 :class: dark-light
 
 The function $f(x)=\sin(x)$.
 :::
+
 ::::
 
 ::::{grid-item}
-:::{figure} Images/Fig-Inverse-RestrictSinRight.png
+
+:::{applet}
+:url: calculus/inverse_functions/graph_of_restricted_sine_function
 :name: Fig:Inverse:RestrictSinRight
 :class: dark-light
 
 The function $f(x)=\sin(x)$ restricted to the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
 :::
+
 ::::
 :::::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:RestrictSinLeft` with applet `calculus/inverse_functions/graph_of_sine_function` and {numref}`Fig:Inverse:RestrictSinRight` with applet `calculus/inverse_functions/graph_of_restricted_sine_function`.
-:::
 
 Now we turn our attention to $f(x)=\cos(x)$. Again, we want to choose an interval as our domain that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $[-1,1]$. However, the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ does not work in this case, since 1) $f$ is not one-to-one on this interval, because, for instance, $\cos\left(\frac{\pi}{4}\right)=\cos\left(-\frac{\pi}{4}\right)$ and 2) the range changes when we restrict to this interval, since for $-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}$ we have $\cos(x)\geq 0$. So we should choose something different. Keeping the geometric interpretation of the cosine in mind, there are actually two choices that work: the intervals $[-\pi,0]$ and $[0,\pi]$. For convenience, we choose the interval $[0,\pi]$, since it is a little nicer to work with positive input values than with negative ones. We can see that this choice works in the graph of the function.
 
 :::::{grid} 2
 :gutter: 1
+:class-container: full-width
 
 ::::{grid-item}
-:::{figure} Images/Fig-Inverse-RestrictCosLeft.png
+:::{applet}
+:url: calculus/inverse_functions/graph_of_cosine_function
 :name: Fig:Inverse:RestrictCosLeft
 :class: dark-light
 
 The function $f(x)=\cos(x)$.
 :::
+
 ::::
 
 ::::{grid-item}
-:::{figure} Images/Fig-Inverse-RestrictCosRight.png
+:::{applet}
+:url: calculus/inverse_functions/graph_of_restricted_cosine_function
 :name: Fig:Inverse:RestrictCosRight
 :class: dark-light
 
@@ -769,17 +736,16 @@ The function $f(x)=\cos(x)$ restricted to the interval $\left[0,\pi\right]$.
 ::::
 :::::
 
-:::{todo}
-Replace {numref}`Fig:Inverse:RestrictCosLeft` with applet `calculus/inverse_functions/graph_of_cosine_function` and {numref}`Fig:Inverse:RestrictCosRight` with applet `calculus/inverse_functions/graph_of_restricted_cosine_function`.
-:::
-
 Finally, we consider $f(x)=\tan(x)$. Here the range is actually the entire real line $\mathbb{R}$, so want to make sure we cover the entire range. As was the case with the sine, there is only one choice for an interval that includes $0$, such that $f$ is one-to-one on this interval and that the range remains $\mathbb{R}$ and that choice is the open interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$. As before, we can see that this choice works in the graph of the function.
 
 :::::{grid} 2
 :gutter: 1
+:class-container: full-width
 
 ::::{grid-item}
-:::{figure} Images/Fig-Inverse-RestrictTanLeft.png
+
+:::{applet}
+:url: calculus/inverse_functions/graph_of_tangent_function
 :name: Fig:Inverse:RestrictTanLeft
 :class: dark-light
 
@@ -788,7 +754,9 @@ The function $f(x)=\tan(x)$.
 ::::
 
 ::::{grid-item}
-:::{figure} Images/Fig-Inverse-RestrictTanRight.png
+
+:::{applet}
+:url: calculus/inverse_functions/graph_of_restricted_tangent_function
 :name: Fig:Inverse:RestrictTanRight
 :class: dark-light
 
@@ -796,10 +764,6 @@ The function $f(x)=\tan(x)$ restricted to the interval $\left(-\frac{\pi}{2},\fr
 :::
 ::::
 :::::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:RestrictTanLeft` with applet `calculus/inverse_functions/graph_of_tangent_function` and {numref}`Fig:Inverse:RestrictTanRight` with applet `calculus/inverse_functions/graph_of_restricted_tangent_function`.
-:::
 
 Since we have now found intervals on which the trigonometric functions are one-to-one, we can define their inverse functions.
 
@@ -820,70 +784,74 @@ In some literature (and most calculators), the notations $\sin^{-1}(x)$, $\cos^{
 
 Since the graph of an inverse function is obtained by reflecting the graph of the original function along the line $y=x$, we can quickly sketch the graphs of the inverse trigonometric functions.
 
-::::::{grid} 3
+::::::{grid} 2
 :gutter: 1
 :class-container: full-width
 
 ::::{grid-item}
-:::{figure} Images/Fig-Inverse-InversetrigSin.png
+
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_sine_function
 :name: Fig:Inverse:InversetrigSin
+:class: dark-light
 
 The function $\sin(x)$ and its inverse $\arcsin(x)$ and the line $x = y$.
 :::
+
 ::::
 
 ::::{grid-item}
-:::{figure} Images/Fig-Inverse-InversetrigCos.png
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_cosine_function
 :name: Fig:Inverse:InversetrigCos
+:class: dark-light
 
 The function $\cos(x)$ and its inverse $\arccos(x)$ and the line $x = y$.
 :::
+
 ::::
 
 ::::{grid-item}
-:::{figure} Images/Fig-Inverse-InversetrigTan.png
+:columns: 12
+
+:::{applet}
+:url: calculus/inverse_functions/reflection_of_tangent_function
 :name: Fig:Inverse:InversetrigTan
+:class: dark-light
 
 The function $\tan(x)$ and its inverse $\arctan(x)$ and the line $x = y$.
 :::
 ::::
 ::::::
 
-:::{todo}
-Replace {numref}`Fig:Inverse:InversetrigSin` with applet `calculus/inverse_functions/reflection_of_sine_function`, {numref}`Fig:Inverse:InversetrigCos` with applet `calculus/inverse_functions/reflection_of_cosine_function`, and {numref}`Fig:Inverse:InversetrigTan` with applet `calculus/inverse_functions/reflection_of_tangent_function`.
-:::
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
 
-:::::{todo}
-**Polling question**
 Consider the cotangent function $\cot(x)=\frac{\cos(x)}{\sin(x)}$. How would you restrict its domain to make it one-to-one?
+---
+[x] $(0,\pi)$.
+> Note that for $0<x<\pi$ with $x\neq \frac{\pi}{2}$ we have $\cot(x)=\frac{\cos(x)}{\sin(x)}=\frac{1}{\tan(x)}$. Now we know that the tangent is strictly increasing on the intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$. In addition, the tangent is positive on the first of these intervals and negative on the second one. That means that the cotangent is strictly decreasing on both intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$ and that it is positive on the first of the intervals and negative on the second of these intervals. So the cotangent does not take the same value twice on the union of the intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$. Finally, we note that $\cot\left(\frac{\pi}{2}\right)=\frac{\cos\left(\frac{\pi}{2}\right)}{\sin\left(\frac{\pi}{2}\right)}=\frac{0}{1}=0$. So we conclude that the cotangent never takes the same value twice on the full interval $(0,\pi)$, so it is one-to-one on this interval. In particular, we could use this interval to define the inverse cotangent function, the arccotangent $\operatorname{arccot}(x)$.
 
-A. $(0,\pi)$
-B. $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$
-C. $[0,\pi]$
-D. $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$
-E. None of the above
-
-
-
-::::{admonition} Solution
-The correct answer is A.
-
-Note that $0$ is not in the domain of the cotangent, since $\sin(0)=0$ and we cannot divide by $0$. So any interval which contains $0$ cannot be the correct answer, so that already eliminates options B, C and D.
-
-Now to check that option $A$ does work, we note that for $0<x<\pi$ with $x\neq \frac{\pi}{2}$ we have $\cot(x)=\frac{\cos(x)}{\sin(x)}=\frac{1}{\tan(x)}$. Now we know that the tangent is strictly increasing on the intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$. In addition, the tangent is positive on the first of these intervals and negative on the second one. That means that the cotangent is strictly decreasing on both intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$ and that it is positive on the first of the intervals and negative on the second of these intervals. So the cotangent does not take the same value twice on the union of the intervals $\left(0,\frac{\pi}{2}\right)$ and $\left(\frac{\pi}{2},\pi\right)$. Finally, we note that $\cot\left(\frac{\pi}{2}\right)=\frac{\cos\left(\frac{\pi}{2}\right)}{\sin\left(\frac{\pi}{2}\right)}=\frac{0}{1}=0$. So we conclude that the cotangent never takes the same value twice on the full interval $(0,\pi)$, so it is one-to-one on this interval. In particular, we could use this interval to define the inverse cotangent function, the arccotangent $\arccot(x)$.
-
-:::{figure} Images/Fig-Inverse-InversetrigCot.png
+:::{applet}
+:url: calculus/inverse_functions/graph_of_cotangent_function
 :name: Fig:Inverse:InversetrigCot
-
+:class: dark-light
 The graph of the cotangent function $\cot(x)=\frac{\cos(x)}{\sin(x)}$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Inverse:InversetrigCot` with applet `calculus/inverse_functions/graph_of_cotangent_function`.
-:::
-
+[ ] $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$.
+> Note that $0$ is not in the domain of the cotangent, since $\sin(0)=0$ and we cannot divide by $0$. So any interval which contains $0$ cannot be the correct answer.
+[ ] $[0,\pi]$.
+> Note that $0$ is not in the domain of the cotangent, since $\sin(0)=0$ and we cannot divide by $0$. So any interval which contains $0$ cannot be the correct answer.
+[ ] $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
+> Note that $0$ is not in the domain of the cotangent, since $\sin(0)=0$ and we cannot divide by $0$. So any interval which contains $0$ cannot be the correct answer.
+---
 ::::
-:::::
 
 ::::::{prf:example} 
 :label: Ex:Inverse:Inversetrig1
@@ -1016,20 +984,15 @@ $$
  \cos(\arcsin(x))^2=\cos(y)^2=1-\sin(y)^2=1-x^2.
 $$
 
-::::{figure} Images/Fig-Inverse-Simplify3.png
+Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is nonnegative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$, see {numref}`Fig:Inverse:Simplify3`, we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
+
+:::{applet}
+:url: calculus/inverse_functions/graph_of_cosine_function_with_focus
 :name: Fig:Inverse:Simplify3
 :class: dark-light
-:figclass: margin
 
 The cosine function where the solid part is the function on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$.
-
-::::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:Simplify3` with applet `calculus/inverse_functions/graph_of_cosine_function_with_focus`.
 :::
-
-Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is nonnegative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$ we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
 
 ::::::
 
