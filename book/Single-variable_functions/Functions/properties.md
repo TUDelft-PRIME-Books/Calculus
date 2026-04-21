@@ -280,7 +280,6 @@ In {prf:ref}`Ex:PropertiesFunctions:increasingdecreasingFlat` we saw that a cons
 
 Let $f$ be a function and $(a,b)$ be an interval that is contained in the domain of $f$. Then we say that $f$ is **strictly increasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)< f(x_2)$. Similarly, we say that $f$ is **strictly decreasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)> f(x_2)$.
 
-
 A function that is either strictly increasing or strictly decreasing on an interval, is called **strictly monotonic** on that interval.
 ::::::
 

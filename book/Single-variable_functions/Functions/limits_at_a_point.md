@@ -20,15 +20,12 @@ Often, when a point is not in the domain of a function, this is because this poi
 :label: Ex:LimitAtPoint:FirstLimitEx
 Consider the functions $f(x)=\dfrac{x-1}{x^2-1}$ and $g(x)=\dfrac{x}{x^2-2x+1}$. Both functions are undefined at $x=1$, as the denominators $x^2-1$ and $x^2-2x+1$ are zero there. However, the functions $f$ and $g$ behave very differently for values of $x$ close to $1$, as can be seen from the graph of the two functions below.
 
-::::{figure} Images/Fig-LimitAtPoint-FirstLimitEx.png
+:::{applet}
+:url: calculus/limits_at_a_point/two_rational_functions
 :name: Fig:LimitAtPoint:FirstLimitEx
 :class: dark-light
 
 An illustration of the functions $f(x)$ and $g(x)$ near the point $x=1$.
-::::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:FirstLimitEx` into an applet.
 :::
 
 Let us try to figure out what is going on here. For the function $g$, the function values seem to blow up near $x=1$, while for the function $f$ nothing bad seems to happen at all. We can make this a bit more explicit by evaluating the functions $f$ and $g$ at values of $x$ close to $1$.
@@ -146,24 +143,13 @@ the left and right limits at that point both exist and are equal.
 :label: Ex:LimitAtPoint:Visual
 Consider the function $f$ of which the graph is shown below.
 
-::::{figure} Images/Fig-LimitAtPoint-SomeFunction.png
+:::{applet}
+:url: calculus/limits_at_a_point/some_function
 :name: Fig:LimitAtPoint:SomeFunction
 :class: dark-light
 
 Some function $f$.
-
-::::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:SomeFunction` into an applet.
 :::
-
-:::{prf:remark}
-:label: Remark:LimitAtPoint:Visualinteractive
-
-Do not include function definitions in the final image/applet.
-:::
-
 
 Can we read off from the graph at which points $a$ the limit $\lim\limits_{x\rightarrow a}f(x)$ exists? Well, for almost all values of $a$ there is no problem: the function continues smoothly and the function values clearly move towards a certain value. Only the points $a=-2$, $a=-1$ and $a=1$ are potentially problematic. 
 
@@ -177,25 +163,42 @@ We conclude that $\lim\limits_{x\rightarrow a}f(x)$ exists for all values of $a$
 
 ::::::
 
-::::{todo}
-**Polling question**
-Consider the function $f$ that rounds a number to the nearest integer. So, for instance, $f(4.2)=4$, $f(6.5)=7$ and $f(-1.88)=-2$. What can we say about the limit $\displaystyle\lim_{x\rightarrow 3.5}f(x)$?
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
 
-A. Only the left limit $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$ exists.
-B. Only the right limit $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ exists.
-C. The limit $\displaystyle\lim_{x\rightarrow 3.5}f(x)$ exists.
-D. The left limit $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ both exist, but are unequal.
-E. The left limit $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ both do not exist.
+Consider the function $f$ that rounds a number to the nearest integer, where halves are rounded up.
 
-:::{admonition} Solution
-:class: dropdown
-The correct answer is D.
+So, for instance, $f(4.2)=4$, $f(6.5)=7$ and $f(-1.88)=-2$.
 
-Note that for values of close to $3.5$ with $x<3.5$ we have $f(x)=3$. So we find that $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)=3$. On the other hand, for values of close to $3.5$ with $x>3.5$ we have $f(x)=4$. So find find that $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)=4$. So the left and right limits both exist, but are unequal. In particular, the limit $\displaystyle\lim_{x\rightarrow 3.5}f(x)$ does not exist.
+What can we say about the limits $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$, $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ and $\displaystyle\lim_{x\rightarrow 3.5}f(x)$?
 
+---
+[ ] Only the left limit $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$ exists.
+> For values close to $3.5$ with $x<3.5$ we have $f(x)=3$, so the left limit $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$ indeed exists and is equal to $3$. What about values close to $3.5$ with $x>3.5$?
+[ ] Only the right limit $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ exists.
+> For values close to $3.5$ with $x>3.5$ we have $f(x)=4$, so the right limit $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ indeed exists and is equal to $4$. What about values close to $3.5$ with $x<3.5$?
+[ ] The limits $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$, $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ and $\displaystyle\lim_{x\rightarrow 3.5}f(x)$ exist.
+> For the limit $\displaystyle\lim_{x\rightarrow 3.5}f(x)$ to exist, the left and right limits at $3.5$ should both exist and be equal. Are they? 
+[x] The left limit $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ both exist, but are unequal, so the limit $\displaystyle\lim_{x\rightarrow 3.5}f(x)$ does not exist.
+> Note that for values of close to $3.5$ with $x<3.5$ we have $f(x)=3$. So we find that $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)=3$. On the other hand, for values of close to $3.5$ with $x>3.5$ we have $f(x)=4$. So find find that $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)=4$. So the left and right limits both exist, but are unequal. In particular, the limit $\displaystyle\lim_{x\rightarrow 3.5}f(x)$ does not exist. This is supported by the graph of the function $f$ below.
+
+:::{applet}
+:url: calculus/limits_at_a_point/rounding_to_integers
+:name: Fig:LimitAtPoint:RoundingToIntegers
+:class: dark-light
+
+An illustration of the function $f$ that rounds a number to the nearest integer, where halves are rounded up.
 :::
-::::
+[ ] All of the limits $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$, $\displaystyle\lim_{x\rightarrow 3.5^+}f(x)$ and $\displaystyle\lim_{x\rightarrow 3.5}f(x)$ do not exist.
+> What is the function value $f(x)$ for values of $x$ close to $3.5$ with $x<3.5$? What is the function value $f(x)$ for values of $x$ close to $3.5$ with $x>3.5$?
+---
 
+::::
 
 So how do you evaluate limits (regular, left or right)? There are various techniques, which we will discuss throughout this chapter. In several of these, we evaluate the limit by rewriting or simplifying the function at hand. Indeed, in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` we evaluated the limit $\lim\limits_{x\rightarrow 1}f(x)$ by finding a function $h$ which is equal to $f$ everywhere except at $x=1$ and for which $1$ was in the domain of $h$. The following two results show that this idea works more generally.
 ::::::{prf:theorem}
@@ -237,17 +240,14 @@ $$
  \lim_{x\rightarrow 0^+}f(x)=\lim_{x\rightarrow 0^+}1=1.
 $$
 
-We conclude that the left and right limit of $f$ as $x$ approaches $0$ both exist, but are unequal. Using {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` we conclude that $\lim\limits_{x\rightarrow 0}\frac{|x|}{x}$ does not exist.
+We conclude that the left and right limit of $f$ as $x$ approaches $0$ both exist, but are unequal. Using {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` we conclude that $\lim\limits_{x\rightarrow 0}\frac{|x|}{x}$ does not exist. 
 
-::::{figure} Images/Fig-LimitAtPoint-LimitLeftRight.png
+:::{applet}
+:url: calculus/limits_at_a_point/sign_function
 :name: Fig:LimitAtPoint:LimitLeftRight
 :class: dark-light
 
 An illustration of the function $f(x)=\frac{|x|}{x}$ near the point $x=0$, showing that the left and right limits are unequal.
-::::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:LimitLeftRight` into an applet.
 :::
 
 ::::::
@@ -270,18 +270,14 @@ $$
  \lim_{x\rightarrow 2^+}f(x)=\lim_{x\rightarrow 2^+}(3-x)=3-2=1.
 $$
 
- Using {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` we conclude that $\lim\limits_{x\rightarrow 0}f(x)=1$, since both the left and right limit at that point are equal to $1$.
+ Using {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` we conclude that $\lim\limits_{x\rightarrow 2}f(x)=1$, since both the left and right limit at that point are equal to $1$.
 
-::::{figure} Images/Fig-LimitAtPoint-LimitLeftRightPiecewise.png
+:::{applet}
+:url: calculus/limits_at_a_point/piecewise_function
 :name: Fig:LimitAtPoint:LimitLeftRightPiecewise
 :class: dark-light
 
-An illustration of the piecewice defined function $f(x)$ near the point $x=2$, showing that the left and right limits are equal.
-
-::::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:LimitLeftRightPiecewise` into an applet.
+An illustration of the piecewise defined function $f(x)$ near the point $x=2$, showing that the left and right limits are equal.
 :::
 
 ::::::
@@ -299,15 +295,12 @@ So far we have seen two examples where the limit did not exist. In {prf:ref}`Ex:
 :label: Ex:LimitAtPoint:Limitoutsidedomain
 Consider the function $f(x)=\sqrt{x-3}$ and suppose we want to evaluate the limit $\lim\limits_{x\rightarrow 2}f(x)$. For this, we would like to know how the function values $f(x)$ behave as $x$ approaches $2$. However, the domain of this function is the interval $[3,\infty)$, so the function is undefined for $x<3$. As such, it is impossible to study the behaviour or the function values $f(x)$ for these values of $x$ and this implies that the limit $\lim\limits_{x\rightarrow 2}f(x)$ does not exist. 
 
-:::{figure} Images/Fig-LimitAtPoint-Limitoutsidedomain.png
+:::{applet}
+:url: calculus/limits_at_a_point/square_root_function
 :name: Fig:LimitAtPoint:Limitoutsidedomain
 :class: dark-light
 
 An illustration of the function $f(x)=\sqrt{x-3}$, showing that it is undefined for $x<3$.
-:::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:Limitoutsidedomain` into an applet.
 :::
 
 ::::::
@@ -316,16 +309,12 @@ Make {numref}`Fig:LimitAtPoint:Limitoutsidedomain` into an applet.
 :label: Ex:LimitAtPoint:Limitsinoneoverx
 Consider the function $f(x)=\sin\left(\frac{1}{x}\right)$ and suppose we want to evaluate the limit $\lim\limits_{x\rightarrow 0}f(x)$. So what happens with the function values $f(x)$ if $x$ approaches $0$, say from the right? In that case, $\frac{1}{x}$ will start to blow up, which means that as $x$ approaches $0$ the function values $\sin\left(\frac{1}{x}\right)$ will oscillate between $-1$ and $1$ with increasing frequency. As such, these function values do not approach a single value, as they will continue to oscillate between $-1$ and $1$. This means that the right limit does not exist. By a similar argument, the left limit does not exist either. We conclude that the limit $\lim\limits_{x\rightarrow 0}\sin\left(\frac{1}{x}\right)$ does not exist.
 
-:::{figure} Images/Fig-LimitAtPoint-Limitsinoneoverx.png
+:::{applet}
+:url: calculus/limits_at_a_point/sine_of_one_over_x
 :name: Fig:LimitAtPoint:Limitsinoneoverx
 :class: dark-light
 
 An illustration of the function $f(x)=\sin\left(\frac{1}{x}\right)$, showing the oscillation between $-1$ and $1$ as $x$ approaches $0$.
-
-:::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:Limitsinoneoverx` into an applet.
 :::
 
 ::::::
@@ -386,9 +375,14 @@ Again, this result makes sense intuitively: if the function values $f(x)$ are al
 :label: Ex:LimitAtPoint:Comparison
 Consider the function $f(x)=-x^2$ and $g(x)=x^2$. Then $f(x)<g(x)$ for all $x\neq 0$. So by {prf:ref}`Theorem:LimitAtPoint:Comparison` we can immediately conclude that $\lim\limits_{x\rightarrow 0}f(x)\leq \lim\limits_{x\rightarrow 0}g(x)$. However, we can quickly compute that $\lim\limits_{x\rightarrow 0}f(x)= \lim\limits_{x\rightarrow 0}g(x)=0$, so the limits are, in fact, equal, even though the function values are never equal outside of $x=0$.
 
-:::{todo}
-Add an applet with the graph of these functions.
+:::{applet}
+:url: calculus/limits_at_a_point/two_parabolas
+:name: Fig:LimitAtPoint:Comparison
+:class: dark-light
+
+An illustration of the functions $f(x)=-x^2$ and $g(x)=x^2$.
 :::
+
 ::::::
 
 We continue the path we set foot on in {prf:ref}`Theorem:LimitAtPoint:Comparison`, but now we consider the situation where we have $3$ functions, which satisfy
@@ -413,7 +407,7 @@ The corresponding rule also holds for left and right limits.
 ::::::
 
 ::::::{prf:example} Squeeze theorem
-:label: Ex:LimitAtPoint:Squeeze theorem
+:label: Ex:LimitAtPoint:SqueezeTheorem
 Consider the function $g(x)=x^2\sin\left(\frac{1}{x}\right)$ and suppose we want to evaluate $\lim\limits_{x\rightarrow 0}g(x)$. In example {prf:ref}`Ex:LimitAtPoint:Limitsinoneoverx` we saw that $\lim\limits_{x\rightarrow 0}\sin\left(\frac{1}{x}\right)$ does not exist, so we cannot use the product rule to evaluate this limit. We can, however, use the squeeze theorem.
 
 For this we note that the sine, no matter how ugly its input is, always takes values between $-1$ and $1$. As such, we conclude that
@@ -430,15 +424,12 @@ $$
 
 so $g$ is squeezed in between the functions $f$ and $h$. Moreover, we note that $\lim\limits_{x\rightarrow 0}-x^2=\lim\limits_{x\rightarrow 0}x^2=0$. By the squeeze theorem, we obtain that $\lim\limits_{x\rightarrow 0}x^2\sin\left(\frac{1}{x}\right)=0$ as well.
 
-::::{figure} Images/Fig-LimitAtPoint-Squeezetheorem.png
+:::{applet}
+:url: calculus/limits_at_a_point/two_parabolas_and_an_oscillating_function
 :name: Fig:LimitAtPoint:Squeezetheorem
 :class: dark-light
 
 An illustration of the squeeze theorem, showing the functions $f$, $g$, and $h$ around the point $0$.
-::::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:Squeezetheorem` into an applet.
 :::
 
 ::::::
@@ -500,20 +491,36 @@ $$
 
 ::::::
 
-::::{todo}
-**Polling question**
-Consider the limit $\displaystyle \lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}$. Knowing the identity $a^3-b^3=(a-b)\left(a^2+ab+b^2\right)$, by which factor should you multiply the numerator and denominator of $\displaystyle \frac{x^2-4}{1-\sqrt[3]{x^3-7}}$ to simplify the limit?
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
 
-A. $\sqrt[3]{x^3-7}+1$
-B. $\sqrt[3]{\left(x^3-7\right)^2}+1$
-C. $\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1$
-D. It is impossible to simplify this limit.
+Consider the limit $\displaystyle \lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}$.
 
-:::{admonition} Solution
-:class: dropdown
-The correct answer is C.
+Knowing the identity
 
-We want to use the identity $a^3-b^3=(a-b)\left(a^2+ab+b^2\right)$. As such, we let $a=1$ and $b=\sqrt[3]{x^3-7}$, so that the denominator of the function in the limit is $a-b$. Then we multiply both parts of the fraction by $a^2+ab+b^2=\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1$ to obtain
+$$
+a^3-b^3=(a-b)\left(a^2+ab+b^2\right),
+$$
+
+by which factor should you multiply the numerator and denominator of
+
+$$
+\frac{x^2-4}{1-\sqrt[3]{x^3-7}}
+$$
+
+to simplify the limit?
+---
+[ ] $\sqrt[3]{x^3-7}+1$.
+> Hint: use $a=1$ and $b=\sqrt[3]{x^3-7}$ in the identity.
+[ ] $\sqrt[3]{\left(x^3-7\right)^2}+1$.
+> Hint: use $a=1$ and $b=\sqrt[3]{x^3-7}$ in the identity.
+[x] $\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1$.
+> let $a=1$ and $b=\sqrt[3]{x^3-7}$, so that the denominator of the function in the limit is $a-b$. Then we multiply both parts of the fraction by $a^2+ab+b^2=\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1$ to obtain
 
 $$
  \begin{array}{lcl}\lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}&=&\lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}\cdot\frac{\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1}{\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1}\\ &=&\lim_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{\left(\sqrt[3]{x^2-7}\right)^3-1^3}\\ &=&\lim_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^3-8}.\end{array}
@@ -524,9 +531,11 @@ Now in order to evaluate the resulting limit, we note that $x^2-4=(x-2)(x+2)$ an
 $$
  \begin{array}{lcl}\lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}&=&\lim_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^3-8}\\ &=&\lim_{x\rightarrow 2}\frac{\left(x+2\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^2+2x+4}\\ &=&\frac{(2+2)\left(\sqrt[3]{1}+\sqrt[3]{1}+1\right)}{12}\\&=&1. \end{array}
 $$
-
-:::
+[ ] It is impossible to simplify this limit.
+> Hint: use $a=1$ and $b=\sqrt[3]{x^3-7}$ in the identity.
+---
 ::::
+
 
 (Subsec:Limitsvertical)=
 
@@ -565,16 +574,15 @@ The word asymptote is derived from the Greek word ἀσύμπτωτος  (asumpt
 :label: Ex:LimitAtPoint:Verticalasymptote1.
 Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}\dfrac{1}{x^2}$. Note that as $x$ approaches $0$, $x^2$ will approach $0$ as well and note that $x^2>0$ for all $x\neq 0$. So for $x$ close to $0$, $\dfrac{1}{x^2}$ is $1$ divided by a very small, positive number, which means that $\dfrac{1}{x^2}$ is a very large, positive number. As such, we find that $\lim\limits_{x\rightarrow 0}\dfrac{1}{x^2}=\infty$. In particular, the function has a vertical asymptote at $x=0$.
 
-::::{figure} Images/Fig-LimitAtPoint-Verticalasymptote1.png
+
+
+::::{applet}
+:url: calculus/limits_at_a_point/one_over_x_squared
 :name: Fig:LimitAtPoint:Verticalasymptote1
 :class: dark-light
 
 An illustration of the function $f(x)=\frac{1}{x^2}$ near the point $x=0$, showing the vertical asymptote at $x=0$.
 ::::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:Verticalasymptote1` into an applet.
-:::
 
 ::::::
 
@@ -590,17 +598,13 @@ Using a similar reasoning, we find that $\lim\limits_{x\rightarrow 2^-}f(x)=\inf
 
 We conclude that $f$ has $2$ vertical asymptotes, one at $x=1$ and $x=2$. Moreover, we see that $\lim\limits_{x\rightarrow 2}f(x)=\infty$, since the function values both on the left and right of $x=2$ grow arbitrarily large. Is there also a shorter way we can denote the behaviour near $x=1$? The answer is yes if we use left and right limits, since we can write $\displaystyle\lim\limits_{x\rightarrow2^-}f(x)=-\infty$ and $\displaystyle\lim\limits_{x\rightarrow2^+}f(x)=\infty$. However, if we only stick to the $\lim\limits_{x\rightarrow 1}f(x)$, there is no shorthand notation to describe this behaviour. 
 
-::::{figure} Images/Fig-LimitAtPoint-Verticalasymptote2.png
+::::{applet}
+:url: calculus/limits_at_a_point/a_function_with_two_vertical_asymptotes
 :name: Fig:LimitAtPoint:Verticalasymptote2
 :class: dark-light
 
 An illustration of the function $f(x)=\frac{1}{(x-1)(x-2)^2}$ near the points $x=1$ and $x=2$, showing the vertical asymptotes at these points.
 ::::
-
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:Verticalasymptote2` into an applet.
-:::
 
 ::::::
 
@@ -628,16 +632,13 @@ Then we say that the **limit** of $f$ as $x$ approaches $a$ is equal to $L$, and
 If no such value $L$ exists we say that the limit does not exist.
 ::::::
 
-::::{figure} Images/Fig-LimitAtPoint-EpsilonDelta.png
+::::{applet}
+:url: calculus/limits_at_a_point/visualisation_of_a_limit
 :name: Fig:LimitAtPoint:Limitepsilondelta
 :class: dark-light
 
 An illustration of the formal definition of a limit.
 ::::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:Limitepsilondelta` into an applet.
-:::
 
 This definition should be interpreted as follows. The arbitrary constant $\varepsilon>0$ should be thought of as a vertical tolerance. In order for $\lim\limits_{x\rightarrow a}f(x)=L$, we want that, for $x$ close enough to $a$, the function values $f(x)$ are at most distance $\varepsilon$ to $L$, i.e. $|f(x)-L|<\varepsilon$. Here "$x$ close enough to $a$" means that this inequality should hold true for all $x$ in a (possibly very small) interval centered around $a$, i.e. an interval of the form $(a-\delta,a+\delta)$, except for $x=a$. Of course, what this $\delta$ is, depends both on the function $f$ and the choice of $\varepsilon$. Typically, the smaller $\varepsilon$ is, the smaller $\delta$ should be, as it becomes harder to satisfy the inequality $|f(x)-L|<\varepsilon$. As such, the most interesting (and hardest) part of evaluating a limit using this definition is when $\varepsilon$ is small. Remember that we cannot choose $\varepsilon$ ourselves: for **each** $\varepsilon>0$ there should be a corresponding $\delta$. Note that we can make $\delta$ always smaller if we want to: if at least one $\delta$ works for a given $\varepsilon$, we are happy. Let us try to see how to work with this definition in practice.
 
@@ -655,7 +656,7 @@ $$
  \left|f(2-\delta)-f(2)\right|=\left|(2-\delta)^2-4\right|=4-(2-\delta)^2.
 $$
 
-Note that if $\varepsilon>4$ then we automatically have $4-(2-\delta)^2<\varepsilon$, so we just look at the case when $\varepsilon\leq 4$. Then we see that $\left|f(2-\delta)-f(2)\right|<\varepsilon$ precisely when $4-\varepsilon<(2-\delta)^2$, so when $\delta<2-\sqrt{4-\varepsilon}$. Note that chosing $\delta<2-\sqrt{4-\varepsilon}$ automatically ensures that $\delta\leq 2$.
+Note that if $\varepsilon>4$ then we automatically have $4-(2-\delta)^2<\varepsilon$, so we just look at the case when $\varepsilon\leq 4$. Then we see that $\left|f(2-\delta)-f(2)\right|<\varepsilon$ precisely when $4-\varepsilon<(2-\delta)^2$, so when $\delta<2-\sqrt{4-\varepsilon}$. Note that choosing $\delta<2-\sqrt{4-\varepsilon}$ automatically ensures that $\delta\leq 2$.
 
 Next we consider the point $2+\delta$. Then we note that $f(2+\delta)=(2+\delta)^2$. Since $0<\delta $ we have $(2+\delta)^2\geq 4$. As such, we must have 
 
@@ -684,7 +685,7 @@ $$
 
 if $\varepsilon> 4$.
 
-Similalry, we find when $2<x<2+\delta$ that
+Similarly, we find when $2<x<2+\delta$ that
 
 $$
  \begin{array}{lcll}|x^2-4|&=&x^2-4&\ \\
@@ -694,16 +695,13 @@ $$
 
 With that, we have shown that $\lim\limits_{x\rightarrow 2}x^2=4$.
 
-::::{figure} Images/Fig-LimitAtPoint-Formaldefexists.png
+::::{applet}
+:url: calculus/limits_at_a_point/limit_of_x_squared_near_2
 :name: Fig:LimitAtPoint:Formaldefexists
 :class: dark-light
 
-The function $f(x)=x^2$ near the point $x=2$ and the illustration of the formal definition of the limit. You can use the slider to change the value of $\varepsilon$, which is represented by the horizontal dotted lines. The corresponding vertical dashed lines show the values of $x$ that are allowed (with the choice of $\delta$ from this example).
+The function $f(x)=x^2$ near the point $x=2$ and the illustration of the formal definition of the limit. You can use the slider to change the value of $\varepsilon$, which is represented by the horizontal dashed lines. The corresponding vertical dashed lines show the values of $x$ that are allowed (with the choice of $\delta$ from this example).
 ::::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:Formaldefexists` into an applet.
-:::
 
 ::::::
 
@@ -719,16 +717,13 @@ In order to show this, we need to verify that no choice of $\delta>0$ works, so 
 
 We conclude that $\lim\limits_{x\rightarrow 0}\dfrac{|x|}{x}$ is unequal to $0$.
 
-::::{figure} Images/Fig-LimitAtPoint-Formaldefdoesnotexist.png
+::::{applet}
+:url: calculus/limits_at_a_point/limit_of_sign_function_near_0
 :name: Fig:LimitAtPoint:Formaldefdoesnotexist
 :class: dark-light
 
-The function $f(x)=\dfrac{|x|}{x}$ near the point $x=0$ and the illustration of the formal definition of the limit. You can use the slider to change the value of $\varepsilon$, which is represented by the horizontal dotted lines. The corresponding vertical dashed lines show the values of $x$ that are allowed (with the choice of $\delta$ from this example). Note that for $\varepsilon<1$ there are no allowed values of $x$, so no vertical dashed lines are shown.
+The function $f(x)=\dfrac{|x|}{x}$ near the point $x=0$ and the illustration of the formal definition of the limit. You can use the (left) slider for $\varepsilon$ to change the value of $\varepsilon$, which is represented by the horizontal dashed lines. With the (right) slider for $\delta$ you can change the value of $\delta$, which is represented by the vertical dashed lines. Do your observations agree with the explanation in this example?
 ::::
-
-:::{todo}
-Make {numref}`Fig:LimitAtPoint:Formaldefdoesnotexist` into an applet.
-:::
 
 ::::::
 
@@ -863,141 +858,141 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/91d07329-447a-43c3-885d-68ac1c4be6e7?id=69268
-:label: Grasple:LimitAtPoint:Linearoverquadratic
+:label: Grasple:69268
 :dropdown:
-:description: Limit of a rational function
+:description: Limit of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/1154e298-928d-4b6c-9477-1f11b77edcf7?id=69272
-:label: Grasple:LimitAtPoint:Quadraticoverlinear
+:label: Grasple:69272
 :dropdown:
-:description: Limit of a rational function
+:description: Limit of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/ea4c6045-801f-4626-8e1c-d6e3617716ed?id=69310
-:label: Grasple:LimitAtPoint:Quadraticoverquadratic
+:label: Grasple:69310
 :dropdown:
-:description: Limit of a rational function
+:description: Limit of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/695aeb4b-2a38-4aba-8500-cdc722c46cef?id=69337
-:label: Grasple:LimitAtPoint:Quadricoverquadric
+:label: Grasple:69337
 :dropdown:
-:description: Two limits of a rational function
+:description: Two limits of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/37e981e0-e019-4273-9e51-04140aa7b0c0?id=69355
-:label: Grasple:LimitAtPoint:Unsimplifiedquadraticovercubic
+:label: Grasple:69355
 :dropdown:
-:description: Two limits of a rational function
+:description: Two limits of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/e0619537-b68d-43b2-83c6-12f2fb35213f?id=71999
-:label: Grasple:LimitAtPoint:Leftratabs
+:label: Grasple:71999
 :dropdown:
-:description: Left limit with an absolute value
+:description: Left limit with an absolute value.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/332e0d51-f836-4bf6-a192-99fce2de442d?id=69301
-:label: Grasple:LimitAtPoint:linoversqlin
+:label: Grasple:69301
 :dropdown:
-:description: Limit of expression with square root
+:description: Limit of expression with square root.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/7165477d-5ea8-4461-84dd-340217392b58?id=69265
-:label: Grasple:LimitAtPoint:sqlinoverlin
+:label: Grasple:69265
 :dropdown:
-:description: Limit of expression with square root
+:description: Limit of expression with square root.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/f12ee6d1-2cd8-420e-839b-8684d3d42c6a?id=69262
-:label: Grasple:LimitAtPoint:sqlinoversqlin
+:label: Grasple:69262
 :dropdown:
-:description: Limit of expression with two square roots
+:description: Limit of expression with two square roots.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/431b71e1-167e-48d5-8847-81ae1074bf41?id=69260
-:label: Grasple:LimitAtPoint:standardlimit
+:label: Grasple:69260
 :dropdown:
-:description: Deriving a standard limit
+:description: Deriving a standard limit.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/33d84623-d5fa-4513-b3fd-55188578881e?id=69424
-:label: Grasple:LimitAtPoint:consequencessinxoverx
+:label: Grasple:69424
 :dropdown:
-:description: Four limits that follow from a standard limit
+:description: Four limits that follow from a standard limit.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/f93999f2-7b38-4745-9798-63b46aa416ae?id=71995
-:label: Grasple:LimitAtPoint:sinarcsin
+:label: Grasple:71995
 :dropdown:
-:description: Two limits with (inverse) trigonometric functions
+:description: Two limits with (inverse) trigonometric functions.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/2cf8ba56-f9e5-4ee3-863d-9ca95a359f8a?id=69297
-:label: Grasple:LimitAtPoint:4timessqueeze
+:label: Grasple:69297
 :dropdown:
-:description: Four limits using squeeze theorem
+:description: Four limits using squeeze theorem.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/58bbe698-e0f4-467c-8da1-26dfb27a8c8c?id=71997
-:label: Grasple:LimitAtPoint:limitwithsqrt3sqrt5
+:label: Grasple:71997
 :dropdown:
-:description: A limit with third and fifth square roots
+:description: A limit with third and fifth square roots.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/face466d-c702-4dd9-8fa5-d6014d6e3310?id=69477
-:label: Grasple:LimitAtPoint:Vertasympquartovercub
+:label: Grasple:69477
 :dropdown:
-:description: Vertical asymptotes of a rational function
+:description: Vertical asymptotes of a rational function.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/9c84ed87-a33d-41be-b3e4-81bc0064fcf2?id=69472
-:label: Grasple:LimitAtPoint:Vertasymploglinoverquadr
+:label: Grasple:69472
 :dropdown:
-:description: Vertical asymptotes of a function involving a logarithm
+:description: Vertical asymptotes of a function involving a logarithm.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/9a58ceb6-7ca3-4fe6-9693-1acff5f3ea77?id=72000
-:label: Grasple:LimitAtPoint:rounding
+:label: Grasple:69472
 :dropdown:
-:description: Limits of rounding function using formal definition
+:description: Limits of rounding function using formal definition.
 ::::
