@@ -18,7 +18,8 @@ Suppose, for instance, that we buy a cauliflower at the supermarket, which has a
 
 Let us take, for example, $r=1\ \text{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator, which is $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
 
-::::{figure} Images/Fig-LimitAtInfinity-TempCauliflower.png
+::::{applet}
+:url: calculus/limits_at_infinity/temperature_of_a_cauliflower
 :name: Fig:LimitAtInfinity:TempCauliflower
 :class: dark-light
 
@@ -26,9 +27,6 @@ The temperature $T(t)$ in degrees Celsius of the cauliflower within the refriger
 
 ::::
 
-:::{todo}
-Turn {numref}`Fig:LimitAtInfinity:TempCauliflower` into an applet. Graph should only be for $t\geq 0$.
-:::
 
 We observe that our intuition was correct: the temperature of the object will first decrease rapidly before slowly moving towards the limiting value of $5$ °C. Notice that the temperature never becomes precisely equal to $5$ °C; it will always remain slightly above this value. We say that the function $T(t)$ has a **horizontal asymptote** at $T=5$ °C and we denote this by $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C. As was stated in {numref}`Section:LimitPoint`, the word asymptote comes from the Greek ἀσύμπτωτος  (asumptotos), which means "not falling together". The notation $\lim\limits_{t\rightarrow\infty}T(t)=5$ °C can be pronounced as "the function values $T(t)$ approach the value $5$ °C as $t$ approaches infinity". The precise definition of such a limit at infinity is rather technical, so we postpone it to {numref}`Subsec:LimitinfPrecise`. Instead, we will use the following more intuitive definition.
 
@@ -107,17 +105,13 @@ $$
 
 Later in this section, we will show that this reasoning is indeed mathematically valid. As such, the function $f$ has a horizontal asymptote at $y=2$. We can also see in the graph of $f$ that the function values tend towards the value $2$ as $x$ gets large.
 
-::::{figure} Images/Fig-LimitAtInfinity-Firstexample.png
+::::{applet}
+:url: calculus/limits_at_infinity/a_function_with_limit_2_at_infinity
 :name: Fig:LimitAtInfinity:Firstexample
 :class: dark-light
 
 An illustration of the function $f(x)=\dfrac{4+\frac{1}{x}}{2-\frac{3}{x^2}}$ for large values of $x$.
 ::::
-
-:::{todo}
-Turn {numref}`Fig:LimitAtInfinity:Firstexample` into an applet.
-:::
-
 
 ::::::
 
@@ -153,16 +147,13 @@ Consider the function $f(x)=\dfrac{\sin(x)}{x^2}$ and suppose we want to evaluat
 
 Notice that the function values seem to go towards the value $0$. This would suggest that $\lim\limits_{x\rightarrow -\infty}f(x)=0$. Indeed, we notice that $\sin(x)$ is always between $-1$ and $1$, even if $x$ is very negative. This means that $\dfrac{\sin(x)}{x^2}$ is a number, where something between $-1$ and $1$ is divided by something very large. As such, $\dfrac{\sin(x)}{x^2}$ is very close to $0$. In {prf:ref}`Ex:LimitAtInfinity:SqueezeThm` we will show that this reasoning is indeed valid.
 
-::::{figure} Images/Fig-LimitAtInfinity-Secondexample.png
+::::{applet}
+:url: calculus/limits_at_infinity/sine_of_x_over_x_squared
 :name: Fig:LimitAtInfinity:Secondexample
 :class: dark-light
 
 An illustration of the function $f(x)=\dfrac{\sin(x)}{x^2}$ for large negative values of $x$.
 ::::
-
-:::{todo}
-Turn {numref}`Fig:LimitAtInfinity:Secondexample` into an applet. 
-:::
 
 Notice that the function $f$ actually oscillates around the horizontal asymptote $x=0$. This is not a problem, as the function values indeed tends towards $0$. However, this does mean that the original Greek meaning of the word asymptote ("not falling together") does not exactly match the modern use.
 ::::::
@@ -417,9 +408,14 @@ $$
 
 So this function $f$ has two horizontal asymptotes: one at $y=1$ corresponding to the limit at infinity and one at $y=0$ corresponding to the limit at minus infinity.
 
-:::{todo}
-Make an applet with the graph of this function, clearly showing the two horizontal asymptotes.
-:::
+::::{applet}
+:url: calculus/limits_at_infinity/one_over_one_plus_e_to_the_minus_x
+:name: Fig:LimitAtInfinity:Computationrules
+:class: dark-light
+
+An illustration of the function $f(x)=\dfrac{1}{1+e^{-x}}$ for large positive and negative values of $x$.
+::::
+
 ::::::
 
 In addition, we obtain the following comparison result for limits.
@@ -463,16 +459,13 @@ The corresponding result also holds for limits at minus infinity.
 
 Consider the function $f(x)=\dfrac{\sin(x)}{x^2}$ from {prf:ref}`Ex:LimitAtInfinity:Secondexample` and suppose that we want to evaluate $\lim\limits_{x\rightarrow -\infty}\dfrac{\sin(x)}{x^2}$. Since the sine always oscillates between $-1$ and $1$, we see that $\dfrac{-1}{x^2}\leq \dfrac{\sin(x)}{x^2}\leq \dfrac{1}{x^2}$ for all $x<0$. Similar to {prf:ref}`Ex:LimitAtInfinityComparison` we find that $\lim\limits_{x\rightarrow -\infty}-\dfrac{1}{x^2}= \lim\limits_{x\rightarrow -\infty}\dfrac{1}{x^2}=0$. By the squeeze theorem, we find that $\lim\limits_{x\rightarrow -\infty}\dfrac{\sin(x)}{x^2}=0$ as well.
 
-::::{figure} Images/Fig-LimitAtInfinity-SqueezeThm.png
+::::{applet}
+:url: calculus/limits_at_infinity/squeeze_theorem
 :name: Fig:LimitAtInfinity:SqueezeThm
 :class: dark-light
 
 An illustration of the {prf:ref}`Squeeze theorem for limits at infinity <Theorem:LimitAtInfinity:Squeezetheorem>`.
 ::::
-
-:::{todo}
-Turn {numref}`Fig:LimitAtInfinity:SqueezeThm` into an applet. 
-:::
 
 ::::::
 
@@ -488,7 +481,7 @@ $$
  \frac{p(x)}{q(x)}=\frac{a_nx^n+a_{n-1}x^{n-1}+\ldots+a_0}{b_mx^m+b_{m-1}x^{m-1}+\ldots+b_0}=\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n+1}}+\ldots+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+\ldots+\frac{b_0}{x^m}}.
 $$
 
-Since $n< m$, we can evaluate now evaluate the limit by using {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
+Since $n< m$, we can evaluate now evaluate the limit by using {prf:ref}`Theorem:LimitAtInfinity:Standardlimits` and {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` to obtain
 
 $$
  \lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}=\lim\limits_{x\rightarrow \infty}\frac{\frac{a_n}{x^{m-n}}+\frac{a_{n-1}}{x^{m-n+1}}+\ldots+\frac{a_0}{x^m}}{b_m+\frac{b_{m-1}}{x}+\ldots+\frac{b_0}{x^m}}=\frac{0+0+\ldots+0}{b_m+0+\ldots+0}=0.
@@ -735,10 +728,10 @@ Similarly, we say that $f$ has a **negative limit at infinity**, and we write $\
 Finally, we have the corresponding notations $\lim\limits_{x\rightarrow -\infty}f(x)=\infty$ and $\lim\limits_{x\rightarrow- \infty}f(x)=-\infty$ for a positive or negative **infinite limit at minus infinity**.
 ::::::
 
-We now procede with proving the results from the earlier parts of this section.
+We now proceed with proving the results from the earlier parts of this section.
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`
-:class: tudproof 
+:class: tudproof, full-width
 $\lim\limits_{x\rightarrow \infty}1=1$: First consider $f(x)=1$. Let $\varepsilon>0$ be given. Since $f$ is constant, we can take $N$ whatever we want, so we choose $N=0$. Then for all $x> N$ we have
 
 $$
@@ -821,16 +814,14 @@ We conclude that $\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$.
 
 $\lim\limits_{x\rightarrow -\infty}\arctan(x)=\frac{-\pi}{2}$: This argument can be repeated for the limit at minus infinity, using $N=-\tan\left(\frac{\pi}{2}-\varepsilon\right)$.
 
-::::{figure} Images/Fig-LimitAtInfinity-Illustrationarctanlimit.png
+::::{applet}
+:url: calculus/limits_at_infinity/limit_of_arctan_at_infinity
 :name: Fig:LimitAtInfinity:ArctanLimit
 :class: dark-light
 
-An illustration of the choice $N$ when evaluating $\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$.
+An illustration of the choice for $N$ when evaluating $\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$.
 ::::
 
-:::{todo}
-Turn {numref}`Fig:LimitAtInfinity:ArctanLimit` into an applet. 
-:::
 ::::::
 
 
@@ -943,72 +934,72 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/a6b4c8f6-cf3e-4aaa-85e0-0d76fdfc3d8b?id=71164
-:label: Grasple:LimitAtInfinity:Quadoverquad
+:label: Grasple:71164
 :dropdown:
-:description: Limit at infinity of a rational function
+:description: Limit at infinity of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/4af8e229-c01b-4eb8-b148-8c0024bdc69b?id=71193
-:label: Grasple:LimitAtInfinity:Linoverquad
+:label: Grasple:71193
 :dropdown:
-:description: Limit at infinity of a rational function
+:description: Limit at infinity of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/008cf791-391e-47b2-9af3-cd385a21d8f5?id=71198
-:label: Grasple:LimitAtInfinity:Cuboverquad
+:label: Grasple:71198
 :dropdown:
-:description: Limit at infinity of a rational function
+:description: Limit at infinity of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/c015f479-ee61-49b8-b49c-7351d30978b2?id=75781
-:label: Grasple:LimitAtInfinity:xtonoverxton
+:label: Grasple:75781
 :dropdown:
-:description: Limit at infinity of a rational function
+:description: Limit at infinity of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/a95901e2-c3a4-4700-8057-651538308fcc?id=75769
-:label: Grasple:LimitAtInfinity:xtonoverxtonwithcos
+:label: Grasple:75769
 :dropdown:
-:description: Limit at infinity, but now with an extra cosine
+:description: Limit at infinity, but now with an extra cosine.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/1ae3fb96-1392-4018-8a7c-da08fa205c2f?id=71202
-:label: Grasple:LimitAtInfinity:Cuboverquadmin
+:label: Grasple:71202
 :dropdown:
-:description: Limit at infinity of a rational function
+:description: Limit at infinity of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/6906d93e-496e-4953-a989-c39daeded01a?id=75780
-:label: Grasple:LimitAtInfinity:Ratofexp
+:label: Grasple:75780
 :dropdown:
-:description: Limit at infinity of function containing exponentials
+:description: Limit at infinity of function containing exponentials.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/1712135e-9d9c-4817-8021-4c9b1d22cdc7?id=74230
-:label: Grasple:LimitAtInfinity:Firstsimplify
+:label: Grasple:74230
 :dropdown:
-:description: Limit at infinity of composition of exponential and logarithm
+:description: Limit at infinity of composition of exponential and logarithm.
 
 ::::
 
@@ -1016,63 +1007,63 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/de13b607-0050-4942-aff6-13834c8d9846?id=74225
-:label: Grasple:LimitAtInfinity:Sub
+:label: Grasple:74225
 :dropdown:
-:description: Turning one limit at infinity into another
+:description: Turning one limit at infinity into another.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/afae0da5-b56d-43ef-a16f-3349b6cfc66a?id=71344
-:label: Grasple:LimitAtInfinity:Linoversqquad
+:label: Grasple:71344
 :dropdown:
-:description: Limit at infinity and minus infinity of expression with square root
+:description: Limit at infinity and minus infinity of expression with square root.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/364d5cc0-c557-43a5-9d80-7617fef3c0e1?id=69511
-:label: Grasple:LimitAtInfinity:sqquadminsqquad
+:label: Grasple:69511
 :dropdown:
-:description: Limit at infinity of expression with square roots
+:description: Limit at infinity of expression with square roots.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/30f0be51-19c4-43fa-9168-26b96c8a54ec?id=69495
-:label: Grasple:LimitAtInfinity:mininfsqquadminsqquad
+:label: Grasple:69495
 :dropdown:
-:description: Limit at minus infinity of expression with square roots
+:description: Limit at minus infinity of expression with square roots.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/0c4c33b1-0abc-4dc8-83bb-9e7044e29336?id=75620
-:label: Grasple:LimitAtInfinity:squeezesinoverxton
+:label: Grasple:75620
 :dropdown:
-:description: Limit at infinity containing a sine
+:description: Limit at infinity containing a sine.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/2701792b-bac2-4d29-9812-d51e04d3673e?id=75623
-:label: Grasple:LimitAtInfinity:squeezesexpcosoverxton
+:label: Grasple:75623
 :dropdown:
-:description: Limit at infinity containing a cosine and an exponential
+:description: Limit at infinity containing a cosine and an exponential.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/200b7827-53cc-4649-806c-353cefbac20a?id=75625
-:label: Grasple:LimitAtInfinity:squeezebetweenrational
+:label: Grasple:75625
 :dropdown:
-:description: Limit at infinity of function in between two other functions
+:description: Limit at infinity of function in between two other functions.
 
 ::::
 
@@ -1080,115 +1071,115 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/7cc6b0ea-88ca-488e-b3d2-d459c729c600?id=75644
-:label: Grasple:LimitAtInfinity:Horasympquadoverquad
+:label: Grasple:75644
 :dropdown:
-:description: Horizontal asymptotes of a rational function
+:description: Horizontal asymptotes of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/eca4d037-1be9-4f2c-9795-683a8ce44245?id=75739
-:label: Grasple:LimitAtInfinity:Horasympln
+:label: Grasple:75739
 :dropdown:
-:description: Horizontal asymptotes of logarithm
+:description: Horizontal asymptotes of logarithm.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/0ff3a3ce-4627-4292-82a5-dc549b34f96c?id=69475
-:label: Grasple:LimitAtInfinity:Horasymplinoversqquad
+:label: Grasple:69475
 :dropdown:
-:description: Horizontal asymptotes of a function containing a square root
+:description: Horizontal asymptotes of a function containing a square root.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/16159b6e-64e4-46a6-8194-89e9a3a5320e?id=69474
-:label: Grasple:LimitAtInfinity:Horasympquadoversqquad
+:label: Grasple:69474
 :dropdown:
-:description: Horizontal asymptotes of a function containing a square root
+:description: Horizontal asymptotes of a function containing a square root.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/c41a8138-9686-48d0-9ab6-a1b9da61d047?id=69473
-:label: Grasple:LimitAtInfinity:Horasympratexp
+:label: Grasple:69473
 :dropdown:
-:description: Horizontal asymptotes of a function containing exponentials
+:description: Horizontal asymptotes of a function containing exponentials.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/047c46d7-70f6-490d-a879-4ff27a72ef74?id=75736
-:label: Grasple:LimitAtInfinity:Horasympratabs
+:label: Grasple:75736
 :dropdown:
-:description: Horizontal asymptotes of a function containing an absolute value
+:description: Horizontal asymptotes of a function containing an absolute value.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/7d2aeced-4a0f-43bd-bdd0-93bd72a86df4?id=69483
-:label: Grasple:LimitAtInfinity:Horvertasympquadoverquad
+:label: Grasple:69483
 :dropdown:
-:description: Horizontal and vertical asymptotes of a rational function
+:description: Horizontal and vertical asymptotes of a rational function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/12e94043-637f-42ec-8db3-46f74a960f2a?id=69470
-:label: Grasple:LimitAtInfinity:Horvertasymparctan1overx
+:label: Grasple:69470
 :dropdown:
-:description: Horizontal and vertical asymptotes of $\arctan\left(\frac{1}{x}\right)$
+:description: Horizontal and vertical asymptotes of $\arctan\left(\frac{1}{x}\right)$.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/6c17b1be-26a6-4238-8840-7a1a4d01870c?id=75715
-:label: Grasple:LimitAtInfinity:Growthrategraph
+:label: Grasple:75715
 :dropdown:
-:description: Comparing growth rates in a graph
+:description: Comparing growth rates in a graph.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/05f0d460-1708-457d-b6fc-525460cf1679?id=75714
-:label: Grasple:LimitAtInfinity:Growthratecompute
+:label: Grasple:75714
 :dropdown:
-:description: Comparing growth between some functions
+:description: Comparing growth between some functions.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/931e35df-c5d0-440e-ae9a-fff935f428d9?id=75721
-:label: Grasple:LimitAtInfinity:Growthrateinbetween
+:label: Grasple:75721
 :dropdown:
-:description: Growth rate in between some other growth rates
+:description: Growth rate in between some other growth rates.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/9d9ef2ef-1f17-4c01-8a6b-22fb40dbea0f?id=93108
-:label: Grasple:LimitAtInfinity:Obliquerat2
+:label: Grasple:93108
 :dropdown:
-:description: How many oblique asymptotes does this rational function have
+:description: How many oblique asymptotes does this rational function have.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/053924a4-e206-4646-b773-5543973c6ac6?id=93106
-:label: Grasple:LimitAtInfinity:Obliquesqrt1
+:label: Grasple:93106
 :dropdown:
 :description: How many oblique asymptotes does this function containing a square root have?
 
@@ -1197,9 +1188,9 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/ce2ad418-d71a-4453-98a2-b49a6990efb5?id=93107
-:label: Grasple:LimitAtInfinity:Obliquerat1
+:label: Grasple:93107
 :dropdown:
-:description: Oblique asymptotes of a rational function
+:description: Oblique asymptotes of a rational function.
 
 ::::
 
@@ -1208,18 +1199,18 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/df936d9a-ed59-4d4b-bdb6-475292e4584c?id=93105
-:label: Grasple:LimitAtInfinity:Obliquesqrt2
+:label: Grasple:93105
 :dropdown:
-:description: Oblique asymptotes of a function containing a square root
+:description: Oblique asymptotes of a function containing a square root.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/d4ae69f9-e2da-4756-9c1f-01677905fe15?id=93091
-:label: Grasple:LimitAtInfinity:Obliquesqrtmin
+:label: Grasple:93109
 :dropdown:
-:description: Oblique asymptotes of a function containing a square root
+:description: Oblique asymptotes of a function containing a square root.
 
 ::::
 
@@ -1227,26 +1218,26 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/a42deb9a-1079-4ee4-baad-c6689c07dd56?id=71340
-:label: Grasple:LimitAtInfinity:Workingwithformaldef
+:label: Grasple:71340
 :dropdown:
-:description: Working with the formal definition of a limit at infinity
+:description: Working with the formal definition of a limit at infinity.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/36eb98d4-ee3e-4fd1-9ef0-1c170b3cedfa?id=75716
-:label: Grasple:LimitAtInfinity:Applraindrops
+:label: Grasple:75716
 :dropdown:
-:description: Application: equilibrium velocity of falling raindrop
+:description: Application: equilibrium velocity of falling raindrop.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/4cabfed3-8854-4d1d-8e84-c3081e8fc3ed?id=75718
-:label: Grasple:LimitAtInfinity:Applbrine
+:label: Grasple:75718
 :dropdown:
-:description: Application: equilibrium concentration in salt tank
+:description: Application: equilibrium concentration in salt tank.
 
 ::::
