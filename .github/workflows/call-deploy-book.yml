@@ -14,6 +14,11 @@ on:
     - .github/workflows/call-deploy-book.yml
   workflow_dispatch:
 
+# Prevent overlapping Pages deployments
+concurrency:
+  group: pages-${{ github.repository }}
+  cancel-in-progress: true
+
 jobs: 
   call-workflow:
     uses: TeachBooks/deploy-book-workflow/.github/workflows/deploy-book.yml@main
