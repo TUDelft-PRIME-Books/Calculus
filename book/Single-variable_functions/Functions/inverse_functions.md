@@ -394,7 +394,7 @@ Which of these functions is/are equal to its own inverse function?
 [x] $f(x)=\pi-x$ with domain $\mathbb{R}$.
 > The equation $y=\pi-x$ gives $x=\pi-y$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\pi-x$. In addition, the range of the original function $f$ is $\mathbb{R}$. So $f$ is its own inverse function.
 :::{applet}
-:url: calculus/inverse_functions/Polling_Question_A
+:url: calculus/inverse_functions/polling_question_A
 :name: Fig:Inverse:Selfinverse:A
 :class: dark-light
 The graph of the function $f(x)=\pi-x$ and the line $x=y$.
@@ -402,7 +402,7 @@ The graph of the function $f(x)=\pi-x$ and the line $x=y$.
 [ ] $f(x)=2x$ with domain $\mathbb{R}$.
 > The equation $y=2x$ gives $x=\dfrac{y}{2}$. This means that this function is invertible, but its inverse is $f^{-1}(x)=\dfrac{x}{2}$. So this function is not its own inverse function.
 :::{applet}
-:url: calculus/inverse_functions/Polling_Question_B
+:url: calculus/inverse_functions/polling_question_B
 :name: Fig:Inverse:Selfinverse:B
 :class: dark-light
 The graph of the function $f(x)=2x$, its reflection across the line $x=y$, and the line $x=y$.
@@ -410,7 +410,7 @@ The graph of the function $f(x)=2x$, its reflection across the line $x=y$, and t
 [x] $f(x)=\dfrac{1}{x}$ with domain $(0,\infty)$.
 > The equation $y=\dfrac{1}{x}$ gives $x=\dfrac{1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{1}{x}$. In addition, the range of the original function $f$ is $(0,\infty)$. So $f$ is its own inverse function.
 :::{applet}
-:url: calculus/inverse_functions/Polling_Question_C
+:url: calculus/inverse_functions/polling_question_C
 :name: Fig:Inverse:Selfinverse:C
 :class: dark-light
 The graph of the function $f(x)=\dfrac{1}{x}$ on $(0,\infty)$ and the line $x=y$.
@@ -418,7 +418,7 @@ The graph of the function $f(x)=\dfrac{1}{x}$ on $(0,\infty)$ and the line $x=y$
 [ ] $f(x)=\dfrac{-1}{x}$ with domain $(0,\infty)$.
 > The equation $y=\dfrac{-1}{x}$ gives $x=\dfrac{-1}{y}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\dfrac{-1}{x}$. However, the range of the original function is $(-\infty,0)$, which is the domain of the inverse function. So the inverse function is defined by the same formula as the original function, but their domains are different, so they are not the same functions.
 :::{applet}
-:url: calculus/inverse_functions/Polling_Question_D
+:url: calculus/inverse_functions/polling_question_D
 :name: Fig:Inverse:Selfinverse:D
 :class: dark-light
 The graph of the function $f(x)=\dfrac{-1}{x}$ on $(0,\infty)$, its reflection across the line $x=y$, and the line $x=y$.
@@ -426,7 +426,7 @@ The graph of the function $f(x)=\dfrac{-1}{x}$ on $(0,\infty)$, its reflection a
 [ ] $f(x)=1$ with domain $\mathbb{R}$.
 > The equation $y=1$ cannot be solved for $x$. Indeed, the function $f$ is not one-to-one, as all values of $x$ are mapped to the same number $1$. So this function does not have an inverse function.
 :::{applet}
-:url: calculus/inverse_functions/Polling_Question_E
+:url: calculus/inverse_functions/polling_question_E
 :name: Fig:Inverse:Selfinverse:E
 :class: dark-light
 The graph of the function $f(x)=1$, its reflection across the line $x=y$, and the line $x=y$.
@@ -434,7 +434,7 @@ The graph of the function $f(x)=1$, its reflection across the line $x=y$, and th
 [x] $f(x)=\sqrt{1-x^2}$ with domain $[0,1]$.
 > The equation $y=\sqrt{1-x^2}$ gives $y^2=1-x^2$, which means $x=\pm\sqrt{1-y^2}$. Since the domain of the function in $[0,1]$, we know that any input $x$ is nonnegative, so we need the positive square root. So for $x$ in the domain of $f$ we have $y=\sqrt{1-x^2}$ precisely when $x=\sqrt{1-y^2}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\sqrt{1-x^2}$. In addition, the range of the original function $f$ is $[0,1]$. So $f$ is its own inverse function.
 :::{applet}
-:url: calculus/inverse_functions/Polling_Question_F
+:url: calculus/inverse_functions/polling_question_F
 :name: Fig:Inverse:Selfinverse:F
 :class: dark-light
 The graph of the function $f(x)=\sqrt{1-x^2}$ on $[0,1]$ and the line $x=y$.
