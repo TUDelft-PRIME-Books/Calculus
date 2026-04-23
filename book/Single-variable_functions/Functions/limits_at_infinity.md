@@ -731,7 +731,7 @@ Finally, we have the corresponding notations $\lim\limits_{x\rightarrow -\infty}
 We now proceed with proving the results from the earlier parts of this section.
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`
-:class: tudproof 
+:class: tudproof, full-width
 $\lim\limits_{x\rightarrow \infty}1=1$: First consider $f(x)=1$. Let $\varepsilon>0$ be given. Since $f$ is constant, we can take $N$ whatever we want, so we choose $N=0$. Then for all $x> N$ we have
 
 $$
@@ -819,7 +819,7 @@ $\lim\limits_{x\rightarrow -\infty}\arctan(x)=\frac{-\pi}{2}$: This argument can
 :name: Fig:LimitAtInfinity:ArctanLimit
 :class: dark-light
 
-An illustration of the choice $N$ when evaluating $\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$.
+An illustration of the choice for $N$ when evaluating $\lim\limits_{x\rightarrow \infty}\arctan(x)=\frac{\pi}{2}$.
 ::::
 
 ::::::
