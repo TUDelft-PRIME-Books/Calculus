@@ -24,17 +24,12 @@ $$
 
 is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$:
 
-```{figure} Images/integral1.png
----
-width: 50%
-name: Fig:Integration:DefiniteIntegral
-align: center
----
-The integral $\displaystyle\int_a^bf(x)\,dx$.
-```
+:::{applet}
+:url: calculus/definite_integrals/positive_continuous_function
+:name: Fig:Integration:DefiniteIntegral
+:class: dark-light 
 
-:::{todo}
-Replace {numref}`Fig:Integration:DefiniteIntegral` with an applet.
+The integral $\displaystyle\int_a^bf(x)\,dx$ for a positive and continuous function $f$.
 :::
 
 The numbers $a$ and $b$ are called the **limits of integration**, where $a$ is called the **lower limit** and $b$ the **upper limit**.
@@ -48,21 +43,15 @@ In many cases we need to use special techniques to calculate the area under a cu
 ::::{prf:example}
 :label: Ex:Integration:DefiniteSimple
 
-We calculate the integral $\displaystyle\int_0^3(2x+1)\,dx$ by using {prf:ref}`Def:Integration:DefiniteIntegral`. First we sketch the graph of the function $f(x)=2x+1$ on the interval $[0,3]$.
+We calculate the integral $\displaystyle\int_0^3(2x+1)\,dx$ by using {prf:ref}`Def:Integration:DefiniteIntegral`. First we sketch the graph of the function $f(x)=2x+1$ on the interval $[0,3]$ and shade the area between the graph and the $x$-axis.
 
-```{figure} Images/Fig-DefiniteIntegrals-LinearFunction.png
----
-width: 50%
-name: Fig:DefiniteIntegrals:LinearFunction
-align: center
----
+```{applet}
+:url: calculus/definite_integrals/linear_function
+:name: Fig:DefiniteIntegrals:LinearFunction
+:class: dark-light
 
-The graph of the function $f(x)=2x+1$ on the interval $[0,3]$.
+The graph of the function $f(x)=2x+1$ on the interval $[0,3]$ and the related integral.
 ```
-
-:::{todo}
-Replace {numref}`Fig:DefiniteIntegrals:LinearFunction` with an applet with the region under the graph shaded.
-:::
 
 We can see that the region under the graph is a trapezoid. The area of this trapezoid equals base times the average height: $3\cdot\frac{1+7}{2}=12$. Hence
 
@@ -93,20 +82,15 @@ As you can see, the definition is the same as for positive continuous functions.
 :label: Ex:Integration:DefinitePiecewise
 Consider the function $f:[0,3]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}x, & 0\leq x<1,\\2, & 1\leq x\leq 2,\\x-1, & 2<x\leq 3.\end{array}\right.$
 
-The graph of this piecewise-continuous function is shown below.
+The graph of this piecewise-continuous function is shown below. We have shaded the area between the graph and the $x$-axis.
 
-```{figure} Images/piecewise.png
----
-width: 50%
-name: Fig:Integration:DefinitePiecewise
-align: center
----
-The graph of a piecewise-continuous function.
+```{applet}
+:url: calculus/definite_integrals/piecewise_function
+:name: Fig:Integration:DefinitePiecewise
+:class: dark-light
+
+The graph of a positive piecewise-continuous function and the area between the graph and the $x$-axis.
 ```
-
-:::{todo}
-Replace {numref}`Fig:Integration:DefinitePiecewise` with an applet.
-:::
 
 The definite integral of $f$ over the interval $[0,3]$ can be calculated as the sum of three areas:
 
@@ -147,31 +131,23 @@ Note that this means that we assume that an area is a nonnegative quantity. Henc
 
 But what if the function takes on both positive and negative values? Well, in that case we split the interval into several subintervals such that on each subinterval the function is either positive or negative. Then we calculate the area on each subinterval and add them together, taking into account the sign of the function on each subinterval. Or in other words: If $f$ takes on both positive and negative values the integral equals the total area above the $x$-axis minus the total area below the $x$-axis, as illustrated in the following figure.
 
-```{figure} Images/integral3.png
----
-width: 50%
-name: Fig:Integration:Integral3
-align: center
----
+```{applet}
+:url: calculus/definite_integrals/positive_and_negative_values
+:name: Fig:Integration:Integral3
+:class: dark-light
 
 The integral $\displaystyle\int_a^bf(x)\,dx$ for a function that takes on both positive and negative values.
 ```
 
-:::{todo}
-Replace {numref}`Fig:Integration:Integral3` with an applet.
-:::
-
 ::::{prf:example}
 :label: Ex:Integration:IntegralCos
 
-```{figure} Images/cosine_area.png
----
-width: 50%
-name: Fig:Integration:IntegralCos
-align: center
----
+```{applet}
+:url: calculus/definite_integrals/cosine_area
+:name: Fig:Integration:IntegralCos
+:class: dark-light
 
-The integral $\displaystyle\int_0^{2\pi}\cos(x)\,dx$.
+The integral $\displaystyle\int_0^{2\pi}\cos(x)\,dx$ visualised.
 ```
 
 \begin{align*}
@@ -202,19 +178,13 @@ We end this subsection with an example.
 
 Consider the function $f:[-2,5]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}1, &-2\leq x<0\\2x-4, & 0\leq x<2,\\-x+4, & 2\leq x\leq 5,\end{array}\right.$ of which you can find the graph below.
 
-```{figure} Images/Fig-Integration-DefiniteBoth.png
----
-width: 50%
-name: Fig:Integration:DefiniteBoth
-align: center
----
+```{applet}
+:url: calculus/definite_integrals/piecewise_function_with_negative_and_positive_values
+:name: Fig:Integration:DefiniteBoth
+:class: dark-light
 
 The graph of a piecewise-continuous function that takes on both positive and negative values.
 ```
-
-:::{todo}
-Replace {numref}`Fig:Integration:DefiniteBoth` with an applet.
-:::
 
 The integral $\displaystyle\int_{-2}^5f(x)\,dx$ can be calculated as follows:
 
@@ -237,35 +207,23 @@ Now we have {prf:ref}`Def:Integration:DefiniteGeneral`, we can start looking at 
 
 Consider the graph of a function shown in the figure below with the indicated area between the graph of the function and the $x$-axis that we want to calculate.
 
-```{figure} Images/Fig-DefiniteIntegrals-General.png
----
-width: 50%
-name: Fig:DefiniteIntegrals:General
-align: center
----
+```{applet}
+:url: calculus/definite_integrals/general_function
+:name: Fig:DefiniteIntegrals:General
+:class: dark-light
 
 A general function with the area to be calculated.
 ```
 
-:::{todo}
-Replace {numref}`Fig:DefiniteIntegrals:General` with an applet.
-:::
-
 Even though the function is continuous on the interval $[a,b]$, it is not composed of a simple geometric shape such as a rectangle or a triangle. Hence we cannot calculate the area directly. In order to find this area, we start with an approximation: we divide the interval $[a,b]$ into subintervals and consider the sum of the areas of the indicated rectangles:
 
-```{figure} Images/integral2.png
----
-width: 50%
-name: Fig:Integration:SumRectangles
-align: center
----
+```{applet}
+:url: calculus/definite_integrals/sum_of_areas_of_rectangles
+:name: Fig:Integration:SumRectangles
+:class: dark-light
 
 Sum of areas of rectangles.
 ```
-
-:::{todo}
-Replace {numref}`Fig:Integration:SumRectangles` with an applet.
-:::
 
 The height of each rectangle is taken to be the value of the function $f$ at an arbitrary point $x_n^*$ in the corresponding subinterval. This point $x_n^*$ is called a **sample point** and might be any point in the subinterval such as the left point, the right point or the middle point, for instance. Then we take the sum of the areas of all rectangles.
 
@@ -275,18 +233,13 @@ $$
 a=x_0 < x_1 < x_2 < \ldots < x_{n-1} < x_N=b.
 $$
 
-```{figure} Images/riemann.png
----
-width: 50%
-name: Fig:Integration:RiemannSum
-align: center
----
+```{applet}
+:url: calculus/definite_integrals/building_a_Riemann_sum
+:name: Fig:Integration:RiemannSum
+:class: dark-light
+
 Building a Riemann sum.
 ```
-
-:::{todo}
-Replace {numref}`Fig:Integration:RiemannSum` with an applet.
-:::
 
 If we choose as sample point $x_n^*=x_n$ the right point in each subinterval $[x_{n-1},x_n]$, then the area equals
 
@@ -368,6 +321,8 @@ R_N&= \sum_{n=1}^Nf(x_n^*)\Delta x \\
 &= \frac{2N^2+3N+1}{6N^2}.
 \end{align*}
 
+In the step that the summation changes, we used the result from {prf:ref}`Ex:Series:SumOfSquares`.
+
 Using techniques from {numref}`Section:Limitinf` we find that
 
 $$
@@ -382,10 +337,6 @@ $$
 $$
 
 ::::::
-
-:::{todo}
-Add a reference to $1^2+2^2+3^2+\cdots+n^2=\frac{1}{6}n(n+1)(2n+1)$.
-:::
 
 Since the width of each subinterval $[x_{n-1},x_n]$ tends to zero, the choice of the *sample point* $x_n^*$ in $[x_{n-1},x_n]$ is arbitrary. Except for this choice of the sample point, there are other ways to define a definite integral. We chose the definition of a so-called **Riemann integral**. Instead one could take the *lower sum* of all areas with as height the minimum of $f$ in each subinterval and the *upper sum* of all areas with as height the maximum of $f$ in each subinterval. A function $f$ is then called integrable if the *supremum* of all lower sums equals the *infimum* of all upper sums, being the value of the integral. This is the definition of a so-called **Darboux integral**, named after the French mathematician [Jean-Gaston Darboux (1842-1917)](https://en.wikipedia.org/wiki/Jean_Gaston_Darboux).
 
@@ -427,18 +378,13 @@ The above theorem can be proved by considering the areas involved according to {
 
 The sine function $\sin(x)$ is an odd function on the interval $\left[-\frac{1}{2}\pi,\frac{1}{2}\pi\right]$, of which the graph is shown below.
 
-```{figure} Images/sine_odd.png
----
-width: 50%
-name: Fig:Integration:DefiniteOdd
-align: center
----
-The graph of the sine function.
-```
+```{applet} 
+:url: calculus/definite_integrals/sine_area
+:name: Fig:Integration:DefiniteOdd
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Integration:DefiniteOdd` with an applet with $\tfrac{1}{2}\pi$ instead of $\tfrac{\pi}{2}$.
-:::
+The graph of the sine function and the integral $\displaystyle\int_{-\frac12\pi}^{\frac12\pi}\sin(x)\,dx$.
+```
 
 Inspection of the graph shows that the area below the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Since the area below the $x$-axis is taken with a negative sign in {prf:ref}`Def:Integration:DefiniteGeneral`, these two areas cancel, and we find
 
