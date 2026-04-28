@@ -4,15 +4,15 @@
 
 ## Introduction
 
-::::{figure} Images/Fig-LimitPoint-Intro.png
-:name: Fig:LimitPoint:Intro
-:class: dark-light
-:figclass: margin
+%::::{figure} Images/Fig-LimitPoint-Intro.png
+%:name: Fig:LimitPoint:Intro
+%:class: dark-light
+%:figclass: margin
 
-Should we risk it?
+%Should we risk it?
 
-::::
-:::::
+%::::
+%:::::
 
 Often, when a point is not in the domain of a function, this is because this point cannot be entered into the formula describing the function. This would happen, for instance, because that would involve dividing by $0$, taking square roots or logarithms of negative numbers, and so on. However, in some cases, the function values near the point still approach a certain value as the values of $x$ approach the problematic point. This is illustrated in the following example.
 
