@@ -171,7 +171,31 @@ is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$, t
 
 ::::::
 
-We end this subsection with an example.
+::::{question}
+:type: short-answer
+:variant: gaps
+:admonition:
+:class: question
+:showanswer:
+
+Fill in the blanks:
+
+---
+TI[definite]
+TI[limit]
+TI[lower limit]
+TI[integrand]
+TI[variable]
+^^^
+? Consider the {gap} integral $\displaystyle\int_a^bf(x)\,dx$.
+
+The number $b$ is called the upper {gap} and the number $a$ is called the {gap} of the integral.
+
+The function $f$ is called the {gap} and $x$ is the {gap} of integration.
+---
+::::
+
+We end this subsection with an example. 
 
 ::::::{prf:example}
 :label: Ex:Integration:DefiniteBoth
@@ -559,15 +583,6 @@ Note that the velocity in general cannot change suddenly. In fact, the velocity 
 ## Grasple exercises
 
 ### Terminology of definite integrals
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/cb0da106-ca63-414a-8aa3-fa9887a97646?id=75563
-:label: Grasple:75563
-:dropdown:
-:description: Practicing terminology of definite integrals.
-
-::::
 
 ::::{grasple}
 :iframeclass: dark-light

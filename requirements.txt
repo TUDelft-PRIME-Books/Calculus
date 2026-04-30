@@ -11,4 +11,4 @@ sphinx-apa-references == 1.0
 sphinx-visualized==0.8.1
 
 # Our favourite Sphinx extensions in one line, replace with individual extensions if you prefer some extensions not to be included (https://github.com/TeachBooks/TeachBooks-Favourites)
-git+https://github.com/TeachBooks/TeachBooks-Favourites@v1.12.5
+git+https://github.com/TeachBooks/TeachBooks-Favourites@temp_for_gaps
