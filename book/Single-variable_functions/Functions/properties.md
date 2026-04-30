@@ -4,24 +4,24 @@
 (Subsec:PropertiesFunctionsIntro)=
 ## Introduction
 
-In {numref}`Section:FunctionsIntro` we encountered several types of functions that we called standard functions (for instance, polynomial functions, trigonometric functions and exponential functions). In this section, we try to find in what ways we can combine these standard functions to obtain other, perhaps more complicated functions. In addition, we saw that these standard functions show some very different qualitative behaviour. For instance, exponential functions either always grow or always decay, while the sine and the cosine show periodic behaviour. We will, therefore, also use this section to define various classifications of functions and we will try to find out, if possible, which standard functions fall under which class of functions.
+In {numref}`Section:FunctionsIntro` we encountered several types of functions that we called standard functions (for instance, polynomial functions, trigonometric functions and exponential functions). In this section, we combine these standard functions to obtain other, perhaps more complicated functions. In addition, we saw that these standard functions have some very different qualitative behaviour. For instance, exponential functions either always grow or always decay, while the sine and the cosine show periodic behaviour. We will, therefore, also use this section to define various classes of functions and we will try to find out which standard functions fall in which class.
 
 (Subsec:PropertiesFunctionsCombinations)=
 ## Combining functions
 
-There are many ways to combine several functions into a new function. We start with an example to showcase one possibility.
+There are many ways to combine functions into a new function. We start with an example to showcase one possibility.
 
 ::::::{prf:example} Sum of two functions
 :label: Ex:PropertiesFunctions:Sum
-The most straightforward way to combine several functions is to use arithmetic operations such as addition and multiplication. For instance, consider the function $f(x)=x^2+e^x$. We observe that this function is some sort of combination of the functions $g(x)=x^2$ and $h(x)=e^x$. Indeed, for each value of $x$ we have
+The most straightforward way to combine functions is to use arithmetic operations such as addition and multiplication. For instance, consider the function $f(x)=\sin(x)+\frac{x}{2}$. We observe that this function is some sort of combination of the functions $g(x)=\sin(x)$ and $h(x)=\frac{x}{2}$. Indeed, for each value of $x$ we have
 
 $$
- f(x)=x^2+e^x=g(x)+h(x),
+ f(x)=\sin(x)+\frac{x}{2}=g(x)+h(x),
 $$
 
 so that the function value $f(x)$ is the sum of the function values $g(x)$ and $h(x)$. As such, we say that the function $f$ is the **sum** of the functions $g$ and $h$, and we write $f=g+h$. 
 
-So what does the graph of $f$ look like in terms of the graphs of $g$ and $h$? For each value of $x$, we know that $f(x)=g(x)+h(x)$, so $f(x)$ is $h(x)$ higher than $g(x)$. That means that if we start from the graph of $g$, we obtain the graph of $f$ by rising the function value $x^2$ by $e^x$ for each value of $x$. This can be seen in the figure below. We can also think of this as that the graph of $g$ is stacked on top of the graph of $f$. 
+So what does the graph of $f$ look like in terms of the graphs of $g$ and $h$? For each value of $x$, we know that $f(x)=g(x)+h(x)$, so $f(x)$ is $h(x)$ higher than $g(x)$. That means that if we start from the graph of $g$, we obtain the graph of $f$ by rising the function value $\sin(x)$ by $\frac{x}{2}$ for each value of $x$. This can be seen in the figure below. We can also think of this as the graph of $g$ being stacked on top of the graph of $f$. 
 
 ```{figure} Images/Fig-PropertiesFunctions-Sum.png
 ---
@@ -35,12 +35,12 @@ An illustration of the sum of two functions.
 ```
 
 :::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Sum` with an applet.
+Replace {numref}`Fig:PropertiesFunctions:Sum` with an applet. Important: the functions in this example have changed, but the png picture still uses the old functions. The applet should use the new functions.
 :::
 
 ::::::
 
-In the previous example we saw that we can take two functions and make a new function by adding the two functions. In general, we can perform arithmetic operations to functions just like we can with numbers. 
+In the previous example we saw that we can take two functions and create a new function by adding the two functions. In general, we can perform arithmetic operations to functions just like with numbers. 
 
 ::::::{prf:definition} Arithmetic with functions
 :label: Def:PropertiesFunctions:Arithmetic
@@ -52,15 +52,23 @@ Let $f$ and $g$ be functions. Then we can define the following functions.
 - The **product function** $fg$ is defined by $(fg)(x)=f(x)g(x)$.
 - The **quotient function** $\frac{f}{g}$ is defined by $\left(\frac{f}{g}\right)(x)=\frac{f(x)}{g(x)}$.
 - If $c$ is a real number, then the **scalar multiple function** $cf$ is defined by $(cf)(x)=cf(x)$.
-- If $c$ and $d$ are real numbers, then the **linear combination** $cf+dg$ is defined by $(cf+dg)(x)=cf(x)+dg(x)$.
+- If $c$ and $d$ are real numbers, then the **linear combination** $h=cf+dg$ is defined by $h(x)=cf(x)+dg(x)$.
 
 ::::::
 
-Notice that each of these functions is found by applying the corresponding operation pointwise. That means that, for instance, we define the product function $fg$ by specifying that each point $x$ we evaluate the function value of $fg$ at $x$ by computing the product of the real numbers $f(x)$ and $g(x)$. 
+Notice that each of these functions is found by applying the corresponding operation pointwise. That means that, for instance, we define the product function $fg$ by specifying that at each point $x$, we evaluate the function value of $fg$ at $x$ by computing the product of the real numbers $f(x)$ and $g(x)$. 
 
-Recall that we made the convention that, unless specified otherwise, the domain of a function is its maximal domain. So what does this tell us about the domains of functions like $f+g$ or $\frac{f}{g}$? For $f+g$, we defined $(f+g)(x)=f(x)+g(x)$, so whenever $f(x)$ and $g(x)$ both exist, we can define their sum and, with that, we can define $(f+g)(x)$. As such, the domain of $f+g$ are precisely those $x$ that are both in the domain of $f$ and the domain of $g$. That is, the domain of $f+g$ is the intersection of the domains of $f$ and $g$.
+Recall that we made the convention that, unless specified otherwise, the domain of a function is its maximal domain. So what does this tell us about the domains of functions like $f+g$ or $\frac{f}{g}$? For $f+g$, we defined $(f+g)(x)=f(x)+g(x)$, so whenever $f(x)$ and $g(x)$ both exist, we can define their sum and, with that, we can define $(f+g)(x)$. As such, the domain of $f+g$ consists of precisely those $x$ that are both in the domain of $f$ and the domain of $g$. That is, the domain of $f+g$ is the intersection of the domains of $f$ and $g$. Writing this formally, we have
 
-For $\frac{f}{g}$, things are a bit more complicated. Indeed, we defined $\left(\frac{f}{g}\right)(x)=\frac{f(x)}{g(x)}$, so in order for $\left(\frac{f}{g}\right)(x)$ to exist, both $f(x)$ and $g(x)$ certainly need to exist. However, that is not sufficient. Indeed, if $g(x)=0$ for some $x$, then we cannot define $\frac{f(x)}{g(x)}$ because we cannot divide by $0$. As such, the domain of $\frac{f}{g}$ consists of those values of $x$ that are both in the domain of $f$ and the domain of $g$ **and** have $g(x)\neq 0$.
+$$
+ D_{f+g}=D_f\cap D_g.
+$$
+
+For $h=\frac{f}{g}$, things are a bit more complicated. Indeed, we defined $h(x)=\left(\frac{f}{g}\right)(x)=\frac{f(x)}{g(x)}$, so in order for $h(x)$ to exist, both $f(x)$ and $g(x)$ certainly need to exist. However, if $g(x)=0$ for some $x$, then $\frac{f(x)}{g(x)}$ in undefined because we cannot divide by $0$. As such, the domain of $h=\frac{f}{g}$ consists of those values of $x$ that are both in the domain of $f$ and the domain of $g$ **and** have $g(x)\neq 0$. Writing this formally, we have
+
+$$
+ D_{h}=\left(D_f\cap D_g\right)\setminus\left\{x\,\middle|\,g(x)=0\right\}.
+$$
 
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:ProductsAndDomains
@@ -76,12 +84,12 @@ So what is the domain of the product function? You might be tempted to think tha
 :::{figure} Images/Fig-PropertiesFunctions-ProductsAndDomains.png
 :name: Fig:PropertiesFunctions:ProductsAndDomains
 
-The graphs of the functions $r$, $s$ and $rs$.
+The graphs of the functions $r$, $s$ and $rs$. The function $r$ is defined in $0$, but $s$ and $rs$ are not.
 
 :::
 
 :::{todo}
-Replace {numref}`Fig:PropertiesFunctions:ProductsAndDomains` with an applet.
+Replace {numref}`Fig:PropertiesFunctions:ProductsAndDomains` with an applet. Try to make sure that it is clearly visible that $r$ is defined in $0$, but $s$ and $rs$ are not.
 :::
 
 ::::::
@@ -91,13 +99,13 @@ Replace {numref}`Fig:PropertiesFunctions:ProductsAndDomains` with an applet.
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:Composition
 
-Apart from arithmetic operations, there is another very common way of combining two functions. Indeed, consider the function $f(x)=e^{\sin(x)}$. This function is somehow obtain from the functions $g(x)=e^x$ and $h(x)=\sin(x)$, but how? It is not one of the way described in {prf:ref}`Def:PropertiesFunctions:Arithmetic`. Instead, we should think how you could end up with something like $e^{\sin(x)}$. The answer is the following: we are used to plugging $x$ into the formula describing a function, but we could also plug in something else. Indeed, we could plug in $\sin(x)$ into the function $g$ and obtain $g(\sin(x))=e^{\sin(x)}$. Since $\sin(x)=h(x)$, we can write this as
+Another way of combining two functions is to use the output of one as the input of the other. For instance, consider the function $f(x)=e^{\sin(x)}$. This function is somehow obtained from the functions $g(x)=e^x$ and $h(x)=\sin(x)$, but how? It is not one of the way described in {prf:ref}`Def:PropertiesFunctions:Arithmetic`. Instead, you should think how we could end up with something like $e^{\sin(x)}$. The answer is the following: we are used to plugging $x$ into the formula describing a function, but we could also plug in something else. Indeed, we could plug in $\sin(x)$ into the function $g$ and obtain $g(\sin(x))=e^{\sin(x)}$. Since $\sin(x)=h(x)$, we can write this as
 
 $$
  g(h(x))=g(\sin(x))=e^{\sin(x)}=f(x).
 $$
 
-As such we notice that for each value of $x$ we have $f(x)=g(h(x))$. We say that $f$ is the **composition** of $g$ with $h$ and we write $f=g\circ h$. We can think of the composition $g\circ h$ as first applying $h$ and plugging the resulting number into $g$.
+As such we notice that for each value of $x$ we have $f(x)=g(h(x))$. We say that $f$ is the **composition** of $g$ with $h$ and we write $f=g\circ h$. We can think of the composition $g\circ h$ as first applying $h$ and then plugging the resulting number into $g$.
 
 Notice that $g\circ h$ is **not** the same as $h\circ g$. Indeed, for any value of $x$ we can compute
 
@@ -114,7 +122,7 @@ We can generalise this concept as follows.
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:Composition
 
-Let $f$ and $g$ be functions. Then we can the **composition** of $f$ with $g$, which we denote by $f\circ g$ (this notation is pronounced as "$f$ after $g$"), to be defined by
+Let $f$ and $g$ be functions. Then the **composition** of $f$ with $g$, denoted by $f\circ g$ (this notation is pronounced as "$f$ after $g$"), is defined by
 
 $$
  (f\circ g)(x)=f(g(x)).
@@ -125,12 +133,42 @@ $$
 ::::::{warning} 
 :name: Warning:PropertiesFunctions:Composition
 
-The compositions $f\circ g$ and $g\circ f$ are typically not the same function.
+The compositions $f\circ g$ and $g\circ f$ are typically not the same function. If they are the same, we say that the functions $f$ and $g$ **commute**.
 ::::::
 
-So what can we say about the domain of the composition $f\circ g$? Since $(f\circ g)(x)=f(g(x))$, at the very least we need to able to compute $g(x)$, since otherwise we could never plug it into $f$. So for $x$ to be in the domain of $f\circ g$, $x$ needs to be in the domain of $g$. That is not all, though, since we also need to be able to plug $g(x)$ into $f$, so $g(x)$ should be in the domain of $f$. Since those are the only restrictions, the domain of $f\circ g$ consists precisely of those values of $x$ in the domain of $g$ for which $g(x)$ is in the domain of $f$. Notice that this means that it is not necessarily so that $x$ in the domain of $f\circ g$ is also in the domain of $f$: only $g(x)$ needs to be in the domain of $f$.
+What can we say about the domain of the composition $f\circ g$? Since $(f\circ g)(x)=f(g(x))$, at the very least we need to be able to compute $g(x)$, since otherwise we could never plug it into $f$. So for $x$ to be in the domain of $f\circ g$, $x$ needs to be in the domain of $g$. We also need to be able to plug $g(x)$ into $f$, so $g(x)$ should be in the domain of $f$. Since these are the only restrictions, the domain of $f\circ g$ consists precisely of those values of $x$ in the domain of $g$ for which $g(x)$ is in the domain of $f$. Notice that this does not mean that $x$ in the domain of $f\circ g$ is also in the domain of $f$: only $g(x)$ needs to be in the domain of $f$. Writing this formally, we have
 
-In {prf:ref}`Ex:PropertiesFunctions:Sum` we saw that we can obtain the graph of $f+g$ from the graphs of $f$ and $g$ by stacking one on top of the other. For other combinations of functions like the product $fg$ or the composition $f\circ g$, this is a bit trickier in most cases. However, we can also reverse questions like these. For instance, if we take the graph of a function $f$ as shift every point $1$ to the right we obtain the graph of a different function (indeed, the result of shifting the graph to the right is a curve in $\mathbb{R}^2$ that still passes the vertical line test ({prf:ref}`Thm:Functions1var:VerticalLineTest`)). The main question now is: which function gives this graph? Let us call this new function $g$. Since we obtained the graph of $g$ by shifting the graph of $f$ $1$ to the right, a point $(x,y)$ lies on the graph of $g$ precisely when $(x-1,y)$ lies on the graph of $f$. Since $(x,y)$ lies on the graph of $g$ precisely when $g(x)=y$, while $(x-1,y)$ lies on the graph of $f$ precisely when $f(x-1)=y$, we find that $g(x)=f(x-1)$. We say that we performed a **horizontal shift** of $1$ to the right to obtain $g$ from $f$.
+$$
+ D_{f\circ g}=\left\{x\in D_g\,\middle|\,g(x)\in D_f\right\}.
+$$
+
+A logical follow-up question could be what happens if we take the composition of three (or even more) functions. So say, we have functions $f$, $g$ and $h$, what do we mean by $f\circ g\circ h$? Since we know what the composition of two functions is, we could try to construct the composition of three function as repeatedly composing two functions, but we run into an issue: there are two logical ways to make this construction. We could either compose $f$ and $g\circ h$, i.e. we could look at $f\circ(g\circ h)$, or, we could compose $f\circ g$ with $h$, i.e. we could look at $(f\circ g)\circ h$. Fortunately, it does not matter which of these we choose, as the resulting function is the same. This important property of composing functions is known as **associativity**.
+
+::::::{prf:theorem} Associativity of function composition
+:label: Thm:PropertiesFunctions:Associativity
+
+Let $f$, $g$ and $h$ be three functions. Then we have
+
+$$
+ f\circ(g\circ h)=(f\circ g)\circ h.
+$$
+
+As a consequence, we write $f\circ g\circ h$, when we mean one of these functions.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Associativity`
+:class: tudproof, dropdown
+For any $x$ we have
+
+$$
+ (f\circ(g\circ h))(x)=f((g\circ h)(x))=f(g(h(x)))=(f\circ g)(h(x))=((f\circ g)\circ h)(x),
+$$
+
+provided this expression exists. In addition, $(f\circ(g\circ h))(x)$ exists precisely when $(g\circ h)(x)=g(h(x))$ exists and is in the domain of $f$, which happens precisely when $x$ is in the domain of $h$, $h(x)$ is in the domain of $g$ and $g(h(x))$ is in the domain of $f$. Following a similar reasoning, this is the same condition as the existence of $((f\circ g)\circ h)(x)$. This means that the functions $f\circ(g\circ h)$ and $(f\circ g)\circ h$ are the same.
+:::
+
+In {prf:ref}`Ex:PropertiesFunctions:Sum` we saw that we can obtain the graph of $f+g$ from the graphs of $f$ and $g$ by stacking one on top of the other. For other combinations of functions like the product $fg$ or the composition $f\circ g$, this is usually a bit trickier. However, we can also reverse questions like these. For instance, if we take the graph of a function $f$ and shift every point $1$ to the right we obtain the graph of a different function (indeed, the result of shifting the graph to the right is a curve in $\mathbb{R}^2$ that still passes the vertical line test ({prf:ref}`Thm:Functions1var:VerticalLineTest`)). The main question now is: which function gives this graph? Let us call this new function $g$. Since we obtained the graph of $g$ by shifting the graph of $f$ $1$ to the right, a point $(x,y)$ lies on the graph of $g$ precisely when $(x-1,y)$ lies on the graph of $f$. Since $(x,y)$ lies on the graph of $g$ precisely when $g(x)=y$, while $(x-1,y)$ lies on the graph of $f$ precisely when $f(x-1)=y$, we find that $g(x)=f(x-1)$. We say that we performed a **horizontal shift** of $1$ to the right to obtain $g$ from $f$.
 
 Similarly, we can perform a **vertical shift** of $2$ downwards to the graph of $f$ to obtain the graph of a new function $h$. Since $(x,y)$ is on the graph of $h$ precisely when $(x,y+2)$ on the graph of $f$, we find that $h(x)=f(x)-2$.
 
@@ -139,20 +177,20 @@ We can generalize these considerations as follows.
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Shifts
 
-Let $f$ be a function and $a>0$ be a positive real number. Then we can perform to $f$
+Let $f$ be a function and $a>0$ be a positive real number. Then we can perform to the graph of $f$
 
-- a **horizontal shift to the right** of size $a$ to obtain the function $g(x)=f(x-a)$;
-- a **horizontal shift to the left** of size $a$ to obtain the function $g(x)=f(x+a)$;
-- a **vertical shift upwards** of size $a$ to obtain the function $g(x)=f(x)+a$;
-- a **vertical shift downwards** of size $a$ to obtain the function $g(x)=f(x)-a$.
+- a **horizontal shift to the right** of size $a$ to obtain the graph of the function $g(x)=f(x-a)$;
+- a **horizontal shift to the left** of size $a$ to obtain the graph of the function $g(x)=f(x+a)$;
+- a **vertical shift upwards** of size $a$ to obtain the graph of the function $g(x)=f(x)+a$;
+- a **vertical shift downwards** of size $a$ to obtain the graph of the function $g(x)=f(x)-a$.
 
 ::::::
 
 Recall that for a function $f$ and a real number $c$ we defined the scalar multiple function $cf$ by $(cf)(x)$. What is the consequence of applying such a multiplication by a scalar to the graph of the function $f$? For that, we need to make a distinction between the cases where $c>0$, $c=0$ and $c<0$. 
 
-Let us first consider the case $c>0$. In that case, $(x,y)$ is on the graph of $f$ precisely when $(x,cy)$ is on the graph of $cf$. In terms of the graph, this means that the graph of $f$ is stretched in the $y$-direction with a factor $c$ (for $0<c<1$ this stretching is actually more akin to a compression, but we will call it stretching nonetheless). If $c=0$, then $(cf)(x)=0\cdot f(x)=0$ for all $x$, so then the graph is flattened onto the $x$-axis. Finally, we consider the case $c<0$. For convenience, we first let $c=-1$. In that case $(x,y)$ is on the graph of $f$ precisely when $(x,-y)$ is on the graph of $-f$. This means that we obtain the graph of $-f$ by reflecting the graph of $f$ in the $x$-axis. Now if $c<0$ is any negative scalar, then we notice that $c=-|c|$ so that $cf=-(|c|f)$. This means that we obtain the graph of $cf$ by first stretching it in the $y$ direction with a factor $|c|$ and then reflecting it in the $x$-axis.
+Let us first consider the case $c>0$. In that case, $(x,y)$ is on the graph of $f$ precisely when $(x,cy)$ is on the graph of $cf$. In terms of the graph, this means that the graph of $f$ is stretched in the $y$-direction with a factor $c$ (for $0<c<1$ this stretching is actually more akin to a compression, but we will call it stretching nonetheless). If $c=0$, then $(cf)(x)=0\cdot f(x)=0$ for all $x$, so then the graph is flattened onto the $x$-axis. Finally, we consider the case $c<0$. For convenience, we first let $c=-1$. In that case $(x,y)$ is on the graph of $f$ precisely when $(x,-y)$ is on the graph of $-f$. This means that we obtain the graph of $-f$ by reflecting the graph of $f$ in the $x$-axis. Now if $c<0$ is any negative scalar, then we notice that $c=-|c|$ so that $cf=-(|c|f)$. This means that we obtain the graph of $cf$ by first stretching it in the $y$ direction with a factor $|c|$ and then reflecting it across the $x$-axis.
 
-So going from $f$ to $cf$ corresponds to vertical stretching and/or reflecting. So what would correspond to horizontal stretching and/or reflecting? For this, let us first consider the function $h$ of which the graph is obtained by reflecting the graph of $f$ in the $y$-axis. That means that $(x,y)$ is on the graph of $h$ precisely when $(-x,y)$ is on the graph of $f$. As such, we must have $h(x)=f(-x)$. Similarly, if we obtain $h$ by stretching the graph of $f$ by a factor $c$ (with $c>0$) in the $x$-direction, then $(x,y)$ is on the graph of $f$ precisely when $(cx,y)$ is on the graph of $h$. Hence, we must have $h(cx)=f(x)$, which we can rewrite to $h(x)=f\left(\frac{x}{c}\right)$. Combining these two ideas, gives that for $c<0$ the function $h(x)=f\left(\frac{x}{c}\right)=f\left(-\frac{x}{|c|}\right)$ is obtained by first stretching in the $x$-direction with a factor $|c|$ and then reflecting it in the $y$-axis.
+So going from $f$ to $cf$ corresponds to vertical stretching and/or reflecting. So what would correspond to horizontal stretching and/or reflecting? For this, let us first consider the function $h$ of which the graph is obtained by reflecting the graph of $f$ in the $y$-axis. That means that $(x,y)$ is on the graph of $h$ precisely when $(-x,y)$ is on the graph of $f$. As such, we must have $h(x)=f(-x)$. Similarly, if we obtain $h$ by stretching the graph of $f$ by a factor $c$ (with $c>0$) in the $x$-direction, then $(x,y)$ is on the graph of $f$ precisely when $(cx,y)$ is on the graph of $h$. Hence, we must have $h(cx)=f(x)$, which we can rewrite to $h(x)=f\left(\frac{x}{c}\right)$. Combining these two ideas, gives that for $c<0$ the function $h(x)=f\left(\frac{x}{c}\right)=f\left(-\frac{x}{|c|}\right)$ is obtained by first stretching in the $x$-direction with a factor $|c|$ and then reflecting it across the $y$-axis.
 
 We combine these results as follows.
 
@@ -162,12 +200,12 @@ We combine these results as follows.
 Let $f$ be a function and $c\neq 0$ a real number. Consider the functions $g(x)=cf(x)$ and $h(x)=f\left(\frac{x}{c}\right)$. Then, if $c>0$,
 
 - the graph of $g$ is obtained from the graph of $f$ by **vertically stretching** it by a factor $c$;
-- the graph of $h$ is obtained from the graph of $f$ by **horizontally stretching** it by a factor $c$;
+- the graph of $h$ is obtained from the graph of $f$ by **horizontally stretching** it by a factor $c$.
 
-while if $c<0$
+In addition, if $c=-1$,
 
-- the graph of $g$ is obtained from the graph of $f$ by **vertically stretching** it by a factor $|c|$ and subsequently **reflecting** it in the $x$-axis;
-- the graph of $h$ is obtained from the graph of $f$ by **horizontally stretching** it by a factor $|c|$ and subsequently **reflecting** it in the $y$-axis.
+- the graph of $g(x)=-f(x)$ is obtained from the graph of $f$ by **reflecting** it across the $x$-axis;
+- the graph of $h(x)=f(-x)$ is obtained from the graph of $f$ by **reflecting** it across the $y$-axis.
 
 ::::::
 
@@ -180,28 +218,29 @@ $$
  f(x)=-3\sin(2x-2)+4=-3\sin(2(x-1))+4.
 $$
 
-Starting with the graph of the sine function, which is given $y=\sin(x)$, we first perform a horizontal stretching by a factor $\frac{1}{2}$ to obtain the graph given by $y=\sin(2x)$. Then we perform a horizontal shift of $1$ to right to obtain the graph given by $y=\sin(2(x-1))$. Subsequently, we perform a reflection in the $x$-axis and a vertical stretching by a factor $3$ to obtain the graph given by $y=-3\sin(2(x-1))$. Finally, we perform a vertical shift of $4$ upwards to obtain the graph given by $y=-3\sin(2(x-1))+4$, i.e. the graph of $f$.
+Starting with the graph of the sine function, which is given $y=\sin(x)$, we first perform a horizontal stretching by a factor $\frac{1}{2}$ to obtain the graph given by $y=\sin(2x)$. Then we perform a horizontal shift of $1$ to the right to obtain the graph given by $y=\sin(2(x-1))$. Subsequently, we perform a reflection across the $x$-axis to obtain the graph given by $y=-\sin(2(x-1))$. Then we perform a vertical stretching by a factor $3$ to obtain the graph given by $y=-3\sin(2(x-1))$. Finally, we perform a vertical shift of $4$ upwards to obtain the graph given by $y=-3\sin(2(x-1))+4$, i.e. the graph of $f$.
 
 :::{figure} Images/Fig-PropertiesFunctions-ReflectionStretching.png
 :name: Fig:PropertiesFunctions:ReflectionStretching
 
-The four steps to obtain the graph of $f$ from the graph of $\sin(x)$ visualised.
+The five steps to obtain the graph of $f$ from the graph of $\sin(x)$ visualised.
 :::
 
 :::{todo}
 Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching` with an applet.
+Current graphs seem incorrect (and one step has been split up in 2). Correct order should be $y=\sin(x)$, $y=\sin(2x)$, $y=\sin(2(x-1))$, $y=-\sin(2(x-1))$, $y=-3\sin(2(x-1))$, $y=-3\sin(2(x-1))+4$.
 :::
 
-Notice that if we performed these 4 operations in a different order, we would obtain a different function. Indeed, if we start with the graph given by $y=\sin(x)$ and perform the vertical shift of $4$ upwards first, we obtain the graph given by $y=\sin(x)+4$. If we then perform the reflection in the $x$-axis and the vertical stretching by a factor $3$ we obtain the graph given by $y=-3\left(\sin(x)+4\right)=-3\sin(x)-12$. If we then perform the horizontal shift of $1$ to the right we obtain the graph given by $y=-3\sin(x-1)-12$. Finally, if we then perform the horizontal stretching by a factor $\frac{1}{2}$ we obtain the graph given by $y=-3\sin(2x-1)-12$. This function is very different from $f$, as can be seen from the graphs shown below.
+Notice that if we performed these five operations in a different order, we might obtain a different function (but not necessarily so). Indeed, if we start with the graph given by $y=\sin(x)$ and perform the vertical shift of $4$ upwards first, we obtain the graph given by $y=\sin(x)+4$. If we then perform the reflection in the $x$-axis we obtain the graph $y=-\left(\sin(x)+4\right)=-\sin(x)-4$. From the vertical stretching by a factor $3$ we obtain the graph given by $y=3\left(-\sin(x)-4\right)=-3\sin(x)-12$. If we then perform the horizontal shift of $1$ to the right we obtain the graph given by $y=-3\sin(x-1)-12$. Finally, if we then perform the horizontal stretching by a factor $\frac{1}{2}$ we obtain the graph given by $y=-3\sin(2x-1)-12$. This function is very different from $f$, as can be seen from the graphs shown below.
 
 :::{figure} Images/Fig-PropertiesFunctions-ReflectionStretching2.png
 :name: Fig:PropertiesFunctions:ReflectionStretching2
 
-The result of performing the four steps in a different order visualised.
+The result of performing the five steps in a different order visualised.
 :::
 
 :::{todo}
-Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching2` with an applet.
+Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching2` with an applet. Graphs no longer match the story. Correct order: $y=\sin(x)+4$, $y=-3\sin(x)-4$, $y=-3\sin(x)-12$, $y=-3\sin(x-1)-12$ and $y=-3\sin(2x-1)-12$.
 :::
 
 ::::::
@@ -217,7 +256,7 @@ When analysing the graph of a function, one of the most eye-catching properties 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:increasingdecreasing
 
-Let $f$ be a function and $(a,b)$ be an interval that is contained in the domain of $f$. Then we say that $f$ is **nondecreasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)\leq f(x_2)$. Similarly, we say that $f$ is **nonincreasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)\geq f(x_2)$.
+Let $f$ be a function and $I\subset D_f$ be an interval. Then we say that $f$ is **nondecreasing** on $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\leq f(x_2)$. Similarly, we say that $f$ is **nonincreasing** on the interval $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\geq f(x_2)$.
 
 A function that is either nondecreasing or nonincreasing on an interval, is called **monotonic** on that interval.
 ::::::
@@ -240,9 +279,9 @@ Replace {numref}`Fig:PropertiesFunctions:increasingdecreasing` with an applet.
 
 The graph suggests that the function nondecreases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
 
-Similarly, on the interval $(-\infty,0)$ the function is nonincreasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2^2)=x_2^2=f(x_2)$.
+Similarly, on the interval $(-\infty,0)$ the function is nonincreasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2)^2=x_2^2=f(x_2)$.
 
-However, on the interval $(-2,2)$ the function is neither nondecreasing, nor nonincreasing. Indeed, we have $-1$ and $0$ are numbers in this interval with $-1<0$ and we have $f(-1)=1>0=f(0)$, so $f$ is not nondecreasing on this interval. On the other hand, $0$ and $1$ are also numbers in this interval and they have $0<1$ and $f(0)=0<1=f(1)$, so $f$ is not nonincreasing on this interval.
+However, on the interval $(-2,2)$ the function is neither nondecreasing, nor nonincreasing. Indeed, we have $-1$ and $0$ are numbers in this interval with $-1<0$ and we have $f(-1)=1>0=f(0)$, so $f$ is not nondecreasing on this interval. On the other hand, $0$ and $1$ are also numbers in this interval which have $0<1$ and $f(0)=0<1=f(1)$, so $f$ is not nonincreasing on this interval.
 
 ::::::
 
@@ -278,7 +317,9 @@ In {prf:ref}`Ex:PropertiesFunctions:increasingdecreasingFlat` we saw that a cons
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:Strictlyincreasingdecreasing
 
-Let $f$ be a function and $(a,b)$ be an interval that is contained in the domain of $f$. Then we say that $f$ is **strictly increasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)< f(x_2)$. Similarly, we say that $f$ is **strictly decreasing** on the interval $(a,b)$ whenever for each two points $a<x_1<x_2<b$ in this interval we have $f(x_1)> f(x_2)$.
+Let $f$ be a function and $I\subset D_f$ be an interval. Then we say that $f$ is **strictly increasing** on $I$ if for each two points $x_1<x_2$ in $I$ we have $f(x_1)< f(x_2)$. 
+
+Similarly, we say that $f$ is **strictly decreasing** on $I$ if for each two points $x_1<x_2$ in $I$ we have $f(x_1)> f(x_2)$.
 
 A function that is either strictly increasing or strictly decreasing on an interval, is called **strictly monotonic** on that interval.
 ::::::
@@ -291,7 +332,7 @@ In particular, constant functions are nondecreasing and nonincreasing, but neith
 In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those texts, constant functions are neither increasing nor decreasing). In other literature, the terminology increasing and decreasing is used for what we call nondecreasing and nonincreasing. This makes the terms increasing and decreasing ambiguous, and we will not use these terms. Be aware of this when you read other literature.
 ::::::
 
-Showing that a function is nondecreasing or nonincreasing can be tricky in practice. In {numref}`Chapter:Differentiation` we will learn a more efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
+Showing that a function is nondecreasing or nonincreasing can be tricky in practice. In {numref}`Section:GraphsDerivatives` we will learn an efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
 
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Expnondecreasenonincrease
@@ -305,12 +346,40 @@ Let $a>0$ and consider the exponential function $f(x)=a^x$. If $0<a<1$, the func
 This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
 :::
 
+::::::{prf:example} 
+:label: Ex:PropertiesFunctions:Expnondecreasenonincrease
+
+Consider the function $f(x)=e^{-\sqrt{x}}$. We will show that it is strictly decreasing on $[0,\infty)$. For this, we let $x_1<x_2$ in $[0,\infty)$. Then we obtain
+
+$$
+ \sqrt{x_1}<\sqrt{x_2}.
+$$
+
+Multiplying this equation by $-1$ flips the inequality sign and we obtain
+
+$$
+ -\sqrt{x_1}>-\sqrt{x_2}.
+$$
+
+Since the exponential function is strictly increasing by {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`, we obtain
+
+$$
+ f\left(x_1\right)=e^{-\sqrt{x_1}}>e^{-\sqrt{x_2}}=f\left(x_2\right).
+$$
+
+This shows that the function $f$ is strictly decreasing on $[0,\infty)$.
+
+:::{todo}
+Make an applet with the graph of $f$.
+:::
+::::::
+
 (Subsec:PropertiesFunctionsEvenOdd)=
 ## Even and odd functions
 
 The graph of a function can possess many different symmetries. In this section, we consider the two most important ones.
 
-First, let $f$ be a function of which the graph is symmetric in the $y$-axis. That is, a point $(x,y)$ lies on the graph of $f$ precisely when $(-x,y)$ lies on the graph of $f$. Since $(x,y)$ lies on the graph of $f$ precisely when $f(x)=y$, we find that we must have $f(-x)=f(x)$ for each $x$ in the domain of $f$. As we saw in {prf:ref}`Ex:Functions1var:CubicAndHigher` functions of the form $f(x)=x^n$ with $n$ even have this property. Indeed, for such a function we have
+First, let $f$ be a function of which the graph is symmetric with respect to the $y$-axis. That is, a point $(x,y)$ lies on the graph of $f$ precisely when $(-x,y)$ lies on the graph of $f$. Since $(x,y)$ lies on the graph of $f$ precisely when $f(x)=y$, we find that we must have $f(-x)=f(x)$ for each $x$ in the domain of $f$. As we saw in {prf:ref}`Ex:Functions1var:CubicAndHigher` functions of the form $f(x)=x^n$ with $n$ even have this property. Indeed, for such a function we have
 
 $$
  f(-x)=(-x)^n=(-1)^nx^n=1\cdot x^n=x^n=f(x).
@@ -324,20 +393,24 @@ $$
  f(-x)=(-x)^n=(-1)^nx^n=(-1)\cdot x^n=-x^n=-f(x).
 $$
 
-So we find that for these functions the point $(x,y)$ lies on the graph of $f$ precisely when $(-x,-y)$ lies on the graph of $f$. This means that the graph of the function is symmetric in the origin. Such a function will be called **odd**. Other examples of odd functions include $f(x)=\sin(x)$ and $f(x)=\tan(x)$ (the latter only when restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$).
+So we find that for these functions the point $(x,y)$ lies on the graph of $f$ precisely when $(-x,-y)$ lies on the graph of $f$. This means that the graph of the function is point symmetric with resepect to the origin. Such a function will be called **odd**. Other examples of odd functions include $f(x)=\sin(x)$ and $f(x)=\tan(x)$ (the latter only when restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$).
 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:EvenOdd
 
-Let $f$ be a function. Then $f$ is called **even** if $f(-x)=f(x)$ for all $x$ in the domain of $f$. In addition, $f$ is called **odd** if $f(-x)=-f(x)$ for all $x$ in the domain of $f$.
+Let $f$ be a function and $I$ an interval. Then $f$ is called **even** on $I$ if for all $x$ in $I$ with $x\geq 0$ we have $-x$ in $I$ and $f(-x)=f(x)$. In addition, $f$ is called **odd** on $I$ if for all $x$ in $I$ with $x\geq 0$ we have $-x$ in $I$ and $f(-x)=-f(x)$.
 
 ::::::
+
+:::{note}
+A function can only be even and/or odd on an interval that is symmetric with respect to $0$.
+:::
 
 ::::{figure} Images/Fig-PropertiesFunctions-Even.png
 :name: Fig:PropertiesFunctions:Even
 :class: dark-light
 
-The graph of an even function is symmetric in the $y$-axis.
+The graph of an even function is symmetric with respect to the $y$-axis.
 
 ::::
 
@@ -349,7 +422,7 @@ Replace {numref}`Fig:PropertiesFunctions:Even` with an applet.
 :name: Fig:PropertiesFunctions:Odd
 :class: dark-light
 
-The graph of an odd function is symmetric in the origin.
+The graph of an odd function is point symmetric with respect to the origin.
 
 ::::
 
@@ -357,6 +430,11 @@ The graph of an odd function is symmetric in the origin.
 Replace {numref}`Fig:PropertiesFunctions:Odd` with an applet.
 :::
 
+:::{todo}
+Make poll: Let $f$ be even and $g$ be odd on $[-1,1]$. True or false?
+We must have $f(0)=0$ (false)
+We must have $g(0)=0$ (true)
+:::
 
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:EvenOdd
@@ -381,6 +459,10 @@ Replace {numref}`Fig:PropertiesFunctions:EvenOdd` with an applet.
 
 ::::::
 
+:::{todo}
+Make poll with some true/false about combinations of even and odd functions.
+:::
+
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:NotEvenOdd
 
@@ -395,7 +477,7 @@ and this is not (necessarily) equal to $f(x)$ or to $-f(x)$. Indeed, we find $f(
 :::{figure} Images/Fig-PropertiesFunctions-NotEvenOdd.png
 :name: Fig:PropertiesFunctions:NotEvenOdd
 
-The graph of the function $f(x)=x^2+x$. Note that the graph is not symmetric in the $y$-axis, nor is it symmetric in the origin, which is a consequence of the fact that $f$ is neither even nor odd.
+The graph of the function $f(x)=x^2+x$. Note that the graph is not symmetric with respect to the $y$-axis, nor is it point symmetric with respect to the origin, which is a consequence of the fact that $f$ is neither even nor odd.
 :::
 
 :::{todo}
@@ -404,12 +486,55 @@ Replace {numref}`Fig:PropertiesFunctions:NotEvenOdd` with an applet.
 
 ::::::
 
+If a function is only defined on an interval of the form $(0,a)$ it is possible to extend it to a function that is even or odd on the symmetric interval $(-a,a)$. This is an important concept when studying Fourier sine and cosine series, see {numref}`Section:Fourier`.
+
+::::::{prf:theorem} Odd and even extensions
+:label: Thm:PropertiesFunctions:EvenOddExtension
+Let $a>0$ or $a=\infty$ and let $f$ be a function that is defined on the interval $(0,a)$. Then the function 
+
+$$
+ f_{\mathrm{odd}}(x)=\left\{\begin{array}{l}f(x),\quad&\mathrm{if}\,x\in(0,a)\\ 0,\quad &\mathrm{if}\,x=0\\ -f(-x),\quad&\mathrm{if}\,x\in(-a,0)\end{array}\right.
+$$
+
+is odd on $(-a,a)$. It is called the **odd extension of $f$** to $(-a,a)$.
+
+Similarly, if $f$ is defined on the interval $[0,a)$, then the function 
+
+$$
+ f_{\mathrm{even}}(x)=\left\{\begin{array}{l}f(x),\quad&\mathrm{if}\,x\in[0,a)\\  f(-x),\quad&\mathrm{if}\,x\in(-a,0)\end{array}\right.
+$$
+
+is even on $(-a,a)$. It is called the **even extension of $f$** to $(-a,a)$..
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:EvenOddExtension`
+:class: tudproof, dropdown
+For $x\in(0,a)$ we have $-x\in(-a,0)$ so we have
+
+$$
+ f_{\mathrm{odd}}(-x)=-f_{\mathrm{odd}}(-(-x))=-f_{\mathrm{odd}}(x)
+$$
+
+and
+
+$$
+ f_{\mathrm{even}}(-x)=f_{\mathrm{even}}(-(-x))=f_{\mathrm{even}}(x).
+$$ 
+
+Finally, for $x=0$, we have $f_{\mathrm{odd}}(0)=0=-f_{\mathrm{odd}}(-0)$. This means that $f_{\mathrm{odd}}$ is odd on $(-a,a)$ and $f_{\mathrm{even}}$ is even on $(-a,a)$.
+:::
+
+
+:::{todo}
+Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ with $x>0$ and sketch the even and odd extensions, or plug in a formula and draw the graphs of the even and odd extensions.
+:::
+
 Sometimes, it turns out to be convenient to write a function as the sum of an even and an odd function. The following theorem shows how we can construct these new functions.
 
-::::::{prf:theorem} 
+::::::{prf:theorem} Even and odd parts
 :label: Thm:PropertiesFunctions:EvenOddParts
 
-Let $f$ be a function that is defined on a symmetric interval of the form $(-a,a)$ for some $a>0$. On this interval, $f$ can uniquely be written as $f=f_e+f_o$ with $f_e$ an even function and $f_0$ an odd function. The function $f_e$ is called the **even part** of $f$ and is given by $f_e(x)=\frac{f(x)+f(-x)}{2}$, while the function $f_0$ is called the **odd part** of $f$ and is given by $f_o(x)=\frac{f(x)-f(-x)}{2}$.
+Let $f$ be a function that is defined on a symmetric interval of the form $(-a,a)$ for some $a>0$. On this interval, $f$ can uniquely be written as $f=f_e+f_o$ with $f_e$ an even function and $f_o$ an odd function. The function $f_e$ is called the **even part** of $f$ and is given by $f_e(x)=\frac{f(x)+f(-x)}{2}$, while the function $f_o$ is called the **odd part** of $f$ and is given by $f_o(x)=\frac{f(x)-f(-x)}{2}$.
 
 ::::::
 
@@ -424,7 +549,7 @@ $$
 while
 
 $$
- f_o(-x)=\frac{f(-x)-f(-(-x))}{2}=\frac{f(-x)-f(x)}{2}=-\frac{f(x)-f(-x)}{2}=f_o(x).
+ f_o(-x)=\frac{f(-x)-f(-(-x))}{2}=\frac{f(-x)-f(x)}{2}=-\frac{f(x)-f(-x)}{2}=-f_o(x).
 $$
 
 Moreover, we find that
@@ -455,7 +580,11 @@ and
  &= 2h(x).
 \end{align*}
 
-Hence, we must have $g=f_e$ and $h=f_0$, as desired.
+Hence, we must have $g=f_e$ and $h=f_o$, as desired.
+:::
+
+:::{todo}
+Make applet that lets student enter a function and it plots the function and the even and odd parts.
 :::
 
 The even and odd parts of the exponential function are so common that they have their own names.
@@ -463,11 +592,10 @@ The even and odd parts of the exponential function are so common that they have 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:Hyperbolic
 
-Consider the exponential function $f(x)=e^x$.
 
-The **hyperbolic cosine function**, denoted by $g(x)=\cosh(x)$, is the even part of $f$. That is, we have $\cosh(x)=\frac{e^x+e^{-x}}{2}$.
+The **hyperbolic cosine function**, denoted by $\cosh$, is the even part of the exponential function. That is, we have $\cosh(x)=\frac{e^x+e^{-x}}{2}$.
 
-The **hyperbolic sine function**, denoted by $h(x)=\sinh(x)$, is the odd part of $f$. That is, we have $\sinh(x)=\frac{e^x-e^{-x}}{2}$.
+The **hyperbolic sine function**, denoted by $\sinh$, is the odd part of the exponential function. That is, we have $\sinh(x)=\frac{e^x-e^{-x}}{2}$.
 
 Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\dfrac{\sinh(x)}{\cosh(x)}$.
 
@@ -505,9 +633,9 @@ The naming of these functions suggests some sort of connection to the trigonomet
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:HyperbolicProperties
 
-- The function $f(x)=\cosh(x)$ is even, while the functions $g(x)=\sinh(x)$ and $h(x)=\tanh(x)$ are odd. 
-- The function $f(x)=\cosh(x)$ is strictly decreasing on the interval $(-\infty,0)$ and strictly increasing on the interval $(0,\infty)$.
-- The functions $g(x)=\sinh(x)$ and $h(x)=\tanh(x)$ are strictly increasing on $\mathbb{R}$.
+- The function $\cosh(x)$ is even, while the functions $\sinh(x)$ and $\tanh(x)$ are odd. 
+- The function $\cosh(x)$ is strictly decreasing on the interval $(-\infty,0)$ and strictly increasing on the interval $(0,\infty)$.
+- The functions $\sinh(x)$ and $\tanh(x)$ are strictly increasing on $\mathbb{R}$.
 - For any $x$ we have $\cosh^2(x)-\sinh^2(x)=1$.
 
 ::::::
@@ -517,14 +645,14 @@ The naming of these functions suggests some sort of connection to the trigonomet
 That the hyperbolic cosine is even and the hyperbolic sine is even follows directly from their definitions as the even and odd parts respectively of the exponential function. As such, for any $x$ we have
 
 $$
- h(-x)=\tanh(-x)=\frac{\cosh(-x)}{\sinh(-x)}=\frac{\cosh(x)}{-\sinh(x)}=-\tanh(x)=-h(x),
+ \tanh(-x)=\frac{\cosh(-x)}{\sinh(-x)}=\frac{\cosh(x)}{-\sinh(x)}=-\tanh(x),
 $$
 
 which means that the hyperbolic tangent is odd.
 
-We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are nondecreasing and nonincreasing. This will do in {numref}`Section:GraphsDerivatives`.
+We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are nondecreasing and nonincreasing. This we will do in {numref}`Section:GraphsDerivatives`.
 
-By {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $g(x)=\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
+By {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
 
 The final property follows from the definition of the hyperbolic cosine and sine functions, which gives that
 
@@ -538,10 +666,11 @@ The final property follows from the definition of the hyperbolic cosine and sine
 :::
 
 
+
 (Subsec:PropertiesFunctionsPeriodic)=
 ## Periodic functions
 
-In {prf:ref}`Ex:Functions1var:Trigonometry` we saw that the trigonometric functions $f(\theta)=\cos(\theta)$, $g(\theta)=\sin(\theta)$ and $h(\theta)=\tan(\theta)$ show periodic behaviour: $f$ and $g$ repeat themselves after every cycle of length $2\pi$, while $h$ repeats itself after every cycle of length $\pi$. We can denote this by writing, for instance, $f(\theta+2\pi)=f(\theta)$ for each value of $\theta$. 
+In {prf:ref}`Ex:Functions1var:Trigonometry` we saw that the trigonometric functions $\cos(\theta)$, $\sin(\theta)$ and $\tan(\theta)$ show periodic behaviour: the cosine and sine repeat themselves after every cycle of length $2\pi$, while the tangent repeats itself after every cycle of length $\pi$. We can denote this by writing, for instance, $\cos(\theta+2\pi)=\cos(\theta)$ for each value of $\theta$. 
 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:Periodic
@@ -562,13 +691,33 @@ The graph of function with fundamental period $T$.
 Replace {numref}`Fig:PropertiesFunctions:Periodic` with an applet.
 :::
 
-Periodic functions play an important role in many fields of science and engineering, for instance in signal processing and in astronomy. In addition, periodic functions are precisely the functions that can be described by a Fourier series, see {numref}`Section:Fourier`.
+Periodic functions play an important role in many fields of science and engineering, for instance in signal processing and astronomy. In addition, periodic functions are precisely the functions that can be described by a Fourier series, see {numref}`Section:Fourier`.
 
 Notice that if $T$ is a period of a periodic function $f$, then any number of the form $nT$ with $n\geq 1$ a nonzero natural number is again a period of $f$. For instance, for $n=3$ we have for all $x$ that
 
 $$
  f(x+3T)=f((x+2T)+T)=f(x+2T)=f((x+T)+T)=f(x+T)=f(x).
 $$
+
+In fact, any other period of a periodic function must be an integer multiple of the fundamental period.
+
+::::::{prf:theorem} 
+:label: Thm:PropertiesFunctions:Fundperiod
+
+Let $f$ be a periodic function which has a fundamental period $T_0$. If $T$ is a period of $f$, then $T=nT_0$ for some integer $n\geq 1$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Fundperiod`
+:class: tudproof
+Since $T_0$ is the fundamental period, we must have $T\geq T_0$. Using long division we can write $T=nT_0+r$ for some integer $n\geq 1$ and some $0\leq r<T_0$. Then we have for any $x$
+
+$$
+ f(x+r)=f(x+T-nT_0)=f(x-nT_0)=f(x),
+$$
+
+where the second equality sign follows since $T$ is a period of $f$ and the third one since $nT_0$ is a period of $f$. This means that either $r=0$ or that $r$ is a period of $f$. Since $r<T_0$ and $T_0$ is the fundamental period of $f$ the latter is impossible, so we must have $r=0$. As such, we obtain $T=nT_0$, as desired.
+:::
 
 As a small technicality: not all periodic functions have a fundamental period. For instance, a constant function $f(x)=c$ is periodic and any number $T>0$ is a period. Indeed, for any $T>0$ and any $x$ we have
 
@@ -593,7 +742,7 @@ This follows directly from {prf:ref}`Thm:Trigonometry:Periodicity`.
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:PeriodicCombining
 
-Consider the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$. The graph of these functions is shown below.
+Consider the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$. The graphs of these functions are shown below.
 
 :::{figure} Images/Fig-PropertiesFunctions-PeriodicCombining.png
 :name: Fig:PropertiesFunctions:PeriodicCombining
@@ -647,5 +796,81 @@ The graph of the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x
 Replace {numref}`Fig:PropertiesFunctions:PeriodicCombining2` with an applet.
 :::
 
-Following a similar reasoning to {prf:ref}`Ex:PropertiesFunctions:PeriodicCombining` the functions $f$ and $g$ are periodic with fundamental periods $\frac{2\pi}{2}=\pi$ and $\frac{2\pi}{\pi}=2$ respectively. So is the function $h$ periodic here as well and if so, what is its period? In order for $h$ to complete a full period, $f$ and $g$ would need to complete number of periods at the same time. So a period $T$ of $h$ should be of the form $T=2m+\pi n$ for some integers $m,n\geq 1$. However, since $\pi$ is irrational, no such numbers $m$ and $n$ exist (otherwise, we would be able to write $\pi$ as a fraction). As such, the function $h$ is not periodic in this case. This can also be seen from the graph of $h$.
+Following a similar reasoning to {prf:ref}`Ex:PropertiesFunctions:PeriodicCombining` the functions $f$ and $g$ are periodic with fundamental periods $\frac{2\pi}{2}=\pi$ and $\frac{2\pi}{\pi}=2$ respectively. So is the function $h$ periodic here as well and if so, what is its period? In order for $h$ to complete a full period, $f$ and $g$ would need to complete a number of periods at the same time. So a period $T$ of $h$ should be of the form $T=2m+\pi n$ for some integers $m,n\geq 1$. However, since $\pi$ is irrational, no such numbers $m$ and $n$ exist (otherwise, we would be able to write $\pi$ as a fraction). As such, the function $h$ is not periodic in this case. This can also be seen from the graph of $h$.
 ::::::
+
+We summarize the observations about the periodicity of the sum of periodic function from the preceding examples in the following result.
+
+::::::{prf:theorem}
+:label: Thm:PropertiesFunctions:Sumperiodic
+Let $f$ and $g$ be periodic functions with periods $T_1$ and $T_2$ respectively. If $\dfrac{T_1}{T_2}$ is a rational number, i.e. if there are nonzero positive integers $p$ and $q$ with $pT_1=qT_2$, the sum function $f+g$ is periodic with period $T=pT_1=qT_2$.  
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Sumperiodic`
+:class: tudproof, dropdown
+Suppose that $T=pT_1=qT_2$. Then $pT_1$ is a period of $f$ and $qT_2$ is a period of $g$, so for any $x$ we have
+
+$$
+ (f+g)(x+T)=f(x+T)+g(x+T)=f(x+pT_1)+g(x+qT_2)=f(x)+g(x)=(f+g)(x).
+$$
+
+So $f+g$ is periodic with period $T$.
+
+
+
+:::
+
+::::{note}
+It might be tempting to think that {prf:ref}`Thm:PropertiesFunctions:Sumperiodic` also works the other way around in the sense that the quotient of the fundamental periods of two period functions being irrational would mean that the sum function is not periodic, but this is not the case in general. However, counterexamples are way beyond the scope of this book. If you are interested, you can find a counterexample in [this article](https://www.jstor.org/stable/2690095?seq=2).
+:::{todo}
+Betere link?
+:::
+::::
+
+
+
+
+If a function is only defined on an interval of the form $[a,b)$ it is possible to extend it to a function that is periodic. This is an important concept when studying Fourier series, see {numref}`Section:Fourier`, especially when combining it with the even and odd extensions from {prf:ref}`Thm:PropertiesFunctions:EvenOddExtension`.
+
+::::::{prf:theorem} Periodic extension
+:label: Thm:PropertiesFunctions:PeriodicExtension
+Let $a<b$, let $f$ be a function that is defined on $[a,b)$ and write $\ell=b-a$. Then the function 
+
+$$
+ f_{\mathrm{ext}}(x+n\ell)=f(x)
+$$
+
+for $x$ in $[a,b)$ and an integer $n$ is a periodic function with period $\ell$. It is called the **periodic extension of $f$**.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:PeriodicExtension`
+:class: tudproof, dropdown
+This follows directly from the construction of the periodic extension.
+:::
+
+::::::{prf:example} 
+:label: Ex:PropertiesFunctions:PeriodicCombining3
+Consider the functions 
+
+$$
+ f(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,0\leq x<1\\ 0,\quad &\mathrm{if}\,1\leq x<4\end{array}\right.,\qquad g(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,2\leq x<3\\ 0,\quad &\mathrm{if}\,3\leq x<6\end{array}\right.
+$$
+
+and let $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ denote their periodic extensions. Then both $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ have fundamental period. According to {prf:ref}`Thm:PropertiesFunctions:Sumperiodic`, $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ is periodic with period $4$. It is very tempting to think that the fundamental period of $f+g$ is also $4$, but this is not the case. Indeed, we note that $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=1$ for $x$ in intervals of the form $[n,n+1)$ with $n$ even (since $f_{\mathrm{ext}}$ is $1$ and $g_{\mathrm{ext}}$ is $0$ on this interval if $n$ is divisible by $4$ and the other way around if $n$ is not divisible by $4$), while $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=0$ for $x$ in intervals of the form $[n,n+1)$ with $n$ odd (since $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ are both $0$ on these intervals). As such, we see that $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ has fundamental period $2$. This example shows that there is no general way to find the fundamental period of the sum of two periodic functions.
+::::::
+
+::::::{prf:definition} Odd and even periodic extensions
+:label: Def:PropertiesFunctions:OddEvenPeriodicExtension
+If $f$ is defined on the interval $(0,a)$, then the periodic extension of the odd extension of $f$ is called the **odd periodic extension of $f$**.
+
+Similarly, if $f$ is defined on the interval $[0,a)$, then the periodic extension of the even extension of $f$ is called the **even periodic extension of $f$**.
+::::::
+
+:::{note}
+The symmetries of the odd and even extensions of $f$ carry over to the odd and even periodic extensions. If the original function was defined on $(0,a)$ then the odd and even periodic extensions have period $2a$, since they are periodic extensions of functions that are defined on the interval $(-a,a)$, which has length $2a$.
+:::
+
+
+:::{todo}
+Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ with $x>0$ and sketch the even and odd periodic extensions, or plug in a formula and draw the graphs of the even and odd periodic extensions.
+:::

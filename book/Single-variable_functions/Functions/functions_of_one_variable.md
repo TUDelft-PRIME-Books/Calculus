@@ -89,7 +89,7 @@ A **function** $f$ with **domain** $D$ and **codomain** $C$ is a subset $f\subse
 
 So how should you think about a function? There are several different perspectives you can take, but it may be helpful to think about a function as a machine that takes an **input value** $x$ and turns this into an **output value** or **function value** $f(x)$. We also say that $x$ is **mapped to** $f(x)$. 
 
-Note that a function only works in one direction: we can always insert an element of the domain to obtain an element of the codomain, but it is not always possible to go back, see {numref}`Images/Fig-Functions1var-Diagram.png` (we will dive deeper into the question if/when it is possible to go back in {numref}`Section:Inverse`).
+Note that a function only works in one direction: we can always insert an element of the domain to obtain an element of the codomain, but it is not always possible to go back, see {numref}`Fig:Functions1var:Diagram` (we will dive deeper into the question if/when it is possible to go back in {numref}`Section:Inverse`).
 
 :::::{margin}
 ::::{figure} Images/Fig-Functions1var-Diagram.png
@@ -103,14 +103,14 @@ A diagram can be used to graphically represent that a function $f$ maps an eleme
 Replace {numref}`Fig:Functions1var:Diagram` with an applet. Use $D_f$ instead of $D$ and $C_f$ instead of $C$.
 :::
 
-In addition, if $f$ is a function and we have $f(x)=y$ for some $x$ in $D_f$ and $y$ in $C_f, we see that $y$ is determined by $x$. That means that the value of $y$ depends on the value of $x$, while the value of $x$ can be chosen freely (within the domain of $f$). As such, for this formula $f(x)=y$ the variable $y$ is referred to as the **dependent variable**, while $x$ is an **independent variable**.
+In addition, if $f$ is a function and we have $f(x)=y$ for some $x$ in $D_f$ and $y$ in $C_f$, we see that $y$ is determined by $x$. That means that the value of $y$ depends on the value of $x$, while the value of $x$ can be chosen freely (within the domain of $f$). As such, for this formula $f(x)=y$ the variable $y$ is referred to as the **dependent variable**, while $x$ is an **independent variable**.
 
 In this book, the domain and codomain will almost always be (subsets of) $\mathbb{R}^n$ and $\mathbb{R}^m$ respectively, for some integers $n,m\geq 1$. In the first few chapters, we will specifically focus on functions where the domain and codomain are both (subsets of) the real numbers $\mathbb{R}$. Such a function is usually referred to as a **function of one variable** or a **function of a single variable**. For many such functions, it is possible to define the function by means of a formula, of which an example is given below. 
 
 ::::::{prf:example} 
 :label: Ex:Functions1var:Formula
 
-Consider the function $f:\mathbb{R}\rightarrow\mathbb{R},x\mapsto x^2$. This is the function that for each real number $x$ that is put into the function outputs the real number $x^2$. For instance, for the input value $x=2$, we obtain the output 
+Consider the function $f:\mathbb{R}\rightarrow\mathbb{R},x\mapsto x^2$. This is the function with domain $\mathbb{R}$ and codomain $\mathbb{R}$ that for each real number $x$ that is put into the function outputs the real number $x^2$. For instance, for the input value $x=2$, we obtain the output 
 
 $$
  f(x)=f(2)=2^2=4.
@@ -398,9 +398,9 @@ If $r=\frac{1}{n}$ for some integer $n>0$ then the function $f(x)=x^{\frac{1}{n}
 :::{note}
 The maximal domain of a power function $f(x)=x^r$ depends on $r$. 
 
-- If $r=\frac{p}{q}$ for integers $p$ and $q$ with $q>0$, $q$ odd and $p\neq 0$, then the maximal domain of $f$ is $\mathbb{R}$.
-- If $r=0$, then the maximal domain of $f$ is $\left\{x\,\text{in}\,\mathbb{R}\,\middle|\,x\neq 0\right\}$.
-- For any other value of $r$, the maximal domain is the interval $[0,\infty)$.
+- If $r=\frac{p}{q}$ for integers $p$ and $q$ with $q>0$, $q$ odd and $p> 0$, then the maximal domain of $f$ is $\mathbb{R}$.
+- If $r=\frac{p}{q}$ for integers $p$ and $q$ with $q>0$, $q$ odd and $p\leq 0$, then the maximal domain of $f$ is $\mathbb{R}\setminus\{0\}=\left\{x\in\mathbb{R}\,\middle|\,x\neq 0\right\}$.
+- For any other positive value of $r$, the maximal domain is the interval $[0,\infty)$, while for any other negative value of $r$, the maximal domain is the interval $(0,\infty)$.
 
 :::
 
@@ -412,7 +412,7 @@ The function $f(x)=e^x$ is referred to as the **natural exponential function**, 
 ::::::
 
 :::{note}
-If $b=0$, we have $f(x)=0^x=0$ for all $x\neq 0$ (and the function is not defined for $x=0$). If $b=1$, we have $f(x)=1^x=1$ for all $x$. Hence, in both cases, the function is constant.
+If $b=0$, we have $f(x)=0^x=0$ for all $x\neq 0$ (and the function is not defined for $x=0$). The maximal domain is $\mathbb{R}\setminus\{0\}=\left\{x\in\mathbb{R}\,\middle|\,x\neq 0\right\}$ for this value of $b$. If $b=1$, we have $f(x)=1^x=1$ for all $x$, which means that the maximal domain is $\mathbb{R}$ for this value of $b$. In both cases, the function is constant.
 
 For any other value of $b$, the maximal domain of the exponential function $f(x)=b^x$ is $\mathbb{R}$.
 
@@ -523,11 +523,12 @@ That is, the pressure is inversely proportional to the volume. This means that i
 
 The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for several values of the constant $nRT$. Due to physical restrictions, the domain of this function only consists of positive values of $V$.
 
-Alternative: use a slider for $nRT$.
+
 :::
 
 :::{todo}
 Replace {numref}`Fig:Functions1var:IdealGas2` with an applet.
+Alternative: use a slider for $nRT$.
 :::
 
 ::::::
@@ -546,12 +547,11 @@ Here $G$ is the [gravitational constant](https://en.wikipedia.org/wiki/Gravitati
 :name: Fig:Functions1var:Gravity
 
 The graph of the function  $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for several values of the constant $Gm_1m_2$.
-
-Alternative: use a slider for $Gm_1m_2$.
 ::::
 
 :::{todo}
 Replace {numref}`Fig:Functions1var:Gravity` with an applet.
+Alternative: use a slider for $Gm_1m_2$.
 :::
 
 The graph is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
