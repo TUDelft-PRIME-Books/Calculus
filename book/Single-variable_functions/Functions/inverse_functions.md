@@ -915,21 +915,19 @@ Suppose we want to simplify $\displaystyle\cos(\arcsin(x))$. Writing $y=\arcsin(
 
 **Method 1 (using geometrical arguments)**
 
-Since $y$ takes the role of an angle, we make use of that. Assume, for now that $0<y<\frac{\pi}{2}$. Then we can draw a right triangle where one of the angles is $y$, see the figure on the right. We write $a$ for the side of the triangle opposite to the angle $y$, $b$ for the adjacent side and $c$ for the hypotenuse. Since we know that $\sin(y)=x$, the geometrical definition of the sine gives that
+Since $y$ takes the role of an angle, we make use of that. Assume, for now that $0<y<\frac{\pi}{2}$. Then we can draw a right triangle where one of the angles is $y$, see {numref}`Fig:Inverse:Simplify1`.
 
-::::{figure} Images/Fig-Inverse-Simplify1.svg
+:::{applet}
+:url: calculus/inverse_functions/right-angled_triangle
 :name: Fig:Inverse:Simplify1
 :class: dark-light
-:figclass: margin
 
 Initial triangle with sides $a$, $b$, $c$ and angle $y$ indicated.
 
-::::
-
-:::{todo}
-Replace {numref}`Fig:Inverse:Simplify1` with an applet.
 :::
 :::::
+
+We write $a$ for the side of the triangle opposite to the angle $y$, $b$ for the adjacent side and $c$ for the hypotenuse. Since we know that $\sin(y)=x$, the geometrical definition of the sine gives that
 
 $$
  x=\sin(y)=\frac{a}{c}.
@@ -941,20 +939,18 @@ $$
  \cos(y)=\frac{b}{c}=\frac{b}{1}=b.
 $$
 
-So how do we find the adjacent side $b$? By using the Pythagorean theorem, of course (you thought you were reading a book on advanced mathematics, but really, we are just doing Pythagoras here). As such, we must have $b=\sqrt{c^2-a^2}=\sqrt{1-x^2}$. We conclude that
+So how do we find the adjacent side $b$? By using the Pythagorean theorem, of course (you thought you were reading a book on advanced mathematics, but really, we are just doing Pythagoras here). As such, we must have $b=\sqrt{c^2-a^2}=\sqrt{1-x^2}$, see {numref}`Fig:Inverse:Simplify2`.
 
-::::{figure} Images/Fig-Inverse-Simplify2.svg
+::::{applet}
+:url: calculus/inverse_functions/right-angled_triangle_for_cosine_of_arcsine_of_x
 :name: Fig:Inverse:Simplify2
 :class: dark-light
-:figclass: margin
 
 Final triangle with sides $x$, $\sqrt{1-x^2}$, $1$ and angle $y$ indicated.
 
 ::::
 
-:::{todo}
-Replace {numref}`Fig:Inverse:Simplify2` with an applet.
-:::
+ We conclude that
 
 $$
  \cos(\arcsin(x))=\cos(y)=b=\sqrt{1-x^2}.
