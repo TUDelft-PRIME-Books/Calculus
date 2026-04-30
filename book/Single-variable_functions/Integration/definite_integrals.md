@@ -350,6 +350,37 @@ All functions that are Riemann integrable are also Lebesgue integrable.
 In this book we do only use the definition of Riemann integrals.
 :::
 
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+
+For some function $f$ on the interval $[a,b]$ we have the Riemann sum
+
+$$
+R_N = \sum_{n=1}^N f(x_n)\Delta x = \dfrac{2N^2-3N+4}{3N^2+4N+5}.
+$$
+
+What is $\displaystyle\int_a^bf(x)\,dx$?
+
+---
+[ ] $\displaystyle\int_a^bf(x)\,dx=\dfrac{4}{5}$.
+> You probably chose this answer because these are the constant terms in the numerator and denominator of $R_N$. However, you should do something with the leading terms in the numerator and denominator of $R_N$.
+[ ] $\displaystyle\int_a^bf(x)\,dx=\dfrac{1}{4}$.
+> You probably chose this answer by summing all terms in the numerator and denominator of $R_N$. However, you should do something with the leading terms in the numerator and denominator of $R_N$.
+[ ] $\displaystyle\int_a^bf(x)\,dx=-\dfrac{3}{4}$.
+> You probably chose this answer because these are the middle terms in the numerator and denominator of $R_N$. However, you should do something with the leading terms in the numerator and denominator of $R_N$.
+[x] $\displaystyle\int_a^bf(x)\,dx=\dfrac{2}{3}$.
+> This is the correct answer. To find the value of the integral, we need to calculate the limit of $R_N$ as $N$ approaches infinity. The leading terms in the numerator and denominator of $R_N$ are $2N^2$ and $3N^2$, respectively. As $N$ approaches infinity, the lower order terms become negligible compared to the leading terms, so we can focus on the ratio of the leading terms. Therefore, we have:
+
+$$
+\displaystyle\int_a^bf(x)\,dx = \lim_{N \to \infty} R_N = \dfrac{2}{3}.
+$$
+---
+::::
+
 Calculating definite integrals using Riemann sums can be quite laborious. In the next sections we will see other techniques to evaluate definite integrals more easily. But first we state some important properties of definite integrals.
 
 ## Properties of definite integrals
@@ -399,18 +430,13 @@ $$
 
 The absolute value function $|x|$ is an even function on the interval $\left[-a,a\right]$ with $a>0$ and its graph is shown below.
 
-```{figure} Images/absolute.png
----
-width: 50%
-name: Fig:Integration:DefiniteEven
-align: center
----
-The integral of an even function.
-```
+```{applet}
+:url: calculus/definite_integrals/absolute_value
+:name: Fig:Integration:DefiniteEven
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Integration:DefiniteEven` with an applet with every $1$ replaced by $a$.
-:::
+The even function $|x|$ and its integral on $[-a,a]$.
+```
 
 Inspection of the graph shows that the area above the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Because both areas are taken with a positive sign in {prf:ref}`Def:Integration:DefiniteGeneral`, we find
 
@@ -505,16 +531,12 @@ Consider an athlete during an interval training. She starts walking at a speed o
 
 What is the distance traveled by the athlete?
 
-:::{figure} Images/distance.png
-:width: 75%
+:::{applet}
+:url: calculus/definite_integrals/an_interval_training
 :name: Fig:DefiniteIntegrals:Distance
-:align: center
+:class: dark-light
 
 The speed $v$ at which the athlete is moving during the interval training. On the horizontal axis the time $t$ is shown in minutes. On the vertical axis the speed in kilometers per hour.
-:::
-
-:::{todo}
-Replace {numref}`Fig:DefiniteIntegrals:Distance` with an applet.
 :::
 
 Note that the athlete is active for $20$ minutes, which equals $\frac{1}{3}$ hours. In order to find the total distance traveled by the athlete we add the five different areas:
@@ -536,4 +558,104 @@ Note that the velocity in general cannot change suddenly. In fact, the velocity 
 
 ## Grasple exercises
 
-75563, 75363, 75209, 75366, 63602, 63606, 63599
+### Terminology of definite integrals
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cb0da106-ca63-414a-8aa3-fa9887a97646?id=75563
+:label: Grasple:75563
+:dropdown:
+:description: Practicing terminology of definite integrals.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/62e814ee-8ef0-4fff-a9ec-5840b2d01720?id=75363
+:label: Grasple:75363
+:dropdown:
+:description: Practicing terminology of definite integrals.
+
+::::
+
+### Definite integrals using areas
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/646fc991-0ba4-457a-b9f1-0282d4daa022?id=74591
+:label: Grasple:74591
+:dropdown:
+:description: The definite integral of a continuous function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8b91094d-4d0d-4ef5-9b52-dde26d10e532?id=74593
+:label: Grasple:74593
+:dropdown:
+:description: The definite integral of a discontinuous function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/03733268-cf5a-4637-9b7f-f41699c12b7d?id=74594
+:label: Grasple:74594
+:dropdown:
+:description: The definite integral of a function with a special square root.
+
+::::
+
+### Riemann sums
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/59fac7ae-702d-44fa-81df-5e936fdec6f9?id=63602
+:label: Grasple:63602
+:dropdown:
+:description: Practicing with Riemann sums.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/765e5797-52a4-47d2-aace-2aa9bd6b9842?id=63606
+:label: Grasple:63606
+:dropdown:
+:description: Practicing with Riemann sums one more time.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7e5d0644-606d-4d78-8c70-9051d215b799?id=63599
+:label: Grasple:63599
+:dropdown:
+:description: Identifying the correct integral from a Riemann sum.
+
+::::
+
+### Upper bounds for definite integrals
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d55fa167-c082-491a-9fe2-39f136afa497?id=75209
+:label: Grasple:75209
+:dropdown:
+:description: Calculating an upper bound for a definite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/933d3d4b-a7fd-423e-a2ce-d64504eaabf8?id=75366
+:label: Grasple:75366
+:dropdown:
+:description: Calculating an upper bound for another definite integral.
+
+::::
+
+
+
+
