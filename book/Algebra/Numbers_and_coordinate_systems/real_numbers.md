@@ -135,6 +135,10 @@ we find that $\sqrt[3]{-64}=-4$.
 
 Before we move on to irrational powers, we first some general calculation rules for exponents. These will carry over to irrational exponents as well, but we need these rules to properly define irrational powers. Because of this, we will call this result a lemma, which is just a fancy word for an intermediate result that is useful for proving a bigger result, but not necessarily interesting in and by itself.
 
+:::{todo}
+Include proof of final three properties.
+:::
+
 ::::::{prf:lemma} 
 :label: Thm:RealNumbers:ExpCalcRat
 Let $y> 0$ and $z> 0$ and let $p$ and $q$ be rational numbers.
@@ -145,7 +149,9 @@ Let $y> 0$ and $z> 0$ and let $p$ and $q$ be rational numbers.
 - We have $y^{p-q}=\dfrac{y^p}{y^q}$.
 - If $y>1$ and $p<q$ then $y^p<y^q$.
 - If $0<y<1$ and $p<q$ then $y^p>y^q$.
-
+- If $p>0$ and $y<z$ then $y^p<z^p$.
+- If $p=\dfrac{a}{b}$ for integers $a>0$ and $b>0$ with $b$ odd$ then for any two real numbers $\tilde{y}<\tilde{z}$ we have $\tilde{y}^p<\tilde{y}^q$.
+- If $p<0$ and $y<z$ then $y^p>z^p$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:RealNumbers:ExpCalcRat`
@@ -360,6 +366,10 @@ Let $y\geq 0$ and $r\neq 0$ be a real number. The number from {prf:ref}`Thm:Real
 
 The calculation rules from {prf:ref}`Thm:RealNumbers:ExpCalcRat` remain true for arbitrary exponents.
 
+:::{todo}
+Include proof of final two properties
+:::
+
 ::::::{prf:theorem} 
 :label: Thm:RealNumbers:ExpCalcReal
 Let $y\geq 0$ and $z\geq 0$ and let $p$ and $q$ be real numbers.
@@ -370,6 +380,8 @@ Let $y\geq 0$ and $z\geq 0$ and let $p$ and $q$ be real numbers.
 - We have $y^{p-q}=\dfrac{y^p}{y^q}$.
 - If $y>1$ and $p<q$ then $y^p<y^q$.
 - If $0<y<1$ and $p<q$ then $y^p>y^q$.
+- If $p>0$ and $y<z$ then $y^p<z^p$.
+- If $p<0$ and $y<z$ then $y^p>z^p$.
 
 ::::::
 

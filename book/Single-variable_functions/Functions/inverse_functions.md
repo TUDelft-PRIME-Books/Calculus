@@ -4,14 +4,14 @@
 
 ## Introduction
 
-::::{figure} Images/Fig-Inverse-Intro.png
-:name: Fig:Inverse:Intro
-:class: dark-light
-:figclass: margin
+%::::{figure} Images/Fig-Inverse-Intro.png
+%:name: Fig:Inverse:Intro
+%:class: dark-light
+%:figclass: margin
 
-Easier said than done?
+%Easier said than done?
 
-::::
+%::::
 
 
 
