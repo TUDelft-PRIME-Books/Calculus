@@ -88,6 +88,55 @@ For many (standard) functions we are familiar with their derivatives. The other 
 
 ```
 
+::::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question, full-width
+:showanswer:
+
+In {numref}`Fig:Question:Function` you can see the graph of a function $f$. In {numref}`Fig:Question:Antiderivative` you can see the graph of several other functions.
+
+Which of these functions could be an antiderivative of $f$?
+
+---
+[ ] $F$.
+> If $F$ would be an antiderivative of $f$, the relation $F'(x)=f(x)$ should hold for all $x$ in the domain of $F$. This means that sign of the slope of the graph of $F$ at any point should match with the sign of the value of $f$ at that point. By visually inspecting the graphs, we can see that this is not the case for $F$, for example for $x=0$, where $F'(0)<0$, but $f(0)>0$.
+[x] $G$.
+> $G$ could be an antiderivative of $f$ because the sign of the slope of the graph of $G$ at any point matches the sign of the value of $f$ at that point.
+[ ] $H$.
+> If $H$ would be an antiderivative of $f$, the relation $H'(x)=f(x)$ should hold for all $x$ in the domain of $H$. This means that sign of the slope of the graph of $H$ at any point should match with the sign of the value of $f$ at that point. By visually inspecting the graphs, we can see that this is not the case for $H$, for example for $x=-1$, where $H'(-1)>0$, but $f(1)=0$.
+[x] $K$.
+> $K$ could be an antiderivative of $f$ because the sign of the slope of the graph of $K$ at any point matches the sign of the value of $f$ at that point.
+[ ] $L$.
+> If $L$ would be an antiderivative of $f$, the relation $L'(x)=f(x)$ should hold for all $x$ in the domain of $L$. This means that sign of the slope of the graph of $L$ at any point should match with the sign of the value of $f$ at that point. By visually inspecting the graphs, we can see that this is not the case for $L$, for example for $x=-1$, where $L'(-1)<0$, but $f(-1)=0$.
+
+---
+
+:::::{grid} 1 1 2 2
+
+::::{grid-item}
+:::{applet}
+:url: calculus/indefinite_integrals/a_function
+:name: Fig:Question:Function
+:class: dark-light
+
+The function $f$.
+:::
+::::
+
+::::{grid-item}
+:::{applet}
+:url: calculus/indefinite_integrals/several_functions
+:name: Fig:Question:Antiderivative
+:class: dark-light
+
+Several functions of which some are antiderivatives of the function $f$ in {numref}`Fig:Question:Function`. You can toggle the functions on and off to investigate each of them separately.
+:::
+::::
+
+::::::
+
 Just like with derivatives we would like to have a notation for antiderivatives. This leads us to the concept of *indefinite integrals*.
 
 ## Indefinite integrals
@@ -244,6 +293,68 @@ $$
 
 In the next section we will explain the relation between definite and indefinite integrals.
 
+
 ## Grasple exercises
 
-66937, 64404, 66936, 63716, 64405, 64407, 66933, 64408, 64596, 66011, 66935, 64128
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/588283af-ff42-4d56-8ad2-aa950fae060b?id=64404
+:label: Grasple:64404
+:dropdown:
+:description: Find the antiderivative of a power function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e0a5b3b3-1a29-40bc-a8b1-bac4d6ab752a?id=66936
+:label: Grasple:66936
+:dropdown:
+:description: Find the antiderivative of another power function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/59bfb7d8-4730-4cc6-b502-4682edfe32c1?id=66937
+:label: Grasple:66937
+:dropdown:
+:description: Find the antiderivative of a polynomial function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d0b9fc62-a0e3-495c-aa57-3194af51bdb1?id=63716
+:label: Grasple:63716
+:dropdown:
+:description: Find the antiderivative of an inverted root function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ff7dc168-0283-4be7-acc3-1aaadecd20cc?id=64405
+:label: Grasple:64405
+:dropdown:
+:description: Find the antiderivative of a reciprocal function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/aaab1e9e-3938-4cb6-ab79-de976344a019?id=64407
+:label: Grasple:64407
+:dropdown:
+:description: Find the antiderivative of another reciprocal function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/37c859fa-5b9f-4787-8147-4dd1c4ad645b?id=64128
+:label: Grasple:66011
+:dropdown:
+:description: Find the antiderivative of a sine function.
+
+::::

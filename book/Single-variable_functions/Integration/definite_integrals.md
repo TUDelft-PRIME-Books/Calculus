@@ -178,7 +178,7 @@ is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$, t
 :class: question
 :showanswer:
 
-Fill in the blanks:
+Fill in the gaps with the correct words:
 
 ---
 TI[definite]
@@ -597,8 +597,8 @@ Note that the velocity in general cannot change suddenly. In fact, the velocity 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/646fc991-0ba4-457a-b9f1-0282d4daa022?id=74591
-:label: Grasple:74591
+:url: https://embed.grasple.com/exercises/d54d29f0-1b1e-449a-851a-58a88cf86a40?id=132478
+:label: Grasple:132478
 :dropdown:
 :description: The definite integral of a continuous function.
 
@@ -606,8 +606,8 @@ Note that the velocity in general cannot change suddenly. In fact, the velocity 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/8b91094d-4d0d-4ef5-9b52-dde26d10e532?id=74593
-:label: Grasple:74593
+:url: https://embed.grasple.com/exercises/b95055c4-d49a-4acb-9314-ccca8a3d972b?id=132479
+:label: Grasple:132479
 :dropdown:
 :description: The definite integral of a discontinuous function.
 
@@ -615,8 +615,8 @@ Note that the velocity in general cannot change suddenly. In fact, the velocity 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/03733268-cf5a-4637-9b7f-f41699c12b7d?id=74594
-:label: Grasple:74594
+:url: https://embed.grasple.com/exercises/7716710d-1e60-4a38-920a-81081f257611?id=132480
+:label: Grasple:132480
 :dropdown:
 :description: The definite integral of a function with a special square root.
 
