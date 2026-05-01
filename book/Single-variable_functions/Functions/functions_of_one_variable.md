@@ -243,6 +243,15 @@ If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all
 
 There is one major restriction when sketching a graph, and that is that we only have a finite amount of space to draw the plot on. So, for instance, if the function is defined for all $x$ in $\mathbb{R}$ it is impossible to plot the full graph of the function, since we would need an infinite amount of space to do so. Still, in such a case it is possible to plot only part of the graph and try to make sure that this part captures as much qualitative behaviour of the function as possible.
 
+When analysing functions, it is often iteresting to determine if and where the graph of a function intersects the $x$-axis and the $y$-axis.
+
+::::::{prf:definition} 
+:label: Def:Functions1var:Intercepts
+Let $f$ be a function. Then $x$ in the domain of $f$ is called a **zero**, **root**, **$x$-intercept** or **horizontal intercept** when $f(x)=0$, i.e. the $x$-value of a point where the graph of $f$ intersects the $x$-axis.
+
+$y$ in the range of $f$ is called a **$y$-intercept** or **vertical intercept** when $f(0)=y$, i.e. the $y$-value of a point where the graph of $f$ intersects the $y$-axis.
+::::::
+
 For most functions that we will encounter in this book, the graph looks like one or several curves in $\mathbb{R}^2$. For instance, the graph of the function $f(x)=x^2$ is the curve of all points $(x,y)$ with $y=x^2$, so the graph is a parabola. So we might wonder: is any curve in $\mathbb{R}^2$ the graph of a certain function? For instance, is the circle with radius $1$, centered around the origin, the graph of some function? Well, suppose that there is some function $f$ which has this circle as its graph. Since the point $(0,1)$ is on the circle, that means that $f(0)=1$. However, the point $(0,-1)$ is also on this circle, so that should mean that $f(0)=-1$. Since for a function, a given input ($0$ in this case) can only have a single output, it is impossible that $f(0)$ is both $1$ and $-1$ at the same time. As such, this circle cannot be the graph of any function.
 
 How could we have seen this in advance? Well, the reason why the circle is not the graph of a function was that there are two different points on this circle which have the same $x$-coordinate. That means that the vertical line $x=0$ intersects the circle at two different points. This idea can be generalized as follows: the only reason a curve is not the graph of some function, is that there are two different points on the curve that have the same $x$-coordinate. In such a case, there is a vertical line that intersects the curve more than once. Conversely, a vertical line $x=a$ intersect the graph of a function $f$ exactly once if $a$ is in the domain of $f$ (they intersect at the point $(a,f(a))$), while such a vertical line does not intersect the graph at all if $a$ is not in the domain of $f$. We can formulate this result as follows.

@@ -346,6 +346,20 @@ Let $a>0$ and consider the exponential function $f(x)=a^x$. If $0<a<1$, the func
 This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
 :::
 
+Similarly, we can show that power functions are always strictly increasing or always strictly decreasing or constant on the interval $(0,\infty)$.
+
+::::::{prf:theorem} 
+:label: Thm:PropertiesFunctions:Powernondecreasenonincrease
+
+Let $r$ in $\mathbb{R}$ and consider the power function $f(x)=x^r$. If $r>0$, the function $f$ is strictly increasing on $[0,\infty)$. Moreover, if $r=\dfrac{p}{q}$ for integers $p>0$ and $q>0$ with $q$ odd, then $f$ is strictly increasing on $\mathbb{R}$. If $r<0$, the function $f$ is strictly decreasing on $(0,\infty)$. If $r=1$, the function $f$ is constant, and, therefore, both nondecreasing and nonincreasing on $\mathbb{R}$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Powernondecreasenonincrease`
+:class: tudproof
+This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
+:::
+
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:Expnondecreasenonincrease
 

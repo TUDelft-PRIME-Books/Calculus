@@ -847,3 +847,14 @@ The graph of the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema2` and its l
 Convert {numref}`Fig:MinMax:Globalextrema2` to an applet Make sure to highlight all candidate points and make difference between local and global extrema clear.
 :::
 ::::::
+
+
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/dc4f4ad0-1cbf-49c8-8067-be3034db2d23?id=71070
+:label: Grasple:71070
+:dropdown:
+:description: A continuous function of which only some function values are given.
+::::
