@@ -137,3 +137,75 @@ MR[0<x<=1] The correct answer is a number between 0 and 1, but not including 0:
 ---
 What do you think?
 ::::
+
+## Short-answer fill-in-the-gaps question
+
+````text
+::::{question} Short-answer fill-in-the-gaps question
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+FIll in the gaps with the correct words and math.
+---
+DS[TUDOP ; {TeachBooks} ; COMBINE ;{PRIME} ;  Grasple]
+= **Perfect!**
+> _Really?_
+This line should not be shown ever.
+MR[0<x<=1]
+& Hint: $0.5$ works.
+TI[PRIME ; TeachBooks]
+^^^
+? This extension has been written by {gap}.
+
+The number {gap} is between $0$ and $1$, but not $0$.
+
+:::{tip}
+A {gap} example that directives are allowed also.
+:::
+
+& Some hint when the show button is clicked.
+
+This line should also be shown in that case.
+
+! A mixed feelings feedback.
+---
+Hint: the first answer is either *TeachBooks* or **PRIME** and one of those two is also the third.
+::::
+````
+
+::::{question} Short-answer fill-in-the-gaps question
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+FIll in the gaps with the correct words and math.
+---
+DS[TUDOP ; {TeachBooks} ; COMBINE ;{PRIME} ;  Grasple]
+= **Perfect!**
+> _Really?_
+This line should not be shown ever.
+MR[0<x<=1]
+& Hint: $0.5$ works.
+TI[PRIME ; TeachBooks]
+^^^
+? This extension has been written by {gap}.
+
+The number {gap} is between $0$ and $1$, but not $0$.
+
+:::{tip}
+A {gap} example that directives are allowed also.
+:::
+
+& Some hint when the show button is clicked.
+
+This line should also be shown in that case.
+
+! A mixed feelings feedback.
+---
+Hint: the first answer is either *TeachBooks* or **PRIME** and one of those two is also the third.
+::::

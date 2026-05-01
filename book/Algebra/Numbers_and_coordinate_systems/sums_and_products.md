@@ -296,8 +296,43 @@ Since this is exactly the formula with $n$ replaced by $n+1$, this proves the st
 
 ::::
 
+:::::{prf:example}
+:label: Ex:Series:SumOfSquares
+
+The finite sequence of the first $n$ positive integers squared, $\{k^2\}_{k=1}^n$ and the related finite sum $\displaystyle\sum_{k=1}^nk^2$ have the following sum:
+
+$$
+\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)
+$$
+
+for all $n\in\{1,2,3,\ldots\}$.
+
+This can be proved using the principle of mathematical induction.
+
+For $n=1$ we have
+
+$$
+\sum_{k=1}^1k^2 = 1\quad\text{and}\quad\frac{1}{6}\cdot1\cdot2\cdot3=1,
+$$
+
+so it holds for $n=1$. Now assume that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ holds for certain value of $n=N$. Then we have for $n=N+1$ that
+
+\begin{align*}
+\sum_{k=1}^{N+1}k^2&=\left(\sum_{k=1}^Nk^2\right)+(N+1)^2 \\
+&=\frac{1}{6}N(N+1)(2N+1)+(N+1)^2 \\
+&=\frac{1}{6}N(N+1)(2N+1)+\frac{6}{6}(N+1)^2 \\
+&=\frac{1}{6}(N(N+1)(2N+1)+6(N+1)^2) \\
+&=\frac{1}{6}(2N^3+9N^2+13N+6) \\
+&=\frac{1}{6}(N+1)(2N^2+7N+6) \\
+&=\frac{1}{6}(N+1)(N+2)(2N+3) \\
+&=\frac{1}{6}(N+1)((N+1)+1)(2(N+1)+1).
+\end{align*}
+
+Since this is exactly the formula with $n$ replaced by $N+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
+:::::
+
 ::::::{prf:example}
-:label: Ex:Series:SumOfIntegersSquares
+:label: Ex:Series:SubSum
 Using the previous theorem, we can show that
 
 $$
