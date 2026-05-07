@@ -232,7 +232,6 @@ Convert {numref}`Fig:Trigonometry:TrigRatios` into an applet.
 In the applet $\sin(\theta)$, $\cos(\theta)$, etc. should be used.
 :::
 
-
 Commonly powers of trigonometric ratios are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
 
 ::::::{prf:notation} Powers of trigonometric ratios
@@ -520,7 +519,6 @@ Convert {numref}`Fig:Trigonometry:LawOfSinesProof` into an applet.
 :::
 
 Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to {prf:ref}`Thales's theorem <Thm:Trigonometry:Thales>` the triangle $\triangle ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have $\gamma=\delta$. Then we have
-
 
 $$
 \sin(\gamma)=\sin(\delta)=\frac{c}{2r}\quad\Longleftrightarrow\quad\frac{c}{\sin(\gamma)}=2r.
@@ -914,6 +912,30 @@ $$
 $$
 
 ::::::
+
+::::{question} Short-answer blocks
+:type: short-answer
+:variant: blocks
+:admonition:
+:class: question
+:showanswer:
+
+Fill in the correct answer in the input fields.
+---
+MR[-sqrt(2)/2] $\sin(\frac{5}{4}\pi)=$
+
+MR[sqrt(2)/2] $\cos(\frac{7}{4}\pi)=$
+
+MR[-1/2] $\sin(\frac{7}{6}\pi)=$
+
+MR[sqrt(3)/2] $\cos(\frac{11}{6}\pi)=$
+
+MR[-sqrt(2)/2] $\cos(\frac{19}{4}\pi)=$
+
+MR[1/2] $\sin(\frac{25}{6}\pi)=$
+---
+
+::::
 
 ::::::{prf:theorem} Addition and subtraction formulas
 :label: Thm:Trigonometry:AdditionSubtractionFormulas
