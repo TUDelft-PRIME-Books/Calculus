@@ -249,12 +249,12 @@ Even though the function is continuous on the interval $[a,b]$, it is not compos
 Sum of areas of rectangles.
 ```
 
-The height of each rectangle is taken to be the value of the function $f$ at an arbitrary point $x_n^*$ in the corresponding subinterval. This point $x_n^*$ is called a **sample point** and might be any point in the subinterval such as the left point, the right point or the middle point, for instance. Then we take the sum of the areas of all rectangles.
+The height of each rectangle is taken to be the value of the function $f$ at an arbitrary point $x_n^*$ in the corresponding subinterval. This point $x_n^*$ is called a **sample point** and might be any point in the subinterval such as the left point, the right point or the middle point, for instance. The width of each rectangle is $\Delta x_n = x_n - x_{n-1}$. Then we take the sum of the areas of all rectangles.
 
-In fact, let us divide the interval $[a,b]$ into $N$ subintervals of equal width $(b-a)/N$:
+In fact, let us divide the interval $[a,b]$ into $N$ subintervals of equal width $\Delta x = \dfrac{b-a}{N}$:
 
 $$
-a=x_0 < x_1 < x_2 < \ldots < x_{n-1} < x_N=b.
+a=x_0 < x_1 < x_2 < \ldots < x_{N-1} < x_N=b.
 $$
 
 ```{applet}
@@ -301,7 +301,7 @@ provided that this limit exists and is the same for *every* choice of sample poi
 ::::{prf:remark}
 :label: Remark:Integration:RiemannSum
 
-We have chosen to divide the interval $[a,b]$ into $N$ subintervals of *equal width* $\Delta x=(b-a)/N$, which is not really necessary but makes the formulas somewhat easier.
+We have chosen to divide the interval $[a,b]$ into $N$ subintervals of *equal width* $\Delta x=\dfrac{b-a}{N}$, which is not really necessary but makes the formulas somewhat easier.
 ::::
 
 The integral sign $\displaystyle\int$ was introduced by the German mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz) and has the form of an elongated (stretched) $S$ which indicates the *limit* of (Riemann) sums.
