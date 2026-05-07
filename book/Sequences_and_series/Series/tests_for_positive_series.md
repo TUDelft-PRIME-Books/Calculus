@@ -12,7 +12,7 @@ Error estimations included in each test where applicable.
 
 ## Introduction
 
-In {numref}`Sec:Series:InfiniteSeries` we have talked about infinite series, wether they are convergent or divergent. We also introduced the concept of absolute convergence and conditional convergence. In this section we will give some tests to determine whether a series is convergent or divergent. These tests only work for series with *positive terms*, which we call **positive series**, or series that eventually only have positive terms:
+In {numref}`Sec:Series:InfiniteSeries` we have talked about infinite series, wether they are convergent or divergent. We also introduced the concept of absolute convergence and conditional convergence. In this section we will give some tests to determine whether a series is convergent or divergent. These tests only work for series with *positive terms*, which we call **positive series**, or series that eventually only have positive terms.
 
 
 (Sec:Series:PositiveSeries:IntegralTest)=
@@ -621,30 +621,6 @@ Consider $\displaystyle\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$.
 
 Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^{\frac{1}{2}}}$ is a $p$-series with $p=\displaystyle\frac{1}{2}\leq1$, which is divergent, we conclude that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ is divergent too.
 
-::::::
-
-(Sec:Series:RatioComparisonTest)=
-## The ratio comparison test
-
-:::{todo}
-Decide whether {numref}`Sec:Series:RatioComparisonTest` {ref}`Sec:Series:RatioComparisonTest` should be included at all. It is not very common and it is not very useful either, since the limit comparison test is usually easier to apply.
-:::
-
-::::::{prf:Theorem} Ratio comparison test
-:label: Thm:Series:RatioComparisonTest
-Suppose that $\displaystyle\sum a_n$ and $\displaystyle\sum b_n$ are series with *positive terms*. 
-
-1) If $\dfrac{a_{n+1}}{a_n}\leq\dfrac{b_{n+1}}{b_n}$ for all $n$ and $\displaystyle\sum b_n$ is convergent, then $\displaystyle\sum a_n$ is also convergent.
-
-2) If $\dfrac{a_{n+1}}{a_n}\geq\dfrac{b_{n+1}}{b_n}$ for all $n$ and $\displaystyle\sum b_n$ is divergent, then $\displaystyle\sum a_n$ is also divergent.
-::::::
-
-::::::{admonition} Proof of {prf:ref}`Thm:Series:RatioComparisonTest`
-:class: tudproof, dropdown
-
-1) If $\dfrac{a_{n+1}}{a_n}\leq\dfrac{b_{n+1}}{b_n}$ for all $n$, then $\dfrac{a_{n+1}}{b_{n+1}}\leq\dfrac{a_n}{b_n}$ for all $n$, which implies that $\dfrac{a_n}{b_n}\leq\dfrac{a_1}{b_1}$ for all $n$. Hence: $a_n\leq\dfrac{a_1}{b_1}b_n$ for all $n$. Then the direct comparison test implies that if $\displaystyle\sum b_n$ converges, then $\displaystyle\sum a_n$ converges too.
-
-2) If $\dfrac{a_{n+1}}{a_n}\geq\dfrac{b_{n+1}}{b_n}$ for all $n$, then $\dfrac{a_{n+1}}{b_{n+1}}\geq\dfrac{a_n}{b_n}$ for all $n$, which implies that $\dfrac{a_n}{b_n}\geq\dfrac{a_1}{b_1}$ for all $n$. Hence: $a_n\geq\dfrac{a_1}{b_1}b_n$ for all $n$. Then the direct comparison test implies that if $\displaystyle\sum b_n$ diverges, then $\displaystyle\sum a_n$ diverges too.
 ::::::
 
 ## Grasple exercises
