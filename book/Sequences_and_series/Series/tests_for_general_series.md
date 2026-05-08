@@ -1,4 +1,4 @@
-# Tests for general series 2
+# Tests for general series
 
 In this section we cover:
 
@@ -19,6 +19,18 @@ In this section we will give some tests that can be used to determine whether a 
 Let us repeat the definition of absolute convergence, since it is important for the tests in this section:
 
 :::{repeat} {prf:ref}`Def:Series:AbsoluteConvergence`
+:::
+
+
+:::{repeat} {prf:ref}`Conv:Series:IndexOfSummation`
+:manual:
+:::
+
+:::{repeat} {numref}`Fig:Series:AbsoluteConvergence1`
+:::
+
+:::{repeat} {numref}`Fig:Series:HarmonicSeries`
+:manual:
 :::
 
 ## The ratio test
