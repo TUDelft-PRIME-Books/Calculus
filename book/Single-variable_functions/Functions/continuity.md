@@ -42,6 +42,11 @@ If a function $f$ is continuous at each points in each point in its domain, we s
 
 ::::::{prf:remark} 
 :label: Theorem:Continuity:EpsilonDelta
+<<<<<<< HEAD
+=======
+Suppose that the domain of $f$ contains an open interval of the form $(c_1,a)$ or $(a,c_2)$. Then $f$ is continuous at $a$ precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$. 
+::::::
+>>>>>>> cd2756a (Kleine aanpassingen)
 
 Using the precise definition of a limit ({prf:ref}`Def:LimitAtPoint:Precisedef`), we can also say that a function $f$ is continuous at $a$ precisely when for every $\varepsilon>0$ there exists a $\delta>0$ such that for every $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $|f(x)-f(a)|<\varepsilon$.
 ::::::
@@ -132,7 +137,79 @@ The reverse of the statement in {prf:ref}`Theorem:Continuity:Composition` is not
 ::::::
 
 
+<<<<<<< HEAD
 As a final preparation before showing the continuity of standard functions, we can show that inverse functions (if they exist) of continuous functions are continuous. Intuitively, this result makes sense: the graph of the inverse function is obtained by reflecting the graph of the original function in the line $y=x$, so if the first one does not contain any jumps, the second one will not contain any jumps as well.
+=======
+The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the following result and is known as the **Intermediate Zero Theorem** or **Bolzano's Theorem**, named after the Bohemian mathematician [Bernardus Placidus Johann Nepomuk Bolzano (1781-1848)](https://en.wikipedia.org/wiki/Bernard_Bolzano). Long before the formal formulation of this theorem, the result was known and used already by the Flemish mathematician [Simon Stevin (1548-1620)](https://en.wikipedia.org/wiki/Simon_Stevin).
+
+::::::{prf:corollary} Bolzano's Theorem
+:label: Cor:Continuity:IVT
+
+Suppose that $f$ is continuous on the closed interval $[a,b]$. If $f(a)$ and $f(b)$ have opposite signs (so one of them is positive while the other is negative) then there is a point $c$ in the open interval $(a,b)$ with $f(c)=0$.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Cor:Continuity:IVT`
+:class: tudproof
+Since $f(a)$ and $f(b)$ have opposite signs, the number $0$ must be in between these values. Hence, the result follows directly from {prf:ref}`Theorem:Continuity:IVT`.
+:::
+
+:::{prf:remark}
+:label: Remark:Continuity:Weierstrass
+
+The name Weierstrass Nullstellensatz, named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass) is sometimes used for either {prf:ref}`Theorem:Continuity:IVT` or {prf:ref}`Cor:Continuity:IVT`. Usually, the Weierstrass Nullstellensatz refers to a version of Bolzano's Theorem specifically for polynomials with coefficients in a [real closed field](https://en.wikipedia.org/wiki/Real_closed_field)
+:::
+
+:::{todo}
+Interactive element: let students enter function plus left and right endpoint plus number of steps. Check if $f(a)f(b)<0$. If so, let students select correct interval $[a,...]$ or $[...,b]$ in which the root is. Then split this new interval up again and same question. After each step, show the graph of $f$ on the chosen interval. Could be either an applet or something in python?
+:::
+
+::::::{prf:example} 
+:label: Ex:Continuity:IVTnoncont
+
+The assumption that the function $f$ in the Intermediate Value Theorem is continuous is essential. Indeed, consider the function 
+$$
+ f(x)=\left\{\begin{array}{ll}x+3,&\text{if }\,x\leq 1\\ 2x+4,&\text{if }\,x>1.\end{array}\right.
+$$
+
+Then $f$ is not continuous at the point $1$, since the function values jump from $4$ to $6$ there. In addition, even though $f(0)=3$ and $f(2)=8$, there is no value of $x$ with $f(x)=5$.
+
+It is also important that the function is defined in each point of the closed interval $[a,b]$. Indeed, consider the function $g(x)=\frac{1}{x}$. Then $g$ is continuous on its maximal domain (as it is the quotient of two polynomials), which does not include $x=0$. Note that $f(-1)=-1$ and $f(1)=1$. However, there is no $x$ in between $-1$ and $1$ with $f(x)=0$.
+
+::::{figure} Images/Fig-Continuity-IVTnoncont.png
+:name: Fig:Continuity:IVTnoncont
+:class: dark-light
+
+The function $f$ on the left, the function $g$ on the right.
+::::
+
+::::::
+
+
+
+
+
+## Continuity of standard functions
+
+With the intermediate value theorem in hand, we are almost ready to show the continuity of standard functions. As a final preparation, we can show that inverse functions (if they exist) of continuous functions are continuous. Intuitively, this result makes sense: the graph of the inverse function is obtained by reflecting the graph of the original function in the line $y=x$, so if the first one does not contain any jumps, the second one will not contain any jumps as well. In order to establish this result, we first need the following theorem.
+
+
+::::::{prf:theorem} 
+:label: Thm:Continuity:InverseMonotonic
+Let $f$ be an invertible function, defined on an interval $(a,b)$, that is continuous. Then $f$ is either strictly monotonic on the interval $(a,b)$.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Continuity:InverseMonotonic`
+:class: tudproof, dropdown
+Suppose that is $f$ is neither strictly increasing nor strictly decreasing on $(a,b)$. Then there are three points $a<x_1<x_2<x_3<b$ such that $f(x_2)$ does not lie in between $f(x_1)$ and $f(x_3)$. Then either $f(x_1)$ is in between $f(x_2)$ and $f(x_3)$ or $f(x_3)$ is in between $f(x_1)$ and $f(x_2)$.
+
+First suppose that $f(x_1)$ is in between $f(x_2)$ and $f(x_3)$. By the Intermediate Value Theorem, there is a $c$ in between $x_2$ and $x_3$ with $f(c)=f(x_1)$. However, since $x_1<x_2<x_3$ and $c$ is in between $x_2$ and $x_3$, $c$ cannot be equal to $x_1$. Therefore, $c$ and $x_1$ are different numbers with the same function value, which contradicts the invertibility of $f$.
+
+Similarly, suppose that $f(x_3)$ is in between $f(x_1)$ and $f(x_2)$. By the Intermediate Value Theorem, there is a $c$ in between $x_1$ and $x_2$ with $f(c)=f(x_3)$. However, since $x_1<x_2<x_3$ and $c$ is in between $x_1$ and $x_2$, $c$ cannot be equal to $x_3$. Therefore, $c$ and $x_3$ are different numbers with the same function value, which contradicts the invertibility of $f$.
+:::
+
+
+
+>>>>>>> cd2756a (Kleine aanpassingen)
 
 ::::::{prf:theorem} Continuity of inverse functions
 :label: Theorem:Continuity:Inverse
@@ -260,12 +337,25 @@ We can also establish a more general version of {prf:ref}`Theorem:LimitAtPoint:S
 
 ::::::{prf:theorem} Substitution for limit at a point
 :label: Theorem:Continuity:Substitution
+<<<<<<< HEAD
 Let $f$ be a function and consider $b$ in the domain of $f$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
+=======
+Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
+>>>>>>> cd2756a (Kleine aanpassingen)
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Substitution`
 :class: tudproof, dropdown
+<<<<<<< HEAD
 Consider the function $h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a\end{array}\right.$ Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq 0$ we have $f(h(x))=f(g(x))$. As such, we find
+=======
+Consider the function 
+$$
+ h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a.\end{array}\right.
+$$
+
+Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq a$ we have $f(h(x))=f(g(x))$. Then we find
+>>>>>>> cd2756a (Kleine aanpassingen)
 
 $$
  \lim\limits_{x\rightarrow a}f(g(x))=\lim\limits_{x\rightarrow a}f(h(x))=f(h(a))=f(b)=f\left(\lim\limits_{x\rightarrow a}g(x)\right)
@@ -282,7 +372,7 @@ If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric
 
 ::::::{prf:theorem} Substitution for limit at plus or minus infinity
 :label: Theorem:Continuity:SubstitutionInf
-Let $f$ be a function and consider $b$ in the domain of $f$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
+Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
 
 A similar result holds for limits at minus infinity.
 ::::::
