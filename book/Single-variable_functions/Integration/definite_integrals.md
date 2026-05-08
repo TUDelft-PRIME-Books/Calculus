@@ -200,7 +200,7 @@ We end this subsection with an example.
 ::::::{prf:example}
 :label: Ex:Integration:DefiniteBoth
 
-Consider the function $f:[-2,5]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}1, &-2\leq x<0\\2x-4, & 0\leq x<2,\\-x+4, & 2\leq x\leq 5,\end{array}\right.$ of which you can find the graph below.
+Consider the function $f:[-2,5]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}1, &-2\leq x<0,\\2x-4, & 0\leq x<2,\\-x+4, & 2\leq x\leq 5,\end{array}\right.$ of which you can find the graph below.
 
 ```{applet}
 :url: calculus/definite_integrals/piecewise_function_with_negative_and_positive_values
@@ -341,11 +341,11 @@ R_N&= \sum_{n=1}^Nf(x_n^*)\Delta x \\
 &= \frac{1}{N^3}\sum_{n=1}^Nn^2 \\
 &= \frac{1}{N^3}\left(1^2+2^2+3^2+\cdots+N^2\right) \\
 &= \frac{1}{N^3}\cdot\frac{N(N+1)(2N+1)}{6} \\
-&= \frac{2N^3+3N^2+N}{6N^3} \\
+&= \frac{(N+1)(2N+1)}{6N^2} \\
 &= \frac{2N^2+3N+1}{6N^2}.
 \end{align*}
 
-In the step that the summation changes, we used the result from {prf:ref}`Ex:Series:SumOfSquares`.
+Here we used the result from {prf:ref}`Ex:Series:SumOfSquares`.
 
 Using techniques from {numref}`Section:Limitinf` we find that
 
@@ -362,7 +362,7 @@ $$
 
 ::::::
 
-Since the width of each subinterval $[x_{n-1},x_n]$ tends to zero, the choice of the *sample point* $x_n^*$ in $[x_{n-1},x_n]$ is arbitrary. Except for this choice of the sample point, there are other ways to define a definite integral. We chose the definition of a so-called **Riemann integral**. Instead one could take the *lower sum* of all areas with as height the minimum of $f$ in each subinterval and the *upper sum* of all areas with as height the maximum of $f$ in each subinterval. A function $f$ is then called integrable if the *supremum* of all lower sums equals the *infimum* of all upper sums, being the value of the integral. This is the definition of a so-called **Darboux integral**, named after the French mathematician [Jean-Gaston Darboux (1842-1917)](https://en.wikipedia.org/wiki/Jean_Gaston_Darboux).
+Since the width of each subinterval $[x_{n-1},x_n]$ tends to zero, the choice of the *sample point* $x_n^*$ in $[x_{n-1},x_n]$ is arbitrary. Except for this choice of the sample point, there are other ways to define a definite integral. We chose the definition of a so-called **Riemann integral**. Instead one could take the *lower sum* of all areas with as height the minimum of $f$ in each subinterval and the *upper sum* of all areas with as height the maximum of $f$ in each subinterval. A function $f$ is then called integrable if the *supremum* (the smallest upperbound) of all lower sums equals the *infimum* (the largest lowerbound) of all upper sums, being the value of the integral. This is the definition of a so-called **Darboux integral**, named after the French mathematician [Jean-Gaston Darboux (1842-1917)](https://en.wikipedia.org/wiki/Jean_Gaston_Darboux).
 
 A function $f$ is Darboux integrable if and only if it is Riemann integrable. Moreover, the values of the integrals are the same.
 
@@ -387,7 +387,7 @@ $$
 R_N = \sum_{n=1}^N f(x_n)\Delta x = \dfrac{2N^2-3N+4}{3N^2+4N+5}.
 $$
 
-What is $\displaystyle\int_a^bf(x)\,dx$?
+Find $\displaystyle\int_a^bf(x)\,dx$.
 
 ---
 [ ] $\displaystyle\int_a^bf(x)\,dx=\dfrac{4}{5}$.
@@ -441,7 +441,7 @@ The sine function $\sin(x)$ is an odd function on the interval $\left[-\frac{1}{
 The graph of the sine function and the integral $\displaystyle\int_{-\frac12\pi}^{\frac12\pi}\sin(x)\,dx$.
 ```
 
-Inspection of the graph shows that the area below the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and right of the $y$-axis. Since the area below the $x$-axis is taken with a negative sign in {prf:ref}`Def:Integration:DefiniteGeneral`, these two areas cancel, and we find
+Inspection of the graph shows that the area below the $x$-axis and to the left of the $y$-axis equals the area above the $x$-axis and to the right of the $y$-axis. Since the area below the $x$-axis is taken with a negative sign in {prf:ref}`Def:Integration:DefiniteGeneral`, these two areas cancel, and we find
 
 $$
 \int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\sin(x)\,dx=0.
@@ -638,7 +638,7 @@ Note that the velocity in general cannot change suddenly. In fact, the velocity 
 :url: https://embed.grasple.com/exercises/765e5797-52a4-47d2-aace-2aa9bd6b9842?id=63606
 :label: Grasple:63606
 :dropdown:
-:description: Practicing with Riemann sums one more time.
+:description: Practicing with Riemann sums once more.
 
 ::::
 
@@ -670,7 +670,3 @@ Note that the velocity in general cannot change suddenly. In fact, the velocity 
 :description: Calculating an upper bound for another definite integral.
 
 ::::
-
-
-
-
