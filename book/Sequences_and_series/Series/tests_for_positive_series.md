@@ -1,15 +1,6 @@
 (Sec:Series:PositiveSeries)=
 # Tests for positive series
 
-In this section we cover:
-
-- Integral test
-- Direct comparison test
-- Limit comparison test
-
-Error estimations included in each test where applicable.
-
-
 ## Introduction
 
 In {numref}`Sec:Series:InfiniteSeries` we have talked about infinite series, wether they are convergent or divergent. We also introduced the concept of absolute convergence and conditional convergence. In this section we will give some tests to determine whether a series is convergent or divergent. These tests only work for series with *positive terms*, which we call **positive series**, or series that eventually only have positive terms.
