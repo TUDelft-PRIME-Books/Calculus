@@ -42,7 +42,7 @@ In most situations, continuity of a function can conveniently be expressed in te
 
 ::::::{prf:theorem} 
 :label: Theorem:Continuity:EpsilonDelta
-Suppose that  the domain of $f$ contains an open interval $(b,c)$ and let $a$ in $(b,c)$. Then $f$ is continuous at $a$ precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$. 
+Suppose that the domain of $f$ contains an open interval of the form $(c_1,a)$ or $(a,c_2)$. Then $f$ is continuous at $a$ precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$. 
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Composition`
@@ -270,7 +270,7 @@ The name Weierstrass Nullstellensatz, named after the German mathematician [Karl
 :::
 
 :::{todo}
-Interactive element: let students enter function plus left and right endpoint plus number of steps. Check if $f(a)f(b)<0$. If so, let students select correct interval $[a,...]$ or $[...,b]$. Then split this new interval up again and same question. After each step, show the graph of $f$ on the chosen interval. Could be either an applet or something in python?
+Interactive element: let students enter function plus left and right endpoint plus number of steps. Check if $f(a)f(b)<0$. If so, let students select correct interval $[a,...]$ or $[...,b]$ in which the root is. Then split this new interval up again and same question. After each step, show the graph of $f$ on the chosen interval. Could be either an applet or something in python?
 :::
 
 ::::::{prf:example} 
@@ -514,12 +514,17 @@ We can also establish a more general version of {prf:ref}`Theorem:LimitAtPoint:S
 
 ::::::{prf:theorem} Substitution for limit at a point
 :label: Theorem:Continuity:Substitution
-Let $f$ be a function and suppose that the domain of $f$ contains intervals of the form $(c_1,b)$ and $(b,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
+Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Substitution`
 :class: tudproof, dropdown
-Consider the function $h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a\end{array}\right.$ Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq a$ we have $f(h(x))=f(g(x))$. Then we find
+Consider the function 
+$$
+ h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a.\end{array}\right.
+$$
+
+Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq a$ we have $f(h(x))=f(g(x))$. Then we find
 
 $$
  \lim\limits_{x\rightarrow a}f(g(x))=\lim\limits_{x\rightarrow a}f(h(x))=f(h(a))=f(b)=f\left(\lim\limits_{x\rightarrow a}g(x)\right)
@@ -536,7 +541,7 @@ If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric
 
 ::::::{prf:theorem} Substitution for limit at plus or minus infinity
 :label: Theorem:Continuity:SubstitutionInf
-Let $f$ be a function and consider $b$ in the domain of $f$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
+Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
 
 A similar result holds for limits at minus infinity.
 ::::::
