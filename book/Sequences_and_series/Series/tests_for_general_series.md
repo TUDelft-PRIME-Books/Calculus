@@ -21,18 +21,6 @@ Let us repeat the definition of absolute convergence, since it is important for 
 :::{repeat} {prf:ref}`Def:Series:AbsoluteConvergence`
 :::
 
-
-:::{repeat} {prf:ref}`Conv:Series:IndexOfSummation`
-:manual:
-:::
-
-:::{repeat} {numref}`Fig:Series:AbsoluteConvergence1`
-:::
-
-:::{repeat} {numref}`Fig:Series:HarmonicSeries`
-:manual:
-:::
-
 ## The ratio test
 
 ::::::{prf:Theorem} Ratio test

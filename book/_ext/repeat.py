@@ -7,15 +7,11 @@ class RepeatDirective(Directive):
     has_content = False
     required_arguments = 1
     optional_arguments = 0
+    final_argument_whitespace = True
     option_spec = {"manual": directives.flag}
 
     def run(self):
         text = self.arguments[0]
-        
-        # Validate that the argument is a valid reference
-        valid_refs = ('{numref}', '{ref}', '{prf:ref}')
-        if not any(text.startswith(ref) for ref in valid_refs):
-            raise self.error(f"repeat directive argument must start with one of: {', '.join(valid_refs)}")
         
         # Build the class list
         classes = "repeat"
