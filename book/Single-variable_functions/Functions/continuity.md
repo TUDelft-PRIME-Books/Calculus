@@ -42,11 +42,8 @@ If a function $f$ is continuous at each points in each point in its domain, we s
 
 ::::::{prf:remark} 
 :label: Theorem:Continuity:EpsilonDelta
-<<<<<<< HEAD
-=======
 Suppose that the domain of $f$ contains an open interval of the form $(c_1,a)$ or $(a,c_2)$. Then $f$ is continuous at $a$ precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$. 
 ::::::
->>>>>>> cd2756a (Kleine aanpassingen)
 
 Using the precise definition of a limit ({prf:ref}`Def:LimitAtPoint:Precisedef`), we can also say that a function $f$ is continuous at $a$ precisely when for every $\varepsilon>0$ there exists a $\delta>0$ such that for every $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $|f(x)-f(a)|<\varepsilon$.
 ::::::
@@ -137,9 +134,6 @@ The reverse of the statement in {prf:ref}`Theorem:Continuity:Composition` is not
 ::::::
 
 
-<<<<<<< HEAD
-As a final preparation before showing the continuity of standard functions, we can show that inverse functions (if they exist) of continuous functions are continuous. Intuitively, this result makes sense: the graph of the inverse function is obtained by reflecting the graph of the original function in the line $y=x$, so if the first one does not contain any jumps, the second one will not contain any jumps as well.
-=======
 The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the following result and is known as the **Intermediate Zero Theorem** or **Bolzano's Theorem**, named after the Bohemian mathematician [Bernardus Placidus Johann Nepomuk Bolzano (1781-1848)](https://en.wikipedia.org/wiki/Bernard_Bolzano). Long before the formal formulation of this theorem, the result was known and used already by the Flemish mathematician [Simon Stevin (1548-1620)](https://en.wikipedia.org/wiki/Simon_Stevin).
 
 ::::::{prf:corollary} Bolzano's Theorem
@@ -209,7 +203,6 @@ Similarly, suppose that $f(x_3)$ is in between $f(x_1)$ and $f(x_2)$. By the Int
 
 
 
->>>>>>> cd2756a (Kleine aanpassingen)
 
 ::::::{prf:theorem} Continuity of inverse functions
 :label: Theorem:Continuity:Inverse
@@ -337,25 +330,17 @@ We can also establish a more general version of {prf:ref}`Theorem:LimitAtPoint:S
 
 ::::::{prf:theorem} Substitution for limit at a point
 :label: Theorem:Continuity:Substitution
-<<<<<<< HEAD
-Let $f$ be a function and consider $b$ in the domain of $f$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
-=======
 Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
->>>>>>> cd2756a (Kleine aanpassingen)
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Substitution`
 :class: tudproof, dropdown
-<<<<<<< HEAD
-Consider the function $h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a\end{array}\right.$ Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq 0$ we have $f(h(x))=f(g(x))$. As such, we find
-=======
 Consider the function 
 $$
  h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a.\end{array}\right.
 $$
 
 Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq a$ we have $f(h(x))=f(g(x))$. Then we find
->>>>>>> cd2756a (Kleine aanpassingen)
 
 $$
  \lim\limits_{x\rightarrow a}f(g(x))=\lim\limits_{x\rightarrow a}f(h(x))=f(h(a))=f(b)=f\left(\lim\limits_{x\rightarrow a}g(x)\right)
