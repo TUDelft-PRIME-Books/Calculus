@@ -489,6 +489,60 @@ $$
 
 ::::::
 
+We finish this section with a very useful result that is often used:
+
+:::{prf:theorem}
+:label: Thm:SumsAndProducts:MagicRule
+
+Assume $a$ and $b$ are real numbers and $n$ is an integer. Then we have
+
+$$
+(a-b)\sum_{k=1}^{n}a^{n-k}b^{k-1}=a^n-b^n.
+$$
+
+:::
+
+:::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:MagicRule`
+:class: tudproof, dropdown
+
+We prove the theorem by induction on $n$.
+
+For $n=1$ we have on the left-hand side that
+
+$$
+(a-b)\sum_{k=1}^{1}a^{1-k}b^{k-1} = (a-b)a^{1-1}b^{1-1} = a-b,
+$$
+
+and on the right-hand side that
+
+$$
+a^1-b^1 = a-b,
+$$
+
+so the statement holds for $n=1$.
+
+Now assume that the statement holds for certain value of $n=N$, so
+
+$$
+(a-b)\sum_{k=1}^{N}a^{N-k}b^{k-1}=a^N-b^N.
+$$
+
+ then we have for $n=N+1$ that
+
+\begin{align*}
+(a-b)\sum_{k=1}^{N+1}a^{N+1-k}b^{k-1}&=(a-b)\left(\sum_{k=1}^{N}a^{N+1-k}b^{k-1}+a^{N+1-(N+1)}b^{(N+1)-1}\right) \\
+&=(a-b)\left(a\sum_{k=1}^{N}a^{N-k}b^{k-1}+b^N\right) \\
+&=(a-b)a\sum_{k=1}^{N}a^{N-k}b^{k-1}+(a-b)b^N \\
+&=a(a-b)\sum_{k=1}^{N}a^{N-k}b^{k-1}+(a-b)b^N \\
+&=a\left(a^N-b^N\right)+(a-b)b^N \\
+&=a^{N+1}-ab^N+ab^N-b^{N+1} \\
+&=a^{N+1}-b^{N+1}.
+\end{align*}
+
+This proves the statement for all $n\in\{1,2,3,\ldots\}$.
+
+:::
+
 With this we end our treatment of finite sums.
 
 ## Finite products
