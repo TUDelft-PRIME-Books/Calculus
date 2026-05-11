@@ -2,13 +2,24 @@
 
 In this section we cover:
 
-- nth term test (i.e. if the terms of a series do not approach 0, it is divergent) (mention the used theorems in the previous section, but only mention the test here)
-- Alternating series test
 - Ratio test
 - Root test
 - Rearrangements
 
 Error estimations included in each test where applicable.
+
+## Introduction
+
+In {numref}`Chapter:Series:Introduction` we discussed one single test that can be used to determine whether a general series is divergent, namely the test for divergence, {prf:ref}`Thm:Series:GeneralTermCorollary`. In {numref}`Sec:Series:SpecialSeries` we discussed several special series, which was continued in {numref}`Sec:Series:PositiveSeries`.
+
+All of these series and their corresponding tests and theorems limit their applicability. For example, the alternating series test from {prf:ref}`Thm:Series:AlternatingSeriesTest` only works for alternating series, and the tests from {numref}`Sec:Series:PositiveSeries` only work for positive series. Also not every series is might be a geometric or $p$-series, so also the theorems {prf:ref}`Thm:Series:GeometricSeries` and {prf:ref}`Thm:Series:pSeries` have a limited applicability.
+
+In this section we will give some tests that can be used to determine whether a general series is absolutely convergent or divergent. These tests work for all series, but they are not always conclusive.
+
+Let us repeat the definition of absolute convergence, since it is important for the tests in this section:
+
+:::{repeat} {prf:ref}`Def:Series:AbsoluteConvergence`
+:::
 
 ## The ratio test
 
