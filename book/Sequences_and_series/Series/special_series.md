@@ -724,6 +724,35 @@ which is the a different approximation as for $N=6$, which indicates that our ch
 Later we will be able to show that $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}=e^{-1}\approx0.36788$. See {prf:ref}`Ex:Series:LogTwo`.
 ::::::
 
+## Positive and negative series
+
+We end this section on both a positive and a negative note:
+
+:::{prf:definition}
+:label: Def:Series:PositiveNegativeSeries
+
+A series $\displaystyle\sum_{n=1}^{\infty}a_n$ is called a **positive series** if $a_n>0$ for all $n$, and a **negative series** if $a_n<0$ for all $n$.
+:::
+
+In {numref}`Sec:Series:PositiveSeries` we will study the convergence of positive series.
+
+For negative series, we can use the following result:
+
+:::{prf:theorem}
+:label: Thm:Series:NegativeSeries
+
+If $\displaystyle\sum_{n=1}^{\infty}a_n$ is a negative series, then it is convergent if and only if the series $\displaystyle\sum_{n=1}^{\infty}(-1)a_n$ is convergent.
+:::
+
+:::{admonition} Proof of {prf:ref}`Thm:Series:NegativeSeries`
+:class: tudproof, dropdown
+
+If $\displaystyle\sum_{n=1}^{\infty}a_n$ is a negative series, then $a_n<0$ for all $n$. Hence, we have $(-1)a_n>0$ for all $n$, so $\displaystyle\sum_{n=1}^{\infty}(-1)a_n$ is a positive series.
+
+If the series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent, say with sum $S$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=1}^{\infty}(-1)a_n$ is convergent with sum $(-1)S$.
+
+If the series $\displaystyle\sum_{n=1}^{\infty}(-1)a_n$ is convergent, say with sum $T$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=1}^{\infty}(-1)\cdot(-a_n)$ is convergent with sum $(-1)T$.
+::::
 
 ## Grasple exercises
 

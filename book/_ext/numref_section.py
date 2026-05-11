@@ -1,12 +1,6 @@
-# _ext/numref_sections.py
-
 from __future__ import annotations
-from typing import Optional, Tuple
 from docutils import nodes
 from sphinx.transforms.post_transforms import SphinxPostTransform
-from sphinx.application import Sphinx
-from sphinx.environment import BuildEnvironment
-from sphinx.addnodes import pending_xref
 
 from docutils import nodes
 from sphinx.transforms.post_transforms import SphinxPostTransform
