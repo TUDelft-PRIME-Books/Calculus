@@ -926,73 +926,61 @@ Fill in the correct answer in the input fields.
 M[-\frac{\sqrt(2)}{2}] $\sin(\frac{5}{4}\pi)=$
 > For instance, 
 
-$$
 \begin{align*}
 \sin(\frac{5}{4}\pi)&=\sin(\pi-\frac{5}{4}\pi)\\
-&=\sin(-\frac{1}{4}\pi)\\
-&=-\sin(\frac{1}{4}\pi)\\
-&=-\frac{\sqrt{2}}{2}.
+ &=\sin(-\frac{1}{4}\pi)\\
+ &=-\sin(\frac{1}{4}\pi)\\
+ &=-\frac{\sqrt{2}}{2}.
 \end{align*}
-$$
 
 M[\frac{\sqrt(2)}{2}] $\cos(\frac{7}{4}\pi)=$
 > For instance, 
 
-$$
 \begin{align*}
 \cos(\frac{7}{4}\pi)&=-\cos(\pi-\frac{7}{4}\pi)\\
-&=-\cos(-\frac{3}{4}\pi)\\
-&=-\cos(\frac{3}{4}\pi)\\
-&=\frac{\sqrt{2}}{2}.
+ &=-\cos(-\frac{3}{4}\pi)\\
+ &=-\cos(\frac{3}{4}\pi)\\
+ &=\frac{\sqrt{2}}{2}.
 \end{align*}
-$$
 
 M[-\frac{1}{2}] $\sin(\frac{7}{6}\pi)=$
 > For instance, 
 
-$$
 \begin{align*}
 \sin(\frac{7}{6}\pi)&=\sin(\pi-\frac{7}{6}\pi)\\
-&=\sin(-\frac{1}{6}\pi)\\
-&=-\sin(\frac{1}{6}\pi)\\
-&=-\frac{1}{2}.
+ &=\sin(-\frac{1}{6}\pi)\\
+ &=-\sin(\frac{1}{6}\pi)\\
+ &=-\frac{1}{2}.
 \end{align*}
-$$
 
 M[\frac{\sqrt(3)}{2}] $\cos(\frac{11}{6}\pi)=$
 > For instance, 
 
-$$
 \begin{align*}
 \cos(\frac{11}{6}\pi)&=-\cos(\pi-\frac{11}{6}\pi)\\
-&=-\cos(-\frac{5}{6}\pi)\\
-&=-\cos(\frac{5}{6}\pi)\\
-&=\frac{\sqrt{3}}{2}.
+ &=-\cos(-\frac{5}{6}\pi)\\
+ &=-\cos(\frac{5}{6}\pi)\\
+ &=\frac{\sqrt{3}}{2}.
 \end{align*}
-$$
 
 M[-\frac{\sqrt(2)}{2}] $\cos(\frac{19}{4}\pi)=$
 > For instance, 
 
-$$
 \begin{align*}
 \cos(\frac{19}{4}\pi)&=\sin(2\pi-\frac{1}{4}\pi)\\
-&=\sin(-\frac{1}{4}\pi)\\
-&=-\sin(\frac{1}{4}\pi)\\
-&=-\frac{\sqrt{2}}{2}.
+ &=\sin(-\frac{1}{4}\pi)\\
+ &=-\sin(\frac{1}{4}\pi)\\
+ &=-\frac{\sqrt{2}}{2}.
 \end{align*}
-$$
 
 M[\frac{1}{2}] $\sin(\frac{25}{6}\pi)=$
 > For instance, 
 
-$$
 \begin{align*}
 \sin(\frac{25}{6}\pi)&=\sin(4\pi+\frac{1}{6}\pi)\\
-&=\sin(\frac{1}{6}\pi)\\
-&=\frac{1}{2}.
+ &=\sin(\frac{1}{6}\pi)\\
+ &=\frac{1}{2}.
 \end{align*}
-$$
 
 ---
 
