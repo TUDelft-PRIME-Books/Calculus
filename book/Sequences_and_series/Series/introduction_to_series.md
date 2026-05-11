@@ -203,7 +203,7 @@ $$
 s_n=\displaystyle\sum_{k=1}^n\frac{1}{k}=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}.
 $$
 
-Figure {numref}`Fig:Series:HarmonicSeries` gives a visualisation of the $n$th partial sum of the harmonic series.
+{numref}`Fig:Series:HarmonicSeries` gives a visualisation of the $n$th partial sum of the harmonic series.
 
 ```{figure} Images/harmonic.png
 ---
@@ -347,13 +347,12 @@ $$
 
 ::::
 
-Because of the last properties in {prf:ref}`Thm:Series:PropertiesFiniteSeries` and {prf:ref}`Thm:Series:CalculatingSums`, we will make the following convention:
+Because of the last properties in {prf:ref}`Thm:Series:PropertiesFiniteSeries` and {prf:ref}`Thm:Series:CalculatingSums`, we will make the following assumption about the index of summation for the rest of this chapter:
 
-::::{admonition} Convention: _Index of summation_
-:name: Conv:Series:IndexOfSummation
-:class: assumption
+::::{prf:assumption} Index of summation
+:label: Conv:Series:IndexOfSummation
 
-All definitions, theorems and similar texts about series will be stated for series that start at $n=1$ unless otherwise specified.
+All series in this chapter will start at $n=1$ unless otherwise specified.
 
 ::::
 

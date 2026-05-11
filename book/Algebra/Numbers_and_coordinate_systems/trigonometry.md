@@ -232,7 +232,6 @@ Convert {numref}`Fig:Trigonometry:TrigRatios` into an applet.
 In the applet $\sin(\theta)$, $\cos(\theta)$, etc. should be used.
 :::
 
-
 Commonly powers of trigonometric ratios are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
 
 ::::::{prf:notation} Powers of trigonometric ratios
@@ -520,7 +519,6 @@ Convert {numref}`Fig:Trigonometry:LawOfSinesProof` into an applet.
 :::
 
 Consider the line segment $AD$ through the center $M$ of the circumscribed circle of the triangle. According to {prf:ref}`Thales's theorem <Thm:Trigonometry:Thales>` the triangle $\triangle ABD$ then is a right-angled triangle. Since $C$ and $D$ are two points on the same circle, which are connected to the same chord $AB$, we have $\gamma=\delta$. Then we have
-
 
 $$
 \sin(\gamma)=\sin(\delta)=\frac{c}{2r}\quad\Longleftrightarrow\quad\frac{c}{\sin(\gamma)}=2r.
@@ -914,6 +912,79 @@ $$
 $$
 
 ::::::
+
+::::{question} Short-answer blocks
+:type: short-answer
+:variant: blocks
+:columns: 2
+:class: question
+:admonition:
+:showanswer:
+
+Fill in the correct answer in the input fields.
+---
+M[-\frac{\sqrt(2)}{2}] $\sin(\frac{5}{4}\pi)=$
+> For instance, 
+
+\begin{align*}
+\sin(\frac{5}{4}\pi)&=\sin(\pi-\frac{5}{4}\pi)\\
+ &=\sin(-\frac{1}{4}\pi)\\
+ &=-\sin(\frac{1}{4}\pi)\\
+ &=-\frac{\sqrt{2}}{2}.
+\end{align*}
+
+M[\frac{\sqrt(2)}{2}] $\cos(\frac{7}{4}\pi)=$
+> For instance, 
+
+\begin{align*}
+\cos(\frac{7}{4}\pi)&=-\cos(\pi-\frac{7}{4}\pi)\\
+ &=-\cos(-\frac{3}{4}\pi)\\
+ &=-\cos(\frac{3}{4}\pi)\\
+ &=\frac{\sqrt{2}}{2}.
+\end{align*}
+
+M[-\frac{1}{2}] $\sin(\frac{7}{6}\pi)=$
+> For instance, 
+
+\begin{align*}
+\sin(\frac{7}{6}\pi)&=\sin(\pi-\frac{7}{6}\pi)\\
+ &=\sin(-\frac{1}{6}\pi)\\
+ &=-\sin(\frac{1}{6}\pi)\\
+ &=-\frac{1}{2}.
+\end{align*}
+
+M[\frac{\sqrt(3)}{2}] $\cos(\frac{11}{6}\pi)=$
+> For instance, 
+
+\begin{align*}
+\cos(\frac{11}{6}\pi)&=-\cos(\pi-\frac{11}{6}\pi)\\
+ &=-\cos(-\frac{5}{6}\pi)\\
+ &=-\cos(\frac{5}{6}\pi)\\
+ &=\frac{\sqrt{3}}{2}.
+\end{align*}
+
+M[-\frac{\sqrt(2)}{2}] $\cos(\frac{19}{4}\pi)=$
+> For instance, 
+
+\begin{align*}
+\cos(\frac{19}{4}\pi)&=\sin(2\pi-\frac{1}{4}\pi)\\
+ &=\sin(-\frac{1}{4}\pi)\\
+ &=-\sin(\frac{1}{4}\pi)\\
+ &=-\frac{\sqrt{2}}{2}.
+\end{align*}
+
+M[\frac{1}{2}] $\sin(\frac{25}{6}\pi)=$
+> For instance, 
+
+\begin{align*}
+\sin(\frac{25}{6}\pi)&=\sin(4\pi+\frac{1}{6}\pi)\\
+ &=\sin(\frac{1}{6}\pi)\\
+ &=\frac{1}{2}.
+\end{align*}
+
+---
+
+::::
 
 ::::::{prf:theorem} Addition and subtraction formulas
 :label: Thm:Trigonometry:AdditionSubtractionFormulas

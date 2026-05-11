@@ -2,3 +2,12 @@ figcaption > p > span.caption-number::after{
   content: "\A";   /* newline */
   white-space: pre;   /* or pre-line */
 }
+
+/* Fix overlapping figures inside admonitions when margin figures reflow */
+.admonition figure {
+  display: flow-root;
+}
+
+.admonition figcaption {
+  clear: both;
+}
