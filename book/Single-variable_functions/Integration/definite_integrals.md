@@ -200,7 +200,7 @@ We end this subsection with an example.
 ::::::{prf:example}
 :label: Ex:Integration:DefiniteBoth
 
-Consider the function $f:[-2,5]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{ll}1, &-2\leq x<0,\\2x-4, & 0\leq x<2,\\-x+4, & 2\leq x\leq 5,\end{array}\right.$ of which you can find the graph below.
+Consider the function $f:[-2,5]\to\mathbb{R}$ given by $f(x)=\left\{\begin{array}{rl}1, &-2\leq x<0,\\2x-4, & \phantom{-}0\leq x<2,\\-x+4, & \phantom{-}2\leq x\leq 5,\end{array}\right.$ of which you can find the graph below.
 
 ```{applet}
 :url: calculus/definite_integrals/piecewise_function_with_negative_and_positive_values
