@@ -1,8 +1,8 @@
 from docutils import nodes
 from sphinx.transforms import SphinxTransform
 
-# from sphinx.util import logging
-# logger = logging.getLogger(__name__)
+from sphinx.util import logging
+logger = logging.getLogger(__name__)
 
 PUNCTUATION = {".", ",", ";", ":", "!", "?"}
 
@@ -14,7 +14,7 @@ class InlineMathPunctuationIntoText(SphinxTransform):
     default_priority = 700  # After parsing, before writing
 
     def apply(self):
-        for parent in self.document.traverse(nodes.Element):
+        for parent in self.document.findall(nodes.Element):
             i = 0
             while i < len(parent.children) - 1:
                 left = parent.children[i]
@@ -26,6 +26,11 @@ class InlineMathPunctuationIntoText(SphinxTransform):
                     and right.strip() in PUNCTUATION
                 ):
                     punct = right.strip()
+
+                    logger.info(f"Found punctuation '{punct}' after inline math at line {left.line} in {left.parent}.", color="fuchsia")
+
+                    if len(punct) > 1:
+                        raise ValueError(f"Unexpected long punctuation: '{punct}'")
 
                     # Modify math content
                     left.astext()  # ensure node initialized
