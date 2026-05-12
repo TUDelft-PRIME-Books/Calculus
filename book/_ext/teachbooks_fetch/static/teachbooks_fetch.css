@@ -1,0 +1,25 @@
+:root {
+    --fetch-color: rgb(178, 111, 255);
+    --fetch-color-min: color-mix(in srgb, var(--fetch-color) 10%, transparent); 
+    --fetch-color-mid: color-mix(in srgb, var(--fetch-color) 30%, transparent); 
+}
+div.fetch > p.admonition-title::after {
+    color: var(--fetch-color) !important;
+}
+div.fetch:not(.click-to-fetch):not(.failed-to-fetch) > p.admonition-title::after {
+    content: "\f252" !important;
+}
+div.fetch.click-to-fetch:not(.failed-to-fetch) > p.admonition-title::after {
+    content: "\f0a6" !important;
+    transform: translateX(5px) translateY(2px) rotate(45deg);
+}
+div.fetch.failed-to-fetch > p.admonition-title::after {
+    content: "\f2d3" !important;
+}
+div.fetch {
+    border-color: var(--fetch-color) !important;
+    background-color: var(--fetch-color-min) !important;
+}
+div.fetch > p.admonition-title {
+    background-color: var(--fetch-color-mid) !important;
+}

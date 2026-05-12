@@ -191,3 +191,4 @@ parts:
     - file: questions.md # ref_graph: {'ignore':True}
     - external: https://github.com/TeachBooks/Sphinx-PRIME-applets/blob/main/README.md # ref_graph: {'ignore':True}
     - external: https://github.com/TeachBooks/Sphinx-Sticky-Margin/blob/main/MANUAL.md # ref_graph: {'ignore':True}
+    - external: https://github.com/TeachBooks/TeachBooks-Fetch/blob/prep/MANUAL.md # ref_graph: {'ignore':True}

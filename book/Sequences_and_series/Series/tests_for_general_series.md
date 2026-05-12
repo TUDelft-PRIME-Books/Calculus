@@ -18,7 +18,7 @@ In this section we will give some tests that can be used to determine whether a 
 
 Let us repeat the definition of absolute convergence, since it is important for the tests in this section:
 
-:::{repeat} {prf:ref}`Def:Series:AbsoluteConvergence`
+:::{fetch} {prf:ref}`Def:Series:AbsoluteConvergence`
 :::
 
 ## The ratio test

@@ -19,6 +19,39 @@ function elementFromHTML(html) {
 	return template.content.firstElementChild;
 }
 
+function handleFetchFailure(element, titleParagraph, titleLink) {
+	// Update title to show fetch failed, keeping the original link if it exists
+	if (titleLink) {
+		titleParagraph.innerHTML = "Failed to fetch ";
+		// Reactivate the original link
+		titleLink.setAttribute("href", titleLink.dataset.fetchHref || titleLink.getAttribute("href"));
+		titleLink.removeAttribute("aria-disabled");
+		titleLink.style.color = "";
+		titleLink.style.textDecoration = "";
+		titleLink.style.cursor = "";
+		titleParagraph.appendChild(titleLink.cloneNode(true));
+		
+	} else {
+		titleParagraph.innerHTML += " failed";
+	}
+
+	// Remove all child elements except the title paragraph
+	const children = Array.from(element.children);
+	children.forEach(child => {
+		if (child !== titleParagraph) {
+			child.remove();
+		}
+	});
+
+	// Add a new paragraph with failure message
+	const failureParagraph = document.createElement("p");
+	failureParagraph.textContent = "Fetching failed.";
+	element.appendChild(failureParagraph);
+
+	// Add a class to indicate fetch failure for styling
+	element.classList.add("failed-to-fetch");
+}
+
 async function replaceWithTransition(oldElement, newElement) {
 	if (!oldElement || !newElement) {
 		return;
@@ -26,7 +59,7 @@ async function replaceWithTransition(oldElement, newElement) {
 	oldElement.replaceWith(newElement);
 }
 
-async function processRepeatElement(element) {
+async function processfetchElement(element) {
 	const titleParagraph = element.querySelector("p.admonition-title");
 	if (!titleParagraph) {
 		return;
@@ -34,17 +67,20 @@ async function processRepeatElement(element) {
 
 	const titleLink = titleParagraph.querySelector("a");
 	if (!titleLink) {
+		handleFetchFailure(element, titleParagraph, null);
 		return;
 	}
 
-	const href = titleLink.getAttribute("href") || titleLink.dataset.repeatHref;
+	const href = titleLink.getAttribute("href") || titleLink.dataset.fetchHref;
 	if (!href) {
+		handleFetchFailure(element, titleParagraph, titleLink);
 		return;
 	}
 
 	const referenceUrl = new URL(href, window.location.href);
 	const targetId = decodeURIComponent(referenceUrl.hash.replace("#", ""));
 	if (!targetId) {
+		handleFetchFailure(element, titleParagraph, titleLink);
 		return;
 	}
 
@@ -57,6 +93,7 @@ async function processRepeatElement(element) {
 	} else {
 		const response = await fetch(referenceUrl.href);
 		if (!response.ok) {
+			handleFetchFailure(element, titleParagraph, titleLink);
 			return;
 		}
 
@@ -68,25 +105,28 @@ async function processRepeatElement(element) {
 	if (referencedElement) {
 		const replacement = elementFromHTML(referencedElement.outerHTML);
 		if (!replacement) {
+			handleFetchFailure(element, titleParagraph, titleLink);
 			return;
 		}
 
 		await replaceWithTransition(element, replacement);
 		await renderInsertedMath(replacement);
+	} else {
+		handleFetchFailure(element, titleParagraph, titleLink);
 	}
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-	const repeatElements = document.querySelectorAll("div.admonition.repeat");
+	const fetchElements = document.querySelectorAll("div.admonition.fetch");
 
-	for (const element of repeatElements) {
+	for (const element of fetchElements) {
 		const titleParagraph = element.querySelector("p.admonition-title");
 		const titleLink = titleParagraph ? titleParagraph.querySelector("a") : null;
-		if (element.classList.contains("manual")) {
+		if (element.classList.contains("click-to-fetch")) {
 			if (titleLink) {
 				const manualHref = titleLink.getAttribute("href");
 				if (manualHref) {
-					titleLink.dataset.repeatHref = manualHref;
+					titleLink.dataset.fetchHref = manualHref;
 				}
 				titleLink.removeAttribute("href");
 				titleLink.setAttribute("aria-disabled", "true");
@@ -100,19 +140,21 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 			element.addEventListener("click", async (event) => {
 				event.preventDefault();
-				if (element.dataset.repeatLoading === "1") {
+				if (element.dataset.fetchLoading === "1") {
 					return;
 				}
-				element.dataset.repeatLoading = "1";
+				element.dataset.fetchLoading = "1";
 				try {
-					await processRepeatElement(element);
+					await processfetchElement(element);
 				} finally {
-					delete element.dataset.repeatLoading;
+					delete element.dataset.fetchLoading;
 				}
 			}, { once: true });
 			continue;
 		}
 
-		await processRepeatElement(element);
+		if (!element.classList.contains("cancel-fetch") && !element.classList.contains("click-to-fetch") && !element.classList.contains("failed-to-fetch")) {
+			await processfetchElement(element);
+		}
 	}
 });
