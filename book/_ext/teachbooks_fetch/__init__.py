@@ -1,11 +1,9 @@
 import os
-from unittest import result
 
 from docutils.parsers.rst import Directive, directives
 from docutils.statemachine import StringList
 from docutils import nodes
 
-from flask import app
 from sphinx.util import logging
 logger = logging.getLogger(__name__)
 
