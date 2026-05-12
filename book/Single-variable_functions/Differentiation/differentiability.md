@@ -515,15 +515,11 @@ $$
  \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}=\lim_{x\rightarrow a}\frac{x^n-a^n}{x-a}.
 $$
 
-Now we use a common trick to rewrite $x^n-a^n$. Indeed, we can compute
+Now we use {prf:ref}`Thm:SumsAndProducts:MagicRule` to rewrite $x^n-a^n$. Indeed, we obtain
 
 \begin{align*}
-&\phantom{=} (x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right) \\
-&= \quad x\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right) \\
-&\phantom{=} \quad\quad\quad -a\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)\\
- &= \left(a^{n-1}x+a^{n-2}x^2+a^{n-3}x^3+\ldots+ax^{n-1}+x^{n}\right) \\
-&\phantom{=} \quad\quad\quad -\left(a^{n}+a^{n-1}x+a^{n-2}x^2+\ldots+a^2x^{n-2}+ax^{n-1}\right) \\
- &= x^n-a^n.
+x^n-a^n&=\quad(x-a)\sum_{k=1}^n a^{n-k}x^{k-1}\\
+&=\quad (x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right) 
 \end{align*}
 
 We use this formula to evaluate the limit. Indeed, we find
@@ -545,7 +541,7 @@ $$
  \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}=\lim_{x\rightarrow a}\frac{\frac{1}{x^n}-\frac{1}{a^n}}{x-a}=\lim_{x\rightarrow a}\frac{a^n-x^n}{\left(x-a\right)x^na^n}.
 $$
 
-Previously in this proof, we showed that $(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)=x^n-a^n$. So we can use this to evaluate the limit and we find
+Previously in this proof, we saw that $(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)=x^n-a^n$. So we can use this to evaluate the limit and we find
 
 $$
  \begin{array}{lcl} \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}&=&\lim_{x\rightarrow a}\frac{a^n-x^n}{\left(x-a\right)x^na^n}\\
