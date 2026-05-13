@@ -188,7 +188,7 @@ parts:
   - file: questions.md
   - file: _git/github.com_TeachBooks_Sphinx-PRIME-applets/main/README.md
   - file: _git/github.com_TeachBooks_Sphinx-Sticky-Margin/main/MANUAL.md
-  - file: _git/github.com_TeachBooks_TeachBooks-Fetch/prep/MANUAL.md
+  - file: _git/github.com_TeachBooks_TeachBooks-Fetch/main/MANUAL.md
   numbered: 3
   style: romanupper
 root: index.md
