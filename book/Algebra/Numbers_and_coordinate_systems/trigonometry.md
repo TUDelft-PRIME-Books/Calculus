@@ -923,65 +923,69 @@ $$
 
 Fill in the correct answer in the input fields.
 ---
-M[-\frac{\sqrt(2)}{2}] $\sin(\frac{5}{4}\pi)=$
-> For instance, 
+M[-\frac{\sqrt{2}}{2}] $\sin(\frac{5}{4}\pi)=$
+= For instance, 
 
 \begin{align*}
-\sin(\frac{5}{4}\pi)&=\sin(\pi-\frac{5}{4}\pi)\\
- &=\sin(-\frac{1}{4}\pi)\\
- &=-\sin(\frac{1}{4}\pi)\\
+\sin(\tfrac{5}{4}\pi)&=\sin(\pi-\tfrac{5}{4}\pi)\\
+ &=\sin(-\tfrac{1}{4}\pi)\\
+ &=-\sin(\tfrac{1}{4}\pi)\\
  &=-\frac{\sqrt{2}}{2}.
 \end{align*}
+> Use $\sin(x)=\sin(\pi-x)$ for instance.
 
-M[\frac{\sqrt(2)}{2}] $\cos(\frac{7}{4}\pi)=$
-> For instance, 
+M[\frac{\sqrt{2}}{2}] $\cos(\frac{7}{4}\pi)=$
+= For instance, 
 
 \begin{align*}
-\cos(\frac{7}{4}\pi)&=-\cos(\pi-\frac{7}{4}\pi)\\
- &=-\cos(-\frac{3}{4}\pi)\\
- &=-\cos(\frac{3}{4}\pi)\\
+\cos(\tfrac{7}{4}\pi)&=-\cos(\pi-\tfrac{7}{4}\pi)\\
+ &=-\cos(-\tfrac{3}{4}\pi)\\
+ &=-\cos(\tfrac{3}{4}\pi)\\
  &=\frac{\sqrt{2}}{2}.
 \end{align*}
+> Use $\cos(x)=-\cos(\pi-x)$ for instance.
 
 M[-\frac{1}{2}] $\sin(\frac{7}{6}\pi)=$
-> For instance, 
+= For instance, 
 
 \begin{align*}
-\sin(\frac{7}{6}\pi)&=\sin(\pi-\frac{7}{6}\pi)\\
- &=\sin(-\frac{1}{6}\pi)\\
- &=-\sin(\frac{1}{6}\pi)\\
+\sin(\tfrac{7}{6}\pi)&=\sin(\pi-\tfrac{7}{6}\pi)\\
+ &=\sin(-\tfrac{1}{6}\pi)\\
+ &=-\sin(\tfrac{1}{6}\pi)\\
  &=-\frac{1}{2}.
 \end{align*}
+> Use $\sin(x)=\sin(\pi-x)$ for instance.
 
-M[\frac{\sqrt(3)}{2}] $\cos(\frac{11}{6}\pi)=$
-> For instance, 
+M[\frac{\sqrt{3}}{2}] $\cos(\frac{11}{6}\pi)=$
+= For instance, 
 
 \begin{align*}
-\cos(\frac{11}{6}\pi)&=-\cos(\pi-\frac{11}{6}\pi)\\
- &=-\cos(-\frac{5}{6}\pi)\\
- &=-\cos(\frac{5}{6}\pi)\\
+\cos(\tfrac{11}{6}\pi)&=-\cos(\pi-\tfrac{11}{6}\pi)\\
+ &=-\cos(-\tfrac{5}{6}\pi)\\
+ &=-\cos(\tfrac{5}{6}\pi)\\
  &=\frac{\sqrt{3}}{2}.
 \end{align*}
+> Use $\cos(x)=-\cos(\pi-x)$ for instance.
 
-M[-\frac{\sqrt(2)}{2}] $\cos(\frac{19}{4}\pi)=$
-> For instance, 
+M[-\frac{\sqrt{2}}{2}] $\cos(\frac{19}{4}\pi)=$
+= For instance, 
 
 \begin{align*}
-\cos(\frac{19}{4}\pi)&=\sin(2\pi-\frac{1}{4}\pi)\\
- &=\sin(-\frac{1}{4}\pi)\\
- &=-\sin(\frac{1}{4}\pi)\\
+\cos(\tfrac{19}{4}\pi)&=\cos(4\pi+\tfrac{3}{4}\pi)\\
+ &=\cos(\tfrac{3}{4}\pi)\\
  &=-\frac{\sqrt{2}}{2}.
 \end{align*}
+> Use $\cos(x)=\cos(x+2\pi)$.
 
 M[\frac{1}{2}] $\sin(\frac{25}{6}\pi)=$
-> For instance, 
+= For instance, 
 
 \begin{align*}
-\sin(\frac{25}{6}\pi)&=\sin(4\pi+\frac{1}{6}\pi)\\
- &=\sin(\frac{1}{6}\pi)\\
+\sin(\tfrac{25}{6}\pi)&=\sin(4\pi+\tfrac{1}{6}\pi)\\
+ &=\sin(\tfrac{1}{6}\pi)\\
  &=\frac{1}{2}.
 \end{align*}
-
+> Use $\sin(x)=\sin(x+2pi)$.
 ---
 
 ::::
@@ -1233,7 +1237,7 @@ The factors of this infinite product give rise to all zeros of $\sin(\pi x)$ bei
 
 ```{exercise}
 :label: Exc:Trigonometry:Exercise_1
-Show that $1+\tan^2(x)=\dfrac{1}{\cos^2(x)}$.
+Show that $1+\tan^2(x)=\dfrac{1}{\cos^2(x)}$ for $\cos(x)\neq0$.
 ```
 
 :::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_1`
@@ -1250,7 +1254,7 @@ $$
 
 ```{exercise} 
 :label: Exc:Trigonometry:Exercise_2
-Show that $1+\dfrac{1}{\tan^2(x)}=\dfrac{1}{\sin^2(x)}$.
+Show that $1+\dfrac{1}{\tan^2(x)}=\dfrac{1}{\sin^2(x)}$ for $\sin(x)\neq0$
 ```
 
 :::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_2`
@@ -1313,9 +1317,10 @@ $$
 
 to find that
 
-$$
-2\sin(x+y)\cos(x-y)=2\sin(x)\cos(x)+2\sin(y)\cos(y)=\sin(2x)+\sin(2y).
-$$
+\begin{align*}
+2\sin(x+y)\cos(x-y)&=2\sin(x)\cos(x)+2\sin(y)\cos(y)\\
+&=\sin(2x)+\sin(2y).
+\end{align*}
 
 :::
 
@@ -1367,9 +1372,10 @@ $$
 
 to find that
 
-$$
-2\cos(x+y)\sin(x-y)=2\sin(x)\cos(x)-2\sin(y)\cos(y)=\sin(2x)-\sin(2y).
-$$
+\begin{align*}
+2\cos(x+y)\sin(x-y)&=2\sin(x)\cos(x)-2\sin(y)\cos(y)\\
+&=\sin(2x)-\sin(2y).
+\end{align*}
 
 :::
 
@@ -1525,10 +1531,10 @@ Convert {numref}`Fig:Trigonometry:Cosines` into an applet.
 
 :::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_11`
 :class: solution, dropdown
-In each of the three isosceles triangles we use a rectangular triangle being half of it to find that $\cos(\frac{1}{7}\pi)=\dfrac{x+y}{2x}$, $\cos(\frac{2}{7}\pi)=\dfrac{x}{2y}$ and $\cos(\frac{3}{7}\pi)=\dfrac{y}{2(x+y)}$. This implies that
+In each of the three isosceles triangles we use a rectangular triangle being half of it to find that $\cos(\frac{1}{7}\pi)=\dfrac{x+y}{2y}$, $\cos(\frac{2}{7}\pi)=\dfrac{y}{2x}$ and $\cos(\frac{3}{7}\pi)=\dfrac{x}{2(x+y)}$. This implies that
 
 $$
-\cos(\tfrac{1}{7}\pi)\cos(\tfrac{2}{7}\pi)\cos(\tfrac{3}{7}\pi)=\frac{x+y}{2x}\cdot\frac{x}{2y}\cdot\frac{y}{2(x+y)}=\frac{1}{8}.
+\cos(\tfrac{1}{7}\pi)\cos(\tfrac{2}{7}\pi)\cos(\tfrac{3}{7}\pi)=\frac{x+y}{2y}\cdot\frac{y}{2x}\cdot\frac{x}{2(x+y)}=\frac{1}{8}.
 $$
 
 :::
