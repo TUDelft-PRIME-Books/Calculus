@@ -28,7 +28,7 @@ sphinx:
     # check_captions: _ext/
     # image_checker: _ext/
     numref_section: _ext/
-    teachbooks_fetch: _ext/
+    # teachbooks_fetch: _ext/
     math_punctuation: _ext/
   config:
     # prime_applets_base_url: "http://localhost:5173/applet/"
@@ -131,6 +131,7 @@ sphinx:
     - sphinx_apa_references                     # For APA citations
     - sphinx_visualized
     - sphinx.ext.todo
+    - teachbooks_fetch
 
 bibtex_bibfiles: 
   - references.bib
