@@ -332,17 +332,22 @@ Sometimes the root test is called **Cauchy's criterion**, named after the French
    \lim_{n\to\infty}\sqrt[n]{|b_n|}=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)=1+0=1.
    $$
 
-   The series $\displaystyle\sum a_n$ is convergent due to the integral test, since by using the substitution $x=t^2$ and integration by parts we have
+   The series $\displaystyle\sum a_n$ is convergent due to the integral test, since by using the substitution $t=\sqrt{x}$ and integration by parts we have
 
    \begin{align*}
-   \int_0^{\infty}e^{-\sqrt{x}}\,dx&=\int_0^{\infty}e^{-t}\,2t\,dt=-\int_0^{\infty}2t\,de^{-t}\\
-   &=-2te^{-t}\bigg|_0^{\infty}+2\int_0^{\infty}e^{-t}\,dt=0-2e^{-t}\bigg|_0^{\infty}=2.
+   \int_0^{\infty}e^{-\sqrt{x}}\,dx&=\int_0^{\infty}e^{-t}\,2t\,dt\\
+   &=-2te^{-t}\bigg|_0^{\infty}+2\int_0^{\infty}e^{-t}\,dt \\
+   &=0-2e^{-t}\bigg|_0^{\infty}\\
+   &=2.
    \end{align*}
+
    The series $\displaystyle\sum b_n$ is divergent, since 
 
    $$
    \lim_{n\to\infty}b_n=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n=e\neq0.
    $$
+
+4) See {prf:ref}`Ex:Series:RootTest4` for a proof of this part of the test.
 
 :::
 
@@ -399,6 +404,56 @@ $$
 so the series $\displaystyle\sum_{n=1}^{\infty}b_n$ is divergent by the root test.
 
 :::
+
+:::{prf:example}
+:label: Ex:Series:RootTest4
+
+Consider the series $\displaystyle\sum_{n=1}^{\infty}a_n$ and the series $\displaystyle\sum_{n=1}^{\infty}b_n$ with
+
+$$
+a_n = \begin{cases}
+\frac{1}{2^{n}} & \text{if }n\text{ is odd},\\
+0 & \text{if }n\text{ is even},
+\end{cases}
+\quad\text{and}\quad
+b_n = \begin{cases}
+2^{n} & \text{if }n\text{ is odd},\\
+0 & \text{if }n\text{ is even}.
+\end{cases}
+$$
+
+The series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent, since
+
+\begin{align*}
+\sum_{n=1}^{\infty}a_n&=\sum_{\substack{n=1\\n\text{ odd}}}^{\infty}a_n+\sum_{\substack{n=1\\n\text{ even}}}^{\infty}a_n\\
+&=\sum_{\substack{n=1\\n\text{ odd}}}^{\infty}\frac{1}{2^{n}}+\sum_{\substack{n=1\\n\text{ even}}}^{\infty}0 \\
+&=\sum_{m=1}^{\infty}\frac{1}{2^{2m-1}} + 0 \\
+&=\sum_{m=1}^{\infty}\frac{1}{4}\left(\frac{1}{4}\right)^{m-1} \\
+&=\frac{\frac{1}{4}}{1-\frac{1}{4}} \\
+&=\frac{1}{3}.
+\end{align*}
+
+The series $\displaystyle\sum_{n=1}^{\infty}b_n$ is divergent, since $\lim_{n\to\infty}b_n=$ does not exist.
+
+However, we have
+
+$$
+\sqrt[n]{|a_n|} = \begin{cases}
+\frac{1}{2} & \text{if }n\text{ is odd},\\
+0 & \text{if }n\text{ is even},
+\end{cases}
+\quad\text{and}\quad
+\sqrt[n]{|b_n|} = \begin{cases}
+2 & \text{if }n\text{ is odd},\\
+0 & \text{if }n\text{ is even}.
+\end{cases}
+$$
+
+So the limits $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}$ and $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|b_n|}$ do not exist.
+
+:::
+
+This examples shows that if $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}$ does not exist, then the series $\displaystyle\sum a_n$ might be convergent or divergent, as we have given one example for which the series is convergent and one example for which the series is divergent, which is exactly what the fourth statement in the root test says.
 
 ## Grasple exercises
 
