@@ -11,6 +11,30 @@ In this section we cover:
 
 ## Introduction
 
+In {numref}`Sec:Series:GeometricSeries` you have encountered geometric series, which are series of the form $\displaystyle\sum_{n=0}^{\infty}ar^n$ for some constants $a$ and $r$. You also have seen in {prf:ref}`Thm:Series:GeometricSeries` that these series converge when $|r|<1$ and diverge when $|r|\geq1$, and in case of convergence, the sum of the series is $\dfrac{a}{1-r}$.
+
+If we would consider $r$ not as a value, but as a variable $x$, then we would have a series of the form $\displaystyle\sum_{n=0}^{\infty}ax^n$ and if $|x|<1$ we would have $\displaystyle\sum_{n=0}^{\infty}ax^n=\frac{a}{1-x}=f(x)$.
+
+In {numref}`Fig:PowerSeries:Introduction` we have plotted the function $f(x)=\dfrac{1}{1-x}$ and the partial sums $s_n(x)=\displaystyle\sum_{k=0}^n x^k$ of the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ for $n=3$. As you can see in the figure, the function $f$ and the partial sum $s_3$ are close to each other for $x$ close to $0$, but they are not close to each other for $x$ close to $1$.
+
+:::{figure} Images/PowerSeriesIntroduction.png
+:name: Fig:PowerSeries:Introduction
+
+The function $f(x)=\dfrac{1}{1-x}$ and the partial sum $s_n(x)$ of the power series $\displaystyle\sum_{n=0}^{\infty}x^n$. You can change the value of $n$ to see how the partial sums change when $n$ increases.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PowerSeries:Introduction` by an applet where the user can change the value of $n$ to see how the partial sums change when $n$ increases.
+:::
+
+Now, increase yourself in the image the value of $n$ to see how the partial sums change when $n$ increases. You should see that the partial sums get closer and closer to the function $f$ between $-1$ and $1$, but they do not get closer and closer to $f$ outside the interval $(-1,1)$. This behavior is something special and is the subject of this section.
+
+Instead of only focussing on geometric series of the form $\displaystyle\sum_{n=0}^{\infty}ax^n$, we will now consider more general series of the form $\displaystyle\sum_{n=0}^{\infty}a_nx^n$ for some sequence $\{a_n\}_{n=0}^{\infty}$. These series are called power series and they have similar convergence properties as geometric series. Moreover, we can use geometric series to find power series representations of functions.
+
+## Power series
+
+We start with a formal definition of what we consider as a power series:
+
 ::::::{prf:definition}
 :label: Def:Series:PowerSeries
 A series of the form
@@ -27,7 +51,7 @@ $$
 \sum_{n=0}^{\infty}c_n(x-a)^n=c_0+c_1(x-a)+c_2(x-a)^2+\cdots
 $$
  
-is called a power series in $x-a$ or a power series centered at $x=a$ or a power series about $a$.
+is called a **power series in $x-a$** or a **power series centered at $x=a$** or a **power series about $a$**.
 ::::::
 
 ::::::{prf:example}

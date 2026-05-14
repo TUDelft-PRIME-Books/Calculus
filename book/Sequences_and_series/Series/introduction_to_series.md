@@ -191,19 +191,19 @@ The converse of {prf:ref}`Thm:Series:GeneralTerm` is not true: if $\lim\limits_{
 
 This is shown by the following example:
 
-::::::{prf:example} The harmonic series
+::::::{prf:example}
 :label: Ex:Series:HarmonicSeries
-Consider the  **harmonic series** $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$.
+Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$.
 
-First note that $\lim\limits_{n\to\infty}\frac{1}{n}=0$, so the general term of the harmonic series tends to zero.
+First note that $\lim\limits_{n\to\infty}\frac{1}{n}=0$, so the general term of the series tends to zero.
 
-Now consider the $n$th partial sum of the harmonic series:
+Now consider the $n$th partial sum of the series:
 
 $$
 s_n=\displaystyle\sum_{k=1}^n\frac{1}{k}=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}.
 $$
 
-{numref}`Fig:Series:HarmonicSeries` gives a visualisation of the $n$th partial sum of the harmonic series.
+{numref}`Fig:Series:HarmonicSeries` gives a visualisation of the $n$th partial sum of the series.
 
 ```{figure} Images/harmonic.png
 ---
@@ -211,7 +211,7 @@ width: 50%
 name: Fig:Series:HarmonicSeries
 align: center
 ---
-Visualisation of the $n$th partial sum of the harmonic series, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\frac{1}{x}$ is also given for comparison.
+Visualisation of the $n$th partial sum of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\frac{1}{x}$ is also given for comparison.
 ```
 
 :::{todo}
@@ -236,9 +236,9 @@ $$
 \lim_{n\to\infty}s_n > \lim_{n\to\infty}\ln(n+1) = \infty,
 $$
 
-and so the harmonic series is divergent by {prf:ref}`Def:Series:ConvergenceSum`.
+and so the series is divergent by {prf:ref}`Def:Series:ConvergenceSum`.
 
-This proves that the harmonic series is divergent.
+This proves that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is divergent.
 ::::::
 
 Because the example uses an integral to test for convergence/divergence, it is commonly called the **integral test** for convergence/divergence, which we will discuss in more detail in {numref}`Sec:Series:PositiveSeries:IntegralTest`.
@@ -298,7 +298,7 @@ so by the _test for divergence_, the series $\displaystyle\sum_{n=1}^{\infty}\fr
 ::::{prf:example}
 :label: Ex:Series:DivergenceTest2
 
-The geometric series $\displaystyle\sum_{n=0}^{\infty}\left(\frac{3}{2}\right)^n$ is divergent, since, by the _test for divergence_, $\displaystyle\lim_{n\to\infty}\left(\frac{3}{2}\right)^n$ does not exist.
+The series $\displaystyle\sum_{n=0}^{\infty}\left(\frac{3}{2}\right)^n$ is divergent, since, by the _test for divergence_, $\displaystyle\lim_{n\to\infty}\left(\frac{3}{2}\right)^n$ does not exist.
 
 ::::
 
@@ -492,7 +492,7 @@ This means that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is co
 
 ::::::{prf:example}
 :label: Ex:Series:AbsoluteConvergence2
-Now we consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$. The absolute value series of this series is $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is the harmonic series, which we have shown to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`.
+Now we consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$. The absolute value series of this series is $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which we have shown to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`.
 
 So the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is not absolutely convergent.
 
