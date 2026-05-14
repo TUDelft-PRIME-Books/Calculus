@@ -27,7 +27,7 @@ The function $f(x)=\dfrac{1}{1-x}$ and the partial sum $s_n(x)$ of the power ser
 Replace {numref}`Fig:PowerSeries:Introduction` by an applet where the user can change the value of $n$ to see how the partial sums change when $n$ increases.
 :::
 
-Now, increase yourself in the image the value of $n$ to see how the partial sums change when $n$ increases. You should see that the partial sums get closer and closer to the function $f$ between $-1$ and $1$, but they do not get closer and closer to $f$ outside the interval $(-1,1)$. This behavior is something special and is the subject of this section.
+Now, increase yourself in the figure the value of $n$ to see how the partial sums change when $n$ increases. You should see that the partial sums get closer and closer to the function $f$ between $-1$ and $1$, but they do not get closer and closer to $f$ outside the interval $(-1,1)$. This behavior is something special and is the subject of this section.
 
 Instead of only focussing on geometric series of the form $\displaystyle\sum_{n=0}^{\infty}ax^n$, we will now consider more general series of the form $\displaystyle\sum_{n=0}^{\infty}a_nx^n$ for some sequence $\{a_n\}_{n=0}^{\infty}$. These series are called power series and they have similar convergence properties as geometric series. Moreover, we can use geometric series to find power series representations of functions.
 
@@ -56,24 +56,51 @@ is called a **power series in $x-a$** or a **power series centered at $x=a$** or
 
 ::::::{prf:example}
 :label: Ex:Series:GeometricSeries
-The power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is a *geometric series* with common ratio $x$. Hence, this power series is absolutely convergent if $|x|<1$ and is divergent if $|x|\geq1$. Moreover, for $|x|<1$ the sum of the series is $\dfrac{1}{1-x}$.
+The power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is a *geometric series* with common ratio $x$.
+
+Hence, this power series is absolutely convergent if $|x|<1$ and is divergent if $|x|\geq1$.
+
+Moreover, for $|x|<1$ the sum of the series is $\dfrac{1}{1-x}$.
 ::::::
 
+So how would you in general investigate the convergence of a power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$?
+
+Well, the answer to that question is "By using the ratio test": because power series are a generalisation of geometric series, and in the proof of the ratio test, {prf:ref}`Thm:Series:RatioTest`, we have seen that the ratio test is based on the idea of comparing a series with a geometric series, it is not surprising that the ratio test is the right tool to investigate the convergence of power series.
+
+The next example illustrates how to use the ratio test to investigate the convergence of any power series and to find the interval of convergence of a power series.
+
 ::::::{prf:example}
-The series $\displaystyle\sum_{n=1}^{\infty}\frac{(x-2)^{n-1}}{n}$ is a power series about $2$. Note that the series converges for $x=2$ (with sum $1$). For $x\neq2$ we might apply the ratio test: let $a_n=\displaystyle\frac{(x-2)^{n-1}}{n}$, then we have:
+:label: Ex:Series:PowerSeries1
+Let us investigate the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}(x-2)^{n-1}$ which is a power series about $2$.
+
+If $x=2$, the series reduces to
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n}(2-2)^{n-1} = \sum_{n=1}^{\infty}\frac{1}{n} \cdot 0^{n-1} = 1+\sum_{n=2}^{\infty}0 = 1.
+$$
+
+This means that the series converges for $x=2$ with sum $1$.
+
+For $x\neq2$ we apply the ratio test: let $a_n=\displaystyle\frac{1}{n}(x-2)^{n-1}=\dfrac{(x-2)^{n-1}}{n}$, then we have:
 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(x-2)^n}{n+1}\cdot\frac{n}{(x-2)^{n-1}}\right|\\
-&=\lim\limits_{n\to\infty}\frac{n}{n+1}\cdot|x-2|=|x-2|.
+&=\lim\limits_{n\to\infty}\frac{n}{n+1}\cdot|x-2| \\
+&=|x-2|.
 \end{align*}
-Hence, the series is absolutely convergent if $|x-2|<1$ and is divergent if $|x-2|>1$. The ratio test is inconclusive if  $|x-2|=1$.
 
-For $x=3$ the series equals the harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is divergent.
+Hence, the series is absolutely convergent if $|x-2|<1$ and is divergent if $|x-2|>1$.
 
-For $x=1$ the series equals the alternating harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$, which is (conditionally) convergent.
+The ratio test is inconclusive if  $|x-2|=1$, so we need to investigate the convergence of the series for $x=1$ and for $x=3$ separately.
 
-We conclude that the series converges if $x\in[1,3)$ and diverges otherwise. The interval $[1,3)$ is called the **interval of convergence** of the power series.
+For $x=1$ the series becomes $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$, which is the alternating harmonic series, which is conditionally convergent.
+
+For $x=3$ the series becomes $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is the harmonic series, which is divergent.
+
+We conclude that the series converges if $x\in[1,3)$ and diverges otherwise.
 ::::::
+
+The next theorem states the only three possibilities for the convergence of a power series. The proof of this theorem is based on the direct comparison test and is not difficult.
 
 ::::::{prf:theorem}
 :label: Thm:Series:PowerSeries
@@ -94,12 +121,18 @@ there are only three possibilities:
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Series:PowerSeries`
 :class: tudproof, dropdown
-If the power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ absolutely converges for $x=b$, then $\displaystyle\sum_{n=0}^{\infty}\left|c_n(b-a)^n\right|$ converges. Then the {prf:ref}`comparison test <Thm:Series:DirectComparisonTest>` implies that $\displaystyle\sum_{n=0}^{\infty}\left|c_n(x-a)^n\right|$ converges for all $x$ such that $|x-a|<|b-a|$.
+If the power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ absolutely converges for $x=b$, then $\displaystyle\sum_{n=0}^{\infty}\left|c_n(b-a)^n\right|$ converges. Then the {prf:ref}`direct comparison test <Thm:Series:DirectComparisonTest>` implies that $\displaystyle\sum_{n=0}^{\infty}\left|c_n(x-a)^n\right|$ converges for all $x$ such that $|x-a|<|b-a|$.
 
 If there are values of $x$ for which the series diverges, then there exists a maximum value of $|b-a|=R$ such that the series absolutely converges for $|x-a|<R$.
 
 This proves the theorem.
 ::::::
+
+In {prf:ref}`Ex:Series:GeometricSeries` we have seen that the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is absolutely convergent for $|x|<1$ and divergent for $|x|\geq1$. Unsurprisingly, this even holds if $x$ is a complex number. In that case the condition $|x|<1$ defines the inside of a circle in the complex plane $\mathbb{C}$ with center $0$ and radius $1$. In {prf:ref}`Ex:Series:PowerSeries1` we have seen that the power series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}(x-2)^{n-1}$ is absolutely convergent for $|x-2|<1$ and divergent for $|x-2|>1$. The condition $|x-2|<1$ defines the inside of a circle in the complex plane $\mathbb{C}$ with center $2$ and radius $1$.
+
+In general, the condition for convergence of a power series[^endpoints] can be written as $|x-a|<R$, which defines the inside of a circle in the complex plane $\mathbb{C}$ with center $a$ and radius $R$. Because of this link with circles in the complex plane, the number $R$ is called the radius of convergence of the power series. The interval containing all $x\in\mathbb{R}$ for which the series converges is called the interval of convergence of the power series:
+
+[^endpoints]: Ignoring the behavior in the endpoints.
 
 ::::::{prf:definition}
 :label: Def:Series:RadiusOfConvergence
@@ -109,50 +142,116 @@ The number $R$ in {prf:ref}`Thm:Series:PowerSeries` is called the **radius of co
 The interval containing all $x$ for which the series converges is called the **interval of convergence** of the power series.
 ::::::
 
+:::{prf:remark}
+:label: Rem:Series:PowerSeries
+
+If the third case in {prf:ref}`Thm:Series:PowerSeries` holds, the behaviour of the series for $|x-a|=R$ can be different for different power series. For some power series the series converges for all $x$ such that $|x-a|=R$, for some power series the series diverges for all $x$ such that $|x-a|=R$, and for some power series the series converges for some values of $x$ such that $|x-a|=R$ and diverges for other values of $x$ such that $|x-a|=R$. That is why you always need to investigate the convergence of a power series for the endpoints of the interval of convergence separately if the third case in {prf:ref}`Thm:Series:PowerSeries` holds.
+
+:::
+
 ::::::{prf:example}
-1) The series $\displaystyle\sum_{n=0}^{\infty}n!(x-1)^n$ is a power series about $1$. Hence, the series converges for $x=1$ (with sum $1$). For $x\neq1$ we apply the ratio test: let $a_n=n!(x-1)^n$, then we have:
+:label: Ex:Series:PowerSeries2
+The series $\displaystyle\sum_{n=0}^{\infty}n!(x-1)^n$ is a power series about $1$.
 
-$$ 
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{(n+1)!(x-1)^{n+1}}{n!(x-1)^n}\right|
-=\lim\limits_{n\to\infty}(n+1)|x-1|=\infty, 
-$$ 
+The series converges for $x=1$ with sum $1$.
+
+For $x\neq1$ we apply the ratio test: let $a_n=n!(x-1)^n$, then we have:
+
+\begin{align*} 
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(n+1)!(x-1)^{n+1}}{n!(x-1)^n}\right| \\
+&= \lim\limits_{n\to\infty}(n+1)|x-1| \\
+&=\infty, 
+\end{align*}
   
-since $|x-1| > 0$. This implies that the series diverges for all $x\neq1$. Hence, the series only converges for $x=1$ and the radius of convergence is $R=0$.
+since $|x-1| > 0$.
 
-2) The series $\displaystyle\sum_{n=0}^{\infty}\frac{(x+2)^n}{n!}$ is a power series about $-2$. Hence, the series converges for $x=-2$ (with sum $1$). For $x\neq-2$ we apply the ratio test: let $a_n=\displaystyle\frac{(x+2)^n}{n!}$, then we have:
+This implies that the series diverges for all $x\neq1$. Hence, the series only converges for $x=1$ and the radius of convergence is $R=0$.
 
-$$ 
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{(x+2)^{n+1}}{(n+1)!}\cdot\frac{n!}{(x+2)^n}\right|
-=\lim\limits_{n\to\infty}\frac{|x+2|}{n+1}=0. 
-$$ 
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:PowerSeries3
+The series $\displaystyle\sum_{n=0}^{\infty}\frac{(x+2)^n}{n!}$ is a power series about $-2$.
+
+Hence, the series converges for $x=-2$ with sum $1$.
+
+For $x\neq-2$ we set $a_n=\displaystyle\frac{(x+2)^n}{n!}$ and use the ratio test:
+
+\begin{align*} 
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| &= \lim\limits_{n\to\infty}\left|\frac{(x+2)^{n+1}}{(n+1)!}\cdot\frac{n!}{(x+2)^n}\right| \\
+&=\lim\limits_{n\to\infty}\frac{|x+2|}{n+1} \\
+&=0. 
+\end{align*} 
  
 This implies that the series converges for all $x\neq-2$ as well. Hence, the series converges for all $x\in\mathbb{R}$ and the radius of convergence is $R=\infty$.
 
-3) The series $\displaystyle\sum_{n=1}^{\infty}\frac{x^{n+1}}{n^2}$ is a power series about $0$. Hence, the series converges for $x=0$ (with sum $0$). For $x\neq0$ we apply the ratio test: let $a_n=\displaystyle\frac{x^{n+1}}{n^2}$, then we have:
+::::::
 
-$$ 
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{x^{n+2}}{(n+1)^2}\cdot\frac{n^2}{x^{n+1}}\right|
-=\lim\limits_{n\to\infty}\left(\frac{n}{n+1}\right)^2|x|=|x|. 
-$$ 
+::::::{prf:example}
+:label: Ex:Series:PowerSeries4
+The series $\displaystyle\sum_{n=1}^{\infty}\frac{x^{n+1}}{n^2}$ is a power series about $0$.
+
+For $x=0$ the series converges with sum $0$.
+
+For $x\neq0$ we turn to the ratio test. We choose $a_n=\displaystyle\frac{x^{n+1}}{n^2}$ and find:
+
+\begin{align*} 
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{x^{n+2}}{(n+1)^2}\cdot\frac{n^2}{x^{n+1}}\right| \\
+&=\lim\limits_{n\to\infty}\left(\frac{n}{n+1}\right)^2|x|\\
+&=|x|. 
+\end{align*}
  
-This implies that the series absolutely converges for $|x| < 1$ and diverges for $|x| > 1$. So the radius of convergence is $R=1$. For $x=1$ we have $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ which is a $p$-series with $p=2>1$ and therefore (absolutely) convergent. For $x=-1$ we have $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}$ which is absolutely convergent as well. Hence, the interval of convergence is $[-1,1]$.
+This implies that the series absolutely converges for $|x| < 1$ and diverges for $|x| > 1$. So the radius of convergence is $R=1$.
 
-4) The series $\displaystyle\sum_{n=0}^{\infty}\frac{(3-x)^n}{n+1}$ is a power series about $3$. Hence, the series converges for $x=3$ (with sum $1$). For $x\neq3$ we might apply the ratio test: let $a_n=\displaystyle\frac{(3-x)^n}{n+1}$, then we have:
+For $x=1$ we have $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ which is a $p$-series with $p=2>1$ and therefore (absolutely) convergent.
+
+For $x=-1$ we have $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}$ which is absolutely convergent as well, as the absolute value series is again a $p$-series with $p=2>1$.
+
+Hence, the interval of convergence is $[-1,1]$.
+
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:PowerSeries5
+The series $\displaystyle\sum_{n=0}^{\infty}\frac{(3-x)^n}{n+1}$ is a power series about $3$, which converges if $x=3$ with sum $1$.
+
+The ratio test for $x\neq3$ gives with $a_n=\displaystyle\frac{(3-x)^n}{n+1}$:
 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(3-x)^{n+1}}{n+2}\cdot\frac{n+1}{(3-x)^n}\right|\\
-&=\lim\limits_{n\to\infty}\frac{n+1}{n+2}\cdot|3-x|=|3-x|.
+&=\lim\limits_{n\to\infty}\frac{n+1}{n+2}\cdot|3-x|\\
+&=|3-x|.
 \end{align*}
-Hence, the series is absolutely convergent if $|3-x| < 1$ and is divergent if $|3-x| > 1$. So the radius of convergence is $R=1$. For $x=2$ the series equals the harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n+1}$, which is divergent and for $x=4$ the series equals the alternating harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}$, which is (conditionally) convergent. Hence, the interval of convergence is $(2,4]$.
 
-5) The series $\displaystyle\sum_{n=1}^{\infty}n\left(\frac{x-5}{2}\right)^n$ is a power series about $5$. Hence, the series converges for $x=5$ (with sum $0$). For $x\neq5$ we might apply the ratio test: let $a_n=\displaystyle n\left(\frac{x-5}{2}\right)^n$, then we have:
+Hence, the series is absolutely convergent if $|3-x| < 1$, is divergent if $|3-x| > 1$ and the radius of convergence is $R=1$.
+
+For $x=2$ the series equals the harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n+1}$, which is divergent, and for $x=4$ the series equals the alternating harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}$, which is conditionally convergent.
+
+Hence, the interval of convergence is $(2,4]$.
+
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:PowerSeries6
+The series $\displaystyle\sum_{n=1}^{\infty}n\left(\frac{x-5}{2}\right)^n$ is a power series about $5$.
+
+Again this series converges for $x=5$ with sum $0$.
+
+For $x\neq5$ we might apply the ratio test: let $a_n=\displaystyle n\left(\frac{x-5}{2}\right)^n$, then we have:
 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|(n+1)\left(\frac{x-5}{2}\right)^{n+1}\cdot\frac{1}{n}\left(\frac{2}{x-5}\right)^n\right|\\
-&=\lim\limits_{n\to\infty}\frac{n+1}{n}\cdot\left|\frac{x-5}{2}\right|=\left|\frac{x-5}{2}\right|.
+&=\lim\limits_{n\to\infty}\frac{n+1}{n}\cdot\left|\frac{x-5}{2}\right|\\
+&=\left|\frac{x-5}{2}\right|.
 \end{align*}
-Hence, the series is absolutely convergent if $\displaystyle\left|\frac{x-5}{2}\right| < 1$ or $|x-5| < 2$ and is divergent if $\displaystyle\left|\frac{x-5}{2}\right| > 1$ or $|x-5| > 2$. So the radius of convergence is $R=2$. For $x=7$ the series reads $\displaystyle\sum_{n=1}^{\infty}n$, which is divergent and for $x=3$ the series reads $\displaystyle\sum_{n=1}^{\infty}n(-1)^n$, which is divergent as well. Hence, the interval of convergence is $(3,7)$.
+
+The series is thus absolutely convergent if $\displaystyle\left|\frac{x-5}{2}\right| < 1$ or equivalently $|x-5| < 2$ and is divergent if $\displaystyle\left|\frac{x-5}{2}\right| > 1$ or $|x-5| > 2$. So the radius of convergence is $R=2$.
+
+For $x=7$ the series reads $\displaystyle\sum_{n=1}^{\infty}n$, which is divergent as $\displaystyle\lim_{n\to\infty}n=\infty$, and for $x=3$ the series reads $\displaystyle\sum_{n=1}^{\infty}n(-1)^n$, which is divergent as well by the same test for divergence.
+
+Hence, the interval of convergence is $(3,7)$.
 ::::::
+
 
 ::::::{prf:example} Bessel functions
 :label: Ex:Series:Bessel
