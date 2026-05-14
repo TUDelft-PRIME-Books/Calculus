@@ -2,13 +2,6 @@
 
 # Power series
 
-In this section we cover:
-
-- Power series
-- Interval of convergence
-- Representation of functions as power series using geometric series
-- Rules of calculation (sums, substitutions, differentiation, integration, products)
-
 ## Introduction
 
 In {numref}`Sec:Series:GeometricSeries` you have encountered geometric series, which are series of the form $\displaystyle\sum_{n=0}^{\infty}ar^n$ for some constants $a$ and $r$. You also have seen in {prf:ref}`Thm:Series:GeometricSeries` that these series converge when $|r|<1$ and diverge when $|r|\geq1$, and in case of convergence, the sum of the series is $\dfrac{a}{1-r}$.
@@ -252,38 +245,17 @@ For $x=7$ the series reads $\displaystyle\sum_{n=1}^{\infty}n$, which is diverge
 Hence, the interval of convergence is $(3,7)$.
 ::::::
 
+## Power series and functions
 
-::::::{prf:example} Bessel functions
-:label: Ex:Series:Bessel
+We started this section with comparing the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ with the function $f(x)=\dfrac{1}{1-x}$, and we have seen that the power series converges to $f(x)$ for $|x|<1$. In general, a power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ defines a function $f$ on the interval of convergence of the power series.
 
-Bessel functions are defined in terms of power series. The German mathematician [Friedrich Wilhelm Bessel (1784-1846)](https://en.wikipedia.org/wiki/Friedrich_Wilhelm_Bessel) introduced these functions when solving Kepler's equation for describing planetary motion. Later, these Bessel functions have been applied in many different physical situations, including the temperature distribution in a circular plate and the shape of a vibrating drumhead.
+This means that we could also use power series to represent functions:
 
-:::{figure} Images/bessel.gif
-:width: 50%
-:name: bessel function
-:align: center
+:::{prf:definition}
+:label: Def:Series:PowerSeriesRepresentation
 
-The motion of a vibrating drumhead.
-Source: https://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane.
+A **power series representation** of a function $f$ is a power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ such that $f(x)=\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ for all $x$ in the interval of convergence of the power series.
 :::
-
-The Bessel function $J_0(x)$ of the first kind of order $0$ is defined by: 
-
-$$
-J_0(x)=\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{2^{2n}(n!)^2}.
-$$
-
-Note that this is a power series in $x$ which is convergent for $x=0$. For $x\neq0$ we might apply the ratio test: let $a_n=\displaystyle\frac{(-1)^nx^{2n}}{2^{2n}(n!)^2}$, then we have:
-
-$$ 
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+2}}{2^{2n+2}((n+1)!)^2}\cdot\frac{2^{2n}(n!)^2}{(-1)^nx^{2n}}\right|
-=\lim\limits_{n\to\infty}\frac{x^2}{4(n+1)^2}=0. 
-$$ 
- 
-Hence, the series converges for all $x\neq0$ as well. We conclude that the power series converges for all $x\in\mathbb{R}$ (the radius of convergence is $R=\infty$). This implies that the domain of the Bessel function $J_0(x)$, the interval of convergence of the series, is $(-\infty,\infty)=\mathbb{R}$.
-::::::
-
-## Power series representations
 
 In {prf:ref}`Ex:Series:GeometricSeries` we have seen that the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is absolutely convergent for $|x|<1$ and divergent for $|x|\geq1$. Furthermore, we have
 
@@ -300,53 +272,88 @@ $$
 \frac{1}{1+x}=\sum_{n=0}^{\infty}(-x)^n=\sum_{n=0}^{\infty}(-1)^nx^n,
 $$
 
-which is valid for $|-x|<1$ or equivalenty for $|x|<1$.
+which is valid for $|-x|<1$ or equivalently for $|x|<1$.
 
-A power series representation for a function is not unique.
+The next example illustrates how to use substitutions in the geometric series to find power series representations of functions and to find the interval of convergence of these power series representations.
 
 ::::::{prf:example}
+:label: Ex:Series:PowerSeriesFunctions1
 Consider the function $\dfrac{1}{5+x}$. 
 
-Replacing $x$ by $-x-4$ in {eq}`Eq:Series:GeometricSeries` we obtain
+Replacing $x$ by $-x-4$ in Equation {eq}`Eq:Series:GeometricSeries` we obtain
 
-$$
-\frac{1}{5+x}=\frac{1}{1-(-x-4)}=\sum_{n=0}^{\infty}(-x-4)^n=\sum_{n=0}^{\infty}(-1)^n(x+4)^n,
-$$
+\begin{align*}
+\frac{1}{5+x}&=\frac{1}{1-(-x-4)}\\
+&=\sum_{n=0}^{\infty}(-x-4)^n\\
+&=\sum_{n=0}^{\infty}(-1)^n(x+4)^n,
+\end{align*}
 
 which is valid for $|-x-4|<1$ or equivalently for $|x+4|<1$. This is a power series about $-4$ with radius of convergence $R=1$. Note that both for $x=-5$ and $x=-3$ the series diverges. This implies that the interval of convergence is the open interval $(-5,-3)$.
+::::::
 
-We also have with $-\dfrac{x}{5}$ instead of $x$ in {eq}`Eq:Series:GeometricSeries`
+::::::{prf:example}
+:label: Ex:Series:PowerSeriesFunctions2
+Instead of using the substitution $-x-4$ for $x$ we could also substitute $-\dfrac{x}{5}$ for $x$ instead in Equation {eq}`Eq:Series:GeometricSeries`. This gives
 
-$$
-\frac{1}{5+x}=\frac{1}{5}\cdot\frac{1}{1+\dfrac{x}{5}}=\frac{1}{5}\sum_{n=0}^{\infty}\left(-\frac{x}{5}\right)^n=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n,
-$$
+\begin{align*}
+\frac{1}{5+x}&=\frac{1}{5}\cdot\frac{1}{1+\dfrac{x}{5}}\\
+&=\frac{1}{5}\sum_{n=0}^{\infty}\left(-\frac{x}{5}\right)^n\\
+&=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n,
+\end{align*}
 
 which is valid for $\left|-\dfrac{x}{5}\right|<1$ or equivalently for $|x|<5$. This is a power series about $0$ with radius of convergence $R=5$. Note that both for $x=-5$ and for $x=5$ the series diverges. This implies that the interval of convergence is the open interval $(-5,5)$.
 
-Note that the latter power series representation is much more useful than the first one.
+::::::
+
+In {prf:ref}`Ex:Series:PowerSeriesFunctions1` we have found a power series representation of $\dfrac{1}{5+x}$ which is valid for $-5<x<-3$, and in {prf:ref}`Ex:Series:PowerSeriesFunctions2` we have found a power series representation of $\dfrac{1}{5+x}$ which is valid for $-5<x<5$. In {numref}`Fig:PowerSeries:PowerSeriesFunctions` we have plotted the function $\dfrac{1}{5+x}$ and the partial sums of the two power series representations for $n=3$. You can increase yourself in the figure the value of $n$ to see how the partial sums change when $n$ increases.
+
+:::{figure} Images/PowerSeriesFunctions.png
+:name: Fig:PowerSeries:PowerSeriesFunctions
+
+The function $\dfrac{1}{5+x}$ and the partial sums of the two power series representations from {prf:ref}`Ex:Series:PowerSeriesFunctions1` and {prf:ref}`Ex:Series:PowerSeriesFunctions2`. You can change the value of $n$ to see how the partial sums change when $n$ increases.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PowerSeries:PowerSeriesFunctions` by an applet where the user can change the value of $n$ to see how the partial sums change when $n$ increases.
+:::
+
+Note that the power series representation from {prf:ref}`Ex:Series:PowerSeriesFunctions2` is much more useful than the first one, as the interval of convergence of the first power series representation is contained in the interval of convergence of the second power series representation.
+
+:::{prf:remark}
+:label: Rem:Series:PowerSeriesFunctions
+
+A power series representation of a function $f$ is not unique, as shown in {prf:ref}`Ex:Series:PowerSeriesFunctions1` and {prf:ref}`Ex:Series:PowerSeriesFunctions2`.
+:::
+
+::::::{prf:example}
+:label: Ex:Series:PowerSeriesFunctions3
+
+We want to find a power series representation of $g(x)=\dfrac{x^2}{5+x}$. 
+
+In the previous example we have found that
+
+$$
+f(x)=\frac{1}{5+x}=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n,\quad|x|<5.
+$$
+
+Our target function is $g(x)=\dfrac{x^2}{5+x}$, which is equal to $x^2f(x)$. Hence, we can find a power series representation of $g$ by multiplying the power series representation of $f$ by $x^2$:
+
+\begin{align*}
+g(x) &= \frac{x^2}{5+x} \\
+&= x^2f(x) \\
+&= x^2\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n \\
+&= \sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^{n+2},
+\end{align*}
+
+provided that $|x|<5$. This is a power series about $0$ with radius of convergence $R=5$. Note that both for $x=-5$ and for $x=5$ the series diverges. This implies that the interval of convergence is the open interval $(-5,5)$.
+
 ::::::
 
 ::::::{prf:example}
-Find a power series representation of $\dfrac{x^2}{5+x}$. 
+:label: Ex:Series:PowerSeriesFunctions4
+Now we turn to the power series representation of $\dfrac{1}{1+x^2}$.
 
-Solution. In the previous example we have found that
-
-$$
-\frac{1}{5+x}=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n,\quad|x|<5.
-$$
-
-Multiplication by $x^2$ leads to
-
-$$
-\frac{x^2}{5+x}=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^{n+2},\quad|x|<5.
-$$
-
-::::::
-
-::::::{prf:example}
-Find a power series representation of $\dfrac{1}{1+x^2}$. 
-
-Solution. If we replace $x$ by $-x^2$ in {eq}`Eq:Series:GeometricSeries` we obtain
+If we replace $x$ by $-x^2$ in Equation {eq}`Eq:Series:GeometricSeries` we obtain
 
 $$
 \frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-x^2)^n=\sum_{n=0}^{\infty}(-1)^nx^{2n},
@@ -355,15 +362,17 @@ $$
 which is valid for $\left|-x^2\right|<1$ or equivalently for $|x|<1$. This is a power series about $0$ with radius of convergence $R=1$. Note that the series diverges for both $x=-1$ and for $x=1$. This implies that the interval of convergence is the open interval $(-1,1)$.
 ::::::
 
-Note that the function $\dfrac{1}{1+x^2}$ is the derivative of $\arctan(x)$.
+It might of course not always be possible to find a power series representation of a function $f$ by using substitutions in the geometric series. For instance, it is not possible to find a power series representation of $\arctan(x)$ by using substitutions in the geometric series.
 
-What happens if we differentiate or integrate a power series representation of a function $f$? 
+Note however, that the function $\dfrac{1}{1+x^2}$ in {prf:ref}`Ex:Series:PowerSeriesFunctions4` is the derivative of $\arctan(x)$. So would it be possible to integrate the power series representation of $\dfrac{1}{1+x^2}$ to find a power series representation of $\arctan(x)$?
 
-The next theorem states that we can differentiate and integrate a power series term by term and that the radius of convergence stays the same.
+But if we could integrate, could we perhaps also differentiate a power series representation of a function $f$ to find a power series representation of the derivative of $f$?
+
+The next theorem states the answers to these questions:
 
 ::::::{prf:theorem}
 :label: Thm:Series:DifferentiationIntegration
-If the power series $\displaystyle\sum c_n(x-a)^n$ has radius of convergence $R>0$, then the function $f$ defined by
+If the power series $\displaystyle\sum_{n=0}^{\infty} c_n(x-a)^n$ has the radius of convergence $R>0$, then the function $f$ defined by
 
 $$
 f(x)=c_0+c_1(x-a)+c_2(x-a)^2+\cdots=\sum_{n=0}^{\infty}c_n(x-a)^n
@@ -379,43 +388,84 @@ and
 
 \begin{align*}
 \int f(x)\,dx&=C+c_0(x-a)+\frac{1}{2}c_1(x-a)^2+\frac{1}{3}c_2(x-a)^3+\cdots\\
-&=C+\sum_{n=0}^{\infty}\frac{c_n}{n+1}(x-a)^{n+1}.
+&=C+\sum_{n=0}^{\infty}\frac{c_n}{n+1}(x-a)^{n+1},
 \end{align*}
+
+with $C\in\mathbb{R}$ an arbitrary constant. 
+
+The radius of convergence of the power series representation of $f'$ and $\int f(x)\,dx$ is the same as the radius of convergence of the power series representation of $f$.
 ::::::
 
 ::::::{note}
 We skip the proof of this theorem.
-
-After differentiating or integrating a power series representation of a function $f$ the radius of convergence $R$ stays the same. However, at the endpoints of the interval of convergence the behaviour might be different. The interval of convergence can be $(a-R,a+R)$, $[a-R,a+R)$, $(a-R,a+R]$ or even $[a-R,a+R]$.
 ::::::
 
 ::::::{prf:example}
-:label: Ex:Series:LogTwo
-Consider the power series representation $\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$. Differentiation leads to
+:label: Ex:Series:LogTwo0
+Consider the power series representation $h(x)=\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$.
 
-\begin{align*}
-&-\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^nx^{n-1}\\
-&{}\quad\Longleftrightarrow\quad\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^{n-1}x^{n-1}=\sum_{n=0}^{\infty}(n+1)(-1)^nx^n.
-\end{align*}
-Note that this power series is only convergent for $-1<x<1$. For instance, this implies that
+The derivative of $h$ is $h'(x)=-\dfrac{1}{(1+x)^2}$.
+
+Differentiation of the power series representation leads to
+
+$$
+-\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^nx^{n-1}.
+$$
+
+We can rewrite this as
+
+$$
+\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^{n-1}x^{n-1}=\sum_{n=0}^{\infty}(n+1)(-1)^nx^n.
+$$
+
+Note that this power series is only convergent for $-1<x<1$.
+
+This power series implies that
 
 $$
 \sum_{n=0}^{\infty}\frac{n+1}{2^n}=\frac{1}{\left(1-\frac{1}{2}\right)^2}=4\quad\text{and}\quad\sum_{n=0}^{\infty}(-1)^n\frac{n+1}{2^n}=\frac{1}{\left(1+\frac{1}{2}\right)^2}=\frac{4}{9}.
 $$
 
-Integration leads to
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:LogTwo
+
+We again consider the power series representation $h(x)=\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$.
+
+Integration of the power series leads to
 
 $$
-\ln|1+x|=C+\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1}.
+\int h(x)\,dx=\int\frac{1}{1+x}\,dx=C+\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1},
 $$
 
-For $x=0$ this reads: $0=\ln(1)=C+0$ which implies that $C=0$. Hence we have
+with $C\in\mathbb{R}$ an arbitrary constant.
+
+Direct integration of the function $h$ leads to
+
+$$
+\int h(x)\,dx=\int\frac{1}{1+x}\,dx=\ln|1+x|+D,
+$$
+
+with $D\in\mathbb{R}$ another arbitrary constant.
+
+Comparing both results we obtain 
+
+$$
+\ln|1+x|=C-D+\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1}=E+\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1},
+$$
+
+where $E=C-D$ is an arbitrary constant (because $C$ and $D$ are arbitrary constants).
+
+For $x=0$ this reads: $0=\ln(1)=E+0$ which implies that $E=0$. Hence we have
 
 $$
 \ln|x+1|=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1},\quad-1<x<1.
 $$
 
-For $x=-1$ we obtain the series $\displaystyle-\sum_{n=0}^{\infty}\frac{1}{n+1}$ which is divergent (this is minus the harmonic series). For $x=1$ we obtain the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}$ which is (conditionally) convergent (this is the alternating harmonic series). Since $\ln|x+1|$ is continuous at $x=1$ we conclude that
+For $x=-1$ we obtain the series $\displaystyle-\sum_{n=0}^{\infty}\frac{1}{n+1}$ which is divergent (this is minus the harmonic series). For $x=1$ we obtain the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}$ which is (conditionally) convergent (this is the alternating harmonic series).
+
+Since $\ln|x+1|$ is continuous at $x=1$ we conclude that
 
 $$
 \sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}=\lim_{x\to1}\ln|x+1|=\ln(2).
@@ -423,7 +473,19 @@ $$
 
 ::::::
 
+:::{prf:remark}
+:label: Rem:Series:PowerSeriesFunctions4
+
+Note that in the previous example we had to introduce two arbitrary constants $C$ and $D$ when we integrated the power series and the function, respectively. However, these two arbitrary constants only lead to one arbitrary constant $E$ in the final result. This is because the difference of two arbitrary constants is again an arbitrary constant.
+
+Because of this we often omit the steps with the two arbitrary constants and directly write one arbitrary constant in the final result when we integrate a power series and a function to find a power series representation of the integral of the function.
+:::
+
 ::::::{prf:example}
+:label: Ex:Series:Arctan
+
+We introduced the idea of integrating a power series representation of a function to find a power series representation of the integral of the function in {prf:ref}`Ex:Series:PowerSeriesFunctions4`. We will now apply this idea to find a power series representation of $\arctan(x)$.
+
 Integrating the power series representation $\displaystyle\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-1)^nx^{2n}$ for $-1<x<1$ we obtain
 
 $$
@@ -453,99 +515,35 @@ $$
 is known as the **Leibniz formula** for $\pi$, named after the German mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz).
 ::::::
 
-::::::{prf:example} Application
+Examples {prf:ref}`Ex:Series:LogTwo0`, {prf:ref}`Ex:Series:LogTwo` and {prf:ref}`Ex:Series:Arctan` illustrate that although the radius of convergence of a power series representation of a function $f$ is preserved during differentiation and integration, the convergence behavior at the endpoints of the interval of convergence can change during differentiation and integration.
+
+::::::{prf:example}
 Consider the integral $\displaystyle\int_0^{0.5}\frac{x^2}{1+x^8}\,dx$.
 
-It is difficult to evaluate this integral exactly. However, we may use a power series representation of the integrand to find an approximation. Start with $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$. This implies that
+Although the integrand $\dfrac{x^2}{1+x^8}$ is a rational function, using the techniques from {numref}`Sec:Integration:RationalFunctions` is complex and not straightforward.
+
+Using a power series representation of the integrand, we can find a power series representation of the indefinite integral $\displaystyle\int\frac{x^2}{1+x^8}\,dx$, which then can be used to find an approximation of the value of the integral.
+
+We start with $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$. This implies that
 
 \begin{align*}
-&\frac{1}{1+x^8}=\sum_{n=0}^{\infty}(-1)^nx^{8n}\quad\Longrightarrow\quad\frac{x^2}{1+x^8}=\sum_{n=0}^{\infty}(-1)^nx^{8n+2}\\
-&{}\quad\Longrightarrow\quad\int\frac{x^2}{1+x^8}\,dx=C+\sum_{n=0}^{\infty}\frac{(-1)^n}{8n+3}x^{8n+3},\quad |x| < 1. 
+&~ & \frac{1}{1+x^8} &= \sum_{n=0}^{\infty}(-1)^nx^{8n} \\
+&\Longrightarrow & \frac{x^2}{1+x^8} &= \sum_{n=0}^{\infty}(-1)^nx^{8n+2} \\
+&\Longrightarrow & \int\frac{x^2}{1+x^8}\,dx &= C+\sum_{n=0}^{\infty}\frac{(-1)^n}{8n+3}x^{8n+3},\quad |x| < 1. 
 \end{align*}
+
 This implies that
 
 \begin{align*}
-\int_0^{0.5}\frac{x^2}{1+x^8}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n(0.5)^{8n+3}}{8n+3}\\
+\int_0^{0.5}\frac{x^2}{1+x^8}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n(0.5)^{8n+3}}{8n+3} - \sum_{n=0}^{\infty}\frac{(-1)^n(0)^{8n+3}}{8n+3}\\
 &=\frac{(0.5)^3}{3}-\frac{(0.5)^{11}}{11}+\frac{(0.5)^{19}}{19}-\frac{(0.5)^{27}}{27}+\cdots\\
 &\approx\frac{(0.5)^3}{3}=0.041666\ldots.
 \end{align*}
 ::::::
 
-:::{admonition} Remarkable decimal fractions (bonus material)
-:class: solution, dropdown
-We will prove that $\dfrac{1}{81}=\dfrac{1}{9^2}=0.\overline{012345679}$.
+In the above discussions, we only considered the differentiation and integration of power series representations of functions and sometimes multiplied a power series representation of a function by a power of $x$ to find a power series representation of the product of the function and the power of $x$. But we can also multiply two power series representations of functions to find a power series representation of the product of the two functions. The next parts give the formula for this multiplication of two power series, which is called the Cauchy product.
 
-We start with the geometric series $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$. Differentiation now leads to $\displaystyle\sum_{n=1}^{\infty}nx^{n-1}=\frac{1}{(1-x)^2}$ for $|x|<1$. This implies that $\displaystyle\sum_{n=1}^{\infty}nx^{n+1}=\frac{x^2}{(1-x)^2}=\left(\frac{x}{1-x}\right)^2$ for $|x|<1$. Substitution of $x=\displaystyle\frac{1}{10}$ leads to $\displaystyle\sum_{n=1}^{\infty}\frac{n}{10^{n+1}}=\left(\frac{1}{9}\right)^2=\frac{1}{81}$.
-
-For the first nine terms we have
-
-$$
-\sum_{n=1}^9\frac{n}{10^{n+1}}=0.01+0.002+0.0003+\cdots+0.0000000009=0.0123456789.
-$$
- 
-For the tenth term we have: $\displaystyle\frac{10}{10^{11}}=\frac{1}{10^{10}}=0.0000000001$. Hence:
-
-$$
-\sum_{n=1}^{10}\frac{n}{10^{n+1}}=0.0123456789+0.0000000001=0.0123456790.
-$$
-
-Now suppose that $p=0.\overline{012345679}$, then we have:
-
-$$
-10^9p=12345679.\overline{012345679}=12345679+0.\overline{012345679}=12345679+p.
-$$
-
-Since we have $10^9-1=999999999=9^2\cdot12345679$, this implies that
-
-\begin{align*}
-(10^9-1)p=12345679&\quad\Longleftrightarrow\quad9^2\cdot12345679p=12345679\\
-&\quad\Longleftrightarrow\quad p=\frac{1}{9^2}=\frac{1}{81}.
-\end{align*}
-Similarly, the substitution $x=\displaystyle\frac{1}{100}$ leads to $\displaystyle\sum_{n=1}^{\infty}\frac{n}{100^{n+1}}=\left(\frac{1}{99}\right)^2=\frac{1}{9801}$.
-
-For the first ninety-nine terms we now have
-
-$$
-\sum_{n=1}^{99}\frac{n}{100^{n+1}}=0.0001020304\ldots9596979899.
-$$
-
-For the hundredth term we have: $\displaystyle\frac{100}{100^{101}}=\frac{1}{100^{100}}$. Hence:
-
-$$
-\sum_{n=1}^{100}\frac{n}{100^{n+1}}=0.0001020304\ldots9596979900.
-$$
- 
-Now suppose that $q=0.\overline{0001020304\ldots95969799}$, then we have:
-
-\begin{align*}
-100^{99}q&=1020304\ldots95969799.\overline{0001020304\ldots95969799}\\
-&=1020304\ldots95969799+q.
-\end{align*}
-Since we have $100^{99}-1=99^2\cdot1020304\ldots95969799$, this implies that
-
-\begin{align*}
-&(100^{99}-1)q=1020304\ldots95969799\\
-&\quad\Longleftrightarrow\quad99^2\cdot1020304\ldots95969799q=1020304\ldots95969799\\
-&\quad\Longleftrightarrow\quad q=\frac{1}{99^2}=\frac{1}{9801}.
-\end{align*}
-Similarly if follows that
-
-$$
-\frac{1}{998001}=\frac{1}{999^2}=0.\overline{00001002003004\ldots995996997999},
-$$
-
-$$
-\frac{1}{99980001}=\frac{1}{9999^2}=0.\overline{000001000200030004\ldots9995999699979999},
-$$
-
-\begin{align*}
-\frac{1}{9999800001}&=\frac{1}{99999^2}\\
-&=0.\overline{0000001000020000300004\ldots99995999969999799999}
-\end{align*}
-and so on.
-:::
-
-::::::{prf:theorem} Cauchy product
+::::::{prf:theorem}
 :label: Thm:Series:CauchyProduct
 Let $\displaystyle\sum_{i=0}^{\infty}a_i(x-a)^i$ and $\displaystyle\sum_{j=0}^{\infty}b_j(x-a)^j$ be two power series centered at $x=a$, then
 
@@ -554,13 +552,18 @@ $$
 $$
 
 with $c_n=\displaystyle\sum_{k=0}^na_kb_{n-k}$.
-
-This is called the **Cauchy product** of the two power series, named after the French mathematician [Augustin-Louis Cauchy (1789-1857)](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy).
 ::::::
+
+:::{prf:definition}
+:label: Def:Series:CauchyProduct
+The product in the above theorem is defined as the **Cauchy product** of the two power series.
+:::
+
+The Cauchy product is named after the French mathematician [Augustin-Louis Cauchy (1789-1857)](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy).
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Series:CauchyProduct`
 :class: tudproof, dropdown
-Note that we have by setting $i+j=n$
+Note that we have by setting $i+j=n$ in the last step
 
 \begin{align*}
 \left(\sum_{i=0}^{\infty}a_i(x-a)^i\right)\left(\sum_{j=0}^{\infty}b_j(x-a)^j\right)&=\sum_{i=0}^{\infty}\sum_{j=0}^{\infty}a_ib_j(x-a)^{i+j}\\
@@ -569,7 +572,8 @@ Note that we have by setting $i+j=n$
 ::::::
 
 ::::::{prf:example}
-Consider the geometric series $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}$ for $|x|<1$. Then differentiation leads to
+:label: Ex:Series:CauchyProduct1
+Consider the geometric series $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}$ for $|x|<1$. Then differentiation led to
 
 $$
 \frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1},\quad |x|<1.
@@ -581,7 +585,7 @@ $$
 \frac{1}{(1-x)^2}=\frac{1}{1-x}\cdot\frac{1}{1-x}=\left(\sum_{i=0}^{\infty}x^i\right)\left(\sum_{j=0}^{\infty}x^j\right)=\sum_{n=0}^{\infty}c_nx^n,
 $$
 
-with $c_n=\displaystyle\sum_{k=0}^n1=n+1$. Now we have
+with $c_n=\displaystyle\sum_{k=0}^n1=n+1$. Now we have found that
 
 $$
 \sum_{n=0}^{\infty}(n+1)x^n=\sum_{n=1}^{\infty}nx^{n-1}.
@@ -590,6 +594,8 @@ $$
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Series:CauchyProduct2
+
 Consider
 
 $$
@@ -608,12 +614,48 @@ $$
 \frac{1}{(1-x)^3}=\frac{1}{2}\sum_{n=0}^{\infty}(n+1)(n+2)x^n.
 $$
 
-Note that differentiation of $\displaystyle\frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1}$ also leads to
+Note that differentiation of $\dfrac12\displaystyle\frac{1}{(1-x)^2}=\dfrac12\sum_{n=1}^{\infty}nx^{n-1}$ also leads to
 
 $$
-\frac{2}{(1-x)^3}=\sum_{n=2}^{\infty}n(n-1)x^{n-2}=\sum_{n=0}^{\infty}(n+1)(n+2)x^n,\quad|x|<1.
+\frac{1}{(1-x)^3}=\dfrac12\sum_{n=2}^{\infty}n(n-1)x^{n-2}=\dfrac12\sum_{n=0}^{\infty}(n+1)(n+2)x^n,\quad|x|<1.
 $$
 
+::::::
+
+::::::{prf:example} Bessel functions
+:label: Ex:Series:Bessel
+
+Consider the vibrating drumhead shown in {numref}`Fig:PowerSeries:Bessel`. The shape of the vibrating drumhead can be described by a so-called Bessel function, which is defined in terms of a power series.
+
+:::{figure} Images/bessel.gif
+:width: 50%
+:name: Fig:PowerSeries:Bessel
+:align: center
+
+The motion of a vibrating drumhead.
+Source: https://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PowerSeries:Bessel` by our own applet, or our own animation, or improve the referencing using MetaData.
+:::
+
+The German mathematician [Friedrich Wilhelm Bessel (1784-1846)](https://en.wikipedia.org/wiki/Friedrich_Wilhelm_Bessel) introduced these functions when solving Kepler's equation for describing planetary motion. Later, these Bessel functions have been applied in many different physical situations, including the temperature distribution in a circular plate and, of course,  the shape of a vibrating drumhead.
+
+The Bessel function $J_0(x)$ of the first kind of order $0$ is defined by: 
+
+$$
+J_0(x)=\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{2^{2n}(n!)^2}.
+$$
+
+Note that this is a power series in $x$ which is convergent for $x=0$. For $x\neq0$ we might apply the ratio test: let $a_n=\displaystyle\frac{(-1)^nx^{2n}}{2^{2n}(n!)^2}$, then we have:
+
+$$ 
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+2}}{2^{2n+2}((n+1)!)^2}\cdot\frac{2^{2n}(n!)^2}{(-1)^nx^{2n}}\right|
+=\lim\limits_{n\to\infty}\frac{x^2}{4(n+1)^2}=0. 
+$$ 
+ 
+Hence, the series converges for all $x\neq0$ as well. We conclude that the power series converges for all $x\in\mathbb{R}$ (the radius of convergence is $R=\infty$). This implies that the domain of the Bessel function $J_0(x)$, the interval of convergence of the series, is $(-\infty,\infty)=\mathbb{R}$.
 ::::::
 
 ## Grasple exercises
