@@ -768,7 +768,7 @@ $$
 In physics, when considering a quantity $y$ that is a function of **time** $t$, the notation $\ddot{y}(t)$ represents the second derivative $y''(t)$.
 ::::::
 
-For notational convenience, specifically when considering Taylor polynomials (see {numref}`Sec:Taylor polynomials`), we also introduce the concept of a zeroth derivative, which is just the function itself.
+For notational convenience, specifically when considering Taylor polynomials (see {numref}`Sec:TaylorPolynomials`), we also introduce the concept of a zeroth derivative, which is just the function itself.
 
 ::::::{prf:definition} 
 :label: Def:Differentiability:Higherorderderivative

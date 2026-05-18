@@ -24,7 +24,7 @@ Now, increase yourself in the figure the value of $n$ to see how the partial sum
 
 Instead of only focussing on geometric series of the form $\displaystyle\sum_{n=0}^{\infty}ax^n$, we will now consider more general series of the form $\displaystyle\sum_{n=0}^{\infty}a_nx^n$ for some sequence $\{a_n\}_{n=0}^{\infty}$. These series are called power series and they have similar convergence properties as geometric series. Moreover, we can use geometric series to find power series representations of functions.
 
-## Power series
+## Power series and their convergence
 
 We start with a formal definition of what we consider as a power series:
 

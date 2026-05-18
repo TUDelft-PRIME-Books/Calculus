@@ -11,36 +11,38 @@ In this section we cover:
 
 ## Introduction
 
-In the previous section we have seen some power series representations of certain functions. These were all based on the geometric series $\displaystyle\sum_{n=0}^{\infty}x^n=\frac{1}{1-x}$ for $|x|<1$. We could use substitutions, differentiation and integration to find power series representations of other functions. In this section we will find power series representations of more general functions that are infinitely differentiable. 
+In the previous section we have seen some power series representations of certain functions. These were all based on the geometric series $\displaystyle\sum_{n=0}^{\infty}x^n=\frac{1}{1-x}$ for $|x|<1$. We could use substitutions, differentiation and integration to find power series representations of other functions by using this power series representation of the function $\dfrac{1}{1-x}$.
 
-Let $f$ be such an infinitely differentiable function and suppose that $f$ can be represented by a power series: 
+In this section we will find power series representations of more functions, which are infinitely differentiable.
+
+## Derivation
+
+Let $f$ be such an infinitely differentiable function and suppose that $f$ can be represented by a power series for $|x-a|<R$ for some $R>0$, that is, suppose that: 
 
 \begin{align*}
 f(x)&=c_0+c_1(x-a)+c_2(x-a)^2+c_3(x-a)^3+c_4(x-a)^4+\cdots\\
-&=\sum_{n=0}^{\infty}c_n(x-a)^n,\quad|x-a| < R
+&=\sum_{n=0}^{\infty}c_n(x-a)^n,\quad|x-a| < R.
 \end{align*}
-with *positive* radius of convergence $R$. Then we have 
+
+Again, $R$ is the radius of convergence of this power series. Since $f$ is infinitely differentiable, we can differentiate the power series term by term to obtain that for $|x-a|<R$ we have
 
 \begin{align*}
-f'(x)&=c_1+2c_2(x-a)+3c_3(x-a)^2+4c_4(x-a)^3+5c_5(x-a)^4+\cdots\\
-&=\sum_{n=1}^{\infty}n(x-a)^{n-1},\quad|x-a| < R, 
-\end{align*}
-\begin{align*}
+f'(x) &=c_1+2c_2(x-a)+3c_3(x-a)^2+4c_4(x-a)^3+5c_5(x-a)^4+\cdots\\
+ &=\sum_{n=1}^{\infty}n(x-a)^{n-1}, \\
 f''(x)&=2c_2+2\cdot3c_3(x-a)+3\cdot4c_4(x-a)^2+4\cdot5c_5(x-a)^3+\cdots\\
-&=\sum_{n=2}^{\infty}n(n-1)(x-a)^{n-2},\quad|x-a| < R, 
-\end{align*}
-\begin{align*}
+&=\sum_{n=2}^{\infty}n(n-1)(x-a)^{n-2}, \\
 f^{(3)}(x)&=2\cdot3c_3+2\cdot3\cdot4c_4(x-a)+3\cdot4\cdot5c_5(x-a)^2+4\cdot5\cdot6c_6(x-a)^3+\cdots\\
-&=\sum_{n=3}^{\infty}n(n-1)(n-2)(x-a)^{n-3},\quad|x-a| < R, 
+&=\sum_{n=3}^{\infty}n(n-1)(n-2)(x-a)^{n-3},
 \end{align*}
-and so on. Since all these power series converge at least at $x=a$ 
-we substitute $x=a$ to obtain that 
+
+and so on. Since all these power series converge at least at $x=a$ we substitute $x=a$ to obtain that
 
 \begin{align*}
-&f(a)=c_0,\quad f'(a)=c_1,\quad f''(a)=2c_2,\quad f^{(3)}(a)=2\cdot3c_3,\quad\ldots\\
-&\quad\Longrightarrow\quad f^{(n)}(a)=1\cdot2\cdot3\cdot4\cdots nc_n=n!c_n,\quad 
-n=1,2,3,\ldots. 
+&~ f(a)=c_0,\quad f'(a)=c_1,\quad f''(a)=2c_2,\quad f^{(3)}(a)=2\cdot3c_3,\quad\ldots\\
+&\Longrightarrow f^{(n)}(a)=1\cdot2\cdot3\cdot4\cdots nc_n=n!c_n,\quad 
+n=1,2,3,\ldots 
 \end{align*}
+
 This leads to the following theorem. 
 
 ::::::{prf:theorem} Taylor series 
@@ -68,7 +70,8 @@ The series
 &\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n\\
 &\quad{}=f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3+\cdots
 \end{align*}
-is called the **Taylor series** or the **Taylor expansion** of the function $f$ at $x=a$. This Taylor series is named after the English mathematician [Brook Taylor (1685-1731)](https://en.wikipedia.org/wiki/Brook_Taylor). 
+
+is called the **Taylor series** or the **Taylor expansion** of the function $f$ at $x=a$. 
 
 The special case with $a=0$ 
 
@@ -76,8 +79,10 @@ $$
 \sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n=f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\frac{f^{(3)}(0)}{3!}x^3+\cdots
 $$ 
 
-is sometimes (also) called the **Maclaurin series** of $f$, named after the Scottish mathematician [Colin Maclaurin (1698-1746)](https://en.wikipedia.org/wiki/Colin_Maclaurin). 
-:::::: 
+is sometimes (also) called the **Maclaurin series** of $f$. 
+::::::
+
+This Taylor series is named after the English mathematician [Brook Taylor (1685-1731)](https://en.wikipedia.org/wiki/Brook_Taylor) and the Maclaurin series is named after the Scottish mathematician [Colin Maclaurin (1698-1746)](https://en.wikipedia.org/wiki/Colin_Maclaurin).
 
 ::::::{note} 
 The $n$th partial sum 
@@ -86,16 +91,34 @@ $$
 T_n(x)=\sum_{k=0}^n\frac{f^{(k)}(a)}{k!}(x-a)^k 
 $$ 
 
-is the $n$th-order *Taylor polynomial* of $f$ around $x=a$. 
+is the $n$th-order *Taylor polynomial* of $f$ around $x=a$ and has been studied in {numref}`Sec:TaylorPolynomials`.
 :::::: 
+
+Sometimes it is useful for us to refer to functions that have a Taylor series with a positive radius of convergence. This leads to the following definition:
 
 ::::::{prf:definition} Analytic functions 
 :label: Def:Series:Analytic 
 A function is called **analytic** if it has a Taylor series with a positive radius of convergence.
 ::::::
 
+One of the most (in)famous Taylor series is the Taylor series of the exponential function $f(x)=e^x$ at $x=0$, which we consider in the next example.
+
 ::::::{prf:example}
-For $f(x)=e^x$ we have: $f^{(n)}(x)=e^x$ for $n=0,1,2,\ldots$. Hence: $f^{(n)}(0)=1$ for $n=0,1,2,\ldots$. This implies that
+:label: Ex:Series:ExpTaylor
+
+For $f(x)=e^x$ we have
+
+$$
+f^{(n)}(x)=e^x\quad\text{for }n=0,1,2,\ldots
+$$
+
+Hence:
+
+$$
+f^{(n)}(0)=1\quad\text{for }n=0,1,2,\ldots
+$$
+
+This implies that the Taylor series of $f$ at $x=0$ is given by
 
 $$
 e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\frac{1}{24}x^4+\frac{1}{120}x^5+\cdots.
@@ -110,22 +133,71 @@ $$
  
 This implies that the Taylor series converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$.
 
+{numref}`Fig:Series:ExpTaylor` showcases the function $f(x)=e^x$ and some of its Taylor polynomial, which are the partial sums of the Taylor series. We can see that these Taylor polynomials are good approximations of the function $f$ around $x=0$ and that they get better and better as we take more and more terms in the Taylor series.
+
 ::::{figure} Images/taylor.png
-:name: Fig:Series:Taylor
+:name: Fig:Series:ExpTaylor
 :align: center
 
-The function $f(x)=e^x$ and its Taylor polynomials $T_1(x)=1+x$, $T_2(x)=1+x+\frac{1}{2}x^2$ and $T_3(x)=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3$.
+The function $f(x)=e^x$ and its Taylor polynomials $T_1(x)=1+x$, $T_2(x)=1+x+\frac{1}{2}x^2$ and $T_3(x)=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3$ and $\displaystyle T_n(x)=\sum_{k=0}^n\frac{x^k}{k!}$ for variable $k$.
 ::::
 
+:::{todo}
+Replace {numref}`Fig:Series:ExpTaylor` with an applet with $k$ a slider.
+:::
+
 ::::::
+
+::::::{prf:example}
+:label: Ex:Series:SinTaylor
+
+For $f(x)=\sin(x)$ we have: $f'(x)=\cos(x)$, $f''(x)=-\sin(x)$, $f^{(3)}(x)=-\cos(x)$, $f^{(4)}(x)=\sin(x)=f(x)$ and so on. Hence: $f(0)=0$, $f'(0)=1$, $f''(0)=0$, $f^{(3)}(0)=-1$, $f^{(4)}(0)=1=f(0)$ and so on. This implies that
+
+$$
+\sin(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}=x-\frac{1}{6}x^3+\frac{1}{120}x^5-\frac{1}{5040}x^7+\cdots.
+$$
+
+In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n+1)!}x^{2n+1}$, then we have
+
+\begin{align*}
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+3}}{(2n+3)!}\cdot\frac{(2n+1)!}{(-1)^nx^{2n+1}}\right|\\
+&=\lim\limits_{n\to\infty}\frac{x^2}{(2n+2)(2n+3)}=0.
+\end{align*}
+This implies that the Taylor series for $\sin(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$. 
+
+::::::
+
+
+::::::{prf:example}
+:label: Ex:Series:CosTaylor
+Similarly we obtain that
+
+$$
+\cos(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}x^{2n}=1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\cdots.
+$$
+
+In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n)!}x^{2n}$, then we have
+
+\begin{align*}
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+2}}{(2n+2)!}\cdot\frac{(2n)!}{(-1)^nx^{2n}}\right|\\
+&=\lim\limits_{n\to\infty}\frac{x^2}{(2n+1)(2n+2)}=0.
+\end{align*}
+This implies that the Taylor series for $\cos(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$.
+::::::
+
+## The remainder
 
 In general, $f(x)$ is the sum of its Taylor series if
 
 $$
-f(x)=\lim_{n\to\infty}T_n(x).
+f(x)=\lim_{n\to\infty}T_n(x),
 $$
 
-If we let $R_n(x)=f(x)-T_n(x)$ or $f(x)=T_n(x)+R_n(x)$, then $R_n(x)$ is called the **remainder** of the Taylor series. So, if $\lim\limits_{n\to\infty}R_n(x)=0$, then
+for $x$ within the interval of convergence of the Taylor series.
+
+
+
+If we let $R_n(x)=f(x)-T_n(x)$ or $f(x)=T_n(x)+R_n(x)$, then $R_n(x)$ is called the **remainder** of the Taylor series, see {prf:ref}`Def:TaylorPolynomials:TaylorIneq`. So, if $\lim\limits_{n\to\infty}R_n(x)=0$, then
 
 $$
 \lim_{n\to\infty}T_n(x)=\lim_{n\to\infty}\left(f(x)-R_n(x)\right)=f(x)-\lim_{n\to\infty}R_n(x)=f(x)-0=f(x).
@@ -144,7 +216,74 @@ $$
 for $|x-a|<R$, then $f$ is equal to the sum of its Taylor series for $|x-a|<R$.
 ::::::
 
-If we want to show that $\lim\limits_{n\to\infty}R_n(x)=0$ for a specific function $f$, we usually use the following theorem:
+If we want to show that $\lim\limits_{n\to\infty}R_n(x)=0$ for a specific function $f$, we need first a formula for the remainder term $R_n(x)$, which is provided in the next theorem.
+
+:::{prf:theorem}
+:label: Thm:Series:TaylorRemainder
+If $f^{(n+1)}$ is continuous on an interval $I$ and $x\in I$, then 
+
+$$
+R_n(x)=\frac{1}{n!}\int_a^x(x-t)^nf^{(n+1)}(t)\,dt.
+$$
+
+This is called the *integral form of the remainder term*. Furthermore, there exists a number $c$ between $a$ and $x$ such that
+
+$$
+R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}.
+$$
+
+This is called *Lagrange's form of the remainder term*.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Series:TaylorRemainder`
+:class: tudproof, dropdown
+
+First consider $n=0$:
+
+\begin{align*}
+R_0(x) &= f(x) - T_0(x) \\
+&= f(x) - f(a) \\
+&= \int_a^x f'(t)\,dt \\
+&= \frac{1}{0!}\int_a^x(x-t)^0f'(t)\,dt.
+\end{align*}
+
+Now assume that the formula holds for $n=N$ and consider $n=N+1$:
+
+\begin{align*}
+R_{N+1}(x) &= f(x) - T_{N+1}(x) \\
+&= f(x) - T_N(x) - \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
+&= R_N(x) - \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
+&= \frac{1}{N!}\int_a^x(x-t)^Nf^{(N+1)}(t)\,dt - \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1}.
+\end{align*}
+
+In the last step we used the induction hypothesis. Now we apply integration by parts to the integral term, using $u=f^{(N+1)}(t)$ and $dv=(x-t)^N\,dt$, which implies that $du=f^{(N+2)}(t)\,dt$ and $v=-\frac{1}{N+1}(x-t)^{N+1}$, to obtain that
+
+\begin{align*}
+R_{N+1}(x) &= \frac{1}{N!}\left(\left[-\frac{1}{N+1}(x-t)^{N+1}f^{(N+1)}(t)\right]_{t=a}^{x} + \int_a^x \frac{1}{N+1}(x-t)^{N+1}f^{(N+2)}(t)\,dt \right) \\
+&~ \quad- \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
+&= \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} + \frac{1}{(N+1)!}\int_a^x(x-t)^{N+1}f^{(N+2)}(t)\,dt - \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
+&= \frac{1}{(N+1)!}\int_a^x(x-t)^{N+1}f^{(N+2)}(t)\,dt.
+\end{align*}
+
+This proves the first part of the theorem.
+
+For the next part, we use the mean value theorem for integrals, see {numref}`Sec:Integration:FundamentalTheorem`, to obtain that there exists a number $c$ between $a$ and $x$ such that
+
+\begin{align*}
+R_n(x) &= \frac{1}{n!}\int_a^x(x-t)^nf^{(n+1)}(t)\,dt \\
+&= \frac{f^{(n+1)}(c)}{n!}\int_a^x(x-t)^n\,dt \\
+&= \frac{f^{(n+1)}(c)}{n!}\cdot\frac{1}{n+1}(x-a)^{n+1} \\
+&= \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}.
+\end{align*}
+
+This concludes the proof of the theorem.
+:::
+
+The last form in the above theorem is named after the Italian-French mathematician [Joseph-Louis Lagrange (1736-1813)](https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange).
+
+Using this theorem, we can find an upper bound for the remainder term, leading to the following theorem[^other]:
+
+[^other]: This theorem is a reformulation of {prf:ref}`Th:TaylorPolynomialsAdd:TaylorIneq`.
 
 ::::::{prf:theorem} Taylor's inequality
 :label: Thm:Series:TaylorInequality
@@ -154,63 +293,28 @@ $$
 |R_n(x)|\leq\frac{M}{(n+1)!}|x-a|^{n+1}\quad\text{for}\quad|x-a|<R.
 $$
 
+Furthermore, $M$ can be taken as any upper bound for $|f^{(n+1)}(x)|$ on an interval $D$ that contains $a$ and $x$.
+
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Series:TaylorInequality`
-:class: solution, dropdown
-See {numref}`Sec:Taylor polynomials`.
-:::
+:class: tudproof, dropdown
 
-::::::{prf:remark} Formulas for Taylor's remainder term
-Instead of using Taylor's inequality, we may use a formula for the remainder term $R_n(x)$.
-
-If $f^{(n+1)}$ is continuous on an interval $I$ and $x\in I$, then 
-
-$$
-R_n(x)=\frac{1}{n!}\int_a^x(x-t)^nf^{(n+1)}(t)\,dt.
-$$
-
-This is called the *integral form of the remainder term*. The mean value theorem implies that there exists a number $c$ between $x$ and $a$ such that
+We have seen in {prf:ref}`Thm:Series:TaylorRemainder` that there exists a number $c$ between $a$ and $x$ such that
 
 $$
 R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}.
 $$
 
-This is called *Lagrange's form of the remainder term*, named after the Italian-French mathematician [Joseph-Louis Lagrange (1736-1813)](https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange).
-::::::
-
-::::::{prf:example}
-For $f(x)=\sin(x)$ we have: $f'(x)=\cos(x)$, $f''(x)=-\sin(x)$, $f^{(3)}(x)=-\cos(x)$, $f^{(4)}(x)=\sin(x)=f(x)$ and so on. Hence: $f(0)=0$, $f'(0)=1$, $f''(0)=0$, $f^{(3)}(0)=-1$, $f^{(4)}(0)=1=f(0)$ and so on. This implies that
-
-$$
-\sin(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}=x-\frac{1}{6}x^3+\frac{1}{120}x^5-\frac{1}{5040}x^7+\cdots.
-$$
-
-In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n+1)!}x^{2n+1}$, then we have
+Assume $M$ is an upper bound for $|f^{(n+1)}(x)|$ on an interval $D$ that contains $a$ and $x$, then we have
 
 \begin{align*}
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+3}}{(2n+3)!}\cdot\frac{(2n+1)!}{(-1)^nx^{2n+1}}\right|\\
-&=\lim\limits_{n\to\infty}\frac{x^2}{(2n+2)(2n+3)}=0.
+|R_n(x)|&=\left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|\\
+&=\frac{|f^{(n+1)}(c)|}{(n+1)!}|x-a|^{n+1} \\
+&\leq \frac{M}{(n+1)!}|x-a|^{n+1}.
 \end{align*}
-This implies that the Taylor series for $\sin(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$. 
 
-::::::
-
-::::::{prf:example}
-Similarly we obtain that
-
-$$
-\cos(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}x^{2n}=1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\cdots.
-$$
-
-In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n)!}x^{2n}$, then we have
-
-\begin{align*}
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+2}}{(2n+2)!}\cdot\frac{(2n)!}{(-1)^nx^{2n}}\right|\\
-&=\lim\limits_{n\to\infty}\frac{x^2}{(2n+1)(2n+2)}=0.
-\end{align*}
-This implies that the Taylor series for $\cos(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$.
-::::::
+:::
 
 ## Standard Taylor series
 
