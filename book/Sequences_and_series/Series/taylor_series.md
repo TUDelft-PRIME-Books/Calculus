@@ -20,18 +20,18 @@ In this section we will find power series representations of more functions, whi
 Let $f$ be such an infinitely differentiable function and suppose that $f$ can be represented by a power series for $|x-a|<R$ for some $R>0$, that is, suppose that: 
 
 \begin{align*}
-f(x)&=c_0+c_1(x-a)+c_2(x-a)^2+c_3(x-a)^3+c_4(x-a)^4+\cdots\\
+f(x)&=c_0+c_1(x-a)+c_2(x-a)^2+c_3(x-a)^3+c_4(x-a)^4+\ldots\\
 &=\sum_{n=0}^{\infty}c_n(x-a)^n,\quad|x-a| < R.
 \end{align*}
 
 Again, $R$ is the radius of convergence of this power series. Since $f$ is infinitely differentiable, we can differentiate the power series term by term to obtain that for $|x-a|<R$ we have
 
 \begin{align*}
-f'(x) &=c_1+2c_2(x-a)+3c_3(x-a)^2+4c_4(x-a)^3+5c_5(x-a)^4+\cdots\\
+f'(x) &=c_1+2c_2(x-a)+3c_3(x-a)^2+4c_4(x-a)^3+5c_5(x-a)^4+\ldots\\
  &=\sum_{n=1}^{\infty}n(x-a)^{n-1}, \\
-f''(x)&=2c_2+2\cdot3c_3(x-a)+3\cdot4c_4(x-a)^2+4\cdot5c_5(x-a)^3+\cdots\\
+f''(x)&=2c_2+2\cdot3c_3(x-a)+3\cdot4c_4(x-a)^2+4\cdot5c_5(x-a)^3+\ldots\\
 &=\sum_{n=2}^{\infty}n(n-1)(x-a)^{n-2}, \\
-f^{(3)}(x)&=2\cdot3c_3+2\cdot3\cdot4c_4(x-a)+3\cdot4\cdot5c_5(x-a)^2+4\cdot5\cdot6c_6(x-a)^3+\cdots\\
+f^{(3)}(x)&=2\cdot3c_3+2\cdot3\cdot4c_4(x-a)+3\cdot4\cdot5c_5(x-a)^2+4\cdot5\cdot6c_6(x-a)^3+\ldots\\
 &=\sum_{n=3}^{\infty}n(n-1)(n-2)(x-a)^{n-3},
 \end{align*}
 
@@ -68,7 +68,7 @@ The series
 
 \begin{align*}
 &\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n\\
-&\quad{}=f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3+\cdots
+&\quad{}=f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3+\ldots
 \end{align*}
 
 is called the **Taylor series** or the **Taylor expansion** of the function $f$ at $x=a$. 
@@ -76,7 +76,7 @@ is called the **Taylor series** or the **Taylor expansion** of the function $f$ 
 The special case with $a=0$ 
 
 $$ 
-\sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n=f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\frac{f^{(3)}(0)}{3!}x^3+\cdots
+\sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n=f(0)+\frac{f'(0)}{1!}x+\frac{f''(0)}{2!}x^2+\frac{f^{(3)}(0)}{3!}x^3+\ldots
 $$ 
 
 is sometimes (also) called the **Maclaurin series** of $f$. 
@@ -121,7 +121,7 @@ $$
 This implies that the Taylor series of $f$ at $x=0$ is given by
 
 $$
-e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\frac{1}{24}x^4+\frac{1}{120}x^5+\cdots.
+e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\frac{1}{24}x^4+\frac{1}{120}x^5+\ldots.
 $$ 
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{x^n}{n!}$, then we have
@@ -139,11 +139,11 @@ This implies that the Taylor series converges for all $x\in\mathbb{R}$, so the r
 :name: Fig:Series:ExpTaylor
 :align: center
 
-The function $f(x)=e^x$ and its Taylor polynomials $T_1(x)=1+x$, $T_2(x)=1+x+\frac{1}{2}x^2$ and $T_3(x)=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3$ and $\displaystyle T_n(x)=\sum_{k=0}^n\frac{x^k}{k!}$ for variable $k$.
+The function $f(x)=e^x$ and its Taylor polynomial $T_n$ for variable $n$.
 ::::
 
 :::{todo}
-Replace {numref}`Fig:Series:ExpTaylor` with an applet with $k$ a slider.
+Replace {numref}`Fig:Series:ExpTaylor` with an applet with $n$ a slider.
 :::
 
 ::::::
@@ -154,7 +154,7 @@ Replace {numref}`Fig:Series:ExpTaylor` with an applet with $k$ a slider.
 For $f(x)=\sin(x)$ we have: $f'(x)=\cos(x)$, $f''(x)=-\sin(x)$, $f^{(3)}(x)=-\cos(x)$, $f^{(4)}(x)=\sin(x)=f(x)$ and so on. Hence: $f(0)=0$, $f'(0)=1$, $f''(0)=0$, $f^{(3)}(0)=-1$, $f^{(4)}(0)=1=f(0)$ and so on. This implies that
 
 $$
-\sin(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}=x-\frac{1}{6}x^3+\frac{1}{120}x^5-\frac{1}{5040}x^7+\cdots.
+\sin(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}=x-\frac{1}{6}x^3+\frac{1}{120}x^5-\frac{1}{5040}x^7+\ldots.
 $$
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n+1)!}x^{2n+1}$, then we have
@@ -163,17 +163,31 @@ In order to find the radius of convergence, we apply the ratio test: for $x\neq0
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+3}}{(2n+3)!}\cdot\frac{(2n+1)!}{(-1)^nx^{2n+1}}\right|\\
 &=\lim\limits_{n\to\infty}\frac{x^2}{(2n+2)(2n+3)}=0.
 \end{align*}
-This implies that the Taylor series for $\sin(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$. 
+This implies that the Taylor series for $\sin(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$.
+
+In {numref}`Fig:Series:SinCosTaylor` you can investigate this convergence yourself by increasing the number of terms in the Taylor polynomial that approximate the function.
 
 ::::::
 
+:::{figure} Images/Fig-Series-SinCosTaylor.png
+:name: Fig:Series:SinCosTaylor
+
+The functions $f(x)=\sin(x)$ and its Taylor polynomial $T_n$ for variable $n$. You can investigate the convergence of the Taylor series for $\sin(x)$ by increasing the number of terms in the Taylor polynomial $T_n$. You can also switch to the function $g(x)=\cos(x)$ and its Taylor polynomials to investigate the convergence of the Taylor series for $\cos(x)$.
+
+:::
+
+:::{todo}
+Replace {numref}`Fig:Series:SinCosTaylor` with an applet with $n$ a slider. Make $\sin$ and $\cos$ available in a dropdown.
+:::
+
+::::::
 
 ::::::{prf:example}
 :label: Ex:Series:CosTaylor
 Similarly we obtain that
 
 $$
-\cos(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}x^{2n}=1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\cdots.
+\cos(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}x^{2n}=1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\ldots.
 $$
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n)!}x^{2n}$, then we have
@@ -183,7 +197,12 @@ In order to find the radius of convergence, we apply the ratio test: for $x\neq0
 &=\lim\limits_{n\to\infty}\frac{x^2}{(2n+1)(2n+2)}=0.
 \end{align*}
 This implies that the Taylor series for $\cos(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$.
+
+In {numref}`Fig:Series:SinCosTaylor` you can investigate this convergence yourself by increasing the number of terms in the Taylor polynomial that approximate the function.
+
 ::::::
+
+As you can see in {numref}`Fig:Series:ExpTaylor` and {numref}`Fig:Series:SinCosTaylor`, the Taylor polynomials of $\sin(x)$ and $\cos(x)$ are good approximations of these functions around $x=0$ and they get better and better as we take more and more terms in the Taylor series. This indicates the part that is cut off from the Taylor series, gets smaller and smaller as we take more and more terms in the Taylor series. In the next section we will make this precise.
 
 ## The remainder
 
@@ -194,7 +213,6 @@ f(x)=\lim_{n\to\infty}T_n(x),
 $$
 
 for $x$ within the interval of convergence of the Taylor series.
-
 
 
 If we let $R_n(x)=f(x)-T_n(x)$ or $f(x)=T_n(x)+R_n(x)$, then $R_n(x)$ is called the **remainder** of the Taylor series, see {prf:ref}`Def:TaylorPolynomials:TaylorIneq`. So, if $\lim\limits_{n\to\infty}R_n(x)=0$, then
@@ -260,8 +278,9 @@ In the last step we used the induction hypothesis. Now we apply integration by p
 
 \begin{align*}
 R_{N+1}(x) &= \frac{1}{N!}\left(\left[-\frac{1}{N+1}(x-t)^{N+1}f^{(N+1)}(t)\right]_{t=a}^{x} + \int_a^x \frac{1}{N+1}(x-t)^{N+1}f^{(N+2)}(t)\,dt \right) \\
-&~ \quad- \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
-&= \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} + \frac{1}{(N+1)!}\int_a^x(x-t)^{N+1}f^{(N+2)}(t)\,dt - \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
+&~ \quad\quad- \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
+&= \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} + \frac{1}{(N+1)!}\int_a^x(x-t)^{N+1}f^{(N+2)}(t)\,dt \\
+&~ \quad\quad- \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
 &= \frac{1}{(N+1)!}\int_a^x(x-t)^{N+1}f^{(N+2)}(t)\,dt.
 \end{align*}
 
@@ -316,686 +335,263 @@ Assume $M$ is an upper bound for $|f^{(n+1)}(x)|$ on an interval $D$ that contai
 
 :::
 
-## Standard Taylor series
+:::{prf:example}
+:label: Ex:Series:TaylorInequality
 
-So far, we have obtained the Maclaurin series for the following six standard functions:
+We want to find an approximation of $\cosh(1)$ exact to three decimal places using Taylor polynomials.
 
-```{list-table}
-:header-rows: 0
+First, we set $f(x)=\cosh(x)$, then we have by {prf:ref}`Thm:Chain rule:Standard2` that
+
+$$
+f^{(n)}(x) = \begin{cases}
+\sinh(x) & \text{if } n \text{ is odd}, \\
+\cosh(x) & \text{if } n \text{ is even}.
+\end{cases}
+$$
+
+Next to the derivatives of $f$ we also need a centre for our Taylor series. Since we want to find an approximation of $\cosh(1)$, it is natural to choose $a=0$ as the centre of our Taylor series, as the values of $\cosh(x)$ and $\sinh(x)$ at $x=0$ are easy to compute. This implies that
+
+$$
+f^{(n)}(0) = \begin{cases}
+0 & \text{if } n \text{ is odd}, \\
+1 & \text{if } n \text{ is even}.
+\end{cases}
+$$
+
+This implies that the $n$-th term of the Taylor series of $f$ at $x=0$ is given by
+
+$$
+\frac{f^{(n)}(0)}{n!}(x-0)^n = \begin{cases}
+0 & \text{if } n \text{ is odd}, \\
+\frac{1}{n!}x^n & \text{if } n \text{ is even}.
+\end{cases}
+$$
+
+Therefore, the Taylor series of $f$ at $x=0$ is given by
+
+$$
+f(x) = \cosh(x)=\sum_{\substack{n=0\\n\text{ even}}}^{\infty}\frac{1}{(n)!}x^{n}.
+$$
+
+The ratio test with $x\neq0$ gives us, after rewriting the above series to $\displaystyle\sum_{n=0}^{\infty}\frac{1}{(2n)!}x^{2n}=\sum_{n=0}^{\infty}a_n$, that
+
+$$
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{1}{(2n+2)!}x^{2n+2}\cdot\frac{(2n)!}{1}x^{-2n}\right|=\lim\limits_{n\to\infty}\frac{x^2}{(2n+1)(2n+2)}=0,
+$$
+
+so the radius of convergence is $R=\infty$.
+
+Because the radius convergence is infinite, we can use Taylor's inequality to find an approximation of $\cosh(1)$ exact to three decimal places. We do have to pick an interval that contains $0$ and $1$ to find an upper bound for $|f^{(n+1)}(x)|$. We choose the interval $[0,\ln(3)]$, as $\cosh(x)$ and $\sinh(x)$ are both positive on this interval and therefore also increasing on this interval. This implies that for $x\in[0,\ln(3)]$ we have
+
+\begin{align*}
+|f^{(n+1)}(x)| &= \begin{cases}
+\sinh(x) & \text{if } n \text{ is even}, \\
+\cosh(x) & \text{if } n \text{ is odd},
+\end{cases} \\
+&\leq \begin{cases}
+\sinh(\ln(3)) & \text{if } n \text{ is even}, \\
+\cosh(\ln(3)) & \text{if } n \text{ is odd},
+\end{cases} \\
+&= \begin{cases}
+\frac{4}{3} & \text{if } n \text{ is even}, \\
+\frac{5}{3} & \text{if } n \text{ is odd},
+\end{cases} \\
+&\leq \frac{5}{3}.
+\end{align*}
+
+This implies that we can take $M=\frac{5}{3}$ in Taylor's inequality. We want to find an approximation of $\cosh(1)$ exact to three decimal places, so we want to find $N$ such that
+
+$$
+|R_N(x)|\leq\frac{M}{(N+1)!}|1-0|^{N+1}=\frac{5}{3(N+1)!}\leq 0.5\cdot10^{-3}.
+$$
+
+Solving the last inequality gives us $(N+1)!\geq \dfrac13\cdot10^4 = 3333.\overline{33}$. This implies that we must take $N\geq6$ to find an approximation of $\cosh(1)$ exact to three decimal places. The following table shows the values of $T_N(1)$ for $N=0,2,4,6,8$ and $N=10$ with to six decimal places. We skip all odd values of $N$ as the Taylor series of $f$ at $x=0$ only has even terms.
+
+```{list-table} Approximation of $\cosh(1)$ using Taylor polynomials.
+:header-rows: 1
+:class: mid-align center-align
+
+* - $N$ 
+  - $T_N(1)$
+* - $0$
+  - $1.000000\ldots$
+* - $2$
+  - $1.500000\ldots$
+* - $4$
+  - $1.541666\ldots$
+* - $6$
+  - $1.543055\ldots$
+* - $8$
+  - $1.543080\ldots$
+* - $10$
+  - $1.543080\ldots$
+```
+:::
+
+## Taylor series of standard functions
+
+So far, we have obtained the Taylor series of six standard functions at $x=0$, or in other words, the Maclaurin series. These are:
+
+```{list-table} Maclaurin series of six standard functions.
+:header-rows: 1
 :align: left
 :class: mid-align center-align
 
-* - $e^x=\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!},\quad x\in\mathbb{R}$
-* - $\sin(x)=\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!},\quad x\in\mathbb{R}$
-* - $\cos(x)=\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!},\quad x\in\mathbb{R}$
-* - $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n,\quad |x|<1$
-* - $\displaystyle\ln(1+x)=\sum_{n=0}^{\infty}(-1)^n\frac{x^{n+1}}{n+1},\quad |x|<1$
-* - $\displaystyle\arctan(x)=\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{2n+1},\quad |x|<1$  
+* - Function
+  - Maclaurin series
+  - Interval of convergence
+  - Details
+* - $e^x$
+  - $\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$
+  - $\mathbb{R}$
+  - {prf:ref}`Ex:Series:ExpTaylor`
+* - $\sin(x)$
+  - $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{(2n+1)!}$
+  - $\mathbb{R}$
+  - {prf:ref}`Ex:Series:SinTaylor`
+* - $\cos(x)$
+  - $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}$
+  - $\mathbb{R}$
+  - {prf:ref}`Ex:Series:CosTaylor`
+* - $\displaystyle\frac{1}{1-x}$
+  - $\sum_{n=0}^{\infty}x^n$
+  - $(-1,1)$
+  - {prf:ref}`Ex:Series:GeometricSeries`
+* - $\displaystyle\ln(1+x)$
+  - $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{n+1}}{n+1}$
+  - $(-1,1]$
+  - {prf:ref}`Ex:Series:LogTwo`
+* - $\displaystyle\arctan(x)$
+  - $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{2n+1}$
+  - $[-1,1]$
+  - {prf:ref}`Ex:Series:Arctan`
 ```
 
-It is worthwhile to remember these formulas.
-
-::::::{prf:example} Applications
-1) Using $e^x=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\cdots$ for all $x\in\mathbb{R}$ we find that
-
-\begin{align*}
-\lim\limits_{x\to 0}\frac{e^x-1-x}{x^2}&=\lim\limits_{x\to 0}\frac{1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\cdots-1-x}{x^2}\\
-&=\lim\limits_{x\to 0}\frac{\frac{1}{2}x^2+\frac{1}{6}x^3+\cdots}{x^2}=\lim\limits_{x\to 0}\left(\frac{1}{2}+\frac{1}{6}x+\cdots\right)\\
-&=\frac{1}{2}+0+0=\frac{1}{2}.
-\end{align*}
-2) Using $\cos(x)=1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\cdots$ for all $x\in\mathbb{R}$ we find that
-
-\begin{align*}
-\lim\limits_{x\to 0}\frac{\cos(x)-1+\frac{1}{2}x^2}{x^4}&=\lim\limits_{x\to 0}\frac{1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\cdots-1+\frac{1}{2}x^2}{x^4}\\
-&=\lim\limits_{x\to 0}\frac{\frac{1}{24}x^4-\frac{1}{720}x^6+\cdots}{x^4}\\
-&=\lim\limits_{x\to 0}\left(\frac{1}{24}-\frac{1}{720}x^2+\cdots\right)=\frac{1}{24}-0+0=\frac{1}{24}.
-\end{align*}
-3) Using $\sin(x)=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ for all $x\in\mathbb{R}$ we obtain that
-
-\begin{align*}
-\int_0^1x\sin(x^3)\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\int_0^1x^{6n+4}\,dx=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\cdot\frac{1}{6n+5}\\
-&=\frac{1}{5}-\frac{1}{66}+\frac{1}{2040}-\frac{1}{115920}+\cdots.
-\end{align*}
-Taking more and more terms this leads to the following approximations:
-
-```{list-table}
-:header-rows: 1
-:align: center
-:class: mid-align center-align
-
-* - $N$ 
-  - $\displaystyle\sum_{n=0}^N\frac{(-1)^n}{(2n+1)!}\cdot\frac{1}{6n+5}$
-* - $0$
-  - $\displaystyle\frac{1}{5}=0.2$
-* - $1$
-  - $\displaystyle\frac{1}{5}-\frac{1}{66}\approx0.184848$
-* - $2$
-  - $\displaystyle\frac{1}{5}-\frac{1}{66}+\frac{1}{2040}\approx0.185338$
-* - $3$
-  - $\displaystyle\frac{1}{5}-\frac{1}{66}+\frac{1}{2040}-\frac{1}{115920}\approx0.185330$  
-```
-
-4) Using $e^x=\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$ for all $x\in\mathbb{R}$ we obtain that
-
-\begin{align*}
-\int_0^{\frac{1}{2}}xe^{-x^4}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\int_0^{\frac{1}{2}}x^{4n+1}\,dx=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\cdot\frac{(\frac{1}{2})^{4n+2}}{4n+2}\\
-&=\frac{1}{8}-\frac{1}{384}+\frac{1}{20480}-\frac{1}{1376256}+\cdots.
-\end{align*}
-Taking more and more terms this leads to the following approximations:
-
-```{list-table}
-:header-rows: 1
-:align: center
-:class: mid-align center-align
-
-* - $N$ 
-  - $\displaystyle\sum_{n=0}^N\frac{(-1)^n}{n!}\cdot\frac{(\frac{1}{2})^{4n+2}}{4n+2}$
-* - $0$
-  - $\displaystyle\frac{1}{8}=0.125$
-* - $1$
-  - $\displaystyle\frac{1}{8}-\frac{1}{384}\approx0.122396$
-* - $2$
-  - $\displaystyle\frac{1}{8}-\frac{1}{384}+\frac{1}{20480}\approx0.122445$
-* - $3$
-  - $\displaystyle\frac{1}{8}-\frac{1}{384}+\frac{1}{20480}-\frac{1}{1376256}\approx0.122444$  
-```
-
-::::::
-
-(sec:CatalansConstant)=
-## Catalan's constant
-
-**Catalan's constant** $G$ is defined as the sum of the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}$.
-
-Note that this series is absolutely convergent. However, it is not easy to find its sum. We have
-
-$$
-G=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\approx0.916.
-$$
-
-There are several alternative (integral) representations for this constant. Since 
-
-$$
-\arctan(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}x^{2n+1}\quad\text{for}\quad |x|<1
-$$ 
-
-we have
-
-\begin{align*}
-\int_0^1\frac{\arctan(x)}{x}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\int_0^1x^{2n}\,dx=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\cdot\frac{x^{2n+1}}{2n+1}\bigg|_0^1\\
-&=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}=G.
-\end{align*}
-Using $x=e^{-t}$ we obtain
-
-$$
-G=\int_0^1\frac{\arctan(x)}{x}\,dx=\int_{\infty}^0\frac{\arctan\left(e^{-t}\right)}{e^{-t}}\,d e^{-t}
-=\int_0^{\infty}\arctan\left(e^{-t}\right)\,dt.
-$$
-
-The substitution $\arctan{x}=t$ or $x=\tan(t)$ leads to
-
-\begin{align*}
-\int_0^1\frac{\arctan(x)}{x}\,dx&=\int_0^{\frac{1}{4}\pi}\frac{t}{\tan(t)}d\tan(t)=\int_0^{\frac{1}{4}\pi}\frac{t}{\tan(t)}\cdot\frac{1}{\cos^2(t)}\,dt\\
-&=\int_0^{\frac{1}{4}\pi}\frac{t}{\sin(t)\cos(t)}\,dt.
-\end{align*}
-This can be rewritten as
-
-$$
-G=\int_0^{\frac{1}{4}\pi}\frac{t}{\sin(t)\cos(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{2t}{\sin(2t)}\,dt=\frac{1}{2}\int_0^{\frac{1}{2}\pi}\frac{x}{\sin(x)}\,dx.
-$$
-
-Using integration by parts we obtain
-
-\begin{align*}
-\int_0^1x^n\ln(x)\,dx&=\int_0^1\frac{1}{n+1}\ln(x)\,dx^{n+1}\\
-&=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\,d\ln(x)\\
-&=0-\frac{1}{n+1}\int_0^1x^n\,dx=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
-&=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots.
-\end{align*}
-With $\displaystyle\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-x^2)^n$ for $|x|<1$ this implies that
-
-$$
-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^{2n}\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}=-G.
-$$
-
-Using the substitution $x=\dfrac{1}{t}$ we obtain
-
-$$
-G=-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=-\int_{\infty}^1\frac{\ln\left(\frac{1}{t}\right)}{1+\left(\frac{1}{t}\right)^2}\cdot\left(-\frac{1}{t^2}\right)\,dt=\int_1^{\infty}\frac{\ln(t)}{1+t^2}\,dt.
-$$
-
-Alternative forms of these integrals are obtained using certain substitutions.
-
-If we set $t=\tan(\theta)$, then we have $dt=\left(1+\tan^2(\theta)\right)\,d\theta$ and therefore
-
-$$
-G=-\int_0^1\frac{\ln(t)}{1+t^2}\,dt=-\int_0^{\frac{1}{4}\pi}\frac{\ln\left(\tan(\theta)\right)}{1+\tan^2(\theta)}\,d\tan(\theta)
-=-\int_0^{\frac{1}{4}\pi}\ln\left(\tan(\theta)\right)\,d\theta
-$$
-
-or
-
-$$
-G=\int_1^{\infty}\frac{\ln(t)}{1+t^2}\,dt=\int_{\frac{1}{4}\pi}^{\frac{1}{2}\pi}\ln\left(\tan(\theta)\right)\,d\theta. 
-$$ 
- 
-Setting $\ln(t)=x$ or $t=e^x$ we obtain
-
-\begin{align*}
-G&=\int_1^{\infty}\frac{\ln(t)}{1+t^2}\,dt=\int_0^{\infty}\frac{x}{1+e^{2x}}\cdot e^x\,dx=\int_0^{\infty}\frac{x}{e^{-x}+e^x}\,dx\\
-&=\frac{1}{2}\int_0^{\infty}\frac{x}{\cosh(x)}\,dx.
-\end{align*}
-The relation
-
-$$
-\tan^2(\theta)=\frac{\sin^2(\theta)}{\cos^2(\theta)}=\frac{2\sin^2(\theta)}{2\cos^2(\theta)}=\frac{1-\cos(2\theta)}{1+\cos(2\theta)}
-$$ 
- 
-leads to another interesting representation
-
-\begin{align*}
-G&=-\int_0^{\frac{1}{4}\pi}\ln\left(\tan(\theta)\right)\,d\theta=-\frac{1}{2}\int_0^{\frac{1}{4}\pi}\ln\left(\tan^2(\theta)\right)\,d\theta\\
-&=-\frac{1}{2}\int_0^{\frac{1}{4}\pi}\ln\left(\frac{1-\cos(2\theta)}{1+\cos(2\theta)}\right)\,d\theta,
-\end{align*}
-which is equivalent to
-
-$$
-G=-\frac{1}{4}\int_0^{\frac{1}{2}\pi}\ln\left(\frac{1-\cos(x)}{1+\cos(x)}\right)\,dx\quad\text{or}\quad
-G=\frac{1}{4}\int_0^{\frac{1}{2}\pi}\ln\left(\frac{1+\cos(x)}{1-\cos(x)}\right)\,dx.
-$$ 
- 
-When we studied Serret's integral in {numref}`Sec:Integration:Substitution` we used the fact that 
-
-$$
-\int_0^{\frac{1}{4}\pi}\ln\left(\cos(\tfrac{1}{4}\pi-\theta)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln(\cos(t))\,dt.
-$$ 
-
-This integral can be evaluated in terms of Catalan's constant. Using the fact that $\cos(x)=\sin(\frac{1}{2}\pi-x)$ we obtain that
-
-$$ 
-\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\sin(\tfrac{1}{2}\pi-x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx. 
-$$ 
- 
-Note that this implies that
-
-$$ 
-\int_0^{\frac{1}{2}\pi}\ln(\tan(x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx-\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx=0. 
-$$ 
-
-Earlier we have seen that
-
-$$
-\int_0^{\frac{1}{4}\pi}\ln(\tan(x))\,dx=-G\quad\text{and}\quad\int_{\frac{1}{4}\pi}^{\frac{1}{2}\pi}\ln(\tan(x))\,dx=G.
-$$ 
- 
-If we apply the substitution $2x=t$ we find that
-
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx&=\frac{1}{2}\int_0^{\pi}\ln(\sin(t))\,dt\\
-&=\frac{1}{2}\int_0^{\frac{1}{2}\pi}\ln(\sin(t))\,dt+\frac{1}{2}\int_{\frac{1}{2}\pi}^{\pi}\ln(\sin(t))\,dt.
-\end{align*}
-Then we apply the substitution $t=\pi-x$ to the latter integral to find that
-
-$$ 
-\int_{\frac{1}{2}\pi}^{\pi}\ln(\sin(t))\,dt=-\int_{\frac{1}{2}\pi}^0\ln(\sin(\pi-x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx.
-$$ 
- 
-Hence we have $\displaystyle\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx$. 
- 
-Finally, we derive for $I=\displaystyle\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx$ that 
-
-\begin{align*}
-I&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(2\sin(x)\cos(x))\,dx\\
-&=\int_0^{\frac{1}{2}\pi}\left(\ln(2)+\ln(\sin(x))+\ln(\cos(x))\right)\,dx\\
-&=\int_0^{\frac{1}{2}\pi}\ln(2)\,dx+\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx+\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx=\frac{1}{2}\pi\ln(2)+2I,
-\end{align*}
-which implies that $I=-\frac{1}{2}\pi\ln(2)$. The substitution $x=\frac{1}{2}\pi-t$ now leads to
-
-$$ 
-\int_{\frac{1}{4}\pi}^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=-\int_{\frac{1}{4}\pi}^0\ln(\sin(\tfrac{1}{2}\pi-t)\,dt=\int_0^{\frac{1}{4}\pi}\ln(\cos(t))\,dt
-$$
-
-and
-
-$$
-\int_{\frac{1}{4}\pi}^{\frac{1}{2}\pi}\ln(\cos(x))\,dx=-\int_{\frac{1}{4}\pi}^0\ln(\cos(\tfrac{1}{2}\pi-t)\,dt=\int_0^{\frac{1}{4}\pi}\ln(\sin(t))\,dt.
-$$
-
-Hence we have
-
-\begin{align*}
-\int_0^{\frac{1}{4}\pi}\ln(\sin(x))\,dx+\int_0^{\frac{1}{4}\pi}\ln(\cos(x))\,dx&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx\\
-&=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx=-\frac{1}{2}\pi\ln(2)
-\end{align*}
-and
-
-$$
-\int_0^{\frac{1}{4}\pi}\ln(\sin(x))\,dx-\int_0^{\frac{1}{4}\pi}\ln(\cos(x))\,dx=\int_0^{\frac{1}{4}\pi}\ln(\tan(x))\,dx=-G.
-$$
-
-This implies that
-
-$$
-\int_0^{\frac{1}{4}\pi}\ln(\sin(x))\,dx=-\frac{1}{2}G-\frac{1}{4}\pi\ln(2)
-$$
-
-and
-
-$$
-\int_0^{\frac{1}{4}\pi}\ln(\cos(x))\,dx=\frac{1}{2}G-\frac{1}{4}\pi\ln(2).
-$$
-
-Note that this implies that
-
-$$
-\int_0^{\frac{1}{4}\pi}\ln(2\sin(x))\,dx=-\frac{1}{2}G\quad\text{and}\quad\int_0^{\frac{1}{4}\pi}\ln(2\cos(x))\,dx=\frac{1}{2}G.
-$$
-
-## The Riemann zeta function
-
-The **Riemann zeta function** $\zeta(s)$ is defined as: $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\text{Re}(s)>1$.
-
-This function is named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). 
-
-We will only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. However, in general it is not very easy to find its sum.
-
-Later (see {prf:ref}`Ex:Series:FourierExample3`) we will be able to show that 
-
-$$
-\zeta(2)=\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\quad\text{and}\quad\zeta(4)=\sum_{n=1}^{\infty}\frac{1}{n^4}=\frac{1}{90}\pi^4.
-$$
-
-The value of $\zeta(3)\approx1.202057$ is also known as **Apéry's constant**, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
-
-One proof of the first result might be understandable right now. It is based on the Taylor series of $\displaystyle\frac{\sin(x)}{x}$ and an infinite product. For the infinite product we need to know that the (only but all) zeros of $\displaystyle\frac{\sin(x)}{x}$ are $x=\pm n\pi$ with $n\in\{1,2,3,\ldots\}$ and that $\displaystyle\lim\limits_{x\to0}\frac{\sin(x)}{x}=1$. Compare with {prf:ref}`Ex:Integration:IntroductionExamplesProductSine`. Then we have:
-
-$$
-\frac{\sin(x)}{x}=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)!}x^{2k}=\prod_{n=1}^{\infty}\left(1-\frac{x}{n\pi}\right)\left(1+\frac{x}{n\pi}\right)
-=\prod_{n=1}^{\infty}\left(1-\frac{x^2}{n^2\pi^2}\right).
-$$ 
- 
-Comparing the coefficients of $x^2$ we obtain that
-
-$$
--\frac{1}{3!}=-\frac{1}{\pi^2}\sum_{n=1}^{\infty}\frac{1}{n^2}
-\quad\Longrightarrow\quad\zeta(2)=\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2.
-$$
- 
-Note that
-
-$$
-\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}=\sum_{n=1}^{\infty}\frac{1}{n^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}=\left(1-\frac{1}{2^s}\right)\zeta(s)
-$$
-
-and
-
-\begin{align*}
-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^s}&=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}=\sum_{n=1}^{\infty}\frac{1}{n^s}-2\sum_{n=1}^{\infty}\frac{1}{(2n)^s}\\
-&=\left(1-\frac{1}{2^{s-1}}\right)\zeta(s).
-\end{align*}
-Using integration by parts we find that
-
-\begin{align*}
-\int_0^1x^n\ln(x)\,dx&=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\cdot\frac{1}{x}\,dx\\
-&=0-\frac{1}{n+1}\int_0^1x^n\,dx=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
-&=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots.
-\end{align*}
-Now we use the series representation $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$ to find that
-
-\begin{align*}
-\int_0^1\frac{\ln(x)}{1-x}\,dt&=\sum_{n=0}^{\infty}\int_0^1x^n\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}=-\sum_{n=1}^{\infty}\frac{1}{n^2}\\
-&=-\zeta(2)=-\frac{1}{6}\pi^2.
-\end{align*}
-Furthermore using integration by parts we find that
-
-\begin{align*}
-\int_0^1x^n\left(\ln(x)\right)^2\,dx&=\frac{1}{n+1}x^{n+1}\left(\ln(x)\right)^2\bigg|_0^1-\frac{2}{n+1}\int_0^1x^{n+1}\ln(x)\cdot\frac{1}{x}\,dx\\
-&=0-\frac{2}{n+1}\int_0^1x^n\ln(x)\,dx=\frac{2}{(n+1)^3},\quad n=0,1,2,\ldots.
-\end{align*}
-Again we use the series representation $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$ to find that
-
-$$
-\int_0^1\frac{\left(\ln(x)\right)^2}{1-x}\,dx=\sum_{n=0}^{\infty}\int_0^1x^n\left(\ln(x)\right)^2\,dx=2\sum_{n=0}^{\infty}\frac{1}{(n+1)^3}
-=2\sum_{n=1}^{\infty}\frac{1}{n^3}=2\zeta(3).
-$$
-
-Similarly, we have
-
-\begin{align*}
-\int_0^1\frac{\ln(x)}{1+x}\,dx&=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^n\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}\\
-&=-\left(1-\frac{1}{2}\right)\zeta(2)=-\frac{1}{12}\pi^2
-\end{align*}
-and
-
-\begin{align*}
-\int_0^1\frac{\left(\ln(x)\right)^2}{1+x}\,dx&=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^n\left(\ln(x)\right)^2\,dx=2\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^3}\\
-&=2\left(1-\frac{1}{4}\right)\zeta(3)=\frac{3}{2}\zeta(3).
-\end{align*}
-Using the Taylor series $\displaystyle\ln(1-x)=-\sum_{n=1}^{\infty}\frac{x^n}{n}$ for $|x|<1$ we find that
-
-\begin{align*}
-\int_0^1\frac{\ln(1-x)}{x}\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^{n-1}\,dx=-\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{n}x^n\bigg|_0^1=-\sum_{n=1}^{\infty}\frac{1}{n^2}\\
-&=-\zeta(2)=-\frac{1}{6}\pi^2,
-\end{align*}
-\begin{align*}
-\int_0^1\ln(x)\ln(1-x)\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^n\ln(x)\,dx=\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{(n+1)^2}\\
-&=\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+1}-\frac{1}{(n+1)^2}\right)=1-\sum_{n=1}^{\infty}\frac{1}{(n+1)^2}\\
-&=2-\sum_{n=1}^{\infty}\frac{1}{n^2}=2-\zeta(2)=2-\frac{1}{6}\pi^2
-\end{align*}
-and
-
-\begin{align*}
-\int_0^1\frac{\ln(x)\ln(1-x)}{x}\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^{n-1}\ln(x)\,dx=\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{n^2}\\
-&=\sum_{n=1}^{\infty}\frac{1}{n^3}=\zeta(3).
-\end{align*}
-By symmetry (or a substitution) we also have $\displaystyle\int_0^1\frac{\ln(x)\ln(1-x)}{1-x}\,dx=\zeta(3)$ and therefore
-
-$$
-\int_0^1\frac{\ln(x)\ln(1-x)}{x(1-x)}\,dx=\int_0^1\frac{\ln(x)\ln(1-x)}{x}\,dx+\int_0^1\frac{\ln(x)\ln(1-x)}{1-x}\,dx=2\zeta(3).
-$$
-
-Similarly, using $\displaystyle\ln(1+x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1}$ for $|x|<1$ we have
-
-$$
-\int_0^1\frac{\ln(1+x)}{x}\,dx=\sum_{n=0}^{\infty}\int_0^1\frac{(-1)^n}{n+1}x^n\,dx=\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}=\left(1-\frac{1}{2}\right)\zeta(2)=\frac{1}{12}\pi^2,
-$$
-
-\begin{align*}
-\int_0^1\ln(x)\ln(1+x)\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\int_0^1x^{n+1}\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\cdot\frac{1}{(n+2)^2}\\
-&=\sum_{n=0}^{\infty}\left(\frac{(-1)^n}{n+2}-\frac{(-1)^n}{n+1}+\frac{(-1)^n}{(n+2)^2}\right)\\
-&=1-2\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}+\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+2)^2}\\
-&=1-2\ln(2)+1-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}\\
-&=2-2\ln(2)-\left(1-\frac{1}{2}\right)\zeta(2)=2-2\ln(2)-\frac{1}{12}\pi^2
-\end{align*}
-and
-
-\begin{align*}
-\int_0^1\frac{\ln(x)\ln(1+x)}{x}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\int_0^1x^n\ln(x)\,dx=-\sum_{n=1}^{\infty}\frac{(-1)^n}{n+1}\cdot\frac{1}{(n+1)^2}\\
-&=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^3}=-\left(1-\frac{1}{4}\right)\zeta(3)=-\frac{3}{4}\zeta(3).
-\end{align*}
-## Pascal's triangle and the binomium theorem
-
-If we define *factorials* as $0!=1$ and $n!=n(n-1)!$ for $n=1,2,3,\ldots$, then the **binomial coefficient** $\displaystyle\binom{n}{k}$ (pronounced as "$n$ choose $k$") is defined as
-
-:::{math}
-:label: Eq:Series:BinomialCoefficient
-
-\binom{n}{k}=\frac{n!}{k!(n-k)!}.
-:::
-
-The binomial coefficient $\displaystyle\binom{n}{k}$ denotes the number of ways to choose $k$ elements from a set of $n$ elements.
+The Taylor series of these functions at $x=0$ can be used in many applications, such as finding limits, approximating functions, and computing integrals. We will see some of these applications in the next examples.
 
 ::::::{prf:example}
-Consider the set $\{a,b,c,d\}$, then choosing two elements leads to six possibilities:
+:label: Ex:Series:TaylorLimitExp
 
-$$
-\{a,b\},\quad\{a,c\},\quad\{a,d\},\quad\{b,c\},\quad\{b,d\}\quad\text{and}\quad\{c,d\}.
-$$
-
-We have: $\displaystyle\binom{4}{2}=\frac{4!}{2!\,2!}=\frac{3\cdot4}{1\cdot2}=6$.
-::::::
-
-**Pascal's triangle**, named after the French mathematician [Blaise Pascal (1623-1662)](https://en.wikipedia.org/wiki/Blaise_Pascal) is a triangular array of *binomial coefficients*:
-
-$$
-\begin{array}{ccccccccccccccc}
-&&&&&&& 1\\[2.5mm]
-&&&&&& 1 && 1\\[2.5mm]
-&&&&& 1 && 2 && 1\\[2.5mm]
-&&&& 1 && 3 && 3 && 1\\[2.5mm]
-&&& 1 && 4 && 6 && 4 && 1\\[2.5mm]
-&& 1 && 5 && 10 && 10 && 5 && 1\\[2.5mm]
-& 1 && 6 && 15 && 20 && 15 && 6 && 1\\[2.5mm]
-1 && 7 && 21 && 35 && 35 && 21 && 7 && 1
-\end{array}
-$$
-
-In Pascal's triangle, each number is the sum of the two numbers directly above it. The triangle can be extended by adding rows below in the same pattern. In terms of *binomial coefficients* this property can be written as
-
-:::{math}
-:label: Eq:Series:Pascal
-\binom{n}{k}=\binom{n-1}{k-1}+\binom{n-1}{k},\quad k=1,2,3,\ldots,n
-:::
-
-for positive integers $n$.
-
-:::{admonition} Proof of {eq}`Eq:Series:Pascal`
-:class: solution, dropdown
+Using the Taylor series of $e^x$ at $x=0$ we can find for $x\neq 0$ that:
 
 \begin{align*}
-\binom{n-1}{k-1}+\binom{n-1}{k}&=\frac{(n-1)!}{(k-1)!\,(n-k)!}+\frac{(n-1)!}{k!\,(n-k-1)!}\\
-&=\frac{(n-1)!}{k!\,(n-k)!}\left[k+(n-k)\right]\\
-&=\frac{n\,(n-1)!}{k!\,(n-k)!}=\frac{n!}{k!\,(n-k)!}=\binom{n}{k}.
+\frac{e^x-1-x}{x^2} &= \frac{\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!} - 1 - x}{x^2} \\
+&= \frac{\left(1+x + \displaystyle\sum_{n=2}^{\infty}\frac{x^n}{n!}\right) - 1 - x}{x^2} \\
+&= \frac{\displaystyle\sum_{n=2}^{\infty}\frac{x^n}{n!}}{x^2} \\
+&= \displaystyle\sum_{n=2}^{\infty}\frac{x^{n-2}}{n!} \\
+&= \frac{1}{2} + \frac16x+\frac{1}{24}x^2+\ldots.
 \end{align*}
-:::
 
-Starting at the top, the rows in Pascal's theorem correspond to
+This means that if we take the limit as $x$ approaches $0$, then we have
 
 \begin{align*}
-(a+b)^0&=1,\\[2.5mm]
-(a+b)^1&=a+b,\\[2.5mm]
-(a+b)^2&=a^2+2ab+b^2,\\[2.5mm]
-(a+b)^3&=a^3+3a^2b+3ab^2+b^3,\\[2.5mm]
-(a+b)^4&=a^4+4a^3b+6a^2b^2+4ab^3+b^4,\\[2.5mm]
-\text{etcetera.}
+\lim\limits_{x\to 0}\frac{e^x-1-x}{x^2} &= \lim\limits_{x\to 0}\left(\frac{1}{2} + \frac16x+\frac{1}{24}x^2+\ldots\right)\\
+&=\frac{1}{2}+0+0+\ldots \\
+&=\frac{1}{2}.
 \end{align*}
-The numbers in Pascal's triangle are the coefficients of the terms on the right. This leads to the binomial theorem:
-
-::::::{prf:theorem} Binomial theorem
-:label: Thm:Series:BinomialTheorem
-
-$$
-(a+b)^n=\sum_{k=0}^n\binom{n}{k}a^{n-k}b^k=\sum_{k=0}^n\binom{n}{k}a^kb^{n-k},\quad n=0,1,2,\ldots.
-$$
 
 ::::::
-
-:::{admonition} Proof of {prf:ref}`Thm:Series:BinomialTheorem`
-:class: solution, dropdown
-By mathematical induction: for $n=0$ it reads $(a+b)^0=1=\displaystyle\binom{0}{0}a^0b^0$ which is true by definition. Suppose that the formula is true for certain value of $n$, then we have:
-
-\begin{align*}
-(a+b)^{n+1}&=(a+b)(a+b)^n=(a+b)\sum_{k=0}^n\binom{n}{k}a^{n-k}b^k\\
-&=\sum_{k=0}^n\binom{n}{k}a^{n-k+1}b^k+\sum_{k=0}^n\binom{n}{k}a^{n-k}b^{k+1}\\
-&=\sum_{k=0}^n\binom{n}{k}a^{n-k+1}b^k+\sum_{k=1}^{n+1}\binom{n}{k-1}a^{n-k+1}b^k\\
-&=a^{n+1}+\sum_{k=1}^n\left\{\binom{n}{k}+\binom{n}{k-1}\right\}a^{n-k+1}b^k+b^{n+1}\\
-&=a^{n+1}+\sum_{k=1}^n\binom{n+1}{k}a^{n+1-k}b^k+b^{n+1}=\sum_{k=0}^{n+1}\binom{n+1}{k}a^{n+1-k}b^k.
-\end{align*}
-Since this is exactly the formula with $n$ replaced by $n+1$, this proves the theorem.
-:::
 
 ::::::{prf:example}
+:label: Ex:Series:TaylorLimitCos
 
-$$
-(1+x)^7=1+7x+21x^2+35x^3+35x^4+21x^5+7x^6+x^7.
-$$
+In as similar fashion as in the previous example, we can find that
+
+\begin{align*}
+\lim\limits_{x\to 0}\frac{\cos(x)-1+\frac{1}{2}x^2}{x^4}
+&= \lim\limits_{x\to 0}\frac{\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}-1+\frac{1}{2}x^2}{x^4} \\
+&= \lim\limits_{x\to 0}\frac{\left(1-\frac{1}{2}x^2+\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}\right)-1+\frac{1}{2}x^2}{x^4} \\
+&= \lim\limits_{x\to 0}\frac{\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}}{x^4} \\
+&= \lim\limits_{x\to 0}\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{x^{2n-4}}{(2n)!} \\
+&= \lim\limits_{x\to 0}\left(-\frac{1}{24}+\frac{1}{720}x^2-\ldots\right) \\
+&=-\frac{1}{24}+0+\ldots \\
+&=-\frac{1}{24}.
+\end{align*}
 
 ::::::
 
-The *Fibonacci numbers* appear in Pascal's triangle as follows:
+::::::{prf:example}
+:label: Ex:Series:TaylorIntegralSin
 
-:::{figure} Images/fibonacci.png
-:width: 75%
-:name: Fibonacci numbers
-:align: center
-
-The Fibonacci numbers appearing in Pascal's triangle
-:::
-
-This can be written as $F_n=\displaystyle\sum_{k=0}^{\lfloor\frac{n-1}{2}\rfloor}\binom{n-k-1}{k}$  for $n=1,2,3,\ldots$. Here $\lfloor{\alpha}\rfloor$ denotes the greatest integer less than or equal to $\alpha$. This is equivalent to
-
-$$
-F_{2n-1}=\sum_{k=0}^{n-1}\binom{2n-k-2}{k}\quad\text{and}\quad F_{2n}=\sum_{k=0}^n\binom{2n-k-1}{k},\quad n=1,2,3,\ldots.
-$$
-
-The proof is by mathematical induction. For $n=1$ we have 
-
-$$
-F_1=\displaystyle\binom{0}{0}=1\quad\text{and}\quad F_2=\displaystyle\sum_{k=0}^1\binom{1-k}{k}=\binom{1}{0}+\binom{0}{1}=1.
-$$
-
-Now we assume that
-
-$$
-F_{2n-1}=\displaystyle\sum_{k=0}^{n-1}\binom{2n-k-2}{k}\quad\text{and}\quad F_{2n}=\displaystyle\sum_{k=0}^n\binom{2n-k-1}{k}
-$$
-
-for a certain value of $n$, then we have
+Using $\sin(x)=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ for all $x\in\mathbb{R}$ we can obtain that
 
 \begin{align*}
-\sum_{k=0}^n\binom{2n-k}{k}&=1+\sum_{k=1}^n\binom{2n-k-1}{k}+\sum_{k=1}^n\binom{2n-k-1}{k-1}\\
-&=\sum_{k=0}^n\binom{2n-k-1}{k}+\sum_{k=0}^{n-1}\binom{2n-k-2}{k}=F_{2n}+F_{2n-1}=F_{2n+1}
+\int_0^1x\sin(x^3)\,dx
+&= \int_0^1x\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}(x^3)^{2n+1}\,dx \\
+&= \int_0^1x\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{6n+3}\,dx \\
+&= \int_0^1\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{6n+4}\,dx \\
+&= \displaystyle\sum_{n=0}^{\infty}\int_0^1\frac{(-1)^n}{(2n+1)!}x^{6n+4}\,dx \\
+&= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\int_0^1x^{6n+4}\,dx \\
+&= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\frac{1}{6n+5} \\
+&= \frac{1}{5}-\frac{1}{66}+\frac{1}{2040}-\frac{1}{115920}+\ldots.
 \end{align*}
-and
 
-\begin{align*}
-\sum_{k=0}^{n+1}\binom{2n-k+1}{k}&=1+\sum_{k=1}^{n+1}\binom{2n-k}{k}+\sum_{k=1}^{n+1}\binom{2n-k}{k-1}\\
-&=\sum_{k=0}^{n+1}\binom{2n-k}{k}+\sum_{k=0}^n\binom{2n-k-1}{k}=F_{2n+1}+F_{2n}=F_{2n+2}.
-\end{align*}
-For each $m\in\mathbb{N}$ we also have
+We can use this series representation of the definite integral to find an approximation of the value of the integral by truncating the series after a finite number of terms $N$. Table {numref}`Tab:Series:TaylorIntegralSin` shows the approximations of the value of the integral for $N=0,1,2,3$.
 
-:::{math}
-:label: Eq:Series:Fibonacci
-F_{m+2n}=\displaystyle\sum_{k=0}^n\binom{n}{k}F_{m+k},\quad n=1,2,3,\ldots.
-:::
+```{list-table} Approximations of $\displaystyle\int_0^1x\sin(x^3)\,dx$ using the Taylor series of $\sin(x)$ at $x=0$.
+:header-rows: 1
+:class: mid-align center-align
+:name: Tab:Series:TaylorIntegralSin
 
-:::{admonition} Proof of {eq}`Eq:Series:Fibonacci`
-:class: solution, dropdown
-The proof is by mathematical induction. For $n=1$ we have: $F_{m+2}=\displaystyle\sum_{k=0}^1\binom{1}{k}F_{m+k}=F_m+F_{m+1}$ which is true. Now we assume that 
+* - $N$ 
+  - $\displaystyle\sum_{n=0}^N\frac{(-1)^n}{(2n+1)!}\frac{1}{6n+5}$
+* - $0$
+  - $0.200000\ldots$
+* - $1$
+  - $0.184848\ldots$
+* - $2$
+  - $0.185338\ldots$
+* - $3$
+  - $0.185330\ldots$  
+```
 
-$$
-F_{m+2n}=\displaystyle\sum_{k=0}^n\binom{n}{k}F_{m+k}
-$$
+Note that with $N=1$ we already have an approximation of the value of the integral that is exact to two decimal places, and with $N=2$ we have an approximation of the value of the integral that is exact to three decimal places.
 
-for a certain value of $n$. Then we have
-
-\begin{align*}
-\sum_{k=0}^{n+1}\binom{n+1}{k}F_{m+k}&=F_m+\sum_{k=1}^{n+1}\left\{\binom{n}{k}+\binom{n}{k-1}\right\}F_{m+k}\\
-&=\sum_{k=0}^n\binom{n}{k}F_{m+k}+\sum_{k=0}^n\binom{n}{k}F_{m+k+1}\\
-&=F_{m+2n}+F_{m+2n+1}=F_{m+2n+2}.
-\end{align*}
-This is the original formula with $n$ replaced by $n+1$, which proves {eq}`Eq:Series:Fibonacci`.
-:::
-
-The special case $m=0$ of {eq}`Eq:Series:Fibonacci` reads
-
-$$
-F_{2n}=\displaystyle\sum_{k=0}^n\binom{n}{k}F_k,\quad n=1,2,3,\ldots.
-$$
-
-## Binomial series
-
-Consider the function $f(x)=(1+x)^{\alpha}$ with $\alpha\in\mathbb{R}$, then we have
-
-\begin{align*}
-&f'(x)=\alpha(1+x)^{\alpha-1},\quad f''(x)=\alpha(\alpha-1)(1+x)^{\alpha-2},\\
-&\quad f^{(3)}(x)=\alpha(\alpha-1)(\alpha-2)(1+x)^{\alpha-3},\quad\ldots.
-\end{align*}
-This implies that $f^{(n)}(0)=\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)$ for $n=1,2,3,\ldots$. So, if we define the **binomial coefficients**
-
-:::{math}
-:label: Eq:Series:BinomialCoefficients
-
-\binom{\alpha}{0}=1,\quad\binom{\alpha}{n}=\frac{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)}{n!},\quad n=1,2,3,\ldots,
-:::
-
-then we have:
-
-::::::{prf:theorem} Binomial series
-:label: Thm:Series:BinomialSeries
-If $\alpha\in\mathbb{R}$, then we have
-
-\begin{align*}
-(1+x)^{\alpha}&=\sum_{n=0}^{\infty}\binom{\alpha}{n}x^n\\
-&=1+\frac{\alpha}{1!}x+\frac{\alpha(\alpha-1)}{2!}x^2+\frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3+\cdots,\quad|x| < 1.
-\end{align*}
-This series is called a **binomial series**.
 ::::::
 
-In order to see that the radius of convergence equals $R=1$ we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\binom{\alpha}{n}x^n$, then we have:
+::::::{prf:example}
+:label: Ex:Series:TaylorIntegralExp
+
+Using $e^x=\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$ for all $x\in\mathbb{R}$ we obtain that
 
 \begin{align*}
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\binom{\alpha}{n+1}x^{n+1}\bigg/\binom{\alpha}{n}x^n\right|\\
-&=\lim\limits_{n\to\infty}\left|\frac{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)(\alpha-n)}{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)}\frac{n!}{(n+1)!}x\right|\\
-&=\lim\limits_{n\to\infty}\left|\frac{\alpha-n}{n+1}x\right|=|x|.
+\int_0^{\frac{1}{2}}xe^{-x^4}\,dx
+&= \int_0^{\frac{1}{2}}x\displaystyle\sum_{n=0}^{\infty}\frac{(-x^4)^n}{n!}\,dx \\
+&= \int_0^{\frac{1}{2}}x\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^nx^{4n}}{n!}\,dx \\
+&= \int_0^{\frac{1}{2}}\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^nx^{4n+1}}{n!}\,dx \\
+&= \displaystyle\sum_{n=0}^{\infty}\int_0^{\frac{1}{2}}\frac{(-1)^nx^{4n+1}}{n!}\,dx \\
+&= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\int_0^{\frac{1}{2}}x^{4n+1}\,dx \\
+&= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\frac{1}{4n+2}\left(\frac12\right)^{4n+2}.
 \end{align*}
-:::{prf:remark}
-Note that the binomial coefficients defined in {eq}`Eq:Series:BinomialCoefficients` generalise the binomial coefficients given in {eq}`Eq:Series:BinomialCoefficient`.
+
+We can use this series representation of the definite integral to find an approximation of the value of the integral by truncating the series after a finite number of terms $N$. Table {numref}`Tab:Series:TaylorIntegralExp` shows the approximations of the value of the integral for $N=0,1,2,3$.
+
+```{list-table} Approximations of $\displaystyle\int_0^{\frac{1}{2}}xe^{-x^4}\,dx$ using the Taylor series of $e^x$ at $x=0$.
+:header-rows: 1
+:class: mid-align center-align
+:name: Tab:Series:TaylorIntegralExp
+
+* - $N$ 
+  - $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\frac{1}{4n+2}\left(\frac12\right)^{4n+2}$
+* - $0$
+  - $0.125000\ldots$
+* - $1$
+  - $0.122396\ldots$
+* - $2$
+  - $0.122445\ldots$
+* - $3$
+  - $0.122444\ldots$  
+```
+
+In this example we have an approximation of the value of the integral that is already exact to three decimal places with $N=1$.
+
+::::::
+
+Before we turn our attention to a special set of functions and their Taylor series in the next section, let's practice with some exercises.
+
+## Grasple exercises
+
+:::{todo}
+Add exercises on Taylor series, including finding Taylor series of functions, finding the radius of convergence, and using Taylor's inequality to find approximations of functions in {numref}`Sec:Series:TaylorSeries`.
 :::
 
-::::{prf:example}
-Consider $\displaystyle\sqrt{1+x}=(1+x)^{\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^n$ for $|x|<1$. Then we have
-
-\begin{align*}
-&\binom{\frac{1}{2}}{0}=1,\quad\binom{\frac{1}{2}}{1}=\frac{1}{2},\quad\binom{\frac{1}{2}}{2}=\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)}{2!}=-\frac{1}{8},\\
-&\quad\binom{\frac{1}{2}}{3}=\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}=\frac{1}{16},\\
-&\quad\binom{\frac{1}{2}}{4}=\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}=-\frac{5}{128},\quad\ldots
-\end{align*}
-and therefore
-
-\begin{align*}
-\sqrt{1+x}&=(1+x)^{\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^n\\
-&=1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\cdots,\quad |x|<1.
-\end{align*}
-::::
-
-::::{prf:example}
-Consider $\displaystyle\frac{1}{\sqrt{1+x}}=(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{-\frac{1}{2}}{n}x^n$ for $|x|<1$. Then we have
-
-\begin{align*}
-&\binom{-\frac{1}{2}}{0}=1,\quad\binom{-\frac{1}{2}}{1}=-\frac{1}{2},\quad\binom{-\frac{1}{2}}{2}=\frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)}{2!}=\frac{3}{8},\\
-&\quad\binom{-\frac{1}{2}}{3}=\frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)\left(-\frac{1}{2}-2\right)}{3!}=\frac{5}{16},\quad\ldots
-\end{align*}
-and therefore
-
-\begin{align*}
-\frac{1}{\sqrt{1+x}}&=(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{-\frac{1}{2}}{n}x^n\\
-&=1-\frac{1}{2}x+\frac{3}{8}x^2-\frac{5}{16}x^3+\cdots,\quad |x|<1.
-\end{align*}
-::::
-
-Replacing $x$ by $-x^2$ in the last example implies that 
-
-$$
-\frac{1}{\sqrt{1-x^2}}=\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}x^{2n}=1+\frac{1}{2}x+\frac{3}{8}x^2+\frac{5}{16}x^3+\cdots
-$$
-
-for $|-x^2| < 1\;\;\Longleftrightarrow\;\;|x| < 1$. Using integration we obtain
-
-$$
-\arcsin(x)=\int\frac{1}{\sqrt{1-x^2}}\,dx=C+\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}\frac{x^{2n+1}}{2n+1},\quad|x| < 1
-$$ 
- 
-and since $\arcsin(0)=0$ we conclude that $C=0$. Similarly, we obtain
-
-$$
-\arccos(x)=-\int\frac{1}{\sqrt{1-x^2}}\,dx=K-\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}\frac{x^{2n+1}}{2n+1},\quad|x| <1
-$$ 
- 
-and since $\arccos(0)=\frac{1}{2}\pi$ we conclude that $K=\frac{1}{2}\pi$. Hence we have
-
-$$
-\arcsin(x)=\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}\frac{x^{2n+1}}{2n+1},\quad|x| < 1
-$$
-
-and
-
-$$
-\arccos(x)=\frac{1}{2}\pi-\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}\frac{x^{2n+1}}{2n+1},\quad|x| < 1.
-$$ 
-
-::::::{prf:example} Applications
-1) Using $\displaystyle\sqrt{1+x^2}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{2n}=1+\frac{1}{2}x^2-\frac{1}{8}x^4+\cdots$ for $|x|<1$ we find that
-
-$$
-\lim\limits_{x\to 0}\frac{\sqrt{1+x^2}-1-\frac{1}{2}x^2}{x^4}=\lim\limits_{x\to 0}\frac{1+\frac{1}{2}x^2-\frac{1}{8}x^4+\cdots-1-\frac{1}{2}x^2}{x^4}
-=-\frac{1}{8}.
-$$
-
-2) Using $\displaystyle\sqrt{1+x^3}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{3n}=1+\frac{1}{2}x^3-\frac{1}{8}x^6+\cdots$ for $|x|<1$ we find that
-
-\begin{align*}
-\int_0^{\frac{1}{2}}\sqrt{1+x^3}\,dx&=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}\int_0^{\frac{1}{2}}x^{3n}\,dx=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}\frac{(\frac{1}{2})^{3n+1}}{3n+1}\\
-&=\frac{1}{2}+\frac{1}{64}-\frac{1}{14680064}+\cdots\approx0.515625.
-\end{align*}
-::::::

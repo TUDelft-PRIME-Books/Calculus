@@ -484,7 +484,7 @@ Because of this we often omit the steps with the two arbitrary constants and dir
 ::::::{prf:example}
 :label: Ex:Series:Arctan
 
-We introduced the idea of integrating a power series representation of a function to find a power series representation of the integral of the function in {prf:ref}`Ex:Series:PowerSeriesFunctions4`. We will now apply this idea to find a power series representation of $\arctan(x)$.
+We introduced the idea of integrating a power series representation of a function to find a power series representation of the integral of a function in {prf:ref}`Thm:Series:DifferentiationIntegration`. We will now apply this idea to find a power series representation of $\arctan(x)$.
 
 Integrating the power series representation $\displaystyle\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-1)^nx^{2n}$ for $-1<x<1$ we obtain
 

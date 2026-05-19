@@ -578,10 +578,23 @@ The next examples only consider the multiplication of a finite number of numbers
 :label: Ex:Integration:IntroductionExamplesProduct
 
 For $n\in\{1,2,3,\ldots\}$ we have
-* $\displaystyle\prod_{p=1}^np=1\cdot2\cdot3\cdots(n-1)\cdot n=n!$;
+* $\displaystyle\prod_{p=1}^np=1\cdot2\cdot3\cdots(n-1)\cdot n$;
 * $\displaystyle\prod_{j=1}^n\frac{j}{j+1}=\frac{1}{2}\cdot\frac{2}{3}\cdot\frac{3}{4}\cdots\frac{n-1}{n}\cdot\frac{n}{n+1}=\frac{1}{n+1}$;
 * $\displaystyle\prod_{k=1}^n\frac{2k+1}{2k}=\frac{3}{2}\cdot\frac{5}{4}\cdot\frac{7}{6}\cdots\frac{2n-1}{2n-2}\cdot\frac{2n+1}{2n}=\frac{3\cdot5\cdot7\cdots(2n+1)}{2\cdot4\cdot6\cdots2n}$.
 ::::::
+
+The first item in {prf:ref}`Ex:Integration:IntroductionExamplesProduct` often occurs in mathematics and therefore is given a special name:
+
+::::{prf:definition}
+:label: Def:SumsAndProducts:Factorial
+The **factorial** of a positive integer $n$ is the finite product of the first $n$ positive integers, that is
+
+$$
+n!=\prod_{k=1}^nk=1\cdot2\cdot3\cdots(n-1)\cdot n.
+$$
+
+By convention, we also define $0!=1$.
+::::
 
 Without stating a formal proof, we will also state some important properties of the finite products:
 
