@@ -1,8 +1,9 @@
+(Sec:Series:BinomialSeries)=
 # Binomial series
 
 ## Introduction
 
-In this section we will investigate functions of the form $f(x)=(1+x)^{\alpha}$ where $\alpha\in\mathbb{R}$. We will find that such functions can be represented by a power series, called a **binomial series**. The coefficients of the terms in a binomial series are called **binomial coefficients** and they are closely related to the binomial coefficients appearing in Pascal's triangle and the binomial theorem. That is why we will start with a discussion of Pascal's triangle and the binomial theorem.
+In this section we will investigate functions of the form $f(x)=(1+x)^{\alpha}$ where $\alpha\in\mathbb{R}$. We will find that such functions can be represented by a power series, called a **binomial series**. The coefficients of the terms in a binomial series are called **binomial coefficients** and they are closely related to the binomial coefficients appearing in Pascal's triangle and the binomial theorem. In turn, these two subjects are related to permutations and combinations. That is why we will start with the latter subjects.
 
 ## Permutations and combinations
 
@@ -201,7 +202,7 @@ $$
 :::{figure-end}
 :::
 
-This trianle is called **Pascal's triangle**, named after the French mathematician [Blaise Pascal (1623-1662)](https://en.wikipedia.org/wiki/Blaise_Pascal).
+This triangle is called **Pascal's triangle**, named after the French mathematician [Blaise Pascal (1623-1662)](https://en.wikipedia.org/wiki/Blaise_Pascal).
 
 If you inspect Pascal's triangle, you should notice that from the third row onwards, each number is the sum of the two nearest numbers in the row directly above it. For example, the left number $10$ in the sixth row is the sum of the two nearest numbers $4$ and $6$ in the fifth row, and the right number $10$. The same holds for all other numbers in Pascal's triangle, except for the numbers at the left and right edge of each row which are always equal to $1$.
 
@@ -240,7 +241,7 @@ Well consider the expansion of the binomials $(a+b)^n$ for $n=0,1,2,\ldots$:
 \text{etcetera.}
 \end{align*}
 
-As you may notice, each term in the expansion of $(a+b)^n$ has a coefficient which is a binomial coefficient occuring in Pascal's triangle. For example, the coefficient of the term $a^2b^2$ in the expansion of $(a+b)^4$ is $6$, which is equal to $\displaystyle\binom{4}{2}$, and corresponds with the third(as $2+1=3$) number in the fifth (as $4+1=5$) row of Pascal's triangle.
+As you may notice, each term in the expansion of $(a+b)^n$ has a coefficient which is a binomial coefficient occurring in Pascal's triangle. For example, the coefficient of the term $a^2b^2$ in the expansion of $(a+b)^4$ is $6$, which is equal to $\displaystyle\binom{4}{2}$, and corresponds with the third(as $2+1=3$) number in the fifth (as $4+1=5$) row of Pascal's triangle.
 
 Pascal's triangle can thus be used to find the coefficients of the terms in the expansion of $(a+b)^n$ for $n=0,1,2,\ldots$.
 
@@ -384,23 +385,84 @@ $$
 
 ## Binomial series
 
-Consider the function $f(x)=(1+x)^{\alpha}$ with $\alpha\in\mathbb{R}$, then we have
+In {prf:ref}`Ex:Series:BinomialTheorem` we have seen that the binomial theorem can be used to expand the binomial $(1+x)^7$ for $n=0,1,2,\ldots$. In that case we achieve a _finite_ series expansion of the binomial. If we set $f(x)=(1+x)^7$, and would calculate the Taylor series expansion of $f$ around $x=0$, the first step is determining the derivatives of $f$:
 
 \begin{align*}
-&f'(x)=\alpha(1+x)^{\alpha-1},\quad f''(x)=\alpha(\alpha-1)(1+x)^{\alpha-2},\\
-&\quad f^{(3)}(x)=\alpha(\alpha-1)(\alpha-2)(1+x)^{\alpha-3},\quad\ldots.
+f(x) &= (1+x)^7,\\
+f'(x) &= 7(1+x)^6,\\
+f''(x) &= 7\cdot6(1+x)^5,\\
+f^{(3)}(x) &= 7\cdot6\cdot5(1+x)^4,\\
+f^{(4)}(x) &= 7\cdot6\cdot5\cdot4(1+x)^3,\\
+f^{(5)}(x) &= 7\cdot6\cdot5\cdot4\cdot3(1+x)^2,\\
+f^{(6)}(x) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2(1+x),\\
+f^{(7)}(x) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1,\\
+f^{(n)}(x) &= 0\quad\text{for }n=8,9,10,\ldots.
 \end{align*}
-This implies that $f^{(n)}(0)=\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)$ for $n=1,2,3,\ldots$. So, if we define the **binomial coefficients**
+
+Substituting $x=0$ gives 
+
+\begin{align*}
+f(0) &= 1 = \dfrac{7!}{7!} ,\\
+f'(0) &= 7 = \dfrac{7!}{6!} ,\\
+f''(0) &= 7\cdot6 = \dfrac{7!}{5!} ,\\
+f^{(3)}(0) &= 7\cdot6\cdot5 = \dfrac{7!}{4!} ,\\
+f^{(4)}(0) &= 7\cdot6\cdot5\cdot4 = \dfrac{7!}{3!} ,\\
+f^{(5)}(0) &= 7\cdot6\cdot5\cdot4\cdot3 = \dfrac{7!}{2!} ,\\
+f^{(6)}(0) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2 = \dfrac{7!}{1!} ,\\
+f^{(7)}(0) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1 = \dfrac{7!}{0!} ,\\
+f^{(n)}(0) &= 0\quad\text{for }n=8,9,10,\ldots.
+\end{align*}
+
+This means that the Taylor series expansion of $f$ around $x=0$ is given by
+
+$$
+\sum_{n=0}^{\infty}\frac{f^{(n)}(0)}{n!}x^n=\sum_{n=0}^7\frac{7!}{(7-n)!n!}x^n=\sum_{n=0}^7\binom{7}{n}x^n,
+$$
+
+which is exactly the same as the expansion of $(1+x)^7$ given by the binomial theorem in {prf:ref}`Ex:Series:BinomialTheorem`.
+
+So what happens if we replace the exponent $7$ by an arbitrary real number $\alpha$? Can we still find a Taylor series expansion of the function $f(x)=(1+x)^{\alpha}$ around $x=0$?
+
+To that end, consider the function $f(x)=(1+x)^{\alpha}$ with $\alpha\in\mathbb{R}$. then we have
+
+\begin{align*}
+f(x) &= (1+x)^{\alpha},\\
+f'(x) &= \alpha(1+x)^{\alpha-1}, \\
+f''(x) &= \alpha(\alpha-1)(1+x)^{\alpha-2}, \\
+f^{(3)}(x) &= \alpha(\alpha-1)(\alpha-2)(1+x)^{\alpha-3}, \\
+&\vdots \\
+\end{align*}
+
+This implies that
+
+$$
+f^{(n)}(0)=\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)\quad\text{for }n=1,2,3,\ldots
+$$
+
+But as a consequence, the Taylor series expansion $\displaystyle\sum_{n=0}^{\infty}c_nx^n$ of $f$ around $x=0$ is given by the coefficients
+
+$$
+c_n=\frac{f^{(n)}(0)}{n!}=\frac{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)}{n!}\quad\text{for }n=1,2,3,\ldots
+$$
+
+If $\alpha$ would be a positive integer, then we can write by 
+
+$$
+c_n = \frac{\alpha!}{n!(n-\alpha)!} = \binom{\alpha}{n}\quad\text{for }n=0,1,2,\ldots,\alpha.
+$$
+
+However, if $\alpha$ is not a positive integer, then the coefficients $c_n$ are not given by the binomial coefficients $\displaystyle\binom{\alpha}{n}$ defined in {eq}`Eq:Series:BinomialCoefficient` as these binomial coefficients are only defined for non-negative integers. However, we can generalise the definition of the binomial coefficients to arbitrary real numbers $\alpha$ as follows:
 
 :::{math}
 :label: Eq:Series:BinomialCoefficients
 
+
 \binom{\alpha}{0}=1,\quad\binom{\alpha}{n}=\frac{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)}{n!},\quad n=1,2,3,\ldots,
 :::
 
-then we have:
+In that case, we have a short and precise form for the Taylor series expansion of $(1+x)^{\alpha}$ around $x=0$:
 
-::::::{prf:theorem} Binomial series
+::::::{prf:theorem}
 :label: Thm:Series:BinomialSeries
 If $\alpha\in\mathbb{R}$, then we have
 
@@ -408,8 +470,34 @@ If $\alpha\in\mathbb{R}$, then we have
 (1+x)^{\alpha}&=\sum_{n=0}^{\infty}\binom{\alpha}{n}x^n\\
 &=1+\frac{\alpha}{1!}x+\frac{\alpha(\alpha-1)}{2!}x^2+\frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3+\ldots,\quad|x| < 1.
 \end{align*}
-This series is called a **binomial series**.
+
 ::::::
+
+::::::{prf:definition}
+:label: Def:Series:BinomialSeries
+
+The Taylor series expansion of $(1+x)^{\alpha}$ around $x=0$ is called a **binomial series**.
+::::::
+
+:::{prf:remark}
+:label: Rmk:Series:BinomialSeries
+
+The convergence of the binomial series is not guaranteed for all $x\in\mathbb{R}$, but only for $|x|<1$, in which case it converges absolutely.
+
+The convergence for $|x|=1$ depends on the value of $\alpha$ an $x$. Without further proof, the following results hold:
+
+- If $\alpha>0$, then the binomial series converges for $x=-1$ and converges for $x=1$.
+
+- If $-1<\alpha\leq0$, then the binomial series diverges for $x=-1$ and converges for $x=1$.
+
+- If $\alpha\leq-1$, then the binomial series diverges for $x=-1$ and diverges for $x=1$.
+
+:::
+
+:::{admonition} Proof of {prf:ref}`Thm:Series:BinomialSeries`
+:class: tudproof, dropdown
+
+The proof of this theorem is by construction of the Taylor series expansion of $f(x)=(1+x)^{\alpha}$ around $x=0$ as we have done above. The only thing that remains to be shown is that the radius of convergence of this Taylor series expansion equals $R=1$.
 
 In order to see that the radius of convergence equals $R=1$ we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\binom{\alpha}{n}x^n$, then we have:
 
@@ -419,10 +507,8 @@ In order to see that the radius of convergence equals $R=1$ we apply the ratio t
 &=\lim\limits_{n\to\infty}\left|\frac{\alpha-n}{n+1}x\right|=|x|.
 \end{align*}
 
-:::{prf:remark}
-:label: Rmk:Series:BinomialCoefficients
+This shows that the radius of convergence equals $R=1$.
 
-Note that the binomial coefficients defined in {eq}`Eq:Series:BinomialCoefficients` generalise the binomial coefficients given in {eq}`Eq:Series:BinomialCoefficient`.
 :::
 
 ::::{prf:example}
@@ -431,34 +517,49 @@ Note that the binomial coefficients defined in {eq}`Eq:Series:BinomialCoefficien
 Consider $\displaystyle\sqrt{1+x}=(1+x)^{\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^n$ for $|x|<1$. Then we have
 
 \begin{align*}
-&\binom{\frac{1}{2}}{0}=1,\quad\binom{\frac{1}{2}}{1}=\frac{1}{2},\quad\binom{\frac{1}{2}}{2}=\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)}{2!}=-\frac{1}{8},\\
-&\quad\binom{\frac{1}{2}}{3}=\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}=\frac{1}{16},\\
-&\quad\binom{\frac{1}{2}}{4}=\frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}=-\frac{5}{128},\quad\ldots
+\binom{\frac{1}{2}}{0} &=1, \\
+\binom{\frac{1}{2}}{1} &= \frac{1}{2}, \\
+\binom{\frac{1}{2}}{2} &= \frac{\frac{1}{2}\left(\frac{1}{2}-1\right)}{2!}=-\frac{1}{8},\\
+\binom{\frac{1}{2}}{3} &= \frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}=\frac{1}{16},\\
+\binom{\frac{1}{2}}{4} &= \frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}=-\frac{5}{128},\\
 \end{align*}
-and therefore
+
+and so on, and therefore
 
 \begin{align*}
-\sqrt{1+x}&=(1+x)^{\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^n\\
-&=1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\ldots,\quad |x|<1.
+\sqrt{1+x}&=(1+x)^{\frac{1}{2}} \\
+&=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^n\\
+&=1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\ldots,
 \end{align*}
+
+provided that $|x|<1$.
+
 ::::
 
 ::::{prf:example}
+:label: Ex:Series:BinomialSeriesSqrtInverse
 Consider $\displaystyle\frac{1}{\sqrt{1+x}}=(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{-\frac{1}{2}}{n}x^n$ for $|x|<1$. Then we have
 
 \begin{align*}
-&\binom{-\frac{1}{2}}{0}=1,\quad\binom{-\frac{1}{2}}{1}=-\frac{1}{2},\quad\binom{-\frac{1}{2}}{2}=\frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)}{2!}=\frac{3}{8},\\
-&\quad\binom{-\frac{1}{2}}{3}=\frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)\left(-\frac{1}{2}-2\right)}{3!}=\frac{5}{16},\quad\ldots
+\binom{-\frac{1}{2}}{0} &= 1, \\
+\binom{-\frac{1}{2}}{1} &= -\frac{1}{2}, \\
+\binom{-\frac{1}{2}}{2} &= \frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)}{2!}=\frac{3}{8},\\
+\binom{-\frac{1}{2}}{3} &= \frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)\left(-\frac{1}{2}-2\right)}{3!}=\frac{5}{16},\\
 \end{align*}
-and therefore
+
+and so on, and therefore
 
 \begin{align*}
-\frac{1}{\sqrt{1+x}}&=(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{-\frac{1}{2}}{n}x^n\\
-&=1-\frac{1}{2}x+\frac{3}{8}x^2-\frac{5}{16}x^3+\ldots,\quad |x|<1.
+\frac{1}{\sqrt{1+x}} &= (1+x)^{-\frac{1}{2}} \\
+&= \sum_{n=0}^{\infty}\binom{-\frac{1}{2}}{n}x^n \\
+&= 1-\frac{1}{2}x+\frac{3}{8}x^2-\frac{5}{16}x^3+\ldots,\quad |x|<1.
 \end{align*}
 ::::
 
-Replacing $x$ by $-x^2$ in the last example implies that 
+:::{prf:example}
+:label: Ex:Series:BinomialSeriesArcsinArccos
+
+Replacing $x$ by $-x^2$ in the {prf:ref}`Ex:Series:BinomialSeriesSqrtInverse` implies that 
 
 $$
 \frac{1}{\sqrt{1-x^2}}=\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}x^{2n}=1+\frac{1}{2}x+\frac{3}{8}x^2+\frac{5}{16}x^3+\ldots
@@ -470,13 +571,17 @@ $$
 \arcsin(x)=\int\frac{1}{\sqrt{1-x^2}}\,dx=C+\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}\frac{x^{2n+1}}{2n+1},\quad|x| < 1
 $$ 
  
-and since $\arcsin(0)=0$ we conclude that $C=0$. Similarly, we obtain
+and since $\arcsin(0)=0$ we conclude that $C=0$.
+
+Similarly, we obtain after multiplication by $-1$ and integration that
 
 $$
 \arccos(x)=-\int\frac{1}{\sqrt{1-x^2}}\,dx=K-\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}\frac{x^{2n+1}}{2n+1},\quad|x| <1
 $$ 
  
-and since $\arccos(0)=\frac{1}{2}\pi$ we conclude that $K=\frac{1}{2}\pi$. Hence we have
+and since $\arccos(0)=\frac{1}{2}\pi$ we conclude that $K=\frac{1}{2}\pi$.
+
+Hence we have
 
 $$
 \arcsin(x)=\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}\frac{x^{2n+1}}{2n+1},\quad|x| < 1
@@ -488,18 +593,41 @@ $$
 \arccos(x)=\frac{1}{2}\pi-\sum_{n=0}^{\infty}(-1)^n\binom{-\frac{1}{2}}{n}\frac{x^{2n+1}}{2n+1},\quad|x| < 1.
 $$ 
 
-::::::{prf:example} Applications
-1) Using $\displaystyle\sqrt{1+x^2}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{2n}=1+\frac{1}{2}x^2-\frac{1}{8}x^4+\ldots$ for $|x|<1$ we find that
+:::
 
-$$
-\lim\limits_{x\to 0}\frac{\sqrt{1+x^2}-1-\frac{1}{2}x^2}{x^4}=\lim\limits_{x\to 0}\frac{1+\frac{1}{2}x^2-\frac{1}{8}x^4+\ldots-1-\frac{1}{2}x^2}{x^4}
-=-\frac{1}{8}.
-$$
+::::::{prf:example}
+:label: Ex:Series:BinomialSeriesApplication1
 
-2) Using $\displaystyle\sqrt{1+x^3}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{3n}=1+\frac{1}{2}x^3-\frac{1}{8}x^6+\ldots$ for $|x|<1$ we find that
+The binomial series can be used to calculate limits. For example we can use $\displaystyle\sqrt{1+x^2}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{2n}=1+\frac{1}{2}x^2-\frac{1}{8}x^4+\frac{1}{16}x^6+\ldots$ for $|x|<1$ and find that
 
 \begin{align*}
-\int_0^{\frac{1}{2}}\sqrt{1+x^3}\,dx&=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}\int_0^{\frac{1}{2}}x^{3n}\,dx=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}\frac{(\frac{1}{2})^{3n+1}}{3n+1}\\
-&=\frac{1}{2}+\frac{1}{64}-\frac{1}{14680064}+\ldots\approx0.515625.
+\lim\limits_{x\to 0}\frac{\sqrt{1+x^2}-1-\frac{1}{2}x^2}{x^4} &= \lim\limits_{x\to 0}\frac{1+\frac{1}{2}x^2-\frac{1}{8}x^4++\frac{1}{16}x^6+\ldots-1-\frac{1}{2}x^2}{x^4} \\
+&= \lim\limits_{x\to 0}\frac{-\frac{1}{8}x^4+\frac{1}{16}x^6+\ldots}{x^4} \\
+&= \lim\limits_{x\to 0}-\frac{1}{8}+\frac{1}{16}x^2+\ldots
+=-\frac{1}{8}.
 \end{align*}
+
 ::::::
+
+::::::{prf:example}
+:label: Ex:Series:BinomialSeriesApplication2
+
+Similarly, using $\displaystyle\sqrt{1+x^3}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{3n}$ for $|x|<1$ we find that
+
+\begin{align*}
+\int_0^{\frac{1}{2}}\sqrt{1+x^3}\,dx &= \int_0^{\frac{1}{2}}\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{3n}\,dx \\
+&= \sum_{n=0}^{\infty}\int_0^{\frac{1}{2}}\binom{\frac{1}{2}}{n}x^{3n}\,dx \\
+&= \sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}\int_0^{\frac{1}{2}}x^{3n}\,dx \\
+&= \sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}\frac{(\frac{1}{2})^{3n+1}}{3n+1} \\
+&= \frac{1}{2}+\frac{1}{128}-\frac{1}{7168}+\ldots \\
+&= 0.507678\ldots
+\end{align*}
+
+::::::
+
+
+## Grasple exercises
+
+:::{todo}
+Add Grasple exercises in {numref}`Sec:Series:BinomialSeries`.
+:::

@@ -11,21 +11,22 @@ In this section we cover:
 
 ## Introduction
 
-We have seen that Taylor polynomials can be used to approximate a function $f(x)$ near a point $x=a$ as closely as is needed by taking the order large enough. However, in many applications it is much more useful to approximate *periodic functions*. For instance, for functions that describe waves, signal processes or heat flows. In these cases it is useful to decompose such functions in standard periodic functions.
+We have seen that Taylor polynomials, the partial sums of Taylor series, can be used to approximate a function $f(x)$ near a point $x=a$ as closely as is needed by taking the order large enough, provided we stay within the interval of convergence.
 
-::::::{prf:definition}
-A function $f\,:\,\mathbb{R}\to\mathbb{R}$ is called periodic with **period** $T$ if
+If the function $f$ is however periodic, then approximating $f$ by (Taylor) polynomials might not be the best approach, since the Taylor polynomials are not periodic. Examples where periodic functions appear are abundant in physics and engineering, for instance in the description of waves, signal processes or heat flows. In these cases it is useful to decompose such functions in standard periodic functions.
 
-$$
-f(x+T)=f(x)\quad\text{for all}\;x\in\mathbb{R}.
-$$
+We first focus on an important property of trigonometric functions, the orthogonality, and then we use this property to decompose periodic functions in so-called Fourier series.
 
-The smallest value of $T$ for which this holds is called the **fundamental period** of $f$.
-::::::
+## Orthogonality of trigonometric functions
 
-Consider the functions $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ and $\displaystyle\sin\left(\frac{n\pi x}{L}\right)$ with $n$ a positive integer. These functions are all periodic with period $2L$. Moreover, they satisfy a remarkable orthogonality property (compare with {numref}`Exc:Integration:TrigFunctionsProductFormulasOrthogonality`):
+We repeat the definition of periodic functions from {numref}`Subsec:PropertiesFunctionsPeriodic`: 
 
-::::::{prf:theorem} Orthogonality
+:::{fetch} {prf:ref}`Def:PropertiesFunctions:Periodic`
+:::
+
+Now consider the functions $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ and $\displaystyle\sin\left(\frac{n\pi x}{L}\right)$ with $n$ a positive integer. These functions are all periodic with period $2L$. Moreover, they satisfy a remarkable property (compare with {numref}`Exc:Integration:TrigFunctionsProductFormulasOrthogonality`):
+
+::::::{prf:theorem}
 :label: Thm:Series:Orthogonality
 For $m,n\in\{1,2,3,\ldots\}$ we have
 
@@ -45,49 +46,51 @@ $$
 
 ::::::
 
-::::::{note}
-Define an **inner product**: $\langle f,g\rangle=\displaystyle\int_{\alpha}^{\beta}f(x)g(x)\,dx$ for functions $f$ and $g$ defined on the interval $(\alpha,\beta)$. Then: two functions $f$ and $g$ are called **orthogonal** if $\langle f,g\rangle=0$.
-::::::
-
 :::{admonition} Proof of {prf:ref}`Thm:Series:Orthogonality`
-:class: solution, dropdown
-Using the product formula $\cos(a)\cos(b)=\frac{1}{2}\left(\cos(a-b)+\cos(a+b)\right)$ (see {prf:ref}`Thm:Trigonometry:ProductFormulas`) we obtain
+:class: tudproof, dropdown
+Using the product formula $\cos(a)\cos(b)=\frac{1}{2}\left(\cos(a-b)+\cos(a+b)\right)$ (see {prf:ref}`Thm:Trigonometry:ProductFormulas`) we obtain for $m\neq n$
 
 \begin{align*}
 &\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m-n)\pi x}{L}\right)\,dx+\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m+n)\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\left[\frac{L}{(m-n)\pi}\sin\left(\frac{(m-n)\pi x}{L}\right)+\frac{L}{(m+n)\pi}\sin\left(\frac{(m+n)\pi x}{L}\right)\right]_{-L}^L\\
-&=0,\quad m\neq n
+&=0,
 \end{align*}
+
 and for $m=n$ we use $\cos(2a)=2\cos^2(a)-1$ to find that
 
 \begin{align*}
 \int_{-L}^L\left\{\cos\left(\frac{n\pi x}{L}\right)\right\}^2\,dx&=\frac{1}{2}\int_{-L}^L\left\{1+\cos\left(\frac{2n\pi x}{L}\right)\right\}\,dx\\
-&=\frac{1}{2}\left[x+\frac{L}{2n\pi}\sin\left(\frac{2n\pi x}{L}\right)\right]_{-L}^L=L.
+&=\frac{1}{2}\left[x+\frac{L}{2n\pi}\sin\left(\frac{2n\pi x}{L}\right)\right]_{-L}^L \\
+&=L.
 \end{align*}
-Using the product formula $\sin(a)\sin(b)=\frac{1}{2}\left(\cos(a-b)-\cos(a+b)\right)$ (see  {prf:ref}`Thm:Trigonometry:ProductFormulas`) we obtain
+
+Using the product formula $\sin(a)\sin(b)=\frac{1}{2}\left(\cos(a-b)-\cos(a+b)\right)$ (see  {prf:ref}`Thm:Trigonometry:ProductFormulas`) we obtain for $m\neq n$
 
 \begin{align*}
 &\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m-n)\pi x}{L}\right)\,dx-\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m+n)\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\left[\frac{L}{(m-n)\pi}\sin\left(\frac{(m-n)\pi x}{L}\right)-\frac{L}{(m+n)\pi}\sin\left(\frac{(m+n)\pi x}{L}\right)\right]_{-L}^L\\
-&=0,\quad m\neq n
+&=0,
 \end{align*}
 and for $m=n$ we use $\cos(2a)=1-2\sin^2(a)$ to find that
 
 \begin{align*}
 \int_{-L}^L\left\{\sin\left(\frac{n\pi x}{L}\right)\right\}^2\,dx&=\frac{1}{2}\int_{-L}^L\left\{1-\cos\left(\frac{2n\pi x}{L}\right)\right\}\,dx\\
-&=\frac{1}{2}\left[x-\frac{L}{2n\pi}\sin\left(\frac{2n\pi x}{L}\right)\right]_{-L}^L=L.
+&=\frac{1}{2}\left[x-\frac{L}{2n\pi}\sin\left(\frac{2n\pi x}{L}\right)\right]_{-L}^L \\
+&=L.
 \end{align*}
-Finally we use the product formula $\cos(a)\sin(b)=\frac{1}{2}\left(\sin(a+b)-\sin(a-b)\right)$ (see  {prf:ref}`Thm:Trigonometry:ProductFormulas`) to obtain
+
+Finally we use the product formula $\cos(a)\sin(b)=\frac{1}{2}\left(\sin(a+b)-\sin(a-b)\right)$ (see  {prf:ref}`Thm:Trigonometry:ProductFormulas`) to obtain for $m\neq n$
 
 \begin{align*}
 &\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\int_{-L}^L\sin\left(\frac{(m+n)\pi x}{L}\right)\,dx-\frac{1}{2}\int_{-L}^L\sin\left(\frac{(m-n)\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\left[-\frac{L}{(m+n)\pi}\cos\left(\frac{(m+n)\pi x}{L}\right)+\frac{L}{(m-n)\pi}\cos\left(\frac{(m-n)\pi x}{L}\right)\right]_{-L}^L\\
-&=0,\quad m\neq n
+&=0,
 \end{align*}
-and
+
+and for $m=n$ we use $\sin(2a)=2\sin(a)\cos(a)$ to find that
 
 $$
 \int_{-L}^L\cos\left(\frac{n\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx=\frac{1}{2}\int_{-L}^L\sin\left(\frac{2n\pi x}{L}\right)\,dx=0.
@@ -95,7 +98,26 @@ $$
 
 :::
 
-## General Fourier series
+The property that the integrals of the products of these functions are zero when $m\neq n$ and are positive when $m=n$ is called the **orthogonality** of these functions. This is a very important property, which allows us to decompose periodic functions in terms of these trigonometric functions.
+
+The formal definition of orthogonality for arbitrary functions is as follows:
+
+::::::{prf:definition}
+
+Let $f$ and $g$ be functions defined on an interval $(\alpha,\beta)$. The inner product of $f$ and $g$, denoted by $\langle f,g\rangle$, is defined as
+
+$$
+\langle f,g\rangle=\displaystyle\int_{\alpha}^{\beta}f(x)g(x)\,dx.
+$$
+
+If $\langle f,g\rangle=0$, then $f$ and $g$ are called **orthogonal**.
+::::::
+
+## Fourier series
+
+:::{todo}
+Write a bridge between the orthogonality of trigonometric functions and Fourier series.
+:::
 
 ::::::{prf:definition} Fourier series
 :label: Def:Series:FourierSeries
@@ -110,7 +132,7 @@ with $L>0$ is called a **Fourier series**, named after the French mathematician 
 
 Now, periodic functions can be expanded in terms of a Fourier series:
 
-::::::{prf:theorem} Fourier
+::::::{prf:theorem}
 :label: Thm:Series:Fourier
 If $f$ and $f'$ are piecewise continuous on an interval $[-L,L)$ and $f$ is defined outside that interval so that it is periodic with period $2L$, then we have:
 
