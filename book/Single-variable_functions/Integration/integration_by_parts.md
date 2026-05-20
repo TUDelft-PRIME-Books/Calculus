@@ -502,7 +502,7 @@ M[0] Let $f$ be a function that satisfies $f(x)\cos(x)=f'(x)\sin(x)$. Then $\dis
 
 \begin{align*}
 \int_0^{\pi}f(x)\cos(x)\,dx&=\int_0^{\pi}f'(x)\sin(x)\,dx\\
-&=f(x)\sin(x)\bigg|_0^{\pi}-\int_0^{\pi}f(x)\cos(x)\,dx.
+ &=f(x)\sin(x)\bigg|_0^{\pi}-\int_0^{\pi}f(x)\cos(x)\,dx.
 \end{align*}
 
 Hence, we have
@@ -585,6 +585,12 @@ I_3&=x^3\sin(x)+3x^2\cos(x)-6I_1\\
 &=x^3\sin(x)+3x^2\cos(x)-6x\sin(x)-6\cos(x)+C_3,
 \end{align*}
 and so on.
+
+## Grasple exercises
+
+:::{todo}
+Add Grasple exercises in {numref}`Sec:Integration:Parts`.
+:::
 
 ## Exercises
 
@@ -802,5 +808,3 @@ $$
 
 Furthermore, we have: $I_0=\displaystyle\int1\,dx=x+C_0$.
 :::
-
-## Grasple exercises
