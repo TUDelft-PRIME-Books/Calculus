@@ -103,6 +103,7 @@ The property that the integrals of the products of these functions are zero when
 The formal definition of orthogonality for arbitrary functions is as follows:
 
 ::::::{prf:definition}
+:label: Def:Series:Orthogonality
 
 Let $f$ and $g$ be functions defined on an interval $(\alpha,\beta)$. The inner product of $f$ and $g$, denoted by $\langle f,g\rangle$, is defined as
 
@@ -113,11 +114,83 @@ $$
 If $\langle f,g\rangle=0$, then $f$ and $g$ are called **orthogonal**.
 ::::::
 
-## Fourier series
+So how can we use this orthogonality of the sine and cosine functions of {prf:ref}`Thm:Series:Orthogonality` to decompose periodic functions in terms of these functions? And which of these sine and cosine functions functions do we need?
 
-:::{todo}
-Write a bridge between the orthogonality of trigonometric functions and Fourier series.
+To introduce the answer to that question, first note that we already have a cosine function or a sine function, or for that matter any linear combination of these functions with the same period, the decomposition is already given by the function itself, similar to how a Taylor series of a polynomial is already given by the polynomial itself.
+
+Things become harder when we add a constant to such a function. This is investigated in the following example.
+
+::::{prf:example}
+:label: Ex:Series:IntroConstant
+
+Consider the function $f(x)=7+\frac12\cos\left(\frac{\pi x}{3}\right)$, which is a function that is periodic with fundamental period $6$. You can confirm this by taking a look at {numref}`Fig:Series:IntroConstant`.
+
+:::{figure} Images/Fig-Series-IntroConstant.png
+:name: Fig:Series:IntroConstant
+
+Graph of the function $f(x)=7+\frac12\cos\left(\frac{\pi x}{3}\right)$.
 :::
+
+Because of the constant term $7$ in the definition of $f$, $f$ oscillates around $7$ and not around $0$. This means that if we define the function $g$ by
+
+$$
+g(x)=f(x)-7=\frac12\cos\left(\frac{\pi x}{3}\right),
+$$
+
+then $g$ is a function that oscillates around $0$. Even better: $g$ is one of the functions of the form $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ with $n=1$ and $L=3$. But this also means that _if_ we would multiply $g$ by $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ and then integrate from $-3$ to $3$, we would get zero for all $n$ except for $n=1$ and $L=3$. Integrating $g$ gives in that case:
+
+\begin{align*}
+\int_{-3}^3g(x)\cos\left(\frac{\pi x}{3}\right)\,dx&=\int_{-3}^3\frac12\cos\left(\frac{\pi x}{3}\right)\cos\left(\frac{\pi x}{3}\right)\,dx\\
+&=\frac12\int_{-3}^3\cos^2\left(\frac{\pi x}{3}\right)\,dx \\
+&=\frac12\cdot3.
+\end{align*}
+
+But this also means that 
+
+$$
+\frac{1}{3}\int_{-3}^3g(x)\cos\left(\frac{\pi x}{3}\right)\,dx=\frac{1}{3}\cdot\frac{1}{2}\cdot3=\frac{1}{2},
+$$
+
+which is exactly the coefficient of $\displaystyle\cos\left(\frac{\pi x}{3}\right)$ in the definition of $g$. If we replace $g$ by $f$, then we find
+
+\begin{align*}
+\frac{1}{3}\int_{-3}^3f(x)\cos\left(\frac{\pi x}{3}\right)\,dx &= \frac{1}{3}\int_{-3}^3(g(x)+7)\cos\left(\frac{\pi x}{3}\right)\,dx \\
+&= \frac{1}{3}\int_{-3}^3g(x)\cos\left(\frac{\pi x}{3}\right)+7\cos\left(\frac{\pi x}{3}\right)\,dx \\
+&= \frac{1}{3}\int_{-3}^3g(x)\cos\left(\frac{\pi x}{3}\right)\,dx + \frac{1}{3}\int_{-3}^37\cos\left(\frac{\pi x}{3}\right)\,dx \\
+&= \frac{1}{2} + 0 \\
+&= \frac{1}{2},
+\end{align*}
+
+which is exactly the coefficient of $\displaystyle\cos\left(\frac{\pi x}{3}\right)$ in the definition of $f$.
+
+Now, instead of substituting multiplying $g$ by a cosine function, we can also just integrate $f$ from $-3$ to $3$ and then divide by $3$. This gives:
+
+$$
+\frac{1}{3}\int_{-3}^3f(x)\,dx=\frac{1}{3}\int_{-3}^3\left(7+\frac12\cos\left(\frac{\pi x}{3}\right)\right)\,dx=\frac{1}{3}\int_{-3}^37\,dx=\frac{1}{3}\cdot(6\cdot7)=2\cdot7.
+$$
+
+This last results is exactly two times the constant term $7$ in the definition of $f$.
+
+In  other words and symbols, we have found the following decomposition of $f$:
+
+$$
+f(x) = \frac{a_0}{2} + a_1\cos\left(\frac{\pi x}{3}\right),
+$$
+
+where
+
+\begin{align*}
+a_0 &= \frac{1}{3}\int_{-3}^3f(x)\,dx\quad(=2\cdot7), \\
+a_1 &= \frac{1}{3}\int_{-3}^3f(x)\cos\left(\frac{\pi x}{3}\right)\,dx\quad(= \frac{1}{2}).
+\end{align*}
+
+::::
+
+The idea of writing a function as a linear combination of trigonometric functions, where we exploit the orthogonality of these functions to find the coefficients of this linear combination, is the basis of the next section. Because we might not now _a priori_ which trigonometric functions we need, we will have to consider all of them. This is what we do in the next section and leads to an infinite linear combination of trigonometric functions, which is called a Fourier series.
+
+## Definition of Fourier series
+
+We start with giving a formal definition of Fourier series:
 
 ::::::{prf:definition} Fourier series
 :label: Def:Series:FourierSeries
@@ -127,35 +200,120 @@ $$
 \frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)
 $$
 
-with $L>0$ is called a **Fourier series**, named after the French mathematician [Jean-Baptiste Joseph Fourier (1768-1830)](https://en.wikipedia.org/wiki/Joseph_Fourier).
+with $L>0$ is called a **Fourier series**.
 ::::::
 
-Now, periodic functions can be expanded in terms of a Fourier series:
+Fourier series are named after the French mathematician [Jean-Baptiste Joseph Fourier (1768-1830)](https://en.wikipedia.org/wiki/Joseph_Fourier), who introduced this type of series in his work on the theory of heat.
+
+Before we can use Fourier series to decompose periodic functions, we need to introduce the concept of bounded variation, which is a technical condition on the function $f$ that we want to decompose. We will not go into the details of this concept, but it is sufficient to know that piecewise continuous functions are of bounded variation.
+
+:::{prf:definition}
+A function $f$ is called of **bounded variation** on an interval $[a,b]$ if there exists a number $M\geq 0$ such that for every partition $P=\{x_0,x_1,\ldots,x_n\}$ of the interval $[a,b]$ we have
+
+$$
+\sum_{i=1}^n|f(x_i)-f(x_{i-1})|\leq M.
+$$
+
+::::::
+
+This concept of bounded variation is important for the convergence of Fourier series, as we will see in {prf:ref}`Thm:Series:FourierConvergence`, and guarantees that our functions do not have too many oscillations and large jumps. For a special set of functions, bounded variation can be determined by checking a few conditions, as the following theorem states.
 
 ::::::{prf:theorem}
-:label: Thm:Series:Fourier
-If $f$ and $f'$ are piecewise continuous on an interval $[-L,L)$ and $f$ is defined outside that interval so that it is periodic with period $2L$, then we have:
+:label: Thm:Series:BoundedVariation
+If
 
-$$
-f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)
-$$
+- $f$ is a piecewise continuous function on an interval $[a,b]$;
 
-with $a_0=\displaystyle\frac{1}{L}\int_{-L}^Lf(x)\,dx$ and for $n=1,2,3,\ldots$
+- $f'$ only has discontinuities on $(a,b)$ on a finite set of points $J=\{x_1,x_2,\ldots,x_m\}$ for some integer $m\geq0$;
 
-$$
-a_n=\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx\quad\text{and}\quad b_n=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx.
-$$
+- $f'$ is piecewise continuous on $(a,b)\setminus J$;
 
-These are called the **Euler-Fourier formulas**, named after the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler) and the French mathematician [Jean-Baptiste Joseph Fourier (1768-1830)](https://en.wikipedia.org/wiki/Joseph_Fourier).
+- $\displaystyle\int_a^b|f'(x)|\,dx$ is finite;
+
+then $f$ is of bounded variation on $[a,b]$.
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:Series:Fourier`
-:class: solution, dropdown
-Let $f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)$, then integration gives
+The next example applies this theorem.
+
+::::{prf:example}
+:label: Ex:Series:BoundedVariation
+
+Consider the function $f$ defined by
+
+$$
+f(x) = \begin{cases}
+f(x+4), & \text{if } x \leq -2, \\
+0, & \text{if } -2 < x \leq 0, \\
+x, & \text{if } 0 < x \leq 2, \\
+f(x-4), & \text{if } x > 2.
+\end{cases}
+$$
+
+You can see the graph of this function in {numref}`Fig:Series:BoundedVariation`. We have also shown the graph of the derivative of this function, including the integral mentioned in {prf:ref}`Thm:Series:BoundedVariation`.
+
+:::{figure} Images/Fig-Series-BoundedVariation.png
+:name: Fig:Series:BoundedVariation
+
+The graph of the function $f$ and it's derivative $f'$ from {prf:ref}`Ex:Series:BoundedVariation`.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Series:BoundedVariation` with an applet. Note that in the current image the function is incorrect, only the shape is correct.
+:::
+
+The function $f$ is piecewise continuous on $[-2,2]$ and it is periodic with period $4$. The derivative of $f$ is piecewise continuous on $(-2,2)$ and has only one discontinuity at $x=0$. Moreover, we have 
+
+$$
+\int_{-2}^2 |f'(x)| \, dx = \int_{-2}^0 |0| \, dx + \int_0^2 |1| \, dx = 0 + 2 = 2.
+$$
+
+$f$ therefore satisfies the conditions of {prf:ref}`Thm:Series:BoundedVariation` and is of bounded variation on $[-2,2]$.
+
+::::
+
+In this section we will only consider functions that satisfy the conditions of this theorem, so all functions are of bounded variation. 
+
+With this in mind, we can now give the main result of this section:
+
+::::::{prf:definition}
+:label: Def:Series:FourierFormula
+
+If $f$ is piecewise continuous function on an interval $[-L,L)$ and $f$ is defined outside that interval so that it is periodic with period $2L$, then the **Fourier series** $g$ of $f$ is defined by
+
+$$
+g(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right),
+$$
+
+where 
+
+$$
+a_0=\frac{1}{L}\int_{-L}^Lf(x)\,dx,
+$$
+
+and for $n=1,2,3,\ldots$ 
+
+\begin{align*}
+a_n &= \frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx, \\
+b_n &= \frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx.
+\end{align*}
+
+The formulas for $a_n$, $n=0,1,2,3,\ldots$ and $b_n$, $n=1,2,3,\ldots$ are called the **Euler-Fourier formulas**, named after the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler) and the French mathematician [Jean-Baptiste Joseph Fourier (1768-1830)](https://en.wikipedia.org/wiki/Joseph_Fourier).
+::::::
+
+:::{admonition} Derivation of {prf:ref}`Def:Series:FourierFormula`
+:class: derivation, dropdown
+
+Ideally, we would like that $f$ and $g$ are the same function, so assume we could write $f$ as
+
+$$
+f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)
+$$
+
+Then integration gives
 
 \begin{align*}
 \int_{-L}^Lf(x)\,dx&=\frac{a_0}{2}\int_{-L}^L\,dx\\
-&{}\quad{}+\sum_{n=1}^{\infty}\left(a_n\int_{-L}^L\cos\left(\frac{n\pi x}{L}\right)\,dx+b_n\int_{-L}^L\sin\left(\frac{n\pi x}{L}\right)\,dx\right).
+&{}\quad\quad{}+\sum_{n=1}^{\infty}\left(a_n\int_{-L}^L\cos\left(\frac{n\pi x}{L}\right)\,dx+b_n\int_{-L}^L\sin\left(\frac{n\pi x}{L}\right)\,dx\right).
 \end{align*}
 Note that $\displaystyle\int_{-L}^L\,dx=2L$, $\displaystyle\int_{-L}^L\cos\left(\frac{n\pi x}{L}\right)\,dx=0$ and $\displaystyle\int_{-L}^L\sin\left(\frac{n\pi x}{L}\right)\,dx=0$. Hence we have
 
@@ -167,9 +325,10 @@ If we multiply by $\displaystyle\cos\left(\frac{m\pi x}{L}\right)$ and then inte
 
 \begin{align*}
 \int_{-L}^Lf(x)\cos\left(\frac{m\pi x}{L}\right)\,dx&=\frac{a_0}{2}\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\,dx\\
-&{}\quad{}+\sum_{n=1}^{\infty}a_n\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
-&{}\quad{}+\sum_{n=1}^{\infty}b_n\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx.
+&{}\quad\quad{}+\sum_{n=1}^{\infty}a_n\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
+&{}\quad\quad{}+\sum_{n=1}^{\infty}b_n\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx.
 \end{align*}
+
 Then {prf:ref}`Thm:Series:Orthogonality` implies that for $m=1,2,3,\ldots$
 
 $$
@@ -180,8 +339,8 @@ If we multiply by $\displaystyle\sin\left(\frac{m\pi x}{L}\right)$ and then inte
 
 \begin{align*}
 \int_{-L}^Lf(x)\sin\left(\frac{m\pi x}{L}\right)\,dx&=\frac{a_0}{2}\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\,dx\\
-&{}\quad{}+\sum_{n=1}^{\infty}a_n\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
-&{}\quad{}+\sum_{n=1}^{\infty}b_n\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx.
+&{}\quad\quad{}+\sum_{n=1}^{\infty}a_n\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
+&{}\quad\quad{}+\sum_{n=1}^{\infty}b_n\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx.
 \end{align*}
 Then {prf:ref}`Thm:Series:Orthogonality` implies that for $m=1,2,3,\ldots$
 
@@ -189,22 +348,103 @@ $$
 \int_{-L}^Lf(x)\sin\left(\frac{m\pi x}{L}\right)\,dx=b_mL\quad\Longleftrightarrow\quad b_m=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{m\pi x}{L}\right)\,dx.
 $$
 
+
+
 :::
 
 ::::::{prf:theorem} Convergence
-:label: Thm:Series:Convergence
-The Fourier series given in {prf:ref}`Thm:Series:Fourier` converges at all points $x$ to
+:label: Thm:Series:FourierConvergence
+
+If $f$ is a piecewise continuous function of bounded variation on an interval $[-L,L)$ and $f$ is defined outside that interval so that it is periodic with period $2L$, then the Fourier series $g$ given in {prf:ref}`Def:Series:FourierFormula` converges at all points $x$ to
 
 $$
-\frac{f(x-)+f(x+)}{2},
+g(x)=\frac{f(x^-)+f(x^+)}{2},
 $$ 
 
-where $f(x-)=\lim\limits_{t\to x^{-}}f(t)$ and $f(x+)=\lim\limits_{t\to x^{+}}f(t)$. At points $x$, where $f$ is continuous, we have: $\lim\limits_{t\to x^{-}}f(t)=f(x)=\lim\limits_{t\to x^{+}}f(t)$ and therefore: $\displaystyle\frac{f(x-)+f(x+)}{2}=f(x)$.
+where $f(x^-)=\lim\limits_{t\to x^{-}}f(t)$ and $f(x^+)=\lim\limits_{t\to x^{+}}f(t)$.
+
+At points $x$ where $f$ is continuous, we have $\lim\limits_{t\to x^{-}}f(t)=f(x)=\lim\limits_{t\to x^{+}}f(t)$, and therefore $g(x) = \displaystyle\frac{f(x^-)+f(x^+)}{2}=f(x)$.
 ::::::
+
+We omit a proof of this theorem, as this is beyond the scope of this course. 
+
+We do however use the consequences of this theorem in the remainder of this section, starting with the following important example.
+
+::::{prf:example}
+:label: Ex:Series:Fourier1
+
+We revisit the function $f$ from {prf:ref}`Ex:Series:BoundedVariation`, which was defined by
+
+$$
+f(x) = \begin{cases}
+f(x+4), & \text{if } x \leq -2, \\
+0, & \text{if } -2 < x \leq 0, \\
+x, & \text{if } 0 < x \leq 2, \\
+f(x-4), & \text{if } x > 2.
+\end{cases}
+$$
+
+We start with calculating the Fourier coefficients of $f$. Using $L=2$, we have
+
+\begin{align*}
+a_0 &= \frac{1}{2}\int_{-2}^2f(x)\,dx \\
+&= \frac{1}{2}\int_{-2}^0 0 \, dx + \frac{1}{2}\int_0^2 x \, dx \\
+&= \frac{1}{2}\cdot\frac{4}{2} \\
+&= 1, \\
+a_n &= \frac{1}{2}\int_{-2}^2f(x)\cos\left(\frac{n\pi x}{2}\right)\,dx \\
+&= \frac{1}{2}\int_0^2 x\cos\left(\frac{n\pi x}{2}\right)\,dx \\
+&= \frac{2}{n^2\pi^2}\left(n\pi\sin(n\pi)+\cos(n\pi)-1\right) \\
+&= \frac{2}{n^2\pi^2}\left(0+(-1)^n-1\right) \\
+&= \begin{cases}
+0, & \text{if } n \text{ is even}, \\
+\frac{-4}{n^2\pi^2}, & \text{if } n \text{ is odd},
+\end{cases} \\
+b_n &= \frac{1}{2}\int_{-2}^2f(x)\sin\left(\frac{n\pi x}{2}\right)\,dx \\
+&= \frac{1}{2}\int_0^2 x\sin\left(\frac{n\pi x}{2}\right)\,dx \\
+&= \frac{2}{n^2\pi^2}\left(\sin(n\pi)-n\pi\cos(n\pi)\right) \\
+&= \frac{2}{n^2\pi^2}\left(0-n\pi(-1)^n\right) \\
+&= \begin{cases}
+-\frac{2}{n\pi}, & \text{if } n \text{ is even}, \\
+\frac{2}{n\pi}, & \text{if } n \text{ is odd}.
+\end{cases}
+\end{align*}
+
+:::{todo}
+Check the coefficients of the Fourier series of $f$ from {prf:ref}`Ex:Series:Fourier1` and correct them if necessary. The current coefficients are not : the result is $f(-x)$ instead.
+
+WolframAlpha gives the following Fourier series for $f$:
+
+```
+1/2+Sum[((2 (-1 + Cos[n Pi] + n Pi Sin[n Pi]))/(n^2 Pi^2))*cos(nπx/2)+((-4 n Pi Cos[n Pi] + 4 Sin[n Pi])/(2 n^2 Pi^2))*sin(nπx/2),{n,1,100}]
+```
+:::
+
+Instead of putting all these results together in one big formula, we choose to visualise this result in {numref}`Fig:Series:Fourier1`, where we have plotted the Fourier series of $f$ truncated at $N=5$ together with the function $f$ itself. You can decrease or increase the number of terms in the series to see how the approximation changes by changing the value of $N$.
+
+:::{figure} Images/Fig-Series-Fourier1.png
+:name: Fig:Series:Fourier1
+
+The graph of the function $f$ from {prf:ref}`Ex:Series:BoundedVariation` together with the Fourier series of $f$ truncated at $N=5$ (initially).
+:::
+
+:::{todo}
+Replace {numref}`Fig:Series:Fourier1` with an applet, where you can change the value of $N$ to see how the approximation changes.
+
+No Fourier series are shown in the temporary image.
+:::
+
+Note that for larger $N$...
+
+:::{todo}
+Explain the behaviour of the Fourier series of $f$ from {prf:ref}`Ex:Series:Fourier1` for larger $N$ for different points. In particular, explain the Gibbs phenomenon, which is the phenomenon that the Fourier series of a function with jump discontinuities overshoots at these discontinuities and does not converge to the function at these points.
+:::
+
+::::
+
 
 ::::::{prf:theorem} Parseval's identity
 :label: Thm:Series:Parseval
-For the Fourier series given in {prf:ref}`Thm:Series:Fourier` we also have
+For the Fourier series given in {prf:ref}`Def:Series:FourierFormula` that converge we also have
 
 $$
 \frac{1}{L}\int_{-L}^L\left\{f(x)\right\}^2\,dx=\frac{a_0^2}{2}+\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right).
@@ -214,7 +454,7 @@ This is called **Parseval's identity**, named after the French mathematician [Ma
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Series:Parseval`
-:class: solution, dropdown
+:class: tudproof, dropdown
 Let $f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)$, then multiplication by $f(x)$ and integration gives
 
 \begin{align*}
@@ -226,6 +466,10 @@ Let $f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac
 :::
 
 ## Fourier cosine and sine series
+
+:::{todo}
+Rewrite from here downwards, as the current text is not very clear and does not give a good motivation for the Fourier cosine and sine series.
+:::
 
 In {prf:ref}`Thm:Integration:OddEven` we have seen: let $g$ be a continuous function defined on $[-L,L]$. Then we have
 
