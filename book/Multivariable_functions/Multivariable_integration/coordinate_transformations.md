@@ -620,4 +620,256 @@ in the $xy$-plane. Hence we have
 \iint\limits_Rf(x,y)\,dA&=\iint\limits_Sf(r\cos(\theta),r\sin(\theta))\left|\frac{\partial(x,y)}{\partial(r,\theta)}\right|\,dr\,d\theta\\
 &=\int_{\alpha}^{\beta}\int_a^bf(r\cos(\theta),r\sin(\theta))\,r\,dr\,d\theta.
 \end{align*} 	 
+
+## More applications
+
+In {eq}`Eq:MultivariableIntegration:Area` we have seen that the integral $\displaystyle\iint\limits_D1\,dA$ denotes the area of a region $D$. The integrals
+
+:::{math}
+:label: Eq:MultivariableIntegration:Moments
+
+\iint\limits_Dx\,dA\quad\text{and}\quad\iint\limits_Dy\,dA
+:::
+
+are called the **moments** of the region $D$ about the $x$-axis and the $y$-axis, respectively. These give rise to the **centroid** $(\overline{x},\overline{y})$ of the region $D$, where
+
+:::{math}
+:label: Eq:MultivariableIntegration:CenterOfMass
+
+\overline{x}=\frac{1}{\text{area}(D)}\iint\limits_Dx\,dA\quad\text{and}\quad\overline{y}=\frac{1}{\text{area}(D)}\iint\limits_Dy\,dA.
+:::
+
+:::::{prf:example} The centroid of a cardioid
+:label: Ex:MultivariableIntegration:Cardioid
+
+Let us find the centroid of the cardioid given by $r=2+2\cos(\theta)$ in polar coordinates.
+
+```{figure} Images/cardioid.png
+---
+width: 50%
+name: cardioid
+align: center
+---
+The centroid of the cardioid given by $r=2+2\cos(\theta)$ in polar coordinates.
+```
+
+Because of the symmetry we conclude that the centroid is $(\overline{x},\overline{y})$ with $\overline{y}=0$. Now we have using $\cos(2\theta)=2\cos^2(\theta)-1$:
+
+\begin{align*}
+\text{area}(D)&=\iint\limits_D1\,dA\\
+&=\int_0^{2\pi}\int_0^{2+2\cos(\theta)}r\,dr\,d\theta\\
+&=\int_0^{2\pi}\frac{1}{2}(2+2\cos(\theta))^2\,d\theta\\
+&=\int_0^{2\pi}\left(2+4\cos(\theta)+2\cos^2(\theta)\right)\,d\theta\\
+&=\int_0^{2\pi}\left(3+4\cos(\theta)+\cos(2\theta)\right)\,d\theta\\
+&=\bigg[3\theta+4\sin(\theta)+\frac{1}{2}\sin(2\theta)\bigg]_{\theta=0}^{2\pi}\\
+&=6\pi
+\end{align*} 	
  
+and
+
+\begin{align*}
+\iint\limits_Dx\,dA&=\int_0^{2\pi}\int_0^{2+2\cos(\theta)}r\cos(\theta)\cdot r\,dr\,d\theta\\
+&=\int_0^{2\pi}\frac{1}{3}(2+2\cos(\theta))^3\cos(\theta)\,d\theta\\
+&=\int_0^{2\pi}\left(\frac{8}{3}\cos(\theta)+8\cos^2(\theta)+8\cos^3(\theta)+\frac{8}{3}\cos^4(\theta)\right)\,d\theta\\
+&=0+8\pi+0+2\pi\\
+&=10\pi.
+\end{align*} 	
+ 
+We conclude that $\overline{x}=\frac{10\pi}{6\pi}=\frac{5}{3}$. So, the centroid is $(\frac{5}{3},0)$.
+:::::
+
+In the next example we show that it might be possible to apply different coordinate transformations.
+
+:::::{prf:example}
+:label: Ex:MultivariableIntegration:CoordinateTransformationsExample
+
+Consider the region $D$ enclosed by the circles $x^2+y^2=1$ and $x^2+y^2=4$ and the lines $y=\displaystyle\frac{x}{\sqrt{3}}$ and $y=x\sqrt{3}$ in the first quadrant:
+
+```{figure} Images/change.png
+---
+width: 50%
+name: change
+align: center
+---
+The region $D$ enclosed by the circles $x^2+y^2=1$ and $x^2+y^2=4$ and the lines $y=\displaystyle\frac{x}{\sqrt{3}}$ and $y=x\sqrt{3}$ in the first quadrant.
+```
+
+Using polar coordinates we obtain for the area of $D$:
+
+\begin{align*}
+\textrm{area}(D)&=\iint\limits_R1\,dA\\
+&=\int_{\arctan\left(\frac{1}{\sqrt{3}}\right)}^{\arctan\left(\sqrt{3}\right)}\int_1^2r\,dr\,d\theta\\
+&=\int_{\frac{1}{6}\pi}^{\frac{1}{3}\pi}d\theta\int_1^2r\,dr\\
+&=\left(\frac{1}{3}\pi-\frac{1}{6}\pi\right)\bigg[\frac{1}{2}r^2\bigg]_{r=1}^2||
+&=\frac{1}{6}\pi\cdot\frac{3}{2}=\frac{1}{4}\pi.
+\end{align*}
+ 
+Instead it is also possible to apply the change of variables $u=x^2+y^2$ and $v=\displaystyle\frac{y}{x}$ which transforms the region
+
+$$
+D=\{(x,y)\,|\,1\leq x^2+y^2\leq4,\;0 < \displaystyle\frac{x}{\sqrt{3}}\leq y\leq x\sqrt{3}\}
+$$
+
+in the first quadrant of the $xy$-plane into the rectangular region
+
+$$
+R=\{(u,v)\,|\,1\leq u\leq 4,\;\displaystyle\frac{1}{\sqrt{3}}\leq v\leq\sqrt{3}\}
+$$
+ 
+in the $uv$-plane. Note that
+
+\begin{align*}
+&\frac{\partial(u,v)}{\partial(x,y)}=\begin{vmatrix}\displaystyle\frac{\partial u}{\partial x} & \displaystyle\frac{\partial u}{\partial y}\\
+\displaystyle\frac{\partial v}{\partial x} & \displaystyle\frac{\partial v}{\partial y}\end{vmatrix}
+=\begin{vmatrix}2x & 2y\\-\displaystyle\frac{y}{x^2} & \displaystyle\frac{1}{x}\end{vmatrix}=2+2\,\frac{y^2}{x^2}=2(1+v^2)\\
+&{}\quad\Longrightarrow\quad
+\frac{\partial(x,y)}{\partial(u,v)}=\frac{1}{\displaystyle\frac{\partial(u,v)}{\partial(x,y)}}=\frac{1}{2(1+v^2)}.
+\end{align*}
+ 
+This leads to
+
+\begin{align*}
+\textrm{area}(D)&=\iint\limits_R1\,dA\\
+&=\int_{\frac{1}{\sqrt{3}}}^{\sqrt{3}}\int_1^4\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv\\
+&=\frac{1}{2}\int_1^4du\,\int_{\frac{1}{\sqrt{3}}}^{\sqrt{3}}\frac{dv}{1+v^2}\\
+&=\frac{3}{2}\left(\arctan\left(\sqrt{3}\right)-\arctan\left(\frac{1}{\sqrt{3}}\right)\right)\\
+&=\frac{3}{2}\left(\frac{1}{3}\pi-\frac{1}{6}\pi\right)\\
+&=\frac{3}{2}\cdot\frac{1}{6}\pi=\frac{1}{4}\pi.
+\end{align*} 
+ 
+:::::
+
+## Proofs of the Basel problem
+
+The Basel problem is to find the sum of the convergent series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$. The problem is named after the hometown of the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler), who solved the problem in 1734. Earlier we have seen that this is a special case of the {numref}`Riemann zeta function <Sec:Series:TaylorSeries>` $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\textrm{Re}(s)>1$. We only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. However, in general it is not very easy to find its sum. The Basel problem is to find the sum of $\zeta(2)$.
+
+::::::{admonition} First proof of the Basel problem
+:class: tudproof
+
+A possible proof is based on the observation that $\displaystyle\int_0^1t^{n-1}\,dt=\frac{1}{n}$ for $n>0$.
+
+Then we have using the geometric series $\displaystyle\sum_{n=1}^{\infty}t^{n-1}=\frac{1}{1-t}$ for $|t|<1$:
+
+$$ 
+\zeta(2)=\sum_{n=1}^{\infty}\frac{1}{n^2}=\int_0^1\int_0^1\sum_{n=1}^{\infty}(xy)^{n-1}\,dx\,dy
+=\int_0^1\int_0^1\frac{dx\,dy}{1-xy}. 
+$$ 
+ 
+In order to evaluate this iterated integral, we apply the substitution $u=(x+y)/2$ and $v=(x-y)/2$
+or $x=u+v$ and $y=u-v$ with Jacobian
+
+$$
+\frac{\partial(x,y)}{\partial(u,v)}=\begin{vmatrix}\displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial x}{\partial v}\\
+\displaystyle\frac{\partial y}{\partial u} & \displaystyle\frac{\partial y}{\partial v}\end{vmatrix}
+=\begin{vmatrix}1 & 1\\1 & -1\end{vmatrix}=-1-1=-2,
+$$ 
+ 
+to obtain that
+
+\begin{align*}
+\int_0^1\int_0^1\frac{dx\,dy}{1-xy}&=\iint\limits_S\frac{1}{1-(u+v)(u-v)}\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv\\
+&=2\iint\limits_S\frac{du\,dv}{1-u^2+v^2}, 
+\end{align*}
+ 
+where $S$ is the square with vertices $(0,0)$, $(\frac{1}{2},-\frac{1}{2})$, $(1,0)$ and $(\frac{1}{2},\frac{1}{2})$:
+
+```{figure} Images/square.png
+---
+width: 50%
+name: square
+align: center
+---
+The square $S$.
+```
+
+Using the symmetry we obtain that
+
+\begin{align*}
+\zeta(2)&=2\iint\limits_S\frac{du\,dv}{1-u^2+v^2}\\
+&=4\int_0^{\frac{1}{2}}\int_0^u\frac{dv\,du}{1-u^2+v^2}
++4\int_{\frac{1}{2}}^1\int_0^{1-u}\frac{dv\,du}{1-u^2+v^2}\\
+&=4\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{u}{\sqrt{1-u^2}}\right)\,du\\
+&{}\quad{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du.
+\end{align*} 
+ 
+Observe that
+
+$$
+\arctan\left(\frac{u}{\sqrt{1-u^2}}\right)=\arctan(u)
+$$
+
+and
+
+$$
+2\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)=\arccos(u)
+$$ 
+
+for $-1 < u < 1$. This implies that
+
+\begin{align*}
+\zeta(2)&=4\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{u}{\sqrt{1-u^2}}\right)\,du\\
+&{}\quad{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du\\
+&=4\int_0^{\frac{1}{2}}\frac{\arcsin(u)}{\sqrt{1-u^2}}\,du+2\int_{\frac{1}{2}}^1\frac{\arccos(u)}{\sqrt{1-u^2}}\,du\\
+&=2\arcsin^2(u)\bigg|_0^{\frac{1}{2}}-\arccos^2(u)\bigg|_{\frac{1}{2}}^1\\
+&=2\left(\frac{1}{6}\pi\right)^2+\left(\frac{1}{3}\pi\right)^2\\
+&=\frac{1}{18}\pi^2+\frac{1}{9}\pi^2\\
+&=\frac{1}{6}\pi^2.
+\end{align*} 
+ 
+::::::
+
+::::::{admonition} Second proof of the Basel problem
+:class: tudproof
+
+Another proof is based on the observation that
+
+$$ 
+\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}=\sum_{n=1}^{\infty}\frac{1}{n^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}
+=\left(1-\frac{1}{2^s}\right)\zeta(s). 
+$$ 
+ 
+Observe that $\displaystyle\int_0^1x^{2n}\,dx=\frac{1}{2n+1}$ for $n>0$.
+
+Hence we have using the geometric series $\displaystyle\sum_{n=0}^{\infty}t^n=\frac{1}{1-t}$ for $|t|<1$: 
+ 
+$$
+\frac{3}{4}\zeta(2)=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^2}=\int_0^1\int_0^1\sum_{n=0}^{\infty}(xy)^{2n}\,dx\,dy
+=\int_0^1\int_0^1\frac{dx\,dy}{1-x^2y^2}.
+$$ 
+ 
+Applying the change of variables $x=\sin(u)/\cos(v)$ and $y=\sin(v)/\cos(u)$ with Jacobian
+
+\begin{align*} 
+\frac{\partial(x,y)}{\partial(u,v)}&=\begin{vmatrix}\displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial x}{\partial v}\\
+\displaystyle\frac{\partial y}{\partial u} & \displaystyle\frac{\partial y}{\partial v}\end{vmatrix}\\
+&=\begin{vmatrix}\displaystyle\frac{\cos(u)}{\cos(v)} & \displaystyle\frac{\sin(u)\sin(v)}{\cos^2(v)}\\
+\displaystyle\frac{\sin(u)\sin(v)}{\cos^2(u)} & \displaystyle\frac{\cos(v)}{\cos(u)}\end{vmatrix}\\
+&=1-\frac{\sin^2(u)\sin^2(v)}{\cos^2(u)\cos^2(v)}\\
+&=1-x^2y^2, 
+\end{align*}
+ 
+we obtain
+
+$$
+\int_0^1\int_0^1\frac{dx\,dy}{1-x^2y^2}=\iint\limits_Tdu\,dv,
+$$ 
+ 
+where $T=\{(u,v)\,|\,u>0,\;v>0,\;u+v=\pi/2\}$:
+
+```{figure} Images/triangle.png
+---
+width: 50%
+name: triangle
+align: center
+---
+The triangle $T$.
+```
+
+Hence we have
+
+\begin{align*}
+&\frac{3}{4}\zeta(2)=\iint\limits_Tdu\,dv=\textrm{area}(T)=\frac{1}{2}\cdot\frac{1}{4}\pi^2=\frac{1}{8}\pi^2\\
+&{}\quad\Longrightarrow\quad\zeta(2)=\frac{4}{3}\cdot\frac{1}{8}\pi^2=\frac{1}{6}\pi^2. 
+\end{align*}
+
+::::::
