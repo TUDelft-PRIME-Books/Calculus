@@ -469,7 +469,7 @@ If a Fourier series converges to a function for all $x$, then we have the follow
 
 ::::::{prf:theorem} Parseval's identity
 :label: Thm:Series:Parseval
-For a Fourier series given as in {prf:ref}`Def:Series:FourierFormula` that converge for all $x$ in $[-L,L]$ to $f(x)$, we also have
+For a Fourier series given as in {prf:ref}`Def:Series:FourierFormula` that converge for all $x$ in $[-L,L]$ to $f(x)$ where $f$ is continuous, we also have
 
 $$
 \frac{1}{L}\int_{-L}^L\left\{f(x)\right\}^2\,dx=\frac{a_0^2}{2}+\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right).
@@ -481,14 +481,14 @@ This is called **Parseval's identity**, named after the French mathematician [Ma
 :::{admonition} Proof of {prf:ref}`Thm:Series:Parseval`
 :class: tudproof, dropdown
 
-Because the Fourier series converges to $f$ for all $x$ in $[-L,L]$, we have
+Because the Fourier series converges to $f$ for all $x$ in $[-L,L]$ where $f$ is continuous, we have
 
 
 $$
 f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right),
 $$
 
-for all $x$ in $[-L,L]$
+for all $x$ in $[-L,L]$ where $f$ is continuous.
 
 Multiplication of this expression by $f(x)$ and integration over $[-L,L]$ then gives
 
@@ -498,87 +498,34 @@ Multiplication of this expression by $f(x)$ and integration over $[-L,L]$ then g
 &{}\quad\quad{}+\sum_{n=1}^{\infty}b_n\cdot\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{a_0^2}{2}+\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right).
 \end{align*}
+
+Note that we assume here that the locations where $f$ is not continuous do not contribute to the value of the integral.
 :::
 
 Let us do one more example that touches all subjects we explored in this section, including the Fourier series, the convergence of Fourier series and Parseval's identity.
 
-::::{prf:example}
-:label: Ex:Series:CompleteFourier
-
-Some even function that drops the sine part.
-::::
-
-## Fourier cosine and sine series
-
-:::{todo}
-Rewrite from here downwards, as the current text is not very clear and does not give a good motivation for the Fourier cosine and sine series.
-:::
-
-In {prf:ref}`Thm:Integration:OddEven` we have seen: let $g$ be a continuous function defined on $[-L,L]$. Then we have
-
-(a) If $g$ is *odd*, id est $g(-x)=-g(x)$ for all $x$, then: $\displaystyle\int_{-L}^Lg(x)\,dx=0$.
-
-(b) If $g$ is *even*, id est $g(-x)=g(x)$ for all $x$, then: $\displaystyle\int_{-L}^Lg(x)\,dx=2\int_0^Lg(x)\,dx$.
-
-Note that this also holds when $g$ is piecewise continuous. Moreover, we have the following rules of calculation:
-
-* If $g$ is even and $h$ is even, then $g\cdot h$ is even;
-
-* If $g$ is even and $h$ is odd, then $g\cdot h$ is odd;
-
-* If $g$ is odd and $h$ is odd, then $g\cdot h$ is even.
-
-Hence, we have: if $f$ is *even*, then we have $\displaystyle\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx=0$ and
-
-$$
-\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx=\frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx.
-$$
-
-And, if $f$ is *odd*, then we have $\displaystyle\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx=0$ and 
-
-$$
-\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx=\frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx.
-$$
-
-::::::{prf:theorem} Fourier cosine series
-:label: Thm:Series:FourierCosineSeries
-If $f$ is an *even* function on $(-L,L)$ and oustide that interval periodic with period $2L$, then we have:
-
-$$
-f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos\left(\frac{n\pi x}{L}\right)
-$$
-
-with $a_0=\displaystyle\frac{2}{L}\int_0^Lf(x)\,dx$ and $a_n=\displaystyle\frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx$ for $n=1,2,3,\ldots$.
-::::::
-
-::::::{prf:theorem} Fourier sine series
-:label: Thm:Series:FourierSineSeries
-If $f$ is an *odd* function on $(-L,L)$ and oustide that interval periodic with period $2L$, then we have:
-
-$$
-f(x)=\sum_{n=1}^{\infty}b_n\sin\left(\frac{n\pi x}{L}\right)
-$$
-
-with $b_n=\displaystyle\frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx$ for $n=1,2,3,\ldots$.
-::::::
-
-In many applications the function $f$ is defined on an interval $[0,L]$ with $L>0$. For instance, when $f$ describes the motion of a vibrating string with length $L$. Then this function can be defined to be *even* on the interval $(-L,L)$ and outside that interval periodically with period $2L$, but it can also be defined to be *odd* on the interval $(-L,L)$ and outside that interval periodically with period $2L$. So, such a function can be written as a Fourier cosine series, but also as a Fourier sine series:
-
-$$
-f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos\left(\frac{n\pi x}{L}\right)=\sum_{n=1}^{\infty}b_n\sin\left(\frac{n\pi x}{L}\right)
-$$
-
-with $a_0=\displaystyle\frac{2}{L}\int_0^Lf(x)\,dx$ and for $n=1,2,3,\ldots$
-
-$$
-a_n=\frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx\quad\text{and}\quad b_n=\frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx.
-$$
-
 ::::::{prf:example}
 :label: Ex:Series:FourierExample1
-Consider $f(x)=\begin{cases}0,&-\pi\leq x < 0\\1,&0\leq x < \pi\end{cases}$ and $f(x+2\pi)=f(x)$.
+Consider the function $f$ defined as
 
-Then: $L=\pi$ and $a_0=\displaystyle\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\,dx=\frac{1}{\pi}\int_0^{\pi}dx=1$. Further we have for $n=1,2,3,\ldots$
+$$
+f(x)=\begin{cases}
+f(x+2\pi), & x < -\pi, \\
+0,&-\pi\leq x < 0, \\
+1,&0\leq x < \pi, \\
+f(x-2\pi), & x \geq \pi.
+\end{cases}
+$$
+
+This function is an example of a square wave, which is a function that jumps between two values, in this case $0$ and $1$.
+
+Then $L=\pi$ and
+
+$$
+a_0=\displaystyle\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\,dx=\frac{1}{\pi}\int_0^{\pi}dx=1.
+$$
+
+Further we have for $n=1,2,3,\ldots$
 
 $$
 a_n=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\cos(nx)\,dx=\frac{1}{\pi}\int_0^{\pi}\cos(nx)\,dx=\frac{1}{n\pi}\sin(nx)\bigg|_0^{\pi}=0
@@ -586,28 +533,33 @@ $$
 
 and
 
-$$\begin{align*}
+\begin{align*}
 b_n&=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx=\frac{1}{\pi}\int_0^{\pi}\sin(nx)\,dx=-\frac{1}{n\pi}\cos(nx)\bigg|_0^{\pi}\\
 &=\frac{1-\cos(n\pi)}{n\pi}=\frac{1-(-1)^n}{n\pi}.
 \end{align*}
-Note that $b_{2k}=0$ and $b_{2k-1}=\displaystyle\frac{2}{(2k-1)\pi}$ for $k=1,2,3,\ldots$. Then we have that
+
+Note that $b_{2k}=0$ and $b_{2k-1}=\displaystyle\frac{2}{(2k-1)\pi}$ for $k=1,2,3,\ldots$. Then we have that the fourier series $g$ of $f$ is given by
 
 $$
-f(x)=\frac{1}{2}+\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n\pi}\sin(nx)=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin(2k-1)x}{2k-1}.
+g(x)=\frac{1}{2}+\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n\pi}\sin(nx)=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin(2k-1)x}{2k-1}.
 $$
 
-A plot of some partial sums of this series:
+A plot of some partial sums of this series can be found in {numref}`Fig:Series:SquareWaveFourier`.
 
 :::{figure} Images/fourier1.png
-:name: fourier1
+:name: Fig:Series:SquareWaveFourier
 :width: 50%
 
-A square wave.
+A square wave and a partial sum of its Fourier series.
 :::
 
-This is an example of a *square wave*. Around the jump points the **Gibbs phenomenon** (see below) is visible.
+:::{todo}
+Replace {numref}`Fig:Series:SquareWaveFourier` with an applet, where you can change the value of $N$ to see how the approximation changes.
+:::
 
-For $x=\frac{1}{2}\pi$ Fourier's theorem implies:
+Notice that around the jump points the _Gibbs phenomenon_ is visible.
+
+At $x=\frac{1}{2}\pi$ the function $f$ is continuous, so the Fourier series $g$ converges to $f(x)$, which implies:
 
 \begin{align*}
 1=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin(k-\frac{1}{2})\pi}{2k-1}&\quad\Longleftrightarrow\quad
@@ -615,43 +567,172 @@ For $x=\frac{1}{2}\pi$ Fourier's theorem implies:
 &\quad\Longleftrightarrow\quad
 \sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}=\frac{1}{4}\pi.
 \end{align*}
-Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
+
+Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we can also find that
 
 \begin{align*}
 &\frac{1}{2}+\frac{4}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{\pi}\int_{-\pi}^{\pi}\{f(x)\}^2\,dx=\frac{1}{\pi}\int_0^{\pi}dx=1\\
 &{}\quad\Longrightarrow\quad\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{8}\pi^2.
 \end{align*}
+
 ::::::
+
+## Fourier cosine and sine series
+
+In the last example we have seen that the cosine part of the Fourier series of the square wave disappeared. This can be explained by the behavior of odd and even functions.
+
+The definition of _odd_ and _even_ was given as:
+
+:::{fetch} {prf:ref}`Def:PropertiesFunctions:EvenOdd`
+:::
+
+Moreover, we have the following rules of calculation:
+
+* If $g$ is even and $h$ is even, then $g\cdot h$ is even;
+
+* If $g$ is even and $h$ is odd, then $g\cdot h$ is odd;
+
+* If $g$ is odd and $h$ is odd, then $g\cdot h$ is even.
+
+In {numref}`Sec:Integration:Substitution` we have seen:
+
+:::{fetch} {prf:ref}`Thm:Integration:OddEven`
+:::
+
+Note that this also holds when $g$ is piecewise continuous.
+
+Hence, we have, if $f$ is *even* on $(-L,L)$, that
+
+$$
+\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx=0
+$$
+
+and
+
+$$
+\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx=\frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx.
+$$
+
+And, if $f$ is *odd* on $(-L,L)$, then we have
+
+$$
+\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx=0
+$$
+
+and
+
+$$
+\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx=\frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx.
+$$
+
+
+The above shows that if $f$ is periodic with period $2L$ and even on $(-L,L)$, in the Fourier series of $f$ the sine part disappears, and if $f$ is periodic with period $2L$ and odd on $(-L,L)$, in the Fourier series of $f$ the cosine part disappears. This gives us the following two special cases of Fourier series, which are called **Fourier cosine series** and **Fourier sine series**.
+
+::::::{prf:theorem} Fourier cosine series
+:label: Thm:Series:FourierCosineSeries
+If $f$ is an *even* function on $(-L,L)$ and periodic with period $2L$, then the Fourier series $g$ of $f$ is given by
+
+$$
+g(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos\left(\frac{n\pi x}{L}\right)
+$$
+
+with $a_0=\displaystyle\frac{2}{L}\int_0^Lf(x)\,dx$ and $a_n=\displaystyle\frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx$ for $n=1,2,3,\ldots$.
+::::::
+
+::::::{prf:theorem} Fourier sine series
+:label: Thm:Series:FourierSineSeries
+If $f$ is an *odd* function on $(-L,L)$ and periodic with period $2L$, then the Fourier series $g$ of $f$ is given by
+
+$$
+g(x)=\sum_{n=1}^{\infty}b_n\sin\left(\frac{n\pi x}{L}\right)
+$$
+
+with $b_n=\displaystyle\frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx$ for $n=1,2,3,\ldots$.
+::::::
+
+
+
+If $f$ is neither even nor odd, but $g(x)=f(x)-\bar{f}$ is odd, with $\bar{f}=\displaystyle\frac{1}{2L}\int_{-L}^Lf(x)\,dx$, then we can write $f$ as a Fourier sine series plus $\bar{f}$. This is exactly what happened in {prf:ref}`Ex:Series:FourierExample1`, where the Fourier series $g$ of $f$ was given by
+
+$$
+g(x)=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin(2k-1)x}{2k-1}.
+$$
+
+The constant term $\frac{1}{2}$ is the average value of $f$ over $[-\pi,\pi]$, i.e., $\bar{f}$, and the rest of the Fourier series is a Fourier sine series. To see that the rest of the Fourier series is a Fourier sine series, we can investigate whether the function $h$ defined by
+
+$$
+h(x) = f(x) - \bar{f} = f(x) - \frac{1}{2} = 
+\begin{cases}
+f(x+2\pi)-\frac12, & x < -\pi, \\
+-\frac12,&-\pi\leq x < 0, \\
+\frac12,&0\leq x < \pi, \\
+f(x-2\pi)-\frac12, & x \geq \pi.
+\end{cases}
+$$
+
+is indeed odd on $(-\pi,\pi)$. We have for $x\in(0,\pi)$ that
+
+$$
+h(x) = \frac12,\quad\text{and}\quad h(-x) = -\frac12 = -h(x).
+$$
+
+This shows that $h$ is odd on $(-\pi,\pi)$, and therefore the Fourier series $g$ of $f$ can be written as a Fourier sine series plus $\bar{f}$.
+
+Let us investigate some other functions and their Fourier series.
+
+
 
 ::::::{prf:example}
 :label: Ex:Series:FourierExample2
-Consider $f(x)=2x$ for $-1\leq x\leq 1$ and $f(x+2)=f(x)$.
+Consider the function $f$ defined by
 
-Then: $L=1$ and $f$ is odd, so $a_n=0$ for $n=0,1,2,\ldots$ and
+$$
+f(x) = \begin{cases}
+f(x+2), & x < -1, \\
+2x, & -1 \leq x \leq 1, \\
+f(x-2), & x > 1.
+\end{cases}
+$$
+
+Then $L=1$ and $f$ is odd on $(-1,1)$. This means that the Fourier series of $f$ is a Fourier sine series, and we only have to calculate the Fourier sine coefficients $b_n$ for $n=1,2,3,\ldots$:
 
 \begin{align*}
 b_n&=\frac{1}{1}\int_{-1}^1f(x)\sin(n\pi x)\,dx=\int_{-1}^12x\sin(n\pi x)\,dx\\
 &=-\frac{1}{n\pi}\int_{-1}^12x\,d\cos(n\pi x)\\
 &=-\frac{2x\cos(n\pi x)}{n\pi}\bigg|_{-1}^1+\frac{2}{n\pi}\int_{-1}^1\cos(n\pi x)\,dx\\
-&=-\frac{4\cos(n\pi)}{n\pi}=\frac{4(-1)^{n+1}}{n\pi},\quad n=1,2,3,\ldots.
+&=-\frac{4\cos(n\pi)}{n\pi}=\frac{4(-1)^{n+1}}{n\pi}.
 \end{align*}
-Hence: $f(x)=\displaystyle\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(n\pi x)$.
+
+Hence the Fourier series $g$ of $f$ is given by
+
+$$
+g(x)=\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(n\pi x).
+$$
+
+In {numref}`Fig:Series:SawToothFourier` you can see a plot of some partial sums of this Fourier series together with the function $f$ itself. You can change the value of $N$ to see how the approximation changes.
+
+The function $f$ is an example of a sawtooth wave, which is a function that changes linearly and then jumps down/up.
 
 :::{figure} Images/fourier2.png
-:name: fourier2
+:name: Fig:Series:SawToothFourier
 :width: 50%
 
 A sawtooth wave.
 :::
 
-This is an example of a *sawtooth wave*. Around the jump points the Gibbs phenomenon is visible.
+:::{todo}
+Replace {numref}`Fig:Series:SawToothFourier` with an applet, where you can change the value of $N$ to see how the approximation changes.
+:::
 
-For $x=\frac{1}{2}\pi$ {prf:ref}`Fourier's convergence theorem <Thm:Series:Convergence>` implies:
+Around the jump points the Gibbs phenomenon is visible.
+
+For $x=\frac{1}{2}$ the function {prf:ref}`Fourier's convergence theorem <Thm:Series:FourierConvergence>` implies:
 
 \begin{align*}
 &1=\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin\left(\frac{n\pi}{2}\right)=\frac{4}{\pi}\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}\\
 &{}\quad\Longrightarrow\quad\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}=\frac{1}{4}\pi.
 \end{align*}
+
 Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
 
 \begin{align*}
@@ -662,13 +743,21 @@ Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
 
 ::::::{prf:example}
 :label: Ex:Series:FourierExample3
-Consider $f(x)=1-x^2$ for $-1\leq x\leq 1$ and $f(x+2)=f(x)$.
+Consider the function $f$ defined by
 
-Then: $L=1$ and $f$ is even, so $b_n=0$ for $n=1,2,3,\ldots$. Further we have
+$$
+f(x) = \begin{cases}
+f(x+2), & x < -1, \\
+1-x^2, & -1 \leq x \leq 1, \
+f(x-2), & x > 1.
+\end{cases}
+$$
+
+Then $f$ is even on $(-1,1)$ and periodic with period $2$, so $L=1$. Using {prf:ref}`Thm:Series:FourierCosineSeries` we have that the Fourier series $g$ of $f$ is a Fourier cosine series, so we only calculate the Fourier cosine coefficients $a_n$ for $n=0,1,2,3,\ldots$ and find
 
 $$
 a_0=\frac{1}{1}\int_{-1}^1f(x)\,dx
-=\int_{_1}^1(1-x^2)\,dx=\left[x-\frac{1}{3}x^3\right]_{-1}^1=\frac{4}{3}
+=\int_{-1}^1(1-x^2)\,dx=\left[x-\frac{1}{3}x^3\right]_{-1}^1=\frac{4}{3}
 $$
 
 and
@@ -681,24 +770,35 @@ a_n&=\frac{1}{1}\int_{-1}^1f(x)\cos(n\pi x)\,dx=\int_{-1}^1(1-x^2)\cos(n\pi x)\,
 &=-\frac{2x\cos(n\pi x)}{n^2\pi^2}+\frac{2}{n^2\pi^2}\int_{-1}^1\cos(n\pi x)\,dx\\
 &=-\frac{4\cos(n\pi)}{n^2\pi^2}=\frac{4(-1)^{n+1}}{n^2\pi^2},\quad n=1,2,3,\ldots.
 \end{align*}
-Hence: $f(x)=\displaystyle\frac{2}{3}+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}\cos(n\pi x)$.
+
+This means that the Fourier series $g$ of $f$ is given by
+
+$$
+g(x)=\frac{2}{3}+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}\cos(n\pi x).
+$$
+
+The function $f$ is an example of a full-wave rectified sine wave, which is a function that looks like the absolute value of a sine wave. Even better, because the function $f$ is continuous on $\mathbb{R}$, the Gibbs phenomenon should not occur here and we can state that $f(x)=g(x)$ for all $x \in \mathbb{R}$.
+
+As you can see in {numref}`Fig:Series:RectifiedSineFourier`, where we have plotted some partial sums of the Fourier series $g$ of $f$ together with the function $f$ itself, the function $f$ is continuous and the Gibbs phenomenon does not occur.
 
 :::{figure} Images/fourier3.png
-:name: fourier3
+:name: Fig:Series:RectifiedSineFourier
 :width: 50%
 
 A full-wave rectified sine wave.
 :::
 
-Since $f$ is continuous, the Gibbs phenomenon does not occur here.
+:::{todo}
+Replace {numref}`Fig:Series:RectifiedSineFourier` with an applet, where you can change the value of $N$ to see how the approximation changes.
+:::
 
-For $x=0$ {prf:ref}`Fourier's convergence theorem <Thm:Series:Convergence>` implies:
+For $x=0$ {prf:ref}`Fourier's convergence theorem <Thm:Series:FourierConvergence>` implies:
 
 $$
 1=\frac{2}{3}+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}\quad\Longrightarrow\quad\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}=\frac{1}{12}\pi^2.
 $$
 
-For $x=1$ {prf:ref}`Fourier's convergence theorem <Thm:Series:Convergence>` implies:
+For $x=1$ {prf:ref}`Fourier's convergence theorem <Thm:Series:FourierConvergence>` implies:
 
 $$
 0=\frac{2}{3}+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}(-1)^n\quad\Longrightarrow\quad\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2.
@@ -718,6 +818,23 @@ $$
 $$
 
 ::::::
+
+:::{todo}
+Rewrite the remainder below.
+:::
+
+In many applications the function $f$ is defined on an interval $[0,L]$ with $L>0$. For instance, when $f$ describes the motion of a vibrating string with length $L$. Then this function can be defined to be *even* on the interval $(-L,L)$ and outside that interval periodically with period $2L$, but it can also be defined to be *odd* on the interval $(-L,L)$ and outside that interval periodically with period $2L$. So, such a function can be written as a Fourier cosine series, but also as a Fourier sine series:
+
+$$
+f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos\left(\frac{n\pi x}{L}\right)=\sum_{n=1}^{\infty}b_n\sin\left(\frac{n\pi x}{L}\right)
+$$
+
+with $a_0=\displaystyle\frac{2}{L}\int_0^Lf(x)\,dx$ and for $n=1,2,3,\ldots$
+
+$$
+a_n=\frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx\quad\text{and}\quad b_n=\frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx.
+$$
+
 
 ::::::{prf:example}
 :label: Ex:Series:FourierExample4
@@ -768,7 +885,7 @@ A triangular wave.
 
 This is an example of a *triangular wave*. In this case the function is continuous and Gibbs phenomenon does not occur.
 
-For $x=1$ {prf:ref}`Fourier's convergence theorem <Thm:Series:Convergence>` implies:
+For $x=1$ {prf:ref}`Fourier's convergence theorem <Thm:Series:FourierConvergence>` implies:
 
 \begin{align*}
 &1=\frac{1}{2}+\frac{2}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}(-1)^n=\frac{1}{2}+\frac{4}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}\\
