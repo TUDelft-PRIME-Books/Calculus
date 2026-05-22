@@ -503,6 +503,7 @@ M[0] Let $f$ be a function that satisfies $f(x)\cos(x)=f'(x)\sin(x)$. Then $\dis
 \begin{align*}
 \int_0^{\pi}f(x)\cos(x)\,dx&=\int_0^{\pi}f'(x)\sin(x)\,dx\\
  &=f(x)\sin(x)\bigg|_0^{\pi}-\int_0^{\pi}f(x)\cos(x)\,dx.
+ &=f(x)\sin(x)\bigg|_0^{\pi}-\int_0^{\pi}f(x)\cos(x)\,dx.
 \end{align*}
 
 Hence, we have
@@ -585,6 +586,12 @@ I_3&=x^3\sin(x)+3x^2\cos(x)-6I_1\\
 &=x^3\sin(x)+3x^2\cos(x)-6x\sin(x)-6\cos(x)+C_3,
 \end{align*}
 and so on.
+
+## Grasple exercises
+
+:::{todo}
+Add Grasple exercises in {numref}`Sec:Integration:Parts`.
+:::
 
 ## Exercises
 
@@ -754,165 +761,27 @@ I_1&= \int x\sin(x)\,dx\\
 
 :::
 
+::::{exercise}
+:label: Exc:Integration:PartsReductionLn
+
+Find a reduction formula for $\displaystyle\int\left(\ln(x)\right)^n\,dx$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionLn`
+:class: solution, dropdown
+
+\begin{align*}
+\int\left(\ln(x)\right)^n\,dx&=x\left(\ln(x)\right)^n-n\int x\left(\ln(x)\right)^{n-1}\frac{1}{x}\,dx\\
+&=x\left(\ln(x)\right)^n-n\int\left(\ln(x)\right)^{n-1}\,dx.
+\end{align*}
+
+Define $I_n=\displaystyle\int\left(\ln(x)\right)^n\,dx$, then we have
+
+$$
+I_n=x\left(\ln(x)\right)^n-nI_{n-1},\quad n=1,2,3,\ldots.
+$$
+
+Furthermore, we have: $I_0=\displaystyle\int1\,dx=x+C_0$.
+:::
+
 ## Grasple exercises
-
-### Indefinite integrals
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/64b89cee-7040-4620-99b8-2fb41ab33cf8?id=63678
-:label: Grasple:63678
-:dropdown:
-:description: Recognise the differentials.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/7871c98f-475f-43b9-85b7-234bc76ec302?id=63900
-:label: Grasple:63900
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/bbde63b9-d899-41e7-aad3-d3c938add161?id=63937
-:label: Grasple:63937
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/ce7f49dd-6250-44f4-94b1-762854747d45?id=63775
-:label: Grasple:63775
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/46c43c53-4c7d-4d38-947c-978aac77d552?id=63881
-:label: Grasple:63881
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-### Definite integrals
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/40b82265-b16a-4341-9c56-6b71e8796d71?id=63888
-:label: Grasple:63888
-:dropdown:
-:description: Evaluate the definite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/4f11b0b7-b0c6-4501-b2c1-89c40882b247?id=63870
-:label: Grasple:63870
-:dropdown:
-:description: Evaluate the definite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/026f96eb-d9dd-4a40-88e6-d3babbf4ef11?id=63782
-:label: Grasple:63782
-:dropdown:
-:description: Evaluate the definite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/379135e6-5f0e-426c-bd9e-44d514f50912?id=63802
-:label: Grasple:63802
-:dropdown:
-:description: Evaluate the definite integral.
-
-::::
-
-### More indefinite integrals
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/9cd4b811-f2b7-4c2c-abcf-88549ec14809?id=63796
-:label: Grasple:63796
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/5280bbe7-e696-4baf-979c-349d681902e0?id=78777
-:label: Grasple:78777
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/fc41a478-17f6-485c-9a86-00f3d3e47d87?id=63793
-:label: Grasple:63793
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/16fa378a-d7fb-4516-97d4-a19d7b7ffe57?id=63925
-:label: Grasple:63925
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/f8cbfc18-d274-497a-bb16-9d1d7c064fcc?id=76124
-:label: Grasple:76124
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/88136de4-c437-44c8-9712-a1f1085e3d5e?id=63769
-:label: Grasple:63769
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-### Reduction formulas
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/e2ff2016-ea7d-4ad5-b3bb-600ee1964082?id=76133
-:label: Grasple:76133
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/cd9e0c42-2bc7-4282-a4f4-65c47bf73453?id=76135
-:label: Grasple:76135
-:dropdown:
-:description: Evaluate the indefinite integral.
-
-::::
