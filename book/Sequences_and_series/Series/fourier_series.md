@@ -403,23 +403,24 @@ b_n &= \frac{1}{2}\int_{-2}^2f(x)\sin\left(\frac{n\pi x}{2}\right)\,dx \\
 &= \frac{1}{2}\int_0^2 x\sin\left(\frac{n\pi x}{2}\right)\,dx \\
 &= \frac{2}{n^2\pi^2}\left(\sin(n\pi)-n\pi\cos(n\pi)\right) \\
 &= \frac{2}{n^2\pi^2}\left(0-n\pi(-1)^n\right) \\
-&= \begin{cases}
--\frac{2}{n\pi}, & \text{if } n \text{ is even}, \\
-\frac{2}{n\pi}, & \text{if } n \text{ is odd}.
-\end{cases}
+&= \frac{2(-1)^{n+1}}{n\pi}.
 \end{align*}
 
-:::{todo}
-Check the coefficients of the Fourier series of $f$ from {prf:ref}`Ex:Series:Fourier1` and correct them if necessary. The current coefficients are not : the result is $f(-x)$ instead.
+The entire Fourier series $g$ of $f$ is therefore given by
 
-WolframAlpha gives the following Fourier series for $f$:
+$$
+g(x) = \frac{1}{2} + \sum_{k=1}^{\infty}\frac{-4}{(2k-1)^2\pi^2}\cos\left(\frac{(2k-1)\pi x}{2}\right)+\sum_{n=1}^{\infty}\frac{2(-1)^{n+1}}{n\pi}\sin\left(\frac{n\pi x}{2}\right).
+$$
 
-```
-1/2+Sum[((2 (-1 + Cos[n Pi] + n Pi Sin[n Pi]))/(n^2 Pi^2))*cos(nπx/2)+((-4 n Pi Cos[n Pi] + 4 Sin[n Pi])/(2 n^2 Pi^2))*sin(nπx/2),{n,1,100}]
-```
-:::
+Because $f$ is continuous at all points $x$ except for points of the form $x=2+4k$ for some integer $k$, {prf:ref}`Thm:Series:FourierConvergence` gives that $g(x)=f(x)$ for all points $x$ except for points of the form $x=2+4k$ for some integer $k$. At these points we have
 
-Instead of putting all these results together in one big formula, we choose to visualise this result in {numref}`Fig:Series:Fourier1`, where we have plotted the Fourier series of $f$ truncated at $N=5$ together with the function $f$ itself. You can decrease or increase the number of terms in the series to see how the approximation changes by changing the value of $N$.
+$$
+g(x) = \frac{f(x^-)+f(x^+)}{2} = \frac{0+2}{2} = 1.
+$$
+
+This means that the Fourier series $g$ of $f$ converges to $f$ at all points except for points of the form $x=2+4k$ for some integer $k$, where it converges to $1$ instead of $0$ or $2$.
+
+This result can also be visualised by plotting the Fourier series $g$ of $f$ together with the function $f$ itself. The Fourier series $g$ is an infinite series, so we cannot plot it directly. However, we can plot the Fourier series truncated at some finite number of terms, which gives us an approximation of $g$, which we did in {numref}`Fig:Series:Fourier1`. You can decrease or increase the number of terms in the series to see how the approximation changes by changing the value of $N$.
 
 :::{figure} Images/Fig-Series-Fourier1.png
 :name: Fig:Series:Fourier1
@@ -430,21 +431,45 @@ The graph of the function $f$ from {prf:ref}`Ex:Series:BoundedVariation` togethe
 :::{todo}
 Replace {numref}`Fig:Series:Fourier1` with an applet, where you can change the value of $N$ to see how the approximation changes.
 
-No Fourier series are shown in the temporary image.
 :::
 
-Note that for larger $N$...
-
-:::{todo}
-Explain the behaviour of the Fourier series of $f$ from {prf:ref}`Ex:Series:Fourier1` for larger $N$ for different points. In particular, explain the Gibbs phenomenon, which is the phenomenon that the Fourier series of a function with jump discontinuities overshoots at these discontinuities and does not converge to the function at these points.
-:::
+Note that for larger $N$ the Fourier series $g$ of $f$ converges to $f$ at all points except for points of the form $x=2+4k$ for some integer $k$, where it converges to $1$ instead of $0$ or $2$. In particular, near these points you can see that the Fourier series $g$ of $f$ oscillates around the value of  $f$ with increasing amplitude.
 
 ::::
 
+::::::{prf:definition} Gibbs phenomenon
+
+The phenomenon that the truncated Fourier series of a function with a jump discontinuity oscillates around the value of the function near the point of discontinuity with increasing amplitude for increasing number of terms is called the **Gibbs phenomenon**.
+::::::
+
+This _Gibbs phenomenon_ is named after the American scientist [Josiah Willard Gibbs (1839-1903)](https://en.wikipedia.org/wiki/Josiah_Willard_Gibbs).
+
+::::{prf:example}
+:label: Ex:Series:GibbsFourier
+
+We turn our attention to the function $f$ we have seen in {prf:ref}`Ex:Series:Fourier1`.
+
+To investigate the Gibbs phenomenon for this function, we make a graph of the difference between the truncated Fourier series $g$ of $f$ and the function $f$ itself, which is shown in {numref}`Fig:Series:GibbsFourier`. You can change the value of $N$ to see how the approximation changes.
+
+:::{figure} Images/Fig-Series-GibbsFourier.png
+:name: Fig:Series:GibbsFourier
+
+The graph of the difference between the truncated Fourier series $g$ of $f$ from {prf:ref}`Ex:Series:Fourier1` and the function $f$ itself.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Series:GibbsFourier` with an applet, where you can change the value of $N$ to see how the approximation changes.
+:::
+
+If you increase $N$ you should see that the truncated Fourier series $g$ of $f$ minus the function $f$ itself oscillates around the value of $0$ near the points of discontinuity of $f$ with increasing amplitude for increasing number of terms. This is the Gibbs phenomenon in action. Observe also that the width of these oscillations decreases for increasing number of terms, which is also part of the Gibbs phenomenon. In particular, the truncated Fourier series $g$ of $f$ minus the function $f$ itself converges to $0$ at all points except for points of the form $x=2+4k$ for some integer $k$, where it converges to $1$ instead of $0$ or $2=0$.
+
+::::
+
+If a Fourier series converges to a function for all $x$, then we have the following important identity, which is a consequence of the orthogonality of the sine and cosine functions.
 
 ::::::{prf:theorem} Parseval's identity
 :label: Thm:Series:Parseval
-For the Fourier series given in {prf:ref}`Def:Series:FourierFormula` that converge we also have
+For a Fourier series given as in {prf:ref}`Def:Series:FourierFormula` that converge for all $x$ in $[-L,L]$ to $f(x)$, we also have
 
 $$
 \frac{1}{L}\int_{-L}^L\left\{f(x)\right\}^2\,dx=\frac{a_0^2}{2}+\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right).
@@ -455,15 +480,33 @@ This is called **Parseval's identity**, named after the French mathematician [Ma
 
 :::{admonition} Proof of {prf:ref}`Thm:Series:Parseval`
 :class: tudproof, dropdown
-Let $f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)$, then multiplication by $f(x)$ and integration gives
+
+Because the Fourier series converges to $f$ for all $x$ in $[-L,L]$, we have
+
+
+$$
+f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right),
+$$
+
+for all $x$ in $[-L,L]$
+
+Multiplication of this expression by $f(x)$ and integration over $[-L,L]$ then gives
 
 \begin{align*}
 \frac{1}{L}\int_{-L}^L\left\{f(x)\right\}^2\,dx&=\frac{a_0}{2}\cdot\frac{1}{L}\int_{-L}^Lf(x)\,dx\\
-&{}\quad{}+\sum_{n=1}^{\infty}a_n\cdot\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
-&{}\quad{}+\sum_{n=1}^{\infty}b_n\cdot\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
+&{}\quad\quad{}+\sum_{n=1}^{\infty}a_n\cdot\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
+&{}\quad\quad{}+\sum_{n=1}^{\infty}b_n\cdot\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{a_0^2}{2}+\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right).
 \end{align*}
 :::
+
+Let us do one more example that touches all subjects we explored in this section, including the Fourier series, the convergence of Fourier series and Parseval's identity.
+
+::::{prf:example}
+:label: Ex:Series:CompleteFourier
+
+Some even function that drops the sine part.
+::::
 
 ## Fourier cosine and sine series
 
@@ -578,16 +621,6 @@ Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
 &\frac{1}{2}+\frac{4}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{\pi}\int_{-\pi}^{\pi}\{f(x)\}^2\,dx=\frac{1}{\pi}\int_0^{\pi}dx=1\\
 &{}\quad\Longrightarrow\quad\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{8}\pi^2.
 \end{align*}
-::::::
-
-::::::{prf:remark} Gibbs phenomenon
-Note that all partial sums of a Fourier series (linear combination of cosines and/or sines) are continuous functions. {prf:ref}`Fourier's convergence theorem <Thm:Series:Convergence>` implies that the series converges to $f(x)$ at points $x$ where $f$ is continuous and to
-
-$$
-\frac{f(x-)+f(x+)}{2}
-$$
-
-at points $x$ where $f$ is discontinuous. Near points with a jump discontinuity we see an oscillatory behavior (some kind of 'overshoot' and 'undershoot'). This **Gibbs phenomenon** is named after the American scientist [Josiah Willard Gibbs (1839-1903)](https://en.wikipedia.org/wiki/Josiah_Willard_Gibbs).
 ::::::
 
 ::::::{prf:example}
