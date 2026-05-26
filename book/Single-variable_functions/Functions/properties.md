@@ -922,14 +922,7 @@ Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ wit
 
 ### Exercises on even and odd functions
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/52d666c5-d2f8-492a-9d7f-d8ba41cecd82?id=63034
-:label: Grasple:63034
-:dropdown:
-:description: Determining whether a function is even and/or odd.
 
-::::
 
 ::::{grasple}
 :iframeclass: dark-light

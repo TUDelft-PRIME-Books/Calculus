@@ -387,6 +387,8 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet.
 :::
 :::
 
+::::
+
 ## Grasple exercises
 
 ::::{grasple}
@@ -423,4 +425,3 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet.
 :dropdown:
 :description: Determining differentiability
 
-::::

@@ -1093,6 +1093,15 @@ The cosine function where the solid part is the function on the interval $\left[
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/52d666c5-d2f8-492a-9d7f-d8ba41cecd82?id=63034
+:label: Grasple:63034
+:dropdown:
+:description: Determining whether a function featuring a logarithm is even and/or odd.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/44e2b007-c172-41e5-bd5a-8048f699e407?id=130661
 :label: Grasple:130661
 :dropdown:
