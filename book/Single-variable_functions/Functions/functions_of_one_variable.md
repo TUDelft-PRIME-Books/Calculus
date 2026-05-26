@@ -720,3 +720,135 @@ Replace {numref}`Fig:Functions1var:Piecewise` with an applet.
 
 ::::::
 
+## Grasple exercises
+
+### Exercises on domain and range.
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2e95a962-8482-40a6-9c9a-5e2f34adaf5e?id=70778
+:label: Grasple:70778
+:dropdown:
+:description: Maximal domain of a rational function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1e2dbd03-16e5-48de-9e71-0677e79b0276?id=68282
+:label: Grasple:68282
+:dropdown:
+:description: Maximal domain of a function with a square root.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3fc2e557-4226-42f8-8749-34728d425a47?id=70774
+:label: Grasple:70774
+:dropdown:
+:description: Range of an exponential function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ef3fce68-8504-4b63-925b-a5b5f3237c66?id=63052
+:label: Grasple:63052
+:dropdown:
+:description: Maximal domain and range of a trigonometric function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bfefa695-a308-4d1b-a10a-eb648b00b4e4?id=63058
+:label: Grasple:63058
+:dropdown:
+:description: Maximal domain and range of a function with a square root.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9cc94b7b-8fd6-4ba3-b43c-acc1974b9dc4?id=63060
+:label: Grasple:63060
+:dropdown:
+:description: Maximal domain and range of a function with a square root.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d312bc3e-990f-46ff-bbc3-80e923dd4998?id=63063
+:label: Grasple:63063
+:dropdown:
+:description: Maximal domain and range of a function with a square root.
+
+::::
+
+### Exercises on graphs.
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2594ba5b-3806-4782-8a8b-935359701118?id=70719
+:label: Grasple:70719
+:dropdown:
+:description: Is this the graph of a function?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/03a63ea0-4814-4467-a19c-8ddcdadf31b1?id=70720
+:label: Grasple:70720
+:dropdown:
+:description: Is this the graph of a function?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8c83b344-557d-4a25-b876-d8a03787f7a9?id=70721
+:label: Grasple:70721
+:dropdown:
+:description: Is this the graph of a function?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4ad27fb3-4dfa-4ed8-900a-d3f3c3b7969b?id=70722
+:label: Grasple:70722
+:dropdown:
+:description: Is this the graph of a function?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ba2670f2-03b7-4b7b-a536-4ef2e008317e?id=70723
+:label: Grasple:70722
+:dropdown:
+:description: Describing a circle as (several) functions.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/974c76a6-90c0-4e74-8a7e-802433c9e74e?id=70779
+:label: Grasple:70779
+:dropdown:
+:description: Is this the graph of a function?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/baa47b92-4831-43aa-8634-c5bdcee67b0c?id=70865
+:label: Grasple:70865
+:dropdown:
+:description: Is this the graph of a function?
+
+::::

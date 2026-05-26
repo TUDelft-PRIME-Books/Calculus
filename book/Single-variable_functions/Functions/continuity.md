@@ -51,7 +51,9 @@ This follows directly from the precise definition of a limit ({prf:ref}`Def:Limi
 :::
 
 :::{note}
-It is clearly the easiest way to think about continuity in terms of limits (epsilons and deltas are never easy to think about). However, if we were to only use the definition in terms of the limit, we would run into a few technical issues. For instance, if $f$ is a function of which the domain is a closed interval $[a,b]$, then $\lim\limits_{x\rightarrow a}f(x)$ and $\lim\limits_{x\rightarrow b}f(x)$ do not exist as the left limit at $a$ and the right limit at $b$ do not exist. If we were to only define continuity in terms of limits, this function could never be continuous at $a$ or $b$, which is not something we want. As such, we have to define continuity in terms of epsilons and deltas, but it is advisable to use limits whenever we are not looking at the boundary of the domain.
+[^FootnoteSingleton]: There is also no way to properly define this limit. Indeed, the value $f(2)$ is (and should be) irrelevant for the existence and value of the limit. If we were to ignore the condition on the domain in {prf:ref}`Def:LimitAtPoint:Precisedef`, we could, for any $\varepsilon>0$, take $\delta =\dfrac{1}{2}$. Then for any $x$ in the domain of $f$ with $0<|x-2|<\delta$ we would have $|f(x)-L|<\varepsilon$ for any $L$, since there are no such $x$. So then **all** values of $L$ would be the limit of $f$ at $2$, which is not desirable.
+
+It is clearly the easiest way to think about continuity in terms of limits (epsilons and deltas are never easy to think about). However, if we were to only use the definition in terms of the limit, we would run into a few technical issues. For instance, suppose $f$ is a function of which the domain is the interval $[0,1]$ together with the single point $\{2\}$ (such a point is sometimes referred to as an **isolated point**). Then the limit $\displaystyle \lim_{x\rightarrow 2}f(x)$ does not exist, since we only defined limits at $2$ for functions of which the domain contains an interval of the form $(c_1,2)$ or $(2,c_2)$[^FootnoteSingleton]. As such, we have to define continuity in terms of epsilons and deltas, but it is advisable to use limits whenever applicable.
 ::::::
 
 
@@ -615,6 +617,7 @@ $$
 :label: Ex:Continuity:Secondexample
 
 Consider the function 
+
 $$
  f(x)=\left\{\begin{array}{ll}2^x+b&\text{if }\,x< 2,\\ 2b+10&\text{ if }\,x=2,\\ x^2-3x&\text{if }\,x>2.\end{array}\right.
 $$
@@ -645,7 +648,7 @@ The function $f(x)$ and a slider for the parameter $b$. Can you recreate the res
 ::::::
 
 :::{todo}
-Make polling that is variation of the previous example. Or perhaps make only an applet with a slider where the correct value of a parameter needs to be found to make the function continuous.
+Make a poll where the graph of $f(x)=\left\{\begin{array}{ll}-bx^4&\text{if }\,x< 1,\\ b^2&\text{ if }\,x=1,\\ (b+1)x+1&\text{if }\,x>1.\end{array}\right.$ is shown without given the formula describing the function. The applet should have a slider for $b$. The student should find the value(s) of $b$ for which $f$ is continuous. Correct answer: $b=-1$.
 :::
 
 

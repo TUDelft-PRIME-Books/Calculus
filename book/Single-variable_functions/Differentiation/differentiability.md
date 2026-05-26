@@ -900,3 +900,32 @@ A Venn diagram showing that different sets of functions are contained in each ot
 :::{todo}
 Replace {numref}`Fig:Differentiability:Venn` with an applet. Maybe show a few more layers?
 :::
+
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f0058966-290e-49d8-a78e-c689a17c714c?id=69697
+:label: Grasple:63056
+:dropdown:
+:description: Using limits to find a derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5258b49b-1553-4d0b-a918-4f44e9647fec?id=69701
+:label: Grasple:63056
+:dropdown:
+:description: Using limits to find a derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f622e5de-4a13-4385-a949-f5d398ba33b4?id=69704
+:label: Grasple:69704
+:dropdown:
+:description: Using limits to find a derivative.
+
+::::

@@ -386,3 +386,41 @@ The graph of the function $f$ from {prf:ref}`Rem:Diffinverse:IFT2`.
 Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet.
 :::
 :::
+
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/665beea4-a04e-43b2-936b-11058bea3f4c?id=69707
+:label: Grasple:69707
+:dropdown:
+:description: Evaluating limits by recognising them as derivatives
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d8bc5cfb-cbe3-4a9b-ba66-c1ba8922a285?id=69711
+:label: Grasple:69711
+:dropdown:
+:description: Evaluating limits by recognising them as derivatives
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1da4667f-95a5-4740-a27f-726cf53655b3?id=71390
+:label: Grasple:71390
+:dropdown:
+:description: Determining differentiability
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ce40519e-7e93-4243-9d8d-9b83c5ee718c?id=71391
+:label: Grasple:71391
+:dropdown:
+:description: Determining differentiability
+
+::::
