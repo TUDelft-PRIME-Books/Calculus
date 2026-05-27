@@ -42,7 +42,7 @@ In most situations, continuity of a function can conveniently be expressed in te
 
 ::::::{prf:theorem} 
 :label: Theorem:Continuity:EpsilonDelta
-Suppose that  the domain of $f$ contains an open interval $(b,c)$ and let $a$ in $(b,c)$. Then $f$ is continuous at $a$ precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$. 
+Suppose that the domain of $f$ contains an open interval of the form $(c_1,a)$ or $(a,c_2)$. Then $f$ is continuous at $a$ precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$. 
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Composition`
@@ -51,7 +51,9 @@ This follows directly from the precise definition of a limit ({prf:ref}`Def:Limi
 :::
 
 :::{note}
-It is clearly the easiest way to think about continuity in terms of limits (epsilons and deltas are never easy to think about). However, if we were to only use the definition in terms of the limit, we would run into a few technical issues. For instance, if $f$ is a function of which the domain is a closed interval $[a,b]$, then $\lim\limits_{x\rightarrow a}f(x)$ and $\lim\limits_{x\rightarrow b}f(x)$ do not exist as the left limit at $a$ and the right limit at $b$ do not exist. If we were to only define continuity in terms of limits, this function could never be continuous at $a$ or $b$, which is not something we want. As such, we have to define continuity in terms of epsilons and deltas, but it is advisable to use limits whenever we are not looking at the boundary of the domain.
+[^FootnoteSingleton]: There is also no way to properly define this limit. Indeed, the value $f(2)$ is (and should be) irrelevant for the existence and value of the limit. If we were to ignore the condition on the domain in {prf:ref}`Def:LimitAtPoint:Precisedef`, we could, for any $\varepsilon>0$, take $\delta =\dfrac{1}{2}$. Then for any $x$ in the domain of $f$ with $0<|x-2|<\delta$ we would have $|f(x)-L|<\varepsilon$ for any $L$, since there are no such $x$. So then **all** values of $L$ would be the limit of $f$ at $2$, which is not desirable.
+
+It is clearly the easiest way to think about continuity in terms of limits (epsilons and deltas are never easy to think about). However, if we were to only use the definition in terms of the limit, we would run into a few technical issues. For instance, suppose $f$ is a function of which the domain is the interval $[0,1]$ together with the single point $\{2\}$ (such a point is sometimes referred to as an **isolated point**). Then the limit $\displaystyle \lim_{x\rightarrow 2}f(x)$ does not exist, since we only defined limits at $2$ for functions of which the domain contains an interval of the form $(c_1,2)$ or $(2,c_2)$[^FootnoteSingleton]. As such, we have to define continuity in terms of epsilons and deltas, but it is advisable to use limits whenever applicable.
 ::::::
 
 
@@ -270,7 +272,7 @@ The name Weierstrass Nullstellensatz, named after the German mathematician [Karl
 :::
 
 :::{todo}
-Interactive element: let students enter function plus left and right endpoint plus number of steps. Check if $f(a)f(b)<0$. If so, let students select correct interval $[a,...]$ or $[...,b]$. Then split this new interval up again and same question. After each step, show the graph of $f$ on the chosen interval. Could be either an applet or something in python?
+Interactive element: let students enter function plus left and right endpoint plus number of steps. Check if $f(a)f(b)<0$. If so, let students select correct interval $[a,...]$ or $[...,b]$ in which the root is. Then split this new interval up again and same question. After each step, show the graph of $f$ on the chosen interval. Could be either an applet or something in python?
 :::
 
 ::::::{prf:example} 
@@ -514,12 +516,17 @@ We can also establish a more general version of {prf:ref}`Theorem:LimitAtPoint:S
 
 ::::::{prf:theorem} Substitution for limit at a point
 :label: Theorem:Continuity:Substitution
-Let $f$ be a function and suppose that the domain of $f$ contains intervals of the form $(c_1,b)$ and $(b,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
+Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Substitution`
 :class: tudproof, dropdown
-Consider the function $h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a\end{array}\right.$ Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq a$ we have $f(h(x))=f(g(x))$. Then we find
+Consider the function 
+$$
+ h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a.\end{array}\right.
+$$
+
+Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq a$ we have $f(h(x))=f(g(x))$. Then we find
 
 $$
  \lim\limits_{x\rightarrow a}f(g(x))=\lim\limits_{x\rightarrow a}f(h(x))=f(h(a))=f(b)=f\left(\lim\limits_{x\rightarrow a}g(x)\right)
@@ -536,7 +543,7 @@ If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric
 
 ::::::{prf:theorem} Substitution for limit at plus or minus infinity
 :label: Theorem:Continuity:SubstitutionInf
-Let $f$ be a function and consider $b$ in the domain of $f$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
+Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
 
 A similar result holds for limits at minus infinity.
 ::::::
@@ -610,6 +617,7 @@ $$
 :label: Ex:Continuity:Secondexample
 
 Consider the function 
+
 $$
  f(x)=\left\{\begin{array}{ll}2^x+b&\text{if }\,x< 2,\\ 2b+10&\text{ if }\,x=2,\\ x^2-3x&\text{if }\,x>2.\end{array}\right.
 $$
@@ -640,7 +648,7 @@ The function $f(x)$ and a slider for the parameter $b$. Can you recreate the res
 ::::::
 
 :::{todo}
-Make polling that is variation of the previous example. Or perhaps make only an applet with a slider where the correct value of a parameter needs to be found to make the function continuous.
+Make a poll where the graph of $f(x)=\left\{\begin{array}{ll}-bx^4&\text{if }\,x< 1,\\ b^2&\text{ if }\,x=1,\\ (b+1)x+1&\text{if }\,x>1.\end{array}\right.$ is shown without given the formula describing the function. The applet should have a slider for $b$. The student should find the value(s) of $b$ for which $f$ is continuous. Correct answer: $b=-1$.
 :::
 
 

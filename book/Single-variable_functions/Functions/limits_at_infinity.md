@@ -372,6 +372,8 @@ A similar result holds for limits of $f$ at minus infinity, or when the limit of
 
 Basically, this result states that there is no difference between $\lim\limits_{x\rightarrow\infty}e^{-x}$ and $\lim\limits_{x\rightarrow\infty}e^{-x^2}$, since in both cases the input of the exponential tends towards $-\infty$. Similarly, there is no difference between $\lim\limits_{x\rightarrow\infty}e^{x}$ and $\lim\limits_{x\rightarrow\infty}e^{x^2}$, or even something like $\lim\limits_{x\rightarrow\infty}e^{e^x}$, since in all cases the input of the exponential tends towards $\infty$.
 
+
+
 ::::::{prf:example} 
 :label: Ex:LimitAtInfinityComputationrules
 Consider the function $f(x)=\dfrac{1}{1+e^{-x}}$ and suppose we want to find out whether it has horizontal asymptotes.
@@ -468,6 +470,103 @@ An illustration of the {prf:ref}`Squeeze theorem for limits at infinity <Theorem
 ::::
 
 ::::::
+
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+
+Suppose that $\displaystyle\lim_{x\rightarrow\infty}f(x)=\infty$ and $\lim_{x\rightarrow \infty}g(x)=0$. Which of the following limits are possible?
+---
+[x] $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{f(x)}=0$.
+> The function $\dfrac{1}{f(x)}$ can be written as $h\circ f$ with $h(x)=\dfrac{1}{x}$. On account of {prf:ref}`Theorem:LimitAtInfinity:Substitution2` we find
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{h(x)}=\lim_{x\rightarrow\infty}h(f(x))=\lim_{x\rightarrow\infty}h(x)=\lim_{x\rightarrow\infty}\frac{1}{x}=0.
+$$
+
+[ ] $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{f(x)}$ exists but is unequal to $0$.
+> The function $\dfrac{1}{f(x)}$ can be written as $h\circ f$ with $h(x)=\dfrac{1}{x}$. On account of {prf:ref}`Theorem:LimitAtInfinity:Substitution2` we find
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{h(x)}=\lim_{x\rightarrow\infty}h(f(x))=\lim_{x\rightarrow\infty}h(x)=\lim_{x\rightarrow\infty}\frac{1}{x}=0.
+$$
+
+In particular, the limit cannot be nonzero.
+
+[ ] $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{f(x)}$ does not exist.
+> The function $\dfrac{1}{f(x)}$ can be written as $h\circ f$ with $h(x)=\dfrac{1}{x}$. On account of {prf:ref}`Theorem:LimitAtInfinity:Substitution2` we find
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{h(x)}=\lim_{x\rightarrow\infty}h(f(x))=\lim_{x\rightarrow\infty}h(x)=\lim_{x\rightarrow\infty}\frac{1}{x}=0.
+$$
+
+In particular, the limit must exist.
+
+[x] $\displaystyle \lim_{x\rightarrow\infty}\frac{1}{g(x)}=\infty$.
+> This happens, for instance, when $g(x)=\dfrac{1}{x}$. In that case, we have
+
+$$
+ \lim_{x\rightarrow\infty}g(x)=\lim_{x\rightarrow\infty}\frac{1}{x}=0
+$$
+
+and
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{g(x)}=\lim_{x\rightarrow\infty}x=\infty.
+$$
+
+[x] $\displaystyle \lim_{x\rightarrow\infty}\frac{1}{g(x)}=-\infty$.
+> This happens, for instance, when $g(x)=\dfrac{-1}{x}$. In that case, we have
+
+$$
+ \lim_{x\rightarrow\infty}g(x)=\lim_{x\rightarrow\infty}\frac{-1}{x}=0
+$$
+
+and
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{g(x)}=\lim_{x\rightarrow\infty}-x=-\infty.
+$$
+
+[x] $\displaystyle \lim_{x\rightarrow\infty}\frac{1}{g(x)}$ does not exist, but is not $-\infty$ or $\infty$.
+> This happens, for instance, when $g(x)=\dfrac{1}{x}$ if $x$ is in an interval of the form $[N,N+1)$ with $N$ odd, while $g(x)=\dfrac{-1}{x}$ if $x$ is in an interval of the form $[N,N+1)$ with $N$ even. In that case, we have $-\dfrac{1}{x}\leq g(x)\leq\dfrac{1}{x}$ for all $x>0$, and we have
+
+$$
+ \lim_{x\rightarrow\infty}-\dfrac{1}{x}=\lim_{x\rightarrow\infty}\frac{1}{x}=0.
+$$
+
+By {prf:ref}`Theorem:LimitAtInfinity:Squeezetheorem`, we find that $\displaystyle\lim_{x\rightarrow\infty}g(x)=0$. Now we note that $\left|\frac{1}{g(x)}\right|=x$ for all $x>0$.  Then we obtain that
+
+$$
+ \lim_{x\rightarrow\infty}\left|\frac{1}{g(x)}\right|=\lim_{x\rightarrow\infty}x=\infty.
+$$
+
+In particular, the limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ cannot exist, since otherwise the limit $\displaystyle\lim_{x\rightarrow\infty}\left|\frac{1}{g(x)}\right|$ would have existed as well. The limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ also cannot be $-\infty$ since $\dfrac{1}{g(x)}>0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ odd, nor can it be $\infty$ since $\dfrac{1}{g(x)}<0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ even. So the limit does not exist, and it is not $-\infty$ or $\infty$. 
+
+:::{todo}
+Include an applet with the graphs of these function $g$ and $\frac{1}{g}$.
+:::
+
+[ ] $\displaystyle \lim_{x\rightarrow\infty}\frac{1}{g(x)}$ exists.
+> Suppose that $\displaystyle \lim_{x\rightarrow\infty}\frac{1}{g(x)}=L$. Then on the one hand we have
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{g(x)}g(x)=\lim_{x\rightarrow\infty}1=1,
+$$
+
+but on the other hand we have
+
+$$
+ \lim_{x\rightarrow\infty}\frac{1}{g(x)}g(x)=\lim_{x\rightarrow\infty}\frac{1}{g(x)}\lim_{x\rightarrow\infty}g(x)=L\cdot 0=0.
+$$
+
+This gives a contradiction, so the limit cannot exist.
+---
+::::
 
 Now consider a limit of a rational function, i.e. a limit of the form $\lim\limits_{x\rightarrow \infty}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials. We write $p(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots+a_0$ and $q(x)=b_mx^m+b_{m-1}x^{m-1}+\ldots+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Whenever both $p$ and $q$ are not constant, i.e. when $n\geq 1$ and $m\geq 1$, we cannot evaluate the limit directly since both $p$ and $q$ have terms that go to infinity and/or minus infinity as $x$ approaches infinity ($a_nx^n$ for $p$ and $b_mx^m$ for $q$). So how does the function $\frac{p(x)}{q(x)}$ behave for large values of $x$? Notice that if $x$ is large enough the term $a_nx^n$ will be much larger (in absolute value) than the other terms $a_{n-1}x^{n-1}+\ldots+a_0$ of $p$. Similarly, the term $b_mx^m$ will dominate the other terms $b_{m-1}x^{m-1}+\ldots+b_0$ of $q$. So for large values of $x$ we have
 
@@ -661,7 +760,7 @@ In that case, $f$ has the oblique asymptote $y=ax+b$ at both infinity and minus 
 ::::::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Obliquerational`
 :class: tudproof, dropdown
 
-The result follows almost directly from {prf:ref}`Thm:RationalFunctions:PolynomialLongDivision`. Indeed, this result allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\operatorname{deg}(r)<\operatorname{deg}(q)$ and $\operatorname{deg}(s)=\operatorname{p}-\operatorname{q}$. Since $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, we obtain $\operatorname{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+\ldots+a_1x+a_0$ and $q(x)=b_mx^m+\ldots+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\operatorname{deg}(r)<\operatorname{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
+The result follows almost directly from {prf:ref}`Thm:RationalFunctions:PolynomialLongDivision`. Indeed, this result allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\operatorname{deg}(r)<\operatorname{deg}(q)$ and $\operatorname{deg}(s)=\operatorname{deg}(p)-\operatorname{deg}(q)$. Since $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, we obtain $\operatorname{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+\ldots+a_1x+a_0$ and $q(x)=b_mx^m+\ldots+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\operatorname{deg}(r)<\operatorname{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
 
 \begin{align*}
  \lim_{x\rightarrow\infty}f(x)-(ax+b) &=\lim_{x\rightarrow\infty}\frac{r(x)}{q(x)}+s(x)-(ax+b)\\
@@ -703,6 +802,33 @@ $$
 
 ::::::
 
+::::{question} 
+:type: short-answer
+:variant: gaps
+:admonition:
+:class: question
+:showanswer:
+
+We say that a function $f$ has a **quadratic asymptote** or **parabolic asymptote** $y=ax^2+bx+c$ with $a\neq 0$ at $\infty$ if $\displaystyle\lim_{x\rightarrow\infty}\left(f(x)-ax^2-bx-c\right)=0$.
+
+Consider the rational function
+
+$$
+ f(x)=\frac{a_nx^n+...+a_1x+a_0}{b_mx^m+...+b_1x+b_0}.
+$$
+
+---
+DS[n;m;n+m;{n-m}]
+MR[2<=x<=2]
+^^^
+? In order for this function $f$ to have a quadratic asymptote, {gap} should be equal to {gap}.
+
+& The reasoning is similar to the one of {prf:ref}`Theorem:LimitAtInfinity:Obliquerational`. There, the difference of the degrees needed to be $1$, so here it should be $2$.
+---
+
+
+
+::::
 
 (Subsec:LimitinfPrecise)=
 
@@ -1137,6 +1263,42 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 :label: Grasple:69470
 :dropdown:
 :description: Horizontal and vertical asymptotes of $\arctan\left(\frac{1}{x}\right)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/92fb4504-f844-4e7c-9885-28b1a9fe8052?id=63030
+:label: Grasple:63030
+:dropdown:
+:description: Using limits to find the maximal domain and range of a function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f2736865-6ad4-4917-ba2e-921f565394c7?id=63046
+:label: Grasple:63046
+:dropdown:
+:description: Maximal domain and range of a function on real line.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9796d35c-3bb3-4a93-911f-51da314900b5?id=63054
+:label: Grasple:63054
+:dropdown:
+:description: Maximal domain and range of a function on real line.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/88eaff16-aa50-4656-98b8-86baedd257b3?id=63056
+:label: Grasple:63056
+:dropdown:
+:description: Maximal domain and range of a function on real line.
 
 ::::
 

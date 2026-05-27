@@ -1075,6 +1075,33 @@ The cosine function where the solid part is the function on the interval $\left[
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c9bfc234-3c05-4d6f-a91a-4dae0b05ce2d?id=68284
+:label: Grasple:68284
+:dropdown:
+:description: Maximal domain of a function with a logarithm.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f23f8188-d408-47c4-88f2-4b1067dfee4f?id=70822
+:label: Grasple:70822
+:dropdown:
+:description: Maximal domain of a function with a logarithm.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/52d666c5-d2f8-492a-9d7f-d8ba41cecd82?id=63034
+:label: Grasple:63034
+:dropdown:
+:description: Determining whether a function featuring a logarithm is even and/or odd.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/44e2b007-c172-41e5-bd5a-8048f699e407?id=130661
 :label: Grasple:130661
 :dropdown:

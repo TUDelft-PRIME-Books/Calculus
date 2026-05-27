@@ -357,3 +357,58 @@ $$
  p'(\theta)=\frac{e^{2 \theta} (\cos(\theta) + 1)^2 (\cos(\theta) + (\tan(\theta) + 1)^2 + \sin(\theta) (4 \tan(\theta) + 2))}{\left(1+\cos(\theta)\right)^6}.
 $$
 ::::::
+
+::::::{prf:example} Function that is differentiable, but not continuously differentiable
+:label: Ex:Productquotientrule:Contdiff
+:class: full-width
+
+In {numref}`Subsec:Derivativestangent` we claimed that there are functions that are differentiable everywhere, but not continuously differentiable, i.e. its derivative is not continuous. Now we finally have the tools to show an example of such a function. Consider the piecewise defined function
+
+$$
+ f(x)=\begin{cases}x^2 \sin\left(\frac{1}{x}\right), & \mathrm{if}\,x \neq 0, \\ 0 & \mathrm{if}\,x = 0. \end{cases}
+$$
+
+For $x\neq 0$, the function is differentiable, since it can be written as $f(x)=g(x)h(k(x))$ with $g(x)=x^2$, $h(x)=\sin(x)$ and $k(x)=\dfrac{1}{x}$ and these functions are all differentiable on their maximal domain. Using the product and the chain rule, the derivative is given by
+
+\begin{align*}
+ f'(x)=&g(x)h'\left(k(x)\right)k'(x)+g'(x)h(k(x))\\ 
+ =&x^2\cos\left(\frac{1}{x}\right)\left(-\frac{1}{x^2}\right)+2x\sin\left(\frac{1}{x}\right)\\
+ =&-\cos\left(\frac{1}{x}\right)+2x\sin\left(\frac{1}{x}\right).
+\end{align*}
+
+For $x=0$, we evaluate the derivative using the limit definition
+
+$$
+ f'(0)=\lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}=\lim_{h\rightarrow 0}\frac{h^2\sin\left(\frac{1}{h}\right)}{h}=0,
+$$
+
+where the final equality follows from {prf:ref}`Ex:LimitAtPoint:SqueezeTheorem`. This means that
+
+$$
+ f'(x)=\begin{cases}-\cos\left(\frac{1}{x}\right)+2x\sin\left(\frac{1}{x}\right), & \mathrm{if}\,x \neq 0, \\ 0 & \mathrm{if}\,x = 0, \end{cases}
+$$
+
+so $f$ is differentiable everywhere. Using a reasoning similar to {prf:ref}`Ex:LimitAtPoint:SqueezeTheorem`, we see that
+
+$$
+ \lim_{x\rightarrow 0}2x\sin\left(\frac{1}{x}\right)=0.
+$$
+
+However, using a similar reasoning to {prf:ref}`Ex:LimitAtPoint:Limitsinoneoverx`, the limit 
+
+$$
+ \lim_{x\rightarrow 0}-\cos\left(\frac{1}{x}\right)
+$$
+
+does not exist. This means that the limit
+
+$$
+ \lim_{x\rightarrow 0}f'(x)=\lim_{x\rightarrow 0}-\cos\left(\frac{1}{x}\right)+2x\sin\left(\frac{1}{x}\right)
+$$
+
+does not exist. In particular, $f'$ is not continuous at $0$, so $f$ is not continuously differentiable.
+
+:::{todo}
+Make an applet with the graph of the function $f$ (left) and of its derivative $f'$ (right)
+:::
+::::::
