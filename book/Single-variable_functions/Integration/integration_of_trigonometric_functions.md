@@ -433,7 +433,8 @@ Another option for powers of sine, is to use integration by parts to find a redu
 
 ::::::{prf:Example}
 :label: Ex:Integration:PartsReductionSin
-We will show that 
+We will show that
+ 
 $$
 \int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx, \quad n=2,3,4,\ldots.
 $$ 
