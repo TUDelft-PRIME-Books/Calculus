@@ -705,9 +705,10 @@ b_n&=\frac{1}{1}\int_{-1}^1f(x)\sin(n\pi x)\,dx=\int_{-1}^12x\sin(n\pi x)\,dx\\
 
 Hence the Fourier series $g$ of $f$ is given by
 
-$$
+:::{math}
+:name: Eq:Series:SawToothFourier
 g(x)=\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(n\pi x).
-$$
+:::
 
 In {numref}`Fig:Series:SawToothFourier` you can see a plot of some partial sums of this Fourier series together with the function $f$ itself. You can change the value of $N$ to see how the approximation changes.
 
@@ -748,7 +749,7 @@ Consider the function $f$ defined by
 $$
 f(x) = \begin{cases}
 f(x+2), & x < -1, \\
-1-x^2, & -1 \leq x \leq 1, \
+1-x^2, & -1 \leq x \leq 1, \\
 f(x-2), & x > 1.
 \end{cases}
 $$
@@ -819,90 +820,149 @@ $$
 
 ::::::
 
-:::{todo}
-Rewrite the remainder below.
+## Fourier series of arbitrary functions
+
+On inspection of {prf:ref}`Def:Series:FourierFormula`, we see that to construct a Fourier series of a function $f$, it must have at least the following properties:
+
+* $f$ must be defined on an interval $[-L,L]$ for some $L>0$;
+* $f$ must be periodic with period $2L$;
+* $f$ must be piecewise continuous on $[-L,L]$.
+
+However, in many applications the function $f$ might only be defined on an interval $[0,L]$ with $L>0$. An example is when $f$ describes the motion of a vibrating string with length $L$. In most of those case the function $f$ is also piecewise continuous on $[0,L]$, but it might not be periodic with period $2L$. This means that we cannot directly apply {prf:ref}`Def:Series:FourierFormula` to find the Fourier series of $f$.
+
+If we do want to do this, we must perform two steps. First, we must extend the function $f$ to a function defined on $[-L,L]$. Second, we must extend this function to a function defined on $\mathbb{R}$ that is periodic with period $2L$.
+
+Let us focus on the first step, for which we can use the next theorem from {numref}`Section:PropertiesFunctions`:
+
+:::{fetch} {prf:ref}`Thm:PropertiesFunctions:EvenOddExtension`
 :::
 
-In many applications the function $f$ is defined on an interval $[0,L]$ with $L>0$. For instance, when $f$ describes the motion of a vibrating string with length $L$. Then this function can be defined to be *even* on the interval $(-L,L)$ and outside that interval periodically with period $2L$, but it can also be defined to be *odd* on the interval $(-L,L)$ and outside that interval periodically with period $2L$. So, such a function can be written as a Fourier cosine series, but also as a Fourier sine series:
+Note that the extension of $f$ to a function defined on $[-L,L]$ is not unique, and the choice of the extension will determine the Fourier series of $f$. Note that if we choose to extend $f$ to an _odd_ function on $(-L,L)$, the value of the extension at $0$ becomes $0$, irrespective of the value of $f$ at $0$.
+
+Next up, making the function periodic with period $2L$. Here {numref}`Section:PropertiesFunctions` comes to the rescue again with the next theorem:
+
+:::{fetch} {prf:ref}`Thm:PropertiesFunctions:PeriodicExtension`
+:::
+
+Another, but equivalent, way to define the periodic extension of $f$ to a function defined on $[a,b)$ that is periodic with period $\ell=b-a$ is to define it as
 
 $$
-f(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos\left(\frac{n\pi x}{L}\right)=\sum_{n=1}^{\infty}b_n\sin\left(\frac{n\pi x}{L}\right)
+f_{\mathrm{ext}} =
+\begin{cases}
+f_{\mathrm{ext}}(x+\ell), & x < a, \\
+f(x), & a \leq x < b, \\
+f_{\mathrm{ext}}(x-\ell), & x \geq b.
+\end{cases}
 $$
 
-with $a_0=\displaystyle\frac{2}{L}\int_0^Lf(x)\,dx$ and for $n=1,2,3,\ldots$
+Now we have discussed the two steps to extend a function $f$ defined on $[0,L]$ to a function defined on $\mathbb{R}$ that is periodic with period $2L$ and is either odd or even, we can apply {prf:ref}`Def:Series:FourierFormula` to find the Fourier series of $f$. If we choose to extend $f$ to an odd function on $(-L,L)$, then the Fourier series of $f$ will be a Fourier sine series, and if we choose to extend $f$ to an even function on $(-L,L)$, then the Fourier series of $f$ is a Fourier cosine series.
 
-$$
-a_n=\frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx\quad\text{and}\quad b_n=\frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx.
-$$
-
+Let us do an example to see how this works in practice.
 
 ::::::{prf:example}
 :label: Ex:Series:FourierExample4
-Consider $f(x)=x$ for $0\leq x\leq 1$.
 
-If we define $f$ such that it is odd and periodic, then we have: $L=1$ and
+Consider $f(x)=2x$ for $0\leq x\leq 1$, so $L=2$ in this case. We want to find a Fourier series of $f$.
 
-\begin{align*}
-b_n&=\frac{2}{1}\int_0^1f(x)\sin(n\pi x)\,dx=2\int_0^1x\sin(n\pi x)\,dx\\
-&=-\frac{2}{n\pi}\int_0^1x\,d\cos(n\pi x)\\
-&=-\frac{2x\cos(n\pi x)}{n\pi}\bigg|_0^1+\frac{2}{n\pi}\int_0^1\cos(n\pi x)\,dx\\
-&=-\frac{2\cos(n\pi)}{n\pi}=\frac{2(-1)^{n+1}}{n\pi},\quad n=1,2,3,\ldots
-\end{align*}
-and therefore: $f(x)=\displaystyle\frac{2}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(n\pi x)$.
-
-:::{figure} Images/fourier4.png
-:name: fourier4
-:width: 50%
-
-A sawtooth wave.
-:::
-
-This is an example of a sawtooth wave. Around the jump points the Gibbs phenomenon is visible.
-
-If we define $f$ such that it is even and periodic, then we have: $L=1$,
-
-$$
-a_0=\frac{2}{1}\int_0^1f(x)\,dx=2\int_0^1x\,dx=x^2\bigg|_0^1=1
-$$
-
-and
+If we define $f_{\mathrm{odd}}$ as the odd periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{odd}}$ is given by
 
 \begin{align*}
-a_n&=\frac{2}{1}\int_0^1f(x)\cos(n\pi x)\,dx=2\int_0^1x\cos(n\pi x)\,dx\\
-&=\frac{2}{n\pi}\int_0^1x\,d\sin(n\pi x)\\
-&=\frac{2x\sin(n\pi x)}{n\pi}\bigg|_0^1-\frac{2}{n\pi}\int_0^1\sin(n\pi x)\,dx\\
-&=\frac{2}{n^2\pi^2}\cos(n\pi x)\bigg|_0^1
-=\frac{2\left((-1)^{n}-1\right)}{n^2\pi^2},\quad n=1,2,3,\ldots
+f_{\mathrm{odd}}(x) &= \begin{cases}
+f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+-f(-x), & -1 < x < 0, \\
+0, & x=0, \\
+f(x), & 0 < x \leq 1, \\
+f_{\mathrm{odd}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+-2(-x), & -1 < x < 0, \\
+0, & x=0, \\
+2x, & 0 < x \leq 1, \\
+f_{\mathrm{odd}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+2x, & -1 < x \leq 1, \\
+f_{\mathrm{odd}}(x-2), & x > 1.
+\end{cases}
 \end{align*}
-and therefore: $f(x)=\displaystyle\frac{1}{2}+\frac{2}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos(n\pi x)$.
+
+Note that to avoid defining the value of $f_{\mathrm{odd}}$ at $-1+2n$ for any integer $n$ twice, we have defined $f_{\mathrm{odd}}$ at those points as $f_{\mathrm{odd}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{odd}}(x-2)$ for $x > 1$. This is just a technicality to avoid defining the value of $f_{\mathrm{odd}}$ at those points twice, and it does not change the function $f$ itself on the interval $(0,1]$.
+
+The function $f_{\mathrm{odd}}$ turns out to be exactly the function $f$ defined in {prf:ref}`Ex:Series:FourierExample2`, which was a sawtooth wave. The Fourier sine series $g$ of $f_{\mathrm{odd}}$ is given by Equation {eq}`Eq:Series:SawToothFourier` and a visualization of the Fourier sine series $g$ of $f_{\mathrm{odd}}$ can be found in {numref}`Fig:Series:SawToothFourier`.
+
+If we define $f_{\mathrm{even}}$ as the even periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{even}}$ is given by
+
+\begin{align*}
+f_{\mathrm{even}}(x) &= \begin{cases}
+f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f(-x), & -1 < x < 0, \\
+f(x), & 0 \leq x \leq 1, \\
+f_{\mathrm{even}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f(-x), & -1 < x < 0, \\
+f(x), & 0 \leq x \leq 1, \\
+f_{\mathrm{even}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{even}}(x+2), & x \leq -1, \\
+-2x, & -1 < x < 0, \\
+2x, & -1 < x \leq 1, \\
+f_{\mathrm{even}}(x-2), & x > 1.
+\end{cases}
+\end{align*}
+
+Again, we avoid double values at $x=-1+2n$ for any integer $n$ by defining $f_{\mathrm{even}}$ at those points as $f_{\mathrm{even}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{even}}(x-2)$ for $x > 1$.
+
+Now we have an even periodic extension $f_{\mathrm{even}}$ of $f$ to $\mathbb{R}$ with period $2L=2$, so we can apply {prf:ref}`Thm:Series:FourierCosineSeries` to find the Fourier cosine series $h$ of $f_{\mathrm{even}}$. We have for that
+
+$$
+a_0=\frac{2}{1}\int_0^1f(x)\,dx=2\int_0^12x\,dx=2x^2\bigg|_0^1=2,
+$$
+
+and for $n=0,1,2,3,\ldots$
+
+\begin{align*}
+a_n&=\frac{2}{1}\int_0^1f(x)\cos(n\pi x)\,dx \\
+&=2\int_0^12x\cos(n\pi x)\,dx\\
+&=\frac{4x\sin(n\pi x)}{n\pi}\bigg|_0^1-\frac{4}{n\pi}\int_0^1\sin(n\pi x)\,dx\\
+&=\frac{4}{n^2\pi^2}\cos(n\pi x)\bigg|_0^1 \\
+&=\frac{4\left((-1)^{n}-1\right)}{n^2\pi^2},
+\end{align*}
+
+and therefore
+
+$$
+h(x)=1+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos(n\pi x).
+$$
+
+Because our function $f_{\mathrm{even}}$ is continuous on $\mathbb{R}$, the Gibbs phenomenon does not occur and we have that $h(x)=f_{\mathrm{even}}(x)$ for all $x \in \mathbb{R}$.
+
+{numref}`Fig:Series:TriangularWave` shows a plot of the partial sum of the Fourier cosine series $h$ of $f_{\mathrm{even}}$ together with the function $f_{\mathrm{even}}$ itself. We also included the partial sum of the Fourier sine series $g$ of $f_{\mathrm{odd}}$ in the plot to show the difference between the two extensions.
+You can change the value of $N$ to see how the approximation changes.
 
 :::{figure} Images/fourier5.png
-:name: fourier5
+:name: Fig:Series:TriangularWave
 :width: 50%
 
-A triangular wave.
+Truncated Fourier series of the even and odd periodic extensions of $f(x)=2x$ on $[0,1]$.
 :::
 
-This is an example of a *triangular wave*. In this case the function is continuous and Gibbs phenomenon does not occur.
+:::{todo}
+Replace {numref}`Fig:Series:TriangularWave` with an applet, where you can change the value of $N$ to see how the approximation changes.
+:::
 
-For $x=1$ {prf:ref}`Fourier's convergence theorem <Thm:Series:FourierConvergence>` implies:
-
-\begin{align*}
-&1=\frac{1}{2}+\frac{2}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}(-1)^n=\frac{1}{2}+\frac{4}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}\\
-&{}\quad\Longrightarrow\quad\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{8}\pi^2.
-\end{align*}
-Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
-
-$$
-\frac{1}{2}+\frac{16}{\pi^4}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^4}=\frac{1}{1}\int_{-1}^1\{f(x)\}^2\,dx=\int_{-1}^1x^2\,dx
-=\frac{1}{3}x^3\bigg|_{-1}^1=\frac{2}{3}
-$$
-
-or equivalently
-
-$$
-\frac{16}{\pi^4}\sum_{n=1}^{\infty}\frac{1}{(2k-1)^4}=\frac{2}{3}-\frac{1}{2}=\frac{1}{6}\quad\Longrightarrow\quad
-\sum_{n=1}^{\infty}\frac{1}{(2k-1)^4}=\frac{1}{96}\pi^4.
-$$
+The even periodic extension $f_{\mathrm{even}}$ is an example of a *triangular wave*.
 
 ::::::
+
+The last example shows that if we want to avoid the Gibbs phenomenon, we should extend $f$ to a function that is continuous on $\mathbb{R}$, if possible. In the example we have seen that the odd periodic extension $f_{\mathrm{odd}}$ of $f$ is not continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon occurs in the Fourier sine series $g$ of $f_{\mathrm{odd}}$. On the other hand, the even periodic extension $f_{\mathrm{even}}$ of $f$ is continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon does not occur in the Fourier cosine series $h$ of $f_{\mathrm{even}}$.
+
+In practice using an even periodic extension is more common than using an odd periodic extension of $f$, as the even periodic extension of a function $f$ that is continuous on $[0,L]$ is also continuous on $\mathbb{R}$, while the odd periodic extension of a function $f$ that is continuous on $[0,L]$ can only be continuous on $\mathbb{R}$ if $f(0)=0=f(L)$.
