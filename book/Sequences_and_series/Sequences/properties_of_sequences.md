@@ -620,6 +620,13 @@ $$
 This shows that $a_n>0$ for all $n=1,2,3,\ldots$.
 ::::::
 
+## Grasple exercises
+
+:::{todo}
+Add Grasple exercises to {numref}`Sec:PropertiesOfSequences`.
+:::
+
+
 ## Exercises
 
 ::::{exercise}

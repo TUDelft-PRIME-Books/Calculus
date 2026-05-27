@@ -2,14 +2,31 @@
 
 # Power series
 
-In this section we cover:
-
-- Power series
-- Interval of convergence
-- Representation of functions as power series using geometric series
-- Rules of calculation (sums, substitutions, differentiation, integration, products)
-
 ## Introduction
+
+In {numref}`Sec:Series:GeometricSeries` you have encountered geometric series, which are series of the form $\displaystyle\sum_{n=0}^{\infty}ar^n$ for some constants $a$ and $r$. You also have seen in {prf:ref}`Thm:Series:GeometricSeries` that these series converge when $|r|<1$ and diverge when $|r|\geq1$, and in case of convergence, the sum of the series is $\dfrac{a}{1-r}$.
+
+If we would consider $r$ not as a value, but as a variable $x$, then we would have a series of the form $\displaystyle\sum_{n=0}^{\infty}ax^n$ and if $|x|<1$ we would have $\displaystyle\sum_{n=0}^{\infty}ax^n=\frac{a}{1-x}=f(x)$.
+
+In {numref}`Fig:PowerSeries:Introduction` we have plotted the function $f(x)=\dfrac{1}{1-x}$ and the partial sums $s_n(x)=\displaystyle\sum_{k=0}^n x^k$ of the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ for $n=3$. As you can see in the figure, the function $f$ and the partial sum $s_3$ are close to each other for $x$ close to $0$, but they are not close to each other for $x$ close to $1$.
+
+:::{figure} Images/PowerSeriesIntroduction.png
+:name: Fig:PowerSeries:Introduction
+
+The function $f(x)=\dfrac{1}{1-x}$ and the partial sum $s_n(x)$ of the power series $\displaystyle\sum_{n=0}^{\infty}x^n$. You can change the value of $n$ to see how the partial sums change when $n$ increases.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PowerSeries:Introduction` by an applet where the user can change the value of $n$ to see how the partial sums change when $n$ increases.
+:::
+
+Now, increase yourself in the figure the value of $n$ to see how the partial sums change when $n$ increases. You should see that the partial sums get closer and closer to the function $f$ between $-1$ and $1$, but they do not get closer and closer to $f$ outside the interval $(-1,1)$. This behavior is something special and is the subject of this section.
+
+Instead of only focussing on geometric series of the form $\displaystyle\sum_{n=0}^{\infty}ax^n$, we will now consider more general series of the form $\displaystyle\sum_{n=0}^{\infty}a_nx^n$ for some sequence $\{a_n\}_{n=0}^{\infty}$. These series are called power series and they have similar convergence properties as geometric series. Moreover, we can use geometric series to find power series representations of functions.
+
+## Power series and their convergence
+
+We start with a formal definition of what we consider as a power series:
 
 ::::::{prf:definition}
 :label: Def:Series:PowerSeries
@@ -27,29 +44,56 @@ $$
 \sum_{n=0}^{\infty}c_n(x-a)^n=c_0+c_1(x-a)+c_2(x-a)^2+\cdots
 $$
  
-is called a power series in $x-a$ or a power series centered at $x=a$ or a power series about $a$.
+is called a **power series in $x-a$** or a **power series centered at $x=a$** or a **power series about $a$**.
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Series:GeometricSeries
-The power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is a *geometric series* with common ratio $x$. Hence, this power series is absolutely convergent if $|x|<1$ and is divergent if $|x|\geq1$. Moreover, for $|x|<1$ the sum of the series is $\dfrac{1}{1-x}$.
+The power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is a *geometric series* with common ratio $x$.
+
+Hence, this power series is absolutely convergent if $|x|<1$ and is divergent if $|x|\geq1$.
+
+Moreover, for $|x|<1$ the sum of the series is $\dfrac{1}{1-x}$.
 ::::::
 
+So how would you in general investigate the convergence of a power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$?
+
+Well, the answer to that question is "By using the ratio test": because power series are a generalisation of geometric series, and in the proof of the ratio test, {prf:ref}`Thm:Series:RatioTest`, we have seen that the ratio test is based on the idea of comparing a series with a geometric series, it is not surprising that the ratio test is the right tool to investigate the convergence of power series.
+
+The next example illustrates how to use the ratio test to investigate the convergence of any power series and to find the interval of convergence of a power series.
+
 ::::::{prf:example}
-The series $\displaystyle\sum_{n=1}^{\infty}\frac{(x-2)^{n-1}}{n}$ is a power series about $2$. Note that the series converges for $x=2$ (with sum $1$). For $x\neq2$ we might apply the ratio test: let $a_n=\displaystyle\frac{(x-2)^{n-1}}{n}$, then we have:
+:label: Ex:Series:PowerSeries1
+Let us investigate the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}(x-2)^{n-1}$ which is a power series about $2$.
+
+If $x=2$, the series reduces to
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n}(2-2)^{n-1} = \sum_{n=1}^{\infty}\frac{1}{n} \cdot 0^{n-1} = 1+\sum_{n=2}^{\infty}0 = 1.
+$$
+
+This means that the series converges for $x=2$ with sum $1$.
+
+For $x\neq2$ we apply the ratio test: let $a_n=\displaystyle\frac{1}{n}(x-2)^{n-1}=\dfrac{(x-2)^{n-1}}{n}$, then we have:
 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(x-2)^n}{n+1}\cdot\frac{n}{(x-2)^{n-1}}\right|\\
-&=\lim\limits_{n\to\infty}\frac{n}{n+1}\cdot|x-2|=|x-2|.
+&=\lim\limits_{n\to\infty}\frac{n}{n+1}\cdot|x-2| \\
+&=|x-2|.
 \end{align*}
-Hence, the series is absolutely convergent if $|x-2|<1$ and is divergent if $|x-2|>1$. The ratio test is inconclusive if  $|x-2|=1$.
 
-For $x=3$ the series equals the harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is divergent.
+Hence, the series is absolutely convergent if $|x-2|<1$ and is divergent if $|x-2|>1$.
 
-For $x=1$ the series equals the alternating harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$, which is (conditionally) convergent.
+The ratio test is inconclusive if  $|x-2|=1$, so we need to investigate the convergence of the series for $x=1$ and for $x=3$ separately.
 
-We conclude that the series converges if $x\in[1,3)$ and diverges otherwise. The interval $[1,3)$ is called the **interval of convergence** of the power series.
+For $x=1$ the series becomes $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$, which is the alternating harmonic series, which is conditionally convergent.
+
+For $x=3$ the series becomes $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is the harmonic series, which is divergent.
+
+We conclude that the series converges if $x\in[1,3)$ and diverges otherwise.
 ::::::
+
+The next theorem states the only three possibilities for the convergence of a power series. The proof of this theorem is based on the direct comparison test and is not difficult.
 
 ::::::{prf:theorem}
 :label: Thm:Series:PowerSeries
@@ -70,12 +114,18 @@ there are only three possibilities:
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Series:PowerSeries`
 :class: tudproof, dropdown
-If the power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ absolutely converges for $x=b$, then $\displaystyle\sum_{n=0}^{\infty}\left|c_n(b-a)^n\right|$ converges. Then the {prf:ref}`comparison test <Thm:Series:DirectComparisonTest>` implies that $\displaystyle\sum_{n=0}^{\infty}\left|c_n(x-a)^n\right|$ converges for all $x$ such that $|x-a|<|b-a|$.
+If the power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ absolutely converges for $x=b$, then $\displaystyle\sum_{n=0}^{\infty}\left|c_n(b-a)^n\right|$ converges. Then the {prf:ref}`direct comparison test <Thm:Series:DirectComparisonTest>` implies that $\displaystyle\sum_{n=0}^{\infty}\left|c_n(x-a)^n\right|$ converges for all $x$ such that $|x-a|<|b-a|$.
 
 If there are values of $x$ for which the series diverges, then there exists a maximum value of $|b-a|=R$ such that the series absolutely converges for $|x-a|<R$.
 
 This proves the theorem.
 ::::::
+
+In {prf:ref}`Ex:Series:GeometricSeries` we have seen that the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is absolutely convergent for $|x|<1$ and divergent for $|x|\geq1$. Unsurprisingly, this even holds if $x$ is a complex number. In that case the condition $|x|<1$ defines the inside of a circle in the complex plane $\mathbb{C}$ with center $0$ and radius $1$. In {prf:ref}`Ex:Series:PowerSeries1` we have seen that the power series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}(x-2)^{n-1}$ is absolutely convergent for $|x-2|<1$ and divergent for $|x-2|>1$. The condition $|x-2|<1$ defines the inside of a circle in the complex plane $\mathbb{C}$ with center $2$ and radius $1$.
+
+In general, the condition for convergence of a power series[^endpoints] can be written as $|x-a|<R$, which defines the inside of a circle in the complex plane $\mathbb{C}$ with center $a$ and radius $R$. Because of this link with circles in the complex plane, the number $R$ is called the radius of convergence of the power series. The interval containing all $x\in\mathbb{R}$ for which the series converges is called the interval of convergence of the power series:
+
+[^endpoints]: Ignoring the behavior in the endpoints.
 
 ::::::{prf:definition}
 :label: Def:Series:RadiusOfConvergence
@@ -85,82 +135,127 @@ The number $R$ in {prf:ref}`Thm:Series:PowerSeries` is called the **radius of co
 The interval containing all $x$ for which the series converges is called the **interval of convergence** of the power series.
 ::::::
 
+:::{prf:remark}
+:label: Rem:Series:PowerSeries
+
+If the third case in {prf:ref}`Thm:Series:PowerSeries` holds, the behaviour of the series for $|x-a|=R$ can be different for different power series. For some power series the series converges for all $x$ such that $|x-a|=R$, for some power series the series diverges for all $x$ such that $|x-a|=R$, and for some power series the series converges for some values of $x$ such that $|x-a|=R$ and diverges for other values of $x$ such that $|x-a|=R$. That is why you always need to investigate the convergence of a power series for the endpoints of the interval of convergence separately if the third case in {prf:ref}`Thm:Series:PowerSeries` holds.
+
+:::
+
 ::::::{prf:example}
-1) The series $\displaystyle\sum_{n=0}^{\infty}n!(x-1)^n$ is a power series about $1$. Hence, the series converges for $x=1$ (with sum $1$). For $x\neq1$ we apply the ratio test: let $a_n=n!(x-1)^n$, then we have:
+:label: Ex:Series:PowerSeries2
+The series $\displaystyle\sum_{n=0}^{\infty}n!(x-1)^n$ is a power series about $1$.
 
-$$ 
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{(n+1)!(x-1)^{n+1}}{n!(x-1)^n}\right|
-=\lim\limits_{n\to\infty}(n+1)|x-1|=\infty, 
-$$ 
+The series converges for $x=1$ with sum $1$.
+
+For $x\neq1$ we apply the ratio test: let $a_n=n!(x-1)^n$, then we have:
+
+\begin{align*} 
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(n+1)!(x-1)^{n+1}}{n!(x-1)^n}\right| \\
+&= \lim\limits_{n\to\infty}(n+1)|x-1| \\
+&=\infty, 
+\end{align*}
   
-since $|x-1| > 0$. This implies that the series diverges for all $x\neq1$. Hence, the series only converges for $x=1$ and the radius of convergence is $R=0$.
+since $|x-1| > 0$.
 
-2) The series $\displaystyle\sum_{n=0}^{\infty}\frac{(x+2)^n}{n!}$ is a power series about $-2$. Hence, the series converges for $x=-2$ (with sum $1$). For $x\neq-2$ we apply the ratio test: let $a_n=\displaystyle\frac{(x+2)^n}{n!}$, then we have:
+This implies that the series diverges for all $x\neq1$. Hence, the series only converges for $x=1$ and the radius of convergence is $R=0$.
 
-$$ 
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{(x+2)^{n+1}}{(n+1)!}\cdot\frac{n!}{(x+2)^n}\right|
-=\lim\limits_{n\to\infty}\frac{|x+2|}{n+1}=0. 
-$$ 
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:PowerSeries3
+The series $\displaystyle\sum_{n=0}^{\infty}\frac{(x+2)^n}{n!}$ is a power series about $-2$.
+
+Hence, the series converges for $x=-2$ with sum $1$.
+
+For $x\neq-2$ we set $a_n=\displaystyle\frac{(x+2)^n}{n!}$ and use the ratio test:
+
+\begin{align*} 
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| &= \lim\limits_{n\to\infty}\left|\frac{(x+2)^{n+1}}{(n+1)!}\cdot\frac{n!}{(x+2)^n}\right| \\
+&=\lim\limits_{n\to\infty}\frac{|x+2|}{n+1} \\
+&=0. 
+\end{align*} 
  
 This implies that the series converges for all $x\neq-2$ as well. Hence, the series converges for all $x\in\mathbb{R}$ and the radius of convergence is $R=\infty$.
 
-3) The series $\displaystyle\sum_{n=1}^{\infty}\frac{x^{n+1}}{n^2}$ is a power series about $0$. Hence, the series converges for $x=0$ (with sum $0$). For $x\neq0$ we apply the ratio test: let $a_n=\displaystyle\frac{x^{n+1}}{n^2}$, then we have:
+::::::
 
-$$ 
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{x^{n+2}}{(n+1)^2}\cdot\frac{n^2}{x^{n+1}}\right|
-=\lim\limits_{n\to\infty}\left(\frac{n}{n+1}\right)^2|x|=|x|. 
-$$ 
+::::::{prf:example}
+:label: Ex:Series:PowerSeries4
+The series $\displaystyle\sum_{n=1}^{\infty}\frac{x^{n+1}}{n^2}$ is a power series about $0$.
+
+For $x=0$ the series converges with sum $0$.
+
+For $x\neq0$ we turn to the ratio test. We choose $a_n=\displaystyle\frac{x^{n+1}}{n^2}$ and find:
+
+\begin{align*} 
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{x^{n+2}}{(n+1)^2}\cdot\frac{n^2}{x^{n+1}}\right| \\
+&=\lim\limits_{n\to\infty}\left(\frac{n}{n+1}\right)^2|x|\\
+&=|x|. 
+\end{align*}
  
-This implies that the series absolutely converges for $|x| < 1$ and diverges for $|x| > 1$. So the radius of convergence is $R=1$. For $x=1$ we have $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ which is a $p$-series with $p=2>1$ and therefore (absolutely) convergent. For $x=-1$ we have $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}$ which is absolutely convergent as well. Hence, the interval of convergence is $[-1,1]$.
+This implies that the series absolutely converges for $|x| < 1$ and diverges for $|x| > 1$. So the radius of convergence is $R=1$.
 
-4) The series $\displaystyle\sum_{n=0}^{\infty}\frac{(3-x)^n}{n+1}$ is a power series about $3$. Hence, the series converges for $x=3$ (with sum $1$). For $x\neq3$ we might apply the ratio test: let $a_n=\displaystyle\frac{(3-x)^n}{n+1}$, then we have:
+For $x=1$ we have $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ which is a $p$-series with $p=2>1$ and therefore (absolutely) convergent.
+
+For $x=-1$ we have $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}$ which is absolutely convergent as well, as the absolute value series is again a $p$-series with $p=2>1$.
+
+Hence, the interval of convergence is $[-1,1]$.
+
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:PowerSeries5
+The series $\displaystyle\sum_{n=0}^{\infty}\frac{(3-x)^n}{n+1}$ is a power series about $3$, which converges if $x=3$ with sum $1$.
+
+The ratio test for $x\neq3$ gives with $a_n=\displaystyle\frac{(3-x)^n}{n+1}$:
 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(3-x)^{n+1}}{n+2}\cdot\frac{n+1}{(3-x)^n}\right|\\
-&=\lim\limits_{n\to\infty}\frac{n+1}{n+2}\cdot|3-x|=|3-x|.
+&=\lim\limits_{n\to\infty}\frac{n+1}{n+2}\cdot|3-x|\\
+&=|3-x|.
 \end{align*}
-Hence, the series is absolutely convergent if $|3-x| < 1$ and is divergent if $|3-x| > 1$. So the radius of convergence is $R=1$. For $x=2$ the series equals the harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n+1}$, which is divergent and for $x=4$ the series equals the alternating harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}$, which is (conditionally) convergent. Hence, the interval of convergence is $(2,4]$.
 
-5) The series $\displaystyle\sum_{n=1}^{\infty}n\left(\frac{x-5}{2}\right)^n$ is a power series about $5$. Hence, the series converges for $x=5$ (with sum $0$). For $x\neq5$ we might apply the ratio test: let $a_n=\displaystyle n\left(\frac{x-5}{2}\right)^n$, then we have:
+Hence, the series is absolutely convergent if $|3-x| < 1$, is divergent if $|3-x| > 1$ and the radius of convergence is $R=1$.
+
+For $x=2$ the series equals the harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n+1}$, which is divergent, and for $x=4$ the series equals the alternating harmonic series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}$, which is conditionally convergent.
+
+Hence, the interval of convergence is $(2,4]$.
+
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:PowerSeries6
+The series $\displaystyle\sum_{n=1}^{\infty}n\left(\frac{x-5}{2}\right)^n$ is a power series about $5$.
+
+Again this series converges for $x=5$ with sum $0$.
+
+For $x\neq5$ we might apply the ratio test: let $a_n=\displaystyle n\left(\frac{x-5}{2}\right)^n$, then we have:
 
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|(n+1)\left(\frac{x-5}{2}\right)^{n+1}\cdot\frac{1}{n}\left(\frac{2}{x-5}\right)^n\right|\\
-&=\lim\limits_{n\to\infty}\frac{n+1}{n}\cdot\left|\frac{x-5}{2}\right|=\left|\frac{x-5}{2}\right|.
+&=\lim\limits_{n\to\infty}\frac{n+1}{n}\cdot\left|\frac{x-5}{2}\right|\\
+&=\left|\frac{x-5}{2}\right|.
 \end{align*}
-Hence, the series is absolutely convergent if $\displaystyle\left|\frac{x-5}{2}\right| < 1$ or $|x-5| < 2$ and is divergent if $\displaystyle\left|\frac{x-5}{2}\right| > 1$ or $|x-5| > 2$. So the radius of convergence is $R=2$. For $x=7$ the series reads $\displaystyle\sum_{n=1}^{\infty}n$, which is divergent and for $x=3$ the series reads $\displaystyle\sum_{n=1}^{\infty}n(-1)^n$, which is divergent as well. Hence, the interval of convergence is $(3,7)$.
+
+The series is thus absolutely convergent if $\displaystyle\left|\frac{x-5}{2}\right| < 1$ or equivalently $|x-5| < 2$ and is divergent if $\displaystyle\left|\frac{x-5}{2}\right| > 1$ or $|x-5| > 2$. So the radius of convergence is $R=2$.
+
+For $x=7$ the series reads $\displaystyle\sum_{n=1}^{\infty}n$, which is divergent as $\displaystyle\lim_{n\to\infty}n=\infty$, and for $x=3$ the series reads $\displaystyle\sum_{n=1}^{\infty}n(-1)^n$, which is divergent as well by the same test for divergence.
+
+Hence, the interval of convergence is $(3,7)$.
 ::::::
 
-::::::{prf:example} Bessel functions
-:label: Ex:Series:Bessel
+## Power series and functions
 
-Bessel functions are defined in terms of power series. The German mathematician [Friedrich Wilhelm Bessel (1784-1846)](https://en.wikipedia.org/wiki/Friedrich_Wilhelm_Bessel) introduced these functions when solving Kepler's equation for describing planetary motion. Later, these Bessel functions have been applied in many different physical situations, including the temperature distribution in a circular plate and the shape of a vibrating drumhead.
+We started this section with comparing the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ with the function $f(x)=\dfrac{1}{1-x}$, and we have seen that the power series converges to $f(x)$ for $|x|<1$. In general, a power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ defines a function $f$ on the interval of convergence of the power series.
 
-:::{figure} Images/bessel.gif
-:width: 50%
-:name: bessel function
-:align: center
+This means that we could also use power series to represent functions:
 
-The motion of a vibrating drumhead.
-Source: https://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane.
+:::{prf:definition}
+:label: Def:Series:PowerSeriesRepresentation
+
+A **power series representation** of a function $f$ is a power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ such that $f(x)=\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ for all $x$ in the interval of convergence of the power series.
 :::
-
-The Bessel function $J_0(x)$ of the first kind of order $0$ is defined by: 
-
-$$
-J_0(x)=\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{2^{2n}(n!)^2}.
-$$
-
-Note that this is a power series in $x$ which is convergent for $x=0$. For $x\neq0$ we might apply the ratio test: let $a_n=\displaystyle\frac{(-1)^nx^{2n}}{2^{2n}(n!)^2}$, then we have:
-
-$$ 
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+2}}{2^{2n+2}((n+1)!)^2}\cdot\frac{2^{2n}(n!)^2}{(-1)^nx^{2n}}\right|
-=\lim\limits_{n\to\infty}\frac{x^2}{4(n+1)^2}=0. 
-$$ 
- 
-Hence, the series converges for all $x\neq0$ as well. We conclude that the power series converges for all $x\in\mathbb{R}$ (the radius of convergence is $R=\infty$). This implies that the domain of the Bessel function $J_0(x)$, the interval of convergence of the series, is $(-\infty,\infty)=\mathbb{R}$.
-::::::
-
-## Power series representations
 
 In {prf:ref}`Ex:Series:GeometricSeries` we have seen that the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is absolutely convergent for $|x|<1$ and divergent for $|x|\geq1$. Furthermore, we have
 
@@ -177,53 +272,88 @@ $$
 \frac{1}{1+x}=\sum_{n=0}^{\infty}(-x)^n=\sum_{n=0}^{\infty}(-1)^nx^n,
 $$
 
-which is valid for $|-x|<1$ or equivalenty for $|x|<1$.
+which is valid for $|-x|<1$ or equivalently for $|x|<1$.
 
-A power series representation for a function is not unique.
+The next example illustrates how to use substitutions in the geometric series to find power series representations of functions and to find the interval of convergence of these power series representations.
 
 ::::::{prf:example}
+:label: Ex:Series:PowerSeriesFunctions1
 Consider the function $\dfrac{1}{5+x}$. 
 
-Replacing $x$ by $-x-4$ in {eq}`Eq:Series:GeometricSeries` we obtain
+Replacing $x$ by $-x-4$ in Equation {eq}`Eq:Series:GeometricSeries` we obtain
 
-$$
-\frac{1}{5+x}=\frac{1}{1-(-x-4)}=\sum_{n=0}^{\infty}(-x-4)^n=\sum_{n=0}^{\infty}(-1)^n(x+4)^n,
-$$
+\begin{align*}
+\frac{1}{5+x}&=\frac{1}{1-(-x-4)}\\
+&=\sum_{n=0}^{\infty}(-x-4)^n\\
+&=\sum_{n=0}^{\infty}(-1)^n(x+4)^n,
+\end{align*}
 
 which is valid for $|-x-4|<1$ or equivalently for $|x+4|<1$. This is a power series about $-4$ with radius of convergence $R=1$. Note that both for $x=-5$ and $x=-3$ the series diverges. This implies that the interval of convergence is the open interval $(-5,-3)$.
+::::::
 
-We also have with $-\dfrac{x}{5}$ instead of $x$ in {eq}`Eq:Series:GeometricSeries`
+::::::{prf:example}
+:label: Ex:Series:PowerSeriesFunctions2
+Instead of using the substitution $-x-4$ for $x$ we could also substitute $-\dfrac{x}{5}$ for $x$ instead in Equation {eq}`Eq:Series:GeometricSeries`. This gives
 
-$$
-\frac{1}{5+x}=\frac{1}{5}\cdot\frac{1}{1+\dfrac{x}{5}}=\frac{1}{5}\sum_{n=0}^{\infty}\left(-\frac{x}{5}\right)^n=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n,
-$$
+\begin{align*}
+\frac{1}{5+x}&=\frac{1}{5}\cdot\frac{1}{1+\dfrac{x}{5}}\\
+&=\frac{1}{5}\sum_{n=0}^{\infty}\left(-\frac{x}{5}\right)^n\\
+&=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n,
+\end{align*}
 
 which is valid for $\left|-\dfrac{x}{5}\right|<1$ or equivalently for $|x|<5$. This is a power series about $0$ with radius of convergence $R=5$. Note that both for $x=-5$ and for $x=5$ the series diverges. This implies that the interval of convergence is the open interval $(-5,5)$.
 
-Note that the latter power series representation is much more useful than the first one.
+::::::
+
+In {prf:ref}`Ex:Series:PowerSeriesFunctions1` we have found a power series representation of $\dfrac{1}{5+x}$ which is valid for $-5<x<-3$, and in {prf:ref}`Ex:Series:PowerSeriesFunctions2` we have found a power series representation of $\dfrac{1}{5+x}$ which is valid for $-5<x<5$. In {numref}`Fig:PowerSeries:PowerSeriesFunctions` we have plotted the function $\dfrac{1}{5+x}$ and the partial sums of the two power series representations for $n=3$. You can increase yourself in the figure the value of $n$ to see how the partial sums change when $n$ increases.
+
+:::{figure} Images/PowerSeriesFunctions.png
+:name: Fig:PowerSeries:PowerSeriesFunctions
+
+The function $\dfrac{1}{5+x}$ and the partial sums of the two power series representations from {prf:ref}`Ex:Series:PowerSeriesFunctions1` and {prf:ref}`Ex:Series:PowerSeriesFunctions2`. You can change the value of $n$ to see how the partial sums change when $n$ increases.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PowerSeries:PowerSeriesFunctions` by an applet where the user can change the value of $n$ to see how the partial sums change when $n$ increases.
+:::
+
+Note that the power series representation from {prf:ref}`Ex:Series:PowerSeriesFunctions2` is much more useful than the first one, as the interval of convergence of the first power series representation is contained in the interval of convergence of the second power series representation.
+
+:::{prf:remark}
+:label: Rem:Series:PowerSeriesFunctions
+
+A power series representation of a function $f$ is not unique, as shown in {prf:ref}`Ex:Series:PowerSeriesFunctions1` and {prf:ref}`Ex:Series:PowerSeriesFunctions2`.
+:::
+
+::::::{prf:example}
+:label: Ex:Series:PowerSeriesFunctions3
+
+We want to find a power series representation of $g(x)=\dfrac{x^2}{5+x}$. 
+
+In the previous example we have found that
+
+$$
+f(x)=\frac{1}{5+x}=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n,\quad|x|<5.
+$$
+
+Our target function is $g(x)=\dfrac{x^2}{5+x}$, which is equal to $x^2f(x)$. Hence, we can find a power series representation of $g$ by multiplying the power series representation of $f$ by $x^2$:
+
+\begin{align*}
+g(x) &= \frac{x^2}{5+x} \\
+&= x^2f(x) \\
+&= x^2\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n \\
+&= \sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^{n+2},
+\end{align*}
+
+provided that $|x|<5$. This is a power series about $0$ with radius of convergence $R=5$. Note that both for $x=-5$ and for $x=5$ the series diverges. This implies that the interval of convergence is the open interval $(-5,5)$.
+
 ::::::
 
 ::::::{prf:example}
-Find a power series representation of $\dfrac{x^2}{5+x}$. 
+:label: Ex:Series:PowerSeriesFunctions4
+Now we turn to the power series representation of $\dfrac{1}{1+x^2}$.
 
-Solution. In the previous example we have found that
-
-$$
-\frac{1}{5+x}=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n,\quad|x|<5.
-$$
-
-Multiplication by $x^2$ leads to
-
-$$
-\frac{x^2}{5+x}=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^{n+2},\quad|x|<5.
-$$
-
-::::::
-
-::::::{prf:example}
-Find a power series representation of $\dfrac{1}{1+x^2}$. 
-
-Solution. If we replace $x$ by $-x^2$ in {eq}`Eq:Series:GeometricSeries` we obtain
+If we replace $x$ by $-x^2$ in Equation {eq}`Eq:Series:GeometricSeries` we obtain
 
 $$
 \frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-x^2)^n=\sum_{n=0}^{\infty}(-1)^nx^{2n},
@@ -232,15 +362,17 @@ $$
 which is valid for $\left|-x^2\right|<1$ or equivalently for $|x|<1$. This is a power series about $0$ with radius of convergence $R=1$. Note that the series diverges for both $x=-1$ and for $x=1$. This implies that the interval of convergence is the open interval $(-1,1)$.
 ::::::
 
-Note that the function $\dfrac{1}{1+x^2}$ is the derivative of $\arctan(x)$.
+It might of course not always be possible to find a power series representation of a function $f$ by using substitutions in the geometric series. For instance, it is not possible to find a power series representation of $\arctan(x)$ by using substitutions in the geometric series.
 
-What happens if we differentiate or integrate a power series representation of a function $f$? 
+Note however, that the function $\dfrac{1}{1+x^2}$ in {prf:ref}`Ex:Series:PowerSeriesFunctions4` is the derivative of $\arctan(x)$. So would it be possible to integrate the power series representation of $\dfrac{1}{1+x^2}$ to find a power series representation of $\arctan(x)$?
 
-The next theorem states that we can differentiate and integrate a power series term by term and that the radius of convergence stays the same.
+But if we could integrate, could we perhaps also differentiate a power series representation of a function $f$ to find a power series representation of the derivative of $f$?
+
+The next theorem states the answers to these questions:
 
 ::::::{prf:theorem}
 :label: Thm:Series:DifferentiationIntegration
-If the power series $\displaystyle\sum c_n(x-a)^n$ has radius of convergence $R>0$, then the function $f$ defined by
+If the power series $\displaystyle\sum_{n=0}^{\infty} c_n(x-a)^n$ has the radius of convergence $R>0$, then the function $f$ defined by
 
 $$
 f(x)=c_0+c_1(x-a)+c_2(x-a)^2+\cdots=\sum_{n=0}^{\infty}c_n(x-a)^n
@@ -256,43 +388,84 @@ and
 
 \begin{align*}
 \int f(x)\,dx&=C+c_0(x-a)+\frac{1}{2}c_1(x-a)^2+\frac{1}{3}c_2(x-a)^3+\cdots\\
-&=C+\sum_{n=0}^{\infty}\frac{c_n}{n+1}(x-a)^{n+1}.
+&=C+\sum_{n=0}^{\infty}\frac{c_n}{n+1}(x-a)^{n+1},
 \end{align*}
+
+with $C\in\mathbb{R}$ an arbitrary constant. 
+
+The radius of convergence of the power series representation of $f'$ and $\int f(x)\,dx$ is the same as the radius of convergence of the power series representation of $f$.
 ::::::
 
 ::::::{note}
 We skip the proof of this theorem.
-
-After differentiating or integrating a power series representation of a function $f$ the radius of convergence $R$ stays the same. However, at the endpoints of the interval of convergence the behaviour might be different. The interval of convergence can be $(a-R,a+R)$, $[a-R,a+R)$, $(a-R,a+R]$ or even $[a-R,a+R]$.
 ::::::
 
 ::::::{prf:example}
-:label: Ex:Series:LogTwo
-Consider the power series representation $\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$. Differentiation leads to
+:label: Ex:Series:LogTwo0
+Consider the power series representation $h(x)=\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$.
 
-\begin{align*}
-&-\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^nx^{n-1}\\
-&{}\quad\Longleftrightarrow\quad\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^{n-1}x^{n-1}=\sum_{n=0}^{\infty}(n+1)(-1)^nx^n.
-\end{align*}
-Note that this power series is only convergent for $-1<x<1$. For instance, this implies that
+The derivative of $h$ is $h'(x)=-\dfrac{1}{(1+x)^2}$.
+
+Differentiation of the power series representation leads to
+
+$$
+-\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^nx^{n-1}.
+$$
+
+We can rewrite this as
+
+$$
+\frac{1}{(1+x)^2}=\sum_{n=1}^{\infty}n(-1)^{n-1}x^{n-1}=\sum_{n=0}^{\infty}(n+1)(-1)^nx^n.
+$$
+
+Note that this power series is only convergent for $-1<x<1$.
+
+This power series implies that
 
 $$
 \sum_{n=0}^{\infty}\frac{n+1}{2^n}=\frac{1}{\left(1-\frac{1}{2}\right)^2}=4\quad\text{and}\quad\sum_{n=0}^{\infty}(-1)^n\frac{n+1}{2^n}=\frac{1}{\left(1+\frac{1}{2}\right)^2}=\frac{4}{9}.
 $$
 
-Integration leads to
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:LogTwo
+
+We again consider the power series representation $h(x)=\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$.
+
+Integration of the power series leads to
 
 $$
-\ln|1+x|=C+\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1}.
+\int h(x)\,dx=\int\frac{1}{1+x}\,dx=C+\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1},
 $$
 
-For $x=0$ this reads: $0=\ln(1)=C+0$ which implies that $C=0$. Hence we have
+with $C\in\mathbb{R}$ an arbitrary constant.
+
+Direct integration of the function $h$ leads to
+
+$$
+\int h(x)\,dx=\int\frac{1}{1+x}\,dx=\ln|1+x|+D,
+$$
+
+with $D\in\mathbb{R}$ another arbitrary constant.
+
+Comparing both results we obtain 
+
+$$
+\ln|1+x|=C-D+\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1}=E+\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1},
+$$
+
+where $E=C-D$ is an arbitrary constant (because $C$ and $D$ are arbitrary constants).
+
+For $x=0$ this reads: $0=\ln(1)=E+0$ which implies that $E=0$. Hence we have
 
 $$
 \ln|x+1|=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}x^{n+1},\quad-1<x<1.
 $$
 
-For $x=-1$ we obtain the series $\displaystyle-\sum_{n=0}^{\infty}\frac{1}{n+1}$ which is divergent (this is minus the harmonic series). For $x=1$ we obtain the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}$ which is (conditionally) convergent (this is the alternating harmonic series). Since $\ln|x+1|$ is continuous at $x=1$ we conclude that
+For $x=-1$ we obtain the series $\displaystyle-\sum_{n=0}^{\infty}\frac{1}{n+1}$ which is divergent (this is minus the harmonic series). For $x=1$ we obtain the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}$ which is (conditionally) convergent (this is the alternating harmonic series).
+
+Since $\ln|x+1|$ is continuous at $x=1$ we conclude that
 
 $$
 \sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}=\lim_{x\to1}\ln|x+1|=\ln(2).
@@ -300,7 +473,19 @@ $$
 
 ::::::
 
+:::{prf:remark}
+:label: Rem:Series:PowerSeriesFunctions4
+
+Note that in the previous example we had to introduce two arbitrary constants $C$ and $D$ when we integrated the power series and the function, respectively. However, these two arbitrary constants only lead to one arbitrary constant $E$ in the final result. This is because the difference of two arbitrary constants is again an arbitrary constant.
+
+Because of this we often omit the steps with the two arbitrary constants and directly write one arbitrary constant in the final result when we integrate a power series and a function to find a power series representation of the integral of the function.
+:::
+
 ::::::{prf:example}
+:label: Ex:Series:Arctan
+
+We introduced the idea of integrating a power series representation of a function to find a power series representation of the integral of a function in {prf:ref}`Thm:Series:DifferentiationIntegration`. We will now apply this idea to find a power series representation of $\arctan(x)$.
+
 Integrating the power series representation $\displaystyle\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-1)^nx^{2n}$ for $-1<x<1$ we obtain
 
 $$
@@ -329,6 +514,157 @@ $$
 
 is known as the **Leibniz formula** for $\pi$, named after the German mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz).
 ::::::
+
+Examples {prf:ref}`Ex:Series:LogTwo0`, {prf:ref}`Ex:Series:LogTwo` and {prf:ref}`Ex:Series:Arctan` illustrate that although the radius of convergence of a power series representation of a function $f$ is preserved during differentiation and integration, the convergence behavior at the endpoints of the interval of convergence can change during differentiation and integration.
+
+::::::{prf:example}
+Consider the integral $\displaystyle\int_0^{0.5}\frac{x^2}{1+x^8}\,dx$.
+
+Although the integrand $\dfrac{x^2}{1+x^8}$ is a rational function, using the techniques from {numref}`Sec:Integration:RationalFunctions` is complex and not straightforward.
+
+Using a power series representation of the integrand, we can find a power series representation of the indefinite integral $\displaystyle\int\frac{x^2}{1+x^8}\,dx$, which then can be used to find an approximation of the value of the integral.
+
+We start with $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$. This implies that
+
+\begin{align*}
+&~ & \frac{1}{1+x^8} &= \sum_{n=0}^{\infty}(-1)^nx^{8n} \\
+&\Longrightarrow & \frac{x^2}{1+x^8} &= \sum_{n=0}^{\infty}(-1)^nx^{8n+2} \\
+&\Longrightarrow & \int\frac{x^2}{1+x^8}\,dx &= C+\sum_{n=0}^{\infty}\frac{(-1)^n}{8n+3}x^{8n+3},\quad |x| < 1. 
+\end{align*}
+
+This implies that
+
+\begin{align*}
+\int_0^{0.5}\frac{x^2}{1+x^8}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n(0.5)^{8n+3}}{8n+3} - \sum_{n=0}^{\infty}\frac{(-1)^n(0)^{8n+3}}{8n+3}\\
+&=\frac{(0.5)^3}{3}-\frac{(0.5)^{11}}{11}+\frac{(0.5)^{19}}{19}-\frac{(0.5)^{27}}{27}+\cdots\\
+&\approx\frac{(0.5)^3}{3}=0.041666\ldots.
+\end{align*}
+::::::
+
+In the above discussions, we only considered the differentiation and integration of power series representations of functions and sometimes multiplied a power series representation of a function by a power of $x$ to find a power series representation of the product of the function and the power of $x$. But we can also multiply two power series representations of functions to find a power series representation of the product of the two functions. The next parts give the formula for this multiplication of two power series, which is called the Cauchy product.
+
+::::::{prf:theorem}
+:label: Thm:Series:CauchyProduct
+Let $\displaystyle\sum_{i=0}^{\infty}a_i(x-a)^i$ and $\displaystyle\sum_{j=0}^{\infty}b_j(x-a)^j$ be two power series centered at $x=a$, then
+
+$$
+\left(\sum_{i=0}^{\infty}a_i(x-a)^i\right)\left(\sum_{j=0}^{\infty}b_j(x-a)^j\right)=\sum_{n=0}^{\infty}c_n(x-a)^n
+$$
+
+with $c_n=\displaystyle\sum_{k=0}^na_kb_{n-k}$.
+::::::
+
+:::{prf:definition}
+:label: Def:Series:CauchyProduct
+The product in the above theorem is defined as the **Cauchy product** of the two power series.
+:::
+
+The Cauchy product is named after the French mathematician [Augustin-Louis Cauchy (1789-1857)](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy).
+
+::::::{admonition} Proof of {prf:ref}`Thm:Series:CauchyProduct`
+:class: tudproof, dropdown
+Note that we have by setting $i+j=n$ in the last step
+
+\begin{align*}
+\left(\sum_{i=0}^{\infty}a_i(x-a)^i\right)\left(\sum_{j=0}^{\infty}b_j(x-a)^j\right)&=\sum_{i=0}^{\infty}\sum_{j=0}^{\infty}a_ib_j(x-a)^{i+j}\\
+&=\sum_{n=0}^{\infty}\sum_{k=0}^na_kb_{n-k}(x-a)^n.
+\end{align*}
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:CauchyProduct1
+Consider the geometric series $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}$ for $|x|<1$. Then differentiation led to
+
+$$
+\frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1},\quad |x|<1.
+$$
+
+Using the Cauchy product we obtain
+
+$$
+\frac{1}{(1-x)^2}=\frac{1}{1-x}\cdot\frac{1}{1-x}=\left(\sum_{i=0}^{\infty}x^i\right)\left(\sum_{j=0}^{\infty}x^j\right)=\sum_{n=0}^{\infty}c_nx^n,
+$$
+
+with $c_n=\displaystyle\sum_{k=0}^n1=n+1$. Now we have found that
+
+$$
+\sum_{n=0}^{\infty}(n+1)x^n=\sum_{n=1}^{\infty}nx^{n-1}.
+$$
+
+::::::
+
+::::::{prf:example}
+:label: Ex:Series:CauchyProduct2
+
+Consider
+
+$$
+\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n\quad\text{and}\quad\frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1}\quad\text{for}\quad|x|<1.
+$$
+
+Then the Cauchy product implies that
+
+$$
+\frac{1}{(1-x)^3}=\frac{1}{1-x}\cdot\frac{1}{(1-x)^2}=\left(\sum_{n=0}^{\infty}x^n\right)\left(\sum_{n=0}^{\infty}(n+1)x^n\right)=\sum_{n=0}^{\infty}c_nx^n
+$$
+
+with $c_n=\displaystyle\sum_{k=0}^n1\cdot(k+1)=\sum_{k=1}^{n+1}k=\tfrac{1}{2}(n+1)(n+2)$. Hence we have
+
+$$
+\frac{1}{(1-x)^3}=\frac{1}{2}\sum_{n=0}^{\infty}(n+1)(n+2)x^n.
+$$
+
+Note that differentiation of $\dfrac12\displaystyle\frac{1}{(1-x)^2}=\dfrac12\sum_{n=1}^{\infty}nx^{n-1}$ also leads to
+
+$$
+\frac{1}{(1-x)^3}=\dfrac12\sum_{n=2}^{\infty}n(n-1)x^{n-2}=\dfrac12\sum_{n=0}^{\infty}(n+1)(n+2)x^n,\quad|x|<1.
+$$
+
+::::::
+
+::::::{prf:example} Bessel functions
+:label: Ex:Series:Bessel
+
+Consider the vibrating drumhead shown in {numref}`Fig:PowerSeries:Bessel`. The shape of the vibrating drumhead can be described by a so-called Bessel function, which is defined in terms of a power series.
+
+:::{figure} Images/bessel.gif
+:width: 50%
+:name: Fig:PowerSeries:Bessel
+:align: center
+
+The motion of a vibrating drumhead.
+Source: https://en.wikipedia.org/wiki/Vibrations_of_a_circular_membrane.
+:::
+
+:::{todo}
+Replace {numref}`Fig:PowerSeries:Bessel` by our own applet, or our own animation, or improve the referencing using MetaData.
+:::
+
+The German mathematician [Friedrich Wilhelm Bessel (1784-1846)](https://en.wikipedia.org/wiki/Friedrich_Wilhelm_Bessel) introduced these functions when solving Kepler's equation for describing planetary motion. Later, these Bessel functions have been applied in many different physical situations, including the temperature distribution in a circular plate and, of course,  the shape of a vibrating drumhead.
+
+The Bessel function $J_0(x)$ of the first kind of order $0$ is defined by: 
+
+$$
+J_0(x)=\sum_{n=0}^{\infty}\frac{(-1)^nx^{2n}}{2^{2n}(n!)^2}.
+$$
+
+Note that this is a power series in $x$ which is convergent for $x=0$. For $x\neq0$ we might apply the ratio test: let $a_n=\displaystyle\frac{(-1)^nx^{2n}}{2^{2n}(n!)^2}$, then we have:
+
+$$ 
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+2}}{2^{2n+2}((n+1)!)^2}\cdot\frac{2^{2n}(n!)^2}{(-1)^nx^{2n}}\right|
+=\lim\limits_{n\to\infty}\frac{x^2}{4(n+1)^2}=0. 
+$$ 
+ 
+Hence, the series converges for all $x\neq0$ as well. We conclude that the power series converges for all $x\in\mathbb{R}$ (the radius of convergence is $R=\infty$). This implies that the domain of the Bessel function $J_0(x)$, the interval of convergence of the series, is $(-\infty,\infty)=\mathbb{R}$.
+::::::
+
+## Grasple exercises
+
+:::{todo}
+Select exercises from Grasple and add them in {numref}`Sec:Series:PowerSeries`.
+:::
+
+## Exercises
 
 ::::{exercise}
 :label: Exc:Series:DifferentiationExercise
@@ -365,452 +701,6 @@ and
 
 $$
 \sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)}{2^n}=\frac{2\left(-\frac{1}{2}\right)^2}{\left(1+\frac{1}{2}\right)^3}=\frac{27}{16}.
-$$
-
-:::
-
-::::::{prf:example} Application
-Consider the integral $\displaystyle\int_0^{0.5}\frac{x^2}{1+x^8}\,dx$.
-
-It is difficult to evaluate this integral exactly. However, we may use a power series representation of the integrand to find an approximation. Start with $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$. This implies that
-
-\begin{align*}
-&\frac{1}{1+x^8}=\sum_{n=0}^{\infty}(-1)^nx^{8n}\quad\Longrightarrow\quad\frac{x^2}{1+x^8}=\sum_{n=0}^{\infty}(-1)^nx^{8n+2}\\
-&{}\quad\Longrightarrow\quad\int\frac{x^2}{1+x^8}\,dx=C+\sum_{n=0}^{\infty}\frac{(-1)^n}{8n+3}x^{8n+3},\quad |x| < 1. 
-\end{align*}
-This implies that
-
-\begin{align*}
-\int_0^{0.5}\frac{x^2}{1+x^8}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n(0.5)^{8n+3}}{8n+3}\\
-&=\frac{(0.5)^3}{3}-\frac{(0.5)^{11}}{11}+\frac{(0.5)^{19}}{19}-\frac{(0.5)^{27}}{27}+\cdots\\
-&\approx\frac{(0.5)^3}{3}=0.041666\ldots.
-\end{align*}
-::::::
-
-:::{admonition} Remarkable decimal fractions (bonus material)
-:class: solution, dropdown
-We will prove that $\dfrac{1}{81}=\dfrac{1}{9^2}=0.\overline{012345679}$.
-
-We start with the geometric series $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$. Differentiation now leads to $\displaystyle\sum_{n=1}^{\infty}nx^{n-1}=\frac{1}{(1-x)^2}$ for $|x|<1$. This implies that $\displaystyle\sum_{n=1}^{\infty}nx^{n+1}=\frac{x^2}{(1-x)^2}=\left(\frac{x}{1-x}\right)^2$ for $|x|<1$. Substitution of $x=\displaystyle\frac{1}{10}$ leads to $\displaystyle\sum_{n=1}^{\infty}\frac{n}{10^{n+1}}=\left(\frac{1}{9}\right)^2=\frac{1}{81}$.
-
-For the first nine terms we have
-
-$$
-\sum_{n=1}^9\frac{n}{10^{n+1}}=0.01+0.002+0.0003+\cdots+0.0000000009=0.0123456789.
-$$
- 
-For the tenth term we have: $\displaystyle\frac{10}{10^{11}}=\frac{1}{10^{10}}=0.0000000001$. Hence:
-
-$$
-\sum_{n=1}^{10}\frac{n}{10^{n+1}}=0.0123456789+0.0000000001=0.0123456790.
-$$
-
-Now suppose that $p=0.\overline{012345679}$, then we have:
-
-$$
-10^9p=12345679.\overline{012345679}=12345679+0.\overline{012345679}=12345679+p.
-$$
-
-Since we have $10^9-1=999999999=9^2\cdot12345679$, this implies that
-
-\begin{align*}
-(10^9-1)p=12345679&\quad\Longleftrightarrow\quad9^2\cdot12345679p=12345679\\
-&\quad\Longleftrightarrow\quad p=\frac{1}{9^2}=\frac{1}{81}.
-\end{align*}
-Similarly, the substitution $x=\displaystyle\frac{1}{100}$ leads to $\displaystyle\sum_{n=1}^{\infty}\frac{n}{100^{n+1}}=\left(\frac{1}{99}\right)^2=\frac{1}{9801}$.
-
-For the first ninety-nine terms we now have
-
-$$
-\sum_{n=1}^{99}\frac{n}{100^{n+1}}=0.0001020304\ldots9596979899.
-$$
-
-For the hundredth term we have: $\displaystyle\frac{100}{100^{101}}=\frac{1}{100^{100}}$. Hence:
-
-$$
-\sum_{n=1}^{100}\frac{n}{100^{n+1}}=0.0001020304\ldots9596979900.
-$$
- 
-Now suppose that $q=0.\overline{0001020304\ldots95969799}$, then we have:
-
-\begin{align*}
-100^{99}q&=1020304\ldots95969799.\overline{0001020304\ldots95969799}\\
-&=1020304\ldots95969799+q.
-\end{align*}
-Since we have $100^{99}-1=99^2\cdot1020304\ldots95969799$, this implies that
-
-\begin{align*}
-&(100^{99}-1)q=1020304\ldots95969799\\
-&\quad\Longleftrightarrow\quad99^2\cdot1020304\ldots95969799q=1020304\ldots95969799\\
-&\quad\Longleftrightarrow\quad q=\frac{1}{99^2}=\frac{1}{9801}.
-\end{align*}
-Similarly if follows that
-
-$$
-\frac{1}{998001}=\frac{1}{999^2}=0.\overline{00001002003004\ldots995996997999},
-$$
-
-$$
-\frac{1}{99980001}=\frac{1}{9999^2}=0.\overline{000001000200030004\ldots9995999699979999},
-$$
-
-\begin{align*}
-\frac{1}{9999800001}&=\frac{1}{99999^2}\\
-&=0.\overline{0000001000020000300004\ldots99995999969999799999}
-\end{align*}
-and so on.
-:::
-
-::::::{prf:theorem} Cauchy product
-:label: Thm:Series:CauchyProduct
-Let $\displaystyle\sum_{i=0}^{\infty}a_i(x-a)^i$ and $\displaystyle\sum_{j=0}^{\infty}b_j(x-a)^j$ be two power series centered at $x=a$, then
-
-$$
-\left(\sum_{i=0}^{\infty}a_i(x-a)^i\right)\left(\sum_{j=0}^{\infty}b_j(x-a)^j\right)=\sum_{n=0}^{\infty}c_n(x-a)^n
-$$
-
-with $c_n=\displaystyle\sum_{k=0}^na_kb_{n-k}$.
-
-This is called the **Cauchy product** of the two power series, named after the French mathematician [Augustin-Louis Cauchy (1789-1857)](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy).
-::::::
-
-::::::{admonition} Proof of {prf:ref}`Thm:Series:CauchyProduct`
-:class: tudproof, dropdown
-Note that we have by setting $i+j=n$
-
-\begin{align*}
-\left(\sum_{i=0}^{\infty}a_i(x-a)^i\right)\left(\sum_{j=0}^{\infty}b_j(x-a)^j\right)&=\sum_{i=0}^{\infty}\sum_{j=0}^{\infty}a_ib_j(x-a)^{i+j}\\
-&=\sum_{n=0}^{\infty}\sum_{k=0}^na_kb_{n-k}(x-a)^n.
-\end{align*}
-::::::
-
-::::::{prf:example}
-Consider the geometric series $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}$ for $|x|<1$. Then differentiation leads to
-
-$$
-\frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1},\quad |x|<1.
-$$
-
-Using the Cauchy product we obtain
-
-$$
-\frac{1}{(1-x)^2}=\frac{1}{1-x}\cdot\frac{1}{1-x}=\left(\sum_{i=0}^{\infty}x^i\right)\left(\sum_{j=0}^{\infty}x^j\right)=\sum_{n=0}^{\infty}c_nx^n,
-$$
-
-with $c_n=\displaystyle\sum_{k=0}^n1=n+1$. Now we have
-
-$$
-\sum_{n=0}^{\infty}(n+1)x^n=\sum_{n=1}^{\infty}nx^{n-1}.
-$$
-
-::::::
-
-::::::{prf:example}
-Consider
-
-$$
-\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n\quad\text{and}\quad\frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1}\quad\text{for}\quad|x|<1.
-$$
-
-Then the Cauchy product implies that
-
-$$
-\frac{1}{(1-x)^3}=\frac{1}{1-x}\cdot\frac{1}{(1-x)^2}=\left(\sum_{n=0}^{\infty}x^n\right)\left(\sum_{n=0}^{\infty}(n+1)x^n\right)=\sum_{n=0}^{\infty}c_nx^n
-$$
-
-with $c_n=\displaystyle\sum_{k=0}^n1\cdot(k+1)=\sum_{k=1}^{n+1}k=\tfrac{1}{2}(n+1)(n+2)$. Hence we have
-
-$$
-\frac{1}{(1-x)^3}=\frac{1}{2}\sum_{n=0}^{\infty}(n+1)(n+2)x^n.
-$$
-
-Note that differentiation of $\displaystyle\frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1}$ also leads to
-
-$$
-\frac{2}{(1-x)^3}=\sum_{n=2}^{\infty}n(n-1)x^{n-2}=\sum_{n=0}^{\infty}(n+1)(n+2)x^n,\quad|x|<1.
-$$
-
-::::::
-
-## The harmonic numbers
-
-We have seen the *harmonic series* $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ as an example of a divergent series although the general term tends to zero. The partial sums
-
-$$
-H_n=\sum_{k=1}^n\frac{1}{k},\quad n=1,2,3,\ldots
-$$
-
-are called the **harmonic numbers**. The first ten are
-
-\begin{align*}
-&H_1=1,\quad H_2=1+\tfrac{1}{2}=\tfrac{3}{2},\quad H_3=\tfrac{3}{2}+\tfrac{1}{3}=\tfrac{11}{6},\quad H_4=\tfrac{11}{6}+\tfrac{1}{4}=\tfrac{25}{12},\\
-&\quad H_5=\tfrac{25}{12}+\tfrac{1}{5}=\tfrac{137}{60},\quad H_6=\tfrac{137}{60}+\tfrac{1}{6}=\tfrac{49}{20},\quad H_7=\tfrac{49}{20}+\tfrac{1}{7}=\tfrac{363}{140},\\
-&\quad\quad H_8=\tfrac{363}{140}+\tfrac{1}{8}=\tfrac{761}{280},\quad H_9=\tfrac{761}{280}+\tfrac{1}{9}=\tfrac{7129}{2520},\quad H_{10}=\tfrac{7129}{2520}+\tfrac{1}{10}=\tfrac{7381}{2520}.
-\end{align*}
-Note that
-
-\begin{align*}
-\sum_{n=1}^{\infty}\frac{H_n}{n^2}&=\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}
-=\sum_{k=1}^{\infty}\sum_{n=k}^{\infty}\frac{1}{kn^2}=\sum_{k=1}^{\infty}\sum_{n=0}^{\infty}\frac{1}{k(n+k)^2}\\
-&=\sum_{k=1}^{\infty}\frac{1}{k^3}+\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{k(n+k)^2}.
-\end{align*}
-Now we have
-
-\begin{align*}
-\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{k(n+k)^2}
-&=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\left(\frac{1}{k(n+k)^2}+\frac{1}{n(k+n)^2}\right)\\
-&=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{k+n}{kn(k+n)^2}
-=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{kn(k+n)}\\
-&=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{n^2}\left(\frac{1}{k}-\frac{1}{k+n}\right)=\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^{\infty}\left(\frac{1}{k}-\frac{1}{k+n}\right)\\
-&=\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}=\frac{1}{2}\sum_{n=1}^{\infty}\frac{H_n}{n^2}.
-\end{align*}
-So we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{H_n}{n^2}=\sum_{k=1}^{\infty}\frac{1}{k^3}+\frac{1}{2}\sum_{n=1}^{\infty}\frac{H_n}{n^2}$, which implies that
-
-$$
-\displaystyle\sum_{n=1}^{\infty}\frac{H_n}{n^2}=2\sum_{k=1}^{\infty}\frac{1}{k^3}=2\zeta(3).
-$$
-
-Here $\zeta(s)$ denotes the *Riemann zeta function*, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). The value of $\zeta(3)\approx1.202057$ is also known as *Apéry's constant*, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
-
-The harmonic numbers satisfy the recurrence relation
-
-$$
-H_{n+1}=H_n+\frac{1}{n+1},\quad n=1,2,3,\ldots\quad\text{with}\quad H_1=1.
-$$
-
-If we multiply by $x^{n+1}$ and sum over $n=1,2,3,\ldots$ we obtain
-
-$$
-\sum_{n=1}^{\infty}H_{n+1}x^{n+1}=\sum_{n=1}^{\infty}H_nx^{n+1}+\sum_{n=1}^{\infty}\frac{x^{n+1}}{n+1}.
-$$
-
-Let $G(x)=\displaystyle\sum_{n=1}^{\infty}H_nx^n$, which is called a *generating function* for the harmonic numbers, then we have
-
-$$
-\sum_{n=1}^{\infty}H_{n+1}x^{n+1}=\sum_{n=2}^{\infty}H_nx^n=G(x)-H_1x=G(x)-x.
-$$
-
-Further we have by integration of $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$ that
-
-$$
--\ln(1-x)=C+\sum_{n=0}^{\infty}\frac{x^{n+1}}{n+1},\quad|x|<1.
-$$
-
-For $x=0$ this reads $0=-\ln(1)=C+0$ which implies that $C=0$. Hence we have
-
-$$
-\sum_{n=1}^{\infty}\frac{x^{n+1}}{n+1}=\sum_{n=0}^{\infty}\frac{x^{n+1}}{n+1}-x=-\ln(1-x)-x.
-$$
-
-Finally, we have
-
-$$
-G(x)-x=xG(x)-\ln(1-x)-x\quad\Longleftrightarrow\quad (1-x)G(x)=-\ln(1-x).
-$$
-
-This implies that $G(x)=\displaystyle-\frac{\ln(1-x)}{1-x}$. Applying the ratio test
-
-$$
-\lim_{n\to\infty}\left|\frac{H_{n+1}x^{n+1}}{H_nx^n}\right|=\lim_{n\to\infty}\frac{H_{n+1}}{H_n}|x|=\lim_{n\to\infty}\left(1+\frac{1}{(n+1)H_n}\right)|x|=|x|,
-$$
-
-we conclude that the radius of convergence is $R=1$. For instance, this implies that
-
-$$
-\sum_{n=1}^{\infty}\frac{H_n}{2^n}=G(\tfrac{1}{2})=-\frac{\ln\left(1-\frac{1}{2}\right)}{1-\frac{1}{2}}=-2\ln(\tfrac{1}{2})=2\ln(2).
-$$
-
-Since $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ and $-\ln(1-x)=\displaystyle\sum_{k=1}^{\infty}\frac{x^k}{k}$, the Cauchy product implies that
-
-\begin{align*}
--\frac{\ln(1-x)}{1-x}&=\sum_{n=0}^{\infty}x^n\sum_{k=1}^{\infty}\frac{x^k}{k}=\sum_{n=0}^{\infty}\sum_{k=1}^{\infty}\frac{x^{n+k}}{k}
-=\sum_{k=1}^{\infty}\sum_{n=0}^{\infty}\frac{x^{n+k}}{k}=\sum_{k=1}^{\infty}\sum_{n=k}^{\infty}\frac{x^n}{k}\\
-&=\sum_{n=1}^{\infty}\left(\sum_{k=1}^n\frac{1}{k}\right)x^n=\sum_{n=1}^{\infty}H_nx^n,\quad |x| < 1.
-\end{align*}
-Differentiation leads to
-
-$$
-\sum_{n=1}^{\infty}nH_nx^{n-1}=\frac{1}{(1-x)^2}-\frac{\ln(1-x)}{(1-x)^2}=\frac{1-\ln(1-x)}{(1-x)^2},\quad|x| < 1.
-$$
-
-For instance, this implies that $\displaystyle\sum_{n=1}^{\infty}\frac{nH_n}{2^n}=\frac{1}{2}\cdot\frac{1-\ln(\frac{1}{2})}{(\frac{1}{2})^2}=2+2\ln(2)$.
-
-Differentiation once more gives
-
-\begin{align*}
-\sum_{n=2}^{\infty}n(n-1)H_nx^{n-2}&=\frac{1-x+2(1-x)\left(1-\ln(1-x)\right)}{(1-x)^4}\\
-&=\frac{1+2\left(1-\ln(1-x)\right)}{(1-x)^3}=\frac{3-2\ln(1-x)}{(1-x)^3},\quad|x|<1.
-\end{align*}
-For instance, this implies that $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)H_n}{2^n}=\frac{1}{4}\cdot\frac{3-2\ln(\frac{1}{2})}{(\frac{1}{2})^3}=6+4\ln(2)$.
-
-## A generating function for the Fibonacci numbers
-
-Earlier we have seen that the sequence of *Fibonacci numbers* 
-
-$$
-1,1,2,3,5,8,13,21,34,55,89,\ldots
-$$
-
-is defined by $F_{n+2}=F_n+F_{n+1}$ for $n=1,2,3,\ldots$ with $F_1=F_2=1$.
-
-For computational reasons we use $F_{n+2}=F_n+F_{n+1}$ for $n=0,1,2,\ldots$ with $F_0=0$ and $F_1=1$ instead.
-
-Now we consider the *generating function* $G(x)=\displaystyle\sum_{n=1}^{\infty}F_nx^n=\sum_{n=0}^{\infty}F_nx^n$, then we have
-
-\begin{align*}
-x^2G(x)&=\sum_{n=0}^{\infty}F_nx^{n+2}=\sum_{n=0}^{\infty}F_{n+2}x^{n+2}-\sum_{n=0}^{\infty}F_{n+1}x^{n+2}\\
-&=\sum_{n=1}^{\infty}F_nx^n-F_1x-x\sum_{n=1}^{\infty}F_nx^n=G(x)-x-xG(x). 
-\end{align*}
-This implies that
-
-$$
-(1-x-x^2)G(x)=x\quad\Longrightarrow\quad G(x)=\frac{x}{1-x-x^2}.
-$$
- 
-In order to find the radius of convergence we apply the ratio test: for $x\neq0$ let $a_n=F_nx^n$, then we have:
-
-$$ 
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{F_{n+1}x^{n+1}}{F_nx^n}\right|
-=\lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n}|x|=\varphi|x|, 
-$$ 
- 
-where $\displaystyle\lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n}=\varphi=\frac{1+\sqrt{5}}{2}\approx1.618$ denotes the *golden ratio*.
-
-Now the ratio test implies that the generating series is absolutely convergent if $|x| < \displaystyle\frac{1}{\varphi}=\varphi-1\approx0.618$.
-
-For instance, this implies that $\displaystyle\sum_{n=1}^{\infty}\frac{F_n}{2^n}=G(\tfrac{1}{2})=\frac{\frac{1}{2}}{1-\frac{1}{2}-\frac{1}{4}}=2$.
-
-Differentiation leads to
-
-$$
-\sum_{n=1}^{\infty}nF_nx^{n-1}=G'(x)=\frac{1-x-x^2+x+2x^2}{(1-x-x^2)^2}=\frac{1+x^2}{(1-x-x^2)^2}.
-$$
-
-For instance, this implies that $\displaystyle\sum_{n=1}^{\infty}\frac{nF_n}{2^n}=\tfrac{1}{2}G'(\tfrac{1}{2})=\frac{1+\frac{1}{4}}{2\left(1-\frac{1}{2}-\frac{1}{4}\right)^2}=10$.
-
-Differentiating once more we obtain
-
-\begin{align*}
-\sum_{n=2}^{\infty}n(n-1)F_nx^{n-2}&=G''(x)\\
-&=\frac{2x(1-x-x^2)^2-2(1-x-x^2)(-1-2x)(1+x^2)}{(1-x-x^2)^4}\\
-&=\frac{2(x-x^2-x^3+1+x^2+2x+2x^3)}{(1-x-x^2)^3}=\frac{2(1+3x+x^3)}{(1-x-x^2)^3}.
-\end{align*}
-For instance, this implies that $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)F_n}{2^n}=\tfrac{1}{4}G''(\tfrac{1}{2})=\frac{2\left(1+\frac{3}{2}+\frac{1}{8}\right)}{4\left(1-\frac{1}{2}-\frac{1}{4}\right)^3}=84$.
-
-Finally, let's try to solve $G(x)=1$ with $\displaystyle|x|<\frac{1}{\varphi}=\varphi-1\approx0.618$:
-
-\begin{align*}
-\frac{x}{1-x-x^2}=1&\quad\Longleftrightarrow\quad x=1-x-x^2\\
-&\quad\Longleftrightarrow\quad(x+1)^2=2\\
-&\quad\Longleftrightarrow\quad x=-1\pm\sqrt{2}.
-\end{align*}
-Since $\sqrt{2}-1\approx0.414$ this leads to the remarkable result that $\displaystyle\sum_{n=1}^{\infty}\left(\sqrt{2}-1\right)^nF_n=1$.
-
-::::{exercise}
-:label: Exc:Series:GeneratingFibonacciExercise
-Find $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{F_n}{2^n}$, $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{nF_n}{2^n}$ and $\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)F_n}{2^n}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Series:GeneratingFibonacciExercise`
-:class: solution, dropdown
-Note that
-
-$$
-\sum_{n=1}^{\infty}(-1)^{n-1}\frac{F_n}{2^n}=-G(-\tfrac{1}{2})=-\frac{-\frac{1}{2}}{1+\frac{1}{2}-\frac{1}{4}}=\frac{2}{5},
-$$
-
-$$
-\sum_{n=1}^{\infty}(-1)^{n-1}\frac{nF_n}{2^n}=\tfrac{1}{2}G'(-\tfrac{1}{2})=\frac{1+\frac{1}{4}}{2(1+\frac{1}{2}-\frac{1}{4})^2}=\frac{2}{5}.
-$$
-
-and
-
-$$
-\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)F_n}{2^n}=\tfrac{1}{4}G''(-\tfrac{1}{2})=\frac{2(1-\frac{1}{2}-\frac{1}{8})}{4(1+\frac{1}{2}-\frac{1}{4})^3}=\frac{4}{25}.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Series:GeneratingLucasExercise
-Consider the sequence of *Lucas numbers* 
-
-$$
-1,3,4,7,11,18,29,47,76,123,199,\ldots
-$$
-
-is defined by $L_{n+2}=L_n+L_{n+1}$ for $n=1,2,3,\ldots$ with $L_1=1$ and $L_2=3$.
-
-For computational reasons we use $L_{n+2}=L_n+L_{n+1}$ for $n=0,1,2,\ldots$ with $L_0=2$ and $L_1=1$ instead.
-
-(a) Find the generating function $F(x)=\displaystyle\sum_{n=0}^{\infty}L_nx^n$.
-
-(b) Find $\displaystyle\sum_{n=1}^{\infty}\frac{L_n}{2^n}$, $\displaystyle\sum_{n=1}^{\infty}\frac{nL_n}{2^n}$ and $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)L_n}{2^n}$.
-
-(c) Find $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{L_n}{2^n}$ and $\displaystyle\sum_{n=1}^{\infty}\frac{L_n}{3^n}$.
-
-(d) Find $\displaystyle\sum_{n=1}^{\infty}(-1)^n\frac{nL_n}{2^n}$ and $\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)L_n}{2^n}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Series:GeneratingLucasExercise`
-:class: solution, dropdown
-(a) Using $F(x)=\displaystyle\sum_{n=0}^{\infty}L_nx^n$ we obtain
-
-\begin{align*}
-x^2F(x)&=\sum_{n=0}^{\infty}L_nx^{n+2}=\sum_{n=0}^{\infty}L_{n+2}x^{n+2}-x\sum_{n=0}^{\infty}L_{n+1}x^{n+1}\\
-&=\sum_{n=0}^{\infty}L_nx^n-L_0-L_1x-x\left(\sum_{n=0}^{\infty}L_nx^n-L_0\right)\\
-&=F(x)-2-x-x\left(F(x)-2\right).
-\end{align*}
-This implies that
-
-$$
-(1-x-x^2)F(x)=2+x-2x=2-x\quad\Longrightarrow\quad F(x)=\frac{2-x}{1-x-x^2}.
-$$
-
-In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=L_nx^n$, then we have:
-
-$$
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{L_{n+1}x^{n+1}}{L_nx^n}\right|
-=\lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}|x|=\varphi|x|,
-$$
-
-where $\displaystyle\lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}=\varphi=\frac{1+\sqrt{5}}{2}\approx1.618$ denotes the *golden ratio*.
-
-Now the ratio test implies that the generating series is absolutely convergent for $|x| < \displaystyle\frac{1}{\varphi}=\varphi-1\approx0.618$.
-
-(b) Hence, we have $\displaystyle\sum_{n=0}^{\infty}\frac{L_n}{2^n}=F(\tfrac{1}{2})=\frac{\frac{3}{2}}{1-\frac{1}{2}-\frac{1}{4}}=6$. This implies that $\displaystyle\sum_{n=1}^{\infty}\frac{L_n}{2^n}=4$.
-
-Differentiation leads to
-
-$$
-\sum_{n=1}^{\infty}nL_nx^{n-1}=F'(x)=\frac{-1+x+x^2+(1+2x)(2-x)}{(1-x-x^2)^2}=\frac{1+4x-x^2}{(1-x-x^2)^2}.
-$$
-
-Hence, we have $\displaystyle\sum_{n=1}^{\infty}\frac{nL_n}{2^n}=\tfrac{1}{2}F'(\tfrac{1}{2})=\frac{1+2-\frac{1}{4}}{2\left(1-\frac{1}{2}-\frac{1}{4}\right)^2}=22$.
-
-Differentiating once more, we obtain
-
-\begin{align*}
-&\sum_{n=2}^{\infty}n(n-1)L_nx^{n-2}=F''(x)\\
-&=\frac{(4-2x)(1-x-x^2)^2-2(1-x-x^2)(-1-2x)(1+4x-x^2)}{(1-x-x^2)^4}\\
-&=\frac{2(2-x+1+4x-x^2+2x+8x^2-2x^3)}{(1-x-x^2)^3}=\frac{2(3+3x+6x^2-x^3)}{(1-x-x^2)^3}.
-\end{align*}
-Hence, we have $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)L_n}{2^n}=\tfrac{1}{4}F''(\tfrac{1}{2})=\frac{2\left(3+\frac{3}{2}+\frac{3}{2}-\frac{1}{8}\right)}{4\left(1-\frac{1}{2}-\frac{1}{4}\right)^3}=188$.
-
-(c) For $x=-\frac{1}{2}$ we obtain: $\displaystyle\sum_{n=0}^{\infty}\left(-\tfrac{1}{2}\right)^nL_n=F(-\tfrac{1}{2})=2$. This implies that $\displaystyle\sum_{n=1}^{\infty}\left(-\tfrac{1}{2}\right)^nL_n=0$ and therefore $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{L_n}{2^n}=0$.
-
-For $x=\frac{1}{3}$ we obtain: $\displaystyle\sum_{n=0}^{\infty}\frac{L_n}{3^n}=F(\tfrac{1}{3})=3$. This implies that $\displaystyle\sum_{n=1}^{\infty}\frac{L_n}{3^n}=1$.
-
-(d) We have
-
-$$
-\sum_{n=1}^{\infty}(-1)^n\frac{nL_n}{2^n}=-\tfrac{1}{2}F'(-\tfrac{1}{2})=-\frac{1-2-\frac{1}{4}}{2(1+\frac{1}{2}-\frac{1}{4})^2}=\frac{2}{5}
-$$
-
-and
-
-$$
-\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)L_n}{2^n}=\tfrac{1}{4}F''(-\tfrac{1}{2})=\frac{2(3-\frac{3}{2}+\frac{3}{2}+\frac{1}{8})}{4(1+\frac{1}{2}-\frac{1}{4})^3}=\frac{4}{5}.
 $$
 
 :::
