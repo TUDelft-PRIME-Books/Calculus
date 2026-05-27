@@ -8,7 +8,12 @@ In this section we consider several special types of series. These types of seri
 (Sec:Series:GeometricSeries)=
 ## Geometric series
 
-One of the most important examples of an infinite series is the geometric series, which is the sum of the terms of a geometric sequence.
+One of the most important examples of an infinite series is the geometric series, which is the sum of the terms of a geometric sequence:
+
+:::{prf:definition}
+:label: Def:Series:GeometricSeries
+A **geometric series** is a series of the form $\displaystyle\sum_{n=1}^{\infty}ar^{n-1}=a+ar+ar^2+\cdots$, where $a$ is the first term and $r$ is the common ratio.
+::::::
 
 ::::::{prf:example} 
 :label: Ex:Series:GeometricSeries1
@@ -209,7 +214,14 @@ Second, let $q=0.\overline{135}$, then we have
 (Sec:Series:pSeries)=
 ## $p$-series
 
-Another type of series are _$p$-series_, which are series of the form $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ for some real number $p$. The _harmonic series_ is the special case of a $p$-series with $p=1$, which you have already seen to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`. You also have seen a $p$-series with $p=2$ in {prf:ref}`Ex:Series:AbsoluteConvergence1`, which is convergent and has sum $\frac{3}{4}$.
+Another type of series are _$p$-series_, which are series of the form $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ for some real number $p$. The _harmonic series_ is the special case of a $p$-series with $p=1$, which you have already seen to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`. You also have seen a $p$-series with $p=2$ in {prf:ref}`Ex:Series:AbsoluteConvergence1`, which is convergent and has sum $\frac{3}{4}$:
+
+:::{prf:definition}
+:label: Def:Series:pSeries
+A **$p$-series** is a series of the form $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ for some real number $p$.
+
+If $p=1$, the $p$-series is called the **harmonic series**.
+:::
 
 The next theorem gives us a complete characterisation of the convergence and divergence of $p$-series:
 

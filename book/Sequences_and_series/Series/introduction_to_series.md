@@ -107,12 +107,10 @@ Because of {prf:ref}`Thm:Series:FiniteSeries` often the term _finite series_ is 
 As a consequence of this, a _series_ is often implicitly assumed to be an _infinite series_, unless it is explicitly stated that the series is a finite series or a finite sum.
 ::::
 
-Because of the clear overlap with finite sums, we refer to {numref}`Sec:SumsAndProducts:Sums` for more details.
+Because of the clear overlap with finite sums, we refer to {numref}`Sec:SumsAndProducts:Sums` for more details on finite series and finite sums.
 
 (Sec:Series:InfiniteSeries)=
-## Infinite series
-
-### Convergence and divergence
+## Infinite series and partial sums
 
 We will now turn our attention to infinite series, or by {prf:ref}`Rem:Series:FiniteSeries` just series, which is more complicated and requires some extra definitions to handle the summation of an infinite number of terms.
 
@@ -132,7 +130,9 @@ In other words, the $n$th partial sum of a series is the sum of the first $n-p+1
 For $\displaystyle\sum_{n=1}^{\infty}a_n$ the $N$th partial sum $s_N$ is the sum of the first $N$ terms. However, we call $s_N$ still the $N$th partial sum of the series even when the series $\displaystyle\sum a_n$ does not start at $n=1$. So, for instance, if $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$ then $s_N=\displaystyle\sum_{n=2}^N\frac{\ln(n)}{n}$ is the sum of the first $N-1$ terms and if $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n^2+1}$ then $s_N=\displaystyle\sum_{n=0}^N\frac{1}{n^2+1}$ is the sum of the first $N+1$ terms.
 ::::::
 
-Using these  partial sums we can now look at the infinite series:
+## Convergence and divergence
+
+Using these partial sums we can now look at the infinite series:
 
 \begin{align*}
 \sum_{n=p}^{\infty}a_n &= \lim_{n\to\infty}\sum_{k=p}^{n+p-1}a_k \\
@@ -191,19 +191,19 @@ The converse of {prf:ref}`Thm:Series:GeneralTerm` is not true: if $\lim\limits_{
 
 This is shown by the following example:
 
-::::::{prf:example} The harmonic series
+::::::{prf:example}
 :label: Ex:Series:HarmonicSeries
-Consider the  **harmonic series** $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$.
+Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$.
 
-First note that $\lim\limits_{n\to\infty}\frac{1}{n}=0$, so the general term of the harmonic series tends to zero.
+First note that $\lim\limits_{n\to\infty}\frac{1}{n}=0$, so the general term of the series tends to zero.
 
-Now consider the $n$th partial sum of the harmonic series:
+Now consider the $n$th partial sum of the series:
 
 $$
 s_n=\displaystyle\sum_{k=1}^n\frac{1}{k}=1+\frac{1}{2}+\frac{1}{3}+\cdots+\frac{1}{n}.
 $$
 
-{numref}`Fig:Series:HarmonicSeries` gives a visualisation of the $n$th partial sum of the harmonic series.
+{numref}`Fig:Series:HarmonicSeries` gives a visualisation of the $n$th partial sum of the series.
 
 ```{figure} Images/harmonic.png
 ---
@@ -211,7 +211,7 @@ width: 50%
 name: Fig:Series:HarmonicSeries
 align: center
 ---
-Visualisation of the $n$th partial sum of the harmonic series, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\frac{1}{x}$ is also given for comparison.
+Visualisation of the $n$th partial sum of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\frac{1}{x}$ is also given for comparison.
 ```
 
 :::{todo}
@@ -236,9 +236,9 @@ $$
 \lim_{n\to\infty}s_n > \lim_{n\to\infty}\ln(n+1) = \infty,
 $$
 
-and so the harmonic series is divergent by {prf:ref}`Def:Series:ConvergenceSum`.
+and so the series is divergent by {prf:ref}`Def:Series:ConvergenceSum`.
 
-This proves that the harmonic series is divergent.
+This proves that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is divergent.
 ::::::
 
 Because the example uses an integral to test for convergence/divergence, it is commonly called the **integral test** for convergence/divergence, which we will discuss in more detail in {numref}`Sec:Series:PositiveSeries:IntegralTest`.
@@ -298,7 +298,7 @@ so by the _test for divergence_, the series $\displaystyle\sum_{n=1}^{\infty}\fr
 ::::{prf:example}
 :label: Ex:Series:DivergenceTest2
 
-The geometric series $\displaystyle\sum_{n=0}^{\infty}\left(\frac{3}{2}\right)^n$ is divergent, since, by the _test for divergence_, $\displaystyle\lim_{n\to\infty}\left(\frac{3}{2}\right)^n$ does not exist.
+The series $\displaystyle\sum_{n=0}^{\infty}\left(\frac{3}{2}\right)^n$ is divergent, since, by the _test for divergence_, $\displaystyle\lim_{n\to\infty}\left(\frac{3}{2}\right)^n$ does not exist.
 
 ::::
 
@@ -323,7 +323,7 @@ So by the _test for divergence_ the series $\displaystyle\sum_{n=1}^{\infty}\arc
 
 The test for divergence only gives us a test for divergence, but it does not give us a test for convergence. In most cases one has to resort to other tests for convergence/divergence, which we will discuss in the next sections. For several special types of series, however, we can already determine whether they are convergent or divergent and find their sum if they are convergent, which we will treat in {numref}`Sec:Series:SpecialSeries`.
 
-### Calculating with sums of series
+## Calculating with sums of series
 
 If you have determined that an infinite series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent with sum $S$, then you could also ask yourself whether the new series $\displaystyle\sum_{n=1}^{\infty}ca_n$ for some number $c$ is also convergent and if so, what its sum is. The next theorem gives us the answer to this question and even some more useful properties of sums of infinite series:
 
@@ -358,7 +358,7 @@ All series in this chapter will start at $n=1$ unless otherwise specified.
 
 This will make subsequent definitions, theorems and similar texts easier to state and understand.
 
-### Absolute and conditional convergence
+## Absolute and conditional convergence
 
 In many cases the terms of a series do not have to be positive, but they can also be (sometimes) negative. Sometimes it is useful to consider a new series which has as terms the absolute values of the terms of the original series, which is called the **absolute value series** of the original series. If such an absolute value series converges or diverges, then we can also deduce something about the convergence/divergence of the original series.
 
@@ -492,7 +492,7 @@ This means that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is co
 
 ::::::{prf:example}
 :label: Ex:Series:AbsoluteConvergence2
-Now we consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$. The absolute value series of this series is $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is the harmonic series, which we have shown to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`.
+Now we consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$. The absolute value series of this series is $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which we have shown to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`.
 
 So the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is not absolutely convergent.
 
@@ -563,109 +563,6 @@ Add Grasple exercises for {numref}`Chapter:Series:Introduction`.
 :::
 
 ## Exercises
-
-### Finite series
-
-::::{exercise}
-:label: Exc:Series:IntroductionInduction1
-Show that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ for all $n\in\{1,2,3,\ldots\}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Series:IntroductionInduction1`
-:class: solution, dropdown
-For $n=1$ this reads: $1=\frac{1}{6}\cdot1\cdot2\cdot3$, which is true. 
-
-Suppose that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ holds for certain value of $n$. Then we have
-
-\begin{align*}
-\sum_{k=1}^{n+1}k^2&=\sum_{k=1}^nk^2+(n+1)^2=\frac{1}{6}n(n+1)(2n+1)+(n+1)^2\\
-&=\frac{1}{6}(n+1)\left\{n(2n+1)+6(n+1)\right\}\\
-&=\frac{1}{6}(n+1)(2n^2+7n+6)=\frac{1}{6}(n+1)(n+2)(2n+3).
-\end{align*}
-Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
-:::
-
-::::{exercise}
-:label: Exc:Series:IntroductionInduction2
-Show that $\displaystyle\sum_{k=1}^nk^3=\left(\sum_{k=1}^nk\right)^2=\frac{1}{4}n^2(n+1)^2$ for all $n\in\{1,2,3,\ldots\}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Series:IntroductionInduction2`
-:class: solution, dropdown
-For $n=1$ this reads: $1=\frac{1}{4}\cdot1^2\cdot2^2$, which is true. 
-
-Suppose that $\displaystyle\sum_{k=1}^nk^3=\frac{1}{4}n^2(n+1)^2$ holds for certain value of $n$. Then we have
-
-\begin{align*}
-\sum_{k=1}^{n+1}k^3&=\sum_{k=1}^nk^3+(n+1)^3=\frac{1}{4}n^2(n+1)^2+(n+1)^3\\
-&=\frac{1}{4}(n+1)^2\left\{n^2+4(n+1)\right\}\\
-&=\frac{1}{4}(n+1)^2(n^2+4n+4)=\frac{1}{4}(n+1)^2(n+2)^2.
-\end{align*}
-Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
-:::
-
-::::{exercise}
-:label: Exc:Series:LucasTelescoping
-The Lucas sequence $\{L_n\}_{n=1}^{\infty}$ is defined by $L_{n+2}=L_n+L_{n+1}$ for $n=1,2,3,\ldots$ with $L_1=1$ and $L_2=3$.
-
-Simplify $\displaystyle\sum_{k=1}^nL_k$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Series:LucasTelescoping`
-:class: solution, dropdown
-Again we use the *telescoping property* to find
-
-\begin{align*}
-\sum_{k=1}^nL_k&=\sum_{n=1}^n\left(L_{k+2}-L_{k+1}\right)\\
-&=L_{n+2}-\cancel{L_{n+1}}+\cancel{L_{n+1}}-\cancel{L_n}+\ldots+\cancel{L_4}-\cancel{L_3}+\cancel{L_3}-L_2\\
-&=L_{n+2}-3.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Series:TelescopingExercise
-Use the facts that $n^4+n^2+1=n^4+2n^2+1-n^2=(n^2+1)^2-n^2$ and $2n=n^2+1+n-(n^2+1-n)$ to find the sum of
-
-$$
-\sum_{n=1}^{100}\frac{n}{n^4+n^2+1}.
-$$
-
-::::
-
-:::{admonition} Solution of {numref}`Exc:Series:TelescopingExercise`
-:class: solution, dropdown
-Using $n^4+n^2+1=(n^2+1)^2-n^2=(n^2+1+n)(n^2+1-n)$ and $2n=n^2+1+n-(n^2+1-n)$ we obtain
-
-\begin{align*}
-\frac{n}{n^4+n^2+1}&=\frac{1}{2}\frac{n^2+1+n-(n^2+1-n)}{(n^2+1+n)(n^2+1-n)} \\
-&=\frac{1}{2}\left(\frac{1}{n^2+1-n}-\frac{1}{n^2+1+n}\right).
-\end{align*}
-
-In order to see that this is a telescoping sum, let $c_n=n^2+1-n$, then
-
-$$
-c_{n+1}=(n+1)^2+1-(n+1)=n^2+2n+1+1-n-1=n^2+1+n.
-$$
-
-So if we set $b_n=\dfrac12\dfrac{1}{c_n}$, then we have $a_n=b_n-b_{n+1}$ for all $n\in\{1,2,3,\ldots\}$, then we have a telescoping sum.
-
-Hence, we have by {prf:ref}`Thm:Series:SumTelescopingSum` that
-
-\begin{align*}
-\sum_{n=1}^{100}\left(\frac{1}{n^2+1-n}-\frac{1}{n^2+1+n}\right) &= b_1-b_{101} \\
-&= \frac12\frac{1}{c_1}-\frac12\frac{1}{c_{101}} \\
-&= \frac12\frac{1}{1^2+1-1}-\frac12\frac{1}{101^2+1-101} \\
-&= \frac12\frac11-\frac12\frac{1}{10101} \\
-&= \frac12-\frac{1}{20202} \\
-&= \frac{10101}{20202}-\frac{1}{20202} \\
-&= \frac{10100}{20202} \\
-&= \frac{5050}{10101} \\
-&= 0.\overline{499950}.
-\end{align*}
-
-:::
-
-### Infinite series
 
 ::::{exercise}
 :label: Exc:Series:FibonacciExercise

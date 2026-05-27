@@ -1,4 +1,4 @@
-(Sec:Taylor polynomials)=
+(Sec:TaylorPolynomials)=
 # Approximating functions
 
 ## Introduction
@@ -163,6 +163,7 @@ which means that the volume increases by approximately $3.33\%$ while the diamet
 
 :::::
 
+
 ## Taylor polynomials
 
 You can check yourself that a linearisation $L(x)$ is a polynomial of degree one that has, at the point $a$, the same value and the same derivative as $f(x)$. From now on, we will also refer to the linearisation $L(x)$ of $f$ at $x=a$ as the Taylor polynomial $T_1(x)$ of degree one of $f$ centered at $x=a$. By definition, the graph of $T_1$ is the tangent line to the graph of $f$ at the point $(a,f(a))$, so it makes sense to state that $f(x)\approx T_1(x)$ for all $x$ that are close to $a$. By the expression $f(x)\approx T_1(x)$, we mean that $T_1(x)$ is an approximation of $f(x)$.
@@ -223,6 +224,7 @@ $$
 The Taylor polynomial $T_n(x)$ of degree $n$ of a function $f(x)$ centered at $a$ will be defined as
 
 ::::{prf:definition} 
+:label: Def:ApproximatingFunctions:TaylorPolynomials
 
 The **$n$th-order Taylor polynomial $T_n$ of $f$ with center $a$** is given by 
 
@@ -412,6 +414,7 @@ In the above example we could say that we approximated the position after $10$ s
 The next theorem generalises the above examples and gives us the tools to always find an upper bound for the difference between the _exact_ value and an _approximation_ using Taylor polynomials:
 
 ::::{prf:theorem}
+:label: Th:TaylorPolynomialsAdd:TaylorIneq
 
 Define $D$ as an interval that contains the point $a$, $T_n$ as the $n$<sup>th</sup> order Taylor polynomial of $f$ around $a$ and $M$ as an upper bound for $|f^{(n+1)}(x)|$ on the interval $D$. Then
 
@@ -441,6 +444,7 @@ Suppose $|f''(x)|\leq M$ for all $x$, then $T_1(x)-\frac{M}{2}x^2\leq f(x)\leq T
 To make talking about these formulae a little easier, we name parts of it:
 
 ::::{prf:definition}
+:label: Def:TaylorPolynomials:TaylorIneq
 
 The Inequality {eq}`Ex:TaylorPolynomialsAdd:TaylorIneq` is called **Taylor's inequality**.
 

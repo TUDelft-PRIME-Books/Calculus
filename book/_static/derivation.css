@@ -1,0 +1,12 @@
+/* TU Delft Derivation */
+  div.admonition.derivation {
+    border-color: var(--tud-blue);
+    background-color: var(--tud-gray-min);
+  }
+  div.admonition.derivation > .admonition-title {
+    background-color: var(--tud-gray-mid);
+  }
+  div.admonition.derivation > .admonition-title::after {
+    content: "\f518";
+    color: var(--tud-gray);
+  }

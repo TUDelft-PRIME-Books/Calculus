@@ -489,6 +489,60 @@ $$
 
 ::::::
 
+We finish this section with a very useful result that is often used:
+
+:::{prf:theorem}
+:label: Thm:SumsAndProducts:MagicRule
+
+Assume $a$ and $b$ are real numbers and $n$ is an integer. Then we have
+
+$$
+(a-b)\sum_{k=1}^{n}a^{n-k}b^{k-1}=a^n-b^n.
+$$
+
+:::
+
+:::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:MagicRule`
+:class: tudproof, dropdown
+
+We prove the theorem by induction on $n$.
+
+For $n=1$ we have on the left-hand side that
+
+$$
+(a-b)\sum_{k=1}^{1}a^{1-k}b^{k-1} = (a-b)a^{1-1}b^{1-1} = a-b,
+$$
+
+and on the right-hand side that
+
+$$
+a^1-b^1 = a-b,
+$$
+
+so the statement holds for $n=1$.
+
+Now assume that the statement holds for certain value of $n=N$, so
+
+$$
+(a-b)\sum_{k=1}^{N}a^{N-k}b^{k-1}=a^N-b^N.
+$$
+
+ then we have for $n=N+1$ that
+
+\begin{align*}
+(a-b)\sum_{k=1}^{N+1}a^{N+1-k}b^{k-1}&=(a-b)\left(\sum_{k=1}^{N}a^{N+1-k}b^{k-1}+a^{N+1-(N+1)}b^{(N+1)-1}\right) \\
+&=(a-b)\left(a\sum_{k=1}^{N}a^{N-k}b^{k-1}+b^N\right) \\
+&=(a-b)a\sum_{k=1}^{N}a^{N-k}b^{k-1}+(a-b)b^N \\
+&=a(a-b)\sum_{k=1}^{N}a^{N-k}b^{k-1}+(a-b)b^N \\
+&=a\left(a^N-b^N\right)+(a-b)b^N \\
+&=a^{N+1}-ab^N+ab^N-b^{N+1} \\
+&=a^{N+1}-b^{N+1}.
+\end{align*}
+
+This proves the statement for all $n\in\{1,2,3,\ldots\}$.
+
+:::
+
 With this we end our treatment of finite sums.
 
 ## Finite products
@@ -524,10 +578,23 @@ The next examples only consider the multiplication of a finite number of numbers
 :label: Ex:Integration:IntroductionExamplesProduct
 
 For $n\in\{1,2,3,\ldots\}$ we have
-* $\displaystyle\prod_{p=1}^np=1\cdot2\cdot3\cdots(n-1)\cdot n=n!$;
+* $\displaystyle\prod_{p=1}^np=1\cdot2\cdot3\cdots(n-1)\cdot n$;
 * $\displaystyle\prod_{j=1}^n\frac{j}{j+1}=\frac{1}{2}\cdot\frac{2}{3}\cdot\frac{3}{4}\cdots\frac{n-1}{n}\cdot\frac{n}{n+1}=\frac{1}{n+1}$;
 * $\displaystyle\prod_{k=1}^n\frac{2k+1}{2k}=\frac{3}{2}\cdot\frac{5}{4}\cdot\frac{7}{6}\cdots\frac{2n-1}{2n-2}\cdot\frac{2n+1}{2n}=\frac{3\cdot5\cdot7\cdots(2n+1)}{2\cdot4\cdot6\cdots2n}$.
 ::::::
+
+The first item in {prf:ref}`Ex:Integration:IntroductionExamplesProduct` often occurs in mathematics and therefore is given a special name:
+
+::::{prf:definition}
+:label: Def:SumsAndProducts:Factorial
+The **factorial** of a positive integer $n$ is the finite product of the first $n$ positive integers, that is
+
+$$
+n!=\prod_{k=1}^nk=1\cdot2\cdot3\cdots(n-1)\cdot n.
+$$
+
+By convention, we also define $0!=1$.
+::::
 
 Without stating a formal proof, we will also state some important properties of the finite products:
 
@@ -581,3 +648,110 @@ for any numbers $c$ and $d\neq 0$.
 
 Likewise, the third property can also be used for division and the fourth property can also be used for a change of the index of multiplication in the opposite direction.
 ::::::
+
+## Grasple exercises
+
+:::{todo}
+Add Grasple exercises to {numref}`Sec:SumsAndProducts`.
+:::
+
+## Exercises
+
+::::{exercise}
+:label: Exc:Series:IntroductionInduction1
+Show that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ for all $n\in\{1,2,3,\ldots\}$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Series:IntroductionInduction1`
+:class: solution, dropdown
+For $n=1$ this reads: $1=\frac{1}{6}\cdot1\cdot2\cdot3$, which is true. 
+
+Suppose that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ holds for certain value of $n$. Then we have
+
+\begin{align*}
+\sum_{k=1}^{n+1}k^2&=\sum_{k=1}^nk^2+(n+1)^2=\frac{1}{6}n(n+1)(2n+1)+(n+1)^2\\
+&=\frac{1}{6}(n+1)\left\{n(2n+1)+6(n+1)\right\}\\
+&=\frac{1}{6}(n+1)(2n^2+7n+6)=\frac{1}{6}(n+1)(n+2)(2n+3).
+\end{align*}
+Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
+:::
+
+::::{exercise}
+:label: Exc:Series:IntroductionInduction2
+Show that $\displaystyle\sum_{k=1}^nk^3=\left(\sum_{k=1}^nk\right)^2=\frac{1}{4}n^2(n+1)^2$ for all $n\in\{1,2,3,\ldots\}$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Series:IntroductionInduction2`
+:class: solution, dropdown
+For $n=1$ this reads: $1=\frac{1}{4}\cdot1^2\cdot2^2$, which is true. 
+
+Suppose that $\displaystyle\sum_{k=1}^nk^3=\frac{1}{4}n^2(n+1)^2$ holds for certain value of $n$. Then we have
+
+\begin{align*}
+\sum_{k=1}^{n+1}k^3&=\sum_{k=1}^nk^3+(n+1)^3=\frac{1}{4}n^2(n+1)^2+(n+1)^3\\
+&=\frac{1}{4}(n+1)^2\left\{n^2+4(n+1)\right\}\\
+&=\frac{1}{4}(n+1)^2(n^2+4n+4)=\frac{1}{4}(n+1)^2(n+2)^2.
+\end{align*}
+Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
+:::
+
+::::{exercise}
+:label: Exc:Series:LucasTelescoping
+The Lucas sequence $\{L_n\}_{n=1}^{\infty}$ is defined by $L_{n+2}=L_n+L_{n+1}$ for $n=1,2,3,\ldots$ with $L_1=1$ and $L_2=3$.
+
+Simplify $\displaystyle\sum_{k=1}^nL_k$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Series:LucasTelescoping`
+:class: solution, dropdown
+Again we use the *telescoping property* to find
+
+\begin{align*}
+\sum_{k=1}^nL_k&=\sum_{n=1}^n\left(L_{k+2}-L_{k+1}\right)\\
+&=L_{n+2}-\cancel{L_{n+1}}+\cancel{L_{n+1}}-\cancel{L_n}+\ldots+\cancel{L_4}-\cancel{L_3}+\cancel{L_3}-L_2\\
+&=L_{n+2}-3.
+\end{align*}
+:::
+
+::::{exercise}
+:label: Exc:Series:TelescopingExercise
+Use the facts that $n^4+n^2+1=n^4+2n^2+1-n^2=(n^2+1)^2-n^2$ and $2n=n^2+1+n-(n^2+1-n)$ to find the sum of
+
+$$
+\sum_{n=1}^{100}\frac{n}{n^4+n^2+1}.
+$$
+
+::::
+
+:::{admonition} Solution of {numref}`Exc:Series:TelescopingExercise`
+:class: solution, dropdown
+Using $n^4+n^2+1=(n^2+1)^2-n^2=(n^2+1+n)(n^2+1-n)$ and $2n=n^2+1+n-(n^2+1-n)$ we obtain
+
+\begin{align*}
+\frac{n}{n^4+n^2+1}&=\frac{1}{2}\frac{n^2+1+n-(n^2+1-n)}{(n^2+1+n)(n^2+1-n)} \\
+&=\frac{1}{2}\left(\frac{1}{n^2+1-n}-\frac{1}{n^2+1+n}\right).
+\end{align*}
+
+In order to see that this is a telescoping sum, let $c_n=n^2+1-n$, then
+
+$$
+c_{n+1}=(n+1)^2+1-(n+1)=n^2+2n+1+1-n-1=n^2+1+n.
+$$
+
+So if we set $b_n=\dfrac12\dfrac{1}{c_n}$, then we have $a_n=b_n-b_{n+1}$ for all $n\in\{1,2,3,\ldots\}$, then we have a telescoping sum.
+
+Hence, we have by {prf:ref}`Thm:Series:SumTelescopingSum` that
+
+\begin{align*}
+\sum_{n=1}^{100}\left(\frac{1}{n^2+1-n}-\frac{1}{n^2+1+n}\right) &= b_1-b_{101} \\
+&= \frac12\frac{1}{c_1}-\frac12\frac{1}{c_{101}} \\
+&= \frac12\frac{1}{1^2+1-1}-\frac12\frac{1}{101^2+1-101} \\
+&= \frac12\frac11-\frac12\frac{1}{10101} \\
+&= \frac12-\frac{1}{20202} \\
+&= \frac{10101}{20202}-\frac{1}{20202} \\
+&= \frac{10100}{20202} \\
+&= \frac{5050}{10101} \\
+&= 0.\overline{499950}.
+\end{align*}
+
+:::
