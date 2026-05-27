@@ -352,9 +352,9 @@ In the next section we will explain the relation between definite and indefinite
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/37c859fa-5b9f-4787-8147-4dd1c4ad645b?id=64128
+:url: https://embed.grasple.com/exercises/7239d5d2-bcf9-443b-8a51-630cd78c09ce?id=66011 
 :label: Grasple:66011
 :dropdown:
-:description: Find the antiderivatives of a sine function.
+:description: Find an antiderivative of another reciprocal function.
 
 ::::

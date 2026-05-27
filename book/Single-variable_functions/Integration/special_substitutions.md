@@ -377,7 +377,7 @@ Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}$.
 :::{prf:remark}
 :label: Remark:Integration:GraspleExercise
 
-Grasple-opgave met varianten: $\displaystyle\int_a^b\frac{\sqrt{x}}{\sqrt{x}-\sqrt{a+b-x}}\,dx=\frac{b-a}{2}$ met $a\in\{0,1,2,3,4,5,6,7,8\}$ en $b\in\{1,2,3,4,5,6,7,8,9\}$ met $a<b$ (met uitzondering van $a=0$ en $b=1$).
+Grasple-opgave met varianten: $\displaystyle\int_a^b\frac{\sqrt{x}}{\sqrt{x}+\sqrt{a+b-x}}\,dx=\frac{b-a}{2}$ met $a\in\{0,1,2,3,4,5,6,7,8\}$ en $b\in\{1,2,3,4,5,6,7,8,9\}$ met $a<b$ (met uitzondering van $a=0$ en $b=1$).
 :::
 
 :::{prf:remark}

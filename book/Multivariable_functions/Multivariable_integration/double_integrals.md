@@ -615,13 +615,15 @@ $$
 
 :::
 
-## The area of a region
+## Applications
 
-If we integrate the constant function $f(x,y)=1$ over a region $D$, we get the area of $D$:
+If we integrate the constant function $f(x,y)=1$ over a region $D$, we get the **area** of $D$:
 
-$$
+:::{math}
+:label: Eq:MultivariableIntegration:Area
+
 \text{area}(D)=\iint\limits_D1\,dA.
-$$
+:::
 
 :::::{prf:corollorary}
 :label: Cor:MultivariableIntegration:Area
@@ -652,3 +654,11 @@ $$
 $$
 
 :::
+
+Consider an **electric charge** that is distributed over a region $D$ (a metal plate) and a **charge density** function $\sigma(x,y)$ with domain $D$. Then
+
+$$
+Q=\iint\limits_D\sigma(x,y)\,dA
+$$
+
+denotes the **total charge** over the region $D$.
