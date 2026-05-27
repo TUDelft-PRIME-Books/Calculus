@@ -28,10 +28,9 @@ sphinx:
     check_captions: _ext/
     # image_checker: _ext/
     numref_section: _ext/
-    repeat: _ext/
+    math_punctuation: _ext/
   config:
     # prime_applets_base_url: "http://localhost:5173/applet/"
-    # prime_applets_base_url: "https://deploy-preview-432--openla-preview.netlify.app/applet/"
     sticky_margin:
       trigger: partial
     tippy_skip_urls:

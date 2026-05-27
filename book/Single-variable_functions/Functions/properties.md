@@ -888,3 +888,85 @@ The symmetries of the odd and even extensions of $f$ carry over to the odd and e
 :::{todo}
 Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ with $x>0$ and sketch the even and odd periodic extensions, or plug in a formula and draw the graphs of the even and odd periodic extensions.
 :::
+
+## Grasple exercises
+
+### Exercises on combining and manipulating functions
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e5683704-3cac-4cb6-8535-bc4ba03deb4b?id=70802
+:label: Grasple:70802
+:dropdown:
+:description: Maximal domain of product of two functions.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/de942950-9ffb-4c19-93f9-994c6ee3df8d?id=70803
+:label: Grasple:70803
+:dropdown:
+:description: Maximal domain of product of two functions.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fd5d41c4-6c51-4e67-8b4b-28a410348c66?id=70805
+:label: Grasple:70805
+:dropdown:
+:description: Maximal domain of composition of two functions.
+
+::::
+
+### Exercises on even and odd functions
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fae93512-dad5-40c4-bd28-aa3e78083fdd?id=63037
+:label: Grasple:63037
+:dropdown:
+:description: Determining whether a function is even and/or odd.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/eee3b148-0dca-4a4a-ae13-102d20789966?id=63040
+:label: Grasple:63040
+:dropdown:
+:description: Determining whether a function is even and/or odd.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bddbac7c-3de8-4262-ba87-f99db3420348?id=63042
+:label: Grasple:63042
+:dropdown:
+:description: Determining whether a function is even and/or odd.
+
+::::
+
+### Exercises on periodic functions
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/37c44a1b-96e8-4f88-af3c-bb9988fabf26?id=79437
+:label: Grasple:79437
+:dropdown:
+:description: Which of these functions are periodic?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/abaf8f66-d36c-475d-b7ec-887387cdff8b?id=79439
+:label: Grasple:79439
+:dropdown:
+:description: Dissecting a trigonometric function.
+
+::::

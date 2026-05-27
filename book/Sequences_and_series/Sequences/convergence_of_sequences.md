@@ -417,6 +417,11 @@ The sequence $\{a_n\}$ with $a_n=\dfrac{\cos(n)}{\sqrt{n}}$ is convergent and $\
 The sequence $\{a_n\}$ with $a_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$ because $|a_n|\leq\dfrac{1}{n}\to 0$ as $n\to\infty$.
 ::::::
 
+## Grasple exercises
+
+:::{todo}
+Add Grasple exercises to {numref}`Section:SequenceConvergence`.
+:::
 
 ## Exercises
 
@@ -707,10 +712,4 @@ L=\sqrt{15+2L}\quad\Longrightarrow\quad L^2=15+2L&\quad\Longleftrightarrow\quad 
 &\quad\Longleftrightarrow\quad(L-5)(L+3)=0.
 \end{align*}
 Hence: $L=5$ or $L=-3$. Since $a_1=3$ and the sequence is increasing, we conclude that $L=5$.
-:::
-
-## Grasple exercises
-
-:::{todo}
-Add exercises from Grasple.
 :::

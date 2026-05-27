@@ -135,7 +135,7 @@ If $\lim\limits_{x\rightarrow a}f(x)=L$, then the function values $f(x)$ approac
 
 ::::::{prf:theorem}
 :label: Theorem:LimitAtPoint:Leftrightequal
-We have $\lim\limits_{x\rightarrow a}f(x)=L$ precisely when both $\lim\limits_{x\rightarrow a^-}f(x)=L$ and $\lim\limits_{x\rightarrow a^+}f(x)=L$, i.e. the regular limit at a point exists precisely when 
+Let $f$ be a function that is defined for values of $x<a$ and $x>a$ close to $x=a$. We have $\lim\limits_{x\rightarrow a}f(x)=L$ precisely when both $\lim\limits_{x\rightarrow a^-}f(x)=L$ and $\lim\limits_{x\rightarrow a^+}f(x)=L$, i.e. the regular limit at a point exists precisely when 
 the left and right limits at that point both exist and are equal.
 ::::::
 
@@ -625,7 +625,7 @@ So far, we have worked with a more intuitive understanding of what a limit is. H
 
 ::::::{prf:definition} Precise definition of a limit
 :label: Def:LimitAtPoint:Precisedef
-Let $f$ be a function such that the domain of $f$ contains open intervals of the form $(c_1,a)$ and $(a,c_2)$.
+Let $f$ be a function such that the domain of $f$ contains an open interval of the form $(c_1,a)$ or $(a,c_2)$.
 
 Then we say that the **limit** of $f$ as $x$ approaches $a$ is equal to $L$, and we write $\lim\limits_{x\rightarrow a}f(x)=L$, whenever for each $\varepsilon>0$ there exists a $\delta>0$, such that for all $x$ in the domain of $a$ with $0<|x-a|<\delta$, we have $|f(x)-L|<\varepsilon$.
 
@@ -744,7 +744,7 @@ If no such value $L$ exists we say that the right limit does not exist.
 
 ::::::{prf:definition} Precise definition of an infinite limit
 :label: Def:LimitAtPoint:Precisedefinflimit
-$f$ be a function such that the domain of $f$ contains a open intervals of the form $(c_1,a)$ and $(a,c_2)$.
+$f$ be a function such that the domain of $f$ contain an open intervals of the form $(c_1,a)$ or $(a,c_2)$.
 
 Then we say that $f$ has an **infinite limit** at $x=a$, and we write $\lim\limits_{x\rightarrow a}f(x)=\infty$ whenever for each $M$ there exists a $\delta>0$ such that for all $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $f(x)\geq M$.
 

@@ -810,3 +810,14 @@ Replace {numref}`Fig:Graphsderivatives:Convex` with an applet.
 
 ::::::
 
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/173b11b1-47d4-4393-ab54-75baa7ceefa5?id=63044
+:label: Grasple:63044
+:dropdown:
+:description: Using derivatives to find the range of a function.
+
+::::
+

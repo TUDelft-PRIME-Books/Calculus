@@ -367,7 +367,7 @@ We end this section with the general result of polynomial long division in the n
 ::::{prf:theorem}
 :label: Thm:RationalFunctions:PolynomialLongDivision
 
-Let $f(x) = \frac{p(x)}{q(x)}$ be a rational function where the numerator $p$ has degree $P$ and the denominator $q$ has degree $Q$. Then there exist a polynomial $s$ of degree $S=P-Q$ and a polynomial $r$ of degree $R<Q$ such that
+Let $f(x) = \frac{p(x)}{q(x)}$ be a rational function where the numerator $p$ has degree $P$ and the denominator $q$ has degree $Q$. Then there exist a polynomial $s$ of degree $S=\max\{P-Q,0\}$ and a polynomial $r$ of degree $R<Q$ such that
 
 $$
 f(x) = s(x) + \frac{r(x)}{q(x)}.
@@ -380,7 +380,7 @@ $$
 
 Consider {prf:ref}`Alg:RationalFunctions:PolynomialDivision`. If we can prove that the algorithm terminates, then we have found the polynomials $s$ and $r$ such that $p(x) = r(x) + s(x)q(x)$. If we then also can deduce that the degrees are as required, the proof is complete.
 
-If $P<Q$ then we can simply define $s(x)=0$ and $r(x)=p(x)$ and we are done.
+If $P<Q$ then we can simply define $s(x)=0$ and $r(x)=p(x)$ and we are done. In this case $S=0$ and $R=P<Q$ as required.
 
 In the remainder of this proof we will assume that $P\geq Q$.
 
@@ -388,7 +388,7 @@ In step 1 and 2 of the algorithm the degree of $p_{n+1}$ is strictly lower than 
 
 This means that the degree of $p_{n+1}$ is at least one less than the degree of $p_n$. Since the degree of $p_0$ is $P$, this means that after at most $P-Q$ iterations we have a polynomial whose degree is lower than the degree of $q$. This means that the algorithm terminates and we have found polynomials $s$ and $r$ such that $p(x) = r(x) + s(x)q(x)$.
 
-The degree of the polynomial $s$ is $S=P-Q$ since in each iteration we are adding a monomial $a_nx^{k_n}$ to $s$ where the term with the highest power of $a_nx^{k_n}q(x)$ matches the term with the highest power of $p_n$. Since the degree of $p_0$ is $P$, this means that the degree of the first monomial we add to $s$ is $P-Q$. Since in each iteration we are adding a monomial of lower degree, this means that the degree of $s$ is indeed $S=P-Q$.
+The degree of the polynomial $s$ is $S=P-Q$ since in each iteration we are adding a monomial $a_nx^{k_n}$ to $s$ where the term with the highest power of $a_nx^{k_n}q(x)$ matches the term with the highest power of $p_n$. Since the degree of $p_0$ is $P$, this means that the degree of the first monomial we add to $s$ is $P-Q$. Since in each iteration we are adding a monomial of lower degree, this means that the degree of $s$ is indeed $S=P-Q\geq0$.
 
 The degree of the polynomial $r$ is $R<Q$ since the algorithm terminates when we have a polynomial $p_{n+1}$ whose degree is lower than the degree of $q$. Since we define $r(x)=p_{n+1}(x)$, this means that the degree of $r$ is indeed $R<Q$.
 

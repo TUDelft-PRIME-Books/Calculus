@@ -7,7 +7,7 @@ In this section we cover
 - Start from natural numbers (includes $0$), integers, rational numbers, and and with real numbers
 - Intervals
 - Set notation (union, intersection, difference)
-- Equations (including quadratic). 
+- Equations (including quadratic). Includes: completing the square
 - Absolute values
 - Inequalities (including quadratics and absolute values)
 - Linear systems of two variables (solving by "row" reduction, not by back substitution)
@@ -664,3 +664,59 @@ $$
 
 This gives a contradiction, since we obtained previously that $\displaystyle\sum_{n=q+1}^\infty \frac{q!}{n!}$ is an integer. As such, $e$ must be irrational.
 :::
+
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7063abad-f0b7-4dce-9def-0d2cb0dc5a0c?id=75392
+:label: Grasple:75392
+:dropdown:
+:description: Simplifying expressions with square roots
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/13d8dc21-75f7-4a70-9759-149a955a38eb?id=70117
+:label: Grasple:70117
+:dropdown:
+:description: Working out brackets
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/40832a92-b00e-4a67-9b73-7231df4a92e9?id=70122
+:label: Grasple:70122
+:dropdown:
+:description: Factorise quadratic polynomials
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/eaa040e7-a04d-405c-99e9-af843dc879fb?id=76959
+:label: Grasple:76959
+:dropdown:
+:description: Completing the square
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9f786369-a92e-4d5d-b824-9158443d96f9?id=76960
+:label: Grasple:76960
+:dropdown:
+:description: Completing the square
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/14ff8bc0-2922-4d99-95ef-a389e5c91d94?id=63070
+:label: Grasple:63070
+:dropdown:
+:description: Simplify expressions with exponentials
+
+::::

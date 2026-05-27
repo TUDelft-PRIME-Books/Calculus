@@ -79,7 +79,10 @@ parts:
       - file: "Sequences_and_series/Series/tests_for_general_series.md"
       - file: "Sequences_and_series/Series/power_series.md"
       - file: "Sequences_and_series/Series/taylor_series.md"
+      - file: "Sequences_and_series/Series/binomial_series.md"
       - file: "Sequences_and_series/Series/fourier_series.md"
+      - file: "Sequences_and_series/Series/generating_functions.md"
+      - file: "Sequences_and_series/Series/special_constants_and_functions.md"
   - caption: Multivariable functions
     numbered: 3
     chapters:
@@ -191,3 +194,4 @@ parts:
     - file: questions.md # ref_graph: {'ignore':True}
     - external: https://github.com/TeachBooks/Sphinx-PRIME-applets/blob/main/README.md # ref_graph: {'ignore':True}
     - external: https://github.com/TeachBooks/Sphinx-Sticky-Margin/blob/main/MANUAL.md # ref_graph: {'ignore':True}
+    - external: https://github.com/TeachBooks/TeachBooks-Fetch/blob/main/MANUAL.md # ref_graph: {'ignore':True}
