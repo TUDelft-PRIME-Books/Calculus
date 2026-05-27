@@ -2,13 +2,6 @@
 
 # Fourier series
 
-In this section we cover:
-
-- Periodic functions (Willem: already covered in 3.2)
-- Fourier series
-- Convergence of Fourier series
-- Fourier sine and cosine series
-
 ## Introduction
 
 We have seen that Taylor polynomials, the partial sums of Taylor series, can be used to approximate a function $f(x)$ near a point $x=a$ as closely as is needed by taking the order large enough, provided we stay within the interval of convergence.

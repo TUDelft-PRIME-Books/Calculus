@@ -445,13 +445,13 @@ $$
 c_n=\frac{f^{(n)}(0)}{n!}=\frac{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)}{n!}\quad\text{for }n=1,2,3,\ldots
 $$
 
-If $\alpha$ would be a positive integer, then we can write by 
+If $\alpha$ would be a positive integer, then we can write
 
 $$
 c_n = \frac{\alpha!}{n!(n-\alpha)!} = \binom{\alpha}{n}\quad\text{for }n=0,1,2,\ldots,\alpha.
 $$
 
-However, if $\alpha$ is not a positive integer, then the coefficients $c_n$ are not given by the binomial coefficients $\displaystyle\binom{\alpha}{n}$ defined in {eq}`Eq:Series:BinomialCoefficient` as these binomial coefficients are only defined for non-negative integers. However, we can generalise the definition of the binomial coefficients to arbitrary real numbers $\alpha$ as follows:
+However, if $\alpha$ is not a positive integer, then the coefficients $c_n$ are not given by the binomial coefficients $\displaystyle\binom{\alpha}{n}$ defined in Equation {eq}`Eq:Series:BinomialCoefficient` as these binomial coefficients are only defined for non-negative integers. However, we can generalise the definition of the binomial coefficients to arbitrary real numbers $\alpha$ as follows:
 
 :::{math}
 :label: Eq:Series:BinomialCoefficients

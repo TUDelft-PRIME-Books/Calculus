@@ -2,13 +2,6 @@
 
 # Taylor series
 
-In this section we cover:
-
-- Taylor and Maclaurin series (including series of exponential, sine, cosine, logarithm, arctangent), including connection with Taylor polynomials
-- Analyticity
-- Binomial series
-- Applications: limits, integrals
-
 ## Introduction
 
 In the previous section we have seen some power series representations of certain functions. These were all based on the geometric series $\displaystyle\sum_{n=0}^{\infty}x^n=\frac{1}{1-x}$ for $|x|<1$. We could use substitutions, differentiation and integration to find power series representations of other functions by using this power series representation of the function $\dfrac{1}{1-x}$.

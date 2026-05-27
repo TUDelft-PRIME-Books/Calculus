@@ -710,6 +710,11 @@ For every choice of $N\in\{1,2,3,\ldots\}$ we eventually end up in the cycle $\{
 
 This Collatz conjecture is still an open, unsolved, problem in mathematics.
 
+## Grasple exercises
+
+:::{todo}
+Add Grasple exercises to {numref}`Sec:SeqAndTypes`.
+:::
 
 ## Exercises
 
