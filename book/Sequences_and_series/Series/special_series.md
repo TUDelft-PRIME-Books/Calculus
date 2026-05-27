@@ -524,7 +524,7 @@ The alternating nature of the series implies $s_1$ is to the right of $0$, $s_2$
 We first consider the even partial sums $s_2=b_1-b_2\geq0$, $s_4=s_2+(b_3-b_4)\geq s_2$, and so on. In general:
 
 $$
-s_{2n+2}=s_{2n}+(b_{2n+1}-b_{2n+2})\geq s_{2n}\quad\text{for}\quad n=1,2,3,\ldots.
+s_{2n+2}=s_{2n}+(b_{2n+1}-b_{2n+2})\geq s_{2n}\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 Hence:

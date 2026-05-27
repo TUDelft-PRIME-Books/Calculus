@@ -50,7 +50,7 @@ $$
 then the coefficients are given by the formula 
 
 $$ 
-c_n=\frac{f^{(n)}(a)}{n!},\quad n=0,1,2,\ldots. 
+c_n=\frac{f^{(n)}(a)}{n!},\quad n=0,1,2,\ldots 
 $$ 
 
 :::::: 
@@ -114,7 +114,7 @@ $$
 This implies that the Taylor series of $f$ at $x=0$ is given by
 
 $$
-e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\frac{1}{24}x^4+\frac{1}{120}x^5+\ldots.
+e^x=\sum_{n=0}^{\infty}\frac{x^n}{n!}=1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\frac{1}{24}x^4+\frac{1}{120}x^5+\ldots
 $$ 
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{x^n}{n!}$, then we have
@@ -147,7 +147,7 @@ Replace {numref}`Fig:Series:ExpTaylor` with an applet with $n$ a slider.
 For $f(x)=\sin(x)$ we have: $f'(x)=\cos(x)$, $f''(x)=-\sin(x)$, $f^{(3)}(x)=-\cos(x)$, $f^{(4)}(x)=\sin(x)=f(x)$ and so on. Hence: $f(0)=0$, $f'(0)=1$, $f''(0)=0$, $f^{(3)}(0)=-1$, $f^{(4)}(0)=1=f(0)$ and so on. This implies that
 
 $$
-\sin(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}=x-\frac{1}{6}x^3+\frac{1}{120}x^5-\frac{1}{5040}x^7+\ldots.
+\sin(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}=x-\frac{1}{6}x^3+\frac{1}{120}x^5-\frac{1}{5040}x^7+\ldots
 $$
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n+1)!}x^{2n+1}$, then we have
@@ -180,7 +180,7 @@ Replace {numref}`Fig:Series:SinCosTaylor` with an applet with $n$ a slider. Make
 Similarly we obtain that
 
 $$
-\cos(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}x^{2n}=1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\ldots.
+\cos(x)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n)!}x^{2n}=1-\frac{1}{2}x^2+\frac{1}{24}x^4-\frac{1}{720}x^6+\ldots
 $$
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n)!}x^{2n}$, then we have
@@ -472,7 +472,7 @@ Using the Taylor series of $e^x$ at $x=0$ we can find for $x\neq 0$ that:
 &= \frac{\left(1+x + \displaystyle\sum_{n=2}^{\infty}\frac{x^n}{n!}\right) - 1 - x}{x^2} \\
 &= \frac{\displaystyle\sum_{n=2}^{\infty}\frac{x^n}{n!}}{x^2} \\
 &= \displaystyle\sum_{n=2}^{\infty}\frac{x^{n-2}}{n!} \\
-&= \frac{1}{2} + \frac16x+\frac{1}{24}x^2+\ldots.
+&= \frac{1}{2} + \frac16x+\frac{1}{24}x^2+\ldots
 \end{align*}
 
 This means that if we take the limit as $x$ approaches $0$, then we have
@@ -516,7 +516,7 @@ Using $\sin(x)=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ f
 &= \displaystyle\sum_{n=0}^{\infty}\int_0^1\frac{(-1)^n}{(2n+1)!}x^{6n+4}\,dx \\
 &= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\int_0^1x^{6n+4}\,dx \\
 &= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\frac{1}{6n+5} \\
-&= \frac{1}{5}-\frac{1}{66}+\frac{1}{2040}-\frac{1}{115920}+\ldots.
+&= \frac{1}{5}-\frac{1}{66}+\frac{1}{2040}-\frac{1}{115920}+\ldots
 \end{align*}
 
 We can use this series representation of the definite integral to find an approximation of the value of the integral by truncating the series after a finite number of terms $N$. Table {numref}`Tab:Series:TaylorIntegralSin` shows the approximations of the value of the integral for $N=0,1,2,3$.

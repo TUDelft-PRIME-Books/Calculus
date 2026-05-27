@@ -251,7 +251,7 @@ In general, the expansion of the binomial $(a+b)^n$ is given by the binomial the
 :label: Thm:Series:BinomialTheorem
 
 $$
-(a+b)^n=\sum_{k=0}^n\binom{n}{k}a^{n-k}b^k=\sum_{k=0}^n\binom{n}{k}a^kb^{n-k},\quad n=0,1,2,\ldots.
+(a+b)^n=\sum_{k=0}^n\binom{n}{k}a^{n-k}b^k=\sum_{k=0}^n\binom{n}{k}a^kb^{n-k},\quad n=0,1,2,\ldots
 $$
 
 ::::::
@@ -311,7 +311,7 @@ Replace the image in {numref}`Fig:Series:FibonacciPascal` with a $\LaTeX$ versio
 This can be written as $F_n=\displaystyle\sum_{k=0}^{\lfloor\frac{n-1}{2}\rfloor}\binom{n-k-1}{k}$  for $n=1,2,3,\ldots$. Here $\lfloor{\alpha}\rfloor$ denotes the greatest integer less than or equal to $\alpha$. This is equivalent to
 
 $$
-F_{2n-1}=\sum_{k=0}^{n-1}\binom{2n-k-2}{k}\quad\text{and}\quad F_{2n}=\sum_{k=0}^n\binom{2n-k-1}{k},\quad n=1,2,3,\ldots.
+F_{2n-1}=\sum_{k=0}^{n-1}\binom{2n-k-2}{k}\quad\text{and}\quad F_{2n}=\sum_{k=0}^n\binom{2n-k-1}{k},\quad n=1,2,3,\ldots
 $$
 
 The proof is by mathematical induction. For $n=1$ we have 
@@ -352,7 +352,7 @@ Using these results, we can prove the next theorem:
 For each $m\in\mathbb{N}$ we also have
 
 $$
-F_{m+2n}=\displaystyle\sum_{k=0}^n\binom{n}{k}F_{m+k},\quad n=1,2,3,\ldots.
+F_{m+2n}=\displaystyle\sum_{k=0}^n\binom{n}{k}F_{m+k},\quad n=1,2,3,\ldots
 $$
 
 :::
@@ -378,7 +378,7 @@ This is the original formula with $n$ replaced by $n+1$, which proves {prf:ref}`
 The special case $m=0$ of {prf:ref}`Thm:Series:FibonacciPascal` reads
 
 $$
-F_{2n}=\displaystyle\sum_{k=0}^n\binom{n}{k}F_k,\quad n=1,2,3,\ldots.
+F_{2n}=\displaystyle\sum_{k=0}^n\binom{n}{k}F_k,\quad n=1,2,3,\ldots
 $$
 
 ::::::::
@@ -396,7 +396,7 @@ f^{(4)}(x) &= 7\cdot6\cdot5\cdot4(1+x)^3,\\
 f^{(5)}(x) &= 7\cdot6\cdot5\cdot4\cdot3(1+x)^2,\\
 f^{(6)}(x) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2(1+x),\\
 f^{(7)}(x) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1,\\
-f^{(n)}(x) &= 0\quad\text{for }n=8,9,10,\ldots.
+f^{(n)}(x) &= 0\quad\text{for }n=8,9,10,\ldots
 \end{align*}
 
 Substituting $x=0$ gives 
@@ -410,7 +410,7 @@ f^{(4)}(0) &= 7\cdot6\cdot5\cdot4 = \dfrac{7!}{3!} ,\\
 f^{(5)}(0) &= 7\cdot6\cdot5\cdot4\cdot3 = \dfrac{7!}{2!} ,\\
 f^{(6)}(0) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2 = \dfrac{7!}{1!} ,\\
 f^{(7)}(0) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1 = \dfrac{7!}{0!} ,\\
-f^{(n)}(0) &= 0\quad\text{for }n=8,9,10,\ldots.
+f^{(n)}(0) &= 0\quad\text{for }n=8,9,10,\ldots
 \end{align*}
 
 This means that the Taylor series expansion of $f$ around $x=0$ is given by

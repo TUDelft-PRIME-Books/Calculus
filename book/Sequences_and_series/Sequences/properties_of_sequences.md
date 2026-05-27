@@ -182,7 +182,7 @@ The last inequality reduces to $0<1$, which definitely is true. This shows that 
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n^2}{2^n}$. Then the first terms are
 
 $$
-\frac{1}{2},\quad1,\quad\frac{9}{8},\quad1,\quad\frac{25}{32},\quad\frac{9}{16},\quad\frac{49}{128},\quad\ldots.
+\frac{1}{2},\quad1,\quad\frac{9}{8},\quad1,\quad\frac{25}{32},\quad\frac{9}{16},\quad\frac{49}{128},\quad\ldots
 $$
 
 Although the first two pairs of consecutive terms have a positive difference, the next pairs of consecutive terms have a negative difference. So this sequence is non-monotonic, but it might be ultimately decreasing.

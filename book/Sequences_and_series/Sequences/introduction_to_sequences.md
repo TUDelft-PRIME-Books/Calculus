@@ -14,7 +14,7 @@ As you can see, these numbers are ordered, and even contain a pattern: each numb
 
 ::::{math}
 :label: Eq:SeqAndTypes:PositiveIntegersList
-1,2,3,4,5,6,7,8,9,10,\ldots.
+1,2,3,4,5,6,7,8,9,10,\ldots
 ::::
 
 Now consider the next five numbers:
@@ -30,7 +30,7 @@ Each number is the reciprocal of a perfect square[^perfect-squares]. We can cont
 
 ::::{math}
 :label: Eq:SeqAndTypes:ReciprocalPerfectSquaresList
-1,\frac{1}{4},\frac{1}{9},\frac{1}{16},\frac{1}{25},\frac{1}{36},\frac{1}{49},\frac{1}{64},\frac{1}{81},\frac{1}{100},\ldots.
+1,\frac{1}{4},\frac{1}{9},\frac{1}{16},\frac{1}{25},\frac{1}{36},\frac{1}{49},\frac{1}{64},\frac{1}{81},\frac{1}{100},\ldots
 ::::
 
 The lists in Equations {eq}`Eq:SeqAndTypes:PositiveIntegersFiniteList`, {eq}`Eq:SeqAndTypes:PositiveIntegersList`, {eq}`Eq:SeqAndTypes:ReciprocalPerfectSquaresFiniteList` and {eq}`Eq:SeqAndTypes:ReciprocalPerfectSquaresList` are _all_ examples of **sequences**. In the next sections we will give a precise definition of what sequences are, how you can represent them, and we will give some types of common sequences. We end with showing some famous sequences. 
@@ -190,13 +190,13 @@ Let $\{a_n\}_{n=p}^{\infty}$ be an arithmetic sequence with common difference $d
 Then the sequence can be defined by the *explicit formula*
 
 $$
-a_n=b+(n-1)d\quad\text{for}\quad n=p,p+1,p+2,\ldots.
+a_n=b+(n-1)d\quad\text{for}\quad n=p,p+1,p+2,\ldots
 $$
 
 It can also be defined by the *recursive formula* $a_p=b$ and
 
 $$
-a_{n+1}=a_n+d\quad\text{for}\quad n=p,p+1,p+2,\ldots.
+a_{n+1}=a_n+d\quad\text{for}\quad n=p,p+1,p+2,\ldots
 $$
 
 ::::::
@@ -215,7 +215,7 @@ $$
 and the recursive formula is $a_1=1$ and
 
 $$
-a_{n+1}=a_n+1\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=a_n+1\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -234,7 +234,7 @@ $$
 and the recursive formula is $a_1=1$ and
 
 $$
-a_{n+1}=a_n+2\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=a_n+2\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -252,7 +252,7 @@ $$
 
 and the recursive formula is $a_1=3$ and
 $$
-a_{n+1}=a_n-2\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=a_n-2\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -278,7 +278,7 @@ $$
 and the recursive formula is $a_1=1$ and
 
 $$
-a_{n+1}=\frac{1}{\frac{1}{a_n}+1}\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=\frac{1}{\frac{1}{a_n}+1}\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -297,7 +297,7 @@ $$
 and the recursive formula is $a_1=1$ and
 
 $$
-a_{n+1}=\frac{1}{\frac{1}{a_n}+2}\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=\frac{1}{\frac{1}{a_n}+2}\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -316,7 +316,7 @@ $$
 and the recursive formula is $a_1=\frac{1}{3}$ and
 
 $$
-a_{n+1}=\frac{1}{\frac{1}{a_n}-2}\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=\frac{1}{\frac{1}{a_n}-2}\quad\text{for}\quad n=1,2,3,\ldots
 $$
 ::::
 
@@ -349,7 +349,7 @@ $$
 and recursive formula $a_1=1$ and
 
 $$
-a_{n+1}=2a_n\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=2a_n\quad\text{for}\quad n=1,2,3,\ldots
 $$
 ::::::
 
@@ -365,7 +365,7 @@ $$
 and recursive formula $a_1=1$ and
 
 $$
-a_{n+1}=\frac{1}{2}a_n\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=\frac{1}{2}a_n\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -382,7 +382,7 @@ $$
 and recursive formula $a_1=-1$ and
 
 $$
-a_{n+1}=-1\cdot a_n\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=-1\cdot a_n\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -740,7 +740,7 @@ Find a general formula for $L_n$ with $n=0,1,2,\ldots$ and show that $\displayst
 Since the Lucas numbers satisfy the same recurrence relation as the Fibonacci numbers, we have the same general solution
 
 $$
-L_n=c_1\left(\frac{1+\sqrt{5}}{2}\right)^n+c_2\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots.
+L_n=c_1\left(\frac{1+\sqrt{5}}{2}\right)^n+c_2\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots
 $$
 
 The initial values $L_0=2$ and $L_1=1$ imply that
@@ -760,13 +760,13 @@ which implies that $c_1=c_2=1$.
 Hence we have
 
 $$
-L_n=\left(\frac{1+\sqrt{5}}{2}\right)^n+\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots.
+L_n=\left(\frac{1+\sqrt{5}}{2}\right)^n+\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots
 $$
 
 Again using the *golden ratio* $\varphi=\displaystyle\frac{1+\sqrt{5}}{2}$ we have
 
 $$
-L_n=\varphi^n+(1-\varphi)^n,\quad n=0,1,2,\ldots.
+L_n=\varphi^n+(1-\varphi)^n,\quad n=0,1,2,\ldots
 $$
 
 Similarly as for the Fibonacci numbers we use that fact that 

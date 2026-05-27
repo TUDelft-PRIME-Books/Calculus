@@ -120,7 +120,7 @@ Sometimes the ratio test is called **d'Alembert's criterion**, named after the F
 
    \begin{align*}
    &|a_{N+1}| < |a_N|r,\quad |a_{N+2}| < |a_{N+1}|r < |a_N|r^2,\\
-   &{}\quad|a_{N+3}| < |a_{N+2}|r < |a_N|r^3,\quad\ldots.
+   &{}\quad|a_{N+3}| < |a_{N+2}|r < |a_N|r^3,\quad\ldots
    \end{align*}
   
    So we have: $|a_{N+k}| < |a_N|r^k$ for $k=1,2,3,\ldots$. Now the series $\displaystyle\sum_{k=1}^{\infty}|a_N|r^k$ is convergent because it is a geometric series with common ratio $r$ and $0 < r < 1$. This implies that the series $\displaystyle\sum_{n=N+1}^{\infty}|a_n|=\sum_{k=1}^{\infty}|a_{N+k}|$ is convergent. Hence the series $\displaystyle\sum|a_n|$ is convergent.
@@ -307,7 +307,7 @@ Sometimes the root test is called **Cauchy's criterion**, named after the French
 1) If $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}=L<1$ we can choose a number $r$ such that $L<r<1$. Then $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}=L$ implies that there exists an integer $N$ such that $\displaystyle\sqrt[n]{|a_n|} < r$. This implies that
 
    $$
-   \sqrt[N+k]{|a_{N+k}|} < r\quad\Longrightarrow\quad |a_{N+k}| < r^{N+k},\quad k=0,1,2,\ldots.
+   \sqrt[N+k]{|a_{N+k}|} < r\quad\Longrightarrow\quad |a_{N+k}| < r^{N+k},\quad k=0,1,2,\ldots
    $$
 
    This implies that $\displaystyle\sum_{k=0}^{\infty}|a_{N+k}|$ is convergent, since $\displaystyle\sum_{k=0}^{\infty}r^{N+k}$ is a geometric series with common ratio $r$ with $0 < r < 1$ which is convergent.
@@ -315,7 +315,7 @@ Sometimes the root test is called **Cauchy's criterion**, named after the French
 2) If $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}=L>1$ or $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}=\infty$, we can choose a number $r$ such that $1<r<L$. Then $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}=L$ implies that $\displaystyle\sqrt[n]{|a_n|}$ will eventually be greater than $r$, that is: there exists an integer $N$ such that $\displaystyle\sqrt[n]{|a_n|}>r$ for all $n\geq N$. This implies that
 
    $$
-   \sqrt[N+k]{|a_{N+k}|} > r\quad\Longrightarrow\quad |a_{N+k}| > r^{N+k},\quad k=0,1,2,\ldots.
+   \sqrt[N+k]{|a_{N+k}|} > r\quad\Longrightarrow\quad |a_{N+k}| > r^{N+k},\quad k=0,1,2,\ldots
    $$
 
    This implies that $\displaystyle\sum_{k=0}^{\infty}|a_{N+k}|$ is divergent, since $\displaystyle\sum_{k=0}^{\infty}r^{N+k}$ is a geometric series with common ratio $r$ with $r > 1$ which is divergent.
