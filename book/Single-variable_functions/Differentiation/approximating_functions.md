@@ -83,6 +83,45 @@ $$
 
 ::::
 
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+
+Consider the function
+
+$$
+f(x) = 1+2x+3x^2+4x^3+5x^4.
+$$
+
+Which of the below answers gives the linearisation $L$ of $f$ at $x=1$?
+---
+[ ] $\displaystyle 5(8x-5)$
+> Remember that you have to be specific in mathematics. What is equal to $5(8x-5)$?
+[x] $\displaystyle L(x) = -25 + 40x$
+> Well done!
+[ ] $\displaystyle y = 5(8x-5)$
+> Remember that you have to be specific in mathematics. Is $y$ defined in the question?
+[ ] $\displaystyle y = 15 + 40(x-1)$
+> Remember that you have to be specific in mathematics. Is $y$ defined in the question?
+[x] $\displaystyle L(x) = 15 + 40(x-1)$
+> Well done!
+[ ] $\displaystyle -25 + 40x$
+> Remember that you have to be specific in mathematics. What is equal to $-25 + 40x$?
+[x] $\displaystyle L(x) = 5(8x-5)$
+> Well done!
+[ ] $\displaystyle y = -25 + 40x$
+> Remember that you have to be specific in mathematics. Is $y$ defined in the question?
+[ ] $\displaystyle 15 + 40(x-1)$
+> Remember that you have to be specific in mathematics. What is equal to $15 + 40(x-1)$?
+---
+::::
+
+
+
+
 Another way to view linearisation, is to use it to approximate changes in function values. If we want to approximate the change in the value of a function $f$ when we change the input from $a$ to $a+h$, we can use the linearisation $L(x)$ of $f$ at $x=a$. The real change in the function value is given by
 
 $$
@@ -395,7 +434,35 @@ $$
 Note that we have used the term _order_ to refer to the number of derivatives that are used in the construction of the Taylor polynomial, and we have used the term _degree_ to refer to the highest power of $x$ that appears in the Taylor polynomial. The _degree_ of a Taylor polynomial is always smaller than or equal to its _order_, but it can be strictly smaller.
 
 For example, $T_3(x)$ is a Taylor polynomial of order $3$ and a polynomial of degree $2$ in {prf:ref}`Ex:ApproximatingFunctions:cos`.
+
+For Taylor polynomials of order $n$ with a low value of $n$, we might sometimes also use the following names:
+- $T_1$ is called the first-order Taylor polynomial;
+- $T_2$ is called the second-order Taylor polynomial;
+- $T_3$ is called the third-order Taylor polynomial;
+and so on.
 :::
+
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1 1 1 1
+
+Construct the Taylor polynomial of order $2$, $T_2$, of the function $f(x)=1+2x+3x^2+4x^3+5x^4$ centred at $x=1$.
+---
+[ ] $T_2(x)=(1+2x+3x^2+4x^3+5x^4)+(2 + 6 x + 12 x^2 + 20 x^3)(x-1)+(6 + 24 x + 60 x^2)(x-1)^2$
+> Remember that you have to substitute the values of $f(1)$, $f'(1)$ and $f''(1)$ in the formula for $T_2$, not just the values of $f(x)$, $f'(x)$ and $f''(x)$.
+[x] $T_2(x)=15+40(x-1)+90(x-1)^2$
+> Well done!
+[ ] $T_2(x)=1+2(x-1)+3(x-1)^2+4(x-1)^3+5(x-1)^4$
+> This is a polynomial of degree $4$, so it cannot be the Taylor polynomial of order $2$.
+[ ] $T_2(x)=1+2x+3x^2$
+> This is indeed a polynomial of degree $2$, but it is not the Taylor polynomial of order $2$ of $f$ centred at $x=1$.
+It is the Taylor polynomial of order $2$ of $f$ centred at $x=0$.
+---
+::::
 
 ## Taylor's inequality
 
@@ -710,6 +777,83 @@ Since the error is smaller than $0.0001$ this means that the actual value of $\s
 ::::
 
 In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper bound for the approximation error decreases very quickly as we increase $n$. This is a general phenomenon: the approximation error of Taylor polynomials often decreases very quickly as we increase the order of the Taylor polynomial. The theory behind this behavior and much more is the subject of {numref}`Sec:Series:TaylorSeries`, where we will also give a proof of Taylor's inequality.
+
+::::{prf:example-start}
+:label: Ex:TaylorPolynomials:Code
+
+As you may have noticed, computing Taylor polynomials and using Taylor's inequality can be quite a bit of work. For harder problems some times it is easier to use a computer to do the calculations. For example, the following Python code:
+- computes the Taylor polynomial of order $5$ of the function $f(x)=\sqrt{1+\cos^2(x)}$ centred at $0$;
+- approximates $f(0.8)$ by evaluating the Taylor polynomial at $x=0.8$;
+- finds an upper bound for the approximation error in this approximation using Taylor's inequality on the interval $[0,0.8]$.
+- finds an interval in which the exact value of $f(0.8)$ lies.
+
+::::
+
+:::{code-cell} python
+---
+tags: [auto-execute-page]
+---
+# Import a symbolic mathematics library
+import sympy as sp
+# import a function for optimisation
+from scipy.optimize import minimize_scalar
+# import a function to display the result in LaTeX format
+from IPython.display import Latex
+# Define the variable and the constants
+x = sp.symbols('x')
+# Define the function
+f = sp.sqrt(1 + sp.cos(x)**2)
+# Set which order Taylor polynomial we want to compute
+n = 5
+# Set around which point we want to compute the Taylor polynomial
+a = 0
+# Set at which point we want to evaluate the Taylor polynomial
+x_eval = 0.8
+# set how many digits should be shown in the display
+digits = 6
+
+# Compute the Taylor polynomial
+T_n = f.series(x, a,n+1).removeO()
+# Compute the value at x_eval
+T_n_eval = T_n.subs(x,sp.Rational(str(x_eval))).simplify()
+# Find the (n+1)-th derivative of f
+f_der = f.diff(x,n+1).simplify()
+f_der_numpy = sp.lambdify(x, f_der, modules=['numpy'])
+# Determine the maximum of the absolute value on (a,x_eval)
+res = minimize_scalar(lambda x: -f_der_numpy(x),
+                      bounds=(min([a,x_eval]),max([a,x_eval])),
+                      method='bounded')
+M = -res.fun
+# Apply Taylor's inequality to get the upper bound at x_eval
+UB = M*abs(x_eval-a)**(n+1)/sp.factorial(n+1)
+# Determine the interval for f(x_eval)
+MIN = T_n_eval-UB
+MAX = T_n_eval+UB
+# Display the results
+display(Latex(f"The Taylor polynomial of order ${sp.latex(n)}$ of the "
+              f"function $f(x)={sp.latex(f)}$ "
+              f"centred at ${sp.latex(a)}$ is"))
+display(Latex("$$T_{}(x) = {}.$$".format(n, sp.latex(T_n))))
+display(Latex(f"The value $f({sp.latex(x_eval)})$ can be approximated as"))
+display(Latex(f"$$T_{sp.latex(n)}({sp.latex(x_eval)})={sp.latex(T_n_eval)}"
+             f"\\approx{sp.latex(T_n_eval.evalf(digits))}$$"))
+display(Latex(f"The maximum $M$ of the absolute value "
+              f"of the ${sp.latex(n+1)}$-th derivative of $f$ "
+              f"on the interval $[{sp.latex(sp.Min(a,x_eval))}"
+              f",{sp.latex(sp.Max(a,x_eval))}]$ is"))
+display(Latex(f"$$M={sp.latex(round(M,digits))}.$$"))
+display(Latex(f"Taylor's inequality thus gives"))
+display(Latex(f"$$|f({sp.latex(x_eval)})-T_{{{sp.latex(n)}}}"
+              f"({sp.latex(x_eval)})|\leq "
+              f"{sp.latex(round(UB,digits))}.$$"))
+display(Latex(f"The exact value of $f({sp.latex(x_eval)})$ therefore "
+              f"satisfies"))
+display(Latex(f"$${sp.latex(MIN.evalf(digits))}\leq f({sp.latex(x_eval)}) "
+              f"\leq {sp.latex(MAX.evalf(digits))}.$$"))
+:::
+
+::::{prf:example-end}
+::::
 
 ## Grasple exercises
 
