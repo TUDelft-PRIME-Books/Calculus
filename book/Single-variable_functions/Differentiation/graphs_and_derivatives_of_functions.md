@@ -4,13 +4,13 @@
 
 ## Introduction
 
-Now that we know the derivatives of most standard functions, we have not really touched upon what should be the most important question: what can we actually do with derivatives? We have seen that we can use them to find tangent lines, but that is about it. For higher order derivatives we have not even seen *any* uses (yet). However, there is much more that derivatives can tell us. In fact, most qualitative behaviour of a function is captured in its derivatives. For instance, we will see that we can use the first derivative to determine whether a function is increasing or decreasing at a point.
+Now that we know the derivatives of most standard functions, we have not really touched upon what should be the most important question: what can we actually do with derivatives? We have seen that we can use them to find tangent lines, but that is about it. For higher order derivatives we have not even seen *any* uses (yet). However, there is much more that derivatives can tell us. In fact, most qualitative behaviour of a function is captured in its derivatives. For instance, we will see that we can use the first derivative to determine whether a function is increasing or decreasing on an interval.
 
 In this section, we will specifically see what the first and second derivatives say about the graph of a function. The ideas presented here can be generalized to give interpretations of higher order derivatives, but these are typically less useful in practice. In order to prove most of these results, we will need a very important theorem, called the **mean value theorem**, so let us start there.
 
 ## Mean value theorem
 
-Suppose you are running a marathon and you let $f(t)$ describe the distance you travelled at time $t$. Then $f'(t)$ represents your velocity at time $t$. Say it takes you four and a half hours to finish the marathon. Then you average running speed is around $2.6$ meters per second. Likely, you are not running equally fast at each point of time, so for most values of $t$, $f'(t)$ will be unequal to $2.6$. The idea of the mean value theorem is that there must be at least one point in time (but possibly more) where your velocity is exactly equal to the average velocity. Intuitively this makes sense. If you were to run slower than $2.6$ meters per second at all points in time, or faster than $2.6$ meters per second at all points in time, your average velocity can never be $2.6$. So there must be points in time where you run slower than your average speed and points in time where you run faster than your average speed. Since your speed does not make sudden jumps (that is, your speed is continuous), it has to attain this average speed at some point in time.
+Suppose you are running a marathon and let $f(t)$ describe the distance you travelled at time $t$. Then $f'(t)$ represents your velocity at time $t$. Say it takes you four and a half hours to finish the marathon. Then your average running speed is around $2.6$ meters per second. Likely, you are not running equally fast at each point in time, so for most values of $t$, $f'(t)$ will be unequal to $2.6$. The idea of the mean value theorem is that there must be at least one point in time (but possibly more) where your velocity is exactly equal to the average velocity. Intuitively this makes sense. If you were to run slower than $2.6$ meters per second all the time, or faster than $2.6$ meters per second all the time, your average velocity would be below or higher than $2.6$ meters per second respecitvely. So there must be points in time where you run slower than your average speed and points in time where you run faster than your average speed. Since your speed does not make sudden jumps (that is, your speed is continuous), it has to attain this average speed at some point in time.
 
 With this idea in mind, let us formulate and prove the mean value theorem, which is also known as **Lagrange's mean value theorem**, named after the Italian mathematician and physicist [Joseph-Louis Lagrange (1736-1813)](https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange). However, we will start with a special case of the mean value theorem, called **Rolle's theorem**, named after the French mathematician [Michel Rolle (1652-1719)](https://en.wikipedia.org/wiki/Michel_Rolle). This special case deals with functions $f$ defined on a closed interval $[a,b]$ with $f(a)=f(b)$.
 
@@ -20,7 +20,7 @@ Let $f$ be a function that is continuous on a closed interval $[a,b]$ and differ
 
 ::::::
 
-Unfortunately, we cannot prove Rolle's theorem yet, since the proof uses some other results that we have not obtained yet. We will give the proof in {numref}`Subsec:Extrema1dEVT`. An illustration of the theorem is shown in {numref}`Fig:Graphsderivatives:Rolle`. Note that {prf:ref}`Thm:Graphsderivatives:Rolle` also includes the case that there can be multiple points where the derivative is equal to $0$, for instance, for the function on the left in {numref}`Fig:Graphsderivatives:Rolle` any point will do, and for the right function there are two points where the derivative is equal to $0$.
+Unfortunately, we cannot prove Rolle's theorem yet, since the proof uses some other results that we have not obtained yet. We will give the proof in {numref}`Subsec:Extrema1dEVT`. An illustration of the theorem is shown in {numref}`Fig:Graphsderivatives:Rolle`. Note that {prf:ref}`Thm:Graphsderivatives:Rolle` also includes the case that there are multiple points where the derivative is equal to $0$, for instance, for the function on the left in {numref}`Fig:Graphsderivatives:Rolle` any point will do, and for the right function there are two points where the derivative is equal to $0$.
 
 :::{figure} Images/Fig-Graph1d-Rolle.png
 ---
@@ -36,7 +36,7 @@ Replace {numref}`Fig:Graphsderivatives:Rolle` with an applet.
 :::
 
 :::{note}
-Rolle's theorem even applies when the derivative is not continuous (so when $f$ is differentiable, but not continuously differentiable.) So even if the derivative is allowed to make jumps, it can never avoid being $0$ at at least one point.
+Rolle's theorem even applies when the derivative is not continuous (so when $f$ is differentiable, but not continuously differentiable.) Even then, the derivative can never avoid being $0$ at at least one point.
 :::
 
 The mean value theorem is in essence an extension of Rolle's theorem, and formalises what we discussed in the introduction of this section.
@@ -88,14 +88,14 @@ width: 100%
 name: Fig:Graphsderivatives:MVT
 class: dark-light
 ---
-An illustration of the mean value theorem. Note that in this case there are multiple points where the derivative is equal to $\dfrac{f(b)-f(a)}{b-a}$.
+An illustration of the mean value theorem. Note that in this case there are multiple points where the derivative is equal to $\dfrac{f(b)-f(a)}{b-a}$. The red line is the graph of the function $L(x)$ from the proof of {prf:ref}`Thm:Graphsderivatives:MVT`.
 :::
 
 :::{todo}
 Replace {numref}`Fig:Graphsderivatives:MVT` with an applet.
 :::
 
-There is a more general version of the mean value theorem, called Cauchy's mean value theorem. This result is named after the French mathematician and engineer [Augustin-Louis Cauchy](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy). This general version is usually a bit overkill when it comes to proving what the derivative says about a functions. Still, we will need this general version when proving l'Hospital's rule in {numref}`Section:lHospital`.
+There is a more general version of the mean value theorem, called Cauchy's mean value theorem. This result is named after the French mathematician and engineer [Augustin-Louis Cauchy](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy). This general version is usually a bit overkill when it comes to proving what the derivative says about a function. Still, we will need this general version when proving l'Hospital's rule in {numref}`Section:lHospital`.
 
 ::::::{prf:theorem} The Cauchy mean value theorem
 :label: Thm:Graphsderivatives:MVTCauchy
@@ -105,17 +105,7 @@ $$
  (f(b)-f(a))g'(c)=(g(b)-g(a))f'(c).
 $$
 
-If $g(a)\neq g(b)$ and $g'(c)$, this can be rewritten in the form
 
-$$
- \frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)},
-$$
-
-and if $f(a)\neq f(b)$ and $f'(c)\neq 0$, this can be rewritten in the form
-
-$$
- \frac{g'(c)}{f'(c)}=\frac{g(b)-g(a)}{f(b)-f(a)}.
- $$
 
 ::::::
 
@@ -155,6 +145,39 @@ which gives $(f(b)-f(a))g'(c)=(g(b)-g(a))f'(c)$, as desired.
 We obtain {prf:ref}`Thm:Graphsderivatives:MVT` back from {prf:ref}`Thm:Graphsderivatives:MVTCauchy` when choosing the function $g$ to be given by $g(x)=x$.
 :::
 
+:::{note}
+Consider the setting of {prf:ref}`Thm:Graphsderivatives:MVTCauchy`. If $g(a)\neq g(b)$ and $g'(c)\neq 0$, the identity
+
+$$
+ (f(b)-f(a))g'(c)=(g(b)-g(a))f'(c).
+$$
+
+can be rewritten in the form
+
+$$
+ \frac{f'(c)}{g'(c)}=\frac{f(b)-f(a)}{g(b)-g(a)},
+$$
+
+and if $f(a)\neq f(b)$ and $f'(c)\neq 0$, it can be rewritten in the form
+
+$$
+ \frac{g'(c)}{f'(c)}=\frac{g(b)-g(a)}{f(b)-f(a)}.
+ $$
+:::
+
+:::{figure} Images/Fig-Graph1d-CauchyMVT.png
+---
+width: 100%
+name: Fig:Graphsderivatives:CauchyMVT
+class: dark-light
+---
+An illustration of {prf:ref}`Thm:Graphsderivatives:MVTCauchy`. We see the curve with parametrisation $(g(x),f(x))$ for $a\leq x\leq b$. The slope of the vector from the start to the end point is $\frac{g(b)-g(a)}{f(b)-f(a)}$. The vector $\begin{pmatrix} g'(c)\\ f'(c)\end{pmatrix}$ is tangent to the curve at the point $c$ (it is the tangent vector, see ???). The slope of this vector is $\frac{g'(c)}{f'(c)}$.
+:::
+
+:::{todo}
+Replace {numref}`Fig:Graphsderivatives:MVT` with an applet.
+:::
+
 
 Let us see how the mean value theorem can be used in practice.
 
@@ -162,7 +185,7 @@ Let us see how the mean value theorem can be used in practice.
 :label: EX:Graphsderivatives:MVT1
 Consider the function $f(x)=x^3+3x^2+6x+3$ and suppose we want to find all (real) solutions of the equation $f(x)=0$ in between $-1$ and $0$. We notice that $f(-1)=-1<0$, while $f(0)=3>0$, so by {prf:ref}`Cor:Continuity:IVT`, there is at least one $a$ in between $-1$ and $0$ with $f(a)=0$. We will use the mean value theorem (or more specifically, Rolle's theorem) to show that this is the only solution. 
 
-Indeed, suppose that there would be another solution, say a number $b$ in between $-1$ and $0$ with $f(b)=0$. Without loss of generality, we can assume that $a<b$. Then $f$ is continuous on the interval $[a,b]$ and differentiable on $(a,b)$ (since it is a polynomial). In addition, we have $f(a)=f(b)=0$. Then by {prf:ref}`Thm:Graphsderivatives:Rolle`, we can find some $c$ in the interval $(a,b)$ with $f'(c)=0$. However, we can evaluate the derivative of $f$ as
+Indeed, suppose that there would be another solution, say a number $b$ in between $-1$ and $0$ with $f(b)=0$. Without loss of generality, we can assume that $a<b$. Then $f$ is continuous on the interval $[a,b]$ and differentiable on $(2,6)$ (since it is a polynomial). In addition, we have $f(a)=f(b)=0$. Then by {prf:ref}`Thm:Graphsderivatives:Rolle`, we can find some $c$ in the interval $(a,b)$ with $f'(c)=0$. However, we can evaluate the derivative of $f$ as
 
 $$
  f'(x)=3x^2+6x+6.
@@ -303,7 +326,7 @@ $$
 
 ::::::{prf:example}
 :label: EX:Graphsderivatives:MVT2
-Let us try to simplify the expression $\arctan(x)+\arctan\left(\frac{1}{x}\right)$ for $x\neq 0$. We have not found the derivative of the arctangent yet, but as a sneak peak, we will use that $\dfrac{d}{dx}\left[\arctan(x)\right]=\dfrac{1}{1+x^2}$ (this identity will be established in {prf:ref}`Thm:Diffinverse:Standard4`). Using the chain rule, we find that
+Let us try to simplify the expression $\arctan(x)+\arctan\left(\frac{1}{x}\right)$ for $x\neq 0$. We have not found the derivative of the arctangent yet, but as a sneak peek, we will use that $\dfrac{d}{dx}\left[\arctan(x)\right]=\dfrac{1}{1+x^2}$ (this identity will be established in {prf:ref}`Thm:Diffinverse:Standard4`). Using the chain rule, we find that
 
 $$
  \dfrac{d}{dx}\left[\arctan(x)+\arctan\left(\frac{1}{x}\right)\right]=\frac{1}{1+x^2}+\frac{1}{1+\left(\frac{1}{x}\right)^2}\frac{-1}{x^2}=\frac{1}{1+x^2}-\frac{1}{x^2+1}=0.

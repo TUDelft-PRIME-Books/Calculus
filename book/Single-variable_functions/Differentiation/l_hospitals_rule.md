@@ -50,9 +50,11 @@ $$
  \lim_{x\rightarrow 1}\frac{\ln(x)}{1-\sqrt{x}}=\lim_{x\rightarrow 1}\frac{L_g(x)}{L_h(x)}=\lim_{x\rightarrow 1}\frac{x-1}{-\frac{1}{2}(x-1)}=\lim_{x\rightarrow 1}\frac{1}{-\frac{1}{2}}=-2.
 $$
 
+[^Footnotespelling]: We use the spelling of l'Hospital's name that he himself used. Since then, the spelling rules in French have changed. In modern French, the correct spelling would be l'Hôspital, which is sometimes used for both the marquis and the rule. 
+
 Note that in the final step, we obtained the limit $\displaystyle \lim_{x\rightarrow 1}\frac{1}{-\frac{1}{2}}$. By how the linearisation was constructed, this final limit is $\displaystyle \frac{g'(1)}{h'(1)}$. This suggest that in order to evaluate the limit $\displaystyle \lim_{x\rightarrow 1}\frac{g(x)}{h(x)}$, we can, instead, evaluate $\displaystyle \lim_{x\rightarrow 1}\frac{g'(x)}{h'(x)}$. This result is known as **l'Hospital's rule** and is a very important technique for evaluating limits.
 
-L'Hospital's rule is named after the French mathematician [Guillaume François Antoine, Marquis de l'Hospital (1661-1704)](https://en.wikipedia.org/wiki/Guillaume_de_l%27H%C3%B4pital), who first published the result. However, he did not come up with it himself. That honour goes to the Swiss mathematician [Johan Bernoulli (1667-1748)](https://en.wikipedia.org/wiki/Johann_Bernoulli).
+L'Hospital's rule is named after the French mathematician [Guillaume François Antoine, Marquis de l'Hospital (1661-1704)](https://en.wikipedia.org/wiki/Guillaume_de_l%27H%C3%B4pital)[^Footnotespelling], who first published the result. However, he did not come up with it himself. That honour goes to the Swiss mathematician [Johan Bernoulli (1667-1748)](https://en.wikipedia.org/wiki/Johann_Bernoulli).
 
 :::{figure} Images/Fig-lHospital-Motivation.png
 :name: Fig:lHospital:Motivation

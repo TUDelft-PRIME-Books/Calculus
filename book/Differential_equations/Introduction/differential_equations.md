@@ -29,25 +29,103 @@ In this section we cover:
 
 ## Introduction
 
-In science differential equations often arise in modelling. We consider two examples: population growth and a mass-spring system.
+For most equations we have encountered so far, the solution is a set of numbers. In this chapter, we will study an important class of equations, called **differential equations**, of which the solution is a **function**. Loosely speaking, differential equations are equations that feature an unknown function and one or more of its derivatives. For instance, consider the equation
+
+$$
+ y'(x)=\cos(x).
+$$
+
+This equations should be read as follows: we are looking for a function $y(x)$ of which the derivative is equal to $\cos(x)$. Fortunately, we already know the answer to this equation, as we have
+
+$$
+ y(x)=\int \cos(x)\,dx=\sin(x)+C
+$$
+
+for some constant $C$. So far so good, but what should we do with the following equation?
+
+$$
+ y'(x)=2y(x).
+$$
+
+Let us first try to understand what this equation says. It tells us that we are looking for a function $y(x)$ of which the derivative is $2$ times the original function $y(x)$. What could this function be? If this question is asked in class, the first answer that usually comes up is $y(x)=x^2$. Let us check if this answer is correct. For this function, the derivative is given by
+
+$$
+ y'(x)=2x,
+$$
+
+while $2$ times the function is given by
+
+$$
+ 2y(x)=2x^2.
+$$
+
+These two expression are **not** the same, so $y(x)=x^2$ is not a solution of this differential equation. So which function is a solution, if any? For this, we are looking for a function of which the derivative is a multiple of the original function. Fortunately, we know that exponential functions have this property. This suggests that we should consider $y(x)=e^{2x}$. For this function, the derivative is given by
+
+$$
+ y'(x)=2e^{2x},
+$$
+
+and $2$ times the function is given by
+
+$$
+ 2y(x)=2e^{2x}.
+$$
+
+This is the same expression, so $y(x)=e^{2x}$ is a solution. Is it the only solution? You might be tempted to think that we should add a constant, similarly to adding a constant of integration, so that $y(x)=e^{2x}+C$ would be a solution for any $C$. To see if this idea is correct, we see that the derivative is given by
+
+$$
+ y'(x)=2e^{2x}+0=2e^{2x},
+$$
+
+and $2$ times the function is given by
+
+$$
+ 2y(x)=2e^{2x}+2C.
+$$
+
+This is not the same expression, so adding a constant does not work. It turns out that, instead, we should have multiplied the exponential with a constant, so $y(x)=Ce^{2x}$ for some constant $C$. Then the derivative is given by
+
+$$
+ y'(x)=2Ce^{2x},
+$$
+
+and $2$ times the function is given by
+
+$$
+ 2y(x)=2Ce^{2x}.
+$$
+
+This is the same expression, so $y(x)=Ce^{2x}$ is also a solution. Later, we will see that any solution is of this form.
+
+You might think that equations like $y'(x)=2y(x)$ are a bit artificial and are made up by mathematicians who take pleasure in making your life miserable by introducing needlessly complicated equations. Nothing could be further from the truth. In science and engineering, differential equations very often arise in modelling. There are many problems where we try to model a quantity and that the laws of physics tell us that its rate of change (so its derivative) is proportional to its current size. In the remainder of this introduction, we consider two examples: population growth and a mass-spring system.
 
 **Population growth**
 
-One model for the growth of a population is based on the assumption that the population grows at a rate proportional to the size of the population.
+One model for the growth of a population is based on the assumption that the population grows at a rate proportional to the size of the population. This is a reasonable assumption for a population of bacteria or animals under ideal conditions (unlimited environment, adequate nutrition, absence of predators, immunity of disease). If $P(t)$ denotes the number of individuals in a population at time $t$, we can denote this idea more mathematically by writing
 
-That is a reasonable assumption for a population of bacteria or animals under ideal conditions (unlimited environment, adequate nutrition, absence of predators, immunity of disease).
+$$
+ \dfrac{dP}{dt}=kP(t),
+$$
 
-If $P(t)$ denotes the number of individuals in a population at time $t$, then: $\dfrac{dP}{dt}=kP$, where $k$ denotes the growth rate. This is called *exponential growth*, since the general solution is $P(t)=Ce^{kt}$ with $C\in\mathbb{R}$.
+where $k$ denotes the growth rate. This equation is a differential equation, as it features an unknown function $P(t)$ and its derivative $\dfrac{dP}{dt}$. This particular equation is known as *exponential growth*, since the general solution is $P(t)=Ce^{kt}$ for some constant $C$.
 
-A more realistic model is $\displaystyle\frac{dP}{dt}=kP\left(1-\frac{P}{M}\right)$. This is called a *logistic equation*.
+A more realistic model is 
 
-This differential equation was proposed by the Belgian mathematician [Pierre François Verhulst (1804-1849)](https://en.wikipedia.org/wiki/Pierre_Fran%C3%A7ois_Verhulst) in 1838 as a model for world population growth.
+$$
+ \frac{dP}{dt}=kP\left(1-\frac{P}{M}\right).
+$$
+
+This is called a *logistic equation*. This differential equation was proposed by the Belgian mathematician [Pierre François Verhulst (1804-1849)](https://en.wikipedia.org/wiki/Pierre_Fran%C3%A7ois_Verhulst) in 1838 as a model for world population growth.
 
 This more realistic model reflects the fact that a given environment has limited resources. Many populations start by increasing in an exponential manner, but the population levels off when it approaches its *carrying capacity* $M$ (or decreases toward $M$ if it ever exceeds $M$).
 
+:::{todo}
+Include an applet with the solution to the logistic equation.
+:::
+
 **A mass-spring system**
 
-Consider a mass $m$ attached to a spring as in the picture below. Let $x$ denote the distance from the mass to the equilibrium position. This value is positive when the spring is stretched and negative when the spring is compressed. If we, for instance, pull the mass and stretch the spring over a small distance and release it, the mass will move such that the position $x$ will change from positive to negative and the other way around. So, the distance $x=x(t)$ is in fact a function of the time $t$.
+Consider a mass $m$ attached to a spring as in {numref}`mass-spring`. Let $x$ denote the distance from the mass to the equilibrium position. This value is positive when the spring is stretched and negative when the spring is compressed. If we, for instance, pull the mass and stretch the spring over a small distance and release it, the mass will move such that the position $x$ will change from positive to negative and the other way around. So, the distance $x=x(t)$ is in fact a function of the time $t$.
 
 ```{figure} Images/mass-spring1.png
 ---
