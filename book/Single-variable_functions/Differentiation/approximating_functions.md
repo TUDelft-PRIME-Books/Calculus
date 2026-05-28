@@ -452,7 +452,7 @@ and so on.
 
 Construct the Taylor polynomial of order $2$, $T_2$, of the function $f(x)=1+2x+3x^2+4x^3+5x^4$ centred at $x=1$.
 ---
-[ ] $T_2(x)=(1+2x+3x^2+4x^3+5x^4)+(2 + 6 x + 12 x^2 + 20 x^3)(x-1)+(6 + 24 x + 60 x^2)(x-1)^2$
+[ ] $\begin{array}{rcl}T_2(x)&=&(1+2x+3x^2+4x^3+5x^4)+(2 + 6 x + 12 x^2 + 20 x^3)(x-1)\\&&\quad+(6 + 24 x + 60 x^2)(x-1)^2\end{array}$
 > Remember that you have to substitute the values of $f(1)$, $f'(1)$ and $f''(1)$ in the formula for $T_2$, not just the values of $f(x)$, $f'(x)$ and $f''(x)$.
 [x] $T_2(x)=15+40(x-1)+90(x-1)^2$
 > Well done!
@@ -566,7 +566,7 @@ Now we know this, we can also estimate the _maximum_ position after $10$ seconds
 x(10) &\leq x(0) + \int_{0}^{10}v(t)\,dt \\
 &= 5 + \int_0^{10}\left(10+0.1t\right)\,dt \\
 &= 5 + \left[10t+0.05 t^2\right]_{t=0}^{10} \\&
-= 5 + \left(605 - 500\right) = 110.
+= 5 + \left(605 - 500\right) \\&= 110.
 \end{align*}
 
 In conclusion, we found that the position of the scooter after $10$ seconds satisfies
