@@ -718,7 +718,7 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/2286a124-b092-4a23-b292-79c0a03c70b4?id=63715
-:label: Grasple:ApproximatingFunctions:LinArctan
+:label: Grasple:63715
 :dropdown:
 :description: Linearisation of the arctangent.
 
@@ -727,7 +727,7 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/21d38731-0b57-4fc5-af15-936ef3a414fc?id=63728
-:label: Grasple:ApproximatingFunctions:LinPower
+:label: Grasple:63728
 :dropdown:
 :description: Linearisation of a power of $x$.
 
@@ -736,7 +736,7 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/b36e91ec-7f75-4bd8-9669-e40968b9f15c?id=78767
-:label: Grasple:ApproximatingFunctions:LinApprox
+:label: Grasple:78767
 :dropdown:
 :description: Approximate a function value using a linearisation.
 
@@ -745,7 +745,7 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/7d9a7257-7c30-4be4-8277-6b57eb17e2c0?id=127213
-:label: Grasple:ApproximatingFunctions:LinChange
+:label: Grasple:127213
 :dropdown:
 :description: Approximate change in function value using a linearisation.
 
@@ -754,7 +754,7 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/8cd84d06-42ea-4ff2-8a3f-86fe5ac45bd9?id=75827
-:label: Grasple:ApproximatingFunctions:LinRelative
+:label: Grasple:75827
 :dropdown:
 :description: Relative errors.
 
@@ -765,7 +765,7 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/282946e0-2d88-41b6-970c-55c26d28d714?id=64606
-:label: Grasple:ApproximatingFunctions:T2Sine
+:label: Grasple:64606
 :dropdown:
 :description: Finding $T_2$ for a sine function.
 
@@ -773,8 +773,8 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/0d05a9a9-8d42-4ee3-ac40-706b7ac4844f?id=64953
-:label: Grasple:ApproximatingFunctions:T2PolyExp
+:url: https://embed.grasple.com/exercises/fe0d364e-9888-4a9d-9e65-08d0e5675c34?id=132982
+:label: Grasple:132982
 :dropdown:
 :description: Finding $T_2$ for a polynomial times an exponential function.
 
@@ -783,7 +783,7 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/523a3822-e8b6-4c85-923f-d8c73dcffee1?id=64629
-:label: Grasple:ApproximatingFunctions:T3Reciprocal
+:label: Grasple:64629
 :dropdown:
 :description: Finding $T_3$ of a reciprocal function.
 
@@ -792,7 +792,7 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/4bec421b-5b79-4159-85c8-e6cfdc203606?id=105586
-:label: Grasple:ApproximatingFunctions:T1Error
+:label: Grasple:105586
 :dropdown:
 :description: Using Taylor's inequality for $T_1$.
 
@@ -801,7 +801,7 @@ In {numref}`Tab:ApproximatingFunctions:SinBounds` it can be seen that the upper 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/4d3f51de-2210-4f7d-985a-edddfb121b4f?id=104206
-:label: Grasple:ApproximatingFunctions:T3Error
+:label: Grasple:104206
 :dropdown:
 :description: Using Taylor's inequality for $T_3$.
 
