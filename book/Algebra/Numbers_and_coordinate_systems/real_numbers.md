@@ -5,12 +5,85 @@
 In this section we cover
 
 - Start from natural numbers (includes $0$), integers, rational numbers, and and with real numbers
+- Arithmetic operations (addition, subtraction, multiplication and division)
 - Intervals
 - Set notation (union, intersection, difference)
 - Equations (including quadratic). Includes: completing the square
 - Absolute values
 - Inequalities (including quadratics and absolute values)
 - Linear systems of two variables (solving by "row" reduction, not by back substitution)
+
+## Long division
+
+In other math courses you may have encountered long division, which is a method for dividing two numbers. For instance, if we want to compute $\frac{96789}{231}$, we can do this by long division.
+
+Historically, long division is written differently within different parts of the worlds, sometimes it even differs in neighbouring countries. Below we have performed the long division of $96789$ by $231$ in the way it is done in some parts of the world. You can switch the tabs to see the different notations. 
+
+::::{tab-set}
+
+:::{tab-item} English (parenthesis)
+$$
+\class{longdivision}{
+\begin{array}{rr}
+& 419 \\
+231  & \overline{\big)96789} \\
+& \underline{924}\phantom{00} \\
+& 438\phantom{0} \\
+& \underline{231}\phantom{0} \\
+& 2079 \\
+& \underline{2079} \\
+& 0 \\
+\end{array}
+}
+$$
+:::
+
+:::{tab-item} English (bar)
+$$
+\class{longdivision}{
+\begin{array}{rr}
+& 419 \\
+231  & \overline{\big|96789} \\
+& \underline{924}\phantom{00} \\
+& 438\phantom{0} \\
+& \underline{231}\phantom{0} \\
+& 2079 \\
+& \underline{2079} \\
+& 0 \\
+\end{array}
+}
+$$
+:::
+
+:::{tab-item} Dutch
+$$
+\class{longdivision}{
+\begin{array}{rclcl}
+231 & \Big/ & 96789 & \Big\\ & 419 \\
+& & \underline{924}\phantom{00} \\
+& & \phantom{0}438\phantom{0} \\
+& & \phantom{0}\underline{231}\phantom{0} \\
+& & \phantom{0}2079 \\
+& & \phantom{0}\underline{2079} \\
+& & \phantom{0000}0 \\
+\end{array}
+}
+$$
+:::
+
+:::{tab-item} Latin American
+$$
+\class{longdivision}{
+\begin{array}{rclcl}
+96789 & \div & 231 & = & 419 \\
+\end{array}
+}
+$$
+:::
+
+::::
+
+## Inequalities and absolute values
 
 ::::{prf:theorem} Triangle inequality for real numbers
 :label: thm:triangle_inequality_real_numbers
@@ -24,7 +97,6 @@ $$
 ::::::
 
 (Subsec:RealnumbersExp)=
-
 ## Exponentiation
 
 We know how to add, subtract, multipy and divide real numbers, but we can perform one more important arithmical operation: exponentiation. You have most likely seen before that by $2^{10}$ we mean
