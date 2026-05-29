@@ -8,6 +8,9 @@ Now that we know the derivatives of most standard functions, we have not really 
 
 In this section, we will specifically see what the first and second derivatives say about the graph of a function. The ideas presented here can be generalized to give interpretations of higher order derivatives, but these are typically less useful in practice. In order to prove most of these results, we will need a very important theorem, called the **mean value theorem**, so let us start there.
 
+
+(Subsec:MVT)=
+
 ## Mean value theorem
 
 Suppose you are running a marathon and let $f(t)$ describe the distance you travelled at time $t$. Then $f'(t)$ represents your velocity at time $t$. Say it takes you four and a half hours to finish the marathon. Then your average running speed is around $2.6$ meters per second. Likely, you are not running equally fast at each point in time, so for most values of $t$, $f'(t)$ will be unequal to $2.6$. The idea of the mean value theorem is that there must be at least one point in time (but possibly more) where your velocity is exactly equal to the average velocity. Intuitively this makes sense. If you were to run slower than $2.6$ meters per second all the time, or faster than $2.6$ meters per second all the time, your average velocity would be below or higher than $2.6$ meters per second respecitvely. So there must be points in time where you run slower than your average speed and points in time where you run faster than your average speed. Since your speed does not make sudden jumps (that is, your speed is continuous), it has to attain this average speed at some point in time.
@@ -51,11 +54,23 @@ $$
 
 ::::::
 
-[^checkpoints]: Note that $L(a)=f(a)+\dfrac{f(b)-f(a)}{b-a}(a-a)=f(a)$ and $L(b)=f(a)+\dfrac{f(b)-f(a)}{b-a}(b-a)=f(b)$, so the function $L$ indeed goes through the points $(a,f(a))$ and $(b,f(b))$.
+
 
 :::{admonition} Proof of {prf:ref}`Thm:Graphsderivatives:MVT`
 :class: tudproof, dropdown
-We want to apply Rolle's theorem, so we need to construct some function $g$, related to $f$, that has $g(a)=g(b)$. As such, we subtract from $f$ the linear function that goes through the points $(a,f(a))$ and $(b,f(b))$. This linear function is given by $L(x)=f(a)+\dfrac{f(b)-f(a)}{b-a}(x-a)$. Note that this function goes through the specified points[^checkpoints].
+We want to apply Rolle's theorem, so we need to construct some function $g$, related to $f$, that has $g(a)=g(b)$. In addition, it needs to be possible to lift the information on $g'$ back to to $f'$, so it is convenient if they differ by a constant. As such, we subtract from $f$ the linear function that goes through the points $(a,f(a))$ and $(b,f(b))$. This linear function is given by $L(x)=f(a)+\dfrac{f(b)-f(a)}{b-a}(x-a)$. Note that 
+
+$$
+ L(a)=f(a)+\dfrac{f(b)-f(a)}{b-a}(a-a)=f(a)
+$$
+
+and
+
+$$
+ L(b)=f(a)+\dfrac{f(b)-f(a)}{b-a}(b-a)=f(b),
+$$
+
+so the function $L$ indeed goes through the points $(a,f(a))$ and $(b,f(b))$.
 
 Now consider the function
 
@@ -63,7 +78,7 @@ $$
  g(x)=f(x)-L(x)=f(x)-f(a)-\dfrac{f(b)-f(a)}{b-a}(x-a).
 $$
 
-This function satisfies $g(a)=f(a)-L(a)=f(a)-f(a)=0$ and $g(b)=f(b)-L(b)=f(b)-f(b)=0$.
+This function satisfies $g(a)=f(a)-L(a)=0$ and $g(b)=f(b)-L(b)=0$.
 
 This function is the difference between two functions that are continuous on $[a,b]$ and differentiable on $(a,b)$, so the new function $g$ has these properties as well. As such, we can use Rolle's theorem to obtain $c$ in $(a,b)$ with $g'(c)=0$ and $g(a)=g(b)=0$. We can evaluate the derivative of $g$ as
 
@@ -95,6 +110,14 @@ An illustration of the mean value theorem. Note that in this case there are mult
 Replace {numref}`Fig:Graphsderivatives:MVT` with an applet.
 :::
 
+Let us return to the example from the start of {numref}`Subsec:MVT`. The function $f(t)$ satisfies $f(0)=0$ and $f(16200)=42195$ (since it takes you four and a half hours, which is $16200$ seconds, to finish the $42195$ meter marathon). Assuming that $f$ is differentiable, {prf:ref}`Thm:Graphsderivatives:MVT` tells us that there is a point in time $c$ in $(0,16200)$ with where the speed $f'(c)$ is given by
+
+$$
+ f'(c)=\frac{f(16200)-f(0)}{16200-0}=\frac{42195}{16200}\approx 2.6.
+$$
+
+So at this point in time $c$, the speed equals the average speed of $2.6$ meters per second
+
 There is a more general version of the mean value theorem, called Cauchy's mean value theorem. This result is named after the French mathematician and engineer [Augustin-Louis Cauchy](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy). This general version is usually a bit overkill when it comes to proving what the derivative says about a function. Still, we will need this general version when proving l'Hospital's rule in {numref}`Section:lHospital`.
 
 ::::::{prf:theorem} The Cauchy mean value theorem
@@ -111,19 +134,24 @@ $$
 
 :::{admonition} Proof of {prf:ref}`Thm:Graphsderivatives:MVTCauchy`
 :class: tudproof, dropdown
-The idea of proving this theorem is similar to the proof of {prf:ref}`Thm:Graphsderivatives:MVT`. Here, we define the function
+The idea in this proof is similar to the one in the proof of {prf:ref}`Thm:Graphsderivatives:MVT`. Here, we define the function
 
 $$
  h(x)=(g(b)-g(a))f(x)-(f(b)-f(a))g(x).
 $$
 
-This function is a linear combination of two functions that are continuous on $[a,b]$ and differentiable on $(a,b)$, so the new function $h$ has these properties as well. In addition, we see that
+This function is a linear combination of two functions that are continuous on $[a,b]$ and differentiable on $(a,b)$, so the new function $h$ has these properties as well. In addition, we see that $h(a)=h(b)$, since
 
 \begin{align*}
  h(a) &= (g(b)-g(a))f(a)-(f(b)-f(a))g(a) \\
- &= g(b)f(a)-f(b)g(a) \\
- &= (g(b)-g(a))f(b)-(f(b)-f(a))g(b) \\
- &= h(b).
+ &= g(b)f(a)-f(b)g(a) 
+\end{align*}
+
+and
+
+\begin{align*}
+ h(b) &= (g(b)-g(a))f(b)-(f(b)-f(a))g(b) \\
+ &= g(b)f(a)-f(b)g(a) .
 \end{align*}
 
 As such, we can use Rolle's theorem to obtain $c$ in $(a,b)$ with $h'(c)=0$. We can evaluate the derivative of $h$ as
@@ -183,21 +211,21 @@ Let us see how the mean value theorem can be used in practice.
 
 ::::::{prf:example}
 :label: EX:Graphsderivatives:MVT1
-Consider the function $f(x)=x^3+3x^2+6x+3$ and suppose we want to find all (real) solutions of the equation $f(x)=0$ in between $-1$ and $0$. We notice that $f(-1)=-1<0$, while $f(0)=3>0$, so by {prf:ref}`Cor:Continuity:IVT`, there is at least one $a$ in between $-1$ and $0$ with $f(a)=0$. We will use the mean value theorem (or more specifically, Rolle's theorem) to show that this is the only solution. 
+Consider the function $f(x)=x^3+3x^2+6x+3$ and suppose we want to find all (real) solutions of the equation $f(x)=0$ between $-1$ and $0$. We notice that $f(-1)=-1<0$, while $f(0)=3>0$, so by {prf:ref}`Cor:Continuity:IVT`, there is at least one $a$ between $-1$ and $0$ with $f(a)=0$. We will use the mean value theorem (or more specifically, Rolle's theorem) to show that this is the only solution. 
 
-Indeed, suppose that there would be another solution, say a number $b$ in between $-1$ and $0$ with $f(b)=0$. Without loss of generality, we can assume that $a<b$. Then $f$ is continuous on the interval $[a,b]$ and differentiable on $(2,6)$ (since it is a polynomial). In addition, we have $f(a)=f(b)=0$. Then by {prf:ref}`Thm:Graphsderivatives:Rolle`, we can find some $c$ in the interval $(a,b)$ with $f'(c)=0$. However, we can evaluate the derivative of $f$ as
+Indeed, suppose that there is another solution, say a number $b$ between $-1$ and $0$ with $f(b)=0$. Without loss of generality, we can assume that $a<b$. Then $f$ is continuous on the interval $[a,b]$ and differentiable on $(2,6)$ (since it is a polynomial). In addition, we have $f(a)=f(b)=0$. Then by {prf:ref}`Thm:Graphsderivatives:Rolle`, we can find some $c$ in the interval $(a,b)$ with $f'(c)=0$. However, we can evaluate the derivative of $f$ as
 
 $$
  f'(x)=3x^2+6x+6.
 $$
 
-The equation $3x^2+6x+6=0$ does not have any real solutions. So our assumption that there would be another solution must be incorrect. Hence, there is only one solution between $-1$ and $0$. This is supported by the graph of the function, which is shown in {numref}`Fig:Graphsderivatives:MVT1`.
+The equation $3x^2+6x+6=0$ does not have any real solutions. So our assumption that there would be another solution must be incorrect. Hence, there is exactly one solution between $-1$ and $0$. This is supported by the graph of the function, which is shown in {numref}`Fig:Graphsderivatives:MVT1`.
 
 
 :::{figure} Images/Fig-Graphsderivatives-MVT1.png
 :name: Fig:Graphsderivatives:MVT1
 
-The graph of the function $f(x)=x^3+3x^2+6x+3$. Note that there is only one solution of the equation $f(x)=0$ in between $-1$ and $0$.
+The graph of the function $f(x)=x^3+3x^2+6x+3$. Note that there is only one solution of the equation $f(x)=0$ between $-1$ and $0$.
 :::
 
 :::{todo}
@@ -206,7 +234,7 @@ Replace {numref}`Fig:Graphsderivatives:MVT1` with an applet.
 
 ::::::
 
-One of the most important consequences of the mean value theorem are the following two results. These results form an essential part of finding antiderivatives, see {numref}`Sec:Integration:IndefiniteIntegrals`. Indeed, these results indicate that any two functions that have the same derivative must be different by a constant.
+Some of the most important consequences of the mean value theorem are the following two results. These results form an essential part of finding antiderivatives, see {numref}`Sec:Integration:IndefiniteIntegrals`. Indeed, these results indicate that any two functions that have the same derivative must differ by a constant.
 
 ::::::{prf:corollary} 
 :label: Cor:Graphsderivatives:Zeroderivative
@@ -215,7 +243,7 @@ Let $f$ be a differentiable function such that $f'(x)=0$ for all $x$ in some int
 
 :::{admonition} Proof of {prf:ref}`Cor:Graphsderivatives:Zeroderivative`
 :class: tudproof
-Suppose $f$ is not constant, but $f'(x)=0$ for all $x$ in $I$. Then we can find two points $p<q$ in the interval $I$ with $f(p)\neq f(q)$. Then $f$ is continuous on the interval $[p,q]$ and differentiable on the interval $(p,q)$, so by {prf:ref}`Thm:Graphsderivatives:MVT` we can find $c$ in $(p,q)$ with
+Suppose $f'(x)=0$ for all $x$ in $I$, but $f$ is not constant. Then we can find two points $p<q$ in the interval $I$ with $f(p)\neq f(q)$. Then $f$ is continuous on the interval $[p,q]$ and differentiable on the interval $(p,q)$, so by {prf:ref}`Thm:Graphsderivatives:MVT` we can find $c$ in $(p,q)$ with
 
 $$
  f'(c)=\frac{f(q)-f(p)}{q-p}.
@@ -236,6 +264,10 @@ Consider the function $h=f-g$. Then $h$ is differentiable and for $x\in I$ we ha
 
 The mean value theorem can also be used to translate any restriction on the possible values of the derivative into a limitation on the values of the function itself.
 
+
+
+::::::{prf:example}
+:label: EX:Graphsderivatives:MVT2
 Suppose, that for some function $f$ we know that
 
 $$
@@ -248,35 +280,15 @@ $$
 3\leq f'(x)\leq 7\quad\text{for}\quad2\leq x\leq 6.
 $$
 
- What are the smallest and largest possible values of $f(6)$?
+What are the smallest and largest possible values of $f(6)$?
 
-Let us start with the smallest possible value. Since the slope of the function is always at least $3$, intuitively it makes sense that we obtain the lowest value of $f(6)$ whenever $f'(x)=3$ for **all** $2\leq x\leq 6$.
+Let us first determine the smallest possible value. Since the slope of the function is always at least $3$, intuitively it makes sense that we obtain the lowest value of $f(6)$ whenever $f'(x)=3$ for **all** $2\leq x\leq 6$.
 
-So consider a function $\tilde{f}$ with $\tilde{f}(2)=f(2)=5$ and $\tilde{f}'(x)=3$ for all $2\leq x\leq 6$. Our intuition tells us that then $f(6)\geq\tilde{f}(6)$, since the slope of $f$ is always at least as large as the slope of $\tilde{f}$.
+So consider a function $\tilde{f}$ with $\tilde{f}(2)=f(2)=5$ and $\tilde{f}'(x)=3$ for all $2\leq x\leq 6$. Our intuition suggests that $f(6)\geq\tilde{f}(6)$, since the slope of $f$ is always at least as large as the slope of $\tilde{f}$.
 
 The function $\tilde{f}$ has the same derivative as $g(x)=3x$ on the interval $(2,6)$. So by {prf:ref}`Cor:Graphsderivatives:Samederivative` we find that $\tilde{f}(x)=g(x)+C$ for some constant $C$. Since $5=\tilde{f}(2)=g(2)+C=6+C$, we must have $C=-1$, so then $\tilde{f}(x)=3x-1$ on this interval. In that case we would have $\tilde{f}(6)=3\cdot 6-1=17$.
 
-So, intuitively at least, we have shown that $f(6)$ must be at least $\tilde{f}(6)=17$ and we know for certain that there is at least one possible formula for $f$ for which the value of $f(6)$ is precisely $17$ (and this is the function $\tilde{f}$). Hence, we have found the smallest possible value of $f(6)$, which is $17$.
-
-However, can we make this a bit more rigorous?
-
-Of course we can! The next example shows how to use the mean value theorem to establish that $f(6)\geq 17$ and $f(6)\leq 33$.
-
-::::::{prf:example}
-:label: EX:Graphsderivatives:MVT2
-Assume we have any function $f$ that satisfies the assumptions
-
-$$
-f(2) = 5
-$$
-
-and
-
-$$
-3\leq f'(x)\leq 7\quad\text{for}\quad2\leq x\leq 6.
-$$
-
-Then by {prf:ref}`Thm:Graphsderivatives:MVT`, there would be a $c$ in the interval $[2,6]$ with
+So, intuitively at least, we have shown that $f(6)$ must be at least $\tilde{f}(6)=17$ and we know for certain that there is at least one possible formula for $f$ for which the value of $f(6)$ is precisely $17$ (and this is the function $\tilde{f}$). Can we make this a bit more rigorous? Of course we can! By {prf:ref}`Thm:Graphsderivatives:MVT`, there is a point $c$ in the interval $(2,6)$ with
 
 $$
  f'(c)=\frac{f(6)-f(2)}{6-2}=\frac{f(6)-5}{4}.
@@ -288,7 +300,7 @@ $$
  f(6)=4f'(c)+5.
 $$
 
-Since $c$ is in the interval $(a,b)$ we know that $f'(c)\geq 3$, so we find that
+Since $c$ is in the interval $(2,6)$ we know that $f'(c)\geq 3$, so we find that
 
 $$
  f(6)=4f'(c)+5\geq 4\cdot 3+5=17.
@@ -304,7 +316,7 @@ $$
 
 This value of $f(6)=33$ is obtained when $f'(x)=7$ for all $x$ in the interval $(2,6)$, in which case we would have been dealing with the function $f(x)=7x-9$.
 
-{numref}`Fig:Graphsderivatives:MVT2` shows the graph of the function $3x-1$ , the graph of the function $7x-9$ and the graph of an example of a function that satisfies the assumptions on $f$. The graph of any function that satisfies the assumptions must lie in between these two graphs, so in particular, the value of $f(6)$ must be in between $17$ and $33$.
+{numref}`Fig:Graphsderivatives:MVT2` shows the graph of the function $3x-1$, the graph of the function $7x-9$ and the graph of an example of a function that satisfies the assumptions on $f$. The graph of any function that satisfies the assumptions must lie in between these two graphs, so in particular, the value of $f(6)$ must be in between $17$ and $33$.
 
 :::{figure} Images/Fig-Graphsderivatives-MVT2.png
 :name: Fig:Graphsderivatives:MVT2
@@ -322,29 +334,67 @@ $$
 
 ::::::
 
+::::::{prf:example}
+:label: EX:Graphsderivatives:MVTnmbre
+We can even use the mean value theorem to find estimates on (un)known constants. For instance, consider the function $f(x)=e^x$. We apply {prf:ref}`Thm:Graphsderivatives:MVT` on the interval $[0,1]$. This gives that there is $c$ in $(0,1)$ with
+
+$$
+ e^c=f'(c)=\frac{f(1)-f(0)}{1-0}=\frac{e-1}{1}=e-1.
+$$
+
+Now (assuming that we already know that $e>1$), {prf:ref}`Thm:RealNumbers:ExpCalcReal` tells us, since $0<c<1$, that
+
+$$
+ e^0=1<e^c<e^1=e.
+$$
+
+Since $e^c=e-1$, we then obtain that
+
+$$
+ 1<e-1<e,
+$$
+
+which gives
+
+$$
+ 2<e<e+1.
+$$
+
+In particular, we have proven that $e>2$. If we were to choose another interval on which we can apply the mean value theorem, we would obtain different estimates for the number $e$.
+::::::
+
+
 {prf:ref}`Cor:Graphsderivatives:Samederivative` can also be used to establish certain trigonometric identities.
 
 ::::::{prf:example}
-:label: EX:Graphsderivatives:MVT2
+:label: EX:Graphsderivatives:MVTarctan
 Let us try to simplify the expression $\arctan(x)+\arctan\left(\frac{1}{x}\right)$ for $x\neq 0$. We have not found the derivative of the arctangent yet, but as a sneak peek, we will use that $\dfrac{d}{dx}\left[\arctan(x)\right]=\dfrac{1}{1+x^2}$ (this identity will be established in {prf:ref}`Thm:Diffinverse:Standard4`). Using the chain rule, we find that
 
 $$
  \dfrac{d}{dx}\left[\arctan(x)+\arctan\left(\frac{1}{x}\right)\right]=\frac{1}{1+x^2}+\frac{1}{1+\left(\frac{1}{x}\right)^2}\frac{-1}{x^2}=\frac{1}{1+x^2}-\frac{1}{x^2+1}=0.
 $$
 
-By {prf:ref}`Cor:Graphsderivatives:Samederivative`, we obtain that the function $f(x)=\arctan(x)+\arctan\left(\frac{1}{x}\right)$ must be constant on any closed interval that does not contain $0$. Now in order to establish which constant this is, we use a point in which we can find the exact value of the function. For instance, if $x>0$ we let $[a,b]$ be any interval that contains $1$ and $x$ and does not contain $0$. Then $f$ is constant on this interval and we find
+By {prf:ref}`Cor:Graphsderivatives:Samederivative`, we obtain that the function $f(x)=\arctan(x)+\arctan\left(\frac{1}{x}\right)$ must be constant on any interval that does not contain $0$. Now in order to establish which constant this is, we use a point in which we can find the exact value of the function. For instance, if $x>0$ we let $[a,b]$ be any interval that contains $1$ and $x$ and does not contain $0$. Then $f$ is constant on this interval and we find
 
 $$
  f(x)=f(1)=\arctan(1)+\arctan\left(\frac{1}{1}\right)=\frac{\pi}{4}+\frac{\pi}{4}=\frac{\pi}{2}.
 $$
 
-Hence, we have $\arctan(x)+\arctan\left(\frac{1}{x}\right)=\frac{\pi}{2}$ for $x>0$. However, it is incorrect to conclude that this must be the case for $x<0$ as well. Indeed, for $x<0$ it is impossible to find an interval $[a,b]$ that contains $x$ and $1$, but does not contain $0$. And we absolutely need to avoid the point $0$, since the function $f$ is undefined there. Fortunately, we can use another point so that we can avoid $0$. Indeed, we can let $[a,b]$ be an interval that contains $-1$ and $x$ and does not contain $0$. Then $f$ is constant on this interval and we find
+Hence, we have $\arctan(x)+\arctan\left(\frac{1}{x}\right)=\frac{\pi}{2}$ for $x>0$. However, it is incorrect to conclude that this must be the case for $x<0$ as well. Indeed, for $x<0$ it is impossible to find an interval $[a,b]$ that contains $x$ and $1$, but does not contain $0$. We absolutely need to avoid the point $0$, since the function $f$ is undefined there. Fortunately, we can use another point so that we can avoid $0$. Indeed, we can let $[a,b]$ be an interval that contains $-1$ and $x$ and does not contain $0$. Then $f$ is constant on this interval and we find
 
 $$
  f(x)=f(-1)=\arctan(-1)+\arctan\left(\frac{1}{-1}\right)=-\frac{\pi}{4}-\frac{\pi}{4}=-\frac{\pi}{2}.
 $$
 
-We conclude that $\arctan(x)+\arctan\left(\frac{1}{x}\right)=\frac{\pi}{2}$ for $x>0$, while $\arctan(x)+\arctan\left(\frac{1}{x}\right)=-\frac{\pi}{2}$ for $x<0$. {numref}`Fig:Graphsderivatives:MVT2` shows the graph of this special function.
+We conclude that 
+
+$$
+ \arctan(x)+\arctan\left(\frac{1}{x}\right)=\left\{\begin{array}{l}-\dfrac{\pi}{2},\qquad&\mathrm{if}\ x<0,\\[0.2cm]
+ \dfrac{\pi}{2},\qquad&\mathrm{if}\ x>0.\end{array}\right.
+ 
+$$
+
+{numref}`Fig:Graphsderivatives:MVT3` shows the graph of this special function.
 
 :::{figure} Images/Fig-Graphsderivatives-MVT3.png
 :name: Fig:Graphsderivatives:MVT3
@@ -410,7 +460,13 @@ The other cases follow similarly.
 :::
 
 :::{warning}
-A function $f$ can be strictly increasing on an interval even if its derivative is $0$ somewhere. For instance, consider the function $f(x)=x^3$. Then $f'(x)=3x^2$, which is $0$ at $x=0$. Still, this function is strictly increasing on $\mathbb{R}$, since for any $a<b$ we have $a^3<b^3$.
+Notice that the two first statements in {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing` are equivalences ("precisely when" statements), whereas the latter two statements are implications ("if then" statements). Indeed, if $f$ is strictly increasing on an interval, we cannot conclude that $f'(x)>0$ on this interval.
+
+For instance, consider the function $f(x)=x^3$. Then $f'(x)=3x^2$, which is $0$ at $x=0$. Still, this function is strictly increasing on $\mathbb{R}$, since for any $a<b$ we have $a^3<b^3$.
+:::
+
+:::{todo}
+Make a poll(???) where student needs to figure out where to proof breaks down if we try to prove the other implication.
 :::
 
 ::::::{prf:example} 
@@ -435,7 +491,9 @@ Replace {numref}`Fig:Graphsderivatives:Increasingdecreasing1` with an applet.
 
 ::::::
 
-We postponed a small piece of the proof of {prf:ref}`Thm:PropertiesFunctions:HyperbolicProperties`, since it is very convenient to use derivatives to show whether a given function is increasing or decreasing. So let us finish the proof here.
+[^FootnoteSinh]: We did already prove that the hyperbolic sine was strictly increasing by other means, though we could also show it (quicker) using the derivative.
+
+We postponed a small piece of the proof of {prf:ref}`Thm:PropertiesFunctions:HyperbolicProperties`, since it is very convenient to use derivatives to show whether a given function is increasing or decreasing. So let us finish the proof here.[^FootnoteSinh]
 
 :::{admonition} Remainder of proof of {prf:ref}`Thm:PropertiesFunctions:HyperbolicProperties`
 :class: tudproof, dropdown
@@ -767,7 +825,7 @@ A function $f$ can be strictly convex on an interval even if its second derivati
 As a consequence, we can also check for convexity by checking whether the derivative is nondecreasing or nonincreasing. In fact, we already used this in the proof of {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv`.
 
 ::::::{prf:theorem} 
-:label: Thm:Graphsderivatives:Concaveseconddiv
+:label: Thm:Graphsderivatives:Concaveincrdecr
 Let $f$ be a twice differentiable function. 
 
 - $f$ is convex on an interval precisely when $f'$ is nondecreasing on that interval.
@@ -777,7 +835,7 @@ Let $f$ be a twice differentiable function.
 
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:Graphsderivatives:Concavitytangent`
+:::{admonition} Proof of {prf:ref}`Thm:Graphsderivatives:Concaveincrdecr`
 :class: tudproof, dropdown
 
 This follows directly from combining {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv` and {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`.

@@ -122,6 +122,10 @@ This establishes the chain rule in the general setting.
 
 :::
 
+:::{todo}
+Dennis had an idea for an applet which shows coupled graphs $f(u)$, $g(x)$ and $f(g(x))$.
+:::
+
 ::::{caution}
 :name: Caution:Chainrule:Commonerrors
 
