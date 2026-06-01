@@ -518,28 +518,28 @@ On the left the graphs of the functions $f(x)=\sin\left(\frac{\pi}{2}x\right)$ a
 Replace {numref}`Fig:Graphsderivatives:Intro` with an applet. Maybe nice if you can slide the point $(x,0)$ and see the corresponding points on the graphs of $f$ and $g$ and their derivatives.
 :::
 
-We can see this behaviour back in the derivatives of these functions. If we look at the graphs of the derivatives of these functions, we see that the function $f'$ is strictly decreasing, while the function $g'$ is strictly increasing. This matches the behaviour that we observed in the original function. Indeed, the fact that the function $f'$ is strictly decreasing, means that the slope of the original function get lower so that it grows slower. On the other hand, the function $g'$ is strictly increasing, so the slope of the function $g$ strictly increases as well, which means that the function grows quicker. So how can we establish that $f'$ strictly decreases and $g'$ strictly increases? The same way you would do that for any other function: you take a look whether the derivative is positive or negative. This means that in order to distinguish between the behaviour of the functions $f$ and $g$, we should take a look at the derivatives of their derivatives, so at their second derivatives. 
+We can see this behaviour back in the derivatives of these functions. If we look at the graphs of the derivatives of these functions, we see that the function $f'$ is strictly decreasing, while the function $g'$ is strictly increasing. This matches the behaviour that we observed in the original function. Indeed, the fact that the function $f'$ is strictly decreasing, means that the slope of the original function $f$ gets lower so that it grows slower. On the other hand, the function $g'$ is strictly increasing, so the slope of the function $g$ strictly increases as well, which means that the function grows more quickly. So how can we establish that $f'$ strictly decreases and $g'$ strictly increases? The same way you would do that for any other function: you check whether the derivative is positive or negative. This means that in order to distinguish between the behaviour of the functions $f$ and $g$, we should take a look at the derivatives of their derivatives, so at their second derivatives. We will call the function $f$ **concave** and the function $g$ **convex**.
 
-Let us first give these concepts a name and then we will see how we can use the second derivative to establish the right behaviour.
+Stated plainly, concave functions bend downwards, while convex functions bend upwards. Even though we used the second derivative in our previous discussing, we will not define these concepts in terms of the second derivative. We do this, because we also want to be able to use this terminology for function that do not have second derivative. Instead, we will use the following definition.
 
 ::::::{prf:definition} 
 :label: Def:Graphsderivatives:Concavity
-A function $f$ is called **convex** or **concave upwards** on an interval if for any two points $a<b$ in the interval and for all $0\leq t\leq 1$ we have
+A function $f$ is called **convex** on an interval if for any two points $a<b$ in the interval and for all $c$ in $(a,b)$ we have
 
 $$
- f(ta+(1-t)b)\leq tf(a)+(1-t)f(b).
+ f(c)\leq f(a)+\frac{f(b)-f(a)}{b-a}(c-a).
 $$ 
 
 
-A function $f$ is called **concave** or **concave downwards** on an interval if for any two points $a<b$ in the interval and for all $0\leq t\leq 1$ we have
+A function $f$ is called **concave** on an interval if for any two points $a<b$ in the interval and for all $0\leq t\leq 1$ we have
 
 $$
- f(ta+(1-t)b)\leq tf(a)+(1-t)f(b).
+ f(c)\geq f(a)+\frac{f(b)-f(a)}{b-a}(c-a).
 $$ 
 
 ::::::
 
-Since the line segment between points $(a,f(a))$ and $(b,f(b))$ can be parametrised by $x(t)=ta+(1-t)b$ and $y(t)=tf(a)+(1-t)f(b)$ for $0\leq t\leq 1$, if the line segment between any two distinct points on the graph of $f$ lies above the graph of $f$.
+Since the line segment between points $(a,f(a))$ and $(b,f(b))$ is the graph of the function $L(c)=\displaystyle f(a)+\frac{f(b)-f(a)}{b-a}(c-a)$ , $f$ is convex if the line segment between any two distinct points on the graph of $f$ lies above the graph of $f$.
 
 Similarly, $f$ is concave on an interval precisely when for any two points $a<b$ in that interval the line segment between any two distinct points on the graph of $f$ lies below the graph of $f$.
 
@@ -552,7 +552,7 @@ width: 100%
 name: Fig:Graphsderivatives:Convexdef
 class: dark-light
 ---
-An illustration of the definition of a convex function (left) and a concave function (right), with the line piece between any two points $a$ and $b$ lying above or below the function respectively.
+An illustration of the definition of a convex function (left) and a concave function (right), with the line segment between any two points $a$ and $b$ lying above or below the function respectively.
 :::
 
 :::{todo}
@@ -560,24 +560,28 @@ Turn {numref}`Fig:Graphsderivatives:Convexdef` into an applet. Maybe nice if you
 :::
 
 :::{note}
-A function $f$ is convex on an interval precisely when $-f$ is concave on that interval. This follows since $f(ta+(1-t)b)\leq tf(a)+(1-t)f(b)$ precisely when $-f(ta+(1-t)b)\geq -tf(a)-(1-t)f(b)$.
+A function that is convex on an interval, is sometimes called **concave upwards** or **convex downwards** on that interval. In addition, a function that concave on an interval, is sometimes called **concave downwards** or **convex upwards** on that interval.
+:::
+
+:::{note}
+A function $f$ is convex on an interval precisely when $-f$ is concave on that interval. This follows since $f(c)\leq f(a)+\frac{f(b)-f(a)}{b-a}(c-a)$ precisely when $-f(c)\geq -f(a)+\frac{-f(b)-(-f(a))}{b-a}(c-a)$.
 :::
 
 Similarly to strictly increasing and strictly decreasing, we can also define strictly convex and strictly concave functions. 
 
 ::::::{prf:definition} 
 :label: Def:Graphsderivatives:StrictConcavity
-A function $f$ is called **strictly convex** or **strictly concave upwards** on an interval if for any two points $a<b$ in the interval and for all $0\leq t\leq 1$ we have
+A function $f$ is called **strictly convex** on an interval if for any two points $a<b$ in the interval and for all $0\leq t\leq 1$ we have
 
 $$
- f(ta+(1-t)b)< tf(a)+(1-t)f(b).
+ f(c)< f(a)+\frac{f(b)-f(a)}{b-a}(c-a).
 $$ 
 
 
-A function $f$ is called **strictly concave** or **strictly concave downwards** on an interval if for any two points $a<b$ in the interval and for all $0\leq t\leq 1$ we have
+A function $f$ is called **strictly concave** on an interval if for any two points $a<b$ in the interval and for all $0\leq t\leq 1$ we have
 
 $$
- f(ta+(1-t)b)> tf(a)+(1-t)f(b).
+ f(c)>f(a)+\frac{f(b)-f(a)}{b-a}(c-a).
 $$ 
 
 ::::::
@@ -596,36 +600,28 @@ $f$ is concave on an interval precisely when $f$ lies below all tangent lines in
 :class: tudproof, dropdown
 Let $I$ be an interval. 
 
-Suppose first that $f$ is convex on $I$. Let $a<b$ in $I$. Then, since $f$ is convex, we have for any $ 0< t< 1$ that 
+Suppose first that $f$ is convex on $I$. Let $a<b$ in $I$. Then, since $f$ is convex, we have for any $ a<c<b$ that 
 
 $$
- f(ta+(1-t)b)\leq tf(a)+(1-t)f(b).
+ f(c)\leq f(a)+\frac{f(b)-f(a)}{b-a}(c-a).
 $$
 
 Then we can subtract $f(a)$ from both sides of the inequality to obtain
 
-\begin{align*}
- f(ta+(1-t)b)-f(a) &\leq tf(a)+(1-t)f(b)-f(a) \\
- &= (t-1)f(a)+(1-t)f(b) \\
- &= (1-t)(f(b)-f(a)).
-\end{align*}
-
-Now we divide this inequality by the positive number $(1-t)(b-a)$ to obtain
-
 $$
- \frac{f(ta+(1-t)b)-f(a)}{(1-t)(b-a)}\leq \frac{f(b)-f(a)}{b-a}.
+ f(c)-f(a) \leq \frac{f(b)-f(a)}{b-a}(c-a) .
 $$
 
-Note that $(1-t)(b-a)=\left(ta+(1-t)b\right)-a$, so we rewrite the left-hand side of this inequality to obtain
+Now we divide this inequality by the positive number $c-a$ to obtain
 
 $$
- \frac{f(ta+(1-t)b)-f(a)}{\left(ta+(1-t)b\right)-a}\leq \frac{f(b)-f(a)}{b-a}.
+ \frac{f(c)-f(a)}{c-a}\leq \frac{f(b)-f(a)}{b-a}.
 $$
 
-Since $ta+(1-t)b\rightarrow a$ as $t\rightarrow 1$, we find that
+Using {prf:ref}`Thm:Differentiability:Derivativealt` we have
 
 $$
- \lim_{t\rightarrow 1}\frac{f(ta+(1-t)b)-f(a)}{\left(ta+(1-t)b\right)-a}=\lim_{s\rightarrow 1}\frac{f(s)-f(a)}{s-a}=f'(a),
+ \lim_{c\rightarrow a}\frac{f(c)-f(a)}{c-a}=f'(a),
 $$
 
 so we obtain
@@ -648,37 +644,37 @@ $$
 
 as desired. 
 
-Now suppose that for all $x$ and $y$ in the interval we have $f(y)\geq f(x)+f'(x)(y-x)$. Let $a<b$ in $I$ and let $0\leq t\leq 1$. Then we want to show $tf(a)+(1-t)f(b)\geq f(ta+(1-t)b)$, i.e. $tf(a)+(1-t)f(b)- f(ta+(1-t)b)\geq 0$. Then we can write 
+Now suppose that for all $x$ and $y$ in the interval we have $f(y)\geq f(x)+f'(x)(y-x)$. Let $a<b$ in $I$ and let $c$ in $(a,b)$. Then we want to show $f(a)+\frac{f(b)-f(a)}{b-a}(c-a)\geq f(c)$, i.e. $f(a)+\frac{f(b)-f(a)}{b-a}(c-a)-f(c)\geq 0$. Then we can write 
 
 \begin{align*}
- f(ta+(1-t)b) &= 1\cdot f(ta+(1-t)b) \\
- &= (t+(1-t))f(ta+(1-t)b) \\
- &= tf(ta+(1-t)b)+(1-t)f(ta+(1-t)b).
+ f(c) &= 1\cdot f(c) \\
+ &= \left(1-\frac{c-a}{b-a}+\frac{c-a}{b-a}\right)f(c) \\
+ &= \left(1-\frac{c-a}{b-a}\right)f(c)+\frac{c-a}{b-a}f(c).
 \end{align*}
 
 With this, we have 
 
 \begin{align*}
- tf(a)+(1-t)f(b)-f(ta+(1-t)b) &= tf(a)+(1-t)f(b) \\
- &\phantom{=} \quad\quad\quad-\left(tf(ta+(1-t)b)+(1-t)f(ta+(1-t)b)\right)\\
- &=t\left(f(a)-f(ta+(1-t)b)\right) \\
- &\phantom{=} \quad\quad\quad +(1-t)\left(f(b)-f(ta+(1-t)b)\right).
+ f(a)+\frac{f(b)-f(a)}{b-a}(c-a)-f(c) &= f(a)+\frac{f(b)-f(a)}{b-a}(c-a) \\
+ &\phantom{=} \quad\quad\quad-\left(1-\frac{c-a}{b-a}\right)f(c)-\frac{c-a}{b-a}f(c)\\
+ &=f(a)\left(1-\frac{c-a}{b-a}\right)+f(b)\frac{c-a}{b-a} \\
+ &\phantom{=} \quad\quad\quad -\left(1-\frac{c-a}{b-a}\right)f(c)-\frac{c-a}{b-a}f(c)\\
+ &=\Big(f(a)-f(c)\Big)\left(1-\frac{c-a}{b-a}\right)+\Big(f(b)-f(c)\Big)\frac{c-a}{b-a}.
 \end{align*}
 
-Since $a$, $b$ and $ta+(1-t)b$ are all points in the interval $I$, we can use our assumption to obtain the estimate
+Since $a$, $b$ and $c$ are all points in the interval $I$, and since $1-\dfrac{c-a}{b-a}>0$ and $\dfrac{c-a}{b-a} >0$ we can use our assumption to obtain the estimate
 
 \begin{align*}
-&\phantom{=} tf(a)+(1-t)f(b)-f(ta+(1-t)b) \\
-&= t\left(f(a)-f(ta+(1-t)b)\right)+(1-t)\left(f(b)-f(ta+(1-t)b)\right) \\
-&\geq t\left(f(a)-\left(f(a)-f'(ta+(1-t)b)(a-(ta+(1-t)b))\right)\right) \\
-&\phantom{=} \quad\quad\quad+(1-t)\left(f(b)-\left(f(b)-f'(ta+(1-t)b)(b-(ta+(1-t)b))\right)\right) \\
-&= tf'(ta+(1-t)b)(a-(ta+(1-t)b))+(1-t)f'(ta+(1-t)b)(b-(ta+(1-t)b)) \\
-&= tf'(ta+(1-t)b)((1-t)a-(1-t)b)+(1-t)f'(ta+(1-t)b)(tb-ta) \\
-&= t(1-t)f'(ta+(1-t)b)(a-b)+(1-t)tf'(ta+(1-t)b)(b-a) \\
+&\phantom{=} f(a)+\frac{f(b)-f(a)}{b-a}(c-a)-f(c) \\
+&= \Big(f(a)-f(c)\Big)\left(1-\frac{c-a}{b-a}\right)+\Big(f(b)-f(c)\Big)\frac{c-a}{b-a} \\
+&\geq f'(c)(a-c)\left(1-\frac{c-a}{b-a}\right)+f'(c)(b-c)\frac{c-a}{b-a}\\
+&= f'(c)\left((a-c)+\frac{(c-a)^2}{b-a}+\frac{(b-c)(c-a)}{b-a}\right) \\
+&= f'(c)\left(\frac{(a-c)(b-a)+(c-a)^2+(b-c)(c-a)}{b-a}\right) \\
+&= f'(c)\cdot 0 \\
 &= 0.
 \end{align*}
 
-Hence, we must have $tf(a)+(1-t)f(b)\geq f(ta+(1-t)b)$, which means that $f$ is convex.
+Hence, we must have $f(a)+\frac{f(b)-f(a)}{b-a}(c-a)\geq f(c)$, which means that $f$ is convex.
 
 The results about concavity follow by applying the first part to the function $-f$.
 :::
