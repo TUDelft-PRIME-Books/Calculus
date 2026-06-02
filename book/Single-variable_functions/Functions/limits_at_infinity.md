@@ -1271,7 +1271,7 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 :url: https://embed.grasple.com/exercises/92fb4504-f844-4e7c-9885-28b1a9fe8052?id=63030
 :label: Grasple:63030
 :dropdown:
-:description: Using limits to find the maximal domain and range of a function.
+:description: Maximal domain and range of a function.
 
 ::::
 
@@ -1280,7 +1280,7 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 :url: https://embed.grasple.com/exercises/f2736865-6ad4-4917-ba2e-921f565394c7?id=63046
 :label: Grasple:63046
 :dropdown:
-:description: Maximal domain and range of a function on real line.
+:description: Maximal domain and range of a function.
 
 ::::
 
@@ -1289,7 +1289,7 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 :url: https://embed.grasple.com/exercises/9796d35c-3bb3-4a93-911f-51da314900b5?id=63054
 :label: Grasple:63054
 :dropdown:
-:description: Maximal domain and range of a function on real line.
+:description: Maximal domain and range of a function.
 
 ::::
 
@@ -1298,7 +1298,16 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 :url: https://embed.grasple.com/exercises/88eaff16-aa50-4656-98b8-86baedd257b3?id=63056
 :label: Grasple:63056
 :dropdown:
-:description: Maximal domain and range of a function on real line.
+:description: Maximal domain and range of a function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/52cd5be7-219b-4c3e-a42c-e0cb2f9b5aa1?id=63028
+:label: Grasple:63028
+:dropdown:
+:description: Maximal domain and range of a function.
 
 ::::
 

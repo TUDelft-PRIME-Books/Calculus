@@ -370,3 +370,136 @@ Replace {numref}`Fig:SlopeCurve:ParamVert` with an applet. Make the point with t
 :::
 
 ::::::
+
+
+## Grasple exercises
+
+### Exercises on implicit differentiation
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/42c0cf96-2708-4d3c-9adc-35a13e3af9c6?id=63545
+:label: Grasple:63545
+:dropdown:
+:description: Find $\frac{dy}{dx}$ using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/344e4062-1e7c-4ecc-9d90-1ef2ea262e67?id=63540
+:label: Grasple:63540
+:dropdown:
+:description: Find $\frac{dy}{dx}$ using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/90f7561b-3c36-4ef5-853e-2f10cb7f5ebb?id=63553
+:label: Grasple:63553
+:dropdown:
+:description: Find $\frac{dx}{dy}$ using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/508a4c78-deda-406e-b98d-1b99224707ec?id=78670
+:label: Grasple:78670
+:dropdown:
+:description: Find $\frac{dx}{dy}$ using implicit differentiation for a special curve.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2256e591-0a07-49eb-b554-cd7b31f401d9?id=63705
+:label: Grasple:63705
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6f1effef-8138-4d33-a52f-459b5b8c90b1?id=63555
+:label: Grasple:63555
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6863f9b7-5c6d-461b-8bfc-91f3ff06c1ee?id=63703
+:label: Grasple:63703
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5f7a78b4-4431-411b-adac-99f33926d7e2?id=63554
+:label: Grasple:63554
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2fec89c1-fefd-457b-9748-4fb4b1b0471b?id=63541
+:label: Grasple:63541
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c4f11161-4e6f-4a36-a705-1bd4eaaa006f?id=63612
+:label: Grasple:63612
+:dropdown:
+:description: Find $\frac{dy}{dx}$ using implicit differentiation and find tangent lines.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/30d7d686-5961-44dd-80f8-5a8d21771d88?id=63548
+:label: Grasple:63548
+:dropdown:
+:description: Finding points where curve is horizontal/vertical.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0c946230-7c9a-44cb-9d19-e6e62ecc87bf?id=70903
+:label: Grasple:70903
+:dropdown:
+:description: Find $\frac{dx}{dy}$ and a special point on curve using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/00f1e1c1-4dab-40c3-9abf-c335d4f901ca?id=63546
+:label: Grasple:63546
+:dropdown:
+:description: Find $\frac{d^2y}{dx^2}$ using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/369dc541-0a75-4bc7-8790-aefeca644a6c?id=63544
+:label: Grasple:63544
+:dropdown:
+:description: Finding a normal line to a curve.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7165ae8c-b616-447a-b00d-209ab7172463?id=78762
+:label: Grasple:78762
+:dropdown:
+:description: Finding equation for function that intersects curve orthogonally.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8e476818-f913-4b4a-abb9-d8246980afdf?id=78682
+:label: Grasple:78682
+:dropdown:
+:description: Find an angle between two curves.
+::::
