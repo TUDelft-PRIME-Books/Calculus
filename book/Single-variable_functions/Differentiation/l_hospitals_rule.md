@@ -307,7 +307,7 @@ $$
 
 To handle these cases together, we write $c=a$ or $c=\infty$, depending on the case we are in and we write $\displaystyle\lim_{x\rightarrow c}$ whenever we mean $\displaystyle\lim_{x\rightarrow a^-}$ or $\displaystyle\lim_{x\rightarrow \infty}$. We can write $I=(b,c)$. 
 
-First we show that we can make $I$ smaller so that $g$ is never $0$ on $I$. If there were two points $x\neq y$ in $I$ with $g(x)=g(y)=0$, then by {prf:ref}`Thm:Graphsderivatives:Rolle`, there would be $z$ in $I$ with $g'(z)=0$. This is not possible, since we assumed that $g'\neq 0$ on $I$. As such, there is at most one $x$ in $I$ with $g(x)=0$. By making $I$ smaller, if necessary, we can ensure that $g$ is never $0$ on $I$. With the same reasoning, we also see that we have $g(x)\neq g(y)$ whenever $x\neq y$ are in $I$.
+First we show that we can make $I$ smaller so that $g$ is never $0$ on $I$. If there were two points $x\neq y$ in $I$ with $g(x)=g(y)=0$, then by {prf:ref}`Thm:MinMax:Rolle`, there would be $z$ in $I$ with $g'(z)=0$. This is not possible, since we assumed that $g'\neq 0$ on $I$. As such, there is at most one $x$ in $I$ with $g(x)=0$. By making $I$ smaller, if necessary, we can ensure that $g$ is never $0$ on $I$. With the same reasoning, we also see that we have $g(x)\neq g(y)$ whenever $x\neq y$ are in $I$.
 
 The infimum of a set $S$ is its largest lower bound. That is $m=\inf(S)$ precisely when $m\leq s$ for all $s$ in $S$ and $m\geq n$ for all $n$ which have $n\leq s$ for all $s$ in $S$. Similarly, the supremum of $S$ is the smallest upper bound. That is $M=\sup(S)$ precisely when $M\geq s$ for all $s$ in $S$ and $M\leq N$ for all $N$ which have $N\geq s$ for all $s$ in $S$. The completeness of the real numbers states that each bounded subset of the real numbers has an infimum and a supremum. In this proof, we make the convention that $\inf(S)=-\infty$ and $\sup(S)=\infty$ whenever $S$ does not have a lower respectively upper bound. 
 
@@ -365,7 +365,7 @@ $$
  \lim_{x\rightarrow c}m(x)=L.
 $$
 
-Let $x$ and $y$ in $I$ with $x<y$. Recall that $g(x)\neq g(y)$. By {prf:ref}`Thm:Graphsderivatives:MVTCauchy`, we can find $z$ in between $x$ and $y$ with
+Let $x$ and $y$ in $I$ with $x<y$. Recall that $g(x)\neq g(y)$. By {prf:ref}`Thm:MinMax:MVTCauchy`, we can find $z$ in between $x$ and $y$ with
 
 $$
  \frac{f(x)-f(y)}{g(x)-g(y)}=\frac{f'(z)}{g'(z)}.
