@@ -240,6 +240,8 @@ $$
 
 ::::::
 
+(Subsec:Slopeparam)=
+
 ## Slopes of parametrised curves
 
 In {numref}`Section:Curves` we saw that for many curves it is easier or more convenient to describe them using a parametrisation than using an implicit equation. In addition, if you only have a parametrisation of a curve, it can be hard, or even impossible, to turn this into an implicit equation. Still, for those types of curves, we could still want to find the slope. In that case, we have the following result.
@@ -270,6 +272,37 @@ $$
 $$
 ::::
 
+Instead of looking at tangent lines to parametric curves, it is also interesting to look at tangent vectors. These are vectors that are tangent to the curve at a certain point, meaning that it points in the same direction as the tangent line at this point.
+
+::::::{prf:definition} 
+:label: Def:SlopeCurves:Tangentvector
+Let $\mathcal{C}$ be parametric curve. A **tangent vector** of $\mathcal{C}$ at a point $(x,y)$ is a direction vector of the tangent line of $\mathcal{C}$ at this point, provided this tangent line exists. A **unit tangent vector** is a tangent vector that has length $1$.
+::::::
+
+::::::{prf:theorem} 
+:label: Thm:SlopeCurves:Tangentvector
+Let $\mathcal{C}$ be curve with parametrisation $x=f(t)$ and $y=g(t)$ for $t_0\leq t\leq t_1$. Suppose $f$ and $g$ are both differentiable. Then the vector 
+
+$$
+ \mathbf{r}'(t)=\begin{pmatrix}f'(t)\\ g'(t)\end{pmatrix}
+$$
+
+is a tangent vector of $\mathcal{C}$ at $(x(t),y(t))$, as long as $\mathbf{r}'(t)\neq\mathbf{0}$. In that case, the vector
+
+$$
+ \mathbf{T}(t)=\frac{1}{|\mathbf{r}'(t)|}\mathbf{r}'(t)=\frac{1}{\sqrt{\left(f'(t)\right)^2+\left(g'(t)\right)^2}}\begin{pmatrix}f'(t)\\ g'(t)\end{pmatrix}
+$$
+
+is a unit tangent vector of $\mathcal{C}$ at $(x(t),y(t))$.
+::::::
+
+::::{admonition} Proof of {prf:ref}`Thm:SlopeCurves:Tangentvector`
+:class: tudproof, dropdown
+According to {prf:ref}`Thm:SlopeCurves:Param`, the slope of the tangent line at $(f(t),g(t))$ is $\dfrac{g'(t)}{f'(t)}$, provided $f'(t)\neq 0$. This means that a direction vector for this line is $\begin{pmatrix}f'(t)\\ g'(t)\end{pmatrix}$, which must mean that this vector is a tangent vector. If we divide this vector by its length, we obtain a vector with length $1$.
+
+If $f'(t)=0$, then the curve does not change in the $x$-direction, so the tangent line must be vertical. As such, the vector $\begin{pmatrix}f'(t)\\ g'(t)\end{pmatrix}=\begin{pmatrix}0\\ g'(t)\end{pmatrix}$ is a direction vector of this tangent line.
+::::
+
 
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Param
@@ -285,6 +318,20 @@ $$
  \left.\frac{dy}{dx}\right|_{(x,y)=(0,5)}=\frac{3e^{3\cdot 0}-8e^{-2\cdot 0}}{2e^{2\cdot 0}-e^0}=\frac{-5}{1}=-5.
 $$
 
+In addition, we find that the vector
+
+$$
+ \mathbf{r}'(t)=\begin{pmatrix}-5\\ 1\end{pmatrix}
+$$
+
+is a tangent vector to $\mathcal{C}$ at $(0,5)$, and that
+
+$$
+ \mathcal{T}(t)=\frac{1}{|\mathbf{r}'(t)|}\mathbf{r}'(t)=\begin{pmatrix}\frac{-5}{\sqrt{26}}\\ \frac{1}{\sqrt{26}}\end{pmatrix}
+$$
+
+is a unit tangent vector.
+
 :::{figure} Images/Fig-SlopeCurve-Param.png
 :name: Fig:SlopeCurve:Param
 
@@ -292,7 +339,7 @@ The curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}$ for $-1\le
 :::
 
 :::{todo}
-Replace {numref}`Fig:SlopeCurve:Param` with an applet. Make the point with the specified tangent line draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color.
+Replace {numref}`Fig:SlopeCurve:Param` with an applet. Make the point with the specified tangent line draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color. Also include the unit tangent vector.
 :::
 ::::::
 
