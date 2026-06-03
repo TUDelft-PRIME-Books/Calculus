@@ -1,3 +1,5 @@
+(Sec:MultivariableIntegration:TripeIntegrals)=
+
 # Triple integrals
 
 In this section we cover:

@@ -1,3 +1,5 @@
+(Sec:MultivariableIntegration:DoubleIntegrals)=
+
 # Double integrals
 
 In this section we cover:

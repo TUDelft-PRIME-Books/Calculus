@@ -4,16 +4,14 @@
 ## Introduction
 In this section we introduce the terminology and notation for finite summations and multiplications which will be used in this book.
 
-We assume that the reader is familiar with basic operations on rational numbers such as addition, multiplication, subtraction, and division.
+Although it can also be done for complex numbers, we restrict ourselves to real numbers. We assume that the reader is familiar with basic operations on real numbers such as addition, multiplication, subtraction, and division.
 
-These operations can be extended to real numbers ({numref}`Section:RealNumbers`) and complex numbers ({numref}`Ch:ComplexNumbersCartesian`).
-
-This chapter is not meant to be an exhaustive introduction to summations and multiplications, but rather a brief introduction to the terminology and notation that will be used in this book.
+This section is not meant to be an exhaustive introduction to summations and multiplications, but rather a brief introduction to the terminology and notation that will be used in this book.
 
 (Sec:SumsAndProducts:FiniteSequences)=
 ## Finite sequences
 
-We start of with the definition of finite sequences and some relevant terminology.
+We start of with the definition of a finite sequence and some relevant terminology.
 
 ::::::{prf:definition}
 :label: Def:SumsAndProducts:Definition
@@ -39,7 +37,7 @@ The following are all different notations for the same _finite_ sequence:
 
 Here, $p$ is the starting index and $q$ is the ending index.
 
-The choice for the letter $a$ is arbitrary, and we can use any letter to denote the terms of the sequence. The letter $n$ is often used to denote the index, but we can also use any other letter for the index.
+The letter $n$ is often used to denote the index, but we can also use any other letter for the index.
 
 Sometimes we just write $\{a_n\}$ to denote a sequence, so if we do, please be aware that the context is relevant in that case.
 
@@ -166,8 +164,9 @@ The next examples only consider the addition of some finite sequences.
 :label: Ex:SumsAndProducts:IntroductionExamplesSum
 
 * $\displaystyle\sum_{p=3}^5p^2=3^2+4^2+5^2=9+16+25=50$;
-* $\displaystyle\sum_{j=-1}^15^{j}=5^{-1}+5^0+5^{1}=\frac{1}{5}+1+5=\frac{31}{5}$;
+* $\displaystyle\sum_{j=-1}^15^j=5^{-1}+5^0+5^{1}=\frac{1}{5}+1+5=\frac{31}{5}$;
 * $\displaystyle\sum_{k=0}^32^k=2^0+2^1+2^2+2^3=1+2+4+8=15$.
+
 ::::::
 
 ::::::{prf:Example}
@@ -202,7 +201,7 @@ $$
 \sum_{n=p}^q(a_n+b_n)=A+B.
 $$
 
-If $\displaystyle\sum_{n=p}^qa_n=A$ and $c$ is a number, then we have
+If $\displaystyle\sum_{n=p}^qa_n=A$ and $c$ is a real number, then we have
 
 $$
 \sum_{n=p}^qc a_n=cA.
@@ -239,7 +238,7 @@ $$
 \sum_{n=p}^q(ca_n+db_n)=cA+dB
 $$
 
-for any numbers $c$ and $d$.
+for any real numbers $c$ and $d$.
 
 The fourth property can also be used for a change of the index of summation in the opposite direction:
 
@@ -254,7 +253,7 @@ In {prf:ref}`Ex:SumsAndProducts:IntroductionExamplesSum` we have seen the follow
 ::::{prf:theorem}
 :label: Thm:SumsAndProducts:SumOfIntegers
 
-The finite sequence of the first $n$ positive integers, $\{k\}_{k=1}^n$ and the related finite summation $\displaystyle\sum_{k=1}^nk$ have the following sum:
+The finite summation $\displaystyle\sum_{k=1}^nk$, that is the addition of the terms of the sequence of the first $n$ positive integers, has the following sum:
 
 $$
 \sum_{k=1}^nk=\frac{1}{2}n(n+1)
@@ -344,7 +343,7 @@ A pirate using a telescope.
 ::::
 :::::
 
-We now look at the summation of the terms of the sequence $\left\{\frac{1}{k(k+1)}\right\}_{k=1}^n$ to introduce the concept of a _telescoping_ sum:
+We now look at the summation of the terms of the sequence $\displaystyle\left\{\frac{1}{k(k+1)}\right\}_{k=1}^n$ to introduce the concept of a _telescoping_ sum:
 
 ::::{prf:example}
 :label: Ex:SumsAndProducts:TelescopingSumExample1
@@ -390,13 +389,13 @@ In {prf:ref}`Def:SumsAndProducts:TelescopingSum` the number $p$ is often equal t
 
 Consider the finite summation $\displaystyle\sum_{k=2}^n\frac{1}{k^2-1}$.
 
-Notice that for $k\in\{2,3,4,\ldots\}$ we have
+Notice that for $k\in\{2,3,4,\ldots,n\}$ we have
 
 $$
 a_k=\frac{1}{k^2-1}=\frac{1}{2}\frac{1}{k-1}-\frac{1}{2}\frac{1}{k+1}.
 $$
 
-So if we take $p=2$ and $b_k=\frac{1}{2}\frac{1}{k-1}$ for $k\in\{2,3,4,\ldots,n+2\}$, then we have $a_k=b_{k}-b_{k+2}$ for all $k\in\{2,3,4,\ldots,n\}$, which means that $\displaystyle\sum_{k=2}^n\frac{1}{k^2-1}$ is a telescoping summation.
+So if we take $p=2$ and $b_k=\dfrac{1}{2}\dfrac{1}{k-1}$ for $k\in\{2,3,4,\ldots,n+2\}$, then we have $a_k=b_{k}-b_{k+2}$ for all $k\in\{2,3,4,\ldots,n\}$, which means that $\displaystyle\sum_{k=2}^n\frac{1}{k^2-1}$ is a telescoping summation.
 
 Using the telescoping property, we can also determine the sum of this telescoping summation as follows:
 
@@ -412,7 +411,7 @@ Using the telescoping property, we can also determine the sum of this telescopin
 
 Notice that in the fourth line we have used the change of the index of summation to make the two summations look more similar, which makes it easier to see that many terms cancel. Also notice that in the fifth line we have used the telescoping property to cancel many terms and find the sum of the telescoping summation.
 
-Even better, notice that the sum of the telescoping summation is the sum of the first two terms of the sequence $\left\{\frac{1}{2}\frac{1}{k+1}\right\}_{k=0}^{n+2}$ minus the sum of the last two terms of this sequence, which is a direct consequence of the telescoping property. We summarise this in the next theorem:
+Even better, notice that the sum of the telescoping summation is the sum of the first two terms of the sequence $\left\{\dfrac{1}{2}\dfrac{1}{k+1}\right\}_{k=0}^{n+2}$ minus the sum of the last two terms of this sequence, which is a direct consequence of the telescoping property. We summarise this in the next theorem:
 
 ::::
 
@@ -573,6 +572,39 @@ $$
 
 ::::
 
+:::::{note}
+Sometimes, for $n\in\{1,2,3,\ldots\}$ the following notation is used:
+
+$$
+\prod_{k=0}^n(2k+1)=1\cdot3\cdot5\cdots(2n+1)=(2n+1)!!
+$$
+
+and
+
+$$
+\prod_{k=1}^n(2k)=2\cdot4\cdot6\cdots(2n)=(2n)!!
+$$
+
+This is called the **double factorial** and can also be defined as
+
+$$
+n!!=n\cdot(n-2)\cdot(n-4)\cdots4\cdot2\;\text{for}\;n\;\text{even}
+$$
+
+and
+
+$$
+n!!=n\cdot(n-2)\cdot(n-4)\cdots3\cdot1\;\text{for}\;n\;\text{odd.}
+$$
+
+By convention, we also define $0!!=1$ and $1!!=1$. Then we may also write
+
+$$
+n!!=n(n-2)!!\quad\text{for}\quad n=2,3,4,\ldots.
+$$
+
+:::::
+
 Without stating a formal proof, we will also state some important properties of finite products:
 
 ::::{prf:theorem}
@@ -584,7 +616,7 @@ $$
 \prod_{n=p}^q(a_nb_n)=AB.
 $$
 
-If $\displaystyle\prod_{n=p}^qa_n=A$ and $c$ is a number, then we have
+If $\displaystyle\prod_{n=p}^qa_n=A$ and $c$ is a real number, then we have
 
 $$
 \prod_{n=p}^qc a_n=c^{q-p+1}A.
@@ -621,7 +653,7 @@ $$
 \prod_{n=p}^q\frac{ca_n}{db_n}=\frac{c^{q-p+1}A}{d^{q-p+1}B}
 $$
 
-for any numbers $c$ and $d\neq 0$.
+for any real numbers $c$ and $d\neq 0$.
 
 The fourth property can also be used for a change of the index of multiplication in the opposite direction:
 
@@ -636,6 +668,42 @@ $$
 :::{todo}
 Add Grasple exercises to {numref}`Sec:SumsAndProducts`.
 :::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bc4a2c94-546c-423a-8420-f63a61d83720?id=133025
+:label: Grasple:133025
+:dropdown:
+:description: Find the sum.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/310bb414-e0e0-435d-b9e9-f9af1cfe16a5?id=133077
+:label: Grasple:133077
+:dropdown:
+:description: Find the sum.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2587cd2f-9e61-4946-b119-ed2d1c21d8b5?id=133022
+:label: Grasple:133022
+:dropdown:
+:description: Find a closed formula for the sum.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1998ab5f-af87-4c1d-bfa2-f6c812d14da3?id=133023
+:label: Grasple:133023
+:dropdown:
+:description: Find a closed formula for the sum.
+
+::::
 
 ## Exercises
 
@@ -673,10 +741,13 @@ For $n=1$ this reads: $1=\frac{1}{4}\cdot1^2\cdot2^2$, which is true.
 Suppose that $\displaystyle\sum_{k=1}^nk^3=\frac{1}{4}n^2(n+1)^2$ holds for certain value of $n$. Then we have
 
 \begin{align*}
-\sum_{k=1}^{n+1}k^3&=\sum_{k=1}^nk^3+(n+1)^3=\frac{1}{4}n^2(n+1)^2+(n+1)^3\\
-&=\frac{1}{4}(n+1)^2\left\{n^2+4(n+1)\right\}\\
-&=\frac{1}{4}(n+1)^2(n^2+4n+4)=\frac{1}{4}(n+1)^2(n+2)^2.
+\sum_{k=1}^{n+1}k^3&=\sum_{k=1}^nk^3+(n+1)^3\\
+&=\frac{1}{4}n^2(n+1)^2+(n+1)^3\\
+&=\frac{1}{4}(n+1)^2\left(n^2+4(n+1)\right)\\
+&=\frac{1}{4}(n+1)^2(n^2+4n+4)\\
+&=\frac{1}{4}(n+1)^2(n+2)^2.
 \end{align*}
+
 Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
 :::
 
@@ -717,8 +788,7 @@ Hence, we have by {prf:ref}`Thm:SumsAndProducts:SumTelescopingSum` that
 &= \frac12-\frac{1}{20202} \\
 &= \frac{10101}{20202}-\frac{1}{20202} \\
 &= \frac{10100}{20202} \\
-&= \frac{5050}{10101} \\
-&= 0.\overline{499950}.
+&= \frac{5050}{10101}.
 \end{align*}
 
 :::
