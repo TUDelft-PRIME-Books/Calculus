@@ -13,49 +13,73 @@ In this section we cover
 - Inequalities (including quadratics and absolute values)
 - Linear systems of two variables (solving by "row" reduction, not by back substitution)
 
+(Sec:LongDivision)=
 ## Long division
 
 In other math courses you may have encountered long division, which is a method for dividing two numbers. For instance, if we want to compute $\frac{96789}{231}$, we can do this by long division.
 
-Historically, long division is written differently within different parts of the worlds, sometimes it even differs in neighbouring countries. Below we have performed the long division of $96789$ by $231$ in the way it is done in some parts of the world. You can switch the tabs to see the different notations. 
+Historically, long division is written differently within different parts of the worlds, sometimes it even differs in neighbouring countries. Because showing all different notations everywhere in this book would be a bit too much, we will introduce one single notation that joins the different notations together. The notation for long division of polynomials we use here is a combination of the various notations for long division in non-English speaking Europe and Asia, where we have chosen to use the slanted line for indicating a division, instead of a vertical line $|$, a division symbol $\div$ or a colon $:$, and the many vertical lines for indicating the separation between the calculations and the result. We also include a double underline for indicating the separation between the divisor and the result, which resembles an equal sign. You can use your own notation of course, but we will use this notation for long division in this book.
 
-::::{tab-set}
+Below we have performed the long division of $96789$ by $231$ and written it down using the notation used in several parts of the world[^disclaimer] side-by-side with our notation. You can switch the tabs to see the different notations.
 
-:::{tab-item} English (parenthesis)
+[^disclaimer]: By no means this is an exhaustive list of all the notations for long division, but it should give you a good idea of how the different notations look like and how they relate to each other. More details on long division notation can be found at [Long division - Wikipedia](https://en.wikipedia.org/wiki/Long_division). 
+
+::::::{tab-set}
+:class: dropdown-tabset
+
+:::::{tab-item} English
+
+::::{grid} 3 3 3 3
+:::{grid-item-card} Local notation
+
 $$
 \class{longdivision}{
 \begin{array}{rr}
-& 419 \\
+& \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-raspberry}{9} \\
 231  & \overline{\big)96789} \\
-& \underline{924}\phantom{00} \\
+& \underline{\class{tud-red}{924}}\phantom{00} \\
 & 438\phantom{0} \\
-& \underline{231}\phantom{0} \\
+& \underline{\class{tud-blue}{231}}\phantom{0} \\
 & 2079 \\
-& \underline{2079} \\
+& \underline{\class{tud-orange}{2079}} \\
 & 0 \\
 \end{array}
 }
 $$
 :::
 
-:::{tab-item} English (bar)
+:::{grid-item-card} Explanation
+
+\begin{align*}
+\class{tud-cyan}{4} \,\cdot\,\, \phantom{0}231 &= \phantom{0}\class{tud-red}{924} \\
+967 - \phantom{0}\class{tud-red}{924} &= \phantom{0}\phantom{0}43 \\
+\class{tud-green}{1} \,\cdot\,\, \phantom{0}231 &= \phantom{0}\class{tud-blue}{231} \\
+438 - \phantom{0}\class{tud-blue}{231} &= \phantom{0}207 \\
+\class{tud-raspberry}{9} \,\cdot\,\, \phantom{0}231 &= \class{tud-orange}{2079} \\
+2079 - \phantom{0}\class{tud-orange}{2079} &= \phantom{0}\phantom{0}\phantom{0}0 \\
+\end{align*}
+:::
+
+:::{grid-item-card} Our notation
+
 $$
 \class{longdivision}{
-\begin{array}{rr}
-& 419 \\
-231  & \overline{\big|96789} \\
-& \underline{924}\phantom{00} \\
-& 438\phantom{0} \\
-& \underline{231}\phantom{0} \\
-& 2079 \\
-& \underline{2079} \\
-& 0 \\
+\begin{array}{rcl}
+96789 & / & \uuline{231} \\
+\underline{924}\phantom{00} & | & 419\\
+438\phantom{0} & | \\
+\underline{231}\phantom{0} & | \\
+2079 & | \\
+\underline{2079} & | \\
+0 & | \\
 \end{array}
 }
 $$
 :::
+::::
+:::::
 
-:::{tab-item} Dutch
+:::::{tab-item} Dutch
 $$
 \class{longdivision}{
 \begin{array}{rclcl}
@@ -69,19 +93,73 @@ $$
 \end{array}
 }
 $$
-:::
+:::::
 
-:::{tab-item} Latin American
+:::::{tab-item} Latin American
 $$
 \class{longdivision}{
 \begin{array}{rclcl}
-96789 & \div & 231 & = & 419 \\
+96789 & \,\div\, & 231 & = & 419 \\
+\underline{924}\phantom{00} \\
+\phantom{0}438\phantom{0} \\
+\phantom{0}\underline{231}\phantom{0} \\
+\phantom{0}2079 \\
+\phantom{0}\underline{2079} \\
+\phantom{0000}0 \\
 \end{array}
 }
 $$
-:::
+:::::
 
-::::
+:::::{tab-item} Eurasian
+$$
+\class{longdivision}{
+\begin{array}{rcl}
+96789 & | & \underline{231} \\
+-\underline{924}\phantom{00} & | & 419 \\
+438\phantom{0} \\
+-\underline{231}\phantom{0} \\
+2079 \\
+-\underline{2079} \\
+0 \\
+\end{array}
+}
+$$
+:::::
+
+:::::{tab-item} French & Cypriot 
+$$
+\class{longdivision}{
+\begin{array}{rcl}
+96789 & | & \underline{231} \\
+-\underline{924}\phantom{00} & | & 419\\
+438\phantom{0} & | \\
+-\underline{231}\phantom{0} & | \\
+2079 & | \\
+-\underline{2079} & | \\
+0 & | \\
+\end{array}
+}
+$$
+:::::
+
+:::::{tab-item} German
+$$
+\class{longdivision}{
+\begin{array}{rclcl}
+96789 & \,:\, & 231 & = & 419 \\
+-\underline{924}\phantom{00} \\
+\phantom{0}438\phantom{0} \\
+\phantom{0}-\underline{231}\phantom{0} \\
+\phantom{0}2079 \\
+\phantom{0}-\underline{2079} \\
+\phantom{0000}0 \\
+\end{array}
+}
+$$
+:::::
+
+::::::
 
 ## Inequalities and absolute values
 

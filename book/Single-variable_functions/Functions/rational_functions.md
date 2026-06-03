@@ -189,9 +189,7 @@ x^4-4x^3+3x^2+4x-4 & / & x-2 \\
 }
 $$
 
-[^longdivision]: The notation for long division of polynomials we use here is a combination of the various notations for long division in non-English speaking Europe and Asia, where we have chosen to use the slanted line for indicating a division, instead of a vertical line $|$, a percentage $%$ or a colon $:$, and the many vertical lines for indicating the separation between the calculations and the result, instead of a horizontal line. You can use your own notation of course, but we will use this notation for the rest of this chapter.
-
-In between the denominator and the numerator we have a slanted line which indicates that we are performing a division[^longdivision]. On the right we have a horizontal line below the denominator, which will separate the result of the long division (which we will write also on the right) from the denominator. We will write the result of the long division on the right as we go along.
+In between the denominator and the numerator we have a slanted line which indicates that we are performing a division. On the right we have a horizontal line below the denominator, which will separate the result of the long division (which we will write also on the right) from the denominator. We will write the result of the long division on the right as we go along. See {numref}`Sec:LongDivision` for more details on the notation of long division.
 
 Now we consider by what monomial $ax^n$ we should multiply the polynomial at the top on the right in order to match the highest order term of the polynomial on the left. In this case we find it should be $x^3$. We multiply $x^3$ by $x-2$ and subtract the obtained polynomial from the polynomial in the middle as indicated. We write the monomial we had to multiply with on the right below on the second line.
 
