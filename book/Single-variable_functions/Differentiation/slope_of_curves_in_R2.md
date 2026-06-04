@@ -240,6 +240,8 @@ $$
 
 ::::::
 
+(Subsec:Slopeparam)=
+
 ## Slopes of parametrised curves
 
 In {numref}`Section:Curves` we saw that for many curves it is easier or more convenient to describe them using a parametrisation than using an implicit equation. In addition, if you only have a parametrisation of a curve, it can be hard, or even impossible, to turn this into an implicit equation. Still, for those types of curves, we could still want to find the slope. In that case, we have the following result.
@@ -270,6 +272,37 @@ $$
 $$
 ::::
 
+Instead of looking at tangent lines to parametric curves, it is also interesting to look at tangent vectors. These are vectors that are tangent to the curve at a certain point, meaning that it points in the same direction as the tangent line at this point.
+
+::::::{prf:definition} 
+:label: Def:SlopeCurves:Tangentvector
+Let $\mathcal{C}$ be parametric curve. A **tangent vector** of $\mathcal{C}$ at a point $(x,y)$ is a direction vector of the tangent line of $\mathcal{C}$ at this point, provided this tangent line exists. A **unit tangent vector** is a tangent vector that has length $1$.
+::::::
+
+::::::{prf:theorem} 
+:label: Thm:SlopeCurves:Tangentvector
+Let $\mathcal{C}$ be curve with parametrisation $x=f(t)$ and $y=g(t)$ for $t_0\leq t\leq t_1$. Suppose $f$ and $g$ are both differentiable. Then the vector 
+
+$$
+ \mathbf{r}'(t)=\begin{pmatrix}f'(t)\\ g'(t)\end{pmatrix}
+$$
+
+is a tangent vector of $\mathcal{C}$ at $(x(t),y(t))$, as long as $\mathbf{r}'(t)\neq\mathbf{0}$. In that case, the vector
+
+$$
+ \mathbf{T}(t)=\frac{1}{|\mathbf{r}'(t)|}\mathbf{r}'(t)=\frac{1}{\sqrt{\left(f'(t)\right)^2+\left(g'(t)\right)^2}}\begin{pmatrix}f'(t)\\ g'(t)\end{pmatrix}
+$$
+
+is a unit tangent vector of $\mathcal{C}$ at $(x(t),y(t))$.
+::::::
+
+::::{admonition} Proof of {prf:ref}`Thm:SlopeCurves:Tangentvector`
+:class: tudproof, dropdown
+According to {prf:ref}`Thm:SlopeCurves:Param`, the slope of the tangent line at $(f(t),g(t))$ is $\dfrac{g'(t)}{f'(t)}$, provided $f'(t)\neq 0$. This means that a direction vector for this line is $\begin{pmatrix}f'(t)\\ g'(t)\end{pmatrix}$, which must mean that this vector is a tangent vector. If we divide this vector by its length, we obtain a vector with length $1$.
+
+If $f'(t)=0$, then the curve does not change in the $x$-direction, so the tangent line must be vertical. As such, the vector $\begin{pmatrix}f'(t)\\ g'(t)\end{pmatrix}=\begin{pmatrix}0\\ g'(t)\end{pmatrix}$ is a direction vector of this tangent line.
+::::
+
 
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Param
@@ -285,6 +318,20 @@ $$
  \left.\frac{dy}{dx}\right|_{(x,y)=(0,5)}=\frac{3e^{3\cdot 0}-8e^{-2\cdot 0}}{2e^{2\cdot 0}-e^0}=\frac{-5}{1}=-5.
 $$
 
+In addition, we find that the vector
+
+$$
+ \mathbf{r}'(t)=\begin{pmatrix}-5\\ 1\end{pmatrix}
+$$
+
+is a tangent vector to $\mathcal{C}$ at $(0,5)$, and that
+
+$$
+ \mathcal{T}(t)=\frac{1}{|\mathbf{r}'(t)|}\mathbf{r}'(t)=\begin{pmatrix}\frac{-5}{\sqrt{26}}\\ \frac{1}{\sqrt{26}}\end{pmatrix}
+$$
+
+is a unit tangent vector.
+
 :::{figure} Images/Fig-SlopeCurve-Param.png
 :name: Fig:SlopeCurve:Param
 
@@ -292,7 +339,7 @@ The curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}$ for $-1\le
 :::
 
 :::{todo}
-Replace {numref}`Fig:SlopeCurve:Param` with an applet. Make the point with the specified tangent line draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color.
+Replace {numref}`Fig:SlopeCurve:Param` with an applet. Make the point with the specified tangent line draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color. Also include the unit tangent vector.
 :::
 ::::::
 
@@ -323,3 +370,136 @@ Replace {numref}`Fig:SlopeCurve:ParamVert` with an applet. Make the point with t
 :::
 
 ::::::
+
+
+## Grasple exercises
+
+### Exercises on implicit differentiation
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/42c0cf96-2708-4d3c-9adc-35a13e3af9c6?id=63545
+:label: Grasple:63545
+:dropdown:
+:description: Find $\frac{dy}{dx}$ using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/344e4062-1e7c-4ecc-9d90-1ef2ea262e67?id=63540
+:label: Grasple:63540
+:dropdown:
+:description: Find $\frac{dy}{dx}$ using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/90f7561b-3c36-4ef5-853e-2f10cb7f5ebb?id=63553
+:label: Grasple:63553
+:dropdown:
+:description: Find $\frac{dx}{dy}$ using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/508a4c78-deda-406e-b98d-1b99224707ec?id=78670
+:label: Grasple:78670
+:dropdown:
+:description: Find $\frac{dx}{dy}$ using implicit differentiation for a special curve.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2256e591-0a07-49eb-b554-cd7b31f401d9?id=63705
+:label: Grasple:63705
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6f1effef-8138-4d33-a52f-459b5b8c90b1?id=63555
+:label: Grasple:63555
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6863f9b7-5c6d-461b-8bfc-91f3ff06c1ee?id=63703
+:label: Grasple:63703
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5f7a78b4-4431-411b-adac-99f33926d7e2?id=63554
+:label: Grasple:63554
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2fec89c1-fefd-457b-9748-4fb4b1b0471b?id=63541
+:label: Grasple:63541
+:dropdown:
+:description: Find a tangent line using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c4f11161-4e6f-4a36-a705-1bd4eaaa006f?id=63612
+:label: Grasple:63612
+:dropdown:
+:description: Find $\frac{dy}{dx}$ using implicit differentiation and find tangent lines.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/30d7d686-5961-44dd-80f8-5a8d21771d88?id=63548
+:label: Grasple:63548
+:dropdown:
+:description: Finding points where curve is horizontal/vertical.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0c946230-7c9a-44cb-9d19-e6e62ecc87bf?id=70903
+:label: Grasple:70903
+:dropdown:
+:description: Find $\frac{dx}{dy}$ and a special point on curve using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/00f1e1c1-4dab-40c3-9abf-c335d4f901ca?id=63546
+:label: Grasple:63546
+:dropdown:
+:description: Find $\frac{d^2y}{dx^2}$ using implicit differentiation.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/369dc541-0a75-4bc7-8790-aefeca644a6c?id=63544
+:label: Grasple:63544
+:dropdown:
+:description: Finding a normal line to a curve.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7165ae8c-b616-447a-b00d-209ab7172463?id=78762
+:label: Grasple:78762
+:dropdown:
+:description: Finding equation for function that intersects curve orthogonally.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8e476818-f913-4b4a-abb9-d8246980afdf?id=78682
+:label: Grasple:78682
+:dropdown:
+:description: Find an angle between two curves.
+::::

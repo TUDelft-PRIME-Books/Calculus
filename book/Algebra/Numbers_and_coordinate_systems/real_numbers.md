@@ -5,12 +5,223 @@
 In this section we cover
 
 - Start from natural numbers (includes $0$), integers, rational numbers, and and with real numbers
+- Arithmetic operations (addition, subtraction, multiplication and division)
 - Intervals
 - Set notation (union, intersection, difference)
 - Equations (including quadratic). Includes: completing the square
 - Absolute values
 - Inequalities (including quadratics and absolute values)
 - Linear systems of two variables (solving by "row" reduction, not by back substitution)
+
+(Sec:LongDivision)=
+## Long division
+
+In other math courses you may have encountered long division, which is a method for dividing two numbers. For instance, if we want to compute $\frac{96789}{231}$, we can do this by long division.
+
+Historically, long division is written differently within different parts of the worlds, sometimes it even differs in neighbouring countries. Because showing all different notations everywhere in this book would be a bit too much, we will introduce one single notation that joins the different notations together. The notation for long division of polynomials we use here is a combination of the various notations for long division in non-English speaking Europe and Asia, where we have chosen to use the slanted line for indicating a division, instead of a vertical line $|$, a division symbol $\div$ or a colon $:$, and the many vertical lines for indicating the separation between the calculations and the result. We also include a double underline for indicating the separation between the divisor and the result, which resembles an equal sign. You can use your own notation of course, but we will use this notation for long division in this book.
+
+Below we have performed the long division of $96789$ by $231$ and written it down using the notation used in several parts of the world[^disclaimer], followed by an explanation of the calculations and our notation. You can switch the tabs to see the different notations.
+
+[^disclaimer]: By no means this is an exhaustive list of all the notations for long division, but it should give you a good idea of how the different notations look like and how they relate to each other. More details on long division notation can be found at [Long division - Wikipedia](https://en.wikipedia.org/wiki/Long_division). 
+
+::::::{tab-set}
+
+:::::{tab-item} English
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\class{longdivision}{
+\begin{array}{rr}
+& \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+231  & \overline{\big)96789} \\
+& \underline{\class{tud-red}{924}}\phantom{00} \\
+& 438\phantom{0} \\
+& \underline{\class{tud-blue}{231}}\phantom{0} \\
+& 2079 \\
+& \underline{\class{tud-orange}{2079}} \\
+& 0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} Dutch
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\class{longdivision}{
+\begin{array}{rclcl}
+231 & \Big/ & 96789 & \Big\\ & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+& & \underline{\class{tud-red}{924}}\phantom{00} \\
+& & \phantom{0}438\phantom{0} \\
+& & \phantom{0}\underline{\class{tud-blue}{231}}\phantom{0} \\
+& & \phantom{0}2079 \\
+& & \phantom{0}\underline{\class{tud-orange}{2079}} \\
+& & \phantom{0000}0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} Latin American
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\hspace{-0.2em}\class{longdivision}{
+\begin{array}{rclcl}
+96789 & \,\div\, & 231 & \,=\, & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+\underline{\class{tud-red}{924}}\phantom{00} \\
+\phantom{0}438\phantom{0} \\
+\phantom{0}\underline{\class{tud-blue}{231}}\phantom{0} \\
+\phantom{0}2079 \\
+\phantom{0}\underline{\class{tud-orange}{2079}} \\
+\phantom{0000}0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} Eurasian
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\class{longdivision}{
+\begin{array}{rcl}
+96789 & | & \underline{231} \\
+-\underline{\class{tud-red}{924}}\phantom{00} & | & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+438\phantom{0} \\
+-\underline{\class{tud-blue}{231}}\phantom{0} \\
+2079 \\
+-\underline{\class{tud-orange}{2079}} \\
+0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} French & Cypriot 
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\class{longdivision}{
+\begin{array}{rcl}
+96789 & | & \underline{231} \\
+-\underline{\class{tud-red}{924}}\phantom{00} & | & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9}\\
+438\phantom{0} & | \\
+-\underline{\class{tud-blue}{231}}\phantom{0} & | \\
+2079 & | \\
+-\underline{\class{tud-orange}{2079}} & | \\
+0 & | \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} German
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\hspace{-0.5em}\class{longdivision}{
+\begin{array}{rclcl}
+96789 & \,:\, & 231 & \,=\, & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+-\underline{\class{tud-red}{924}}\phantom{00} \\
+\phantom{0}438\phantom{0} \\
+\phantom{0}-\underline{\class{tud-blue}{231}}\phantom{0} \\
+\phantom{0}2079 \\
+\phantom{0}-\underline{\class{tud-orange}{2079}} \\
+\phantom{0000}0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+::::::
+
+## Inequalities and absolute values
 
 ::::{prf:theorem} Triangle inequality for real numbers
 :label: thm:triangle_inequality_real_numbers
@@ -24,7 +235,6 @@ $$
 ::::::
 
 (Subsec:RealnumbersExp)=
-
 ## Exponentiation
 
 We know how to add, subtract, multipy and divide real numbers, but we can perform one more important arithmical operation: exponentiation. You have most likely seen before that by $2^{10}$ we mean

@@ -111,7 +111,7 @@ $$
 This function satisfies the initial condition $y(t_0)=y_0$. Now we define
 
 $$
-\phi_{n+1}(t)=y_0+\int_{t_0}^tf(s,\phi_n(s))\,ds,\quad n=0,1,2,\ldots.
+\phi_{n+1}(t)=y_0+\int_{t_0}^tf(s,\phi_n(s))\,ds,\quad n=0,1,2,\ldots
 $$
 
 Then every function in the sequence $\{\phi_n(t)\}_{n=0}^{\infty}$ satisfies the initial condition $y(t_0)=y_0$. The so-called *Lipschitz condition* $\partial f/\partial y$ implies that the sequence converges to a function $\phi(t)$ that satisfies both the differential equation and the initial condition.

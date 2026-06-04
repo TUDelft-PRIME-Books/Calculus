@@ -24,3 +24,7 @@ table caption span.caption-number::after{
   content: "\A";   /* newline */
   white-space: pre;   /* or pre-line */
 }
+
+.table {
+  margin: 0 0 1em !important;
+}

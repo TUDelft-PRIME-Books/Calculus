@@ -11,3 +11,12 @@ figcaption > p > span.caption-number::after{
 .admonition figcaption {
   clear: both;
 }
+
+/* Hide scrollbars for figures inside margins */
+@media (min-width: 992px) {
+  aside.margin,
+  div.margin,
+  figure.margin {
+    overflow: hidden !important;
+  }
+}

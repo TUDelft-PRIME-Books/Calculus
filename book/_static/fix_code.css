@@ -16,3 +16,8 @@
   max-height: none !important;
   overflow: visible !important;
 }
+
+/* Remove weird highlight color */
+.highlight {
+    background-color: unset !important;
+}

@@ -52,7 +52,7 @@ Using integration by parts we obtain
 \int_0^1x^n\ln(x)\,dx&=\int_0^1\frac{1}{n+1}\ln(x)\,dx^{n+1}\\
 &=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\,d\ln(x)\\
 &=0-\frac{1}{n+1}\int_0^1x^n\,dx=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
-&=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots.
+&=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots
 \end{align*}
 With $\displaystyle\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-x^2)^n$ for $|x|<1$ this implies that
 
@@ -240,7 +240,7 @@ Using integration by parts we find that
 \begin{align*}
 \int_0^1x^n\ln(x)\,dx&=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\cdot\frac{1}{x}\,dx\\
 &=0-\frac{1}{n+1}\int_0^1x^n\,dx=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
-&=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots.
+&=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots
 \end{align*}
 Now we use the series representation $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$ to find that
 
@@ -252,7 +252,7 @@ Furthermore using integration by parts we find that
 
 \begin{align*}
 \int_0^1x^n\left(\ln(x)\right)^2\,dx&=\frac{1}{n+1}x^{n+1}\left(\ln(x)\right)^2\bigg|_0^1-\frac{2}{n+1}\int_0^1x^{n+1}\ln(x)\cdot\frac{1}{x}\,dx\\
-&=0-\frac{2}{n+1}\int_0^1x^n\ln(x)\,dx=\frac{2}{(n+1)^3},\quad n=0,1,2,\ldots.
+&=0-\frac{2}{n+1}\int_0^1x^n\ln(x)\,dx=\frac{2}{(n+1)^3},\quad n=0,1,2,\ldots
 \end{align*}
 Again we use the series representation $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$ to find that
 

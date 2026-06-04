@@ -6,3 +6,7 @@ In this section we cover:
 - Parametrization of curves
 - Orientation of curves
 - Closed curves
+- Curvature
+- Normal/binormal vector
+- Torsion
+- Fresnet-Serret formulas

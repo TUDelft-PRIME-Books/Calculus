@@ -537,7 +537,7 @@ This implies that
 \begin{align*}
 \int_0^{0.5}\frac{x^2}{1+x^8}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n(0.5)^{8n+3}}{8n+3} - \sum_{n=0}^{\infty}\frac{(-1)^n(0)^{8n+3}}{8n+3}\\
 &=\frac{(0.5)^3}{3}-\frac{(0.5)^{11}}{11}+\frac{(0.5)^{19}}{19}-\frac{(0.5)^{27}}{27}+\cdots\\
-&\approx\frac{(0.5)^3}{3}=0.041666\ldots.
+&\approx\frac{(0.5)^3}{3}=0.041666\ldots
 \end{align*}
 ::::::
 
