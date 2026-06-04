@@ -176,10 +176,14 @@ We show that the sum $S$ of the first $n$ positive integers equals $\frac{1}{2}n
 
 Let $S=\displaystyle\sum_{k=1}^nk$, then we have:
 
-\begin{align*}
-S&=1&+2&+\cdots&+(n-1)&+n\\
-S&=n&+(n-1)&+\cdots&+2&+1.
-\end{align*}
+$$
+\class{compact}{
+\begin{array}{ccccccccccc}
+S & = & 1 & + &     2 & + & \cdots & + & (n-1) & + & n \\
+S & = & n & + & (n-1) & + & \cdots & + &     2 & + & 1.
+\end{array}
+}
+$$
 
 Adding the two expressions we obtain
 
@@ -450,10 +454,14 @@ Let $S=\displaystyle\sum_{k=1}^nar^{k-1}=a+ar+ar^2+\cdots+ar^{n-1}$ with $r\neq1
 
 Then we have:
 
-\begin{align*}
-S&=a&+ar&+ar^2&+\cdots&+ar^{n-2}&+ar^{n-1}&\\
-rS&=&ar&+ar^2&+\cdots&+ar^{n-2}&+ar^{n-1}&+ar^n.
-\end{align*}
+$$
+\class{compact}{
+\begin{array}{lllllllllllllllllllll}
+ S & = & a & + & ar & + & ar^2 & + & \cdots & + & ar^{n-2} & + & ar^{n-1} \\
+rS & = &   &   & ar & + & ar^2 & + & \cdots & + & ar^{n-2} & + & ar^{n-1} & + & ar^n.
+\end{array}
+}
+$$
 
 Subtracting the two equations we obtain
 
