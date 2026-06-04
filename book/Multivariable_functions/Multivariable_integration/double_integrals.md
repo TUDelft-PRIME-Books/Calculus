@@ -1,3 +1,5 @@
+(Sec:MultivariableIntegration:DoubleIntegrals)=
+
 # Double integrals
 
 In this section we cover:
@@ -181,7 +183,7 @@ $$
 
 ## Average value
 
-The average value of a function $f$ of one variable defined on an interval $[a,b]$ is
+In {prf:ref}`Thm:Integration:MeanValueTheorem` we have seen that the average value of a function $f$ of one variable defined on an interval $[a,b]$ is
 
 $$
 \frac{1}{b-a}\int_a^bf(x)\,dx.
@@ -192,6 +194,24 @@ Similarly, we have: the average value of a function $f$ of two variables defined
 $$
 \frac{1}{\text{area}(R)}\iint\limits_Rf(x,y)\,dA.
 $$
+
+:::{prf:example}
+:label: Ex:MultipleIntegration:DoubleIntegralsAverageValue
+
+Consider a metal plate $D=[0,2]\times[0,1]$, where the temperature $T$ (in ${}^{\circ}\text{C}$) in each point $(x,y)\in D$ is given by $T(x,y)=10+3x+2y$. Then we have: $\text{area}(D)=2\cdot1=2$ and
+
+\begin{align*}
+\iint_D\left(10+3x+2y\right)\,dA&=\int_0^2\int_0^1\left(10+3x+2y\right)\,dy\,dx\\
+&=\int_0^2\bigg[10y+3xy+y^2\bigg]_{y=0}^1\\
+&=\int_0^2\left(10+3x+1\right)\,dx\\
+&=\bigg[11x+\frac{3}{2}x^2\bigg]_{x=0}^2\\
+&=22+6\\
+&=28.
+\end{align*}
+
+Hence, the average temperature in $D$ equals $\dfrac{28}{2}=14^{\circ}\text{C}$.
+
+:::
 
 ## Catalan's constant
 
@@ -273,7 +293,7 @@ align: right
 The graph of $F$.
 ```
 
-## $x$-simple regions
+### $x$-simple regions
 
 A region $D$ in $\mathbb{R}^2$ is called **$x$-simple** if it lies between the graphs of two continuous functions of $x$, that is:
 
@@ -331,7 +351,7 @@ $$
 \iint\limits_Df(x,y)\,dA=\int_a^b\int_{g_1(x)}^{g_2(x)}f(x,y)\,dy\,dx.
 $$ 
 
-## $y$-simple regions
+### $y$-simple regions
 
 ```{figure} Images/region2a.png
 ---
@@ -371,7 +391,7 @@ $$
 \iint\limits_Df(x,y)\,dA=\int_c^d\int_{h_1(y)}^{h_2(y)}f(x,y)\,dx\,dy.
 $$
 
-## More general regions
+### More general regions
 
 ```{figure} Images/region3a.png
 ---
@@ -662,3 +682,170 @@ Q=\iint\limits_D\sigma(x,y)\,dA
 $$
 
 denotes the **total charge** over the region $D$.
+
+During the proof of the Gaussian integral (see: {prf:ref}`Ex:MultivariableIntegration:GaussianIntegral`) we already saw that improper double integrals can be treated in the same way as single integrals. Here we will consider some examples of single integrals, which can be evaluated more easily by first converting them into multiple integrals.
+
+:::::{prf:example} The Dirichlet integral
+:label: Ex:MultivariableIntegration:DirichletIntegral
+
+Using the Feynman method (see: {numref}`Sec:Integration:FeynmanMethod`) we have already shown that $\displaystyle\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\frac{1}{2}\pi$. This can also be done through double integrals as follows: note that $\displaystyle\frac{\sin(x)}{x}=\int_0^1\cos(xy)\,dy$ for $x>0$. Then we have using (see: {numref}`Sec:Integration:Parts`)
+
+$$
+\int_0^{\infty}e^{-\alpha x}\cos(xy)\,dx=\frac{\alpha}{\alpha^2+y^2}
+$$
+
+and integration by parts:
+
+\begin{align*}
+\int_0^{\infty}e^{-\alpha x}\frac{\sin(x)}{x}\,dx&=\int_0^{\infty}e^{-\alpha x}\int_0^1\cos(xy)\,dy\,dx\\
+&=\int_0^1\int_0^{\infty}e^{-\alpha x}\cos(xy)\,dx\,dy\\
+&=\int_0^1\frac{\alpha}{\alpha^2+y^2}\,dy\\
+&=\arctan\left(\frac{y}{\alpha}\right)\bigg|_0^1\\
+&=\arctan\left(\frac{1}{\alpha}\right),\quad\alpha>0.
+\end{align*} 
+ 
+Finally we have: 
+
+$$
+\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\lim\limits_{\alpha\downarrow0}\int_0^{\infty}e^{-\alpha x}\frac{\sin(x)}{x}\,dx
+=\lim\limits_{\alpha\downarrow0}\arctan\left(\frac{1}{\alpha}\right)=\frac{1}{2}\pi.
+$$
+
+Note that for $\alpha=1$ we obtain: $\displaystyle\int_0^{\infty}\frac{e^{-x}\sin(x)}{x}\,dx=\frac{1}{4}\pi$.
+
+:::::
+
+:::::{prf:example}
+:label: Ex:MultivariableIntegration:DoubleIntegralsExample1
+
+Note that $\displaystyle\frac{\partial}{\partial y}\left(\frac{\arctan(xy)}{x}\right)=\frac{1}{1+x^2y^2}$. Then we have for $0<\alpha<\beta$:
+
+\begin{align*}
+\int_0^{\infty}\frac{\arctan(\beta x)-\arctan(\alpha x)}{x}\,dx&=\int_0^{\infty}\int_{\alpha}^{\beta}\frac{1}{1+x^2y^2}\,dy\,dx\\
+&=\int_{\alpha}^{\beta}\int_0^{\infty}\frac{1}{1+x^2y^2}\,dx\,dy\\
+&=\int_{\alpha}^{\beta}\left[\frac{\arctan(xy)}{y}\right]_{x=0}^{\infty}\,dy\\
+&=\frac{1}{2}\pi\int_{\alpha}^{\beta}\frac{1}{y}\,dy\\
+&=\frac{1}{2}\pi\left(\ln(\beta)-\ln(\alpha)\right).
+\end{align*} 
+
+:::::
+
+:::::{prf:example}
+:label: Ex:MultivariableIntegration:DoubleIntegralsExample2
+
+Using $\displaystyle\frac{\partial}{\partial y}\left(\frac{e^{-xy}}{x}\right)=-e^{-xy}$ and integration by parts we obtain for $0<\alpha<\beta$:
+
+\begin{align*}
+\int_0^{\infty}\frac{(e^{-\alpha x}-e^{-\beta x})\sin(x)}{x}\,dx&=\int_0^{\infty}\sin(x)\int_{\alpha}^{\beta}e^{-xy}\,dy\,dx\\
+&=\int_{\alpha}^{\beta}\int_0^{\infty}e^{-xy}\sin(x)\,dx\,dy\\
+&=\int_{\alpha}^{\beta}\frac{1}{1+y^2}\,dy\\
+&=\arctan(\beta)-\arctan(\alpha)
+\end{align*} 
+ 
+and
+
+\begin{align*}
+\int_0^{\infty}\frac{(e^{-\alpha x}-e^{-\beta x})\cos(x)}{x}\,dx&=\int_0^{\infty}\cos(x)\int_{\alpha}^{\beta}e^{-xy}\,dy\,dx\\
+&=\int_{\alpha}^{\beta}\int_0^{\infty}e^{-xy}\cos(x)\,dx\,dy\\
+&=\int_{\alpha}^{\beta}\frac{y}{1+y^2}\,dy\\
+&=\frac{1}{2}\ln(1+\beta^2)-\frac{1}{2}\ln(1+\alpha^2).
+\end{align*}
+
+:::::
+
+:::::{prf:example}
+:label: Ex:MultivariableIntegration:DoubleIntegralsExample3
+
+Finally, we consider the integral $\displaystyle\int_0^{\frac{1}{2}\pi}\ln\left(1+\alpha\cos^2(x)\right)\,dx$ for $\alpha>0$. Since $\displaystyle\frac{\partial}{\partial y}\ln\left(1+y\cos^2(x)\right)=\frac{\cos^2(x)}{1+y\cos^2(x)}$ we find for $\alpha>0$ 
+
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\ln\left(1+\alpha\cos^2(x)\right)\,dx&=\int_0^{\frac{1}{2}\pi}\int_0^{\alpha}\frac{\cos^2(x)}{1+y\cos^2(x)}\,dy\,dx\\
+&=\int_0^{\alpha}\int_0^{\frac{1}{2}\pi}\frac{\cos^2(x)}{1+y\cos^2(x)}\,dx\,dy. 
+\end{align*} 
+ 
+Now we use that $\displaystyle\frac{1}{\cos^2(x)}=\frac{\sin^2(x)+\cos^2(x)}{\cos^2(x)}=1+\tan^2(x)$ and find that
+
+$$
+\int_0^{\frac{1}{2}\pi}\frac{\cos^2(x)}{1+y\cos^2(x)}\,dx=\int_0^{\frac{1}{2}\pi}\frac{1}{1+y+\tan^2(x)}\,dx.
+$$
+
+Now we use the substitution $x=\arctan(t)$ and therefore $dx=\dfrac{1}{1+t^2}\,dt$ to obtain
+
+$$
+\int_0^{\frac{1}{2}\pi}\frac{1}{1+y+\tan^2(x)}\,dx=\int_0^{\infty}\frac{dt}{(1+y+t^2)(1+t^2)}. 
+$$
+ 
+Using partial fractions we now obtain for $y>0$
+
+\begin{align*}
+&\int_0^{\infty}\frac{dt}{(1+y+t^2)(1+t^2)}\\
+&{}\hspace{10mm}{}=\frac{1}{y}\int_0^{\infty}\left(\frac{1}{1+t^2}-\frac{1}{1+y+t^2}\right)\,dt\\
+&{}\hspace{10mm}{}=\frac{1}{y}\left[\arctan(t)-\frac{1}{\sqrt{1+y}}\arctan\left(\frac{t}{\sqrt{1+y}}\right)\right]_{t=0}^{\infty}\\
+&{}\hspace{10mm}{}=\frac{1}{2}\pi\cdot\frac{1}{y}\left(1-\frac{1}{\sqrt{1+y}}\right).
+\end{align*} 
+ 
+Now we use the substitution $\sqrt{1+y}=t$ or $y=t^2-1$ and obtain that
+
+\begin{align*}
+\int_0^{\alpha}\frac{1}{y}\left(1-\frac{1}{\sqrt{1+y}}\right)\,dy&=\int_1^{\sqrt{1+\alpha}}\frac{1}{t^2-1}\left(1-\frac{1}{t}\right)2t\,dt\\
+&=2\int_0^{\sqrt{1+\alpha}}\frac{dt}{1+t}\\
+&=2\ln\left(\frac{1+\sqrt{1+\alpha}}{2}\right).
+\end{align*} 
+ 
+Hence: $\displaystyle\int_0^{\frac{1}{2}\pi}\ln\left(1+\alpha\cos^2(x)\right)\,dx=\pi\ln\left(\frac{1+\sqrt{1+\alpha}}{2}\right)$ for $\alpha>0$.
+
+:::::
+
+## Exercises
+
+```{exercise} 
+:label: Exc:MultivariableIntegration:DoubleIntegralsExercise1
+
+a) Use the fact that (see: {numref}`Sec:Integration:Parts`)
+
+$$
+\int_0^{\infty}e^{-\alpha x}\sin(xy)\,dx=\frac{y}{\alpha^2+y^2}
+$$
+
+and $\displaystyle\int_0^1\sin(xy)\,dy=\frac{1-\cos(x)}{x}$ to evaluate $\displaystyle\int_0^{\infty}e^{-\alpha x}\frac{1-\cos(x)}{x}\,dx$ for $\alpha>0$.
+
+b) Find $\displaystyle\int_0^{\infty}\frac{e^{-x}(1-\cos(x))}{x}\,dx$.
+```
+
+:::{admonition} Solution of {numref}`Exc:MultivariableIntegration:DoubleIntegralsExercise1`
+:class: solution, dropdown
+
+a) For $\alpha>0$ we have
+
+\begin{align*}
+\int_0^{\infty}e^{-\alpha x}\frac{1-\cos(x)}{x}\,dx&=\int_0^{\infty}e^{-\alpha x}\int_0^1\sin(xy)\,dy\,dx\\
+&=\int_0^1\int_0^{\infty}e^{-\alpha x}\sin(xy)\,dx\,dy\\
+&=\int_0^1\frac{y}{\alpha^2+y^2}\,dy\\
+&=\frac{1}{2}\ln(\alpha^2+y^2)\bigg|_0^1\\
+&=\frac{1}{2}\ln(\alpha^2+1)-\ln(\alpha).
+\end{align*} 
+ 
+b) The special case $\alpha=1$ reads $\displaystyle\int_0^{\infty}\frac{e^{-x}(1-\cos(x))}{x}\,dx=\frac{1}{2}\ln(2)$.
+
+:::
+
+```{exercise} 
+:label: Exc:MultivariableIntegration:DoubleIntegralsExercise2
+
+Use the fact that $\displaystyle\frac{\partial}{\partial y}\left(\frac{e^{-xy}}{x}\right)=-e^{-xy}$ to evaluate $\displaystyle\int_0^{\infty}\frac{e^{-\alpha x}-e^{-\beta x}}{x}\,dx$ for $0<\alpha<\beta$.
+
+```
+
+:::{admonition} Solution of {numref}`Exc:MultivariableIntegration:DoubleIntegralsExercise2`
+:class: solution, dropdown
+
+Since $\displaystyle\frac{\partial}{\partial y}\left(\frac{e^{-xy}}{x}\right)=-e^{-xy}$, we obtain for $0<\alpha<\beta$:
+
+\begin{align*}
+\int_0^{\infty}\frac{e^{-\alpha x}-e^{-\beta x}}{x}\,dx&=\int_0^{\infty}\int_{\alpha}^{\beta}e^{-xy}\,dy\,dx\\
+&=\int_{\alpha}^{\beta}\int_0^{\infty}e^{-xy}\,dx\,dy\\
+&=\int_{\alpha}^{\beta}\left[-\frac{e^{-xy}}{y}\right]_{x=0}^{\infty}\,dy\\
+&=\int_{\alpha}^{\beta}\frac{1}{y}\,dy=\ln(\beta)-\ln(\alpha).
+\end{align*}
+
+:::

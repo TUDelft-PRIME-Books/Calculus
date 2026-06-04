@@ -462,7 +462,7 @@ $$
 with $F_1=F_2=1$. The numbers that appear in the Fibonacci sequence are called **Fibonacci numbers**.
 ::::::
 
-The Fibonacci numbers are named after [Fibonacci or Leonardo of Pisa (c. 1170 – c. 1240–50)](https://en.wikipedia.org/wiki/Fibonacci). The first few Fibonacci numbers are:
+The Fibonacci numbers are named after the Italian mathematician [Fibonacci or Leonardo of Pisa (c. 1170 – c. 1240–50)](https://en.wikipedia.org/wiki/Fibonacci). The first few Fibonacci numbers are:
 
 $$
 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \ldots
@@ -476,10 +476,31 @@ Some books define the Fibonacci sequence by $F_{n+2}=F_n+F_{n+1}$ for $n=0,1,2,\
 This results in _nearly_ the same sequence, but with an extra $0$ at the beginning.
 ::::::
 
+We now look at the summation of the first $n$ terms of the Fibonacci sequence to introduce the concept of a telescoping sum:
+
+::::{prf:example}
+:label: Ex:Series:FibonacciTelescoping
+
+The Fibonacci sequence $\{F_n\}_{n=1}^{\infty}$ is defined by $F_{n+2}=F_n+F_{n+1}$ for $n=1,2,3,\ldots$ with $F_1=F_2=1$. Note that this also implies that $F_k=F_{k+2}-F_{k+1}$ for all $k\in\{1,2,3,\ldots\}$.
+
+If we only consider the _finite_ sequence $\{F_k\}_{k=1}^n$, then we can find the sum of the related finite sum $\displaystyle\sum_{k=1}^nF_k$ as follows:
+
+:::{math}
+:label: Eq:Series:FibonacciTelescoping
+\begin{align*}
+\sum_{k=1}^nF_k&=\sum_{k=1}^n\left(F_{k+2}-F_{k+1}\right)\\
+&=F_{n+2}-\cancel{F_{n+1}}+\cancel{F_{n+1}}-\cancel{F_n}+\cdots+\cancel{F_4}-\cancel{F_3}+\cancel{F_3}-F_2\\
+&=F_{n+2}-2.
+\end{align*}
+:::
+
+So the sum of the first $n$ terms of the Fibonacci sequence equals $F_{n+2}-2$. Note that in the second line of Equation {eq}`Eq:Series:FibonacciTelescoping` we have _cancelled_ many terms because those terms appear twice with opposite signs.
+
+::::
 
 As you may have noticed, the Fibonacci sequence is defined by a recursive formula. So what could the explicit formula for the $n$th Fibonacci number be, if it even exists?
 
-Amongst many others, [Jacques Philippe Marie Binet](https://en.wikipedia.org/wiki/Jacques_Philippe_Marie_Binet) asked the same question and came up with a formula commonly known as Binet's formula:
+Amongst many others, the French mathematician [Jacques Philippe Marie Binet](https://en.wikipedia.org/wiki/Jacques_Philippe_Marie_Binet) asked the same question and came up with a formula commonly known as Binet's formula:
 
 ::::{prf:theorem} Binet's formula
 :label: Thm:SeqAndTypes:BinetFormula
@@ -781,6 +802,24 @@ to obtain
 \lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}&=\lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n}
 =\lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}\\
 &=\frac{\varphi+0}{1+0}=\varphi.
+\end{align*}
+:::
+
+::::{exercise}
+:label: Exc:Sequences:LucasTelescoping
+The Lucas sequence $\{L_n\}_{n=1}^{\infty}$ is defined by $L_{n+2}=L_n+L_{n+1}$ for $n=1,2,3,\ldots$ with $L_1=1$ and $L_2=3$.
+
+Simplify $\displaystyle\sum_{k=1}^nL_k$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Sequences:LucasTelescoping`
+:class: solution, dropdown
+Again we use the *telescoping property* to find
+
+\begin{align*}
+\sum_{k=1}^nL_k&=\sum_{n=1}^n\left(L_{k+2}-L_{k+1}\right)\\
+&=L_{n+2}-\cancel{L_{n+1}}+\cancel{L_{n+1}}-\cancel{L_n}+\ldots+\cancel{L_4}-\cancel{L_3}+\cancel{L_3}-L_2\\
+&=L_{n+2}-3.
 \end{align*}
 :::
 
