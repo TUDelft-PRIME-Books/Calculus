@@ -184,12 +184,12 @@ $$
 \class{longdivision}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
-\phantom{\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4}} & \phantom{|} & \overline{\phantom{x^3-2x^2-x+2}}    \\
+\phantom{\underline{x^4-2x^3}\phantom{+3x^2+4x-4}} & \phantom{|} & \ooline{\phantom{x^3-2x^2-x+2}}    \\
 \end{array}
 }
 $$
 
-In between the denominator and the numerator we have a slanted line which indicates that we are performing a division. On the right we have a horizontal line below the denominator, which will separate the result of the long division (which we will write also on the right) from the denominator. We will write the result of the long division on the right as we go along. See {numref}`Sec:LongDivision` for more details on the notation of long division.
+In between the denominator and the numerator we have a slanted line which indicates that we are performing a division. On the right we have a double horizontal line below the denominator, which will separate the result of the long division (which we will write also on the right) from the denominator. We will write the result of the long division on the right as we go along. See {numref}`Sec:LongDivision` for more details on the notation of long division.
 
 Now we consider by what monomial $ax^n$ we should multiply the polynomial at the top on the right in order to match the highest order term of the polynomial on the left. In this case we find it should be $x^3$. We multiply $x^3$ by $x-2$ and subtract the obtained polynomial from the polynomial in the middle as indicated. We write the monomial we had to multiply with on the right below on the second line.
 
@@ -197,7 +197,7 @@ $$
 \class{longdivision}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
-\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \overline{x^3\phantom{-2x^2-x+2}}    \\
+\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \ooline{x^3\phantom{-2x^2-x+2}}    \\
 \phantom{x^4}-2x^3+3x^2+4x-4 & | & \\
 \end{array}
 }
@@ -210,9 +210,9 @@ $$
 \class{longdivision}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
-\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \overline{x^3-2x^2\phantom{-x+2}}    \\
+\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \ooline{x^3-2x^2\phantom{-x+2}}    \\
 \phantom{x^4}-2x^3+3x^2+4x-4 & | & \\
-\phantom{x^4}\dropsign{-}\kern1pt\underline{\,-\,2x^3+4x^2} & | &  \\
+\phantom{x^4}\kern1pt\underline{\,-\,2x^3+4x^2} & | &  \\
 \phantom{x^4-2x^34}-x^2+4x-4 & | & \\
 \end{array}
 }
@@ -224,11 +224,11 @@ $$
 \class{longdivision}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
-\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \overline{x^3-2x^2-x\phantom{+2}}    \\
+\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \ooline{x^3-2x^2-x\phantom{+2}}    \\
 \phantom{x^4}-2x^3+3x^2+4x-4 & | & \\
-\phantom{x^4}\dropsign{-}\kern1pt\underline{\,-\,2x^3+4x^2} & | &  \\
+\phantom{x^4}\kern1pt\underline{\,-\,2x^3+4x^2} & | &  \\
 \phantom{x^4-2x^34}-x^2+4x-4 & | & \\
-\phantom{x^4-2x^32}\dropsign{-}\kern1pt\underline{\,-\,x^2+2x} & | & \\
+\phantom{x^4-2x^32}\kern1pt\underline{\,-\,x^2+2x} & | & \\
 \phantom{x^4-2x^32-x^2\,+}\kern2pt2x-4 & | & \\
 \end{array}
 }
@@ -240,13 +240,13 @@ $$
 \class{longdivision}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
-\dropsign{-}\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \overline{x^3-2x^2-x+2}    \\
+\underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \ooline{x^3-2x^2-x+2}    \\
 \phantom{x^4}-2x^3+3x^2+4x-4 & | & \\
-\phantom{x^4}\dropsign{-}\kern1pt\underline{\,-\,2x^3+4x^2} & | &  \\
+\phantom{x^4}\kern1pt\underline{\,-\,2x^3+4x^2} & | &  \\
 \phantom{x^4-2x^34}-x^2+4x-4 & | & \\
-\phantom{x^4-2x^32}\dropsign{-}\kern1pt\underline{\,-\,x^2+2x} & | & \\
+\phantom{x^4-2x^32}\kern1pt\underline{\,-\,x^2+2x} & | & \\
 \phantom{x^4-2x^32-x^2\,+}\kern2pt2x-4 & | & \\
-\phantom{x^4-2x^32-x^2\,+}\kern2pt\dropsign{-}\underline{2x-4} & | & \\
+\phantom{x^4-2x^32-x^2\,+}\kern2pt\underline{2x-4} & | & \\
 \phantom{x^4-2x^32-x^2\,+\kern2pt2x-}0 & | & \\
 \end{array}
 }
@@ -285,12 +285,12 @@ $$
 \frac{\frac{1}{2}x^3+x^2-\frac{23}{2}x-24}{x^2-25}.
 $$
 
-In order to write this as a linear function plus a proper rational function we can apply long division. Again we put the denominator on the right and the numerator on the left with a slanted line in between and a horizontal line below the denominator.
+In order to write this as a linear function plus a proper rational function we can apply long division. Again we put the denominator on the right and the numerator on the left with a slanted line in between and a double horizontal line below the denominator.
 
 $$
 \class{longdivision}{
 \begin{array}{lcl}
-\frac12x^3+x^2-\frac{23}{2}x-24 & / & \underline{x^2-25}
+\frac12x^3+x^2-\frac{23}{2}x-24 & / & \uuline{x^2-25}
 \end{array}
 }
 $$
@@ -300,8 +300,8 @@ This time the first monomial on the right in the second line should be $\frac{1}
 $$
 \class{longdivision}{
 \begin{array}{lcl}
-\frac12x^3+x^2-\frac{23}{2}x-24 & / & \underline{x^2-25} \\
-\dropsign{-}\underline{\frac12x^3\phantom{+x^2\,\,}\kern1pt-\frac{25}{2}x} & | & \frac12x    \\
+\frac12x^3+x^2-\frac{23}{2}x-24 & / & \uuline{x^2-25} \\
+\underline{\frac12x^3\phantom{+x^2\,\,}\kern1pt-\frac{25}{2}x} & | & \frac12x    \\
 \phantom{\frac12+x^3}x^2\phantom{\frac{25}{2}}+x-24 & | & \\
 \end{array}
 }
@@ -312,10 +312,10 @@ Then we proceed with the monomial $+1$. After this the remainder is lower in deg
 $$
 \class{longdivision}{
 \begin{array}{lcl}
-\frac12x^3+x^2-\frac{23}{2}x-24 & / & \underline{x^2-25} \\
-\dropsign{-}\underline{\frac12x^3\phantom{+x^2\,\,}\kern1pt-\frac{25}{2}x} & | & \frac12x+1    \\
+\frac12x^3+x^2-\frac{23}{2}x-24 & / & \uuline{x^2-25} \\
+\underline{\frac12x^3\phantom{+x^2\,\,}\kern1pt-\frac{25}{2}x} & | & \frac12x+1    \\
 \phantom{\frac12+x^3}x^2\phantom{\frac{25}{2}}+x-24 & | & \\
-\phantom{2+x^3\kern1pt}\dropsign{-}\kern2pt\underline{x^2\phantom{25+x}\kern1pt-25} & | &  \\
+\phantom{2+x^3\kern1pt}\kern2pt\underline{x^2\phantom{25+x}\kern1pt-25} & | &  \\
 \phantom{2+x^3+x^22}\kern10pt x\kern5pt +1 & | &  \\
 \end{array}
 }
@@ -343,10 +343,10 @@ The long division results in
 $$
 \class{longdivision}{
 \begin{array}{lcl}
-2x^5-3x^3+\phantom{2}x^2+2x-1 & / & \underline{x^3-2x+1} \\
-\dropsign{-}\underline{2x^5-4x^3+2x^2} & | & 2x^2+1    \\
+2x^5-3x^3+\phantom{2}x^2+2x-1 & / & \uuline{x^3-2x+1} \\
+\underline{2x^5-4x^3+2x^2} & | & 2x^2+1    \\
 \phantom{2x^5-4}x^3-\phantom{2}x^2+2x-1 & | & \\
-\phantom{2x^5-4}\dropsign{-}\underline{x^3\phantom{-2x^2}\kern5pt-2x+1} & | &  \\
+\phantom{2x^5-4}\underline{x^3\phantom{-2x^2}\kern5pt-2x+1} & | &  \\
 \phantom{2x^5-4x^32}-x^2+4x-2 & | &  \\
 \end{array}
 }
