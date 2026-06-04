@@ -116,7 +116,7 @@ A **recursive formula for a sequence** $\{a_n\}_{n=p}^{q}$ is a formula that giv
 The sequence of the first $q$ positive integers $1,2,3,4,5,\ldots,q$ can be defined by the recursive formula
 
 $$
-a_1=1,\quad a_{n+1}=a_n+1\quad\text{for}\quad n=1,2,3,\ldots.
+a_1=1,\quad a_{n+1}=a_n+1\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::
