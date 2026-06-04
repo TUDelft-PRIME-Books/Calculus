@@ -571,7 +571,7 @@ Applying integration by parts once more, we find that
 So, if we define $I_n=\displaystyle\int x^n\cos(x)\,dx$, then we have: 
 
 $$
-I_n=x^n\sin(x)+nx^{n-1}\cos(x)-n(n-1)I_{n-2},\quad n=2,3,4,\ldots.
+I_n=x^n\sin(x)+nx^{n-1}\cos(x)-n(n-1)I_{n-2},\quad n=2,3,4,\ldots
 $$
 
 Furthermore, we have $I_0=\displaystyle\int\cos(x)\,dx=\sin(x)+C_0$ and in {prf:ref}`Ex:Integration:PartsPowerCos` we found that $I_1=\displaystyle\int x\cos(x)\,dx=x\sin(x)+\cos(x)+C_1$. This leads to
@@ -882,7 +882,7 @@ $$
 Define $I_n=\displaystyle\int x^ne^{-x}\,dx$, then we have
 
 $$
-I_n=-x^ne^{-x}+nI_{n-1},\quad n=1,2,3,\ldots.
+I_n=-x^ne^{-x}+nI_{n-1},\quad n=1,2,3,\ldots
 $$
 
 Furthermore, we have $I_0=\displaystyle\int e^{-x}\,dx=-e^{-x}+C_0$.
@@ -905,7 +905,7 @@ Find a reduction formula for $\displaystyle\int x^n\sin(x)\,dx$.
 Define $I_n=\displaystyle\int x^n\sin(x)\,dx$, then we have
 
 $$
-I_n=-x^n\cos(x)+nx^{n-1}\sin(x)-n(n-1)I_{n-2},\quad n=2,3,4,\ldots.
+I_n=-x^n\cos(x)+nx^{n-1}\sin(x)-n(n-1)I_{n-2},\quad n=2,3,4,\ldots
 $$
 
 Furthermore, we have $I_0=\displaystyle\int\sin(x)\,dx=-\cos(x)+C_0$ and

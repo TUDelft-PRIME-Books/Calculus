@@ -14,7 +14,7 @@ As you can see, these numbers are ordered, and even contain a pattern: each numb
 
 ::::{math}
 :label: Eq:SeqAndTypes:PositiveIntegersList
-1,2,3,4,5,6,7,8,9,10,\ldots.
+1,2,3,4,5,6,7,8,9,10,\ldots
 ::::
 
 Now consider the next five numbers:
@@ -30,7 +30,7 @@ Each number is the reciprocal of a perfect square[^perfect-squares]. We can cont
 
 ::::{math}
 :label: Eq:SeqAndTypes:ReciprocalPerfectSquaresList
-1,\frac{1}{4},\frac{1}{9},\frac{1}{16},\frac{1}{25},\frac{1}{36},\frac{1}{49},\frac{1}{64},\frac{1}{81},\frac{1}{100},\ldots.
+1,\frac{1}{4},\frac{1}{9},\frac{1}{16},\frac{1}{25},\frac{1}{36},\frac{1}{49},\frac{1}{64},\frac{1}{81},\frac{1}{100},\ldots
 ::::
 
 The lists in Equations {eq}`Eq:SeqAndTypes:PositiveIntegersFiniteList`, {eq}`Eq:SeqAndTypes:PositiveIntegersList`, {eq}`Eq:SeqAndTypes:ReciprocalPerfectSquaresFiniteList` and {eq}`Eq:SeqAndTypes:ReciprocalPerfectSquaresList` are _all_ examples of **sequences**. In the next sections we will give a precise definition of what sequences are, how you can represent them, and we will give some types of common sequences. We end with showing some famous sequences. 
@@ -190,13 +190,13 @@ Let $\{a_n\}_{n=p}^{\infty}$ be an arithmetic sequence with common difference $d
 Then the sequence can be defined by the *explicit formula*
 
 $$
-a_n=b+(n-1)d\quad\text{for}\quad n=p,p+1,p+2,\ldots.
+a_n=b+(n-1)d\quad\text{for}\quad n=p,p+1,p+2,\ldots
 $$
 
 It can also be defined by the *recursive formula* $a_p=b$ and
 
 $$
-a_{n+1}=a_n+d\quad\text{for}\quad n=p,p+1,p+2,\ldots.
+a_{n+1}=a_n+d\quad\text{for}\quad n=p,p+1,p+2,\ldots
 $$
 
 ::::::
@@ -215,7 +215,7 @@ $$
 and the recursive formula is $a_1=1$ and
 
 $$
-a_{n+1}=a_n+1\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=a_n+1\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -234,7 +234,7 @@ $$
 and the recursive formula is $a_1=1$ and
 
 $$
-a_{n+1}=a_n+2\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=a_n+2\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -252,7 +252,7 @@ $$
 
 and the recursive formula is $a_1=3$ and
 $$
-a_{n+1}=a_n-2\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=a_n-2\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -278,7 +278,7 @@ $$
 and the recursive formula is $a_1=1$ and
 
 $$
-a_{n+1}=\frac{1}{\frac{1}{a_n}+1}\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=\frac{1}{\frac{1}{a_n}+1}\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -297,7 +297,7 @@ $$
 and the recursive formula is $a_1=1$ and
 
 $$
-a_{n+1}=\frac{1}{\frac{1}{a_n}+2}\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=\frac{1}{\frac{1}{a_n}+2}\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -316,7 +316,7 @@ $$
 and the recursive formula is $a_1=\frac{1}{3}$ and
 
 $$
-a_{n+1}=\frac{1}{\frac{1}{a_n}-2}\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=\frac{1}{\frac{1}{a_n}-2}\quad\text{for}\quad n=1,2,3,\ldots
 $$
 ::::
 
@@ -349,7 +349,7 @@ $$
 and recursive formula $a_1=1$ and
 
 $$
-a_{n+1}=2a_n\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=2a_n\quad\text{for}\quad n=1,2,3,\ldots
 $$
 ::::::
 
@@ -365,7 +365,7 @@ $$
 and recursive formula $a_1=1$ and
 
 $$
-a_{n+1}=\frac{1}{2}a_n\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=\frac{1}{2}a_n\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -382,7 +382,7 @@ $$
 and recursive formula $a_1=-1$ and
 
 $$
-a_{n+1}=-1\cdot a_n\quad\text{for}\quad n=1,2,3,\ldots.
+a_{n+1}=-1\cdot a_n\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
 ::::::
@@ -462,7 +462,7 @@ $$
 with $F_1=F_2=1$. The numbers that appear in the Fibonacci sequence are called **Fibonacci numbers**.
 ::::::
 
-The Fibonacci numbers are named after [Fibonacci or Leonardo of Pisa (c. 1170 – c. 1240–50)](https://en.wikipedia.org/wiki/Fibonacci). The first few Fibonacci numbers are:
+The Fibonacci numbers are named after the Italian mathematician [Fibonacci or Leonardo of Pisa (c. 1170 – c. 1240–50)](https://en.wikipedia.org/wiki/Fibonacci). The first few Fibonacci numbers are:
 
 $$
 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, \ldots
@@ -476,10 +476,31 @@ Some books define the Fibonacci sequence by $F_{n+2}=F_n+F_{n+1}$ for $n=0,1,2,\
 This results in _nearly_ the same sequence, but with an extra $0$ at the beginning.
 ::::::
 
+We now look at the summation of the first $n$ terms of the Fibonacci sequence to introduce the concept of a telescoping sum:
+
+::::{prf:example}
+:label: Ex:Series:FibonacciTelescoping
+
+The Fibonacci sequence $\{F_n\}_{n=1}^{\infty}$ is defined by $F_{n+2}=F_n+F_{n+1}$ for $n=1,2,3,\ldots$ with $F_1=F_2=1$. Note that this also implies that $F_k=F_{k+2}-F_{k+1}$ for all $k\in\{1,2,3,\ldots\}$.
+
+If we only consider the _finite_ sequence $\{F_k\}_{k=1}^n$, then we can find the sum of the related finite sum $\displaystyle\sum_{k=1}^nF_k$ as follows:
+
+:::{math}
+:label: Eq:Series:FibonacciTelescoping
+\begin{align*}
+\sum_{k=1}^nF_k&=\sum_{k=1}^n\left(F_{k+2}-F_{k+1}\right)\\
+&=F_{n+2}-\cancel{F_{n+1}}+\cancel{F_{n+1}}-\cancel{F_n}+\cdots+\cancel{F_4}-\cancel{F_3}+\cancel{F_3}-F_2\\
+&=F_{n+2}-2.
+\end{align*}
+:::
+
+So the sum of the first $n$ terms of the Fibonacci sequence equals $F_{n+2}-2$. Note that in the second line of Equation {eq}`Eq:Series:FibonacciTelescoping` we have _cancelled_ many terms because those terms appear twice with opposite signs.
+
+::::
 
 As you may have noticed, the Fibonacci sequence is defined by a recursive formula. So what could the explicit formula for the $n$th Fibonacci number be, if it even exists?
 
-Amongst many others, [Jacques Philippe Marie Binet](https://en.wikipedia.org/wiki/Jacques_Philippe_Marie_Binet) asked the same question and came up with a formula commonly known as Binet's formula:
+Amongst many others, the French mathematician [Jacques Philippe Marie Binet](https://en.wikipedia.org/wiki/Jacques_Philippe_Marie_Binet) asked the same question and came up with a formula commonly known as Binet's formula:
 
 ::::{prf:theorem} Binet's formula
 :label: Thm:SeqAndTypes:BinetFormula
@@ -740,7 +761,7 @@ Find a general formula for $L_n$ with $n=0,1,2,\ldots$ and show that $\displayst
 Since the Lucas numbers satisfy the same recurrence relation as the Fibonacci numbers, we have the same general solution
 
 $$
-L_n=c_1\left(\frac{1+\sqrt{5}}{2}\right)^n+c_2\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots.
+L_n=c_1\left(\frac{1+\sqrt{5}}{2}\right)^n+c_2\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots
 $$
 
 The initial values $L_0=2$ and $L_1=1$ imply that
@@ -760,13 +781,13 @@ which implies that $c_1=c_2=1$.
 Hence we have
 
 $$
-L_n=\left(\frac{1+\sqrt{5}}{2}\right)^n+\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots.
+L_n=\left(\frac{1+\sqrt{5}}{2}\right)^n+\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots
 $$
 
 Again using the *golden ratio* $\varphi=\displaystyle\frac{1+\sqrt{5}}{2}$ we have
 
 $$
-L_n=\varphi^n+(1-\varphi)^n,\quad n=0,1,2,\ldots.
+L_n=\varphi^n+(1-\varphi)^n,\quad n=0,1,2,\ldots
 $$
 
 Similarly as for the Fibonacci numbers we use that fact that 
@@ -781,6 +802,24 @@ to obtain
 \lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}&=\lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n}
 =\lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}\\
 &=\frac{\varphi+0}{1+0}=\varphi.
+\end{align*}
+:::
+
+::::{exercise}
+:label: Exc:Sequences:LucasTelescoping
+The Lucas sequence $\{L_n\}_{n=1}^{\infty}$ is defined by $L_{n+2}=L_n+L_{n+1}$ for $n=1,2,3,\ldots$ with $L_1=1$ and $L_2=3$.
+
+Simplify $\displaystyle\sum_{k=1}^nL_k$.
+::::
+
+:::{admonition} Solution of {numref}`Exc:Sequences:LucasTelescoping`
+:class: solution, dropdown
+Again we use the *telescoping property* to find
+
+\begin{align*}
+\sum_{k=1}^nL_k&=\sum_{n=1}^n\left(L_{k+2}-L_{k+1}\right)\\
+&=L_{n+2}-\cancel{L_{n+1}}+\cancel{L_{n+1}}-\cancel{L_n}+\ldots+\cancel{L_4}-\cancel{L_3}+\cancel{L_3}-L_2\\
+&=L_{n+2}-3.
 \end{align*}
 :::
 

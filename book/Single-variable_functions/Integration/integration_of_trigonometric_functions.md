@@ -436,7 +436,7 @@ Another option for powers of sine, is to use integration by parts to find a redu
 We will show that
  
 $$
-\int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx, \quad n=2,3,4,\ldots.
+\int\sin^n(x)\,dx=-\frac{1}{n}\cos(x)\sin^{n-1}(x)+\frac{n-1}{n}\int\sin^{n-2}(x)\,dx, \quad n=2,3,4,\ldots
 $$ 
 
 For $n=2,3,4,\ldots$ we obtain
@@ -1320,7 +1320,7 @@ $$
 Use the reduction formula of {prf:ref}`Ex:Integration:PartsReductionSin` to show that
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,\quad n=2,3,4,\ldots.
+\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,\quad n=2,3,4,\ldots
 $$
 
 ::::
@@ -1341,7 +1341,7 @@ since $\cos(\frac{1}{2}\pi)=0$ and $\sin(0)=0$. Note that $\sin^{n-1}(x)$ contai
 Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefinite` to show that
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},\quad n=1,2,3,\ldots.
+\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},\quad n=1,2,3,\ldots
 $$
 
 ::::
@@ -1351,7 +1351,7 @@ $$
 Replacing $n$ by $2n+1$ in {numref}`Exc:Integration:PartsReductionSinDefinite` we find
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2n}{2n+1}\int_0^{\frac{1}{2}\pi}\sin^{2n-1}(x)\,dx,\quad n=1,2,3,\ldots.
+\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2n}{2n+1}\int_0^{\frac{1}{2}\pi}\sin^{2n-1}(x)\,dx,\quad n=1,2,3,\ldots
 $$
 
 Iteration now leads to
@@ -1369,7 +1369,7 @@ since $\displaystyle\int_0^{\frac{1}{2}\pi}\sin(x)\,dx=-\cos(x)\bigg|_0^{\frac{1
 Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefinite` to show that
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},\quad n=1,2,3,\ldots.
+\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},\quad n=1,2,3,\ldots
 $$
 
 ::::
@@ -1379,7 +1379,7 @@ $$
 Replacing $n$ by $2n$ in {numref}`Exc:Integration:PartsReductionSinDefinite` we find
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{2n-1}{2n}\int_0^{\frac{1}{2}\pi}\sin^{2n-2}(x)\,dx,\quad n=1,2,3,\ldots.
+\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{2n-1}{2n}\int_0^{\frac{1}{2}\pi}\sin^{2n-2}(x)\,dx,\quad n=1,2,3,\ldots
 $$
 
 Iteration now leads to

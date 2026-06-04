@@ -16,13 +16,13 @@ Without further ado we state the first part of the fundamental theorem of calcul
 
 ::::::{prf:Theorem} The fundamental theorem of calculus, part 1
 :label: Thm:Integration:FundamentalTheoremPart1
-If $f$ is continuous on the interval $[a,b]$, then the function $g(x)$ defined by
+If $f$ is continuous on the interval $[a,b]$, then the function $F(x)$ defined by
 
 $$
-g(x)=\int_a^xf(t)\,dt,\quad a\leq x\leq b
+F(x)=\int_a^xf(t)\,dt,\quad a\leq x\leq b
 $$
 
-is continuous on $[a,b]$ and differentiable on $(a,b)$, and $g'(x)=f(x)$.
+is continuous on $[a,b]$ and differentiable on $(a,b)$, and $F'(x)=f(x)$.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart1`
@@ -32,7 +32,7 @@ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $g'(x)=f(x)$.
 Using {prf:ref}`Def:Differentiability:Derivative`, we obtain
 
 \begin{align*}
-g'(x)&=\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\\
+F'(x)&=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x}f(t)\,dt+\int_x^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)\,dt.
@@ -59,33 +59,33 @@ $$
 we have
 
 $$
-g'(x)=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)\,dt = f(x).
+F'(x)=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)\,dt = f(x).
 $$
 
-This proves that $g$ is differentiable on $(a,b)$ and that $g'(x)=f(x)$.
+This proves that $F$ is differentiable on $(a,b)$ and that $F'(x)=f(x)$.
 
-Because $f$ is continuous on $[a,b]$, it follows from {prf:ref}`Def:Integration:Integrable` that $g(b)$ exists and $g(a)=0$. Therefore, $g$ is also continuous on $[a,b]$.
+Because $f$ is continuous on $[a,b]$, it follows from {prf:ref}`Def:Integration:Integrable` that $F(b)$ exists and $F(a)=0$. Therefore, $F$ is also continuous on $[a,b]$.
 
 ::::::
 
 ::::::{prf:Example}
 :label: Ex:Integration:FundamentalTheoremPart1Example1
 
-We take $g(x)=\displaystyle\int_0^xe^{t^2}\,dt$ and want to determine $g'(x)$.
+We take $F(x)=\displaystyle\int_0^xe^{t^2}\,dt$ and want to determine $F'(x)$.
 
 We need not to evaluate the integral, which would be impossible. However, application of the fundamental theorem of calculus leads to the immediate answer 
 
 $$
-g'(x)=\frac{d}{dx}\int_0^xe^{t^2}\,dt=e^{x^2}.
+F'(x)=\frac{d}{dx}\int_0^xe^{t^2}\,dt=e^{x^2}.
 $$
 
 ::::::
 
 ::::::{prf:Example}
 :label: Ex:Integration:FundamentalTheoremPart1Example2
-Let us assume $g(x)=\displaystyle\int_0^{\sqrt{x}}\cos(t^2)\,dt$ for $x>0$ and determine $g'(x)$.
+Let us assume $F(x)=\displaystyle\int_0^{\sqrt{x}}\cos(t^2)\,dt$ for $x>0$ and determine $F'(x)$.
 
-If we would have had $h(u)=\displaystyle\int_0^{u}\cos(t^2)\,dt$, we would have had $h'(u)=\cos(u^2)$ by the fundamental theorem of calculus.
+If we would have had $g(u)=\displaystyle\int_0^{u}\cos(t^2)\,dt$, we would have had $g'(u)=\cos(u^2)$ by the fundamental theorem of calculus.
 
 However, now we need to also apply the chain rule:
 
@@ -100,13 +100,13 @@ Before we do a final example for part 1 of the fundamental theorem of calculus, 
 ::::{prf:theorem}
 :label: Thm:Integration:FundamentalTheoremPart1LowerLimit
 
-If $f$ is continuous on the interval $[a,b]$, then the function $h(x)$ defined by
+If $f$ is continuous on the interval $[a,b]$, then the function $G(x)$ defined by
 
 $$
-h(x)=\int_x^bf(t)\,dt,\quad a\leq x\leq b
+G(x)=\int_x^bf(t)\,dt,\quad a\leq x\leq b
 $$
 
-is continuous on $[a,b]$ and differentiable on $(a,b)$, and $h'(x)=-f(x)$.
+is continuous on $[a,b]$ and differentiable on $(a,b)$, and $G'(x)=-f(x)$.
 ::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart1LowerLimit`
@@ -116,18 +116,18 @@ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $h'(x)=-f(x)$.
 Using the definition of the definite integral we have:
 
 $$
-\int_a^bf(t)\,dt=\int_a^xf(t)\,dt+\int_x^bf(t)\,dt = g(x)+h(x),
+\int_a^bf(t)\,dt=\int_a^xf(t)\,dt+\int_x^bf(t)\,dt = F(x)+G(x),
 $$
 
-where $g(x)$ is the function defined in {prf:ref}`Thm:Integration:FundamentalTheoremPart1`. Differentiating both sides gives:
+where $F(x)$ is the function defined in {prf:ref}`Thm:Integration:FundamentalTheoremPart1`. Differentiating both sides gives:
 
 $$
-0 = g'(x) + h'(x) = f(x) + h'(x),
+0 = F'(x) + G'(x) = f(x) + G'(x),
 $$
 
-which implies that $h'(x) = -f(x)$.
+which implies that $G'(x) = -f(x)$.
 
-Using the same arguments as in the proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart1`, we can also show that $h$ is continuous on $[a,b]$ and differentiable on $(a,b)$.
+Using the same arguments as in the proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart1`, we can also show that $G$ is continuous on $[a,b]$ and differentiable on $(a,b)$.
 
 ::::
 
@@ -356,6 +356,44 @@ Replace {numref}`Fig:Integration:FresnelFunctions` with an applet.
 :::
 
 ::::::
+
+## The mean value theorem
+
+In {prf:ref}`Thm:Graphsderivatives:MVT` we have seen the mean value theorem that states that the derivative of a continuous and differentiable function on a finite interval equals its average slope somewhere in the interval.
+
+For integrals we have the following version.
+
+:::::{prf:theorem} Mean value theorem for integrals
+:label: Thm:Integration:MeanValueTheorem
+
+For a continuous function $f$ on the interval $[a,b]$ there exists at least one $c\in(a,b)$ such that
+
+$$
+f(c)=\frac{1}{b-a}\int_a^bf(x)\,dx.
+$$
+
+Here $\displaystyle\frac{1}{b-a}\int_a^bf(x)\,dx$ denotes the **mean value** of $f$ over the interval $[a,b]$.
+:::::
+
+:::::{admonition} Proof of {prf:ref}`Thm:Integration:MeanValueTheorem`
+:class: tudproof
+:name: Prf:Integration:MeanValueTheorem
+
+Let $F(x)$ be an antiderivative of $f$, such that $F'(x)=f(x)$. Since $f$ is continuous, $F$ is continuous on $[a,b]$ and differentiable on $(a,b)$. Then {prf:ref}`Thm:Graphsderivatives:MVT`
+implies that there exists at least one $c\in(a,b)$ such that
+
+$$
+F'(c)=\frac{F(b)-F(a)}{b-a}.
+$$
+
+Now we use that $F'(c)=f(c)$ and $\displaystyle F(b)-F(a)=\int_a^bf(x)\,dx$ to conclude that
+
+$$
+f(c)=\frac{1}{b-a}\int_a^bf(x)\,dx.
+$$
+
+This proves the theorem.
+:::::
 
 ## Exercises
 

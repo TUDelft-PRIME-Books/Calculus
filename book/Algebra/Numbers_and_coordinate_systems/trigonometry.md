@@ -1306,7 +1306,7 @@ $$
 $$
 
 $$
-\sin(2x)=2\sin(x)\cos(y)
+\sin(2x)=2\sin(x)\cos(x)
 $$ 
 
 and 
@@ -1361,7 +1361,7 @@ $$
 $$ 
 
 $$
-\sin(2x)=2\sin(x)\cos(y)
+\sin(2x)=2\sin(x)\cos(x)
 $$ 
 
 and 

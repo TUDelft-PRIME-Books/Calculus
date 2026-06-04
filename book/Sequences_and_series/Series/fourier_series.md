@@ -762,7 +762,7 @@ a_n&=\frac{1}{1}\int_{-1}^1f(x)\cos(n\pi x)\,dx=\int_{-1}^1(1-x^2)\cos(n\pi x)\,
 &=\frac{(1-x^2)\sin(n\pi x)}{n\pi}\bigg|_{-1}^1+\frac{1}{n\pi}\int_{-1}^12x\sin(n\pi x)\,dx\\
 &=-\frac{1}{n^2\pi^2}\int_{-1}^12x\,d\cos(n\pi x)\\
 &=-\frac{2x\cos(n\pi x)}{n^2\pi^2}+\frac{2}{n^2\pi^2}\int_{-1}^1\cos(n\pi x)\,dx\\
-&=-\frac{4\cos(n\pi)}{n^2\pi^2}=\frac{4(-1)^{n+1}}{n^2\pi^2},\quad n=1,2,3,\ldots.
+&=-\frac{4\cos(n\pi)}{n^2\pi^2}=\frac{4(-1)^{n+1}}{n^2\pi^2},\quad n=1,2,3,\ldots
 \end{align*}
 
 This means that the Fourier series $g$ of $f$ is given by
