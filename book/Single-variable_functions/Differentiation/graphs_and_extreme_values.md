@@ -1373,12 +1373,60 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 
 ## Grasple exercises
 
+
+### Exercises on extreme values
+
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/173b11b1-47d4-4393-ab54-75baa7ceefa5?id=63044
-:label: Grasple:63044
+:url: https://embed.grasple.com/exercises/8581ed8d-aea8-4812-98e5-c5ea5ec84754?id=68844
+:label: Grasple:68844
 :dropdown:
-:description: Using derivatives to find the range of a function.
+:description: Definition of global maximum and minimum.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f02248ee-772b-46a1-968f-4be81b233567?id=68839
+:label: Grasple:68839
+:dropdown:
+:description: Reading off maxima and minima from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/93ea68d6-70a2-4f74-a6ae-9a05152ebd56?id=68847
+:label: Grasple:68847
+:dropdown:
+:description: Reading off maxima and minima from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d95a1a3b-a338-424a-a640-b56b77bd4961?id=68854
+:label: Grasple:68854
+:dropdown:
+:description: Reading off maxima and minima from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6625b3f4-3d55-438d-8f5d-6dcefd36897f?id=68869
+:label: Grasple:68869
+:dropdown:
+:description: Reading off maxima and minima from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e616f859-f2fc-49b0-ba3d-33f16a888e71?id=79423
+:label: Grasple:79423
+:dropdown:
+:description: Finding the global maximum and minimum of a function on a closed interval.
 
 ::::
 
@@ -1388,4 +1436,79 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :label: Grasple:71070
 :dropdown:
 :description: A continuous function of which only some function values are given.
+::::
+
+
+### Exercises on the behaviour of a function and the mean value theorem
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/173b11b1-47d4-4393-ab54-75baa7ceefa5?id=63044
+:label: Grasple:63044
+:dropdown:
+:description: Range of two functions.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/245bc0cf-71e6-4915-96c4-c0283f3f78ae?id=79428
+:label: Grasple:79428
+:dropdown:
+:description: Checking where the function is strictly increasing.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2d5402dd-d41d-4967-9f26-87732af8cc5a?id=70266
+:label: Grasple:70266
+:dropdown:
+:description: Recapping and checking the mean value theorem.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d936e89d-928f-4cc0-8003-2e0e35550e30?id=68988
+:label: Grasple:68988
+:dropdown:
+:description: Recapping and checking the mean value theorem.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0e0b0238-ce28-4de6-9b7d-a72a458d5c37?id=69154
+:label: Grasple:69154
+:dropdown:
+:description: Checking the mean value theorem.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7580f32e-c79d-4f28-afff-b9efa2842f98?id=68968
+:label: Grasple:68968
+:dropdown:
+:description: Checking the mean value theorem.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bb00e894-9d17-47e0-ad0d-e5eaea15f32b?id=68960
+:label: Grasple:68960
+:dropdown:
+:description: Finding an interval in which function values lie.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/060678c6-f920-42ee-9262-489bea916269?id=79421
+:label: Grasple:79421
+:dropdown:
+:description: Application: when does total charge increase strictly and where is its maximal value?
+
 ::::

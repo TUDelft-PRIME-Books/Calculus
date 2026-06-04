@@ -783,7 +783,7 @@ Replace {numref}`Fig:Functions1var:Piecewise` with an applet.
 :url: https://embed.grasple.com/exercises/d312bc3e-990f-46ff-bbc3-80e923dd4998?id=63063
 :label: Grasple:63063
 :dropdown:
-:description: Maximal domain and range of a function with a square root.
+:description: Maximal domain and range of a function with an exponential.
 
 ::::
 
@@ -829,7 +829,7 @@ Replace {numref}`Fig:Functions1var:Piecewise` with an applet.
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/ba2670f2-03b7-4b7b-a536-4ef2e008317e?id=70723
-:label: Grasple:70722
+:label: Grasple:70723
 :dropdown:
 :description: Describing a circle as (several) functions.
 

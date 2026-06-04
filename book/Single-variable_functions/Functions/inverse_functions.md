@@ -1082,21 +1082,14 @@ The cosine function where the solid part is the function on the interval $\left[
 
 ::::
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/f23f8188-d408-47c4-88f2-4b1067dfee4f?id=70822
-:label: Grasple:70822
-:dropdown:
-:description: Maximal domain of a function with a logarithm.
 
-::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/52d666c5-d2f8-492a-9d7f-d8ba41cecd82?id=63034
 :label: Grasple:63034
 :dropdown:
-:description: Determining whether a function featuring a logarithm is even and/or odd.
+:description: Determining whether a function featuring a logarithm is even and/or odd and finding its domain and range.
 
 ::::
 
@@ -1124,6 +1117,15 @@ The cosine function where the solid part is the function on the interval $\left[
 :label: Grasple:130649
 :dropdown:
 :description: Writing an expression as a single logarithm.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/72ce01cd-b1ef-47d2-811e-4b9a63861e80?id=63527
+:label: Grasple:63527
+:dropdown:
+:description: Simplifying expressions with hyperbolic functions.
 
 ::::
 
@@ -1242,6 +1244,15 @@ The cosine function where the solid part is the function on the interval $\left[
 :label: Grasple:130665
 :dropdown:
 :description: Finding maximal domain + inverse of logarithm composed with logarithm.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cdff8a1d-74be-4a1d-a246-f8fcec52d29e?id=73780
+:label: Grasple:73780
+:dropdown:
+:description: Finding inverse of hyperbolic function.
 
 ::::
 
