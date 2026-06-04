@@ -100,7 +100,7 @@ $
 :margin: 0
 
 $\displaystyle
-\hspace{-0.25em}\class{longdivision}{
+\hspace{-0.2em}\class{longdivision}{
 \begin{array}{rclcl}
 96789 & \,\div\, & 231 & \,=\, & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
 \underline{\class{tud-red}{924}}\phantom{00} \\

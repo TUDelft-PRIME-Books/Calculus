@@ -879,6 +879,24 @@ display(Latex(f"$${sp.latex(MIN.evalf(digits))}\leq f({sp.latex(x_eval)}) "
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/54b88072-c5f0-48bd-9587-d369f0240710?id=71411
+:label: Grasple:71411
+:dropdown:
+:description: Linearisation of an implicitly defined function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d1b789d1-eedf-4cde-b558-78162ad125d9?id=71412
+:label: Grasple:71412
+:dropdown:
+:description: Linearisation of another implicitly defined function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/b36e91ec-7f75-4bd8-9669-e40968b9f15c?id=78767
 :label: Grasple:78767
 :dropdown:
