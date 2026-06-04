@@ -412,3 +412,71 @@ does not exist. In particular, $f'$ is not continuous at $0$, so $f$ is not cont
 Make an applet with the graph of the function $f$ (left) and of its derivative $f'$ (right)
 :::
 ::::::
+
+## Grasple exercises
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/94a77cde-9af2-47d9-bb60-528d0a65a7bc?id=71399
+:label: Grasple:71399
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/94a77cde-9af2-47d9-bb60-528d0a65a7bc?id=71399
+:label: Grasple:71399
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a0730d24-9a8f-4b97-8c42-2e0395fb2b14?id=63497
+:label: Grasple:63497
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/78f4d4aa-4ade-4948-b2da-74cfad5334a9?id=63494
+:label: Grasple:63494
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c5a57f85-3b86-46ad-89cc-f52754cd598e?id=63495
+:label: Grasple:63495
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b7d4d8ec-b239-4853-a95c-4323237b952a?id=63425
+:label: Grasple:63425
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c041c550-e344-4d1b-9568-94552c0aa713?id=63438
+:label: Grasple:63438
+:dropdown:
+:description: Find two derivatives.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9566fa38-7659-415b-892d-6ba5c8ef63d0?id=63534
+:label: Grasple:63534
+:dropdown:
+:description: Derivatives involving hyperbolic functions.
+::::

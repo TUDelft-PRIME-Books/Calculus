@@ -920,7 +920,7 @@ Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ wit
 
 ::::
 
-### Exercises on even and odd functions
+### Exercises on even and odd functions and hyperbolic functions
 
 
 
@@ -950,6 +950,25 @@ Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ wit
 :description: Determining whether a function is even and/or odd.
 
 ::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e58f9eda-50a9-4e4d-9b3f-0ac06f81b27e?id=73779
+:label: Grasple:73779
+:dropdown:
+:description: Establishing an identity for a hyperbolic function
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/16d69364-6a37-4000-a52d-157e30f36013?id=78666
+:label: Grasple:78666
+:dropdown:
+:description: Relating two hyperbolic functions.
+
+::::
+
 
 ### Exercises on periodic functions
 

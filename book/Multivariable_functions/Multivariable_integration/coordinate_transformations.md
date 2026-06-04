@@ -1,3 +1,5 @@
+(Sec:MultivariableIntegration:TransformationsR2)=
+
 # Coordinate transformations in $\mathbb{R}^2$
 
 - Double integral using general coordinate transform
@@ -665,7 +667,7 @@ Because of the symmetry we conclude that the centroid is $(\overline{x},\overlin
 &=6\pi
 \end{align*} 	
  
-and
+and (check the details)
 
 \begin{align*}
 \iint\limits_Dx\,dA&=\int_0^{2\pi}\int_0^{2+2\cos(\theta)}r\cos(\theta)\cdot r\,dr\,d\theta\\
@@ -700,7 +702,7 @@ Using polar coordinates we obtain for the area of $D$:
 \textrm{area}(D)&=\iint\limits_R1\,dA\\
 &=\int_{\arctan\left(\frac{1}{\sqrt{3}}\right)}^{\arctan\left(\sqrt{3}\right)}\int_1^2r\,dr\,d\theta\\
 &=\int_{\frac{1}{6}\pi}^{\frac{1}{3}\pi}d\theta\int_1^2r\,dr\\
-&=\left(\frac{1}{3}\pi-\frac{1}{6}\pi\right)\bigg[\frac{1}{2}r^2\bigg]_{r=1}^2||
+&=\left(\frac{1}{3}\pi-\frac{1}{6}\pi\right)\bigg[\frac{1}{2}r^2\bigg]_{r=1}^2\\
 &=\frac{1}{6}\pi\cdot\frac{3}{2}=\frac{1}{4}\pi.
 \end{align*}
  
@@ -789,7 +791,7 @@ Using the symmetry we obtain that
 &=4\int_0^{\frac{1}{2}}\int_0^u\frac{dv\,du}{1-u^2+v^2}
 +4\int_{\frac{1}{2}}^1\int_0^{1-u}\frac{dv\,du}{1-u^2+v^2}\\
 &=4\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{u}{\sqrt{1-u^2}}\right)\,du\\
-&{}\quad{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du.
+&{}\hspace{10mm}{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du.
 \end{align*} 
  
 Observe that
@@ -808,7 +810,7 @@ for $-1 < u < 1$. This implies that
 
 \begin{align*}
 \zeta(2)&=4\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{u}{\sqrt{1-u^2}}\right)\,du\\
-&{}\quad{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du\\
+&{}\hspace{10mm}{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du\\
 &=4\int_0^{\frac{1}{2}}\frac{\arcsin(u)}{\sqrt{1-u^2}}\,du+2\int_{\frac{1}{2}}^1\frac{\arccos(u)}{\sqrt{1-u^2}}\,du\\
 &=2\arcsin^2(u)\bigg|_0^{\frac{1}{2}}-\arccos^2(u)\bigg|_{\frac{1}{2}}^1\\
 &=2\left(\frac{1}{6}\pi\right)^2+\left(\frac{1}{3}\pi\right)^2\\

@@ -260,7 +260,7 @@ $$
  f'(x)>\frac{f'(a)}{2}>0.
 $$
 
-By {prf:ref}`Thm:Graphsderivatives:Increasingdecreasing`, the function $f$ is strictly increasing on $(a-\delta,a+\delta)$. So by {prf:ref}`Thm:Inverse:MonotonicOnetoone` the function $f$ must be invertible on this interval. In addition, we claim that $f$ maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$. Since $f$ is strictly increasing on $(a-\delta,a+\delta)$, we have for any $a-\delta<x<a+\delta$ that
+By {prf:ref}`Thm:MinMax:Increasingdecreasing`, the function $f$ is strictly increasing on $(a-\delta,a+\delta)$. So by {prf:ref}`Thm:Inverse:MonotonicOnetoone` the function $f$ must be invertible on this interval. In addition, we claim that $f$ maps the interval $(a-\delta,a+\delta)$ to the interval $(f(a-\delta),f(a+\delta))$. Since $f$ is strictly increasing on $(a-\delta,a+\delta)$, we have for any $a-\delta<x<a+\delta$ that
 
 $$
  f(a-\delta)<f(x)<f(a+\delta).
@@ -391,6 +391,135 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet.
 
 ## Grasple exercises
 
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/79142901-fa54-4bc5-b81d-ca8b884fde0a?id=63418
+:label: Grasple:63418
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5d112029-4427-4231-b436-0ad066c52451?id=63434
+:label: Grasple:63434
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fc0c7b54-8e58-4445-b714-fcba02547108?id=63426
+:label: Grasple:63426
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/516b4eaf-f83e-491f-adbd-d50b17601ac3?id=63424
+:label: Grasple:63424
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a1719639-a441-47a9-a648-b84502165ad1?id=63427
+:label: Grasple:63427
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1ef694a5-28e8-4324-8d93-f186a0c79689?id=63431
+:label: Grasple:63431
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a48a374e-0e7d-40f7-a159-f4530fcdc631?id=63423
+:label: Grasple:63431
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d57df9e2-3592-4b25-bf28-e922a4365aa5?id=71396
+:label: Grasple:71396
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/81f5b367-145a-4e6f-991e-805b45970b41?id=75355
+:label: Grasple:75355
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/46e1acb0-7381-4296-a702-cf4186c7a004?id=75356
+:label: Grasple:75356
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/77d668b9-c9db-4e2e-9e85-1a4076031989?id=75357
+:label: Grasple:75357
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7407875d-6d46-43b2-8478-31951387cfb1?id=75359
+:label: Grasple:75359
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c67c5ab4-a17c-499e-bda6-de7a35cc812f?id=75358
+:label: Grasple:75358
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7fab8c83-125e-46b6-8f2d-d35d73be216d?id=63523
+:label: Grasple:63523
+:dropdown:
+:description: Find two derivatives.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0e6d567d-6864-452c-82d7-e18e919a49a3?id=63499
+:label: Grasple:63499
+:dropdown:
+:description: Find two derivatives.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6047b2d2-5728-4a90-b72d-d4d205800d83?id=75360
+:label: Grasple:75360
+:dropdown:
+:description: Simplifying an expression with inverse trigonometric functions.
+::::
+
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/665beea4-a04e-43b2-936b-11058bea3f4c?id=69707
@@ -424,4 +553,52 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet.
 :label: Grasple:71391
 :dropdown:
 :description: Determining differentiability
+::::
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e9c2623c-678d-4454-ad7e-3f17ca8b1c90?id=63552
+:label: Grasple:63552
+:dropdown:
+:description: Finding derivative of inverse function using implicit differentiation
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/34dbc780-717e-4e1a-86fb-c8bab327e42b?id=63605
+:label: Grasple:63605
+:dropdown:
+:description: Finding derivative of inverse function using implicit differentiation
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ec0f5db9-22c4-489c-8c82-831a53f4a4d5?id=63609
+:label: Grasple:63609
+:dropdown:
+:description: Finding derivative of inverse function using implicit differentiation
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b7717945-c351-4083-bbfe-94da7ac1f8df?id=63611
+:label: Grasple:63611
+:dropdown:
+:description: Using the inverse function theorem
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/eb9ad8a4-10be-4cec-ba9a-d9731f7dc0d5?id=63542
+:label: Grasple:63542
+:dropdown:
+:description: Using the inverse function theorem
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/73fba58a-b366-4c0a-bd31-fdb8a3020bde?id=63543
+:label: Grasple:63543
+:dropdown:
+:description: Using the inverse function theorem
+::::

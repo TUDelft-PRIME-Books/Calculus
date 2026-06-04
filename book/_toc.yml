@@ -12,12 +12,13 @@ parts:
     chapters:
     - file: "Algebra/Numbers_and_coordinate_systems/introduction_numbers_and_coordinate_systems.md" # ref_graph: {'ignore':True}
       sections:
-      - file: "Algebra/Numbers_and_coordinate_systems/sums_and_products.md"
+      - file: "Algebra/Numbers_and_coordinate_systems/set_theory_and_logic.md"
       - file: "Algebra/Numbers_and_coordinate_systems/real_numbers.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - file: "Algebra/Numbers_and_coordinate_systems/trigonometry.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - file: "Algebra/Numbers_and_coordinate_systems/coordinate_systems.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersPolar.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
+      - file: "Algebra/Numbers_and_coordinate_systems/sums_and_products.md"
     - file: "Algebra/Vector_algebra/introduction_vector_algebra.md" # ref_graph: {'ignore':True}
       sections:
       - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Chapter1/Vectors.md" # ref_graph: {'tag': 'Vector algebra'}
@@ -44,10 +45,10 @@ parts:
       - file: "Single-variable_functions/Differentiation/differentiability.md"
       - file: "Single-variable_functions/Differentiation/chain_rule.md"
       - file: "Single-variable_functions/Differentiation/product_and_quotient_rule.md"
-      - file: "Single-variable_functions/Differentiation/graphs_and_derivatives_of_functions.md"
+      - file: "Single-variable_functions/Differentiation/graphs_and_extreme_values.md"
+      - file: "Single-variable_functions/Differentiation/properties_of_graphs.md"
       - file: "Single-variable_functions/Differentiation/slope_of_curves_in_R2.md"
       - file: "Single-variable_functions/Differentiation/derivatives_of_inverse_functions.md"
-      - file: "Single-variable_functions/Differentiation/extrema_of_functions.md"
       - file: "Single-variable_functions/Differentiation/approximating_functions.md"
       - file: "Single-variable_functions/Differentiation/l_hospitals_rule.md"
     - file: "Single-variable_functions/Integration/introduction_integration.md" # ref_graph: {'ignore':True}

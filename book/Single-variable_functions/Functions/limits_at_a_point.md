@@ -991,8 +991,17 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f23f8188-d408-47c4-88f2-4b1067dfee4f?id=70822
+:label: Grasple:70822
+:dropdown:
+:description: Maximal domain and range of a function with a logarithm.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/9a58ceb6-7ca3-4fe6-9693-1acff5f3ea77?id=72000
-:label: Grasple:69472
+:label: Grasple:72000
 :dropdown:
 :description: Limits of rounding function using formal definition.
 ::::
