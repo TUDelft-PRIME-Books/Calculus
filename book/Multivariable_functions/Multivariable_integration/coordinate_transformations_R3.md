@@ -131,7 +131,6 @@ $$
 
 In the case of cylindrical coordinates we have: $\displaystyle T(r,\theta,z)=(x,y,z):\quad
 \left\{\begin{array}{l}x=r\cos(\theta)\\y=r\sin(\theta)\\z=z.\end{array}\right.$
- 
 
 The Jacobian of $T$ is (see the course on Linear Algebra for details about the computation)
 
