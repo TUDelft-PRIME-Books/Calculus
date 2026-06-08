@@ -14,10 +14,10 @@ parts:
       sections:
       - file: "Algebra/Numbers_and_coordinate_systems/set_theory_and_logic.md"
       - file: "Algebra/Numbers_and_coordinate_systems/real_numbers.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
-      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersCartesian.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
+      - file: "Algebra/Numbers_and_coordinate_systems/complex_numbers_cartesian.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - file: "Algebra/Numbers_and_coordinate_systems/trigonometry.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - file: "Algebra/Numbers_and_coordinate_systems/coordinate_systems.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
-      - external: "https://github.com/TUDelft-PRIME-Books/Linear-Algebra/blob/published/Appendices/ComplexNumbersPolar.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
+      - file: "Algebra/Numbers_and_coordinate_systems/complex_numbers_polar.md" # ref_graph: {'tag': 'Numbers and coordinate systems'}
       - file: "Algebra/Numbers_and_coordinate_systems/sums_and_products.md"
     - file: "Algebra/Vector_algebra/introduction_vector_algebra.md" # ref_graph: {'ignore':True}
       sections:

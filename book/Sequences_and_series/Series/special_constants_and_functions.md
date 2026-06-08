@@ -4,7 +4,7 @@
 
 Series can be used to define special constants and functions. In this section we will consider Catalan's constant and the Riemann zeta function.
 
-(sec:CatalansConstant)=
+(Sec:CatalansConstant)=
 ## Catalan's constant
 
 **Catalan's constant** $G$ is defined as the sum of the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}$.
@@ -106,7 +106,7 @@ G=-\frac{1}{4}\int_0^{\frac{1}{2}\pi}\ln\left(\frac{1-\cos(x)}{1+\cos(x)}\right)
 G=\frac{1}{4}\int_0^{\frac{1}{2}\pi}\ln\left(\frac{1+\cos(x)}{1-\cos(x)}\right)\,dx.
 $$ 
  
-When we studied Serret's integral in {numref}`Sec:Integration:Substitution` we used the fact that 
+When we studied Serret's integral in {numref}`Sec:Integration:SpecialSubstitutions` we used the fact that 
 
 $$
 \int_0^{\frac{1}{4}\pi}\ln\left(\cos(\tfrac{1}{4}\pi-\theta)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln(\cos(t))\,dt.
@@ -193,6 +193,7 @@ $$
 \int_0^{\frac{1}{4}\pi}\ln(2\sin(x))\,dx=-\frac{1}{2}G\quad\text{and}\quad\int_0^{\frac{1}{4}\pi}\ln(2\cos(x))\,dx=\frac{1}{2}G.
 $$
 
+(Sec:Series:RiemannZetaFunction)=
 ## The Riemann zeta function
 
 The **Riemann zeta function** $\zeta(s)$ is defined as: $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\text{Re}(s)>1$.
