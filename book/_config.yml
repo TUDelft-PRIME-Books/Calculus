@@ -74,7 +74,6 @@ sphinx:
       '# Custom components': "# Proofs and Solutions"
       '# Syntax Guide': "# Exercises"
       '# Sphinx extension: Grasple': "# Grasple exercises"
-      '# Cartesian form of complex numbers': "# Complex numbers"
       '{numref}`Chapter %s <Chapter:Determinants>`': "{numref}`Section %s <Sec:DetGeometric>`"
       '# Determinants as areas or volumes': "# Determinants"
       'in {numref}`Subsection %s <Subsec:MatrixInv:DefInverse>` we saw': "in [Section 3.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter3/MatrixInverse.html) we will see"

@@ -67,37 +67,37 @@ Note that it makes sense to start with $n=1$ since the first term of the sequenc
 The sequence of reciprocals of the first $q$ perfect squares $1,\frac{1}{4},\frac{1}{9},\frac{1}{16},\frac{1}{25},\ldots,\frac{1}{q^2}$ can be defined by the explicit formula
 
 $$
-a_n=\frac{1}{n^2}\quad\text{for}\quad n=1,2,3,\ldots,q.
+b_n=\frac{1}{n^2}\quad\text{for}\quad n=1,2,3,\ldots,q.
 $$
 ::::
 
 ::::{prf:example}
 :label: Ex:SumsAndProducts:ExplicitFormula
 
-Now consider the sequence $\{a_n\}_{n=1}^{q}$ with $a_n=\dfrac{n}{n^2+1}$ for $n=1,2,3,\ldots,q$.
+Now consider the sequence $\{c_n\}_{n=1}^{q}$ with $c_n=\dfrac{n}{n^2+1}$ for $n=1,2,3,\ldots,q$.
 
 This means, by substituting $n=1$ in the explicit formula, that the first term of the sequence is
 
 $$
-a_1=\frac{1}{2},
+c_1=\frac{1}{2},
 $$
 
 by substituting $n=2$ that the second term of the sequence is
 
 $$
-a_2=\frac{2}{5},
+c_2=\frac{2}{5},
 $$
 
 by substituting $n=3$ that the third term of the sequence is
 
 $$
-a_3=\frac{3}{10},
+c_3=\frac{3}{10},
 $$
 
 and so on. We could write the sequence out as
 
 $$
-\{a_n\}_{n=1}^{q} = \left\{\frac{1}{2},\frac{2}{5},\frac{3}{10},\frac{4}{17},\frac{5}{26},\ldots,\frac{q}{q^2+1}\right\}.
+\{c_n\}_{n=1}^{q} = \left\{\frac{1}{2},\frac{2}{5},\frac{3}{10},\frac{4}{17},\frac{5}{26},\ldots,\frac{q}{q^2+1}\right\}.
 $$
 
 ::::
@@ -124,10 +124,10 @@ $$
 ::::{prf:example} 
 :label: Ex:SumsAndProducts:RecursiveFormula
 
-The sequence $\{a_n\}_{n=0}^{q}$ defined by $a_{n+1}=-\dfrac12a_n$ with $n=0,1,2,\ldots,q-1$ and $a_0=1$ can be written out as:
+The sequence $\{b_n\}_{n=0}^{q}$ defined by $b_{n+1}=-\dfrac12b_n$ with $n=0,1,2,\ldots,q-1$ and $b_0=1$ can be written out as:
 
 $$
-\{a_n\}_{n=0}^{q} = \left\{1,-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},-\frac{1}{32},\ldots,\frac{(-1)^q}{2^q}\right\}.
+\{b_n\}_{n=0}^{q} = \left\{1,-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},-\frac{1}{32},\ldots,\frac{(-1)^q}{2^q}\right\}.
 $$
 
 ::::
@@ -267,7 +267,7 @@ for all $n\in\{1,2,3,\ldots\}$.
 
 ::::
 
-This theorem can also be proved using the principle of mathematical induction:
+This theorem can also be proved using the {prf:ref}`principle of mathematical induction <Thm:Algebra:MathematicalInduction>`:
 
 ::::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:SumOfIntegers`
 :class: tudproof, dropdown
@@ -302,6 +302,7 @@ Since this is exactly the formula with $n$ replaced by $n+1$, this proves the st
 
 ::::::{prf:example}
 :label: Ex:SumsAndProducts:SubSum
+
 Using the previous theorem, we can show that
 
 $$
@@ -487,7 +488,7 @@ $$
 :::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:MagicRule`
 :class: tudproof, dropdown
 
-We prove the theorem by induction on $n$.
+We prove the theorem by induction on $n$. See: {prf:ref}`Thm:Algebra:MathematicalInduction`.
 
 For $n=1$ we have on the left-hand side
 
@@ -722,6 +723,7 @@ Show that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ for all $n\in\{
 
 :::{admonition} Solution of {numref}`Exc:SumsAndProducts:IntroductionInduction1`
 :class: solution, dropdown
+
 For $n=1$ this reads: $1=\frac{1}{6}\cdot1\cdot2\cdot3$, which is true. 
 
 Suppose that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ holds for certain value of $n$. Then we have
@@ -739,11 +741,13 @@ Since this is exactly the formula with $n$ replaced by $n+1$, this proves the st
 
 ::::{exercise}
 :label: Exc:SumsAndProducts:IntroductionInduction2
+
 Show that $\displaystyle\sum_{k=1}^nk^3=\left(\sum_{k=1}^nk\right)^2=\frac{1}{4}n^2(n+1)^2$ for all $n\in\{1,2,3,\ldots\}$.
 ::::
 
 :::{admonition} Solution of {numref}`Exc:SumsAndProducts:IntroductionInduction2`
 :class: solution, dropdown
+
 For $n=1$ this reads: $1=\frac{1}{4}\cdot1^2\cdot2^2$, which is true. 
 
 Suppose that $\displaystyle\sum_{k=1}^nk^3=\frac{1}{4}n^2(n+1)^2$ holds for certain value of $n$. Then we have
