@@ -6,7 +6,7 @@
 
 In the previous section we have seen that it is sometimes useful to think of a sequence $\{a_n\}$ as a function $f:\mathbb{N}\to\mathbb{R}$ with $f(n)=a_n$ for every $n=1,2,3,\ldots$. This allowed us to use the tools of calculus to study the properties of sequences, such as whether a sequence is strictly increasing, strictly decreasing, non-increasing or non-decreasing and whether it is bounded above or below.
 
-During our study, we already took a quick look at how the values evolve as $n$ increases, when we were considering the bounds. For instance, in {prf:ref}`Ex:Sequences:BoundedExample2` we saw that the sequence $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing and bounded above by $1$. This suggests that the terms of the sequence get closer and closer to $1$ as $n$ increases. If we would reuse the terms from {numref}`Section:Limitinf`,we would say that the sequence $\{a_n\}$ converges to $1$. In this section we will define what we mean by convergence of a sequence and we will see how to determine whether a sequence converges or diverges and how to find the limit of a convergent sequence.
+During our study, we already took a quick look at how the values evolve as $n$ increases, when we were considering the bounds. For instance, in {prf:ref}`Ex:Sequences:BoundedExample1` we saw that the sequence $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing and bounded above by $1$. This suggests that the terms of the sequence get closer and closer to $1$ as $n$ increases. If we would reuse the terms from {numref}`Section:Limitinf`,we would say that the sequence $\{a_n\}$ converges to $1$. In this section we will define what we mean by convergence of a sequence and we will see how to determine whether a sequence converges or diverges and how to find the limit of a convergent sequence.
 
 ## Limits and convergence
 
@@ -28,16 +28,15 @@ In a more intuitive way, we can say that a sequence $\{a_n\}$ converges to $L$ i
 
 We already used the term *converge* in the previous definition, but let us now give a precise definition of what we mean by convergence of a sequence.
 
-::::::{prf:definition} Convergence and divergence of sequence
+::::::{prf:definition} Convergence and divergence of a sequence
 :label: Def:Sequences:ConvergenceSequence
 A sequence $\{a_n\}$ is called **convergent** if $\lim\limits_{n\to\infty}a_n$ exists. Otherwise, the sequence is called **divergent**. 
 ::::::
 
-
 ::::::{note}
 :name: Note:SeqAndTypes:ConvergenceDivergence
 
-A sequence $\{a_n\}$ either converges or diverges. That is, either $\lim\limits_{n\to\infty}a_n=L$ exists (is a real number) or $\lim\limits_{n\to\infty}a_n$ does not exist.
+A sequence $\{a_n\}$ either converges or diverges. That is, either $\lim\limits_{n\to\infty}a_n=L$ exists (as a real number) or $\lim\limits_{n\to\infty}a_n$ does not exist.
 
 If $\lim\limits_{n\to\infty}a_n=\infty$ we say that the sequence *diverges* to $\infty$, but the limit $\lim\limits_{n\to\infty}a_n$ does not exist, since $\infty$ is not a real number.
 
@@ -46,15 +45,13 @@ If $\lim\limits_{n\to\infty}a_n=-\infty$ we say that the sequence *diverges* to 
 If $\lim\limits_{n\to\infty}a_n$ does not exist, but is not $\infty$ or $-\infty$, we can only say that the sequence *diverges*.
 :::::: 
 
-
-
 Before we dive into depth of convergence of sequences, we will state the most important theorem of this section, which gives us a powerful tool to determine whether a sequence converges or diverges and to find the limit of a convergent sequence:
 
 ::::::{prf:theorem}
 :label: Thm:Sequences:LimitFunctionSequence
-Consider the sequence $\{a_n\}_{n=p}^{\infty}$.
+Consider the sequence $\{a_n\}_{n=p}^{\infty}$ with $a_n=f(n)$ for all $n=p,p+1,p+2,\ldots$.
 
-If $\lim\limits_{x\to\infty}f(x)=L$, $f$ is defined on $[p,\infty)$ and $a_n=f(n)$ for all $n=p,p+1,p+2,\ldots$, then $\lim\limits_{n\to\infty}a_n=L$.
+If $f$ is defined on $[p,\infty)$ and $\lim\limits_{x\to\infty}f(x)=L$, then $\lim\limits_{n\to\infty}a_n=L$.
 ::::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:Sequences:LimitFunctionSequence`
@@ -66,7 +63,7 @@ By {prf:ref}`Def:Sequences:LimitSequence`, we need to show that for every $\vare
 
 So let us assume that $\varepsilon>0$ is given. Since $\lim\limits_{x\to\infty}f(x)=L$, there exists a number $M\geq p$ such that if $x>M$, then $|f(x)-L|<\varepsilon$.
 
-We set $N=\max\{p,\lceil M\rceil,p\}$, where $\lceil M\rceil$ is the smallest integer greater than or equal to $M$. Note that $N\geq M\geq p$.
+We set $N=\max\{p,\lceil M\rceil\}$, where $\lceil M\rceil$ is the smallest integer greater than or equal to $M$. Note that $N\geq M\geq p$.
 
 Since $n\geq M$, we have
 
@@ -126,11 +123,11 @@ This means that as $n$ increases, the terms of the sequence $\{a_n\}$ get closer
 :::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample2
 
-For the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n-1}{\sqrt{n^2+1}}$ we have
+For the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n-1}{\sqrt{n^2+1}}$ we have
 
 \begin{align*}
 \lim_{n\to\infty}\frac{2n-1}{\sqrt{n^2+1}} &= \lim_{n\to\infty}\frac{2-\dfrac{1}{n}}{\sqrt{1+\dfrac{1}{n^2}}} \\
-&=\frac{2-0}{1+0} \\
+&=\frac{2-0}{\sqrt{1+0}} \\
 &=2.
 \end{align*}
 
@@ -139,14 +136,14 @@ For the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n-1}{\sqrt{n^2+1}}$ 
 :::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample3
 
-Negative limits also can occur. For instance, for the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=n-\sqrt{n(n+2)}$ we have       
+Negative limits also can occur. For instance, for the sequence $\{c_n\}_{n=1}^{\infty}$ with $c_n=n-\sqrt{n(n+2)}$ we have       
 
 \begin{align*}
 \lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right) &= \lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right)\cdot\frac{n+\sqrt{n(n+2)}}{n+\sqrt{n(n+2)}} \\
 &= \lim_{n\to\infty}\frac{n^2-n(n+2)}{n+\sqrt{n(n+2)}} \\
 &= \lim_{n\to\infty}\frac{-2n}{n+\sqrt{n(n+2)}} \\
 &= \lim_{n\to\infty}\frac{-2}{1+\sqrt{1+\dfrac{2}{n}}} \\
-&= \frac{-2}{1+1} \\
+&= \frac{-2}{1+\sqrt{1+0}} \\
 &= -1.
 \end{align*}
 
@@ -155,9 +152,9 @@ Negative limits also can occur. For instance, for the sequence $\{a_n\}_{n=1}^{\
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample4
 
-The geometric sequence $\{a_n\}$ with $a_n=\dfrac{1}{2^n}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$.
+The geometric sequence $\{d_n\}$ with $d_n=\dfrac{1}{2^n}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$.
 
-This follows directly from {prf:ref}`Thm:Sequences:LimitFunctionSequence` and {prf:ref}`Theorem:LimitAtInfinity:Standardlimits` below.
+This follows directly from {prf:ref}`Thm:Sequences:LimitFunctionSequence` and {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`.
 ::::::
 
 For geometric sequences, we can go even further and determine for which values of $r\in\mathbb{R}$ the geometric sequence $\{a_n\}$ with $a_n=r^n$ is convergent or divergent and what the limit is in case it is convergent.
@@ -165,7 +162,7 @@ For geometric sequences, we can go even further and determine for which values o
 ::::::{prf:theorem}
 :label: Thm:Sequences:ConvergenceGeometric
 
-The geometric sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=br^n$, $b\neq0$, is convergent for $-1<r\leq1$ and divergent for all other values of $r\in\mathbb{R}$.
+The geometric sequence $\{a_n\}_{n=0}^{\infty}$ with $a_n=br^n$, $b\neq0$, is convergent for $-1<r\leq1$ and divergent for all other values of $r\in\mathbb{R}$.
 
 Moreover, if $-1<r<1$, then $\lim\limits_{n\to\infty}r^n=0$, and  if $r=1$, then $\lim\limits_{n\to\infty}r^n=b$.
 ::::::
@@ -173,9 +170,9 @@ Moreover, if $-1<r<1$, then $\lim\limits_{n\to\infty}r^n=0$, and  if $r=1$, then
 ::::::{admonition} Proof of {prf:ref}`Thm:Sequences:ConvergenceGeometric`
 :class: tudproof
 
-We can distinguish several cases: $-1<r<1$, $r=1$, $r>1$ and $r<-1$.
+We distinguish four cases: $-1<r<1$, $r=1$, $r>1$ and $r<-1$.
 
-If $-1<r<1$, then $0<|r|<1$ and $\lim\limits_{n\to\infty}|r^n|=\lim\limits_{n\to\infty}|r|^n=0$, so also $\lim\limits_{n\to\infty}br^n=0$.
+If $-1<r<1$, then $|r|<1$ and $\lim\limits_{n\to\infty}|r^n|=\lim\limits_{n\to\infty}|r|^n=0$, so also $\lim\limits_{n\to\infty}br^n=0$.
 
 If $r=1$, then $\lim\limits_{n\to\infty}r^n=\lim\limits_{n\to\infty}1^n=1$ and so $\lim\limits_{n\to\infty}br^n=b$.
 
@@ -194,18 +191,15 @@ The sequence $\{a_n\}$ with $a_n=\left(-\dfrac{4}{5}\right)^n$ is a geometric se
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample6
-The sequence $\{a_n\}$ with $a_n=2^n$ diverges to $\infty$, because $2>1$ and it is a geometric sequence.
-
+The sequence $\{b_n\}$ with $b_n=2^n$ diverges to $\infty$, because $2>1$ and it is a geometric sequence.
 
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample7
 
-The sequence $\{a_n\}$ with $a_n=(-1)^n$ is divergent. It does not diverge to $\infty$ or $-\infty$.
+The sequence $\{c_n\}$ with $c_n=(-1)^n$ is divergent. It does not diverge to $\infty$ or $-\infty$.
 ::::::
-
-
 
 ## Using continuity
 
@@ -221,18 +215,17 @@ If $\lim\limits_{x\to\infty}f(x)=L$ and the function $f$ is continuous at $L$, t
 This is an immediate consequence of {prf:ref}`Theorem:Continuity:SubstitutionInf` and {prf:ref}`Thm:Sequences:LimitFunctionSequence`.
 ::::::
 
-
 ::::::{prf:example}
 1) The sequence $\{a_n\}$ with $a_n=\sin\left(\dfrac{1}{n}\right)$ is convergent and $\lim\limits_{n\to\infty}a_n=\sin(0)=0$.
 
-2) The sequence $\{a_n\}$ with $a_n=\cos\left(\dfrac{n\pi}{n+1}\right)$ is convergent and $\lim\limits_{n\to\infty}a_n=\cos(\pi)=-1$.
+2) The sequence $\{b_n\}$ with $b_n=\cos\left(\dfrac{n\pi}{n+1}\right)$ is convergent and $\lim\limits_{n\to\infty}b_n=\cos(\pi)=-1$.
 
-3) The sequence $\{a_n\}$ with $a_n=\arctan\left(\dfrac{n+1}{n+2}\right)$ is convergent and $\lim\limits_{n\to\infty}a_n=\arctan(1)=\frac{1}{4}\pi$.
+3) The sequence $\{c_n\}$ with $c_n=\arctan\left(\dfrac{n+1}{n+2}\right)$ is convergent and $\lim\limits_{n\to\infty}c_n=\arctan(1)=\frac{1}{4}\pi$.
 ::::::
 
 ## Connecting monotonicity, boundedness and convergence
 
-Let us revisit {prf:ref}`Ex:Sequences:IncreasingExample1Function` and {prf:ref}`Ex:Sequences:IncreasingExample2Function` to determine whether the sequences $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ and $a_n=\dfrac{2n}{n^2+1}$ are convergent or divergent and to find the limit in case they are convergent.
+Let us revisit {prf:ref}`Ex:Sequences:IncreasingExample1Function` and {prf:ref}`Ex:Sequences:IncreasingExample2Function` to determine whether the sequences $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ and $\{b_b\}$ with $b_n=\dfrac{2n}{n^2+1}$ are convergent or divergent and to find the limit in case they are convergent.
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExampleIncreasing
@@ -263,7 +256,7 @@ This implies that the sequence $\{a_n\}_{n=1}^{\infty}$ is convergent and $\lim\
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExampleDecreasing
-We show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n}{n^2+1}$ is convergent.
+We show that the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$ is convergent.
 
 ```{figure} Images/sequence2.png
 ---
@@ -272,25 +265,25 @@ name: Fig:Sequences:ConvergenceExampleDecreasing
 align: center
 class: dark-light
 ---
-The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{2x}{x^2+1}$.
+The terms of the sequence $\{b_n\}$ lie on the graph of $g(x)=\dfrac{2x}{x^2+1}$.
 ```
 
 :::{todo}
 Replace {numref}`Fig:Sequences:ConvergenceExampleDecreasing` with an applet.
 :::
 
-Note that $a_n=f(n)$ with $f(x)=\dfrac{2x}{x^2+1}$. Then we have
+Note that $b_n=g(n)$ with $g(x)=\dfrac{2x}{x^2+1}$. Then we have
 
 $$
-\lim_{x\to\infty}f(x)=\lim_{x\to\infty}\frac{2x}{x^2+1}=0.
+\lim_{x\to\infty}g(x)=\lim_{x\to\infty}\frac{2x}{x^2+1}=0.
 $$
 
-This implies that the sequence $\{a_n\}_{n=1}^{\infty}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$.
+This implies that the sequence $\{b_n\}_{n=1}^{\infty}$ is convergent and $\lim\limits_{n\to\infty}b_n=0$.
 ::::::
 
-From {prf:ref}`Ex:Sequences:IncreasingExample1Function`, {prf:ref}`Ex:Sequences:BoundedExample1` and {prf:ref}`Ex:Sequences:ConvergenceExampleIncreasing` we can conclude that the sequence $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing, bounded above (by $1$) and convergent. From {prf:ref}`Ex:Sequences:IncreasingExample2Function`, {prf:ref}`Ex:Sequences:BoundedExample2` and {prf:ref}`Ex:Sequences:ConvergenceExampleDecreasing` we can conclude that the sequence $\{a_n\}$ with $a_n=\dfrac{2n}{n^2+1}$ is strictly decreasing, bounded below (by $0$) and convergent.
+From {prf:ref}`Ex:Sequences:IncreasingExample1Function`, {prf:ref}`Ex:Sequences:BoundedExample1` and {prf:ref}`Ex:Sequences:ConvergenceExampleIncreasing` we can conclude that the sequence $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing, bounded above (by $1$) and convergent. From {prf:ref}`Ex:Sequences:IncreasingExample2Function`, {prf:ref}`Ex:Sequences:BoundedExample2` and {prf:ref}`Ex:Sequences:ConvergenceExampleDecreasing` we can conclude that the sequence $\{b_n\}$ with $b_n=\dfrac{2n}{n^2+1}$ is strictly decreasing, bounded below (by $0$) and convergent.
 
-Every strictly increasing sequence is also non-decreasing, and every strictly decreasing sequence is also non-increasing. So, we can also say that the sequence $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ is non-decreasing, bounded above (by $1$) and convergent, and that the sequence $\{a_n\}$ with $a_n=\dfrac{2n}{n^2+1}$ is non-increasing, bounded below (by $0$) and convergent.
+Every strictly increasing sequence is also non-decreasing, and every strictly decreasing sequence is also non-increasing. So, we can also say that the sequence $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ is non-decreasing, bounded above (by $1$) and convergent, and that the sequence $\{b_n\}$ with $b_n=\dfrac{2n}{n^2+1}$ is non-increasing, bounded below (by $0$) and convergent.
 
 As you may expect this is no coincidence, and in fact we have the following important theorem:
 
@@ -355,13 +348,13 @@ $$
 
 ::::::{prf:example}
 :label: Ex:Sequences:MonotonicBoundedExample2
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=10$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
+Consider the sequence $\{b_n\}_{n=1}^{\infty}$ given by $b_1=10$ and $b_{n+1}=\sqrt{b_n+6}$ for $n=1,2,3,\ldots$. 
 
 We will show that the sequence converges and find its limit.
 
-We have seen that the sequence strictly decreases and is bounded below by $0$. This implies that the sequence converges. So, the limit $\lim\limits_{n\to\infty}a_n$ exists.
+We have seen that the sequence strictly decreases and is bounded below by $0$. This implies that the sequence converges. So, the limit $\lim\limits_{n\to\infty}b_n$ exists.
 
-Let $L=\lim\limits_{n\to\infty}a_n$, then we have $\lim\limits_{n\to\infty}a_{n+1}=L$ and
+Let $L=\lim\limits_{n\to\infty}b_n$, then we also have $\lim\limits_{n\to\infty}b_{n+1}=L$ and
 
 \begin{align*}
 L=\sqrt{L+6}\quad\Longrightarrow\quad L^2=L+6&\quad\Longleftrightarrow\quad L^2-L-6=0\\
@@ -376,9 +369,15 @@ Hence: $L=3$ or $L=-2$. Since the sequence is bounded below by $0$, we conclude 
 
 It is important that we first showed that the limit exists before setting $L=\lim\limits_{n\to\infty}a_n$. Otherwise, you might draw wrong conclusions.
 
-For instance, it is clear that the Fibonacci sequence, which is defined by $F_{n+2}+F_n+F_{n+1}$ for $n=1,2,3,\ldots$ with $F_1=F_2=1$ is divergent. So, the limit $\lim\limits_{n\to\infty}a_n=\infty$ does not exist.
+For instance, it is clear that the Fibonacci sequence, which is defined by 
 
-If we would assume that $L=\lim\limits_{n\to\infty}a_n$, then we would have that
+$$
+F_{n+2}+F_n+F_{n+1}\quad\text{for}\quad n=1,2,3,\ldots
+$$ 
+
+with $F_1=F_2=1$ is divergent. So, the limit $\lim\limits_{n\to\infty}F_n=\infty$ does not exist.
+
+If we would assume that $L=\lim\limits_{n\to\infty}F_n$, then we would have that
 
 $$
 L=L+L\quad\Longleftrightarrow\quad L=0.
@@ -408,13 +407,13 @@ The sequence $\{a_n\}$ with $a_n=\dfrac{(-1)^n}{n}$ is convergent and $\lim\limi
 
 ::::::{prf:example}
 :label: Ex:Sequences:SqueezeTheoremExample2
-The sequence $\{a_n\}$ with $a_n=\dfrac{\cos(n)}{\sqrt{n}}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$ because $|a_n|\leq\dfrac{1}{\sqrt{n}}\to 0$ as $n\to\infty$.
+The sequence $\{b_n\}$ with $b_n=\dfrac{\cos(n)}{\sqrt{n}}$ is convergent and $\lim\limits_{n\to\infty}b_n=0$ because $|b_n|\leq\dfrac{1}{\sqrt{n}}\to 0$ as $n\to\infty$.
 ::::::
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:SqueezeTheoremExample3
-The sequence $\{a_n\}$ with $a_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$ because $|a_n|\leq\dfrac{1}{n}\to 0$ as $n\to\infty$.
+The sequence $\{c_n\}$ with $c_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\limits_{n\to\infty}c_n=0$ because $|c_n|\leq\dfrac{1}{n}\to 0$ as $n\to\infty$.
 ::::::
 
 ## Grasple exercises
@@ -473,7 +472,7 @@ Show that the sequence $\left\{\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}
 :class: solution, dropdown
 Note that the sequence can be written as $\{a_n\}_{n=1}^{\infty}$ with $a_1=\sqrt{2}$ and $a_{n+1}=\sqrt{2a_n}$ for $n=1,2,3,\ldots$.
 
-1) Using mathematical induction we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
+1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
 
   For $n=1$ this reads: $a_2=\sqrt{2a_1}=\sqrt{2\sqrt{2}}\sqrt{2}\sqrt{\sqrt{2}}>\sqrt{2}=a_1$ which is true.
 
@@ -485,7 +484,7 @@ $$
 
   This proves that the sequence is strictly increasing.
 
-2) Using mathematical induction we prove that the sequence is bounded above, for instance that $a_n\leq2$ for $n=1,2,3,\ldots$.
+2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq2$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_1=\sqrt{2}\leq2$, which is true.
 
@@ -521,7 +520,7 @@ Show that the sequence $\left\{\sqrt{2},\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2+\sqrt{
 :class: solution, dropdown
 Note that the sequence can be written as $\{a_n\}_{n=1}^{\infty}$ with $a_1=\sqrt{2}$ and $a_{n+1}=\sqrt{2+a_n}$ for $n=1,2,3,\ldots$.
 
-1) Using mathematical induction we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
+1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_2=\sqrt{2+a_1}=\sqrt{2+\sqrt{2}}>\sqrt{2}=a_1$ which is true.
 
@@ -533,7 +532,7 @@ $$
 
 This proves that the sequence is strictly increasing.
 
-2) Using mathematical induction we prove that the sequence is bounded above, for instance that $a_n\leq2$ for $n=1,2,3,\ldots$.
+2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq2$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_1=\sqrt{2}\leq2$, which is true.
 
@@ -561,7 +560,7 @@ Show that the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=4-
 
 :::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise5`
 :class: solution, dropdown
-1) Using mathematical induction we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
+1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_2=4-1=3>1=a_1$ which is true.
 
@@ -573,7 +572,7 @@ $$
 
 This proves that the sequence is strictly increasing.
 
-2) Using mathematical induction we prove that the sequence is bounded above, for instance that $a_n\leq3$ for $n=1,2,3,\ldots$.
+2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq3$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_1=1\leq3$, which is true.
 
@@ -601,7 +600,7 @@ Show that the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=3$ and $a_{n+1}=\d
 
 :::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise6`
 :class: solution, dropdown
-1) Using mathematical induction we prove that the sequence is strictly decreasing: $a_{n+1}<a_n$ for $n=1,2,3,\ldots$.
+1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly decreasing: $a_{n+1}<a_n$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_2=\dfrac{1}{4-3}=1<3=a_1$ which is true.
 
@@ -613,7 +612,7 @@ $$
 
 This proves that the sequence is strictly decreasing.
 
-2) Using mathematical induction we prove that the sequence is bounded below, for instance that $a_n\geq0$ for $n=1,2,3,\ldots$.
+2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded below, for instance that $a_n\geq0$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_1=3\geq0$, which is true.
 
@@ -641,7 +640,7 @@ Show that the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\s
 
 :::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise7`
 :class: solution, dropdown
-1) Using mathematical induction we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
+1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_2=\sqrt{3}>1=a_1$ which is true.
 
@@ -653,7 +652,7 @@ $$
 
 This proves that the sequence is strictly increasing.
 
-2) Using mathematical induction we prove that the sequence is bounded above, for instance that $a_n\leq5$ for $n=1,2,3,\ldots$.
+2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq5$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_1=1\leq5$, which is true.
 
@@ -681,7 +680,7 @@ Show that the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=3$ and $a_{n+1}=\s
 
 :::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise8`
 :class: solution, dropdown
-1) Using mathematical induction we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
+1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_2=\sqrt{21}>3=a_1$ which is true.
 
@@ -693,7 +692,7 @@ $$
 
 This proves that the sequence is strictly increasing.
 
-2) Using mathematical induction we prove that the sequence is bounded above, for instance that $a_n\leq10$ for $n=1,2,3,\ldots$.
+2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq10$ for $n=1,2,3,\ldots$.
 
 For $n=1$ this reads: $a_1=3\leq10$, which is true.
 
