@@ -151,3 +151,5 @@ y''=f(t,y,y'),\quad y(t_0)=y_0,\quad y'(t_0)=y_0'.
 :::
 
 ::::::
+
+Proof of {prf:ref}`Thm:DE:GeneralSolutionHomogeneous`
