@@ -806,12 +806,97 @@ A plot of the solution with $x(0)=1$, $x'(0)=-10$ for the I) overdamped case; II
 Replace {numref}`Fig:ODE2:Damping` with an applet.
 :::
 
-### A complicated family of integrals
+### The source-free series RLC electrical circuit
+
+Consider an electrical circuit where a resistor with resitance $R$ (in ohm $\Omega$), an inductor with inductance $L$ (in henry $H$) and a capacitor with capacitance $C$ (in farad $F$) are placed in series, see {numref}`Fig:ODE2:RLC`. There is no voltage or current source. This circuit is known as the source-free series RLC electrical circuit. 
+
+:::{figure} Images/Fig-ODE2-seriesRLC.jpg
+:name: Fig:ODE2:RLC
+:class: dark-light
+:author: L. Usa
+
+A source-free electrical circuit, where a resistor with resitance $R$, an inductor with inductance $L$ and a capacitor with capacitance $C$ are placed in series. The current $i(t)$ is the quantitiy of interest.
+:::
+
+The main goal is to see how the current $i(t)$ evolves in time. We assume that there is some energy stored initially in the capacitor and the inductor (otherwise there would be no current at all). For the initial current, we assume that $i(0)=I_0$ for some $I_0>0$ We let $v(t)$ represent the voltage across the capacitor. It can then be shown that
+
+$$
+ v(t)=\frac{1}{C}\int_{-\infty}^t i(s)\,ds
+$$
+
+for all $t$. In particular, we can denote the voltage at $t=0$ by $v(0)=V_0$ and then we have
+
+$$
+ v(0)=V_0=\frac{1}{C}\int_{-\infty}^0 i(s)\,ds.
+$$
+
+From Ohm's law, we know that the voltage across the resistor is given by
+
+$$
+ v=Ri.
+$$
+
+Finally, it can be shown that the voltage across the inductor is given by
+
+$$
+ v=L\frac{di}{dt}.
+$$
+
+The [Kirchoff Voltage Law](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_voltage_law) states that the total voltage across the loop is $0$. So adding these three voltages gives the equation
+
+$$
+ L\frac{di}{dt}+Ri+\frac{1}{C}\int_{-\infty}^t i(s)\,ds=0.
+$$
+
+This equation involves both integrals and derivatives of $i$ and is called an **integro-differential equation**. We can turn it into a differential equation by differentiating the entire equation with respect to $t$. Doing this yields the equation
+
+$$
+ L\frac{d^2i}{dt^2}+R\frac{di}{dt}+\frac{1}{C}i(t)=0.
+$$
+
+This is a second order, linear, homogeneous differential equation with constant coefficients, so we can use the techniques from this section to solve it.
+
+::::::{prf:example}
+:label: Ex:ODE2:RLC
+Consider the source-free series RLC electrical circuit with $R=30\ \Omega$, $L=2\ H$ and $C=\frac{1}{4}\ F$. Then we obtain the differential equation
+
+$$
+ 2i''+30i'+\frac{1}{4}i=0.
+$$
+
+Trying the solution $i(t)=e^{rt}$ gives the characteristic equation
+
+$$
+ 2r^2+30r+\frac{1}{4}=0.
+$$
+
+The (somewhat ugly) roots are $r_1=\dfrac{-30+\sqrt{898}}{4}$ and $r_2=\dfrac{-30-\sqrt{898}}{4}$. This means that the general solution is given by
+
+$$
+ i(t)=c_1e^{\dfrac{-30+\sqrt{898}}{4}t}+c_2e^{ \dfrac{-30-\sqrt{898}}{4}t}.
+$$
+::::::
+
+Note that the differential equation for the source-free series RLC electrical circuit 
+
+$$
+ L\frac{d^2i}{dt^2}+R\frac{di}{dt}+\frac{1}{C}i(t)=0.
+$$
+
+has the same structure as the one for the damped mass-spring system
+
+$$
+ mx''(t)+cx'(t)+kx(t)=0.
+$$ 
+
+For this reason, a lot of terminology that is used for the damped mass-spring system is used for the RLC electrical circuit as well. The terms **overdamped**, **critically damped** and **underdamped** are used when the characteristic equation for the electrical circuit has respectively two real roots, a double real root, and two complex roots. For instance, the circuit from {prf:ref}`Ex:ODE2:RLC` is called overdamped. This also means that the resistance $R$ can be thought of as a damping coefficient.
+
+### A complicated-looking family of improper integrals
 
 
 
 ::::::{prf:example}
-For each $t\in\mathbb{R}$, we consider the integral 
+For each $t\in\mathbb{R}$, we consider the improper integral 
 
 $$
  I(t)=\displaystyle\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx
