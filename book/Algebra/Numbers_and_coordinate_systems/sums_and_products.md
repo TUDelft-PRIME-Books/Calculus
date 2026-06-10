@@ -35,7 +35,7 @@ The following are all different notations for the same _finite_ sequence:
 - $\displaystyle\{a_n\}_{n=p}^{q}$.
 - $\displaystyle a_p,a_{p+1},a_{p+2},\ldots,a_q$.
 
-Here, $p$ is the starting index and $q$ is the ending index.
+Here, the integer $p$ is the starting index and the integer $q$ is the ending index.
 
 The letter $n$ is often used to denote the index, but we can also use any other letter for the index.
 
@@ -107,7 +107,7 @@ In other cases, or even the same, the terms of a sequence are not expressed with
 ::::{prf:definition}
 :label: Def:SumsAndProducts:RecursiveFormula
 
-A **recursive formula for a sequence** $\{a_n\}_{n=p}^{q}$ is a formula that gives the $n$th term $a_n$ of the sequence in terms of $k$ of the preceding terms for all integers $n>p+k$ in combination with formulas for the first $k$ terms $a_p,a_{p+1},\ldots,a_{p+k}$ of the sequence.
+A **recursive formula for a sequence** $\{a_n\}_{n=p}^{q}$ is a formula that gives the $n$th term $a_n$ of the sequence in terms of $k$ of the preceding terms for all integers $n>p+k$ in combination with formulas for the first $k$ terms $a_p,a_{p+1},a_{p+2},\ldots,a_{p+k}$ of the sequence.
 
 ::::
 
@@ -142,23 +142,48 @@ The summation symbol $\sum$ (the capital Greek letter sigma) is used to denote t
 
 The **summation symbol** $\sum$ is used to denote the addition of a finite sequence.
 
-If $\{a_n\}_{n=p}^{q}$ is a finite sequence, then $\displaystyle\sum_{n=p}^qa_n$ is an abbreviation for the addition of the numbers $a_p,a_{p+1},\ldots,a_q$, that is
+If $\{a_n\}_{n=p}^{q}$ is a finite sequence, then $\displaystyle\sum_{n=p}^qa_n$ is an abbreviation for the addition of the numbers $a_p,a_{p+1},a_{p+2},\ldots,a_q$, that is
 
 $$
-\sum_{n=p}^qa_n=a_p+a_{p+1}+\cdots+a_q.
+\sum_{n=p}^qa_n=a_p+a_{p+1}+a_{p+2}+\cdots+a_q.
 $$
 
-The result $S$ of the addition is called the **sum** of the numbers $a_p,a_{p+1},\ldots,a_q$ and we write
+The result $S$ of the addition is called the **sum** of the numbers $a_p,a_{p+1},a_{p+2},\ldots,a_q$ and we write
 
 $$
 \sum_{n=p}^qa_n = S.
 $$
 
-The letter $n$ in the notation $\displaystyle\sum_{n=p}^qa_n$ is called the **index of summation**. The number $p$ is called the **starting index of summation** and the number $q$ is called the **ending index of summation**.
+The letter $n$ in the notation $\displaystyle\sum_{n=p}^qa_n$ is called the **index of summation**. The integer $p$ is called the **starting index of summation** and the integer $q$ is called the **ending index of summation**.
 
 ::::::
 
-The next examples only consider the addition of some finite sequences.
+::::{prf:theorem}
+:label: Thm:SumsAndProducts:Sum
+
+The sum of a finite summation exists.
+::::
+
+::::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:Sum`
+:class: tudproof, dropdown
+
+Assume $\{a_n\}_{n=p}^q$ is a finite sequence of terms, then we have
+
+$$
+\sum_{n=p}^qa_n=a_p+a_{p+1}+a_{p+2}+\cdots+a_q.
+$$
+
+Using brackets, we can write this as
+
+$$
+\sum_{n=p}^qa_n=\left(\cdots\left(\left(a_p+a_{p+1}\right)+a_{p+2}\right)+\cdots\right)+a_q.
+$$
+
+Since the addition of two numbers is well-defined, we can add $a_p$ and $a_{p+1}$ to get a number, which we can then add to $a_{p+2}$ to get another number, and so on until we have added all the terms of the series. Hence, the sum of a finite series exists.
+
+::::
+
+In the next examples we consider the summation of some finite sequences.
 
 ::::::{prf:Example}
 :label: Ex:SumsAndProducts:IntroductionExamplesSum
@@ -382,7 +407,7 @@ As you may have observed, we could _cancel_ many terms in the series because tho
 ::::{prf:definition}
 :label: Def:SumsAndProducts:TelescopingSum
 
-A finite summation $\displaystyle\sum_{k=m}^na_k$ is called a **telescoping summation** if there exists a sequence $\{b_k\}_{k=m}^{n+p}$ and an integer $p\geq1$ such that $a_k=b_{k}-b_{k+p}$ for all $k\in\{m,m+1,\ldots,n\}$.
+A finite summation $\displaystyle\sum_{k=m}^na_k$ is called a **telescoping summation** if there exists a sequence $\{b_k\}_{k=m}^{n+p}$ and an integer $p\geq1$ such that $a_k=b_{k}-b_{k+p}$ for all $k\in\{m,m+1,m+2,\ldots,n\}$.
 
 The property that allows us to cancel many terms in a telescoping summation is called the **telescoping property**.
 ::::
@@ -422,7 +447,7 @@ Even better, notice that the sum of the telescoping summation is the sum of the 
 
 ::::{prf:theorem}
 :label: Thm:SumsAndProducts:SumTelescopingSum
-If $\displaystyle\sum_{k=m}^na_k$ is a telescoping summation with $a_k=b_{k}-b_{k+p}$ for all $k\in\{m,m+1,\ldots,n\}$ and some integer $p\geq1$, then we have
+If $\displaystyle\sum_{k=m}^na_k$ is a telescoping summation with $a_k=b_{k}-b_{k+p}$ for all $k\in\{m,m+1,m+2,\ldots,n\}$ and some integer $p\geq1$, then we have
 
 $$
 \sum_{k=m}^na_k=\sum_{k=m}^{m+p-1}b_k-\sum_{k=n+1}^{n+p}b_k.
@@ -536,19 +561,19 @@ Similarly, the multiplication symbol $\prod$ (capital Greek letter pi) is used t
 
 The **product symbol** $\prod$ is used to denote the multiplication of a set of ordered numbers.
 
-If $\{a_n\}_{n=p}^{q}$ is a finite sequence, then $\displaystyle\prod_{n=p}^qa_n$ is an abbreviation for the multiplication of the numbers $a_p,a_{p+1},\ldots,a_q$, that is
+If $\{a_n\}_{n=p}^{q}$ is a finite sequence, then $\displaystyle\prod_{n=p}^qa_n$ is an abbreviation for the multiplication of the numbers $a_p,a_{p+1},a_{p+2},\ldots,a_q$, that is
 
 $$
 \prod_{n=p}^qa_n=a_p\cdot a_{p+1}\cdots a_q.
 $$
 
-The result $P$ is called the **product** of the numbers $a_p,a_{p+1},\ldots,a_q$ and we write
+The result $P$ is called the **product** of the numbers $a_p,a_{p+1},a_{p+2},\ldots,a_q$ and we write
 
 $$
 \prod_{n=p}^qa_n = P.
 $$
 
-The letter $n$ in the notation $\displaystyle\prod_{n=p}^qa_n$ is called the **index of multiplication**. The number $p$ is called the **starting index of multiplication** and the number $q$ is called the **ending index of multiplication**.
+The letter $n$ in the notation $\displaystyle\prod_{n=p}^qa_n$ is called the **index of multiplication**. The integer $p$ is called the **starting index of multiplication** and the integer $q$ is called the **ending index of multiplication**.
 
 ::::::
 
@@ -650,7 +675,7 @@ $$
 
 In {prf:ref}`Thm:SumsAndProducts:PropertiesFiniteProducts` the first and third property are focussed on the addition of finite multiplications, the second property is focussed on the multiplication of a finite multiplication by a number, and the fourth property is focussed on the change of the index of multiplication.
 
-Combining the second property and the first property, we also obtain the following properties. If $\displaystyle\prod_{n=p}^qa_n=A$ and $\displaystyle\prod_{n=p}^qb_n=B$, with $B\neq0$ and $b_n\neq0$ for all $n\in\{p,p+1,\ldots,q\}$, then we have
+Combining the second property and the first property, we also obtain the following properties. If $\displaystyle\prod_{n=p}^qa_n=A$ and $\displaystyle\prod_{n=p}^qb_n=B$, with $B\neq0$ and $b_n\neq0$ for all $n\in\{p,p+1,p+2,\ldots,q\}$, then we have
 
 $$
 \prod_{n=p}^q\frac{a_n}{b_n}=\frac{A}{B},
