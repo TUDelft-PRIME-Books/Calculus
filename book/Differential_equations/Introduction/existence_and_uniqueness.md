@@ -12,7 +12,7 @@ In this section we discuss under which conditions a differential equation has a 
 
 ## Introduction
 
-In the previous section we showed that boundary value problems might have no solution, a unique solution or even infinitely many solutions.
+In the previous section we showed that boundary-value problems might have no solution, a unique solution or even infinitely many solutions.
 
 Furthermore, we mentioned that a first-order differential equation has a solution with one degree of freedom denoted by an arbitrary constant of integration. This constant can be determined by using an initial value. In this section we prove this, first for linear differential equations and then for more general (not necessary linear) differential equations.
 

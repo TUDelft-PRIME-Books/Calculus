@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this section we explain the relation between definite and indefinite integrals. The connection is given by the *fundamental theorem of calculus*.
+In this section we will explain the relation between definite and indefinite integrals. The connection is given by the *fundamental theorem of calculus*.
 
 In {numref}`Sec:Integration:IndefiniteIntegrals` we introduced the concept of the indefinite integral $\displaystyle \int f(x)\,dx$ of a function $f$ on an open interval $I$ and made a relation between indefinite integrals and derivatives.
 
@@ -26,10 +26,10 @@ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $F'(x)=f(x)$.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart1`
-:class: tudproof
+:class: tudproof, dropdown
 :name: Prf:Integration:FundamentalTheoremPart1
 
-Using {prf:ref}`Def:Differentiability:Derivative`, we obtain
+Using the third rule of {prf:ref}`Thm:Integration:DefinitePropertiesArea` and {prf:ref}`Def:Differentiability:Derivative`, we obtain
 
 \begin{align*}
 F'(x)&=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
@@ -38,7 +38,7 @@ F'(x)&=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
 &=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)\,dt.
 \end{align*}
 
-Because $f$ is continuous on $[a,b]$, we can use the third comparison test from {prf:ref}`Th:Integration:DefiniteComparison` to conclude that there exists values $c$ and $d$ between $x$ and $x+h$ such that $f(c)\leq f(t)\leq f(d)$ for all $t$ between $x$ and $x+h$ and that we have
+Because $f$ is continuous on $[a,b]$, we can use the third rule of {prf:ref}`Thm:Integration:DefiniteComparison` to conclude that there exist values $c$ and $d$ between $x$ and $x+h$ such that $f(c)\leq f(t)\leq f(d)$ for all $t$ between $x$ and $x+h$ and that we have
 
 $$
 \int_x^{x+h}f(t)\,dt\geq\int_x^{x+h}f(c)\,dt=f(c)\cdot ((x+h)-x)=hf(c).
@@ -50,7 +50,7 @@ $$
 \int_x^{x+h}f(t)\,dt\leq\int_x^{x+h}f(d)\,dt=f(d)\cdot ((x+h)-x)=hf(d).
 $$
 
-Note that if $h\rightarrow0$, then both $c$ and $d$ approach $x$ and $f(c)$ and $f(d)$ approach $f(x)$. Hence, we can use {prf:ref}`Theorem:LimitAtPoint:Squeezetheorem` to conclude that because
+Note that if $h\rightarrow0$, then both $c$ and $d$ approach $x$ and $f(c)$ and $f(d)$ approach $f(x)$ by continuity. Hence, we can use {prf:ref}`Theorem:LimitAtPoint:Squeezetheorem` to conclude that because
 
 $$
 f(c)\leq \frac{1}{h}\int_x^{x+h}f(t)\,dt\leq f(d),
@@ -64,7 +64,7 @@ $$
 
 This proves that $F$ is differentiable on $(a,b)$ and that $F'(x)=f(x)$.
 
-Because $f$ is continuous on $[a,b]$, it follows from {prf:ref}`Def:Integration:Integrable` that $F(b)$ exists and $F(a)=0$. Therefore, $F$ is also continuous on $[a,b]$.
+Because $f$ is continuous on $[a,b]$, it follows from {prf:ref}`Thm:Integration:IntegrablePiecewise` that $F(b)$ exists and $F(a)=0$. Therefore, $F$ is also continuous on $[a,b]$.
 
 ::::::
 
@@ -73,7 +73,7 @@ Because $f$ is continuous on $[a,b]$, it follows from {prf:ref}`Def:Integration:
 
 We take $F(x)=\displaystyle\int_0^xe^{t^2}\,dt$ and want to determine $F'(x)$.
 
-We need not to evaluate the integral, which would be impossible. However, application of the fundamental theorem of calculus leads to the immediate answer 
+We not need to evaluate the integral, which would be impossible in terms of elementary functions. However, application of the fundamental theorem of calculus leads to the immediate solution 
 
 $$
 F'(x)=\frac{d}{dx}\int_0^xe^{t^2}\,dt=e^{x^2}.
@@ -83,11 +83,11 @@ $$
 
 ::::::{prf:Example}
 :label: Ex:Integration:FundamentalTheoremPart1Example2
-Let us assume $F(x)=\displaystyle\int_0^{\sqrt{x}}\cos(t^2)\,dt$ for $x>0$ and determine $F'(x)$.
+Let $G(x)=\displaystyle\int_0^{\sqrt{x}}\cos(t^2)\,dt$ for $x>0$. We want to determine $G'(x)$.
 
-If we would have had $g(u)=\displaystyle\int_0^{u}\cos(t^2)\,dt$, we would have had $g'(u)=\cos(u^2)$ by the fundamental theorem of calculus.
+Setting $u=\sqrt{x}$ we have $G(x)=\displaystyle\int_0^{u}\cos(t^2)\,dt=H(u)$ with $H'(u)=\cos(u^2)$ by the fundamental theorem of calculus.
 
-However, now we need to also apply the chain rule:
+Now we apply the chain rule: $G'(x)=H'(u)\dfrac{du}{dx}$. This reads
 
 $$
 \frac{d}{dx}\int_0^{\sqrt{x}}\cos(t^2)\,dt=\cos\left((\sqrt{x})^2\right)\cdot\frac{d}{dx}(\sqrt{x})=\cos(x)\cdot\frac{1}{2\sqrt{x}}=\frac{\cos(x)}{2\sqrt{x}}.
@@ -97,8 +97,8 @@ $$
 
 Before we do a final example for part 1 of the fundamental theorem of calculus, we note that the theorem can also be used if the lower limit of integration is $x$:
 
-::::{prf:theorem}
-:label: Thm:Integration:FundamentalTheoremPart1LowerLimit
+::::{prf:corollary}
+:label: Cor:Integration:FundamentalTheoremPart1LowerLimit
 
 If $f$ is continuous on the interval $[a,b]$, then the function $G(x)$ defined by
 
@@ -109,23 +109,21 @@ $$
 is continuous on $[a,b]$ and differentiable on $(a,b)$, and $G'(x)=-f(x)$.
 ::::
 
-::::{admonition} Proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart1LowerLimit`
-:class: tudproof
+::::{admonition} Proof of {prf:ref}`Cor:Integration:FundamentalTheoremPart1LowerLimit`
+:class: tudproof, dropdown
 :name: Prf:Integration:FundamentalTheoremPart1LowerLimit
 
-Using the definition of the definite integral we have:
+Using the second rule of {prf:ref}`Thm:Integration:DefinitePropertiesFundamental` we have:
 
 $$
-\int_a^bf(t)\,dt=\int_a^xf(t)\,dt+\int_x^bf(t)\,dt = F(x)+G(x),
+G(x) = \int_x^bf(t)\,dt = - \int_b^xf(t)\,dt.
 $$
 
-where $F(x)$ is the function defined in {prf:ref}`Thm:Integration:FundamentalTheoremPart1`. Differentiating both sides gives:
+Differentiating both sides we get:
 
 $$
-0 = F'(x) + G'(x) = f(x) + G'(x),
+G'(x) = - f(x).
 $$
-
-which implies that $G'(x) = -f(x)$.
 
 Using the same arguments as in the proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart1`, we can also show that $G$ is continuous on $[a,b]$ and differentiable on $(a,b)$.
 
@@ -152,9 +150,43 @@ Note that this even works if $x^2<x$ and if $x>0$. Now we can differentiate both
 
 ::::::
 
+::::{question} Short-answer blocks
+:type: short-answer
+:variant: blocks
+:columns: 2
+:class: question
+:admonition:
+:showanswer:
+
+Fill in the correct answer in the input fields.
+---
+M[\sin(x^2)] $\displaystyle\frac{d}{dx}\int_0^x\sin(t^2)\,dt=$
+= Apply the fundamental theorem of calculus to find that 
+
+$$
+\frac{d}{dx}\int_0^x\sin(t^2)\,dt=\sin(x^2).
+$$
+> Apply the fundamental theorem of calculus.
+
+M[0] $\displaystyle\frac{d}{dx}\int_0^y\sin(t^2)\,dt=$
+= Note that $\displaystyle\int_0^y\sin(t^2)\,dt$ is a function of $y$, independent of $x$. So, the derivative with respect equals zero.
+> Note that $\displaystyle\int_0^y\sin(t^2)\,dt$ does not depend on $x$.
+
+M[2xy\cos(x^2)] $\displaystyle\frac{d}{dx}\int_0^y\sin(x^2)\,dt=$
+= Note that $\sin(x^2)$ does not depend on $t$, the variable of integration. So, $\displaystyle\int_0^y\sin(x^2)\,dt=y\sin(x^2)$ and the derivative with respect to $x$ equals $2xy\cos(x^2)$ (since $y$ is just a constant).
+> Note that $\sin(x^2)$ does not depend on $t$, the variable of integration.
+
+M[\sin(t^2)] $\displaystyle\frac{d}{dx}\int_0^x\sin(t^2)\,dy=$
+= Note that $\sin(t^2)$ does not depend on $y$, the variable of integration. So, $\displaystyle\int_0^x\sin(t^2)\,dy=x\sin(t^2)$ and the derivative with respect to $x$ equals $\sin(t^2)$.
+> Note that $\sin(t^2)$ does not depend on $y$, the variable of integration.
+
+---
+
+::::
+
 ## Part 2 of the fundamental theorem of calculus
 
-Now we have finished the first part of the fundamental theorem of calculus, we can state the second part, which finally gives us a way to really calculate definite integrals:
+Now that we have finished the first part of the fundamental theorem of calculus, we can state the second part, which finally gives us a way to really calculate definite integrals:
 
 ::::::{prf:Theorem} The fundamental theorem of calculus, part 2
 :label: Thm:Integration:FundamentalTheoremPart2
@@ -168,31 +200,31 @@ where $F$ is any antiderivative of $f$, that is, a function such that $F'=f$.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Integration:FundamentalTheoremPart2`
-:class: tudproof
+:class: tudproof, dropdown
 :name: Prf:Integration:FundamentalTheoremPart2
 
-Let $g(x)=\displaystyle\int_a^xf(t)\,dt$. Then {prf:ref}`Thm:Integration:FundamentalTheoremPart1` implies that $g'(x)=f(x)$. Hence, $g$ is an antiderivative of $f$.
+Let $G(x)=\displaystyle\int_a^xf(t)\,dt$. Then {prf:ref}`Thm:Integration:FundamentalTheoremPart1` implies that $G'(x)=f(x)$. Hence, $G$ is an antiderivative of $f$.
 
 So, if $F$ is any antiderivative of $f$ we have:
 
 $$
-F(x)=g(x)+C\quad\text{for}\quad a<x<b.
+F(x)=G(x)+C\quad\text{for}\quad a<x<b.
 $$
 
-However, since $F$ and $g$ are both continuous on $[a,b]$ we conclude that $F(x)=g(x)+C$ for all $x$ in $[a,b]$.
+However, since $F$ and $G$ are both continuous on $[a,b]$ we conclude that $F(x)=G(x)+C$ for all $x$ in $[a,b]$.
 
 First note that
 
 $$
-g(a) = \int_a^af(t)\,dt = 0.
+G(a) = \int_a^af(t)\,dt = 0.
 $$
 
 This means that:
 
 \begin{align*}
-\int_a^bf(x)\,dx &= g(b) \\
-&= g(b)-g(a) \\
-&= \left(F(b)+C\right) - \left(F(a)+C\right) \\
+\int_a^bf(x)\,dx &= G(b) \\
+&= G(b)-G(a) \\
+&= \left(F(b)-C\right) - \left(F(a)-C\right) \\
 &= F(b)-F(a),
 \end{align*}
 
@@ -269,7 +301,7 @@ So, in order to evaluate a definite integral we just need to find any antideriva
 
 ## Applications of the fundamental theorem of calculus
 
-However, in some applications functions appear, which are defined in terms of an integral that cannot be evaluated. Even though the integrand is continuous and an antiderivative exists, it is sometimes impossible to write this in terms of standard functions. In the examples below we deal with some of these functions. Although the integral cannot be evaluated, the fundamental theorem of calculus can be used to find properties of the function.
+In some applications functions appear, which are defined in terms of an integral that cannot be evaluated. Even though the integrand is continuous and an antiderivative exists, it is sometimes impossible to write this in terms of standard functions. In the examples below we deal with some of these functions. Although the integral cannot be evaluated, the fundamental theorem of calculus can be used to find properties of the function.
 
 ::::::{prf:Example} Error function
 :label: Ex:Integration:FundamentalTheoremErrorFunction
@@ -359,7 +391,7 @@ Replace {numref}`Fig:Integration:FresnelFunctions` with an applet.
 
 ## The mean value theorem
 
-In {prf:ref}`Thm:Graphsderivatives:MVT` we have seen the mean value theorem that states that the derivative of a continuous and differentiable function on a finite interval equals its average slope somewhere in the interval.
+In {prf:ref}`Thm:MinMax:MVT` we have seen the mean value theorem that states that the derivative of a continuous and differentiable function on a finite interval equals its average slope somewhere in the interval.
 
 For integrals we have the following version.
 
@@ -379,7 +411,7 @@ Here $\displaystyle\frac{1}{b-a}\int_a^bf(x)\,dx$ denotes the **mean value** of 
 :class: tudproof
 :name: Prf:Integration:MeanValueTheorem
 
-Let $F(x)$ be an antiderivative of $f$, such that $F'(x)=f(x)$. Since $f$ is continuous, $F$ is continuous on $[a,b]$ and differentiable on $(a,b)$. Then {prf:ref}`Thm:Graphsderivatives:MVT`
+Let $F(x)$ be an antiderivative of $f$, such that $F'(x)=f(x)$. Since $f$ is continuous, $F$ is continuous on $[a,b]$ and differentiable on $(a,b)$. Then {prf:ref}`Thm:MinMax:MVT`
 implies that there exists at least one $c\in(a,b)$ such that
 
 $$
@@ -429,7 +461,7 @@ $$
 \int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx+\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\int_0^{\frac{1}{2}\pi}1\,dx=\tfrac{1}{2}\pi.
 $$
 
-We conclude that
+Now we use (a) to conclude that
 
 $$
 \int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\tfrac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx.
@@ -439,4 +471,170 @@ $$
 
 ## Grasple exercises
 
-66942, 66940, 67076, 67078, 67075, 67081, 67079, 67073, 67072, 63704, 76779, 71414, 76784
+### Part 1 of the fundamental theorem of calculus
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/166b642b-e1df-42f1-875e-235655f4f856?id=76778
+:label: Grasple:76778
+:dropdown:
+:description: Does this function have an antiderivative?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fdb224fd-fb1e-4a30-b7d3-a03b1484a26b?id=76789
+:label: Grasple:76789
+:dropdown:
+:description: Where is the function $f(x)$ positive?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/760ff5f4-90fd-4d52-bfe8-9682b6c0fc0b?id=63708
+:label: Grasple:63708
+:dropdown:
+:description: Determine the derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/84163d6e-7675-46ca-b1f5-3f385d824040?id=76773
+:label: Grasple:76773
+:dropdown:
+:description: Determine the derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/88a928d5-9312-4916-bada-cbd37d5fb9f3?id=75374
+:label: Grasple:75374
+:dropdown:
+:description: Determine the derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b6b5b1bd-b545-4a31-9d2f-84ac510f0594?id=63704
+:label: Grasple:63704
+:dropdown:
+:description: Determine the derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/988fb5b3-53c9-4232-8d43-c7da4bb9ba19?id=76779
+:label: Grasple:76779
+:dropdown:
+:description: Determine the derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cefa8b9f-4333-4f08-aeaf-ee9020bae1e4?id=71414
+:label: Grasple:71414
+:dropdown:
+:description: Determine the derivative.
+
+::::
+
+### Part 2 of the fundamental theorem of calculus
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cbf86abb-d106-41e9-b83d-6cf329dce134?id=67079
+:label: Grasple:67079
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bdfaea6b-5c3e-4ce5-8da8-8221383439a7?id=67073
+:label: Grasple:67073
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/477b2643-6b24-40ad-94f4-298d1c926351?id=67075
+:label: Grasple:67075
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cd63181e-873c-464d-aaf3-4d56c8b8a7f7?id=67078
+:label: Grasple:67078
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d40cfb5b-f656-4753-9577-96225af1fda7?id=66942
+:label: Grasple:66942
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/18c4fc13-db18-432f-ab59-188edc3e4992?id=66940
+:label: Grasple:66940
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cbf57048-948b-46cf-b23c-7f2652984085?id=67072
+:label: Grasple:67072
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d812df75-a285-475b-9e19-53e924fd1292?id=67076
+:label: Grasple:67076
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bba93713-04db-4e3e-bc33-90bcd06a1816?id=67081
+:label: Grasple:67081
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+### Applications of the fundamental theorem of calculus
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/54781abc-83a4-4f98-b475-211a05645f58?id=76787
+:label: Grasple:76787
+:dropdown:
+:description: Find the smallest $x>0$ for which the function $\text{Si}(x)$ has a local maximum.
+
+::::
