@@ -210,20 +210,6 @@ $$
 
 The value of $\zeta(3)\approx1.202057$ is also known as **Apéry's constant**, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
 
-One proof of the first result might be understandable right now. It is based on the Taylor series of $\displaystyle\frac{\sin(x)}{x}$ and an infinite product. For the infinite product we need to know that the (only but all) zeros of $\displaystyle\frac{\sin(x)}{x}$ are $x=\pm n\pi$ with $n\in\{1,2,3,\ldots\}$ and that $\displaystyle\lim\limits_{x\to0}\frac{\sin(x)}{x}=1$. Compare with {prf:ref}`Ex:Integration:IntroductionExamplesProductSine`. Then we have:
-
-$$
-\frac{\sin(x)}{x}=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)!}x^{2k}=\prod_{n=1}^{\infty}\left(1-\frac{x}{n\pi}\right)\left(1+\frac{x}{n\pi}\right)
-=\prod_{n=1}^{\infty}\left(1-\frac{x^2}{n^2\pi^2}\right).
-$$ 
- 
-Comparing the coefficients of $x^2$ we obtain that
-
-$$
--\frac{1}{3!}=-\frac{1}{\pi^2}\sum_{n=1}^{\infty}\frac{1}{n^2}
-\quad\Longrightarrow\quad\zeta(2)=\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2.
-$$
- 
 Note that
 
 $$

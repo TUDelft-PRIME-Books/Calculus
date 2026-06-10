@@ -23,7 +23,7 @@ Although these sequences are all infinite, we can graph several of their terms t
 :name: Fig:PropertiesOfSequences:Introduction
 :class: dark-light
 
-The first 10 terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above.
+The first $10$ terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above.
 ```
 
 :::{todo}
@@ -236,7 +236,7 @@ $$
 :name: Fig:PropertiesOfSequences:Functions
 :class: dark-light
 
-The first 10 terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above, including the three functions $f$, $g$ and $h$ associated with these sequences.
+The first $10$ terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above, including the three functions $f$, $g$ and $h$ associated with these sequences.
 ```
 
 :::{todo}
@@ -422,7 +422,7 @@ $$
 :name: Fig:PropertiesOfSequences:Bounds
 :class: dark-light
 
-The first 50 terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above.
+The first $50$ terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above.
 ```
 
 :::{todo}
