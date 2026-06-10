@@ -135,6 +135,7 @@ parts:
       - file: "Differential_equations/First-order_ordinary_differential_equations/direction_fields_and_solutions.md"
       - file: "Differential_equations/First-order_ordinary_differential_equations/separable_differential_equations.md"
       - file: "Differential_equations/First-order_ordinary_differential_equations/first_order_linear_differential_equations.md"
+      - file: "Differential_equations/First-order_ordinary_differential_equations/first_order_autonomous_differential_equations.md"
       - file: "Differential_equations/First-order_ordinary_differential_equations/exact_differential_equations.md"
       - file: "Differential_equations/First-order_ordinary_differential_equations/series_solutions_1st.md"
       - file: "Differential_equations/First-order_ordinary_differential_equations/approximating_solutions.md"

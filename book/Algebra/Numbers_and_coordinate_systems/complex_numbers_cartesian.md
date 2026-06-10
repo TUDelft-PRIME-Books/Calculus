@@ -11,7 +11,7 @@ ax^2+bx+c=0,
 
 :::
 
-where $a\neq0$. Previously you probably learned that Equation {eq}`Eq:ComplexNumbers:abc-eq` only has solutions when $D=b^2-4ac$ was non-negative and in that case you would have the two solutions
+where $a\neq0$. In {numref}`Subsec:R:IneqAbs` we have seen that Equation {eq}`Eq:ComplexNumbers:abc-eq` only has solutions when $D=b^2-4ac$ is non-negative and in that case we obtain the two solutions
 
 :::{math}
 :label: Eq:ComplexNumbers:abc-sol
@@ -19,13 +19,13 @@ x_{1,2}=\frac{-b\pm\sqrt{D}}{2a}.
 
 :::
 
-Now consider the case that you _really_ need solutions of Equation {eq}`Eq:ComplexNumbers:abc-eq` even if $D$ is negative. This might sound strange, but you will encounter this case in many engineering applications, for example in solving second-order linear differential equations. It turns out that the solution in Equation {eq}`Eq:ComplexNumbers:abc-sol` is still valid when $D<0$, which means that you need to take the square root of a negative number.
+Now consider the case that you _really_ need solutions of Equation {eq}`Eq:ComplexNumbers:abc-eq` even if $D$ is negative. This might sound strange, but you will encounter this in many engineering applications, for example in solving second-order linear differential equations (see {numref}`Sec:ODE2:Homogeneous`). It turns out that the solution in Equation {eq}`Eq:ComplexNumbers:abc-sol` is still valid when $D<0$, which means that you need to take the square root of a negative number.
 
-Luckily, mathematicians have found a way to handle this, namely complex numbers. Before we start treating complex numbers, we first need to introduce the special number $i$. After that, we will introduce the complex numbers and some other terminologies.
+Fortunately, mathematicians have found a way to handle this, namely complex numbers. Before we start treating complex numbers, we first need to introduce the special number $i$. After that, we will introduce the complex numbers and some other terminologies.
 
 ## Complex numbers
 
-**Definitions**
+### Definitions
 
 We start with considering an easier form of Equation {eq}`Eq:ComplexNumbers:abc-eq`, namely
 
@@ -39,25 +39,27 @@ $$
 x_{1,2}=\pm\sqrt{-1}.
 $$
 
-The square root of $-1$ obviously is a problem. Therefore we introduce the special number $i$:
+There is no real number that is the square root of $-1$, so this seems like a problem. However, mathematicians would not be mathematicians if they could not define their way out of problems like these.
 
 ::::{prf:definition}
 :label: Def:ComplexNumbers:i
 
 The **imaginary unit** $i$ is a number defined by the equation
 
-:::{math}
-:label: Eq:ComplexNumbers:def-i
+$$
+ i^2=-1.
+$$
 
-i^2=-1.
-
-:::
 
 ::::
 
 Because $i$ is defined to be a number (mind you, it is not a real number), we also assume $i$ behaves just like any normal number.
 
-Using the imaginary unit $i$ we can prove the following theorem:
+::::::{prf:notation}
+In some fields, particularly in electrical engineering, the imaginary unit is sometimes denoted by $j$, to avoid confusion with the current which often uses the symbol $i$. In this book, we will stick to the symbol $i$.
+::::::
+
+Using the imaginary unit $i$ we can prove the following theorem.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:roots
@@ -69,7 +71,7 @@ Let $a$ be a _positive_ real number. Then the two numbers $x_-=-ai$ and $x_+=ai$
 :::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:roots`
 :class: tudproof, dropdown
 
-First we consider $x_-=-ai$ and take its square:
+First we consider $x_-=-ai$ and take its square. This gives
 
 $$
 x_-^2 = \left(-ai\right)^2 = a^2i^2 = -a^2.
@@ -77,7 +79,7 @@ $$
 
 This shows that $x_-=-ai$ is indeed a solution to the equation $x^2=-a^2$.
 
-We repeat the same for $x_+=ai$:
+We repeat the same for $x_+=ai$ to obtain
 
 $$
 x_+^2 = \left(ai\right)^2 = a^2i^2 = -a^2.
@@ -95,16 +97,26 @@ $$
 
 Doesn't this already look simpler?
 
-Now we have defined $i$, we can revisit the general case given in Equation {eq}`Eq:ComplexNumbers:abc-eq`. Let us start with an example:
+Now we have defined $i$, we can revisit the general case given in Equation {eq}`Eq:ComplexNumbers:abc-eq`. Let us start with an example.
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:compsquare
 
 Consider the second degree polynomial $p(z) =z^2+2z+5$ and we want to solve the equation $p(z)=0$.
 
-We are going to do this by first rewriting $p$ to the form $p(z) = (z+p)^2+q$ for some numbers $p$ and $q$.
+We are going to do this by completing the square. This means that we rewrite $p$ to the form $p(z) = (z+q)^2+r$ for some numbers $q$ and $r$.
 
-Expanding gives that we want $z^2+2z+5=z^2+2pz + (p^2+q)$, thus $2=2p$ and $5=p^2+q$. The first equation gives us $p=1$. Plugging this into the second equation, we obtain $5=1+q$, so $q=4$. Therefore, $z^2+2z+5=(z+1)^2+4$.
+Expanding the brackets gives that we want 
+
+$$
+ z^2+2z+5=z^2+2qz + (q^2+r).
+$$
+
+This means that $2=2q$ and $5=q^2+r$. The first equation gives us $q=1$. Plugging this into the second equation, we obtain $5=1+r$, so $r=4$. Therefore, we obtain
+
+$$
+ z^2+2z+5=(z+1)^2+4.
+$$
 
 To solve $z^2+2z+5=0$, we can now write
 
@@ -118,13 +130,18 @@ z &= -1 \pm 2i.
 
 Note that we used {prf:ref}`Thm:ComplexNumbers:roots`.
 
+In addition to helping us find roots of the polynomial, writing at as $z^2+2z+5=(z+1)^2+4$ has another advantage: we can use it to immediately read off that the minimal value of the parabola
+
+$$
+ y=z^2+2z+5=(z+1)^2+4
+$$
+
+for real values of $z$ equals $4$. Indeed, we have $(z+1)^2\geq 0$ for all real $z$, so we obtain the minimal value when $z=-1$.
 ::::
 
-Going from $z^2+2z+5$ to $(z+1)^2+4$ is called _completing the square_. You can also immediately see that the minimal value of the parabola $y=z^2+2z+5$ for real values of $z$ equals $4$ (as $(z+1)^2\geq 0$ for all real $z$), and the minimum is obtained when $z=-1$.
+In general, you can use the technique of completing the square to write any polynomial $az^2+bz+c$ in the form $a ((z+p)^2+q)$ by first factoring out the $a$, subsequently choosing the $p$ such that the linear term (the term involving $z$) is correct, and letting $q$ be the remainder. Using this form, you can then determine the zeros of the polynomial.
 
-In general, you can write any polynomial $az^2+bz+c$ in the form $a ((z+p)^2+q)$ by first factoring out the $a$, subsequently choosing the $p$ such that the linear term (the term involving $z$) is correct, and letting $q$ be the remainder. Using this form, you can then determine the zeros of the polynomial.
-
-As you can see in {prf:ref}`Ex:ComplexNumbers:compsquare`, we now found two numbers that are of the form $a+bi$, where $a$ and $b$ are real numbers (for short $a\in\mathbb{R}$ and $b\in\mathbb{R}$). A number like this is called a _complex number_:
+As you can see in {prf:ref}`Ex:ComplexNumbers:compsquare`, we now found two numbers that are of the form $a+bi$, where $a$ and $b$ are real numbers (for short $a\in\mathbb{R}$ and $b\in\mathbb{R}$). A number like this is called a _complex number_.
 
 ::::{prf:definition}
 :label: Def:ComplexNumbers:complexnumber
@@ -141,7 +158,7 @@ The set of all complex numbers is denoted by the symbol $\mathbb{C}$, and is cal
 
 ::::
 
-Such complex numbers we usually denote with the letter $z$ (if we only have one). A complex number also has some special parts, which we define next:
+$z$ is the symbol that is most commonly used to denote a complex number, followed by $w$. A complex number also has some special parts, which we define next:
 
 ::::{prf:definition}
 :label: Def:ComplexNumbers:realimaginary
@@ -160,16 +177,32 @@ $$
 
 ::::
 
-To make everything concise, we also define the relation between the set of real numbersr $\mathbb{R}$ and the set of complex numbers $\mathbb{C}$:
+::::::{warning}
+It is a common error to think that the imaginary part of $z=a+bi$ would be $bi$. This is not correct; the imaginary part is $b$. Indeed, we have defined the imaginary part to be the number "before the $i$", **excluding** the $i$.
+::::::
 
-::::{prf:definition}
-:label: Def:ComplexNumbers:realcomplex
+::::{prf:example}
+:label: Ex:ComplexNumbers:realimaginary
 
-Assume $x\in\mathbb{R}$. Then we define that $x\in\mathbb{C}$ with $\Re{x}=x$ and $\Im{x}=0$.
+We consider the complex number $z=-1+2i$. Then it is in the form $z=a+bi$ with $a=-1\in\mathbb{R}$ and $b=2\in\mathbb{R}$. As such, we find that
 
-Assume $z\in\mathbb{C}$ and $\Im{z}=0$. Then we define that $z\in\mathbb{R}$.
+$$
+\Re{z}=-1,
+$$
+
+and 
+
+$$
+\Im{z}=2.
+$$
+
+
 
 ::::
+
+
+
+To make everything concise, we will view the set of all real numbers $\mathbb{R}$ as a part of the complex numbers $\mathbb{C}$. By this we mean that if $x$ is a real number, we can interpret $x$ as the complex number with $\Re{x}=x$ and $\Im{x}=0$. Reversely, if $z$ is a complex number with $\Im{z}$, we interpret it as a real number.
 
 Just like we can visualise real numbers on a number line, we can visualise complex numbers. For this we need two axes, one indicating the value of the real part of a complex number and one indicating the imaginary part of the same complex number. In {numref}`Figure %s <Fig:ComplexNumbers:complexplane>` you can see this visualisation. The horizontal axis always indicates the real part, while the vertical axis always represents the imaginary part.
 
@@ -181,9 +214,134 @@ Visualisation of the complex plane $\mathbb{C}$.
 
 :::
 
-**Operations with complex numbers**
+:::{todo}
+Make Fig:ComplexNumbers:complexplane into an applet. The point should be draggable and/or you should be able to enter the point.
+:::
 
-With complex numbers we can do the same operations as with real numbers:
+### Operations with complex numbers
+
+With complex numbers we can do the same operations as with real numbers: addition, subtraction, multiplication and division. Each of these is performed by simply working out the brackets. Let us first consider a few examples before we show the general result.
+
+::::{prf:example} Addition and subtraction
+:label: Ex:ComplexNumbers:Addition
+Addition of complex numbers is very straightforward. Indeed, suppose we have $z=4+3i$ and $w=-1-2i$. Then we can compute
+
+\begin{align*}
+z+w &= (4+3i)+(-1-2i) \\
+&= 4+3i+(-1)-2i \\
+&= 4+(-1)+3i-2i \\
+&= 3+i.
+\end{align*}
+
+Similarly, subtraction is done by subtracting the real parts and subtracting the imaginary parts. In this case, we obtain
+
+\begin{align*}
+z-w &= (4+3i)-(-1-2i) \\
+&= 4+3i-(-1)-(-2i) \\
+&= 4+1+3i+2i \\
+&= 5+5i.
+\end{align*}
+
+::::
+
+::::{prf:example} Multiplication
+:label: Ex:ComplexNumbers:Multiplication
+Suppose we want to multiply $z=4+3i$ and $w=-1-2i$. Then we can expand the brackets to obtain
+
+\begin{align*}
+zw &= (4+3i)(-1-2i) \\
+&= 4(-1-2i)+3i(-1-2i) \\
+&= 4\cdot(-1)+4\cdot (-2i)-3i+3\cdot (-2)i^2 \\
+&= -4-8i-3i-6 \cdot(-1)\\
+&= 2-11i.
+\end{align*}
+
+::::
+
+Before we turn to division, we need to introduce one more arithmetic operation.
+
+::::{prf:definition}
+:label: Def:ComplexNumbers:conjugate
+
+If $z=a+bi$ is a complex number (with $a,b\in\mathbb{R}$), the **complex conjugate** $\overline{z}$ is defined as
+
+$$
+\overline{z}=a-bi,
+$$
+
+which is also a complex number.
+
+::::
+
+::::::{prf:notation}
+In some texts, the complex conjugate of a complex number is denoted by $z^*$ instead of $\overline{z}$.
+::::::
+
+::::{prf:example} Complex conjugation
+:label: Ex:ComplexNumbers:ComplConj
+Suppose we want to find the complex conjugates of $z=4+3i$ and $w=-1-2i$. This simply means that we should change the sign of the imaginary part of each of the complex numbers, so we obtain
+
+$$
+ \overline{z}=4-3i,\qquad \overline{w}=-1-(-2)i=-1+2i.
+$$
+
+::::
+
+The following result is the reason why the complex conjugate can be used to simplify the quotient of two complex numbers.
+
+::::{prf:theorem} 
+:label: Thm:ComplexNumbers:ComplConjCompl
+If $z=a+bi$ is a complex number with $a,b\in\mathbb{R}$, then 
+
+$$
+ z\overline{z}=a^2+b^2
+$$
+
+is a nonnegative real number.
+
+::::
+
+::::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:ComplConjCompl`
+:class: dropdown, tudproof 
+We have $\overline{z}=a-bi$, so we can work out the product $z\overline{z}$ as
+
+\begin{align*}
+z\overline{z} &= (a+bi)(a-bi) \\
+&= a(a-bi)+bi(a-bi) \\
+&= a^2+a(-b)i+bai+b(-b)i^2 \\
+&= a^2-abi+bai-b^2\cdot(-1) \\
+&= a^2+b^2.
+\end{align*}
+
+Since $a$ and $b$ are real numbers, $a^2+b^2$ is a nonnegative real number.
+::::
+
+Of the arithmetic operations, division is clearly the most complex. The reason for this is that there is no straightforward way to simplify a fraction when the denominator is a sum of two objects. And complex numbers just so happen to be the sum of two objects (the real part and $i$ times the imaginary part). We can circumvent this by mulitplying the denominator and numerator by the same complex number in the hope that the resulting denominator is a single real number. {prf:ref}`Thm:ComplexNumbers:ComplConjCompl` tells us which number we should choose: the complex conjugate of the denominator.
+
+::::{prf:example}
+:label: Ex:ComplexNumbers:Division
+
+
+Suppose we want to divide $z=4+3i$ by $w=-1-2i$. Then we should multiply both parts of the fraction by $\overline{w}=-1+2i$. This gives
+
+$$
+\frac{z}{w}=\frac{4+3i}{-1-2i}=\frac{4+3i}{-1-2i}\frac{-1+2i}{-1+2i}=\frac{(4+3i)(-1+2i)}{(-1-2i)(-1+2i)}.
+$$
+
+We can now work out the brackets in both parts of the fraction to obtain
+
+$$
+\frac{z}{w}=\frac{(4+3i)(-1+2i)}{(-1-2i)(-1+2i)}=\frac{-10+5i}{5}.
+$$
+
+This fraction can be simpified directly and we obtain
+
+$$
+\frac{z}{w}=\frac{-10+5i}{5}=-2+i.
+$$
+::::
+
+In general, we obtain the following result.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:ops
@@ -245,27 +403,14 @@ Finally we look into the _division_:
 
 ::::
 
-Besides these four standard operations we have one more:
 
-::::{prf:definition}
-:label: Def:ComplexNumbers:conjugate
 
-If $z=a+bi$ is a complex number (with $a,b\in\mathbb{R}$), the **complex conjugate** $\overline{z}$ is defined as
-
-$$
-\overline{z}=a-bi,
-$$
-
-which is also a complex number.
-
-::::
-
-We can combine the complex conjugate with the first four operations, which gives the following theorem:
+We can combine the complex conjugate with the first four operations, which gives the following theorem.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:conjops
 
-If $z$ and $w$ are a complex numbers, then the following identities hold:
+If $z$ and $w$ are a complex numbers, then the following identities hold.
 
 \begin{align*}
 \overline{\overline{z}} &= z, \\
@@ -336,7 +481,7 @@ _Division and conjugation_:
 
 ::::
 
-Even better, we can relate the complex conjugate with the real and imaginary part of a complex number:
+Even better, we can relate the complex conjugate with the real and imaginary part of a complex number.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:conjparts
@@ -386,7 +531,7 @@ z\overline{z} &= (a+bi)(a-bi) \\
 
 ::::
 
-From the second identity above we can even deduce the next theorem:
+From the second identity in {prf:ref}`Thm:ComplexNumbers:conjparts` we can even deduce the next theorem.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:realz
@@ -407,9 +552,9 @@ If $z\notin\mathbb{R}$, then $\Im{z}\neq0$. The second identity of {prf:ref}`Thm
 
 ::::
 
-**Geometric interpretation of the complex conjugate**
+### Geometric interpretation of the complex conjugate
 
-First, we look at the complex conjugation. This is a relatively straightforward case, as it involves only a single number. Recall that the complex conjugate $\bar z$ changes the sign of the imaginary part of the number $z$. That is $\overline{a+bi} = a-bi$. As the imaginary part of a complex number corresponds to the second coordinate of its representation in the complex plane, this implies that the number is reflected in the real axis (the horizontal axis). See {numref}`Figure %s <Fig:ComplexNumbers:complexconj>`.
+First, we look at the geometric interpretation of complex conjugation. This is a relatively straightforward case, as it involves only a single number. Recall that the complex conjugate $\bar z$ changes the sign of the imaginary part of the number $z$. That is $\overline{a+bi} = a-bi$. As the imaginary part of a complex number corresponds to the second coordinate of its representation in the complex plane, this implies that the number is reflected in the real axis (the horizontal axis). See {numref}`Figure %s <Fig:ComplexNumbers:complexconj>`.
 
 :::{figure} Images/Fig-ComplexNumbers-complexconj.svg
 :name: Fig:ComplexNumbers:complexconj
@@ -419,9 +564,13 @@ Complex conjugation reflects a number in the real axis.
 
 :::
 
-**Geometric interpretation of addition**
+:::{todo}
+Turn {numref}`Fig:ComplexNumbers:complexconj` into an applet. Probably draggable points are better, right?
+:::
 
-The geometric interpretation of adding complex numbers should look familiar to you. Indeed if we add $z=a+bi$ and $w=c+di$ the new number is $z+w=(a+c)+(b+d)i$, so we add the real and imaginary parts. This means we add the coordinates of the corresponding points, just as if we were adding vectors. Thus, geometrically we can add two complex numbers by following the parallelogram rule. That is, the lines from the origin to the two complex numbers form two sides of a parallelogram with vertices $0$, $z$, $z+w$, and $w$. See {numref}`Figure %s <Fig:ComplexNumbers:complexadd>`.
+### Geometric interpretation of addition
+
+Next, we consider the geometric interpretation of adding complex numbers. If we add $z=a+bi$ and $w=c+di$ the new number is $z+w=(a+c)+(b+d)i$, so we add the real and imaginary parts. This means we add the coordinates of the corresponding points. This works similar to the addition of vectors, see {numref}`Chapter:VectorAlgebra`. Thus, geometrically we can add two complex numbers by following the parallelogram rule. That is, the lines from the origin to the two complex numbers form two sides of a parallelogram with vertices $0$, $z$, $z+w$, and $w$; see {numref}`Figure %s <Fig:ComplexNumbers:complexadd>`.
 
 :::{figure} Images/Fig-ComplexNumbers-complexadd.svg
 :name: Fig:ComplexNumbers:complexadd
@@ -431,13 +580,17 @@ Adding complex numbers follows the parallelogram rule.
 
 :::
 
-If we want to interpet the other operations such as multiplication easily, we first need another way of writing complex numbers. But before we do that we will turn our attention first to solving equations.
+:::{todo}
+Turn {numref}`Fig:ComplexNumbers:complexadd` into an applet with draggable points.
+:::
+
+If we want to interpet the other operations such as multiplication easily, we first need another way of writing complex numbers, which we will study in {numnref}`Ch:ComplexNumbersPolar`. Before we do that we will turn our attention first to solving equations.
 
 ## Solving equations
 
 The reason for introducing complex numbers is to ensure that more equations have solutions, for example $z^2+1=0$. In this section, we consider equations involving complex numbers. This means that the solutions may be complex, but also that the coefficients in the equations can be complex.
 
-We already solved quadratic equations using a new technique called _completing the square_ and in this section you will learn more ways to solve equations.
+We already solved quadratic equations using the technique called _completing the square_ and in this section you will learn more ways to solve equations.
 
 We introduced complex numbers to give the equation $x^2+1 = 0$  a solution.  It appears that something much stronger holds, namely, that every polynomial equation with coefficients in $\mathbb{C}$, for instance  $(1+i)x^4 - 2x^2 + x = 10i$,  has solutions in $\mathbb{C}$. This is the content of the following theorem.
 
@@ -481,11 +634,11 @@ Consider the equation $z^2=-1$. We can always rewrite an equation to an equation
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polycompl
 
-While a polynomial of degree $n$ can be factored in $n$ linear terms, and we have $n$ values $b_i$, this does not mean that there are $n$ distinct zeros. For example $p(z) = z^2+2z+4$ can be factored as $p(z)=(z+2)^2$ and thus only has $z=-2$ as a solution. However, the term $(z+2)$ occurs twice in the factorisation. We therefore say that the multiplicity of the zero $-2$ is equal to two.
+While a polynomial of degree $n$ can be factored in $n$ linear terms, and we have $n$ values $b_i$, this does not mean that there are $n$ distinct zeros. For example $p(z) = z^2+4z+4$ can be factored as $p(z)=(z+2)^2$ and thus only has $z=-2$ as a solution. However, the term $(z+2)$ occurs twice in the factorisation. We therefore say that the multiplicity of the zero $-2$ is equal to two.
 
 ::::
 
-In particular, we see that any polynomial of degree $n$ has $n$ complex zeros _counting multiplicity_:
+In particular, we see that any polynomial of degree $n$ has $n$ complex zeros _counting multiplicity_.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:uniquezeros
@@ -544,7 +697,7 @@ Repeating this argument for $z_3,\ldots,z_k$ leads to desired formulae.
 ::::{prf:definition}
 :label: Def:ComplexNumbers:multiplicity
 
-If $z_j$ is a zero of a polynomial $p$ of degree $n$ with $p(z)=a_n(z-z_1)^{\alpha_1}(z-z_2)^{\alpha_2}\cdots(z-z_k)^{\alpha_k}$, the **(algebraic) multiplicity** of $z_j$ is equal to $\alpha_j$.
+If $z_j$ is a zero of a polynomial $p$ of degree $n$ with $p(z)=a_n(z-z_1)^{\alpha_1}(z-z_2)^{\alpha_2}\cdots(z-z_k)^{\alpha_k}$, where $z_1,...,z_k$ are the distinct roots of $p$, the **(algebraic) multiplicity** of $z_j$ is equal to $\alpha_j$.
 
 ::::
 
@@ -571,13 +724,13 @@ If $p(z)=0$, then $p(\overline{z})=0$ as well, and the algebraic multiplicities 
 
 Consider a polynomial $p$ of degree $n$, $\sum_{j=0}^n a_j z^j$, where the coefficients $a_n, a_{n-1}, \ldots, a_0$ are real-valued numbers and $a_n\neq 0$.
 
-First we show that $p(\overline{z})=0$ by considering $\overline{p(z)}$ twice:
+First we show that $p(\overline{z})=0$ by writing $\overline{p(z)}$ in two different forms. First we have
 
 $$
 \overline{p(z)} = \overline{0} = 0,
 $$
 
-but also
+but we also have
 
 $$
 \begin{align*}
@@ -624,7 +777,48 @@ As all terms except the first term $(\overline{z}-\overline{z_1})^{\alpha_1}$ ar
 
 ::::
 
-**Polynomial Division**
+::::{prf:example}
+:label: Ex:ComplexNumbers:realpoly
+
+Consider the fourth degree polynomial 
+
+$$
+ p(z)=z^4-4z^3+14z^2-20z+25.
+$$
+
+Factoring this polynomial by hand is very hard, but suppose we are given that $z_1=1+2i$ is a root of this polynomial with mulitplicity $2$. Since the polynomial has real coefficients, its complex conjugate $z_2=\overline{z_1}=1-2i$ must be a root with multiplicity $2$ as well by {prf:ref}`Thm:ComplexNumbers:realpoly`. Since we have found two roots of the fourth-degree polynomial with multiplicity $2$, we must have found all roots and we can write
+
+$$
+ p(z)=(z-(1+2i))^2(z-(1-2i))^2.
+$$
+
+::::
+
+::::{prf:example}
+:label: Ex:ComplexNumbers:nonrealpoly
+
+Consider the degree polynomial 
+
+$$
+ p(z)=z^2-3z+11-3i.
+$$
+
+If we are given that $z_1=1-3i$ is a root, it may be very tempting to think that its complex conjugate $1+3i$ is a root as well, but this is not the case. Indeed, we note that
+
+$$
+ p(1+3i)=(1+3i)^2-3(1+3i)+11-3i=-6i\neq 0.
+$$
+
+So why doesn't this contradict {prf:ref}`Thm:ComplexNumbers:realpoly`? The reason is that this polynomial does not have real coefficients, which means that the theorem does not apply. Instead, we can complete the square to find that the other root is given by $z_2=2+3i$. In particular, we find
+
+$$
+ p(z)+(z-(1-3i))(z-(2+3i)).
+$$
+::::
+
+
+
+### Polynomial Division
 
 Next, we consider a method you can use whenever you know one root of a polynomial. The fundamental theorem of Algebra says that if $p(z)$ is a polynomial such that $p(b)=0$ for some $b$, then $p(z) = a_n(z-b)(z-b_2)\cdots (z-b_n) = (z-b) q(z)$ for another polynomial $q(z)=a_n(z-b_2)\cdots  (z-b_n)$.
 Thus, we divide the polynomial $p(z)$ by $(z-b)$ in this case and obtain a new polynomial. To find the zeros of $p$ we now just have to find the zeros of the quotient $\nicefrac{p(z)}{z-b}$ and add $b$ to this list.
@@ -690,7 +884,13 @@ We can do the same thing for polynomials. Details on long division for polynomia
 :::::{prf:example}
 :label: Ex:ComplexNumbers:longdivisionpoly
 
-Consider $p(z) = z^3+3z^2+z-5$. You may notice that $z=1$ is a root; $p(1)=0$. Thus $z-1$ must be a factor. If we calculate this division we obtain:
+Consider $p(z) = z^3+3z^2+z-5$. You may notice that $z=1$ is a root, since we have 
+
+$$
+ p(1)=1^3+3\cdot 1^2+1-5=0.
+$$
+
+Therefore, $z-1$ must be a factor. If we calculate this division we obtain
 
 $$
 \class{longdivision}{
@@ -706,7 +906,7 @@ z^3 + 3z^2 + \phantom{4}z - 5 & / & {z-1} \\
 }
 $$
 
-The calculation behind the long division are:
+The calculation behind the long division are
 
 \begin{align*}
 \class{tud-cyan}{z^2} \cdot (z-1) &= \class{tud-red}{z^3 - z^2} \\
@@ -725,7 +925,7 @@ $$
 \frac{z^3+3z^2+z-5}{z-1} = z^2 + \frac{4z^2+z-5}{z-1} = z^2+4z+\frac{5z-5}{z-1} = z^2+4z+5.
 $$
 
-You can see this as follows:
+You can see this as follows.
 
 - Because $z^3$ is a multiple of $z^3$ and $z$ is a multiple of $z$, we start with subtracting as many multiples of $\dfrac{z^3}{z}\cdot (z-1)=z^2\cdot (z-1)=z^3-z^2$ from $z^3+3z^2+z-5$ as possible so that the $z^3$ term is eliminated.
 
