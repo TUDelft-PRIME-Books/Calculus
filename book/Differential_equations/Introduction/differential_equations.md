@@ -116,15 +116,21 @@ class: dark-light
 A mass-spring system
 ```
 
-Using Newton's law $F=m\cdot a$ and Hooke's law $F=-k\cdot x$, we obtain
+So which physical laws determine the behaviour of this system? Somehow, one of the first answers that comes up, usually, is gravity. However, gravity does not play a role here: we could observe the behaviour of this system in outer space and not a lot would change. Only the position of equilibrium is determined by gravity, but since we measure the displacement with respect to equilibrium, we do not see this in our calculations.
+
+Instead, since we are dealing with a spring, Hooke's law $F=-k\cdot x$, where $k$ is a positive constant, called the *spring constant*, should of course be involved. And as with many problems that involve forces, Newton's second law $F=m\cdot a$ must play a role as well. Here $a$ is the acceleration, which is $\dfrac{d^2x}{dt^2}$. Without damping, we can combine these laws into the equation
 
 $$
-m\cdot\frac{d^2x}{dt^2}=-k\cdot x(t),
+m\cdot\frac{d^2x}{dt^2}=-k\cdot x(t).
 $$
 
-where $k$ is a positive constant, called the *spring constant*.
+We can rewrite this equation into
 
-Without damping we have $mx''(t)+kx(t)=0$. This is a differential equation, as it involves the unknown function $x(t)$ and its second derivative $x''(t)$. 
+$$
+ mx''(t)+kx(t)=0.
+$$
+
+This is a differential equation, as it involves the unknown function $x(t)$ and its second derivative $x''(t)$. 
 
 ```{figure} Images/mass-spring2.png
 ---
@@ -146,9 +152,18 @@ A mass-spring system
 
 <br /><br />
 
-With damping we have $mx''(t)+cx'(t)+kx(t)=0$. 
+When damping is involved, it is reasonable that the damping force is of the form $F_{\mathrm{damping}}=-c\dfrac{dx}{dt}$, where $c$ is a positive constant, called the *damping constant*. Then Newton's second law gives
 
-Here $c$ is a positive constant, called the *damping constant*.
+$$
+m\cdot\frac{d^2x}{dt^2}=-k\cdot x(t)+c\cdot\dfrac{dx}{dt}.
+$$
+
+This equation can be rewritten as
+
+$$
+ mx''(t)+cx'(t)+kx(t)=0. 
+$$
+
 
 <br /><br /><br /><br /><br />
 
@@ -177,6 +192,7 @@ The **general solution** of a differential equation is an expression for all sol
 When we are asked to *solve* a differential equation, we are expected to find all possible solutions. However, in general it is not easy to solve a differential equation. There is no systematic approach that enables us to solve differential equations. Only when a differential equation has a specific form, we might have some techniques to find the general solution. Fortunately, checking that a certain function is a solution is much easier: simply plug in this expression into the differential equation and check whether the equation is satisfied.
 
 ::::::{prf:example}
+:label: Ex:ClassDiff:Ansatz
 [^FootnoteAnsatz]: The word Ansatz is the German word for approach.
 
 For some differential equations, it is possible to find the solution by making an educated guess about the shape of the solution. Such a guess is called an **Ansatz**[^FootnoteAnsatz]. Guessing a solution might not sound very systematic to you, but due to the lack of systematic techniques we often have no other choice. And of course, the guess should be educated, since you will not get very far otherwise.
@@ -452,6 +468,8 @@ Apart from being easier to solve than nonlinear equations, equations that are li
 ::::::{prf:theorem} Superposition principle
 :label: Thm:DE:SuperpositionPrinciple
 If $y_1(x)$ and $y_2(x)$ are both solutions of a linear, homogeneous differential equation, then $y(x)=c_1y_1(x)+c_2y_2(x)$ is also a solution for each $c_1,c_2\in\mathbb{R}$.
+
+For complex $c_1,c_2\in\mathbb{C}$, the linear combination $y(x)=c_1y_1(x)+c_2y_2(x)$ is a (possibly) complex solution of the differential equation.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:DE:SuperpositionPrinciple`
@@ -481,6 +499,8 @@ $$
 \end{align*}
 $$
 
+
+This proof also holds when $c_1,c_2\in\mathbb{C}$.
 ::::::
 
 An important question is how we can determine if we have found all solutions of a differential equations. {prf:ref}`Thm:DE:SuperpositionPrinciple` tells us that for linear, homogeneous differential equations we can take linear combinations of solutions to build new solutions, but that still raises the question how many different solutions we need to build the general solution. For this we need the concept of linear independence.

@@ -12,10 +12,10 @@ parts:
     sections:
     - file: Algebra/Numbers_and_coordinate_systems/set_theory_and_logic.md
     - file: Algebra/Numbers_and_coordinate_systems/real_numbers.md
-    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersCartesian.md
+    - file: Algebra/Numbers_and_coordinate_systems/complex_numbers_cartesian.md
     - file: Algebra/Numbers_and_coordinate_systems/trigonometry.md
     - file: Algebra/Numbers_and_coordinate_systems/coordinate_systems.md
-    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersPolar.md
+    - file: Algebra/Numbers_and_coordinate_systems/complex_numbers_polar.md
     - file: Algebra/Numbers_and_coordinate_systems/sums_and_products.md
   - file: Algebra/Vector_algebra/introduction_vector_algebra.md
     sections:
@@ -133,6 +133,7 @@ parts:
     - file: Differential_equations/First-order_ordinary_differential_equations/direction_fields_and_solutions.md
     - file: Differential_equations/First-order_ordinary_differential_equations/separable_differential_equations.md
     - file: Differential_equations/First-order_ordinary_differential_equations/first_order_linear_differential_equations.md
+    - file: Differential_equations/First-order_ordinary_differential_equations/first_order_autonomous_differential_equations.md
     - file: Differential_equations/First-order_ordinary_differential_equations/exact_differential_equations.md
     - file: Differential_equations/First-order_ordinary_differential_equations/series_solutions_1st.md
     - file: Differential_equations/First-order_ordinary_differential_equations/approximating_solutions.md

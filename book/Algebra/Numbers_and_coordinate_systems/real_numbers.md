@@ -221,7 +221,9 @@ $
 
 ::::::
 
-## Inequalities and absolute values
+(Subsec:R:IneqAbs)=
+
+## (In)equalities and absolute values
 
 ::::{prf:theorem} Triangle inequality for real numbers
 :label: thm:triangle_inequality_real_numbers
