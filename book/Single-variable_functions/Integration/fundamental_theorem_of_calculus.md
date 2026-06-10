@@ -90,7 +90,7 @@ Setting $u=\sqrt{x}$ we have $G(x)=\displaystyle\int_0^{u}\cos(t^2)\,dt=H(u)$ wi
 Now we apply the chain rule: $G'(x)=H'(u)\dfrac{du}{dx}$. This reads
 
 $$
-\frac{d}{dx}\int_0^{\sqrt{x}}\cos(t^2)\,dt=\cos\left((\sqrt{x})^2\right)\cdot\frac{d}{dx}(\sqrt{x})=\cos(x)\cdot\frac{1}{2\sqrt{x}}=\frac{\cos(x)}{2\sqrt{x}}.
+G'(x)=\cos\left((\sqrt{x})^2\right)\cdot\frac{d}{dx}(\sqrt{x})=\cos(x)\cdot\frac{1}{2\sqrt{x}}=\frac{\cos(x)}{2\sqrt{x}}.
 $$
 
 ::::::
