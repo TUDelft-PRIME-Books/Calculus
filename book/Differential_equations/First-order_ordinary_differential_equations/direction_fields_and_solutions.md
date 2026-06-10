@@ -1,114 +1,121 @@
-# Slope fields and solutions
+# Slope fields
 
-In this section we cover:
+## Introduction
 
-- autonomous first-order differential equations:
-    - Autonomous equations
-    - Stability by y'vs y plots
-- slope fields
-- equilibrium solutions in slope fields
-- Educated guess for solutions (not Euler!)
-- Logistic equation
+For certain classes of first-order differential equations, such as separable (see {numref}`Sec:ODE1:Separable`), linear (see {numref}`Sec:ODE1:Linear`) or exact (see {numref}`Sec:ODE1:Exact`) equations, there are general techniques to solve these equations. Still, performing these techniques might not always be easy, or even possible, for specific differential equations, for instance because we might encounter integrals that we cannot evaluate by hand. Or even worse, we might enounter a differential equation that is not of one of the previous forms. In those cases it can be impossible to find the solution analytically.
 
+However, in practice it is often sufficient to only know the **qualitative** behaviour of solution, instead of having a **quantitative** expression for the solution. In this section, we introduce a common way to obtain this qualitative behaviour without solving the differential equation.
+ 
 ## Slope fields
 
-Not every first-order differential equation can be solved easily. However, in many cases there is no need for a *quantitive* solution. A *qualitative* solution might suffice. For instance, we might look at a so-called **slope field** (or **direction field**).
+We consider a first-order differential equation of the form 
 
-For a differential equation of the form $\dfrac{dy}{dx}=F(x,y)$ we might consider points $(x,y)$ where the right-hand side $F(x,y)$ exists. This gives rise to a value for the derivative $\dfrac{dy}{dx}$ of the unknown function $y(x)$ at this point $(x,y)$. This indicates the *slope* of the graph of a solution $y=y(x)$. This leads to a **slope field** of the differential equation.
+$$
+ y'(t)=F(t,y).
+$$
+
+If $(t_0,y_0)$ is a point in the domain of $F$, we can evaluate $F(t_0,y_0)$. Let $y_*$ be the solution of the differential equation that goes through this point, i.e. the solution with $y_*(t_0)=y_0$. The fact that $y_*$ is a solution of the differential equation means that we must have
+
+$$
+ y_*'(t_0)=F(t_0,y_0).
+$$
+
+This means that we know that the **slope** $y_*'$ of $y_*$ at this point equals $F(t_0,y_0)$, without knowing what the solution $y_*$ itself looks like. 
+
+So how can we use this to sketch the qualitative behaviour of solutions of the differential equation? A common way is to draw a very short arrow or a line segement at the point $(t_0,y_0)$ with slope $F(t_0,y_0)$. This arrow or line segement will then be tangent to the actual solution $y_*$ at that point. If we do this at a grid of points, we get a good idea of how the solutions behave qualitatively. This gives rise to the following definition.
+
+::::::{prf:definition}
+:label: Def:ODE1SF:SF
+A **slope field** (or **direction field**) of a first-order differential equation of the form $y'=F(t,y)$ is a grid of points with arrows in the direction
+
+$$
+ \begin{pmatrix} 1\\ F(t,y)\end{pmatrix}.
+$$
+
+At each point $(t,y(t))$ on the graph of a solution $y(t)$ of the differential equation, these arrows are tangent to the graph.
+::::::
+
+If we have sketched a direction field on a sufficiently fine grid (or better, let a computer do this for us), we can use this to sketch solutions. Indeed, the arrows should be tangent to the solution that goes through the point. So if we follow the arrows, we obtain a sketch of the solution.
 
 ::::::{prf:example}
-Consider the differential equation $\dfrac{dy}{dx}=x+y$ and the initial-value $y(0)=1$.
+Consider the differential equation $\dfrac{dy}{dt}=t+y$. We want to sketch a slope field for this differential equation. For this, we first choose any point, say the point $(t,y)=(0,1)$. Then we compute that the slope of the solution at that point should be
 
-```{figure} Images/direction1.png
----
-width: 50%
-name: direction field
-align: left
----
-```
-```{figure} Images/direction2.png
----
-width: 50%
-name: direction field
-align: right
----
-```
+$$
+ \left.\frac{dy}{dt}\right|_{(t,y)=(0,1)}=0+1=1.
+$$
 
-Following the line segments in the direction field, we can sketch the graph of the solution that satisfies the initial condition $y(0)=1$.
+We draw a short line segment with slope $1$ at this point. This gives the following figure.
+
+:::{todo}
+Include a version of {numref}`Fig:ODE1Slope:DF1` with only the line segment through $(0,1)$. The horizontal axis should be $t$ instead of $x$. Maybe arrows instead of line segments? Should also be adjusted in the text in that case.
+:::
+
+Just one line segment is, of course, not enough to determine the qualitative behaviour of solutions of this differential equation. So we repeat this procedure on a grid of points to obtain the following slope field.
+
+
+:::{figure} Images/direction1.png
+:name: Fig:ODE1Slope:DF1
+:class: dark-light
+
+A slope field for the differential equation $\dfrac{dy}{dt}=t+y$. 
+:::
+
+:::{todo}
+Turn {numref}`Fig:ODE1Slope:DF1` into an applet. Make sure the horizontal axis is labeled $t$ instead of $x$. Maybe arrows instead of line segments? Should also be adjusted in the text in that case.
+:::
+
+We can now try to sketch the solution that satisfies the initial condition $y(0)=1$, i.e. the solution that goes through the point $(t,y)=(0,1)$. For this, we follow the direction in the slope field, both forward and backward. This gives the following sketch of the solution.
+
+
+:::{figure} Images/direction2.png
+:name: Fig:ODE1Slope:DF1sol
+:class: dark-light
+
+A slope field for the differential equation $\dfrac{dy}{dt}=t+y$ with the solution with $y(0)=1$ sketched in the slope field.
+:::
+
+:::{todo}
+Turn {numref}`Fig:ODE1Slope:DF1sol` into an applet. Make sure the horizontal axis is labeled $t$ instead of $x$. Maybe arrows instead of line segments? Should also be adjusted in the text in that case.
+:::
 ::::::
 
 ::::::{prf:example}
-Consider the differential equation $\dfrac{dy}{dx}=x^2+y^2-1$ and the initial-value $y(0)=0$.
+Consider the differential equation $\dfrac{dy}{dx}=x^2+y^2-1$. Then we can find its slope field by taking a grid of points and for each point $(x,y)$ on the grid, computing the slope $\dfrac{dy}{dx}$ as $x^2+y^2-1$. For instance, at the point $(x,y)=(0,2)$ we have the slope
 
-```{figure} Images/direction3.png
----
-width: 50%
-name: direction field
-align: left
----
-```
-```{figure} Images/direction4.png
----
-width: 50%
-name: direction field
-align: right
----
-```
+$$
+ \left.\frac{dy}{dx}\right|_{(x,y)=(0,2)}=0^2+2^2-1=3.
+$$
+
+This gives the following slope field.
+
+:::{figure} Images/direction6.png
+:name: Fig:ODE1Slope:DF2sol
+:class: dark-light
+
+A slope field for the differential equation $\dfrac{dy}{dx}=x^2+y^2-1$ with the solutions with $y(0)=k$ for $k$ in $\{-2,-1,0,1,2\}$ sketched in the slope field.
+:::
+
+:::{todo}
+Turn {numref}`Fig:ODE1Slope:DF2sol` into an applet. Maybe arrows instead of line segments? 
+:::
 ::::::
+
+In {numref}`Sec:DE:Intro` we introduced the concept of an **equilibrium solution**, i.e. a constant solution. We saw how we can find equilibrium solutions, but can we also recognise them in a slope field? Fortunately, this is not very hard. Indeed, if $y(t)=k$ is an equilibrium solution of the first-order differential equation, then for all $t$ we have 
+
+$$
+ \left.\frac{dy}{dt}\right|_{(t,y)=(t,k)}=0.
+$$
+
+So in a slope field, we would draw a line segment with slope $0$, i.e. a horizontal line segment. In particular, an equilibrium solution always gives a horizontal line of horizontal arrows. And reversely, a horizontal line of horizontal arrows must always correspond to an equilibrium solution.
 
 ::::::{prf:example}
-Consider the differential equation $\dfrac{dy}{dx}=x^2+y^2-1$ and the initial-value $y(0)=k$ with $k\in\{-2,-1,0,1,2\}$.
+Consider a first-order differential equation with the following slope field.
 
-```{figure} Images/direction5.png
----
-width: 50%
-name: direction field
-align: left
----
-```
-```{figure} Images/direction6.png
----
-width: 50%
-name: direction field
-align: right
----
-```
+:::{todo}
+Include the slope field of $y'=(y+1)(y-2)(y+t-1)$. Do not state the differential equation. Include a toggle that when clicked, shows the equilibrium solutions $y=-1$ and $y=2$
+:::
+
+Can we identify the equilibrium solutions in this slope field? Since equilibrium solutions correspond to horizontal lines of horizontal arrow, we conclude that $y=-1$ and $y=2$ must be equilibrium solutions. Note that there are other arrows that are horizontal, such as at $(t,y)=(0,1)$, but since other arrows on the horizontal line through this arrow are not horizontal, this does not correspond to an equilibrium solution.
 ::::::
 
-## Autonomous differential equations
 
-We consider differential equations of the form
-
-$$
-y'=f(y),
-$$
-
-where $f(y)$ denotes a function of the dependent variable $y$ only. So, it does not explicitly depend on the independent variable. Then, every solution of
-
-$$
-f(y)=0
-$$
-
-is called an **equilibrium solution** since then $y'=0$ as well. For other values of $y$ the function $f(y)$ is either positive or negative, which implies that $y'$ is either positive or negative. When $y'$ is positive, the solution $y$ increases. And when $y'$ is negative, the solution $y$ decreases.
-
-::::::{prf:example}
-Consider the autonomous differential equation
-
-$$
-\frac{dy}{dt}=y^3(4-y).
-$$
-
-Then $y(t)=0$ and $y(t)=4$ are the only equilibrium solutions. For $y<0$ the function $f(y)=y^3(4-y)$ is negative, for $0<y<4$ we have $f(y)>0$ and for $y>4$ we have $f(y)<0$. This leads to
-
-```{figure} Images/autonomous.png
----
-width: 75%
-name: autonomous differential equation
-align: center
----
-```
-
-We conclude that the equilibrium solution $y(t)=0$ is **unstable** and that the equilibrium solution is **stable**. 
-::::::
-
-In {numref}`Sec:DE:Intro` we mentioned the *logistic equation* as an example of an autonomous differential equation. In {numref}`Sec:ODE1:Separable` we will solve this differential equation.
