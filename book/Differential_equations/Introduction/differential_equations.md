@@ -205,34 +205,28 @@ For some differential equations, it is possible to find the solution by making a
 Consider, for instance, the differential equation
 
 $$
- 2y'(t)+3y(t)=0.
+ y''(t)=4y(t).
 $$
 
-This is an ordinary differential equation, since the unknown function $y$ only depends on $t$. It is a first-order equation, since it contains a first derivative, but no higher order derivatives. We can rewrite this equation into
+This is an ordinary differential equation, since the unknown function $y$ only depends on $t$. It is a second-order equation, since it contains a second derivative, but no higher order derivatives. In particular, we are looking for a function $y(t)$ of which the second derivative is a multiple of the original function. We know that exponential functions have this property, so we try a function of the form $y(t)=e^{rt}$ for some, as of yet, unkown parameter $r$. Of course, not every exponential function is going to be a solution, so we should try to find out for which parameter $r$ this function is a solution. We substitute this Ansatz into the differential equation to obtain
 
 $$
- y'(t)=-\frac{3}{2}y(t).
-$$
-
-In particular, we are looking for a function $y(t)$ of which the derivative is a multiple of the original function. We know that exponential functions have this property, so we try a function of the form $y(t)=e^{rt}$ for some, as of yet, unkown parameter $r$. Of course, not every exponential function is going to be a solution, so we should try to find out for which parameter $r$ this function is a solution. We substitute this Ansatz into the differential equation to obtain
-
-$$
- re^{rt}=-\frac{3}{2}e^{rt}.
+ r^2e^{rt}=4e^{rt}.
 $$
 
 We can divide by the nonzero term $e^{rt}$ to obtain the equation
 
 $$
- r=-\frac{3}{2}.
+ r^2=4.
 $$
 
-In particular, we find that the function $y(t)=e^{-\frac{3}{2}t}$ is a solution, while any other exponential function is not a solution. It can be shown that the general solution of this differential equation is given by
+In particular, we have two solutions $r_1=-2$ and $r_2=2$. Hence, we find that the functions $y_1(t)=e^{-2t}$ and $y_2(t)=e^{2t}$ are solutions, while any other exponential function is not a solution. It can be shown that the general solution of this differential equation is given by
 
 $$
- y(t)=Ce^{rt}
+ y(t)=c_1e^{-2t}+c_2e^{2t}
 $$
 
-for some constant $C$. We will see later how we can verify this.
+for some constants $c_1$ and $c_2$. We will see later how we can verify this.
 
 In any case, this example shows that when we have a general idea of what a solution looks like, we can use this to find its exact shape. 
 
@@ -369,13 +363,13 @@ This follows immediately, since the differential equation $F(x,y,y')=0$ is auton
 Finally, it is important to note that in many problems in practice, several quantities depend on each other and each other's derivatives. For this type of problems, a single differential equation will not suffice. Instead, you might encounter several coupled differential equations, such as
 
 $$
- \left\{\begin{array}{lcl}y_1'&=&a_1y_1+a_2y_2\\ y_2'&=&b_1y_1+b_2y_2.
- \end{array}\right.
+ \begin{cases}y_1'=&a_1y_1+a_2y_2\\ y_2'=&b_1y_1+b_2y_2.
+ \end{cases}
 $$ 
 
 
 
-This leads to a **system of first-order linear differential equations**. These systems will not be covered in this book. More information on this can be found in the relevant section of the [Open Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter9/DynSystContinuous.html) or in more advanced books on differential equations for a more thorough treatment of these systems.
+This leads to a **system of first-order linear differential equations**. These systems will not be covered in this book. More information on this can be found in the [relevant section of the Open Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter9/DynSystContinuous.html) or in more advanced books on differential equations for a more thorough treatment of these systems.
 
 (Subsec:DiffclassLinear)=
 
@@ -900,7 +894,7 @@ has no solution if $\beta\neq-\alpha$. Moreover, if $\beta=-\alpha$ the boundary
 Check that $y_1(x)=\cos(x\sqrt{2})$ and $\sin(x\sqrt{2})$ are two linear independent solutions of the second-order linear differential equation $y''+2y=0$. Then the boundary-value problem
 
 $$
-\begin{cases}y''+2y=0,\quad 0<x<\pi\\ \\y(0)=\alpha,\quad y(\pi)=\beta\end{cases}
+\begin{cases}y''+2y=0,\quad 0<x<\pi\\ \ \y(0)=\alpha,\quad y(\pi)=\beta\end{cases}
 $$
 
 has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sqrt{2})}{\sin(\pi\sqrt{2})}\sin(x\sqrt{2})$.

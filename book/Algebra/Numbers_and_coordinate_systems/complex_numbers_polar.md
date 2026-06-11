@@ -1,11 +1,33 @@
 (Ch:ComplexNumbersPolar)=
 # Polar form of complex numbers
 
-## Modulus and argument
+## Introduction
 
 To consider the multiplication of complex numbers, it is best to first consider the polar coordinates of a complex number. Polar coordinates is a concept that works for points in a plane. The idea is that instead of looking at the $x$ and $y$ coordinates of a point, we describe the point by the distance to the origin and the direction from the origin.
 
-The distance from zero to the point in the complex plane, we call the _modulus_ $|z|$. By using Pythagoras theorem and with $z=a+bi$, it holds that $|z|=\sqrt{a^2+b^2}$ and equivalently $|z|=\sqrt{z\overline{z}}$. We often denote the modulus by the symbol $r$, so $r=|z|$. The direction is designated by the angle measured from the positive real axis in a anticlockwise direction towards the ray from zero through the point. This angle, we call the _argument_ or $\arg(z)$ as seen in {numref}`Figure %s <Fig:ComplexNumbers:modarg>`. We often denote the argument by the symbol $\theta$, so $\theta=\arg(z)$. The argument uses the convention similar to the unit circle: the direction straight the right corresponds to $0$ radians, up corresponds to $\frac{1}{2}\pi$ radians, to the left to $\pi$ radians and down to $\frac{3}{2}\pi$ radians.
+## Modulus and argument
+
+::::::{prf:definition}
+Let $z$ be a complex number, The **modulus** of $z$, denoted by $|z|$, is the distance from zero to the point in the complex plane.
+
+An **argument** of $z$, denoted by $\arg(z)$, is an angle in the complex plane measured from the positive real axis in counterclockwise direction towards the ray from $0$ through $z$.
+::::::
+
+By using the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` and with $z=a+bi$, it holds that 
+
+$$
+ |z|=\sqrt{a^2+b^2}.
+$$
+
+By {prf:ref}`Thm:ComplexNumbers:ComplConjCompl` we can, equivalently, write
+
+$$
+ |z|=\sqrt{z\overline{z}}.
+$$
+
+We often denote the modulus by the symbol $r$, so $r=|z|$. 
+
+The argument uses the convention similar to the unit circle: the direction straight the right corresponds to $0$ radians, up corresponds to $\frac{1}{2}\pi$ radians, to the left to $\pi$ radians and down to $\frac{3}{2}\pi$ radians. We often denote the argument by the symbol $\theta$, so $\theta=\arg(z)$.
 
 :::{figure} Images/Fig-ComplexNumbers-modarg.svg
 :name: Fig:ComplexNumbers:modarg
@@ -15,13 +37,23 @@ The polar coordinates of a point in the complex plane $\C$ are the distance $r=|
 
 :::
 
+:::{todo}
+Turn {numref}`Fig:ComplexNumbers:modarg` into an applet.
+:::
+
 Notice that the argument is not uniquely defined, as you can always go a full circle extra and add $2\pi$ radians to the angle. For example, the number $1$ has argument $0$ (as it is on the positive real axis), but also $2\pi$, $4\pi$, and $-2\pi$ (etc.). In order to make a uniform choice, we sometimes work with the principal value of the argument, which is by definition the unique value of the argument between $-\pi$ and $\pi$.
-We write the principal value using a capital A. Thus we have $-\pi < \arg{z} \leq \pi$.
+We write the principal value using a capital A. Thus we have $-\pi < \mathrm{Arg}(z) \leq \pi$.
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polarex1
 
-Suppose $z=3+3i$. We find by using Pythagoras that the modulus (the distance to the origin) equals $|z|=\sqrt{3^2+3^2}=3\sqrt{2}$. The argument, the corresponding angle, equals $\frac14\pi$ as you can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex1>`.
+Suppose $z=3+3i$. We find by using the Pythagorean theorem that the modulus (the distance to the origin) equals 
+
+$$
+ |z|=\sqrt{3^2+3^2}=3\sqrt{2}.
+$$
+
+The argument, the corresponding angle, equals $\frac14\pi$ as you can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex1>`.
 
 :::{figure} Images/Fig-ComplexNumbers-polarex1.svg
 :name: Fig:ComplexNumbers:polarex1
@@ -31,18 +63,30 @@ The complex number $3+3i$.
 
 :::
 
+:::{todo}
+Turn {numref}`Fig:ComplexNumbers:polarex1` into an applet.
+:::
+
 ::::
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polarex2
 
-Suppose $w=2+3i$. We can still use Pythagoras for the modulus and obtain $|w|=\sqrt{2^2+3^2} = \sqrt{13}$. The argument can't be deduced immediately from a picture, see {numref}`Figure %s <Fig:ComplexNumbers:polarex2>`, but we do see that
+Suppose $w=2+3i$. We can still use Pythagoras for the modulus and obtain 
 
 $$
-\tan(\arg(w)) = \frac{\text{opposite}}{\text{adjacent}} = \frac{\text{imaginary part}}{\text{real part}} = \frac{3}{2}
+ |w|=\sqrt{2^2+3^2} = \sqrt{13}.
 $$
 
-Therefore $\arg(w) = \arctan\left(\frac32\right) \approx 0.982794$.
+The argument can't be deduced immediately from a picture, see {numref}`Figure %s <Fig:ComplexNumbers:polarex2>`, but we do see that
+
+$$
+\tan(\arg(w)) = \frac{\text{opposite}}{\text{adjacent}} = \frac{\text{imaginary part}}{\text{real part}} = \frac{3}{2}.
+$$
+
+Unfortunately, there are no 'pretty' angles of which the tangent is $\frac{3}{2}$. Since $\tan(1)\approx 1.557$, the argument of $w$ is going to be close to $1$. Either by making a good sketch (such as the one in {numref}`Fig:ComplexNumbers:polarex2`) and measuring the angle, or by simply trying some angles close to $1$, we find that an even better approximation would be $\arg(w)\approx 0.98$, since $\tan(0.98)\approx 1.49$.
+
+In fact, if you are familiar with the arctangent, which we will cover in {numref}`Section:Inverse`, you can obtain the exact expression $\arg(w) = \arctan\left(\frac32\right) \approx 0.982794$.
 
 :::{figure} Images/Fig-ComplexNumbers-polarex2.svg
 :name: Fig:ComplexNumbers:polarex2
@@ -51,12 +95,30 @@ Therefore $\arg(w) = \arctan\left(\frac32\right) \approx 0.982794$.
 The complex number $2+3i$.
 :::
 
+:::{todo}
+Turn {numref}`Fig:ComplexNumbers:polarex2` into an applet. Write $\arg(w)=\arctan(\frac{3}{2})\approx 0.98$ instead of $\arctan(\frac{3}{2})$.
+:::
+
 ::::
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polarex3
 
-As a final example we consider $v=-1+2i$. Using Pythagoras theorem once again, we find that $|v|=\sqrt{(-1)^2+2^2} = \sqrt{5}$. For the argument, we obtain that, just as in the previous example, $\tan(\arg(v)) = \frac{2}{-1}$, so we would expect that $\arg(v) = \arctan( -2) \approx -1.10715$. But this answer is negative, while we can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>` that the true argument is something between $\frac12\pi$ and $\pi$. Thus, this argument cannot be correct. If we multiply both the real and imaginary parts of a complex number by $-1$, then the quotient stays the same. Thus in this case the arctangent gives the argument of $1-2i$ instead. Fortunately, we can easily find the correct argument as it is exactly $\pi$ higher. We find $\arg(v) = \arctan(-2) + \pi \approx 2.03444$.
+As a final example we consider $v=-1+2i$. Using Pythagoras theorem once again, we find that 
+
+$$
+ |v|=\sqrt{(-1)^2+2^2} = \sqrt{5}.
+$$
+
+For the argument, we obtain that, just as in the previous example, 
+
+$$
+ \tan(\arg(v)) = \frac{2}{-1}=-2.
+$$
+
+Again, there is no 'pretty' angle of which the tangent is $-2$. By making a good sketch (such as the one in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>`) and measuring the angle, or by simply trying some angles, we find that an approximation would be $\arg(v)\approx 2.03$, since $\tan(2.03)\approx -2.02$.
+
+If we were to use the arctangent (see {numref}`Section:Inverse`) to find an exact expression for the angle, we would expect that $\arg(v) = \arctan( -2) \approx -1.10715$. But this answer is negative, while we can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>` that the true argument is something between $\frac12\pi$ and $\pi$. Thus, this argument cannot be correct. If we multiply both the real and imaginary parts of a complex number by $-1$, then the quotient stays the same. In this case the arctangent gives the argument of $1-2i$ instead. Fortunately, we can easily find the correct argument as it is exactly $\pi$ higher. We find $\arg(v) = \arctan(-2) + \pi \approx 2.03444$.
 
 :::{figure} Images/Fig-ComplexNumbers-polarex3.svg
 :name: Fig:ComplexNumbers:polarex3
@@ -66,13 +128,29 @@ The complex number $-1+2i$.
 
 :::
 
+:::{todo}
+Turn {numref}`Fig:ComplexNumbers:polarex3` into an applet. Write $\arg(v)=\arctan(-2)+\pi\approx -2.03$ instead of $\arctan(-2)+\pi$.
+:::
+
 ::::
 
-You always have to check whether the value you find with the arctangent gives the correct angle. As the range of the arctangent is $\left(-\frac12\pi,\frac12\pi\right)$ you can only find the correct argument if the complex number is to the right of the imaginary axis, that is, if the real part is positive.
+:::{warning}
+If $z=a+bi$ with $a\neq 0$ we have $\tan\left(\arg(z)\right)=\dfrac{b}{a}$. If you are familiar with the arctangent (see {numref}`Section:Inverse`), you can try to use this arctangent to obtain an exact expression for $\arg(z)$. However, you always have to check whether the value you find with the arctangent gives the correct angle. As the range of the arctangent is $\left(-\frac12\pi,\frac12\pi\right)$ you can only find the correct argument if the complex number is to the right of the imaginary axis, that is, if the real part is positive.
 
-If the real part is negative, the argument is between $\frac12\pi$ and $\frac32\pi$ (or between $-\frac12\pi$ and $-\frac32\pi$ depending on which direction you want to consider) and outside the range of the arctangent. To get the correct value for the argument in these cases, you have to add or subtract $\pi$ from the arctangent.
+If the real part is negative, the argument is between $\frac12\pi$ and $\frac32\pi$ (or between $-\frac12\pi$ and $-\frac32\pi$ depending on which direction you want to consider) and outside the range of the arctangent. To get the correct value for the argument in these cases, you have to add or subtract $\pi$ from the arctangent. In particular, we have
 
-If we write $z=a+bi$ and $r=|z|$ and $\theta=\arg(z)$, then we have the following formulas for calculating $a$ and $b$ from $r$ and $\theta$:
+$$
+ \arg(z)\begin{cases}\arctan\left(\frac{b}{a}\right),&\operatorname{if}\ a>0,\\ \arctan\left(\frac{b}{a}\right)+\pi,&\operatorname{if}\ a<0.\end{cases}
+$$
+
+
+:::
+
+Let us summarise the relations between the modulus and the argument on the one hand, and the real and imaginary part on the other hand.
+
+::::::{prf:theorem}
+:label: Thm:ComplexNumbers:ChangeCoor
+Let $z$ be a complex number and write $z=a+bi$ and $r=|z|$ and $\theta=\arg(z)$. Then we have the following formulas for calculating $a$ and $b$ from $r$ and $\theta$:
 
 $$
 a=r\cos(\theta), \qquad b=r\sin(\theta).
@@ -81,14 +159,12 @@ $$
 For calculating $r$ and $\theta$ from $a$ and $b$ we can use
 
 $$
-r= \sqrt{a^2+b^2}, \qquad \tan(\theta)=\frac{b}{a},
+r= \sqrt{a^2+b^2}, \qquad \tan(\theta)=\frac{b}{a}.
 $$
 
-where it should be noted you cannot say $\theta= \arctan(b/a)$ in general. For $a\neq 0$, we can use
 
-$$
-\theta= \left\{ \begin{array}{lll} \arctan\left(\frac{b}{a}\right)&+2k\pi, & \text{if }a>0, \\  \arctan\left(\frac{b}{a}\right)+ \pi&+2k\pi, & \text{if }a<0, \\ \end{array}  \right.\quad\text{where $k\in\mathbb{Z}$.}
-$$
+
+::::::
 
 In particular, we see that the complex number with modulus $r$ and argument $\theta$ equals $r\bigl(\cos(\theta) + i\sin(\theta)\bigr)$ and vice versa. The form $r\cos(\theta) + ir\sin(\theta)$ is called the _polar form_ of the complex number:
 
@@ -105,9 +181,26 @@ where $r=|z|$ is the modulus of $z$ and $\theta=\arg(z)$ is an argument of $z$.
 
 ::::
 
-## Geometric interpretation
+::::{prf:example} {prf:ref}`Ex:ComplexNumbers:polarex1` continued
+:label: Ex:ComplexNumbers:polarex1
 
-First we consider conjugation. Suppose $z$ is the complex number with modulus $|z|=r$ and argument $\arg(z)=\theta$. Hence, $z=r\cos(\theta) + i r\sin(\theta)$ and $\overline{z}=r\cos(\theta) - i r\sin(\theta)$. This least equation we can rewrite:
+For $z=3+3i$, we obtained that
+
+$$
+ |z|=\sqrt{3^2+3^2}=3\sqrt{2},\quad\arg(z)=\frac{\pi}{4}.
+$$
+
+This means that the polar form of $z$ is given by
+
+$$
+ z=3\sqrt{2}\left(\cos\left(\frac{\pi}{4}\right)+i\sin\left(\frac{\pi}{4}\right)\right).
+$$
+
+::::
+
+## Geometric interpretation of multiplication
+
+The polar form of a complex number can very conveniently be used to give a geometric interpretation of the multiplication of two complex numbers. First we investigate what the impact is of complex conjugation on the polar form. Suppose $z$ is the complex number with modulus $|z|=r$ and argument $\arg(z)=\theta$. Hence, we have $z=r\cos(\theta) + i r\sin(\theta)$ and $\overline{z}=r\cos(\theta) - i r\sin(\theta)$. This second equation we can rewrite into
 
 :::{math}
 :label: Eq:ComplexNumbers:calcconj
@@ -122,7 +215,7 @@ First we consider conjugation. Suppose $z$ is the complex number with modulus $|
 
 From the last line we see that conjugating a complex number means negating the argument of that complex number.
 
-We can now see what happens to the product of two complex numbers. Suppose we have the complex number $z$ with modulus $|z|=r$ and argument $\arg(z)=\theta$. Hence, $z=r\cos(\theta) + i r\sin(\theta)$. The second complex number we consider is $w$ with modulus $|w|=s$ and argument $\arg(w) = \phi$; thus $w=s\cos(\phi) + i s \sin(\phi)$. We can then calculate the product using the addition formulas for cosine and sine.
+We can now see what happens to the product of two complex numbers. Suppose we have the complex number $z$ with modulus $|z|=r$ and argument $\arg(z)=\theta$, i.e. $z=r\cos(\theta) + i r\sin(\theta)$. The second complex number we consider is $w$ with modulus $|w|=s$ and argument $\arg(w) = \phi$, i.e. $w=s\cos(\phi) + i s \sin(\phi)$. We can then calculate the product using the addition formulas for cosine and sine ({prf:ref}`Thm:Trigonometry:AdditionSubtractionFormulas`). This gives
 
 :::{math}
 :label: Eq:ComplexNumbers:calcproduct
@@ -131,12 +224,12 @@ We can now see what happens to the product of two complex numbers. Suppose we ha
 zw &= (r\cos(\theta) + i r \sin(\theta)) (s\cos(\phi) + is \sin(\phi))
 \\&= rs \cos(\theta) \cos(\phi) + irs \cos(\theta) \sin(\phi) + irs \sin(\theta) \cos(\phi) + i^2 rs \sin(\theta) \sin(\phi)
 \\&= rs( \cos(\theta) \cos(\phi) - \sin(\theta) \sin(\phi)) + irs (\cos(\theta) \sin(\phi) + \sin(\theta) \cos(\phi))
-\\&= rs \cos(\theta + \phi) + irs \sin(\theta+\phi)
+\\&= rs \cos(\theta + \phi) + irs \sin(\theta+\phi).
 \end{align*}
 
 :::
 
-We recognize this product as the number with modulus $|zw|=rs$ and argument $\arg(zw) = \theta+\phi$. In particular we find:
+We recognize this product as the complex number with modulus $|zw|=rs$ and argument $\arg(zw) = \theta+\phi$. In particular we obtain the following theorem.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:polarmultdiv
@@ -205,7 +298,7 @@ With $|z|=r$, $|w|=s$, $\arg{z}=\theta$ and $\arg{w}=\phi$, Equation {eq}`Eq:Com
 
 _Proof for division_
 
-For division (assuming $w\neq0$) we do the following:
+For division (assuming $w\neq0$) we obtain
 
 \begin{align*}
 \frac{z}{w} &= \frac{z\overline{w}}{w\overline{w}} \\
@@ -242,6 +335,10 @@ Dividig complex numbers means substracting the arguments and dividing the moduli
 
 :::
 
+:::{todo}
+Turn {numref}`Figures %s <Fig:ComplexNumbers:conjugation>`, {numref}`%s <Fig:ComplexNumbers:multiplication>` and {numref}`%s <Fig:ComplexNumbers:division>` into applets.
+:::
+
 ## Euler's formula
 
 Given that the polar coordinates of a complex number are so convenient and that the polar form $r\left(\cos(\theta) + i\sin(\theta)\right)$ is such a long expression to write down, we would like to have a simple way of representing the complex number with given modulus $r$ and argument $\theta$.
@@ -251,22 +348,22 @@ Therefore we introduce the following identity:
 ::::{prf:definition}
 :label: Dfn:ComplexNumbers:EulersFormule
 
-Let $\theta\in\mathbb{R}$. Then
+Let $\theta$ in $\mathbb{R}$. Then we introduce the symbol $e^{i\theta}$ as
 
 $$
-e^{i\theta} = \cos(\theta) + i\sin(\theta),
+e^{i\theta} = \cos(\theta) + i\sin(\theta).
 $$
 
-which is called **Euler's formula**.
+This is known as **Euler's formula**.
 
 ::::
 
-Using this definition we even can prove the following theorem:
+Using this definition we see that we can express any complex number in terms of an expression of the form $e^{i\theta}$.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:re
 
-Let $z=a+bi$ with $a,b\in\mathbb{R}$ and define $r=|z|$ and $\theta=\arg{z}$. Then
+Let $z=a+bi$ with $a,b\in\mathbb{R}$ and define $r=|z|$ and $\theta=\arg{z}$. Then we have
 
 $$
 z = re^{i\theta}.
@@ -278,7 +375,7 @@ $$
 :class: dropdown, tudproof
 <!-- ::::{dropdown} Proof of {prf:ref}`Thm:ComplexNumbers:re` -->
 
-The proof is relatively straight forward:
+Using {prf:ref}`Thm:ComplexNumbers:ChangeCoor`, we can directly write
 
 $$
 z = a+bi = r\left(\cos(\theta)+i\sin(\theta)\right) = re^{i\theta}.
@@ -286,7 +383,32 @@ $$
 
 ::::
 
-We can even show that the following property of the derivative still is true:
+
+
+You might think it is strange to use the number $e$ and superscripts which would suggest some sort of power of $e$. It turns out this is very convenient as this expression satisfies the rules of calculation for exponentials. Indeed the calculation in Equation {eq}`Eq:ComplexNumbers:calcproduct` shows that
+
+$$
+(re^{i\theta}) (se^{i\phi} )= rse^{i(\theta+\phi)}.
+$$
+
+This corresponds precisely with the rules for multiplying exponentials. As such, you can calculate with this strange notation $re^{i\theta}$ for complex numbers just as you would if you were indeed taking imaginary powers of $e$ ($=2.71828\ldots$). Some deep mathematics show that the definition given here is the only reasonable way to define taking imaginary exponents. Hence, we call an expression of the form $e^{i\theta}$ a **complex exponential**.
+
+In fact, we can use the idea that a complex exponential should satisfy the rules of calculation for the regular exponential to define the complex exponential for any complex number. Indeed, for a complex number $z=a+bi$ with $a,b\in\mathbb{R}$, we define the complex exponential $e^{a+bi}$ as
+
+$$
+ e^{a+bi}=e^ae^{bi}=e^a\left(\cos(b)+i\sin(b)\right).
+$$
+
+:::::::::{admonition} Bonus: derivative of the complex exponential
+:class: bonus, dropdown
+
+If you already know about functions, you can think of the expression $f(\theta)= e^{i\theta}$ as a complex-valued function. A complex-valued function $f$ can be written as $f=g+ih$, where $g$ and $h$ are real-valued functions. When $g$ and $h$ are differentiable, we can define the derivative of $f$ as 
+
+$$
+ f'=g+ih'.
+$$
+
+We can even show that the complex exponential function behaves exactly like the real exponential function in terms of its derivative.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:re_diff
@@ -294,7 +416,7 @@ We can even show that the following property of the derivative still is true:
 Let $\theta\in\mathbb{R}$. Then
 
 $$
-\frac{d}{d\theta}\left[e^{i\theta}\right] = ie^{i\theta}.
+\frac{d}{d\theta}\left(e^{i\theta}\right) = ie^{i\theta}.
 $$
 
 ::::
@@ -305,8 +427,8 @@ $$
 The proof is again straight forward:
 
 \begin{align*}
-\frac{d}{d\theta}\left[e^{i\theta}\right] &= \frac{d}{d\theta}\left[\cos(\theta)+i\sin(\theta)\right] \\
-&= \frac{d}{d\theta}\left[\cos(\theta)\right]+i\frac{d}{d\theta}\left[\sin(\theta)\right] \\
+\frac{d}{d\theta}\left(e^{i\theta}\right) &= \frac{d}{d\theta}\left(\cos(\theta)+i\sin(\theta)\right) \\
+&= \frac{d}{d\theta}\left(\cos(\theta)\right)+i\frac{d}{d\theta}\left(\sin(\theta)\right) \\
 &= -\sin(\theta)+i\cos(\theta) \\
 &= i^2\sin(\theta)+i\cos(\theta) \\
 &= i\cos(\theta)+i^2\sin(\theta) \\
@@ -316,22 +438,26 @@ The proof is again straight forward:
 
 ::::
 
-You might think it is strange to use the number $e$ and superscripts which would suggest some sort of power of $e$. But it turns out this is very convenient as this expression satisfies the rules of calculation for exponentials. Indeed the calculation in Equation {eq}`Eq:ComplexNumbers:calcproduct` shows that
+:::::::::
 
-$$
-(re^{i\theta}) (se^{i\phi} )= rse^{i(\theta+\phi)}.
-$$
-
-This corresponds precisely with the rules for multiplying exponentials.
-
-Thus, you can calculate with this strange notation $re^{i\theta}$ for complex numbers just as you would if you were indeed taking imaginary powers of $e$ ($=2.71828\ldots$). Some deep mathematics show that the definition given here is the only reasonable way to define taking imaginary exponents.
-
-In practice, this polar notation of complex numbers is convenient to use when you take products or powers, whereas the $a+bi$ notation is more convenient when you have to add complex numbers.
+In practice, the polar notation of complex numbers is convenient to use when you take products or powers, whereas the $a+bi$ notation is more convenient when you have to add complex numbers.
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:highpower
 
-Let us calculate $(1+i)^6$. As this is a high power of a complex number, we use Euler's formula for the polar form. First, we write $1+i=\sqrt{2} e^{i \frac{\pi}{4}}$. Thus, we have
+Let us calculate $(1+i)^6$. As this is a high power of a complex number, we use Euler's formula for the polar form. First, we compute 
+
+$$
+ |1+i|=\sqrt{2},\qquad \arg(1+i)=\frac{\pi}{4},
+$$
+
+which allows us to write 
+
+$$
+ 1+i=\sqrt{2} e^{i \frac{\pi}{4}}.
+$$ 
+
+Therefore, we have
 
 $$
 (1+i)^6 = (\sqrt{2} e^{i\frac{\pi}{4}})^6 = \sqrt{2}^6 e^{i6\frac{\pi}{4}} = 8 e^{i \frac{3\pi}{2}} = -8i.
@@ -342,7 +468,25 @@ $$
 ::::{prf:example}
 :label: Ex:ComplexNumbers:threesolutions
 
-Let us calculate $\dfrac{(1-\sqrt{3}i)^3}{(2+2i)^6}$. We have $1-\sqrt{3}i=2e^{-i\frac{\pi}{3}}$ and $2+2i=2\sqrt{2} e^{i\frac{\pi}{4}}$. Thus, we obtain
+Let us calculate $\dfrac{(1-\sqrt{3}i)^3}{(2+2i)^6}$. We have 
+
+$$
+ \left|1-\sqrt{3}i\right|=2,\quad\arg\left(1-\sqrt{3}i\right)=-\frac{\pi}{3}
+$$
+
+and
+
+$$
+ \left|2+2i\right|=2\sqrt{2},\quad\arg\left(2+2i\right)=\frac{\pi}{4},
+$$
+
+so we can write
+
+$$
+ 1-\sqrt{3}i=2e^{-i\frac{\pi}{3}},\qquad 2+2i=2\sqrt{2} e^{i\frac{\pi}{4}}.
+$$
+
+Then, we obtain
 
 $$
 \frac{(1-\sqrt{3}i)^3}{(2+2i)^6} = \frac{(2e^{-i\frac{\pi}{3}})^3}{(2\sqrt{2} e^{i\frac{\pi}{4}})^6}
@@ -351,7 +495,7 @@ $$
 
 ::::
 
-**De Moivre and other trigonometric identities**
+## De Moivre and other trigonometric identities
 
 The notation invented by Euler of $e^{i\theta} = \cos(\theta) + i\sin(\theta)$ allows us to quickly derive trigonometric identities. The most famous one is De Moivre's identity $e^{in\theta} = (e^{i\theta})^n$, which seems obvious now, but was discovered by De Moivre decades before the exponential notation was introduced and is a lot more impressive in the form
 
@@ -378,7 +522,7 @@ Comparing the real and imaginary parts on both sides of this equation we find
 
 ::::
 
-You can also easily derive other formulas.
+You can also derive other formulas.
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:cos_sin_sum
@@ -397,27 +541,75 @@ Thus $\cos(\theta+\phi) = \cos(\theta) \cos(\phi) - \sin(\theta) \sin(\phi)$ and
 
 ::::
 
-**Solving $z^n=w$**
+## Solving $z^n=w$
 
-The most basic equations we want to solve are of the form $z^n=w$ for a given complex number $w$, where $z$ is the variable we want to solve for. Let's consider an example:
+We can use complex exponential to solve equations of the form $z^n=w$ for a given complex number $w$, where $z$ is the variable we want to solve for. Let us consider an example.
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:threesolutions2
 
-Consider the equation $z^3=-16+16i$. We know it has $3$ complex solutions, as it is a third degree equation. If we write $z=a+bi$ and expand (to find $a$ and $b$), we get a very large expression which is not easy to work with.
+Consider the equation $z^3=-16+16i$. We know it has $3$ complex solutions, as it is a third degree polynomial equation (see {prf:ref}`Thm:ComplexNumbers:fundamental`). If we write $z=a+bi$ and expand to find $a$ and $b$, we get a very large expression which is not easy to work with.
 
-If we write $z=re^{i\phi}$ in polar coordinates instead, we can easily express $z^3=r^3e^{3i\phi}$. We also have to express the right-hand side in polar coordinates: $-16+16i=16\sqrt{2} e^{\frac34 \pi i}$. Comparing the modulus and argument of these two expressions, we find
+If we write $z=re^{i\phi}$ in polar coordinates instead, we can easily express $z^3=r^3e^{3i\phi}$. We also have to express the right-hand side in polar coordinates: $-16+16i=16\sqrt{2} e^{\frac34 \pi i}$. In particular, the equation in polar coordinates becomes
+
+$$
+ r^3e^{3i\phi}=16\sqrt{2} e^{\frac34 \pi i}.
+$$
+
+Comparing the modulus and argument of these two expressions, we find
 
 \begin{align*}
 r^3&=|z^3|= |-16+16i| = 16\sqrt{2},\\
 3\phi &= \arg(z^3) = \arg(-16+16i) = \frac34\pi.
 \end{align*}
 
-Taking a cube root, we find $r=2\sqrt{2}$. Note that $r>0$ is real, so here we need to consider only the single positive real solution, we don't want to find the complex solutions.
+Taking a cube root of the equation $r^3=16\sqrt{2}$, we find $r=2\sqrt{2}$. Note that $r\geq 0$ is real, so here we need to consider only the single positive real solution; we do not want to find the complex solutions.
 
-Moreover, we have $3\phi = \frac34\pi$, so $\phi = \frac14\pi$. This gives the solution $z=2\sqrt{2} e^{\frac14 \pi i}$. But this is just one solution and there ought to be two more by the fundamental theorem of algebra. So what are the remaining two?
+In addition, we have $3\phi = \frac34\pi$, so $\phi = \frac14\pi$. This gives the solution $z=2\sqrt{2} e^{\frac14 \pi i}$. But this is just one solution and there ought to be two more by {prf:ref}`Thm:ComplexNumbers:fundamental`. So what are the remaining two?
 
-As you know, the argument is only defined up to a multiple of $2\pi$. Thus, when we get the equation $3\phi = \frac34\pi$, we should actually write $3\phi = \frac34\pi + 2\pi k$ for some integer $k$. Dividing this by $3$ gives $\phi = \frac14\pi + \frac23 \pi k$. We see that different values of $k$ give different values of $\phi$. For $k=0$, we obtain $\phi=\frac14\pi$ as before. For $k=1$, we obtain $\phi = \frac14\pi + \frac23\pi = \frac{11}{12}\pi$. For $k=2$, we have $\phi = \frac14\pi + \frac43\pi = \frac{19}{12}\pi$. For $k=3$, we obtain $\phi = \frac14\pi + 2\pi$. This gives the same complex number as $\phi=\frac14\pi$, as the argument is shifted by one full period. Indeed, if we add a multiple of $3$ to $k$, the argument of $\phi$ is shifted by a multiple of $2\pi$ and thus the corresponding solution $z$ does not change. Therefore, only the cases $k=0$, $k=1$, and $k=2$ suffice to obtain all solutions.
+As we have seen, the argument is only defined up to a multiple of $2\pi$. Thus, when we get the equation 
+
+$$
+ 3\phi = \frac34\pi,
+$$
+
+we should actually write 
+
+$$
+ 3\phi = \frac34\pi + 2\pi k
+$$
+
+for some integer $k$. Dividing this by $3$ gives 
+
+$$
+ \phi = \frac14\pi + \frac23 \pi k.
+$$
+
+We see that different values of $k$ give different values of $\phi$. For $k=0$, we obtain 
+
+$$
+ \phi=\frac14\pi
+$$
+
+as before. For $k=1$, we obtain 
+
+$$
+ \phi = \frac14\pi + \frac23\pi = \frac{11}{12}\pi.
+$$
+
+For $k=2$, we have 
+
+$$
+ \phi = \frac14\pi + \frac43\pi = \frac{19}{12}\pi.
+$$
+
+For $k=3$, we obtain 
+
+$$
+ \phi = \frac14\pi + 2\pi.
+$$
+
+This gives the same complex number as $\phi=\frac14\pi$, as the argument is shifted by one full period. Indeed, if we add a multiple of $3$ to $k$, the argument of $\phi$ is shifted by a multiple of $2\pi$ and thus the corresponding solution $z$ does not change. Therefore, only the cases $k=0$, $k=1$, and $k=2$ suffice to obtain all solutions.
 
 The three solutions, $z_0$, $z_1$ and $z_2$, to the equation $z^3=-16+16i$ thus are
 
@@ -438,7 +630,7 @@ You can find a visualisation of these three solutions in {numref}`Figure %s <Fig
 :status: approved
 :class: dark-light
 
-The three solutions from {prf:ref}`Ex:ComplexNumbers:threesolutions2`.
+The three solutions from {prf:ref}`Ex:ComplexNumbers:threesolutions2`, as well as solutions for similar equation for higher powers of $z$.
 ```
 
 ::::
@@ -486,7 +678,7 @@ Combine the solution for $r$ and the $n$ values for $\phi$ to obtain the $n$ sol
 
 ```
 
-**Adding trigonometric functions**
+## Adding trigonometric functions
 
 Quite often, you come across expressions where a cosine and a sine of identical frequency are added. If you plot a function of the form $f(t)=b\cos(\omega t) + c\sin(\omega t)$, you notice that it becomes a new single wave. You can use complex numbers in a smart way to rewrite $f(t)$ to the form $A \cos(\omega t -\phi)$ as a single cosine with shifted argument. The variable $A$ gives the amplitude of the combined wave and the variable $\phi$ gives the phase-shift.
 
@@ -512,6 +704,10 @@ We first wrote both the cosine as the sine as real parts of complex exponentials
 The graph of the sum of a cosine and a sine of identical period is a sinusoid as well.
 :::
 
+:::{todo}
+Turn {numref}`Fig:ComplexNumbers:sinusoid` into an applet.
+:::
+
 ::::
 
 ::::{prf:example}
@@ -530,9 +726,17 @@ In the same way you can add two cosines (or sines) with shifted arguments.
 
 ## Derivations of Euler's formula
 
+We used Euler's formula 
+
+$$
+ e^{i\theta}=\cos(\theta)+i\sin(\theta)
+$$
+
+as the definition of $e^{i\theta}$. There are several reasons why it is a logical choice to call this expression $e^{i\theta}$, all of which show that the complex exponential behaves similarly to the real exponential. Here, we consider two of of these reasons, both of which talk about concepts that will be defined later in this book.
+
 **Using a scalar initial value problem**
 
-To find Euler's formula, consider the initial value problem
+To find Euler's formula, consider the initial value problem (see {numref}`Chapter:IntroDE`)
 
 :::{math}
 :label: Eq:ComplexNumbers:exp_de
@@ -591,7 +795,7 @@ $$
 
 **Using series**
 
-Euler's formula can also be derived using series. You may already be familiar with the following three series
+Euler's formula can also be derived using series. You may already be familiar with the following three power series (see {numref}`Chapter:Series`)
 
 \begin{align*}
 e^x &= \sum_{n=0}^\infty\frac{x^n}{n!}, \\
