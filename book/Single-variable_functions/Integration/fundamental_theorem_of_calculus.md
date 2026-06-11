@@ -29,6 +29,16 @@ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $F'(x)=f(x)$.
 :class: tudproof, dropdown
 :name: Prf:Integration:FundamentalTheoremPart1
 
+```{figure} Images/FundamentalTheorem.png
+---
+width: 50%
+name: FundamentalTheorem
+class: dark-light
+---
+
+The fundamental theorem of calculus.
+```
+
 Using the third rule of {prf:ref}`Thm:Integration:DefinitePropertiesArea` and {prf:ref}`Def:Differentiability:Derivative`, we obtain
 
 \begin{align*}
@@ -394,6 +404,16 @@ Replace {numref}`Fig:Integration:FresnelFunctions` with an applet.
 In {prf:ref}`Thm:MinMax:MVT` we have seen the mean value theorem that states that the derivative of a continuous and differentiable function on a finite interval equals its average slope somewhere in the interval.
 
 For integrals we have the following version.
+
+```{figure} Images/MeanValueTheoremIntegrals.png
+---
+width: 50%
+name: MeanValueTheoremIntegrals
+class: dark-light
+---
+
+The mean value theorem for integrals.
+```
 
 :::::{prf:theorem} Mean value theorem for integrals
 :label: Thm:Integration:MeanValueTheorem
