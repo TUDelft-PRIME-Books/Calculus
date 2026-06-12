@@ -25,7 +25,7 @@ Other common names for the term *antiderivative* are **primitive function** or *
 Note that an antiderivative $F$ of a function $f$ is not a unique function, as the following theorem states:
 
 ::::::{prf:Theorem}
-:label: Th:Integration:AntiderivativeConstant
+:label: Thm:Integration:AntiderivativeConstant
 
 If $F$ is an antiderivative of a function $f$ on an open interval $I$ and $C$ is an arbitrary real constant, then the family of functions $G$ defined by
 
@@ -36,7 +36,7 @@ $$
 are also antiderivatives of $f$ on $I$.
 ::::::
 
-::::::{admonition} Proof of {prf:ref}`Th:Integration:AntiderivativeConstant`
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:AntiderivativeConstant`
 :class: tudproof
 
 Because $F$ is an antiderivative of $f$ on $I$ we have $F'(x)=f(x)$ for all $x\in I$.
@@ -197,7 +197,7 @@ $$
 Just like definite integrals have several properties, indefinite integrals also have some useful properties:
 
 ::::{prf:theorem}
-:label: Th:Integration:IndefiniteProperties
+:label: Thm:Integration:IndefiniteProperties
 
 - $\displaystyle\int\left(f(x)+g(x)\right)\,dx=\int f(x)\,dx+\int g(x)\,dx$ for $f$ and $g$ continuous on some open interval $I$;
 
@@ -239,7 +239,7 @@ But why restrict ourselves to polynomials? We can use the same approach for more
 In {numref}`Sec:Differentiation:ChainRule` we saw the chain rule for derivatives. This rule can also be used to determine some indefinite integrals, which will be explained in more detail in {numref}`Sec:Integration:Substitution`. For now we just state the following important, but *intermediate*, result:
 
 :::{prf:theorem}
-:label: Th:Integration:IndefiniteLinearSubstitution
+:label: Thm:Integration:IndefiniteLinearSubstitution
 Let $f$ be a continuous function on some open interval $I$, and let $\alpha,\beta\in\mathbb{R}$ with $\alpha\neq0$ such that the linear function $g(x)=\alpha x+\beta$ has its image in $I$. Then
 
 $$
@@ -249,7 +249,7 @@ $$
 where $F$ is any antiderivative of $f$ on $I$ and $C\in\mathbb{R}$ is an arbitrary constant.
 :::
 
-::::{admonition} Proof of {prf:ref}`Th:Integration:IndefiniteLinearSubstitution`
+::::{admonition} Proof of {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution`
 :class: tudproof
 
 Assume $f$, $F$, $\alpha$, $\beta$ and $C$ are as in the theorem. We differentiate the right-hand side:
@@ -266,7 +266,7 @@ This shows that the right-hand side is an antiderivative of $f(\alpha x+\beta)$,
 :::{prf:Example}
 :label: Ex:Integration:IndefiniteExample3
 
-Using {prf:ref}`Th:Integration:IndefiniteLinearSubstitution` we can determine the next indefinite integral:
+Using {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` we can determine the next indefinite integral:
 
 \begin{align*}
 \int 3\cos(2x+1)\,dx &= 3\cdot\frac{1}{2}\sin(2x+1)+C \\
@@ -277,7 +277,7 @@ Using {prf:ref}`Th:Integration:IndefiniteLinearSubstitution` we can determine th
 
 ::::{warning}
 
-{prf:ref}`Th:Integration:IndefiniteLinearSubstitution` is only valid for *linear substitutions* of the form $\alpha x+\beta$ with $\alpha,\beta\in\mathbb{R}$ and $\alpha\neq0$. For more general substitutions we need the method of *integration by substitution*, which will be explained in {numref}`Sec:Integration:Substitution`.
+{prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` is only valid for *linear substitutions* of the form $\alpha x+\beta$ with $\alpha,\beta\in\mathbb{R}$ and $\alpha\neq0$. For more general substitutions we need the method of *integration by substitution*, which will be explained in {numref}`Sec:Integration:Substitution`.
 ::::
 
 ::::::{prf:Remark}

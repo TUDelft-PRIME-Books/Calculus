@@ -103,7 +103,7 @@ $$
 This example illustrates the following theorem.
 
 :::{prf:theorem}
-:label: Th:Integration:DefinitePositivePiecewise
+:label: Thm:Integration:DefinitePositivePiecewise
 
 For a *positive* and *piecewise-continuous* function $f$ defined on an interval $[a,b]$ that is made up of $n$ continuous pieces on the subintervals $[x_0,x_1]$, $[x_1,x_2]$, $\ldots$, $[x_{n-1},x_n]$ with $a=x_0<x_1<\ldots<x_n=b$, the definite integral equals the sum of the integrals on each subinterval:
 
@@ -317,7 +317,7 @@ A function for which the limit of the Riemann sums exists is called **integrable
 Luckily, but without giving a formal proof here, we have the following important result:
 
 ::::{prf:theorem}
-:label: Th:Integration:IntegrablePiecewise
+:label: Thm:Integration:IntegrablePiecewise
 
 Every *piecewise-continuous* function on an interval $[a,b]$ is integrable.
 ::::
@@ -345,7 +345,7 @@ R_N&= \sum_{n=1}^Nf(x_n^*)\Delta x \\
 &= \frac{2N^2+3N+1}{6N^2}.
 \end{align*}
 
-Here we used the result from {prf:ref}`Ex:Series:SumOfSquares`.
+Here we used the result from {prf:ref}`Ex:SumsAndProducts:SumOfSquares`.
 
 Using techniques from {numref}`Section:Limitinf` we find that
 
@@ -412,7 +412,7 @@ Calculating definite integrals using Riemann sums can be quite laborious. In the
 Using {prf:ref}`Def:Integration:DefiniteGeneral` we can derive several useful properties of definite integrals.
 
 ::::{prf:theorem}
-:label: Th:Integration:DefinitePropertiesArea
+:label: Thm:Integration:DefinitePropertiesArea
 
 - $\displaystyle\int_a^af(x)\,dx=0$ for $a\in D_f$;
 
@@ -473,7 +473,7 @@ $$
 The next theorem states that the choice of the variable of integration does not matter.
 
 ::::{prf:theorem}
-:label: Th:Integration:VariableOfIntegration
+:label: Thm:Integration:VariableOfIntegration
 
 For an integrable function $f$ on the interval $[a,b]\subset D_f$, the choice of the variable of integration does not change the value of the integral:
 
@@ -488,7 +488,7 @@ A rigorous proof of this theorem can be given using Riemann sums, but we will no
 Finally, we state some more properties of definite integrals. Proving these properties requires something called the *fundamental theorem of calculus*, which we will introduce in {numref}`Sec:Integration:FundamentalTheorem`. For now, we just state the properties.
 
 ::::{prf:theorem}
-:label: Th:Integration:DefinitePropertiesFundamental
+:label: Thm:Integration:DefinitePropertiesFundamental
 
 - $\displaystyle\int_a^bf(x)\,dx+\int_b^cf(x)\,dx=\int_a^cf(x)\,dx$ for any real numbers $a$, $b$ and $c$ and $f$ piecewise continuous on $[a,c]$;
 
@@ -503,7 +503,7 @@ Finally, we state some more properties of definite integrals. Proving these prop
 Finally, we state some important comparison properties of definite integrals. These can be used to estimate the value of definite integrals, as we will do in {prf:ref}`Ex:Integration:DefiniteApproximation`.
 
 ::::{prf:theorem}
-:label: Th:Integration:DefiniteComparison
+:label: Thm:Integration:DefiniteComparison
 
 - If $f(x)\geq0$ for $a\leq x\leq b$ and $f$ is piecewise continuous on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq0$;
 
@@ -568,7 +568,8 @@ Note that the athlete is active for $20$ minutes, which equals $\frac{1}{3}$ hou
 $$
 \begin{align*}
 \int_0^{\frac{1}{3}}v(t)\,dt &= \tfrac{1}{12}\cdot5+\tfrac{1}{30}\cdot15+\tfrac{1}{15}\cdot5+\tfrac{1}{20}\cdot20+\tfrac{1}{15}\cdot6\\
-&=\tfrac{25+30+20+60+24}{60}=\tfrac{159}{60}.
+&=\frac{25+30+20+60+24}{60}\\
+&=\frac{159}{60}.
 \end{align*}
 $$
 

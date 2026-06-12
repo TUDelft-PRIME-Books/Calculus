@@ -825,7 +825,9 @@ Hence, we have by {prf:ref}`Thm:SumsAndProducts:SumTelescopingSum` that
 &= \frac12-\frac{1}{20202} \\
 &= \frac{10101}{20202}-\frac{1}{20202} \\
 &= \frac{10100}{20202} \\
-&= \frac{5050}{10101}.
+&= \frac{5050}{10101} \\
+&=0.\overline{499950}.
 \end{align*}
 
+See {numref}`Sec:Decimals` for the notation $0.\overline{499950}$.
 :::
