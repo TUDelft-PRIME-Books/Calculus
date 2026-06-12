@@ -13,6 +13,25 @@ In this section we cover
 - Inequalities (including quadratics and absolute values)
 - Linear systems of two variables (solving by "row" reduction, not by back substitution)
 
+(Sec:Decimals)=
+## Decimals
+
+Real numbers are numbers that can be expressed as decimals.
+
+We introduce the notation $\frac{1}{3}=0.333\ldots=0.\overline{3}$ and $\frac{1}{11}=0.090909\ldots=0.\overline{09}$, where $\overline{3}$ and $\overline{09}$ denotes that these digits are repeated indefinitely.
+
+To show that $p=0.\overline{3}$ equals $\frac{1}{3}$ we multiply by $10$ and find
+
+$$
+10p=3.\overline{3}=3+0.\overline{3}=3+p\quad\Longrightarrow\quad 9p=3 \quad\Longleftrightarrow\quad p=\frac{3}{9}=\frac{1}{3}.
+$$
+
+Similary, we multiply $q=0.\overline{09}$ by $100$ to obtain
+
+$$
+100q=9.\overline{09}=9+0.\overline{09}=9+q\quad\Longrightarrow\quad 99q=9 \quad\Longleftrightarrow\quad q=\frac{9}{99}=\frac{1}{11}.
+$$
+
 (Sec:LongDivision)=
 ## Long division
 

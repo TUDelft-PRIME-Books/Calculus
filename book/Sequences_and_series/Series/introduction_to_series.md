@@ -3,9 +3,11 @@
 
 ## Introduction
 
-In {numref}`Chapter:Sequences` we have studied sequences, which are ordered lists of numbers. In this chapter we will study what happens if we add the terms of a sequence.Because sequences can be finite or infinite, we will have to distinguish between the addition of a finite number of numbers and the addition of an infinite number of numbers.
+In {numref}`Chapter:Sequences` we have studied sequences, which are ordered lists of numbers. In this chapter we will study what happens if we add the terms of a sequence. Because sequences can be finite or infinite, we will have to distinguish between the addition of a finite number of numbers and the addition of an infinite number of numbers.
 
-We start with defining the term series, which is the addition of a sequence of numbers. We will also introduce the notation $\sum$ to denote the addition of a finite or an infinite number of numbers. We will then study the convergence of series, which is the question whether the sum of a(n in)finite number of numbers makes sense.
+In {numref}`Sec:SumsAndProducts` we already dealt with finite summations, id est summations of finite sequences. In this chapter we only consider summations of infinite sequences.
+
+We start with defining the term series, which is the summation of an infinite sequence of numbers. We will also use the notation $\sum$ to denote such a summation. We will study the convergence of series, which is the question whether the sum of an infinite number of numbers makes sense.
 
 ## Series and sums
 
@@ -16,24 +18,10 @@ In {numref}`Sec:SumsAndProducts:Sums` we have already introduced the summation s
 
 A **series** is the addition of all of the terms of a sequence.
 
-A series is called a **finite series** if the sequence is finite.
-
-A series is called an **infinite series** if the sequence is infinite.
-::::
-
-::::{prf:notation}
-:label: Not:Series:Definition
-
-For a finite sequence $\{a_n\}_{n=p}^q$, the corresponding finite series is denoted by
+That is, if $\{a_n\}_{n=p}^{\infty}$ with $p$ any integer, then 
 
 $$
-\sum_{n=p}^q a_n.
-$$
-
-For an infinite sequence $\{a_n\}_{n=p}^{\infty}$, the corresponding infinite series is denoted by
-
-$$
-\sum_{n=p}^{\infty}a_n.
+\sum_{n=p}^{\infty}a_n=a_p+a_{p+1}+a_{p+2}+\cdots.
 $$
 
 ::::
@@ -41,90 +29,99 @@ $$
 ::::{prf:definition}
 :label: Def:Series:SummationIndex
 
-The letter $n$ in the notation $\displaystyle\sum_{n=p}^qa_n$ or $\displaystyle\sum_{n=p}^{\infty}a_n$ is called the **index of summation**.
+The letter $n$ in the notation $\displaystyle\sum_{n=p}^{\infty}a_n$ is called the **index of summation**.
 ::::
 
-Because the index of summation is just a dummy variable, we can replace it by any other letter. For example, we can write $\displaystyle\sum_{k=p}^qa_k$ or $\displaystyle\sum_{m=p}^{\infty}a_m$ instead of $\displaystyle\sum_{n=p}^qa_n$ or $\displaystyle\sum_{n=p}^{\infty}a_n$, respectively.
+Because the index of summation is just a dummy variable, we can replace it by any other letter. For example, we can write $\displaystyle\sum_{m=p}^{\infty}a_m$ instead of $\displaystyle\sum_{n=p}^{\infty}a_n$.
 
-The result of a series can be a number, but it can also be a function, but it can also result nothing. To distinguish between these cases, we will use the following terminology:
+The next examples show that it may be possible that a summation ends up with a finite number or not.
+
+:::::{prf:example}
+:label: Ex:Series:NaturalNumbers
+
+It is clear that 
+
+$$
+\sum_{n=1}^{\infty}n=1+2+3+\cdots=\infty,
+$$
+
+since the result grows beyond any finite real number.
+:::::
+
+:::::{prf:example}
+:label: Ex:Series:GeometricSeriesExample
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{2^n}=\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1.
+$$
+
+This result can be visualised as shown in {numref}`Fig:Series:GeometricSeries`. The idea behind the visualisation is that when you take a unit square, which has area $1$, and you cut half of it off, then you are left with a rectangle with area $\frac{1}{2}$. If you cut half of this rectangle off, then you are left with a square with area $\frac{1}{4}$. If you cut half of this square off, then you are left with a rectangle with area $\frac{1}{8}$, and so on. If you keep cutting half of the remaining rectangle/square off, then the total area of the cut off rectangles/squares will be $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots$, which in the end approaches to the area of the original unit square, which is $1$.
+
+```{figure} Images/geometric.png
+---
+width: 50%
+name: Fig:Series:GeometricSeries
+align: center
+---
+A visual proof of $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1$.
+```
+
+:::{todo}
+Replace {numref}`Fig:Series:GeometricSeries` with an applet.
+::: 
+
+:::::
+
+:::::{prf:example}
+:label: Ex:Series:AlternatingExample
+
+$$
+\sum_{n=0}^{\infty}(-1)^n=1+(-1)+1+(-1)+\cdots
+$$
+
+does not exist. The addition of an additional term results in either $1$ or $1+(-1)=0$. Since we cannot decide whether an infinite number of terms is even or odd, it is impossible to choose between $0$ or $1$, or something else.
+
+:::::
+
+This leads to the following definition.
 
 ::::{prf:definition}
 :label: Def:Series:Sum
 
-If a series results in a number or a function, then we call this number or function the **sum** of the series.
+If the summation of a series ends up with a real number $S$, the series is called **convergent** and $S$ is called the **sum** of the series.
 ::::
 
-To have a simple notation for the sum of a series, we will use the following notation:
+For simplicity we will use the following notation:
 
 ::::{prf:notation}
 :label: Not:Series:Sum
 
-If a series $\displaystyle\sum_{n=p}^qa_n$ or $\displaystyle\sum_{n=p}^{\infty}a_n$ has the sum $S$, then we write
+If a series $\displaystyle\sum_{n=p}^{\infty}a_n$ has the sum $S$, then we just write
 
 $$
-\sum_{n=p}^qa_n=S \quad\text{or}\quad \sum_{n=p}^{\infty}a_n=S,
+\sum_{n=p}^{\infty}a_n=S.
 $$
-
-respectively.
-::::
-
-We will first turn our attention to finite series, which is just the addition of a finite number of numbers. We will then turn our attention to the sum of an infinite series, which is more complicated and requires the notion of convergence.
-
-(Sec:Series:FiniteSeries)=
-## Finite series
-
-We start with a short but important theorem about the sum of a finite series, which will be used in the next section to find the sum of an infinite series:
-
-::::{prf:theorem}
-:label: Thm:Series:FiniteSeries
-
-The sum of a finite series exists.
-::::
-
-::::{admonition} Proof of {prf:ref}`Thm:Series:FiniteSeries`
-:class: tudproof, dropdown
-
-Assume $\{a_n\}_{n=p}^q$ is a finite sequence of terms, then we have
-
-$$
-\sum_{n=p}^qa_n=a_p+a_{p+1}+a_{p+2}+\cdots+a_q.
-$$
-
-Using brackets, we can write this as
-
-$$
-\sum_{n=p}^qa_n=\left(\cdots\left(\left(a_p+a_{p+1}\right)+a_{p+2}\right)+\cdots\right)+a_q.
-$$
-
-Since the addition of two numbers is well-defined, we can add $a_p$ and $a_{p+1}$ to get a number, which we can then add to $a_{p+2}$ to get another number, and so on until we have added all the terms of the series. Hence, the sum of a finite series exists.
 
 ::::
-
-::::{prf:remark}
-:label: Rem:Series:FiniteSeries
-Because of {prf:ref}`Thm:Series:FiniteSeries` often the term _finite series_ is not used, but the term **finite sum** is used instead.
-
-As a consequence of this, a _series_ is often implicitly assumed to be an _infinite series_, unless it is explicitly stated that the series is a finite series or a finite sum.
-::::
-
-Because of the clear overlap with finite sums, we refer to {numref}`Sec:SumsAndProducts:Sums` for more details on finite series and finite sums.
 
 (Sec:Series:InfiniteSeries)=
-## Infinite series and partial sums
+## Partial sums
 
-We will now turn our attention to infinite series, or by {prf:ref}`Rem:Series:FiniteSeries` just series, which is more complicated and requires some extra definitions to handle the summation of an infinite number of terms.
+We will now turn our attention to partial sums of an infinite series. A _partial sum_ of an infinite series is the summation of a _finite_ number of its first terms, which always exists as we have seen in {prf:ref}`Thm:SumsAndProducts:Sum`.
 
 ::::{prf:definition}
 :label: Def:Series:PartialSum
 
-Given a series $\displaystyle\sum_{n=p}^{\infty}a_n$, we define the $n$th **partial sum** of this series as
+Given a series $\displaystyle\sum_{n=p}^{\infty}a_n$, we define the $N$th **partial sum** of this series as
 
 $$
-s_n=\displaystyle\sum_{k=p}^{n+p-1}a_k=a_p+a_{p+1}+a_{p+2}+\cdots+a_{n+p-1}.
+s_N=\displaystyle\sum_{n=p}^{N}a_n=a_p+a_{p+1}+a_{p+2}+\cdots+a_{N}.
 $$
+
+Here we assume that $N\geq p$.
 ::::
 
-In other words, the $n$th partial sum of a series is the sum of the first $n-p+1$ terms of the series.
+In other words, the $N$th partial sum of a series is the sum of the first $N-p+1$ terms of the series.
 
 ::::::{note}
 For $\displaystyle\sum_{n=1}^{\infty}a_n$ the $N$th partial sum $s_N$ is the sum of the first $N$ terms. However, we call $s_N$ still the $N$th partial sum of the series even when the series $\displaystyle\sum a_n$ does not start at $n=1$. So, for instance, if $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$ then $s_N=\displaystyle\sum_{n=2}^N\frac{\ln(n)}{n}$ is the sum of the first $N-1$ terms and if $\displaystyle\sum_{n=0}^{\infty}\frac{1}{n^2+1}$ then $s_N=\displaystyle\sum_{n=0}^N\frac{1}{n^2+1}$ is the sum of the first $N+1$ terms.
@@ -132,24 +129,23 @@ For $\displaystyle\sum_{n=1}^{\infty}a_n$ the $N$th partial sum $s_N$ is the sum
 
 ## Convergence and divergence
 
-Using these partial sums we can now look at the infinite series:
+Note that the partial sums of a series form a sequence $\{s_N\}$. Using these partial sums we now have:
 
 \begin{align*}
-\sum_{n=p}^{\infty}a_n &= \lim_{n\to\infty}\sum_{k=p}^{n+p-1}a_k \\
-&= \lim_{n\to\infty}s_n.
+\sum_{n=p}^{\infty}a_n &= \lim_{N\to\infty}\sum_{n=p}^{N}a_n \\
+&= \lim_{N\to\infty}s_N.
 \end{align*}
 
-So if $\lim\limits_{n\to\infty}s_n$ would exist, then the sum of the infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$ would be equal to this limit. If $\lim\limits_{n\to\infty}s_n$ does not exist, then we cannot determine the sum of the infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$. This is summarised in the next theorem:
+So if $\lim\limits_{N\to\infty}s_N$ exists, then the sum of the infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$ equals this limit. If $\lim\limits_{n\to\infty}s_n$ does not exist, then we cannot determine the sum of the infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$. This is summarised in the next theorem:
 
 ::::{prf:theorem}
 :label: Thm:Series:ConvergenceSum
 
-Let $\displaystyle\sum_{n=p}^{\infty}a_n$ be an infinite series and let $s_n$ be its $n$th partial sum.
+Let $\displaystyle\sum_{n=p}^{\infty}a_n$ be an infinite series and let $s_N$ be its $N$th partial sum.
 
-The sum $S$ of the series $\displaystyle\sum_{n=p}^{\infty}a_n$ exists if and only if the limit $\lim\limits_{n\to\infty}s_n=S$ exists.
+The sum of the series $\displaystyle\sum_{n=p}^{\infty}a_n$ exists if and only if the limit $\lim\limits_{N\to\infty}s_N=S$ exists.
 
 If the sum exists we write $\displaystyle\sum_{n=p}^{\infty}a_n=S$.
-
 ::::
 
 We do not give a formal proof of this theorem, but it is a direct consequence of the definition of the sum of an infinite series and the definition of the limit of a sequence. Because the existence of the sum of an infinite series is equivalent to the existence of the limit of the sequence of partial sums, we can use all the tools that we have developed in {numref}`Chapter:Sequences` to determine whether the limit of the sequence of partial sums converges or diverges and to find the sum of a series. Because if this close link between infinite series and limits of sequences, we will reuse the terms _convergence_ and _divergence_ for series, which we have already used for sequences:
@@ -157,14 +153,14 @@ We do not give a formal proof of this theorem, but it is a direct consequence of
 ::::{prf:definition}
 :label: Def:Series:ConvergenceSum
 
-Let $\displaystyle\sum_{n=p}^{\infty}a_n$ be an infinite series, let $s_n$ be its $n$th partial sum and let $S$ be a number.
+Let $\displaystyle\sum_{n=p}^{\infty}a_n$ be an infinite series, let $s_N$ be its $N$th partial sum and let $S$ be a number.
 
-If the limit $\lim\limits_{n\to\infty}s_n$ exists and equals $S$, then we say that the series $\displaystyle\sum_{n=p}^{\infty}a_n$ **converges** to $S$.
+If the limit $\lim\limits_{N\to\infty}s_N$ exists and equals $S$, then we say that the series $\displaystyle\sum_{n=p}^{\infty}a_n$ **converges** to $S$.
 
-If the limit $\lim\limits_{n\to\infty}s_n$ does not exist, then we say that the series $\displaystyle\sum_{n=p}^{\infty}a_n$ **diverges**.
+If the limit $\lim\limits_{N\to\infty}s_N$ does not exist, then we say that the series $\displaystyle\sum_{n=p}^{\infty}a_n$ **diverges**.
 ::::
 
-One major result for of this definition of converges using partial sums, is that we can proof the next theorem:
+One major result for of this definition of convergence using partial sums, is that we can proof the next theorem:
 
 ::::::{prf:theorem}
 :label: Thm:Series:GeneralTerm
@@ -175,7 +171,7 @@ If the series $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\inf
 :class: tudproof
 Let $\{s_n\}$ be the sequence of partial sums of the series $\displaystyle\sum a_n$.
 
-If $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\infty}s_n=s$ exists. Then we have
+If $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\infty}s_n=S$ exists. Then we have
 
 $$
 \lim_{n\to\infty}a_n=\lim_{n\to\infty}\left(s_n-s_{n-1}\right)=\lim_{n\to\infty}s_n-\lim_{n\to\infty}s_{n-1}=s-s=0.
@@ -195,7 +191,7 @@ This is shown by the following example:
 :label: Ex:Series:HarmonicSeries
 Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$.
 
-First note that $\lim\limits_{n\to\infty}\frac{1}{n}=0$, so the general term of the series tends to zero.
+First note that $\lim\limits_{n\to\infty}\dfrac{1}{n}=0$, so the general term of the series tends to zero.
 
 Now consider the $n$th partial sum of the series:
 
@@ -243,30 +239,30 @@ This proves that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is div
 
 Because the example uses an integral to test for convergence/divergence, it is commonly called the **integral test** for convergence/divergence, which we will discuss in more detail in {numref}`Sec:Series:PositiveSeries:IntegralTest`.
 
-Although the contrary of {prf:ref}`Thm:Series:GeneralTerm` is not true, the theorem still gives us a useful test for divergence of series, by contraposition of the theorem. Contraposition of a statement of the form "If $P$, then $Q$." is the statement "if not $Q$ then not $P$".
+Although the contrary of {prf:ref}`Thm:Series:GeneralTerm` is not true, the theorem still gives us a useful test for divergence of series, by contraposition of the theorem. Contraposition of a statement of the form "If $P$, then $Q$." is the statement "if not $Q$, then not $P$".
 
 Based on {prf:ref}`Thm:Series:GeneralTerm`, we have
 
 $$
-P = \text{the series $\displaystyle\sum a_n$ is convergent},
+P : \text{"the series $\displaystyle\sum a_n$ is convergent"},
 $$
 
 which means that
 
 $$
-\text{not }P = \text{the series $\displaystyle\sum a_n$ is not convergent} = \text{the series $\displaystyle\sum a_n$ is divergent}.
+\text{not }P : \text{"the series $\displaystyle\sum a_n$ is not convergent" or "the series $\displaystyle\sum a_n$ is divergent"}.
 $$
 
 For the next part the statement, $Q$, we have (in a longer form):
 
 $$
-Q = \text{the limit $\lim\limits_{n\to\infty}a_n$ exists and equals $0$},
+Q : \text{"the limit $\lim\limits_{n\to\infty}a_n$ exists and equals $0$"},
 $$
 
 which means that
 
 $$
-\text{not }Q = \text{the limit $\lim\limits_{n\to\infty}a_n$ does not exist or the limit $\lim\limits_{n\to\infty}a_n$ exists but does not equal $0$}.
+\text{not }Q : \text{"the limit $\lim\limits_{n\to\infty}a_n$ does not exist or the limit $\lim\limits_{n\to\infty}a_n$ exists but does not equal $0$"}.
 $$
 
 Hence, contraposition of {prf:ref}`Thm:Series:GeneralTerm` gives us the following corollary:
@@ -279,7 +275,7 @@ If $\lim\limits_{n\to\infty}a_n$ does not exist or if $\lim\limits_{n\to\infty}a
 ::::::{prf:definition}
 :label: Def:Series:TestForDivergence
 
-{prf:ref}`Thm:Series:GeneralTermCorollary` is called **the test for divergence**.
+{prf:ref}`Thm:Series:GeneralTermCorollary` is sometimes called **the test for divergence**.
 ::::::
 
 ::::{prf:example}
@@ -342,21 +338,12 @@ $$
 and
 
 $$
-\sum_{n=1+t}^{\infty}a_{n-t} = A.
+\sum_{n=p+t}^{\infty}a_{n-t} = A.
 $$
 
 ::::
 
-Because of the last properties in {prf:ref}`Thm:Series:PropertiesFiniteSeries` and {prf:ref}`Thm:Series:CalculatingSums`, we will make the following assumption about the index of summation for the rest of this chapter:
-
-::::{prf:assumption} Index of summation
-:label: Conv:Series:IndexOfSummation
-
-All series in this chapter will start at $n=1$ unless otherwise specified.
-
-::::
-
-This will make subsequent definitions, theorems and similar texts easier to state and understand.
+The last property in {prf:ref}`Thm:Series:CalculatingSums` shows that the starting index of a series might vary if we make a shift in the index of summation.
 
 ## Absolute and conditional convergence
 
@@ -429,7 +416,7 @@ $$
 
 so the sequence $\{q_n\}$ is also bounded from above. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\{q_n\}$ is also convergent, so $\lim\limits_{n\to\infty}q_n=q$ exists.
 
-Now can turn to the original series $\displaystyle\sum a_n$. The $n$th partial sum of this series is
+Now we can turn to the original series $\displaystyle\sum a_n$. The $n$th partial sum of this series is
 
 \begin{align*}
 s_n&=\sum_{k=1}^na_k=\sum_{k=1}^n(a_k^+-a_k^-)\\
@@ -517,12 +504,13 @@ As the last value is positive, the sequence $\{s_{2n}\}$ is strictly increasing.
 \begin{align*}
 s_{2n} &= \sum_{k=1}^{2n}\frac{(-1)^{k-1}}{k} \\
 &= 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} - \frac{1}{7} + \cdots - \frac{1}{2n-2} + \frac{1}{2n-1} - \frac{1}{2n} \\
-&= 1 - \left(\frac{1}{2} - \frac{1}{3}\right) - \left(\frac{1}{4} - \frac{1}{5}\right) - \left(\frac{1}{6} - \frac{1}{7}\right) - \cdots - \left(\frac{1}{2n-2} - \frac{1}{2n-1}\right) - \frac{1}{2n} \\
+&= 1 - \left(\frac{1}{2} - \frac{1}{3}\right) - \left(\frac{1}{4} - \frac{1}{5}\right) - \left(\frac{1}{6} - \frac{1}{7}\right) \\
+&{}\quad{}- \cdots - \left(\frac{1}{2n-2} - \frac{1}{2n-1}\right) - \frac{1}{2n} \\
 &= 1 - \sum_{k=1}^{n-1}\left(\frac{1}{2k} - \frac{1}{2k+1}\right) - \frac{1}{2n} \\
 &= 1 - \sum_{k=1}^{n-1}\frac{1}{(2k)(2k+1)} - \frac{1}{2n}.
 \end{align*}
 
-Because of the positivity of all terms in the sum $\displaystyle\sum_{k=1}^{n-1}\frac{1}{(2k)(2k+1)}$ and the term $\frac{1}{2n}$, we have found that $\{s_n\}$ is bounded from above by $1$. Also, we have already found that $\{s_{2n}\}$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\{s_{2n}\}$ is convergent, so $\lim\limits_{n\to\infty}s_{2n}=s$ exists.
+Because of the positivity of all terms in the sum $\displaystyle\sum_{k=1}^{n-1}\frac{1}{(2k)(2k+1)}$ and the term $\dfrac{1}{2n}$, we have found that $\{s_n\}$ is bounded from above by $1$. Also, we have already found that $\{s_{2n}\}$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\{s_{2n}\}$ is convergent, so $\lim\limits_{n\to\infty}s_{2n}=s$ exists.
 
 Now we turn to the sequence $\{s_{2n+1}\}$. We have
 
@@ -546,12 +534,12 @@ This tells us that all even partial sums ánd all odd partial sums converge to t
 
 ::::::{prf:definition} Conditional convergence
 :label: Def:Series:RelativeConvergence
-A series $\displaystyle\sum a_n$ is called **conditionally convergent** if it is convergent, but not absolute convergent.
+A series $\displaystyle\sum a_n$ is called **conditionally convergent** if it is convergent, but not absolutely convergent.
 ::::::
 
 
 ::::::{note}
-Later we will be able to show that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}=\ln(2)$.
+Later we will be able to show that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}=\ln(2)$. See {prf:ref}`Ex:Series:LogTwo`.
 ::::::
 
 This concludes our treatment of absolute and conditional convergence. As you may have noticed, showing (absolute/conditional) convergence can be a lot of work. In {numref}`Sec:Series:SpecialSeries`, we will see some special types of series for which we can easily determine whether they are convergent or divergent and find their sum if they are convergent. For other series, we will need to use more advanced tests for convergence/divergence, which we will discuss in the sections after that.
@@ -566,7 +554,13 @@ Add Grasple exercises for {numref}`Chapter:Series:Introduction`.
 
 ::::{exercise}
 :label: Exc:Series:FibonacciExercise
-The sequence $\{F_n\}_{n=1}^{\infty}$ of Fibonacci numbers is defined by $F_{n+2}=F_n+F_{n+1}$ for $n=1,2,3,\ldots$ and $F_1=F_2=2$.
+The sequence $\{F_n\}_{n=1}^{\infty}$ of Fibonacci numbers is defined by 
+
+$$
+F_{n+2}=F_n+F_{n+1}\quad\text{for}\quad n=1,2,3,\ldots
+$$ 
+
+and $F_1=F_2=1$.
 
 (a) Use partial fractions $\dfrac{1}{F_nF_{n+2}}=\dfrac{A}{F_n}+\dfrac{B}{F_{n+2}}$ to show that
 
