@@ -23,7 +23,7 @@ $$
  ay'+by=0,
 $$
 
-where $a\neq 0$ and $b$ are constants. This equation is both separable and linear, so we could use the techniques from {numref}`Sec:ODE1:Separable` or {numref}`Sec:ODE1:Linear` to solve it. However, we can also try to guess what the solution looks like. Indeed, we can rewrite the differential equation into
+where $a\neq 0$ and $b$ are real constants. This equation is both separable and linear, so we could use the techniques from {numref}`Sec:ODE1:Separable` or {numref}`Sec:ODE1:Linear` to solve it. However, we can also try to guess what the solution looks like. Indeed, we can rewrite the differential equation into
 
 $$
  y'=-\frac{b}{a}y,
@@ -43,15 +43,19 @@ $$
  r=-\frac{b}{a}.
 $$
 
+Substitution into the original differential equation $ay'+by=0$ leads to same result:
+
+$$
+are^{rt}+be^{rt}=0\quad\Longleftrightarrow\quad ar+b=0\quad\Longleftrightarrow\quad r=-\frac{b}{a}.
+$$
+
 This means that the function $y(t)=e^{-\frac{b}{a}t}$ is a solution of the differential equation. By {prf:ref}`Thm:DE:GeneralSolutionHomogeneous`, the general solution is given by
 
 $$
-y=Ce^{-\frac{b}{a}t}.
+ y(t)=Ce^{-\frac{b}{a}t}.
 $$
 
-
-
-The two reasons why the educated guess $y=e^{rt}$ worked is that the equation is homogeneous and that the coefficients $a$ and $b$ are constants. Indeed, whenever the equation would have been of the form
+The two reasons why the educated guess $y(t)=e^{rt}$ worked is that the equation is homogeneous and that the coefficients $a$ and $b$ are constants. Indeed, whenever the equation would have been of the form
 
 $$
  a(t)y'(t)+b(t)y(t)=c(t)
@@ -65,7 +69,7 @@ $$
  ay''+by'+cy=0,
 $$
 
-where $a\neq 0$, $b$ and $c$ are constants. We will see that we can always find at least one (possibly complex) solution of the form $y(t)=e^{rt}$. The correct values of $r$ can be found by finding the roots of a quadratic equation in $r$. The structure of the solution will be different, depending on whether this quadratic equation has two real roots, a single real root or two complex roots, so we will treat these cases separately.
+where $a\neq 0$, $b$ and $c$ are real constants. We will see that we can always find at least one (possibly complex) solution of the form $y(t)=e^{rt}$. The correct values of $r$ can be found by finding the roots of a quadratic equation in $r$. The structure of the solution will be different, depending on whether this quadratic equation has two different real roots, a single real root or two nonreal (complex) roots, so we will treat these cases separately.
 
 ## Solving second-order, linear, homogenous differential equations
 
@@ -75,7 +79,7 @@ $$
  ay''+by'+cy=0,
 $$
 
-where $a\neq 0$, $b$ and $c$ are constants. This means that we are looking function $y$ of which a specific linear combination of $y$, $y'$ and $y''$ is $0$. Inspired by the approach from {numref}`SubSec:ODE2:Intro`, we make the educated guess that $y=e^{rt}$ might be a solution for some constant $r$. Then we compute $y'=re^{rt}$ and $y''=r^2e^{rt}$. Plugging these into the differential equation leads to
+where $a\neq 0$, $b$ and $c$ are real constants. This means that we are looking for a function $y$ of which a specific linear combination of $y$, $y'$ and $y''$ is $0$. Inspired by the approach from {numref}`SubSec:ODE2:Intro`, we make the educated guess that $y(t)=e^{rt}$ might be a solution for some constant $r$. Then we have $y'(t)=re^{rt}$ and $y''(t)=r^2e^{rt}$. Plugging these into the differential equation we get
 
 $$
  ar^2e^{rt}+bre^{rt}+ce^{rt}=0.
@@ -101,7 +105,7 @@ $$
  ay''+by'+cy=0,
 $$
 
-where $a\neq 0$, $b$ and $c$ are constants. Then the quadratic equation 
+where $a\neq 0$, $b$ and $c$ are real constants. Then the quadratic equation 
 
 $$
  ar^2+br+c=0
@@ -112,9 +116,9 @@ is known as the **characteristic equation** or the **auxiliary equation** for th
 
 Now we consider three possibilities for the **discriminant** $D=b^2-4ac$: $D>0$, $D=0$ and $D<0$.
 
-### Two real roots
+### Two different real roots
 
-If $D>0$ the characteristic equation has two different real solutions, say $r_1$ and $r_2$. Then the functions $y_1(t)=e^{r_1t}$ and $y_2(t)=e^{r_2t}$ are both solutions. Since these functions are linearly independent, we find that the general solution is $y(t)=c_1e^{r_1t}+c_2e^{r_2t}$ with $c_1,c_2\in\mathbb{R}$.
+If $D>0$ the characteristic equation has two distinct real roots, say $r_1$ and $r_2$. Then the functions $y_1(t)=e^{r_1t}$ and $y_2(t)=e^{r_2t}$ are both solutions. Since these functions are linearly independent, we find that the general solution is $y(t)=c_1e^{r_1t}+c_2e^{r_2t}$ with $c_1,c_2\in\mathbb{R}$.
 
 ::::::{prf:theorem}
 :label: Thm:ODE2:Tworeal
@@ -124,11 +128,13 @@ $$
  ay''+by'+cy=0,
 $$
 
-where $a\neq 0$, $b$ and $c$ are constants. If the characteristic equation has two distinct real roots $r_1$ and $r_2$, the general solution is given by
+where $a\neq 0$, $b$ and $c$ are real constants. If the characteristic equation has two distinct real roots $r_1$ and $r_2$, the general solution is given by
 
 $$
- y(t)=c_1e^{r_1t}+c_2e^{r_2t}.
+ y(t)=c_1e^{r_1t}+c_2e^{r_2t}
 $$
+
+with $c_1,c_2\in\mathbb{R}$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:ODE2:Tworeal`
@@ -142,9 +148,10 @@ $$
 for all $t$. For $t=0$, we obtain $c_1+c_2=0$, which gives $c_1=-c_2$. For $t=1$ we obtain $c_1e^{r_1}+c_2e^{r_2}=0$, which becomes $c_1\left(e^{r_1}-e^{r_2}\right)=0$. Since $r_1\neq r_2$ we have $e^{r_1}-e^{r_2}\neq 0$, so we must have $c_1=0$. This gives $c_2=0$ as well. So the functions $y_1$ and $y_2$ are linearly independent. So we have found two linearly independent solutions of a second-order, linear, homogeneous differential equation. By {prf:ref}`Thm:DE:GeneralSolutionHomogeneous` the general solution of this differential equation is given by
 
 $$
- y(t)=c_1e^{r_1t}+c_2e^{r_2t}.
+ y(t)=c_1e^{r_1t}+c_2e^{r_2t}
 $$
 
+with $c_1,c_2\in\mathbb{R}$.
 :::
 
 ::::::{prf:example}
@@ -169,7 +176,7 @@ $$
 The roots of this equation are $r_1=3$ and $r_2=-2$. By {prf:ref}`Thm:ODE2:Tworeal`, the general solution of the differential equation is 
 
 $$
- y=c_1e^{3x}+c_2e^{-2x}
+ y(x)=c_1e^{3x}+c_2e^{-2x}
 $$
 
 with $c_1,c_2\in\mathbb{R}$.
@@ -178,7 +185,7 @@ with $c_1,c_2\in\mathbb{R}$.
 ### Double real root
 
 
-If $D=0$ the characteristic equation has two equal real solutions $r_1=r_2=r$. So we only obtain one linear independent solution $y_1=e^{rt}$ in that case. So how do we obtain a second, linearly independent solution? It turns out that $y_2=te^{rt}$ is a solution too, as can be seen in the upcoming theorem. Since these two functions are linearly independent, we can use them to find the general solution.
+If $D=0$ the characteristic equation has two equal real roots $r_1=r_2=r$. So we only obtain one linear independent solution $y_1=e^{rt}$ in that case. So how do we obtain a second, linearly independent solution? It turns out that $y_2=te^{rt}$ is a solution too, as can be seen in the upcoming theorem. Since these two functions are linearly independent, we can use them to find the general solution.
 
 ::::::{prf:theorem}
 :label: Thm:ODE2:Onereal
@@ -188,11 +195,13 @@ $$
  ay''+by'+cy=0,
 $$
 
-where $a\neq 0$, $b$ and $c$ are constants. If the characteristic equation has a double (real) root $r$, the general solution is given by
+where $a\neq 0$, $b$ and $c$ are real constants. If the characteristic equation has a double (real) root $r$, the general solution is given by
 
 $$
- y(t)=c_1e^{rt}+c_2te^{rt}.
+ y(t)=c_1e^{rt}+c_2te^{rt}
 $$
+
+with $c_1,c_2\in\mathbb{R}$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:ODE2:Onereal`
@@ -203,13 +212,14 @@ $$
  r=\frac{-b\pm\sqrt{D}}{2a}=\frac{-b}{2a}.
 $$
 
-This means that $2ar+b=0$. Moreover, $r$ is a solution of the characteristic equation, so we must have $ar^2+br+c=0$. Then, for $y_2(t)=te^{rt}$ we can compute $y_2'=(rt+1)e^{rt}$ and $y_2''=(r^2t+2r)e^{rt}$. Plugging these into the differential equation gives
+This means that $2ar+b=0$. Moreover, $r$ is a solution of the characteristic equation, so we must have $ar^2+br+c=0$. Then, for $y_2(t)=te^{rt}$ we have $y_2'=(rt+1)e^{rt}$ and $y_2''=(r^2t+2r)e^{rt}$. Plugging these into the differential equation we obtain
 
 $$
 \begin{align*}
 ay''+by'+cy&=a(r^2t+2r)e^{rt}+b(rt+1)e^{rt}+cte^{rt}\\
 &=(ar^2+br+1)te^{rt}+(2ar+b)e^{rt}\\
-&=0+0=0.
+&=0+0\\
+&=0.
 \end{align*}
 $$
 
@@ -224,13 +234,11 @@ $$
 for all $t$. For $t=0$, we directly obtain $c_1=0$. For $t=1$ we then obtain $c_2e^{r}=0$, which gives $c_2=0$. Therefore, the functions $y_1$ and $y_2$ are linearly independent. So we have found two linearly independent solutions of a second-order, linear, homogeneous differential equation. By {prf:ref}`Thm:DE:GeneralSolutionHomogeneous` the general solution of this differential equation is given by
 
 $$
- y(t)=c_1e^{rt}+c_2te^{rt}.
+ y(t)=c_1e^{rt}+c_2te^{rt}
 $$
 
+with $c_1,c_2\in\mathbb{R}$.
 :::
-
-
-
 
 ::::::{prf:example}
 :label: Def:ODE2:Onereal
@@ -255,13 +263,13 @@ $$
 As such, we have a double root $r=3$. By {prf:ref}`Thm:ODE2:Onereal` the general solution is 
 
 $$
- y=c_1e^{3t}+c_2te^{3t}
+ y(t)=c_1e^{3t}+c_2te^{3t}
 $$
 
 with $c_1,c_2\in\mathbb{R}$.
 ::::::
 
-### Complex roots
+### Nonreal (complex) roots
 
 If $D<0$ the characteristic equation has a complex conjugate pair as solutions, say $r=\alpha\pm i\beta$ with $\beta\neq0$. This implies that the general (complex) solution is a (complex) linear combination of
 
@@ -287,10 +295,10 @@ $$
  y_2(t)=e^{\alpha t}\sin(\beta t).
 $$
 
-Since linear combinations (even complex ones) of linear, homogeneous equations are again solutions, the functions $y_1$ and $y_2$ are solultions of the differential equation. These solutions are real and linearly independent. This implies that the general solution is 
+Since linear combinations (even complex ones) of linear, homogeneous equations are again solutions, the functions $y_1$ and $y_2$ are solutions of the differential equation. These solutions are real and linearly independent. This implies that the general solution is 
 
 $$
- y=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t)
+ y(t)=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t)
 $$
 
 with $c_1,c_2\in\mathbb{R}$ in this case.
@@ -303,12 +311,13 @@ $$
  ay''+by'+cy=0,
 $$
 
-where $a\neq 0$, $b$ and $c$ are constants. If the characteristic equation has a a conjugate pair of complex roots $r=\alpha+i\beta$ and $r=\alpha-i\beta$ with $\beta\neq 0$, the general solution is given by
+where $a\neq 0$, $b$ and $c$ are real constants. If the characteristic equation has a complex conjugate pair of roots $r=\alpha+i\beta$ and $r=\alpha-i\beta$ with $\beta\neq 0$, the general solution is given by
 
 $$
- y(t)=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t).
+ y(t)=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t)
 $$
 
+with $c_1,c_2\in\mathbb{R}$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:ODE2:Twocomplex`
@@ -340,15 +349,16 @@ $$
 for all $t$. For $t=0$, we directly obtain $c_1=0$. For $t=\dfrac{\pi}{2\beta}$ we then obtain 
 
 $$
- c_2e^{\frac{\pi\alpha}{2\beta}}\sin\left(\frac{\pi}{2}\right)=0,
+ c_2e^{\frac{\alpha\pi}{2\beta}}\sin\left(\frac{\pi}{2}\right)=0,
 $$
 
 which gives $c_2=0$. Therefore, the functions $y_1$ and $y_2$ are linearly independent. So we have found two linearly independent solutions of a second-order, linear, homogeneous differential equation. By {prf:ref}`Thm:DE:GeneralSolutionHomogeneous` the general solution of this differential equation is given by
 
 $$
- y(t)=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t).
+ y(t)=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t)
 $$
 
+with $c_1,c_2\in\mathbb{R}$.
 :::
 
 ::::::{prf:example}
@@ -374,7 +384,7 @@ $$
 From this, we obtain the nonreal roots $r=-2\pm3i$. By {prf:ref}`Thm:ODE2:Twocomplex`, the general solution is 
 
 $$
- y=c_1e^{-2t}\cos(3t)+c_2e^{-2t}\sin(t)
+ y(t)=c_1e^{-2t}\cos(3t)+c_2e^{-2t}\sin(t)
 $$
 
 with $c_1,c_2\in\mathbb{R}$.
@@ -388,7 +398,7 @@ $$
 \begin{cases}ay''+by'+cy=0,\\ \\y(t_0)=y_0,\quad y'(t_0)=y_0'\end{cases}
 $$
 
-has a unique solution. Here $a\neq 0$, $b$ and $c$ are constants. In the next example, we will show how to find this specific solution from the general solution.
+has a unique solution. Here $a\neq 0$, $b$ and $c$ are real constants. In the next example, we will show how to find this specific solution from the general solution.
 
 ::::::{prf:example}
 :label: Ex:ODE2:IVP
@@ -419,7 +429,7 @@ $$
 which gives the roots $r_1=2$ and $r_2=-3$. Since we have two distinct real roots, the general solution is
 
 $$
- y=c_1e^{2t}+c_2e^{-3t}
+ y(t)=c_1e^{2t}+c_2e^{-3t}
 $$
 
 with $c_1,c_2\in\mathbb{R}$. 
@@ -436,7 +446,7 @@ $$
  \begin{cases}y(0)=5,\\ \\y'(0)=0\end{cases}
 $$
 
-give the system of linear equation
+lead to the system of linear equations
 
 $$
 \begin{cases}c_1+c_2=5,\\ \\2c_1-3c_2=0.\end{cases}
@@ -451,7 +461,7 @@ $$
 Hence, $y(t)=3e^{2t}+2e^{-3t}$ is the unique solution of the initial-value problem.
 ::::::
 
-### Boundary value problems
+### Boundary-value problems
 
 On the other hand, boundary-value problems do not always have a unique solution, as can be seen from the following example.
 
@@ -475,10 +485,10 @@ $$
  r^2+4=0.
 $$
 
-This gives the roots $r_1=2i$ and $r_2=-2i$. Since we have complex roots, the general solution is
+This gives the roots $r_1=2i$ and $r_2=-2i$. Since we have nonreal roots, the general solution is
 
 $$
- y=c_1\cos(2t)+c_2\sin(2t).
+ y(t)=c_1\cos(2t)+c_2\sin(2t).
 $$
 
 with $c_1,c_2\in\mathbb{R}$. 
@@ -489,13 +499,13 @@ $$
  \begin{cases}y(0)=1,\\ \\y(\pi)=-1\end{cases}
 $$
 
-give the system of linear equation
+lead to the system of linear equations
 
 $$
-\begin{cases}c_1=1,\\ c_1=-1.\end{cases}
+\begin{cases}c_1=1,\\ \\c_1=-1.\end{cases}
 $$
 
-Clearly, $c_1$ cannot be two different values at the same time. We conclude that the boundary-value problem has no solutions.
+Clearly, $c_1$ cannot have two different values at the same time. We conclude that the boundary-value problem has no solutions.
 ::::::
 
 ### Higher-order equations
@@ -503,10 +513,10 @@ Clearly, $c_1$ cannot be two different values at the same time. We conclude that
 The techniques from this section can also be applied to higher-order, linear, homogeneous equations of the form
 
 $$
- a_ny^{(n)}(t)+a_{n-1}y^{(n-1)}(t)+...+a_1y'(t)+a_0y(t)=0,
+ a_ny^{(n)}(t)+a_{n-1}y^{(n-1)}(t)+\cdots+a_1y'(t)+a_0y(t)=0,
 $$
 
-where $a_0,...,a_n$ are constants with $a_n\neq 0$. For such an equation, the educated guess $y(t)=e^{rt}$ gives an $n$th order polynomial equation. Solving these equations by hand is hard (or even impossible), but in some cases it is doable, as can be seen in the following example.
+where $a_0,\ldots,a_n$ are real constants with $a_n\neq 0$. For such an equation, the educated guess $y(t)=e^{rt}$ gives an $n$th order polynomial equation. Solving these equations by hand is hard (or even impossible), but in some cases it is doable, as can be seen in the following example.
 
 ::::::{prf:example}
 Consider the differential equation
@@ -515,7 +525,7 @@ $$
  y^{(5)}-6y^{(4)}+15y^{(3)}-20y''+14y'-4y=0.
 $$
 
-Since this is a linear, homogeneous equation with constant coefficients, we try a solution of the form $y=e^{rt}$. Plugging this into the differential equation gives
+Since this is a linear, homogeneous equation with constant coefficients, we try a solution of the form $y(t)=e^{rt}$. Plugging this into the differential equation we obtain
 
 $$
  r^5e^{rt}-6r^4e^{rt}+15r^3e^{rt}-20r^2e^{rt}+14re^{rt}-4e^{rt}=0.
@@ -527,11 +537,12 @@ $$
  r^5-6r^4+15r^3-20r^2+14r-4=0.
 $$
 
-[It can be shown that there is no general method to find roots of a fifth order polynomial equation](https://en.wikipedia.org/wiki/Abel%E2%80%93Ruffini_theorem). Fortunately, we made this example ourselves so we constructed it in such a way that we know the roots. These are $r_1=1$ (with multiplicity $2$), $r_2=2$, $r_3=1+i$ and $r=1-i$. Following the same ideas as earlier in this section, we obtain the $5$ real solutions
+[It can be shown that there is no general method to find roots of a fifth order polynomial equation](https://en.wikipedia.org/wiki/Abel%E2%80%93Ruffini_theorem). Fortunately, we made this example ourselves so we constructed it in such a way that we know the roots. These are $r_1=1$ (with multiplicity $2$), $r_2=2$, $r_3=1+i$ and $r=1-i$. Following the same ideas as earlier in this section, we obtain the five real solutions
 
-$$
- y_1(t)=e^t, \quad y_2(t)=te^t,\quad y_3(t)=e^{2t},\quad y_4(t)=e^t\cos(t),\quad y_5(t)=e^t\sin(t).
-$$
+\begin{align*}
+&y_1(t)=e^t, \quad y_2(t)=te^t,\quad y_3(t)=e^{2t},\\
+&{}\quad y_4(t)=e^t\cos(t),\quad y_5(t)=e^t\sin(t).
+\end{align*}
 
 Since these solutions are linearly independent, we obtain the general solution
 
@@ -562,7 +573,7 @@ $$
 $$
 
 where $g$ is the acceleration due to gravity, $L$ is the length of the pendulum, and $\theta$ is
-the angular displacement with respect to the equilibrium position at time $t$.
+the (small) angular displacement with respect to the equilibrium position at time $t$.
 
 It is quite difficult to solve this differential equation analytically. Instead, we note that the linearization of the function $f(x)=\sin(x)$ at $x=0$ is
 
@@ -594,7 +605,7 @@ $$
 \theta(t)=c_1\cos(rt)+c_2\sin(rt)\quad\text{with}\quad r=\sqrt{\frac{g}{L}}\quad\text{and}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-So, if (for instance) the starting position of the pundulum is $\theta_0$ and is released with no initial velocity, then this leads to the initial-value problem
+So, if (for instance) the starting position of the pendulum is $\theta_0$ and is released with no initial velocity, then this leads to the initial-value problem
 
 $$
 \theta''(t)+\frac{g}{L}\theta(t)=0,\quad\theta(0)=\theta_0,\quad\theta'(0)=0
@@ -603,7 +614,7 @@ $$
 with solution 
 
 $$
- \theta(t)=\theta_0\cos(\sqrt{\frac{g}{L}}t).
+ \theta(t)=\theta_0\cos\left(\sqrt{\frac{g}{L}}t\right).
 $$
 
 Of course, we made an approximation of the original nonlinear differential equation, so this function will **not** be a solution of the original equation. Still, for small values of $\theta$, it is a good approximation of the real solution.
@@ -619,15 +630,13 @@ align: center
 A mass-spring system
 ```
 
-In {prf:ref}`Ex:Diffclass:massspring` we studied the mass-spring system. For this system, we aim to find the displacement with respect to equilibrium, which we denote by $x(t)$. Using Newton's law $F=m\cdot a$ and Hooke's law $F=-k\cdot x$ and assuming there is no damping, we obtain
+In {prf:ref}`Ex:Diffclass:massspring` we studied the mass-spring system. For this system, we aim to find the displacement with respect to the equilibrium position, which we denote by $x(t)$. Using Newton's law $F=m\cdot a$ and Hooke's law $F=-k\cdot x$ and assuming there is no damping, we obtain
 
 $$
 m\cdot\frac{d^2x}{dt^2}=-k\cdot x(t).
 $$
 
 Here $k$ is a positive constant, called the <em>spring constant</em>.
-
-
 
 ```{figure} Images/mass-spring2.png
 ---
@@ -661,7 +670,7 @@ $$
  x(t)=c_1\cos(6t)+c_2\sin(6t).
 $$
 
-In order to handle the initial condition, we compute
+In order to handle the initial conditions, we evaluate
 
 $$
  x'(t)=-6c_1\sin(6t)+6c_2\cos(6t).
@@ -688,8 +697,6 @@ $$
 $$ 
 
 where $c$ is a positive constant, called the <em>damping constant</em>.
-
-
 
 ::::::{prf:example}
 :label: Ex:ODE2:SpringWithdamp
@@ -721,7 +728,7 @@ $$
 We obtain the roots $r=-4$ and $r=-9$. By {prf:ref}`Thm:ODE2:Tworeal`, the general solution is 
 
 $$
- x(t)=c_1e^{-4t}+c_2e^{-9t}.
+ x(t)=c_1e^{-4t}+c_2e^{-9t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
 In order to handle the initial conditions, we evaluate 
@@ -750,10 +757,10 @@ $$
 In this case, we obtain two distinct real roots $r_1=-1$ and $r_2=-25$. The general solution becomes
 
 $$
- x(t)=c_1e^{-t}+c_2e^{-25t}.
+ x(t)=c_1e^{-t}+c_2e^{-25t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-In this case, the spring does not oscillate and goes back to equilibrium relatively slowly (because of the $e^{-t}$), at least compared to final one of the upcoming cases. Physically, this makes sense: if you put your spring in a material with a high damping coefficient (say, something like honey), it will go back to equilibrium slowly and not oscillate. This case where we have two real roots is, for this reason, known as the **overdamped** case.
+In this case, the spring does not oscillate and goes back to its equilibrium position relatively slowly (because of the $e^{-t}$), at least compared to the final one of the upcoming cases. Physically, this makes sense: if you put your spring in a material with a high damping coefficient (say, something like honey), it will go back to its equilibrium position slowly and not oscillate. This case where we have two real roots is, for this reason, known as the **overdamped** case.
 
 Secondly, we consider a small value of $c$, say $c=6$. Then, we obtain the differential equation
 
@@ -767,13 +774,13 @@ $$
  r^2+6r+25=0.
 $$
 
-In this case, we obtain two complex roots $r_1=-3+4i$ and $r_2=-3-4i$. The general solution becomes
+In this case, we obtain two nonreal roots $r_1=-3+4i$ and $r_2=-3-4i$. The general solution becomes
 
 $$
- x(t)=c_1e^{-3t}\cos(4t)+c_2e^{-3t}\sin(4t).
+ x(t)=c_1e^{-3t}\cos(4t)+c_2e^{-3t}\sin(4t)\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-Because of the cosine and the sine, the solution with keep on oscillating, with decreasing amplitude because of the exponential. Again, this behaviour matches our physical intuition: if the damping coefficient of the medium is low (say, something like air), we expect the solution to keep on oscillating. This case where we have two complex reasons is, as such, known as the **underdamped** case.
+Because of the cosine and the sine, the solution will keep on oscillating, with decreasing amplitude because of the exponential. Again, this behaviour matches our physical intuition: if the damping coefficient of the medium is low (say, something like air), we expect the solution to keep on oscillating. This case where we have two nonreal roots is, as such, known as the **underdamped** case.
 
 Finally, we consider the critical value of the damping constant when we move betwen the overdamped and the overdamped case. Mathematically, this corresponds to the case where we have a double real root. For this system, this happens when $c=10$. Indeed, in that case we have the differential equation
 
@@ -787,13 +794,13 @@ $$
  r^2+10r+25=0.
 $$
 
-In this case, we obtain double root $r=5$. The general solution becomes
+In this case, we obtain double root $r=-5$. The general solution becomes
 
 $$
- x(t)=c_1e^{-5t}+c_2te^{-5t}.
+ x(t)=c_1e^{-5t}+c_2te^{-5t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-Note that this solution dampes out quicker than both the overdamped case and the underdamped case. Indeed, for the overdamped case the dominant term is $e^{-t}$, for the underdamped case it is $e^{-3t}$, while here it is $te^{-5t}$. For at least some initial conditions, (for instance, when $x(0)=1$ and $x'(0)=-10$) the solution passes through the equilibrium position excatly once, but there is no oscillation involved. Since this case is the transition case between the other cases, it is known as the **critically damped** case.
+Note that this solution dampes out quicker than both the overdamped case and the underdamped case. Indeed, for the overdamped case the dominant term is $e^{-t}$, for the underdamped case it is $e^{-3t}$, while here it is $te^{-5t}$. For at least some initial conditions, (for instance, when $x(0)=1$ and $x'(0)=-10$) the solution passes through the equilibrium position exactly once, but there is no oscillation involved. Since this case is the transition case between the other cases, it is known as the **critically damped** case.
 
 :::{figure} Images/Fig-ODE2-damping.png
 :name: Fig:ODE2:Damping
@@ -818,7 +825,7 @@ Consider an electrical circuit where a resistor with resitance $R$ (in ohm $\Ome
 A source-free electrical circuit, where a resistor with resitance $R$, an inductor with inductance $L$ and a capacitor with capacitance $C$ are placed in series. The current $i(t)$ is the quantitiy of interest.
 :::
 
-The main goal is to see how the current $i(t)$ evolves in time. We assume that there is some energy stored initially in the capacitor and the inductor (otherwise there would be no current at all). For the initial current, we assume that $i(0)=I_0$ for some $I_0>0$ We let $v(t)$ represent the voltage across the capacitor. It can then be shown that
+The main goal is to see how the current $i(t)$ evolves in time. We assume that there is some energy stored initially in the capacitor and the inductor (otherwise there would be no current at all). For the initial current, we assume that $i(0)=I_0$ for some $I_0>0$. We let $v(t)$ represent the voltage across the capacitor. It can then be shown that
 
 $$
  v(t)=\frac{1}{C}\int_{-\infty}^t i(s)\,ds
@@ -842,19 +849,19 @@ $$
  v=L\frac{di}{dt}.
 $$
 
-The [Kirchoff Voltage Law](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_voltage_law) states that the total voltage across the loop is $0$. So adding these three voltages gives the equation
+The [Kirchoff Voltage Law](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_voltage_law) states that the total voltage across the loop is $0$. So adding these three voltages we obtain the equation
 
 $$
  L\frac{di}{dt}+Ri+\frac{1}{C}\int_{-\infty}^t i(s)\,ds=0.
 $$
 
-This equation involves both integrals and derivatives of $i$ and is called an **integro-differential equation**. We can turn it into a differential equation by differentiating the entire equation with respect to $t$. Doing this yields the equation
+This equation involves both integrals and derivatives of $i$ and is called an **integro-differential equation**. We can turn it into a differential equation by differentiating the entire equation with respect to $t$. Doing this we get the equation
 
 $$
  L\frac{d^2i}{dt^2}+R\frac{di}{dt}+\frac{1}{C}i(t)=0.
 $$
 
-This is a second order, linear, homogeneous differential equation with constant coefficients, so we can use the techniques from this section to solve it.
+This is a second-order, linear, homogeneous differential equation with constant coefficients, so we can use the techniques from this section to solve it.
 
 ::::::{prf:example}
 :label: Ex:ODE2:RLC
@@ -889,11 +896,9 @@ $$
  mx''(t)+cx'(t)+kx(t)=0.
 $$ 
 
-For this reason, a lot of terminology that is used for the damped mass-spring system is used for the RLC electrical circuit as well. The terms **overdamped**, **critically damped** and **underdamped** are used when the characteristic equation for the electrical circuit has respectively two real roots, a double real root, and two complex roots. For instance, the circuit from {prf:ref}`Ex:ODE2:RLC` is called overdamped. This also means that the resistance $R$ can be thought of as a damping coefficient.
+For this reason, a lot of terminology that is used for the damped mass-spring system is used for the RLC electrical circuit as well. The terms **overdamped**, **critically damped** and **underdamped** are used when the characteristic equation for the electrical circuit has respectively two real roots, a double real root, and two nonreal (complex) roots. For instance, the circuit from {prf:ref}`Ex:ODE2:RLC` is called overdamped. This also means that the resistance $R$ can be thought of as a damping coefficient.
 
 ### A complicated-looking family of improper integrals
-
-
 
 ::::::{prf:example}
 For each $t\in\mathbb{R}$, we consider the improper integral 
@@ -902,7 +907,7 @@ $$
  I(t)=\displaystyle\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx
 $$ 
 
-with $\alpha>0$. It is very hard to solve this integral by hand, but we will show that it satisfies a second-order differential equation.
+with $\alpha>0$. It is very hard to evaluate this integral by hand, but we will show that it satisfies a second-order differential equation.
 
 For at least one value of $t$ it is doable to evaluate this integral by hand, since we have
 
@@ -912,13 +917,11 @@ $$
 
 Moreover, since we integrate over $x$ we can differentiate the integral with respect to $t$ and bring this derivative inside to obtain
 
-
 \begin{align*}
 I'(t)&=\frac{d}{dt}\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx\\
 &=\int_0^{\infty}\frac{d}{dt}\frac{\cos(xt)}{x^2+\alpha^2}\,dx\\
 &=-\int_0^{\infty}\frac{x\sin(xt)}{x^2+\alpha^2}\,dx.
 \end{align*}
-
 
 Now we rewrite this integral to obtain
 
@@ -967,7 +970,7 @@ $$
 The initial conditions are $I(0)=\dfrac{\pi}{2\alpha}$ and $I'(0)=-\dfrac{1}{2}\pi$. From this we obtain the system of linear equations
 
 $$
- \begin{cases}c_1+c_2=\dfrac{\pi}{2\alpha}\\ c_1-c_2=-\dfrac{\pi}{2\alpha}.\end{cases}
+ \begin{cases}c_1+c_2=\dfrac{\pi}{2\alpha}\\ \\c_1-c_2=-\dfrac{\pi}{2\alpha}.\end{cases}
 $$
 
 Solving this system gives $c_1=0$ and $c_2=\dfrac{\pi}{2\alpha}$. We conclude that
