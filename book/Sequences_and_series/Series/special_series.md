@@ -139,7 +139,7 @@ $$
 
 ::::
 
-Next we introduce the notation $0.\overline{12}=0.1212121212\ldots$ to represent the number that has $12$ repeated indefinitely after the decimal point. We can convert this number into a quotient of integers by using the sum of a corresponding geometric series:
+In {numref}`Sec:Decimals` we introduced the notation $0.\overline{12}=0.1212121212\ldots$ to represent the number that has $12$ repeated indefinitely after the decimal point. We can convert this number into a quotient of integers by using the sum of a corresponding geometric series:
 
 ::::::{prf:example}
 :label: Ex:Series:GeometricSeriesExample2
@@ -162,7 +162,7 @@ By {prf:ref}`Thm:Series:GeometricSeries` the geometric series $\displaystyle\sum
 &= \frac{4}{33}.
 \end{align*}
 
-Although this shows the power of geometric series, it is a bit of an overkill to use the formula for the sum of a geometric series to find a fraction for $0.\overline{12}$. The next method is much more straightforward:
+Although this shows the power of geometric series, it is a bit of an overkill to use the formula for the sum of a geometric series to find a fraction for $0.\overline{12}$. The method used in {numref}`Sec:Decimals` is much more straightforward:
 
 \begin{align*}
 &100p=12.\overline{12}=12+0.\overline{12}=12p\\

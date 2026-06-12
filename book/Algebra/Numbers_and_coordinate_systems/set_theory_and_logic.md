@@ -14,7 +14,7 @@ Write {numref}`Sec:Algebra:SetTheoryAndLogic` in more detail, including examples
 
 Sometimes we will consider a statement $S_n$ in terms of an integer $n$. In order to prove that the statement holds for all $n\in\mathbb{N}$ we often use the **principle of mathematical induction**, which is explained in the following theorem.
 
-::::::{prf:theorem} Mathematical induction
+::::::{prf:theorem} Principle of mathematical induction
 :label: Thm:Algebra:MathematicalInduction
 
 Let $S_n$ be a statement for all integers $n$ larger than or equal to $p$.

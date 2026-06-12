@@ -12,7 +12,7 @@ $$
 \displaystyle\int\cos(x)e^{\sin(x)}\,dx.
 $$
 
-Although the integrand is composed of three standard functions, we cannot directly apply the formulas from {numref}`Tab:Integration:StandardIndefiniteIntegrals` to evaluate this integral. We can also not use {prf:ref}`Th:Integration:IndefiniteProperties` to split the integral into simpler integrals, since the integrand is a product of functions instead of a sum of functions and one standard function is nested inside another standard function.
+Although the integrand is composed of three standard functions, we cannot directly apply the formulas from {numref}`Tab:Integration:StandardIndefiniteIntegrals` to evaluate this integral. We can also not use {prf:ref}`Thm:Integration:IndefiniteProperties` to split the integral into simpler integrals, since the integrand is a product of functions instead of a sum of functions and one standard function is nested inside another standard function.
 
 In this section we introduce the method of **integration by substitution**, which is a very powerful method to evaluate integrals such as in the example above.
 
@@ -350,7 +350,7 @@ If we set $u=\dfrac{1}{\sqrt{x}}$, then we have $du=-\dfrac{1}{2x\sqrt{x}}\,dx$ 
 
 ::::::
 
-In the section on definite integrals, in {prf:ref}`Th:Integration:DefinitePropertiesArea` we have already seen the following intuitively result, which can now be proved using a substitution:
+In the section on definite integrals, in {prf:ref}`Thm:Integration:DefinitePropertiesArea` we have already seen the following intuitively result, which can now be proved using a substitution:
 
 ::::::{prf:Theorem}
 :label: Thm:Integration:OddEven
