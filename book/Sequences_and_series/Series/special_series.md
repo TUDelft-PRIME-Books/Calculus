@@ -21,17 +21,16 @@ A **geometric series** is a series of the form $\displaystyle\sum_{n=1}^{\infty}
 Consider the _geometric series_
 
 $$
-\sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n.
+\sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n=\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots.
 $$
 
-The $n$th partial sum of this series is, using $a=1$ and $r=\frac{1}{2}$ in {prf:ref}`Ex:Integration:IntroductionFiniteGeometric`:
+The $n$th partial sum of this series is, using $a=r=\frac{1}{2}$ in {prf:ref}`Ex:SumsAndProducts:IntroductionFiniteGeometric`:
 
 \begin{align*}
 s_n &= \sum_{k=1}^n\left(\frac{1}{2}\right)^k \\
 &= \frac{1}{2}\cdot\frac{1-\left(\frac{1}{2}\right)^n}{1-\frac{1}{2}} \\
 &= 1-\left(\frac{1}{2}\right)^n.
 \end{align*}
-
 
 This means that
 
@@ -42,27 +41,13 @@ $$
 and so the geometric series $\displaystyle\sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n$ converges and its sum equals $1$. In other words, we have
 
 $$
-\sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n=1.
+\sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n=\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1.
 $$
 
-This result can also be visualised as shown in {numref}`Fig:Series:GeometricSeries`, which gives a visual proof of the fact that $\displaystyle\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1$. The idea behind the visualisation is that when you take a unit square, which has area $1$, and you cut half of it off, then you are left with a rectangle with area $\frac{1}{2}$. If you cut half of this rectangle off, then you are left with a square with area $\frac{1}{4}$. If you cut half of this square off, then you are left with a rectangle with area $\frac{1}{8}$, and so on. If you keep cutting half of the remaining rectangle/square off, then the total area of the cut off rectangles/squares will be $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots$, which in the end approaches to the area of the original unit square, which is $1$.
-
-```{figure} Images/geometric.png
----
-width: 50%
-name: Fig:Series:GeometricSeries
-align: center
----
-A visual proof of $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1$.
-```
-
-:::{todo}
-Replace {numref}`Fig:Series:GeometricSeries` with an applet.
-::: 
-
+Compare with {prf:ref}`Ex:Series:GeometricSeriesExample`.
 ::::::
 
-The result of {prf:ref}`Ex:Integration:IntroductionFiniteGeometric` can be used to find the sum of any infinite geometric series:
+The result of {prf:ref}`Ex:SumsAndProducts:IntroductionFiniteGeometric` can be used to find the sum of any convergent geometric series:
 
 ::::::{prf:theorem} Geometric series
 :label: Thm:Series:GeometricSeries
@@ -79,7 +64,7 @@ $$
 s_n=\displaystyle\sum_{k=1}^nar^{k-1}=a+ar+ar^2+\cdots+ar^{n-1}.
 $$
 
-Then we have (compare with {prf:ref}`Ex:Integration:IntroductionFiniteGeometric`)
+Then we have (compare with {prf:ref}`Ex:SumsAndProducts:IntroductionFiniteGeometric`)
 
 \begin{align*}
 s_n&=a&+ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&\\
@@ -103,13 +88,13 @@ Furthermore, for $|r|<1$ the sum of the series equals $\displaystyle\frac{a}{1-r
 ::::::
 
 ::::::{important}
-The best way to remember the sum of a convergent geometric series is
+Note that the series should have starting index $1$ and the power of the common ration should be $n-1$ for the formula in {prf:ref}`Thm:Series:GeometricSeries` to work. If the series does not have this form, then you can always use the properties of series to rewrite the series in a form that does have this form, and then apply the formula.
+
+Alternatively, a nice way to remember the sum of a convergent geometric series is
 
 $$
 \text{sum}=\frac{\text{first term}}{1-\text{common ratio}}.
 $$
-
-Do remember that the series should have starting index $1$ and the power of the common ration should be $n-1$ for this formula to work. If the series does not have this form, then you can always use the properties of series to rewrite the series in a form that does have this form, and then apply the formula.
 
 ::::::
 
@@ -154,7 +139,7 @@ $$
 
 ::::
 
-In your previous studies you may have already encountered the notation $0.\overline{12}=0.1212121212\ldots$ to represent the number that has $12$ repeated indefinitely after the decimal point. We can convert this number into a quotient of integers by using the sum of a geometric series:
+In {numref}`Sec:Decimals` we introduced the notation $0.\overline{12}=0.1212121212\ldots$ to represent the number that has $12$ repeated indefinitely after the decimal point. We can convert this number into a quotient of integers by using the sum of a corresponding geometric series:
 
 ::::::{prf:example}
 :label: Ex:Series:GeometricSeriesExample2
@@ -177,15 +162,14 @@ By {prf:ref}`Thm:Series:GeometricSeries` the geometric series $\displaystyle\sum
 &= \frac{4}{33}.
 \end{align*}
 
-Although this shows the power of geometric series, it is a bit of an overkill to use the formula for the sum of a geometric series to find a fraction for $0.\overline{12}$. The next method is much more straightforward:
+Although this shows the power of geometric series, it is a bit of an overkill to use the formula for the sum of a geometric series to find a fraction for $0.\overline{12}$. The method used in {numref}`Sec:Decimals` is much more straightforward:
 
-$$
-100p=12.\overline{12}=12+0.\overline{12}=12+p\quad\Longrightarrow\quad99p=12\quad\Longleftrightarrow\quad p=\frac{12}{99}=\frac{4}{33}.
-$$
-
+\begin{align*}
+&100p=12.\overline{12}=12+0.\overline{12}=12p\\
+&\quad\Longrightarrow\quad99p=12\quad\Longleftrightarrow\quad p=\frac{12}{99}=\frac{4}{33}.
+\end{align*}
 
 ::::::
-
 
 ::::::{prf:example} 
 We express the number $0.\overline{135}=0.135135135\ldots$ as a quotient of integers in two different ways.
@@ -307,23 +291,50 @@ $$
 s_n > \frac{1}{1-p}\left(\frac{1}{(n+1)^{p-1}} - 1\right).
 $$
 
-However, because $0<p<1$ we have $-1<p<0$, so $\displaystyle\lim_{n\to\infty}\frac{1}{(n+1)^{p-1}}=\infty$. Hence the partial sums also must diverge and the $p$-series is divergent for $0<p<1$.
+However, because $0<p<1$ we have $-1<p<0$, so $\displaystyle\lim_{n\to\infty}\frac{1}{(n+1)^{p-1}}=\infty$. Hence the partial sums also diverge and the $p$-series is divergent for $0<p<1$.
 
 Finally, for $p\leq0$ the general term of the series $\dfrac{1}{n^p}$ does not even approach zero as $n\to\infty$, so by the _test for divergence_ the series is divergent for $p\leq0$.
 
 This proves that the $p$-series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ is convergent if $p>1$ and divergent if $p\leq1$.
 ::::::
 
-Later we will see that for $p=2$ the $p$-series evaluates to $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\approx1.64493$. We wil do this in {prf:ref}`Ex:Series:FourierExample2` and {prf:ref}`Ex:Series:FourierExample3`.
+Later we will see that for $p=2$ the $p$-series evaluates to $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\approx1.64493$. The problem of finding the sum of the series $\displaystyle\sum_{n=1}^{\infty}$ is called the **Basel problem**, named after the hometown of the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler), who solved the problem in 1734. We wil do this in {prf:ref}`Ex:Series:FourierExample2` and {prf:ref}`Ex:Series:FourierExample3`. In {numref}`Sec:MultivariableIntegration:BaselProblem` we will give two other proofs. 
+
+:::{admonition} Another proof based on an infinite product for the sine
+:class: tudproof, dropdown
+
+Another proof, which might be understandable, is based on the Taylor series of $\displaystyle\frac{\sin(x)}{x}$ and an infinite product. For the infinite product we need to know that the (only but all) zeros of $\displaystyle\frac{\sin(x)}{x}$ are $x=\pm n\pi$ with $n\in\{1,2,3,\ldots\}$ and that $\displaystyle\lim\limits_{x\to0}\frac{\sin(x)}{x}=1$. Compare with {prf:ref}`Ex:Integration:IntroductionExamplesProductSine`. Then we have:
+
+$$
+\frac{\sin(x)}{x}=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)!}x^{2k}=\prod_{n=1}^{\infty}\left(1-\frac{x}{n\pi}\right)\left(1+\frac{x}{n\pi}\right)
+=\prod_{n=1}^{\infty}\left(1-\frac{x^2}{n^2\pi^2}\right).
+$$ 
+ 
+Comparing the coefficients of $x^2$ we obtain that
+
+$$
+-\frac{1}{3!}=-\frac{1}{\pi^2}\sum_{n=1}^{\infty}\frac{1}{n^2}
+\quad\Longrightarrow\quad\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2.
+$$
+
+:::
 
 ## Telescoping series
 
-In {numref}`Sec:Series:FiniteSeries` we already encountered _telescoping sums_, which were finite series that have the _telescoping property_. We now extend that concept to infinite series, which are called _telescoping series_:
+:::::{margin}
+::::{figure} Images/telescope.png
+:name: Fig:SumsAndProducts:Telescope
+
+A pirate using a telescope.
+::::
+:::::
+
+In {prf:ref}`Def:SumsAndProducts:TelescopingSum` we already encountered finite summations with a _telescoping property_. We now extend that concept to infinite series, which are called _telescoping series_:
 
 ::::{prf:definition}
 :label: Def:Series:TelescopingSeries
 
-An infinite series $\displaystyle\sum_{n=1}^{\infty}a_n$ is called a **telescoping series** if there exists a sequence $\{b_n\}_{n=1}^{\infty}$ and a positive integer $p$ such that $a_n=b_{n}-b_{n+p}$ for all $n\in\{1,2,3,\ldots\}$.
+An infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$ is called a **telescoping series** if there exists a sequence $\{b_n\}_{n=p}^{\infty}$ and a positive integer $q$ such that $a_n=b_{n}-b_{n+q}$ for all $n\in\{p,p+1,p+2,\ldots\}$.
 ::::
 
 ::::::{prf:example}
@@ -383,51 +394,51 @@ $$
 
 ::::::
 
-If we inspect the last three examples, we see that the sum of a telescoping series is the addition of the first $p$ terms of the sequence $\{b_n\}$ minus $p$ times the limit of the sequence $\{b_n\}$, which is a direct consequence of the telescoping property. We have already summarised this in {prf:ref}`Thm:Series:SumTelescopingSum` for finite telescoping sums, but a similar theorem also holds for infinite telescoping series:
+If we inspect the last three examples, we see that the sum of a telescoping series is the addition of the first $q$ terms of the sequence $\{b_n\}$ minus $q$ times the limit of the sequence $\{b_n\}$, which is a direct consequence of the telescoping property. This leads to the following theorem:
 
 ::::{prf:theorem}
 :label: Thm:Series:SumTelescopingSeries
-If $\displaystyle\sum_{n=1}^{\infty}a_n$ is a telescoping series with $a_n=b_{n}-b_{n+p}$ for all $n\in\{1,2,3,\ldots\}$ and some integer $p\geq1$, then we have
+If $\displaystyle\sum_{n=p}^{\infty}a_n$ is a telescoping series with $a_n=b_{n}-b_{n+q}$ for all $n\in\{p,p+1,p+2,\ldots\}$ and some integer $q\geq1$, then we have
 
 $$
-\sum_{n=1}^{\infty}a_n=\sum_{n=1}^{p}b_n-p\cdot\lim_{n\to\infty}b_n,
+\sum_{n=p}^{\infty}a_n=\sum_{n=p}^{q}b_n-q\cdot\lim_{n\to\infty}b_n,
 $$
 
 provided that the limit $\lim\limits_{n\to\infty}b_n$ exists.
 
-If the limit $\lim\limits_{n\to\infty}b_n$ does not exist, the series $\displaystyle\sum_{n=1}^{\infty}a_n$ is divergent.
+If the limit $\lim\limits_{n\to\infty}b_n$ does not exist, the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is divergent.
 ::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:Series:SumTelescopingSeries`
 :class: tudproof
 
-The $n$th partial sum of the series $\displaystyle\sum_{n=1}^{\infty}a_n$ is
+The $N$th partial sum of the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is
 
 \begin{align*}
-s_n &= \sum_{k=1}^na_k \\
-&= \sum_{k=1}^n(b_k - b_{k+p}) \\
-&= \sum_{k=1}^nb_k - \sum_{k=1}^nb_{k+p} \\
-&= \sum_{k=1}^nb_k - \sum_{k=p+1}^{n+p}b_k \\
-&= \sum_{k=1}^pb_k + \sum_{k=p+1}^nb_k - \sum_{k=p+1}^{n+p}b_k \\
-&= \sum_{k=1}^pb_k - \sum_{k=n+1}^{n+p}b_k.
+s_N &= \sum_{n=p}^Na_n \\
+&= \sum_{n=p}^N(b_n - b_{n+q}) \\
+&= \sum_{n=p}^Nb_n- \sum_{n=p}^Nb_{n+q} \\
+&= \sum_{n=p}^Nb_n - \sum_{n=p+q}^{N+q}b_n \\
+&= \sum_{n=p}^{p+q-1}b_n + \sum_{n=p+q}^Nb_n - \sum_{n=p+q}^{N+q}b_n \\
+&= \sum_{n=p}^{p+q-1}b_n - \sum_{n=N+1}^{N+q}b_n.
 \end{align*}
 
-Now assume that $\lim\limits_{n\to\infty}b_n$ exists. We take the limit as $n$ approaches infinity and we find
+Now assume that $\lim\limits_{N\to\infty}b_N$ exists. We take the limit as $N$ approaches infinity and we find
 
 \begin{align*}
-\lim_{n\to\infty}s_n &= \lim_{n\to\infty}\left(\sum_{k=1}^pb_k - \sum_{k=n+1}^{n+p}b_k\right) \\
-&= \sum_{k=1}^pb_k - \lim_{n\to\infty}\sum_{k=n+1}^{n+p}b_k \\
-&= \sum_{k=1}^pb_k - \sum_{k=n+1}^{n+p}\lim_{n\to\infty}b_k \\
-&= \sum_{k=1}^pb_k - p\cdot\lim_{n\to\infty}b_n.
+\lim_{N\to\infty}s_N &= \lim_{N\to\infty}\left(\sum_{n=p}^{p+q-1}b_n - \sum_{n=N+1}^{N+q}b_n\right) \\
+&= \sum_{n=p}^{p+q-1}b_n - \lim_{N\to\infty}\sum_{n=N+1}^{N+q}b_n \\
+&= \sum_{n=p}^{p+q-1}b_n - \lim_{N\to\infty}\left(b_{N+1}+b_{N+2}+b_{N+3}+\cdots+b_{N+q}\right) \\
+&= \sum_{n=p}^{p+q-1}b_n - q\cdot\lim_{N\to\infty}b_N.
 \end{align*}
 
-A final change of the name of the index of summation from $k$ to $n$ gives us
+Hence, we have
 
 $$
-\sum_{n=1}^{\infty}a_n=\sum_{n=1}^{p}b_n-p\cdot\lim_{n\to\infty}b_n.
+\sum_{n=p}^{\infty}a_n=\sum_{n=p}^{p+q-1}b_n-q\cdot\lim_{N\to\infty}b_N.
 $$
 
-If the limit $\lim\limits_{n\to\infty}b_n$ does not exist, the limit of the sequence of partial sums $\{s_n\}$ also does not exist, so the series $\displaystyle\sum_{n=1}^{\infty}a_n$ is divergent.
+If the limit $\lim\limits_{N\to\infty}b_N$ does not exist, the limit of the sequence of partial sums $\{s_N\}$ also does not exist, so the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is divergent.
 
 ::::
 
@@ -440,14 +451,14 @@ In {prf:ref}`Def:Sequences:AlternatingSequence` we defined an *alternating seque
 An **alternating series** is a series whose terms are alternately positive and negative, that is, it is a series of the form
 
 $$
-\sum_{n=1}^{\infty}a_n
+\sum_{n=p}^{\infty}a_n
 $$
 
-satisfying $a_na_{n+1}<0$ for all $n\in\{1,2,3,\ldots\}$.
+satisfying $a_na_{n+1}<0$ for all $n\in\{p,p+1,p+2,\ldots\}$.
 
 ::::::
 
-You already have seen examples of alternating series in {prf:ref}`Ex:Series:AbsoluteConvergence1` and {prf:ref}`Ex:Series:AbsoluteConvergence2` when we studied absolute convergence. Here is one more example of an alternating series: 
+You already have seen examples of alternating series in {prf:ref}`Ex:Series:AbsoluteConvergence1` and {prf:ref}`Ex:Series:AbsoluteConvergence2` when we studied absolute convergence. We saw that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}$ is absolutely convergent and that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is conditionally convergent. In {prf:ref}`Ex:Series:GeometricSeriesExample1` we even saw a convergent alternating series for which we were able to find its sum. Here is an example of a divergent alternating series: 
 
 ::::::{prf:example}
 :label: Ex:Series:AlternatingSeries1
@@ -455,29 +466,22 @@ You already have seen examples of alternating series in {prf:ref}`Ex:Series:Abso
 We investigate the series $\displaystyle\sum_{n=1}^{\infty}(-1)^n\frac{n}{n+1}$. The first part of this series is
 
 $$
--\frac{1}{2}+\frac{2}{3}-\frac{3}{4}+\frac{4}{5}-\frac{5}{6},\cdots
+-\frac{1}{2}+\frac{2}{3}-\frac{3}{4}+\frac{4}{5}-\frac{5}{6}+\cdots.
 $$
 
-Because of the alternating plus and minus signs, we suspect that it is an alternating series. Define $a_n=(-1)^n\dfrac{n}{n+1}$ for all $n\in\{1,2,3,\ldots\}$. Then we have
+Since $a_n=(-1)^nb_n$ with $b_n=\dfrac{n}{n+1}>0$ for all $n\in\{1,2,3,\ldots\}$ and $(-1)^n$ is alternating between $-1$ and $1$ it is clear that two consecutive terms have opposite signs: $a_na_{n+1}<0$ for all $n\in\{1,2,3,\ldots\}$.
 
-\begin{align*}
-a_na_{n+1} &= (-1)^n\dfrac{n}{n+1}(-1)^{n+1}\dfrac{n+1}{n+2} \\
-&= (-1)^{2n+1}\dfrac{n(n+1)}{(n+1)(n+2)} \\
-&= -\dfrac{n}{n+2}.
-\end{align*}
-
-As $n\geq1$, we have $a_na_{n+1}<0$ for all $n$, so the series $\displaystyle\sum_{n=1}^{\infty}(-1)^n\frac{n}{n+1}$ is an alternating series.
+Note that $\displaystyle\lim\limits_{n\to\infty}b_n=1$, which implies that $\displaystyle\lim\limits_{n\to\infty}a_n$ does not exist.  So, by the {prf:ref}`test for divergence <Thm:Series:GeneralTermCorollary>` the series is divergent.
 
 ::::::
 
+Alternating series can be written as $\displaystyle\sum(-1)^{n-1}b_n$ or $\displaystyle\sum(-1)^nb_n$ with $b_n>0$ for all $n$. 
 
-Alternating series can always be written as $\displaystyle\sum(-1)^{n-1}b_n$ or $\displaystyle\sum(-1)^nb_n$ with $b_n>0$ for all $n$. 
+What can be said about the convergence of an alternating series?
 
-So what could the sum of alternating series be? Does it even converge?
+An initial step could be to investigate whether the general term tends to zero. If not, it is divergent by the {prf:ref}`test for divergence <Thm:Series:GeneralTermCorollary>` as in {prf:ref}`Ex:Series:AlternatingSeries1`. Then we could investigate whether the series is absolutely convergent. If it is, then we know that the series is convergent, just like in {prf:ref}`Ex:Series:AbsoluteConvergence1`. However, if the series is not absolutely convergent, it could still be (conditionally) convergent. In fact, many alternating series are not absolutely convergent but are still convergent, which is shown by {prf:ref}`Ex:Series:AbsoluteConvergence2`.
 
-An initial step could be to investigate whether the series is absolutely convergent. If it is, then we know that the series is convergent, just like in {prf:ref}`Ex:Series:AbsoluteConvergence1`. However, if the series is not absolutely convergent, it could still be (conditionally) convergent. In fact, many alternating series are not absolutely convergent but are still convergent, which is shown by {prf:ref}`Ex:Series:AbsoluteConvergence2`.
-
-If we compare both examples, we see that in both cases the general term of the absolute value of the series tends to zero, i.e. the sequence $\{b_n\}$ tends to zero, ánd in both cases the sequence $\{b_n\}$ is decreasing. It turns out that these two conditions are sufficient for the convergence of an alternating series:
+At least, the absolute value of the general term $b_n$ should tend to zero. Furthermore, in {prf:ref}`Ex:Series:AbsoluteConvergence1` and {prf:ref}`Ex:Series:AbsoluteConvergence2` the sequence $\{b_n\}$ is decreasing. It turns out that these two conditions are sufficient for the convergence of an alternating series:
 
 :::::{prf:theorem} Alternating series test
 :label: Thm:Series:AlternatingSeriesTest
@@ -515,7 +519,7 @@ Replace {numref}`Fig:Series:AlternatingSeriesTest` with an applet.
 Make $b_n$ a function of $n$ that the user can change to see how the graph changes?
 :::
 
-The alternating nature of the series implies $s_1$ is to the right of $0$, $s_2$ is to the left of $s_1$, $s_3$ is to the right of $s_2$, and so on. Because $b_n$ is a decreasing sequence that tends to zero, the amount you jump to the right or to the left becomes smaller and smaller, so the partial sums seem to get closer and closer to a certain number $s$. This is exactly what it means for the series to be convergent, so it seems the theorem is plausible. The proof of the theorem will make this intuition rigorous, and makes use of the observation that the sequence of even partial sums $s_2,s_4,s_6,\ldots=\{s_{2n}\}$ seems to be located on the left of $s$, and the sequence of odd partial sums $s_1,s_3,s_5,\ldots=\{s_{2n+1}\}$ seems to be located on the right of $s$, but both sequences seem to converge to that same number $s$.
+The alternating nature of the series implies $s_1$ is to the right of $0$, $s_2$ is to the left of $s_1$, $s_3$ is to the right of $s_2$, and so on. Because $b_n$ is a decreasing sequence that tends to zero, the amount you jump to the right or to the left becomes smaller and smaller, so the partial sums seem to get closer and closer to a certain number $s$. This is exactly what it means for the series to be convergent, so it seems that the theorem is plausible. The proof of the theorem will make this intuition rigorous, and makes use of the observation that the sequence of even partial sums $\{s_2,s_4,s_6,\ldots\}=\{s_{2n}\}$ seems to be located on the left of $s$, and the sequence of odd partial sums $\{s_1,s_3,s_5,\ldots\}=\{s_{2n+1}\}$ seems to be located on the right of $s$, but both sequences seem to converge to that same number $s$.
 
 
 :::{admonition} Proof of {prf:ref}`Thm:Series:AlternatingSeriesTest`
@@ -576,52 +580,24 @@ This means that the series $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{n^2}
 ::::::
 
 ::::::{prf:example}
-:label: Ex:Series:AlternatingSeries3
-
-The series $\displaystyle\sum_{n=1}^{\infty}(-1)^n\frac{3n}{4n+1}$ is an alternating series with $b_n=\displaystyle\frac{3n}{4n+1}>0$ for all $n$. We have
-
-$$
-\lim\limits_{n\to\infty}b_n=\lim\limits_{n\to\infty}\frac{3n}{4n+1}=\lim\limits_{n\to\infty}\frac{3}{4+\frac{1}{n}}=\frac{3}{4}.
-$$
-
-This means that the series $\displaystyle\sum_{n=1}^{\infty}(-1)^n\frac{3n}{4n+1}$ does not satisfy the conditions of the alternating series test and we cannot make a conclusion about the convergence of the series using the alternating series test.
-
-::::::
-
-In the previous example the alternating series did not give any definitive conclusion about the convergence of the series, as the conditions were not satisfied. In some, but definitely not all cases, we can still conclude that the series is divergent by using the _test for divergence_, as the general term of the series does not even approach zero. The next two examples illustrate this.
-
-::::::{prf:example}
-:label: Ex:Series:AlternatingSeriesDivergence1
-
-We continue {prf:ref}`Ex:Series:AlternatingSeries3` and investigate the convergence of the series $\displaystyle\sum_{n=1}^{\infty}(-1)^n\frac{3n}{4n+1}$. We have seen that
-
-$$
-\lim\limits_{n\to\infty}\frac{3n}{4n+1}=\frac{3}{4}.
-$$
-
-Because of the alternating nature of the series, the sequence $\{(-1)^n\frac{3n}{4n+1}\}$ is bounded between $-\frac{3}{4}$ and $\frac{3}{4}$, but not monotonic as it jumps between positive and negative values. Hence, the sequence $\{(-1)^n\frac{3n}{4n+1}\}$ does not converge to zero, so by the _test for divergence_ the series $\displaystyle\sum_{n=1}^{\infty}(-1)^n\frac{3n}{4n+1}$ is divergent.
-
-::::::
-
-::::::{prf:example}
-:label: Ex:Series:AlternatingSeriesDivergence2
+:label: Ex:Series:AlternatingSeriesDivergence
 
 Now consider the series $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}b_n$ with
 
 $$
 b_n=\begin{cases}
-\frac{2}{n+3} & \text{if $n$ is odd},\\
-\frac{4}{(n+2)^2} & \text{if $n$ is even}.
+\dfrac{2}{n+3} & \text{if $n$ is odd},\\
+\dfrac{4}{(n+2)^2} & \text{if $n$ is even}.
 \end{cases}
 $$
 
-First we take a look at the odd sequence:
+First we take a look at the "odd sequence" $\{b_{2n+1}\}$:
 
 $$
 \lim\limits_{n\to\infty}b_{2n+1}=\lim\limits_{n\to\infty}\frac{2}{2n+4} = 0
 $$
 
-For the even sequence we have
+For the "even sequence" $\{b_{2n}\}$ we have
 
 $$
 \lim\limits_{n\to\infty}b_{2n}=\lim\limits_{n\to\infty}\frac{4}{(2n+2)^2} = 0
@@ -641,7 +617,7 @@ $$
 \frac{1}{2},\frac{1}{2^2},\frac{1}{3},\frac{1}{3^2},\frac{1}{4},\frac{1}{4^2},\ldots
 $$
 
-As $\frac{1}{k+1}>\frac{1}{(k+1)^2}$ for all $k\geq1$, we have $b_{2n+1}>b_{2n}$ for all $n\geq1$. Hence the sequence $\{b_n\}$ is not _always_ non-increasing, so the second condition of the alternating series test is not satisfied. Therefore, we cannot conclude that the series $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}b_n$ is convergent by the alternating series test.
+As $\dfrac{1}{k+1}>\dfrac{1}{(k+1)^2}$ for all $k\geq1$, we have $b_{2n+1}>b_{2n}$ for all $n\geq1$. Hence the sequence $\{b_n\}$ is not _always_ non-increasing, so the second condition of the alternating series test is not satisfied. Therefore, we cannot conclude that the series $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}b_n$ is convergent by the alternating series test.
 
 To further investigate the convergence of this series, we need more tests that we do not have yet.
 
@@ -676,14 +652,16 @@ If we use the first $10$ terms of the series $\displaystyle\sum_{n=1}^{\infty}\f
 The $10$th partial sum is
 
 \begin{align*}
-s_{10}=\sum_{n=1}^{10}\frac{(-1)^{n-1}}{n^2}&=1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+\frac{1}{25}-\frac{1}{36}+\frac{1}{49}-\frac{1}{64}\\
-&{}\quad{}+\frac{1}{81}-\frac{1}{100}=\frac{5194387}{6350400}\approx0.81796.
+s_{10}&=\sum_{n=1}^{10}\frac{(-1)^{n-1}}{n^2}\\
+&=1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+\frac{1}{25}-\frac{1}{36}+\frac{1}{49}-\frac{1}{64}+\frac{1}{81}-\frac{1}{100}\\
+&=\frac{5194387}{6350400}\\
+&\approx0.81796.
 \end{align*}
 
-{prf:ref}`Thm:Series:EstimatingSumAlternatingSeries` implies that the remainder satisfies:
+Then {prf:ref}`Thm:Series:EstimatingSumAlternatingSeries` implies that the remainder satisfies:
 
 $$
-|R_{10}|=|s-s_{10}|\leq\dfrac{1}{121}\approx0.00826
+|R_{10}|=|s-s_{10}|\leq\dfrac{1}{121}\approx0.00826.
 $$
 
 ::::::
@@ -698,7 +676,7 @@ An accuracy of three decimal places means that the error can be at most $0.0005$
 The $N$th remainder satisfies
 
 $$
-|R_N|\leq\dfrac{1}{(N+1)!}$.
+|R_N|\leq\dfrac{1}{(N+1)!}.
 $$
 
 Using the required accuracy of $0.0005$, we find that we need to find the smallest $N$ such that
@@ -717,9 +695,12 @@ Note that we round to three decimal places, so the approximation should be corre
 
 To check that we indeed found an approximation which is correct to three decimal places, we can calculate also the next partial sum:
 
-$$
-\sum_{n=2}^7\frac{(-1)^n}{n!}=\frac{1}{2}-\frac{1}{6}+\frac{1}{24}-\frac{1}{120}+\frac{1}{720}-\frac{1}{5040}=\frac{103}{280}=0.367\overline{857142}\approx0.368.
-$$
+\begin{align*}
+\sum_{n=2}^7\frac{(-1)^n}{n!}&=\frac{1}{2}-\frac{1}{6}+\frac{1}{24}-\frac{1}{120}+\frac{1}{720}-\frac{1}{5040}\\
+&=\frac{103}{280}\\
+&=0.367\overline{857142}\\
+&\approx0.368.
+\end{align*}
 
 After rounding to three decimal places, we get the same approximation, so we can be sure that the approximation is correct to three decimal places.
 
@@ -729,7 +710,7 @@ $$
 \sum_{n=2}^5\frac{(-1)^n}{n!}=\frac{1}{2}-\frac{1}{6}+\frac{1}{24}-\frac{1}{120}=\frac{11}{30}=0.3\overline{66}\approx0.367,
 $$
 
-which is the a different approximation as for $N=6$, which indicates that our choice of $N=6$ is best.
+which is a different approximation as for $N=6$, which indicates that our choice of $N=6$ is best.
 ::::::
 
 ::::::{note}
@@ -743,7 +724,7 @@ We end this section on both a positive and a negative note:
 :::{prf:definition}
 :label: Def:Series:PositiveNegativeSeries
 
-A series $\displaystyle\sum_{n=1}^{\infty}a_n$ is called a **positive series** if $a_n>0$ for all $n$, and a **negative series** if $a_n<0$ for all $n$.
+A series $\displaystyle\sum_{n=p}^{\infty}a_n$ is called a **positive series** if $a_n>0$ for all $n\in\{p,p+1,p+2,\ldots\}$, and a **negative series** if $a_n<0$ for all $n\in\{p,p+1,p+2,\ldots\}$.
 :::
 
 In {numref}`Sec:Series:PositiveSeries` we will study the convergence of positive series.
@@ -753,17 +734,17 @@ For negative series, we can use the following result:
 :::{prf:theorem}
 :label: Thm:Series:NegativeSeries
 
-If $\displaystyle\sum_{n=1}^{\infty}a_n$ is a negative series, then it is convergent if and only if the series $\displaystyle\sum_{n=1}^{\infty}(-1)a_n$ is convergent.
+If $\displaystyle\sum_{n=p}^{\infty}a_n$ is a negative series, then it is convergent if and only if the series $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is convergent.
 :::
 
 :::{admonition} Proof of {prf:ref}`Thm:Series:NegativeSeries`
 :class: tudproof, dropdown
 
-If $\displaystyle\sum_{n=1}^{\infty}a_n$ is a negative series, then $a_n<0$ for all $n$. Hence, we have $(-1)a_n>0$ for all $n$, so $\displaystyle\sum_{n=1}^{\infty}(-1)a_n$ is a positive series.
+If $\displaystyle\sum_{n=p}^{\infty}a_n$ is a negative series, then $a_n<0$ for all $n\in\{p,p+1,p+2,\ldots\}$. Hence, we have $(-1)a_n>0$ for all $n\in\{p,p+1,p+2,\ldots\}$, so $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is a positive series.
 
-If the series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent, say with sum $S$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=1}^{\infty}(-1)a_n$ is convergent with sum $(-1)S$.
+If the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is convergent, say with sum $S$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is convergent with sum $(-1)S$.
 
-If the series $\displaystyle\sum_{n=1}^{\infty}(-1)a_n$ is convergent, say with sum $T$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=1}^{\infty}(-1)\cdot(-a_n)$ is convergent with sum $(-1)T$.
+If the series $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is convergent, say with sum $T$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=p}^{\infty}(-1)\cdot(-a_n)$ is convergent with sum $(-1)T$.
 ::::
 
 ## Grasple exercises

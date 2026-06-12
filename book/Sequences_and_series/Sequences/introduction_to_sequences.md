@@ -63,14 +63,14 @@ The following are both different notations for the same _finite_ sequence:
 - $\displaystyle\{a_n\}_{n=p}^{q}$.
 - $\displaystyle a_p,a_{p+1},a_{p+2},\ldots,a_q$.
 
-In this case $p$ is the starting index and $q$ is the ending index.
+In this case the integer $p$ is the starting index and the integer $q$ is the ending index.
 
 The following are both different notations for the same _infinite_ sequence:
 
 - $\displaystyle\{a_n\}_{n=p}^{\infty}$.
 - $\displaystyle a_p,a_{p+1},a_{p+2},\ldots$
 
-$p$ is again the starting index, but there is no ending index since the sequence is infinite.
+The integer $p$ is again the starting index, but there is no ending index since the sequence is infinite.
 
 The letter $n$ is often used to denote the index, but we can also use any other letter for the index.
 

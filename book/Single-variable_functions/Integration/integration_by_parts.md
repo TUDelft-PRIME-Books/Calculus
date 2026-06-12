@@ -12,7 +12,7 @@ $$
 \displaystyle\int x\cos(x)\,dx.
 $$
 
-Although the integrand is composed of two standard functions, $x$ and $\cos(x)$, we cannot directly apply the formulas from {numref}`Tab:Integration:StandardIndefiniteIntegrals` to evaluate this integral. We can also not use {prf:ref}`Th:Integration:IndefiniteProperties` to split the integral into simpler integrals, since the integrand is a product of functions instead of a sum of functions. Finally, the method of integration by substitution is not useful here either, since antiderivatives of both $x$ and $\cos(x)$ are not present in the integrand.
+Although the integrand is composed of two standard functions, $x$ and $\cos(x)$, we cannot directly apply the formulas from {numref}`Tab:Integration:StandardIndefiniteIntegrals` to evaluate this integral. We can also not use {prf:ref}`Thm:Integration:IndefiniteProperties` to split the integral into simpler integrals, since the integrand is a product of functions instead of a sum of functions. Finally, the method of integration by substitution is not useful here either, since antiderivatives of both $x$ and $\cos(x)$ are not present in the integrand.
 
 In this section we introduce the method of **integration by parts**, which is a very powerful method to evaluate integrals such as in the example above.
 
