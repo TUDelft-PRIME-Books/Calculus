@@ -869,29 +869,87 @@ As you can see we have arrived at Euler's formula.
 
 ::::
 
+
+
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/7f2ff406-3652-47b7-ba0d-52343cb8eb4c?id=122771
+:url: https://embed.grasple.com/exercises/1dff6977-41ec-407d-b334-9fdda04eba53?id=68320
+:label: Grasple:68320
+:dropdown:
+:description: Square roots of a complex number.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ed3ab811-1e8c-4355-bc23-ab8e60681b45?id=71521
+:label: Grasple:71521
+:dropdown:
+:description: Visualising cube roots of a complex number
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c3a3f892-0b78-47db-b5a2-0d57c399d893?id=68316
+:label: Grasple:68316
+:dropdown:
+:description: Cubic roots of a complex number.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7363eaa1-d67a-4b16-a956-afcb0b3a184c?id=68315
 :label: grasple_exercise_10_2_5
 :dropdown:
-:description: Cubic root of a complex number.
+:description: Cubic roots of a complex number.
 
 ::::
 
+
+
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/22b66edd-aa49-489a-880b-3d91f864b6be?id=122772
+:url: https://embed.grasple.com/exercises/159060ea-2b4e-4d9d-a1bc-96b000cd0714?id=68317
 :label: grasple_exercise_10_2_6
 :dropdown:
-:description: Fourth root of a complex number.
+:description: Fourth roots of a complex number.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/8000e2fb-af73-476b-8977-0c0ecbe5cb3d?id=122773
+:url: https://embed.grasple.com/exercises/90784279-7cd1-46f0-8f22-b14078b5a3d7?id=65998
+:label: Grasple:65998
+:dropdown:
+:description: A slightly different square root question.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ed4dfebb-908e-4a58-8c72-ffafd093a639?id=68321
+:label: Grasple:68321
+:dropdown:
+:description: A slightly different square root question.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a0e8243a-9fde-464e-8f1e-fdb34c817013?id=68318
 :label: grasple_exercise_10_2_7
 :dropdown:
 :description: A slightly different cubic root question.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ea9ebfd4-46b7-4a1e-896c-f040957fe683?id=71523
+:label: Grasple:71523
+:dropdown:
+:description: Finding solutions to $e^z=w$. Note: this question assumes a knowledge of (real) logarithms.
 
 ::::
