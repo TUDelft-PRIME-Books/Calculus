@@ -29,9 +29,7 @@ $$
  y'=-\frac{b}{a}y,
 $$
 
-[^FootnoteEx]: We used a similar approach in {prf:ref}`Ex:ClassDiff:Ansatz`. In fact, that example is of the same form as the one we are considering here.
-
-so we are looking for a function of which the derivative is a multiple of the original function. Exponential functions have this property, so we can make the educated guess that a solution is of the form $y(t)=e^{rt}$. Such an educated guess about the shape of a solution is called an **Ansatz**.[^FootnoteEx] Plugging this exponential into the differential equation gives
+so we are looking for a function of which the derivative is a multiple of the original function. Exponential functions have this property, so we can make the educated guess that a solution is of the form $y(t)=e^{rt}$. Such an educated guess about the shape of a solution is called an **Ansatz**. Plugging this exponential into the differential equation gives
 
 $$
  re^{rt}=-\frac{b}{a}e^{rt}.

@@ -19,16 +19,16 @@ A pyramid with rectangular cross section at position $x$.
 Replace {numref}`Fig:ProductQuotient:Pyramid` with an applet.
 :::
 
-Consider a pyramid with a rectangular base. Suppose we take a cross section at distance $x$ from the top of the pyramid. Then we obtain a rectangle with width $w(x)$ and length $\ell(x)$, see {numref}`Fig:ProductQuotient:Pyramid`. What is the area $A$ of this rectangle? You do not need advanced calculus for this to know that the answer is 
+Consider a pyramid with a rectangular base. Suppose we take a cross section at distance $x$ from the top of the pyramid. Then we obtain a rectangle with width $w(x)$ and length $\ell(x)$, see {numref}`Fig:ProductQuotient:Pyramid`. What is the area $A$ of this rectangle? You do not need advanced calculus (or even any calculus at all) to know that the answer is 
 
 
 $$
  A(x)=w(x)\ell(x).
 $$
 
+[^Footnoteunits]: We can also see this by considering units. The derivatives $w'(x)$ and $\ell'(x)$ are both dimensionless and so is their product. On the other hand, the derivative $A'(x)$ has $m$ has unit.
 
-
-What happens now if we go a little bit further, say that we take a step of size $\Delta x$? Then the width changes from $w(x)$ to $w(x+\Delta x)$. If $\Delta x$ is sufficiently small, this difference $\Delta w=w(x+\Delta x)-w(x)$ is very close to $w'(x)\Delta x$ (in the sense that $\lim\limits_{\Delta x\rightarrow 0}\dfrac{w(x+\Delta x)-w(x)}{\Delta x}=w'(x)$). Similarly, the change in length $\Delta \ell=\ell(x+\Delta x)-\ell(x)$ is approximately equal to $\ell'(x)\Delta x$. So what happens with the area? Intuitively, we might expect the rate of change of this area to be $w'(x)\ell'(x)$, but this is not correct as we will see soon. For this, we take a look at the sketch of the cross section at distance $x+\Delta x$ from the top, see {numref}`Fig:ProductQuotient:Crosssection`.
+What happens if we go a bit further, and that we take a step of size $\Delta x$? Then the width changes from $w(x)$ to $w(x+\Delta x)$. If $\Delta x$ is sufficiently small, this difference $\Delta w=w(x+\Delta x)-w(x)$ is very close to $w'(x)\Delta x$ in the sense that $\lim\limits_{\Delta x\rightarrow 0}\dfrac{w(x+\Delta x)-w(x)}{\Delta x}=w'(x)$. Similarly, the change in length $\Delta \ell=\ell(x+\Delta x)-\ell(x)$ is approximately equal to $\ell'(x)\Delta x$. So what happens to the area? Intuitively, we might expect the rate of change of this area to be the product of $w'(x)$ and $\ell'(x)$, but this is not correct as we will see soon[^Footnoteunits]. Indeed, $w'(x)$ and $\ell'(x)$ measure rates of change, not the width and length themselves, so multiplying them does not give the rate of change in the area. To find the correct answer, we take a look at the sketch of the cross section at distance $x+\Delta x$ from the top, see {numref}`Fig:ProductQuotient:Crosssection`.
 
 
 :::{figure} Images/Fig-ProductQuotient-Crosssection.png
@@ -58,7 +58,7 @@ Now we can plug in the approximations for $\Delta w$ and $\Delta \ell$ in terms 
  &= w(x)\ell(x)+w(x)\ell'(x)\Delta x+\ell(x) w'(x)\Delta x+w'(x)\ell'(x)\left(\Delta x\right)^2.
 \end{align*}
 
-The term $w(x)\ell(x)$ is simply the old area $A(x)$. As such, the new area is the old area plus three new terms, of which one, the one with $\left(\Delta x\right)^2$, is way smaller than the other two. So we find that the change in area divided by $\Delta x$ is approximately
+The term $w(x)\ell(x)$ is simply the old area $A(x)$. As such, the new area is the old area plus three new terms, of which one, the one with $\left(\Delta x\right)^2$, is much smaller than the other two. So we find that the change in area divided by $\Delta x$ is approximately
 
 $$
  \frac{A(x+\Delta x)-A(x)}{\Delta x}\approx w(x)\ell'(x)+\ell(x)w'(x)+w'(x)\ell'(x)\Delta x.
@@ -68,19 +68,19 @@ Taking the limit as $\Delta x\rightarrow 0$, we obtain an expression for the rat
 
 \begin{align*}
  A'(x) &= \lim_{\Delta x\rightarrow 0}\frac{A(x+\Delta x)-A(x)}{\Delta x} \\
- &\approx \lim_{\Delta x\rightarrow 0} w(x)\ell'(x)+\ell(x)w'(x)+w'(x)\ell'(x)\Delta x \\
+ &\approx \lim_{\Delta x\rightarrow 0} \left(w(x)\ell'(x)+\ell(x)w'(x)+w'(x)\ell'(x)\Delta x\right) \\
  &= w(x)\ell'(x)+\ell(x)w'(x).
 \end{align*}
 
 It turns out that because $\dfrac{\Delta w}{\Delta x}\rightarrow w'(x)$ and $\dfrac{\Delta \ell}{\Delta x}\rightarrow \ell'(x)$ as $\Delta x\rightarrow 0$, this expression is in fact exact, so we have found
 
 $$
-A'(x)=w(x)\ell'(x)+\ell(x)w'(x)
+A'(x)=w(x)\ell'(x)+\ell(x)w'(x).
 $$
 
-So we conclude that the small area with the $\left(\Delta x\right)^2$ term had no influence on the rate of change of the area, but both other areas did. As such, the rate of change of the area is the sum of the two terms $w(x)\ell'(x)$ and $\ell(x)w'(x)$ (and in particular, it is **not** equal to $w'(x)\ell'(x)$). 
+So we conclude that the small area with the $\left(\Delta x\right)^2$ term had no influence on the rate of change of the area, but both other terms did. As such, the rate of change of the area is the sum of the two terms $w(x)\ell'(x)$ and $\ell(x)w'(x)$ and in particular, it is **not** equal to $w'(x)\ell'(x)$. 
 
-The general version of this rule is called the **product rule**, or sometimes the **Leibniz rule**. The product rule and the chain rule (which has been discussed in {numref}`Sec:Differentiation:ChainRule`) are the most important rules that we can use to find derivatives of complicated functions. In this section, we will state and prove the product rule and show how it is used. We will also consider another rule, called the **quotient rule**, which is a combination of the product and chain rules. We will use these rules to find yet another standard two derivatives, the ones of the tangent and the hyperbolic tangent.
+The general version of this rule is called the **product rule**, or sometimes the **Leibniz rule**. The product rule and the chain rule (which has been discussed in {numref}`Sec:Differentiation:ChainRule`) are the most important rules to find derivatives of non-standard functions. In this section, we will state and prove the product rule and show how it is used. We will also consider another rule, called the **quotient rule**, which is a combination of the product and chain rules. We will use these rules to find two more standard two derivatives: for the tangent and the hyperbolic tangent.
 
 
 ## The product rule
