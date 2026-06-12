@@ -1,8 +1,11 @@
-.longdivision mjx-mtd { padding: 0 !important; }
+.longdivision mjx-mtd,
+.longdivision-short mjx-mtd { padding: 0 !important; }
+.longdivision-short { overflow-y: hidden !important; }
 
 .compact mjx-mtd { padding: 0.1rem !important; }
 
 mjx-mtable.compact[justify="right"],
-mjx-mtable.longdivision[justify="right"] {
+mjx-mtable.longdivision[justify="right"],
+mjx-mtable.longdivision-short[justify="right"] {
     text-align: center !important;
 }

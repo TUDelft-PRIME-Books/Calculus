@@ -584,8 +584,9 @@ Adding complex numbers follows the parallelogram rule.
 Turn {numref}`Fig:ComplexNumbers:complexadd` into an applet with draggable points.
 :::
 
-If we want to interpet the other operations such as multiplication easily, we first need another way of writing complex numbers, which we will study in {numnref}`Ch:ComplexNumbersPolar`. Before we do that we will turn our attention first to solving equations.
+If we want to interpet the other operations such as multiplication easily, we first need another way of writing complex numbers, which we will study in {numref}`Ch:ComplexNumbersPolar`. Before we do that we will turn our attention first to solving equations.
 
+(Sec:ComplexNumbers:SolvingEquations)=
 ## Solving equations
 
 The reason for introducing complex numbers is to ensure that more equations have solutions, for example $z^2+1=0$. In this section, we consider equations involving complex numbers. This means that the solutions may be complex, but also that the coefficients in the equations can be complex.
