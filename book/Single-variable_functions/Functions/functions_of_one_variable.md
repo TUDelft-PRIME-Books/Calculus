@@ -72,35 +72,29 @@ If $f$ has domain $D$ and codomain $C$ we write $f:D\rightarrow C$. We also writ
 If we do not explicitly specify the domain and/or codomain of a function $f$, we use the symbols $D_f$ for the domain of $f$ and $C_f$ for the codomain of $f$.
 ::::::
 
-:::::::::{admonition} Bonus: formal definition of a function
-:class: bonus, dropdown
 {prf:ref}`Def:Functions1var:Function` is good enough for the purpose of this book, but for those of you who are interested, we also provide the formal definition of a function.
 
-::::::{prf:definition} 
+::::::{prf:definition} Formal definition of a function
 :label: Def:Functions1var:Functionformal
+:class: bonus, dropdown
 
 Let $D$ and $C$ be sets. Then the **product set** $D\times C$ is the set of all ordered pairs $(x,y)$ with $x$ in $D$ and $y$ in $C$.
 
 A **function** $f$ with **domain** $D$ and **codomain** $C$ is a subset $f\subset (D\times C)$ such that for each $x\in D$ there is exactly one $y\in C$ with $(x,y)\in f$. For each pair $(x,y)\in f$ we write $y=f(x)$.
 
 ::::::
-:::::::::
 
 
 So how should you think about a function? There are several different perspectives you can take, but it may be helpful to think about a function as a machine that takes an **input value** $x$ and turns this into an **output value** or **function value** $f(x)$. We also say that $x$ is **mapped to** $f(x)$. 
 
 Note that a function only works in one direction: we can always insert an element of the domain to obtain an element of the codomain, but it is not always possible to go back, see {numref}`Fig:Functions1var:Diagram` (we will dive deeper into the question if/when it is possible to go back in {numref}`Section:Inverse`).
 
-:::::{margin}
-::::{figure} Images/Fig-Functions1var-Diagram.png
+:::{applet}
+:url: calculus/functions_of_one_variable/diagram
 :name: Fig:Functions1var:Diagram
+:class: dark-light
 
 A diagram can be used to graphically represent that a function $f$ maps an element $x$ in the domain $D_f$ to another element $f(x)$ in the codomain $C_f$.
-::::
-:::::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Diagram` with an applet. Use $D_f$ instead of $D$ and $C_f$ instead of $C$.
 :::
 
 In addition, if $f$ is a function and we have $f(x)=y$ for some $x$ in $D_f$ and $y$ in $C_f$, we see that $y$ is determined by $x$. That means that the value of $y$ depends on the value of $x$, while the value of $x$ can be chosen freely (within the domain of $f$). As such, for this formula $f(x)=y$ the variable $y$ is referred to as the **dependent variable**, while $x$ is an **independent variable**.
@@ -224,17 +218,13 @@ we see that if the pressure increases the temperature increases, while if the pr
 An essential part of understanding functions of a single variable is to try to visualise their behaviour. In principle, a function is a rule that maps an element $x$ to another element $f(x)$, so how is it possible to visualise this? Since each $x$ in the domain corresponds to exactly one $f(x)$, we could try to plot the point $(x,f(x))$ in $\mathbb{R}^2$. If we do this for each value of $x$, we have captured the full behaviour of the function in one picture. Such a plot is called the **graph** of a function. So for each point $(x,y)$ on the graph of $f$ we necessarily have $f(x)=y$. 
 
 
-:::::{margin}
-::::{figure} Images/Fig-Functions1var-GraphBasic.png
+::::{applet}
+:url: calculus/functions_of_one_variable/concept_of_a_graph
 :name: Fig:Functions1var:Graph
+:class: dark-light
 
 The graph of a function $f$ can be used to read off the value $f(a)$ for a given value $a$. The domain and range of $f$ can also be read off from the graph.
 ::::
-:::::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Graph` with an applet.
-:::
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Graph
@@ -265,22 +255,40 @@ You will learn more about curves that are not (necessarily) graphs of functions 
 
 ::::::{prf:example} 
 :label: Ex:Functions1var:Verticalline
+:class: full-width
 
 Consider the two curves shown below.
 
-::::{figure} Images/Fig-Functions1var-Verticalline.png
+:::::{figure-start}
 :name: Fig:Functions1var:Verticalline
 
 Two curves in $\mathbb{R}^2$ and a vertical line for the vertical line test.
-::::
+:::::
 
-:::{todo}
-Replace {numref}`Fig:Functions1var:Verticalline` with an applet.
+:::::{grid} 2 2 2 2
+::::{grid-item}
 
-Do not show the functions in the final image.
+:::{applet}
+:url: calculus/functions_of_one_variable/vertical_line_test_1
+:class: dark-light
 :::
 
-Can we check whether these curves are the graph of a function? For the curve on the left, each vertical line intersects the curve exactly once, so this curve is the graph function. You might wonder of which function this curve is the graph. Without further knowledge of the function, this is impossible, unfortunately. Still, for a given $x$, we can read off what the function value $f(x)$ will be approximately. For instance, we can read off that $f(0)=0$ (or maybe something very close to $0$), while $f(1)$ is approximately $ 1.8$.
+::::
+
+::::{grid-item}
+
+:::{applet}
+:url: calculus/functions_of_one_variable/vertical_line_test_2
+:class: dark-light
+:::
+
+::::
+:::::
+
+:::::{figure-end}
+:::::
+
+Can we check whether these curves are the graph of a function? For the curve on the left, each vertical line intersects the curve exactly once, so this curve is the graph function. You might wonder of which function this curve is the graph. Without further knowledge of the function, this is impossible, unfortunately. Still, for a given $x$, we can read off what the function value $f(x)$ will be approximately. For instance, we can read off that $f(0)=0$ (or maybe something very close to $0$), while $f(1)$ is approximately $ 1.9$.
 
 The curve on the right, on the other hand, is not the graph of a function. Some vertical lines, like the line $x=-1$, intersect the curve once, but there are also vertical lines that intersect the curve multiple times, such as the line $x=1$, which intersects the curve $3$ times. If this curve were to be the graph of a function $f$, then $f(1)$ would need to be all three corresponding values of $y$ at the same time, which is impossible.
 ::::::
@@ -307,15 +315,14 @@ Now, the expression $\pm x$ might look like a formula describing a function to y
 
 This result is also visible in the plot of the two curves, shown below.
 
-:::{figure} Images/Fig-Functions1var-VerticalLine2.png
+:::{applet}
+:url: calculus/functions_of_one_variable/two_implicit_curves
 :name: Fig:Functions1var:VerticalLine2
+:class: dark-light
 
 The curves $C_1$ and $C_2$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Functions1var:VerticalLine2` with an applet.
-:::
 
 ::::::
 
@@ -436,31 +443,29 @@ Let us investigate the behaviour of these standard functions by considering a fe
 :label: Ex:Functions1var:Linear
 Consider the function given by $f(x)=2x+3$. This is a polynomial function, in particular, it is a linear function. Since for any value of $x$ it is possible to compute $2x+3$, the maximal domain of this function is the set of all real numbers $\mathbb{R}$. The graph of this function is shown below.
 
-:::{figure} Images/Fig-Functions1var-Linear.png
+:::{applet}
+:url: calculus/functions_of_one_variable/linear_function
 :name: Fig:Functions1var:Linear
+:class: dark-light
 
 The graph of the linear function $f(x)=2x+3$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Functions1var:Linear` with an applet.
-:::
+As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph?
 
-As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph? We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increases by any value $\Delta x$, $y$ will increase by $\Delta y=2\Delta x$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope to other curves than straight lines in {numref}`Chapter:Differentiation`.
+We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increases by any value $\Delta x$, $y$ will increase by $\Delta y=2\Delta x$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope to other curves than straight lines in {numref}`Chapter:Differentiation`.
 ::::::
 
 ::::::{prf:example} Quadratic function
 :label: Ex:Functions1var:Quadratic
 Consider the function given by $h(x)=x^2-4x+3$. This is a quadratic function and, therefore, a special type of polynomial function. Since $h(x)$ exists for any real number $x$, the maximal domain of $h$ is $\mathbb{R}$. The graph of this function is shown below.
 
-:::{figure} Images/Fig-Functions1var-QuadraticH.png
+:::{applet}
+:url: calculus/functions_of_one_variable/quadratic_function_1
 :name: Fig:Functions1var:QuadraticH
+:class: dark-light
 
 The graph of the quadratic function $h(x)=x^2-4x+3$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:QuadraticH` with an applet.
 :::
 
 The graph of this function is a **parabola**. The graph crosses the $x$-axis at $x=1$ and $x=3$, which can be seen from the fact that $h(x)=x^2-4x+3=(x-1)(x-3)$, so that $h(x)=0$ precisely when $x=1$ or $x=3$. 
@@ -471,14 +476,12 @@ Since the graph of $h$ has a lowest value and then grows for both very large and
 
 For more information on parabolas, see {numref}`Subsec:CurvesParabola`.
 
-:::{figure} Images/Fig-Functions1var-QuadraticK.png
+:::{applet}
+:url: calculus/functions_of_one_variable/quadratic_function_2
 :name: Fig:Functions1var:QuadraticK
+:class: dark-light
 
 The graph of the quadratic function $k(x)=2-3x^2$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:QuadraticK` with an applet.
 :::
 
 ::::::
