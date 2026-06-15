@@ -2,16 +2,7 @@
 
 # Homogeneous problems with constant coefficients
 
-In this section we cover:
 
-- Ansatz method: three cases (two distinct real, single real, complex)
-  - Be careful with using thew word Ansatz.
-- Application examples:
-  - Mass-spring
-  - RLC electrical circuits 
-- Mention third and higher order.
-  - Example with fifth order to indicate that it is possible (example with 5th order with 1 double real root, 1 single real root, 1 pair of complex conjugate roots).
-- Include IVPs and BVPs examples.
 
 (SubSec:ODE2:Intro)=
 
@@ -29,13 +20,13 @@ $$
  y'=-\frac{b}{a}y,
 $$
 
-so we are looking for a function of which the derivative is a multiple of the original function. Exponential functions have this property, so we can make the educated guess that a solution is of the form $y(t)=e^{rt}$. Such an educated guess about the shape of a solution is called an **Ansatz**. Plugging this exponential into the differential equation gives
+so we are looking for a function of which the derivative is a multiple of the original function. Exponential functions have this property, so we can make the educated guess that a solution is of the form $y(t)=e^{rt}$. Such an educated guess about the shape of a solution is called an **Ansatz**. Then we have $y'(t)=re^{rt}$, so plugging this exponential into the differential equation gives
 
 $$
  re^{rt}=-\frac{b}{a}e^{rt}.
 $$
 
-We can divide by $e^{rt}$ and obtain the equation
+We can divide by $e^{rt}$, which is nonzero, and obtain the equation
 
 $$
  r=-\frac{b}{a}.
@@ -67,7 +58,7 @@ $$
  ay''+by'+cy=0,
 $$
 
-where $a\neq 0$, $b$ and $c$ are real constants. We will see that we can always find at least one (possibly complex) solution of the form $y(t)=e^{rt}$. The correct values of $r$ can be found by finding the roots of a quadratic equation in $r$. The structure of the solution will be different, depending on whether this quadratic equation has two different real roots, a single real root or two nonreal (complex) roots, so we will treat these cases separately.
+where $a\neq 0$, $b$ and $c$ are real constants. We will see that we can always find at least one (possibly complex) solution of the form $y(t)=e^{rt}$. The correct value(s) of $r$ can be found by finding the roots of a quadratic equation in $r$. The structure of the solution will be different, depending on whether this quadratic equation has two distinct real roots, a single real root or two nonreal (complex) roots, so we will treat these cases separately.
 
 ## Solving second-order, linear, homogenous differential equations
 
@@ -114,7 +105,7 @@ is known as the **characteristic equation** or the **auxiliary equation** for th
 
 Now we consider three possibilities for the **discriminant** $D=b^2-4ac$: $D>0$, $D=0$ and $D<0$.
 
-### Two different real roots
+### Two distinct real roots
 
 If $D>0$ the characteristic equation has two distinct real roots, say $r_1$ and $r_2$. Then the functions $y_1(t)=e^{r_1t}$ and $y_2(t)=e^{r_2t}$ are both solutions. Since these functions are linearly independent, we find that the general solution is $y(t)=c_1e^{r_1t}+c_2e^{r_2t}$ with $c_1,c_2\in\mathbb{R}$.
 
@@ -171,7 +162,7 @@ $$
  (r-3)(r+2)=0.
 $$
 
-The roots of this equation are $r_1=3$ and $r_2=-2$. By {prf:ref}`Thm:ODE2:Tworeal`, the general solution of the differential equation is 
+The roots of this equation are $r_1=3$ and $r_2=-2$, which are two distinct real roots. By {prf:ref}`Thm:ODE2:Tworeal`, the general solution of the differential equation is 
 
 $$
  y(x)=c_1e^{3x}+c_2e^{-2x}
@@ -183,7 +174,7 @@ with $c_1,c_2\in\mathbb{R}$.
 ### Double real root
 
 
-If $D=0$ the characteristic equation has two equal real roots $r_1=r_2=r$. So we only obtain one linear independent solution $y_1=e^{rt}$ in that case. So how do we obtain a second, linearly independent solution? It turns out that $y_2=te^{rt}$ is a solution too, as can be seen in the upcoming theorem. Since these two functions are linearly independent, we can use them to find the general solution.
+If $D=0$ the characteristic equation has two equal real roots $r_1=r_2=r$. So we only obtain one linearly independent solution $y_1=e^{rt}$ in that case. So how do we obtain a second, linearly independent solution? It turns out that $y_2=te^{rt}$ is a solution too, as can be seen in the upcoming theorem. Since these two functions are linearly independent, we can use them to find the general solution.
 
 ::::::{prf:theorem}
 :label: Thm:ODE2:Onereal
@@ -204,7 +195,7 @@ with $c_1,c_2\in\mathbb{R}$.
 
 :::{admonition} Proof of {prf:ref}`Thm:ODE2:Onereal`
 :class: tudproof, dropdown
-The function $y_1(t)=e^{rt}$ is a solution by construction. We need to check that $y_2(t)=te^{rt}$ is a solution as well. In order to see this, we note that $r$ being a double root means that the discriminant $D=b^2-4ac=0$. Then, we can express $r$ in terms of the coefficients $a$, $b$, and $c$ as
+The function $y_1(t)=e^{rt}$ is a solution by construction. We need to check that $y_2(t)=te^{rt}$ is a solution as well. In order to see this, we note that $r$ being a double root means that the discriminant satisfies $D=b^2-4ac=0$. Then, we can express $r$ in terms of the coefficients $a$, $b$, and $c$ as
 
 $$
  r=\frac{-b\pm\sqrt{D}}{2a}=\frac{-b}{2a}.
@@ -215,7 +206,7 @@ This means that $2ar+b=0$. Moreover, $r$ is a solution of the characteristic equ
 $$
 \begin{align*}
 ay''+by'+cy&=a(r^2t+2r)e^{rt}+b(rt+1)e^{rt}+cte^{rt}\\
-&=(ar^2+br+1)te^{rt}+(2ar+b)e^{rt}\\
+&=(ar^2+br+c)te^{rt}+(2ar+b)e^{rt}\\
 &=0+0\\
 &=0.
 \end{align*}
@@ -293,7 +284,7 @@ $$
  y_2(t)=e^{\alpha t}\sin(\beta t).
 $$
 
-Since linear combinations (even complex ones) of linear, homogeneous equations are again solutions, the functions $y_1$ and $y_2$ are solutions of the differential equation. These solutions are real and linearly independent. This implies that the general solution is 
+Since linear combinations (even complex ones) of linear, homogeneous differential equations are again solutions, the functions $y_1$ and $y_2$ are solutions of the differential equation. These solutions are real and linearly independent. This implies that the general solution is 
 
 $$
  y(t)=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t)
@@ -320,7 +311,7 @@ with $c_1,c_2\in\mathbb{R}$.
 
 :::{admonition} Proof of {prf:ref}`Thm:ODE2:Twocomplex`
 :class: tudproof, dropdown 
-The functions $\tilde{y}_1(t)=e^{(\alpha+i\beta)t}$ and $\tilde{y}_2(t)=e^{(\alpha-i\beta)t}$ are complex solutions of the differential equation by construction. By {prf:ref}`Thm:DE:SuperpositionPrinciple`, the functions
+The functions $\tilde{y}_1(t)=e^{(\alpha+i\beta)t}$ and $\tilde{y}_2(t)=e^{(\alpha-i\beta)t}$ are complex-valued solutions of the differential equation by construction. By {prf:ref}`Thm:DE:SuperpositionPrinciple`, the functions
 
 \begin{align*}
  y_1(t)=&\frac{1}{2}\left(\tilde{y}_1(t)+\tilde{y}_2(t)\right)\\
@@ -336,7 +327,7 @@ and
  =&e^{\alpha t}\sin(\beta t)
 \end{align*}
 
-are solutions of this differential equation as well. We see that these solutions are both real.
+are solutions of this differential equation as well. We see that these solutions are both real-valued.
 
 Finally, we need to show that $y_1$ and $y_2$  are linearly independent. Consider $c_1$ and $c_2$ with
 
@@ -396,7 +387,7 @@ $$
 \begin{cases}ay''+by'+cy=0,\\ \\y(t_0)=y_0,\quad y'(t_0)=y_0'\end{cases}
 $$
 
-has a unique solution. Here $a\neq 0$, $b$ and $c$ are real constants. In the next example, we will show how to find this specific solution from the general solution.
+has a unique solution. Here $a\neq 0$, $b$, $c$, $y_0$ and $y_0'$ are real constants. In the next example, we will show how to find this specific solution from the general solution.
 
 ::::::{prf:example}
 :label: Ex:ODE2:IVP
@@ -461,7 +452,7 @@ Hence, $y(t)=3e^{2t}+2e^{-3t}$ is the unique solution of the initial-value probl
 
 ### Boundary-value problems
 
-On the other hand, boundary-value problems do not always have a unique solution, as can be seen from the following example.
+On the other hand, boundary-value problems do not always have a unique solution, as can be seen from the following example. In general, a boundary-value problem can have $0$, $1$ or infinitely many solutions.
 
 ::::::{prf:example}
 :label: Ex:ODE2:BVP
@@ -573,13 +564,13 @@ $$
 where $g$ is the acceleration due to gravity, $L$ is the length of the pendulum, and $\theta$ is
 the (small) angular displacement with respect to the equilibrium position at time $t$.
 
-It is quite difficult to solve this differential equation analytically. Instead, we note that the linearization of the function $f(x)=\sin(x)$ at $x=0$ is
+It is quite difficult to solve this differential equation analytically. Instead, we note that the linearization of the function $f(x)=\sin(\theta)$ at $\theta=0$ is
 
 $$
-L(x)=f(0)+f'(0)(x-0)=x.
+L(\theta)=f(0)+f'(0)(\theta-0)=\theta.
 $$
 
-This implies that $\sin(x)\approx x$ for $x$ near $0$. It is much easier to solve the differential equation
+This implies that $\sin(\theta)\approx \theta$ for $\theta$ near $0$. It is much easier to solve the differential equation
 
 $$
 \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
@@ -615,7 +606,7 @@ $$
  \theta(t)=\theta_0\cos\left(\sqrt{\frac{g}{L}}t\right).
 $$
 
-Of course, we made an approximation of the original nonlinear differential equation, so this function will **not** be a solution of the original equation. Still, for small values of $\theta$, it is a good approximation of the real solution.
+It is important to note that we made an approximation of the original nonlinear differential equation, so this function will **not** be a solution of the original equation. Still, for small values of $\theta$, it is a good approximation of the actual solution.
 
 ### A mass-spring system
 
@@ -655,7 +646,7 @@ $$
 5\frac{d^2x}{dt^2}+180x(t)=0.
 $$
 
-This is a second-order, linear, homogemenous equation with constant coefficients, so we try $x=e^{rt}$. This gives the characteristic equation
+This is a second-order, linear, homogemenous equation with constant coefficients, so we try $x(t)=e^{rt}$. This gives the characteristic equation
 
 $$
  5r^2+180=0
@@ -780,7 +771,7 @@ $$
 
 Because of the cosine and the sine, the solution will keep on oscillating, with decreasing amplitude because of the exponential. Again, this behaviour matches our physical intuition: if the damping coefficient of the medium is low (say, something like air), we expect the solution to keep on oscillating. This case where we have two nonreal roots is, as such, known as the **underdamped** case.
 
-Finally, we consider the critical value of the damping constant when we move betwen the overdamped and the overdamped case. Mathematically, this corresponds to the case where we have a double real root. For this system, this happens when $c=10$. Indeed, in that case we have the differential equation
+Finally, we consider the critical value of the damping constant when we move between the overdamped and the overdamped case. Mathematically, this corresponds to the case where we have a double real root. For this system, this happens when $c=10$. Indeed, in that case we have the differential equation
 
 $$
  x''+10x'+25x=0
@@ -823,7 +814,7 @@ Consider an electrical circuit where a resistor with resitance $R$ (in ohm $\Ome
 A source-free electrical circuit, where a resistor with resitance $R$, an inductor with inductance $L$ and a capacitor with capacitance $C$ are placed in series. The current $i(t)$ is the quantitiy of interest.
 :::
 
-The main goal is to see how the current $i(t)$ evolves in time. We assume that there is some energy stored initially in the capacitor and the inductor (otherwise there would be no current at all). For the initial current, we assume that $i(0)=I_0$ for some $I_0>0$. We let $v(t)$ represent the voltage across the capacitor. It can then be shown that
+The main goal is to see how the current $i(t)$ (in ampere $A$) evolves in time (in seconds $s$). We assume that there is some energy stored initially in the capacitor and the inductor (otherwise there would be no current at all). For the initial current, we assume that $i(0)=I_0$ for some $I_0>0$. We let $v(t)$ (in volt $V$) represent the voltage across the capacitor. It can then be shown that
 
 $$
  v(t)=\frac{1}{C}\int_{-\infty}^t i(s)\,ds
@@ -947,7 +938,14 @@ $$
  I''(t)=\alpha^2\displaystyle\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx=\alpha^2I(t).
 $$
 
-This means that $I(t)$ satisfies a second-order, linear, homogeneous differential equation. The characteristic equation is given by
+This means that $I(t)$ satisfies the second-order, linear, homogeneous differential equation
+
+$$
+ I''(t)=\alpha^2 I(t).
+$$
+
+
+The characteristic equation is given by
 
 $$
  r^2-\alpha^2=0,

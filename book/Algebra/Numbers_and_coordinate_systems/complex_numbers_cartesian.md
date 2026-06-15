@@ -947,7 +947,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/adb8493e-88f8-462d-b069-f6192060f0a1?id=75397
-:label: grasple_exercise_10_1_1
+:label: Grasple:75397
 :dropdown:
 :description: Real part of a complex number.
 
@@ -956,7 +956,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/95288a05-3c20-4a1e-b9c6-04de1a8af535?id=75398
-:label: grasple_exercise_10_1_2
+:label: Grasple:75398
 :dropdown:
 :description: Imaginary part of a complex number.
 
@@ -965,7 +965,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/2daad980-d96a-46ba-a3aa-ae18686532e2?id=75394
-:label: grasple_exercise_10_1_3
+:label: Grasple:75394
 :dropdown:
 :description: Adding two complex numbers.
 
@@ -974,7 +974,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/c9dd1334-3902-43cb-ba40-5a31f1e8ca27?id=75395
-:label: grasple_exercise_10_1_4
+:label: Grasple:75395
 :dropdown:
 :description: Subtracting two complex numbers.
 
@@ -983,7 +983,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/0a153784-60f8-4bc7-bc28-dea031bc3d22?id=75396
-:label: grasple_exercise_10_1_5
+:label: Grasple:75396
 :dropdown:
 :description: Multiplying two complex numbers.
 
@@ -992,7 +992,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/0d7b1ba0-a763-4c49-a38c-4b3330f32ba9?id=75417
-:label: grasple_exercise_10_1_6
+:label: Grasple:75417
 :dropdown:
 :description: Dividing two complex numbers.
 
@@ -1010,7 +1010,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/f9375305-f2ae-4a2e-93f7-6988923f488f?id=65961
-:label: grasple_exercise_10_1_7
+:label: Grasple:65961
 :dropdown:
 :description: Complex conjugate of a complex number.
 
@@ -1019,7 +1019,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/4fcf5b83-042c-4154-a85f-c2a857f9f363?id=75400
-:label: grasple_exercise_10_1_8
+:label: Grasple:75400
 :dropdown:
 :description: Multiplying a complex number with it's complex conjugate.
 
@@ -1048,7 +1048,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/a0af469e-5580-419f-83ff-cabc8ae8a75a?id=66105
-:label: grasple_exercise_10_1_9
+:label: Grasple:66105
 :dropdown:
 :description: Completing the square with real coefficients.
 
@@ -1066,7 +1066,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/bf1837c9-59c1-4389-9e38-93f116000d34?id=66106
-:label: grasple_exercise_10_1_10
+:label: Grasple:66106
 :dropdown:
 :description: Completing the square with complex coefficients.
 
@@ -1075,7 +1075,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/f5426424-0d72-484c-a547-154ab867089a?id=66107
-:label: grasple_exercise_10_1_11
+:label: Grasple:66107
 :dropdown:
 :description: Completing the square with complex coefficients.
 
@@ -1093,7 +1093,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/eb0d0a6f-403a-4581-acf9-7ff821835695?id=122754
-:label: grasple_exercise_10_1_12
+:label: Grasple:122754
 :dropdown:
 :description: Polynomial long division.
 
@@ -1102,16 +1102,16 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/fd1ba3d4-3cc1-417e-9e0a-0d33b3f808ee?id=122756
-:label: grasple_exercise_10_1_13
+:label: Grasple:122756
 :dropdown:
-:description: Another long division with polynomials.
+:description: Polynomial long division.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/d231f221-3d67-4360-b1c2-59432d6f1f61?id=68322
-:label: grasple_exercise_10_1_14
+:label: Grasple:68322
 :dropdown:
 :description: Counting solutions of a polynomial equation.
 
@@ -1120,7 +1120,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/3737e7f3-2e03-4d0a-af25-a3ee4d809b1c?id=66004
-:label: grasple_exercise_10_1_15
+:label: Grasple:66004
 :dropdown:
 :description: On the relation between roots of polynomials.
 
@@ -1131,7 +1131,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/7594cf18-983a-4761-81f0-7245aa4bb314?id=68310
-:label: grasple_exercise_10_1_16
+:label: Grasple:68310
 :dropdown:
 :description: Solving a cubic equation given a root.
 
@@ -1149,7 +1149,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/f7d1e049-692a-4eb3-8c02-67f56c915c76?id=68311
-:label: grasple_exercise_10_1_17
+:label: Grasple:68311
 :dropdown:
 :description: Solving a quartic equation given two roots.
 
@@ -1158,7 +1158,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/4630b883-b306-44c8-86a9-8ab8d35f5036?id=68312
-:label: grasple_exercise_10_1_18
+:label: Grasple:68312
 :dropdown:
 :description: Solving a quartic equation given one root.
 

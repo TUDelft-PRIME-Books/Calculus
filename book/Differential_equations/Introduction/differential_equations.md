@@ -466,7 +466,7 @@ Apart from being easier to solve than nonlinear equations, equations that are li
 :label: Thm:DE:SuperpositionPrinciple
 If $y_1(x)$ and $y_2(x)$ are both solutions of a linear, homogeneous differential equation, then $y(x)=c_1y_1(x)+c_2y_2(x)$ is also a solution for each $c_1,c_2\in\mathbb{R}$.
 
-For complex $c_1,c_2\in\mathbb{C}$, the linear combination $y(x)=c_1y_1(x)+c_2y_2(x)$ is a (possibly) complex solution of the differential equation.
+For complex $c_1,c_2\in\mathbb{C}$, the linear combination $y(x)=c_1y_1(x)+c_2y_2(x)$ is a complex-valued solution of the differential equation.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:DE:SuperpositionPrinciple`

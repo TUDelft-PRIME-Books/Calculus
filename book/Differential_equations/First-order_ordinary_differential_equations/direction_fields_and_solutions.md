@@ -38,10 +38,10 @@ At each point $(t,y(t))$ on the graph of a solution $y(t)$ of the differential e
 If we have sketched a direction field on a sufficiently fine grid (or better, let a computer do this for us), we can use this to sketch graphs of solutions. Indeed, the arrows should be tangent to the graph of the solution that goes through the point. So if we follow the arrows, we obtain a sketch of the graph of a solution.
 
 ::::::{prf:example}
-Consider the differential equation $\dfrac{dy}{dt}=t+y$. We want to sketch a slope field for this differential equation. For this, we first choose any point, say the point $(t,y)=(0,1)$. Then we compute that the slope of the solution at that point should be
+Consider the differential equation $\dfrac{dy}{dt}=t+2y$. We want to sketch a slope field for this differential equation. For this, we first choose any point, say the point $(t,y)=(0,1)$. Then we compute that the slope of the solution at that point should be
 
 $$
- \left.\frac{dy}{dt}\right|_{(t,y)=(0,1)}=0+1=1.
+ \left.\frac{dy}{dt}\right|_{(t,y)=(0,1)}=0+2\cdot1=2.
 $$
 
 We draw a short line segment with slope $1$ at the point $(0,1)$. This gives the following figure.
@@ -57,11 +57,11 @@ Just one line segment is, of course, not enough to determine the qualitative beh
 :name: Fig:ODE1Slope:DF1
 :class: dark-light
 
-A slope field for the differential equation $\dfrac{dy}{dt}=t+y$. 
+A slope field for the differential equation $\dfrac{dy}{dt}=t+2y$. 
 :::
 
 :::{todo}
-Turn {numref}`Fig:ODE1Slope:DF1` into an applet. Make sure the horizontal axis is labeled $t$ instead of $x$. Maybe arrows instead of line segments? Should also be adjusted in the text in that case.
+Turn {numref}`Fig:ODE1Slope:DF1` into an applet (note: the old picture is of a different differential equation). Make sure the horizontal axis is labeled $t$ instead of $x$. Maybe arrows instead of line segments? Should also be adjusted in the text in that case.
 :::
 
 We can now try to sketch the graph of the solution that satisfies the initial condition $y(0)=1$, i.e. the solution that goes through the point $(t,y)=(0,1)$. For this, we follow the direction in the slope field, both forward and backward. This gives the following sketch of the graph of the solution.
@@ -71,19 +71,19 @@ We can now try to sketch the graph of the solution that satisfies the initial co
 :name: Fig:ODE1Slope:DF1sol
 :class: dark-light
 
-A slope field for the differential equation $\dfrac{dy}{dt}=t+y$ with the graph of the solution with $y(0)=1$ sketched in the slope field.
+A slope field for the differential equation $\dfrac{dy}{dt}=t+2y$ with the graph of the solution with $y(0)=1$ sketched in the slope field.
 :::
 
 :::{todo}
-Turn {numref}`Fig:ODE1Slope:DF1sol` into an applet. Make sure the horizontal axis is labeled $t$ instead of $x$. Maybe arrows instead of line segments? Should also be adjusted in the text in that case.
+Turn {numref}`Fig:ODE1Slope:DF1sol` into an applet. Make sure the horizontal axis is labeled $t$ instead of $x$ (note: the old picture is of a different differential equation). Maybe arrows instead of line segments? Should also be adjusted in the text in that case.
 :::
 ::::::
 
 ::::::{prf:example}
-Consider the differential equation $\dfrac{dy}{dx}=x^2+y^2-1$. Then we can find its slope field by taking a grid of points and for each point $(x,y)$ on the grid, computing the slope $\dfrac{dy}{dx}$ as $x^2+y^2-1$. For instance, at the point $(x,y)=(0,2)$ we have the slope
+Consider the differential equation $\dfrac{dy}{dx}=4x^3-y^3-3$. Then we can find its slope field by taking a grid of points and for each point $(x,y)$ on the grid, computing the slope $\dfrac{dy}{dx}$ as $4x^3-y^3-3$. For instance, at the point $(x,y)=(0,2)$ we have the slope
 
 $$
- \left.\frac{dy}{dx}\right|_{(x,y)=(0,2)}=0^2+2^2-1=3.
+ \left.\frac{dy}{dx}\right|_{(x,y)=(0,2)}=4\cdot 0^3-t 2^3-3=-11.
 $$
 
 This gives the following slope field.
@@ -92,11 +92,11 @@ This gives the following slope field.
 :name: Fig:ODE1Slope:DF2sol
 :class: dark-light
 
-A slope field for the differential equation $\dfrac{dy}{dx}=x^2+y^2-1$ with the graphs of the solutions with $y(0)=k$ for $k$ in $\{-2,-1,0,1,2\}$ sketched in the slope field.
+A slope field for the differential equation $\dfrac{dy}{dx}=4x^3-y^3-3$ with the graphs of the solutions with $y(0)=k$ for $k$ in $\{-2,-1,0,1,2\}$ sketched in the slope field.
 :::
 
 :::{todo}
-Turn {numref}`Fig:ODE1Slope:DF2sol` into an applet. Maybe arrows instead of line segments? 
+Turn {numref}`Fig:ODE1Slope:DF2sol` into an applet (note: the old picture is of a different differential equation). Maybe arrows instead of line segments? 
 :::
 ::::::
 
