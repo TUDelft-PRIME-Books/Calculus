@@ -118,4 +118,117 @@ Include the slope field of $y'=(y+1)(y-2)(y+t-1)$. Do not state the differential
 Can we identify the equilibrium solutions in this slope field? Since equilibrium solutions correspond to horizontal lines of horizontal arrows, we conclude that $y=-1$ and $y=2$ must be equilibrium solutions. Note that there are other arrows that are horizontal, such as at $(t,y)=(0,1)$, but since other arrows on the horizontal line through this arrow are not horizontal, this does not correspond to an equilibrium solution.
 ::::::
 
+## Grasple exercises
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2e5c4c1c-bbc7-4661-bf38-a8de2ddaa7b9?id=122356
+:label: Grasple:122356
+:dropdown:
+:description: Match the differential equation with its slope field.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/70155ec5-7a46-4ec6-9a5c-e6de23aa60c8?id=63841
+:label: Grasple:63841
+:dropdown:
+:description: Match the differential equation with its slope field.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fcc2d727-b755-400b-a653-a37faa84a18f?id=122357
+:label: Grasple:122357
+:dropdown:
+:description: Match the differential equation with its slope field.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2edfedd7-b232-4359-af53-d296885d282d?id=122358
+:label: Grasple:122358
+:dropdown:
+:description: Match the differential equation with its slope field.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/91a1abec-3a93-496e-9493-39a6dede34f6?id=122359
+:label: Grasple:122359
+:dropdown:
+:description: Match the differential equation with its slope field.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a810fa0b-7227-4fc0-9c6a-958a94931f8c?id=122360
+:label: Grasple:122360
+:dropdown:
+:description: Match the differential equation with its slope field.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f0d7f9b3-9f25-44cf-ac27-17aeda047d6d?id=122361
+:label: Grasple:122361
+:dropdown:
+:description: Match the differential equation with its slope field.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/35da40cc-8c12-4fec-97e7-85d2129bd92a?id=122362
+:label: Grasple:122362
+:dropdown:
+:description: Match the differential equation with its slope field.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a9633335-5d34-4a01-865f-9107dd2352a0?id=122363
+:label: Grasple:122363
+:dropdown:
+:description: Match the differential equation with its slope field.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8990dee9-f2fb-43d9-95bd-c6684181a9a1?id=63822
+:label: Grasple:63822
+:dropdown:
+:description: Match the slope field with its differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2d2ce4f3-9f93-4be8-b5c6-a5bc13e1104f?id=116693
+:label: Grasple:116693
+:dropdown:
+:description: Match the slope field with its differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4c063499-111c-47c3-8160-4ee7d7684b8e?id=78809
+:label: Grasple:78809
+:dropdown:
+:description: Match the slope field with its differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/17f0e668-9463-48e4-b954-472a49480220?id=78811
+:label: Grasple:78811
+:dropdown:
+:description: Finding tangent line to a solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b416b50f-04d5-42f2-9e32-291a4d3d59ec?id=63827
+:label: Grasple:63827
+:dropdown:
+:description: Defining and finding an isocline.
+::::::
 

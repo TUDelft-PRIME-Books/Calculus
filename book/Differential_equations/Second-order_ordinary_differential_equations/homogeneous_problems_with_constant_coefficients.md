@@ -976,12 +976,12 @@ $$
 $$
 ::::::
 
-## (Grasple) exercises
+## Grasple exercises
 
 ::::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/00da73f8-266e-4fdf-aa13-09c66804d8d3?id=76568
-:label: grasple_exercise_13_1_1
+:label: Grasple:76568
 :dropdown:
 :description: Find the general solution.
 ::::::
@@ -989,7 +989,185 @@ $$
 ::::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/96b7c05c-56c7-4a02-875f-e4ce8668dfad?id=76567
-:label: grasple_exercise_13_1_2
+:label: Grasple:76567
 :dropdown:
 :description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/08e02672-898f-4144-9699-d38f351232d6?id=76566
+:label: Grasple:76566
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a184969c-89e0-41e9-8d56-a840834d3f9e?id=76565
+:label: Grasple:76565
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/92d5b7c4-5bd2-4c75-91ef-f5a49ea27eb0?id=76564
+:label: Grasple:76564
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3c990ffd-b1b8-4194-82d4-76d9ebae109f?id=76569
+:label: Grasple:76569
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/24057fb0-4e97-4dca-bd96-5d9144b00851?id=76570
+:label: Grasple:76570
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c9f9a07a-423c-4681-8309-e0f435987724?id=76561
+:label: Grasple:76561
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d22c5bf7-4203-4051-81db-9e4475776da7?id=76560
+:label: Grasple:76560
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2719c2f6-59fc-41ee-81fa-f3ebc7820ed6?id=76559
+:label: Grasple:76559
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/994fdf7e-e5ab-42b7-9bc7-7e3f7bf04957?id=76558
+:label: Grasple:76558
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/82dfd24d-bb24-4582-bfbc-cddf23da7ff7?id=76557
+:label: Grasple:76557
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8981cbff-d395-4c04-87fe-c18b1bc45c86?id=76562
+:label: Grasple:76562
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d6922b52-9fc8-4672-92db-212c8d179d8a?id=76563
+:label: Grasple:76563
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/78249822-fcc0-4c76-b23c-6aa49288a3db?id=116597
+:label: Grasple:116597
+:dropdown:
+:description: Application: Mass-spring system
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/09a2ff52-715a-4bc5-bd0c-da217ce10119?id=116599
+:label: Grasple:116599
+:dropdown:
+:description: Application: Mass-spring system
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b255be7f-f17c-406a-90ce-fedca203f5df?id=66983
+:label: Grasple:66983
+:dropdown:
+:description: Application: Mass-spring system
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9b6f095c-3664-4b9b-9e5f-77ecb4b6934d?id=66956
+:label: Grasple:66956
+:dropdown:
+:description: Application: Mass-spring system
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ae45940e-eecc-45c6-83ff-1a3953090258?id=66981
+:label: Grasple:66981
+:dropdown:
+:description: Application: Mass-spring system
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f2065608-d4ee-432f-b27b-6b1717f9d069?id=66960
+:label: Grasple:66960
+:dropdown:
+:description: Application: Mass-spring system
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/13da7b99-1c14-467c-9783-3be118478288?id=66979
+:label: Grasple:66979
+:dropdown:
+:description: Application: Mass-spring system
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4ff14a26-6d0a-4864-bb27-eb226115b536?id=71496
+:label: Grasple:71496
+:dropdown:
+:description: Application: Mass-spring system
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c09b1f4a-a934-4571-99d6-5491b9f2951c?id=79430
+:label: Grasple:79430
+:dropdown:
+:description: Application: Electrical circuit
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bcb17927-76fc-44c2-88b6-e509bfceb3c3?id=79429
+:label: Grasple:79429
+:dropdown:
+:description: Application: Electrical circuit
 ::::::
