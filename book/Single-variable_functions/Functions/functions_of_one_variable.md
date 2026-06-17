@@ -326,9 +326,42 @@ The curves $C_1$ and $C_2$.
 
 ::::::
 
-:::{todo}
-Idea for interactivity: make tool that students can draw a curve. Then a draggable vertical line appears and it becomes red/bold/whatever whenever the vertical line intersets the curve more than once. It should not be too sensitive, as it is easy to go 1 pixel to the left when attempting to go to the right.
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+Consider the curves given by all points $(x,y)$ that satisfy the equation $x^p-y^q=b$, where $p$ can be chosen from $\{2,3,\ldots,9\}$, $q$ from $\{2,3,\ldots,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$. You can show curves for different values of $p$, $q$ and $b$ in {numref}`Fig:Functions1var:VerticalLineQuestion`. The first slider controls the value of $p$, the second slider controls the value of $q$ and the third slider controls the value of $b$.
+
+_Complete the following sentences by selecting the correct options from the dropdown menus. You can use the vertical line test in {numref}`Fig:Functions1var:VerticalLineQuestion`._
+
+---
+DS[{odd};even]
+DS[{negative};non-positive;zero;non-negative;positive]
+DS[{never};sometimes;always]
+DS[{odd};even]
+DS[negative;non-positive;zero;non-negative;{positive}]
+^^^
+? :::{card}
+Only when $q$ is {gap}, the curve is the graph of a function for all values of $p$ and $b$.
+
+In the other case for $q$, if $b$ is {gap}, then there is {gap} a curve.
+
+When $p$ and $q$ are both {gap} and $b$ is {gap}, the curve makes a closed loop and is not the graph of a function.
 :::
+---
+
+:::{applet}
+:url: calculus/functions_of_one_variable/implicit_curves
+:name: Fig:Functions1var:VerticalLineQuestion
+:class: dark-light
+
+The curve $C$ is given by all points $(x,y)$ that satisfy the equation $x^p-y^q=b$, where $p$ can be chosen from $\{2,3,\ldots,9\}$, $q$ from $\{2,3,\ldots,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$.
+:::
+
+::::
 
 
 (Subsec:Functions1dElementary)=
@@ -486,31 +519,64 @@ The graph of the quadratic function $k(x)=2-3x^2$.
 
 ::::::
 
-:::{todo}
-Make multiselect poll. Consider quadratic function $h(x)=ax^2+bx+c$. Which are true/false:
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
 
-- $h(0)=c$ True
-- $h(x)=0$ gives $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ provided $b^2-4ac\geq 0$. True
-- If $a>0$ then the parabola opens upwards True
-- If $a<0$ then the parabola opens downwards True
-- If $a=0$ then the function is linear or even constant. True
-:::
+Consider quadratic function $h(x)=ax^2+bx+c$. Select all true statements about this function.
+
+---
+[x] $h(0)=c$.
+> Indeed, if $x=0$, then $x^2=0$, so $h(0)=a\cdot 0^2+b\cdot 0+c=c$.
+[x] $h(x)=0$ gives $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ provided $b^2-4ac\geq 0$.
+> Indeed, solving $ax^2+bx+c=0$ using the quadratic formula gives the desired result.
+[x] If $a>0$ then the parabola opens upwards.
+> Indeed, when $a>0$, the parabola opens upwards.
+[x] If $a<0$ then the parabola opens downwards.
+> Indeed, when $a<0$, the parabola opens downwards.
+[x] If $a=0$ then the function is linear or even constant.
+> Indeed, if $a=0$, then $h(x)=bx+c$, which is a linear function, or if $b=0$, it is a constant function.
+---
+::::
 
 ::::::{prf:example} Power functions with positive integer power
 :label: Ex:Functions1var:CubicAndHigher
-We now consider a function of the form $g(x)=x^n$ for some positive integer $n\geq 2$. This is both a polynomial and a power function. The behaviour of this function will greatly depend on whether $n$ is even or odd. 
+:class: full-width
 
-:::{figure} Images/Fig-Functions1var-CubicAndHigher.png
+We now consider a function of the form $g(x)=x^n$ for some positive integer $n\geq 2$. This is both a polynomial and a power function. The behaviour of this function will greatly depend on whether $n$ is even or odd.
+
+:::::{figure-start}
 :name: Fig:Functions1var:CubicAndHigher
 
-On the left the functions $x^2$, $x^4$, $x^6$ and $x^8$ are plotted, while on the right the functions $x^3$, $x^5$, $x^7$ and $x^9$ are plotted. In both cases, the part of the graph between $-2$ and $2$ is shown.
+On the left a function $g(x)=x^n$ with $n$ even is plotted, while on the right a function $g(x)=x^n$ with $n$ odd is plotted.
+:::::
+
+:::::{grid} 2 2 2 2
+::::{grid-item}
+
+:::{applet}
+:url: calculus/functions_of_one_variable/power_functions_even
+:class: dark-light
 :::
 
-:::{todo}
-Replace {numref}`Fig:Functions1var:CubicAndHigher` with an applet.
+::::
 
-Alternative: make the left one into one graph with a slider for $n$ and same for the right one.
+::::{grid-item}
+
+:::{applet}
+:url: calculus/functions_of_one_variable/power_functions_odd
+:class: dark-light
 :::
+
+::::
+:::::
+
+:::::{figure-end}
+:::::
+
 
 Indeed, for even values of $n$, the graph of $g(x)=x^n$ resembles the parabola $y=x^2$, while for odd values of $n$, the graph is similar to that of $x^3$. In particular, for even values of $n$ the graph of the function is symmetric around the $y$-axis. In {numref}`Section:PropertiesFunctions` we will call a function with this property **even** (so now you already know where that name comes from). Similarly, for odd values of $n$ the graph of the function is point symmetric with respect to the origin and such a function will be called **odd**.
 
