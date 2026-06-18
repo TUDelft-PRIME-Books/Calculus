@@ -72,35 +72,29 @@ If $f$ has domain $D$ and codomain $C$ we write $f:D\rightarrow C$. We also writ
 If we do not explicitly specify the domain and/or codomain of a function $f$, we use the symbols $D_f$ for the domain of $f$ and $C_f$ for the codomain of $f$.
 ::::::
 
-:::::::::{admonition} Bonus: formal definition of a function
-:class: bonus, dropdown
 {prf:ref}`Def:Functions1var:Function` is good enough for the purpose of this book, but for those of you who are interested, we also provide the formal definition of a function.
 
-::::::{prf:definition} 
+::::::{prf:definition} Formal definition of a function
 :label: Def:Functions1var:Functionformal
+:class: bonus, dropdown
 
 Let $D$ and $C$ be sets. Then the **product set** $D\times C$ is the set of all ordered pairs $(x,y)$ with $x$ in $D$ and $y$ in $C$.
 
 A **function** $f$ with **domain** $D$ and **codomain** $C$ is a subset $f\subset (D\times C)$ such that for each $x\in D$ there is exactly one $y\in C$ with $(x,y)\in f$. For each pair $(x,y)\in f$ we write $y=f(x)$.
 
 ::::::
-:::::::::
 
 
 So how should you think about a function? There are several different perspectives you can take, but it may be helpful to think about a function as a machine that takes an **input value** $x$ and turns this into an **output value** or **function value** $f(x)$. We also say that $x$ is **mapped to** $f(x)$. 
 
 Note that a function only works in one direction: we can always insert an element of the domain to obtain an element of the codomain, but it is not always possible to go back, see {numref}`Fig:Functions1var:Diagram` (we will dive deeper into the question if/when it is possible to go back in {numref}`Section:Inverse`).
 
-:::::{margin}
-::::{figure} Images/Fig-Functions1var-Diagram.png
+:::{applet}
+:url: calculus/functions_of_one_variable/diagram
 :name: Fig:Functions1var:Diagram
+:class: dark-light
 
 A diagram can be used to graphically represent that a function $f$ maps an element $x$ in the domain $D_f$ to another element $f(x)$ in the codomain $C_f$.
-::::
-:::::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Diagram` with an applet. Use $D_f$ instead of $D$ and $C_f$ instead of $C$.
 :::
 
 In addition, if $f$ is a function and we have $f(x)=y$ for some $x$ in $D_f$ and $y$ in $C_f$, we see that $y$ is determined by $x$. That means that the value of $y$ depends on the value of $x$, while the value of $x$ can be chosen freely (within the domain of $f$). As such, for this formula $f(x)=y$ the variable $y$ is referred to as the **dependent variable**, while $x$ is an **independent variable**.
@@ -224,17 +218,13 @@ we see that if the pressure increases the temperature increases, while if the pr
 An essential part of understanding functions of a single variable is to try to visualise their behaviour. In principle, a function is a rule that maps an element $x$ to another element $f(x)$, so how is it possible to visualise this? Since each $x$ in the domain corresponds to exactly one $f(x)$, we could try to plot the point $(x,f(x))$ in $\mathbb{R}^2$. If we do this for each value of $x$, we have captured the full behaviour of the function in one picture. Such a plot is called the **graph** of a function. So for each point $(x,y)$ on the graph of $f$ we necessarily have $f(x)=y$. 
 
 
-:::::{margin}
-::::{figure} Images/Fig-Functions1var-GraphBasic.png
+::::{applet}
+:url: calculus/functions_of_one_variable/concept_of_a_graph
 :name: Fig:Functions1var:Graph
+:class: dark-light
 
 The graph of a function $f$ can be used to read off the value $f(a)$ for a given value $a$. The domain and range of $f$ can also be read off from the graph.
 ::::
-:::::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Graph` with an applet.
-:::
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Graph
@@ -265,22 +255,40 @@ You will learn more about curves that are not (necessarily) graphs of functions 
 
 ::::::{prf:example} 
 :label: Ex:Functions1var:Verticalline
+:class: full-width
 
 Consider the two curves shown below.
 
-::::{figure} Images/Fig-Functions1var-Verticalline.png
+:::::{figure-start}
 :name: Fig:Functions1var:Verticalline
 
 Two curves in $\mathbb{R}^2$ and a vertical line for the vertical line test.
-::::
+:::::
 
-:::{todo}
-Replace {numref}`Fig:Functions1var:Verticalline` with an applet.
+:::::{grid} 2 2 2 2
+::::{grid-item}
 
-Do not show the functions in the final image.
+:::{applet}
+:url: calculus/functions_of_one_variable/vertical_line_test_1
+:class: dark-light
 :::
 
-Can we check whether these curves are the graph of a function? For the curve on the left, each vertical line intersects the curve exactly once, so this curve is the graph function. You might wonder of which function this curve is the graph. Without further knowledge of the function, this is impossible, unfortunately. Still, for a given $x$, we can read off what the function value $f(x)$ will be approximately. For instance, we can read off that $f(0)=0$ (or maybe something very close to $0$), while $f(1)$ is approximately $ 1.8$.
+::::
+
+::::{grid-item}
+
+:::{applet}
+:url: calculus/functions_of_one_variable/vertical_line_test_2
+:class: dark-light
+:::
+
+::::
+:::::
+
+:::::{figure-end}
+:::::
+
+Can we check whether these curves are the graph of a function? For the curve on the left, each vertical line intersects the curve exactly once, so this curve is the graph function. You might wonder of which function this curve is the graph. Without further knowledge of the function, this is impossible, unfortunately. Still, for a given $x$, we can read off what the function value $f(x)$ will be approximately. For instance, we can read off that $f(0)=0$ (or maybe something very close to $0$), while $f(1)$ is approximately $ 1.9$.
 
 The curve on the right, on the other hand, is not the graph of a function. Some vertical lines, like the line $x=-1$, intersect the curve once, but there are also vertical lines that intersect the curve multiple times, such as the line $x=1$, which intersects the curve $3$ times. If this curve were to be the graph of a function $f$, then $f(1)$ would need to be all three corresponding values of $y$ at the same time, which is impossible.
 ::::::
@@ -307,21 +315,53 @@ Now, the expression $\pm x$ might look like a formula describing a function to y
 
 This result is also visible in the plot of the two curves, shown below.
 
-:::{figure} Images/Fig-Functions1var-VerticalLine2.png
+:::{applet}
+:url: calculus/functions_of_one_variable/two_implicit_curves
 :name: Fig:Functions1var:VerticalLine2
+:class: dark-light
 
 The curves $C_1$ and $C_2$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Functions1var:VerticalLine2` with an applet.
-:::
 
 ::::::
 
-:::{todo}
-Idea for interactivity: make tool that students can draw a curve. Then a draggable vertical line appears and it becomes red/bold/whatever whenever the vertical line intersets the curve more than once. It should not be too sensitive, as it is easy to go 1 pixel to the left when attempting to go to the right.
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+Consider the curves given by all points $(x,y)$ that satisfy the equation $x^p+y^q=b$, where $p$ can be chosen from $\{2,3,\ldots,9\}$, $q$ from $\{2,3,\ldots,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$. You can show curves for different values of $p$, $q$ and $b$ in {numref}`Fig:Functions1var:VerticalLineQuestion`. The first slider controls the value of $p$, the second slider controls the value of $q$ and the third slider controls the value of $b$.
+
+_Complete the following sentences by selecting the correct options from the dropdown menus. You can use the vertical line test in {numref}`Fig:Functions1var:VerticalLineQuestion`._
+
+---
+DS[{odd};even]
+DS[{negative};non-positive;zero;non-negative;positive]
+DS[{never};sometimes;always]
+DS[{odd};even]
+DS[negative;non-positive;zero;non-negative;{positive}]
+^^^
+? :::{card}
+Only when $q$ is {gap}, the curve is the graph of a function for all values of $p$ and $b$.
+
+In the other case for $q$, if $b$ is {gap}, then there is {gap} a curve.
+
+When $p$ and $q$ are both {gap} and $b$ is {gap}, the curve makes a closed loop and is not the graph of a function.
 :::
+---
+
+:::{applet}
+:url: calculus/functions_of_one_variable/implicit_curves
+:name: Fig:Functions1var:VerticalLineQuestion
+:class: dark-light
+
+The curve $C$ is given by all points $(x,y)$ that satisfy the equation $x^p+y^q=b$, where $p$ can be chosen from $\{2,3,\ldots,9\}$, $q$ from $\{2,3,\ldots,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$.
+:::
+
+::::
 
 
 (Subsec:Functions1dElementary)=
@@ -436,31 +476,29 @@ Let us investigate the behaviour of these standard functions by considering a fe
 :label: Ex:Functions1var:Linear
 Consider the function given by $f(x)=2x+3$. This is a polynomial function, in particular, it is a linear function. Since for any value of $x$ it is possible to compute $2x+3$, the maximal domain of this function is the set of all real numbers $\mathbb{R}$. The graph of this function is shown below.
 
-:::{figure} Images/Fig-Functions1var-Linear.png
+:::{applet}
+:url: calculus/functions_of_one_variable/linear_function
 :name: Fig:Functions1var:Linear
+:class: dark-light
 
 The graph of the linear function $f(x)=2x+3$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Functions1var:Linear` with an applet.
-:::
+As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph?
 
-As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph? We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increases by any value $\Delta x$, $y$ will increase by $\Delta y=2\Delta x$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope to other curves than straight lines in {numref}`Chapter:Differentiation`.
+We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increases by any value $\Delta x$, $y$ will increase by $\Delta y=2\Delta x$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope to other curves than straight lines in {numref}`Chapter:Differentiation`.
 ::::::
 
 ::::::{prf:example} Quadratic function
 :label: Ex:Functions1var:Quadratic
 Consider the function given by $h(x)=x^2-4x+3$. This is a quadratic function and, therefore, a special type of polynomial function. Since $h(x)$ exists for any real number $x$, the maximal domain of $h$ is $\mathbb{R}$. The graph of this function is shown below.
 
-:::{figure} Images/Fig-Functions1var-QuadraticH.png
+:::{applet}
+:url: calculus/functions_of_one_variable/quadratic_function_1
 :name: Fig:Functions1var:QuadraticH
+:class: dark-light
 
 The graph of the quadratic function $h(x)=x^2-4x+3$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:QuadraticH` with an applet.
 :::
 
 The graph of this function is a **parabola**. The graph crosses the $x$-axis at $x=1$ and $x=3$, which can be seen from the fact that $h(x)=x^2-4x+3=(x-1)(x-3)$, so that $h(x)=0$ precisely when $x=1$ or $x=3$. 
@@ -471,43 +509,74 @@ Since the graph of $h$ has a lowest value and then grows for both very large and
 
 For more information on parabolas, see {numref}`Subsec:CurvesParabola`.
 
-:::{figure} Images/Fig-Functions1var-QuadraticK.png
+:::{applet}
+:url: calculus/functions_of_one_variable/quadratic_function_2
 :name: Fig:Functions1var:QuadraticK
+:class: dark-light
 
 The graph of the quadratic function $k(x)=2-3x^2$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Functions1var:QuadraticK` with an applet.
-:::
-
 ::::::
 
-:::{todo}
-Make multiselect poll. Consider quadratic function $h(x)=ax^2+bx+c$. Which are true/false:
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
 
-- $h(0)=c$ True
-- $h(x)=0$ gives $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ provided $b^2-4ac\geq 0$. True
-- If $a>0$ then the parabola opens upwards True
-- If $a<0$ then the parabola opens downwards True
-- If $a=0$ then the function is linear or even constant. True
-:::
+Consider quadratic function $h(x)=ax^2+bx+c$. Select all true statements about this function.
+
+---
+[x] $h(0)=c$.
+> Indeed, if $x=0$, then $x^2=0$, so $h(0)=a\cdot 0^2+b\cdot 0+c=c$.
+[x] $h(x)=0$ gives $x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$ provided $b^2-4ac\geq 0$.
+> Indeed, solving $ax^2+bx+c=0$ using the quadratic formula gives the desired result.
+[x] If $a>0$ then the parabola opens upwards.
+> Indeed, when $a>0$, the parabola opens upwards.
+[x] If $a<0$ then the parabola opens downwards.
+> Indeed, when $a<0$, the parabola opens downwards.
+[x] If $a=0$ then the function is linear or even constant.
+> Indeed, if $a=0$, then $h(x)=bx+c$, which is a linear function, or if $b=0$, it is a constant function.
+---
+::::
 
 ::::::{prf:example} Power functions with positive integer power
 :label: Ex:Functions1var:CubicAndHigher
-We now consider a function of the form $g(x)=x^n$ for some positive integer $n\geq 2$. This is both a polynomial and a power function. The behaviour of this function will greatly depend on whether $n$ is even or odd. 
+:class: full-width
 
-:::{figure} Images/Fig-Functions1var-CubicAndHigher.png
+We now consider a function of the form $g(x)=x^n$ for some positive integer $n\geq 2$. This is both a polynomial and a power function. The behaviour of this function will greatly depend on whether $n$ is even or odd.
+
+:::::{figure-start}
 :name: Fig:Functions1var:CubicAndHigher
 
-On the left the functions $x^2$, $x^4$, $x^6$ and $x^8$ are plotted, while on the right the functions $x^3$, $x^5$, $x^7$ and $x^9$ are plotted. In both cases, the part of the graph between $-2$ and $2$ is shown.
+On the left a function $g(x)=x^n$ with $n$ even is plotted, while on the right a function $g(x)=x^n$ with $n$ odd is plotted.
+:::::
+
+:::::{grid} 2 2 2 2
+::::{grid-item}
+
+:::{applet}
+:url: calculus/functions_of_one_variable/power_functions_even
+:class: dark-light
 :::
 
-:::{todo}
-Replace {numref}`Fig:Functions1var:CubicAndHigher` with an applet.
+::::
 
-Alternative: make the left one into one graph with a slider for $n$ and same for the right one.
+::::{grid-item}
+
+:::{applet}
+:url: calculus/functions_of_one_variable/power_functions_odd
+:class: dark-light
 :::
+
+::::
+:::::
+
+:::::{figure-end}
+:::::
+
 
 Indeed, for even values of $n$, the graph of $g(x)=x^n$ resembles the parabola $y=x^2$, while for odd values of $n$, the graph is similar to that of $x^3$. In particular, for even values of $n$ the graph of the function is symmetric around the $y$-axis. In {numref}`Section:PropertiesFunctions` we will call a function with this property **even** (so now you already know where that name comes from). Similarly, for odd values of $n$ the graph of the function is point symmetric with respect to the origin and such a function will be called **odd**.
 
@@ -526,18 +595,12 @@ $$
 
 That is, the pressure is inversely proportional to the volume. This means that if $V$ doubles, $P$ will halve and vice versa. The graph of $P$ as a function of $V$ is shown below. Note that $P$ becomes very large if $V$ is close to $0$, while, reversely, $P$ is very close to $0$ whenever $V$ is very large. This makes sense from a physical point of view: when $V$ is small, the gas is compressed into a small amount of space, which means that the pressure must be very high, while if $V$ is large, the gas is distributed over a large amount of space, which means the pressure is much lower.
 
-
-:::{figure} Images/Fig-Functions1var-IdealGas2.svg
+:::{applet}
+:url: calculus/functions_of_one_variable/ideal_gas_law
 :name: Fig:Functions1var:IdealGas2
+:class: dark-light
 
-The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for several values of the constant $nRT$. Due to physical restrictions, the domain of this function only consists of positive values of $V$.
-
-
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:IdealGas2` with an applet.
-Alternative: use a slider for $nRT$.
+The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for $n=1$ and $T=293.15\,\text{K}=20\,^{\circ}\text{C}$. Due to physical restrictions, the domain of this function only consists of positive values of $V$. You can use the sliders to change the values of $n$ and $T$. The first slider controls the number of moles $n$ of gas, while the second slider controls the temperature $T$ of the gas.
 :::
 
 ::::::
@@ -552,15 +615,12 @@ $$
 
 Here $G$ is the [gravitational constant](https://en.wikipedia.org/wiki/Gravitational_constant). The graph of the function is shown below. Since $F$ is proportional to $r^{-2}$, this law is a prime example of an **inverse square law**. This means that if the distance between the masses is doubled, the gravitational force drops by a factor $\frac{1}{4}$. Inverse square laws are rather common in nature, for example in certain electric, light and sound effects.
 
-::::{figure} Images/Fig-Functions1var-Gravity.svg
+:::{applet}
+:url: calculus/functions_of_one_variable/newton's_law_of_universal_gravitation
 :name: Fig:Functions1var:Gravity
+:class: dark-light
 
-The graph of the function  $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for several values of the constant $Gm_1m_2$.
-::::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Gravity` with an applet.
-Alternative: use a slider for $Gm_1m_2$.
+The graph of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for $m_1m_2=10^{48}\,\text{kg}^2$. Due to physical restrictions, the domain of this function only consists of positive values of $r$. You can use the slider to change the value of $m_1m_2$.
 :::
 
 The graph is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
@@ -571,16 +631,12 @@ The graph is, qualitatively speaking, somewhat similar to the one in {prf:ref}`E
 :label: Ex:Functions1var:NegativePowers
 Let us now consider the power functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$. Their graphs are shown below.
 
-:::{figure} Images/Fig-Functions1var-NegativePowers.png
+:::{applet}
+:url: calculus/functions_of_one_variable/negative_powers
 :name: Fig:Functions1var:NegativePowers
+:class: dark-light
 
-The graphs of the functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:NegativePowers` with an applet.
-
-Better: plot $x^{-n}$ and $x^{-m}$ for $n$ odd and $m$ even in one plot (so always two graphs visible). Default: $n=1$ and $m=2$, but make a slider for $n$ and one for $m$.
+The graphs of the functions $f(x)=x^{-n}$ with $n=1$ and $g(x)=x^{-m}$ with $m=2$. You can use the first slider to change the value of $n$ and the second slider to change the value of $m$. 
 :::
 
 Note that the graph of $f$ is very similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`, except that, since there are no physical restrictions, the function $f$ is also defined for negative values of $x$. In fact, whenever two (physical) quantities are inversely proportional to each other, the graph of one quantity as a function of the other one will be similar to the graph of $f$. Since the graph of $f$ is the set of all points $(x,y)$ with $y=\frac{1}{x}$, we can rewrite this equation to $xy=1$. This means that the graph of $f$ is a hyperbola. For more information on hyperbolas, see {numref}`Subsec:CurvesHyperbola`.
@@ -598,16 +654,12 @@ Many quantities in nature have the property that their growth rate is proportion
 
 To show the typical behaviour of exponential functions, let us consider the functions $A(t)=2^t$ and $B(t)=\left(\frac{1}{3}\right)^t$. Using the computation rules for exponentiation, we can write the function $B$ alternatively as $B(t)=3^{-t}$. The graphs of the functions $A$ and $B$ are shown below.
 
-:::{figure} Images/Fig-Functions1var-ExponentialGrowth.png
+:::{applet}
+:url: calculus/functions_of_one_variable/exponential_functions
 :name: Fig:Functions1var:ExponentialGrowth
+:class: dark-light
 
-The graphs of the functions $A(t)=2^t$ and $B(t)=\left(\frac{1}{3}\right)^t$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:ExponentialGrowth` with an applet.
-
-Better: plot $A(t)=n^t$ and $B(t)=\left(\frac{1}{m}\right)^t$ in one plot. Default: $n=2$, $m=3$, with slider for $n,m$ (both $\geq 2$, half-integer steps, although it could be fun to include the case where one of them is $1$ to show the qualitative difference)
+The graphs of the functions $A(t)=n^t$ with $n=2$ and $B(t)=\left(\frac{1}{m}\right)^t$ with $m=3$. You can use the first slider to change the value of $n$ and the second slider to change the value of $m$. Do you notice what happens when $n$ or $m$ is equal to $1$?
 :::
 
 For the function $A$, we notice that it is very close to $0$ for negative values of $t$, while it grows very fast for positive $t$. In fact, it grows faster the larger $t$ gets, which is indeed the **exponential growth** behaviour that we were trying to model. Conversely, the function $B$ is very large for negative values of $t$, while it get very close to $0$ for positive values of $t$. In fact, the decay rate decreases when $t$ gets larger, so again this function describes **exponential decay**.
@@ -625,14 +677,12 @@ Apart from their role in geometry, the trigonometric functions $f(\theta)=\cos(\
 
 Let us analyse these functions a bit more in mathematical terms. First, let us consider their graphs.
 
-:::{figure} Images/Fig-Functions1var-Trigonometry.png
+:::{applet}
+:url: calculus/functions_of_one_variable/trigonometric_functions
 :name: Fig:Functions1var:Trigonometry
+:class: dark-light
 
-The graphs of the trigonometric functions $f(\theta)=\cos(\theta)$, $g(\theta)=\sin(\theta)$ and $h(\theta)=\tan(\theta)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Trigonometry` with an applet.
+The graphs of the trigonometric functions $f(\theta)=\cos(n\theta)$, $g(\theta)=\sin(n\theta)$ and $h(\theta)=\tan(n\theta)$, with $n=1$. You can use the slider to change the value of $n$.
 :::
 
 One of the first things you might notice is that $f$ and $g$ repeat themselves after each cycle of length $2\pi$, while $h$ repeats itself after each cycle of length $\pi$. We say that these functions are **periodic**. This periodicity follows from {prf:ref}`Thm:Trigonometry:Periodicity`. We will delve deeper into this subject in {numref}`Subsec:PropertiesFunctionsPeriodic`.
@@ -659,16 +709,13 @@ $$
 
 This notation should be read as that $a$ follows the formula $a(x)=x$ for $x\geq 0$, while $a$ follows the formula $a(x)=-x$ for $x<0$.
 
-:::{figure} Images/Fig-Functions1var-Abs.png
+:::{applet}
+:url: calculus/functions_of_one_variable/absolute_value
 :name: Fig:Functions1var:Abs
+:class: dark-light
 
 The graph of the piecewise defined function $a(x)=|x|$.
 :::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Abs` with an applet.
-:::
-
 
 ::::::
 
@@ -677,19 +724,19 @@ Replace {numref}`Fig:Functions1var:Abs` with an applet.
 The **Heaviside (step) function** or **unit step function** is the function defined by
 
 $$
- H(t)=\left\{\begin{array}{lll}1,\qquad&\text{if }&t\geq 0,\\ 0,&\text{if }&t<0.\end{array}\right.
+ H(t)=\left\{\begin{array}{lll}1,\qquad&\text{if }&t> 0,\\H_0,\qquad&\text{if }&t= 0,\\ 0,&\text{if }&t<0,\end{array}\right.
 $$
+
+where $H_0$ is a value that is sometimes taken to be $0$ (_left-continuous convention_), sometimes taken to be $1$ (_right-continuous convention_) and sometimes taken to be $\frac{1}{2}$ (_half-maximum convention_). In most cases the value of $H_0$ is not of large consequence.
 
 That is, the Heaviside function outputs the value $0$ when the input is negative and it outputs the value $1$ when the input is positive. It can be used to model a process that starts off (i.e. at state $0$) and is instantaneously turned on (i.e. state $1$), for instance when flipping a switch. The function is named after the British mathematician and electrical engineer [Oliver Heaviside (1850-1925)](https://en.wikipedia.org/wiki/Oliver_Heaviside).
 
-:::{figure} Images/Fig-Functions1var-Heaviside.png
+:::{applet}
+:url: calculus/functions_of_one_variable/heaviside_step_function
 :name: Fig:Functions1var:Heaviside
+:class: dark-light
 
-The graph of the piecewise defined function $H(t)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Heaviside` with an applet.
+The graph of the piecewise defined function $H(t)$ with initially the _right-continuous_ convention. You can choose another convention by selecting the convention in the dropdown.
 :::
 
 ::::::
@@ -708,21 +755,19 @@ Similarly, in order to evaluate $f(4)$, we note that $4>1$ so that $f(4)=2-4^2=-
 
 Finally, we note that the function is undefined for $-1<x\leq 0$. These values of $x$ simply do not lie in the domain of this function.
 
-:::{figure} Images/Fig-Functions1var-Piecewise.png
+:::{applet}
+:url: calculus/functions_of_one_variable/a_piecewise_defined_function
 :name: Fig:Functions1var:Piecewise
+:class: dark-light
 
 The graph of the piecewise defined function $f$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Piecewise` with an applet.
 :::
 
 ::::::
 
 ## Grasple exercises
 
-### Exercises on domain and range.
+### Exercises on domain and range
 
 ::::{grasple}
 :iframeclass: dark-light
@@ -787,7 +832,7 @@ Replace {numref}`Fig:Functions1var:Piecewise` with an applet.
 
 ::::
 
-### Exercises on graphs.
+### Exercises on graphs
 
 
 ::::{grasple}

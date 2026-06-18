@@ -87,7 +87,7 @@ The general version of this rule is called the **product rule**, or sometimes th
 
 ::::::{prf:theorem} The product rule
 :label: Thm:Productquotientrule:Productrule
-Let $f$ and $g$ be functions and consider the product function $p=fg$. Let $a$ be in the domain of $p$. Assume that $f$ and $g$ are both differentiable at $a$. Then $p$ is differentiable at $a$ and the derivative $p'(a)$ is given by
+Let $f$ and $g$ be functions and consider the product function $p=fg$. Assume that $f$ and $g$ are both differentiable at $a$. Then $p$ is differentiable at $a$ and the derivative $p'(a)$ is given by
 
 $$
  p'(a)=f'(a)g(a)+f(a)g'(a).
@@ -104,7 +104,7 @@ $$
  p'(a)=\lim_{h\rightarrow 0}\frac{p(a+h)-p(a)}{h}=\lim_{h\rightarrow 0}\frac{f(a+h)g(a+h)-f(a)g(a)}{h}.
 $$
 
-Now we add the term $-f(a+h)g(a)+f(a+h)g(a)$, which is just a very fancy way of writing $0$, to the numerator of this expression. Then we can split the limit in two parts and we obtain
+Now we add the term $-f(a+h)g(a)+f(a+h)g(a)$, which is just a very fancy way of writing zero, to the numerator of this expression. Then we can split the limit in two parts and obtain
 
 \begin{align*}
  p'(a) &= \lim_{h\rightarrow 0}\frac{f(a+h)g(a+h)-f(a)g(a)}{h} \\
@@ -119,7 +119,7 @@ Now we can write both of these limits as a product of two limits to obtain
  &= \lim_{h\rightarrow 0}f(a+h)\lim_{h\rightarrow 0}\frac{g(a+h)-g(a)}{h}+\lim_{h\rightarrow 0}g(a)\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}.
 \end{align*}
 
-Note that since $f$ is differentiable at $a$, it must be continuous at $a$ as well, see {prf:ref}`Thm:Differentiability:Diffimpliescont`, so we must have $\displaystyle \lim_{h\rightarrow 0}f(a+h)=f(a)$. Then we use that $f$ and $g$ are differentiable at $h$ to obtain
+Note that since $f$ is differentiable at $a$, it must be continuous at $a$ as well, see {prf:ref}`Thm:Differentiability:Diffimpliescont`, so we must have $\displaystyle \lim_{h\rightarrow 0}f(a+h)=f(a)$. Then we also use that $f$ and $g$ are differentiable at $h$ to obtain
 
 \begin{align*}
  p'(a) &= \lim_{h\rightarrow 0}f(a+h)\lim_{h\rightarrow 0}\frac{g(a+h)-g(a)}{h}+\lim_{h\rightarrow 0}g(a)\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h} \\
@@ -133,7 +133,7 @@ as desired.
 ::::{caution}
 :name: Caution:Productquotientrule:Commonerrors
 
-The most common error when trying to use the product rule is take the product of the two derivatives. In that case, the incorrect expression would become
+The most common error when trying to use the product rule is to take the product of the two derivatives. In that case, the incorrect expression would become
 
 $$
  (f g)'(x)=f'(x)g'(x)\qquad\qquad \left(\textbf{INCORRECT}\right).
@@ -159,9 +159,10 @@ $$
 :label: Ex:Productquotientrule:Example2
 Consider the function $r(t)=2^t\sinh(t)$. Then $r$ is the product of the two functions $p(t)=2^t$ and $q(t)=\sinh(t)$. In {numref}`Sec:Differentiation:ChainRule` we obtained the derivatives of these functions. As such, we can use the product rule to obtain
 
-$$
- r'(t)=p'(t)q(t)+p(t)q'(t)=\left(\ln(2)2^t\right)\sinh(t)+2^t\cosh(t).
-$$
+\begin{align*}
+ r'(t)=p'(t)q(t)+p(t)q'(t)&=\left(\ln(2)2^t\right)\sinh(t)+2^t\cosh(t)\\
+ &=2^t\left(\ln(2)\sinh(t)+\cosh(t)\right).
+\end{align*}
 
 ::::::
 
@@ -169,7 +170,7 @@ We can also use the product rule to differentiate functions that are the product
 
 ::::::{prf:example} 
 :label: Ex:Productquotientrule:Exampletripleproduct
-Consider the function $f(x)=x^4\sin(x)\cos(x)$. Then $f$ is the product of three functions, so what should be our approach here? It turns out to be a good idea to first write it as a product of two functions. In this case, we can write $f=gh$ with $g(x)=x^4$ and $h(x)=\sin(x)\cos(x)$. Then the product rule gives
+Consider the function $f(x)=x^4\sin(x)\cos(x)$. Then $f$ is the product of three functions, so how should we proceed? It turns out to be a good idea to first write it as a product of two functions. In this case, we can write $f=gh$ with $g(x)=x^4$ and $h(x)=\sin(x)\cos(x)$. Then the product rule gives
 
 $$
  f'(x)=g'(x)h(x)+g(x)h'(x)=4x^3\sin(x)\cos(x)+x^4h'(x).
@@ -189,6 +190,19 @@ $$
 
 ::::::
 
+The general rule for differentiating a product of three differentiable functions is
+
+$$
+ (fgh)'=f'gh+fg'h+fgh'.
+$$
+
+This rule can be generalised to products of four or more functions.
+
+:::{todo}
+Poll with formula for $(fg)''$. 
+:::
+
+
 Finally, we can combine the product and chain rules to find the derivatives of complicated functions.
 
 ::::::{prf:example} 
@@ -199,7 +213,7 @@ $$
  f'(x)=g'(x)h(x)+g(x)h'(x)=2x\sin\left(x^3+2x+1\right)+x^2h'(x).
 $$
 
-Then in order to find the derivative $h'(x)$ we need the chain rule. Indeed, we can write $h(x)=p\circ q$ with $p(u)=\sin(u)$ and $q(x)=x^3+2x+1$. With the chain rule we obtain
+Then in order to find the derivative $h'(x)$ we need the chain rule. Indeed, we can write $h=p\circ q$ with $p(u)=\sin(u)$ and $q(x)=x^3+2x+1$. With the chain rule we obtain
 
 $$
  h'(x)=p'(q(x))q'(x)=\cos\left(x^3+2x+1\right)\left(3x^2+2\right).
@@ -219,7 +233,7 @@ Combining these equations gives
 
 ## The quotient rule
 
-The product and chain rules are the most important tools for finding derivatives of complicated functions. There is actually a third rule, called the quotient rule, which is also used often. However, it technically is not a new rule as it follows from the product and chain rules. As the name suggests, the quotient rule is used most often when finding derivatives of quotients of functions, for instance of rational functions.
+The product and chain rules are some of the most important tools for finding derivatives of complicated functions. There is actually another rule, called the quotient rule, which is also often used. However, it technically is not a new rule as it follows from the product and chain rules. As the name suggests, the quotient rule is used most often when finding derivatives of quotients of functions, for instance of rational functions.
 
 ::::::{prf:theorem} The quotient rule 
 :label: Thm:Productquotientrule:Quotientrule
@@ -237,13 +251,13 @@ $$
 We write $q=f\frac{1}{g}$. Then we use the product rule to evaluate
 
 $$
- q'(a)=f'(a)\frac{1}{g(a)}+f(a)\left(\frac{1}{g}\right)(a).
+ q'(a)=f'(a)\frac{1}{g(a)}+f(a)\left(\frac{1}{g}\right)'(a).
 $$
 
-In order to find the derivative of $\frac{1}{g}$, we note that $\frac{1}{g}=h\circ g$ with $h(u)=\frac{1}{u}$. We know that $h'(u)=\frac{-1}{u^2}$. So we can use the chain rule to find
+In order to find the derivative of $\frac{1}{g}$, we note that $\frac{1}{g}=h\circ g$ with $h(u)=\frac{1}{u}$. We know that $h'(u)=\frac{-1}{u^2}$, so we can use the chain rule to find
 
 $$
- \left(\frac{1}{g}\right)(a)=h'(g(a))g'(a)=\frac{-1}{g(a)^2}g'(a).
+ \left(\frac{1}{g}\right)'(a)=h'(g(a))g'(a)=\frac{-1}{g(a)^2}g'(a).
 $$
 
 Combining these identities gives
@@ -252,17 +266,30 @@ $$
  q'(a)=f'(a)\frac{1}{g(a)}+f(a)\frac{-1}{g(a)^2}g'(a)=\frac{f'(a)g(a)-g'(a)f(a)}{g(a)^2}.
 $$
 
-So $q$ is differentiable in $a$ and $\displaystyle q'(a)=\frac{f'(a)g(a)-g'(a)f(a)}{g(a)^2}$.
+So $q$ is differentiable at $a$ and $\displaystyle q'(a)=\frac{f'(a)g(a)-g'(a)f(a)}{g(a)^2}$.
 :::
 
-With the quotient rule in hand, we can find another two standard derivatives.
+::::{caution}
+:name: Caution:Productquotientrule:Commonerrors2
+
+The most common error when trying to use the quotient rule to $\dfrac{f}{g}$ is to swap the roles of $f$ and $g$ in the numerator of the derivative. In that case, the incorrect expression would become
+
+$$
+ \left(\frac{f}{g}\right)'(x)=\frac{f(x)g'(x)-f'(x)g(x)}{g(x)^2}\qquad\qquad \left(\textbf{INCORRECT}\right).
+$$
+
+Make sure to avoid this error and to use the quotient rule as stated.
+
+::::
+
+With the quotient rule in hand, we can find two more standard derivatives.
 
 ::::::{prf:theorem} Standard derivatives, part 3 out of 4
 :label: Thm:Productquotientrule:Standard3
 We have the following standard derivatives.
 
-- We have $\dfrac{d}{dx}\left[\tan(x)\right]=\dfrac{1}{\cos^2(x)}=1+\tan^2(x).$
-- We have $\dfrac{d}{dx}\left[\tanh(x)\right]=\dfrac{1}{\cosh^2(x)}=1-\tanh^2(x).$
+- We have $\dfrac{d}{dx}\tan(x)=\dfrac{1}{\cos^2(x)}=1+\tan^2(x).$
+- We have $\dfrac{d}{dx}\tanh(x)=\dfrac{1}{\cosh^2(x)}=1-\tanh^2(x).$
 
 ::::::
 
@@ -271,7 +298,7 @@ We have the following standard derivatives.
 We know that $\tan(x)=\dfrac{\sin(x)}{\cos(x)}$, so we can use the quotient rule to evaluate
 
 \begin{align*}
- \dfrac{d}{dx}\left[\tan(x)\right] &= \frac{\cos(x)\frac{d}{dx}[\sin(x)]-\sin(x)\frac{d}{dx}[\cos(x)]}{\cos(x)^2} \\
+ \dfrac{d}{dx}\tan(x) &= \frac{\cos(x)\frac{d}{dx}\sin(x)-\sin(x)\frac{d}{dx}\cos(x)}{\cos(x)^2} \\
  &= \frac{\cos(x)\cos(x)-\sin(x)(-\sin(x))}{\cos^2(x)} \\
  &= \frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)} \\
  &= \frac{1}{\cos^2(x)}.
@@ -280,7 +307,7 @@ We know that $\tan(x)=\dfrac{\sin(x)}{\cos(x)}$, so we can use the quotient rule
 Alternatively, we can rewrite this expression to
 
 \begin{align*}
- \dfrac{d}{dx}\left[\tan(x)\right] &= \frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)} \\
+ \dfrac{d}{dx}\tan(x) &= \frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)} \\
  &= \frac{\cos^2(x)}{\cos^2(x)}+\frac{\sin^2(x)}{\cos^2(x)} \\
  &= 1+\left(\frac{\sin(x)}{\cos(x)}\right)^2 \\
  &= 1+\tan^2(x).
@@ -289,7 +316,7 @@ Alternatively, we can rewrite this expression to
 Similarly, we know that that $\tanh(x)=\dfrac{\sinh(x)}{\cosh(x)}$, so we can use the quotient rule to evaluate
 
 \begin{align*}
- \dfrac{d}{dx}\left[\tanh(x)\right] &= \frac{\cosh(x)\frac{d}{dx}[\sinh(x)]-\sinh(x)\frac{d}{dx}[\cosh(x)]}{\cosh(x)^2} \\
+ \dfrac{d}{dx}\tanh(x) &= \frac{\cosh(x)\frac{d}{dx}\sinh(x)-\sinh(x)\frac{d}{dx}\cosh(x)}{\cosh(x)^2} \\
  &= \frac{\cosh(x)\cosh(x)-\sinh(x)\sinh(x)}{\cosh^2(x)} \\
  &= \frac{\cosh^2(x)-\sinh^2(x)}{\cosh^2(x)} \\
  &= \frac{1}{\cosh^2(x)}.
@@ -298,7 +325,7 @@ Similarly, we know that that $\tanh(x)=\dfrac{\sinh(x)}{\cosh(x)}$, so we can us
 Alternatively, we can rewrite this expression to
 
 \begin{align*}
- \dfrac{d}{dx}\left[\tanh(x)\right] &= \frac{\cosh^2(x)-\sinh^2(x)}{\cosh^2(x)} \\
+ \dfrac{d}{dx}\tanh(x) &= \frac{\cosh^2(x)-\sinh^2(x)}{\cosh^2(x)} \\
  &= \frac{\cosh^2(x)}{\cosh^2(x)}-\frac{\sinh^2(x)}{\cosh^2(x)} \\
  &= 1-\left(\frac{\sinh(x)}{\cosh(x)}\right)^2 \\
  &= 1-\tanh^2(x).
@@ -307,7 +334,7 @@ Alternatively, we can rewrite this expression to
 
 ::::::{prf:example} 
 :label: Ex:Productquotientrule:QuotExample1
-Consider the function $f(x)=\dfrac{x^2+2x-3}{x^3+x}$. Then $f$ is the quotient of two functions (in fact, it is a rational function), since we can write $f=\dfrac{g}{h}$ with $g(x)=x^2+2x-3$ and $h(x)=x^3-x$. Hence, we can use the quotient rule to evaluate
+Consider the rational function $f(x)=\dfrac{x^2+2x-3}{x^3-x}$. Then $f$ is the quotient of two functions, since we can write $f=\dfrac{g}{h}$ with $g(x)=x^2+2x-3$ and $h(x)=x^3-x$. Hence, we can use the quotient rule to evaluate
 
 \begin{align*}
  f'(x) &= \frac{h(x)g'(x)-g(x)h'(x)}{h(x)^2} \\
@@ -315,7 +342,7 @@ Consider the function $f(x)=\dfrac{x^2+2x-3}{x^3+x}$. Then $f$ is the quotient o
  &= \frac{-x^4 - 4 x^3 + 8 x^2 - 3}{(x^3-x)^2}.
 \end{align*}
 
-In fact, this expression can be simplified a little further and we have
+In fact, this expression can be simplified a little further by observing that there is a common factor $(x-1)^2$ in both the numerator and the denominator and we have
 
 $$
  f'(x)=\frac{-x^4 - 4 x^3 + 8 x^2 - 3}{(x^3-x)^2}=\frac{-x^2-6x-3}{x^2(x+1)^2}.
@@ -342,7 +369,7 @@ $$
 Finally, in order to evaluate $\left(1+\cos(\theta)\right)^3$ we need to use the chain rule. This gives
 
 $$
- \left(1+\cos(\theta)\right)^3=3\left(1+\cos(\theta)\right)^2\left(1+\cos(\theta)\right)'=3\left(1+\cos(\theta)\right)^2\left(-\sin(\theta)\right).
+ \left(\left(1+\cos(\theta)\right)^3\right)'=3\left(1+\cos(\theta)\right)^2\left(1+\cos(\theta)\right)'=3\left(1+\cos(\theta)\right)^2\left(-\sin(\theta)\right).
 $$
 
 Combining these gives
@@ -354,7 +381,7 @@ $$
 This expression can be simplified a bit further (though not much) and we find
 
 $$
- p'(\theta)=\frac{e^{2 \theta} (\cos(\theta) + 1)^2 (\cos(\theta) + (\tan(\theta) + 1)^2 + \sin(\theta) (4 \tan(\theta) + 2))}{\left(1+\cos(\theta)\right)^6}.
+ p'(\theta)=\frac{e^{2 \theta} \left[\left(1+\cos(\theta)\right)\left(1+\tan(\theta)\right)^2+3\tan(\theta)\sin(\theta)\right]}{\left(1+\cos(\theta)\right)^4}.
 $$
 ::::::
 
@@ -362,7 +389,7 @@ $$
 :label: Ex:Productquotientrule:Contdiff
 :class: full-width
 
-In {numref}`Subsec:Derivativestangent` we claimed that there are functions that are differentiable everywhere, but not continuously differentiable, i.e. its derivative is not continuous. Now we finally have the tools to show an example of such a function. Consider the piecewise defined function
+In {numref}`Subsec:Derivativestangent` we claimed that there are functions that are differentiable everywhere, but not continuously differentiable; that is their derivatives are not continuous. Now we finally have the tools to show an example of such a function. Consider the piecewise defined function
 
 $$
  f(x)=\begin{cases}x^2 \sin\left(\frac{1}{x}\right), & \mathrm{if}\,x \neq 0, \\ 0 & \mathrm{if}\,x = 0. \end{cases}
@@ -382,13 +409,15 @@ $$
  f'(0)=\lim_{h\rightarrow 0}\frac{f(h)-f(0)}{h}=\lim_{h\rightarrow 0}\frac{h^2\sin\left(\frac{1}{h}\right)}{h}=0,
 $$
 
-where the final equality follows from {prf:ref}`Ex:LimitAtPoint:SqueezeTheorem`. This means that
+where the final equality follows from a reasoning similar to {prf:ref}`Ex:LimitAtPoint:SqueezeTheorem`. This means that
 
 $$
  f'(x)=\begin{cases}-\cos\left(\frac{1}{x}\right)+2x\sin\left(\frac{1}{x}\right), & \mathrm{if}\,x \neq 0, \\ 0 & \mathrm{if}\,x = 0, \end{cases}
 $$
 
-so $f$ is differentiable everywhere. Using a reasoning similar to {prf:ref}`Ex:LimitAtPoint:SqueezeTheorem`, we see that
+so $f$ is differentiable everywhere. 
+
+Let us investigate whether the derivative is continuous in $0$. Using the same limit again, we see that
 
 $$
  \lim_{x\rightarrow 0}2x\sin\left(\frac{1}{x}\right)=0.
@@ -406,10 +435,10 @@ $$
  \lim_{x\rightarrow 0}f'(x)=\lim_{x\rightarrow 0}-\cos\left(\frac{1}{x}\right)+2x\sin\left(\frac{1}{x}\right)
 $$
 
-does not exist. In particular, $f'$ is not continuous at $0$, so $f$ is not continuously differentiable.
+also does not exist. In particular, $f'$ is not continuous at $0$, so $f$ is not continuously differentiable.
 
 :::{todo}
-Make an applet with the graph of the function $f$ (left) and of its derivative $f'$ (right)
+Make an applet with the graph of the function $f$ (left) and of its derivative $f'$ (right). Make sure you can zoom properly in around $x=0$.
 :::
 ::::::
 

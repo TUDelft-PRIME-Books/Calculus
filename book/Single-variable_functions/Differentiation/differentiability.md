@@ -431,7 +431,6 @@ Replace {numref}`Fig:Differentiability:Differential` with an applet.
 ::::::
 
 (Subsec:Derivativestangent)=
-
 ## Computation rules and standard derivatives
 
 In this section we will study some basic computation rules for derivatives. However, some important computation rules will be left for the upcoming sections {numref}`Sec:Differentiation:ChainRule` and {numref}`Section:DiffProdQuot`. In addition, although we will provide some derivatives of standard functions here (polynomials, the sine, cosine and the natural exponential function), we will leave others to later sections. For derivatives of other exponential functions, see {numref}`Sec:Differentiation:ChainRule`, for the derivatives of the tangent and hyperbolic tangent functions, see {numref}`Section:DiffProdQuot` and for the derivatives of logarithms, inverse trigonometric functions and power functions, see {numref}`Subsec:Invdiff`.
