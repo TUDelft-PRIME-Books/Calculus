@@ -833,10 +833,12 @@ As you can see we have arrived at Euler's formula.
 
 ## Grasple exercises
 
+### Switching between forms
+
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/c849196d-814e-430f-aba7-4f39afa10923?id=122764
-:label: grasple_exercise_10_2_1
+:url: https://embed.grasple.com/exercises/39598c29-5794-403c-bb1b-710a1eef2940?id=64489
+:label: Grasple:64489
 :dropdown:
 :description: From polar form to Cartesian form.
 
@@ -844,17 +846,175 @@ As you can see we have arrived at Euler's formula.
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/fd366551-a8d4-40c2-ad7e-b21581677f96?id=122765
-:label: grasple_exercise_10_2_2
+:url: https://embed.grasple.com/exercises/74a651ef-b1ca-493f-a322-73209db3b8d3?id=75402
+:label: Grasple:75402
 :dropdown:
-:description: From Cartesian form to polar form.
+:description: From polar form to Cartesian form.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/a02fe0b8-24e9-484f-90ff-cb1519472bd2?id=122767
-:label: grasple_exercise_10_2_3
+:url: https://embed.grasple.com/exercises/fe1f71f4-f24c-429b-b133-8f0c22552a61?id=75403
+:label: Grasple:75403
+:dropdown:
+:description: From polar form to Cartesian form.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9355ef66-3857-4962-903b-8b19a48861f7?id=64302
+:label: Grasple:64302
+:dropdown:
+:description: From polar form to Cartesian form. Note: this question assumes a knowledge of (real) logarithms.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f19c76de-b7d6-4982-ba28-c1e1dc369ca2?id=64490
+:label: Grasple:64490
+:dropdown:
+:description: From Cartesian form to polar form.
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b3b63554-7f34-40e7-a171-ae1c6304ec26?id=68529
+:label: Grasple:68529
+:dropdown:
+:description: From Cartesian form to polar form.
+
+::::
+
+### Arithmetics with the polar form.
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7e24de61-8035-45ae-ab02-f10f77356548?id=75406
+:label: Grasple:75406
+:dropdown:
+:description: Real and imaginary parts of polar form.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0f03a208-8574-4d62-a224-4d1e5905db63?id=65976
+:label: Grasple:65976
+:dropdown:
+:description: Real and imaginary parts of polar form.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e7be5e2d-ac50-4ed6-b8e4-b8fbabc335c0?id=65991
+:label: Grasple:65991
+:dropdown:
+:description: $\overline{z}$ in polar form.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ba5fad60-c032-4076-b9ee-a14dad2f778e?id=75404
+:label: Grasple:75404
+:dropdown:
+:description: $-z$ in polar form.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/43e571e7-b948-4de8-9067-1f322166dfa8?id=75405
+:label: Grasple:75405
+:dropdown:
+:description: $\frac{1}{z}$ in polar form.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/634f8dfc-5ba3-48e0-9699-eb6c91d08bfb?id=65955
+:label: Grasple:65955
+:dropdown:
+:description: Indicating three points in the complex plane.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/613cc600-8341-4e43-a00d-362ec19d8a72?id=71501
+:label: Grasple:71501
+:dropdown:
+:description: Indicating three points in the complex plane.
+
+::::
+
+### Powers of complex numbers
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e4d5b5cc-07b0-4a72-aff1-91a5c617b73a?id=64320
+:label: Grasple:75405
+:dropdown:
+:description: Powers of complex numbers
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/50b70591-2823-4f37-8416-b7d25e76e729?id=64336
+:label: Grasple:64336
+:dropdown:
+:description: Powers of complex numbers
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bf12984b-1cf9-4b92-8a25-02c556194754?id=64337
+:label: Grasple:64337
+:dropdown:
+:description: Powers of complex numbers
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ec9efcd8-cb51-45b9-b520-9ddbb1637f7d?id=68385
+:label: Grasple:68385
+:dropdown:
+:description: Powers of complex numbers
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d5d0a636-177a-42e4-bdce-b8ab7bbfd5b3?id=68466
+:label: Grasple:68466
+:dropdown:
+:description: Powers of complex numbers
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/93ae8521-9cf2-472b-9803-1b6e3ccbcee1?id=68467
+:label: Grasple:68467
+:dropdown:
+:description: Powers of complex numbers
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/323cd6e4-29d2-40cd-8441-aab7c4d060bf?id=65978
+:label: Grasple:65978
 :dropdown:
 :description: Multiplication of powers of complex numbers.
 
@@ -862,8 +1022,35 @@ As you can see we have arrived at Euler's formula.
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/740aeed0-d2e2-4259-9cdc-4e3533d10d51?id=122769
-:label: grasple_exercise_10_2_4
+:url: https://embed.grasple.com/exercises/2454beeb-5531-4fa7-893f-768a4f7cbebd?id=68469
+:label: Grasple:68469
+:dropdown:
+:description: Multiplication of powers of complex numbers.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b5a92d7b-abf6-4953-bfd1-d33a503617b4?id=68470
+:label: Grasple:68470
+:dropdown:
+:description: Multiplication of powers of complex numbers.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/078ced36-8705-484e-942c-942ca4c5e61e?id=68471
+:label: Grasple:68471
+:dropdown:
+:description: Multiplication of powers of complex numbers.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ba26c917-b32e-4a48-b653-b87c65071ac0?id=64323
+:label: Grasple:64323
 :dropdown:
 :description: Division of powers of complex numbers.
 
@@ -871,27 +1058,307 @@ As you can see we have arrived at Euler's formula.
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/7f2ff406-3652-47b7-ba0d-52343cb8eb4c?id=122771
-:label: grasple_exercise_10_2_5
+:url: https://embed.grasple.com/exercises/65f6ad34-12a4-4ac5-b5cf-d83352d97179?id=64328
+:label: Grasple:64328
 :dropdown:
-:description: Cubic root of a complex number.
+:description: Division of powers of complex numbers.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/22b66edd-aa49-489a-880b-3d91f864b6be?id=122772
-:label: grasple_exercise_10_2_6
+:url: https://embed.grasple.com/exercises/410c0d7b-1ac3-4700-a73e-89ceca2ae090?id=65964
+:label: Grasple:65964
 :dropdown:
-:description: Fourth root of a complex number.
+:description: Division of powers of complex numbers.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/8000e2fb-af73-476b-8977-0c0ecbe5cb3d?id=122773
-:label: grasple_exercise_10_2_7
+:url: https://embed.grasple.com/exercises/c2050eca-ad0a-4f07-8dd0-4c2b5a448e96?id=68472
+:label: Grasple:68472
+:dropdown:
+:description: Division of powers of complex numbers.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3b4052a5-96f4-4a73-bbe7-52cd82648bea?id=68473
+:label: Grasple:68473
+:dropdown:
+:description: Division of powers of complex numbers.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/79261de4-02a6-4e54-8a59-86edcb35f6c4?id=68474
+:label: Grasple:68474
+:dropdown:
+:description: Division of powers of complex numbers.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/80fb5b22-7704-44aa-8079-3be6583d047b?id=68475
+:label: Grasple:68475
+:dropdown:
+:description: Division of powers of complex numbers.
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ea0f9473-8735-4a5b-a366-022f8b1b96ec?id=64305
+:label: Grasple:64305
+:dropdown:
+:description: Several manipulations of complex numbers in polar form.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/88112a1a-65a8-4f0c-a803-ac7366e4288a?id=68532
+:label: Grasple:68532
+:dropdown:
+:description: Using de Moivre's theorem.
+
+::::
+
+### Equations in the complex plane
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cc37cf9e-2d36-4684-b026-cbd155fbcb16?id=66094
+:label: Grasple:66094
+:dropdown:
+:description: Equations in the complex plane.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fb70bccf-55b1-4094-bc05-097ce1d7667e?id=66007
+:label: Grasple:66007
+:dropdown:
+:description: Equations in the complex plane.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ae68727e-7f7e-4f34-b97a-911b13bade6d?id=66096
+:label: Grasple:66096
+:dropdown:
+:description: Equations in the complex plane.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a3ecb15d-b531-43d6-8831-087bcf7f16c2?id=65968
+:label: Grasple:65968
+:dropdown:
+:description: Equations and inequalities in the complex plane.
+
+::::
+
+
+
+### Proving statements with complex numbers
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e92ddb17-1998-4bdc-a1d2-8ac1a89bfef3?id=68530
+:label: Grasple:68530
+:dropdown:
+:description: Expressing trigonometric function in terms of complex exponentials.
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7b35642e-b5fc-49eb-b5dc-c6a97ab46087?id=64295
+:label: Grasple:64295
+:dropdown:
+:description: Proving three statements about the polar form.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/83ac8f61-4120-429d-af9c-f63271b8427f?id=64298
+:label: Grasple:64298
+:dropdown:
+:description: Proving three statements about the polar form.
+
+::::
+
+### Solving $z^n=w$
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1dff6977-41ec-407d-b334-9fdda04eba53?id=68320
+:label: Grasple:68320
+:dropdown:
+:description: Square roots of a complex number.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ed3ab811-1e8c-4355-bc23-ab8e60681b45?id=71521
+:label: Grasple:71521
+:dropdown:
+:description: Visualising cube roots of a complex number
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c3a3f892-0b78-47db-b5a2-0d57c399d893?id=68316
+:label: Grasple:68316
+:dropdown:
+:description: Cubic roots of a complex number.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7363eaa1-d67a-4b16-a956-afcb0b3a184c?id=68315
+:label: Grasple:68315
+:dropdown:
+:description: Cubic roots of a complex number.
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/159060ea-2b4e-4d9d-a1bc-96b000cd0714?id=68317
+:label: Grasple:68317
+:dropdown:
+:description: Fourth roots of a complex number.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/90784279-7cd1-46f0-8f22-b14078b5a3d7?id=65998
+:label: Grasple:65998
+:dropdown:
+:description: A slightly different square root question.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ed4dfebb-908e-4a58-8c72-ffafd093a639?id=68321
+:label: Grasple:68321
+:dropdown:
+:description: A slightly different square root question.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a0e8243a-9fde-464e-8f1e-fdb34c817013?id=68318
+:label: Grasple:68318
 :dropdown:
 :description: A slightly different cubic root question.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9502b908-2018-4eb2-9bc5-988231292a7f?id=71504
+:label: Grasple:71504
+:dropdown:
+:description: Adding and multiplying roots of unity.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ea9ebfd4-46b7-4a1e-896c-f040957fe683?id=71523
+:label: Grasple:71523
+:dropdown:
+:description: Finding solutions to $e^z=w$. Note: this question assumes a knowledge of (real) logarithms.
+
+::::
+
+### Adding trigonometric functions
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5639d60a-2dee-425d-a50c-ee65f7b02880?id=70354
+:label: Grasple:70354
+:dropdown:
+:description: Adding trigonometric functions.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8ac53b59-8db5-4776-8991-7cdf9b033da2?id=79436
+:label: Grasple:79436
+:dropdown:
+:description: Adding trigonometric functions.
+
+::::
+
+### Applications
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3969255c-e2c4-4f2e-ad49-0340013e396e?id=65974
+:label: Grasple:65974
+:dropdown:
+:description: Application: Complex wave function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1e2b0586-fa6e-47c6-ade6-da26072ae518?id=79435
+:label: Grasple:79435
+:dropdown:
+:description: Application: Adding two voltages.
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/684c0c67-60fc-436f-9e8e-3d4d7d031f97?id=64334
+:label: Grasple:64334
+:dropdown:
+:description: Derivative of a complex exponential. Note: this question assumes a knowledge of differentiation.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/310fc72e-0f50-4423-bedc-fd581af52b9e?id=65966
+:label: Grasple:65966
+:dropdown:
+:description: Application: Waves and vibrations. Note: this question assumes a knowledge of differentiation.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cb6f9262-11bb-4029-9775-ee625b0e7670?id=79413
+:label: Grasple:79413
+:dropdown:
+:description: Application: Electrical circuits. Note: this question assumes a knowledge of integration.
 
 ::::

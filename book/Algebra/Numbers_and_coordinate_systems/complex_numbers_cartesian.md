@@ -942,10 +942,12 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ## Grasple exercises
 
+### Exercises on operations with complex numbers
+
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/d1c5a087-af58-42a1-9fcb-1ee915c98ebe?id=122746
-:label: grasple_exercise_10_1_1
+:url: https://embed.grasple.com/exercises/adb8493e-88f8-462d-b069-f6192060f0a1?id=75397
+:label: Grasple:75397
 :dropdown:
 :description: Real part of a complex number.
 
@@ -953,8 +955,8 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/c0d9602f-7f90-4ecc-a7e7-96cdc3b1da06?id=122747
-:label: grasple_exercise_10_1_2
+:url: https://embed.grasple.com/exercises/95288a05-3c20-4a1e-b9c6-04de1a8af535?id=75398
+:label: Grasple:75398
 :dropdown:
 :description: Imaginary part of a complex number.
 
@@ -962,8 +964,8 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/431a62c7-bb01-409b-8ca5-05db4c6a0661?id=122743
-:label: grasple_exercise_10_1_3
+:url: https://embed.grasple.com/exercises/2daad980-d96a-46ba-a3aa-ae18686532e2?id=75394
+:label: Grasple:75394
 :dropdown:
 :description: Adding two complex numbers.
 
@@ -971,8 +973,8 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/ba2e0f24-ed35-42af-a25c-776b38653a7e?id=122744
-:label: grasple_exercise_10_1_4
+:url: https://embed.grasple.com/exercises/c9dd1334-3902-43cb-ba40-5a31f1e8ca27?id=75395
+:label: Grasple:75395
 :dropdown:
 :description: Subtracting two complex numbers.
 
@@ -980,8 +982,8 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/aecbca69-79a1-4f7f-87bb-5764a1ebac18?id=122745
-:label: grasple_exercise_10_1_5
+:url: https://embed.grasple.com/exercises/0a153784-60f8-4bc7-bc28-dea031bc3d22?id=75396
+:label: Grasple:75396
 :dropdown:
 :description: Multiplying two complex numbers.
 
@@ -989,8 +991,8 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/dd1e5d42-2b59-457f-a7fe-8b1ce4219cdc?id=122748
-:label: grasple_exercise_10_1_6
+:url: https://embed.grasple.com/exercises/0d7b1ba0-a763-4c49-a38c-4b3330f32ba9?id=75417
+:label: Grasple:75417
 :dropdown:
 :description: Dividing two complex numbers.
 
@@ -998,8 +1000,17 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/af73fbce-2235-4e27-8447-fe6e3f287794?id=122749
-:label: grasple_exercise_10_1_7
+:url: https://embed.grasple.com/exercises/8ca4a847-bc4e-4227-ae2d-189ba1530451?id=75399
+:label: Grasple:75399
+:dropdown:
+:description: Dividing two complex numbers.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f9375305-f2ae-4a2e-93f7-6988923f488f?id=65961
+:label: Grasple:65961
 :dropdown:
 :description: Complex conjugate of a complex number.
 
@@ -1007,8 +1018,8 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/42bbd961-c030-4c24-8965-26d9bf343c99?id=122750
-:label: grasple_exercise_10_1_8
+:url: https://embed.grasple.com/exercises/4fcf5b83-042c-4154-a85f-c2a857f9f363?id=75400
+:label: Grasple:75400
 :dropdown:
 :description: Multiplying a complex number with it's complex conjugate.
 
@@ -1016,8 +1027,28 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/6da6fd51-0928-4897-b143-815389b8a9a7?id=122751
-:label: grasple_exercise_10_1_9
+:url: https://embed.grasple.com/exercises/f5b4d636-b98f-49e6-a706-5ab23ac4dd55?id=75416
+:label: Grasple:75416
+:dropdown:
+:description: Complex conjugate of a quotient of complex numbers.
+
+::::
+
+### Exercises on solving equations
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/284d7804-e09e-429c-a595-397f58c19e3a?id=75401
+:label: Grasple:75401
+:dropdown:
+:description: Linear equation of complex numbers
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a0af469e-5580-419f-83ff-cabc8ae8a75a?id=66105
+:label: Grasple:66105
 :dropdown:
 :description: Completing the square with real coefficients.
 
@@ -1025,8 +1056,17 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/7e860cd4-a132-4084-a453-cf6977f93bca?id=122752
-:label: grasple_exercise_10_1_10
+:url: https://embed.grasple.com/exercises/ad1b8dc9-1909-4729-8cd1-d8b285b63602?id=65992
+:label: Grasple:65992
+:dropdown:
+:description: Completing the square with real coefficients.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bf1837c9-59c1-4389-9e38-93f116000d34?id=66106
+:label: Grasple:66106
 :dropdown:
 :description: Completing the square with complex coefficients.
 
@@ -1034,17 +1074,26 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/d616adab-46f3-4649-9246-f51ac2ed1e7a?id=122753
-:label: grasple_exercise_10_1_11
+:url: https://embed.grasple.com/exercises/f5426424-0d72-484c-a547-154ab867089a?id=66107
+:label: Grasple:66107
 :dropdown:
-:description: One more time completing the square.
+:description: Completing the square with complex coefficients.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e90df85b-35b4-4145-8a7d-fbb1d15d69d5?id=66006
+:label: Grasple:66006
+:dropdown:
+:description: Completing the square with complex coefficients.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/eb0d0a6f-403a-4581-acf9-7ff821835695?id=122754
-:label: grasple_exercise_10_1_12
+:label: Grasple:122754
 :dropdown:
 :description: Polynomial long division.
 
@@ -1053,16 +1102,16 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/fd1ba3d4-3cc1-417e-9e0a-0d33b3f808ee?id=122756
-:label: grasple_exercise_10_1_13
+:label: Grasple:122756
 :dropdown:
-:description: Another long division with polynomials.
+:description: Polynomial long division.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/1a40094b-8d39-4acd-a63e-d29677dad83d?id=122758
-:label: grasple_exercise_10_1_14
+:url: https://embed.grasple.com/exercises/d231f221-3d67-4360-b1c2-59432d6f1f61?id=68322
+:label: Grasple:68322
 :dropdown:
 :description: Counting solutions of a polynomial equation.
 
@@ -1070,17 +1119,19 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/8d8087fb-aa8d-47f4-86ae-4d3e1883d4c8?id=122759
-:label: grasple_exercise_10_1_15
+:url: https://embed.grasple.com/exercises/3737e7f3-2e03-4d0a-af25-a3ee4d809b1c?id=66004
+:label: Grasple:66004
 :dropdown:
 :description: On the relation between roots of polynomials.
 
 ::::
 
+
+
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/53af5529-e8ba-446a-b903-77cd39addb35?id=122761
-:label: grasple_exercise_10_1_16
+:url: https://embed.grasple.com/exercises/7594cf18-983a-4761-81f0-7245aa4bb314?id=68310
+:label: Grasple:68310
 :dropdown:
 :description: Solving a cubic equation given a root.
 
@@ -1088,8 +1139,17 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/b072da59-e30c-4fba-8594-7d025cad0eb0?id=122762
-:label: grasple_exercise_10_1_17
+:url: https://embed.grasple.com/exercises/d789c363-0f03-4190-a1cd-6471d01f9f74?id=66114
+:label: Grasple:66114
+:dropdown:
+:description: Solving a cubic equation given a root.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f7d1e049-692a-4eb3-8c02-67f56c915c76?id=68311
+:label: Grasple:68311
 :dropdown:
 :description: Solving a quartic equation given two roots.
 
@@ -1097,9 +1157,47 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. 
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/6661f666-cb49-4881-a80a-02971cd6c34f?id=122763
-:label: grasple_exercise_10_1_18
+:url: https://embed.grasple.com/exercises/4630b883-b306-44c8-86a9-8ab8d35f5036?id=68312
+:label: Grasple:68312
 :dropdown:
 :description: Solving a quartic equation given one root.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cf88dffc-02f8-4ddc-8351-575379ba5713?id=71519
+:label: Grasple:71519
+:dropdown:
+:description: Solving a quartic equation given one root.
+
+::::
+
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a09d0b97-def4-4a8f-a133-86f1c7141b60?id=68314
+:label: Grasple:68314
+:dropdown:
+:description: Solving a quartic equation.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7a6cb0d1-6a30-451a-a8d2-213a4e7a0917?id=68313
+:label: Grasple:68313
+:dropdown:
+:description: Solving a quartic equation.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7c6c944c-937a-43f2-8b9f-ed99ddda3ab4?id=68323
+:label: Grasple:68323
+:dropdown:
+:description: Finding the multiplicity of a root of a polynomial.
 
 ::::
