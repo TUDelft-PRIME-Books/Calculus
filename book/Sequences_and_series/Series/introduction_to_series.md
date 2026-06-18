@@ -460,11 +460,11 @@ t_n &= \sum_{k=1}^n\frac{1}{k^2} \\
 &= 1+\int_1^{n}\frac{1}{x^2}\,dx \\
 &= 1+\bigg[-\frac{1}{x}\bigg]_1^{n} \\
 &= 2+\left(-\frac{1}{n}+1\right) \\
-&= 2-\frac{1}{n} \\
-&< 2.
+&= 3-\frac{1}{n} \\
+&< 3.
 \end{align*}
 
-This means that the sequence of partial sums $\{t_n\}$ is bounded from above by $2$. Also, we have
+This means that the sequence of partial sums $\{t_n\}$ is bounded from above by $3$. Also, we have
 
 $$
 t_{n+1}-t_n = \frac{1}{(n+1)^2} > 0,
