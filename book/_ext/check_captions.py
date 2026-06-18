@@ -25,7 +25,8 @@ def check_captions(app, doctree, docname):
 
         # check if the caption ends with a .
         if not caption.astext().strip().endswith(('.', '?', '!','\\text{.}', '\\text{?}', '\\text{!}')):
-            logger.info(f"Caption for table in document {docname} at line {caption.line} does not end with a period.", color="green")
+            if caption.line is not None:
+                logger.info(f"Caption for table in document {docname} at line {caption.line} does not end with a period.", color="green")
 
     for figure in doctree.findall(nodes.figure):
         # Find caption node
@@ -42,7 +43,8 @@ def check_captions(app, doctree, docname):
 
         # check if the caption ends with a ., ? or !
         if not caption.astext().strip().endswith(('.', '?', '!','\\text{.}', '\\text{?}', '\\text{!}')):
-            logger.info(f"Caption for figure in document {docname} at line {caption.line} does not end with a period: {caption.astext().strip()[-5:]}", color="blue")
+            if caption.line is not None:
+                logger.info(f"Caption for figure in document {docname} at line {caption.line} does not end with a period: {caption.astext().strip()[-5:]}", color="blue")
 
 
 def setup(app):

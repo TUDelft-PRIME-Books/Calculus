@@ -333,7 +333,7 @@ The curves $C_1$ and $C_2$.
 :admonition:
 :class: question
 
-Consider the curves given by all points $(x,y)$ that satisfy the equation $x^p-y^q=b$, where $p$ can be chosen from $\{2,3,\ldots,9\}$, $q$ from $\{2,3,\ldots,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$. You can show curves for different values of $p$, $q$ and $b$ in {numref}`Fig:Functions1var:VerticalLineQuestion`. The first slider controls the value of $p$, the second slider controls the value of $q$ and the third slider controls the value of $b$.
+Consider the curves given by all points $(x,y)$ that satisfy the equation $x^p+y^q=b$, where $p$ can be chosen from $\{2,3,\ldots,9\}$, $q$ from $\{2,3,\ldots,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$. You can show curves for different values of $p$, $q$ and $b$ in {numref}`Fig:Functions1var:VerticalLineQuestion`. The first slider controls the value of $p$, the second slider controls the value of $q$ and the third slider controls the value of $b$.
 
 _Complete the following sentences by selecting the correct options from the dropdown menus. You can use the vertical line test in {numref}`Fig:Functions1var:VerticalLineQuestion`._
 
@@ -358,7 +358,7 @@ When $p$ and $q$ are both {gap} and $b$ is {gap}, the curve makes a closed loop 
 :name: Fig:Functions1var:VerticalLineQuestion
 :class: dark-light
 
-The curve $C$ is given by all points $(x,y)$ that satisfy the equation $x^p-y^q=b$, where $p$ can be chosen from $\{2,3,\ldots,9\}$, $q$ from $\{2,3,\ldots,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$.
+The curve $C$ is given by all points $(x,y)$ that satisfy the equation $x^p+y^q=b$, where $p$ can be chosen from $\{2,3,\ldots,9\}$, $q$ from $\{2,3,\ldots,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$.
 :::
 
 ::::
@@ -595,18 +595,12 @@ $$
 
 That is, the pressure is inversely proportional to the volume. This means that if $V$ doubles, $P$ will halve and vice versa. The graph of $P$ as a function of $V$ is shown below. Note that $P$ becomes very large if $V$ is close to $0$, while, reversely, $P$ is very close to $0$ whenever $V$ is very large. This makes sense from a physical point of view: when $V$ is small, the gas is compressed into a small amount of space, which means that the pressure must be very high, while if $V$ is large, the gas is distributed over a large amount of space, which means the pressure is much lower.
 
-
-:::{figure} Images/Fig-Functions1var-IdealGas2.svg
+:::{applet}
+:url: calculus/functions_of_one_variable/ideal_gas_law
 :name: Fig:Functions1var:IdealGas2
+:class: dark-light
 
-The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for several values of the constant $nRT$. Due to physical restrictions, the domain of this function only consists of positive values of $V$.
-
-
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:IdealGas2` with an applet.
-Alternative: use a slider for $nRT$.
+The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for $n=1$ and $T=293.15\,\text{K}=20\,^{\circ}\text{C}$. Due to physical restrictions, the domain of this function only consists of positive values of $V$. You can use the sliders to change the values of $n$ and $T$. The first slider controls the number of moles $n$ of gas, while the second slider controls the temperature $T$ of the gas.
 :::
 
 ::::::
@@ -621,15 +615,12 @@ $$
 
 Here $G$ is the [gravitational constant](https://en.wikipedia.org/wiki/Gravitational_constant). The graph of the function is shown below. Since $F$ is proportional to $r^{-2}$, this law is a prime example of an **inverse square law**. This means that if the distance between the masses is doubled, the gravitational force drops by a factor $\frac{1}{4}$. Inverse square laws are rather common in nature, for example in certain electric, light and sound effects.
 
-::::{figure} Images/Fig-Functions1var-Gravity.svg
+:::{applet}
+:url: calculus/functions_of_one_variable/newton's_law_of_universal_gravitation
 :name: Fig:Functions1var:Gravity
+:class: dark-light
 
-The graph of the function  $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for several values of the constant $Gm_1m_2$.
-::::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Gravity` with an applet.
-Alternative: use a slider for $Gm_1m_2$.
+The graph of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for $m_1m_2=10^{48}\,\text{kg}^2$. Due to physical restrictions, the domain of this function only consists of positive values of $r$. You can use the slider to change the value of $m_1m_2$.
 :::
 
 The graph is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
@@ -640,16 +631,12 @@ The graph is, qualitatively speaking, somewhat similar to the one in {prf:ref}`E
 :label: Ex:Functions1var:NegativePowers
 Let us now consider the power functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$. Their graphs are shown below.
 
-:::{figure} Images/Fig-Functions1var-NegativePowers.png
+:::{applet}
+:url: calculus/functions_of_one_variable/negative_powers
 :name: Fig:Functions1var:NegativePowers
+:class: dark-light
 
-The graphs of the functions $f(x)=x^{-1}$ and $g(x)=x^{-2}$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:NegativePowers` with an applet.
-
-Better: plot $x^{-n}$ and $x^{-m}$ for $n$ odd and $m$ even in one plot (so always two graphs visible). Default: $n=1$ and $m=2$, but make a slider for $n$ and one for $m$.
+The graphs of the functions $f(x)=x^{-n}$ with $n=1$ and $g(x)=x^{-m}$ with $m=2$. You can use the first slider to change the value of $n$ and the second slider to change the value of $m$. 
 :::
 
 Note that the graph of $f$ is very similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`, except that, since there are no physical restrictions, the function $f$ is also defined for negative values of $x$. In fact, whenever two (physical) quantities are inversely proportional to each other, the graph of one quantity as a function of the other one will be similar to the graph of $f$. Since the graph of $f$ is the set of all points $(x,y)$ with $y=\frac{1}{x}$, we can rewrite this equation to $xy=1$. This means that the graph of $f$ is a hyperbola. For more information on hyperbolas, see {numref}`Subsec:CurvesHyperbola`.
@@ -667,16 +654,12 @@ Many quantities in nature have the property that their growth rate is proportion
 
 To show the typical behaviour of exponential functions, let us consider the functions $A(t)=2^t$ and $B(t)=\left(\frac{1}{3}\right)^t$. Using the computation rules for exponentiation, we can write the function $B$ alternatively as $B(t)=3^{-t}$. The graphs of the functions $A$ and $B$ are shown below.
 
-:::{figure} Images/Fig-Functions1var-ExponentialGrowth.png
+:::{applet}
+:url: calculus/functions_of_one_variable/exponential_functions
 :name: Fig:Functions1var:ExponentialGrowth
+:class: dark-light
 
-The graphs of the functions $A(t)=2^t$ and $B(t)=\left(\frac{1}{3}\right)^t$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:ExponentialGrowth` with an applet.
-
-Better: plot $A(t)=n^t$ and $B(t)=\left(\frac{1}{m}\right)^t$ in one plot. Default: $n=2$, $m=3$, with slider for $n,m$ (both $\geq 2$, half-integer steps, although it could be fun to include the case where one of them is $1$ to show the qualitative difference)
+The graphs of the functions $A(t)=n^t$ with $n=2$ and $B(t)=\left(\frac{1}{m}\right)^t$ with $m=3$. You can use the first slider to change the value of $n$ and the second slider to change the value of $m$. Do you notice what happens when $n$ or $m$ is equal to $1$?
 :::
 
 For the function $A$, we notice that it is very close to $0$ for negative values of $t$, while it grows very fast for positive $t$. In fact, it grows faster the larger $t$ gets, which is indeed the **exponential growth** behaviour that we were trying to model. Conversely, the function $B$ is very large for negative values of $t$, while it get very close to $0$ for positive values of $t$. In fact, the decay rate decreases when $t$ gets larger, so again this function describes **exponential decay**.
@@ -694,14 +677,12 @@ Apart from their role in geometry, the trigonometric functions $f(\theta)=\cos(\
 
 Let us analyse these functions a bit more in mathematical terms. First, let us consider their graphs.
 
-:::{figure} Images/Fig-Functions1var-Trigonometry.png
+:::{applet}
+:url: calculus/functions_of_one_variable/trigonometric_functions
 :name: Fig:Functions1var:Trigonometry
+:class: dark-light
 
-The graphs of the trigonometric functions $f(\theta)=\cos(\theta)$, $g(\theta)=\sin(\theta)$ and $h(\theta)=\tan(\theta)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Trigonometry` with an applet.
+The graphs of the trigonometric functions $f(\theta)=\cos(n\theta)$, $g(\theta)=\sin(n\theta)$ and $h(\theta)=\tan(n\theta)$, with $n=1$. You can use the slider to change the value of $n$.
 :::
 
 One of the first things you might notice is that $f$ and $g$ repeat themselves after each cycle of length $2\pi$, while $h$ repeats itself after each cycle of length $\pi$. We say that these functions are **periodic**. This periodicity follows from {prf:ref}`Thm:Trigonometry:Periodicity`. We will delve deeper into this subject in {numref}`Subsec:PropertiesFunctionsPeriodic`.
@@ -728,16 +709,13 @@ $$
 
 This notation should be read as that $a$ follows the formula $a(x)=x$ for $x\geq 0$, while $a$ follows the formula $a(x)=-x$ for $x<0$.
 
-:::{figure} Images/Fig-Functions1var-Abs.png
+:::{applet}
+:url: calculus/functions_of_one_variable/absolute_value
 :name: Fig:Functions1var:Abs
+:class: dark-light
 
 The graph of the piecewise defined function $a(x)=|x|$.
 :::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Abs` with an applet.
-:::
-
 
 ::::::
 
@@ -746,19 +724,19 @@ Replace {numref}`Fig:Functions1var:Abs` with an applet.
 The **Heaviside (step) function** or **unit step function** is the function defined by
 
 $$
- H(t)=\left\{\begin{array}{lll}1,\qquad&\text{if }&t\geq 0,\\ 0,&\text{if }&t<0.\end{array}\right.
+ H(t)=\left\{\begin{array}{lll}1,\qquad&\text{if }&t> 0,\\H_0,\qquad&\text{if }&t= 0,\\ 0,&\text{if }&t<0,\end{array}\right.
 $$
+
+where $H_0$ is a value that is sometimes taken to be $0$ (_left-continuous convention_), sometimes taken to be $1$ (_right-continuous convention_) and sometimes taken to be $\frac{1}{2}$ (_half-maximum convention_). In most cases the value of $H_0$ is not of large consequence.
 
 That is, the Heaviside function outputs the value $0$ when the input is negative and it outputs the value $1$ when the input is positive. It can be used to model a process that starts off (i.e. at state $0$) and is instantaneously turned on (i.e. state $1$), for instance when flipping a switch. The function is named after the British mathematician and electrical engineer [Oliver Heaviside (1850-1925)](https://en.wikipedia.org/wiki/Oliver_Heaviside).
 
-:::{figure} Images/Fig-Functions1var-Heaviside.png
+:::{applet}
+:url: calculus/functions_of_one_variable/heaviside_step_function
 :name: Fig:Functions1var:Heaviside
+:class: dark-light
 
-The graph of the piecewise defined function $H(t)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Heaviside` with an applet.
+The graph of the piecewise defined function $H(t)$ with initially the _right-continuous_ convention. You can choose another convention by selecting the convention in the dropdown.
 :::
 
 ::::::
@@ -777,21 +755,19 @@ Similarly, in order to evaluate $f(4)$, we note that $4>1$ so that $f(4)=2-4^2=-
 
 Finally, we note that the function is undefined for $-1<x\leq 0$. These values of $x$ simply do not lie in the domain of this function.
 
-:::{figure} Images/Fig-Functions1var-Piecewise.png
+:::{applet}
+:url: calculus/functions_of_one_variable/a_piecewise_defined_function
 :name: Fig:Functions1var:Piecewise
+:class: dark-light
 
 The graph of the piecewise defined function $f$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Functions1var:Piecewise` with an applet.
 :::
 
 ::::::
 
 ## Grasple exercises
 
-### Exercises on domain and range.
+### Exercises on domain and range
 
 ::::{grasple}
 :iframeclass: dark-light
@@ -856,7 +832,7 @@ Replace {numref}`Fig:Functions1var:Piecewise` with an applet.
 
 ::::
 
-### Exercises on graphs.
+### Exercises on graphs
 
 
 ::::{grasple}
