@@ -23,20 +23,14 @@ so that the function value $f(x)$ is the sum of the function values $g(x)$ and $
 
 So what does the graph of $f$ look like in terms of the graphs of $g$ and $h$? For each value of $x$, we know that $f(x)=g(x)+h(x)$, so $f(x)$ is $h(x)$ higher than $g(x)$. That means that if we start from the graph of $g$, we obtain the graph of $f$ by rising the function value $\sin(x)$ by $\frac{x}{2}$ for each value of $x$. This can be seen in the figure below. We can also think of this as the graph of $g$ being stacked on top of the graph of $f$. 
 
-```{figure} Images/Fig-PropertiesFunctions-Sum.png
----
-width: 100%
-name: Fig:PropertiesFunctions:Sum
-class: dark-light
----
+```{applet}
+:url: calculus/properties_of_functions/sum_of_two_functions
+:name: Fig:PropertiesFunctions:Sum
+:class: dark-light
 
 An illustration of the sum of two functions.
 
 ```
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Sum` with an applet. Important: the functions in this example have changed, but the png picture still uses the old functions. The applet should use the new functions.
-:::
 
 ::::::
 
@@ -83,15 +77,12 @@ $$
 
 So what is the domain of the product function? You might be tempted to think that the domain is the set of all real numbers $\mathbb{R}$, since $t^2$ is defined for all values of $t$. However, $(rs)(t)$ is only equal to $t^2$ when $t\neq 0$. If $t=0$, the function value $s(0)$ is not defined as we cannot divide by $0$. As such, $0$ cannot be in the domain of $rs$. So the domain of $rs$ is the set of real numbers $\mathbb{R}$ without the point $0$, i.e. it is $\mathbb{R}\setminus\{0\}$.
 
-:::{figure} Images/Fig-PropertiesFunctions-ProductsAndDomains.png
+:::{applet}
+:url: calculus/properties_of_functions/product_of_two_functions
 :name: Fig:PropertiesFunctions:ProductsAndDomains
 
 The graphs of the functions $r$, $s$ and $rs$. The function $r$ is defined in $0$, but $s$ and $rs$ are not.
 
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:ProductsAndDomains` with an applet. Try to make sure that it is clearly visible that $r$ is defined in $0$, but $s$ and $rs$ are not.
 :::
 
 ::::::
@@ -246,27 +237,22 @@ $$
 
 Starting with the graph of the sine function, which is given $y=\sin(x)$, we first perform a horizontal stretching by a factor $\frac{1}{2}$ to obtain the graph given by $y=\sin(2x)$. Then we perform a horizontal shift of $1$ to the right to obtain the graph given by $y=\sin(2(x-1))$. Subsequently, we perform a reflection across the $x$-axis to obtain the graph given by $y=-\sin(2(x-1))$. Then we perform a vertical stretching by a factor $3$ to obtain the graph given by $y=-3\sin(2(x-1))$. Finally, we perform a vertical shift of $4$ upwards to obtain the graph given by $y=-3\sin(2(x-1))+4$, i.e. the graph of $f$.
 
-:::{figure} Images/Fig-PropertiesFunctions-ReflectionStretching.png
+:::{applet}
+:url: calculus/properties_of_functions/stretching_shifting_and_reflecting_1
 :name: Fig:PropertiesFunctions:ReflectionStretching
+:class: dark-light
 
-The five steps to obtain the graph of $f$ from the graph of $\sin(x)$ visualised.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching` with an applet.
-Current graphs seem incorrect (and one step has been split up in 2). Correct order should be $y=\sin(x)$, $y=\sin(2x)$, $y=\sin(2(x-1))$, $y=-\sin(2(x-1))$, $y=-3\sin(2(x-1))$, $y=-3\sin(2(x-1))+4$.
+The five steps to obtain the graph of $f$ from the graph of $\sin(x)$ visualised. Use the buttons to go through the steps one by one.
 :::
 
 Notice that if we performed these five operations in a different order, we might obtain a different function (but not necessarily so). Indeed, if we start with the graph given by $y=\sin(x)$ and perform the vertical shift of $4$ upwards first, we obtain the graph given by $y=\sin(x)+4$. If we then perform the reflection in the $x$-axis we obtain the graph $y=-\left(\sin(x)+4\right)=-\sin(x)-4$. From the vertical stretching by a factor $3$ we obtain the graph given by $y=3\left(-\sin(x)-4\right)=-3\sin(x)-12$. If we then perform the horizontal shift of $1$ to the right we obtain the graph given by $y=-3\sin(x-1)-12$. Finally, if we then perform the horizontal stretching by a factor $\frac{1}{2}$ we obtain the graph given by $y=-3\sin(2x-1)-12$. This function is very different from $f$, as can be seen from the graphs shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-ReflectionStretching2.png
+:::{applet}
+:url: calculus/properties_of_functions/stretching_shifting_and_reflecting_2
 :name: Fig:PropertiesFunctions:ReflectionStretching2
+:class: dark-light
 
-The result of performing the five steps in a different order visualised.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching2` with an applet. Graphs no longer match the story. Correct order: $y=\sin(x)+4$, $y=-3\sin(x)-4$, $y=-3\sin(x)-12$, $y=-3\sin(x-1)-12$ and $y=-3\sin(2x-1)-12$.
+The result of performing the five steps in a different order visualised. Use the buttons to go through the steps one by one.
 :::
 
 ::::::
@@ -282,32 +268,30 @@ When analysing the graph of a function, one of the most eye-catching properties 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:increasingdecreasing
 
-Let $f$ be a function and $I\subset D_f$ be an interval. Then we say that $f$ is **nondecreasing** on $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\leq f(x_2)$. Similarly, we say that $f$ is **nonincreasing** on the interval $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\geq f(x_2)$.
+Let $f$ be a function and $I\subset D_f$ be an interval. Then we say that $f$ is **non-decreasing** on $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\leq f(x_2)$. Similarly, we say that $f$ is **non-increasing** on the interval $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\geq f(x_2)$.
 
-A function that is either nondecreasing or nonincreasing on an interval, is called **monotonic** on that interval.
+A function that is either non-decreasing or non-increasing on an interval, is called **monotonic** on that interval.
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:increasingdecreasing
 
 
-A function can be nondecreasing on some parts on its domain, while it is nonincreasing on other parts of its domain. For instance, consider the function $f(x)=x^2$, of which the graph is shown below.
+A function can be non-decreasing on some parts on its domain, while it is non-increasing on other parts of its domain. For instance, consider the function $f(x)=x^2$, of which the graph is shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-increasingdecreasing.png
+:::{applet}
+:url: calculus/properties_of_functions/quadratic_function
 :name: Fig:PropertiesFunctions:increasingdecreasing
+:class: dark-light
 
 The graph of the function $f(x)=x^2$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:increasingdecreasing` with an applet.
-:::
-
 The graph suggests that the function nondecreases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
 
-Similarly, on the interval $(-\infty,0)$ the function is nonincreasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2)^2=x_2^2=f(x_2)$.
+Similarly, on the interval $(-\infty,0)$ the function is non-increasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2)^2=x_2^2=f(x_2)$.
 
-However, on the interval $(-2,2)$ the function is neither nondecreasing, nor nonincreasing. Indeed, we have $-1$ and $0$ are numbers in this interval with $-1<0$ and we have $f(-1)=1>0=f(0)$, so $f$ is not nondecreasing on this interval. On the other hand, $0$ and $1$ are also numbers in this interval which have $0<1$ and $f(0)=0<1=f(1)$, so $f$ is not nonincreasing on this interval.
+However, on the interval $(-2,2)$ the function is neither non-decreasing, nor non-increasing. Indeed, we have $-1$ and $0$ are numbers in this interval with $-1<0$ and we have $f(-1)=1>0=f(0)$, so $f$ is not non-decreasing on this interval. On the other hand, $0$ and $1$ are also numbers in this interval which have $0<1$ and $f(0)=0<1=f(1)$, so $f$ is not non-increasing on this interval.
 
 ::::::
 
@@ -322,23 +306,21 @@ $$
 
 The graph of this function is shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-increasingdecreasingFlat.png
+:::{applet}
+:url: calculus/properties_of_functions/a_piecewise_function
 :name: Fig:PropertiesFunctions:increasingdecreasingFlat
+:class: dark-light
 
 The graph of the function $k$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:increasingdecreasingFlat` with an applet.
-:::
+From the graph of the function, we see that the function is definitely non-decreasing on the intervals $(-\infty,0)$ and $(1,\infty)$, but what about the interval $[0,1]$? The graph of the function is horizontal there, so it does not seem to "grow" on this interval. Still, according to the definition that we used, the function is non-decreasing on this interval. Indeed, for any $0<t_1<t_2<1$ we have $k(t_1)=2\leq 2=k(t_2)$. We conclude that the function is indeed non-decreasing on this interval. Moreover, it is also non-increasing on the same interval as for any $0<t_1<t_2<1$ we have $k(t_1)=2\geq 2=k(t_2)$. In general, a function is both non-decreasing and non-increasing on a certain interval precisely when it is constant on that interval.
 
-From the graph of the function, we see that the function is definitely nondecreasing on the intervals $(-\infty,0)$ and $(1,\infty)$, but what about the interval $[0,1]$? The graph of the function is horizontal there, so it does not seem to "grow" on this interval. Still, according to the definition that we used, the function is nondecreasing on this interval. Indeed, for any $0<t_1<t_2<1$ we have $k(t_1)=2\leq 2=k(t_2)$. We conclude that the function is indeed nondecreasing on this interval. Moreover, it is also nonincreasing on the same interval as for any $0<t_1<t_2<1$ we have $k(t_1)=2\geq 2=k(t_2)$. In general, a function is both nondecreasing and nonincreasing on a certain interval precisely when it is constant on that interval.
-
-In fact, the function is nondecreasing on its entire domain. Indeed, we already know that it is nondecreasing on each of the intervals $(-\infty,0)$, $[0,1]$ and $(1,\infty)$. So we only need to consider what happens if we have two values of $t$ that are in different intervals. First consider $t_1$ in $(-\infty,0)$ and $t_2$ in $[0,1]$. Then $t_1<0$, so $k(t_1)=t-3\leq -3<2=k(t_2)$. Similarly if $t_1$ is in $[0,1]$ and $t_2$ is in $(1,\infty)$ then $t_2>1$, so we find $k(t_2)=t+4>5>2=k(t_1)$. Finally, if $t_1$ is in $(-\infty,0)$ and $t_2$ is in $(1,\infty)$, then $t_1<t_2$, so we must have $k(t_1)=t_1-3<t_2-3<t_2+4=k(t_2)$. We find that $k$ is nondecreasing on its entire domain.
+In fact, the function is non-decreasing on its entire domain. Indeed, we already know that it is non-decreasing on each of the intervals $(-\infty,0)$, $[0,1]$ and $(1,\infty)$. So we only need to consider what happens if we have two values of $t$ that are in different intervals. First consider $t_1$ in $(-\infty,0)$ and $t_2$ in $[0,1]$. Then $t_1<0$, so $k(t_1)=t-3\leq -3<2=k(t_2)$. Similarly if $t_1$ is in $[0,1]$ and $t_2$ is in $(1,\infty)$ then $t_2>1$, so we find $k(t_2)=t+4>5>2=k(t_1)$. Finally, if $t_1$ is in $(-\infty,0)$ and $t_2$ is in $(1,\infty)$, then $t_1<t_2$, so we must have $k(t_1)=t_1-3<t_2-3<t_2+4=k(t_2)$. We find that $k$ is non-decreasing on its entire domain.
 
 ::::::
 
-In {prf:ref}`Ex:PropertiesFunctions:increasingdecreasingFlat` we saw that a constant function is both nondecreasing and nonincreasing. Sometimes, we want to specifically look at functions that actually grow or decay. For this, we adopt some new terminology.
+In {prf:ref}`Ex:PropertiesFunctions:increasingdecreasingFlat` we saw that a constant function is both non-decreasing and non-increasing. Sometimes, we want to specifically look at functions that actually grow or decay. For this, we adopt some new terminology.
 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:Strictlyincreasingdecreasing
@@ -350,20 +332,20 @@ Similarly, we say that $f$ is **strictly decreasing** on $I$ if for each two poi
 A function that is either strictly increasing or strictly decreasing on an interval, is called **strictly monotonic** on that interval.
 ::::::
 
-In particular, constant functions are nondecreasing and nonincreasing, but neither strictly increasing nor strictly decreasing.
+In particular, constant functions are non-decreasing and non-increasing, but neither strictly increasing nor strictly decreasing.
 
 ::::::{warning} 
 :name: Warning:PropertiesFunctions:Strictlyincreasingdecreasing
 
-In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those texts, constant functions are neither increasing nor decreasing). In other literature, the terminology increasing and decreasing is used for what we call nondecreasing and nonincreasing. This makes the terms increasing and decreasing ambiguous, and we will not use these terms. Be aware of this when you read other literature.
+In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those texts, constant functions are neither increasing nor decreasing). In other literature, the terminology increasing and decreasing is used for what we call non-decreasing and non-increasing. This makes the terms increasing and decreasing ambiguous, and we will not use these terms. Be aware of this when you read other literature.
 ::::::
 
-Showing that a function is nondecreasing or nonincreasing can be tricky in practice. In {numref}`Section:GraphsDerivatives` we will learn an efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
+Showing that a function is non-decreasing or non-increasing can be tricky in practice. In {numref}`Section:GraphsDerivatives` we will learn an efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
 
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Expnondecreasenonincrease
 
-Let $a>0$ and consider the exponential function $f(x)=a^x$. If $0<a<1$, the function $f$ is strictly decreasing on $\mathbb{R}$. If $a>1$, the function $f$ is strictly increasing on $\mathbb{R}$. If $a=1$, the function $f$ is constant, and, therefore, both nondecreasing and nonincreasing on $\mathbb{R}$.
+Let $a>0$ and consider the exponential function $f(x)=a^x$. If $0<a<1$, the function $f$ is strictly decreasing on $\mathbb{R}$. If $a>1$, the function $f$ is strictly increasing on $\mathbb{R}$. If $a=1$, the function $f$ is constant, and, therefore, both non-decreasing and non-increasing on $\mathbb{R}$.
 
 ::::::
 
@@ -377,7 +359,7 @@ Similarly, we can show that power functions are always strictly increasing or al
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Powernondecreasenonincrease
 
-Let $r$ in $\mathbb{R}$ and consider the power function $f(x)=x^r$. If $r>0$, the function $f$ is strictly increasing on $[0,\infty)$. Moreover, if $r=\dfrac{p}{q}$ for integers $p>0$ and $q>0$ with $q$ odd, then $f$ is strictly increasing on $\mathbb{R}$. If $r<0$, the function $f$ is strictly decreasing on $(0,\infty)$. If $r=1$, the function $f$ is constant, and, therefore, both nondecreasing and nonincreasing on $\mathbb{R}$.
+Let $r$ in $\mathbb{R}$ and consider the power function $f(x)=x^r$. If $r>0$, the function $f$ is strictly increasing on $[0,\infty)$. Moreover, if $r=\dfrac{p}{q}$ for integers $p>0$ and $q>0$ with $q$ odd, then $f$ is strictly increasing on $\mathbb{R}$. If $r<0$, the function $f$ is strictly decreasing on $(0,\infty)$. If $r=1$, the function $f$ is constant, and, therefore, both non-decreasing and non-increasing on $\mathbb{R}$.
 
 ::::::
 
@@ -409,9 +391,14 @@ $$
 
 This shows that the function $f$ is strictly decreasing on $[0,\infty)$.
 
-:::{todo}
-Make an applet with the graph of $f$.
+:::{applet}
+:url: calculus/properties_of_functions/exponential_square_root
+:name: Fig:PropertiesFunctions:ExponentialSquareRoot
+:class: dark-light
+
+The graph of the function $f(x)=e^{-\sqrt{x}}$.
 :::
+
 ::::::
 
 (Subsec:PropertiesFunctionsEvenOdd)=
@@ -506,7 +493,7 @@ The graph of the function $f(x)=|x|\sin(x)$. Note that the graph is symmetric in
 :::
 
 :::{todo}
-Replace {numref}`Fig:PropertiesFunctions:EvenOdd` with an applet.
+Replace {numref}`Fig:PropertiesFunctions:EvenOdd` with an applet. Voeg lijn door 0 toe.
 :::
 
 ::::::
@@ -640,7 +627,9 @@ Finally, for $x=0$, we have $f_{\mathrm{odd}}(0)=0=-f_{\mathrm{odd}}(-0)$. This 
 
 
 :::{todo}
-Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ with $x>0$ and sketch the even and odd extensions, or plug in a formula and draw the graphs of the even and odd extensions.
+Make an applet that allows students to plug in a formula and draw the graphs of the even and odd extensions.
+
+Include question: can you make sure the extensions do not make jumps at 0? >> Gaps met even altijd en odd met waarde invullen.
 :::
 
 Sometimes, it turns out to be convenient to write a function as the sum of an even and an odd function. The following theorem shows how we can construct these new functions.
@@ -697,10 +686,6 @@ and
 Hence, we must have $g=f_e$ and $h=f_o$, as desired.
 :::
 
-:::{todo}
-Make applet that lets student enter a function and it plots the function and the even and odd parts.
-:::
-
 The even and odd parts of the exponential function are so common that they have their own names.
 
 ::::::{prf:definition} 
@@ -722,7 +707,7 @@ The graphs of the hyperbolic cosine, sine and tangent functions.
 :::
 
 :::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Hyperbolic` with an applet.
+Replace {numref}`Fig:PropertiesFunctions:Hyperbolic` with an applet. Voeg e^x toe.
 :::
 
 ::::::{prf:notation} Powers of hyperbolic functions
@@ -764,7 +749,7 @@ $$
 
 which means that the hyperbolic tangent is odd.
 
-We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are nondecreasing and nonincreasing. This we will do in {numref}`Section:GraphsDerivatives`.
+We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are non-decreasing and non-increasing. This we will do in {numref}`Section:GraphsDerivatives`.
 
 By {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
 
@@ -802,7 +787,7 @@ The graph of function with fundamental period $T$.
 ::::
 
 :::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Periodic` with an applet.
+Replace {numref}`Fig:PropertiesFunctions:Periodic` with an applet. Multiple sines added together with different frequencies. Draggable period T and 2T.
 :::
 
 Periodic functions play an important role in many fields of science and engineering, for instance in signal processing and astronomy. In addition, periodic functions are precisely the functions that can be described by a Fourier series, see {numref}`Section:Fourier`.
@@ -984,6 +969,8 @@ The symmetries of the odd and even extensions of $f$ carry over to the odd and e
 
 :::{todo}
 Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ with $x>0$ and sketch the even and odd periodic extensions, or plug in a formula and draw the graphs of the even and odd periodic extensions.
+
+Make an example based on {prf:ref}`Ex:Series:FourierExample4`.
 :::
 
 ## Grasple exercises

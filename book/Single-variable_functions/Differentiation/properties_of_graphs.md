@@ -221,7 +221,7 @@ $$
  f'(c)=\frac{f(b)-f(a)}{b-a}.
 $$
 
-Since $f''(x)\geq 0$ for all $x$, it follows from {prf:ref}`Thm:MinMax:Increasingdecreasing` that $f'$ is nondecreasing on $I$. Hence, we find that 
+Since $f''(x)\geq 0$ for all $x$, it follows from {prf:ref}`Thm:MinMax:Increasingdecreasing` that $f'$ is non-decreasing on $I$. Hence, we find that 
 
 $$
  f'(a)\leq f'(c).
@@ -241,7 +241,7 @@ $$
 
 Then we obtain that $f$ must be convex by {prf:ref}`Thm:Graphsderivatives:Concavitytangent`.
 
-Now suppose that $f$ is convex on an interval $I$. We will show that $f''(x)\geq 0$ on $I$ by showing that $f'$ is nondecreasing on $I$ and then using {prf:ref}`Thm:MinMax:Increasingdecreasing`. Let $a<b$ be two distinct points in $I$. Consider any point $c$ in $(a,b)$. Then by the definition of convexity, we find that
+Now suppose that $f$ is convex on an interval $I$. We will show that $f''(x)\geq 0$ on $I$ by showing that $f'$ is non-decreasing on $I$ and then using {prf:ref}`Thm:MinMax:Increasingdecreasing`. Let $a<b$ be two distinct points in $I$. Consider any point $c$ in $(a,b)$. Then by the definition of convexity, we find that
 
 $$
  f(c)\leq f(a)+\frac{f(b)-f(a)}{b-a}(c-a)=\frac{b-c}{b-a}f(a)+\frac{c-a}{b-a}f(b).
@@ -304,7 +304,7 @@ $$
  f'(a)\leq \frac{f(b)-f(a)}{b-a}\leq f'(b).
 $$
 
-This means that $f'$ is nondecreasing, so by {prf:ref}`Thm:MinMax:Increasingdecreasing` we must have $f''(x)\geq 0$ on $I$, as desired.
+This means that $f'$ is non-decreasing, so by {prf:ref}`Thm:MinMax:Increasingdecreasing` we must have $f''(x)\geq 0$ on $I$, as desired.
 
 The other cases follow similarly.
 :::
@@ -317,14 +317,14 @@ Include an applet with the graph of $f$.
 :::
 ::::
 
-As a consequence, we can also check for convexity by checking whether the derivative is nondecreasing or nonincreasing. In fact, we already used this in the proof of {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv`.
+As a consequence, we can also check for convexity by checking whether the derivative is non-decreasing or non-increasing. In fact, we already used this in the proof of {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv`.
 
 ::::::{prf:theorem} 
 :label: Thm:Graphsderivatives:Concaveincrdecr
 Let $f$ be a twice differentiable function. 
 
-- $f$ is convex on an interval precisely when $f'$ is nondecreasing on that interval.
-- $f$ is concave on an interval precisely when $f'$ is nonincreasing on that interval.
+- $f$ is convex on an interval precisely when $f'$ is non-decreasing on that interval.
+- $f$ is concave on an interval precisely when $f'$ is non-increasing on that interval.
 - If $f'$ is strictly increasing on an interval, then $f$ is strictly convex on that interval.
 - If $f'$ is strictly decreasing on an interval, then $f$ is strictly concave on that interval.
 
