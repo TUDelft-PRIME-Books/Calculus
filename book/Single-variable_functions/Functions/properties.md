@@ -70,6 +70,8 @@ $$
  D_{h}=\left(D_f\cap D_g\right)\setminus\left\{x\,\middle|\,g(x)=0\right\}.
 $$
 
+
+
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:ProductsAndDomains
 
@@ -141,6 +143,30 @@ What can we say about the domain of the composition $f\circ g$? Since $(f\circ g
 $$
  D_{f\circ g}=\left\{x\in D_g\,\middle|\,g(x)\in D_f\right\}.
 $$
+
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+Let $f$ and $g$ be functions for which $f\circ g$ exists.
+Which of the following statements is true?
+---
+[ ] The range of $f\circ g$ is equal to the range of $f$.
+> For $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$. However, not every element in the range of $f$ needs to be reached. For instance, consider $f(x)=x$ and $g(x)=\sqrt{x}$. Then the range of $f$ is $\mathbb{R}$. On the other hand, we have $(f\circ g)(x)=\sqrt{x}$, so the range of $f\circ g$ is $[0,\infty)$.
+
+[x] The range of $f\circ g$ is a subset of the range of $f$, but is not necessarily the same.
+> For $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$. However, not every element in the range of $f$ needs to be reached. For instance, consider $f(x)=x$ and $g(x)=\sqrt{x}$. Then the range of $f$ is $\mathbb{R}$. On the other hand, we have $(f\circ g)(x)=\sqrt{x}$, so the range of $f\circ g$ is $[0,\infty)$.
+[ ] The range of $f\circ g$ is equal to the range of $g$.
+> For $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$ and not necessarily in the range of $g$. For instance consider $f(x)=-x$ and $g(x)=\dfrac{1}{x^2}$. Then for $x\neq 0$ we have $(f\circ g)(x)=-\dfrac{1}{x^2}$. So the range of $g$ is $(0,\infty)$, while the range of $f\circ g$ is $(-\infty,0)$. So in this case, the ranges of $f\circ g$ has no overlap at all with the range of $g$.
+[ ] The range of $f\circ g$ is a subset of the range of $g$, but is not necessarily the same.
+> For $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$ and not necessarily in the range of $g$. For instance consider $f(x)=-x$ and $g(x)=\dfrac{1}{x^2}$. Then for $x\neq 0$ we have $(f\circ g)(x)=-\dfrac{1}{x^2}$. So the range of $g$ is $(0,\infty)$, while the range of $f\circ g$ is $(-\infty,0)$. So in this case, the ranges of $f\circ g$ has no overlap at all with the range of $g$.
+[ ] The range of $f\circ g$ is not necessarily a subset of either of the ranges of $f$ and $g$.
+> or $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$. Does it necessarily cover the entire range of $f$?
+---
+::::
 
 A logical follow-up question could be what happens if we take the composition of three (or even more) functions. So say, we have functions $f$, $g$ and $h$, what do we mean by $f\circ g\circ h$? Since we know what the composition of two functions is, we could try to construct the composition of three function as repeatedly composing two functions, but we run into an issue: there are two logical ways to make this construction. We could either compose $f$ and $g\circ h$, i.e. we could look at $f\circ(g\circ h)$, or, we could compose $f\circ g$ with $h$, i.e. we could look at $(f\circ g)\circ h$. Fortunately, it does not matter which of these we choose, as the resulting function is the same. This important property of composing functions is known as **associativity**.
 
@@ -444,11 +470,23 @@ The graph of an odd function is point symmetric with respect to the origin.
 Replace {numref}`Fig:PropertiesFunctions:Odd` with an applet.
 :::
 
-:::{todo}
-Make poll: Let $f$ be even and $g$ be odd on $[-1,1]$. True or false?
-We must have $f(0)=0$ (false)
-We must have $g(0)=0$ (true)
-:::
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+Let $f$ be even on $[-1,1]$ and $g$ be odd on $[-1,1]$.
+Select all statements that are true.
+---
+[ ] We must have $f(0)=0$.
+> The defining property of even functions gives that $f(-0)=f(0)$ which is true no matter what the value of $f(0)$ is.
+
+[x] We must have $g(0)=0$.
+> The defining property of odd functions gives that $g(-0)=-g(0)$. Since $g(-0)=g(0)$ this means that $g(0)=-g(0)$. The only real number which is minus itself is $0$, so we must have $g(0)=0$.
+---
+::::
 
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:EvenOdd
@@ -473,9 +511,71 @@ Replace {numref}`Fig:PropertiesFunctions:EvenOdd` with an applet.
 
 ::::::
 
-:::{todo}
-Make poll with some true/false about combinations of even and odd functions.
-:::
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+Let $f$ be even on $\mathbb{R}$ and $g$ be odd on $\mathbb{R}$.
+Select all statements that are true.
+---
+[ ] $fg$ is even on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (fg)(-x)=f(-x)g(-x)=f(x)\left(-g(x)\right)=-f(x)g(x)=-(fg)(x).
+$$
+
+This means that in most cases $fg$ is not even on $\mathbb{R}$.
+
+[x] $fg$ is odd on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (fg)(-x)=f(-x)g(-x)=f(x)\left(-g(x)\right)=-f(x)g(x)=-(fg)(x).
+$$
+
+This means that $fg$ is odd on $\mathbb{R}$.
+
+[x] $f\circ g$ is even on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (f\circ g)(-x)=f(g(-x))=f(-g(x))=f(g(x))=(f\circ g)(x).
+$$
+
+This means that $f\circ g$ is even on $\mathbb{R}$.
+
+[ ] $f\circ g$ is odd on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (f\circ g)(-x)=f(g(-x))=f(-g(x))=f(g(x))=(f\circ g)(x).
+$$
+
+This means that in most cases $f\circ g$ is not odd on $\mathbb{R}$.
+
+[x] $g\circ f$ is even on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (g\circ f)(-x)=g(f(-x))=g(f(x))=(g\circ f)(x).
+$$
+
+This means that $g\circ f$ is even on $\mathbb{R}$.
+
+[ ] $g\circ f$ is odd on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (g\circ f)(-x)=g(f(-x))=g(f(x))=(g\circ f)(x).
+$$
+
+This means that in most cases $g\circ f$ is not odd on $\mathbb{R}$.
+---
+::::
 
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:NotEvenOdd
@@ -836,9 +936,6 @@ So $f+g$ is periodic with period $T$.
 
 ::::{note}
 It might be tempting to think that {prf:ref}`Thm:PropertiesFunctions:Sumperiodic` also works the other way around in the sense that the quotient of the fundamental periods of two period functions being irrational would mean that the sum function is not periodic, but this is not the case in general. However, counterexamples are way beyond the scope of this book. If you are interested, you can find a counterexample in [this article](https://www.jstor.org/stable/2690095?seq=2).
-:::{todo}
-Betere link?
-:::
 ::::
 
 
