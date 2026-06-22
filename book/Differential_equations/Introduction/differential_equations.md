@@ -466,7 +466,7 @@ Apart from being easier to solve than nonlinear equations, equations that are li
 :label: Thm:DE:SuperpositionPrinciple
 If $y_1(x)$ and $y_2(x)$ are both solutions of a linear, homogeneous differential equation, then $y(x)=c_1y_1(x)+c_2y_2(x)$ is also a solution for each $c_1,c_2\in\mathbb{R}$.
 
-For complex $c_1,c_2\in\mathbb{C}$, the linear combination $y(x)=c_1y_1(x)+c_2y_2(x)$ is a (possibly) complex solution of the differential equation.
+For complex $c_1,c_2\in\mathbb{C}$, the linear combination $y(x)=c_1y_1(x)+c_2y_2(x)$ is a complex-valued solution of the differential equation.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:DE:SuperpositionPrinciple`
@@ -886,7 +886,7 @@ has no solution if $\beta\neq-\alpha$. Moreover, if $\beta=-\alpha$ the boundary
 Check that $y_1(x)=\cos(x\sqrt{2})$ and $\sin(x\sqrt{2})$ are two linear independent solutions of the second-order linear differential equation $y''+2y=0$. Then the boundary-value problem
 
 $$
-\begin{cases}y''+2y=0,\quad 0<x<\pi\\ \ \y(0)=\alpha,\quad y(\pi)=\beta\end{cases}
+\begin{cases}y''+2y=0,\quad 0<x<\pi\\ y(0)=\alpha,\quad y(\pi)=\beta\end{cases}
 $$
 
 has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sqrt{2})}{\sin(\pi\sqrt{2})}\sin(x\sqrt{2})$.
@@ -896,16 +896,201 @@ has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sq
 
 ::::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0ced0edb-1f05-4f25-aad3-8b7457424b42?id=75347
+:label: Grasple:75347
+:dropdown:
+:description: Order of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bacc3ea4-0b25-4c4c-8aff-cff36756bcdf?id=75351
+:label: Grasple:75351
+:dropdown:
+:description: Order of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d7502886-3e86-4ab5-827e-168abcea587b?id=79445
+:label: Grasple:79445
+:dropdown:
+:description: Determining order and linearity of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/57eb19bc-952f-4de9-acce-2c5b6847d939?id=75348
+:label: Grasple:75348
+:dropdown:
+:description: Find equilibrium solutions and check if the differential equation is autonomous.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fa7c4299-9811-428f-80dc-ee1ad8503e6c?id=79449
+:label: Grasple:79449
+:dropdown:
+:description: Is the differential equation homogeneous or not?
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5b7acf31-b9c0-4f29-b85b-7cdad6738d6a?id=116919
+:label: Grasple:116919
+:dropdown:
+:description: Matching a differential equation to the graph of a solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4127023a-8a3e-45e0-b14a-fd7c6ad9b5b0?id=63819
+:label: Grasple:63819
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/899a9f36-7bb2-4cc0-a78d-96c267bf5532?id=63815
+:label: Grasple:63815
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b286747b-4b87-4028-8739-6b1435696e00?id=63814
+:label: Grasple:63814
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7553de32-4620-4eb6-82bf-6e324c0531b6?id=75346
+:label: Grasple:75346
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/253f32c9-0273-4c49-a337-43c5f14bb707?id=63816
+:label: Grasple:63816
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4cdcbca4-9d70-4de1-8b26-22b272d6c095?id=63817
+:label: Grasple:63817
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f5744d7a-bcd8-407c-aa4f-b4305aaf5537?id=68846
+:label: Grasple:68846
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/427e2cff-1b94-4d17-896c-2a90d1b0332d?id=79417
+:label: Grasple:79417
+:dropdown:
+:description: Make an educated guess about the shape of the solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/c83c4815-8d8c-4a1d-bade-f720cf165406?id=79453
-:label: grasple_exercise_13_0_1
+:label: Grasple:79453
 :dropdown:
 :description: Are two functions linearly independent?
 ::::::
 
 ::::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/fa7c4299-9811-428f-80dc-ee1ad8503e6c?id=79449
-:label: grasple_exercise_13_0_2
+:url: https://embed.grasple.com/exercises/6e8c3138-792d-477f-b804-e9f0de414eb0?id=79418
+:label: Grasple:79418
 :dropdown:
-:description: Is the differential equation homogeneous or not?
+:description: Application: Electrical circuit
+::::::
+
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f221aa01-abe0-47df-ba0c-22bbf818b693?id=63812
+:label: Grasple:63812
+:dropdown:
+:description: Application: Newton's law of cooling
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ac7901dc-0e4b-4544-9d77-d70e2155996c?id=71422
+:label: Grasple:71422
+:dropdown:
+:description: Application: Torricelli's law
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/004b7dd2-225c-42d8-bb81-220dac0d4f91?id=63809
+:label: Grasple:63809
+:dropdown:
+:description: Application: Radioactive decay.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b61df470-920d-4b4a-bcae-48ec98715ac3?id=78952
+:label: Grasple:78952
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9148d4cc-2c20-43e2-b41d-7af72987abcc?id=78936
+:label: Grasple:78936
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4527066e-b5e9-4ff4-86d7-17d0a2b315a0?id=116578
+:label: Grasple:116578
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/12188e2d-d081-4782-89b9-854f1b7b986d?id=116576
+:label: Grasple:116576
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6cb15a96-caba-401d-bf18-0ce510bac2dd?id=116580
+:label: Grasple:116580
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/67724d57-cbe9-48ab-a401-0fd7a8c73a95?id=116579
+:label: Grasple:116579
+:dropdown:
+:description: Application: Salt water in a tank.
 ::::::
