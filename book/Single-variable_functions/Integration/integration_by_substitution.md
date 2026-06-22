@@ -323,20 +323,6 @@ $$
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralExample2
-Let us evaluate $\displaystyle\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
-
-We recognise $\dfrac{1}{1-x^2}$ as the derivative of $\arcsin(x)$, being the other part of the integrand.
-
-If we set $u=\arcsin(x)$, then we have $du=\dfrac{1}{\sqrt{1-x^2}}\,dx$. Furthermore, we have if $x=0$ then $u=\arcsin(0)=0$, and if $x=\frac{1}{2}$ then $u=\arcsin(\frac{1}{2})=\frac{1}{6}\pi$. Hence, we find that
-
-$$
-\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx=\int_0^{\frac{1}{6}\pi}u\,du=\frac{1}{2}u^2\bigg|_0^{\frac{1}{6}\pi}=\frac{1}{2}\cdot\frac{1}{36}\pi^2=\frac{1}{72}\pi^2.
-$$
-
-::::::
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralExample3
 We are going to calculate $\displaystyle\int_{\frac{1}{4}}^1\frac{e^{\frac{1}{\sqrt{x}}}}{x\sqrt{x}}\,dx$.
 
 If we set $u=\dfrac{1}{\sqrt{x}}$, then we have $du=-\dfrac{1}{2x\sqrt{x}}\,dx$ or $\dfrac{1}{x\sqrt{x}}\,dx=-2\,du$. Furthermore, we have if $x=\frac{1}{4}$ then $u=\frac{1}{\sqrt{\frac{1}{4}}}=\frac{1}{\frac{1}{2}}=2$, and if $x=1$ then $u=\frac{1}{\sqrt{1}}=1$. Now we find that
@@ -466,6 +452,20 @@ Now we apply the substitution $u=x-\dfrac{1}{x}$ and therefore $du=\left(1+\dfra
 $$
 \int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\frac{1}{2}\int_{-\frac{3}{2}}^{\frac{3}{2}}\cos(u)\,du
 =\frac{1}{2}\sin(u)\bigg|_{-\frac{3}{2}}^{\frac{3}{2}}=\sin\left(\tfrac{3}{2}\right).
+$$
+
+:::
+
+:::{exercise}
+:label: Exc:Integration:SubstitutionDefiniteIntegral
+Let us evaluate $\displaystyle\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
+
+We recognise $\dfrac{1}{1-x^2}$ as the derivative of $\arcsin(x)$, being the other part of the integrand.
+
+If we set $u=\arcsin(x)$, then we have $du=\dfrac{1}{\sqrt{1-x^2}}\,dx$. Furthermore, we have if $x=0$ then $u=\arcsin(0)=0$, and if $x=\frac{1}{2}$ then $u=\arcsin(\frac{1}{2})=\frac{1}{6}\pi$. Hence, we find that
+
+$$
+\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx=\int_0^{\frac{1}{6}\pi}u\,du=\frac{1}{2}u^2\bigg|_0^{\frac{1}{6}\pi}=\frac{1}{2}\cdot\frac{1}{36}\pi^2=\frac{1}{72}\pi^2.
 $$
 
 :::

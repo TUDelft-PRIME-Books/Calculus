@@ -66,7 +66,7 @@ Of course we do not always deal with positive and continuous functions, so we ne
 ::::{prf:definition}
 :label: Def:Integration:DefinitePositivePiecewise
 
-For a *positive* and *piecewise-continuous* function $f$ defined on an interval $[a,b]\subset D_f$ the **definite integral of a positive piecewise-continuous function**
+For a *positive*, *piecewise-continuous* and *bounded* function $f$ defined on an interval $[a,b]\subset D_f$ the **definite integral of a positive, piecewise-continuous and bounded function**
 
 $$
 \int_a^bf(x)\,dx
@@ -77,6 +77,10 @@ is the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$.
 ::::
 
 As you can see, the definition is the same as for positive continuous functions. The reason is that we can consider each piece of the positive piecewise-continuous function separately as a positive function on each corresponding subinterval and sum the corresponding areas.
+
+:::{note}
+If the function is *unbounded* somewhere on the interval $[a,b]$ the integral is called *improper*. We will consider *improper integrals* in {numref}`Sec:Integration:ImproperIntegrals`.
+:::
 
 ::::::{prf:Example}
 :label: Ex:Integration:DefinitePiecewise
@@ -105,7 +109,7 @@ This example illustrates the following theorem.
 :::{prf:theorem}
 :label: Thm:Integration:DefinitePositivePiecewise
 
-For a *positive* and *piecewise-continuous* function $f$ defined on an interval $[a,b]$ that is made up of $n$ continuous pieces on the subintervals $[x_0,x_1]$, $[x_1,x_2]$, $\ldots$, $[x_{n-1},x_n]$ with $a=x_0<x_1<\ldots<x_n=b$, the definite integral equals the sum of the integrals on each subinterval:
+For a *positive*, *piecewise-continuous* and *bounded* function $f$ defined on an interval $[a,b]$ that is made up of $n$ continuous pieces on the subintervals $[x_0,x_1]$, $[x_1,x_2]$, $\ldots$, $[x_{n-1},x_n]$ with $a=x_0<x_1<\ldots<x_n=b$, the definite integral equals the sum of the integrals on each subinterval:
 
 $$
 \int_a^bf(x)\,dx=\sum_{k=1}^n\int_{x_{k-1}}^{x_k}f(x)\,dx.
@@ -118,7 +122,7 @@ Now we know how to handle the definite integral of a positive piecewise-continuo
 ::::::{prf:definition}
 :label: Def:Integration:DefiniteNegative
 
-For a *negative* and *piecewise-continuous* function $f$ defined on an interval $[a,b]$ the **definite integral of a negative and piecewise-continuous function**
+For a *negative*, *piecewise-continuous* and *bounded* function $f$ defined on an interval $[a,b]$ the **definite integral of a negative, piecewise-continuous and bounded function**
 
 $$
 \int_a^bf(x)\,dx
@@ -161,7 +165,7 @@ The same idea applies to piecewise-continuous functions. This leads us to the fo
 
 ::::::{prf:definition}
 :label: Def:Integration:DefiniteGeneral
-For a *piecewise-continuous* function $f$ defined on an interval $[a,b]\subset D_f$ the **definite integral of a piecewise-continuous function**
+For a *piecewise-continuous* and *bounded* function $f$ defined on an interval $[a,b]\subset D_f$ the **definite integral of a piecewise-continuous and bounded function**
 
 $$
 \int_a^bf(x)\,dx
@@ -289,7 +293,7 @@ If we let the number of subintervals $N$ go to infinity, the width of each subin
 ::::::{prf:theorem}
 :label: Thm:Integration:DefiniteRiemann
 
-The **definite integral of a piecewise-continuous function** $f$ on the interval $[a,b]\subset D_f$ is equal to the limit of the Riemann sums as the number of subintervals $N$ approaches infinity
+The **definite integral of a piecewise-continuous and bounded function** $f$ on the interval $[a,b]\subset D_f$ is equal to the limit of the Riemann sums as the number of subintervals $N$ approaches infinity
 
 $$
 \int_a^bf(x)\,dx=\lim_{N\to\infty}\sum_{n=1}^Nf(x_n)\Delta x\;\text{with}\;\Delta x=\frac{b-a}{N}\;\text{and}\;x_n=a+n\Delta x,
@@ -319,7 +323,7 @@ Luckily, but without giving a formal proof here, we have the following important
 ::::{prf:theorem}
 :label: Thm:Integration:IntegrablePiecewise
 
-Every *piecewise-continuous* function on an interval $[a,b]$ is integrable.
+Every *piecewise-continuous* and *bounded* function on an interval $[a,b]$ is integrable.
 ::::
 
 Before we continue to properties of definite integrals, we show one example of calculating a definite integral using Riemann sums.
@@ -345,7 +349,7 @@ R_N&= \sum_{n=1}^Nf(x_n^*)\Delta x \\
 &= \frac{2N^2+3N+1}{6N^2}.
 \end{align*}
 
-Here we used the result from {prf:ref}`Ex:SumsAndProducts:SumOfSquares`.
+Here we used the result from {numref}`Exc:SumsAndProducts:SumOfSquares`.
 
 Using techniques from {numref}`Section:Limitinf` we find that
 
@@ -418,11 +422,11 @@ Using {prf:ref}`Def:Integration:DefiniteGeneral` we can derive several useful pr
 
 - $\displaystyle\int_a^bc\,dx=c(b-a)$ with $a$, $b$ and $c$ any real numbers;
 
-- $\displaystyle\int_a^bf(x)\,dx=\int_a^rf(x)\,dx+\int_r^bf(x)\,dx$ for any $r$ in $[a,b]$ and $f$ piecewise continuous on $[a,b]$;
+- $\displaystyle\int_a^bf(x)\,dx=\int_a^rf(x)\,dx+\int_r^bf(x)\,dx$ for any $r$ in $[a,b]$ and $f$ piecewise continuous and bounded on $[a,b]$;
 
-- $\displaystyle\int_{-a}^af(x)\,dx=0$ for $a\in D_f$ and $f$ *odd* and piecewise continuous on $[-a,a]$;
+- $\displaystyle\int_{-a}^af(x)\,dx=0$ for $a\in D_f$ and $f$ *odd* and piecewise continuous and bounded on $[-a,a]$;
 
-- $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$ for $a\in D_f$ and $f$ *even* and piecewise continuous on $[-a,a]$.
+- $\displaystyle\int_{-a}^af(x)\,dx=2\int_0^af(x)\,dx$ for $a\in D_f$ and $f$ *even* and piecewise continuous and bounded on $[-a,a]$.
 
 ::::
 
@@ -490,13 +494,13 @@ Finally, we state some more properties of definite integrals. Proving these prop
 ::::{prf:theorem}
 :label: Thm:Integration:DefinitePropertiesFundamental
 
-- $\displaystyle\int_a^bf(x)\,dx+\int_b^cf(x)\,dx=\int_a^cf(x)\,dx$ for any real numbers $a$, $b$ and $c$ and $f$ piecewise continuous on $[a,c]$;
+- $\displaystyle\int_a^bf(x)\,dx+\int_b^cf(x)\,dx=\int_a^cf(x)\,dx$ for any real numbers $a$, $b$ and $c$ and $f$ piecewise continuous and bounded on $[a,c]$;
 
-- $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$ for any real numbers $a$ and $b$ and $f$ piecewise continuous on $[a,b]$;
+- $\displaystyle\int_b^af(x)\,dx=-\int_a^bf(x)\,dx$ for any real numbers $a$ and $b$ and $f$ piecewise continuous and bounded on $[a,b]$;
 
-- $\displaystyle\int_a^b\left(f(x)+g(x)\right)\,dx=\int_a^bf(x)\,dx+\int_a^bg(x)\,dx$ for any real numbers $a$ and $b$ and $f$ and $g$ piecewise continuous on $[a,b]$;
+- $\displaystyle\int_a^b\left(f(x)+g(x)\right)\,dx=\int_a^bf(x)\,dx+\int_a^bg(x)\,dx$ for any real numbers $a$ and $b$ and $f$ and $g$ piecewise continuous and bounded on $[a,b]$;
 
-- $\displaystyle\int_a^b cf(x)\,dx=c\int_a^bf(x)\,dx$ for any real numbers $a$, $b$ and $c$ and $f$ piecewise continuous on $[a,b]$.
+- $\displaystyle\int_a^b cf(x)\,dx=c\int_a^bf(x)\,dx$ for any real numbers $a$, $b$ and $c$ and $f$ piecewise continuous and bounded on $[a,b]$.
 
 ::::
 
@@ -505,11 +509,11 @@ Finally, we state some important comparison properties of definite integrals. Th
 ::::{prf:theorem}
 :label: Thm:Integration:DefiniteComparison
 
-- If $f(x)\geq0$ for $a\leq x\leq b$ and $f$ is piecewise continuous on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq0$;
+- If $f(x)\geq0$ for $a\leq x\leq b$ and $f$ is piecewise continuous and bounded on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq0$;
 
-- If $f(x)\geq g(x)$ for $a\leq x\leq b$ and $f$ and $g$ are piecewise continuous on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq\int_a^bg(x)\,dx$;
+- If $f(x)\geq g(x)$ for $a\leq x\leq b$ and $f$ and $g$ are piecewise continuous and bounded on $[a,b]$, then $\displaystyle\int_a^bf(x)\,dx\geq\int_a^bg(x)\,dx$;
 
-- If $m\leq f(x)\leq M$ for $a\leq x\leq b$ and $f$ is piecewise continuous on $[a,b]$, then $m(b-a)\leq\displaystyle\int_a^bf(x)\,dx\leq M(b-a)$.
+- If $m\leq f(x)\leq M$ for $a\leq x\leq b$ and $f$ is piecewise continuous and bounded on $[a,b]$, then $m(b-a)\leq\displaystyle\int_a^bf(x)\,dx\leq M(b-a)$.
 ::::
 
 
@@ -567,7 +571,7 @@ Note that the athlete is active for $20$ minutes, which equals $\frac{1}{3}$ hou
 
 $$
 \begin{align*}
-\int_0^{\frac{1}{3}}v(t)\,dt &= \tfrac{1}{12}\cdot5+\tfrac{1}{30}\cdot15+\tfrac{1}{15}\cdot5+\tfrac{1}{20}\cdot20+\tfrac{1}{15}\cdot6\\
+\int_0^{\frac{1}{3}}v(t)\,dt &= \frac{1}{12}\cdot5+\frac{1}{30}\cdot15+\frac{1}{15}\cdot5+\frac{1}{20}\cdot20+\frac{1}{15}\cdot6\\
 &=\frac{25+30+20+60+24}{60}\\
 &=\frac{159}{60}.
 \end{align*}
