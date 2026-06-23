@@ -831,12 +831,14 @@ The graphs of $\dfrac{1+e^{-x}}{\sqrt{x}}$ and $\dfrac{1}{\sqrt{x}}$.
 
 ::::::
 
-## The Feynman method
+(Sec:Integration:Feynman)=
 
-Sometimes an integral is easier to evaluate if we modify the integrand by inserting a parameter such that a specific value of this parameter leads to the original integral. This method was developed by the American theoretical physicist [Richard Phillips Feynman (1918-1988)](https://en.wikipedia.org/wiki/Richard_Feynman) and is based on the following theorem.
+## The Feynman technique
+
+Sometimes an integral is easier to evaluate if we modify the integrand by inserting a parameter such that a specific value of this parameter leads to the original integral. We have already seen an example of this trick in {numref}`Sec:Integration:Parts`. This technique was developed by the American theoretical physicist [Richard Phillips Feynman (1918-1988)](https://en.wikipedia.org/wiki/Richard_Feynman) and is based on the following theorem.
 
 ::::::{prf:Theorem}
-:label: Thm:Integration:ImproperIntegralsFeynmanMethod
+:label: Thm:Integration:ImproperIntegralsFeynmanTechnique
 If $g(x,t)$ and $\displaystyle\frac{\partial}{\partial t}g(x,t)$ are both continuous for all $x\in[a,b]$, then
 
 $$
@@ -1154,7 +1156,7 @@ Using integration by parts we obtain
 Now we have
 
 $$
-\left|\int_1^R\frac{\cos(x)}{x^2}\,dx\right|\leq\int_1^R\left|\frac{\cos(x)}{x^2}\right\,dx\leq\int_1^R\frac{1}{x^2}\,dx=\left[-\frac{1}{x}\right]_1^R=1-\frac{1}{R}.
+\left|\int_1^R\frac{\cos(x)}{x^2}\,dx\right|\leq\int_1^R\left|\frac{\cos(x)}{x^2}\right|\,dx\leq\int_1^R\frac{1}{x^2}\,dx=\left[-\frac{1}{x}\right]_1^R=1-\frac{1}{R}.
 $$
 
 Since $\displaystyle\lim_{R\to\infty}\frac{\cos(R)}{R}=0$ and $\displaystyle\lim_{R\to\infty}\frac{1}{R}=0$ we conclude that $\displaystyle\int_1^{\infty}\frac{\sin(x)}{x}\,dx$ converges.
@@ -1190,66 +1192,6 @@ $$
 $$
 
 ::::::
-
-### Serret's integral revisited
-
-In {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` and {prf:ref}`Ex:Integration:IntegrationByPartsSerretsIntegral` we evaluated *Serret's integral* $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$ using substitution and integration by parts, respectively. The Feynman method leads to the same result.
-
-We apply the Feynman method to obtain the results in Equation {eq}`Eq:Integration:PartsSerret`.
-
-Note that Serret's integral is a special case of $I(\alpha)=\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
-
-We remark that the parameter $\alpha$ appears in both the upper limit and the integrand of the integral. Differentiation with respect to $\alpha$ leads to 
-
-$$
-I'(\alpha)=\displaystyle\frac{\ln(1+\alpha^2)}{1+\alpha^2}+\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx.
-$$ 
-
-Now we use partial fractions (see {numref}`Sec:Integration:RationalFunctions`) 
- 
-$$
-\frac{x}{(1+x^2)(1+\alpha x)}=\frac{1}{1+\alpha^2}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)
-$$
-
-to obtain
-
-\begin{align*}
-&\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx\\
-&=\frac{1}{1+\alpha^2}\int_0^{\alpha}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)\,dx\\
-&=\frac{1}{1+\alpha^2}\bigg[\alpha\arctan(x)+\frac{1}{2}\ln(1+x^2)-\ln(1+\alpha x)\bigg]_0^{\alpha}\\
-&=\frac{1}{1+\alpha^2}\left(\alpha\arctan(\alpha)+\frac{1}{2}\ln(1+\alpha^2)-\ln(1+\alpha^2)\right)\\
-&=\frac{\alpha}{1+\alpha^2}\arctan(\alpha)-\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}.
-\end{align*}
-
-Hence we have: $I'(\alpha)=\displaystyle\frac{\alpha}{1+\alpha^2}\arctan(\alpha)+\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}$. Since $I(0)=0$, this implies that
-
-\begin{align*}
-I(\alpha)&=\int\frac{\alpha}{1+\alpha^2}\arctan(\alpha)\,d\alpha+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
-&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
-&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)+C\quad\Longrightarrow\quad I(\alpha)=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2).
-\end{align*}
-
-Hence we have: $\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)$.
-
-The special case $\alpha=1$ now reads
-
-$$
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{2}\arctan(1)\ln(2)=\frac{1}{2}\cdot\frac{1}{4}\pi\cdot\ln(2)=\frac{1}{8}\pi\ln(2).
-$$
-
-Similarly, the integral $\displaystyle\int_0^1\frac{\arctan(x)}{1+x}\,dx$ is a special case of
-
-\begin{align*}
-\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx&=\arctan(x)\ln(1+\alpha x)\bigg|_0^{\alpha}-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx\\
-&=\arctan(\alpha)\ln(1+\alpha^2)-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
-\end{align*}
-This implies that: 
-
-$$
-\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)=\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
-$$
-
-For $\alpha=1$ this gives Equation {eq}`Eq:Integration:PartsSerret`.
 
 ## Exercises
 
