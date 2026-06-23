@@ -433,7 +433,8 @@ Let $f$ be a function and $I$ an interval. Then $f$ is called **even** on $I$ if
 A function can only be even and/or odd on an interval that is symmetric with respect to $0$.
 :::
 
-::::{figure} Images/Fig-PropertiesFunctions-Even.png
+::::{applet}
+:url: calculus/properties_of_functions/even_function
 :name: Fig:PropertiesFunctions:Even
 :class: dark-light
 
@@ -441,21 +442,14 @@ The graph of an even function is symmetric with respect to the $y$-axis.
 
 ::::
 
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Even` with an applet.
-:::
-
-::::{figure} Images/Fig-PropertiesFunctions-Odd.png
+::::{applet}
+:url: calculus/properties_of_functions/odd_function
 :name: Fig:PropertiesFunctions:Odd
 :class: dark-light
 
 The graph of an odd function is point symmetric with respect to the origin.
 
 ::::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Odd` with an applet.
-:::
 
 ::::{question}
 :type: multiple-choice
@@ -486,14 +480,12 @@ $$
 
 As such, the function $f$ is odd. Note that $f=gh$ with $g(x)=|x|$ and $h(x)=\sin(x)$. By inspecting the computation above, you can see that $g(-x)=g(x)$ and $h(-x)=-h(x)$. So $g$ is even, while $h$ is odd. It is true, in general, that the product of an even and an odd function is odd again. You could make a list of whether a sum or product of any combination of even and odd functions is even again, but in practice, it is usually quicker to just plug $-x$ into your function and see where you end up.
 
-:::{figure} Images/Fig-PropertiesFunctions-EvenOdd.png
+:::{applet}
+:url: calculus/properties_of_functions/another_odd_function
 :name: Fig:PropertiesFunctions:EvenOdd
+:class: dark-light
 
 The graph of the function $f(x)=|x|\sin(x)$. Note that the graph is symmetric in the origin, which is a consequence of the fact that $f$ is odd.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:EvenOdd` with an applet. Voeg lijn door 0 toe.
 :::
 
 ::::::
@@ -575,14 +567,11 @@ $$
 
 and this is not (necessarily) equal to $f(x)$ or to $-f(x)$. Indeed, we find $f(2)=6$, while $f(-2)=2$ which is neither $f(2)$ nor $-f(2)$. So in general, the sum of an even and an odd function will be neither even nor odd, though exceptions exist. Can you come up with one?
 
-:::{figure} Images/Fig-PropertiesFunctions-NotEvenOdd.png
+:::{applet}
+:url: calculus/properties_of_functions/sum_of_even_and_odd_functions
 :name: Fig:PropertiesFunctions:NotEvenOdd
 
 The graph of the function $f(x)=x^2+x$. Note that the graph is not symmetric with respect to the $y$-axis, nor is it point symmetric with respect to the origin, which is a consequence of the fact that $f$ is neither even nor odd.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:NotEvenOdd` with an applet.
 :::
 
 ::::::
@@ -625,12 +614,35 @@ $$
 Finally, for $x=0$, we have $f_{\mathrm{odd}}(0)=0=-f_{\mathrm{odd}}(-0)$. This means that $f_{\mathrm{odd}}$ is odd on $(-a,a)$ and $f_{\mathrm{even}}$ is even on $(-a,a)$.
 :::
 
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
 
-:::{todo}
-Make an applet that allows students to plug in a formula and draw the graphs of the even and odd extensions.
+Consider the even and odd extensions of some function $f$ defined on the interval $[0,\infty)$ and the value $f(0)$. In {numref}`Fig:PropertiesFunctions:EvenOddExtensions` you can try different functions and see what the graphs of the even and odd extensions look like to answer these questions.
 
-Include question: can you make sure the extensions do not make jumps at 0? >> Gaps met even altijd en odd met waarde invullen.
+_What condition must $f(0)$ satisfy for the odd extension to have no jumps at $x=0$? And for the even extension?_
+---
+DS[{even};odd]
+DS[even;{odd}]
+M[0]
+^^^
+? :::{card}
+The {gap} extension of the function $f$ has never a jump at $x=0$, no matter what the value of $f(0)$ is.
+
+The {gap} extension of the function $f$ has a jump at $x=0$ unless<br> $\displaystyle f(0)=${gap}.
 :::
+---
+:::{applet}
+:url: calculus/properties_of_functions/even_and_odd_extensions
+:name: Fig:PropertiesFunctions:EvenOddExtensions
+:class: dark-light
+
+The graphs of the even and odd extensions of the function $f$ defined on the interval $(0,\infty)$. You can drag the pulsating dot to see the behavior of the even and odd extensions of different functions. The value of $f(0)$ can be changed by dragging the dot along the vertical axis. Note that when checkbox for the even and odd extension are both selected, the even extension is not visible for $x>0$. The original function is shown dashed (if selected).
+:::
+::::
 
 Sometimes, it turns out to be convenient to write a function as the sum of an even and an odd function. The following theorem shows how we can construct these new functions.
 
@@ -700,14 +712,14 @@ Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\dfrac{\sin
 
 ::::::
 
-:::{figure} Images/Fig-PropertiesFunctions-Hyperbolic.png
+In {numref}`Fig:PropertiesFunctions:Hyperbolic` you can see the graphs of the hyperbolic cosine, sine and tangent functions. Note that the hyperbolic cosine is always positive, while the hyperbolic sine and tangent are both unbounded. The hyperbolic tangent is bounded by $-1$ and $1$, but it never actually reaches these values.
+
+:::{applet}
+:url: calculus/properties_of_functions/hyperbolic_functions
 :name: Fig:PropertiesFunctions:Hyperbolic
+:class: dark-light
 
 The graphs of the hyperbolic cosine, sine and tangent functions.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Hyperbolic` with an applet. Voeg e^x toe.
 :::
 
 ::::::{prf:notation} Powers of hyperbolic functions
@@ -778,17 +790,13 @@ A function $f$ is **periodic** if there exists a $T>0$ such that $f(x+T)=f(x)$ f
 
 ::::::
 
-::::{figure} Images/Fig-PropertiesFunctions-Periodic.png
+::::{applet}
+:url: calculus/properties_of_functions/fundamental_period
 :name: Fig:PropertiesFunctions:Periodic
 :class: dark-light
 
-The graph of function with fundamental period $T$.
-
+The graph of a periodic function with fundamental period $T$.
 ::::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Periodic` with an applet. Multiple sines added together with different frequencies. Draggable period T and 2T.
-:::
 
 Periodic functions play an important role in many fields of science and engineering, for instance in signal processing and astronomy. In addition, periodic functions are precisely the functions that can be described by a Fourier series, see {numref}`Section:Fourier`.
 
