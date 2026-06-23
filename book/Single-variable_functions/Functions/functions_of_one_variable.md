@@ -233,6 +233,10 @@ If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all
 
 There is one major restriction when sketching a graph, and that is that we only have a finite amount of space to draw the plot on. So, for instance, if the function is defined for all $x$ in $\mathbb{R}$ it is impossible to plot the full graph of the function, since we would need an infinite amount of space to do so. Still, in such a case it is possible to plot only part of the graph and try to make sure that this part captures as much qualitative behaviour of the function as possible.
 
+:::{note}
+When plotting the graph of a function, we use a solid dot (or solid square/triangle/...) to indicate that a certain point is part of the graph, while we use an open dot (or open square/triangle/...) to exclude a point from the graph. For instance, in {numref}`Fig:Functions1var:Graph` the left endpoint $(L,f(L))$ is not part of the graph (i.e. $L$ is not in the domain of $f$), while the right endpoint $(R,f(R))$ is part of the graph.
+:::
+
 When analysing functions, it is often iteresting to determine if and where the graph of a function intersects the $x$-axis and the $y$-axis.
 
 ::::::{prf:definition} 
