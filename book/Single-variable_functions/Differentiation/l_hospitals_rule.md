@@ -323,7 +323,7 @@ $$
  \lim_{x\rightarrow c}m(x)=\lim_{x\rightarrow c}\frac{f'(x)}{g'(x)}=\lim_{x\rightarrow c}M(x).
 $$
 
-This can be seen as follows. Since $m$ is a nondecreasing function and $M$ is a nonincreasing function, the limits $\displaystyle \lim_{x\rightarrow c}m(x)$ and $\displaystyle \lim_{x\rightarrow c}M(x)$ must either exist or be equal to $\pm\infty$. For any $x$ we have 
+This can be seen as follows. Since $m$ is a non-decreasing function and $M$ is a non-increasing function, the limits $\displaystyle \lim_{x\rightarrow c}m(x)$ and $\displaystyle \lim_{x\rightarrow c}M(x)$ must either exist or be equal to $\pm\infty$. For any $x$ we have 
 
 $$
  m(x)\leq \frac{f'(x)}{g'(x)}\leq M(x),
