@@ -31,7 +31,7 @@ sphinx:
     math_punctuation: _ext/
   config:
     # prime_applets_base_url: "http://localhost:5173/applet/"
-    prime_applets_base_url: "https://deploy-preview-456--openla-preview.netlify.app/applet/"
+    # prime_applets_base_url: "https://deploy-preview-456--openla-preview.netlify.app/applet/"
     sticky_margin:
       trigger: partial
     tippy_skip_urls:

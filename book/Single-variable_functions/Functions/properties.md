@@ -851,14 +851,12 @@ This follows directly from {prf:ref}`Thm:Trigonometry:Periodicity`.
 
 Consider the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$. The graphs of these functions are shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-PeriodicCombining.png
+:::{applet}
+:url: calculus/properties_of_functions/sum_of_periodic_functions_1
 :name: Fig:PropertiesFunctions:PeriodicCombining
+:class: dark-light
 
-The graph of the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:PeriodicCombining` with an applet.
+The graph of the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$. You can toggle the visibility of the graphs of $f$, $g$ and $h$ by clicking on the checkboxes in the legend.
 :::
 
 As we can see in the graph, all of these functions are periodic. Since the sine and cosine have fundamental period $2\pi$, we might expect these functions to have this period as well. So let us find out if that is indeed the case. For any $x$ we can compute
@@ -893,14 +891,12 @@ So the fundamental period of $f$ is actually $\frac{\pi}{2}$. Similarly, the fun
 
 Consider the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\cos(2x)+\sin(\pi x)$. The graph of these functions is shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-PeriodicCombining2.png
+:::{applet}
+:url: calculus/properties_of_functions/sum_of_periodic_functions_2
 :name: Fig:PropertiesFunctions:PeriodicCombining2
+:class: dark-light
 
-The graph of the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\cos(2x)+\sin(\pi x)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:PeriodicCombining2` with an applet.
+The graph of the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\cos(2x)+\sin(\pi x)$. You can toggle the visibility of the graphs of $f$, $g$ and $h$ by clicking on the checkboxes in the legend.
 :::
 
 Following a similar reasoning to {prf:ref}`Ex:PropertiesFunctions:PeriodicCombining` the functions $f$ and $g$ are periodic with fundamental periods $\frac{2\pi}{2}=\pi$ and $\frac{2\pi}{\pi}=2$ respectively. So is the function $h$ periodic here as well and if so, what is its period? In order for $h$ to complete a full period, $f$ and $g$ would need to complete a number of periods at the same time. So a period $T$ of $h$ should be of the form $T=2m+\pi n$ for some integers $m,n\geq 1$. However, since $\pi$ is irrational, no such numbers $m$ and $n$ exist (otherwise, we would be able to write $\pi$ as a fraction). As such, the function $h$ is not periodic in this case. This can also be seen from the graph of $h$.
@@ -957,10 +953,26 @@ This follows directly from the construction of the periodic extension.
 Consider the functions 
 
 $$
- f(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,0\leq x<1\\ 0,\quad &\mathrm{if}\,1\leq x<4\end{array}\right.,\qquad g(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,2\leq x<3\\ 0,\quad &\mathrm{if}\,3\leq x<6\end{array}\right.
+ f(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,0\leq x<1,\\ 0,\quad &\mathrm{if}\,1\leq x<4,\end{array}\right.\qquad\text{and}\qquad g(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,2\leq x<3,\\ 0,\quad &\mathrm{if}\,3\leq x<6,\end{array}\right.
 $$
 
-and let $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ denote their periodic extensions. Then both $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ have fundamental period. According to {prf:ref}`Thm:PropertiesFunctions:Sumperiodic`, $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ is periodic with period $4$. It is very tempting to think that the fundamental period of $f+g$ is also $4$, but this is not the case. Indeed, we note that $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=1$ for $x$ in intervals of the form $[n,n+1)$ with $n$ even (since $f_{\mathrm{ext}}$ is $1$ and $g_{\mathrm{ext}}$ is $0$ on this interval if $n$ is divisible by $4$ and the other way around if $n$ is not divisible by $4$), while $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=0$ for $x$ in intervals of the form $[n,n+1)$ with $n$ odd (since $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ are both $0$ on these intervals). As such, we see that $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ has fundamental period $2$. This example shows that there is no general way to find the fundamental period of the sum of two periodic functions.
+and let $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ denote their periodic extensions.
+
+Then both $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ have fundamental period $4$. According to {prf:ref}`Thm:PropertiesFunctions:Sumperiodic`, $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ is periodic with period $4$. It is very tempting to think that the fundamental period of $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ is also $4$, but this is not the case. Take a look at {numref}`Fig:PropertiesFunctions:PeriodicCombining3`, which shows the graph $f_{\mathrm{ext}}+g_{\mathrm{ext}}$.
+
+Indeed, we note that $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=1$ for $x$ in intervals of the form $[n,n+1)$ with $n$ even (since $f_{\mathrm{ext}}$ is $1$ and $g_{\mathrm{ext}}$ is $0$ on this interval if $n$ is divisible by $4$ and the other way around if $n$ is not divisible by $4$), while $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=0$ for $x$ in intervals of the form $[n,n+1)$ with $n$ odd (since $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ are both $0$ on these intervals). As such, we see that $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ has fundamental period $2$. 
+
+:::{applet}
+:url: calculus/properties_of_functions/sum_of_periodic_extensions
+:name: Fig:PropertiesFunctions:PeriodicCombining3
+:class: dark-light
+
+The graph of the function $f_{\mathrm{ext}}+g_{\mathrm{ext}}$. You can toggle the visibility of the graphs of $f_{\mathrm{ext}}$, $g_{\mathrm{ext}}$ and $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ by clicking on the checkboxes in the legend.
+
+:::
+
+This example shows that there is no general way to find the fundamental period of the sum of two periodic functions.
+
 ::::::
 
 ::::::{prf:definition} Odd and even periodic extensions
@@ -975,11 +987,122 @@ The symmetries of the odd and even extensions of $f$ carry over to the odd and e
 :::
 
 
-:::{todo}
-Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ with $x>0$ and sketch the even and odd periodic extensions, or plug in a formula and draw the graphs of the even and odd periodic extensions.
 
-Make an example based on {prf:ref}`Ex:Series:FourierExample4`.
+::::::{prf:example}
+:label: Ex:PropertiesFunctions:EvenOddPeriodicExtension
+
+Consider $f(x)=2x$ for $0\leq x\leq 1$, so the value of $a$ from {prf:ref}`Def:PropertiesFunctions:OddEvenPeriodicExtension` is $1$. We want to find the odd and even periodic extensions of $f$.
+
+If we define $f_{\mathrm{odd}}$ as the odd periodic extension of $f$ to $\mathbb{R}$ with period $T=2$, we find that $f_{\mathrm{odd}}$ is given by
+
+\begin{align*}
+f_{\mathrm{odd}}(x) &= \begin{cases}
+f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+-f(-x), & -1 < x < 0, \\
+0, & x=0, \\
+f(x), & 0 < x \leq 1, \\
+f_{\mathrm{odd}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+-2(-x), & -1 < x < 0, \\
+0, & x=0, \\
+2x, & 0 < x \leq 1, \\
+f_{\mathrm{odd}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+2x, & -1 < x \leq 1, \\
+f_{\mathrm{odd}}(x-2), & x > 1.
+\end{cases}
+\end{align*}
+
+Note that to avoid defining the value of $f_{\mathrm{odd}}$ at $-1+2n$ for any integer $n$ twice, we have defined $f_{\mathrm{odd}}$ at those points as $f_{\mathrm{odd}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{odd}}(x-2)$ for $x > 1$. This is just a technicality to avoid defining the value of $f_{\mathrm{odd}}$ at those points twice, and it does not change the function $f$ itself on the interval $(0,1]$.
+
+You can see the graph of $f_{\mathrm{odd}}$ and $f$ in {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension`. The function $f_{\mathrm{odd}}$ is odd and periodic with period $T=2$. Note that the graph of $f_{\mathrm{odd}}$ contains jumps at $x=-1+2n$ for any integer $n$.
+
+:::{applet}
+:url: calculus/properties_of_functions/odd_and_even_periodic_extensions
+:name: Fig:PropertiesFunctions:EvenOddPeriodicExtension
+:class: dark-light
+
+The odd and even periodic extensions of the function $f(x)=2x$ for $0\leq x\leq 1$. You can toggle the visibility of the graphs of $f$, $f_{\mathrm{odd}}$ and $f_{\mathrm{even}}$ by clicking on the checkboxes in the legend. Initially, the graph of $f$ and the odd periodic extension $f_{\mathrm{odd}}$ are shown.
 :::
+
+If we define $f_{\mathrm{even}}$ as the even periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{even}}$ is given by
+
+\begin{align*}
+f_{\mathrm{even}}(x) &= \begin{cases}
+f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f(-x), & -1 < x < 0, \\
+f(x), & 0 \leq x \leq 1, \\
+f_{\mathrm{even}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f(-x), & -1 < x < 0, \\
+f(x), & 0 \leq x \leq 1, \\
+f_{\mathrm{even}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{even}}(x+2), & x \leq -1, \\
+-2x, & -1 < x < 0, \\
+2x, & 0 \leq x \leq 1, \\
+f_{\mathrm{even}}(x-2), & x > 1.
+\end{cases}
+\end{align*}
+
+Again, we avoid double values at $x=-1+2n$ for any integer $n$ by defining $f_{\mathrm{even}}$ at those points as $f_{\mathrm{even}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{even}}(x-2)$ for $x > 1$.
+
+You can see the graph of $f_{\mathrm{even}}$ in {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension` by toggling the visibility of the graph of $f_{\mathrm{even}}$ in the legend. The function $f_{\mathrm{even}}$ is even and periodic with period $T=2$. Note that the graph of $f_{\mathrm{even}}$ does not contain jumps at $x=-1+2n$ for any integer $n$.
+
+::::::
+
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+Consider the even and odd periodic extensions of some function $f$ defined on the interval $[0,2]$ and the values $f(0)$ and $f(2)$. In {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension2` you can try different functions and see what the graphs of the even and odd periodic extensions look like to answer these questions.
+
+_What condition must $f(0)$ and $f(2)$ satisfy for the odd periodic extension to have no jumps at $x=0$ and $x=2$? And for the even periodic extension?_
+---
+DS[{even};odd]
+DS[even;{odd}]
+M[0]
+DS[{even};odd]
+DS[even;{odd}]
+M[0]
+M[4]
+^^^
+? :::{card}
+The {gap} periodic extension of the function $f$ has never a jump at $x=0$, no matter what the value of $f(0)$ is.
+
+The {gap} periodic extension of the function $f$ has a jump at $x=0$ unless<br> $\displaystyle f(0)=${gap}.
+
+The {gap} periodic extension of the function $f$ has never a jump at $x=2$, no matter what the value of $f(2)$ is.
+
+The {gap} periodic extension of the function $f$ has a jump at $x=2$ unless<br> $\displaystyle f(2)=${gap}.
+
+The fundamental period of the odd and even periodic extensions of the function $f$ is at most {gap}.
+
+:::
+---
+:::{applet}
+:url: calculus/properties_of_functions/odd_and_even_periodic_extensions_2
+:name: Fig:PropertiesFunctions:EvenOddPeriodicExtension2
+:class: dark-light
+
+The odd and even periodic extensions of a given function $f$ for $0\leq x\leq 2$. You can toggle the visibility of the graphs of $f$, $f_{\mathrm{odd}}$ and $f_{\mathrm{even}}$ by clicking on the checkboxes in the legend. Initially, the graph of $f$ and the odd periodic extension $f_{\mathrm{odd}}$ are shown.
+:::
+::::
+
 
 ## Grasple exercises
 
