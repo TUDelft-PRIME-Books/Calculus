@@ -30,6 +30,8 @@ sphinx:
     numref_section: _ext/
     math_punctuation: _ext/
   config:
+    patch_config:
+      disabled-patches: ["hash"]
     # prime_applets_base_url: "http://localhost:5173/applet/"
     # prime_applets_base_url: "https://deploy-preview-456--openla-preview.netlify.app/applet/"
     sticky_margin:
