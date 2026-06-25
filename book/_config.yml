@@ -65,6 +65,7 @@ sphinx:
       date:
         substitute_missing: true
     sphinx_indexed_defs_indexed_nodes: ['strong']
+    sphinx_indexed_defs_index_theorems_terms: true
     tud_change_titlesize: true
     new_tab_link_show_external_link_icon: true
     visualized_auto_cluster: true
