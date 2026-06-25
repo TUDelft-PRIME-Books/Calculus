@@ -644,10 +644,10 @@ $$
 ::::::
 
 :::{note}
-In {numref}`Exc:Integration:ImproperIntegralsComparisonExercise1` we will see that 
+In {numref}`Grasple:133527` we will see that 
 
 $$
-\int_0^{\infty}\frac{x}{1+x^3}\,dx=\frac{2}{3}\pi\sqrt{3}\approx1.2092.
+\int_0^{\infty}\frac{x}{1+x^3}\,dx=\frac{2\pi}{3\sqrt{3}}\approx1.2092.
 $$
 
 :::
@@ -1040,7 +1040,45 @@ This limit exists if $1-p>0$ (then: $\displaystyle\lim_{c\to 0^+}\frac{c^{1-p}}{
 Insert an applet with the graph of $\dfrac{1}{x^p}$ where the value of $p$ can be changed (by a slider?).
 :::
 
-These $p$-integrals are often used in the {prf:ref}`comparison test for improper integrals <Thm:Integration:ImproperIntegralsComparison>` as we have seen in {prf:ref}`Ex:Integration:ImproperIntegralsComparisonExample1` and {prf:ref}`Ex:Integration:ImproperIntegralsComparisonExample2`.
+::::::{prf:Example}
+:label: Ex:Integration:ImproperIntegralsPIntegralsExample1
+
+1) The integral $\displaystyle\int_1^{\infty}\frac{dx}{x^2}$ is convergent since it is a $p$-integral with $p=2>1$. Furthermore, we have $\displaystyle\int_1^{\infty}\frac{dx}{x^2}=1$.
+
+Using the definition, we have
+
+$$
+\int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\int_1^R\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(1-\frac{1}{R}\right)=1.
+$$
+
+2) The integral $\displaystyle\int_1^{\infty}\frac{dx}{x}$ is divergent since it is a $p$-integral with $p=1\leq1$. 
+
+Using the definition, we have
+
+$$
+\int_1^{\infty}\frac{dx}{x}=\lim_{R\to\infty}\int_1^R\frac{dx}{x}=\lim_{R\to\infty}\bigg[\ln(x)\bigg]_1^R=\lim_{R\to\infty}\ln(R)=\infty.
+$$
+
+::::::
+
+These $p$-integrals are often used in the {prf:ref}`comparison test for improper integrals <Thm:Integration:ImproperIntegralsComparison>` as we have seen in {prf:ref}`Ex:Integration:ImproperIntegralsComparisonExample1`. Here is another example:
+
+::::::{prf:Example}
+:label: Ex:Integration:ImproperIntegralsPIntegralsExample2
+
+Consider the integrals $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{\sqrt{x}}\,dx$ and $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}\,dx$.
+
+For $x\geq1$ we have $\frac{1}{4}\pi\leq\arctan(x)<\frac{1}{2}\pi$. Hence we have
+
+$$
+\frac{\arctan(x)}{\sqrt{x}}\geq\frac{1}{4}\pi\cdot\frac{1}{\sqrt{x}}\quad\text{and}\quad\frac{\arctan(x)}{x\sqrt{x}}\leq\frac{1}{2}\pi\cdot\frac{1}{x\sqrt{x}}.
+$$
+
+Now, $\displaystyle\int_1^{\infty}\frac{dx}{\sqrt{x}}$ is a $p$-integral with $p=\frac{1}{2}\leq1$ which diverges and $\displaystyle\int_1^{\infty}\frac{dx}{x\sqrt{x}}$ is a $p$-integral with $p=\frac{3}{2}>1$ which converges.
+
+We conclude that $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{\sqrt{x}}\,dx$ is divergent and that $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}\,dx$ is convergent.
+
+::::::
 
 ### The gamma function
 
@@ -1193,103 +1231,79 @@ $$
 
 ::::::
 
-## Exercises
+## Grasple exercises
 
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsExercise1
-Determine whether $\displaystyle\int_1^{\infty}\frac{dx}{x^2}$ is convergent or divergent. 
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise1`
-:class: solution, dropdown
-:name: Solution:Integration:ImproperIntegralsExercise1
-
-$$
-\int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\int_1^R\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(1-\frac{1}{R}\right)=1.
-$$
-
-So, $\displaystyle\int_1^{\infty}\frac{dx}{x^2}$ is convergent.
-:::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsExercise2
-Determine whether $\displaystyle\int_1^{\infty}\frac{dx}{x}$ is convergent or divergent. 
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise2`
-:class: solution, dropdown
-:name: Solution:Integration:ImproperIntegralsExercise2
-
-$$
-\int_1^{\infty}\frac{dx}{x}=\lim_{R\to\infty}\int_1^R\frac{dx}{x}=\lim_{R\to\infty}\bigg[\ln(x)\bigg]_1^R=\lim_{R\to\infty}\ln(R)=\infty.
-$$
-
-So, $\displaystyle\int_1^{\infty}\frac{dx}{x}$ is divergent.
-:::
-
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsExercise3
-The integral $\displaystyle\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}$ is improper both because of the infinite interval of integration and the discontinuous integrand at $x=0$. Evaluate the integral by splitting it into
-
-$$
-\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\int_0^1\frac{dx}{(1+x)\sqrt{x}}+\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4bc56611-e3cb-4f5a-b99e-96a54f7a6f63?id=133534
+:label: Grasple:133534
+:dropdown:
+:description: Evaluate the integral if possible.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise3`
-:class: solution, dropdown
-:name: Solution:Integration:ImproperIntegralsExercise3
-
-Using the substitution $\sqrt{x}=t$ or $x=t^2$, we have $dx=2t\,dt$ and therefore
-
-\begin{align*}
-\int\frac{dx}{(1+x)\sqrt{x}}&=\int\frac{2t\,dt}{(1+t^2)t}=\int\frac{2}{1+t^2}\,dt=2\arctan(t)+C\\
-&=2\arctan\left(\sqrt{x}\right)+C.
-\end{align*}
-Now we obtain
-
-\begin{align*}
-\int_0^1\frac{dx}{(1+x)\sqrt{x}}&=\lim_{c\to 0^+}\int_c^1\frac{dx}{(1+x)\sqrt{x}}=\lim_{c\to 0^+}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_c^1\\
-&=2\arctan(1)=\frac{1}{2}\pi
-\end{align*}
-and
-
-\begin{align*}
-\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}&=\lim_{R\to\infty}\int_1^R\frac{dx}{(1+x)\sqrt{x}}=\lim_{R\to\infty}\bigg[2\arctan\left(\sqrt{x}\right)\bigg]_1^R\\
-&=\pi-\frac{1}{2}\pi=\frac{1}{2}\pi.
-\end{align*}
-Hence we have
-
-$$
-\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\int_0^1\frac{dx}{(1+x)\sqrt{x}}+\int_1^{\infty}\frac{dx}{(1+x)\sqrt{x}}=\frac{1}{2}\pi+\frac{1}{2}\pi=\pi.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsExercise4
-Show that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$ by splitting it into
-
-$$
-\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=\int_0^1\frac{\ln(x)}{1+x^2}\,dx+\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/908b4739-bd46-4030-a584-613f5e5132e0?id=133535
+:label: Grasple:133535
+:dropdown:
+:description: Evaluate the integral if possible.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise4`
-:class: solution, dropdown
-:name: Solution:Integration:ImproperIntegralsExercise4
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/50d7af4a-e5d5-429b-80af-548619f6de3b?id=133537
+:label: Grasple:133537
+:dropdown:
+:description: Evaluate the integral if possible.
 
-Use the substitution $x=\dfrac{1}{t}$ and therefore $dx=-\dfrac{dt}{t^2}$ to find that
+::::
 
-$$
-\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx=-\int_1^0\frac{\ln\left(\frac{1}{t}\right)}{1+\dfrac{1}{t^2}}\cdot\frac{dt}{t^2}=\int_0^1\frac{-\ln(t)}{t^2+1}\,dt=-\int_0^1\frac{\ln(t)}{1+t^2}\,dt.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/419e3b07-2e9f-42a4-ae53-3684a413fcd1?id=133538
+:label: Grasple:133538
+:dropdown:
+:description: Evaluate the integral if possible.
 
-We conclude that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$.
-:::
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/766f1dc7-f1df-4723-bd3f-ef267f8c6482?id=133539
+:label: Grasple:133539
+:dropdown:
+:description: Evaluate the integral if possible.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2b020706-0274-4fbb-a65d-5c74eb9f31fa?id=133540
+:label: Grasple:133540
+:dropdown:
+:description: Evaluate the integral if possible.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d31cf77b-bf5f-415a-99b7-9cd6d26dbbbe?id=133527
+:label: Grasple:133527
+:dropdown:
+:description: Evaluate $\displaystyle\int_0^{\infty}\frac{x}{1+x^3}\,dx$ exactly.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/89200258-8d20-4fbb-ac52-f94e7de3ed38?id=133530
+:label: Grasple:133530
+:dropdown:
+:description: Evaluate $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx$.
+
+::::
 
 ::::::{note}
 :name: Note:Integration:CatalansConstant
@@ -1297,156 +1311,65 @@ We conclude that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$.
 Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx$ without evaluating the integrals. Later we will see that the value is equal to *Catalan's constant*. See: {numref}`sec:CatalansConstant`.
 ::::::
 
-::::{exercise} A remarkable class of integrals
-:label: Exc:Integration:ImproperIntegralsExercise5
-Show that $\displaystyle\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}=\frac{1}{4}\pi$ for all $k\in\mathbb{Z}$ using the following steps:
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3073ee80-954c-4db4-b43d-eac5c09b8716?id=133528
+:label: Grasple:133528
+:dropdown:
+:description: Evaluate $\displaystyle\int_0^{\infty}\frac{dx}{(1+x)\sqrt{x}}\,dx$.
 
-(a) Prove the formula for $k=0$.
-
-(b) Split the integral into
-
-$$
-\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}=\int_0^1\frac{dx}{(1+x^2)(1+x^k)}+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^k)}
-$$
-
-and use the substitution $x=\dfrac{1}{t}$ to prove the formula for $k\in\{1,2,3,\ldots\}$.
-
-(c) Replace $k$ by $-k$ and use the substitution $x=\dfrac{1}{t}$ again to prove the formula for $k\in\{\ldots,-3,-2,-1\}$ as well.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsExercise5`
-:class: solution, dropdown
-:name: Solution:Integration:ImproperIntegralsExercise5
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/838fbda7-e1e8-483a-a5cb-6cd47aacd69d?id=133531
+:label: Grasple:133531
+:dropdown:
+:description: A remarkable class of integrals.
 
-(a) For $k=0$ we obtain: $\displaystyle\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^0)}=\frac{1}{2}\int_0^{\infty}\frac{dx}{1+x^2}=\frac{1}{2}\arctan(x)\bigg|_0^{\infty}=\frac{1}{4}\pi$.
-
-(b) For $k\in\{1,2,3,\ldots\}$ we use the substitution $x=\dfrac{1}{t}$ and therefore $dx=-\dfrac{dt}{t^2}$ to find that
-
-\begin{align*}
-\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^k)}&=\int_1^0\frac{1}{(1+t^{-2})(1+t^{-k})}\left(-\frac{1}{t^2}\right)\,dt\\
-&=\int_0^1\frac{dt}{(t^2+1)(1+t^{-k})}.
-\end{align*}
-This implies that
-
-\begin{align*}
-\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^k)}&=\int_0^1\frac{dx}{(1+x^2)(1+x^k)}+\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}\\
-&=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^k}+\frac{1}{1+x^{-k}}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^k}+\frac{x^k}{x^k+1}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\cdot\frac{1+x^k}{1+x^k}\,dx=\int_0^1\frac{dx}{1+x^2}\\
-&=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
-\end{align*}
-(c) Similarly, we consider
-
-$$
-\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}=\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}+\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}
-$$
-
-for $k\in\{1,2,3,\dots\}$ and use the substitution $x=\dfrac{1}{t}$ again to find that
-
-\begin{align*}
-\int_1^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}&=\int_1^0\frac{1}{(1+t^{-2})(1+t^k)}\left(-\frac{1}{t^2}\right)\,dt\\
-&=\int_0^1\frac{dt}{(t^2+1)(1+t^k)}.
-\end{align*}
-Hence, for $k\in\{1,2,3,\ldots\}$ we have
-
-\begin{align*}
-\int_0^{\infty}\frac{dx}{(1+x^2)(1+x^{-k})}&=\int_0^1\frac{dx}{(1+x^2)(1+x^{-k})}+\int_0^1\frac{dx}{(1+x^2)(1+x^k)}\\
-&=\int_0^1\frac{1}{1+x^2}\left(\frac{1}{1+x^{-k}}+\frac{1}{1+x^k}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\left(\frac{x^k}{x^k+1}+\frac{1}{1+x^k}\right)\,dx\\
-&=\int_0^1\frac{1}{1+x^2}\cdot\frac{x^k+1}{x^k+1}\,dx=\int_0^1\frac{dx}{1+x^2}\\
-&=\arctan(x)\bigg|_0^1=\frac{1}{4}\pi.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsComparisonExercise1
-Evaluate $\displaystyle\int_0^{\infty}\frac{x}{1+x^3}\,dx$ exactly. 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsComparisonExercise1`
-:class: solution, dropdown
-:name: Solution:Integration:ImproperIntegralsComparisonExercise1
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ba0412df-e79f-486b-bd82-26cdfedf09a6?id=133541
+:label: Grasple:133541
+:dropdown:
+:description: Use a comparison theorem to determine whether the integrals converge or diverge.
 
-Note that $1+x^3=(1+x)(1-x+x^2)$ and therefore
-
-\begin{align*}
-\frac{x}{1+x^3}&=\frac{x}{(1+x)(1-x+x^2)}=\frac{A}{1+x}+\frac{Bx+C}{1-x+x^2}\\
-&=\frac{A(1-x+x^2)+Bx(1+x)+C(1+x)}{(1+x)(1-x+x^2)}.
-\end{align*}
-Comparing the numerators, we obtain
-
-\begin{align*}
-&x=(A+B)x^2+(-A+B+C)x+A+C\\
-&\quad\Longrightarrow\quad A=-\frac{1}{3}\quad\text{and}\quad B=C=\frac{1}{3}.
-\end{align*}
-Hence, we have
-
-\begin{align*}
-\int\frac{x}{1+x^3}\,dx&=\frac{1}{3}\int\left(-\frac{1}{1+x}+\frac{x+1}{x^2-x+1}\right)\,dx\\
-&=\frac{1}{3}\int\left(-\frac{1}{1+x}+\frac{1}{2}\frac{2x-1}{x^2-x+1}+\frac{3}{2}\frac{1}{x^2-x+1}\right)\,dx.
-\end{align*}
-Now we have
-
-$$
-\int\left(-\frac{1}{1+x}+\frac{1}{2}\frac{2x-1}{x^2-x+1}\right)\,dx=\ln\left(\frac{\sqrt{x^2-x+1}}{1+x}\right)+C
-$$
-
-and
-
-\begin{align*}
-\int\frac{dx}{x^2-x+1}&=\int\frac{dx}{(x-\frac{1}{2})^2+\frac{3}{4}}=\frac{4}{3}\int\frac{dx}{\left(\frac{2x-1}{\sqrt{3}}\right)^2+1}\\
-&=\frac{2}{\sqrt{3}}\arctan\left(\frac{2x-1}{\sqrt{3}}\right)+C
-\end{align*}
-Since $\displaystyle\lim\limits_{x\to\infty}\frac{\sqrt{x^2-x+1}}{1+x}=1$, we obtain using $\displaystyle\lim_{x\to\infty}\arctan(x)=\frac{1}{2}\pi$ and $\arctan\left(\frac{1}{\sqrt{3}}\right)=\frac{1}{6}\pi$
-
-\begin{align*}
-\int_0^{\infty}\frac{x}{1+x^3}\,dx&=\bigg[\frac{1}{3}\ln\left(\frac{\sqrt{x^2-x+1}}{1+x}\right)+\frac{1}{\sqrt{3}}\arctan\left(\frac{2x-1}{\sqrt{3}}\right)\bigg]_0^{\infty}\\
-&=\frac{1}{\sqrt{3}}\left(\frac{1}{2}\pi+\frac{1}{6}\pi\right)=\frac{2}{3}\pi\sqrt{3}\approx1.2092.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsComparisonExercise2
-Determine whether the integral $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{\sqrt{x}}\,dx$ is convergent or divergent.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsComparisonExercise2`
-:class: solution, dropdown
-:name: Solution:Integration:ImproperIntegralsComparisonExercise2
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/df409f93-7f92-45f3-b8aa-4b297d8712d5?id=78797
+:label: Grasple:78797
+:dropdown:
+:description: Use a comparison theorem to determine whether the integrals converge or diverge.
 
-Note that for all $x\geq1$ we have $\frac{1}{4}\pi\leq\arctan(x)<\frac{1}{2}\pi$. Hence we have
-$\displaystyle\frac{\arctan(x)}{\sqrt{x}}\geq\frac{1}{4}\pi\cdot\frac{1}{\sqrt{x}}$ and
-
-$$
-\int_1^{\infty}\frac{dx}{\sqrt{x}}=2\sqrt{x}\bigg|_1^{\infty}=\infty.
-$$
-
-We conclude that $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{\sqrt{x}}\,dx$ is divergent.
-:::
-
-::::{exercise}
-:label: Exc:Integration:ImproperIntegralsComparisonExercise3
-Determine whether the integral $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}\,dx$ is convergent or divergent.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:ImproperIntegralsComparisonExercise3`
-:class: solution, dropdown
-:name: Solution:Integration:ImproperIntegralsComparisonExercise3
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8786072a-eedf-4980-9dbe-fcfab66eb59a?id=78799
+:label: Grasple:78799
+:dropdown:
+:description: Use a comparison theorem to determine whether the integrals converge or diverge.
 
-Note that for all $x\geq1$ we have $\frac{1}{4}\pi\leq\arctan(x)<\frac{1}{2}\pi$. Further we have
+::::
 
-$$
-\int_1^{\infty}\frac{dx}{x\sqrt{x}}=-\frac{2}{\sqrt{x}}\bigg|_1^{\infty}=2.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fdb58ae4-7de8-4ae8-b6aa-0ad84d55b7a6?id=78801
+:label: Grasple:78801
+:dropdown:
+:description: Use a comparison theorem to determine whether the integrals converge or diverge.
 
-We conclude that $\displaystyle\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}\,dx$ is convergent and that
+::::
 
-$$
-\frac{1}{2}\pi\leq\int_1^{\infty}\frac{\arctan(x)}{x\sqrt{x}}<\pi.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/156a7bde-6aa4-468c-b4ed-de7eca985aeb?id=78807
+:label: Grasple:78807
+:dropdown:
+:description: Use a comparison theorem to determine whether the integrals converge or diverge.
 
-:::
-
-
-## Grasple exercises
-
+::::
