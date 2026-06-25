@@ -280,7 +280,7 @@ V&=\int_0^{2\pi}\int_0^5\frac{r\cos(\theta)+15}{10}\,r\,dr\,d\theta\\
 :::::{prf:example}
 :label: Ex:MultivariableIntegration:PolarApplicationsExample2
 
-Earlier we have seen that the *Gaussian integral* is: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sqrt{\pi}$. 
+Earlier (see: {numref}`Note:Integration:ImproperIntegralsGaussianIntegral`) we have seen that the *Gaussian integral* is: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sqrt{\pi}$. 
 
 Now we are able to prove this result.
 

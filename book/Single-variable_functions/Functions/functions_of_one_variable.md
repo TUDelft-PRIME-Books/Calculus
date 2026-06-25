@@ -233,6 +233,10 @@ If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all
 
 There is one major restriction when sketching a graph, and that is that we only have a finite amount of space to draw the plot on. So, for instance, if the function is defined for all $x$ in $\mathbb{R}$ it is impossible to plot the full graph of the function, since we would need an infinite amount of space to do so. Still, in such a case it is possible to plot only part of the graph and try to make sure that this part captures as much qualitative behaviour of the function as possible.
 
+:::{note}
+When plotting the graph of a function, we use a solid dot (or solid square/triangle/...) to indicate that a certain point is part of the graph, while we use an open dot (or open square/triangle/...) to exclude a point from the graph. For instance, in {numref}`Fig:Functions1var:Graph` the left endpoint $(L,f(L))$ is not part of the graph (i.e. $L$ is not in the domain of $f$), while the right endpoint $(R,f(R))$ is part of the graph.
+:::
+
 When analysing functions, it is often iteresting to determine if and where the graph of a function intersects the $x$-axis and the $y$-axis.
 
 ::::::{prf:definition} 
@@ -340,7 +344,7 @@ _Complete the following sentences by selecting the correct options from the drop
 ---
 DS[{odd};even]
 DS[{negative};non-positive;zero;non-negative;positive]
-DS[{never};sometimes;always]
+DS[never;{sometimes};always]
 DS[{odd};even]
 DS[negative;non-positive;zero;non-negative;{positive}]
 ^^^
@@ -390,7 +394,7 @@ A **cubic function** is polynomial function of degree $3$, i.e. one that can be 
 ::::::
 
 :::{note}
-The maximal domain of any polynomial is $\mathbb{R}$.
+The maximal domain of any polynomial function is $\mathbb{R}$.
 :::
 
 ::::::{prf:definition} 
@@ -481,7 +485,7 @@ Consider the function given by $f(x)=2x+3$. This is a polynomial function, in pa
 :name: Fig:Functions1var:Linear
 :class: dark-light
 
-The graph of the linear function $f(x)=2x+3$.
+The graph of the linear function $f(x)=ax+b$ (with initial values $a=2$ and $a=3$). The values of $a$ and $b$ can be changed using the sliders.
 :::
 
 As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph?
@@ -498,7 +502,7 @@ Consider the function given by $h(x)=x^2-4x+3$. This is a quadratic function and
 :name: Fig:Functions1var:QuadraticH
 :class: dark-light
 
-The graph of the quadratic function $h(x)=x^2-4x+3$.
+The graph of the quadratic function $h(x)=ax^2+bx+c$ (with default values $a=1$, $b=-4$ and $c=3$). The values of $a$, $b$ and $c$ can be changed using the sliders.
 :::
 
 The graph of this function is a **parabola**. The graph crosses the $x$-axis at $x=1$ and $x=3$, which can be seen from the fact that $h(x)=x^2-4x+3=(x-1)(x-3)$, so that $h(x)=0$ precisely when $x=1$ or $x=3$. 
@@ -512,9 +516,9 @@ For more information on parabolas, see {numref}`Subsec:CurvesParabola`.
 :::{applet}
 :url: calculus/functions_of_one_variable/quadratic_function_2
 :name: Fig:Functions1var:QuadraticK
-:class: dark-light
+:class: dark-light 
 
-The graph of the quadratic function $k(x)=2-3x^2$.
+The graph of the quadratic function $h(x)=ax^2+bx+c$ (with default values $a=-3$, $b=0$ and $c=2$). The values of $a$, $b$ and $c$ can be changed using the sliders.
 :::
 
 ::::::
@@ -620,7 +624,7 @@ Here $G$ is the [gravitational constant](https://en.wikipedia.org/wiki/Gravitati
 :name: Fig:Functions1var:Gravity
 :class: dark-light
 
-The graph of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for $m_1m_2=10^{48}\,\text{kg}^2$. Due to physical restrictions, the domain of this function only consists of positive values of $r$. You can use the slider to change the value of $m_1m_2$.
+The graph of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for $m_1m_2=10^{48}\,\text{kg}^2$. Due to physical restrictions, the domain of this function only consists of positive values of $r$. You can use the slider to change the value of $m_1m_2$. The values of $m_1m_2$ range from $10^{46}$, which corresponds to two planets with the mass of Mercury, to $10^{54}$, which corresponds to two planets with the mass of Jupiter.
 :::
 
 The graph is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
@@ -659,7 +663,7 @@ To show the typical behaviour of exponential functions, let us consider the func
 :name: Fig:Functions1var:ExponentialGrowth
 :class: dark-light
 
-The graphs of the functions $A(t)=n^t$ with $n=2$ and $B(t)=\left(\frac{1}{m}\right)^t$ with $m=3$. You can use the first slider to change the value of $n$ and the second slider to change the value of $m$. Do you notice what happens when $n$ or $m$ is equal to $1$?
+The graphs of the functions $A(t)=a^t$ with $a=2$ and $B(t)=\left(\frac{1}{b}\right)^t$ with $b=3$. You can use the first slider to change the value of $a$ and the second slider to change the value of $b$. Do you notice what happens when $a$ or $b$ is equal to $1$?
 :::
 
 For the function $A$, we notice that it is very close to $0$ for negative values of $t$, while it grows very fast for positive $t$. In fact, it grows faster the larger $t$ gets, which is indeed the **exponential growth** behaviour that we were trying to model. Conversely, the function $B$ is very large for negative values of $t$, while it get very close to $0$ for positive values of $t$. In fact, the decay rate decreases when $t$ gets larger, so again this function describes **exponential decay**.
@@ -729,7 +733,7 @@ $$
 
 where $H_0$ is a value that is sometimes taken to be $0$ (_left-continuous convention_), sometimes taken to be $1$ (_right-continuous convention_) and sometimes taken to be $\frac{1}{2}$ (_half-maximum convention_). In most cases the value of $H_0$ is not of large consequence.
 
-That is, the Heaviside function outputs the value $0$ when the input is negative and it outputs the value $1$ when the input is positive. It can be used to model a process that starts off (i.e. at state $0$) and is instantaneously turned on (i.e. state $1$), for instance when flipping a switch. The function is named after the British mathematician and electrical engineer [Oliver Heaviside (1850-1925)](https://en.wikipedia.org/wiki/Oliver_Heaviside).
+In any case, the Heaviside function outputs the value $0$ when the input is negative and it outputs the value $1$ when the input is positive. It can be used to model a process that starts off (i.e. at state $0$) and is instantaneously turned on (i.e. state $1$), for instance when flipping a switch. The function is named after the British mathematician and electrical engineer [Oliver Heaviside (1850-1925)](https://en.wikipedia.org/wiki/Oliver_Heaviside).
 
 :::{applet}
 :url: calculus/functions_of_one_variable/heaviside_step_function
