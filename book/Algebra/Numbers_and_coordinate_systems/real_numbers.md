@@ -519,7 +519,7 @@ and similarly we have $\left(\frac{1}{y}\right)^{-p}=y^{p}$. So we find $y^q<y^p
 
 :::
 
-So far, we have been able to define rational powers of nonnegative numbers. So how would we define something like $2^\pi$? Note that our definitions so far give that if $p$ and $q$ are rational numbers with $0<p<q$ we have $2^p<2^q$. Naturally, we want this property to be valid for irrational powers of $x$ as well. So since $3<\pi<4$, we must have
+So far, we have been able to define rational powers of non-negative numbers. So how would we define something like $2^\pi$? Note that our definitions so far give that if $p$ and $q$ are rational numbers with $0<p<q$ we have $2^p<2^q$. Naturally, we want this property to be valid for irrational powers of $x$ as well. So since $3<\pi<4$, we must have
 
 $$
  8=2^3<2^\pi<2^4=16.

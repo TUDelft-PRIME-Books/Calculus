@@ -183,7 +183,7 @@ If $f$ is a function, then we denote its range by $R_f$.
 
 Let $f$ be the function defined by $f(x)=3+\sqrt{x-2}$. Since this function is defined by a formula, we assume that its domain is equal to the maximal domain. So what is the maximal domain is this case? For that, we need to find out for which values of $x$ the expression $3+\sqrt{x-2}$ makes sense. The only restriction we have is that we cannot enter negative numbers into a square root, so the expression is defined precisely when $x-2\geq 0$, i.e. when $x\geq 2$. So the maximal domain is the set of all $x$ with $x\geq 2$, i.e. the interval $[2,\infty)$.
 
-We can also determine the range of this function. Since every nonnegative number is the square root of a real number, while negative numbers are not square roots of real numbers, the expression $\sqrt{x-2}$ can take on any value in the interval $[0,\infty)$. Adding $3$ to this square root raises all output values by $3$, so the function $f$ can take on any value in the interval $[3,\infty)$. This interval must, therefore, be the range of $f$.
+We can also determine the range of this function. Since every non-negative number is the square root of a real number, while negative numbers are not square roots of real numbers, the expression $\sqrt{x-2}$ can take on any value in the interval $[0,\infty)$. Adding $3$ to this square root raises all output values by $3$, so the function $f$ can take on any value in the interval $[3,\infty)$. This interval must, therefore, be the range of $f$.
 ::::::
 
 ::::::{prf:example} 

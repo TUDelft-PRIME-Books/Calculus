@@ -465,7 +465,7 @@ $$
  z\overline{z}=a^2+b^2
 $$
 
-is a nonnegative real number.
+is a non-negative real number.
 
 ::::
 
@@ -481,7 +481,7 @@ z\overline{z} &= (a+bi)(a-bi) \\
 &= a^2+b^2.
 \end{align*}
 
-Since $a$ and $b$ are real numbers, $a^2+b^2$ is a nonnegative real number.
+Since $a$ and $b$ are real numbers, $a^2+b^2$ is a non-negative real number.
 ::::
 
 Of the arithmetic operations, division is clearly the most complex. The reason for this is that there is no straightforward way to simplify a fraction when the denominator is a sum of two objects. And complex numbers just so happen to be the sum of two objects (the real part and $i$ times the imaginary part). We can circumvent this by mulitplying the denominator and numerator by the same complex number in the hope that the resulting denominator is a single real number. {prf:ref}`Thm:ComplexNumbers:ComplConjCompl` tells us which number we should choose: the complex conjugate of the denominator. In general, we obtain the following result.
