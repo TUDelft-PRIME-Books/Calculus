@@ -718,7 +718,7 @@ M[\frac{1}{4}] Then the optimal value of $c$ is
 = Note that $-x^2\leq-x+c$ is equivalent to $x^2-x+c\geq0$. The discriminant $D$ of $x^2-x+c=0$ is $D=1-4c$ which equals zero if $c=\frac{1}{4}$.
 > Consider $x^2-x+c\geq0$ and use the discriminant.
 
-Use this value of $c$ to find an upperbound for $\displaystyle\int_0^{\infty}e^{-x^2}\,dx$:
+Use this value of $c$ to find an upper bound for $\displaystyle\int_0^{\infty}e^{-x^2}\,dx$:
 M[e^{\frac{1}{4}}] $\displaystyle\int_0^{\infty}e^{-x+c}\,dx=$
 = Note that $x^2-x+\frac{1}{4}\geq0$ is equivalent to $(x-\frac{1}{2})^2\geq0$. Now $-x^2\leq-x+\frac{1}{4}$ leads to $e^{-x^2}\leq e^{-x+\frac{1}{4}}$ and
 
@@ -747,7 +747,7 @@ $$
 f'(x)=\frac{1}{x}e^{\frac{1}{4}x^2}\cdot\frac{1}{2}x-\frac{1}{x^2}e^{\frac{1}{4}x^2}=\left(\frac{1}{2}-\frac{1}{x^2}\right)e^{\frac{1}{4}x^2},
 $$
 
-which equals zero if $x=\pm\sqrt{2}$. Since $a$ should be positive, we conlcude that $a=\sqrt{2}$.
+which equals zero if $x=\pm\sqrt{2}$. Since $a$ should be positive, we conclude that $a=\sqrt{2}$.
 > Evaluate $\displaystyle\int_0^{\infty}e^{-ax+\frac{1}{4}a^2}\,dx$ and find its minimal value.
 
 Find the least upper bound for this value of $a$.
