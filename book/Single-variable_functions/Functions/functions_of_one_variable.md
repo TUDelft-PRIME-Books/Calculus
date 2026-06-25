@@ -237,7 +237,7 @@ There is one major restriction when sketching a graph, and that is that we only 
 When plotting the graph of a function, we use a solid dot (or solid square/triangle/...) to indicate that a certain point is part of the graph, while we use an open dot (or open square/triangle/...) to exclude a point from the graph. For instance, in {numref}`Fig:Functions1var:Graph` the left endpoint $(L,f(L))$ is not part of the graph (i.e. $L$ is not in the domain of $f$), while the right endpoint $(R,f(R))$ is part of the graph.
 :::
 
-When analysing functions, it is often iteresting to determine if and where the graph of a function intersects the $x$-axis and the $y$-axis.
+When analysing functions, it is often interesting to determine if and where the graph of a function intersects the $x$-axis and the $y$-axis.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Intercepts
