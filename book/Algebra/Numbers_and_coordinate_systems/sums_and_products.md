@@ -294,7 +294,7 @@ for all $n\in\{1,2,3,\ldots\}$.
 
 This theorem can also be proved using the {prf:ref}`principle of mathematical induction <Thm:Algebra:MathematicalInduction>`:
 
-::::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:SumOfIntegers`
+::::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:SumOfIntegers` (mathematicl induction)
 :class: tudproof, dropdown
 
 For $n=1$ we obtain
@@ -742,11 +742,11 @@ Add Grasple exercises to {numref}`Sec:SumsAndProducts`.
 ## Exercises
 
 ::::{exercise}
-:label: Exc:SumsAndProducts:IntroductionInduction1
+:label: Exc:SumsAndProducts:SumOfSquares
 Show that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ for all $n\in\{1,2,3,\ldots\}$.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:SumsAndProducts:IntroductionInduction1`
+:::{admonition} Solution of {numref}`Exc:SumsAndProducts:SumOfSquares`
 :class: solution, dropdown
 
 For $n=1$ this reads: $1=\frac{1}{6}\cdot1\cdot2\cdot3$, which is true. 
@@ -765,12 +765,12 @@ Since this is exactly the formula with $n$ replaced by $n+1$, this proves the st
 :::
 
 ::::{exercise}
-:label: Exc:SumsAndProducts:IntroductionInduction2
+:label: Exc:SumsAndProducts:SumOfCubes
 
 Show that $\displaystyle\sum_{k=1}^nk^3=\left(\sum_{k=1}^nk\right)^2=\frac{1}{4}n^2(n+1)^2$ for all $n\in\{1,2,3,\ldots\}$.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:SumsAndProducts:IntroductionInduction2`
+:::{admonition} Solution of {numref}`Exc:SumsAndProducts:SumOfCubes`
 :class: solution, dropdown
 
 For $n=1$ this reads: $1=\frac{1}{4}\cdot1^2\cdot2^2$, which is true. 

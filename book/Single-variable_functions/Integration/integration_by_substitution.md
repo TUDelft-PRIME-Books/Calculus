@@ -18,7 +18,7 @@ In this section we introduce the method of **integration by substitution**, whic
 
 ## Indefinite integrals
 
-The method of **integration by substitution** is based on the chain rule for differentiation: if $g$ is differentiable at $x$ and $F$ is differentiable at $g(x)$, then
+The method of **integration by substitution** is based on the {prf:ref}`chain rule <Thm:Chainrule:Chainrule>` for differentiation: if $g$ is differentiable at $x$ and $F$ is differentiable at $g(x)$, then
 
 $$
 \frac{d}{dx}F(g(x))=F'(g(x))g'(x).
@@ -31,7 +31,7 @@ Now consider the indefinite integral $\displaystyle\int F'(g(x))g'(x)\,dx$:
 &= F(g(x))+C.
 \end{align*}
 
-If we would assume that $F'=f$, so $F$ is an antiderivative of $f$, then we have $F'(g(x))=f(g(x))$ and therefore
+If we assume that $F'=f$, so $F$ is an antiderivative of $f$, then we have $F'(g(x))=f(g(x))$ and therefore
 
 $$
 \int f(g(x))g'(x)\,dx=F(g(x))+C\quad\text{with}\quad C\in\mathbb{R}.
@@ -41,7 +41,7 @@ This leads to the following theorem:
 
 ::::::{prf:Theorem} Integration by substitution for indefinite integrals
 :label: Thm:Integration:SubstitutionIndefiniteIntegral
-If $u=g(x)$ is a differentiable function whose range is an interval $I$ and $f$ is continuous on $I$, then
+If $u=g(x)$ is a differentiable function whose range is an interval $I$ and $f$ is integrable on $I$, then
 
 :::{math}
 :label: Eq:Integration:SubstitutionIndefiniteIntegral
@@ -60,8 +60,7 @@ Let $F$ be an antiderivative of $f$ on $I$, so $F'=f$. Then:
 &= \int \frac{d}{dx}F(g(x))\,dx\\
 &= F(g(x))+C \\
 &= \left[F(u)+C\right]_{u=g(x)}\\
-&= \left[\int f(u)\,du\right]_{u=g(x)} \\
-&= \int f(u)\,du.
+&= \left[\int f(u)\,du\right]_{u=g(x)}.
 \end{align*}
 ::::
 
@@ -70,26 +69,26 @@ Let $F$ be an antiderivative of $f$ on $I$, so $F'=f$. Then:
 
 In {prf:ref}`Thm:Integration:SubstitutionIndefiniteIntegral` the indefinite integral on the left in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is expressed in terms of the variable $x$, which means that evaluation of the integral on the left gives a function of $x$.
 
-The indefinite integral on the right in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` must therefore also be expressed in terms of the variable $x$. This is done by substituting back $u=g(x)$ after evaluating the integral on the right.
+However, the indefinite integral on the right in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is expressed in terms of the variable $u$. In order to rewrite this in terms of the variable $x$ we might use the substitution $u=g(x)$ after evaluating the integral on the right.
 
-A more concise notation for writing Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is to write
+A more precise notation for writing Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is
 
 $$
 \int f(g(x))g'(x)\,dx=\left[\int f(u)\,du\right]_{u=g(x)}.
 $$
 
-We however will not use this notation in the sequel, and stick to the notation in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral`.
+However, we will not use this notation in the sequel, and stick to the notation in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral`.
 ::::::
 
 ::::::{prf:remark}
 :label: Rm:Integration:SubstitutionDifferential
 If $u=g(x)$, we often use that $du=g'(x)\,dx$.
 
-Furthermore, the method of integration by substitution rests on identifying parts of the integrand as $f(g(\ldots))$ and $g'(\ldots)$. In practice, this means that we look for a part of the integrand $g'(\ldots)$:
+Furthermore, the method of integration by substitution relies on identifying parts of the integrand as $f(g(x))$ and $g'(x)$. In practice, this means that we look for a part of the integrand $g'(x)$:
 
-- That is the derivative of a known function $g(\ldots)$.
+- That is the derivative of a known function $g(x)$.
 - That can be factored out of the integrand.
-- For which $g(\ldots)$, up to a multiplicative constant, is present in the other part $f(g(\ldots))$ of the integrand.
+- For which $g(x)$, up to a multiplicative constant, is present in the other part $f(g(x))$ of the integrand.
 
 ::::::
 
@@ -107,7 +106,7 @@ $$
 
 ::::::
 
-Sometimes we need a constant multiple of the function $g$ of which a derivative $g'$ is present in the integrand. In that case we can often factor out this constant multiple from the integral, which is shown in the next examples.
+Sometimes we need a constant multiple of the function $g$ of which a derivative $g'$ is present in the integrand. In that case we can factor out this constant multiple from the integral, which is shown in the next examples.
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionIndefiniteIntegralExample2
@@ -118,13 +117,13 @@ We recognise $t^2$ as the derivative of $\frac{1}{3}t^3$ while $t^3$ is present 
 To use this, we first rewrite the integral as
 
 $$
-\int t^2\cos(t^3)\,dx=\int\frac{1}{3}\cos(t^3)\cdot 3t^2\,dt.
+\int t^2\cos(t^3)\,dt=\int\frac{1}{3}\cos(t^3)\cdot 3t^2\,dt.
 $$
 
 If we set $u=t^3$, we obtain that $du=3t^2\,dt$. Hence, we find that
 
 \begin{align*}
-\int t^2\cos(t^3)&= \int\frac{1}{3}\cos(t^3)\cdot 3t^2\,dt\\
+\int t^2\cos(t^3)\,dt&= \int\frac{1}{3}\cos(t^3)\cdot 3t^2\,dt\\
 &= \int\frac{1}{3}\cos(u)\,du\\
 &= \frac{1}{3}\sin(u)+C\\
 &= \frac{1}{3}\sin(t^3)+C.
@@ -142,7 +141,7 @@ Inspection of the integrand shows two possibilities.
 
 We recognise $\dfrac{1}{1+x}$ as the derivative of $\ln(1+x)$. However, this function is not present in the integrand.
 
-We also recognise $\dfrac{1}{\sqrt{x}}$ as the derivative of $2\sqrt{x}$ and $\sqrt{x}$ is present in the other part of the integrand.
+We also recognise $\dfrac{1}{\sqrt{x}}$ as the derivative of $2\sqrt{x}$ and $\sqrt{x}$ is present in the other part of the integrand, since $1+x=1+\left(\sqrt{x}\right)^2$.
 
 If we set $u=\sqrt{x}$, we obtain that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $\dfrac{1}{\sqrt{x}}\,dx=2\,du$. Hence, we find that
 
@@ -201,7 +200,7 @@ Now we use the techniques of the previous section to obtain
 
 ::::::
 
-Although we have not made it explicit in the examples so far, in many cases we used, if $u=g(x)$, then also $x=g^{-1}(u)$. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$. This is not always necessary, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
+Although we have not made it explicit in the examples so far, in many cases we used that, if $u=g(x)$, then also $x=g^{-1}(u)$. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$. This is not always necessary, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
 
 We summarise this in the next algorithm:
 
@@ -210,11 +209,11 @@ We summarise this in the next algorithm:
 
 To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
-1. Select the function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
+1. Select a function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
 2. Set $u=g(x)$ and define $x=h(u)=g^{-1}(u)$.
 3. Compute $dx=h'(u)\,du$,
-4. Substitute $g(x)$ with $u$, $x$ with $h(u)$, and $dx$ with $h'(u)\,du$ in the integral.
-5. Evaluate the resulting indefinite integral using standard methods.
+4. Substitute $u$ for $g(x)$, $h(u)$ for $x$, $h'(u)\,du$ for $dx$ in the integral.
+5. Try to evaluate the resulting indefinite integral using standard methods.
 
 ::::::
 
@@ -268,7 +267,7 @@ But this means that we have proved the following theorem:
 
 ::::::{prf:Theorem} Substitution for definite integrals
 :label: Thm:Integration:SubstitutionDefiniteIntegral
-If $g'$ is continuous on $[a,b]$ and $f$ is continuous on the range of $u=g(x)$, then
+If $g'$ is continuous on $[a,b]$ and $f$ is integrable on the range of $u=g(x)$, then
 
 $$
 \int_a^b f(g(x))g'(x)\,dx=\int_{g(a)}^{g(b)} f(u)\,du.
@@ -288,7 +287,7 @@ This also means that when we use the method of substitution for definite integra
 
 Note that the choice $u=g(x)$ leads to new limits of integration: if $x=a$ then $u=g(a)$, and if $x=b$ then $u=g(b)$.
 
-Be very aware that these new limits may be in descending order if $g(a)>g(b)$ eval if $a<b$ originally.
+Be very aware that these new limits may be in descending order if $g(a)>g(b)$ even if $a<b$ originally.
 :::
 
 {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` can easily be adapted to definite integrals:
@@ -298,11 +297,12 @@ Be very aware that these new limits may be in descending order if $g(a)>g(b)$ ev
 
 To evaluate a definite integral of the form $\displaystyle\int_a^b I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
-1. Select the $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
+1. Select a function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
 2. Set $u=g(x)$ and define $x=h(u)=g^{-1}(u)$.
 3. Compute $dx=h'(u)\,du$,
-4. Substitute $g(x)$ with $u$, $x$ with $h(u)$, $dx$ with $h'(u)\,du$, $a$ with $g(a)$, and $b$ with $g(b)$ in the integral.
-5. Evaluate the resulting definite integral using standard methods.
+4. Substitute $u$ for $g(x)$, $h(u)$ for $x$, and $h'(u)\,du$ for $dx$ in the integral.
+5. Replace the lower limit $a$ by $g(a)$ and the upper limit $b$ by $g(b)$.
+6. Try to evaluate the resulting definite integral using standard methods.
 
 ::::::
 
@@ -323,21 +323,7 @@ $$
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralExample2
-Let us evaluate $\displaystyle\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
-
-We recognise $\dfrac{1}{1-x^2}$ as the derivative of $\arcsin(x)$, being the other part of the integrand.
-
-If we set $u=\arcsin(x)$, then we have $du=\dfrac{1}{\sqrt{1-x^2}}\,dx$. Furthermore, we have if $x=0$ then $u=\arcsin(0)=0$, and if $x=\frac{1}{2}$ then $u=\arcsin(\frac{1}{2})=\frac{1}{6}\pi$. Hence, we find that
-
-$$
-\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx=\int_0^{\frac{1}{6}\pi}u\,du=\frac{1}{2}u^2\bigg|_0^{\frac{1}{6}\pi}=\frac{1}{2}\cdot\frac{1}{36}\pi^2=\frac{1}{72}\pi^2.
-$$
-
-::::::
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralExample3
-We are going to calculate $\displaystyle\int_{\frac{1}{4}}^1\frac{e^{\frac{1}{\sqrt{x}}}}{x\sqrt{x}}\,dx$.
+Consider $\displaystyle\int_{\frac{1}{4}}^1\frac{e^{\frac{1}{\sqrt{x}}}}{x\sqrt{x}}\,dx$.
 
 If we set $u=\dfrac{1}{\sqrt{x}}$, then we have $du=-\dfrac{1}{2x\sqrt{x}}\,dx$ or $\dfrac{1}{x\sqrt{x}}\,dx=-2\,du$. Furthermore, we have if $x=\frac{1}{4}$ then $u=\frac{1}{\sqrt{\frac{1}{4}}}=\frac{1}{\frac{1}{2}}=2$, and if $x=1$ then $u=\frac{1}{\sqrt{1}}=1$. Now we find that
 
@@ -350,7 +336,11 @@ If we set $u=\dfrac{1}{\sqrt{x}}$, then we have $du=-\dfrac{1}{2x\sqrt{x}}\,dx$ 
 
 ::::::
 
-In the section on definite integrals, in {prf:ref}`Thm:Integration:DefinitePropertiesArea` we have already seen the following intuitively result, which can now be proved using a substitution:
+:::{warning}
+We remark that a sign mistake is easily made in this example. Note that the integrand is positive on $[\frac{1}{4},1]$ and $\frac{1}{4}<1$, so the result should be positive.
+:::
+
+In {prf:ref}`Thm:Integration:DefinitePropertiesArea` we have already seen the following intuitive result, which can now be proved using a substitution:
 
 ::::::{prf:Theorem}
 :label: Thm:Integration:OddEven
@@ -417,7 +407,8 @@ and
 
 \begin{align*}
 \int\frac{x}{x^2+\alpha^2}\,dx&=\frac{1}{\alpha^2}\int\frac{x}{\left(\frac{x}{\alpha}\right)^2+1}\,dx\\
-&=\frac{1}{\alpha^2}\int\frac{\alpha t}{t^2+1}\alpha\,dt=\int\frac{t}{t^2+1}\,dt\\
+&=\frac{1}{\alpha^2}\int\frac{\alpha t}{t^2+1}\alpha\,dt\\
+&=\int\frac{t}{t^2+1}\,dt\\
 &=\frac{1}{2}\ln(t^2+1)+C\\
 &=\frac{1}{2}\ln\left(\left(\frac{x}{\alpha}\right)^2+1\right)+C\\
 &=\frac{1}{2}\ln\left(\frac{x^2+\alpha^2}{\alpha^2}\right)+C\\
@@ -466,6 +457,20 @@ Now we apply the substitution $u=x-\dfrac{1}{x}$ and therefore $du=\left(1+\dfra
 $$
 \int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\frac{1}{2}\int_{-\frac{3}{2}}^{\frac{3}{2}}\cos(u)\,du
 =\frac{1}{2}\sin(u)\bigg|_{-\frac{3}{2}}^{\frac{3}{2}}=\sin\left(\tfrac{3}{2}\right).
+$$
+
+:::
+
+:::{exercise}
+:label: Exc:Integration:SubstitutionDefiniteIntegral
+Let us evaluate $\displaystyle\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
+
+We recognise $\dfrac{1}{\sqrt{1-x^2}}$ as the derivative of $\arcsin(x)$, being the other part of the integrand.
+
+If we set $u=\arcsin(x)$, then we have $du=\dfrac{1}{\sqrt{1-x^2}}\,dx$. Furthermore, we have if $x=0$ then $u=\arcsin(0)=0$, and if $x=\frac{1}{2}$ then $u=\arcsin(\frac{1}{2})=\frac{1}{6}\pi$. Hence, we find that
+
+$$
+\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx=\int_0^{\frac{1}{6}\pi}u\,du=\frac{1}{2}u^2\bigg|_0^{\frac{1}{6}\pi}=\frac{1}{2}\cdot\frac{1}{36}\pi^2=\frac{1}{72}\pi^2.
 $$
 
 :::

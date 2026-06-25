@@ -465,7 +465,7 @@ In {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we have seen that $
 :::::{prf:example} Serret's integral revisited
 :label: Ex:Integration:IntegrationByPartsSerretsIntegral
 
-Since we recognise $\dfrac{1}{1+x^2}$ as the derivative of $\arctan(x)$, we can use integration by parts to evaluate Serret's integral:
+Since we recognise $\dfrac{1}{1+x^2}$ as the derivative of $\arctan(x)$, we can use integration by parts to find that
 
 \begin{align*}
 \int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\ln(1+x)\arctan(x)\bigg|_0^1-\int_0^1\frac{\arctan(x)}{1+x}\,dx\\
@@ -485,6 +485,70 @@ as well. Hence, we have
 \int_0^1\frac{\arctan(x)}{1+x}\,dx=\frac{1}{8}\pi\ln(2)=\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx.
 ::::
 
+:::::
+
+:::::{admonition} Bonus material: Another approach to Serret's integral
+:class: dropdown
+
+In {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we evaluated *Serret's integral* $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$ using substitution and in {prf:ref}`Ex:Integration:IntegrationByPartsSerretsIntegral` we used integration by parts to obtain another form of the same integral. Here we use another approach to obtain the results in Equation {eq}`Eq:Integration:PartsSerret`.
+
+We introduce a parameter, such that a special case reduces to Serret's integral, which makes it easier to evaluate the integral. In {numref}`Sec:Integration:Feynman` we will use this trick to evaluate more difficult integrals.
+
+Note that Serret's integral is a special case of $I(\alpha)=\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx$.
+
+We remark that the parameter $\alpha$ appears in both the upper limit and the integrand of the integral. Differentiation with respect to $\alpha$ leads to 
+
+$$
+I'(\alpha)=\displaystyle\frac{\ln(1+\alpha^2)}{1+\alpha^2}+\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx.
+$$ 
+
+Now we use that 
+ 
+$$
+\frac{x}{(1+x^2)(1+\alpha x)}=\frac{1}{1+\alpha^2}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right).
+$$
+
+You can easliy check this right now. In {numref}`Sec:Integration:RationalFunctions` the method of *partial fractions* is treated in details.
+
+Then we have
+
+\begin{align*}
+&\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx\\
+&=\frac{1}{1+\alpha^2}\int_0^{\alpha}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)\,dx\\
+&=\frac{1}{1+\alpha^2}\bigg[\alpha\arctan(x)+\frac{1}{2}\ln(1+x^2)-\ln(1+\alpha x)\bigg]_0^{\alpha}\\
+&=\frac{1}{1+\alpha^2}\left(\alpha\arctan(\alpha)+\frac{1}{2}\ln(1+\alpha^2)-\ln(1+\alpha^2)\right)\\
+&=\frac{\alpha}{1+\alpha^2}\arctan(\alpha)-\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}.
+\end{align*}
+
+Hence we have: $I'(\alpha)=\displaystyle\frac{\alpha}{1+\alpha^2}\arctan(\alpha)+\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}$. Using integration by parts this implies that
+
+\begin{align*}
+I(\alpha)&=\int\frac{\alpha}{1+\alpha^2}\arctan(\alpha)\,d\alpha+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
+&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
+&=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)+C.
+\end{align*}
+
+Since $I(0)=0$, we conclude that $\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)$.
+
+The special case $\alpha=1$ now reads
+
+$$
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{2}\arctan(1)\ln(2)=\frac{1}{2}\cdot\frac{1}{4}\pi\cdot\ln(2)=\frac{1}{8}\pi\ln(2).
+$$
+
+Similarly, using integration by parts, the integral $\displaystyle\int_0^1\frac{\arctan(x)}{1+x}\,dx$ is a special case of
+
+\begin{align*}
+\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx&=\arctan(x)\ln(1+\alpha x)\bigg|_0^{\alpha}-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx\\
+&=\arctan(\alpha)\ln(1+\alpha^2)-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
+\end{align*}
+This implies that: 
+
+$$
+\alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)=\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
+$$
+
+For $\alpha=1$ this gives Equation {eq}`Eq:Integration:PartsSerret`.
 :::::
 
 ::::{question} Short-answer blocks
