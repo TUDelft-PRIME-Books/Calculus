@@ -34,7 +34,7 @@ $$
  A(w)=w\ell=w\left(200-w\right).
 $$
 
-So how should we continue from here? In this section, we will see that a function is nondecreasing when the derivative is positive and nonincreasing when it is negative. So we evaluate the derivative of $A$ to obtain
+So how should we continue from here? In this section, we will see that a function is non-decreasing when the derivative is positive and non-increasing when it is negative. So we evaluate the derivative of $A$ to obtain
 
 $$
  \frac{dA}{dw}=200-2w.
@@ -958,15 +958,15 @@ Replace {numref}`Fig:MinMax:MVT3` with an applet. Make sure no vertical line ele
 
 ## Increasing and decreasing functions
 
-One of the main features of derivatives is that they can be used to establish on which intervals a function is nondecreasing and on which intervals it is nonincreasing. We defined what it means for a function to be nondecreasing or nonincreasing on an interval in {numref}`Subsec:PropertiesFunctionsIncreasingDecreasing`, but we saw there that without derivatives it is very hard to establish these properties. So how can we use the derivative? Intuitively speaking, if a function is nondecreasing on an interval, then at any point on this interval the function values must grow. So if we consider the tangent line at such a point, we would expect a line with a nonnegative slope. Similarly, we would expect a tangent line with a nonpositive slope on an interval where the function is nonincreasing. We can make this precise in the following way.
+One of the main features of derivatives is that they can be used to establish on which intervals a function is non-decreasing and on which intervals it is non-increasing. We defined what it means for a function to be non-decreasing or non-increasing on an interval in {numref}`Subsec:PropertiesFunctionsIncreasingDecreasing`, but we saw there that without derivatives it is very hard to establish these properties. So how can we use the derivative? Intuitively speaking, if a function is non-decreasing on an interval, then at any point on this interval the function values must grow. So if we consider the tangent line at such a point, we would expect a line with a nonnegative slope. Similarly, we would expect a tangent line with a nonpositive slope on an interval where the function is non-increasing. We can make this precise in the following way.
 
 
 ::::::{prf:theorem} 
 :label: Thm:MinMax:Increasingdecreasing
 Let $f$ be a differentiable function.
 
-- $f$ is nondecreasing on an interval precisely when $f'(x)\geq 0$ on that interval.
-- $f$ is nonincreasing on an interval precisely when $f'(x)\leq 0$ on that interval.
+- $f$ is non-decreasing on an interval precisely when $f'(x)\geq 0$ on that interval.
+- $f$ is non-increasing on an interval precisely when $f'(x)\leq 0$ on that interval.
 - If $f'(x)> 0$ on an interval, then $f$ is strictly increasing on that interval.
 - If $f'(x)< 0$ on an interval, then $f$ is strictly decreasing on that interval.
 
@@ -980,9 +980,9 @@ $$
  f'(c)=\frac{f(b)-f(a)}{b-a}.
 $$
 
-By assumption, we have $f'(c)\geq 0$, so we find that $\dfrac{f(b)-f(a)}{b-a}\geq 0$. Since $a<b$, this can only happen if $f(a)\leq f(b)$. So we find that $f$ is nondecreasing on this interval.
+By assumption, we have $f'(c)\geq 0$, so we find that $\dfrac{f(b)-f(a)}{b-a}\geq 0$. Since $a<b$, this can only happen if $f(a)\leq f(b)$. So we find that $f$ is non-decreasing on this interval.
 
-Now suppose that $f$ is nondecreasing on an interval. Consider any point $x$ in that interval. Then for any $h>0$ for which $x+h$ is in the interval we have $f(x+h)\geq f(x)$. As such, we must have
+Now suppose that $f$ is non-decreasing on an interval. Consider any point $x$ in that interval. Then for any $h>0$ for which $x+h$ is in the interval we have $f(x+h)\geq f(x)$. As such, we must have
 
 $$
  \frac{f(x+h)-f(x)}{h}\geq 0.
@@ -1017,7 +1017,7 @@ Make a poll(???) where student needs to figure out where to proof breaks down if
 
 ::::::{prf:example} 
 :label: Ex:MinMax:Increasingdecreasing1
-Consider the function $f(x)=-2x^3-3x^2+12x+3$ and suppose we want to know on which intervals the function is nondecreasing and on which intervals it is nonincreasing. For this, we evaluate the derivative, which is given by
+Consider the function $f(x)=-2x^3-3x^2+12x+3$ and suppose we want to know on which intervals the function is non-decreasing and on which intervals it is non-increasing. For this, we evaluate the derivative, which is given by
 
 $$
  f'(x)=-6x^2-6x+12.
@@ -1095,7 +1095,7 @@ Now you can read the proof of {prf:ref}`Thm:MinMax:Firstdertest`.
 
 :::{admonition} Proof of {prf:ref}`Thm:MinMax:Firstdertest`
 :class: tudproof, dropdown
-Let $I=(a,b)$ be an open interval that contains $c$ and suppose $f'(x)\leq 0$ for $x$ in $I$ with $x<c$ and $f'(x)\geq 0$ for $x$ in $I$ with $x>c$. We will show that $f(c)$ is a local minimum of $f$. For this, we first show that $f$ is nonincreasing on $(a,c]$ (so including at the point $c$). On account of {prf:ref}`Thm:MinMax:Increasingdecreasing`, the function $f$ is nonincreasing on $(a,c)$. We argue by contradiction and assume that we can find $d$ in $(a,c)$ with $f(d)<f(c)$. Since $f$ is nonincreasing on $[d,c)$, we must have
+Let $I=(a,b)$ be an open interval that contains $c$ and suppose $f'(x)\leq 0$ for $x$ in $I$ with $x<c$ and $f'(x)\geq 0$ for $x$ in $I$ with $x>c$. We will show that $f(c)$ is a local minimum of $f$. For this, we first show that $f$ is non-increasing on $(a,c]$ (so including at the point $c$). On account of {prf:ref}`Thm:MinMax:Increasingdecreasing`, the function $f$ is non-increasing on $(a,c)$. We argue by contradiction and assume that we can find $d$ in $(a,c)$ with $f(d)<f(c)$. Since $f$ is non-increasing on $[d,c)$, we must have
 
 $$
  f(x)\leq f(d)<f(c)
@@ -1121,7 +1121,7 @@ $$
 
 for all $x$ in $I$ with $x\leq c$. 
 
-Now we show that $f$ is nondecreasing on $[c,b)$. {prf:ref}`Thm:MinMax:Increasingdecreasing` gives that the function $f$ is nondecreasing on $(c,b)$. We again argue by contradiction and assume that we can find $d$ in $(c,b)$ with $f(d)<f(c)$. Then $f$ is nondecreasing on $(c,d)$, so we must have
+Now we show that $f$ is non-decreasing on $[c,b)$. {prf:ref}`Thm:MinMax:Increasingdecreasing` gives that the function $f$ is non-decreasing on $(c,b)$. We again argue by contradiction and assume that we can find $d$ in $(c,b)$ with $f(d)<f(c)$. Then $f$ is non-decreasing on $(c,d)$, so we must have
 
 $$
  f(x)\leq f(d)<f(c)
@@ -1149,7 +1149,7 @@ $$
 
 for $x$ near $c$. This means that $f(c)$ is a local maximal value of $f$.
 
-Now suppose that $f'(x)>0$ for all $x$ in $I$ with $x\neq c$. By the first part of the proof $f$ is nondecreasing on $(a,c]$, so we have 
+Now suppose that $f'(x)>0$ for all $x$ in $I$ with $x\neq c$. By the first part of the proof $f$ is non-decreasing on $(a,c]$, so we have 
 
 $$
  f(x)\leq f(c)
