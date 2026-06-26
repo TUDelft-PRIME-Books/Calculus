@@ -261,9 +261,9 @@ The result of performing the five steps in a different order visualised. Use the
 
 ## Increasing and decreasing functions
 
-[^FootnoteNondecr]: Or perhaps it is better to say that a function nonincreases when the graph does not go down, and it nondecreases when the graph does not go up.
+[^FootnoteNondecr]: Or perhaps it is better to say that a function non-increases when the graph does not go down, and it non-decreases when the graph does not go up.
 
-When analysing the graph of a function, one of the most eye-catching properties is where the graph goes up and where it goes down. In more mathematical terms, we say that the function nonincreases when the graph goes up and the function nondecreases when the graph goes down. [^FootnoteNondecr]
+When analysing the graph of a function, one of the most eye-catching properties is where the graph goes up and where it goes down. In more mathematical terms, we say that the function non-increases when the graph goes up and the function non-decreases when the graph goes down. [^FootnoteNondecr]
 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:increasingdecreasing
@@ -287,7 +287,7 @@ A function can be non-decreasing on some parts on its domain, while it is non-in
 The graph of the function $f(x)=x^2$.
 :::
 
-The graph suggests that the function nondecreases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
+The graph suggests that the function non-decreases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
 
 Similarly, on the interval $(-\infty,0)$ the function is non-increasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2)^2=x_2^2=f(x_2)$.
 
@@ -343,13 +343,13 @@ In some literature, the terminology increasing and decreasing is used for what w
 Showing that a function is non-decreasing or non-increasing can be tricky in practice. In {numref}`Section:GraphsDerivatives` we will learn an efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
 
 ::::::{prf:theorem} 
-:label: Thm:PropertiesFunctions:Expnondecreasenonincrease
+:label: Thm:PropertiesFunctions:Expnon-decreasenon-increase
 
 Let $a>0$ and consider the exponential function $f(x)=a^x$. If $0<a<1$, the function $f$ is strictly decreasing on $\mathbb{R}$. If $a>1$, the function $f$ is strictly increasing on $\mathbb{R}$. If $a=1$, the function $f$ is constant, and, therefore, both non-decreasing and non-increasing on $\mathbb{R}$.
 
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Expnon-decreasenon-increase`
 :class: tudproof
 This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
 :::
@@ -357,19 +357,19 @@ This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
 Similarly, we can show that power functions are always strictly increasing or always strictly decreasing or constant on the interval $(0,\infty)$.
 
 ::::::{prf:theorem} 
-:label: Thm:PropertiesFunctions:Powernondecreasenonincrease
+:label: Thm:PropertiesFunctions:Powernon-decreasenon-increase
 
 Let $r$ in $\mathbb{R}$ and consider the power function $f(x)=x^r$. If $r>0$, the function $f$ is strictly increasing on $[0,\infty)$. Moreover, if $r=\dfrac{p}{q}$ for integers $p>0$ and $q>0$ with $q$ odd, then $f$ is strictly increasing on $\mathbb{R}$. If $r<0$, the function $f$ is strictly decreasing on $(0,\infty)$. If $r=1$, the function $f$ is constant, and, therefore, both non-decreasing and non-increasing on $\mathbb{R}$.
 
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Powernondecreasenonincrease`
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase`
 :class: tudproof
 This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
 :::
 
 ::::::{prf:example} 
-:label: Ex:PropertiesFunctions:Expnondecreasenonincrease
+:label: Ex:PropertiesFunctions:Expnon-decreasenon-increase
 
 Consider the function $f(x)=e^{-\sqrt{x}}$. We will show that it is strictly decreasing on $[0,\infty)$. For this, we let $x_1<x_2$ in $[0,\infty)$. Then we obtain
 
@@ -383,7 +383,7 @@ $$
  -\sqrt{x_1}>-\sqrt{x_2}.
 $$
 
-Since the exponential function is strictly increasing by {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`, we obtain
+Since the exponential function is strictly increasing by {prf:ref}`Thm:PropertiesFunctions:Expnon-decreasenon-increase`, we obtain
 
 $$
  f\left(x_1\right)=e^{-\sqrt{x_1}}>e^{-\sqrt{x_2}}=f\left(x_2\right).
@@ -763,7 +763,7 @@ which means that the hyperbolic tangent is odd.
 
 We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are non-decreasing and non-increasing. This we will do in {numref}`Section:GraphsDerivatives`.
 
-By {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
+By {prf:ref}`Thm:PropertiesFunctions:Expnon-decreasenon-increase`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
 
 The final property follows from the definition of the hyperbolic cosine and sine functions, which gives that
 
