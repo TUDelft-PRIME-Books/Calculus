@@ -373,108 +373,132 @@ $$
 
 ::::::
 
-## Exercises
+## Grasple Exercises
 
-::::{exercise}
-:label: Exc:Integration:SubstitutionIndefiniteIntegralRationalFunctions
-Prove that for $\alpha\in\mathbb{R}\setminus\{0\}$ we have
+### Indefinite integrals
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bb8a5684-e756-4384-ac03-cd548afa4fba?id=133562
+:label: Grasple:133562
+:dropdown:
+:description: Evaluate the integrals $\displaystyle\int\frac{1}{x^2+\alpha^2}\,dx$ and $\displaystyle\int\frac{x}{x^2+\alpha^2}\,dx$.
+
+::::
+
+:::{note}
+So we have
 
 $$
-\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C
+\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C,\quad\alpha\in\mathbb{R}\setminus\{0\}
 $$
 
 and
 
 $$
-\int\frac{x}{x^2+\alpha^2}\,dx=\frac{1}{2}\ln(x^2+\alpha^2)+C.
+\int\frac{x}{x^2+\alpha^2}\,dx=\frac{1}{2}\ln(x^2+\alpha^2)+C,\quad\alpha\in\mathbb{R}.
 $$
 
 These formulas will be used frequently in {numref}`Sec:Integration:RationalFunctions` on integration of rational functions.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionIndefiniteIntegralRationalFunctions`
-:class: solution, dropdown
-Using the substitution $\dfrac{x}{\alpha}=t$ or $x=\alpha t$, which implies that $dx=\alpha\,dt$, we find that
-
-\begin{align*}
-\int\frac{1}{x^2+\alpha^2}\,dx&=\frac{1}{\alpha^2}\int\frac{1}{\left(\frac{x}{\alpha}\right)^2+1}\,dx\\
-&=\frac{1}{\alpha^2}\int\frac{1}{t^2+1}\alpha\,dt\\
-&=\frac{1}{\alpha}\arctan(t)+C\\
-&=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C
-\end{align*}
-
-and
-
-\begin{align*}
-\int\frac{x}{x^2+\alpha^2}\,dx&=\frac{1}{\alpha^2}\int\frac{x}{\left(\frac{x}{\alpha}\right)^2+1}\,dx\\
-&=\frac{1}{\alpha^2}\int\frac{\alpha t}{t^2+1}\alpha\,dt\\
-&=\int\frac{t}{t^2+1}\,dt\\
-&=\frac{1}{2}\ln(t^2+1)+C\\
-&=\frac{1}{2}\ln\left(\left(\frac{x}{\alpha}\right)^2+1\right)+C\\
-&=\frac{1}{2}\ln\left(\frac{x^2+\alpha^2}{\alpha^2}\right)+C\\
-&=\frac{1}{2}\ln(x^2+\alpha^2)-\frac{1}{2}\ln(\alpha^2)+C.
-\end{align*}
-
-Note that $-\frac{1}{2}\ln(\alpha^2)$ is a constant. So $-\frac{1}{2}\ln(\alpha^2)+C$ can be replaced by another arbitrary constant of integration.
-
-Note that $\frac{1}{2}\ln(x^2+\alpha^2)$ can also be written as $\ln\sqrt{x^2+\alpha^2}$.
-
-Note that the second formula also holds for $\alpha=0$.
 :::
 
-::::{exercise}
-:label: Exc:Integration:SubstitutionCos
-Consider the integral $\displaystyle\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx$.
-
-(a) Use the substitution $x=\dfrac{1}{t}$ to show that
-
-$$
-\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\int_{\frac{1}{2}}^2\frac{1}{t^2}\cos\left(t-\frac{1}{t}\right)\,dt.
-$$
-
-(b) Add both forms of the integral and use the substitution $u=x-\dfrac{1}{x}$ to evaluate the integral.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b688b29d-a0a1-4bf5-b412-73acec89cf18?id=75957
+:label: Grasple:75957
+:dropdown:
+:description: Evaluate an integral of the form $\displaystyle\int\frac{1}{x^2+ax+b}\,dx$.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionCos`
-:class: solution, dropdown
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8aca6ab2-3f03-4785-910f-a1e617f21843?id=64878
+:label: Grasple:64878
+:dropdown:
+:description: Evaluate an integral of the form $\displaystyle\int\frac{1}{\sqrt{\alpha-x^2}}\,dx$.
 
-(a) Using the substitution $x=\dfrac{1}{t}$ we obtain:
+::::
 
-$$
-\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\int_2^{\frac{1}{2}}\cos\left(\frac{1}{t}-t\right)\left(-\frac{1}{t^2}\right)\,dt
-=\int_{\frac{1}{2}}^2\frac{1}{t^2}\cos\left(t-\frac{1}{t}\right)\,dt.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c3dc9c7e-50b3-4db7-a274-93f8be2bb7ca?id=64599
+:label: Grasple:64599
+:dropdown:
+:description: Evaluate the indefinite integral.
 
-(b) This implies that
+::::
 
-$$
-2\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\int_{\frac{1}{2}}^2\left(1+\frac{1}{x^2}\right)\cos\left(x-\frac{1}{x}\right)\,dx.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/584e6a26-ce71-4686-8777-d77b2db3e215?id=64660
+:label: Grasple:64660
+:dropdown:
+:description: Evaluate the indefinite integral $\displaystyle\int\frac{\cos(\sqrt{x})}{\sqrt{x}}\,dx$.
 
-Now we apply the substitution $u=x-\dfrac{1}{x}$ and therefore $du=\left(1+\dfrac{1}{x^2}\right)\,dx$:
+::::
 
-$$
-\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\frac{1}{2}\int_{-\frac{3}{2}}^{\frac{3}{2}}\cos(u)\,du
-=\frac{1}{2}\sin(u)\bigg|_{-\frac{3}{2}}^{\frac{3}{2}}=\sin\left(\tfrac{3}{2}\right).
-$$
+### Definite integrals
 
-:::
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/248020be-9e36-4d8c-b28f-c8bb059debb5?id=74572
+:label: Grasple:74572
+:dropdown:
+:description: Apply the substitution $u=e^x$ to the definite integral.
 
-:::{exercise}
-:label: Exc:Integration:SubstitutionDefiniteIntegral
-Let us evaluate $\displaystyle\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
+::::
 
-We recognise $\dfrac{1}{\sqrt{1-x^2}}$ as the derivative of $\arcsin(x)$, being the other part of the integrand.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7a17bcbf-2012-4ad3-a6e6-8991a474dc07?id=64601
+:label: Grasple:64601
+:dropdown:
+:description: Evaluate the definite integral.
 
-If we set $u=\arcsin(x)$, then we have $du=\dfrac{1}{\sqrt{1-x^2}}\,dx$. Furthermore, we have if $x=0$ then $u=\arcsin(0)=0$, and if $x=\frac{1}{2}$ then $u=\arcsin(\frac{1}{2})=\frac{1}{6}\pi$. Hence, we find that
+::::
 
-$$
-\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx=\int_0^{\frac{1}{6}\pi}u\,du=\frac{1}{2}u^2\bigg|_0^{\frac{1}{6}\pi}=\frac{1}{2}\cdot\frac{1}{36}\pi^2=\frac{1}{72}\pi^2.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5f883700-0be1-476c-ba65-425922459c55?id=64830
+:label: Grasple:64830
+:dropdown:
+:description: Evaluate the definite integral.
 
-:::
+::::
 
-## Grasple exercises
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/50d4a644-16d5-4437-98c6-861cdf679006?id=64617
+:label: Grasple:64617
+:dropdown:
+:description: Given $\displaystyle\int_0^{\alpha^2}f(x)\,dx$, what is $\displaystyle\int_0^{\alpha}xf(x^2)\,dx$?
 
-64141, 64618, 64879, 75957, 64878, 64599, 64834, 65945, 64831, 64653, 64660, 64601, 64825, 64652, 64835, 64850, 64648, 64830, 64826, 64832, 64827, 64881, 75951, 64877
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6e6de53b-a27c-497c-8b43-26421a6323e2?id=133564
+:label: Grasple:133564
+:dropdown:
+:description: Evaluate a definite integral of the form $\displaystyle\int_0^{\alpha}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4fdebb7b-23ca-4f23-9351-3235fc1faaa6?id=133565
+:label: Grasple:133565
+:dropdown:
+:description: Evaluate a definite integral of the form $\displaystyle\int_0^{\alpha}\frac{\arccos(x)}{\sqrt{1-x^2}}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/dd6c1502-6c41-4245-89fd-50e011f658f3?id=133566
+:label: Grasple:133566
+:dropdown:
+:description: Evaluate a definite integral of the form $\displaystyle\int_0^{\alpha}\frac{\arctan(x)}{1+x^2}\,dx$.
+
+::::
