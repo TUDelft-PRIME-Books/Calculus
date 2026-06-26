@@ -242,7 +242,7 @@ $$
 
 which is a limit that does not exist (the function $g(h)=h^{-\frac{2}{3}}$ has a vertical asymptote at $h=0$). So the function is not differentiable at $h=0$. 
 
-We will see later that this function is differentiable at any other point and that $f'(x)=\frac{1}{3}x^{-\frac{2}{3}}$ for $x\neq 0$. The idea here is that the tangent lines of the function at $a$ become steeper and steeper as $a$ approaches $ 0$. In some sense, the function $f$ has a **vertical tangent line** at $x=0$ (although {prf:ref}`Def:Differentiability:Tangentline` does not apply here). Whenever a function has a vertical tangent line at a point, it will not be differentiable at this point (otherwise its derivative would need to be $\infty$ or $-\infty$ at that point, but $\infty$ or $-\infty$ are not numbers, so a derivative can never have one of these values).
+We will see later that this function is differentiable at any other point and that $f'(x)=\frac{1}{3}x^{-\frac{2}{3}}$ for $x\neq 0$. The idea here is that the tangent lines of the function at $a$ become steeper and steeper as $a$ approaches $ 0$. The function $f$ has a **vertical tangent line** at $x=0$ (although {prf:ref}`Def:Differentiability:Tangentline` does not apply here). Whenever a function has a vertical tangent line at a point, it will not be differentiable at this point (otherwise its derivative would need to be $\infty$ or $-\infty$ at that point, but $\infty$ or $-\infty$ are not numbers, so a derivative can never have one of these values).
 
 :::{figure} Images/Fig-Differentiability-Usinglimit2.png
 :name: Fig:Differentiability:Usinglimit2
@@ -905,7 +905,7 @@ Replace {numref}`Fig:Differentiability:Venn` with an applet. Maybe show a few mo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/f0058966-290e-49d8-a78e-c689a17c714c?id=69697
-:label: Grasple:63056
+:label: Grasple:69697
 :dropdown:
 :description: Using limits to find a derivative.
 
@@ -914,7 +914,7 @@ Replace {numref}`Fig:Differentiability:Venn` with an applet. Maybe show a few mo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/5258b49b-1553-4d0b-a918-4f44e9647fec?id=69701
-:label: Grasple:63056
+:label: Grasple:69701
 :dropdown:
 :description: Using limits to find a derivative.
 

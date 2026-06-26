@@ -96,7 +96,44 @@ We conclude that $f$ is continuous at all points except $-2$ and $-1$.
 
 
 
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+Consider the function $f$ of which the graph shown below.
+:::{figure} Images/Fig-Continuity-Graph.png
+:name: Fig:Continuity:Graphpoll
+:class: dark-light
 
+Some function $f$.
+
+:::
+
+:::{todo}
+Turn {numref}`Fig:Continuity:Graphpoll` into an applet.
+:::
+
+Select all values of $a$ for which $f$ is discontinuous at $a$.
+---
+[x] $a=-2$
+> Here the left limit $\displaystyle\lim_{x\rightarrow -2^-}f(x)$ does not exist. As such, $f$ is discontinuous at this point.
+
+[ ] $a=-1$
+> Here the graph of $f$ makes a sharp turn, but the left limit, right limit and function value at $-1$ still coincide. This means that $f$ is continuous at $-1$.
+
+[ ] $a=0$
+> The function is undefined at $0$. Discontinuity is only defined for points in the domain of $f$.
+
+[x] $a=1$.
+> Here the left limit $\displaystyle\lim_{x\rightarrow 1^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 1^+}f(x)$ exist and are equal, so the limit $\displaystyle\lim_{x\rightarrow 1}f(x)$ exists. However, this limit is unequal to $f(1)$, so $f$ is discontinuous at $1$.
+
+[x] $a=2$
+> Here the left limit $\displaystyle\lim_{x\rightarrow 1^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 1^+}f(x)$ exist, but are unequal, so the limit $\displaystyle\lim_{x\rightarrow 1}f(x)$ does not exist. Hence, $f$ is discontinuous at $1$.
+---
+::::
 
 
 ::::::{prf:example} 
@@ -143,7 +180,7 @@ Let $\varepsilon>0$ be given. Since $f$ is continuous at $g(a)$, we can pick $\d
 ::::::{warning} 
 :name: Warning:Continuity:Oppositecomposition
 
-The reverse of the statement in {prf:ref}`Theorem:Continuity:Composition` is not true. That is, there are functions $f$ and $g$ for which there is a point $a$, such that either $f$ is discontinuous at $g(a)$ or $g$ is discontinuous at $a$ (or both), but $f\circ g$ is continuous at $a$. For instance, if $f=0$, then $f\circ g=0$ as well (independently of what $g$ is), which is a continuous function even if $g$ is not continuous everywhere.
+The reverse of the statement in {prf:ref}`Theorem:Continuity:Composition` is not true. That is, there are functions $f$ and $g$ for which there is a point $a$, such that either $f$ is discontinuous at $g(a)$ or $g$ is discontinuous at $a$ (or both), but $f\circ g$ is continuous at $a$. For instance, if $f=0$, then $f\circ g=0$ as well (independently of what $g$ is), which is a continuous function even if $g$ is not continuous everywhere. Similarly, if $g=0$ then $f\circ g=f(0)$, which is a continuous function even if $f$ is not continuous in $0$.
 ::::::
 
 We will not show the continuity of standard functions yet, since for several of these we need the upcoming intermediate value theorem. For the purpose of having at least some examples, we will show here that polynomial functions are continuous.
@@ -279,6 +316,7 @@ Interactive element: let students enter function plus left and right endpoint pl
 :label: Ex:Continuity:IVTnoncont
 
 The assumption that the function $f$ in the Intermediate Value Theorem is continuous is essential. Indeed, consider the function 
+
 $$
  f(x)=\left\{\begin{array}{ll}x+3,&\text{if }\,x\leq 1\\ 2x+4,&\text{if }\,x>1.\end{array}\right.
 $$
@@ -392,7 +430,7 @@ The following functions are continuous on their maximal domain.
 [^Footnoterange]: This happens when $a^r-\varepsilon<0$ and $r$ is not of the form $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with $q$ odd.
 [^Footnotesmalleps]: As we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway.
 
-**Continuity of $x^r$:** Let $r>0$ and consider the function $f(x)=x^r$. Let $a\geq 0$ be any point in the domain of $f$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. If $a^r-\varepsilon$ is not in the range of $f$[^Footnoterange] the part $a^r-\varepsilon<x^r$ is satisfied automatically, so we can assume that $a^r-\varepsilon$ is in the range of $f$[^Footnotesmalleps]. Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. From {prf:ref}`Thm:PropertiesFunctions:Powernondecreasenonincrease` we know that the function $x^{\frac{1}{r}}$ is strictly increasing, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $0\leq x_1\leq a-\delta$ and $a+\delta\leq x_2$. Since $f$ is strictly increasing as well by {prf:ref}`Thm:PropertiesFunctions:Powernondecreasenonincrease`, we know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_2$, which means that $f(x_1)<f(x)<f(x_2)$, i.e. 
+**Continuity of $x^r$:** Let $r>0$ and consider the function $f(x)=x^r$. Let $a\geq 0$ be any point in the domain of $f$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. If $a^r-\varepsilon$ is not in the range of $f$[^Footnoterange] the part $a^r-\varepsilon<x^r$ is satisfied automatically, so we can assume that $a^r-\varepsilon$ is in the range of $f$[^Footnotesmalleps]. Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. From {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase` we know that the function $x^{\frac{1}{r}}$ is strictly increasing, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $0\leq x_1\leq a-\delta$ and $a+\delta\leq x_2$. Since $f$ is strictly increasing as well by {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase`, we know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_2$, which means that $f(x_1)<f(x)<f(x_2)$, i.e. 
 
 $$
  a^r-\varepsilon=\left(\left(a^r-\varepsilon\right)^{\frac{1}{r}}\right)^r=f(x_1)<x^r<f(x_2)=\left(\left(a^r+\varepsilon\right)^{\frac{1}{r}}\right)^r=a^r+\varepsilon
@@ -710,7 +748,7 @@ The function $f$ as an example for continuity from the right.
 
 ::::::
 
-(Subsec:LimitAtInfinityGrasple)=
+(Subsec:ContinuityGrasple)=
 
 ## Grasple exercises
 

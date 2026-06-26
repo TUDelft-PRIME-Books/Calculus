@@ -23,20 +23,14 @@ so that the function value $f(x)$ is the sum of the function values $g(x)$ and $
 
 So what does the graph of $f$ look like in terms of the graphs of $g$ and $h$? For each value of $x$, we know that $f(x)=g(x)+h(x)$, so $f(x)$ is $h(x)$ higher than $g(x)$. That means that if we start from the graph of $g$, we obtain the graph of $f$ by rising the function value $\sin(x)$ by $\frac{x}{2}$ for each value of $x$. This can be seen in the figure below. We can also think of this as the graph of $g$ being stacked on top of the graph of $f$. 
 
-```{figure} Images/Fig-PropertiesFunctions-Sum.png
----
-width: 100%
-name: Fig:PropertiesFunctions:Sum
-class: dark-light
----
+```{applet}
+:url: calculus/properties_of_functions/sum_of_two_functions
+:name: Fig:PropertiesFunctions:Sum
+:class: dark-light
 
 An illustration of the sum of two functions.
 
 ```
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Sum` with an applet. Important: the functions in this example have changed, but the png picture still uses the old functions. The applet should use the new functions.
-:::
 
 ::::::
 
@@ -70,6 +64,8 @@ $$
  D_{h}=\left(D_f\cap D_g\right)\setminus\left\{x\,\middle|\,g(x)=0\right\}.
 $$
 
+
+
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:ProductsAndDomains
 
@@ -81,15 +77,12 @@ $$
 
 So what is the domain of the product function? You might be tempted to think that the domain is the set of all real numbers $\mathbb{R}$, since $t^2$ is defined for all values of $t$. However, $(rs)(t)$ is only equal to $t^2$ when $t\neq 0$. If $t=0$, the function value $s(0)$ is not defined as we cannot divide by $0$. As such, $0$ cannot be in the domain of $rs$. So the domain of $rs$ is the set of real numbers $\mathbb{R}$ without the point $0$, i.e. it is $\mathbb{R}\setminus\{0\}$.
 
-:::{figure} Images/Fig-PropertiesFunctions-ProductsAndDomains.png
+:::{applet}
+:url: calculus/properties_of_functions/product_of_two_functions
 :name: Fig:PropertiesFunctions:ProductsAndDomains
 
 The graphs of the functions $r$, $s$ and $rs$. The function $r$ is defined in $0$, but $s$ and $rs$ are not.
 
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:ProductsAndDomains` with an applet. Try to make sure that it is clearly visible that $r$ is defined in $0$, but $s$ and $rs$ are not.
 :::
 
 ::::::
@@ -141,6 +134,30 @@ What can we say about the domain of the composition $f\circ g$? Since $(f\circ g
 $$
  D_{f\circ g}=\left\{x\in D_g\,\middle|\,g(x)\in D_f\right\}.
 $$
+
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+Let $f$ and $g$ be functions for which $f\circ g$ exists.
+Which of the following statements is true?
+---
+[ ] The range of $f\circ g$ is equal to the range of $f$.
+> For $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$. However, not every element in the range of $f$ needs to be reached. For instance, consider $f(x)=x$ and $g(x)=\sqrt{x}$. Then the range of $f$ is $\mathbb{R}$. On the other hand, we have $(f\circ g)(x)=\sqrt{x}$, so the range of $f\circ g$ is $[0,\infty)$.
+
+[x] The range of $f\circ g$ is a subset of the range of $f$, but is not necessarily the same.
+> For $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$. However, not every element in the range of $f$ needs to be reached. For instance, consider $f(x)=x$ and $g(x)=\sqrt{x}$. Then the range of $f$ is $\mathbb{R}$. On the other hand, we have $(f\circ g)(x)=\sqrt{x}$, so the range of $f\circ g$ is $[0,\infty)$.
+[ ] The range of $f\circ g$ is equal to the range of $g$.
+> For $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$ and not necessarily in the range of $g$. For instance consider $f(x)=-x$ and $g(x)=\dfrac{1}{x^2}$. Then for $x\neq 0$ we have $(f\circ g)(x)=-\dfrac{1}{x^2}$. So the range of $g$ is $(0,\infty)$, while the range of $f\circ g$ is $(-\infty,0)$. So in this case, the ranges of $f\circ g$ has no overlap at all with the range of $g$.
+[ ] The range of $f\circ g$ is a subset of the range of $g$, but is not necessarily the same.
+> For $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$ and not necessarily in the range of $g$. For instance consider $f(x)=-x$ and $g(x)=\dfrac{1}{x^2}$. Then for $x\neq 0$ we have $(f\circ g)(x)=-\dfrac{1}{x^2}$. So the range of $g$ is $(0,\infty)$, while the range of $f\circ g$ is $(-\infty,0)$. So in this case, the ranges of $f\circ g$ has no overlap at all with the range of $g$.
+[ ] The range of $f\circ g$ is not necessarily a subset of either of the ranges of $f$ and $g$.
+> or $x$ in the domain of $f\circ g$, we have $(f\circ g)(x)=f(g(x))$. Since $g(x)$ is in the domain of $f$, $f(g(x))$ is in the range of $f$. Does it necessarily cover the entire range of $f$?
+---
+::::
 
 A logical follow-up question could be what happens if we take the composition of three (or even more) functions. So say, we have functions $f$, $g$ and $h$, what do we mean by $f\circ g\circ h$? Since we know what the composition of two functions is, we could try to construct the composition of three function as repeatedly composing two functions, but we run into an issue: there are two logical ways to make this construction. We could either compose $f$ and $g\circ h$, i.e. we could look at $f\circ(g\circ h)$, or, we could compose $f\circ g$ with $h$, i.e. we could look at $(f\circ g)\circ h$. Fortunately, it does not matter which of these we choose, as the resulting function is the same. This important property of composing functions is known as **associativity**.
 
@@ -220,27 +237,22 @@ $$
 
 Starting with the graph of the sine function, which is given $y=\sin(x)$, we first perform a horizontal stretching by a factor $\frac{1}{2}$ to obtain the graph given by $y=\sin(2x)$. Then we perform a horizontal shift of $1$ to the right to obtain the graph given by $y=\sin(2(x-1))$. Subsequently, we perform a reflection across the $x$-axis to obtain the graph given by $y=-\sin(2(x-1))$. Then we perform a vertical stretching by a factor $3$ to obtain the graph given by $y=-3\sin(2(x-1))$. Finally, we perform a vertical shift of $4$ upwards to obtain the graph given by $y=-3\sin(2(x-1))+4$, i.e. the graph of $f$.
 
-:::{figure} Images/Fig-PropertiesFunctions-ReflectionStretching.png
+:::{applet}
+:url: calculus/properties_of_functions/stretching_shifting_and_reflecting_1
 :name: Fig:PropertiesFunctions:ReflectionStretching
+:class: dark-light
 
-The five steps to obtain the graph of $f$ from the graph of $\sin(x)$ visualised.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching` with an applet.
-Current graphs seem incorrect (and one step has been split up in 2). Correct order should be $y=\sin(x)$, $y=\sin(2x)$, $y=\sin(2(x-1))$, $y=-\sin(2(x-1))$, $y=-3\sin(2(x-1))$, $y=-3\sin(2(x-1))+4$.
+The five steps to obtain the graph of $f$ from the graph of $\sin(x)$ visualised. Use the buttons to go through the steps one by one.
 :::
 
 Notice that if we performed these five operations in a different order, we might obtain a different function (but not necessarily so). Indeed, if we start with the graph given by $y=\sin(x)$ and perform the vertical shift of $4$ upwards first, we obtain the graph given by $y=\sin(x)+4$. If we then perform the reflection in the $x$-axis we obtain the graph $y=-\left(\sin(x)+4\right)=-\sin(x)-4$. From the vertical stretching by a factor $3$ we obtain the graph given by $y=3\left(-\sin(x)-4\right)=-3\sin(x)-12$. If we then perform the horizontal shift of $1$ to the right we obtain the graph given by $y=-3\sin(x-1)-12$. Finally, if we then perform the horizontal stretching by a factor $\frac{1}{2}$ we obtain the graph given by $y=-3\sin(2x-1)-12$. This function is very different from $f$, as can be seen from the graphs shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-ReflectionStretching2.png
+:::{applet}
+:url: calculus/properties_of_functions/stretching_shifting_and_reflecting_2
 :name: Fig:PropertiesFunctions:ReflectionStretching2
+:class: dark-light
 
-The result of performing the five steps in a different order visualised.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching2` with an applet. Graphs no longer match the story. Correct order: $y=\sin(x)+4$, $y=-3\sin(x)-4$, $y=-3\sin(x)-12$, $y=-3\sin(x-1)-12$ and $y=-3\sin(2x-1)-12$.
+The result of performing the five steps in a different order visualised. Use the buttons to go through the steps one by one.
 :::
 
 ::::::
@@ -249,39 +261,37 @@ Replace {numref}`Fig:PropertiesFunctions:ReflectionStretching2` with an applet. 
 
 ## Increasing and decreasing functions
 
-[^FootnoteNondecr]: Or perhaps it is better to say that a function nonincreases when the graph does not go down, and it nondecreases when the graph does not go up.
+[^FootnoteNondecr]: Or perhaps it is better to say that a function non-increases when the graph does not go down, and it non-decreases when the graph does not go up.
 
-When analysing the graph of a function, one of the most eye-catching properties is where the graph goes up and where it goes down. In more mathematical terms, we say that the function nonincreases when the graph goes up and the function nondecreases when the graph goes down. [^FootnoteNondecr]
+When analysing the graph of a function, one of the most eye-catching properties is where the graph goes up and where it goes down. In more mathematical terms, we say that the function non-increases when the graph goes up and the function non-decreases when the graph goes down. [^FootnoteNondecr]
 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:increasingdecreasing
 
-Let $f$ be a function and $I\subset D_f$ be an interval. Then we say that $f$ is **nondecreasing** on $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\leq f(x_2)$. Similarly, we say that $f$ is **nonincreasing** on the interval $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\geq f(x_2)$.
+Let $f$ be a function and $I\subset D_f$ be an interval. Then we say that $f$ is **non-decreasing** on $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\leq f(x_2)$. Similarly, we say that $f$ is **non-increasing** on the interval $I$ whenever for each two points $x_1<x_2$ in $I$ we have $f(x_1)\geq f(x_2)$.
 
-A function that is either nondecreasing or nonincreasing on an interval, is called **monotonic** on that interval.
+A function that is either non-decreasing or non-increasing on an interval, is called **monotonic** on that interval.
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:increasingdecreasing
 
 
-A function can be nondecreasing on some parts on its domain, while it is nonincreasing on other parts of its domain. For instance, consider the function $f(x)=x^2$, of which the graph is shown below.
+A function can be non-decreasing on some parts on its domain, while it is non-increasing on other parts of its domain. For instance, consider the function $f(x)=x^2$, of which the graph is shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-increasingdecreasing.png
+:::{applet}
+:url: calculus/properties_of_functions/quadratic_function
 :name: Fig:PropertiesFunctions:increasingdecreasing
+:class: dark-light
 
 The graph of the function $f(x)=x^2$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:increasingdecreasing` with an applet.
-:::
+The graph suggests that the function non-decreases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
 
-The graph suggests that the function nondecreases on the interval $(0,\infty)$. Indeed, if we have $0<x_1<x_2$ then we have $f(x_1)=x_1^2<x_2^2=f(x_2)$. 
+Similarly, on the interval $(-\infty,0)$ the function is non-increasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2)^2=x_2^2=f(x_2)$.
 
-Similarly, on the interval $(-\infty,0)$ the function is nonincreasing. Indeed, if we have $x_1<x_2<0$ then we have $0<-x_2<-x_1$, so we obtain $f(x_1)=x_1^2=(-x_1)^2> (-x_2)^2=x_2^2=f(x_2)$.
-
-However, on the interval $(-2,2)$ the function is neither nondecreasing, nor nonincreasing. Indeed, we have $-1$ and $0$ are numbers in this interval with $-1<0$ and we have $f(-1)=1>0=f(0)$, so $f$ is not nondecreasing on this interval. On the other hand, $0$ and $1$ are also numbers in this interval which have $0<1$ and $f(0)=0<1=f(1)$, so $f$ is not nonincreasing on this interval.
+However, on the interval $(-2,2)$ the function is neither non-decreasing, nor non-increasing. Indeed, we have $-1$ and $0$ are numbers in this interval with $-1<0$ and we have $f(-1)=1>0=f(0)$, so $f$ is not non-decreasing on this interval. On the other hand, $0$ and $1$ are also numbers in this interval which have $0<1$ and $f(0)=0<1=f(1)$, so $f$ is not non-increasing on this interval.
 
 ::::::
 
@@ -296,23 +306,21 @@ $$
 
 The graph of this function is shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-increasingdecreasingFlat.png
+:::{applet}
+:url: calculus/properties_of_functions/a_piecewise_function
 :name: Fig:PropertiesFunctions:increasingdecreasingFlat
+:class: dark-light
 
 The graph of the function $k$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:increasingdecreasingFlat` with an applet.
-:::
+From the graph of the function, we see that the function is definitely non-decreasing on the intervals $(-\infty,0)$ and $(1,\infty)$, but what about the interval $[0,1]$? The graph of the function is horizontal there, so it does not seem to "grow" on this interval. Still, according to the definition that we used, the function is non-decreasing on this interval. Indeed, for any $0<t_1<t_2<1$ we have $k(t_1)=2\leq 2=k(t_2)$. We conclude that the function is indeed non-decreasing on this interval. Moreover, it is also non-increasing on the same interval as for any $0<t_1<t_2<1$ we have $k(t_1)=2\geq 2=k(t_2)$. In general, a function is both non-decreasing and non-increasing on a certain interval precisely when it is constant on that interval.
 
-From the graph of the function, we see that the function is definitely nondecreasing on the intervals $(-\infty,0)$ and $(1,\infty)$, but what about the interval $[0,1]$? The graph of the function is horizontal there, so it does not seem to "grow" on this interval. Still, according to the definition that we used, the function is nondecreasing on this interval. Indeed, for any $0<t_1<t_2<1$ we have $k(t_1)=2\leq 2=k(t_2)$. We conclude that the function is indeed nondecreasing on this interval. Moreover, it is also nonincreasing on the same interval as for any $0<t_1<t_2<1$ we have $k(t_1)=2\geq 2=k(t_2)$. In general, a function is both nondecreasing and nonincreasing on a certain interval precisely when it is constant on that interval.
-
-In fact, the function is nondecreasing on its entire domain. Indeed, we already know that it is nondecreasing on each of the intervals $(-\infty,0)$, $[0,1]$ and $(1,\infty)$. So we only need to consider what happens if we have two values of $t$ that are in different intervals. First consider $t_1$ in $(-\infty,0)$ and $t_2$ in $[0,1]$. Then $t_1<0$, so $k(t_1)=t-3\leq -3<2=k(t_2)$. Similarly if $t_1$ is in $[0,1]$ and $t_2$ is in $(1,\infty)$ then $t_2>1$, so we find $k(t_2)=t+4>5>2=k(t_1)$. Finally, if $t_1$ is in $(-\infty,0)$ and $t_2$ is in $(1,\infty)$, then $t_1<t_2$, so we must have $k(t_1)=t_1-3<t_2-3<t_2+4=k(t_2)$. We find that $k$ is nondecreasing on its entire domain.
+In fact, the function is non-decreasing on its entire domain. Indeed, we already know that it is non-decreasing on each of the intervals $(-\infty,0)$, $[0,1]$ and $(1,\infty)$. So we only need to consider what happens if we have two values of $t$ that are in different intervals. First consider $t_1$ in $(-\infty,0)$ and $t_2$ in $[0,1]$. Then $t_1<0$, so $k(t_1)=t-3\leq -3<2=k(t_2)$. Similarly if $t_1$ is in $[0,1]$ and $t_2$ is in $(1,\infty)$ then $t_2>1$, so we find $k(t_2)=t+4>5>2=k(t_1)$. Finally, if $t_1$ is in $(-\infty,0)$ and $t_2$ is in $(1,\infty)$, then $t_1<t_2$, so we must have $k(t_1)=t_1-3<t_2-3<t_2+4=k(t_2)$. We find that $k$ is non-decreasing on its entire domain.
 
 ::::::
 
-In {prf:ref}`Ex:PropertiesFunctions:increasingdecreasingFlat` we saw that a constant function is both nondecreasing and nonincreasing. Sometimes, we want to specifically look at functions that actually grow or decay. For this, we adopt some new terminology.
+In {prf:ref}`Ex:PropertiesFunctions:increasingdecreasingFlat` we saw that a constant function is both non-decreasing and non-increasing. Sometimes, we want to specifically look at functions that actually grow or decay. For this, we adopt some new terminology.
 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:Strictlyincreasingdecreasing
@@ -324,24 +332,24 @@ Similarly, we say that $f$ is **strictly decreasing** on $I$ if for each two poi
 A function that is either strictly increasing or strictly decreasing on an interval, is called **strictly monotonic** on that interval.
 ::::::
 
-In particular, constant functions are nondecreasing and nonincreasing, but neither strictly increasing nor strictly decreasing.
+In particular, constant functions are non-decreasing and non-increasing, but neither strictly increasing nor strictly decreasing.
 
 ::::::{warning} 
 :name: Warning:PropertiesFunctions:Strictlyincreasingdecreasing
 
-In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those texts, constant functions are neither increasing nor decreasing). In other literature, the terminology increasing and decreasing is used for what we call nondecreasing and nonincreasing. This makes the terms increasing and decreasing ambiguous, and we will not use these terms. Be aware of this when you read other literature.
+In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those texts, constant functions are neither increasing nor decreasing). In other literature, the terminology increasing and decreasing is used for what we call non-decreasing and non-increasing. This makes the terms increasing and decreasing ambiguous, and we will not use these terms. Be aware of this when you read other literature.
 ::::::
 
-Showing that a function is nondecreasing or nonincreasing can be tricky in practice. In {numref}`Section:GraphsDerivatives` we will learn an efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
+Showing that a function is non-decreasing or non-increasing can be tricky in practice. In {numref}`Section:Extrema1d` we will learn an efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
 
 ::::::{prf:theorem} 
-:label: Thm:PropertiesFunctions:Expnondecreasenonincrease
+:label: Thm:PropertiesFunctions:Expnon-decreasenon-increase
 
-Let $a>0$ and consider the exponential function $f(x)=a^x$. If $0<a<1$, the function $f$ is strictly decreasing on $\mathbb{R}$. If $a>1$, the function $f$ is strictly increasing on $\mathbb{R}$. If $a=1$, the function $f$ is constant, and, therefore, both nondecreasing and nonincreasing on $\mathbb{R}$.
+Let $a>0$ and consider the exponential function $f(x)=a^x$. If $0<a<1$, the function $f$ is strictly decreasing on $\mathbb{R}$. If $a>1$, the function $f$ is strictly increasing on $\mathbb{R}$. If $a=1$, the function $f$ is constant, and, therefore, both non-decreasing and non-increasing on $\mathbb{R}$.
 
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Expnon-decreasenon-increase`
 :class: tudproof
 This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
 :::
@@ -349,19 +357,19 @@ This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
 Similarly, we can show that power functions are always strictly increasing or always strictly decreasing or constant on the interval $(0,\infty)$.
 
 ::::::{prf:theorem} 
-:label: Thm:PropertiesFunctions:Powernondecreasenonincrease
+:label: Thm:PropertiesFunctions:Powernon-decreasenon-increase
 
-Let $r$ in $\mathbb{R}$ and consider the power function $f(x)=x^r$. If $r>0$, the function $f$ is strictly increasing on $[0,\infty)$. Moreover, if $r=\dfrac{p}{q}$ for integers $p>0$ and $q>0$ with $q$ odd, then $f$ is strictly increasing on $\mathbb{R}$. If $r<0$, the function $f$ is strictly decreasing on $(0,\infty)$. If $r=1$, the function $f$ is constant, and, therefore, both nondecreasing and nonincreasing on $\mathbb{R}$.
+Let $r$ in $\mathbb{R}$ and consider the power function $f(x)=x^r$. If $r>0$, the function $f$ is strictly increasing on $[0,\infty)$. Moreover, if $r=\dfrac{p}{q}$ for integers $p>0$ and $q>0$ with $q$ odd, then $f$ is strictly increasing on $\mathbb{R}$. If $r<0$, the function $f$ is strictly decreasing on $(0,\infty)$. If $r=1$, the function $f$ is constant, and, therefore, both non-decreasing and non-increasing on $\mathbb{R}$.
 
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Powernondecreasenonincrease`
+:::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase`
 :class: tudproof
 This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
 :::
 
 ::::::{prf:example} 
-:label: Ex:PropertiesFunctions:Expnondecreasenonincrease
+:label: Ex:PropertiesFunctions:Expnon-decreasenon-increase
 
 Consider the function $f(x)=e^{-\sqrt{x}}$. We will show that it is strictly decreasing on $[0,\infty)$. For this, we let $x_1<x_2$ in $[0,\infty)$. Then we obtain
 
@@ -375,7 +383,7 @@ $$
  -\sqrt{x_1}>-\sqrt{x_2}.
 $$
 
-Since the exponential function is strictly increasing by {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`, we obtain
+Since the exponential function is strictly increasing by {prf:ref}`Thm:PropertiesFunctions:Expnon-decreasenon-increase`, we obtain
 
 $$
  f\left(x_1\right)=e^{-\sqrt{x_1}}>e^{-\sqrt{x_2}}=f\left(x_2\right).
@@ -383,9 +391,14 @@ $$
 
 This shows that the function $f$ is strictly decreasing on $[0,\infty)$.
 
-:::{todo}
-Make an applet with the graph of $f$.
+:::{applet}
+:url: calculus/properties_of_functions/exponential_square_root
+:name: Fig:PropertiesFunctions:ExponentialSquareRoot
+:class: dark-light
+
+The graph of the function $f(x)=e^{-\sqrt{x}}$.
 :::
+
 ::::::
 
 (Subsec:PropertiesFunctionsEvenOdd)=
@@ -420,7 +433,8 @@ Let $f$ be a function and $I$ an interval. Then $f$ is called **even** on $I$ if
 A function can only be even and/or odd on an interval that is symmetric with respect to $0$.
 :::
 
-::::{figure} Images/Fig-PropertiesFunctions-Even.png
+::::{applet}
+:url: calculus/properties_of_functions/even_function
 :name: Fig:PropertiesFunctions:Even
 :class: dark-light
 
@@ -428,11 +442,8 @@ The graph of an even function is symmetric with respect to the $y$-axis.
 
 ::::
 
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Even` with an applet.
-:::
-
-::::{figure} Images/Fig-PropertiesFunctions-Odd.png
+::::{applet}
+:url: calculus/properties_of_functions/odd_function
 :name: Fig:PropertiesFunctions:Odd
 :class: dark-light
 
@@ -440,15 +451,23 @@ The graph of an odd function is point symmetric with respect to the origin.
 
 ::::
 
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Odd` with an applet.
-:::
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+Let $f$ be even on $[-1,1]$ and $g$ be odd on $[-1,1]$.
+Select all statements that are true.
+---
+[ ] We must have $f(0)=0$.
+> The defining property of even functions gives that $f(-0)=f(0)$ which is true no matter what the value of $f(0)$ is.
 
-:::{todo}
-Make poll: Let $f$ be even and $g$ be odd on $[-1,1]$. True or false?
-We must have $f(0)=0$ (false)
-We must have $g(0)=0$ (true)
-:::
+[x] We must have $g(0)=0$.
+> The defining property of odd functions gives that $g(-0)=-g(0)$. Since $g(-0)=g(0)$ this means that $g(0)=-g(0)$. The only real number which is minus itself is $0$, so we must have $g(0)=0$.
+---
+::::
 
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:EvenOdd
@@ -461,21 +480,81 @@ $$
 
 As such, the function $f$ is odd. Note that $f=gh$ with $g(x)=|x|$ and $h(x)=\sin(x)$. By inspecting the computation above, you can see that $g(-x)=g(x)$ and $h(-x)=-h(x)$. So $g$ is even, while $h$ is odd. It is true, in general, that the product of an even and an odd function is odd again. You could make a list of whether a sum or product of any combination of even and odd functions is even again, but in practice, it is usually quicker to just plug $-x$ into your function and see where you end up.
 
-:::{figure} Images/Fig-PropertiesFunctions-EvenOdd.png
+:::{applet}
+:url: calculus/properties_of_functions/another_odd_function
 :name: Fig:PropertiesFunctions:EvenOdd
+:class: dark-light
 
 The graph of the function $f(x)=|x|\sin(x)$. Note that the graph is symmetric in the origin, which is a consequence of the fact that $f$ is odd.
 :::
 
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:EvenOdd` with an applet.
-:::
-
 ::::::
 
-:::{todo}
-Make poll with some true/false about combinations of even and odd functions.
-:::
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+Let $f$ be even on $\mathbb{R}$ and $g$ be odd on $\mathbb{R}$.
+Select all statements that are true.
+---
+[ ] $fg$ is even on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (fg)(-x)=f(-x)g(-x)=f(x)\left(-g(x)\right)=-f(x)g(x)=-(fg)(x).
+$$
+
+This means that in most cases $fg$ is not even on $\mathbb{R}$.
+
+[x] $fg$ is odd on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (fg)(-x)=f(-x)g(-x)=f(x)\left(-g(x)\right)=-f(x)g(x)=-(fg)(x).
+$$
+
+This means that $fg$ is odd on $\mathbb{R}$.
+
+[x] $f\circ g$ is even on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (f\circ g)(-x)=f(g(-x))=f(-g(x))=f(g(x))=(f\circ g)(x).
+$$
+
+This means that $f\circ g$ is even on $\mathbb{R}$.
+
+[ ] $f\circ g$ is odd on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (f\circ g)(-x)=f(g(-x))=f(-g(x))=f(g(x))=(f\circ g)(x).
+$$
+
+This means that in most cases $f\circ g$ is not odd on $\mathbb{R}$.
+
+[x] $g\circ f$ is even on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (g\circ f)(-x)=g(f(-x))=g(f(x))=(g\circ f)(x).
+$$
+
+This means that $g\circ f$ is even on $\mathbb{R}$.
+
+[ ] $g\circ f$ is odd on $\mathbb{R}$.
+> For $x\geq 0$ we have
+
+$$
+ (g\circ f)(-x)=g(f(-x))=g(f(x))=(g\circ f)(x).
+$$
+
+This means that in most cases $g\circ f$ is not odd on $\mathbb{R}$.
+---
+::::
 
 ::::::{prf:example} 
 :label: Ex:PropertiesFunctions:NotEvenOdd
@@ -488,14 +567,11 @@ $$
 
 and this is not (necessarily) equal to $f(x)$ or to $-f(x)$. Indeed, we find $f(2)=6$, while $f(-2)=2$ which is neither $f(2)$ nor $-f(2)$. So in general, the sum of an even and an odd function will be neither even nor odd, though exceptions exist. Can you come up with one?
 
-:::{figure} Images/Fig-PropertiesFunctions-NotEvenOdd.png
+:::{applet}
+:url: calculus/properties_of_functions/sum_of_even_and_odd_functions
 :name: Fig:PropertiesFunctions:NotEvenOdd
 
 The graph of the function $f(x)=x^2+x$. Note that the graph is not symmetric with respect to the $y$-axis, nor is it point symmetric with respect to the origin, which is a consequence of the fact that $f$ is neither even nor odd.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:NotEvenOdd` with an applet.
 :::
 
 ::::::
@@ -538,10 +614,35 @@ $$
 Finally, for $x=0$, we have $f_{\mathrm{odd}}(0)=0=-f_{\mathrm{odd}}(-0)$. This means that $f_{\mathrm{odd}}$ is odd on $(-a,a)$ and $f_{\mathrm{even}}$ is even on $(-a,a)$.
 :::
 
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
 
-:::{todo}
-Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ with $x>0$ and sketch the even and odd extensions, or plug in a formula and draw the graphs of the even and odd extensions.
+Consider the even and odd extensions of some function $f$ defined on the interval $[0,\infty)$ and the value $f(0)$. In {numref}`Fig:PropertiesFunctions:EvenOddExtensions` you can try different functions and see what the graphs of the even and odd extensions look like to answer these questions.
+
+_What condition must $f(0)$ satisfy for the odd extension to have no jumps at $x=0$? And for the even extension?_
+---
+DS[{even};odd]
+DS[even;{odd}]
+M[0]
+^^^
+? :::{card}
+The {gap} extension of the function $f$ has never a jump at $x=0$, no matter what the value of $f(0)$ is.
+
+The {gap} extension of the function $f$ has a jump at $x=0$ unless<br> $\displaystyle f(0)=${gap}.
 :::
+---
+:::{applet}
+:url: calculus/properties_of_functions/even_and_odd_extensions
+:name: Fig:PropertiesFunctions:EvenOddExtensions
+:class: dark-light
+
+The graphs of the even and odd extensions of the function $f$ defined on the interval $(0,\infty)$. You can drag the pulsating dot to see the behavior of the even and odd extensions of different functions. The value of $f(0)$ can be changed by dragging the dot along the vertical axis. Note that when checkbox for the even and odd extension are both selected, the even extension is not visible for $x>0$. The original function is shown dashed (if selected).
+:::
+::::
 
 Sometimes, it turns out to be convenient to write a function as the sum of an even and an odd function. The following theorem shows how we can construct these new functions.
 
@@ -597,32 +698,28 @@ and
 Hence, we must have $g=f_e$ and $h=f_o$, as desired.
 :::
 
-:::{todo}
-Make applet that lets student enter a function and it plots the function and the even and odd parts.
-:::
-
 The even and odd parts of the exponential function are so common that they have their own names.
 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:Hyperbolic
 
 
-The **hyperbolic cosine function**, denoted by $\cosh$, is the even part of the exponential function. That is, we have $\cosh(x)=\frac{e^x+e^{-x}}{2}$.
+The **hyperbolic cosine function**, denoted by $\cosh$, is the even part of the exponential function. That is, we have $\cosh(x)=\dfrac{e^x+e^{-x}}{2}$.
 
-The **hyperbolic sine function**, denoted by $\sinh$, is the odd part of the exponential function. That is, we have $\sinh(x)=\frac{e^x-e^{-x}}{2}$.
+The **hyperbolic sine function**, denoted by $\sinh$, is the odd part of the exponential function. That is, we have $\sinh(x)=\dfrac{e^x-e^{-x}}{2}$.
 
 Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\dfrac{\sinh(x)}{\cosh(x)}$.
 
 ::::::
 
-:::{figure} Images/Fig-PropertiesFunctions-Hyperbolic.png
+In {numref}`Fig:PropertiesFunctions:Hyperbolic` you can see the graphs of the hyperbolic cosine, sine and tangent functions. Note that the hyperbolic cosine is always positive, while the hyperbolic sine and tangent are both unbounded. The hyperbolic tangent is bounded by $-1$ and $1$, but it never actually reaches these values.
+
+:::{applet}
+:url: calculus/properties_of_functions/hyperbolic_functions
 :name: Fig:PropertiesFunctions:Hyperbolic
+:class: dark-light
 
 The graphs of the hyperbolic cosine, sine and tangent functions.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Hyperbolic` with an applet.
 :::
 
 ::::::{prf:notation} Powers of hyperbolic functions
@@ -650,6 +747,7 @@ The naming of these functions suggests some sort of connection to the trigonomet
 - The function $\cosh(x)$ is even, while the functions $\sinh(x)$ and $\tanh(x)$ are odd. 
 - The function $\cosh(x)$ is strictly decreasing on the interval $(-\infty,0)$ and strictly increasing on the interval $(0,\infty)$.
 - The functions $\sinh(x)$ and $\tanh(x)$ are strictly increasing on $\mathbb{R}$.
+- We have $\cosh(0)=1$ and $\sinh(0)=0$.
 - For any $x$ we have $\cosh^2(x)-\sinh^2(x)=1$.
 
 ::::::
@@ -664,9 +762,21 @@ $$
 
 which means that the hyperbolic tangent is odd.
 
-We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are nondecreasing and nonincreasing. This we will do in {numref}`Section:GraphsDerivatives`.
+We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are non-decreasing and non-increasing. This we will do in {numref}`Section:GraphsDerivatives`.
 
-By {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
+By {prf:ref}`Thm:PropertiesFunctions:Expnon-decreasenon-increase`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
+
+We can directly compute
+
+$$
+ \cosh(0)=\frac{e^0+e^{-0}}{2}=\frac{1+1}{2}=1
+$$
+
+and
+
+$$
+ \sinh(0)=\frac{e^0-e^{-0}}{2}=\frac{1-1}{2}=0.
+$$
 
 The final property follows from the definition of the hyperbolic cosine and sine functions, which gives that
 
@@ -693,17 +803,13 @@ A function $f$ is **periodic** if there exists a $T>0$ such that $f(x+T)=f(x)$ f
 
 ::::::
 
-::::{figure} Images/Fig-PropertiesFunctions-Periodic.png
+::::{applet}
+:url: calculus/properties_of_functions/fundamental_period
 :name: Fig:PropertiesFunctions:Periodic
 :class: dark-light
 
-The graph of function with fundamental period $T$.
-
+The graph of a periodic function with fundamental period $T$.
 ::::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:Periodic` with an applet.
-:::
 
 Periodic functions play an important role in many fields of science and engineering, for instance in signal processing and astronomy. In addition, periodic functions are precisely the functions that can be described by a Fourier series, see {numref}`Section:Fourier`.
 
@@ -718,7 +824,7 @@ In fact, any other period of a periodic function must be an integer multiple of 
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Fundperiod
 
-Let $f$ be a periodic function which has a fundamental period $T_0$. If $T$ is a period of $f$, then $T=nT_0$ for some integer $n\geq 1$.
+Let $f$ be a periodic function which has a fundamental period $T_0$. If $T$ is a period of $f$, then so is $T=nT_0$ for some integer $n\geq 1$.
 
 ::::::
 
@@ -758,14 +864,12 @@ This follows directly from {prf:ref}`Thm:Trigonometry:Periodicity`.
 
 Consider the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$. The graphs of these functions are shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-PeriodicCombining.png
+:::{applet}
+:url: calculus/properties_of_functions/sum_of_periodic_functions_1
 :name: Fig:PropertiesFunctions:PeriodicCombining
+:class: dark-light
 
-The graph of the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:PeriodicCombining` with an applet.
+The graph of the functions $f(x)=\cos(4x)$, $g(x)=\sin(6x)$ and $h(x)=(f+g)(x)=\cos(4x)+\sin(6x)$. You can toggle the visibility of the graphs of $f$, $g$ and $h$ by clicking on the checkboxes in the legend.
 :::
 
 As we can see in the graph, all of these functions are periodic. Since the sine and cosine have fundamental period $2\pi$, we might expect these functions to have this period as well. So let us find out if that is indeed the case. For any $x$ we can compute
@@ -800,14 +904,12 @@ So the fundamental period of $f$ is actually $\frac{\pi}{2}$. Similarly, the fun
 
 Consider the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\cos(2x)+\sin(\pi x)$. The graph of these functions is shown below.
 
-:::{figure} Images/Fig-PropertiesFunctions-PeriodicCombining2.png
+:::{applet}
+:url: calculus/properties_of_functions/sum_of_periodic_functions_2
 :name: Fig:PropertiesFunctions:PeriodicCombining2
+:class: dark-light
 
-The graph of the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\cos(2x)+\sin(\pi x)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:PropertiesFunctions:PeriodicCombining2` with an applet.
+The graph of the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\cos(2x)+\sin(\pi x)$. You can toggle the visibility of the graphs of $f$, $g$ and $h$ by clicking on the checkboxes in the legend.
 :::
 
 Following a similar reasoning to {prf:ref}`Ex:PropertiesFunctions:PeriodicCombining` the functions $f$ and $g$ are periodic with fundamental periods $\frac{2\pi}{2}=\pi$ and $\frac{2\pi}{\pi}=2$ respectively. So is the function $h$ periodic here as well and if so, what is its period? In order for $h$ to complete a full period, $f$ and $g$ would need to complete a number of periods at the same time. So a period $T$ of $h$ should be of the form $T=2m+\pi n$ for some integers $m,n\geq 1$. However, since $\pi$ is irrational, no such numbers $m$ and $n$ exist (otherwise, we would be able to write $\pi$ as a fraction). As such, the function $h$ is not periodic in this case. This can also be seen from the graph of $h$.
@@ -836,9 +938,6 @@ So $f+g$ is periodic with period $T$.
 
 ::::{note}
 It might be tempting to think that {prf:ref}`Thm:PropertiesFunctions:Sumperiodic` also works the other way around in the sense that the quotient of the fundamental periods of two period functions being irrational would mean that the sum function is not periodic, but this is not the case in general. However, counterexamples are way beyond the scope of this book. If you are interested, you can find a counterexample in [this article](https://www.jstor.org/stable/2690095?seq=2).
-:::{todo}
-Betere link?
-:::
 ::::
 
 
@@ -867,10 +966,26 @@ This follows directly from the construction of the periodic extension.
 Consider the functions 
 
 $$
- f(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,0\leq x<1\\ 0,\quad &\mathrm{if}\,1\leq x<4\end{array}\right.,\qquad g(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,2\leq x<3\\ 0,\quad &\mathrm{if}\,3\leq x<6\end{array}\right.
+ f(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,0\leq x<1,\\ 0,\quad &\mathrm{if}\,1\leq x<4,\end{array}\right.\qquad\text{and}\qquad g(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,2\leq x<3,\\ 0,\quad &\mathrm{if}\,3\leq x<6,\end{array}\right.
 $$
 
-and let $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ denote their periodic extensions. Then both $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ have fundamental period. According to {prf:ref}`Thm:PropertiesFunctions:Sumperiodic`, $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ is periodic with period $4$. It is very tempting to think that the fundamental period of $f+g$ is also $4$, but this is not the case. Indeed, we note that $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=1$ for $x$ in intervals of the form $[n,n+1)$ with $n$ even (since $f_{\mathrm{ext}}$ is $1$ and $g_{\mathrm{ext}}$ is $0$ on this interval if $n$ is divisible by $4$ and the other way around if $n$ is not divisible by $4$), while $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=0$ for $x$ in intervals of the form $[n,n+1)$ with $n$ odd (since $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ are both $0$ on these intervals). As such, we see that $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ has fundamental period $2$. This example shows that there is no general way to find the fundamental period of the sum of two periodic functions.
+and let $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ denote their periodic extensions.
+
+Then both $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ have fundamental period $4$. According to {prf:ref}`Thm:PropertiesFunctions:Sumperiodic`, $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ is periodic with period $4$. It is very tempting to think that the fundamental period of $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ is also $4$, but this is not the case. Take a look at {numref}`Fig:PropertiesFunctions:PeriodicCombining3`, which shows the graph $f_{\mathrm{ext}}+g_{\mathrm{ext}}$.
+
+Indeed, we note that $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=1$ for $x$ in intervals of the form $[n,n+1)$ with $n$ even (since $f_{\mathrm{ext}}$ is $1$ and $g_{\mathrm{ext}}$ is $0$ on this interval if $n$ is divisible by $4$ and the other way around if $n$ is not divisible by $4$), while $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=0$ for $x$ in intervals of the form $[n,n+1)$ with $n$ odd (since $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ are both $0$ on these intervals). As such, we see that $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ has fundamental period $2$. 
+
+:::{applet}
+:url: calculus/properties_of_functions/sum_of_periodic_extensions
+:name: Fig:PropertiesFunctions:PeriodicCombining3
+:class: dark-light
+
+The graph of the function $f_{\mathrm{ext}}+g_{\mathrm{ext}}$. You can toggle the visibility of the graphs of $f_{\mathrm{ext}}$, $g_{\mathrm{ext}}$ and $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ by clicking on the checkboxes in the legend.
+
+:::
+
+This example shows that there is no general way to find the fundamental period of the sum of two periodic functions.
+
 ::::::
 
 ::::::{prf:definition} Odd and even periodic extensions
@@ -885,9 +1000,122 @@ The symmetries of the odd and even extensions of $f$ carry over to the odd and e
 :::
 
 
-:::{todo}
-Make an applet that allows students to either draw a graph on $\mathbb{R}^2$ with $x>0$ and sketch the even and odd periodic extensions, or plug in a formula and draw the graphs of the even and odd periodic extensions.
+
+::::::{prf:example}
+:label: Ex:PropertiesFunctions:EvenOddPeriodicExtension
+
+Consider $f(x)=2x$ for $0\leq x\leq 1$, so the value of $a$ from {prf:ref}`Def:PropertiesFunctions:OddEvenPeriodicExtension` is $1$. We want to find the odd and even periodic extensions of $f$.
+
+If we define $f_{\mathrm{odd}}$ as the odd periodic extension of $f$ to $\mathbb{R}$ with period $T=2$, we find that $f_{\mathrm{odd}}$ is given by
+
+\begin{align*}
+f_{\mathrm{odd}}(x) &= \begin{cases}
+f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+-f(-x), & -1 < x < 0, \\
+0, & x=0, \\
+f(x), & 0 < x \leq 1, \\
+f_{\mathrm{odd}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+-2(-x), & -1 < x < 0, \\
+0, & x=0, \\
+2x, & 0 < x \leq 1, \\
+f_{\mathrm{odd}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+2x, & -1 < x \leq 1, \\
+f_{\mathrm{odd}}(x-2), & x > 1.
+\end{cases}
+\end{align*}
+
+Note that to avoid defining the value of $f_{\mathrm{odd}}$ at $-1+2n$ for any integer $n$ twice, we have defined $f_{\mathrm{odd}}$ at those points as $f_{\mathrm{odd}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{odd}}(x-2)$ for $x > 1$. This is just a technicality to avoid defining the value of $f_{\mathrm{odd}}$ at those points twice, and it does not change the function $f$ itself on the interval $(0,1]$.
+
+You can see the graph of $f_{\mathrm{odd}}$ and $f$ in {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension`. The function $f_{\mathrm{odd}}$ is odd and periodic with period $T=2$. Note that the graph of $f_{\mathrm{odd}}$ contains jumps at $x=-1+2n$ for any integer $n$.
+
+:::{applet}
+:url: calculus/properties_of_functions/odd_and_even_periodic_extensions
+:name: Fig:PropertiesFunctions:EvenOddPeriodicExtension
+:class: dark-light
+
+The odd and even periodic extensions of the function $f(x)=2x$ for $0\leq x\leq 1$. You can toggle the visibility of the graphs of $f$, $f_{\mathrm{odd}}$ and $f_{\mathrm{even}}$ by clicking on the checkboxes in the legend. Initially, the graph of $f$ and the odd periodic extension $f_{\mathrm{odd}}$ are shown.
 :::
+
+If we define $f_{\mathrm{even}}$ as the even periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{even}}$ is given by
+
+\begin{align*}
+f_{\mathrm{even}}(x) &= \begin{cases}
+f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f(-x), & -1 < x < 0, \\
+f(x), & 0 \leq x \leq 1, \\
+f_{\mathrm{even}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f(-x), & -1 < x < 0, \\
+f(x), & 0 \leq x \leq 1, \\
+f_{\mathrm{even}}(x-2), & x > 1,
+\end{cases}
+\\ &=
+\begin{cases}
+f_{\mathrm{even}}(x+2), & x \leq -1, \\
+-2x, & -1 < x < 0, \\
+2x, & 0 \leq x \leq 1, \\
+f_{\mathrm{even}}(x-2), & x > 1.
+\end{cases}
+\end{align*}
+
+Again, we avoid double values at $x=-1+2n$ for any integer $n$ by defining $f_{\mathrm{even}}$ at those points as $f_{\mathrm{even}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{even}}(x-2)$ for $x > 1$.
+
+You can see the graph of $f_{\mathrm{even}}$ in {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension` by toggling the visibility of the graph of $f_{\mathrm{even}}$ in the legend. The function $f_{\mathrm{even}}$ is even and periodic with period $T=2$. Note that the graph of $f_{\mathrm{even}}$ does not contain jumps at $x=-1+2n$ for any integer $n$.
+
+::::::
+
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+Consider the even and odd periodic extensions of some function $f$ defined on the interval $[0,2]$ and the values $f(0)$ and $f(2)$. In {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension2` you can try different functions and see what the graphs of the even and odd periodic extensions look like to answer these questions.
+
+_What condition must $f(0)$ and $f(2)$ satisfy for the odd periodic extension to have no jumps at $x=0$ and $x=2$? And for the even periodic extension?_
+---
+DS[{even};odd]
+DS[even;{odd}]
+M[0]
+DS[{even};odd]
+DS[even;{odd}]
+M[0]
+M[4]
+^^^
+? :::{card}
+The {gap} periodic extension of the function $f$ has never a jump at $x=0$, no matter what the value of $f(0)$ is.
+
+The {gap} periodic extension of the function $f$ has a jump at $x=0$ unless<br> $\displaystyle f(0)=${gap}.
+
+The {gap} periodic extension of the function $f$ has never a jump at $x=2$, no matter what the value of $f(2)$ is.
+
+The {gap} periodic extension of the function $f$ has a jump at $x=2$ unless<br> $\displaystyle f(2)=${gap}.
+
+The fundamental period of the odd and even periodic extensions of the function $f$ is at most {gap}.
+
+:::
+---
+:::{applet}
+:url: calculus/properties_of_functions/odd_and_even_periodic_extensions_2
+:name: Fig:PropertiesFunctions:EvenOddPeriodicExtension2
+:class: dark-light
+
+The odd and even periodic extensions of a given function $f$ for $0\leq x\leq 2$. You can toggle the visibility of the graphs of $f$, $f_{\mathrm{odd}}$ and $f_{\mathrm{even}}$ by clicking on the checkboxes in the legend. Initially, the graph of $f$ and the odd periodic extension $f_{\mathrm{odd}}$ are shown.
+:::
+::::
+
 
 ## Grasple exercises
 

@@ -2,7 +2,7 @@
 
 # Chain rule
 
-(Subsec:ChainruleIntro)=
+(Sec:ChainruleIntro)=
 
 ## Introduction
 
@@ -120,10 +120,6 @@ $$
 
 This establishes the chain rule in the general setting.
 
-:::
-
-:::{todo}
-Dennis had an idea for an applet which shows coupled graphs $f(u)$, $g(x)$ and $f(g(x))$.
 :::
 
 ::::{caution}
@@ -405,7 +401,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/f97dfe6f-5b06-4a04-b2a5-ecdd927fd6fc?id=63419
-:label: Grasple:63522
+:label: Grasple:63419
 :dropdown:
 :description: Find a derivative.
 ::::
@@ -413,7 +409,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/9508a2aa-1265-4fb8-95d7-7acdf9178a2e?id=63526
-:label: Grasple:63522
+:label: Grasple:63526
 :dropdown:
 :description: Find a derivative.
 ::::
