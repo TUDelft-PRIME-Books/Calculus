@@ -231,7 +231,7 @@ In some cases where the ratio test fails to give a conclusion, the root test, wh
 
 ## The root test
 
-In {prf:example}`Ex:Series:RatioTest4` we used the series $\displaystyle\sum_{n=1}^{\infty}a_n$ with
+In {prf:ref}`Ex:Series:RatioTest4` we used the series $\displaystyle\sum_{n=1}^{\infty}a_n$ with
 
 $$
 a_n = \begin{cases}
@@ -242,10 +242,10 @@ $$
 
 and showed that it converges by splitting the series into two subseries, one with the odd terms and one with the even terms. These two series where both geometric series, so we could easily determine whether they were convergent or divergent.
 
-For the simple (shifted) geometric series $\displaystyle\sum_{n=0}^{\infty}r^{n}$ (so $|r|<1$), each term satisfies
+For the simple (shifted) geometric series $\displaystyle\sum_{n=0}^{\infty}r^{n}$, each term satisfies
 
 $$
-\sqrt[n]{|r^{n}|}=\sqrt[n]{1}\cdot\sqrt[n]{|r|^{n}}=1\cdot|r|^{\frac{n}{n}}=|r|.
+\sqrt[n]{|r^{n}|}=\sqrt[n]{|r|^n}=|r|^{\frac{n}{n}}=|r|.
 $$
 
 This also means that
@@ -357,7 +357,7 @@ $$
 and for $n$ even that
 
 $$
-\lim_{\substack{n\to\infty\\n\text{ even}}}\sqrt[n]{|a_n|}=\lim_{\substack{n\to\infty\\n\text{ even}}}\sqrt[n]{\left|\frac{1}{2^{n-2}}\right|}=\lim_{\substack{n\to\infty\\n\text{ even}}}\frac{\sqrt{n}{4}}{2}=\frac{1}{2}.
+\lim_{\substack{n\to\infty\\n\text{ even}}}\sqrt[n]{|a_n|}=\lim_{\substack{n\to\infty\\n\text{ even}}}\sqrt[n]{\left|\frac{1}{2^{n-2}}\right|}=\lim_{\substack{n\to\infty\\n\text{ even}}}\frac{\sqrt[n]{4}}{2}=\frac{1}{2}.
 $$
 
 As both limits are the same, we can conclude that
@@ -371,7 +371,7 @@ and by the root test the series $\displaystyle\sum_{n=1}^{\infty}a_n$ is absolut
 Similarly, for $n$ odd we have
 
 $$
-\lim_{\substack{n\to\infty\\n\text{ odd}}}\sqrt[n]{|b_n|}=\lim_{\substack{n\to\infty\\n\text{ even}}}\sqrt[n]{|b_n|}=\lim_{n\to\infty}\sqrt[n]{|b_n|}=2,
+\lim_{\substack{n\to\infty\\n\text{ odd}}}\sqrt[n]{|b_n|}=\lim_{\substack{n\to\infty\\n\text{ even}}}\sqrt[n]{|b_n|}=\lim_{n\to\infty}\sqrt[n]{|b_n|}=2>1,
 $$
 
 so the series $\displaystyle\sum_{n=1}^{\infty}b_n$ is divergent by the root test.
