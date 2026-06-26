@@ -14,9 +14,9 @@ We start with the definition of the **definite integral** of a function on an in
 
 ::::::{prf:definition}
 :label: Def:Integration:DefiniteIntegral
-For a *positive* and *continuous* function $f$ defined on an interval $[a,b]\subset D_f$ the **definite integral of a positive[^nonnegative] and continuous function**
+For a *positive* and *continuous* function $f$ defined on an interval $[a,b]\subset D_f$ the **definite integral of a positive[^non-negative] and continuous function**
 
-[^nonnegative]: In fact, nonnegative would suffice.
+[^non-negative]: In fact, non-negative would suffice.
 
 $$
 \int_a^bf(x)\,dx
@@ -131,7 +131,7 @@ $$
 is *minus* the **area** between the graph of $f$ and the $x$-axis between $a$ and $b$.
 ::::::
 
-Note that this means that we assume that an area is a nonnegative quantity. Hence, for negative piecewise-continuous functions the definite integral will be a negative number.
+Note that this means that we assume that an area is a non-negative quantity. Hence, for negative piecewise-continuous functions the definite integral will be a negative number.
 
 But what if the function takes on both positive and negative values? Well, in that case we split the interval into several subintervals such that on each subinterval the function is either positive or negative. Then we calculate the area on each subinterval and add them together, taking into account the sign of the function on each subinterval. Or in other words: If $f$ takes on both positive and negative values the integral equals the total area above the $x$-axis minus the total area below the $x$-axis, as illustrated in the following figure.
 

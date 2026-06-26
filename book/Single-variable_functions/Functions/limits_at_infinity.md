@@ -14,7 +14,7 @@ A cauliflower in a refrigerator.
 ::::
 :::::
 
-Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling (see {numref}`SubSec:ODE1:SeparableAppl`), it can be shown that $T(t)=T_{\text{env}}+(T(0)-T_{\text{env}})e^{-rt}$. Here, $T_{\text{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
+Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling (see {numref}`SubSec:ODE1:SeparableAppl`), it can be shown that $T(t)=T_{\mathrm{env}}+(T(0)-T_{\mathrm{env}})e^{-rt}$. Here, $T_{\mathrm{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
 
 Let us take, for example, $r=1\ \text{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator, which is $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
 
@@ -545,10 +545,14 @@ $$
  \lim_{x\rightarrow\infty}\left|\frac{1}{g(x)}\right|=\lim_{x\rightarrow\infty}x=\infty.
 $$
 
-In particular, the limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ cannot exist, since otherwise the limit $\displaystyle\lim_{x\rightarrow\infty}\left|\frac{1}{g(x)}\right|$ would have existed as well. The limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ also cannot be $-\infty$ since $\dfrac{1}{g(x)}>0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ odd, nor can it be $\infty$ since $\dfrac{1}{g(x)}<0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ even. So the limit does not exist, and it is not $-\infty$ or $\infty$. 
+In particular, the limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ cannot exist, since otherwise the limit $\displaystyle\lim_{x\rightarrow\infty}\left|\frac{1}{g(x)}\right|$ would have existed as well. The limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ also cannot be $-\infty$ since $\dfrac{1}{g(x)}>0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ odd, nor can it be $\infty$ since $\dfrac{1}{g(x)}<0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ even. So the limit does not exist, and it is not $-\infty$ or $\infty$.
 
-:::{todo}
-Include an applet with the graphs of these function $g$ and $\frac{1}{g}$.
+You can verify this by taking a look at the image below, which shows the graphs of $g$ and $\dfrac{1}{g}$.
+
+:::{applet}
+:url: calculus/limits_at_infinity/limits_of_reciprocals
+:class: dark-light
+
 :::
 
 [ ] $\displaystyle \lim_{x\rightarrow\infty}\frac{1}{g(x)}$ exists.

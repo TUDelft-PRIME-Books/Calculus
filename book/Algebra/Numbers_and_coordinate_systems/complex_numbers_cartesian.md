@@ -54,7 +54,7 @@ $$
 ::::
 
 :::{note}
-Because of historical conventions we call $i$ imaginary, but that does not mean in the slightest that it is fictious. There are many physical problems where the imaginary unit (and complex numbers in general) arise naturally.
+Because of historical conventions we call $i$ imaginary, but that does not mean in the slightest that it is fictitious. There are many physical problems where the imaginary unit (and complex numbers in general) arise naturally.
 :::
 
 ::::::{prf:notation}
@@ -132,7 +132,7 @@ Make {numref}`Fig:ComplexNumbers:complexplane` into an applet. The point should 
 :::
 
 
-To make everything concise, we will view the set of all real numbers $\mathbb{R}$ as a part of the complex numbers $\mathbb{C}$. By this we mean that if $x$ is a real number, we can interpret it as the complex number with $\Re{x}=x$ and $\Im{x}=0$. Conversely, if $z$ is a complex number with $\Im{z}=0$, we interpret it as a real number. If a complex number is not a real number, we refer to it as **nonreal**.
+To make everything concise, we will view the set of all real numbers $\mathbb{R}$ as a part of the complex numbers $\mathbb{C}$. By this we mean that if $x$ is a real number, we can interpret it as the complex number with $\Re{x}=x$ and $\Im{x}=0$. Conversely, if $z$ is a complex number with $\Im{z}=0$, we interpret it as a real number. If a complex number is not a real number, we refer to it as **non-real**.
 
 
 
@@ -269,7 +269,7 @@ Adding complex numbers follows the parallelogram rule.
 Turn {numref}`Fig:ComplexNumbers:complexadd` into an applet with draggable points.
 :::
 
-If we want to interpet the other operations such as multiplication easily, we first need another way of writing complex numbers, which we will study in {numref}`Ch:ComplexNumbersPolar`. 
+If we want to interpret the other operations such as multiplication easily, we first need another way of writing complex numbers, which we will study in {numref}`Ch:ComplexNumbersPolar`. 
 
 Before we consider division of complex numbers we will turn our attention first to solving quadratic equations.
 
@@ -376,7 +376,7 @@ $$
  az^2+bz+c=0
 $$
 
-for $z\in\mathbb{C}$ has two real roots if $D>0$, it has a double real root if $D=0$, and it has two nonreal roots if $D<0$.
+for $z\in\mathbb{C}$ has two real roots if $D>0$, it has a double real root if $D=0$, and it has two non-real roots if $D<0$.
 
 ::::
 
@@ -406,7 +406,7 @@ $$
  z=-\frac{b}{2a}\pm\sqrt{-\frac{b^2-4ac}{4a^2}}i.
 $$
 
-This means that, in this case, the equation has two nonreal roots.
+This means that, in this case, the equation has two non-real roots.
 :::
 
 
@@ -465,7 +465,7 @@ $$
  z\overline{z}=a^2+b^2
 $$
 
-is a nonnegative real number.
+is a non-negative real number.
 
 ::::
 
@@ -481,10 +481,10 @@ z\overline{z} &= (a+bi)(a-bi) \\
 &= a^2+b^2.
 \end{align*}
 
-Since $a$ and $b$ are real numbers, $a^2+b^2$ is a nonnegative real number.
+Since $a$ and $b$ are real numbers, $a^2+b^2$ is a non-negative real number.
 ::::
 
-Of the arithmetic operations, division is clearly the most complex. The reason for this is that there is no straightforward way to simplify a fraction when the denominator is a sum of two objects. And complex numbers just so happen to be the sum of two objects (the real part and $i$ times the imaginary part). We can circumvent this by mulitplying the denominator and numerator by the same complex number in the hope that the resulting denominator is a single real number. {prf:ref}`Thm:ComplexNumbers:ComplConjCompl` tells us which number we should choose: the complex conjugate of the denominator. In general, we obtain the following result.
+Of the arithmetic operations, division is clearly the most complex. The reason for this is that there is no straightforward way to simplify a fraction when the denominator is a sum of two objects. And complex numbers just so happen to be the sum of two objects (the real part and $i$ times the imaginary part). We can circumvent this by multiplying the denominator and numerator by the same complex number in the hope that the resulting denominator is a single real number. {prf:ref}`Thm:ComplexNumbers:ComplConjCompl` tells us which number we should choose: the complex conjugate of the denominator. In general, we obtain the following result.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:division
@@ -602,7 +602,7 @@ $$
 \frac{z}{w}=\frac{(4+3i)(-1+2i)}{(-1-2i)(-1+2i)}=\frac{-10+5i}{5}.
 $$
 
-This fraction can be simpified directly and we obtain
+This fraction can be simplified directly and we obtain
 
 $$
 \frac{z}{w}=\frac{-10+5i}{5}=-2+i.
@@ -653,7 +653,7 @@ _Addition and conjugation_:
 &= \overline{z}+\overline{w}.
 \end{align*}
 
-_Substraction and conjugation_:
+_Subtraction and conjugation_:
 
 \begin{align*}
 \overline{z-w} &= \overline{(a-c)+(b-d)i} \\
@@ -883,7 +883,7 @@ If $z_j$ is a zero of a polynomial $p$ of degree $n$ with $p(z)=a_n(z-z_1)^{\alp
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polycomplcon2
 
-The third degree polynomial $p(z) = z^3-4z^2$ can be factored as $p(z) = z^2(z-4) = (z-0)^2(z-4)$. Therefore, it has zeroes $4$ and $0$, where the multiplicity of $4$ is equal to one and the multiplicity of $0$ is equal to two. The degree of the polynomial is $3$, which is equal to the sum of the multiplcities of its zeroes ($1+2=3$).
+The third degree polynomial $p(z) = z^3-4z^2$ can be factored as $p(z) = z^2(z-4) = (z-0)^2(z-4)$. Therefore, it has zeroes $4$ and $0$, where the multiplicity of $4$ is equal to one and the multiplicity of $0$ is equal to two. The degree of the polynomial is $3$, which is equal to the sum of the multiplicities of its zeroes ($1+2=3$).
 
 ::::
 
@@ -965,7 +965,7 @@ $$
  p(z)=z^4-4z^3+14z^2-20z+25.
 $$
 
-Factoring this polynomial by hand is very hard, but suppose we are given that $z_1=1+2i$ is a root of this polynomial with mulitplicity $2$. Since the polynomial has real coefficients, its complex conjugate $z_2=\overline{z_1}=1-2i$ must be a root with multiplicity $2$ as well by {prf:ref}`Thm:ComplexNumbers:realpoly`. Since we have found two roots of the fourth-degree polynomial with multiplicity $2$, we must have found all roots and we can write
+Factoring this polynomial by hand is very hard, but suppose we are given that $z_1=1+2i$ is a root of this polynomial with multiplicity $2$. Since the polynomial has real coefficients, its complex conjugate $z_2=\overline{z_1}=1-2i$ must be a root with multiplicity $2$ as well by {prf:ref}`Thm:ComplexNumbers:realpoly`. Since we have found two roots of the fourth-degree polynomial with multiplicity $2$, we must have found all roots and we can write
 
 $$
  p(z)=(z-(1+2i))^2(z-(1-2i))^2.
@@ -1007,7 +1007,7 @@ To divide a polynomial by another polynomial you can use a long division, see {n
 :::::{prf:example}
 :label: Ex:ComplexNumbers:longdivisionnum
 
-Let us calculate $\frac{97813}{382}$ using long division. To the left of the long division you can see the explanation of the steps, to the right you can see the actual long division.
+Let us calculate $\frac{97813}{382}$ using long division. To the right of the long division you can see the explanation of the steps, on the left you can see the actual long division.
 
 ::::{grid} 2 2 2 2
 
