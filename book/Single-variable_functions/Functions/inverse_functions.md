@@ -333,7 +333,7 @@ $$
  x=\frac{4\pm\sqrt{(-4)^2-4\cdot1\cdot(-y)}}{2\cdot 1}=2\pm\sqrt{4+y}
 $$
 
-Now we wonder whether we should have $x=2+\sqrt{4+y}$ or $x=2-\sqrt{4+y}$. For this, we use that $f$ is only defined for $x\leq 2$, so our choice must ensure that $x\leq 2$. Since a square root is always nonnegative, we must choose $x=2-\sqrt{4+y}$. Now we can interchange the roles of $x$ and $y$, so $y=2-\sqrt{4+x}$, and we find that $f^{-1}(x)=2-\sqrt{4+x}$. 
+Now we wonder whether we should have $x=2+\sqrt{4+y}$ or $x=2-\sqrt{4+y}$. For this, we use that $f$ is only defined for $x\leq 2$, so our choice must ensure that $x\leq 2$. Since a square root is always non-negative, we must choose $x=2-\sqrt{4+y}$. Now we can interchange the roles of $x$ and $y$, so $y=2-\sqrt{4+x}$, and we find that $f^{-1}(x)=2-\sqrt{4+x}$. 
 
 In order to check that our answer is correct, we first note that the domain of $2-\sqrt{4+x}$ is the interval $[-4,\infty)$, since $\sqrt{4+x}$ is only defined when $4+x\geq 0$, i.e. when $x\geq -4$. This interval is also equal to the range of $f$, since we already noticed that the graph of $f$ is the left half of the parabola $y=x^2-4x$. The lowest value of $y$ on this parabola is at $x=2$, where $y=2^2-4\cdot2=-4$. So indeed, the range of $f$ is also equal to $[-4,\infty)$. Moreover, the cancelling equations hold: for $x\leq 2$ we have
 
@@ -432,7 +432,7 @@ The graph of the function $f(x)=\dfrac{-1}{x}$ on $(0,\infty)$, its reflection a
 The graph of the function $f(x)=1$, its reflection across the line $x=y$, and the line $x=y$.
 :::
 [x] $f(x)=\sqrt{1-x^2}$ with domain $[0,1]$.
-> The equation $y=\sqrt{1-x^2}$ gives $y^2=1-x^2$, which means $x=\pm\sqrt{1-y^2}$. Since the domain of the function in $[0,1]$, we know that any input $x$ is nonnegative, so we need the positive square root. So for $x$ in the domain of $f$ we have $y=\sqrt{1-x^2}$ precisely when $x=\sqrt{1-y^2}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\sqrt{1-x^2}$. In addition, the range of the original function $f$ is $[0,1]$. So $f$ is its own inverse function.
+> The equation $y=\sqrt{1-x^2}$ gives $y^2=1-x^2$, which means $x=\pm\sqrt{1-y^2}$. Since the domain of the function in $[0,1]$, we know that any input $x$ is non-negative, so we need the positive square root. So for $x$ in the domain of $f$ we have $y=\sqrt{1-x^2}$ precisely when $x=\sqrt{1-y^2}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\sqrt{1-x^2}$. In addition, the range of the original function $f$ is $[0,1]$. So $f$ is its own inverse function.
 :::{applet}
 :url: calculus/inverse_functions/polling_question_F
 :name: Fig:Inverse:Selfinverse:F
@@ -468,7 +468,7 @@ Consider the function $h(x)=\sqrt{x}$ with domain $[0,\infty)$ and codomain $\ma
 
 ## Logarithms
 
-In {numref}`Section:FunctionsIntro` we considered functions of the form $f(x)=b^x$ for $b\geq 0$. In {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease` we saw that such a function is strictly decreasing for $0<b<1$, while it is strictly increasing for $b>1$. From {prf:ref}`Thm:Inverse:MonotonicOnetoone` we find that for these values of $b$ the function $f(x)=b^x$ is invertible.
+In {numref}`Section:FunctionsIntro` we considered functions of the form $f(x)=b^x$ for $b\geq 0$. In {prf:ref}`Thm:PropertiesFunctions:Expnon-decreasenon-increase` we saw that such a function is strictly decreasing for $0<b<1$, while it is strictly increasing for $b>1$. From {prf:ref}`Thm:Inverse:MonotonicOnetoone` we find that for these values of $b$ the function $f(x)=b^x$ is invertible.
 
 ::::::{prf:definition}
 :label: Thm:Inverse:Logarithm
@@ -980,7 +980,7 @@ $$
  \cos(\arcsin(x))^2=\cos(y)^2=1-\sin(y)^2=1-x^2.
 $$
 
-Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is nonnegative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$, see {numref}`Fig:Inverse:Simplify3`, we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
+Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is non-negative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$, see {numref}`Fig:Inverse:Simplify3`, we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
 
 :::{applet}
 :url: calculus/inverse_functions/graph_of_cosine_function_with_focus
