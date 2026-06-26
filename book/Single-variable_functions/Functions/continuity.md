@@ -8,20 +8,12 @@ Almost all functions we have encountered so far have the useful property that it
 
 In science and engineering, most variables depend on each other in a continuous way. However, that does not always need to be the case. Consider, for instance, an electrical circuit, shown in {numref}`Fig:Continuity-Circuit` where a DC voltage source is connected to a resistor and a capacitor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the current through the capacitor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. As such, the current as a function of time is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
 
-```{figure} Images/Fig-Continuity-Circuit.png
----
-class: dark-light
-name: Fig:Continuity-Circuit
-
-placement: caption
----
+:::{applet}
+:url: calculus/continuity/electrical_circuit
+:name: Fig:Continuity-Circuit
+:class: dark-light
 
 The circuit described above with a resistor with resistance $R$ and a capacitor with capacitance $C$, where a voltage source of size $V_s$ is turned on at $t=0$. The resulting current $i(t)$ across the capacitor is not continuous at $t=0$.
-```
-
-:::{todo}
-Make an applet of this figure. 
-Hierbij ook nog een schets van de current i(t) (0 voor $t<0$, daarna van de vorm $\frac{V_s}{R}exp(-t)$, maar geef maar geen maatvoering op de assen)
 :::
 
 (Subsec:ContProp)=
@@ -66,18 +58,13 @@ You might be tempted to think that this definition means that a function $f$ is 
 :label: Ex:Continuity:Visual
 Consider the function $f$ of which the graph is shown below.
 
-::::{figure} Images/Fig-Continuity-Visual.png
+::::{applet}
+:url: calculus/continuity/some_function
 :name: Fig:Continuity:Visual
 :class: dark-light
 
 Some function $f$.
 
-::::
-
-::::{todo}
-Make this figure into an applet. The part for $x\geq 1$, this should be $3-2(x-1)$. Also make a hold at $x=2$.
-
-Do not mention in the final applet/image which function is shown here.
 ::::
 
 Can we read off from the graph at which points the function is continuous? Well, for almost all points $a$ there is no problem: the limit $\lim\limits_{x\rightarrow a}f(x)$ always exists and is equal to $f(a)$. Only the points $a=-2$, $a=-1$, $a=1$ and $a=2$ are potentially problematic. 
@@ -86,7 +73,7 @@ At $x=-2$ the left and right limits exist, but are unequal, so the limit $\lim\l
 
 At $x=-1$, the limit exists, as the left and right limits exist and are equal. However, we read off that $\lim\limits_{x\rightarrow -1}f(x)=1$, while $f(1)=-3$. So at this point, the limit exists, but is unequal to the function value. As such, $f$ is not continuous at $-1$.
 
-At $x=1$ the left and right limit are both equal to $1$ and we see that $f(1)=1$ as well. So the limit exists, and is equal to the function value. Hence, $f$ is continuous at $x=1$. You might notice that the function has a sharp edge, but this does not influence the continuity (it does, on the other hand, influence the differentiability of the function, see {numref}`Section:Differentiability`).
+At $x=1$ the left and right limit are both equal to $3$ and we see that $f(1)=3$ as well. So the limit exists, and is equal to the function value. Hence, $f$ is continuous at $x=1$. You might notice that the function has a sharp edge, but this does not influence the continuity (it does, on the other hand, influence the differentiability of the function, see {numref}`Section:Differentiability`).
 
 Finally, at $x=2$ the left and right limit exist and are equal, so the limit $\lim\limits_{x\rightarrow 2}f(x)$ exists. However, the point $x=2$ is not in the domain of $f$, so $f$ is neither continuous nor discontinuous at that point. It is simply undefined there.
 
@@ -103,36 +90,34 @@ We conclude that $f$ is continuous at all points except $-2$ and $-1$.
 :class: question
 :showanswer:
 :columns: 1
-Consider the function $f$ of which the graph shown below.
-:::{figure} Images/Fig-Continuity-Graph.png
+Consider the function $g$ of which the graph shown below.
+
+
+Select all values of $a$ for which $g$ is discontinuous at $a$.
+---
+[x] $a=-2$
+> Here the left limit $\displaystyle\lim_{x\rightarrow -2^-}g(x)$ does not exist. As such, $g $ is discontinuous at this point.
+
+[ ] $a=-1$
+> Here the graph of $g$ makes a sharp turn, but the left limit, right limit and function value at $-1$ still coincide. This means that $g$ is continuous at $-1$.
+
+[ ] $a=0$
+> The function is undefined at $0$. Discontinuity is only defined for points in the domain of $g$.
+
+[x] $a=1$.
+> Here the left limit $\displaystyle\lim_{x\rightarrow 1^-}g(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 1^+}g(x)$ exist and are equal, so the limit $\displaystyle\lim_{x\rightarrow 1}g(x)$ exists. However, this limit is unequal to $g(1)$, so $g$ is discontinuous at $1$.
+
+[x] $a=2$
+> Here the left limit $\displaystyle\lim_{x\rightarrow 2^-}g(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 2^+}g(x)$ exist, but are unequal, so the limit $\displaystyle\lim_{x\rightarrow 2}f(x)$ does not exist. Hence, $g$ is discontinuous at $2$.
+---
+:::{applet}
+:url: calculus/continuity/some_other_function
 :name: Fig:Continuity:Graphpoll
 :class: dark-light
 
-Some function $f$.
+Some function $g$.
 
 :::
-
-:::{todo}
-Turn {numref}`Fig:Continuity:Graphpoll` into an applet.
-:::
-
-Select all values of $a$ for which $f$ is discontinuous at $a$.
----
-[x] $a=-2$
-> Here the left limit $\displaystyle\lim_{x\rightarrow -2^-}f(x)$ does not exist. As such, $f$ is discontinuous at this point.
-
-[ ] $a=-1$
-> Here the graph of $f$ makes a sharp turn, but the left limit, right limit and function value at $-1$ still coincide. This means that $f$ is continuous at $-1$.
-
-[ ] $a=0$
-> The function is undefined at $0$. Discontinuity is only defined for points in the domain of $f$.
-
-[x] $a=1$.
-> Here the left limit $\displaystyle\lim_{x\rightarrow 1^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 1^+}f(x)$ exist and are equal, so the limit $\displaystyle\lim_{x\rightarrow 1}f(x)$ exists. However, this limit is unequal to $f(1)$, so $f$ is discontinuous at $1$.
-
-[x] $a=2$
-> Here the left limit $\displaystyle\lim_{x\rightarrow 1^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 1^+}f(x)$ exist, but are unequal, so the limit $\displaystyle\lim_{x\rightarrow 1}f(x)$ does not exist. Hence, $f$ is discontinuous at $1$.
----
 ::::
 
 
@@ -212,8 +197,12 @@ Now in order to establish the continuity of $f$, we note that for each $1\leq k\
 :label: Ex:Continuity:ContPoly
 Consider the rational function $f(x)=\dfrac{x^2+1}{x^2-1}$. Then we have $f=\dfrac{g}{h}$ with $g(x)=x^2+1$ and $h(x)=x^2-1$. The functions $g$ and $h$ are polynomial functions, so they are continuous on $\mathbb{R}$ by {prf:ref}`Theorem:Continuity:ContPoly`. So by {prf:ref}`Theorem:Continuity:Basiccomputationrules` the function $f$ is continuous at each point $a$ with $h(a)\neq 0$. We see that $h(a)=0$ precisely when $a=1$ or $a=-1$. So $f$ is continuous on its maximal domain, which is the set of all $a$ in $\mathbb{R}$ except $a=1$ and $a=-1$. At these two points, $f$ is undefined, so it neither continuous nor discontinuous.
 
-:::{todo}
-Make an applet with the graph of $f$.
+:::{applet}
+:url: calculus/continuity/rational_function
+:name: Fig:Continuity:ContPoly
+:class: dark-light
+
+The graph of the rational function $f(x)=\dfrac{x^2+1}{x^2-1}$, which is continuous on its maximal domain $\mathbb{R}\setminus\{-1,1\}$.
 :::
 
 ::::::
@@ -308,28 +297,47 @@ Since $f(a)$ and $f(b)$ have opposite signs, the number $0$ must be in between t
 The name Weierstrass Nullstellensatz, named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass) is sometimes used for either {prf:ref}`Theorem:Continuity:IVT` or {prf:ref}`Cor:Continuity:IVT`. Usually, the Weierstrass Nullstellensatz refers to a version of Bolzano's Theorem specifically for polynomials with coefficients in a [real closed field](https://en.wikipedia.org/wiki/Real_closed_field)
 :::
 
-:::{todo}
-Interactive element: let students enter function plus left and right endpoint plus number of steps. Check if $f(a)f(b)<0$. If so, let students select correct interval $[a,...]$ or $[...,b]$ in which the root is. Then split this new interval up again and same question. After each step, show the graph of $f$ on the chosen interval. Could be either an applet or something in python?
-:::
+{prf:ref}`Cor:Continuity:IVT` can be used to find roots of continuous functions, which is the basis of the bisection method, which will be treated in more detail in {numref}`Sec:IterativeMethodsForVariousProblems`.
 
 ::::::{prf:example} 
 :label: Ex:Continuity:IVTnoncont
+:class: full-width
 
 The assumption that the function $f$ in the Intermediate Value Theorem is continuous is essential. Indeed, consider the function 
 
 $$
- f(x)=\left\{\begin{array}{ll}x+3,&\text{if }\,x\leq 1\\ 2x+4,&\text{if }\,x>1.\end{array}\right.
+ f(x)=\left\{\begin{array}{ll}x+3,&\text{if }\,x\leq 1,\\ 2x+4,&\text{if }\,x>1.\end{array}\right.
 $$
 
 Then $f$ is not continuous at the point $1$, since the function values jump from $4$ to $6$ there. In addition, even though $f(0)=3$ and $f(2)=8$, there is no value of $x$ with $f(x)=5$.
 
 It is also important that the function is defined in each point of the closed interval $[a,b]$. Indeed, consider the function $g(x)=\frac{1}{x}$. Then $g$ is continuous on its maximal domain (as it is the quotient of two polynomials), which does not include $x=0$. Note that $f(-1)=-1$ and $f(1)=1$. However, there is no $x$ in between $-1$ and $1$ with $f(x)=0$.
 
-::::{figure} Images/Fig-Continuity-IVTnoncont.png
+::::{figure-start}
 :name: Fig:Continuity:IVTnoncont
-:class: dark-light
 
 The function $f$ on the left, the function $g$ on the right.
+::::
+
+::::{grid} 2 2 2 2
+
+:::{grid-item}
+```{applet}
+:url: calculus/continuity/continuity_for_IVT_1 
+:class: dark-light
+```
+:::
+
+:::{grid-item}
+```{applet}
+:url: calculus/continuity/continuity_for_IVT_2
+:class: dark-light
+```
+:::
+
+::::
+
+::::{figure-end}
 ::::
 
 ::::::
