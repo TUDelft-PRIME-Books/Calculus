@@ -340,7 +340,7 @@ In particular, constant functions are non-decreasing and non-increasing, but nei
 In some literature, the terminology increasing and decreasing is used for what we call strictly increasing and strictly decreasing (so in those texts, constant functions are neither increasing nor decreasing). In other literature, the terminology increasing and decreasing is used for what we call non-decreasing and non-increasing. This makes the terms increasing and decreasing ambiguous, and we will not use these terms. Be aware of this when you read other literature.
 ::::::
 
-Showing that a function is non-decreasing or non-increasing can be tricky in practice. In {numref}`Section:GraphsDerivatives` we will learn an efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
+Showing that a function is non-decreasing or non-increasing can be tricky in practice. In {numref}`Section:Extrema1d` we will learn an efficient way to determine this. For future reference, we already show that exponential functions are either always strictly increasing or always strictly decreasing or constant.
 
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Expnon-decreasenon-increase
@@ -704,9 +704,9 @@ The even and odd parts of the exponential function are so common that they have 
 :label: Def:PropertiesFunctions:Hyperbolic
 
 
-The **hyperbolic cosine function**, denoted by $\cosh$, is the even part of the exponential function. That is, we have $\cosh(x)=\frac{e^x+e^{-x}}{2}$.
+The **hyperbolic cosine function**, denoted by $\cosh$, is the even part of the exponential function. That is, we have $\cosh(x)=\dfrac{e^x+e^{-x}}{2}$.
 
-The **hyperbolic sine function**, denoted by $\sinh$, is the odd part of the exponential function. That is, we have $\sinh(x)=\frac{e^x-e^{-x}}{2}$.
+The **hyperbolic sine function**, denoted by $\sinh$, is the odd part of the exponential function. That is, we have $\sinh(x)=\dfrac{e^x-e^{-x}}{2}$.
 
 Finally, the **hyperbolic tangent function** is defined by $\tanh(x)=\dfrac{\sinh(x)}{\cosh(x)}$.
 
@@ -747,6 +747,7 @@ The naming of these functions suggests some sort of connection to the trigonomet
 - The function $\cosh(x)$ is even, while the functions $\sinh(x)$ and $\tanh(x)$ are odd. 
 - The function $\cosh(x)$ is strictly decreasing on the interval $(-\infty,0)$ and strictly increasing on the interval $(0,\infty)$.
 - The functions $\sinh(x)$ and $\tanh(x)$ are strictly increasing on $\mathbb{R}$.
+- We have $\cosh(0)=1$ and $\sinh(0)=0$.
 - For any $x$ we have $\cosh^2(x)-\sinh^2(x)=1$.
 
 ::::::
@@ -764,6 +765,18 @@ which means that the hyperbolic tangent is odd.
 We cannot prove yet on which intervals the hyperbolic cosine and hyperbolic tangent are non-decreasing and non-increasing. This we will do in {numref}`Section:GraphsDerivatives`.
 
 By {prf:ref}`Thm:PropertiesFunctions:Expnon-decreasenon-increase`, the function $x\mapsto e^x$ is strictly increasing on $\mathbb{R}$, while $x\mapsto e^{-x}=\left(\frac{1}{e}\right)^{x}$ is strictly decreasing on $\mathbb{R}$. Moreover, $e^{-x}>0$ for all $x$, so the function $x\mapsto -e^{-x}$ must be strictly increasing on $\mathbb{R}$. As such, the function $\sinh(x)=\frac{1}{2}e^{x}+\frac{1}{2}\left(-e^{-x}\right)$ is the sum of two strictly increasing functions, which means that it must be strictly increasing itself. 
+
+We can directly compute
+
+$$
+ \cosh(0)=\frac{e^0+e^{-0}}{2}=\frac{1+1}{2}=1
+$$
+
+and
+
+$$
+ \sinh(0)=\frac{e^0-e^{-0}}{2}=\frac{1-1}{2}=0.
+$$
 
 The final property follows from the definition of the hyperbolic cosine and sine functions, which gives that
 
@@ -811,7 +824,7 @@ In fact, any other period of a periodic function must be an integer multiple of 
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Fundperiod
 
-Let $f$ be a periodic function which has a fundamental period $T_0$. If $T$ is a period of $f$, then $T=nT_0$ for some integer $n\geq 1$.
+Let $f$ be a periodic function which has a fundamental period $T_0$. If $T$ is a period of $f$, then so is $T=nT_0$ for some integer $n\geq 1$.
 
 ::::::
 
