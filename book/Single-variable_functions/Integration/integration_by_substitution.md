@@ -200,7 +200,7 @@ Now we use the techniques of the previous section to obtain
 
 ::::::
 
-Although we have not made it explicit in the examples so far, in many cases we used that, if $u=g(x)$, then also $x=g^{-1}(u)$. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$. This is not always necessary, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
+Although we have not made it explicit in the examples so far, in many cases we used that, if $u=g(x)$, then also $x=g^{-1}(u)$. For each value of $x$ there should be exactly one value for $u$ and vice versa. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$. This is not always necessary, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
 
 We summarise this in the next algorithm:
 

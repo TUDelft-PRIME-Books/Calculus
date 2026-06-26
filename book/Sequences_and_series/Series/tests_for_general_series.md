@@ -31,23 +31,11 @@ However, what we cannot do with these tests, is conclude that a series is diverg
 
 Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$.
 
-If we take the absolute value of the terms of the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$, we get the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is a divergent $p$-series with $p=1$ by {prf:ref}`Thm:Series:pSeries`. So we must conclude that the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is not absolutely convergent.
+If we take the absolute value of the terms of the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$, we get the *harmonic series* $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is a divergent $p$-series with $p=1$ by {prf:ref}`Thm:Series:pSeries`. So we conclude that the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is not absolutely convergent.
 
 It would be false to conclude at this moment that the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is divergent, because we only investigated the absolute convergence, and by {prf:ref}`Def:Series:RelativeConvergence` a series can be conditionally convergent, which means that it is convergent but not absolutely convergent.
 
-To investigate whether the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is conditionally convergent, let $a_n=\displaystyle\frac{(-1)^{n-1}}{n}$. Then we have
-
-$$
-a_na_{n+1}=\frac{(-1)^{n-1}}{n}\cdot\frac{(-1)^{n}}{n+1}=\frac{(1)^{2n-1}}{n(n+1)}=\frac{-1}{n(n+1)}<0,
-$$
-
-so by {prf:ref}`Def:Series:AlternatingSeries` we have an alternating series. If we define $b_n=\dfrac{1}{n}$, then we have
-
-$$
-\lim\limits_{n\to\infty}b_n=\lim\limits_{n\to\infty}\frac{1}{n}=0,
-$$
-
-so by {prf:ref}`Thm:Series:AlternatingSeriesTest` we have that the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is convergent.
+Note that the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is an alternating series. Using {prf:ref}`Thm:Series:AlternatingSeriesTest` with $b_n=\dfrac{1}{n}$, we conclude that the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is convergent.
 
 This means, by {prf:ref}`Def:Series:RelativeConvergence`, that the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is conditionally convergent, and not divergent.
 :::
@@ -55,47 +43,33 @@ This means, by {prf:ref}`Def:Series:RelativeConvergence`, that the series $\disp
 In conclusion:
 
 :::{prf:remark}
-If the series $\displaystyle\sum|a_n|$ is divergent, then the series $\displaystyle\sum a_n$ is is not absolutely convergent, but it might still be convergent or divergent.
+If the series $\displaystyle\sum|a_n|$ is divergent, then the series $\displaystyle\sum a_n$ is not absolutely convergent, but it might still be convergent or divergent.
 :::
 
-This means that you have to be careful when you apply a test from {numref}`Sec:Series:PositiveSeries` or {numref}`Sec:Series:SpecialSeries` to determine whether a series is absolutely convergent, because if the test concludes that the series $\displaystyle\sum|a_n|$ is divergent, then you cannot conclude that the original series $\displaystyle\sum a_n$ is divergent, since it might still be conditionally convergent. This means you might have to apply other tests to make conclusions.
+This means that you have to be careful when you apply a test from {numref}`Sec:Series:SpecialSeries` or {numref}`Sec:Series:PositiveSeries` to determine whether a series is absolutely convergent, because if the test concludes that the series $\displaystyle\sum|a_n|$ is divergent, then you cannot conclude that the original series $\displaystyle\sum a_n$ is divergent, since it might still be conditionally convergent. This means you might have to apply other tests to make conclusions.
 
-Luckily, there are some tests that can be applied to determine whether a series is absolutely convergent or divergent, and only in some special cases you have to use a test from {numref}`Sec:Series:PositiveSeries` or {numref}`Sec:Series:SpecialSeries` to determine whether a series is absolutely convergent. These tests are the ratio test and the root test, which we will discuss in the next two subsections. 
+Luckily, there are some tests that can be applied to determine whether a series is absolutely convergent or divergent, and only in some special cases you have to use a test from {numref}`Sec:Series:SpecialSeries` or {numref}`Sec:Series:PositiveSeries` to determine whether a series is absolutely convergent. These tests are the ratio test and the root test, which we will discuss in the next two subsections. 
 
 ## The ratio test
 
-To introduce the ratio test, first consider the test for divergence again:
+To introduce the ratio test, first consider the following theorem again:
 
-:::{fetch} {prf:ref}`Thm:Series:GeneralTermCorollary`
+:::{fetch} {prf:ref}`Thm:Series:GeneralTerm`
 :::
 
-A direct consequence of this test is that if a series $\displaystyle\sum a_n$ is absolutely convergent, so $\displaystyle\sum|a_n|$ is convergent, then we must have
+A direct consequence of this theorem is that if a series $\displaystyle\sum a_n$ is absolutely convergent, so $\displaystyle\sum|a_n|$ is convergent, then we must have
 
 $$
 \lim\limits_{n\to\infty}|a_n|=0.
 $$
 
-This means that you should be able to find a sequence of the form
+This implies that the terms of the sequence $\{|a_n|\}$ become smaller and smaller and therefore
 
 $$
-|a_{p_1}|, |a_{p_2}|, |a_{p_3}|, |a_{p_4}|, \ldots
+|a_{n+1}|<|a_n|\quad\Longrightarrow\quad\left|\frac{a_{n+1}}{a_n}\right|\leq\frac{|a_{n+1}|}{|a_n|}<1
 $$
 
-where $p_1 < p_2 < p_3 < p_4 < \ldots$ are positive integers, such that $|a_{p_i}|>|a_{p_{i+1}}|$ for all $i$. If none of the terms of the series $\displaystyle\sum a_n$ are zero, we find
-
-$$
-0 < \frac{|a_{p_{i+1}}|}{|a_{p_i}|} < 1\quad\text{for all }i.
-$$
-
-Letting $i$ tend to infinity, we find
-
-$$
-\lim_{i \to \infty} \frac{|a_{p_{i+1}}|}{|a_{p_i}|} <1.
-$$
-
-Or in other words, the ratio of two consecutive terms of the series $\displaystyle\sum |a_{p_i}|$ should eventually be less than 1, and the limit of this ratio should be less than 1.
-
-Although we made a lot of assumptions to get to this point, it turns out that this is a very useful test to determine whether a series is absolutely convergent or divergent, and it can be applied to all series, not just those that satisfy the assumptions we made. This test is called the ratio test:
+for $n$ large enough. This gives rise to a very useful test to determine whether a series is absolutely convergent or divergent, and it can be applied to all series. This test is called the ratio test:
 
 ::::::{prf:Theorem} Ratio test
 :label: Thm:Series:RatioTest
@@ -181,13 +155,13 @@ $$
 \lim\limits_{n\to\infty}\frac{\dfrac{1}{(n+1)^2}}{\dfrac{1}{n^2}}=\lim\limits_{n\to\infty}\frac{n^2}{(n+1)^2}=\lim\limits_{n\to\infty}\left(\frac{n}{n+1}\right)^2=1.
 $$
 
-This shows that the test must be inconclusive if $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=1$, as we have given one example for which the series is divergent and one example for which the series is convergent, while in both cases we have $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=1$.
+This shows that the test is inconclusive if $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=1$, as we have given one example for which the series is divergent and one example for which the series is convergent, while in both cases we have $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=1$.
 :::
 
 :::{prf:example}
 :label: Ex:Series:RatioTest4
 
-In order to show that the ratio test cannot be conclusive if $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|$ does not exist, consider the series $\displaystyle\sum_{n=1}^{\infty}a_n$ and the series $\displaystyle\sum_{n=1}^{\infty}b_n$ with
+In order to show that the ratio test is inconclusive if $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|$ does not exist and does not equal $\infty$, consider the series $\displaystyle\sum_{n=1}^{\infty}a_n$ and the series $\displaystyle\sum_{n=1}^{\infty}b_n$ with
 
 $$
 a_n = \begin{cases}
@@ -197,7 +171,7 @@ a_n = \begin{cases}
 \quad\text{and}\quad
 b_n = \begin{cases}
 2^{n-1} & \text{if }n\text{ is odd},\\
-2^{n-3} & \text{if }n\text{ is even},
+2^{n-3} & \text{if }n\text{ is even}.
 \end{cases}
 $$
 
@@ -213,7 +187,7 @@ $$
 \left|\frac{a_{n+1}}{a_n}\right|=\frac{a_{2m}}{a_{2m-1}}=\frac{\dfrac{1}{2^{2m}}}{\dfrac{1}{2^{2m-3}}}=\frac{2^{2m-3}}{2^{2m}}=\frac{1}{2^3}=\frac{1}{8}.
 $$
 
-This means that the ratio $\displaystyle\left|\frac{a_{n+1}}{a_n}\right|$ does not have a limit as $n$ tends to infinity, since for even $n$ the ratio is _always_ equal to 2 and for odd $n$ the ratio is _always_ equal to $\dfrac{1}{8}$.
+This means that the ratio $\displaystyle\left|\frac{a_{n+1}}{a_n}\right|$ does not have a limit as $n$ tends to infinity, since for even $n$ the ratio equals 2 and for odd $n$ the ratio equals $\dfrac{1}{8}$.
 
 Similarly, we can show that the ratio $\displaystyle\left|\frac{b_{n+1}}{b_n}\right|$ satisfies
 
@@ -224,7 +198,7 @@ $$
 \end{cases}
 $$
 
-so the ratio $\displaystyle\left|\frac{b_{n+1}}{b_n}\right|$ also does not have a limit as $n$ tends to infinity, since for even $n$ the ratio is _always_ equal to 8 and for odd $n$ the ratio is _always_ equal to $\dfrac{1}{2}$.
+so the ratio $\displaystyle\left|\frac{b_{n+1}}{b_n}\right|$ also does not have a limit as $n$ tends to infinity, since for even $n$ the ratio is equal to 8 and for odd $n$ the ratio is equal to $\dfrac{1}{2}$.
 
 For the series $\displaystyle\sum_{n=1}^{\infty}b_n$ we have
 
@@ -242,15 +216,14 @@ However, for the series $\displaystyle\sum_{n=1}^{\infty}a_n$ we have
 &=\sum_{m=1}^{\infty}\frac{1}{2^{2m-1}}+\sum_{m=1}^{\infty}\frac{1}{2^{2m-2}} \\
 &=\sum_{m=1}^{\infty}2\left(\frac{1}{4}\right)^{m}+\sum_{m=1}^{\infty}4\left(\frac{1}{4}\right)^{m} \\
 &=\sum_{m=1}^{\infty}\frac{1}{2}\left(\frac{1}{4}\right)^{m-1}+\sum_{m=1}^{\infty}\left(\frac{1}{4}\right)^{m-1} \\
-&= \frac{1}{2}\frac{1}{1-\frac{1}{4}}+\frac{1}{1-\frac{1}{4}} \\
-&=\frac{1}{2}\frac{4}{3}+\frac{4}{3} \\
+&= \frac{\frac{1}{2}}{1-\frac{1}{4}}+\frac{1}{1-\frac{1}{4}} \\
 &=\frac{2}{3}+\frac{4}{3} \\
 &=2.
 \end{align*}
 
 This shows that the series $\displaystyle\sum_{n=1}^{\infty}a_n$ is (absolutely) convergent, while the series $\displaystyle\sum_{n=1}^{\infty}b_n$ is divergent, even though the ratios $\displaystyle\left|\frac{a_{n+1}}{a_n}\right|$ and $\displaystyle\left|\frac{b_{n+1}}{b_n}\right|$ do not have a limit as $n$ tends to infinity.
 
-This shows that the ratio test must be inconclusive if $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|$ does not exist, as we have given one example for which the series is divergent and one example for which the series is convergent, while in both cases we have that the ratio does not have a limit as $n$ tends to infinity.
+This shows that the ratio test is inconclusive if $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|$ does not exist, as we have given one example for which the series is divergent and one example for which the series is convergent, while in both cases we have that the ratio does not have a limit as $n$ tends to infinity.
 
 :::
 
@@ -433,7 +406,7 @@ The series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent, since
 &=\frac{1}{3}.
 \end{align*}
 
-The series $\displaystyle\sum_{n=1}^{\infty}b_n$ is divergent, since $\lim_{n\to\infty}b_n=$ does not exist.
+The series $\displaystyle\sum_{n=1}^{\infty}b_n$ is divergent, since $\lim\limits_{n\to\infty}b_n$ does not exist.
 
 However, we have
 
@@ -453,7 +426,7 @@ So the limits $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}$ and $\displ
 
 :::
 
-This examples shows that if $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}$ does not exist, then the series $\displaystyle\sum a_n$ might be convergent or divergent, as we have given one example for which the series is convergent and one example for which the series is divergent, which is exactly what the fourth statement in the root test says.
+This examples show that if $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}$ does not exist, then the series $\displaystyle\sum a_n$ might be convergent or divergent, as we have given one example for which the series is convergent and one example for which the series is divergent, which is exactly what the fourth statement in the root test says.
 
 ## Grasple exercises
 
