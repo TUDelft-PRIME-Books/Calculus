@@ -905,7 +905,7 @@ Replace {numref}`Fig:Differentiability:Venn` with an applet. Maybe show a few mo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/f0058966-290e-49d8-a78e-c689a17c714c?id=69697
-:label: Grasple:63056
+:label: Grasple:69697
 :dropdown:
 :description: Using limits to find a derivative.
 
@@ -914,7 +914,7 @@ Replace {numref}`Fig:Differentiability:Venn` with an applet. Maybe show a few mo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/5258b49b-1553-4d0b-a918-4f44e9647fec?id=69701
-:label: Grasple:63056
+:label: Grasple:69701
 :dropdown:
 :description: Using limits to find a derivative.
 

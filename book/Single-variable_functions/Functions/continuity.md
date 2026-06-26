@@ -430,7 +430,7 @@ The following functions are continuous on their maximal domain.
 [^Footnoterange]: This happens when $a^r-\varepsilon<0$ and $r$ is not of the form $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with $q$ odd.
 [^Footnotesmalleps]: As we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway.
 
-**Continuity of $x^r$:** Let $r>0$ and consider the function $f(x)=x^r$. Let $a\geq 0$ be any point in the domain of $f$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. If $a^r-\varepsilon$ is not in the range of $f$[^Footnoterange] the part $a^r-\varepsilon<x^r$ is satisfied automatically, so we can assume that $a^r-\varepsilon$ is in the range of $f$[^Footnotesmalleps]. Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. From {prf:ref}`Thm:PropertiesFunctions:Powernondecreasenonincrease` we know that the function $x^{\frac{1}{r}}$ is strictly increasing, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $0\leq x_1\leq a-\delta$ and $a+\delta\leq x_2$. Since $f$ is strictly increasing as well by {prf:ref}`Thm:PropertiesFunctions:Powernondecreasenonincrease`, we know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_2$, which means that $f(x_1)<f(x)<f(x_2)$, i.e. 
+**Continuity of $x^r$:** Let $r>0$ and consider the function $f(x)=x^r$. Let $a\geq 0$ be any point in the domain of $f$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. If $a^r-\varepsilon$ is not in the range of $f$[^Footnoterange] the part $a^r-\varepsilon<x^r$ is satisfied automatically, so we can assume that $a^r-\varepsilon$ is in the range of $f$[^Footnotesmalleps]. Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. From {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase` we know that the function $x^{\frac{1}{r}}$ is strictly increasing, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $0\leq x_1\leq a-\delta$ and $a+\delta\leq x_2$. Since $f$ is strictly increasing as well by {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase`, we know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_2$, which means that $f(x_1)<f(x)<f(x_2)$, i.e. 
 
 $$
  a^r-\varepsilon=\left(\left(a^r-\varepsilon\right)^{\frac{1}{r}}\right)^r=f(x_1)<x^r<f(x_2)=\left(\left(a^r+\varepsilon\right)^{\frac{1}{r}}\right)^r=a^r+\varepsilon
@@ -748,7 +748,7 @@ The function $f$ as an example for continuity from the right.
 
 ::::::
 
-(Subsec:LimitAtInfinityGrasple)=
+(Subsec:ContinuityGrasple)=
 
 ## Grasple exercises
 

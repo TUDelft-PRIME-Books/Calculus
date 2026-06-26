@@ -302,7 +302,7 @@ $$
 Integration of the function $\displaystyle f(x)=\frac{1}{1+x^2}$ from $0$ to $1$ gives:
 
 $$
-\int_0^1\frac{1}{1+x^2}\,dx=\arctan(x)\bigg|_0^1=\arctan(1)-\arctan(0)=\tfrac{1}{4}\pi-0=\tfrac{1}{4}\pi.
+\int_0^1\frac{1}{1+x^2}\,dx=\arctan(x)\bigg|_0^1=\arctan(1)-\arctan(0)=\frac{1}{4}\pi-0=\frac{1}{4}\pi.
 $$
 
 ::::::
@@ -458,7 +458,7 @@ Consider the integrals $\displaystyle\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx$ and $
 (b) Use the {prf:ref}`Pythagorean identity <Thm:Trigonometry:UnitCircleIdentity>` $\sin^2(x)+\cos^2(x)=1$ to prove that
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\tfrac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx.
+\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\frac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx.
 $$
 
 ::::
@@ -478,13 +478,13 @@ which implies that $\displaystyle\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\int_0^{\f
 (b) Using $\sin^2(x)+\cos^2(x)=1$ we find that
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx+\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\int_0^{\frac{1}{2}\pi}1\,dx=\tfrac{1}{2}\pi.
+\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx+\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\int_0^{\frac{1}{2}\pi}1\,dx=\frac{1}{2}\pi.
 $$
 
 Now we use (a) to conclude that
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\tfrac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx.
+\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\frac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx.
 $$
 
 :::
