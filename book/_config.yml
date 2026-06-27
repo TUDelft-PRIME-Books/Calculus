@@ -25,11 +25,12 @@ html:
 sphinx:
   local_extensions:
     text_replacer: _ext/
-    # check_captions: _ext/
+    check_captions: _ext/
     image_checker: _ext/
     numref_section: _ext/
     math_punctuation: _ext/
   config:
+    templates_path: ["_templates"]
     patch_config:
       disabled-patches: ["hash"]
     # prime_applets_base_url: "http://localhost:5173/applet/"
