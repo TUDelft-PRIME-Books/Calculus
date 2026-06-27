@@ -8,19 +8,20 @@
     :license: BSD, see LICENSE for details.
 #}
 {%- extends "layout.html" %}
-{% set title = _('MY Index') %}
+{% set title = _('Index') %}
 
 {% macro indexentries(firstname, links) %}
   {%- if links -%}
     <a href="{{ links[0][1] }}">
     {%- if links[0][0] %}<strong>{% endif -%}
     {{ firstname|e }}
+    {%- if links|length > 1 %} [1]{% endif -%}
     {%- if links[0][0] %}</strong>{% endif -%}
     </a>
 
     {%- for ismain, link in links[1:] -%}
       , <a href="{{ link }}">{% if ismain %}<strong>{% endif -%}
-      [{{ loop.index }}]
+      [{{ loop.index + 1 }}]
       {%- if ismain %}</strong>{% endif -%}
       </a>
     {%- endfor %}
@@ -31,7 +32,7 @@
 
 {% block body %}
 
-<h1 id="index">{{ _('MY Index') }}</h1>
+<h1 id="index">{{ _('Index') }}</h1>
 
 <div class="genindex-jumpbox">
  {% for key, dummy in genindexentries -%}
@@ -124,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 {% block sidebarrel %}
 {% if split_index %}
-   <h4>{{ _('MY Index') }}</h4>
+   <h4>{{ _('Index') }}</h4>
    <p>{% for key, dummy in genindexentries -%}
    <a href="{{ pathto('genindex-' + key) }}"><strong>{{ key }}</strong></a>
      {% if not loop.last %}| {% endif %}
