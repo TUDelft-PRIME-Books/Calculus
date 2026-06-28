@@ -246,17 +246,22 @@ We conclude that $d-\varepsilon<f(c)<d+\varepsilon$. Since these inequalities ho
 
 :::
 
-::::{figure} Images/Fig-Continuity-IVT.png
+::::{prf:example}
+:label: Ex:Continuity:IVTillustration
+
+To illustrate {prf:ref}`Theorem:Continuity:IVT`, consider the function $f$ shown in {numref}`Fig:Continuity:IVT`. For the two selected points $(a,f(a))$ and $(b,f(b))$, all parts of the function $f$ that lie on the graph between $(a,f(a))$ and $(b,f(b))$ and have a value between $f(a)$ and $f(b)$ are shown in a different color and with a thicker line.
+
+Try to drag the points $(a,f(a))$ and $(b,f(b))$ along the curve to see how the function $f$ takes on all values in between $f(a)$ and $f(b)$.
+
+:::{applet}
+:url: calculus/continuity/illustration_of_IVT
 :name: Fig:Continuity:IVT
 :class: dark-light
 
 A function $f$ to illustrate {prf:ref}`Theorem:Continuity:IVT`.
-::::
+:::
 
-::::{note}
-:name: Note:Continuity:IVTlabels
-
-In this applet/figure, do not add labels for the function $f$. Label the point $0$ as $a$ and the point $\pi$ as $b$. In both pictures, the lines $y=\frac{1}{2}$ and $y=-\frac{1}{2}$ should be labeled as $f(a)$ and $f(b)$ respectively. In the left picture, the line $y=\frac{1}{4}$, should be labeled as $d$, along with the corresponding vertical line labeled as $c$. In the right picture, the line $y=0.7$, labeled as $d$, along with the two corresponding vertical lines labeled as $c_1$ and $c_2$.
+Also note that there are combinations of $(a,f(a))$ and $(b,f(b))$ for which the function $f$ can take on a value $d$ between $f(a)$ and $f(b)$ at more than one point between $(a,f(a))$ and $(b,f(b))$.
 ::::
 
 The Intermediate Value Theorem can be used to show that certain equations have a solution, even if finding this solution is very hard, or even impossible.
@@ -266,7 +271,8 @@ The Intermediate Value Theorem can be used to show that certain equations have a
 
 Suppose we want to show that the equation $x^5-8x^3+2x^2+1=0$ has at least $1$ solution between $0$ and $1$. Unless you are very lucky, it is impossible to find an explicit expression for a root of a polynomial of degree $5$. Here, we can use the Intermediate Value Theorem. Indeed, note that the function $f(x)=x^5-8x^3+2x^2+1$ is continuous on the interval $[0,1]$ as it is a polynomial. Moreover, we can compute that $f(0)=1$ and $f(1)=-4$. By the Intermediate Value Theorem, $f$ must take on any value in between $1$ and $-4$ on the interval $[0,1]$. Since $0$ is in between these values, there must be some $c$ in $[0,1]$ with $f(c)=c^5-8c^3+2c^2+1=0$. As such, the equation $x^5-8x^3+2x^2+1=0$ has at least one solution between $0$ and $1$.
 
-::::{figure} Images/Fig-Continuity-IVTex.png
+::::{applet}
+:url: calculus/continuity/finding_roots_with_IVT
 :name: Fig:Continuity:IVTex
 :class: dark-light
 
@@ -275,6 +281,11 @@ The function $f$ with supporting horizontal and vertical lines that we can use w
 
 
 We could even try to find a better approximation for what the value of $c$ is. Indeed, we can divide the interval $[0,1]$ into two pieces $\left[0,\frac{1}{2}\right]$ and $\left[\frac{1}{2},1\right]$. Note that $f\left(\frac{1}{2}\right)=\frac{33}{32}>0$. So on the interval $\left[\frac{1}{2},1\right]$, $f$ changes from positive to negative, which means that on this interval it must be equal to $0$ somewhere. As such, there is a solution to $x^5-8x^3+2x^2+1=0$ in between $\frac{1}{2}$ and $1$. We can continue this process of dividing the interval in two pieces and looking on which of these intervals we can still apply the Intermediate Value Theorem. The longer we continue this process, the closer we will be to the actual value of the solution. However, we cannot use this method to find the exact value of the solution, as we can only perform finitely many computations.
+
+
+This idea of finding roots can be used in general to find roots of continuous functions, which is the basis of the bisection method, which will be treated in more detail in {numref}`Sec:IterativeMethodsForVariousProblems`.
+
+Note also that the value of function in  the left and the right endpoints of the interval $[a,b]$ do need to be of opposite sign to be sure that the function has a root in between.
 ::::::
 
 
@@ -297,7 +308,6 @@ Since $f(a)$ and $f(b)$ have opposite signs, the number $0$ must be in between t
 The name Weierstrass Nullstellensatz, named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass) is sometimes used for either {prf:ref}`Theorem:Continuity:IVT` or {prf:ref}`Cor:Continuity:IVT`. Usually, the Weierstrass Nullstellensatz refers to a version of Bolzano's Theorem specifically for polynomials with coefficients in a [real closed field](https://en.wikipedia.org/wiki/Real_closed_field)
 :::
 
-{prf:ref}`Cor:Continuity:IVT` can be used to find roots of continuous functions, which is the basis of the bisection method, which will be treated in more detail in {numref}`Sec:IterativeMethodsForVariousProblems`.
 
 ::::::{prf:example} 
 :label: Ex:Continuity:IVTnoncont
@@ -393,7 +403,7 @@ If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continu
 
 ::::::
 
-:::{prf:example} Example of one-to-one function where continuity at point does not carry over to inverse
+::::{prf:example} Example of one-to-one function where continuity at point does not carry over to inverse
 :label: Example:Continuity:InverseDiscontinuity
 :class: dropdown
 
@@ -407,10 +417,17 @@ Finally, we claim that $f^{-1}$ is not continuous at $0$. Note that $f^{-1}(0)=0
 
 So if a one-to-one function is continuous on an interval, then its inverse is continuous on the corresponding interval as well {prf:ref}`Theorem:Continuity:Inverse`, but this is no longer true when we only look at continuity in a single point.
 
-:::{todo}
-Hier ook nog een schets van de functie, met alle discrete waarden als gevulde stippen gehighlight en alle gaten met open stippen.
+:::{applet}
+:url: calculus/continuity/continuity_and_inverse
+:name: Fig:Continuity:InverseDiscontinuity
+:class: dark-light
+
+
+A graph of the function $f$ from {prf:ref}`Example:Continuity:InverseDiscontinuity`, which is continuous at $0$, but whose inverse is not continuous at $0$.
 :::
-:::
+
+
+::::
 
 With all these preparations in hand, we are ready to show that most standard functions are continuous.
 
@@ -472,11 +489,12 @@ Now, finally, we let $r<0$ and consider the function $f(x)=x^r$. Then $f(x)=\fra
 
 **Continuity of $\sin(x)$ and $\cos(x)$:** Now consider the function $f(x)=\sin(x)$. We will first show that $f$ is continuous in $0$ by showing that $\lim\limits_{x\rightarrow 0}\sin(x)=\sin(0)=0$. For this, we will show that $|\sin(x)|\leq |x|$ for all $-\frac{\pi}{2}<x<\frac{\pi}{x}$, which will allow us to use the squeeze theorem. First consider $x$ with $0<x<\frac{\pi}{2}$. We consider a circle with radius $1$, centered around the origin $O$. Then we consider two points $A$ and $B$ on the circle such that the angle between the line pieces $OA$ and $OB$ is exactly $x$, as shown in the figure below.
 
-::::{figure} Images/Fig-Continuity-Standardfunctions.svg
+::::{applet}
+:url: calculus/continuity/continuity_of_sine_and_cosine
 :name: Fig:Continuity:Standardfunctions
 :class: dark-light
 
-Circle with centre O and points A and B on its circumference, where A lies on the positive $x$-axis. Triangle AOB is shown with angle $x$ between OA and OB. Point C lies on line OA, directly below B.
+Circle with centre $O$ and points $A$ and $B$ on its circumference, where $A$ lies on the positive horizontal axis. Triangle $AOB$ is shown with angle $x$ between $OA$ and $OB$. Point $C$ lies on line $OA$, directly below $B$.
 ::::
 
 Consider the point $C$ that lies on the line piece $OA$ in such a way that the triangle $OCB$ is a right triangle. By the geometric definition of the sine, we have $\sin(x)=\frac{|BC|}{|OB|}=|BC|$, since $B$ lies on the circle with radius $1$ and center $O$. Note that $C$ is the closest point to $B$ on the line through $O$ and $A$, since the line piece $BC$ is orthogonal to the line piece $OA$. As such, we must have $|BC|\leq |BA|$. The length of the part of the circle from $A$ to $B$ is exactly $\frac{x}{2\pi}$ times the total circumference of the circle. Since the circle has radius $1$, this length is $\frac{x}{2\pi}2\pi=x$. Since $|AB|$ is the distance between $A$ and $B$, and $x$ is the length of a different path from $A$ to $B$ (namely the one following the circle), we must have $|AB|\leq x$. Combining the inequalities gives 
