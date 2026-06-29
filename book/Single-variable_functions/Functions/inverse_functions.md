@@ -862,10 +862,10 @@ Suppose we want to simplify $\arcsin\left(-\frac{1}{2}\right)$. Writing $y=\arcs
 The cancelling equations for the (inverse) trigonometric functions now become
 
 $$
- \begin{array}{lcll} \arcsin(\sin(x))&=&x,\quad &\text{for}\,-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}\\
- \sin(\arcsin(y))&=&y,\quad &\text{for}\,-1\leq y\leq1\\ \arccos(\cos(x))&=&x,\quad &\text{for}\,0\leq x\leq\pi\\
- \cos(\arccos(y))&=&y,\quad &\text{for}\,-1\leq y\leq1\\ \arctan(\tan(x))&=&x,\quad &\text{for}\,-\frac{\pi}{2}< x<\frac{\pi}{2}\\
- \tan(\arctan(y))&=&y,\quad &\text{for}\,y\,\text{in}\,\mathbb{R} \end{array}
+ \begin{array}{lcll} \arcsin(\sin(x))&=&x,\quad &\operatorname{for}\,-\frac{\pi}{2}\leq x\leq\frac{\pi}{2}\\
+ \sin(\arcsin(y))&=&y,\quad &\operatorname{for}\,-1\leq y\leq1\\ \arccos(\cos(x))&=&x,\quad &\operatorname{for}\,0\leq x\leq\pi\\
+ \cos(\arccos(y))&=&y,\quad &\operatorname{for}\,-1\leq y\leq1\\ \arctan(\tan(x))&=&x,\quad &\operatorname{for}\,-\frac{\pi}{2}< x<\frac{\pi}{2}\\
+ \tan(\arctan(y))&=&y,\quad &\operatorname{for}\,y\,\operatorname{in}\,\mathbb{R} \end{array}
 $$
 
 ::::::{warning} 

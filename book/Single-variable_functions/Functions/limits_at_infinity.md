@@ -622,7 +622,7 @@ $$
 A very common mistake, is to now write
 
 $$
- \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{2}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\sqrt{\frac{1}{x^2}+1}+\frac{2}{x}}.\qquad\qquad \left(\operatornamebf{INCORRECT}\right)
+ \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{2}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\sqrt{\frac{1}{x^2}+1}+\frac{2}{x}}.\qquad\qquad \left(\textbf{INCORRECT}\right)
 $$
 
 Can you spot the error? The computation would have been correct if we had considered the limit at infinity instead of at minus infinity. Notice that for $x<0$ the expression $\frac{1}{x}\sqrt{1+x^2}$ is negative, while the expression $\sqrt{\frac{1}{x^2}+1}$ is positive, so they can never be equal. Indeed, we can write

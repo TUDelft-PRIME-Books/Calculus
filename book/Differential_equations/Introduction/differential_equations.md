@@ -507,7 +507,7 @@ An important question is how we can determine if we have found all solutions of 
 Two functions $f(x)$ and $g(x)$ are called **linearly independent** on an interval $I$ if 
 
 $$
-c_1f(x)+c_2g(x)=0\quad\text{for all}\quad x\in I
+c_1f(x)+c_2g(x)=0\quad\operatorname{for all}\quad x\in I
 $$
 
 implies that $c_1=0$ and $c_2=0$.
@@ -515,7 +515,7 @@ implies that $c_1=0$ and $c_2=0$.
 More generally, $n$ functions $f_1(x),\ldots,f_n(x)$ are called **linearly independent** on an interval $I$ if 
 
 $$
-c_1f_1(x)+c_2f_2(x)+\cdots+c_nf_n(x)=0\quad\text{for all}\quad x\in I
+c_1f_1(x)+c_2f_2(x)+\cdots+c_nf_n(x)=0\quad\operatorname{for all}\quad x\in I
 $$
 
 implies that $c_1=0$, $c_2=0$, $\ldots,$ $c_n=0$.

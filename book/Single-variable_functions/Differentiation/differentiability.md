@@ -27,13 +27,13 @@ $$
 Suppose we want to know the velocity at which you were walking. In this case, you were walking at a constant speed, so the velocity can be computed by dividing the distance you traveled, which we will denote by $\Delta x$, by the time that has passed, which we will denote by $\Delta t$. Then, the velocity at any point in time is given by
 
 $$
- \text{velocity}=\frac{\Delta x}{\Delta t}=\frac{600}{400}=\frac{3}{2}.
+ \operatorname{velocity}=\frac{\Delta x}{\Delta t}=\frac{600}{400}=\frac{3}{2}.
 $$
 
 Notice that this $\frac{3}{2}$ is the same as the coefficient of the $t$ term in the function $x(t)=\frac{3}{2}t$. This is no coincidence. When the position is a function of time of the form $x(t)=at+b$ and we measure the position at two moments in time $t_1<t_2$, then the velocity can be found as the difference in position divided by the difference in time and we find
 
 $$
- \text{velocity}=\frac{\Delta x}{\Delta t}=\frac{\left(at_2+b\right)-\left(at_1+b\right)}{t_2-t_1}=\frac{at_2-at_1}{t_2-t_1}=a.
+ \operatorname{velocity}=\frac{\Delta x}{\Delta t}=\frac{\left(at_2+b\right)-\left(at_1+b\right)}{t_2-t_1}=\frac{at_2-at_1}{t_2-t_1}=a.
 $$
 
 Hence, $a$ is the velocity at any point in time. In particular, $a$ is the slope of the line $y=at+b$, so in this setting the slope has the interpretation of a velocity.
@@ -59,19 +59,19 @@ Replace {numref}`Fig:Differentiability:Intro` with an applet showing the graphs 
 In this case, we can calculate the **average velocity** during the walk (where going back counts as a negative velocity) by dividing the difference in position $\Delta x$ by the difference in time. This gives
 
 $$
- \text{average}\,\,\text{velocity}=\frac{\Delta x}{\Delta t}=\frac{x(1200)-x(0)}{1200-0}=\frac{600-0}{1200}=\frac{1}{2}.
+ \operatorname{average}\,\,\operatorname{velocity}=\frac{\Delta x}{\Delta t}=\frac{x(1200)-x(0)}{1200-0}=\frac{600-0}{1200}=\frac{1}{2}.
 $$
 
 An important question now remains: can we somehow determine our velocity at a certain moment in time, say at $t=200$? Note that we are not walking with a constant velocity, so the velocity is not usually going to be equal to the average velocity. The main idea to resolve this, is that if we just zoom in very close to $t=200$, the graph of the function is approximately a straight line. The velocity at $t=200$ can then be approximated by dividing the difference in position by the difference in time. For $\Delta t=10$, we would be comparing the positions at $t=200$ with the one $10$ time steps further, so at $t=210$, and we would obtain
 
 $$
- \text{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(210)-x(200)}{10}\approx 2.354.
+ \operatorname{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(210)-x(200)}{10}\approx 2.354.
 $$
 
 If we zoom in more, we should get a better approximation. Repeating these steps for $\Delta t=1$, we would obtain
 
 $$
- \text{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(201)-x(200)}{1}\approx 2.356.
+ \operatorname{velocity}\approx \frac{\Delta x}{\Delta t}=\frac{x(201)-x(200)}{1}\approx 2.356.
 $$
 
 We can say that the velocity at $t=200$ is approximately equal to $2.356$ meter per second and by taking $\Delta t$ smaller, we get a better and better approximation. As before, the velocity can be thought of as the slope of the function at this point in time.
@@ -79,13 +79,13 @@ We can say that the velocity at $t=200$ is approximately equal to $2.356$ meter 
 The expression $\frac{\Delta x}{\Delta t}$ is called a **difference quotient** and we conclude that it can be used to approximate the slope of the function in a point. How can we compute the exact slope of the function? Well, since, as $\Delta t$ becomes small, the approximation gets better, we get the best result when taking the limit $\Delta t\rightarrow 0$. This means that we must have
 
 $$
- \text{velocity}=\lim_{\Delta t\rightarrow 0} \frac{\Delta x}{\Delta t}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}.
+ \operatorname{velocity}=\lim_{\Delta t\rightarrow 0} \frac{\Delta x}{\Delta t}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}.
 $$
 
 We call the value of the limit $\displaystyle\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}$ the **derivative** of the function $x$ at $t=200$. Evaluating this limit is a bit tricky, but later we will learn some powerful tools which allow us to find
 
 $$
- \text{velocity}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}=\frac{3\pi}{4}\approx 2.356.
+ \operatorname{velocity}=\lim_{\Delta t\rightarrow 0} \frac{x(200+\Delta t)-x(200)}{\Delta t}=\frac{3\pi}{4}\approx 2.356.
 $$
 
 So we saw that our approximation by means of a difference quotient was actually correct up to at least $3$ decimal positions, which is pretty good.
@@ -130,12 +130,12 @@ $$
 This means that for any number $L$ we have
 
 $$
-\left|\frac{f(x)-f(a)}{x-a}-L\right|<\varepsilon\quad\text{precisely when}\quad\left|\frac{f(a+h)-f(a)}{h}-L\right|<\varepsilon.
+\left|\frac{f(x)-f(a)}{x-a}-L\right|<\varepsilon\quad\operatorname{precisely when}\quad\left|\frac{f(a+h)-f(a)}{h}-L\right|<\varepsilon.
 $$
 
 We find that the limits
 
-$$\lim\limits_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}\quad\text{and}\quad\lim\limits_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}$$
+$$\lim\limits_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}\quad\operatorname{and}\quad\lim\limits_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}$$
 
 either both exist or both do not exist, and that they must be equal if they exist.
 :::
@@ -311,7 +311,7 @@ does not exist.
 We conclude that $k$ is differentiable at any point $t\neq0$, but that it is not differentiable at $t=0$. In addition, we have found that
 
 $$
- \frac{dk}{dt}(t)=\left\{\begin{array}{l}-1,\qquad&\text{if }t<0, \\ 1,\qquad &\text{if }t>0.\end{array}\right.
+ \frac{dk}{dt}(t)=\left\{\begin{array}{l}-1,\qquad&\operatorname{if }t<0, \\ 1,\qquad &\operatorname{if }t>0.\end{array}\right.
 $$
 
 This result is not unexpected. Indeed, the graph of the absolute value is a straight line with slope $-1$ for $t<0$, while it is a straight line with slope $1$ for $t>0$. In addition, at $t=0$ the graph has a sharp corner, so it is not possible to determine a slope there.
@@ -395,7 +395,7 @@ $$
 $$
 ::::::
 
-Using the Leibniz notation $f'(x)=\frac{dy}{dx}$ we can write the differential in the form $dy=\frac{dy}{dx}\,dx$. This equation sort of seems to arise from regular calculation rules for numbers (indeed, if $a$ and $b\neq 0$ are numbers then $\frac{a}{b}b=a\text{),}$ but remember that $\frac{dy}{dx}$ is not actually a fraction. It is just notation for the derivative. Moreover, since $dx$ is infinitesimal, it is not an actual number, so the usual rules of calculation do not apply. The formula $dy=\frac{dy}{dx}\,dx$ simply represents consistency in the notation that we use.
+Using the Leibniz notation $f'(x)=\frac{dy}{dx}$ we can write the differential in the form $dy=\frac{dy}{dx}\,dx$. This equation sort of seems to arise from regular calculation rules for numbers (indeed, if $a$ and $b\neq 0$ are numbers then $\frac{a}{b}b=a\operatorname{),}$ but remember that $\frac{dy}{dx}$ is not actually a fraction. It is just notation for the derivative. Moreover, since $dx$ is infinitesimal, it is not an actual number, so the usual rules of calculation do not apply. The formula $dy=\frac{dy}{dx}\,dx$ simply represents consistency in the notation that we use.
 
 However, even though the differential is just a notation, it will pop up from time to time. It is featured most prominently in {numref}`Sec:Integration:Substitution`, where it will be used to rewrite an integral over one variable into an integral over another variable. 
 
@@ -528,7 +528,7 @@ $$
  &=&\displaystyle\lim_{x\rightarrow a}\frac{(x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)}{x-a}\\
  &=&\displaystyle\lim_{x\rightarrow a}\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right)\\
  &=&\displaystyle a^{n-1}+a^{n-2}a+a^{n-3}a^2+\ldots+aa^{n-2}+a^{n-1}\\
- &=&\displaystyle\underbrace{a^{n-1}+\ldots+a^{n-1}}_{n\text{ times}}\\
+ &=&\displaystyle\underbrace{a^{n-1}+\ldots+a^{n-1}}_{n\operatorname{ times}}\\
  &=&\displaystyle na^{n-1}.\end{array}
 $$
 
@@ -714,7 +714,7 @@ As we know the derivatives of $\cos(t)$ and $\sin(t)$, we find
 Consider the piecewise defined function 
 
 $$
- \displaystyle f(x)=\left\{\begin{array}{l}x^5,\qquad &\text{if}\,x<0,\\ x^2,\qquad &\text{if}\,0\leq x<1,\\ 3-2x,\qquad&\text{if}\,x\geq 1.\end{array}\right.
+ \displaystyle f(x)=\left\{\begin{array}{l}x^5,\qquad &\operatorname{if}\,x<0,\\ x^2,\qquad &\operatorname{if}\,0\leq x<1,\\ 3-2x,\qquad&\operatorname{if}\,x\geq 1.\end{array}\right.
 $$
 
 For $x<0$, we have $f(x)=x^5$ and since differentiability is a 'local' property (i.e. whether $f'(a)$ exists only depends of the behaviour of $f(x)$ for $x$ close to $a$), we find that $f'(x)=5x^4$ for these values of $x$. Similarly, we find that $f'(x)=2x$ for $0<x<1$ and $f'(x)=-2$ for $x>1$. To see what happens at $x=0$ and at $x=1$, we have no choice but to use the limit definition. For both points, we need to evaluate the corresponding left and right limits in the definition of the derivative separately. For $x=0$, we obtain
@@ -843,7 +843,7 @@ Indeed, if we want to know the $1001$st derivative of $h$, we notice that $1000$
 Consider the function 
 
 $$
- f(x)=\left\{\begin{array}{l}0,\qquad&\text{if}\,x\leq 0,\\ x^2,\qquad &\text{if}\,x>0.\end{array}\right.
+ f(x)=\left\{\begin{array}{l}0,\qquad&\operatorname{if}\,x\leq 0,\\ x^2,\qquad &\operatorname{if}\,x>0.\end{array}\right.
 $$
 
 We want to know how often this function is differentiable in $0$. We first compute the first derivative by evaluating the corresponding left and right limits in the definition of the derivative. This gives
@@ -881,7 +881,7 @@ So $f$ is twice differentiable in $0$ and $f''(0)=0$. In addition, we note that 
 The idea from {prf:ref}`Def:Differentiability:Higherorderderivative3` works more general: if $n>0$ is a nonzero natural number the function 
 
 $$
- f(x)=\left\{\begin{array}{l}0,\qquad&\text{if}\,x\leq 0,\\ x^n,\qquad &\text{if}\,x>0.\end{array}\right.
+ f(x)=\left\{\begin{array}{l}0,\qquad&\operatorname{if}\,x\leq 0,\\ x^n,\qquad &\operatorname{if}\,x>0.\end{array}\right.
 $$
 
 is $n$ times differentiable in $0$, but not $n+1$ times.

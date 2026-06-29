@@ -302,7 +302,7 @@ We prove both versions of l'Hospital's rule in one go. However, this proof is ra
 First, we consider either one of the cases
 
 $$
- \lim_{x\rightarrow a^-}\frac{f(x)}{g(x)},\qquad\text{or}\qquad \lim_{x\rightarrow \infty}\frac{f(x)}{g(x)}.
+ \lim_{x\rightarrow a^-}\frac{f(x)}{g(x)},\qquad\operatorname{or}\qquad \lim_{x\rightarrow \infty}\frac{f(x)}{g(x)}.
 $$
 
 To handle these cases together, we write $c=a$ or $c=\infty$, depending on the case we are in and we write $\displaystyle\lim_{x\rightarrow c}$ whenever we mean $\displaystyle\lim_{x\rightarrow a^-}$ or $\displaystyle\lim_{x\rightarrow \infty}$. We can write $I=(b,c)$. 

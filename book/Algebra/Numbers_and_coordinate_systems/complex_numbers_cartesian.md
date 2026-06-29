@@ -624,7 +624,7 @@ If $z$ and $w$ are a complex numbers, then the following identities hold.
 \overline{z+w} &= \overline{z}+\overline{w}, \\
 \overline{z-w} &= \overline{z}-\overline{w}, \\
 \overline{zw} &= \overline{z}\,\overline{w}, \\
-\overline{\left(\frac{z}{w}\right)} &= \frac{\overline{z}}{\overline{w}}.\quad\text{(Assuming $w\neq0$.)}
+\overline{\left(\frac{z}{w}\right)} &= \frac{\overline{z}}{\overline{w}}.\quad\operatorname{(Assuming $w\neq0$.)}
 \end{align*}
 
 ::::

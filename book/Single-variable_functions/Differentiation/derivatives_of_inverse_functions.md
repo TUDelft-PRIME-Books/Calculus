@@ -344,8 +344,8 @@ which gives a contradiction. So $f^{-1}$ can never be invertible in $a$.
 The condition in {prf:ref}`Thm:Diffinverse:IFT` that the derivative of $f$ is continuous is also necessary. Consider the function 
 
 $$
- f(x)=\left\{\begin{array}{l}-x+4x^2\sin\left(\frac{1}{x}\right),\qquad&\text{if}\ x\neq 0\\
- 0,&\text{if}\ x=0.\end{array}\right.
+ f(x)=\left\{\begin{array}{l}-x+4x^2\sin\left(\frac{1}{x}\right),\qquad&\operatorname{if}\ x\neq 0\\
+ 0,&\operatorname{if}\ x=0.\end{array}\right.
 $$
 
 Then for $x\neq 0$, we can use the product rule and the chain rule to find

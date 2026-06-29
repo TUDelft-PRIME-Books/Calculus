@@ -80,8 +80,8 @@ using {prf:ref}`Thm:Differentiability:Derivativealt`. In that case, we directly 
 However, we cannot make the assumption that there is such an interval $(a-\delta,a+\delta)$, in general. And if we cannot make this assumption, the preceding computation does not work as we are committing the sin of dividing by $0$. So to avoid this, we define a real function $k$ that is given by
 
 $$
- k(u)=\left\{\begin{array}{ll}\dfrac{f(u)-f(g(a))}{u-g(a)},&\text{if}\quad u\neq g(a),\\
- f'(g(a)),&\text{if}\quad u=g(a).\end{array}\right.
+ k(u)=\left\{\begin{array}{ll}\dfrac{f(u)-f(g(a))}{u-g(a)},&\operatorname{if}\quad u\neq g(a),\\
+ f'(g(a)),&\operatorname{if}\quad u=g(a).\end{array}\right.
 $$
 
 Then we have, since $f$ is differentiable at $g(a)$,

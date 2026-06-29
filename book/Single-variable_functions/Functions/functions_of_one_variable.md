@@ -131,7 +131,7 @@ so both the input values $-3$ and $3$ are mapped to the output value $9$. Finall
 ::::::{prf:example} 
 :label: Ex:Functions1var:NoFormula
 
-Although most functions in this book can be described by means of a formula, this does not need to be the case. Moreover, the domain and/or codomain do not need to be part of $\mathbb{R}^n$. For instance, we can let $D$ be the set that contains $3$ people, Alice, Bob and Charlie, and let $f$ be the function that maps a person to their age. So, we could write this down like $f(\text{Alice})=31$, $f(\text{Bob})=66$ and $f(\text{Charlie})=19$. Here, the output is still a number, but even that does not need to be the case. For instance, we could let $g$ be the function that gives the first letter of a person's name, so we could write $g(\text{Alice})=\text{A}$, $g(\text{Bob})=\text{B}$ and $g(\text{Charlie})=\text{C}$. This might seem a bit silly, but it is actually quite beneficial that a lot of results that we will see in this section can also be applied to any type of domain or codomain, since it makes it possible to directly use these results in a more abstract mathematical setting.
+Although most functions in this book can be described by means of a formula, this does not need to be the case. Moreover, the domain and/or codomain do not need to be part of $\mathbb{R}^n$. For instance, we can let $D$ be the set that contains $3$ people, Alice, Bob and Charlie, and let $f$ be the function that maps a person to their age. So, we could write this down like $f(\operatorname{Alice})=31$, $f(\operatorname{Bob})=66$ and $f(\operatorname{Charlie})=19$. Here, the output is still a number, but even that does not need to be the case. For instance, we could let $g$ be the function that gives the first letter of a person's name, so we could write $g(\operatorname{Alice})=\operatorname{A}$, $g(\operatorname{Bob})=\operatorname{B}$ and $g(\operatorname{Charlie})=\operatorname{C}$. This might seem a bit silly, but it is actually quite beneficial that a lot of results that we will see in this section can also be applied to any type of domain or codomain, since it makes it possible to directly use these results in a more abstract mathematical setting.
 
 ::::::
 
@@ -164,7 +164,7 @@ The codomain of a function should be thought of as the set of all potential outp
 Let $f$ be a function with domain $D$ and codomain $C$. Then the **range** $R$ of $f$ is the set of all function values of $f$. That is, we have
 
 $$
- R=\left\{y\,\,\text{in}\,\,C\,\middle|\,\text{There is an }x\,\text{in}\,D\,\text{with}\,f(x)=y\right\}=\left\{f(x)\,\middle|\,x\,\text{in}\,D\right\}.
+ R=\left\{y\,\,\operatorname{in}\,\,C\,\middle|\,\operatorname{There is an }x\,\operatorname{in}\,D\,\operatorname{with}\,f(x)=y\right\}=\left\{f(x)\,\middle|\,x\,\operatorname{in}\,D\right\}.
 $$
 ::::::
 
@@ -228,7 +228,7 @@ The graph of a function $f$ can be used to read off the value $f(a)$ for a given
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Graph
-If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all pairs $(x,f(x))$. That is, it is the set $\left\{(x,f(x))\,\middle|\,x\,\,\text{in}\,\,D\right\}$. 
+If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all pairs $(x,f(x))$. That is, it is the set $\left\{(x,f(x))\,\middle|\,x\,\,\operatorname{in}\,\,D\right\}$. 
 ::::::
 
 There is one major restriction when sketching a graph, and that is that we only have a finite amount of space to draw the plot on. So, for instance, if the function is defined for all $x$ in $\mathbb{R}$ it is impossible to plot the full graph of the function, since we would need an infinite amount of space to do so. Still, in such a case it is possible to plot only part of the graph and try to make sure that this part captures as much qualitative behaviour of the function as possible.
@@ -409,7 +409,7 @@ where $p$ and $q$ are polynomials.
 ::::::
 
 :::{note}
-The maximal domain of a rational function $r(x)=\frac{p(x)}{q(x)}$ is the set $\left\{x\,\text{in}\,\mathbb{R}\,\middle|\,q(x)\neq 0\right\}$.
+The maximal domain of a rational function $r(x)=\frac{p(x)}{q(x)}$ is the set $\left\{x\,\operatorname{in}\,\mathbb{R}\,\middle|\,q(x)\neq 0\right\}$.
 :::
 
 Rational functions will be discussed more extensively in {numref}`Sec:RationalFunctions`.
@@ -428,7 +428,7 @@ We always assume that the input of a trigonometric function is measured in radia
 The maximal domains of the sine and cosine is $\mathbb{R}$, while the maximal domain of the tangent is 
 
 $$
- \left\{x\,\text{in}\,\mathbb{R}\,\middle|\,x\neq \frac{\pi}{2}+k\pi\,\text{for some}\,k\,\text{in}\,\mathbb{Z}\right\}.
+ \left\{x\,\operatorname{in}\,\mathbb{R}\,\middle|\,x\neq \frac{\pi}{2}+k\pi\,\operatorname{for some}\,k\,\operatorname{in}\,\mathbb{Z}\right\}.
 $$
 
 :::
@@ -604,7 +604,7 @@ That is, the pressure is inversely proportional to the volume. This means that i
 :name: Fig:Functions1var:IdealGas2
 :class: dark-light
 
-The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for $n=1$ and $T=293.15\,\text{K}=20\,^{\circ}\text{C}$. Due to physical restrictions, the domain of this function only consists of positive values of $V$. You can use the sliders to change the values of $n$ and $T$. The first slider controls the number of moles $n$ of gas, while the second slider controls the temperature $T$ of the gas.
+The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for $n=1$ and $T=293.15\,\operatorname{K}=20\,^{\circ}\operatorname{C}$. Due to physical restrictions, the domain of this function only consists of positive values of $V$. You can use the sliders to change the values of $n$ and $T$. The first slider controls the number of moles $n$ of gas, while the second slider controls the temperature $T$ of the gas.
 :::
 
 ::::::
@@ -624,7 +624,7 @@ Here $G$ is the [gravitational constant](https://en.wikipedia.org/wiki/Gravitati
 :name: Fig:Functions1var:Gravity
 :class: dark-light
 
-The graph of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for $m_1m_2=10^{48}\,\text{kg}^2$. Due to physical restrictions, the domain of this function only consists of positive values of $r$. You can use the slider to change the value of $m_1m_2$. The values of $m_1m_2$ range from $10^{46}$, which corresponds to two planets with the mass of Mercury, to $10^{54}$, which corresponds to two planets with the mass of Jupiter.
+The graph of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for $m_1m_2=10^{48}\,\operatorname{kg}^2$. Due to physical restrictions, the domain of this function only consists of positive values of $r$. You can use the slider to change the value of $m_1m_2$. The values of $m_1m_2$ range from $10^{46}$, which corresponds to two planets with the mass of Mercury, to $10^{54}$, which corresponds to two planets with the mass of Jupiter.
 :::
 
 The graph is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
@@ -708,7 +708,7 @@ In most cases, functions are defined in terms of a single formula. For instance,
 The absolute value $|x|$ of a number $x$ is actually a shorthand for $x$ if $x$ is positive or $-x$ if $x$ is negative. So the function $a(x)=|x|$ can alternatively be written as
 
 $$
- a(x)=\left\{\begin{array}{lll}x,\qquad&\text{if }&x\geq 0,\\ -x,&\text{if }&x<0.\end{array}\right.
+ a(x)=\left\{\begin{array}{lll}x,\qquad&\operatorname{if }&x\geq 0,\\ -x,&\operatorname{if }&x<0.\end{array}\right.
 $$
 
 This notation should be read as that $a$ follows the formula $a(x)=x$ for $x\geq 0$, while $a$ follows the formula $a(x)=-x$ for $x<0$.
@@ -728,7 +728,7 @@ The graph of the piecewise defined function $a(x)=|x|$.
 The **Heaviside (step) function** or **unit step function** is the function defined by
 
 $$
- H(t)=\left\{\begin{array}{lll}1,\qquad&\text{if }&t> 0,\\H_0,\qquad&\text{if }&t= 0,\\ 0,&\text{if }&t<0,\end{array}\right.
+ H(t)=\left\{\begin{array}{lll}1,\qquad&\operatorname{if }&t> 0,\\H_0,\qquad&\operatorname{if }&t= 0,\\ 0,&\operatorname{if }&t<0,\end{array}\right.
 $$
 
 where $H_0$ is a value that is sometimes taken to be $0$ (_left-continuous convention_), sometimes taken to be $1$ (_right-continuous convention_) and sometimes taken to be $\frac{1}{2}$ (_half-maximum convention_). In most cases the value of $H_0$ is not of large consequence.
@@ -750,7 +750,7 @@ The graph of the piecewise defined function $H(t)$ with initially the _right-con
 Consider the piecewise defined function
 
 $$
- f(x)=\left\{\begin{array}{lll}2x+3,\qquad&\text{if }&x\leq -1,\\ 3,&\text{if }&0<x\leq 1,\\ 2-x^2,&\text{if }&x>1.\end{array}\right.
+ f(x)=\left\{\begin{array}{lll}2x+3,\qquad&\operatorname{if }&x\leq -1,\\ 3,&\operatorname{if }&0<x\leq 1,\\ 2-x^2,&\operatorname{if }&x>1.\end{array}\right.
 $$
 
 This means that in order to evaluate $f(-2)$, we should look in which of the defining intervals $-2$ lies. In this case, we have $-2\leq -1$, so on this part of the domain the function follows the formula $2x+3$. This means that $f(-2)=2(-2)+3=-1$. 
