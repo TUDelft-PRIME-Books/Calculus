@@ -395,7 +395,7 @@ $$
 $$
 ::::::
 
-Using the Leibniz notation $f'(x)=\frac{dy}{dx}$ we can write the differential in the form $dy=\frac{dy}{dx}\,dx$. This equation sort of seems to arise from regular calculation rules for numbers (indeed, if $a$ and $b\neq 0$ are numbers then $\frac{a}{b}b=a\text{),}$ but remember that $\frac{dy}{dx}$ is not actually a fraction. It is just notation for the derivative. Moreover, since $dx$ is infinitesimal, it is not an actual number, so the usual rules of calculation do not apply. The formula $dy=\frac{dy}{dx}\,dx$ simply represents consistency in the notation that we use.
+Using the Leibniz notation $f'(x)=\frac{dy}{dx}$ we can write the differential in the form $dy=\frac{dy}{dx}\,dx$. This equation sort of seems to arise from regular calculation rules for numbers (indeed, if $a$ and $b\neq 0$ are numbers then $\frac{a}{b}b=a$, but remember that $\frac{dy}{dx}$ is not actually a fraction. It is just notation for the derivative. Moreover, since $dx$ is infinitesimal, it is not an actual number, so the usual rules of calculation do not apply. The formula $dy=\frac{dy}{dx}\,dx$ simply represents consistency in the notation that we use.
 
 However, even though the differential is just a notation, it will pop up from time to time. It is featured most prominently in {numref}`Sec:Integration:Substitution`, where it will be used to rewrite an integral over one variable into an integral over another variable. 
 
