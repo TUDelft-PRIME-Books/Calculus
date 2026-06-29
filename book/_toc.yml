@@ -82,8 +82,9 @@ parts:
       - file: "Sequences_and_series/Series/taylor_series.md"
       - file: "Sequences_and_series/Series/binomial_series.md"
       - file: "Sequences_and_series/Series/fourier_series.md"
+      - file: "Sequences_and_series/Series/riemann_zeta_function.md"
+      - file: "Sequences_and_series/Series/catalans_constant.md"
       - file: "Sequences_and_series/Series/generating_functions.md"
-      - file: "Sequences_and_series/Series/special_constants_and_functions.md"
   - caption: Multivariable functions
     numbered: 3
     chapters:
