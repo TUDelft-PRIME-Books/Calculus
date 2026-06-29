@@ -16,8 +16,9 @@ document.addEventListener("click", (event) => {
       const originalText = item.math; 
 
       // Reconstruct the unrendered text string
+      // for testing purposes, wrap it in a class to give it a color
       const rawFormula = `${openDelimiter}\\class{tud-yellow}{${originalText}}${closeDelimiter}`;
-      
+
       // Replace the rendered MathJax element wrapper in the DOM with the raw text
       if (item.typesetRoot && item.typesetRoot.parentNode) {
         item.typesetRoot.outerHTML = rawFormula;
@@ -27,7 +28,10 @@ document.addEventListener("click", (event) => {
     // 3. Clear MathJax's internal registry for these specific wrappers
   MathJax.typesetClear([container]);
   
-  // 4. Hard re-render the raw text exactly like a page reload
+  // 4. Wipe out any macro/label definitions to ensure a true clean-slate reload
+  MathJax.texReset();
+
+  // 5. Hard re-render the raw text exactly like a page reload
   MathJax.typesetPromise([container])
   }
 });
