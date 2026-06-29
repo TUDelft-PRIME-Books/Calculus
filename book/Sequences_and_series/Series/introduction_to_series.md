@@ -187,9 +187,9 @@ The converse of {prf:ref}`Thm:Series:GeneralTerm` is not true: if $\lim\limits_{
 
 This is shown by the following example:
 
-::::::{prf:example}
+::::::{prf:example} The harmonic series
 :label: Ex:Series:HarmonicSeries
-Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$.
+Consider the **harmonic series** $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$.
 
 First note that $\lim\limits_{n\to\infty}\dfrac{1}{n}=0$, so the general term of the series tends to zero.
 
@@ -207,7 +207,7 @@ width: 50%
 name: Fig:Series:HarmonicSeries
 align: center
 ---
-Visualisation of the $n$th partial sum of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\frac{1}{x}$ is also given for comparison.
+Visualisation of the $n$th partial sum of the harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\frac{1}{x}$ is also given for comparison.
 ```
 
 :::{todo}
@@ -234,7 +234,7 @@ $$
 
 and so the series is divergent by {prf:ref}`Def:Series:ConvergenceSum`.
 
-This proves that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is divergent.
+This proves that the harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ is divergent.
 ::::::
 
 Because the example uses an integral to test for convergence/divergence, it is commonly called the **integral test** for convergence/divergence, which we will discuss in more detail in {numref}`Sec:Series:PositiveSeries:IntegralTest`.
@@ -267,15 +267,14 @@ $$
 
 Hence, contraposition of {prf:ref}`Thm:Series:GeneralTerm` gives us the following corollary:
 
-::::::{prf:corollary}
+::::::{prf:corollary} The test for divergence
 :label: Thm:Series:GeneralTermCorollary
+
 If $\lim\limits_{n\to\infty}a_n$ does not exist or if $\lim\limits_{n\to\infty}a_n\ne 0$, then the series $\sum a_n$ is divergent.
 ::::::
 
-::::::{prf:definition}
-:label: Def:Series:TestForDivergence
-
-{prf:ref}`Thm:Series:GeneralTermCorollary` is sometimes called **the test for divergence**.
+::::::{warning}
+Although {prf:ref}`Thm:Series:GeneralTermCorollary` is usually called **the test for divergence**, we emphasise that a series might be divergent even when $\lim\limits_{n\to\infty}a_n=0$. Think about the harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$.
 ::::::
 
 ::::{prf:example}
@@ -287,14 +286,14 @@ $$
 \lim_{n\to\infty}\frac{2n}{3n+1}=\frac{2}{3}\neq0,
 $$
 
-so by the _test for divergence_, the series $\displaystyle\sum_{n=1}^{\infty}\frac{2n}{3n+1}$ is divergent.
+so by {prf:ref}`the test for divergence <Thm:Series:GeneralTermCorollary>`, the series $\displaystyle\sum_{n=1}^{\infty}\frac{2n}{3n+1}$ is divergent.
 
 ::::
 
 ::::{prf:example}
 :label: Ex:Series:DivergenceTest2
 
-The series $\displaystyle\sum_{n=0}^{\infty}\left(\frac{3}{2}\right)^n$ is divergent, since, by the _test for divergence_, $\displaystyle\lim_{n\to\infty}\left(\frac{3}{2}\right)^n$ does not exist.
+The series $\displaystyle\sum_{n=0}^{\infty}\left(\frac{3}{2}\right)^n$ is divergent, since, by {prf:ref}`the test for divergence <Thm:Series:GeneralTermCorollary>`, $\displaystyle\lim_{n\to\infty}\left(\frac{3}{2}\right)^n$ does not exist.
 
 ::::
 
@@ -314,7 +313,7 @@ $$
 \lim_{n\to\infty}\arctan(n)=\frac{1}{2}\pi\neq0.
 $$
 
-So by the _test for divergence_ the series $\displaystyle\sum_{n=1}^{\infty}\arctan(n)$ is divergent.
+So by {prf:ref}`the test for divergence <Thm:Series:GeneralTermCorollary>` the series $\displaystyle\sum_{n=1}^{\infty}\arctan(n)$ is divergent.
 ::::
 
 The test for divergence only gives us a test for divergence, but it does not give us a test for convergence. In most cases one has to resort to other tests for convergence/divergence, which we will discuss in the next sections. For several special types of series, however, we can already determine whether they are convergent or divergent and find their sum if they are convergent, which we will treat in {numref}`Sec:Series:SpecialSeries`.

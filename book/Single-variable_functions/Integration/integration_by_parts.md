@@ -339,7 +339,7 @@ $$
 Note that we have replaced the arbitrary constant $\dfrac{4}{13}K$ by another arbitrary constant $C\in\mathbb{R}$.
 ::::::
 
-Here we chose the trigonometric function for $u$ in both the first and the second step. In this case we could have chosen the exponential function instead. See {numref}`Exc:Integration:PartsOtherChoice`. However, it is important to stick to the same choice (trigonometric or exponential function) in the second step. Otherwise, we return to the original integral without any result:
+Here we chose the trigonometric function for $u$ in both the first and the second step. In this case we could have chosen the exponential function instead. See {numref}`Grasple:133577`. However, it is important to stick to the same choice (trigonometric or exponential function) in the second step. Otherwise, we return to the original integral without any result:
 
 \begin{align*}
 \int e^{-2x}\cos(3x)\,dx &=-\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int e^{-2x}\sin(3x)\,dx\\
@@ -665,6 +665,24 @@ and so on.
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c60c505b-1d8a-4229-8e2d-42fa71150fb1?id=63971
+:label: Grasple:63971
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0f994f08-a85d-4c0c-aa5d-2cd2135c4dd7?id=133572
+:label: Grasple:133572
+:dropdown:
+:description: Find antiderivatives of $\arcsin(x)$ and $\arccos(x)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/7871c98f-475f-43b9-85b7-234bc76ec302?id=63900
 :label: Grasple:63900
 :dropdown:
@@ -741,6 +759,15 @@ and so on.
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c153e410-ee85-44bb-bc7c-1ec3d9c655a7?id=133577
+:label: Grasple:133577
+:dropdown:
+:description: Evaluate $\displaystyle\int e^{-2x}\cos(3x)\,dx$ by taking $u=e^{-2x}$ in each step.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/9cd4b811-f2b7-4c2c-abcf-88549ec14809?id=63796
 :label: Grasple:63796
 :dropdown:
@@ -793,14 +820,52 @@ and so on.
 
 ::::
 
+### More definite integrals
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6c507f13-5942-421f-9ae5-6f6e01032de0?id=133579
+:label: Grasple:133579
+:dropdown:
+:description: Evaluate the definite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/716f1abe-e714-4767-b0e1-c9f98255c1fa?id=133584
+:label: Grasple:133584
+:dropdown:
+:description: Evaluate the definite integral.
+
+::::
+
 ### Reduction formulas
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/71d0e191-33de-4dcb-b98b-21d0decdb00d?id=133580
+:label: Grasple:133580
+:dropdown:
+:description: Find a reduction formula for $\displaystyle\int x^ne^{-x}\,dx$.
+
+::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/e2ff2016-ea7d-4ad5-b3bb-600ee1964082?id=76133
 :label: Grasple:76133
 :dropdown:
-:description: Evaluate the indefinite integral.
+:description: Find a reduction formula for $\displaystyle\int(\ln(x))^n\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b3783b8b-c58b-47d6-b8aa-dfb0b69d3915?id=133582
+:label: Grasple:133582
+:dropdown:
+:description: Find a reduction formula for $\displaystyle\int x^n\sin(x)\,dx$.
 
 ::::
 
@@ -809,175 +874,6 @@ and so on.
 :url: https://embed.grasple.com/exercises/cd9e0c42-2bc7-4282-a4f4-65c47bf73453?id=76135
 :label: Grasple:76135
 :dropdown:
-:description: Evaluate the indefinite integral.
+:description: Find a reduction formula for $\displaystyle\int(\sin(x))^n\,dx$.
 
 ::::
-
-
-## Exercises
-
-::::{exercise}
-:label: Exc:Integration:PartsAntiderivativeOfLn
-
-Find an antiderivative of $\ln(x)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfLn`
-:class: solution, dropdown
-
-$$
-\int\ln(x)\,dx=x\ln(x)-\int x\,\frac{1}{x}\,dx=x\ln(x)-\int 1\,dx=x\ln(x)-x+C.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsAntiderivativeOfArcsin
-
-Find an antiderivative of $\arcsin(x)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfArcsin`
-:class: solution, dropdown
-
-\begin{align*}
-\int\arcsin(x)\,dx&=x\arcsin(x)-\int x\,\frac{1}{\sqrt{1-x^2}}\,dx\\
-&=x\arcsin(x)-\int\frac{x}{\sqrt{1-x^2}}\,dx\\
-&=x\arcsin(x)+\sqrt{1-x^2}+C.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsAntiderivativeOfArccos
-
-Find an antiderivative of $\arccos(x)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsAntiderivativeOfArccos`
-:class: solution, dropdown
-
-\begin{align*}
-\int\arccos(x)\,dx&=x\arccos(x)-\int x\,\frac{-1}{\sqrt{1-x^2}}\,dx\\
-&=x\arccos(x)+\int\frac{x}{\sqrt{1-x^2}}\,dx\\
-&=x\arccos(x)-\sqrt{1-x^2}+C.
-\end{align*}
-
-Alternatively, since $\arcsin(x)+\arccos(x)=\frac{1}{2}\pi$ we have by using {numref}`Exc:Integration:PartsAntiderivativeOfArcsin`
-
-\begin{align*}
-\int\arccos(x)\,dx&=\int\left(\frac{1}{2}\pi-\arcsin(x)\right)\,dx\\
-&=\frac{1}{2}\pi x-x\arcsin(x)-\sqrt{1-x^2}+C\\
-&=x\arccos(x)-\sqrt{1-x^2}+C.
-\end{align*}
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsOtherChoice
-
-Evaluate $\displaystyle\int e^{-2x}\cos(3x)\,dx$ by taking $u=e^{-2x}$ in each step.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsOtherChoice`
-:class: solution, dropdown
-
-\begin{align*}
-\int e^{-2x}\cos(3x)\,dx &=\frac{1}{3}e^{-2x}\sin(3x)+\frac{2}{3}\int e^{-2x}\sin(3x)\,dx\\
-&=\frac{1}{3}e^{-2x}\sin(3x)\\
-&{}\hspace{10mm}{}+\frac{2}{3}\left(-\frac{1}{3}e^{-2x}\cos(3x)-\frac{2}{3}\int e^{-2x}\cos(3x)\,dx \right) \\
-&=\frac{1}{3}e^{-2x}\sin(3x)\\
-&{}\hspace{10mm}{}-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}\int e^{-2x}\cos(3x)\,dx.
-\end{align*}
-
-Let $I=\displaystyle\int e^{-2x}\cos(3x)\,dx$, then we have:
-
-\begin{align*}
-&~ & I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)-\frac{4}{9}I\\
-&\Longrightarrow & \left(1+\frac{4}{9}\right)I &= \frac{1}{3}e^{-2x}\sin(3x)-\frac{2}{9}e^{-2x}\cos(3x)+K
-\end{align*}
-
-with $K\in\mathbb{R}$ aribtrary. Since $1+\dfrac{4}{9}=\dfrac{13}{9}$ we can again conclude that
-
-$$
-I=\frac{3}{13}e^{-2x}\sin(3x)-\frac{2}{13}e^{-2x}\cos(3x)+C.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsSubstitutionSin
-
-Evaluate $\displaystyle\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsSubstitutionSin`
-:class: solution, dropdown
-First apply the substitution $x=t^2$ which implies that $dx=2t\,dt$:
-
-\begin{align*}
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt&=\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^2\sin(t^2)t\,dt\\
-&=\frac{1}{2}\int_{\pi/2}^{\pi}x\sin(x)\,dx.
-\end{align*}
-
-Now we use integration by parts to find that
-
-\begin{align*}
-\int_{\sqrt{\pi/2}}^{\sqrt{\pi}}t^3\sin(t^2)\,dt &= \frac{1}{2}\int_{\pi/2}^{\pi}x\sin(x)\,dx \\
-&=-\frac{1}{2}u\cos(x)\bigg|_{\pi/2}^{\pi}+\frac{1}{2}\int_{\pi/2}^{\pi}\cos(x)\,dx\\
-&=\frac{1}{2}\pi+\frac{1}{2}\sin(x)\bigg|_{\pi/2}^{\pi}\\
-&=\frac{1}{2}\pi-\frac{1}{2}.
-\end{align*}
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionPowerExpNeg
-
-Find a reduction formula for $\displaystyle\int x^ne^{-x}\,dx$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionPowerExpNeg`
-:class: solution, dropdown
-
-$$
-\int x^ne^{-x}\,dx = -x^ne^{-x}+n\int x^{n-1}e^{-x}\,dx.
-$$
-
-Define $I_n=\displaystyle\int x^ne^{-x}\,dx$, then we have
-
-$$
-I_n=-x^ne^{-x}+nI_{n-1},\quad n=1,2,3,\ldots
-$$
-
-Furthermore, we have $I_0=\displaystyle\int e^{-x}\,dx=-e^{-x}+C_0$.
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionPowerSin
-
-Find a reduction formula for $\displaystyle\int x^n\sin(x)\,dx$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionPowerSin`
-:class: solution, dropdown
-
-\begin{align*}
-\int x^n\sin(x)\,dx &= -x^n\cos(x)+n\int x^{n-1}\cos(x)\,dx\\
-&=-x^n\cos(x)+nx^{n-1}\sin(x)-n(n-1)\int x^{n-2}\sin(x)\,dx.
-\end{align*}
-
-Define $I_n=\displaystyle\int x^n\sin(x)\,dx$, then we have
-
-$$
-I_n=-x^n\cos(x)+nx^{n-1}\sin(x)-n(n-1)I_{n-2},\quad n=2,3,4,\ldots
-$$
-
-Furthermore, we have $I_0=\displaystyle\int\sin(x)\,dx=-\cos(x)+C_0$ and
-
-\begin{align*}
-I_1&= \int x\sin(x)\,dx\\
-&=-x\cos(x)+\int\cos(x)\,dx\\
-&=-x\cos(x)+\sin(x)+C_1.
-\end{align*}
-
-:::
