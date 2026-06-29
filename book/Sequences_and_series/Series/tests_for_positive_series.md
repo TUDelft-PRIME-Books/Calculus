@@ -5,7 +5,6 @@
 
 In {numref}`Chapter:Series:Introduction` we have talked about infinite series and whether they are convergent or divergent. We also introduced the concept of absolute convergence and conditional convergence. In this section we will give some tests to determine whether a series is convergent or divergent. These tests only work for series with *positive terms* or series that eventually only have positive terms. See: {prf:ref}`Def:Series:PositiveNegativeSeries`.
 
-
 (Sec:Series:PositiveSeries:IntegralTest)=
 ## The integral test
 

@@ -447,48 +447,6 @@ $$
 This proves the theorem.
 :::::
 
-## Exercises
-
-::::{exercise}
-:label: Exc:Integration:FundamentalTheoremTrigIntegrals
-Consider the integrals $\displaystyle\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx$ and $\displaystyle\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx$.
-
-(a) Use the double-angle formula $\cos(2x)=\cos^2(x)-\sin^2(x)$ to show that both integrals are equal.
-
-(b) Use the {prf:ref}`Pythagorean identity <Thm:Trigonometry:UnitCircleIdentity>` $\sin^2(x)+\cos^2(x)=1$ to prove that
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\frac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx.
-$$
-
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:FundamentalTheoremTrigIntegrals`
-:class: solution, dropdown
-:name: Sol:Integration:FundamentalTheoremTrigIntegrals
-
-(a) Using $\cos(2x)=\cos^2(x)-\sin^2(x)$ we find that
-
-$$
-\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx-\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\int_0^{\frac{1}{2}\pi}\cos(2x)\,dx=\frac{1}{2}\sin(2x)\bigg|_0^{\frac{1}{2}\pi}=0,
-$$
-
-which implies that $\displaystyle\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx$.
-
-(b) Using $\sin^2(x)+\cos^2(x)=1$ we find that
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx+\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx=\int_0^{\frac{1}{2}\pi}1\,dx=\frac{1}{2}\pi.
-$$
-
-Now we use (a) to conclude that
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx=\frac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx.
-$$
-
-:::
-
 ## Grasple exercises
 
 ### Part 1 of the fundamental theorem of calculus
@@ -649,6 +607,15 @@ $$
 ::::
 
 ### Applications of the fundamental theorem of calculus
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7b01b0f1-3b02-48a8-afb2-b701e02b8ec8?id=133550
+:label: Grasple:133550
+:dropdown:
+:description: Apply the fundamental theorem of calculus to evaluate the integrals $\displaystyle\int_0^{\frac{1}{2}\pi}\cos^2(x)\,dx$ and $\displaystyle\int_0^{\frac{1}{2}\pi}\sin^2(x)\,dx$.
+
+::::
 
 ::::{grasple}
 :iframeclass: dark-light
