@@ -1184,7 +1184,7 @@ The odd and even periodic extensions of a given function $f$ for $0\leq x\leq 2$
 :url: https://embed.grasple.com/exercises/e58f9eda-50a9-4e4d-9b3f-0ac06f81b27e?id=73779
 :label: Grasple:73779
 :dropdown:
-:description: Establishing an identity for a hyperbolic function
+:description: Establishing an identity for a hyperbolic function.
 
 ::::
 
