@@ -157,7 +157,7 @@ Now if $f$ has a local minimum at $c$, then $-f$ has a local maximum at $c$. By 
 So is this the only way a function can have a local extremum? The answer to this is no. Consider, for instance, the function $f(x)=|x|$. Then we find that
 
 $$
- f'(x)=\left\{\begin{array}{l}-1,\qquad&\operatorname{if}\ x<0,\\ 1,\qquad &\operatorname{if}\ x>0,\end{array}\right.,
+ f'(x)=\left\{\begin{array}{l}-1,\qquad&\text{if}\ x<0,\\ 1,\qquad &\text{if}\ x>0,\end{array}\right.,
 $$
 
 while the function is not differentiable in $x=0$. In particular, the derivative of this function is never $0$. Still, if we consider the graph of this function, it clearly has a local minimum in $0$. This is precisely the point where the function is not differentiable. This is supported by the graph of $|x|$ shown in {numref}`Fig:MinMax:IntroLocExtr`.
@@ -352,7 +352,7 @@ This proof uses the completeness of the real numbers, just like the proof of {pr
 The range of $f$ on $[a,b]$, i.e. the set 
 
 $$
- R=\{y\in\mathbb{R}\,|\,y=f(x)\ \operatorname{for}\ \operatorname{some}\ x\in[a,b]\},
+ R=\{y\in\mathbb{R}\,|\,y=f(x)\ \text{for}\ \text{some}\ x\in[a,b]\},
 $$
 
 is a bounded set by {prf:ref}`Thm:MinMax:Boundedness`. In addition, it is nonempty as it contains $f(a)$. By the completeness of the real numbers, the set $R$ has a supremum $M$. We will show that $M$ is the absolute maximum of $f$ on $[a,b]$. We will argue by contradiction, so we assume that $f(x)<M$ for all $x$ in $[a,b]$. Consider the function
@@ -386,7 +386,7 @@ So that means that $N$ is not an upper bound of $g$ on $[a,b]$. Since this holds
 Since the function $-f$ is continuous, we can find $d$ in $[a,b]$ with $-f(x)\leq -f(d)$ for all $x$ in $[a,b]$. This means that $f(x)\geq f(d)$ for all $x$ in $[a,b]$, so $f$ also attains an absolute minimum on $[a,b]$.
 :::
 
-Both conditions that we are working with a continuous function on a closed interval are necessary for the theorem to work, as can be seen in {numref}`Fig:MinMax:EVT`. In (a) the continuous function $f(x)=\dfrac{1}{x}$ does not attain a global maximum on the non-closed interval $(0,1)$. In (b) for the non-continuous function $g(x)=\left\{\begin{array}{l}x,\qquad &\operatorname{if}\ 0\leq x<2,\\ 1,\qquad &\operatorname{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$, the function values can get arbitrarily close to $2$, but they never actually become $2$, so this function does not attain a global maximum. It does attain a global minimum at $0$.
+Both conditions that we are working with a continuous function on a closed interval are necessary for the theorem to work, as can be seen in {numref}`Fig:MinMax:EVT`. In (a) the continuous function $f(x)=\dfrac{1}{x}$ does not attain a global maximum on the non-closed interval $(0,1)$. In (b) for the non-continuous function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$, the function values can get arbitrarily close to $2$, but they never actually become $2$, so this function does not attain a global maximum. It does attain a global minimum at $0$.
 
 :::{figure} Images/Fig-MinMax-EVT.png
 ---
@@ -394,7 +394,7 @@ width: 100%
 name: Fig:MinMax:EVT
 class: dark-light
 ---
-(a) The continuous function $f(x)=\dfrac{1}{x}$ on the non-closed interval $(0,1)$.<br>(b) The function $g(x)=\left\{\begin{array}{l}x,\qquad &\operatorname{if}\ 0\leq x<2,\\ 1,\qquad &\operatorname{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$. 
+(a) The continuous function $f(x)=\dfrac{1}{x}$ on the non-closed interval $(0,1)$.<br>(b) The function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$. 
 :::
 
 :::{todo}
@@ -823,7 +823,7 @@ $$
 and that
 
 $$
-3\leq f'(x)\leq 7\quad\operatorname{for}\quad2\leq x\leq 6.
+3\leq f'(x)\leq 7\quad\text{for}\quad2\leq x\leq 6.
 $$
 
 What are the smallest and largest possible values of $f(6)$?
@@ -1188,7 +1188,7 @@ Turn {numref}`Fig:MinMax:NoteCont` into an applet.
 The continuity of $f$ at the point $c$ is necessary for {prf:ref}`Thm:MinMax:Firstdertest` to work. Indeed, consider the function 
 
 $$
- f(x)=\left\{\begin{array}{l}x^2,\qquad&\operatorname{if}\ x\neq 0\\ 1,\qquad &\operatorname{if}\ x=0.\end{array}\right.
+ f(x)=\left\{\begin{array}{l}x^2,\qquad&\text{if}\ x\neq 0\\ 1,\qquad &\text{if}\ x=0.\end{array}\right.
 $$
 
 Then we see that $f'(x)=2x<0$ for $x<0$, while $f'(x)=2x>0$ for $x>0$. On account of {prf:ref}`Thm:MinMax:Firstdertest` (which we cannot apply here since $f$ is not continuous at $0$) you would expect $f$ to have a local minimum at $0$. However, the function actually has a local maximum there, since for any $-1<x<1$ with $x\neq 0$ we have

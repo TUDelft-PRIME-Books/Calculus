@@ -591,7 +591,7 @@ $$
 From {prf:ref}`Thm:ODE2:Twocomplex` we obtain that the general solution is
 
 $$
-\theta(t)=c_1\cos(rt)+c_2\sin(rt)\quad\operatorname{with}\quad r=\sqrt{\frac{g}{L}}\quad\operatorname{and}\quad c_1,c_2\in\mathbb{R}.
+\theta(t)=c_1\cos(rt)+c_2\sin(rt)\quad\text{with}\quad r=\sqrt{\frac{g}{L}}\quad\text{and}\quad c_1,c_2\in\mathbb{R}.
 $$
 
 So, if (for instance) the starting position of the pendulum is $\theta_0$ and is released with no initial velocity, then this leads to the initial-value problem
@@ -717,7 +717,7 @@ $$
 We obtain the roots $r=-4$ and $r=-9$. By {prf:ref}`Thm:ODE2:Tworeal`, the general solution is 
 
 $$
- x(t)=c_1e^{-4t}+c_2e^{-9t}\quad\operatorname{with}\quad c_1,c_2\in\mathbb{R}.
+ x(t)=c_1e^{-4t}+c_2e^{-9t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
 In order to handle the initial conditions, we evaluate 
@@ -746,7 +746,7 @@ $$
 In this case, we obtain two distinct real roots $r_1=-1$ and $r_2=-25$. The general solution becomes
 
 $$
- x(t)=c_1e^{-t}+c_2e^{-25t}\quad\operatorname{with}\quad c_1,c_2\in\mathbb{R}.
+ x(t)=c_1e^{-t}+c_2e^{-25t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
 In this case, the spring does not oscillate and goes back to its equilibrium position relatively slowly (because of the $e^{-t}$), at least compared to the final one of the upcoming cases. Physically, this makes sense: if you put your spring in a material with a high damping coefficient (say, something like honey), it will go back to its equilibrium position slowly and not oscillate. This case where we have two real roots is, for this reason, known as the **overdamped** case.
@@ -766,7 +766,7 @@ $$
 In this case, we obtain two nonreal roots $r_1=-3+4i$ and $r_2=-3-4i$. The general solution becomes
 
 $$
- x(t)=c_1e^{-3t}\cos(4t)+c_2e^{-3t}\sin(4t)\quad\operatorname{with}\quad c_1,c_2\in\mathbb{R}.
+ x(t)=c_1e^{-3t}\cos(4t)+c_2e^{-3t}\sin(4t)\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
 Because of the cosine and the sine, the solution will keep on oscillating, with decreasing amplitude because of the exponential. Again, this behaviour matches our physical intuition: if the damping coefficient of the medium is low (say, something like air), we expect the solution to keep on oscillating. This case where we have two nonreal roots is, as such, known as the **underdamped** case.
@@ -786,7 +786,7 @@ $$
 In this case, we obtain double root $r=-5$. The general solution becomes
 
 $$
- x(t)=c_1e^{-5t}+c_2te^{-5t}\quad\operatorname{with}\quad c_1,c_2\in\mathbb{R}.
+ x(t)=c_1e^{-5t}+c_2te^{-5t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
 Note that this solution dampes out quicker than both the overdamped case and the underdamped case. Indeed, for the overdamped case the dominant term is $e^{-t}$, for the underdamped case it is $e^{-3t}$, while here it is $te^{-5t}$. For at least some initial conditions, (for instance, when $x(0)=1$ and $x'(0)=-10$) the solution passes through the equilibrium position exactly once, but there is no oscillation involved. Since this case is the transition case between the other cases, it is known as the **critically damped** case.

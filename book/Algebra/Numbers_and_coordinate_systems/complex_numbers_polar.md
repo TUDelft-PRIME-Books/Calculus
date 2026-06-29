@@ -81,7 +81,7 @@ $$
 The argument can't be deduced immediately from a picture, see {numref}`Figure %s <Fig:ComplexNumbers:polarex2>`, but we do see that
 
 $$
-\tan(\arg(w)) = \frac{\operatorname{opposite}}{\operatorname{adjacent}} = \frac{\operatorname{imaginary part}}{\operatorname{real part}} = \frac{3}{2}.
+\tan(\arg(w)) = \frac{\text{opposite}}{\text{adjacent}} = \frac{\text{imaginary part}}{\text{real part}} = \frac{3}{2}.
 $$
 
 Unfortunately, there are no 'pretty' angles of which the tangent is $\frac{3}{2}$. Since $\tan(1)\approx 1.557$, the argument of $w$ is going to be close to $1$. Either by making a good sketch (such as the one in {numref}`Fig:ComplexNumbers:polarex2`) and measuring the angle, or by simply trying some angles close to $1$, we find that an even better approximation would be $\arg(w)\approx 0.98$, since $\tan(0.98)\approx 1.49$.
@@ -140,7 +140,7 @@ If $z=a+bi$ with $a\neq 0$ we have $\tan\left(\arg(z)\right)=\dfrac{b}{a}$. If y
 If the real part is negative, the argument is between $\frac12\pi$ and $\frac32\pi$ (or between $-\frac12\pi$ and $-\frac32\pi$ depending on which direction you want to consider) and outside the range of the arctangent. To get the correct value for the argument in these cases, you have to add or subtract $\pi$ from the arctangent. In particular, we have
 
 $$
- \arg(z)\begin{cases}\arctan\left(\frac{b}{a}\right),&\operatorname{if}\ a>0,\\ \arctan\left(\frac{b}{a}\right)+\pi,&\operatorname{if}\ a<0.\end{cases}
+ \arg(z)\begin{cases}\arctan\left(\frac{b}{a}\right),&\text{if}\ a>0,\\ \arctan\left(\frac{b}{a}\right)+\pi,&\text{if}\ a<0.\end{cases}
 $$
 
 
@@ -820,12 +820,12 @@ Now let us consider $e^{\theta i}$ and expand the series of the exponential func
 
 $$
 \begin{align*}
-e^{\theta i} &= \sum_{n=0}^\infty\frac{(\theta i)^n}{n!} & &\operatorname{Using the series of $e^x$} \\
-&= \sum_{\substack{n=0\\n~{\rm even}}}^\infty\frac{(\theta i)^n}{n!}+\sum_{\substack{n=0\\n~{\rm odd}}}^\infty\frac{(\theta i)^n}{n!} & &\operatorname{Using the odd/even pattern seen above.} \\
-&= \sum_{k=0}^\infty\frac{(\theta i)^{2k}}{(2k)!}+\sum_{l=0}^\infty\frac{(\theta i)^{2l+1}}{(2l+1)!} & &\operatorname{Changing the indices using $n=2k$ and $n=2l+1$.} \\
-&= \sum_{k=0}^\infty(-1)^{k}\frac{\theta^{2k}}{(2k)!}+\sum_{l=0}^\infty(-1)^l\frac{\theta^{2l+1}i}{(2l+1)!} & &\operatorname{Using the alternating patterns seen above.} \\
-&= \sum_{k=0}^\infty(-1)^{k}\frac{\theta^{2k}}{(2k)!}+i\sum_{l=0}^\infty(-1)^l\frac{\theta^{2l+1}}{(2l+1)!} & &\operatorname{Taking $i$ out of the second series.} \\
-&= \cos(\theta)+i\sin(\theta). & &\operatorname{Using the series of $\cos(x)$ and $\sin(x)$.}
+e^{\theta i} &= \sum_{n=0}^\infty\frac{(\theta i)^n}{n!} & &\text{Using the series of}\ e^x \\
+&= \sum_{\substack{n=0\\n~{\rm even}}}^\infty\frac{(\theta i)^n}{n!}+\sum_{\substack{n=0\\n~{\rm odd}}}^\infty\frac{(\theta i)^n}{n!} & &\text{Using the odd/even pattern seen above.} \\
+&= \sum_{k=0}^\infty\frac{(\theta i)^{2k}}{(2k)!}+\sum_{l=0}^\infty\frac{(\theta i)^{2l+1}}{(2l+1)!} & &\text{Changing the indices using $n=2k$ and $n=2l+1$.} \\
+&= \sum_{k=0}^\infty(-1)^{k}\frac{\theta^{2k}}{(2k)!}+\sum_{l=0}^\infty(-1)^l\frac{\theta^{2l+1}i}{(2l+1)!} & &\text{Using the alternating patterns seen above.} \\
+&= \sum_{k=0}^\infty(-1)^{k}\frac{\theta^{2k}}{(2k)!}+i\sum_{l=0}^\infty(-1)^l\frac{\theta^{2l+1}}{(2l+1)!} & &\text{Taking $i$ out of the second series.} \\
+&= \cos(\theta)+i\sin(\theta). & &\text{Using the series of $\cos(x)$ and $\sin(x)$.}
 \end{align*}
 $$
 

@@ -160,7 +160,7 @@ $$
 Two quadratic expressions in $t$ can only be equal when the coefficients for $t^2$ are equal in both expressions, and the coefficients for $t$ are equal in both expressions, and the constant terms are equal in both expressions. As such, we find that $a$, $b$ and $c$ need to satisfy the three equations
 
 $$
- \left\{\begin{array}{lcll}1&=&a,\qquad &(\operatorname{coefficients of }t^2),\\ -3&=&-2a+b,\qquad &(\operatorname{coefficients of }t),\\ 0&=&a-b+c,\qquad &(\operatorname{constant terms}).\end{array}\right.
+ \left\{\begin{array}{lcll}1&=&a,\qquad &(\text{coefficients of }t^2),\\ -3&=&-2a+b,\qquad &(\text{coefficients of }t),\\ 0&=&a-b+c,\qquad &(\text{constant terms}).\end{array}\right.
 $$
 
 Solving these equations gives $a=1$, $b=-1$ and $c=-2$. As such, the curve describes part of the graph of the function $f(x)=x^2-x-2$. 
