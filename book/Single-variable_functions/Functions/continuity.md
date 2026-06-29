@@ -316,7 +316,7 @@ The name Weierstrass Nullstellensatz, named after the German mathematician [Karl
 The assumption that the function $f$ in the Intermediate Value Theorem is continuous is essential. Indeed, consider the function 
 
 $$
- f(x)=\left\{\begin{array}{ll}x+3,&\text{if }\,x\leq 1,\\ 2x+4,&\text{if }\,x>1.\end{array}\right.
+ f(x)=\left\{\begin{array}{ll}x+3,&\operatorname{if }\,x\leq 1,\\ 2x+4,&\operatorname{if }\,x>1.\end{array}\right.
 $$
 
 Then $f$ is not continuous at the point $1$, since the function values jump from $4$ to $6$ there. In addition, even though $f(0)=3$ and $f(2)=8$, there is no value of $x$ with $f(x)=5$.
@@ -555,11 +555,11 @@ Now we consider any point $a$ and we will show that the sine is continuous at $a
 
 $$
  \begin{array}{lcll}|\sin(x)-\sin(a)|&=&|\sin(a)\cos(x-a)+\cos(a)\sin(x-a)-\sin(a)|&\\
- &\leq &|\sin(a)\cos(x-a)-\sin(a)|+|\cos(a)\sin(x-a)|\qquad &\text{using the triangle inequality}\\
+ &\leq &|\sin(a)\cos(x-a)-\sin(a)|+|\cos(a)\sin(x-a)|\qquad &\operatorname{using the triangle inequality}\\
  &=&|\sin(a)||\cos(x-a)-1|+|\cos(a)||\sin(x-a)|&\\
- &\leq &|\cos(x-a)-1|+|\sin(x-a)|&\text{since }|\sin(a)|\leq 1\,\text{ and }\,|\cos(a)|\leq 1\\
- &\leq &\frac{\varepsilon}{2}+|\sin(x-a)|&\text{since }\,0<|x-a|<\delta\leq \delta_1\\
- &\leq &\frac{\varepsilon}{2}+\frac{\varepsilon}{2}&\text{since }\,0<|x-a|<\delta\leq \delta_2\\
+ &\leq &|\cos(x-a)-1|+|\sin(x-a)|&\operatorname{since }|\sin(a)|\leq 1\,\operatorname{ and }\,|\cos(a)|\leq 1\\
+ &\leq &\frac{\varepsilon}{2}+|\sin(x-a)|&\operatorname{since }\,0<|x-a|<\delta\leq \delta_1\\
+ &\leq &\frac{\varepsilon}{2}+\frac{\varepsilon}{2}&\operatorname{since }\,0<|x-a|<\delta\leq \delta_2\\
  &=&\varepsilon&\end{array}
 $$
 
@@ -587,8 +587,9 @@ Let $f$ be a function and suppose that the domain of $f$ contains an open interv
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Substitution`
 :class: tudproof, dropdown
 Consider the function 
+
 $$
- h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a.\end{array}\right.
+ h(x)=\left\{\begin{array}{ll}g(x)&\operatorname{if }\,x\neq a\\ b&\operatorname{if }\,x=a.\end{array}\right.
 $$
 
 Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq a$ we have $f(h(x))=f(g(x))$. Then we find
@@ -684,7 +685,7 @@ $$
 Consider the function 
 
 $$
- f(x)=\left\{\begin{array}{ll}2^x+b&\text{if }\,x< 2,\\ 2b+10&\text{ if }\,x=2,\\ x^2-3x&\text{if }\,x>2.\end{array}\right.
+ f(x)=\left\{\begin{array}{ll}2^x+b&\operatorname{if }\,x< 2,\\ 2b+10&\operatorname{ if }\,x=2,\\ x^2-3x&\operatorname{if }\,x>2.\end{array}\right.
 $$
 
 We want to find out for which value of $b$, if any, the function is continuous. By {prf:ref}`Theorem:Continuity:Standardfunctions` and {prf:ref}`Theorem:Continuity:Basiccomputationrules` the function $f$ is continuous at each point $a$ except possibly at $a=2$. In order to establish when (if ever) $f$ is continuous at $a=2$, we evaluate
@@ -782,7 +783,7 @@ A function is both left and right-continuous at $a$, when both identities $\lim\
 Consider the function
 
 $$
-f(x)=\left\{\begin{array}{ll}3x+4,&\text{if }\,x\leq 0,\\ \ln(x)+3,&\text{if }\,0<x<1,\\ 3-x,&\text{if }\,x\geq 1. \end{array}\right.
+f(x)=\left\{\begin{array}{ll}3x+4,&\operatorname{if }\,x\leq 0,\\ \ln(x)+3,&\operatorname{if }\,0<x<1,\\ 3-x,&\operatorname{if }\,x\geq 1. \end{array}\right.
 $$
 
 We want to find out at which points $f$ is continuous (either regular, left or right). Since the functions $3x+4$, $\ln(x)+3$ and $3-x$ are continuous on their domains, the only problems can arise at the points where we switch between which formula is used to describe the function values, i.e. at $0$ and $1$. We can evaluate
@@ -856,9 +857,6 @@ A function $g(x)$ and a slider for the parameter $b$.
 
 ## Grasple exercises
 
-:::{todo}
-Grasple exercises on left- and right-continuity
-:::
 
 ::::{grasple}
 :iframeclass: dark-light

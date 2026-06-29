@@ -301,7 +301,7 @@ However, on the interval $(-2,2)$ the function is neither non-decreasing, nor no
 Consider the piecewise defined function
 
 $$
-k(t)=\left\{\begin{array}{ll}t-3,\quad&\text{if }t<0,\\ 2,\quad&\text{if }0\leq t\leq 1,\\ t+4,\quad&\text{if }t>1.\end{array}\right.
+k(t)=\left\{\begin{array}{ll}t-3,\quad&\operatorname{if }t<0,\\ 2,\quad&\operatorname{if }0\leq t\leq 1,\\ t+4,\quad&\operatorname{if }t>1.\end{array}\right.
 $$
 
 The graph of this function is shown below.
@@ -966,7 +966,7 @@ This follows directly from the construction of the periodic extension.
 Consider the functions 
 
 $$
- f(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,0\leq x<1,\\ 0,\quad &\mathrm{if}\,1\leq x<4,\end{array}\right.\qquad\text{and}\qquad g(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,2\leq x<3,\\ 0,\quad &\mathrm{if}\,3\leq x<6,\end{array}\right.
+ f(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,0\leq x<1,\\ 0,\quad &\mathrm{if}\,1\leq x<4,\end{array}\right.\qquad\operatorname{and}\qquad g(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,2\leq x<3,\\ 0,\quad &\mathrm{if}\,3\leq x<6,\end{array}\right.
 $$
 
 and let $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ denote their periodic extensions.

@@ -16,7 +16,7 @@ A cauliflower in a refrigerator.
 
 Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling (see {numref}`SubSec:ODE1:SeparableAppl`), it can be shown that $T(t)=T_{\mathrm{env}}+(T(0)-T_{\mathrm{env}})e^{-rt}$. Here, $T_{\mathrm{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
 
-Let us take, for example, $r=1\ \text{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator, which is $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
+Let us take, for example, $r=1\ \operatorname{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator, which is $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
 
 ::::{applet}
 :url: calculus/limits_at_infinity/temperature_of_a_cauliflower
@@ -49,7 +49,7 @@ If either $\lim\limits_{x\rightarrow \infty}f(x)=L$ or $\lim\limits_{x\rightarro
 Instead of writing $\lim\limits_{x\rightarrow \infty}f(x)=L$, we sometimes use the short hand notations
 
 $$
- f(x)\rightarrow L\ \text{as}\ x\rightarrow \infty
+ f(x)\rightarrow L\ \operatorname{as}\ x\rightarrow \infty
 $$
 
 or
@@ -622,7 +622,7 @@ $$
 A very common mistake, is to now write
 
 $$
- \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{2}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\sqrt{\frac{1}{x^2}+1}+\frac{2}{x}}.\qquad\qquad \left(\textbf{INCORRECT}\right)
+ \lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\frac{1}{x}\sqrt{1+x^2}+\frac{2}{x}}=\lim\limits_{x\rightarrow -\infty}\dfrac{\frac{1}{x}+3}{\sqrt{\frac{1}{x^2}+1}+\frac{2}{x}}.\qquad\qquad \left(\operatornamebf{INCORRECT}\right)
 $$
 
 Can you spot the error? The computation would have been correct if we had considered the limit at infinity instead of at minus infinity. Notice that for $x<0$ the expression $\frac{1}{x}\sqrt{1+x^2}$ is negative, while the expression $\sqrt{\frac{1}{x^2}+1}$ is positive, so they can never be equal. Indeed, we can write
@@ -783,7 +783,7 @@ The following result shows an efficient way to find the coefficients of the obli
 If $f$ has an oblique asymptote $y=ax+b$ at infinity, then 
 
 $$
- a=\lim\limits_{x\rightarrow\infty}\frac{f(x)}{x}\qquad\text{and}\qquad b=\lim_{x\rightarrow\infty}\left(f(x)-ax\right).
+ a=\lim\limits_{x\rightarrow\infty}\frac{f(x)}{x}\qquad\operatorname{and}\qquad b=\lim_{x\rightarrow\infty}\left(f(x)-ax\right).
 $$
 
 The corresponding result holds for an oblique asymptote at minus infinity.
@@ -980,11 +980,11 @@ Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $N_1$ in s
 $$
 \begin{array}{lcll}
  |f(x)g(x)-LM| &=& |f(x)g(x)-f(x)M+f(x)M-LM|& \\
- &\leq& |f(x)g(x)-f(x)M|+|f(x)M-LM| \qquad\quad &\left(\text{using the triangle inequality}\right)\\
+ &\leq& |f(x)g(x)-f(x)M|+|f(x)M-LM| \qquad\quad &\left(\operatorname{using the triangle inequality}\right)\\
  &=& |f(x)||g(x)-M|+|M||f(x)-L|& \\
- &\leq& (|L|+1)|g(x)-M|+|M||f(x)-L| \qquad\quad &\left(\text{since }x\geq N_1\text{, which implies }|f(x)|<|L|+1\right)\\
- &\leq& (|L|+1)|g(x)-M|+|M|\frac{\varepsilon}{2(|M|+1)}  &\left(\text{since }x\geq N_1\text{, which implies }|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}\right)\\
- &<& (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)}&\left(\text{since }x\geq N_2\text{, which implies }|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}\right)\\
+ &\leq& (|L|+1)|g(x)-M|+|M||f(x)-L| \qquad\quad &\left(\operatorname{since }x\geq N_1\operatorname{, which implies }|f(x)|<|L|+1\right)\\
+ &\leq& (|L|+1)|g(x)-M|+|M|\frac{\varepsilon}{2(|M|+1)}  &\left(\operatorname{since }x\geq N_1\operatorname{, which implies }|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}\right)\\
+ &<& (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)}&\left(\operatorname{since }x\geq N_2\operatorname{, which implies }|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}\right)\\
  &<& \frac{\varepsilon}{2}+\frac{\varepsilon}{2} &\\
  &=& \varepsilon.&
 \end{array}
@@ -998,8 +998,8 @@ $$
 \begin{array}{lcll}
  \left|\frac{1}{g(x)}-\frac{1}{M}\right| &=& \left|\frac{g(x)-M}{g(x)M}\right| &\\
  &= &\frac{1}{|g(x)|}\frac{1}{|M|}|g(x)-M|\qquad\quad&\\
- &\leq &\frac{2}{|M|}\frac{1}{|M|}|g(x)-M|&\left(\text{since }x\geq N\text{, which implies }\frac{1}{2}|M|\leq |g(x)|\right) \\
- &< &\frac{2}{M^2}\frac{\varepsilon M^2}{2}& \left(\text{since }x\geq N\text{, which implies }|g(x)-M|<\frac{\varepsilon M^2}{2}\right) \\
+ &\leq &\frac{2}{|M|}\frac{1}{|M|}|g(x)-M|&\left(\operatorname{since }x\geq N\operatorname{, which implies }\frac{1}{2}|M|\leq |g(x)|\right) \\
+ &< &\frac{2}{M^2}\frac{\varepsilon M^2}{2}& \left(\operatorname{since }x\geq N\operatorname{, which implies }|g(x)-M|<\frac{\varepsilon M^2}{2}\right) \\
  &= &\varepsilon.&
 \end{array}
 $$
