@@ -493,6 +493,7 @@ Now, finally, we let $r<0$ and consider the function $f(x)=x^r$. Then $f(x)=\fra
 :url: calculus/continuity/continuity_of_sine_and_cosine
 :name: Fig:Continuity:Standardfunctions
 :class: dark-light
+:nonumber:
 
 Circle with centre $O$ and points $A$ and $B$ on its circumference, where $A$ lies on the positive horizontal axis. Triangle $AOB$ is shown with angle $x$ between $OA$ and $OB$. Point $C$ lies on line $OA$, directly below $B$.
 ::::
@@ -639,7 +640,7 @@ Let $f$ and $g$ be functions such that $g$ is one-to-one and continuous on an op
 Suppose first that $\displaystyle\lim_{x\rightarrow a}f(g(x))=L$. Let $\varepsilon>0$ be given. Then we can find $\delta>0$ such that for all $x$ with $0<|x-a|<\delta$ we have 
 
 $$
- |f(g(x))-L|<\varepsilon$.
+ |f(g(x))-L|<\varepsilon.
 $$  
 
 We write $g(I)$ for the set of all values of the form $g(x)$ for $x$ in $I$ and we note that $g(a)$ is in $g(I)$. Since $g$ is one-to-one, the restriction of $g$ from $I$ to $g(I)$ is bijective. Then by {prf:ref}`Theorem:Continuity:Inverse`, the inverse function $g^{-1}$ is continuous on $g(I)$. So we can find $\tilde{\delta}>0$ such that for all $y$ with $0<|y-g(a)|<\tilde{\delta}$ we have 
@@ -702,49 +703,88 @@ So in order for $f$ to be continuous at $2$, we need to have $4+b=-2=2b+10$, i.e
 
 
 
-::::{figure} Images/Fig-Continuity-Secondexample.png
+:::{applet}
+:url: calculus/continuity/investigating_continuity
 :name: Fig:Continuity:Secondexample
 :class: dark-light
 
 The function $f(x)$ and a slider for the parameter $b$. Can you recreate the result of the example using the slider?
 
-::::
+:::
 ::::::
 
-:::{todo}
-Make a poll where the graph of $f(x)=\left\{\begin{array}{ll}-bx^4&\text{if }\,x< 1,\\ b^2&\text{ if }\,x=1,\\ (b+1)x+1&\text{if }\,x>1.\end{array}\right.$ is shown without given the formula describing the function. The applet should have a slider for $b$. The student should find the value(s) of $b$ for which $f$ is continuous. Correct answer: $b=-1$.
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+
+Consider the function $g$ of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider`. The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
+
+_Select all values of $b$ for which $g$ is continuous at $x=1$._
+---
+[ ] $b=-3$.
+> If $b=-3$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}3x^4=3$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}-2x+1=-1$ and $g(1)=9$. Since the two limits are unequal, the function is not continuous at $1$.
+[ ] $b=-2$.
+> If $b=-2$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}2x^4=2$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}-x+1=0$ and $g(1)=4$. Since the two limits are unequal, the function is not continuous at $1$.
+[x] $b=-1$.
+> Indeed, if $b=-1$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}x^4=1$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}1=1$ and $g(1)=1$. Since the two limits are equal to each other and equal to $g(1)$, the function is continuous at $1$.
+[ ] $b=0$.
+> If $b=0$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}0=0$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}x+1=2$ and $g(1)=0$. Since the two limits are unequal, the function is not continuous at $1$.
+[ ] $b=1$.
+> If $b=1$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-x^4=-1$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}2x+1=3$ and $g(1)=1$. Since the two limits are unequal, the function is not continuous at $1$.
+[ ] $b=2$.
+> If $b=2$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-2x^4=-2$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}3x+1=4$ and $g(1)=4$. Since the two limits are unequal, the function is not continuous at $1$.
+[ ] $b=3$.
+> If $b=3$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-3x^4=-3$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}4x+1=5$ and $g(1)=9$. Since the two limits are unequal, the function is not continuous at $1$.
+---
+
+:::{applet}
+:url: calculus/continuity/investigating_continuity_2
+:name: Fig:Continuity:PollQuestionSlider
+:class: dark-light
+
+A function $g(x)$ and a slider for the parameter $b$.
+
 :::
+::::
 
 
 (Subsec:ContLeftRight)=
 
 ## Left and right continuity
 
-Consider the function from {prf:ref}`Ex:Continuity:Visual`. We saw that this function was not continuous at $-2$, since the left and right limit were unequal. However, we can read off from the graph that $\lim\limits_{x\rightarrow 2^-}f(x)=f(-2)$. So if we ignore the part of the function to the right of $-2$, the function is continuous. We say that the function is **left continuous** at $-2$. Although left continuity (and the corresponding **right continuity**) is a bit weaker than regular continuity, it is still a useful concept to consider.
+Consider the function from {prf:ref}`Ex:Continuity:Visual`. We saw that this function was not continuous at $-2$, since the left and right limit were unequal. However, we can read off from the graph that $\lim\limits_{x\rightarrow 2^-}f(x)=f(-2)$. So if we ignore the part of the function to the right of $-2$, the function is continuous. We say that the function is **left-continuous** at $-2$. Although left continuity (and the corresponding **right continuity**) is a bit weaker than regular continuity, it is still a useful concept to consider.
 
 ::::::{prf:definition} Left and right continuity
 :label: Def:Continuity:Continuityleftright
 
-Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **left continuous** at $a$ if $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$. 
+Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **left-continuous** at $a$ if $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$. 
 
-Similarly, we say that $f$ is **right continuous** at $a$ if $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$. 
+Similarly, we say that $f$ is **right-continuous** at $a$ if $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$. 
 ::::::
 
 ::::::{prf:corollary} 
 :label: Thm:Continuity:Continuityleftright
 
-Suppose that the domain of $f$ contains an open interval $(b,c)$ and let $a$ in $(b,c)$. Then $f$ is continuous at $a$ precisely when $f$ is both left and right continuous at $a$.
+Suppose that the domain of $f$ contains an open interval $(b,c)$ and let $a$ in $(b,c)$. Then $f$ is continuous at $a$ precisely when $f$ is both left and right-continuous at $a$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Continuity:Continuityleftright`
 :class: tudproof
-A function is both left and right continuous at $a$, when both identities $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$ and $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$ hold. By {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` this happens precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$, i.e. when $f$ is continuous at $a$.
+A function is both left and right-continuous at $a$, when both identities $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$ and $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$ hold. By {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` this happens precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$, i.e. when $f$ is continuous at $a$.
 :::
 
 ::::::{prf:example} 
 :label: Example:Continuity:Continuityleftright
 
-Consider the function $f(x)=\left\{\begin{array}{ll}3x+4,&\text{if }\,x\leq 0\\ \ln(x)+3,&\text{if }\,0<x<1\\ 3-x,&\text{if }\,x\geq 1. \end{array}\right.$
+Consider the function
+
+$$
+f(x)=\left\{\begin{array}{ll}3x+4,&\text{if }\,x\leq 0,\\ \ln(x)+3,&\text{if }\,0<x<1,\\ 3-x,&\text{if }\,x\geq 1. \end{array}\right.
+$$
+
 We want to find out at which points $f$ is continuous (either regular, left or right). Since the functions $3x+4$, $\ln(x)+3$ and $3-x$ are continuous on their domains, the only problems can arise at the points where we switch between which formula is used to describe the function values, i.e. at $0$ and $1$. We can evaluate
 
 \begin{align*}
@@ -753,7 +793,7 @@ We want to find out at which points $f$ is continuous (either regular, left or r
   f(0)&=4.
 \end{align*}
 
-Hence, the limit $\lim\limits_{x\rightarrow 0}f(x)$ does not exist, so the function is not continuous at $0$. However, we do find that $\lim\limits_{x\rightarrow 0^-}f(x)=f(0)$. As such, the function is left continuous at $0$ (but not right continuous).
+Hence, the limit $\lim\limits_{x\rightarrow 0}f(x)$ does not exist, so the function is not continuous at $0$. However, we do find that $\lim\limits_{x\rightarrow 0^-}f(x)=f(0)$. As such, the function is left-continuous at $0$ (but not right-continuous).
 
 Similarly, we can evaluate
 
@@ -763,9 +803,10 @@ Similarly, we can evaluate
   f(1)&=2.
 \end{align*}
 
-Hence, the limit $\lim\limits_{x\rightarrow 1}f(x)$ does not exist, so the function is not continuous at $1$. However, we do find that $\lim\limits_{x\rightarrow 1^+}f(x)=f(1)$. As such, the function is right continuous at $1$ (but not left continuous).
+Hence, the limit $\lim\limits_{x\rightarrow 1}f(x)$ does not exist, so the function is not continuous at $1$. However, we do find that $\lim\limits_{x\rightarrow 1^+}f(x)=f(1)$. As such, the function is right-continuous at $1$ (but not left-continuous).
 
-::::{figure} Images/Fig-Continuity-Continuityleftright.png
+::::{applet}
+:url: calculus/continuity/continuity_from_the_right
 :name: Fig:Continuity:Continuityleftright
 :class: dark-light
 
@@ -774,92 +815,129 @@ The function $f$ as an example for continuity from the right.
 
 ::::::
 
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+
+Consider the function $g$ of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider2`. The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
+
+_Select all values of $b$ for which $g$ is not continuous at $x=1$, but is continuous from the right or from the left._
+---
+[ ] $b=-3$.
+> If $b=-3$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}3x^4=3$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}-2x+1=-1$ and $g(1)=9$. Since the two limits are unequal, the function is not continuous at $1$. None of the two limits are equal to $g(1)$, so the function is neither left nor right-continuous at $1$.
+[ ] $b=-2$.
+> If $b=-2$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}2x^4=2$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}-x+1=0$ and $g(1)=4$. Since the two limits are unequal, the function is not continuous at $1$. None of the two limits are equal to $g(1)$, so the function is neither left nor right-continuous at $1$.
+[ ] $b=-1$.
+> Indeed, if $b=-1$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}x^4=1$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}1=1$ and $g(1)=1$. Since the two limits are equal to each other and equal to $g(1)$, the function is continuous at $1$.
+[x] $b=0$.
+> If $b=0$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}0=0$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}x+1=2$ and $g(1)=0$. Since the two limits are unequal, the function is not continuous at $1$. Since the limit from the left is equal to $g(1)$, the function is left-continuous at $1$ (but not right-continuous).
+[ ] $b=1$.
+> If $b=1$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-x^4=-1$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}2x+1=3$ and $g(1)=1$. Since the two limits are unequal, the function is not continuous at $1$. None of the two limits are equal to $g(1)$, so the function is neither left nor right-continuous at $1$.
+[x] $b=2$.
+> If $b=2$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-2x^4=-2$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}3x+1=4$ and $g(1)=4$. Since the two limits are unequal, the function is not continuous at $1$. Since the limit from the right is equal to $g(1)$, the function is right-continuous at $1$ (but not left-continuous).
+[ ] $b=3$.
+> If $b=3$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-3x^4=-3$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}4x+1=5$ and $g(1)=9$. Since the two limits are unequal, the function is not continuous at $1$. None of the two limits are equal to $g(1)$, so the function is neither left nor right-continuous at $1$.
+---
+
+:::{applet}
+:url: calculus/continuity/investigating_continuity_2
+:name: Fig:Continuity:PollQuestionSlider2
+:class: dark-light
+
+A function $g(x)$ and a slider for the parameter $b$.
+
+:::
+::::
+
 (Subsec:ContinuityGrasple)=
 
 ## Grasple exercises
 
 :::{todo}
-Grasple exercises on left- and right continuity
+Grasple exercises on left- and right-continuity
 :::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/516eefd5-6e4d-42f0-9cf7-ea54159a3262?id=126101
-:label: Grasple:Continuity:Piecewisemakingcont
+:label: Grasple:126101
 :dropdown:
-:description: Continuity of piecewise defined function
+:description: Continuity of piecewise defined function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/2e8691ba-b5cd-48c7-bbc5-ca6a94481eda?id=126174
-:label: Grasple:Continuity:Piecewisenotccontwithlimit
+:label: Grasple:126174
 :dropdown:
-:description: Continuity of piecewise defined function
+:description: Continuity of piecewise defined function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/445e61d2-3524-494b-b2de-86e6ce4afdfb?id=71061
-:label: Grasple:Continuity:Piecewisenotccontnolimit
+:label: Grasple:71061
 :dropdown:
-:description: Continuity of piecewise defined function
+:description: Continuity of piecewise defined function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/720c95b4-58da-476e-a7a6-489a0c11c98e?id=71067
-:label: Grasple:Continuity:Piecewisecont
+:label: Grasple:71067
 :dropdown:
-:description: Continuity of piecewise defined function
+:description: Continuity of piecewise defined function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/1a52582e-aa31-4c85-907e-8f9d2dbfa64a?id=71084
-:label: Grasple:Continuity:Rounding
+:label: Grasple:71084
 :dropdown:
-:description: Continuity of rounding function
+:description: Continuity of rounding function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/7a20b481-0633-4bbe-9ddd-ab543f3a8419?id=71860
-:label: Grasple:Continuity:Fractionalpart
+:label: Grasple:71860
 :dropdown:
-:description: Continuity of fractional part
+:description: Continuity of fractional part.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/c142b871-cbf8-4b80-8d9e-4482a373fed3?id=71152
-:label: Grasple:Continuity:Sin1overx
+:label: Grasple:71152
 :dropdown:
-:description: Continuity of $\sin\left(\frac{1}{x}\right)$
+:description: Continuity of $\sin\left(\frac{1}{x}\right)$.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/d41b9b5f-ed30-4ff7-bf03-8fad78f2dc14?id=71154
-:label: Grasple:Continuity:xsin1overx
+:label: Grasple:71154
 :dropdown:
-:description: Continuity of $x\sin\left(\frac{1}{x}\right)$
+:description: Continuity of $x\sin\left(\frac{1}{x}\right)$.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/db5adbfb-cc9f-4fdb-9192-204dad31bddd?id=70561
-:label: Grasple:Continuity:product
+:label: Grasple:70561
 :dropdown:
-:description: Continuity of product function
+:description: Continuity of product function.
 
 ::::
 
@@ -867,82 +945,83 @@ Grasple exercises on left- and right continuity
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/e5d12e97-b986-442c-9352-e38d034d61c7?id=130757
-:label: Grasple:Continuity:leftright1
+:label: Grasple:130757
 :dropdown:
-:description: Left and right continuity
+:description: Left- and right-continuity.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/8a96a8e7-62aa-40dc-bb17-2b3a76f579cd?id=130761
-:label: Grasple:Continuity:leftright2
+:label: Grasple:130761
 :dropdown:
-:description: Left and right continuity
+:description: Left- and right-continuity.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/50052d0d-a89a-4096-9d81-72c898a37d50?id=74182
-:label: Grasple:Continuity:Inflimitinsidecontsinexp
+:label: Grasple:74182
 :dropdown:
-:description: Limit at infinity involving sines and exponentials
+:description: Limit at infinity involving sines and exponentials.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/69d04f22-bf0e-4c08-ab3e-3644096d2ffe?id=74229
-:label: Grasple:Continuity:Inflimitinsidecontcoslog
+:label: Grasple:74229
 :dropdown:
-:description: Limit at infinity involving cosines and logarithms
+:description: Limit at infinity involving cosines and logarithms.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/99ca75a4-5529-4236-96e4-612120d08955?id=75748
-:label: Grasple:Continuity:Inflimitinsidecontcosexp
+:label: Grasple:75748
 :dropdown:
-:description: Limit at infinity involving cosines and exponentials
+:description: Limit at infinity involving cosines and exponentials.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/4f72dd27-5d72-47a2-8ef1-f11f6c49ea7a?id=74228
-:label: Grasple:Continuity:Inflimitinsidecontratexp
+:label: Grasple:74228
 :dropdown:
-:description: Limit at infinity involving exponentials
+:description: Limit at infinity involving exponentials.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/987e6761-2501-491b-b264-d649431f68ad?id=75627
-:label: Grasple:Continuity:Inflimitinside+squeeze
+:label: Grasple:75627
 :dropdown:
-:description: Limit at infinity (inverse) trigonometric function
+:description: Limit at infinity (inverse) trigonometric function.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/ed59a9d8-4ba9-4d64-a252-1314e8265571?id=130748
-:label: Grasple:Continuity:IVTroot
+:label: Grasple:130748
 :dropdown:
-:description: Location of root of polynomial
+:description: Location of root of polynomial.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/3e95271d-2875-4061-96e4-53be7714d50b?id=71159
-:label: Grasple:Continuity:IVTGamma
+:label: Grasple:71159
 :dropdown:
-:description: The Gamma function
+:description: The Gamma function,
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/498dd0b8-dee0-4907-978e-ac7abda596a8?id=71156
-:label: Grasple:Continuity:IVTtemperature
+:label: Grasple:71156
 :dropdown:
-:description: Application: temperature on Earth
+:description: Application: temperature on Earth.
 ::::
+
