@@ -8,20 +8,12 @@ Almost all functions we have encountered so far have the useful property that it
 
 In science and engineering, most variables depend on each other in a continuous way. However, that does not always need to be the case. Consider, for instance, an electrical circuit, shown in {numref}`Fig:Continuity-Circuit` where a DC voltage source is connected to a resistor and a capacitor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the current through the capacitor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. As such, the current as a function of time is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
 
-```{figure} Images/Fig-Continuity-Circuit.png
----
-class: dark-light
-name: Fig:Continuity-Circuit
-
-placement: caption
----
+:::{applet}
+:url: calculus/continuity/electrical_circuit
+:name: Fig:Continuity-Circuit
+:class: dark-light
 
 The circuit described above with a resistor with resistance $R$ and a capacitor with capacitance $C$, where a voltage source of size $V_s$ is turned on at $t=0$. The resulting current $i(t)$ across the capacitor is not continuous at $t=0$.
-```
-
-:::{todo}
-Make an applet of this figure. 
-Hierbij ook nog een schets van de current i(t) (0 voor $t<0$, daarna van de vorm $\frac{V_s}{R}exp(-t)$, maar geef maar geen maatvoering op de assen)
 :::
 
 (Subsec:ContProp)=
@@ -66,18 +58,13 @@ You might be tempted to think that this definition means that a function $f$ is 
 :label: Ex:Continuity:Visual
 Consider the function $f$ of which the graph is shown below.
 
-::::{figure} Images/Fig-Continuity-Visual.png
+::::{applet}
+:url: calculus/continuity/some_function
 :name: Fig:Continuity:Visual
 :class: dark-light
 
 Some function $f$.
 
-::::
-
-::::{todo}
-Make this figure into an applet. The part for $x\geq 1$, this should be $3-2(x-1)$. Also make a hold at $x=2$.
-
-Do not mention in the final applet/image which function is shown here.
 ::::
 
 Can we read off from the graph at which points the function is continuous? Well, for almost all points $a$ there is no problem: the limit $\lim\limits_{x\rightarrow a}f(x)$ always exists and is equal to $f(a)$. Only the points $a=-2$, $a=-1$, $a=1$ and $a=2$ are potentially problematic. 
@@ -86,7 +73,7 @@ At $x=-2$ the left and right limits exist, but are unequal, so the limit $\lim\l
 
 At $x=-1$, the limit exists, as the left and right limits exist and are equal. However, we read off that $\lim\limits_{x\rightarrow -1}f(x)=1$, while $f(1)=-3$. So at this point, the limit exists, but is unequal to the function value. As such, $f$ is not continuous at $-1$.
 
-At $x=1$ the left and right limit are both equal to $1$ and we see that $f(1)=1$ as well. So the limit exists, and is equal to the function value. Hence, $f$ is continuous at $x=1$. You might notice that the function has a sharp edge, but this does not influence the continuity (it does, on the other hand, influence the differentiability of the function, see {numref}`Section:Differentiability`).
+At $x=1$ the left and right limit are both equal to $3$ and we see that $f(1)=3$ as well. So the limit exists, and is equal to the function value. Hence, $f$ is continuous at $x=1$. You might notice that the function has a sharp edge, but this does not influence the continuity (it does, on the other hand, influence the differentiability of the function, see {numref}`Section:Differentiability`).
 
 Finally, at $x=2$ the left and right limit exist and are equal, so the limit $\lim\limits_{x\rightarrow 2}f(x)$ exists. However, the point $x=2$ is not in the domain of $f$, so $f$ is neither continuous nor discontinuous at that point. It is simply undefined there.
 
@@ -103,36 +90,34 @@ We conclude that $f$ is continuous at all points except $-2$ and $-1$.
 :class: question
 :showanswer:
 :columns: 1
-Consider the function $f$ of which the graph shown below.
-:::{figure} Images/Fig-Continuity-Graph.png
+Consider the function $g$ of which the graph shown below.
+
+
+Select all values of $a$ for which $g$ is discontinuous at $a$.
+---
+[x] $a=-2$
+> Here the left limit $\displaystyle\lim_{x\rightarrow -2^-}g(x)$ does not exist. As such, $g $ is discontinuous at this point.
+
+[ ] $a=-1$
+> Here the graph of $g$ makes a sharp turn, but the left limit, right limit and function value at $-1$ still coincide. This means that $g$ is continuous at $-1$.
+
+[ ] $a=0$
+> The function is undefined at $0$. Discontinuity is only defined for points in the domain of $g$.
+
+[x] $a=1$.
+> Here the left limit $\displaystyle\lim_{x\rightarrow 1^-}g(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 1^+}g(x)$ exist and are equal, so the limit $\displaystyle\lim_{x\rightarrow 1}g(x)$ exists. However, this limit is unequal to $g(1)$, so $g$ is discontinuous at $1$.
+
+[x] $a=2$
+> Here the left limit $\displaystyle\lim_{x\rightarrow 2^-}g(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 2^+}g(x)$ exist, but are unequal, so the limit $\displaystyle\lim_{x\rightarrow 2}f(x)$ does not exist. Hence, $g$ is discontinuous at $2$.
+---
+:::{applet}
+:url: calculus/continuity/some_other_function
 :name: Fig:Continuity:Graphpoll
 :class: dark-light
 
-Some function $f$.
+Some function $g$.
 
 :::
-
-:::{todo}
-Turn {numref}`Fig:Continuity:Graphpoll` into an applet.
-:::
-
-Select all values of $a$ for which $f$ is discontinuous at $a$.
----
-[x] $a=-2$
-> Here the left limit $\displaystyle\lim_{x\rightarrow -2^-}f(x)$ does not exist. As such, $f$ is discontinuous at this point.
-
-[ ] $a=-1$
-> Here the graph of $f$ makes a sharp turn, but the left limit, right limit and function value at $-1$ still coincide. This means that $f$ is continuous at $-1$.
-
-[ ] $a=0$
-> The function is undefined at $0$. Discontinuity is only defined for points in the domain of $f$.
-
-[x] $a=1$.
-> Here the left limit $\displaystyle\lim_{x\rightarrow 1^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 1^+}f(x)$ exist and are equal, so the limit $\displaystyle\lim_{x\rightarrow 1}f(x)$ exists. However, this limit is unequal to $f(1)$, so $f$ is discontinuous at $1$.
-
-[x] $a=2$
-> Here the left limit $\displaystyle\lim_{x\rightarrow 1^-}f(x)$ and the right limit $\displaystyle\lim_{x\rightarrow 1^+}f(x)$ exist, but are unequal, so the limit $\displaystyle\lim_{x\rightarrow 1}f(x)$ does not exist. Hence, $f$ is discontinuous at $1$.
----
 ::::
 
 
@@ -212,8 +197,12 @@ Now in order to establish the continuity of $f$, we note that for each $1\leq k\
 :label: Ex:Continuity:ContPoly
 Consider the rational function $f(x)=\dfrac{x^2+1}{x^2-1}$. Then we have $f=\dfrac{g}{h}$ with $g(x)=x^2+1$ and $h(x)=x^2-1$. The functions $g$ and $h$ are polynomial functions, so they are continuous on $\mathbb{R}$ by {prf:ref}`Theorem:Continuity:ContPoly`. So by {prf:ref}`Theorem:Continuity:Basiccomputationrules` the function $f$ is continuous at each point $a$ with $h(a)\neq 0$. We see that $h(a)=0$ precisely when $a=1$ or $a=-1$. So $f$ is continuous on its maximal domain, which is the set of all $a$ in $\mathbb{R}$ except $a=1$ and $a=-1$. At these two points, $f$ is undefined, so it neither continuous nor discontinuous.
 
-:::{todo}
-Make an applet with the graph of $f$.
+:::{applet}
+:url: calculus/continuity/rational_function
+:name: Fig:Continuity:ContPoly
+:class: dark-light
+
+The graph of the rational function $f(x)=\dfrac{x^2+1}{x^2-1}$, which is continuous on its maximal domain $\mathbb{R}\setminus\{-1,1\}$.
 :::
 
 ::::::
@@ -257,17 +246,22 @@ We conclude that $d-\varepsilon<f(c)<d+\varepsilon$. Since these inequalities ho
 
 :::
 
-::::{figure} Images/Fig-Continuity-IVT.png
+::::{prf:example}
+:label: Ex:Continuity:IVTillustration
+
+To illustrate {prf:ref}`Theorem:Continuity:IVT`, consider the function $f$ shown in {numref}`Fig:Continuity:IVT`. For the two selected points $(a,f(a))$ and $(b,f(b))$, all parts of the function $f$ that lie on the graph between $(a,f(a))$ and $(b,f(b))$ and have a value between $f(a)$ and $f(b)$ are shown in a different color and with a thicker line.
+
+Try to drag the points $(a,f(a))$ and $(b,f(b))$ along the curve to see how the function $f$ takes on all values in between $f(a)$ and $f(b)$.
+
+:::{applet}
+:url: calculus/continuity/illustration_of_IVT
 :name: Fig:Continuity:IVT
 :class: dark-light
 
 A function $f$ to illustrate {prf:ref}`Theorem:Continuity:IVT`.
-::::
+:::
 
-::::{note}
-:name: Note:Continuity:IVTlabels
-
-In this applet/figure, do not add labels for the function $f$. Label the point $0$ as $a$ and the point $\pi$ as $b$. In both pictures, the lines $y=\frac{1}{2}$ and $y=-\frac{1}{2}$ should be labeled as $f(a)$ and $f(b)$ respectively. In the left picture, the line $y=\frac{1}{4}$, should be labeled as $d$, along with the corresponding vertical line labeled as $c$. In the right picture, the line $y=0.7$, labeled as $d$, along with the two corresponding vertical lines labeled as $c_1$ and $c_2$.
+Also note that there are combinations of $(a,f(a))$ and $(b,f(b))$ for which the function $f$ can take on a value $d$ between $f(a)$ and $f(b)$ at more than one point between $(a,f(a))$ and $(b,f(b))$.
 ::::
 
 The Intermediate Value Theorem can be used to show that certain equations have a solution, even if finding this solution is very hard, or even impossible.
@@ -277,7 +271,8 @@ The Intermediate Value Theorem can be used to show that certain equations have a
 
 Suppose we want to show that the equation $x^5-8x^3+2x^2+1=0$ has at least $1$ solution between $0$ and $1$. Unless you are very lucky, it is impossible to find an explicit expression for a root of a polynomial of degree $5$. Here, we can use the Intermediate Value Theorem. Indeed, note that the function $f(x)=x^5-8x^3+2x^2+1$ is continuous on the interval $[0,1]$ as it is a polynomial. Moreover, we can compute that $f(0)=1$ and $f(1)=-4$. By the Intermediate Value Theorem, $f$ must take on any value in between $1$ and $-4$ on the interval $[0,1]$. Since $0$ is in between these values, there must be some $c$ in $[0,1]$ with $f(c)=c^5-8c^3+2c^2+1=0$. As such, the equation $x^5-8x^3+2x^2+1=0$ has at least one solution between $0$ and $1$.
 
-::::{figure} Images/Fig-Continuity-IVTex.png
+::::{applet}
+:url: calculus/continuity/finding_roots_with_IVT
 :name: Fig:Continuity:IVTex
 :class: dark-light
 
@@ -286,6 +281,11 @@ The function $f$ with supporting horizontal and vertical lines that we can use w
 
 
 We could even try to find a better approximation for what the value of $c$ is. Indeed, we can divide the interval $[0,1]$ into two pieces $\left[0,\frac{1}{2}\right]$ and $\left[\frac{1}{2},1\right]$. Note that $f\left(\frac{1}{2}\right)=\frac{33}{32}>0$. So on the interval $\left[\frac{1}{2},1\right]$, $f$ changes from positive to negative, which means that on this interval it must be equal to $0$ somewhere. As such, there is a solution to $x^5-8x^3+2x^2+1=0$ in between $\frac{1}{2}$ and $1$. We can continue this process of dividing the interval in two pieces and looking on which of these intervals we can still apply the Intermediate Value Theorem. The longer we continue this process, the closer we will be to the actual value of the solution. However, we cannot use this method to find the exact value of the solution, as we can only perform finitely many computations.
+
+
+This idea of finding roots can be used in general to find roots of continuous functions, which is the basis of the bisection method, which will be treated in more detail in {numref}`Sec:IterativeMethodsForVariousProblems`.
+
+Note also that the value of function in  the left and the right endpoints of the interval $[a,b]$ do need to be of opposite sign to be sure that the function has a root in between.
 ::::::
 
 
@@ -308,28 +308,46 @@ Since $f(a)$ and $f(b)$ have opposite signs, the number $0$ must be in between t
 The name Weierstrass Nullstellensatz, named after the German mathematician [Karl Theodor Wilhelm Weierstrass (1815-1897)](https://en.wikipedia.org/wiki/Karl_Weierstrass) is sometimes used for either {prf:ref}`Theorem:Continuity:IVT` or {prf:ref}`Cor:Continuity:IVT`. Usually, the Weierstrass Nullstellensatz refers to a version of Bolzano's Theorem specifically for polynomials with coefficients in a [real closed field](https://en.wikipedia.org/wiki/Real_closed_field)
 :::
 
-:::{todo}
-Interactive element: let students enter function plus left and right endpoint plus number of steps. Check if $f(a)f(b)<0$. If so, let students select correct interval $[a,...]$ or $[...,b]$ in which the root is. Then split this new interval up again and same question. After each step, show the graph of $f$ on the chosen interval. Could be either an applet or something in python?
-:::
 
 ::::::{prf:example} 
 :label: Ex:Continuity:IVTnoncont
+:class: full-width
 
 The assumption that the function $f$ in the Intermediate Value Theorem is continuous is essential. Indeed, consider the function 
 
 $$
- f(x)=\left\{\begin{array}{ll}x+3,&\text{if }\,x\leq 1\\ 2x+4,&\text{if }\,x>1.\end{array}\right.
+ f(x)=\left\{\begin{array}{ll}x+3,&\text{if }\,x\leq 1,\\ 2x+4,&\text{if }\,x>1.\end{array}\right.
 $$
 
 Then $f$ is not continuous at the point $1$, since the function values jump from $4$ to $6$ there. In addition, even though $f(0)=3$ and $f(2)=8$, there is no value of $x$ with $f(x)=5$.
 
 It is also important that the function is defined in each point of the closed interval $[a,b]$. Indeed, consider the function $g(x)=\frac{1}{x}$. Then $g$ is continuous on its maximal domain (as it is the quotient of two polynomials), which does not include $x=0$. Note that $f(-1)=-1$ and $f(1)=1$. However, there is no $x$ in between $-1$ and $1$ with $f(x)=0$.
 
-::::{figure} Images/Fig-Continuity-IVTnoncont.png
+::::{figure-start}
 :name: Fig:Continuity:IVTnoncont
-:class: dark-light
 
 The function $f$ on the left, the function $g$ on the right.
+::::
+
+::::{grid} 2 2 2 2
+
+:::{grid-item}
+```{applet}
+:url: calculus/continuity/continuity_for_IVT_1 
+:class: dark-light
+```
+:::
+
+:::{grid-item}
+```{applet}
+:url: calculus/continuity/continuity_for_IVT_2
+:class: dark-light
+```
+:::
+
+::::
+
+::::{figure-end}
 ::::
 
 ::::::
@@ -385,7 +403,7 @@ If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continu
 
 ::::::
 
-:::{prf:example} Example of one-to-one function where continuity at point does not carry over to inverse
+::::{prf:example} Example of one-to-one function where continuity at point does not carry over to inverse
 :label: Example:Continuity:InverseDiscontinuity
 :class: dropdown
 
@@ -399,10 +417,17 @@ Finally, we claim that $f^{-1}$ is not continuous at $0$. Note that $f^{-1}(0)=0
 
 So if a one-to-one function is continuous on an interval, then its inverse is continuous on the corresponding interval as well {prf:ref}`Theorem:Continuity:Inverse`, but this is no longer true when we only look at continuity in a single point.
 
-:::{todo}
-Hier ook nog een schets van de functie, met alle discrete waarden als gevulde stippen gehighlight en alle gaten met open stippen.
+:::{applet}
+:url: calculus/continuity/continuity_and_inverse
+:name: Fig:Continuity:InverseDiscontinuity
+:class: dark-light
+
+
+A graph of the function $f$ from {prf:ref}`Example:Continuity:InverseDiscontinuity`, which is continuous at $0$, but whose inverse is not continuous at $0$.
 :::
-:::
+
+
+::::
 
 With all these preparations in hand, we are ready to show that most standard functions are continuous.
 
@@ -464,11 +489,13 @@ Now, finally, we let $r<0$ and consider the function $f(x)=x^r$. Then $f(x)=\fra
 
 **Continuity of $\sin(x)$ and $\cos(x)$:** Now consider the function $f(x)=\sin(x)$. We will first show that $f$ is continuous in $0$ by showing that $\lim\limits_{x\rightarrow 0}\sin(x)=\sin(0)=0$. For this, we will show that $|\sin(x)|\leq |x|$ for all $-\frac{\pi}{2}<x<\frac{\pi}{x}$, which will allow us to use the squeeze theorem. First consider $x$ with $0<x<\frac{\pi}{2}$. We consider a circle with radius $1$, centered around the origin $O$. Then we consider two points $A$ and $B$ on the circle such that the angle between the line pieces $OA$ and $OB$ is exactly $x$, as shown in the figure below.
 
-::::{figure} Images/Fig-Continuity-Standardfunctions.svg
+::::{applet}
+:url: calculus/continuity/continuity_of_sine_and_cosine
 :name: Fig:Continuity:Standardfunctions
 :class: dark-light
+:nonumber:
 
-Circle with centre O and points A and B on its circumference, where A lies on the positive $x$-axis. Triangle AOB is shown with angle $x$ between OA and OB. Point C lies on line OA, directly below B.
+Circle with centre $O$ and points $A$ and $B$ on its circumference, where $A$ lies on the positive horizontal axis. Triangle $AOB$ is shown with angle $x$ between $OA$ and $OB$. Point $C$ lies on line $OA$, directly below $B$.
 ::::
 
 Consider the point $C$ that lies on the line piece $OA$ in such a way that the triangle $OCB$ is a right triangle. By the geometric definition of the sine, we have $\sin(x)=\frac{|BC|}{|OB|}=|BC|$, since $B$ lies on the circle with radius $1$ and center $O$. Note that $C$ is the closest point to $B$ on the line through $O$ and $A$, since the line piece $BC$ is orthogonal to the line piece $OA$. As such, we must have $|BC|\leq |BA|$. The length of the part of the circle from $A$ to $B$ is exactly $\frac{x}{2\pi}$ times the total circumference of the circle. Since the circle has radius $1$, this length is $\frac{x}{2\pi}2\pi=x$. Since $|AB|$ is the distance between $A$ and $B$, and $x$ is the length of a different path from $A$ to $B$ (namely the one following the circle), we must have $|AB|\leq x$. Combining the inequalities gives 
@@ -613,7 +640,7 @@ Let $f$ and $g$ be functions such that $g$ is one-to-one and continuous on an op
 Suppose first that $\displaystyle\lim_{x\rightarrow a}f(g(x))=L$. Let $\varepsilon>0$ be given. Then we can find $\delta>0$ such that for all $x$ with $0<|x-a|<\delta$ we have 
 
 $$
- |f(g(x))-L|<\varepsilon$.
+ |f(g(x))-L|<\varepsilon.
 $$  
 
 We write $g(I)$ for the set of all values of the form $g(x)$ for $x$ in $I$ and we note that $g(a)$ is in $g(I)$. Since $g$ is one-to-one, the restriction of $g$ from $I$ to $g(I)$ is bijective. Then by {prf:ref}`Theorem:Continuity:Inverse`, the inverse function $g^{-1}$ is continuous on $g(I)$. So we can find $\tilde{\delta}>0$ such that for all $y$ with $0<|y-g(a)|<\tilde{\delta}$ we have 
@@ -676,49 +703,88 @@ So in order for $f$ to be continuous at $2$, we need to have $4+b=-2=2b+10$, i.e
 
 
 
-::::{figure} Images/Fig-Continuity-Secondexample.png
+:::{applet}
+:url: calculus/continuity/investigating_continuity
 :name: Fig:Continuity:Secondexample
 :class: dark-light
 
 The function $f(x)$ and a slider for the parameter $b$. Can you recreate the result of the example using the slider?
 
-::::
+:::
 ::::::
 
-:::{todo}
-Make a poll where the graph of $f(x)=\left\{\begin{array}{ll}-bx^4&\text{if }\,x< 1,\\ b^2&\text{ if }\,x=1,\\ (b+1)x+1&\text{if }\,x>1.\end{array}\right.$ is shown without given the formula describing the function. The applet should have a slider for $b$. The student should find the value(s) of $b$ for which $f$ is continuous. Correct answer: $b=-1$.
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+
+Consider the function $g$ of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider`. The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
+
+_Select all values of $b$ for which $g$ is continuous at $x=1$._
+---
+[ ] $b=-3$.
+> If $b=-3$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}3x^4=3$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}-2x+1=-1$ and $g(1)=9$. Since the two limits are unequal, the function is not continuous at $1$.
+[ ] $b=-2$.
+> If $b=-2$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}2x^4=2$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}-x+1=0$ and $g(1)=4$. Since the two limits are unequal, the function is not continuous at $1$.
+[x] $b=-1$.
+> Indeed, if $b=-1$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}x^4=1$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}1=1$ and $g(1)=1$. Since the two limits are equal to each other and equal to $g(1)$, the function is continuous at $1$.
+[ ] $b=0$.
+> If $b=0$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}0=0$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}x+1=2$ and $g(1)=0$. Since the two limits are unequal, the function is not continuous at $1$.
+[ ] $b=1$.
+> If $b=1$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-x^4=-1$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}2x+1=3$ and $g(1)=1$. Since the two limits are unequal, the function is not continuous at $1$.
+[ ] $b=2$.
+> If $b=2$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-2x^4=-2$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}3x+1=4$ and $g(1)=4$. Since the two limits are unequal, the function is not continuous at $1$.
+[ ] $b=3$.
+> If $b=3$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-3x^4=-3$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}4x+1=5$ and $g(1)=9$. Since the two limits are unequal, the function is not continuous at $1$.
+---
+
+:::{applet}
+:url: calculus/continuity/investigating_continuity_2
+:name: Fig:Continuity:PollQuestionSlider
+:class: dark-light
+
+A function $g(x)$ and a slider for the parameter $b$.
+
 :::
+::::
 
 
 (Subsec:ContLeftRight)=
 
 ## Left and right continuity
 
-Consider the function from {prf:ref}`Ex:Continuity:Visual`. We saw that this function was not continuous at $-2$, since the left and right limit were unequal. However, we can read off from the graph that $\lim\limits_{x\rightarrow 2^-}f(x)=f(-2)$. So if we ignore the part of the function to the right of $-2$, the function is continuous. We say that the function is **left continuous** at $-2$. Although left continuity (and the corresponding **right continuity**) is a bit weaker than regular continuity, it is still a useful concept to consider.
+Consider the function from {prf:ref}`Ex:Continuity:Visual`. We saw that this function was not continuous at $-2$, since the left and right limit were unequal. However, we can read off from the graph that $\lim\limits_{x\rightarrow 2^-}f(x)=f(-2)$. So if we ignore the part of the function to the right of $-2$, the function is continuous. We say that the function is **left-continuous** at $-2$. Although left continuity (and the corresponding **right continuity**) is a bit weaker than regular continuity, it is still a useful concept to consider.
 
 ::::::{prf:definition} Left and right continuity
 :label: Def:Continuity:Continuityleftright
 
-Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **left continuous** at $a$ if $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$. 
+Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **left-continuous** at $a$ if $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$. 
 
-Similarly, we say that $f$ is **right continuous** at $a$ if $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$. 
+Similarly, we say that $f$ is **right-continuous** at $a$ if $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$. 
 ::::::
 
 ::::::{prf:corollary} 
 :label: Thm:Continuity:Continuityleftright
 
-Suppose that the domain of $f$ contains an open interval $(b,c)$ and let $a$ in $(b,c)$. Then $f$ is continuous at $a$ precisely when $f$ is both left and right continuous at $a$.
+Suppose that the domain of $f$ contains an open interval $(b,c)$ and let $a$ in $(b,c)$. Then $f$ is continuous at $a$ precisely when $f$ is both left and right-continuous at $a$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Continuity:Continuityleftright`
 :class: tudproof
-A function is both left and right continuous at $a$, when both identities $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$ and $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$ hold. By {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` this happens precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$, i.e. when $f$ is continuous at $a$.
+A function is both left and right-continuous at $a$, when both identities $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$ and $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$ hold. By {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` this happens precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$, i.e. when $f$ is continuous at $a$.
 :::
 
 ::::::{prf:example} 
 :label: Example:Continuity:Continuityleftright
 
-Consider the function $f(x)=\left\{\begin{array}{ll}3x+4,&\text{if }\,x\leq 0\\ \ln(x)+3,&\text{if }\,0<x<1\\ 3-x,&\text{if }\,x\geq 1. \end{array}\right.$
+Consider the function
+
+$$
+f(x)=\left\{\begin{array}{ll}3x+4,&\text{if }\,x\leq 0,\\ \ln(x)+3,&\text{if }\,0<x<1,\\ 3-x,&\text{if }\,x\geq 1. \end{array}\right.
+$$
+
 We want to find out at which points $f$ is continuous (either regular, left or right). Since the functions $3x+4$, $\ln(x)+3$ and $3-x$ are continuous on their domains, the only problems can arise at the points where we switch between which formula is used to describe the function values, i.e. at $0$ and $1$. We can evaluate
 
 \begin{align*}
@@ -727,7 +793,7 @@ We want to find out at which points $f$ is continuous (either regular, left or r
   f(0)&=4.
 \end{align*}
 
-Hence, the limit $\lim\limits_{x\rightarrow 0}f(x)$ does not exist, so the function is not continuous at $0$. However, we do find that $\lim\limits_{x\rightarrow 0^-}f(x)=f(0)$. As such, the function is left continuous at $0$ (but not right continuous).
+Hence, the limit $\lim\limits_{x\rightarrow 0}f(x)$ does not exist, so the function is not continuous at $0$. However, we do find that $\lim\limits_{x\rightarrow 0^-}f(x)=f(0)$. As such, the function is left-continuous at $0$ (but not right-continuous).
 
 Similarly, we can evaluate
 
@@ -737,9 +803,10 @@ Similarly, we can evaluate
   f(1)&=2.
 \end{align*}
 
-Hence, the limit $\lim\limits_{x\rightarrow 1}f(x)$ does not exist, so the function is not continuous at $1$. However, we do find that $\lim\limits_{x\rightarrow 1^+}f(x)=f(1)$. As such, the function is right continuous at $1$ (but not left continuous).
+Hence, the limit $\lim\limits_{x\rightarrow 1}f(x)$ does not exist, so the function is not continuous at $1$. However, we do find that $\lim\limits_{x\rightarrow 1^+}f(x)=f(1)$. As such, the function is right-continuous at $1$ (but not left-continuous).
 
-::::{figure} Images/Fig-Continuity-Continuityleftright.png
+::::{applet}
+:url: calculus/continuity/continuity_from_the_right
 :name: Fig:Continuity:Continuityleftright
 :class: dark-light
 
@@ -748,92 +815,129 @@ The function $f$ as an example for continuity from the right.
 
 ::::::
 
+::::{question}
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+
+Consider the function $g$ of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider2`. The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
+
+_Select all values of $b$ for which $g$ is not continuous at $x=1$, but is continuous from the right or from the left._
+---
+[ ] $b=-3$.
+> If $b=-3$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}3x^4=3$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}-2x+1=-1$ and $g(1)=9$. Since the two limits are unequal, the function is not continuous at $1$. None of the two limits are equal to $g(1)$, so the function is neither left nor right-continuous at $1$.
+[ ] $b=-2$.
+> If $b=-2$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}2x^4=2$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}-x+1=0$ and $g(1)=4$. Since the two limits are unequal, the function is not continuous at $1$. None of the two limits are equal to $g(1)$, so the function is neither left nor right-continuous at $1$.
+[ ] $b=-1$.
+> Indeed, if $b=-1$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}x^4=1$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}1=1$ and $g(1)=1$. Since the two limits are equal to each other and equal to $g(1)$, the function is continuous at $1$.
+[x] $b=0$.
+> If $b=0$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}0=0$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}x+1=2$ and $g(1)=0$. Since the two limits are unequal, the function is not continuous at $1$. Since the limit from the left is equal to $g(1)$, the function is left-continuous at $1$ (but not right-continuous).
+[ ] $b=1$.
+> If $b=1$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-x^4=-1$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}2x+1=3$ and $g(1)=1$. Since the two limits are unequal, the function is not continuous at $1$. None of the two limits are equal to $g(1)$, so the function is neither left nor right-continuous at $1$.
+[x] $b=2$.
+> If $b=2$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-2x^4=-2$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}3x+1=4$ and $g(1)=4$. Since the two limits are unequal, the function is not continuous at $1$. Since the limit from the right is equal to $g(1)$, the function is right-continuous at $1$ (but not left-continuous).
+[ ] $b=3$.
+> If $b=3$, then $\lim\limits_{x\rightarrow 1^-}g(x)=\lim\limits_{x\rightarrow 1^-}-3x^4=-3$, $\lim\limits_{x\rightarrow 1^+}g(x)=\lim\limits_{x\rightarrow 1^+}4x+1=5$ and $g(1)=9$. Since the two limits are unequal, the function is not continuous at $1$. None of the two limits are equal to $g(1)$, so the function is neither left nor right-continuous at $1$.
+---
+
+:::{applet}
+:url: calculus/continuity/investigating_continuity_2
+:name: Fig:Continuity:PollQuestionSlider2
+:class: dark-light
+
+A function $g(x)$ and a slider for the parameter $b$.
+
+:::
+::::
+
 (Subsec:ContinuityGrasple)=
 
 ## Grasple exercises
 
 :::{todo}
-Grasple exercises on left- and right continuity
+Grasple exercises on left- and right-continuity
 :::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/516eefd5-6e4d-42f0-9cf7-ea54159a3262?id=126101
-:label: Grasple:Continuity:Piecewisemakingcont
+:label: Grasple:126101
 :dropdown:
-:description: Continuity of piecewise defined function
+:description: Continuity of piecewise defined function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/2e8691ba-b5cd-48c7-bbc5-ca6a94481eda?id=126174
-:label: Grasple:Continuity:Piecewisenotccontwithlimit
+:label: Grasple:126174
 :dropdown:
-:description: Continuity of piecewise defined function
+:description: Continuity of piecewise defined function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/445e61d2-3524-494b-b2de-86e6ce4afdfb?id=71061
-:label: Grasple:Continuity:Piecewisenotccontnolimit
+:label: Grasple:71061
 :dropdown:
-:description: Continuity of piecewise defined function
+:description: Continuity of piecewise defined function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/720c95b4-58da-476e-a7a6-489a0c11c98e?id=71067
-:label: Grasple:Continuity:Piecewisecont
+:label: Grasple:71067
 :dropdown:
-:description: Continuity of piecewise defined function
+:description: Continuity of piecewise defined function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/1a52582e-aa31-4c85-907e-8f9d2dbfa64a?id=71084
-:label: Grasple:Continuity:Rounding
+:label: Grasple:71084
 :dropdown:
-:description: Continuity of rounding function
+:description: Continuity of rounding function.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/7a20b481-0633-4bbe-9ddd-ab543f3a8419?id=71860
-:label: Grasple:Continuity:Fractionalpart
+:label: Grasple:71860
 :dropdown:
-:description: Continuity of fractional part
+:description: Continuity of fractional part.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/c142b871-cbf8-4b80-8d9e-4482a373fed3?id=71152
-:label: Grasple:Continuity:Sin1overx
+:label: Grasple:71152
 :dropdown:
-:description: Continuity of $\sin\left(\frac{1}{x}\right)$
+:description: Continuity of $\sin\left(\frac{1}{x}\right)$.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/d41b9b5f-ed30-4ff7-bf03-8fad78f2dc14?id=71154
-:label: Grasple:Continuity:xsin1overx
+:label: Grasple:71154
 :dropdown:
-:description: Continuity of $x\sin\left(\frac{1}{x}\right)$
+:description: Continuity of $x\sin\left(\frac{1}{x}\right)$.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/db5adbfb-cc9f-4fdb-9192-204dad31bddd?id=70561
-:label: Grasple:Continuity:product
+:label: Grasple:70561
 :dropdown:
-:description: Continuity of product function
+:description: Continuity of product function.
 
 ::::
 
@@ -841,82 +945,83 @@ Grasple exercises on left- and right continuity
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/e5d12e97-b986-442c-9352-e38d034d61c7?id=130757
-:label: Grasple:Continuity:leftright1
+:label: Grasple:130757
 :dropdown:
-:description: Left and right continuity
+:description: Left- and right-continuity.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/8a96a8e7-62aa-40dc-bb17-2b3a76f579cd?id=130761
-:label: Grasple:Continuity:leftright2
+:label: Grasple:130761
 :dropdown:
-:description: Left and right continuity
+:description: Left- and right-continuity.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/50052d0d-a89a-4096-9d81-72c898a37d50?id=74182
-:label: Grasple:Continuity:Inflimitinsidecontsinexp
+:label: Grasple:74182
 :dropdown:
-:description: Limit at infinity involving sines and exponentials
+:description: Limit at infinity involving sines and exponentials.
 
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/69d04f22-bf0e-4c08-ab3e-3644096d2ffe?id=74229
-:label: Grasple:Continuity:Inflimitinsidecontcoslog
+:label: Grasple:74229
 :dropdown:
-:description: Limit at infinity involving cosines and logarithms
+:description: Limit at infinity involving cosines and logarithms.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/99ca75a4-5529-4236-96e4-612120d08955?id=75748
-:label: Grasple:Continuity:Inflimitinsidecontcosexp
+:label: Grasple:75748
 :dropdown:
-:description: Limit at infinity involving cosines and exponentials
+:description: Limit at infinity involving cosines and exponentials.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/4f72dd27-5d72-47a2-8ef1-f11f6c49ea7a?id=74228
-:label: Grasple:Continuity:Inflimitinsidecontratexp
+:label: Grasple:74228
 :dropdown:
-:description: Limit at infinity involving exponentials
+:description: Limit at infinity involving exponentials.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/987e6761-2501-491b-b264-d649431f68ad?id=75627
-:label: Grasple:Continuity:Inflimitinside+squeeze
+:label: Grasple:75627
 :dropdown:
-:description: Limit at infinity (inverse) trigonometric function
+:description: Limit at infinity (inverse) trigonometric function.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/ed59a9d8-4ba9-4d64-a252-1314e8265571?id=130748
-:label: Grasple:Continuity:IVTroot
+:label: Grasple:130748
 :dropdown:
-:description: Location of root of polynomial
+:description: Location of root of polynomial.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/3e95271d-2875-4061-96e4-53be7714d50b?id=71159
-:label: Grasple:Continuity:IVTGamma
+:label: Grasple:71159
 :dropdown:
-:description: The Gamma function
+:description: The Gamma function,
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/498dd0b8-dee0-4907-978e-ac7abda596a8?id=71156
-:label: Grasple:Continuity:IVTtemperature
+:label: Grasple:71156
 :dropdown:
-:description: Application: temperature on Earth
+:description: Application: temperature on Earth.
 ::::
+
