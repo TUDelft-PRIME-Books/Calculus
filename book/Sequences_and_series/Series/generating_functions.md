@@ -9,15 +9,58 @@ In this section we cover:
 
 ## Introduction
 
-Something about number sequences and generating functions.
+For every sequence we may define a corresponding power series for which the coefficients are the terms of the sequence. Such a series is called *generating series*. If this power series has a positive radius of convergence, the sum is called a *generating function*.
 
-## Generating functions
+::::::{prf:definition} Generating function
+:label: Def:Series:GeneratingFunction
 
-Some definition and examples of generating functions.
+If $\{a_n\}_{n=p}^{\infty}$ denotes a sequence, then a series of the form $\displaystyle\sum_{n=p}^{\infty}a_nx^n$ is called a **generating series** for the sequence. If the series converges for $x\in I$ for some nonempty interval $I$ with sum $F(x)$, then
+
+$$
+F(x)=\sum_{n=p}^{\infty}a_nx^n
+$$
+
+is called a **generating function** for the sequence.
+::::::
+
+Note that the series $\displaystyle\sum_{n=p}^{\infty}$ is a power series in $x$. Using the ratio test, for instance, we might be able to find the radius of convergence and therefore the interval of convergence $I$. For $x\in I$ the value of $F(x)$ might give rise to interesting properties of the corresponding sequence.
+
+:::{prf:example}
+:label: Ex:Series:GeneratingFunctionsExample
+
+1) The sequence $\{1,1,1,\ldots\}$ has the generating series $\displaystyle\sum_{n=0}^{\infty}x^n$ which converges for $|x|<1$ with sum $\dfrac{1}{1-x}$. We have
+
+$$
+\frac{1}{1-x}=\sum_{n=0}^{\infty}=1+x+x^2+\cdots,\quad |x|<1.
+$$
+
+2) A generating series for the natural numbers $\{n\}_{n=0}^{\infty}$ is $\displaystyle\sum_{n=0}^{\infty}nx^n$. Applying the ratio test
+
+$$
+\lim\limits_{n\to\infty}\left|\frac{n+1}{n}\right|=1
+$$
+
+we conclude that the series absolutely converges for $|x|<1$. Note that $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}$ for $|x|<1$. Differentiating we obtain that $\displaystyle\frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1}$ for $|x|<1$. We conclude that for $|x|<1$
+
+$$
+\frac{x}{(1-x)^2}=\sum_{n=0}^{\infty}nx^n=0+x+2x^2+3x^3+\cdots
+$$
+
+is a generating function for the sequence of the natural numbers $\{n\}_{n=0}^{\infty}$.
+
+3) The generating function for the sequence $\{\frac{1}{n!}\}_{n=0}^{\infty}$ equals
+
+$$
+1+x+\frac{1}{2}x^2+\frac{1}{6}x^3+\cdots=\sum_{n=0}^{\infty}\frac{1}{n!}x^n=e^x,\quad x\in\mathbb{R}.
+$$
+
+:::
+
+In this section we will study the sequence of {prf:ref}`Fibonacci numbers <Def:SeqAndTypes:FibonacciSequence>`, but we will start with the sequence of so-called *harmonic numbers*.
 
 ## The harmonic numbers
 
-We have seen the *harmonic series* $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ as an example of a divergent series although the general term tends to zero. The partial sums
+We have seen the {prf:ref}`harmonic series <Ex:Series:HarmonicSeries>` $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$ as an example of a divergent series although the general term tends to zero. The partial sums
 
 $$
 H_n=\sum_{k=1}^n\frac{1}{k},\quad n=1,2,3,\ldots
@@ -30,30 +73,36 @@ are called the **harmonic numbers**. The first ten are
 &\quad H_5=\tfrac{25}{12}+\tfrac{1}{5}=\tfrac{137}{60},\quad H_6=\tfrac{137}{60}+\tfrac{1}{6}=\tfrac{49}{20},\quad H_7=\tfrac{49}{20}+\tfrac{1}{7}=\tfrac{363}{140},\\
 &\quad\quad H_8=\tfrac{363}{140}+\tfrac{1}{8}=\tfrac{761}{280},\quad H_9=\tfrac{761}{280}+\tfrac{1}{9}=\tfrac{7129}{2520},\quad H_{10}=\tfrac{7129}{2520}+\tfrac{1}{10}=\tfrac{7381}{2520}.
 \end{align*}
+
 Note that
 
 \begin{align*}
-\sum_{n=1}^{\infty}\frac{H_n}{n^2}&=\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}
-=\sum_{k=1}^{\infty}\sum_{n=k}^{\infty}\frac{1}{kn^2}=\sum_{k=1}^{\infty}\sum_{n=0}^{\infty}\frac{1}{k(n+k)^2}\\
+\sum_{n=1}^{\infty}\frac{H_n}{n^2}&=\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}\\
+&=\sum_{k=1}^{\infty}\sum_{n=k}^{\infty}\frac{1}{kn^2}\\
+&=\sum_{k=1}^{\infty}\sum_{n=0}^{\infty}\frac{1}{k(n+k)^2}\\
 &=\sum_{k=1}^{\infty}\frac{1}{k^3}+\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{k(n+k)^2}.
 \end{align*}
+
 Now we have
 
 \begin{align*}
 \sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{k(n+k)^2}
 &=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\left(\frac{1}{k(n+k)^2}+\frac{1}{n(k+n)^2}\right)\\
-&=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{k+n}{kn(k+n)^2}
-=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{kn(k+n)}\\
-&=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{n^2}\left(\frac{1}{k}-\frac{1}{k+n}\right)=\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^{\infty}\left(\frac{1}{k}-\frac{1}{k+n}\right)\\
-&=\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}=\frac{1}{2}\sum_{n=1}^{\infty}\frac{H_n}{n^2}.
+&=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{k+n}{kn(k+n)^2}\\
+&=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{kn(k+n)}\\
+&=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{n^2}\left(\frac{1}{k}-\frac{1}{k+n}\right)\\
+&=\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^{\infty}\left(\frac{1}{k}-\frac{1}{k+n}\right)\\
+&=\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}\\
+&=\frac{1}{2}\sum_{n=1}^{\infty}\frac{H_n}{n^2}.
 \end{align*}
+
 So we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{H_n}{n^2}=\sum_{k=1}^{\infty}\frac{1}{k^3}+\frac{1}{2}\sum_{n=1}^{\infty}\frac{H_n}{n^2}$, which implies that
 
 $$
 \displaystyle\sum_{n=1}^{\infty}\frac{H_n}{n^2}=2\sum_{k=1}^{\infty}\frac{1}{k^3}=2\zeta(3).
 $$
 
-Here $\zeta(s)$ denotes the *Riemann zeta function*, named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). The value of $\zeta(3)\approx1.202057$ is also known as *Apéry's constant*, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
+Here $\zeta(s)$ denotes the *Riemann zeta function* (see: {numref}`Sec:Series:RiemannZetaFunction`), named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). The value of $\zeta(3)\approx1.202057$ is also known as *Apéry's constant*, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
 
 The harmonic numbers satisfy the recurrence relation
 
@@ -106,10 +155,14 @@ $$
 Since $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ and $-\ln(1-x)=\displaystyle\sum_{k=1}^{\infty}\frac{x^k}{k}$, the Cauchy product implies that
 
 \begin{align*}
--\frac{\ln(1-x)}{1-x}&=\sum_{n=0}^{\infty}x^n\sum_{k=1}^{\infty}\frac{x^k}{k}=\sum_{n=0}^{\infty}\sum_{k=1}^{\infty}\frac{x^{n+k}}{k}
-=\sum_{k=1}^{\infty}\sum_{n=0}^{\infty}\frac{x^{n+k}}{k}=\sum_{k=1}^{\infty}\sum_{n=k}^{\infty}\frac{x^n}{k}\\
-&=\sum_{n=1}^{\infty}\left(\sum_{k=1}^n\frac{1}{k}\right)x^n=\sum_{n=1}^{\infty}H_nx^n,\quad |x| < 1.
+-\frac{\ln(1-x)}{1-x}&=\sum_{n=0}^{\infty}x^n\sum_{k=1}^{\infty}\frac{x^k}{k}\\
+&=\sum_{n=0}^{\infty}\sum_{k=1}^{\infty}\frac{x^{n+k}}{k}\\
+&=\sum_{k=1}^{\infty}\sum_{n=0}^{\infty}\frac{x^{n+k}}{k}\\
+&=\sum_{k=1}^{\infty}\sum_{n=k}^{\infty}\frac{x^n}{k}\\
+&=\sum_{n=1}^{\infty}\left(\sum_{k=1}^n\frac{1}{k}\right)x^n\\
+&=\sum_{n=1}^{\infty}H_nx^n,\quad |x| < 1.
 \end{align*}
+
 Differentiation leads to
 
 $$
@@ -122,13 +175,15 @@ Differentiation once more gives
 
 \begin{align*}
 \sum_{n=2}^{\infty}n(n-1)H_nx^{n-2}&=\frac{1-x+2(1-x)\left(1-\ln(1-x)\right)}{(1-x)^4}\\
-&=\frac{1+2\left(1-\ln(1-x)\right)}{(1-x)^3}=\frac{3-2\ln(1-x)}{(1-x)^3},\quad|x|<1.
+&=\frac{1+2\left(1-\ln(1-x)\right)}{(1-x)^3}\\
+&=\frac{3-2\ln(1-x)}{(1-x)^3},\quad|x|<1.
 \end{align*}
+
 For instance, this implies that $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)H_n}{2^n}=\frac{1}{4}\cdot\frac{3-2\ln(\frac{1}{2})}{(\frac{1}{2})^3}=6+4\ln(2)$.
 
 ## A generating function for the Fibonacci numbers
 
-Earlier we have seen that the sequence of *Fibonacci numbers* 
+Earlier we have seen that the sequence of {prf:ref}`Fibonacci numbers <Def:SeqAndTypes:FibonacciSequence>` 
 
 $$
 1,1,2,3,5,8,13,21,34,55,89,\ldots
@@ -141,9 +196,12 @@ For computational reasons we use $F_{n+2}=F_n+F_{n+1}$ for $n=0,1,2,\ldots$ with
 Now we consider the *generating function* $G(x)=\displaystyle\sum_{n=1}^{\infty}F_nx^n=\sum_{n=0}^{\infty}F_nx^n$, then we have
 
 \begin{align*}
-x^2G(x)&=\sum_{n=0}^{\infty}F_nx^{n+2}=\sum_{n=0}^{\infty}F_{n+2}x^{n+2}-\sum_{n=0}^{\infty}F_{n+1}x^{n+2}\\
-&=\sum_{n=1}^{\infty}F_nx^n-F_1x-x\sum_{n=1}^{\infty}F_nx^n=G(x)-x-xG(x). 
+x^2G(x)&=\sum_{n=0}^{\infty}F_nx^{n+2}\\
+&=\sum_{n=0}^{\infty}F_{n+2}x^{n+2}-\sum_{n=0}^{\infty}F_{n+1}x^{n+2}\\
+&=\sum_{n=1}^{\infty}F_nx^n-F_1x-x\sum_{n=1}^{\infty}F_nx^n\\
+&=G(x)-x-xG(x). 
 \end{align*}
+
 This implies that
 
 $$
@@ -176,8 +234,10 @@ Differentiating once more we obtain
 \begin{align*}
 \sum_{n=2}^{\infty}n(n-1)F_nx^{n-2}&=G''(x)\\
 &=\frac{2x(1-x-x^2)^2-2(1-x-x^2)(-1-2x)(1+x^2)}{(1-x-x^2)^4}\\
-&=\frac{2(x-x^2-x^3+1+x^2+2x+2x^3)}{(1-x-x^2)^3}=\frac{2(1+3x+x^3)}{(1-x-x^2)^3}.
+&=\frac{2(x-x^2-x^3+1+x^2+2x+2x^3)}{(1-x-x^2)^3}\\
+&=\frac{2(1+3x+x^3)}{(1-x-x^2)^3}.
 \end{align*}
+
 For instance, this implies that $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)F_n}{2^n}=\tfrac{1}{4}G''(\tfrac{1}{2})=\frac{2\left(1+\frac{3}{2}+\frac{1}{8}\right)}{4\left(1-\frac{1}{2}-\frac{1}{4}\right)^3}=84$.
 
 Finally, let's try to solve $G(x)=1$ with $\displaystyle|x|<\frac{1}{\varphi}=\varphi-1\approx0.618$:

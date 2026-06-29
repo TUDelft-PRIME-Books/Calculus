@@ -242,7 +242,7 @@ $$
 
 and showed that it converges by splitting the series into two subseries, one with the odd terms and one with the even terms. These two series where both geometric series, so we could easily determine whether they were convergent or divergent.
 
-For the simple (shifted) geometric series $\displaystyle\sum_{n=0}^{\infty}r^{n}$, each term satisfies
+For the simple (shifted) geometric series $\displaystyle\sum_{n=0}^{\infty}r^{n}$ with $r>0$, each term satisfies
 
 $$
 \sqrt[n]{|r^{n}|}=\sqrt[n]{|r|^n}=|r|^{\frac{n}{n}}=|r|.

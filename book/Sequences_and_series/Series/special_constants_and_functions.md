@@ -7,13 +7,15 @@ Series can be used to define special constants and functions. In this section we
 (Sec:CatalansConstant)=
 ## Catalan's constant
 
-**Catalan's constant** $G$ is defined as the sum of the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}$.
+**Catalan's constant** $G$, named after the French and Belgian mathematician [Eugène Charles Catalan (1814-1894)](https://en.wikipedia.org/wiki/Eug%C3%A8ne_Charles_Catalan), is defined as the sum of the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}$.
 
 Note that this series is absolutely convergent. However, it is not easy to find its sum. We have
 
 $$
-G=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\approx0.916.
+G=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\approx0.91597.
 $$
+
+Catalan's constant surprisingly appears in various branches of mathematics, such as number theory, analysis, geometry and combinatorics.
 
 There are several alternative (integral) representations for this constant. Since 
 
@@ -24,22 +26,24 @@ $$
 we have
 
 \begin{align*}
-\int_0^1\frac{\arctan(x)}{x}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\int_0^1x^{2n}\,dx=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\cdot\frac{x^{2n+1}}{2n+1}\bigg|_0^1\\
-&=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}=G.
+\int_0^1\frac{\arctan(x)}{x}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\int_0^1x^{2n}\,dx\\
+&=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\cdot\frac{x^{2n+1}}{2n+1}\bigg|_0^1\\
+&=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\\
+&=G.
 \end{align*}
-Using $x=e^{-t}$ we obtain
+
+Using the substitution $x=e^{-t}$ and therefore $dx=-e^{-t}\,dt$ we obtain
 
 $$
-G=\int_0^1\frac{\arctan(x)}{x}\,dx=\int_{\infty}^0\frac{\arctan\left(e^{-t}\right)}{e^{-t}}\,d e^{-t}
-=\int_0^{\infty}\arctan\left(e^{-t}\right)\,dt.
+G=\int_0^1\frac{\arctan(x)}{x}\,dx=-\int_{\infty}^0\frac{\arctan\left(e^{-t}\right)}{e^{-t}}e^{-t}\,dt=\int_0^{\infty}\arctan\left(e^{-t}\right)\,dt.
 $$
 
-The substitution $\arctan{x}=t$ or $x=\tan(t)$ leads to
+The substitution $\arctan(x)=t$ or $x=\tan(t)$ and therefore $dx=\dfrac{1}{\cos^2(t)}\,dt$ leads to
 
-\begin{align*}
-\int_0^1\frac{\arctan(x)}{x}\,dx&=\int_0^{\frac{1}{4}\pi}\frac{t}{\tan(t)}d\tan(t)=\int_0^{\frac{1}{4}\pi}\frac{t}{\tan(t)}\cdot\frac{1}{\cos^2(t)}\,dt\\
-&=\int_0^{\frac{1}{4}\pi}\frac{t}{\sin(t)\cos(t)}\,dt.
-\end{align*}
+$$
+\int_0^1\frac{\arctan(x)}{x}\,dx=\int_0^{\frac{1}{4}\pi}\frac{t}{\tan(t)}\cdot\frac{1}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{t}{\sin(t)\cos(t)}\,dt.
+$$
+
 This can be rewritten as
 
 $$
@@ -49,12 +53,13 @@ $$
 Using integration by parts we obtain
 
 \begin{align*}
-\int_0^1x^n\ln(x)\,dx&=\int_0^1\frac{1}{n+1}\ln(x)\,dx^{n+1}\\
-&=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\,d\ln(x)\\
-&=0-\frac{1}{n+1}\int_0^1x^n\,dx=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
+\int_0^1x^n\ln(x)\,dx&=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\cdot\frac{1}{x}\,dx\\
+&=0-\frac{1}{n+1}\int_0^1x^n\,dx\\
+&=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
 &=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots
 \end{align*}
-With $\displaystyle\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-x^2)^n$ for $|x|<1$ this implies that
+
+With $\displaystyle\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-x^2)^n=\sum_{n=0}^{\infty}(-1)^nx^{2n}$ for $|x|<1$ this implies that
 
 $$
 \int_0^1\frac{\ln(x)}{1+x^2}\,dx=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^{2n}\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}=-G.
@@ -65,6 +70,14 @@ Using the substitution $x=\dfrac{1}{t}$ we obtain
 $$
 G=-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=-\int_{\infty}^1\frac{\ln\left(\frac{1}{t}\right)}{1+\left(\frac{1}{t}\right)^2}\cdot\left(-\frac{1}{t^2}\right)\,dt=\int_1^{\infty}\frac{\ln(t)}{1+t^2}\,dt.
 $$
+
+In {numref}`Grasple:133530` we proved that $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx=0$ by showing that
+
+$$
+-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx.
+$$
+
+Now we see that both integrals equal Catalan's constant $G$.
 
 Alternative forms of these integrals are obtained using certain substitutions.
 
@@ -81,12 +94,12 @@ $$
 G=\int_1^{\infty}\frac{\ln(t)}{1+t^2}\,dt=\int_{\frac{1}{4}\pi}^{\frac{1}{2}\pi}\ln\left(\tan(\theta)\right)\,d\theta. 
 $$ 
  
-Setting $\ln(t)=x$ or $t=e^x$ we obtain
+Setting $\ln(t)=x$ or $t=e^x$ and using {prf:ref}`Def:PropertiesFunctions:Hyperbolic` we obtain
 
-\begin{align*}
-G&=\int_1^{\infty}\frac{\ln(t)}{1+t^2}\,dt=\int_0^{\infty}\frac{x}{1+e^{2x}}\cdot e^x\,dx=\int_0^{\infty}\frac{x}{e^{-x}+e^x}\,dx\\
-&=\frac{1}{2}\int_0^{\infty}\frac{x}{\cosh(x)}\,dx.
-\end{align*}
+$$
+G=\int_1^{\infty}\frac{\ln(t)}{1+t^2}\,dt=\int_0^{\infty}\frac{x}{1+e^{2x}}e^x\,dx=\int_0^{\infty}\frac{x}{e^{-x}+e^x}\,dx=\frac{1}{2}\int_0^{\infty}\frac{x}{\cosh(x)}\,dx.
+$$
+
 The relation
 
 $$
@@ -96,9 +109,11 @@ $$
 leads to another interesting representation
 
 \begin{align*}
-G&=-\int_0^{\frac{1}{4}\pi}\ln\left(\tan(\theta)\right)\,d\theta=-\frac{1}{2}\int_0^{\frac{1}{4}\pi}\ln\left(\tan^2(\theta)\right)\,d\theta\\
+G&=-\int_0^{\frac{1}{4}\pi}\ln\left(\tan(\theta)\right)\,d\theta\\
+&=-\frac{1}{2}\int_0^{\frac{1}{4}\pi}\ln\left(\tan^2(\theta)\right)\,d\theta\\
 &=-\frac{1}{2}\int_0^{\frac{1}{4}\pi}\ln\left(\frac{1-\cos(2\theta)}{1+\cos(2\theta)}\right)\,d\theta,
 \end{align*}
+
 which is equivalent to
 
 $$
@@ -106,7 +121,7 @@ G=-\frac{1}{4}\int_0^{\frac{1}{2}\pi}\ln\left(\frac{1-\cos(x)}{1+\cos(x)}\right)
 G=\frac{1}{4}\int_0^{\frac{1}{2}\pi}\ln\left(\frac{1+\cos(x)}{1-\cos(x)}\right)\,dx.
 $$ 
  
-When we studied Serret's integral in {numref}`Sec:Integration:SpecialSubstitutions` we used the fact that 
+When we studied Serret's integral in {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we used the fact that 
 
 $$
 \int_0^{\frac{1}{4}\pi}\ln\left(\cos(\tfrac{1}{4}\pi-\theta)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln(\cos(t))\,dt.
@@ -147,11 +162,15 @@ Hence we have $\displaystyle\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx=\int_0^{\fr
 Finally, we derive for $I=\displaystyle\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx$ that 
 
 \begin{align*}
-I&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(2\sin(x)\cos(x))\,dx\\
+I&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx\\
+&=\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx\\
+&=\int_0^{\frac{1}{2}\pi}\ln(2\sin(x)\cos(x))\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\left(\ln(2)+\ln(\sin(x))+\ln(\cos(x))\right)\,dx\\
-&=\int_0^{\frac{1}{2}\pi}\ln(2)\,dx+\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx+\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx=\frac{1}{2}\pi\ln(2)+2I,
+&=\int_0^{\frac{1}{2}\pi}\ln(2)\,dx+\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx+\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx\\
+&=\frac{1}{2}\pi\ln(2)+2I,
 \end{align*}
-which implies that $I=-\frac{1}{2}\pi\ln(2)$. The substitution $x=\frac{1}{2}\pi-t$ now leads to
+
+which implies that $I=-\dfrac{1}{2}\pi\ln(2)$. The substitution $x=\dfrac{1}{2}\pi-t$ now leads to
 
 $$ 
 \int_{\frac{1}{4}\pi}^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=-\int_{\frac{1}{4}\pi}^0\ln(\sin(\tfrac{1}{2}\pi-t)\,dt=\int_0^{\frac{1}{4}\pi}\ln(\cos(t))\,dt
@@ -167,8 +186,10 @@ Hence we have
 
 \begin{align*}
 \int_0^{\frac{1}{4}\pi}\ln(\sin(x))\,dx+\int_0^{\frac{1}{4}\pi}\ln(\cos(x))\,dx&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx\\
-&=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx=-\frac{1}{2}\pi\ln(2)
+&=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx\\
+&=-\frac{1}{2}\pi\ln(2)
 \end{align*}
+
 and
 
 $$
@@ -193,22 +214,38 @@ $$
 \int_0^{\frac{1}{4}\pi}\ln(2\sin(x))\,dx=-\frac{1}{2}G\quad\text{and}\quad\int_0^{\frac{1}{4}\pi}\ln(2\cos(x))\,dx=\frac{1}{2}G.
 $$
 
+## Connecting to other functions
+
+The **Dirichlet beta function** $\beta(s)$ is defined as $\displaystyle\beta(s)=\sum_{n=0}^{|infty}\frac{(1-1)^n}{(2n+1)^s} for $\text{Re}(s)>0$. This function is closely related to the *Riemann zeta* (see: {numref}`Sec:Series:RiemannZetaFunction`).
+
+This function is named after the German mathematician [Johann Peter Gustav Lejeune Dirichlet (1805-1859)](https://en.wikipedia.org/wiki/Peter_Gustav_Lejeune_Dirichlet).
+
+We will only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. Furthermore, for $0<s\leq1$ it is conditionally convergent because of the alternative series test. However, in general it is not very easy to find its sum.
+
+In {prf:ref}`Ex:Series:Arctan` we have seen the *Leibniz formula* for $\pi$, which reads
+
+$$
+\beta(1)=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}=1-\frac{1}{3}+\frac{1}{5}-\frac{1}{7}+\cdots=\frac{1}{4}\pi.
+$$
+
+Furthermore, the definition of Catalan's constant implies that $\beta(2)=G$.
+
 (Sec:Series:RiemannZetaFunction)=
 ## The Riemann zeta function
 
-The **Riemann zeta function** $\zeta(s)$ is defined as: $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\text{Re}(s)>1$.
+The **Riemann zeta function** $\zeta(s)$ is defined as $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\text{Re}(s)>1$.
 
 This function is named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). 
 
 We will only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. However, in general it is not very easy to find its sum.
 
-Later (see {prf:ref}`Ex:Series:FourierExample3`) we will be able to show that 
+In {prf:ref}`Ex:Series:FourierExample3` we haven already seen that 
 
 $$
 \zeta(2)=\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\quad\text{and}\quad\zeta(4)=\sum_{n=1}^{\infty}\frac{1}{n^4}=\frac{1}{90}\pi^4.
 $$
 
-The value of $\zeta(3)\approx1.202057$ is also known as **Apéry's constant**, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
+The value of $\zeta(3)\approx1.20206$ is also known as **Apéry's constant**, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
 
 Note that
 
@@ -219,28 +256,38 @@ $$
 and
 
 \begin{align*}
-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^s}&=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}=\sum_{n=1}^{\infty}\frac{1}{n^s}-2\sum_{n=1}^{\infty}\frac{1}{(2n)^s}\\
+\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^s}&=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}\\
+&=\sum_{n=1}^{\infty}\frac{1}{n^s}-2\sum_{n=1}^{\infty}\frac{1}{(2n)^s}\\
 &=\left(1-\frac{1}{2^{s-1}}\right)\zeta(s).
 \end{align*}
+
 Using integration by parts we find that
 
 \begin{align*}
 \int_0^1x^n\ln(x)\,dx&=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\cdot\frac{1}{x}\,dx\\
-&=0-\frac{1}{n+1}\int_0^1x^n\,dx=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
+&=0-\frac{1}{n+1}\int_0^1x^n\,dx\\
+&=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
 &=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots
 \end{align*}
+
 Now we use the series representation $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$ to find that
 
 \begin{align*}
-\int_0^1\frac{\ln(x)}{1-x}\,dt&=\sum_{n=0}^{\infty}\int_0^1x^n\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}=-\sum_{n=1}^{\infty}\frac{1}{n^2}\\
-&=-\zeta(2)=-\frac{1}{6}\pi^2.
+\int_0^1\frac{\ln(x)}{1-x}\,dx&=\sum_{n=0}^{\infty}\int_0^1x^n\ln(x)\,dx\\
+&=-\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}\\
+&=-\sum_{n=1}^{\infty}\frac{1}{n^2}\\
+&=-\zeta(2)\\
+&=-\frac{1}{6}\pi^2.
 \end{align*}
+
 Furthermore using integration by parts we find that
 
 \begin{align*}
 \int_0^1x^n\left(\ln(x)\right)^2\,dx&=\frac{1}{n+1}x^{n+1}\left(\ln(x)\right)^2\bigg|_0^1-\frac{2}{n+1}\int_0^1x^{n+1}\ln(x)\cdot\frac{1}{x}\,dx\\
-&=0-\frac{2}{n+1}\int_0^1x^n\ln(x)\,dx=\frac{2}{(n+1)^3},\quad n=0,1,2,\ldots
+&=0-\frac{2}{n+1}\int_0^1x^n\ln(x)\,dx\\
+&=\frac{2}{(n+1)^3},\quad n=0,1,2,\ldots
 \end{align*}
+
 Again we use the series representation $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$ to find that
 
 $$
@@ -251,32 +298,50 @@ $$
 Similarly, we have
 
 \begin{align*}
-\int_0^1\frac{\ln(x)}{1+x}\,dx&=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^n\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}\\
-&=-\left(1-\frac{1}{2}\right)\zeta(2)=-\frac{1}{12}\pi^2
+\int_0^1\frac{\ln(x)}{1+x}\,dx&=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^n\ln(x)\,dx\\
+&=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}\\
+&=-\left(1-\frac{1}{2}\right)\zeta(2)\\
+&=-\frac{1}{12}\pi^2
 \end{align*}
+
 and
 
 \begin{align*}
-\int_0^1\frac{\left(\ln(x)\right)^2}{1+x}\,dx&=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^n\left(\ln(x)\right)^2\,dx=2\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^3}\\
-&=2\left(1-\frac{1}{4}\right)\zeta(3)=\frac{3}{2}\zeta(3).
+\int_0^1\frac{\left(\ln(x)\right)^2}{1+x}\,dx&=\sum_{n=0}^{\infty}(-1)^n\int_0^1x^n\left(\ln(x)\right)^2\,dx\\
+&=2\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^3}\\
+&=2\left(1-\frac{1}{4}\right)\zeta(3)\\
+&=\frac{3}{2}\zeta(3).
 \end{align*}
+
 Using the Taylor series $\displaystyle\ln(1-x)=-\sum_{n=1}^{\infty}\frac{x^n}{n}$ for $|x|<1$ we find that
 
 \begin{align*}
-\int_0^1\frac{\ln(1-x)}{x}\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^{n-1}\,dx=-\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{n}x^n\bigg|_0^1=-\sum_{n=1}^{\infty}\frac{1}{n^2}\\
-&=-\zeta(2)=-\frac{1}{6}\pi^2,
+\int_0^1\frac{\ln(1-x)}{x}\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^{n-1}\,dx\\
+&=-\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{n}x^n\bigg|_0^1\\
+&=-\sum_{n=1}^{\infty}\frac{1}{n^2}\\
+&=-\zeta(2)\\
+&=-\frac{1}{6}\pi^2,
 \end{align*}
+
 \begin{align*}
-\int_0^1\ln(x)\ln(1-x)\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^n\ln(x)\,dx=\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{(n+1)^2}\\
-&=\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+1}-\frac{1}{(n+1)^2}\right)=1-\sum_{n=1}^{\infty}\frac{1}{(n+1)^2}\\
-&=2-\sum_{n=1}^{\infty}\frac{1}{n^2}=2-\zeta(2)=2-\frac{1}{6}\pi^2
+\int_0^1\ln(x)\ln(1-x)\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^n\ln(x)\,dx\\
+&=\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{(n+1)^2}\\
+&=\sum_{n=1}^{\infty}\left(\frac{1}{n}-\frac{1}{n+1}-\frac{1}{(n+1)^2}\right)\\
+&=1-\sum_{n=1}^{\infty}\frac{1}{(n+1)^2}\\
+&=2-\sum_{n=1}^{\infty}\frac{1}{n^2}\\
+&=2-\zeta(2)\\
+&=2-\frac{1}{6}\pi^2
 \end{align*}
+
 and
 
 \begin{align*}
-\int_0^1\frac{\ln(x)\ln(1-x)}{x}\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^{n-1}\ln(x)\,dx=\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{n^2}\\
-&=\sum_{n=1}^{\infty}\frac{1}{n^3}=\zeta(3).
+\int_0^1\frac{\ln(x)\ln(1-x)}{x}\,dx&=-\sum_{n=1}^{\infty}\frac{1}{n}\int_0^1x^{n-1}\ln(x)\,dx\\
+&=\sum_{n=1}^{\infty}\frac{1}{n}\cdot\frac{1}{n^2}\\
+&=\sum_{n=1}^{\infty}\frac{1}{n^3}\\
+&=\zeta(3).
 \end{align*}
+
 By symmetry (or a substitution) we also have $\displaystyle\int_0^1\frac{\ln(x)\ln(1-x)}{1-x}\,dx=\zeta(3)$ and therefore
 
 $$
@@ -290,15 +355,20 @@ $$
 $$
 
 \begin{align*}
-\int_0^1\ln(x)\ln(1+x)\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\int_0^1x^{n+1}\ln(x)\,dx=-\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\cdot\frac{1}{(n+2)^2}\\
+\int_0^1\ln(x)\ln(1+x)\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\int_0^1x^{n+1}\ln(x)\,dx\\
+&=-\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\cdot\frac{1}{(n+2)^2}\\
 &=\sum_{n=0}^{\infty}\left(\frac{(-1)^n}{n+2}-\frac{(-1)^n}{n+1}+\frac{(-1)^n}{(n+2)^2}\right)\\
 &=1-2\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}+\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+2)^2}\\
 &=1-2\ln(2)+1-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}\\
-&=2-2\ln(2)-\left(1-\frac{1}{2}\right)\zeta(2)=2-2\ln(2)-\frac{1}{12}\pi^2
+&=2-2\ln(2)-\left(1-\frac{1}{2}\right)\zeta(2)\\
+&=2-2\ln(2)-\frac{1}{12}\pi^2
 \end{align*}
 and
 
 \begin{align*}
-\int_0^1\frac{\ln(x)\ln(1+x)}{x}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\int_0^1x^n\ln(x)\,dx=-\sum_{n=1}^{\infty}\frac{(-1)^n}{n+1}\cdot\frac{1}{(n+1)^2}\\
-&=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^3}=-\left(1-\frac{1}{4}\right)\zeta(3)=-\frac{3}{4}\zeta(3).
+\int_0^1\frac{\ln(x)\ln(1+x)}{x}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{n+1}\int_0^1x^n\ln(x)\,dx\\
+&=-\sum_{n=1}^{\infty}\frac{(-1)^n}{n+1}\cdot\frac{1}{(n+1)^2}\\
+&=-\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^3}\\
+&=-\left(1-\frac{1}{4}\right)\zeta(3)\\
+&=-\frac{3}{4}\zeta(3).
 \end{align*}
