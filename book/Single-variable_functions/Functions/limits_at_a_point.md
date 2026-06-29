@@ -96,7 +96,7 @@ Let $f$ be a function that is defined for values of $x$ close to $x=a$ (except p
 Instead of writing $\lim\limits_{x\rightarrow a}f(x)=L$, we sometimes use the short hand notations
 
 $$
- f(x)\rightarrow L\ \operatorname{as}\ x\rightarrow a
+ f(x)\rightarrow L\ \text{as}\ x\rightarrow a
 $$
 
 or
@@ -219,7 +219,7 @@ If $f$ is a polynomial, rational function, power function, (inverse) trigonometr
 Consider the function $f(x)=\dfrac{|x|}{x}$, which is defined for all values of $x\neq 0$. We want to try to evaluate $\lim\limits_{x\rightarrow 0}f(x)$. For this, we evaluate the left and right limits. For $x<0$ we have $|x|=-x$ (recall that the absolute value of a negative number $x$ is the positive number $-x$), so we can simplify the function $f$ to 
 
 $$
- f(x)=\frac{|x|}{x}=\frac{-x}{x}=-1\qquad\operatorname{if }x<0.
+ f(x)=\frac{|x|}{x}=\frac{-x}{x}=-1\qquad\text{if }x<0.
 $$
 
 The function $-1$ is defined at $0$, so we can use this to evaluate the left limit
@@ -231,7 +231,7 @@ $$
 Similarly, we have $|x|=x$ for $x>0$, so we can simplify
 
 $$
- f(x)=\frac{|x|}{x}=\frac{x}{x}=1\qquad \operatorname{if }x>0
+ f(x)=\frac{|x|}{x}=\frac{x}{x}=1\qquad \text{if }x>0
 $$
 
 and use this to evaluate the right limit
@@ -256,7 +256,7 @@ Left and right limits are also convenient when evaluating limits of piecewise de
 
 ::::::{prf:example}
 :label: Ex:LimitAtPoint:LimitLeftRightPiecewise
-Consider the piecewise defined function $f(x)=\left\{\begin{array}{ll}x-1,&\operatorname{ if }x<2,\\ 4,&\operatorname{ if }x=2,\\ 3-x,&\operatorname{ if }x>2.\end{array}\right.$ 
+Consider the piecewise defined function $f(x)=\left\{\begin{array}{ll}x-1,&\text{ if }x<2,\\ 4,&\text{ if }x=2,\\ 3-x,&\text{ if }x>2.\end{array}\right.$ 
 
 We aim to evaluate $\lim\limits_{x\rightarrow 2}f(x)$ and we will do so by evaluating the left and right limits. For $x<2$ the function is given by $f(x)=x-1$, so we can directly evaluate the left limit
 
@@ -671,16 +671,16 @@ We find that we have two conditions on $\delta$: $\delta$ should be at most $2-\
 
 $$
  \begin{array}{lcll}|x^2-4|&=&4-x^2&\ \\
- &<&4-(2-\delta)^2&\left(\operatorname{since }2-\delta<x<2\right)\\
- &<&\varepsilon.&\left(\operatorname{since }\delta\leq 2-\sqrt{4-\varepsilon}\right)\end{array}
+ &<&4-(2-\delta)^2&\left(\text{since }2-\delta<x<2\right)\\
+ &<&\varepsilon.&\left(\text{since }\delta\leq 2-\sqrt{4-\varepsilon}\right)\end{array}
 $$ 
 
 if $\varepsilon\leq 4$ and
 
 $$
  \begin{array}{lcll}|x^2-4|&=&4-x^2&\ \\
- &<&4&\left(\operatorname{since }0\leq 2-\delta<x<2\right)\\
- &<&\varepsilon.&\left(\operatorname{since }\varepsilon>4\right)\end{array}
+ &<&4&\left(\text{since }0\leq 2-\delta<x<2\right)\\
+ &<&\varepsilon.&\left(\text{since }\varepsilon>4\right)\end{array}
 $$ 
 
 if $\varepsilon> 4$.
@@ -689,8 +689,8 @@ Similarly, we find when $2<x<2+\delta$ that
 
 $$
  \begin{array}{lcll}|x^2-4|&=&x^2-4&\ \\
- &<&(2+\delta)^2-4&\left(\operatorname{since }2<x<2+\delta\right)\\
- &<&\varepsilon.&\left(\operatorname{since }\delta\leq \sqrt{4+\varepsilon}-2\right)\end{array}
+ &<&(2+\delta)^2-4&\left(\text{since }2<x<2+\delta\right)\\
+ &<&\varepsilon.&\left(\text{since }\delta\leq \sqrt{4+\varepsilon}-2\right)\end{array}
 $$
 
 With that, we have shown that $\lim\limits_{x\rightarrow 2}x^2=4$.
@@ -791,9 +791,9 @@ $$
  |f(x)g(x)-LM| &=& |f(x)g(x)-f(x)M+f(x)M-LM|& \\
  &\leq& |f(x)g(x)-f(x)M|+|f(x)M-LM| &\\
  &=& |f(x)||g(x)-M|+|M||f(x)-L|& \\
- &\leq& (|L|+1)|g(x)-M|+|M||f(x)-L| \qquad\quad &\left(\operatorname{since }0<|x-a|<\delta\leq\delta_1\operatorname{, which implies }|f(x)|<|L|+1\right)\\
- &\leq& (|L|+1)|g(x)-M|+|M|\frac{\varepsilon}{2(|M|+1)}  &\left(\operatorname{since }0<|x-a|<\delta\leq\delta_1\operatorname{, which implies }|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}\right)\\
- &<& (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)}&\left(\operatorname{since }0<|x-a|<\delta\leq\delta_2\operatorname{, which implies }|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}\right)\\
+ &\leq& (|L|+1)|g(x)-M|+|M||f(x)-L| \qquad\quad &\left(\text{since }0<|x-a|<\delta\leq\delta_1\text{, which implies }|f(x)|<|L|+1\right)\\
+ &\leq& (|L|+1)|g(x)-M|+|M|\frac{\varepsilon}{2(|M|+1)}  &\left(\text{since }0<|x-a|<\delta\leq\delta_1\text{, which implies }|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}\right)\\
+ &<& (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)}&\left(\text{since }0<|x-a|<\delta\leq\delta_2\text{, which implies }|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}\right)\\
  &<& \frac{\varepsilon}{2}+\frac{\varepsilon}{2} &\\
  &=& \varepsilon.&
 \end{array}
@@ -807,8 +807,8 @@ $$
 \begin{array}{lcll}
  \left|\frac{1}{g(x)}-\frac{1}{M}\right| &=& \left|\frac{g(x)-M}{g(x)M}\right| &\\
  &= &\frac{1}{|g(x)|}\frac{1}{|M|}|g(x)-M|\qquad\quad&\\
- &< &\frac{2}{|M|}\frac{1}{|M|}|g(x)-M|&\left(\operatorname{since }0<|x-a|<\delta\operatorname{, which implies }\frac{1}{2}|M|\leq |g(x)|\right) \\
- &< &\frac{2}{M^2}\frac{\varepsilon M^2}{2}& \left(\operatorname{since }0<|x-a|<\delta\operatorname{, which implies }|g(x)-M|<\frac{\varepsilon M^2}{2}\right) \\
+ &< &\frac{2}{|M|}\frac{1}{|M|}|g(x)-M|&\left(\text{since }0<|x-a|<\delta\text{, which implies }\frac{1}{2}|M|\leq |g(x)|\right) \\
+ &< &\frac{2}{M^2}\frac{\varepsilon M^2}{2}& \left(\text{since }0<|x-a|<\delta\text{, which implies }|g(x)-M|<\frac{\varepsilon M^2}{2}\right) \\
  &= &\varepsilon.&
 \end{array}
 $$

@@ -49,7 +49,7 @@ If either $\lim\limits_{x\rightarrow \infty}f(x)=L$ or $\lim\limits_{x\rightarro
 Instead of writing $\lim\limits_{x\rightarrow \infty}f(x)=L$, we sometimes use the short hand notations
 
 $$
- f(x)\rightarrow L\ \operatorname{as}\ x\rightarrow \infty
+ f(x)\rightarrow L\ \text{as}\ x\rightarrow \infty
 $$
 
 or
@@ -783,7 +783,7 @@ The following result shows an efficient way to find the coefficients of the obli
 If $f$ has an oblique asymptote $y=ax+b$ at infinity, then 
 
 $$
- a=\lim\limits_{x\rightarrow\infty}\frac{f(x)}{x}\qquad\operatorname{and}\qquad b=\lim_{x\rightarrow\infty}\left(f(x)-ax\right).
+ a=\lim\limits_{x\rightarrow\infty}\frac{f(x)}{x}\qquad\text{and}\qquad b=\lim_{x\rightarrow\infty}\left(f(x)-ax\right).
 $$
 
 The corresponding result holds for an oblique asymptote at minus infinity.
@@ -980,11 +980,11 @@ Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $N_1$ in s
 $$
 \begin{array}{lcll}
  |f(x)g(x)-LM| &=& |f(x)g(x)-f(x)M+f(x)M-LM|& \\
- &\leq& |f(x)g(x)-f(x)M|+|f(x)M-LM| \qquad\quad &\left(\operatorname{using the triangle inequality}\right)\\
+ &\leq& |f(x)g(x)-f(x)M|+|f(x)M-LM| \qquad\quad &\left(\text{using the triangle inequality}\right)\\
  &=& |f(x)||g(x)-M|+|M||f(x)-L|& \\
- &\leq& (|L|+1)|g(x)-M|+|M||f(x)-L| \qquad\quad &\left(\operatorname{since }x\geq N_1\operatorname{, which implies }|f(x)|<|L|+1\right)\\
- &\leq& (|L|+1)|g(x)-M|+|M|\frac{\varepsilon}{2(|M|+1)}  &\left(\operatorname{since }x\geq N_1\operatorname{, which implies }|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}\right)\\
- &<& (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)}&\left(\operatorname{since }x\geq N_2\operatorname{, which implies }|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}\right)\\
+ &\leq& (|L|+1)|g(x)-M|+|M||f(x)-L| \qquad\quad &\left(\text{since }x\geq N_1\text{, which implies }|f(x)|<|L|+1\right)\\
+ &\leq& (|L|+1)|g(x)-M|+|M|\frac{\varepsilon}{2(|M|+1)}  &\left(\text{since }x\geq N_1\text{, which implies }|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}\right)\\
+ &<& (|L|+1)\frac{\varepsilon}{2(|L|+1)}+|M|\frac{\varepsilon}{2(|M|+1)}&\left(\text{since }x\geq N_2\text{, which implies }|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}\right)\\
  &<& \frac{\varepsilon}{2}+\frac{\varepsilon}{2} &\\
  &=& \varepsilon.&
 \end{array}
@@ -998,8 +998,8 @@ $$
 \begin{array}{lcll}
  \left|\frac{1}{g(x)}-\frac{1}{M}\right| &=& \left|\frac{g(x)-M}{g(x)M}\right| &\\
  &= &\frac{1}{|g(x)|}\frac{1}{|M|}|g(x)-M|\qquad\quad&\\
- &\leq &\frac{2}{|M|}\frac{1}{|M|}|g(x)-M|&\left(\operatorname{since }x\geq N\operatorname{, which implies }\frac{1}{2}|M|\leq |g(x)|\right) \\
- &< &\frac{2}{M^2}\frac{\varepsilon M^2}{2}& \left(\operatorname{since }x\geq N\operatorname{, which implies }|g(x)-M|<\frac{\varepsilon M^2}{2}\right) \\
+ &\leq &\frac{2}{|M|}\frac{1}{|M|}|g(x)-M|&\left(\text{since }x\geq N\text{, which implies }\frac{1}{2}|M|\leq |g(x)|\right) \\
+ &< &\frac{2}{M^2}\frac{\varepsilon M^2}{2}& \left(\text{since }x\geq N\text{, which implies }|g(x)-M|<\frac{\varepsilon M^2}{2}\right) \\
  &= &\varepsilon.&
 \end{array}
 $$
