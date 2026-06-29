@@ -587,6 +587,7 @@ Let $f$ be a function and suppose that the domain of $f$ contains an open interv
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Substitution`
 :class: tudproof, dropdown
 Consider the function 
+
 $$
  h(x)=\left\{\begin{array}{ll}g(x)&\text{if }\,x\neq a\\ b&\text{if }\,x=a.\end{array}\right.
 $$
@@ -856,9 +857,6 @@ A function $g(x)$ and a slider for the parameter $b$.
 
 ## Grasple exercises
 
-:::{todo}
-Grasple exercises on left- and right-continuity
-:::
 
 ::::{grasple}
 :iframeclass: dark-light

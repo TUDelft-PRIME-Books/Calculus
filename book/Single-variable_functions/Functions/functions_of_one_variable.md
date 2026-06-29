@@ -604,7 +604,7 @@ That is, the pressure is inversely proportional to the volume. This means that i
 :name: Fig:Functions1var:IdealGas2
 :class: dark-light
 
-The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for $n=1$ and $T=293.15\,\text{K}=20\,^{\circ}\text{C}$. Due to physical restrictions, the domain of this function only consists of positive values of $V$. You can use the sliders to change the values of $n$ and $T$. The first slider controls the number of moles $n$ of gas, while the second slider controls the temperature $T$ of the gas.
+The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the function for $n=1$ and $T=293.15\,\operatorname{K}=20\,^{\circ}\operatorname{C}$. Due to physical restrictions, the domain of this function only consists of positive values of $V$. You can use the sliders to change the values of $n$ and $T$. The first slider controls the number of moles $n$ of gas, while the second slider controls the temperature $T$ of the gas.
 :::
 
 ::::::
@@ -624,7 +624,7 @@ Here $G$ is the [gravitational constant](https://en.wikipedia.org/wiki/Gravitati
 :name: Fig:Functions1var:Gravity
 :class: dark-light
 
-The graph of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for $m_1m_2=10^{48}\,\text{kg}^2$. Due to physical restrictions, the domain of this function only consists of positive values of $r$. You can use the slider to change the value of $m_1m_2$. The values of $m_1m_2$ range from $10^{46}$, which corresponds to two planets with the mass of Mercury, to $10^{54}$, which corresponds to two planets with the mass of Jupiter.
+The graph of the function $F(r)=Gm_1m_2r^{-2}$ to indicate the shape of the function for $m_1m_2=10^{48}\,\operatorname{kg}^2$. Due to physical restrictions, the domain of this function only consists of positive values of $r$. You can use the slider to change the value of $m_1m_2$. The values of $m_1m_2$ range from $10^{46}$, which corresponds to two planets with the mass of Mercury, to $10^{54}$, which corresponds to two planets with the mass of Jupiter.
 :::
 
 The graph is, qualitatively speaking, somewhat similar to the one in {prf:ref}`Ex:Functions1var:IdealGas2`. However, in that case, $P$ was proportional to $V^{-1}$, while in this case $F$ is proportional to $r^{-2}$. This difference mainly manifests close to $0$ (where $F$ grows much faster than $P$), and far away from $0$ (where $F$ goes to $0$ much quicker than $P$). 
