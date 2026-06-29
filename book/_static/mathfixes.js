@@ -16,7 +16,7 @@ document.addEventListener("click", (event) => {
       const originalText = item.math; 
 
       // Reconstruct the unrendered text string
-      const rawFormula = `${openDelimiter}${originalText}${closeDelimiter}`;
+      const rawFormula = `${openDelimiter}\\class{tud-yellow}{${originalText}}${closeDelimiter}`;
       
       // Replace the rendered MathJax element wrapper in the DOM with the raw text
       if (item.typesetRoot && item.typesetRoot.parentNode) {
