@@ -26,14 +26,14 @@ sphinx:
   local_extensions:
     text_replacer: _ext/
     # check_captions: _ext/
-    image_checker: _ext/
+    # image_checker: _ext/
     numref_section: _ext/
     math_punctuation: _ext/
   config:
     patch_config:
       disabled-patches: ["hash"]
     # prime_applets_base_url: "http://localhost:5173/applet/"
-    # prime_applets_base_url: "https://deploy-preview-456--openla-preview.netlify.app/applet/"
+    # prime_applets_base_url: "https://deploy-preview-469--openla-preview.netlify.app/applet/"
     sticky_margin:
       trigger: partial
     tippy_skip_urls:
