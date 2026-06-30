@@ -74,7 +74,6 @@ sphinx:
     numfig_secnum_depth: 2
     text_replacements:
       '# Admonitions': '# General blocks'
-      '# Proofs': "# Theorems, Definitions and Examples"
       '# Custom components': "# Proofs and Solutions"
       '# Syntax Guide': "# Exercises"
       '# Sphinx extension: Grasple': "# Grasple exercises"
