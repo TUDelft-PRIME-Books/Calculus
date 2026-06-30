@@ -108,7 +108,7 @@ sphinx:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js # Required for live code: https://teachbooks.io/manual/features/live_code.html
     thebe_config:
       use_thebe_lite: true                           # Required for live code: https://teachbooks.io/manual/features/live_code.html
-      exclude_patterns: ["**/_*.yml", "**/*.md", "**/*.ipynb"] # Exclude files which should not be accessible for live code: https://teachbooks.io/manual/features/live_code.html
+      exclude_patterns: ["**/*.*"]
     html_theme_options:
       logo:
         text: Calculus
