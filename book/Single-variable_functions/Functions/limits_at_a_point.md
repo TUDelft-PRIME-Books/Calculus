@@ -201,6 +201,7 @@ An illustration of the function $f$ that rounds a number to the nearest integer,
 ::::
 
 So how do you evaluate limits (regular, left or right)? There are various techniques, which we will discuss throughout this chapter. In several of these, we evaluate the limit by rewriting or simplifying the function at hand. Indeed, in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` we evaluated the limit $\lim\limits_{x\rightarrow 1}f(x)$ by finding a function $h$ which is equal to $f$ everywhere except at $x=1$ and for which $1$ was in the domain of $h$. The following two results show that this idea works more generally.
+
 ::::::{prf:theorem}
 :label: Theorem:LimitAtPoint:Rewritingworks
 If $f(x)=g(x)$ whenever $x\neq a$, then $\lim\limits_{x\rightarrow a}f(x)=\lim\limits_{x\rightarrow a}g(x)$, provided the limits exist, or $\lim\limits_{x\rightarrow a}f(x)$ and $\lim\limits_{x\rightarrow a}g(x)$ both do not exist.
@@ -345,7 +346,7 @@ The product and quotient rules from {prf:ref}`Theorem:LimitAtPoint:Basiccomputat
 
 Intuitively, these computation rules make sense: if the function values $f(x)$ approach $L$ and the function values $g(x)$ approach $M$, both as $x$ approaches $a$, then $f(x)+g(x)$ will approach $L+M$. Still, showing that these rules hold using the formal definition of a limit can be tricky, see {numref}`Subsec:Limitsformaldef`.
 
-::::::{prf:theorem} Substitution
+::::::{prf:theorem} Substitution for limit at a point
 :label: Theorem:LimitAtPoint:Substitution
 Suppose $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then we have
 
@@ -558,7 +559,7 @@ The notations $\lim\limits_{x\rightarrow a}f(x)=\infty$ and $\lim\limits_{x\righ
 
 Similarly, we use the corresponding notations $\lim\limits_{x\rightarrow a^-}f(x)=\infty$ and $\lim\limits_{x\rightarrow a^-}f(x)=-\infty$, or $\lim\limits_{x\rightarrow a^+}f(x)=\infty$ and $\lim\limits_{x\rightarrow a^+}f(x)=-\infty$, when considering only values of $x$ smaller than $a$, or larger than $a$ respectively. In each of the cases described above, the function $f$ approaches the vertical line $x=a$ asymptotically, either from the left, from the right, or from both sides. As such, we have the following definition.
 
-::::::{prf:definition} Vertical asymptote
+::::::{prf:definition} 
 :label: Def:LimitAtPoint:Verticalasymptote
 Let $f$ be a function that is defined near $x=a$ (except possibly at $x=a$ itself). Then we say that $x=a$ is a **vertical asymptote** of $f$, whenever at least one of the following statements is true:
 
