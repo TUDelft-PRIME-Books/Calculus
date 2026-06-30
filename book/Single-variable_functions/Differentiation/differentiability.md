@@ -9,19 +9,19 @@
 Suppose you are walking from your house to your favorite coffee shop to buy an XXL iced pumpkin spice latte (or a regular old cup of coffee, or the things you typically buy at Dutch "coffee shops", whichever you prefer). Assume that you walk in a straight line, so that your position $x$ (in meters) can be described as a function of time $t$ (in seconds). If you were to walk at a constant speed, you walk a fixed number of meters each second, so the graph of your position would look like a straight line. Say your house would be at position $x=0$ while the coffee shop is at position $x=600$ meter and that it takes you $400$ seconds to walk this distance. So what would be the function describing your position in this case? Since the graph should be a straight line, the function should be of the form
 
 $$
- x(t)=at+b, \qquad 0\leq t\leq 400
+ s(t)=at+b, \qquad 0\leq t\leq 400
 $$
 
-for some constants $a$ and $b$. Since at the start we are at home, we should have $x(0)=0$ and since we should arrive after $400$ seconds, we should have $x(400)=600$. Plugging these conditions into the function gives the two equations
+for some constants $a$ and $b$. Since at the start we are at home, we should have $s(0)=0$ and since we should arrive after $400$ seconds, we should have $s(400)=600$. Plugging these conditions into the function gives the two equations
 
 $$
- 0=x(0)=a\cdot0+b=b,\qquad 600=x(400)=a\cdot400+b.
+ 0=s(0)=a\cdot0+b=b,\qquad 600=s(400)=a\cdot400+b.
 $$
 
 Solving these equations give $b=0$ and $a=\frac{3}{2}$, so the function we are looking for is
 
 $$
- x(t)=\frac{3}{2}t.
+ s(t)=\frac{3}{2}t.
 $$
 
 Suppose we want to know the velocity at which you were walking. In this case, you were walking at a constant speed, so the velocity can be computed by dividing the distance you traveled, which we will denote by $\Delta x$, by the time that has passed, which we will denote by $\Delta t$. Then, the velocity at any point in time is given by
@@ -30,7 +30,7 @@ $$
  \text{velocity}=\frac{\Delta x}{\Delta t}=\frac{600}{400}=\frac{3}{2}.
 $$
 
-Notice that this $\frac{3}{2}$ is the same as the coefficient of the $t$ term in the function $x(t)=\frac{3}{2}t$. This is no coincidence. When the position is a function of time of the form $x(t)=at+b$ and we measure the position at two moments in time $t_1<t_2$, then the velocity can be found as the difference in position divided by the difference in time and we find
+Notice that this $\frac{3}{2}$ is the same as the coefficient of the $t$ term in the function $s(t)=\frac{3}{2}t$. This is no coincidence. When the position is a function of time of the form $s(t)=at+b$ and we measure the position at two moments in time $t_1<t_2$, then the velocity can be found as the difference in position divided by the difference in time and we find
 
 $$
  \text{velocity}=\frac{\Delta x}{\Delta t}=\frac{\left(at_2+b\right)-\left(at_1+b\right)}{t_2-t_1}=\frac{at_2-at_1}{t_2-t_1}=a.
@@ -46,10 +46,12 @@ $$
 
 of which the graph is shown below.
 
-:::{figure} Images/Fig-Differentiability-Intro.png
+:::{applet}
+:url: calculus/differentiability/introduction_differentiability
 :name: Fig:Differentiability:Intro
+:class: dark-light
 
-The graph of the function $x(t)=\frac{3}{2}t$ on the left and $x(t)=300\sin\left(\frac{3\pi t}{1200}-\frac{\pi}{2}\right)+300$ on the right.
+The graph of the functions $s(t)=\frac{3}{2}t$ and $x(t)=300\sin\left(\frac{3\pi t}{1200}-\frac{\pi}{2}\right)+300$.
 :::
 
 :::{todo}
@@ -174,16 +176,13 @@ Indeed, consider the difference quotient $\dfrac{f(a+h)-f(a)}{h}$ for a small va
 
 By taking the limit of $h$ to $0$, this slope approaches $f'(a)$, which is the slope of the tangent line. As such, we can think of the slope of the tangent line as the slope of function at the point, which means that we can also think of the derivative in this way.
 
-:::{figure} Images/Fig-Differentiability-Tangentline.png
+:::{applet}
+:url: calculus/differentiability/tangent_line
 :name: Fig:Differentiability:Tangentline
+:class: dark-light
 
 The function $x^3$ and the line through the points $(1,1)$ and $(1+h,(1+h)^3)$ for a value of $h$.
 :::
-
-:::{todo}
-Replace {numref}`Fig:Differentiability:Tangentline` with an applet showing the function $x^3$ and the line through the points $(1,1)$ and $(1+h,(1+h)^3)$ for a value of $h$. The applet should have a slider for $h$ that allows the user to change the value of $h$ between $-1$ and $1$.
-:::
-
 
 ::::::{prf:theorem} 
 :label: Thm:Differentiability:Tangentline
