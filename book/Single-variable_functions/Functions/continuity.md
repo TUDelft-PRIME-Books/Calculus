@@ -1012,7 +1012,7 @@ A function $g(x)$ and a slider for the parameter $b$.
 :url: https://embed.grasple.com/exercises/3e95271d-2875-4061-96e4-53be7714d50b?id=71159
 :label: Grasple:71159
 :dropdown:
-:description: The Gamma function,
+:description: The Gamma function.
 ::::
 
 ::::{grasple}
