@@ -158,11 +158,11 @@ Let $z_1$, $z_2$ and $z_3$ be complex numbers. Then we have
 
 \begin{align*}
 z_1-z_1&=0,&\\
-z_1+z_2 &= z_2+z_1,\qquad&\operatorname{commutativity of addition} \\
-(z_1+z_2)+z_3 &= z_1+(z_2+z_3),\qquad&\operatorname{associativity of addition} \\
-z_1z_2 &= z_2z_1,\qquad&\operatorname{commutativity of multiplication}\\
-(z_1z_2)z_3&=z_1(z_2z_3),\qquad&\operatorname{associativity of addition}\\
-z_1(z_2+z_3)&=z_1z_2+z_1z_3.\qquad&\operatorname{distributivity}
+z_1+z_2 &= z_2+z_1,\qquad&\text{commutativity of addition} \\
+(z_1+z_2)+z_3 &= z_1+(z_2+z_3),\qquad&\text{associativity of addition} \\
+z_1z_2 &= z_2z_1,\qquad&\text{commutativity of multiplication}\\
+(z_1z_2)z_3&=z_1(z_2z_3),\qquad&\text{associativity of addition}\\
+z_1(z_2+z_3)&=z_1z_2+z_1z_3.\qquad&\text{distributivity}
 \end{align*}
 
 ::::
@@ -624,7 +624,7 @@ If $z$ and $w$ are a complex numbers, then the following identities hold.
 \overline{z+w} &= \overline{z}+\overline{w}, \\
 \overline{z-w} &= \overline{z}-\overline{w}, \\
 \overline{zw} &= \overline{z}\,\overline{w}, \\
-\overline{\left(\frac{z}{w}\right)} &= \frac{\overline{z}}{\overline{w}}.\quad\text{(Assuming $w\neq0$.)}
+\overline{\left(\frac{z}{w}\right)} &= \frac{\overline{z}}{\overline{w}}.\quad(\text{Assuming}\ $w\neq0$.)
 \end{align*}
 
 ::::

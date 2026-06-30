@@ -140,7 +140,7 @@ If $z=a+bi$ with $a\neq 0$ we have $\tan\left(\arg(z)\right)=\dfrac{b}{a}$. If y
 If the real part is negative, the argument is between $\frac12\pi$ and $\frac32\pi$ (or between $-\frac12\pi$ and $-\frac32\pi$ depending on which direction you want to consider) and outside the range of the arctangent. To get the correct value for the argument in these cases, you have to add or subtract $\pi$ from the arctangent. In particular, we have
 
 $$
- \arg(z)\begin{cases}\arctan\left(\frac{b}{a}\right),&\operatorname{if}\ a>0,\\ \arctan\left(\frac{b}{a}\right)+\pi,&\operatorname{if}\ a<0.\end{cases}
+ \arg(z)\begin{cases}\arctan\left(\frac{b}{a}\right),&\text{if}\ a>0,\\ \arctan\left(\frac{b}{a}\right)+\pi,&\text{if}\ a<0.\end{cases}
 $$
 
 
@@ -820,7 +820,7 @@ Now let us consider $e^{\theta i}$ and expand the series of the exponential func
 
 $$
 \begin{align*}
-e^{\theta i} &= \sum_{n=0}^\infty\frac{(\theta i)^n}{n!} & &\text{Using the series of $e^x$} \\
+e^{\theta i} &= \sum_{n=0}^\infty\frac{(\theta i)^n}{n!} & &\text{Using the series of}\ e^x \\
 &= \sum_{\substack{n=0\\n~{\rm even}}}^\infty\frac{(\theta i)^n}{n!}+\sum_{\substack{n=0\\n~{\rm odd}}}^\infty\frac{(\theta i)^n}{n!} & &\text{Using the odd/even pattern seen above.} \\
 &= \sum_{k=0}^\infty\frac{(\theta i)^{2k}}{(2k)!}+\sum_{l=0}^\infty\frac{(\theta i)^{2l+1}}{(2l+1)!} & &\text{Changing the indices using $n=2k$ and $n=2l+1$.} \\
 &= \sum_{k=0}^\infty(-1)^{k}\frac{\theta^{2k}}{(2k)!}+\sum_{l=0}^\infty(-1)^l\frac{\theta^{2l+1}i}{(2l+1)!} & &\text{Using the alternating patterns seen above.} \\
