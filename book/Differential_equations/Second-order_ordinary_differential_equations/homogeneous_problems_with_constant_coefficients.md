@@ -638,7 +638,7 @@ A mass-spring system
 
 ::::::{prf:example}
 :label: Ex:ODE2:SpringNodamp
-A spring with a mass of $5\;\text{kg}$ has natural length $0.5\;\text{m}$. A force of $45\;\text{N}$ is required to maintain it stretched to a length of $0.75\;\text{m}$. Suppose the spring is stretched to a length of $0.75\;\text{m}$ and then released with initial velocity $0$. Let us see how we can find the position of the mass at any time $t$.
+A spring with a mass of $5\;\operatorname{kg}$ has natural length $0.5\;\operatorname{m}$. A force of $45\;\operatorname{N}$ is required to maintain it stretched to a length of $0.75\;\operatorname{m}$. Suppose the spring is stretched to a length of $0.75\;\operatorname{m}$ and then released with initial velocity $0$. Let us see how we can find the position of the mass at any time $t$.
 
 From Hooke's law, the force required to stretch the spring is $k\cdot(0.25)=45$, so $k=\dfrac{45}{0.25}=180$. Using this value of the spring constant $k$, together with $m=5$ we have
 
@@ -689,7 +689,7 @@ where $c$ is a positive constant, called the <em>damping constant</em>.
 
 ::::::{prf:example}
 :label: Ex:ODE2:SpringWithdamp
-Suppose that the spring with a mass of $5\;\text{kg}$ from {prf:ref}`Ex:ODE2:SpringNodamp` is immersed in a fluid with damping constant $c=65$. How can we find the position of the mass at any time $t$ if it starts from the equilibrium position and is given a push to start it with an initial velocity of $0.5\;\text{m}/\text{s}$?
+Suppose that the spring with a mass of $5\;\operatorname{kg}$ from {prf:ref}`Ex:ODE2:SpringNodamp` is immersed in a fluid with damping constant $c=65$. How can we find the position of the mass at any time $t$ if it starts from the equilibrium position and is given a push to start it with an initial velocity of $0.5\;\operatorname{m}/\operatorname{s}$?
 
 With $m=5$ and $k=180$ the differential equation becomes
 
