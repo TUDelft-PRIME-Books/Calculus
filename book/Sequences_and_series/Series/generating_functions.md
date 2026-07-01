@@ -1,15 +1,9 @@
 (Sec:Series:GeneratingFunctions)=
 # Generating functions
 
-In this section we cover:
-
-- Generating functions
-- Harmonic numbers
-- Fibonacci numbers
-
 ## Introduction
 
-For every sequence we may define a corresponding power series for which the coefficients are the terms of the sequence. Such a series is called *generating series*. If this power series has a positive radius of convergence, the sum is called a *generating function*.
+For every sequence we may define a corresponding power series for which the coefficients are the terms of the sequence. Such a series is called a *generating series*. If this power series has a positive radius of convergence, then the sum is called a *generating function*.
 
 ::::::{prf:definition} Generating function
 :label: Def:Series:GeneratingFunction

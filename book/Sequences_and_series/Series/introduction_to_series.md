@@ -344,6 +344,26 @@ $$
 
 The last property in {prf:ref}`Thm:Series:CalculatingSums` shows that the starting index of a series might vary if we make a shift in the index of summation.
 
+We can also multiply two series, which leads to another series. The coefficients of this series can be written in terms of the coefficients of the two original series. This is called the **Cauchy product** of the two series. Without giving a formal proof, this is given by the following theorem.
+
+::::::{prf:theorem} Cauchy product
+:label: Thm:Series:CauchyProduct
+Let $\displaystyle\sum_{n=0}^{\infty}a_n$ and $\displaystyle\sum_{n=0}^{\infty}b_n$ be two series, then
+
+$$
+\left(\sum_{n=0}^{\infty}a_n\right)\left(\sum_{n=0}^{\infty}b_n\right)=\sum_{n=0}^{\infty}c_n\quad\text{with}\quad c_n=\sum_{k=0}^na_kb_{n-k}.
+$$
+
+::::::
+
+The Cauchy product is named after the French mathematician [Augustin-Louis Cauchy (1789-1857)](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy). The Cauchy product is sometimes called the **discrete convolution** of the two series.
+
+:::{warning}
+When both series are convergent, it is not guaranteed that the product also converges.
+:::
+
+In the next subsection we will distinguish between absolute and conditional convergence. It can be shown that if at least one of the two series is absolutely convergent and the other one converges, then the product series converges as well. Only when both series are conditionally convergent, it might be possible that the product series diverges. See: {prf:ref}`Ex:Series:CauchyProductExample`.
+
 ## Absolute and conditional convergence
 
 In many cases the terms of a series do not have to be positive, but they can also be (sometimes) negative. Sometimes it is useful to consider a new series which has as terms the absolute values of the terms of the original series, which is called the **absolute value series** of the original series. If such an absolute value series converges or diverges, then we can also deduce something about the convergence/divergence of the original series.
@@ -475,7 +495,6 @@ This means that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is co
 
 ::::::
 
-
 ::::::{prf:example}
 :label: Ex:Series:AbsoluteConvergence2
 Now we consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$. The absolute value series of this series is $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which we have shown to be divergent in {prf:ref}`Ex:Series:HarmonicSeries`.
@@ -538,7 +557,7 @@ A series $\displaystyle\sum a_n$ is called **conditionally convergent** if it is
 
 
 ::::::{note}
-Later we will be able to show that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}=\ln(2)$. See {prf:ref}`Ex:Series:LogTwo`.
+Later we will be able to show that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}=\ln(2)$. See {prf:ref}`Ex:Series:PowerSeriesExample2`.
 ::::::
 
 This concludes our treatment of absolute and conditional convergence. As you may have noticed, showing (absolute/conditional) convergence can be a lot of work. In {numref}`Sec:Series:SpecialSeries`, we will see some special types of series for which we can easily determine whether they are convergent or divergent and find their sum if they are convergent. For other series, we will need to use more advanced tests for convergence/divergence, which we will discuss in the sections after that.

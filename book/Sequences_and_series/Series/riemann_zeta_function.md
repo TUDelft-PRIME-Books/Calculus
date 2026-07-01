@@ -1,19 +1,26 @@
+(Sec:Series:RiemannZetaFunction)=
+
 # The Riemann zeta function
 
 ## Introduction
 
-Series can be used to define special constants and functions. In this section we will consider the Riemann zeta function.
+For many series it is quite difficult to find their sum even though we know that they are (absolutely) convergent. When these series often appear in applications it might useful to give these series a name and work with that.
 
-(Sec:Series:RiemannZetaFunction)=
-## The Riemann zeta function
+In this and the next section we cover two examples. In this section we deal with the Riemann zeta function, which can be defined for complex values of its variable. However, we will only deal with real values of this variable.
+
+This Riemann zeta function appears in various branches of mathematics and its applications. Therefore, it is useful to study some of its properties.
+
+## Definition and properties
 
 The **Riemann zeta function** $\zeta(s)$ is defined as $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\text{Re}(s)>1$.
 
 This function is named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). 
 
-We will only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. However, in general it is not very easy to find its sum.
+We will only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$ by {prf:ref}`Thm:Series:pSeries`. However, in general it is not very easy to find its sum.
 
-In {prf:ref}`Ex:Series:FourierExample3` we have already seen that 
+In {prf:ref}`Ex:Series:FourierExample3` we have already seen that[^Basel-problem]
+
+[^Basel-problem]: The problem of finding the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is known as the *Basel problem*, named after the home town of Leonhard Euler. See {numref}`Sec:MultivariableIntegration:BaselProblem` for more proofs of the Basel problem.
 
 $$
 \zeta(2)=\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\quad\text{and}\quad\zeta(4)=\sum_{n=1}^{\infty}\frac{1}{n^4}=\frac{1}{90}\pi^4.
@@ -21,19 +28,53 @@ $$
 
 The value of $\zeta(3)\approx1.20206$ is also known as **Apéry's constant**, named after the Greek-French mathematician [Roger Apéry (1916-1994)](https://en.wikipedia.org/wiki/Roger_Ap%C3%A9ry).
 
-Note that
+:::{note}
+The Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler) showed that
 
 $$
-\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}=\sum_{n=1}^{\infty}\frac{1}{n^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}=\left(1-\frac{1}{2^s}\right)\zeta(s)
+\zeta(s)=\sum_{n=1}^{\infty}=\frac{1}{n^s}=\prod_{\text{$p$ prime}}\frac{1}{1-p^{-s}}.
 $$
+
+Here the *infinite product* on the right extends over all *prime numbers* $p$, which shows a connection between calculus and number theory.
+:::
+
+Note that
+
+:::{math}
+:label: Eq:Series:RiemannZetaFunction1
+\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}=\sum_{n=1}^{\infty}\frac{1}{n^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}=\left(1-\frac{1}{2^s}\right)\zeta(s)
+:::
 
 and
 
+:::{math}
+:label: Eq:Series:RiemannZetaFunction2
 \begin{align*}
 \sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^s}&=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}\\
 &=\sum_{n=1}^{\infty}\frac{1}{n^s}-2\sum_{n=1}^{\infty}\frac{1}{(2n)^s}\\
 &=\left(1-\frac{1}{2^{s-1}}\right)\zeta(s).
 \end{align*}
+:::
+
+:::::{prf:example}
+:label: Ex:Series:RiemannZetaFunctionExample
+
+1) 
+
+$$\sum_{n=1}^{\infty}\frac{1}{(2n+1)^2}=\left(1-\frac{1}{4}\right)\zeta(2)=\frac{3}{4}\zeta(2)=\frac{3}{4}\cdot\frac{1}{6}\pi^2=\frac{1}{8}\pi^2.
+$$
+
+2)
+
+$$
+\sum_{n=1}^{\infty}\frac{(-1)^n}{(n+1)^2}=\left(1-\frac{1}{2}\right)\zeta(2)=\frac{1}{2}\zeta(2)=\frac{1}{2}\cdot\frac{1}{6}\pi^2=\frac{1}{12}\pi^2.
+$$
+
+:::::
+
+Both results were also obtained in the previous section on Fourier series. Compare with {prf:ref}`Ex:Series:FourierExample1` and {prf:ref}`Ex:Series:FourierExample3` respectively.
+
+## Application to certain integrals
 
 Using integration by parts we find that
 
