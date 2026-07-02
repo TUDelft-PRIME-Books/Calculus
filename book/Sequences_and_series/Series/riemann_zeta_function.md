@@ -74,6 +74,7 @@ $$
 
 Both results were also obtained in the previous section on Fourier series. Compare with {prf:ref}`Ex:Series:FourierExample1` and {prf:ref}`Ex:Series:FourierExample3` respectively.
 
+(Sec:Series:RiemannZetFunctionApplications)=
 ## Application to certain integrals
 
 Using integration by parts we find that

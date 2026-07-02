@@ -792,7 +792,7 @@ Using the symmetry we obtain that
 &=4\int_0^{\frac{1}{2}}\int_0^u\frac{dv\,du}{1-u^2+v^2}
 +4\int_{\frac{1}{2}}^1\int_0^{1-u}\frac{dv\,du}{1-u^2+v^2}\\
 &=4\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{u}{\sqrt{1-u^2}}\right)\,du\\
-&{}\hspace{10mm}{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du.
+&{}\quad{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du.
 \end{align*} 
  
 Observe that
@@ -811,7 +811,7 @@ for $-1 < u < 1$. This implies that
 
 \begin{align*}
 \zeta(2)&=4\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{u}{\sqrt{1-u^2}}\right)\,du\\
-&{}\hspace{10mm}{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du\\
+&{}\quad{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du\\
 &=4\int_0^{\frac{1}{2}}\frac{\arcsin(u)}{\sqrt{1-u^2}}\,du+2\int_{\frac{1}{2}}^1\frac{\arccos(u)}{\sqrt{1-u^2}}\,du\\
 &=2\arcsin^2(u)\bigg|_0^{\frac{1}{2}}-\arccos^2(u)\bigg|_{\frac{1}{2}}^1\\
 &=2\left(\frac{1}{6}\pi\right)^2+\left(\frac{1}{3}\pi\right)^2\\
