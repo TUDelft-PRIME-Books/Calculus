@@ -4,23 +4,17 @@
 
 ## Introduction
 
-:::::{margin}
-:::{figure} Images/Fig-ProductQuotient-Pyramid.png
----
-width: 100%
-name: Fig:ProductQuotient:Pyramid
-class: dark-light
----
-A pyramid with rectangular cross section at position $x$.
-:::
-:::::
+Consider a pyramid with a rectangular base. Suppose we take a cross section at distance $x$ from the top of the pyramid. Then we obtain a rectangle with width $w(x)$ and length $\ell(x)$, see {numref}`Fig:ProductQuotient:Pyramid`.
 
-:::{todo}
-Replace {numref}`Fig:ProductQuotient:Pyramid` with an applet.
+:::{applet}
+:url: calculus/product_and_quotient_rule/a_pyramid
+:name: Fig:ProductQuotient:Pyramid
+:class: dark-light
+
+A pyramid with rectangular cross section at position $x$ from the top of the pyramid.
 :::
 
-Consider a pyramid with a rectangular base. Suppose we take a cross section at distance $x$ from the top of the pyramid. Then we obtain a rectangle with width $w(x)$ and length $\ell(x)$, see {numref}`Fig:ProductQuotient:Pyramid`. What is the area $A$ of this rectangle? You do not need advanced calculus (or even any calculus at all) to know that the answer is 
-
+What is the area $A$ of this rectangle? You do not need advanced calculus (or even any calculus at all) to know that the answer is 
 
 $$
  A(x)=w(x)\ell(x).
@@ -31,18 +25,12 @@ $$
 What happens if we go a bit further, and that we take a step of size $\Delta x$? Then the width changes from $w(x)$ to $w(x+\Delta x)$. If $\Delta x$ is sufficiently small, this difference $\Delta w=w(x+\Delta x)-w(x)$ is very close to $w'(x)\Delta x$ in the sense that $\lim\limits_{\Delta x\rightarrow 0}\dfrac{w(x+\Delta x)-w(x)}{\Delta x}=w'(x)$. Similarly, the change in length $\Delta \ell=\ell(x+\Delta x)-\ell(x)$ is approximately equal to $\ell'(x)\Delta x$. So what happens to the area? Intuitively, we might expect the rate of change of this area to be the product of $w'(x)$ and $\ell'(x)$, but this is not correct as we will see soon[^Footnoteunits]. Indeed, $w'(x)$ and $\ell'(x)$ measure rates of change, not the width and length themselves, so multiplying them does not give the rate of change in the area. To find the correct answer, we take a look at the sketch of the cross section at distance $x+\Delta x$ from the top, see {numref}`Fig:ProductQuotient:Crosssection`.
 
 
-:::{figure} Images/Fig-ProductQuotient-Crosssection.png
----
-width: 100%
-name: Fig:ProductQuotient:Crosssection
-class: dark-light
----
+:::{applet}
+:url: calculus/product_and_quotient_rule/cross_section_of_a_pyramid
+:name: Fig:ProductQuotient:Crosssection
+:class: dark-light
+
 The cross section of the pyramid in {numref}`Fig:ProductQuotient:Pyramid` at position $x+\Delta x$.
-:::
-
-
-:::{todo}
-Replace {numref}`Fig:ProductQuotient:Crosssection` with an applet.
 :::
 
 We see that we have obtained a rectangle with width $w(x)+\Delta w$ and length $\ell(x)+\Delta \ell$. The new area is, therefore, given by
@@ -198,9 +186,40 @@ $$
 
 This rule can be generalised to products of four or more functions.
 
-:::{todo}
-Poll with formula for $(fg)''$. 
-:::
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+
+If $f$ and $g$ are differentiable functions, then $(fg)''$ equals
+---
+[ ] $f''g + f'g' + fg''$
+> Almost there! You have the right terms, but the $f'g'$ term appears twice when you differentiate the product a second time.
+
+[ ] $f''g''$
+> This is a common mistake. The second derivative of a product is not found by simply multiplying the second derivatives together.
+
+[ ] $f''g + fg''$
+> Good start, but you've forgotten the terms that come from differentiating both functions once.
+
+[ ] $f'g + fg'$
+> Be careful—this is the product rule for the first derivative, $(fg)'$, not the second derivative.
+
+[x] $f''g + 2f'g' + fg''$
+> Correct! Applying the product rule twice gives
+
+   $$
+    \begin{align*}
+ (fg)'' &= (f'g + fg')'\\ &= f''g + f'g' + f'g' + fg'' \\ &= f''g + 2f'g' + fg''.
+    \end{align*}
+    $$
+
+[ ] $f''g'' + 2f'g'$
+> You're right to include the $2f'g'$ term, but the other terms should be $f''g$ and $fg''$, not $f''g''$.
+---
+::::
 
 
 Finally, we can combine the product and chain rules to find the derivatives of complicated functions.
@@ -387,7 +406,6 @@ $$
 
 ::::::{prf:example} Function that is differentiable, but not continuously differentiable
 :label: Ex:Productquotientrule:Contdiff
-:class: full-width
 
 In {numref}`Subsec:Derivativestangent` we claimed that there are functions that are differentiable everywhere, but not continuously differentiable; that is their derivatives are not continuous. Now we finally have the tools to show an example of such a function. Consider the piecewise defined function
 
@@ -437,22 +455,19 @@ $$
 
 also does not exist. In particular, $f'$ is not continuous at $0$, so $f$ is not continuously differentiable.
 
-:::{todo}
-Make an applet with the graph of the function $f$ (left) and of its derivative $f'$ (right). Make sure you can zoom properly in around $x=0$.
+:::{applet}
+:url: calculus/product_and_quotient_rule/differentiable_but_not_continuously_differentiable
+:name: Fig:ProductQuotient:Differentiablebutnotcontinuouslydifferentiable
+:class: dark-light
+
+The graphs of the function $f$ (left) and of its derivative $f'$ (right). The function is differentiable everywhere, but its derivative is not continuous at $x=0$.
 :::
+
 ::::::
 
 ## Grasple exercises
 
 
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/94a77cde-9af2-47d9-bb60-528d0a65a7bc?id=71399
-:label: Grasple:71399
-:dropdown:
-:description: Find a derivative.
-::::
 
 ::::{grasple}
 :iframeclass: dark-light
