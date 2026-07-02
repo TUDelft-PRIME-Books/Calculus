@@ -225,25 +225,38 @@ $$
 $$
 ::::::
 
-:::{todo}
-Make a poll where we find the derivative of $f(x)^{g(x)}$.
-:::
+For some functions, it is easier to differentiate the logarithm of a function than the function itself. This usually happens when the function is a product of several functions or if powers of functions are involved. This technique, which is called **logarithmic differentiation** relies on the following result.
 
-::::::{prf:example} Logarithmic differentiation
-:label: Ex:Diffinverse:Logdiff
-For some functions, it is easier to differentiate the logarithm of a function than the function itself. This usually happens when the function is a product of several functions or if powers of functions are involved. This technique, which is called **logarithmic differentiation** relies on the fact that for any positive function $f$ we have, using the chain rule
+::::::{prf:theorem} 
+:label: Thm:Diffinverse:Logdiff
+For any positive, differentiable function $f$ we have
+
+$$
+ f'(x)=f(x)\frac{d}{dx}\ln(f(x)).
+$$
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Diffinverse:Logdiff`
+:class: tudproof
+
+By the chain rule, we have
 
 $$
  \frac{d}{dx}\ln(f(x))=\frac{f'(x)}{f(x)},
 $$
 
-which means that 
+from which the desired identity follows directly.
+::: 
 
-$$
- f'(x)=\ln(f(x))f(x).
-$$
 
-To illustrate this technique, we consider the function $f(x)=x^3\left(g(x)\right)^4\left(h(x)\right)^5$ for some positive functions $g$ and $h$. For this function, the product rule can be used, but differentiating the logarithm is quicker.  Using the identity stated above, we find
+
+
+::::::{prf:example} Logarithmic differentiation
+:label: Ex:Diffinverse:Logdiff
+
+
+To illustrate logarithmic differentiation, we consider the function $f(x)=x^3\left(g(x)\right)^4\left(h(x)\right)^5$ for some positive, differentiable functions $g$ and $h$. To differentiate this function, the product rule can be used, but differentiating the logarithm is quicker.  Using {prf:ref}`Thm:Diffinverse:Logdiff`, we find for $x>0$
 
 $$
  \frac{d}{dx}\left(x^3\left(g(x)\right)^4\left(h(x)\right)^5\right)=x^3\left(g(x)\right)^4\left(h(x)\right)^5\frac{d}{dx}\ln\left(x^3\left(g(x)\right)^4\left(h(x)\right)^5\right).
@@ -260,6 +273,38 @@ The reason why the derivative $\displaystyle\frac{d}{dx}\ln\left(x^3\left(g(x)\r
 \end{align*}
 
 ::::::
+
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+:columns: 1
+Let $f$ be a positive differentiable function and let $g$ be any differentiable function. What is  $\displaystyle \frac{d}{dx}f(x)^{g(x)}$?
+---
+[ ] $\displaystyle f(x)^{g(x)-1}f'(x)$
+> 
+
+[ ] $\displaystyle f(x)^{g(x)-1}g'(x)$
+> 
+[ ] $\displaystyle f(x)^{g(x)}g'(x)$
+> 
+[x] $\displaystyle f(x)^{g(x)-1}g(x)f'(x)+f(x)^{g(x)}\ln(f(x))g'(x)$
+> We use logarithmic differentiation. We can evaluate
+
+\begin{align*}
+ \frac{d}{dx}f(x)^{g(x)}&=f(x)^{g(x)}\frac{d}{dx}\ln\left(f(x)^{g(x)}\right)\\
+ &=f(x)^{g(x)}\frac{d}{dx}\left(g(x)\ln\left(f(x)\right)\right)\\
+ &=f(x)^{g(x)}\left(g(x)\frac{f'(x)}{f(x)}+g'(x)\ln\left(f(x)\right)\right)\\
+ &=f(x)^{g(x)-1}g(x)f'(x)+f(x)^{g(x)}\ln(f(x))g'(x).
+\end{align*}
+
+In this computation, we used the product rule.
+[ ] $\displaystyle f(x)^{g(x)-1}g(x)f'(x)+f(x)^{g(x)}g'(x)$
+> 
+---
+::::
 
 
 ## The inverse function theorem
