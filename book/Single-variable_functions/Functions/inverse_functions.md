@@ -44,7 +44,7 @@ In order for any function to have an inverse function, it needs to be onto. Howe
 
 
 
-::::::{prf:definition} Inverse function
+::::::{prf:definition} 
 :label: Def:Inverse:Inverse
 
 Let $f$ be an onto function with domain $D$ and range $R$. An onto function $g$ with domain $R$ and range $D$ is called the **inverse function** of $f$ if for all $x$ in $D$ and $y$ in $R$ we have $f(x)=y$ precisely when $g(y)=x$. If the inverse function exists, we denote it by $f^{-1}$. A function which has an inverse function is called **invertible**.
@@ -88,7 +88,7 @@ This means that the function $g(y)=\frac{y-5}{2}$ is the inverse of $f$. Indeed,
 
 We can also nicely visualise the graph of an inverse function by manipulating the graph of the original function. Indeed, if $f$ has an inverse function $f^{-1}$, then $(x,y)$ is on the graph of $f$ precisely when $f(x)=y$. By definition of the inverse function, for such a point $(x,y)$ we must have $f^{-1}(y)=x$. This means that the point $(y,x)$ is on the graph of $f^{-1}$. This also works the other way around, so $(x,y)$ is on the graph of $f$ precisely when $(y,x)$ is on the graph of $f^{-1}$. As such, we find the graph of $f^{-1}$ by reflecting the graph of $f$ along the line $y=x$ (since this reflection maps a point $(x,y)$ to $(y,x)$). With that, we have shown the following result.
 
-::::::{prf:theorem} Graph of inverse function
+::::::{prf:theorem} 
 :label: Thm:Inverse:Graphinverse
 
 If a single-variable function $f$ has an inverse function $f^{-1}$, then the graph of $f^{-1}$ can be found by reflecting the graph of $f$ along the line $y=x$.
