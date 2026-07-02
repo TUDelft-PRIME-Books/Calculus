@@ -813,11 +813,15 @@ The graph of a periodic function with fundamental period $T$.
 
 Periodic functions play an important role in many fields of science and engineering, for instance in signal processing and astronomy. In addition, periodic functions are precisely the functions that can be described by a Fourier series, see {numref}`Section:Fourier`.
 
+
+
 Notice that if $T$ is a period of a periodic function $f$, then any number of the form $nT$ with $n\geq 1$ a nonzero natural number is again a period of $f$. For instance, for $n=3$ we have for all $x$ that
 
 $$
  f(x+3T)=f((x+2T)+T)=f(x+2T)=f((x+T)+T)=f(x+T)=f(x).
 $$
+
+
 
 In fact, any other period of a periodic function must be an integer multiple of the fundamental period.
 
@@ -838,6 +842,26 @@ $$
 
 where the second equality sign follows since $T$ is a period of $f$ and the third one since $nT_0$ is a period of $f$. This means that either $r=0$ or that $r$ is a period of $f$. Since $r<T_0$ and $T_0$ is the fundamental period of $f$ the latter is impossible, so we must have $r=0$. As such, we obtain $T=nT_0$, as desired.
 :::
+
+This also means that if we know how a periodic function $f$ with period $T$ behaves on a certain interval $I$ of length $T$, we know how it behaves on $\mathbb{R}$. Indeed, for any $x$ in $\mathbb{R}$ we can choose an integer $n$ in such a way that $x+nT$ is in $I$ and we find $f(x)=f(x+nT)$. We sometimes use this to *recursively define* a periodic function. For instance, we can consider the function
+
+$$
+ g(x)=\begin{cases}1-x^2,\quad&\text{if}\ -1\leq x\leq 1,\\
+ g(x+2),\quad&\text{if}\ x<-1,\\
+ g(x-2),\quad&\text{if}\ x>1.\end{cases}
+$$
+
+Then for $x$ outside of $[-1,1]$ we can find the function value $g(x)$ by repeatedly using the identities $g(x)=g(x+2)$ for $x<-1$ or $g(x)=g(x-2)$ for $x>1$. For example, we have
+
+$$
+ g\left(-\frac{9}{2}\right)=g\left(-\frac{5}{2}\right)=g\left(-\frac{1}{2}\right)=1-\left(-\frac{1}{2}\right)^2=\frac{3}{4}
+$$
+
+or
+
+$$
+ g(6)=g(4)=g(2)=g(0)=1-0^2=1.
+$$
 
 As a small technicality: not all periodic functions have a fundamental period. For instance, a constant function $f(x)=c$ is periodic and any number $T>0$ is a period. Indeed, for any $T>0$ and any $x$ we have
 
@@ -954,6 +978,12 @@ $$
 $$
 
 for $x$ in $[a,b)$ and an integer $n$ is a periodic function with period $\ell$. It is called the **periodic extension of $f$**.
+
+Equivalently, we can define the period extension of $f$ by writing
+
+$$
+ f_{\mathrm{ext}}(x)=\begin{cases}f(x),\quad&\text{if}\ x\in[a,b)\\ f_{\mathrm{ext}}(x+2),\quad&\text{if}\ x<a,\\ f_{\mathrm{ext}}(x-2),\quad&\text{if}\ x\geq b.\end{cases}
+$$
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:PeriodicExtension`
