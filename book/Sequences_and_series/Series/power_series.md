@@ -6,21 +6,21 @@
 
 In {numref}`Sec:Series:GeometricSeries` you have encountered geometric series, which are series of the form $\displaystyle\sum_{n=0}^{\infty}ar^n$ for some constants $a$ and $r$. You also have seen in {prf:ref}`Thm:Series:GeometricSeries` that these series converge when $|r|<1$ and diverge when $|r|\geq1$, and in case of convergence, the sum of the series is $\dfrac{a}{1-r}$.
 
-If we would consider $r$ not as a value, but as a variable $x$, then we would have a series of the form $\displaystyle\sum_{n=0}^{\infty}ax^n$ and if $|x|<1$ we would have $\displaystyle\sum_{n=0}^{\infty}ax^n=\frac{a}{1-x}=f(x)$.
+Instead of interpreting $r$ as a real constant, we could see it as a variable. In that case we often write $x$ instead, and we consider a series of the form $\displaystyle\sum_{n=0}^{\infty}ax^n$ which converges if $|x|<1$ and we have $\displaystyle\sum_{n=0}^{\infty}ax^n=\frac{a}{1-x}=f(x)$.
 
-In {numref}`Fig:PowerSeries:Introduction` we have plotted the function $f(x)=\dfrac{1}{1-x}$ and the partial sums $s_n(x)=\displaystyle\sum_{k=0}^n x^k$ of the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ for $n=3$. As you can see in the figure, the function $f$ and the partial sum $s_3$ are close to each other for $x$ close to $0$, but they are not close to each other for $x$ close to $1$.
+In {numref}`Fig:PowerSeries:Introduction` we have plotted the function $f(x)=\dfrac{1}{1-x}$ and the partial sums $s_N(x)=\displaystyle\sum_{n=0}^N x^n$ of the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ for $N=3$. As you can see in the figure, the function $f$ and the partial sum $s_3$ are close to each other for $x$ close to $0$, but they are not close to each other for $x$ close to $1$.
 
 :::{figure} Images/PowerSeriesIntroduction.png
 :name: Fig:PowerSeries:Introduction
 
-The function $f(x)=\dfrac{1}{1-x}$ and the partial sum $s_n(x)$ of the power series $\displaystyle\sum_{n=0}^{\infty}x^n$. You can change the value of $n$ to see how the partial sums change when $n$ increases.
+The function $f(x)=\dfrac{1}{1-x}$ and the partial sum $s_N(x)$ of the power series $\displaystyle\sum_{n=0}^{\infty}x^n$. You can change the value of $N$ to see how the partial sums change when $N$ increases.
 :::
 
 :::{todo}
-Replace {numref}`Fig:PowerSeries:Introduction` by an applet where the user can change the value of $n$ to see how the partial sums change when $n$ increases.
+Replace {numref}`Fig:PowerSeries:Introduction` by an applet where the user can change the value of $N$ to see how the partial sums change when $N$ increases.
 :::
 
-Now, increase yourself in the figure the value of $n$ to see how the partial sums change when $n$ increases. You should see that the partial sums get closer and closer to the function $f$ between $-1$ and $1$, but they do not get closer and closer to $f$ outside the interval $(-1,1)$. This behavior is something special and is the subject of this section.
+Now, in the figure increase the value of $N$ yourself to see how the partial sums change when $N$ increases. You should see that the partial sums get closer and closer to the function $f$ between $-1$ and $1$, but they do not get closer and closer to $f$ outside the interval $(-1,1)$. This behaviour is something special and is the subject of this section.
 
 Instead of only focussing on geometric series of the form $\displaystyle\sum_{n=0}^{\infty}ax^n$, we will now consider more general series of the form $\displaystyle\sum_{n=0}^{\infty}a_nx^n$ for some sequence $\{a_n\}_{n=0}^{\infty}$. These series are called power series and they have similar convergence properties as geometric series. Moreover, we can use geometric series to find power series representations of functions.
 
@@ -58,7 +58,7 @@ Moreover, for $|x|<1$ the sum of the series is $\dfrac{1}{1-x}$.
 
 So how would you in general investigate the convergence of a power series $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$?
 
-Well, the answer to that question is "By using the ratio test": because power series are a generalisation of geometric series, and in the proof of the ratio test, {prf:ref}`Thm:Series:RatioTest`, we have seen that the ratio test is based on the idea of comparing a series with a geometric series, it is not surprising that the ratio test is the right tool to investigate the convergence of power series.
+Well, a possible answer to that question is "By using the ratio test": because power series are a generalisation of geometric series, and in the proof of the ratio test, {prf:ref}`Thm:Series:RatioTest`, we have seen that the ratio test is based on the idea of comparing a series with a geometric series, it is not surprising that the ratio test might be a right tool to investigate the convergence of power series.
 
 The next example illustrates how to use the ratio test to investigate the convergence of any power series and to find the interval of convergence of a power series.
 
@@ -66,13 +66,13 @@ The next example illustrates how to use the ratio test to investigate the conver
 :label: Ex:Series:PowerSeries1
 Let us investigate the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}(x-2)^{n-1}$ which is a power series about $2$.
 
-If $x=2$, the series reduces to
+Note that
 
 $$
-\sum_{n=1}^{\infty}\frac{1}{n}(2-2)^{n-1} = \sum_{n=1}^{\infty}\frac{1}{n} \cdot 0^{n-1} = 1+\sum_{n=2}^{\infty}0 = 1.
+\sum_{n=1}^{\infty}\frac{1}{n}(x-2)^{n-1}=1+\frac{1}{2}(x-2)+\frac{1}{3}(x-2)^2+\cdots.
 $$
 
-This means that the series converges for $x=2$ with sum $1$.
+So, for $x=2$, the series reduces to $1+0+0+\cdots=1$. This means that the series converges for $x=2$ with sum $1$.
 
 For $x\neq2$ we apply the ratio test: let $a_n=\displaystyle\frac{1}{n}(x-2)^{n-1}=\dfrac{(x-2)^{n-1}}{n}$, then we have:
 
@@ -86,14 +86,49 @@ Hence, the series is absolutely convergent if $|x-2|<1$ and is divergent if $|x-
 
 The ratio test is inconclusive if  $|x-2|=1$, so we need to investigate the convergence of the series for $x=1$ and for $x=3$ separately.
 
-For $x=1$ the series becomes $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$, which is the alternating harmonic series, which is conditionally convergent.
+For $x=1$ the series becomes $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$, which is the *alternating harmonic series*, which is conditionally convergent.
 
-For $x=3$ the series becomes $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is the harmonic series, which is divergent.
+For $x=3$ the series becomes $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is the *harmonic series*, which is divergent.
 
 We conclude that the series converges if $x\in[1,3)$ and diverges otherwise.
 ::::::
 
-The next theorem states the only three possibilities for the convergence of a power series. The proof of this theorem is based on the direct comparison test and is not difficult.
+:::{warning}
+If we substitute $x=2$ into $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}(x-2)^{n-1}$ it seems that the first term is $1\cdot0^0$ which is not well-defined. However, we emphasise that $\displaystyle\sum_{n=0}^{\infty}c_n(x-a)^n$ is just a notation for $c_0+c_1(x-a)+c_2(x-a)^2+\cdots$. So, before we substitute $x=2$ we have to write
+
+$$
+\sum_{n=1}^{\infty}\frac{1}{n}(x-2)^{n-1}=1+\frac{1}{2}(x-2)+\frac{1}{3}(x-2)^2+\cdots.
+$$
+
+If we now substitute $x=2$ there is no problem ($0^0$ does not appear).
+:::
+
+Instead of using the ratio test, it might be useful to use the root test in some cases. Here is an example:
+
+:::::{prf:example}
+:label: Ex:Series:PowerSeries2
+Consider the power series $\displaystyle\sum_{n=1}^{\infty}\left(\frac{n}{2n+1}\right)^nx^n$.
+
+Let $a_n=\displaystyle\left(\frac{n}{2n+1}\right)^nx^n$, then we have
+
+$$
+\lim_{n\to\infty}\sqrt[n]{|a_n|}=\lim_{n\to\infty}\frac{n}{2n+1}|x|=\frac{1}{2}|x|.
+$$
+
+This implies that the series absolutely converges if $|x|<2$ and diverges if $|x|>2$. So, the radius of convergence is $R=2$.
+
+For $x=2$ the series becoms $\displaystyle\sum_{n=1}^{\infty}\left(\frac{2n}{2n+1}\right)^n$, which diverges by the test for divergence since
+
+$$
+\lim_{n\to\infty}\left(\frac{2n}{2n+1}\right)^n=\lim_{n\to\infty}\left(1-\frac{1}{2n+1}\right)^n=e^{-\frac{1}{2}}=\frac{1}{\sqrt{e}}\neq0.
+$$
+
+For $x=-2$ the series becomes $\displaystyle\sum_{n=1}^{\infty}(-1)^n\left(\frac{2n}{2n+1}\right)^n$, which also diverges by the test for diverges since $\displaystyle\lim_{n\to\infty}(-1)^n\left(\frac{2n}{2n+1}\right)^n$ does not exist.
+
+So, we conclude that the series converges if $x\in(-2,2)$, and diverges otherwise.
+:::::
+
+The next theorem states the only three possibilities for the convergence of a power series. The proof of this theorem is based on the direct comparison test and is straightforward.
 
 ::::::{prf:theorem}
 :label: Thm:Series:PowerSeries
@@ -123,9 +158,9 @@ This proves the theorem.
 
 In {prf:ref}`Ex:Series:GeometricSeries` we have seen that the power series $\displaystyle\sum_{n=0}^{\infty}x^n$ is absolutely convergent for $|x|<1$ and divergent for $|x|\geq1$. Unsurprisingly, this even holds if $x$ is a complex number. In that case the condition $|x|<1$ defines the inside of a circle in the complex plane $\mathbb{C}$ with center $0$ and radius $1$. In {prf:ref}`Ex:Series:PowerSeries1` we have seen that the power series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}(x-2)^{n-1}$ is absolutely convergent for $|x-2|<1$ and divergent for $|x-2|>1$. The condition $|x-2|<1$ defines the inside of a circle in the complex plane $\mathbb{C}$ with center $2$ and radius $1$.
 
-In general, the condition for convergence of a power series[^endpoints] can be written as $|x-a|<R$, which defines the inside of a circle in the complex plane $\mathbb{C}$ with center $a$ and radius $R$. Because of this link with circles in the complex plane, the number $R$ is called the radius of convergence of the power series. The interval containing all $x\in\mathbb{R}$ for which the series converges is called the interval of convergence of the power series:
+In general, the condition for convergence of a power series[^endpoints] can be written as $|x-a|<R$, which defines the inside of a circle in the complex plane $\mathbb{C}$ with center $a$ and radius $R$. Because of this link with circles in the complex plane, the number $R$ is called the *radius of convergence* of the power series. The interval containing all $x\in\mathbb{R}$ for which the series converges is called the interval of convergence of the power series:
 
-[^endpoints]: Ignoring the behavior in the endpoints.
+[^endpoints]: Ignoring the behaviour in the endpoints.
 
 ::::::{prf:definition}
 :label: Def:Series:RadiusOfConvergence
@@ -143,7 +178,7 @@ If the third case in {prf:ref}`Thm:Series:PowerSeries` holds, the behaviour of t
 :::
 
 ::::::{prf:example}
-:label: Ex:Series:PowerSeries2
+:label: Ex:Series:PowerSeries3
 The series $\displaystyle\sum_{n=0}^{\infty}n!(x-1)^n$ is a power series about $1$.
 
 The series converges for $x=1$ with sum $1$.
@@ -163,7 +198,7 @@ This implies that the series diverges for all $x\neq1$. Hence, the series only c
 ::::::
 
 ::::::{prf:example}
-:label: Ex:Series:PowerSeries3
+:label: Ex:Series:PowerSeries4
 The series $\displaystyle\sum_{n=0}^{\infty}\frac{(x+2)^n}{n!}$ is a power series about $-2$.
 
 Hence, the series converges for $x=-2$ with sum $1$.
@@ -181,7 +216,7 @@ This implies that the series converges for all $x\neq-2$ as well. Hence, the ser
 ::::::
 
 ::::::{prf:example}
-:label: Ex:Series:PowerSeries4
+:label: Ex:Series:PowerSeries5
 The series $\displaystyle\sum_{n=1}^{\infty}\frac{x^{n+1}}{n^2}$ is a power series about $0$.
 
 For $x=0$ the series converges with sum $0$.
@@ -205,7 +240,7 @@ Hence, the interval of convergence is $[-1,1]$.
 ::::::
 
 ::::::{prf:example}
-:label: Ex:Series:PowerSeries5
+:label: Ex:Series:PowerSeries6
 The series $\displaystyle\sum_{n=0}^{\infty}\frac{(3-x)^n}{n+1}$ is a power series about $3$, which converges if $x=3$ with sum $1$.
 
 The ratio test for $x\neq3$ gives with $a_n=\displaystyle\frac{(3-x)^n}{n+1}$:
@@ -225,10 +260,8 @@ Hence, the interval of convergence is $(2,4]$.
 ::::::
 
 ::::::{prf:example}
-:label: Ex:Series:PowerSeries6
-The series $\displaystyle\sum_{n=1}^{\infty}n\left(\frac{x-5}{2}\right)^n$ is a power series about $5$.
-
-Again this series converges for $x=5$ with sum $0$.
+:label: Ex:Series:PowerSeries7
+The series $\displaystyle\sum_{n=1}^{\infty}n\left(\frac{x-5}{2}\right)^n$ is a power series about $5$, which converges if $x=5$ with sum $0$.
 
 For $x\neq5$ we might apply the ratio test: let $a_n=\displaystyle n\left(\frac{x-5}{2}\right)^n$, then we have:
 
@@ -238,7 +271,7 @@ For $x\neq5$ we might apply the ratio test: let $a_n=\displaystyle n\left(\frac{
 &=\left|\frac{x-5}{2}\right|.
 \end{align*}
 
-The series is thus absolutely convergent if $\displaystyle\left|\frac{x-5}{2}\right| < 1$ or equivalently $|x-5| < 2$ and is divergent if $\displaystyle\left|\frac{x-5}{2}\right| > 1$ or $|x-5| > 2$. So the radius of convergence is $R=2$.
+The series is thus absolutely convergent if $\displaystyle\left|\frac{x-5}{2}\right| < 1$ or equivalently $|x-5| < 2$ and is divergent if $\displaystyle\left|\frac{x-5}{2}\right| > 1$ or equivalently $|x-5| > 2$. So the radius of convergence is $R=2$.
 
 For $x=7$ the series reads $\displaystyle\sum_{n=1}^{\infty}n$, which is divergent as $\displaystyle\lim_{n\to\infty}n=\infty$, and for $x=3$ the series reads $\displaystyle\sum_{n=1}^{\infty}n(-1)^n$, which is divergent as well by the same test for divergence.
 
@@ -305,16 +338,16 @@ which is valid for $\left|-\dfrac{x}{5}\right|<1$ or equivalently for $|x|<5$. T
 
 ::::::
 
-In {prf:ref}`Ex:Series:PowerSeriesFunctions1` we have found a power series representation of $\dfrac{1}{5+x}$ which is valid for $-5<x<-3$, and in {prf:ref}`Ex:Series:PowerSeriesFunctions2` we have found a power series representation of $\dfrac{1}{5+x}$ which is valid for $-5<x<5$. In {numref}`Fig:PowerSeries:PowerSeriesFunctions` we have plotted the function $\dfrac{1}{5+x}$ and the partial sums of the two power series representations for $n=3$. You can increase yourself in the figure the value of $n$ to see how the partial sums change when $n$ increases.
+In {prf:ref}`Ex:Series:PowerSeriesFunctions1` we have found a power series representation of $\dfrac{1}{5+x}$ which is valid for $-5<x<-3$, and in {prf:ref}`Ex:Series:PowerSeriesFunctions2` we have found a power series representation of $\dfrac{1}{5+x}$ which is valid for $-5<x<5$. In {numref}`Fig:PowerSeries:PowerSeriesFunctions` we have plotted the function $\dfrac{1}{5+x}$ and the partial sums of the two power series representations for $N=3$. In the figure you can increase the value of $N$ yourself to see how the partial sums change when $N$ increases.
 
 :::{figure} Images/PowerSeriesFunctions.png
 :name: Fig:PowerSeries:PowerSeriesFunctions
 
-The function $\dfrac{1}{5+x}$ and the partial sums of the two power series representations from {prf:ref}`Ex:Series:PowerSeriesFunctions1` and {prf:ref}`Ex:Series:PowerSeriesFunctions2`. You can change the value of $n$ to see how the partial sums change when $n$ increases.
+The function $\dfrac{1}{5+x}$ and the partial sums of the two power series representations from {prf:ref}`Ex:Series:PowerSeriesFunctions1` and {prf:ref}`Ex:Series:PowerSeriesFunctions2`. You can change the value of $N$ to see how the partial sums change when $N$ increases.
 :::
 
 :::{todo}
-Replace {numref}`Fig:PowerSeries:PowerSeriesFunctions` by an applet where the user can change the value of $n$ to see how the partial sums change when $n$ increases.
+Replace {numref}`Fig:PowerSeries:PowerSeriesFunctions` by an applet where the user can change the value of $N$ to see how the partial sums change when $N$ increases.
 :::
 
 Note that the power series representation from {prf:ref}`Ex:Series:PowerSeriesFunctions2` is much more useful than the first one, as the interval of convergence of the first power series representation is contained in the interval of convergence of the second power series representation.
@@ -362,7 +395,7 @@ $$
 which is valid for $\left|-x^2\right|<1$ or equivalently for $|x|<1$. This is a power series about $0$ with radius of convergence $R=1$. Note that the series diverges for both $x=-1$ and for $x=1$. This implies that the interval of convergence is the open interval $(-1,1)$.
 ::::::
 
-It might of course not always be possible to find a power series representation of a function $f$ by using substitutions in the geometric series. For instance, it is not possible to find a power series representation of $\arctan(x)$ by using substitutions in the geometric series.
+Of course, it might not always be possible to find a power series representation of a function $f$ by using substitutions in the geometric series. For instance, it is not possible to find a power series representation of $\arctan(x)$ by using substitutions in the geometric series.
 
 Note however, that the function $\dfrac{1}{1+x^2}$ in {prf:ref}`Ex:Series:PowerSeriesFunctions4` is the derivative of $\arctan(x)$. So would it be possible to integrate the power series representation of $\dfrac{1}{1+x^2}$ to find a power series representation of $\arctan(x)$?
 
@@ -393,7 +426,7 @@ and
 
 with $C\in\mathbb{R}$ an arbitrary constant. 
 
-The radius of convergence of the power series representation of $f'$ and $\int f(x)\,dx$ is the same as the radius of convergence of the power series representation of $f$.
+The radius of convergence of the power series representation of $f'$ and $\displaystyle\int f(x)\,dx$ is the same as the radius of convergence of the power series representation of $f$.
 ::::::
 
 ::::::{note}
@@ -401,7 +434,7 @@ We skip the proof of this theorem.
 ::::::
 
 ::::::{prf:example}
-:label: Ex:Series:LogTwo0
+:label: Ex:Series:PowerSeriesExample1
 Consider the power series representation $h(x)=\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$.
 
 The derivative of $h$ is $h'(x)=-\dfrac{1}{(1+x)^2}$.
@@ -429,7 +462,7 @@ $$
 ::::::
 
 ::::::{prf:example}
-:label: Ex:Series:LogTwo
+:label: Ex:Series:PowerSeriesExample2
 
 We again consider the power series representation $h(x)=\displaystyle\frac{1}{1+x}=\sum_{n=0}^{\infty}(-1)^nx^n$ for $-1<x<1$.
 
@@ -474,7 +507,7 @@ $$
 ::::::
 
 :::{prf:remark}
-:label: Rem:Series:PowerSeriesFunctions4
+:label: Rem:Series:PowerSeriesFunctions
 
 Note that in the previous example we had to introduce two arbitrary constants $C$ and $D$ when we integrated the power series and the function, respectively. However, these two arbitrary constants only lead to one arbitrary constant $E$ in the final result. This is because the difference of two arbitrary constants is again an arbitrary constant.
 
@@ -515,7 +548,7 @@ $$
 is known as the **Leibniz formula** for $\pi$, named after the German mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz).
 ::::::
 
-Examples {prf:ref}`Ex:Series:LogTwo0`, {prf:ref}`Ex:Series:LogTwo` and {prf:ref}`Ex:Series:Arctan` illustrate that although the radius of convergence of a power series representation of a function $f$ is preserved during differentiation and integration, the convergence behavior at the endpoints of the interval of convergence can change during differentiation and integration.
+{prf:ref}`Ex:Series:PowerSeriesExample1`, {prf:ref}`Ex:Series:PowerSeriesExample2` and {prf:ref}`Ex:Series:Arctan` illustrate that although the radius of convergence of a power series representation of a function $f$ is preserved during differentiation and integration, the convergence behaviour at the endpoints of the interval of convergence can change during differentiation and integration.
 
 ::::::{prf:example}
 Consider the integral $\displaystyle\int_0^{0.5}\frac{x^2}{1+x^8}\,dx$.
@@ -541,39 +574,15 @@ This implies that
 \end{align*}
 ::::::
 
-In the above discussions, we only considered the differentiation and integration of power series representations of functions and sometimes multiplied a power series representation of a function by a power of $x$ to find a power series representation of the product of the function and the power of $x$. But we can also multiply two power series representations of functions to find a power series representation of the product of the two functions. The next parts give the formula for this multiplication of two power series, which is called the Cauchy product.
-
-::::::{prf:theorem}
-:label: Thm:Series:CauchyProduct
-Let $\displaystyle\sum_{i=0}^{\infty}a_i(x-a)^i$ and $\displaystyle\sum_{j=0}^{\infty}b_j(x-a)^j$ be two power series centered at $x=a$, then
+In the above discussions, we only considered the differentiation and integration of power series representations of functions and sometimes multiplied a power series representation of a function by a power of $x$ to find a power series representation of the product of the function and the power of $x$. But we can also multiply two power series representations of functions to find a power series representation of the product of the two functions. In that case the {prf:ref}`Cauchy product <Thm:Series:CauchyProduct>` might be applied. In the case of two power series we get:
 
 $$
-\left(\sum_{i=0}^{\infty}a_i(x-a)^i\right)\left(\sum_{j=0}^{\infty}b_j(x-a)^j\right)=\sum_{n=0}^{\infty}c_n(x-a)^n
+\left(\sum_{n=0}^{\infty}a_n(x-c)^n\right)\left(\sum_{n=0}^{\infty}b_n(x-c)^n\right)=\sum_{n=0}^{\infty}c_n(x-c)^n\quad\text{with}\quad c_n=\sum_{k=0}^na_kb_{n-k}.
 $$
-
-with $c_n=\displaystyle\sum_{k=0}^na_kb_{n-k}$.
-::::::
-
-:::{prf:definition}
-:label: Def:Series:CauchyProduct
-The product in the above theorem is defined as the **Cauchy product** of the two power series.
-:::
-
-The Cauchy product is named after the French mathematician [Augustin-Louis Cauchy (1789-1857)](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy).
-
-::::::{admonition} Proof of {prf:ref}`Thm:Series:CauchyProduct`
-:class: tudproof, dropdown
-Note that we have by setting $i+j=n$ in the last step
-
-\begin{align*}
-\left(\sum_{i=0}^{\infty}a_i(x-a)^i\right)\left(\sum_{j=0}^{\infty}b_j(x-a)^j\right)&=\sum_{i=0}^{\infty}\sum_{j=0}^{\infty}a_ib_j(x-a)^{i+j}\\
-&=\sum_{n=0}^{\infty}\sum_{k=0}^na_kb_{n-k}(x-a)^n.
-\end{align*}
-::::::
 
 ::::::{prf:example}
 :label: Ex:Series:CauchyProduct1
-Consider the geometric series $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}$ for $|x|<1$. Then differentiation led to
+Consider the geometric series $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}$ for $|x|<1$. Then differentiation leads to
 
 $$
 \frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1},\quad |x|<1.

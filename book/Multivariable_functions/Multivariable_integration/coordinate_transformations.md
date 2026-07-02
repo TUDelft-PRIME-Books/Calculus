@@ -744,7 +744,7 @@ This leads to
 (Sec:MultivariableIntegration:BaselProblem)=
 ## Proofs of the Basel problem
 
-The **Basel problem** is to find the sum of the convergent series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$. The problem is named after the hometown of the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler), who solved the problem in 1734. Earlier we have seen that this is a special case of the {numref}`Riemann zeta function <Sec:Series:RiemannZetaFunction>` $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\textrm{Re}(s)>1$. We only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. However, in general it is not very easy to find its sum. The Basel problem is to find the sum of $\zeta(2)$.
+The **Basel problem** is to find the sum of the convergent series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$. The problem is named after the hometown of the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler), who solved the problem in 1734. In {numref}`Sec:Series:RiemannZetaFunction` we have seen that this is a special case of the Riemann zeta function $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$. The Basel problem is to find the sum of $\zeta(2)$.
 
 ::::::{admonition} First proof of the Basel problem
 :class: tudproof
