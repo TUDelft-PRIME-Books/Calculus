@@ -853,8 +853,8 @@ and so on.
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/e2ff2016-ea7d-4ad5-b3bb-600ee1964082?id=76133
-:label: Grasple:76133
+:url: https://embed.grasple.com/exercises/b5c017dc-9940-48ed-9ea3-9a5be8ecbd8c?id=133602
+:label: Grasple:133602
 :dropdown:
 :description: Find a reduction formula for $\displaystyle\int(\ln(x))^n\,dx$.
 
@@ -871,8 +871,8 @@ and so on.
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/cd9e0c42-2bc7-4282-a4f4-65c47bf73453?id=76135
-:label: Grasple:76135
+:url: https://embed.grasple.com/exercises/e032d14c-df4c-4572-a8ae-d909827a0e71?id=133604
+:label: Grasple:133604
 :dropdown:
 :description: Find a reduction formula for $\displaystyle\int(\sin(x))^n\,dx$.
 

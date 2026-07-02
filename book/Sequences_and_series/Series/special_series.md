@@ -298,7 +298,7 @@ Finally, for $p\leq0$ the general term of the series $\dfrac{1}{n^p}$ does not e
 This proves that the $p$-series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$ is convergent if $p>1$ and divergent if $p\leq1$.
 ::::::
 
-Later we will see that for $p=2$ the $p$-series evaluates to $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\approx1.64493$. The problem of finding the sum of the series $\displaystyle\sum_{n=1}^{\infty}$ is called the **Basel problem**, named after the hometown of the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler), who solved the problem in 1734. We wil do this in {prf:ref}`Ex:Series:FourierExample2` and {prf:ref}`Ex:Series:FourierExample3`. In {numref}`Sec:MultivariableIntegration:BaselProblem` we will give two other proofs. 
+Later we will see that for $p=2$ the $p$-series evaluates to $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\approx1.64493$. The problem of finding the sum of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is called the **Basel problem**, named after the hometown of the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler), who solved the problem in 1734. We wil do this in {prf:ref}`Ex:Series:FourierExample2` and {prf:ref}`Ex:Series:FourierExample3`. In {numref}`Sec:MultivariableIntegration:BaselProblem` we will give two other proofs. 
 
 :::{admonition} Another proof based on an infinite product for the sine
 :class: tudproof, dropdown
@@ -318,6 +318,31 @@ $$
 $$
 
 :::
+
+In the previous section we mentioned the {prf:ref}`Cauchy product <Thm:Series:CauchyProduct>` of two series, which might be divergent even though both original series are convergent. Here is an example:
+
+:::::{prf:example}
+:label: Ex:Series:CauchyProductExample
+Let $\displaystyle\sum_{n=0}^{\infty}a_n$ and $\displaystyle\sum_{n=0}^{\infty}b_n$ with $a_n=b_n=\dfrac{(-1)^n}{\sqrt{n+1}}$. Then both series are conditionally convergent. Now we have
+
+$$
+\left(\sum_{n=0}^{\infty}a_n\right)\left(\sum_{n=0}^{\infty}b_n\right)=\sum_{n=0}^{\infty}c_n
+$$
+
+with
+
+$$
+c_n=\sum_{k=0}^n\frac{(-1)^k}{\sqrt{k+1}}\frac{(-1)^{n-k}}{\sqrt{n-k+1}}=(-1)^n\sum_{k=0}^n\frac{1}{\sqrt{k+1}}\frac{1}{\sqrt{n-k+1}}.
+$$
+
+Since $\sqrt{k+1}\,\sqrt{n-k+1}\leq\sqrt{n+1}\,\sqrt{n+1}=n+1$ for $0\leq k\leq n$ we conclude that
+
+$$
+|c_n|=\sum_{k=0}^n\frac{1}{\sqrt{k+1}}\frac{1}{\sqrt{n-k+1}}\geq\sum_{k=0}^n\frac{1}{n+1}=\frac{n+1}{n+1}=1.
+$$
+
+This shows that $\lim\limits_{n\to\infty}c_n\neq0$ which implies that the series $\displaystyle\sum_{n=0}^{\infty}c_n$ diverges.
+:::::
 
 ## Telescoping series
 
@@ -521,7 +546,6 @@ Make $b_n$ a function of $n$ that the user can change to see how the graph chang
 
 The alternating nature of the series implies $s_1$ is to the right of $0$, $s_2$ is to the left of $s_1$, $s_3$ is to the right of $s_2$, and so on. Because $b_n$ is a decreasing sequence that tends to zero, the amount you jump to the right or to the left becomes smaller and smaller, so the partial sums seem to get closer and closer to a certain number $s$. This is exactly what it means for the series to be convergent, so it seems that the theorem is plausible. The proof of the theorem will make this intuition rigorous, and makes use of the observation that the sequence of even partial sums $\{s_2,s_4,s_6,\ldots\}=\{s_{2n}\}$ seems to be located on the left of $s$, and the sequence of odd partial sums $\{s_1,s_3,s_5,\ldots\}=\{s_{2n+1}\}$ seems to be located on the right of $s$, but both sequences seem to converge to that same number $s$.
 
-
 :::{admonition} Proof of {prf:ref}`Thm:Series:AlternatingSeriesTest`
 :class: tudproof, dropdown
 
@@ -667,6 +691,8 @@ $$
 ::::::
 
 ::::::{prf:example}
+:label: Ex:Series:ApproximationSum
+
 Consider the series $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}$ with sum $s$ and let $s_N=\displaystyle\sum_{n=2}^N\frac{(-1)^n}{n!}$.
 
 We want to approximate the sum $s$ with the $N$th partial sum $s_N$ such that the approximation is correct to three decimal places using the smallest possible $N$.
@@ -714,7 +740,7 @@ which is a different approximation as for $N=6$, which indicates that our choice
 ::::::
 
 ::::::{note}
-Later we will be able to show that $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}=e^{-1}\approx0.36788$. See {prf:ref}`Ex:Series:LogTwo`.
+Later we will be able to show that $\displaystyle\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}=e^{-1}\approx0.36788$. See {prf:ref}`Rem:Series:ExpMinus1`.
 ::::::
 
 ## Positive and negative series

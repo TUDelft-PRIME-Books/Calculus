@@ -9,19 +9,19 @@
 Suppose you are walking from your house to your favorite coffee shop to buy an XXL iced pumpkin spice latte (or a regular old cup of coffee, or the things you typically buy at Dutch "coffee shops", whichever you prefer). Assume that you walk in a straight line, so that your position $x$ (in meters) can be described as a function of time $t$ (in seconds). If you were to walk at a constant speed, you walk a fixed number of meters each second, so the graph of your position would look like a straight line. Say your house would be at position $x=0$ while the coffee shop is at position $x=600$ meter and that it takes you $400$ seconds to walk this distance. So what would be the function describing your position in this case? Since the graph should be a straight line, the function should be of the form
 
 $$
- x(t)=at+b, \qquad 0\leq t\leq 400
+ s(t)=at+b, \qquad 0\leq t\leq 400
 $$
 
-for some constants $a$ and $b$. Since at the start we are at home, we should have $x(0)=0$ and since we should arrive after $400$ seconds, we should have $x(400)=600$. Plugging these conditions into the function gives the two equations
+for some constants $a$ and $b$. Since at the start we are at home, we should have $s(0)=0$ and since we should arrive after $400$ seconds, we should have $s(400)=600$. Plugging these conditions into the function gives the two equations
 
 $$
- 0=x(0)=a\cdot0+b=b,\qquad 600=x(400)=a\cdot400+b.
+ 0=s(0)=a\cdot0+b=b,\qquad 600=s(400)=a\cdot400+b.
 $$
 
 Solving these equations give $b=0$ and $a=\frac{3}{2}$, so the function we are looking for is
 
 $$
- x(t)=\frac{3}{2}t.
+ s(t)=\frac{3}{2}t.
 $$
 
 Suppose we want to know the velocity at which you were walking. In this case, you were walking at a constant speed, so the velocity can be computed by dividing the distance you traveled, which we will denote by $\Delta x$, by the time that has passed, which we will denote by $\Delta t$. Then, the velocity at any point in time is given by
@@ -30,7 +30,7 @@ $$
  \text{velocity}=\frac{\Delta x}{\Delta t}=\frac{600}{400}=\frac{3}{2}.
 $$
 
-Notice that this $\frac{3}{2}$ is the same as the coefficient of the $t$ term in the function $x(t)=\frac{3}{2}t$. This is no coincidence. When the position is a function of time of the form $x(t)=at+b$ and we measure the position at two moments in time $t_1<t_2$, then the velocity can be found as the difference in position divided by the difference in time and we find
+Notice that this $\frac{3}{2}$ is the same as the coefficient of the $t$ term in the function $s(t)=\frac{3}{2}t$. This is no coincidence. When the position is a function of time of the form $s(t)=at+b$ and we measure the position at two moments in time $t_1<t_2$, then the velocity can be found as the difference in position divided by the difference in time and we find
 
 $$
  \text{velocity}=\frac{\Delta x}{\Delta t}=\frac{\left(at_2+b\right)-\left(at_1+b\right)}{t_2-t_1}=\frac{at_2-at_1}{t_2-t_1}=a.
@@ -46,14 +46,12 @@ $$
 
 of which the graph is shown below.
 
-:::{figure} Images/Fig-Differentiability-Intro.png
+:::{applet}
+:url: calculus/differentiability/introduction_differentiability
 :name: Fig:Differentiability:Intro
+:class: dark-light
 
-The graph of the function $x(t)=\frac{3}{2}t$ on the left and $x(t)=300\sin\left(\frac{3\pi t}{1200}-\frac{\pi}{2}\right)+300$ on the right.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Differentiability:Intro` with an applet showing the graphs of the two functions $x(t)=\frac{3}{2}t$ and $x(t)=300\sin\left(\frac{3\pi t}{1200}-\frac{\pi}{2}\right)+300$.
+The graph of the functions $s(t)=\frac{3}{2}t$ and $x(t)=300\sin\left(\frac{3\pi t}{1200}-\frac{\pi}{2}\right)+300$.
 :::
 
 In this case, we can calculate the **average velocity** during the walk (where going back counts as a negative velocity) by dividing the difference in position $\Delta x$ by the difference in time. This gives
@@ -157,7 +155,7 @@ $$
 
 The notation $\dfrac{df}{dx}$ is called the **Leibniz notation**, named after the German philosopher and mathematician [Gottfried Wilhelm Leibniz (1646-1716)](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz). The notation $Df(x)$ is sometimes called the **Euler notation**, although there is no indication that the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler) ever used this notation.
 
-In physics, when considering a quantity $y$ that is a function of **time** $t$, the notation $\dot{y}(t)$ represents the derivative $y'(t)$. This notation is called the **Newton notation** and is named after the English mathematicain, physicist and alchemist [Sir Isaac Newton (1643-1727)](https://en.wikipedia.org/wiki/Isaac_Newton).
+In physics, when considering a quantity $y$ that is a function of **time** $t$, the notation $\dot{y}(t)$ represents the derivative $y'(t)$. This notation is called the **Newton notation** and is named after the English mathematician, physicist and alchemist [Sir Isaac Newton (1643-1727)](https://en.wikipedia.org/wiki/Isaac_Newton).
 ::::::
 
 
@@ -174,16 +172,13 @@ Indeed, consider the difference quotient $\dfrac{f(a+h)-f(a)}{h}$ for a small va
 
 By taking the limit of $h$ to $0$, this slope approaches $f'(a)$, which is the slope of the tangent line. As such, we can think of the slope of the tangent line as the slope of function at the point, which means that we can also think of the derivative in this way.
 
-:::{figure} Images/Fig-Differentiability-Tangentline.png
+:::{applet}
+:url: calculus/differentiability/tangent_line
 :name: Fig:Differentiability:Tangentline
+:class: dark-light
 
 The function $x^3$ and the line through the points $(1,1)$ and $(1+h,(1+h)^3)$ for a value of $h$.
 :::
-
-:::{todo}
-Replace {numref}`Fig:Differentiability:Tangentline` with an applet showing the function $x^3$ and the line through the points $(1,1)$ and $(1+h,(1+h)^3)$ for a value of $h$. The applet should have a slider for $h$ that allows the user to change the value of $h$ between $-1$ and $1$.
-:::
-
 
 ::::::{prf:theorem} 
 :label: Thm:Differentiability:Tangentline
@@ -221,15 +216,15 @@ Consider the function $f(x)=x^2$. We will use the definition of the derivative t
 
 As such, we find that the function $f(x)=x^2$ is differentiable everywhere and that the derivative is given by $f'(x)=2x$.
 
-:::{figure} Images/Fig-Differentiability-Usinglimit.png
+:::{applet}
+:url: calculus/differentiability/tangent_line_2
 :name: Fig:Differentiability:Usinglimit
+:class: dark-light
 
 The graph of the function $f(x)=x^2$ and the tangent line at the selected point.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Differentiability:Usinglimit` with an applet showing the function and the tangent to this function at a point entered by the user.
-:::
+
 ::::::
 
 ::::::{prf:example} 
@@ -244,15 +239,14 @@ which is a limit that does not exist (the function $g(h)=h^{-\frac{2}{3}}$ has a
 
 We will see later that this function is differentiable at any other point and that $f'(x)=\frac{1}{3}x^{-\frac{2}{3}}$ for $x\neq 0$. The idea here is that the tangent lines of the function at $a$ become steeper and steeper as $a$ approaches $ 0$. The function $f$ has a **vertical tangent line** at $x=0$ (although {prf:ref}`Def:Differentiability:Tangentline` does not apply here). Whenever a function has a vertical tangent line at a point, it will not be differentiable at this point (otherwise its derivative would need to be $\infty$ or $-\infty$ at that point, but $\infty$ or $-\infty$ are not numbers, so a derivative can never have one of these values).
 
-:::{figure} Images/Fig-Differentiability-Usinglimit2.png
+:::{applet}
+:url: calculus/differentiability/tangent_line_3
 :name: Fig:Differentiability:Usinglimit2
+:class: dark-light
 
 The graph of the function $f(x)=x^{\frac{1}{3}}$ and the vertical tangent line at $x=0$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Differentiability:Usinglimit2` with an applet showing the function, the vertical ‘tangent’ around 0, and the tangent to this function at a point entered by the user.
-:::
 ::::::
 
 
@@ -359,21 +353,15 @@ The reverse statement of {prf:ref}`Thm:Differentiability:Diffimpliescont` is not
 
 We have now seen the most typical ways a function can fail to be differentiable at a point $a$ in its domain: the function has a vertical asymptote at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit2`), it has a sharp corner at $a$ (see {prf:ref}`Ex:Differentiability:Usinglimit3`) or it is not continuous at $a$. {numref}`Fig:Differentiability:majorcasesnondiff` shows these three cases. A mathematician can provide you with examples that do not necessarily look like one of these three cases (such as the [Weierstrass function](https://en.wikipedia.org/wiki/Weierstrass_function)), but in practice, most points where a function is not differentiable will be of one of these three forms.
 
-```{figure} Images/majorcasesnondiff.png
----
-width: 100%
-name: Fig:Differentiability:majorcasesnondiff
-class: dark-light
----
+:::{applet}
+:url: calculus/differentiability/failing_differentiability
+:name: Fig:Differentiability:majorcasesnondiff
+:class: dark-light
 
 The three major cases in which a function can fail to be differentiable at a point $a$ in its domain: the function has a vertical asymptote at $a$ (left), it has a sharp corner at $a$ (middle) or it is not continuous at $a$ (right).
-```
-
-:::{todo}
-Replace {numref}`Fig:Differentiability:majorcasesnondiff` with an applet.
 :::
 
-[^FootnoteContdiff]: Coming up with an example of a function that is differentiable with a discountiuous derivative is a bit ambitious for now. In {prf:ref}`Ex:Productquotientrule:Contdiff` we will provide such an example.
+[^FootnoteContdiff]: Coming up with an example of a function that is differentiable with a discontinuous derivative is a bit ambitious for now. In {prf:ref}`Ex:Productquotientrule:Contdiff` we will provide such an example.
 
 The derivative of a differentiable function does not need to be continuous[^FootnoteContdiff]. Since "a differentiable function for which the derivative is continuous" is such a mouthful, we give this concept a name.
 
@@ -414,23 +402,17 @@ Indeed, the tangent line of $f$ at $a$ is given by $y=f(a)+f'(a)(x-a)$. This lin
 
 Authors who do not use our definition of a differential might say that the differential has the interpretation that if $x$ changes by $dx$, $y=f(x)$ will change by $dy=f'(x)dx$. We however will not do that and stick to our definition of a differential.
 
-```{figure} Images/differential.png
----
-width: 100%
-name: Fig:Differentiability:Differential
-class: dark-light
----
+:::{applet}
+:url: calculus/differentiability/changes_in_function_values
+:name: Fig:Differentiability:Differential
+:class: dark-light
 
 A visual representation of the approximation $\Delta y\approx f'(a)\Delta x$ for a function $f$ at a point $a$.
-```
-
-:::{todo}
-Replace {numref}`Fig:Differentiability:Differential` with an applet.
 :::
 
 ::::::
 
-(Subsec:Derivativestangent)=
+(Subsec:RulesAndStandardDerivatives)=
 ## Computation rules and standard derivatives
 
 In this section we will study some basic computation rules for derivatives. However, some important computation rules will be left for the upcoming sections {numref}`Sec:Differentiation:ChainRule` and {numref}`Section:DiffProdQuot`. In addition, although we will provide some derivatives of standard functions here (polynomials, the sine, cosine and the natural exponential function), we will leave others to later sections. For derivatives of other exponential functions, see {numref}`Sec:Differentiation:ChainRule`, for the derivatives of the tangent and hyperbolic tangent functions, see {numref}`Section:DiffProdQuot` and for the derivatives of logarithms, inverse trigonometric functions and power functions, see {numref}`Subsec:Invdiff`.
@@ -581,21 +563,17 @@ $$
  &=&\displaystyle\sin(x)\lim_{h\rightarrow 0}\frac{\cos(h)-1}{h}+\cos(x)\lim_{h\rightarrow 0}\frac{\sin(h)}{h}.\end{array}
 $$
 
-So in order to find the derivative of the sine, we need to evaluate the two limits $\displaystyle\lim_{h\rightarrow 0}\frac{\cos(h)-1}{h}$ and $\displaystyle\lim_{h\rightarrow 0}\frac{\sin(h)}{h}$. We first evaluate the second of these two limits and for this, we first consider the right limit, which we evaluate using the squeeze theorem. From the proof of {prf:ref}`Theorem:Continuity:Standardfunctions`, we recall that $\sin(h)\leq h$ for any $0<h<\frac{\pi}{2}$. This inequality can be rewritten as $\frac{\sin(h)}{h}\leq 1$ for any $0<h<\frac{\pi}{2}$. In order to find a lower bound on the function $\frac{\sin(h)}{h}$, we will fix $0<h<\frac{\pi}{2}$ show that $h\leq \tan(h)$.  For this, consider the triangle shown in {numref}`Fig:Differentiability:tanhgreaterh`. The point $A$ lies on the circle with center at the origin and radius $1$. The point $B$ is the point directly above $A$ such that the angle between $OA$ and $OB$ is $h$. The line segment $OB$ intersect the circle at the point $C$. The point $D$ is chosen on the line segment $AB$ in such a way that the line segments $CD$ and $CB$ make a right angle.
+So in order to find the derivative of the sine, we need to evaluate the two limits $\displaystyle\lim_{h\rightarrow 0}\frac{\cos(h)-1}{h}$ and $\displaystyle\lim_{h\rightarrow 0}\frac{\sin(h)}{h}$. We first evaluate the second of these two limits and for this, we first consider the right limit, which we evaluate using the squeeze theorem. From the proof of {prf:ref}`Theorem:Continuity:Standardfunctions`, we recall that $\sin(h)\leq h$ for any $0<h<\frac{\pi}{2}$. This inequality can be rewritten as $\frac{\sin(h)}{h}\leq 1$ for any $0<h<\frac{\pi}{2}$. In order to find a lower bound on the function $\frac{\sin(h)}{h}$, we will fix $0<h<\frac{\pi}{2}$ and show that $h\leq \tan(h)$.  For this, consider the triangle shown in the figure below. The point $A$ lies on the circle with center at the origin and radius $1$. The point $B$ is the point directly above $A$ such that the angle between $OA$ and $OB$ is $h$. The line segment $OB$ intersect the circle at the point $C$. The point $D$ is chosen on the line segment $AB$ in such a way that the line segments $CD$ and $CB$ make a right angle.
 
-```{figure} Images/tanhgreaterh.png
----
-width: 100%
-name: Fig:Differentiability:tanhgreaterh
-class: dark-light
----
+:::{applet}
+:url: calculus/differentiability/tan_h_greater_than_h
+:name: Fig:Differentiability:tanhgreaterh
+:class: dark-light
+:nonumber: 
 
 An illustration of the proof that $h\leq \tan(h)$ for any $0<h<\frac{\pi}{2}$.
-```
-
-:::{todo}
-Replace {numref}`Fig:Differentiability:tanhgreaterh` with an applet.
 :::
+
 
 Recall that the length of the part of the circle from $A$ to $C$ is equal to $h$. Indeed, the full circumference of the circle is $2\pi$, so since we only consider $\frac{h}{2\pi}$ part of this, the length of this piece is $\frac{h}{2\pi}2\pi=h$. From the picture, we immediately see that this length is less than the sum of the distances $|AD|+|CD|$. Since the line segments $CD$ and $CB$ make a right angle, it follows from the Pythagorean theorem that $|CD|\leq |BD|$. As such, we find
 
@@ -766,7 +744,7 @@ In general, whenever we have a differentiable function $f$, the derivative $f'$ 
 
 
 ::::::{prf:definition} 
-:label: Def:Differentiability:Higherorderderivative
+:label: Ex:Differentiability:Higherorderderivative
 If the derivative $f'$ is differentiable, then its derivative $(f')'$ is called the **second derivative** of $f$ and is denoted by $f''$. If the second derivative exists, we say that $f$ is **twice differentiable**.
 
 Similarly, if the second derivative is again differentiable, its derivative is called the **third derivative** of $f$ and is denoted by $f^{(3)}$. If the third derivative exists, we say that $f$ is **three times differentiable**.
@@ -793,7 +771,7 @@ In physics, when considering a quantity $y$ that is a function of **time** $t$, 
 For notational convenience, specifically when considering Taylor polynomials (see {numref}`Sec:TaylorPolynomials`), we also introduce the concept of a zeroth derivative, which is just the function itself.
 
 ::::::{prf:definition} 
-:label: Def:Differentiability:Higherorderderivative
+:label: Def:Differentiability:Zerothorderderivative
 For any function $f$, the **zeroth derivative** of $f$, is the function itself. We write
 
 $$
@@ -803,7 +781,7 @@ $$
 ::::::
 
 ::::::{prf:example} 
-:label: Def:Differentiability:Higherorderderivative1
+:label: Ex:Differentiability:Higherorderderivative1
 Consider the function $g(t)=-3\cos(t)+4t^3-t$. Using the basic computation rules {prf:ref}`Thm:Differentiability:Sumscalar` and the standard derivatives {prf:ref}`Thm:Differentiability:Standard1` we find that
 
 \begin{align*}
@@ -823,7 +801,7 @@ The resulting function is again differentiable and we obtain
 ::::::
 
 ::::::{prf:example} 
-:label: Def:Differentiability:Higherorderderivative2
+:label: Ex:Differentiability:Higherorderderivative2
 Consider the function $h(\theta)=\sin(\theta)$. Then we find
 
 \begin{align*}
@@ -839,7 +817,7 @@ Indeed, if we want to know the $1001$st derivative of $h$, we notice that $1000$
 ::::::
 
 ::::::{prf:example} 
-:label: Def:Differentiability:Higherorderderivative3
+:label: Ex:Differentiability:Higherorderderivative3
 Consider the function 
 
 $$
@@ -878,7 +856,7 @@ So $f$ is twice differentiable in $0$ and $f''(0)=0$. In addition, we note that 
 ::::::{prf:remark}
 :label: Remark:Differentiability:Nbutnotnplus1
 
-The idea from {prf:ref}`Def:Differentiability:Higherorderderivative3` works more general: if $n>0$ is a nonzero natural number the function 
+The idea from {prf:ref}`Ex:Differentiability:Higherorderderivative3` works more general: if $n>0$ is a nonzero natural number the function 
 
 $$
  f(x)=\left\{\begin{array}{l}0,\qquad&\text{if}\,x\leq 0,\\ x^n,\qquad &\text{if}\,x>0.\end{array}\right.
@@ -890,14 +868,12 @@ is $n$ times differentiable in $0$, but not $n+1$ times.
 
 We see that each time we make more restrictions, we obtain a smaller group of functions. So the set of all continuous functions contains all the set of all differentiable functions (but is not equal), which contains the set of all continuously differentiable functions (but is not equal), which, in turn, contains the set of all twice differentiable functions (and again, they are not equal) and we can keep on going like this. We can also represent this in a Venn diagram.
 
-:::{figure} Images/Fig-Differentiable-Venn.png
+:::{applet}
+:url: calculus/differentiability/venn_diagram_continuity_and_differentiability
 :name: Fig:Differentiability:Venn
+:class: dark-light
 
 A Venn diagram showing that different sets of functions are contained in each other.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Differentiability:Venn` with an applet. Maybe show a few more layers?
 :::
 
 ## Grasple exercises

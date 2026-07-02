@@ -20,7 +20,7 @@ Let us repeat the definitions of convergence, divergence, absolute convergence a
 :::{fetch} {prf:ref}`Def:Series:RelativeConvergence`
 :::
 
-## Reusing existing tests
+## Reusing previous tests
 
 Because taking the absolute value of the terms of a series creates a new series with only positive terms, we can apply the tests for positive series from {numref}`Sec:Series:PositiveSeries` to determine whether the original series is absolutely convergent. If taking the absolute value of the terms of a series creates a new series that is a geometric series or a $p$-series, we can use the tests for geometric series and $p$-series from {prf:ref}`Thm:Series:GeometricSeries` and {prf:ref}`Thm:Series:pSeries` to determine whether the original series is absolutely convergent. The same holds if the new series created by taking the absolute value of the terms of a series is a telescoping series, which means we can apply the test for telescoping series from {prf:ref}`Thm:Series:SumTelescopingSeries` to determine whether the original series is absolutely convergent.
 

@@ -1331,6 +1331,15 @@ Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\inf
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/817e7373-af36-4ddf-bad2-d92e4c516e84?id=133606
+:label: Grasple:133606
+:dropdown:
+:description: Another remarkable integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/ba0412df-e79f-486b-bd82-26cdfedf09a6?id=133541
 :label: Grasple:133541
 :dropdown:
