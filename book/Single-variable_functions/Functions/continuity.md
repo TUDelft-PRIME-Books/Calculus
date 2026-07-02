@@ -22,7 +22,7 @@ The circuit described above with a resistor with resistance $R$ and a capacitor 
 
 
 
-::::::{prf:definition} Continuity
+::::::{prf:definition} 
 :label: Def:Continuity:ContinuityLimit
 
 Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **continuous** at $a$ whenever for every $\varepsilon>0$ there exists a $\delta>0$ such that for every $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $|f(x)-f(a)|<\varepsilon$. If $f$ is not continuous at $a$, we say that it is **discontinuous** at $a$.
@@ -54,6 +54,18 @@ You might be tempted to think that this definition means that a function $f$ is 
 
 {prf:ref}`Theorem:LimitAtPoint:Directsub` essentially states that most functions that we know (polynomials, rational functions, powers of $x$, (inverse) trigonometric functions, exponential functions and logarithms) are continuous on their domains. However, we never proved this theorem (we will do so in this section), so we cannot make use of this yet. Still, it does give us an idea which functions are going to be continuous. 
 
+We can also consider functions that are functions that are continuous except at finitely many points. Such functions are known as piecewise-continuous functions.
+
+::::::{prf:definition}
+:label: Def:Continuity:Piecewise
+Let $f$ be a function defined on a closed interval $[a,b]$. Then $f$ is called **piecewise-continuous** if there exists points $x_0<x_1<...<x_n$ with $x_0=a$ and $x_n=b$ in such a way that $f$ is continuous on each open interval $(x_i,x_{i+1})$ for $i$ in $\{0,1,...,n-1\}$.
+::::::
+
+:::{note}
+Every continuous function is also piecewise-continuos. A piecewise-continuous function is only discontinuous at finitely many points.
+:::
+
+
 ::::::{prf:example}
 :label: Ex:Continuity:Visual
 Consider the function $f$ of which the graph is shown below.
@@ -77,7 +89,7 @@ At $x=1$ the left and right limit are both equal to $3$ and we see that $f(1)=3$
 
 Finally, at $x=2$ the left and right limit exist and are equal, so the limit $\lim\limits_{x\rightarrow 2}f(x)$ exists. However, the point $x=2$ is not in the domain of $f$, so $f$ is neither continuous nor discontinuous at that point. It is simply undefined there.
 
-We conclude that $f$ is continuous at all points except $-2$ and $-1$.
+We conclude that $f$ is continuous at all points except $-2$ and $-1$. In particular, the function $f$ is piecewise-continuous.
 
 ::::::
 
@@ -758,7 +770,7 @@ A function $g(x)$ and a slider for the parameter $b$.
 
 Consider the function from {prf:ref}`Ex:Continuity:Visual`. We saw that this function was not continuous at $-2$, since the left and right limit were unequal. However, we can read off from the graph that $\lim\limits_{x\rightarrow 2^-}f(x)=f(-2)$. So if we ignore the part of the function to the right of $-2$, the function is continuous. We say that the function is **left-continuous** at $-2$. Although left continuity (and the corresponding **right continuity**) is a bit weaker than regular continuity, it is still a useful concept to consider.
 
-::::::{prf:definition} Left and right continuity
+::::::{prf:definition} 
 :label: Def:Continuity:Continuityleftright
 
 Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **left-continuous** at $a$ if $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$. 

@@ -94,7 +94,7 @@ Sometimes it is useful for us to refer to functions that have a Taylor series wi
 A function is called **analytic** if it has a Taylor series with a positive radius of convergence.
 ::::::
 
-One of the most (in)famous Taylor series is the Taylor series of the exponential function $f(x)=e^x$ at $x=0$, which we consider in the next example.
+One of the most simple Taylor series is the Taylor series of the exponential function $f(x)=e^x$ at $x=0$, which we consider in the next example.
 
 ::::::{prf:example}
 :label: Ex:Series:ExpTaylor
@@ -126,7 +126,7 @@ $$
  
 This implies that the Taylor series converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$.
 
-{numref}`Fig:Series:ExpTaylor` showcases the function $f(x)=e^x$ and some of its Taylor polynomial, which are the partial sums of the Taylor series. We can see that these Taylor polynomials are good approximations of the function $f$ around $x=0$ and that they get better and better as we take more and more terms in the Taylor series.
+{numref}`Fig:Series:ExpTaylor` showcases the function $f(x)=e^x$ and some of its Taylor polynomials, which are the partial sums of the Taylor series. We can see that these Taylor polynomials are good approximations of the function $f$ around $x=0$ and that they get better and better as we take more and more terms in the Taylor series.
 
 ::::{figure} Images/taylor.png
 :name: Fig:Series:ExpTaylor
@@ -140,6 +140,22 @@ Replace {numref}`Fig:Series:ExpTaylor` with an applet with $n$ a slider.
 :::
 
 ::::::
+
+:::{prf:remark}
+:label: Rem:Series:ExpMinus1
+In {prf:ref}`Ex:Series:ApproximationSum` we obtained an approximation of
+
+$$
+\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}=e^{-1}\approx0.36788.
+$$
+
+Now we are able to prove this result:
+
+$$
+\sum_{n=2}^{\infty}\frac{(-1)^n}{n!}=\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}=e^{-1}.
+$$
+
+:::
 
 ::::::{prf:example}
 :label: Ex:Series:SinTaylor
@@ -195,7 +211,7 @@ In {numref}`Fig:Series:SinCosTaylor` you can investigate this convergence yourse
 
 ::::::
 
-As you can see in {numref}`Fig:Series:ExpTaylor` and {numref}`Fig:Series:SinCosTaylor`, the Taylor polynomials of $\sin(x)$ and $\cos(x)$ are good approximations of these functions around $x=0$ and they get better and better as we take more and more terms in the Taylor series. This indicates the part that is cut off from the Taylor series, gets smaller and smaller as we take more and more terms in the Taylor series. In the next section we will make this precise.
+As you can see in {numref}`Fig:Series:ExpTaylor` and {numref}`Fig:Series:SinCosTaylor`, the Taylor polynomials of $\sin(x)$ and $\cos(x)$ are good approximations of these functions around $x=0$ and they get better and better as we take more and more terms in the Taylor series. This indicates that the part that is cut off from the Taylor series, gets smaller and smaller as we take more and more terms in the Taylor series. In the next section we will make this precise.
 
 ## The remainder
 
@@ -227,7 +243,7 @@ $$
 for $|x-a|<R$, then $f$ is equal to the sum of its Taylor series for $|x-a|<R$.
 ::::::
 
-If we want to show that $\lim\limits_{n\to\infty}R_n(x)=0$ for a specific function $f$, we need first a formula for the remainder term $R_n(x)$, which is provided in the next theorem.
+If we want to show that $\lim\limits_{n\to\infty}R_n(x)=0$ for a specific function $f$, we first need a formula for the remainder term $R_n(x)$, which is provided in the next theorem.
 
 :::{prf:theorem}
 :label: Thm:Series:TaylorRemainder
@@ -237,13 +253,13 @@ $$
 R_n(x)=\frac{1}{n!}\int_a^x(x-t)^nf^{(n+1)}(t)\,dt.
 $$
 
-This is called the *integral form of the remainder term*. Furthermore, there exists a number $c$ between $a$ and $x$ such that
+This is called the **integral form of the remainder term**. Furthermore, there exists a number $c$ between $a$ and $x$ such that
 
 $$
 R_n(x)=\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}.
 $$
 
-This is called *Lagrange's form of the remainder term*.
+This is called **Lagrange's form of the remainder term**.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Series:TaylorRemainder`
@@ -258,28 +274,28 @@ R_0(x) &= f(x) - T_0(x) \\
 &= \frac{1}{0!}\int_a^x(x-t)^0f'(t)\,dt.
 \end{align*}
 
-Now assume that the formula holds for $n=N$ and consider $n=N+1$:
+Now assume that the formula holds for a certain value of $n$. Then we have
 
 \begin{align*}
-R_{N+1}(x) &= f(x) - T_{N+1}(x) \\
-&= f(x) - T_N(x) - \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
-&= R_N(x) - \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
-&= \frac{1}{N!}\int_a^x(x-t)^Nf^{(N+1)}(t)\,dt - \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1}.
+R_{n+1}(x) &= f(x) - T_{n+1}(x) \\
+&= f(x) - T_n(x) - \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1} \\
+&= R_n(x) - \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1} \\
+&= \frac{1}{n!}\int_a^x(x-t)nf^{(n+1)}(t)\,dt - \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1}.
 \end{align*}
 
-In the last step we used the induction hypothesis. Now we apply integration by parts to the integral term, using $u=f^{(N+1)}(t)$ and $dv=(x-t)^N\,dt$, which implies that $du=f^{(N+2)}(t)\,dt$ and $v=-\frac{1}{N+1}(x-t)^{N+1}$, to obtain that
+In the last step we used the induction hypothesis. Now we apply integration by parts to the integral term, using $u=f^{(n+1)}(t)$ and $dv=(x-t)^n\,dt$, which implies that $du=f^{(n+2)}(t)\,dt$ and $v=-\frac{1}{n+1}(x-t)^{n+1}$, to obtain that
 
 \begin{align*}
-R_{N+1}(x) &= \frac{1}{N!}\left(\left[-\frac{1}{N+1}(x-t)^{N+1}f^{(N+1)}(t)\right]_{t=a}^{x} + \int_a^x \frac{1}{N+1}(x-t)^{N+1}f^{(N+2)}(t)\,dt \right) \\
-&~ \quad\quad- \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
-&= \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} + \frac{1}{(N+1)!}\int_a^x(x-t)^{N+1}f^{(N+2)}(t)\,dt \\
-&~ \quad\quad- \frac{f^{(N+1)}(a)}{(N+1)!}(x-a)^{N+1} \\
-&= \frac{1}{(N+1)!}\int_a^x(x-t)^{N+1}f^{(N+2)}(t)\,dt.
+R_{n+1}(x) &= \frac{1}{n!}\left(\left[-\frac{1}{n+1}(x-t)^{n+1}f^{(n+1)}(t)\right]_{t=a}^{x} + \int_a^x \frac{1}{n+1}(x-t)^{n+1}f^{(n+2)}(t)\,dt \right) \\
+&~ \quad\quad- \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1} \\
+&= \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1} + \frac{1}{(n+1)!}\int_a^x(x-t)^{n+1}f^{(n+2)}(t)\,dt \\
+&~ \quad\quad- \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1} \\
+&= \frac{1}{(n+1)!}\int_a^x(x-t)^{n+1}f^{(n+2)}(t)\,dt.
 \end{align*}
 
 This proves the first part of the theorem.
 
-For the next part, we use the mean value theorem for integrals, see {numref}`Sec:Integration:FundamentalTheorem`, to obtain that there exists a number $c$ between $a$ and $x$ such that
+For the next part, we use the {prf:ref}`mean value theorem for integrals <Thm:Integration:FundamentalTheorem>`, to obtain that there exists a number $c$ between $a$ and $x$ such that
 
 \begin{align*}
 R_n(x) &= \frac{1}{n!}\int_a^x(x-t)^nf^{(n+1)}(t)\,dt \\
@@ -351,7 +367,7 @@ f^{(n)}(0) = \begin{cases}
 \end{cases}
 $$
 
-This implies that the $n$-th term of the Taylor series of $f$ at $x=0$ is given by
+This implies that the $n$th term of the Taylor series of $f$ at $x=0$ is given by
 
 $$
 \frac{f^{(n)}(0)}{n!}(x-0)^n = \begin{cases}
@@ -363,18 +379,19 @@ $$
 Therefore, the Taylor series of $f$ at $x=0$ is given by
 
 $$
-f(x) = \cosh(x)=\sum_{\substack{n=0\\n\text{ even}}}^{\infty}\frac{1}{(n)!}x^{n}.
+f(x) = \cosh(x)=\sum_{n=0}^{\infty}\frac{1}{(2n)!}x^{2n}.
 $$
 
-The ratio test with $x\neq0$ gives us, after rewriting the above series to $\displaystyle\sum_{n=0}^{\infty}\frac{1}{(2n)!}x^{2n}=\sum_{n=0}^{\infty}a_n$, that
+Let $a_n=\frac{1}{(2n)!}x^{2n}$, then the ratio test with $x\neq0$ gives us that
 
-$$
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{1}{(2n+2)!}x^{2n+2}\cdot\frac{(2n)!}{1}x^{-2n}\right|=\lim\limits_{n\to\infty}\frac{x^2}{(2n+1)(2n+2)}=0,
-$$
+\begin{align*}
+\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{1}{(2n+2)!}x^{2n+2}\cdot\frac{(2n)!}{1}x^{-2n}\right|\\
+&=\lim\limits_{n\to\infty}\frac{x^2}{(2n+1)(2n+2)}=0,
+\end{align*}
 
 so the radius of convergence is $R=\infty$.
 
-Because the radius convergence is infinite, we can use Taylor's inequality to find an approximation of $\cosh(1)$ exact to three decimal places. We do have to pick an interval that contains $0$ and $1$ to find an upper bound for $|f^{(n+1)}(x)|$. We choose the interval $[0,\ln(3)]$, as $\cosh(x)$ and $\sinh(x)$ are both positive on this interval and therefore also increasing on this interval. This implies that for $x\in[0,\ln(3)]$ we have
+Because the radius of convergence is infinite, we can use Taylor's inequality to find an approximation of $\cosh(1)$ exact to three decimal places. We do have to pick an interval that contains $0$ and $1$ to find an upper bound for $|f^{(n+1)}(x)|$. We choose the interval $[0,\ln(3)]$, as $\cosh(x)$ and $\sinh(x)$ are both positive on this interval and therefore also increasing on this interval. This implies that for $x\in[0,\ln(3)]$ we have
 
 \begin{align*}
 |f^{(n+1)}(x)| &= \begin{cases}
@@ -392,20 +409,20 @@ Because the radius convergence is infinite, we can use Taylor's inequality to fi
 &\leq \frac{5}{3}.
 \end{align*}
 
-This implies that we can take $M=\frac{5}{3}$ in Taylor's inequality. We want to find an approximation of $\cosh(1)$ exact to three decimal places, so we want to find $N$ such that
+This implies that we can take $M=\frac{5}{3}$ in Taylor's inequality. We want to find an approximation of $\cosh(1)$ exact to three decimal places, so we want to find $n$ such that
 
 $$
-|R_N(x)|\leq\frac{M}{(N+1)!}|1-0|^{N+1}=\frac{5}{3(N+1)!}\leq 0.5\cdot10^{-3}.
+|R_n(x)|\leq\frac{M}{(n+1)!}|1-0|^{n+1}=\frac{5}{3(n+1)!}\leq 0.5\cdot10^{-3}.
 $$
 
-Solving the last inequality gives us $(N+1)!\geq \dfrac13\cdot10^4 = 3333.\overline{33}$. This implies that we must take $N\geq6$ to find an approximation of $\cosh(1)$ exact to three decimal places. The following table shows the values of $T_N(1)$ for $N=0,2,4,6,8$ and $N=10$ with to six decimal places. We skip all odd values of $N$ as the Taylor series of $f$ at $x=0$ only has even terms.
+Solving the last inequality gives us $(n+1)!\geq \dfrac13\cdot10^4 = 3333.\overline{33}$. This implies that we must take $n\geq6$ to find an approximation of $\cosh(1)$ exact to three decimal places. The following table shows the values of $T_n(1)$ for $n=0,2,4,6,8,10$ exact to six decimal places. We skip all odd values of $n$ as the Taylor series of $f$ at $x=0$ only has even terms.
 
 ```{list-table} Approximation of $\cosh(1)$ using Taylor polynomials.
 :header-rows: 1
 :class: mid-align center-align
 
-* - $N$ 
-  - $T_N(1)$
+* - $n$ 
+  - $T_n(1)$
 * - $0$
   - $1.000000\ldots$
 * - $2$
@@ -453,14 +470,14 @@ So far, we have obtained the Taylor series of six standard functions at $x=0$, o
 * - $\displaystyle\ln(1+x)$
   - $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{n+1}}{n+1}$
   - $(-1,1]$
-  - {prf:ref}`Ex:Series:LogTwo`
+  - {prf:ref}`Ex:Series:PowerSeriesExample2`
 * - $\displaystyle\arctan(x)$
   - $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n+1}}{2n+1}$
   - $[-1,1]$
   - {prf:ref}`Ex:Series:Arctan`
 ```
 
-The Taylor series of these functions at $x=0$ can be used in many applications, such as finding limits, approximating functions, and computing integrals. We will see some of these applications in the next examples.
+The Taylor series of these functions at $x=0$ can be used in many applications, such as finding limits, approximating functions, and evaluating integrals. We will see some of these applications in the next examples.
 
 ::::::{prf:example}
 :label: Ex:Series:TaylorLimitExp
@@ -472,14 +489,14 @@ Using the Taylor series of $e^x$ at $x=0$ we can find for $x\neq 0$ that:
 &= \frac{\left(1+x + \displaystyle\sum_{n=2}^{\infty}\frac{x^n}{n!}\right) - 1 - x}{x^2} \\
 &= \frac{\displaystyle\sum_{n=2}^{\infty}\frac{x^n}{n!}}{x^2} \\
 &= \displaystyle\sum_{n=2}^{\infty}\frac{x^{n-2}}{n!} \\
-&= \frac{1}{2} + \frac16x+\frac{1}{24}x^2+\ldots
+&= \frac{1}{2}+\frac{1}{6}x+\frac{1}{24}x^2+\cdots.
 \end{align*}
 
 This means that if we take the limit as $x$ approaches $0$, then we have
 
 \begin{align*}
-\lim\limits_{x\to 0}\frac{e^x-1-x}{x^2} &= \lim\limits_{x\to 0}\left(\frac{1}{2} + \frac16x+\frac{1}{24}x^2+\ldots\right)\\
-&=\frac{1}{2}+0+0+\ldots \\
+\lim\limits_{x\to 0}\frac{e^x-1-x}{x^2} &= \lim\limits_{x\to 0}\left(\frac{1}{2}+\frac{1}{6}x+\frac{1}{24}x^2+\cdots\right)\\
+&=\frac{1}{2}+0+0+\cdots \\
 &=\frac{1}{2}.
 \end{align*}
 
@@ -488,7 +505,7 @@ This means that if we take the limit as $x$ approaches $0$, then we have
 ::::::{prf:example}
 :label: Ex:Series:TaylorLimitCos
 
-In as similar fashion as in the previous example, we can find that
+In a similar fashion as in the previous example, we find that
 
 \begin{align*}
 \lim\limits_{x\to 0}\frac{\cos(x)-1+\frac{1}{2}x^2}{x^4}
@@ -496,8 +513,8 @@ In as similar fashion as in the previous example, we can find that
 &= \lim\limits_{x\to 0}\frac{\left(1-\frac{1}{2}x^2+\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}\right)-1+\frac{1}{2}x^2}{x^4} \\
 &= \lim\limits_{x\to 0}\frac{\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}}{x^4} \\
 &= \lim\limits_{x\to 0}\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{x^{2n-4}}{(2n)!} \\
-&= \lim\limits_{x\to 0}\left(-\frac{1}{24}+\frac{1}{720}x^2-\ldots\right) \\
-&=-\frac{1}{24}+0+\ldots \\
+&= \lim\limits_{x\to 0}\left(-\frac{1}{24}+\frac{1}{720}x^2-\frac{1}{40320}x^4+\cdots\right) \\
+&=-\frac{1}{24}+0-0+\cdots \\
 &=-\frac{1}{24}.
 \end{align*}
 
@@ -506,7 +523,7 @@ In as similar fashion as in the previous example, we can find that
 ::::::{prf:example}
 :label: Ex:Series:TaylorIntegralSin
 
-Using $\sin(x)=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ for all $x\in\mathbb{R}$ we can obtain that
+Using $\sin(x)=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ for all $x\in\mathbb{R}$ we obtain that
 
 \begin{align*}
 \int_0^1x\sin(x^3)\,dx
@@ -516,18 +533,18 @@ Using $\sin(x)=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ f
 &= \displaystyle\sum_{n=0}^{\infty}\int_0^1\frac{(-1)^n}{(2n+1)!}x^{6n+4}\,dx \\
 &= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\int_0^1x^{6n+4}\,dx \\
 &= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\frac{1}{6n+5} \\
-&= \frac{1}{5}-\frac{1}{66}+\frac{1}{2040}-\frac{1}{115920}+\ldots
+&= \frac{1}{5}-\frac{1}{66}+\frac{1}{2040}-\frac{1}{115920}+\cdots
 \end{align*}
 
-We can use this series representation of the definite integral to find an approximation of the value of the integral by truncating the series after a finite number of terms $N$. Table {numref}`Tab:Series:TaylorIntegralSin` shows the approximations of the value of the integral for $N=0,1,2,3$.
+We can use this series representation of the definite integral to find an approximation of the value of the integral by truncating the series after a finite number of terms. {numref}`Tab:Series:TaylorIntegralSin` shows the approximations of the value of the integral using one, two, three and four term(s).
 
 ```{list-table} Approximations of $\displaystyle\int_0^1x\sin(x^3)\,dx$ using the Taylor series of $\sin(x)$ at $x=0$.
 :header-rows: 1
 :class: mid-align center-align
 :name: Tab:Series:TaylorIntegralSin
 
-* - $N$ 
-  - $\displaystyle\sum_{n=0}^N\frac{(-1)^n}{(2n+1)!}\frac{1}{6n+5}$
+* - $n$ 
+  - $\displaystyle\sum_{k=0}^n\frac{(-1)^k}{(2k+1)!}\frac{1}{6k+5}$
 * - $0$
   - $0.200000\ldots$
 * - $1$
@@ -538,7 +555,7 @@ We can use this series representation of the definite integral to find an approx
   - $0.185330\ldots$  
 ```
 
-Note that with $N=1$ we already have an approximation of the value of the integral that is exact to two decimal places, and with $N=2$ we have an approximation of the value of the integral that is exact to three decimal places.
+Note that with $n=1$ we already have an approximation of the value of the integral that is exact to two decimal places, and with $n=2$ we have an approximation of the value of the integral that is exact to three decimal places.
 
 ::::::
 
@@ -557,15 +574,15 @@ Using $e^x=\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$ for all $x\in\mathbb{
 &= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\frac{1}{4n+2}\left(\frac12\right)^{4n+2}.
 \end{align*}
 
-We can use this series representation of the definite integral to find an approximation of the value of the integral by truncating the series after a finite number of terms $N$. Table {numref}`Tab:Series:TaylorIntegralExp` shows the approximations of the value of the integral for $N=0,1,2,3$.
+We can use this series representation of the definite integral to find an approximation of the value of the integral by truncating the series after a finite number of terms. {numref}`Tab:Series:TaylorIntegralExp` shows the approximations of the value of the integral using one, two, three and four term(s).
 
 ```{list-table} Approximations of $\displaystyle\int_0^{\frac{1}{2}}xe^{-x^4}\,dx$ using the Taylor series of $e^x$ at $x=0$.
 :header-rows: 1
 :class: mid-align center-align
 :name: Tab:Series:TaylorIntegralExp
 
-* - $N$ 
-  - $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\frac{1}{4n+2}\left(\frac12\right)^{4n+2}$
+* - $n$ 
+  - $\displaystyle\sum_{k=0}^n\frac{(-1)^k}{k!}\frac{1}{4k+2}\left(\frac12\right)^{4k+2}$
 * - $0$
   - $0.125000\ldots$
 * - $1$
@@ -576,7 +593,7 @@ We can use this series representation of the definite integral to find an approx
   - $0.122444\ldots$  
 ```
 
-In this example we have an approximation of the value of the integral that is already exact to three decimal places with $N=1$.
+In this example we have an approximation of the value of the integral that is already exact to three decimal places with $n=1$.
 
 ::::::
 

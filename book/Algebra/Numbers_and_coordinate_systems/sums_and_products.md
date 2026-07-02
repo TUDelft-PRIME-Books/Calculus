@@ -294,7 +294,7 @@ for all $n\in\{1,2,3,\ldots\}$.
 
 This theorem can also be proved using the {prf:ref}`principle of mathematical induction <Thm:Algebra:MathematicalInduction>`:
 
-::::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:SumOfIntegers` (mathematicl induction)
+::::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:SumOfIntegers` (mathematical induction)
 :class: tudproof, dropdown
 
 For $n=1$ we obtain

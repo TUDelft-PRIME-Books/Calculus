@@ -1,11 +1,16 @@
+(Sec:CatalansConstant)=
+
 # Catalan's constant
 
 ## Introduction
 
-Series can be used to define special constants and functions. In this section we will consider Catalan's constant.
+In the previous section we dealt with the Riemann zeta function, which gives rise to various absolutely convergent series for which it is not easy find the sum. In this section we consider another series, which is absolutely convergent and for which the sum is a mysterious number.
 
-(Sec:CatalansConstant)=
-## Catalan's constant
+It turns out that this number appears in various branches of mathematics such as analysis, number theory and combinatorics.
+
+We will also show the connection to the *Dirichlet beta function*, which is closely related to the *Riemann zeta function*.
+
+## Definition and properties
 
 **Catalan's constant** $G$, named after the French and Belgian mathematician [Eugène Charles Catalan (1814-1894)](https://en.wikipedia.org/wiki/Eug%C3%A8ne_Charles_Catalan), is defined as the sum of the series $\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}$.
 
@@ -214,13 +219,13 @@ $$
 \int_0^{\frac{1}{4}\pi}\ln(2\sin(x))\,dx=-\frac{1}{2}G\quad\text{and}\quad\int_0^{\frac{1}{4}\pi}\ln(2\cos(x))\,dx=\frac{1}{2}G.
 $$
 
-## Connecting to other functions
+## The Dirichlet beta function
 
-The **Dirichlet beta function** $\beta(s)$ is defined as $\displaystyle\beta(s)=\sum_{n=0}^{|infty}\frac{(1-1)^n}{(2n+1)^s} for $\text{Re}(s)>0$. This function is closely related to the *Riemann zeta* (see: {numref}`Sec:Series:RiemannZetaFunction`).
+The **Dirichlet beta function** $\beta(s)$ is defined as $\displaystyle\beta(s)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^s}$ for $\text{Re}(s)>0$. This function is closely related to the *Riemann zeta* (see: {numref}`Sec:Series:RiemannZetaFunction`).
 
 This function is named after the German mathematician [Johann Peter Gustav Lejeune Dirichlet (1805-1859)](https://en.wikipedia.org/wiki/Peter_Gustav_Lejeune_Dirichlet).
 
-We will only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. Furthermore, for $0<s\leq1$ it is conditionally convergent because of the alternative series test. However, in general it is not very easy to find its sum.
+We will only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. Furthermore, for $0<s\leq1$ it is conditionally convergent because of the alternating series test. However, in general it is not very easy to find its sum.
 
 In {prf:ref}`Ex:Series:Arctan` we have seen the *Leibniz formula* for $\pi$, which reads
 
@@ -229,3 +234,18 @@ $$
 $$
 
 Furthermore, the definition of Catalan's constant implies that $\beta(2)=G$.
+
+Finally, the value of $\beta(3)$ can be obtained from the Fourier sine series of the function $x(\pi-x)$:
+
+:::{math}
+:label: Eq:Series:FourierSineSeries
+
+x(\pi-x)=\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n^3}\sin(nx)=\frac{8}{\pi}\sum_{k=0}^{\infty}\frac{\sin(2k+1)x}{(2k+1)^3}.
+
+:::
+
+For $x=\frac{1}{2}\pi$ this leads to
+
+$$
+\frac{1}{4}\pi^2=\frac{8}{\pi}\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^3}\quad\Longrightarrow\quad\beta(3)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^3}=\frac{1}{32}\pi^3.
+$$

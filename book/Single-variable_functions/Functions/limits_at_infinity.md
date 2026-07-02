@@ -348,7 +348,7 @@ Intuitively, these computation rules make sense: if the function values $f(x)$ a
 
 
 
-::::::{prf:theorem} Substitution
+::::::{prf:theorem} Substitution for limit at plus or minus infinity
 :label: Theorem:LimitAtInfinity:Substitution
 Suppose $f$ is a polynomial, rational function, power function, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
 
@@ -728,7 +728,7 @@ In order to prove {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates` we need
 
 Some functions do not approach a horizontal line as $x\rightarrow\infty$ or $x\rightarrow-\infty$, but, instead, approach a non-horizontal (straight) line.
 
-::::::{prf:definition} Oblique asymptote
+::::::{prf:definition}
 :label: Def:LimitAtInfinity:Oblique
 
 Let $f$ be a function that is defined on some interval $[d,\infty)$. We say that $f$ has an **oblique asymptote** (sometimes called a **slant asymptote**) $y=ax+b$ with $a\neq 0$ at $\infty$, if $\lim\limits_{x\rightarrow\infty}\left(f(x)-ax-b\right)=0$.
