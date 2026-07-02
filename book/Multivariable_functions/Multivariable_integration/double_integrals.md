@@ -113,21 +113,23 @@ We evaluate $\displaystyle\iint\limits_R(x-3y^2)\,dA$, where $R=[0,2]\times[1,2]
 
 We have
 
-$$
 \begin{align*}
-\iint\limits_R(x-3y^2)\,dA&=\int_0^2\int_1^2(x-3y^2)\,dy\,dx=\int_0^2\bigg[xy-y^3\bigg]_{y=1}^2\,dx\\
-&=\int_0^2(x-7)\,dx=\bigg[\frac{1}{2}x^2-7x\bigg]_{x=0}^2=-12
+\iint\limits_R(x-3y^2)\,dA&=\int_0^2\int_1^2(x-3y^2)\,dy\,dx\\
+&=\int_0^2\bigg[xy-y^3\bigg]_{y=1}^2\,dx\\
+&=\int_0^2(x-7)\,dx\\
+&=\bigg[\frac{1}{2}x^2-7x\bigg]_{x=0}^2\\
+&=-12
 \end{align*}
-$$
 
 and
 
-$$
 \begin{align*}
-\iint\limits_R(x-3y^2)\,dA&=\int_1^2\int_0^2(x-3y^2)\,dx\,dy=\int_1^2\bigg[\frac{1}{2}x^2-3xy^2\bigg]_{x=0}^2\,dy\\
-&=\int_1^2\left(2-6y^2\right)\,dy=\bigg[2y-2y^3\bigg]_{y=1}^2=-12.
+\iint\limits_R(x-3y^2)\,dA&=\int_1^2\int_0^2(x-3y^2)\,dx\,dy\\
+&=\int_1^2\bigg[\frac{1}{2}x^2-3xy^2\bigg]_{x=0}^2\,dy\\
+&=\int_1^2\left(2-6y^2\right)\,dy\\
+&=\bigg[2y-2y^3\bigg]_{y=1}^2\\
+&=-12.
 \end{align*}
-$$
 
 :::::
 
@@ -136,32 +138,28 @@ Consider $\displaystyle\iint\limits_Ry\sin(xy)\,dA$, where $R=[1,2]\times[0,\pi]
 
 We have
 
-$$
 \begin{align*}
-\iint\limits_Ry\sin(xy)\,dA&=\int_0^{\pi}\int_1^2y\sin(xy)\,dx\,dy=\int_0^{\pi}\bigg[-\cos(xy)\bigg]_{x=1}^2\,dy\\
-&=\int_0^{\pi}\left(\cos(x)-\cos(2x)\right)\,dx=\bigg[\sin(x)-\frac{1}{2}\sin(2x)\bigg]_{x=0}^{\pi}\\
+\iint\limits_Ry\sin(xy)\,dA&=\int_0^{\pi}\int_1^2y\sin(xy)\,dx\,dy\\
+&=\int_0^{\pi}\bigg[-\cos(xy)\bigg]_{x=1}^2\,dy\\
+&=\int_0^{\pi}\left(\cos(x)-\cos(2x)\right)\,dx\\
+&=\bigg[\sin(x)-\frac{1}{2}\sin(2x)\bigg]_{x=0}^{\pi}\\
 &=0.
 \end{align*}
-$$
 
 Here the other order is much more difficult. Using integration by parts we have
 
-$$ 
 \begin{align*}
 \int y\sin(xy)\,dy&=-\frac{y}{x}\cos(xy)+\frac{1}{x}\int\cos(xy)\,dy\\
 &=-\frac{y}{x}\cos(xy)+\frac{1}{x^2}\sin(xy)+C.
 \end{align*}
-$$ 
  
 Hence we have:
 
-$$ 
 \begin{align*}
 \iint\limits_Ry\sin(xy)\,dA&=\int_1^2\int_0^{\pi}y\sin(xy)\,dy\,dx\\
 &=\int_1^2\bigg[-\frac{y}{x}\cos(xy)+\frac{1}{x^2}\sin(xy)\bigg]_{y=0}^{\pi}\\
 &=\int_1^2\left(-\frac{\pi}{x}\cos(\pi x)+\frac{1}{x^2}\sin(\pi x)\right)\,dx.
 \end{align*}
-$$ 
  
 Note that $-\displaystyle\frac{1}{x}\sin(\pi x)$ is an antiderivative, since using the chain rule we have: 
  
@@ -171,13 +169,13 @@ $$
  
 Hence:
 
-$$
 \begin{align*}
 \iint\limits_Ry\sin(xy)\,dA&=\int_1^2\int_0^{\pi}y\sin(xy)\,dy\,dx\\
 &=\int_1^2\left(-\frac{\pi}{x}\cos(\pi x)+\frac{1}{x^2}\sin(\pi x)\right)\,dx\\
-&=\bigg[-\frac{1}{x}\sin(\pi x)\bigg]_{x=1}^2=\sin(\pi)-\frac{1}{2}\sin(2\pi)=0.
+&=\bigg[-\frac{1}{x}\sin(\pi x)\bigg]_{x=1}^2\\
+&=\sin(\pi)-\frac{1}{2}\sin(2\pi)\\
+&=0.
 \end{align*}
-$$
 
 :::::
 
@@ -213,6 +211,76 @@ Hence, the average temperature in $D$ equals $\dfrac{28}{2}=14^{\circ}\text{C}$.
 
 :::
 
+## The Riemann zeta function
+
+In {numref}`Sec:Series:RiemannZetaFunction` we studied the Riemann zeta function $\zeta(s)$ defined by $\zeta(s)=\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^s}$. We have seen that
+
+$$
+\zeta(2)=\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2\quad\text{and}\quad\zeta(4)=\sum_{n=1}^{\infty}\frac{1}{n^4}=\frac{1}{90}\pi^4.
+$$
+
+Furthermore, $\zeta(3)\approx1.20206$ denotes Apéry's constant.
+
+These values have nice representations as a "double integral". For instance, we have
+
+$$
+\int_0^1\int_0^1\frac{dx\,dy}{1-xy}=\zeta(2)=\frac{1}{6}\pi^2.
+$$
+
+Using the series representation $\displaystyle\frac{1}{1-xy}=\sum_{n=0}^{\infty}(xy)^n$ for $|xy|<1$ we obtain
+
+\begin{align*}
+\int_0^1\int_0^1\frac{dx\,dy}{1-xy}&=\int_0^1\int_0^1\sum_{n=0}^{\infty}(xy)^n\\
+&=\sum_{n=0}^{\infty}\left(\int_0^1x^n\,dx\right)\left(\int_0^1y^n\,dy\right)\\
+&=\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}\\
+&=\sum_{n=1}^{\infty}\frac{1}{n^2}\\
+&=\zeta(2)\\
+&=\frac{1}{6}\pi^2.
+\end{align*}
+
+In {numref}`Sec:Series:RiemannZetFunctionApplications` we have seen that
+
+$$
+\int_0^1x^n\ln(x)\,dx=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots
+$$
+
+Now we have
+
+$$
+\int_0^1\int_0^1\frac{\ln(xy)}{1-xy}\,dx\,dy=\int_0^1\int_0^1\frac{\ln(x)+\ln(y)}{1-xy}\,dx\,dy.
+$$
+
+By symmetry, this implies that 
+
+$$
+\int_0^1\int_0^1\frac{\ln(x)}{1-xy}\,dx\,dy=\frac{1}{2}\int_0^1\int_0^1\frac{\ln(xy)}{1-xy}\,dx\,dy=\int_0^1\int_0^1\frac{\ln(y)}{1-xy}\,dx\,dy.
+$$
+
+Now we have
+
+\begin{align*}
+\int_0^1\int_0^1\frac{\ln(x)}{1-xy}\,dx\,dy&=\int_0^1\int_0^1\ln(x)\sum_{n=0}^{\infty}(xy)^n\\
+&=\sum_{n=0}^{\infty}\left(\int_0^1x^n\ln(x)\,dx\right)\left(\int_0^1y^n\,dy\right)\\
+&=-\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}\cdot\frac{1}{n+1}\\
+&=-\sum_{n=0}^{\infty}\frac{1}{(n+1)^3}\\
+&=-\sum_{n=1}^{\infty}\frac{1}{n^3}\\
+&=-\zeta(3).
+\end{align*}
+
+This implies that $\displaystyle\int_0^1\int_0^1\frac{\ln(xy)}{1-xy}\,dx\,dy=-2\zeta(3)$. 
+
+Similarly, we have
+
+\begin{align*}
+\int_0^1\int_0^1\frac{\ln(x)\ln(y)}{1-xy}\,dx\,dy&=\int_0^1\int_0^1\ln(x)\ln(y)\sum_{n=1}^{\infty}(xy)^n\\
+&=\sum_{n=0}^{\infty}\left(\int_0^1x^n\ln(x)\,dx\right)\left(\int_0^1y^n\ln(y)\,dy\right)\\
+&=\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}\cdot\frac{1}{(n+1)^2}\\
+&=\sum_{n=0}^{\infty}\frac{1}{(n+1)^4}\\
+&=\sum_{n=1}^{\infty}\frac{1}{n^4}\\
+&=\zeta(4)\\
+&=\frac{1}{90}\pi^4.
+\end{align*}
+
 ## Catalan's constant
 
 Earlier we considered Catalan's constant $G$ which is defined as the sum of the series 
@@ -231,24 +299,21 @@ $$
 
 The proof is straightforward:
 
-$$
 \begin{align*}
 \int_0^1\int_0^1\frac{dx\,dy}{1+x^2y^2}&=\int_0^1\int_0^1\frac{dy\,dx}{1+x^2y^2}\\
 &=\int_0^1\bigg[\frac{\arctan(xy)}{x}\bigg]_{y=0}^1\,dx\\
-&=\int_0^1\frac{\arctan(x)}{x}\,dx=G.
+&=\int_0^1\frac{\arctan(x)}{x}\,dx\\
+&=G.
 \end{align*}
-$$ 
  
 Alternatively, we might use $\displaystyle\frac{1}{1-t}=\sum_{n=0}^{\infty}t^n$ for $|t|<1$ to find that
 
-$$
 \begin{align*}
 \int_0^1\int_0^1\frac{dx\,dy}{1+x^2y^2}&=\sum_{n=0}^{\infty}(-1)^n\int_0^1\int_0^1(xy)^{2n}\,dx\,dy\\
 &=\sum_{n=0}^{\infty}(-1)^n\left(\int_0^1t^{2n}\,dt\right)^2\\
 &=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\\
 &=G.
 \end{align*}
-$$ 
 
 ## Double integrals over general regions
 
@@ -443,7 +508,6 @@ $$
 
 Hence we have
 
-$$
 \begin{align*}
 \iint\limits_D(x+2y)\,dA&=\int_{-1}^1\int_{3x^2}^{1+2x^2}(x+2y)\,dy\,dx\\
 &=\int_{-1}^1\bigg[xy+y^2\bigg]_{y=3x^2}^{1+2x^2}\,dx\\
@@ -453,7 +517,6 @@ $$
 &=2\cdot\frac{4}{3}\\
 &=\frac{8}{3}.
 \end{align*}
-$$
 
 :::
 
@@ -477,18 +540,18 @@ $$
 
 Therefore the volume under $z=x^2+y^2$ and above $D$ is
 
-$$
 \begin{align*}
-V&=\iint\limits_D(x^2+y^2)\,dA=\int_0^1\int_{x^2}^x(x^2+y^2)\,dy\,dx\\
+V&=\iint\limits_D(x^2+y^2)\,dA\\
+&=\int_0^1\int_{x^2}^x(x^2+y^2)\,dy\,dx\\
 &=\int_0^1\bigg[x^2y+\frac{1}{3}y^3\bigg]_{y=x^2}^x\,dx\\
 &=\int_0^1\left(x^2\cdot x+\frac{1}{3}x^3-x^2\cdot x^2-\frac{1}{3}(x^2)^3\right)\,dx\\
-&=\int_0^1\left(\frac{4}{3}x^3-x^4-\frac{1}{3}x^6\right)\,dx=\bigg[\frac{1}{3}x^4-\frac{1}{5}x^5-\frac{1}{21}x^7\bigg]_{x=0}^1\\
+&=\int_0^1\left(\frac{4}{3}x^3-x^4-\frac{1}{3}x^6\right)\,dx\\
+&=\bigg[\frac{1}{3}x^4-\frac{1}{5}x^5-\frac{1}{21}x^7\bigg]_{x=0}^1\\
 &=\frac{1}{3}-\frac{1}{5}-\frac{1}{21}\\
 &=\frac{35-21-5}{105}\\
 &=\frac{9}{105}\\
 &=\frac{3}{35}.
 \end{align*}
-$$ 
  
 As a $y$-simple region we have:
 
@@ -498,9 +561,9 @@ $$
  
 Therefore the volume can also be obtained as
 
-$$
 \begin{align*}
-V&=\iint\limits_D(x^2+y^2)\,dA=\int_0^1\int_{y}^{\sqrt{y}}(x^2+y^2)\,dx\,dy\\
+V&=\iint\limits_D(x^2+y^2)\,dA\\
+&=\int_0^1\int_{y}^{\sqrt{y}}(x^2+y^2)\,dx\,dy\\
 &=\int_0^1\bigg[\frac{1}{3}x^3+xy^2\bigg]_{x=y}^{\sqrt{y}}\,dy\\
 &=\int_0^1\left(\frac{1}{3}(\sqrt{y})^3+y^2\sqrt{y}-\frac{1}{3}y^3-y^3\right)\,dy\\
 &=\int_0^1\left(\frac{1}{3}y\sqrt{y}+y^2\sqrt{y}-\frac{4}{3}y^3\right)\,dy\\
@@ -510,7 +573,6 @@ V&=\iint\limits_D(x^2+y^2)\,dA=\int_0^1\int_{y}^{\sqrt{y}}(x^2+y^2)\,dx\,dy\\
 &=\frac{9}{105}\\
 &=\frac{3}{35}.
 \end{align*}
-$$
 
 :::
 
@@ -540,7 +602,6 @@ $$
  
 Therefore we obtain
 
-$$
 \begin{align*}
 \iint\limits_Dxy\,dA&=\int_{-2}^3\int_{y^2-5}^{y+1}xy\,dx\,dy\\
 &=\int_{-2}^3\bigg[\frac{1}{2}x^2y\bigg]_{x=y^2-5}^{y+1}\,dy\\
@@ -552,7 +613,6 @@ $$
 &=\frac{-280+891-486}{8}\\
 &=\frac{125}{8}.
 \end{align*}
-$$
 
 :::
 
@@ -576,18 +636,16 @@ $$
  
 Therefore the volume equals
 
-$$
 \begin{align*}
 V&=\iint\limits_D(2-2x-y)\,dA\\
 &=\int_0^{\frac{1}{2}}\int_{2x}^{2-2x}(2-2x-y)\,dy\,dx\\
-&=\int_0^{\frac{1}{2}}\bigg[2y-2xy-\frac{1}{2}y^2\bigg]_{y=2x}^{2-2x}\,dx
-=\int_0^{\frac{1}{2}}\bigg[(2-2x)y-\frac{1}{2}y^2\bigg]_{y=2x}^{2-2x}\,dx\\
+&=\int_0^{\frac{1}{2}}\bigg[2y-2xy-\frac{1}{2}y^2\bigg]_{y=2x}^{2-2x}\,dx\\
+&=\int_0^{\frac{1}{2}}\bigg[(2-2x)y-\frac{1}{2}y^2\bigg]_{y=2x}^{2-2x}\,dx\\
 &=\int_0^{\frac{1}{2}}\left(\frac{1}{2}(2-2x)^2-(2-2x)\cdot2x+\frac{1}{2}(2x)^2\right)\,dx\\
 &=\int_0^{\frac{1}{2}}(2-8x+8x^2)\,dx\\
 &=\bigg[2x-4x^2+\frac{8}{3}x^3\bigg]_0^{\frac{1}{2}}\\
 &=\frac{1}{3}.
 \end{align*}
-$$
 
 :::
 
@@ -623,7 +681,6 @@ $$
 
 Hence we have
 
-$$
 \begin{align*}
 \int_0^1\int_x^1\cos(y^2)\,dy\,dx&=\iint\limits_D\cos(y^2)\,dA\\
 &=\int_0^1\int_0^y\cos(y^2)\,dx\,dy\\
@@ -631,7 +688,6 @@ $$
 &=\bigg[\frac{1}{2}\sin(y^2)\bigg]_{y=0}^1\\
 &=\frac{1}{2}\sin(1).
 \end{align*}
-$$
 
 :::
 
@@ -683,18 +739,18 @@ $$
 
 denotes the **total charge** over the region $D$.
 
-During the proof of the Gaussian integral (see: {prf:ref}`Ex:MultivariableIntegration:GaussianIntegral`) we already saw that improper double integrals can be treated in the same way as single integrals. Here we will consider some examples of single integrals, which can be evaluated more easily by first converting them into multiple integrals.
+Sometimes single integrals are easier to evaluate by first converting them into multiple integrals. Here we give a few examples.
 
 :::::{prf:example} The Dirichlet integral
 :label: Ex:MultivariableIntegration:DirichletIntegral
 
-Using the Feynman method (see: {numref}`Sec:Integration:FeynmanMethod`) we have already shown that $\displaystyle\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\frac{1}{2}\pi$. This can also be done through double integrals as follows: note that $\displaystyle\frac{\sin(x)}{x}=\int_0^1\cos(xy)\,dy$ for $x>0$. Then we have using (see: {numref}`Sec:Integration:Parts`)
+Using the Feynman technique (see: {numref}`Sec:Integration:FeynmanTechnique`) we have already shown that $\displaystyle\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\frac{1}{2}\pi$. This can also be done through double integrals as follows: note that $\displaystyle\frac{\sin(x)}{x}=\int_0^1\cos(xy)\,dy$ for $x>0$. Then we have using (see: {numref}`Sec:Integration:Parts`)
 
 $$
 \int_0^{\infty}e^{-\alpha x}\cos(xy)\,dx=\frac{\alpha}{\alpha^2+y^2}
 $$
 
-and integration by parts:
+that
 
 \begin{align*}
 \int_0^{\infty}e^{-\alpha x}\frac{\sin(x)}{x}\,dx&=\int_0^{\infty}e^{-\alpha x}\int_0^1\cos(xy)\,dy\,dx\\
@@ -707,8 +763,8 @@ and integration by parts:
 Finally we have: 
 
 $$
-\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\lim\limits_{\alpha\downarrow0}\int_0^{\infty}e^{-\alpha x}\frac{\sin(x)}{x}\,dx
-=\lim\limits_{\alpha\downarrow0}\arctan\left(\frac{1}{\alpha}\right)=\frac{1}{2}\pi.
+\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\lim\limits_{\alpha\to 0^+}\int_0^{\infty}e^{-\alpha x}\frac{\sin(x)}{x}\,dx
+=\lim\limits_{\alpha\to 0^+}\arctan\left(\frac{1}{\alpha}\right)=\frac{1}{2}\pi.
 $$
 
 Note that for $\alpha=1$ we obtain: $\displaystyle\int_0^{\infty}\frac{e^{-x}\sin(x)}{x}\,dx=\frac{1}{4}\pi$.
@@ -779,9 +835,9 @@ Using partial fractions we now obtain for $y>0$
 
 \begin{align*}
 &\int_0^{\infty}\frac{dt}{(1+y+t^2)(1+t^2)}\\
-&{}\hspace{10mm}{}=\frac{1}{y}\int_0^{\infty}\left(\frac{1}{1+t^2}-\frac{1}{1+y+t^2}\right)\,dt\\
-&{}\hspace{10mm}{}=\frac{1}{y}\left[\arctan(t)-\frac{1}{\sqrt{1+y}}\arctan\left(\frac{t}{\sqrt{1+y}}\right)\right]_{t=0}^{\infty}\\
-&{}\hspace{10mm}{}=\frac{1}{2}\pi\cdot\frac{1}{y}\left(1-\frac{1}{\sqrt{1+y}}\right).
+&{}\quad{}=\frac{1}{y}\int_0^{\infty}\left(\frac{1}{1+t^2}-\frac{1}{1+y+t^2}\right)\,dt\\
+&{}\quad{}=\frac{1}{y}\left[\arctan(t)-\frac{1}{\sqrt{1+y}}\arctan\left(\frac{t}{\sqrt{1+y}}\right)\right]_{t=0}^{\infty}\\
+&{}\quad{}=\frac{1}{2}\pi\cdot\frac{1}{y}\left(1-\frac{1}{\sqrt{1+y}}\right).
 \end{align*} 
  
 Now we use the substitution $\sqrt{1+y}=t$ or $y=t^2-1$ and obtain that

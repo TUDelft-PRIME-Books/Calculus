@@ -116,14 +116,14 @@ Consider a metal box $B=[-5,5]\times[-3,3]\times[-1,1]$, where the temperature $
 
 \begin{align*}
 &\iiint_B\left(50-3x^2-3y^2-3z^2\right)\,dV\\
-&{}\hspace{10mm}{}=\int_{-5}^5\int_{-3}^3\int_{-1}^1\left(50-3x^2-3y^2-3z^2\right)\,dz\,dy\,dx\\
-&{}\hspace{10mm}{}=\int_{-5}^5\int_{-3}^3\bigg[50z-3x^2z-3y^2z-z^3\bigg]_{z=-1}^1\\
-&{}\hspace{10mm}{}=\int_{-5}^5\int_{-3}^3 2\cdot\left(50-3x^2-3y^2-1\right)\,dx\\
-&{}\hspace{10mm}{}=\int_{-5}^5\bigg[98y-6x^2y-2y^3\bigg]_{y=-3}^3\\
-&{}\hspace{10mm}{}=\int_{-5}^5 2\cdot\left(294-18x^2-54\right)\,dx\\
-&{}\hspace{10mm}{}=\bigg[480x-12x^3\bigg]_{x=-5}^5\\
-&{}\hspace{10mm}{}=2\cdot\left(2400-1500\right)\\
-&{}\hspace{10mm}{}=1800.
+&{}\quad{}=\int_{-5}^5\int_{-3}^3\int_{-1}^1\left(50-3x^2-3y^2-3z^2\right)\,dz\,dy\,dx\\
+&{}\quad{}=\int_{-5}^5\int_{-3}^3\bigg[50z-3x^2z-3y^2z-z^3\bigg]_{z=-1}^1\\
+&{}\quad{}=\int_{-5}^5\int_{-3}^3 2\cdot\left(50-3x^2-3y^2-1\right)\,dx\\
+&{}\quad{}=\int_{-5}^5\bigg[98y-6x^2y-2y^3\bigg]_{y=-3}^3\\
+&{}\quad{}=\int_{-5}^5 2\cdot\left(294-18x^2-54\right)\,dx\\
+&{}\quad{}=\bigg[480x-12x^3\bigg]_{x=-5}^5\\
+&{}\quad{}=2\cdot\left(2400-1500\right)\\
+&{}\quad{}=1800.
 \end{align*}
 
 Hence, the average temperature in $B$ equals $\dfrac{1800}{60}=30^{\circ}\text{C}$.
@@ -392,7 +392,7 @@ If $\rho(x,y,z)\geq0$ is a mass density function defined on a solid $E$ in $\mat
 
 are the **moments of inertia** of the solid $E$ about the $x$-axis, the $y$-axis and the $z$-axis, respectively.
 
-In {prf:ref}`Ex:MultivariableIntegration:DirichletIntegral` through {prf:ref}`Ex:MultivariableIntegration:DoubleIntegralsExample3` we used double integrals to evaluate a single integral. In the next example we use a triple integral.
+In {prf:ref}`Ex:MultivariableIntegration:DirichletIntegral`, {prf:ref}`Ex:MultivariableIntegration:DoubleIntegralsExample1`, {prf:ref}`Ex:MultivariableIntegration:DoubleIntegralsExample2` and {prf:ref}`Ex:MultivariableIntegration:DoubleIntegralsExample3` we used double integrals to evaluate a single integral. In the next example we use a triple integral.
 
 :::::{prf:example}
 :label: Ex:MultivariableIntegration:TripleIntegralsExample

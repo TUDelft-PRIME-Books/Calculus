@@ -130,7 +130,7 @@ $$
 g(x)=f(x)-7=\frac12\cos\left(\frac{\pi x}{3}\right),
 $$
 
-then $g$ is a function that oscillates around $0$. Even better: $g$ is one of the functions of the form $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ with $n=1$ and $L=3$. But this also means that _if_ we would multiply $g$ by $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ and then integrate from $-3$ to $3$, we would get zero for all $n$ except for $n=1$ and $L=3$. Integrating $g$ gives in that case:
+then $g$ is a function that oscillates around $0$. Even better: $g$ is a multiple of one of the functions of the form $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ with $n=1$ and $L=3$. But this also means that if we multiply $g$ by $\displaystyle\cos\left(\frac{n\pi x}{3}\right)$ and then integrate from $-3$ to $3$, we would get zero for all $n$ except for $n=1$. Integrating $g$ gives in that case:
 
 \begin{align*}
 \int_{-3}^3g(x)\cos\left(\frac{\pi x}{3}\right)\,dx&=\int_{-3}^3\frac12\cos\left(\frac{\pi x}{3}\right)\cos\left(\frac{\pi x}{3}\right)\,dx\\
@@ -148,8 +148,8 @@ which is exactly the coefficient of $\displaystyle\cos\left(\frac{\pi x}{3}\righ
 
 \begin{align*}
 \frac{1}{3}\int_{-3}^3f(x)\cos\left(\frac{\pi x}{3}\right)\,dx &= \frac{1}{3}\int_{-3}^3(g(x)+7)\cos\left(\frac{\pi x}{3}\right)\,dx \\
-&= \frac{1}{3}\int_{-3}^3g(x)\cos\left(\frac{\pi x}{3}\right)+7\cos\left(\frac{\pi x}{3}\right)\,dx \\
-&= \frac{1}{3}\int_{-3}^3g(x)\cos\left(\frac{\pi x}{3}\right)\,dx + \frac{1}{3}\int_{-3}^37\cos\left(\frac{\pi x}{3}\right)\,dx \\
+&= \frac{1}{3}\int_{-3}^3\left(g(x)\cos\left(\frac{\pi x}{3}\right)+7\cos\left(\frac{\pi x}{3}\right)\right)\,dx \\
+&= \frac{1}{3}\int_{-3}^3g(x)\cos\left(\frac{\pi x}{3}\right)\,dx + \frac{7}{3}\int_{-3}^3\cos\left(\frac{\pi x}{3}\right)\,dx \\
 &= \frac{1}{2} + 0 \\
 &= \frac{1}{2},
 \end{align*}
@@ -158,13 +158,16 @@ which is exactly the coefficient of $\displaystyle\cos\left(\frac{\pi x}{3}\righ
 
 Now, instead of substituting multiplying $g$ by a cosine function, we can also just integrate $f$ from $-3$ to $3$ and then divide by $3$. This gives:
 
-$$
-\frac{1}{3}\int_{-3}^3f(x)\,dx=\frac{1}{3}\int_{-3}^3\left(7+\frac12\cos\left(\frac{\pi x}{3}\right)\right)\,dx=\frac{1}{3}\int_{-3}^37\,dx=\frac{1}{3}\cdot(6\cdot7)=2\cdot7.
-$$
+\begin{align*}
+\frac{1}{3}\int_{-3}^3f(x)\,dx&=\frac{1}{3}\int_{-3}^3\left(7+\frac12\cos\left(\frac{\pi x}{3}\right)\right)\,dx\\
+&=\frac{1}{3}\int_{-3}^37\,dx\\
+&=\frac{1}{3}\cdot6\cdot7\\
+&=2\cdot7.
+\end{align*}
 
-This last results is exactly two times the constant term $7$ in the definition of $f$.
+This last result is exactly two times the constant term $7$ in the definition of $f$.
 
-In  other words and symbols, we have found the following decomposition of $f$:
+In other words and symbols, we have found the following decomposition of $f$:
 
 $$
 f(x) = \frac{a_0}{2} + a_1\cos\left(\frac{\pi x}{3}\right),
@@ -172,14 +175,19 @@ $$
 
 where
 
-\begin{align*}
-a_0 &= \frac{1}{3}\int_{-3}^3f(x)\,dx\quad(=2\cdot7), \\
-a_1 &= \frac{1}{3}\int_{-3}^3f(x)\cos\left(\frac{\pi x}{3}\right)\,dx\quad(= \frac{1}{2}).
-\end{align*}
+$$
+a_0 = \frac{1}{3}\int_{-3}^3f(x)\,dx\quad(=2\cdot7)
+$$
+
+and
+
+$$
+a_1 = \frac{1}{3}\int_{-3}^3f(x)\cos\left(\frac{\pi x}{3}\right)\,dx\quad(= \frac{1}{2}).
+$$
 
 ::::
 
-The idea of writing a function as a linear combination of trigonometric functions, where we exploit the orthogonality of these functions to find the coefficients of this linear combination, is the basis of the next section. Because we might not now _a priori_ which trigonometric functions we need, we will have to consider all of them. This is what we do in the next section and leads to an infinite linear combination of trigonometric functions, which is called a Fourier series.
+The idea of writing a function as a linear combination of trigonometric functions, where we exploit the orthogonality of these functions to find the coefficients of this linear combination, is the basis of the next section. Because we might not know _a priori_ which trigonometric functions we need, we will have to consider all of them. This is what we do in the next section and this leads to an infinite linear combination of trigonometric functions, which is called a Fourier series.
 
 ## Definition of Fourier series
 
@@ -198,7 +206,7 @@ with $L>0$ is called a **Fourier series**.
 
 Fourier series are named after the French mathematician [Jean-Baptiste Joseph Fourier (1768-1830)](https://en.wikipedia.org/wiki/Joseph_Fourier), who introduced this type of series in his work on the theory of heat.
 
-Before we can use Fourier series to decompose periodic functions, we need to introduce the concept of bounded variation, which is a technical condition on the function $f$ that we want to decompose. We will not go into the details of this concept, but it is sufficient to know that piecewise continuous functions are of bounded variation.
+Before we can use Fourier series to decompose periodic functions, we need to introduce the concept of bounded variation, which is a technical condition on the function $f$ that we want to decompose. We will not go into the details of this concept, but it is sufficient to know that piecewise-continuous functions are of bounded variation.
 
 :::{prf:definition}
 A function $f$ is called of **bounded variation** on an interval $[a,b]$ if there exists a number $M\geq 0$ such that for every partition $P=\{x_0,x_1,\ldots,x_n\}$ of the interval $[a,b]$ we have
@@ -215,7 +223,7 @@ This concept of bounded variation is important for the convergence of Fourier se
 :label: Thm:Series:BoundedVariation
 If
 
-- $f$ is a piecewise continuous function on an interval $[a,b]$;
+- $f$ is a piecewise-continuous function on an interval $[a,b]$;
 
 - $f'$ only has discontinuities on $(a,b)$ on a finite set of points $J=\{x_1,x_2,\ldots,x_m\}$ for some integer $m\geq0$;
 
@@ -264,17 +272,17 @@ $f$ therefore satisfies the conditions of {prf:ref}`Thm:Series:BoundedVariation`
 
 ::::
 
-In this section we will only consider functions that satisfy the conditions of this theorem, so all functions are of bounded variation. 
+In this section we will only consider functions that satisfy the conditions of this theorem, so which are of bounded variation. 
 
 With this in mind, we can now give the main result of this section:
 
 ::::::{prf:definition}
 :label: Def:Series:FourierFormula
 
-If $f$ is piecewise continuous function on an interval $[-L,L)$ and $f$ is defined outside that interval so that it is periodic with period $2L$, then the **Fourier series** $g$ of $f$ is defined by
+If $f$ is piecewise-continuous function on an interval $[-L,L)$ and $f$ is defined outside that interval so that it is periodic with period $2L$, then the **Fourier series** of $f$ is defined by
 
 $$
-g(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right),
+\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right),
 $$
 
 where 
@@ -296,7 +304,7 @@ The formulas for $a_n$, $n=0,1,2,3,\ldots$ and $b_n$, $n=1,2,3,\ldots$ are calle
 :::{admonition} Derivation of {prf:ref}`Def:Series:FourierFormula`
 :class: derivation, dropdown
 
-Ideally, we would like that $f$ and $g$ are the same function, so assume we could write $f$ as
+We assume that we may write
 
 $$
 f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right)
@@ -341,25 +349,23 @@ $$
 \int_{-L}^Lf(x)\sin\left(\frac{m\pi x}{L}\right)\,dx=b_mL\quad\Longleftrightarrow\quad b_m=\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{m\pi x}{L}\right)\,dx.
 $$
 
-
-
 :::
 
 ::::::{prf:theorem} Convergence
 :label: Thm:Series:FourierConvergence
 
-If $f$ is a piecewise continuous function of bounded variation on an interval $[-L,L)$ and $f$ is defined outside that interval so that it is periodic with period $2L$, then the Fourier series $g$ given in {prf:ref}`Def:Series:FourierFormula` converges at all points $x$ to
+If $f$ is a piecewise-continuous function of bounded variation on an interval $[-L,L)$ and $f$ is defined outside that interval so that it is periodic with period $2L$, then the Fourier series given in {prf:ref}`Def:Series:FourierFormula` converges at all points $x$ to
 
 $$
-g(x)=\frac{f(x^-)+f(x^+)}{2},
+\frac{f(x^-)+f(x^+)}{2},
 $$ 
 
 where $f(x^-)=\lim\limits_{t\to x^{-}}f(t)$ and $f(x^+)=\lim\limits_{t\to x^{+}}f(t)$.
 
-At points $x$ where $f$ is continuous, we have $\lim\limits_{t\to x^{-}}f(t)=f(x)=\lim\limits_{t\to x^{+}}f(t)$, and therefore $g(x) = \displaystyle\frac{f(x^-)+f(x^+)}{2}=f(x)$.
+At points $x$ where $f$ is continuous, we have $\lim\limits_{t\to x^{-}}f(t)=f(x)=\lim\limits_{t\to x^{+}}f(t)$, and therefore $\displaystyle\frac{f(x^-)+f(x^+)}{2}=f(x)$.
 ::::::
 
-We omit a proof of this theorem, as this is beyond the scope of this course. 
+We omit a proof of this theorem, as this is beyond the scope of this book. 
 
 We do however use the consequences of this theorem in the remainder of this section, starting with the following important example.
 
@@ -382,8 +388,8 @@ We start with calculating the Fourier coefficients of $f$. Using $L=2$, we have
 \begin{align*}
 a_0 &= \frac{1}{2}\int_{-2}^2f(x)\,dx \\
 &= \frac{1}{2}\int_{-2}^0 0 \, dx + \frac{1}{2}\int_0^2 x \, dx \\
-&= \frac{1}{2}\cdot\frac{4}{2} \\
-&= 1, \\
+&= \frac{1}{2}\cdot2 \\
+&= 1, \\[2.5mm]
 a_n &= \frac{1}{2}\int_{-2}^2f(x)\cos\left(\frac{n\pi x}{2}\right)\,dx \\
 &= \frac{1}{2}\int_0^2 x\cos\left(\frac{n\pi x}{2}\right)\,dx \\
 &= \frac{2}{n^2\pi^2}\left(n\pi\sin(n\pi)+\cos(n\pi)-1\right) \\
@@ -391,7 +397,7 @@ a_n &= \frac{1}{2}\int_{-2}^2f(x)\cos\left(\frac{n\pi x}{2}\right)\,dx \\
 &= \begin{cases}
 0, & \text{if } n \text{ is even}, \\
 \frac{-4}{n^2\pi^2}, & \text{if } n \text{ is odd},
-\end{cases} \\
+\end{cases} \\[2.5mm]
 b_n &= \frac{1}{2}\int_{-2}^2f(x)\sin\left(\frac{n\pi x}{2}\right)\,dx \\
 &= \frac{1}{2}\int_0^2 x\sin\left(\frac{n\pi x}{2}\right)\,dx \\
 &= \frac{2}{n^2\pi^2}\left(\sin(n\pi)-n\pi\cos(n\pi)\right) \\
@@ -399,21 +405,22 @@ b_n &= \frac{1}{2}\int_{-2}^2f(x)\sin\left(\frac{n\pi x}{2}\right)\,dx \\
 &= \frac{2(-1)^{n+1}}{n\pi}.
 \end{align*}
 
-The entire Fourier series $g$ of $f$ is therefore given by
+The entire Fourier series of $f$ is therefore given by
+
+\begin{align*}
+&\frac{1}{2} + \sum_{k=1}^{\infty}\frac{-4}{(2k-1)^2\pi^2}\cos\left(\frac{(2k-1)\pi x}{2}\right)\\
+&{}\quad{}+\sum_{n=1}^{\infty}\frac{2(-1)^{n+1}}{n\pi}\sin\left(\frac{n\pi x}{2}\right).
+\end{align*}
+
+Because $f$ is continuous at all points $x$ except for points of the form $x=2+4k$ for any integer $k$, {prf:ref}`Thm:Series:FourierConvergence` gives that the Fourier series equals $f(x)$ for all points $x$ except for points of the form $x=2+4k$ for any integer $k$. At these points we have
 
 $$
-g(x) = \frac{1}{2} + \sum_{k=1}^{\infty}\frac{-4}{(2k-1)^2\pi^2}\cos\left(\frac{(2k-1)\pi x}{2}\right)+\sum_{n=1}^{\infty}\frac{2(-1)^{n+1}}{n\pi}\sin\left(\frac{n\pi x}{2}\right).
+\frac{f(x^-)+f(x^+)}{2} = \frac{0+2}{2} = 1.
 $$
 
-Because $f$ is continuous at all points $x$ except for points of the form $x=2+4k$ for some integer $k$, {prf:ref}`Thm:Series:FourierConvergence` gives that $g(x)=f(x)$ for all points $x$ except for points of the form $x=2+4k$ for some integer $k$. At these points we have
+This means that the Fourier series of $f$ converges to $f$ at all points except for points of the form $x=2+4k$ for any integer $k$, where it converges to $1$ instead of $0$ or $2$.
 
-$$
-g(x) = \frac{f(x^-)+f(x^+)}{2} = \frac{0+2}{2} = 1.
-$$
-
-This means that the Fourier series $g$ of $f$ converges to $f$ at all points except for points of the form $x=2+4k$ for some integer $k$, where it converges to $1$ instead of $0$ or $2$.
-
-This result can also be visualised by plotting the Fourier series $g$ of $f$ together with the function $f$ itself. The Fourier series $g$ is an infinite series, so we cannot plot it directly. However, we can plot the Fourier series truncated at some finite number of terms, which gives us an approximation of $g$, which we did in {numref}`Fig:Series:Fourier1`. You can decrease or increase the number of terms in the series to see how the approximation changes by changing the value of $N$.
+This result can also be visualised by plotting the Fourier series of $f$ together with the function $f$ itself. The Fourier series is an infinite series, so we cannot plot it directly. However, we can plot the Fourier series truncated at some finite number of terms, which gives us an approximation, which we did in {numref}`Fig:Series:Fourier1`. You can decrease or increase the number of terms in the series to see how the approximation changes by changing the value of $N$.
 
 :::{figure} Images/Fig-Series-Fourier1.png
 :name: Fig:Series:Fourier1
@@ -426,12 +433,12 @@ Replace {numref}`Fig:Series:Fourier1` with an applet, where you can change the v
 
 :::
 
-Note that for larger $N$ the Fourier series $g$ of $f$ converges to $f$ at all points except for points of the form $x=2+4k$ for some integer $k$, where it converges to $1$ instead of $0$ or $2$. In particular, near these points you can see that the Fourier series $g$ of $f$ oscillates around the value of  $f$ with increasing amplitude.
+Note that for larger $N$ the Fourier series of $f$ converges to $f$ at all points except for points of the form $x=2+4k$ for any integer $k$, where it converges to $1$ instead of $0$ or $2$. In particular, near these points you can see that the Fourier series of $f$ oscillates around the value of $f$ with increasing amplitude.
 
 ::::
 
 ::::::{prf:definition} Gibbs phenomenon
-
+:label: Def:Series:Gibbs
 The phenomenon that the truncated Fourier series of a function with a jump discontinuity oscillates around the value of the function near the point of discontinuity with increasing amplitude for increasing number of terms is called the **Gibbs phenomenon**.
 ::::::
 
@@ -440,21 +447,21 @@ This _Gibbs phenomenon_ is named after the American scientist [Josiah Willard Gi
 ::::{prf:example}
 :label: Ex:Series:GibbsFourier
 
-We turn our attention to the function $f$ we have seen in {prf:ref}`Ex:Series:Fourier1`.
+We turn our attention to the function $f$ in {prf:ref}`Ex:Series:Fourier1`.
 
-To investigate the Gibbs phenomenon for this function, we make a graph of the difference between the truncated Fourier series $g$ of $f$ and the function $f$ itself, which is shown in {numref}`Fig:Series:GibbsFourier`. You can change the value of $N$ to see how the approximation changes.
+To investigate the Gibbs phenomenon for this function, we make a graph of the difference between the truncated Fourier series of $f$ and the function $f$ itself, which is shown in {numref}`Fig:Series:GibbsFourier`. You can change the value of $N$ to see how the approximation changes.
 
 :::{figure} Images/Fig-Series-GibbsFourier.png
 :name: Fig:Series:GibbsFourier
 
-The graph of the difference between the truncated Fourier series $g$ of $f$ from {prf:ref}`Ex:Series:Fourier1` and the function $f$ itself.
+The graph of the difference between the truncated Fourier series of $f$ from {prf:ref}`Ex:Series:Fourier1` and the function $f$ itself.
 :::
 
 :::{todo}
 Replace {numref}`Fig:Series:GibbsFourier` with an applet, where you can change the value of $N$ to see how the approximation changes.
 :::
 
-If you increase $N$ you should see that the truncated Fourier series $g$ of $f$ minus the function $f$ itself oscillates around the value of $0$ near the points of discontinuity of $f$ with increasing amplitude for increasing number of terms. This is the Gibbs phenomenon in action. Observe also that the width of these oscillations decreases for increasing number of terms, which is also part of the Gibbs phenomenon. In particular, the truncated Fourier series $g$ of $f$ minus the function $f$ itself converges to $0$ at all points except for points of the form $x=2+4k$ for some integer $k$, where it converges to $1$ instead of $0$ or $2=0$.
+If you increase $N$ you should see that the truncated Fourier series of $f$ minus the function $f$ itself oscillates around the value of $0$ near the points of discontinuity of $f$ with increasing amplitude for increasing number of terms. This is the Gibbs phenomenon in action. Observe also that the width of these oscillations decreases for increasing number of terms, which is also part of the Gibbs phenomenon. In particular, the truncated Fourier series of $f$ minus the function $f$ itself converges to $0$ at all points except for points of the form $x=2+4k$ for any integer $k$, where it converges to $1$ instead of $0$ or $2=0$.
 
 ::::
 
@@ -462,7 +469,9 @@ If a Fourier series converges to a function for all $x$, then we have the follow
 
 ::::::{prf:theorem} Parseval's identity
 :label: Thm:Series:Parseval
-For a Fourier series given as in {prf:ref}`Def:Series:FourierFormula` that converge for all $x$ in $[-L,L]$ to $f(x)$ where $f$ is continuous, we also have
+For a Fourier series of a *square-integrable*[^square-integrable] function $f$ as in {prf:ref}`Def:Series:FourierFormula` we also have
+
+[^square-integrable]: This means that the integral $\displaystyle\int_{-L}^L\left\{f(x)\right\}^2\,dx$ exists.
 
 $$
 \frac{1}{L}\int_{-L}^L\left\{f(x)\right\}^2\,dx=\frac{a_0^2}{2}+\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right).
@@ -474,16 +483,15 @@ This is called **Parseval's identity**, named after the French mathematician [Ma
 :::{admonition} Proof of {prf:ref}`Thm:Series:Parseval`
 :class: tudproof, dropdown
 
-Because the Fourier series converges to $f$ for all $x$ in $[-L,L]$ where $f$ is continuous, we have
-
+We write
 
 $$
 f(x)=\displaystyle\frac{a_0}{2}+\sum_{n=1}^{\infty}\left(a_n\cos\left(\frac{n\pi x}{L}\right)+b_n\sin\left(\frac{n\pi x}{L}\right)\right),
 $$
 
-for all $x$ in $[-L,L]$ where $f$ is continuous.
+which is true for all $x$ in $(-L,L)$ where $f$ is continuous. At points where $f$ is discontinuous the left-hand side should be replaced by $\dfrac{f(x^-)+f(x^+)}{2}$. However, this does not effect the integrals below.
 
-Multiplication of this expression by $f(x)$ and integration over $[-L,L]$ then gives
+Multiplication of this expression by $f(x)$ and integration over $(-L,L)$ then gives
 
 \begin{align*}
 \frac{1}{L}\int_{-L}^L\left\{f(x)\right\}^2\,dx&=\frac{a_0}{2}\cdot\frac{1}{L}\int_{-L}^Lf(x)\,dx\\
@@ -492,7 +500,6 @@ Multiplication of this expression by $f(x)$ and integration over $[-L,L]$ then g
 &=\frac{a_0^2}{2}+\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right).
 \end{align*}
 
-Note that we assume here that the locations where $f$ is not continuous do not contribute to the value of the integral.
 :::
 
 Let us do one more example that touches all subjects we explored in this section, including the Fourier series, the convergence of Fourier series and Parseval's identity.
@@ -527,14 +534,17 @@ $$
 and
 
 \begin{align*}
-b_n&=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx=\frac{1}{\pi}\int_0^{\pi}\sin(nx)\,dx=-\frac{1}{n\pi}\cos(nx)\bigg|_0^{\pi}\\
-&=\frac{1-\cos(n\pi)}{n\pi}=\frac{1-(-1)^n}{n\pi}.
+b_n&=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx\\
+&=\frac{1}{\pi}\int_0^{\pi}\sin(nx)\,dx\\
+&=-\frac{1}{n\pi}\cos(nx)\bigg|_0^{\pi}\\
+&=\frac{1-\cos(n\pi)}{n\pi}\\
+&=\frac{1-(-1)^n}{n\pi}.
 \end{align*}
 
-Note that $b_{2k}=0$ and $b_{2k-1}=\displaystyle\frac{2}{(2k-1)\pi}$ for $k=1,2,3,\ldots$. Then we have that the fourier series $g$ of $f$ is given by
+Note that $b_{2k}=0$ and $b_{2k-1}=\displaystyle\frac{2}{(2k-1)\pi}$ for $k=1,2,3,\ldots$. Then we have that the Fourier series of $f$ is given by
 
 $$
-g(x)=\frac{1}{2}+\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n\pi}\sin(nx)=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin(2k-1)x}{2k-1}.
+\frac{1}{2}+\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n\pi}\sin(nx)=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin\left((2k-1)x\right)}{2k-1}.
 $$
 
 A plot of some partial sums of this series can be found in {numref}`Fig:Series:SquareWaveFourier`.
@@ -552,7 +562,7 @@ Replace {numref}`Fig:Series:SquareWaveFourier` with an applet, where you can cha
 
 Notice that around the jump points the _Gibbs phenomenon_ is visible.
 
-At $x=\frac{1}{2}\pi$ the function $f$ is continuous, so the Fourier series $g$ converges to $f(x)$, which implies:
+At $x=\frac{1}{2}\pi$ the function $f$ is continuous, so the Fourier series converges to $f(x)$, which implies:
 
 \begin{align*}
 1=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin(k-\frac{1}{2})\pi}{2k-1}&\quad\Longleftrightarrow\quad
@@ -561,7 +571,7 @@ At $x=\frac{1}{2}\pi$ the function $f$ is continuous, so the Fourier series $g$ 
 \sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}=\frac{1}{4}\pi.
 \end{align*}
 
-Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we can also find that
+Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we also find that
 
 \begin{align*}
 &\frac{1}{2}+\frac{4}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{\pi}\int_{-\pi}^{\pi}\{f(x)\}^2\,dx=\frac{1}{\pi}\int_0^{\pi}dx=1\\
@@ -572,7 +582,7 @@ Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we can also find that
 
 ## Fourier cosine and sine series
 
-In the last example we have seen that the cosine part of the Fourier series of the square wave disappeared. This can be explained by the behavior of odd and even functions.
+In the last example we have seen that the cosine part of the Fourier series of the square wave disappeared. This can be explained by the behaviour of odd and even functions.
 
 The definition of _odd_ and _even_ was given as:
 
@@ -592,7 +602,7 @@ In {numref}`Sec:Integration:Substitution` we have seen:
 :::{fetch} {prf:ref}`Thm:Integration:OddEven`
 :::
 
-Note that this also holds when $g$ is piecewise continuous.
+Note that this also holds when $f$ is piecewise continuous.
 
 Hence, we have, if $f$ is *even* on $(-L,L)$, that
 
@@ -619,14 +629,14 @@ $$
 $$
 
 
-The above shows that if $f$ is periodic with period $2L$ and even on $(-L,L)$, in the Fourier series of $f$ the sine part disappears, and if $f$ is periodic with period $2L$ and odd on $(-L,L)$, in the Fourier series of $f$ the cosine part disappears. This gives us the following two special cases of Fourier series, which are called **Fourier cosine series** and **Fourier sine series**.
+This shows that if $f$ is periodic with period $2L$ and even on $(-L,L)$, in the Fourier series of $f$ the sine part disappears, and if $f$ is periodic with period $2L$ and odd on $(-L,L)$, in the Fourier series of $f$ the cosine part disappears. This gives us the following two special cases of Fourier series, which are called **Fourier cosine series** and **Fourier sine series**.
 
 ::::::{prf:theorem} Fourier cosine series
 :label: Thm:Series:FourierCosineSeries
-If $f$ is an *even* function on $(-L,L)$ and periodic with period $2L$, then the Fourier series $g$ of $f$ is given by
+If $f$ is an *even* function on $(-L,L)$ and periodic with period $2L$, then the Fourier series of $f$ is given by
 
 $$
-g(x)=\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos\left(\frac{n\pi x}{L}\right)
+\frac{a_0}{2}+\sum_{n=1}^{\infty}a_n\cos\left(\frac{n\pi x}{L}\right)
 $$
 
 with $a_0=\displaystyle\frac{2}{L}\int_0^Lf(x)\,dx$ and $a_n=\displaystyle\frac{2}{L}\int_0^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx$ for $n=1,2,3,\ldots$.
@@ -634,24 +644,22 @@ with $a_0=\displaystyle\frac{2}{L}\int_0^Lf(x)\,dx$ and $a_n=\displaystyle\frac{
 
 ::::::{prf:theorem} Fourier sine series
 :label: Thm:Series:FourierSineSeries
-If $f$ is an *odd* function on $(-L,L)$ and periodic with period $2L$, then the Fourier series $g$ of $f$ is given by
+If $f$ is an *odd* function on $(-L,L)$ and periodic with period $2L$, then the Fourier series of $f$ is given by
 
 $$
-g(x)=\sum_{n=1}^{\infty}b_n\sin\left(\frac{n\pi x}{L}\right)
+\sum_{n=1}^{\infty}b_n\sin\left(\frac{n\pi x}{L}\right)
 $$
 
 with $b_n=\displaystyle\frac{2}{L}\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx$ for $n=1,2,3,\ldots$.
 ::::::
 
-
-
-If $f$ is neither even nor odd, but $g(x)=f(x)-\bar{f}$ is odd, with $\bar{f}=\displaystyle\frac{1}{2L}\int_{-L}^Lf(x)\,dx$, then we can write $f$ as a Fourier sine series plus $\bar{f}$. This is exactly what happened in {prf:ref}`Ex:Series:FourierExample1`, where the Fourier series $g$ of $f$ was given by
+If $f$ is neither even nor odd, but $f(x)-\bar{f}$ is odd, with $\bar{f}=\displaystyle\frac{1}{2L}\int_{-L}^Lf(x)\,dx$, then we can write $f$ as a Fourier sine series plus $\bar{f}$. This is exactly what happened in {prf:ref}`Ex:Series:FourierExample1`, where the Fourier series of $f$ was given by
 
 $$
-g(x)=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin(2k-1)x}{2k-1}.
+\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin\left((2k-1)x\right)}{2k-1}.
 $$
 
-The constant term $\frac{1}{2}$ is the average value of $f$ over $[-\pi,\pi]$, i.e., $\bar{f}$, and the rest of the Fourier series is a Fourier sine series. To see that the rest of the Fourier series is a Fourier sine series, we can investigate whether the function $h$ defined by
+The constant term $\frac{1}{2}$ is the average value of $f$ over $[-\pi,\pi]$, id est $\bar{f}$, and the rest of the Fourier series is a Fourier sine series. To see that the rest of the Fourier series is a Fourier sine series, we can investigate whether the function $h$ defined by
 
 $$
 h(x) = f(x) - \bar{f} = f(x) - \frac{1}{2} = 
@@ -669,11 +677,9 @@ $$
 h(x) = \frac12,\quad\text{and}\quad h(-x) = -\frac12 = -h(x).
 $$
 
-This shows that $h$ is odd on $(-\pi,\pi)$, and therefore the Fourier series $g$ of $f$ can be written as a Fourier sine series plus $\bar{f}$.
+This shows that $h$ is odd on $(-\pi,\pi)$, and therefore the Fourier series of $f$ can be written as a Fourier sine series plus $\bar{f}$.
 
 Let us investigate some other functions and their Fourier series.
-
-
 
 ::::::{prf:example}
 :label: Ex:Series:FourierExample2
@@ -690,17 +696,18 @@ $$
 Then $L=1$ and $f$ is odd on $(-1,1)$. This means that the Fourier series of $f$ is a Fourier sine series, and we only have to calculate the Fourier sine coefficients $b_n$ for $n=1,2,3,\ldots$:
 
 \begin{align*}
-b_n&=\frac{1}{1}\int_{-1}^1f(x)\sin(n\pi x)\,dx=\int_{-1}^12x\sin(n\pi x)\,dx\\
-&=-\frac{1}{n\pi}\int_{-1}^12x\,d\cos(n\pi x)\\
+b_n&=\frac{1}{1}\int_{-1}^1f(x)\sin(n\pi x)\,dx\\
+&=\int_{-1}^12x\sin(n\pi x)\,dx\\
 &=-\frac{2x\cos(n\pi x)}{n\pi}\bigg|_{-1}^1+\frac{2}{n\pi}\int_{-1}^1\cos(n\pi x)\,dx\\
-&=-\frac{4\cos(n\pi)}{n\pi}=\frac{4(-1)^{n+1}}{n\pi}.
+&=-\frac{4\cos(n\pi)}{n\pi}\\
+&=\frac{4(-1)^{n+1}}{n\pi}.
 \end{align*}
 
-Hence the Fourier series $g$ of $f$ is given by
+Hence the Fourier series of $f$ is given by
 
 :::{math}
 :name: Eq:Series:SawToothFourier
-g(x)=\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(n\pi x).
+\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin(n\pi x).
 :::
 
 In {numref}`Fig:Series:SawToothFourier` you can see a plot of some partial sums of this Fourier series together with the function $f$ itself. You can change the value of $N$ to see how the approximation changes.
@@ -747,7 +754,7 @@ f(x-2), & x > 1.
 \end{cases}
 $$
 
-Then $f$ is even on $(-1,1)$ and periodic with period $2$, so $L=1$. Using {prf:ref}`Thm:Series:FourierCosineSeries` we have that the Fourier series $g$ of $f$ is a Fourier cosine series, so we only calculate the Fourier cosine coefficients $a_n$ for $n=0,1,2,3,\ldots$ and find
+Then $f$ is even on $(-1,1)$ and periodic with period $2$, so $L=1$. Using {prf:ref}`Thm:Series:FourierCosineSeries` we have that the Fourier series of $f$ is a Fourier cosine series, so we only calculate the Fourier cosine coefficients $a_n$ for $n=0,1,2,3,\ldots$ and find
 
 $$
 a_0=\frac{1}{1}\int_{-1}^1f(x)\,dx
@@ -757,23 +764,28 @@ $$
 and
 
 \begin{align*}
-a_n&=\frac{1}{1}\int_{-1}^1f(x)\cos(n\pi x)\,dx=\int_{-1}^1(1-x^2)\cos(n\pi x)\,dx\\
-&=\frac{1}{n\pi}\int_{-1}^1(1-x^2)\,d\sin(n\pi x)\\
+a_n&=\frac{1}{1}\int_{-1}^1f(x)\cos(n\pi x)\,dx\\
+&=\int_{-1}^1(1-x^2)\cos(n\pi x)\,dx\\
 &=\frac{(1-x^2)\sin(n\pi x)}{n\pi}\bigg|_{-1}^1+\frac{1}{n\pi}\int_{-1}^12x\sin(n\pi x)\,dx\\
 &=-\frac{1}{n^2\pi^2}\int_{-1}^12x\,d\cos(n\pi x)\\
 &=-\frac{2x\cos(n\pi x)}{n^2\pi^2}+\frac{2}{n^2\pi^2}\int_{-1}^1\cos(n\pi x)\,dx\\
-&=-\frac{4\cos(n\pi)}{n^2\pi^2}=\frac{4(-1)^{n+1}}{n^2\pi^2},\quad n=1,2,3,\ldots
+&=-\frac{4\cos(n\pi)}{n^2\pi^2}\\
+&=\frac{4(-1)^{n+1}}{n^2\pi^2},\quad n=1,2,3,\ldots
 \end{align*}
 
-This means that the Fourier series $g$ of $f$ is given by
+This means that the Fourier series of $f$ is given by
 
 $$
-g(x)=\frac{2}{3}+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}\cos(n\pi x).
+\frac{2}{3}+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}\cos(n\pi x).
 $$
 
-The function $f$ is an example of a full-wave rectified sine wave, which is a function that looks like the absolute value of a sine wave. Even better, because the function $f$ is continuous on $\mathbb{R}$, the Gibbs phenomenon should not occur here and we can state that $f(x)=g(x)$ for all $x \in \mathbb{R}$.
+The function $f$ is an example of a full-wave rectified sine wave, which is a function that looks like the absolute value of a sine wave. Even better, because the function $f$ is continuous on $\mathbb{R}$, the Gibbs phenomenon should not occur here and we can state that 
 
-As you can see in {numref}`Fig:Series:RectifiedSineFourier`, where we have plotted some partial sums of the Fourier series $g$ of $f$ together with the function $f$ itself, the function $f$ is continuous and the Gibbs phenomenon does not occur.
+$$
+f(x)=\frac{2}{3}+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n^2}\cos(n\pi x)\;\text{for all}\;x\in\mathbb{R}.
+$$
+
+As you can see in {numref}`Fig:Series:RectifiedSineFourier`, where we have plotted some partial sums of the Fourier series of $f$ together with the function $f$ itself, the function $f$ is continuous and the Gibbs phenomenon does not occur.
 
 :::{figure} Images/fourier3.png
 :name: Fig:Series:RectifiedSineFourier
@@ -817,13 +829,13 @@ $$
 
 On inspection of {prf:ref}`Def:Series:FourierFormula`, we see that to construct a Fourier series of a function $f$, it must have at least the following properties:
 
-* $f$ must be defined on an interval $[-L,L]$ for some $L>0$;
+* $f$ must be defined on an interval $[-L,L)$ for some $L>0$;
 * $f$ must be periodic with period $2L$;
-* $f$ must be piecewise continuous on $[-L,L]$.
+* $f$ must be piecewise continuous on $[-L,L)$.
 
-However, in many applications the function $f$ might only be defined on an interval $[0,L]$ with $L>0$. An example is when $f$ describes the motion of a vibrating string with length $L$. In most of those case the function $f$ is also piecewise continuous on $[0,L]$, but it might not be periodic with period $2L$. This means that we cannot directly apply {prf:ref}`Def:Series:FourierFormula` to find the Fourier series of $f$.
+However, in many applications the function $f$ might only be defined on an interval $[0,L]$ with $L>0$. An example is when $f$ describes the motion of a vibrating string with length $L$. In most of those cases the function $f$ is also piecewise continuous on $[0,L]$, but it might not be periodic with period $2L$. This means that we cannot directly apply {prf:ref}`Def:Series:FourierFormula` to find the Fourier series of $f$.
 
-If we do want to do this, we must perform two steps. First, we must extend the function $f$ to a function defined on $[-L,L]$. Second, we must extend this function to a function defined on $\mathbb{R}$ that is periodic with period $2L$.
+If we do want to do this, we must perform two steps. First, we must extend the function $f$ to a function defined on $[-L,L)$. Second, we must extend this function to a function defined on $\mathbb{R}$ that is periodic with period $2L$.
 
 Let us focus on the first step, for which we can use the next theorem from {numref}`Section:PropertiesFunctions`:
 
@@ -848,14 +860,14 @@ f_{\mathrm{ext}}(x-\ell), & x \geq b.
 \end{cases}
 $$
 
-Now we have discussed the two steps to extend a function $f$ defined on $[0,L]$ to a function defined on $\mathbb{R}$ that is periodic with period $2L$ and is either odd or even, we can apply {prf:ref}`Def:Series:FourierFormula` to find the Fourier series of $f$. If we choose to extend $f$ to an odd function on $(-L,L)$, then the Fourier series of $f$ will be a Fourier sine series, and if we choose to extend $f$ to an even function on $(-L,L)$, then the Fourier series of $f$ is a Fourier cosine series.
+Now we have discussed the two steps to extend a function $f$ defined on $[0,L]$ to a function defined on $\mathbb{R}$ that is periodic with period $2L$ and is either odd or even, we can apply {prf:ref}`Def:Series:FourierFormula` to find the Fourier series of $f$. If we choose to extend $f$ to an odd function on $(-L,L)$, then the Fourier series of $f$ will be a Fourier sine series, and if we choose to extend $f$ to an even function on $(-L,L)$, then the Fourier series of $f$ will be a Fourier cosine series.
 
 Let us do an example to see how this works in practice.
 
 ::::::{prf:example}
 :label: Ex:Series:FourierExample4
 
-Consider $f(x)=2x$ for $0\leq x\leq 1$, so $L=2$ in this case. We want to find a Fourier series of $f$.
+Consider $f(x)=2x$ for $0\leq x\leq 1$, so $L=1$ in this case. We want to find a Fourier series of $f$.
 
 If we define $f_{\mathrm{odd}}$ as the odd periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{odd}}$ is given by
 
@@ -866,17 +878,15 @@ f_{\mathrm{odd}}(x+2), & x \leq -1, \\
 0, & x=0, \\
 f(x), & 0 < x \leq 1, \\
 f_{\mathrm{odd}}(x-2), & x > 1,
-\end{cases}
-\\ &=
-\begin{cases}
+\end{cases}\\[2.5mm] 
+&= \begin{cases}
 f_{\mathrm{odd}}(x+2), & x \leq -1, \\
 -2(-x), & -1 < x < 0, \\
 0, & x=0, \\
 2x, & 0 < x \leq 1, \\
 f_{\mathrm{odd}}(x-2), & x > 1,
-\end{cases}
-\\ &=
-\begin{cases}
+\end{cases}\\[2.5mm]
+&= \begin{cases}
 f_{\mathrm{odd}}(x+2), & x \leq -1, \\
 2x, & -1 < x \leq 1, \\
 f_{\mathrm{odd}}(x-2), & x > 1.
@@ -885,7 +895,7 @@ f_{\mathrm{odd}}(x-2), & x > 1.
 
 Note that to avoid defining the value of $f_{\mathrm{odd}}$ at $-1+2n$ for any integer $n$ twice, we have defined $f_{\mathrm{odd}}$ at those points as $f_{\mathrm{odd}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{odd}}(x-2)$ for $x > 1$. This is just a technicality to avoid defining the value of $f_{\mathrm{odd}}$ at those points twice, and it does not change the function $f$ itself on the interval $(0,1]$.
 
-The function $f_{\mathrm{odd}}$ turns out to be exactly the function $f$ defined in {prf:ref}`Ex:Series:FourierExample2`, which was a sawtooth wave. The Fourier sine series $g$ of $f_{\mathrm{odd}}$ is given by Equation {eq}`Eq:Series:SawToothFourier` and a visualization of the Fourier sine series $g$ of $f_{\mathrm{odd}}$ can be found in {numref}`Fig:Series:SawToothFourier`.
+The function $f_{\mathrm{odd}}$ turns out to be exactly the function $f$ defined in {prf:ref}`Ex:Series:FourierExample2`, which was a sawtooth wave. The Fourier sine series of $f_{\mathrm{odd}}$ is given by Equation {eq}`Eq:Series:SawToothFourier` and a visualization of the Fourier sine series of $f_{\mathrm{odd}}$ can be found in {numref}`Fig:Series:SawToothFourier`.
 
 If we define $f_{\mathrm{even}}$ as the even periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{even}}$ is given by
 
@@ -895,16 +905,14 @@ f_{\mathrm{even}}(x+2), & x \leq -1, \\
 f(-x), & -1 < x < 0, \\
 f(x), & 0 \leq x \leq 1, \\
 f_{\mathrm{even}}(x-2), & x > 1,
-\end{cases}
-\\ &=
-\begin{cases}
+\end{cases}\\[2.5mm]
+&= \begin{cases}
 f_{\mathrm{even}}(x+2), & x \leq -1, \\
 f(-x), & -1 < x < 0, \\
 f(x), & 0 \leq x \leq 1, \\
 f_{\mathrm{even}}(x-2), & x > 1,
-\end{cases}
-\\ &=
-\begin{cases}
+\end{cases}\\[2.5mm]
+&= \begin{cases}
 f_{\mathrm{even}}(x+2), & x \leq -1, \\
 -2x, & -1 < x < 0, \\
 2x, & -1 < x \leq 1, \\
@@ -914,7 +922,7 @@ f_{\mathrm{even}}(x-2), & x > 1.
 
 Again, we avoid double values at $x=-1+2n$ for any integer $n$ by defining $f_{\mathrm{even}}$ at those points as $f_{\mathrm{even}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{even}}(x-2)$ for $x > 1$.
 
-Now we have an even periodic extension $f_{\mathrm{even}}$ of $f$ to $\mathbb{R}$ with period $2L=2$, so we can apply {prf:ref}`Thm:Series:FourierCosineSeries` to find the Fourier cosine series $h$ of $f_{\mathrm{even}}$. We have for that
+Now we have an even periodic extension $f_{\mathrm{even}}$ of $f$ to $\mathbb{R}$ with period $2L=2$, so we can apply {prf:ref}`Thm:Series:FourierCosineSeries` to find the Fourier cosine series of $f_{\mathrm{even}}$. We have for that
 
 $$
 a_0=\frac{2}{1}\int_0^1f(x)\,dx=2\int_0^12x\,dx=2x^2\bigg|_0^1=2,
@@ -930,15 +938,19 @@ a_n&=\frac{2}{1}\int_0^1f(x)\cos(n\pi x)\,dx \\
 &=\frac{4\left((-1)^{n}-1\right)}{n^2\pi^2},
 \end{align*}
 
-and therefore
+and therefore, the Fourier cosine series of $f_{\mathrm{even}}$ is given by
 
 $$
-h(x)=1+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos(n\pi x).
+1+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos(n\pi x).
 $$
 
-Because our function $f_{\mathrm{even}}$ is continuous on $\mathbb{R}$, the Gibbs phenomenon does not occur and we have that $h(x)=f_{\mathrm{even}}(x)$ for all $x \in \mathbb{R}$.
+Because our function $f_{\mathrm{even}}$ is continuous on $\mathbb{R}$, the Gibbs phenomenon does not occur and we have that 
 
-{numref}`Fig:Series:TriangularWave` shows a plot of the partial sum of the Fourier cosine series $h$ of $f_{\mathrm{even}}$ together with the function $f_{\mathrm{even}}$ itself. We also included the partial sum of the Fourier sine series $g$ of $f_{\mathrm{odd}}$ in the plot to show the difference between the two extensions.
+$$
+f_{\mathrm{even}}(x)=1+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos(n\pi x)\;\text{for all}\;x\in\mathbb{R}.
+$$
+
+{numref}`Fig:Series:TriangularWave` shows a plot of the partial sums of the Fourier cosine series of $f_{\mathrm{even}}$ together with the function $f_{\mathrm{even}}$ itself. We also included the partial sums of the Fourier sine series of $f_{\mathrm{odd}}$ in the plot to show the difference between the two extensions.
 You can change the value of $N$ to see how the approximation changes.
 
 :::{figure} Images/fourier5.png
@@ -956,6 +968,17 @@ The even periodic extension $f_{\mathrm{even}}$ is an example of a *triangular w
 
 ::::::
 
-The last example shows that if we want to avoid the Gibbs phenomenon, we should extend $f$ to a function that is continuous on $\mathbb{R}$, if possible. In the example we have seen that the odd periodic extension $f_{\mathrm{odd}}$ of $f$ is not continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon occurs in the Fourier sine series $g$ of $f_{\mathrm{odd}}$. On the other hand, the even periodic extension $f_{\mathrm{even}}$ of $f$ is continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon does not occur in the Fourier cosine series $h$ of $f_{\mathrm{even}}$.
+The last example shows that if we want to avoid the Gibbs phenomenon, we should extend $f$ to a function that is continuous on $\mathbb{R}$, if possible. In the example we have seen that the odd periodic extension $f_{\mathrm{odd}}$ of $f$ is not continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon occurs in the Fourier sine series of $f_{\mathrm{odd}}$. On the other hand, the even periodic extension $f_{\mathrm{even}}$ of $f$ is continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon does not occur in the Fourier cosine series of $f_{\mathrm{even}}$.
 
 In practice using an even periodic extension is more common than using an odd periodic extension of $f$, as the even periodic extension of a function $f$ that is continuous on $[0,L]$ is also continuous on $\mathbb{R}$, while the odd periodic extension of a function $f$ that is continuous on $[0,L]$ can only be continuous on $\mathbb{R}$ if $f(0)=0=f(L)$.
+
+## Grasple exercise
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/354cb574-2518-42f7-86cc-883f01567e39?id=133624
+:label: Grasple:133624
+:dropdown:
+:description: Find the Fourier sine series for the function $x(\pi-x)$.
+
+::::
