@@ -435,6 +435,8 @@ An illustration of the squeeze theorem, showing the functions $f$, $g$, and $h$ 
 
 ::::::
 
+
+
 Now consider a limit of the form $\lim\limits_{x\rightarrow a}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials that have $p(a)=q(a)=0$. We cannot evaluate the limit directly since we cannot divide by $0$. We also say that this limit is of the **indeterminate form** "$\frac{0}{0}$" as $x$ approaches $a$. Recall that we encountered this situation in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` when evaluating the limit $\lim\limits_{x\rightarrow 1}\frac{x-1}{x^2-1}$. There, we evaluated the limit by factoring the denominator. This works in general.
 
 Recall from {prf:ref}`Thm:ComplexNumbers:fundamental` that $a$ being a root of the polynomials $p$ and $q$ means that we can take out the factor $x-a$ from both of them, i.e. we can write $p(x)=(x-a)r(x)$ and $q(x)=(x-a)s(x)$ for some polynomials $r$ and $s$, which are 1 degree lower than $p$ and $q$, respectively. As such, we can now evaluate the limit by writing
