@@ -92,8 +92,10 @@ Let us investigate the binomial coefficients $\displaystyle\binom{n}{k}$ for $n\
 ```{list-table} $64$ binomial coefficients for $n=0,1,2,\ldots,7$ and $k=0,1,2,\ldots,7$.
 :header-rows: 1
 :stub-columns: 1
+:widths: auto
+:class: fit-content, center-align, center
 
-* - $n\,|\,k\rightarrow$
+* - $n\downarrow\quad|\quad k\rightarrow$
   - 0
   - 1
   - 2
