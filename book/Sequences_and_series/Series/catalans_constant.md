@@ -235,17 +235,43 @@ $$
 
 Furthermore, the definition of Catalan's constant implies that $\beta(2)=G$.
 
-Finally, the value of $\beta(3)$ can be obtained from the Fourier sine series of the function $x(\pi-x)$:
+Finally, the value of $\beta(3)$ can be obtained from the Fourier sine series of the function $x(\pi-x)$ (see: {numref}`Grasple:133624`):
 
-:::{math}
-:label: Eq:Series:FourierSineSeries
-
+$$
 x(\pi-x)=\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{1-(-1)^n}{n^3}\sin(nx)=\frac{8}{\pi}\sum_{k=0}^{\infty}\frac{\sin(2k+1)x}{(2k+1)^3}.
-
-:::
+$$
 
 For $x=\frac{1}{2}\pi$ this leads to
 
 $$
 \frac{1}{4}\pi^2=\frac{8}{\pi}\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^3}\quad\Longrightarrow\quad\beta(3)=\sum_{k=0}^{\infty}\frac{(-1)^k}{(2k+1)^3}=\frac{1}{32}\pi^3.
 $$
+
+Note that {prf:ref}`Parseval's identity <Thm:Series:Parseval>` reads
+
+$$
+\frac{2}{\pi}\int_0^{\pi}x^2(\pi-x)^2\,dx=\frac{64}{\pi^2}\sum_{k=0}^{\infty}\frac{1}{(2k+1)^6}.
+$$
+
+Now we have
+
+\begin{align*}
+\int_0^{\pi}x^2(\pi-x)^2\,dx&=\int_0^{\pi}x^2(\pi^2-2\pi x+x^2)\,dx\\
+&=\left[\frac{1}{3}\pi^2x^3-\frac{1}{2}\pi x^4+\frac{1}{5}x^5\right]_0^{\pi}\\
+&=\frac{1}{3}\pi^5-\frac{1}{2}\pi^4+\frac{1}{5}\pi^5\\
+&=\frac{10-15+6}{30}\pi^5\\
+&=\frac{1}{30}\pi^5.
+\end{align*}
+
+Hence, we have
+
+$$
+\sum_{k=0}^{\infty}\frac{1}{(2k+1)^6}=\frac{2}{\pi}\cdot\frac{\pi^2}{64}\cdot\frac{\pi^5}{30}=\frac{\pi^6}{15\cdot64}=\frac{1}{960}\pi^6.
+$$
+
+Finally, Equation {eq}`Eq:Series:RiemannZetaFunction1` implies that
+
+\begin{align*}
+&\sum_{n=0}^{\infty}\frac{1}{(2n+1)^6}=\left(1-\frac{1}{2^6}\right)\zeta(6)=\frac{63}{64}\zeta(6)\\
+&{}\quad\Longrightarrow\quad\zeta(6)=\frac{64}{63}\cdot\frac{\pi^6}{15\cdot64}=\frac{\pi^6}{15\cdot63}=\frac{1}{945}\pi^6.
+\end{align*}
