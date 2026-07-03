@@ -6,11 +6,13 @@
 
 ## Introduction
 
-Now that we know the derivatives of most standard functions, we have not really touched upon what should be the most important question: what can we actually do with derivatives? We have seen that we can use them to find tangent lines, but that is about it. For higher order derivatives we have not even seen *any* uses (yet). However, there is much more that derivatives can tell us. In fact, most qualitative behaviour of a function is captured in its derivatives. For instance, we will see that we can use the first derivative to determine whether a function is increasing or decreasing on an interval.
+[^FootnoteImportant]: Perhaps even the most impost imporant question.
+
+Now that we know the derivatives of most standard functions, we can ask a very important question[^FootnoteImportant]: what can we actually do with derivatives? We have seen that we can use them to find tangent lines, but that is about it. For higher order derivatives we have not even seen *any* uses (yet). However, there is much more that derivatives can tell us. In fact, most qualitative behaviour of a function is captured in its derivatives. For instance, we will see that we can use the first derivative to determine whether a function is increasing or decreasing on an interval.
 
 One of the most important applications of differentiation is that it can be used to solve a certain type of optimisation problems. In optimisation problems, you want to either maximise a certain quantity (like profit, or size) or minimise a quantity (like costs, or material usage), sometimes under some additional constraints.
 
-Suppose, for instance, that you have a large piece on land and you have fences with a total length of $400\ m$. You want to build a rectangular region closed off by these fences. What shape would give the largest area? Since the region is rectangular, we let $\ell$ denote its length and $w$ its width (both in meters). Then the area $A$ (in square meters) is given by
+Suppose, for instance, that you have a large piece of land and you have fences with a total length of $400\ m$. You want to build a rectangular region closed off by these fences. What shape would give the largest area? Since the region is rectangular, we let $\ell$ denote its length and $w$ its width (both in meters). Then the area $A$ (in square meters) is given by
 
 $$
  A=w\ell.
