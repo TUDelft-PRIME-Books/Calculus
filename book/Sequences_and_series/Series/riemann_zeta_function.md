@@ -61,13 +61,13 @@ and
 
 1) 
 
-$$\sum_{n=1}^{\infty}\frac{1}{(2n+1)^2}=\left(1-\frac{1}{4}\right)\zeta(2)=\frac{3}{4}\zeta(2)=\frac{3}{4}\cdot\frac{1}{6}\pi^2=\frac{1}{8}\pi^2.
+$$\sum_{n=0}^{\infty}\frac{1}{(2n+1)^2}=\left(1-\frac{1}{4}\right)\zeta(2)=\frac{3}{4}\zeta(2)=\frac{3}{4}\cdot\frac{1}{6}\pi^2=\frac{1}{8}\pi^2.
 $$
 
 2)
 
 $$
-\sum_{n=1}^{\infty}\frac{(-1)^n}{(n+1)^2}=\left(1-\frac{1}{2}\right)\zeta(2)=\frac{1}{2}\zeta(2)=\frac{1}{2}\cdot\frac{1}{6}\pi^2=\frac{1}{12}\pi^2.
+\sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^2}=\left(1-\frac{1}{2}\right)\zeta(2)=\frac{1}{2}\zeta(2)=\frac{1}{2}\cdot\frac{1}{6}\pi^2=\frac{1}{12}\pi^2.
 $$
 
 :::::

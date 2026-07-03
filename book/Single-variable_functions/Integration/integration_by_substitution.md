@@ -344,7 +344,7 @@ In {prf:ref}`Thm:Integration:DefinitePropertiesArea` we have already seen the fo
 
 ::::::{prf:Theorem}
 :label: Thm:Integration:OddEven
-Let $f$ be a continuous function defined on $[-a,a]$. Then we have
+Let $f$ be a continuous function defined on $(-a,a)$. Then we have
 
 (a) If $f$ is *odd*, so $f(-x)=-f(x)$ for all $x$, then $\displaystyle\int_{-a}^af(x)\,dx=0$.
 
