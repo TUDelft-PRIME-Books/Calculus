@@ -871,6 +871,23 @@ A function $g(x)$ and a slider for the parameter $b$.
 
 ## Grasple exercises
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/29ea94e5-5bfa-4c89-8880-770e8e19beb9?id=133489
+:label: Grasple:133489
+:dropdown:
+:description: Reading off continuity from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9c8e1655-064b-435f-8206-781386033b26?id=133501
+:label: Grasple:133501
+:dropdown:
+:description: Reading off continuity from a graph.
+
+::::
 
 ::::{grasple}
 :iframeclass: dark-light

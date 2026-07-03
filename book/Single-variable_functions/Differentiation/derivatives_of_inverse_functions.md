@@ -428,13 +428,25 @@ The graph of the function $f(x)=5\sqrt[5]{31+x^2}-8$ and the tangent lines at th
 :showanswer:
 
 
-Let $f(x)=5\sqrt[5]{31+x^2}-8$ as in {prf:ref}`Ex:Diffinverse:IFT`. Restrict $f$ to the open interval containing $1$ on which it is invertible. What is the explicit formula for the inverse function $f^{-1}(x)$?
+Let $f(x)=5\sqrt[5]{31+x^2}-8$ as in {prf:ref}`Ex:Diffinverse:IFT`. Restrict $f$ to the open interval containing $1$ on which it is invertible. What is the explicit formula for the inverse function $f^{-1}(x)$? Does the derivative $\left(\tilde{f}^{-1}\right)'(2)$ match the one found in {prf:ref}`Ex:Diffinverse:IFT`?
 ---
 [ ] $f^{-1}(x)=\pm\sqrt{\left(\frac{x+8}{5}\right)^5-31}$
 > This expression is not a function because it gives two possible outputs for most inputs.
 
 [x] $f^{-1}(x)=\sqrt{\left(\frac{x+8}{5}\right)^5-31}$
-> Correct! Solving $y=5\sqrt[5]{31+x^2}-8$ for $x$ gives $x=\pm\sqrt{\left(\frac{y+8}{5}\right)^5-31}$. Since the inverse is taken on the branch containing $1$, we choose the positive square root.
+> Correct! Solving $y=5\sqrt[5]{31+x^2}-8$ for $x$ gives $x=\pm\sqrt{\left(\frac{y+8}{5}\right)^5-31}$. Since the inverse is taken on the branch containing $1$, we choose the positive square root. The derivative of this function is given by
+
+$$
+ \left(f^{-1}\right)'(x)=\frac{(x+8)^4}{1250\sqrt{\left(\frac{x+8}{5}\right)^5-31}}.
+$$
+
+Plugging in $x=2$ gives
+
+$$
+ \left(f^{-1}\right)'(2)=\frac{(2+8)^4}{1250\sqrt{\left(\frac{2+8}{5}\right)^5-31}}=8,
+$$
+
+which matches the answer from {prf:ref}`Ex:Diffinverse:IFT`.
 
 [ ] $f^{-1}(x)=-\sqrt{\left(\frac{x+8}{5}\right)^5-31}$
 > This is the inverse corresponding to the branch containing $-1$, not the interval containing $1$.
