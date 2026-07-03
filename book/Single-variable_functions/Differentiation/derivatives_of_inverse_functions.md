@@ -284,12 +284,15 @@ The reason why the derivative $\displaystyle\frac{d}{dx}\ln\left(x^3\left(g(x)\r
 Let $f$ be a positive differentiable function and let $g$ be any differentiable function. What is  $\displaystyle \frac{d}{dx}f(x)^{g(x)}$?
 ---
 [ ] $\displaystyle f(x)^{g(x)-1}f'(x)$
-> 
+> It seems you applied the ordinary power rule and treated the exponent as if it were a constant. However, the exponent $g(x)$ also depends on $x$, so you need to account for how it changes as well.
 
 [ ] $\displaystyle f(x)^{g(x)-1}g'(x)$
-> 
+> It seems you may have mixed up the roles of the base and the exponent. The factor $f(x)^{g(x)-1}$ comes from differentiating with respect to the base, while $g'(x)$ measures the change in the exponent. Since both depend on $x$, a simple power rule is not sufficient.
+
+
 [ ] $\displaystyle f(x)^{g(x)}g'(x)$
-> 
+> It looks like you recognized that the exponent $g(x)$ changes with $x$, but you may not have accounted for the fact that the base $f(x)$ changes as well. Also, differentiating a variable exponent introduces a factor of $\ln(f(x))$.
+
 [x] $\displaystyle f(x)^{g(x)-1}g(x)f'(x)+f(x)^{g(x)}\ln(f(x))g'(x)$
 > We use logarithmic differentiation. We can evaluate
 
@@ -302,7 +305,7 @@ Let $f$ be a positive differentiable function and let $g$ be any differentiable 
 
 In this computation, we used the product rule.
 [ ] $\displaystyle f(x)^{g(x)-1}g(x)f'(x)+f(x)^{g(x)}g'(x)$
-> 
+> It seems you correctly accounted for the changing base in the first term. However, when differentiating the exponent, you may have forgotten the factor $\ln(f(x))$, which appears when using logarithmic differentiation.
 ---
 ::::
 
@@ -387,32 +390,59 @@ Although we know that derivatives of all combinations of standard functions, {pr
 
 ::::::{prf:example} 
 :label: Ex:Diffinverse:IFT
-Consider the function $f(x)=\sqrt[5]{31+x^2}$. This function is not invertible on its entire domain, since $f(1)=f(-1)=\sqrt[5]{32}=2$. We will show that it is invertible on an open interval that contains $1$. We can find its derivative by writing $f(x)=\left(31+x^2\right)^{\frac{1}{5}}$ and using the chain rule to evaluate
+Consider the function $f(x)=5\sqrt[5]{31+x^2}$. This function is not invertible on its entire domain, since $f(1)=f(-1)=5\sqrt[5]{32}-8=2$. We will show that it is invertible on an open interval that contains $1$. We can find its derivative by writing $f(x)=5\left(31+x^2\right)^{\frac{1}{5}}-8$ and using the chain rule to evaluate
 
 $$
- f'(x)=\frac{1}{5}\left(31+x^2\right)^{\frac{1}{5}-1}\left(0+2x\right)=\frac{2x}{5}\left(31+x^2\right)^{-\frac{4}{5}}.
+ f'(x)=\frac{5}{5}\left(31+x^2\right)^{\frac{1}{5}-1}\left(0+2x\right)=2x\left(31+x^2\right)^{-\frac{4}{5}}.
 $$
 
-Then we notice that $f'(1)=\displaystyle \frac{2\cdot 1}{5}\cdot 32^{-\frac{4}{5}}=\frac{2}{5}\frac{1}{16}=\frac{1}{40}\neq 0$. So by {prf:ref}`Thm:Diffinverse:IFT`, $f$ is invertible on an open interval that contains $1$ and the inverse function $f^{-1}$ is differentiable on an open interval that contains $f(1)=2$ and we find that
+Then we notice that $f'(1)=\displaystyle (2\cdot 1)\cdot 32^{-\frac{4}{5}}=\frac{2}{16}=\frac{1}{8}\neq 0$. So by {prf:ref}`Thm:Diffinverse:IFT`, $f$ is invertible on an open interval that contains $1$ and the inverse function $f^{-1}$ is differentiable on an open interval that contains $f(1)=2$ and we find that
 
 $$
- \left(f^{-1}\right)'(2)=\frac{1}{f'(f^{-1}(2))}=\frac{1}{f'(1)}=\frac{1}{\frac{1}{40}}=40.
+ \left(f^{-1}\right)'(2)=\frac{1}{f'(f^{-1}(2))}=\frac{1}{f'(1)}=\frac{1}{\frac{1}{8}}=8.
 $$
 
-In addition, we notice that $f'(-1)=\displaystyle \frac{2\cdot (-1)}{5}\cdot 32^{-\frac{4}{5}}=\frac{-2}{5}\frac{1}{16}=\frac{-1}{40}\neq 0$. So $f$ is also invertible on an open interval that contains $-1$. Since $f$ is not invertible on its entire domain, this inverse function will not be the same as the one around $1$. So if we denote the inverse function of $f$ on the open interval around $-1$ by $\tilde{f}^{-1}$, we find that $\tilde{f}^{-1}$ is differentiable on an open interval that contains $f(-1)=2$ and we find that
+In addition, we notice that $f'(-1)=\displaystyle (2\cdot (-1))\cdot 32^{-\frac{4}{5}}=\frac{-2}{16}=\frac{-1}{8}\neq 0$. So $f$ is also invertible on an open interval that contains $-1$. Since $f$ is not invertible on its entire domain, this inverse function will not be the same as the one around $1$. So if we denote the inverse function of $f$ on the open interval around $-1$ by $\tilde{f}^{-1}$, we find that $\tilde{f}^{-1}$ is differentiable on an open interval that contains $f(-1)=2$ and we find that
 
 $$
- \left(\tilde{f}^{-1}\right)'(2)=\frac{1}{f'(\tilde{f}^{-1}(2))}=\frac{1}{f'(-1)}=\frac{1}{\frac{-1}{40}}=-40.
+ \left(\tilde{f}^{-1}\right)'(2)=\frac{1}{f'(\tilde{f}^{-1}(2))}=\frac{1}{f'(-1)}=\frac{1}{\frac{-1}{8}}=-8.
 $$
 
-:::{todo}
-Show the graph of the function $f$, with the tangent lines at the points $-1$ and $1$.
+{numref}`Fig:Diffinverse:IFT` shows the graph of the function $f$ and the tangent lines at the points $-1$ and $1$. The slopes of these tangent lines are precisely the values of $f'(-1)$ and $f'(1)$, which we used to find the derivatives of the inverse functions at $2$.
+
+:::{applet}
+:url: calculus/derivatives_of_inverse_functions/inverse_function_theorem
+:name: Fig:Diffinverse:IFT
+:class: dark-light
+
+The graph of the function $f(x)=5\sqrt[5]{31+x^2}-8$ and the tangent lines at the points $-1$ and $1$ are also shown. By dragging the left and/or right point, can you find a point at which {prf:ref}`Thm:Diffinverse:IFT` does not apply? What happens to the slope of the tangent line at that point?
 :::
+
 ::::::
 
-:::{todo}
-Exercise about finding inverses above explicitly.
-:::
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+
+
+Let $f(x)=5\sqrt[5]{31+x^2}-8$ as in {prf:ref}`Ex:Diffinverse:IFT`. Restrict $f$ to the open interval containing $1$ on which it is invertible. What is the explicit formula for the inverse function $f^{-1}(x)$?
+---
+[ ] $f^{-1}(x)=\pm\sqrt{\left(\frac{x+8}{5}\right)^5-31}$
+> This expression is not a function because it gives two possible outputs for most inputs.
+
+[x] $f^{-1}(x)=\sqrt{\left(\frac{x+8}{5}\right)^5-31}$
+> Correct! Solving $y=5\sqrt[5]{31+x^2}-8$ for $x$ gives $x=\pm\sqrt{\left(\frac{y+8}{5}\right)^5-31}$. Since the inverse is taken on the branch containing $1$, we choose the positive square root.
+
+[ ] $f^{-1}(x)=-\sqrt{\left(\frac{x+8}{5}\right)^5-31}$
+> This is the inverse corresponding to the branch containing $-1$, not the interval containing $1$.
+
+[ ] $f^{-1}(x)=\left(\frac{x+8}{5}\right)^5-31$
+> Be careful: this expression equals $x^2$, not $x$. You still need to take a square root.
+---
+::::
 
 
 ::::::{prf:remark}
@@ -433,14 +463,12 @@ $$
 
 which gives a contradiction. So $f^{-1}$ can never be differentiable at $a$.
 
-:::{figure} Images/Fig-Diffinverse-verthor.png
+:::{applet}
+:url: calculus/derivatives_of_inverse_functions/failure_of_inverse_function_theorem
 :name: Fig:Diffinverse:verthor
+:class: dark-light
 
 If $f$ has a horizontal tangent line at $a$, then $f^{-1}$ has a vertical tangent line at $f(a)$.
-:::
-
-:::{todo}
-Make an applet of {numref}`Fig:Diffinverse:verthor`.
 :::
 
 ::::::
@@ -483,18 +511,15 @@ Note that the derivative is not continuous in $0$. Indeed, with the squeeze theo
 
 The function $f$ is also not invertible in any interval that contains $0$. Indeed, the derivative $\displaystyle f'(x)=-1+8x\sin\left(\frac{1}{x}\right)-4\cos\left(\frac{1}{x}\right)$ will take on both positive and negative values on any interval that contains $0$, as $\displaystyle -4\cos\left(\frac{1}{x}\right)$ keeps on oscillating between $-4$ and $4$, while $\displaystyle -1+2x\sin\left(\frac{1}{x}\right)$ approaches $-1$ as $x\rightarrow 0$. So the function $f$ will alternate between strictly increasing and strictly decreasing on any such interval, which means that it cannot be invertible there.
 
-:::{figure} Images/Fig-Diffinverse-IFT2.png
+:::{applet}
+:url: calculus/derivatives_of_inverse_functions/failure_of_inverse_function_theorem_2
 :name: Fig:Diffinverse:IFT2
+:class: dark-light
 
-The graph of the function $f$ from {prf:ref}`Rem:Diffinverse:IFT2`.
+The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinverse:IFT2`.
 :::
 
-:::{todo}
-Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show the graph of $f'$. 
-:::
-:::
-
-::::
+::::::
 
 ## Grasple exercises
 
@@ -632,7 +657,7 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/665beea4-a04e-43b2-936b-11058bea3f4c?id=69707
 :label: Grasple:69707
 :dropdown:
-:description: Evaluating limits by recognising them as derivatives
+:description: Evaluating limits by recognising them as derivatives.
 
 ::::
 
@@ -641,7 +666,7 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/d8bc5cfb-cbe3-4a9b-ba66-c1ba8922a285?id=69711
 :label: Grasple:69711
 :dropdown:
-:description: Evaluating limits by recognising them as derivatives
+:description: Evaluating limits by recognising them as derivatives.
 
 ::::
 
@@ -650,7 +675,7 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/1da4667f-95a5-4740-a27f-726cf53655b3?id=71390
 :label: Grasple:71390
 :dropdown:
-:description: Determining differentiability
+:description: Determining differentiability.
 
 ::::
 
@@ -659,7 +684,7 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/ce40519e-7e93-4243-9d8d-9b83c5ee718c?id=71391
 :label: Grasple:71391
 :dropdown:
-:description: Determining differentiability
+:description: Determining differentiability.
 ::::
 
 ::::{grasple}
@@ -667,7 +692,7 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/e9c2623c-678d-4454-ad7e-3f17ca8b1c90?id=63552
 :label: Grasple:63552
 :dropdown:
-:description: Finding derivative of inverse function using implicit differentiation
+:description: Finding derivative of inverse function using implicit differentiation.
 ::::
 
 ::::{grasple}
@@ -675,7 +700,7 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/34dbc780-717e-4e1a-86fb-c8bab327e42b?id=63605
 :label: Grasple:63605
 :dropdown:
-:description: Finding derivative of inverse function using implicit differentiation
+:description: Finding derivative of inverse function using implicit differentiation.
 ::::
 
 ::::{grasple}
@@ -683,7 +708,7 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/ec0f5db9-22c4-489c-8c82-831a53f4a4d5?id=63609
 :label: Grasple:63609
 :dropdown:
-:description: Finding derivative of inverse function using implicit differentiation
+:description: Finding derivative of inverse function using implicit differentiation.
 ::::
 
 ::::{grasple}
@@ -691,7 +716,7 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/b7717945-c351-4083-bbfe-94da7ac1f8df?id=63611
 :label: Grasple:63611
 :dropdown:
-:description: Using the inverse function theorem
+:description: Using the inverse function theorem.
 ::::
 
 ::::{grasple}
@@ -699,7 +724,7 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/eb9ad8a4-10be-4cec-ba9a-d9731f7dc0d5?id=63542
 :label: Grasple:63542
 :dropdown:
-:description: Using the inverse function theorem
+:description: Using the inverse function theorem.
 ::::
 
 ::::{grasple}
@@ -707,5 +732,5 @@ Replace the graph in {numref}`Fig:Diffinverse:IFT2` with an applet. Also show th
 :url: https://embed.grasple.com/exercises/73fba58a-b366-4c0a-bd31-fdb8a3020bde?id=63543
 :label: Grasple:63543
 :dropdown:
-:description: Using the inverse function theorem
+:description: Using the inverse function theorem.
 ::::
