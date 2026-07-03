@@ -124,6 +124,10 @@ Consider the function $f(x)=7+\frac12\cos\left(\frac{\pi x}{3}\right)$, which is
 Graph of the function $f(x)=7+\frac12\cos\left(\frac{\pi x}{3}\right)$.
 :::
 
+:::{todo}
+Replace {numref}`Fig:Series:IntroConstant` with an applet. Note that in the current image the function is incorrect, only the shape is correct.
+:::
+
 Because of the constant term $7$ in the definition of $f$, $f$ oscillates around $7$ and not around $0$. This means that if we define the function $g$ by
 
 $$
