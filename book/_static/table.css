@@ -28,3 +28,12 @@ table caption span.caption-number::after{
 .table {
   margin: 0 0 1em !important;
 }
+
+table.fit-content {
+  width: fit-content;
+}
+
+table.center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
