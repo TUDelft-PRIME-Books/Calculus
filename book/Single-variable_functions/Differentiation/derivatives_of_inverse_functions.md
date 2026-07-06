@@ -642,6 +642,14 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b7d4d8ec-b239-4853-a95c-4323237b952a?id=63425
+:label: Grasple:63425
+:dropdown:
+:description: Find a derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/7fab8c83-125e-46b6-8f2d-d35d73be216d?id=63523
 :label: Grasple:63523
 :dropdown:
