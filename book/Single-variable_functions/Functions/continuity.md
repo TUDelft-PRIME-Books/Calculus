@@ -891,6 +891,33 @@ A function $g(x)$ and a slider for the parameter $b$.
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2de547ab-01df-4451-b2c8-b2d565fb4845?id=134119
+:label: Grasple:134119
+:dropdown:
+:description: Checking continuity.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d5ad48e9-8320-474f-bce7-f711929da194?id=134120
+:label: Grasple:134120
+:dropdown:
+:description: Checking continuity.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/17f576e3-ee15-4a9b-9ab4-a9e5deb87a04?id=134122
+:label: Grasple:134122
+:dropdown:
+:description: Checking continuity.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/516eefd5-6e4d-42f0-9cf7-ea54159a3262?id=126101
 :label: Grasple:126101
 :dropdown:

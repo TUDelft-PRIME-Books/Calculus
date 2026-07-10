@@ -1438,12 +1438,50 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 
 ::::
 
+
+
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/e616f859-f2fc-49b0-ba3d-33f16a888e71?id=79423
 :label: Grasple:79423
 :dropdown:
 :description: Finding the global maximum and minimum of a function on a closed interval.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/dcc1f661-8b67-4a90-b749-df19ca2aac5d?id=133945
+:label: Grasple:133945
+:dropdown:
+:description: Finding and classifying critical points
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ceddfaeb-d41f-4581-91c9-8ea688eb58bc?id=133947
+:label: Grasple:133947
+:dropdown:
+:description: Finding and classifying critical points
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/77685602-ddbc-4c6a-8402-d21aea8da7f1?id=134014
+:label: Grasple:134014
+:dropdown:
+:description: Finding and classifying critical points
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/dd9d9714-bcbe-41aa-8c31-5d8aa7614733?id=134063
+:label: Grasple:134063
+:dropdown:
+:description: Finding and classifying critical points
 
 ::::
 
@@ -1469,8 +1507,35 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e38f002d-e52e-4132-974d-cd71d326c3eb?id=133859
+:label: Grasple:133859
+:dropdown:
+:description: Checking where the function is nonincreasing.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/245bc0cf-71e6-4915-96c4-c0283f3f78ae?id=79428
 :label: Grasple:79428
+:dropdown:
+:description: Checking where the function is strictly increasing.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/71f93025-87ff-4137-ac65-8ad686dbf357?id=133860
+:label: Grasple:133860
+:dropdown:
+:description: Checking where the function is strictly increasing.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0d026884-e5b0-4089-9c04-6ff3516d3c86?id=133920
+:label: Grasple:133920
 :dropdown:
 :description: Checking where the function is strictly increasing.
 
@@ -1518,6 +1583,15 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :label: Grasple:68960
 :dropdown:
 :description: Finding an interval in which function values lie.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/974492d6-061d-4639-9537-47cc7bec7dde?id=134106
+:label: Grasple:134106
+:dropdown:
+:description: Using the mean value theorem to estimate a function value.
 
 ::::
 

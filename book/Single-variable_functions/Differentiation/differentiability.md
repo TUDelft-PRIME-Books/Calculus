@@ -892,7 +892,7 @@ A Venn diagram showing that different sets of functions are contained in each ot
 :url: https://embed.grasple.com/exercises/f0058966-290e-49d8-a78e-c689a17c714c?id=69697
 :label: Grasple:69697
 :dropdown:
-:description: Using limits to find a derivative.
+:description: Using limits to find the derivative.
 
 ::::
 
@@ -901,7 +901,7 @@ A Venn diagram showing that different sets of functions are contained in each ot
 :url: https://embed.grasple.com/exercises/5258b49b-1553-4d0b-a918-4f44e9647fec?id=69701
 :label: Grasple:69701
 :dropdown:
-:description: Using limits to find a derivative.
+:description: Using limits to find the derivative.
 
 ::::
 
@@ -910,7 +910,7 @@ A Venn diagram showing that different sets of functions are contained in each ot
 :url: https://embed.grasple.com/exercises/f622e5de-4a13-4385-a949-f5d398ba33b4?id=69704
 :label: Grasple:69704
 :dropdown:
-:description: Using limits to find a derivative.
+:description: Using limits to find the derivative.
 
 ::::
 
@@ -974,5 +974,32 @@ A Venn diagram showing that different sets of functions are contained in each ot
 :label: Grasple:133513
 :dropdown:
 :description: Find the second derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d0a46a7e-ba60-42ac-8c0a-9cef83b0e0e3?id=133853
+:label: Grasple:133853
+:dropdown:
+:description: Find a really high derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bbaac5b0-0ea9-455a-a66a-d86c3b9fba28?id=133852
+:label: Grasple:133852
+:dropdown:
+:description: Find a really high derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/30de1d51-e2d7-4a9e-9609-e0ff10b133be?id=133858
+:label: Grasple:133858
+:dropdown:
+:description: Find a really high derivative.
 
 ::::

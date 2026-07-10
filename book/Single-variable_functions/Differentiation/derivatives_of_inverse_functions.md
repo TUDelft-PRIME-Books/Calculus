@@ -541,7 +541,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/79142901-fa54-4bc5-b81d-ca8b884fde0a?id=63418
 :label: Grasple:63418
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -549,7 +549,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/5d112029-4427-4231-b436-0ad066c52451?id=63434
 :label: Grasple:63434
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -557,7 +557,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/fc0c7b54-8e58-4445-b714-fcba02547108?id=63426
 :label: Grasple:63426
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -565,7 +565,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/516b4eaf-f83e-491f-adbd-d50b17601ac3?id=63424
 :label: Grasple:63424
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -573,7 +573,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/a1719639-a441-47a9-a648-b84502165ad1?id=63427
 :label: Grasple:63427
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -581,7 +581,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/1ef694a5-28e8-4324-8d93-f186a0c79689?id=63431
 :label: Grasple:63431
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -589,7 +589,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/a48a374e-0e7d-40f7-a159-f4530fcdc631?id=63423
 :label: Grasple:63423
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -597,7 +597,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/d57df9e2-3592-4b25-bf28-e922a4365aa5?id=71396
 :label: Grasple:71396
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -605,7 +605,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/81f5b367-145a-4e6f-991e-805b45970b41?id=75355
 :label: Grasple:75355
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -613,7 +613,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/46e1acb0-7381-4296-a702-cf4186c7a004?id=75356
 :label: Grasple:75356
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -621,7 +621,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/77d668b9-c9db-4e2e-9e85-1a4076031989?id=75357
 :label: Grasple:75357
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -629,7 +629,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/7407875d-6d46-43b2-8478-31951387cfb1?id=75359
 :label: Grasple:75359
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -637,7 +637,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/c67c5ab4-a17c-499e-bda6-de7a35cc812f?id=75358
 :label: Grasple:75358
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -645,7 +645,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/b7d4d8ec-b239-4853-a95c-4323237b952a?id=63425
 :label: Grasple:63425
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
