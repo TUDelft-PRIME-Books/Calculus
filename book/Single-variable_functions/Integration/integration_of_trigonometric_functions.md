@@ -734,6 +734,16 @@ This can also be done using the tangent half-angle substitution: set $u=\tan(\fr
 &=\ln\left(\frac{\sqrt{2}}{2-\sqrt{2}}\cdot\frac{2+\sqrt{2}}{2+\sqrt{2}}\right)=\ln\left(\frac{2+2\sqrt{2}}{4-2}\right)=\ln(1+\sqrt{2}).
 \end{align*}
 
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionNiceFormula2
+For $a=0$, $b=\frac{1}{2}\pi$ and $f(x)=\sin(x)$ we obtain
+
+\begin{align*}
+\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\sin(\frac{1}{2}\pi-x)}\,dx\\
+&=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
+\end{align*}
+::::::
+
 ## Exercises
 
 ::::{exercise}

@@ -739,95 +739,38 @@ Add Grasple exercises to {numref}`Sec:SumsAndProducts`.
 
 ::::
 
-## Exercises
-
-::::{exercise}
-:label: Exc:SumsAndProducts:SumOfSquares
-Show that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ for all $n\in\{1,2,3,\ldots\}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:SumsAndProducts:SumOfSquares`
-:class: solution, dropdown
-
-For $n=1$ this reads: $1=\frac{1}{6}\cdot1\cdot2\cdot3$, which is true. 
-
-Suppose that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ holds for certain value of $n$. Then we have
-
-\begin{align*}
-\sum_{k=1}^{n+1}k^2&=\sum_{k=1}^nk^2+(n+1)^2\\
-&=\frac{1}{6}n(n+1)(2n+1)+(n+1)^2\\
-&=\frac{1}{6}(n+1)\left(n(2n+1)+6(n+1)\right)\\
-&=\frac{1}{6}(n+1)(2n^2+7n+6)\\
-&=\frac{1}{6}(n+1)(n+2)(2n+3).
-\end{align*}
-
-Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
-:::
-
-::::{exercise}
-:label: Exc:SumsAndProducts:SumOfCubes
-
-Show that $\displaystyle\sum_{k=1}^nk^3=\left(\sum_{k=1}^nk\right)^2=\frac{1}{4}n^2(n+1)^2$ for all $n\in\{1,2,3,\ldots\}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:SumsAndProducts:SumOfCubes`
-:class: solution, dropdown
-
-For $n=1$ this reads: $1=\frac{1}{4}\cdot1^2\cdot2^2$, which is true. 
-
-Suppose that $\displaystyle\sum_{k=1}^nk^3=\frac{1}{4}n^2(n+1)^2$ holds for certain value of $n$. Then we have
-
-\begin{align*}
-\sum_{k=1}^{n+1}k^3&=\sum_{k=1}^nk^3+(n+1)^3\\
-&=\frac{1}{4}n^2(n+1)^2+(n+1)^3\\
-&=\frac{1}{4}(n+1)^2\left(n^2+4(n+1)\right)\\
-&=\frac{1}{4}(n+1)^2(n^2+4n+4)\\
-&=\frac{1}{4}(n+1)^2(n+2)^2.
-\end{align*}
-
-Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
-:::
-
-::::{exercise}
-:label: Exc:SumsAndProducts:TelescopingExercise
-Use the facts that $n^4+n^2+1=n^4+2n^2+1-n^2=(n^2+1)^2-n^2$ and $2n=n^2+1+n-(n^2+1-n)$ to find the sum of
-
-$$
-\sum_{n=1}^{100}\frac{n}{n^4+n^2+1}.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a2410357-aaab-435d-a0a2-0e761268bfb3?id=133868
+:label: Grasple:133868
+:dropdown:
+:description: Find a closed formula for the sum.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:SumsAndProducts:TelescopingExercise`
-:class: solution, dropdown
-Using $n^4+n^2+1=(n^2+1)^2-n^2=(n^2+1+n)(n^2+1-n)$ and $2n=n^2+1+n-(n^2+1-n)$ we obtain
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5aae9633-1bdc-4a25-bed1-07eddb98aad5?id=134138
+:label: Grasple:134138
+:dropdown:
+:description: Show that $\displaystyle\sum_{k=1}^nk^2=\frac{1}{6}n(n+1)(2n+1)$ for all $n\in\{1,2,3,\ldots\}$.
 
-\begin{align*}
-\frac{n}{n^4+n^2+1}&=\frac{1}{2}\frac{n^2+1+n-(n^2+1-n)}{(n^2+1+n)(n^2+1-n)} \\
-&=\frac{1}{2}\left(\frac{1}{n^2+1-n}-\frac{1}{n^2+1+n}\right).
-\end{align*}
+::::
 
-In order to see that this is a telescoping sum, let $c_n=n^2+1-n$, then
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1b69260b-eb67-440f-bba9-aba9c3a2b1c2?id=134140
+:label: Grasple:134140
+:dropdown:
+:description: Show that $\displaystyle\sum_{k=1}^nk^3=\left(\sum_{k=1}^nk\right)^2=\frac{1}{4}n^2(n+1)^2$ for all $n\in\{1,2,3,\ldots\}$.
 
-$$
-c_{n+1}=(n+1)^2+1-(n+1)=n^2+2n+1+1-n-1=n^2+1+n.
-$$
+::::
 
-So if we set $b_n=\dfrac12\dfrac{1}{c_n}$, then we have $a_n=b_n-b_{n+1}$ for all $n\in\{1,2,3,\ldots\}$, then we have a telescoping sum.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c22e6c88-1d34-4256-8291-45c9d4739d19?id=134144
+:label: Grasple:134144
+:dropdown:
+:description: Find the sum of $\displaystyle\sum_{n=1}^{100}\frac{n}{n^4+n^2+1}$.
 
-Hence, we have by {prf:ref}`Thm:SumsAndProducts:SumTelescopingSum` that
-
-\begin{align*}
-\sum_{n=1}^{100}\left(\frac{1}{n^2+1-n}-\frac{1}{n^2+1+n}\right) &= b_1-b_{101} \\
-&= \frac12\frac{1}{c_1}-\frac12\frac{1}{c_{101}} \\
-&= \frac12\frac{1}{1^2+1-1}-\frac12\frac{1}{101^2+1-101} \\
-&= \frac12\frac11-\frac12\frac{1}{10101} \\
-&= \frac12-\frac{1}{20202} \\
-&= \frac{10101}{20202}-\frac{1}{20202} \\
-&= \frac{10100}{20202} \\
-&= \frac{5050}{10101} \\
-&=0.\overline{499950}.
-\end{align*}
-
-See {numref}`Sec:Decimals` for the notation $0.\overline{499950}$.
-:::
+::::

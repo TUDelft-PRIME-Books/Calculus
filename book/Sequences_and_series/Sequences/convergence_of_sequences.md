@@ -418,297 +418,74 @@ The sequence $\{c_n\}$ with $c_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\l
 
 ## Grasple exercises
 
-:::{todo}
-Add Grasple exercises to {numref}`Section:SequenceConvergence`.
-:::
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/054ba52c-921d-41bc-a9c2-30258b2232b2?id=65159
+:label: Grasple:65159
+:dropdown:
+:description: Is the sequence convergent or divergent?
 
-## Exercises
-
-::::{exercise}
-:label: Exc:Sequences:ConvergenceExercise1
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=7$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
-
-Show that the sequence is convergent and find its limit.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise1`
-:class: solution, dropdown
-We have seen that the sequence strictly decreases and is bounded below by $1$. This implies that the sequence converges. So, the limit $\lim\limits_{n\to\infty}a_n$ exists.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b1946f7e-8b02-4f53-85cc-53ebbc2abef5?id=78990
+:label: Grasple:78990
+:dropdown:
+:description: Is the sequence convergent or divergent?
 
-Let $L=\lim\limits_{n\to\infty}a_n$, then we have $\lim\limits_{n\to\infty}a_{n+1}=L$ and
-
-$$
-L=\frac{1}{2}(L+5)\quad\Longleftrightarrow\quad2L=L+5\quad\Longleftrightarrow\quad L=5.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Sequences:ConvergenceExercise2
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=2$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
-
-Show that the sequence is convergent and find its limit.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise2`
-:class: solution, dropdown
-We have seen that the sequence strictly increases and is bounded above. This implies that the sequence converges. So, the limit $\lim\limits_{n\to\infty}a_n$ exists.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/892bd757-0321-4758-81cb-c13235b6e739?id=78976
+:label: Grasple:78976
+:dropdown:
+:description: Is the sequence convergent or divergent?
 
-Let $L=\lim\limits_{n\to\infty}a_n$, then we have $\lim\limits_{n\to\infty}a_{n+1}=L$ and
-
-\begin{align*}
-L=\sqrt{L+6}\quad\Longrightarrow\quad L^2=L+6&\quad\Longleftrightarrow\quad L^2-L-6=0\\
-&\quad\Longleftrightarrow\quad(L-3)(L+2)=0.
-\end{align*}
-This implies that $L=3$ or $L=-2$. Since $a_1=1$ and the sequence is strictly increasing, we conclude that $L=3$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:ConvergenceExercise3
-Show that the sequence $\left\{\sqrt{2},\sqrt{2\sqrt{2}},\sqrt{2\sqrt{2\sqrt{2}}},\ldots\right\}$ converges and find its limit.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise3`
-:class: solution, dropdown
-Note that the sequence can be written as $\{a_n\}_{n=1}^{\infty}$ with $a_1=\sqrt{2}$ and $a_{n+1}=\sqrt{2a_n}$ for $n=1,2,3,\ldots$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bc8510f7-1a8e-4ab2-8380-885ae4372925?id=64566
+:label: Grasple:64566
+:dropdown:
+:description: Find the limit of a sequence.
 
-1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
-
-  For $n=1$ this reads: $a_2=\sqrt{2a_1}=\sqrt{2\sqrt{2}}\sqrt{2}\sqrt{\sqrt{2}}>\sqrt{2}=a_1$ which is true.
-
-  Assuming that $a_{k+1}>a_k$ for certain value of $k$ we obtain
-
-$$
-a_{k+2}=\sqrt{2a_{k+1}}>\sqrt{2a_k}=a_{k+1}.
-$$
-
-  This proves that the sequence is strictly increasing.
-
-2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq2$ for $n=1,2,3,\ldots$.
-
-For $n=1$ this reads: $a_1=\sqrt{2}\leq2$, which is true.
-
-Assuming that $a_k\leq2$ for certain value of $k$ we obtain
-
-$$
-a_{k+1}=\sqrt{2a_{k}}\leq\sqrt{2\cdot 2}=2.
-$$
-
-This proves that the sequence is bounded above by $2$.
-
-3) Since the sequence is strictly increasing and bounded above, we conclude that the sequence is convergent. So $L=\lim\limits_{n\to\infty}a_n=\lim\limits_{n\to\infty}a_{n+1}$ exists. Then we have
-
-\begin{align*}
-L = \lim_{n\to\infty}a_{n+1} = \lim_{n\to\infty}\sqrt{2a_n} = \sqrt{2\lim_{n\to\infty}a_n} = \sqrt{2L}.
-\end{align*}
-
-From this we obtain
-
-$$
-L=\sqrt{2L}\quad\Longrightarrow\quad L^2=2L\quad\Longleftrightarrow\quad L=0\quad\text{or}\quad L=2.
-$$
-
-Since $a_1=\sqrt{2}>1$ and the sequence is strictly increasing, we conclude that $L=2$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:ConvergenceExercise4
-Show that the sequence $\left\{\sqrt{2},\sqrt{2+\sqrt{2}},\sqrt{2+\sqrt{2+\sqrt{2}}},\ldots\right\}$ converges and find its limit.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise4`
-:class: solution, dropdown
-Note that the sequence can be written as $\{a_n\}_{n=1}^{\infty}$ with $a_1=\sqrt{2}$ and $a_{n+1}=\sqrt{2+a_n}$ for $n=1,2,3,\ldots$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e274674a-6aae-437f-98e2-aed350129a58?id=64567
+:label: Grasple:64567
+:dropdown:
+:description: Find the limit of a sequence.
 
-1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
-
-For $n=1$ this reads: $a_2=\sqrt{2+a_1}=\sqrt{2+\sqrt{2}}>\sqrt{2}=a_1$ which is true.
-
-Assuming that $a_{k+1}>a_k$ for certain value of $k$ we obtain
-
-$$
-a_{k+2}=\sqrt{2+a_{k+1}}>\sqrt{2+a_k}=a_{k+1}.
-$$
-
-This proves that the sequence is strictly increasing.
-
-2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq2$ for $n=1,2,3,\ldots$.
-
-For $n=1$ this reads: $a_1=\sqrt{2}\leq2$, which is true.
-
-Assuming that $a_k\leq2$ for certain value of $k$ we obtain
-
-$$
-a_{k+1}=\sqrt{2+a_{k}}\leq\sqrt{2+2}=2.
-$$
-
-This proves that the sequence is bounded above by $2$.
-
-3) Since the sequence is strictly increasing and bounded above, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
-
-\begin{align*}
-L=\sqrt{2+L}\quad\Longrightarrow\quad L^2=2+L&\quad\Longleftrightarrow\quad L^2-L-2=0\\
-&\quad\Longleftrightarrow\quad(L-2)(L+1)=0.
-\end{align*}
-Hence: $L=2$ or $L=-1$. Since $a_1=\sqrt{2}>1$ and the sequence is strictly increasing, we conclude that $L=2$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:ConvergenceExercise5
-Show that the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=4-\dfrac{1}{a_n}$ is convergent and find its limit.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise5`
-:class: solution, dropdown
-1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b66daf68-aa96-4075-8f9e-7a03c2ba84af?id=64564
+:label: Grasple:64564
+:dropdown:
+:description: Find all $p\in\mathbb{R}$ such that the limit equals zero.
 
-For $n=1$ this reads: $a_2=4-1=3>1=a_1$ which is true.
-
-Assuming that $a_{k+1}>a_k$ for certain value of $k$ we obtain $-a_{k+1}<-a_k$ and $-\displaystyle\frac{1}{a_{k+1}}>-\frac{1}{a_k}$ and therefore
-
-$$
-a_{k+2}=4-\frac{1}{a_{k+1}}>4-\frac{1}{a_k}=a_{k+1}.
-$$
-
-This proves that the sequence is strictly increasing.
-
-2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq3$ for $n=1,2,3,\ldots$.
-
-For $n=1$ this reads: $a_1=1\leq3$, which is true.
-
-Assuming that $a_k\leq4$ for certain value of $k$ we obtain $-a_k\geq-4$ and $-\displaystyle\frac{1}{a_k}\leq-\frac{1}{4}$ and therefore
-
-$$
-a_{k+2}=4-\frac{1}{a_k}\leq4-\frac{1}{4}\leq4.
-$$
-
-This proves that the sequence is bounded above by $4$.
-
-3) Since the sequence is strictly increasing and bounded above, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
-
-\begin{align*}
-L=4-\frac{1}{L}\quad\Longrightarrow\quad L^2=4L-1&\quad\Longleftrightarrow\quad L^2-4L+1=0\\
-&\quad\Longleftrightarrow\quad (L-2)^2=3.
-\end{align*}
-Hence: $L=2+\sqrt{3}$ or $L=2-\sqrt{3}$. Since $a_2=3$ and the sequence is strictly increasing, we conclude that $L=2+\sqrt{3}$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:ConvergenceExercise6
-Show that the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=3$ and $a_{n+1}=\dfrac{1}{4-a_n}$ is convergent and find its limit.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise6`
-:class: solution, dropdown
-1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly decreasing: $a_{n+1}<a_n$ for $n=1,2,3,\ldots$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fcebbe98-d663-499c-ac0a-9dabc48db360?id=134250
+:label: Grasple:134250
+:dropdown:
+:description: Is the sequence convergent? If so, find its limit.
 
-For $n=1$ this reads: $a_2=\dfrac{1}{4-3}=1<3=a_1$ which is true.
-
-Assuming that $a_{k+1}<a_k$ for certain value of $k$ we obtain $4-a_{k+1}>4-a_k$ and $\displaystyle\frac{1}{4-a_{k+1}}<\frac{1}{4-a_k}$ and therefore
-
-$$
-a_{k+2}=\frac{1}{4-a_{k+1}}<\frac{1}{4-a_k}=a_{k+1}.
-$$
-
-This proves that the sequence is strictly decreasing.
-
-2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded below, for instance that $a_n\geq0$ for $n=1,2,3,\ldots$.
-
-For $n=1$ this reads: $a_1=3\geq0$, which is true.
-
-Assuming that $a_k\geq0$ for certain value of $k$ we obtain $4-a_k\leq4$ and $\displaystyle\frac{1}{4-a_k}\geq\frac{1}{4}$ and therefore
-
-$$
-a_{k+2}=\frac{1}{4-a_k}\geq\frac{1}{4}\geq0.
-$$
-
-This proves that the sequence is bounded below by $0$.
-
-3) Since the sequence is strictly decreasing and bounded below, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
-
-\begin{align*}
-L=\frac{1}{4-L}\quad\Longrightarrow\quad 4L-L^2=1&\quad\Longleftrightarrow\quad L^2-4L+1=0\\
-&\quad\Longleftrightarrow\quad (L-2)^2=3.
-\end{align*}
-Hence: $L=2+\sqrt{3}$ or $L=2-\sqrt{3}$. Since $a_1=3$ and $a_2=1$ and the sequence is strictly decreasing, we conclude that $L=2-\sqrt{3}$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:ConvergenceExercise7
-Show that the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\sqrt{1+2a_n}$ is convergent and find its limit.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise7`
-:class: solution, dropdown
-1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ed01cf72-af9f-48cf-ace2-2d0722ef0327?id=134252
+:label: Grasple:134252
+:dropdown:
+:description: Is the sequence convergent? If so, find its limit.
 
-For $n=1$ this reads: $a_2=\sqrt{3}>1=a_1$ which is true.
-
-Assuming that $a_{k+1}>a_k$ for certain value of $k$ we obtain
-
-$$
-a_{k+2}=\sqrt{1+2a_{k+1}}>\sqrt{1+2a_k}=a_{k+1}.
-$$
-
-This proves that the sequence is strictly increasing.
-
-2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq5$ for $n=1,2,3,\ldots$.
-
-For $n=1$ this reads: $a_1=1\leq5$, which is true.
-
-Assuming that $a_k\leq5$ for certain value of $k$ we obtain
-
-$$
-a_{k+2}=\sqrt{1+2a_{k+1}}\leq\sqrt{1+10}\leq5.
-$$
-
-This proves that the sequence is bounded above by $5$.
-
-3) Since the sequence is strictly increasing and bounded above, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
-
-\begin{align*}
-L=\sqrt{1+2L}\quad\Longrightarrow\quad L^2=1+2L&\quad\Longleftrightarrow\quad L^2-2L-1=0\\
-&\quad\Longleftrightarrow\quad(L-1)^2=2.
-\end{align*}
-Hence: $L=1+\sqrt{2}$ or $L=1-\sqrt{2}$. Since $a_1=1$ and the sequence is strictly increasing, we conclude that $L=1+\sqrt{2}$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:ConvergenceExercise8
-Show that the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=3$ and $a_{n+1}=\sqrt{15+2a_n}$ is convergent and find its limit.
 ::::
-
-:::{admonition} Solution of {numref}`Exc:Sequences:ConvergenceExercise8`
-:class: solution, dropdown
-1) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is strictly increasing: $a_{n+1}>a_n$ for $n=1,2,3,\ldots$.
-
-For $n=1$ this reads: $a_2=\sqrt{21}>3=a_1$ which is true.
-
-Assuming that $a_{k+1}>a_k$ for certain value of $k$ we obtain
-
-$$
-a_{k+2}=\sqrt{15+2a_{k+1}}>\sqrt{15+2a_k}=a_{k+1}.
-$$
-
-This proves that the sequence is strictly increasing.
-
-2) Using {prf:ref}`mathematical induction <Thm:Algebra:MathematicalInduction>` we prove that the sequence is bounded above, for instance that $a_n\leq10$ for $n=1,2,3,\ldots$.
-
-For $n=1$ this reads: $a_1=3\leq10$, which is true.
-
-Assuming that $a_k\leq10$ for certain value of $k$ we obtain
-
-$$
-a_{k+2}=\sqrt{15+2a_{k+1}}\leq\sqrt{15+10}\leq10.
-$$
-
-This proves that the sequence is bounded above by $10$.
-
-3) Since the sequence is strictly increasing and bounded above, we conclude that the sequence is convergent. So: $L=\lim\limits_{n\to\infty}a_n$ exists and must satisfy
-
-\begin{align*}
-L=\sqrt{15+2L}\quad\Longrightarrow\quad L^2=15+2L&\quad\Longleftrightarrow\quad L^2-2L-15=0\\
-&\quad\Longleftrightarrow\quad(L-5)(L+3)=0.
-\end{align*}
-Hence: $L=5$ or $L=-3$. Since $a_1=3$ and the sequence is increasing, we conclude that $L=5$.
-:::

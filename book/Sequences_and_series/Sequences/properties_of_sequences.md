@@ -554,7 +554,7 @@ Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\fr
 
 We show that the sequence is bounded above.
 
-We want to prove that $a_n<M$ for some number $M$ for all $n=1,2,3,\ldots$. Let's take $M=10$ and use the {prf:ref}`principal of mathematical induction <Thm:Algebra:MathematicalInduction>` to show that $a_n<10$ for $n\geq 1$.
+We want to prove that $a_n<M$ for some number $M$ for all $n=1,2,3,\ldots$. Let's take $M=10$ and use the {prf:ref}`principle of mathematical induction <Thm:Algebra:MathematicalInduction>` to show that $a_n<10$ for $n\geq 1$.
 
 For $n=1$ we have $a_1=1$, which definitely satisfies $a_1<10$.
 
@@ -590,105 +590,38 @@ This shows that $b_n>0$ for all $n=1,2,3,\ldots$.
 
 ## Grasple exercises
 
-:::{todo}
-Add Grasple exercises to {numref}`Sec:PropertiesOfSequences`.
-:::
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f7d98244-8997-4ec4-b4c4-59bd5e989439?id=134240
+:label: Grasple:134240
+:dropdown:
+:description: Show that the sequence decreases.
 
-
-## Exercises
-
-::::{exercise}
-:label: Exc:Sequences:PropertiesExercise1
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=7$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
-
-Show that the sequence decreases.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:PropertiesExercise1`
-:class: solution, dropdown
-We want to prove that $a_n>a_{n+1}$ for all $n=1,2,3,\ldots$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8137e597-59cc-47bb-8b27-a96d3d5ba8b9?id=134242
+:label: Grasple:134242
+:dropdown:
+:description: Show that the sequence increases.
 
-We use the {prf:ref}`principle of mathematical induction <Thm:Algebra:MathematicalInduction>`.
-
-For $n=1$ we have $a_1=7>6=a_2$.
-
-Suppose that $a_k>a_{k+1}$ for certain value of $k$, then we have
-
-$$
-a_{k+1}=\frac{1}{2}(a_k+5)>\frac{1}{2}(a_{k+1}+5)=a_{k+2}.
-$$
-
-This shows that $a_n>a_{n+1}$ for all $n=1,2,3,\ldots$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:PropertiesExercise2
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=2$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
-
-Show that the sequence increases.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:PropertiesExercise2`
-:class: solution, dropdown
-We want to prove that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a5d47013-1575-4d95-a5db-32e74a02a474?id=134245
+:label: Grasple:134245
+:dropdown:
+:description: Show that the sequence is bounded below.
 
-We use the {prf:ref}`principle of mathematical induction <Thm:Algebra:MathematicalInduction>`.
-
-For $n=1$ we have $a_1=2<2\sqrt{2}=a_2$.
-
-Suppose that $a_k<a_{k+1}$ for certain value of $k$, then we have
-
-$$
-a_{k+1}=\sqrt{a_k+6}<\sqrt{a_{k+1}+6}=a_{k+2}.
-$$
-
-This shows that $a_n<a_{n+1}$ for all $n=1,2,3,\ldots$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:PropertiesExercise3
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=7$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
-
-Show that the sequence is bounded below.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:PropertiesExercise3`
-:class: solution, dropdown
-We want to prove that $a_n>1$ (for instance) for all $n=1,2,3,\ldots$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f13de6d5-c5c9-4dbe-92e4-83426de57067?id=134247
+:label: Grasple:134247
+:dropdown:
+:description: Show that the sequence is bounded above.
 
-We use the {prf:ref}`principle of mathematical induction <Thm:Algebra:MathematicalInduction>`.
-
-For $n=1$ we have $a_1=7>1$.
-
-Suppose that $a_k>1$ for certain value of $k$, then we have
-
-$$
-a_{k+1}=\frac{1}{2}(a_k+5)>\frac{1}{2}(1+5)>1.
-$$
-
-This shows that $a_n>1$ for all $n=1,2,3,\ldots$.
-:::
-
-::::{exercise}
-:label: Exc:Sequences:PropertiesExercise4
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=2$ and $a_{n+1}=\sqrt{a_n+6}$ for $n=1,2,3,\ldots$. 
-
-Show that the sequence is bounded above.
 ::::
-
-:::{admonition} Solution of {numref}`Exc:Sequences:PropertiesExercise4`
-:class: solution, dropdown
-We want to prove that $a_n<10$ (for instance) for all $n=1,2,3,\ldots$.
-
-We use the {prf:ref}`principle of mathematical induction <Thm:Algebra:MathematicalInduction>`.
-
-For $n=1$ we have $a_1=2<10$.
-
-Suppose that $a_k<10$ for certain value of $k$, then we have
-
-$$
-a_{k+1}=\sqrt{a_k+6}<\sqrt{10+6}<10.
-$$
-
-This shows that $a_n<10$ for all $n=1,2,3,\ldots$.
-:::
