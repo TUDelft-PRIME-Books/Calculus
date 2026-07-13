@@ -211,6 +211,7 @@ Hence, the average temperature in $D$ equals $\dfrac{28}{2}=14^{\circ}\text{C}$.
 
 :::
 
+(Sec:MultivariableIntegration:RiemannZetaFunction1)=
 ## The Riemann zeta function
 
 In {numref}`Sec:Series:RiemannZetaFunction` we studied the Riemann zeta function $\zeta(s)$ defined by $\zeta(s)=\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^s}$. We have seen that
@@ -230,7 +231,7 @@ $$
 Using the series representation $\displaystyle\frac{1}{1-xy}=\sum_{n=0}^{\infty}(xy)^n$ for $|xy|<1$ we obtain
 
 \begin{align*}
-\int_0^1\int_0^1\frac{dx\,dy}{1-xy}&=\int_0^1\int_0^1\sum_{n=0}^{\infty}(xy)^n\\
+\int_0^1\int_0^1\frac{dx\,dy}{1-xy}&=\int_0^1\int_0^1\sum_{n=0}^{\infty}(xy)^n\,dx\,dy\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1x^n\,dx\right)\left(\int_0^1y^n\,dy\right)\\
 &=\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}\\
 &=\sum_{n=1}^{\infty}\frac{1}{n^2}\\
@@ -259,7 +260,7 @@ $$
 Now we have
 
 \begin{align*}
-\int_0^1\int_0^1\frac{\ln(x)}{1-xy}\,dx\,dy&=\int_0^1\int_0^1\ln(x)\sum_{n=0}^{\infty}(xy)^n\\
+\int_0^1\int_0^1\frac{\ln(x)}{1-xy}\,dx\,dy&=\int_0^1\int_0^1\ln(x)\sum_{n=0}^{\infty}(xy)^n\,dx\,dy\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1x^n\ln(x)\,dx\right)\left(\int_0^1y^n\,dy\right)\\
 &=-\sum_{n=0}^{\infty}\frac{1}{(n+1)^2}\cdot\frac{1}{n+1}\\
 &=-\sum_{n=0}^{\infty}\frac{1}{(n+1)^3}\\
@@ -279,6 +280,18 @@ Similarly, we have
 &=\sum_{n=1}^{\infty}\frac{1}{n^4}\\
 &=\zeta(4)\\
 &=\frac{1}{90}\pi^4.
+\end{align*}
+
+Similarly, using the series representation $\displaystyle\frac{1}{1-x^2y^2}=\sum_{n=0}^{\infty}(xy)^{2n}$ for $|xy|<1$ and {eq}`Eq:Series:RiemannZetaFunction1` we obtain
+
+\begin{align*}
+\int_0^1\int_0^1\frac{dx\,dy}{1-x^2y^2}&=\int_0^1\int_0^1\sum_{n=0}^{\infty}(xy)^{2n}\,dx\,dy\\
+&=\sum_{n=0}^{\infty}\left(\int_0^1x^{2n}\,dx\right)\left(\int_0^1y^{2n}\,dy\right)\\
+&=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^2}\\
+&=\left(1-\frac{1}{4}\right)\zeta(2)\\
+&=\frac{3}{4}\zeta(2)\\
+&=\frac{3}{4}\cdot\frac{1}{6}\pi^2\\
+&=\frac{1}{8}\pi^2.
 \end{align*}
 
 ## Catalan's constant
@@ -310,7 +323,7 @@ Alternatively, we might use $\displaystyle\frac{1}{1-t}=\sum_{n=0}^{\infty}t^n$ 
 
 \begin{align*}
 \int_0^1\int_0^1\frac{dx\,dy}{1+x^2y^2}&=\sum_{n=0}^{\infty}(-1)^n\int_0^1\int_0^1(xy)^{2n}\,dx\,dy\\
-&=\sum_{n=0}^{\infty}(-1)^n\left(\int_0^1t^{2n}\,dt\right)^2\\
+&=\sum_{n=0}^{\infty}(-1)^n\left(\int_0^1x^{2n}\,dx\right)\left(\int_0^1y^{2n}\,dy\right)\\
 &=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\\
 &=G.
 \end{align*}

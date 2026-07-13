@@ -317,6 +317,10 @@ Include an applet with the graph of $f$.
 :::
 ::::
 
+:::{note}
+{prf:ref}`Thm:Graphsderivatives:Concaveseconddiv` gives us a new way to remember {prf:ref}`Thm:MinMax:Seconddertest`: if $c$ is a critical point of $f$ with $f''(c)<0$, then $f$ is strictly concave near $c$. This means that the graph of $f$ bends downwards, which must mean that $f$ has a local maximum at $c$. Similarly, if $f''(c)>0$, then $f$ is strictly convex near $c$. Hence, the graph of $f$ bends upwards, which must mean that $f$ has a local minimum at $c$.
+:::
+
 As a consequence, we can also check for convexity by checking whether the derivative is non-decreasing or non-increasing. In fact, we already used this in the proof of {prf:ref}`Thm:Graphsderivatives:Concaveseconddiv`.
 
 ::::::{prf:theorem} 

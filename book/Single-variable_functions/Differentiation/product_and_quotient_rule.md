@@ -467,14 +467,52 @@ The graphs of the function $f$ (left) and of its derivative $f'$ (right). The fu
 
 ## Grasple exercises
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0e0eded6-3302-4880-8e46-8fe8068ff1b2?id=133861
+:label: Grasple:133861
+:dropdown:
+:description: Find the derivative.
+::::
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/73369e59-1f25-4b5b-a5a1-b94ce3c0d43f?id=133862
+:label: Grasple:133862
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/83caca30-c223-4b5b-9d50-084130cec9eb?id=133863
+:label: Grasple:133863
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8008be32-69f0-4e77-bc74-c895d2aa54b5?id=133913
+:label: Grasple:133913
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ebbf9497-a5d3-4001-976e-7108564320ee?id=133867
+:label: Grasple:133867
+:dropdown:
+:description: Find the derivative.
+::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/94a77cde-9af2-47d9-bb60-528d0a65a7bc?id=71399
 :label: Grasple:71399
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -482,7 +520,7 @@ The graphs of the function $f$ (left) and of its derivative $f'$ (right). The fu
 :url: https://embed.grasple.com/exercises/a0730d24-9a8f-4b97-8c42-2e0395fb2b14?id=63497
 :label: Grasple:63497
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -490,7 +528,7 @@ The graphs of the function $f$ (left) and of its derivative $f'$ (right). The fu
 :url: https://embed.grasple.com/exercises/78f4d4aa-4ade-4948-b2da-74cfad5334a9?id=63494
 :label: Grasple:63494
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -498,16 +536,33 @@ The graphs of the function $f$ (left) and of its derivative $f'$ (right). The fu
 :url: https://embed.grasple.com/exercises/c5a57f85-3b86-46ad-89cc-f52754cd598e?id=63495
 :label: Grasple:63495
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/b7d4d8ec-b239-4853-a95c-4323237b952a?id=63425
-:label: Grasple:63425
+:url: https://embed.grasple.com/exercises/cdc59be8-6596-44e6-a713-46e70e5698a8?id=133914
+:label: Grasple:133914
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f38d5f20-9783-4699-9c01-c04794d88392?id=133915
+:label: Grasple:133915
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/aa7824c5-af3d-446d-9c95-bfc1ca32803e?id=133866
+:label: Grasple:133866
+:dropdown:
+:description: Find an equation for the tangent line.
+::::
+
 
 ::::{grasple}
 :iframeclass: dark-light
@@ -523,4 +578,28 @@ The graphs of the function $f$ (left) and of its derivative $f'$ (right). The fu
 :label: Grasple:63534
 :dropdown:
 :description: Derivatives involving hyperbolic functions.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/34942c68-b76f-4653-943b-a60be317904d?id=133911
+:label: Grasple:133911
+:dropdown:
+:description: Find the second derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/39387ac4-b30c-45f9-9acb-ca112f769746?id=133912
+:label: Grasple:133912
+:dropdown:
+:description: Find the second derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/34846731-d0af-4cc5-a4bf-8fc5e9f5352a?id=133916
+:label: Grasple:133916
+:dropdown:
+:description: Find the second derivative.
 ::::
