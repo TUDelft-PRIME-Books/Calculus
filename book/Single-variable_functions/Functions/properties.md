@@ -1274,3 +1274,30 @@ The odd and even periodic extensions of a given function $f$ for $0\leq x\leq 2$
 :description: Dissecting a trigonometric function.
 
 ::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b0564864-7665-46fa-89ca-16ec1326344e?id=134150
+:label: Grasple:134150
+:dropdown:
+:description: Graph of a periodic extension.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2ad4d89f-69f6-4381-ad23-1b2cc56ff279?id=134154
+:label: Grasple:134154
+:dropdown:
+:description: Graph of a periodic extension.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5a6038a5-2d78-49e6-aeb1-44b0da0cc0c2?id=134159
+:label: Grasple:134159
+:dropdown:
+:description: Even and odd periodic extensions.
+
+::::
