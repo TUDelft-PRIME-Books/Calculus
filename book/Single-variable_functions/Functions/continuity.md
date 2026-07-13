@@ -236,6 +236,8 @@ Suppose that $f$ is continuous on the closed interval $[a,b]$. Then for any $d$ 
 
 The proof is a bit beyond the scope of this book as it uses the completeness of the real numbers, but we include it for completeness (of the book, that is). Feel free to skip the proof.
 
+The completeness of the real numbers is the property that every non-empty subset $S$ of $\mathbb{R}$ that has an upper bound has a smallest upper bound, called the *supremum*. That is, $c\in\mathbb{R}$ is an upper bound for $S$ if $x\leq c$ for all $x\in S$ and $s$ is the supremum of $S$ if it is an upper bound of $S$ and we have $s\leq c$ for all upper bounds $c$ of $S$.
+
 We assume that $f(a)<f(b)$ (the case where $f(b)<f(a)$ is very similar, so we will omit it). Consider any $d$ with $f(a)<d<f(b)$. Let $S$ be the set of all $x$ in $[a,b]$ that have $f(x)<d$. Then the set $S$ is non-empty, since $a$ is in this set (as $f(a)<d$). Moreover, the set $S$ is bounded, as it is contained in the interval $[a,b]$. As such, the set $S$ has a *supremum* $c$, i.e. $c$ is the smallest number that satisfies $c\geq x$ for all $x$ in $S$. The fact that this supremum exists follows from the completeness of the real numbers. 
 
 We claim that $f(c)=d$. For this, we first prove that $c$ cannot be equal to either $a$ or $b$. Write $\varepsilon_1=d-f(a)>0$. Since $f$ is continuous at $a$, we can find $\delta_1>0$ such that for all $x$ in $[a,b]$ with $|x-a|<\delta_1$ we have $|f(x)-f(a)|<\epsilon_1$. Then we can take any $a<x<b$ with $|x-a|<\delta_1$ and for such $x$ we have $|f(x)-f(a)|<\epsilon_1=d-f(a)$, which means $f(x)<d$ and therefore this $x$ must be in $S$. As such, there are numbers in $S$ larger than $a$, so $a$ cannot be the smallest upper bound of $S$. Hence, we must have $c>a$. 
@@ -869,6 +871,50 @@ A function $g(x)$ and a slider for the parameter $b$.
 
 ## Grasple exercises
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/29ea94e5-5bfa-4c89-8880-770e8e19beb9?id=133489
+:label: Grasple:133489
+:dropdown:
+:description: Reading off continuity from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9c8e1655-064b-435f-8206-781386033b26?id=133501
+:label: Grasple:133501
+:dropdown:
+:description: Reading off continuity from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2de547ab-01df-4451-b2c8-b2d565fb4845?id=134119
+:label: Grasple:134119
+:dropdown:
+:description: Checking continuity.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d5ad48e9-8320-474f-bce7-f711929da194?id=134120
+:label: Grasple:134120
+:dropdown:
+:description: Checking continuity.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/17f576e3-ee15-4a9b-9ab4-a9e5deb87a04?id=134122
+:label: Grasple:134122
+:dropdown:
+:description: Checking continuity.
+
+::::
 
 ::::{grasple}
 :iframeclass: dark-light

@@ -425,7 +425,7 @@ So we find that for these functions the point $(x,y)$ lies on the graph of $f$ p
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:EvenOdd
 
-Let $f$ be a function and $I$ an interval. Then $f$ is called **even** on $I$ if for all $x$ in $I$ with $x\geq 0$ we have $-x$ in $I$ and $f(-x)=f(x)$. In addition, $f$ is called **odd** on $I$ if for all $x$ in $I$ with $x\geq 0$ we have $-x$ in $I$ and $f(-x)=-f(x)$.
+Let $f$ be a function and $I$ an interval. Then $f$ is called **even** on $I$ if for all $x$ in $I$ we have $-x$ in $I$ and $f(-x)=f(x)$. In addition, $f$ is called **odd** on $I$ if for all $x$ in $I$ we have $-x$ in $I$ and $f(-x)=-f(x)$.
 
 ::::::
 

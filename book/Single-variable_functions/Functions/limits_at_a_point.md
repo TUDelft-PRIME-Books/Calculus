@@ -860,6 +860,24 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c6edcc5a-c753-4f92-b749-841aa03ca5df?id=133485
+:label: Grasple:133485
+:dropdown:
+:description: Reading off a limit from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/38b06e52-1023-4cf5-a3b3-4c00043c4241?id=133487
+:label: Grasple:133487
+:dropdown:
+:description: Reading off a limit from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/91d07329-447a-43c3-885d-68ac1c4be6e7?id=69268
 :label: Grasple:69268
 :dropdown:
