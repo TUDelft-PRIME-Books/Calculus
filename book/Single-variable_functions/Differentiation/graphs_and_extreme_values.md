@@ -247,15 +247,12 @@ Global maxima and minima are sometimes called **absolute** maxima and minima. We
 
 {numref}`Fig:MinMax:GlobExtr` shows a graph of a function with some local and global extrema. This function attains its global minimum value at $a$. It does not attain a local minimum there, since $a$ is on the boundary of the domain. It attains its global maximum at $b$, which is also a local maximum. It has a local minimum at $c$. The point $d$ is neither a local nor a global extremum.
 
-:::{figure} Images/Fig-MinMax-GlobExtr.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/local_and_global_extrema
 :name: Fig:MinMax:GlobExtr
 :class: dark-light
 
 A graph to illustrate the difference between local and global extrema.
-:::
-
-:::{todo}
-Turn {numref}`Fig:MinMax:GlobExtr` into an applet.
 :::
 
 :::{note}
@@ -384,17 +381,12 @@ Since the function $-f$ is continuous, we can find $d$ in $[a,b]$ with $-f(x)\le
 
 Both the continuity of the function and the closedness of the interval are necessary for the theorem to work, as can be seen in {numref}`Fig:MinMax:EVT`. In (a) the continuous function $f(x)=\dfrac{1}{x}$ does not attain a global maximum on the non-closed interval $(0,1)$. In (b) for the non-continuous function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$, the function values can get arbitrarily close to $2$, but they never actually become $2$, so this function does not attain a global maximum. It does attain a global minimum at $0$.
 
-:::{figure} Images/Fig-MinMax-EVT.png
----
-width: 100%
-name: Fig:MinMax:EVT
-class: dark-light
----
-(a) The continuous function $f(x)=\dfrac{1}{x}$ on the non-closed interval $(0,1)$.<br>(b) The function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$. 
-:::
+:::{applet}
+:url: calculus/graphs_and_extreme_values/extreme_value_theorem
+:name: Fig:MinMax:EVT
+:class: dark-light
 
-:::{todo}
-Turn {numref}`Fig:MinMax:EVT` into an applet.
+(_left_) The continuous function $f(x)=\dfrac{1}{x}$ on the non-closed interval $(0,1)$.<br>(_right_) The function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$. 
 :::
 
 [^FootnoteWeierstrass]: Looking at you, [Weierstrass function](https://en.wikipedia.org/wiki/Weierstrass_function).
