@@ -760,14 +760,32 @@ This Collatz conjecture is still an open, unsolved, problem in mathematics.
 
 ## Grasple exercises
 
-:::{todo}
-Add Grasple exercises to {numref}`Sec:SeqAndTypes`.
-:::
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/234212ac-14da-45d4-8f32-8ec39af825e5?id=134378
+:label: Grasple:134378
+:dropdown:
+:description: Which type of sequence? Find an explict and a recursive formula.
 
-## Exercises
+::::
 
-::::{exercise} Lucas numbers
-:label: Exc:Sequences:Lucas
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7f2be52c-ee23-4e15-b80c-d19048cb2121?id=134382
+:label: Grasple:134382
+:dropdown:
+:description: Which type of sequence? Find an explict and a recursive formula.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/67217139-0861-48fc-b274-a928ac404c3a?id=134385
+:label: Grasple:134385
+:dropdown:
+:description: Which type of sequence? Find an explict and a recursive formula.
+
+::::
 
 The **Lucas sequence** $\{L_n\}_{n=1}^{\infty}$ is defined by
 
@@ -791,121 +809,29 @@ $$
 
 with $L_0=2$ and $L_1=1$.
 
-Find an explict formula for $L_n$ with $n=0,1,2,\ldots$ and show that $\displaystyle\lim_{n\to\infty}\frac{L_{n+1}}{L_n}=\varphi$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1c8fcd69-97c4-457f-a442-7dc1b0568e1f?id=134200
+:label: Grasple:134200
+:dropdown:
+:description: Find an explict formula for $L_n$ with $n=0,1,2,\ldots$ and show that $\displaystyle\lim_{n\to\infty}\frac{L_{n+1}}{L_n}=\varphi$.
+
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:Lucas`
-:class: solution, dropdown
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1e78171f-98d1-4c24-ad49-64c73b8a98f5?id=134204
+:label: Grasple:134204
+:dropdown:
+:description: Simplify $\displaystyle\sum_{k=1}^nL_k$.
 
-Since the Lucas numbers satisfy the same recurrence relation as the Fibonacci numbers, we have the same general solution
-
-$$
-L_n=c_1\left(\frac{1+\sqrt{5}}{2}\right)^n+c_2\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots
-$$
-
-The initial values $L_0=2$ and $L_1=1$ imply that
-
-$$
-c_1+c_2=2\quad\text{and}\quad c_1\left(\frac{1+\sqrt{5}}{2}\right)+c_2\left(\frac{1-\sqrt{5}}{2}\right)=1.
-$$
-
-Hence:
-
-$$
-\begin{cases}c_1+c_2=2\\c_1(1+\sqrt{5})+c_2(1-\sqrt{5})=2\end{cases}\quad\Longleftrightarrow\quad\begin{cases}c_1+c_2=2\\c_1\sqrt{5}-c_2\sqrt{5}=0\end{cases}
-$$
-
-which implies that $c_1=c_2=1$.
-
-Hence we have
-
-$$
-L_n=\left(\frac{1+\sqrt{5}}{2}\right)^n+\left(\frac{1-\sqrt{5}}{2}\right)^n,\quad n=0,1,2,\ldots
-$$
-
-Again using the *golden ratio* $\varphi=\displaystyle\frac{1+\sqrt{5}}{2}$ we have
-
-$$
-L_n=\varphi^n+(1-\varphi)^n,\quad n=0,1,2,\ldots
-$$
-
-Similarly as for the Fibonacci numbers we use that fact that 
-
-$$
--1<\frac{1-\varphi}{\varphi}=\frac{1-\sqrt{5}}{1+\sqrt{5}}<0
-$$ 
-
-to obtain
-
-\begin{align*}
-\lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}&=\lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n}
-=\lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}\\
-&=\frac{\varphi+0}{1+0}=\varphi.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Sequences:LucasTelescoping
-
-The Lucas sequence $\{L_n\}_{n=1}^{\infty}$ is defined by 
-
-$$
-L_{n+2}=L_n+L_{n+1}\quad\text{for}\quad n=1,2,3,\ldots
-$$ 
-
-with $L_1=1$ and $L_2=3$.
-
-Simplify $\displaystyle\sum_{k=1}^nL_k$.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Sequences:LucasTelescoping`
-:class: solution, dropdown
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e5df6077-e7da-4efd-a0c7-996c01d9f4e4?id=134205
+:label: Grasple:134205
+:dropdown:
+:description: Relations between Fibonacci and Lucas numbers.
 
-Again we use the *telescoping property* to find
-
-\begin{align*}
-\sum_{k=1}^nL_k&=\sum_{n=1}^n\left(L_{k+2}-L_{k+1}\right)\\
-&=L_{n+2}-\cancel{L_{n+1}}+\cancel{L_{n+1}}-\cancel{L_n}+\ldots+\cancel{L_4}-\cancel{L_3}+\cancel{L_3}-L_2\\
-&=L_{n+2}-3.
-\end{align*}
-:::
-
-::::{exercise} Relations between Fibonacci and Lucas numbers
-:label: Exc:Sequences:LucasFibonacci
-
-We have seen that the Fibonacci numbers $\{F_n\}_{n=0}^{\infty}$ and the Lucas numbers $\{L_n\}_{n=0}^{\infty}$ can be written in terms of the golden ratio $\varphi=\dfrac{1+\sqrt{5}}{2}$:
-
-$$
-F_n=\frac{\varphi^n-(1-\varphi)^n}{\sqrt{5}}\quad\text{and}\quad L_n=\varphi^n+(1-\varphi)^n.
-$$
-
-(a) Show that $F_{2n}=F_nL_n$ for $n=0,1,2,\ldots$, which implies that $\dfrac{F_{2n}}{F_n}=L_n$ for $n=1,2,3,\ldots$.
-
-(b) Use the relation $\varphi^2-\varphi-1=0$ to show that $\dfrac{1}{\varphi}+\varphi=2\varphi-1=\sqrt{5}$ and $\dfrac{1}{1-\varphi}=1-2\varphi$.
-
-(c) Show that $F_{n-1}+F_{n+1}=L_n$ for $n=1,2,3,\ldots$.
 ::::
-
-:::{admonition} Solution of {numref}`Exc:Sequences:LucasFibonacci`
-:class: solution, dropdown
-
-(a) $F_nL_n=\displaystyle\frac{\varphi^n-(1-\varphi)^n}{\sqrt{5}}\cdot\frac{\varphi^n+(1-\varphi)^n}{1}=\frac{\varphi^{2n}-(1-\varphi)^{2n}}{\sqrt{5}}=F_{2n}$ for $n=0,1,2,\ldots$.
-
-(b) We have: $\varphi^2-\varphi-1=0\;\Longleftrightarrow\;\varphi^2=\varphi+1\;\Longleftrightarrow\;\varphi=1+\dfrac{1}{\varphi}$.
-
-This implies that $\dfrac{1}{\varphi}=\varphi-1\;\Longleftrightarrow\;\dfrac{1}{\varphi}+\varphi=2\varphi-1=1+\sqrt{5}-1=\sqrt{5}$ and 
-
-$$
-\frac{1}{1-\varphi}=-\varphi\;\Longleftrightarrow\;\dfrac{1}{1-\varphi}+1-\varphi=1-2\varphi.
-$$
-
-(c) For $n=1,2,3,\ldots$ we obtain
-
-\begin{align*}
-F_{n-1}+F_{n+1}&=\frac{\varphi^{n-1}-(1-\varphi)^{n-1}}{\sqrt{5}}+\frac{\varphi^{n+1}-(1-\varphi)^{n+1}}{\sqrt{5}}\\
-&=\frac{\varphi^{n-1}+\varphi^{n+1}-(1-\varphi)^{n-1}-(1-\varphi)^{n+1}}{\sqrt{5}}\\
-&=\frac{\varphi^n\left(\dfrac{1}{\varphi}+\varphi\right)-(1-\varphi)^n\left(\dfrac{1}{1-\varphi}+1-\varphi\right)}{\sqrt{5}}\\
-&=\varphi^n+(1-\varphi)^n=L_n.
-\end{align*}
-
-:::

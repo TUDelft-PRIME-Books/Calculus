@@ -349,7 +349,7 @@ R_N&= \sum_{n=1}^Nf(x_n^*)\Delta x \\
 &= \frac{2N^2+3N+1}{6N^2}.
 \end{align*}
 
-Here we used the result from {numref}`Exc:SumsAndProducts:SumOfSquares`.
+Here we used the result from {numref}`Grasple:134138`.
 
 Using techniques from {numref}`Section:Limitinf` we find that
 

@@ -130,6 +130,41 @@ Hence, the average temperature in $B$ equals $\dfrac{1800}{60}=30^{\circ}\text{C
 
 :::
 
+(Sec:MultivariableIntegration:RiemannZetaFunction2)=
+## The Riemann zeta function
+
+In {numref}`Sec:MultivariableIntegration:RiemannZetaFunction1` we obtained that
+
+$$
+\int_0^1\int_0^1\frac{dx\,dy}{1-xy}=\zeta(2)=\frac{1}{6}\pi^2.
+$$
+
+Similarly, using the series representation $\displaystyle\frac{1}{1-xyz}=\sum_{n=0}^{\infty}(xyz)^n$ for $|xyz|<1$ we obtain
+
+\begin{align*}
+\int_0^1\int_0^1\int_0^1\frac{dx\,dy\,dz}{1-xyz}&=\int_0^1\int_0^1\int_0^1\sum_{n=0}^{\infty}(xyz)^n\,dx\,dy\,dz\\
+&=\sum_{n=0}^{\infty}\left(\int_0^1x^n\,dx\right)\left(\int_0^1y^n\,dy\right)\left(\int_0^1z^n\,dz\right)\\
+&=\sum_{n=0}^{\infty}\frac{1}{(n+1)^3}\\
+&=\sum_{n=1}^{\infty}\frac{1}{n^3}\\
+&=\zeta(3).
+\end{align*}
+
+Moreover, we obtained that
+
+$$
+\int_0^1\int_0^1\frac{dx\,dy}{1-x^2y^2}=\frac{3}{4}\zeta(2)=\frac{1}{8}\pi^2.
+$$
+
+Similarly, using the series representation $\displaystyle\frac{1}{1-x^2y^2z^2}=\sum_{n=0}^{\infty}(xyz)^{2n}$ for $|xyz|<1$ and {eq}`Eq:Series:RiemannZetaFunction1` we obtain
+
+\begin{align*}
+\int_0^1\int_0^1\int_0^1\frac{dx\,dy\,dz}{1-x^2y^2z^2}&=\int_0^1\int_0^1\int_0^1\sum_{n=0}^{\infty}(xyz)^{2n}\,dx\,dy\,dz\\
+&=\sum_{n=0}^{\infty}\left(\int_0^1x^{2n}\,dx\right)\left(\int_0^1y^{2n}\,dy\right)\left(\int_0^1z^{2n}\,dz\right)\\
+&=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^3}\\
+&=\left(1-\frac{1}{8}\right)\zeta(3)\\
+&=\frac{7}{8}\zeta(3).
+\end{align*}
+
 ## General regions
 
 A tripe integral over a general bounded region (a solid) $E$ in $\mathbb{R}^3$ is defined by much the same procedure that we used for double integrals. We enclose $E$ in a rectangular box $B$ and we define a function $\Omega$ so that it agrees with $\rho$ on $E$ and is $0$ for points in $B$ that are outside $E$. Then:
