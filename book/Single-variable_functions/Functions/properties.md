@@ -828,7 +828,7 @@ In fact, any other period of a periodic function must be an integer multiple of 
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Fundperiod
 
-Let $f$ be a periodic function which has a fundamental period $T_0$. If $T$ is a period of $f$, then so is $T=nT_0$ for some integer $n\geq 1$.
+Let $f$ be a periodic function which has a fundamental period $T_0$. If $T$ is a period of $f$, then we have $T=nT_0$ for some integer $n\geq 1$.
 
 ::::::
 
@@ -1236,6 +1236,33 @@ The odd and even periodic extensions of a given function $f$ for $0\leq x\leq 2$
 :label: Grasple:79437
 :dropdown:
 :description: Which of these functions are periodic?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3e06d126-b9ad-41d1-9dac-f507e3da6432?id=134146
+:label: Grasple:134146
+:dropdown:
+:description: Find the fundamental period
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a10c990e-645f-4ba8-8503-ad8262046ca5?id=134147
+:label: Grasple:134147
+:dropdown:
+:description: Find the fundamental period
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bb0d0f86-5471-486e-8808-ea43548f29de?id=134148
+:label: Grasple:134148
+:dropdown:
+:description: Find the fundamental period
 
 ::::
 
