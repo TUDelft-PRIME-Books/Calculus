@@ -373,13 +373,9 @@ $$
 
 ::::::
 
-## Special substitutions
+## Trigonometric substitutions
 
-In the method of integration by substitution we learned that you have to choose a suitable substitution in order to simplify the integral. In this section we will discuss two special substitutions that are often used in practice: **trigonometric substitutions** and the **midpoint mirror substitution**. In {numref}`Sec:Integration:TrigFunctions` on integration of trigonometric functions we will also cover the so-called *tangent half-angle substitution*. See {numref}`Sec:Integration:HalfAngle`.
-
-### Trigonometric substitutions
-
-For certain integrals involving square roots of the form $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$ or $\sqrt{x^2-a^2}$ we might use a **trigonometric substitution** in order to get rid of the square root. This will lead to integrals involving trigonometric functions, which will be treated in the section on integration of trigonometric functions. However, here we will show how the method of trigonometric substitution works.
+For certain integrals involving square roots of the form $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$ or $\sqrt{x^2-a^2}$ we might use a **trigonometric substitution** in order to get rid of the square root. This will lead to integrals involving trigonometric functions, which will be treated in {numref}`Sec:Integration:TrigonometricFunctions`. However, here we will show how the method of trigonometric substitution works.
 
 Note that $1-\sin^2(x)=\cos^2(x)$. So if we set $x=a\sin(t)$ in $\sqrt{a^2-x^2}$ we obtain 
 
@@ -588,7 +584,10 @@ The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\
 
 :::
 
-### Another special substitution
+In {numref}`Sec:Integration:TrigonometricFunctions` we deal with the integration of trigonometric functions in more details. There we will also cover the so-called *tangent half-angle substitution*. See {numref}`Sec:Integration:HalfAngle`.
+
+
+## Using symmetry
 
 Using the substitution $x=a+b-t$ or $t=a+b-x$ we obtain that a definite integral of the form $I=\displaystyle\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx$ can be evaluated as follows. First apply the substitution:
 
@@ -615,7 +614,7 @@ $$
 $$
 
 ::::::{prf:Example}
-:label: Ex:Integration:SubstitutionNiceFormula1
+:label: Ex:Integration:SubstitutionSymmetry1
 For $a=0$, $b=1$ and $f(x)=\sqrt{x}$ we obtain
 
 $$
@@ -624,6 +623,7 @@ $$
 
 ::::::
 
+In {numref}`Sec:Integration:TrigonometricFunctions` we will see more examples using this kind of symmetry.
 
 ## Grasple Exercises
 
@@ -755,7 +755,7 @@ These formulas will be used frequently in {numref}`Sec:Integration:RationalFunct
 
 ::::
 
-### Special substitutions
+### Trigonometric substitutions
 
 ::::{grasple}
 :iframeclass: dark-light
@@ -792,6 +792,8 @@ These formulas will be used frequently in {numref}`Sec:Integration:RationalFunct
 :description: Show that $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$.
 
 ::::
+
+### Using symmetry
 
 ::::{grasple}
 :iframeclass: dark-light
