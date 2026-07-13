@@ -64,17 +64,12 @@ The function value $f(c)$ is the thing that we call a local maximum or minimum, 
 
 That we are only looking whether $f(c)$ is the largest or smallest function value on an interval around $c$ precisely means that we are looking at the local behaviour of the function. What happens far away from $c$ is not important. 
 
-:::{figure} Images/Fig-MinMax-LocExtr.png
----
-width: 100%
-name: Fig:MinMax:LocExtr
-class: dark-light
----
-The function attains a local maximum at $b$ and a local minimum at $c$, even though far away from these points there are points with larger and lower function values. The endpoints $a$ and $b$ are not local extrema, since there is no open interval containing either of them.
-:::
+:::{applet}
+:url: calculus/graphs_and_extreme_values/local_extrema
+:name: Fig:MinMax:LocExtr
+:class: dark-light
 
-:::{todo}
-Turn {numref}`Fig:MinMax:LocExtr` into an applet.
+The function attains a local maximum at $b$ and a local minimum at $c$, even though far away from these points there are points with larger and lower function values. The endpoints $a$ and $d$ are not local extrema, since there is no open interval containing either of them.
 :::
 
 :::{note}
@@ -164,14 +159,12 @@ $$
 
 while the function is not differentiable in $x=0$. In particular, the derivative of this function is never $0$. Still, if we consider the graph of this function, it clearly has a local minimum in $0$. This is precisely the point where the function is not differentiable. This is supported by the graph of $|x|$ shown in {numref}`Fig:MinMax:IntroLocExtr`.
 
-:::{figure} Images/Fig-MinMax-IntroLocExtr.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/absolute_value
 :name: Fig:MinMax:IntroLocExtr
+:class: dark-light
 
 The graph of the function $f(x)=|x|$ and it's local extremum at $0$.
-:::
-
-:::{todo}
-Make an applet of {numref}`Fig:MinMax:IntroLocExtr`.
 :::
 
 
@@ -218,17 +211,13 @@ We find that $f'(x)=0$ only for $x=-1$, so $-1$ is another critical point of $f$
 
 We conclude that $f$ has three critical points: $-1$, $0$ and $1$. So how would we find out if $f$ has a local extremum in any of these points? Unfortunately, we have no way (yet) to rigorously determine this. Still, we can read at least plot the graph of the function and read off the behaviour of the function in these points. {numref}`Fig:MinMax:Critical` shows the graph of the function $f$. This graph suggests that $f$ has a local maximum at $-1$ and $1$ and that it has a local minimum at $0$. In {prf:ref}`Ex:MinMax:CriticalPart2` we will find this result analytically.
 
-:::{figure} Images/Fig-MinMax-Critical.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/critical_points
 :name: Fig:MinMax:Critical
+:class: dark-light
 
 The graph of the function $f$ from {prf:ref}`Ex:MinMax:Critical`.
 :::
-
-:::{todo}
-Turn {numref}`Fig:MinMax:Critical` into an applet.
-:::
-
-
 
 ::::::
 
