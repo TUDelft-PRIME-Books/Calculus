@@ -880,10 +880,19 @@ A Venn diagram showing that different sets of functions are contained in each ot
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b3ad7e8d-46d5-4b7f-a06b-7bb9b2b01e81?id=133505
+:label: Grasple:133505
+:dropdown:
+:description: Reading off differentiability from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/f0058966-290e-49d8-a78e-c689a17c714c?id=69697
 :label: Grasple:69697
 :dropdown:
-:description: Using limits to find a derivative.
+:description: Using limits to find the derivative.
 
 ::::
 
@@ -892,7 +901,7 @@ A Venn diagram showing that different sets of functions are contained in each ot
 :url: https://embed.grasple.com/exercises/5258b49b-1553-4d0b-a918-4f44e9647fec?id=69701
 :label: Grasple:69701
 :dropdown:
-:description: Using limits to find a derivative.
+:description: Using limits to find the derivative.
 
 ::::
 
@@ -901,6 +910,96 @@ A Venn diagram showing that different sets of functions are contained in each ot
 :url: https://embed.grasple.com/exercises/f622e5de-4a13-4385-a949-f5d398ba33b4?id=69704
 :label: Grasple:69704
 :dropdown:
-:description: Using limits to find a derivative.
+:description: Using limits to find the derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/31a84acf-bfcd-45e0-a8a2-f75a468c9b47?id=133507
+:label: Grasple:133507
+:dropdown:
+:description: Find the derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/207b0493-183a-45bc-b305-be2cff7ccebb?id=133508
+:label: Grasple:133508
+:dropdown:
+:description: Find the derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0bb6e5da-6e79-4d35-9ecb-f48d94c5a5d8?id=133509
+:label: Grasple:133509
+:dropdown:
+:description: Find an equation for the tangent line.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/32dd3c91-e587-46ce-833c-640c32fdc85d?id=133510
+:label: Grasple:133510
+:dropdown:
+:description: Find an equation for the tangent line.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3f21a4d8-db22-44a5-9b67-fcf185256e37?id=133511
+:label: Grasple:133511
+:dropdown:
+:description: Find an equation for the tangent line.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c5430233-e189-470f-add8-2fd299ebea5e?id=133512
+:label: Grasple:133512
+:dropdown:
+:description: Find the second derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/34eab294-e92d-4e8a-9991-8066704c022d?id=133513
+:label: Grasple:133513
+:dropdown:
+:description: Find the second derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d0a46a7e-ba60-42ac-8c0a-9cef83b0e0e3?id=133853
+:label: Grasple:133853
+:dropdown:
+:description: Find a really high derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bbaac5b0-0ea9-455a-a66a-d86c3b9fba28?id=133852
+:label: Grasple:133852
+:dropdown:
+:description: Find a really high derivative.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/30de1d51-e2d7-4a9e-9609-e0ff10b133be?id=133858
+:label: Grasple:133858
+:dropdown:
+:description: Find a really high derivative.
 
 ::::

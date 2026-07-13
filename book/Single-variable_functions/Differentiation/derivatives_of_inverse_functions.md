@@ -428,13 +428,25 @@ The graph of the function $f(x)=5\sqrt[5]{31+x^2}-8$ and the tangent lines at th
 :showanswer:
 
 
-Let $f(x)=5\sqrt[5]{31+x^2}-8$ as in {prf:ref}`Ex:Diffinverse:IFT`. Restrict $f$ to the open interval containing $1$ on which it is invertible. What is the explicit formula for the inverse function $f^{-1}(x)$?
+Let $f(x)=5\sqrt[5]{31+x^2}-8$ as in {prf:ref}`Ex:Diffinverse:IFT`. Restrict $f$ to the open interval containing $1$ on which it is invertible. What is the explicit formula for the inverse function $f^{-1}(x)$? Does the derivative $\left(\tilde{f}^{-1}\right)'(2)$ match the one found in {prf:ref}`Ex:Diffinverse:IFT`?
 ---
 [ ] $f^{-1}(x)=\pm\sqrt{\left(\frac{x+8}{5}\right)^5-31}$
 > This expression is not a function because it gives two possible outputs for most inputs.
 
 [x] $f^{-1}(x)=\sqrt{\left(\frac{x+8}{5}\right)^5-31}$
-> Correct! Solving $y=5\sqrt[5]{31+x^2}-8$ for $x$ gives $x=\pm\sqrt{\left(\frac{y+8}{5}\right)^5-31}$. Since the inverse is taken on the branch containing $1$, we choose the positive square root.
+> Correct! Solving $y=5\sqrt[5]{31+x^2}-8$ for $x$ gives $x=\pm\sqrt{\left(\frac{y+8}{5}\right)^5-31}$. Since the inverse is taken on the branch containing $1$, we choose the positive square root. The derivative of this function is given by
+
+$$
+ \left(f^{-1}\right)'(x)=\frac{(x+8)^4}{1250\sqrt{\left(\frac{x+8}{5}\right)^5-31}}.
+$$
+
+Plugging in $x=2$ gives
+
+$$
+ \left(f^{-1}\right)'(2)=\frac{(2+8)^4}{1250\sqrt{\left(\frac{2+8}{5}\right)^5-31}}=8,
+$$
+
+which matches the answer from {prf:ref}`Ex:Diffinverse:IFT`.
 
 [ ] $f^{-1}(x)=-\sqrt{\left(\frac{x+8}{5}\right)^5-31}$
 > This is the inverse corresponding to the branch containing $-1$, not the interval containing $1$.
@@ -529,7 +541,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/79142901-fa54-4bc5-b81d-ca8b884fde0a?id=63418
 :label: Grasple:63418
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -537,7 +549,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/5d112029-4427-4231-b436-0ad066c52451?id=63434
 :label: Grasple:63434
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -545,7 +557,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/fc0c7b54-8e58-4445-b714-fcba02547108?id=63426
 :label: Grasple:63426
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -553,7 +565,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/516b4eaf-f83e-491f-adbd-d50b17601ac3?id=63424
 :label: Grasple:63424
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -561,7 +573,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/a1719639-a441-47a9-a648-b84502165ad1?id=63427
 :label: Grasple:63427
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -569,7 +581,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/1ef694a5-28e8-4324-8d93-f186a0c79689?id=63431
 :label: Grasple:63431
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -577,7 +589,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/a48a374e-0e7d-40f7-a159-f4530fcdc631?id=63423
 :label: Grasple:63423
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -585,7 +597,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/d57df9e2-3592-4b25-bf28-e922a4365aa5?id=71396
 :label: Grasple:71396
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -593,7 +605,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/81f5b367-145a-4e6f-991e-805b45970b41?id=75355
 :label: Grasple:75355
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -601,7 +613,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/46e1acb0-7381-4296-a702-cf4186c7a004?id=75356
 :label: Grasple:75356
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -609,7 +621,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/77d668b9-c9db-4e2e-9e85-1a4076031989?id=75357
 :label: Grasple:75357
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -617,7 +629,7 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/7407875d-6d46-43b2-8478-31951387cfb1?id=75359
 :label: Grasple:75359
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -625,7 +637,15 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 :url: https://embed.grasple.com/exercises/c67c5ab4-a17c-499e-bda6-de7a35cc812f?id=75358
 :label: Grasple:75358
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b7d4d8ec-b239-4853-a95c-4323237b952a?id=63425
+:label: Grasple:63425
+:dropdown:
+:description: Find the derivative.
 ::::
 
 ::::{grasple}

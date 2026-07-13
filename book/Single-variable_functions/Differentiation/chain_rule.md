@@ -355,7 +355,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :url: https://embed.grasple.com/exercises/45245d2e-3cd9-4926-b0ab-8b870cc704d2?id=63436
 :label: Grasple:63436
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -363,7 +363,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :url: https://embed.grasple.com/exercises/e3d52bed-69d5-4e3f-96ae-97f21cc5b3f8?id=63445
 :label: Grasple:63445
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -371,7 +371,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :url: https://embed.grasple.com/exercises/a0e39e7f-7f94-4122-8510-964d348ee5f2?id=63493
 :label: Grasple:63493
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -379,7 +379,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :url: https://embed.grasple.com/exercises/4800351f-cd91-4506-a93d-21e4f628dd17?id=63444
 :label: Grasple:63444
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -387,7 +387,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :url: https://embed.grasple.com/exercises/49b611ec-a218-492f-bd9a-b3aeec98402d?id=63525
 :label: Grasple:63525
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -395,7 +395,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :url: https://embed.grasple.com/exercises/9f445188-faa5-4a42-a79c-12f7cd3dd271?id=63522
 :label: Grasple:63522
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -403,7 +403,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :url: https://embed.grasple.com/exercises/f97dfe6f-5b06-4a04-b2a5-ecdd927fd6fc?id=63419
 :label: Grasple:63419
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -411,7 +411,7 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :url: https://embed.grasple.com/exercises/9508a2aa-1265-4fb8-95d7-7acdf9178a2e?id=63526
 :label: Grasple:63526
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
 
 ::::{grasple}
@@ -419,5 +419,5 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :url: https://embed.grasple.com/exercises/ab6a1a77-b42a-479e-bcc9-1e8a4aa830cb?id=71398
 :label: Grasple:71398
 :dropdown:
-:description: Find a derivative.
+:description: Find the derivative.
 ::::
