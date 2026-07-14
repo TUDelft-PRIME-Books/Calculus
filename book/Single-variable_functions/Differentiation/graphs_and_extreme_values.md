@@ -466,15 +466,14 @@ Consider the function $f(x)=2x^3+3x^2-12x-5$ on the closed interval $[-4,2]$. Su
 
 The graph of the function is shown in {numref}`Fig:MinMax:Globalextrema1`. Do our conclusions match what we see in the graph?
 
-:::{figure} Images/Fig-MinMax-Globalextrema1.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/closed_interval_method_1
 :name: Fig:MinMax:Globalextrema1
+:class: dark-light
 
 The graph of the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema1` and its local and global extrema.
 :::
 
-:::{todo}
-Convert {numref}`Fig:MinMax:Globalextrema1` to an applet Make sure to highlight all candidate points and make difference between local and global extrema clear.
-:::
 ::::::
 
 ::::::{prf:example} Closed interval method
@@ -501,41 +500,59 @@ Consider the function $f(x)=\dfrac{|x|}{2}-\cos(x)$ on the closed interval $[-2\
 
 3. We evaluate the function at the points we found in the first two steps. This gives
 
-$$
- f\left(-\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3},\quad f\left(-\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\quad f(0)=-1
-$$
-
-$$
- f\left(\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\qquad f\left(\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3}.
-$$
+   $$
+   f\left(-\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3},\quad f\left(-\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\quad f(0)=-1
+   $$
+   
+   $$
+   f\left(\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\qquad f\left(\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3}.
+   $$
 
 4. We evaluate the function at the boundary points to obtain
 
-$$
- f(-2\pi)=\pi-1,\qquad f(2\pi)=\pi-1.
-$$
+   $$
+   f(-2\pi)=\pi-1,\qquad f(2\pi)=\pi-1.
+   $$
 
 5. The largest value that we found in steps 3. and 4. must be the global maximum value (since this value cannot be attained at any point that we did not check). This highest value is $\dfrac{1}{2}\sqrt{3}+\dfrac{7\pi}{12}$, which is attained at both $x=-\dfrac{7\pi}{6}$ and at $x=\dfrac{7\pi}{6}$. The lowest value is the global minimum value. This lowest value is $-1$, which is attained at $x=0$.
 
-:::{figure} Images/Fig-MinMax-Globalextrema2.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/closed_interval_method_2
 :name: Fig:MinMax:Globalextrema2
+:class: dark-light
 
 The graph of the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema2` and its local and global extrema.
 :::
 
-:::{todo}
-Convert {numref}`Fig:MinMax:Globalextrema2` to an applet Make sure to highlight all candidate points and make difference between local and global extrema clear.
-:::
 ::::::
 
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
 
-:::{todo}
-Make a fill-in-the gaps poll, where the student should notice that the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema2` is **even** and that we can save work by only considering the interval $[0,2\pi]$.
+Reconsider the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema2` and its graph in {numref}`Fig:MinMax:Globalextrema2`.
+
+Complete the following sentences:
+---
+DS[odd;{even};neither]
+M[f(x)]
+M[2\pi]
+DS[below;above;{to the left of};to the right of]
+M[y]
+^^^
+? :::{card}
+The function $f$ is {gap} on the interval $[-2\pi,2\pi]$.
+
+This means that $f(-x)=${gap} for all $x$ in the interval $[-2\pi,2\pi]$.
+
+As a consequence, we only need to consider the interval $[0,b]$ with $b=${gap} to find the global extrema of $f$, because every candidate point {gap} the {gap}-axis will have a corresponding candidate point in the interval $[0,b]$, and they will have the same function value.
 :::
+---
 
-
-
-
+::::
 
 (Subsec:MVT)=
 
@@ -547,7 +564,7 @@ With this idea in mind, let us formulate and prove the mean value theorem, which
 
 ::::::{prf:theorem} Rolle's theorem
 :label: Thm:MinMax:Rolle
-Let $f$ be a function that is continuous on a closed interval $[a,b]$ and differentiable on the open interval $(a,b)$. If $f(a)=f(b)$, there exists a point $c$ in $(a,b)$ with $f'(c)=0.$
+Let $f$ be a function that is continuous on a closed interval $[a,b]$ and differentiable on the open interval $(a,b)$. If $f(a)=f(b)$, there exists a point $c$ in $(a,b)$ with $f'(c)=0$.
 
 ::::::
 
@@ -1435,7 +1452,7 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :url: https://embed.grasple.com/exercises/dcc1f661-8b67-4a90-b749-df19ca2aac5d?id=133945
 :label: Grasple:133945
 :dropdown:
-:description: Finding and classifying critical points
+:description: Finding and classifying critical points.
 
 ::::
 
@@ -1444,7 +1461,7 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :url: https://embed.grasple.com/exercises/ceddfaeb-d41f-4581-91c9-8ea688eb58bc?id=133947
 :label: Grasple:133947
 :dropdown:
-:description: Finding and classifying critical points
+:description: Finding and classifying critical points.
 
 ::::
 
@@ -1453,7 +1470,7 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :url: https://embed.grasple.com/exercises/77685602-ddbc-4c6a-8402-d21aea8da7f1?id=134014
 :label: Grasple:134014
 :dropdown:
-:description: Finding and classifying critical points
+:description: Finding and classifying critical points.
 
 ::::
 
@@ -1462,7 +1479,7 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :url: https://embed.grasple.com/exercises/dd9d9714-bcbe-41aa-8c31-5d8aa7614733?id=134063
 :label: Grasple:134063
 :dropdown:
-:description: Finding and classifying critical points
+:description: Finding and classifying critical points.
 
 ::::
 
