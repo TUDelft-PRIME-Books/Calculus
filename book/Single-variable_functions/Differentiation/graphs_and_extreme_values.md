@@ -855,20 +855,12 @@ This value of $f(6)=33$ is obtained when $f'(x)=7$ for all $x$ in the interval $
 
 {numref}`Fig:MinMax:MVT2` shows the graph of the function $3x-1$, the graph of the function $7x-9$ and the graph of an example of a function that satisfies the assumptions on $f$. The graph of any function that satisfies the assumptions must lie between these two graphs, so in particular, the value of $f(6)$ must be in between $17$ and $33$.
 
-:::{figure} Images/Fig-Graphsderivatives-MVT2.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/estimating_function_values
 :name: Fig:MinMax:MVT2
+:class: dark-light
 
 The graph of the function $3x-1$ , the graph of the function $7x-9$ and the graph of an example of a function that satisfies the assumptions on $f$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:MVT2` with an applet. The function that satisfies the assumptions on $f$ is given by
-
-$$
-f(x)=\frac{1}{32} (-2 x^3 + 24 x^2 - 72 x + 64 + (x^2 + 4 x + 68) x)
-$$
-
-No need to give the explicit formula for $f$ in the applet.
 :::
 
 ::::::
@@ -902,10 +894,67 @@ $$
 In particular, we have proven that $e>2$. If we were to choose another interval on which we can apply the mean value theorem, we would obtain different estimates for the number $e$.
 ::::::
 
-:::{todo}
-Make poll where the same method from {prf:ref}`EX:MinMax:MVTnmbre` is used on the interval $[0,\frac{1}{2}]$.
-:::
+::::{question}
+:type: short-answer
+:variant: gaps
+:admonition:
+:class: question
+:showanswer:
 
+Let $f(x)=e^x$. We apply {prf:ref}`Thm:MinMax:MVT` on the interval $\left[0,\frac12\right]$. We find that there is $c$ in $(0,\frac12)$ with
+
+$$
+e^c=f'(c)=\frac{f\left(\frac12\right)-f(0)}{\frac12-0}.
+$$
+
+Using this fact, which lower bound for $e$ can we establish?
+---
+M[\frac{9}{4}]
+^^^
+? :::{card}
+:text-align: center
+
+$\displaystyle e>${gap}.
+:::
+= By {prf:ref}`Thm:MinMax:MVT`, we find
+ 
+ $$
+ e^c=\frac{e^{1/2}-1}{1/2}=2(\sqrt{e}-1).
+ $$
+
+ Since $0<c<\frac12$, we have $1=e^0<e^c<\sqrt{e}$, so $e^c>1$ and thus
+
+ $$
+ 2(\sqrt{e}-1)>1.
+ $$
+
+ This gives $\sqrt{e}>\frac{3}{2}$, which implies that $e>\frac{9}{4}$.
+
+> By {prf:ref}`Thm:MinMax:MVT`, we find
+ 
+ $$
+ e^c=\frac{e^{1/2}-1}{1/2}=2(\sqrt{e}-1).
+ $$
+
+ Can you use this to find a lower bound for $\sqrt{e}$ first?
+
+ Hint: Use that $c>0$.
+
+ & = By {prf:ref}`Thm:MinMax:MVT`, we find
+ 
+ $$
+ e^c=\frac{e^{1/2}-1}{1/2}=2(\sqrt{e}-1).
+ $$
+
+ Since $0<c<\frac12$, we have $1=e^0<e^c<\sqrt{e}$, so $e^c>1$ and thus
+
+ $$
+ 2(\sqrt{e}-1)>1.
+ $$
+
+ This gives $\sqrt{e}>\frac{3}{2}$, which implies that $e>\frac{9}{4}$.
+---
+::::
 
 {prf:ref}`Cor:MinMax:Samederivative` can also be used to establish certain trigonometric identities.
 
@@ -939,14 +988,12 @@ $$
 
 {numref}`Fig:MinMax:MVT3` shows the graph of this special function.
 
-:::{figure} Images/Fig-Graphsderivatives-MVT3.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/sum_of_two_arctan_functions
 :name: Fig:MinMax:MVT3
+:class: dark-light
 
 The graph of the function $f(x)=\arctan(x)+\arctan\left(\frac{1}{x}\right)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:MVT3` with an applet. Make sure no vertical line element is shown.
 :::
 
 ::::::
@@ -1008,10 +1055,6 @@ Notice that the two first statements in {prf:ref}`Thm:MinMax:Increasingdecreasin
 For instance, consider the function $f(x)=x^3$. Then $f'(x)=3x^2$, which is $0$ at $x=0$. Still, this function is strictly increasing on $\mathbb{R}$, since for any $a<b$ we have $a^3<b^3$.
 :::
 
-:::{todo}
-Make a poll(???) where student needs to figure out where to proof breaks down if we try to prove the other implication.
-:::
-
 ::::::{prf:example} 
 :label: Ex:MinMax:Increasingdecreasing1
 Consider the function $f(x)=-2x^3-3x^2+12x+3$ and suppose we want to know on which intervals the function is non-decreasing and on which intervals it is non-increasing. For this, we evaluate the derivative, which is given by
@@ -1022,14 +1065,12 @@ $$
 
 In order to establish when we have $f'(x)>0$ and when we have $f'(x)<0$ we first solve $f'(x)=0$, i.e. $-6x^2-6x+12=0$. This is a quadratic equation with solutions $x=1$ and $x=-2$. Since the coefficient of $x^2$ is negative, the graph of $f'$ is a parabola opening downwards. As such, we find that $f'(x)<0$ for $x<-2$ and for $x>1$, while $f'(x)>0$ for $-2<x<1$. We conclude that $f$ is strictly decreasing on the intervals $(-\infty,-2)$ and $(1,\infty)$, while it is strictly increasing on the interval $(-2,1)$. This can also be seen in the graph of the function.
 
-:::{figure} Images/Fig-Graphsderivatives-Increasingdecreasing1.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/increasing_and_decreasing
 :name: Fig:MinMax:Increasingdecreasing1
+:class: dark-light
 
-The graph of the function $f(x)=-2x^3-3x^2+12x+3$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:Increasingdecreasing1` with an applet.
+The graph of the function $f(x)=-2x^3-3x^2+12x+3$ on the left, the graph of its derivative on the right. You can drag the points on the graphs to compare increasing and decreasing behavior of $f$ with the value of $f'$.
 :::
 
 ::::::
@@ -1074,17 +1115,19 @@ Let $c$ be a point in the domain of a continuous function $f$.
 
 Before we turn to the proof of {prf:ref}`Thm:MinMax:Firstdertest`, we illustrate the different cases of this theorem in {numref}`Fig:MinMax:Firstdiv`.
 
-:::{figure} Images/Fig-MinMax-Firstdiv.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/first_derivative_test
 :name: Fig:MinMax:Firstdiv
 :class: dark-light
 
-Illustration of {prf:ref}`Thm:MinMax:Firstdertest`.
-(a) $f'$ changes from negative to positive at $c$; (b) $f'$ changes from positive to negative at $c$; (c) $f'(x)>0$ for all $x\neq c$; $f'(x)<0$ for all $x\neq c$.
+Illustration of {prf:ref}`Thm:MinMax:Firstdertest`.<br>
+(_top-left_) $f'$ changes from negative to positive at $c$;<br>
+(_top-right_) $f'$ changes from positive to negative at $c$;<br>
+(_bottom-left_) $f'(x)>0$ for all $x\neq c$;<br>
+(_bottom-right_) $f'(x)<0$ for all $x\neq c$.
+
 :::
 
-:::{todo}
-Turn {numref}`Fig:MinMax:Firstdiv` into an applet.
-:::
 
 {numref}`Fig:MinMax:Firstdiv`(a) clearly shows a local minimum at $x=c$. If you drag the point along the graph, you can see that the slope of the tangent line changes from negative to positive at $x=c$. Similarly, {numref}`Fig:MinMax:Firstdiv`(b) clearly shows a local maximum at $c$, and the slope of the tangent line changes from positive to negative at $c$. Finally, {numref}`Fig:MinMax:Firstdiv`(c) and (d) show graphs that neither have a local minimum nor a local maximum, and the slope of the tangent line is either positive or negative on both sides of $c$. These graphs illustrate the different cases of {prf:ref}`Thm:MinMax:Firstdertest`.
 
@@ -1171,17 +1214,6 @@ Finally, we suppose that $f'(x)<0$ for all $x$ in $I$ with $x\neq c$. Then $-f'(
 
 ::::{note}
 
-:::{figure} Images/Fig-MinMax-NoteCont.png
-:name: Fig:MinMax:NoteCont
-:figclass: margin
-
-The graph of the function $f$ from the note. The function is not continuous at $0$, so we cannot apply {prf:ref}`Thm:MinMax:Firstdertest`. Still, the function has a local maximum at $0$.
-:::
-
-:::{todo}
-Turn {numref}`Fig:MinMax:NoteCont` into an applet.
-:::
-
 The continuity of $f$ at the point $c$ is necessary for {prf:ref}`Thm:MinMax:Firstdertest` to work. Indeed, consider the function 
 
 $$
@@ -1195,6 +1227,14 @@ $$
 $$
 
 The graph of $f$ also supports this conclusion, see {numref}`Fig:MinMax:NoteCont`.
+
+:::{applet}
+:url: calculus/graphs_and_extreme_values/necessity_of_continuity
+:name: Fig:MinMax:NoteCont
+:class: dark-light
+
+The graph of the function $f$ from the note. The function is not continuous at $0$, so we cannot apply {prf:ref}`Thm:MinMax:Firstdertest`. Still, the function has a local maximum at $0$.
+:::
 
 ::::
 
