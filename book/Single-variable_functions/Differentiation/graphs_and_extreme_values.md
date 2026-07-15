@@ -761,14 +761,12 @@ $$
 The equation $3x^2+6x+6=0$ does not have any real solutions. So our assumption that there would be another solution must be incorrect. Hence, there is exactly one solution between $-1$ and $0$. This is supported by the graph of the function, which is shown in {numref}`Fig:MinMax:MVT1`.
 
 
-:::{figure} Images/Fig-Graphsderivatives-MVT1.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/roots_of_a_cubic_function
 :name: Fig:MinMax:MVT1
+:class: dark-light
 
 The graph of the function $f(x)=x^3+3x^2+6x+3$. Note that there is only one solution of the equation $f(x)=0$ between $-1$ and $0$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:MVT1` with an applet.
 :::
 
 ::::::
