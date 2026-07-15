@@ -575,19 +575,14 @@ First suppose that the function is constant on the interval $[a,b]$. Since the f
 Now suppose that the function is not constant on the interval $[a,b]$. By {prf:ref}`Thm:MinMax:EVT`, $f$ attains both a local maximum and a local minimum on the interval $[a,b]$. Since $f(a)=f(b)$ and $f$ is not constant, at least one of these two must occur at a point $c$ in the open interval $(a,b)$. Indeed, if they were to both occur at the edge values $a$ or $b$, then $f(a)=f(b)$ would both be the highest value and the lowest value of $f$ on $[a,b]$, which would mean that $f$ is constant on $[a,b]$. By {prf:ref}`Thm:MinMax:Fermat` we have that $f'(c)=0$, as desired.
 :::
 
-An illustration of Rolle's theorem is shown in {numref}`Fig:MinMax:Rolle`. Note that {prf:ref}`Thm:MinMax:Rolle` also includes the case that there are multiple points where the derivative is equal to $0$, for instance, for the function on the left in {numref}`Fig:MinMax:Rolle` any point will do, and for the right function there are two points where the derivative is equal to $0$.
+An illustration of Rolle's theorem is shown in {numref}`Fig:MinMax:Rolle`. Note that {prf:ref}`Thm:MinMax:Rolle` also includes the case that there are multiple points where the derivative is equal to $0$, for instance, for the function on the top-left in {numref}`Fig:MinMax:Rolle` any point will do, and for the bottom-right function there are two points where the derivative is equal to $0$.
 
-:::{figure} Images/Fig-Graph1d-Rolle.png
----
-width: 100%
-name: Fig:MinMax:Rolle
-class: dark-light
----
+:::{applet}
+:url: calculus/graphs_and_extreme_values/rolle's_theorem
+:name: Fig:MinMax:Rolle
+:class: dark-light
+
 An illustration of Rolle's theorem.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:Rolle` with an applet.
 :::
 
 :::{note}
@@ -651,18 +646,14 @@ which gives $f'(c)=\dfrac{f(b)-f(a)}{b-a}$, as desired.
 
 The interpretation of this theorem works as follows: $\dfrac{f(b)-f(a)}{b-a}$ represents the **average slope** of the function on the interval $[a,b]$. The theorem states that there must be at least one point where the slope is equal to this average slope. Note that the mean value theorem does not tell you how to find the point. It only states that such a point must exist. An illustration of the theorem is shown in {numref}`Fig:MinMax:MVT`.
 
-:::{figure} Images/Fig-Graph1d-MVT.png
----
-width: 100%
-name: Fig:MinMax:MVT
-class: dark-light
----
-An illustration of the mean value theorem. Note that in this case there are multiple points where the derivative is equal to $\dfrac{f(b)-f(a)}{b-a}$. The red line is the graph of the function $L(x)$ from the proof of {prf:ref}`Thm:MinMax:MVT`.
+:::{applet}
+:url: calculus/graphs_and_extreme_values/mean_value_theorem
+:name: Fig:MinMax:MVT
+:class: dark-light
+
+An illustration of the mean value theorem. Note that in this case there are multiple points where the derivative is equal to $\dfrac{f(b)-f(a)}{b-a}$. The straight line is the graph of the function $L(x)$ from the proof of {prf:ref}`Thm:MinMax:MVT`.
 :::
 
-:::{todo}
-Replace {numref}`Fig:MinMax:MVT` with an applet. Maybe also include the function $g$ from the proof?
-:::
 
 Let us return to the example from the start of {numref}`Subsec:MVT`. The function $f(t)$ satisfies $f(0)=0$ and $f(16200)=42195$ (since it takes you four and a half hours, which is $16200$ seconds, to finish the $42195$ meter marathon). Assuming that $f$ is differentiable, {prf:ref}`Thm:MinMax:MVT` tells us that there is a time $c$ in $(0,16200)$ where the velocity $f'(c)$ is given by
 
@@ -747,19 +738,13 @@ $$
  $$
 :::
 
-:::{figure} Images/Fig-Graph1d-CauchyMVT.png
----
-width: 100%
-name: Fig:MinMax:CauchyMVT
-class: dark-light
----
-An illustration of {prf:ref}`Thm:MinMax:MVTCauchy`. We see the curve with parametrisation $(f(x),g(x))$ for $a\leq x\leq b$. The slope of the vector from the start to the end point is $\frac{g(b)-g(a)}{f(b)-f(a)}$. The vector $\begin{pmatrix} g'(c)\\ f'(c)\end{pmatrix}$ is tangent to the curve at the point $c$ (it is the tangent vector, see {numref}`Subsec:Slopeparam`). The slope of this vector is $\frac{g'(c)}{f'(c)}$.
-:::
+:::{applet}
+:url: calculus/graphs_and_extreme_values/cauchy_mean_value_theorem
+:name: Fig:MinMax:CauchyMVT
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:MinMax:CauchyMVT` with an applet.
+An illustration of {prf:ref}`Thm:MinMax:MVTCauchy`. We see the curve with parametrisation $(f(x),g(x))$ for $a\leq x\leq b$. The slope of the vector from the start to the end point is $\frac{g(b)-g(a)}{f(b)-f(a)}$. The vector $\begin{pmatrix} g'(c)\\ f'(c)\end{pmatrix}$ is tangent to the curve at the point $c$ (it is the tangent vector, see {numref}`Subsec:Slopeparam`). The slope of this vector is $\frac{g'(c)}{f'(c)}$, which is equal to the slope of the vector from the start to the end point, as guaranteed by {prf:ref}`Thm:MinMax:MVTCauchy`. Note that the same holds for the point $(f(d),g(d))$, which is also shown in the figure.
 :::
-
 
 Let us see how the mean value theorem can be used in practice.
 
