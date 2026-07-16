@@ -6,7 +6,7 @@
 
 ## Introduction
 
-[^FootnoteImportant]: This is perhaps even the most imporant question.
+[^FootnoteImportant]: This is perhaps even the most important question.
 
 Now that we know the derivatives of most standard functions, we can ask a very important question[^FootnoteImportant]: what can we actually do with derivatives? We have seen that we can use them to find tangent lines, but that is about it. For higher order derivatives we have not even seen *any* uses (yet). However, there is much more that derivatives can tell us. In fact, most qualitative behaviour of a function is captured in its derivatives. For instance, we will see that we can use the first derivative to determine whether a function is increasing or decreasing on an interval.
 
@@ -247,15 +247,12 @@ Global maxima and minima are sometimes called **absolute** maxima and minima. We
 
 {numref}`Fig:MinMax:GlobExtr` shows a graph of a function with some local and global extrema. This function attains its global minimum value at $a$. It does not attain a local minimum there, since $a$ is on the boundary of the domain. It attains its global maximum at $b$, which is also a local maximum. It has a local minimum at $c$. The point $d$ is neither a local nor a global extremum.
 
-:::{figure} Images/Fig-MinMax-GlobExtr.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/local_and_global_extrema
 :name: Fig:MinMax:GlobExtr
 :class: dark-light
 
 A graph to illustrate the difference between local and global extrema.
-:::
-
-:::{todo}
-Turn {numref}`Fig:MinMax:GlobExtr` into an applet.
 :::
 
 :::{note}
@@ -384,17 +381,12 @@ Since the function $-f$ is continuous, we can find $d$ in $[a,b]$ with $-f(x)\le
 
 Both the continuity of the function and the closedness of the interval are necessary for the theorem to work, as can be seen in {numref}`Fig:MinMax:EVT`. In (a) the continuous function $f(x)=\dfrac{1}{x}$ does not attain a global maximum on the non-closed interval $(0,1)$. In (b) for the non-continuous function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$, the function values can get arbitrarily close to $2$, but they never actually become $2$, so this function does not attain a global maximum. It does attain a global minimum at $0$.
 
-:::{figure} Images/Fig-MinMax-EVT.png
----
-width: 100%
-name: Fig:MinMax:EVT
-class: dark-light
----
-(a) The continuous function $f(x)=\dfrac{1}{x}$ on the non-closed interval $(0,1)$.<br>(b) The function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$. 
-:::
+:::{applet}
+:url: calculus/graphs_and_extreme_values/extreme_value_theorem
+:name: Fig:MinMax:EVT
+:class: dark-light
 
-:::{todo}
-Turn {numref}`Fig:MinMax:EVT` into an applet.
+(_left_) The continuous function $f(x)=\dfrac{1}{x}$ on the non-closed interval $(0,1)$.<br>(_right_) The function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$. 
 :::
 
 [^FootnoteWeierstrass]: Looking at you, [Weierstrass function](https://en.wikipedia.org/wiki/Weierstrass_function).
@@ -474,15 +466,14 @@ Consider the function $f(x)=2x^3+3x^2-12x-5$ on the closed interval $[-4,2]$. Su
 
 The graph of the function is shown in {numref}`Fig:MinMax:Globalextrema1`. Do our conclusions match what we see in the graph?
 
-:::{figure} Images/Fig-MinMax-Globalextrema1.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/closed_interval_method_1
 :name: Fig:MinMax:Globalextrema1
+:class: dark-light
 
 The graph of the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema1` and its local and global extrema.
 :::
 
-:::{todo}
-Convert {numref}`Fig:MinMax:Globalextrema1` to an applet Make sure to highlight all candidate points and make difference between local and global extrema clear.
-:::
 ::::::
 
 ::::::{prf:example} Closed interval method
@@ -509,41 +500,59 @@ Consider the function $f(x)=\dfrac{|x|}{2}-\cos(x)$ on the closed interval $[-2\
 
 3. We evaluate the function at the points we found in the first two steps. This gives
 
-$$
- f\left(-\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3},\quad f\left(-\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\quad f(0)=-1
-$$
-
-$$
- f\left(\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\qquad f\left(\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3}.
-$$
+   $$
+   f\left(-\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3},\quad f\left(-\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\quad f(0)=-1
+   $$
+   
+   $$
+   f\left(\dfrac{7\pi}{6}\right)=\frac{7}{12}\pi+\frac{1}{2}\sqrt{3},\qquad f\left(\dfrac{11\pi}{6}\right)=\frac{11}{12}\pi-\frac{1}{2}\sqrt{3}.
+   $$
 
 4. We evaluate the function at the boundary points to obtain
 
-$$
- f(-2\pi)=\pi-1,\qquad f(2\pi)=\pi-1.
-$$
+   $$
+   f(-2\pi)=\pi-1,\qquad f(2\pi)=\pi-1.
+   $$
 
 5. The largest value that we found in steps 3. and 4. must be the global maximum value (since this value cannot be attained at any point that we did not check). This highest value is $\dfrac{1}{2}\sqrt{3}+\dfrac{7\pi}{12}$, which is attained at both $x=-\dfrac{7\pi}{6}$ and at $x=\dfrac{7\pi}{6}$. The lowest value is the global minimum value. This lowest value is $-1$, which is attained at $x=0$.
 
-:::{figure} Images/Fig-MinMax-Globalextrema2.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/closed_interval_method_2
 :name: Fig:MinMax:Globalextrema2
+:class: dark-light
 
 The graph of the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema2` and its local and global extrema.
 :::
 
-:::{todo}
-Convert {numref}`Fig:MinMax:Globalextrema2` to an applet Make sure to highlight all candidate points and make difference between local and global extrema clear.
-:::
 ::::::
 
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
 
-:::{todo}
-Make a fill-in-the gaps poll, where the student should notice that the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema2` is **even** and that we can save work by only considering the interval $[0,2\pi]$.
+Reconsider the function $f$ from {prf:ref}`Ex:MinMax:Globalextrema2` and its graph in {numref}`Fig:MinMax:Globalextrema2`.
+
+Complete the following sentences:
+---
+DS[odd;{even};neither]
+M[f(x)]
+M[2\pi]
+DS[below;above;{to the left of};to the right of]
+M[y]
+^^^
+? :::{card}
+The function $f$ is {gap} on the interval $[-2\pi,2\pi]$.
+
+This means that $f(-x)=${gap} for all $x$ in the interval $[-2\pi,2\pi]$.
+
+As a consequence, we only need to consider the interval $[0,b]$ with $b=${gap} to find the global extrema of $f$, because every candidate point {gap} the {gap}-axis will have a corresponding candidate point in the interval $[0,b]$, and they will have the same function value.
 :::
+---
 
-
-
-
+::::
 
 (Subsec:MVT)=
 
@@ -555,7 +564,7 @@ With this idea in mind, let us formulate and prove the mean value theorem, which
 
 ::::::{prf:theorem} Rolle's theorem
 :label: Thm:MinMax:Rolle
-Let $f$ be a function that is continuous on a closed interval $[a,b]$ and differentiable on the open interval $(a,b)$. If $f(a)=f(b)$, there exists a point $c$ in $(a,b)$ with $f'(c)=0.$
+Let $f$ be a function that is continuous on a closed interval $[a,b]$ and differentiable on the open interval $(a,b)$. If $f(a)=f(b)$, there exists a point $c$ in $(a,b)$ with $f'(c)=0$.
 
 ::::::
 
@@ -566,19 +575,14 @@ First suppose that the function is constant on the interval $[a,b]$. Since the f
 Now suppose that the function is not constant on the interval $[a,b]$. By {prf:ref}`Thm:MinMax:EVT`, $f$ attains both a local maximum and a local minimum on the interval $[a,b]$. Since $f(a)=f(b)$ and $f$ is not constant, at least one of these two must occur at a point $c$ in the open interval $(a,b)$. Indeed, if they were to both occur at the edge values $a$ or $b$, then $f(a)=f(b)$ would both be the highest value and the lowest value of $f$ on $[a,b]$, which would mean that $f$ is constant on $[a,b]$. By {prf:ref}`Thm:MinMax:Fermat` we have that $f'(c)=0$, as desired.
 :::
 
-An illustration of Rolle's theorem is shown in {numref}`Fig:MinMax:Rolle`. Note that {prf:ref}`Thm:MinMax:Rolle` also includes the case that there are multiple points where the derivative is equal to $0$, for instance, for the function on the left in {numref}`Fig:MinMax:Rolle` any point will do, and for the right function there are two points where the derivative is equal to $0$.
+An illustration of Rolle's theorem is shown in {numref}`Fig:MinMax:Rolle`. Note that {prf:ref}`Thm:MinMax:Rolle` also includes the case that there are multiple points where the derivative is equal to $0$, for instance, for the function on the top-left in {numref}`Fig:MinMax:Rolle` any point will do, and for the bottom-right function there are two points where the derivative is equal to $0$.
 
-:::{figure} Images/Fig-Graph1d-Rolle.png
----
-width: 100%
-name: Fig:MinMax:Rolle
-class: dark-light
----
+:::{applet}
+:url: calculus/graphs_and_extreme_values/rolle's_theorem
+:name: Fig:MinMax:Rolle
+:class: dark-light
+
 An illustration of Rolle's theorem.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:Rolle` with an applet.
 :::
 
 :::{note}
@@ -642,18 +646,14 @@ which gives $f'(c)=\dfrac{f(b)-f(a)}{b-a}$, as desired.
 
 The interpretation of this theorem works as follows: $\dfrac{f(b)-f(a)}{b-a}$ represents the **average slope** of the function on the interval $[a,b]$. The theorem states that there must be at least one point where the slope is equal to this average slope. Note that the mean value theorem does not tell you how to find the point. It only states that such a point must exist. An illustration of the theorem is shown in {numref}`Fig:MinMax:MVT`.
 
-:::{figure} Images/Fig-Graph1d-MVT.png
----
-width: 100%
-name: Fig:MinMax:MVT
-class: dark-light
----
-An illustration of the mean value theorem. Note that in this case there are multiple points where the derivative is equal to $\dfrac{f(b)-f(a)}{b-a}$. The red line is the graph of the function $L(x)$ from the proof of {prf:ref}`Thm:MinMax:MVT`.
+:::{applet}
+:url: calculus/graphs_and_extreme_values/mean_value_theorem
+:name: Fig:MinMax:MVT
+:class: dark-light
+
+An illustration of the mean value theorem. Note that in this case there are multiple points where the derivative is equal to $\dfrac{f(b)-f(a)}{b-a}$. The straight line is the graph of the function $L(x)$ from the proof of {prf:ref}`Thm:MinMax:MVT`.
 :::
 
-:::{todo}
-Replace {numref}`Fig:MinMax:MVT` with an applet. Maybe also include the function $g$ from the proof?
-:::
 
 Let us return to the example from the start of {numref}`Subsec:MVT`. The function $f(t)$ satisfies $f(0)=0$ and $f(16200)=42195$ (since it takes you four and a half hours, which is $16200$ seconds, to finish the $42195$ meter marathon). Assuming that $f$ is differentiable, {prf:ref}`Thm:MinMax:MVT` tells us that there is a time $c$ in $(0,16200)$ where the velocity $f'(c)$ is given by
 
@@ -738,19 +738,13 @@ $$
  $$
 :::
 
-:::{figure} Images/Fig-Graph1d-CauchyMVT.png
----
-width: 100%
-name: Fig:MinMax:CauchyMVT
-class: dark-light
----
-An illustration of {prf:ref}`Thm:MinMax:MVTCauchy`. We see the curve with parametrisation $(f(x),g(x))$ for $a\leq x\leq b$. The slope of the vector from the start to the end point is $\frac{g(b)-g(a)}{f(b)-f(a)}$. The vector $\begin{pmatrix} g'(c)\\ f'(c)\end{pmatrix}$ is tangent to the curve at the point $c$ (it is the tangent vector, see {numref}`Subsec:Slopeparam`). The slope of this vector is $\frac{g'(c)}{f'(c)}$.
-:::
+:::{applet}
+:url: calculus/graphs_and_extreme_values/cauchy_mean_value_theorem
+:name: Fig:MinMax:CauchyMVT
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:MinMax:CauchyMVT` with an applet.
+An illustration of {prf:ref}`Thm:MinMax:MVTCauchy`. We see the curve with parametrisation $(f(x),g(x))$ for $a\leq x\leq b$. The slope of the vector from the start to the end point is $\frac{g(b)-g(a)}{f(b)-f(a)}$. The vector $\begin{pmatrix} g'(c)\\ f'(c)\end{pmatrix}$ is tangent to the curve at the point $c$ (it is the tangent vector, see {numref}`Subsec:Slopeparam`). The slope of this vector is $\frac{g'(c)}{f'(c)}$, which is equal to the slope of the vector from the start to the end point, as guaranteed by {prf:ref}`Thm:MinMax:MVTCauchy`. Note that the same holds for the point $(f(d),g(d))$, which is also shown in the figure.
 :::
-
 
 Let us see how the mean value theorem can be used in practice.
 
@@ -767,14 +761,12 @@ $$
 The equation $3x^2+6x+6=0$ does not have any real solutions. So our assumption that there would be another solution must be incorrect. Hence, there is exactly one solution between $-1$ and $0$. This is supported by the graph of the function, which is shown in {numref}`Fig:MinMax:MVT1`.
 
 
-:::{figure} Images/Fig-Graphsderivatives-MVT1.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/roots_of_a_cubic_function
 :name: Fig:MinMax:MVT1
+:class: dark-light
 
 The graph of the function $f(x)=x^3+3x^2+6x+3$. Note that there is only one solution of the equation $f(x)=0$ between $-1$ and $0$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:MVT1` with an applet.
 :::
 
 ::::::
@@ -863,20 +855,12 @@ This value of $f(6)=33$ is obtained when $f'(x)=7$ for all $x$ in the interval $
 
 {numref}`Fig:MinMax:MVT2` shows the graph of the function $3x-1$, the graph of the function $7x-9$ and the graph of an example of a function that satisfies the assumptions on $f$. The graph of any function that satisfies the assumptions must lie between these two graphs, so in particular, the value of $f(6)$ must be in between $17$ and $33$.
 
-:::{figure} Images/Fig-Graphsderivatives-MVT2.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/estimating_function_values
 :name: Fig:MinMax:MVT2
+:class: dark-light
 
 The graph of the function $3x-1$ , the graph of the function $7x-9$ and the graph of an example of a function that satisfies the assumptions on $f$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:MVT2` with an applet. The function that satisfies the assumptions on $f$ is given by
-
-$$
-f(x)=\frac{1}{32} (-2 x^3 + 24 x^2 - 72 x + 64 + (x^2 + 4 x + 68) x)
-$$
-
-No need to give the explicit formula for $f$ in the applet.
 :::
 
 ::::::
@@ -910,10 +894,67 @@ $$
 In particular, we have proven that $e>2$. If we were to choose another interval on which we can apply the mean value theorem, we would obtain different estimates for the number $e$.
 ::::::
 
-:::{todo}
-Make poll where the same method from {prf:ref}`EX:MinMax:MVTnmbre` is used on the interval $[0,\frac{1}{2}]$.
-:::
+::::{question}
+:type: short-answer
+:variant: gaps
+:admonition:
+:class: question
+:showanswer:
 
+Let $f(x)=e^x$. We apply {prf:ref}`Thm:MinMax:MVT` on the interval $\left[0,\frac12\right]$. We find that there is $c$ in $(0,\frac12)$ with
+
+$$
+e^c=f'(c)=\frac{f\left(\frac12\right)-f(0)}{\frac12-0}.
+$$
+
+Using this fact, which lower bound for $e$ can we establish?
+---
+M[\frac{9}{4}]
+^^^
+? :::{card}
+:text-align: center
+
+$\displaystyle e>${gap}.
+:::
+= By {prf:ref}`Thm:MinMax:MVT`, we find
+ 
+ $$
+ e^c=\frac{e^{1/2}-1}{1/2}=2(\sqrt{e}-1).
+ $$
+
+ Since $0<c<\frac12$, we have $1=e^0<e^c<\sqrt{e}$, so $e^c>1$ and thus
+
+ $$
+ 2(\sqrt{e}-1)>1.
+ $$
+
+ This gives $\sqrt{e}>\frac{3}{2}$, which implies that $e>\frac{9}{4}$.
+
+> By {prf:ref}`Thm:MinMax:MVT`, we find
+ 
+ $$
+ e^c=\frac{e^{1/2}-1}{1/2}=2(\sqrt{e}-1).
+ $$
+
+ Can you use this to find a lower bound for $\sqrt{e}$ first?
+
+ Hint: Use that $c>0$.
+
+ & = By {prf:ref}`Thm:MinMax:MVT`, we find
+ 
+ $$
+ e^c=\frac{e^{1/2}-1}{1/2}=2(\sqrt{e}-1).
+ $$
+
+ Since $0<c<\frac12$, we have $1=e^0<e^c<\sqrt{e}$, so $e^c>1$ and thus
+
+ $$
+ 2(\sqrt{e}-1)>1.
+ $$
+
+ This gives $\sqrt{e}>\frac{3}{2}$, which implies that $e>\frac{9}{4}$.
+---
+::::
 
 {prf:ref}`Cor:MinMax:Samederivative` can also be used to establish certain trigonometric identities.
 
@@ -947,14 +988,12 @@ $$
 
 {numref}`Fig:MinMax:MVT3` shows the graph of this special function.
 
-:::{figure} Images/Fig-Graphsderivatives-MVT3.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/sum_of_two_arctan_functions
 :name: Fig:MinMax:MVT3
+:class: dark-light
 
 The graph of the function $f(x)=\arctan(x)+\arctan\left(\frac{1}{x}\right)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:MVT3` with an applet. Make sure no vertical line element is shown.
 :::
 
 ::::::
@@ -1016,10 +1055,6 @@ Notice that the two first statements in {prf:ref}`Thm:MinMax:Increasingdecreasin
 For instance, consider the function $f(x)=x^3$. Then $f'(x)=3x^2$, which is $0$ at $x=0$. Still, this function is strictly increasing on $\mathbb{R}$, since for any $a<b$ we have $a^3<b^3$.
 :::
 
-:::{todo}
-Make a poll(???) where student needs to figure out where to proof breaks down if we try to prove the other implication.
-:::
-
 ::::::{prf:example} 
 :label: Ex:MinMax:Increasingdecreasing1
 Consider the function $f(x)=-2x^3-3x^2+12x+3$ and suppose we want to know on which intervals the function is non-decreasing and on which intervals it is non-increasing. For this, we evaluate the derivative, which is given by
@@ -1030,14 +1065,12 @@ $$
 
 In order to establish when we have $f'(x)>0$ and when we have $f'(x)<0$ we first solve $f'(x)=0$, i.e. $-6x^2-6x+12=0$. This is a quadratic equation with solutions $x=1$ and $x=-2$. Since the coefficient of $x^2$ is negative, the graph of $f'$ is a parabola opening downwards. As such, we find that $f'(x)<0$ for $x<-2$ and for $x>1$, while $f'(x)>0$ for $-2<x<1$. We conclude that $f$ is strictly decreasing on the intervals $(-\infty,-2)$ and $(1,\infty)$, while it is strictly increasing on the interval $(-2,1)$. This can also be seen in the graph of the function.
 
-:::{figure} Images/Fig-Graphsderivatives-Increasingdecreasing1.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/increasing_and_decreasing
 :name: Fig:MinMax:Increasingdecreasing1
+:class: dark-light
 
-The graph of the function $f(x)=-2x^3-3x^2+12x+3$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:Increasingdecreasing1` with an applet.
+The graph of the function $f(x)=-2x^3-3x^2+12x+3$ on the left, the graph of its derivative on the right. You can drag the points on the graphs to compare increasing and decreasing behavior of $f$ with the value of $f'$.
 :::
 
 ::::::
@@ -1075,24 +1108,26 @@ The reasoning we used in {prf:ref}`Ex:MinMax:CriticalPart2` to determine whether
 :label: Thm:MinMax:Firstdertest
 Let $c$ be a point in the domain of a continuous function $f$.
 
-- If $f'$ changes from nonpositive to nonnegative at $c$, i.e. $f'(x)\leq 0$ for $x<c$ near $c$ and $f'(x)\geq 0$ for $x>c$ near $c$, then $f(c)$ is a local minimum of $f$.
-- If $f'$ changes from nonnegative to nonpositive at $c$, i.e. $f'(x)\geq 0$ for $x<c$ near $c$ and $f'(x)\leq 0$ for $x>c$ near $c$, then $f(c)$ is a local maximum of $f$.
+- If $f'$ changes from non-positive to nonnegative at $c$, i.e. $f'(x)\leq 0$ for $x<c$ near $c$ and $f'(x)\geq 0$ for $x>c$ near $c$, then $f(c)$ is a local minimum of $f$.
+- If $f'$ changes from nonnegative to non-positive at $c$, i.e. $f'(x)\geq 0$ for $x<c$ near $c$ and $f'(x)\leq 0$ for $x>c$ near $c$, then $f(c)$ is a local maximum of $f$.
 - If $f'(x)>0$ for all $x$ near $c$ (excluding $x=c$) or if $f'(x)<0$ for all $x$ near $c$ (excluding $x=c$) then $f(c)$ is neither a local minimum nor a local maximum of $f$.
 ::::::
 
 Before we turn to the proof of {prf:ref}`Thm:MinMax:Firstdertest`, we illustrate the different cases of this theorem in {numref}`Fig:MinMax:Firstdiv`.
 
-:::{figure} Images/Fig-MinMax-Firstdiv.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/first_derivative_test
 :name: Fig:MinMax:Firstdiv
 :class: dark-light
 
-Illustration of {prf:ref}`Thm:MinMax:Firstdertest`.
-(a) $f'$ changes from negative to positive at $c$; (b) $f'$ changes from positive to negative at $c$; (c) $f'(x)>0$ for all $x\neq c$; $f'(x)<0$ for all $x\neq c$.
+Illustration of {prf:ref}`Thm:MinMax:Firstdertest`.<br>
+(_top-left_) $f'$ changes from negative to positive at $c$;<br>
+(_top-right_) $f'$ changes from positive to negative at $c$;<br>
+(_bottom-left_) $f'(x)>0$ for all $x\neq c$;<br>
+(_bottom-right_) $f'(x)<0$ for all $x\neq c$.
+
 :::
 
-:::{todo}
-Turn {numref}`Fig:MinMax:Firstdiv` into an applet.
-:::
 
 {numref}`Fig:MinMax:Firstdiv`(a) clearly shows a local minimum at $x=c$. If you drag the point along the graph, you can see that the slope of the tangent line changes from negative to positive at $x=c$. Similarly, {numref}`Fig:MinMax:Firstdiv`(b) clearly shows a local maximum at $c$, and the slope of the tangent line changes from positive to negative at $c$. Finally, {numref}`Fig:MinMax:Firstdiv`(c) and (d) show graphs that neither have a local minimum nor a local maximum, and the slope of the tangent line is either positive or negative on both sides of $c$. These graphs illustrate the different cases of {prf:ref}`Thm:MinMax:Firstdertest`.
 
@@ -1179,17 +1214,6 @@ Finally, we suppose that $f'(x)<0$ for all $x$ in $I$ with $x\neq c$. Then $-f'(
 
 ::::{note}
 
-:::{figure} Images/Fig-MinMax-NoteCont.png
-:name: Fig:MinMax:NoteCont
-:figclass: margin
-
-The graph of the function $f$ from the note. The function is not continuous at $0$, so we cannot apply {prf:ref}`Thm:MinMax:Firstdertest`. Still, the function has a local maximum at $0$.
-:::
-
-:::{todo}
-Turn {numref}`Fig:MinMax:NoteCont` into an applet.
-:::
-
 The continuity of $f$ at the point $c$ is necessary for {prf:ref}`Thm:MinMax:Firstdertest` to work. Indeed, consider the function 
 
 $$
@@ -1203,6 +1227,14 @@ $$
 $$
 
 The graph of $f$ also supports this conclusion, see {numref}`Fig:MinMax:NoteCont`.
+
+:::{applet}
+:url: calculus/graphs_and_extreme_values/necessity_of_continuity
+:name: Fig:MinMax:NoteCont
+:class: dark-light
+
+The graph of the function $f$ from the note. The function is not continuous at $0$, so we cannot apply {prf:ref}`Thm:MinMax:Firstdertest`. Still, the function has a local maximum at $0$.
+:::
 
 ::::
 
@@ -1232,29 +1264,22 @@ $$
 
 We conclude that $f'>0$ on the intervals $\left(0,\dfrac{\pi}{3}\right)$, $\left(\dfrac{2\pi}{3},\dfrac{4\pi}{3}\right)$ and $\left(\dfrac{5\pi}{3},2\pi\right)$, while $f'<0$ on the intervals $\left(\dfrac{\pi}{3},\dfrac{2\pi}{3}\right)$ and $\left(\dfrac{4\pi}{3},\dfrac{5\pi}{3}\right)$. A convenient way to denote this behaviour is by a **sign chart**, see {numref}`Fig:MinMax:Signchart`.
 
-:::{figure} Images/Fig-MinMax-Signchart.png
----
-width: 100%
-name: Fig:MinMax:Signchart
-class: dark-light
----
-A sign chart shows on which intervals the derivative is positive and on which it is negative. Replace the words increasing and decreasing by strictly increasing and strictly decreasing.
-:::
+:::{applet}
+:url: calculus/graphs_and_extreme_values/sign_chart
+:name: Fig:MinMax:Signchart
+:class: dark-light
 
-:::{todo}
-Turn {numref}`Fig:MinMax:Signchart` into an applet. Also indicate the points $0$ and $2\pi$.
+A sign chart shows on which intervals the derivative is positive and on which it is negative and the relation with the increasing and decreasing behaviour of the function.
 :::
 
 According to {prf:ref}`Thm:MinMax:Firstdertest` the function attains a local maximum at $x=\dfrac{\pi}{3}$ and $x=\dfrac{4\pi}{3}$, while it attains a local minimum at $x=\dfrac{2\pi}{3}$ and $x=\dfrac{5\pi}{3}$. This can also be seen in the graph of the function.
 
-:::{figure} Images/Fig-MinMax-Firstdivtest2.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/classifying_critical_points
 :name: Fig:MinMax:Firstdivtest2
+:class: dark-light
 
-The graph of the function $f$ from {prf:ref}`Ex:MinMax:Firstdivtest` and its local extrema.
-:::
-
-:::{todo}
-Convert {numref}`Fig:MinMax:Firstdivtest2` into an applet.
+The graph of the function $f$ from {prf:ref}`Ex:MinMax:Firstdivtest` and its local extrema, superimposed on the sign chart from {numref}`Fig:MinMax:Signchart`.
 :::
 
 ::::::
@@ -1315,15 +1340,13 @@ An advantage the second derivative test has over the first derivative test is th
 A major disadvantage of the second derivative test is that it can never be used to show that a critical point is **not** a local extremum. Indeed, anything can happen when the second derivative is $0$ at a critical point. For instance, if we consider the functions $f(x)=x^4$, $g(x)=5x^5$ and $h(x)=-\frac16x^6$, then $0$ is a critical point for each of these and the second derivative of each of these functions is $0$ at $0$. However, using the first derivative test we can show that $f$ has a local minimum at $0$, $g$ does not have a local extremum at $0$, while $h$ has a local maximum at $0$. This can also be seen in the graphs of these functions.
 
 
-:::{figure} Images/Fig-MinMax-SeconddivNote.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/disadvantage_of_the_second_derivative_test
 :name: Fig:MinMax:SeconddivNote
+:class: dark-light
 
 Three functions with a critical point in $0$ and a second derivative of $0$ in $0$. The function $f(x)=x^4$ has a local minimum at $0$, the function $g(x)=5x^5$ does not have a local extremum at $0$, while the function $h(x)=-\frac16x^6$ has a local maximum at $0$.
 
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:SeconddivNote` with an applet.
 :::
 
 ::::
@@ -1365,15 +1388,15 @@ So according to {prf:ref}`Thm:MinMax:Seconddertest`, $f$ has a local maximum at 
 
 Our conclusion are supported by the graphs of $f$, $f'$ and $f''$ shown in {numref}`Fig:MinMax:SeconddivEx`.
 
-:::{figure} Images/Fig-MinMax-SeconddivEx.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/second_derivative_test
 :name: Fig:MinMax:SeconddivEx
+:class: dark-light
 
 The graph of the function $f$, $f'$ and $f''$ from {prf:ref}`Ex:MinMax:Seconddiv` and the local extrema of $f$.
 :::
 
-:::{todo}
-Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
-:::
+
 ::::::
 
 
@@ -1443,7 +1466,7 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :url: https://embed.grasple.com/exercises/dcc1f661-8b67-4a90-b749-df19ca2aac5d?id=133945
 :label: Grasple:133945
 :dropdown:
-:description: Finding and classifying critical points
+:description: Finding and classifying critical points.
 
 ::::
 
@@ -1452,7 +1475,7 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :url: https://embed.grasple.com/exercises/ceddfaeb-d41f-4581-91c9-8ea688eb58bc?id=133947
 :label: Grasple:133947
 :dropdown:
-:description: Finding and classifying critical points
+:description: Finding and classifying critical points.
 
 ::::
 
@@ -1461,7 +1484,7 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :url: https://embed.grasple.com/exercises/77685602-ddbc-4c6a-8402-d21aea8da7f1?id=134014
 :label: Grasple:134014
 :dropdown:
-:description: Finding and classifying critical points
+:description: Finding and classifying critical points.
 
 ::::
 
@@ -1470,7 +1493,7 @@ Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
 :url: https://embed.grasple.com/exercises/dd9d9714-bcbe-41aa-8c31-5d8aa7614733?id=134063
 :label: Grasple:134063
 :dropdown:
-:description: Finding and classifying critical points
+:description: Finding and classifying critical points.
 
 ::::
 
