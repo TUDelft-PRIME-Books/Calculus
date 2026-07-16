@@ -1,4 +1,4 @@
-(Sec:Integration:TrigFunctions)=
+(Sec:Integration:TrigonometricFunctions)=
 
 # Integration of trigonometric functions
 
@@ -725,7 +725,7 @@ $$
 \int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\ln(1+\sqrt{2}).
 $$
 
-This can also be done using the tangent half-angle substitution: set $u=\tan(\frac{1}{2}t)$ or $t=2\arctan(u)$. Then $t=0$ implies that $u=0$ and $t=\frac{1}{4}\pi$ implies that $u=\tan(\frac{1}{8}\pi)=\sqrt{2}-1$ (see {numref}`Exc:Trigonometry:Exercise_10`). With $\cos(t)=\dfrac{1-u^2}{1+u^2}$ and $dt=\dfrac{2\,du}{1+u^2}$ we obtain
+This can also be done using the tangent half-angle substitution: set $u=\tan(\frac{1}{2}t)$ or $t=2\arctan(u)$. Then $t=0$ implies that $u=0$ and $t=\frac{1}{4}\pi$ implies that $u=\tan(\frac{1}{8}\pi)=\sqrt{2}-1$ (see {numref}`Grasple:131804`). With $\cos(t)=\dfrac{1-u^2}{1+u^2}$ and $dt=\dfrac{2\,du}{1+u^2}$ we obtain
 
 \begin{align*}
 \int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt&=\int_0^{\sqrt{2}-1}\frac{1}{\dfrac{1-u^2}{1+u^2}}\cdot\frac{2\,du}{1+u^2}=\int_0^{\sqrt{2}-1}\frac{2}{1-u^2}\,du\\
@@ -734,14 +734,50 @@ This can also be done using the tangent half-angle substitution: set $u=\tan(\fr
 &=\ln\left(\frac{\sqrt{2}}{2-\sqrt{2}}\cdot\frac{2+\sqrt{2}}{2+\sqrt{2}}\right)=\ln\left(\frac{2+2\sqrt{2}}{4-2}\right)=\ln(1+\sqrt{2}).
 \end{align*}
 
+## Using symmetry
+
+In {numref}`Sec:Integration:Substitution` we have seen that a clever substitution might give rise to a certain symmetry which makes it easier to evaluate an integral. For some trigonometric functions something like this might work. In the next example we use the substitution $x=\frac{1}{2}\pi-t$ and symmetry to evaluate the integral.
+
 ::::::{prf:Example}
-:label: Ex:Integration:SubstitutionNiceFormula2
-For $a=0$, $b=\frac{1}{2}\pi$ and $f(x)=\sin(x)$ we obtain
+:label: Ex:Integration:SubstitutionSymmetry2
+Using the substitution $x=\frac{1}{2}\pi-t$ and therefore $dx=-\,dt$ we obtain
 
 \begin{align*}
-\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\sin(\frac{1}{2}\pi-x)}\,dx\\
-&=\frac{\frac{1}{2}\pi-0}{2}=\frac{1}{4}\pi.
+I&=\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\cos(x)}\,dx\\
+&=-\int_{\frac{1}{2}\pi}^0\frac{\sin(\frac{1}{2}\pi-t)}{\sin(\frac{1}{2}\pi-t)+\cos(\frac{1}{2}\pi-t)}\,dt\\
+&=\int_0^{\frac{1}{2}\pi}\frac{\sin(\frac{1}{2}\pi-x)}{\sin(\frac{1}{2}\pi-x)+\cos(\frac{1}{2}\pi-x)}\,dx.
 \end{align*}
+
+Now we use (see: {prf:ref}`Thm:Trigonometry:ComplementaryAngles`)
+
+$$
+\sin(\tfrac{1}{2}\pi-x)=\cos(x)\quad\text{and}\quad\cos(\tfrac{1}{2}\pi-x)=\sin(x)
+$$
+
+to find that
+
+$$
+I=\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\cos(x)}\,dx=\int_0^{\frac{1}{2}\pi}\frac{\cos(x)}{\cos(x)+\sin(x)}\,dx.
+$$
+
+Hence we have
+
+$$
+2I=\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\cos(x)}\,dx+\int_0^{\frac{1}{2}\pi}\frac{\cos(x)}{\sin(x)+\cos(x)}\,dx,
+$$
+
+which leads to
+
+$$
+2I=\int_0^{\frac{1}{2}\pi}\frac{\sin(x)+\cos(x)}{\sin(x)+\cos(x)}\,dx=\int_0^{\frac{1}{2}\pi}1\,dx=\frac{1}{2}\pi.
+$$
+
+We conclude that 
+
+$$
+I=\displaystyle\int_0^{\frac{1}{2}\pi}\frac{\sin(x)}{\sin(x)+\cos(x)}\,dx=\frac{1}{4}\pi=\int_0^{\frac{1}{2}\pi}\frac{\cos(x)}{\sin(x)+\cos(x)}\,dx.
+$$
+
 ::::::
 
 ## Exercises
