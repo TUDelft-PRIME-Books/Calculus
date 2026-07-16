@@ -1264,17 +1264,12 @@ $$
 
 We conclude that $f'>0$ on the intervals $\left(0,\dfrac{\pi}{3}\right)$, $\left(\dfrac{2\pi}{3},\dfrac{4\pi}{3}\right)$ and $\left(\dfrac{5\pi}{3},2\pi\right)$, while $f'<0$ on the intervals $\left(\dfrac{\pi}{3},\dfrac{2\pi}{3}\right)$ and $\left(\dfrac{4\pi}{3},\dfrac{5\pi}{3}\right)$. A convenient way to denote this behaviour is by a **sign chart**, see {numref}`Fig:MinMax:Signchart`.
 
-:::{figure} Images/Fig-MinMax-Signchart.png
----
-width: 100%
-name: Fig:MinMax:Signchart
-class: dark-light
----
-A sign chart shows on which intervals the derivative is positive and on which it is negative. Replace the words increasing and decreasing by strictly increasing and strictly decreasing.
-:::
+:::{applet}
+:url: calculus/graphs_and_extreme_values/sign_chart
+:name: Fig:MinMax:Signchart
+:class: dark-light
 
-:::{todo}
-Turn {numref}`Fig:MinMax:Signchart` into an applet. Also indicate the points $0$ and $2\pi$.
+A sign chart shows on which intervals the derivative is positive and on which it is negative and the relation with the increasing and decreasing behaviour of the function.
 :::
 
 According to {prf:ref}`Thm:MinMax:Firstdertest` the function attains a local maximum at $x=\dfrac{\pi}{3}$ and $x=\dfrac{4\pi}{3}$, while it attains a local minimum at $x=\dfrac{2\pi}{3}$ and $x=\dfrac{5\pi}{3}$. This can also be seen in the graph of the function.
