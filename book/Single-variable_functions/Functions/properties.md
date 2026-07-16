@@ -828,7 +828,7 @@ In fact, any other period of a periodic function must be an integer multiple of 
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Fundperiod
 
-Let $f$ be a periodic function which has a fundamental period $T_0$. If $T$ is a period of $f$, then so is $T=nT_0$ for some integer $n\geq 1$.
+Let $f$ be a periodic function which has a fundamental period $T_0$. If $T$ is a period of $f$, then we have $T=nT_0$ for some integer $n\geq 1$.
 
 ::::::
 
@@ -1241,9 +1241,63 @@ The odd and even periodic extensions of a given function $f$ for $0\leq x\leq 2$
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3e06d126-b9ad-41d1-9dac-f507e3da6432?id=134146
+:label: Grasple:134146
+:dropdown:
+:description: Find the fundamental period
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a10c990e-645f-4ba8-8503-ad8262046ca5?id=134147
+:label: Grasple:134147
+:dropdown:
+:description: Find the fundamental period
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bb0d0f86-5471-486e-8808-ea43548f29de?id=134148
+:label: Grasple:134148
+:dropdown:
+:description: Find the fundamental period
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/abaf8f66-d36c-475d-b7ec-887387cdff8b?id=79439
 :label: Grasple:79439
 :dropdown:
 :description: Dissecting a trigonometric function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b0564864-7665-46fa-89ca-16ec1326344e?id=134150
+:label: Grasple:134150
+:dropdown:
+:description: Graph of a periodic extension.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2ad4d89f-69f6-4381-ad23-1b2cc56ff279?id=134154
+:label: Grasple:134154
+:dropdown:
+:description: Graph of a periodic extension.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5a6038a5-2d78-49e6-aeb1-44b0da0cc0c2?id=134159
+:label: Grasple:134159
+:dropdown:
+:description: Even and odd periodic extensions.
 
 ::::
