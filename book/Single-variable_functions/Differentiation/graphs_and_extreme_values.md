@@ -6,7 +6,7 @@
 
 ## Introduction
 
-[^FootnoteImportant]: This is perhaps even the most imporant question.
+[^FootnoteImportant]: This is perhaps even the most important question.
 
 Now that we know the derivatives of most standard functions, we can ask a very important question[^FootnoteImportant]: what can we actually do with derivatives? We have seen that we can use them to find tangent lines, but that is about it. For higher order derivatives we have not even seen *any* uses (yet). However, there is much more that derivatives can tell us. In fact, most qualitative behaviour of a function is captured in its derivatives. For instance, we will see that we can use the first derivative to determine whether a function is increasing or decreasing on an interval.
 
@@ -1108,8 +1108,8 @@ The reasoning we used in {prf:ref}`Ex:MinMax:CriticalPart2` to determine whether
 :label: Thm:MinMax:Firstdertest
 Let $c$ be a point in the domain of a continuous function $f$.
 
-- If $f'$ changes from nonpositive to nonnegative at $c$, i.e. $f'(x)\leq 0$ for $x<c$ near $c$ and $f'(x)\geq 0$ for $x>c$ near $c$, then $f(c)$ is a local minimum of $f$.
-- If $f'$ changes from nonnegative to nonpositive at $c$, i.e. $f'(x)\geq 0$ for $x<c$ near $c$ and $f'(x)\leq 0$ for $x>c$ near $c$, then $f(c)$ is a local maximum of $f$.
+- If $f'$ changes from non-positive to nonnegative at $c$, i.e. $f'(x)\leq 0$ for $x<c$ near $c$ and $f'(x)\geq 0$ for $x>c$ near $c$, then $f(c)$ is a local minimum of $f$.
+- If $f'$ changes from nonnegative to non-positive at $c$, i.e. $f'(x)\geq 0$ for $x<c$ near $c$ and $f'(x)\leq 0$ for $x>c$ near $c$, then $f(c)$ is a local maximum of $f$.
 - If $f'(x)>0$ for all $x$ near $c$ (excluding $x=c$) or if $f'(x)<0$ for all $x$ near $c$ (excluding $x=c$) then $f(c)$ is neither a local minimum nor a local maximum of $f$.
 ::::::
 
@@ -1274,14 +1274,12 @@ A sign chart shows on which intervals the derivative is positive and on which it
 
 According to {prf:ref}`Thm:MinMax:Firstdertest` the function attains a local maximum at $x=\dfrac{\pi}{3}$ and $x=\dfrac{4\pi}{3}$, while it attains a local minimum at $x=\dfrac{2\pi}{3}$ and $x=\dfrac{5\pi}{3}$. This can also be seen in the graph of the function.
 
-:::{figure} Images/Fig-MinMax-Firstdivtest2.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/classifying_critical_points
 :name: Fig:MinMax:Firstdivtest2
+:class: dark-light
 
-The graph of the function $f$ from {prf:ref}`Ex:MinMax:Firstdivtest` and its local extrema.
-:::
-
-:::{todo}
-Convert {numref}`Fig:MinMax:Firstdivtest2` into an applet.
+The graph of the function $f$ from {prf:ref}`Ex:MinMax:Firstdivtest` and its local extrema, superimposed on the sign chart from {numref}`Fig:MinMax:Signchart`.
 :::
 
 ::::::
@@ -1342,15 +1340,13 @@ An advantage the second derivative test has over the first derivative test is th
 A major disadvantage of the second derivative test is that it can never be used to show that a critical point is **not** a local extremum. Indeed, anything can happen when the second derivative is $0$ at a critical point. For instance, if we consider the functions $f(x)=x^4$, $g(x)=5x^5$ and $h(x)=-\frac16x^6$, then $0$ is a critical point for each of these and the second derivative of each of these functions is $0$ at $0$. However, using the first derivative test we can show that $f$ has a local minimum at $0$, $g$ does not have a local extremum at $0$, while $h$ has a local maximum at $0$. This can also be seen in the graphs of these functions.
 
 
-:::{figure} Images/Fig-MinMax-SeconddivNote.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/disadvantage_of_the_second_derivative_test
 :name: Fig:MinMax:SeconddivNote
+:class: dark-light
 
 Three functions with a critical point in $0$ and a second derivative of $0$ in $0$. The function $f(x)=x^4$ has a local minimum at $0$, the function $g(x)=5x^5$ does not have a local extremum at $0$, while the function $h(x)=-\frac16x^6$ has a local maximum at $0$.
 
-:::
-
-:::{todo}
-Replace {numref}`Fig:MinMax:SeconddivNote` with an applet.
 :::
 
 ::::
@@ -1392,15 +1388,15 @@ So according to {prf:ref}`Thm:MinMax:Seconddertest`, $f$ has a local maximum at 
 
 Our conclusion are supported by the graphs of $f$, $f'$ and $f''$ shown in {numref}`Fig:MinMax:SeconddivEx`.
 
-:::{figure} Images/Fig-MinMax-SeconddivEx.png
+:::{applet}
+:url: calculus/graphs_and_extreme_values/second_derivative_test
 :name: Fig:MinMax:SeconddivEx
+:class: dark-light
 
 The graph of the function $f$, $f'$ and $f''$ from {prf:ref}`Ex:MinMax:Seconddiv` and the local extrema of $f$.
 :::
 
-:::{todo}
-Convert {numref}`Fig:MinMax:SeconddivEx` into an applet.
-:::
+
 ::::::
 
 
