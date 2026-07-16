@@ -29,20 +29,19 @@ is continuous on $[a,b]$ and differentiable on $(a,b)$, and $F'(x)=f(x)$.
 :class: tudproof, dropdown
 :name: Prf:Integration:FundamentalTheoremPart1
 
-```{figure} Images/FundamentalTheorem.png
----
-width: 50%
-name: FundamentalTheorem
-class: dark-light
----
+:::{applet}
+:url: calculus/fundamental_theorem_of_calculus/proof_of_part_1
+:name: FundamentalTheorem
+:class: dark-light
+:nonumber:
 
-The fundamental theorem of calculus.
-```
+An illustration of the integral $\displaystyle \frac{1}{h}\int_x^{x+h}f(t)\,dt$ of which the limit is considered in the proof of the fundamental theorem of calculus below.
+:::
 
 Using the third rule of {prf:ref}`Thm:Integration:DefinitePropertiesArea` and {prf:ref}`Def:Differentiability:Derivative`, we obtain
 
 \begin{align*}
-F'(x)&=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}\\
+F'(x)&=\lim_{h\to 0}\frac{F(x+h)-F(x)}{h}\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x}f(t)\,dt+\int_x^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)\,dt.
@@ -81,13 +80,23 @@ Because $f$ is continuous on $[a,b]$, it follows from {prf:ref}`Thm:Integration:
 ::::::{prf:Example}
 :label: Ex:Integration:FundamentalTheoremPart1Example1
 
-We take $F(x)=\displaystyle\int_0^xe^{t^2}\,dt$ and want to determine $F'(x)$.
+We take $F(x)=\displaystyle\int_0^x2e^{-\frac14t^2}\,dt$ and want to determine $F'(x)$.
 
 We not need to evaluate the integral, which would be impossible in terms of elementary functions. However, application of the fundamental theorem of calculus leads to the immediate solution 
 
 $$
-F'(x)=\frac{d}{dx}\int_0^xe^{t^2}\,dt=e^{x^2}.
+F'(x)=\frac{d}{dx}\int_0^x2e^{-\frac14t^2}\,dt=2e^{-\frac14x^2}.
 $$
+
+In {numref}`Fig:Integration:FundamentalTheoremPart1Example1` we show the graph of the function $f$ on the left and the function $F$ on the right. On the left we included the area under the graph of $f$ from $0$ to $x$, which is exactly the value of $F(x)$. The slope of the tangent line to the graph of $F$ at $x$ is also shown and is equal to the value of $f(x)$, which is exactly what the fundamental theorem of calculus states.
+
+:::{applet}
+:url: calculus/fundamental_theorem_of_calculus/visualisation_1_of_part_1
+:name: Fig:Integration:FundamentalTheoremPart1Example1
+:class: dark-light
+
+The graph of the function $f(t)=2e^{-\frac14t^2}$ on the left and the function $F(x)=\displaystyle\int_0^x2e^{-\frac14t^2}\,dt$ on the right.
+:::
 
 ::::::
 
@@ -264,18 +273,14 @@ $$
 
 We want to evaluate the integral $\displaystyle\int_0^{\pi}\sin(x)\,dx$.
 
-```{figure} Images/sine_area.png
----
-width: 50%
-name: Fig:Integration:SineArea
-align: center
----
-The function $\sin(x)$ on the interval $[0,\pi]$.
-```
+:::{applet}
+:url: calculus/fundamental_theorem_of_calculus/integral_of_sine
+:name: Fig:Integration:SineArea
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Integration:SineArea` with an applet.
+The function $\sin(x)$ on the interval $[0,\pi]$.
 :::
+
 
 This is the same as calculating the area under one positive arc of the sine function, which is shown in the figure above, and this area is:
 
