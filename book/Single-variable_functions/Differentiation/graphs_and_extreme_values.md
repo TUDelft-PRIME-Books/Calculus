@@ -386,7 +386,7 @@ Both the continuity of the function and the closedness of the interval are neces
 :name: Fig:MinMax:EVT
 :class: dark-light
 
-(_left_) The continuous function $f(x)=\dfrac{1}{x}$ on the non-closed interval $(0,1)$.<br>(_right_) The function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$. 
+(_left_) The continuous function $f(x)=\dfrac{1}{x}$ on the non-closed interval $(0,1)$.<br>(_right_) The non-continuous function $g(x)=\left\{\begin{array}{l}x,\qquad &\text{if}\ 0\leq x<2,\\ 1,\qquad &\text{if}\ 2\leq x\leq 4\end{array}\right.$ on the closed interval $[0,4]$. 
 :::
 
 [^FootnoteWeierstrass]: Looking at you, [Weierstrass function](https://en.wikipedia.org/wiki/Weierstrass_function).
@@ -743,7 +743,7 @@ $$
 :name: Fig:MinMax:CauchyMVT
 :class: dark-light
 
-An illustration of {prf:ref}`Thm:MinMax:MVTCauchy`. We see the curve with parametrisation $(f(x),g(x))$ for $a\leq x\leq b$. The slope of the vector from the start to the end point is $\frac{g(b)-g(a)}{f(b)-f(a)}$. The vector $\begin{pmatrix} g'(c)\\ f'(c)\end{pmatrix}$ is tangent to the curve at the point $c$ (it is the tangent vector, see {numref}`Subsec:Slopeparam`). The slope of this vector is $\frac{g'(c)}{f'(c)}$, which is equal to the slope of the vector from the start to the end point, as guaranteed by {prf:ref}`Thm:MinMax:MVTCauchy`. Note that the same holds for the point $(f(d),g(d))$, which is also shown in the figure.
+An illustration of {prf:ref}`Thm:MinMax:MVTCauchy`. We see the curve with parametrisation $(f(x),g(x))$ for $a\leq x\leq b$. The slope of the vector from the start to the end point is $\frac{g(b)-g(a)}{f(b)-f(a)}$. The vector $\begin{pmatrix} f'(c)\\ g'(c)\end{pmatrix}$ is tangent to the curve at the point $c$ (it is the tangent vector, see {numref}`Subsec:Slopeparam`). The slope of this vector is $\frac{g'(c)}{f'(c)}$, which is equal to the slope of the vector from the start to the end point, as guaranteed by {prf:ref}`Thm:MinMax:MVTCauchy`. Note that the same holds for the point $(f(d),g(d))$, which is also shown in the figure.
 :::
 
 Let us see how the mean value theorem can be used in practice.
