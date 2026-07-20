@@ -80,22 +80,22 @@ Because $f$ is continuous on $[a,b]$, it follows from {prf:ref}`Thm:Integration:
 ::::::{prf:Example}
 :label: Ex:Integration:FundamentalTheoremPart1Example1
 
-We take $F(x)=\displaystyle\int_0^x2e^{-\frac14t^2}\,dt$ and want to determine $F'(x)$.
+We take $F(x)=\displaystyle\int_0^x\cos(t)e^{\sin(t)}\,dt$ and want to determine $F'(x)$.
 
-We not need to evaluate the integral, which would be impossible in terms of elementary functions. However, application of the fundamental theorem of calculus leads to the immediate solution 
+We not need to evaluate the integral, which is possible in terms of elementary functions. However, this is the subject of a future section ({numref}`Sec:Integration:Substitution`), but it is also not necessary, as application of the fundamental theorem of calculus leads to the immediate solution 
 
 $$
-F'(x)=\frac{d}{dx}\int_0^x2e^{-\frac14t^2}\,dt=2e^{-\frac14x^2}.
+F'(x)=\frac{d}{dx}\int_0^x\cos(t)e^{\sin(t)}\,dt=\cos(x)e^{\sin(x)}.
 $$
 
-In {numref}`Fig:Integration:FundamentalTheoremPart1Example1` we show the graph of the function $f$ on the left and the function $F$ on the right. On the left we included the area under the graph of $f$ from $0$ to $x$, which is exactly the value of $F(x)$. The slope of the tangent line to the graph of $F$ at $x$ is also shown and is equal to the value of $f(x)$, which is exactly what the fundamental theorem of calculus states.
+In {numref}`Fig:Integration:FundamentalTheoremPart1Example1` we show the graph of the function $F'$ on the left and the function $F$ on the right. On the left we included the area under the graph of $F'$ from $0$ to $x$, which is exactly the value of $F(x)$ on the right. The slope of the tangent line to the graph of $F$ at $x$ on the left is also shown and is equal to the value of $F'(x)$, which is exactly what the fundamental theorem of calculus states.
 
 :::{applet}
 :url: calculus/fundamental_theorem_of_calculus/visualisation_1_of_part_1
 :name: Fig:Integration:FundamentalTheoremPart1Example1
 :class: dark-light
 
-The graph of the function $f(t)=2e^{-\frac14t^2}$ on the left and the function $F(x)=\displaystyle\int_0^x2e^{-\frac14t^2}\,dt$ on the right.
+The graph of the function $F'(x)=\cos(x)e^{\sin(x)}$ on the left and the function $F(x)=\displaystyle\int_0^x\cos(t)e^{\sin(t)}\,dt$ on the right.
 :::
 
 ::::::
@@ -111,6 +111,16 @@ Now we apply the chain rule: $G'(x)=H'(u)\dfrac{du}{dx}$. This reads
 $$
 G'(x)=\cos\left((\sqrt{x})^2\right)\cdot\frac{d}{dx}(\sqrt{x})=\cos(x)\cdot\frac{1}{2\sqrt{x}}=\frac{\cos(x)}{2\sqrt{x}}.
 $$
+
+{numref}`Fig:Integration:FundamentalTheoremPart1Example2` shows the graph of the function $G'$ on the left and the function $G$ on the right. On the left we included the area under the graph of $G'$ from $0$ to $\sqrt{x}$, which is exactly the value of $G(x)$ on the right. The slope of the tangent line to the graph of $G$ at $x$ on the left is also shown and is equal to the value of $G'(x)$, which is exactly what the fundamental theorem of calculus states.
+
+:::{applet}
+:url: calculus/fundamental_theorem_of_calculus/visualisation_2_of_part_1
+:name: Fig:Integration:FundamentalTheoremPart1Example2
+:class: dark-light
+
+The graph of the function $G'(x)=\frac{\cos(x)}{2\sqrt{x}}$ on the left and the function $G(x)=\displaystyle\int_0^{\sqrt{x}}\cos(t^2)\,dt$ on the right.
+:::
 
 ::::::
 
@@ -177,7 +187,7 @@ Note that this even works if $x^2<x$ and if $x>0$. Now we can differentiate both
 :admonition:
 :showanswer:
 
-Fill in the correct answer in the input fields.
+Calculate the following derivatives using the fundamental theorem of calculus.
 ---
 M[\sin(x^2)] $\displaystyle\frac{d}{dx}\int_0^x\sin(t^2)\,dt=$
 = Apply the fundamental theorem of calculus to find that 
@@ -188,7 +198,7 @@ $$
 > Apply the fundamental theorem of calculus.
 
 M[0] $\displaystyle\frac{d}{dx}\int_0^y\sin(t^2)\,dt=$
-= Note that $\displaystyle\int_0^y\sin(t^2)\,dt$ is a function of $y$, independent of $x$. So, the derivative with respect equals zero.
+= Note that $\displaystyle\int_0^y\sin(t^2)\,dt$ is a function of $y$, independent of $x$. So, the derivative with respect to $x$ equals zero.
 > Note that $\displaystyle\int_0^y\sin(t^2)\,dt$ does not depend on $x$.
 
 M[2xy\cos(x^2)] $\displaystyle\frac{d}{dx}\int_0^y\sin(x^2)\,dt=$
@@ -335,19 +345,14 @@ $$
 
 which implies that the function is increasing. Furthermore, $\erf(0)=0$ and $\lim\limits_{x\to\infty}\erf'(x)=0$.
 
-Later we will see that $\lim\limits_{x\to\infty}\erf(x)=1$. The graph of $\erf(x)$ for $x\geq0$ is given below:
+Later we will see that $\lim\limits_{x\to\infty}\erf(x)=1$. The graph of $\erf(x)$ for $x\geq0$ is given below.
 
-```{figure} Images/error_function.png
----
-width: 50%
-name: Fig:Integration:ErrorFunction
-align: center
----
-Graph of $\erf(x)$ for $x\geq0$.
-```
+:::{applet}
+:url: calculus/fundamental_theorem_of_calculus/error_function
+:name: Fig:Integration:ErrorFunction
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Integration:ErrorFunction` with an applet.
+The graph of the error function on the right and its derivative on the left.
 :::
 
 ::::::
@@ -387,20 +392,16 @@ $$
 
 Hence, $S'(x)=0$ for $x=\sqrt{2k}$ with $k=0,1,2,\ldots$
 
-The graphs of $C(x)$ and $S(x)$ for $0\leq x\leq4$ are given below:
+The graphs of $C(x)$ and $S(x)$ and their derivatives are given below.
 
-```{figure} Images/fresnel.png
----
-width: 50%
-name: Fig:Integration:FresnelFunctions
-align: center
----
-Graphs of $C(x)$ and $S(x)$ for $0\leq x\leq4$.
-```
+:::{applet}
+:url: calculus/fundamental_theorem_of_calculus/fresnel_integrals
+:name: Fig:Integration:FresnelFunctions
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Integration:FresnelFunctions` with an applet.
+The graph of the Fresnel integrals on the right and their derivatives on the left.
 :::
+
 
 ::::::
 
@@ -409,16 +410,6 @@ Replace {numref}`Fig:Integration:FresnelFunctions` with an applet.
 In {prf:ref}`Thm:MinMax:MVT` we have seen the mean value theorem that states that the derivative of a continuous and differentiable function on a finite interval equals its average slope somewhere in the interval.
 
 For integrals we have the following version.
-
-```{figure} Images/MeanValueTheoremIntegrals.png
----
-width: 50%
-name: MeanValueTheoremIntegrals
-class: dark-light
----
-
-The mean value theorem for integrals.
-```
 
 :::::{prf:theorem} Mean value theorem for integrals
 :label: Thm:Integration:MeanValueTheorem
@@ -451,6 +442,16 @@ $$
 
 This proves the theorem.
 :::::
+
+In {numref}`Fig:Integration:MeanValueTheoremIntegrals` we illustrate the mean value theorem for integrals. Note that the area under the graph of $f$ from $a$ to $b$ equals the area of the rectangle with height $f(c)$ and width $b-a$. Also note that in this case there are even two options for $c$.
+
+:::{applet}
+:url: calculus/fundamental_theorem_of_calculus/mean_value_theorem
+:name: Fig:Integration:MeanValueTheoremIntegrals
+:class: dark-light
+
+The mean value theorem for integrals illustrated.
+:::
 
 ## Grasple exercises
 
