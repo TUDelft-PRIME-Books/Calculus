@@ -38,7 +38,7 @@ Let $a,b,c\in\mathbb{R}$, $c\neq0$ and $k,m\in\{2,3,\ldots\}$. Then we have
 
 ::::::
 
-The last integral in the sixth case can be evaluated using the techniques for trigonometric integrals, which is covered in {numref}`Sec:Integration:TrigFunctions`.
+The last integral in the sixth case can be evaluated using the techniques for trigonometric integrals, which is covered in {numref}`Sec:Integration:TrigonometricFunctions`.
 
 ::::{admonition} Proof of {prf:ref}`Thm:RationalFunctions:Cases`
 :class: tudproof
@@ -297,7 +297,7 @@ $$
 \int\frac{dx}{(x^2+1)^2}\quad\text{and}\quad\int\frac{dx}{(x^2+2)^2}.
 $$ 
 
-To show you how to handle these integrals, we give two short examples next. For more details we refer to {numref}`sec:Integration:TrigFunctions`.
+To show you how to handle these integrals, we give two short examples next. For more details we refer to {numref}`Sec:Integration:TrigonometricFunctions`.
 
 ::::::{prf:Example}
 :label: Ex:Integration:RationalFunctionsRepeatedExample1
@@ -355,3 +355,142 @@ Hence, we have
 ::::::
 
 ## Grasple exercises
+
+### Indefinite integrals
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a25745fa-6c3c-4e61-86ea-0cb5c9f39fe6?id=64153
+:label: Grasple:64153
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e7ac1512-4af5-4f4e-a901-b5e24bdfaec5?id=64152
+:label: Grasple:64152
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/50408c37-f303-4f2b-97c4-aea58461e986?id=64151
+:label: Grasple:64151
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6432d5fa-e256-49bf-9ef1-b31359d4a042?id=64150
+:label: Grasple:64150
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0134cca0-de18-4c60-b181-64ed697b0f17?id=64154
+:label: Grasple:64154
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c34a3592-bf5a-4625-9569-90006298c3b9?id=64156
+:label: Grasple:64156
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/728f469d-03c5-46a9-b28e-20b923a69034?id=64160
+:label: Grasple:64160
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9c0d2bbc-444b-4cb8-8e1f-4e32683ca216?id=64155
+:label: Grasple:64155
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b7aeaf97-5655-486b-b7eb-b2e225aa1945?id=76968
+:label: Grasple:76968
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/22e60228-e6be-4924-9356-6c9f69e81dee?id=134683
+:label: Grasple:134683
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8bceea87-a82e-40ee-b9d2-90dba9cc1ab2?id=134719
+:label: Grasple:134719
+:dropdown:
+:description: Evaluate the indefinite integral.
+
+::::
+
+### Definite integrals
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/706c75f9-abfe-443d-8b22-78013da6a818?id=64092
+:label: Grasple:64092
+:dropdown:
+:description: Evaluate the definite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9db908dc-4900-4fc2-b525-1dfca1cdfb8b?id=71420
+:label: Grasple:71420
+:dropdown:
+:description: Evaluate the definite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fe3242cd-3052-45f2-a103-3e3093b4e6b7?id=64085
+:label: Grasple:64085
+:dropdown:
+:description: Evaluate the definite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fe3242cd-3052-45f2-a103-3e3093b4e6b7?id=64085
+:label: Grasple:64085
+:dropdown:
+:description: Evaluate the definite integral.
+
+::::

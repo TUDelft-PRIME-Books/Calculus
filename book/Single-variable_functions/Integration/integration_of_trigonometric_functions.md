@@ -780,685 +780,196 @@ $$
 
 ::::::
 
-## Exercises
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsExerciseSinDouble
-Consider the integral $\displaystyle\int\sin(2x)\,dx$.
-
-(a) Use the substitution $t=2x$ to evaluate the integral.
-
-(b) Use $\sin(2x)=2\sin(x)\cos(x)$ and the substitution $t=\sin(x)$ to evaluate the integral.
-
-(c) Use $\sin(2x)=2\sin(x)\cos(x)$ and the substitution $t=\cos(x)$ to evaluate the integral.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsExerciseSinDouble`
-:class: solution, dropdown
-(a) The substitution $t=2x$ implies that $dt=2\,dx$ and therefore
-
-$$
-\int\sin(2x)\,dx==\frac{1}{2}\int\sin(t)\,dt=-\frac{1}{2}\cos(t)+C=-\frac{1}{2}\cos(2x)+C.
-$$
-
-(b) The substitution $t=\sin(x)$ implies that $dt=\cos(x)\,dx$ and therefore
-
-$$
-\int\sin(2x)\,dx=2\int\sin(x)\cos(x)\,dx=2\int t\,dt=t^2+C=\sin^2(x)+C.
-$$
-
-(c) The substitution $t=\cos(x)$ implies that $dt=-\sin(x)\,dx$ and therefore
-
-$$
-\int\sin(2x)\,dx=2\int\sin(x)\cos(x)\,dx=-2\int t\,dt=-t^2+C=-\cos^2(x)+C.
-$$
-
-This implies that the functions $-\frac{1}{2}\cos(2x)$, $\sin^2(x)$ and $-\cos^2(x)$ should differ by a constant, which is true since {prf:ref}`Thm:Trigonometry:DoubleAngleFormulas` implies that
-
-$$
--\frac{1}{2}+\sin^2(x)=-\frac{1}{2}\cos(2x)=\frac{1}{2}-\cos^2(x).
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsCos
-(a) Show that $\displaystyle\ln\left|\frac{1+\sin(x)}{\cos(x)}\right|=-\ln\left|\frac{1-\sin(x)}{\cos(x)}\right|$.
-
-(b) Show that $\displaystyle\frac{d}{dx}\left(\ln\left|\frac{1+\sin(x)}{\cos(x)}\right|\right)=\frac{1}{\cos(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsCos`
-:class: solution, dropdown
-(a)
-
-\begin{align*}
-\ln\left|\frac{1+\sin(x)}{\cos(x)}\right|&=\ln\left|\frac{1+\sin(x)}{\cos(x)}\cdot\frac{1-\sin(x)}{1-\sin(x)}\right|=\ln\left|\frac{1-\sin^2(x)}{\cos(x)(1-\sin(x))}\right|\\
-&=\ln\left|\frac{\cos(x)}{1-\sin(x)}\right|=-\ln\left|\frac{1-\sin(x)}{\cos(x)}\right|.
-\end{align*}
-(b)
-
-$$
-\frac{d}{dx}\left(\ln\left|\frac{1+\sin(x)}{\cos(x)}\right|\right)=\frac{\cos(x)}{1+\sin(x)}\cdot\frac{\cos^2(x)+\sin(x)+\sin^2(x)}{\cos^2(x)}=\frac{1}{\cos(x)}.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsSin
-(a) Show that $\displaystyle-\ln\left|\frac{1+\cos(x)}{\sin(x)}\right|=\ln\left|\frac{1-\cos(x)}{\sin(x)}\right|$.
-
-(b) Show that $\displaystyle\frac{d}{dx}\left(\ln\left|\frac{1-\cos(x)}{\sin(x)}\right|\right)=\frac{1}{\sin(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsSin`
-:class: solution, dropdown
-(a)
-
-\begin{align*}
--\ln\left|\frac{1+\cos(x)}{\sin(x)}\right|&=-\ln\left|\frac{1+\cos(x)}{\sin(x)}\cdot\frac{1-\cos(x)}{1-\cos(x)}\right|\\
-&=-\ln\left|\frac{1-\cos^2(x)}{\sin(x)(1-\cos(x))}\right|\\
-&=-\ln\left|\frac{\sin(x)}{1-\cos(x)}\right|=\ln\left|\frac{1-\cos(x)}{\sin(x)}\right|.
-\end{align*}
-(b)
-
-$$
-\frac{d}{dx}\left(\ln\left|\frac{1-\cos(x)}{\sin(x)}\right|\right)=\frac{\sin(x)}{1-\cos(x)}\cdot\frac{\sin^2(x)-\cos(x)+\cos^2(x)}{\sin^2(x)}=\frac{1}{\sin(x)}.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsCosSubstitution
-Use $\displaystyle\frac{1}{\cos(x)}=\frac{\cos(x)}{\cos^2(x)}$ and the substitution $u=\sin(x)$ to evaluate $\displaystyle\int\frac{dx}{\cos(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsCosSubstitution`
-:class: solution, dropdown
-
-\begin{align*}
-\int\frac{dx}{\cos(x)}&=\int\frac{\cos(x)}{\cos^2(x)}\,dx=\int\frac{d\sin(x)}{1-\sin^2(x)}=\int\frac{du}{1-u^2}\\
-&=\frac{1}{2}\int\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du=\frac{1}{2}\left(\ln|1+u|-\ln|1-u|\right)+C\\
-&=\frac{1}{2}\ln\left|\frac{1+u}{1-u}\right|+C=\frac{1}{2}\ln\left|\frac{1+\sin(x)}{1-\sin(x)}\right|+C.
-\end{align*}
-
-Note that
-
-$$
-\frac{1+\sin(x)}{1-\sin(x)}=\frac{1+\sin(x)}{1-\sin(x)}\cdot\frac{1+\sin(x)}{1+\sin(x)}=\frac{(1+\sin(x))^2}{1-\sin^2(x)}=\frac{(1+\sin(x))^2}{\cos^2(x)}.
-$$
-
-Hence, we have
-
-$$
-\int\frac{dx}{\cos(x)}=\ln\left|\frac{1+\sin(x)}{\cos(x)}\right|+C.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsSinSubstitution
-Use $\displaystyle\frac{1}{\sin(x)}=\frac{\sin(x)}{\sin^2(x)}$ and the substitution $u=\cos(x)$ to evaluate $\displaystyle\int\frac{dx}{\sin(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsSinSubstitution`
-:class: solution, dropdown
-
-\begin{align*}
-\int\frac{dx}{\sin(x)}&=\int\frac{\sin(x)}{\sin^2(x)}\,dx=-\int\frac{d\,\cos(x)}{1-\cos^2(x)}=-\int\frac{du}{1-u^2}\\
-&=-\frac{1}{2}\int\left(\frac{1}{1+u}+\frac{1}{1-u}\right)\,du=-\frac{1}{2}\left(\ln|1+u|-\ln|1-u|\right)+C\\
-&=-\frac{1}{2}\ln\left|\frac{1+u}{1-u}\right|+C=-\frac{1}{2}\ln\left|\frac{1+\cos(x)}{1-\cos(x)}\right|+C.
-\end{align*}
-
-Note that
-
-$$
-\frac{1+\cos(x)}{1-\cos(x)}=\frac{1+\cos(x)}{1-\cos(x)}\cdot\frac{1+\cos(x)}{1+\cos(x)}=\frac{(1+\cos(x))^2}{1-\cos^2(x)}=\frac{(1+\cos(x))^2}{\sin^2(x)}.
-$$
-
-Hence, we have
-
-$$
-\int\frac{dx}{\sin(x)}=-\ln\left|\frac{1+\cos(x)}{\sin(x)}\right|+C.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsPowerOddSinOddCos
-Consider $\displaystyle\int\sin^3(x)\cos^5(x)\,dx$.
-
-(a) Evaluate the integral using the substitution $u=\cos(x)$.
-
-(b) Evaluate the integral using the substitution $u=\sin(x)$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsPowerOddSinOddCos`
-:class: solution, dropdown
-
-(a) Using $=\cos(x)$ we have
-
-\begin{align*}
-\int\sin^3(x)\cos^5(x)\,dx&=-\int\sin^2(x)\cos^5(x)\,d\cos(x)\\
-&=-\int\left(1-\cos^2(x)\right)\cos^5(x)\,d\cos(x)\\
-&=-\int(1-u^2)u^5\,du=-\int(u^5-u^7)\,du\\
-&=-\frac{1}{6}u^6+\frac{1}{8}u^8+C\\
-&=-\frac{1}{6}\cos^6(x)+\frac{1}{8}\cos^8(x)+C.
-\end{align*}
-
-(b) Using $=\sin(x)$ we have
-
-\begin{align*}
-\int\sin^3(x)\cos^5(x)\,dx&=\int\sin^3(x)\cos^4(x)\,d\sin(x)\\
-&=\int\sin^3(x)\left(1-\sin^2(x)\right)^2\,d\sin(x)\\
-&=\int u^3\left(1-u^2\right)^2\,du=\int u^3\left(1-2u^2+u^4\right)\,du\\
-&=\int\left(u^3-2u^5+u^7\right)\,du\\
-&=\frac{1}{4}u^4-\frac{1}{3}u^6+\frac{1}{8}u^8+C\\
-&=\frac{1}{4}\sin^4(x)-\frac{1}{3}\sin^6(x)+\frac{1}{8}\sin^8(x)+C.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsProductFormulasOrthogonality
-Show that for $m,n\in\mathbb{N}$ we have
-
-(a) $\displaystyle\int_{-\pi}^{\pi}\cos(mx)\cos(nx)\,dx=\begin{cases}0, &m\neq n\\\pi, &m=n,\end{cases}$
-
-(b) $\displaystyle\int_{-\pi}^{\pi}\sin(mx)\sin(nx)\,dx=\begin{cases}0, &m\neq n\\\pi, &m=n,\end{cases}$
-
-and
-
-(c) $\displaystyle\int_{-\pi}^{\pi}\sin(mx)\cos(nx)\,dx=0$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsProductFormulasOrthogonality`
-:class: solution, dropdown
-(a) For $m\neq n$ we have
-
-\begin{align*}
-&\int_{-\pi}^{\pi}\cos(mx)\cos(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\left(\cos((m-n)x)+\cos((m+n)x)\right)\,dx\\
-&=\bigg[\frac{1}{2(m-n)}\sin((m-n)x)+\frac{1}{2(m+n)}\sin((m+n)x)\bigg]_{-\pi}^{\pi}=0.
-\end{align*}
-
-For $m=n$ we use a half-angle formula to obtain
-
-$$
-\int_{-\pi}^{\pi}\cos^2(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}(1+\cos(2nx))\,dx=\frac{1}{2}\bigg[x+\frac{1}{2n}\sin(2nx)\bigg]_{-\pi}^{\pi}=\pi.
-$$
-
-(b) For $m\neq n$ we have
-
-\begin{align*}
-&\int_{-\pi}^{\pi}\sin(mx)\sin(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\left(\cos((m-n)x)-\cos((m+n)x)\right)\,dx\\
-&=\bigg[\frac{1}{2(m-n)}\sin((m-n)x)-\frac{1}{2(m+n)}\sin((m+n)x)\bigg]_{-\pi}^{\pi}=0.
-\end{align*}
-
-For $m=n$ we use a half-angle formula to obtain
-
-$$
-\int_{-\pi}^{\pi}\sin^2(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}(1-\cos(2nx))\,dx=\frac{1}{2}\bigg[x-\frac{1}{2n}\sin(2nx)\bigg]_{-\pi}^{\pi}=\pi.
-$$
-
-(c) For $m\neq n$ we obtain
-
-\begin{align*}
-&\int_{-\pi}^{\pi}\sin(mx)\cos(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\left(\sin((m-n)x)+\sin((m+n)x)\right)\,dx\\
-&=\bigg[-\frac{1}{2(m-n)}\cos((m-n)x)-\frac{1}{2(m+n)}\cos((m+n)x)\bigg]_{-\pi}^{\pi}=0.
-\end{align*}
-
-Moreover, if $m=n$ we also have
-
-$$
-\int_{-\pi}^{\pi}\sin(nx)\cos(nx)\,dx=\frac{1}{2}\int_{-\pi}^{\pi}\sin(2nx)\,dx=-\frac{1}{4n}\cos(2nx)\bigg|_{-\pi}^{\pi}=0,\quad n\neq0
-$$
-
-and this integral trivially vanishes when $n=0$.
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsPowerTanEven
-Find a general formula for $\displaystyle\int\tan^{2k}(x)\,dx$ for $k=1,2,3,\ldots$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsPowerTanEven`
-:class: solution, dropdown
-For $k=1,2,3,\ldots$ we have
-
-\begin{align*}
-\int\tan^{2k}(x)\,dx&=\frac{1}{2k-1}\tan^{2k-1}(x)-\frac{1}{2k-3}\tan^{2k-3}(x)+\frac{1}{2k-5}\tan^{2k-5}(x)+\ldots\\
-&{}\quad\quad\quad{}\ldots+(-1)^{k-2}\frac{1}{3}\tan^3(x)+(-1)^{k-1}\tan(x)+(-1)^kx+C.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsPowerTanOdd
-Find a general formula for $\displaystyle\int\tan^{2k+1}(x)\,dx$ for $k=1,2,3,\ldots$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsPowerTanOdd`
-:class: solution, dropdown
-For $k=1,2,3,\ldots$ we have
-
-\begin{align*}
-\int\tan^{2k+1}(x)\,dx&=\frac{1}{2k}\tan^{2k}(x)-\frac{1}{2k-2}\tan^{2k-2}(x)+\frac{1}{2k-4}\tan^{2k-4}(x)+\ldots\\
-&{}\quad\quad\quad{}\ldots+(-1)^{k-2}\frac{1}{4}\tan^4(x)+(-1)^{k-1}\frac{1}{2}\tan^2(x)+(-1)^{k-1}\ln|\cos(x)|+C.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsTangentHalfAngleExample
-Show that $\displaystyle\frac{d}{dx}\left(\tan(\tfrac{1}{2}x)\right)=\frac{1}{1+\cos(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsTangentHalfAngleExample`
-:class: solution, dropdown
- 
-$$
-\frac{d}{dx}\left(\tan(\tfrac{1}{2}x)\right)=\frac{1}{2\cos^2(\frac{1}{2}x)}=\frac{1}{1+\cos(x)}.
-$$
-
-or
-
-\begin{align*}
-\frac{d}{dx}\left(\tan(\tfrac{1}{2}x)\right)&=\frac{d}{dx}\left(\frac{\sin(\tfrac{1}{2}x)}{\cos(\frac{1}{2}x)}\right)=\frac{\frac{1}{2}\cos^2(\frac{1}{2})+\frac{1}{2}\sin^2(\frac{1}{2}x)}{\cos^2(\frac{1}{2}x)}\\
-&=\frac{1}{2\cos^2(\frac{1}{2}x)}=\frac{1}{1+\cos(x)}.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsTangentHalfAngleOnePlusSin
-Evaluate $\displaystyle\int\frac{dx}{1+\sin(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsTangentHalfAngleOnePlusSin`
-:class: solution, dropdown
-Let $t=\tan(\frac{1}{2}x)$, then we have $\sin(x)=\dfrac{2t}{1+t^2}$ and $dx=\dfrac{2\,dt}{1+t^2}$. Hence
-
-\begin{align*}
-\int\frac{dx}{1+\sin(x)}&=\int\frac{1}{1+\dfrac{2t}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int\frac{2}{(1+t)^2}\,dt=-\frac{2}{1+t}+C\\
-&=-\frac{2}{1+\tan(\tfrac{1}{2}x)}+C=-\frac{2\cos(\frac{1}{2}x)}{\cos(\frac{1}{2}x)+\sin(\frac{1}{2}x)}+C.
-\end{align*}
-
-Note that, since $-2\cos(\frac{1}{2}x)=-2\cos(\frac{1}{2}x)-2\sin(\frac{1}{2}x)+2\sin(\frac{1}{2}x)$, we have
-
-$$
--\frac{2\cos(\frac{1}{2}x)}{\cos(\frac{1}{2}x)+\sin(\frac{1}{2}x)}=-2+\frac{2\sin(\frac{1}{2}x)}{\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)}.
-$$
-
-This implies that we can also write (with a different constant of integration)
-
-$$
-\int\frac{dx}{1+\sin(x)}=\frac{2\sin(\frac{1}{2}x)}{\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)}+C.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsTangentHalfAngleSinOnePlusSin
-Evaluate $\displaystyle\int\frac{\sin(x)}{1+\sin(x)}\,dx$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsTangentHalfAngleSinOnePlusSin`
-:class: solution, dropdown
-Let $t=\tan(\frac{1}{2}x)$, then we have $\sin(x)=\dfrac{2t}{1+t^2}$ and $dx=\dfrac{2\,dt}{1+t^2}$. Hence
-
-$$
-\int\frac{\sin(x)}{1+\sin(x)}\,dx=\int\frac{\dfrac{2t}{1+t^2}}{1+\dfrac{2t}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int\frac{4t}{(1+t)^2(1+t^2)}\,dt.
-$$
-
-Using partial fractions, we obtain
-
-$$
-\frac{4t}{(1+t)^2(1+t^2)}=\frac{A(1+t)+B}{(1+t)^2}+\frac{Ct+D}{1+t^2}=\frac{A}{1+t}+\frac{B}{(1+t)^2}+\frac{Ct+D}{1+t^2}
-$$
-
-and therefore
-
-\begin{align*}
-4t&=A(1+t)(1+t^2)+B(1+t^2)+Ct(1+t)^2+D(1+t)^2\\
-&=(A+C)t^3+(A+B+2C+D)t^2+(A+C+2D)t+A+B+D.
-\end{align*}
-
-This implies that $A=0$, $B=-2$, $C=0$ and $D=2$. Hence we have
-
-\begin{align*}
-\int\frac{\sin(x)}{1+\sin(x)}\,dx&=\int\left(\frac{2}{1+t^2}-\frac{2}{(1+t)^2}\right)\,dt=2\arctan(t)+\frac{2}{1+t}+C\\
-&=x+\frac{2}{1+\tan(\frac{1}{2}x)}+C=x+\frac{2\cos(\frac{1}{2}x)}{\cos(\frac{1}{2}x)+\sin(\frac{1}{2}x)}+C.
-\end{align*}
-
-Note that, since $2\cos(\frac{1}{2}x)=2\cos(\frac{1}{2}x)+2\sin(\frac{1}{2}x)-2\sin(\frac{1}{2}x)$, we have
-
-$$
-\frac{2\cos(\frac{1}{2}x)}{\cos(\frac{1}{2}x)+\sin(\frac{1}{2}x)}=2-\frac{2\sin(\frac{1}{2}x)}{\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)}.
-$$
-
-This implies that we can also write (with a different constant of integration)
-
-$$
-\int\frac{\sin(x)}{1+\sin(x)}\,dx=x-\frac{2\sin(\frac{1}{2}x)}{\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)}+C.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsTangentHalfAngleSin
-Show that $\displaystyle\frac{d}{dx}\left(\ln\left|\tan(\tfrac{1}{2}x)\right|\right)=\frac{1}{\sin(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsTangentHalfAngleSin`
-:class: solution, dropdown
-
-\begin{align*}
-\frac{d}{dx}\left(\ln\left|\tan(\tfrac{1}{2}x)\right|\right)&=\frac{1}{\tan(\frac{1}{2}x)}\cdot\frac{1}{\cos^2(\frac{1}{2}x)}\cdot\frac{1}{2}\\
-&=\frac{1}{2\sin(\frac{1}{2}x)\cos(\frac{1}{2}x)}=\frac{1}{\sin(x)}.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsTangentHalfAngleCos
-Show that $\displaystyle\frac{d}{dx}\left(\ln\left|\frac{1+\tan(\frac{1}{2}x)}{1-\tan(\frac{1}{2}x)}\right|\right)=\frac{1}{\cos(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsTangentHalfAngleSin`
-:class: solution, dropdown
-
-\begin{align*}
-&\frac{d}{dx}\left(\ln\left|\frac{1+\tan(\frac{1}{2}x)}{1-\tan(\frac{1}{2}x)}\right|\right)=\frac{1-\tan(\frac{1}{2}x)}{1+\tan(\frac{1}{2}x)}\cdot\frac{\dfrac{1}{2\cos^2(\frac{1}{2}x)}(1-\tan(\frac{1}{2}x))+\dfrac{1}{2\cos^2(\frac{1}{2}x)}(1+\tan(\frac{1}{2}x))}{(1-\tan(\frac{1}{2}x))^2}\\
-&=\frac{1}{2\cos^2(\frac{1}{2}x)}\cdot\frac{2}{1-\tan^2(\frac{1}{2}x)}=\frac{1}{\cos^2(\frac{1}{2}x)-\sin^2(\frac{1}{2}x)}=\frac{1}{\cos(x)}.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsTangentHalfAngleSinCos
-Evaluate $\displaystyle\int\frac{dx}{3\sin(x)+4\cos(x)}$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsTangentHalfAngleSinCos`
-:class: solution, dropdown
-Using the tangent half-angle substitution $t=\tan(\frac{1}{2}x)$, we have
-
-$$
-\sin(x)=\frac{2t}{1+t^2},\quad\cos(x)=\frac{1-t^2}{1+t^2}\quad\text{and}\quad dx=\frac{2\,dt}{1+t^2}.
-$$
-
-Hence we have
-
-\begin{align*}
-\int\frac{dx}{3\sin(x)+4\cos(x)}&=\int\frac{1}{\dfrac{6t}{1+t^2}+\dfrac{4-4t^2}{1+t^2}}\cdot\frac{2\,dt}{1+t^2}=\int\frac{2}{6t+4-4t^2}\,dt\\
-&=\int\frac{dt}{2+3t-2t^2}=\int\frac{dt}{(2-t)(1+2t)}\\
-&=\frac{1}{5}\int\left(\frac{2}{1+2t}+\frac{1}{2-t}\right)\,dt\\
-&=\frac{1}{5}\left(\ln|2t+1|-\ln|2-t|\right)+C=\frac{1}{5}\ln\left|\frac{2t+1}{2-t}\right|+C\\
-&=\frac{1}{5}\ln\left|\frac{2\tan(\frac{1}{2}x)+1}{2-\tan(\frac{1}{2}x)}\right|+C\\
-&=\frac{1}{5}\ln\left|\frac{2\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)}{2\cos(\frac{1}{2}x)-\sin(\frac{1}{2}x)}\right|+C.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsExercise1
-Use $\cos(2\theta)=2\cos^2(\theta)-1$ to evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\sqrt{1+\cos(x)}\,dx$. 
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsExercise1`
-:class: solution, dropdown
-Since $1+\cos(x)=2\cos^2(\frac{1}{2}x)$ we obtain
-
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sqrt{1+\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\sqrt{2\cos^2(\tfrac{1}{2}x)}\,dx=\sqrt{2}\int_0^{\frac{1}{2}\pi}\left|\cos(\tfrac{1}{2}x)\right|\,dx\\
-&=\sqrt{2}\int_0^{\frac{1}{2}\pi}\cos(\tfrac{1}{2}x)\,dx=2\sqrt{2}\sin(\tfrac{1}{2}x)\bigg|_0^{\frac{1}{2}\pi}\\
-&=2\sqrt{2}\cdot\tfrac{1}{2}\sqrt{2}=2.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsExercise2
-Use $\cos(2\theta)=1-2\sin^2(\theta)$ to evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\sqrt{1-\cos(x)}\,dx$. 
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsExercise2`
-:class: solution, dropdown
-Since $1-\cos(x)=2\sin^2(\frac{1}{2}x)$ we obtain
-
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sqrt{1-\cos(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\sqrt{2\sin^2(\tfrac{1}{2}x)}\,dx=\sqrt{2}\int_0^{\frac{1}{2}\pi}\left|\sin(\tfrac{1}{2}x)\right|\,dx\\
-&=\sqrt{2}\int_0^{\frac{1}{2}\pi}\sin(\tfrac{1}{2}x)\,dx=-2\sqrt{2}\cos(\tfrac{1}{2}x)\bigg|_0^{\frac{1}{2}\pi}\\
-&=-2\sqrt{2}\cdot\tfrac{1}{2}\sqrt{2}+2\sqrt{2}=2\sqrt{2}-2.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsExercise3
-Use $1=\sin^2(\theta)+\cos^2(\theta)$ and $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ to evaluate 
-
-$$
-\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx.
-$$
+## Grasple Exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c30e011a-a7a3-4ecb-8f85-6aa83a81064a?id=134447
+:label: Grasple:134447
+:dropdown:
+:description: Find different forms of an antiderivative of $\sin(2x)$.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsExercise3`
-:class: solution, dropdown
-Since $1-\sin(x)=\sin^2(\frac{1}{2}x)+\cos^2(\frac{1}{2}x)-2\sin(\frac{1}{2}x)\cos(\frac{1}{2}x)$ we find
-
-\begin{align*}
-&\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx=\int_0^{\frac{1}{2}\pi}\sqrt{\sin^2(\tfrac{1}{2}x)-2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)+\cos^2(\tfrac{1}{2}x)}\,dx\\
-&=\int_0^{\frac{1}{2}\pi}\sqrt{\left(\sin(\tfrac{1}{2}x)-\cos(\tfrac{1}{2}x)\right)^2}\,dx=\int_0^{\frac{1}{2}\pi}\left|\sin(\tfrac{1}{2}x)-\cos(\tfrac{1}{2}x)\right|\,dx.
-\end{align*}
-
-Note that $\sin(\frac{1}{2}x)\leq\cos(\frac{1}{2}x)$ for $0\leq x\leq\tfrac{1}{2}\pi$. Hence we have
-
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\left(\cos(\tfrac{1}{2}x)-\sin(\tfrac{1}{2}x)\right)\,dx\\
-&=\bigg[2\sin(\tfrac{1}{2}x)+2\cos(\tfrac{1}{2}x)\bigg]_0^{\frac{1}{2}\pi}=2\sqrt{2}-2.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsExercise4
-Use $1=\sin^2(\theta)+\cos^2(\theta)$ and $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ to evaluate 
-
-$$
-\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f2cd0fe8-e133-4577-a63d-984c18adfbe0?id=134471
+:label: Grasple:134471
+:dropdown:
+:description: Find different forms of an antiderivative of $\displaystyle\frac{1}{\cos(x)}$.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsExercise4`
-:class: solution, dropdown
-Since $1+\sin(x)=\sin^2(\frac{1}{2}x)+\cos^2(\frac{1}{2}x)+2\sin(\frac{1}{2}x)\cos(\frac{1}{2}x)$ we find
-
-\begin{align*}
-&\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx=\int_0^{\frac{1}{2}\pi}\sqrt{\sin^2(\tfrac{1}{2}x)+2\sin(\tfrac{1}{2}x)\cos(\tfrac{1}{2}x)+\cos^2(\tfrac{1}{2}x)}\,dx\\
-&=\int_0^{\frac{1}{2}\pi}\sqrt{\left(\sin(\tfrac{1}{2}x)+\cos(\tfrac{1}{2}x)\right)^2}\,dx=\int_0^{\frac{1}{2}\pi}\left|\sin(\tfrac{1}{2}x)+\cos(\tfrac{1}{2}x)\right|\,dx.
-\end{align*}
-
-Note that $\sin(\frac{1}{2}x)+\cos(\frac{1}{2}x)\geq0$ for $0\leq x\leq\tfrac{1}{2}\pi$. Hence we have
-
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx&=\int_0^{\frac{1}{2}\pi}\left(\cos(\tfrac{1}{2}x)+\sin(\tfrac{1}{2}x)\right)\,dx\\
-&=\bigg[2\sin(\tfrac{1}{2}x)-2\cos(\tfrac{1}{2}x)\bigg]_0^{\frac{1}{2}\pi}=2.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsExercise5
-Evaluate $\displaystyle\int\cos(x)\cos(2x)\cos(3x)\,dx$. 
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsExercise5`
-:class: solution, dropdown
-Note that $\cos(x)\cos(2x)=\frac{1}{2}\left(\cos(x)+\cos(3x)\right)$ and therefore
-
-\begin{align*}
-\cos(x)\cos(2x)\cos(3x)&=\frac{1}{2}\cos(x)\cos(3x)+\frac{1}{2}\cos(3x)\cos(3x)\\
-&=\frac{1}{4}\cos(2x)+\frac{1}{4}\cos(4x)+\frac{1}{4}+\frac{1}{4}\cos(6x).
-\end{align*}
-
-Hence, we have
-
-\begin{align*}
-\int\cos(x)\cos(2x)\cos(3x)\,dx&=\frac{1}{4}\int\left(1+\cos(2x)+\cos(4x)+\cos(6x)\right)\,dx\\
-&=\frac{1}{4}x+\frac{1}{8}\sin(2x)+\frac{1}{16}\sin(4x)+\frac{1}{24}\sin(6x)+C.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:TrigFunctionsExercise6
-Evaluate $\displaystyle\int\sin(x)\sin(2x)\sin(3x)\,dx$. 
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:TrigFunctionsExercise6`
-:class: solution, dropdown
-Note that $\sin(x)\sin(2x)=\frac{1}{2}\left(\cos(x)-\cos(3x)\right)$ and therefore
-
-\begin{align*}
-\sin(x)\sin(2x)\sin(3x)&=\frac{1}{2}\cos(x)\sin(3x)-\frac{1}{2}\cos(3x)\sin(3x)\\
-&=\frac{1}{4}\sin(2x)+\frac{1}{4}\sin(4x)-\frac{1}{4}\sin(6x).
-\end{align*}
-
-Hence, we have
-
-\begin{align*}
-\int\sin(x)\sin(2x)\sin(3x)\,dx&=\frac{1}{4}\int\left(\sin(2x)+\sin(4x)-\sin(6x)\right)\,dx\\
-&=-\frac{1}{8}\cos(2x)-\frac{1}{16}\cos(4x)+\frac{1}{24}\cos(6x)+C.
-\end{align*}
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionCos
-Find a reduction formula for $\displaystyle\int\cos^n(x)\,dx$.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionCos`
-:class: solution, dropdown
-For $n=2,3,4,\ldots$ we obtain
-
-\begin{align*}
-\int\cos^n(x)\,dx&=\int\cos^{n-1}(x)\,\sin(x)=\sin(x)\cos^{n-1}(x)-\int\sin(x)\,d\cos^{n-1}(x)\\
-&=\sin(x)\cos^{n-1}(x)+(n-1)\int\sin(x)\cos^{n-2}(x)\sin(x)\,dx\\
-&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\sin^2(x)\,dx.
-\end{align*}
-
-Now we use $\sin^2(x)=1-\cos^2(x)$ to find
-
-\begin{align*}
-&\int\cos^n(x)\,dx\\
-&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\left(1-\cos^2(x)\right)\,dx\\
-&=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\,dx-(n-1)\int\cos^n(x)\,dx.
-\end{align*}
-
-This implies that
-
-$$
-n\int\cos^n(x)\,dx=\sin(x)\cos^{n-1}(x)+(n-1)\int\cos^{n-2}(x)\,dx
-$$
-
-and therefore
-
-$$
-\int\cos^n(x)\,dx=\frac{1}{n}\sin(x)\cos^{n-1}(x)+\frac{n-1}{n}\int\cos^{n-2}(x)\,dx.
-$$
-
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionSinDefinite
-Use the reduction formula of {prf:ref}`Ex:Integration:PartsReductionSin` to show that
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,\quad n=2,3,4,\ldots
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c1394e54-c98e-4c42-9b41-c80bb38762cb?id=134477
+:label: Grasple:134477
+:dropdown:
+:description: Find different forms of an antiderivative of $\displaystyle\frac{1}{\sin(x)}$.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionSinDefinite`
-:class: solution, dropdown
-
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx&=-\frac{1}{n}\cos(x)\sin^{n-1}(x)\bigg|_0^{\frac{1}{2}\pi}+\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx\\
-&=\frac{n-1}{n}\int_0^{\frac{1}{2}\pi}\sin^{n-2}(x)\,dx,
-\end{align*}
-
-since $\cos(\frac{1}{2}\pi)=0$ and $\sin(0)=0$. Note that $\sin^{n-1}(x)$ contains at least one factor $\sin(x)$ for $n=2,3,4,\ldots$.
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionSinDefiniteOdd
-Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefinite` to show that
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},\quad n=1,2,3,\ldots
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e651d29c-60cc-4473-90bb-61f51ec56171?id=134492
+:label: Grasple:134492
+:dropdown:
+:description: Evaluate $\displaystyle\int\sin^3(x)\cos^5(x)\,dx$ in two ways.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionSinDefiniteOdd`
-:class: solution, dropdown
-Replacing $n$ by $2n+1$ in {numref}`Exc:Integration:PartsReductionSinDefinite` we find
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx=\frac{2n}{2n+1}\int_0^{\frac{1}{2}\pi}\sin^{2n-1}(x)\,dx,\quad n=1,2,3,\ldots
-$$
-
-Iteration now leads to
-
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx&=\frac{2n}{2n+1}\cdot\frac{2n-2}{2n-1}\cdot\frac{2n-4}{2n-3}\cdots\frac{2}{3}\int_0^{\frac{1}{2}\pi}\sin(x)\,dx\\
-&=\frac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)},
-\end{align*}
-
-since $\displaystyle\int_0^{\frac{1}{2}\pi}\sin(x)\,dx=-\cos(x)\bigg|_0^{\frac{1}{2}\pi}=1$. Note that the products in the numerator and the denominator are written in the opposite order.
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsReductionSinDefiniteEven
-Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefinite` to show that
-
-$$
-\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},\quad n=1,2,3,\ldots
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d2b68986-b3f1-4d2a-ac73-4f42156192f7?id=134494
+:label: Grasple:134494
+:dropdown:
+:description: Prove orthogonality relations for the sine and cosine.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:PartsReductionSinDefiniteEven`
-:class: solution, dropdown
-Replacing $n$ by $2n$ in {numref}`Exc:Integration:PartsReductionSinDefinite` we find
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/91b68fbd-1567-4ccb-9726-7eac80cec1dd?id=134500
+:label: Grasple:134500
+:dropdown:
+:description: Show that $\displaystyle\frac{d}{dx}\left(\tan(\tfrac{1}{2}x)\right)=\frac{1}{1+\cos(x)}$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b1366d57-4b98-4602-8cbf-0a0442c915aa?id=134504
+:label: Grasple:134504
+:dropdown:
+:description: Show that $\displaystyle\frac{d}{dx}\left(\ln\left|\tan(\tfrac{1}{2}x)\right|\right)=\frac{1}{\sin(x)}$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f3edb317-cdad-44b7-bc6a-bedba3b64988?id=134506
+:label: Grasple:134506
+:dropdown:
+:description: Show that $\displaystyle\frac{d}{dx}\left(\ln\left|\frac{1+\tan(\frac{1}{2}x)}{1-\tan(\frac{1}{2}x)}\right|\right)=\frac{1}{\cos(x)}$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/99d7f2aa-55ae-4555-9995-7d4b67a1c634?id=134514
+:label: Grasple:134514
+:dropdown:
+:description: Evaluate $\displaystyle\int\frac{dx}{1+\sin(x)}$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f6833eca-3d62-4869-b1d7-83b00a6c3688?id=134515
+:label: Grasple:134515
+:dropdown:
+:description: Evaluate $\displaystyle\int\frac{\sin(x)}{1+\sin(x)}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/083e0b2f-5ba6-492a-a144-c432cea9a4c3?id=134517
+:label: Grasple:134517
+:dropdown:
+:description: Evaluate an integral of the form $\displaystyle\int\frac{dx}{a\sin(x)+b\cos(x)}$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5968d74d-2311-4ced-9a88-170b9be9c851?id=134538
+:label: Grasple:134538
+:dropdown:
+:description: Use $\cos(2\theta)=2\cos^2(\theta)-1$ to evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\sqrt{1+\cos(x)}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9b626623-a38f-4f8d-9b94-cead08ca89c7?id=134539
+:label: Grasple:134539
+:dropdown:
+:description: Use $\cos(2\theta)=1-2\sin^2(\theta)$ to evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\sqrt{1-\cos(x)}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8a741095-13ce-4faf-9117-c5126e179d28?id=134540
+:label: Grasple:134540
+:dropdown:
+:description: Use $1=\sin^2(\theta)+\cos^2(\theta)$ and $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ to evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\sqrt{1+\sin(x)}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/57cfd0bd-6050-41e4-bdfa-4e1dc8d09098?id=134541
+:label: Grasple:134541
+:dropdown:
+:description: Use $1=\sin^2(\theta)+\cos^2(\theta)$ and $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ to evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\sqrt{1-\sin(x)}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fd57615b-4560-4504-9f98-358be11e8ffd?id=134542
+:label: Grasple:134542
+:dropdown:
+:description: Evaluate $\displaystyle\int\cos(x)\cos(2x)\cos(3x)\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/241b0599-4749-436d-859e-f3677fbe71d1?id=134543
+:label: Grasple:134543
+:dropdown:
+:description: Evaluate $\displaystyle\int\sin(x)\sin(2x)\sin(3x)\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e032d14c-df4c-4572-a8ae-d909827a0e71?id=133604
+:label: Grasple:134604
+:dropdown:
+:description: Find a reduction formula for $\displaystyle\int\cos^n(x)\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2a806dac-fad6-45c4-a66b-4c56af966471?id=134651
+:label: Grasple:134651
+:dropdown:
+:description: Find closed formulas for $\displaystyle\int_0^{\frac{1}{2}\pi}\sin^{2n+1}(x)\,dx$ and $\displaystyle\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5f998152-3f25-4845-a2f3-fef08cc73ddf?id=134657
+:label: Grasple:134657
+:dropdown:
+:description: Proof of the Wallis product.
+
+::::
+
+:::{note}
+The result of {numref}`Grasple:134657` 
 
 $$
-\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx=\frac{2n-1}{2n}\int_0^{\frac{1}{2}\pi}\sin^{2n-2}(x)\,dx,\quad n=1,2,3,\ldots
+\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}=\frac{\pi}{2}
 $$
 
-Iteration now leads to
-
-\begin{align*}
-\int_0^{\frac{1}{2}\pi}\sin^{2n}(x)\,dx&=\frac{2n-1}{2n}\cdot\frac{2n-3}{2n-2}\cdot\frac{2n-5}{2n-4}\cdots\frac{1}{2}\int_0^{\frac{1}{2}\pi}1\,dx\\
-&=\frac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\frac{\pi}{2},
-\end{align*}
-
-since $\displaystyle\int_0^{\frac{1}{2}\pi}1\,dx=\frac{\pi}{2}$. Note that the products in the numerator and the denominator are written in the opposite order.
-:::
-
-::::{exercise}
-:label: Exc:Integration:PartsWallis
-Let $I_n=\displaystyle\int_0^{\frac{1}{2}\pi}\sin^n(x)\,dx$.
-
-(a) Show that $I_{2n+2}\leq I_{2n+1}\leq I_{2n}$.
-
-(b) Use the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to show that
-
-$$
-\frac{I_{2n+2}}{I_{2n}}=\frac{2n+1}{2n+2}.
-$$
-
-(c) Use parts (a) and (b) to show that
-
-$$
-\frac{2n+1}{2n+2}\leq\frac{I_{2n+1}}{I_{2n}}\leq1
-$$
-
-and deduce that $\displaystyle\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}=1$.
-
-(d) Use part (c) and {numref}`Exc:Integration:PartsReductionSinDefiniteOdd` and {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to show that
+can also be written as
 
 $$
 \lim_{n\to\infty}\frac{2}{1}\frac{2}{3}\frac{4}{3}\frac{4}{5}\frac{6}{5}\frac{6}{7}\cdots\frac{2n}{2n-1}\frac{2n}{2n+1}=\frac{\pi}{2}.
@@ -1471,52 +982,22 @@ $$
 $$
 
 which is called the *Wallis product*. This formula is named after the English mathematician [John Wallis (1616-1703)](https://en.wikipedia.org/wiki/John_Wallis).
+:::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/60d93c06-c902-4e62-a79a-e345ab8c7a7b?id=132747
+:label: Grasple:132747
+:dropdown:
+:description: Evaluate an integral of the form $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{(\sin(x))^a}{(\sin(x))^a+(\cos(x))^a}\,dx$.
+
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:PartsWallis`
-:class: solution, dropdown
-(a) Note that $0\leq\sin(x)\leq1$ for $x\in[0,\frac{1}{2}\pi]$. Hence we have for $x\in[0,\frac{1}{2}\pi]$:
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/606aaccc-19e9-47e9-8805-1d128f9dd576?id=134400
+:label: Grasple:134400
+:dropdown:
+:description: Evaluate $\displaystyle\int_0^{\frac{1}{2}\pi}\frac{dx}{1+\tan(x)}$.
 
-$$
-\sin^{2n+2}(x)\leq\sin^{2n+1}(x)\leq\sin^{2n}(x)\quad\Longrightarrow\quad I_{2n+2}\leq I_{2n+1}\leq I_{2n}.
-$$
-
-(b) Using the reduction formula obtained in {numref}`Exc:Integration:PartsReductionSinDefiniteEven` we obtain
-
-$$
-\frac{I_{2n+2}}{I_{2n}}=\frac{\dfrac{1\cdot3\cdot5\cdots(2n-1)\cdot(2n+1)}{2\cdot4\cdot6\cdots2n\cdot(2n+2)}\dfrac{\pi}{2}}{\dfrac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\dfrac{\pi}{2}}=\frac{2n+1}{2n+2}.
-$$
-
-(c) Now divide the inequality of part (a) by $I_{2n}$ to find
-
-$$
-\frac{I_{2n+2}}{I_{2n}}\leq\frac{I_{2n+1}}{I_{2n}}\leq\frac{I_{2n}}{I_{2n}},
-$$
-
-which implies, by using the result of part (b), that
-
-$$
-\frac{2n+1}{2n+2}\leq\frac{I_{2n+1}}{I_{2n}}\leq1.
-$$
-
-Since $\displaystyle\lim_{n\to\infty}\frac{2n+1}{2n+2}=1$, the squeeze theorem implies that
-
-$$
-\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}=1.
-$$
-
-(d) Finally, we use the results of {numref}`Exc:Integration:PartsReductionSinDefiniteOdd` and {numref}`Exc:Integration:PartsReductionSinDefiniteEven` to find
-
-\begin{align*}
-1=\lim_{n\to\infty}\frac{I_{2n+1}}{I_{2n}}&=\lim_{n\to\infty}\frac{\dfrac{2\cdot4\cdot6\cdots2n}{3\cdot5\cdot7\cdots(2n+1)}}{\dfrac{1\cdot3\cdot5\cdots(2n-1)}{2\cdot4\cdot6\cdots2n}\dfrac{\pi}{2}}\\
-&=\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}\frac{2}{\pi}.
-\end{align*}
-
-This implies that
-
-$$
-\lim_{n\to\infty}\frac{(2\cdot4\cdot6\cdots2n)^2}{1\cdot(3\cdot5\cdot7\cdots(2n-1))^2\cdot(2n+1)}=\frac{\pi}{2},
-$$
-
-which proves the Wallis product.
-:::
+::::

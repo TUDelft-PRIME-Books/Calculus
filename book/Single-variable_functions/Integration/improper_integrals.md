@@ -1331,15 +1331,6 @@ Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\inf
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/817e7373-af36-4ddf-bad2-d92e4c516e84?id=133606
-:label: Grasple:133606
-:dropdown:
-:description: Another remarkable integral.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/ba0412df-e79f-486b-bd82-26cdfedf09a6?id=133541
 :label: Grasple:133541
 :dropdown:
@@ -1352,7 +1343,7 @@ Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\inf
 :url: https://embed.grasple.com/exercises/df409f93-7f92-45f3-b8aa-4b297d8712d5?id=78797
 :label: Grasple:78797
 :dropdown:
-:description: Use a comparison theorem to determine whether the integrals converge or diverge.
+:description: Use a comparison theorem to determine whether the integral converges or diverges.
 
 ::::
 
@@ -1361,7 +1352,7 @@ Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\inf
 :url: https://embed.grasple.com/exercises/8786072a-eedf-4980-9dbe-fcfab66eb59a?id=78799
 :label: Grasple:78799
 :dropdown:
-:description: Use a comparison theorem to determine whether the integrals converge or diverge.
+:description: Use a comparison theorem to determine whether the integral converges or diverges.
 
 ::::
 
@@ -1370,7 +1361,7 @@ Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\inf
 :url: https://embed.grasple.com/exercises/fdb58ae4-7de8-4ae8-b6aa-0ad84d55b7a6?id=78801
 :label: Grasple:78801
 :dropdown:
-:description: Use a comparison theorem to determine whether the integrals converge or diverge.
+:description: Use a comparison theorem to determine whether the integral converges or diverges.
 
 ::::
 
@@ -1379,6 +1370,6 @@ Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\inf
 :url: https://embed.grasple.com/exercises/156a7bde-6aa4-468c-b4ed-de7eca985aeb?id=78807
 :label: Grasple:78807
 :dropdown:
-:description: Use a comparison theorem to determine whether the integrals converge or diverge.
+:description: Use a comparison theorem to determine whether the integral converges or diverges.
 
 ::::
