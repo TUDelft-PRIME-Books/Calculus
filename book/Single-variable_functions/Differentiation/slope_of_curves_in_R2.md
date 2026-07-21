@@ -3,7 +3,7 @@
 (Subsec:SlopeCurveIntro)=
 ## Introduction
 
-Consider the unit circle which is defined by the equation $x^2+y^2=1$. Suppose we want to find the slope of this curve at the point $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$. If the circle were the graph of a function, we would know what to do: we would take the derivative of the function and insert the value $x=\frac{1}{2}$. However, we saw in {numref}`Section:Curves` that this curve is not the graph of a function, so this not seem possible here. On the other hand, if we zoom in close to the point $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$ we do not see the lower half of the circle and the part we do see perfectly resembles the graph of a function. To make this idea a bit more precise, we know that on the upper half of the circle we have $y=\sqrt{1-x^2}$. Hence, the upper half of the circle **is** the graph of a function, so we can use the derivative here. In particular, writing $f(x)=\sqrt{1-x^2}$, we find, using the chain rule, that
+Consider the unit circle which is defined by the equation $x^2+y^2=1$, see {numref}`Fig-SlopeCurveIntro-Circle`. Suppose we want to find the slope of this curve at the point $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$. If the circle were the graph of a function, we would know what to do: we would take the derivative of the function and insert the value $x=\frac{1}{2}$. However, we saw in {numref}`Section:Curves` that this curve is not the graph of a function, so this not seem possible here. On the other hand, if we zoom in close to the point $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$ we do not see the lower half of the circle and the part we do see perfectly resembles the graph of a function. To make this idea a bit more precise, we know that on the upper half of the circle we have $y=\sqrt{1-x^2}$. Hence, the upper half of the circle **is** the graph of a function, so we can use the derivative here. In particular, writing $f(x)=\sqrt{1-x^2}$, we find, using the chain rule, that
 
 $$
  f'(x)=\frac{1}{2\sqrt{1-x^2}}(-2x)=\frac{-x}{\sqrt{1-x^2}}.
@@ -23,14 +23,12 @@ $$
 
 is tangent to the unit circle at $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$. 
 
-:::{figure} Images/Fig-SlopeCurveIntro-Circle.png
+:::{applet}
+:url: calculus/slopes_of_curves_in_R2/unit_circle
 :name: Fig-SlopeCurveIntro-Circle
+:class: dark-light
 
-The unit circle with the tangent line at $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig-SlopeCurveIntro-Circle` with an applet. Make the point draggable along the circle and show the tangent line at that point. Make the circle one color. Make the tangent line another color.
+The unit circle with the tangent line at $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$. You can drag the point along the circle and the tangent line will update accordingly.
 :::
 
 We conclude that when it is possible to write (part of) a curve as the graph of a function, we can find the slope of a curve. However, what should we do if that is not the case, either because it is hard (or even impossible) to explicitly express $y$ as a function of $x$, or because our curve is defined by a parametrisation? In those cases, we need other tools, which will be the main topic of this section.
@@ -141,16 +139,14 @@ $$
 
 Then we must have either $x=0$ or $x^3=2$, which gives $x=\sqrt[3]{2}$. This would give the two points $(0,0)$ and $\left(\sqrt[3]{2},\sqrt[3]{4}\right)$. However, at $(0,0)$ the expression for $\dfrac{dy}{dx}$ does not exist, so we should ignore this point. Indeed, the curve self-intersects at this point, so it is impossible to define a slope there. So the only point on the curve with a horizontal tangent is the point $\left(\sqrt[3]{2},\sqrt[3]{4}\right)$.
 
-:::{figure} Images/Fig-Curves-FoliumOfDescartes.png
+:::{applet}
+:url: calculus/slopes_of_curves_in_R2/folium_of_Descartes
 :name: Fig:SlopeCurve:Folium
+:class: dark-light
 
 The folium of Descartes with a point with a horizontal tangent.
 :::
 
-
-:::{todo}
-Replace {numref}`Fig:SlopeCurve:Folium` with an applet. Make the point with the horizontal tangent draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color.
-:::
 ::::::
 
 In the previous examples, we have assumed each time that on the curve $y$ is implicitly a differentiable function of $x$, but is that always the case? Unfortunately, this is not always the case. Indeed, we saw in {prf:ref}`Ex:SlopeCurves:Folium` that the expression for $\dfrac{dy}{dx}$ did not exist at the point $(0,0)$, which does lie on the curve. This is because the curve self-intersects at this point, so there is no meaningful way to define a slope there. Similarly, the expression we found for $\dfrac{dy}{dx}$ does not exist at the point $\left(\sqrt[3]{4},\sqrt[3]{2}\right)$, which also lies on the curve. This is because the tangent line to the curve at that point is vertical. 
@@ -306,41 +302,40 @@ If $f'(t)=0$, then the curve does not change in the $x$-direction, so the tangen
 
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Param
-Let $\mathcal{C}$ be curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}$ for $-1\leq t\leq 1$. Suppose we want to find the slope at $t=0$, i.e. at the point $(x,y)=\left(0,5\right)$. It does not seem feasible to find an implicit equation for this curve and to use implicit differentiation, so we will use {prf:ref}`Thm:SlopeCurves:Param`. Using this theorem, we find
+Let $\mathcal{C}$ be curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}-3$ for $-\frac12\leq t\leq \frac12$. Suppose we want to find the slope at $t=0$, i.e. at the point $(x,y)=\left(0,2\right)$. It does not seem feasible to find an implicit equation for this curve and to use implicit differentiation, so we will use {prf:ref}`Thm:SlopeCurves:Param`. Using this theorem, we find
 
 $$
- \frac{dy}{dx}=\frac{\frac{d}{dt}\left[e^{3t}+4e^{-2t}\right]}{\frac{d}{dt}\left[e^{2t}-e^t\right]}=\frac{3e^{3t}-8e^{-2t}}{2e^{2t}-e^t}.
+ \frac{dy}{dx}=\frac{\frac{d}{dt}\left[e^{3t}+4e^{-2t}-3\right]}{\frac{d}{dt}\left[e^{2t}-e^t\right]}=\frac{3e^{3t}-8e^{-2t}}{2e^{2t}-e^t}.
 $$
 
 Plugging in $t=0$ gives
 
 $$
- \left.\frac{dy}{dx}\right|_{(x,y)=(0,5)}=\frac{3e^{3\cdot 0}-8e^{-2\cdot 0}}{2e^{2\cdot 0}-e^0}=\frac{-5}{1}=-5.
+ \left.\frac{dy}{dx}\right|_{(x,y)=(0,2)}=\frac{3e^{3\cdot 0}-8e^{-2\cdot 0}}{2e^{2\cdot 0}-e^0}=\frac{-5}{1}=-5.
 $$
 
 In addition, we find that the vector
 
 $$
- \mathbf{r}'(t)=\begin{pmatrix}-5\\ 1\end{pmatrix}
+ \mathbf{r}'(0)=\begin{pmatrix}-5\\ 1\end{pmatrix}
 $$
 
-is a tangent vector to $\mathcal{C}$ at $(0,5)$, and that
+is a tangent vector to $\mathcal{C}$ at $(0,2)$, and that
 
 $$
- \mathcal{T}(t)=\frac{1}{|\mathbf{r}'(t)|}\mathbf{r}'(t)=\begin{pmatrix}\frac{-5}{\sqrt{26}}\\ \frac{1}{\sqrt{26}}\end{pmatrix}
+ \mathcal{T}(0)=\frac{1}{|\mathbf{r}'(0)|}\mathbf{r}'(0)=\begin{pmatrix}\frac{-5}{\sqrt{26}}\\ \frac{1}{\sqrt{26}}\end{pmatrix}
 $$
 
 is a unit tangent vector.
 
-:::{figure} Images/Fig-SlopeCurve-Param.png
+:::{applet}
+:url: calculus/slopes_of_curves_in_R2/parametric_curve
 :name: Fig:SlopeCurve:Param
+:class: dark-light
 
-The curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}$ for $-1\leq t\leq 1$ with the tangent line at $t=0$.
+The curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}-3$ for $-\frac12\leq t\leq \frac12$ with the tangent line at $t=0$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:SlopeCurve:Param` with an applet. Make the point with the specified tangent line draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color. Also include the unit tangent vector.
-:::
 ::::::
 
 ::::::{prf:example} 
@@ -359,15 +354,14 @@ $$
 
 since the numerator goes to $3$ while the denominator goes to $0$ as $t\rightarrow -1$. As such, we obtain a vertical tangent line whenever $t=-1$, which corresponds to the point $(-1,-1)$.
 
-:::{figure} Images/Fig-SlopeCurve-ParamVert.png
+:::{applet}
+:url: calculus/slopes_of_curves_in_R2/vertical_tangent_line
 :name: Fig:SlopeCurve:ParamVert
+:class: dark-light
 
 The curve with parametrisation $x=t^2+2t$ and $y=t^3$ for $-2\leq t\leq 2$ with the tangent line at $t=-1$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:SlopeCurve:ParamVert` with an applet. Make the point with the specified tangent line draggable along the curve and show the tangent line at that point. Make the curve one color. Make the tangent line another color.
-:::
 
 ::::::
 
