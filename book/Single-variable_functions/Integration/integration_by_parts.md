@@ -93,6 +93,17 @@ Taking $u=x$ and $dv=\cos(x)\,dx$, we obtain $du=dx$ and we might choose $v=\sin
 \int x\cos(x)\,dx&=x\sin(x)-\int\sin(x)\,dx\\
 &=x\sin(x)+\cos(x)+C.
 \end{align*}
+
+In {numref}`Fig:Integration:PartsPowerCos` you can see the graph of the integrand $x\cos(x)$ and the graph of the antiderivative $x\sin(x)+\cos(x)$. The indicated slope of the antiderivative at the selected point always equals the value of the integrand at that point.
+
+:::{applet}
+:url: calculus/integration_by_parts/indefinite_integral_1
+:name: Fig:Integration:PartsPowerCos
+:class: dark-light
+
+The graph of the integrand $x\cos(x)$ (_top_) and the graph of the antiderivative $x\sin(x)+\cos(x)$ (_bottom_). Note that we have taken $C=0$.
+:::
+
 ::::::
 
 Note that the choice $u=x$ and $dv=\cos(x)\,dx$ was crucial. The other choice $u=\cos(x)$ and $dv=x\,dx$ and therefore $du=-\sin(x)\,dx$ and $v=\frac{1}{2}x^2$, for example, leads to a more difficult integral:
@@ -151,6 +162,17 @@ Note that the result can also be written as
 $$
 \int\arctan(x)\,dx=x\arctan(x)-\ln\left(\sqrt{1+x^2}\right)+C.
 $$
+
+
+In {numref}`Fig:Integration:PartsAntiderivativeArctan` you can see the graph of the integrand $\arctan(x)$ and the graph of the antiderivative $x\arctan(x)-\frac{1}{2}\ln(1+x^2)$. The indicated slope of the antiderivative at the selected point always equals the value of the integrand at that point.
+
+:::{applet}
+:url: calculus/integration_by_parts/indefinite_integral_2
+:name: Fig:Integration:PartsAntiderivativeArctan
+:class: dark-light
+
+The graph of the integrand $\arctan(x)$ (_top_) and the graph of the antiderivative $x\arctan(x)-\frac{1}{2}\ln(1+x^2)$ (_bottom_). Note that we have taken $C=0$.
+:::
 
 ::::::
 
@@ -337,6 +359,18 @@ I=-\frac{2}{13}e^{-2x}\cos(3x)+\frac{3}{13}e^{-2x}\sin(3x)+C.
 $$
 
 Note that we have replaced the arbitrary constant $\dfrac{4}{13}K$ by another arbitrary constant $C\in\mathbb{R}$.
+
+
+In {numref}`Fig:Integration:PartsExpCos` you can see the graph of the integrand $e^{-2x}\cos(3x)$ and the graph of the antiderivative $-\frac{2}{13}e^{-2x}\cos(3x)+\frac{3}{13}e^{-2x}\sin(3x)$. The indicated slope of the antiderivative at the selected point always equals the value of the integrand at that point.
+
+:::{applet}
+:url: calculus/integration_by_parts/indefinite_integral_3
+:name: Fig:Integration:PartsExpCos
+:class: dark-light
+
+The graph of the integrand $e^{-2x}\cos(3x)$ (_top_) and the graph of the antiderivative $-\frac{2}{13}e^{-2x}\cos(3x)+\frac{3}{13}e^{-2x}\sin(3x)$ (_bottom_). Note that we have taken $C=0$.
+:::
+
 ::::::
 
 Here we chose the trigonometric function for $u$ in both the first and the second step. In this case we could have chosen the exponential function instead. See {numref}`Grasple:133577`. However, it is important to stick to the same choice (trigonometric or exponential function) in the second step. Otherwise, we return to the original integral without any result:
@@ -380,6 +414,17 @@ If $f$ and $g$ are continuous on $[a,b]$, integrable and differentiable on $(a,b
 :::
 
 ::::::
+
+{prf:ref}`Thm:Integration:PartsDefiniteIntegral` can be visualised as in {numref}`Fig:Integration:PartsDefiniteIntegral`.
+
+:::{applet}
+:url: calculus/integration_by_parts/visualisation_of_definite_integral
+:name: Fig:Integration:PartsDefiniteIntegral
+:class: dark-light
+
+A visualisation of the method of integration by parts for definite integrals. The area under the curve $f(x)g'(x)$ (_top_) is equal to the area under the curve $(f(x)g(x))'$ (_middle_) minus the area under the curve $g(x)f'(x)$ (_bottom_).
+:::
+
 
 Similar to {prf:ref}`Not:Integration:PartsIndefiniteIntegral`, we can use the differential notation $u=f(x)$, $dv=g'(x)\,dx$, $du=f'(x)\,dx$ and $v=g(x)$.
 
@@ -488,7 +533,7 @@ as well. Hence, we have
 :::::
 
 :::::{admonition} Bonus material: Another approach to Serret's integral
-:class: dropdown
+:class: dropdown, bonus
 
 In {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we evaluated *Serret's integral* $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$ using substitution and in {prf:ref}`Ex:Integration:IntegrationByPartsSerretsIntegral` we used integration by parts to obtain another form of the same integral. Here we use another approach to obtain the results in Equation {eq}`Eq:Integration:PartsSerret`.
 
@@ -508,7 +553,7 @@ $$
 \frac{x}{(1+x^2)(1+\alpha x)}=\frac{1}{1+\alpha^2}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right).
 $$
 
-You can easliy check this right now. In {numref}`Sec:Integration:RationalFunctions` the method of *partial fractions* is treated in details.
+You can easily check this right now. In {numref}`Sec:Integration:RationalFunctions` the method of *partial fractions* is treated in details.
 
 Then we have
 
@@ -611,7 +656,7 @@ $$
 I_2=x^2e^x-2I_1=x^2e^x-2xe^x+2e^x-2C_1=(x^2-2x+2)e^x+C_2,
 $$
 
-and so on. Note that we can change the constant of integration in each step. Moreover, if we put the factor $e^x$ outside the brackets, we find that, for example,
+and so on. Note that we can simplify and rename the constant of integration in each step. Moreover, if we put the factor $e^x$ outside the brackets, we find that, for example,
 
 \begin{align*}
 I_{10}&=\left(x^{10}-10x^9+90x^8-720x^7+5040x^6-30240x^5+151200x^4\right.\\
