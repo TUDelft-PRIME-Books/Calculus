@@ -295,7 +295,7 @@ R_{n+1}(x) &= \frac{1}{n!}\left(\left[-\frac{1}{n+1}(x-t)^{n+1}f^{(n+1)}(t)\righ
 
 This proves the first part of the theorem.
 
-For the next part, we use the {prf:ref}`mean value theorem for integrals <Thm:Integration:FundamentalTheorem>`, to obtain that there exists a number $c$ between $a$ and $x$ such that
+For the next part, we use the {prf:ref}`mean value theorem for integrals <Thm:Integration:MeanValueTheorem>`, to obtain that there exists a number $c$ between $a$ and $x$ such that
 
 \begin{align*}
 R_n(x) &= \frac{1}{n!}\int_a^x(x-t)^nf^{(n+1)}(t)\,dt \\
