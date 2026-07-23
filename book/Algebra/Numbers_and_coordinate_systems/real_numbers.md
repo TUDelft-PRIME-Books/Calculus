@@ -26,7 +26,7 @@ $$
 10p=3.\overline{3}=3+0.\overline{3}=3+p\quad\Longrightarrow\quad 9p=3 \quad\Longleftrightarrow\quad p=\frac{3}{9}=\frac{1}{3}.
 $$
 
-Similary, we multiply $q=0.\overline{09}$ by $100$ to obtain
+Similarly, we multiply $q=0.\overline{09}$ by $100$ to obtain
 
 $$
 100q=9.\overline{09}=9+0.\overline{09}=9+q\quad\Longrightarrow\quad 99q=9 \quad\Longleftrightarrow\quad q=\frac{9}{99}=\frac{1}{11}.
@@ -258,7 +258,7 @@ $$
 (Subsec:RealnumbersExp)=
 ## Exponentiation
 
-We know how to add, subtract, multipy and divide real numbers, but we can perform one more important arithmical operation: exponentiation. You have most likely seen before that by $2^{10}$ we mean
+We know how to add, subtract, multiply and divide real numbers, but we can perform one more important arithmetical operation: exponentiation. You have most likely seen before that by $2^{10}$ we mean
 
 $$
  2^{10}=\underbrace{2\cdot 2\cdot\cdots\cdot 2}_{10\text{ times}}=1024
@@ -439,7 +439,7 @@ $$
  \left(y^pz^p\right)^b=\underbrace{\left(y^pz^p\right)\cdot\cdots\cdot \left(y^pz^p\right)}_{b\text{ times}}=\underbrace{\left(y^p\right)\cdot\cdots\cdot \left(y^p\right)}_{b\text{ times}}\underbrace{\left(z^p\right)\cdot\cdots\cdot \left(z^p\right)}_{b\text{ times}}=\left(y^p\right)^b\left(z^p\right)^b
 $$
 
-Moreover, we have $\left(y^p\right)^b=\left(\sqrt[b]{y^a}\right)^b=y^a$ since $p=\frac{a}{b}$. Similalrly, we have $\left(z^p\right)^b=z^a$. Combining these equations, we find if $a>0$
+Moreover, we have $\left(y^p\right)^b=\left(\sqrt[b]{y^a}\right)^b=y^a$ since $p=\frac{a}{b}$. Similarly, we have $\left(z^p\right)^b=z^a$. Combining these equations, we find if $a>0$
 
 
 $$
@@ -642,7 +642,7 @@ $$
 
 We conclude that the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. 
 
-Now suppose that $r$ is irrational and let $\varepsilon>0$ be given. First we assume that $y>1$.  Let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{u_N}-y^{l_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\text{min}\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
+Now suppose that $r$ is irrational and let $\varepsilon>0$ be given. First we assume that $y>1$.  Let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{u_N}-y^{l_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\min\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
 
 $$
  \left|y^{r_n}-y^r\right|=y^{r_n}-y^r\leq y^{u_N}-y^r\leq y^{u_N}-y^{l_N}<\varepsilon,
@@ -654,7 +654,7 @@ $$
  \left|y^{r_n}-y^r\right|=y^{r}-y^{r_n}\leq y^{u_N}-y^{r_n}\leq y^{u_N}-y^{l_N}<\varepsilon.
 $$
 
-As such, the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. Now suppose that $0<y<1$. Again, let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{l_N}-y^{u_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\text{min}\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
+As such, the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. Now suppose that $0<y<1$. Again, let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{l_N}-y^{u_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\min\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
 
 $$
  \left|y^{r_n}-y^r\right|=y^{r}-y^{r_n}\leq y^{l_N}-y^{r_n}\leq y^{l_N}-y^{u_N}<\varepsilon,
@@ -668,7 +668,7 @@ $$
 
 As such, the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$.
 
-We now show that $(yz)^p=y^pz^p$. Let $\left\{p_n\right\}_{n=1}^\infty$ be a sequence of rational numbers that converges to $p$. Then the sequences $\left\{y^{p_n}\right\}_{n=1}^\infty$, $\left\{z^{p_n}\right\}_{n=1}^\infty$ and $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converge to $y^p$, $z^p$ and $(yz)^p$ respectively. Since the term by term product of convergent sequences converges to the product of the limits, the sequence $\left\{y^{p_n}z^{p_n}\right\}_{n=1}^\infty$ converges to $y^pz^p$. Since $p_n$ is rational for all $n$, we have using {prf:ref}`Thm:RealNumbers:ExpCalcRat` that $(yz)^{p_n}=y^{p_n}z^{p_n}$. Hence, the seqeunce $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converges to both $(yz)^p$ and to $y^pz^p$. As such, these limits are equal, so we have $(yz)^p=y^pz^p$.
+We now show that $(yz)^p=y^pz^p$. Let $\left\{p_n\right\}_{n=1}^\infty$ be a sequence of rational numbers that converges to $p$. Then the sequences $\left\{y^{p_n}\right\}_{n=1}^\infty$, $\left\{z^{p_n}\right\}_{n=1}^\infty$ and $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converge to $y^p$, $z^p$ and $(yz)^p$ respectively. Since the term by term product of convergent sequences converges to the product of the limits, the sequence $\left\{y^{p_n}z^{p_n}\right\}_{n=1}^\infty$ converges to $y^pz^p$. Since $p_n$ is rational for all $n$, we have using {prf:ref}`Thm:RealNumbers:ExpCalcRat` that $(yz)^{p_n}=y^{p_n}z^{p_n}$. Hence, the sequence $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converges to both $(yz)^p$ and to $y^pz^p$. As such, these limits are equal, so we have $(yz)^p=y^pz^p$.
 
 We now show that $y^{p+q}=y^py^q$. Let $\left\{p_n\right\}_{n=1}^\infty$ and $\left\{q_n\right\}_{n=1}^\infty$ be sequences of rational numbers that converge to $p$ respectively $q$.Then the sequence $\left\{p_n+q_n\right\}_{n=1}^\infty$ is a sequence of rational numbers that converges to $p+q$. Hence, the sequence $\left\{y^{p_n+q_n}\right\}_{n=1}^\infty$ converges to $y^{p+q}$. On the other hand, we have $y^{p_n+q_n}=y^{p_n}y^{q_n}$ for all $n$ due to {prf:ref}`Thm:RealNumbers:ExpCalcRat`. The sequences $\left\{y^{p_n}\right\}_{n=1}^\infty$ and $\left\{y^{q_n}\right\}_{n=1}^\infty$ converge to $y^p$ respectively $y^q$. Since the term by term product of convergent sequences converges to the product of the limits, the sequence $\left\{y^{p_n}y^{q_n}\right\}_{n=1}^\infty$ converges to $y^py^q$. Hence, we obtain
 
@@ -712,7 +712,7 @@ $$
  \left(1+\frac{\varepsilon}{2L}\right)^{\frac{-1}{K}}<y^{p-p_n}<\left(1-\frac{\varepsilon}{2L}\right)^{\frac{-1}{K}}.
 $$
 
-Then we let $N=\text{max}\left\{N_1,N_2,N_3\right\}$, i.e. $N$ is the largest of the three numbers $N_1$, $N_2$ and $N_3$. Then using the properties we already proved as well as the triangle inequality {prf:ref}`thm:triangle_inequality_real_numbers`, we have for $n\geq N$ that
+Then we let $N=\max\left\{N_1,N_2,N_3\right\}$, i.e. $N$ is the largest of the three numbers $N_1$, $N_2$ and $N_3$. Then using the properties we already proved as well as the triangle inequality {prf:ref}`thm:triangle_inequality_real_numbers`, we have for $n\geq N$ that
 
 \begin{align*}
  \left|\left(y^p\right)^q-\left(y^{p_n}\right)^{q_n}\right|&=\left|\left(y^p\right)^q-\left(y^{p}\right)^{q_n}+\left(y^{p}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
@@ -826,9 +826,9 @@ $$
 
 ## The number e
 
-Any positive real number can serve as the base of exponentiation, but in the context of calculus one stands out from the rest. This number is denoted by $e$, and it is approximately equal to $2.7182818$. It will turn out that several problems involving differentiation (see {numref}`Chapter:Differentiation`) or integration (see {numref}`Chapter:Integration`) can be simpliefied when using $e$ as base for an exponential instead of any other positive real number.
+Any positive real number can serve as the base of exponentiation, but in the context of calculus one stands out from the rest. This number is denoted by $e$, and it is approximately equal to $2.7182818$. It will turn out that several problems involving differentiation (see {numref}`Chapter:Differentiation`) or integration (see {numref}`Chapter:Integration`) can be simplified when using $e$ as base for an exponential instead of any other positive real number.
 
-The number $e$ was discovered by the Swiss mathematician [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli) in the context of compound interest, that is, the accumulation of interest from an initial saving and previously accumulated interst. The symbol $e$ was first introduced by the Swiss mathematician [Leonhard Euler (1707-1783)], and, therefore, $e$ is sometimes referred to as **Euler's number** (though it should not be confused with [Euler numbers](https://en.wikipedia.org/wiki/Euler_numbers) or [Euler's constant](https://en.wikipedia.org/wiki/Euler%27s_constant)). 
+The number $e$ was discovered by the Swiss mathematician [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli) in the context of compound interest, that is, the accumulation of interest from an initial saving and previously accumulated interest. The symbol $e$ was first introduced by the Swiss mathematician [Leonhard Euler (1707-1783)], and, therefore, $e$ is sometimes referred to as **Euler's number** (though it should not be confused with [Euler numbers](https://en.wikipedia.org/wiki/Euler_numbers) or [Euler's constant](https://en.wikipedia.org/wiki/Euler%27s_constant)). 
 
 The formal definition of the number $e$ is as the limit of a sequence of numbers, that arises naturally in the context of compound interest. For completeness we include this definition here. More information on (the convergence of) sequences can be found in {numref}`Chapter:Sequences`.
 

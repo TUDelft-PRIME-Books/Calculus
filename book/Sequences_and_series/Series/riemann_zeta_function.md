@@ -12,7 +12,7 @@ This Riemann zeta function appears in various branches of mathematics and its ap
 
 ## Definition and properties
 
-The **Riemann zeta function** $\zeta(s)$ is defined as $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\text{Re}(s)>1$.
+The **Riemann zeta function** $\zeta(s)$ is defined as $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\operatorname{Re}(s)>1$.
 
 This function is named after the German mathematician [Georg Friedrich Bernhard Riemann (1826-1866)](https://en.wikipedia.org/wiki/Bernhard_Riemann). 
 

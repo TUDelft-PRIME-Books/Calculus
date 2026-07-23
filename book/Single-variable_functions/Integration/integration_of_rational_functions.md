@@ -38,7 +38,7 @@ Let $a,b,c\in\mathbb{R}$, $c\neq0$ and $k,m\in\{2,3,\ldots\}$. Then we have
 
 ::::::
 
-The last integral in the sixth case can be evaluated using the techniques for trigonometric integrals, which is covered in {numref}`Sec:Integration:TrigFunctions`.
+The last integral in the sixth case can be evaluated using the techniques for trigonometric integrals, which is covered in {numref}`Sec:Integration:TrigonometricFunctions`.
 
 ::::{admonition} Proof of {prf:ref}`Thm:RationalFunctions:Cases`
 :class: tudproof
@@ -297,7 +297,7 @@ $$
 \int\frac{dx}{(x^2+1)^2}\quad\text{and}\quad\int\frac{dx}{(x^2+2)^2}.
 $$ 
 
-To show you how to handle these integrals, we give two short examples next. For more details we refer to {numref}`sec:Integration:TrigFunctions`.
+To show you how to handle these integrals, we give two short examples next. For more details we refer to {numref}`Sec:Integration:TrigonometricFunctions`.
 
 ::::::{prf:Example}
 :label: Ex:Integration:RationalFunctionsRepeatedExample1
