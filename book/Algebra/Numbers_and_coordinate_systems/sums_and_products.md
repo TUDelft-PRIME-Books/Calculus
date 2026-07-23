@@ -628,7 +628,7 @@ $$
 and
 
 $$
-n!!=n\cdot(n-2)\cdot(n-4)\cdots3\cdot1\;\text{for}\;n\;\text{odd.}
+n!!=n\cdot(n-2)\cdot(n-4)\cdots3\cdot1\;\text{for}\;n\;\text{odd}.
 $$
 
 By convention, we also define $0!!=1$ and $1!!=1$. Then we may also write

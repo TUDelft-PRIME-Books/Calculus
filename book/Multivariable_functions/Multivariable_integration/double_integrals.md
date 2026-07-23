@@ -36,7 +36,7 @@ $$
 
 Now we want to find the volume of $S$.
 
-The first step is to divide the rectangle $R$ into subrectangles. This is accomplished by dividing the interval $[a,b]$ into subintervals $[x_{i-1},x_i]$ of equal width $\Delta x=(b-a)/m$ and dividing the interval $[c,d]$ into subintervals $[y_{j-1},y_j]$ of equal width $\Delta y=(d-c)/n$.
+The first step is to divide the rectangle $R$ into sub-rectangles. This is accomplished by dividing the interval $[a,b]$ into subintervals $[x_{i-1},x_i]$ of equal width $\Delta x=(b-a)/m$ and dividing the interval $[c,d]$ into subintervals $[y_{j-1},y_j]$ of equal width $\Delta y=(d-c)/n$.
 
 ```{figure} Images/rectangle.png
 ---
@@ -44,10 +44,10 @@ width: 75%
 name: rectangle
 align: center
 ---
-The division of the rectangle $[a,b]\times[c,d]$ into subrectangles.
+The division of the rectangle $[a,b]\times[c,d]$ into sub-rectangles.
 ```
 
-Consider the subrectangles
+Consider the sub-rectangles
 
 $$
 R_{ij}=[x_{i-1},x_i]\times[y_{j-1},y_j]=\{(x,y)\,|\,x_{i-1}\leq x\leq x_i,\;y_{j-1}\leq y\leq y_j\},
@@ -62,7 +62,7 @@ align: right
 A double Riemann sum.
 ```
 
-each with area $\Delta A=\Delta x\,\Delta y$. If we choose a *sample point* $(x_{ij}^*,y_{ij}^*)$ in each subrectangle $R_{ij}$, then the volume of $S$ can be approximated by the sum of the volumes of rectangular boxes with height $f(x_{ij}^*,y_{ij}^*)$:
+each with area $\Delta A=\Delta x\,\Delta y$. If we choose a *sample point* $(x_{ij}^*,y_{ij}^*)$ in each sub-rectangle $R_{ij}$, then the volume of $S$ can be approximated by the sum of the volumes of rectangular boxes with height $f(x_{ij}^*,y_{ij}^*)$:
 
 $$
 \sum_{i=1}^m\sum_{j=1}^nf(x_{ij}^*,y_{ij}^*)\Delta A.
@@ -714,7 +714,7 @@ If we integrate the constant function $f(x,y)=1$ over a region $D$, we get the *
 \text{area}(D)=\iint\limits_D1\,dA.
 :::
 
-:::::{prf:corollorary}
+:::::{prf:corollary}
 :label: Cor:MultivariableIntegration:Area
 If $m\leq f(x,y)\leq M$ for all $(x,y)\in D$, then:
 
@@ -739,7 +739,7 @@ Consider the region $D$ in $\mathbb{R}^2$ bounded by the graphs of $y=x^2$ and $
 Then we have:
 
 $$
-\textrm{area}(D)=\iint\limits_D1\,dA=\int_0^1\int_{x^2}^{\sqrt{x}}1\,dy\,dx=\int_0^1\left(\sqrt{x}-x^2\right)\,dx=\bigg[\frac{2}{3}x\sqrt{x}-\frac{1}{3}x^3\bigg]_{x=0}^1=\frac{1}{3}.
+\operatorname{area}(D)=\iint\limits_D1\,dA=\int_0^1\int_{x^2}^{\sqrt{x}}1\,dy\,dx=\int_0^1\left(\sqrt{x}-x^2\right)\,dx=\bigg[\frac{2}{3}x\sqrt{x}-\frac{1}{3}x^3\bigg]_{x=0}^1=\frac{1}{3}.
 $$
 
 :::
@@ -757,7 +757,7 @@ Sometimes single integrals are easier to evaluate by first converting them into 
 :::::{prf:example} The Dirichlet integral
 :label: Ex:MultivariableIntegration:DirichletIntegral
 
-Using the Feynman technique (see: {numref}`Sec:Integration:FeynmanTechnique`) we have already shown that $\displaystyle\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\frac{1}{2}\pi$. This can also be done through double integrals as follows: note that $\displaystyle\frac{\sin(x)}{x}=\int_0^1\cos(xy)\,dy$ for $x>0$. Then we have using (see: {numref}`Sec:Integration:Parts`)
+Using the Feynman technique (see: {numref}`Sec:Integration:Feynman`) we have already shown that $\displaystyle\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\frac{1}{2}\pi$. This can also be done through double integrals as follows: note that $\displaystyle\frac{\sin(x)}{x}=\int_0^1\cos(xy)\,dy$ for $x>0$. Then we have using (see: {numref}`Sec:Integration:Parts`)
 
 $$
 \int_0^{\infty}e^{-\alpha x}\cos(xy)\,dx=\frac{\alpha}{\alpha^2+y^2}

@@ -155,7 +155,7 @@ Consider two functions $f$ and $g$ and let $a$ be a point that is both in the do
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Basiccomputationrules`
 :class: tudproof, dropdown
 
-These statements follow directly from {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` in case the domain of the function under consideration contains an open intervals $(b,c)$ with $a\in(b,c)$. Otherwise the proof of {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` can be repeated where each of occurence of "for each $x$ with" should be replaced by "for each $x$ in the domain of the function under consideration with".
+These statements follow directly from {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` in case the domain of the function under consideration contains an open intervals $(b,c)$ with $a\in(b,c)$. Otherwise the proof of {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` can be repeated where each of occurrence of "for each $x$ with" should be replaced by "for each $x$ in the domain of the function under consideration with".
 :::
 
 In addition to the rules above, the composition of two continuous functions is again continuous, as can be seen from the following results.
@@ -202,7 +202,7 @@ $$
 
 This means that $g$ is continuous at $a$. Since this holds for all $a$, $g$ is continuous on $\mathbb{R}$.
 
-Now in order to establish the continuity of $f$, we note that for each $1\leq k\leq n$ the function $x\mapsto x^k=\underbrace{x\cdot x\cdot....\cdot x}_{k\,\mathrm{ times}}$ is the product of $k$ times the continuous function $h$. On account of {prf:ref}`Theorem:Continuity:Basiccomputationrules`, the function $x\mapsto x^k$ is continuous on $\mathbb{R}$. From the same theorem we find that the function $x\mapsto a_kx^k$ is continuous on $\mathbb{R}$. In addition, the function $x\mapsto a_0$ is a scalar mulitple of the continuous function $g$, so this function is continuous on $\mathbb{R}$ too. This means that $f$ is the sum of continuous functions, so by {prf:ref}`Theorem:Continuity:Basiccomputationrules` it must be continuous.
+Now in order to establish the continuity of $f$, we note that for each $1\leq k\leq n$ the function $x\mapsto x^k=\underbrace{x\cdot x\cdot....\cdot x}_{k\,\text{ times}}$ is the product of $k$ times the continuous function $h$. On account of {prf:ref}`Theorem:Continuity:Basiccomputationrules`, the function $x\mapsto x^k$ is continuous on $\mathbb{R}$. From the same theorem we find that the function $x\mapsto a_kx^k$ is continuous on $\mathbb{R}$. In addition, the function $x\mapsto a_0$ is a scalar multiple of the continuous function $g$, so this function is continuous on $\mathbb{R}$ too. This means that $f$ is the sum of continuous functions, so by {prf:ref}`Theorem:Continuity:Basiccomputationrules` it must be continuous.
 :::
 
 ::::::{prf:example} 
@@ -423,7 +423,7 @@ If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continu
 
 Consider the function $f(x)$, defined for $x$ in the interval $(-1,1)$, which has $f\left(\frac{1}{n}\right)=\frac{1}{2n}$ for all integers $n\geq 3$, $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$ for all integers $n\geq 3$ and $f(x)=x$ for all other values of $x$. First, we show that $f$ is one-to-one. Note that the points of the form $\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ even, while points of the form $1-\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ odd, so these points are not mapped to the same function values. Moreover, if $x$ is not of one of these forms, then $x$ is mapped to itself, which is not of the form $\frac{1}{m}$ for $m$ either even or odd. So indeed, different points are mapped to different function values, so the function is one-to-one.
 
-Now we claim that $f$ is continuous at $0$. We know $f(0)=0$, so we must show that $\lim\limits_{x\rightarrow 0}f(x)=0$. Let $\varepsilon>0$ be given. We choose $\delta=\mathrm{min}\left\{\varepsilon,\dfrac{1}{2}\right\}$, i.e. $\delta$ is the smallest of the two values $\varepsilon$ and $\dfrac{1}{2}$. Then for $x$ with $|x|<\delta$ we either have $x=\frac{1}{n}$, which means that $|f(x)|=\frac{1}{2n}\leq \frac{1}{n}<\delta=\varepsilon$, or $x$ is not of this form, in which case $|f(x)|=|x|<\delta=\varepsilon$ ($x=1-\frac{1}{n}$ for $n\geq 3$ is not possible since we assumed that $\delta\leq \frac{1}{2}$). As such, we must have $\lim\limits_{x\rightarrow 0}f(x)=0$, so $f$ is continuous at $0$.
+Now we claim that $f$ is continuous at $0$. We know $f(0)=0$, so we must show that $\lim\limits_{x\rightarrow 0}f(x)=0$. Let $\varepsilon>0$ be given. We choose $\delta=\min\left\{\varepsilon,\dfrac{1}{2}\right\}$, i.e. $\delta$ is the smallest of the two values $\varepsilon$ and $\dfrac{1}{2}$. Then for $x$ with $|x|<\delta$ we either have $x=\frac{1}{n}$, which means that $|f(x)|=\frac{1}{2n}\leq \frac{1}{n}<\delta=\varepsilon$, or $x$ is not of this form, in which case $|f(x)|=|x|<\delta=\varepsilon$ ($x=1-\frac{1}{n}$ for $n\geq 3$ is not possible since we assumed that $\delta\leq \frac{1}{2}$). As such, we must have $\lim\limits_{x\rightarrow 0}f(x)=0$, so $f$ is continuous at $0$.
 
 [^Footnoteproperty]: In this case, the property is that for all $x$ in the domain of $f^{-1}$ with $0<|x-0|<\delta$ we have $|f^{-1}(x)-f^{-1}(0)|<\varepsilon$.
 

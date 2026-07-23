@@ -31,16 +31,16 @@ $$
 and that the safe decompression rate is given by
 
 $$
- \frac{dp}{dt}=1700\,\frac{\mathrm{Pa}}{\mathrm{s}}.
+ \frac{dp}{dt}=1700\,\frac{\text{Pa}}{\text{s}}.
 $$
 
 If we want to find the largest speed to avoid decompression sickness, we should use our previously found expression relating the various derivatives. This gives
 
 $$
- \frac{d z}{d t}=\frac{\frac{d p}{d t}}{\frac{d p}{d z}}=\frac{1700}{10000}\,\frac{\mathrm{m}}{\mathrm{s}}=\frac{17}{100}\,\frac{\mathrm{m}}{\mathrm{s}}.
+ \frac{d z}{d t}=\frac{\frac{d p}{d t}}{\frac{d p}{d z}}=\frac{1700}{10000}\,\frac{\text{m}}{\text{s}}=\frac{17}{100}\,\frac{\text{m}}{\text{s}}.
 $$
 
-So in order to avoid decompression sickness, the diver should not move faster than $\displaystyle \frac{17}{100}\,\frac{\mathrm{m}}{\mathrm{s}}$.
+So in order to avoid decompression sickness, the diver should not move faster than $\displaystyle \frac{17}{100}\,\frac{\text{m}}{\text{s}}$.
 
 The general version of the technique we used to find $\dfrac{d p}{d t}$ is known as the **chain rule**. It is used to find derivatives of compositions of functions. It is a very important and commonly used tool for finding derivatives. In this section, we will state and prove the chain rule and show how it is used. We will also use the chain rule to find the derivative of functions of the form $f(x)=b^x$ for $b>0$.
 

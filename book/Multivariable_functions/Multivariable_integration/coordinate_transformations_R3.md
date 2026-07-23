@@ -14,7 +14,7 @@ In {numref}`Sec:MultivariableIntegration:TransformationsR2` we have seen the pol
 For instance, consider
 
 $$
-\left\{\begin{array}{l}x=r\cos(\theta)\\y=r\sin(\theta)\\z=z\end{array}\right.\quad\Longrightarrow\quad r^2=x^2+y^2\quad\textrm{and}\quad\tan(\theta)=\frac{y}{x}.
+\left\{\begin{array}{l}x=r\cos(\theta)\\y=r\sin(\theta)\\z=z\end{array}\right.\quad\Longrightarrow\quad r^2=x^2+y^2\quad\text{and}\quad\tan(\theta)=\frac{y}{x}.
 $$
 
 ```{figure} Images/cylindrical.png

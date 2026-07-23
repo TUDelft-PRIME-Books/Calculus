@@ -17,7 +17,7 @@ $$
 We start with a **polar rectangle**
 
 $$
-R=\{(r\cos(\theta),r\sin(\theta))\,|\,a\leq r\leq b,\;\alpha\leq\theta\leq\beta\}\;\textrm{with}\; a\geq0\;\textrm{and}\;\beta-\alpha\leq2\pi.
+R=\{(r\cos(\theta),r\sin(\theta))\,|\,a\leq r\leq b,\;\alpha\leq\theta\leq\beta\}\;\text{with}\; a\geq0\;\text{and}\;\beta-\alpha\leq2\pi.
 $$
 
 ```{figure} Images/polar1.png
@@ -142,7 +142,7 @@ V&=\iint\limits_D(1-x^2-y^2)\,dA\\
 If $f$ is continuous on a polar region of the form
 
 $$
-D=\{(r\cos(\theta),r\sin(\theta))\,|\,\alpha\leq\theta\leq\beta,\;h_1(\theta)\leq r\leq h_2(\theta)\}\;\textrm{with}\;\beta-\alpha\leq2\pi,
+D=\{(r\cos(\theta),r\sin(\theta))\,|\,\alpha\leq\theta\leq\beta,\;h_1(\theta)\leq r\leq h_2(\theta)\}\;\text{with}\;\beta-\alpha\leq2\pi,
 $$
 
 then
@@ -185,7 +185,7 @@ $$
 Hence we have using $\cos(2x)=2\cos^2(x)-1$:
 
 \begin{align*}
-\textrm{area}(D)&=\iint\limits_D1\,dA\\
+\operatorname{area}(D)&=\iint\limits_D1\,dA\\
 &=\int_{-\frac{1}{4}\pi}^{\frac{1}{4}\pi}\int_0^{\cos(2\theta)}r\,dr\,d\theta\\
 &=\int_{-\frac{1}{4}\pi}^{\frac{1}{4}\pi}\bigg[\frac{1}{2}r^2\bigg]_{r=0}^{\cos(2\theta)}\,d\theta\\
 &=\frac{1}{2}\int_{-\frac{1}{4}\pi}^{\frac{1}{4}\pi}\cos^2(2\theta)\,d\theta\\
@@ -280,7 +280,7 @@ V&=\int_0^{2\pi}\int_0^5\frac{r\cos(\theta)+15}{10}\,r\,dr\,d\theta\\
 :::::{prf:example}
 :label: Ex:MultivariableIntegration:PolarApplicationsExample2
 
-Earlier (see: {numref}`Note:Integration:ImproperIntegralsGaussianIntegral`) we have seen that the *Gaussian integral* is: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sqrt{\pi}$. 
+Earlier (see: {prf:ref}`Note:Integration:ImproperIntegralsGaussianIntegral`) we have seen that the *Gaussian integral* is: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sqrt{\pi}$. 
 
 Now we are able to prove this result.
 
@@ -422,7 +422,7 @@ A one-to-one transformation.
 We can approximate the image region $R=T(S)$ by a parallelogram determined by the secant vectors
 
 $$
-\mathbf{r}(u_0+\Delta u,v_0)-\mathbf{r}(u_0,v_0)\quad\textrm{and}\quad\mathbf{r}(u_0,v_0+\Delta v)-\mathbf{r}(u_0,v_0).
+\mathbf{r}(u_0+\Delta u,v_0)-\mathbf{r}(u_0,v_0)\quad\text{and}\quad\mathbf{r}(u_0,v_0+\Delta v)-\mathbf{r}(u_0,v_0).
 $$
 
 However, we have
@@ -699,7 +699,7 @@ The region $D$ enclosed by the circles $x^2+y^2=1$ and $x^2+y^2=4$ and the lines
 Using polar coordinates we obtain for the area of $D$:
 
 \begin{align*}
-\textrm{area}(D)&=\iint\limits_R1\,dA\\
+\operatorname{area}(D)&=\iint\limits_R1\,dA\\
 &=\int_{\arctan\left(\frac{1}{\sqrt{3}}\right)}^{\arctan\left(\sqrt{3}\right)}\int_1^2r\,dr\,d\theta\\
 &=\int_{\frac{1}{6}\pi}^{\frac{1}{3}\pi}d\theta\int_1^2r\,dr\\
 &=\left(\frac{1}{3}\pi-\frac{1}{6}\pi\right)\bigg[\frac{1}{2}r^2\bigg]_{r=1}^2\\
@@ -731,7 +731,7 @@ in the $uv$-plane. Note that
 This leads to
 
 \begin{align*}
-\textrm{area}(D)&=\iint\limits_R1\,dA\\
+\operatorname{area}(D)&=\iint\limits_R1\,dA\\
 &=\int_{\frac{1}{\sqrt{3}}}^{\sqrt{3}}\int_1^4\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv\\
 &=\frac{1}{2}\int_1^4du\,\int_{\frac{1}{\sqrt{3}}}^{\sqrt{3}}\frac{dv}{1+v^2}\\
 &=\frac{3}{2}\left(\arctan\left(\sqrt{3}\right)-\arctan\left(\frac{1}{\sqrt{3}}\right)\right)\\
@@ -871,7 +871,7 @@ The triangle $T$.
 Hence we have
 
 \begin{align*}
-&\frac{3}{4}\zeta(2)=\iint\limits_Tdu\,dv=\textrm{area}(T)=\frac{1}{2}\cdot\frac{1}{4}\pi^2=\frac{1}{8}\pi^2\\
+&\frac{3}{4}\zeta(2)=\iint\limits_Tdu\,dv=\operatorname{area}(T)=\frac{1}{2}\cdot\frac{1}{4}\pi^2=\frac{1}{8}\pi^2\\
 &{}\quad\Longrightarrow\quad\zeta(2)=\frac{4}{3}\cdot\frac{1}{8}\pi^2=\frac{1}{6}\pi^2. 
 \end{align*}
 
