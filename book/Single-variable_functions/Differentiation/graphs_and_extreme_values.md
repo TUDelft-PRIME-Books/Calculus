@@ -981,8 +981,8 @@ $$
 We conclude that 
 
 $$
- \arctan(x)+\arctan\left(\frac{1}{x}\right)=\left\{\begin{array}{l}-\dfrac{\pi}{2},\qquad&\mathrm{if}\ x<0,\\[0.2cm]
- \dfrac{\pi}{2},\qquad&\mathrm{if}\ x>0.\end{array}\right.
+ \arctan(x)+\arctan\left(\frac{1}{x}\right)=\left\{\begin{array}{l}-\dfrac{\pi}{2},\qquad&\text{if}\ x<0,\\[0.2cm]
+ \dfrac{\pi}{2},\qquad&\text{if}\ x>0.\end{array}\right.
  
 $$
 
@@ -1120,16 +1120,15 @@ Before we turn to the proof of {prf:ref}`Thm:MinMax:Firstdertest`, we illustrate
 :name: Fig:MinMax:Firstdiv
 :class: dark-light
 
-Illustration of {prf:ref}`Thm:MinMax:Firstdertest`.<br>
-(_top-left_) $f'$ changes from negative to positive at $c$;<br>
-(_top-right_) $f'$ changes from positive to negative at $c$;<br>
-(_bottom-left_) $f'(x)>0$ for all $x\neq c$;<br>
+Illustration of {prf:ref}`Thm:MinMax:Firstdertest`: \
+(_top-left_) $f'$ changes from negative to positive at $c$; \
+(_top-right_) $f'$ changes from positive to negative at $c$; \
+(_bottom-left_) $f'(x)>0$ for all $x\neq c$; \
 (_bottom-right_) $f'(x)<0$ for all $x\neq c$.
-
 :::
 
 
-{numref}`Fig:MinMax:Firstdiv`(a) clearly shows a local minimum at $x=c$. If you drag the point along the graph, you can see that the slope of the tangent line changes from negative to positive at $x=c$. Similarly, {numref}`Fig:MinMax:Firstdiv`(b) clearly shows a local maximum at $c$, and the slope of the tangent line changes from positive to negative at $c$. Finally, {numref}`Fig:MinMax:Firstdiv`(c) and (d) show graphs that neither have a local minimum nor a local maximum, and the slope of the tangent line is either positive or negative on both sides of $c$. These graphs illustrate the different cases of {prf:ref}`Thm:MinMax:Firstdertest`.
+{numref}`Fig:MinMax:Firstdiv`(_top-left_) clearly shows a local minimum at $x=c$. If you drag the point along the graph, you can see that the slope of the tangent line changes from negative to positive at $x=c$. Similarly, {numref}`Fig:MinMax:Firstdiv`(_top-right_) clearly shows a local maximum at $c$, and the slope of the tangent line changes from positive to negative at $c$. Finally, {numref}`Fig:MinMax:Firstdiv`(_bottom-left_) and (_bottom-right_) show graphs that neither have a local minimum nor a local maximum, and the slope of the tangent line is either positive or negative on both sides of $c$. These graphs illustrate the different cases of {prf:ref}`Thm:MinMax:Firstdertest`.
 
 Now you can read the proof of {prf:ref}`Thm:MinMax:Firstdertest`.
 

@@ -682,8 +682,8 @@ $$
 
 ::::::
 
-::::::{note}
-:name: Note:Integration:ImproperIntegralsGaussianIntegral
+::::::{prf:remark}
+:label: Note:Integration:ImproperIntegralsGaussianIntegral
 
 Later (see: {prf:ref}`Ex:MultivariableIntegration:PolarApplicationsExample2`) we will see that $\displaystyle\int_0^{\infty}e^{-x^2}\,dx=\frac{1}{2}\sqrt{\pi}\approx0.88623$.
 

@@ -420,7 +420,7 @@ $$
  f(-x)=(-x)^n=(-1)^nx^n=(-1)\cdot x^n=-x^n=-f(x).
 $$
 
-So we find that for these functions the point $(x,y)$ lies on the graph of $f$ precisely when $(-x,-y)$ lies on the graph of $f$. This means that the graph of the function is point symmetric with resepect to the origin. Such a function will be called **odd**. Other examples of odd functions include $f(x)=\sin(x)$ and $f(x)=\tan(x)$ (the latter only when restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$).
+So we find that for these functions the point $(x,y)$ lies on the graph of $f$ precisely when $(-x,-y)$ lies on the graph of $f$. This means that the graph of the function is point symmetric with respect to the origin. Such a function will be called **odd**. Other examples of odd functions include $f(x)=\sin(x)$ and $f(x)=\tan(x)$ (the latter only when restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$).
 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:EvenOdd
@@ -583,7 +583,7 @@ If a function is only defined on an interval of the form $(0,a)$ it is possible 
 Let $a>0$ or $a=\infty$ and let $f$ be a function that is defined on the interval $(0,a)$. Then the function 
 
 $$
- f_{\mathrm{odd}}(x)=\left\{\begin{array}{l}f(x),\quad&\mathrm{if}\,x\in(0,a)\\ 0,\quad &\mathrm{if}\,x=0\\ -f(-x),\quad&\mathrm{if}\,x\in(-a,0)\end{array}\right.
+ f_{\mathrm{odd}}(x)=\left\{\begin{array}{l}f(x),\quad&\text{if}\,x\in(0,a)\\ 0,\quad &\text{if}\,x=0\\ -f(-x),\quad&\text{if}\,x\in(-a,0)\end{array}\right.
 $$
 
 is odd on $(-a,a)$. It is called the **odd extension of $f$** to $(-a,a)$.
@@ -591,7 +591,7 @@ is odd on $(-a,a)$. It is called the **odd extension of $f$** to $(-a,a)$.
 Similarly, if $f$ is defined on the interval $[0,a)$, then the function 
 
 $$
- f_{\mathrm{even}}(x)=\left\{\begin{array}{l}f(x),\quad&\mathrm{if}\,x\in[0,a)\\  f(-x),\quad&\mathrm{if}\,x\in(-a,0)\end{array}\right.
+ f_{\mathrm{even}}(x)=\left\{\begin{array}{l}f(x),\quad&\text{if}\,x\in[0,a)\\  f(-x),\quad&\text{if}\,x\in(-a,0)\end{array}\right.
 $$
 
 is even on $(-a,a)$. It is called the **even extension of $f$** to $(-a,a)$..

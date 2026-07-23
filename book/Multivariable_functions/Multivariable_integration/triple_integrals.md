@@ -106,13 +106,13 @@ Note that
 The average value of a function $f$ of three variables defined on a rectangular box $B$ is 
 
 $$
-\frac{1}{\text{vol}(B)}\iiint\limits_Bf(x,y,z)\,dA.
+\frac{1}{\operatorname{vol}(B)}\iiint\limits_Bf(x,y,z)\,dA.
 $$
 
 :::{prf:example}
 :label: Ex:MultipleIntegration:TripleIntegralsAverageValue
 
-Consider a metal box $B=[-5,5]\times[-3,3]\times[-1,1]$, where the temperature $T$ (in ${}^{\circ}\text{C}$) in each point $(x,y,z)\in B$ is given by $T(x,y,z)=50-3x^2-3y^2-3z^2$. Then we have: $\text{vol}(B)=10\cdot6\cdot1=60$ and
+Consider a metal box $B=[-5,5]\times[-3,3]\times[-1,1]$, where the temperature $T$ (in ${}^{\circ}\text{C}$) in each point $(x,y,z)\in B$ is given by $T(x,y,z)=50-3x^2-3y^2-3z^2$. Then we have: $\operatorname{vol}(B)=10\cdot6\cdot1=60$ and
 
 \begin{align*}
 &\iiint_B\left(50-3x^2-3y^2-3z^2\right)\,dV\\
@@ -390,7 +390,7 @@ Using polar coordinates we now obtain
 If $\rho(x,y,z)=1$ for all points $(x,y,z)$ in $E$, then the (total) mass of $E$ equals the **volume** of $E$:
 
 $$
-\textrm{vol}(E)=\iiint\limits_E1\,dV.
+\operatorname{vol}(E)=\iiint\limits_E1\,dV.
 $$
  
 If $\rho(x,y,z)\geq0$ is a mass density function defined on a solid $E$ in $\mathbb{R}^3$, then
@@ -402,16 +402,16 @@ $$
 denotes the (total) **mass** of $E$. Then the integrals
 
 $$  
-\iiint\limits_Ex\,\rho(x,y,z)\,dV,\quad\iiint\limits_Ey\,\rho(x,y,z)\,dV\quad\textrm{and}\quad\iiint\limits_Ez\,\rho(x,y,z)\,dV
+\iiint\limits_Ex\,\rho(x,y,z)\,dV,\quad\iiint\limits_Ey\,\rho(x,y,z)\,dV\quad\text{and}\quad\iiint\limits_Ez\,\rho(x,y,z)\,dV
 $$  
  
-are the **moments** of $E$ about the three coordinate planes $x=0$, $y-0$ and $z=0$, respectively.
+are the **moments** of $E$ about the three coordinate planes $x=0$, $y=0$ and $z=0$, respectively.
 
 The **center of mass** of $E$ is located at the point $(\overline{x},\overline{y},\overline{z})$ with
  
 \begin{align*}
 &\overline{x}=\frac{1}{m}\iiint\limits_Ex\,\rho(x,y,z)\,dV,\quad\overline{y}=\frac{1}{m}\iiint\limits_Ey\,\rho(x,y,z)\,dV\\
-&{}\quad\textrm{and}\quad\overline{z}=\frac{1}{m}\iiint\limits_Ez\,\rho(x,y,z)\,dV,
+&{}\quad\text{and}\quad\overline{z}=\frac{1}{m}\iiint\limits_Ez\,\rho(x,y,z)\,dV,
 \end{align*}
 
 where $m=\displaystyle\iiint\limits_E\rho(x,y,z)\,dV$ denotes the (total) mass of  $E$.
@@ -422,7 +422,7 @@ If $\rho(x,y,z)\geq0$ is a mass density function defined on a solid $E$ in $\mat
 
 \begin{align*}
 &I_x=\iiint\limits_E(y^2+z^2)\rho(x,y,z)\,dV,\quad I_y=\iiint\limits_E(x^2+z^2)\rho(x,y,z)\,dV\\
-&{}\quad\textrm{and}\quad I_z=\iiint\limits_E(x^2+y^2)\rho(x,y,z)\,dV  
+&{}\quad\text{and}\quad I_z=\iiint\limits_E(x^2+y^2)\rho(x,y,z)\,dV  
 \end{align*}
 
 are the **moments of inertia** of the solid $E$ about the $x$-axis, the $y$-axis and the $z$-axis, respectively.

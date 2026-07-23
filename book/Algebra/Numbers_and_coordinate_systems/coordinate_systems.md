@@ -23,7 +23,7 @@ $$
 r=\sqrt{x^2+y^2}.
 $$
 
-Furtermore, we find that
+Furthermore, we find that
 
 $$
 x=r\cos(\theta)\quad\text{and}\quad y=r\sin(\theta).
@@ -35,7 +35,7 @@ $$
 Polar coordinates in $\mathbb{R}^3$ are usually called **cylindrical coordinates**. If one of the Cartesian coordinates is unchanged, we might apply *polar coordinates* to the other two. For instance, we have
 
 $$
-\left\{\begin{array}{l}x=r\cos(\theta)\\y=r\sin(\theta)\\z=z\end{array}\right.\quad\Longrightarrow\quad r^2=x^2+y^2\quad\textrm{and}\quad\tan(\theta)=\frac{y}{x}.
+\left\{\begin{array}{l}x=r\cos(\theta)\\y=r\sin(\theta)\\z=z\end{array}\right.\quad\Longrightarrow\quad r^2=x^2+y^2\quad\text{and}\quad\tan(\theta)=\frac{y}{x}.
 $$
 
 ```{figure} Images/cylindrical.png
