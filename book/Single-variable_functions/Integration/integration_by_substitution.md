@@ -104,6 +104,31 @@ $$
 \int\cos(x)e^{\sin(x)}\,dx= \int e^{\sin(x)}\,\cos(x)\,dx =\int e^u\,du=e^u+C=e^{\sin(x)}+C.
 $$
 
+{numref}`Fig:Integration:SubstitutionIndefiniteIntegralExample1` shows the graph of the integrand on the left and the antiderivative on the right. We have taken the value of $C=\frac12$ initially. Note that changing the value of $C$ will only shift the graph of the antiderivative vertically, and does not influence the slope of the antiderivative at any point. The slope of the antiderivative at a point $x$ always equals the value of the integrand at that point.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_1
+:name: Fig:Integration:SubstitutionIndefiniteIntegralExample1
+:class: dark-light
+
+The graph on the left shows the integrand $\cos(x)e^{\sin(x)}$ and the graph on the right shows the antiderivative $e^{\sin(x)}+C$ and a part of the tangent line of the antiderivative at the selected point. The value of $C$ can be changed using the slider and is initially set to $C=\frac12$.
+:::
+
+Besides showing the initial integrand and the resulting antiderivative, we can also visualise the steps taken to evaluate the integral, which you can see in {numref}`Fig:Integration:SubstitutionIndefiniteIntegralExample1_steps`. The domain of the integrand $\cos(x)e^{\sin(x)}$ is $(-\infty,\infty)$, which is also the domain of the antiderivative $e^{\sin(x)}+C$. This means that $x$ can take any value in $(-\infty,\infty)$, but because the range of $\sin(x)$ is $[-1,1]$, the variable $u=\sin(x)$ can only take on values in $[-1,1]$. This means that the domain of the integrand after substitution is therefore $[-1,1]$, which is also the domain of the antiderivative after substitution.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_2
+:name: Fig:Integration:SubstitutionIndefiniteIntegralExample1_steps
+:class: dark-light
+
+This figure shows the following stages of the evaluation of the integral $\displaystyle\int\cos(x)e^{\sin(x)}\,dx$: \
+(1) (_initial_) The graph of the initial integrand $\cos(x)e^{\sin(x)}$. \
+(2) The graph of the integrand after substitution. Note the change at the horizontal axis from $x$ to $u$. \
+(3) The graph of the antiderivative after substitution. \
+(4) (_final_) The graph of the antiderivative after substituting back to the original variable $x$. \
+In this case we have chosen to fix the value of $C$ to $\frac12$ for all antiderivatives.
+:::
+
 ::::::
 
 Sometimes we need a constant multiple of the function $g$ of which a derivative $g'$ is present in the integrand. In that case we can factor out this constant multiple from the integral, which is shown in the next examples.
