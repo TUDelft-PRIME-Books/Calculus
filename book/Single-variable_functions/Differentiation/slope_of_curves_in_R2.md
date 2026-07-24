@@ -178,6 +178,48 @@ That is, on this interval, $y$ is implicitly defined as a differentiable functio
 
 This result shows that we can apply implicit differentiation as long as we we can take the derivatives we want to and we subsequently do not divide by $0$ (it should not come as a surprise that we want to avoid dividing by $0$).
 
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+Consider the curve $\mathcal{C}$ that is shown in {numref}`Fig:SlopesCurves:Polling`.
+
+:::{figure} Images/Fig-SlopesCurves-Polling.png
+:name: Fig:SlopesCurves:Polling
+:class: dark-light
+
+The curve $\mathcal{C}$.
+:::
+
+
+
+Complete the following sentences:
+---
+M[3]
+DS[has a vertical tangent;has a horizontal tangent;makes a sharp turn;{self intersects};none of these]
+DS[zero slope;{an undefined slope};nonzero slope]
+DS[has a vertical tangent;has a horizontal tangent;{makes a sharp turn};self intersects;none of these]
+DS[zero slope;{an undefined slope};nonzero slope]
+DS[{has a vertical tangent};has a horizontal tangent;makes a sharp turn;self intersects;none of these]
+DS[zero slope;{an undefined slope};nonzero slope]
+DS[has a vertical tangent;{has a horizontal tangent};makes a sharp turn;self intersects;none of these]
+DS[{zero slope};an undefined slope;nonzero slope]
+^^^
+? :::{card}
+Implicit differentiation can be used to find the slope of the curve at all except {gap} points.
+
+At the point $(-2,3)$ the curve {gap}, so it has {gap}.
+At the point $(1,1)$ the curve {gap}, so it has {gap}.
+At the point $(2,2)$ the curve {gap}, so it has {gap}.
+At the point $(1,4)$ the curve {gap}, so it has {gap}.
+:::
+---
+
+::::
+
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Seconddiv
 We can also use implicit differentiation to find second (or higher) order derivatives of curves. For instance, consider the curve that is defined by 
