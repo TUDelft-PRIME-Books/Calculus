@@ -1438,6 +1438,15 @@ The cosine function where the solid part is the function on the interval $\left[
 
 ::::
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a69d1a5a-7051-4e50-a7e3-2b33704ceb78?id=134779
+:label: Grasple:134779
+:dropdown:
+:description: A sum of three arctangents.
+
+::::
+
 
 :::::::::{admonition} Bonus: more exercises on inverse trigonometric functions
 :class: bonus
