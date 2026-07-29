@@ -225,13 +225,13 @@ Now we use the techniques of the previous section to obtain
 
 ::::::
 
-Although we have not made it explicit in the examples so far, in many cases we used that, if $u=g(x)$, then also $x=g^{-1}(u)$: for each value of $x$ there should be exactly one value for $u$ and vice versa. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$.
+Although we have not made it explicit in the examples so far, in many cases we used that, if $u=g(x)$, then also $x=g^{-1}(u)$: for each value of $x$ there should be exactly one value for $u$ and vice versa. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we used $u=\sqrt{x}$, we also used that $x=u^2$, which was allowed because we assume $x>0$.
 
-The function $g$ does not have to be invertible, but if you want to use the inverse function $g^{-1}$, then it must be invertible. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample4`, when we set $u=1-t^2$, we also used that $t=\sqrt{1-u}$, which is only valid for $-1<t<1$.
+The function $g$ does not have to be invertible, but if you want to replace an $x$ in the integrand with an expression involving $u$, then $g$ must be invertible.
 
-It is not always necessary to have that $g$ is invertible, as can be seen in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample1`, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$ for $g$ invertible on a domain, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
+It is not always necessary to have that $g$ is invertible, as can be seen in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample1`, but it can be useful in some cases. If $g$ is invertible, we have the relation $u=g^{-1}(x)$, which implies $dx=(g^{-1})'(u)\,du$. In that case we can use the inverse function $g^{-1}$ to replace $dx$ in the integrand with $(g^{-1})'(u)\,du$.
 
-We summarise this in the next algorithm:
+We summarise the entire process in the next algorithm:
 
 ::::::{prf:algorithm}
 :label: Alg:Integration:SubstitutionIndefiniteIntegral
@@ -239,9 +239,11 @@ We summarise this in the next algorithm:
 To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
 1. Select a function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
-2. Set $u=g(x)$ and define $x=h(u)=g^{-1}(u)$ _if possible_.
-3. Compute $dx=h'(u)\,du$, _if possible_, otherwise compute $dx=\frac{1}{g'(x)}\,du$.
-4. Substitute $u$ for $g(x)$, $h(u)$ for $x$ (_if possible_) and $h'(u)\,du$ or $\frac{1}{g'(x)}\,du$ for $dx$, in the integral.
+2. Set $u=g(x)$ and define $x=g^{-1}(u)$ _if $g$ is invertible_.
+3. Compute $dx=(g^{-1})'(u)\,du$, _if $g$ is invertible_, otherwise compute $du={g'(x)}\,dx$.
+4. Substitute $u$ for $g(x)$, $g^{-1}(u)$ for $x$ _if $g$ is invertible_ and substitute either $(g^{-1})'(u)\,du$ or $\frac{1}{g'(x)}\,du$ for $dx$, in the integral.
+   - After the substitution, simplify the integrand as much as possible.
+   - After the simplification, the variable $x$ should not appear in the integrand anymore.
 5. Try to evaluate the resulting indefinite integral using standard methods.
 
 ::::::
@@ -253,12 +255,12 @@ We will apply this algorithm in the next example:
 
 Consider $\displaystyle\int\frac{1}{(1+x)\sqrt{x}}\,dx$ for $x>0$ again.
 
-We applied $u=\sqrt{x}$ previously. The function $g(x)=\sqrt{x}$ is invertible on $(0,\infty)$, so we can use the inverse function $h(u)=u^2$ to replace $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
+We applied $u=\sqrt{x}$ previously. The function $g(x)=\sqrt{x}$ is invertible on $(0,\infty)$, so we can use the inverse function $g^{-1}(u)=u^2$ to replace $x$ in the integrand with $g^{-1}(u)$ and $dx$ with $(g^{-1})'(u)\,du$.
 
  The five steps of {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` then lead to:
 
 1. We have $g(x)=\sqrt{x}$.
-2. We set $u=g(x)=\sqrt{x}$ and define $x=h(u)=u^2$.
+2. We set $u=g(x)=\sqrt{x}$ and define $x=g^{-1}(u)=u^2$.
 3. We compute $dx=2u\,du$.
 4. and 5. We substitute in the integral and evaluate:
 
@@ -319,6 +321,7 @@ This also means that when we use the method of substitution for definite integra
 Note that the choice $u=g(x)$ leads to new limits of integration: if $x=a$ then $u=g(a)$, and if $x=b$ then $u=g(b)$.
 
 Be very aware that these new limits may be in descending order if $g(a)>g(b)$ even if $a<b$ originally.
+
 :::
 
 {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` can easily be adapted to definite integrals:
@@ -329,9 +332,11 @@ Be very aware that these new limits may be in descending order if $g(a)>g(b)$ ev
 To evaluate a definite integral of the form $\displaystyle\int_a^b I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
 1. Select a function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
-2. Set $u=g(x)$ and define $x=h(u)=g^{-1}(u)$, _if possible_.
-3. Compute $dx=h'(u)\,du$, _if possible_, otherwise compute $dx=\frac{1}{g'(x)}\,du$.
-4. Substitute $u$ for $g(x)$, $h(u)$ for $x$ (_if possible_) and $h'(u)\,du$ or $\frac{1}{g'(x)}\,du$ for $dx$, in the integral.
+2. Set $u=g(x)$ and define $x=g^{-1}(u)$ _if $g$ is invertible_.
+3. Compute $dx=(g^{-1})'(u)\,du$, _if $g$ is invertible_, otherwise compute $du={g'(x)}\,dx$.
+4. Substitute $u$ for $g(x)$, $g^{-1}(u)$ for $x$ _if $g$ is invertible_ and substitute either $(g^{-1})'(u)\,du$ or $\frac{1}{g'(x)}\,du$ for $dx$, in the integral.
+   - After the substitution, simplify the integrand as much as possible.
+   - After the simplification, the variable $x$ should not appear in the integrand anymore.
 5. Replace the lower limit $a$ by $g(a)$ and the upper limit $b$ by $g(b)$.
 6. Try to evaluate the resulting definite integral using standard methods.
 
