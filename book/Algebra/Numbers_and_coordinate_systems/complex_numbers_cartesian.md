@@ -59,6 +59,8 @@ Because of historical conventions we call $i$ imaginary, but that does not mean 
 
 ::::::{prf:notation}
 In some fields, particularly in electrical engineering, the imaginary unit is sometimes denoted by $j$, to avoid confusion with the current which often uses the symbol $i$. In this book, we will stick to the symbol $i$.
+
+In some other areas, for example in programming languages, the imaginary unit is sometimes denoted by $I$, but we will also not use this notation in this book.
 ::::::
 
 Now we know what the imaginary unit is, we can define what a complex number is.
@@ -119,18 +121,14 @@ $$
 
 Just like we can visualise real numbers on a number line, we can visualise complex numbers in the complex plane. One axis indicates the value of the real part of a complex number and one indicates the imaginary part of the same complex number. In {numref}`Figure %s <Fig:ComplexNumbers:complexplane>` you can see this visualisation. By convention, the horizontal axis always indicates the real part, and the vertical axis always represents the imaginary part.
 
-:::{figure} Images/Fig-ComplexNumbers-complexplane.svg
+:::{applet}
+:url: calculus/complex_numbers/visualisation_of_the_complex_plane
 :name: Fig:ComplexNumbers:complexplane
 :class: dark-light
 
 Visualisation of the complex plane $\mathbb{C}$.
 
 :::
-
-:::{todo}
-Make {numref}`Fig:ComplexNumbers:complexplane` into an applet. The point should be draggable and/or you should be able to enter the point.
-:::
-
 
 To make everything concise, we will view the set of all real numbers $\mathbb{R}$ as a part of the complex numbers $\mathbb{C}$. By this we mean that if $x$ is a real number, we can interpret it as the complex number with $\Re{x}=x$ and $\Im{x}=0$. Conversely, if $z$ is a complex number with $\Im{z}=0$, we interpret it as a real number. If a complex number is not a real number, we refer to it as **non-real**.
 
@@ -257,7 +255,8 @@ zw &= (4+3i)(-1-2i) \\
 
 Now we consider the geometric interpretation of adding complex numbers. If we add $z=a+bi$ and $w=c+di$ the new number is $z+w=(a+c)+(b+d)i$, so we add the real and imaginary parts. This means we add the coordinates of the corresponding points. This works similar to the addition of vectors, see {numref}`Chapter:VectorAlgebra`. Thus, geometrically we can add two complex numbers by following the parallelogram rule. That is, the lines from the origin to the two complex numbers form two sides of a parallelogram with vertices $0$, $z$, $z+w$, and $w$; see {numref}`Figure %s <Fig:ComplexNumbers:complexadd>`.
 
-:::{figure} Images/Fig-ComplexNumbers-complexadd.svg
+:::{applet}
+:url: calculus/complex_numbers/adding_complex_numbers
 :name: Fig:ComplexNumbers:complexadd
 :class: dark-light
 
@@ -265,9 +264,6 @@ Adding complex numbers follows the parallelogram rule.
 
 :::
 
-:::{todo}
-Turn {numref}`Fig:ComplexNumbers:complexadd` into an applet with draggable points.
-:::
 
 If we want to interpret the other operations such as multiplication easily, we first need another way of writing complex numbers, which we will study in {numref}`Ch:ComplexNumbersPolar`. 
 
@@ -443,16 +439,13 @@ $$
 
 Now we look at the geometric interpretation of complex conjugation. Recall that the complex conjugate $\bar z$ changes the sign of the imaginary part of the number $z$. That is $\overline{a+bi} = a-bi$. As the imaginary part of a complex number corresponds to the second coordinate of its representation in the complex plane, this implies that the number is reflected in the real axis (the horizontal axis). See {numref}`Figure %s <Fig:ComplexNumbers:complexconj>`.
 
-:::{figure} Images/Fig-ComplexNumbers-complexconj.svg
+:::{applet}
+:url: calculus/complex_numbers/complex_conjugation
 :name: Fig:ComplexNumbers:complexconj
 :class: dark-light
 
 Complex conjugation reflects a number in the real axis.
 
-:::
-
-:::{todo}
-Turn {numref}`Fig:ComplexNumbers:complexconj` into an applet. Probably draggable points are better, right?
 :::
 
 The following result is the reason why the complex conjugate can be used to simplify the quotient of two complex numbers.
@@ -624,7 +617,7 @@ If $z$ and $w$ are a complex numbers, then the following identities hold.
 \overline{z+w} &= \overline{z}+\overline{w}, \\
 \overline{z-w} &= \overline{z}-\overline{w}, \\
 \overline{zw} &= \overline{z}\,\overline{w}, \\
-\overline{\left(\frac{z}{w}\right)} &= \frac{\overline{z}}{\overline{w}}.\quad(\text{Assuming}\ $w\neq0$.)
+\overline{\left(\frac{z}{w}\right)} &= \frac{\overline{z}}{\overline{w}}, & (\text{Assuming}\ w\neq0).
 \end{align*}
 
 ::::
@@ -1219,7 +1212,7 @@ Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeroes are $z=-2\pm i$.
 :url: https://embed.grasple.com/exercises/284d7804-e09e-429c-a595-397f58c19e3a?id=75401
 :label: Grasple:75401
 :dropdown:
-:description: Linear equation of complex numbers
+:description: Linear equation of complex numbers.
 
 ::::
 
