@@ -221,7 +221,7 @@ $$
 
 ## The Dirichlet beta function
 
-The **Dirichlet beta function** $\beta(s)$ is defined as $\displaystyle\beta(s)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^s}$ for $\text{Re}(s)>0$. This function is closely related to the *Riemann zeta* (see: {numref}`Sec:Series:RiemannZetaFunction`).
+The **Dirichlet beta function** $\beta(s)$ is defined as $\displaystyle\beta(s)=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^s}$ for $\operatorname{Re}(s)>0$. This function is closely related to the *Riemann zeta* (see: {numref}`Sec:Series:RiemannZetaFunction`).
 
 This function is named after the German mathematician [Johann Peter Gustav Lejeune Dirichlet (1805-1859)](https://en.wikipedia.org/wiki/Peter_Gustav_Lejeune_Dirichlet).
 

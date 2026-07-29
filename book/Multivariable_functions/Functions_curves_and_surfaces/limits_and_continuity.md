@@ -3,5 +3,5 @@
 In this section we cover:
 
 - Limits of functions of two variables
-- Limits of functions of several variables (likely too hard to do any examples)
+- Limits of functions of several variables 
 - Continuity of functions of several variables

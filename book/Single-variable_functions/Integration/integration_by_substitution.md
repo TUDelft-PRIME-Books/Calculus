@@ -104,6 +104,31 @@ $$
 \int\cos(x)e^{\sin(x)}\,dx= \int e^{\sin(x)}\,\cos(x)\,dx =\int e^u\,du=e^u+C=e^{\sin(x)}+C.
 $$
 
+{numref}`Fig:Integration:SubstitutionIndefiniteIntegralExample1` shows the graph of the integrand on the left and the antiderivative on the right. We have taken the value of $C=\frac12$ initially. Note that changing the value of $C$ will only shift the graph of the antiderivative vertically, and does not influence the slope of the antiderivative at any point. The slope of the antiderivative at a point $x$ always equals the value of the integrand at that point.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_1
+:name: Fig:Integration:SubstitutionIndefiniteIntegralExample1
+:class: dark-light
+
+The graph on the left shows the integrand $\cos(x)e^{\sin(x)}$ and the graph on the right shows the antiderivative $e^{\sin(x)}+C$ and a part of the tangent line of the antiderivative at the selected point. The value of $C$ can be changed using the slider and is initially set to $C=\frac12$.
+:::
+
+Besides showing the initial integrand and the resulting antiderivative, we can also visualise the steps taken to evaluate the integral, which you can see in {numref}`Fig:Integration:SubstitutionIndefiniteIntegralExample1_steps`. The domain of the integrand $\cos(x)e^{\sin(x)}$ is $(-\infty,\infty)$, which is also the domain of the antiderivative $e^{\sin(x)}+C$. This means that $x$ can take any value in $(-\infty,\infty)$, but because the range of $\sin(x)$ is $[-1,1]$, the variable $u=\sin(x)$ can only take on values in $[-1,1]$. This means that the domain of the integrand after substitution is therefore $[-1,1]$, which is also the domain of the antiderivative after substitution.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_2
+:name: Fig:Integration:SubstitutionIndefiniteIntegralExample1_steps
+:class: dark-light
+
+This figure shows the following stages of the evaluation of the integral $\displaystyle\int\cos(x)e^{\sin(x)}\,dx$: \
+(1) (_initial_) The graph of the initial integrand $\cos(x)e^{\sin(x)}$. \
+(2) The graph of the integrand after substitution. Note the change at the horizontal axis from $x$ to $u$. \
+(3) The graph of the antiderivative after substitution. \
+(4) (_final_) The graph of the antiderivative after substituting back to the original variable $x$. \
+In this case we have chosen to fix the value of $C$ to $\frac12$ for all antiderivatives.
+:::
+
 ::::::
 
 Sometimes we need a constant multiple of the function $g$ of which a derivative $g'$ is present in the integrand. In that case we can factor out this constant multiple from the integral, which is shown in the next examples.
@@ -200,9 +225,13 @@ Now we use the techniques of the previous section to obtain
 
 ::::::
 
-Although we have not made it explicit in the examples so far, in many cases we used that, if $u=g(x)$, then also $x=g^{-1}(u)$. For each value of $x$ there should be exactly one value for $u$ and vice versa. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$. This is not always necessary, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
+Although we have not made it explicit in the examples so far, in many cases we used that, if $u=g(x)$, then also $x=g^{-1}(u)$: for each value of $x$ there should be exactly one value for $u$ and vice versa. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we used $u=\sqrt{x}$, we also used that $x=u^2$, which was allowed because we assume $x>0$.
 
-We summarise this in the next algorithm:
+The function $g$ does not have to be invertible, but if you want to replace an $x$ in the integrand with an expression involving $u$, then $g$ must be invertible.
+
+It is not always necessary to have that $g$ is invertible, as can be seen in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample1`, but it can be useful in some cases. If $g$ is invertible, we have the relation $u=g^{-1}(x)$, which implies $dx=(g^{-1})'(u)\,du$. In that case we can use the inverse function $g^{-1}$ to replace $dx$ in the integrand with $(g^{-1})'(u)\,du$.
+
+We summarise the entire process in the next algorithm:
 
 ::::::{prf:algorithm}
 :label: Alg:Integration:SubstitutionIndefiniteIntegral
@@ -210,9 +239,11 @@ We summarise this in the next algorithm:
 To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
 1. Select a function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
-2. Set $u=g(x)$ and define $x=h(u)=g^{-1}(u)$.
-3. Compute $dx=h'(u)\,du$,
-4. Substitute $u$ for $g(x)$, $h(u)$ for $x$, $h'(u)\,du$ for $dx$ in the integral.
+2. Set $u=g(x)$ and define $x=g^{-1}(u)$ _if $g$ is invertible_.
+3. Compute $dx=(g^{-1})'(u)\,du$, _if $g$ is invertible_, otherwise compute $du={g'(x)}\,dx$.
+4. Substitute $u$ for $g(x)$, $g^{-1}(u)$ for $x$ _if $g$ is invertible_ and substitute either $(g^{-1})'(u)\,du$ or $\frac{1}{g'(x)}\,du$ for $dx$, in the integral.
+   - After the substitution, simplify the integrand as much as possible.
+   - After the simplification, the variable $x$ should not appear in the integrand anymore.
 5. Try to evaluate the resulting indefinite integral using standard methods.
 
 ::::::
@@ -224,16 +255,18 @@ We will apply this algorithm in the next example:
 
 Consider $\displaystyle\int\frac{1}{(1+x)\sqrt{x}}\,dx$ for $x>0$ again.
 
-We applied $u=\sqrt{x}$ previously, which implies that $x=h(u)=u^2$ and therefore $dx=2u\,du$. The five steps of {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` then lead to:
+We applied $u=\sqrt{x}$ previously. The function $g(x)=\sqrt{x}$ is invertible on $(0,\infty)$, so we can use the inverse function $g^{-1}(u)=u^2$ to replace $x$ in the integrand with $g^{-1}(u)$ and $dx$ with $(g^{-1})'(u)\,du$.
+
+ The five steps of {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` then lead to:
 
 1. We have $g(x)=\sqrt{x}$.
-2. We set $u=g(x)=\sqrt{x}$ and define $x=h(u)=u^2$.
+2. We set $u=g(x)=\sqrt{x}$ and define $x=g^{-1}(u)=u^2$.
 3. We compute $dx=2u\,du$.
 4. and 5. We substitute in the integral and evaluate:
 
 \begin{align*}
 \int\frac{1}{(1+x)\sqrt{x}}\,dx &= \int\frac{1}{(1+u^2)u}\,2u\,du \\
-&= \int\frac{1}{1+u^2}\,2\,du \\
+&= \int\frac{2}{1+u^2}\,du \\
 &= 2\arctan(u)+C \\
 &= 2\arctan(\sqrt{x})+C.
 \end{align*}
@@ -288,6 +321,7 @@ This also means that when we use the method of substitution for definite integra
 Note that the choice $u=g(x)$ leads to new limits of integration: if $x=a$ then $u=g(a)$, and if $x=b$ then $u=g(b)$.
 
 Be very aware that these new limits may be in descending order if $g(a)>g(b)$ even if $a<b$ originally.
+
 :::
 
 {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` can easily be adapted to definite integrals:
@@ -298,9 +332,11 @@ Be very aware that these new limits may be in descending order if $g(a)>g(b)$ ev
 To evaluate a definite integral of the form $\displaystyle\int_a^b I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
 1. Select a function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
-2. Set $u=g(x)$ and define $x=h(u)=g^{-1}(u)$.
-3. Compute $dx=h'(u)\,du$,
-4. Substitute $u$ for $g(x)$, $h(u)$ for $x$, and $h'(u)\,du$ for $dx$ in the integral.
+2. Set $u=g(x)$ and define $x=g^{-1}(u)$ _if $g$ is invertible_.
+3. Compute $dx=(g^{-1})'(u)\,du$, _if $g$ is invertible_, otherwise compute $du={g'(x)}\,dx$.
+4. Substitute $u$ for $g(x)$, $g^{-1}(u)$ for $x$ _if $g$ is invertible_ and substitute either $(g^{-1})'(u)\,du$ or $\frac{1}{g'(x)}\,du$ for $dx$, in the integral.
+   - After the substitution, simplify the integrand as much as possible.
+   - After the simplification, the variable $x$ should not appear in the integrand anymore.
 5. Replace the lower limit $a$ by $g(a)$ and the upper limit $b$ by $g(b)$.
 6. Try to evaluate the resulting definite integral using standard methods.
 
@@ -318,6 +354,16 @@ If we set $u=\ln(x)$, then we have $du=\dfrac{1}{x}\,dx$. Furthermore, we have i
 $$
 \int_1^e\frac{\ln(x)}{x}\,dx=\int_0^1u\,du=\frac{1}{2}u^2\bigg|_0^1=\frac{1}{2}.
 $$
+
+{numref}`Fig:Integration:SubstitutionDefiniteIntegralExample1` illustrates the original integral on the bottom-left and the new integral on the bottom-right. Note that the area under the curve of the original integrand is equal to the area under the curve of the new integrand, which is exactly what we have proved in {prf:ref}`Thm:Integration:SubstitutionDefiniteIntegral`. The graph in the top shows the relation between the variable $x$ and the variable $u$.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_3
+:name: Fig:Integration:SubstitutionDefiniteIntegralExample1
+:class: dark-light
+
+A visualisation of the evaluation of the integral $\displaystyle\int_1^e\frac{\ln(x)}{x}\,dx$ using the method of substitution. You can drag the pulsing points on the graphs to change the limits of integration of the original integral and see how this influences the new integral.
+:::
 
 ::::::
 
@@ -401,12 +447,23 @@ Note that $\cos(t)\geq0$ for $-\frac{1}{2}\pi\leq t\leq\frac{1}{2}\pi$. Using $\
 \int_{-1}^1\sqrt{1-x^2}\,dx&=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1+\cos(2t))\,dt\\
 &=\left[\frac{1}{2}t+\frac{1}{4}\sin(2t)\right]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{2}\pi.
 \end{align*}
+
+{numref}`Fig:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1` illustrates the original integral on the bottom-left and the new integral on the bottom-right.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_4
+:name: Fig:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1
+:class: dark-light
+
+A visualisation of the evaluation of the integral $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$ using the method of substitution. You can drag the pulsing points on the graphs to change the limits of integration of the original integral and see how this influences the new integral.
+:::
+
 ::::::
 
 :::{prf:remark}
 :label: Remark:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1Remark
 
-The integral of {prf:ref}`Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1` denotes the area of the upper half of the unit circle.
+The integral of {prf:ref}`Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1` denotes the area of the upper half of the unit circle, which you can confirm by looking at {numref}`Fig:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1`.
 :::
 
 Instead of using the substitution $x=a\sin(t)$ we may also use the substitution $x=a\cos(t)$, which leads to $dx=-a\sin(t)\,dt$ and 

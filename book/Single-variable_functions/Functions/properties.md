@@ -420,7 +420,7 @@ $$
  f(-x)=(-x)^n=(-1)^nx^n=(-1)\cdot x^n=-x^n=-f(x).
 $$
 
-So we find that for these functions the point $(x,y)$ lies on the graph of $f$ precisely when $(-x,-y)$ lies on the graph of $f$. This means that the graph of the function is point symmetric with resepect to the origin. Such a function will be called **odd**. Other examples of odd functions include $f(x)=\sin(x)$ and $f(x)=\tan(x)$ (the latter only when restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$).
+So we find that for these functions the point $(x,y)$ lies on the graph of $f$ precisely when $(-x,-y)$ lies on the graph of $f$. This means that the graph of the function is point symmetric with respect to the origin. Such a function will be called **odd**. Other examples of odd functions include $f(x)=\sin(x)$ and $f(x)=\tan(x)$ (the latter only when restricted to the interval $\left(-\frac{\pi}{2},\frac{\pi}{2}\right)$).
 
 ::::::{prf:definition} 
 :label: Def:PropertiesFunctions:EvenOdd
@@ -583,7 +583,7 @@ If a function is only defined on an interval of the form $(0,a)$ it is possible 
 Let $a>0$ or $a=\infty$ and let $f$ be a function that is defined on the interval $(0,a)$. Then the function 
 
 $$
- f_{\mathrm{odd}}(x)=\left\{\begin{array}{l}f(x),\quad&\mathrm{if}\,x\in(0,a)\\ 0,\quad &\mathrm{if}\,x=0\\ -f(-x),\quad&\mathrm{if}\,x\in(-a,0)\end{array}\right.
+ f_{\mathrm{odd}}(x)=\left\{\begin{array}{l}f(x),\quad&\text{if}\,x\in(0,a)\\ 0,\quad &\text{if}\,x=0\\ -f(-x),\quad&\text{if}\,x\in(-a,0)\end{array}\right.
 $$
 
 is odd on $(-a,a)$. It is called the **odd extension of $f$** to $(-a,a)$.
@@ -591,7 +591,7 @@ is odd on $(-a,a)$. It is called the **odd extension of $f$** to $(-a,a)$.
 Similarly, if $f$ is defined on the interval $[0,a)$, then the function 
 
 $$
- f_{\mathrm{even}}(x)=\left\{\begin{array}{l}f(x),\quad&\mathrm{if}\,x\in[0,a)\\  f(-x),\quad&\mathrm{if}\,x\in(-a,0)\end{array}\right.
+ f_{\mathrm{even}}(x)=\left\{\begin{array}{l}f(x),\quad&\text{if}\,x\in[0,a)\\  f(-x),\quad&\text{if}\,x\in(-a,0)\end{array}\right.
 $$
 
 is even on $(-a,a)$. It is called the **even extension of $f$** to $(-a,a)$..
@@ -921,6 +921,27 @@ $$
 $$
 
 So the fundamental period of $f$ is actually $\frac{\pi}{2}$. Similarly, the fundamental period of $g$ is $\frac{2\pi}{6}=\frac{\pi}{3}$. So what is the fundamental period of $h=f+g$? For this, we notice that $h$ has completed a full period whenever $f$ and $g$ have completed a whole number of periods at the same time. Since the fundamental periods of $f$ and $g$ are $\frac{\pi}{2}$ and $\frac{\pi}{3}$ respectively, this happens the first time after a period of $T=\pi$ (when $f$ has completed $2$ periods and $g$ has completed $3$ periods). So the fundamental period of $h$ is $\pi$.
+
+However, while this argument shows that $\pi$ is a period of $h$, it does not rigorously show that this is the fundamental period of $h$. To precisely show that it is the fundamental period, we let $T$ be any period of $h$ and we will show that $T$ must be an integer multiple of $\pi$. Since $T$ is a period of $h$ we have
+
+\begin{align*}
+ h(x+T)&=\cos(4(x+T))+\sin(6(x+T))\\  &=\cos(4x+4T)+\sin(6x+6T)\\ &=\cos(4x)+\sin(6x)\\ &=h(x)
+\end{align*}
+ 
+
+for any $x$. This equation can be rewritten as
+
+$$
+ \cos\left(4x+4T\right)-\cos\left(4x\right)=\sin(6x)-\sin(6x+6T).
+$$
+
+Using the identities $\cos(a)-\cos(b)=-2\sin\left(\frac{a+b}{2}\right)\sin\left(\frac{a}{2}-\frac{b}{2}\right)$ and $\sin(a)-\sin(b)=2\cos\left(\frac{a+b}{2}\right)\sin\left(\frac{a-b}{2}\right)$, the first of which follows from {prf:ref}`Thm:Trigonometry:ProductFormulas`, while the second is established in {numref}`Grasple:133113`,  we obtain
+
+\begin{align*}
+ -2\sin\left(4x+2T\right)\sin\left(2T\right)&=2\cos\left(6x+3T\right)\sin\left(-3T\right)\\ &=-2\cos\left(6x+3T\right)\sin\left(3T\right).
+\end{align*}
+
+The left-hand side of this equation is either identically $0$ if $2T$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{4}=\dfrac{\pi}{2}$. Similarly, the right-hand side of this equation is either identically $0$ if $3T$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{3}$. Since the left-hand and right-hand side of the equation are equal and cannot have both fundamental period $\dfrac{\pi}{2}$ and $\dfrac{2\pi}{3}$, the only option is that both sides of the equation are identically $0$. As such, both $2T$ and $3T$ must be integer multiples of $\pi$, which means that $T$ must be an integer multiple of both $\dfrac{\pi}{2}$ and $\dfrac{\pi}{3}$. So $T$ must be an integer multiple of $\pi$, which means that $\pi$ is the fundamental period of $h$.
 ::::::
 
 ::::::{prf:example} 
@@ -936,7 +957,28 @@ Consider the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\c
 The graph of the functions $f(x)=\cos(2x)$, $g(x)=\sin(\pi x)$ and $h(x)=(f+g)(x)=\cos(2x)+\sin(\pi x)$. You can toggle the visibility of the graphs of $f$, $g$ and $h$ by clicking on the checkboxes in the legend.
 :::
 
-Following a similar reasoning to {prf:ref}`Ex:PropertiesFunctions:PeriodicCombining` the functions $f$ and $g$ are periodic with fundamental periods $\frac{2\pi}{2}=\pi$ and $\frac{2\pi}{\pi}=2$ respectively. So is the function $h$ periodic here as well and if so, what is its period? In order for $h$ to complete a full period, $f$ and $g$ would need to complete a number of periods at the same time. So a period $T$ of $h$ should be of the form $T=2m+\pi n$ for some integers $m,n\geq 1$. However, since $\pi$ is irrational, no such numbers $m$ and $n$ exist (otherwise, we would be able to write $\pi$ as a fraction). As such, the function $h$ is not periodic in this case. This can also be seen from the graph of $h$.
+Following a similar reasoning to {prf:ref}`Ex:PropertiesFunctions:PeriodicCombining` the functions $f$ and $g$ are periodic with fundamental periods $\frac{2\pi}{2}=\pi$ and $\frac{2\pi}{\pi}=2$ respectively. So is the function $h$ periodic here as well and if so, what is its period? Intuitively speaking, in order for $h$ to complete a full period, $f$ and $g$ would need to complete a number of periods at the same time. So a period $T$ of $h$ should be of the form $T=2m+\pi n$ for some integers $m,n\geq 1$. However, since $\pi$ is irrational, no such numbers $m$ and $n$ exist (otherwise, we would be able to write $\pi$ as a fraction). As such, the function $h$ is not periodic in this case. This can also be seen from the graph of $h$.
+
+If we want to make this argument rigorous, we argue by contradiction and assume that $h$ is periodic. We let $T$ be any period of $h$. Since $T$ is a period of $h$ we have
+
+\begin{align*}
+ h(x+T)&=\cos(2(x+T))+\sin(\pi(x+T))\\ &=\cos(2x+2T)+\sin(\pi x+ \pi T)\\ &=\cos(2x)+\sin(\pi x)\\ &=h(x)
+\end{align*}
+ 
+
+for any $x$. This equation can be rewritten as
+
+$$
+ \cos\left(2x+2T\right)-\cos\left(2x\right)=\sin(\pi x)-\sin(\pi x+\pi T).
+$$
+
+Using the identities $\cos(a)-\cos(b)=-2\sin\left(\frac{a+b}{2}\right)\sin\left(\frac{a}{2}-\frac{b}{2}\right)$ and $\sin(a)-\sin(b)=2\cos\left(\frac{a+b}{2}\right)\sin\left(\frac{a-b}{2}\right)$, the first of which follows from {prf:ref}`Thm:Trigonometry:ProductFormulas`, while the second is established in {numref}`Grasple:133113`,  we obtain
+
+\begin{align*}
+ -2\sin\left(2x+T\right)\sin\left(T\right)&=2\cos\left(\pi x+\frac{\pi T}{2}\right)\sin\left(-\frac{\pi T}{2}\right)\\ &=-2\cos\left(\pi x+\frac{\pi T}{2}\right)\sin\left(\frac{\pi T}{2}\right).
+\end{align*}
+
+The left-hand side of this equation is either identically $0$ if $T$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{2}=\pi$. Similarly, the right-hand side of this equation is either identically $0$ if $\dfrac{\pi T}{2}$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{\pi}=2$. Since the left-hand and right-hand side of the equation are equal and cannot have both fundamental period $\pi$ and $2$, the only option is that both sides of the equation are identically $0$. However, in that case $T$ would need to be both an integer multiple of $\pi$, and of $\dfrac{\pi}{\frac{\pi}{2}}=2$, which is also not possible. So the function $h$ cannot be periodic.
 ::::::
 
 We summarize the observations about the periodicity of the sum of periodic function from the preceding examples in the following result.

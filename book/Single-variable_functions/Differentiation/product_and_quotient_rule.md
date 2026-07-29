@@ -124,7 +124,7 @@ as desired.
 The most common error when trying to use the product rule is to take the product of the two derivatives. In that case, the incorrect expression would become
 
 $$
- (f g)'(x)=f'(x)g'(x)\qquad\qquad \left(\textbf{INCORRECT}\right).
+ (f g)'(x)=f'(x)g'(x)\qquad\qquad \left(\class{tud-red}{\textbf{INCORRECT}}\right).
 $$
 
 Make sure to avoid this error and to use the product rule as stated.
@@ -294,7 +294,7 @@ So $q$ is differentiable at $a$ and $\displaystyle q'(a)=\frac{f'(a)g(a)-g'(a)f(
 The most common error when trying to use the quotient rule to $\dfrac{f}{g}$ is to swap the roles of $f$ and $g$ in the numerator of the derivative. In that case, the incorrect expression would become
 
 $$
- \left(\frac{f}{g}\right)'(x)=\frac{f(x)g'(x)-f'(x)g(x)}{g(x)^2}\qquad\qquad \left(\textbf{INCORRECT}\right).
+ \left(\frac{f}{g}\right)'(x)=\frac{f(x)g'(x)-f'(x)g(x)}{g(x)^2}\qquad\qquad \left(\class{tud-red}{\textbf{INCORRECT}}\right).
 $$
 
 Make sure to avoid this error and to use the quotient rule as stated.
@@ -410,7 +410,7 @@ $$
 In {numref}`Subsec:Derivativestangent` we claimed that there are functions that are differentiable everywhere, but not continuously differentiable; that is their derivatives are not continuous. Now we finally have the tools to show an example of such a function. Consider the piecewise defined function
 
 $$
- f(x)=\begin{cases}x^2 \sin\left(\frac{1}{x}\right), & \mathrm{if}\,x \neq 0, \\ 0 & \mathrm{if}\,x = 0. \end{cases}
+ f(x)=\begin{cases}x^2 \sin\left(\frac{1}{x}\right), & \text{if}\,x \neq 0, \\ 0 & \text{if}\,x = 0. \end{cases}
 $$
 
 For $x\neq 0$, the function is differentiable, since it can be written as $f(x)=g(x)h(k(x))$ with $g(x)=x^2$, $h(x)=\sin(x)$ and $k(x)=\dfrac{1}{x}$ and these functions are all differentiable on their maximal domain. Using the product and the chain rule, the derivative is given by
@@ -430,7 +430,7 @@ $$
 where the final equality follows from a reasoning similar to {prf:ref}`Ex:LimitAtPoint:SqueezeTheorem`. This means that
 
 $$
- f'(x)=\begin{cases}-\cos\left(\frac{1}{x}\right)+2x\sin\left(\frac{1}{x}\right), & \mathrm{if}\,x \neq 0, \\ 0 & \mathrm{if}\,x = 0, \end{cases}
+ f'(x)=\begin{cases}-\cos\left(\frac{1}{x}\right)+2x\sin\left(\frac{1}{x}\right), & \text{if}\,x \neq 0, \\ 0 & \text{if}\,x = 0, \end{cases}
 $$
 
 so $f$ is differentiable everywhere. 

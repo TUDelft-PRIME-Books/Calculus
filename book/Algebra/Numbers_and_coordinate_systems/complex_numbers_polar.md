@@ -42,7 +42,7 @@ Turn {numref}`Fig:ComplexNumbers:modarg` into an applet.
 :::
 
 Notice that the argument is not uniquely defined, as you can always go a full circle extra and add $2\pi$ radians to the angle. For example, the number $1$ has argument $0$ (as it is on the positive real axis), but also $2\pi$, $4\pi$, and $-2\pi$ (etc.). In order to make a uniform choice, we sometimes work with the principal value of the argument, which is by definition the unique value of the argument between $-\pi$ and $\pi$.
-We write the principal value using a capital A. Thus we have $-\pi < \mathrm{Arg}(z) \leq \pi$.
+We write the principal value using a capital A. Thus we have $-\pi < \operatorname{Arg}(z) \leq \pi$.
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polarex1
@@ -331,7 +331,7 @@ Multiplying complex numbers means adding the arguments and multiplying the modul
 :name: Fig:ComplexNumbers:division
 :class: dark-light
 
-Dividig complex numbers means substracting the arguments and dividing the moduli.
+Dividing complex numbers means subtracting the arguments and dividing the moduli.
 
 :::
 
