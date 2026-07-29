@@ -187,11 +187,12 @@ This result shows that we can apply implicit differentiation as long as we we ca
 
 Consider the curve $\mathcal{C}$ that is shown in {numref}`Fig:SlopesCurves:Polling`.
 
-:::{figure} Images/Fig-SlopesCurves-Polling.png
+:::{applet}
+:url: calculus/slopes_of_curves_in_R2/dropplet
 :name: Fig:SlopesCurves:Polling
 :class: dark-light
 
-The curve $\mathcal{C}$.
+Some curve $\mathcal{C}$.
 :::
 
 
@@ -199,22 +200,25 @@ The curve $\mathcal{C}$.
 Complete the following sentences:
 ---
 M[3]
-DS[has a vertical tangent;has a horizontal tangent;makes a sharp turn;{self intersects};none of these]
-DS[zero slope;{an undefined slope};nonzero slope]
-DS[has a vertical tangent;has a horizontal tangent;{makes a sharp turn};self intersects;none of these]
-DS[zero slope;{an undefined slope};nonzero slope]
-DS[{has a vertical tangent};has a horizontal tangent;makes a sharp turn;self intersects;none of these]
-DS[zero slope;{an undefined slope};nonzero slope]
-DS[has a vertical tangent;{has a horizontal tangent};makes a sharp turn;self intersects;none of these]
-DS[{zero slope};an undefined slope;nonzero slope]
+DS[a vertical tangent;a horizontal tangent;a sharp turn;{self-intersection}]
+DS[zero;{an undefined};nonzero]
+DS[a vertical tangent;a horizontal tangent;{a sharp turn};self-intersection]
+DS[zero;{an undefined};nonzero]
+DS[{a vertical tangent};a horizontal tangent;a sharp turn;self-intersection]
+DS[zero;{an undefined};nonzero]
+DS[a vertical tangent;{a horizontal tangent};a sharp turn;self-intersection]
+DS[{zero};an undefined;nonzero]
 ^^^
 ? :::{card}
 Implicit differentiation can be used to find the slope of the curve at all except {gap} points.
 
-At the point $(-2,3)$ the curve {gap}, so it has {gap}.
-At the point $(1,1)$ the curve {gap}, so it has {gap}.
-At the point $(2,2)$ the curve {gap}, so it has {gap}.
-At the point $(1,4)$ the curve {gap}, so it has {gap}.
+At the point $(-2,3)$ the curve has {gap}, so it has {gap} slope.
+
+At the point $(1,1)$ the curve has {gap}, so it has {gap} slope.
+
+At the point $(2,2)$ the curve has {gap}, so it has {gap} slope.
+
+At the point $(1,4)$ the curve has {gap}, so it has {gap} slope.
 :::
 ---
 
