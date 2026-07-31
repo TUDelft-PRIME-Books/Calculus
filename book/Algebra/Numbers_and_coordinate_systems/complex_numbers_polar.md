@@ -8,6 +8,8 @@ To consider the multiplication of complex numbers, it is best to first consider 
 ## Modulus and argument
 
 ::::::{prf:definition}
+:label: Def:ComplexPolar:ModulusArgument
+
 Let $z$ be a complex number, The **modulus** of $z$, denoted by $|z|$, is the distance from zero to the point in the complex plane.
 
 An **argument** of $z$, denoted by $\arg(z)$, is an angle in the complex plane measured from the positive real axis in counterclockwise direction towards the ray from $0$ through $z$.
@@ -29,17 +31,17 @@ We often denote the modulus by the symbol $r$, so $r=|z|$.
 
 The argument uses the convention similar to the unit circle: the direction straight the right corresponds to $0$ radians, up corresponds to $\frac{1}{2}\pi$ radians, to the left to $\pi$ radians and down to $\frac{3}{2}\pi$ radians. We often denote the argument by the symbol $\theta$, so $\theta=\arg(z)$.
 
-:::{figure} Images/Fig-ComplexNumbers-modarg.svg
+:::{applet}
+:url: calculus/complex_numbers/polar_coordinates
 :name: Fig:ComplexNumbers:modarg
 :class: dark-light
 
-The polar coordinates of a point in the complex plane $\C$ are the distance $r=|z|$ from zero to the point and the angle $\theta=\arg(z)$ measured from the positive real axis in a anticlockwise direction towards the ray from zero through the point.
+The polar coordinates of a point in the complex plane $\C$ are the distance $r=|z|$ from zero to the point and the angle $\theta=\arg(z)$ measured from the positive real axis in a anticlockwise direction towards the ray from zero through the point. \
+ \
+Note the switch in the bottom: this changes the shown grid from Cartesian to polar, so you can inspect both aspects from complex numbers. All other figures containing the complex plane in this section will include this switch.
 
 :::
 
-:::{todo}
-Turn {numref}`Fig:ComplexNumbers:modarg` into an applet.
-:::
 
 Notice that the argument is not uniquely defined, as you can always go a full circle extra and add $2\pi$ radians to the angle. For example, the number $1$ has argument $0$ (as it is on the positive real axis), but also $2\pi$, $4\pi$, and $-2\pi$ (etc.). In order to make a uniform choice, we sometimes work with the principal value of the argument, which is by definition the unique value of the argument between $-\pi$ and $\pi$.
 We write the principal value using a capital A. Thus we have $-\pi < \operatorname{Arg}(z) \leq \pi$.
@@ -55,7 +57,8 @@ $$
 
 The argument, the corresponding angle, equals $\frac14\pi$ as you can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex1>`.
 
-:::{figure} Images/Fig-ComplexNumbers-polarex1.svg
+:::{applet}
+:url: calculus/complex_numbers/polar_coordinates_2
 :name: Fig:ComplexNumbers:polarex1
 :class: dark-light
 
@@ -63,40 +66,34 @@ The complex number $3+3i$.
 
 :::
 
-:::{todo}
-Turn {numref}`Fig:ComplexNumbers:polarex1` into an applet.
-:::
-
 ::::
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polarex2
 
-Suppose $w=2+3i$. We can still use Pythagoras for the modulus and obtain 
+Suppose $w=3+2i$. We can still use Pythagoras for the modulus and obtain 
 
 $$
- |w|=\sqrt{2^2+3^2} = \sqrt{13}.
+ |w|=\sqrt{3^2+2^2} = \sqrt{13}.
 $$
 
 The argument can't be deduced immediately from a picture, see {numref}`Figure %s <Fig:ComplexNumbers:polarex2>`, but we do see that
 
 $$
-\tan(\arg(w)) = \frac{\text{opposite}}{\text{adjacent}} = \frac{\text{imaginary part}}{\text{real part}} = \frac{3}{2}.
+\tan(\arg(w)) = \frac{\text{opposite}}{\text{adjacent}} = \frac{\text{imaginary part}}{\text{real part}} = \frac{2}{3}\approx 0.\overline{6}.
 $$
 
-Unfortunately, there are no 'pretty' angles of which the tangent is $\frac{3}{2}$. Since $\tan(1)\approx 1.557$, the argument of $w$ is going to be close to $1$. Either by making a good sketch (such as the one in {numref}`Fig:ComplexNumbers:polarex2`) and measuring the angle, or by simply trying some angles close to $1$, we find that an even better approximation would be $\arg(w)\approx 0.98$, since $\tan(0.98)\approx 1.49$.
+Unfortunately, there are no 'pretty' angles of which the tangent is $\frac{2}{3}$. Since $\tan\left(\frac16\pi\right)=\frac{1}{3}\sqrt{3}\approx 0.557$ and $\tan\left(\frac14\pi\right)=1$, the argument of $w$ is going to be closer to $\frac16\pi\approx0.52$ then to $\frac14\pi\approx0.79$. Either by making a good sketch (such as the one in {numref}`Fig:ComplexNumbers:polarex2`) and measuring the angle, or by simply trying some angles close to $0.5$, we find that an even better approximation would be $\arg(w)\approx 0.59$, since $\tan(0.59)\approx 0.67$.
 
-In fact, if you are familiar with the arctangent, which we will cover in {numref}`Section:Inverse`, you can obtain the exact expression $\arg(w) = \arctan\left(\frac32\right) \approx 0.982794$.
 
-:::{figure} Images/Fig-ComplexNumbers-polarex2.svg
+In fact, if you are familiar with the arctangent, which we will cover in {numref}`Section:Inverse`, you can obtain the exact expression $\arg(w) = \arctan\left(\frac23\right)$.
+
+:::{applet}
+:url: calculus/complex_numbers/polar_coordinates_3
 :name: Fig:ComplexNumbers:polarex2
 :class: dark-light
 
-The complex number $2+3i$.
-:::
-
-:::{todo}
-Turn {numref}`Fig:ComplexNumbers:polarex2` into an applet. Write $\arg(w)=\arctan(\frac{3}{2})\approx 0.98$ instead of $\arctan(\frac{3}{2})$.
+The complex number $3+2i$.
 :::
 
 ::::
@@ -118,18 +115,19 @@ $$
 
 Again, there is no 'pretty' angle of which the tangent is $-2$. By making a good sketch (such as the one in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>`) and measuring the angle, or by simply trying some angles, we find that an approximation would be $\arg(v)\approx 2.03$, since $\tan(2.03)\approx -2.02$.
 
-If we were to use the arctangent (see {numref}`Section:Inverse`) to find an exact expression for the angle, we would expect that $\arg(v) = \arctan( -2) \approx -1.10715$. But this answer is negative, while we can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>` that the true argument is something between $\frac12\pi$ and $\pi$. Thus, this argument cannot be correct. If we multiply both the real and imaginary parts of a complex number by $-1$, then the quotient stays the same. In this case the arctangent gives the argument of $1-2i$ instead. Fortunately, we can easily find the correct argument as it is exactly $\pi$ higher. We find $\arg(v) = \arctan(-2) + \pi \approx 2.03444$.
+If we were to use the arctangent (see {numref}`Section:Inverse`) to find an exact expression for the angle, we would expect that $\arg(v) = \arctan( -2) \approx -1.10715$. But this answer is negative, while we can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>` that the true argument is something between $\frac12\pi$ and $\pi$. Thus, this argument cannot be correct.
 
-:::{figure} Images/Fig-ComplexNumbers-polarex3.svg
+It turns out that if we multiply both the real and imaginary parts of a complex number by $-1$, then the quotient used within arctangent stays the same. So In this case the arctangent gives the argument of $1-2i$ instead. Fortunately, we can easily find the correct argument as it is exactly $\pi$ higher[^others]. We find $\arg(v) = \arctan(-2) + \pi \approx 2.03444$.
+
+[^others]: or lower, or even $(2k+1)\pi$ higher or lower.
+
+:::{applet}
+:url: calculus/complex_numbers/polar_coordinates_4
 :name: Fig:ComplexNumbers:polarex3
 :class: dark-light
 
 The complex number $-1+2i$.
 
-:::
-
-:::{todo}
-Turn {numref}`Fig:ComplexNumbers:polarex3` into an applet. Write $\arg(v)=\arctan(-2)+\pi\approx -2.03$ instead of $\arctan(-2)+\pi$.
 :::
 
 ::::
@@ -140,7 +138,12 @@ If $z=a+bi$ with $a\neq 0$ we have $\tan\left(\arg(z)\right)=\dfrac{b}{a}$. If y
 If the real part is negative, the argument is between $\frac12\pi$ and $\frac32\pi$ (or between $-\frac12\pi$ and $-\frac32\pi$ depending on which direction you want to consider) and outside the range of the arctangent. To get the correct value for the argument in these cases, you have to add or subtract $\pi$ from the arctangent. In particular, we have
 
 $$
- \arg(z)\begin{cases}\arctan\left(\frac{b}{a}\right),&\text{if}\ a>0,\\ \arctan\left(\frac{b}{a}\right)+\pi,&\text{if}\ a<0.\end{cases}
+ \arg(z)=\begin{cases}
+ \arctan\left(\frac{b}{a}\right),&\text{if}\ a>0,\\
+ \frac12\pi, &\text{if}\ a=0\ \text{and}\ b>0,\\
+ -\frac12\pi, &\text{if}\ a=0\ \text{and}\ b<0,\\
+ \arctan\left(\frac{b}{a}\right)+\pi,&\text{if}\ a<0.
+ \end{cases}
 $$
 
 
@@ -159,7 +162,13 @@ $$
 For calculating $r$ and $\theta$ from $a$ and $b$ we can use
 
 $$
-r= \sqrt{a^2+b^2}, \qquad \tan(\theta)=\frac{b}{a}.
+r= \sqrt{a^2+b^2}, \qquad \tan(\theta)=\frac{b}{a},
+$$
+
+and
+
+$$
+\cos(\theta)=\frac{a}{r}, \qquad \sin(\theta)=\frac{b}{r}.
 $$
 
 
@@ -182,7 +191,7 @@ where $r=|z|$ is the modulus of $z$ and $\theta=\arg(z)$ is an argument of $z$.
 ::::
 
 ::::{prf:example} {prf:ref}`Ex:ComplexNumbers:polarex1` continued
-:label: Ex:ComplexNumbers:polarex1
+:label: Ex:ComplexNumbers:polarex1cont
 
 For $z=3+3i$, we obtained that
 
@@ -311,7 +320,8 @@ where the last line shows that $\left|\frac{z}{w}\right| = \frac{|z|}{|w|}$ and 
 
 You can see each of these operations illustrated in {numref}`Figures %s <Fig:ComplexNumbers:conjugation>`, {numref}`%s <Fig:ComplexNumbers:multiplication>` and {numref}`%s <Fig:ComplexNumbers:division>`.
 
-:::{figure} Images/Fig-ComplexNumbers-conjugation.svg
+:::{applet}
+:url: calculus/complex_numbers/complex_conjugation_in_polar_coordinates
 :name: Fig:ComplexNumbers:conjugation
 :class: dark-light
 
@@ -319,7 +329,8 @@ Conjugating a complex number means negating the argument and keeping the modulus
 
 :::
 
-:::{figure} Images/Fig-ComplexNumbers-multiplication.svg
+:::{applet}
+:url: calculus/complex_numbers/multiplication_in_polar_coordinates
 :name: Fig:ComplexNumbers:multiplication
 :class: dark-light
 
@@ -327,7 +338,8 @@ Multiplying complex numbers means adding the arguments and multiplying the modul
 
 :::
 
-:::{figure} Images/Fig-ComplexNumbers-division.svg
+:::{applet}
+:url: calculus/complex_numbers/division_in_polar_coordinates
 :name: Fig:ComplexNumbers:division
 :class: dark-light
 
@@ -335,9 +347,6 @@ Dividing complex numbers means subtracting the arguments and dividing the moduli
 
 :::
 
-:::{todo}
-Turn {numref}`Figures %s <Fig:ComplexNumbers:conjugation>`, {numref}`%s <Fig:ComplexNumbers:multiplication>` and {numref}`%s <Fig:ComplexNumbers:division>` into applets.
-:::
 
 ## Euler's formula
 
@@ -373,7 +382,6 @@ $$
 
 ::::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:re`
 :class: dropdown, tudproof
-<!-- ::::{dropdown} Proof of {prf:ref}`Thm:ComplexNumbers:re` -->
 
 Using {prf:ref}`Thm:ComplexNumbers:ChangeCoor`, we can directly write
 
@@ -412,6 +420,7 @@ We can even show that the complex exponential function behaves exactly like the 
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:re_diff
+:nonumber:
 
 Let $\theta\in\mathbb{R}$. Then
 
@@ -421,7 +430,7 @@ $$
 
 ::::
 
-::::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:re_diff`
+::::{admonition} Proof of the above {prf:ref}`Thm:ComplexNumbers:re_diff`
 :class: dropdown, tudproof
 
 The proof is again straight forward:
@@ -526,6 +535,7 @@ You can also derive other formulas.
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:cos_sin_sum
+:class: full-width
 
 Formulas for $\cos(\theta+\phi)$ and $\sin(\theta+\phi)$ are often used in calculus courses. These formulas can be derived using De Moivre's identity.
 
@@ -623,15 +633,13 @@ $$
 
 You can find a visualisation of these three solutions in {numref}`Figure %s <Fig:ComplexNumbers:threesolfig>`.
 
-```{applet}
-:url: appendix/complex_numbers
-:fig: Images/Fig-ComplexNumbers-threesolfig.svg
+:::{applet}
+:url: calculus/complex_numbers/using_De_Moivre
 :name: Fig:ComplexNumbers:threesolfig
-:status: approved
 :class: dark-light
 
-The three solutions from {prf:ref}`Ex:ComplexNumbers:threesolutions2`, as well as solutions for similar equation for higher powers of $z$.
-```
+The three solutions from {prf:ref}`Ex:ComplexNumbers:threesolutions2`, initially, as well as solutions for similar equation of the form $z^{m}=a+bi$. You can use the three sliders to change $n$, $a$ and $b$.
+:::
 
 ::::
 
@@ -697,15 +705,12 @@ f(t) &= \cos(2t) + \sqrt{3} \sin(2t) \\& = \Re{e^{2it}} + \Re{-i\sqrt{3} e^{2it}
 
 We first wrote both the cosine as the sine as real parts of complex exponentials. For the sine, we use that $-ie^{i\theta} = -i\cos(\theta) + \sin(\theta)$, so $\Re{-ie^{i\theta}} = \sin(\theta)$. Subsequently, we can take out the common factor $e^{2it}$; it is a common factor as the periods of both the cosine and sine are identical. Next, we rewrite $1-i\sqrt{3}$ in polar coordinates and work out what the result is.
 
-:::{figure} Images/Fig-ComplexNumbers-sinusoid.svg
+:::{applet}
+:url: calculus/complex_numbers/adding_trigonometric_functions
 :name: Fig:ComplexNumbers:sinusoid
 :class: dark-light
 
 The graph of the sum of a cosine and a sine of identical period is a sinusoid as well.
-:::
-
-:::{todo}
-Turn {numref}`Fig:ComplexNumbers:sinusoid` into an applet.
 :::
 
 ::::
@@ -960,9 +965,9 @@ As you can see we have arrived at Euler's formula.
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/e4d5b5cc-07b0-4a72-aff1-91a5c617b73a?id=64320
-:label: Grasple:75405
+:label: Grasple:64320
 :dropdown:
-:description: Powers of complex numbers
+:description: Powers of complex numbers.
 
 ::::
 
@@ -971,7 +976,7 @@ As you can see we have arrived at Euler's formula.
 :url: https://embed.grasple.com/exercises/50b70591-2823-4f37-8416-b7d25e76e729?id=64336
 :label: Grasple:64336
 :dropdown:
-:description: Powers of complex numbers
+:description: Powers of complex numbers.
 
 ::::
 
@@ -980,7 +985,7 @@ As you can see we have arrived at Euler's formula.
 :url: https://embed.grasple.com/exercises/bf12984b-1cf9-4b92-8a25-02c556194754?id=64337
 :label: Grasple:64337
 :dropdown:
-:description: Powers of complex numbers
+:description: Powers of complex numbers.
 
 ::::
 
@@ -989,7 +994,7 @@ As you can see we have arrived at Euler's formula.
 :url: https://embed.grasple.com/exercises/ec9efcd8-cb51-45b9-b520-9ddbb1637f7d?id=68385
 :label: Grasple:68385
 :dropdown:
-:description: Powers of complex numbers
+:description: Powers of complex numbers.
 
 ::::
 
@@ -998,7 +1003,7 @@ As you can see we have arrived at Euler's formula.
 :url: https://embed.grasple.com/exercises/d5d0a636-177a-42e4-bdce-b8ab7bbfd5b3?id=68466
 :label: Grasple:68466
 :dropdown:
-:description: Powers of complex numbers
+:description: Powers of complex numbers.
 
 ::::
 
@@ -1007,7 +1012,7 @@ As you can see we have arrived at Euler's formula.
 :url: https://embed.grasple.com/exercises/93ae8521-9cf2-472b-9803-1b6e3ccbcee1?id=68467
 :label: Grasple:68467
 :dropdown:
-:description: Powers of complex numbers
+:description: Powers of complex numbers.
 
 ::::
 
@@ -1216,7 +1221,7 @@ As you can see we have arrived at Euler's formula.
 :url: https://embed.grasple.com/exercises/ed3ab811-1e8c-4355-bc23-ab8e60681b45?id=71521
 :label: Grasple:71521
 :dropdown:
-:description: Visualising cube roots of a complex number
+:description: Visualising cube roots of a complex number.
 
 ::::
 
