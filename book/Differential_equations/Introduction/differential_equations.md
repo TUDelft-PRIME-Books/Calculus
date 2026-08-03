@@ -71,7 +71,7 @@ $$
 2y(x)=2Ce^{2x}.
 $$
 
-This is the same expression, so $y(x)=Ce^{2x}$ is a solution for every $C\in\mathbb{R}$$. Later, we will see that any solution is of this form.
+This is the same expression, so $y(x)=Ce^{2x}$ is a solution for every $C\in\mathbb{R}$. Later, we will see that any solution is of this form.
 
 You might think that equations like $y'(x)=2y(x)$ are a bit artificial and are made up by mathematicians who take pleasure in making your life miserable by introducing needlessly complicated equations. Nothing could be further from the truth. In science and engineering, differential equations very often arise in modelling. There are many problems where we try to model a quantity and that the laws of physics tell us that its rate of change (so its derivative) is related to its current size. In the remainder of this introduction, we consider two examples: population growth and a mass-spring system.
 
@@ -96,82 +96,73 @@ This is called a *logistic equation*. This differential equation was proposed by
 
 This more realistic model reflects the fact that a given environment has limited resources. Many populations start by increasing in an exponential manner, but the population levels off when it approaches its *carrying capacity* $M$ (or decreases towards $M$ if it ever exceeds $M$).
 
-:::{todo}
-Include an applet with a plot of a few solutions to the logistic equation.
-:::
+:::{applet}
+:url: calculus/classifications_and_solutions/logistic_equation
+:name: Fig:Diffclass:population
+:class: dark-light
+
+A graph of a function that is a solution to the indicated _logistic equation_. You can change the point where the solution starts (_first slider_), and also the value of the parameters $k$ and $M$ (_second and third slider_). 
+
 
 ::::::
 
 ::::::{prf:example} A mass-spring system
 :label: Ex:Diffclass:massspring
 
-Consider a mass $m$ attached to a spring as in {numref}`mass-spring1`. Let $x$ denote the distance from the mass to the equilibrium position. This value is positive when the spring is stretched and negative when the spring is compressed. If we, for instance, pull the mass and stretch the spring over a small distance and release it, the mass will move such that the position $x$ will change from positive to negative and the other way around. So, the distance $x=x(t)$ is in fact a function of the time $t$.
+Consider a mass $m$ attached to a spring as in {numref}`Fig:Diffclass:mass-spring1`. Let $u$ denote the distance from the mass to the equilibrium position. This value is positive when the spring is stretched and negative when the spring is compressed. If we, for instance, pull the mass and stretch the spring over a small distance, hold it and then release it, the mass will move such that the position $u$ will change from positive to less positive, or even negative. So, the distance $u=u(t)$ is in fact a function of the time $t$.
 
-```{figure} Images/mass-spring1.png
----
-width: 50%
-name: mass-spring1
-class: dark-light
----
-A mass-spring system
-```
+:::{applet}
+:url: calculus/classifications_and_solutions/mass-spring_system
+:name: Fig:Diffclass:mass-spring1
+:class: dark-light
+
+A mass-spring system. The distance $u$ is measured from top to the bottom, so downward is the positive direction. On the _left_ the spring is in equilibrium, corresponding to $u=0$, while on the _right_ the spring is stretched.
+:::
 
 So which physical laws determine the behaviour of this system? Somehow, one of the first answers that comes up, usually, is gravity. However, gravity does not play a role here: we could observe the behaviour of this system in outer space and not a lot would change. Only the position of equilibrium is determined by gravity, but since we measure the displacement with respect to equilibrium, we do not see this in our calculations.
 
-Instead, since we are dealing with a spring, Hooke's law $F=-k\cdot x$, where $k$ is a positive constant, called the *spring constant*, should of course be involved. And as with many problems that involve forces, Newton's second law $F=m\cdot a$ must play a role as well. Here $a$ is the acceleration, which is $\dfrac{d^2x}{dt^2}$. Without damping, we can combine these laws into the equation
+Instead, since we are dealing with a spring, Hooke's law $F=-k\cdot u$, where $k$ is a positive constant, called the *spring constant*, should of course be involved. And as with many problems that involve forces, Newton's second law $F=m\cdot a$ must play a role as well. Here $a$ is the acceleration, which is $\dfrac{d^2u}{dt^2}$. Without damping, we can combine these laws into the equation
 
 $$
-m\cdot\frac{d^2x}{dt^2}=-k\cdot x(t).
+m\cdot\frac{d^2u}{dt^2}=-k\cdot u(t).
 $$
 
 We can rewrite this equation into
 
 $$
- mx''(t)+kx(t)=0.
+ mu''(t)+ku(t)=0.
 $$
 
-This is a differential equation, as it involves the unknown function $x(t)$ and its second derivative $x''(t)$. 
+This is a differential equation, as it involves the unknown function $u(t)$ and its second derivative $u''(t)$.
 
-```{figure} Images/mass-spring2.png
----
-width: 50%
-name: mass-spring2
-align: center
----
-A mass-spring system
-```
-
-```{figure} Images/mass-spring3.png
----
-width: 50%
-name: mass-spring3
-align: right
----
-A mass-spring system
-```
-
-<br /><br />
-
-When damping is involved, it is reasonable that the damping force is of the form $F_{\mathrm{damping}}=-c\dfrac{dx}{dt}$, where $c$ is a positive constant, called the *damping constant*. Then Newton's second law gives
+When damping is involved, for example because (a part of) the system is submerged in a fluid, see {numref}`Fig:Diffclass:mass-spring3`, it is reasonable that the damping force is of the form $F_{\mathrm{damping}}=-c\dfrac{du}{dt}$, where $c$ is a positive constant, called the *damping constant*. Then Newton's second law gives
 
 $$
-m\cdot\frac{d^2x}{dt^2}=-k\cdot x(t)+c\cdot\dfrac{dx}{dt}.
+m\cdot\frac{d^2u}{dt^2}=-k\cdot u(t)+c\cdot\dfrac{du}{dt}.
 $$
 
 This equation can be rewritten as
 
 $$
- mx''(t)+cx'(t)+kx(t)=0. 
+ mu''(t)+cu'(t)+ku(t)=0. 
 $$
 
 
-<br /><br /><br /><br /><br />
+:::{applet}
+:url: calculus/classifications_and_solutions/mass-spring_system_with_damping
+:name: Fig:Diffclass:mass-spring3
+:class: dark-light
+
+A mass-spring system with damping, as a part of the system is submerged in a fluid.
+:::
 
 ::::::
 
 ## Classifications
 
 ::::::{prf:Definition}
+:label: Def:ClassDiff:DiffEq
+
 A **differential equation** is an equation involving an unknown function and one or more of its derivatives. The order of the highest derivative involved is called the **order** of the differential equation.
 ::::::
 
@@ -182,6 +173,8 @@ In this book we will mostly consider ordinary differential equations. In {numref
 For the differential equations we studied in {numref}`Subsec:DiffclassIntro`, we note that the logistic equation is a first-order differential equation and the differential equations involved in a mass-spring system are second-order differential equations.
 
 ::::::{prf:Definition}
+:label: Def:ClassDiff:DiffEqVarSol
+
 A differential equation in a function $y(x)$ can be written as $F(x,y,y',y'',\ldots,y^{(n)})=0$. The variable $x$ is called an **independent variable**, while $y=y(x)$ is called a **dependent variable**.
 
 A function $f(x)$ is called a **solution** of the differential equation if the equation is satisfied by $y=f(x)$, so if $F(x,f(x),f'(x),f''(x),\ldots,f^{(n)}(x))=0$.
@@ -203,7 +196,7 @@ $$
  y''(t)=4y(t).
 $$
 
-This is an ordinary differential equation, since the unknown function $y$ only depends on $t$. It is a second-order equation, since it contains a second derivative, but no higher order derivatives. In particular, we are looking for a function $y(t)$ of which the second derivative is a multiple of the original function. We know that exponential functions have this property, so we try a function of the form $y(t)=e^{rt}$ for some, as of yet, unkown parameter $r$. Of course, not every exponential function is going to be a solution, so we should try to find out for which parameter $r$ this function is a solution. We substitute this Ansatz into the differential equation to obtain
+This is an ordinary differential equation, since the unknown function $y$ only depends on $t$. It is a second-order equation, since it contains a second derivative, but no higher order derivatives. In particular, we are looking for a function $y(t)$ of which the second derivative is a multiple of the original function. We know that exponential functions have this property, so we try a function of the form $y(t)=e^{rt}$ for some, as of yet, unknown parameter $r$. Of course, not every exponential function is going to be a solution, so we should try to find out for which parameter $r$ this function is a solution. We substitute this Ansatz into the differential equation to obtain
 
 $$
  r^2e^{rt}=4e^{rt}.
@@ -234,7 +227,7 @@ A special type of solutions (and, fortunately, the easiest type of solutions) of
 An **equilibrium solution** of a differential equation is a solution that is constant.
 ::::::
 
-You can find equilibrium solutions of a differential equation for $y(x)$ by first replacing all derivatives by zero and subsquently solving the equation for $y(x)$. Every solution should be of the form $y(x)=C$ for some constant $C$.
+You can find equilibrium solutions of a differential equation for $y(x)$ by first replacing all derivatives by zero and subsequently solving the equation for $y(x)$. Every solution should be of the form $y(x)=C$ for some constant $C$.
 
 ::::::{prf:example}
 :label: Ex:ClassDiff:EqSol
@@ -291,16 +284,15 @@ In general, linear differential equations are much easier to solve than nonlinea
 ::::::{prf:example} 
 :label: Ex:Diffclass:pendulum
 
-An example of a physical problem that leads to a nonlinear differential equation is an oscillating pendulum.
+An example of a physical problem that leads to a nonlinear differential equation is an oscillating pendulum, see {numref}`Fig:Diffclass:pendulum`.
 
-```{figure} Images/pendulum.png
----
-width: 65%
-name: pendulum
-align: left
----
-The motion of a pendulum
-```
+:::{applet}
+:url: calculus/classifications_and_solutions/pendulum
+:name: Fig:Diffclass:pendulum
+:class: dark-light
+
+A pendulum. The angle of the pendulum with respect to the vertical equilibrium position is denoted by $\theta$.
+:::
 
 The differential equation which represents the motion of a simple pendulum is
 
@@ -334,6 +326,8 @@ The differential equations involved in a mass-spring system are all linear. Thes
 For first-order differential equations we distinguish autonomous and non-autonomous differential equations. 
 
 ::::::{prf:Definition}
+:label: Def:ClassDiff:Autonomous
+
 A first-order differential equation is called **autonomous** if it can be written as $F(y,y')=0$, so if the independent variable is not explicitly involved. Otherwise, the differential equation is called **non-autonomous**.
 ::::::
 
@@ -364,13 +358,15 @@ $$
 
 
 
-This leads to a **system of first-order linear differential equations**. These systems will not be covered in this book. More information on this can be found in the [relevant section of the Open Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter9/DynSystContinuous.html) or in more advanced books on differential equations for a more thorough treatment of these systems.
+This leads to a **system of first-order linear differential equations**. These systems will not be covered in this book. More information on this can be found in the [Section 9.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter9/DynSystContinuous.html) or in more advanced books on differential equations for a more thorough treatment of these systems.
 
 (Subsec:DiffclassLinear)=
 
 ## Linear differential equations
 
 ::::::{prf:definition}
+:label: Def:ClassDiff:Linear
+
 A differential equation $F(x,y,y',y'',\ldots,y^{(n)})=0$ is called **linear** if it can be written in the form
 
 $$
@@ -587,7 +583,7 @@ $$
 where $c_1,c_2,\ldots,c_n$ are arbitrary constants.
 ::::::
 
-In particular, you need two linearly independent solutions to find the general solution of a second-order linear, homogeneous differential equaiton, three linearly independent solutions for a third-order one, etc. We cannot prove this result yet. We will give the proof in {numref}`Sec:DE:ExistenceUniqueness`.
+In particular, you need two linearly independent solutions to find the general solution of a second-order linear, homogeneous differential equation, three linearly independent solutions for a third-order one, etc. We cannot prove this result yet. We will give the proof in {numref}`Sec:DE:ExistenceUniqueness`.
 
 ::::::{prf:example}
 :label: Ex:Classdiff:secondordersol
@@ -1019,7 +1015,7 @@ has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sq
 :url: https://embed.grasple.com/exercises/6e8c3138-792d-477f-b804-e9f0de414eb0?id=79418
 :label: Grasple:79418
 :dropdown:
-:description: Application: Electrical circuit
+:description: Application: Electrical circuit.
 ::::::
 
 
@@ -1028,7 +1024,7 @@ has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sq
 :url: https://embed.grasple.com/exercises/f221aa01-abe0-47df-ba0c-22bbf818b693?id=63812
 :label: Grasple:63812
 :dropdown:
-:description: Application: Newton's law of cooling
+:description: Application: Newton's law of cooling.
 ::::::
 
 ::::::{grasple}
@@ -1036,7 +1032,7 @@ has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sq
 :url: https://embed.grasple.com/exercises/ac7901dc-0e4b-4544-9d77-d70e2155996c?id=71422
 :label: Grasple:71422
 :dropdown:
-:description: Application: Torricelli's law
+:description: Application: Torricelli's law.
 ::::::
 
 ::::::{grasple}
