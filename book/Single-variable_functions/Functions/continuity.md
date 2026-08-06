@@ -13,7 +13,7 @@ In science and engineering, most variables depend on each other in a continuous 
 :name: Fig:Continuity-Circuit
 :class: dark-light
 
-The circuit described above with a resistor with resistance $R$ and a capacitor with capacitance $C$, where a voltage source of size $V_s$ is turned on at $t=0$. The resulting current $i(t)$ across the capacitor is not continuous at $t=0$.
+The circuit described above with a resistor with resistance $R$ and a capacitor with capacitance $C$, where a voltage source of size $V_s$ is turned on at $t=0$. The resulting current $i(t)$ across the capacitor is not continuous at $t=0$. Electrical graphical symbols are based on [IEC 60617](https://webstore.iec.ch/en/publication/2723).
 :::
 
 (Subsec:ContProp)=
