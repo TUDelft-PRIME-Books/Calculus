@@ -58,7 +58,7 @@ $$
  ay''+by'+cy=0,
 $$
 
-where $a\neq 0$, $b$ and $c$ are real constants. We will see that we can always find at least one (possibly complex) solution of the form $y(t)=e^{rt}$. The correct value(s) of $r$ can be found by finding the roots of a quadratic equation in $r$. The structure of the solution will be different, depending on whether this quadratic equation has two distinct real roots, a single real root or two nonreal (complex) roots, so we will treat these cases separately.
+where $a\neq 0$, $b$ and $c$ are real constants. We will see that we can always find at least one (possibly complex) solution of the form $y(t)=e^{rt}$. The correct value(s) of $r$ can be found by finding the roots of a quadratic equation in $r$. The structure of the solution will be different, depending on whether this quadratic equation has two distinct real roots, a single real root or two non-real (complex) roots, so we will treat these cases separately.
 
 ## Solving second-order, linear, homogenous differential equations
 
@@ -144,6 +144,7 @@ with $c_1,c_2\in\mathbb{R}$.
 :::
 
 ::::::{prf:example}
+:label: Ex:ODE2:Tworeal
 The differential equation 
 
 $$
@@ -165,10 +166,22 @@ $$
 The roots of this equation are $r_1=3$ and $r_2=-2$, which are two distinct real roots. By {prf:ref}`Thm:ODE2:Tworeal`, the general solution of the differential equation is 
 
 $$
- y(x)=c_1e^{3x}+c_2e^{-2x}
+ y(t)=c_1e^{3t}+c_2e^{-2t}
 $$
 
 with $c_1,c_2\in\mathbb{R}$.
+
+In {numref}`Fig:ODE2:Tworeal` you can see on the left the graph of the two linearly independent solutions $y_1(t)=e^{3t}$ and $y_2(t)=e^{-2t}$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$ on the right.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/two_distinct_real_roots
+:name: Fig:ODE2:Tworeal
+:class: dark-light
+
+(_left_) The graph of the two linearly independent solutions $y_1(t)=e^{3t}$ and $y_2(t)=e^{-2t}$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$. \
+(_right_) The values of $c_1$ and $c_2$. You can drag the point to change the values of $c_1$ and $c_2$ and see how the graph of the general solution changes.
+:::
+
 ::::::
 
 ### Double real root
@@ -230,7 +243,7 @@ with $c_1,c_2\in\mathbb{R}$.
 :::
 
 ::::::{prf:example}
-:label: Def:ODE2:Onereal
+:label: Ex:ODE2:Onereal
 The differential equation 
 
 $$
@@ -256,9 +269,21 @@ $$
 $$
 
 with $c_1,c_2\in\mathbb{R}$.
+
+In {numref}`Fig:ODE2:Onereal` you can see on the left the graph of the two linearly independent solutions $y_1(t)=e^{3t}$ and $y_2(t)=te^{3t}$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$ on the right.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/double_real_root
+:name: Fig:ODE2:Onereal
+:class: dark-light
+
+(_left_) The graph of the two linearly independent solutions $y_1(t)=e^{3t}$ and $y_2(t)=te^{3t}$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$. \
+(_right_) The values of $c_1$ and $c_2$. You can drag the point to change the values of $c_1$ and $c_2$ and see how the graph of the general solution changes.
+:::
+
 ::::::
 
-### Nonreal (complex) roots
+### non-real (complex) roots
 
 If $D<0$ the characteristic equation has a complex conjugate pair as solutions, say $r=\alpha\pm i\beta$ with $\beta\neq0$. This implies that the general (complex) solution is a (complex) linear combination of
 
@@ -352,6 +377,7 @@ with $c_1,c_2\in\mathbb{R}$.
 
 ::::::{prf:example}
 :label: Ex:ODE2:Twocomplex
+
 The differential equation 
 
 $$
@@ -370,13 +396,25 @@ $$
  (r+2)^2+9=0.
 $$
 
-From this, we obtain the nonreal roots $r=-2\pm3i$. By {prf:ref}`Thm:ODE2:Twocomplex`, the general solution is 
+From this, we obtain the non-real roots $r=-2\pm3i$. By {prf:ref}`Thm:ODE2:Twocomplex`, the general solution is 
 
 $$
  y(t)=c_1e^{-2t}\cos(3t)+c_2e^{-2t}\sin(t)
 $$
 
 with $c_1,c_2\in\mathbb{R}$.
+
+In {numref}`Fig:ODE2:Twocomplex` you can see on the left the graph of the two linearly independent solutions $y_1(t)=e^{-2t}\cos(3t)$ and $y_2(t)=e^{-2t}\sin(3t)$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$ on the right.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/two_non-real_roots
+:name: Fig:ODE2:Twocomplex
+:class: dark-light
+
+(_left_) The graph of the two linearly independent solutions $y_1(t)=e^{-2t}\cos(3t)$ and $y_2(t)=e^{-2t}\sin(3t)$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$. \
+(_right_) The values of $c_1$ and $c_2$. You can drag the point to change the values of $c_1$ and $c_2$ and see how the graph of the general solution changes.
+:::
+
 ::::::
 
 ### Initial-value problems
@@ -474,7 +512,7 @@ $$
  r^2+4=0.
 $$
 
-This gives the roots $r_1=2i$ and $r_2=-2i$. Since we have nonreal roots, the general solution is
+This gives the roots $r_1=2i$ and $r_2=-2i$. Since we have non-real roots, the general solution is
 
 $$
  y(t)=c_1\cos(2t)+c_2\sin(2t).
@@ -508,6 +546,8 @@ $$
 where $a_0,\ldots,a_n$ are real constants with $a_n\neq 0$. For such an equation, the educated guess $y(t)=e^{rt}$ gives an $n$th order polynomial equation. Solving these equations by hand is hard (or even impossible), but in some cases it is doable, as can be seen in the following example.
 
 ::::::{prf:example}
+:label: Ex:ODE2:HigherOrder
+
 Consider the differential equation
 
 $$
@@ -546,37 +586,18 @@ where $c_1,c_2,c_3,c_4$ and $c_5$ are real constants.
 
 ### The pendulum
 
-```{figure} Images/pendulum.png
----
-width: 65%
-name: pendulum
-align: left
----
-The motion of a pendulum
-```
+Let us return to the example of the pendulum from {prf:ref}`Ex:Diffclass:pendulum`, which we repeat below
 
-The differential equation which represents the motion of a simple pendulum is
+:::{fetch} {prf:ref}`Ex:Diffclass:pendulum`
+:::
+
+As you can read, we made a promise to come back to this example in this section and solve the differential equation
 
 $$
-\frac{d^2\theta}{dt^2}+\frac{g}{L}\sin(\theta)=0,
+\frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0.
 $$
 
-where $g$ is the acceleration due to gravity, $L$ is the length of the pendulum, and $\theta$ is
-the (small) angular displacement with respect to the equilibrium position at time $t$.
-
-It is quite difficult to solve this differential equation analytically. Instead, we note that the linearization of the function $f(x)=\sin(\theta)$ at $\theta=0$ is
-
-$$
-L(\theta)=f(0)+f'(0)(\theta-0)=\theta.
-$$
-
-This implies that $\sin(\theta)\approx \theta$ for $\theta$ near $0$. It is much easier to solve the differential equation
-
-$$
-\frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
-$$
-
-instead of the one above. In fact, this is a homogeneous second-order linear differential equation with constant coefficients. The characteristic equation is
+In fact, this is a homogeneous second-order linear differential equation with constant coefficients, the subject of this section. The characteristic equation is
 
 $$
 r^2+\frac{g}{L}=0, 
@@ -608,45 +629,50 @@ $$
 
 It is important to note that we made an approximation of the original nonlinear differential equation, so this function will **not** be a solution of the original equation. Still, for small values of $\theta$, it is a good approximation of the actual solution.
 
+In {numref}`Fig:ODE2:pendulum` you can see the graph of the solution $\theta(t)$ for a set of values of $\theta(0)$ and $\theta'(0)$, initially set to $\frac{\pi}{6}$ and $0$, respectively. Here we have selected $L=5$.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/pendulum
+:name: Fig:ODE2:pendulum
+:class: dark-light
+
+(_bottom_) The graph of the solution $\theta(t)$ for a set of values of $\theta(0)$ and $\theta'(0)$, initially set to $\frac{\pi}{6}$ and $0$, respectively. Here we have selected $L=5$. \
+(_top-left_) The position of the bob at the time indicated in the bottom graph. \
+(_top_right_) The values of $\theta(0)$ and $\theta'(0)$. You can drag the points to change the values of $\theta(0)$ and $\theta'(0)$ and see how the graph of the solution changes. \
+You can press the play button to see how the location of the bob changes over the time interval $[0, 10]$.
+:::
+
 ### A mass-spring system
 
-```{figure} Images/mass-spring1.png
----
-width: 50%
-name: mass-spring
-align: center
----
-A mass-spring system
-```
-
-In {prf:ref}`Ex:Diffclass:massspring` we studied the mass-spring system. For this system, we aim to find the displacement with respect to the equilibrium position, which we denote by $x(t)$. Using Newton's law $F=m\cdot a$ and Hooke's law $F=-k\cdot x$ and assuming there is no damping, we obtain
+In {prf:ref}`Ex:Diffclass:massspring` we studied the mass-spring system. For this system, we aim to find the displacement with respect to the equilibrium position, which we denote by $u(t)$. Using Newton's law $F=m\cdot a$ and Hooke's law $F=-k\cdot x$ and assuming there is no damping, see {numref}`Fig:ODE2:mass-spring`, we obtain
 
 $$
-m\cdot\frac{d^2x}{dt^2}=-k\cdot x(t).
+m\cdot\frac{d^2u}{dt^2}=-k\cdot u(t).
 $$
 
-Here $k$ is a positive constant, called the <em>spring constant</em>.
+Here $k$ is a positive constant, called the _spring constant_.
 
-```{figure} Images/mass-spring2.png
----
-width: 50%
-name: mass-spring
-align: center
----
-A mass-spring system
-```
+:::{applet}
+:url: calculus/classifications_and_solutions/mass-spring_system
+:name: Fig:ODE2:mass-spring
+:class: dark-light
+
+A mass-spring system. The distance $u$ is measured from top to the bottom, so downward is the positive direction. On the _left_ the spring is in equilibrium, corresponding to $u=0$, while on the _right_ the spring is stretched.
+:::
 
 ::::::{prf:example}
 :label: Ex:ODE2:SpringNodamp
-A spring with a mass of $5\;\operatorname{kg}$ has natural length $0.5\;\operatorname{m}$. A force of $45\;\operatorname{N}$ is required to maintain it stretched to a length of $0.75\;\operatorname{m}$. Suppose the spring is stretched to a length of $0.75\;\operatorname{m}$ and then released with initial velocity $0$. Let us see how we can find the position of the mass at any time $t$.
+A spring with a mass of $5$ kg has a natural length of $0.5$ m. A force of $45$ N is required to maintain it stretched to a length of $0.75$ m.
 
-From Hooke's law, the force required to stretch the spring is $k\cdot(0.25)=45$, so $k=\dfrac{45}{0.25}=180$. Using this value of the spring constant $k$, together with $m=5$ we have
+Suppose the spring is stretched to a length of $0.75$ m and then released with initial velocity $0$. Let us see how we can find the position of the mass at any time $t\geq 0$.
+
+From Hooke's law, the force required to stretch the spring from $0.5$ to $0.75$ is $k\cdot(0.75-0.5)=45$, so $k=\dfrac{45}{0.25}=180$ $\frac{\text{N}}{\text{m}}$ for this spring. Using this value of the spring constant $k$, together with $m=5$ we have
 
 $$
-5\frac{d^2x}{dt^2}+180x(t)=0.
+5\frac{d^2u}{dt^2}+180u(t)=0.
 $$
 
-This is a second-order, linear, homogemenous equation with constant coefficients, so we try $x(t)=e^{rt}$. This gives the characteristic equation
+This is a second-order, linear, homogeneous equation with constant coefficients, so we try $u(t)=e^{rt}$. This gives the characteristic equation
 
 $$
  5r^2+180=0
@@ -656,51 +682,67 @@ with solutions $r=6i$ and $r=-6i$. By {prf:ref}`Thm:ODE2:Twocomplex`, the genera
 
 
 $$
- x(t)=c_1\cos(6t)+c_2\sin(6t).
+ u(t)=c_1\cos(6t)+c_2\sin(6t).
 $$
 
 In order to handle the initial conditions, we evaluate
 
 $$
- x'(t)=-6c_1\sin(6t)+6c_2\cos(6t).
+ u'(t)=-6c_1\sin(6t)+6c_2\cos(6t).
 $$
 
-The initial conditions are $x(0)=0.25$ and $x'(0)=0$, which lead to $c_1=0.25$ and $c_2=0$. So, the solution is $x(t)=0.25\cos(6t)$.
+The initial conditions are $u(0)=0.25$ and $u'(0)=0$, which lead to $c_1=0.25$ and $c_2=0$. So, the solution is
+
+$$
+u(t)=0.25\cos(6t).
+$$
+
+In {numref}`Fig:ODE2:SpringNodamp` you can see the graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $0.25$ and $0$, respectively.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/undamped_mass-spring_system
+:name: Fig:ODE2:SpringNodamp
+:class: dark-light
+
+(_bottom_) The graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $0.25$ and $0$, respectively. \
+(_top-left_) The position of the mass at the time indicated in the bottom graph. \
+(_top_right_) The values of $u(0)$ and $u'(0)$. You can drag the points to change the values of $u(0)$ and $u'(0)$ and see how the graph of the solution changes. \
+You can press the play button to see how the location of the mass changes over the time interval $[0, 5]$.
+:::
+
 ::::::
-
-```{figure} Images/mass-spring3.png
----
-width: 25%
-name: mass-spring
-align: right
----
-A damped mass-spring system
-```
-
-<br /><br />
 
 With damping we have the equation 
 
 $$
- mx''(t)+cx'(t)+kx(t)=0,
+ mu''(t)+cu'(t)+ku(t)=0,
 $$ 
 
-where $c$ is a positive constant, called the <em>damping constant</em>.
+where $c$ is a positive constant, called the _damping constant_, see {numref}`Fig:ODE2:mass-spring-damped` for an illustration.
+
+:::{applet}
+:url: calculus/classifications_and_solutions/mass-spring_system_with_damping
+:name: Fig:ODE2:mass-spring-damped
+:class: dark-light
+
+A mass-spring system with damping, as a part of the system is submerged in a fluid.
+:::
 
 ::::::{prf:example}
 :label: Ex:ODE2:SpringWithdamp
-Suppose that the spring with a mass of $5\;\operatorname{kg}$ from {prf:ref}`Ex:ODE2:SpringNodamp` is immersed in a fluid with damping constant $c=65$. How can we find the position of the mass at any time $t$ if it starts from the equilibrium position and is given a push to start it with an initial velocity of $0.5\;\operatorname{m}/\operatorname{s}$?
+
+Suppose that the spring with a mass of $5$ kg from {prf:ref}`Ex:ODE2:SpringNodamp` is immersed in a fluid with damping constant $c=65$ $\frac{\text{Ns}}{\text{m}}$. How can we find the position of the mass at any time $t$ if it starts from the equilibrium position and is given a push to start it with an initial velocity of $5$ $\frac{\text{m}}{\text{s}}$?
 
 With $m=5$ and $k=180$ the differential equation becomes
 
 $$
-5\frac{d^2x}{dt^2}+65\frac{dx}{dt}+180x(t)=0,
+5\frac{d^2u}{dt^2}+65\frac{du}{dt}+180u(t)=0,
 $$
 
 which we can rewrite into
 
 $$
- \frac{d^2x}{dt^2}+13\frac{dx}{dt}+36x(t)=0.
+ \frac{d^2u}{dt^2}+13\frac{du}{dt}+36u(t)=0.
 $$
 
 The characteristic equation is 
@@ -717,16 +759,34 @@ $$
 We obtain the roots $r=-4$ and $r=-9$. By {prf:ref}`Thm:ODE2:Tworeal`, the general solution is 
 
 $$
- x(t)=c_1e^{-4t}+c_2e^{-9t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
+ u(t)=c_1e^{-4t}+c_2e^{-9t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
 In order to handle the initial conditions, we evaluate 
 
 $$
- x'(t)=-4c_1e^{-4t}-9c_2e^{-9t}.
+ u'(t)=-4c_1e^{-4t}-9c_2e^{-9t}.
 $$
 
-The initial conditions are $x(0)=0$ and $x'(0)=0.5$, which lead to $c_1=0.1$ and $c_2=-0.1$. So, the solution is $x(t)=0.1\left(e^{-4t}-e^{9t}\right)$.
+The initial conditions are $u(0)=0$ and $u'(0)=5$, which lead to $c_1=1$ and $c_2=-1$. So, the solution is
+
+$$
+u(t)=e^{-4t}-e^{-9t}.
+$$
+
+In {numref}`Fig:ODE2:SpringWithdamp` you can see the graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $0$ and $5$, respectively.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/damped_mass-spring_system
+:name: Fig:ODE2:SpringWithdamp
+:class: dark-light
+
+(_bottom_) The graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $0$ and $5$, respectively. \
+(_top-left_) The position of the mass at the time indicated in the bottom graph. \
+(_top_right_) The values of $u(0)$ and $u'(0)$. You can drag the points to change the values of $u(0)$ and $u'(0)$ and see how the graph of the solution changes. \
+You can press the play button to see how the location of the mass changes over the time interval $[0, 5]$.
+:::
+
 ::::::
 
 For the damped mass-spring system, the qualitative behaviour of the solutions depends greatly on the value of the damping constant. Indeed, let us consider a system with $m=1$, $k=25$ and let us see how different values of the damping constant influence the shape of the solution. 
@@ -734,7 +794,7 @@ For the damped mass-spring system, the qualitative behaviour of the solutions de
 For a large value of $c$, say $c=26$, we obtain the differential equation
 
 $$
- x''+26x'+25x=0
+ u''+26u'+25u=0
 $$
 
 with characteristic equation
@@ -746,7 +806,7 @@ $$
 In this case, we obtain two distinct real roots $r_1=-1$ and $r_2=-25$. The general solution becomes
 
 $$
- x(t)=c_1e^{-t}+c_2e^{-25t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
+ u(t)=c_1e^{-t}+c_2e^{-25t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
 In this case, the spring does not oscillate and goes back to its equilibrium position relatively slowly (because of the $e^{-t}$), at least compared to the final one of the upcoming cases. Physically, this makes sense: if you put your spring in a material with a high damping coefficient (say, something like honey), it will go back to its equilibrium position slowly and not oscillate. This case where we have two real roots is, for this reason, known as the **overdamped** case.
@@ -754,7 +814,7 @@ In this case, the spring does not oscillate and goes back to its equilibrium pos
 Secondly, we consider a small value of $c$, say $c=6$. Then, we obtain the differential equation
 
 $$
- x''+6x'+25x=0
+ u''+6u'+25u=0
 $$
 
 with characteristic equation
@@ -763,18 +823,18 @@ $$
  r^2+6r+25=0.
 $$
 
-In this case, we obtain two nonreal roots $r_1=-3+4i$ and $r_2=-3-4i$. The general solution becomes
+In this case, we obtain two non-real roots $r_1=-3+4i$ and $r_2=-3-4i$. The general solution becomes
 
 $$
- x(t)=c_1e^{-3t}\cos(4t)+c_2e^{-3t}\sin(4t)\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
+ u(t)=c_1e^{-3t}\cos(4t)+c_2e^{-3t}\sin(4t)\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-Because of the cosine and the sine, the solution will keep on oscillating, with decreasing amplitude because of the exponential. Again, this behaviour matches our physical intuition: if the damping coefficient of the medium is low (say, something like air), we expect the solution to keep on oscillating. This case where we have two nonreal roots is, as such, known as the **underdamped** case.
+Because of the cosine and the sine, the solution will keep on oscillating, with decreasing amplitude because of the exponential. Again, this behaviour matches our physical intuition: if the damping coefficient of the medium is low (say, something like air), we expect the solution to keep on oscillating. This case where we have two non-real roots is, as such, known as the **underdamped** case.
 
 Finally, we consider the critical value of the damping constant when we move between the overdamped and the overdamped case. Mathematically, this corresponds to the case where we have a double real root. For this system, this happens when $c=10$. Indeed, in that case we have the differential equation
 
 $$
- x''+10x'+25x=0
+ u''+10u'+25u=0
 $$
 
 with characteristic equation
@@ -786,32 +846,34 @@ $$
 In this case, we obtain double root $r=-5$. The general solution becomes
 
 $$
- x(t)=c_1e^{-5t}+c_2te^{-5t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
+ u(t)=c_1e^{-5t}+c_2te^{-5t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-Note that this solution dampes out quicker than both the overdamped case and the underdamped case. Indeed, for the overdamped case the dominant term is $e^{-t}$, for the underdamped case it is $e^{-3t}$, while here it is $te^{-5t}$. For at least some initial conditions, (for instance, when $x(0)=1$ and $x'(0)=-10$) the solution passes through the equilibrium position exactly once, but there is no oscillation involved. Since this case is the transition case between the other cases, it is known as the **critically damped** case.
+Note that this solution damps out quicker than both the overdamped case and the underdamped case. Indeed, for the overdamped case the dominant term is $e^{-t}$, for the underdamped case it is $e^{-3t}$, while here it is $te^{-5t}$. For at least some initial conditions, (for instance, when $u(0)=1$ and $u'(0)=-10$) the solution passes through the equilibrium position exactly once, but there is no oscillation involved. Since this case is the transition case between the other cases, it is known as the **critically damped** case.
 
-:::{figure} Images/Fig-ODE2-damping.png
+In {numref}`Fig:ODE2:Damping` you can see the graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $1$ and $-10$, respectively, for the critically damped case, $c=10$. You can interact with the figure to see how the solution changes when you change the value of $c$, the initial conditions. and the moment in time.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/complete_mass-spring_system
 :name: Fig:ODE2:Damping
 :class: dark-light
 
-A plot of the solution with $x(0)=1$, $x'(0)=-10$ for the I) overdamped case; II) critically damped case; III) underdamped case.
-:::
-
-:::{todo}
-Replace {numref}`Fig:ODE2:Damping` with an applet.
+A plot of the solution with $u(0)=1$, $u'(0)=-10$ for the critically damped case $u''+cu'+25u=0$ with $c=10$. \
+You can change the value of $c$ by dragging the slider to see how the solution changes. \
+You can change the initial conditions by dragging the points in the top-right graph. \
+You can animate the mass-spring system by dragging the square in the bottom-graph.
 :::
 
 ### The source-free series RLC electrical circuit
 
-Consider an electrical circuit where a resistor with resitance $R$ (in ohm $\Omega$), an inductor with inductance $L$ (in henry $H$) and a capacitor with capacitance $C$ (in farad $F$) are placed in series, see {numref}`Fig:ODE2:RLC`. There is no voltage or current source. This circuit is known as the source-free series RLC electrical circuit. 
+Consider an electrical circuit where a resistor with resistance $R$ (in ohm $\Omega$), an inductor with inductance $L$ (in henry $H$) and a capacitor with capacitance $C$ (in farad $F$) are placed in series, see {numref}`Fig:ODE2:RLC`. There is no voltage or current source. This circuit is known as the source-free series RLC electrical circuit. 
 
-:::{figure} Images/Fig-ODE2-seriesRLC.jpg
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/source-free_series_RLC_electrical_circuit
 :name: Fig:ODE2:RLC
 :class: dark-light
-:author: L. Usa
 
-A source-free electrical circuit, where a resistor with resitance $R$, an inductor with inductance $L$ and a capacitor with capacitance $C$ are placed in series. The current $i(t)$ is the quantitiy of interest.
+A source-free electrical circuit, where a resistor with resistance $R$, an inductor with inductance $L$ and a capacitor with capacitance $C$ are placed in series. The current $i(t)$ is the quantity of interest. Electrical graphical symbols are based on [IEC 60617](https://webstore.iec.ch/en/publication/2723).
 :::
 
 The main goal is to see how the current $i(t)$ (in ampere $A$) evolves in time (in seconds $s$). We assume that there is some energy stored initially in the capacitor and the inductor (otherwise there would be no current at all). For the initial current, we assume that $i(0)=I_0$ for some $I_0>0$. We let $v(t)$ (in volt $V$) represent the voltage across the capacitor. It can then be shown that
@@ -885,11 +947,13 @@ $$
  mx''(t)+cx'(t)+kx(t)=0.
 $$ 
 
-For this reason, a lot of terminology that is used for the damped mass-spring system is used for the RLC electrical circuit as well. The terms **overdamped**, **critically damped** and **underdamped** are used when the characteristic equation for the electrical circuit has respectively two real roots, a double real root, and two nonreal (complex) roots. For instance, the circuit from {prf:ref}`Ex:ODE2:RLC` is called overdamped. This also means that the resistance $R$ can be thought of as a damping coefficient.
+For this reason, a lot of terminology that is used for the damped mass-spring system is used for the RLC electrical circuit as well. The terms **overdamped**, **critically damped** and **underdamped** are used when the characteristic equation for the electrical circuit has respectively two real roots, a double real root, and two non-real (complex) roots. For instance, the circuit from {prf:ref}`Ex:ODE2:RLC` is called overdamped. This also means that the resistance $R$ can be thought of as a damping coefficient.
 
 ### A complicated-looking family of improper integrals
 
 ::::::{prf:example}
+:label: Ex:ODE2:Integral
+
 For each $t\in\mathbb{R}$, we consider the improper integral 
 
 $$
@@ -1097,7 +1161,7 @@ $$
 :url: https://embed.grasple.com/exercises/78249822-fcc0-4c76-b23c-6aa49288a3db?id=116597
 :label: Grasple:116597
 :dropdown:
-:description: Application: Mass-spring system
+:description: Application: Mass-spring system.
 ::::::
 
 ::::::{grasple}
@@ -1105,7 +1169,7 @@ $$
 :url: https://embed.grasple.com/exercises/09a2ff52-715a-4bc5-bd0c-da217ce10119?id=116599
 :label: Grasple:116599
 :dropdown:
-:description: Application: Mass-spring system
+:description: Application: Mass-spring system.
 ::::::
 
 ::::::{grasple}
@@ -1113,7 +1177,7 @@ $$
 :url: https://embed.grasple.com/exercises/b255be7f-f17c-406a-90ce-fedca203f5df?id=66983
 :label: Grasple:66983
 :dropdown:
-:description: Application: Mass-spring system
+:description: Application: Mass-spring system.
 ::::::
 
 ::::::{grasple}
@@ -1121,7 +1185,7 @@ $$
 :url: https://embed.grasple.com/exercises/9b6f095c-3664-4b9b-9e5f-77ecb4b6934d?id=66956
 :label: Grasple:66956
 :dropdown:
-:description: Application: Mass-spring system
+:description: Application: Mass-spring system.
 ::::::
 
 ::::::{grasple}
@@ -1129,7 +1193,7 @@ $$
 :url: https://embed.grasple.com/exercises/ae45940e-eecc-45c6-83ff-1a3953090258?id=66981
 :label: Grasple:66981
 :dropdown:
-:description: Application: Mass-spring system
+:description: Application: Mass-spring system.
 ::::::
 
 ::::::{grasple}
@@ -1137,7 +1201,7 @@ $$
 :url: https://embed.grasple.com/exercises/f2065608-d4ee-432f-b27b-6b1717f9d069?id=66960
 :label: Grasple:66960
 :dropdown:
-:description: Application: Mass-spring system
+:description: Application: Mass-spring system.
 ::::::
 
 ::::::{grasple}
@@ -1145,7 +1209,7 @@ $$
 :url: https://embed.grasple.com/exercises/13da7b99-1c14-467c-9783-3be118478288?id=66979
 :label: Grasple:66979
 :dropdown:
-:description: Application: Mass-spring system
+:description: Application: Mass-spring system.
 ::::::
 
 ::::::{grasple}
@@ -1153,7 +1217,7 @@ $$
 :url: https://embed.grasple.com/exercises/4ff14a26-6d0a-4864-bb27-eb226115b536?id=71496
 :label: Grasple:71496
 :dropdown:
-:description: Application: Mass-spring system
+:description: Application: Mass-spring system.
 ::::::
 
 ::::::{grasple}
@@ -1161,7 +1225,7 @@ $$
 :url: https://embed.grasple.com/exercises/c09b1f4a-a934-4571-99d6-5491b9f2951c?id=79430
 :label: Grasple:79430
 :dropdown:
-:description: Application: Electrical circuit
+:description: Application: Electrical circuit.
 ::::::
 
 ::::::{grasple}
@@ -1169,5 +1233,5 @@ $$
 :url: https://embed.grasple.com/exercises/bcb17927-76fc-44c2-88b6-e509bfceb3c3?id=79429
 :label: Grasple:79429
 :dropdown:
-:description: Application: Electrical circuit
+:description: Application: Electrical circuit.
 ::::::
