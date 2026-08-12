@@ -20,7 +20,7 @@ $$
 
 The general solution $y_h(x)$ of the corresponding homogeneous differential equation can be found using the method explained in the previous section. So, we only need an arbitrary particular solution $y_p(x)$ of the inhomogeneous equation to find the general solution $y(x)=y_p(x)+y_h(x)$.
 
-<b>The method of undetermined coefficients</b>
+**The method of undetermined coefficients**
 
 In some cases we will be able to find such a particular solution by guessing its form, with one or more coefficients, and then deduce the values of these coefficients by substitution. This is called the **method of undetermined coefficients**.
 
@@ -209,7 +209,7 @@ $$
 Hence: $y_p(x)=-x\cos(3x)$ is a particular solution. Then the general solution is: $y(x)=-x\cos(3x)+c_1\cos(3x)+c_2\sin(3x)$ with $c_1,c_2\in\mathbb{R}$.
 ::::::
 
-<b>The method of variation of parameters</b>
+**The method of variation of parameters**
 
 The method of variation of parameters, which can also be applied in cases were the method of undetermined coefficients will not work, can be found in books about differential equations.
 
