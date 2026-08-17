@@ -1366,7 +1366,7 @@ The factors of this infinite product give rise to all zeros of $\sin(\pi x)$ bei
 :url: https://embed.grasple.com/exercises/719dcbd5-c115-43bb-ba0b-fab62a592161?id=133322
 :label: Grasple:133322
 :dropdown:
-:description: Show that $\displaystyle\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right)$ for $\alpha+\beta\neq\pi$ (mod $2\pi$).
+:description: Show that $\displaystyle\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right)$ for $-\pi<\alpha+\beta<\pi$.
 
 ::::
 

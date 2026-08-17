@@ -695,6 +695,8 @@ I_3&=x^3\sin(x)+3x^2\cos(x)-6I_1\\
 \end{align*}
 and so on.
 
+We will see more reduction formulas in {numref}`Sec:Integration:TrigonometricFunctions`.
+
 ## Grasple exercises
 
 ### Indefinite integrals
@@ -898,8 +900,8 @@ and so on.
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/b5c017dc-9940-48ed-9ea3-9a5be8ecbd8c?id=133602
-:label: Grasple:133602
+:url: https://embed.grasple.com/exercises/e2ff2016-ea7d-4ad5-b3bb-600ee1964082?id=76133
+:label: Grasple:76133
 :dropdown:
 :description: Find a reduction formula for $\displaystyle\int(\ln(x))^n\,dx$.
 
@@ -911,14 +913,5 @@ and so on.
 :label: Grasple:133582
 :dropdown:
 :description: Find a reduction formula for $\displaystyle\int x^n\sin(x)\,dx$.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/e032d14c-df4c-4572-a8ae-d909827a0e71?id=133604
-:label: Grasple:133604
-:dropdown:
-:description: Find a reduction formula for $\displaystyle\int(\sin(x))^n\,dx$.
 
 ::::
