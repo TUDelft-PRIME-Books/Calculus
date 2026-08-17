@@ -283,7 +283,7 @@ In {numref}`Fig:ODE2:Onereal` you can see on the left the graph of the two linea
 
 ::::::
 
-### non-real (complex) roots
+### Non-real (complex) roots
 
 If $D<0$ the characteristic equation has a complex conjugate pair as solutions, say $r=\alpha\pm i\beta$ with $\beta\neq0$. This implies that the general (complex) solution is a (complex) linear combination of
 
