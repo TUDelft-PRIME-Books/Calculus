@@ -170,12 +170,12 @@ In case of an unknown function of a single variable, the differential equation i
 
 In this book we will mostly consider ordinary differential equations. In {numref}`Sec:PartialDerivatives`, we saw some examples of partial differential equations. We also distinguish differential equations by their order. In this book we mainly focus on first-order ({numref}`Chapter:FirstorderDE`) and second-order ({numref}`Chapter:SecondorderDE`) differential equations.
 
-For the differential equations we studied in {numref}`Subsec:DiffclassIntro`, we note that the logistic equation is a first-order differential equation and the differential equations involved in a mass-spring system are second-order differential equations.
+For the differential equations we studied in {numref}`Subsec:DiffclassIntro`, we note that the logistic equation is a first-order ordinary differential equation and the differential equations involved in a mass-spring system are second-order ordinary differential equations.
 
 ::::::{prf:Definition}
 :label: Def:ClassDiff:DiffEqVarSol
 
-A differential equation in a function $y(x)$ can be written as $F(x,y,y',y'',\ldots,y^{(n)})=0$. The variable $x$ is called an **independent variable**, while $y=y(x)$ is called a **dependent variable**.
+An ordinary differential equation in a function $y(x)$ can be written as $F(x,y,y',y'',\ldots,y^{(n)})=0$. The variable $x$ is called an **independent variable**, while $y=y(x)$ is called a **dependent variable**.
 
 A function $f(x)$ is called a **solution** of the differential equation if the equation is satisfied by $y=f(x)$, so if $F(x,f(x),f'(x),f''(x),\ldots,f^{(n)}(x))=0$.
 
@@ -845,7 +845,7 @@ Consider an ordinary differential equation for an unknown function $y(x)$ on an 
 A boundary condition at $x_0=a$ or $x_0=b$ of the form $y(x_0)=\alpha$ is called a **Dirichlet boundary condition**. A boundary condition at $x_0=a$ or $x_0=b$ of the form $y'(x_0)=\alpha$ is called a **Neumann boundary condition**. 
 ::::::
 
-Dirichlet and Neumann boundary conditions are the most common ones, but others exist. For instance, a mixed or **Robin boundary condition** at $x_0$ takes the form $c_1y(x_0)+c_2y'(x_0)=\alpha$.
+Dirichlet and Neumann boundary conditions are the most common ones, but others exist. For instance, a **mixed** or **Robin boundary condition** at $x_0$ takes the form $c_1y(x_0)+c_2y'(x_0)=\alpha$.
 
 
 In case of a first-order differential equation we only have one degree of freedom. In general, it is not possible to choose the constant of integration in such a way that both $y(a)=\alpha$ and $y(b)=\beta$ are satisfied.
@@ -996,11 +996,21 @@ has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sq
 
 ::::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e8da56de-339b-4e7f-9007-bcbf4a5c6979?id=63890
+:label: Grasple:63890
+:dropdown:
+:description: Find all equilibrium solutions.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/427e2cff-1b94-4d17-896c-2a90d1b0332d?id=79417
 :label: Grasple:79417
 :dropdown:
 :description: Make an educated guess about the shape of the solution.
 ::::::
+
+
 
 ::::::{grasple}
 :iframeclass: dark-light
@@ -1008,6 +1018,14 @@ has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sq
 :label: Grasple:79453
 :dropdown:
 :description: Are two functions linearly independent?
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/28f974bf-9def-454e-b392-5b3cb974d7e7?id=75422
+:label: Grasple:75422
+:dropdown:
+:description: Combining solutions of different differential equations
 ::::::
 
 ::::::{grasple}

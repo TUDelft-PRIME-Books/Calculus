@@ -83,7 +83,7 @@ $$
 \tan(\arg(w)) = \frac{\text{opposite}}{\text{adjacent}} = \frac{\text{imaginary part}}{\text{real part}} = \frac{2}{3}\approx 0.\overline{6}.
 $$
 
-Unfortunately, there are no 'pretty' angles of which the tangent is $\frac{2}{3}$. Since $\tan\left(\frac16\pi\right)=\frac{1}{3}\sqrt{3}\approx 0.557$ and $\tan\left(\frac14\pi\right)=1$, the argument of $w$ is going to be closer to $\frac16\pi\approx0.52$ then to $\frac14\pi\approx0.79$. Either by making a good sketch (such as the one in {numref}`Fig:ComplexNumbers:polarex2`) and measuring the angle, or by simply trying some angles close to $0.5$, we find that an even better approximation would be $\arg(w)\approx 0.59$, since $\tan(0.59)\approx 0.67$.
+Unfortunately, there are no 'pretty' angles of which the tangent is $\frac{2}{3}$. Since $\tan\left(\frac16\pi\right)=\frac{1}{3}\sqrt{3}\approx 0.557$ and $\tan\left(\frac14\pi\right)=1$, the argument of $w$ is going to be closer to $\frac16\pi\approx0.52$ than to $\frac14\pi\approx0.79$. Either by making a good sketch (such as the one in {numref}`Fig:ComplexNumbers:polarex2`) and measuring the angle, or by simply trying some angles close to $0.5$, we find that an even better approximation would be $\arg(w)\approx 0.59$, since $\tan(0.59)\approx 0.67$.
 
 
 In fact, if you are familiar with the arctangent, which we will cover in {numref}`Section:Inverse`, you can obtain the exact expression $\arg(w) = \arctan\left(\frac23\right)$.
@@ -117,7 +117,7 @@ Again, there is no 'pretty' angle of which the tangent is $-2$. By making a good
 
 If we were to use the arctangent (see {numref}`Section:Inverse`) to find an exact expression for the angle, we would expect that $\arg(v) = \arctan( -2) \approx -1.10715$. But this answer is negative, while we can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>` that the true argument is something between $\frac12\pi$ and $\pi$. Thus, this argument cannot be correct.
 
-It turns out that if we multiply both the real and imaginary parts of a complex number by $-1$, then the quotient used within arctangent stays the same. So In this case the arctangent gives the argument of $1-2i$ instead. Fortunately, we can easily find the correct argument as it is exactly $\pi$ higher[^others]. We find $\arg(v) = \arctan(-2) + \pi \approx 2.03444$.
+It turns out that if we multiply both the real and imaginary parts of a complex number by $-1$, then the quotient used within the arctangent stays the same. So In this case the arctangent gives the argument of $1-2i$ instead. Fortunately, we can easily find the correct argument as it is exactly $\pi$ higher[^others]. We find $\arg(v) = \arctan(-2) + \pi \approx 2.03444$.
 
 [^others]: or lower, or even $(2k+1)\pi$ higher or lower.
 
@@ -413,7 +413,7 @@ $$
 If you already know about functions, you can think of the expression $f(\theta)= e^{i\theta}$ as a complex-valued function. A complex-valued function $f$ can be written as $f=g+ih$, where $g$ and $h$ are real-valued functions. When $g$ and $h$ are differentiable, we can define the derivative of $f$ as 
 
 $$
- f'=g+ih'.
+ f'=g'+ih'.
 $$
 
 We can even show that the complex exponential function behaves exactly like the real exponential function in terms of its derivative.
