@@ -363,18 +363,18 @@ The graph of the error function on the right and its derivative on the left.
 In optics the **Fresnel integrals**
 
 $$
-C(x)=\int_0^x\cos\left(\frac{1}{2}\pi t^2\right)\,dt
+C(x)=\int_0^x\cos\left(\tfrac{1}{2}\pi t^2\right)\,dt
 $$
 
 and
 
 $$
-S(x)=\int_0^x\sin\left(\frac{1}{2}\pi t^2\right)\,dt
+S(x)=\int_0^x\sin\left(\tfrac{1}{2}\pi t^2\right)\,dt
 $$
 
 for $x\geq0$ appear, which are also difficult to evaluate. These integrals are named after the French civil engineer and physicist [Augustin Jean Fresnel (1788-1827)](https://en.wikipedia.org/wiki/Augustin-Jean_Fresnel).
 
-However we have $C'(x)=\displaystyle\cos\left(\frac{1}{2}\pi x^2\right)$ and $S'(x)=\displaystyle\sin\left(\frac{1}{2}\pi x^2\right)$ by the fundamental theorem of calculus.
+However we have $C'(x)=\displaystyle\cos\left(\tfrac{1}{2}\pi x^2\right)$ and $S'(x)=\displaystyle\sin\left(\tfrac{1}{2}\pi x^2\right)$ by the fundamental theorem of calculus.
 
 So, for instance, we have: 
 
@@ -401,7 +401,6 @@ The graphs of $C(x)$ and $S(x)$ and their derivatives are given below.
 
 The graph of the Fresnel integrals on the right and their derivatives on the left.
 :::
-
 
 ::::::
 
