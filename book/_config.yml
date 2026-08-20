@@ -38,7 +38,7 @@ sphinx:
       trigger: partial
     tippy_skip_urls:
       - https://en.wikipedia.org/wiki/File:Parametric_ellipse.gif
-    todo_include_todos: true
+    todo_include_todos: false
     prf_realtyp_to_countertyp:
       "axiom": "theorem"
       "theorem": "theorem"
