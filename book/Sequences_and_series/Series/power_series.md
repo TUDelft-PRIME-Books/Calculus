@@ -673,43 +673,10 @@ Hence, the series converges for all $x\neq0$ as well. We conclude that the power
 Select exercises from Grasple and add them in {numref}`Sec:Series:PowerSeries`.
 :::
 
-## Exercises
-
-::::{exercise}
-:label: Exc:Series:DifferentiationExercise
-Consider the power series representation $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$.
-
-Use differentiation to find the sums of the series
-
-$$
-\sum_{n=1}^{\infty}\frac{n}{2^n},\quad\sum_{n=1}^{\infty}(-1)^{n-1}\frac{n}{2^n},\quad\sum_{n=2}^{\infty}\frac{n(n-1)}{2^n}\quad\text{and}\quad\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)}{2^n}.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/345547a3-748f-4c3c-bf34-bfadf03813b8?id=135083
+:label: Grasple:13583
+:dropdown:
+:description: Use differentiation to find the sum of several series.
 ::::
-
-:::{admonition} Solution of {numref}`Exc:Series:DifferentiationExercise`
-:class: solution, dropdown
-Differentiation of $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ leads to
-
-$$
-\frac{1}{(1-x)^2}=\sum_{n=1}^{\infty}nx^{n-1}\quad\text{and}\quad\frac{2}{(1-x)^3}=\sum_{n=2}^{\infty}n(n-1)x^{n-2}
-$$
-
-for $|x|<1$. This implies that
-
-$$
-\frac{x}{(1-x)^2}=\sum_{n=1}^{\infty}nx^n\quad\text{and}\quad\frac{2x^2}{(1-x)^3}=\sum_{n=2}^{\infty}n(n-1)x^n
-$$
-
-for $|x|<1$. For $x=\frac{1}{2}$ and $x=-\frac{1}{2}$ we now obtain $\displaystyle\sum_{n=1}^{\infty}\frac{n}{2^n}=\frac{\frac{1}{2}}{\left(1-\frac{1}{2}\right)^2}=2$,
-
-$$
-\sum_{n=1}^{\infty}(-1)^{n-1}\frac{n}{2^n}=-\frac{-\frac{1}{2}}{\left(1+\frac{1}{2}\right)^2}=\frac{2}{9},\quad\sum_{n=2}^{\infty}\frac{n(n-1)}{2^n}=\frac{2(\frac{1}{2})^2}{\left(1-\frac{1}{2}\right)^3}=4
-$$
-
-and
-
-$$
-\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)}{2^n}=\frac{2\left(-\frac{1}{2}\right)^2}{\left(1+\frac{1}{2}\right)^3}=\frac{27}{16}.
-$$
-
-:::

@@ -489,3 +489,48 @@ The sequence $\{c_n\}$ with $c_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\l
 :description: Is the sequence convergent? If so, find its limit.
 
 ::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/41607b58-1787-4c69-8a61-0548a6d724e0?id=134261
+:label: Grasple:134261
+:dropdown:
+:description: Show that the sequence converges and find its limit.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ab1810e0-5734-41d3-ab19-09af73561307?id=134264
+:label: Grasple:134264
+:dropdown:
+:description: Show that the sequence converges and find its limit.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4170dfc4-e826-4abe-bae9-025c234b9b30?id=134270
+:label: Grasple:134270
+:dropdown:
+:description: Show that the sequence converges and find its limit.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/952c46ea-1520-4636-958b-c07a48b88a56?id=134276
+:label: Grasple:134276
+:dropdown:
+:description: Show that the sequence converges and find its limit.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0c3b5f48-fcfd-4041-a8c9-dcd052ef7a58?id=134282
+:label: Grasple:134282
+:dropdown:
+:description: Show that the sequence converges and find its limit.
+
+::::
