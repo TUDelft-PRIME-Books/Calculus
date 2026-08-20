@@ -584,7 +584,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/96093a6c-7ca8-4c41-8ed8-d9c92ec0a428?id=104427
-:label: Grasple:ApproximatingSolutions:Linearisation
+:label: Grasple:104427
 :dropdown:
 :description: Approximating a solution using a linearisation.
 
@@ -593,7 +593,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/be00ce13-7564-41ad-8512-ddf664f7f1d3?id=104317
-:label: Grasple:ApproximatingSolutions:AutonomousForwardEuler
+:label: Grasple:104317
 :dropdown:
 :description: Applying the Forward Euler method to an autonomous initial-value problem.
 
@@ -602,7 +602,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/aacbf529-fdd3-41e8-a682-b0bc1700527a?id=104315
-:label: Grasple:ApproximatingSolutions:NonAutonomousForwardEuler
+:label: Grasple:104315
 :dropdown:
 :description: Applying the Forward Euler method to a non-autonomous initial-value problem.
 
@@ -611,7 +611,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/ddcac16d-d02b-4b1a-94f8-a35add610f00?id=104320
-:label: Grasple:ApproximatingSolutions:AutonomousBackwardEuler
+:label: Grasple:104320
 :dropdown:
 :description: Applying the Backward Euler method to an autonomous initial-value problem.
 
@@ -620,7 +620,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/eeff4834-84bf-491b-bb25-0a3822b39f9a?id=104325
-:label: Grasple:ApproximatingSolutions:NonAutonomousBackwardEuler
+:label: Grasple:104325
 :dropdown:
 :description: Applying the Backward Euler method to a non-autonomous initial-value problem.
 
@@ -629,7 +629,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/37649bc8-2eab-4dae-bf51-7ab67730f4a6?id=104333
-:label: Grasple:ApproximatingSolutions:AutonomousTrapezoidal
+:label: Grasple:104333
 :dropdown:
 :description: Applying the Trapezoidal method to an autonomous initial-value problem.
 
@@ -638,7 +638,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/e4af23ea-6cbf-405c-a75b-572c09d5eb32?id=104336
-:label: Grasple:ApproximatingSolutions:NonAutonomousTrapezoidal
+:label: Grasple:104336
 :dropdown:
 :description: Applying the Trapezoidal method to a non-autonomous initial-value problem.
 
@@ -647,7 +647,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/26d44aea-62ee-4cc3-803f-54137e132e1d?id=105534
-:label: Grasple:ApproximatingSolutions:OrderEstimation
+:label: Grasple:105534
 :dropdown:
 :description: Estimating the order of a time-integration method.
 
@@ -656,7 +656,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/d2731a40-3b5c-4504-a95c-9249a597d717?id=105553
-:label: Grasple:ApproximatingSolutions:ErrorsForwardEuler
+:label: Grasple:105553
 :dropdown:
 :description: Investigating the errors made using the Forward Euler method.
 
@@ -665,7 +665,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/175b8eb5-9275-4f8b-a9db-e5244a30c413?id=105568
-:label: Grasple:ApproximatingSolutions:NumberOfIntervals
+:label: Grasple:105568
 :dropdown:
 :description: Investigating the number of intervals to use for accurate solutions.
 
@@ -715,7 +715,7 @@ where $t_{n}=t_0+n\Delta t$.
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/532fe514-957b-4244-89eb-a6803366a665?id=79566
-:label: Grasple:ApproximatingSolutions:ModifiedEuler
+:label: Grasple:79566
 :dropdown:
 :description: Applying the Modified Euler method to an autonomous initial-value problem.
 
@@ -825,7 +825,7 @@ Now we calculate $\tilde{y}_1$:
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/c448c769-57fa-4b55-8c64-2e6e4ec8d6aa?id=79569
-:label: Grasple:ApproximatingSolutions:RK4
+:label: Grasple:79569
 :dropdown:
 :description: Applying the RK4 method to an autonomous initial-value problem.
 

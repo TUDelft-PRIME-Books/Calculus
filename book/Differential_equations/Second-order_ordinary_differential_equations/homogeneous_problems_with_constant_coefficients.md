@@ -2,270 +2,1050 @@
 
 # Homogeneous problems with constant coefficients
 
-In this section we cover:
 
-- Ansatz method: three cases (two distinct real, single real, complex)
-  - Be careful with using thew word Ansatz.
-- Application examples:
-  - Mass-spring
-  - RLC electrical circuits 
-- Mention third and higher order.
-  - Example with fifth order to indicate that it is possible (example with 5th order with 1 double real root, 1 single real root, 1 pair of complex conjugate roots).
-- Include IVPs and BVPs examples.
 
-A homogeneous first-order linear differential equation with constant coefficients
+(SubSec:ODE2:Intro)=
+
+## Introduction
+
+We consider a homogeneous first-order linear differential equation with constant coefficients, which is of the form
 
 $$
-ay'+by=0,\quad a\neq0
+ ay'+by=0,
 $$
 
-has the general solution $y=Ce^{rx}$ with $r=-\dfrac{b}{a}$.
-
-In the case of a homogeneous second-order linear differential equation with *constant coefficients*
+where $a\neq 0$ and $b$ are real constants. This equation is both separable and linear, so we could use the techniques from {numref}`Sec:ODE1:Separable` or {numref}`Sec:ODE1:Linear` to solve it. However, we can also try to guess what the solution looks like. Indeed, we can rewrite the differential equation into
 
 $$
-ay''+by'+cy=0,\quad a,b,c\in\mathbb{R},\quad a\neq0
+ y'=-\frac{b}{a}y,
 $$
 
-we try $y=e^{rx}$ as a solution. Then $y'=re^{rx}$ and $y''=r^2e^{rx}$, and substitution leads to
+so we are looking for a function of which the derivative is a multiple of the original function. Exponential functions have this property, so we can make the educated guess that a solution is of the form $y(t)=e^{rt}$. Such an educated guess about the shape of a solution is called an **Ansatz**. Then we have $y'(t)=re^{rt}$, so plugging this exponential into the differential equation gives
 
 $$
-ar^2e^{rx}+bre^{rx}+ce^{rx}=0\quad\Longleftrightarrow\quad e^{rx}(ar^2+br+c)=0.
+ re^{rt}=-\frac{b}{a}e^{rt}.
 $$
 
-Since $e^{rx}\neq0$ this leads to the **characteristic equation** (or **auxiliary equation**)
+We can divide by $e^{rt}$, which is nonzero, and obtain the equation
 
 $$
-ar^2+br+c=0,\quad a,b,c\in\mathbb{R},\quad a\neq0.
+ r=-\frac{b}{a}.
 $$
+
+Substitution into the original differential equation $ay'+by=0$ leads to same result:
+
+$$
+are^{rt}+be^{rt}=0\quad\Longleftrightarrow\quad ar+b=0\quad\Longleftrightarrow\quad r=-\frac{b}{a}.
+$$
+
+This means that the function $y(t)=e^{-\frac{b}{a}t}$ is a solution of the differential equation. By {prf:ref}`Thm:DE:GeneralSolutionHomogeneous`, the general solution is given by
+
+$$
+ y(t)=Ce^{-\frac{b}{a}t}.
+$$
+
+The two reasons why the educated guess $y(t)=e^{rt}$ worked is that the equation is homogeneous and that the coefficients $a$ and $b$ are constants. Indeed, whenever the equation would have been of the form
+
+$$
+ a(t)y'(t)+b(t)y(t)=c(t)
+$$
+
+with either $c(t)\neq 0$, or with $a(t)$ and/or $b(t)$ not constant, it is very unlikely that we could find a solution of the form $y(t)=e^{rt}$. 
+
+In this section we lift this idea to second-order, linear, homogeneous differential equations with *constant coefficients*, i.e. differential equations of the form
+
+$$
+ ay''+by'+cy=0,
+$$
+
+where $a\neq 0$, $b$ and $c$ are real constants. We will see that we can always find at least one (possibly complex) solution of the form $y(t)=e^{rt}$. The correct value(s) of $r$ can be found by finding the roots of a quadratic equation in $r$. The structure of the solution will be different, depending on whether this quadratic equation has two distinct real roots, a single real root or two non-real (complex) roots, so we will treat these cases separately.
+
+## Solving second-order, linear, homogenous differential equations
+
+We consider the second-order, linear, homogeneous differential equation with *constant coefficients*
+
+$$
+ ay''+by'+cy=0,
+$$
+
+where $a\neq 0$, $b$ and $c$ are real constants. This means that we are looking for a function $y$ of which a specific linear combination of $y$, $y'$ and $y''$ is $0$. Inspired by the approach from {numref}`SubSec:ODE2:Intro`, we make the educated guess that $y(t)=e^{rt}$ might be a solution for some constant $r$. Then we have $y'(t)=re^{rt}$ and $y''(t)=r^2e^{rt}$. Plugging these into the differential equation we get
+
+$$
+ ar^2e^{rt}+bre^{rt}+ce^{rt}=0.
+$$
+
+We can factor out the exponential to obtain
+
+$$
+ e^{rt}(ar^2+br+c)=0.
+$$
+
+Since $e^{rt}\neq0$ this leads to the quadratic equation 
+
+$$
+ ar^2+br+c=0.
+$$
+
+::::::{prf:definition}
+:label: Def:ODE2:Chareq
+Consider the second-order, linear, homogeneous differential equation with *constant coefficients*
+
+$$
+ ay''+by'+cy=0,
+$$
+
+where $a\neq 0$, $b$ and $c$ are real constants. Then the quadratic equation 
+
+$$
+ ar^2+br+c=0
+$$
+
+is known as the **characteristic equation** or the **auxiliary equation** for this differential equation.
+::::::
 
 Now we consider three possibilities for the **discriminant** $D=b^2-4ac$: $D>0$, $D=0$ and $D<0$.
 
-If $D>0$ the characteristic equation has two different real solutions, say $r_1$ and $r_2$. Then the general solution is $y(x)=c_1e^{r_1x}+c_2e^{r_2x}$ with $c_1,c_2\in\mathbb{R}$.
+### Two distinct real roots
 
-::::::{prf:example}
-The differential equation $y''-y'-6y=0$ has the characteristic equation $r^2-r-6=0\;\Longleftrightarrow\;(r-3)(r+2)=0$ with roots $r_1=3$ and $r_2=-2$. Hence, the general solution is $y=c_1e^{3x}+c_2e^{-2x}$ with $c_1,c_2\in\mathbb{R}$.
+If $D>0$ the characteristic equation has two distinct real roots, say $r_1$ and $r_2$. Then the functions $y_1(t)=e^{r_1t}$ and $y_2(t)=e^{r_2t}$ are both solutions. Since these functions are linearly independent, we find that the general solution is $y(t)=c_1e^{r_1t}+c_2e^{r_2t}$ with $c_1,c_2\in\mathbb{R}$.
+
+::::::{prf:theorem}
+:label: Thm:ODE2:Tworeal
+Consider the second-order, linear, homogeneous differential equation with *constant coefficients*
+
+$$
+ ay''+by'+cy=0,
+$$
+
+where $a\neq 0$, $b$ and $c$ are real constants. If the characteristic equation has two distinct real roots $r_1$ and $r_2$, the general solution is given by
+
+$$
+ y(t)=c_1e^{r_1t}+c_2e^{r_2t}
+$$
+
+with $c_1,c_2\in\mathbb{R}$.
 ::::::
 
-If $D=0$ the characteristic equation has two equal real solutions $r_1=r_2=r$. So we only have one linear independent solution $y=e^{rx}$ in that case. However, then $y=xe^{rx}$ is a solution too. In order to see this, we note that both $ar^2+br+c=0$ and $2ar+b=0$. Then, if a substitute $y=xe^{rx}$, $y'=(rx+1)e^{rx}$ and $y''=(r^2x+2r)e^{rx}$, we find that
+:::{admonition} Proof of {prf:ref}`Thm:ODE2:Tworeal`
+:class: tudproof, dropdown
+The functions $y_1(t)=e^{r_1t}$ and $y_2(t)=e^{r_2t}$ are solutions by construction. We need to check that they are linearly independent. Consider $c_1$ and $c_2$ with
+
+$$
+ c_1e^{r_1t}+c_2e^{r_2t}=0
+$$
+
+for all $t$. For $t=0$, we obtain $c_1+c_2=0$, which gives $c_1=-c_2$. For $t=1$ we obtain $c_1e^{r_1}+c_2e^{r_2}=0$, which becomes $c_1\left(e^{r_1}-e^{r_2}\right)=0$. Since $r_1\neq r_2$ we have $e^{r_1}-e^{r_2}\neq 0$, so we must have $c_1=0$. This gives $c_2=0$ as well. So the functions $y_1$ and $y_2$ are linearly independent. So we have found two linearly independent solutions of a second-order, linear, homogeneous differential equation. By {prf:ref}`Thm:DE:GeneralSolutionHomogeneous` the general solution of this differential equation is given by
+
+$$
+ y(t)=c_1e^{r_1t}+c_2e^{r_2t}
+$$
+
+with $c_1,c_2\in\mathbb{R}$.
+:::
+
+::::::{prf:example}
+:label: Ex:ODE2:Tworeal
+The differential equation 
+
+$$
+ y''-y'-6y=0
+$$
+
+has the characteristic equation 
+
+$$
+ r^2-r-6=0,
+$$
+
+which can be rewritten as 
+
+$$
+ (r-3)(r+2)=0.
+$$
+
+The roots of this equation are $r_1=3$ and $r_2=-2$, which are two distinct real roots. By {prf:ref}`Thm:ODE2:Tworeal`, the general solution of the differential equation is 
+
+$$
+ y(t)=c_1e^{3t}+c_2e^{-2t}
+$$
+
+with $c_1,c_2\in\mathbb{R}$.
+
+In {numref}`Fig:ODE2:Tworeal` you can see on the left the graph of the two linearly independent solutions $y_1(t)=e^{3t}$ and $y_2(t)=e^{-2t}$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$ on the right.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/two_distinct_real_roots
+:name: Fig:ODE2:Tworeal
+:class: dark-light
+
+(_left_) The graph of the two linearly independent solutions $y_1(t)=e^{3t}$ and $y_2(t)=e^{-2t}$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$. \
+(_right_) The values of $c_1$ and $c_2$. You can drag the point to change the values of $c_1$ and $c_2$ and see how the graph of the general solution changes.
+:::
+
+::::::
+
+### Double real root
+
+
+If $D=0$ the characteristic equation has two equal real roots $r_1=r_2=r$. So we only obtain one linearly independent solution $y_1=e^{rt}$ in that case. So how do we obtain a second, linearly independent solution? It turns out that $y_2=te^{rt}$ is a solution too, as can be seen in the upcoming theorem. Since these two functions are linearly independent, we can use them to find the general solution.
+
+::::::{prf:theorem}
+:label: Thm:ODE2:Onereal
+Consider the second-order, linear, homogeneous differential equation with *constant coefficients*
+
+$$
+ ay''+by'+cy=0,
+$$
+
+where $a\neq 0$, $b$ and $c$ are real constants. If the characteristic equation has a double (real) root $r$, the general solution is given by
+
+$$
+ y(t)=c_1e^{rt}+c_2te^{rt}
+$$
+
+with $c_1,c_2\in\mathbb{R}$.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:ODE2:Onereal`
+:class: tudproof, dropdown
+The function $y_1(t)=e^{rt}$ is a solution by construction. We need to check that $y_2(t)=te^{rt}$ is a solution as well. In order to see this, we note that $r$ being a double root means that the discriminant satisfies $D=b^2-4ac=0$. Then, we can express $r$ in terms of the coefficients $a$, $b$, and $c$ as
+
+$$
+ r=\frac{-b\pm\sqrt{D}}{2a}=\frac{-b}{2a}.
+$$
+
+This means that $2ar+b=0$. Moreover, $r$ is a solution of the characteristic equation, so we must have $ar^2+br+c=0$. Then, for $y_2(t)=te^{rt}$ we have $y_2'=(rt+1)e^{rt}$ and $y_2''=(r^2t+2r)e^{rt}$. Plugging these into the differential equation we obtain
 
 $$
 \begin{align*}
-ay''+by'+cy&=a(r^2x+2r)e^{rx}+b(rx+1)e^{rx}+cxe^{rx}\\
-&=(ar^2+br+1)xe^{rx}+(2ar+b)e^{rx}=0+0=0.
+ay''+by'+cy&=a(r^2t+2r)e^{rt}+b(rt+1)e^{rt}+cte^{rt}\\
+&=(ar^2+br+c)te^{rt}+(2ar+b)e^{rt}\\
+&=0+0\\
+&=0.
 \end{align*}
 $$
 
-Since $y_1=e^{rx}$ and $y_2=xe^{rx}$ are linear independent, the general solution is $y=c_1e^{rx}+c_2xe^{rx}$ with $c_1,c_2\in\mathbb{R}$.
+So $y_2$ is indeed a solution of the differential equation. 
+
+Finally, we need to show that $y_1$ and $y_2$  are linearly independent. Consider $c_1$ and $c_2$ with
+
+$$
+ c_1e^{rt}+c_2te^{rt}=0
+$$
+
+for all $t$. For $t=0$, we directly obtain $c_1=0$. For $t=1$ we then obtain $c_2e^{r}=0$, which gives $c_2=0$. Therefore, the functions $y_1$ and $y_2$ are linearly independent. So we have found two linearly independent solutions of a second-order, linear, homogeneous differential equation. By {prf:ref}`Thm:DE:GeneralSolutionHomogeneous` the general solution of this differential equation is given by
+
+$$
+ y(t)=c_1e^{rt}+c_2te^{rt}
+$$
+
+with $c_1,c_2\in\mathbb{R}$.
+:::
 
 ::::::{prf:example}
-The differential equation $y''-6y'+9y=0$ has the characteristic equation $r^2-6r+9=0\;\Longleftrightarrow\;(r-3)^2=0$ with 'double' root $r=3$. Hence, the general solution is $y=c_1e^{3x}+c_2xe^{3x}$ with $c_1,c_2\in\mathbb{R}$.
+:label: Ex:ODE2:Onereal
+The differential equation 
+
+$$
+ y''-6y'+9y=0
+$$ 
+
+has the characteristic equation 
+
+$$
+ r^2-6r+9=0,
+$$
+
+which can be written to
+
+$$
+ (r-3)^2=0.
+$$ 
+
+As such, we have a double root $r=3$. By {prf:ref}`Thm:ODE2:Onereal` the general solution is 
+
+$$
+ y(t)=c_1e^{3t}+c_2te^{3t}
+$$
+
+with $c_1,c_2\in\mathbb{R}$.
+
+In {numref}`Fig:ODE2:Onereal` you can see on the left the graph of the two linearly independent solutions $y_1(t)=e^{3t}$ and $y_2(t)=te^{3t}$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$ on the right.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/double_real_root
+:name: Fig:ODE2:Onereal
+:class: dark-light
+
+(_left_) The graph of the two linearly independent solutions $y_1(t)=e^{3t}$ and $y_2(t)=te^{3t}$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$. \
+(_right_) The values of $c_1$ and $c_2$. You can drag the point to change the values of $c_1$ and $c_2$ and see how the graph of the general solution changes.
+:::
+
 ::::::
+
+### Non-real (complex) roots
 
 If $D<0$ the characteristic equation has a complex conjugate pair as solutions, say $r=\alpha\pm i\beta$ with $\beta\neq0$. This implies that the general (complex) solution is a (complex) linear combination of
 
 $$
-e^{(\alpha+i\beta)x}=e^{\alpha x}\cdot e^{i\beta x}=e^{\alpha x}(\cos(\beta x)+i\sin(\beta x))
+e^{(\alpha+i\beta)t}=e^{\alpha t}\cdot e^{i\beta t}=e^{\alpha t}(\cos(\beta t)+i\sin(\beta t))
 $$
 
 and
 
 $$
-e^{(\alpha-i\beta)x}=e^{\alpha x}\cdot e^{-i\beta x}=e^{\alpha x}(\cos(\beta x)-i\sin(\beta x)).
+e^{(\alpha-i\beta)t}=e^{\alpha t}\cdot e^{-i\beta t}=e^{\alpha t}(\cos(\beta t)-i\sin(\beta t)).
 $$
 
-Note that it is possible to take certain (complex) linear combinations such that $e^{\alpha x}\cos(\beta x)$ and $e^{\alpha x}\sin(\beta x)$ are solutions. These solutions are real and linearly independent. This implies that the general solution is $y=c_1e^{\alpha x}\cos(\beta x)+c_2e^{\alpha x}\sin(\beta x)$ with $c_1,c_2\in\mathbb{R}$ in this case.
+As can be seen in the proof of the upcoming {prf:ref}`Thm:ODE2:Twocomplex`, it is possible to take certain (complex) linear combinations of these two complex exponentials to obtain the (real-valued!) functions
 
-::::::{prf:example}
-The differential equation $y''+4y'+13y=0$ has the characteristic equation $r^2+4r+13=0\;\Longleftrightarrow\;(r+2)^2+9=0$ with nonreal roots $r=-2\pm3i$. Hence, the general solution is $y=c_1e^{-2x}\cos(3x)+c_2e^{-2x}\sin(x)$ with $c_1,c_2\in\mathbb{R}$.
+$$
+ y_1(t)=e^{\alpha t}\cos(\beta t)
+$$ 
+
+and 
+
+$$
+ y_2(t)=e^{\alpha t}\sin(\beta t).
+$$
+
+Since linear combinations (even complex ones) of linear, homogeneous differential equations are again solutions, the functions $y_1$ and $y_2$ are solutions of the differential equation. These solutions are real and linearly independent. This implies that the general solution is 
+
+$$
+ y(t)=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t)
+$$
+
+with $c_1,c_2\in\mathbb{R}$ in this case.
+
+::::::{prf:theorem}
+:label: Thm:ODE2:Twocomplex
+Consider the second-order, linear, homogeneous differential equation with *constant coefficients*
+
+$$
+ ay''+by'+cy=0,
+$$
+
+where $a\neq 0$, $b$ and $c$ are real constants. If the characteristic equation has a complex conjugate pair of roots $r=\alpha+i\beta$ and $r=\alpha-i\beta$ with $\beta\neq 0$, the general solution is given by
+
+$$
+ y(t)=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t)
+$$
+
+with $c_1,c_2\in\mathbb{R}$.
 ::::::
 
-**Initial-value problems**
+:::{admonition} Proof of {prf:ref}`Thm:ODE2:Twocomplex`
+:class: tudproof, dropdown 
+The functions $\tilde{y}_1(t)=e^{(\alpha+i\beta)t}$ and $\tilde{y}_2(t)=e^{(\alpha-i\beta)t}$ are complex-valued solutions of the differential equation by construction. By {prf:ref}`Thm:DE:SuperpositionPrinciple`, the functions
+
+\begin{align*}
+ y_1(t)=&\frac{1}{2}\left(\tilde{y}_1(t)+\tilde{y}_2(t)\right)\\
+ =&\frac{1}{2}\left(e^{\alpha t}(\cos(\beta t)+i\sin(\beta t))+e^{\alpha t}(\cos(-\beta t)+i\sin(-\beta t))\right)\\
+ =&e^{\alpha t}\cos(\beta t)
+\end{align*}
+
+and
+
+\begin{align*}
+ y_2(t)=&\frac{1}{2i}\left(\tilde{y}_1(t)-\tilde{y}_2(t)\right)\\
+ =&\frac{1}{2i}\left(e^{\alpha t}(\cos(\beta t)+i\sin(\beta t))-e^{\alpha t}(\cos(-\beta t)-i\sin(-\beta t))\right)\\
+ =&e^{\alpha t}\sin(\beta t)
+\end{align*}
+
+are solutions of this differential equation as well. We see that these solutions are both real-valued.
+
+Finally, we need to show that $y_1$ and $y_2$  are linearly independent. Consider $c_1$ and $c_2$ with
+
+$$
+ c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t)=0
+$$
+
+for all $t$. For $t=0$, we directly obtain $c_1=0$. For $t=\dfrac{\pi}{2\beta}$ we then obtain 
+
+$$
+ c_2e^{\frac{\alpha\pi}{2\beta}}\sin\left(\frac{\pi}{2}\right)=0,
+$$
+
+which gives $c_2=0$. Therefore, the functions $y_1$ and $y_2$ are linearly independent. So we have found two linearly independent solutions of a second-order, linear, homogeneous differential equation. By {prf:ref}`Thm:DE:GeneralSolutionHomogeneous` the general solution of this differential equation is given by
+
+$$
+ y(t)=c_1e^{\alpha t}\cos(\beta t)+c_2e^{\alpha t}\sin(\beta t)
+$$
+
+with $c_1,c_2\in\mathbb{R}$.
+:::
+
+::::::{prf:example}
+:label: Ex:ODE2:Twocomplex
+
+The differential equation 
+
+$$
+ y''+4y'+13y=0
+$$
+
+has characteristic equation 
+
+$$
+ r^2+4r+13=0.
+$$
+
+This equation can be solved by completing this square, which gives
+
+$$
+ (r+2)^2+9=0.
+$$
+
+From this, we obtain the non-real roots $r=-2\pm3i$. By {prf:ref}`Thm:ODE2:Twocomplex`, the general solution is 
+
+$$
+ y(t)=c_1e^{-2t}\cos(3t)+c_2e^{-2t}\sin(t)
+$$
+
+with $c_1,c_2\in\mathbb{R}$.
+
+In {numref}`Fig:ODE2:Twocomplex` you can see on the left the graph of the two linearly independent solutions $y_1(t)=e^{-2t}\cos(3t)$ and $y_2(t)=e^{-2t}\sin(3t)$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$ on the right.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/two_non-real_roots
+:name: Fig:ODE2:Twocomplex
+:class: dark-light
+
+(_left_) The graph of the two linearly independent solutions $y_1(t)=e^{-2t}\cos(3t)$ and $y_2(t)=e^{-2t}\sin(3t)$, as well as the graph of the general solution for the indicated values of $c_1$ and $c_2$. \
+(_right_) The values of $c_1$ and $c_2$. You can drag the point to change the values of $c_1$ and $c_2$ and see how the graph of the general solution changes.
+:::
+
+::::::
+
+### Initial-value problems
 
 In {numref}`Sec:DE:ExistenceUniqueness` we have seen that an initial-value problem of the form
 
 $$
-\begin{cases}ay''+by'+cy=0,\quad a,b,c\in\mathbb{R},\quad a\neq0\\ \\y(t_0)=y_0,\quad y'(t_0)=y_0'\end{cases}
+\begin{cases}ay''+by'+cy=0,\\ \\y(t_0)=y_0,\quad y'(t_0)=y_0'\end{cases}
 $$
 
-has a unique solution.
+has a unique solution. Here $a\neq 0$, $b$, $c$, $y_0$ and $y_0'$ are real constants. In the next example, we will show how to find this specific solution from the general solution.
 
 ::::::{prf:example}
-Find the unique solution of the initial-value problem $\begin{cases}y''+y'-6y=0\\ \\y(0)=5,\quad y'(0)=0.\end{cases}$
-
-Note that $y''+y'-6y=0$ has characteristic equation $r^2+r-6=0\;\Longleftrightarrow\;(r+3)(r-2)=0$ with solutions $r_1=2$ and $r_2=-3$. Hence, the general solution is $y=c_1e^{2x}+c_2e^{-3x}$ with $c_1,c_2\in\mathbb{R}$. This implies that $y'=2c_1e^{2x}-3c_2e^{-3x}$. Hence we have
+:label: Ex:ODE2:IVP
+Suppose we want to find the unique solution of the initial-value problem 
 
 $$
-\begin{cases}y(0)=5\\ \\y'(0)=0\end{cases}\quad\Longleftrightarrow\quad\begin{cases}c_1+c_2=5\\ \\2c_1-3c_2=0\end{cases}\quad\Longleftrightarrow\quad\begin{cases}c_1=3\\ \\c_2=2.\end{cases}
+ \begin{cases}y''+y'-6y=0\\ \\y(0)=5,\quad y'(0)=0.\end{cases}
 $$
 
-Hence, $y(x)=3e^{2x}+2e^{-3x}$ is the unique solution of the initial-value problem.
+Note that the differential equation
+
+$$
+ y''+y'-6y=0
+$$
+
+has characteristic equation 
+
+$$
+ r^2+r-6=0.
+$$
+
+We can rewrite this equation into 
+
+$$
+ (r+3)(r-2)=0
+$$ 
+
+which gives the roots $r_1=2$ and $r_2=-3$. Since we have two distinct real roots, the general solution is
+
+$$
+ y(t)=c_1e^{2t}+c_2e^{-3t}
+$$
+
+with $c_1,c_2\in\mathbb{R}$. 
+
+In order to take the initial condition into account, we first evaluate
+
+$$
+ y'=2c_1e^{2t}-3c_2e^{-3t}.
+$$
+
+The initial values
+
+$$
+ \begin{cases}y(0)=5,\\ \\y'(0)=0\end{cases}
+$$
+
+lead to the system of linear equations
+
+$$
+\begin{cases}c_1+c_2=5,\\ \\2c_1-3c_2=0.\end{cases}
+$$
+
+We can solve this system to obtain
+
+$$
+ \begin{cases}c_1=3,\\ \\c_2=2.\end{cases}
+$$
+
+Hence, $y(t)=3e^{2t}+2e^{-3t}$ is the unique solution of the initial-value problem.
+::::::
+
+### Boundary-value problems
+
+On the other hand, boundary-value problems do not always have a unique solution, as can be seen from the following example. In general, a boundary-value problem can have $0$, $1$ or infinitely many solutions.
+
+::::::{prf:example}
+:label: Ex:ODE2:BVP
+Suppose we want to find all solutions of the boundary-value problem 
+
+$$
+ \begin{cases}y''+4y=0\\ \\y(0)=1,\quad y(\pi)=-1.\end{cases}
+$$
+
+Note that the differential equation
+
+$$
+ y''+4y=0
+$$
+
+has characteristic equation 
+
+$$
+ r^2+4=0.
+$$
+
+This gives the roots $r_1=2i$ and $r_2=-2i$. Since we have non-real roots, the general solution is
+
+$$
+ y(t)=c_1\cos(2t)+c_2\sin(2t).
+$$
+
+with $c_1,c_2\in\mathbb{R}$. 
+
+The boundary values
+
+$$
+ \begin{cases}y(0)=1,\\ \\y(\pi)=-1\end{cases}
+$$
+
+lead to the system of linear equations
+
+$$
+\begin{cases}c_1=1,\\ \\c_1=-1.\end{cases}
+$$
+
+Clearly, $c_1$ cannot have two different values at the same time. We conclude that the boundary-value problem has no solutions.
+::::::
+
+### Higher-order equations
+
+The techniques from this section can also be applied to higher-order, linear, homogeneous equations of the form
+
+$$
+ a_ny^{(n)}(t)+a_{n-1}y^{(n-1)}(t)+\cdots+a_1y'(t)+a_0y(t)=0,
+$$
+
+where $a_0,\ldots,a_n$ are real constants with $a_n\neq 0$. For such an equation, the educated guess $y(t)=e^{rt}$ gives an $n$th order polynomial equation. Solving these equations by hand is hard (or even impossible), but in some cases it is doable, as can be seen in the following example.
+
+::::::{prf:example}
+:label: Ex:ODE2:HigherOrder
+
+Consider the differential equation
+
+$$
+ y^{(5)}-6y^{(4)}+15y^{(3)}-20y''+14y'-4y=0.
+$$
+
+Since this is a linear, homogeneous equation with constant coefficients, we try a solution of the form $y(t)=e^{rt}$. Plugging this into the differential equation we obtain
+
+$$
+ r^5e^{rt}-6r^4e^{rt}+15r^3e^{rt}-20r^2e^{rt}+14re^{rt}-4e^{rt}=0.
+$$
+
+Upon dividing by $e^{rt}$ we obtain
+
+$$
+ r^5-6r^4+15r^3-20r^2+14r-4=0.
+$$
+
+[It can be shown that there is no general method to find roots of a fifth order polynomial equation](https://en.wikipedia.org/wiki/Abel%E2%80%93Ruffini_theorem). Fortunately, we made this example ourselves so we constructed it in such a way that we know the roots. These are $r_1=1$ (with multiplicity $2$), $r_2=2$, $r_3=1+i$ and $r=1-i$. Following the same ideas as earlier in this section, we obtain the five real solutions
+
+\begin{align*}
+&y_1(t)=e^t, \quad y_2(t)=te^t,\quad y_3(t)=e^{2t},\\
+&{}\quad y_4(t)=e^t\cos(t),\quad y_5(t)=e^t\sin(t).
+\end{align*}
+
+Since these solutions are linearly independent, we obtain the general solution
+
+$$
+ y(t)=c_1e^t+c_2te^t+c_3e^{2t}+c_4e^t\cos(t)+c_5e^t\sin(t),
+$$
+
+where $c_1,c_2,c_3,c_4$ and $c_5$ are real constants.
 ::::::
 
 ## Applications
 
-**The pendulum**
+### The pendulum
 
-```{figure} Images/pendulum.png
----
-width: 65%
-name: pendulum
-align: left
----
-The motion of a pendulum
-```
+Let us return to the example of the pendulum from {prf:ref}`Ex:Diffclass:pendulum`, which we repeat below
 
-The differential equation which represents the motion of a simple pendulum is:
+:::{fetch} {prf:ref}`Ex:Diffclass:pendulum`
+:::
+
+As you can read, we made a promise to come back to this example in this section and solve the differential equation
 
 $$
-\frac{d^2\theta}{dt^2}+\frac{g}{L}\sin(\theta)=0,
+\frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0.
 $$
 
-where $g$ is the acceleration due to gravity, $L$ is the length of the pendulum, and $\theta$ is
-the angular displacement with respect to the equilibrium position at time $t$.
-
-It is quite difficult to solve this differential equation.
-
-However, the linearization of the function $f(x)=\sin(x)$ at $x=0$ is
+In fact, this is a homogeneous second-order linear differential equation with constant coefficients, the subject of this section. The characteristic equation is
 
 $$
-L(x)=f(0)+f'(0)(x-0)=x.
+r^2+\frac{g}{L}=0, 
 $$
 
-This implies that $\sin(x)\approx x$ for $x$ near $0$.
-
-Note that it is much easier to solve the differential equation
+from which we obtain
 
 $$
-\frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
-$$
+ r=\pm i\sqrt{\frac{g}{l}}.
+$$ 
 
-instead of the one above. In fact, this is a homogeneous second-order linear differential equation with constant coefficients. The auxiliary or characteristic equation is
-
-$$
-r^2+\frac{g}{L}=0\quad\Longrightarrow\quad r=\pm i\sqrt{\frac{g}{l}}.
-$$
-
-This implies that the general solution is
+From {prf:ref}`Thm:ODE2:Twocomplex` we obtain that the general solution is
 
 $$
 \theta(t)=c_1\cos(rt)+c_2\sin(rt)\quad\text{with}\quad r=\sqrt{\frac{g}{L}}\quad\text{and}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-So, if (for instance) the starting position of the pundulum is $\theta_0$ and is released with no initial velocity, then this leads to the initial-value problem
+So, if (for instance) the starting position of the pendulum is $\theta_0$ and is released with no initial velocity, then this leads to the initial-value problem
 
 $$
 \theta''(t)+\frac{g}{L}\theta(t)=0,\quad\theta(0)=\theta_0,\quad\theta'(0)=0
 $$
 
-with solution $\theta(t)=\theta_0\cos(\sqrt{\frac{g}{L}}t)$.
-
-**A mass-spring system**
-
-```{figure} Images/mass-spring1.png
----
-width: 50%
-name: mass-spring
-align: center
----
-A mass-spring system
-```
-
-Using Newton's law $F=m\cdot a$ and Hooke's law $F=-k\cdot x$, we obtain
+with solution 
 
 $$
-m\cdot\frac{d^2x}{dt^2}=-k\cdot x(t),
+ \theta(t)=\theta_0\cos\left(\sqrt{\frac{g}{L}}t\right).
 $$
 
-where $k$ is a positive constant, called the <em>spring constant</em>.
+It is important to note that we made an approximation of the original nonlinear differential equation, so this function will **not** be a solution of the original equation. Still, for small values of $\theta$, it is a good approximation of the actual solution.
 
-Without damping we have: $mx''(t)+kx(t)=0$.
+In {numref}`Fig:ODE2:pendulum` you can see the graph of the solution $\theta(t)$ for a set of values of $\theta(0)$ and $\theta'(0)$, initially set to $\frac{\pi}{6}$ and $0$, respectively. Here we have selected $L=5$.
 
-```{figure} Images/mass-spring2.png
----
-width: 50%
-name: mass-spring
-align: center
----
-A mass-spring system
-```
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/pendulum
+:name: Fig:ODE2:pendulum
+:class: dark-light
+
+(_bottom_) The graph of the solution $\theta(t)$ for a set of values of $\theta(0)$ and $\theta'(0)$, initially set to $\frac{\pi}{6}$ and $0$, respectively. Here we have selected $L=5$. \
+(_top-left_) The position of the bob at the time indicated in the bottom graph. \
+(_top_right_) The values of $\theta(0)$ and $\theta'(0)$. You can drag the points to change the values of $\theta(0)$ and $\theta'(0)$ and see how the graph of the solution changes. \
+You can press the play button to see how the location of the bob changes over the time interval $[0, 10]$.
+:::
+
+### A mass-spring system
+
+In {prf:ref}`Ex:Diffclass:massspring` we studied the mass-spring system. For this system, we aim to find the displacement with respect to the equilibrium position, which we denote by $u(t)$. Using Newton's law $F=m\cdot a$ and Hooke's law $F=-k\cdot x$ and assuming there is no damping, see {numref}`Fig:ODE2:mass-spring`, we obtain
+
+$$
+m\cdot\frac{d^2u}{dt^2}=-k\cdot u(t).
+$$
+
+Here $k$ is a positive constant, called the _spring constant_.
+
+:::{applet}
+:url: calculus/classifications_and_solutions/mass-spring_system
+:name: Fig:ODE2:mass-spring
+:class: dark-light
+
+A mass-spring system. The distance $u$ is measured from top to the bottom, so downward is the positive direction. On the _left_ the spring is in equilibrium, corresponding to $u=0$, while on the _right_ the spring is stretched.
+:::
 
 ::::::{prf:example}
-A spring with a mass of $5\;\text{kg}$ has natural length $0.5\;\text{m}$. A force of $45\;\text{N}$ is required to maintain it stretched to a length of $0.75\;\text{m}$. If the spring is stretched to a length of $0.75\;\text{m}$ and then released with initial velocity $0$, find the position of the mass at any time $t$.
-::::::
+:label: Ex:ODE2:SpringNodamp
+A spring with a mass of $5$ kg has a natural length of $0.5$ m. A force of $45$ N is required to maintain it stretched to a length of $0.75$ m.
 
-::::::{admonition} Solution
-From Hooke's law, the force required to stretch the spring is $k\cdot(0.25)=45$, so $k=\dfrac{45}{0.25}=180$. Using this value of the spring constant $k$, together with $m=5$ we have
+Suppose the spring is stretched to a length of $0.75$ m and then released with initial velocity $0$. Let us see how we can find the position of the mass at any time $t\geq 0$.
+
+From Hooke's law, the force required to stretch the spring from $0.5$ to $0.75$ is $k\cdot(0.75-0.5)=45$, so $k=\dfrac{45}{0.25}=180$ $\frac{\text{N}}{\text{m}}$ for this spring. Using this value of the spring constant $k$, together with $m=5$ we have
 
 $$
-5\frac{d^2x}{dt^2}+180x(t)=0.
+5\frac{d^2u}{dt^2}+180u(t)=0.
 $$
 
-The general solution is $x(t)=c_1\cos(6t)+c_2\sin(6t)$ which implies that $x'(t)=-6c_1\sin(6t)+6c_2\cos(6t)$. The initial conditions are $x(0)=0.25$ and $x'(0)=0$, which lead to $c_1=0.25$ and $c_2=0$. So, the solution is $x(t)=0.25\cos(6t)$.
+This is a second-order, linear, homogeneous equation with constant coefficients, so we try $u(t)=e^{rt}$. This gives the characteristic equation
+
+$$
+ 5r^2+180=0
+$$
+
+with solutions $r=6i$ and $r=-6i$. By {prf:ref}`Thm:ODE2:Twocomplex`, the general solution is 
+
+
+$$
+ u(t)=c_1\cos(6t)+c_2\sin(6t).
+$$
+
+In order to handle the initial conditions, we evaluate
+
+$$
+ u'(t)=-6c_1\sin(6t)+6c_2\cos(6t).
+$$
+
+The initial conditions are $u(0)=0.25$ and $u'(0)=0$, which lead to $c_1=0.25$ and $c_2=0$. So, the solution is
+
+$$
+u(t)=0.25\cos(6t).
+$$
+
+In {numref}`Fig:ODE2:SpringNodamp` you can see the graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $0.25$ and $0$, respectively.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/undamped_mass-spring_system
+:name: Fig:ODE2:SpringNodamp
+:class: dark-light
+
+(_bottom_) The graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $0.25$ and $0$, respectively. \
+(_top-left_) The position of the mass at the time indicated in the bottom graph. \
+(_top_right_) The values of $u(0)$ and $u'(0)$. You can drag the points to change the values of $u(0)$ and $u'(0)$ and see how the graph of the solution changes. \
+You can press the play button to see how the location of the mass changes over the time interval $[0, 5]$.
+:::
+
 ::::::
 
-```{figure} Images/mass-spring3.png
----
-width: 50%
-name: mass-spring
-align: right
----
-A mass-spring system
-```
+With damping we have the equation 
 
-<br /><br />
+$$
+ mu''(t)+cu'(t)+ku(t)=0,
+$$ 
 
-With damping we have: $mx''(t)+cx'(t)+kx(t)=0$. 
+where $c$ is a positive constant, called the _damping constant_, see {numref}`Fig:ODE2:mass-spring-damped` for an illustration.
 
-Here $c$ is a positive constant, called the <em>damping constant</em>.
+:::{applet}
+:url: calculus/classifications_and_solutions/mass-spring_system_with_damping
+:name: Fig:ODE2:mass-spring-damped
+:class: dark-light
+
+A mass-spring system with damping, as a part of the system is submerged in a fluid.
+:::
 
 ::::::{prf:example}
-Suppose that the same spring with a mass of $5\;\text{kg}$ as above is immersed in a fluid with damping constant $c=65$. Find the position of the mass at any time $t$ if it starts from the equilibrium position and is given a push to start it with an initial velocity of $0.5\;\text{m}/\text{s}$.
-::::::
+:label: Ex:ODE2:SpringWithdamp
 
-::::::{admonition} Solution
+Suppose that the spring with a mass of $5$ kg from {prf:ref}`Ex:ODE2:SpringNodamp` is immersed in a fluid with damping constant $c=65$ $\frac{\text{Ns}}{\text{m}}$. How can we find the position of the mass at any time $t$ if it starts from the equilibrium position and is given a push to start it with an initial velocity of $5$ $\frac{\text{m}}{\text{s}}$?
+
 With $m=5$ and $k=180$ the differential equation becomes
 
 $$
-5\frac{d^2x}{dt^2}+65\frac{dx}{dt}+180x(t)=0\quad\Longleftrightarrow\quad\frac{d^2x}{dt^2}+13\frac{dx}{dt}+36x(t)=0.
+5\frac{d^2u}{dt^2}+65\frac{du}{dt}+180u(t)=0,
 $$
 
-The characteristic or auxillary equation is $r^2+13r+36=0\;\Longleftrightarrow\;(r+4)(r+9)=0$ with roots $r=-4$ and $r=-9$. So, the general solution is $x(t)=c_1e^{-4t}+c_2e^{-9t}$ which implies that $x'(t)=-4c_1e^{-4t}-9c_2e^{-9t}$. The initial conditions are $x(0)=0$ and $x'(0)=0.5$, which lead to $c_1=0.1$ and $c_2=-0.1$. So, the solution is $x(t)=0.1\left(e^{-4t}-e^{9t}\right)$.
+which we can rewrite into
+
+$$
+ \frac{d^2u}{dt^2}+13\frac{du}{dt}+36u(t)=0.
+$$
+
+The characteristic equation is 
+
+$$
+ r^2+13r+36=0$$
+
+which gives
+
+$$
+ (r+4)(r+9)=0.
+$$ 
+
+We obtain the roots $r=-4$ and $r=-9$. By {prf:ref}`Thm:ODE2:Tworeal`, the general solution is 
+
+$$
+ u(t)=c_1e^{-4t}+c_2e^{-9t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
+$$
+
+In order to handle the initial conditions, we evaluate 
+
+$$
+ u'(t)=-4c_1e^{-4t}-9c_2e^{-9t}.
+$$
+
+The initial conditions are $u(0)=0$ and $u'(0)=5$, which lead to $c_1=1$ and $c_2=-1$. So, the solution is
+
+$$
+u(t)=e^{-4t}-e^{-9t}.
+$$
+
+In {numref}`Fig:ODE2:SpringWithdamp` you can see the graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $0$ and $5$, respectively.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/damped_mass-spring_system
+:name: Fig:ODE2:SpringWithdamp
+:class: dark-light
+
+(_bottom_) The graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $0$ and $5$, respectively. \
+(_top-left_) The position of the mass at the time indicated in the bottom graph. \
+(_top_right_) The values of $u(0)$ and $u'(0)$. You can drag the points to change the values of $u(0)$ and $u'(0)$ and see how the graph of the solution changes. \
+You can press the play button to see how the location of the mass changes over the time interval $[0, 5]$.
+:::
+
 ::::::
 
-::::::{prf:example}
-Consider the integral $I(t)=\displaystyle\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx$ with $\alpha>0$. 
+For the damped mass-spring system, the qualitative behaviour of the solutions depends greatly on the value of the damping constant. Indeed, let us consider a system with $m=1$, $k=25$ and let us see how different values of the damping constant influence the shape of the solution. 
 
-Then we have: $I(0)=\displaystyle\int_0^{\infty}\frac{dx}{x^2+\alpha^2}=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)\bigg|_0^{\infty}=\frac{\pi}{2\alpha}$ and
+For a large value of $c$, say $c=26$, we obtain the differential equation
 
 $$
+ u''+26u'+25u=0
+$$
+
+with characteristic equation
+
+$$
+ r^2+26r+25=0.
+$$
+
+In this case, we obtain two distinct real roots $r_1=-1$ and $r_2=-25$. The general solution becomes
+
+$$
+ u(t)=c_1e^{-t}+c_2e^{-25t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
+$$
+
+In this case, the spring does not oscillate and goes back to its equilibrium position relatively slowly (because of the $e^{-t}$), at least compared to the final one of the upcoming cases. Physically, this makes sense: if you put your spring in a material with a high damping coefficient (say, something like honey), it will go back to its equilibrium position slowly and not oscillate. This case where we have two real roots is, for this reason, known as the **overdamped** case.
+
+Secondly, we consider a small value of $c$, say $c=6$. Then, we obtain the differential equation
+
+$$
+ u''+6u'+25u=0
+$$
+
+with characteristic equation
+
+$$
+ r^2+6r+25=0.
+$$
+
+In this case, we obtain two non-real roots $r_1=-3+4i$ and $r_2=-3-4i$. The general solution becomes
+
+$$
+ u(t)=c_1e^{-3t}\cos(4t)+c_2e^{-3t}\sin(4t)\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
+$$
+
+Because of the cosine and the sine, the solution will keep on oscillating, with decreasing amplitude because of the exponential. Again, this behaviour matches our physical intuition: if the damping coefficient of the medium is low (say, something like air), we expect the solution to keep on oscillating. This case where we have two non-real roots is, as such, known as the **underdamped** case.
+
+Finally, we consider the critical value of the damping constant when we move between the overdamped and the overdamped case. Mathematically, this corresponds to the case where we have a double real root. For this system, this happens when $c=10$. Indeed, in that case we have the differential equation
+
+$$
+ u''+10u'+25u=0
+$$
+
+with characteristic equation
+
+$$
+ r^2+10r+25=0.
+$$
+
+In this case, we obtain double root $r=-5$. The general solution becomes
+
+$$
+ u(t)=c_1e^{-5t}+c_2te^{-5t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
+$$
+
+Note that this solution damps out quicker than both the overdamped case and the underdamped case. Indeed, for the overdamped case the dominant term is $e^{-t}$, for the underdamped case it is $e^{-3t}$, while here it is $te^{-5t}$. For at least some initial conditions, (for instance, when $u(0)=1$ and $u'(0)=-10$) the solution passes through the equilibrium position exactly once, but there is no oscillation involved. Since this case is the transition case between the other cases, it is known as the **critically damped** case.
+
+In {numref}`Fig:ODE2:Damping` you can see the graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $1$ and $-10$, respectively, for the critically damped case, $c=10$. You can interact with the figure to see how the solution changes when you change the value of $c$, the initial conditions. and the moment in time.
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/complete_mass-spring_system
+:name: Fig:ODE2:Damping
+:class: dark-light
+
+A plot of the solution with $u(0)=1$, $u'(0)=-10$ for the critically damped case $u''+cu'+25u=0$ with $c=10$. \
+You can change the value of $c$ by dragging the slider to see how the solution changes. \
+You can change the initial conditions by dragging the points in the top-right graph. \
+You can animate the mass-spring system by dragging the square in the bottom-graph.
+:::
+
+### The source-free series RLC electrical circuit
+
+Consider an electrical circuit where a resistor with resistance $R$ (in ohm $\Omega$), an inductor with inductance $L$ (in henry $H$) and a capacitor with capacitance $C$ (in farad $F$) are placed in series, see {numref}`Fig:ODE2:RLC`. There is no voltage or current source. This circuit is known as the source-free series RLC electrical circuit. 
+
+:::{applet}
+:url: calculus/homogeneous_problems_with_constant_coefficients/source-free_series_RLC_electrical_circuit
+:name: Fig:ODE2:RLC
+:class: dark-light
+
+A source-free electrical circuit, where a resistor with resistance $R$, an inductor with inductance $L$ and a capacitor with capacitance $C$ are placed in series. The current $i(t)$ is the quantity of interest. Electrical graphical symbols are based on [IEC 60617](https://webstore.iec.ch/en/publication/2723).
+:::
+
+The main goal is to see how the current $i(t)$ (in ampere $A$) evolves in time (in seconds $s$). We assume that there is some energy stored initially in the capacitor and the inductor (otherwise there would be no current at all). For the initial current, we assume that $i(0)=I_0$ for some $I_0>0$. We let $v(t)$ (in volt $V$) represent the voltage across the capacitor. It can then be shown that
+
+$$
+ v(t)=\frac{1}{C}\int_{-\infty}^t i(s)\,ds
+$$
+
+for all $t$. In particular, we can denote the voltage at $t=0$ by $v(0)=V_0$ and then we have
+
+$$
+ v(0)=V_0=\frac{1}{C}\int_{-\infty}^0 i(s)\,ds.
+$$
+
+From Ohm's law, we know that the voltage across the resistor is given by
+
+$$
+ v=Ri.
+$$
+
+Finally, it can be shown that the voltage across the inductor is given by
+
+$$
+ v=L\frac{di}{dt}.
+$$
+
+The [Kirchoff Voltage Law](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_voltage_law) states that the total voltage across the loop is $0$. So adding these three voltages we obtain the equation
+
+$$
+ L\frac{di}{dt}+Ri+\frac{1}{C}\int_{-\infty}^t i(s)\,ds=0.
+$$
+
+This equation involves both integrals and derivatives of $i$ and is called an **integro-differential equation**. We can turn it into a differential equation by differentiating the entire equation with respect to $t$. Doing this we get the equation
+
+$$
+ L\frac{d^2i}{dt^2}+R\frac{di}{dt}+\frac{1}{C}i(t)=0.
+$$
+
+This is a second-order, linear, homogeneous differential equation with constant coefficients, so we can use the techniques from this section to solve it.
+
+::::::{prf:example}
+:label: Ex:ODE2:RLC
+Consider the source-free series RLC electrical circuit with $R=30\ \Omega$, $L=2\ H$ and $C=\frac{1}{4}\ F$. Then we obtain the differential equation
+
+$$
+ 2i''+30i'+\frac{1}{4}i=0.
+$$
+
+Trying the solution $i(t)=e^{rt}$ gives the characteristic equation
+
+$$
+ 2r^2+30r+\frac{1}{4}=0.
+$$
+
+The (somewhat ugly) roots are $r_1=\dfrac{-30+\sqrt{898}}{4}$ and $r_2=\dfrac{-30-\sqrt{898}}{4}$. This means that the general solution is given by
+
+$$
+ i(t)=c_1e^{\dfrac{-30+\sqrt{898}}{4}t}+c_2e^{ \dfrac{-30-\sqrt{898}}{4}t}.
+$$
+::::::
+
+Note that the differential equation for the source-free series RLC electrical circuit 
+
+$$
+ L\frac{d^2i}{dt^2}+R\frac{di}{dt}+\frac{1}{C}i(t)=0.
+$$
+
+has the same structure as the one for the damped mass-spring system
+
+$$
+ mx''(t)+cx'(t)+kx(t)=0.
+$$ 
+
+For this reason, a lot of terminology that is used for the damped mass-spring system is used for the RLC electrical circuit as well. The terms **overdamped**, **critically damped** and **underdamped** are used when the characteristic equation for the electrical circuit has respectively two real roots, a double real root, and two non-real (complex) roots. For instance, the circuit from {prf:ref}`Ex:ODE2:RLC` is called overdamped. This also means that the resistance $R$ can be thought of as a damping coefficient.
+
+### A complicated-looking family of improper integrals
+
+::::::{prf:example}
+:label: Ex:ODE2:Integral
+
+For each $t\in\mathbb{R}$, we consider the improper integral 
+
+$$
+ I(t)=\displaystyle\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx
+$$ 
+
+with $\alpha>0$. It is very hard to evaluate this integral by hand, but we will show that it satisfies a second-order differential equation.
+
+For at least one value of $t$ it is doable to evaluate this integral by hand, since we have
+
+$$
+ I(0)=\displaystyle\int_0^{\infty}\frac{dx}{x^2+\alpha^2}=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)\bigg|_0^{\infty}=\frac{\pi}{2\alpha}.
+$$
+
+Moreover, since we integrate over $x$ we can differentiate the integral with respect to $t$ and bring this derivative inside to obtain
+
 \begin{align*}
-I'(t)&=-\int_0^{\infty}\frac{x\sin(xt)}{x^2+\alpha^2}\,dx=-\int_0^{\infty}\frac{(x^2+\alpha^2-\alpha^2)\sin(xt)}{x(x^2+\alpha^2)}\,dx\\
+I'(t)&=\frac{d}{dt}\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx\\
+&=\int_0^{\infty}\frac{d}{dt}\frac{\cos(xt)}{x^2+\alpha^2}\,dx\\
+&=-\int_0^{\infty}\frac{x\sin(xt)}{x^2+\alpha^2}\,dx.
+\end{align*}
+
+Now we rewrite this integral to obtain
+
+\begin{align*}
+I'(t)&=-\int_0^{\infty}\frac{x\sin(xt)}{x^2+\alpha^2}\,dx\\
+&=-\int_0^{\infty}\frac{(x^2+\alpha^2-\alpha^2)\sin(xt)}{x(x^2+\alpha^2)}\,dx\\
 &=-\int_0^{\infty}\frac{\sin(xt)}{x}\,dx+\alpha^2\int_0^{\infty}\frac{\sin(xt)}{x(x^2+\alpha^2)}\,dx.
 \end{align*}
-$$
 
-Using the substitution $xt=u$ we obtain for $t>0$ that $\displaystyle\int_0^{\infty}\frac{\sin(xt)}{x}\,dx=\int_0^{\infty}\frac{\sin(u)}{u}\,du=\frac{1}{2}\pi$ (see: the Dirichlet integral). Hence
+Using the substitution $xt=u$ we can use {prf:ref}`Thm:Integration:ImproperIntegralsDirichletIntegral` to obtain for $t>0$ that 
+
+$$
+ \displaystyle\int_0^{\infty}\frac{\sin(xt)}{x}\,dx=\int_0^{\infty}\frac{\sin(u)}{u}\,du=\frac{1}{2}\pi.
+$$ 
+
+Hence, we find that
 
 $$
 I'(t)=-\frac{1}{2}\pi+\alpha^2\int_0^{\infty}\frac{\sin(xt)}{x(x^2+\alpha^2)}\,dx.
 $$
 
-Now we have: $I'(0)=-\dfrac{1}{2}\pi$ and $I''(t)=\alpha^2\displaystyle\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx=\alpha^2I(t)$.
+Using this expression we immediately see that $I'(0)=-\dfrac{1}{2}\pi$ and using the same procedure as before we can use this to obtain
 
-Hence: $I(t)=c_1e^{\alpha t}+c_2e^{-\alpha t}$ and $I'(t)=\alpha c_1e^{\alpha t}-\alpha c_2e^{-\alpha t}$ with $I(0)=\dfrac{\pi}{2\alpha}$ and $I'(0)=-\dfrac{1}{2}\pi$.
+$$
+ I''(t)=\alpha^2\displaystyle\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx=\alpha^2I(t).
+$$
 
-This implies: $c_1+c_2=\dfrac{\pi}{2\alpha}$ and $c_1-c_2=-\dfrac{\pi}{2\alpha}$. Hence: $c_1=0$ and $c_2=\dfrac{\pi}{2\alpha}$.
+This means that $I(t)$ satisfies the second-order, linear, homogeneous differential equation
 
-Conclusion: $I(t)=\dfrac{\pi}{2\alpha}e^{-\alpha t}$ for $\alpha>0$ and $t>0$.
+$$
+ I''(t)=\alpha^2 I(t).
+$$
+
+
+The characteristic equation is given by
+
+$$
+ r^2-\alpha^2=0,
+$$
+
+with roots $r_1=\alpha$ and $r_2=-\alpha$. We then obtain using {prf:ref}`Thm:ODE2:Tworeal` that the general solution is given by
+
+$$
+ I(t)=c_1e^{\alpha t}+c_2e^{-\alpha t}.
+$$
+
+In order to handle the initial conditions, we first evaluate 
+
+$$
+ I'(t)=\alpha c_1e^{\alpha t}-\alpha c_2e^{-\alpha t}.
+$$
+
+The initial conditions are $I(0)=\dfrac{\pi}{2\alpha}$ and $I'(0)=-\dfrac{1}{2}\pi$. From this we obtain the system of linear equations
+
+$$
+ \begin{cases}c_1+c_2=\dfrac{\pi}{2\alpha}\\ \\c_1-c_2=-\dfrac{\pi}{2\alpha}.\end{cases}
+$$
+
+Solving this system gives $c_1=0$ and $c_2=\dfrac{\pi}{2\alpha}$. We conclude that
+
+$$
+ I(t)=\dfrac{\pi}{2\alpha}e^{-\alpha t}.
+$$
 ::::::
 
-## (Grasple) exercises
+## Grasple exercises
 
 ::::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/00da73f8-266e-4fdf-aa13-09c66804d8d3?id=76568
-:label: grasple_exercise_13_1_1
+:label: Grasple:76568
 :dropdown:
 :description: Find the general solution.
 ::::::
@@ -273,7 +1053,185 @@ Conclusion: $I(t)=\dfrac{\pi}{2\alpha}e^{-\alpha t}$ for $\alpha>0$ and $t>0$.
 ::::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/96b7c05c-56c7-4a02-875f-e4ce8668dfad?id=76567
-:label: grasple_exercise_13_1_2
+:label: Grasple:76567
 :dropdown:
 :description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/08e02672-898f-4144-9699-d38f351232d6?id=76566
+:label: Grasple:76566
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a184969c-89e0-41e9-8d56-a840834d3f9e?id=76565
+:label: Grasple:76565
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/92d5b7c4-5bd2-4c75-91ef-f5a49ea27eb0?id=76564
+:label: Grasple:76564
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3c990ffd-b1b8-4194-82d4-76d9ebae109f?id=76569
+:label: Grasple:76569
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/24057fb0-4e97-4dca-bd96-5d9144b00851?id=76570
+:label: Grasple:76570
+:dropdown:
+:description: Find the general solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c9f9a07a-423c-4681-8309-e0f435987724?id=76561
+:label: Grasple:76561
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d22c5bf7-4203-4051-81db-9e4475776da7?id=76560
+:label: Grasple:76560
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2719c2f6-59fc-41ee-81fa-f3ebc7820ed6?id=76559
+:label: Grasple:76559
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/994fdf7e-e5ab-42b7-9bc7-7e3f7bf04957?id=76558
+:label: Grasple:76558
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/82dfd24d-bb24-4582-bfbc-cddf23da7ff7?id=76557
+:label: Grasple:76557
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8981cbff-d395-4c04-87fe-c18b1bc45c86?id=76562
+:label: Grasple:76562
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d6922b52-9fc8-4672-92db-212c8d179d8a?id=76563
+:label: Grasple:76563
+:dropdown:
+:description: Solve the initial-value problem.
+::::::
+
+
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/78249822-fcc0-4c76-b23c-6aa49288a3db?id=116597
+:label: Grasple:116597
+:dropdown:
+:description: Application: Mass-spring system.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/09a2ff52-715a-4bc5-bd0c-da217ce10119?id=116599
+:label: Grasple:116599
+:dropdown:
+:description: Application: Mass-spring system.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b255be7f-f17c-406a-90ce-fedca203f5df?id=66983
+:label: Grasple:66983
+:dropdown:
+:description: Application: Mass-spring system.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9b6f095c-3664-4b9b-9e5f-77ecb4b6934d?id=66956
+:label: Grasple:66956
+:dropdown:
+:description: Application: Mass-spring system.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ae45940e-eecc-45c6-83ff-1a3953090258?id=66981
+:label: Grasple:66981
+:dropdown:
+:description: Application: Mass-spring system.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f2065608-d4ee-432f-b27b-6b1717f9d069?id=66960
+:label: Grasple:66960
+:dropdown:
+:description: Application: Mass-spring system.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/13da7b99-1c14-467c-9783-3be118478288?id=66979
+:label: Grasple:66979
+:dropdown:
+:description: Application: Mass-spring system.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4ff14a26-6d0a-4864-bb27-eb226115b536?id=71496
+:label: Grasple:71496
+:dropdown:
+:description: Application: Mass-spring system.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c09b1f4a-a934-4571-99d6-5491b9f2951c?id=79430
+:label: Grasple:79430
+:dropdown:
+:description: Application: Electrical circuit.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bcb17927-76fc-44c2-88b6-e509bfceb3c3?id=79429
+:label: Grasple:79429
+:dropdown:
+:description: Application: Electrical circuit.
 ::::::

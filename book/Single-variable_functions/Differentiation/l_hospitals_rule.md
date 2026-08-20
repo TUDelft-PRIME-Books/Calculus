@@ -297,7 +297,9 @@ The result also holds when replacing all occurrences of $\displaystyle \lim_{x\r
 
 :::{admonition} Proof of {prf:ref}`Thm:lHospital:lHospital` and {prf:ref}`Thm:lHospital:lHospitalinf`
 :class: tudproof, dropdown
-We prove both versions of l'Hospital's rule in one go. However, this proof is rather hard and technical, so feel free to skip the proof.
+We prove both versions of l'Hospital's rule in one go. However, this proof is rather hard and technical, so feel free to skip the proof. The proof uses the completeness of the real numbers
+
+The completeness of the real numbers is the property that every non-empty subset $S$ of $\mathbb{R}$ that has an upper bound has a smallest upper bound, called the *supremum* and denoted by $\sup(S)$. That is, $c\in\mathbb{R}$ is an upper bound for $S$ if $x\leq c$ for all $x\in S$ and $s$ is the supremum of $S$ if it is an upper bound of $S$ and we have $s\leq c$ for all upper bounds $c$ of $S$. In addition, the completeness of the real numbers also states that every non-empty subset $S$ of $\mathbb{R}$ that has a lower bound has a largest lower bound, called the *infimum* and denoted by $\inf(S)$. That is, $c\in\mathbb{R}$ is an upper bound for $S$ if $x\leq c$ for all $x\in S$ and $s$ is the supremum of $S$ if it is an upper bound of $S$ and we have $s\leq c$ for all upper bounds $c$ of $S$. In this proof, we make the convention that $\inf(S)=-\infty$ and $\sup(S)=\infty$ whenever $S$ does not have a lower respectively upper bound. 
 
 First, we consider either one of the cases
 
@@ -308,8 +310,6 @@ $$
 To handle these cases together, we write $c=a$ or $c=\infty$, depending on the case we are in and we write $\displaystyle\lim_{x\rightarrow c}$ whenever we mean $\displaystyle\lim_{x\rightarrow a^-}$ or $\displaystyle\lim_{x\rightarrow \infty}$. We can write $I=(b,c)$. 
 
 First we show that we can make $I$ smaller so that $g$ is never $0$ on $I$. If there were two points $x\neq y$ in $I$ with $g(x)=g(y)=0$, then by {prf:ref}`Thm:MinMax:Rolle`, there would be $z$ in $I$ with $g'(z)=0$. This is not possible, since we assumed that $g'\neq 0$ on $I$. As such, there is at most one $x$ in $I$ with $g(x)=0$. By making $I$ smaller, if necessary, we can ensure that $g$ is never $0$ on $I$. With the same reasoning, we also see that we have $g(x)\neq g(y)$ whenever $x\neq y$ are in $I$.
-
-The infimum of a set $S$ is its largest lower bound. That is $m=\inf(S)$ precisely when $m\leq s$ for all $s$ in $S$ and $m\geq n$ for all $n$ which have $n\leq s$ for all $s$ in $S$. Similarly, the supremum of $S$ is the smallest upper bound. That is $M=\sup(S)$ precisely when $M\geq s$ for all $s$ in $S$ and $M\leq N$ for all $N$ which have $N\geq s$ for all $s$ in $S$. The completeness of the real numbers states that each bounded subset of the real numbers has an infimum and a supremum. In this proof, we make the convention that $\inf(S)=-\infty$ and $\sup(S)=\infty$ whenever $S$ does not have a lower respectively upper bound. 
 
 For each $x$ in $I$, we can now let 
 
@@ -323,7 +323,7 @@ $$
  \lim_{x\rightarrow c}m(x)=\lim_{x\rightarrow c}\frac{f'(x)}{g'(x)}=\lim_{x\rightarrow c}M(x).
 $$
 
-This can be seen as follows. Since $m$ is a nondecreasing function and $M$ is a nonincreasing function, the limits $\displaystyle \lim_{x\rightarrow c}m(x)$ and $\displaystyle \lim_{x\rightarrow c}M(x)$ must either exist or be equal to $\pm\infty$. For any $x$ we have 
+This can be seen as follows. Since $m$ is a non-decreasing function and $M$ is a non-increasing function, the limits $\displaystyle \lim_{x\rightarrow c}m(x)$ and $\displaystyle \lim_{x\rightarrow c}M(x)$ must either exist or be equal to $\pm\infty$. For any $x$ we have 
 
 $$
  m(x)\leq \frac{f'(x)}{g'(x)}\leq M(x),

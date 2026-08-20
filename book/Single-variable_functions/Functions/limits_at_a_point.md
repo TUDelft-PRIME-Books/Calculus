@@ -201,6 +201,7 @@ An illustration of the function $f$ that rounds a number to the nearest integer,
 ::::
 
 So how do you evaluate limits (regular, left or right)? There are various techniques, which we will discuss throughout this chapter. In several of these, we evaluate the limit by rewriting or simplifying the function at hand. Indeed, in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` we evaluated the limit $\lim\limits_{x\rightarrow 1}f(x)$ by finding a function $h$ which is equal to $f$ everywhere except at $x=1$ and for which $1$ was in the domain of $h$. The following two results show that this idea works more generally.
+
 ::::::{prf:theorem}
 :label: Theorem:LimitAtPoint:Rewritingworks
 If $f(x)=g(x)$ whenever $x\neq a$, then $\lim\limits_{x\rightarrow a}f(x)=\lim\limits_{x\rightarrow a}g(x)$, provided the limits exist, or $\lim\limits_{x\rightarrow a}f(x)$ and $\lim\limits_{x\rightarrow a}g(x)$ both do not exist.
@@ -345,7 +346,7 @@ The product and quotient rules from {prf:ref}`Theorem:LimitAtPoint:Basiccomputat
 
 Intuitively, these computation rules make sense: if the function values $f(x)$ approach $L$ and the function values $g(x)$ approach $M$, both as $x$ approaches $a$, then $f(x)+g(x)$ will approach $L+M$. Still, showing that these rules hold using the formal definition of a limit can be tricky, see {numref}`Subsec:Limitsformaldef`.
 
-::::::{prf:theorem} Substitution
+::::::{prf:theorem} Substitution for limit at a point
 :label: Theorem:LimitAtPoint:Substitution
 Suppose $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then we have
 
@@ -433,6 +434,8 @@ An illustration of the squeeze theorem, showing the functions $f$, $g$, and $h$ 
 :::
 
 ::::::
+
+
 
 Now consider a limit of the form $\lim\limits_{x\rightarrow a}\frac{p(x)}{q(x)}$ where $p$ and $q$ are polynomials that have $p(a)=q(a)=0$. We cannot evaluate the limit directly since we cannot divide by $0$. We also say that this limit is of the **indeterminate form** "$\frac{0}{0}$" as $x$ approaches $a$. Recall that we encountered this situation in {prf:ref}`Ex:LimitAtPoint:FirstLimitEx` when evaluating the limit $\lim\limits_{x\rightarrow 1}\frac{x-1}{x^2-1}$. There, we evaluated the limit by factoring the denominator. This works in general.
 
@@ -558,7 +561,7 @@ The notations $\lim\limits_{x\rightarrow a}f(x)=\infty$ and $\lim\limits_{x\righ
 
 Similarly, we use the corresponding notations $\lim\limits_{x\rightarrow a^-}f(x)=\infty$ and $\lim\limits_{x\rightarrow a^-}f(x)=-\infty$, or $\lim\limits_{x\rightarrow a^+}f(x)=\infty$ and $\lim\limits_{x\rightarrow a^+}f(x)=-\infty$, when considering only values of $x$ smaller than $a$, or larger than $a$ respectively. In each of the cases described above, the function $f$ approaches the vertical line $x=a$ asymptotically, either from the left, from the right, or from both sides. As such, we have the following definition.
 
-::::::{prf:definition} Vertical asymptote
+::::::{prf:definition} 
 :label: Def:LimitAtPoint:Verticalasymptote
 Let $f$ be a function that is defined near $x=a$ (except possibly at $x=a$ itself). Then we say that $x=a$ is a **vertical asymptote** of $f$, whenever at least one of the following statements is true:
 
@@ -857,6 +860,24 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c6edcc5a-c753-4f92-b749-841aa03ca5df?id=133485
+:label: Grasple:133485
+:dropdown:
+:description: Reading off a limit from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/38b06e52-1023-4cf5-a3b3-4c00043c4241?id=133487
+:label: Grasple:133487
+:dropdown:
+:description: Reading off a limit from a graph.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/91d07329-447a-43c3-885d-68ac1c4be6e7?id=69268
 :label: Grasple:69268
 :dropdown:
@@ -991,8 +1012,17 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f23f8188-d408-47c4-88f2-4b1067dfee4f?id=70822
+:label: Grasple:70822
+:dropdown:
+:description: Maximal domain and range of a function with a logarithm.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/9a58ceb6-7ca3-4fe6-9693-1acff5f3ea77?id=72000
-:label: Grasple:69472
+:label: Grasple:72000
 :dropdown:
 :description: Limits of rounding function using formal definition.
 ::::

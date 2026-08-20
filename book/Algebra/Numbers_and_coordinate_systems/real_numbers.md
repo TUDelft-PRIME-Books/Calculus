@@ -5,12 +5,244 @@
 In this section we cover
 
 - Start from natural numbers (includes $0$), integers, rational numbers, and and with real numbers
+- Arithmetic operations (addition, subtraction, multiplication and division)
 - Intervals
 - Set notation (union, intersection, difference)
 - Equations (including quadratic). Includes: completing the square
 - Absolute values
 - Inequalities (including quadratics and absolute values)
 - Linear systems of two variables (solving by "row" reduction, not by back substitution)
+
+(Sec:Decimals)=
+## Decimals
+
+Real numbers are numbers that can be expressed as decimals.
+
+We introduce the notation $\frac{1}{3}=0.333\ldots=0.\overline{3}$ and $\frac{1}{11}=0.090909\ldots=0.\overline{09}$, where $\overline{3}$ and $\overline{09}$ denotes that these digits are repeated indefinitely.
+
+To show that $p=0.\overline{3}$ equals $\frac{1}{3}$ we multiply by $10$ and find
+
+$$
+10p=3.\overline{3}=3+0.\overline{3}=3+p\quad\Longrightarrow\quad 9p=3 \quad\Longleftrightarrow\quad p=\frac{3}{9}=\frac{1}{3}.
+$$
+
+Similarly, we multiply $q=0.\overline{09}$ by $100$ to obtain
+
+$$
+100q=9.\overline{09}=9+0.\overline{09}=9+q\quad\Longrightarrow\quad 99q=9 \quad\Longleftrightarrow\quad q=\frac{9}{99}=\frac{1}{11}.
+$$
+
+(Sec:LongDivision)=
+## Long division
+
+In other math courses you may have encountered long division, which is a method for dividing two numbers. For instance, if we want to compute $\frac{96789}{231}$, we can do this by long division.
+
+Historically, long division is written differently within different parts of the worlds, sometimes it even differs in neighbouring countries. Because showing all different notations everywhere in this book would be a bit too much, we will introduce one single notation that joins the different notations together. The notation for long division of polynomials we use here is a combination of the various notations for long division in non-English speaking Europe and Asia, where we have chosen to use the slanted line for indicating a division, instead of a vertical line $|$, a division symbol $\div$ or a colon $:$, and the many vertical lines for indicating the separation between the calculations and the result. We also include a double underline for indicating the separation between the divisor and the result, which resembles an equal sign. You can use your own notation of course, but we will use this notation for long division in this book.
+
+Below we have performed the long division of $96789$ by $231$ and written it down using the notation used in several parts of the world[^disclaimer], followed by an explanation of the calculations and our notation. You can switch the tabs to see the different notations.
+
+[^disclaimer]: By no means this is an exhaustive list of all the notations for long division, but it should give you a good idea of how the different notations look like and how they relate to each other. More details on long division notation can be found at [Long division - Wikipedia](https://en.wikipedia.org/wiki/Long_division). 
+
+::::::{tab-set}
+
+:::::{tab-item} English
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\class{longdivision}{
+\begin{array}{rr}
+& \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+231  & \overline{\big)96789} \\
+& \underline{\class{tud-red}{924}}\phantom{00} \\
+& 438\phantom{0} \\
+& \underline{\class{tud-blue}{231}}\phantom{0} \\
+& 2079 \\
+& \underline{\class{tud-orange}{2079}} \\
+& 0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} Dutch
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\class{longdivision}{
+\begin{array}{rclcl}
+231 & \Big/ & 96789 & \Big\\ & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+& & \underline{\class{tud-red}{924}}\phantom{00} \\
+& & \phantom{0}438\phantom{0} \\
+& & \phantom{0}\underline{\class{tud-blue}{231}}\phantom{0} \\
+& & \phantom{0}2079 \\
+& & \phantom{0}\underline{\class{tud-orange}{2079}} \\
+& & \phantom{0000}0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} Latin American
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\hspace{-0.2em}\class{longdivision}{
+\begin{array}{rclcl}
+96789 & \,\div\, & 231 & \,=\, & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+\underline{\class{tud-red}{924}}\phantom{00} \\
+\phantom{0}438\phantom{0} \\
+\phantom{0}\underline{\class{tud-blue}{231}}\phantom{0} \\
+\phantom{0}2079 \\
+\phantom{0}\underline{\class{tud-orange}{2079}} \\
+\phantom{0000}0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} Eurasian
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\class{longdivision}{
+\begin{array}{rcl}
+96789 & | & \underline{231} \\
+-\underline{\class{tud-red}{924}}\phantom{00} & | & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+438\phantom{0} \\
+-\underline{\class{tud-blue}{231}}\phantom{0} \\
+2079 \\
+-\underline{\class{tud-orange}{2079}} \\
+0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} French & Cypriot 
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\class{longdivision}{
+\begin{array}{rcl}
+96789 & | & \underline{231} \\
+-\underline{\class{tud-red}{924}}\phantom{00} & | & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9}\\
+438\phantom{0} & | \\
+-\underline{\class{tud-blue}{231}}\phantom{0} & | \\
+2079 & | \\
+-\underline{\class{tud-orange}{2079}} & | \\
+0 & | \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+:::::{tab-item} German
+
+::::{grid} 1 1 3 3
+:gutter: 1
+
+:::{grid-item-card} Local notation
+:margin: 0
+
+$\displaystyle
+\hspace{-0.5em}\class{longdivision}{
+\begin{array}{rclcl}
+96789 & \,:\, & 231 & \,=\, & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+-\underline{\class{tud-red}{924}}\phantom{00} \\
+\phantom{0}438\phantom{0} \\
+\phantom{0}-\underline{\class{tud-blue}{231}}\phantom{0} \\
+\phantom{0}2079 \\
+\phantom{0}-\underline{\class{tud-orange}{2079}} \\
+\phantom{0000}0 \\
+\end{array}
+}
+$
+:::
+
+:::{include} longdivision_explanation.md
+:::
+
+:::{include} longdivision_notation.md
+:::
+
+::::
+:::::
+
+::::::
+
+(Subsec:R:IneqAbs)=
+
+## (In)equalities and absolute values
 
 ::::{prf:theorem} Triangle inequality for real numbers
 :label: thm:triangle_inequality_real_numbers
@@ -24,10 +256,9 @@ $$
 ::::::
 
 (Subsec:RealnumbersExp)=
-
 ## Exponentiation
 
-We know how to add, subtract, multipy and divide real numbers, but we can perform one more important arithmical operation: exponentiation. You have most likely seen before that by $2^{10}$ we mean
+We know how to add, subtract, multiply and divide real numbers, but we can perform one more important arithmetical operation: exponentiation. You have most likely seen before that by $2^{10}$ we mean
 
 $$
  2^{10}=\underbrace{2\cdot 2\cdot\cdots\cdot 2}_{10\text{ times}}=1024
@@ -208,7 +439,7 @@ $$
  \left(y^pz^p\right)^b=\underbrace{\left(y^pz^p\right)\cdot\cdots\cdot \left(y^pz^p\right)}_{b\text{ times}}=\underbrace{\left(y^p\right)\cdot\cdots\cdot \left(y^p\right)}_{b\text{ times}}\underbrace{\left(z^p\right)\cdot\cdots\cdot \left(z^p\right)}_{b\text{ times}}=\left(y^p\right)^b\left(z^p\right)^b
 $$
 
-Moreover, we have $\left(y^p\right)^b=\left(\sqrt[b]{y^a}\right)^b=y^a$ since $p=\frac{a}{b}$. Similalrly, we have $\left(z^p\right)^b=z^a$. Combining these equations, we find if $a>0$
+Moreover, we have $\left(y^p\right)^b=\left(\sqrt[b]{y^a}\right)^b=y^a$ since $p=\frac{a}{b}$. Similarly, we have $\left(z^p\right)^b=z^a$. Combining these equations, we find if $a>0$
 
 
 $$
@@ -288,7 +519,7 @@ and similarly we have $\left(\frac{1}{y}\right)^{-p}=y^{p}$. So we find $y^q<y^p
 
 :::
 
-So far, we have been able to define rational powers of nonnegative numbers. So how would we define something like $2^\pi$? Note that our definitions so far give that if $p$ and $q$ are rational numbers with $0<p<q$ we have $2^p<2^q$. Naturally, we want this property to be valid for irrational powers of $x$ as well. So since $3<\pi<4$, we must have
+So far, we have been able to define rational powers of non-negative numbers. So how would we define something like $2^\pi$? Note that our definitions so far give that if $p$ and $q$ are rational numbers with $0<p<q$ we have $2^p<2^q$. Naturally, we want this property to be valid for irrational powers of $x$ as well. So since $3<\pi<4$, we must have
 
 $$
  8=2^3<2^\pi<2^4=16.
@@ -411,7 +642,7 @@ $$
 
 We conclude that the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. 
 
-Now suppose that $r$ is irrational and let $\varepsilon>0$ be given. First we assume that $y>1$.  Let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{u_N}-y^{l_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\text{min}\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
+Now suppose that $r$ is irrational and let $\varepsilon>0$ be given. First we assume that $y>1$.  Let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{u_N}-y^{l_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\min\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
 
 $$
  \left|y^{r_n}-y^r\right|=y^{r_n}-y^r\leq y^{u_N}-y^r\leq y^{u_N}-y^{l_N}<\varepsilon,
@@ -423,7 +654,7 @@ $$
  \left|y^{r_n}-y^r\right|=y^{r}-y^{r_n}\leq y^{u_N}-y^{r_n}\leq y^{u_N}-y^{l_N}<\varepsilon.
 $$
 
-As such, the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. Now suppose that $0<y<1$. Again, let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{l_N}-y^{u_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\text{min}\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
+As such, the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$. Now suppose that $0<y<1$. Again, let $l_n$ and $u_n$ be the number $r$ rounded down respectively up to $n$ decimals. By definition of $y^r$, we can choose $N$ sufficiently large that $y^{l_N}-y^{u_N}<\varepsilon$. Now since $r$ is irrational its decimal expansion does not terminate, so we must have $l_N<r<u_N$. Write $\delta=\min\left\{u_N-r,l_N-r\right\}$, so $\delta$ is the smallest distance between $r$ and either $l_N$ or $u_N$. Then we can choose $M$ sufficiently large that $|r_n-r|<\frac{\delta}{2}$ for all $n\geq M$. For these values of $n$ we have $l_N<r_n<u_N$, so we find if $r_n>r$ that
 
 $$
  \left|y^{r_n}-y^r\right|=y^{r}-y^{r_n}\leq y^{l_N}-y^{r_n}\leq y^{l_N}-y^{u_N}<\varepsilon,
@@ -437,7 +668,7 @@ $$
 
 As such, the sequence $\left\{y^{r_n}\right\}_{n=1}^\infty$ converges to $y^r$.
 
-We now show that $(yz)^p=y^pz^p$. Let $\left\{p_n\right\}_{n=1}^\infty$ be a sequence of rational numbers that converges to $p$. Then the sequences $\left\{y^{p_n}\right\}_{n=1}^\infty$, $\left\{z^{p_n}\right\}_{n=1}^\infty$ and $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converge to $y^p$, $z^p$ and $(yz)^p$ respectively. Since the term by term product of convergent sequences converges to the product of the limits, the sequence $\left\{y^{p_n}z^{p_n}\right\}_{n=1}^\infty$ converges to $y^pz^p$. Since $p_n$ is rational for all $n$, we have using {prf:ref}`Thm:RealNumbers:ExpCalcRat` that $(yz)^{p_n}=y^{p_n}z^{p_n}$. Hence, the seqeunce $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converges to both $(yz)^p$ and to $y^pz^p$. As such, these limits are equal, so we have $(yz)^p=y^pz^p$.
+We now show that $(yz)^p=y^pz^p$. Let $\left\{p_n\right\}_{n=1}^\infty$ be a sequence of rational numbers that converges to $p$. Then the sequences $\left\{y^{p_n}\right\}_{n=1}^\infty$, $\left\{z^{p_n}\right\}_{n=1}^\infty$ and $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converge to $y^p$, $z^p$ and $(yz)^p$ respectively. Since the term by term product of convergent sequences converges to the product of the limits, the sequence $\left\{y^{p_n}z^{p_n}\right\}_{n=1}^\infty$ converges to $y^pz^p$. Since $p_n$ is rational for all $n$, we have using {prf:ref}`Thm:RealNumbers:ExpCalcRat` that $(yz)^{p_n}=y^{p_n}z^{p_n}$. Hence, the sequence $\left\{(yz)^{p_n}\right\}_{n=1}^\infty$ converges to both $(yz)^p$ and to $y^pz^p$. As such, these limits are equal, so we have $(yz)^p=y^pz^p$.
 
 We now show that $y^{p+q}=y^py^q$. Let $\left\{p_n\right\}_{n=1}^\infty$ and $\left\{q_n\right\}_{n=1}^\infty$ be sequences of rational numbers that converge to $p$ respectively $q$.Then the sequence $\left\{p_n+q_n\right\}_{n=1}^\infty$ is a sequence of rational numbers that converges to $p+q$. Hence, the sequence $\left\{y^{p_n+q_n}\right\}_{n=1}^\infty$ converges to $y^{p+q}$. On the other hand, we have $y^{p_n+q_n}=y^{p_n}y^{q_n}$ for all $n$ due to {prf:ref}`Thm:RealNumbers:ExpCalcRat`. The sequences $\left\{y^{p_n}\right\}_{n=1}^\infty$ and $\left\{y^{q_n}\right\}_{n=1}^\infty$ converge to $y^p$ respectively $y^q$. Since the term by term product of convergent sequences converges to the product of the limits, the sequence $\left\{y^{p_n}y^{q_n}\right\}_{n=1}^\infty$ converges to $y^py^q$. Hence, we obtain
 
@@ -481,7 +712,7 @@ $$
  \left(1+\frac{\varepsilon}{2L}\right)^{\frac{-1}{K}}<y^{p-p_n}<\left(1-\frac{\varepsilon}{2L}\right)^{\frac{-1}{K}}.
 $$
 
-Then we let $N=\text{max}\left\{N_1,N_2,N_3\right\}$, i.e. $N$ is the largest of the three numbers $N_1$, $N_2$ and $N_3$. Then using the properties we already proved as well as the triangle inequality {prf:ref}`thm:triangle_inequality_real_numbers`, we have for $n\geq N$ that
+Then we let $N=\max\left\{N_1,N_2,N_3\right\}$, i.e. $N$ is the largest of the three numbers $N_1$, $N_2$ and $N_3$. Then using the properties we already proved as well as the triangle inequality {prf:ref}`thm:triangle_inequality_real_numbers`, we have for $n\geq N$ that
 
 \begin{align*}
  \left|\left(y^p\right)^q-\left(y^{p_n}\right)^{q_n}\right|&=\left|\left(y^p\right)^q-\left(y^{p}\right)^{q_n}+\left(y^{p}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
@@ -595,9 +826,9 @@ $$
 
 ## The number e
 
-Any positive real number can serve as the base of exponentiation, but in the context of calculus one stands out from the rest. This number is denoted by $e$, and it is approximately equal to $2.7182818$. It will turn out that several problems involving differentiation (see {numref}`Chapter:Differentiation`) or integration (see {numref}`Chapter:Integration`) can be simpliefied when using $e$ as base for an exponential instead of any other positive real number.
+Any positive real number can serve as the base of exponentiation, but in the context of calculus one stands out from the rest. This number is denoted by $e$, and it is approximately equal to $2.7182818$. It will turn out that several problems involving differentiation (see {numref}`Chapter:Differentiation`) or integration (see {numref}`Chapter:Integration`) can be simplified when using $e$ as base for an exponential instead of any other positive real number.
 
-The number $e$ was discovered by the Swiss mathematician [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli) in the context of compound interest, that is, the accumulation of interest from an initial saving and previously accumulated interst. The symbol $e$ was first introduced by the Swiss mathematician [Leonhard Euler (1707-1783)], and, therefore, $e$ is sometimes referred to as **Euler's number** (though it should not be confused with [Euler numbers](https://en.wikipedia.org/wiki/Euler_numbers) or [Euler's constant](https://en.wikipedia.org/wiki/Euler%27s_constant)). 
+The number $e$ was discovered by the Swiss mathematician [Jacob Bernoulli (1655-1705)](https://en.wikipedia.org/wiki/Jacob_Bernoulli) in the context of compound interest, that is, the accumulation of interest from an initial saving and previously accumulated interest. The symbol $e$ was first introduced by the Swiss mathematician [Leonhard Euler (1707-1783)], and, therefore, $e$ is sometimes referred to as **Euler's number** (though it should not be confused with [Euler numbers](https://en.wikipedia.org/wiki/Euler_numbers) or [Euler's constant](https://en.wikipedia.org/wiki/Euler%27s_constant)). 
 
 The formal definition of the number $e$ is as the limit of a sequence of numbers, that arises naturally in the context of compound interest. For completeness we include this definition here. More information on (the convergence of) sequences can be found in {numref}`Chapter:Sequences`.
 

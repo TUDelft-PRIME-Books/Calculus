@@ -12,7 +12,7 @@ In this section we discuss under which conditions a differential equation has a 
 
 ## Introduction
 
-In the previous section we showed that boundary value problems might have no solution, a unique solution or even infinitely many solutions.
+In the previous section we showed that boundary-value problems might have no solution, a unique solution or even infinitely many solutions.
 
 Furthermore, we mentioned that a first-order differential equation has a solution with one degree of freedom denoted by an arbitrary constant of integration. This constant can be determined by using an initial value. In this section we prove this, first for linear differential equations and then for more general (not necessary linear) differential equations.
 
@@ -111,7 +111,7 @@ $$
 This function satisfies the initial condition $y(t_0)=y_0$. Now we define
 
 $$
-\phi_{n+1}(t)=y_0+\int_{t_0}^tf(s,\phi_n(s))\,ds,\quad n=0,1,2,\ldots.
+\phi_{n+1}(t)=y_0+\int_{t_0}^tf(s,\phi_n(s))\,ds,\quad n=0,1,2,\ldots
 $$
 
 Then every function in the sequence $\{\phi_n(t)\}_{n=0}^{\infty}$ satisfies the initial condition $y(t_0)=y_0$. The so-called *Lipschitz condition* $\partial f/\partial y$ implies that the sequence converges to a function $\phi(t)$ that satisfies both the differential equation and the initial condition.
@@ -151,3 +151,5 @@ y''=f(t,y,y'),\quad y(t_0)=y_0,\quad y'(t_0)=y_0'.
 :::
 
 ::::::
+
+Proof of {prf:ref}`Thm:DE:GeneralSolutionHomogeneous`

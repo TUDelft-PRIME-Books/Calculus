@@ -6,7 +6,7 @@
 
 ## Introduction
 
-In {numref}`Subsec:Functions1dGraphs` we saw that the circle with radius $1$, centered around the origin, i.e. the unit circle, cannot be the graph of a function. Indeed, the circle fails the vertical line test ({prf:ref}`Thm:Functions1var:VerticalLineTest`). Still, it is useful to find an equation describing the circle. Because the unit circle is not the graph of a function, this equation can never be of the form $y=f(x)$, but maybe some other type of equation will do. The circle is defined as all points $(x,y)$ which have distance $1$ (the radius of the circle) to the origin (the center of the circle). The distance of any point $(x,y)$ to $(0,0)$ can, using the Pythagorean theorem ({prf:ref}`Thm:Trigonometry:Pythagoras`), be computed as $\sqrt{x^2+y^2}$. So all points on the circle must satisfy the equation $\sqrt{x^2+y^2}=1$, which we can simplify, by squaring, to the equation $x^2+y^2=1^2=1$. Reversely, any point $(x,y)$ that satisfies $x^2+y^2=1$ has distance $1$ to the origin, so it must lie on the circle. As such, the equation $x^2+y^2=1$ gives a precise description of the circle. We call such an equation an **implicit equation** for $x$ and $y$. It is called implicit, because knowing the value of, say, $x$ does not allow us to directly find the corresponding value(s) of $y$ or vice-versa. By contrast, an **explicit equation** is an equation of the form $y=f(x)$ or $x=g(y)$, where knowing the value of one variable directly determines the value of the other variable (though not necessarily the other way around). The equation $x^2+y^2=1$ can be turned into the explicit equations $y=\sqrt{1-x^2}$ and $y=-\sqrt{1-x^2}$, which describe, respectively, the upper and lower halves of the unit circle.
+In {numref}`Subsec:Functions1dGraphs` we saw that the circle with radius $1$, centered around the origin, i.e. the unit circle, cannot be the graph of a function. Indeed, the circle fails the vertical line test ({prf:ref}`Thm:Functions1var:VerticalLineTest`). Still, it is useful to find an equation describing the circle. Because the unit circle is not the graph of a function, this equation can never be of the form $y=f(x)$, but maybe some other type of equation will do. The circle is defined as the set of all points $(x,y)$ which have distance $1$ (the radius of the circle) to the origin (the center of the circle). The distance of any point $(x,y)$ to $(0,0)$ can, using the Pythagorean theorem ({prf:ref}`Thm:Trigonometry:Pythagoras`), be computed as $\sqrt{x^2+y^2}$. So all points on the circle must satisfy the equation $\sqrt{x^2+y^2}=1$, which we can simplify, by squaring, to the equation $x^2+y^2=1^2=1$. Conversely, any point $(x,y)$ that satisfies $x^2+y^2=1$ has distance $1$ to the origin, so it must lie on the circle. As such, the equation $x^2+y^2=1$ gives a precise description of the circle. We call such an equation an **implicit equation** for $x$ and $y$. It is called implicit, because knowing the value of, say, $x$ does not allow us to directly find the corresponding value(s) of $y$ or vice-versa. By contrast, an **explicit equation** is an equation of the form $y=f(x)$ or $x=g(y)$, where knowing the value of one variable directly determines the value of the other variable (though not necessarily the other way around). The equation $x^2+y^2=1$ can be turned into the explicit equations $y=\sqrt{1-x^2}$ and $y=-\sqrt{1-x^2}$, which describe, respectively, the upper and lower halves of the unit circle.
 
 ```{figure} Images/Fig-Curves-Circle.png
 ---
@@ -38,16 +38,16 @@ Put the graphs next to each other.
 We can also take a look at the unit circle from a different perspective. Imagine a particle starting at the point $(1,0)$ and moving around the circle in counterclockwise direction. At time $t$, the particle has a certain position $(x,y)$ on the circle. Since for each $t$, the particle has a unique $x$- and $y$-coordinate, we note that the $x$ and $y$ coordinates of the particle are functions of $t$, so we can write 
 
 $$
- x=f(t), \qquad y=g(t).
+ \left\{\begin{array}{lcl}x&=&f(t),\\ y&=&g(t),\end{array}\right.
 $$
 
-The equations $x=f(t),y=g(t)$ are called a **parametric equation** for the circle and $t$ is called a **parameter**. Alternatively, we say that we made a **parametrisation** of the circle. So what could these functions $f$ and $g$ be? It turns out that a single curve can have many different parametrisations. This is because the particle can moves around the circle at different speeds, possibly not even having a constant speed. As such, we have a lot of freedom in choosing out parametrisation. Still, some parametrisations are more useful than others. In order to find one for the circle, we recall from {numref}`Fig:Trigonometry:UnitCircleStandardValues` that each point $(x,y)$ on the unit circle can be represented as $x=\cos(t)$ and $y=\sin(t)$, where $t$ is the angle with respect to the positive $x$-axis. In order to obtain each point on the circle exactly once we should have, for instance, $0\leq t<2\pi$. This means that the equations
+The equations $x=f(t),y=g(t)$ are called a **parametric equation** for the circle and $t$ is called a **parameter**. Alternatively, we say that we made a **parametrisation** of the circle. So what could these functions $f$ and $g$ be? It turns out that a single curve can have many different parametrisations. This is because the particle can move around the circle at different speeds, or even at a non-constant speed. As such, we have a lot of freedom in choosing our parametrisation. Still, some parametrisations are more useful than others. In order to find one for the circle, we recall from {numref}`Fig:Trigonometry:UnitCircleStandardValues` that each point $(x,y)$ on the unit circle can be represented as $x=\cos(t)$ and $y=\sin(t)$, where $t$ is the angle with respect to the positive $x$-axis. In order to obtain each point on the circle exactly once we should have, for instance, $0\leq t<2\pi$. This means that the equations
 
 $$
- x=\cos(t),\qquad y=\sin(t),\qquad 0\leq t<2\pi
+ \left\{\begin{array}{lcl}x&=&\cos(t),\\ y&=&\sin(t),\end{array}\right.\qquad 0\leq t<2\pi
 $$
 
-are parametric equations for the unit circle. Indeed if $(x,y)=(\cos(t),\sin(t))$, then we find that
+are a set of parametric equations for the unit circle. Indeed if $(x,y)=(\cos(t),\sin(t))$, then we find that
 
 $$
  x^2+y^2=\left(\cos(t)\right)^2+\left(\sin(t)\right)^2=1,
@@ -76,12 +76,12 @@ In this section, we will take a look at more general curves and their parametris
 
 ## Curves and parametrisations
 
-Intuitively, a curve is a line that is not necessarily straight. However, turning that definition into something mathematical can be a bit tricky. Instead, we will define a curve as a set of points that is given by some parametric equations. 
+Intuitively, a curve is a line that is not necessarily straight. However, turning that definition into something mathematical can be a bit tricky. Instead, we will define a curve in $\mathbb{R}^2$ as a set of points that satisfies a pair of parametric equations. 
 
 ::::::{prf:definition} 
 :label: Def:Curves:ParamCurve
 
-A **parametric curve**, or simply **curve**, $\mathcal{C}$ in $\mathbb{R}^2$ is a set of points $(x,y)$ whose positions are given by **parametric equations** $x=f(t)$ and $y=g(t)$ for $t$ in some interval $I$. Here $t$ is called a **parameter**.
+A **parametric curve**, or simply **curve**, $\mathcal{C}$ in $\mathbb{R}^2$ is a set of points $(x,y)$ whose coordinates are given by **parametric equations** $x=f(t)$ and $y=g(t)$ for $t$ in some set $I\subset\mathbb{R}$, where $f$ and $g$ are given functions. Here $t$ is called a **parameter**.
 
 If $I$ is the closed interval $[a,b]$, then the point $(x,y)=(f(a),g(a))$ is called the **start point** or **initial point** of $\mathcal{C}$, while the point $(x,y)=(f(b),g(b))$ is called the **end point** or **terminal point** of $\mathcal{C}$. Whenever the start point and the end point of the curve coincide, we say that the curve is **closed**.
 
@@ -91,6 +91,19 @@ If $I$ is the closed interval $[a,b]$, then the point $(x,y)=(f(a),g(a))$ is cal
 :name: Note:Curves:MultipleParam
 
 A curve can have many different parametrisations.
+
+::::::
+
+::::::{note}
+:name: Note:Curves:MultipleTimes
+
+A parameterisation is allowed cover (some parts of) a curve several times. For instance, the parametrisation
+
+$$
+ \left\{\begin{array}{lcl}x&=&\cos(t),\\ y&=&\sin(t),\end{array}\right.\qquad 0\leq t<4\pi
+$$
+
+covers each point on the unit circle twice. However, there are situations where you want to avoid these type of parametrisations (for instance, when evaluating line integrals, see {numref}`Section:LineInt`), so always be careful when using one.
 
 ::::::
 
@@ -136,7 +149,7 @@ Replace {numref}`Fig:Curves:Curve1` with an applet.
 On hovering over the graph, the corresponding values of $t$, $x$ and $y$ should be shown.
 :::
 
-Note that in the draw, the parameter $t$ is not visible directly. Indeed, each value of $t$ gives a point $(x,y)=(-1+t,t^2-3t)$ on the curve. The interpretation of this parameter is that we consider a particle that starts at the initial point of the curve and at time $t$ is at position $(x,y)=(-1+t,t^2-3t)$.
+Note that in the figure, the parameter $t$ is not directly visible. Indeed, each value of $t$ gives a point $(x,y)=(-1+t,t^2-3t)$ on the curve. The interpretation of this parameter is that we consider a particle that starts at the initial point of the curve and is at position $(x,y)=(-1+t,t^2-3t)$ at time $t$.
 
 This graph suggest that we might be dealing with a part of the graph of a quadratic function, i.e. that $y=ax^2+bx+c$ for some constants $a$, $b$ and $c$. Indeed, we note that $x$ depends linearly on $t$, while $y$ depends quadratically on $t$. We can now try to find the values of these constants $a$, $b$ and $c$ by substituting the expressions $x=-1+t$ and $y=t^2-3t$ into the equation $y=ax^2+bx+c$. This gives
 
@@ -152,22 +165,36 @@ $$
 
 Solving these equations gives $a=1$, $b=-1$ and $c=-2$. As such, the curve describes part of the graph of the function $f(x)=x^2-x-2$. 
 
-The start point of the curve can be found by considering the lowest value of $t$. Since we have $0\leq t\leq1$, the start point of the curve is the point $(x,y)=(-1+0,0^2-3\cdot0)=(-1,0)$. Similarly, the end point of the curve is the point $(x,y)=(-1+1,1^2-3\cdot 1)$.
+Alternatively, we could have found this function by noting that since $x=-1+t$ we must have $t=x+1$. Plugging this into $y=t^2-3t$ would give the same relation between $x$ and $y$.
+
+The start point of the curve can be found by considering the lowest value of $t$. Since we have $0\leq t\leq1$, the start point of the curve is the point $(x,y)=(-1+0,0^2-3\cdot0)=(-1,0)$. Similarly, the end point of the curve is the point $(x,y)=(-1+1,1^2-3\cdot 1)=(0,-2)$.
 
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:Curves:CurveFunction
 
-Consider any function $f$ of one variable. Then any point $(x,y)$ on the graph satisfies the equation $y=f(x)$, or $y-f(x)=0$. As such, we can think of the graph of $f$ as a curve in $\mathbb{R}^2$. So, what would be a parametrisation for this curve? Since a curve can have many different parametrisations, we have at least some freedom in how we choose our parametrisation. The important thing to notice here is that if we know what $x$, we can compute what the corresponding value of $y$ is by plugging $x$ into the function. As such, it is convenient to choose $x=t$. Then necessarily, we must have $y=f(x)=f(t)$ in order for $(x,y)$ to lie on the curve. As such, $x=t$ and $y=f(t)$ for $t$ in the domain of $f$ is a parametrisation of the graph of $f$.
+Consider any function $f$ of one variable. Then any point $(x,y)$ on the graph of $f$ satisfies the equation $y=f(x)$, or $g(x,y)=y-f(x)=0$. This means that we can think of the graph of $f$ as a curve in $\mathbb{R}^2$. So, what would be a parametrisation for this curve? The important thing to notice here is that if we know $x$, we can compute the corresponding value of $y$ by plugging $x$ into the function. As such, it is convenient to choose $x=t$. Then necessarily, we must have $y=f(x)=f(t)$ in order for $(x,y)$ to lie on the curve. Hence, $x=t$ and $y=f(t)$ for $t$ in the domain of $f$ is a parametrisation of the graph of $f$.
 
-As a more explicit example, consider the function $f(x)=-\sqrt{4-x^2}$. Note that the domain of this function is given by $-2\leq x\leq 2$, since these are the only values of $x$ for which $4-x^2\geq 0$. By our previous considerations, $x=t$ and $y=-\sqrt{4-t^2}$ for $-2\leq t\leq 2$ is a parametrisation of the graph of $f$. We can wonder however, whether in this specific case this parametrisation is the most convenient one. Indeed, note that the graph of $f$ is the lower half of the circle $x^2+y^2=4$. For (parts of) circles, it is often more convenient to use sines and or cosines as a parametrisation. Here, we could choose $x=2\cos(t)$ and $y=2\sin(t)$. Indeed, in that case we have
+As a more explicit example, consider the function $f(x)=-\sqrt{4-x^2}$. Note that the domain of this function is given by $-2\leq x\leq 2$, since these are the only values of $x$ for which $4-x^2\geq 0$. By our previous considerations, $x=t$ and $y=-\sqrt{4-t^2}$ for $-2\leq t\leq 2$ is a parametrisation of the graph of $f$. We can wonder, however, whether this parametrisation is the most convenient one. Indeed, the graph of $f$ is the lower half of the circle $x^2+y^2=4$. For (parts of) circles, it is often more convenient to use sines and or cosines as a parametrisation. Here, we could choose $x=2\cos(t)$ and $y=2\sin(t)$. Indeed, in that case we have
 
 $$
  x^2+y^2=\left(2\cos(t)\right)^2+\left(2\sin(t)\right)^2=4\left(\cos^2(t)+\sin^2(t)\right)=4\cdot 1=4.
 $$
 
-In order to ensure that we only parametrise the lower half of the circle, we should **not** use $0\leq t\leq 2\pi$, since that would parametrise the entire circle. Instead, we could either use $-\pi\leq t\leq 0$ or $\pi\leq t\leq 2\pi$ (or something more exotic like $9\pi\leq t\leq 10\pi$). We conclude that $x=t$ and $y=-\sqrt{4-t^2}$ for $-2\leq t\leq 2$ and $x=2\cos(t)$ and $y=2\sin(t)$ for $\pi\leq t\leq 2\pi$ are both valid parametrisations of the same curve, but in computations the latter one is often the nicer one to work with.
+In order to ensure that we only parametrise the lower half of the circle, we should **not** use $0\leq t\leq 2\pi$, since that would parametrise the entire circle. Instead, we could either use $-\pi\leq t\leq 0$ or $\pi\leq t\leq 2\pi$ (or something more exotic like $9\pi\leq t\leq 10\pi$). We conclude that 
+
+$$
+ \left\{\begin{array}{lcl}x&=&t,\\ y&=&-\sqrt{4-t^2},\end{array}\right.\qquad -2\leq t\leq 2
+$$
+
+and
+
+$$
+ \left\{\begin{array}{lcl}x&=&2\cos(t),\\ y&=&2\sin(t),\end{array}\right.\qquad \pi\leq t\leq 2\pi
+$$
+
+are both valid parametrisations of the same curve, but in computations the latter is often nicer to work with.
 
 ::::::
 
@@ -189,7 +216,7 @@ Replace {numref}`Fig:Curves:FoliumOfDescartes` with an applet.
 Add the hovering functionality to show the coordinates of the point on the curve.
 :::
 
-As we can see in the plot, the curve fails the vertical line test, so it cannot be the graph of a function. However, when we cut up the curve in several parts in the right way, we can obtain curves that are the graphs of functions. One such way is shown in the figure below.
+As we can see in the plot, the curve fails the vertical line test, so it cannot be the graph of a function. However, when we cleverly cut up the curve in several parts, we can obtain curves that are the graphs of functions. One possibility is shown in the figure below.
 
 ```{figure} Images/Fig-Curves-DescartesFoliumCut.png
 ---
@@ -197,7 +224,7 @@ width: 100%
 name: Fig:Curves:DescartesFoliumCut
 class: dark-light
 ---
-The curve in {numref}`Fig:Curves:FoliumOfDescartes` has been cut up in $3$ pieces, all of which are the graph of a function.
+The curve in {numref}`Fig:Curves:FoliumOfDescartes` has been cut in three pieces, all of which are the graph of a function.
 ```
 
 :::{todo}
@@ -212,7 +239,13 @@ $$
 
 for each $x$ in the domain of $f$, since the graph of $f$ is part of the curve $x^3+y^3=3xy$. 
 
-Finding a parametrisation for the folium of Descartes is very tricky, as there is no obvious way to start. It turns out that $x=\frac{3t}{1+t^3}$ and $y=\frac{3t^2}{1+t^3}$ for $-\infty<t<-1$ and $-1<t<\infty$ gives a parametrisation of this curve. Indeed, for any $t\neq -1$ we have
+Finding a parametrisation for the folium of Descartes is very tricky, as there is no obvious way to start. It turns out that 
+
+$$
+ \left\{\begin{array}{lcl}x&=&\frac{3t}{1+t^3},\\ y&=&\frac{3t^2}{1+t^3},\end{array}\right.\qquad -\infty<t<-1,\ -1<t<\infty
+$$
+
+gives a parametrisation of this curve. Indeed, for any $t\neq -1$ we have
 
 \begin{align*}
  x^3+y^3 &= \left(\frac{3t}{1+t^3}\right)^3+\left(\frac{3t^2}{1+t^3}\right)^3 \\
@@ -227,14 +260,37 @@ $$
  3xy=3\frac{3t}{1+t^3}\frac{3t^2}{1+t^3}=\frac{27t^3}{(1+t^3)^2}.
 $$ 
 
+:::{todo}
+Make a poll out of the following:
 Note that for $t<-1$, $x$ is positive, while $y$ is negative. So these values of $t$ give the part of the curve below the $x$-axis. Similarly, for $-1<t<0$, $x$ is negative and $y$ is positive, so these values give the part of curve to the left of the $y$-axis. Finally, for $t\geq 0$ we have $x\geq 0$ and $y\geq 0$, so these values give the loop in the curve. 
+:::
+
 ::::::
 
 (Subsec:CurvesEllipses)=
 
 ## Circles and ellipses
 
-A very common type of curves that cannot be described as the graph of some function is that of ellipses, which included the circles. First, we give a geometrical description of these objects and then we try to find useful equations and parametrisations describing them.
+A very common type of curves that cannot be described as the graph of some function are ellipses, which includes circles. Before, we give the (rather technical) definition, we first consider an example.
+
+::::::{prf:example} 
+:label: Def:Curves:Prelimellipse
+Consider the curve given by the equation
+
+$$
+ \frac{x^2}{25}+\frac{y^2}{16}=1.
+$$
+
+:::{todo}
+Make an applet showing this ellipse, with label Fig:Curves:Prelimellipse. The focal points $(-3,0)$ and $(3,0)$ should be visible. There should be a draggable point on the ellipse, and the line segments from that draggable point to the two focal points.
+:::
+
+This curve is shown in {numref}`Fig:Curves:Prelimellipse`. You likely already know that we call such a curve an ellipse (or otherwise, it is not an unreasonable guess), but what geometrical properties makes this curve an ellipse? In  {numref}`Fig:Curves:Prelimellipse` we have highlighted the two points $(-3,0)$ and $(3,0)$. These points are called the **focal points** of the ellipse. The defining property of an ellipse is that it is the set of all points $(x,y)$ where the sum of distances to the two focal points is constant. This can be seen in the figure by dragging the highlighted point around the ellipse.
+
+
+::::::
+
+Now, we give a geometrical description of these objects and then we try to find useful equations and parametrisations describing them.
 
 ::::::{prf:definition} 
 :label: Def:Curves:Ellipse
@@ -255,7 +311,7 @@ An ellipse with focal points $F_1$ and $F_2$ such that for each point $A$ on the
 :::
 
 :::{todo}
-Replace {numref}`Fig:Curves:Ellipse` with an applet.
+Replace {numref}`Fig:Curves:Ellipse` with an applet. Make sure the point A is draggable.
 :::
 
 In order to find an equation for an ellipse, we will, for convenience, first assume that the center of the ellipse is the origin and that the major axis is either the $x$-axis or $y$-axis. In that case we obtain the following result.
@@ -263,7 +319,14 @@ In order to find an equation for an ellipse, we will, for convenience, first ass
 ::::::{prf:theorem} 
 :label: Thm:Curves:Ellipse
 
-Let $a>0$ and $b>0$ and consider an ellipse with of which the vertices and co-vertices are $(a,0)$, $(-a,0)$, $(0,b)$ and $(0,-b)$ (so that the center of the ellipse is at the origin and the major axis is either the $x$-axis (when $a\geq b$) or the $y$-axis (when $a\leq b$)). Then the ellipse is described by the equation
+Let $a>0$ and $b>0$ and consider an ellipse of which the vertices and co-vertices are $(a,0)$, $(-a,0)$, $(0,b)$ and $(0,-b)$ (so that the center of the ellipse is at the origin). Let $c\geq 0$ be the distance between the focal points.
+
+- If $a>b$, the major axis is the $x$-axis and we have $b^2=a^2-c^2$.
+- If $a<b$, the major axis is the $y$-axis and we have $a^2=b^2-c^2$.
+- If $a=b$, the ellipse is a circle and we have $c=0$.
+
+
+In each of these cases, the ellipse is described by the equation
 
 $$
  \frac{x^2}{a^2}+\frac{y^2}{b^2}=1.
@@ -291,7 +354,7 @@ Replace {numref}`Fig:Curves:Ellipse2` with an applet.
 For any point $P:(x,y)$ on the ellipse, the distance to $F_1:(c,0)$ is $\sqrt{(x-c)^2+(y-0)^2}=\sqrt{(x-c)^2+y^2}$, while the distance to $F_2:(-c,0)$ is $\sqrt{(x-(-c))^2+(y-0)^2}=\sqrt{(x+c)^2+y^2}$. Hence, $(x,y)$ is on the ellipse precisely when
 
 $$
- \text{dist}(P,F_1)+\text{dist}(P,F_2)=\sqrt{(x-c)^2+y^2}+\sqrt{(x+c)^2+y^2}=2a.
+ \operatorname{dist}(P,F_1)+\operatorname{dist}(P,F_2)=\sqrt{(x-c)^2+y^2}+\sqrt{(x+c)^2+y^2}=2a.
 $$
 
 We bring $\sqrt{(x+c)^2+y^2}$ to the other side of the equation and take the square of both sides of the equation to obtain
@@ -318,7 +381,7 @@ $$
  (x+c)^2+y^2=\left(a+\frac{c}{a}x\right)^2=a^2+2cx+\frac{c^2}{a^2}x^2.
 $$
 
-Working out the brackets on the left-hand side of the equation and bringing several terms to the other side of the equation gives
+Working out the brackets on the left-hand side of the equation and regrouping the terms gives
 
 $$
  x^2\left(1-\frac{c^2}{a^2}\right)+y^2=a^2-c^2.
@@ -340,7 +403,7 @@ $$
 ::::::{prf:corollary} 
 :label: Cor:Curves:Ellipse
 
-Let $a>0$ and $b>0$ and consider an ellipse with of which the vertices and co-vertices are $(x_0+a,y_0)$, $(x_0-a,y_0)$, $(x_0+b,y_0)$ and $(x_0-b,y_0)$ (so that the center of the ellipse is at the point $(x_0,y_0)$ and the axes are the lines $x=x_0$ and $y=y_0$). Then the ellipse is described by the equation
+Let $a>0$ and $b>0$ and consider an ellipse of which the vertices and co-vertices are $(x_0+a,y_0)$, $(x_0-a,y_0)$, $(x_0,y_0+b)$ and $(x_0,y_0-b)$ (so that the center of the ellipse is at the point $(x_0,y_0)$ and the axes are the lines $x=x_0$ and $y=y_0$). Then the ellipse is described by the equation
 
 $$
  \frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1.
@@ -364,16 +427,20 @@ $$
 $$
 :::
 
+:::{todo}
+Poll: what is eccentricity of circle?
+:::
+
 ::::::{prf:theorem} 
 :label: Thm:Curves:EllipseParam
 
-Let $a>0$ and $b>0$ and consider an ellipse with of which the vertices and co-vertices are $(x_0+a,y_0)$, $(x_0-a,y_0)$, $(x_0+b,y_0)$ and $(x_0-b,y_0)$ (so that the center of the ellipse is at the point $(x_0,y_0)$ and the axes are the lines $x=x_0$ and $y=y_0$). Then 
+Let $a>0$ and $b>0$ and consider an ellipse of which the vertices and co-vertices are $(x_0+a,y_0)$, $(x_0-a,y_0)$, $(x_0,y_0+b)$ and $(x_0,y_0-b)$ (so that the center of the ellipse is at the point $(x_0,y_0)$ and the axes are the lines $x=x_0$ and $y=y_0$). Then 
 
 $$
  x(t)=x_0+a\cos(t),\qquad y(t)=y_0+b\sin(t),\qquad 0\leq t\leq 2\pi
 $$ 
 
-is a parametrisation for the ellipse that traverses the ellipse once in counterclockwise direction for which the start and endpoint are both the (co-)vertex $(x_0+a,y_0)$. 
+is a parametrisation for the ellipse that traverses the ellipse once in counterclockwise direction for which both the start and endpoint are the (co-)vertex $(x_0+a,y_0)$. 
 ::::::
 
 ::::::{prf:definition} 
@@ -390,24 +457,24 @@ $$
  \frac{\left(x(t)-x_0\right)^2}{a^2}+\frac{\left(y(t)-y_0\right)^2}{b^2}=\frac{a^2\cos^2(t)}{a^2}+\frac{b^2\sin^2(t)}{b^2}=\cos^2(t)+\sin^2(t)=1.
 $$
 
-As such, any point of the form $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ satisfies the equation of the ellipse, so we are indeed dealing with a parametrisation of (possibly a part of) the ellipse. Note that $t=0$ we have $(x(0),y(0))=(x_0+a\cos(0),y_0+b\sin(0))=(x_0+a,y_0)$ and at $t=2\pi$ we have $(x(2\pi),y(2\pi))=(x_0+a\cos(2\pi),y_0+b\sin(2\pi))=(x_0+a,y_0)$, so that the start and endpoint are, indeed, both the (co-)vertex $(x_0+a,y_0)$. 
+As such, any point of the form $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ satisfies the equation of the ellipse, so we are indeed dealing with a parametrisation of (possibly a part of) the ellipse. Note that at $t=0$ we have $(x(0),y(0))=(x_0+a\cos(0),y_0+b\sin(0))=(x_0+a,y_0)$ and at $t=2\pi$ we have $(x(2\pi),y(2\pi))=(x_0+a\cos(2\pi),y_0+b\sin(2\pi))=(x_0+a,y_0)$, so that the start and endpoint are, indeed, both the (co-)vertex $(x_0+a,y_0)$. 
 
-Now we show that this parametrisation covers the ellipse exactly once (except the (co-)vertex $(x_0+a,y_0)$, which is both the start and end point). Consider any point $(x,y)$ on the ellipse. We claim that the point $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)$ lies on the unit circle. Indeed, we have
+Now we show that this parametrisation covers the ellipse exactly once (except the (co-)vertex $(x_0+a,y_0)$, which is both the start and end point). Consider any point $(x,y)$ on the ellipse. We claim that the point $(x',y')\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)$ lies on the unit circle. Indeed, we have
 
 $$
- \left(\frac{x-x_0}{a}\right)+\left(\frac{y-y_0}{b}\right)=\frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1,
+ \left(x'\right)^2+\left(y'\right)^2=\frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2},
 $$
 
-since $(x,y)$ lies on the ellipse. As such, the point $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)$ satisfies the equation defining the unit circle. From {numref}`Subsec:TrigonRatio` we know that there is exactly one value of $t$ with $0\leq t<2\pi$ for which $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)=\left(\cos(t),\sin(t)\right)$. For this value of $t$ we find that $x=x_0+a\cos(t)$ and $y=y_0+b\sin(t)$, as desired.
+since $(x,y)$ lies on the ellipse. As such, the point $\left(x',y'\right)$ satisfies the equation defining the unit circle. From {numref}`Subsec:TrigonRatio` we know that there is exactly one value of $t$ with $0\leq t<2\pi$ for which $\left(\frac{x-x_0}{a},\frac{y-y_0}{b}\right)=\left(\cos(t),\sin(t)\right)$. For this value of $t$ we find that $x=x_0+a\cos(t)$ and $y=y_0+b\sin(t)$, as desired.
 
-Finally, we notice that for $0<t<\frac{\pi}{2}$ we have $y(t)=y_0+b\sin(t)>0$, which must mean that the we parametrise the circle in counterclockwise direction.
+Finally, we notice that for $0<t<\frac{\pi}{2}$ we have $y(t)=y_0+b\sin(t)>y_0$, which means that the we parametrise the circle in counterclockwise direction.
 
 :::
 
 ::::::{prf:remark} 
 :label: Remark:Curves:EllipseParam
 
-Consider the parametrisation of an ellipse from {prf:ref}`Thm:Curves:EllipseParam`. If the ellipse is actually a circle (so when $a=b$, or, equivalently, $c=0$), the parameter $t$ has the interpretation as the angle between the positive $x$-axis and the line segment from the origin to the point $(x(t),y(t))$ measured counterclockwise, as usual. However, for ellipses that are not circles this is not the case. The French painter and mathematician  [Philippe de la Hire (1640-1718)](https://en.wikipedia.org/wiki/Philippe_de_La_Hire) discovered the following interpretation of the parameter $t$. Consider two circles with the same center as the ellipse with radius $b$ and $a$ respectively. If we draw the line segment which has angle $t$ with the positive $x$-axis, then this line segment crosses the first circle at the point $B:(x_0+b\cos(t),y_0+b\sin(t))$ and the second circle at the point $A:(x_0+a\cos(t),y_0+b\sin(t))$. Then the point $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ on the ellipse is found by intersecting the line through $B$ parallel to the major axis of the ellipse with the line through $A$ parallel to the minor axis of the ellipse, see the figure below.
+Consider the parametrisation of an ellipse from {prf:ref}`Thm:Curves:EllipseParam`. If the ellipse is actually a circle (i.e. when $a=b$, or, equivalently, $c=0$), the parameter $t$ can be interpreted as the angle between the positive $x$-axis and the line segment from the origin to the point $(x(t),y(t))$ measured counterclockwise, as usual. However, for ellipses that are not circles this is not the case. The French painter and mathematician  [Philippe de La Hire (1640-1718)](https://en.wikipedia.org/wiki/Philippe_de_La_Hire) discovered the following interpretation of the parameter $t$. Consider two circles with the same center as the ellipse with radius $b$ and $a$, respectively. If we draw the line segment which has angle $t$ with the positive $x$-axis, then this line segment crosses the first circle at the point $B:(x_0+b\cos(t),y_0+b\sin(t))$ and the second circle at the point $A:(x_0+a\cos(t),y_0+a\sin(t))$. Then the point $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ on the ellipse is found by intersecting the line through $B$ parallel to the horizontal axis of the ellipse with the line through $A$ parallel to the vertical axis of the ellipse, see the figure below.
 
 ```{figure} Images/Fig-Curves-deLaHire.png
 ---
@@ -419,7 +486,7 @@ Interpretation of the parameter $t$ in the standard parametrisation of an ellips
 ```
 
 :::{todo}
-Replace {numref}`Fig:Curves:deLaHire` with an applet.
+Replace {numref}`Fig:Curves:deLaHire` with an applet. $b$ should be replaced by $(x_0,y_0+b)$ and $a$ by $(x_0+a,y_0)$
 
 Combine the current image with [animation](https://en.wikipedia.org/wiki/File:Parametric_ellipse.gif).
 :::
@@ -449,13 +516,13 @@ $$
 
 which corresponds to traversing the ellipse once in counterclockwise direction, starting and ending at the co-vertex $(1,5)$.
 
-A different parametrisation for this circle would be to have
+A different parametrisation for this ellipse would be 
 
 $$
  x=-1+2\sin(2t),\qquad y=5+3\cos(2t),\qquad 0\leq t\leq 2\pi.
 $$
 
-Note that both at $t=0$ and at $t=2\pi$ we have $(x(t),y(t))=(-1,8)$, so this curve starts and ends at the vertex $(-1,8)$. Moreover, since the fundamental period of the sine and cosine is $2\pi$, the fundamental period of $\sin(2t)$ and $\cos(2t)$ must be $\pi$ (see {numref}`Subsec:PropertiesFunctionsPeriodic`). So the parametrisation covers the ellipse **twice**. Indeed, for any $0\leq t\leq \pi$ we have
+Note that both at $t=0$ and at $t=2\pi$ we have $(x(t),y(t))=(-1,8)$, so this curve starts and ends at the vertex $(-1,8)$. Moreover, since the fundamental period of the sine and cosine is $2\pi$, the fundamental period of $\sin(2t)$ and $\cos(2t)$ must be $\pi$ (see {numref}`Subsec:PropertiesFunctionsPeriodic`). Hence, the parametrisation covers the ellipse **twice**. Indeed, for any $0\leq t\leq \pi$ we have
 
 \begin{align*}
  (x(t+\pi),y(t+\pi)) &= \left(-1+2\sin(2(t+\pi)),5+3\cos(2(t+\pi))\right) \\
@@ -487,7 +554,26 @@ It is also possible to find equations and parametrisations for ellipses of which
 
 ## Hyperbolas
 
-Hyperbolas are another common type of curves that are (often) not the graph of a function. Hyperbola share quite some similarities with ellipses in terms of the definition and the equations describing them, though they look very differently geometrically. In fact, both are examples of **conic sections**, see the [Open Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter8/QuadraticForms.html#conic-sections). As such, we will mainly follow the same structure as in the previous section.
+Hyperbolas are another common type of curves that are (often) not the graph of a function. Hyperbola share quite some similarities with ellipses in terms of the definition and the equations describing them, though they look very differently geometrically. In fact, both are examples of **conic sections**, see the [Open Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter8/QuadraticForms.html#conic-sections). 
+
+Just like for ellipses, we first consider a preliminary example before we introduce the technical definition.
+
+::::::{prf:example} 
+:label: Def:Curves:Prelimhyp
+Consider the curve given by the equation
+
+$$
+ \frac{x^2}{9}-\frac{y^2}{16}=1.
+$$
+
+:::{todo}
+Make an applet showing this hyperbola, with label Fig:Curves:Prelimhyp. The focal points $(-5,0)$ and $(5,0)$ should be visible. There should be a draggable point on the ellipse, and the line segments from that draggable point to the two focal points.
+:::
+
+This curve is shown in {numref}`Fig:Curves:Prelimhyp`. As you can reasonably guess, we will call this curve a hyperbola. What geometrical properties make this curve a hyperbola? In {numref}`Fig:Curves:Prelimhyp` we have highlighted the two points $(-5,0)$ and $(5,0)$. These points are called the **focal points** of the ellipse. The defining property of an hyperbola is that it is the set of all points $(x,y)$ where the absolute difference of the distances to the two focal points is constant. This can be seen in the figure by dragging the highlighted point around the hperbola.
+
+
+::::::
 
 
 ::::::{prf:definition} 
@@ -510,10 +596,10 @@ A hyperbola with focal points $F_1$ and $F_2$ such that for each point $A$ on th
 ```
 
 :::{todo}
-Replace {numref}`Fig:Curves:Hyperbola` with an applet.
+Replace {numref}`Fig:Curves:Hyperbola` with an applet. The point $A$ should be draggable.
 :::
 
-In order to find an equation for a hyperbola, we will, for convenience, first assume that the center of the hyperbola is the origin and that the major axis is the $x$-axis. In that case we obtain the following result.
+In order to find an equation for a hyperbola, we will first assume, for convenience, that the center of the hyperbola is the origin and that the major axis is the $x$-axis. In that case we obtain the following result.
 
 ::::::{prf:theorem} 
 :label: Thm:Curves:Hyperbola
@@ -592,7 +678,7 @@ $$
  \frac{\left(x-x_0\right)^2}{a^2}-\frac{\left(y-y_0\right)^2}{b^2}=1.
 $$
 
-Similarly, the hyperbola of which the vertices are $(x_0,y_0-a)$ and $(x_0,y_0+a)$ and the focal points are $(x_0,y_0-c)$ and $(x_0,y_0+c)$ (so that the center of the hyperbola is at the point $(x_0,y_0)$ and the major axis is the line $x=x_0$). Then the hyperbola is described by the equation
+Similarly, the hyperbola of which the vertices are $(x_0,y_0-a)$ and $(x_0,y_0+a)$ and the focal points are $(x_0,y_0-c)$ and $(x_0,y_0+c)$ (so that the center of the hyperbola is at the point $(x_0,y_0)$ and the major axis is the line $x=x_0$) is described by the equation
 
 $$
  \frac{\left(y-y_0\right)^2}{a^2}-\frac{\left(x-x_0\right)^2}{b^2}=1.
@@ -629,12 +715,12 @@ $$
 
 :::
 
-A common parametrisation of an hyperbola uses the hyperbolic cosine and sine functions, see {prf:ref}`Def:PropertiesFunctions:Hyperbolic`.
+A common parametrisation of a hyperbola uses the hyperbolic cosine and sine functions, see {prf:ref}`Def:PropertiesFunctions:Hyperbolic`.
 
 ::::::{prf:theorem} 
 :label: Thm:Curves:HyperbolaParam
 
-Let $0<a<c$ and consider a hyperbola of which the vertices are $(x_0-a,y_0)$ and $(x_0+a,y_0)$ and the focal points are $(x_0-c,y_0)$ and $(x_0+c,y_0)$ (so that the center of the hyperbola is at the point $(x_0,y_0)$ and the major axis is the line $y=y_0$). Then 
+Let $0<a<c$ and consider a hyperbola of which the vertices are $(x_0-a,y_0)$ and $(x_0+a,y_0)$ and the focal points are $(x_0-c,y_0)$ and $(x_0+c,y_0)$ (so that the center of the hyperbola is at the point $(x_0,y_0)$ and the major axis is the line $y=y_0$). Let $b=\sqrt{c^2-a^2}$. Then 
 
 $$
  x(t)=x_0-a\cosh(t),\qquad y(t)=y_0+b\sinh(t),\qquad -\infty<t<\infty
@@ -653,17 +739,23 @@ is a parametrisation of the part of the hyperbola with $x>x_0$.
 :::{admonition} Proof of {prf:ref}`Thm:Curves:HyperbolaParam`
 :class: tudproof, dropdown
 
-By {prf:ref}`Cor:Curves:Hyperbola` the equation for this hyperbola is $\displaystyle \frac{\left(x-x_0\right)^2}{a^2}-\frac{\left(y-y_0\right)^2}{b^2}=1$. Writing $x(t)=x_0-a\cosh(t)$ and $y(t)=y_0+b\sinh(t)$, we find
+By {prf:ref}`Cor:Curves:Hyperbola` the equation for this hyperbola is 
 
 $$
- \frac{\left(x(t)-x_0\right)^2}{a^2}-\frac{\left(y(t)-y_0\right)^2}{b^2}=\frac{a^2\cosh(t)^2}{a^2}+\frac{b^2\sinh(t)^2}{b^2}=\cosh(t)^2-\sinh(t)^2=1.
+ \displaystyle \frac{\left(x-x_0\right)^2}{a^2}-\frac{\left(y-y_0\right)^2}{b^2}=1.
 $$
 
-The final step follows from {prf:ref}`Thm:PropertiesFunctions:HyperbolicProperties`. As such, any point of the form $(x,y)=(x_0-a\cosh(t),y_0+b\sinh(t))$ satisfies the equation of the hyperbola, so we are indeed dealing with a parametrisation of a part of the hyperbola. Note that since $\cosh(t)=\frac{e^t+e^{-t}}{2}\geq 0$, we have $x(t)=x_0-a\cosh(t)\leq x_0$ for all values of $t$. So this parametrisation covers only (possibly a part of) the part of the hyperbola with $x<x_0$.
+Writing $x(t)=x_0-a\cosh(t)$ and $y(t)=y_0+b\sinh(t)$, we find
 
-Now we show that this parametrisation covers the left half of the parabola exactly once.  From {prf:ref}`Thm:PropertiesFunctions:HyperbolicProperties` we know that the hyperbolic sine is strictly increasing on $\mathbb{R}$, so two different values of $t$ will also always give two different values of $y$, so two different points. Moreover, if $t$ becomes very large positive, $\sinh(t)=\frac{1}{2}e^{t}-\frac{1}{2}e^{-t}$ becomes very large positive as well, while if $t$ becomes very large negative, $\sinh(t)=\frac{1}{2}e^{t}-\frac{1}{2}e^{-t}$ becomes very large negative as well (in the terminology of {numref}`Section:LimitInf` we have $\lim\limits_{t\rightarrow\infty}\sinh(t)=\infty$ and $\lim\limits_{t\rightarrow-\infty}\sinh(t)=-\infty$.) Finally, the function $t\mapsto \sinh(t)$ does not make any jumps, so its range is the entire real line (in the terminology of {numref}`Section:Continuity`, the hyperbolic sine is continuous). As such, this parametrisation covers each value of $y$ exactly once. Since on the left half of the hyperbola each value of $y$ occurs exactly once, this means that the parametrisation covers the left half of the parabola exactly once.
+$$
+ \frac{\left(x(t)-x_0\right)^2}{a^2}-\frac{\left(y(t)-y_0\right)^2}{b^2}=\frac{a^2\cosh(t)^2}{a^2}-\frac{b^2\sinh(t)^2}{b^2}=\cosh(t)^2-\sinh(t)^2=1.
+$$
 
-The proof for the right half of the parabola is identical.
+The final step follows from {prf:ref}`Thm:PropertiesFunctions:HyperbolicProperties`. As such, any point of the form $(x,y)=(x_0-a\cosh(t),y_0+b\sinh(t))$ satisfies the equation of the hyperbola, so we are indeed dealing with a parametrisation of a part of the hyperbola. Note that since $\cosh(t)=\frac{e^t+e^{-t}}{2}> 0$, we have $x(t)=x_0-a\cosh(t)< x_0$ for all values of $t$. So this parametrisation covers only (possibly a part of) the part of the hyperbola with $x<x_0$.
+
+Now we show that this parametrisation covers the left half of the hyperbola exactly once.  From {prf:ref}`Thm:PropertiesFunctions:HyperbolicProperties` we know that the hyperbolic sine is strictly increasing on $\mathbb{R}$, so two different values of $t$ will always give two different values of $y$, so two different points. Moreover, if $t$ becomes very large positive, $\sinh(t)=\frac{1}{2}e^{t}-\frac{1}{2}e^{-t}$ becomes very large positive as well, while if $t$ becomes very large negative, $\sinh(t)=\frac{1}{2}e^{t}-\frac{1}{2}e^{-t}$ becomes very large negative as well (in the terminology of {numref}`Section:LimitInf` we have $\lim\limits_{t\rightarrow\infty}\sinh(t)=\infty$ and $\lim\limits_{t\rightarrow-\infty}\sinh(t)=-\infty$.) Finally, the function $t\mapsto \sinh(t)$ does not make any jumps, so its range is the entire real line (in the terminology of {numref}`Section:Continuity`, the hyperbolic sine is continuous). As such, this parametrisation covers each value of $y$ exactly once. Since on the left half of the hyperbola each value of $y$ occurs exactly once, this means that the parametrisation covers the left half of the hyperbola exactly once.
+
+The proof for the right half of the hyperbola is identical.
 
 :::
 
@@ -673,7 +765,7 @@ The proof for the right half of the parabola is identical.
 Consider the hyperbola with vertices $(0,0)$ and $(4,0)$ and focal points $(-1,0)$ and $(5,0)$. Since the vertices both lie on the $x$-axis, the $x$-axis is the major axis of this hyperbola. In addition, the center of the hyperbola is the midpoint of the line segment joining the vertices, so the midpoint must be $(2,0)$. The distance from the center to the vertices is $2$ and the distance from the center to the focal points is $3$. As such, according to {prf:ref}`Cor:Curves:Hyperbola` an equation for the hyperbola is given by
 
 $$
- \frac{(x-2)^2}{2^2}+\frac{(y-0)^2}{2^2-3^2}=1,
+ \frac{(x-2)^2}{2^2}-\frac{(y-0)^2}{3^2-2^2}=1,
 $$
 
 which we can rewrite to
@@ -682,16 +774,16 @@ $$
  \frac{(x-2)^2}{4}-\frac{y^2}{5}=1.
 $$
 
-Moreover, {prf:ref}`Thm:Curves:HyperbolaParam` gives that we can parametrise the left half of the hyperbola by
+Moreover, {prf:ref}`Thm:Curves:HyperbolaParam` tells us that we can parametrise the left half of the hyperbola by
 
 $$
- x=-2-2\cosh(t),\qquad y=\sqrt{5}\sinh(t),\qquad -\infty<t<\infty,
+ x=2-2\cosh(t),\qquad y=\sqrt{5}\sinh(t),\qquad -\infty<t<\infty,
 $$
 
 while the right half of the hyperbola can be parametrised by
 
 $$
- x=-2+2\cosh(t),\qquad y=\sqrt{5}\sinh(t),\qquad -\infty<t<\infty.
+ x=2+2\cosh(t),\qquad y=\sqrt{5}\sinh(t),\qquad -\infty<t<\infty.
 $$
 
 :::{figure} Images/Fig-Curves-Hyperbola1.png
@@ -714,10 +806,10 @@ Include an animation of the parametrisation of the hyperbola.
 
 Consider the graph of the function $f(x)=\dfrac{1}{x}$. We claim that this is a hyperbola with vertices $V_1:(-1,-1)$ and $V_2:(1,1)$ and focal points $F_1:(-\sqrt{2},-\sqrt{2})$ and $F_2:(\sqrt{2},\sqrt{2})$. This would mean that the major axis of the hyperbola is the line $y=x$.
 
-We want to show that the absolute difference between the distances to $F_1$ and to $F_2$ is constant. Pick any point $P:(x,y)$ on the graph of $f$. In that case, we have $y=f(x)=\frac{1}{x}$. The distance from $P$ to $F_1$ is 
+Pick any point $P:(x,y)$ on the graph of $f$. We want to show that the absolute difference between the distances from $P$ to $F_1$ and to $F_2$ is constant. In that case, we have $y=f(x)=\frac{1}{x}$. The distance from $P$ to $F_1$ is 
 
 \begin{align*}
- \operatorname{dist}(P,F_1) &= \sqrt{\left(x-\left(-\sqrt{2}\right)\right)^2+\left(\frac{1}{x}-\left(-\sqrt{2}\right)\right)^2+} \\
+ \operatorname{dist}(P,F_1) &= \sqrt{\left(x-\left(-\sqrt{2}\right)\right)^2+\left(\frac{1}{x}-\left(-\sqrt{2}\right)\right)^2} \\
  &= \sqrt{x^2+2\sqrt{2}x+2+\frac{1}{x^2}+\frac{2\sqrt{2}}{x}+2} \\
  &= \sqrt{x^2+x^{-2}+2+2\sqrt{2}\left(x+x^{-1}\right)+2},
 \end{align*}
@@ -779,7 +871,7 @@ $$
 As such, if $x>0$ the absolute difference of the distances between $P$ and the focal points is
 
 \begin{align*}
- \left|\text{dist}(P,F_1)-\text{dist}(P,F_2)\right| &= \left|\left(x+x^{-1}\right)+\sqrt{2}\right|-\left|\left(x+x^{-1}\right)-\sqrt{2}\right| \\
+ \left|\operatorname{dist}(P,F_1)-\operatorname{dist}(P,F_2)\right| &= \left|\left(x+x^{-1}\right)+\sqrt{2}\right|-\left|\left(x+x^{-1}\right)-\sqrt{2}\right| \\
  &= \left(\left(x+x^{-1}\right)+\sqrt{2}\right)-\left(\left(x+x^{-1}\right)-\sqrt{2}\right) \\
  &=2\sqrt{2}.
 \end{align*}
@@ -803,13 +895,19 @@ Replace {numref}`Fig:Curves:Hyperbola1OverX` with an applet.
 
 ::::::
 
-In {prf:ref}`Ex:Curves:Hyperbola2` we saw that it can be tricky to describe hyperbolas of which the major axis is not the $x$-axis or $y$-axis. Luckily, with the aid of linear algebra this is a lot easier. More information on this can be found in the relevant section of the [Open Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter8/QuadraticForms.html#conic-sections).
+In {prf:ref}`Ex:Curves:Hyperbola2` we saw that it can be tricky to describe hyperbolas of which the major axis is not the $x$-axis or $y$-axis. Fortunately, with the aid of linear algebra this is a lot easier. More information on this can be found in the relevant section of the [Open Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter8/QuadraticForms.html#conic-sections).
 
 (Subsec:CurvesParabola)=
 
 ## Parabolas
 
-Parabolas are yet another type of **conic sections**. The most common examples are the graphs of quadratic functions, i.e. functions of the form $f(x)=ax^2+bx+c$ with $a\neq 0$, $b$ and $c$ constants. However, these are not the only type of parabolas that can occur. For instance, one could take the graph of $f(x)=x^2$ and rotate it $\frac{\pi}{2}$ radians to the right. The resulting curve is no longer the graph of a function, but it is still a parabola. In this section, we will find a more general equation for a parabola and we will also see how we can parametrise them.
+:::{todo}
+Build applet that show a double cone with a plane going through it that is movable, to show the different conic sections.
+
+Also make an applet where $e$ is draggable and the different conic sections pop up
+:::
+
+Parabolas are yet another type of **conic sections**. The most common examples are the graphs of quadratic functions, i.e. functions of the form $f(x)=ax^2+bx+c$ with $a\neq 0$, $b$ and $c$ constants. However, these are not the only type of parabolas that can occur. For instance, one could take the graph of $f(x)=x^2$ and rotate it $\frac{\pi}{2}$ radians clockwise. The resulting curve is no longer the graph of a function, but it is still a parabola. In this section, we will find a more general equation for a parabola and we will also see how we can parametrise them.
 
 ```{figure} Images/Fig-Curves-ParabolaRotate.png
 ---
@@ -868,10 +966,10 @@ $$
 Consider any point $P:(x_0,y_0)$. Then the distance to the focus point is given by
 
 $$
- \text{dist}(P,F)=\sqrt{\left(x_0-p\right)^2+\left(y_0-q\right)^2}.
+ \operatorname{dist}(P,F)=\sqrt{\left(x_0-p\right)^2+\left(y_0-q\right)^2}.
 $$
 
-In order to compute the distance from $P$ to the line, we use some ideas from {numref}`Sec:LinesAndPlanes`. Note that the directrix can be written in vector form as $\begin{pmatrix}a\\ b\end{pmatrix}\cdot\begin{pmatrix}x\\ y\end{pmatrix}=-c$. As such, the line $\begin{pmatrix}a\\ b\end{pmatrix}\cdot\begin{pmatrix}x\\ y\end{pmatrix}=0$ is parallel to the directrix and from this we can read off that the vector $\begin{pmatrix}a\\ b\end{pmatrix}$ is perpendicular to the directrix. Hence, the line $\mathcal{L}$ with parametric vector equation $\begin{pmatrix}x\\ y\end{pmatrix}=\begin{pmatrix}x_0\\ y_0\end{pmatrix}+t\begin{pmatrix} a\\ b\end{pmatrix}$ passes through $(x_0,y_0)$ and is perpendicular to the directrix. As such, the intersection point of this line $\mathcal{L}$ and the directrix will give the point on the directrix closest to $(x_0,y_0)$. Plugging in the parametric vector equation into the equation for the directrix gives
+In order to compute the distance from $P$ to the line, we use some ideas from {numref}`Sec:LinesAndPlanes`. Note that the directrix can be written in vector form as $\begin{pmatrix}a\\ b\end{pmatrix}\cdot\begin{pmatrix}x\\ y\end{pmatrix}=-c$. As such, the line $\begin{pmatrix}a\\ b\end{pmatrix}\cdot\begin{pmatrix}x\\ y\end{pmatrix}=0$ is parallel to the directrix and from this we can read off that the vector $\begin{pmatrix}a\\ b\end{pmatrix}$ is perpendicular to the directrix. Hence, the line $\mathcal{L}$ with parametric vector equation $\begin{pmatrix}x\\ y\end{pmatrix}=\begin{pmatrix}x_0\\ y_0\end{pmatrix}+t\begin{pmatrix} a\\ b\end{pmatrix}$ passes through $(x_0,y_0)$ and is perpendicular to the directrix. This means that the intersection point of this line $\mathcal{L}$ and the directrix will give the point on the directrix closest to $(x_0,y_0)$. Plugging in the parametric vector equation into the equation for the directrix gives
 
 $$
  a\left(x_0+at\right)+b\left(y_0+bt\right)+c=0,
@@ -892,17 +990,17 @@ $$
 which gives that the requested distance is
 
 \begin{align*}
- \text{dist}(d,P) &= \sqrt{\left(x_0+\frac{-ax_0-by_0-c}{a^2+b^2}a-x_0\right)^2+\left(y_0+\frac{-ax_0-by_0-c}{a^2+b^2}b-y_0\right)^2} \\
+ \operatorname{dist}(d,P) &= \sqrt{\left(x_0+\frac{-ax_0-by_0-c}{a^2+b^2}a-x_0\right)^2+\left(y_0+\frac{-ax_0-by_0-c}{a^2+b^2}b-y_0\right)^2} \\
  &~ \quad\cdot\sqrt{\left(-ax_0-by_0-c\right)\frac{a^2}{\left(a^2+b^2\right)^2}+\left(-ax_0-by_0-c\right)\frac{b^2}{\left(a^2+b^2\right)^2}} \\
  &= \sqrt{\left(-ax_0-by_0-c\right)^2\frac{a^2+b^2}{\left(a^2+b^2\right)^2}} \\
  &= \sqrt{\left(-ax_0-by_0-c\right)^2\frac{1}{a^2+b^2}} \\
  &= \frac{|-ax_0-by_0-c|}{\sqrt{a^2+b^2}}.
 \end{align*}
 
-Since the parabola consists of those points for which $\text{dist}(d,P)=\text{dist}(P,F)$, or equivalently when $\left(\text{dist}(d,P)\right)^2=\left(\text{dist}(P,F)\right)^2$ we find that $(x_0,y_0)$ lies on the parabola precisely when
+Since the parabola consists of those points for which $\operatorname{dist}(d,P)=\operatorname{dist}(P,F)$, or equivalently when $\left(\operatorname{dist}(d,P)\right)^2=\left(\operatorname{dist}(P,F)\right)^2$ we find that $(x_0,y_0)$ lies on the parabola precisely when
 
 $$
- \left(x_0-p\right)^2+\left(y_0-q\right)^2=\left(\frac{|-ax_0-by_0-c}{\sqrt{a^2+b^2}}\right)^2=\frac{\left(ax_0+by_0+c\right)}{a^2+b^2},
+ \left(x_0-p\right)^2+\left(y_0-q\right)^2=\left(\frac{|-ax_0-by_0-c|}{\sqrt{a^2+b^2}}\right)^2=\frac{\left(ax_0+by_0+c\right)^2}{a^2+b^2},
 $$
 
 as desired.
@@ -931,7 +1029,7 @@ $$
  y=\frac{1}{4f}\left(x-v_1\right)^2+v_2,
 $$
 
-which means that the parabola is the graph of the function $f(x)=\frac{1}{4f}\left(x-v_1\right)^2+v_2$.
+which means that the parabola is the graph of the function $g(x)=\frac{1}{4f}\left(x-v_1\right)^2+v_2$.
 
 Similarly, the parabola with vertex $(v_1,v_2)$ and focus $(v_1+f,v_2)$, or equivalently directrix $x=v_1-f$ (i.e. a parabola of which the axis is parallel to the $x$-axis) is defined by the equation
 
@@ -977,7 +1075,7 @@ The proof for the parabola with axis parallel to the $x$-axis is similar.
 ::::::{prf:corollary} 
 :label: Cor:Curves:Parabola2
 
-Consider the graph of the function $f(x)=ax^2+bx+c$ with constants $a\neq 0$, $b$ and $c$. This graph is a parabola with axis $x=-\dfrac{b}{2a}$, vertex $\left(-\dfrac{b}{2a},\dfrac{4ac-b^2}{4a}\right)$, focus $\left(-\dfrac{b}{2a},\dfrac{4ac-b^2+1}{4a}\right)$ and directrix $y=\dfrac{4ac-b^2-1}{4a}$.
+Consider the graph of the function $g(x)=ax^2+bx+c$ with constants $a\neq 0$, $b$ and $c$. This graph is a parabola with axis $x=-\dfrac{b}{2a}$, vertex $\left(-\dfrac{b}{2a},\dfrac{4ac-b^2}{4a}\right)$, focus $\left(-\dfrac{b}{2a},\dfrac{4ac-b^2+1}{4a}\right)$ and directrix $y=\dfrac{4ac-b^2-1}{4a}$.
 
 ::::::
 
@@ -989,7 +1087,7 @@ $$
  y=a\left(x+\frac{b}{2a}\right)^2+\frac{4ac-b^2}{4a}.
 $$
 
-Comparing this to the equation in {prf:ref}`Cor:Curves:Parabola`, we note that it is of the same form. So the graph of $f$ is a parabola of which the axis is parallel to the $y$-axis. Consider the vertex $(v_1,v_2)$, focus $(v_1,v_2+f)$ and directrix $y=v_2-f$ of this parabola. According to the equation in {prf:ref}`Cor:Curves:Parabola`, we must have
+Comparing this to the equation in {prf:ref}`Cor:Curves:Parabola`, we note that it is of the same form. So the graph of $g$ is a parabola of which the axis is parallel to the $y$-axis. Consider the vertex $(v_1,v_2)$, focus $(v_1,v_2+f)$ and directrix $y=v_2-f$ of this parabola. According to the equation in {prf:ref}`Cor:Curves:Parabola`, we must have
 
 $$
  y=a\left(x+\frac{b}{2a}\right)^2+\frac{4ac-b^2}{4a}=\frac{1}{4f}\left(x-v_1\right)^2+v_2.
@@ -1057,7 +1155,7 @@ The graph of the function $f(x)=-2x^2+4x+4$ is a parabola with axis $x=1$, verte
 :::
 
 :::{todo}
-Replace {numref}`Fig:Curves:Parabola1` with an applet.
+Replace {numref}`Fig:Curves:Parabola1` with an applet. Indicate all the relavant points in the graph.
 :::
 
 A straightforward parametrisation of this parabola is given by
@@ -1076,7 +1174,7 @@ $$
  \frac{\left(x+y-1\right)^2}{2}=(x-1)^2+(y-4)^2.
 $$
 
-Now suppose we want to find the axis and vertex of this parabola. As in the proof of {prf:ref}`Thm:Curves:Parabola`, we notice that the directrix is parallel to the line $x+y=0$, which can be written in vector form as $\begin{pmatrix}1\\ 1\end{pmatrix}\cdot\begin{pmatrix}x\\ y\end{pmatrix}=0$. This means that the vector $\begin{pmatrix}1\\ 1\end{pmatrix}$ is perpendicular to the directrix. We consider the line $\mathcal{L}$ written in parametric vector form $\begin{pmatrix}x\\ y\end{pmatrix}=\begin{pmatrix}1\\ 4\end{pmatrix}+t\begin{pmatrix}1\\ 1\end{pmatrix}$. By construction, this line passes through the focal point $(1,4)$ and moves in the direction $\begin{pmatrix}1\\ 1\end{pmatrix}$. Since the line is perpendicular to the directrix, it intersects the directrix in the point closest to the focus point. Hence, it intersects the parabola at its vertex. As such, this line $\mathcal{L}$ is actually the axis of the parabola. We substitute $x=1+t$ and $y=4+t$ into the equation for the parabola to obtain
+Now suppose we want to find the axis and vertex of this parabola. As in the proof of {prf:ref}`Thm:Curves:Parabola`, we notice that the directrix is parallel to the line $x+y=0$, which can be written in vector form as $\begin{pmatrix}1\\ 1\end{pmatrix}\cdot\begin{pmatrix}x\\ y\end{pmatrix}=0$. This means that the vector $\begin{pmatrix}1\\ 1\end{pmatrix}$ is perpendicular to the directrix. We consider the line $\mathcal{L}$ written in parametric vector form $\begin{pmatrix}x\\ y\end{pmatrix}=\begin{pmatrix}1\\ 4\end{pmatrix}+t\begin{pmatrix}1\\ 1\end{pmatrix}$. By construction, this line passes through the focal point $(1,4)$ and has direction vector $\begin{pmatrix}1\\ 1\end{pmatrix}$. Since the line is perpendicular to the directrix, it intersects the directrix in the point closest to the focus point. Hence, it intersects the parabola at its vertex. As such, this line $\mathcal{L}$ is actually the axis of the parabola. We substitute $x=1+t$ and $y=4+t$ into the equation for the parabola to obtain
 
 $$
  \frac{\left(1+t+4+t-1\right)^2}{2}=(1+t-1)^2+(4+t-4)^2,

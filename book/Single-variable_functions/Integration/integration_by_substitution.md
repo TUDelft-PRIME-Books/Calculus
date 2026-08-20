@@ -12,13 +12,13 @@ $$
 \displaystyle\int\cos(x)e^{\sin(x)}\,dx.
 $$
 
-Although the integrand is composed of three standard functions, we cannot directly apply the formulas from {numref}`Tab:Integration:StandardIndefiniteIntegrals` to evaluate this integral. We can also not use {prf:ref}`Th:Integration:IndefiniteProperties` to split the integral into simpler integrals, since the integrand is a product of functions instead of a sum of functions and one standard function is nested inside another standard function.
+Although the integrand is composed of three standard functions, we cannot directly apply the formulas from {numref}`Tab:Integration:StandardIndefiniteIntegrals` to evaluate this integral. We can also not use {prf:ref}`Thm:Integration:IndefiniteProperties` to split the integral into simpler integrals, since the integrand is a product of functions instead of a sum of functions and one standard function is nested inside another standard function.
 
 In this section we introduce the method of **integration by substitution**, which is a very powerful method to evaluate integrals such as in the example above.
 
 ## Indefinite integrals
 
-The method of **integration by substitution** is based on the chain rule for differentiation: if $g$ is differentiable at $x$ and $F$ is differentiable at $g(x)$, then
+The method of **integration by substitution** is based on the {prf:ref}`chain rule <Thm:Chainrule:Chainrule>` for differentiation: if $g$ is differentiable at $x$ and $F$ is differentiable at $g(x)$, then
 
 $$
 \frac{d}{dx}F(g(x))=F'(g(x))g'(x).
@@ -31,7 +31,7 @@ Now consider the indefinite integral $\displaystyle\int F'(g(x))g'(x)\,dx$:
 &= F(g(x))+C.
 \end{align*}
 
-If we would assume that $F'=f$, so $F$ is an antiderivative of $f$, then we have $F'(g(x))=f(g(x))$ and therefore
+If we assume that $F'=f$, so $F$ is an antiderivative of $f$, then we have $F'(g(x))=f(g(x))$ and therefore
 
 $$
 \int f(g(x))g'(x)\,dx=F(g(x))+C\quad\text{with}\quad C\in\mathbb{R}.
@@ -41,7 +41,7 @@ This leads to the following theorem:
 
 ::::::{prf:Theorem} Integration by substitution for indefinite integrals
 :label: Thm:Integration:SubstitutionIndefiniteIntegral
-If $u=g(x)$ is a differentiable function whose range is an interval $I$ and $f$ is continuous on $I$, then
+If $u=g(x)$ is a differentiable function whose range is an interval $I$ and $f$ is integrable on $I$, then
 
 :::{math}
 :label: Eq:Integration:SubstitutionIndefiniteIntegral
@@ -60,8 +60,7 @@ Let $F$ be an antiderivative of $f$ on $I$, so $F'=f$. Then:
 &= \int \frac{d}{dx}F(g(x))\,dx\\
 &= F(g(x))+C \\
 &= \left[F(u)+C\right]_{u=g(x)}\\
-&= \left[\int f(u)\,du\right]_{u=g(x)} \\
-&= \int f(u)\,du.
+&= \left[\int f(u)\,du\right]_{u=g(x)}.
 \end{align*}
 ::::
 
@@ -70,26 +69,26 @@ Let $F$ be an antiderivative of $f$ on $I$, so $F'=f$. Then:
 
 In {prf:ref}`Thm:Integration:SubstitutionIndefiniteIntegral` the indefinite integral on the left in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is expressed in terms of the variable $x$, which means that evaluation of the integral on the left gives a function of $x$.
 
-The indefinite integral on the right in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` must therefore also be expressed in terms of the variable $x$. This is done by substituting back $u=g(x)$ after evaluating the integral on the right.
+However, the indefinite integral on the right in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is expressed in terms of the variable $u$. In order to rewrite this in terms of the variable $x$ we might use the substitution $u=g(x)$ after evaluating the integral on the right.
 
-A more concise notation for writing Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is to write
+A more precise notation for writing Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral` is
 
 $$
 \int f(g(x))g'(x)\,dx=\left[\int f(u)\,du\right]_{u=g(x)}.
 $$
 
-We however will not use this notation in the sequel, and stick to the notation in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral`.
+However, we will not use this notation in the sequel, and stick to the notation in Equation {eq}`Eq:Integration:SubstitutionIndefiniteIntegral`.
 ::::::
 
 ::::::{prf:remark}
 :label: Rm:Integration:SubstitutionDifferential
 If $u=g(x)$, we often use that $du=g'(x)\,dx$.
 
-Furthermore, the method of integration by substitution rests on identifying parts of the integrand as $f(g(\ldots))$ and $g'(\ldots)$. In practice, this means that we look for a part of the integrand $g'(\ldots)$:
+Furthermore, the method of integration by substitution relies on identifying parts of the integrand as $f(g(x))$ and $g'(x)$. In practice, this means that we look for a part of the integrand $g'(x)$:
 
-- That is the derivative of a known function $g(\ldots)$.
+- That is the derivative of a known function $g(x)$.
 - That can be factored out of the integrand.
-- For which $g(\ldots)$, up to a multiplicative constant, is present in the other part $f(g(\ldots))$ of the integrand.
+- For which $g(x)$, up to a multiplicative constant, is present in the other part $f(g(x))$ of the integrand.
 
 ::::::
 
@@ -105,9 +104,34 @@ $$
 \int\cos(x)e^{\sin(x)}\,dx= \int e^{\sin(x)}\,\cos(x)\,dx =\int e^u\,du=e^u+C=e^{\sin(x)}+C.
 $$
 
+{numref}`Fig:Integration:SubstitutionIndefiniteIntegralExample1` shows the graph of the integrand on the left and the antiderivative on the right. We have taken the value of $C=\frac12$ initially. Note that changing the value of $C$ will only shift the graph of the antiderivative vertically, and does not influence the slope of the antiderivative at any point. The slope of the antiderivative at a point $x$ always equals the value of the integrand at that point.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_1
+:name: Fig:Integration:SubstitutionIndefiniteIntegralExample1
+:class: dark-light
+
+The graph on the left shows the integrand $\cos(x)e^{\sin(x)}$ and the graph on the right shows the antiderivative $e^{\sin(x)}+C$ and a part of the tangent line of the antiderivative at the selected point. The value of $C$ can be changed using the slider and is initially set to $C=\frac12$.
+:::
+
+Besides showing the initial integrand and the resulting antiderivative, we can also visualise the steps taken to evaluate the integral, which you can see in {numref}`Fig:Integration:SubstitutionIndefiniteIntegralExample1_steps`. The domain of the integrand $\cos(x)e^{\sin(x)}$ is $(-\infty,\infty)$, which is also the domain of the antiderivative $e^{\sin(x)}+C$. This means that $x$ can take any value in $(-\infty,\infty)$, but because the range of $\sin(x)$ is $[-1,1]$, the variable $u=\sin(x)$ can only take on values in $[-1,1]$. This means that the domain of the integrand after substitution is therefore $[-1,1]$, which is also the domain of the antiderivative after substitution.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_2
+:name: Fig:Integration:SubstitutionIndefiniteIntegralExample1_steps
+:class: dark-light
+
+This figure shows the following stages of the evaluation of the integral $\displaystyle\int\cos(x)e^{\sin(x)}\,dx$: \
+(1) (_initial_) The graph of the initial integrand $\cos(x)e^{\sin(x)}$. \
+(2) The graph of the integrand after substitution. Note the change at the horizontal axis from $x$ to $u$. \
+(3) The graph of the antiderivative after substitution. \
+(4) (_final_) The graph of the antiderivative after substituting back to the original variable $x$. \
+In this case we have chosen to fix the value of $C$ to $\frac12$ for all antiderivatives.
+:::
+
 ::::::
 
-Sometimes we need a constant multiple of the function $g$ of which a derivative $g'$ is present in the integrand. In that case we can often factor out this constant multiple from the integral, which is shown in the next examples.
+Sometimes we need a constant multiple of the function $g$ of which a derivative $g'$ is present in the integrand. In that case we can factor out this constant multiple from the integral, which is shown in the next examples.
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionIndefiniteIntegralExample2
@@ -118,13 +142,13 @@ We recognise $t^2$ as the derivative of $\frac{1}{3}t^3$ while $t^3$ is present 
 To use this, we first rewrite the integral as
 
 $$
-\int t^2\cos(t^3)\,dx=\int\frac{1}{3}\cos(t^3)\cdot 3t^2\,dt.
+\int t^2\cos(t^3)\,dt=\int\frac{1}{3}\cos(t^3)\cdot 3t^2\,dt.
 $$
 
 If we set $u=t^3$, we obtain that $du=3t^2\,dt$. Hence, we find that
 
 \begin{align*}
-\int t^2\cos(t^3)&= \int\frac{1}{3}\cos(t^3)\cdot 3t^2\,dt\\
+\int t^2\cos(t^3)\,dt&= \int\frac{1}{3}\cos(t^3)\cdot 3t^2\,dt\\
 &= \int\frac{1}{3}\cos(u)\,du\\
 &= \frac{1}{3}\sin(u)+C\\
 &= \frac{1}{3}\sin(t^3)+C.
@@ -142,7 +166,7 @@ Inspection of the integrand shows two possibilities.
 
 We recognise $\dfrac{1}{1+x}$ as the derivative of $\ln(1+x)$. However, this function is not present in the integrand.
 
-We also recognise $\dfrac{1}{\sqrt{x}}$ as the derivative of $2\sqrt{x}$ and $\sqrt{x}$ is present in the other part of the integrand.
+We also recognise $\dfrac{1}{\sqrt{x}}$ as the derivative of $2\sqrt{x}$ and $\sqrt{x}$ is present in the other part of the integrand, since $1+x=1+\left(\sqrt{x}\right)^2$.
 
 If we set $u=\sqrt{x}$, we obtain that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $\dfrac{1}{\sqrt{x}}\,dx=2\,du$. Hence, we find that
 
@@ -201,20 +225,26 @@ Now we use the techniques of the previous section to obtain
 
 ::::::
 
-Although we have not made it explicit in the examples so far, in many cases we used, if $u=g(x)$, then also $x=g^{-1}(u)$. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we set $u=\sqrt{x}$, we also used that $x=u^2$. This is not always necessary, but it can be useful in some cases. If we introduce the notation $h(x)=g^{-1}(x)$, then we have $x=h(u)$ and also $dx=h'(u)\,du$. Using this notation, we can directly replace each $x$ in the integrand with $h(u)$ and $dx$ with $h'(u)\,du$.
+Although we have not made it explicit in the examples so far, in many cases we used that, if $u=g(x)$, then also $x=g^{-1}(u)$: for each value of $x$ there should be exactly one value for $u$ and vice versa. For example, in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample3`, when we used $u=\sqrt{x}$, we also used that $x=u^2$, which was allowed because we assume $x>0$.
 
-We summarise this in the next algorithm:
+The function $g$ does not have to be invertible, but if you want to replace an $x$ in the integrand with an expression involving $u$, then $g$ must be invertible.
+
+It is not always necessary to have that $g$ is invertible, as can be seen in {prf:ref}`Ex:Integration:SubstitutionIndefiniteIntegralExample1`, but it can be useful in some cases. If $g$ is invertible, we have the relation $u=g^{-1}(x)$, which implies $dx=(g^{-1})'(u)\,du$. In that case we can use the inverse function $g^{-1}$ to replace $dx$ in the integrand with $(g^{-1})'(u)\,du$.
+
+We summarise the entire process in the next algorithm:
 
 ::::::{prf:algorithm}
 :label: Alg:Integration:SubstitutionIndefiniteIntegral
 
 To evaluate an indefinite integral of the form $\displaystyle\int I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
-1. Select the function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
-2. Set $u=g(x)$ and define $x=h(u)=g^{-1}(u)$.
-3. Compute $dx=h'(u)\,du$,
-4. Substitute $g(x)$ with $u$, $x$ with $h(u)$, and $dx$ with $h'(u)\,du$ in the integral.
-5. Evaluate the resulting indefinite integral using standard methods.
+1. Select a function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
+2. Set $u=g(x)$ and define $x=g^{-1}(u)$ _if $g$ is invertible_.
+3. Compute $dx=(g^{-1})'(u)\,du$, _if $g$ is invertible_, otherwise compute $du={g'(x)}\,dx$.
+4. Substitute $u$ for $g(x)$, $g^{-1}(u)$ for $x$ _if $g$ is invertible_ and substitute either $(g^{-1})'(u)\,du$ or $\frac{1}{g'(x)}\,du$ for $dx$, in the integral.
+   - After the substitution, simplify the integrand as much as possible.
+   - After the simplification, the variable $x$ should not appear in the integrand anymore.
+5. Try to evaluate the resulting indefinite integral using standard methods.
 
 ::::::
 
@@ -225,16 +255,18 @@ We will apply this algorithm in the next example:
 
 Consider $\displaystyle\int\frac{1}{(1+x)\sqrt{x}}\,dx$ for $x>0$ again.
 
-We applied $u=\sqrt{x}$ previously, which implies that $x=h(u)=u^2$ and therefore $dx=2u\,du$. The five steps of {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` then lead to:
+We applied $u=\sqrt{x}$ previously. The function $g(x)=\sqrt{x}$ is invertible on $(0,\infty)$, so we can use the inverse function $g^{-1}(u)=u^2$ to replace $x$ in the integrand with $g^{-1}(u)$ and $dx$ with $(g^{-1})'(u)\,du$.
+
+ The five steps of {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` then lead to:
 
 1. We have $g(x)=\sqrt{x}$.
-2. We set $u=g(x)=\sqrt{x}$ and define $x=h(u)=u^2$.
+2. We set $u=g(x)=\sqrt{x}$ and define $x=g^{-1}(u)=u^2$.
 3. We compute $dx=2u\,du$.
 4. and 5. We substitute in the integral and evaluate:
 
 \begin{align*}
 \int\frac{1}{(1+x)\sqrt{x}}\,dx &= \int\frac{1}{(1+u^2)u}\,2u\,du \\
-&= \int\frac{1}{1+u^2}\,2\,du \\
+&= \int\frac{2}{1+u^2}\,du \\
 &= 2\arctan(u)+C \\
 &= 2\arctan(\sqrt{x})+C.
 \end{align*}
@@ -268,7 +300,7 @@ But this means that we have proved the following theorem:
 
 ::::::{prf:Theorem} Substitution for definite integrals
 :label: Thm:Integration:SubstitutionDefiniteIntegral
-If $g'$ is continuous on $[a,b]$ and $f$ is continuous on the range of $u=g(x)$, then
+If $g'$ is continuous on $[a,b]$ and $f$ is integrable on the range of $u=g(x)$, then
 
 $$
 \int_a^b f(g(x))g'(x)\,dx=\int_{g(a)}^{g(b)} f(u)\,du.
@@ -288,7 +320,8 @@ This also means that when we use the method of substitution for definite integra
 
 Note that the choice $u=g(x)$ leads to new limits of integration: if $x=a$ then $u=g(a)$, and if $x=b$ then $u=g(b)$.
 
-Be very aware that these new limits may be in descending order if $g(a)>g(b)$ eval if $a<b$ originally.
+Be very aware that these new limits may be in descending order if $g(a)>g(b)$ even if $a<b$ originally.
+
 :::
 
 {prf:ref}`Alg:Integration:SubstitutionIndefiniteIntegral` can easily be adapted to definite integrals:
@@ -298,11 +331,14 @@ Be very aware that these new limits may be in descending order if $g(a)>g(b)$ ev
 
 To evaluate a definite integral of the form $\displaystyle\int_a^b I(x)\,dx$ using the method of integration by substitution, follow these steps:
 
-1. Select the $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
-2. Set $u=g(x)$ and define $x=h(u)=g^{-1}(u)$.
-3. Compute $dx=h'(u)\,du$,
-4. Substitute $g(x)$ with $u$, $x$ with $h(u)$, $dx$ with $h'(u)\,du$, $a$ with $g(a)$, and $b$ with $g(b)$ in the integral.
-5. Evaluate the resulting definite integral using standard methods.
+1. Select a function $g'(x)$ in the integrand $I(x)$ for which we know an antiderivative $g(x)$.
+2. Set $u=g(x)$ and define $x=g^{-1}(u)$ _if $g$ is invertible_.
+3. Compute $dx=(g^{-1})'(u)\,du$, _if $g$ is invertible_, otherwise compute $du={g'(x)}\,dx$.
+4. Substitute $u$ for $g(x)$, $g^{-1}(u)$ for $x$ _if $g$ is invertible_ and substitute either $(g^{-1})'(u)\,du$ or $\frac{1}{g'(x)}\,du$ for $dx$, in the integral.
+   - After the substitution, simplify the integrand as much as possible.
+   - After the simplification, the variable $x$ should not appear in the integrand anymore.
+5. Replace the lower limit $a$ by $g(a)$ and the upper limit $b$ by $g(b)$.
+6. Try to evaluate the resulting definite integral using standard methods.
 
 ::::::
 
@@ -319,25 +355,21 @@ $$
 \int_1^e\frac{\ln(x)}{x}\,dx=\int_0^1u\,du=\frac{1}{2}u^2\bigg|_0^1=\frac{1}{2}.
 $$
 
+{numref}`Fig:Integration:SubstitutionDefiniteIntegralExample1` illustrates the original integral on the bottom-left and the new integral on the bottom-right. Note that the area under the curve of the original integrand is equal to the area under the curve of the new integrand, which is exactly what we have proved in {prf:ref}`Thm:Integration:SubstitutionDefiniteIntegral`. The graph in the top shows the relation between the variable $x$ and the variable $u$.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_3
+:name: Fig:Integration:SubstitutionDefiniteIntegralExample1
+:class: dark-light
+
+A visualisation of the evaluation of the integral $\displaystyle\int_1^e\frac{\ln(x)}{x}\,dx$ using the method of substitution. You can drag the pulsing points on the graphs to change the limits of integration of the original integral and see how this influences the new integral.
+:::
+
 ::::::
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralExample2
-Let us evaluate $\displaystyle\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
-
-We recognise $\dfrac{1}{1-x^2}$ as the derivative of $\arcsin(x)$, being the other part of the integrand.
-
-If we set $u=\arcsin(x)$, then we have $du=\dfrac{1}{\sqrt{1-x^2}}\,dx$. Furthermore, we have if $x=0$ then $u=\arcsin(0)=0$, and if $x=\frac{1}{2}$ then $u=\arcsin(\frac{1}{2})=\frac{1}{6}\pi$. Hence, we find that
-
-$$
-\int_0^{\frac{1}{2}}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx=\int_0^{\frac{1}{6}\pi}u\,du=\frac{1}{2}u^2\bigg|_0^{\frac{1}{6}\pi}=\frac{1}{2}\cdot\frac{1}{36}\pi^2=\frac{1}{72}\pi^2.
-$$
-
-::::::
-
-::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralExample3
-We are going to calculate $\displaystyle\int_{\frac{1}{4}}^1\frac{e^{\frac{1}{\sqrt{x}}}}{x\sqrt{x}}\,dx$.
+Consider $\displaystyle\int_{\frac{1}{4}}^1\frac{e^{\frac{1}{\sqrt{x}}}}{x\sqrt{x}}\,dx$.
 
 If we set $u=\dfrac{1}{\sqrt{x}}$, then we have $du=-\dfrac{1}{2x\sqrt{x}}\,dx$ or $\dfrac{1}{x\sqrt{x}}\,dx=-2\,du$. Furthermore, we have if $x=\frac{1}{4}$ then $u=\frac{1}{\sqrt{\frac{1}{4}}}=\frac{1}{\frac{1}{2}}=2$, and if $x=1$ then $u=\frac{1}{\sqrt{1}}=1$. Now we find that
 
@@ -350,11 +382,15 @@ If we set $u=\dfrac{1}{\sqrt{x}}$, then we have $du=-\dfrac{1}{2x\sqrt{x}}\,dx$ 
 
 ::::::
 
-In the section on definite integrals, in {prf:ref}`Th:Integration:DefinitePropertiesArea` we have already seen the following intuitively result, which can now be proved using a substitution:
+:::{warning}
+We remark that a sign mistake is easily made in this example. Note that the integrand is positive on $[\frac{1}{4},1]$ and $\frac{1}{4}<1$, so the result should be positive.
+:::
+
+In {prf:ref}`Thm:Integration:DefinitePropertiesArea` we have already seen the following intuitive result, which can now be proved using a substitution:
 
 ::::::{prf:Theorem}
 :label: Thm:Integration:OddEven
-Let $f$ be a continuous function defined on $[-a,a]$. Then we have
+Let $f$ be a continuous function defined on $(-a,a)$. Then we have
 
 (a) If $f$ is *odd*, so $f(-x)=-f(x)$ for all $x$, then $\displaystyle\int_{-a}^af(x)\,dx=0$.
 
@@ -383,93 +419,444 @@ $$
 
 ::::::
 
-## Exercises
+## Trigonometric substitutions
 
-::::{exercise}
-:label: Exc:Integration:SubstitutionIndefiniteIntegralRationalFunctions
-Prove that for $\alpha\in\mathbb{R}\setminus\{0\}$ we have
+For certain integrals involving square roots of the form $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$ or $\sqrt{x^2-a^2}$ we might use a **trigonometric substitution** in order to get rid of the square root. This will lead to integrals involving trigonometric functions, which will be treated in {numref}`Sec:Integration:TrigonometricFunctions`. However, here we will show how the method of trigonometric substitution works.
+
+Note that $1-\sin^2(x)=\cos^2(x)$. So if we set $x=a\sin(t)$ in $\sqrt{a^2-x^2}$ we obtain 
 
 $$
-\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C
+\sqrt{a^2-a^2\sin^2(t)}=\sqrt{a^2\cos^2(t)}=|a\cos(t)|.
+$$
+
+Combined with $dx=a\cos(t)\,dt$ this leads to an integral involving trigonometric functions.
+
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1
+We want to determine $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$.
+
+Let $x=\sin(t)$, then we have $dx=\cos(t)\,dt$. Furthermore, if $x=-1$ then $t=-\frac{1}{2}\pi$ and if $x=1$ then $t=\frac{1}{2}\pi$. Hence we find that
+
+$$
+\int_{-1}^1\sqrt{1-x^2}\,dx=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}|\cos(t)|\cos(t)\,dt.
+$$
+
+Note that $\cos(t)\geq0$ for $-\frac{1}{2}\pi\leq t\leq\frac{1}{2}\pi$. Using $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ we then obtain
+
+\begin{align*}
+\int_{-1}^1\sqrt{1-x^2}\,dx&=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1+\cos(2t))\,dt\\
+&=\left[\frac{1}{2}t+\frac{1}{4}\sin(2t)\right]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{2}\pi.
+\end{align*}
+
+{numref}`Fig:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1` illustrates the original integral on the bottom-left and the new integral on the bottom-right.
+
+:::{applet}
+:url: calculus/integration_by_substitution/visualisation_4
+:name: Fig:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1
+:class: dark-light
+
+A visualisation of the evaluation of the integral $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$ using the method of substitution. You can drag the pulsing points on the graphs to change the limits of integration of the original integral and see how this influences the new integral.
+:::
+
+::::::
+
+:::{prf:remark}
+:label: Remark:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1Remark
+
+The integral of {prf:ref}`Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1` denotes the area of the upper half of the unit circle, which you can confirm by looking at {numref}`Fig:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1`.
+:::
+
+Instead of using the substitution $x=a\sin(t)$ we may also use the substitution $x=a\cos(t)$, which leads to $dx=-a\sin(t)\,dt$ and 
+
+$$
+\sqrt{a^2-x^2}=\sqrt{a^2-a^2\cos^2(t)}=\sqrt{a^2\sin^2(t)}=|a\sin(t)|.
+$$ 
+
+For $\sqrt{a^2+x^2}$ we use the fact that for $x=a\tan(t)$ we have
+
+$$
+\sqrt{a^2+x^2}=\sqrt{a^2(1+\tan^2(x))}=\sqrt{\frac{a^2}{\cos^2(t)}}=\left|\frac{a}{\cos(t)}\right|.
+$$
+
+Combined with $dx=\dfrac{a}{\cos^2(t)}\,dt$ this will also give rise to an integral involving trigonometric functions.
+
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample2
+We evaluate $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx$.
+
+Let $x=\tan(t)$, then we have $dx=\dfrac{dt}{\cos^2(t)}$. Furthermore, if $x=0$ then $t=0$ and if $x=1$ then $t=\frac{1}{4}\pi$. Hence we find that
+
+$$
+\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\int_0^{\frac{1}{4}\pi}|\cos(t)|\frac{1}{\cos^2(t)}\,dt.
+$$
+
+Note that $\cos(t)\geq0$ for $0\leq t\leq\frac{1}{4}\pi$. Hence we have
+
+$$
+\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\int_0^{\frac{1}{4}\pi}\frac{dt}{\cos(t)}.
+$$
+
+In 1668 the Scottish mathematician [James Gregory (1638-1675)](https://en.wikipedia.org/wiki/James_Gregory_(mathematician)) discovered that[^Gregory]
+
+[^Gregory]: See {prf:ref}`Thm:Integration:GregoryIntegralCos` below.
+
+$$
+\int\frac{dt}{\cos(t)}=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
+$$
+
+We conclude that
+
+$$
+\int_0^{\frac{1}{4}\pi}\frac{1}{\cos(t)}\,dt=\left[\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|\right]_0^{\frac{1}{4}\pi}=\ln(1+\sqrt{2}).
+$$
+
+and therefore $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\ln(1+\sqrt{2})$.
+::::::
+
+:::{prf:theorem}
+:label: Thm:Integration:GregoryIntegralCos
+
+The substitution $u=\tan(t)+\dfrac{1}{\cos(t)}$ leads to 
+
+$$
+\int\frac{dt}{\cos(t)}=\int\frac{du}{u}=\ln|u|+C=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
+$$
+
+:::
+
+:::{admonition} Proof of {prf:ref}`Thm:Integration:GregoryIntegralCos`
+:class: tudproof, dropdown
+
+Multiplying both the numerator and the denominator of the integrand by 
+
+$$
+\tan(t)+\frac{1}{\cos(t)}
+$$
+
+we obtain
+
+$$
+\int\frac{dt}{\cos(t)}=\int\frac{1}{\cos(t)}\cdot\frac{\tan(t)+\dfrac{1}{\cos(t)}}{\tan(t)+\dfrac{1}{\cos(t)}}\,dt=\int\frac{\dfrac{\tan(t)}{\cos(t)}+\dfrac{1}{\cos^2(t)}}{\tan(t)+\dfrac{1}{\cos(t)}}\,dt.
+$$
+
+Now we set $u=\tan(t)+\dfrac{1}{\cos(t)}$ which implies that
+
+$$
+\frac{du}{dt}=\frac{1}{\cos^2(t)}-\frac{1}{\cos^2(t)}\cdot(-\sin(t))=\frac{1}{\cos^2(t)}+\frac{\tan(t)}{\cos(t)}.
+$$
+
+Hence we have $du=\left(\dfrac{\tan(t)}{\cos(t)}+\dfrac{1}{\cos^2(t)}\right)\,dt$. Thus
+
+$$
+\int\frac{dt}{\cos(t)}=\int\frac{du}{u}=\ln|u|+C=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
+$$
+
+Note that this can also be written as:
+
+$$
+\int\frac{dt}{\cos(t)}=\ln\left|\frac{1+\sin(t)}{\cos(t)}\right|+C=-\ln\left|\frac{1-\sin(t)}{\cos(t)}\right|+C
+$$
+
+:::
+
+In the case of $\sqrt{x^2-a^2}$ we use the substitution $x=\dfrac{a}{\cos(t)}$. Then we have $dx=\dfrac{a\sin(t)}{\cos^2(t)}$ and
+
+$$
+\sqrt{x^2-a^2}=\sqrt{\frac{a^2}{\cos^2(t)}-a^2}=\sqrt{\frac{a^2-a^2\cos^2(t)}{\cos^2(t)}}=\sqrt{\frac{a^2\sin^2(t)}{\cos^2(t)}}=|a\tan(t)|.
+$$
+
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample3
+We evaluate $\displaystyle\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx$.
+
+Let $x=\dfrac{1}{\cos(t)}$, then we have $dx=\dfrac{\sin(t)}{\cos^2(t)}\,dt$. Furthermore, if $x=1$ then $t=0$ and if $x=\sqrt{2}$ then $t=\frac{1}{4}\pi$. Hence we find that
+
+\begin{align*}
+\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx&=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt\\
+&=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt.
+\end{align*}
+
+Now we use $\cos^2(t)=1-\sin^2(t)$ and the substitution $u=\sin(t)$ to find that
+
+$$
+\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt=\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du.
+$$
+
+Then we use the partial fraction decomposition (see {numref}`sec:PartialFractionDecomposition`)
+
+$$
+\frac{u^2}{(1-u^2)^2}=\frac{1}{4}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right),
+$$
+
+to find that
+
+\begin{align*}
+&\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du\\
+&=\frac{1}{4}\int_0^{\frac{1}{2}\sqrt{2}}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,dt\\
+&=\frac{1}{4}\left[\ln|1-u|+\frac{1}{1-u}-\ln|1+u|-\frac{1}{1+u}\right]_0^{\frac{1}{2}\sqrt{2}}\\
+&=\frac{1}{4}\left(\ln(1-\tfrac{1}{2}\sqrt{2})+\frac{1}{1-\frac{1}{2}\sqrt{2}}-\ln(1+\tfrac{1}{2}\sqrt{2})-\frac{1}{1+\frac{1}{2}\sqrt{2}}\right)\\
+&=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}.
+\end{align*}
+
+We conclude that $\displaystyle\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}$.
+::::::
+
+:::{prf:example} Serret's integral
+:label: Ex:Integration:SubstitutionTrigSerretsIntegral
+
+Consider Serret's integral $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$, which is named after the French mathematician [Joseph Alfred Serret (1819-1885)](https://en.wikipedia.org/wiki/Joseph-Alfred_Serret).
+
+One way to evaluate the integral is by using the substitution $x=\tan(\theta)$:
+
+\begin{align*}
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\ln\left(1+\tan(\theta)\right)\,d\theta\\
+&=\int_0^{\frac{1}{4}\pi}\ln\left(\frac{\cos(\theta)+\sin(\theta)}{\cos(\theta)}\right)\,d\theta\\
+&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos(\theta)+\sin(\theta)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta.
+\end{align*}
+Now we use $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$ (see {numref}`Grasple:134398`) to obtain
+
+\begin{align*}
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta\\
+&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\right)+\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta.
+\end{align*}
+Finally, the substitution $t=\frac{1}{4}\pi-\theta$ or $\theta=\frac{1}{4}\pi-t$ shows that
+
+$$
+\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=-\int_{\frac{1}{4}\pi}^0\ln\left(\cos(t)\right)\,dt=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt,
+$$
+
+which implies that
+
+$$
+\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{4}\pi\ln\left(\sqrt{2}\right)=\frac{1}{8}\pi\ln(2).
+$$
+
+In this evaluation we obtained that
+
+\begin{align*}
+&\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt\\
+&{}\quad\Longrightarrow\quad\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta=0.
+\end{align*}
+The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later in {numref}`Sec:CatalansConstant`. 
+
+:::
+
+In {numref}`Sec:Integration:TrigonometricFunctions` we deal with the integration of trigonometric functions in more details. There we will also cover the so-called *tangent half-angle substitution*. See {numref}`Sec:Integration:HalfAngle`.
+
+
+## Using symmetry
+
+Using the substitution $x=a+b-t$ or $t=a+b-x$ we obtain that a definite integral of the form $I=\displaystyle\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx$ can be evaluated as follows. First apply the substitution:
+
+\begin{align*}
+I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx&=-\int_b^a\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt\\
+&=\int_a^b\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt.
+\end{align*}
+This implies that, using a change of variable back to $x$ in the last integral,
+
+$$
+I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=\int_a^b\frac{f(a+b-x)}{f(a+b-x)+f(x)}\,dx.
+$$
+
+Hence we have
+
+$$
+2I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx+\int_a^b\frac{f(a+b-x)}{f(a+b-x)+f(x)}\,dx=\int_a^b1\,dx=b-a,
+$$
+
+which implies that
+
+$$
+\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=\frac{b-a}{2}.
+$$
+
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionSymmetry1
+For $a=0$, $b=1$ and $f(x)=\sqrt{x}$ we obtain
+
+$$
+\int_0^1\frac{\sqrt{x}}{\sqrt{x}+\sqrt{1-x}}\,dx=\frac{1-0}{2}=\frac{1}{2}.
+$$
+
+::::::
+
+In {numref}`Sec:Integration:TrigonometricFunctions` we will see more examples using this kind of symmetry.
+
+## Grasple Exercises
+
+### Indefinite integrals
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bb8a5684-e756-4384-ac03-cd548afa4fba?id=133562
+:label: Grasple:133562
+:dropdown:
+:description: Evaluate the integrals $\displaystyle\int\frac{1}{x^2+\alpha^2}\,dx$ and $\displaystyle\int\frac{x}{x^2+\alpha^2}\,dx$.
+
+::::
+
+:::{note}
+So we have
+
+$$
+\int\frac{1}{x^2+\alpha^2}\,dx=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C,\quad\alpha\in\mathbb{R}\setminus\{0\}
 $$
 
 and
 
 $$
-\int\frac{x}{x^2+\alpha^2}\,dx=\frac{1}{2}\ln(x^2+\alpha^2)+C.
+\int\frac{x}{x^2+\alpha^2}\,dx=\frac{1}{2}\ln(x^2+\alpha^2)+C,\quad\alpha\in\mathbb{R}.
 $$
 
 These formulas will be used frequently in {numref}`Sec:Integration:RationalFunctions` on integration of rational functions.
-::::
-
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionIndefiniteIntegralRationalFunctions`
-:class: solution, dropdown
-Using the substitution $\dfrac{x}{\alpha}=t$ or $x=\alpha t$, which implies that $dx=\alpha\,dt$, we find that
-
-\begin{align*}
-\int\frac{1}{x^2+\alpha^2}\,dx&=\frac{1}{\alpha^2}\int\frac{1}{\left(\frac{x}{\alpha}\right)^2+1}\,dx\\
-&=\frac{1}{\alpha^2}\int\frac{1}{t^2+1}\alpha\,dt\\
-&=\frac{1}{\alpha}\arctan(t)+C\\
-&=\frac{1}{\alpha}\arctan\left(\frac{x}{\alpha}\right)+C
-\end{align*}
-
-and
-
-\begin{align*}
-\int\frac{x}{x^2+\alpha^2}\,dx&=\frac{1}{\alpha^2}\int\frac{x}{\left(\frac{x}{\alpha}\right)^2+1}\,dx\\
-&=\frac{1}{\alpha^2}\int\frac{\alpha t}{t^2+1}\alpha\,dt=\int\frac{t}{t^2+1}\,dt\\
-&=\frac{1}{2}\ln(t^2+1)+C\\
-&=\frac{1}{2}\ln\left(\left(\frac{x}{\alpha}\right)^2+1\right)+C\\
-&=\frac{1}{2}\ln\left(\frac{x^2+\alpha^2}{\alpha^2}\right)+C\\
-&=\frac{1}{2}\ln(x^2+\alpha^2)-\frac{1}{2}\ln(\alpha^2)+C.
-\end{align*}
-
-Note that $-\frac{1}{2}\ln(\alpha^2)$ is a constant. So $-\frac{1}{2}\ln(\alpha^2)+C$ can be replaced by another arbitrary constant of integration.
-
-Note that $\frac{1}{2}\ln(x^2+\alpha^2)$ can also be written as $\ln\sqrt{x^2+\alpha^2}$.
-
-Note that the second formula also holds for $\alpha=0$.
 :::
 
-::::{exercise}
-:label: Exc:Integration:SubstitutionCos
-Consider the integral $\displaystyle\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx$.
-
-(a) Use the substitution $x=\dfrac{1}{t}$ to show that
-
-$$
-\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\int_{\frac{1}{2}}^2\frac{1}{t^2}\cos\left(t-\frac{1}{t}\right)\,dt.
-$$
-
-(b) Add both forms of the integral and use the substitution $u=x-\dfrac{1}{x}$ to evaluate the integral.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b688b29d-a0a1-4bf5-b412-73acec89cf18?id=75957
+:label: Grasple:75957
+:dropdown:
+:description: Evaluate an integral of the form $\displaystyle\int\frac{1}{x^2+ax+b}\,dx$.
 
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Integration:SubstitutionCos`
-:class: solution, dropdown
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8aca6ab2-3f03-4785-910f-a1e617f21843?id=64878
+:label: Grasple:64878
+:dropdown:
+:description: Evaluate an integral of the form $\displaystyle\int\frac{1}{\sqrt{\alpha-x^2}}\,dx$.
 
-(a) Using the substitution $x=\dfrac{1}{t}$ we obtain:
+::::
 
-$$
-\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\int_2^{\frac{1}{2}}\cos\left(\frac{1}{t}-t\right)\left(-\frac{1}{t^2}\right)\,dt
-=\int_{\frac{1}{2}}^2\frac{1}{t^2}\cos\left(t-\frac{1}{t}\right)\,dt.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c3dc9c7e-50b3-4db7-a274-93f8be2bb7ca?id=64599
+:label: Grasple:64599
+:dropdown:
+:description: Evaluate the indefinite integral.
 
-(b) This implies that
+::::
 
-$$
-2\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\int_{\frac{1}{2}}^2\left(1+\frac{1}{x^2}\right)\cos\left(x-\frac{1}{x}\right)\,dx.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/584e6a26-ce71-4686-8777-d77b2db3e215?id=64660
+:label: Grasple:64660
+:dropdown:
+:description: Evaluate the indefinite integral $\displaystyle\int\frac{\cos(\sqrt{x})}{\sqrt{x}}\,dx$.
 
-Now we apply the substitution $u=x-\dfrac{1}{x}$ and therefore $du=\left(1+\dfrac{1}{x^2}\right)\,dx$:
+::::
 
-$$
-\int_{\frac{1}{2}}^2\cos\left(x-\frac{1}{x}\right)\,dx=\frac{1}{2}\int_{-\frac{3}{2}}^{\frac{3}{2}}\cos(u)\,du
-=\frac{1}{2}\sin(u)\bigg|_{-\frac{3}{2}}^{\frac{3}{2}}=\sin\left(\tfrac{3}{2}\right).
-$$
+### Definite integrals
 
-:::
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/248020be-9e36-4d8c-b28f-c8bb059debb5?id=74572
+:label: Grasple:74572
+:dropdown:
+:description: Apply the substitution $u=e^x$ to the definite integral.
 
-## Grasple exercises
+::::
 
-64141, 64618, 64879, 75957, 64878, 64599, 64834, 65945, 64831, 64653, 64660, 64601, 64825, 64652, 64835, 64850, 64648, 64830, 64826, 64832, 64827, 64881, 75951, 64877
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7a17bcbf-2012-4ad3-a6e6-8991a474dc07?id=64601
+:label: Grasple:64601
+:dropdown:
+:description: Evaluate the definite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5f883700-0be1-476c-ba65-425922459c55?id=64830
+:label: Grasple:64830
+:dropdown:
+:description: Evaluate the definite integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/50d4a644-16d5-4437-98c6-861cdf679006?id=64617
+:label: Grasple:64617
+:dropdown:
+:description: Given $\displaystyle\int_0^{\alpha^2}f(x)\,dx$, what is $\displaystyle\int_0^{\alpha}xf(x^2)\,dx$?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6e6de53b-a27c-497c-8b43-26421a6323e2?id=133564
+:label: Grasple:133564
+:dropdown:
+:description: Evaluate a definite integral of the form $\displaystyle\int_0^{\alpha}\frac{\arcsin(x)}{\sqrt{1-x^2}}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4fdebb7b-23ca-4f23-9351-3235fc1faaa6?id=133565
+:label: Grasple:133565
+:dropdown:
+:description: Evaluate a definite integral of the form $\displaystyle\int_0^{\alpha}\frac{\arccos(x)}{\sqrt{1-x^2}}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/dd6c1502-6c41-4245-89fd-50e011f658f3?id=133566
+:label: Grasple:133566
+:dropdown:
+:description: Evaluate a definite integral of the form $\displaystyle\int_0^{\alpha}\frac{\arctan(x)}{1+x^2}\,dx$.
+
+::::
+
+### Trigonometric substitutions
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d2e9cd56-c72d-4776-ae6b-b57c8d1ea4bd?id=134395
+:label: Grasple:134395
+:dropdown:
+:description: Evaluate $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$ using the substitution $x=\cos(t)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0ec39df5-a305-4adb-8533-51f178b74dc0?id=134396
+:label: Grasple:134396
+:dropdown:
+:description: Evaluate the integral $\displaystyle\int_{-1}^1x^2\sqrt{1-x^2}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f9e01e56-1e89-4008-8138-952afd3c3517?id=134397
+:label: Grasple:134397
+:dropdown:
+:description: Evaluate $\displaystyle\int_0^1\frac{dx}{1+x^2}$ using the substitution $x=\tan(t)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3eebeffc-0534-4c6e-b0f7-5d6b953bc951?id=134398
+:label: Grasple:134398
+:dropdown:
+:description: Show that $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$.
+
+::::
+
+### Using symmetry
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/567173d5-b400-4feb-a8d5-fd1647172348?id=132736
+:label: Grasple:132736
+:dropdown:
+:description: Evaluate the integral.
+
+::::

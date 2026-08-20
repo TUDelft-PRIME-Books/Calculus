@@ -1,3 +1,5 @@
+(Section:LineInt)=
+
 # Line integrals
 
 In this section we cover:

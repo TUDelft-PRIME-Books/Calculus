@@ -1,3 +1,4 @@
+(Sec:IterativeMethodsForVariousProblems)=
 # Iterative methods for various problems
 
 In this section we cover:

@@ -26,11 +26,14 @@ sphinx:
   local_extensions:
     text_replacer: _ext/
     check_captions: _ext/
-    # image_checker: _ext/
+    image_checker: _ext/
     numref_section: _ext/
     math_punctuation: _ext/
   config:
+    patch_config:
+      disabled-patches: ["hash"]
     # prime_applets_base_url: "http://localhost:5173/applet/"
+    # prime_applets_base_url: "https://deploy-preview-496--openla-preview.netlify.app/applet/"
     sticky_margin:
       trigger: partial
     tippy_skip_urls:
@@ -64,17 +67,16 @@ sphinx:
       date:
         substitute_missing: true
     sphinx_indexed_defs_indexed_nodes: ['strong']
+    sphinx_indexed_defs_index_theorems_terms: true
     tud_change_titlesize: true
     new_tab_link_show_external_link_icon: true
     visualized_auto_cluster: true
     numfig_secnum_depth: 2
     text_replacements:
       '# Admonitions': '# General blocks'
-      '# Proofs': "# Theorems, Definitions and Examples"
       '# Custom components': "# Proofs and Solutions"
       '# Syntax Guide': "# Exercises"
       '# Sphinx extension: Grasple': "# Grasple exercises"
-      '# Cartesian form of complex numbers': "# Complex numbers"
       '{numref}`Chapter %s <Chapter:Determinants>`': "{numref}`Section %s <Sec:DetGeometric>`"
       '# Determinants as areas or volumes': "# Determinants"
       'in {numref}`Subsection %s <Subsec:MatrixInv:DefInverse>` we saw': "in [Section 3.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter3/MatrixInverse.html) we will see"
@@ -101,6 +103,8 @@ sphinx:
           "cp": ["\\times "]
           "erf": "\\operatorname{erf}"
           dropsign: ["\\llap{\\lower5pt{#1}\\kern4pt}", 1]
+          uuline: ["\\underline{\\underline{#1}}", 1]
+          ooline: ["\\overline{\\overline{#1}}", 1]
     inverter_all: false
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js # Required for live code: https://teachbooks.io/manual/features/live_code.html

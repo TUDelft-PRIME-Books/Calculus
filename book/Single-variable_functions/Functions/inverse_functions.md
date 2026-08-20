@@ -44,7 +44,7 @@ In order for any function to have an inverse function, it needs to be onto. Howe
 
 
 
-::::::{prf:definition} Inverse function
+::::::{prf:definition} 
 :label: Def:Inverse:Inverse
 
 Let $f$ be an onto function with domain $D$ and range $R$. An onto function $g$ with domain $R$ and range $D$ is called the **inverse function** of $f$ if for all $x$ in $D$ and $y$ in $R$ we have $f(x)=y$ precisely when $g(y)=x$. If the inverse function exists, we denote it by $f^{-1}$. A function which has an inverse function is called **invertible**.
@@ -88,7 +88,7 @@ This means that the function $g(y)=\frac{y-5}{2}$ is the inverse of $f$. Indeed,
 
 We can also nicely visualise the graph of an inverse function by manipulating the graph of the original function. Indeed, if $f$ has an inverse function $f^{-1}$, then $(x,y)$ is on the graph of $f$ precisely when $f(x)=y$. By definition of the inverse function, for such a point $(x,y)$ we must have $f^{-1}(y)=x$. This means that the point $(y,x)$ is on the graph of $f^{-1}$. This also works the other way around, so $(x,y)$ is on the graph of $f$ precisely when $(y,x)$ is on the graph of $f^{-1}$. As such, we find the graph of $f^{-1}$ by reflecting the graph of $f$ along the line $y=x$ (since this reflection maps a point $(x,y)$ to $(y,x)$). With that, we have shown the following result.
 
-::::::{prf:theorem} Graph of inverse function
+::::::{prf:theorem} 
 :label: Thm:Inverse:Graphinverse
 
 If a single-variable function $f$ has an inverse function $f^{-1}$, then the graph of $f^{-1}$ can be found by reflecting the graph of $f$ along the line $y=x$.
@@ -333,7 +333,7 @@ $$
  x=\frac{4\pm\sqrt{(-4)^2-4\cdot1\cdot(-y)}}{2\cdot 1}=2\pm\sqrt{4+y}
 $$
 
-Now we wonder whether we should have $x=2+\sqrt{4+y}$ or $x=2-\sqrt{4+y}$. For this, we use that $f$ is only defined for $x\leq 2$, so our choice must ensure that $x\leq 2$. Since a square root is always nonnegative, we must choose $x=2-\sqrt{4+y}$. Now we can interchange the roles of $x$ and $y$, so $y=2-\sqrt{4+x}$, and we find that $f^{-1}(x)=2-\sqrt{4+x}$. 
+Now we wonder whether we should have $x=2+\sqrt{4+y}$ or $x=2-\sqrt{4+y}$. For this, we use that $f$ is only defined for $x\leq 2$, so our choice must ensure that $x\leq 2$. Since a square root is always non-negative, we must choose $x=2-\sqrt{4+y}$. Now we can interchange the roles of $x$ and $y$, so $y=2-\sqrt{4+x}$, and we find that $f^{-1}(x)=2-\sqrt{4+x}$. 
 
 In order to check that our answer is correct, we first note that the domain of $2-\sqrt{4+x}$ is the interval $[-4,\infty)$, since $\sqrt{4+x}$ is only defined when $4+x\geq 0$, i.e. when $x\geq -4$. This interval is also equal to the range of $f$, since we already noticed that the graph of $f$ is the left half of the parabola $y=x^2-4x$. The lowest value of $y$ on this parabola is at $x=2$, where $y=2^2-4\cdot2=-4$. So indeed, the range of $f$ is also equal to $[-4,\infty)$. Moreover, the cancelling equations hold: for $x\leq 2$ we have
 
@@ -432,7 +432,7 @@ The graph of the function $f(x)=\dfrac{-1}{x}$ on $(0,\infty)$, its reflection a
 The graph of the function $f(x)=1$, its reflection across the line $x=y$, and the line $x=y$.
 :::
 [x] $f(x)=\sqrt{1-x^2}$ with domain $[0,1]$.
-> The equation $y=\sqrt{1-x^2}$ gives $y^2=1-x^2$, which means $x=\pm\sqrt{1-y^2}$. Since the domain of the function in $[0,1]$, we know that any input $x$ is nonnegative, so we need the positive square root. So for $x$ in the domain of $f$ we have $y=\sqrt{1-x^2}$ precisely when $x=\sqrt{1-y^2}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\sqrt{1-x^2}$. In addition, the range of the original function $f$ is $[0,1]$. So $f$ is its own inverse function.
+> The equation $y=\sqrt{1-x^2}$ gives $y^2=1-x^2$, which means $x=\pm\sqrt{1-y^2}$. Since the domain of the function in $[0,1]$, we know that any input $x$ is non-negative, so we need the positive square root. So for $x$ in the domain of $f$ we have $y=\sqrt{1-x^2}$ precisely when $x=\sqrt{1-y^2}$. This means that this function is invertible and the inverse function is $f^{-1}(x)=\sqrt{1-x^2}$. In addition, the range of the original function $f$ is $[0,1]$. So $f$ is its own inverse function.
 :::{applet}
 :url: calculus/inverse_functions/polling_question_F
 :name: Fig:Inverse:Selfinverse:F
@@ -468,7 +468,7 @@ Consider the function $h(x)=\sqrt{x}$ with domain $[0,\infty)$ and codomain $\ma
 
 ## Logarithms
 
-In {numref}`Section:FunctionsIntro` we considered functions of the form $f(x)=b^x$ for $b\geq 0$. In {prf:ref}`Thm:PropertiesFunctions:Expnondecreasenonincrease` we saw that such a function is strictly decreasing for $0<b<1$, while it is strictly increasing for $b>1$. From {prf:ref}`Thm:Inverse:MonotonicOnetoone` we find that for these values of $b$ the function $f(x)=b^x$ is invertible.
+In {numref}`Section:FunctionsIntro` we considered functions of the form $f(x)=b^x$ for $b\geq 0$. In {prf:ref}`Thm:PropertiesFunctions:Expnon-decreasenon-increase` we saw that such a function is strictly decreasing for $0<b<1$, while it is strictly increasing for $b>1$. From {prf:ref}`Thm:Inverse:MonotonicOnetoone` we find that for these values of $b$ the function $f(x)=b^x$ is invertible.
 
 ::::::{prf:definition}
 :label: Thm:Inverse:Logarithm
@@ -980,7 +980,7 @@ $$
  \cos(\arcsin(x))^2=\cos(y)^2=1-\sin(y)^2=1-x^2.
 $$
 
-Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is nonnegative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$, see {numref}`Fig:Inverse:Simplify3`, we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
+Here we used that $\sin(y)=x$. As such, we must have $\cos(\arcsin(x))=\pm\sqrt{1-x^2}$. In order to determine whether we need the positive or the negative square root, we use the other piece of information: we know that $-\frac{\pi}{2}\leq y\leq \frac{\pi}{2}$. Since the cosine is non-negative on the interval $\left[-\frac{\pi}{2},\frac{\pi}{2}\right]$, see {numref}`Fig:Inverse:Simplify3`, we must have $\cos(y)\geq 0$. As such, $\cos(\arcsin(x))=\cos(y)\geq0$, so $\cos(\arcsin(x))$ must be the positive root. We find that $\cos(\arcsin(x))=\sqrt{1-x^2}$, which is indeed an expression that does not contain any (inverse) trigonometric functions. 
 
 :::{applet}
 :url: calculus/inverse_functions/graph_of_cosine_function_with_focus
@@ -1082,21 +1082,14 @@ The cosine function where the solid part is the function on the interval $\left[
 
 ::::
 
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/f23f8188-d408-47c4-88f2-4b1067dfee4f?id=70822
-:label: Grasple:70822
-:dropdown:
-:description: Maximal domain of a function with a logarithm.
 
-::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/52d666c5-d2f8-492a-9d7f-d8ba41cecd82?id=63034
 :label: Grasple:63034
 :dropdown:
-:description: Determining whether a function featuring a logarithm is even and/or odd.
+:description: Determining whether a function featuring a logarithm is even and/or odd and finding its domain and range.
 
 ::::
 
@@ -1124,6 +1117,15 @@ The cosine function where the solid part is the function on the interval $\left[
 :label: Grasple:130649
 :dropdown:
 :description: Writing an expression as a single logarithm.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/72ce01cd-b1ef-47d2-811e-4b9a63861e80?id=63527
+:label: Grasple:63527
+:dropdown:
+:description: Simplifying expressions with hyperbolic functions.
 
 ::::
 
@@ -1242,6 +1244,15 @@ The cosine function where the solid part is the function on the interval $\left[
 :label: Grasple:130665
 :dropdown:
 :description: Finding maximal domain + inverse of logarithm composed with logarithm.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/cdff8a1d-74be-4a1d-a246-f8fcec52d29e?id=73780
+:label: Grasple:73780
+:dropdown:
+:description: Finding inverse of hyperbolic function.
 
 ::::
 
@@ -1424,6 +1435,15 @@ The cosine function where the solid part is the function on the interval $\left[
 :label: Grasple:70735
 :dropdown:
 :description: Simplify $\cos(\arctan(x)+\arcsin(x))$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a69d1a5a-7051-4e50-a7e3-2b33704ceb78?id=134779
+:label: Grasple:134779
+:dropdown:
+:description: A sum of three arctangents.
 
 ::::
 

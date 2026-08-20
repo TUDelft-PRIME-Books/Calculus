@@ -14,9 +14,9 @@ A cauliflower in a refrigerator.
 ::::
 :::::
 
-Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling (see {numref}`SubSec:ODE1:SeparableAppl`), it can be shown that $T(t)=T_{\text{env}}+(T(0)-T_{\text{env}})e^{-rt}$. Here, $T_{\text{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
+Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling (see {numref}`SubSec:ODE1:SeparableAppl`), it can be shown that $T(t)=T_{\mathrm{env}}+(T(0)-T_{\mathrm{env}})e^{-rt}$. Here, $T_{\mathrm{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
 
-Let us take, for example, $r=1\ \text{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator, which is $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
+Let us take, for example, $r=1\ \operatorname{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator, which is $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
 
 ::::{applet}
 :url: calculus/limits_at_infinity/temperature_of_a_cauliflower
@@ -348,7 +348,7 @@ Intuitively, these computation rules make sense: if the function values $f(x)$ a
 
 
 
-::::::{prf:theorem} Substitution
+::::::{prf:theorem} Substitution for limit at plus or minus infinity
 :label: Theorem:LimitAtInfinity:Substitution
 Suppose $f$ is a polynomial, rational function, power function, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
 
@@ -545,10 +545,14 @@ $$
  \lim_{x\rightarrow\infty}\left|\frac{1}{g(x)}\right|=\lim_{x\rightarrow\infty}x=\infty.
 $$
 
-In particular, the limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ cannot exist, since otherwise the limit $\displaystyle\lim_{x\rightarrow\infty}\left|\frac{1}{g(x)}\right|$ would have existed as well. The limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ also cannot be $-\infty$ since $\dfrac{1}{g(x)}>0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ odd, nor can it be $\infty$ since $\dfrac{1}{g(x)}<0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ even. So the limit does not exist, and it is not $-\infty$ or $\infty$. 
+In particular, the limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ cannot exist, since otherwise the limit $\displaystyle\lim_{x\rightarrow\infty}\left|\frac{1}{g(x)}\right|$ would have existed as well. The limit $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{g(x)}$ also cannot be $-\infty$ since $\dfrac{1}{g(x)}>0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ odd, nor can it be $\infty$ since $\dfrac{1}{g(x)}<0$ when $x$ is in an interval of the form $[N,N+1)$ with $N$ even. So the limit does not exist, and it is not $-\infty$ or $\infty$.
 
-:::{todo}
-Include an applet with the graphs of these function $g$ and $\frac{1}{g}$.
+You can verify this by taking a look at the image below, which shows the graphs of $g$ and $\dfrac{1}{g}$.
+
+:::{applet}
+:url: calculus/limits_at_infinity/limits_of_reciprocals
+:class: dark-light
+
 :::
 
 [ ] $\displaystyle \lim_{x\rightarrow\infty}\frac{1}{g(x)}$ exists.
@@ -724,7 +728,7 @@ In order to prove {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates` we need
 
 Some functions do not approach a horizontal line as $x\rightarrow\infty$ or $x\rightarrow-\infty$, but, instead, approach a non-horizontal (straight) line.
 
-::::::{prf:definition} Oblique asymptote
+::::::{prf:definition}
 :label: Def:LimitAtInfinity:Oblique
 
 Let $f$ be a function that is defined on some interval $[d,\infty)$. We say that $f$ has an **oblique asymptote** (sometimes called a **slant asymptote**) $y=ax+b$ with $a\neq 0$ at $\infty$, if $\lim\limits_{x\rightarrow\infty}\left(f(x)-ax-b\right)=0$.
@@ -1271,7 +1275,7 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 :url: https://embed.grasple.com/exercises/92fb4504-f844-4e7c-9885-28b1a9fe8052?id=63030
 :label: Grasple:63030
 :dropdown:
-:description: Using limits to find the maximal domain and range of a function.
+:description: Maximal domain and range of a function.
 
 ::::
 
@@ -1280,7 +1284,7 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 :url: https://embed.grasple.com/exercises/f2736865-6ad4-4917-ba2e-921f565394c7?id=63046
 :label: Grasple:63046
 :dropdown:
-:description: Maximal domain and range of a function on real line.
+:description: Maximal domain and range of a function.
 
 ::::
 
@@ -1289,7 +1293,7 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 :url: https://embed.grasple.com/exercises/9796d35c-3bb3-4a93-911f-51da314900b5?id=63054
 :label: Grasple:63054
 :dropdown:
-:description: Maximal domain and range of a function on real line.
+:description: Maximal domain and range of a function.
 
 ::::
 
@@ -1298,7 +1302,16 @@ In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varep
 :url: https://embed.grasple.com/exercises/88eaff16-aa50-4656-98b8-86baedd257b3?id=63056
 :label: Grasple:63056
 :dropdown:
-:description: Maximal domain and range of a function on real line.
+:description: Maximal domain and range of a function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/52cd5be7-219b-4c3e-a42c-e0cb2f9b5aa1?id=63028
+:label: Grasple:63028
+:dropdown:
+:description: Maximal domain and range of a function.
 
 ::::
 

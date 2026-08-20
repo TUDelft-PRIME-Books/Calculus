@@ -2,7 +2,7 @@
 
 # Chain rule
 
-(Subsec:ChainruleIntro)=
+(Sec:ChainruleIntro)=
 
 ## Introduction
 
@@ -31,16 +31,16 @@ $$
 and that the safe decompression rate is given by
 
 $$
- \frac{dp}{dt}=1700\,\frac{\mathrm{Pa}}{\mathrm{s}}.
+ \frac{dp}{dt}=1700\,\frac{\text{Pa}}{\text{s}}.
 $$
 
 If we want to find the largest speed to avoid decompression sickness, we should use our previously found expression relating the various derivatives. This gives
 
 $$
- \frac{d z}{d t}=\frac{\frac{d p}{d t}}{\frac{d p}{d z}}=\frac{1700}{10000}\,\frac{\mathrm{m}}{\mathrm{s}}=\frac{17}{100}\,\frac{\mathrm{m}}{\mathrm{s}}.
+ \frac{d z}{d t}=\frac{\frac{d p}{d t}}{\frac{d p}{d z}}=\frac{1700}{10000}\,\frac{\text{m}}{\text{s}}=\frac{17}{100}\,\frac{\text{m}}{\text{s}}.
 $$
 
-So in order to avoid decompression sickness, the diver should not move faster than $\displaystyle \frac{17}{100}\,\frac{\mathrm{m}}{\mathrm{s}}$.
+So in order to avoid decompression sickness, the diver should not move faster than $\displaystyle \frac{17}{100}\,\frac{\text{m}}{\text{s}}$.
 
 The general version of the technique we used to find $\dfrac{d p}{d t}$ is known as the **chain rule**. It is used to find derivatives of compositions of functions. It is a very important and commonly used tool for finding derivatives. In this section, we will state and prove the chain rule and show how it is used. We will also use the chain rule to find the derivative of functions of the form $f(x)=b^x$ for $b>0$.
 
@@ -120,10 +120,6 @@ $$
 
 This establishes the chain rule in the general setting.
 
-:::
-
-:::{todo}
-Dennis had an idea for an applet which shows coupled graphs $f(u)$, $g(x)$ and $f(g(x))$.
 :::
 
 ::::{caution}
@@ -351,3 +347,77 @@ $$
 where $h_{n+1}(a) = a$.
 
 We omit the proof of this corollary, since it is just a matter of applying the chain rule repeatedly. The main thing to remember is that if you have a chain of functions, you can apply the chain rule repeatedly to find the derivative of that entire chain.
+
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/45245d2e-3cd9-4926-b0ab-8b870cc704d2?id=63436
+:label: Grasple:63436
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e3d52bed-69d5-4e3f-96ae-97f21cc5b3f8?id=63445
+:label: Grasple:63445
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a0e39e7f-7f94-4122-8510-964d348ee5f2?id=63493
+:label: Grasple:63493
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4800351f-cd91-4506-a93d-21e4f628dd17?id=63444
+:label: Grasple:63444
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/49b611ec-a218-492f-bd9a-b3aeec98402d?id=63525
+:label: Grasple:63525
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9f445188-faa5-4a42-a79c-12f7cd3dd271?id=63522
+:label: Grasple:63522
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f97dfe6f-5b06-4a04-b2a5-ecdd927fd6fc?id=63419
+:label: Grasple:63419
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9508a2aa-1265-4fb8-95d7-7acdf9178a2e?id=63526
+:label: Grasple:63526
+:dropdown:
+:description: Find the derivative.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ab6a1a77-b42a-479e-bcc9-1e8a4aa830cb?id=71398
+:label: Grasple:71398
+:dropdown:
+:description: Find the derivative.
+::::

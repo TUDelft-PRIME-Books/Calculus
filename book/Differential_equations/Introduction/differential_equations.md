@@ -1,110 +1,87 @@
 (Sec:DE:Intro)=
 # Classifications and solutions
 
-In this section we cover:
-
-- Introduction by means of examples
-- Definitions of differential equation, initial-value problems and boundary-value problems:
-  - Mention names of problems
-  - Mention names of boundary conditions
-- (in)dependent variable
-- Classification of differential equations:
-  - linear/nonlinear (including algorithmic check)
-  - order
-  - ordinary/partial
-  - autonomous/non-autonomous (including algorithmic check)
-- Definition solution of a DE/IVP/BVP
-  - general solution
-  - particular solution
-  - implicit solution
-  - equilibrium solution
-  - checking solutions
-- linear differential equations
-  - constant coefficients/variable coefficients
-  - Superposition principle for linear differential equations
-  - homogeneous/non-homogeneous (including algorithmic check)
-  - nonhomogeneous solution = homogeneous solution + particular solution
-  - Linear independent solutions
-
+(Subsec:DiffclassIntro)=
 
 ## Introduction
 
 For most equations we have encountered so far, the solution is a set of numbers. In this chapter, we will study an important class of equations, called **differential equations**, of which the solution is a **function**. Loosely speaking, differential equations are equations that feature an unknown function and one or more of its derivatives. For instance, consider the equation
 
 $$
- y'(x)=\cos(x).
+y'(x)=\cos(x).
 $$
 
-This equations should be read as follows: we are looking for a function $y(x)$ of which the derivative is equal to $\cos(x)$. Fortunately, we already know the answer to this equation, as we have
+This equation should be read as follows: we are looking for a function $y(x)$ of which the derivative is equal to $\cos(x)$. Fortunately, we already know the solution of this equation, as we have
 
 $$
- y(x)=\int \cos(x)\,dx=\sin(x)+C
+y(x)=\int\cos(x)\,dx=\sin(x)+C
 $$
 
 for some constant $C$. So far so good, but what should we do with the following equation?
 
 $$
- y'(x)=2y(x).
+y'(x)=2y(x).
 $$
 
 Let us first try to understand what this equation says. It tells us that we are looking for a function $y(x)$ of which the derivative is $2$ times the original function $y(x)$. What could this function be? If this question is asked in class, the first answer that usually comes up is $y(x)=x^2$. Let us check if this answer is correct. For this function, the derivative is given by
 
 $$
- y'(x)=2x,
+y'(x)=2x,
 $$
 
 while $2$ times the function is given by
 
 $$
- 2y(x)=2x^2.
+2y(x)=2x^2.
 $$
 
-These two expression are **not** the same, so $y(x)=x^2$ is not a solution of this differential equation. So which function is a solution, if any? For this, we are looking for a function of which the derivative is a multiple of the original function. Fortunately, we know that exponential functions have this property. This suggests that we should consider $y(x)=e^{2x}$. For this function, the derivative is given by
+These two expression are **not** the same, so $y(x)=x^2$ is **not** a solution of this differential equation. So which function is a solution, if any? For this, we are looking for a function of which the derivative is a multiple of the original function. Fortunately, we know that exponential functions have this property. This suggests that we should consider $y(x)=e^{2x}$. For this function, the derivative is given by
 
 $$
- y'(x)=2e^{2x},
+y'(x)=2e^{2x},
 $$
 
 and $2$ times the function is given by
 
 $$
- 2y(x)=2e^{2x}.
+2y(x)=2e^{2x}.
 $$
 
 This is the same expression, so $y(x)=e^{2x}$ is a solution. Is it the only solution? You might be tempted to think that we should add a constant, similarly to adding a constant of integration, so that $y(x)=e^{2x}+C$ would be a solution for any $C$. To see if this idea is correct, we see that the derivative is given by
 
 $$
- y'(x)=2e^{2x}+0=2e^{2x},
+y'(x)=2e^{2x}+0=2e^{2x},
 $$
 
 and $2$ times the function is given by
 
 $$
- 2y(x)=2e^{2x}+2C.
+2y(x)=2e^{2x}+2C.
 $$
 
-This is not the same expression, so adding a constant does not work. It turns out that, instead, we should have multiplied the exponential with a constant, so $y(x)=Ce^{2x}$ for some constant $C$. Then the derivative is given by
+This is not the same expression (unless $C=0$), so adding a constant does not work. It turns out that, instead, we should have multiplied the exponential with a constant, so $y(x)=Ce^{2x}$ for some constant $C$. Then the derivative is given by
 
 $$
- y'(x)=2Ce^{2x},
+y'(x)=2Ce^{2x},
 $$
 
 and $2$ times the function is given by
 
 $$
- 2y(x)=2Ce^{2x}.
+2y(x)=2Ce^{2x}.
 $$
 
-This is the same expression, so $y(x)=Ce^{2x}$ is also a solution. Later, we will see that any solution is of this form.
+This is the same expression, so $y(x)=Ce^{2x}$ is a solution for every $C\in\mathbb{R}$. Later, we will see that any solution is of this form.
 
-You might think that equations like $y'(x)=2y(x)$ are a bit artificial and are made up by mathematicians who take pleasure in making your life miserable by introducing needlessly complicated equations. Nothing could be further from the truth. In science and engineering, differential equations very often arise in modelling. There are many problems where we try to model a quantity and that the laws of physics tell us that its rate of change (so its derivative) is proportional to its current size. In the remainder of this introduction, we consider two examples: population growth and a mass-spring system.
+You might think that equations like $y'(x)=2y(x)$ are a bit artificial and are made up by mathematicians who take pleasure in making your life miserable by introducing needlessly complicated equations. Nothing could be further from the truth. In science and engineering, differential equations very often arise in modelling. There are many problems where we try to model a quantity and that the laws of physics tell us that its rate of change (so its derivative) is related to its current size. In the remainder of this introduction, we consider two examples: population growth and a mass-spring system.
 
-**Population growth**
+::::::{prf:example} Population growth
+:label: Ex:Diffclass:population
 
-One model for the growth of a population is based on the assumption that the population grows at a rate proportional to the size of the population. This is a reasonable assumption for a population of bacteria or animals under ideal conditions (unlimited environment, adequate nutrition, absence of predators, immunity of disease). If $P(t)$ denotes the number of individuals in a population at time $t$, we can denote this idea more mathematically by writing
+One model for the growth of a population is based on the assumption that the population grows at a rate proportional to the size of the population. This is a reasonable assumption for a population of bacteria or animals under ideal conditions (unlimited environment, adequate nutrition, absence of predators, and immunity of disease). If $P(t)$ denotes the number of individuals in a population at time $t$, we can denote this idea more mathematically by writing
 
 $$
- \dfrac{dP}{dt}=kP(t),
+\dfrac{dP}{dt}=kP(t),
 $$
 
 where $k$ denotes the growth rate. This equation is a differential equation, as it features an unknown function $P(t)$ and its derivative $\dfrac{dP}{dt}$. This particular equation is known as *exponential growth*, since the general solution is $P(t)=Ce^{kt}$ for some constant $C$.
@@ -112,113 +89,221 @@ where $k$ denotes the growth rate. This equation is a differential equation, as 
 A more realistic model is 
 
 $$
- \frac{dP}{dt}=kP\left(1-\frac{P}{M}\right).
+\frac{dP}{dt}=kP\left(1-\frac{P}{M}\right).
 $$
 
 This is called a *logistic equation*. This differential equation was proposed by the Belgian mathematician [Pierre François Verhulst (1804-1849)](https://en.wikipedia.org/wiki/Pierre_Fran%C3%A7ois_Verhulst) in 1838 as a model for world population growth.
 
-This more realistic model reflects the fact that a given environment has limited resources. Many populations start by increasing in an exponential manner, but the population levels off when it approaches its *carrying capacity* $M$ (or decreases toward $M$ if it ever exceeds $M$).
+This more realistic model reflects the fact that a given environment has limited resources. Many populations start by increasing in an exponential manner, but the population levels off when it approaches its *carrying capacity* $M$ (or decreases towards $M$ if it ever exceeds $M$).
 
-:::{todo}
-Include an applet with the solution to the logistic equation.
+:::{applet}
+:url: calculus/classifications_and_solutions/logistic_equation
+:name: Fig:Diffclass:population
+:class: dark-light
+
+A graph of a function that is a solution to the indicated _logistic equation_. You can change the point where the solution starts (_first slider_), and also the value of the parameters $k$ and $M$ (_second and third slider_). 
+
+
+::::::
+
+::::::{prf:example} A mass-spring system
+:label: Ex:Diffclass:massspring
+
+Consider a mass $m$ attached to a spring as in {numref}`Fig:Diffclass:mass-spring1`. Let $u$ denote the distance from the mass to the equilibrium position. This value is positive when the spring is stretched and negative when the spring is compressed. If we, for instance, pull the mass and stretch the spring over a small distance, hold it and then release it, the mass will move such that the position $u$ will change from positive to less positive, or even negative. So, the distance $u=u(t)$ is in fact a function of the time $t$.
+
+:::{applet}
+:url: calculus/classifications_and_solutions/mass-spring_system
+:name: Fig:Diffclass:mass-spring1
+:class: dark-light
+
+A mass-spring system. The distance $u$ is measured from top to the bottom, so downward is the positive direction. On the _left_ the spring is in equilibrium, corresponding to $u=0$, while on the _right_ the spring is stretched.
 :::
 
-**A mass-spring system**
+So which physical laws determine the behaviour of this system? Somehow, one of the first answers that comes up, usually, is gravity. However, gravity does not play a role here: we could observe the behaviour of this system in outer space and not a lot would change. Only the position of equilibrium is determined by gravity, but since we measure the displacement with respect to equilibrium, we do not see this in our calculations.
 
-Consider a mass $m$ attached to a spring as in {numref}`mass-spring`. Let $x$ denote the distance from the mass to the equilibrium position. This value is positive when the spring is stretched and negative when the spring is compressed. If we, for instance, pull the mass and stretch the spring over a small distance and release it, the mass will move such that the position $x$ will change from positive to negative and the other way around. So, the distance $x=x(t)$ is in fact a function of the time $t$.
-
-```{figure} Images/mass-spring1.png
----
-width: 50%
-name: mass-spring
-align: center
----
-A mass-spring system
-```
-
-Using Newton's law $F=m\cdot a$ and Hooke's law $F=-k\cdot x$, we obtain
+Instead, since we are dealing with a spring, Hooke's law $F=-k\cdot u$, where $k$ is a positive constant, called the *spring constant*, should of course be involved. And as with many problems that involve forces, Newton's second law $F=m\cdot a$ must play a role as well. Here $a$ is the acceleration, which is $\dfrac{d^2u}{dt^2}$. Without damping, we can combine these laws into the equation
 
 $$
-m\cdot\frac{d^2x}{dt^2}=-k\cdot x(t),
+m\cdot\frac{d^2u}{dt^2}=-k\cdot u(t).
 $$
 
-where $k$ is a positive constant, called the *spring constant*.
+We can rewrite this equation into
 
-Without damping we have: $mx''(t)+kx(t)=0$.
+$$
+ mu''(t)+ku(t)=0.
+$$
 
-```{figure} Images/mass-spring2.png
----
-width: 50%
-name: mass-spring
-align: center
----
-A mass-spring system
-```
+This is a differential equation, as it involves the unknown function $u(t)$ and its second derivative $u''(t)$.
 
-```{figure} Images/mass-spring3.png
----
-width: 50%
-name: mass-spring
-align: right
----
-A mass-spring system
-```
+When damping is involved, for example because (a part of) the system is submerged in a fluid, see {numref}`Fig:Diffclass:mass-spring3`, it is reasonable that the damping force is of the form $F_{\mathrm{damping}}=-c\dfrac{du}{dt}$, where $c$ is a positive constant, called the *damping constant*. Then Newton's second law gives
 
-<br /><br />
+$$
+m\cdot\frac{d^2u}{dt^2}=-k\cdot u(t)+c\cdot\dfrac{du}{dt}.
+$$
 
-With damping we have: $mx''(t)+cx'(t)+kx(t)=0$. 
+This equation can be rewritten as
 
-Here $c$ is a positive constant, called the *damping constant*.
+$$
+ mu''(t)+cu'(t)+ku(t)=0. 
+$$
 
-<br /><br /><br /><br /><br />
+
+:::{applet}
+:url: calculus/classifications_and_solutions/mass-spring_system_with_damping
+:name: Fig:Diffclass:mass-spring3
+:class: dark-light
+
+A mass-spring system with damping, as a part of the system is submerged in a fluid.
+:::
+
+::::::
 
 ## Classifications
 
 ::::::{prf:Definition}
+:label: Def:ClassDiff:DiffEq
+
 A **differential equation** is an equation involving an unknown function and one or more of its derivatives. The order of the highest derivative involved is called the **order** of the differential equation.
 ::::::
 
 In case of an unknown function of a single variable, the differential equation is called an **ordinary differential equation**. In case of an unknown function of more than one variable, the differential equation is called a **partial differential equation**.
 
-In this book we will only consider ordinary differential equations. However, see chapter 9 on partial derivatives for some examples of partial differential equations.
+In this book we will mostly consider ordinary differential equations. In {numref}`Sec:PartialDerivatives`, we saw some examples of partial differential equations. We also distinguish differential equations by their order. In this book we mainly focus on first-order ({numref}`Chapter:FirstorderDE`) and second-order ({numref}`Chapter:SecondorderDE`) differential equations.
 
-Note that the logistic equation is a first-order differential equation and the differential equations involved in a mass-spring system are second-order differential equations.
+For the differential equations we studied in {numref}`Subsec:DiffclassIntro`, we note that the logistic equation is a first-order differential equation and the differential equations involved in a mass-spring system are second-order differential equations.
+
+::::::{prf:Definition}
+:label: Def:ClassDiff:DiffEqVarSol
 
 A differential equation in a function $y(x)$ can be written as $F(x,y,y',y'',\ldots,y^{(n)})=0$. The variable $x$ is called an **independent variable**, while $y=y(x)$ is called a **dependent variable**.
 
 A function $f(x)$ is called a **solution** of the differential equation if the equation is satisfied by $y=f(x)$, so if $F(x,f(x),f'(x),f''(x),\ldots,f^{(n)}(x))=0$.
 
-When we are asked to *solve* a differential equation, we are expected to find all possible solutions. However, in general it is not easy to solve a differential equation. There is no systematic approach that enables us to solve differential equations. Only when a differential equation has a specific form, we might have some techniques to find the general solution (the set of *all* solutions).
+The **general solution** of a differential equation is an expression for all solutions of the differential equation.
+::::::
 
-We also distinguish differential equations by their order. In this book we mainly focus on first-order (chapter 13) and second-order (chapter 14) differential equations.
+When we are asked to *solve* a differential equation, we are expected to find all possible solutions. However, in general it is not easy to solve a differential equation. There is no systematic approach that enables us to solve differential equations. Only when a differential equation has a specific form, we might have some techniques to find the general solution. Fortunately, checking that a certain function is a solution is much easier: simply plug in this expression into the differential equation and check whether the equation is satisfied.
 
-Furthermore, we distinguish linear and nonlinear differential equations. A differential equation $F(x,y,y',y'',\ldots,y^{(n)})=0$ is called **linear** if $F$ is a linear function of the variables $y,y',y'',\ldots,y^{(n)}$. Otherwise, the differential equation is called **nonlinear**.
+::::::{prf:example}
+:label: Ex:ClassDiff:Ansatz
+[^FootnoteAnsatz]: The word Ansatz is the German word for approach.
 
-In general, linear differential equations are much easier to solve than nonlinear differential equations. Especially for differential equations of order higher than one there is very limited theory for nonlinear differential equations.
+For some differential equations, it is possible to find the solution by making an educated guess about the shape of the solution. Such a guess is called an **Ansatz**[^FootnoteAnsatz]. Guessing a solution might not sound very systematic to you, but due to the lack of systematic techniques we often have no other choice. And of course, the guess should be educated, since you will not get very far otherwise.
 
-An example of a physical problem that leads to a nonlinear differential equation is an oscillating pendulum.
-
-```{figure} Images/pendulum.png
----
-width: 65%
-name: pendulum
-align: left
----
-The motion of a pendulum
-```
-
-The differential equation which represents the motion of a simple pendulum is:
+Consider, for instance, the differential equation
 
 $$
-\frac{d^2\theta}{dt^2}+\frac{g}{L}\sin(\theta)=0,
+ y''(t)=4y(t).
 $$
 
-where $g$ is the acceleration due to gravity, $L$ is the length of the pendulum, and $\theta$ is
-the angular displacement with respect to the equilibrium position at time $t$.
+This is an ordinary differential equation, since the unknown function $y$ only depends on $t$. It is a second-order equation, since it contains a second derivative, but no higher order derivatives. In particular, we are looking for a function $y(t)$ of which the second derivative is a multiple of the original function. We know that exponential functions have this property, so we try a function of the form $y(t)=e^{rt}$ for some, as of yet, unknown parameter $r$. Of course, not every exponential function is going to be a solution, so we should try to find out for which parameter $r$ this function is a solution. We substitute this Ansatz into the differential equation to obtain
 
-It is quite difficult to solve this differential equation.
+$$
+ r^2e^{rt}=4e^{rt}.
+$$
 
-However, the linearization of the function $f(x)=\sin(x)$ at $x=0$ is
+We can divide by the nonzero term $e^{rt}$ to obtain the equation
+
+$$
+ r^2=4.
+$$
+
+In particular, we have two solutions $r_1=-2$ and $r_2=2$. Hence, we find that the functions $y_1(t)=e^{-2t}$ and $y_2(t)=e^{2t}$ are solutions, while any other exponential function is not a solution. It can be shown that the general solution of this differential equation is given by
+
+$$
+ y(t)=c_1e^{-2t}+c_2e^{2t}
+$$
+
+for some constants $c_1$ and $c_2$. We will see later how we can verify this.
+
+In any case, this example shows that when we have a general idea of what a solution looks like, we can use this to find its exact shape. 
+
+::::::
+
+A special type of solutions (and, fortunately, the easiest type of solutions) of a differential equation are the **equilibrium solutions**.
+
+::::::{prf:definition}
+:label: Def:ClassDiff:EqSol
+An **equilibrium solution** of a differential equation is a solution that is constant.
+::::::
+
+You can find equilibrium solutions of a differential equation for $y(x)$ by first replacing all derivatives by zero and subsequently solving the equation for $y(x)$. Every solution should be of the form $y(x)=C$ for some constant $C$.
+
+::::::{prf:example}
+:label: Ex:ClassDiff:EqSol
+Consider the differential equation
+
+$$
+y'(t)=(y^2-4)(t+3).
+$$
+
+We want to find all equilibrium solutions of this differential equation. Since an equilibrium solution $y(t)$ is constant, we must have $y'(t)=0$ for all $t$. This means that we can find the equilibrium solutions by setting $y'(t)=0$ in the differential equation and by solving for $y$. This gives
+
+$$
+0=(y^2-4)(t+3).
+$$
+
+From this we obtain $y^2-4=0$, which gives $y=2$ or $y=-2$. So this differential equation has two equilibrium solutions: $y(t)=2$ and $y(t)=-2$.
+
+But wait, $t=-3$ is also solution of the equation $0=(y^2-4)(t+3)$, right? So why did we ignore this? The answer is that we are solving a differential equation for $y(t)$, so any solution should be of the form $y(t)=\ldots$ Since $t$ is the independent variable, it can never play the role of a solution.
+::::::
+
+::::::{warning}
+When finding equilibrium solutions of a differential equation for $y(t)$, any solution should be of the form $y(t)=C$ and never of the form $t=C$.
+::::::
+
+For some differential equations, it is possible to find an implicit equation for the solution. We sometimes refer to such an equation as an **implicit solution** of the differential equation. In some cases, it is not possible or feasible to obtain an explicit solution from this, as can be seen in the following example.
+
+::::::{prf:example}
+:label: Ex:ClassDiff:ImplSol
+Consider the differential equation
+
+$$
+\left(6y^5+5y^4+1\right)\frac{dy}{dx}+\cos(x)=0.
+$$
+
+Using the techniques from {numref}`Sec:ODE1:Separable` it is possible to show that any solution $y(x)$ satisfies the implicit equation 
+
+$$
+y^6+y^5+y+\sin(x)=0.
+$$
+
+This can be verified by applying implicit differentiation (see {numref}`Subsec:ImplicitDiff`) to this implicit equation. Indeed, differentiating this equation implicitly gives
+
+$$
+6y^5\frac{dy}{dx}+5y^4\frac{dy}{dx}+\frac{dy}{dx}+\cos(x)=0,
+$$
+
+which is the same equation as we started with. However, there are no techniques to solve the implicit equation $y^6+y^5+y+\sin(x)=0$ for $y$, so it is not possible to write an explicit solution of the form $y(x)=\ldots$.
+::::::
+
+Furthermore, we distinguish linear and nonlinear differential equations. A differential equation $F(x,y,y',y'',\ldots,y^{(n)})=0$ is called **linear** if $F$ is a linear function of the variables $y,y',y'',\ldots,y^{(n)}$. Otherwise, the differential equation is called **nonlinear**. We will define and analyse this concept more rigorously in {numref}`Subsec:DiffclassLinear`.
+
+In general, linear differential equations are much easier to solve than nonlinear differential equations. Especially for differential equations of order higher than one there is very limited theory for solving nonlinear differential equations. 
+
+::::::{prf:example} 
+:label: Ex:Diffclass:pendulum
+
+An example of a physical problem that leads to a nonlinear differential equation is an oscillating pendulum, see {numref}`Fig:Diffclass:pendulum`.
+
+:::{applet}
+:url: calculus/classifications_and_solutions/pendulum
+:name: Fig:Diffclass:pendulum
+:class: dark-light
+
+A pendulum. The angle of the pendulum with respect to the vertical equilibrium position is denoted by $\theta$.
+:::
+
+The differential equation which represents the motion of a simple pendulum is
+
+$$
+\frac{d^2\theta}{dt^2}+\frac{g}{L}\sin(\theta)=0.
+$$
+
+Here $g$ is the acceleration due to gravity, $L$ is the length of the pendulum, and $\theta$ is
+the (small) angular displacement with respect to the equilibrium position at time $t$.
+
+It is quite difficult to solve this differential equation. However, the linearisation of the function $f(x)=\sin(x)$ at $x=0$ is
 
 $$
 L(x)=f(0)+f'(0)(x-0)=x.
@@ -232,45 +317,152 @@ $$
 \frac{d^2\theta}{dt^2}+\frac{g}{L}\theta=0
 $$
 
-instead of the one above. See {numref}`Sec:ODE2:Homogeneous`.
+instead of the one above. In {numref}`Sec:ODE2:Homogeneous` we see how we can solve equations like this one.
+
+::::::
 
 The differential equations involved in a mass-spring system are all linear. These will also be solved in {numref}`Sec:ODE2:Homogeneous`.
 
-For first-order differential equations we distinguish autonomous and nonautonomous differential equations. A differential equation is called **autonomous** if it can be written as $F(y,y')=0$. So, if the independent variable is not explicitly involved. Otherwise, the differential equation is called **nonautonomous**.
+For first-order differential equations we distinguish autonomous and non-autonomous differential equations. 
+
+::::::{prf:Definition}
+:label: Def:ClassDiff:Autonomous
+
+A first-order differential equation is called **autonomous** if it can be written as $F(y,y')=0$, so if the independent variable is not explicitly involved. Otherwise, the differential equation is called **non-autonomous**.
+::::::
 
 Note that the *logistic equation* is an example of an autonomous differential equation. This equation will be solved in {numref}`Sec:ODE1:Separable`.
 
-Finally we mention the possibility of more than one unknown function. For each unknown function we might consider a linear differential equation of the form
+Usually, it is directly visible whether a differential equation is autonomous or not, but it is sometimes useful to use the following criterion.
+
+::::::{prf:theorem}
+:label: Thm:ClassDiff:Autonomous
+A first-order differential equation $F(x,y,y')=0$ is autonomous precisely when we have
 
 $$
-y_k'(x)=a_1y_1(x)+a_2y_2(x)+\cdots+a_ny_n(x)+g_k(x),\quad k=1,2,3,\ldots,n.
+\frac{\partial}{\partial x}F(x,y_0,y_1)=0.
 $$
+::::::
 
-This leads to a **system of first-order linear differential equations**. These systems will not be covered in this book. We refer to the book on Linear algebra for an introduction to homogeneous systems of first-order differential equations and to more advanced books on differential equations for a more thorough treatment of these systems.
+:::{admonition} Proof of {prf:ref}`Thm:ClassDiff:Autonomous`
+:class: tudproof, dropdown
+This follows immediately, since the differential equation $F(x,y,y')=0$ is autonomous precisely when $F$ does not directly depend on $x$, which happens precisely when the partial derivative with respect to $x$ is $0$.
+:::
+
+Finally, it is important to note that in many problems in practice, several quantities depend on each other and each other's derivatives. For this type of problems, a single differential equation will not suffice. Instead, you might encounter several coupled differential equations, such as
+
+$$
+ \begin{cases}y_1'=&a_1y_1+a_2y_2\\ y_2'=&b_1y_1+b_2y_2.
+ \end{cases}
+$$ 
+
+
+
+This leads to a **system of first-order linear differential equations**. These systems will not be covered in this book. More information on this can be found in the [Section 9.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter9/DynSystContinuous.html) or in more advanced books on differential equations for a more thorough treatment of these systems.
+
+(Subsec:DiffclassLinear)=
 
 ## Linear differential equations
 
-A differential equation $F(x,y,y',y'',\ldots,y^{(n)})=0$ is called *linear* if $F$ is a linear function of the variables $y,y',y'',\ldots,y^{(n)}$. For linear differential equations there exists quite some theory. In {numref}`Sec:ODE1:Linear` we will consider and solve first-order linear differential equations.
+::::::{prf:definition}
+:label: Def:ClassDiff:Linear
 
-A second-order *linear* differential equation has the form
+A differential equation $F(x,y,y',y'',\ldots,y^{(n)})=0$ is called **linear** if it can be written in the form
+
+$$
+a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=f(x)
+$$
+
+for some functions $a_n(x),\ldots,a_0(x)$ and $f(x)$.
+
+The linear differential equation above is called **homogeneous** if $f(x)=0$ for all $x$ and **nonhomogeneous** or **inhomogeneous** otherwise.
+::::::
+
+For linear differential equations there exists quite some theory. In {numref}`Sec:ODE1:Linear` we will consider and solve first-order linear differential equations.
+
+For instance, a second-order *linear* differential equation has the form
 
 $$
 P(x)y''(x)+Q(x)y'(x)+R(x)y(x)=G(x),
 $$
 
-where $P$, $Q$, $R$ and $G$ are continuous functions with $P(x)\neq0$. Such a differential equation is called **homogeneous** if $G(x)\equiv0$ and **inhomogeneous** if $G(x)\not\equiv0$.
-
-So, a homogeneous second-order linear differential equation has the form
+where $P$, $Q$, $R$ and $G$ are continuous functions with $P(x)\neq0$. A homogeneous second-order linear differential equation has the form
 
 $$
-P(x)y''(x)+Q(x)y'(x)+R(x)y(x)=0,
+P(x)y''(x)+Q(x)y'(x)+R(x)y(x)=0.
 $$
 
-where $P$, $Q$ and $R$ are continuous functions with $P(x)\neq0$. Then we have:
+We usually check that a differential equation is linear by writing it in the correct form. If you do not see how to do this for a certain equation, this might suggest that the equation is nonlinear. If you want to be sure, it is advisable to use the following criterion.
+
+::::::{prf:theorem}
+:label: Thm:ClassDiff:Linear
+A differential equation $F(x,y,y',y'',\ldots,y^{(n)})=0$ is linear precisely when for all $0\leq i\leq n$ and $0\leq j\leq n$ we have
+
+$$
+\frac{\partial^2}{\partial y_i\partial y_j}F(x,y_0,\ldots,y_n)=0.
+$$
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:ClassDiff:Linear`
+:class: tudproof, dropdown
+A linear equation can be written as 
+
+$$
+a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=f(x).
+$$
+
+So for this equation, we have
+
+$$
+F(x,y_0,\ldots,y_n)=a_n(x)y_n+a_{n-1}(x)y_{n-1}+\cdots+a_1(x)y_1+a_0(x)y_0-f(x).
+$$
+
+Then for $0\leq j\leq n$ we have
+
+$$
+\frac{\partial}{\partial y_j}F(x,y_0,\ldots,y_n)=a_j(x),
+$$
+
+which gives for $0\leq i\leq n$ that
+
+$$
+\frac{\partial^2}{\partial y_i\partial y_j}F(x,y_0,\ldots,y_n)=0.
+$$
+
+Now suppose that $0\leq i\leq n$ and $0\leq j\leq n$ we have
+
+$$
+\frac{\partial^2}{\partial y_i\partial y_j}F(x,y_0,\ldots,y_n)=0.
+$$
+
+This must mean that for each $0\leq j\leq n$ the partial derivative $\dfrac{\partial}{\partial y_j}F(x,y_0,\ldots,y_n)$ only depends on $x$, so we can write
+
+$$
+\frac{\partial}{\partial y_j}F(x,y_0,\ldots,y_n)=a_j(x)
+$$
+
+for some function $a_j(x)$. This then gives that
+
+$$
+F(x,y_0,\ldots,y_n)=a_j(x)y_j+G_j(x,y_0,\ldots,y_{j-1},y_{j+1},\ldots,y_n)
+$$
+
+for some function $G_j$. Since this holds for all $0\leq j\leq n$, we must have that
+
+$$
+F(x,y_0,\ldots,y_n)=a_n(x)y_n+a_{n-1}(x)y_{n-1}+\cdots+a_1(x)y_1+a_0(x)y_0+g(x)
+$$
+
+for some function $g$. As such, the differential equation $F(x,y,y',y'',\ldots,y^{(n)})=0$ is linear, as desired.
+:::
+
+Apart from being easier to solve than nonlinear equations, equations that are linear and homogeneous have the important property that different solutions can be combined into a new solutions. This result is given by the following theorem.
 
 ::::::{prf:theorem} Superposition principle
 :label: Thm:DE:SuperpositionPrinciple
-If $y_1(x)$ and $y_2(x)$ are both solutions, then $y(x)=c_1y_1(x)+c_2y_2(x)$ is also a solution for each $c_1,c_2\in\mathbb{R}$.
+If $y_1(x)$ and $y_2(x)$ are both solutions of a linear, homogeneous differential equation, then $y(x)=c_1y_1(x)+c_2y_2(x)$ is also a solution for each $c_1,c_2\in\mathbb{R}$.
+
+For complex $c_1,c_2\in\mathbb{C}$, the linear combination $y(x)=c_1y_1(x)+c_2y_2(x)$ is a complex-valued solution of the differential equation.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:DE:SuperpositionPrinciple`
@@ -278,29 +470,33 @@ If $y_1(x)$ and $y_2(x)$ are both solutions, then $y(x)=c_1y_1(x)+c_2y_2(x)$ is 
 Since $y_1(x)$ and $y_2(x)$ are both solutions, we have
 
 $$
-P(x)y_1''(x)+Q(x)y_1'(x)+R(x)y_1(x)=0
+a_n(x)y_1^{(n)}(x)+a_{n-1}(x)y_1^{(n-1)}(x)+\cdots+a_1(x)y_1'(x)+a_0(x)y_1(x)=0
 $$
 
 and
 
 $$
-P(x)y_2''(x)+Q(x)y_2'(x)+R(x)y_2(x)=0.
+a_n(x)y_2^{(n)}(x)+a_{n-1}(x)y_2^{(n-1)}(x)+\cdots+a_1(x)y_2'(x)+a_0(x)y_2(x)=0.
 $$
 
 Let $y(x)=c_1y_1(x)+c_2y_2(x)$, then we have
 
 $$
 \begin{align*}
-&P(x)y''(x)+Q(x)y'(x)+R(x)y(x)\\
-&=P(x)\left[c_1y_1''(x)+c_2y_2''(x)\right]+Q(x)\left[c_1y_1'(x)+c_2y_2'(x)\right]\\
-&{}\quad{}+R(x)\left[c_1y_1(x)+c_2y_2(x)\right]\\
-&=c_1\left[P(x)y_1''(x)+Q(x)y_1'(x)+R(x)y_1(x)\right]\\
-&{}\quad{}+c_2\left[P(x)y_2''(x)+Q(x)y_2'(x)+R(x)y_2(x)\right]\\
+&a_n(x)y^{(n)}(x)+a_{n-1}(x)y^{(n-1)}(x)+\cdots+a_1(x)y'(x)+a_0(x)y(x)\\
+&=a_n(x)\left[c_1y_1^{(n)}(x)+c_2y_2^{(n)}(x)\right]+a_{n-1}(x)\left[c_1y_1^{(n-1)}(x)+c_2y_2^{(n-1)}(x)\right]\\
+&{}\quad{}+\cdots+a_1(x)\left[c_1y_1'(x)+c_2y_2'(x)\right]+a_0(x)\left[c_1y_1(x)+c_2y_2(x)\right]\\
+&=c_1\left[a_n(x)y_1^{(n)}(x)+a_{n-1}(x)y_1^{(n-1)}(x)+\cdots+a_1(x)y_1'(x)+a_0(x)y_1(x)\right]\\
+&{}\quad{}+c_2\left[a_n(x)y_2^{(n)}(x)+a_{n-1}(x)y_2^{(n-1)}(x)+\cdots+a_1(x)y_2'(x)+a_0(x)y_2(x)\right]\\
 &=c_1\cdot0+c_2\cdot0=0.
 \end{align*}
 $$
 
+
+This proof also holds when $c_1,c_2\in\mathbb{C}$.
 ::::::
+
+An important question is how we can determine if we have found all solutions of a differential equations. {prf:ref}`Thm:DE:SuperpositionPrinciple` tells us that for linear, homogeneous differential equations we can take linear combinations of solutions to build new solutions, but that still raises the question how many different solutions we need to build the general solution. For this we need the concept of linear independence.
 
 ::::::{prf:definition}
 :label: Def:DE:LinearIndependent
@@ -311,17 +507,27 @@ c_1f(x)+c_2g(x)=0\quad\text{for all}\quad x\in I
 $$
 
 implies that $c_1=0$ and $c_2=0$.
+
+More generally, $n$ functions $f_1(x),\ldots,f_n(x)$ are called **linearly independent** on an interval $I$ if 
+
+$$
+c_1f_1(x)+c_2f_2(x)+\cdots+c_nf_n(x)=0\quad\text{for all}\quad x\in I
+$$
+
+implies that $c_1=0$, $c_2=0$, $\ldots,$ $c_n=0$.
 ::::::
+
+Usually, showing linear independence for three or more functions is best done using techniques from linear algebra. As we do not assume a background in this field, we will stick to the linear independence of two functions in our examples.
 
 ::::::{prf:example}
 :label: Ex:DE:LinearIndependentExample1
-The functions $x$ and $x^2$ are linearly independent on the interval $[0,1]$, since
+We check that the functions $x$ and $x^2$ are linearly independent on the interval $[0,1]$. Suppose that we have
 
 $$
 c_1x+c_2x^2=0
 $$
 
-leads to $c_1+c_2=0$ if $x=1$ and to $\frac{1}{2}c_1+\frac{1}{4}c_2=0$ if $x=\frac{1}{2}$. This implies that $c_1=0$ and $c_2=0$.
+for all $x$ in $[0,1]$. Since this equation holds for *all* $x$ in this interval, we are free to choose several values of $x$, which will give rise to different equations. For instance, we obtain $c_1+c_2=0$ if $x=1$ and $\frac{1}{2}c_1+\frac{1}{4}c_2=0$ if $x=\frac{1}{2}$. These two equations can only hold at the same time if $c_1=0$ and $c_2=0$. This means that the two functions are linearly independent.
 ::::::
 
 ::::::{prf:example}
@@ -346,39 +552,243 @@ $$
 leads to $c_1=0$ if $x=0$ and to $c_2=0$ if $x=\frac{1}{2}\pi$.
 ::::::
 
-::::::{prf:theorem}
-:label: Thm:DE:GeneralSolutionHomogeneous
-If $y_1(x)$ and $y_2(x)$ are linearly independent solutions on an interval, and $P(x)$ is never $0$
-there, then the general solution is given by $y(x)=c_1y_1(x)+c_2y_2(x)$, where $c_1$ and $c_2$ are arbitrary constants.
+::::::{prf:example}
+:label: Ex:DE:LinearIndependentExample4
+The functions $e^{x-1}$ and $e^{x+1}$ are linearly dependent on $\mathbb{R}$. Indeed, we can rewrite these functions as $e^{x-1}=e^{-1}e^x$ and $e^{x+1}=ee^x$. Hence, the equation
+
+$$
+c_1e^{-1}e^x+c_2ee^x=0,\ x\in\mathbb{R}
+$$
+
+has solutions apart from $c_1=c_2=0$. Indeed, we note that $c_1=e$ and $c_2=-e^{-1}$ is also a solution for any $x$.
 ::::::
 
-An inhomogeneous second-order linear differential equation has the form
+When we have sufficiently many linearly independent solutions of a linear, homogeneous differential equation, we can build the general solution. 
+
+::::::{prf:theorem}
+:label: Thm:DE:GeneralSolutionHomogeneous
+Consider the $n$th order, linear, homogeneous differential equation
+
+$$
+a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=0.
+$$
+
+If $y_1(x),\ldots,y_n(x)$ are linearly independent solutions on an interval, and $a_n(x)$ is never $0$
+there, then the general solution is given by 
+
+$$
+y(x)=c_1y_1(x)+c_2y_2(x)+\cdots+c_ny_n(x),
+$$
+
+where $c_1,c_2,\ldots,c_n$ are arbitrary constants.
+::::::
+
+In particular, you need two linearly independent solutions to find the general solution of a second-order linear, homogeneous differential equation, three linearly independent solutions for a third-order one, etc. We cannot prove this result yet. We will give the proof in {numref}`Sec:DE:ExistenceUniqueness`.
+
+::::::{prf:example}
+:label: Ex:Classdiff:secondordersol
+
+Consider the differential equation
+
+$$
+y''(t)=-y(t).
+$$
+
+Because of the second derivative, this is a second-order differential equation. It is an ordinary differential equation, since the unknown function $y$ only depends on the variable $t$. In addition, the equation is linear, since it can be written as
+
+$$
+1\cdot y''(t)+0\cdot y'(t)+1\cdot y(t)=0.
+$$ 
+
+Because the right-hand side of this equation is $0$, the differential equation is homogeneous.
+
+If we want to find the general solution of this differential equation, we want to find all functions that satisfy this equation. That is, we look for all functions of which the second derivative is equal to minus the original function. In {numref}`Sec:ODE2:Homogeneous` we will see how you can solve this differential equation systematically, but for this particular equation it is possible to guess the solutions. Can you come up with one or more functions that satisfy this equation?
+
+:::{admonition} Click to see the solution
+:class: tudproof, dropdown
+One example of a function of which the second derivative is minus the original function is $y_1(t)=\sin(t)$. Indeed, for this function we have
+
+$$
+y_1''(t)=-\sin(t)=-y_1(t),
+$$
+
+so this function $y_1(t)$ is a solution of the differential equation. Similarly, the function $y_2(t)=\cos(t)$ is a solution, since we have
+
+$$
+y_2''(t)=-\cos(t)=-y_2(t).
+$$
+
+By {prf:ref}`Ex:DE:LinearIndependentExample3` the functions $y_1$ and $y_2$ are linearly independent. This means that we have found two linearly independent solutions of a second-order, linear, homogeneous differential equation. By {prf:ref}`Thm:DE:GeneralSolutionHomogeneous`, the general solution is given by
+
+$$
+y(t)=c_1y_1(t)+c_2y_2(t)=c_1\sin(t)+c_2\cos(t).
+$$
+:::
+::::::
+
+It turns out that for solving a nonhomogeneous, linear equation, such as the second-order one
 
 $$
 P(x)y''(x)+Q(x)y'(x)+R(x)y(x)=G(x),
 $$
 
-where $P$, $Q$, $R$ and $G$ are continuous functions with $P(x)\neq0$ and $G(x)\not\equiv0$. Then we have:
+we first need to solve the corresponding homogeneous equation, which in case of the second order equation becomes
+
+$$
+P(x)y''(x)+Q(x)y'(x)+R(x)y(x)=0.
+$$
+
+Let us first provide some terminology before we can state how we can solve nonhomogeneous, linear differential equations.
+
+::::::{prf:definition}
+:label: Def:DE:ComplEq
+For a linear, ordinary differential equation 
+
+$$
+a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=g(x)
+$$
+
+the corresponding **complementary equation** is the homogeneous equation
+
+$$
+a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=0.
+$$
+
+::::::
+
+
+::::::{prf:definition}
+:label: Def:DE:PartSol
+A **particular solution** of a differential equation is a function without unknown constants that satisfies the differential equation.
+
+::::::
+
+So a particular solution is just any solution of a differential equation.
 
 ::::::{prf:theorem}
-:label: Thm:DE;GeneralSolutionInhomogeneous
-If $y_p(x)$ is a particular solution and $y_h(x)$ is the general solution of the corresponding homogeneous (also called: *complementary*) differential equation (with $G(x)$ replaced by $0$), then $y(x)=y_p(x)+y_h(x)$ is the general solution.
+:label: Thm:DE:GeneralSolutionInhomogeneous
+The general solution of the linear, ordinary differential equation 
+
+$$
+a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=g(x)
+$$
+
+can be written as $y(x)=y_c(x)+y_p(x)$, where $y_c(x)$ is the general solution of the complementary equation
+
+$$
+a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=0
+$$
+
+and $y_p(x)$ is a particular solution of the nonhomogeneous equation.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:DE:GeneralSolutionInhomogeneous`
+:class: tudproof, dropdown
+Let $y_1(x)$ be any solution of the nonhomogeneous differential equation
+
+$$
+a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=g(x).
+$$
+
+Consider the function $y_2(x)=y_1(x)-y_p(x)$. Then we evaluate
+
+$$
+\begin{align*}
+&a_n(x)y_2^{(n)}(x)+a_{n-1}(x)y_2^{(n-1)}(x)+\cdots+a_1(x)y_2'(x)+a_0(x)y_2(x)\\
+&=a_n(x)\left[y_1^{(n)}(x)-y_p^{(n)}(x)\right]+a_{n-1}(x)\left[y_1^{(n-1)}(x)-y_p^{(n-1)}(x)\right]\\
+&{}\quad{}+\cdots+a_1(x)\left[y_1'(x)-y_p'(x)\right]+a_0(x)\left[y_1(x)-y_p(x)\right]\\
+&=\left[a_n(x)y_1^{(n)}(x)+a_{n-1}(x)y_1^{(n-1)}(x)+\cdots+a_1(x)y_1'(x)+a_0(x)y_1(x)\right]\\
+&{}\quad{}-\left[a_n(x)y_p^{(n)}(x)+a_{n-1}(x)y_p^{(n-1)}(x)+\cdots+a_1(x)y_p'(x)+a_0(x)y_p(x)\right]\\
+&=g(x)-g(x)\\
+&=0.
+\end{align*}
+$$
+
+This means that $y_2(x)$ is a solution of the complementary equation. As such, we have $y_1(x)=y_2(x)+y_p(x)$, so $y_1$ is the sum of a solution of the complementary equation and the particular solution $y_p$. This means that $y_1$ is of the desired form.
+:::
+
+::::::{prf:example}
+:label: Ex:Classdiff:secondordersolnonhom
+
+Consider the differential equation
+
+$$
+y''(t)+y(t)=1.
+$$
+
+In {prf:ref}`Ex:Classdiff:secondordersol` we saw that the general solution of the complementary equation
+
+$$
+y''(t)+y(t)=0
+$$
+
+is given by
+
+$$
+y_c(t)=c_1\sin(t)+c_2\cos(t).
+$$
+
+If we want to find the general solution of the nonhomogeneous equation, we need to find a particular solution. In {numref}`Sec:ODE2:Inhomogeneous`, we will see that we can find one by making the educated guess that the particular solution looks like the nonhomogeneous term $1$. In particular, we try a solution of the form $y(t)=A$ for some constant $A$. Plugging this guess into the differential equation gives
+
+$$
+0+A=1,
+$$
+
+which means that $y_p(t)=1$ is a particular solution. By {prf:ref}`Thm:DE:GeneralSolutionInhomogeneous`, the general solution of the nonhomogeneous differential equation is given by
+
+$$
+y(t)=y_c(t)+y_p(t)=c_1\sin(t)+c_2\cos(t)+1.
+$$
 ::::::
 
 ## Initial-value problems
 
-In many cases we are not interested in finding all solutions (the *general solution*) as in finding a specific solution that also satisfies some additional requirement(s). In many physical problems, in case of a first-order differential equation we need to find a particular solution that also satisfies a condition of the form $y(x_0)=y_0$. This is called an **initial condition**. The problem of finding a solution of a first-order differential equation that also satisfies such an initial condition is called an **initial-value problem**.
+In many cases we are not interested in finding all solutions (the *general solution*), but, instead, in finding a specific solution that also satisfies some additional requirement(s). In many physical problems, in case of a first-order differential equation we need to find a particular solution that also satisfies a condition of the form $y(x_0)=y_0$. This is called an **initial condition**. The problem of finding a solution of a first-order differential equation that also satisfies such an initial condition is called an **initial-value problem**.
+
+::::::{prf:definition}
+:label: Def:ClassDiff:IVP
+Consider a first-order ordinary differential equation
+
+$$
+F(x,y,y')=0
+$$
+
+and let $x_0$ in the domain of $F$. Then an equation of the form $y(x_0)=y_0$ is called an **initial condition** for the differential equation.
+
+For a second-order ordinary differential equation
+
+$$
+F(x,y,y',y'')=0
+$$
+
+with $x_0$ in the domain of $F$, an **initial condition** is a set of equations of the form $y(x_0)=y_0$ and $y'(x_0)=y_1$.
+
+In general, for an $n$th-order ordinary differential equation
+
+$$
+F(x,y,y',\ldots,y^{(n)})=0
+$$
+
+with $x_0$ in the domain of $F$, an **initial condition** is a set of equations of the form 
+
+$$
+y(x_0)=y_0,y'(x_0)=y_1,\ldots,y^{(n-1)}(x_0)=y_{n-1}.
+$$
+
+A differential equation combined with an initial condition is called an **initial-value problem**.
+::::::
 
 In {numref}`Sec:DE:ExistenceUniqueness` it will be shown that a first-order differential equation, that satisfies certain conditions, has a general solution with one degree of freedom; somewhere in the process of solving such a differential equation we have to integrate once which gives rise to a so-called arbitrary **constant of integration**.
 
 Then this arbitrary constant can be chosen in such a way that the solution also satisfies an initial condition of the form $y(x_0)=y_0$.
 
 ::::::{prf:example}
-The differential equation $y'=3x^2$ has the general solution $y(x)=x^3+C$ with $C\in\mathbb{R}$. However, there is only one solution that also satisfies the initial condition $y(0)=0$: $y(x)=x^3$, since $y(0)=0$ leads to $0=0^3+C=C$.
+The differential equation $y'=3x^2$ has the general solution $y(x)=x^3+C$ with $C\in\mathbb{R}$. However, there is only one solution that also satisfies the initial condition $y(0)=0$, which is $y(x)=x^3$. This is because $y(0)=0$ leads to $0=0^3+C=C$.
 ::::::
 
 ::::::{prf:example}
-The differential equation $y'=2y$ has the general solution $y(x)=Ce^{2x}$ with $C\in\mathbb{R}$. However, there is only one solution that also satisfies the initial condition $y(0)=3$: $y(x)=3e^{2x}$, since $y(0)=3$ leads to $3=Ce^{2\cdot0}=C$.
+The differential equation $y'=2y$ has the general solution $y(x)=Ce^{2x}$ with $C\in\mathbb{R}$. However, there is only one solution that also satisfies the initial condition $y(0)=3$, which is $y(x)=3e^{2x}$. This is because $y(0)=3$ leads to $3=Ce^{2\cdot0}=C$.
 :::::: 
 
 In {numref}`Sec:DE:ExistenceUniqueness` it will be shown that a second-order linear differential equations of the form
@@ -398,28 +808,50 @@ $$
 *exists* and is *unique*.
 
 ::::::{prf:example}
-Note that $y_1(x)=\cos(x)$ and $y_2=\sin(x)$ are two linear independent solutions of the second-order linear differential equation
+Consider the second-order linear differential equation
 
 $$
 y''+y=0.
 $$
 
-This implies that $y(x)=c_1\cos(x)+c_2\sin(x)$ is the general solution. This implies that $y'(x)=-c_1\sin(x)+c_2\cos(x)$. Then we have:
+In {prf:ref}`Ex:Classdiff:secondordersol` we saw that $y(x)=c_1\cos(x)+c_2\sin(x)$ is the general solution. Now we consider the initial-value problem
+
+$$
+y''+y=0,\quad y(0)=\alpha,\quad y'(0)=\beta
+$$
+
+for some constants $\alpha$ and $\beta$. For the general solution $y(x)=c_1\cos(x)+c_2\sin(x)$ we have $y'(x)=-c_1\sin(x)+c_2\cos(x)$. Then we have:
 
 $$
 \begin{cases}y(0)=\alpha\\ \\y'(0)=\beta\end{cases}\quad\Longleftrightarrow\quad\begin{cases}c_1=\alpha\\ \\c_2=\beta.\end{cases}
+$$
+
+This means that the solution of the initial-value problem is given by
+
+$$
+ y(t)=\alpha\cos(x)+\beta\sin(x).
 $$
 
 ::::::
 
 ## Boundary-value problems
 
-Instead of initial-value problems we might consider boundary-value problems, where we try to fix the solution $y(x)$ defined on some interval $[a,b]$ such that the value at the boundary points $x=a$ and $x=b$ are fixed: $y(a)=\alpha$ and $y(b)=\beta$.
+Instead of initial-value problems we might consider boundary-value problems, where we try to fix the solution $y(x)$ defined on some interval $[a,b]$ such that the value at the boundary points $x=a$ and $x=b$ are fixed: $y(a)=\alpha$ and $y(b)=\beta$. We could also try to fix the value of the derivative at the boundary: $y'(a)=\gamma$ and $y'(b)=\delta$, or we can even try combinations of the two.
+
+::::::{prf:definition}
+:label: Def:ClassDiff:BVP
+Consider an ordinary differential equation for an unknown function $y(x)$ on an open interval $(a,b)$. A **boundary-value problem** is a combination of the differential equation and two **boundary conditions**, one at $x=a$ and $x=b$.
+
+A boundary condition at $x_0=a$ or $x_0=b$ of the form $y(x_0)=\alpha$ is called a **Dirichlet boundary condition**. A boundary condition at $x_0=a$ or $x_0=b$ of the form $y'(x_0)=\alpha$ is called a **Neumann boundary condition**. 
+::::::
+
+Dirichlet and Neumann boundary conditions are the most common ones, but others exist. For instance, a mixed or **Robin boundary condition** at $x_0$ takes the form $c_1y(x_0)+c_2y'(x_0)=\alpha$.
+
 
 In case of a first-order differential equation we only have one degree of freedom. In general, it is not possible to choose the constant of integration in such a way that both $y(a)=\alpha$ and $y(b)=\beta$ are satisfied.
 
 ::::::{prf:example}
-The differential equation $y'=y$ has the general solution $y(x)=Ce^x$ with $C\in\mathbb{R}$. Now, for instance, $y(0)=\alpha$ implies that $C=\alpha$. However, then $y(1)=\alpha e$. This implies that the boundary-value problem
+The differential equation $y'=y$ has the general solution $y(x)=Ce^x$ with $C\in\mathbb{R}$. Now, for instance, $y(0)=\alpha$ implies that $C=\alpha$. However, this gives $y(1)=\alpha e$. This implies that the boundary-value problem
 
 $$
 y'=y,\quad y(0)=\alpha,\quad y(1)=\beta
@@ -428,7 +860,13 @@ $$
 only has a (unique) solution if $\beta=\alpha e$. Otherwise, there is no solution.
 ::::::
 
-Although the general solution of a second-order linear differential equation has two degrees of freedom, a corresponding boundary-value problems might have no solution, a unique solution or even infinitely many solutions.
+Although the general solution of a second-order linear differential equation has two degrees of freedom, a corresponding boundary-value problems might have no solution, a unique solution or even infinitely many solutions. This is because if the general solution is of the form
+
+$$
+y(t)=c_1y_1(t)+c_2y_2(t)
+$$
+
+then any combination of two boundary values gives rise to a system of linear equations for the unknown constants $c_1$ and $c_2$. Such a system can have either $0$, $1$ or infinitely many solutions..
 
 ::::::{prf:example}
 The general solution of $y''+y=0$ is $y(x)=c_1\cos(x)+c_2\sin(x)$ with $c_1,c_2\in\mathbb{R}$. This implies, for instance, that $y(0)=c_1$ and $y(\pi)=-c_1$. So, the boundary-value problem
@@ -444,26 +882,211 @@ has no solution if $\beta\neq-\alpha$. Moreover, if $\beta=-\alpha$ the boundary
 Check that $y_1(x)=\cos(x\sqrt{2})$ and $\sin(x\sqrt{2})$ are two linear independent solutions of the second-order linear differential equation $y''+2y=0$. Then the boundary-value problem
 
 $$
-\begin{cases}y''+2y=0,\quad 0<x<\pi\\ \\y(0)=\alpha,\quad y(\pi)=\beta\end{cases}
+\begin{cases}y''+2y=0,\quad 0<x<\pi\\ y(0)=\alpha,\quad y(\pi)=\beta\end{cases}
 $$
 
 has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sqrt{2})}{\sin(\pi\sqrt{2})}\sin(x\sqrt{2})$.
 ::::::
 
-## (Grasple) exercises
+## Grasple exercises
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0ced0edb-1f05-4f25-aad3-8b7457424b42?id=75347
+:label: Grasple:75347
+:dropdown:
+:description: Order of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bacc3ea4-0b25-4c4c-8aff-cff36756bcdf?id=75351
+:label: Grasple:75351
+:dropdown:
+:description: Order of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d7502886-3e86-4ab5-827e-168abcea587b?id=79445
+:label: Grasple:79445
+:dropdown:
+:description: Determining order and linearity of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/57eb19bc-952f-4de9-acce-2c5b6847d939?id=75348
+:label: Grasple:75348
+:dropdown:
+:description: Find equilibrium solutions and check if the differential equation is autonomous.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fa7c4299-9811-428f-80dc-ee1ad8503e6c?id=79449
+:label: Grasple:79449
+:dropdown:
+:description: Is the differential equation homogeneous or not?
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5b7acf31-b9c0-4f29-b85b-7cdad6738d6a?id=116919
+:label: Grasple:116919
+:dropdown:
+:description: Matching a differential equation to the graph of a solution.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4127023a-8a3e-45e0-b14a-fd7c6ad9b5b0?id=63819
+:label: Grasple:63819
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/899a9f36-7bb2-4cc0-a78d-96c267bf5532?id=63815
+:label: Grasple:63815
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b286747b-4b87-4028-8739-6b1435696e00?id=63814
+:label: Grasple:63814
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7553de32-4620-4eb6-82bf-6e324c0531b6?id=75346
+:label: Grasple:75346
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/253f32c9-0273-4c49-a337-43c5f14bb707?id=63816
+:label: Grasple:63816
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4cdcbca4-9d70-4de1-8b26-22b272d6c095?id=63817
+:label: Grasple:63817
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f5744d7a-bcd8-407c-aa4f-b4305aaf5537?id=68846
+:label: Grasple:68846
+:dropdown:
+:description: Checking whether a function is a solution of a differential equation.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/427e2cff-1b94-4d17-896c-2a90d1b0332d?id=79417
+:label: Grasple:79417
+:dropdown:
+:description: Make an educated guess about the shape of the solution.
+::::::
 
 ::::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/c83c4815-8d8c-4a1d-bade-f720cf165406?id=79453
-:label: grasple_exercise_13_0_1
+:label: Grasple:79453
 :dropdown:
 :description: Are two functions linearly independent?
 ::::::
 
 ::::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/fa7c4299-9811-428f-80dc-ee1ad8503e6c?id=79449
-:label: grasple_exercise_13_0_2
+:url: https://embed.grasple.com/exercises/6e8c3138-792d-477f-b804-e9f0de414eb0?id=79418
+:label: Grasple:79418
 :dropdown:
-:description: Is the differential equation homogeneous or not?
+:description: Application: Electrical circuit.
+::::::
+
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f221aa01-abe0-47df-ba0c-22bbf818b693?id=63812
+:label: Grasple:63812
+:dropdown:
+:description: Application: Newton's law of cooling.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ac7901dc-0e4b-4544-9d77-d70e2155996c?id=71422
+:label: Grasple:71422
+:dropdown:
+:description: Application: Torricelli's law.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/004b7dd2-225c-42d8-bb81-220dac0d4f91?id=63809
+:label: Grasple:63809
+:dropdown:
+:description: Application: Radioactive decay.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b61df470-920d-4b4a-bcae-48ec98715ac3?id=78952
+:label: Grasple:78952
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9148d4cc-2c20-43e2-b41d-7af72987abcc?id=78936
+:label: Grasple:78936
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4527066e-b5e9-4ff4-86d7-17d0a2b315a0?id=116578
+:label: Grasple:116578
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/12188e2d-d081-4782-89b9-854f1b7b986d?id=116576
+:label: Grasple:116576
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6cb15a96-caba-401d-bf18-0ce510bac2dd?id=116580
+:label: Grasple:116580
+:dropdown:
+:description: Application: Salt water in a tank.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/67724d57-cbe9-48ab-a401-0fd7a8c73a95?id=116579
+:label: Grasple:116579
+:dropdown:
+:description: Application: Salt water in a tank.
 ::::::

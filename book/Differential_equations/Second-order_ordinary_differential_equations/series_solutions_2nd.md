@@ -47,14 +47,14 @@ This implies that
 $$
 \begin{align*}
 &\sum_{n=0}^{\infty}\left[(n+2)(n+1)c_{n+2}+c_n\right]x^n=0\\
-&{}\quad\Longrightarrow\quad(n+2)(n+1)c_{n+2}+c_n=0,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad(n+2)(n+1)c_{n+2}+c_n=0,\quad n=0,1,2,\ldots
 \end{align*}
 $$
 
 This is a *recursion relation* for the coefficients:
 
 $$
-c_{n+2}=-\frac{c_n}{(n+1)(n+2)},\quad n=0,1,2,\ldots.
+c_{n+2}=-\frac{c_n}{(n+1)(n+2)},\quad n=0,1,2,\ldots
 $$
 
 If $c_0$ and $c_1$ are known, this equation allows us to determine the remaining coefficients recursively by putting $n=0,1,2,\ldots$ in succession:
@@ -109,7 +109,7 @@ So we conclude that $c_1=0$ and $c_n=-\displaystyle\frac{c_{n-2}}{n^2}$ for $n=2
 $$
 \begin{align*}
 c_{2n}&=-\frac{c_{2n-2}}{(2n)^2}=\frac{c_{2n-4}}{(2n)^2(2n-2)^2}=\cdots=\frac{(-1)^n}{(2n)^2(2n-2)^2\cdots2^2}c_0\\
-&=\frac{(-1)^n}{2^{2n}(n!)^2}c_0,\quad n=1,2,3,\ldots.
+&=\frac{(-1)^n}{2^{2n}(n!)^2}c_0,\quad n=1,2,3,\ldots
 \end{align*}
 $$
 
@@ -252,7 +252,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(2n-4)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{2(n-2)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{2(n-2)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -287,7 +287,7 @@ $$
 \begin{align*}
 c_{2n+1}&=\frac{2(2n-3)}{2n(2n+1)}c_{2n-1}\\
 &=\frac{2n-3}{n(2n+1)}\cdot\frac{2n-5}{(n-1)(2n-1)}\cdots\frac{1}{2\cdot5}\cdot\frac{-1}{1\cdot3}c_1\\
-&=\frac{(-1)\cdot1}{n!(2n-1)(2n+1)}c_1=-\frac{1}{(4n^2-1)n!}c_1,\quad n=1,2,3,\ldots.
+&=\frac{(-1)\cdot1}{n!(2n-1)(2n+1)}c_1=-\frac{1}{(4n^2-1)n!}c_1,\quad n=1,2,3,\ldots
 \end{align*}
 $$
 
@@ -316,7 +316,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(2n-6)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{2(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{2(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -356,7 +356,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(2n-8)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{2(n-4)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{2(n-4)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -395,7 +395,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(n^2+3n+2)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+1)(n+2)}{(n+1)(n+2)}c_n=c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+1)(n+2)}{(n+1)(n+2)}c_n=c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
 
@@ -441,7 +441,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(n^2+5n+6)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+2)(n+3)}{(n+1)(n+2)}c_n=\frac{n+3}{n+1}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+2)(n+3)}{(n+1)(n+2)}c_n=\frac{n+3}{n+1}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
 
@@ -541,7 +541,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(n^2+n-6)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+3)(n-2)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+3)(n-2)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -582,7 +582,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(n^2+n-12)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+4)(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+4)(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -626,7 +626,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(n^2-4)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+2)(n-2)}{(n+1)(n+2)}c_n=\frac{n-2}{n+1}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+2)(n-2)}{(n+1)(n+2)}c_n=\frac{n-2}{n+1}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -667,7 +667,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(n^2-9)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+3)(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+3)(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -711,7 +711,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(n^2+2n-8)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+4)(n-2)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+4)(n-2)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -752,7 +752,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+2)(n+1)c_{n+2}-(n^2+2n-15)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+5)(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=\frac{(n+5)(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -796,7 +796,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+1)(n+1)c_{n+1}-(n-2)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+1}=\frac{n-2}{(n+1)^2}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+1}=\frac{n-2}{(n+1)^2}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -840,7 +840,7 @@ This leads to the recursion relation
 $$
 \begin{align*}
 &(n+1)(n+1)c_{n+1}-(n-3)c_n=0,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+1}=\frac{n-3}{(n+1)^2}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+1}=\frac{n-3}{(n+1)^2}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
  
@@ -884,7 +884,7 @@ This leads to the recurrence relation
 $$
 \begin{align*}
 &(n+1)(n+2)c_{n+2}+\left\{n(n-1)-2n+2\right\}c_n,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=-\frac{(n-1)(n-2)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=-\frac{(n-1)(n-2)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
 
@@ -919,7 +919,7 @@ This leads to the recurrence relation
 $$
 \begin{align*}
 &(n+1)(n+2)c_{n+2}+\left\{n(n-1)-4n+6\right\}c_n,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=-\frac{(n-2)(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=-\frac{(n-2)(n-3)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
 
@@ -954,7 +954,7 @@ This leads to the recurrence relation
 $$
 \begin{align*}
 &(n+1)(n+2)c_{n+2}+\left\{n(n-1)-6n+12\right\}c_n,\quad n=0,1,2,\ldots\\
-&{}\quad\Longrightarrow\quad c_{n+2}=-\frac{(n-3)(n-4)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots.
+&{}\quad\Longrightarrow\quad c_{n+2}=-\frac{(n-3)(n-4)}{(n+1)(n+2)}c_n,\quad n=0,1,2,\ldots
 \end{align*}
 $$
 

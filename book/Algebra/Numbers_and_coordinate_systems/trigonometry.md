@@ -1233,409 +1233,142 @@ $$
 The factors of this infinite product give rise to all zeros of $\sin(\pi x)$ being $0,\pm1,\pm2,\ldots$.
 ::::::
 
-## Exercises
-
-```{exercise}
-:label: Exc:Trigonometry:Exercise_1
-Show that $1+\tan^2(x)=\dfrac{1}{\cos^2(x)}$ for $\cos(x)\neq0$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_1`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\sin^2(x)+\cos^2(x)=1&\quad\Longleftrightarrow\quad\dfrac{\sin^2(x)}{\cos^2(x)}+\dfrac{\cos^2(x)}{\cos^2(x)}=\dfrac{1}{\cos^2(x)}\\
-&\quad\Longleftrightarrow\quad\tan^2(x)+1=\dfrac{1}{\cos^2(x)}.
-\end{align*}
-$$
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_2
-Show that $1+\dfrac{1}{\tan^2(x)}=\dfrac{1}{\sin^2(x)}$ for $\sin(x)\neq0$
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_2`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\sin^2(x)+\cos^2(x)=1&\quad\Longleftrightarrow\quad\dfrac{\sin^2(x)}{\sin^2(x)}+\dfrac{\cos^2(x)}{\sin^2(x)}=\dfrac{1}{\sin^2(x)}\\
-&\quad\Longleftrightarrow\quad1+\dfrac{1}{\tan^2(x)}=\dfrac{1}{\sin^2(x)}.
-\end{align*}
-$$
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_3
-Show that $2\sin(x+y)\cos(x-y)=\sin(2x)+\sin(2y)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_3`
-:class: solution, dropdown
-Using 
-
-$$
-\sin(x+y)=\sin(x)\cos(y)+\cos(x)\sin(y)
-$$ 
-
-and 
-
-$$
-\cos(x-y)=\cos(x)\cos(y)+\sin(x)\sin(y)
-$$ 
-
-we obtain
-
-$$
-\begin{align*}
-\sin(x+y)\cos(x-y)&=\left(\sin(x)\cos(y)+\cos(x)\sin(y)\right)\\
-&{}\hspace{25mm}{}\times\left(\cos(x)\cos(y)+\sin(x)\sin(y)\right)\\
-&=\sin(x)\cos(x)\cos^2(y)+\sin^2(x)\sin(y)\cos(y)\\
-&{}\quad{}+\cos^2(x)\sin(y)\cos(y)+\sin(x)\cos(x)\sin^2(y).
-\end{align*}
-$$
-
-Now we use 
-
-$$
-\sin^2(x)+\cos^2(x)=1=\sin^2(y)+\cos^2(y),
-$$
-
-$$
-\sin(2x)=2\sin(x)\cos(y)
-$$ 
-
-and 
-
-$$
-\sin(2y)=2\sin(y)\cos(y)
-$$ 
-
-to find that
-
-\begin{align*}
-2\sin(x+y)\cos(x-y)&=2\sin(x)\cos(x)+2\sin(y)\cos(y)\\
-&=\sin(2x)+\sin(2y).
-\end{align*}
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_4
-Show that $2\cos(x+y)\sin(x-y)=\sin(2x)-\sin(2y)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_4`
-:class: solution, dropdown
-Using 
-
-$$
-\cos(x+y)=\cos(x)\cos(y)-\sin(x)\sin(y)
-$$ 
-
-and 
-
-$$
-\sin(x-y)=\sin(x)\cos(y)-\cos(x)\sin(y)
-$$ 
-
-we obtain
-
-$$
-\begin{align*}
-\cos(x+y)\sin(x-y)&=\left(\cos(x)\cos(y)-\sin(x)\sin(y)\right)\\
-&{}\hspace{25mm}{}\times\left(\sin(x)\cos(y)-\cos(x)\sin(y)\right)\\
-&=\sin(x)\cos(x)\cos^2(y)-\cos^2(x)\sin(y)\cos(y)\\
-&{}\quad{}-\sin^2(x)\sin(y)\cos(y)+\sin(x)\cos(x)\sin^2(y).
-\end{align*}
-$$
-
-Now we use 
-
-$$
-\sin^2(x)+\cos^2(x)=1=\sin^2(y)+\cos^2(y),
-$$ 
-
-$$
-\sin(2x)=2\sin(x)\cos(y)
-$$ 
-
-and 
-
-$$
-\sin(2y)=2\sin(y)\cos(y)
-$$ 
-
-to find that
-
-\begin{align*}
-2\cos(x+y)\sin(x-y)&=2\sin(x)\cos(x)-2\sin(y)\cos(y)\\
-&=\sin(2x)-\sin(2y).
-\end{align*}
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_5
-Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the exact value of $\sin(\frac{1}{12}\pi)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_5`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\sin(\tfrac{1}{12}\pi)=\sin(\tfrac{1}{3}\pi-\tfrac{1}{4}\pi)&=\sin(\tfrac{1}{3}\pi)\cos(\tfrac{1}{4}\pi)-\cos(\tfrac{1}{3}\pi)\sin(\tfrac{1}{4}\pi)\\
-&=\tfrac{1}{2}\sqrt{3}\cdot\tfrac{1}{2}\sqrt{2}-\tfrac{1}{2}\cdot\tfrac{1}{2}\sqrt{2}=\tfrac{1}{4}\sqrt{6}-\tfrac{1}{4}\sqrt{2}.
-\end{align*}
-$$
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_6
-Use the fact that $\frac{1}{12}\pi=\frac{1}{3}\pi-\frac{1}{4}\pi$ to find the exact value of $\cos(\frac{1}{12}\pi)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_6`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\cos(\tfrac{1}{12}\pi)=\cos(\tfrac{1}{3}\pi-\tfrac{1}{4}\pi)&=\cos(\tfrac{1}{3}\pi)\cos(\tfrac{1}{4}\pi)+\sin(\tfrac{1}{3}\pi)\sin(\tfrac{1}{4}\pi)\\
-&=\tfrac{1}{2}\cdot\tfrac{1}{2}\sqrt{2}+\tfrac{1}{2}\sqrt{3}\cdot\tfrac{1}{2}\sqrt{2}=\tfrac{1}{4}\sqrt{2}+\tfrac{1}{4}\sqrt{6}.
-\end{align*}
-$$
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_7
-Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the exact value of $\sin(\frac{5}{12}\pi)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_7`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\sin(\tfrac{5}{12}\pi)=\sin(\tfrac{1}{6}\pi+\tfrac{1}{4}\pi)&=\sin(\tfrac{1}{6}\pi)\cos(\tfrac{1}{4}\pi)+\cos(\tfrac{1}{6}\pi)\sin(\tfrac{1}{4}\pi)\\
-&=\tfrac{1}{2}\cdot\tfrac{1}{2}\sqrt{2}+\tfrac{1}{2}\sqrt{3}\cdot\tfrac{1}{2}\sqrt{2}=\tfrac{1}{4}\sqrt{2}+\tfrac{1}{4}\sqrt{6}.
-\end{align*}
-$$
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_8
-Use the fact that $\frac{5}{12}\pi=\frac{1}{6}\pi+\frac{1}{4}\pi$ to find the exact value of $\cos(\frac{5}{12}\pi)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_8`
-:class: solution, dropdown
-
-$$
-\begin{align*}
-\cos(\tfrac{5}{12}\pi)=\cos(\tfrac{1}{6}\pi+\tfrac{1}{4}\pi)&=\cos(\tfrac{1}{6}\pi)\cos(\tfrac{1}{4}\pi)-\sin(\tfrac{1}{6}\pi)\sin(\tfrac{1}{4}\pi)\\
-&=\tfrac{1}{2}\sqrt{3}\cdot\tfrac{1}{2}\sqrt{2}-\tfrac{1}{2}\cdot\tfrac{1}{2}\sqrt{2}=\tfrac{1}{4}\sqrt{6}-\tfrac{1}{4}\sqrt{2}.
-\end{align*}
-$$
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_9
-Let $a=\cos(\frac{1}{5}\pi)$ and $b=\cos(\frac{2}{5}\pi)$. Use $\cos(2x)=2\cos^2(x)-1$ and $\cos(\pi-x)=-\cos(x)$ to find two equations involving $a$ and $b$. Then find the exact values of $\cos(\frac{1}{5}\pi)$, $\cos(\frac{2}{5})$, $\cos(\frac{3}{5}\pi)$ and $\cos(\frac{4}{5}\pi)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_9`
-:class: solution, dropdown
-
-$$
-\cos(\tfrac{2}{5}\pi)=2\cos^2(\tfrac{1}{5}\pi)-1\quad\Longleftrightarrow\quad b=2a^2-1
-$$
-
-and
-
-$$
--\cos(\tfrac{1}{5}\pi)=\cos(\tfrac{4}{5}\pi)=2\cos^2(\tfrac{2}{5}\pi)-1\quad\Longleftrightarrow\quad -a=2b^2-1.
-$$
-
-Subtracting we obtain $a+b=2a^2-2b^2=2(a+b)(a-b)$, which implies that $1=2(a-b)$ since $a+b\neq0$. Substituting $b=a-\frac{1}{2}$ we obtain
-
-$$
-\begin{align*}
-a-\tfrac{1}{2}=2a^2-1&\quad\Longleftrightarrow\quad4a^2-4a-1=0\quad\Longleftrightarrow\quad(2a-\tfrac{1}{2})^2=\tfrac{5}{4}\\
-&\quad\Longleftrightarrow\quad a=\tfrac{1}{2}(1\pm\sqrt{5}).
-\end{align*} 
-$$
-
-Since $a=\cos(\frac{1}{5}\pi)>0$, we conclude that $a=\frac{1}{4}(1+\sqrt{5})$. This implies that $b=a-\frac{1}{2}=\frac{1}{4}(\sqrt{5}-1)$. We conclude that $\cos(\frac{1}{5}\pi)=\frac{1}{4}(1+\sqrt{5})$, $\cos(\frac{2}{5}\pi)=\frac{1}{4}(\sqrt{5}-1)$, $\cos(\frac{3}{5}\pi)=-\cos(\frac{2}{5}\pi)=\frac{1}{4}(1-\sqrt{5})$ and $\cos(\frac{4}{5}\pi)=-\cos(\frac{1}{5}\pi)=-\frac{1}{4}(1+\sqrt{5})$.
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_10
-Use the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ to find the exact values of $\tan(\frac{1}{8}\pi)$ and $\tan(\frac{3}{8}\pi)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_10`
-:class: solution, dropdown
-Using the double angle formula $\tan(2x)=\dfrac{2\tan(x)}{1-\tan^2(x)}$ for $x=\frac{1}{8}\pi$ we find
-
-$$
-\begin{align*}
-1=\tan(\tfrac{1}{4}\pi)=\frac{2\tan(\frac{1}{8}\pi)}{1-\tan^2(\frac{1}{8}\pi)}
-&\quad\Longleftrightarrow\quad1-\tan^2(\tfrac{1}{8}\pi)=2\tan(\tfrac{1}{8}\pi)\\
-&\quad\Longleftrightarrow\quad\tan^2(\tfrac{1}{8}\pi)+2\tan(\tfrac{1}{8}\pi)-1=0.
-\end{align*}
-$$
-
-Hence $(\tan(\frac{1}{8}\pi)+1)^2-2=0$ or equivalently $\tan(\frac{1}{8}\pi)=-1\pm\sqrt{2}$. Since $\tan(\frac{1}{8}\pi)>0$, we conclude that $\tan(\frac{1}{8}\pi)=-1+\sqrt{2}$.
-
-Similarly, for $x=\frac{3}{8}\pi$ we obtain
-
-$$
-\begin{align*}
--1=\tan(\tfrac{3}{4}\pi)=\frac{2\tan(\frac{3}{8}\pi)}{1-\tan^2(\frac{3}{8}\pi)}
-&\quad\Longleftrightarrow\quad-1+\tan^2(\tfrac{3}{8}\pi)=2\tan(\tfrac{3}{8}\pi)\\
-&\quad\Longleftrightarrow\quad\tan^2(\tfrac{3}{8}\pi)-2\tan(\tfrac{3}{8}\pi)-1=0.
-\end{align*}
-$$
-
-Hence $(\tan(\frac{3}{8}\pi)-1)^2-2=0$ or equivalently $\tan(\frac{3}{8}\pi)=1\pm\sqrt{2}$. Since $\tan(\frac{3}{8}\pi)>0$, we conclude that $\tan(\frac{3}{8}\pi)=1+\sqrt{2}$.
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_11
-In the picture below we have $\alpha=\frac{1}{7}\pi$. Find the exact value of $\cos(\frac{1}{7}\pi)\cos(\frac{2}{7}\pi)\cos(\frac{3}{7}\pi)$.
-```
-
-```{figure} Images/Fig-Trigonometry-Cosines.png
----
-width: 50%
-name: Fig:Trigonometry:Cosines
-align: center
----
-
-A triangle with angles $3\alpha$, $3\alpha$ and $\alpha$, subdivided into two isosceles triangles.
-```
-
-:::{todo}
-Convert {numref}`Fig:Trigonometry:Cosines` into an applet.
-:::
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_11`
-:class: solution, dropdown
-In each of the three isosceles triangles we use a rectangular triangle being half of it to find that $\cos(\frac{1}{7}\pi)=\dfrac{x+y}{2y}$, $\cos(\frac{2}{7}\pi)=\dfrac{y}{2x}$ and $\cos(\frac{3}{7}\pi)=\dfrac{x}{2(x+y)}$. This implies that
-
-$$
-\cos(\tfrac{1}{7}\pi)\cos(\tfrac{2}{7}\pi)\cos(\tfrac{3}{7}\pi)=\frac{x+y}{2y}\cdot\frac{y}{2x}\cdot\frac{x}{2(x+y)}=\frac{1}{8}.
-$$
-
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_12
-Let $\alpha=\frac{1}{7}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos(x)$ and the formula $2\sin(x)\cos(y)=\sin(x+y)-\sin(x-y)$ to find the exact value of $\cos(\alpha)\cos(2\alpha)\cos(3\alpha)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_12`
-:class: solution, dropdown
-Multiply and divide by $2\sin(\alpha)$ to find
-
-$$
-\begin{align*}
-\cos(\alpha)\cos(2\alpha)\cos(3\alpha)&=\frac{\sin(2\alpha)\cos(2\alpha)\cos(3\alpha)}{2\sin(\alpha)}=\frac{\sin(4\alpha)\cos(3\alpha)}{4\sin(\alpha)}\\
-&=\frac{\sin(7\alpha)+\sin(\alpha)}{8\sin(\alpha)}=\frac{1}{8},
-\end{align*}
-$$
-
-since $\sin(7\alpha)=\sin(\pi)=0$.
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_13
-Let $\alpha=\frac{1}{5}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos(x)$ and the formula $2\sin(x)\cos(y)=\sin(x+y)-\sin(x-y)$ to find the exact value of $\cos(\alpha)+\cos(3\alpha)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_13`
-:class: solution, dropdown
-Multiply and divide by $2\sin(\alpha)$ to find
-
-$$
-\begin{align*}
-\cos(\alpha)+\cos(3\alpha)&=\frac{2\sin(\alpha)\cos(\alpha)+2\sin(\alpha)\cos(3\alpha)}{2\sin(\alpha)}\\
-&=\frac{\sin(2\alpha)+\sin(4\alpha)-\sin(2\alpha)}{2\sin(\alpha)}=\frac{\sin(4\alpha)}{2\sin(\alpha)}=\frac{1}{2},
-\end{align*}
-$$
-
-since $\sin(4\alpha)=\sin(\alpha)$ for $\alpha=\frac{1}{5}\pi$.
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_14
-Let $\alpha=\frac{1}{7}\pi$. Use the double angle formula $\sin(2x)=2\sin(x)\cos(x)$ and the formula $2\sin(x)\cos(y)=\sin(x+y)-\sin(x-y)$ to find the exact value of $\cos(\alpha)+\cos(3\alpha)+\cos(5\alpha)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_14`
-:class: solution, dropdown
-Multiply and divide by $2\sin(\alpha)$ to find
-
-$$
-\begin{align*}
-&\cos(\alpha)+\cos(3\alpha)+\cos(5\alpha)\\
-&{}\quad{}=\frac{2\sin(\alpha)\cos(\alpha)+2\sin(\alpha)\cos(3\alpha)+2\sin(\alpha)\cos(5\alpha)}{2\sin(\alpha)}\\
-&{}\quad{}=\frac{\sin(2\alpha)+\sin(4\alpha)-\sin(2\alpha)+\sin(6\alpha)-\sin(4\alpha)}{2\sin(\alpha)}\\
-&{}\quad{}=\frac{\sin(6\alpha)}{2\sin(\alpha)}=\frac{1}{2},
-\end{align*}
-$$
-
-since $\sin(6\alpha)=\sin(\alpha)$ for $\alpha=\frac{1}{7}\pi$.
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_15
-Show that $\displaystyle\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right)$ for $\alpha+\beta\neq\pi$ (mod $2\pi$).
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_15`
-:class: solution, dropdown
-Setting $x+y=\alpha$ and $x-y=\beta$ in 
-
-$$
-\sin(x+y)+\sin(x-y)=2\sin(x)\cos(y)
-$$ 
-
-and 
-
-$$
-\cos(x+y)+\cos(x-y)=2\cos(x)\cos(y),
-$$ 
-
-we obtain $x=\dfrac{\alpha+\beta}{2}$ and $y=\dfrac{\alpha-\beta}{2}$ and therefore
-
-$$
-\sin(\alpha)+\sin(\beta)=2\sin\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right)
-$$
-
-and
-
-$$
-\cos(\alpha)+\cos(\beta)=2\cos\left(\frac{\alpha+\beta}{2}\right)\cos\left(\frac{\alpha-\beta}{2}\right),
-$$
-
-which implies that
-
-$$
-\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right),\quad\alpha+\beta\neq\pi\quad(\operatorname{mod}\;2\pi).
-$$
-
-:::
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7d46a09a-3e76-4729-9b9e-0d7805e15a0d?id=133108
+:label: Grasple:133108
+:dropdown:
+:description: Show that $1+\tan^2(x)=\dfrac{1}{\cos^2(x)}$ for $\cos(x)\neq0$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/09ea2686-97cd-4b4d-8281-a64ab0ee9273?id=134129
+:label: Grasple:134129
+:dropdown:
+:description: Show that $\sin(x+y)\sin(x-y)=\sin^2(x)-\sin^2(y)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/284cdfe7-31f0-4479-8ed0-74713506beea?id=134131
+:label: Grasple:134131
+:dropdown:
+:description: Show that $\cos(x+y)\cos(x-y)=\cos^2(x)-\sin^2(y)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/167538c5-a40d-4c58-8fff-f7cce19ea4bb?id=133112
+:label: Grasple:133112
+:dropdown:
+:description: Show that $2\sin(x+y)\cos(x-y)=\sin(2x)+\sin(2y)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7d139b7c-c13c-40a2-942f-6e51855e281b?id=133113
+:label: Grasple:133113
+:dropdown:
+:description: Show that $2\cos(x+y)\sin(x-y)=\sin(2x)-\sin(2y)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/30366c26-2670-43c6-a844-609a4a4b0446?id=133115
+:label: Grasple:133115
+:dropdown:
+:description: Find the eaxct values of $\sin(\frac{1}{12}\pi)$, $\cos(\frac{1}{12}\pi)$ and $\tan(\frac{1}{12}\pi)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4a5d9bf1-be49-4c1e-987c-267ddd768fe1?id=133117
+:label: Grasple:133117
+:dropdown:
+:description: Find the eaxct values of $\sin(\frac{5}{12}\pi)$, $\cos(\frac{5}{12}\pi)$ and $\tan(\frac{5}{12}\pi)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fb80c9db-a324-4602-bdbe-7f23d96759a2?id=133119
+:label: Grasple:133119
+:dropdown:
+:description: Find the eaxct values of $\sin(\frac{7}{12}\pi)$, $\cos(\frac{7}{12}\pi)$ and $\tan(\frac{7}{12}\pi)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7bc18d29-3a62-41b4-88ce-a44051b5a335?id=131798
+:label: Grasple:131798
+:dropdown:
+:description: Find the eaxct values of $\cos(\frac{1}{5}\pi)$, $\cos(\frac{2}{5}\pi)$, $\cos(\frac{3}{5}\pi)$ and $\cos(\frac{4}{5}\pi)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/eac637c2-33bf-4bf2-ad68-303be6eb510d?id=131804
+:label: Grasple:131804
+:dropdown:
+:description: Find the eaxct values of $\tan(\frac{1}{8}\pi)$ and $\tan(\frac{3}{8}\pi)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2826163a-c5a2-4ec2-9938-298efa7518c0?id=131809
+:label: Grasple:131809
+:dropdown:
+:description: Find the exact value of $\cos(\frac{1}{7}\pi)\cos(\frac{2}{7}\pi)\cos(\frac{3}{7}\pi)$ using a picture.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c1a7039f-2c5a-4910-a270-21055320b6b3?id=131810
+:label: Grasple:131810
+:dropdown:
+:description: Find the exact value of $\cos(\frac{1}{7}\pi)\cos(\frac{2}{7}\pi)\cos(\frac{3}{7}\pi)$ using formulas.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4abf7525-6919-47fa-9d92-f1718bbf25a8?id=131811
+:label: Grasple:131811
+:dropdown:
+:description: Find the exact value of $\cos(\frac{1}{5}\pi)+\cos(\frac{3}{5}\pi)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a95120c5-0ed0-42f3-8cb4-4a9c9e1e766f?id=131812
+:label: Grasple:131812
+:dropdown:
+:description: Find the exact value of $\cos(\frac{1}{7}\pi)+\cos(\frac{3}{7}\pi)+\cos(\frac{5}{7}\pi)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/719dcbd5-c115-43bb-ba0b-fab62a592161?id=133322
+:label: Grasple:133322
+:dropdown:
+:description: Show that $\displaystyle\frac{\sin(\alpha)+\sin(\beta)}{\cos(\alpha)+\cos(\beta)}=\tan\left(\frac{\alpha+\beta}{2}\right)$ for $-\pi<\alpha+\beta<\pi$.
+
+::::
 
 In the exercises below we consider an arbitrary triangle $ABC$ with vertices $A$, $B$ and $C$, sides $a$, $b$ and $c$, and angles $\alpha$, $\beta$ and $\gamma$ as indicated.
 
@@ -1652,120 +1385,74 @@ Triangle $\triangle ABC$ with sides $a$, $b$ and $c$ opposite to angles $\alpha$
 Convert {numref}`Fig:Trigonometry:ABCTriangle` into an applet.
 :::
 
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_16
-Show that $a\sin(\beta-\gamma)+b\sin(\gamma-\alpha)+c\sin(\alpha-\beta)=0$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_16`
-:class: solution, dropdown
-Use the law of sines $\dfrac{a}{\sin(\alpha)}=\dfrac{b}{\sin(\beta)}=\dfrac{c}{\sin(\gamma)}=d$, where $d$ denotes the diameter of the circumscribed circle, to obtain
+So we have $\alpha+\beta+\gamma=\pi$ and therefore, for instance,
 
 $$
-\begin{align*}
-&a\sin(\beta-\gamma)+b\sin(\gamma-\alpha)+c\sin(\alpha-\beta)\\
-&=d\sin(\alpha)\sin(\beta-\gamma)+d\sin(\beta)\sin(\gamma-\alpha)+d\sin(\gamma)\sin(\alpha-\beta)\\
-&=d\sin(\pi-\alpha)\sin(\beta-\gamma)+d\sin(\pi-\beta)\sin(\gamma-\alpha)+d\sin(\pi-\gamma)\sin(\alpha-\beta)\\
-&=d\sin(\beta+\gamma)\sin(\beta-\gamma)+d\sin(\gamma+\alpha)\sin(\gamma-\alpha)+d\sin(\alpha+\beta)\sin(\alpha-\beta)\\
-&=d\left(\sin^2(\beta)-\sin^2(\gamma)+\sin^2(\gamma)-\sin^2(\alpha)+\sin^2(\alpha)-\sin^2(\beta)\right)=0.
-\end{align*}
+\sin(\alpha+\beta)=\sin(\pi-\gamma)=\sin(\gamma)\quad\text{and}\quad\cos(\alpha+\beta)=\cos(\pi-\gamma)=-\cos(\gamma).
 $$
 
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_17
-Show that $\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)=2+2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_17`
-:class: solution, dropdown
+Furthermore, it might come in handy to use (see: {numref}`Grasple:134129` and {numref}`Grasple:134131`)
 
 $$
-\begin{align*}
-&\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)\\
-&=1-\cos^2(\alpha)+1-\cos^2(\beta)+\sin^2(\gamma)
-=2-\left(\cos^2(\alpha)-\sin^2(\gamma)\right)-\cos^2(\beta)\\
-&=2-\cos(\alpha+\gamma)\cos(\alpha-\gamma)-\cos^2(\beta)=2+\cos(\beta)\cos(\alpha-\gamma)-\cos^2(\beta)\\
-&=2+\cos(\beta)\left(\cos(\alpha-\gamma)-\cos(\beta)\right)=2+\cos(\beta)\left(\cos(\alpha-\gamma)+\cos(\alpha+\gamma)\right)\\
-&=2+2\cos(\alpha)\cos(\beta)\cos(\gamma).
-\end{align*}
+\sin(x+y)\sin(x-y)=\sin^2(x)-\sin^2(y)
 $$
 
-Note that this implies that a triangle with angles $\alpha$, $\beta$ and $\gamma$ is a right-angled triangle if and only if $\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)=2$ since then $\cos(\alpha)=0$, $\cos(\beta)=0$ or $\cos(\gamma)=0$.
-:::
-
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_18
-Show that $\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1-2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
-```
-
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_18`
-:class: solution, dropdown
+and
 
 $$
-\begin{align*}
-&\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)\\
-&=1-\sin^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)
-=1+\left(\cos^2(\beta)-\sin^2(\alpha)\right)+\cos^2(\gamma)\\
-&=1+\cos(\beta+\alpha)\cos(\beta-\alpha)+\cos^2(\gamma)=1-\cos(\gamma)\cos(\beta-\alpha)+\cos^2(\gamma)\\
-&=1-\cos(\gamma)\left(\cos(\beta-\alpha)-\cos(\gamma)\right)=1-\cos(\gamma)\left(\cos(\beta-\alpha)+\cos(\beta+\alpha)\right)\\
-&=1-2\cos(\alpha)\cos(\beta)\cos(\gamma).
-\end{align*}
+\cos(x+y)\cos(x-y)=\cos^2(x)-\sin^2(y).
 $$
 
-Note that this implies that a triangle with angles $\alpha$, $\beta$ and $\gamma$ is a right-angled triangle if and only if $\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1$ since then $\cos(\alpha)=0$, $\cos(\beta)=0$ or $\cos(\gamma)=0$.
-:::
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3b8bab93-8132-41bc-bd75-2c28ea644608?id=133901
+:label: Grasple:133901
+:dropdown:
+:description: Show that $a\sin(\beta-\gamma)+b\sin(\gamma-\alpha)+c\sin(\alpha-\beta)=0$.
 
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_19
-Show that $\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)=4\sin(\alpha)\sin(\beta)\sin(\gamma)$.
-```
+::::
 
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_19`
-:class: solution, dropdown
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c22fea42-315a-4954-a89e-763162283329?id=133905
+:label: Grasple:133905
+:dropdown:
+:description: Show that $\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)=2+2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
 
-$$
-\begin{align*}
-\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)&=2\sin(\alpha+\beta)\cos(\alpha-\beta)+\sin(2\gamma)\\
-&=2\sin(\gamma)\cos(\alpha-\beta)+2\sin(\gamma)\cos(\gamma)\\
-&=2\sin(\gamma)\left(\cos(\alpha-\beta)+\cos(\gamma)\right)\\
-&=2\sin(\gamma)\left(\cos(\alpha-\beta)-\cos(\alpha+\beta)\right)\\
-&=4\sin(\alpha)\sin(\beta)\sin(\gamma).
-\end{align*}
-$$
+::::
 
-:::
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9e40f143-5a2b-4e1b-9d67-bf080b03c30f?id=133908
+:label: Grasple:133908
+:dropdown:
+:description: Show that $\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1-2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
 
-```{exercise} 
-:label: Exc:Trigonometry:Exercise_20
-Show that $\tan(\alpha)+\tan(\beta)+\tan(\gamma)=\tan(\alpha)\tan(\beta)\tan(\gamma)$.
-```
+::::
 
-:::{admonition} Solution of {numref}`Exc:Trigonometry:Exercise_20`
-:class: solution, dropdown
-Note that 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/30f15c3f-bdec-473b-ae94-75d605b6fcc9?id=134134
+:label: Grasple:134134
+:dropdown:
+:description: Show that $\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)=4\sin(\alpha)\sin(\beta)\sin(\gamma)$.
 
-$$
-\tan(\gamma)=\tan(\pi-\alpha-\beta)=-\tan(\alpha+\beta)=-\frac{\tan(\alpha)+\tan(\beta)}{1-\tan(\alpha)\tan(\beta)}.
-$$ 
+::::
 
-Hence we have:
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ae3c7477-310e-4bab-a0d8-c94d2d020e5f?id=134136
+:label: Grasple:134136
+:dropdown:
+:description: Show that $\tan(\alpha)+\tan(\beta)+\tan(\gamma)=\tan(\alpha)\tan(\beta)\tan(\gamma)$.
 
-$$
-\begin{align*}
-\tan(\alpha)+\tan(\beta)+\tan(\gamma)&=\tan(\alpha)+\tan(\beta)-\frac{\tan(\alpha)+\tan(\beta)}{1-\tan(\alpha)\tan(\beta)}\\
-&=\left(\tan(\alpha)+\tan(\beta)\right)\left(1-\frac{1}{1-\tan(\alpha)\tan(\beta)}\right)\\
-&=\left(\tan(\alpha)+\tan(\beta)\right)\frac{1-\tan(\alpha)\tan(\beta)-1}{1-\tan(\alpha)\tan(\beta)}\\
-&=\left(\tan(\alpha)+\tan(\beta)\right)\left(\frac{-\tan(\alpha)\tan(\beta)}{1-\tan(\alpha)\tan(\beta)}\right)\\
-&=\tan(\alpha)\tan(\beta)\left(-\frac{\tan(\alpha)+\tan(\beta)}{1-\tan(\alpha)\tan(\beta)}\right)\\
-&=\tan(\alpha)\tan(\beta)\tan(\gamma).
-\end{align*}
-$$
+::::
 
-:::
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6212bac3-6ded-4d16-a9fe-1dc67014e99d?id=131813
+:label: Grasple:131813
+:dropdown:
+:description: Use Heron's formula to find the area of a triangle.
 
-```{todo} 
-Perhaps add a Grasple exercise here on Heron’s formula, with the diagram of the triangle adapting to the parameters (the side lengths), if that’s possible. See the area calculator on Wikipedia: https://en.wikipedia.org/wiki/Heron%27s_formula.
-```
-
+::::

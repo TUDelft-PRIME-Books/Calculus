@@ -10,12 +10,13 @@ parts:
   chapters:
   - file: Algebra/Numbers_and_coordinate_systems/introduction_numbers_and_coordinate_systems.md
     sections:
-    - file: Algebra/Numbers_and_coordinate_systems/sums_and_products.md
+    - file: Algebra/Numbers_and_coordinate_systems/set_theory_and_logic.md
     - file: Algebra/Numbers_and_coordinate_systems/real_numbers.md
-    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersCartesian.md
+    - file: Algebra/Numbers_and_coordinate_systems/complex_numbers_cartesian.md
     - file: Algebra/Numbers_and_coordinate_systems/trigonometry.md
     - file: Algebra/Numbers_and_coordinate_systems/coordinate_systems.md
-    - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Appendices/ComplexNumbersPolar.md
+    - file: Algebra/Numbers_and_coordinate_systems/complex_numbers_polar.md
+    - file: Algebra/Numbers_and_coordinate_systems/sums_and_products.md
   - file: Algebra/Vector_algebra/introduction_vector_algebra.md
     sections:
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Vectors.md
@@ -54,7 +55,6 @@ parts:
     - file: Single-variable_functions/Integration/indefinite_integrals.md
     - file: Single-variable_functions/Integration/fundamental_theorem_of_calculus.md
     - file: Single-variable_functions/Integration/integration_by_substitution.md
-    - file: Single-variable_functions/Integration/special_substitutions.md
     - file: Single-variable_functions/Integration/integration_by_parts.md
     - file: Single-variable_functions/Integration/integration_of_trigonometric_functions.md
     - file: Single-variable_functions/Integration/integration_of_rational_functions.md
@@ -79,8 +79,9 @@ parts:
     - file: Sequences_and_series/Series/taylor_series.md
     - file: Sequences_and_series/Series/binomial_series.md
     - file: Sequences_and_series/Series/fourier_series.md
+    - file: Sequences_and_series/Series/riemann_zeta_function.md
+    - file: Sequences_and_series/Series/catalans_constant.md
     - file: Sequences_and_series/Series/generating_functions.md
-    - file: Sequences_and_series/Series/special_constants_and_functions.md
   numbered: 3
 - caption: Multivariable functions
   chapters:
@@ -130,6 +131,7 @@ parts:
   - file: Differential_equations/First-order_ordinary_differential_equations/introduction_first_order_ODE.md
     sections:
     - file: Differential_equations/First-order_ordinary_differential_equations/direction_fields_and_solutions.md
+    - file: Differential_equations/First-order_ordinary_differential_equations/first_order_autonomous_differential_equations.md
     - file: Differential_equations/First-order_ordinary_differential_equations/separable_differential_equations.md
     - file: Differential_equations/First-order_ordinary_differential_equations/first_order_linear_differential_equations.md
     - file: Differential_equations/First-order_ordinary_differential_equations/exact_differential_equations.md

@@ -1,3 +1,5 @@
+(Sec:MultivariableIntegration:TransformationsR2)=
+
 # Coordinate transformations in $\mathbb{R}^2$
 
 - Double integral using general coordinate transform
@@ -15,7 +17,7 @@ $$
 We start with a **polar rectangle**
 
 $$
-R=\{(r\cos(\theta),r\sin(\theta))\,|\,a\leq r\leq b,\;\alpha\leq\theta\leq\beta\}\;\textrm{with}\; a\geq0\;\textrm{and}\;\beta-\alpha\leq2\pi.
+R=\{(r\cos(\theta),r\sin(\theta))\,|\,a\leq r\leq b,\;\alpha\leq\theta\leq\beta\}\;\text{with}\; a\geq0\;\text{and}\;\beta-\alpha\leq2\pi.
 $$
 
 ```{figure} Images/polar1.png
@@ -140,7 +142,7 @@ V&=\iint\limits_D(1-x^2-y^2)\,dA\\
 If $f$ is continuous on a polar region of the form
 
 $$
-D=\{(r\cos(\theta),r\sin(\theta))\,|\,\alpha\leq\theta\leq\beta,\;h_1(\theta)\leq r\leq h_2(\theta)\}\;\textrm{with}\;\beta-\alpha\leq2\pi,
+D=\{(r\cos(\theta),r\sin(\theta))\,|\,\alpha\leq\theta\leq\beta,\;h_1(\theta)\leq r\leq h_2(\theta)\}\;\text{with}\;\beta-\alpha\leq2\pi,
 $$
 
 then
@@ -183,7 +185,7 @@ $$
 Hence we have using $\cos(2x)=2\cos^2(x)-1$:
 
 \begin{align*}
-\textrm{area}(D)&=\iint\limits_D1\,dA\\
+\operatorname{area}(D)&=\iint\limits_D1\,dA\\
 &=\int_{-\frac{1}{4}\pi}^{\frac{1}{4}\pi}\int_0^{\cos(2\theta)}r\,dr\,d\theta\\
 &=\int_{-\frac{1}{4}\pi}^{\frac{1}{4}\pi}\bigg[\frac{1}{2}r^2\bigg]_{r=0}^{\cos(2\theta)}\,d\theta\\
 &=\frac{1}{2}\int_{-\frac{1}{4}\pi}^{\frac{1}{4}\pi}\cos^2(2\theta)\,d\theta\\
@@ -278,7 +280,7 @@ V&=\int_0^{2\pi}\int_0^5\frac{r\cos(\theta)+15}{10}\,r\,dr\,d\theta\\
 :::::{prf:example}
 :label: Ex:MultivariableIntegration:PolarApplicationsExample2
 
-Earlier we have seen that the *Gaussian integral* is: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sqrt{\pi}$. 
+Earlier (see: {prf:ref}`Note:Integration:ImproperIntegralsGaussianIntegral`) we have seen that the *Gaussian integral* is: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sqrt{\pi}$. 
 
 Now we are able to prove this result.
 
@@ -420,7 +422,7 @@ A one-to-one transformation.
 We can approximate the image region $R=T(S)$ by a parallelogram determined by the secant vectors
 
 $$
-\mathbf{r}(u_0+\Delta u,v_0)-\mathbf{r}(u_0,v_0)\quad\textrm{and}\quad\mathbf{r}(u_0,v_0+\Delta v)-\mathbf{r}(u_0,v_0).
+\mathbf{r}(u_0+\Delta u,v_0)-\mathbf{r}(u_0,v_0)\quad\text{and}\quad\mathbf{r}(u_0,v_0+\Delta v)-\mathbf{r}(u_0,v_0).
 $$
 
 However, we have
@@ -665,7 +667,7 @@ Because of the symmetry we conclude that the centroid is $(\overline{x},\overlin
 &=6\pi
 \end{align*} 	
  
-and
+and (check the details)
 
 \begin{align*}
 \iint\limits_Dx\,dA&=\int_0^{2\pi}\int_0^{2+2\cos(\theta)}r\cos(\theta)\cdot r\,dr\,d\theta\\
@@ -697,10 +699,10 @@ The region $D$ enclosed by the circles $x^2+y^2=1$ and $x^2+y^2=4$ and the lines
 Using polar coordinates we obtain for the area of $D$:
 
 \begin{align*}
-\textrm{area}(D)&=\iint\limits_R1\,dA\\
+\operatorname{area}(D)&=\iint\limits_R1\,dA\\
 &=\int_{\arctan\left(\frac{1}{\sqrt{3}}\right)}^{\arctan\left(\sqrt{3}\right)}\int_1^2r\,dr\,d\theta\\
 &=\int_{\frac{1}{6}\pi}^{\frac{1}{3}\pi}d\theta\int_1^2r\,dr\\
-&=\left(\frac{1}{3}\pi-\frac{1}{6}\pi\right)\bigg[\frac{1}{2}r^2\bigg]_{r=1}^2||
+&=\left(\frac{1}{3}\pi-\frac{1}{6}\pi\right)\bigg[\frac{1}{2}r^2\bigg]_{r=1}^2\\
 &=\frac{1}{6}\pi\cdot\frac{3}{2}=\frac{1}{4}\pi.
 \end{align*}
  
@@ -729,7 +731,7 @@ in the $uv$-plane. Note that
 This leads to
 
 \begin{align*}
-\textrm{area}(D)&=\iint\limits_R1\,dA\\
+\operatorname{area}(D)&=\iint\limits_R1\,dA\\
 &=\int_{\frac{1}{\sqrt{3}}}^{\sqrt{3}}\int_1^4\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv\\
 &=\frac{1}{2}\int_1^4du\,\int_{\frac{1}{\sqrt{3}}}^{\sqrt{3}}\frac{dv}{1+v^2}\\
 &=\frac{3}{2}\left(\arctan\left(\sqrt{3}\right)-\arctan\left(\frac{1}{\sqrt{3}}\right)\right)\\
@@ -739,9 +741,10 @@ This leads to
  
 :::::
 
+(Sec:MultivariableIntegration:BaselProblem)=
 ## Proofs of the Basel problem
 
-The Basel problem is to find the sum of the convergent series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$. The problem is named after the hometown of the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler), who solved the problem in 1734. Earlier we have seen that this is a special case of the {numref}`Riemann zeta function <Sec:Series:TaylorSeries>` $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$ for $\textrm{Re}(s)>1$. We only consider real values of $s$; in that case we know that the series is absolutely convergent if $s>1$. However, in general it is not very easy to find its sum. The Basel problem is to find the sum of $\zeta(2)$.
+The **Basel problem** is to find the sum of the convergent series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$. The problem is named after the hometown of the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler), who solved the problem in 1734. In {numref}`Sec:Series:RiemannZetaFunction` we have seen that this is a special case of the Riemann zeta function $\displaystyle\zeta(s)=\sum_{n=1}^{\infty}\frac{1}{n^s}$. The Basel problem is to find the sum of $\zeta(2)$.
 
 ::::::{admonition} First proof of the Basel problem
 :class: tudproof
@@ -868,7 +871,7 @@ The triangle $T$.
 Hence we have
 
 \begin{align*}
-&\frac{3}{4}\zeta(2)=\iint\limits_Tdu\,dv=\textrm{area}(T)=\frac{1}{2}\cdot\frac{1}{4}\pi^2=\frac{1}{8}\pi^2\\
+&\frac{3}{4}\zeta(2)=\iint\limits_Tdu\,dv=\operatorname{area}(T)=\frac{1}{2}\cdot\frac{1}{4}\pi^2=\frac{1}{8}\pi^2\\
 &{}\quad\Longrightarrow\quad\zeta(2)=\frac{4}{3}\cdot\frac{1}{8}\pi^2=\frac{1}{6}\pi^2. 
 \end{align*}
 

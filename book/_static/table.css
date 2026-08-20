@@ -24,3 +24,16 @@ table caption span.caption-number::after{
   content: "\A";   /* newline */
   white-space: pre;   /* or pre-line */
 }
+
+.table {
+  margin: 0 0 1em !important;
+}
+
+table.fit-content {
+  width: fit-content;
+}
+
+table.center {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
