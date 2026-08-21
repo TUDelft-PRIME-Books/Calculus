@@ -3,7 +3,7 @@
 
 ## Introduction
 
-To consider the multiplication of complex numbers, it is best to first consider the polar coordinates of a complex number. Polar coordinates is a concept that works for points in a plane. The idea is that instead of looking at the $x$ and $y$ coordinates of a point, we describe the point by the distance to the origin and the direction from the origin.
+To understand the multiplication of complex numbers, it is useful to first consider the polar coordinates of a complex number. The concept of polar coordinates provides an alternative way to describe points in a plane. Instead of looking at the $x$ and $y$ coordinates of a point, we describe the point by the distance to the origin and the direction from the origin.
 
 ## Modulus and argument
 
@@ -12,16 +12,16 @@ To consider the multiplication of complex numbers, it is best to first consider 
 
 Let $z$ be a complex number, The **modulus** of $z$, denoted by $|z|$, is the distance from zero to the point in the complex plane.
 
-An **argument** of $z$, denoted by $\arg(z)$, is an angle in the complex plane measured from the positive real axis in counterclockwise direction towards the ray from $0$ through $z$.
+An **argument** of $z$, denoted by $\arg(z)$, is an angle in the complex plane measured counterclockwise from the positive real axis towards the ray from $0$ through $z$.
 ::::::
 
-By using the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` and with $z=a+bi$, it holds that 
+For $z=a+bi$ the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` gives
 
 $$
  |z|=\sqrt{a^2+b^2}.
 $$
 
-By {prf:ref}`Thm:ComplexNumbers:ComplConjCompl` we can, equivalently, write
+By {prf:ref}`Thm:ComplexNumbers:ComplConjCompl`, we can equivalently write
 
 $$
  |z|=\sqrt{z\overline{z}}.
@@ -29,7 +29,7 @@ $$
 
 We often denote the modulus by the symbol $r$, so $r=|z|$. 
 
-The argument uses the convention similar to the unit circle: the direction straight the right corresponds to $0$ radians, up corresponds to $\frac{1}{2}\pi$ radians, to the left to $\pi$ radians and down to $\frac{3}{2}\pi$ radians. We often denote the argument by the symbol $\theta$, so $\theta=\arg(z)$.
+For the argument we use the same convention as for angles on the unit circle: the direction directly to the right corresponds to $0$ radians, upwards corresponds to $\dfrac{\pi}{2}$ radians, to the left to $\pi$ radians and downwards to $\dfrac{3\pi}{2}$ radians. We often denote the argument by the symbol $\theta$, so $\theta=\arg(z)$.
 
 :::{applet}
 :url: calculus/complex_numbers/polar_coordinates
@@ -38,13 +38,13 @@ The argument uses the convention similar to the unit circle: the direction strai
 
 The polar coordinates of a point in the complex plane $\C$ are the distance $r=|z|$ from zero to the point and the angle $\theta=\arg(z)$ measured from the positive real axis in a anticlockwise direction towards the ray from zero through the point. \
  \
-Note the switch in the bottom: this changes the shown grid from Cartesian to polar, so you can inspect both aspects from complex numbers. All other figures containing the complex plane in this section will include this switch.
+The switch in the bottom changes the grid from Cartesian to polar, allowing you to inspect the complex plane using either coordinate system. All other figures containing the complex plane in this section will have this switch.
 
 :::
 
 
-Notice that the argument is not uniquely defined, as you can always go a full circle extra and add $2\pi$ radians to the angle. For example, the number $1$ has argument $0$ (as it is on the positive real axis), but also $2\pi$, $4\pi$, and $-2\pi$ (etc.). In order to make a uniform choice, we sometimes work with the principal value of the argument, which is by definition the unique value of the argument between $-\pi$ and $\pi$.
-We write the principal value using a capital A. Thus we have $-\pi < \operatorname{Arg}(z) \leq \pi$.
+Notice that the argument is not uniquely defined. We can always make one or more full rotations and add a multiple of $2\pi$ radians to the angle. For example, the number $1$ has argument $0$ (as it is on the positive real axis), but $2\pi$, $4\pi$, and $-2\pi$ (etc.) are also arguments of $1$. In order to make a uniform choice, we sometimes use the **principal argument**, which is by definition the unique value of the argument $\theta$ with $-\pi<\theta\leq \pi$.
+We write the principal argument using a capital A. Thus we have $-\pi < \operatorname{Arg}(z) \leq \pi$.
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polarex1
@@ -55,7 +55,7 @@ $$
  |z|=\sqrt{3^2+3^2}=3\sqrt{2}.
 $$
 
-The argument, the corresponding angle, equals $\frac14\pi$ as you can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex1>`.
+The argument, the corresponding angle, equals $\dfrac{\pi}{4}$ as you can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex1>`.
 
 :::{applet}
 :url: calculus/complex_numbers/polar_coordinates_2
@@ -80,10 +80,10 @@ $$
 The argument can't be deduced immediately from a picture, see {numref}`Figure %s <Fig:ComplexNumbers:polarex2>`, but we do see that
 
 $$
-\tan(\arg(w)) = \frac{\text{opposite}}{\text{adjacent}} = \frac{\text{imaginary part}}{\text{real part}} = \frac{2}{3}\approx 0.\overline{6}.
+\tan(\arg(w)) = \frac{\text{opposite}}{\text{adjacent}} = \frac{\text{imaginary part}}{\text{real part}} = \frac{2}{3}\approx 0.67.
 $$
 
-Unfortunately, there are no 'pretty' angles of which the tangent is $\frac{2}{3}$. Since $\tan\left(\frac16\pi\right)=\frac{1}{3}\sqrt{3}\approx 0.557$ and $\tan\left(\frac14\pi\right)=1$, the argument of $w$ is going to be closer to $\frac16\pi\approx0.52$ than to $\frac14\pi\approx0.79$. Either by making a good sketch (such as the one in {numref}`Fig:ComplexNumbers:polarex2`) and measuring the angle, or by simply trying some angles close to $0.5$, we find that an even better approximation would be $\arg(w)\approx 0.59$, since $\tan(0.59)\approx 0.67$.
+Unfortunately, there are no standard angles of which the tangent is $\dfrac{2}{3}$. Since $\tan\left(\frac{\pi}{6}\right)=\frac{1}{3}\sqrt{3}\approx 0.557$ and $\tan\left(\frac{\pi}{4}\right)=1$, we see that the argument of $w$ is going to lie in the interval $\left[\frac{\pi}{6},\frac{\pi}{4}\right]$. Either by making a good sketch (such as the one in {numref}`Fig:ComplexNumbers:polarex2`) and measuring the angle, or by trying some angles close to $0.5$, we find that we approximately have $\arg(w)\approx 0.59$, since $\tan(0.59)\approx 0.67$.
 
 
 In fact, if you are familiar with the arctangent, which we will cover in {numref}`Section:Inverse`, you can obtain the exact expression $\arg(w) = \arctan\left(\frac23\right)$.
@@ -107,17 +107,17 @@ $$
  |v|=\sqrt{(-1)^2+2^2} = \sqrt{5}.
 $$
 
-For the argument, we obtain that, just as in the previous example, 
+For the argument of $v$, we obtain that, just as in the previous example, 
 
 $$
  \tan(\arg(v)) = \frac{2}{-1}=-2.
 $$
 
-Again, there is no 'pretty' angle of which the tangent is $-2$. By making a good sketch (such as the one in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>`) and measuring the angle, or by simply trying some angles, we find that an approximation would be $\arg(v)\approx 2.03$, since $\tan(2.03)\approx -2.02$.
+Again, there is no 'pretty' angle of which the tangent is $-2$. By making a good sketch (such as the one in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>`) and measuring the angle, or by trying some angles, we find that that we approximately have $\arg(v)\approx 2.03$, since $\tan(2.03)\approx -2.02$.
 
-If we were to use the arctangent (see {numref}`Section:Inverse`) to find an exact expression for the angle, we would expect that $\arg(v) = \arctan( -2) \approx -1.10715$. But this answer is negative, while we can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>` that the true argument is something between $\frac12\pi$ and $\pi$. Thus, this argument cannot be correct.
+If we were to use the arctangent (see {numref}`Section:Inverse`) to find an exact expression for the angle, we would expect that $\arg(v) = \arctan( -2) \approx -1.11$. But this answer is negative, while we can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>` that the true argument is something between $\dfrac{\pi}{2}$ and $\pi$. Thus, this argument cannot be correct.
 
-It turns out that if we multiply both the real and imaginary parts of a complex number by $-1$, then the quotient used within the arctangent stays the same. So In this case the arctangent gives the argument of $1-2i$ instead. Fortunately, we can easily find the correct argument as it is exactly $\pi$ higher[^others]. We find $\arg(v) = \arctan(-2) + \pi \approx 2.03444$.
+It turns out that if we multiply both the real and imaginary parts of a complex number by $-1$, then the quotient used within the arctangent stays the same. So In this case the arctangent gives the argument of $1-2i$ instead. Fortunately, we can easily find the correct argument as it is exactly $\pi$ higher[^others]. We find $\arg(v) = \arctan(-2) + \pi \approx 2.03$.
 
 [^others]: or lower, or even $(2k+1)\pi$ higher or lower.
 
@@ -133,12 +133,12 @@ The complex number $-1+2i$.
 ::::
 
 :::{warning}
-If $z=a+bi$ with $a\neq 0$ we have $\tan\left(\arg(z)\right)=\dfrac{b}{a}$. If you are familiar with the arctangent (see {numref}`Section:Inverse`), you can try to use this arctangent to obtain an exact expression for $\arg(z)$. However, you always have to check whether the value you find with the arctangent gives the correct angle. As the range of the arctangent is $\left(-\frac12\pi,\frac12\pi\right)$ you can only find the correct argument if the complex number is to the right of the imaginary axis, that is, if the real part is positive.
+If $z=a+bi$ with $a\neq 0$ we have $\tan\left(\arg(z)\right)=\dfrac{b}{a}$. If you are familiar with the arctangent (see {numref}`Section:Inverse`), you can try to use this arctangent to obtain an exact expression for $\arg(z)$. However, you always have to check whether the value you find with the arctangent gives the correct angle. As the range of the arctangent is $\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right)$ you can only find the correct argument if the complex number is to the right of the imaginary axis, that is, if the real part is positive.
 
-If the real part is negative, the argument is between $\frac12\pi$ and $\frac32\pi$ (or between $-\frac12\pi$ and $-\frac32\pi$ depending on which direction you want to consider) and outside the range of the arctangent. To get the correct value for the argument in these cases, you have to add or subtract $\pi$ from the arctangent. In particular, we have
+If the real part is negative, the argument is between $\dfrac{\pi}{2}$ and $\dfrac{3\pi}{2}$ (or between $-\frac12\pi$ and $-\frac32\pi$ depending on which direction you want to consider) and outside the range of the arctangent. To get the correct value for the argument in these cases, you have to add or subtract $\pi$ from the arctangent. In particular, we have
 
 $$
- \arg(z)=\begin{cases}
+ \Arg(z)=\begin{cases}
  \arctan\left(\frac{b}{a}\right),&\text{if}\ a>0,\\
  \frac12\pi, &\text{if}\ a=0\ \text{and}\ b>0,\\
  -\frac12\pi, &\text{if}\ a=0\ \text{and}\ b<0,\\
@@ -175,7 +175,7 @@ $$
 
 ::::::
 
-In particular, we see that the complex number with modulus $r$ and argument $\theta$ equals $r\bigl(\cos(\theta) + i\sin(\theta)\bigr)$ and vice versa. The form $r\cos(\theta) + ir\sin(\theta)$ is called the _polar form_ of the complex number:
+In particular, we see that the complex number with modulus $r$ and argument $\theta$ equals $r\bigl(\cos(\theta) + i\sin(\theta)\bigr)$. This is called the _polar form_ of the complex number:
 
 ::::{prf:definition}
 :label: Def:ComplexNumbers:polarform
@@ -367,6 +367,10 @@ This is known as **Euler's formula**.
 
 ::::
 
+:::{todo}
+Include an applet of Fig-ComplexNumbers-EulersFormule.jpg
+:::
+
 Using this definition we see that we can express any complex number in terms of an expression of the form $e^{i\theta}$.
 
 ::::{prf:theorem}
@@ -391,21 +395,157 @@ $$
 
 ::::
 
+::::{prf:example}
+:label: Ex:ComplexNumbers:nicenumbers
+By definition, we have
+
+$$
+ e^{i\pi}=\cos(\pi)+i\sin(\pi)=-1+i\cdot 0=-1.
+$$
+
+This means that we can write
+
+$$
+ e^{i\pi}+1=0.
+$$
+
+Many mathematicians consider this one of the most beautiful formulas in all of mathematics, as it contains all of the special numbers $e$, $i$, $\pi$, $1$ and $0$.
+::::
 
 
 You might think it is strange to use the number $e$ and superscripts which would suggest some sort of power of $e$. It turns out this is very convenient as this expression satisfies the rules of calculation for exponentials. Indeed the calculation in Equation {eq}`Eq:ComplexNumbers:calcproduct` shows that
 
 $$
-(re^{i\theta}) (se^{i\phi} )= rse^{i(\theta+\phi)}.
+(re^{i\theta}) (se^{i\phi} )=rse^{i\theta}e^{i\phi}= rse^{i(\theta+\phi)}.
 $$
 
 This corresponds precisely with the rules for multiplying exponentials. As such, you can calculate with this strange notation $re^{i\theta}$ for complex numbers just as you would if you were indeed taking imaginary powers of $e$ ($=2.71828\ldots$). Some deep mathematics show that the definition given here is the only reasonable way to define taking imaginary exponents. Hence, we call an expression of the form $e^{i\theta}$ a **complex exponential**.
 
-In fact, we can use the idea that a complex exponential should satisfy the rules of calculation for the regular exponential to define the complex exponential for any complex number. Indeed, for a complex number $z=a+bi$ with $a,b\in\mathbb{R}$, we define the complex exponential $e^{a+bi}$ as
+In fact, we can use the idea that a complex exponential should satisfy the rules of calculation for the regular exponential to define the complex exponential for any complex number. 
+
+::::{prf:definition}
+:label: Dfn:ComplexNumbers:ComplExp
+
+Let $z=a+bi\in\mathbb{C}$ with $a,b\in\mathbb{R}$. Then we introduce the **complex exponential** $e^{a+bi}$ as
 
 $$
- e^{a+bi}=e^ae^{bi}=e^a\left(\cos(b)+i\sin(b)\right).
+e^{a+bi}=e^ae^{bi}=e^a\left(\cos(b)+i\sin(b)\right).
 $$
+
+
+::::
+
+:::{note}
+When $z$ is real, i.e. when $z=a+i\cdot 0$ with $a\in \mathbb{R}$, we have
+
+$$
+ e^z=e^a\left(\cos(0)+i\sin(0)\right)=e^a.
+$$
+
+In particular, the complex exponential coincides with the real exponential when $z$ is real.
+:::
+
+As promised, the complex exponential satisfies several properties similar to the real exponential. 
+::::{prf:theorem}
+:label: Thm:ComplexNumbers:ComplExpCalcRules
+
+Let $z\in\mathbb{C}$ and $w\in\mathbb{C}$. Then we have
+
+\begin{align*}
+e^{z+w}&=e^ze^w,\\
+e^{-z}&=\frac{1}{e^z},\\
+e^{z-w}&=\frac{e^z}{e^w},\\
+\left|e^z\right|&=e^{\operatorname{Re}(z)},\\
+\operatorname{arg}\left(e^z\right)&=\operatorname{Im}(z)\\
+\overline{e^z}=e^{\overline{z}}
+.\\
+\end{align*}
+
+Finally, if $n\in\mathbb{Z}$ is an integer, we have
+
+$$
+ \left(e^z\right)^n=e^{nz}.
+$$
+
+::::
+
+:::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:ComplExpCalcRules`
+:class: tudproof, dropdown
+
+We write $z=a+bi$ and $w=c+di$ with $a,b,c,d\in\mathbb{R}$. 
+
+In order to establish the first property, we use the definition of the complex exponential to write
+
+$$
+ e^{z+w}=e^{(a+c)+(b+d)i}=e^{a+c}e^{(b+d)i}=e^{a+c}\left(\cos(b+d)+i\sin(b+d)\right).
+$$
+
+Using {prf:ref}`Thm:RealNumbers:ExpCalcReal` and {prf:ref}`Thm:ComplexNumbers:polarmultdiv` we obtain
+
+\begin{align*}
+ e^{z+w}&=e^{a+c}\left(\cos(b+d)+i\sin(b+d)\right)\\
+ &=e^ae^c\left(\cos(b)+i\sin(b)\right)\left(\cos(d)+i\sin(d)\right)\\
+ &=e^a\left(\cos(b)+i\sin(b)\right)e^c\left(\cos(d)+i\sin(d)\right)\\
+ &=e^ze^w,
+\end{align*}
+
+as desired.
+
+For the second property, we use the first property to write
+
+$$
+ e^ze^{-z}=e^{z-z}=e^0=1.
+$$
+
+By {prf:ref}`Thm:ComplexNumbers:division`, we find that
+
+$$
+ e^{-z}=\frac{1}{e^z}.
+$$
+
+Using the first and second properties, we can establish the third property, since we have
+
+$$
+ e^{z-w}=e^{z}e^{-w}=e^z\frac{1}{e^w}=\frac{e^z}{e^w}.
+$$
+
+For the fourth and fifth properties, we note that
+
+$$
+ e^z=e^a\left(\cos(b)+i\sin(b)\right)
+$$
+
+is the polar form of $e^z$. From this, we can directly read off that $\left|e^z\right|=e^a$ and $\operatorname{arg}\left(e^z\right)=b$.
+
+For the sixth property, we use the fourth and fifth properties to obtain
+
+$$
+ \overline{e^z}=\overline{e^a\cos(b)+ie^a\sin(b)}=e^a\cos(b)-ie^a\sin(b)=e^a\cos(-b)+ie^a\sin(-b)=e^{a-ib}=e^{\overline{z}}.
+$$
+
+For the final property, we distinguish between the cases $n>0$, $n=0$ and $n<0$. For $n>0$, we use the first property $n-1$ times to obtain
+
+$$
+ \left(e^z\right)^n=\underbrace{e^z\cdot e^z\cdot\cdots\cdot e^z}_{n\text{ times}}=e^{z+z}\underbrace{e^z\cdot e^z\cdot\cdots\cdot e^z}_{n-1\text{ times}}=...=e^{\underbrace{z+z+\cdots+z}_{n\text{ times}}}=e^{nz}.
+$$
+
+For $n=0$, we directly obtain
+
+$$
+ \left(e^z\right)^0=1=e^0=e^{0\cdot z}.
+$$
+
+Finally, for $n<0$, we note that $-n>0$ so we obtain
+
+$$
+ \left(e^{z}\right)^{n}=\frac{1}{\left(e^{z}\right)^{-n}}=\frac{1}{e^{-nz}}=e^{nz}.
+$$
+
+:::
+
+:::{note}
+Not all properties of the real exponential can be lifted to the complex exponential. For instance, since there are no inequalities in $\mathbb{C}$, there is no equivalent for the rule "If $p<q$ then $e^p<e^q$." In addition, there is no equivalent to the rule " $\left(e^p\right)^q=e^{pq}$ " since $\left(e^z\right)^w$ is undefined when $z$ and $w$ are both non-real.
+:::
 
 :::::::::{admonition} Bonus: derivative of the complex exponential
 :class: bonus, dropdown
@@ -422,7 +562,7 @@ We can even show that the complex exponential function behaves exactly like the 
 :label: Thm:ComplexNumbers:re_diff
 :nonumber:
 
-Let $\theta\in\mathbb{R}$. Then
+We have
 
 $$
 \frac{d}{d\theta}\left(e^{i\theta}\right) = ie^{i\theta}.
@@ -506,10 +646,16 @@ $$
 
 ## De Moivre and other trigonometric identities
 
-The notation invented by Euler of $e^{i\theta} = \cos(\theta) + i\sin(\theta)$ allows us to quickly derive trigonometric identities. The most famous one is De Moivre's identity $e^{in\theta} = (e^{i\theta})^n$, which seems obvious now, but was discovered by De Moivre decades before the exponential notation was introduced and is a lot more impressive in the form
+The notation invented by Euler of $e^{i\theta} = \cos(\theta) + i\sin(\theta)$ allows us to quickly derive trigonometric identities. The most famous one is De Moivre's identity 
 
 $$
-\cos(n\theta) + i \sin(n\theta) = \big(\cos(\theta) + i \sin(\theta)\big)^n.
+ (e^{i\theta})^n = e^{in\theta},
+$$ 
+
+which follows from {prf:ref}`Thm:ComplexNumbers:ComplExpCalcRules`. This identity seems obvious now, but was discovered by De Moivre decades before the exponential notation was introduced and is a lot more impressive in the form
+
+$$
+ \big(\cos(\theta) + i \sin(\theta)\big)^n=\cos(n\theta) + i \sin(n\theta).
 $$
 
 ::::{prf:example}
@@ -551,84 +697,184 @@ Thus $\cos(\theta+\phi) = \cos(\theta) \cos(\phi) - \sin(\theta) \sin(\phi)$ and
 
 ::::
 
-## Solving $z^n=w$
+## $n$th roots of a complex number
 
-We can use complex exponential to solve equations of the form $z^n=w$ for a given complex number $w$, where $z$ is the variable we want to solve for. Let us consider an example.
+We can use complex exponentials to solve equations of the form $z^n=w$ for a given complex number $w$, where $z$ is the variable we want to solve for. Let us first introduce some terminology.
+
+::::{prf:definition}
+:label: Def:ComplexNumbers:roots
+Let $w\in\mathbb{C}$ and $n\in\mathbb{Z}$ with $n\geq 2$. Then we call $z\in\mathbb{C}$ an **$n$th root** of $w$ if $z^n=w$.
+::::
+
+:::{note}
+Polynomial equations with exactly two terms are sometimes called **binomial equations**. Since equations of the form $z^n=w$ have exactly two terms, these equations are examples of binomial equations.
+:::
+
+:::{warning}
+You should never use the notation $\sqrt[n]{w}$ for a non-real number $w$, as that notation is ambiguous. As we will see, the equation $z^n=w$ has $n$ distinct solutions if $w\neq 0$, and unlike for real numbers, there is no 'logical' choice for which one you should pick.
+:::
+
+Before turning to examples, we will first establish how many distinct $n$th roots a complex number can have.
+
+::::{prf:theorem}
+:label: Thm:ComplexNumbers:roots
+Let $w\in\mathbb{C}$ and $n\in\mathbb{Z}$ with $n\geq 1$. Then the equation $z^n=w$ has exactly $n$ distinct solutions for $z\in\mathbb{C}$ if $w\neq 0$, or only the solution $z=0$ if $w=0$.
+
+If $w\neq 0$, the $n$ $n$th roots of $w$ all lie on the circle $|z|=|w|^{\frac{1}{n}}$ in the complex plane, and the roots are equally spaced on this circle.
+::::
+
+:::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:roots`
+:class: tudproof, dropdown
+Since the equation $z^n=w$ can be rewritten has $z^n-w=0$, it follows from {prf:ref}`Thm:ComplexNumbers:fundamental` that this equation has $n$ solutions, counting multiplicity. 
+
+If $w=0$, we can directly factor
+
+$$
+ z^n-w=z^n=\underbrace{(z-0)\cdot(z-0)\cdot\cdots\cdot(z-0)}_{n\text{ times}},
+$$
+
+which means that the linear factor $z-0$ occurs $n$ times. As such, $z=0$ is the only solution in this case.
+
+Now we assume that $w\neq 0$ and we let $r=|w|$ and $\theta=\operatorname{Arg}(w)$. For $1\leq k\leq n$, we define the complex number
+
+$$
+ z_k=r^{\frac{1}{n}}e^{i\frac{\theta+2\pi k}{n}}.
+$$
+
+Then for each $1\leq k\leq n$, we obtain using {prf:ref}`Thm:ComplexNumbers:ComplExpCalcRules`
+
+$$
+z^n =\left(r^{\frac{1}{n}}\right)^n\left(e^{i\frac{\theta+2\pi k}{n}}\right)^n=re^{i\theta +2\pi k}=re^{i\theta}e^{i2\pi k}=re^{i\theta}\cdot 1=re^{i\theta}=w.
+$$ 
+
+This means that $z_1,...,z_n$ are all solutions of the equation $z^n=w$. To show that these are distinct, we assume that $z_j=z_k$ for some $1\leq j,k\leq n$. Then we can divide by the non-zero number $r^{\frac{1}{n}}$ to obtain
+
+$$
+ e^{i\frac{\theta+2\pi j}{n}}=e^{i\frac{\theta+2\pi k}{n}}.
+$$
+
+By {prf:ref}`Thm:ComplexNumbers:ComplExpCalcRules`, we find that $\dfrac{\theta+2\pi j}{n}$ is an argument of the exponential on the left-hand side of the equation, while $\dfrac{\theta+2\pi k}{n}$ is an argument of the kexponential on the left-hand side of the equation. Since arguments are unique up to multiples of $2\pi$, we find that
+
+$$
+ \dfrac{\theta+2\pi j}{n}=\dfrac{\theta+2\pi k}{n}+2\pi m
+$$
+
+for some integer $m$. Simplifiying this equation gives
+
+$$
+ j=k+ mn,
+$$
+
+which gives
+
+$$
+ j-k= mn.
+$$
+
+Note that $1\leq j\leq n$ and $1\leq k\leq n$. This means that 
+
+$$
+ j-k\geq 1-n>-n
+$$
+
+and
+
+$$
+ j-k\leq n-1<n.
+$$
+
+In particular, $j-k$ cannot be equal to $nm$ if $m\neq 0$. So we must have $m=0$, which gives $j-k=0$, so $j=k$. As such, $z_j=z_k$ only holds if $j=k$, which means that $z_1,...,z_n$ are $n$ distinct $n$th roots of $w$.
+
+We note that $|z_k|=r^{\frac{1}{n}}$ for each $1\leq k\leq n$, so each root $z_k$ lies on the circle $|z|=|w|^{\frac{1}{n}}$. In addition, the argument of $z_k$ is $\dfrac{\theta+2\pi k}{n}$. As such, the difference between the argument of $z_{k+1}$ and the argument of $z_k$ (or between the arguments of $z_1$ and $z_k$ if $k=n$) is $\dfrac{2\pi}{n}$, which means that the roots are equally spaced on the circle.
+:::
+
+::::{prf:example}
+:label: Ex:ComplexNumbers:rootsunity
+We can directly see that the complex numbers $z=1$, $z=i$, $z=-1$ and $z=-i$ all satisfy $z^4=1$. This means that these four complex numbers are the fourth roots of $1$.
+
+In general, the $n$ $n$th roots of the complex numbers are known as the **$n$th roots of unity**.
+::::
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:threesolutions2
 
 Consider the equation $z^3=-16+16i$. We know it has $3$ complex solutions, as it is a third degree polynomial equation (see {prf:ref}`Thm:ComplexNumbers:fundamental`). If we write $z=a+bi$ and expand to find $a$ and $b$, we get a very large expression which is not easy to work with.
 
-If we write $z=re^{i\phi}$ in polar coordinates instead, we can easily express $z^3=r^3e^{3i\phi}$. We also have to express the right-hand side in polar coordinates: $-16+16i=16\sqrt{2} e^{\frac34 \pi i}$. In particular, the equation in polar coordinates becomes
+If we write $z=re^{i\phi}$ in polar coordinates instead, we can easily express $z^3=r^3e^{3i\phi}$. We also have to express the right-hand side in polar coordinates: $-16+16i=16\sqrt{2} e^{\frac{3\pi}{4} i}$. In particular, the equation in polar coordinates becomes
 
 $$
- r^3e^{3i\phi}=16\sqrt{2} e^{\frac34 \pi i}.
+ r^3e^{3i\phi}=16\sqrt{2} e^{\frac{3\pi}{4} i}.
 $$
 
 Comparing the modulus and argument of these two expressions, we find
 
 \begin{align*}
 r^3&=|z^3|= |-16+16i| = 16\sqrt{2},\\
-3\phi &= \arg(z^3) = \arg(-16+16i) = \frac34\pi.
+3\phi &= \arg(z^3) = \arg(-16+16i) = \frac{3\pi}{4}.
 \end{align*}
 
 Taking a cube root of the equation $r^3=16\sqrt{2}$, we find $r=2\sqrt{2}$. Note that $r\geq 0$ is real, so here we need to consider only the single positive real solution; we do not want to find the complex solutions.
 
-In addition, we have $3\phi = \frac34\pi$, so $\phi = \frac14\pi$. This gives the solution $z=2\sqrt{2} e^{\frac14 \pi i}$. But this is just one solution and there ought to be two more by {prf:ref}`Thm:ComplexNumbers:fundamental`. So what are the remaining two?
+In addition, we have $3\phi = \frac{3\pi}{4}$, so $\phi = \frac{\pi}{4}$. This gives the solution $z=2\sqrt{2} e^{\frac{\pi}{4} i}$. But this is just one solution and there ought to be three by {prf:ref}`Thm:ComplexNumbers:fundamental`. So what are the remaining two?
 
 As we have seen, the argument is only defined up to a multiple of $2\pi$. Thus, when we get the equation 
 
 $$
- 3\phi = \frac34\pi,
+ 3\phi = \frac{3\pi}{4},
 $$
 
 we should actually write 
 
 $$
- 3\phi = \frac34\pi + 2\pi k
+ 3\phi = \frac{3\pi}{4} + 2\pi k
 $$
 
 for some integer $k$. Dividing this by $3$ gives 
 
 $$
- \phi = \frac14\pi + \frac23 \pi k.
+ \phi = \frac{\pi}{4} + \frac23 \pi k.
 $$
 
 We see that different values of $k$ give different values of $\phi$. For $k=0$, we obtain 
 
 $$
- \phi=\frac14\pi
+ \phi=\frac{\pi}{4}
 $$
 
 as before. For $k=1$, we obtain 
 
 $$
- \phi = \frac14\pi + \frac23\pi = \frac{11}{12}\pi.
+ \phi = \frac{\pi}{4} + \frac{2\pi}{3} = \frac{11\pi}{12}.
 $$
 
 For $k=2$, we have 
 
 $$
- \phi = \frac14\pi + \frac43\pi = \frac{19}{12}\pi.
+ \phi = \frac{\pi}{4} + \frac43\pi = \frac{19\pi}{12}.
 $$
 
 For $k=3$, we obtain 
 
 $$
- \phi = \frac14\pi + 2\pi.
+ \phi = \frac{\pi}{4} + 2\pi.
 $$
 
-This gives the same complex number as $\phi=\frac14\pi$, as the argument is shifted by one full period. Indeed, if we add a multiple of $3$ to $k$, the argument of $\phi$ is shifted by a multiple of $2\pi$ and thus the corresponding solution $z$ does not change. Therefore, only the cases $k=0$, $k=1$, and $k=2$ suffice to obtain all solutions.
+This gives the same complex number as $\phi=\frac{\pi}{4}$, as the argument is shifted by one full period. Indeed, if we add a multiple of $3$ to $k$, the argument of $\phi$ is shifted by a multiple of $2\pi$ and thus the corresponding solution $z$ does not change. Therefore, only the cases $k=0$, $k=1$, and $k=2$ suffice to obtain all solutions.
 
 The three solutions, $z_0$, $z_1$ and $z_2$, to the equation $z^3=-16+16i$ thus are
 
 $$
 \begin{array}{lllllllll}
-z_0&=&2\sqrt{2} e^{\frac14\pi i} &=&  2\sqrt{2}\left( \cos\left(\frac14\pi\right) +  i\sin\left(\frac14\pi\right) \right) & = & 2+2i, \\
-z_1&=& 2\sqrt{2} e^{\frac{11}{12}\pi i} &=& 2\sqrt{2} \left(\cos\left(\frac{11}{12}\pi\right) + i\sin\left(\frac{11}{12}\pi\right)\right) & = & (-1-\sqrt{3})+(-1+\sqrt{3})i, \\
-z_2&=& 2\sqrt{2} e^{\frac{19}{12}\pi i} &=& 2\sqrt{2}\left(\cos\left(\frac{19}{12}\pi\right) +i\sin\left(\frac{19}{12}\pi\right)\right) &=& (-1+\sqrt{3})+(-1-\sqrt{3})i.
+z_0&=&2\sqrt{2} e^{\frac{\pi}{4} i} &=&  2\sqrt{2}\left( \cos\left(\frac{\pi}{4}\right) +  i\sin\left(\frac{\pi}{4}\right) \right) & = & 2+2i, \\
+z_1&=& 2\sqrt{2} e^{\frac{11\pi}{12} i} &=& 2\sqrt{2} \left(\cos\left(\frac{11\pi}{12}\right) + i\sin\left(\frac{11\pi}{12}\right)\right) & = & (-1-\sqrt{3})+(-1+\sqrt{3})i, \\
+z_2&=& 2\sqrt{2} e^{\frac{19\pi}{12} i} &=& 2\sqrt{2}\left(\cos\left(\frac{19\pi}{12}\right) +i\sin\left(\frac{19\pi}{12}\right)\right) &=& (-1+\sqrt{3})+(-1-\sqrt{3})i.
 \end{array}
+$$
+
+In particular, we can obtain the factorisation
+
+$$
+ z^3-(-16+16i)=(z-z_0)(z-z_1)(z-z_2).
 $$
 
 You can find a visualisation of these three solutions in {numref}`Figure %s <Fig:ComplexNumbers:threesolfig>`.
@@ -640,6 +886,7 @@ You can find a visualisation of these three solutions in {numref}`Figure %s <Fig
 
 The three solutions from {prf:ref}`Ex:ComplexNumbers:threesolutions2`, initially, as well as solutions for similar equation of the form $z^{m}=a+bi$. You can use the three sliders to change $n$, $a$ and $b$.
 :::
+
 
 ::::
 
@@ -700,7 +947,7 @@ Indeed, we have
 \begin{align*}
 f(t) &= \cos(2t) + \sqrt{3} \sin(2t) \\& = \Re{e^{2it}} + \Re{-i\sqrt{3} e^{2it}}
 \\&= \Re{ e^{2it} -i\sqrt{3} e^{2it}} \\&= \Re{(1-i\sqrt{3}) e^{2it}}
-\\&= \Re{ 2 e^{-\frac13 \pi i} e^{2it}} \\&= \Re{2 e^{i(2t-\frac13\pi)}} \\&= 2\cos\left(2t-\frac13 \pi\right).
+\\&= \Re{ 2 e^{-\frac13 \pi i} e^{2it}} \\&= \Re{2 e^{i(2t-\frac{\pi}{3})}} \\&= 2\cos\left(2t-\frac13 \pi\right).
 \end{align*}
 
 We first wrote both the cosine as the sine as real parts of complex exponentials. For the sine, we use that $-ie^{i\theta} = -i\cos(\theta) + \sin(\theta)$, so $\Re{-ie^{i\theta}} = \sin(\theta)$. Subsequently, we can take out the common factor $e^{2it}$; it is a common factor as the periods of both the cosine and sine are identical. Next, we rewrite $1-i\sqrt{3}$ in polar coordinates and work out what the result is.
@@ -721,11 +968,46 @@ The graph of the sum of a cosine and a sine of identical period is a sinusoid as
 In the same way you can add two cosines (or sines) with shifted arguments.
 
 \begin{align*}
-\cos\left(t+\frac13\pi\right) + \cos\left(t-\frac13\pi\right) &= \Re{e^{i\left(t+\frac13\pi\right)}} + \Re{e^{i\left(t-\frac13\pi\right)}}
-\\&= \Re{\left(e^{\frac13 \pi i} +e^{-\frac13\pi i}\right) e^{it}}
+\cos\left(t+\frac{\pi}{3}\right) + \cos\left(t-\frac{\pi}{3}\right) &= \Re{e^{i\left(t+\frac{\pi}{3}\right)}} + \Re{e^{i\left(t-\frac{\pi}{3}\right)}}
+\\&= \Re{\left(e^{\frac13 \pi i} +e^{-\frac{\pi}{3} i}\right) e^{it}}
 \\&= \Re{ \left( \left( \frac12+\frac12\sqrt{3} i\right) + \left(\frac12 -\frac12\sqrt{3}i\right)\right)e^{it}}
 \\&= \Re{ e^{it}}\\&= \cos(t).  
 \end{align*}
+
+::::
+
+In general, we obtain the following result.
+
+::::{prf:theorem} Harmonic addition theorem
+:label: Thm:ComplexNumbers:harmonicaddition
+Let $b$ and $c$ be non-zero real numbers. Write $A=\sqrt{b^2+c^2}$. If $b>0$ pick $\phi\in\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right)$ in such a way that $\tan(\phi)=\dfrac{c}{b}$, while if $b<0$ pick $\phi\in\left(\dfrac{\pi}{2},\dfrac{3\pi}{2}\right)$ in such a way that $\tan(\phi)=\dfrac{c}{b}$. Then we can write
+
+$$
+ b\cos(t)+c\sin(t)=A\cos(t-\phi).
+$$
+::::
+
+::::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:harmonicaddition`
+:class: dropdown, tudproof
+Let $z=b+ci$. Then we note that $A=|z|$ and $\phi=\operatorname{Arg}(z)$, so $z=Ae^{i\phi}$. First we note that
+
+$$
+ ice^{-it}=ic\left(\cos(-t)+i\sin(-t)\right)=c\sin(t)+ic\cos(t).
+$$
+
+Then we obtain
+
+\begin{align*}
+b\cos(t)+c\sin(t)&=b\cos(-t)+c\sin(t)\\
+&=\operatorname{Re}\left(be^{-it}\right)+\operatorname{Re}\left(ice^{-it}\right)\\
+&=\operatorname{Re}\left((b+ci)e^{-it}\right)\\
+&=\operatorname{Re}\left(Ae^{i\phi}e^{-it}\right)\\
+&=A\operatorname{Re}\left(e^{i(\phi-t)}\right)\\
+&=A\cos(\phi-t)\\
+&=A\cos(t-\phi),
+\end{align*}
+
+as desired.
 
 ::::
 
@@ -737,7 +1019,7 @@ $$
  e^{i\theta}=\cos(\theta)+i\sin(\theta)
 $$
 
-as the definition of $e^{i\theta}$. There are several reasons why it is a logical choice to call this expression $e^{i\theta}$, all of which show that the complex exponential behaves similarly to the real exponential. Here, we consider two of of these reasons, both of which talk about concepts that will be defined later in this book.
+as the definition of $e^{i\theta}$. There are several reasons why it is a logical choice to call this expression $e^{i\theta}$, all of which show that the complex exponential behaves similarly to the real exponential. Here, we consider two of of these reasons, both of which talk about concepts that will be defined later in this book. In these derivations, we *assume* that there is such a thing as $e^{i\theta}$ that behaves similar to its real counterpart, and we show that the definition that we gave in {prf:ref}`Dfn:ComplexNumbers:EulersFormule` is the only one with this behaviour.
 
 **Using a scalar initial value problem**
 
@@ -753,7 +1035,7 @@ y(0) & = & 1.
 
 :::
 
-Because we assumed that $i$ behaves like any other number, we can solve this initial value problem, which leads to the solution
+Because we want the $e^{i\theta}$ to behave like its real counterpart and because we assumed that $i$ behaves like any other number, we can solve this initial value problem, which leads to the solution
 
 :::{math}
 :label: Eq:ComplexNumbers:exp_sol
@@ -790,7 +1072,7 @@ This indicates that $q$ satisfies the same initial condition from Equation {eq}`
 &= iq(\theta).
 \end{align*}
 
-So we found that our function $q$ from Equation {eq}`Eq:ComplexNumbers:exp_sol_alt` is also a solution to initial value problem from Equation {eq}`Eq:ComplexNumbers:exp_de`.
+So we found that our function $q$ from Equation {eq}`Eq:ComplexNumbers:exp_sol_alt` is also a solution to the initial value problem from Equation {eq}`Eq:ComplexNumbers:exp_de`.
 
 But because this initial value problem can only have one unique solution, the function $q$ from Equation {eq}`Eq:ComplexNumbers:exp_sol_alt` must be the same function as the first solution $y$ in Equation {eq}`Eq:ComplexNumbers:exp_sol`. This means that we found Euler's formula:
 
@@ -810,24 +1092,24 @@ e^x &= \sum_{n=0}^\infty\frac{x^n}{n!}, \\
 
 We can use these series to derive Euler's formula.
 
-First consider the following $12$ powers of the complex number $\theta i$ with $\theta\in\mathbb{R}$:
+First consider the following $12$ powers of the complex number $i\theta$ with $\theta\in\mathbb{R}$:
 
 \begin{align*}
-(\theta i)^0 &= 1 & (\theta i)^4 &= \theta^4 & (\theta i)^8 &= \theta^8 \\
-(\theta i)^1 &= \theta i & (\theta i)^5 &= \theta^5 i & (\theta i)^9 &= \theta^9 i \\
-(\theta i)^2 &= -\theta^2 & (\theta i)^6 &= -\theta^6 & (\theta i)^{10} &= -\theta^{10}i \\
-(\theta i)^3 &= -\theta^3 i & (\theta i)^7 &= -\theta^7 i & (\theta i)^{11} &= -\theta^{11}i \\
+(i\theta)^0 &= 1 & (i\theta)^4 &= \theta^4 & (i\theta)^8 &= \theta^8 \\
+(i\theta)^1 &= i\theta & (i\theta)^5 &= \theta^5 i & (i\theta)^9 &= \theta^9 i \\
+(i\theta)^2 &= -\theta^2 & (i\theta)^6 &= -\theta^6 & (i\theta)^{10} &= -\theta^{10}i \\
+(i\theta)^3 &= -\theta^3 i & (i\theta)^7 &= -\theta^7 i & (i\theta)^{11} &= -\theta^{11}i \\
 \end{align*}
 
 Do you notice the pattern that _even_ powers give _real_ numbers and _odd_ powers give _complex_ numbers with zero real part? And also that for the list of even powers the sign flips each time? And the same for the odd powers?
 
-Now let us consider $e^{\theta i}$ and expand the series of the exponential function using these patterns:
+Now let us consider $e^{i\theta }$ and expand the series of the exponential function using these patterns:
 
 $$
 \begin{align*}
-e^{\theta i} &= \sum_{n=0}^\infty\frac{(\theta i)^n}{n!} & &\text{Using the series of}\ e^x \\
-&= \sum_{\substack{n=0\\n~{\rm even}}}^\infty\frac{(\theta i)^n}{n!}+\sum_{\substack{n=0\\n~{\rm odd}}}^\infty\frac{(\theta i)^n}{n!} & &\text{Using the odd/even pattern seen above.} \\
-&= \sum_{k=0}^\infty\frac{(\theta i)^{2k}}{(2k)!}+\sum_{l=0}^\infty\frac{(\theta i)^{2l+1}}{(2l+1)!} & &\text{Changing the indices using $n=2k$ and $n=2l+1$.} \\
+e^{i\theta} &= \sum_{n=0}^\infty\frac{(i\theta)^n}{n!} & &\text{Using the series of}\ e^x \\
+&= \sum_{\substack{n=0\\n~{\rm even}}}^\infty\frac{(i\theta)^n}{n!}+\sum_{\substack{n=0\\n~{\rm odd}}}^\infty\frac{(i\theta)^n}{n!} & &\text{Using the odd/even pattern seen above.} \\
+&= \sum_{k=0}^\infty\frac{(i\theta)^{2k}}{(2k)!}+\sum_{l=0}^\infty\frac{(i\theta)^{2l+1}}{(2l+1)!} & &\text{Changing the indices using $n=2k$ and $n=2l+1$.} \\
 &= \sum_{k=0}^\infty(-1)^{k}\frac{\theta^{2k}}{(2k)!}+\sum_{l=0}^\infty(-1)^l\frac{\theta^{2l+1}i}{(2l+1)!} & &\text{Using the alternating patterns seen above.} \\
 &= \sum_{k=0}^\infty(-1)^{k}\frac{\theta^{2k}}{(2k)!}+i\sum_{l=0}^\infty(-1)^l\frac{\theta^{2l+1}}{(2l+1)!} & &\text{Taking $i$ out of the second series.} \\
 &= \cos(\theta)+i\sin(\theta). & &\text{Using the series of $\cos(x)$ and $\sin(x)$.}
@@ -835,6 +1117,8 @@ e^{\theta i} &= \sum_{n=0}^\infty\frac{(\theta i)^n}{n!} & &\text{Using the seri
 $$
 
 As you can see we have arrived at Euler's formula.
+
+
 
 ## Grasple exercises
 
