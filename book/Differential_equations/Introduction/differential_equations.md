@@ -301,15 +301,15 @@ $$
 $$
 
 Here $g$ is the acceleration due to gravity, $L$ is the length of the pendulum, and $\theta$ is
-the (small) angular displacement with respect to the equilibrium position at time $t$.
+the (small) angular displacement with respect to the equilibrium position at time $t$ (measured in radians).
 
-It is quite difficult to solve this differential equation. However, the linearisation of the function $f(x)=\sin(x)$ at $x=0$ is
+It is quite difficult to solve this differential equation due to the nonlinear term $\sin(\theta)$. However, the linearisation of the function $f(\theta)=\sin(\theta)$ at $\theta=0$ is
 
 $$
-L(x)=f(0)+f'(0)(x-0)=x.
+L(\theta)=f(0)+f'(0)\theta-0)=\theta.
 $$
 
-This implies that $\sin(x)\approx x$ for $x$ near $0$.
+This implies that $\sin(\theta)\approx \theta$ for $\theta$ near $0$.
 
 It turns out that it is much easier to solve the differential equation
 
