@@ -1030,6 +1030,15 @@ has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sq
 
 ::::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5d9ecad8-940d-4369-a1d5-7f4c46040079?id=75418
+:label: Grasple:75418
+:dropdown:
+:description: Combining solutions of different differential equations
+::::::
+
+
+::::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/6e8c3138-792d-477f-b804-e9f0de414eb0?id=79418
 :label: Grasple:79418
 :dropdown:

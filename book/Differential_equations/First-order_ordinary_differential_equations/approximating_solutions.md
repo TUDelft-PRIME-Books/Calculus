@@ -3,6 +3,7 @@
 This page is based on {cite:t}`Vuik_2023`.
 ```
 
+(Sec:DE:Num)=
 # Approximating solutions
 
 ## Introduction
