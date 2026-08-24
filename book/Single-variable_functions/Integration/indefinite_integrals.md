@@ -132,7 +132,6 @@ Which of these functions could be an antiderivative of $f$?
 > $K$ could be an antiderivative of $f$ because the sign of the slope of the graph of $K$ at any point matches the sign of the value of $f$ at that point.
 [ ] $L$.
 > If $L$ would be an antiderivative of $f$, the relation $L'(x)=f(x)$ should hold for all $x$ in the domain of $L$. This means that the sign of the slope of the graph of $L$ at any point should match with the sign of the value of $f$ at that point. By visually inspecting the graphs, we can see that this is not the case for $L$. For example, for $x=-1$ we have $L'(-1)<0$, but $f(-1)=0$.
-
 ---
 
 ::::::
