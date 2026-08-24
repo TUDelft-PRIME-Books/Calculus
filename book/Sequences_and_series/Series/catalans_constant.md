@@ -275,3 +275,50 @@ Finally, Equation {eq}`Eq:Series:RiemannZetaFunction1` implies that
 &\sum_{n=0}^{\infty}\frac{1}{(2n+1)^6}=\left(1-\frac{1}{2^6}\right)\zeta(6)=\frac{63}{64}\zeta(6)\\
 &{}\quad\Longrightarrow\quad\zeta(6)=\frac{64}{63}\cdot\frac{\pi^6}{15\cdot64}=\frac{\pi^6}{15\cdot63}=\frac{1}{945}\pi^6.
 \end{align*}
+
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9b971cd8-bb5b-4c6a-b7dd-fb12ae4f896f?id=133890
+:label: Grasple:133890
+:dropdown:
+:description: Evaluate $\displaystyle\int_0^1\frac{\ln(x)}{1+x}\,dx$, $\displaystyle\int_0^1\frac{\ln(x)}{1+x^2}\,dx$, $\displaystyle\int_1^{\infty}\frac{\ln(x)}{1+x^2}\,dx$ and $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1+x^2}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e349f0d2-1dc8-460d-9ca8-f0dfd7ddd703?id=134344
+:label: Grasple:134344
+:dropdown:
+:description: Find the sum of $\displaystyle\sum_{n=0}^{\infty}\frac{1}{\left(4n+1\right)^2}$ and the sum of $\displaystyle\sum_{n=0}^{\infty}\frac{1}{\left(4n+3\right)^2}$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/91b9ccdb-917c-4e60-98f9-90b58ad55042?id=134412
+:label: Grasple:134412
+:dropdown:
+:description: Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{\left(-1\right)^{n-1}n}{\left(4n^2-1\right)^2}$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8457415d-ee10-4df0-b634-83613b1e1aeb?id=134415
+:label: Grasple:134415
+:dropdown:
+:description: Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{\left(-1\right)^{n-1}}{\left(2n-1\right)^2\left(2n+1\right)}$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ab6b2c08-28e9-4760-a252-652a7a1f55ac?id=134418
+:label: Grasple:134418
+:dropdown:
+:description: Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{\left(-1\right)^{n-1}}{\left(2n+1\right)^2\left(2n-1\right)}$.
+
+::::

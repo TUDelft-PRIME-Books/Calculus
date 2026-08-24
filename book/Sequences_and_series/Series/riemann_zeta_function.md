@@ -188,3 +188,41 @@ and
 &=-\left(1-\frac{1}{4}\right)\zeta(3)\\
 &=-\frac{3}{4}\zeta(3).
 \end{align*}
+
+## Grasple exercises
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/71c83987-a2c5-443b-b363-c6e8af5ab2f4?id=133886
+:label: Grasple:133886
+:dropdown:
+:description: Evaluate $\displaystyle\int_0^1\frac{\ln(x)}{1-x}\,dx$, $\displaystyle\int_0^1\frac{\ln(x)}{1-x^2}\,dx$, $\displaystyle\int_1^{\infty}\frac{\ln(x)}{1-x^2}\,dx$ and $\displaystyle\int_0^{\infty}\frac{\ln(x)}{1-x^2}\,dx$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/62077fb3-5943-4524-b0e6-4df331031d5d?id=133897
+:label: Grasple:133897
+:dropdown:
+:description: Evaluate the integral.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/577110e2-1406-4333-9e1d-9ae9bd0840ab?id=134331
+:label: Grasple:134331
+:dropdown:
+:description: Evaluate $\displaystyle\sum_{n=0}^{\infty}\left(\frac{1}{\left(3n+1\right)^2}+\frac{1}{\left(3n+2\right)^2}\right)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/82d17a01-e7c9-40fa-b365-e5683da56add?id=134334
+:label: Grasple:134334
+:dropdown:
+:description: Evaluate $\displaystyle\sum_{n=0}^{\infty}\left(\frac{1}{\left(3n+1\right)^4}+\frac{1}{\left(3n+2\right)^4}\right)$.
+
+::::

@@ -563,6 +563,14 @@ The graphs of the function $f$ (left) and of its derivative $f'$ (right). The fu
 :description: Find an equation for the tangent line.
 ::::
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/69655944-a286-45e0-91e0-61c959387025?id=70848
+:label: Grasple:70848
+:dropdown:
+:description: Find an equation for the tangent line.
+::::
+
 
 ::::{grasple}
 :iframeclass: dark-light
@@ -602,4 +610,24 @@ The graphs of the function $f$ (left) and of its derivative $f'$ (right). The fu
 :label: Grasple:133916
 :dropdown:
 :description: Find the second derivative.
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/26c69950-8822-4e97-8d95-e12ae59d0514?id=63736
+:label: Grasple:63736
+:dropdown:
+:description: Find a differential.
+
+::::
+
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2b3fd9e7-eadb-44e5-8411-d1e59cac16fc?id=63498
+:label: Grasple:63498
+:dropdown:
+:description: Find a differential.
+
 ::::

@@ -20,7 +20,7 @@ $$
  y'=-\frac{b}{a}y,
 $$
 
-so we are looking for a function of which the derivative is a multiple of the original function. Exponential functions have this property, so we can make the educated guess that a solution is of the form $y(t)=e^{rt}$. Such an educated guess about the shape of a solution is called an **Ansatz**. Then we have $y'(t)=re^{rt}$, so plugging this exponential into the differential equation gives
+so we are looking for a function whose derivative is a multiple of the original function. Exponential functions have this property, so we can make the educated guess that a solution is of the form $y(t)=e^{rt}$. Such an educated guess about the shape of a solution is called an **Ansatz**. Then we have $y'(t)=re^{rt}$, so plugging this exponential into the differential equation gives
 
 $$
  re^{rt}=-\frac{b}{a}e^{rt}.
@@ -68,7 +68,7 @@ $$
  ay''+by'+cy=0,
 $$
 
-where $a\neq 0$, $b$ and $c$ are real constants. This means that we are looking for a function $y$ of which a specific linear combination of $y$, $y'$ and $y''$ is $0$. Inspired by the approach from {numref}`SubSec:ODE2:Intro`, we make the educated guess that $y(t)=e^{rt}$ might be a solution for some constant $r$. Then we have $y'(t)=re^{rt}$ and $y''(t)=r^2e^{rt}$. Plugging these into the differential equation we get
+where $a\neq 0$, $b$ and $c$ are real constants. This means that we are looking for a function $y$ for which a specific linear combination of $y$, $y'$ and $y''$ is $0$. Inspired by the approach from {numref}`SubSec:ODE2:Intro`, we make the educated guess that $y(t)=e^{rt}$ might be a solution for some constant $r$. Then we have $y'(t)=re^{rt}$ and $y''(t)=r^2e^{rt}$. Plugging these into the differential equation we get
 
 $$
  ar^2e^{rt}+bre^{rt}+ce^{rt}=0.
@@ -107,7 +107,7 @@ Now we consider three possibilities for the **discriminant** $D=b^2-4ac$: $D>0$,
 
 ### Two distinct real roots
 
-If $D>0$ the characteristic equation has two distinct real roots, say $r_1$ and $r_2$. Then the functions $y_1(t)=e^{r_1t}$ and $y_2(t)=e^{r_2t}$ are both solutions. Since these functions are linearly independent, we find that the general solution is $y(t)=c_1e^{r_1t}+c_2e^{r_2t}$ with $c_1,c_2\in\mathbb{R}$.
+If $D>0$ the characteristic equation has two distinct real roots, say $r_1$ and $r_2$. Then the functions $y_1(t)=e^{r_1t}$ and $y_2(t)=e^{r_2t}$ are both solutions. In fact, we can use these to obtain all solutions, as is made clear in the following theorem.
 
 ::::::{prf:theorem}
 :label: Thm:ODE2:Tworeal
@@ -128,7 +128,7 @@ with $c_1,c_2\in\mathbb{R}$.
 
 :::{admonition} Proof of {prf:ref}`Thm:ODE2:Tworeal`
 :class: tudproof, dropdown
-The functions $y_1(t)=e^{r_1t}$ and $y_2(t)=e^{r_2t}$ are solutions by construction. We need to check that they are linearly independent. Consider $c_1$ and $c_2$ with
+The functions $y_1(t)=e^{r_1t}$ and $y_2(t)=e^{r_2t}$ are solutions by construction. We need to check that they are linearly independent (see {prf:ref}`Def:DE:LinearIndependent`). Consider $c_1$ and $c_2$ with
 
 $$
  c_1e^{r_1t}+c_2e^{r_2t}=0
@@ -256,7 +256,7 @@ $$
  r^2-6r+9=0,
 $$
 
-which can be written to
+which can be rewritten as
 
 $$
  (r-3)^2=0.
@@ -348,7 +348,7 @@ and
 
 \begin{align*}
  y_2(t)=&\frac{1}{2i}\left(\tilde{y}_1(t)-\tilde{y}_2(t)\right)\\
- =&\frac{1}{2i}\left(e^{\alpha t}(\cos(\beta t)+i\sin(\beta t))-e^{\alpha t}(\cos(-\beta t)-i\sin(-\beta t))\right)\\
+ =&\frac{1}{2i}\left(e^{\alpha t}(\cos(\beta t)+i\sin(\beta t))-e^{\alpha t}(\cos(-\beta t)+i\sin(-\beta t))\right)\\
  =&e^{\alpha t}\sin(\beta t)
 \end{align*}
 
@@ -399,7 +399,7 @@ $$
 From this, we obtain the non-real roots $r=-2\pm3i$. By {prf:ref}`Thm:ODE2:Twocomplex`, the general solution is 
 
 $$
- y(t)=c_1e^{-2t}\cos(3t)+c_2e^{-2t}\sin(t)
+ y(t)=c_1e^{-2t}\cos(3t)+c_2e^{-2t}\sin(3t)
 $$
 
 with $c_1,c_2\in\mathbb{R}$.
@@ -416,6 +416,28 @@ In {numref}`Fig:ODE2:Twocomplex` you can see on the left the graph of the two li
 :::
 
 ::::::
+
+### Summary
+
+We summarise the three cases in the following table.
+
+```{list-table} General solution of second order, linear, homogeneous differential equation
+:header-rows: 1
+:align: center
+:class: mid-align
+:name: Tab:ODE2:Summary
+
+* - Characteristic equation roots
+  - General solution to differential equation
+* - Distinct real roots, $r_1$ and $r_2$
+  - $y(t)=c_1e^{r_1t}+c_2e^{r_2 t}$
+* - Double real root, $r$
+  - $y(t)=c_1e^{rt}+c_2te^{rt}$
+* - Complex conjugate roots $\alpha\pm i\beta$
+  - $y(t)=c_1e^{\alpha t}\cos\left(\beta t\right)+c_2e^{\alpha t}\sin\left(\beta t\right)$
+
+
+```
 
 ### Initial-value problems
 
@@ -543,7 +565,7 @@ $$
  a_ny^{(n)}(t)+a_{n-1}y^{(n-1)}(t)+\cdots+a_1y'(t)+a_0y(t)=0,
 $$
 
-where $a_0,\ldots,a_n$ are real constants with $a_n\neq 0$. For such an equation, the educated guess $y(t)=e^{rt}$ gives an $n$th order polynomial equation. Solving these equations by hand is hard (or even impossible), but in some cases it is doable, as can be seen in the following example.
+where $a_0,\ldots,a_n$ are real constants with $a_n\neq 0$. For such an equation, the educated guess $y(t)=e^{rt}$ gives an $n$th order polynomial equation. Solving these equations by hand is hard (or even impossible), but in some cases it can be done, as can be seen in the following example.
 
 ::::::{prf:example}
 :label: Ex:ODE2:HigherOrder
@@ -566,7 +588,7 @@ $$
  r^5-6r^4+15r^3-20r^2+14r-4=0.
 $$
 
-[It can be shown that there is no general method to find roots of a fifth order polynomial equation](https://en.wikipedia.org/wiki/Abel%E2%80%93Ruffini_theorem). Fortunately, we made this example ourselves so we constructed it in such a way that we know the roots. These are $r_1=1$ (with multiplicity $2$), $r_2=2$, $r_3=1+i$ and $r=1-i$. Following the same ideas as earlier in this section, we obtain the five real solutions
+[It can be shown that there is no general method to find roots of a fifth order polynomial equation](https://en.wikipedia.org/wiki/Abel%E2%80%93Ruffini_theorem). Fortunately, we made this example ourselves so we constructed it in such a way that we know the roots. These are $r_1=1$ (with multiplicity $2$), $r_2=2$, $r_3=1+i$ and $r_4=1-i$. Following the same ideas as earlier in this section, we obtain the five real solutions
 
 \begin{align*}
 &y_1(t)=e^t, \quad y_2(t)=te^t,\quad y_3(t)=e^{2t},\\
@@ -580,6 +602,8 @@ $$
 $$
 
 where $c_1,c_2,c_3,c_4$ and $c_5$ are real constants.
+
+Note that an initial-value problem with a unique solution now requires the knowledge of $y(0)$, $y'(0)$, $y''(0)$, $y^{(3)}(0)$ and $y^{(4)}(0)$.
 ::::::
 
 ## Applications
@@ -606,7 +630,7 @@ $$
 from which we obtain
 
 $$
- r=\pm i\sqrt{\frac{g}{l}}.
+ r=\pm i\sqrt{\frac{g}{L}}.
 $$ 
 
 From {prf:ref}`Thm:ODE2:Twocomplex` we obtain that the general solution is
@@ -615,7 +639,7 @@ $$
 \theta(t)=c_1\cos(rt)+c_2\sin(rt)\quad\text{with}\quad r=\sqrt{\frac{g}{L}}\quad\text{and}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-So, if (for instance) the starting position of the pendulum is $\theta_0$ and is released with no initial velocity, then this leads to the initial-value problem
+So, if (for instance) the starting position of the pendulum is $\theta_0$ and it is released with no initial velocity, then this leads to the initial-value problem
 
 $$
 \theta''(t)+\frac{g}{L}\theta(t)=0,\quad\theta(0)=\theta_0,\quad\theta'(0)=0
@@ -662,7 +686,7 @@ A mass-spring system. The distance $u$ is measured from top to the bottom, so do
 
 ::::::{prf:example}
 :label: Ex:ODE2:SpringNodamp
-A spring with a mass of $5$ kg has a natural length of $0.5$ m. A force of $45$ N is required to maintain it stretched to a length of $0.75$ m.
+A spring with a mass of $5$ kg has equilibrium length of $0.5$ m. A force of $45$ N is required to maintain it stretched to a length of $0.75$ m.
 
 Suppose the spring is stretched to a length of $0.75$ m and then released with initial velocity $0$. Let us see how we can find the position of the mass at any time $t\geq 0$.
 
@@ -694,8 +718,10 @@ $$
 The initial conditions are $u(0)=0.25$ and $u'(0)=0$, which lead to $c_1=0.25$ and $c_2=0$. So, the solution is
 
 $$
-u(t)=0.25\cos(6t).
+u(t)=0.25\cos(6t),
 $$
+
+which means that the spring oscillates between lengths $0.25$ m and $0.75$ m.
 
 In {numref}`Fig:ODE2:SpringNodamp` you can see the graph of the solution $u(t)$ for a set of values of $u(0)$ and $u'(0)$, initially set to $0.25$ and $0$, respectively.
 
@@ -712,7 +738,7 @@ You can press the play button to see how the location of the mass changes over t
 
 ::::::
 
-With damping we have the equation 
+The logical next step is to include damping. With damping we have the equation 
 
 $$
  mu''(t)+cu'(t)+ku(t)=0,
@@ -809,7 +835,7 @@ $$
  u(t)=c_1e^{-t}+c_2e^{-25t}\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-In this case, the spring does not oscillate and goes back to its equilibrium position relatively slowly (because of the $e^{-t}$), at least compared to the final one of the upcoming cases. Physically, this makes sense: if you put your spring in a material with a high damping coefficient (say, something like honey), it will go back to its equilibrium position slowly and not oscillate. This case where we have two real roots is, for this reason, known as the **overdamped** case.
+In this case, the spring does not oscillate and goes back to its equilibrium position relatively slowly (because of the $e^{-t}$), at least compared to the final one of the upcoming cases. Physically, this makes sense: if you put your spring in a material with a high damping coefficient (say, something like honey), it will go back to its equilibrium position slowly and it will not oscillate. This case where we have two real roots is, for this reason, known as the **overdamped** case.
 
 Secondly, we consider a small value of $c$, say $c=6$. Then, we obtain the differential equation
 
@@ -829,7 +855,9 @@ $$
  u(t)=c_1e^{-3t}\cos(4t)+c_2e^{-3t}\sin(4t)\quad\text{with}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-Because of the cosine and the sine, the solution will keep on oscillating, with decreasing amplitude because of the exponential. Again, this behaviour matches our physical intuition: if the damping coefficient of the medium is low (say, something like air), we expect the solution to keep on oscillating. This case where we have two non-real roots is, as such, known as the **underdamped** case.
+Because of the cosine and the sine, the solution will keep on oscillating, with decreasing amplitude because of the exponential. Again, this behaviour matches our physical intuition: if the damping coefficient of the medium is low (say, something like air), we expect the solution to keep on oscillating. This case where we have two non-real roots is, as such, known as the **underdamped** case. 
+
+The extreme case where $c=0$, so when there is no damping at all, is called the **undamped** case.
 
 Finally, we consider the critical value of the damping constant when we move between the overdamped and the overdamped case. Mathematically, this corresponds to the case where we have a double real root. For this system, this happens when $c=10$. Indeed, in that case we have the differential equation
 
@@ -876,16 +904,16 @@ Consider an electrical circuit where a resistor with resistance $R$ (in ohm $\Om
 A source-free electrical circuit, where a resistor with resistance $R$, an inductor with inductance $L$ and a capacitor with capacitance $C$ are placed in series. The current $i(t)$ is the quantity of interest. Electrical graphical symbols are based on [IEC 60617](https://webstore.iec.ch/en/publication/2723).
 :::
 
-The main goal is to see how the current $i(t)$ (in ampere $A$) evolves in time (in seconds $s$). We assume that there is some energy stored initially in the capacitor and the inductor (otherwise there would be no current at all). For the initial current, we assume that $i(0)=I_0$ for some $I_0>0$. We let $v(t)$ (in volt $V$) represent the voltage across the capacitor. It can then be shown that
+The main goal is to see how the current $i(t)$ (in ampere $A$) evolves in time (in seconds $s$). We assume that there is some energy stored initially in the capacitor and the inductor (otherwise there would be no current at all). For the initial current, we assume that $i(0)=i_0$ for some $i_0>0$. We let $v(t)$ (in volt $V$) represent the voltage across the capacitor. It can then be shown that
 
 $$
  v(t)=\frac{1}{C}\int_{-\infty}^t i(s)\,ds
 $$
 
-for all $t$. In particular, we can denote the voltage at $t=0$ by $v(0)=V_0$ and then we have
+for all $t$. In particular, we can denote the voltage at $t=0$ by $v(0)=v_0$ and then we have
 
 $$
- v(0)=V_0=\frac{1}{C}\int_{-\infty}^0 i(s)\,ds.
+ v(0)=v_0=\frac{1}{C}\int_{-\infty}^0 i(s)\,ds.
 $$
 
 From Ohm's law, we know that the voltage across the resistor is given by
@@ -900,7 +928,7 @@ $$
  v=L\frac{di}{dt}.
 $$
 
-The [Kirchoff Voltage Law](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_voltage_law) states that the total voltage across the loop is $0$. So adding these three voltages we obtain the equation
+The [Kirchhoff Voltage Law](https://en.wikipedia.org/wiki/Kirchhoff%27s_circuit_laws#Kirchhoff's_voltage_law) states that the total voltage across the loop is $0$. So adding these three voltages we obtain the equation
 
 $$
  L\frac{di}{dt}+Ri+\frac{1}{C}\int_{-\infty}^t i(s)\,ds=0.
@@ -919,19 +947,19 @@ This is a second-order, linear, homogeneous differential equation with constant 
 Consider the source-free series RLC electrical circuit with $R=30\ \Omega$, $L=2\ H$ and $C=\frac{1}{4}\ F$. Then we obtain the differential equation
 
 $$
- 2i''+30i'+\frac{1}{4}i=0.
+ 2i''+30i'+4i=0.
 $$
 
 Trying the solution $i(t)=e^{rt}$ gives the characteristic equation
 
 $$
- 2r^2+30r+\frac{1}{4}=0.
+ 2r^2+30r+4=0.
 $$
 
-The (somewhat ugly) roots are $r_1=\dfrac{-30+\sqrt{898}}{4}$ and $r_2=\dfrac{-30-\sqrt{898}}{4}$. This means that the general solution is given by
+The (somewhat ugly) roots are $r_1=\dfrac{-15+\sqrt{217}}{2}$ and $r_2=\dfrac{-15-\sqrt{217}}{2}$. This means that the general solution is given by
 
 $$
- i(t)=c_1e^{\dfrac{-30+\sqrt{898}}{4}t}+c_2e^{ \dfrac{-30-\sqrt{898}}{4}t}.
+ i(t)=c_1e^{\dfrac{-15+\sqrt{217}}{2}t}+c_2e^{ \dfrac{-15-\sqrt{217}}{2}t}.
 $$
 ::::::
 
@@ -950,6 +978,8 @@ $$
 For this reason, a lot of terminology that is used for the damped mass-spring system is used for the RLC electrical circuit as well. The terms **overdamped**, **critically damped** and **underdamped** are used when the characteristic equation for the electrical circuit has respectively two real roots, a double real root, and two non-real (complex) roots. For instance, the circuit from {prf:ref}`Ex:ODE2:RLC` is called overdamped. This also means that the resistance $R$ can be thought of as a damping coefficient.
 
 ### A complicated-looking family of improper integrals
+
+The following example shows that seemingly unrelated mathematical problems can sometimes be reduced to solving a differential equation.
 
 ::::::{prf:example}
 :label: Ex:ODE2:Integral
@@ -984,7 +1014,7 @@ I'(t)&=-\int_0^{\infty}\frac{x\sin(xt)}{x^2+\alpha^2}\,dx\\
 &=-\int_0^{\infty}\frac{\sin(xt)}{x}\,dx+\alpha^2\int_0^{\infty}\frac{\sin(xt)}{x(x^2+\alpha^2)}\,dx.
 \end{align*}
 
-Using the substitution $xt=u$ we can use {prf:ref}`Thm:Integration:ImproperIntegralsDirichletIntegral` to obtain for $t>0$ that 
+Using the substitution $xt=u$, which has $du=t\,dx$, we can use {prf:ref}`Thm:Integration:ImproperIntegralsDirichletIntegral` to obtain for $t>0$ that 
 
 $$
  \displaystyle\int_0^{\infty}\frac{\sin(xt)}{x}\,dx=\int_0^{\infty}\frac{\sin(u)}{u}\,du=\frac{1}{2}\pi.

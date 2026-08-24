@@ -494,7 +494,7 @@ $$
 
 :::::
 
-:::::{example}
+:::::{prf:example}
 :label: Ex:MultivariableIntegration:GeneralTransformationsExample2
 
 We use that change of variables $\left\{\begin{array}{l}x=u^2-v^2\\y=2uv\end{array}\right.$ to evaluate the integral $\displaystyle\iint\limits_Ry\,dA$, where $R$ is the region bounded by the 
@@ -528,7 +528,7 @@ Hence we have
 
 :::::
 
-:::::{example}
+:::::{prf:example}
 :label: Ex:MultivariableIntegration:GeneralTransformationsExample3
 
 ```{figure} Images/transformation4.png
