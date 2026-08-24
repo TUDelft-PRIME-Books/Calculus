@@ -485,12 +485,3 @@ Hence, we have
 :description: Evaluate the definite integral.
 
 ::::
-
-::::{grasple}
-:iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/fe3242cd-3052-45f2-a103-3e3093b4e6b7?id=64085
-:label: Grasple:64085
-:dropdown:
-:description: Evaluate the definite integral.
-
-::::

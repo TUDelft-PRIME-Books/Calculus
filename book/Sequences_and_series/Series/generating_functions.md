@@ -249,113 +249,67 @@ Since $\sqrt{2}-1\approx0.414$ this leads to the remarkable result that $\displa
 Select exercises from Grasple and add them in {numref}`Sec:Series:GeneratingFunctions`.
 :::
 
-## Exercises
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/89fbd87a-ca87-42d5-ab41-a3d754547409?id=134431
+:label: Grasple:134431
+:dropdown:
+:description: Find the sums of series involving harmonic numbers.
 
-::::{exercise}
-:label: Exc:Series:GeneratingFibonacciExercise
-Find $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{F_n}{2^n}$, $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{nF_n}{2^n}$ and $\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)F_n}{2^n}$.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Series:GeneratingFibonacciExercise`
-:class: solution, dropdown
-Note that
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/12b9a446-60d0-498a-9a94-63d7d2cb84d3?id=134421
+:label: Grasple:134421
+:dropdown:
+:description: Show that $\displaystyle\int_0^1\frac{1-x^{n}}{1-x}\,dx=H_{n}$ for $n=1,2,3,\ldots$.
 
-$$
-\sum_{n=1}^{\infty}(-1)^{n-1}\frac{F_n}{2^n}=-G(-\tfrac{1}{2})=-\frac{-\frac{1}{2}}{1+\frac{1}{2}-\frac{1}{4}}=\frac{2}{5},
-$$
+::::
 
-$$
-\sum_{n=1}^{\infty}(-1)^{n-1}\frac{nF_n}{2^n}=\tfrac{1}{2}G'(-\tfrac{1}{2})=\frac{1+\frac{1}{4}}{2(1+\frac{1}{2}-\frac{1}{4})^2}=\frac{2}{5}.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ed07b2f7-e13f-4a10-af5c-9aa3e1f89a36?id=134427
+:label: Grasple:134427
+:dropdown:
+:description: Show that $\displaystyle\int_0^1x^{n-1}\ln\left(1-x\right)\,dx=-\frac{H_{n}}{n}$ for $n=1,2,3,\ldots$.
 
-and
+::::
 
-$$
-\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)F_n}{2^n}=\tfrac{1}{4}G''(-\tfrac{1}{2})=\frac{2(1-\frac{1}{2}-\frac{1}{8})}{4(1+\frac{1}{2}-\frac{1}{4})^3}=\frac{4}{25}.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c705fc0a-6e9b-4b6a-ad11-a5a412b62e1d?id=134401
+:label: Grasple:134401
+:dropdown:
+:description: Find the sums of $\displaystyle\sum_{n=1}^{\infty}\left(-1\right)^{n-1}\frac{F_{n}}{2^{n}}$, $\displaystyle\sum_{n=1}^{\infty}\left(-1\right)^{n-1}\frac{nF_{n}}{2^{n}}$ and $\displaystyle\sum_{n=2}^{\infty}\left(-1\right)^{n}\frac{n\left(n-1\right)F_{n}}{2^{n}}$.
 
-:::
+::::
 
-::::{exercise}
-:label: Exc:Series:GeneratingLucasExercise
 Consider the sequence of *Lucas numbers* 
 
 $$
-1,3,4,7,11,18,29,47,76,123,199,\ldots
+1,3,4,7,11,18,29,47,76,123,199,\ldots,
 $$
 
-is defined by $L_{n+2}=L_n+L_{n+1}$ for $n=1,2,3,\ldots$ with $L_1=1$ and $L_2=3$.
+which is defined by 
 
-For computational reasons we use $L_{n+2}=L_n+L_{n+1}$ for $n=0,1,2,\ldots$ with $L_0=2$ and $L_1=1$ instead.
+$$
+L_{n+2}=L_n+L_{n+1}\quad\text{for}\quad n=1,2,3,\ldots
+$$ 
 
-(a) Find the generating function $F(x)=\displaystyle\sum_{n=0}^{\infty}L_nx^n$.
+with $L_1=1$ and $L_2=3$. For computational reasons we use 
 
-(b) Find $\displaystyle\sum_{n=1}^{\infty}\frac{L_n}{2^n}$, $\displaystyle\sum_{n=1}^{\infty}\frac{nL_n}{2^n}$ and $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)L_n}{2^n}$.
+$$
+L_{n+2}=L_n+L_{n+1}\quad\text{for}\quad n=0,1,2,\ldots
+$$ 
 
-(c) Find $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{L_n}{2^n}$ and $\displaystyle\sum_{n=1}^{\infty}\frac{L_n}{3^n}$.
+with $L_0=2$ and $L_1=1$ instead.
 
-(d) Find $\displaystyle\sum_{n=1}^{\infty}(-1)^n\frac{nL_n}{2^n}$ and $\displaystyle\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)L_n}{2^n}$.
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2b5073ca-075a-4ae3-8b39-61021941b19f?id=134404
+:label: Grasple:134404
+:dropdown:
+:description: Find and apply the generating function $F(x)=\displaystyle\sum_{n=0}^{\infty}L_nx^n$ for the Lucas numbers.
+
 ::::
-
-:::{admonition} Solution of {numref}`Exc:Series:GeneratingLucasExercise`
-:class: solution, dropdown
-(a) Using $F(x)=\displaystyle\sum_{n=0}^{\infty}L_nx^n$ we obtain
-
-\begin{align*}
-x^2F(x)&=\sum_{n=0}^{\infty}L_nx^{n+2}=\sum_{n=0}^{\infty}L_{n+2}x^{n+2}-x\sum_{n=0}^{\infty}L_{n+1}x^{n+1}\\
-&=\sum_{n=0}^{\infty}L_nx^n-L_0-L_1x-x\left(\sum_{n=0}^{\infty}L_nx^n-L_0\right)\\
-&=F(x)-2-x-x\left(F(x)-2\right).
-\end{align*}
-This implies that
-
-$$
-(1-x-x^2)F(x)=2+x-2x=2-x\quad\Longrightarrow\quad F(x)=\frac{2-x}{1-x-x^2}.
-$$
-
-In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=L_nx^n$, then we have:
-
-$$
-\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=\lim\limits_{n\to\infty}\left|\frac{L_{n+1}x^{n+1}}{L_nx^n}\right|
-=\lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}|x|=\varphi|x|,
-$$
-
-where $\displaystyle\lim\limits_{n\to\infty}\frac{L_{n+1}}{L_n}=\varphi=\frac{1+\sqrt{5}}{2}\approx1.618$ denotes the *golden ratio*.
-
-Now the ratio test implies that the generating series is absolutely convergent for $|x| < \displaystyle\frac{1}{\varphi}=\varphi-1\approx0.618$.
-
-(b) Hence, we have $\displaystyle\sum_{n=0}^{\infty}\frac{L_n}{2^n}=F(\tfrac{1}{2})=\frac{\frac{3}{2}}{1-\frac{1}{2}-\frac{1}{4}}=6$. This implies that $\displaystyle\sum_{n=1}^{\infty}\frac{L_n}{2^n}=4$.
-
-Differentiation leads to
-
-$$
-\sum_{n=1}^{\infty}nL_nx^{n-1}=F'(x)=\frac{-1+x+x^2+(1+2x)(2-x)}{(1-x-x^2)^2}=\frac{1+4x-x^2}{(1-x-x^2)^2}.
-$$
-
-Hence, we have $\displaystyle\sum_{n=1}^{\infty}\frac{nL_n}{2^n}=\tfrac{1}{2}F'(\tfrac{1}{2})=\frac{1+2-\frac{1}{4}}{2\left(1-\frac{1}{2}-\frac{1}{4}\right)^2}=22$.
-
-Differentiating once more, we obtain
-
-\begin{align*}
-&\sum_{n=2}^{\infty}n(n-1)L_nx^{n-2}=F''(x)\\
-&=\frac{(4-2x)(1-x-x^2)^2-2(1-x-x^2)(-1-2x)(1+4x-x^2)}{(1-x-x^2)^4}\\
-&=\frac{2(2-x+1+4x-x^2+2x+8x^2-2x^3)}{(1-x-x^2)^3}=\frac{2(3+3x+6x^2-x^3)}{(1-x-x^2)^3}.
-\end{align*}
-Hence, we have $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)L_n}{2^n}=\tfrac{1}{4}F''(\tfrac{1}{2})=\frac{2\left(3+\frac{3}{2}+\frac{3}{2}-\frac{1}{8}\right)}{4\left(1-\frac{1}{2}-\frac{1}{4}\right)^3}=188$.
-
-(c) For $x=-\frac{1}{2}$ we obtain: $\displaystyle\sum_{n=0}^{\infty}\left(-\tfrac{1}{2}\right)^nL_n=F(-\tfrac{1}{2})=2$. This implies that $\displaystyle\sum_{n=1}^{\infty}\left(-\tfrac{1}{2}\right)^nL_n=0$ and therefore $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}\frac{L_n}{2^n}=0$.
-
-For $x=\frac{1}{3}$ we obtain: $\displaystyle\sum_{n=0}^{\infty}\frac{L_n}{3^n}=F(\tfrac{1}{3})=3$. This implies that $\displaystyle\sum_{n=1}^{\infty}\frac{L_n}{3^n}=1$.
-
-(d) We have
-
-$$
-\sum_{n=1}^{\infty}(-1)^n\frac{nL_n}{2^n}=-\tfrac{1}{2}F'(-\tfrac{1}{2})=-\frac{1-2-\frac{1}{4}}{2(1+\frac{1}{2}-\frac{1}{4})^2}=\frac{2}{5}
-$$
-
-and
-
-$$
-\sum_{n=2}^{\infty}(-1)^n\frac{n(n-1)L_n}{2^n}=\tfrac{1}{4}F''(-\tfrac{1}{2})=\frac{2(3-\frac{3}{2}+\frac{3}{2}+\frac{1}{8})}{4(1+\frac{1}{2}-\frac{1}{4})^3}=\frac{4}{5}.
-$$
-
-:::

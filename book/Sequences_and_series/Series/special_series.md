@@ -779,34 +779,146 @@ If the series $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is convergent, say with 
 Add Grasple exercises for {numref}`Sec:Series:SpecialSeries`.
 :::
 
-## Exercises
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/eb496435-0754-4f80-ae75-f8f3ac1833c1?id=65071
+:label: Grasple:65071
+:dropdown:
+:description: Find the sum of the series.
 
-::::{exercise}
-:label: Exc:Series:DecimalsOne
-Is the number $r=0.\overline{9}=0.99999\ldots$ smaller than $1$?
-
-Find an easier expression for $r$.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Series:DecimalsOne`
-:class: solution, dropdown
-Solution 1. Write $r=0.\overline{9}$ as a geometric series:
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ba0b4650-2f7b-4654-8f4c-31990b83f322?id=65098
+:label: Grasple:65098
+:dropdown:
+:description: Find the sum of the series.
 
-$$
-r=0.\overline{9}=\sum_{n=1}^{\infty}\frac{9}{10^n}.
-$$
+::::
 
-This is a geometric series with common ratio $\dfrac{1}{10}$. Therefore, it is convergent and
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f05a6dc7-13fb-4e79-a9cf-ecced2838bbf?id=65099
+:label: Grasple:65099
+:dropdown:
+:description: Find the sum of the series.
 
-$$
-r=0.\overline{9}=\frac{\dfrac{9}{10}}{1-\dfrac{1}{10}}=\frac{9}{10-1}=\frac{9}{9}=1.
-$$
+::::
 
-Solution 2. If $r=0.\overline{9}$, then we have
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8b48183a-38f2-4306-8fec-766191f440cc?id=65176
+:label: Grasple:65176
+:dropdown:
+:description: Find the sum of the series.
 
-$$
-10r=9.\overline{9}=9+0.\overline{9}=9+r\quad\Longrightarrow\quad9r=9\quad\Longleftrightarrow\quad r=1.
-$$
+::::
 
-So, the notation $0.\overline{9}=0.99999\ldots$ is just a clumsy way to represent the number $1$.
-:::
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/35b56033-ca56-46b3-b897-997af5a3363c?id=79277
+:label: Grasple:79277
+:dropdown:
+:description: Does the series converge? If so, find its sum.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/65a60a44-ed1b-4e0e-86f9-567b468d58ba?id=79275
+:label: Grasple:79275
+:dropdown:
+:description: Does the series converge? If so, find its sum.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fa241831-1e5e-48e7-8872-50030836fec4?id=65074
+:label: Grasple:65074
+:dropdown:
+:description: Does the series converge? If so, find its sum.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/645b9ee5-5084-4936-83d0-d99b7c18a65d?id=65063
+:label: Grasple:65063
+:dropdown:
+:description: Write the decimal number as a rational number.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f114b3a7-9add-4035-9361-5ab1c1b2cef0?id=135057
+:label: Grasple:135057
+:dropdown:
+:description: Is the number $r=0.\overline{9}=0.99999\ldots$ smaller than $1$?<br />Find an easier expression for $r$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5de2f043-af09-4f4b-8834-d4d6e1e2e534?id=65058
+:label: Grasple:65058
+:dropdown:
+:description: Find the sum of a telescoping series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f9348a8a-7274-4c68-b2a7-541c80afd463?id=65044
+:label: Grasple:65044
+:dropdown:
+:description: Find the sum of a telescoping series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/03d20e9d-a7a1-4431-8a00-dbff06b89764?id=65052
+:label: Grasple:65052
+:dropdown:
+:description: Find the sum of a telescoping series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2023643d-1bf7-45c2-84fd-891d7bd78811?id=65253
+:label: Grasple:65253
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f3aa8cbc-3d70-4c30-970e-b6ca847b4680?id=65255
+:label: Grasple:65255
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4c8f8a32-6699-46ba-aac9-28d6e32d60be?id=65258
+:label: Grasple:65258
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a3c701c1-dd4e-4e7a-9fcc-090a0303dfcc?id=65252
+:label: Grasple:65252
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::

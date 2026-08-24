@@ -171,7 +171,7 @@ z_1+0&=0+z_1=z_1,\qquad&0\text{ is the neutral element for addition}\\
 Finally, if $z_1z_2=0$ then we must have $z_1=0$ or $z_2=0$.
 ::::
 
-::::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:roots`
+::::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:Commassdistr`
 :class: tudproof, dropdown
 All of these rules follow by writing out both sides of the equation using the definition and using the corresponding property of real numbers. 
 
