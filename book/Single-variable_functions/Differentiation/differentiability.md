@@ -1003,3 +1003,12 @@ A Venn diagram showing that different sets of functions are contained in each ot
 :description: Find a really high derivative.
 
 ::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f3b0b59c-5ec0-4b02-92f9-94e93abbfc6b?id=63735
+:label: Grasple:63735
+:dropdown:
+:description: Find a differential.
+
+::::

@@ -421,3 +421,11 @@ We omit the proof of this corollary, since it is just a matter of applying the c
 :dropdown:
 :description: Find the derivative.
 ::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/278827b1-322e-4f66-a816-47ed15549ae8?id=116605
+:label: Grasple:116605
+:dropdown:
+:description: Find an equation for the tangent line.
+::::
