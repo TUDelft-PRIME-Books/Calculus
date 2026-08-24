@@ -983,6 +983,24 @@ In practice using an even periodic extension is more common than using an odd pe
 :url: https://embed.grasple.com/exercises/354cb574-2518-42f7-86cc-883f01567e39?id=133624
 :label: Grasple:133624
 :dropdown:
-:description: Find the Fourier sine series for the function $x(\pi-x)$.
+:description: Find the Fourier sine series of the function $x(\pi-x)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2691baf2-53d7-4de8-9cd7-d9e2ca1ad1b1?id=133879
+:label: Grasple:133879
+:dropdown:
+:description: Find the Fourier cosine series of the function $x(\pi-x)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c9eded9b-0a4e-41e1-ade0-e258e400f129?id=134939
+:label: Grasple:133939
+:dropdown:
+:description: Find the Fourier cosine series of the function $x^4$.
 
 ::::

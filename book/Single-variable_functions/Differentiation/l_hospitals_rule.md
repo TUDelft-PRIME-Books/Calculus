@@ -768,6 +768,7 @@ $$
 
 We conclude that it is very important to check all the conditions of l'Hospital's rule and to keep in mind that, while l'Hospital's rule is a very strong and broadly applicable method, it is sometimes a lot easier to use other techniques like division by the dominant term or the square root trick.
 
+(Subsec:lHospital:ProdPow)=
 ## Indeterminate products and powers
 
 It turns out that many indeterminate forms that involve products and powers, like $0\cdot\infty$ or $1^\infty$, can be rewritten in such a way that other techniques, such as l'Hospital's rule, can be used.

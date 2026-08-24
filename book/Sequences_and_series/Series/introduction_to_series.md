@@ -568,77 +568,56 @@ This concludes our treatment of absolute and conditional convergence. As you may
 Add Grasple exercises for {numref}`Chapter:Series:Introduction`.
 :::
 
-## Exercises
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f54ec086-b25e-4f0c-8cb6-a5e8c036622f?id=65170
+:label: Grasple:65170
+:dropdown:
+:description: True or false?
 
-::::{exercise}
-:label: Exc:Series:FibonacciExercise
-The sequence $\{F_n\}_{n=1}^{\infty}$ of Fibonacci numbers is defined by 
-
-$$
-F_{n+2}=F_n+F_{n+1}\quad\text{for}\quad n=1,2,3,\ldots
-$$ 
-
-and $F_1=F_2=1$.
-
-(a) Use partial fractions $\dfrac{1}{F_nF_{n+2}}=\dfrac{A}{F_n}+\dfrac{B}{F_{n+2}}$ to show that
-
-$$
-\frac{1}{F_nF_{n+2}}=\frac{1}{F_nF_{n+1}}-\frac{1}{F_{n+1}F_{n+2}},\quad n=1,2,3,\ldots
-$$
-
-(b) Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}$.
-
-(c) Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{F_{n+1}}{F_nF_{n+2}}$.
-
-(d) Use partial fractions $\dfrac{1}{F_nF_{n+4}}=\dfrac{A}{F_n}+\dfrac{B}{F_{n+4}}$ to show that
-
-$$
-\frac{1}{F_nF_{n+4}}=\frac{1}{3F_nF_{n+2}}+\frac{1}{3F_{n+2}F_{n+4}},\quad n=1,2,3,\ldots
-$$
-
-(e) Find the sum of $\displaystyle\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+4}}$.
 ::::
 
-:::{admonition} Solution of {numref}`Exc:Series:FibonacciExercise`
-:class: solution, dropdown
-(a) Note that
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/22eb9936-cc95-47d8-a682-c4603f2c32fc?id=65173
+:label: Grasple:65173
+:dropdown:
+:description: True or false?
 
-\begin{align*}
-\frac{1}{F_nF_{n+2}}&=\frac{A}{F_n}+\frac{B}{F_{n+2}}=\frac{AF_{n+2}+BF_n}{F_nF_{n+2}}\\
-&=\frac{A\left(F_n+F_{n+1}\right)+BF_n}{F_nF_{n+2}}=\frac{(A+B)F_n+AF_{n+1}}{F_nF_{n+2}}.
-\end{align*}
-This implies that $A=\dfrac{1}{F_{n+1}}$ and $B=-\dfrac{1}{F_{n+1}}$. Hence we have
+::::
 
-$$
-\frac{1}{F_nF_{n+2}}=\frac{1}{F_nF_{n+1}}-\frac{1}{F_{n+1}F_{n+2}}.
-$$
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9024f57a-707f-4b0a-a84c-6da8dfb9fcb2?id=79273
+:label: Grasple:79273
+:dropdown:
+:description: Does the series converge?
 
-(b) Now we use the telescoping property to obtain
+::::
 
-\begin{align*}
-\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}&=\lim\limits_{N\to\infty}\sum_{n=1}^N\left(\frac{1}{F_nF_{n+1}}-\frac{1}{F_{n+1}F_{n+2}}\right)\\
-&=\lim\limits_{N\to\infty}\left(\frac{1}{F_1F_2}-\frac{1}{F_{N+1}F_{N+2}}\right)=1.
-\end{align*}
-(c) Again, we use the telescoping property to obtain
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e632e2c7-88fe-4bd1-adde-527eeacfeab9?id=79274
+:label: Grasple:79274
+:dropdown:
+:description: Does the series converge?
 
-\begin{align*}
-\sum_{n=1}^{\infty}\frac{F_{n+1}}{F_nF_{n+2}}&=\lim\limits_{N\to\infty}\sum_{n=1}^{\infty}\left(\frac{1}{F_n}-\frac{1}{F_{n+2}}\right)\\
-&=\lim\limits_{N\to\infty}\left(\frac{1}{F_1}+\frac{1}{F_2}-\frac{1}{F_{N+1}}-\frac{1}{F_{N+2}}\right)=1+1=2.
-\end{align*}
-(d) Note that
+::::
 
-\begin{align*}
-\frac{1}{F_nF_{n+4}}&=\frac{A}{F_n}+\frac{B}{F_{n+4}}=\frac{AF_{n+4}+BF_n}{F_nF_{n+4}}=\frac{A\left(F_{n+2}+F_{n+3}\right)+BF_n}{F_nF_{n+4}}\\
-&=\frac{A\left(F_{n+2}+F_{n+1}+F_{n+2}\right)+BF_n}{F_nF_{n+4}}\\
-&=\frac{A\left(2F_{n+2}+F_{n+2}-F_n\right)+BF_n}{F_nF_{n+4}}=\frac{A\left(3F_{n+2}-F_n\right)+BF_n}{F_nF_{n+4}}\\
-&=\frac{3AF_{n+2}+(B-A)F_n}{F_nF_{n+4}}\quad\Longrightarrow\quad A=B=\frac{1}{3F_{n+2}}.
-\end{align*}
-(e) This implies that
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ed622393-536c-4f30-ae34-6a2b62567aec?id=65041
+:label: Grasple:65041
+:dropdown:
+:description: Does the series converge?
 
-\begin{align*}
-\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+4}}&=\sum_{n=1}^{\infty}\left(\frac{1}{3F_nF_{n+2}}+\frac{1}{3F_{n+2}F_{n+4}}\right)\\
-&=\frac{1}{3}\left(\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}+\sum_{n=1}^{\infty}\frac{1}{F_nF_{n+2}}-\frac{1}{F_1F_3}-\frac{1}{F_2F_4}\right)\\
-&=\frac{1}{3}\left(1+1-\frac{1}{2}-\frac{1}{3}\right)=\frac{7}{18}.
-\end{align*}
-:::
+::::
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/dda2e98b-e046-4c57-8da7-5921061cd5ba?id=135064
+:label: Grasple:135064
+:dropdown:
+:description: Telescoping series involving Fibonacci numbers.
+
+::::
