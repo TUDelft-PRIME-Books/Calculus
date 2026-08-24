@@ -1240,7 +1240,7 @@ The factors of this infinite product give rise to all zeros of $\sin(\pi x)$ bei
 :url: https://embed.grasple.com/exercises/7d46a09a-3e76-4729-9b9e-0d7805e15a0d?id=133108
 :label: Grasple:133108
 :dropdown:
-:description: Show that $1+\tan^2(x)=\dfrac{1}{\cos^2(x)}$ for $\cos(x)\neq0$.
+:description: Show that $\tan^2(x)+1=\dfrac{1}{\cos^2(x)}$ for $\cos(x)\neq0$.
 
 ::::
 
