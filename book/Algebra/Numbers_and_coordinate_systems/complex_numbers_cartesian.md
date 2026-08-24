@@ -19,14 +19,12 @@ x_{1,2}=\frac{-b\pm\sqrt{D}}{2a}.
 
 :::
 
-Now consider the case that you _really_ need solutions of Equation {eq}`Eq:ComplexNumbers:abc-eq` even if $D$ is negative. This might sound strange, but you will encounter this in many engineering applications, for example in solving second-order linear differential equations (see {numref}`Sec:ODE2:Homogeneous`). It turns out that the solution in Equation {eq}`Eq:ComplexNumbers:abc-sol` is still valid when $D<0$, which means that you need to take the square root of a negative number.
-
-Fortunately, mathematicians have found a way to handle this, namely complex numbers. Before we start treating complex numbers, we first need to introduce the special number $i$. After that, we will introduce the complex numbers and show how we can do computations with them.
+In many engineering applications, for example in solving second-order linear differential equations (see {numref}`Sec:ODE2:Homogeneous`), you need solutions of Equation {eq}`Eq:ComplexNumbers:abc-eq` even if $D$ is negative. Pluggin Equation {eq}`Eq:ComplexNumbers:abc-sol` into Equation {eq}`Eq:ComplexNumbers:abc-eq` still gives a valid equation when $D<0$, but we need to make sense of taking the square root of a negative number. To handle this, we need so-called complex numbers.
 
 ## Definition and arithmetics
 
 
-We start with considering an easier form of Equation {eq}`Eq:ComplexNumbers:abc-eq`, namely
+We start by considering an easier form of Equation {eq}`Eq:ComplexNumbers:abc-eq`, namely
 
 :::{math}
 :label: Eq:ComplexNumbers:abc-eq-simple
@@ -44,7 +42,7 @@ There is no real number of which the square is $-1$, so this seems like a proble
 ::::{prf:definition}
 :label: Def:ComplexNumbers:i
 
-The **imaginary unit** $i$ is a mathematical constant that satisfies
+The **imaginary unit** $i$ is a mathematical constant that satisfies, by definition,
 
 $$
  i^2=-1.
@@ -58,20 +56,20 @@ Because of historical conventions we call $i$ imaginary, but that does not mean 
 :::
 
 ::::::{prf:notation}
-In some fields, particularly in electrical engineering, the imaginary unit is sometimes denoted by $j$, to avoid confusion with the current which often uses the symbol $i$. In this book, we will stick to the symbol $i$.
+In some fields, particularly in electrical engineering, the imaginary unit is sometimes denoted by $j$ to avoid confusion with the quantity current which often uses the symbol $i$. In this book, we will stick to the symbol $i$.
 
 In some other areas, for example in programming languages, the imaginary unit is sometimes denoted by $I$, but we will also not use this notation in this book.
 ::::::
 
-Now we know what the imaginary unit is, we can define what a complex number is.
+We can now define what a complex number is.
 
 ::::{prf:definition}
 :label: Def:ComplexNumbers:complexnumber
 
-A **complex number** is an expression of the form
+A **complex number** $z$ is an expression of the form
 
 $$
-a+bi,
+z=a+bi,
 $$
 
 where $a\in\mathbb{R}$ and $b\in\mathbb{R}$. The real number $a$ is known as the **real part** of $z$ and is denoted by
@@ -86,7 +84,7 @@ $$
 \Im{z}=b.
 $$
 
-The set of all complex numbers is denoted by the symbol $\mathbb{C}$, and is called the **complex plane**.
+The set of all complex numbers is denoted by the symbol $\mathbb{C}$ and is called the **complex plane**.
 
 ::::
 
@@ -94,9 +92,6 @@ The set of all complex numbers is denoted by the symbol $\mathbb{C}$, and is cal
 It is a common error to think that the imaginary part of $z=a+bi$ would be $bi$. This is not correct; the imaginary part is $b$. Indeed, we have defined the imaginary part to be the number before the $i$, **excluding** the $i$.
 ::::::
 
-:::{note}
-$z$ is the symbol most commonly used to denote a complex number, followed by $w$. 
-:::
 
 
 
@@ -119,7 +114,7 @@ $$
 
 ::::
 
-Just like we can visualise real numbers on a number line, we can visualise complex numbers in the complex plane. One axis indicates the value of the real part of a complex number and one indicates the imaginary part of the same complex number. In {numref}`Figure %s <Fig:ComplexNumbers:complexplane>` you can see this visualisation. By convention, the horizontal axis always indicates the real part, and the vertical axis always represents the imaginary part.
+Just like we can visualise real numbers on a number line, we can visualise complex numbers in the complex plane. By convention, the horizontal axis indicates the value of the real part of a complex number and the vertical axis indicates the imaginary part of the same complex number. In {numref}`Figure %s <Fig:ComplexNumbers:complexplane>` you can see this visualisation. 
 
 :::{applet}
 :url: calculus/complex_numbers/visualisation_of_the_complex_plane
@@ -130,26 +125,27 @@ Visualisation of the complex plane $\mathbb{C}$.
 
 :::
 
-To make everything concise, we will view the set of all real numbers $\mathbb{R}$ as a part of the complex numbers $\mathbb{C}$. By this we mean that if $x$ is a real number, we can interpret it as the complex number with $\Re{x}=x$ and $\Im{x}=0$. Conversely, if $z$ is a complex number with $\Im{z}=0$, we interpret it as a real number. If a complex number is not a real number, we refer to it as **non-real**.
+We will view the set of all real numbers $\mathbb{R}$ as a part of the complex numbers $\mathbb{C}$. By this we mean that if $x$ is a real number, we can interpret it as the complex number with $\Re{x}=x$ and $\Im{x}=0$. Conversely, if $z$ is a complex number with $\Im{z}=0$, we interpret it as a real number. If a complex number is not a real number, we refer to it as **non-real**.
 
 
 
-The nice thing with real numbers is that you can you can add, subtract, multiply and, in most cases, divide real numbers to obtain other real numbers. With complex numbers we can do the same operations as with real numbers. This is precisely the reason why we call complex numbers 'numbers'. Addition, subtraction and multiplication are performed by simply working out the brackets.
+You can add, subtract, multiply and, in most cases, divide real numbers to obtain other real numbers. With complex numbers we can perform the same operations as with real numbers. This is precisely the reason why we call complex numbers 'numbers'. Addition, subtraction and multiplication are performed by simply working out the brackets.
 
 ::::{prf:definition} 
 :label: Def:ComplexNumbers:Arithmetics
-If $z=a+bi$ and $w=c+di$ are complex numbers (with $a,b,c,d\in\mathbb{R}$), then we define the **sum** $z+w$, the **difference** $z-w$ and the **product** $zw$ as the complex numbers
+If $z=a+bi$ and $w=c+di$ are complex numbers (with $a,b,c,d\in\mathbb{R}$), then we define the **sum** $z+w$, the **difference** $z-w$ and the **product** $zw$, as well as the complex number $-z$ (which is called the **additive inverse** of $z$, or simply **minus $z$**), as the complex numbers
 
 \begin{align*}
 z+w &= (a+c)+(b+d)i, \\
 z-w &= (a-c)+(b-d)i, \\
-zw &= (ac-bd)+(ad+bc)i.
+zw &= (ac-bd)+(ad+bc)i,\\
+-z&=-a+(-b)i.
 \end{align*}
 
 In addition, if $n\in\mathbb{Z}$ with $n\geq 1$, we define the $n$th **power** of $z$ as
 
 $$
-z^n=\underbrac{z\cdot z\cdot\cdots\cdot z}_{n\text{ times}}.
+z^n=\underbrace{z\cdot z\cdot\cdots\cdot z}_{n\text{ times}}.
 $$
 
 Finally, we define $z^0=1$.
@@ -166,17 +162,20 @@ z_1-z_1&=0,&\\
 z_1+z_2 &= z_2+z_1,\qquad&\text{commutativity of addition} \\
 (z_1+z_2)+z_3 &= z_1+(z_2+z_3),\qquad&\text{associativity of addition} \\
 z_1z_2 &= z_2z_1,\qquad&\text{commutativity of multiplication}\\
-(z_1z_2)z_3&=z_1(z_2z_3),\qquad&\text{associativity of addition}\\
-z_1(z_2+z_3)&=z_1z_2+z_1z_3.\qquad&\text{distributivity}
+(z_1z_2)z_3&=z_1(z_2z_3),\qquad&\text{associativity of multiplication}\\
+z_1(z_2+z_3)&=z_1z_2+z_1z_3,\qquad&\text{distributivity}\\
+z_1+0&=0+z_1=z_1,\qquad&0\text{ is the neutral element for addition}\\
+1z_1&=z_11=z_1.\qquad&1\text{ is the neutral element for multiplication}\\
 \end{align*}
 
+Finally, if $z_1z_2=0$ then we must have $z_1=0$ or $z_2=0$.
 ::::
 
-:::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:roots`
+::::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:roots`
 :class: tudproof, dropdown
 All of these rules follow by writing out both sides of the equation using the definition and using the corresponding property of real numbers. 
 
-For instance, if we want to show associativity of multiplication,we write $z_1=a+bi$, $z_2=c+di$ and $z_3=x+yi$ with $a,b,c,d,x,y\in \mathbb{R}$. Then we have
+For instance, if we want to show associativity of multiplication, we write $z_1=a+bi$, $z_2=c+di$ and $z_3=x+yi$ with $a,b,c,d,x,y\in \mathbb{R}$. Then we have
 
 \begin{align*}
 (z_1z_2)z_3&=((ac-bd)+(ad+bc)i)(x+yi)\\
@@ -194,23 +193,52 @@ z_1(z_2z_3)&=(a+bi)((cx-dy)+(cy+dx)i)\\
 \end{align*}
 
 We conclude that $(z_1z_2)z_3=z_1(z_2z_3)$.
+
+To check the final statement, we suppose that $z_1z_2=0$. We write $z_1=a+bi$ and $z_2=c+di$. Then we have
+
+$$
+ 0=z_1z_2=(ac-bd)+(ad+bc)i,
+$$
+
+which gives the system of equations
+
+:::{math}
+:label: Eq:ComplexNumbers:zerodivisor
+ \begin{cases}0=ac-bd,\\ 0=d+bc,\end{cases}
 :::
+
+since a complex number can only be $0$ if both its real and imaginary parts are $0$.
+
+If $z=0$ we are done, so we assume that $z\neq 0$. In that case at least one of the real numbers $a$ and $b$ must be non-zero, which means that $a^2+b^2>0$. We now first multiply the first equation of {eq}`Eq:ComplexNumbers:zerodivisor` by $a$ and the second equation by $b$ and add these to obtain
+
+$$
+ 0=a(ac-bd)+b(ad+bc)=\left(a^2+b^2\right)c.
+$$
+
+Since $a^2+b^2>0$ and $c$ is real, we must have $c=0$. Similarly, we multiply the first equation of {eq}`Eq:ComplexNumbers:zerodivisor` by $-b$ and the second one by $a$ and add them to obtain
+
+$$
+ 0=-b(ac-bd)+a(ad+bc)=\left(a^2+b^2\right)d.
+$$
+
+Again, since $a^2+b^2>0$ and $d$ is real, we must have $d=0$. We then find $z_2=c+di=0$, as desired.
+::::
 
 :::{note}
 The rules from {prf:ref}`Thm:ComplexNumbers:Commassdistr` also show why it make sense to define addition and multiplication like we did. Indeed, if $z=a+bi$ and $w=c+di$ then we can work out the brackets to obtain
 
 \begin{align*}
-z+w&= (a+bi) + (c+di) \\
+(a+bi) + (c+di)
 &= a + bi + c + di \\
 &= a + c + bi + di \\
 &= (a+c)+(b+d)i\\
+&=z+w
 \end{align*}
 
 and
 
 \begin{align*}
-zw&=(a+bi)(c+di)\\
- &= a(c+di)+bi(c+di) \\
+(a+bi)(c+di)&= a(c+di)+bi(c+di) \\
 &= ac+adi+bci+bdi^2 \\
 &= ac+adi+bci-bd \\
 &= ac-bd+adi+bci \\
@@ -260,7 +288,7 @@ zw &= (4+3i)(-1-2i) \\
 
 ::::
 
-Now we consider the geometric interpretation of adding complex numbers. If we add $z=a+bi$ and $w=c+di$ the new number is $z+w=(a+c)+(b+d)i$, so we add the real and imaginary parts. This means we add the coordinates of the corresponding points. This works similar to the addition of vectors, see {numref}`Chapter:VectorAlgebra`. Thus, geometrically we can add two complex numbers by following the parallelogram rule. That is, the lines from the origin to the two complex numbers form two sides of a parallelogram with vertices $0$, $z$, $z+w$, and $w$; see {numref}`Figure %s <Fig:ComplexNumbers:complexadd>`.
+Now we consider the geometric interpretation of adding complex numbers. If we add $z=a+bi$ and $w=c+di$, we add the real and imaginary parts to obtain $z+w=(a+c)+(b+d)i$. This means we add the coordinates of the corresponding points. This works similar to the addition of vectors, see {numref}`Chapter:VectorAlgebra`. Thus, geometrically we can add two complex numbers by following the parallelogram rule. That is, the lines from the origin to the two complex numbers form two sides of a parallelogram with vertices $0$, $z$, $z+w$, and $w$; see {numref}`Figure %s <Fig:ComplexNumbers:complexadd>`.
 
 :::{applet}
 :url: calculus/complex_numbers/adding_complex_numbers
@@ -278,33 +306,33 @@ Before we consider division of complex numbers we will turn our attention first 
 
 ### Solving quadratic equations
 
-Now that we know how addition and multiplication of complex numbers works, we can use complex numbers to solve quadratic equations, even those that do not have any real solutions.
+Now that we know how addition and multiplication of complex numbers work, we can use complex numbers to solve quadratic equations, even those that do not have real solutions.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:roots
 
-Let $a$ be real number. Then the two complex numbers $x_-=-ai$ and $x_+=ai$ are solutions to the equation $x^2=-a^2$ and they are the only complex numbers that are solutions to this equation.
+Let $a$ be a real number. Then the two complex numbers $-ai$ and $ai$ are solutions to the equation $x^2=-a^2$ and they are the only complex numbers that are solutions to this equation.
 
 ::::
 
 :::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:roots`
 :class: tudproof, dropdown
 
-First we consider $x_-=-ai$ and take its square. This gives
+First we consider $x=-ai$ and take its square. This gives
 
 $$
-x_-^2 = \left(-ai\right)^2 = a^2i^2 = -a^2.
+\left(-ai\right)^2 = a^2i^2 = -a^2.
 $$
 
-This shows that $x_-=-ai$ is indeed a solution to the equation $x^2=-a^2$.
+This shows that $x=-ai$ is indeed a solution of the equation $x^2=-a^2$.
 
-We repeat the same for $x_+=ai$ to obtain
+For $x=ai$ we obtain
 
 $$
-x_+^2 = \left(ai\right)^2 = a^2i^2 = -a^2.
+ \left(ai\right)^2 = a^2i^2 = -a^2.
 $$
 
-We also find that $x_+=ai$ is a solution to the equation $x^2=-a^2$.
+We find that $x=ai$ also is a solution of the equation $x^2=-a^2$.
 
 Suppose $z=c+di$ also satisfies $z^2=-a^2$. Then we obtain
 
@@ -318,7 +346,7 @@ $$
  -a^2=c^2-d^2,\qquad 0=2cd.
 $$
 
-The second equation gives either $c=0$ or $d=0$. If $d=0$, we obtain $-a^2=c^2$, which has no solutions if $a\neq 0$, while it has the solution $c=0$ if $a=0$. If $c=0$, we obtain $-a^2=-d^2$, which gives $d=\pm a$. In any case, we find that $z$ must be $x_-$ or $x_+$.
+The second equation gives either $c=0$ or $d=0$. If $d=0$, we obtain $-a^2=c^2$, which has no solutions if $a\neq 0$, while it has the solution $c=0$ if $a=0$. If $c=0$, we obtain $-a^2=-d^2$, which gives $d=\pm a$. In any case, we find that $z$ must be $-ai$ or $ai$.
 
 :::
 
@@ -367,7 +395,7 @@ $$
 when only considering real values of $z$. Indeed, we have $(z+1)^2\geq 0$ for all real $z$, so we obtain the minimal value when $z=-1$.
 ::::
 
-In general, you can use the technique of completing the square to write any polynomial $az^2+bz+c$ in the form $a ((z+p)^2+q)$ by first factoring out the $a$, subsequently choosing the $p$ such that the linear term (the term involving $z$) is correct, and letting $q$ be the remainder. Using this form, you can then determine the zeroes of the polynomial. As such, we obtain the following theorem.
+In general, you can use the technique of completing the square to write any polynomial $az^2+bz+c$ in the form $a ((z+p)^2+q)$ by first factoring out the $a$, subsequently choosing the $p$ such that the linear term (the term involving $z$) is correct, and letting $q$ be the remainder. Using this form, you can then determine the zeros of the polynomial. As such, we obtain the following theorem.
 
 
 ::::{prf:theorem}
@@ -380,6 +408,12 @@ $$
 $$
 
 for $z\in\mathbb{C}$ has two real roots if $D>0$, it has a double real root if $D=0$, and it has two non-real roots if $D<0$.
+
+If $D<0$, these roots are given by
+
+$$
+ z=-\frac{b}{2a}\pm\sqrt{-\frac{b^2-4ac}{4a^2}}i.
+$$
 
 ::::
 
@@ -798,14 +832,14 @@ for some complex numbers $b_1, b_2, \ldots, b_n$.
 
 ::::
 
-Observe that this factorisation means that $b_1, b_2, \ldots, b_n$ are the zeroes (= roots) of the polynomial $p(z)$. It might happen that the $b$'s are complex numbers, even if $a_1, a_2, \ldots, a_n$ are real.
+Observe that this factorisation means that $b_1, b_2, \ldots, b_n$ are the zeros (= roots) of the polynomial $p(z)$. It might happen that the $b$'s are complex numbers, even if $a_1, a_2, \ldots, a_n$ are real.
 
 We will not discuss the proof of this theorem, as that requires much more mathematics. However, we will illustrate the theorem using some examples.
 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polyreal
 
-Consider $p(z)=z^2+3z+2$. Then we know that we can factor the polynomial as $p(z) = (z+2)(z+1)$ and thus find the zeroes as $-2$ and $-1$.
+Consider $p(z)=z^2+3z+2$. Then we know that we can factor the polynomial as $p(z) = (z+2)(z+1)$ and thus find the zeros as $-2$ and $-1$.
 
 ::::
 
@@ -819,16 +853,16 @@ Consider the equation $z^2=-1$. We can always rewrite an equation to an equation
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polycompl
 
-While a polynomial of degree $n$ can be factored in $n$ linear terms, and we have $n$ values $b_i$, this does not mean that there are $n$ distinct zeroes. For example $p(z) = z^2+4z+4$ can be factored as $p(z)=(z+2)^2$ and thus only has $z=-2$ as a solution. However, the term $(z+2)$ occurs twice in the factorisation. We therefore say that the multiplicity of the zero $-2$ is equal to two.
+While a polynomial of degree $n$ can be factored in $n$ linear terms, and we have $n$ values $b_i$, this does not mean that there are $n$ distinct zeros. For example $p(z) = z^2+4z+4$ can be factored as $p(z)=(z+2)^2$ and thus only has $z=-2$ as a solution. However, the term $(z+2)$ occurs twice in the factorisation. We therefore say that the multiplicity of the zero $-2$ is equal to two.
 
 ::::
 
-In particular, we see that any polynomial of degree $n$ has $n$ complex zeroes _counting multiplicity_.
+In particular, we see that any polynomial of degree $n$ has $n$ complex zeros _counting multiplicity_.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:uniquezeroes
 
-If $\{z_1,z_2,\ldots,z_k\}$ is the set of _unique_ zeroes of a polynomial $p$ of degree $n$ with $p(z)=a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0$, the polynomial $p$ can be written as
+If $\{z_1,z_2,\ldots,z_k\}$ is the set of _unique_ zeros of a polynomial $p$ of degree $n$ with $p(z)=a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0$, the polynomial $p$ can be written as
 
 $$
 p(z)=a_n(z-z_1)^{\alpha_1}(z-z_2)^{\alpha_2}\cdots(z-z_k)^{\alpha_k}
@@ -846,7 +880,7 @@ $$
 :class: dropdown, tudproof
 <!-- ::::{dropdown} Proof of {prf:ref}`Thm:ComplexNumbers:uniquezeroes` -->
 
-Assume $\{z_1,z_2,\ldots,z_k\}$ is the set of _unique_ zeroes of a polynomial $p$ of degree $n$. Then following {prf:ref}`Thm:ComplexNumbers:fundamental`, we can write
+Assume $\{z_1,z_2,\ldots,z_k\}$ is the set of _unique_ zeros of a polynomial $p$ of degree $n$. Then following {prf:ref}`Thm:ComplexNumbers:fundamental`, we can write
 
 :::{math}
 :label: Eq:ComplexNumbers:factorsb
@@ -889,7 +923,7 @@ If $z_j$ is a zero of a polynomial $p$ of degree $n$ with $p(z)=a_n(z-z_1)^{\alp
 ::::{prf:example}
 :label: Ex:ComplexNumbers:polycomplcon2
 
-The third degree polynomial $p(z) = z^3-4z^2$ can be factored as $p(z) = z^2(z-4) = (z-0)^2(z-4)$. Therefore, it has zeroes $4$ and $0$, where the multiplicity of $4$ is equal to one and the multiplicity of $0$ is equal to two. The degree of the polynomial is $3$, which is equal to the sum of the multiplicities of its zeroes ($1+2=3$).
+The third degree polynomial $p(z) = z^3-4z^2$ can be factored as $p(z) = z^2(z-4) = (z-0)^2(z-4)$. Therefore, it has zeros $4$ and $0$, where the multiplicity of $4$ is equal to one and the multiplicity of $0$ is equal to two. The degree of the polynomial is $3$, which is equal to the sum of the multiplicities of its zeros ($1+2=3$).
 
 ::::
 
@@ -941,7 +975,7 @@ $$
 \sum_{j=1}^k\alpha_j=n
 $$
 
-and $z_1,z_2,\ldots,z_k$ are the unique zeroes of $p$.
+and $z_1,z_2,\ldots,z_k$ are the unique zeros of $p$.
 
 If $p(z)=0$, then $z=z_j$ for some $j\in\{1,2,\ldots,k\}$ and $z\neq z_i$ for $i\in\{1,2,\ldots,k\}\setminus\{j\}$. Without loss of generality we can assume $j=1$.
 
@@ -1006,7 +1040,7 @@ $$
 ### Polynomial Division
 
 Next, we consider a method you can use whenever you know one root of a polynomial. The fundamental theorem of Algebra says that if $p(z)$ is a polynomial such that $p(b)=0$ for some $b$, then $p(z) = a_n(z-b)(z-b_2)\cdots (z-b_n) = (z-b) q(z)$ for another polynomial $q(z)=a_n(z-b_2)\cdots  (z-b_n)$.
-Thus, we divide the polynomial $p(z)$ by $(z-b)$ in this case and obtain a new polynomial. To find the zeroes of $p$ we now just have to find the zeroes of the quotient $\nicefrac{p(z)}{z-b}$ and add $b$ to this list.
+Thus, we divide the polynomial $p(z)$ by $(z-b)$ in this case and obtain a new polynomial. To find the zeros of $p$ we now just have to find the zeros of the quotient $\nicefrac{p(z)}{z-b}$ and add $b$ to this list.
 
 To divide a polynomial by another polynomial you can use a long division, see {numref}`Sec:LongDivision` for the notation we will use. Let us recall how this worked for ordinary fractions.
 
@@ -1120,7 +1154,7 @@ You can see this as follows.
 
 As a consequence, we see that $z^3+3z^2+z-5=(z-1)(z^2+4z+5)$, so it equals $0$ if either $z-1=0$ or $z^2+4z+5=0$.
 
-Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeroes are $z=-2\pm i$. Thus, the roots of $z^3+3z^2+z-5$ are $z=1$ and $z=-2\pm i$.
+Completing the square gives $z^2+4z+5=(z+2)^2+1$, so the zeros are $z=-2\pm i$. Thus, the roots of $z^3+3z^2+z-5$ are $z=1$ and $z=-2\pm i$.
 
 :::::
 
