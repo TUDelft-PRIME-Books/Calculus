@@ -138,13 +138,14 @@ If $z=a+bi$ with $a\neq 0$ we have $\tan\left(\arg(z)\right)=\dfrac{b}{a}$. If y
 If the real part is negative, the argument is between $\dfrac{\pi}{2}$ and $\dfrac{3\pi}{2}$ (or between $-\frac12\pi$ and $-\frac32\pi$ depending on which direction you want to consider) and outside the range of the arctangent. To get the correct value for the argument in these cases, you have to add or subtract $\pi$ from the arctangent. In particular, we have
 
 $$
- \Arg(z)=\begin{cases}
+ \arg(z)=\begin{cases}
  \arctan\left(\frac{b}{a}\right),&\text{if}\ a>0,\\
  \frac12\pi, &\text{if}\ a=0\ \text{and}\ b>0,\\
  -\frac12\pi, &\text{if}\ a=0\ \text{and}\ b<0,\\
- \arctan\left(\frac{b}{a}\right)+\pi,&\text{if}\ a<0.
+ \arctan\left(\frac{b}{a}\right)+\pi,&\text{if}\ a<0,
  \end{cases}
 $$
+plus or minus any integer multiple of $2\pi$.
 
 
 :::
@@ -280,13 +281,13 @@ If you divide the complex number $z$ by the complex number $w\neq0$ you divide t
 <ul>
 <li>
 
-$\left|\frac{z}{w}\right| = \frac{|z|}{|w|}$,
+$\left|\dfrac{z}{w}\right| = \dfrac{|z|}{|w|}$,
 
 </li>
 
 <li>
 
-$\arg\left(\frac{z}{w}\right) = \arg(z) - \arg(w)$.
+$\arg\left(\dfrac{z}{w}\right) = \arg(z) - \arg(w)$.
 
 </li>
 </ul>
@@ -325,8 +326,8 @@ You can see each of these operations illustrated in {numref}`Figures %s <Fig:Com
 :name: Fig:ComplexNumbers:conjugation
 :class: dark-light
 
-Conjugating a complex number means negating the argument and keeping the modulus the same.
-
+Conjugating a complex number means negating the argument and keeping the modulus the same. \
+You can use the second switch to also show $-z$ and some additional related complex numbers.
 :::
 
 :::{applet}
@@ -367,8 +368,12 @@ This is known as **Euler's formula**.
 
 ::::
 
-:::{todo}
-Include an applet of Fig-ComplexNumbers-EulersFormule.jpg
+:::{applet}
+:url: calculus/complex_numbers/euler’s_formula
+:name: Fig:ComplexNumbers:EulersFormule
+:class: dark-light
+
+An illustration of Euler's formula.
 :::
 
 Using this definition we see that we can express any complex number in terms of an expression of the form $e^{i\theta}$.
@@ -717,13 +722,13 @@ You should never use the notation $\sqrt[n]{w}$ for a non-real number $w$, as th
 Before turning to examples, we will first establish how many distinct $n$th roots a complex number can have.
 
 ::::{prf:theorem}
-:label: Thm:ComplexNumbers:roots
+:label: Thm:ComplexNumbers:rootsunity
 Let $w\in\mathbb{C}$ and $n\in\mathbb{Z}$ with $n\geq 1$. Then the equation $z^n=w$ has exactly $n$ distinct solutions for $z\in\mathbb{C}$ if $w\neq 0$, or only the solution $z=0$ if $w=0$.
 
 If $w\neq 0$, the $n$ $n$th roots of $w$ all lie on the circle $|z|=|w|^{\frac{1}{n}}$ in the complex plane, and the roots are equally spaced on this circle.
 ::::
 
-:::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:roots`
+:::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:rootsunity`
 :class: tudproof, dropdown
 Since the equation $z^n=w$ can be rewritten has $z^n-w=0$, it follows from {prf:ref}`Thm:ComplexNumbers:fundamental` that this equation has $n$ solutions, counting multiplicity. 
 
@@ -753,13 +758,13 @@ $$
  e^{i\frac{\theta+2\pi j}{n}}=e^{i\frac{\theta+2\pi k}{n}}.
 $$
 
-By {prf:ref}`Thm:ComplexNumbers:ComplExpCalcRules`, we find that $\dfrac{\theta+2\pi j}{n}$ is an argument of the exponential on the left-hand side of the equation, while $\dfrac{\theta+2\pi k}{n}$ is an argument of the kexponential on the left-hand side of the equation. Since arguments are unique up to multiples of $2\pi$, we find that
+By {prf:ref}`Thm:ComplexNumbers:ComplExpCalcRules`, we find that $\dfrac{\theta+2\pi j}{n}$ is an argument of the exponential on the left-hand side of the equation, while $\dfrac{\theta+2\pi k}{n}$ is an argument of the exponential on the left-hand side of the equation. Since arguments are unique up to multiples of $2\pi$, we find that
 
 $$
  \dfrac{\theta+2\pi j}{n}=\dfrac{\theta+2\pi k}{n}+2\pi m
 $$
 
-for some integer $m$. Simplifiying this equation gives
+for some integer $m$. Simplifying this equation gives
 
 $$
  j=k+ mn,

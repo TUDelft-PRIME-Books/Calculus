@@ -102,7 +102,7 @@ This more realistic model reflects the fact that a given environment has limited
 :class: dark-light
 
 A graph of a function that is a solution to the indicated _logistic equation_. You can change the point where the solution starts (_first slider_), and also the value of the parameters $k$ and $M$ (_second and third slider_). 
-
+:::
 
 ::::::
 
@@ -1025,7 +1025,7 @@ has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sq
 :url: https://embed.grasple.com/exercises/28f974bf-9def-454e-b392-5b3cb974d7e7?id=75422
 :label: Grasple:75422
 :dropdown:
-:description: Combining solutions of different differential equations
+:description: Combining solutions of different differential equations.
 ::::::
 
 ::::::{grasple}
@@ -1033,7 +1033,7 @@ has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sq
 :url: https://embed.grasple.com/exercises/5d9ecad8-940d-4369-a1d5-7f4c46040079?id=75418
 :label: Grasple:75418
 :dropdown:
-:description: Combining solutions of different differential equations
+:description: Combining solutions of different differential equations.
 ::::::
 
 

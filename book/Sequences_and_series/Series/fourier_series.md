@@ -17,7 +17,7 @@ We repeat the definition of periodic functions from {numref}`Subsec:PropertiesFu
 :::{fetch} {prf:ref}`Def:PropertiesFunctions:Periodic`
 :::
 
-Now consider the functions $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ and $\displaystyle\sin\left(\frac{n\pi x}{L}\right)$ with $n$ a positive integer. These functions are all periodic with period $2L$. Moreover, they satisfy a remarkable property (compare with {numref}`Exc:Integration:TrigFunctionsProductFormulasOrthogonality`):
+Now consider the functions $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ and $\displaystyle\sin\left(\frac{n\pi x}{L}\right)$ with $n$ a positive integer. These functions are all periodic with period $2L$. Moreover, they satisfy a remarkable property (compare with {numref}`Grasple:134494`):
 
 ::::::{prf:theorem}
 :label: Thm:Series:Orthogonality

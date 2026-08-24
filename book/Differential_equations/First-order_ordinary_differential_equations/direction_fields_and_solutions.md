@@ -168,10 +168,15 @@ $$
 
 Let us draw the slope field and see if we can find (and interpret) the equilibrium solutions.
 
-:::{todo} Include the slope field here, preferrably with draggable k,M.
+:::{applet}
+:url: calculus/slope_fields/logistic_equation
+:name: Fig:ODE1Slope:population
+:class: dark-light
+
+A slope field for the indicated _logistic equation_ and the graph of a function that is a solution to the indicated _logistic equation_. You can change the point where the solution starts (_first slider_), and also the value of the parameters $k$ and $M$ (_second and third slider_). 
 :::
 
-Since equilibrium solutions correspond to horizontal lines of horizontal arrows, we conclude that $P=0$ and $P=M$ must be equilibrium solutions. We recall that $P(t)$ represents the size of the poluation at time $t$. As such, the equilibrium solution $P=0$ corresponds to extinction of the species: if we start off with no popuation, we will never have any population. The other equilibrium at $P=M$ represents the maximal population size that the enviornment can sustain. In this state, the birth and death rates will cancel out each other.
+Since equilibrium solutions correspond to horizontal lines of horizontal arrows, we conclude that $P=0$ and $P=M$ must be equilibrium solutions. We recall that $P(t)$ represents the size of the population at time $t$. As such, the equilibrium solution $P=0$ corresponds to extinction of the species: if we start off with no population, we will never have any population. The other equilibrium at $P=M$ represents the maximal population size that the environment can sustain. In this state, the birth and death rates will cancel out each other.
 ::::::
 
 ## Grasple exercises
