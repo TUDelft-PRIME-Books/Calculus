@@ -189,7 +189,7 @@ What can we say about the limits $\displaystyle\lim_{x\rightarrow 3.5^-}f(x)$, $
 
 :::{applet}
 :url: calculus/limits_at_a_point/rounding_to_integers
-:name: Fig:LimitAtPoint:RoundingToIntegers
+:nonumber:
 :class: dark-light
 
 An illustration of the function $f$ that rounds a number to the nearest integer, where halves are rounded up.
