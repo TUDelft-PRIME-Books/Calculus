@@ -59,18 +59,13 @@ $$
 
 {numref}`Figure %s <Fig:ApproximatingFunctions:cuberoot>` shows the graphs of $\sqrt[3]{x}$ and of the linearisation $L(x)$.
 
-:::{figure} Images/Fig-TaylorPolynomials-cuberoot.svg
+:::{applet}
+:url: calculus/approximating_functions/linearisation
 :name: Fig:ApproximatingFunctions:cuberoot
 :class: dark-light
 
 The function $\sqrt[3]{x}$ and the linearisation $ L(x)$.
 
-:::
-
-:::{todo}
-Replace {numref}`Fig:ApproximatingFunctions:cuberoot` with an applet.
-
-Do not use $y=\ldots$, but $L(x)=\ldots$ and $f(x)=\ldots$ in the legend of the graph.
 :::
 
 It can be observed that for any $x$ close to $8$ the values of $f(x)$ and $L(x)$ are very close to each other.
@@ -294,18 +289,13 @@ $$
 
 In {numref}`Figure %s <Fig:ApproximatingFunctions:cuberootquad>` you can see that the graph of this quadratic polynomial $T_2$ follows the curvature of the graph of the function $\sqrt[3]{x}$ more closely than the graph of the linear function $T_1$.
 
-:::{figure} Images/Fig-TaylorPolynomials-cuberoot-quad.svg
+:::{applet}
+:url: calculus/approximating_functions/taylor_polynomial_of_order_2
 :name: Fig:ApproximatingFunctions:cuberootquad
 :class: dark-light
 
 The function $\sqrt[3]{x}$ and the Taylor polynomials $T_1(x)$ and $T_2(x)$.
 
-:::
-
-:::{todo}
-Replace {numref}`Fig:ApproximatingFunctions:cuberoot` with an applet.
-
-Do not use $y=\ldots$, but $L(x)=\ldots$ and $f(x)=\ldots$ in the legend of the graph.
 :::
 
 
@@ -392,15 +382,12 @@ $$
 
 In {numref}`Fig:ApproximatingFunctions:exp` you can see the graphs of $e^x$ and of the Taylor polynomials $T_{n-2}$, $T_{n-1}$ and $T_{n}$, where $n$ is initially $3$.
 
-:::{figure} Images/Fig-TaylorPolynomials-exp.png
+:::{applet}
+:url: calculus/approximating_functions/taylor_polynomials_of_the_exponential_function
 :name: Fig:ApproximatingFunctions:exp
 :class: dark-light
 
 The function $e^x$ and the Taylor polynomials $T_{n-2}(x)$, $T_{n-1}(x)$ and $T_n(x)$, where $n$ is initially $3$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:ApproximatingFunctions:exp` with an applet with variable $n$ slider.
 :::
 
 ::::
@@ -480,7 +467,7 @@ $$
 What do we obtain when we use it to approximate $\sqrt[3]{9}$?
 
 $$
-\sqrt[3]{\class{red}{9}} = f(\class{red}{9}) \ \approx T_1(\class{red}{9}) =  \ 2+\frac{1}{12}(\class{red}{9}-8) \ = \ \frac{25}{12} \ = \ 2.0833\ldots
+\sqrt[3]{\class{tud-red}{9}} = f(\class{tud-red}{9}) \ \approx T_1(\class{tud-red}{9}) =  \ 2+\frac{1}{12}(\class{tud-red}{9}-8) \ = \ \frac{25}{12} \ = \ 2.0833\ldots
 $$
 
 How accurate is this approximation? The actual value of $\sqrt[3]{9}$ is $2.0801\ldots$. This means that the approximation error is in this case equal to:
@@ -498,7 +485,7 @@ $$
 This gives us the following approximation of $\sqrt[3]{9}$:
 
 $$
-T_2(\class{red}{9}) = 2+\frac{1}{12}(\class{red}{9}-8)-\frac{1}{288}(\class{red}{9}-8)^2 \ = \  \frac{599}{288} \ = \ 2.0798\ldots
+T_2(\class{tud-red}{9}) = 2+\frac{1}{12}(\class{tud-red}{9}-8)-\frac{1}{288}(\class{tud-red}{9}-8)^2 \ = \  \frac{599}{288} \ = \ 2.0798\ldots
 $$
 
 For this approximation the error is equal to
@@ -670,17 +657,14 @@ $$
 
 These inequalities can also be visualised as in {numref}`Fig:ApproximatingFunctions:error`, where we used $n=1$ and $M=2$ initially. It can be observed that the graph of $f$ is always between the graphs of $T_n(x)-\dfrac{2|x|^{n+1}}{(n+1)!}$ and $T_n(x)+\dfrac{2|x|^{n+1}}{(n+1)!}$, which is exactly what Taylor's inequality is saying.
 
-:::{figure} Images/Fig-TaylorPolynomials-error.svg
+:::{applet}
+:url: calculus/approximating_functions/taylors_inequality
 :name: Fig:ApproximatingFunctions:error
-:figwidth: 50%
 :class: dark-light
 
-Suppose $|f''(x)|\leq M$ for all $x$, then $T_1(x)-\frac{M}{2}x^2\leq f(x)\leq T_1(x)+\frac{M}{2}x^2$.
-
-:::
-
-:::{todo}
-Replace {numref}`Fig:ApproximatingFunctions:error` with an applet where $n$ can be varied with a slider and $M$ can be adjusted to the stricter bound.
+Visualisation of Taylor’s inequality for $f(x)=\cos(x)+\sin(x)$, with initially $n=1$, $M=2$ and $D=[-\pi,\pi]$. \
+You can change the left and right bound of $D$, the value of $M$, the value of $n$ and the center of the Taylor polynomial. \
+If $M$ is such that Taylor's inequality holds for the selected $D$ and $n$, the region indicated by Taylor's inequality is solid green, otherwise it is dashed red.
 :::
 
 As a final remark, note that the upper bound we found for the approximation error is not necessarily the best possible upper bound. For example, in the above example we found that $M$ can be equal to $2$, but we could have found a smaller $M$ by using the fact that $\cos(x)+\sin(x)$ is between $\sqrt{2}$ and $-\sqrt{2}$ for all $x$. This would have given us a better upper bound for the approximation error, but it would have also made the calculations more difficult. In practice, it is often good enough to find an upper bound that is not too far from the best possible upper bound, as long as it is easy to compute. If you are interested in the effect of this stronger upper bound of $M=\sqrt{2}$, you visualise it in {numref}`Fig:ApproximatingFunctions:error` by changing the value of $M$ to $\sqrt{2}$. 
@@ -701,14 +685,14 @@ $$
 The approximation that we find is
 
 $$
-\cos(\class{red}{0.5})=f(\class{red}{0.5}) \ \approx T_4(\class{red}{0.5}) = 1-\frac{1}{2}\left(\class{red}{0.5}\right)^2+\frac{1}{24}\left(\class{red}{0.5}\right)^4 \ = \ 0.877604\ldots
+\cos(\class{tud-red}{0.5})=f(\class{tud-red}{0.5}) \ \approx T_4(\class{tud-red}{0.5}) = 1-\frac{1}{2}\left(\class{tud-red}{0.5}\right)^2+\frac{1}{24}\left(\class{tud-red}{0.5}\right)^4 \ = \ 0.877604\ldots
 $$
 
 In order to find an upper bound for the approximation error we will need to find an $M$ such that the fifth derivative $f^{(5)}$ of the cosine function is smaller than $M$ for all numbers $x$ in the interval $[0, 0.5]$. The fifth derivative of $f(x)=\cos(x)$ is equal to $f^{(5)}(x)=-\sin(x)$. We know that $|-\sin(x)|\leq 1$ for all values of $x$, so we can choose $M$ to be equal to $1$. We get the following upper bound for the remainder:
 
 \begin{align*}
-\left|R_4\left(\class{red}{0.5}\right)\right| &= |f(\class{red}{0.5})-T_4(\class{red}{0.5})| \\
-&\leq \frac{1\cdot |\class{red}{0.5}-0|^{4+1}}{(4+1)!} \\
+\left|R_4\left(\class{tud-red}{0.5}\right)\right| &= |f(\class{tud-red}{0.5})-T_4(\class{tud-red}{0.5})| \\
+&\leq \frac{1\cdot |\class{tud-red}{0.5}-0|^{4+1}}{(4+1)!} \\
 &= \frac{(0.5)^{5}}{5!} \\
 &= \frac{0.03125}{120} \\
 &= 0.00026\ldots
@@ -769,7 +753,7 @@ $$
 There is no term of degree six since the sixth derivative of $\sin(x)$ is zero in $x=0$. The approximation that we find is
 
 $$
-T_6\left( \class{red}{0.8} \right) \ = \ \class{red}{0.8}-\frac{1}{6}\left( \class{red}{0.8} \right)^3+\frac{1}{120}\left( \class{red}{0.8} \right)^5 \ = \ 0.717397\ldots
+T_6\left( \class{tud-red}{0.8} \right) \ = \ \class{tud-red}{0.8}-\frac{1}{6}\left( \class{tud-red}{0.8} \right)^3+\frac{1}{120}\left( \class{tud-red}{0.8} \right)^5 \ = \ 0.717397\ldots
 $$
 
 Since the error is smaller than $0.0001$ this means that the actual value of $\sin(0.8)$ lies in between $0.7172$ and $0.7175$.
