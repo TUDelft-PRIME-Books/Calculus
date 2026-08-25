@@ -8,32 +8,21 @@
 
 In {numref}`Subsec:Functions1dGraphs` we saw that the circle with radius $1$, centered around the origin, i.e. the unit circle, cannot be the graph of a function. Indeed, the circle fails the vertical line test ({prf:ref}`Thm:Functions1var:VerticalLineTest`). Still, it is useful to find an equation describing the circle. Because the unit circle is not the graph of a function, this equation can never be of the form $y=f(x)$, but maybe some other type of equation will do. The circle is defined as the set of all points $(x,y)$ which have distance $1$ (the radius of the circle) to the origin (the center of the circle). The distance of any point $(x,y)$ to $(0,0)$ can, using the Pythagorean theorem ({prf:ref}`Thm:Trigonometry:Pythagoras`), be computed as $\sqrt{x^2+y^2}$. So all points on the circle must satisfy the equation $\sqrt{x^2+y^2}=1$, which we can simplify, by squaring, to the equation $x^2+y^2=1^2=1$. Conversely, any point $(x,y)$ that satisfies $x^2+y^2=1$ has distance $1$ to the origin, so it must lie on the circle. As such, the equation $x^2+y^2=1$ gives a precise description of the circle. We call such an equation an **implicit equation** for $x$ and $y$. It is called implicit, because knowing the value of, say, $x$ does not allow us to directly find the corresponding value(s) of $y$ or vice-versa. By contrast, an **explicit equation** is an equation of the form $y=f(x)$ or $x=g(y)$, where knowing the value of one variable directly determines the value of the other variable (though not necessarily the other way around). The equation $x^2+y^2=1$ can be turned into the explicit equations $y=\sqrt{1-x^2}$ and $y=-\sqrt{1-x^2}$, which describe, respectively, the upper and lower halves of the unit circle.
 
-```{figure} Images/Fig-Curves-Circle.png
----
-width: 100%
-name: Fig:Curves:Circle
-class: dark-light
----
-The unit circle fails the vertical line test. In addition, any point $(a,b)$ on the circle satisfies $a^2+b^2=1$.
-```
+:::{applet}
+:url: calculus/curves_in_R%5E2/vertical_line_test_for_the_unit_circle
+:name: Fig:Curves:Circle
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Curves:Circle` with an applet.
+The unit circle fails the vertical line test. In addition, any point $(a,b)$ on the circle satisfies $a^2+b^2=1$.
 :::
 
-:::{figure} Images/Fig-Curves-CircleExplicit.png
+:::{applet}
+:url: calculus/curves_in_R%5E2/vertical_line_test_for_two_unit_semi-circles
 :name: Fig:Curves:CircleExplicit
 :class: dark-light
 
 The two explicit equations $y=\sqrt{1-x^2}$ and $y=-\sqrt{1-x^2}$ describe the upper and lower halves of the unit circle, respectively.
 :::
-
-:::{todo}
-Replace {numref}`Fig:Curves:CircleExplicit` with an applet.
-
-Put the graphs next to each other.
-:::
-
 
 We can also take a look at the unit circle from a different perspective. Imagine a particle starting at the point $(1,0)$ and moving around the circle in counterclockwise direction. At time $t$, the particle has a certain position $(x,y)$ on the circle. Since for each $t$, the particle has a unique $x$- and $y$-coordinate, we note that the $x$ and $y$ coordinates of the particle are functions of $t$, so we can write 
 
