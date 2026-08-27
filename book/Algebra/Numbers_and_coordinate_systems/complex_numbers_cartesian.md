@@ -471,15 +471,15 @@ In some texts, the complex conjugate of a complex number is denoted by $z^*$ ins
 
 ::::{prf:example} Complex conjugation
 :label: Ex:ComplexNumbers:ComplConj
-Suppose we want to find the complex conjugates of $z=4+3i$ and $w=-1-2i$. This simply means that we should change the sign of the imaginary part of each of the complex numbers, so we obtain
+Suppose we want to find the complex conjugates of $z=4+3i$, $w=-1-2i$ and $v=5(=5+0i)$. This simply means that we should change the sign of the imaginary part of each of the complex numbers, so we obtain
 
 $$
- \overline{z}=4-3i,\qquad \overline{w}=-1-(-2)i=-1+2i.
+ \overline{z}=4-3i,\qquad \overline{w}=-1-(-2)i=-1+2i,\qquad \overline{v}=5-0i=5.
 $$
 
 ::::
 
-For real numbers, the complex conjugate coincides with the original number and real numbers are the only complex numbers with this property, as can be seen from the following theorem.
+In {prf:ref}`Ex:ComplexNumbers:ComplConj` we saw that the complex conjugate of the real number $v=3$ is equal to $v$ itself. This is true for all real numbers, as can be seen from the following theorem.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:realz
@@ -893,7 +893,7 @@ Now we use the triangle inequality from {prf:ref}`Thm:ComplexNumbers:complextria
  &=\left|a_n\right||z|^n-\left|a_{n-1}\right||z|^{n-1}-....-\left|a_1\right||z|-\left|a_0\right|.
 \end{align*}
 
-Since $a_n\neq 0$, we see that the righthand-side of this inequality tends to $\infty$ as $|z|\rightarrow \infty$ (see {numref}`Section:Limitinf` for what we mean by this statement). As such, there must exist some $R>0$ such that for all $z\in\mathbb{C}$ with $|z|\geq R$ we have
+Since $a_n\neq 0$, we see that the righthand-side of this inequality tends to $\infty$ as $|z|\rightarrow \infty$ (see {numref}`Section:Limitinf`). As such, there must exist some $R>0$ such that for all $z\in\mathbb{C}$ with $|z|\geq R$ we have
 
 $$
 |p(z)|> |p(0)|.
@@ -1066,7 +1066,7 @@ $$
  p(z)=B(z-z_0)(z-z_1)\cdots(z-z_{n-1})
 $$
 
-for some complex numbers $B,z_2,\cdots,z_{n-1}$. If we write out the product on the right-hand side of the equation, we see that $B$ is the coefficient of $z^n$. This mean sthat $B=a_n$, which gives the factorisation from the theorem.
+for some complex numbers $B,z_2,\cdots,z_{n-1}$. If we write out the product on the right-hand side of the equation, we see that $B$ is the coefficient of $z^n$. This means that $B=a_n$, which gives the factorisation from the theorem.
 ::::
 
 We will illustrate the theorem using some examples.
@@ -1097,7 +1097,7 @@ In particular, we see that any polynomial of degree $n$ has $n$ complex zeros _c
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:uniquezeroes
 
-Let $\{z_1,z_2,\ldots,z_k\}$ be the set of _distinct_ zeros of a polynomial $p$ of degree $n$ with $p(z)=a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0$, that is, $z_j\neq z_k$ when $j\neq $k$. Then the polynomial $p$ can be written as
+Let $\{z_1,z_2,\ldots,z_k\}$ be the set of _distinct_ zeros of a polynomial $p$ of degree $n$ with $p(z)=a_n z^n + a_{n-1} z^{n-1} + \cdots + a_1 z + a_0$, that is, $z_j\neq z_k$ when $j\neq k$. Then the polynomial $p$ can be written as
 
 $$
 p(z)=a_n(z-z_1)^{\alpha_1}(z-z_2)^{\alpha_2}\cdots(z-z_k)^{\alpha_k}
