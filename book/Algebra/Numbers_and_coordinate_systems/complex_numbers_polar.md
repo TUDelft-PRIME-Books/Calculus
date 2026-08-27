@@ -348,6 +348,104 @@ Dividing complex numbers means subtracting the arguments and dividing the moduli
 
 :::
 
+In order to see how the modulus interacts with the sum of two complex numbers, we have the following theorem.
+
+::::{prf:theorem} (Reverse) triangle inequality
+:label: Thm:ComplexNumbers:complextriangle
+
+Let $z,w\in\mathbb{C}$ be complex numbers. Then we have the following inequalities
+
+\begin{align*}
+|z+w|&\leq|z|+|w|,\qquad\text{triangle inequality},\\
+\left|z-w\right|&\geq\left||z|-|w|\right|,\qquad\text{reverse triangle inequality}.
+\end{align*}
+
+::::
+
+::::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:complextriangle`
+:class: dropdown, tudproof
+
+
+_Triangle inequality_:
+
+We establish the triangle inequality by using the identity $z\overline{z}=|z|^2$, which follows from {prf:ref}`Thm:ComplexNumbers:ChangeCoor`. This means that we can write
+
+$$
+ |z+w|^2=\left(z+w\right)\overline{\left(z+w\right)}=\left(z+w\right)\left(\overline{z}+\overline{w}\right).
+$$
+
+Expanding the brackets, we obtain
+
+$$
+ \left|z+w\right|^2=z\overline{z}+w\overline{w}+z\overline{w}+\overline{z}w=|z|^2+|w|^2+z\overline{w}+\overline{z}w.
+$$
+
+Now we observe that
+
+$$
+z\overline{w}+\overline{z}w=z\overline{w}+\overline{z\overline{w}}=2\operatorname{Re}\left(z\overline{w}\right)
+$$
+
+where we used {prf:ref}`Thm:ComplexNumbers:conjparts`. By {prf:ref}`Thm:ComplexNumbers:ChangeCoor`, the real part of any complex number is less than or equal to its modulus, so we obtain
+
+$$
+\operatorname{Re}\left(z\overline{w}\right)\leq \left|z\overline{w}\right|=\left|z\right|\left|\overline{w}\right|=\left|z\right|\left|w\right|,
+$$
+
+where we used {prf:ref}`Thm:ComplexNumbers:polarmultdiv`. Combining these inequalities, we find
+
+$$
+ \left|z+w\right|^2\leq \left|z\right|^2+\left|w\right|^2+2\left|z\right|\left|w\right|=\left(\left|z\right|+\left|w\right|\right)^2.
+$$
+
+Both sides of this equation are non-negative real numbers, so we can take the square root to obtain
+
+$$
+ \left|z+w\right|\leq \left|z\right|+\left|w\right|,
+$$
+
+which establishes the triangle inequality.
+
+_Reverse triangle inquality_:
+
+We will establish the reverse triangle inequality using the (regular) triangle inequality. Indeed, we have
+
+$$
+ |z|=\left|(z-w)+w\right|\leq \left|z-w\right|+|w|.
+$$
+
+Rewriting this equation gives
+
+$$
+ |z|-|w|\leq \left|z-w\right|.
+$$
+
+Similarly, we find
+
+$$
+ |w|=\left|(w-z)+z\right|\leq \left|w-z\right|+|z|.
+$$
+
+Rewriting this equation gives
+
+$$
+ |z|-|w|\geq -\left|w-z\right|=-\left|z-w\right|.
+$$
+
+Combining these inequalities, we obtain
+
+$$
+-\left|z-w\right|\leq |z|-|w|\leq \left|z-w\right|,
+$$
+
+which yields 
+
+$$
+ \left|z-w\right|\geq\left||z|-|w|\right|,
+$$
+
+as desired.
+::::
 
 ## Euler's formula
 
@@ -730,8 +828,6 @@ If $w\neq 0$, the $n$ $n$th roots of $w$ all lie on the circle $|z|=|w|^{\frac{1
 
 :::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:rootsunity`
 :class: tudproof, dropdown
-Since the equation $z^n=w$ can be rewritten has $z^n-w=0$, it follows from {prf:ref}`Thm:ComplexNumbers:fundamental` that this equation has $n$ solutions, counting multiplicity. 
-
 If $w=0$, we can directly factor
 
 $$
