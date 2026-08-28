@@ -666,6 +666,30 @@ The graph of the function $f$ and its derivative $f'$ from {prf:ref}`Rem:Diffinv
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f31e7b5a-eddd-4c5b-9810-89028f25268f?id=116604
+:label: Grasple:116604
+:dropdown:
+:description: Find an equation for the tangent line.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3be5d836-7913-4deb-a69d-7700bb50839d?id=70863
+:label: Grasple:70863
+:dropdown:
+:description: Find an equation for the tangent line.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fb1e22f8-e467-4d58-8f0d-693591f66b9e?id=116603
+:label: Grasple:116603
+:dropdown:
+:description: Find an equation for the tangent line.
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/6047b2d2-5728-4a90-b72d-d4d205800d83?id=75360
 :label: Grasple:75360
 :dropdown:

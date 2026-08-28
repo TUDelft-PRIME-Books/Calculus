@@ -138,7 +138,7 @@ The nice thing with real numbers is that you can you can add, subtract, multiply
 
 ::::{prf:definition} 
 :label: Def:ComplexNumbers:Arithmetics
-If $z=a+bi$ and $w=c+di$ are complex numbers (with $a,b,c,d\in\mathbb{R}$), then we define the sum $z+w$, the difference $z-w$ and the product $zw$ as the complex numbers
+If $z=a+bi$ and $w=c+di$ are complex numbers (with $a,b,c,d\in\mathbb{R}$), then we define the **sum** $z+w$, the **difference** $z-w$ and the **product** $zw$ as the complex numbers
 
 \begin{align*}
 z+w &= (a+c)+(b+d)i, \\
@@ -146,6 +146,13 @@ z-w &= (a-c)+(b-d)i, \\
 zw &= (ac-bd)+(ad+bc)i.
 \end{align*}
 
+In addition, if $n\in\mathbb{Z}$ with $n\geq 1$, we define the $n$th **power** of $z$ as
+
+$$
+z^n=\underbrac{z\cdot z\cdot\cdots\cdot z}_{n\text{ times}}.
+$$
+
+Finally, we define $z^0=1$.
 ::::
 
 The standard computation rules that hold for real numbers, hold for complex numbers as well.
@@ -165,7 +172,7 @@ z_1(z_2+z_3)&=z_1z_2+z_1z_3.\qquad&\text{distributivity}
 
 ::::
 
-:::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:roots`
+:::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:Commassdistr`
 :class: tudproof, dropdown
 All of these rules follow by writing out both sides of the equation using the definition and using the corresponding property of real numbers. 
 
@@ -575,6 +582,12 @@ Let $z$ and $w$ in $\mathbb{C}$ with $w\neq 0$. Then we define the **quotient** 
 
 $$
 \dfrac{z}{w}=z\frac{1}{w}.
+$$
+
+In addition, if $n\in\mathbb{Z}$ with $n\geq 1$, we define a **negative power** of $z\neq 0$ as
+
+$$
+z^{-n}=\frac{1}{z^n}
 $$
 
 ::::

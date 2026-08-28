@@ -2,13 +2,15 @@
 
 ## Introduction
 
-For certain classes of first-order differential equations, such as separable (see {numref}`Sec:ODE1:Separable`), linear (see {numref}`Sec:ODE1:Linear`) or exact (see {numref}`Sec:ODE1:Exact`) differential equations, there are general techniques to solve these equations. Still, performing these techniques might not always be easy, or even possible, for specific differential equations, for instance because we might encounter integrals that we cannot evaluate by hand. Or even worse, we might encounter a differential equation that is not of one of the mentioned types. In those cases it may be impossible to find the solution analytically.
+For certain classes of first-order differential equations, such as separable (see {numref}`Sec:ODE1:Separable`), linear (see {numref}`Sec:ODE1:Linear`) or exact (see {numref}`Sec:ODE1:Exact`) differential equations, there are general techniques to solve these equations. Still, for specific differential equations, performing these techniques might not always be easy, or even possible, for instance because we might encounter integrals that we cannot evaluate by hand. Or even worse, we might encounter a differential equation that is not of one of the mentioned types. In those cases it may be impossible to find the solution analytically.
 
-However, in practice it is often sufficient to only know the **qualitative** behaviour of the solution, instead of having a **quantitative** expression for the solution. In this section, we introduce a common way to obtain this qualitative behaviour without solving the differential equation.
+However, in practice it is often sufficient to only know the **qualitative** behaviour of the solution, instead of having a **quantitative** expression for the solution. In this section, we introduce a common way to obtain this qualitative behaviour without solving the differential equation (or before solving it, if that is possible).
  
 ## Slope fields
 
-We consider a first-order differential equation of the form 
+[^Footnoteform]: Not all first-order differential equations are of this form, but for those that are not of this form it is usually not possible to draw a slope field.
+
+We consider a first-order differential equation of the form[^Footnoteform] 
 
 $$
  y'(t)=F(t,y).
@@ -43,7 +45,7 @@ If we have sketched a direction field on a sufficiently fine grid (or better, le
 
 ::::::{prf:example}
 :label: Ex:ODE1Slope:DF1
-Consider the differential equation $\dfrac{dy}{dt}=t+2y$. We want to sketch a slope field for this differential equation. For this, we first choose any point, say the point $(t,y)=(0,1)$. Then we compute that the slope of the solution at that point should be
+Consider the differential equation $\dfrac{dy}{dt}=t+2y$. We want to sketch a slope field for this differential equation. For this, we first choose any point, say the point $(t,y)=(0,1)$. This means that our technique will approximate the solution with initial condition $y(0)=1$. Then we compute that the slope of the solution at that point should be
 
 $$
  \left.\frac{dy}{dt}\right|_{(t,y)=(0,1)}=0+2\cdot1=2.
@@ -95,6 +97,18 @@ This figure shows the following stages of the sketching a solution in a slope fi
 You can also drag the initial point to see how the solution changes.
 :::
 
+In {numref}`Sec:ODE1:Linear` we will see a technique that allows us to obtain the exact solution 
+
+$$
+ y(t)=\dfrac{5}{4}e^{2t}-\frac{t}{2}-\frac{1}{4}
+$$
+
+of this initial-value problem. You can see that we found the linearly decreasing behaviour for negative $t$ (the exponential is very small for negative $t$ compared to the linear term), and the exponentially increasing behaviour for positive $t$, just by a careful sketch of the slope field.
+
+::::::
+
+::::::{prf:remark}
+The idea of sketching solutions of differential equations by following the arrows in a slope field forms the basis of the technique called the Forward Euler method, which is used to approximate solutions of differential equations. We will study this technique in {numref}`Sec:DE:Num`.
 ::::::
 
 ::::::{prf:example}
@@ -120,7 +134,7 @@ A slope field for the differential equation $\dfrac{dy}{dx}=4x^3-y^3-3$ with the
 
 ## Equilibrium solutions
 
-In {numref}`Sec:DE:Intro` we introduced the concept of an **equilibrium solution** of a differential equation, i.e. a constant solution. We saw how we can find equilibrium solutions, but can we also recognise them in a slope field? Fortunately, this is not very hard. Indeed, if $y(t)=k$ is an equilibrium solution of the first-order differential equation, then for all $t$ we have 
+In {numref}`Sec:DE:Intro` we introduced the concept of an **equilibrium solution** of a differential equation, i.e. a constant solution $y=c$. We saw how we can find equilibrium solutions, but can we also recognise them in a slope field? Fortunately, this is not very hard. Indeed, if $y(t)=k$ is an equilibrium solution of the first-order differential equation, then for all $t$ we have 
 
 $$
  \left.\frac{dy}{dt}\right|_{(t,y)=(t,k)}=0.
@@ -141,7 +155,28 @@ Consider a first-order differential equation with the slope field shown in {numr
 A slope field for a differential equation with the graphs of the solutions with $y(0)=k$ with $k=0$ initially. You can drag the point to change the initial condition with $k$ in $[-2,2]$ in steps of $0.1$.
 :::
 
-Since equilibrium solutions correspond to horizontal lines of horizontal arrows, we conclude that $y=-1$ and $y=2$ must be equilibrium solutions. Note that there are other arrows that are horizontal, such as at $(t,y)=(0,1)$, but since other arrows on the horizontal line through this arrow are not horizontal, this does not correspond to an equilibrium solution.
+Since equilibrium solutions correspond to horizontal lines of horizontal arrows, we conclude that $y=-1$ and $y=2$ must be equilibrium solutions. Note that there are other arrows that are horizontal, such as at $(t,y)=(0,1)$, but since other arrows on the horizontal line through this arrow are not horizontal, this does not correspond to an equilibrium solution. It merely tells us that the graph of the solution that goes through $(t,y)=(0,1)$ has a horizontal tangent line at that point.
+::::::
+
+::::::{prf:example} Population growth
+:label: Ex:ODE1Slope:population
+In {prf:ref}`Ex:Diffclass:population` we studied the logistic equation
+
+$$
+ \frac{dP}{dt}=kP\left(1-\frac{P}{M}\right).
+$$
+
+Let us draw the slope field and see if we can find (and interpret) the equilibrium solutions.
+
+:::{applet}
+:url: calculus/slope_fields/logistic_equation
+:name: Fig:ODE1Slope:population
+:class: dark-light
+
+A slope field for the indicated _logistic equation_ and the graph of a function that is a solution to the indicated _logistic equation_. You can change the point where the solution starts (_first slider_), and also the value of the parameters $k$ and $M$ (_second and third slider_). 
+:::
+
+Since equilibrium solutions correspond to horizontal lines of horizontal arrows, we conclude that $P=0$ and $P=M$ must be equilibrium solutions. We recall that $P(t)$ represents the size of the population at time $t$. As such, the equilibrium solution $P=0$ corresponds to extinction of the species: if we start off with no population, we will never have any population. The other equilibrium at $P=M$ represents the maximal population size that the environment can sustain. In this state, the birth and death rates will cancel out each other.
 ::::::
 
 ## Grasple exercises
