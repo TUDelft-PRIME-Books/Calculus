@@ -630,3 +630,66 @@ Similarly, using $\displaystyle\sqrt{1+x^3}=\sum_{n=0}^{\infty}\binom{\frac{1}{2
 :::{todo}
 Add Grasple exercises in {numref}`Sec:Series:BinomialSeries`.
 :::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ff04d62c-f8f6-45e5-82ac-de382a0a5a79?id=65013
+:label: Grasple:65013
+:dropdown:
+:description: Find the first coefficients of the Taylor series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f16ac366-f182-4c88-b864-0fc0d7c1c236?id=65010
+:label: Grasple:65010
+:dropdown:
+:description: Find the first coefficients of the Taylor series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8b6cae8a-9b60-4ea1-8c4e-bb941ddd81db?id=64950
+:label: Grasple:64950
+:dropdown:
+:description: Find specific coefficients of the Taylor series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a8bfcb89-2b55-4e42-a778-f40737569b71?id=65016
+:label: Grasple:65016
+:dropdown:
+:description: Find the first coefficients of the Taylor series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e1a9ecda-90c1-4b89-bf2c-148bdedc2357?id=65021
+:label: Grasple:65021
+:dropdown:
+:description: Find the first coefficients of the Taylor series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7e0a06f2-33e9-4508-816d-f3d748807a99?id=79710
+:label: Grasple:79710
+:dropdown:
+:description: Find the sixth-order Taylor polynomial of $f(x)$ and $f^6(0)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/beb5d365-c36f-4a31-8d3c-5f995649d903?id=79706
+:label: Grasple:79706
+:dropdown:
+:description: Find the first coefficients of the Taylor series of $\displaystyle\frac{1}{\sqrt{1-t^2}}$ and $\arcsin(x)$.
+
+::::
