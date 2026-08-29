@@ -45,17 +45,12 @@ $$
 so that, indeed, the point $(x,y)=(\cos(t),\sin(t))$ lies on the unit circle. 
 
 
-```{figure} Images/Fig-Curves-CircleParam.png
----
-width: 100%
-name: Fig:Curves:CircleParam
-class: dark-light
----
-The parametrisation $x=\cos(t)$ and $y=\sin(t)$ for $0\leq t<2\pi$ describes the unit circle.
-```
+:::{applet}
+:url: calculus/curves_in_R%5E2/parametrisation_of_the_unit_circle
+:name: Fig:Curves:CircleParam
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Curves:CircleParam` with an applet.
+The parametrisation $x=\cos(t)$ and $y=\sin(t)$ for $0\leq t<2\pi$ describes the unit circle.
 :::
 
 In this section, we will take a look at more general curves and their parametrisations. Moreover, we will consider some important classes of curves, which describe well-known geometrical objects such as ellipses, hyperbolas and parabolas.
@@ -86,7 +81,7 @@ A curve can have many different parametrisations.
 ::::::{note}
 :name: Note:Curves:MultipleTimes
 
-A parameterisation is allowed cover (some parts of) a curve several times. For instance, the parametrisation
+A parametrisation is allowed to cover (some parts of) a curve several times. For instance, the parametrisation
 
 $$
  \left\{\begin{array}{lcl}x&=&\cos(t),\\ y&=&\sin(t),\end{array}\right.\qquad 0\leq t<4\pi
@@ -125,17 +120,12 @@ Let $\mathcal{C}$ be a curve. Then we call an equation of the form $f(x,y)=0$ an
 
 Consider the curve $\mathcal{C}$ that is defined by the parametric equations $x=-1+t$ and $y=t^2-3t$ for $0\leq t\leq 1$. In order to determine which curve we are dealing with, we first draw the curve by computing the values of $x$ and $y$ for several values of $t$. This gives the following result.
 
-:::{figure} Images/Fig-Curves-Curve1.png
+:::{applet}
+:url: calculus/curves_in_R%5E2/parametrisation_of_quadratic_function
 :name: Fig:Curves:Curve1
 :class: dark-light
 
 The graph of the curve defined by the parametric equations $x=-1+t$ and $y=t^2-3t$ for $0\leq t\leq 1$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Curves:Curve1` with an applet.
-
-On hovering over the graph, the corresponding values of $t$, $x$ and $y$ should be shown.
 :::
 
 Note that in the figure, the parameter $t$ is not directly visible. Indeed, each value of $t$ gives a point $(x,y)=(-1+t,t^2-3t)$ on the curve. The interpretation of this parameter is that we consider a particle that starts at the initial point of the curve and is at position $(x,y)=(-1+t,t^2-3t)$ at time $t$.
@@ -192,32 +182,22 @@ are both valid parametrisations of the same curve, but in computations the latte
 
 One of the most famous examples of curves defined by an implicit equation is the **folium of Descartes**. It is named after the French philosopher and mathematician [René Descartes (1596-1650)](https://en.wikipedia.org/wiki/Ren%C3%A9_Descartes). One version of this curve is the one given by the equation $x^3+y^3=3xy$. A plot of this curve is shown below.
 
-:::{figure} Images/Fig-Curves-FoliumOfDescartes.png
+:::{applet}
+:url: calculus/curves_in_R%5E2/folium_of_Descartes
 :name: Fig:Curves:FoliumOfDescartes
 :class: dark-light
 
 One example of the folium of Descartes is the curve defined by the equation $x^3+y^3=3xy$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Curves:FoliumOfDescartes` with an applet.
-
-Add the hovering functionality to show the coordinates of the point on the curve.
-:::
-
 As we can see in the plot, the curve fails the vertical line test, so it cannot be the graph of a function. However, when we cleverly cut up the curve in several parts, we can obtain curves that are the graphs of functions. One possibility is shown in the figure below.
 
-```{figure} Images/Fig-Curves-DescartesFoliumCut.png
----
-width: 100%
-name: Fig:Curves:DescartesFoliumCut
-class: dark-light
----
-The curve in {numref}`Fig:Curves:FoliumOfDescartes` has been cut in three pieces, all of which are the graph of a function.
-```
+:::{applet}
+:url: calculus/curves_in_R%5E2/three_parts_of_the_folium_of_Descartes
+:name: Fig:Curves:DescartesFoliumCut
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Curves:DescartesFoliumCut` with an applet.
+The curve in {numref}`Fig:Curves:FoliumOfDescartes` has been cut in three pieces, shown in the _top-left_, _top-right_ and the _bottom-left_, all of which are the graph of a function.
 :::
 
 It is very hard to find an explicit expression for one of these functions. Still, if $f$ is one of these functions, we necessarily must have that
@@ -249,12 +229,31 @@ $$
  3xy=3\frac{3t}{1+t^3}\frac{3t^2}{1+t^3}=\frac{27t^3}{(1+t^3)^2}.
 $$ 
 
-:::{todo}
-Make a poll out of the following:
-Note that for $t<-1$, $x$ is positive, while $y$ is negative. So these values of $t$ give the part of the curve below the $x$-axis. Similarly, for $-1<t<0$, $x$ is negative and $y$ is positive, so these values give the part of curve to the left of the $y$-axis. Finally, for $t\geq 0$ we have $x\geq 0$ and $y\geq 0$, so these values give the loop in the curve. 
-:::
-
 ::::::
+
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+For the parametrisation of the folium of Descartes in {prf:ref}`Ex:Curves:FoliumDescartes`, different values of $t$ generate different parts of the curve. Complete the following sentences.
+---
+DS[{positive};negative;non-positive;non-negative]
+DS[positive;{negative};non-positive;non-negative]
+DS[above;{below}]
+DS[{left};right]
+DS[positive;negative;non-positive;{non-negative}]
+DS[{asymptote};loop]
+^^^
+? :::{card}
+- For $t<-1$, $x$ is {gap} and $y$ is {gap}, so this part of the curve lies {gap} the $x$-axis.
+- For $-1<t<0$, the curve lies to the {gap} of the $y$-axis.
+- For $t\geq0$, both $x$ and $y$ are {gap}, giving the {gap} of the curve.
+:::
+---
+::::
 
 (Subsec:CurvesEllipses)=
 
@@ -270,12 +269,15 @@ $$
  \frac{x^2}{25}+\frac{y^2}{16}=1.
 $$
 
-:::{todo}
-Make an applet showing this ellipse, with label Fig:Curves:Prelimellipse. The focal points $(-3,0)$ and $(3,0)$ should be visible. There should be a draggable point on the ellipse, and the line segments from that draggable point to the two focal points.
+This curve is shown in {numref}`Fig:Curves:Prelimellipse`. You likely already know that we call such a curve an ellipse (or otherwise, it is not an unreasonable guess), but what geometrical properties makes this curve an ellipse? In  {numref}`Fig:Curves:Prelimellipse` we have highlighted the two points $(-3,0)$ and $(3,0)$. These points are called the **focal points** of the ellipse. The defining property of an ellipse is that it is the set of all points $(x,y)$ where the sum of distances to the two focal points is constant. This can be seen in the figure by dragging the pulsing point around the ellipse.
+
+:::{applet}
+:url: calculus/curves_in_R%5E2/introduction_to_ellipses
+:name: Fig:Curves:Prelimellipse
+:class: dark-light
+
+The ellipse defined by $\frac{x^2}{25}+\frac{y^2}{16}=1$.
 :::
-
-This curve is shown in {numref}`Fig:Curves:Prelimellipse`. You likely already know that we call such a curve an ellipse (or otherwise, it is not an unreasonable guess), but what geometrical properties makes this curve an ellipse? In  {numref}`Fig:Curves:Prelimellipse` we have highlighted the two points $(-3,0)$ and $(3,0)$. These points are called the **focal points** of the ellipse. The defining property of an ellipse is that it is the set of all points $(x,y)$ where the sum of distances to the two focal points is constant. This can be seen in the figure by dragging the highlighted point around the ellipse.
-
 
 ::::::
 
@@ -291,16 +293,12 @@ The midpoint of the line segment joining the two focal points is called the **ce
 If $c$ denotes the distance from any focal point to the center, the number $e=\frac{c}{a}$ is called the **eccentricity** of the ellipse.
 ::::::
 
-:::{figure} Images/Fig-Curves-Ellipse.png
-:width: 100%
+:::{applet}
+:url: calculus/curves_in_R%5E2/definition_of_an_ellipse
 :name: Fig:Curves:Ellipse
 :class: dark-light
 
-An ellipse with focal points $F_1$ and $F_2$ such that for each point $A$ on the ellipse the sum of the distances to $F_1$ and $F_2$ is $2a$. The center $C$ and the distance $c$ between the center and any focal point are also shown, as are the vertices $V_1$ and $V_2$ and the co-vertices $W_1$ and $W_2$ of the ellipse.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Curves:Ellipse` with an applet. Make sure the point A is draggable.
+An ellipse with focal points $F_1$ and $F_2$ such that for each point $A$ on the ellipse the sum of the distances to $F_1$ and $F_2$ is $\operatorname{dist}(V_1,V_2)$. The center $C$ is also shown, as are the vertices $V_1$ and $V_2$ and the co-vertices $W_1$ and $W_2$ of the ellipse.
 :::
 
 In order to find an equation for an ellipse, we will, for convenience, first assume that the center of the ellipse is the origin and that the major axis is either the $x$-axis or $y$-axis. In that case we obtain the following result.
@@ -325,19 +323,15 @@ $$
 
 ::::{admonition} Proof of {prf:ref}`Thm:Curves:Ellipse`
 :class: tudproof, dropdown
-For convenience, we assume that the major axis of the ellipse is the $x$-axis. In that case, the focal points are $(c,0)$ and $(-c,0)$ for some $0\leq c<a$. Since the sum of the distances from $(a,0)$ to $(c,0)$ and to $(-c,0)$ is $(a-c)+(a-(-c))=2a$, we find that the ellipse consists of all points of which the sum of the distances to $(c,0)$ and $(-c,0)$ is $2a$. By symmetry the distance from $(0,b)$ to $(c,0)$ and to $(-c,0)$ must be equal, so both distances must be $a$ (as their sum should be $2a$ since $(0,b)$ is on the ellipse). By considering the triangle in {numref}`Fig:Curves:Ellipse2` and using the Pythagorean theorem ({prf:ref}`Thm:Trigonometry:Pythagoras`), we find that $b^2+c^2=a^2$, which we will use later in the proof.
+For convenience, we assume that the major axis of the ellipse is the $x$-axis. In that case, the focal points are $(c,0)$ and $(-c,0)$ for some $0\leq c<a$. Since the sum of the distances from $(a,0)$ to $(c,0)$ and to $(-c,0)$ is $(a-c)+(a-(-c))=2a$, we find that the ellipse consists of all points of which the sum of the distances to $(c,0)$ and $(-c,0)$ is $2a$. By symmetry the distance from $(0,b)$ to $(c,0)$ and to $(-c,0)$ must be equal, so both distances must be $a$ (as their sum should be $2a$ since $(0,b)$ is on the ellipse). By considering the triangle in the figure below and using the Pythagorean theorem ({prf:ref}`Thm:Trigonometry:Pythagoras`), we find that $b^2+c^2=a^2$, which we will use later in the proof.
 
-```{figure} Images/Fig-Curves-Ellipse2.png
----
-width: 100%
-name: Fig:Curves:Ellipse2
-class: dark-light
----
+:::{applet}
+:url: calculus/curves_in_R%5E2/proof_of_equation_of_ellipse
+:name: Fig:Curves:Ellipse2
+:class: dark-light
+:nonumber:
+
 Illustration of the ellipse used in this proof.
-```
-
-:::{todo}
-Replace {numref}`Fig:Curves:Ellipse2` with an applet.
 :::
 
 For any point $P:(x,y)$ on the ellipse, the distance to $F_1:(c,0)$ is $\sqrt{(x-c)^2+(y-0)^2}=\sqrt{(x-c)^2+y^2}$, while the distance to $F_2:(-c,0)$ is $\sqrt{(x-(-c))^2+(y-0)^2}=\sqrt{(x+c)^2+y^2}$. Hence, $(x,y)$ is on the ellipse precisely when
@@ -416,9 +410,25 @@ $$
 $$
 :::
 
-:::{todo}
-Poll: what is eccentricity of circle?
-:::
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+
+What is the eccentricity of a circle with radius $a$?
+---
+[x] $0$.
+> That is correct. A circle is a special case of an ellipse in which the two foci coincide at the centre. Since the distance from the centre to a focus is $c=0$ the eccentricity is $e=\dfrac{c}{a}={0}{a}=0$.
+[ ] Undefined.
+> Does a circle have foci? And a center? And a (co-)vertices?
+[ ] $\infty$.
+> You probable used the formula $e=\dfrac{a}{c}$. Is that the correct formula?
+[ ] $1$.
+> In case of a circle, do the foci lie on the circle, or somewhere else?
+---
+::::
 
 ::::::{prf:theorem} 
 :label: Thm:Curves:EllipseParam
@@ -463,22 +473,18 @@ Finally, we notice that for $0<t<\frac{\pi}{2}$ we have $y(t)=y_0+b\sin(t)>y_0$,
 ::::::{prf:remark} 
 :label: Remark:Curves:EllipseParam
 
-Consider the parametrisation of an ellipse from {prf:ref}`Thm:Curves:EllipseParam`. If the ellipse is actually a circle (i.e. when $a=b$, or, equivalently, $c=0$), the parameter $t$ can be interpreted as the angle between the positive $x$-axis and the line segment from the origin to the point $(x(t),y(t))$ measured counterclockwise, as usual. However, for ellipses that are not circles this is not the case. The French painter and mathematician  [Philippe de La Hire (1640-1718)](https://en.wikipedia.org/wiki/Philippe_de_La_Hire) discovered the following interpretation of the parameter $t$. Consider two circles with the same center as the ellipse with radius $b$ and $a$, respectively. If we draw the line segment which has angle $t$ with the positive $x$-axis, then this line segment crosses the first circle at the point $B:(x_0+b\cos(t),y_0+b\sin(t))$ and the second circle at the point $A:(x_0+a\cos(t),y_0+a\sin(t))$. Then the point $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ on the ellipse is found by intersecting the line through $B$ parallel to the horizontal axis of the ellipse with the line through $A$ parallel to the vertical axis of the ellipse, see the figure below.
+Consider the parametrisation of an ellipse from {prf:ref}`Thm:Curves:EllipseParam`. If the ellipse is actually a circle (i.e. when $a=b$, or, equivalently, $c=0$), the parameter $t$ can be interpreted as the angle between the positive $x$-axis and the line segment from the origin to the point $(x(t),y(t))$ measured counterclockwise, as usual. However, for ellipses that are not circles this is not the case. The French painter and mathematician  [Philippe de La Hire (1640-1718)](https://en.wikipedia.org/wiki/Philippe_de_La_Hire) discovered the following interpretation of the parameter $t$.
 
-```{figure} Images/Fig-Curves-deLaHire.png
----
-width: 100%
-name: Fig:Curves:deLaHire
-class: dark-light
----
+See {numref}`Fig:Curves:deLaHire`. In this figure we have drawn everything in the $(x-x_0,y-y_0)$-plane. Consider two circles with the same center as the ellipse with radius $b$ and $a$, respectively. If we draw the line segment which has angle $t$ with the positive $x-x_0$-axis, then this line segment crosses the first circle at the point $B:(x_0+b\cos(t),y_0+b\sin(t))$ and the second circle at the point $A:(x_0+a\cos(t),y_0+a\sin(t))$. Then the point $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ on the ellipse is found by intersecting the line through $B$ parallel to the horizontal $x-x_0$-axis of the ellipse with the line through $A$ parallel to the vertical $y-y_0$-axis of the ellipse, see the figure below.
+
+:::{applet}
+:url: calculus/curves_in_R%5E2/interpretation_by_de_la_Hire
+:name: Fig:Curves:deLaHire
+:class: dark-light
+
 Interpretation of the parameter $t$ in the standard parametrisation of an ellipse. The point on the ellipse corresponding to the parameter $t$ is found by intersecting the line through $B$ parallel to the major axis of the ellipse with the line through $A$ parallel to the minor axis of the ellipse.
-```
-
-:::{todo}
-Replace {numref}`Fig:Curves:deLaHire` with an applet. $b$ should be replaced by $(x_0,y_0+b)$ and $a$ by $(x_0+a,y_0)$
-
-Combine the current image with [animation](https://en.wikipedia.org/wiki/File:Parametric_ellipse.gif).
 :::
+
 ::::::
 
 
@@ -522,17 +528,12 @@ Note that both at $t=0$ and at $t=2\pi$ we have $(x(t),y(t))=(-1,8)$, so this cu
 
 Finally, we notice that for $0<t<\frac{\pi}{4}$ we have $x(t)>-1=x(0)$, so the parametrisation describes a clockwise traversal of the ellipse.
 
-:::{figure} Images/Fig-Curves-Ellipse3.png
+:::{applet}
+:url: calculus/curves_in_R%5E2/two_parametrisations_of_one_ellipse
 :name: Fig:Curves:Ellipse3
 :class: dark-light
 
-The ellipse with vertices $(-1,2)$ and $(-1,8)$ and co-vertices $(-3,5)$ and $(1,5)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Curves:Ellipse3` with an applet.
-
-Include an animation of the parametrisation of the ellipse.
+The ellipse with vertices $(-1,2)$ and $(-1,8)$ and co-vertices $(-3,5)$ and $(1,5)$. On the _left_ the standard parametrisation, on the _right_ the alternative parametrisation. Use the play button to see the two parametrisations in action. 
 :::
 
 ::::::
@@ -555,13 +556,21 @@ $$
  \frac{x^2}{9}-\frac{y^2}{16}=1.
 $$
 
-:::{todo}
-Make an applet showing this hyperbola, with label Fig:Curves:Prelimhyp. The focal points $(-5,0)$ and $(5,0)$ should be visible. There should be a draggable point on the ellipse, and the line segments from that draggable point to the two focal points.
+This curve is shown in {numref}`Fig:Curves:Prelimhyp`. As you can reasonably guess, we will call this curve a hyperbola. What geometrical properties make this curve a hyperbola?
+
+:::{applet}
+:url: calculus/curves_in_R%5E2/introduction_to_hyperbolas
+:name: Fig:Curves:Prelimhyp
+:class: dark-light
+
+The hyperbola defined by $\frac{x^2}{9}-\frac{y^2}{16}=1$.
 :::
 
-This curve is shown in {numref}`Fig:Curves:Prelimhyp`. As you can reasonably guess, we will call this curve a hyperbola. What geometrical properties make this curve a hyperbola? In {numref}`Fig:Curves:Prelimhyp` we have highlighted the two points $(-5,0)$ and $(5,0)$. These points are called the **focal points** of the ellipse. The defining property of an hyperbola is that it is the set of all points $(x,y)$ where the absolute difference of the distances to the two focal points is constant. This can be seen in the figure by dragging the highlighted point around the hperbola.
+In {numref}`Fig:Curves:Prelimhyp` we have highlighted the two points $(-5,0)$ with a square and $(5,0)$ with a triangle. These points are called the **focal points** of the ellipse. The defining property of an hyperbola is that it is the set of all points $(x,y)$ where the absolute difference of the distances to the two focal points is constant.
 
+This can be seen in the figure by dragging the pulsing diamond around the hyperbola. If the diamond is on the left part of the hyperbola, the distance between the square and diamond minus the distance between the triangle and the diamond stays the same, as indicated by the filled circle around the diamond.
 
+If you drag the diamond to the right part of the hyperbola, the distance between the triangle and diamond minus the distance between the square and the diamond stays the same, as also indicated by the filled circle around the diamond.
 ::::::
 
 
@@ -581,7 +590,7 @@ width: 100%
 name: Fig:Curves:Hyperbola
 class: dark-light
 ---
-A hyperbola with focal points $F_1$ and $F_2$ such that for each point $A$ on the hyperbola the sum of the distances to $F_1$ and $F_2$ is $2a$. The center $C$ and the vertices $V_1$ and $V_2$ of the hyperbola are also shown.
+A hyperbola with focal points $F_1$ and $F_2$ such that for each point $A$ on the hyperbola the absolute difference between the distances to $F_1$ and $F_2$ is $2a$. The center $C$ and the vertices $V_1$ and $V_2$ of the hyperbola are also shown.
 ```
 
 :::{todo}
@@ -1144,7 +1153,7 @@ The graph of the function $f(x)=-2x^2+4x+4$ is a parabola with axis $x=1$, verte
 :::
 
 :::{todo}
-Replace {numref}`Fig:Curves:Parabola1` with an applet. Indicate all the relavant points in the graph.
+Replace {numref}`Fig:Curves:Parabola1` with an applet. Indicate all the relevant points in the graph.
 :::
 
 A straightforward parametrisation of this parabola is given by

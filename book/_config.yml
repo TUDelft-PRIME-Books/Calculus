@@ -32,8 +32,8 @@ sphinx:
   config:
     patch_config:
       disabled-patches: ["hash"]
-    # prime_applets_base_url: "http://localhost:5173/applet/"
-    prime_applets_base_url: "https://deploy-preview-532--openla-preview.netlify.app/applet/"
+    prime_applets_base_url: "http://localhost:5173/applet/"
+    # prime_applets_base_url: "https://deploy-preview-532--openla-preview.netlify.app/applet/"
     sticky_margin:
       trigger: partial
     tippy_skip_urls:
@@ -70,7 +70,6 @@ sphinx:
     sphinx_indexed_defs_index_theorems_terms: true
     tud_change_titlesize: true
     new_tab_link_show_external_link_icon: true
-    visualized_auto_cluster: true
     numfig_secnum_depth: 2
     text_replacements:
       '# Admonitions': '# General blocks'
@@ -132,7 +131,6 @@ sphinx:
     - sphinx_indexed_definitions
     - sphinx_new_tab_link
     - sphinx_apa_references                     # For APA citations
-    - sphinx_visualized
     - sphinx.ext.todo
 
 bibtex_bibfiles: 
