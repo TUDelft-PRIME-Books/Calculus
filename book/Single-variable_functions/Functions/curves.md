@@ -298,7 +298,7 @@ If $c$ denotes the distance from any focal point to the center, the number $e=\f
 :name: Fig:Curves:Ellipse
 :class: dark-light
 
-An ellipse with focal points $F_1$ and $F_2$ such that for each point $A$ on the ellipse the sum of the distances to $F_1$ and $F_2$ is $\operatorname{dist}(V_1,V_2)$. The center $C$ is also shown, as are the vertices $V_1$ and $V_2$ and the co-vertices $W_1$ and $W_2$ of the ellipse.
+An ellipse with focal points $F_1$ and $F_2$ such that for each point $A$ on the ellipse the sum of the distances to $F_1$ and $F_2$ is $\operatorname{dist}(V_1,V_2)<\operatorname{dist}(F_1,F_2)$. The center $C$ is also shown, as are the vertices $V_1$ and $V_2$ and the co-vertices $W_1$ and $W_2$ of the ellipse.
 :::
 
 In order to find an equation for an ellipse, we will, for convenience, first assume that the center of the ellipse is the origin and that the major axis is either the $x$-axis or $y$-axis. In that case we obtain the following result.
@@ -533,7 +533,7 @@ Finally, we notice that for $0<t<\frac{\pi}{4}$ we have $x(t)>-1=x(0)$, so the p
 :name: Fig:Curves:Ellipse3
 :class: dark-light
 
-The ellipse with vertices $(-1,2)$ and $(-1,8)$ and co-vertices $(-3,5)$ and $(1,5)$. On the _left_ the standard parametrisation, on the _right_ the alternative parametrisation. Use the play button to see the two parametrisations in action. 
+The ellipse with vertices $V_1(-1,2)$ and $V_2(-1,8)$ and co-vertices $W_1(-3,5)$ and $W_2(1,5)$. On the _left_ the standard parametrisation, on the _right_ the alternative parametrisation. Use the play button to see the two parametrisations in action. 
 :::
 
 ::::::
@@ -579,22 +579,17 @@ If you drag the diamond to the right part of the hyperbola, the distance between
 
 A **hyperbola** is a curve in $\mathbb{R}^2$ such that there are two points, called the **focal points** of the hyperbola, such that for all points on the curve, the absolute difference of the distances to the two focal points is a constant $2a$. 
 
-The midpoint of the line segment joining the two focal points is called the **center** of the hyperbola. The line through the focal points is called the **major axis** of the hyperbola. The intersection points of the major axis with the hyperbola are called the **vertices** of the hyperbola.
+The midpoint of the line segment joining the two focal points is called the **center** of the hyperbola. The line through the focal points is called the **major axis** of the hyperbola. The intersection points of the major axis with the hyperbola are called the **vertices** of the hyperbola. The line through the center perpendicular to the major axis is called the **minor axis** of the hyperbola.
 
 If $c$ denotes the distance from any focal point to the center, the number $e=\frac{c}{a}$ is called the **eccentricity** of the hyperbola.
 ::::::
 
-```{figure} Images/Fig-Curves-Hyperbola.png
----
-width: 100%
-name: Fig:Curves:Hyperbola
-class: dark-light
----
-A hyperbola with focal points $F_1$ and $F_2$ such that for each point $A$ on the hyperbola the absolute difference between the distances to $F_1$ and $F_2$ is $2a$. The center $C$ and the vertices $V_1$ and $V_2$ of the hyperbola are also shown.
-```
+:::{applet}
+:url: calculus/curves_in_R%5E2/definition_of_a_hyperbola
+:name: Fig:Curves:Hyperbola
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Curves:Hyperbola` with an applet. The point $A$ should be draggable.
+A hyperbola with focal points $F_1$ and $F_2$ such that for each point $A$ on the hyperbola the absolute difference between the distances to $F_1$ and $F_2$ is $\operatorname{dist}(V_1,V_2)>\operatorname{dist}(F_1,F_2)$. The center $C$ and the vertices $V_1$ and $V_2$ of the hyperbola are also shown.
 :::
 
 In order to find an equation for a hyperbola, we will first assume, for convenience, that the center of the hyperbola is the origin and that the major axis is the $x$-axis. In that case we obtain the following result.
@@ -784,17 +779,12 @@ $$
  x=2+2\cosh(t),\qquad y=\sqrt{5}\sinh(t),\qquad -\infty<t<\infty.
 $$
 
-:::{figure} Images/Fig-Curves-Hyperbola1.png
+:::{applet}
+:url: calculus/curves_in_R%5E2/two_parametrisations_of_one_hyperbola
 :name: Fig:Curves:Hyperbola1
 :class: dark-light
 
-The hyperbola with vertices $(0,0)$ and $(4,0)$ and focal points $(-1,0)$ and $(5,0)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Curves:Hyperbola1` with an applet.
-
-Include an animation of the parametrisation of the hyperbola.
+The hyperbola with vertices $V_1(0,0)$ and $V_2(4,0)$ and focal points $F_1(-1,0)$ and $F_2(5,0)$.
 :::
 
 ::::::
@@ -878,14 +868,13 @@ Using a similar argument, the absolute difference of the distances between $P$ a
 
 We conclude that the graph of the function $f(x)=\frac{1}{x}$ is, indeed, a hyperbola with vertices $V_1:(-1,-1)$ and $V_2:(1,1)$ and focal points $F_1:(-\sqrt{2},-\sqrt{2})$ and $F_2:(\sqrt{2},\sqrt{2})$.
 
-```{figure} Images/Fig-Curves-Hyperbola1OverX.png
----
-width: 100%
-name: Fig:Curves:Hyperbola1OverX
-class: dark-light
----
-The graph of the function $f(x)=\frac{1}{x}$ is a hyperbola with vertices $(-1,-1)$ and $(1,1)$ and focal points $(-\sqrt{2},-\sqrt{2})$ and $(\sqrt{2},\sqrt{2})$.
-```
+:::{applet}
+:url: calculus/curves_in_R%5E2/a_simple_hyperbola
+:name: Fig:Curves:Hyperbola1OverX
+:class: dark-light
+
+The graph of the function $f(x)=\frac{1}{x}$ is a hyperbola with vertices $V_1(-1,-1)$ and $V_2(1,1)$ and focal points $F_1(-\sqrt{2},-\sqrt{2})$ and $F_2(\sqrt{2},\sqrt{2})$.
+:::
 
 :::{todo}
 Replace {numref}`Fig:Curves:Hyperbola1OverX` with an applet.
