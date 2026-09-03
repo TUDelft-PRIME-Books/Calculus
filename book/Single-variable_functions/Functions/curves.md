@@ -876,39 +876,37 @@ We conclude that the graph of the function $f(x)=\frac{1}{x}$ is, indeed, a hype
 The graph of the function $f(x)=\frac{1}{x}$ is a hyperbola with vertices $V_1(-1,-1)$ and $V_2(1,1)$ and focal points $F_1(-\sqrt{2},-\sqrt{2})$ and $F_2(\sqrt{2},\sqrt{2})$.
 :::
 
-:::{todo}
-Replace {numref}`Fig:Curves:Hyperbola1OverX` with an applet.
-:::
-
 ::::::
 
 In {prf:ref}`Ex:Curves:Hyperbola2` we saw that it can be tricky to describe hyperbolas of which the major axis is not the $x$-axis or $y$-axis. Fortunately, with the aid of linear algebra this is a lot easier. More information on this can be found in the relevant section of the [Open Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter8/QuadraticForms.html#conic-sections).
+
+As mentioned earlier, ellipses and hyperbolas are so-called **conic sections**. A conic section is defined as the curve that results from the intersection of a plane in $\mathbb{R}^3$ with a double cone in $\mathbb{R}^3$. {numref}`Fig:Curves:ConicSections` shows a cone, a plane and the intersection between the cone and the plane. You can change the tilt of the plane to see the intersection change shape from ellipse to hyperbola and vice versa.
+
+:::{applet}
+:url: calculus/curves_in_R%5E2/conic_sections
+:name: Fig:Curves:ConicSections
+:class: dark-light
+
+A (double) cone, a plane and the intersection between the cone and the plane, which initially is an ellipse. \
+The first slider influences the tilt of the plane. \
+The second slider influences the height of the plane.
+:::
 
 (Subsec:CurvesParabola)=
 
 ## Parabolas
 
-:::{todo}
-Build applet that show a double cone with a plane going through it that is movable, to show the different conic sections.
+Parabolas are yet another type of _conic sections_. You can see this in {numref}`Fig:Curves:ConicSections` by setting, for example, the tilt of the plane to $2$ and the height of the plane to $5$.
 
-Also make an applet where $e$ is draggable and the different conic sections pop up
-:::
+The most common examples are the graphs of quadratic functions, i.e. functions of the form $f(x)=ax^2+bx+c$ with $a\neq 0$, $b$ and $c$ constants. However, these are not the only type of parabolas that can occur. For instance, one could take the graph of $f(x)=x^2$ and rotate it $\frac{\pi}{2}$ radians clockwise. The resulting curve is no longer the graph of a function, but it is still a parabola (with equation $x=y^2$). In this section, we will find a more general equation for a parabola and we will also see how we can parametrise them.
 
-Parabolas are yet another type of **conic sections**. The most common examples are the graphs of quadratic functions, i.e. functions of the form $f(x)=ax^2+bx+c$ with $a\neq 0$, $b$ and $c$ constants. However, these are not the only type of parabolas that can occur. For instance, one could take the graph of $f(x)=x^2$ and rotate it $\frac{\pi}{2}$ radians clockwise. The resulting curve is no longer the graph of a function, but it is still a parabola. In this section, we will find a more general equation for a parabola and we will also see how we can parametrise them.
+:::{applet}
+:url: calculus/curves_in_R%5E2/introduction_to_parabolas
+:name: Fig:Curves:ParabolaRotate
+:class: dark-light
 
-```{figure} Images/Fig-Curves-ParabolaRotate.png
----
-width: 100%
-name: Fig:Curves:ParabolaRotate
-class: dark-light
----
 The graph of the function $f(x)=x^2$ has been rotated to give a parabola that is not the graph of a function.
-```
-
-:::{todo}
-Replace {numref}`Fig:Curves:ParabolaRotate` with an applet.
 :::
-
 
 ::::::{prf:definition} 
 :label: Def:Curves:Parabola
@@ -920,17 +918,12 @@ The point on the parabola where the distance to the focal point (or, equivalentl
 The line containing the focal point and the vertex of the parabola is called the **axis** of the parabola.
 ::::::
 
-```{figure} Images/Fig-Curves-Parabola.png
----
-width: 100%
-name: Fig:Curves:Parabola
-class: dark-light
----
-A parabola with focal point $F$ such that for each point $P$ on the parabola the distance to $F$ is equal to the distance to the directrix. The vertex $V$ and the axis of the parabola are also shown.
-```
+:::{applet}
+:url: calculus/curves_in_R%5E2/definition_of_a_parabola
+:name: Fig:Curves:Parabola
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Curves:Parabola` with an applet.
+A parabola with focal point $F$ such that for each point $P$ on the parabola the distance to $F$ is equal to the distance to the directrix (which is the distance between the point $P$ and the point $D$). The vertex $V$ and the axis of the parabola are also shown.
 :::
 
 Unlike ellipses and hyperbolas, finding a general equation for a parabola does not require a lot of linear algebra, so we can immediately give the most general result.
@@ -992,17 +985,13 @@ $$
 
 as desired.
 
-```{figure} Images/Fig-Curves-DistanceToLine.png
----
-width: 100%
-name: Fig:Curves:DistanceToLine
-class: dark-light
----
-Illustration of the situation described in this proof.
-```
+:::{applet}
+:url: calculus/curves_in_R%5E2/proof_of_equation_of_parabola
+:name: Fig:Curves:DistanceToLine
+:class: dark-light
+:nonumber:
 
-:::{todo}
-Replace {numref}`Fig:Curves:DistanceToLine` with an applet.
+Illustration of the situation described in this proof. The point $D$ is the point on the directrix that is closest to the point $P$ on the parabola.
 :::
 
 ::::
@@ -1096,17 +1085,12 @@ Similarly, the parabola with vertex $(v_1,v_2)$ and focus $(v_1+f,v_2)$, or equi
 
 ::::::
 
-:::{figure} Images/Fig-Curves-Parabola4Types.png
+:::{applet}
+:url: calculus/curves_in_R%5E2/types_of_parabolas
 :name: Fig:Curves:Parabola4Types
 :class: dark-light
 
 The four different types of parabolas defined in {prf:ref}`Def:Curves:ParabolaUpDownLeftRight`. Note that the names of the different types of parabolas precisely mean what we would expect them to mean.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Curves:Parabola4Types` with an applet.
-
-Include names of the different types of parabolas in the applet.
 :::
 
 Finding a parametrisation for general parabolas is hard, but not so for those with axis parallel to the $y$-axis on account of {prf:ref}`Ex:Curves:CurveFunction`. 
@@ -1132,23 +1116,22 @@ By {prf:ref}`Cor:Curves:Hyperbola` the equation for this parabola is $y=\frac{1}
 ::::::{prf:example} 
 :label: Ex:Curves:Parabola1
 
-Consider the graph of the function $f(x)=-2x^2+4x+4$. According to {prf:ref}`Cor:Curves:Parabola2`, this graph is a parabola with axis $x=1$, vertex $\left(1,6\right)$, focus $\left(1,\frac{47}{8}\right)$ and directrix $y=\frac{49}{8}$. Notice that the focus lies below the vertex, while the directrix lies above the vertex, so the parabola opens downwards. We also note that the graph of the function intersects the $y$-axis, i.e. the line $x=0$, at the point $(0,f(0))=(0,4)$. Finally, upon solving the equation $f(x)=-2x^2+4x+4=0$ we find that the graph intersects the $x$-axis, i.e. the line $y=0$, at the points $(1-\sqrt{3},0)$ and $(1+\sqrt{3},0)$. 
+Consider the graph of the function $f(x)=-\frac{1}{4}x^2+\frac{1}{2}x+\frac{23}{4}$, see {numref}`Fig:Curves:Parabola1`.
 
-:::{figure} Images/Fig-Curves-Parabola1.png
+According to {prf:ref}`Cor:Curves:Parabola2`, this graph is a parabola with axis $x=1$, vertex $\left(1,6\right)$, focus $\left(1,5\right)$ and directrix $y=7$. Notice that the focus lies below the vertex, while the directrix lies above the vertex, so the parabola opens downwards. We also note that the graph of the function intersects the $y$-axis, i.e. the line $x=0$, at the point $(0,f(0))=\left(0,\frac{23}{4}\right)$. Finally, upon solving the equation $-\frac{1}{4}x^2+\frac{1}{2}x+\frac{23}{4}=0$ we find that the graph intersects the $x$-axis, i.e. the line $y=0$, at the points $(1-2\sqrt{6},0)$ and $(1+2\sqrt{6},0)$. 
+
+:::{applet}
+:url: calculus/curves_in_R%5E2/a_parabola
 :name: Fig:Curves:Parabola1
 :class: dark-light
 
-The graph of the function $f(x)=-2x^2+4x+4$ is a parabola with axis $x=1$, vertex $\left(1,6\right)$, focus $\left(1,\frac{47}{8}\right)$ and directrix $y=\frac{49}{8}$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Curves:Parabola1` with an applet. Indicate all the relevant points in the graph.
+The graph of the function $f(x)=-\frac{1}{4}x^2+\frac{1}{2}x+\frac{23}{4}$ is a parabola with axis $x=1$, vertex $\left(1,6\right)$, focus $\left(1,5\right)$ and directrix $y=7$.
 :::
 
 A straightforward parametrisation of this parabola is given by
 
 $$
- x=t,\qquad y=-2t^2+4t+4,\qquad -\infty<t<\infty.
+ x=t,\qquad y=-\frac{1}{4}t^2+\frac{1}{2}t+\frac{23}{4},\qquad -\infty<t<\infty.
 $$
 ::::::
 
