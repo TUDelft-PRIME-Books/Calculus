@@ -270,7 +270,7 @@ $$
 Note that we chose $C=\frac{1}{2}K$.
 :::::
 
-::::{question} Short-answer blocks
+::::{question}
 :type: short-answer
 :variant: blocks
 :columns: 1
@@ -292,7 +292,7 @@ $$
 
 ::::
 
-::::{question} Short-answer blocks
+::::{question}
 :type: short-answer
 :variant: blocks
 :columns: 1
@@ -596,7 +596,7 @@ $$
 For $\alpha=1$ this gives Equation {eq}`Eq:Integration:PartsSerret`.
 :::::
 
-::::{question} Short-answer blocks
+::::{question}
 :type: short-answer
 :variant: blocks
 :columns: 1

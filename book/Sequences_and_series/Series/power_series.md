@@ -675,8 +675,198 @@ Select exercises from Grasple and add them in {numref}`Sec:Series:PowerSeries`.
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/345547a3-748f-4c3c-bf34-bfadf03813b8?id=135083
-:label: Grasple:13583
+:url: https://embed.grasple.com/exercises/300aabd4-eacd-4f76-8bf9-e88bfca969f6?id=65534
+:label: Grasple:65534
+:dropdown:
+:description: What is the center of the power series?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/92b1f6b9-1d1f-4782-84d0-d89df49400d5?id=65533
+:label: Grasple:65533
+:dropdown:
+:description: What is the center of the power series?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/25aeddd0-0af5-41e7-840c-e4ad43859ced?id=65518
+:label: Grasple:65518
+:dropdown:
+:description: Find the center, the radius of convergence and the interval of convergence of the power series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/73aeba96-c207-4c35-ad5d-e2a2a960381a?id=65525
+:label: Grasple:65525
+:dropdown:
+:description: Find the center, the radius of convergence and the interval of convergence of the power series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/87853ba6-e687-42e9-b61b-bc7fb0f91352?id=65522
+:label: Grasple:65522
+:dropdown:
+:description: Find the center, the radius of convergence and the interval of convergence of the power series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e74750ad-0e4b-4705-b816-19dde5ee258d?id=65528
+:label: Grasple:65528
+:dropdown:
+:description: Find the center, the radius of convergence and the interval of convergence of the power series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0678d3a7-506b-463f-a4d2-ff8d731a003e?id=65484
+:label: Grasple:65484
+:dropdown:
+:description: Find the radius of convergence and the interval of convergence of the power series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d628879f-58b2-4bf6-903c-90e870000f7a?id=79499
+:label: Grasple:79499
+:dropdown:
+:description: Find the radius of convergence and the interval of convergence of the power series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9bffa7d0-6b51-4811-a85b-c0c23ca4a235?id=65482
+:label: Grasple:65482
+:dropdown:
+:description: Find the radius of convergence and the interval of convergence of the power series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e2005d6c-2f9c-4081-b868-451b4687a8fb?id=65516
+:label: Grasple:65516
+:dropdown:
+:description: Find the radius of convergence and the interval of convergence of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e7081fae-ca52-44fd-91e8-11505ddd55dd?id=65480
+:label: Grasple:65480
+:dropdown:
+:description: Find the radius of convergence and the interval of convergence of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/67cb1e8c-e37c-49a9-99ab-7ca8e4906a06?id=65388
+:label: Grasple:65388
+:dropdown:
+:description: Find the coefficients and the radius of convergence of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/447fba48-0dd6-4adc-893a-df82033127e8?id=65582
+:label: Grasple:65582
+:dropdown:
+:description: Find a specific coefficient of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/93479c83-bcdc-404b-aac4-3c3baa77a5d7?id=65583
+:label: Grasple:65583
+:dropdown:
+:description: Find a specific coefficient of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bcb6722e-817f-4675-9650-a77677cb2d39?id=65387
+:label: Grasple:65387
+:dropdown:
+:description: Determine the coefficients of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ec3e311e-6b50-4e77-afe5-50e2d3cf8c75?id=79502
+:label: Grasple:79502
+:dropdown:
+:description: Determine the first three coefficients of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/396f1dc1-431c-45c8-8aff-03b5e853ff49?id=65390
+:label: Grasple:65390
+:dropdown:
+:description: Which function is represented by the power series?
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4e835e1c-6965-475f-bb84-d1375e8ba3d3?id=65395
+:label: Grasple:65395
+:dropdown:
+:description: Find the sum function of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c2b155d2-0dbb-4057-a89b-c5f6de003611?id=65400
+:label: Grasple:65400
+:dropdown:
+:description: Find the sum function of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1d337056-a4a7-437e-88b8-14d0fabec826?id=65391
+:label: Grasple:65391
+:dropdown:
+:description: Find the sum function of the power series.
+
+::::
+
+:::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9e7b7b55-d459-48e9-801f-476413a6609f?id=65562
+:label: Grasple:65562
 :dropdown:
 :description: Use differentiation to find the sum of several series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/345547a3-748f-4c3c-bf34-bfadf03813b8?id=135083
+:label: Grasple:135083
+:dropdown:
+:description: Use differentiation to find the sum of several series.
+
 ::::
