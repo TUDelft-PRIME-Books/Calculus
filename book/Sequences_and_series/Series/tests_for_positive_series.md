@@ -629,3 +629,189 @@ Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^{\frac{
 :::{todo}
 Add Grasple exercises for the integral test, direct comparison test and limit comparison test in {numref}`Sec:Series:PositiveSeries`.  
 :::
+
+### The integral test
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ed222f94-736f-4aea-864a-cea9ab8dc982?id=65145
+:label: Grasple:65145
+:dropdown:
+:description: Does the series converge or diverge?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c97020b0-51b8-4d90-807d-4da3dfd61f78?id=65198
+:label: Grasple:65198
+:dropdown:
+:description: Does the series converge or diverge?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ca3e1ab9-8a81-4d3f-b1dc-55cd6627ccb9?id=65124
+:label: Grasple:65124
+:dropdown:
+:description: For which values of $p$ is the series convergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bd6bd5d8-611d-404a-ba1e-ca8b74266461?id=65153
+:label: Grasple:65153
+:dropdown:
+:description: Find the best approximation of the sum of a series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/56e175e5-cacf-4778-8f31-155511b8fa94?id=65102
+:label: Grasple:65102
+:dropdown:
+:description: Compare two error estimates.
+
+::::
+
+### Direct comparison tests
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3460b75f-470a-452b-b73c-db21e5dd3cc4?id=65217
+:label: Grasple:65217
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1f8149c9-8387-48ac-a740-a33a8d331dfb?id=65202
+:label: Grasple:65202
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/fdbed6b5-b8aa-456e-a757-18fa447b1f71?id=65216
+:label: Grasple:65216
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c4f98f1d-c73f-4a48-aa64-0272055894d1?id=65185
+:label: Grasple:65185
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0395a2af-cbaa-456b-a2ad-6e8ea2f2c2e7?id=65200
+:label: Grasple:65200
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+### The limit comparison test
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4b69b047-c950-472d-9205-ae03f21a7a48?id=65212
+:label: Grasple:65212
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/b2612234-6a9b-42da-9e24-2d1e01c4bacb?id=65220
+:label: Grasple:65220
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d9b5bbe8-3fda-402d-af93-efc393416304?id=65181
+:label: Grasple:65181
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/bca911f1-b524-455c-8355-75effb5c5556?id=65183
+:label: Grasple:65183
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2aad9faa-fd0b-4375-9965-cafe840141e9?id=65188
+:label: Grasple:65188
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/058611b2-9245-48f2-9586-c6a56c3f5403?id=65197
+:label: Grasple:65197
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/226e5b78-47f9-4189-b9a4-cf3cb29d15b9?id=65196
+:label: Grasple:65196
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/9e858a2f-a084-414c-97ae-1704669aa881?id=65179
+:label: Grasple:65179
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1eb0b341-ab02-4c23-ac29-c9e658f8733f?id=65203
+:label: Grasple:65203
+:dropdown:
+:description: For which values of $p$ is the series convergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d0b7e027-544e-435a-bdcd-55ac88bc573a?id=65204
+:label: Grasple:65204
+:dropdown:
+:description: For which values of $p$ is the series convergent?
+
+::::

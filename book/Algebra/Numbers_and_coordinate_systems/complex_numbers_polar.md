@@ -348,6 +348,104 @@ Dividing complex numbers means subtracting the arguments and dividing the moduli
 
 :::
 
+In order to see how the modulus interacts with the sum of two complex numbers, we have the following theorem.
+
+::::{prf:theorem} (Reverse) triangle inequality
+:label: Thm:ComplexNumbers:complextriangle
+
+Let $z,w\in\mathbb{C}$ be complex numbers. Then we have the following inequalities
+
+\begin{align*}
+|z+w|&\leq|z|+|w|,\qquad\text{triangle inequality},\\
+\left|z-w\right|&\geq\left||z|-|w|\right|,\qquad\text{reverse triangle inequality}.
+\end{align*}
+
+::::
+
+::::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:complextriangle`
+:class: dropdown, tudproof
+
+
+_Triangle inequality_:
+
+We establish the triangle inequality by using the identity $z\overline{z}=|z|^2$, which follows from {prf:ref}`Thm:ComplexNumbers:ChangeCoor`. This means that we can write
+
+$$
+ |z+w|^2=\left(z+w\right)\overline{\left(z+w\right)}=\left(z+w\right)\left(\overline{z}+\overline{w}\right).
+$$
+
+Expanding the brackets, we obtain
+
+$$
+ \left|z+w\right|^2=z\overline{z}+w\overline{w}+z\overline{w}+\overline{z}w=|z|^2+|w|^2+z\overline{w}+\overline{z}w.
+$$
+
+Now we observe that
+
+$$
+z\overline{w}+\overline{z}w=z\overline{w}+\overline{z\overline{w}}=2\operatorname{Re}\left(z\overline{w}\right)
+$$
+
+where we used {prf:ref}`Thm:ComplexNumbers:conjparts`. By {prf:ref}`Thm:ComplexNumbers:ChangeCoor`, the real part of any complex number is less than or equal to its modulus, so we obtain
+
+$$
+\operatorname{Re}\left(z\overline{w}\right)\leq \left|z\overline{w}\right|=\left|z\right|\left|\overline{w}\right|=\left|z\right|\left|w\right|,
+$$
+
+where we used {prf:ref}`Thm:ComplexNumbers:polarmultdiv`. Combining these inequalities, we find
+
+$$
+ \left|z+w\right|^2\leq \left|z\right|^2+\left|w\right|^2+2\left|z\right|\left|w\right|=\left(\left|z\right|+\left|w\right|\right)^2.
+$$
+
+Both sides of this equation are non-negative real numbers, so we can take the square root to obtain
+
+$$
+ \left|z+w\right|\leq \left|z\right|+\left|w\right|,
+$$
+
+which establishes the triangle inequality.
+
+_Reverse triangle inquality_:
+
+We will establish the reverse triangle inequality using the (regular) triangle inequality. Indeed, we have
+
+$$
+ |z|=\left|(z-w)+w\right|\leq \left|z-w\right|+|w|.
+$$
+
+Rewriting this equation gives
+
+$$
+ |z|-|w|\leq \left|z-w\right|.
+$$
+
+Similarly, we find
+
+$$
+ |w|=\left|(w-z)+z\right|\leq \left|w-z\right|+|z|.
+$$
+
+Rewriting this equation gives
+
+$$
+ |z|-|w|\geq -\left|w-z\right|=-\left|z-w\right|.
+$$
+
+Combining these inequalities, we obtain
+
+$$
+-\left|z-w\right|\leq |z|-|w|\leq \left|z-w\right|,
+$$
+
+which yields 
+
+$$
+ \left|z-w\right|\geq\left||z|-|w|\right|,
+$$
+
+as desired.
+::::
 
 ## Euler's formula
 
@@ -730,8 +828,6 @@ If $w\neq 0$, the $n$ $n$th roots of $w$ all lie on the circle $|z|=|w|^{\frac{1
 
 :::{admonition} Proof of {prf:ref}`Thm:ComplexNumbers:rootsunity`
 :class: tudproof, dropdown
-Since the equation $z^n=w$ can be rewritten has $z^n-w=0$, it follows from {prf:ref}`Thm:ComplexNumbers:fundamental` that this equation has $n$ solutions, counting multiplicity. 
-
 If $w=0$, we can directly factor
 
 $$
@@ -1016,7 +1112,7 @@ as desired.
 
 ::::
 
-## Derivations of Euler's formula
+## Justifications of Euler's formula
 
 We used Euler's formula 
 
@@ -1024,7 +1120,8 @@ $$
  e^{i\theta}=\cos(\theta)+i\sin(\theta)
 $$
 
-as the definition of $e^{i\theta}$. There are several reasons why it is a logical choice to call this expression $e^{i\theta}$, all of which show that the complex exponential behaves similarly to the real exponential. Here, we consider two of of these reasons, both of which talk about concepts that will be defined later in this book. In these derivations, we *assume* that there is such a thing as $e^{i\theta}$ that behaves similar to its real counterpart, and we show that the definition that we gave in {prf:ref}`Dfn:ComplexNumbers:EulersFormule` is the only one with this behaviour.
+as the definition of $e^{i\theta}$. There are several reasons why it is a logical choice to call this expression $e^{i\theta}$, all of which show that the complex exponential behaves similarly to the real exponential. Here, we consider four of of these reasons, all of which talk about concepts that will be defined later in this book. In these justifications, we *assume* that there is such a thing as $e^{i\theta}$ that behaves similar to its real counterpart, and we show that the definition that we gave in {prf:ref}`Dfn:ComplexNumbers:EulersFormule` is the only one with this behaviour.
+
 
 **Using a scalar initial value problem**
 
@@ -1039,6 +1136,16 @@ y(0) & = & 1.
 \end{array}\right.
 
 :::
+
+From {numref}`Chapter:FirstorderDE`, we know that for any real number $k$, the function the function $y(\theta)=e^{k\theta}$ is the unique solution to the initial-value problem
+
+
+$$
+\left\{\begin{array}{rcl}
+\dfrac{dy}{d\theta} & = & ky,\\
+y(0) & = & 1.
+\end{array}\right.
+$$
 
 Because we want the $e^{i\theta}$ to behave like its real counterpart and because we assumed that $i$ behaves like any other number, we can solve this initial value problem, which leads to the solution
 
@@ -1079,11 +1186,164 @@ This indicates that $q$ satisfies the same initial condition from Equation {eq}`
 
 So we found that our function $q$ from Equation {eq}`Eq:ComplexNumbers:exp_sol_alt` is also a solution to the initial value problem from Equation {eq}`Eq:ComplexNumbers:exp_de`.
 
-But because this initial value problem can only have one unique solution, the function $q$ from Equation {eq}`Eq:ComplexNumbers:exp_sol_alt` must be the same function as the first solution $y$ in Equation {eq}`Eq:ComplexNumbers:exp_sol`. This means that we found Euler's formula:
+Because this initial value problem can only have one unique solution, the function $q$ from Equation {eq}`Eq:ComplexNumbers:exp_sol_alt` must be the same function as the first solution $y$ in Equation {eq}`Eq:ComplexNumbers:exp_sol`. This means that we found Euler's formula:
 
 $$
 e^{i\theta} = \cos(\theta) + i\sin(\theta).
 $$
+
+**Using limits of sequences and functions**
+
+This derivation uses both limits of functions (see {numref}`Section:Limitinf`) and of sequences (see {numref}`Section:SequenceConvergence`). 
+
+Using the techniques from {numref}`Subsec:lHospital:ProdPow` it can be established that for any real number $t$ we have
+
+$$
+ e^t=\lim_{x\rightarrow \infty}\left(1+\frac{t}{x}\right)^x.
+$$
+
+From {prf:ref}`Thm:Sequences:LimitFunctionSequence` it follows that
+
+$$
+ e^t=\lim_{n\rightarrow \infty}\left(1+\frac{t}{n}\right)^n
+$$
+
+as well. This matches the definition of $e$ that was given in {prf:ref}`Def:RealNumbers:Numbere`. We now fix $\theta\in\mathbb{R}$. Since we want $e^{i\theta}$ to behave the same as its real counterpart, we should have
+
+$$
+ e^{i\theta}=\lim_{n\rightarrow \infty}\left(1+\frac{i\theta}{n}\right)^n.
+$$ 
+
+First we discuss the intuition behind why this definition will give rise to Euler's formula. For notational convenience, we write
+
+$$
+ z_n=\left(1+\frac{i\theta}{n}\right)^n.
+$$
+
+It is important to note that the complex number $z_n$ is not equal to $\cos(\theta)+i\sin(\theta)$ for any $n$. This can be seen by considering the argument and modulus of $z_n$, which we will need later on to establish Euler's formula. Using the arctangent from {numref}`Section:Inverse` we find
+
+$$
+ \arg\left(1+\frac{i\theta}{n}\right)=\arctan\left(\frac{\theta}{n}\right),
+$$
+
+so that
+
+$$
+ \arg\left(z_n\right)=n\arctan\left(\frac{\theta}{n}\right).
+$$
+
+Similarly, we find
+
+$$
+ \left|z_n\right|=\left(\sqrt{1+\frac{\theta^2}{n^2}}\right)^n.
+$$
+
+We can see this also by plotting the points $1+\frac{i\theta}{n},\left(1+\frac{i\theta}{n}\right)^2,\cdots,\left(1+\frac{i\theta}{n}\right)^n$, as we did in {numref}`Fig:ComplexPolar:Sequence`. Nonetheless, we see in the plot that if $n$ decreases, the modulus of $\left(1+\frac{i\theta}{n}\right)^n$ tends towards $1$, while the argument tends towards $\theta$. 
+
+:::{figure} Images/Fig-ComplexPolar-Sequence.png
+:name: Fig:ComplexPolar:Sequence
+
+A plot of the complex numbers $1+\frac{i\theta}{n},\left(1+\frac{i\theta}{n}\right)^2,\cdots,\left(1+\frac{i\theta}{n}\right)^n$.
+:::
+
+:::{todo}
+Turn {numref}`Fig:ComplexPolar:Sequence` into an applet. Include a slider for $\theta\in(0,2\pi)$ and one for $n$.
+:::
+
+To rigorously show that this definition gives rise to Euler's formula, we will prove that
+
+$$
+ \lim_{n\rightarrow\infty}\arg\left(z_n\right)=\lim_{n\rightarrow\infty}n\arctan\left(\frac{\theta}{n}\right)=\theta
+$$
+
+and
+
+$$
+ \lim_{n\rightarrow\infty}\left|z_n\right|=\lim_{n\rightarrow\infty}\left(\sqrt{1+\frac{\theta^2}{n^2}}\right)^n=1.
+$$
+
+
+
+For the limit of the arguments of $z_n$, we consider the real-valued function
+
+$$
+ f(x)=x\arctan\left(\frac{\theta}{x}\right)=\frac{\arctan\left(\frac{\theta}{x}\right)}{\frac{1}{x}}
+$$
+
+so that $f(n)=\\arg(z_n)$ for all $n$. We note that
+
+$$
+ \lim_{x\rightarrow\infty}\arctan\left(\frac{\theta}{x}\right)=\arctan(0)=0,\qquad \lim_{x\rightarrow\infty}\frac{1}{x}=0.
+$$
+
+Hence, we can use {prf:ref}`Thm:lHospital:lHospitalinf` to obtain
+
+\begin{align*}
+\lim_{x\rightarrow\infty}\dfrac{\arctan\left(\frac{\theta}{x}\right)}{\frac{1}{x}}&=\lim_{x\rightarrow\infty}\dfrac{-\dfrac{\theta}{\theta^2+x^2}}{-\frac{1}{x^2}}\\
+&=\lim_{x\rightarrow\infty}-\frac{\theta }{\frac{\theta^2}{x^2}+1}\\
+&=\frac{\theta}{0+1}=\theta.
+\end{align*}
+
+Then {prf:ref}`Thm:Sequences:LimitFunctionSequence` tells us that
+
+$$
+ \lim_{n\rightarrow\infty}\arg(z_n)=\lim_{n\rightarrow\infty}f(n)=\lim_{x\rightarrow\infty}f(x)=\theta.
+$$
+
+
+For the limit of the moduli of $z_n$, we first consider the natural logarithm (see {numref}`Section:Inverse`) of $|z_n|$ and we find using the computation rules for the logarithm
+
+\begin{align*}
+ \ln(|z_n|)&=\ln\left(\left(\sqrt{1+\frac{\theta^2}{n^2}}\right)^n\right)\\
+ &=\frac{n}{2}\ln\left(1+\frac{\theta^2}{n^2}\right)\\
+ &=\dfrac{\ln\left(1+\frac{\theta^2}{n^2}\right)}{\dfrac{2}{n}}.
+\end{align*}
+
+We now consider the real-valued function
+
+$$
+ g(x)=\dfrac{\ln\left(1+\frac{\theta^2}{x^2}\right)}{\dfrac{2}{x}}.
+$$
+
+so that $\ln\left(|z_n|\right)=g(n)$ for all $n$. Since we have
+
+$$
+\lim_{x\rightarrow\infty}\ln\left(1+\frac{\theta^2}{x^2}\right)=\ln(1)=0,\qquad\lim_{x\rightarrow\infty}\frac{2}{x}=0,
+$$
+
+we can use {prf:ref}`Thm:lHospital:lHospitalinf` to obtain
+
+\begin{align*}
+\lim_{x\rightarrow\infty}\dfrac{\ln\left(1+\frac{\theta^2}{x^2}\right)}{\dfrac{2}{x}}&=\lim_{x\rightarrow\infty}\dfrac{-\dfrac{2\theta^2}{\theta^2x+x^3}}{\dfrac{-1}{x^2}}\\
+&=\lim_{x\rightarrow\infty}\dfrac{2\theta^2x^2}{\theta^2 x+x^3}\\
+&=\lim_{x\rightarrow\infty}\dfrac{\frac{2\theta^2}{x}}{\frac{\theta^2}{x^2}+1}\\
+&=\frac{0}{1}=0.
+\end{align*}
+
+Then {prf:ref}`Thm:Sequences:LimitFunctionSequence` tells us that
+
+$$
+\lim_{n\rightarrow\infty}\ln\left(|z_n|\right)=\lim_{x\rightarrow\infty}g(x)=0.
+$$
+
+To conclude, we see that
+
+$$
+ \lim_{n\rightarrow\infty}|z_n|=\lim_{n\rightarrow\infty}e^{\ln(a_n)}=e^0=1.
+$$
+
+Since we defined 
+
+$$
+ e^{i\theta}=\lim_{n\rightarrow \infty}\left(1+\frac{i\theta}{n}\right)^n=\lim_{n\rightarrow\infty} z_n,
+$$ 
+
+we see that $\displaystyle e^{i\theta}$ must be a complex number with modulus $1$ and argument $\theta$. There is only $1$ such complex number, which is $\cos(\theta)+i\sin(\theta)$, so we must have
+
+$$
+ e^{i\theta}=\cos(\theta)+i\sin(\theta).
+$$
+
 
 **Using series**
 
@@ -1123,7 +1383,59 @@ $$
 
 As you can see we have arrived at Euler's formula.
 
+**An axiomatic approach**
 
+This approach assumes that the complex exponential satisfies certain defining properties which we will call axiomas. We then show that Euler's formula is the only one that satisfies all these axioma's. 
+
+This approach uses the concept of the derivative of a complex-valued function, see {numref}`Chapter:Differentiation` for differentiation of real-valued functions.
+
+The axiomatic approach assumes that for each $\theta\in\mathbb{R}$ there exists a complex number $e^{i\theta}$ that satisfies the two axiomas:
+
+(i) for any $\theta\in\mathbb{R}$ we have $\left|e^{i\theta}\right|=1$;
+
+(ii) $\dfrac{d}{d\theta}e^{i\theta}=ie^{i\theta}$.
+
+In addition, for the notation $e^{i\theta}$ to make any sense, we must have that $e^{i0}=e^0=1$.
+
+We now show that $e^{i\theta}$ must be equal to $\cos(\theta)+i\sin(\theta)$ in order for both of these axiomas to be satisfied. Since by axioma (i) $\left|e^{i\theta}\right|=1$ for each $\theta$, we can express the polar form of the complex number $e^{i\theta}$ as 
+
+$$
+ e^{i\theta}=\cos\left(\alpha(\theta)\right)+i\sin\left(\alpha(\theta)\right)
+$$
+
+where $\alpha(\theta)=\arg\left(e^{i\theta}\right)$. It is important to realise that we did not assume that $\arg\left(e^{i\theta}\right)=\theta$. By axioma (ii) we have, using {prf:ref}`Thm:Chainrule:Chainrule`
+
+\begin{align*}
+ ie^{i\theta}&=\dfrac{d}{d\theta}e^{i\theta}\\
+ &=\dfrac{d}{d\theta}\left(\cos\left(\alpha(\theta)\right)+i\sin\left(\alpha(\theta)\right)\right)\\
+ &=-\sin(\alpha(\theta))\alpha'(\theta)+i\cos(\alpha(\theta))\alpha'(\theta).
+\end{align*}
+
+On the other hand, we have
+
+$$
+ ie^{i\theta}=i\cos(\alpha(\theta))-\sin(\alpha(\theta)).
+$$
+
+By comparing these two expressions for $ie^{i\theta}$, we see that
+
+$$
+ -\sin(\alpha(\theta))=-\sin(\alpha(\theta))\alpha'(\theta),\qquad \cos(\alpha(\theta))=\cos(\alpha(\theta))\alpha'(\theta).
+$$
+
+Since $\cos(\alpha(\theta))$ and $\sin(\alpha(\theta))$ cannot be $0$ at the same time, this must mean that $\alpha'(\theta)=1$ for all $\theta$. Since $\alpha$ is a real-valued function, we find $\alpha(\theta)=\theta+C$ for some constant $C$. Now by plugging in $\theta=0$ we find
+
+$$
+ \cos(0+C)+i\sin(0+C)=e^{i0}=1,
+$$
+
+which gives that $C=k2\pi$ for some integer $k$. Then for any $\theta$ we obtain
+
+$$
+ e^{i\theta}=\cos(\theta+k2\pi)+i\sin(\theta+k2\pi)=\cos(\theta)+i\sin(\theta),
+$$
+
+which means that Euler's formula is the only function that satisfies these axiomas.
 
 ## Grasple exercises
 
