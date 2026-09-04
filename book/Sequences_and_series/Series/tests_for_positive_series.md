@@ -142,7 +142,7 @@ $$
 
 ::::::
 
-::::{question} Multiple-choice Single-select
+::::{question}
 :type: multiple-choice
 :variant: single-select
 :admonition:
