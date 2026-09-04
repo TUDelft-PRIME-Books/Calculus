@@ -149,7 +149,7 @@ zw &= (ac-bd)+(ad+bc)i.
 In addition, if $n\in\mathbb{Z}$ with $n\geq 1$, we define the $n$th **power** of $z$ as
 
 $$
-z^n=\underbrac{z\cdot z\cdot\cdots\cdot z}_{n\text{ times}}.
+z^n=\underbrace{z\cdot z\cdot\cdots\cdot z}_{n\text{ times}}.
 $$
 
 Finally, we define $z^0=1$.

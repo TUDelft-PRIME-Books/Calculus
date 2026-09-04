@@ -701,7 +701,7 @@ The probability density function of the standard normal distribution.
 In probability and statistics the function $\displaystyle\frac{1}{\sqrt{2\pi}}\cdot e^{-\frac12x^2}$ is known as the probability density function of the **standard normal distribution** or **Gaussian distribution**. The curve is sometimes referred to as the **bell curve**.
 ::::::
 
-::::{question} Short-answer blocks
+::::{question}
 :type: short-answer
 :variant: blocks
 :columns: 1
