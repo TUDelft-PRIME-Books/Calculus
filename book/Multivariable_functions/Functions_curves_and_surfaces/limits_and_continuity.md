@@ -1,3 +1,4 @@
+(Section:LimContnd)=
 # Limits and continuity
 
 In this section we cover:
