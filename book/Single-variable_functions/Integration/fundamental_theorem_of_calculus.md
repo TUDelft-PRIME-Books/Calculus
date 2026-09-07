@@ -179,7 +179,7 @@ Note that this even works if $x^2<x$ and if $x>0$. Now we can differentiate both
 
 ::::::
 
-::::{question} Short-answer blocks
+::::{question}
 :type: short-answer
 :variant: blocks
 :columns: 2

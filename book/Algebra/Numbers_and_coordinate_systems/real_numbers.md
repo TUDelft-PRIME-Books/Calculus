@@ -255,6 +255,60 @@ $$
 
 ::::::
 
+:::::{prf:example}
+:label: Ex:RealNumbers:longdivisionnum
+
+Let us calculate $\frac{97813}{382}$ using long division. To the right of the long division you can see the explanation of the steps, on the left you can see the actual long division.
+
+::::{grid} 2 2 2 2
+
+:::{grid-item}
+
+$$
+\class{longdivision}{
+\begin{array}{rcl}
+97813 & / & \uuline{382} \\
+\underline{\class{tud-red}{764}}\phantom{00} & | & \class{tud-cyan}{2}\class{tud-green}{5}\class{tud-pink}{6}\\
+2141\phantom{0} & | \\
+\underline{\class{tud-blue}{1910}}\phantom{0} & | \\
+2313 & | \\
+\underline{\class{tud-orange}{2292}} & | \\
+21 & | \\
+\end{array}
+}
+$$
+
+:::
+
+:::{grid-item}
+\begin{align*}
+\class{tud-cyan}{2} \,\cdot\,\, \phantom{0}382 &= \phantom{0}\class{tud-red}{764} \\
+978 - \phantom{0}\class{tud-red}{764} &= \phantom{0}214 \\
+\class{tud-green}{5} \,\cdot\,\, \phantom{0}382 &= \class{tud-blue}{1910} \\
+2141 - \phantom{0}\class{tud-blue}{1910} &= \phantom{0}231 \\
+\class{tud-pink}{6} \,\cdot\,\, \phantom{0}382 &= \class{tud-orange}{2292} \\
+2313 - \class{tud-orange}{2292} &= \phantom{0}\phantom{0}21 \\
+\end{align*}
+:::
+
+::::
+
+Here, the calculation behind the long division has been written down concisely:
+
+$$
+\frac{97813}{382} = 200 + \frac{21413}{382} = 250 + \frac{2313}{382} = 256 + \frac{21}{382}.
+$$
+
+You can see this as follows:
+
+- Because $97813$ is a multiple of $10^4$ and $382$ is a multiple of $10^2$, we start with subtracting as many multiples of $\dfrac{10^4}{10^2}\cdot 382=100\cdot 382$ from $97813$ as possible, so that the remainder remains non-negative.
+
+- Next, we subtract as many multiples of $\dfrac{10^3}{10^2}\cdot 382=10\cdot 382$ from the remainder $21413$ as possible, so that the remainder remains non-negative.
+
+- Finally, we subtract as many multiples of $\dfrac{10^2}{10^2}\cdot 382=1\cdot 382$ from the remainder $2313$ as possible, so that the remainder remains non-negative.
+
+:::::
+
 (Subsec:RealnumbersExp)=
 ## Exponentiation
 

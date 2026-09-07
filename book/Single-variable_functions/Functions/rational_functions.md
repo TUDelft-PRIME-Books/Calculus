@@ -392,7 +392,7 @@ The degree of the polynomial $r$ is $R<Q$ since the algorithm terminates when we
 ::::
 
 
-::::{question} Multiple-choice Multiple-select
+::::{question}
 :type: multiple-choice
 :variant: multiple-select
 :admonition:
@@ -1173,7 +1173,7 @@ display(Latex(eq_str))
 ::::{prf:example-end}
 ::::
 
-::::{question} Multiple-choice Single-select
+::::{question}
 :type: multiple-choice
 :variant: single-select
 :admonition:

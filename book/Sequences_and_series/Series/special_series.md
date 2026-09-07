@@ -116,7 +116,7 @@ In {numref}`Sec:Series:PowerSeries` on power series we will often make use of th
 Consider the following infinite sequence:
 
 $$
-\frac{1}{5},-\frac{2}{25},\frac{4}{125},-\frac{8}{625},\cdots
+\frac{1}{5},-\frac{2}{25},\frac{4}{125},-\frac{8}{625},\ldots
 $$
 
 In this sequence each next term is the previous term multiplied by $-\frac{2}{5}$, so the common ratio is $r=-\frac{2}{5}$. The first term of the sequence is $a=\frac{1}{5}$, so we can write the series related to this sequence as
@@ -779,6 +779,8 @@ If the series $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is convergent, say with 
 Add Grasple exercises for {numref}`Sec:Series:SpecialSeries`.
 :::
 
+### Geometric series
+
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/eb496435-0754-4f80-ae75-f8f3ac1833c1?id=65071
@@ -860,6 +862,8 @@ Add Grasple exercises for {numref}`Sec:Series:SpecialSeries`.
 
 ::::
 
+### Telescoping series
+
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/5de2f043-af09-4f4b-8834-d4d6e1e2e534?id=65058
@@ -886,6 +890,8 @@ Add Grasple exercises for {numref}`Sec:Series:SpecialSeries`.
 :description: Find the sum of a telescoping series.
 
 ::::
+
+### Alternating series 
 
 ::::{grasple}
 :iframeclass: dark-light

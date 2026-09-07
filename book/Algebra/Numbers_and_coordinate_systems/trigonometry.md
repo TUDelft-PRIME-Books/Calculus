@@ -913,7 +913,7 @@ $$
 
 ::::::
 
-::::{question} Short-answer blocks
+::::{question}
 :type: short-answer
 :variant: blocks
 :columns: 2

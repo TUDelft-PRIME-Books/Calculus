@@ -605,3 +605,57 @@ Before we turn our attention to a special set of functions and their Taylor seri
 Add exercises on Taylor series, including finding Taylor series of functions, finding the radius of convergence, and using Taylor's inequality to find approximations of functions in {numref}`Sec:Series:TaylorSeries`.
 :::
 
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/6159ed73-04ff-4de5-b358-0438b9d0514f?id=64961
+:label: Grasple:64961
+:dropdown:
+:description: Deternine the first coefficients of the Taylor series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7cbe4e45-d7a2-4227-a12e-f7056ed761be?id=64956
+:label: Grasple:64956
+:dropdown:
+:description: Find the fourth-order Taylor polynomial.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/266fd999-5979-490d-920e-b234cfe782b8?id=64964
+:label: Grasple:64964
+:dropdown:
+:description: Determine the coefficients of the Taylor series.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/de2f3df0-1191-460e-995c-7487d57df5b7?id=64965
+:label: Grasple:64965
+:dropdown:
+:description: Find the expansions of the function around two different points with different intervals of convergence.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2c7c80ef-695d-481f-8f79-8552d87908fd?id=64639
+:label: Grasple:64639
+:dropdown:
+:description: Find a Taylor polynomial of the third derivative of the function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0d05a9a9-8d42-4ee3-ac40-706b7ac4844f?id=64953
+:label: Grasple:64953
+:dropdown:
+:description: Find the second-order Taylor polynomial of the function.
+
+::::

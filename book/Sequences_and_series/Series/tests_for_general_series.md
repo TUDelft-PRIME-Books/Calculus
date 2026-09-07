@@ -432,3 +432,137 @@ This examples show that if $\displaystyle\lim\limits_{n\to\infty}\sqrt[n]{|a_n|}
 
 :::{todo}
 Select exercises from Grasple and add them in {numref}`Sec:Series:TestsForGeneralSeries`.
+
+:::
+
+### The ratio test
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d2726367-e95f-4bd5-8d2a-e26ed3fef001?id=65295
+:label: Grasple:65295
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/92eeeb64-d5d7-43e0-81d8-82e43342c655?id=65296
+:label: Grasple:65296
+:dropdown:
+:description: Is the series convergent or divergent?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7d279b80-09d5-4324-a09b-122c82adabd2?id=65378
+:label: Grasple:65378
+:dropdown:
+:description: What can be concluded from the ratio test?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8f637b34-fe53-4d93-beba-e4d510c1c514?id=65289
+:label: Grasple:65289
+:dropdown:
+:description: What can be concluded from the ratio test?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/0742e05f-0c2f-4e60-96f3-50eba9e8c933?id=65384
+:label: Grasple:65384
+:dropdown:
+:description: What can be concluded from the ratio test?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a15c151a-8943-4b0e-8ff8-fa628511b6c8?id=65374
+:label: Grasple:65374
+:dropdown:
+:description: What can be concluded from the ratio test?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8f17c704-8ccd-4ee1-9ee2-924358d7f888?id=65380
+:label: Grasple:65380
+:dropdown:
+:description: What can be concluded from the ratio test?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c4c0f464-0b97-41b5-a376-d989b0bfa89c?id=65370
+:label: Grasple:65370
+:dropdown:
+:description: What can be concluded from the ratio test?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/1726676a-cb97-4cd0-9cd6-498fffe90b2f?id=65376
+:label: Grasple:65376
+:dropdown:
+:description: What can be concluded from the ratio test?
+
+::::
+
+### The root test
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e27d9e13-20d9-40b7-89ae-f2ecf0a1976f?id=65291
+:label: Grasple:65291
+:dropdown:
+:description: What can be concluded from the root test?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/d0f8775e-9a35-4543-9bbc-c8d72fbc9356?id=65293
+:label: Grasple:65293
+:dropdown:
+:description: What can be concluded from the root test?
+
+::::
+
+### Which tests can be applied?
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c34ab0c1-8e5e-4a8c-adc1-8c7bc8ef4c46?id=79313
+:label: Grasple:79313
+:dropdown:
+:description: Which tests can be applied?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/3293e904-3cba-4d65-8982-c1d499b7037e?id=79314
+:label: Grasple:79314
+:dropdown:
+:description: Which tests can be applied?
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/985bcf49-08f8-4adb-98d6-0bab8ec675ff?id=79315
+:label: Grasple:79315
+:dropdown:
+:description: Which tests can be applied?
+
+::::
