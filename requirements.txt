@@ -11,4 +11,4 @@ sphinx-apa-references == 1.0
 # Our favourite Sphinx extensions in one line, replace with individual extensions if you prefer some extensions not to be included (https://github.com/TeachBooks/TeachBooks-Favourites)
 git+https://github.com/TeachBooks/TeachBooks-Favourites@v1.15.0
 
-git+https://github.com/TeachBooks/Sphinx-PRIME-applets@28551857ea37020c5eba2c500787b27e457c3e10
+git+https://github.com/TeachBooks/Sphinx-PRIME-applets@964426739ff921e8670b353c36dad6b2b75eb106
