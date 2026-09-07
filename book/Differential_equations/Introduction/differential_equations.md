@@ -108,7 +108,7 @@ The **general solution** of a differential equation is an expression for all sol
 ::::::
 
 
-In this book we will mostly consider ordinary differential equations of first order ({numref}`Chapter:FirstorderDE`) and second order ({numref}`Chapter:SecondorderDE`). It is also intersesting to consider equations, such as
+In this book we will mostly consider ordinary differential equations of first order ({numref}`Chapter:FirstorderDE`) and second order ({numref}`Chapter:SecondorderDE`). It is also interesting to consider equations, such as
 
 $$
  u_t(t,x)+u_x(t,x)=0,
@@ -218,7 +218,7 @@ $$
 
 This is a second-order differential equation, as it involves the unknown function $u(t)$ and its second derivative $u''(t)$.
 
-When damping is involved, for example because (a part of) the system is submerged in a fluid, see {numref}`Fig:Diffclass:mass-spring3`, it is reasonable to asssume that the damping force is of the form $F_{\mathrm{damping}}=-c\dfrac{du}{dt}$, where $c$ is a positive constant, called the *damping constant*. Then Newton's second law gives
+When damping is involved, for example because (a part of) the system is submerged in a fluid, see {numref}`Fig:Diffclass:mass-spring3`, it is reasonable to assume that the damping force is of the form $F_{\mathrm{damping}}=-c\dfrac{du}{dt}$, where $c$ is a positive constant, called the *damping constant*. Then Newton's second law gives
 
 $$
 m\cdot\frac{d^2u}{dt^2}=-k\cdot u(t)-c\cdot\dfrac{du}{dt}.
@@ -682,7 +682,7 @@ $$
 
 ::::::
 
-[^FootnoteParticular]: Which is, of course, what the adjective particular ususally means in a context like this.
+[^FootnoteParticular]: Which is, of course, what the adjective particular usually means in a context like this.
 
 In the following theorem, a **particular solution** of a differential equation is just any solution of a differential equation[^FootnoteParticular].
 
@@ -750,7 +750,7 @@ $$
 y_c(t)=c_1\sin(t)+c_2\cos(t).
 $$
 
-If we want to find the general solution of the nonhomogeneous equation, we need to find a particular solution. If you do not see one by staring long enough at the differential equation, there acutally is a more rigorous way to find it. In {numref}`Sec:ODE2:Inhomogeneous`, we will see that we can find one by making the educated guess that the particular solution looks like the nonhomogeneous term $1$. In particular, we try a solution of the form $y(t)=A$ for some constant $A$. Plugging this guess into the differential equation gives
+If we want to find the general solution of the nonhomogeneous equation, we need to find a particular solution. If you do not see one by staring long enough at the differential equation, there actually is a more rigorous way to find it. In {numref}`Sec:ODE2:Inhomogeneous`, we will see that we can find one by making the educated guess that the particular solution looks like the nonhomogeneous term $1$. In particular, we try a solution of the form $y(t)=A$ for some constant $A$. Plugging this guess into the differential equation gives
 
 $$
 0+A=1,
@@ -805,15 +805,33 @@ In {numref}`Sec:DE:ExistenceUniqueness` it will be shown that a first-order diff
 Then this arbitrary constant can be chosen in such a way that the solution also satisfies an initial condition of the form $y(x_0)=y_0$.
 
 ::::::{prf:example}
+:label: Ex:ClassDiff:IVP
+
 The differential equation $y'=3t^2$ has the general solution $y(t)=t^3+C$ with $C\in\mathbb{R}$. However, there is only one solution that also satisfies the initial condition $y(0)=0$, which is $y(t)=t^3$. This is because $y(0)=0$ leads to $0=0^3+C=C$.
 
-:::{todo}
-Make an applet that shows several different solutions, including a high-lighted $y(t)=t^3$.
+:::{applet}
+:url: calculus/classifications_and_solutions/solution_of_an_initial_value_problem
+:name: Fig:ClassDiff:IVP
+:class: dark-light
+
+The solution $y(t)=t^3$, given by the solid line, and some other solutions, dashed, of $y'=3t^2$ that do not satisfy the initial condition $y(0)=0$.
 :::
+
 ::::::
 
 ::::::{prf:example}
+:label: Ex:ClassDiff:IVP2
+
 The differential equation $y'=2y$ has the general solution $y(t)=Ce^{2t}$ with $C\in\mathbb{R}$. However, there is only one solution that also satisfies the initial condition $y(0)=3$, which is $y(t)=3e^{2t}$. This is because $y(0)=3$ leads to $3=Ce^{2\cdot0}=C$.
+
+:::{applet}
+:url: calculus/classifications_and_solutions/solution_of_another_initial_value_problem
+:name: Fig:ClassDiff:IVP2
+:class: dark-light
+
+The solution $y(t)=3e^{2t}$, given by the solid line, and some other solutions of $y'=2t$ that do not satisfy the initial condition $y(0)=3$.
+:::
+
 :::::: 
 
 In {numref}`Sec:DE:ExistenceUniqueness` it will be shown that a second-order linear differential equation of the form
