@@ -175,24 +175,24 @@ parts:
   - caption: Back matter
     numbered: False
     chapters:
-    - file: references.md 
-    - file: credits.md 
-    - file: genindex.md 
-  - caption: Reference pages for development
-    numbered: 3
-    style: romanupper
-    chapters:
-    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md" 
-    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/proofs.md" 
-    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/custom.md" 
-    - external: "https://github.com/executablebooks/sphinx-exercise/blob/main/docs/source/syntax.md" 
-    - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/main/README.md" 
-    - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb" 
-    - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md" 
-    - external: "https://github.com/TeachBooks/manual/blob/release/book/features/apa.md" 
-    - external: "https://github.com/TeachBooks/Sphinx-Metadata-Figure/blob/main/MANUAL.ipynb" 
-    - file: todos.md 
-    - file: questions.md 
-    - external: https://github.com/TeachBooks/Sphinx-PRIME-applets/blob/main/README.md 
-    - external: https://github.com/TeachBooks/Sphinx-Sticky-Margin/blob/main/MANUAL.md 
-    - external: https://github.com/TeachBooks/TeachBooks-Fetch/blob/main/MANUAL.md 
+    - file: references.md # ref_graph: {'ignore':True}
+    - file: credits.md # ref_graph: {'ignore':True}
+    - file: genindex.md # ref_graph: {'ignore':True}
+  # - caption: Reference pages for development
+  #   numbered: 3
+  #   style: romanupper
+  #   chapters:
+  #   - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md" # ref_graph: {'ignore':True}
+  #   - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/proofs.md" # ref_graph: {'ignore':True}
+  #   - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/custom.md" # ref_graph: {'ignore':True}
+  #   - external: "https://github.com/executablebooks/sphinx-exercise/blob/main/docs/source/syntax.md" # ref_graph: {'ignore':True}
+  #   - external: "https://github.com/TeachBooks/Sphinx-Grasple-public/blob/main/README.md" # ref_graph: {'ignore':True}
+  #   - external: "https://github.com/TeachBooks/sphinx-code-examples/blob/main/MANUAL.ipynb" # ref_graph: {'ignore':True}
+  #   - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/latex.md" # ref_graph: {'ignore':True}
+  #   - external: "https://github.com/TeachBooks/manual/blob/release/book/features/apa.md" # ref_graph: {'ignore':True}
+  #   - external: "https://github.com/TeachBooks/Sphinx-Metadata-Figure/blob/main/MANUAL.ipynb" # ref_graph: {'ignore':True}
+  #   - file: todos.md # ref_graph: {'ignore':True}
+  #   - file: questions.md # ref_graph: {'ignore':True}
+  #   - external: https://github.com/TeachBooks/Sphinx-PRIME-applets/blob/main/README.md # ref_graph: {'ignore':True}
+  #   - external: https://github.com/TeachBooks/Sphinx-Sticky-Margin/blob/main/MANUAL.md # ref_graph: {'ignore':True}
+  #   - external: https://github.com/TeachBooks/TeachBooks-Fetch/blob/main/MANUAL.md # ref_graph: {'ignore':True}
