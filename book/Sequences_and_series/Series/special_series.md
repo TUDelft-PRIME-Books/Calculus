@@ -116,7 +116,7 @@ In {numref}`Sec:Series:PowerSeries` on power series we will often make use of th
 Consider the following infinite sequence:
 
 $$
-\frac{1}{5},-\frac{2}{25},\frac{4}{125},-\frac{8}{625},\cdots
+\frac{1}{5},-\frac{2}{25},\frac{4}{125},-\frac{8}{625},\ldots
 $$
 
 In this sequence each next term is the previous term multiplied by $-\frac{2}{5}$, so the common ratio is $r=-\frac{2}{5}$. The first term of the sequence is $a=\frac{1}{5}$, so we can write the series related to this sequence as

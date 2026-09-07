@@ -128,13 +128,13 @@ This establishes the chain rule in the general setting.
 There are two common errors when using the chain rule to find the derivative $(f\circ g)'(x)$. The first is that, instead of evaluating $f'$ at $g(x)$, $f'$ is evaluated at $x$, i.e.,
 
 $$
- (f\circ g)'(x)=f'(x)g'(x)\qquad\qquad \left(\textbf{INCORRECT}\right).
+ (f\circ g)'(x)=f'(x)g'(x)\qquad\qquad \left(\class{tud-red}{\textbf{INCORRECT}}\right).
 $$
 
 The most common error, however, is forgetting to multiply by $g'(x)$. In that case, the incorrect expression would become
 
 $$
- (f\circ g)'(x)=f'(g(x))\qquad\qquad \left(\textbf{INCORRECT}\right).
+ (f\circ g)'(x)=f'(g(x))\qquad\qquad \left(\class{tud-red}{\textbf{INCORRECT}}\right).
 $$
 
 Make sure to avoid both errors and use the chain rule as stated.
