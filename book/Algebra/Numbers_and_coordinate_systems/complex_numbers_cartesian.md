@@ -203,20 +203,19 @@ $$
 
 which gives the system of equations
 
-:::{math}
-:label: Eq:ComplexNumbers:zerodivisor
+$$
  \begin{cases}0=ac-bd,\\ 0=d+bc,\end{cases}
-:::
+$$
 
 since a complex number can only be $0$ if both its real and imaginary parts are $0$.
 
-If $z=0$ we are done, so we assume that $z\neq 0$. In that case at least one of the real numbers $a$ and $b$ must be non-zero, which means that $a^2+b^2>0$. We now first multiply the first equation of {eq}`Eq:ComplexNumbers:zerodivisor` by $a$ and the second equation by $b$ and add these to obtain
+If $z=0$ we are done, so we assume that $z\neq 0$. In that case at least one of the real numbers $a$ and $b$ must be non-zero, which means that $a^2+b^2>0$. We now first multiply the first equation of the system shown above by $a$ and the second equation by $b$ and add these to obtain
 
 $$
  0=a(ac-bd)+b(ad+bc)=\left(a^2+b^2\right)c.
 $$
 
-Since $a^2+b^2>0$ and $c$ is real, we must have $c=0$. Similarly, we multiply the first equation of {eq}`Eq:ComplexNumbers:zerodivisor` by $-b$ and the second one by $a$ and add them to obtain
+Since $a^2+b^2>0$ and $c$ is real, we must have $c=0$. Similarly, we multiply the first equation of the system shown above by $-b$ and the second one by $a$ and add them to obtain
 
 $$
  0=-b(ac-bd)+a(ad+bc)=\left(a^2+b^2\right)d.
@@ -893,7 +892,7 @@ Now we use the triangle inequality from {prf:ref}`Thm:ComplexNumbers:complextria
  &=\left|a_n\right||z|^n-\left|a_{n-1}\right||z|^{n-1}-....-\left|a_1\right||z|-\left|a_0\right|.
 \end{align*}
 
-Since $a_n\neq 0$, we see that the righthand-side of this inequality tends to $\infty$ as $|z|\rightarrow \infty$ (see {numref}`Section:Limitinf`). As such, there must exist some $R>0$ such that for all $z\in\mathbb{C}$ with $|z|\geq R$ we have
+Since $a_n\neq 0$, we see that the right-hand side of this inequality tends to $\infty$ as $|z|\rightarrow \infty$ (see {numref}`Section:Limitinf`). As such, there must exist some $R>0$ such that for all $z\in\mathbb{C}$ with $|z|\geq R$ we have
 
 $$
 |p(z)|> |p(0)|.
@@ -1117,32 +1116,23 @@ $$
 
 Assume $\{z_1,z_2,\ldots,z_k\}$ is the set of _distinct_ zeros of a polynomial $p$ of degree $n$. Then following {prf:ref}`Thm:ComplexNumbers:fundamental`, we can write
 
-:::{math}
-:label: Eq:ComplexNumbers:factorsb
-
+$$
 p(z) = a_n (z-b_1)(z-b_2) \cdots (z-b_n).
-
-:::
+$$
 
 for some complex numbers $b_1, b_2, \ldots, b_n$.
 
-Because $p(z_1)=0$, we must have that some non-zero number of elements of the set $\{b_1, b_2, \ldots, b_n\}$ must equal $z_1$. Without loss of generality we may assume those are $b_1,\ldots,b_{\alpha_1}$. This is also means that Equation {eq}`Eq:ComplexNumbers:factorsb` transforms to
+Because $p(z_1)=0$, we must have that some non-zero number of elements of the set $\{b_1, b_2, \ldots, b_n\}$ must equal $z_1$. Without loss of generality we may assume those are $b_1,\ldots,b_{\alpha_1}$. This is also means that $p(z)$ transforms to
 
-:::{math}
-:label: Eq:ComplexNumbers:factorsb1
-
+$$
 p(z) = a_n (z-z_1)^{\alpha_1}(z-b_{\alpha_1+1}) \cdots (z-b_n).
+$$
 
-:::
+We can repeat the above argument for $z_2$: we must have that some non-zero number of elements of the set $\{b_{\alpha_1+1}, \ldots, b_n\}$ must equal $z_2$. Without loss of generality we may assume those are $b_{\alpha_1+1},\ldots,b_{\alpha_1+\alpha_2}$. This is also means that $p(z)$ transforms further to
 
-We can repeat the above argument for $z_2$: we must have that some non-zero number of elements of the set $\{b_{\alpha_1+1}, \ldots, b_n\}$ must equal $z_2$. Without loss of generality we may assume those are $b_{\alpha_1+1},\ldots,b_{\alpha_1+\alpha_2}$. This is also means that Equation {eq}`Eq:ComplexNumbers:factorsb1` transforms to
-
-:::{math}
-:label: Eq:ComplexNumbers:factorsb2
-
+$$
 p(z) = a_n (z-z_1)^{\alpha_1}(z-z_2)^{\alpha_2}(z-b_{\alpha_1+\alpha_2+1}) \cdots (z-b_n).
-
-:::
+$$
 
 We can directly repeat this argument for $z_3,\ldots,z_{k-1}$. For $z_k$, we have seen that the set $\{b_1,\ldots,b_{a\alpha_1+\alpha_2+\dots+\alpha_{k-1}}\}$ is equal to the set $\{z_1,...,z_{k-1}\}$, while the remaining roots $b_{\alpha_1+\alpha_2+\dots+\alpha_{k-1}+1},\ldots,b_n$ are unequal to $z_j$ for $1\leq j\leq k-1$. Necessarily, all of these $n-\alpha_1-\alpha_2-....-\alpha_{k-1}$ remaining roots must be equal to $z_k$. Hence, we find
 
