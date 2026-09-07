@@ -447,6 +447,16 @@ $$
 as desired.
 ::::
 
+{prf:ref}`Thm:ComplexNumbers:complextriangle` is illustrated in {numref}`Fig:ComplexNumbers:complextriangle`.
+
+:::{applet}
+:url: calculus/complex_numbers/triangle_inequalities
+:name: Fig:ComplexNumbers:complextriangle
+:class: dark-light
+
+An illustration of {prf:ref}`Thm:ComplexNumbers:complextriangle`.
+:::
+
 ## Euler's formula
 
 Given that the polar coordinates of a complex number are so convenient and that the polar form $r\left(\cos(\theta) + i\sin(\theta)\right)$ is such a long expression to write down, we would like to have a simple way of representing the complex number with given modulus $r$ and argument $\theta$.
@@ -1238,16 +1248,14 @@ $$
  \left|z_n\right|=\left(\sqrt{1+\frac{\theta^2}{n^2}}\right)^n.
 $$
 
-We can see this also by plotting the points $1+\frac{i\theta}{n},\left(1+\frac{i\theta}{n}\right)^2,\cdots,\left(1+\frac{i\theta}{n}\right)^n$, as we did in {numref}`Fig:ComplexPolar:Sequence`. Nonetheless, we see in the plot that if $n$ decreases, the modulus of $\left(1+\frac{i\theta}{n}\right)^n$ tends towards $1$, while the argument tends towards $\theta$. 
+We can see this also by plotting the points $1+i\theta,\left(1+\frac{i\theta}{2}\right)^2,\ldots,\left(1+\frac{i\theta}{n}\right)^n$, as we did in {numref}`Fig:ComplexPolar:Sequence`. Nonetheless, we see in the plot that if $n$ decreases, the modulus of $\left(1+\frac{i\theta}{n}\right)^n$ tends towards $1$, while the argument tends towards $\theta$. 
 
-:::{figure} Images/Fig-ComplexPolar-Sequence.png
+:::{applet}
+:url: calculus/complex_numbers/a_sequence_for_Euler's_formula
 :name: Fig:ComplexPolar:Sequence
+:class: dark-light
 
-A plot of the complex numbers $1+\frac{i\theta}{n},\left(1+\frac{i\theta}{n}\right)^2,\cdots,\left(1+\frac{i\theta}{n}\right)^n$.
-:::
-
-:::{todo}
-Turn {numref}`Fig:ComplexPolar:Sequence` into an applet. Include a slider for $\theta\in(0,2\pi)$ and one for $n$.
+A plot of the complex numbers $\left(1+\frac{i\theta}{k}\right)^{k}$ for $k=1,2,\ldots,n$, for the selected $n$ and $\theta$. Use the _slider_ to change the value of $n$ to investigate the limit as $n\rightarrow\infty$ and the _pulsing point_ to change the value of $\theta$.
 :::
 
 To rigorously show that this definition gives rise to Euler's formula, we will prove that
@@ -1385,11 +1393,11 @@ As you can see we have arrived at Euler's formula.
 
 **An axiomatic approach**
 
-This approach assumes that the complex exponential satisfies certain defining properties which we will call axiomas. We then show that Euler's formula is the only one that satisfies all these axioma's. 
+This approach assumes that the complex exponential satisfies certain defining properties which we will call axioms. We then show that Euler's formula is the only one that satisfies all these axioms. 
 
 This approach uses the concept of the derivative of a complex-valued function, see {numref}`Chapter:Differentiation` for differentiation of real-valued functions.
 
-The axiomatic approach assumes that for each $\theta\in\mathbb{R}$ there exists a complex number $e^{i\theta}$ that satisfies the two axiomas:
+The axiomatic approach assumes that for each $\theta\in\mathbb{R}$ there exists a complex number $e^{i\theta}$ that satisfies the two axioms:
 
 (i) for any $\theta\in\mathbb{R}$ we have $\left|e^{i\theta}\right|=1$;
 
@@ -1397,13 +1405,13 @@ The axiomatic approach assumes that for each $\theta\in\mathbb{R}$ there exists 
 
 In addition, for the notation $e^{i\theta}$ to make any sense, we must have that $e^{i0}=e^0=1$.
 
-We now show that $e^{i\theta}$ must be equal to $\cos(\theta)+i\sin(\theta)$ in order for both of these axiomas to be satisfied. Since by axioma (i) $\left|e^{i\theta}\right|=1$ for each $\theta$, we can express the polar form of the complex number $e^{i\theta}$ as 
+We now show that $e^{i\theta}$ must be equal to $\cos(\theta)+i\sin(\theta)$ in order for both of these axioms to be satisfied. Since by axiom (i) $\left|e^{i\theta}\right|=1$ for each $\theta$, we can express the polar form of the complex number $e^{i\theta}$ as 
 
 $$
  e^{i\theta}=\cos\left(\alpha(\theta)\right)+i\sin\left(\alpha(\theta)\right)
 $$
 
-where $\alpha(\theta)=\arg\left(e^{i\theta}\right)$. It is important to realise that we did not assume that $\arg\left(e^{i\theta}\right)=\theta$. By axioma (ii) we have, using {prf:ref}`Thm:Chainrule:Chainrule`
+where $\alpha(\theta)=\arg\left(e^{i\theta}\right)$. It is important to realise that we did not assume that $\arg\left(e^{i\theta}\right)=\theta$. By axiom (ii) we have, using {prf:ref}`Thm:Chainrule:Chainrule`
 
 \begin{align*}
  ie^{i\theta}&=\dfrac{d}{d\theta}e^{i\theta}\\
@@ -1435,7 +1443,7 @@ $$
  e^{i\theta}=\cos(\theta+k2\pi)+i\sin(\theta+k2\pi)=\cos(\theta)+i\sin(\theta),
 $$
 
-which means that Euler's formula is the only function that satisfies these axiomas.
+which means that Euler's formula is the only function that satisfies these axioms.
 
 ## Grasple exercises
 
