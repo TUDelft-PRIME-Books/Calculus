@@ -1065,7 +1065,7 @@ $$
  p(z)=B(z-z_0)(z-z_1)\cdots(z-z_{n-1})
 $$
 
-for some complex numbers $B,z_2,\cdots,z_{n-1}$. If we write out the product on the right-hand side of the equation, we see that $B$ is the coefficient of $z^n$. This means that $B=a_n$, which gives the factorisation from the theorem.
+for some complex numbers $B,z_2,\ldots,z_{n-1}$. If we write out the product on the right-hand side of the equation, we see that $B$ is the coefficient of $z^n$. This means that $B=a_n$, which gives the factorisation from the theorem.
 ::::
 
 We will illustrate the theorem using some examples.
