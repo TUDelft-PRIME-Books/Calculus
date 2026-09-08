@@ -1004,7 +1004,7 @@ $$
  y(x)=A\cos(k x)+B\sin(k x).
 $$
 
-We note that $y(x)=0$ is a solution that satisfies both boundary conditions. An important question is whether there are values of $k>0$ for which other solutions exist.
+We note that $y(x)=0$ is a solution that satisfies both boundary conditions. This solution is often referred to as the **trivial solution** An important question is whether there are values of $k>0$ for which other solutions exist.
 
 Complete the following sentences:
 ---
@@ -1171,6 +1171,38 @@ The boundary condition at $x=0$ is a {gap} and the boundary condition at $x=\pi$
 :label: Grasple:75418
 :dropdown:
 :description: Combining solutions of different differential equations.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/38594edf-6c63-4a48-8434-701517debc66?id=136586
+:label: Grasple:136586
+:dropdown:
+:description: Solve a boundary-value problem. Use the general solution from {prf:ref}`Ex:Classdiff:secondordersol`.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/c36d796b-3498-4ed5-a8dc-fb57e7a28282?id=136587
+:label: Grasple:136587
+:dropdown:
+:description: Solve a boundary-value problem. Use the general solution from {prf:ref}`Ex:Classdiff:secondordersol`.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a06f0b1e-e63c-436c-be19-2fb3e99b8f3a?id=136591
+:label: Grasple:136591
+:dropdown:
+:description: Solve a boundary-value problem. Use the general solution from {prf:ref}`Ex:Classdiff:secondordersol`.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/4096612e-8854-4009-a88d-b84c25b16f83?id=136604
+:label: Grasple:136604
+:dropdown:
+:description: Solve a boundary-value problem. Use the general solution from {prf:ref}`Ex:Classdiff:secondordersol`.
 ::::::
 
 
