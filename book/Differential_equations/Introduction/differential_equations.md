@@ -307,7 +307,10 @@ For first-order differential equations we distinguish autonomous and non-autonom
 :label: Def:ClassDiff:Autonomous
 
 A first-order differential equation is called **autonomous** if it can be written as $F(y,y')=0$, so if the independent variable is not explicitly involved. Otherwise, the differential equation is called **non-autonomous**.
+
 ::::::
+
+
 
 Note that the *logistic equation* is an example of an autonomous differential equation. This equation will be solved in {numref}`Sec:ODE1:Separable`.
 
@@ -433,6 +436,49 @@ $$
 
 for some function $g$. As such, the differential equation $F(x,y,y',y'',\ldots,y^{(n)})=0$ is linear, as desired.
 :::
+
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+Consider the two differential equations
+
+$$
+ -6y'(t)+e^ty''(t)+t=0,\qquad (I)
+$$
+
+and
+
+$$
+ u'(x)+3u(x)u'(x)=0,\qquad (II).
+$$
+
+
+Complete the following sentences:
+---
+M[2]
+M[t]
+M[y]
+DS[linear and homogeneous;{linear and non-homogeneous};non-linear]
+M[1]
+M[x]
+M[u]
+DS[linear and homogeneous;linear and non-homogeneous;{non-linear}]
+^^^
+? :::{card}
+The order of differential equation (I) is {gap}. The independent variable in (I) is {gap}, while the dependent variable is {gap}. The differential equation (I) can be classified as {gap}.
+
+The order of differential equation (II) is {gap}. The independent variable in (II) is {gap}, while the dependent variable is {gap}. The differential equation (II) can be classified as {gap}.
+
+
+
+:::
+---
+
+::::
 
 In general, linear differential equations are much easier to solve than nonlinear differential equations. Especially for differential equations of order higher than one there is very limited theory for solving nonlinear differential equations. 
 
@@ -932,6 +978,52 @@ $$
 
 has a unique solution $y(x)=\alpha\cos(x\sqrt{2})+\dfrac{\beta-\alpha\cos(\pi\sqrt{2})}{\sin(\pi\sqrt{2})}\sin(x\sqrt{2})$.
 ::::::
+
+::::{question}
+:type: short-answer
+:variant: gaps
+:showanswer:
+:admonition:
+:class: question
+
+Consider the differential equation
+
+$$
+ y''(x)+k^2 y(x)=0
+$$
+
+together with the two boundary conditions
+
+$$
+ y(0)=0,y\left(\pi\right)=0.
+$$
+
+In this equation $k>0$ is a real parameter. This boundary-value problem arises naturally when solving some important partial differential equations such as the heat equation, the wave equation and the Laplace equation. Verify that the general solution of the differential equation (so without the boundary conditions) is given by 
+
+$$
+ y(x)=A\cos(k x)+B\sin(k x).
+$$
+
+We note that $y(x)=0$ is a solution that satisfies both boundary conditions. An important question is whether there are values of $k>0$ for which other solutions exist.
+
+Complete the following sentences:
+---
+DS[{Dirichlet boundary condition};Neumann boundary condition;Robin boundary condition]
+DS[{Dirichlet boundary condition};Neumann boundary condition;Robin boundary condition]
+M[A=0]
+DS[A;B;{k}]
+DS[A should be 0;A should be 1;B should be 0;B should be 1;k can be anything;{k should be a positive integer}]
+^^^
+? :::{card}
+The boundary condition at $x=0$ is a {gap} and the boundary condition at $x=\pi$ is a {gap}. In order to satisfy the boundary condition at $x=0$, we need to have {gap}. Afterwards, in order to ensure that $y\neq 0$ and the condition at $x=\pi$ is satisfied, we obtain a condition on the possible values of {gap}. In particular, we find that {gap}.
+
+= The condition $y(0)=0$ gives $A+0=0$, so we obtain $A=0$. Then condition $y(\pi)=0$ then gives $B\sin(k\pi)=0$. Since $B=0$ would give the solution $y=0$, we should not use that one. Instead, we need to have $\sin(k\pi)=0$, which gives $k\pi=n\pi$ for some integer $n\geq1$, which means $k=n$. So for these values of $k$, there exists a solution other than the solution $y=0$. These values of $k$ are exactly the values for which either a whole number of periods, or a whole number of periods and one half-period, of $\sin(k\pi)$ fit into the interval $(0,\pi)$, which ensures that it is $0$ at both endpoints. This is not the case for any other value of $k>0$.
+
+& The condition $y(0)=0$ gives $A+0=0$, so we obtain $A=0$. Then condition $y(\pi)=0$ then gives $B\sin(k\pi)=0$. Since $B=0$ would give the solution $y=0$, we should not use that one. Instead, we need to have $\sin(k\pi)=0$, which gives $k\pi=n\pi$ for some integer $n\geq1$, which means $k=n$. So for these values of $k$, there exists a solution other than the solution $y=0$. These values of $k$ are exactly the values for which either a whole number of periods, or a whole number of periods and one half-period, of $\sin(k\pi)$ fit into the interval $(0,\pi)$, which ensures that it is $0$ at both endpoints. This is not the case for any other value of $k>0$.
+:::
+---
+
+::::
 
 ## Grasple exercises
 
