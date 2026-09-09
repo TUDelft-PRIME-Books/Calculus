@@ -116,7 +116,7 @@ This approximation is called the _Trapezoidal rule_, since Equation {eq}`Eq:Appr
 An illustration of the Trapezoidal rule.
 ::::
 
-:::{admonition} Two more rules (bonus material)
+:::{admonition} Two more rules
 :class: bonus, dropdown
 
 **Midpoint rule**
@@ -297,7 +297,7 @@ $$
  I_T = \frac{h}{2} \sum_{k=1}^n (f(x_{k-1}) + f(x_k)) = h \left( \frac{1}{2} f(a) + f(a+h) + \ldots + f(b-h) + \frac{1}{2} f(b) \right).
 $$
 
-:::{admonition} Two more composite rules (bonus material)
+:::{admonition} Two more composite rules
 :class: bonus, dropdown, full-width
 
 **Midpoint rule**

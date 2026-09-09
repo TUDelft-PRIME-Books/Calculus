@@ -1439,8 +1439,8 @@ The cosine function where the solid part is the function on the interval $\left[
 ::::
 
 
-:::::::::{admonition} Bonus: more exercises on inverse trigonometric functions
-:class: bonus
+:::::::::{admonition} More exercises on inverse trigonometric functions
+:class: bonus, dropdown
 
 ::::{grasple}
 :iframeclass: dark-light

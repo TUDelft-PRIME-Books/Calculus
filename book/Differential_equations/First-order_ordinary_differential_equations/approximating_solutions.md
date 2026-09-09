@@ -676,7 +676,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 ## Additional material
 
 :::::::::{admonition} Modified Euler method
-:class: bonus
+:class: bonus, dropdown
 
 <!-- ### Modified Euler method -->
 
@@ -725,7 +725,7 @@ where $t_{n}=t_0+n\Delta t$.
 :::::::::
 
 :::::::::{admonition} Fourth-order method of Runge-Kutta (RK4 method)
-:class: bonus
+:class: bonus, dropdown
 Next, the fourth-order method of Runge-Kutta will be introduced. The RK4 method approximates the solution at $t_{n+1}$ by
 
 $$
