@@ -17,9 +17,9 @@ An **angle** is a measure for the amount of space between two half lines.
 
 Angles can be measured in degrees or in radians (abbreviated as $\operatorname{rad}$). The angle given by a complete revolution equals $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
 
-$$\pi\;\operatorname{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\operatorname{rad}.$$ 
+$$\pi\;\text{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\text{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\text{rad}.$$ 
 
-In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out "$\operatorname{rad}$".
+In calculus we use radians to measure angles except when otherwise indicated. Moreover, we leave out "$\text{rad}$".
 
 :::{note}
 In geography and navigation a degree is divided into $60$ minutes and a minute into $60$ seconds.
@@ -66,20 +66,16 @@ $$
 In astronomy and celestial navigation also so-called *hour angles* are used. Then a $24$ hour angle corresponds to $360^{\circ}$ or $2\pi$, which implies that $1$ hour equals $15^{\circ}$ or $\frac{1}{12}\pi$.
 :::
 
-:::{todo}
-Add a reference to the section on triple integrals in spherical coordinates. 
-:::
-
 :::{note}
 :name: Note:Trigonometry:Gradians
 In surveying, mining and geology angles are sometimes measured in *gradians* or *gons*. Then the angle given by a complete revolution equals $400^{g}$, which is the same as $2\pi$ rad. Therefore:
 
-$$\pi\;\operatorname{rad}=200^{\operatorname{g}}\quad\Longrightarrow\quad 1\;\operatorname{rad}=\left(\dfrac{200}{\pi}\right)^{\operatorname{g}}\quad\text{and}\quad 1^{\operatorname{g}}=\dfrac{\pi}{200}\;\operatorname{rad}.$$ 
+$$\pi\;\text{rad}=200^{\text{g}}\quad\Longrightarrow\quad 1\;\text{rad}=\left(\dfrac{200}{\pi}\right)^{\text{g}}\quad\text{and}\quad 1^{\text{g}}=\dfrac{\pi}{200}\;\text{rad}.$$ 
 
 We will not use these *gradians* or *gons* in this book.
 :::
 
-::::::{prf:remark} Angle between two half lines
+::::::{prf:definition} Angle between two half lines
 :label: Rem:Trigonometry:AngleBetweenTwoLines
 
 An angle between two intersecting half lines is always in $[0,\pi]$. An angle of $\frac{1}{2}\pi$ is called a **right angle**. An angle between $0$ and $\frac{1}{2}\pi$ is called **acute** and an angle between $\frac{1}{2}\pi$ and $\pi$ is called **obtuse**. An angle of $\pi$ is called a **stretched angle**.
@@ -99,16 +95,12 @@ A **positive angle** is obtained by rotating the initial side counterclockwise u
 
 {numref}`Fig:Trigonometry:Trig` shows an angle $\theta$ in standard position within the $xy$-plane.
 
-```{figure} Images/Fig-Trigonometry-Trig.png
----
-width: 65%
-name: Fig:Trigonometry:Trig
-class: dark-light
----
-An angle $\theta$ in the $xy$-plane in standard position.
-```
-:::{todo}
-Convert {numref}`Fig:Trigonometry:Trig` into an applet.
+:::{applet}
+:url: calculus/trigonometry/angle_in_standard_position
+:name: Fig:Trigonometry:Trig
+:class: dark-light
+
+An angle $\theta$ in the $xy$-plane in standard position. You can drag the _pulsing point_ to change the direction of the half line and with it the angle $\theta$.
 :::
 
 (Subsec:TrigonRatio)=
@@ -118,29 +110,25 @@ Using angles, we define three trigonometric ratios: the sine, the cosine and the
 
 We start with a right-angled triangle as shown in {numref}`Fig:Trigonometry:AcuteAngle`. Then for acute angles the trigonometric ratios can be described as ratios of the lengths of the sides of the triangle.
 
-```{figure} Images/Fig-Trigonometry-AcuteAngle.png
----
-width: 50%
-name: Fig:Trigonometry:AcuteAngle
-class: dark-light
----
-
-The trigonometric ratios for an acute angle.
-```
-:::{todo}
-Convert {numref}`Fig:Trigonometry:AcuteAngle` into an applet.
-:::
-
 ::::::{prf:definition}
 :label: Def:Trigonometry:TrigonometricRatiosTriangle
 
-If the sides of a triangle are labelled "opp" for the opposite side and "adj" for the adjacent side of the angle $\theta$ (as shown in {numref}`Fig:Trigonometry:AcuteAngle`) and "hyp" for the hypotenuse of the triangle, then we have:
+If the sides of a triangle are labelled "$\operatorname{opp}$" for the opposite side, "$\operatorname{adj}$" for the adjacent side of the angle $\theta$ and "$\operatorname{hyp}$" for the hypotenuse of the triangle (as shown in {numref}`Fig:Trigonometry:AcuteAngle`), then we have:
 
 - $\sin(\theta)=\dfrac{\operatorname{opp}}{\operatorname{hyp}}$;
 
 - $\cos(\theta)=\dfrac{\operatorname{adj}}{\operatorname{hyp}}$;
 
 - $\tan(\theta)=\dfrac{\operatorname{opp}}{\operatorname{adj}}$.
+
+
+:::{applet}
+:url: calculus/trigonometry/a_right-angled_triangle
+:name: Fig:Trigonometry:AcuteAngle
+:class: dark-light
+
+An acute angle $\theta$ in a right-angled triangle with the indicated names of the sides.
+:::
 
 ::::::
 
@@ -175,22 +163,16 @@ Then we define:
 
 If we take the point $P(x,y)$ on the **unit circle** (the circle with the origin as center and radius $r=1$, see {numref}`Fig:Trigonometry:UnitCircle`), we have $x=\cos(\theta)$ and $y=\sin(\theta)$.
 
-```{figure} Images/Fig-Trigonometry-UnitCircle.png
----
-width: 50%
-name: Fig:Trigonometry:UnitCircle
-class: dark-light
----
-The unit circle.
-```
-:::{todo}
-Convert {numref}`Fig:Trigonometry:UnitCircle` into an applet.
+:::{applet}
+:url: calculus/trigonometry/trigonometric_ratios_and_the_unit_circle
+:name: Fig:Trigonometry:UnitCircle
+:class: dark-light
+
+The unit circle and the three trigonometric ratios $\sin(\theta)$, $\cos(\theta)$ and $\tan(\theta)$. The tangent is shown on the so-called *tangent axis*, the vertical dashed line at $x=1$.
 :::
 
-The tangent is shown on the so-called *tangent axis*, the vertical line at $x=1$.
-
-::::::{prf:remark} Additional trigonometric ratios
-:label: Rem:Trigonometry:AlternativeTrigonometricRatios
+::::::{admonition} Additional trigonometric ratios
+:class: bonus, dropdown
 
 Next to the three trigonometric ratios defined above, there are three more trigonometric ratios, which are defined as follows: 
 
@@ -212,25 +194,21 @@ Next to the three trigonometric ratios defined above, there are three more trigo
 
   provided that $y\neq0$.
 
-However, in this book we will not use these three trigonometric ratios.
-
-::::::
+However, in this book we will not use these three additional trigonometric ratios.
 
 All six trigonometric ratios can be displayed in one picture:
 
-```{figure} Images/Fig-Trigonometry-TrigRatios.png
----
-width: 50%
-name: Fig:Trigonometry:TrigRatios
-class: dark-light
----
-The six trigonometric ratios.
-```
-:::{todo}
-Convert {numref}`Fig:Trigonometry:TrigRatios` into an applet.
+:::{applet}
+:url: calculus/trigonometry/six_trigonometric_ratios
+:name: Fig:Trigonometry:TrigRatios
+:class: dark-light
+:nonumber: 
 
-In the applet $\sin(\theta)$, $\cos(\theta)$, etc. should be used.
+The six trigonometric ratios. The value of each trigonometric ratio is the length of the line segment of the same color. 
 :::
+
+::::::
+
 
 Commonly powers of trigonometric ratios are used, such as $(\sin(\theta))^2$ and $(\cos(\theta))^3$. For brevity we will write these as $\sin^2(\theta)$ and $\cos^3(\theta)$, respectively, or more generally:
 
@@ -258,18 +236,12 @@ Before we proceed with properties of the sine, the cosine and the tangent we dea
 
 Let $AB$ be any *diameter* of a circle with center $M$, id est, $A$ and $B$ lie on the circle and $M$ lies on the line segment from $A$ to $B$ as shown in {numref}`Fig:Trigonometry:Thales`. Let $C$ be an arbitrary point on the circle not equal to $A$ or $B$.
 
-```{figure} Images/Fig-Trigonometry-Thales.png
----
-width: 50%
-name: Fig:Trigonometry:Thales
-class: dark-light
----
-An illustration for Thales's theorem.
-```
-:::{todo}
-Convert {numref}`Fig:Trigonometry:Thales` into an applet.
+:::{applet}
+:url: calculus/trigonometry/thales’s_theorem
+:name: Fig:Trigonometry:Thales
+:class: dark-light
 
-Ideally, an image with a rotatable line segment $AB$ through the centre and a freely movable point $C$ on one side (the top) along the circle between $A$ and $B$.
+An illustration for Thales's theorem.
 :::
 
 In {numref}`Fig:Trigonometry:Thales` you might notice that the angle $\angle ACB$ looks like a right angle. Thales's theorem states that this is indeed the case:
