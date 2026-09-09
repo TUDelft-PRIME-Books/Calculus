@@ -222,3 +222,19 @@ The method of variation of parameters, which can also be applied in cases were t
 :dropdown:
 :description: Find the general solution.
 ::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/5cc121e6-9b39-4a4a-8d04-604b9ae8279f?id=136589
+:label: Grasple:136589
+:dropdown:
+:description: Solve a boundary-value problem. 
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/09f81609-fa7a-4c09-bbb4-6878f81486ad?id=136590
+:label: Grasple:136590
+:dropdown:
+:description: Solve a boundary-value problem. 
+::::::
