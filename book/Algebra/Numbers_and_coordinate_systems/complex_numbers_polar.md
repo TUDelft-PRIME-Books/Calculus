@@ -1157,7 +1157,7 @@ y(0) & = & 1.
 \end{array}\right.
 $$
 
-Because we want the $e^{i\theta}$ to behave like its real counterpart and because we assumed that $i$ behaves like any other number, we can solve this initial value problem, which leads to the solution
+Because we want the $e^{i\theta}$ to behave like its real counterpart and because we assumed that $i$ behaves like any other number, we must have that the solution of {eq}`Eq:ComplexNumbers:exp_de` is given by
 
 :::{math}
 :label: Eq:ComplexNumbers:exp_sol
