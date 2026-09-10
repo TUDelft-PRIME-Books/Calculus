@@ -1184,6 +1184,38 @@ $$
 :description: Solve the initial-value problem.
 ::::::
 
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/ebc23434-b513-431e-b220-3de4efd785b0?id=136594
+:label: Grasple:136594
+:dropdown:
+:description: Solve the boundary-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/e2f2de74-8c65-40dc-b153-ee6e6ec599ba?id=136611
+:label: Grasple:136611
+:dropdown:
+:description: Find nontrivial (i.e. nonzero) solutions to a boundary-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/8a369a73-6474-490e-95b4-d3115587a048?id=136598
+:label: Grasple:136598
+:dropdown:
+:description: Find nontrivial (i.e. nonzero) solutions to a boundary-value problem.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/60e941b6-cf2f-49b7-9c87-502b3df75979?id=136608
+:label: Grasple:136608
+:dropdown:
+:description: Find nontrivial (i.e. nonzero) solutions to a boundary-value problem.
+::::::
+
 
 
 ::::::{grasple}
@@ -1264,4 +1296,12 @@ $$
 :label: Grasple:79429
 :dropdown:
 :description: Application: Electrical circuit.
+::::::
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/a09ea4d4-d6ab-4148-b506-0aef8e453114?id=136612
+:label: Grasple:136612
+:dropdown:
+:description: Application: Loaded beam.
 ::::::
