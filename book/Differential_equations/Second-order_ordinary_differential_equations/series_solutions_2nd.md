@@ -130,8 +130,8 @@ Here $x=0$ is a so-called *singular point* of the differential equation. In this
 
 Sometimes it is even impossible to find power series solutions. As an example we mention the Bessel differential equation of order $\pm\frac{1}{2}$.
 
-:::::{admonition} The Bessel differential equation of order $\pm\frac{1}{2}$ (bonus material)
-:class: solution, dropdown
+:::::{admonition} The Bessel differential equation of order $\pm\frac{1}{2}$
+:class: bonus, dropdown
 The Bessel differential equation of order $\pm\frac{1}{2}$ reads
 
 :::{math}

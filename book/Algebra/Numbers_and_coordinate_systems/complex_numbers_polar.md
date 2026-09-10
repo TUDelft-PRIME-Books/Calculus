@@ -660,7 +660,7 @@ $$
 Not all properties of the real exponential can be lifted to the complex exponential. For instance, since there are no inequalities in $\mathbb{C}$, there is no equivalent for the rule "If $p<q$ then $e^p<e^q$." In addition, there is no equivalent to the rule " $\left(e^p\right)^q=e^{pq}$ " since $\left(e^z\right)^w$ is undefined when $z$ and $w$ are both non-real.
 :::
 
-:::::::::{admonition} Bonus: derivative of the complex exponential
+:::::::::{admonition} Derivative of the complex exponential
 :class: bonus, dropdown
 
 If you already know about functions, you can think of the expression $f(\theta)= e^{i\theta}$ as a complex-valued function. A complex-valued function $f$ can be written as $f=g+ih$, where $g$ and $h$ are real-valued functions. When $g$ and $h$ are differentiable, we can define the derivative of $f$ as 
