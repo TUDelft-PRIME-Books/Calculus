@@ -532,7 +532,7 @@ as well. Hence, we have
 
 :::::
 
-:::::{admonition} Bonus material: Another approach to Serret's integral
+:::::{admonition} Another approach to Serret's integral
 :class: dropdown, bonus
 
 In {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we evaluated *Serret's integral* $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$ using substitution and in {prf:ref}`Ex:Integration:IntegrationByPartsSerretsIntegral` we used integration by parts to obtain another form of the same integral. Here we use another approach to obtain the results in Equation {eq}`Eq:Integration:PartsSerret`.
