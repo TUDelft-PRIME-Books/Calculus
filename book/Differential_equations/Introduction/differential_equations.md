@@ -314,7 +314,7 @@ A first-order differential equation is called **autonomous** if it can be writte
 
 Note that the *logistic equation* is an example of an autonomous differential equation. This equation will be solved in {numref}`Sec:ODE1:Separable`.
 
-Usually, it is directly visible whether a differential equation is autonomous or not, but it is sometimes useful to use the following criterion.
+Usually, it is directly visible whether a differential equation is autonomous or not, but it is sometimes useful to use the following criterion, which uses partial derivatives (see {numref}`Sec:PartialDerivatives`).
 
 ::::::{prf:theorem}
 :label: Thm:ClassDiff:Autonomous
@@ -1004,7 +1004,7 @@ $$
  y(x)=A\cos(k x)+B\sin(k x).
 $$
 
-We note that $y(x)=0$ is a solution that satisfies both boundary conditions. This solution is often referred to as the **trivial solution** An important question is whether there are values of $k>0$ for which other solutions exist.
+We note that $y(x)=0$ is a solution that satisfies both boundary conditions. This solution is often referred to as the **trivial solution**. An important question is whether there are values of $k>0$ for which other solutions exist. A value of $k$ for which a nontrivial solution (i.e. a solution that is not zero) exists, is called an **eigenvalue**, and the corresponding solution is called an **eigenfunction**.
 
 Complete the following sentences:
 ---
@@ -1012,7 +1012,7 @@ DS[{Dirichlet boundary condition};Neumann boundary condition;Robin boundary cond
 DS[{Dirichlet boundary condition};Neumann boundary condition;Robin boundary condition]
 M[A=0]
 DS[A;B;{k}]
-DS[A should be 0;A should be 1;B should be 0;B should be 1;k can be anything;{k should be a positive integer}]
+DS[A should be 0;A should be 1;B should be 0;B should be 1;k should be an integer multiple of π;{k should be a positive integer};something else]
 ^^^
 ? :::{card}
 The boundary condition at $x=0$ is a {gap} and the boundary condition at $x=\pi$ is a {gap}. In order to satisfy the boundary condition at $x=0$, we need to have {gap}. Afterwards, in order to ensure that $y\neq 0$ and the condition at $x=\pi$ is satisfied, we obtain a condition on the possible values of {gap}. In particular, we find that {gap}.

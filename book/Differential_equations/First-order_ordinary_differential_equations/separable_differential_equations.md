@@ -2,36 +2,184 @@
 
 # Separable differential equations
 
-In this section we cover:
+## Introduction
 
-- Separable differential equations
-- Algorithmic check
-- Link with first-order linear differential equations, same example?
+[^FootnoteInt]: It might happen that when solving the equation we obtain an integral that we cannot evaluate by hand.
 
-In {numref}`Sec:DE:Intro` we mentioned that differential equations can only be solved when they have a specific form. In this subsection we consider differential equations which are *separable*.
+In {numref}`Sec:DE:Intro` we mentioned that differential equations can only be solved when they have a specific form. In this section we consider a class of first-order differential equations called **separable differential equations**. For these differential equations, it turns out to always[^FootnoteInt] be possible to find an implicit solution, though it is not always possible to turn this into an explicit solution. 
+
+## Solving separable differential equations
 
 ::::::{prf:Definition}
-A first-order differential equation is called **separable** if it can be written in the form:
+A first-order differential equation is called **separable** if it can be written in the form
 
 $$
-\frac{dy}{dx}=f(x)g(y).
+\frac{dy}{dx}=f(x)g(y)
 $$
+
+for some functions $f$ and $g$ that are both defined and continuous on some open interval $I$.
 
 ::::::
+That is, a first-order differential equation is separable if the right-hand side can be written as the product of a part that only depends on $x$ and a part that only depends on $y$.
 
-If $g(y)\neq0$, then this can be written as
+Often, the quickest way to see that a differential equation is separable is to write it into the correct form. Of course, if you cannot figure out how to do this for a certain first-order differentiable equation it might very well be possible that the differential equation is not separable, but it might also be the case that you simply do not 'see' the right functions $f$ and $g$. If you want to make sure that a differential equation is not separable, you can use the following criterion, which uses partial derivatives (see {numref}`Sec:PartialDerivatives`).
+
+::::::{prf:theorem}
+:label: Thm:DiffSep:CheckSep
+Consider a first-order differential equation 
 
 $$
-\frac{dy}{dx}=f(x)g(y)=\frac{f(x)}{h(y)}\quad\text{with}\quad h(y)=\frac{1}{g(y)}.
+ \frac{dy}{dx}=F(x,y)
 $$
 
-Then we have
+and suppose that $F$ and its first and second partial derivatives are continuous. Then the differential equation is separable if, and only if, we have
 
 $$
-h(y)\,dy=f(x)\,dx\quad\Longrightarrow\quad\int h(y)\,dy=\int f(x)\,dx.
+ FF_{xy}-F_xF_y=0.
+$$
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:DiffSep:CheckSep`
+:class: tudproof, dropdown
+Suppose that the differential equation is separable, which means that we can write $F(x,y)=f(x)g(y)$. Then we obtain
+
+$$
+ FF_{xy}-F_xF_y=\left(f(x)g(y)\right)\left(f'(x)g'(y)\right)-\left(f'(x)g(y)\right)\left(f(x)g'(y)\right)=0.
 $$
 
-This equation defines $y$ implicitly as a function of $x$.
+On the other hand, suppose that $FF_{xy}-F_xF_y=0$. Let $R$ be any connected subset of the domain of $F$ such that $F(x,y)\neq 0$ for all $(x,y)\in R$. On $R$, we define the function
+
+$$
+ G(x,y)=\ln|F(x,y)|.
+$$
+
+Using {prf:ref}`Thm:Diffinverse:Logdiff` we obtain
+
+$$
+ G_x=\frac{F_x}{F}.
+$$
+
+In addition, we obtain using the quotient rule and our assumption $FF_{xy}-F_xF_y=0$ that
+
+$$
+ G_{xy}=\frac{FF_{xy}-F_xF_y}{F^2}=0.
+$$
+
+Since $R$ is connected, we find that
+
+$$
+ G_x=a(x)
+$$
+
+for some function $a$. Integrating this equation with respect to $x$, we find
+
+$$
+ G(x,y)=\int a(x)\,dx=A(x)+B(y)
+$$
+
+for some continuous functions $A$ and $B$. Taking the exponent of this expression, we find
+
+$$
+ |F(x,y)|=e^{G(x,y)}=e^{A(x)}e^{B(y)}.
+$$
+
+Since $S$ is connected, $F\neq 0$ on $R$ and $F$ is continuous, the sign of $F$ is constant on $R$, so we obtain
+
+$$
+ F(x,y)=e^{A(x)}e^{B(y)},\qquad\text{or}\qquad F(x,y)=-e^{A(x)}e^{B(y)}.
+$$
+
+In both cases, we have $F(x,y)=f(x)g(y)$ for some continuous functions $f$ and $g$ for $(x,y)\in R$. With this, we have defined the functions $f$ and $g$ on the set
+
+$$
+ S=\left\{(x,y)\in\mathbb{R}^2\,\middle|\,F(x,y)\neq 0\right\}.
+$$
+
+Since $f$ and $g$ are continuous on each connected component of $S$, they are continuous on $S$.
+
+We now only need to show that these functions can be extended continuously to the full domain of $F$. Let $(x_0,y_0)$ in the domain of $F$ with $F(x_0,y_0)=0$. If there is an open neighbourhood of $(x_0,y_0)$ on which $F$ is identically $0$, we can extende $X$ and and $Y$ to be $0$ on this neighbourhood and they will be continuous there. So we assume that for any neighbourhood of $(x_0,y_0)$ the function $F$ is not identically $0$. Let $(a,b)$ be any point in $S$. Then we note that for any $(x,y)$ in $S$ we have
+
+$$
+ F(x,b)\frac{F(a,y)}{F(a,b)}=\frac{F(x,b)F(a,y)}{F(a,b)}=\frac{f(x)g(b)f(a)g(y)}{f(a)f(b)}=f(x)g(y).
+$$
+
+This means that on $S$ we have
+
+$$
+ f(x)=F(x,b),\qquad g(y)=\frac{F(a,y)}{F(a,b)}.
+$$
+
+Since $F$ is continuous, we see that we can extend $f$ and $g$ continuously to the domain of $F$.
+
+:::
+
+::::::{prf:example} 
+:label: Ex:DiffSep:SepCheck1
+Consider the differential equation
+
+$$
+ \frac{dy}{dx}=e^{x+2y}.
+$$
+
+Even though this equation is not in the correct form yet, it is separable, since we can write
+
+$$
+ \frac{dy}{dx}=e^{x+2y}=e^xe^{2y}.
+$$
+::::::
+
+::::::{prf:example} 
+:label: Ex:DiffSep:SepCheck2
+Consider the differential equation
+
+$$
+ y'=t+y.
+$$
+
+Although we clearly see a part that only depends on $t$ and a part that only depends on $y$, this equation is not separable. In order for it to be separable, the right-hand side of the equation needs to be a product of a part that only depends on $t$ and a part that only depends on $y$, while here we see a sum. We can manipulate this equation all we want, it is not possible to bring it into the correct form.
+
+To be absolutely sure that cannot be written in the correct form, we use {prf:ref}`Thm:DiffSep:CheckSep`. Writing $F(t,y)=t+y$, we see that
+
+$$
+ FF_{ty}-F_tF_y=(t+y)\cdot 0-1\cdot 1\neq 0,
+$$
+
+which means that the differential equation is not separable, as we suspected already.
+::::::
+
+Now the main question arises: how should we solve a separable differential equation? For this, we consider the separable differential equation
+
+$$
+ \frac{dy}{dx}=f(x)g(y).
+$$
+
+If $g(y)\neq0$, then this equation can be written as
+
+$$
+\frac{dy}{dx}=f(x)g(y)=\frac{f(x)}{h(y)},
+$$
+
+where
+
+$$
+ h(y)=\frac{1}{g(y)}.
+$$
+
+[^FootnoteJust]: If you are slightly panicking right now, do not worry; we will give a formal justification soon.
+
+We have seen that $\dfrac{dy}{dx}$ is simply a notation for the derivative and should *not* be interpreted as a fraction. For now, let us pretend that we did not know this, and treat $\dfrac{dy}{dx}$ as an actual fraction.[^FootnoteJust] This means that we can bring all the terms that depend on $y$ to the left-hand side of the equation, and all the terms that depend on $x$, *including* $dx$, to the right-hand side of the equation. We then obtain.
+
+$$
+h(y)\,dy=f(x)\,dx.
+$$
+
+This way we have *separated* the differential equation, in the sense that the left-hand side of the equation only depends on $y$, while the right-hand side of the equation only depends on $x$. The next step suggest even more than the previous one that we have let go of all pretention of mathematical rigor: we place an integral symbol before both parts of the equation to obtain
+
+$$
+ \int h(y)\,dy=\int f(x)\,dx
+$$
+
+Fortunately, this resulting equation makes sense mathematically. The following theorem shows that, even though some steps in this derivation can feel a bit iffy, the resulting equation defines $y$ implicitly as a function of $x$, which means that we have obtained an implicit solution of the differential equation.
 
 ::::::{prf:Example}
 The differential equation $\displaystyle\frac{dy}{dx}=\frac{x}{y}$ with $y\neq0$ is separable:
