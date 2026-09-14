@@ -385,7 +385,7 @@ $$
 
 **Mixing problems**
 
-
+A common application 
 
 ::::::{prf:example}
 :label: Ex:ODE1:MixingProblemExample1
@@ -795,16 +795,21 @@ we find that $h$ also satisfies the differential equation at the moment the tank
 ::::::
 
 
-### Orthogonality of curves
+### Orthogonality of families of curves
 
+We know from {prf:ref}`Thm:Differentiability:Orthot` that the graphs of two functions that intersect in a certain point are orthogonal precisely when the product of their derivatives is $-1$. We can use this fact to find a curve that is orthogonal to a given family of curves. For this, we will need to solve a separable differential equation.
 
+::::::{prf:Example}
+:label: Ex:DiffSep:orthogonal
 
+::::::
 
 ### A family of improper integrals
 
 The following example shows that seemingly unrelated mathematical problems can sometimes be reduced to solving a differential equation.
 
 ::::::{prf:Example}
+:label: Ex:DiffSep:improper
 For each $t\in\mathbb{R}$ we consider the improper integral
 
 $$

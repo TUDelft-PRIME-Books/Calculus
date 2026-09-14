@@ -370,6 +370,45 @@ The derivative of a differentiable function does not need to be continuous[^Foot
 A function $f$ is called **continuously differentiable** if it is differentiable and the derivative $f'$ is continuous.
 ::::::
 
+In {numref}`Sec:LinesAndPlanes` we studied when two lines are orthogonal. Using derivatives, we can determine when the graphs of two functions are orthogonal at a certain point. For that, we first need to define what we mean by orthogonality of two curves.
+
+::::::{prf:definition} 
+:label: Def:Differentiability:Ortho
+Let $f$ and $g$ functions that are both differentiable at $a$ with $f(a)=g(a)$. Then we say that the graphs of $f$ and $g$ are **orthogonal** or **perpendicular** at $a$, when the tangent lines of $f$ and $g$ at $a$ are orthogonal.
+
+If $f$ is not differentiable, but, instead, has a vertical tangent line at $a$, and $g$ has a horizontal tangent line at $a$, then we also say that the graphs of $f$ and $g$ are **orthogonal** or **perpendicular** at $a$.
+::::::
+
+::::::{prf:theorem} 
+:label: Thm:Differentiability:Ortho
+Let $f$ and $g$ functions that are both differentiable at $a$ with $f(a)=g(a)$. Then the graphs of $f$ and $g$ are orthogonal at $a$ if, and only if, 
+
+$$
+ f'(a)g'(a)=1.
+$$
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Differentiability:Orthot`
+:class: tudproof, dropdown
+Since $f'(a)$ is the slope of the tangent line, the vector $\begin{pmatrix}1\\ f'(a)\end{pmatrix}$ is a direction vector for this tangent line. Similarly, the vector $\begin{pmatrix}1\\ g'(a)\end{pmatrix}$ is a direction vector of the tangent line of $g$ at $a$. From {numref}`Sec:LinesAndPlanes` we know that two lines are orthogonal precisely when their direction vectors are orthogonal, which happens, by definition, precisely when their dot product is equal to $0$. We find that the tangent lines are orthogonal if and only if
+
+$$
+ 0=\begin{pmatrix}1\\ f'(a)\end{pmatrix}\cdot \begin{pmatrix}1\\ g'(a)\end{pmatrix}=1+f'(a)g'(a),
+$$
+
+which is the case if, and only if,
+
+$$
+ f'(a)g'(a)=-1,
+$$
+
+as desired.
+:::
+
+:::{todo}
+Maak een applet waarbij we functies van twee ongespecificeerde functies f en g zien die elkaar snijden in een punt a, samen met de twee raaklijnen. De hellingen $f'(a)$ en $g'(a)$ moeten te veranderen zijn met een schuifje. Er verschijnt een loodrecht-symbool tussen de twee raaklijnen zodra het product van de hellingen $-1$ is.
+:::
+
 Before we go over to computing derivatives, we need to introduce on more concept.
 
 [^infinitesimal]: An infinitesimal change is a change that is so small that it cannot be measured, so it is an infinitely small change.
