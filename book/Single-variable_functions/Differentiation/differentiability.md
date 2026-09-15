@@ -388,7 +388,7 @@ $$
 $$
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:Differentiability:Orthot`
+:::{admonition} Proof of {prf:ref}`Thm:Differentiability:Ortho`
 :class: tudproof, dropdown
 Since $f'(a)$ is the slope of the tangent line, the vector $\begin{pmatrix}1\\ f'(a)\end{pmatrix}$ is a direction vector for this tangent line. Similarly, the vector $\begin{pmatrix}1\\ g'(a)\end{pmatrix}$ is a direction vector of the tangent line of $g$ at $a$. From {numref}`Sec:LinesAndPlanes` we know that two lines are orthogonal precisely when their direction vectors are orthogonal, which happens, by definition, precisely when their dot product is equal to $0$. We find that the tangent lines are orthogonal if and only if
 

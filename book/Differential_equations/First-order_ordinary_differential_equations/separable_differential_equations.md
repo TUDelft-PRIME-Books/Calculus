@@ -240,7 +240,11 @@ Consider the separable differential equation $\dfrac{dy}{dx}=f(x)g(y)$.
 
 ::::::{prf:Example}
 :label: Ex:DiffSep:yoverx
-The differential equation $\displaystyle\frac{dy}{dx}=\frac{y}{x}$ with $x>0$ is separable, as it is of the form $\dfrac{dy}{dx}=f(x)g(y)$ with $f(x)=\dfrac{1}{x}$ and $g(y)=y$. We apply {prf:ref}`Alg:DiffSep:SolvingAlgorithm` to solve this differential equation. Note that $y=0$ is the only equilibrium solution. For $y\neq0$ we have
+The differential equation $\displaystyle\frac{dy}{dx}=\frac{y}{x}$ with $x\neq 0$ is separable, as it is of the form $\dfrac{dy}{dx}=f(x)g(y)$ with $f(x)=\dfrac{1}{x}$ and $g(y)=y$. 
+
+We apply {prf:ref}`Alg:DiffSep:SolvingAlgorithm` to solve this differential equation. Note that $y=0$ is the only equilibrium solution. 
+
+First we assume that $x>0$. For $y\neq0$ we have
 
 $$
 \frac{1}{y}\,dy=\frac{1}{x}\,dx.
@@ -269,6 +273,8 @@ $$
 since we assumed that $x>0$. This means that $y(x)=e^Cx$ or $y(x)=-e^Cx$. Since $C$ is an arbitrary constant, $e^C$ can be any positive real number. This means that we can combine these two sets of solutions to see that $y(x)=Kx$ for $K\neq 0$ is a solution of the differential equation. 
 
 Since $y=0$ is a solution as well (it is an equilibrium solution and we found it before separating the differential equation), this implies that the general solution is $y=Kx$ with $K\in\mathbb{R}$.
+
+By repeating this procedure, we find that general solution for $x<0$ is also given by $y=Kx$ with $K\in\mathbb{R}$.
 ::::::
 
 ::::::{prf:Example}
@@ -385,26 +391,38 @@ $$
 
 **Mixing problems**
 
-A common application 
+A natural application where first-order differential equations arise, is when dealing with so-called mixing problems. These problems usually involve a large tank of water, in which a certain substance is dissolved (e.g. salt or detergent). Water then enters with a different concentration of this substance. The water in the tank is assumed to be continuously mixed at all times, so that all the water in the tank has the same concentration at a certain moment in time. Usually, water from the tank also leaves at a certain rate. The mass of the product that is dissolved in the tank then satisfies a first-order differential equation. This differential equation is not always separable, but it will be when the rate at which the water flows into the tank is the same as the rate at which it flows out of the tank, so that the volume of water in the tank is constant. Let us consider some examples to see how this works in practice.
 
 ::::::{prf:example}
 :label: Ex:ODE1:MixingProblemExample1
-A tank contains $100\;\text{g}$ salt dissolved in $250\;\ell$ water. This solution is kept thoroughly mixed and drains from the tank at a rate of $5\;\ell/\text{min}$. Simultaneously, brine with a concentration of $10\;\text{g}/\ell$ enters the tank at the same rate of $5\;\ell/\text{min}$. After how many minutes is the amount of salt in the tank equal to $1300\;\text{g}$?
-::::::
+Suppose that a tank contains $100\;\text{g}$ salt dissolved in $250\;\text{L}$ water. This solution is kept thoroughly mixed and drains from the tank at a rate of $5\;\text{L}/\text{min}$. Simultaneously, brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$. Let us see if we can figure out after how many minutes the amount of salt in the tank is equal to $1300\;\text{g}$.
 
-::::::{admonition} Solution
-Let $y(t)$ denote the amount of salt (in 
-) in the tank at time $t$ (in $\text{min}$). Then we have: $y(0)=100$ (initial condition) and $\displaystyle\frac{dy}{dt}=50−\frac{y}{50}$. This differential equation is separable. Note that 
- is a (constant) solution of this differential equation. For $y(t)\neq2500$ we have:
+[^Footnoteunits]: As an extra check, you can see that the units are what they need to be: the unit of $\dfrac{dy}{dt}$ is $\text{g}/\text{min}$, so the rate at which the water enters should have this unit as well. Here, we multiply $10\;\text{g}/\text{L}$ by $5\;\text{L}/\text{min}$, which, indeed, gives a quantity of which the unit is $\text{g}/\text{min}$.
+
+Let $y(t)$ denote the amount of salt (in $\text{g}$) in the tank at time $t$ (in $\text{min}$). We want to set up a differential equation for $y$. Since $\dfrac{dy}{dt}$ represent the rate at which the amount of salt changes, this $\dfrac{dy}{dt}$ must be given by the rate at which salt enters the tank, minus the rate at which salt leaves the tank. We know that brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$, which means that the rate at which the salt comes in equals $10\cdot 5=50\;\text{g}/\text{min}$.[^Footnoteunits] 
+
+For the rate at which salt leaves the tank, we recall that the water drains at a rate of $5\;\text{L}/\text{min}$. The concentration of the water that drains is *not* constant. It is equal to the concentration of the water of the tank, which by definition is the amount of salt divided by the amout of litres in the tank, i.e. it is $\frac{y(t)}{250}\;\text{g}/\text{min}$. We obtain the differential equation
 
 $$
-\frac{dy}{dt}=\frac{2500-y}{50}\quad\Longleftrightarrow\quad\frac{dy}{2500-y}=\frac{dt}{50}.
+ \frac{dy}{dt}=\text{"rate in"}-\text{"rate out"}=50-\frac{y(t)}{250}.
+$$
+
+In addition, the tank contains $100\;\text{g}$ salt at $t=0$, so we obtian the initial condition $y(0)=100$. The differential equation is separable. Note that $y=2500$ is the only equilibrium solution of this differential equation. For $y(t)\neq2500$ we can separate the terms to obtain
+
+$$
+\frac{dy}{2500-y}=\frac{dt}{50}.
 $$
 
 Integration now leads to
 
 $$
-\int\frac{dy}{2500-y}=\int\frac{dt}{50}\quad\Longleftrightarrow\quad-\ln|2500-y|=\frac{1}{50}t+C.
+\int\frac{dy}{2500-y}=\int\frac{dt}{50},
+$$
+
+which gives 
+
+$$
+ -\ln|2500-y|=\frac{1}{50}t+C.
 $$
 
 This implies that
@@ -413,40 +431,68 @@ $$
 2500-y(t)=\pm e^{-\frac{1}{50}t-C}=\pm e^{-C}\cdot e^{-\frac{1}{50}t}.
 $$
 
-Note that $\pm e^{-C}$ is an arbitrary positive or negative constant. If we replace this by an arbitrary constant $K$ we retrieve the "lost" constant solution $y(t)=2500$: $y(t)=2500-Ke^{-\frac{1}{50}t}$. Finally, the initial condition $y(0)=100$ leads to $K=2400$.
-
-So the solution of the initial-value problem is $y(t)=2500-2400e^{-\frac{1}{50}t}$.
-
-Now we are able to answer the question:
+Note that $\pm e^{-C}$ is an arbitrary positive or negative constant. If we combine these solutions with the equilibrium solution $y(t)=2500$, we can replace $\pm e^{-C}$ by an arbitrary constant $K$, i.e. we have 
 
 $$
-y(t)=1300\quad\Longleftrightarrow\quad e^{-\frac{1}{5}t}=\tfrac{1}{2}\quad\Longleftrightarrow\quad t=50\ln(2),
+ y(t)=2500-Ke^{-\frac{1}{50}t}
 $$
 
-which implies that after $50\ln(2)\approx35$ minutes the amount of salt in the tank will be $1300\;\text{g}$. It is easy to check that
+for $K\in\mathbb{R}$. 
+
+Finally, the initial condition $y(0)=100$ leads to $K=2400$. So the solution of the initial-value problem is 
 
 $$
-y(50\ln(2))=2500-2400e^{-\ln(2)}=2500-1200=1300.
+ y(t)=2500-2400e^{-\frac{1}{50}t}.
 $$
+
+Now we are able to answer how long it takes for the amount of salt in the tank to reach $1300\;\text{g}$: we solve $y(t)=1300$, which gives
+
+$$
+e^{-\frac{1}{5}t}=\tfrac{1}{2},
+$$
+
+from which we obtain
+
+$$
+t=50\ln(2).
+$$
+
+This implies that after $50\ln(2)\approx35$ minutes the amount of salt in the tank will be $1300\;\text{g}$.
 
 ::::::
 
 ::::::{prf:example}
 :label: Ex:ODE1:MixingProblemExample2
-A tank contains $100\;\ell$ beer with $5\%$ alcohol. Beer with $7\%$ alcohol is pumped into the tank at a rate of $1\;\ell/\text{min}$. The fluid in the tank is kept thoroughly mixed and drains from the tank at a rate of $1\;\ell/\text{min}$. What is the alcohol percentage of the beer in the tank after $1$ hour ($60$ minutes)?
-::::::
+Suppose that a tank contains $100\;\text{L}$ beer with $5\%$ alcohol. Beer with $7\%$ alcohol is pumped into the tank at a rate of $1\;\text{L}/\text{min}$. The fluid in the tank is kept thoroughly mixed and drains from the tank at a rate of $1\;\text{L}/\text{min}$. Let us try to find the alcohol percentage of the beer in the tank after $1$ hour ($60$ minutes).
 
-::::::{admonition} Solution
-Let $y(t)$ denote the amount of alcohol (in $\ell$) in the tank at time $t$ (in $\text{min}$). Then we have: $y(0)=5$ (initial condition) and $\displaystyle\frac{dy}{dt}=\frac{7}{100}-\frac{y}{100}$. This differential is separable. Note that $y(t)=7$ is a (constant) solution of this differential equation. For $y(t)\neq7$ we have:
+Let $y(t)$ denote the amount of alcohol (in $\text{L}$) in the tank at time $t$ (in $\text{min}$). Since the tank initially contains $100\;\text{L}$ beer with $5\%$ alcohol, we find that
 
 $$
-\frac{dy}{dt}=\frac{7-y}{100}\quad\Longleftrightarrow\quad\frac{dy}{7-y}=\frac{dt}{100}. 
+ y(0)=0.05\cdot 100=5.
+$$
+
+In order to find the differential equation for $y(t)$, we notice that rate at which the alcohol enters the tank is $0.07\cdot 1=\dfrac{7}{100}\;\text{L}/\text{min}$. The rate at which the alcohol leaves the tank is $1\;\text{L}/\text{min}$ times the concentration of alcohol that leaves the tank, i.e. it is $1\cdot \dfrac{y}{100}=\dfrac{y}{100}\;\text{L}/\text{min}$. Hence, $y$ must satisfy the initial-value problem
+
+$$
+ \frac{dy}{dt}=\frac{7}{100}-\frac{y}{100},\quad y(0)=5.
+$$
+
+This differential is separable. Note that $y(t)=7$ is a (constant) solution of this differential equation. For $y(t)\neq7$ we can separate the terms to obtain
+
+$$
+\frac{dy}{7-y}=\frac{dt}{100}. 
 $$
 
 Integration now leads to
 
 $$
-\int\frac{dy}{7-y}=\int\frac{dt}{100}\quad\Longleftrightarrow\quad-\ln|7-y|=\frac{1}{100}t+C. 
+\int\frac{dy}{7-y}=\int\frac{dt}{100},
+$$
+
+which gives
+
+$$
+ -\ln|7-y|=\frac{1}{100}t+C. 
 $$
 
 This implies that
@@ -455,11 +501,27 @@ $$
 7-y(t)=\pm e^{-\frac{1}{100}t-C}=\pm e^{-C}\cdot e^{-\frac{1}{100}t}. 
 $$
 
-Note that $\pm e^{-C}$ is an arbitrary positive or negative constant. If we replace this by an arbitrary constant $K$ we retrieve the "lost" constant solution $y(t)=7$: $y(t)=7-Ke^{-\frac{1}{100}t}$. Finally, the initial condition $y(0)=5$ leads to $K=2$.
+Note that $\pm e^{-C}$ is an arbitrary positive or negative constant. If we combine these solutions with the equilibrium solution $y(t)=2500$, we can replace $\pm e^{-C}$ by an arbitrary constant $K$, i.e. we have 
 
-So the solution of the initial-value problem is $y(t)=7-2e^{-\frac{1}{100}t}$.
+$$
+ y(t)=7-Ke^{-\frac{1}{100}t}
+$$
 
-Now we obtain that $y(60)=7-2e^{-\frac{3}{5}}\approx5.9$. Since the volume of the fluid in the tank is $100\;\ell$, this is the alcohol percentage after $1$ hour.
+for $K\in\mathbb{R}$. Finally, the initial condition $y(0)=5$ leads to $K=2$.
+
+So the solution of the initial-value problem is 
+
+$$
+ y(t)=7-2e^{-\frac{1}{100}t}
+$$
+
+Since we want to know the concentration after $1$ hour, we evaluate
+
+$$
+ y(60)=7-2e^{-\frac{3}{5}}\approx5.9.
+$$
+
+Since the volume of the fluid in the tank is $100\;\text{L}$, the is the alcohol percentage after $1$ hour is also $7-2e^{-\frac{3}{5}}\approx5.9$ percent.
 ::::::
 
 
@@ -797,11 +859,39 @@ we find that $h$ also satisfies the differential equation at the moment the tank
 
 ### Orthogonality of families of curves
 
-We know from {prf:ref}`Thm:Differentiability:Orthot` that the graphs of two functions that intersect in a certain point are orthogonal precisely when the product of their derivatives is $-1$. We can use this fact to find a curve that is orthogonal to a given family of curves. For this, we will need to solve a separable differential equation.
+We know from {prf:ref}`Thm:Differentiability:Ortho` that the graphs of two functions that intersect in a certain point are orthogonal precisely when the product of their derivatives is $-1$. We can use this fact to find a curve that is orthogonal to a given family of curves. For this, we will need to solve a separable differential equation.
 
 ::::::{prf:Example}
 :label: Ex:DiffSep:orthogonal
+Consider the family $\mathcal{F}$ of curves given by
 
+$$
+ x^2+y^2=R^2,
+$$
+
+which describe circles with radius $R$ and center $(0,0)$. The goal is to find all curves that have the property that whenever it intersects one of these circles in $\mathcal{F}$, it does so orthogonally. For this we apply implicit differentiation (see {numref}`Subsec:ImplicitDiff`) to a circle in $\mathcal{F}$ to obtain
+
+$$
+ 2x+2y\frac{dy}{dx}=0,
+$$
+
+which gives, as long as $y\neq 0$,
+
+$$
+ \frac{dy}{dx}=-\frac{x}{y}.
+$$
+
+According to {prf:ref}`Thm:Differentiability:Ortho`, a curve intersects this circle orthogonally precisely when the product of their derivatives is $-1$. This means that on such a curve, we need to have
+
+$$
+ \frac{dy}{dx}=\frac{-1}{-\frac{x}{y}}=\frac{y}{x}.
+$$
+
+Using {prf:ref}`Ex:DiffSep:yoverx`, we find that this orthogonal curve must be of the form $y=Kx$ for some $K\in\mathbb{R}$ with $K\neq 0$. We, for now, have to exclude $K=0$ since we assumed that $y\neq 0$. Fortunately, all the circles have a vertical tangent at the points where $y=0$, which by definition means that the horizontal line $y=0$ intersects them orthogonally.
+
+Finally, we also have to include the vertical line $x=0$, since each circle has a horizontal tangent at the points where $x=0$.
+
+We conclude that the curves that intersect the family $\mathcal{F}$ orthogonally are $y=Kx$ for $K\in\mathbb{R}$ and the curve $x=0$.
 ::::::
 
 ### A family of improper integrals
