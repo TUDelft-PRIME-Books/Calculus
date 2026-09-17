@@ -195,7 +195,7 @@ parts:
   - file: _git/github.com_TeachBooks_TeachBooks-Fetch/main/MANUAL.md
   - file: Progress_reports/overview.md
     sections:
-    - file: Progress_reports/september_2026.md
+    - file: Progress_reports/2026_09_17.md
   numbered: 3
   style: romanupper
 root: index.md
