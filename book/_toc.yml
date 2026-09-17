@@ -196,3 +196,6 @@ parts:
     - external: https://github.com/TeachBooks/Sphinx-PRIME-applets/blob/main/README.md
     - external: https://github.com/TeachBooks/Sphinx-Sticky-Margin/blob/main/MANUAL.md
     - external: https://github.com/TeachBooks/TeachBooks-Fetch/blob/main/MANUAL.md
+    - file: "Progress_reports/overview.md"
+      sections:
+      - file: "Progress_reports/2026_09_17.md"

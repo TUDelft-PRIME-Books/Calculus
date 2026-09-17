@@ -193,6 +193,9 @@ parts:
   - file: _git/github.com_TeachBooks_Sphinx-PRIME-applets/main/README.md
   - file: _git/github.com_TeachBooks_Sphinx-Sticky-Margin/main/MANUAL.md
   - file: _git/github.com_TeachBooks_TeachBooks-Fetch/main/MANUAL.md
+  - file: Progress_reports/overview.md
+    sections:
+    - file: Progress_reports/september_2026.md
   numbered: 3
   style: romanupper
 root: index.md
