@@ -179,8 +179,7 @@ parts:
     - file: credits.md
     - file: genindex.md
   - caption: Reference pages for development
-    numbered: 3
-    style: romanupper
+    numbered: 0
     chapters:
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md"
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/proofs.md"
@@ -196,3 +195,6 @@ parts:
     - external: https://github.com/TeachBooks/Sphinx-PRIME-applets/blob/main/README.md
     - external: https://github.com/TeachBooks/Sphinx-Sticky-Margin/blob/main/MANUAL.md
     - external: https://github.com/TeachBooks/TeachBooks-Fetch/blob/main/MANUAL.md
+    - file: "Progress_reports/overview.md"
+      sections:
+      - file: "Progress_reports/2026_09_17.md"
