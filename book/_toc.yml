@@ -179,8 +179,7 @@ parts:
     - file: credits.md
     - file: genindex.md
   - caption: Reference pages for development
-    numbered: 3
-    style: romanupper
+    numbered: 0
     chapters:
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/admonitions.md"
     - external: "https://github.com/TeachBooks/TU-Delft-Theme-Example/blob/main/book/content/proofs.md"

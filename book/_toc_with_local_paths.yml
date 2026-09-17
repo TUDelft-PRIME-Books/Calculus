@@ -196,6 +196,5 @@ parts:
   - file: Progress_reports/overview.md
     sections:
     - file: Progress_reports/2026_09_17.md
-  numbered: 3
-  style: romanupper
+  numbered: 0
 root: index.md
