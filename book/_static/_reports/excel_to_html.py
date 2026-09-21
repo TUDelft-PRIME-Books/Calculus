@@ -1,40 +1,147 @@
 import pandas as pd
 import json
 
-path='progress-2026-09-17.xlsx'
-output_html = path.replace('.xlsx','.html')
-xl=pd.ExcelFile(path)
-D=pd.read_excel(path, sheet_name='Details')
+path = "progress-2026-09-17.xlsx"
+output_html = path.replace(".xlsx", ".html")
+xl = pd.ExcelFile(path)
+D = pd.read_excel(path, sheet_name="Details")
 
-stage_order=['Not started','Early stages','Ready for review 1','Review 1 completed','Ready for review 2','Review 2 completed','Finished']
-weights={'Not started':0,'Early stages':0.1,'Ready for review 1':0.3,'Review 1 completed':0.5,'Ready for review 2':0.7,'Review 2 completed':0.9,'Finished':1}
-D['Stage']=D['Stage'].fillna('Not started')
-D['Pilot']=D['Part of pilot'].fillna('Not in pilot')
-D['Author']=D['Author'].fillna('Unassigned')
-D['stage_weight']=D['Stage'].map(weights).astype(float)
+stage_order = [
+    "Not started",
+    "Early stages",
+    "Ready for review 1",
+    "Review 1 completed",
+    "Ready for review 2",
+    "Review 2 completed",
+    "Finished",
+]
+weights = {
+    "Not started": 0,
+    "Early stages": 0.1,
+    "Ready for review 1": 0.3,
+    "Review 1 completed": 0.5,
+    "Ready for review 2": 0.7,
+    "Review 2 completed": 0.9,
+    "Finished": 1,
+}
+D["Stage"] = D["Stage"].fillna("Not started")
+D["Pilot"] = D["Part of pilot"].fillna("Not in pilot")
+D["Author"] = D["Author"].fillna("Unassigned")
+D["stage_weight"] = D["Stage"].map(weights).astype(float)
 
-n=int(len(D)); weighted=float(D.stage_weight.mean()); finished=int((D.Stage=='Finished').sum()); review_ready=int(D.Stage.isin(['Ready for review 1','Review 1 completed','Ready for review 2','Review 2 completed','Finished']).sum()); early=int(D.Stage.isin(['Not started','Early stages']).sum())
-stage_counts={s:int((D.Stage==s).sum()) for s in stage_order}
-chapters=[]
-for (num,name),g in D.groupby(['Chapter','Ch.Name'],sort=True):
-    cnt={s:int((g.Stage==s).sum()) for s in stage_order}
-    chapters.append({'chapter':int(num),'name':str(name),'label':f'Ch. {int(num)} — {name}','sections':int(len(g)),'weighted':round(float(g.stage_weight.mean()*100),1),**cnt})
-authors=[]
-for name,g in D.groupby('Author'):
-    authors.append({'author':str(name),'sections':int(len(g)),'weighted':round(float(g.stage_weight.mean()*100),1),'late_stage':int(g.Stage.isin(['Ready for review 2','Review 2 completed','Finished']).sum()),'finished':int((g.Stage=='Finished').sum()),'not_started':int((g.Stage=='Not started').sum())})
-authors.sort(key=lambda x:(-x['weighted'],-x['sections']))
-funnel=[{'label':'Total scope','value':n},{'label':'Written / review 1 ready+','value':int(D.Stage.isin(['Ready for review 1','Review 1 completed','Ready for review 2','Review 2 completed','Finished']).sum())},{'label':'Review 1 complete+','value':int(D.Stage.isin(['Review 1 completed','Ready for review 2','Review 2 completed','Finished']).sum())},{'label':'Review 2 ready+','value':int(D.Stage.isin(['Ready for review 2','Review 2 completed','Finished']).sum())},{'label':'Finished','value':finished}]
-rows=[]
-for _,r in D.sort_values(['Chapter','Section']).iterrows():
-    rows.append({'chapter':int(r['Chapter']),'chapterName':str(r['Ch.Name']),'section':int(r['Section']),'sectionName':str(r['Sec.Name']),'stage':str(r['Stage']),'pilot':str(r['Pilot']),'author':str(r['Author']),'review1':'✓' if pd.notna(r['Review 1 completed']) else '—','review2':'✓' if pd.notna(r['Review 2 completed']) else '—','finished':'✓' if pd.notna(r['Finished']) else '—','weight':int(round(float(r.stage_weight*100)))})
-pilot=[]
-for k,g in D.groupby('Pilot'):
-    pilot.append({'pilot':str(k),'value':int(len(g)),'pct':round(100*len(g)/n,1),'weighted':round(100*float(g.stage_weight.mean()),1)})
-pilot.sort(key=lambda x:-x['value'])
-ctx={'n':n,'weighted':round(weighted*100,1),'finished':finished,'review_ready':review_ready,'early':early,'stage_counts':stage_counts,'chapters':chapters,'authors':authors,'funnel':funnel,'rows':rows,'pilot':pilot}
-with open('report_data.json','w') as f: json.dump(ctx,f)
+n = int(len(D))
+weighted = float(D.stage_weight.mean())
+finished = int((D.Stage == "Finished").sum())
+review_ready = int(
+    D.Stage.isin(
+        [
+            "Ready for review 1",
+            "Review 1 completed",
+            "Ready for review 2",
+            "Review 2 completed",
+            "Finished",
+        ]
+    ).sum()
+)
+early = int(D.Stage.isin(["Not started", "Early stages"]).sum())
+stage_counts = {s: int((D.Stage == s).sum()) for s in stage_order}
+chapters = []
+for (num, name), g in D.groupby(["Chapter", "Ch.Name"], sort=True):
+    cnt = {s: int((g.Stage == s).sum()) for s in stage_order}
+    chapters.append(
+        {
+            "chapter": int(num),
+            "name": str(name),
+            "label": f"Ch. {int(num)} — {name}",
+            "sections": int(len(g)),
+            "weighted": round(float(g.stage_weight.mean() * 100), 1),
+            **cnt,
+        }
+    )
+authors = []
+for name, g in D.groupby("Author"):
+    authors.append(
+        {
+            "author": str(name),
+            "sections": int(len(g)),
+            "weighted": round(float(g.stage_weight.mean() * 100), 1),
+            "late_stage": int(
+                g.Stage.isin(
+                    ["Ready for review 2", "Review 2 completed", "Finished"]
+                ).sum()
+            ),
+            "finished": int((g.Stage == "Finished").sum()),
+            "not_started": int((g.Stage == "Not started").sum()),
+        }
+    )
+authors.sort(key=lambda x: (-x["weighted"], -x["sections"]))
+funnel = [
+    {"label": "Not started", "value": int((D.Stage == "Not started").sum())},
+    {"label": "Early stages", "value": int((D.Stage == "Early stages").sum())},
+    {
+        "label": "Ready for review 1",
+        "value": int((D.Stage == "Ready for review 1").sum()),
+    },
+    {
+        "label": "Review 1 completed",
+        "value": int((D.Stage == "Review 1 completed").sum()),
+    },
+    {
+        "label": "Ready for review 2",
+        "value": int((D.Stage == "Ready for review 2").sum()),
+    },
+    {
+        "label": "Review 2 completed",
+        "value": int((D.Stage == "Review 2 completed").sum()),
+    },
+    {"label": "Finished", "value": finished},
+]
+rows = []
+for _, r in D.sort_values(["Chapter", "Section"]).iterrows():
+    rows.append(
+        {
+            "chapter": int(r["Chapter"]),
+            "chapterName": str(r["Ch.Name"]),
+            "section": int(r["Section"]),
+            "sectionName": str(r["Sec.Name"]),
+            "stage": str(r["Stage"]),
+            "pilot": str(r["Pilot"]),
+            "author": str(r["Author"]),
+            "review1": "✓" if pd.notna(r["Review 1 completed"]) else "—",
+            "review2": "✓" if pd.notna(r["Review 2 completed"]) else "—",
+            "finished": "✓" if pd.notna(r["Finished"]) else "—",
+            "weight": int(round(float(r.stage_weight * 100))),
+        }
+    )
+pilot = []
+for k, g in D.groupby("Pilot"):
+    pilot.append(
+        {
+            "pilot": str(k),
+            "value": int(len(g)),
+            "pct": round(100 * len(g) / n, 1),
+            "weighted": round(100 * float(g.stage_weight.mean()), 1),
+        }
+    )
+pilot.sort(key=lambda x: -x["value"])
+ctx = {
+    "n": n,
+    "weighted": round(weighted * 100, 1),
+    "finished": finished,
+    "review_ready": review_ready,
+    "early": early,
+    "stage_counts": stage_counts,
+    "chapters": chapters,
+    "authors": authors,
+    "funnel": funnel,
+    "rows": rows,
+    "pilot": pilot,
+}
+with open("report_data.json", "w") as f:
+    json.dump(ctx, f)
 
-html = r'''<!doctype html>
+html = (
+    r"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
@@ -42,7 +149,7 @@ html = r'''<!doctype html>
 <title>Book Progress</title>
 <style>
 :root{--bg:#f6f7fb;--surface:#ffffff;--text:#172033;--muted:#6d7485;--line:#e6e9f0;--navy:#0C2340;--indigo:#0076C2;--violet:#6f1d77;--blue:#00A6D6;--teal:#009B77;--green:#6CC24A;--amber:#FFB81C;--red:#E03C31;--shadow:0 10px 30px rgba(31,42,77,.07)}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--text);font-size:14px}.page{max-width:1540px;margin:0 auto;padding:44px 36px 60px}.eyebrow{font-size:12px;color:var(--indigo);font-weight:800;letter-spacing:.08em;text-transform:uppercase}.headline{margin:8px 0 8px;font-size:33px;line-height:1.15;letter-spacing:-.03em;font-family:"RobotoSlab",Arial,Helvetica,sans-serif}.subtitle{margin:0;color:var(--muted);font-size:15px}.source{margin-top:11px;font-size:12px;color:#8990a0}.filters{display:grid;grid-template-columns:1.45fr 1fr 1fr auto;gap:12px;margin:30px 0 23px}.filter{border:1px solid var(--line);border-radius:10px;background:#fff;padding:8px 11px}.filter label{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;color:#7a8291;text-transform:uppercase;margin-bottom:4px}.filter select{border:0;outline:0;width:100%;background:transparent;color:var(--text);font-weight:650;font-size:13px}.reset{align-self:end;height:42px;border:1px solid #d6d9e2;background:white;border-radius:9px;padding:0 16px;color:#465065;font-weight:700;cursor:pointer}.kpis{display:grid;grid-template-columns:1.15fr 1.15fr 1fr 1fr;gap:16px;margin-bottom:16px}.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);padding:20px}.kpi{min-height:124px}.kpi .label{font-size:11px;font-weight:800;letter-spacing:.07em;color:#768094;text-transform:uppercase}.kpi .value{margin-top:12px;font-size:36px;font-weight:780;letter-spacing:-.04em}.kpi .hint{margin-top:4px;color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}.wide{grid-column:span 2}.title{font-size:16px;font-weight:760;letter-spacing:-.015em}.desc{margin:5px 0 16px;color:var(--muted);font-size:12px;line-height:1.45}.stage-explainer{display:flex;gap:15px;align-items:flex-start;background:linear-gradient(135deg,#f5f6ff,#fafaff);border:1px solid #e5e8fb}.big-percent{font-size:35px;color:var(--navy);font-weight:800;letter-spacing:-.045em;white-space:nowrap}.formula-table{margin-top:9px;border-collapse:collapse;font-size:11px;color:#586178}.formula-table th,.formula-table td{border:1px solid #e3e6f1;padding:5px 9px;text-align:left}.formula-table th{background:#fafbfe;font-weight:800;color:#4c5671}.formula-table td{background:#fff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.legend{display:flex;gap:12px;flex-wrap:wrap;margin:3px 0 15px}.legend-item{display:flex;align-items:center;gap:5px;color:#687184;font-size:11px}.dot{width:9px;height:9px;border-radius:3px;display:inline-block}.funnel{display:flex;gap:12px;align-items:stretch;padding:6px 4px 0}.funnel-legend{flex:none;width:120px;display:flex;flex-direction:column;min-width:0}.funnel-row{height:56px;display:flex;align-items:center;justify-content:flex-end}.funnel-row:last-child{height:40px}.funnel-row-label{font-size:11px;color:#4e586c;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.funnel-shape{flex:1;display:flex;flex-direction:column;align-items:center;min-width:0}.funnel-seg{height:40px;width:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;border-radius:4px}.funnel-connector{width:100%;height:16px}.stacked-area{display:flex;flex-direction:column;gap:12px}.stack-row{display:grid;grid-template-columns:240px 1fr 64px;align-items:center;gap:10px}.stack-label{font-size:11px;color:#4e586c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bar-wrap{position:relative}.bar{height:19px;display:flex;border-radius:5px;overflow:hidden;background:#eff1f5}.segment{height:100%;min-width:0}.stack-val{font-size:11px;text-align:right;color:#697184;font-weight:700;white-space:nowrap}.axis{margin:0 64px 0 250px;display:flex;justify-content:space-between;color:#9199a8;font-size:10px}.author-list{display:flex;flex-direction:column;gap:13px}.author-row{display:grid;grid-template-columns:105px 1fr 70px;align-items:center;gap:12px}.author-name{font-weight:700;font-size:12px}.author-bar{height:10px;border-radius:20px;background:#eceef4;overflow:hidden}.author-fill{height:100%;background:linear-gradient(90deg,var(--indigo),var(--teal));border-radius:20px}.author-stat{text-align:right;color:#596376;font-size:11px;font-weight:700}.pilot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.pilot{border:1px solid var(--line);border-radius:10px;padding:14px}.pilot .pname{font-weight:800;color:#4c5671}.pilot .pval{font-size:26px;font-weight:800;letter-spacing:-.04em;margin:9px 0 2px}.pilot .small{font-size:11px;color:var(--muted)}.chapter-progress{display:flex;flex-direction:column;gap:10px}.prog-row{display:grid;grid-template-columns:230px 1fr 40px;gap:10px;align-items:center}.prog-label{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#4e586c}.prog-track{height:12px;background:#eef0f5;border-radius:999px;overflow:hidden}.prog-fill{height:100%;background:linear-gradient(90deg,var(--indigo),var(--teal));border-radius:999px}.prog-val{text-align:right;font-size:11px;color:#5d6679;font-weight:700}.table-card{padding:0;overflow:hidden}.table-head{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px}.table-meta{font-size:12px;color:var(--muted)}.table-wrap{max-height:580px;overflow:auto;border-top:1px solid var(--line)}table{width:100%;border-collapse:collapse;font-size:12px}th{position:sticky;top:0;z-index:1;background:#fafbfe;text-align:left;padding:12px 14px;color:#747e91;font-size:10px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--line)}td{padding:11px 14px;border-bottom:1px solid #eef0f4;color:#3d4658;vertical-align:top}.chapter-cell{color:#657087;white-space:nowrap}.badge{display:inline-block;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:800;white-space:nowrap}.b-not{background:#E03C3122;color:#a1291f}.b-early{background:#EC684222;color:#a8452a}.b-r1{background:#FFB81C22;color:#8a6400}.b-r1c{background:#6CC24A22;color:#3f7a2a}.b-r2{background:#009B7722;color:#00654f}.b-r2c{background:#00A6D622;color:#056a8a}.b-fin{background:#0076C222;color:#00518a}.check{font-weight:800;text-align:center;color:#3e8860}.dash{color:#a7adba}.insight{border-left:4px solid var(--teal)}.insight ul{margin:10px 0 0;padding-left:18px;color:#5c6576;font-size:12px;line-height:1.6}@media(max-width:1000px){.page{padding:28px 18px}.filters,.kpis,.grid{grid-template-columns:1fr}.wide{grid-column:auto}.stack-row{grid-template-columns:155px 1fr 54px}.axis{margin-left:165px}.prog-row{grid-template-columns:145px 1fr 40px}.author-row{grid-template-columns:85px 1fr 62px}}@media(max-width:620px){.headline{font-size:27px}.stack-row{grid-template-columns:105px 1fr 50px}.axis{margin-left:115px;margin-right:50px}.prog-row{grid-template-columns:105px 1fr 36px}.pilot-grid{grid-template-columns:1fr}.funnel{gap:8px}.funnel-legend{width:78px}.funnel-row-label{font-size:9px}}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--text);font-size:14px}.page{max-width:1540px;margin:0 auto;padding:44px 36px 60px}.eyebrow{font-size:12px;color:var(--indigo);font-weight:800;letter-spacing:.08em;text-transform:uppercase}.headline{margin:8px 0 8px;font-size:33px;line-height:1.15;letter-spacing:-.03em;font-family:"RobotoSlab",Arial,Helvetica,sans-serif}.subtitle{margin:0;color:var(--muted);font-size:15px}.source{margin-top:11px;font-size:12px;color:#8990a0}.filters{display:grid;grid-template-columns:1.45fr 1fr 1fr auto;gap:12px;margin:30px 0 23px}.filter{border:1px solid var(--line);border-radius:10px;background:#fff;padding:8px 11px}.filter label{display:block;font-size:10px;font-weight:800;letter-spacing:.07em;color:#7a8291;text-transform:uppercase;margin-bottom:4px}.filter select{border:0;outline:0;width:100%;background:transparent;color:var(--text);font-weight:650;font-size:13px}.reset{align-self:end;height:42px;border:1px solid #d6d9e2;background:white;border-radius:9px;padding:0 16px;color:#465065;font-weight:700;cursor:pointer}.kpis{display:grid;grid-template-columns:1.15fr 1.15fr 1fr 1fr;gap:16px;margin-bottom:16px}.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);padding:20px}.kpi{min-height:124px}.kpi .label{font-size:11px;font-weight:800;letter-spacing:.07em;color:#768094;text-transform:uppercase}.kpi .value{margin-top:12px;font-size:36px;font-weight:780;letter-spacing:-.04em}.kpi .hint{margin-top:4px;color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:16px 0}.wide{grid-column:span 2}.title{font-size:16px;font-weight:760;letter-spacing:-.015em}.desc{margin:5px 0 16px;color:var(--muted);font-size:12px;line-height:1.45}.stage-explainer{display:flex;gap:15px;align-items:flex-start;background:linear-gradient(135deg,#f5f6ff,#fafaff);border:1px solid #e5e8fb}.big-percent{font-size:35px;color:var(--navy);font-weight:800;letter-spacing:-.045em;white-space:nowrap}.formula-table{margin-top:9px;border-collapse:collapse;font-size:11px;color:#586178}.formula-table th,.formula-table td{border:1px solid #e3e6f1;padding:5px 9px;text-align:left}.formula-table th{background:#fafbfe;font-weight:800;color:#4c5671}.formula-table td{background:#fff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.legend{display:flex;gap:12px;flex-wrap:wrap;margin:3px 0 15px}.legend-item{display:flex;align-items:center;gap:5px;color:#687184;font-size:11px}.dot{width:9px;height:9px;border-radius:3px;display:inline-block}.funnel{display:flex;gap:12px;align-items:stretch;padding:6px 4px 0}.funnel-legend{flex:none;width:120px;display:flex;flex-direction:column;min-width:0}.funnel-row{height:56px;display:flex;align-items:center;justify-content:flex-end}.funnel-row:last-child{height:40px}.funnel-row-label{font-size:11px;color:#4e586c;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.funnel-shape{flex:1;display:flex;flex-direction:column;align-items:center;min-width:0}.funnel-seg{height:40px;width:100%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:13px;border-radius:0px}.funnel-connector{width:100%;height:16px}.stacked-area{display:flex;flex-direction:column;gap:12px}.stack-row{display:grid;grid-template-columns:240px 1fr 64px;align-items:center;gap:10px}.stack-label{font-size:11px;color:#4e586c;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bar-wrap{position:relative}.bar{height:19px;display:flex;border-radius:5px;overflow:hidden;background:#eff1f5}.segment{height:100%;min-width:0}.stack-val{font-size:11px;text-align:right;color:#697184;font-weight:700;white-space:nowrap}.axis{margin:0 64px 0 250px;display:flex;justify-content:space-between;color:#9199a8;font-size:10px}.author-list{display:flex;flex-direction:column;gap:13px}.author-row{display:grid;grid-template-columns:105px 1fr 70px;align-items:center;gap:12px}.author-name{font-weight:700;font-size:12px}.author-bar{height:10px;border-radius:20px;background:#eceef4;overflow:hidden}.author-fill{height:100%;background:linear-gradient(90deg,var(--indigo),var(--teal));border-radius:20px}.author-stat{text-align:right;color:#596376;font-size:11px;font-weight:700}.pilot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.pilot{border:1px solid var(--line);border-radius:10px;padding:14px}.pilot .pname{font-weight:800;color:#4c5671}.pilot .pval{font-size:26px;font-weight:800;letter-spacing:-.04em;margin:9px 0 2px}.pilot .small{font-size:11px;color:var(--muted)}.chapter-progress{display:flex;flex-direction:column;gap:10px}.prog-row{display:grid;grid-template-columns:230px 1fr 40px;gap:10px;align-items:center}.prog-label{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#4e586c}.prog-track{height:12px;background:#eef0f5;border-radius:999px;overflow:hidden}.prog-fill{height:100%;background:linear-gradient(90deg,var(--indigo),var(--teal));border-radius:999px}.prog-val{text-align:right;font-size:11px;color:#5d6679;font-weight:700}.table-card{padding:0;overflow:hidden}.table-head{display:flex;align-items:center;justify-content:space-between;padding:20px 20px 14px}.table-meta{font-size:12px;color:var(--muted)}.table-wrap{max-height:580px;overflow:auto;border-top:1px solid var(--line)}table{width:100%;border-collapse:collapse;font-size:12px}th{position:sticky;top:0;z-index:1;background:#fafbfe;text-align:left;padding:12px 14px;color:#747e91;font-size:10px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--line)}td{padding:11px 14px;border-bottom:1px solid #eef0f4;color:#3d4658;vertical-align:top}.chapter-cell{color:#657087;white-space:nowrap}.badge{display:inline-block;border-radius:999px;padding:4px 8px;font-size:10px;font-weight:800;white-space:nowrap}.b-not{background:#E03C3122;color:#a1291f}.b-early{background:#EC684222;color:#a8452a}.b-r1{background:#FFB81C22;color:#8a6400}.b-r1c{background:#6CC24A22;color:#3f7a2a}.b-r2{background:#009B7722;color:#00654f}.b-r2c{background:#00A6D622;color:#056a8a}.b-fin{background:#0076C222;color:#00518a}.check{font-weight:800;text-align:center;color:#3e8860}.dash{color:#a7adba}.insight{border-left:4px solid var(--teal)}.insight ul{margin:10px 0 0;padding-left:18px;color:#5c6576;font-size:12px;line-height:1.6}@media(max-width:1000px){.page{padding:28px 18px}.filters,.kpis,.grid{grid-template-columns:1fr}.wide{grid-column:auto}.stack-row{grid-template-columns:155px 1fr 54px}.axis{margin-left:165px}.prog-row{grid-template-columns:145px 1fr 40px}.author-row{grid-template-columns:85px 1fr 62px}}@media(max-width:620px){.headline{font-size:27px}.stack-row{grid-template-columns:105px 1fr 50px}.axis{margin-left:115px;margin-right:50px}.prog-row{grid-template-columns:105px 1fr 36px}.pilot-grid{grid-template-columns:1fr}.funnel{gap:8px}.funnel-legend{width:78px}.funnel-row-label{font-size:9px}}
 </style>
 </head>
 <body><main class="page">
@@ -50,7 +157,7 @@ html = r'''<!doctype html>
   <div class="filters"><div class="filter"><label>Chapter</label><select id="chapterFilter"><option value="all">All chapters</option></select></div><div class="filter"><label>Stage</label><select id="stageFilter"><option value="all">All stages</option></select></div><div class="filter"><label>Pilot</label><select id="pilotFilter"><option value="all">All pilot groups</option></select></div><button class="reset" id="reset">Reset filters</button></div>
   <section class="kpis"><div class="card kpi"><div class="label">Sections in view</div><div class="value" id="kpiN"></div><div class="hint">Across the selected scope</div></div><div class="card kpi"><div class="label">Estimated progress</div><div class="value" id="kpiWeighted"></div><div class="hint">Stage-weighted completion proxy</div></div><div class="card kpi"><div class="label">Finished</div><div class="value" id="kpiFinished"></div><div class="hint" id="kpiFinishedHint"></div></div><div class="card kpi"><div class="label">Review-ready</div><div class="value" id="kpiReady"></div><div class="hint">Ready for review 1 or beyond</div></div></section>
   <section class="grid"><article class="card stage-explainer"><div class="big-percent" id="explainerPct"></div><div><div class="title">What “stage-weighted” means</div><p class="desc">This is a progress estimate—not a count of finished sections. Each section receives a completion weight based on its current workflow stage, then the dashboard averages those weights.</p><table class="formula-table"><thead><tr><th>Stage</th><th>Weight</th></tr></thead><tbody><tr><td>Not started</td><td>0%</td></tr><tr><td>Early stages</td><td>10%</td></tr><tr><td>Ready for review 1</td><td>30%</td></tr><tr><td>Review 1 completed</td><td>50%</td></tr><tr><td>Ready for review 2</td><td>70%</td></tr><tr><td>Review 2 completed</td><td>90%</td></tr><tr><td>Finished</td><td>100%</td></tr></tbody></table></div></article>
-  <article class="card"><div class="title">Workflow distribution</div><p class="desc">A vertical funnel of sections remaining at each cumulative editorial milestone.</p><div class="funnel" id="funnel"></div></article>
+  <article class="card"><div class="title">Workflow distribution</div><p class="desc">A vertical funnel of sections remaining at each editorial milestone.</p><div class="funnel" id="funnel"></div></article>
   </section>
   <section class="grid"><article class="card wide"><div class="title">Editorial pipeline by chapter</div><p class="desc">Each horizontal bar is normalized to 100%, showing the stage mix within that chapter—not chapter size.</p><div class="legend" id="legend"></div><div class="axis"><span>0%</span><span>25%</span><span>50%</span><span>75%</span><span>100%</span></div><div class="stacked-area" id="stacked"></div></article></section>
   <section class="grid"><article class="card"><div class="title">Progress by chapter</div><p class="desc">Average stage-weighted completion across sections in each chapter.</p><div class="chapter-progress" id="chapterProgress"></div></article><article class="card"><div class="title">Ownership load & progress</div><p class="desc">Additional view: stage-weighted progress by assigned author; unassigned work is shown separately.</p><div class="author-list" id="authors"></div></article></section>
@@ -58,7 +165,9 @@ html = r'''<!doctype html>
   <section class="card table-card"><div class="table-head"><div><div class="title">Section tracker</div><div class="table-meta" id="tableMeta"></div></div></div><div class="table-wrap"><table><thead><tr><th>Chapter</th><th>Section</th><th>Current stage</th><th>Pilot</th><th>Author</th><th>Review 1</th><th>Review 2</th><th>Finished</th></tr></thead><tbody id="tableBody"></tbody></table></div></section>
 </main>
 <script>
-const DATA = ''' + json.dumps(ctx).replace('</',r'<\/') + r''';
+const DATA = """
+    + json.dumps(ctx).replace("</", r"<\/")
+    + r""";
 const stages=['Not started','Early stages','Ready for review 1','Review 1 completed','Ready for review 2','Review 2 completed','Finished'];
 const colors={'Not started':'#E03C31','Early stages':'#EC6842','Ready for review 1':'#FFB81C','Review 1 completed':'#6CC24A','Ready for review 2':'#009B77','Review 2 completed':'#00A6D6','Finished':'#0076C2'};
 const badge={'Not started':'b-not','Early stages':'b-early','Ready for review 1':'b-r1','Review 1 completed':'b-r1c','Ready for review 2':'b-r2','Review 2 completed':'b-r2c','Finished':'b-fin'};
@@ -72,10 +181,10 @@ $('legend').innerHTML=stages.map(s=>`<span class="legend-item"><i class="dot" st
 const grouped={};rows.forEach(r=>{let k=r.chapter+'|'+r.chapterName;(grouped[k]??=[]).push(r)});let gs=Object.entries(grouped).sort((a,b)=>+a[0].split('|')[0]-+b[0].split('|')[0]);$('stacked').innerHTML=gs.length?gs.map(([k,g])=>{const [cn,name]=k.split('|');let segments=stages.map(s=>{let v=g.filter(r=>r.stage===s).length/g.length*100;return v?`<span class="segment" title="${esc(s)}: ${Math.round(v)}%" style="width:${v}%;background:${colors[s]}"></span>`:''}).join('');return `<div class="stack-row"><div class="stack-label">Ch. ${cn} — ${esc(name)}</div><div class="bar-wrap"><div class="bar">${segments}</div></div><div class="stack-val">${g.length} sections</div></div>`}).join(''):'<div class="desc">No sections match these filters.</div>';
 const funnelColors=stages.map(s=>colors[s]);
 const funnelTextColors=stages.map(s=>({'Ready for review 1':'#4a3600','Review 1 completed':'#1f4d12'}[s]||'#fff'));
-const fvals=stages.map((_,i)=>rows.filter(r=>stages.indexOf(r.stage)>=i).length);
+const fvals=stages.map(s=>rows.filter(r=>r.stage===s).length);
 if(!n){$('funnel').innerHTML='<div class="desc">No sections match these filters.</div>';}else{
 const fpct=fvals.map(v=>100*v/n);
-const shape=fpct.map((top,i)=>{const seg=`<div class="funnel-seg" style="width:${top}%;background:${funnelColors[i]};color:${funnelTextColors[i]}">${fvals[i]}</div>`;if(i===fpct.length-1)return seg;const bottom=fpct[i+1];const x1=(100-top)/2,x2=(100+top)/2,x3=(100+bottom)/2,x4=(100-bottom)/2;const conn=`<div class="funnel-connector" style="background:${funnelColors[i]};opacity:.4;clip-path:polygon(${x1}% 0%,${x2}% 0%,${x3}% 100%,${x4}% 100%)"></div>`;return seg+conn}).join('');
+const shape=fpct.map((top,i)=>{const displayWidth=Math.max(3,top);const seg=`<div class="funnel-seg" style="width:${displayWidth}%;background:${funnelColors[i]};color:${funnelTextColors[i]}">${fvals[i]}</div>`;if(i===fpct.length-1)return seg;const bottom=fpct[i+1];const displayBottom=Math.max(3,bottom);const x1=(100-displayWidth)/2,x2=(100+displayWidth)/2,x3=(100+displayBottom)/2,x4=(100-displayBottom)/2;const conn=`<div class="funnel-connector" style="background:${funnelColors[i]};opacity:.4;clip-path:polygon(${x1}% 0%,${x2}% 0%,${x3}% 100%,${x4}% 100%)"></div>`;return seg+conn}).join('');
 const legend=stages.map(lab=>`<div class="funnel-row"><div class="funnel-row-label">${esc(lab)}</div></div>`).join('');
 $('funnel').innerHTML=`<div class="funnel-legend">${legend}</div><div class="funnel-shape">${shape}</div>`;
 }
@@ -85,5 +194,6 @@ let pmap={};rows.forEach(r=>(pmap[r.pilot]??=[]).push(r));$('pilots').innerHTML=
 let notStarted=rows.filter(r=>r.stage==='Not started').length, late=rows.filter(r=>['Ready for review 2','Review 2 completed','Finished'].includes(r.stage)).length;let largest=gs.map(([k,g])=>({k,g})).sort((a,b)=>b.g.length-a.g.length)[0];let top=[...cps].sort((a,b)=>b.v-a.v)[0];let sig=[];sig.push(`<strong>${ready} of ${n}</strong> sections (${n?pct(100*ready/n):'0%'}) are at least ready for review 1.`);sig.push(`<strong>${notStarted}</strong> sections are not started, representing ${n?pct(100*notStarted/n):'0%'} of the selected scope.`);if(top)sig.push(`<strong>${esc(top.lab)}</strong> leads selected chapters at <strong>${pct(top.v)}</strong> stage-weighted progress.`);sig.push(`<strong>${late}</strong> sections (${n?pct(100*late/n):'0%'}) have reached review 2 readiness or completion.`);$('signals').innerHTML=sig.map(x=>`<li>${x}</li>`).join('');
 $('tableMeta').textContent=`${n} section${n===1?'':'s'} shown`;$('tableBody').innerHTML=rows.map(r=>`<tr><td class="chapter-cell">${r.chapter} · ${esc(r.chapterName)}</td><td>${r.section}. ${esc(r.sectionName)}</td><td><span class="badge ${badge[r.stage]}">${esc(r.stage)}</span></td><td>${esc(r.pilot)}</td><td>${esc(r.author)}</td><td class="${r.review1==='✓'?'check':'dash'}">${r.review1}</td><td class="${r.review2==='✓'?'check':'dash'}">${r.review2}</td><td class="${r.finished==='✓'?'check':'dash'}">${r.finished}</td></tr>`).join('');}
 opts();['chapterFilter','stageFilter','pilotFilter'].forEach(x=>$(x).addEventListener('change',render));$('reset').addEventListener('click',()=>{['chapterFilter','stageFilter','pilotFilter'].forEach(x=>$(x).value='all');render()});render();
-</script></body></html>'''
-open(output_html,'w',encoding='utf-8').write(html)
+</script></body></html>"""
+)
+open(output_html, "w", encoding="utf-8").write(html)
