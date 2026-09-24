@@ -1,1 +1,0 @@
-# Exponential and logarithmic functions

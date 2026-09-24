@@ -14,13 +14,14 @@ parse:
       - tasklist
       - amsmath
       - attrs_inline
+      - attrs_block
     myst_dmath_double_inline: true
     myst_heading_anchors : 5
 
 only_build_toc_files: true
 
 html:
-  baseurl :  "https://tudelft-prime-books.github.io/Calculus/"
+  baseurl: "https://tudelft-prime-books.github.io/Calculus/"
 
 sphinx:
   local_extensions:
@@ -29,6 +30,7 @@ sphinx:
     image_checker: _ext/
     numref_section: _ext/
     math_punctuation: _ext/
+    unnumbered_sections: _ext/
   config:
     patch_config:
       disabled-patches: ["hash"]
@@ -81,6 +83,7 @@ sphinx:
       'in {numref}`Subsection %s <Subsec:MatrixInv:DefInverse>` we saw': "in [Section 3.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter3/MatrixInverse.html) we will see"
       'in {numref}`Section %s <Sec:DeterminantsViaCofactors>`': "in [Section 5.1 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter5/DeterminantsViaCofactors.html)"
       '```{iframe} ../references.html': "```{iframe} ../../../../../references.html"
+      ':url: vectors/3Daddition': ":url: vectors/3Daddition\n:name: Fig:Vectors:3DAddition"
     mathjax3_config:
       loader:
         load: ['[tex]/cancel']

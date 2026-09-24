@@ -16,6 +16,7 @@ parts:
     - file: Algebra/Numbers_and_coordinate_systems/coordinate_systems.md
     - file: Algebra/Numbers_and_coordinate_systems/complex_numbers_polar.md
     - file: Algebra/Numbers_and_coordinate_systems/sums_and_products.md
+    - file: Algebra/Numbers_and_coordinate_systems/review_numbers_and_coordinate_systems.md
   - file: Algebra/Vector_algebra/introduction_vector_algebra.md
     sections:
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Vectors.md
@@ -23,6 +24,7 @@ parts:
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Cross_Product.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter1/Lines_and_Planes.md
     - file: _git/github.com_TUDelft-PRIME-Books_Linear-Algebra/published/Chapter5/DeterminantsGeometric.md
+    - file: Algebra/Vector_algebra/review_vector_algebra.md
   numbered: 3
 - caption: Single-variable functions
   chapters:
@@ -37,6 +39,7 @@ parts:
     - file: Single-variable_functions/Functions/limits_at_a_point.md
     - file: Single-variable_functions/Functions/limits_at_infinity.md
     - file: Single-variable_functions/Functions/continuity.md
+    - file: Single-variable_functions/Functions/review_functions.md
   - file: Single-variable_functions/Differentiation/introduction_differentiation.md
     sections:
     - file: Single-variable_functions/Differentiation/differentiability.md
@@ -48,6 +51,7 @@ parts:
     - file: Single-variable_functions/Differentiation/derivatives_of_inverse_functions.md
     - file: Single-variable_functions/Differentiation/approximating_functions.md
     - file: Single-variable_functions/Differentiation/l_hospitals_rule.md
+    - file: Single-variable_functions/Differentiation/review_differentiation.md
   - file: Single-variable_functions/Integration/introduction_integration.md
     sections:
     - file: Single-variable_functions/Integration/definite_integrals.md
@@ -59,6 +63,7 @@ parts:
     - file: Single-variable_functions/Integration/integration_of_rational_functions.md
     - file: Single-variable_functions/Integration/improper_integrals.md
     - file: Single-variable_functions/Integration/approximating_integrals.md
+    - file: Single-variable_functions/Integration/review_integration.md
   numbered: 3
 - caption: Sequences and series
   chapters:
@@ -68,6 +73,7 @@ parts:
     - file: Sequences_and_series/Sequences/properties_of_sequences.md
     - file: Sequences_and_series/Sequences/convergence_of_sequences.md
     - file: Sequences_and_series/Sequences/iterative_methods_for_various_problems.md
+    - file: Sequences_and_series/Sequences/review_sequences.md
   - file: Sequences_and_series/Series/introduction_series.md
     sections:
     - file: Sequences_and_series/Series/introduction_to_series.md
@@ -81,6 +87,7 @@ parts:
     - file: Sequences_and_series/Series/riemann_zeta_function.md
     - file: Sequences_and_series/Series/catalans_constant.md
     - file: Sequences_and_series/Series/generating_functions.md
+    - file: Sequences_and_series/Series/review_series.md
   numbered: 3
 - caption: Multivariable functions
   chapters:
@@ -93,6 +100,7 @@ parts:
     - file: Multivariable_functions/Functions_curves_and_surfaces/level_curves_and_surfaces.md
     - file: Multivariable_functions/Functions_curves_and_surfaces/limits_and_continuity.md
     - file: Multivariable_functions/Functions_curves_and_surfaces/nonlinear_systems_in_two_variables.md
+    - file: Multivariable_functions/Functions_curves_and_surfaces/review_functions_curves_and_surfaces.md
   - file: Multivariable_functions/Partial_differentiation/introduction_partial_differentiation.md
     sections:
     - file: Multivariable_functions/Partial_differentiation/partial_derivatives.md
@@ -101,6 +109,7 @@ parts:
     - file: Multivariable_functions/Partial_differentiation/local_extrema.md
     - file: Multivariable_functions/Partial_differentiation/global_extrema.md
     - file: Multivariable_functions/Partial_differentiation/optimisation_under_equality_constraints.md
+    - file: Multivariable_functions/Partial_differentiation/review_partial_differentiation.md
   - file: Multivariable_functions/Multivariable_integration/introduction_multivariable_integration.md
     sections:
     - file: Multivariable_functions/Multivariable_integration/double_integrals.md
@@ -110,6 +119,7 @@ parts:
     - file: Multivariable_functions/Multivariable_integration/multivariable_integrals.md
     - file: Multivariable_functions/Multivariable_integration/line_integrals.md
     - file: Multivariable_functions/Multivariable_integration/surface_integrals.md
+    - file: Multivariable_functions/Multivariable_integration/review_multivariable_integration.md
   - file: Multivariable_functions/Vector_calculus/introduction_vector_calculus.md
     sections:
     - file: Multivariable_functions/Vector_calculus/vector_fields.md
@@ -120,6 +130,7 @@ parts:
     - file: Multivariable_functions/Vector_calculus/divergence_and_curl.md
     - file: Multivariable_functions/Vector_calculus/Gauss_theorem.md
     - file: Multivariable_functions/Vector_calculus/Stokes_theorem.md
+    - file: Multivariable_functions/Vector_calculus/review_vector_calculus.md
   numbered: 3
 - caption: Differential equations
   chapters:
@@ -127,6 +138,7 @@ parts:
     sections:
     - file: Differential_equations/Introduction/differential_equations.md
     - file: Differential_equations/Introduction/existence_and_uniqueness.md
+    - file: Differential_equations/Introduction/review_differential_equations.md
   - file: Differential_equations/First-order_ordinary_differential_equations/introduction_first_order_ODE.md
     sections:
     - file: Differential_equations/First-order_ordinary_differential_equations/direction_fields_and_solutions.md
@@ -136,6 +148,7 @@ parts:
     - file: Differential_equations/First-order_ordinary_differential_equations/exact_differential_equations.md
     - file: Differential_equations/First-order_ordinary_differential_equations/series_solutions_1st.md
     - file: Differential_equations/First-order_ordinary_differential_equations/approximating_solutions.md
+    - file: Differential_equations/First-order_ordinary_differential_equations/review_first_order_ODE.md
   - file: Differential_equations/Second-order_ordinary_differential_equations/introduction_second_order_ODE.md
     sections:
     - file: Differential_equations/Second-order_ordinary_differential_equations/direction_fields_and_solutions_2nd.md
@@ -143,34 +156,8 @@ parts:
     - file: Differential_equations/Second-order_ordinary_differential_equations/inhomogeneous_problems_with_constant_coefficients.md
     - file: Differential_equations/Second-order_ordinary_differential_equations/problems_with_nonconstant_coefficients.md
     - file: Differential_equations/Second-order_ordinary_differential_equations/series_solutions_2nd.md
+    - file: Differential_equations/Second-order_ordinary_differential_equations/review_second_order_ODE.md
   numbered: 3
-- caption: Appendices
-  chapters:
-  - file: Overviews/Algebra/overviews_from_algebra.md
-    sections:
-    - file: Overviews/Algebra/algebraic_identities.md
-    - file: Overviews/Algebra/limits.md
-    - file: Overviews/Algebra/vector_identities.md
-  - file: Overviews/Single-variable_functions/overviews_from_single_variable_functions.md
-    sections:
-    - file: Overviews/Single-variable_functions/polynomials_and_power_functions.md
-    - file: Overviews/Single-variable_functions/exponential_and_logarithmic_functions.md
-    - file: Overviews/Single-variable_functions/trigonometric_functions.md
-    - file: Overviews/Single-variable_functions/other_functions.md
-    - file: Overviews/Single-variable_functions/decision_tree_integration.md
-  - file: Overviews/Sequences_and_series/overviews_from_sequences_and_series.md
-    sections:
-    - file: Overviews/Sequences_and_series/special_sequences.md
-    - file: Overviews/Sequences_and_series/special_series.md
-  - file: Overviews/Multivariable_functions/overviews_from_multivariable_functions.md
-    sections:
-    - file: Overviews/Multivariable_functions/common_curves.md
-    - file: Overviews/Multivariable_functions/common_surfaces.md
-    - file: Overviews/Multivariable_functions/integral_identities.md
-  - file: Overviews/fundamental_theorems.md
-  - file: Overviews/differential_equations.md
-  numbered: 3
-  style: alphaupper
 - caption: Back matter
   chapters:
   - file: references.md
@@ -193,6 +180,8 @@ parts:
   - file: _git/github.com_TeachBooks_Sphinx-PRIME-applets/main/README.md
   - file: _git/github.com_TeachBooks_Sphinx-Sticky-Margin/main/MANUAL.md
   - file: _git/github.com_TeachBooks_TeachBooks-Fetch/main/MANUAL.md
-  numbered: 3
-  style: romanupper
+  - file: Progress_reports/overview.md
+    sections:
+    - file: Progress_reports/2026_09_17.md
+  numbered: 0
 root: index.md
