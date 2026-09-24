@@ -1,1 +1,0 @@
-# Overview of differential equations

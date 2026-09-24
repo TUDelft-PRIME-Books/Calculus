@@ -135,7 +135,7 @@ Although most functions in this book can be described by means of a formula, thi
 
 ::::::
 
-Although the domain and codomain of a function are integral parts of the function, we often do not explicitly state them. Most functions that we will encounter are defined by a formula and for those functions we will implicitly assume that the domain consists precisely of those values of $x$ for which the formula 'makes sense'. In addition, almost all functions in this book will have $\mathbb{R}$ as the codomain (exceptions can be found in {numref}`Section:VectorCalculusIntro`), so we will implicitly assume that we are always dealing with these type of functions. Let us make these conventions a bit more explicit.
+Although the domain and codomain of a function are integral parts of the function, we often do not explicitly state them. Most functions that we will encounter are defined by a formula and for those functions we will implicitly assume that the domain consists precisely of those values of $x$ for which the formula 'makes sense'. In addition, almost all functions in this book will have $\mathbb{R}$ as the codomain (exceptions can be found in {numref}`Chapter:VectorCalculusIntro`), so we will implicitly assume that we are always dealing with these type of functions. Let us make these conventions a bit more explicit.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:MaxDomain
