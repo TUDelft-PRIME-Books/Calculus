@@ -1215,15 +1215,6 @@ The factors of this infinite product give rise to all zeros of $\sin(\pi x)$ bei
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/7d139b7c-c13c-40a2-942f-6e51855e281b?id=133113
-:label: Grasple:133113
-:dropdown:
-:description: Show that $2\cos(x+y)\sin(x-y)=\sin(2x)-\sin(2y)$.
-
-::::
-
-::::{grasple}
-:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/30366c26-2670-43c6-a844-609a4a4b0446?id=133115
 :label: Grasple:133115
 :dropdown:
@@ -1328,24 +1319,34 @@ $$
 \sin(\alpha+\beta)=\sin(\pi-\gamma)=\sin(\gamma)\quad\text{and}\quad\cos(\alpha+\beta)=\cos(\pi-\gamma)=-\cos(\gamma).
 $$
 
-Furthermore, it might come in handy to use (see: {numref}`Grasple:134129` and {numref}`Grasple:134131`)
+Furthermore, it might come in handy to use (see: {numref}`Grasple:134129`, {numref}`Grasple:134131` and {numref}`Grasple:133112`)
 
-$$
-\sin(x+y)\sin(x-y)=\sin^2(x)-\sin^2(y)
-$$
+::::{math}
+:label: Eq:Trigonometry:Exercise1
+
+\sin(x+y)\sin(x-y)=\sin^2(x)-\sin^2(y),
+::::
+
+::::{math}
+:label: Eq:Trigonometry:Exercise2
+
+\cos(x+y)\cos(x-y)=\cos^2(x)-\sin^2(y)
+::::
 
 and
 
-$$
-\cos(x+y)\cos(x-y)=\cos^2(x)-\sin^2(y).
-$$
+::::{math}
+:label: Eq:Trigonometry:Exercise3
+
+\sin(2x)+\sin(2y)=2\sin(x+y)\cos(x-y).
+::::
 
 ::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/3b8bab93-8132-41bc-bd75-2c28ea644608?id=133901
 :label: Grasple:133901
 :dropdown:
-:description: Show that $a\sin(\beta-\gamma)+b\sin(\gamma-\alpha)+c\sin(\alpha-\beta)=0$.
+:description: Use {eq}`Eq:Trigonometry:Exercise1` to show that $a\sin(\beta-\gamma)+b\sin(\gamma-\alpha)+c\sin(\alpha-\beta)=0$.
 
 ::::
 
@@ -1354,7 +1355,7 @@ $$
 :url: https://embed.grasple.com/exercises/c22fea42-315a-4954-a89e-763162283329?id=133905
 :label: Grasple:133905
 :dropdown:
-:description: Show that $\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)=2+2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
+:description: Use {eq}`Eq:Trigonometry:Exercise2` to show that $\sin^2(\alpha)+\sin^2(\beta)+\sin^2(\gamma)=2+2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
 
 ::::
 
@@ -1363,7 +1364,7 @@ $$
 :url: https://embed.grasple.com/exercises/9e40f143-5a2b-4e1b-9d67-bf080b03c30f?id=133908
 :label: Grasple:133908
 :dropdown:
-:description: Show that $\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1-2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
+:description: Use {eq}`Eq:Trigonometry:Exercise2` to show that $\cos^2(\alpha)+\cos^2(\beta)+\cos^2(\gamma)=1-2\cos(\alpha)\cos(\beta)\cos(\gamma)$.
 
 ::::
 
@@ -1372,7 +1373,7 @@ $$
 :url: https://embed.grasple.com/exercises/30f15c3f-bdec-473b-ae94-75d605b6fcc9?id=134134
 :label: Grasple:134134
 :dropdown:
-:description: Show that $\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)=4\sin(\alpha)\sin(\beta)\sin(\gamma)$.
+:description: Use {eq}`Eq:Trigonometry:Exercise3` to show that $\sin(2\alpha)+\sin(2\beta)+\sin(2\gamma)=4\sin(\alpha)\sin(\beta)\sin(\gamma)$.
 
 ::::
 
