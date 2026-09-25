@@ -4,9 +4,9 @@
 
 ## Introduction
 
-Almost all functions we have encountered so far have the useful property that it is possible to sketch their graph without lifting your pen, except possibly for skipping over a vertical asymptote. Indeed, polynomials, powers of $x$, rational functions, (inverse) trigonometric functions, exponential functions and logarithms have this property. A function with this property is called **continuous**. Stated differently, a function is continuous whenever small changes in the input give rise to small changes in the output values. 
+Almost all functions we have encountered so far have the useful property that it is possible to sketch their graph without lifting your pen, except possibly for skipping over a point that is not in the domain of the function. Indeed, polynomials, powers of $x$, rational functions, (inverse) trigonometric functions, exponential functions and logarithms all have this property. A function with this property is called **continuous**. Stated differently, a function is continuous whenever small changes in the input give rise to small changes in the output values. 
 
-In science and engineering, most variables depend on each other in a continuous way. However, that does not always need to be the case. Consider, for instance, an electrical circuit, shown in {numref}`Fig:Continuity-Circuit` where a DC voltage source is connected to a resistor and a capacitor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. Instantly, the current through the capacitor will jump from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. As such, the current as a function of time is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
+In science and engineering, most variables depend on each other in a continuous way. However, that does not always need to be the case. Consider, for instance, an electrical circuit, shown in {numref}`Fig:Continuity-Circuit` where a DC voltage source is connected to a resistor and a capacitor. Initially, the voltage source is turned off, but at $t=0$, we turn on the voltage source. The current through the capacitor will jump instantly from $0$ to a non-zero value, so a small change in time will give rise to a large change in current. This means that the current as a function of time is not continuous at the moment in time the voltage source is turned on (it is continuous at other points in time).
 
 :::{applet}
 :url: calculus/continuity/electrical_circuit
@@ -27,14 +27,14 @@ The circuit described above with a resistor with resistance $R$ and a capacitor 
 
 Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **continuous** at $a$ whenever for every $\varepsilon>0$ there exists a $\delta>0$ such that for every $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $|f(x)-f(a)|<\varepsilon$. If $f$ is not continuous at $a$, we say that it is **discontinuous** at $a$.
 
-If a function $f$ is continuous at each points in each point in its domain, we say that $f$ is **continuous**. 
+If a function $f$ is continuous at each points in its domain, we say that $f$ is **continuous**. 
 ::::::
 
 In most situations, continuity of a function can conveniently be expressed in terms of limits.
 
 ::::::{prf:theorem} 
 :label: Theorem:Continuity:EpsilonDelta
-Suppose that the domain of $f$ contains an open interval of the form $(c_1,a)$ or $(a,c_2)$. Then $f$ is continuous at $a$ precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$. 
+Suppose that the domain of $f$ contains an interval of the form $(c_1,a]$ or $[a,c_2)$. Then $f$ is continuous at $a$ precisely when $\lim\limits_{x\rightarrow a}f(x)=f(a)$. 
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Composition`
@@ -45,25 +45,35 @@ This follows directly from the precise definition of a limit ({prf:ref}`Def:Limi
 :::{note}
 [^FootnoteSingleton]: There is also no way to properly define this limit. Indeed, the value $f(2)$ is (and should be) irrelevant for the existence and value of the limit. If we were to ignore the condition on the domain in {prf:ref}`Def:LimitAtPoint:Precisedef`, we could, for any $\varepsilon>0$, take $\delta =\dfrac{1}{2}$. Then for any $x$ in the domain of $f$ with $0<|x-2|<\delta$ we would have $|f(x)-L|<\varepsilon$ for any $L$, since there are no such $x$. So then **all** values of $L$ would be the limit of $f$ at $2$, which is not desirable.
 
-It is clearly the easiest way to think about continuity in terms of limits (epsilons and deltas are never easy to think about). However, if we were to only use the definition in terms of the limit, we would run into a few technical issues. For instance, suppose $f$ is a function of which the domain is the interval $[0,1]$ together with the single point $\{2\}$ (such a point is sometimes referred to as an **isolated point**). Then the limit $\displaystyle \lim_{x\rightarrow 2}f(x)$ does not exist, since we only defined limits at $2$ for functions of which the domain contains an interval of the form $(c_1,2)$ or $(2,c_2)$[^FootnoteSingleton]. As such, we have to define continuity in terms of epsilons and deltas, but it is advisable to use limits whenever applicable.
+It is clearly the easiest way to think about continuity in terms of limits (epsilons and deltas are never easy to think about). However, if we were to only use the definition in terms of the limit, we would run into a few technical issues. For instance, suppose $f$ is a function of which the domain is the interval $[0,1]$ together with the single point $\{2\}$ (such a point is sometimes referred to as an **isolated point**). Then the limit $\displaystyle \lim_{x\rightarrow 2}f(x)$ does not exist, since we only defined limits at $2$ for functions of which the domain contains an interval of the form $(c_1,2)$ or $(2,c_2)$[^FootnoteSingleton]. Using {prf:ref}`Def:Continuity:ContinuityLimit` we do find that the function $f$ is continuous at $2$, since for any $\varepsilon>0$ choosing $\delta=\dfrac{1}{2}$ will do the trick. As such, we have to define continuity in terms of epsilons and deltas, but it is advisable to use limits whenever applicable.
 ::::::
 
 
-You might be tempted to think that this definition means that a function $f$ is continuous at a point $a$, whenever $\lim\limits_{x\rightarrow a}f(x)$ exists. However, this is not the case. In the definition, it is stated explicitly that this limit should not only exist, but it should also be equal to the function value $f(a)$. For instance, for the function $f$ defined in {prf:ref}`Ex:LimitAtPoint:LimitLeftRightPiecewise`, the limit $\lim\limits_{x\rightarrow 2}f(x)$ exists, but it is unequal to $f(2)$. Hence, this function $f$ is not continuous at the point $2$.
+You might be tempted to think that this definition means that a function $f$ is continuous at a point $a$ whenever $\lim\limits_{x\rightarrow a}f(x)$ exists, but this is not the case. In the definition, it is stated explicitly that this limit should not only exist, but it should also be equal to the function value $f(a)$. For instance, for the function $f$ defined in {prf:ref}`Ex:LimitAtPoint:LimitLeftRightPiecewise`, the limit $\lim\limits_{x\rightarrow 2}f(x)$ exists, but it is not equal to $f(2)$. Hence, this function $f$ is not continuous at the point $2$.
 
 
 {prf:ref}`Theorem:LimitAtPoint:Directsub` essentially states that most functions that we know (polynomials, rational functions, powers of $x$, (inverse) trigonometric functions, exponential functions and logarithms) are continuous on their domains. However, we never proved this theorem (we will do so in this section), so we cannot make use of this yet. Still, it does give us an idea which functions are going to be continuous. 
 
-We can also consider functions that are functions that are continuous except at finitely many points. Such functions are known as piecewise-continuous functions.
+We can also consider functions that are continuous except at a handful of points. Such functions are known as piecewise-continuous functions.
 
 ::::::{prf:definition}
 :label: Def:Continuity:Piecewise
-Let $f$ be a function defined on a closed interval $[a,b]$. Then $f$ is called **piecewise-continuous** if there exists points $x_0<x_1<...<x_n$ with $x_0=a$ and $x_n=b$ in such a way that $f$ is continuous on each open interval $(x_i,x_{i+1})$ for $i$ in $\{0,1,...,n-1\}$.
+Let $f$ be a function and let $S$ be the set of all points where $f$ is discontinuous. Then $f$ is called **piecewise-continuous** if for all $s\in S$ there exists an open interval $I$ such that $I$ contains no other points of $S$, i.e. $I\cap S=\left\{s\right\}$.
+
 ::::::
 
-:::{note}
-Every continuous function is also piecewise-continuos. A piecewise-continuous function is only discontinuous at finitely many points.
+::::::{prf:theorem}
+:label: Thm:Continuity:Piecewisefinite
+Let $f$ be a function which is discontinuous at finitely many points $x_1<x_2<\cdots <x_n$. Then $f$ is piecewise-continuous.
+
+In particular, any continuous function is piecewise-continuous.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Continuity:Piecewisefinite`
+:class: tudproof, dropdown
+Let $S$ be the set of all points where $f$ is discontinuous. Let $I_1=(x_0-1,x_1)$. Then $I_1\cap S=\{x_1\}$. Similarly, for $2\leq k\leq n-1$ and $I_k=(x_{k-1},x_{k+1})$ we find that $I_k\cap S=\{x_k\}$. Finally, for $I_n=(x_{n-1},x_n+1)$ we find that $I_n\cap S=\{x_n\}$. So $f$ is piecewise-continuous.
 :::
+
 
 
 ::::::{prf:example}
@@ -81,15 +91,15 @@ Some function $f$.
 
 Can we read off from the graph at which points the function is continuous? Well, for almost all points $a$ there is no problem: the limit $\lim\limits_{x\rightarrow a}f(x)$ always exists and is equal to $f(a)$. Only the points $a=-2$, $a=-1$, $a=1$ and $a=2$ are potentially problematic. 
 
-At $x=-2$ the left and right limits exist, but are unequal, so the limit $\lim\limits_{x\rightarrow -2}f(x)$ does not exist, which means that it can never be equal to $f(-2)$. As such, $f$ is not continuous at $x=-2$.
+At $x=-2$ the left and right limits exist, but are unequal, so the limit $\lim\limits_{x\rightarrow -2}f(x)$ does not exist, which means that it can never be equal to $f(-2)$. As such, $f$ is discontinuous at $x=-2$.
 
-At $x=-1$, the limit exists, as the left and right limits exist and are equal. However, we read off that $\lim\limits_{x\rightarrow -1}f(x)=1$, while $f(1)=-3$. So at this point, the limit exists, but is unequal to the function value. As such, $f$ is not continuous at $-1$.
+At $x=-1$, the limit exists, as the left and right limits exist and are equal. However, we read off that $\lim\limits_{x\rightarrow -1}f(x)=1$, while $f(1)=-3$. So at this point, the limit exists, but is unequal to the function value. This means that $f$ is discontinuous at $-1$.
 
 At $x=1$ the left and right limit are both equal to $3$ and we see that $f(1)=3$ as well. So the limit exists, and is equal to the function value. Hence, $f$ is continuous at $x=1$. You might notice that the function has a sharp edge, but this does not influence the continuity (it does, on the other hand, influence the differentiability of the function, see {numref}`Section:Differentiability`).
 
 Finally, at $x=2$ the left and right limit exist and are equal, so the limit $\lim\limits_{x\rightarrow 2}f(x)$ exists. However, the point $x=2$ is not in the domain of $f$, so $f$ is neither continuous nor discontinuous at that point. It is simply undefined there.
 
-We conclude that $f$ is continuous at all points except $-2$ and $-1$. In particular, the function $f$ is piecewise-continuous.
+We conclude that $f$ is continuous at all points of its domain except $-2$ and $-1$. In particular, the function $f$ is piecewise-continuous according to {prf:ref}`Thm:Continuity:Piecewisefinite`.
 
 ::::::
 
@@ -102,7 +112,7 @@ We conclude that $f$ is continuous at all points except $-2$ and $-1$. In partic
 :class: question
 :showanswer:
 :columns: 1
-Consider the function $g$ of which the graph shown below.
+Consider the function $g$ of which the graph is shown below.
 
 
 Select all values of $a$ for which $g$ is discontinuous at $a$.
@@ -130,6 +140,8 @@ Select all values of $a$ for which $g$ is discontinuous at $a$.
 Some function $g$.
 
 :::
+
+
 ::::
 
 
@@ -139,7 +151,7 @@ Some function $g$.
 Consider the function $f(x)=x^2$. In {prf:ref}`Ex:LimitAtPoint:Formaldefexists` we showed that $\lim\limits_{x\rightarrow 2}x^2=4$. Since $f(2)=2^2=4$, this means that $\lim\limits_{x\rightarrow 2}x^2=f(2)$. So this function is continuous at $2$. In fact, it is continuous everywhere, as we will show later.
 ::::::
 
-Before showing that many standard functions are continuous, it pays off to first show that we can combine continuous functions in several ways to obtain new continuous functions. Since we already know several computation rules for limits, and continuity is defined in terms of limits, we can directly lift these results to obtain computation rules for continuity.
+Before showing that many standard functions are continuous, it pays off to first show that we can combine continuous functions in several ways to obtain new continuous functions. Since we already know several computation rules for limits, and since continuity is defined in terms of limits, we can directly lift these results to obtain computation rules for continuity.
 
 ::::::{prf:theorem} Basic rules of calculation for continuity
 :label: Theorem:Continuity:Basiccomputationrules
@@ -171,28 +183,28 @@ Consider two functions $f$ and $g$. Suppose that $g$ is continuous at $a$ and $f
 
 [^FootnoteEpsDelta]: So $\delta_1$ takes the role here that $\varepsilon$ usually takes.
 
-Let $\varepsilon>0$ be given. Since $f$ is continuous at $g(a)$, we can pick $\delta_1>0$ in such a way that for each $x$ in the domain of $f$ with $0<|x-g(a)|<\delta_1$ we have $|f(x)-f(g(a))|<\varepsilon$. Since $g$ is continuous at $a$ and $\delta_1>0$, we can find $\delta_2>0$ in such a way that for each $x$ in the domain of $g$ with $0<|x-a|<\delta_2$ we have $|g(x)-g(a)|<\delta_1$[^FootnoteEpsDelta]. Consider any $x$ in the domain of $f\circ g$ with $0<|x-a|<\delta_2$. Then $x$ is also in the domain of $g$ and it satisfies $0<|x-a|<\delta_2$, so we must have $|g(x)-g(a)|<\delta_1$. As such, $g(x)$ is an element of the domain of $f$ with $0<|g(x)-g(a)|<\delta_1$, which means that we must have $|f(g(x))-f(g(a))|<\varepsilon$. This precisely means that $f\circ g$ is continuous at $a$.
+Let $\varepsilon>0$ be given. Since $f$ is continuous at $g(a)$, we can pick $\delta_1>0$ in such a way that for each $x$ in the domain of $f$ with $0<|x-g(a)|<\delta_1$ we have $|f(x)-f(g(a))|<\varepsilon$. Since $g$ is continuous at $a$ and $\delta_1>0$, we can find $\delta_2>0$ in such a way that for each $x$ in the domain of $g$ with $0<|x-a|<\delta_2$ we have $|g(x)-g(a)|<\delta_1$[^FootnoteEpsDelta]. Consider any $x$ in the domain of $f\circ g$ with $0<|x-a|<\delta_2$. Then $x$ is also in the domain of $g$ and it satisfies $0<|x-a|<\delta_2$, so we must have $|g(x)-g(a)|<\delta_1$. As such, $g(x)$ is an element of the domain of $f$ with either $0<|g(x)-g(a)|<\delta_1$, which means that we must have $|f(g(x))-f(g(a))|<\varepsilon$, or with $g(x)=g(a)$, in which case we must have $|f(g(x))-f(g(a))|=0<\varepsilon$. This precisely means that $f\circ g$ is continuous at $a$.
 :::
 
 ::::::{warning} 
 :name: Warning:Continuity:Oppositecomposition
 
-The reverse of the statement in {prf:ref}`Theorem:Continuity:Composition` is not true. That is, there are functions $f$ and $g$ for which there is a point $a$, such that either $f$ is discontinuous at $g(a)$ or $g$ is discontinuous at $a$ (or both), but $f\circ g$ is continuous at $a$. For instance, if $f=0$, then $f\circ g=0$ as well (independently of what $g$ is), which is a continuous function even if $g$ is not continuous everywhere. Similarly, if $g=0$ then $f\circ g=f(0)$, which is a continuous function even if $f$ is not continuous in $0$.
+The reverse of the statement in {prf:ref}`Theorem:Continuity:Composition` is not true. That is, there are functions $f$ and $g$ for which there is a point $a$, such that either $f$ is discontinuous at $g(a)$ or $g$ is discontinuous at $a$ (or both), but $f\circ g$ is continuous at $a$. For instance, if $f=0$, then $f\circ g=0$ as well (independently of what $g$ is), which is a continuous function even if $g$ is not continuous everywhere. Similarly, if $g=0$ then $f\circ g=f(0)$, which is a continuous function even if $f$ is not continuous at $0$.
 ::::::
 
-We will not show the continuity of standard functions yet, since for several of these we need the upcoming intermediate value theorem. For the purpose of having at least some examples, we will show here that polynomial functions are continuous.
+To show the continuity of several standard functions we need the upcoming intermediate value theorem. For the purpose of having at least some examples, we will show here that polynomial functions are continuous.
 
 ::::::{prf:theorem} Continuity of polynomial functions
 :label: Theorem:Continuity:ContPoly
-Let $f(x)=a_nx^n+...+a_1x+a_0$ be a polynomial function. Then $f$ is continuous on its maximal domain $\mathbb{R}$.
+Let $f(x)=a_nx^n+\cdots+a_1x+a_0$ be a polynomial function. Then $f$ is continuous on its maximal domain $\mathbb{R}$.
 
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:ContPoly`
 :class: tudproof, dropdown
-We will first show that the functions $g(x)=1$ and $h(x)=x$ are continuous. Then we will use the previous results to establish the continuity of the polynomial function $f(x)=a_nx^n+...+a_1x+a_0$.
+We will first show that the functions $g(x)=1$ and $h(x)=x$ are continuous. Then we will use the previous results to establish the continuity of the polynomial function $f(x)=a_nx^n+\cdots +a_1x+a_0$.
 
-Let $a$ in $\mathbb{R}$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|g(x)-g(a)|<\varepsilon$. Fortunately, for any $x$ we have $|g(x)-g(a)|=|1-1|=0<\varepsilon$. So we are free to choose $\delta$, independently of $\varepsilon$. So we choose $\delta=1$ and then we find that for each $x$ with $0<|x-a|<\delta$ we have $|g(x)-g(a)|<\varepsilon$. This means that $g$ is continuous at $a$. Since this holds for all $a$, $g$ is continuous on $\mathbb{R}$.
+Let $a$ be in $\mathbb{R}$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|g(x)-g(a)|<\varepsilon$. Fortunately, for any $x$ we have $|g(x)-g(a)|=|1-1|=0<\varepsilon$. So we are free to choose $\delta$, independently of $\varepsilon$. So we choose $\delta=1$ and then we find that for each $x$ with $0<|x-a|<\delta$ we have $|g(x)-g(a)|<\varepsilon$. This means that $g$ is continuous at $a$. Since this holds for all $a$, $g$ is continuous on $\mathbb{R}$.
 
 Now we want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|h(x)-h(a)|<\varepsilon$. For any $x$ we have $|h(x)-h(a)|=|x-a|$. So we choose $\delta=\varepsilon$. Then we find that for each $x$ with $0<|x-a|<\delta$ we have 
 
@@ -202,12 +214,12 @@ $$
 
 This means that $g$ is continuous at $a$. Since this holds for all $a$, $g$ is continuous on $\mathbb{R}$.
 
-Now in order to establish the continuity of $f$, we note that for each $1\leq k\leq n$ the function $x\mapsto x^k=\underbrace{x\cdot x\cdot....\cdot x}_{k\,\text{ times}}$ is the product of $k$ times the continuous function $h$. On account of {prf:ref}`Theorem:Continuity:Basiccomputationrules`, the function $x\mapsto x^k$ is continuous on $\mathbb{R}$. From the same theorem we find that the function $x\mapsto a_kx^k$ is continuous on $\mathbb{R}$. In addition, the function $x\mapsto a_0$ is a scalar multiple of the continuous function $g$, so this function is continuous on $\mathbb{R}$ too. This means that $f$ is the sum of continuous functions, so by {prf:ref}`Theorem:Continuity:Basiccomputationrules` it must be continuous.
+Now in order to establish the continuity of $f$, we note that for each $1\leq k\leq n$ the function $x\mapsto x^k=\underbrace{x\cdot x\cdot\cdots \cdot x}_{k\,\text{ times}}$ is the product of $k$ times the continuous function $h$. On account of {prf:ref}`Theorem:Continuity:Basiccomputationrules`, the function $x\mapsto x^k$ is continuous on $\mathbb{R}$ for any $1\leq k\leq n$. From the same theorem we find that the function $x\mapsto a_kx^k$ is continuous on $\mathbb{R}$. In addition, the function $x\mapsto a_0$ is a scalar multiple of the continuous function $g$, so this function is continuous on $\mathbb{R}$ too. This means that $f$ is the sum of continuous functions, so by {prf:ref}`Theorem:Continuity:Basiccomputationrules` it must be continuous.
 :::
 
 ::::::{prf:example} 
 :label: Ex:Continuity:ContPoly
-Consider the rational function $f(x)=\dfrac{x^2+1}{x^2-1}$. Then we have $f=\dfrac{g}{h}$ with $g(x)=x^2+1$ and $h(x)=x^2-1$. The functions $g$ and $h$ are polynomial functions, so they are continuous on $\mathbb{R}$ by {prf:ref}`Theorem:Continuity:ContPoly`. So by {prf:ref}`Theorem:Continuity:Basiccomputationrules` the function $f$ is continuous at each point $a$ with $h(a)\neq 0$. We see that $h(a)=0$ precisely when $a=1$ or $a=-1$. So $f$ is continuous on its maximal domain, which is the set of all $a$ in $\mathbb{R}$ except $a=1$ and $a=-1$. At these two points, $f$ is undefined, so it neither continuous nor discontinuous.
+Consider the rational function $f(x)=\dfrac{x^2+1}{x^2-1}$. Then we have $f=\dfrac{g}{h}$ with $g(x)=x^2+1$ and $h(x)=x^2-1$. The functions $g$ and $h$ are polynomial functions, so they are continuous on $\mathbb{R}$ by {prf:ref}`Theorem:Continuity:ContPoly`. So by {prf:ref}`Theorem:Continuity:Basiccomputationrules` the function $f$ is continuous at each point $a$ with $h(a)\neq 0$. We see that $h(a)=0$ precisely when $a=1$ or $a=-1$. So $f$ is continuous on its maximal domain, which is the set of all $a$ in $\mathbb{R}$ except $a=1$ and $a=-1$. At these two points, $f$ is undefined, so it is neither continuous nor discontinuous.
 
 :::{applet}
 :url: calculus/continuity/rational_function
@@ -223,37 +235,37 @@ The graph of the rational function $f(x)=\dfrac{x^2+1}{x^2-1}$, which is continu
 
 ## Intermediate value theorem
 
-Recall that we, informally, stated that the graph a continuous function can be drawn without lifting your pen. Specifically, this means that when a continuous function changes from one function value to another, it does not skip over any intermediate values. We make this idea more precise in the following theorem.
+Recall that we, informally, called a function continuous if its graph can be drawn without lifting your pen. This means that when a continuous function changes from one function value to another, it does not skip over any intermediate values. We make this idea more precise in the following theorem.
 
 ::::::{prf:theorem} Intermediate Value Theorem
 :label: Theorem:Continuity:IVT
 
-Suppose that $f$ is continuous on the closed interval $[a,b]$. Then for any $d$ in between $f(a)$ and $f(b)$ there exists a number $a\leq c\leq b$ with $f(c)=d$, i.e. $f$ takes on all values in between $f(a)$ and $f(b)$.
+Suppose that $f$ is continuous on the closed interval $[a,b]$. Then for any $d$ in between $f(a)$ and $f(b)$ there exists a number $c$ in $[a,b]$ with $f(c)=d$, i.e. $f$ takes on all values in between $f(a)$ and $f(b)$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:IVT`
 :class: tudproof, dropdown
 
-The proof is a bit beyond the scope of this book as it uses the completeness of the real numbers, but we include it for completeness (of the book, that is). Feel free to skip the proof.
+The proof is a bit beyond the scope of this book as it uses the completeness of the real numbers, but we include it for completeness's sake (of the book, that is). Feel free to skip this proof.
 
 The completeness of the real numbers is the property that every non-empty subset $S$ of $\mathbb{R}$ that has an upper bound has a smallest upper bound, called the *supremum*. That is, $c\in\mathbb{R}$ is an upper bound for $S$ if $x\leq c$ for all $x\in S$ and $s$ is the supremum of $S$ if it is an upper bound of $S$ and we have $s\leq c$ for all upper bounds $c$ of $S$.
 
-We assume that $f(a)<f(b)$ (the case where $f(b)<f(a)$ is very similar, so we will omit it). Consider any $d$ with $f(a)<d<f(b)$. Let $S$ be the set of all $x$ in $[a,b]$ that have $f(x)<d$. Then the set $S$ is non-empty, since $a$ is in this set (as $f(a)<d$). Moreover, the set $S$ is bounded, as it is contained in the interval $[a,b]$. As such, the set $S$ has a *supremum* $c$, i.e. $c$ is the smallest number that satisfies $c\geq x$ for all $x$ in $S$. The fact that this supremum exists follows from the completeness of the real numbers. 
+We assume that $f(a)<f(b)$ (the case where $f(b)<f(a)$ is very similar, so we will omit it). Consider any $d$ with $f(a)<d<f(b)$. Let $S$ be the set of all $x$ in $[a,b]$ that have $f(x)<d$. Then the set $S$ is non-empty, since $a$ is in this set (as $f(a)<d$). Moreover, the set $S$ is bounded, as it is contained in the interval $[a,b]$. As such, the set $S$ has a *supremum*, i.e. the smallest number $c$ that satisfies $c\geq x$ for all $x$ in $S$. The fact that this supremum exists follows from the completeness of the real numbers. 
 
 We claim that $f(c)=d$. For this, we first prove that $c$ cannot be equal to either $a$ or $b$. Write $\varepsilon_1=d-f(a)>0$. Since $f$ is continuous at $a$, we can find $\delta_1>0$ such that for all $x$ in $[a,b]$ with $|x-a|<\delta_1$ we have $|f(x)-f(a)|<\epsilon_1$. Then we can take any $a<x<b$ with $|x-a|<\delta_1$ and for such $x$ we have $|f(x)-f(a)|<\epsilon_1=d-f(a)$, which means $f(x)<d$ and therefore this $x$ must be in $S$. As such, there are numbers in $S$ larger than $a$, so $a$ cannot be the smallest upper bound of $S$. Hence, we must have $c>a$. 
 
-Similarly, we can write $\varepsilon_2=f(b)-d>0$. Since $f$ is continuous at $b$, we can find $\delta_2>0$ such that for all $x$ with $|x-b|<\delta_2$ we have $|f(x)-f(b)|<\epsilon_2$. Then we can take any $a<x<b$ in $[a,b]$ with $|x-b|<\delta_2$ and for such $x$ we have $|f(b)-f(x)|<\epsilon_2=f(b)-d$, which means $f(x)>d$ and therefore this $x$ cannot be in $S$. Hence, there are numbers below $b$ that are not in $S$, so $b$ cannot be the smallest upper bound of $S$. As such, we must have $c<b$.
+Similarly, we can write $\varepsilon_2=f(b)-d>0$. Since $f$ is continuous at $b$, we can find $\delta_2>0$ such that for all $x$ with $|x-b|<\delta_2$ we have $|f(x)-f(b)|<\epsilon_2$. Then we can take any $x$ in $[a,b]$ with $|x-b|<\delta_2$ and for such $x$ we have $|f(b)-f(x)|<\epsilon_2=f(b)-d$, which means $f(x)>d$ and therefore this $x$ cannot be in $S$. Hence, there are numbers below $b$ that are not in $S$, so $b$ cannot be the smallest upper bound of $S$. As such, we must have $c<b$.
 
 Combining the two inequalities, we must have $a<c<b$. As such, we can find $\delta_3>0$ in such a way that $a+\delta_3<c<b-\delta_3$. Now let $\varepsilon>0$ be given. $f$ is continuous at $c$, so we can find $\delta_4>0$ such that for all $x$ with $0<|x-c|<\delta_4$ we have $|f(x)-f(c)|<\varepsilon$, i.e. $f(x)-\varepsilon<f(c)<f(x)+\varepsilon$. We take $\delta=\operatorname{min}\left(\delta_3,\delta_4\right)$, so $\delta$ is the smallest of the values $\delta_3$ and $\delta_4$. Because of how we chose $\delta_3$, each $x$ with $c-\delta<x<c+\delta$ is in the interval $[a,b]$. Since $c$ is the smallest upper bound of the set $S$, there must be a number $p$ with $c-\delta<p<c$ which is in $S$, since otherwise $c-\delta$ would be an even smaller upper bound for $S$. For this number $p$, we have $|p-c|<\delta$ and $p$ is in $S$, i.e. $f(p)<d$, so we find
 
 $$
- f(c)<f(p)+\varepsilon<d+\varepsilon
+ f(c)<f(p)+\varepsilon<d+\varepsilon.
 $$
 
 Since $c$ is an upper bound of $S$, any number $q$ with $c<q<c+\delta$ cannot be in $S$, which means that $f(q)\geq d$. So for any such number $q$ we have $|q-c|<\delta$ and $q$ is not in $S$, so we find
 
 $$
- f(c)>f(q)-\varepsilon\geq d-\varepsilon
+ f(c)>f(q)-\varepsilon\geq d-\varepsilon.
 $$
 
 We conclude that $d-\varepsilon<f(c)<d+\varepsilon$. Since these inequalities hold for all $\varepsilon>0$, we must have that $f(c)=d$, as desired.
@@ -263,9 +275,9 @@ We conclude that $d-\varepsilon<f(c)<d+\varepsilon$. Since these inequalities ho
 ::::{prf:example}
 :label: Ex:Continuity:IVTillustration
 
-To illustrate {prf:ref}`Theorem:Continuity:IVT`, consider the function $f$ shown in {numref}`Fig:Continuity:IVT`. For the two selected points $(a,f(a))$ and $(b,f(b))$, all parts of the function $f$ that lie on the graph between $(a,f(a))$ and $(b,f(b))$ and have a value between $f(a)$ and $f(b)$ are shown in a different color and with a thicker line.
+To illustrate {prf:ref}`Theorem:Continuity:IVT`, consider the function $f$ shown in {numref}`Fig:Continuity:IVT`. For the two selected points $(a,f(a))$ and $(b,f(b))$, the parts of the function $f$ that lie on the graph between $(a,f(a))$ and $(b,f(b))$ and have a value between $f(a)$ and $f(b)$ are shown in a different color and with a thicker line.
 
-Try to drag the points $(a,f(a))$ and $(b,f(b))$ along the curve to see how the function $f$ takes on all values in between $f(a)$ and $f(b)$.
+Try to drag the points $(a,f(a))$ and $(b,f(b))$ along the curve to see how the function $f$ takes on all values between $f(a)$ and $f(b)$.
 
 :::{applet}
 :url: calculus/continuity/illustration_of_IVT
@@ -275,7 +287,7 @@ Try to drag the points $(a,f(a))$ and $(b,f(b))$ along the curve to see how the 
 A function $f$ to illustrate {prf:ref}`Theorem:Continuity:IVT`.
 :::
 
-Also note that there are combinations of $(a,f(a))$ and $(b,f(b))$ for which the function $f$ can take on a value $d$ between $f(a)$ and $f(b)$ at more than one point between $(a,f(a))$ and $(b,f(b))$.
+Note that there are choices of $(a,f(a))$ and $(b,f(b))$ for which the function $f$ can take on a value $d$ between $f(a)$ and $f(b)$ at more than one point between $(a,f(a))$ and $(b,f(b))$.
 ::::
 
 The Intermediate Value Theorem can be used to show that certain equations have a solution, even if finding this solution is very hard, or even impossible.
