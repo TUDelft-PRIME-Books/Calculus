@@ -359,13 +359,21 @@ Similarly, we can show that power functions are always strictly increasing or al
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Powernon-decreasenon-increase
 
-Let $r$ in $\mathbb{R}$ and consider the power function $f(x)=x^r$. If $r>0$, the function $f$ is strictly increasing on $[0,\infty)$. Moreover, if $r=\dfrac{p}{q}$ for integers $p>0$ and $q>0$ with $q$ odd, then $f$ is strictly increasing on $\mathbb{R}$. If $r<0$, the function $f$ is strictly decreasing on $(0,\infty)$. If $r=1$, the function $f$ is constant, and, therefore, both non-decreasing and non-increasing on $\mathbb{R}$.
+Let $r$ in $\mathbb{R}$ and consider the power function $f(x)=x^r$. 
+
+- If $r>0$, the function $f$ is strictly increasing on $[0,\infty)$. 
+- If $r=\dfrac{p}{q}$ for integers $p>0$ and $q>0$ with both $p$ and $q$ odd, then $f$ is strictly increasing on $\mathbb{R}$. 
+- If $r=\dfrac{p}{q}$ for integers $p>0$ and $q>0$ with $p$ even and $q$ odd, then $f$ is strictly decreasing on $(-\infty,0]$. 
+- If $r<0$, the function $f$ is strictly decreasing on $(0,\infty)$. 
+- If $r=\dfrac{p}{q}$ for integers $p<0$ and $q>0$ with both $p$ and $q$ odd, then $f$ is strictly decreasing on $(-\infty,0)$. 
+- If $r=\dfrac{p}{q}$ for integers $p<0$ and $q>0$ with $p$ even and $q$ odd, then $f$ is strictly increasing on $(-\infty,0)$. 
+- If $r=0$, the function $f$ is constant, and, therefore, both non-decreasing and non-increasing on $\mathbb{R}$.
 
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase`
 :class: tudproof
-This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal`.
+This follows directly from {prf:ref}`Thm:RealNumbers:ExpCalcReal` and {prf:ref}`Thm:RealNumbers:ExpCalcRat`.
 :::
 
 ::::::{prf:example} 

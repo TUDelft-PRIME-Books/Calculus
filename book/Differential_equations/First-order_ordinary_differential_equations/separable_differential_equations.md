@@ -22,7 +22,7 @@ for some functions $f$ and $g$ that are both defined and continuous on some open
 ::::::
 That is, a first-order differential equation is separable if the right-hand side can be written as the product of a part that only depends on $x$ and a part that only depends on $y$.
 
-Often, the quickest way to see that a differential equation is separable is to write it into the correct form. Of course, if you cannot figure out how to do this for a certain first-order differentiable equation it might very well be possible that the differential equation is not separable, but it might also be the case that you simply do not 'see' the right functions $f$ and $g$. If you want to make sure that a differential equation is not separable, you can use the following criterion, of which the proof uses partial derivatives (see {numref}`Sec:PartialDerivatives`).
+Often, the quickest way to see that a differential equation is separable is to write it into the correct form. Of course, if you cannot figure out how to do this for a certain first-order differentiable equation it might very well be possible that the differential equation is not separable, but it might also be the case that you simply do not 'see' the right functions $f$ and $g$. If you want to make sure that a differential equation is not separable, you can use the following criterion.
 
 ::::::{prf:theorem}
 :label: Thm:DiffSep:CheckSep
@@ -49,13 +49,7 @@ $$
  G(x,y)=\frac{F(x,y)}{F(x,y_0)}=\frac{f(x)g(y)}{f(x)g(y_0)}=\frac{g(y)}{g(y_0)}.
 $$
 
-We then obtain for these values of $x$
-
-$$
- \dfrac{\partial}{\partial x}G(x,y)=\dfrac{\partial}{\partial x}\frac{g(y)}{g(y_0)}=0.
-$$
-
-This means that $G$ does not depend on $x$.
+From this expression, we directly see that $G$ does not depend on $x$.
 
 On the other hand, suppose that we have $(x_0,y_0)$ with $F(x_0,y_0)\neq 0$ and suppose that the function
 

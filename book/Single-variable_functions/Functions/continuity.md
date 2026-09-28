@@ -25,7 +25,7 @@ The circuit described above with a resistor with resistance $R$ and a capacitor 
 ::::::{prf:definition} 
 :label: Def:Continuity:ContinuityLimit
 
-Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **continuous** at $a$ whenever for every $\varepsilon>0$ there exists a $\delta>0$ such that for every $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $|f(x)-f(a)|<\varepsilon$. If $f$ is not continuous at $a$, we say that it is **discontinuous** at $a$.
+Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **continuous** at $a$ whenever for every $\varepsilon>0$ there exists a $\delta>0$ such that for every $x$ in the domain of $f$ with $|x-a|<\delta$ we have $|f(x)-f(a)|<\varepsilon$. If $f$ is not continuous at $a$, we say that it is **discontinuous** at $a$.
 
 If a function $f$ is continuous at each points in its domain, we say that $f$ is **continuous**. 
 ::::::
@@ -240,7 +240,7 @@ Recall that we, informally, called a function continuous if its graph can be dra
 ::::::{prf:theorem} Intermediate Value Theorem
 :label: Theorem:Continuity:IVT
 
-Suppose that $f$ is continuous on the closed interval $[a,b]$. Then for any $d$ in between $f(a)$ and $f(b)$ there exists a number $c$ in $[a,b]$ with $f(c)=d$, i.e. $f$ takes on all values in between $f(a)$ and $f(b)$.
+Suppose that $f$ is continuous on the closed interval $[a,b]$. Then for any $d$ between $f(a)$ and $f(b)$ there exists a number $c$ in $[a,b]$ with $f(c)=d$, i.e. $f$ takes on all values between $f(a)$ and $f(b)$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:IVT`
@@ -295,7 +295,7 @@ The Intermediate Value Theorem can be used to show that certain equations have a
 ::::::{prf:example} 
 :label: Ex:Continuity:IVT
 
-Suppose we want to show that the equation $x^5-8x^3+2x^2+1=0$ has at least $1$ solution between $0$ and $1$. Unless you are very lucky, it is impossible to find an explicit expression for a root of a polynomial of degree $5$. Here, we can use the Intermediate Value Theorem. Indeed, note that the function $f(x)=x^5-8x^3+2x^2+1$ is continuous on the interval $[0,1]$ as it is a polynomial. Moreover, we can compute that $f(0)=1$ and $f(1)=-4$. By the Intermediate Value Theorem, $f$ must take on any value in between $1$ and $-4$ on the interval $[0,1]$. Since $0$ is in between these values, there must be some $c$ in $[0,1]$ with $f(c)=c^5-8c^3+2c^2+1=0$. As such, the equation $x^5-8x^3+2x^2+1=0$ has at least one solution between $0$ and $1$.
+Suppose we want to show that the equation $x^5-8x^3+2x^2+1=0$ has at least $1$ solution between $0$ and $1$. Unless you are very lucky, it is impossible to find an explicit expression for a root of a polynomial of degree $5$. Here, we can use the Intermediate Value Theorem. Indeed, note that the function $f(x)=x^5-8x^3+2x^2+1$ is continuous on the interval $[0,1]$ as it is a polynomial. Moreover, we can compute that $f(0)=1$ and $f(1)=-4$. By the Intermediate Value Theorem, $f$ must take on any value between $1$ and $-4$ on the interval $[0,1]$. Since $0$ is between these values, there must be some $c$ in $[0,1]$ with $f(c)=c^5-8c^3+2c^2+1=0$. As such, the equation $x^5-8x^3+2x^2+1=0$ has at least one solution between $0$ and $1$.
 
 ::::{applet}
 :url: calculus/continuity/finding_roots_with_IVT
@@ -306,12 +306,12 @@ The function $f$ with supporting horizontal and vertical lines that we can use w
 ::::
 
 
-We could even try to find a better approximation for what the value of $c$ is. Indeed, we can divide the interval $[0,1]$ into two pieces $\left[0,\frac{1}{2}\right]$ and $\left[\frac{1}{2},1\right]$. Note that $f\left(\frac{1}{2}\right)=\frac{33}{32}>0$. So on the interval $\left[\frac{1}{2},1\right]$, $f$ changes from positive to negative, which means that on this interval it must be equal to $0$ somewhere. As such, there is a solution to $x^5-8x^3+2x^2+1=0$ in between $\frac{1}{2}$ and $1$. We can continue this process of dividing the interval in two pieces and looking on which of these intervals we can still apply the Intermediate Value Theorem. The longer we continue this process, the closer we will be to the actual value of the solution. However, we cannot use this method to find the exact value of the solution, as we can only perform finitely many computations.
+We could even try to find a better approximation for what the value of $c$ is by dividing the interval $[0,1]$ into two pieces $\left[0,\frac{1}{2}\right]$ and $\left[\frac{1}{2},1\right]$. Note that $f\left(\frac{1}{2}\right)=\frac{17}{32}>0$. So on the interval $\left[\frac{1}{2},1\right]$, $f$ changes from positive to negative, which means that on this interval it must be equal to $0$ somewhere. As such, there is a solution to $x^5-8x^3+2x^2+1=0$ between $\frac{1}{2}$ and $1$. We can continue this process of dividing the interval in two pieces and looking on which of these intervals we can still apply the Intermediate Value Theorem. The longer we continue this process, the closer we will get to the actual value of the solution. However, we cannot use this method to find the exact value of the solution, as we can only perform finitely many computations.
 
 
-This idea of finding roots can be used in general to find roots of continuous functions, which is the basis of the bisection method, which will be treated in more detail in {numref}`Sec:IterativeMethodsForVariousProblems`.
+This idea can be used to find roots of general continuous functions, which is the basis of the bisection method, which will be treated in more detail in {numref}`Sec:IterativeMethodsForVariousProblems`.
 
-Note also that the value of function in  the left and the right endpoints of the interval $[a,b]$ do need to be of opposite sign to be sure that the function has a root in between.
+Note also that $f(a)$ and $f(b)$ do need to be of opposite sign to be sure that the function has a root in between.
 ::::::
 
 
@@ -320,12 +320,12 @@ The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the f
 ::::::{prf:corollary} Bolzano's Theorem
 :label: Cor:Continuity:IVT
 
-Suppose that $f$ is continuous on the closed interval $[a,b]$. If $f(a)$ and $f(b)$ have opposite signs (so one of them is positive while the other is negative) then there is a point $c$ in the open interval $(a,b)$ with $f(c)=0$.
+Suppose that $f$ is continuous on the closed interval $[a,b]$. If $f(a)$ and $f(b)$ have opposite signs (so one of them is positive while the other is negative), then there is a point $c$ in the open interval $(a,b)$ with $f(c)=0$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Cor:Continuity:IVT`
 :class: tudproof
-Since $f(a)$ and $f(b)$ have opposite signs, the number $0$ must be in between these values. Hence, the result follows directly from {prf:ref}`Theorem:Continuity:IVT`.
+Since $f(a)$ and $f(b)$ have opposite signs, the number $0$ must be between these values. Hence, the result follows directly from {prf:ref}`Theorem:Continuity:IVT`.
 :::
 
 :::{prf:remark}
@@ -347,7 +347,7 @@ $$
 
 Then $f$ is not continuous at the point $1$, since the function values jump from $4$ to $6$ there. In addition, even though $f(0)=3$ and $f(2)=8$, there is no value of $x$ with $f(x)=5$.
 
-It is also important that the function is defined in each point of the closed interval $[a,b]$. Indeed, consider the function $g(x)=\frac{1}{x}$. Then $g$ is continuous on its maximal domain (as it is the quotient of two polynomials), which does not include $x=0$. Note that $f(-1)=-1$ and $f(1)=1$. However, there is no $x$ in between $-1$ and $1$ with $f(x)=0$.
+It is also important that the function is defined at each point of the closed interval $[a,b]$. Indeed, consider the function $g(x)=\frac{1}{x}$. Then $g$ is continuous on its maximal domain (as it is the quotient of two polynomials), which does not include $x=0$. Note that $f(-1)=-1$ and $f(1)=1$. However, there is no $x$ between $-1$ and $1$ with $f(x)=0$.
 
 ::::{figure-start}
 :name: Fig:Continuity:IVTnoncont
@@ -384,21 +384,23 @@ The function $f$ on the left, the function $g$ on the right.
 
 ## Continuity of standard functions
 
-With the intermediate value theorem in hand, we are almost ready to show the continuity of standard functions. As a final preparation, we can show that inverse functions (if they exist) of continuous functions are continuous. Intuitively, this result makes sense: the graph of the inverse function is obtained by reflecting the graph of the original function in the line $y=x$, so if the first one does not contain any jumps, the second one will not contain any jumps as well. In order to establish this result, we first need the following theorem.
+With the intermediate value theorem in hand, we are almost ready to show the continuity of standard functions. As a final preparation, we show that inverse functions (if they exist) of continuous functions are continuous. Intuitively, this result makes sense: the graph of the inverse function is obtained by reflecting the graph of the original function in the line $y=x$, so if the first one does not contain any jumps, the second one will not contain any jumps either. In order to establish this result, we first need the following theorem.
 
 
 ::::::{prf:theorem} 
 :label: Thm:Continuity:InverseMonotonic
-Let $f$ be an invertible function, defined on an interval $(a,b)$, that is continuous. Then $f$ is either strictly monotonic on the interval $(a,b)$.
+Let $f$ be an invertible function, defined on an interval $I$, that is continuous. Then $f$ is strictly monotonic on the interval $I$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Continuity:InverseMonotonic`
 :class: tudproof, dropdown
-Suppose that is $f$ is neither strictly increasing nor strictly decreasing on $(a,b)$. Then there are three points $a<x_1<x_2<x_3<b$ such that $f(x_2)$ does not lie in between $f(x_1)$ and $f(x_3)$. Then either $f(x_1)$ is in between $f(x_2)$ and $f(x_3)$ or $f(x_3)$ is in between $f(x_1)$ and $f(x_2)$.
+Suppose that is $f$ is neither strictly increasing nor strictly decreasing on $I$. Then there are three points $x_1<x_2<x_3$ in $I$ such that $f(x_2)$ does not lie between $f(x_1)$ and $f(x_3)$.
 
-First suppose that $f(x_1)$ is in between $f(x_2)$ and $f(x_3)$. By the Intermediate Value Theorem, there is a $c$ in between $x_2$ and $x_3$ with $f(c)=f(x_1)$. However, since $x_1<x_2<x_3$ and $c$ is in between $x_2$ and $x_3$, $c$ cannot be equal to $x_1$. Therefore, $c$ and $x_1$ are different numbers with the same function value, which contradicts the invertibility of $f$.
+If two of the values $f(x_1)$, $f(x_2)$ and $f(x_3)$ are equal, $f$ cannot be invertible. If all values are different, then $f(x_2)$ needs to be either the lowest of the highest of these three values, as we assumed it is not between $f(x_1)$ and $f(x_3)$.
 
-Similarly, suppose that $f(x_3)$ is in between $f(x_1)$ and $f(x_2)$. By the Intermediate Value Theorem, there is a $c$ in between $x_1$ and $x_2$ with $f(c)=f(x_3)$. However, since $x_1<x_2<x_3$ and $c$ is in between $x_1$ and $x_2$, $c$ cannot be equal to $x_3$. Therefore, $c$ and $x_3$ are different numbers with the same function value, which contradicts the invertibility of $f$.
+Let us consider the case $f(x_1)<f(x_3)<f(x_2)$; all other cases are analogous. Then we let $d=\dfrac{f(x_2)+f(x_3)}{2}$. Since we have $f(x_1)<f(x_3)<f(x_2)$, we find that $f(x_1)<d<f(x_2)$ and $f(x_3)<d<f(x_2)$. Since we have $f(x_1)<d<f(x_2)$, we can use {prf:ref}`Theorem:Continuity:IVT` to find $c_1\in(x_1,x_2)$ for which $f(c_1)=d$. Similarly, since we have $f(x_3)<d<f(x_2)$, we can use {prf:ref}`Theorem:Continuity:IVT` to find $c_2\in(x_2,x_3)$ for which $f(c_2)=d$. Then we see that $c_1\neq c_2$, but we still have $f(c_1)=d=f(c_2)$. This contradicts the invertibility of $f$.
+
+Hence, $f$ must be strictly monotonic.
 :::
 
 
@@ -406,26 +408,41 @@ Similarly, suppose that $f(x_3)$ is in between $f(x_1)$ and $f(x_2)$. By the Int
 
 ::::::{prf:theorem} Continuity of inverse functions
 :label: Theorem:Continuity:Inverse
-Let $f$ be one-to-one function, defined on an interval $(a,b)$, that is continuous. Then the inverse function $f^{-1}$ is continuous as well.
+Let $f$ be a one-to-one function, defined on an interval $I$, that is continuous. Then the inverse function $f^{-1}$ is continuous as well.
 
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Inverse`
 :class: tudproof, dropdown
-By {prf:ref}`Thm:Continuity:InverseMonotonic` $f$ must be either strictly increasing or strictly decreasing on $(a,b)$. We assume that $f$ is strictly increasing (the case where $f$ is strictly decreasing is similar). Let $d$ be any point in the domain of $f^{-1}$ and write $c=f^{-1}(d)$. Let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $y$ with $0<|y-d|<\delta$ we have $|f^{-1}(y)-f^{-1}(d)|<\varepsilon$, i.e. $c-\varepsilon=f^{-1}(d)-\varepsilon<f^{-1}(y)<f^{-1}(d)+\varepsilon=c+\varepsilon$. If $\varepsilon$ is too large $c-\varepsilon$ and/or $c+\varepsilon$ might be outside of the interval of $(a,b)$, so we assume that $\varepsilon$ is sufficiently small (as we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway). Define $y_1=f(c-\varepsilon)$ and $y_2=f(c+\varepsilon)$. We know that $f$ is strictly increasing, so we must have $y_1<d<y_2$. Now we choose $\delta>0$ in such a way that $y_1\leq d-\delta$ and $d+\delta\leq y_2$.   We know that for any $y$ with $|y-d|<\delta$ we have $y_1\leq d-\delta<y<d+\delta\leq y_2$, which means that $f^{-1}(y_1)<f^{-1}(y)<f^{-1}(y_2)$. Hence, $f^{-1}$ must be strictly increasing as well. Then we obtain
+
+[^FootnoteSmalleps]: As we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway. And since $c$ is not a boundary point of the interval, we know for certain that for sufficiently small $\varepsilon$ the numbers $c-\varepsilon$ and $c+\varepsilon$ will be in $I$.
+
+By {prf:ref}`Thm:Continuity:InverseMonotonic` $f$ must be either strictly increasing or strictly decreasing on $I$. We assume that $f$ is strictly increasing (the case where $f$ is strictly decreasing is similar). According to {prf:ref}`Thm:Inverse:MonotonicOnetoone`, $f^{-1}$ is strictly increasing as well. Let $d$ be any point in the domain of $f^{-1}$ and write $c=f^{-1}(d)$. Let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $y$ with $|y-d|<\delta$ we have $|f^{-1}(y)-f^{-1}(d)|<\varepsilon$, i.e. $c-\varepsilon=f^{-1}(d)-\varepsilon<f^{-1}(y)<f^{-1}(d)+\varepsilon=c+\varepsilon$. 
+
+Suppose first that $c$ is not a boundary point of the interval $I$. If $\varepsilon$ is too large $c-\varepsilon$ and/or $c+\varepsilon$ might be outside of the interval of $I$, so we assume that $\varepsilon$ is sufficiently small[^FootnoteSmalleps]. Define $y_1=f(c-\varepsilon)$ and $y_2=f(c+\varepsilon)$. We know that $f$ is strictly increasing, so we must have $y_1<d<y_2$. Now we choose $\delta>0$ in such a way that $y_1\leq d-\delta$ and $d+\delta\leq y_2$.   We know that for any $y$ with $|y-d|<\delta$ we have $y_1\leq d-\delta<y<d+\delta\leq y_2$. Since $f^{-1}$ is strictly increasing, we have for such a value of $y$ that
 
 $$
- c-\varepsilon=f^{-1}(y_1)<f^{-1}(y)<f^{-1}(y_2)=c+\varepsilon
+ c-\varepsilon=f^{-1}(y_1)<f^{-1}(y)<f^{-1}(y_2)=c+\varepsilon.
 $$
 
-This means that $|f^{-1}(y)-c|<\varepsilon$, as desired. Hence, $f^{-1}$ is continuous at $c$. Since $c$ was chosen arbitrary, $f^{-1}$ is continuous on its maximal domain.
+This means that $|f^{-1}(y)-c|<\varepsilon$, as desired. Hence, $f^{-1}$ is continuous at $c$.
+
+Now suppose that $c$ is the left boundary point of the interval $I$. We now assume that $\varepsilon$ is small enough that $c+\varepsilon\in I$. Define $y_2=f(c+\varepsilon)$. We know that $f$ is strictly increasing, so we must have $d<y_2$. Now we choose $\delta>0$ in such a way that $d+\delta\leq y_2$. We know that for any $y\geq  d$ with $|y-d|<\delta$ we have $y<d+\delta\leq y_2$. Since $f^{-1}$ is strictly increasing, we have for such a value of $y$ that
+
+$$
+ c=f^{-1}(d)\leq f^{-1}(y)<f^{-1}(y_2)=c+\varepsilon.
+$$
+
+This means that $|f^{-1}(y)-c|<\varepsilon$, as desired. Hence, $f^{-1}$ is continuous at $c$. A similar argument hold for the case that $c$ is the right boundary point of $I$.
+
+
+Since $c$ was chosen arbitrary, $f^{-1}$ is continuous on its domain.
 :::
-
 
 
 ::::::{warning} 
 :name: Warning:Continuity:Inverse
-If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continuous at a point $c$ in the interval $(a,b)$, you might expect that the inverse function $f^{-1}$ is continuous at $f(c)$ as well, but this is not necessarily the case. However, coming up with an example where this fails, is very hard. We provide one below, but it is very technical, so read it at your own risk.
+If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continuous at a point $c$ in the interval $(a,b)$, you might expect that the inverse function $f^{-1}$ is continuous at $f(c)$ as well, but this is not necessarily the case. An example where this fails, is provided below. It is rather technical, so read it at your own risk.
 
 ::::::
 
@@ -435,11 +452,11 @@ If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continu
 
 Consider the function $f(x)$, defined for $x$ in the interval $(-1,1)$, which has $f\left(\frac{1}{n}\right)=\frac{1}{2n}$ for all integers $n\geq 3$, $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$ for all integers $n\geq 3$ and $f(x)=x$ for all other values of $x$. First, we show that $f$ is one-to-one. Note that the points of the form $\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ even, while points of the form $1-\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ odd, so these points are not mapped to the same function values. Moreover, if $x$ is not of one of these forms, then $x$ is mapped to itself, which is not of the form $\frac{1}{m}$ for $m$ either even or odd. So indeed, different points are mapped to different function values, so the function is one-to-one.
 
-Now we claim that $f$ is continuous at $0$. We know $f(0)=0$, so we must show that $\lim\limits_{x\rightarrow 0}f(x)=0$. Let $\varepsilon>0$ be given. We choose $\delta=\min\left\{\varepsilon,\dfrac{1}{2}\right\}$, i.e. $\delta$ is the smallest of the two values $\varepsilon$ and $\dfrac{1}{2}$. Then for $x$ with $|x|<\delta$ we either have $x=\frac{1}{n}$, which means that $|f(x)|=\frac{1}{2n}\leq \frac{1}{n}<\delta=\varepsilon$, or $x$ is not of this form, in which case $|f(x)|=|x|<\delta=\varepsilon$ ($x=1-\frac{1}{n}$ for $n\geq 3$ is not possible since we assumed that $\delta\leq \frac{1}{2}$). As such, we must have $\lim\limits_{x\rightarrow 0}f(x)=0$, so $f$ is continuous at $0$.
+Now we claim that $f$ is continuous at $0$. We know $f(0)=0$, so we must show that $\lim\limits_{x\rightarrow 0}f(x)=0$. Let $\varepsilon>0$ be given. We choose $\delta=\min\left\{\varepsilon,\dfrac{1}{2}\right\}$, i.e. $\delta$ is the smallest of the two values $\varepsilon$ and $\dfrac{1}{2}$. Then for $x$ with $|x|<\delta$ we either have $x=\frac{1}{n}$, which means that $|f(x)|=\frac{1}{2n}\leq \frac{1}{n}<\delta=\varepsilon$, or $x$ is not of this form, in which case $|f(x)|=|x|<\delta=\varepsilon$ ($x=1-\frac{1}{n}$ for $n\geq 3$ is not possible since we assumed that $\delta\leq \frac{1}{2}$). Hence, we must have $\lim\limits_{x\rightarrow 0}f(x)=0$, so $f$ is continuous at $0$.
 
 [^Footnoteproperty]: In this case, the property is that for all $x$ in the domain of $f^{-1}$ with $0<|x-0|<\delta$ we have $|f^{-1}(x)-f^{-1}(0)|<\varepsilon$.
 
-Finally, we claim that $f^{-1}$ is not continuous at $0$. Note that $f^{-1}(0)=0$, as $f(0)=0$. Since continuity means that for each $\varepsilon>0$ there is a $\delta>0$ with a certain property[^Footnoteproperty], and we want to show that the function is discontinuous, we want to choose $\varepsilon>0$ such that there is no $\delta>0$ with the desired property. Here, we choose $\varepsilon=\frac{1}{4}$. We want to show that no choice of $\delta$ works, so we let $\delta>0$ be given. Then we can choose an integer $n\geq 3$ such that $0<\frac{1}{2n+1}<\delta$. For this $n$, we find that $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}$, since we know that $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$. Since $n\geq 2$, we have $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}>\frac{1}{4}=\varepsilon$. So we found a point $x$ with $0<|x|<\delta$ and $|f^{-1}(x)|\geq \varepsilon$. Since $\delta$ was chosen arbitrarily, no $\delta$ is going to work. As such, the function $f^{-1}$ is not continuous at $f^{-1}(0)=0$, even though $f$ was continuous at $0$.
+Finally, we claim that $f^{-1}$ is not continuous at $0$. Note that $f^{-1}(0)=0$, as $f(0)=0$. Since continuity means that for each $\varepsilon>0$ there is a $\delta>0$ with a certain property[^Footnoteproperty], and we want to show that the function is discontinuous, we want to choose $\varepsilon>0$ such that there is no $\delta>0$ with the desired property. Here, we choose $\varepsilon=\frac{1}{4}$. We want to show that no choice of $\delta$ has the property that for all $x$ in the domain of $f^{-1}$ with $0<|x-0|<\delta$ we have $|f^{-1}(x)-f^{-1}(0)|<\varepsilon$, so we let $\delta>0$ be given arbitrarily. Then we can choose an integer $n\geq 3$ such that $0<\frac{1}{2n+1}<\delta$. For this $n$, we find that $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}$, since we know that $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$. Since $n\geq 2$, we have $f^{-1}\left(\frac{1}{2n+1}\right)=1-\frac{1}{n}>\frac{1}{4}=\varepsilon$. So we found a point $x$ with $0<|x|<\delta$ and $|f^{-1}(x)|\geq \varepsilon$. Since $\delta$ was chosen arbitrarily, no $\delta$ is going to work. This means that the function $f^{-1}$ is not continuous at $f^{-1}(0)=0$, even though $f$ was continuous at $0$.
 
 So if a one-to-one function is continuous on an interval, then its inverse is continuous on the corresponding interval as well {prf:ref}`Theorem:Continuity:Inverse`, but this is no longer true when we only look at continuity in a single point.
 
