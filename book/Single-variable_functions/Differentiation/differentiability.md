@@ -384,7 +384,7 @@ If $f$ is not differentiable, but, instead, has a vertical tangent line at $a$, 
 Let $f$ and $g$ functions that are both differentiable at $a$ with $f(a)=g(a)$. Then the graphs of $f$ and $g$ are orthogonal at $a$ if, and only if, 
 
 $$
- f'(a)g'(a)=1.
+ f'(a)g'(a)=-1.
 $$
 ::::::
 
@@ -405,8 +405,12 @@ $$
 as desired.
 :::
 
-:::{todo}
-Maak een applet waarbij we functies van twee ongespecificeerde functies f en g zien die elkaar snijden in een punt a, samen met de twee raaklijnen. De hellingen $f'(a)$ en $g'(a)$ moeten te veranderen zijn met een schuifje. Er verschijnt een loodrecht-symbool tussen de twee raaklijnen zodra het product van de hellingen $-1$ is.
+:::{applet}
+:url: calculus/differentiability/orthogonal_functions
+:name: Fig:Differentiability:Ortho
+:class: dark-light
+
+Two functions $f$ and $g$ that intersect at a (draggable) point, with the (adjustable) slopes indicated by the drawn tangent lines.
 :::
 
 Before we go over to computing derivatives, we need to introduce on more concept.
