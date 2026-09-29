@@ -348,7 +348,7 @@ Intuitively, these computation rules make sense: if the function values $f(x)$ a
 
 ::::::{prf:theorem} Substitution for limit at a point
 :label: Theorem:LimitAtPoint:Substitution
-Suppose $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then we have
+Suppose $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. In addition, let $g$ be a function of which the domain contains an open interval of the form $(d_1,a)$ or $(a,d_2)$ and suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then we have
 
 $$
  \lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b).
