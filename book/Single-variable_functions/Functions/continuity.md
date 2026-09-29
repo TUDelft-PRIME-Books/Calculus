@@ -495,19 +495,38 @@ The following functions are continuous on their maximal domain.
 ::::::{admonition} Proof of {prf:ref}`Theorem:Continuity:Standardfunctions`
 :class: tudproof, dropdown, full-width
 
-[^Footnoterange]: This happens when $a^r-\varepsilon<0$ and $r$ is not of the form $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with $q$ odd.
-[^Footnotesmalleps]: As we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway.
+[^Footnoterange]: This would not be possible if $a=0$ and $r$ is not of the form $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with both $p$ and $q$ odd, since then we would have $a-\varepsilon<0$ no matter how small $\varepsilon$ is, and for these values of $r$ it is not possible to take the $\dfrac{1}{r}$th power of a negative number.
 
-**Continuity of $x^r$:** Let $r>0$ and consider the function $f(x)=x^r$. Let $a\geq 0$ be any point in the domain of $f$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. If $a^r-\varepsilon$ is not in the range of $f$[^Footnoterange] the part $a^r-\varepsilon<x^r$ is satisfied automatically, so we can assume that $a^r-\varepsilon$ is in the range of $f$[^Footnotesmalleps]. Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. From {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase` we know that the function $x^{\frac{1}{r}}$ is strictly increasing, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $0\leq x_1\leq a-\delta$ and $a+\delta\leq x_2$. Since $f$ is strictly increasing as well by {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase`, we know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_2$, which means that $f(x_1)<f(x)<f(x_2)$, i.e. 
+**Continuity of $x^r$:** Let $r>0$ and consider the function $f(x)=x^r$. Let $a\geq 0$ and let $\varepsilon>0$ be given. We want to choose $\delta>0$ in such a way that for each $x$ in the domain of $f$ with $0<|x-a|<\delta$ we have $|x^r-a^r|<\varepsilon$, i.e. $a^r-\varepsilon<x^r<a^r+\varepsilon$. We first assume that we are not in the situation that $a=0$ and that $r$ is not of the form $\dfrac{p}{q}$ with $p$ and $q>0$ integers with $p$ and $q$ odd. Then we can assume that $\varepsilon>0$ is small enough that $a^r-\varepsilon$ is in the range of $f$[^Footnoterange]. Define $x_1=\left(a^r-\varepsilon\right)^{\frac{1}{r}}$ and $x_2=\left(a^r+\varepsilon\right)^{\frac{1}{r}}$. From {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase` we know that the function $x^{\frac{1}{r}}$ is strictly increasing on $[x_1,\infty)$, so we must have $x_1<a<x_2$. Now we choose $\delta>0$ in such a way that $x_1\leq a-\delta$ and $a+\delta\leq x_2$. We know that for any $x$ with $|x-a|<\delta$ we have $x_1\leq a-\delta<x<a+\delta\leq x_2$, so since $f$ is strictly increasing on $[x_1,x_2]$ by {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase`, we obtain $f(x_1)<f(x)<f(x_2)$, i.e. 
 
 $$
  a^r-\varepsilon=\left(\left(a^r-\varepsilon\right)^{\frac{1}{r}}\right)^r=f(x_1)<x^r<f(x_2)=\left(\left(a^r+\varepsilon\right)^{\frac{1}{r}}\right)^r=a^r+\varepsilon
 $$
 
-This means that $|x^r-a^r|<\varepsilon$, as desired. Hence, $f$ is continuous at $a$. Now suppose that $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with $q$ odd. Then (and only then) the domain of $f$ also contains the interval $(-\infty,0)$ so we let $a$ in $(-\infty,0)$. Note that for $x<0$ we have if $p$ is odd
+This means that $|x^r-a^r|<\varepsilon$, as desired. Hence, $f$ is continuous at $a$. Now suppose that $a=0$ and $r$ is not of the form $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with both $p$ and $q$ odd. We define $x_2=\varepsilon^{\frac{1}{r}}$. Then we see that $x_2>0$. Now we choose $\delta>0$ in such a way that $a+\delta\leq x_2$. We know that for any $x\geq 0$ with $|x|<\delta$ we have $0\leq x<a+\delta\leq x_2$, so since $f$ is strictly increasing on $[0,x_2]$ by {prf:ref}`Thm:PropertiesFunctions:Powernon-decreasenon-increase`, we obtain $f(0)\leq f(x)<f(x_2)$, i.e. 
 
 $$
- f(x)=x^r=\sqrt[q]{x^p}=-\sqrt[q]{\left(-x\right)^p}=-\left(-x\right)^r=-f(-x)
+ 0^r-\varepsilon<0=f(0) \leq x^r<f(x_2)=\left(\varepsilon^{\frac{1}{r}}\right)^r=0^r+\varepsilon.
+$$
+
+This means that $\displaystyle\lim_{x\rightarrow 0^+}f(x)=f(0)$. If $r$ is not of the form $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with $p$ even and $q$ odd, then the domain of $f$ is $[0,\infty)$, so then we would immediately find $\displaystyle\lim_{x\rightarrow 0}f(x)=f(0)$, which means that $f$ is continuous in $0$. If $r$ is of the form $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with $p$ even and $q$ odd, then we have for any $x$ that 
+
+$$
+ f(x)=x^r=\sqrt[q]{x^p}=\sqrt[q]{\left(-x\right)^p}=\left(-x\right)^r=f(-x).
+$$
+
+In that case, we obtain
+
+$$
+ \lim_{x\rightarrow 0^-}f(x)=\lim_{x\rightarrow 0^-}f(-x)=\lim_{x\rightarrow 0^+}f(x)=f(0),
+$$
+
+so we find that $\lim_{x\rightarrow 0}f(x)=f(0)$, which means that $f$ is continuous in $0$.
+
+Now suppose that $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with $q$ odd. Then (and only then) the domain of $f$ also contains the interval $(-\infty,0)$ so we let $a$ be in $(-\infty,0)$. Note that for $x<0$ we have, if $p$ is odd
+
+$$
+ f(x)=x^r=\sqrt[q]{x^p}=-\sqrt[q]{\left(-x\right)^p}=-\left(-x\right)^r=-f(-x),
 $$
 
 while if $p$ is even we have
@@ -516,9 +535,9 @@ $$
  f(x)=x^r=\sqrt[q]{x^p}=\sqrt[q]{\left(-x\right)^p}=\left(-x\right)^r=f(-x).
 $$
 
-Since $f$ is continuous at $-a$, we obtain from {prf:ref}`Theorem:Continuity:Basiccomputationrules` that $f$ is also continuous at $a$. So $f$ is continuous on its maximal domain.
+Since $f$ is continuous at $-a$, we obtain from {prf:ref}`Theorem:Continuity:Composition` that $f$ is also continuous at $a$. 
 
-Since $a$ was chosen arbitrary, $f$ is continuous on its maximal domain.
+Since $a$ was chosen arbitrarily, $f$ is continuous on its maximal domain.
 
 For $r=0$, we have the function $f(x)=x^r=1$. We already saw that this function is continuous in {prf:ref}`Theorem:Continuity:ContPoly`.
 
@@ -526,11 +545,11 @@ Now, finally, we let $r<0$ and consider the function $f(x)=x^r$. Then $f(x)=\fra
 
 **Continuity of $|x|$:** Let $f(x)=|x|$. For $a>0$, we have $\lim\limits_{x\rightarrow a}|x|=\lim\limits_{x\rightarrow a}x=a=|a|$, since the function $x$ is continuous at $a$. Similarly, for $a<0$, we have $\lim\limits_{x\rightarrow a}|x|=\lim\limits_{x\rightarrow a}-x=-a=|a|$, since the function $-x$ is continuous at $a$. Finally, we consider $a=0$. Then we have $\lim\limits_{x\rightarrow 0^+}|x|=\lim\limits_{x\rightarrow 0^+}x=0=|0|$, since the function $x$ is continuous at $0$. Similarly, we have $\lim\limits_{x\rightarrow 0^-}|x|=\lim\limits_{x\rightarrow 0^-}-x=-0=|0|$, since the function $-x$ is continuous at $0$. We conclude that $\lim\limits_{x\rightarrow 0}|x|=0=|0|$, so $f$ is continuous at $0$. Hence, $f$ is continuous on its maximal domain.
 
-**Continuity of $b^x$:** Let $b>0$ be given and consider the function $f(x)=b^x$. Recall from {numref}`Subsec:RealnumbersExp` how this function was defined: for a rational number $a=\frac{p}{q}$ (so with $p$ and $q$ integers), we defined $b^a=b^{\frac{p}{q}}=\sqrt[q]{b^p}$. Then for an irrational number $a$ we 'filled in the gap' by approximating $b^a$ from below by a sequence of numbers $b^{x_1},b^{x_2},b^{x_3},\ldots$ and from above by $b^{y_1},b^{y_2},b^{y_3},\ldots$ where $x_1,x_2,x_3,\ldots$ and $y_1,y_2,y_3,\ldots$ are rational and approach the value $a$ (more mathematically: the sequences $\left\{x_n\right\}_{n=1}^\infty$ and $\left\{y_n\right\}_{n=1}^\infty$ converge to $a$, see {numref}`Section:SequenceConvergence`). Stated differently, we constructed $b^a$ in such a way that the function $f$ is continuous at $a$. As such, this function is continuous everywhere.
+**Continuity of $b^x$:** Let $b>0$ be given and consider the function $f(x)=b^x$. Recall from {numref}`Subsec:RealnumbersExp` how this function was defined: for a rational number $a=\frac{p}{q}$ (with $p$ and $q$ integers), we defined $b^a=b^{\frac{p}{q}}=\sqrt[q]{b^p}$. Then for an irrational number $a$ we 'filled in the gap' by approximating $b^a$ from below by a sequence of numbers $b^{x_1},b^{x_2},b^{x_3},\ldots$ and from above by $b^{y_1},b^{y_2},b^{y_3},\ldots$ where $x_1,x_2,x_3,\ldots$ and $y_1,y_2,y_3,\ldots$ are rational and approach the value $a$ (more mathematically: the sequences $\left\{x_n\right\}_{n=1}^\infty$ and $\left\{y_n\right\}_{n=1}^\infty$ converge to $a$, see {numref}`Section:SequenceConvergence`). Doing a lot of heavy lifting, we constructed $b^a$ in such a way that the function $f$ is continuous at $a$. As such, this function is continuous everywhere.
 
 **Continuity of $\log_b(x)$:** Let $b>0$ with $b\neq 1$ and consider $f(x)=\log_b(x)$. Then $f$ is the inverse function of the continuous function $b^x$. So by {prf:ref}`Theorem:Continuity:Inverse` $f$ is continuous.
 
-**Continuity of $\sin(x)$ and $\cos(x)$:** Now consider the function $f(x)=\sin(x)$. We will first show that $f$ is continuous in $0$ by showing that $\lim\limits_{x\rightarrow 0}\sin(x)=\sin(0)=0$. For this, we will show that $|\sin(x)|\leq |x|$ for all $-\frac{\pi}{2}<x<\frac{\pi}{x}$, which will allow us to use the squeeze theorem. First consider $x$ with $0<x<\frac{\pi}{2}$. We consider a circle with radius $1$, centered around the origin $O$. Then we consider two points $A$ and $B$ on the circle such that the angle between the line pieces $OA$ and $OB$ is exactly $x$, as shown in the figure below.
+**Continuity of $\sin(x)$ and $\cos(x)$:** Now consider the function $f(x)=\sin(x)$. We will first show that $f$ is continuous at $0$ by showing that $\lim\limits_{x\rightarrow 0}\sin(x)=\sin(0)=0$. For this, we will show that $|\sin(x)|\leq |x|$ for all $-\frac{\pi}{2}<x<\frac{\pi}{x}$, which will allow us to use the squeeze theorem. First consider $x$ with $0<x<\frac{\pi}{2}$. We consider a circle with radius $1$, centered around the origin $O$. Then we consider two points $A$ and $B$ on the circle such that the angle between the line pieces $OA$ and $OB$ is exactly $x$, as shown in the figure below.
 
 ::::{applet}
 :url: calculus/continuity/continuity_of_sine_and_cosine
@@ -555,34 +574,28 @@ $$
 
 as desired. So for all $-\frac{\pi}{2}<x<\frac{\pi}{x}$ we have $|\sin(x)|\leq |x|$, i.e. we have $-|x|\leq \sin(x)\leq |x|$. Since $|x|$ and $-|x|$ are continuous, we find $\lim\limits_{x\rightarrow 0}-|x|=-|0|=0$ and $\lim\limits_{x\rightarrow 0}|x|=|0|=0$. By {prf:ref}`Theorem:LimitAtPoint:Squeezetheorem` we find that $\lim\limits_{x\rightarrow 0}\sin(x)=0=\sin(0)$ as well. Hence, the sine is continuous at $0$. 
 
-Before establishing that the sine is continuous at any other point, we will first establish that that $g(x)=\cos(x)$ is continuous in $0$ as well. For this we evaluate
+Before establishing that the sine is continuous at any other point, we will first establish that that $g(x)=\cos(x)$ is continuous at $0$ as well. For this we evaluate
 
 $$
- \lim\limits_{x\rightarrow 0}\cos(x)-1=\lim\limits_{x\rightarrow 0}\left(\cos(x)-1\right)\frac{\cos(x)+1}{\cos(x)+1}=\lim\limits_{x\rightarrow 0}\frac{\cos(x)^2-1}{\cos(x)+1}=\lim\limits_{x\rightarrow 0}\frac{-\sin(x)^2}{\cos(x)+1}
+ \lim\limits_{x\rightarrow 0}\left(\cos(x)-1\right)=\lim\limits_{x\rightarrow 0}\left(\cos(x)-1\right)\frac{\cos(x)+1}{\cos(x)+1}=\lim\limits_{x\rightarrow 0}\frac{\cos(x)^2-1}{\cos(x)+1}=\lim\limits_{x\rightarrow 0}\frac{-\sin(x)^2}{\cos(x)+1}.
 $$
 
 By the geometrical definition of the cosine, we know that the cosine is strictly decreasing on the interval $\left[0,\frac{\pi}{2}\right]$, so we find $0=\cos\left(\frac{\pi}{2}\right)\leq \cos(x)\leq  \cos(0)=1$ for all $0\leq x\leq\frac{\pi}{2}$. Since $\cos(-x)=\cos(x)$, we find that $0\leq \cos(x)\leq1$ and, therefore, $1\leq \cos(x)+1\leq2$ holds for all $-\frac{\pi}{2}\leq x\leq \frac{\pi}{2}$. As such, we find that 
 
 $$
- \frac{-\sin(x)^2}{1}\leq \frac{-\sin(x)^2}{\cos(x)+1}\leq \frac{\sin(x)^2}{1}
+ \frac{-\sin(x)^2}{1}\leq \frac{-\sin(x)^2}{\cos(x)+1}\leq \frac{-\sin(x)^2}{2}
 $$
 
 for all $-\frac{\pi}{2}\leq x\leq \frac{\pi}{2}$. Since the sine is continuous at $0$, we find that 
 
 $$
- \lim\limits_{x\rightarrow 0}-\sin(x)^2=-\sin(0)^2=0
+ \lim\limits_{x\rightarrow 0}-\sin(x)^2=-\sin(0)^2=0.
 $$
-
-and
-
-$$
- \lim\limits_{x\rightarrow 0}\sin(x)^2=\sin(0)^2=0.
-$$ 
 
 By {prf:ref}`Theorem:LimitAtPoint:Squeezetheorem` we find that 
 
 $$
- \lim\limits_{x\rightarrow 0}\cos(x)-1=\lim\limits_{x\rightarrow 0}\frac{-\sin(x)^2}{\cos(x)+1}=0,
+ \lim\limits_{x\rightarrow 0}\left(\cos(x)-1\right)=\lim\limits_{x\rightarrow 0}\frac{-\sin(x)^2}{\cos(x)+1}=0,
 $$
 
 so
@@ -601,12 +614,11 @@ $$
  &\leq &|\sin(a)\cos(x-a)-\sin(a)|+|\cos(a)\sin(x-a)|\qquad &\text{using the triangle inequality}\\
  &=&|\sin(a)||\cos(x-a)-1|+|\cos(a)||\sin(x-a)|&\\
  &\leq &|\cos(x-a)-1|+|\sin(x-a)|&\text{since }|\sin(a)|\leq 1\,\text{ and }\,|\cos(a)|\leq 1\\
- &\leq &\frac{\varepsilon}{2}+|\sin(x-a)|&\text{since }\,0<|x-a|<\delta\leq \delta_1\\
  &\leq &\frac{\varepsilon}{2}+\frac{\varepsilon}{2}&\text{since }\,0<|x-a|<\delta\leq \delta_2\\
  &=&\varepsilon&\end{array}
 $$
 
-Here we used the triangle inequality {prf:ref}`thm:triangle_inequality_real_numbers`. As such, we have shown that $\lim\limits_{x\rightarrow a}\sin(x)=\sin(a)$. So the sine is continuous everywhere. Note that $\cos(x)=\sin\left(\frac{\pi}{2}-x\right)$, so the cosine is the composition of the continuous functions $\sin(x)$ and $\frac{\pi}{2}-x$, which by {prf:ref}`Theorem:Continuity:Composition` means that the cosine is continuous as well.
+Here we used the triangle inequality {prf:ref}`thm:triangle_inequality_real_numbers`. Hence, we have shown that $\lim\limits_{x\rightarrow a}\sin(x)=\sin(a)$. So the sine is continuous everywhere. Note that $\cos(x)=\sin\left(\frac{\pi}{2}-x\right)$, so the cosine is the composition of the continuous functions $\sin(x)$ and $\frac{\pi}{2}-x$, which by {prf:ref}`Theorem:Continuity:Composition` means that the cosine is continuous as well.
 
 **Continuity of $\tan(x)$:** The function $\tan(x)=\frac{\sin(x)}{\cos(x)}$ is the quotient of two continuous functions and is, therefore, itself continuous on its maximal domain. 
 
@@ -624,7 +636,7 @@ We can also establish a more general version of {prf:ref}`Theorem:LimitAtPoint:S
 
 ::::::{prf:theorem} Substitution for limit at a point
 :label: Theorem:Continuity:Substitution
-Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
+Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ be in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. In addition, let $g$ be a function of which the domain contains an open interval of the form $(d_1,a)$ or $(a,d_2)$ and suppose that $\lim\limits_{x\rightarrow a}g(x)=b$. Then $\lim\limits_{x\rightarrow a}f(g(x))=f\left(\lim\limits_{x\rightarrow a}g(x)\right)=f(b)$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:Substitution`
@@ -638,21 +650,21 @@ $$
 Since $\lim\limits_{x\rightarrow a}h(x)=\lim\limits_{x\rightarrow a}g(x)=b=h(a)$, $h$ is continuous at $a$. As such, the function $f\circ h$ is continuous by {prf:ref}`Theorem:Continuity:Composition` at $a$. Note that for $x\neq a$ we have $f(h(x))=f(g(x))$. Then we find
 
 $$
- \lim\limits_{x\rightarrow a}f(g(x))=\lim\limits_{x\rightarrow a}f(h(x))=f(h(a))=f(b)=f\left(\lim\limits_{x\rightarrow a}g(x)\right)
+ \lim\limits_{x\rightarrow a}f(g(x))=\lim\limits_{x\rightarrow a}f(h(x))=f(h(a))=f(b)=f\left(\lim\limits_{x\rightarrow a}g(x)\right).
 $$
 :::
 
 :::{admonition} Proof of {prf:ref}`Theorem:LimitAtPoint:Substitution`
 :class: tudproof, dropdown
 :name: prf:Continuity:Prooflimitpointsub
-If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and $b$ is in the domain of $f$, then $f$ is continuous at $b$ by {prf:ref}`Theorem:Continuity:Standardfunctions`, possibly combined with {prf:ref}`Theorem:Continuity:Basiccomputationrules`. As such, the result follows from {prf:ref}`Theorem:Continuity:Substitution`
+If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and $b$ is in the domain of $f$, then $f$ is continuous at $b$ by {prf:ref}`Theorem:Continuity:Standardfunctions`, possibly combined with {prf:ref}`Theorem:Continuity:Basiccomputationrules`. The result then follows from {prf:ref}`Theorem:Continuity:Substitution`.
 
 
 :::
 
 ::::::{prf:theorem} Substitution for limit at plus or minus infinity
 :label: Theorem:Continuity:SubstitutionInf
-Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
+Let $f$ be a function and suppose that the domain of $f$ contains an open interval of the form $(c_1,c_2)$ and let $b$ in $(c_1,c_2)$. Suppose that $f$ is continuous at $b$. In addition, let $g$ be a function of which the domain contains an interval of the form $[d,\infty)$ and suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
 
 A similar result holds for limits at minus infinity.
 ::::::
@@ -660,20 +672,20 @@ A similar result holds for limits at minus infinity.
 :::{admonition} Proof of {prf:ref}`Theorem:Continuity:SubstitutionInf`
 :class: tudproof, dropdown
 
-[^Footnoteroleepsdelt]: Hence, $\delta$ takes the rol here that $\varepsilon$ usually takes.
+[^Footnoteroleepsdelt]: Hence, $\delta$ takes the role here that $\varepsilon$ usually takes.
 
 Unfortunately, since we are dealing with a limit at infinity, we cannot refer to {prf:ref}`Theorem:Continuity:Composition`. Instead, we will use the precise definition of a limit at infinity. Let $\varepsilon>0$ be given. Since $f$ is continuous at $b$, we can find $\delta>0$ such that for all $x$ in the domain of $f$ with $0<|x-b|<\delta$ we have $|f(x)-f(b)|<\varepsilon.$ Then, since $\lim\limits_{x\rightarrow \infty}g(x)=b$ we can take $N$ such that for all $x$ with $x>N$ we have $|g(x)-b|<\delta$[^Footnoteroleepsdelt]. Then for $x>N$ we have that $g(x)$ is a number with $|g(x)-b|<\delta$, which means that $|f(g(x))-f(b)|<\varepsilon$. This precisely means that $\lim\limits_{x\rightarrow \infty}f(g(x))=f(b)$, as desired.
 :::
 
 :::{admonition} Proof of {prf:ref}`Theorem:LimitAtInfinity:Substitution`
 :class: tudproof, dropdown
-If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$, then $f$ is continuous at $b$ by {prf:ref}`Theorem:Continuity:Standardfunctions`, possibly combined with {prf:ref}`Theorem:Continuity:Basiccomputationrules`. As such, the result follows from {prf:ref}`Theorem:Continuity:SubstitutionInf`
+If $f$ is a polynomial, rational function, power of $x$, (inverse) trigonometric function, exponential function or logarithmic function and $b$ is in the domain of $f$, then $f$ is continuous at $b$ by {prf:ref}`Theorem:Continuity:Standardfunctions`, possibly combined with {prf:ref}`Theorem:Continuity:Basiccomputationrules`. As such, the result follows from {prf:ref}`Theorem:Continuity:SubstitutionInf`.
 
 :::
 
 In case the outer function is not continuous, we need additional assumptions on the inner function to use the substitution rule for limits.
 
-::::::{prf:theorem} Substitution for limit at a point when outer function is not continuous
+::::::{prf:theorem} 
 :label: Theorem:Continuity:SubstitutionAlt
 Let $f$ and $g$ be functions such that $g$ is one-to-one and continuous on an open interval $I$ containing a number $a$. Then $\displaystyle\lim_{x\rightarrow a}f(g(x))$ exists precisely when $\displaystyle \lim_{y\rightarrow g(a)}f(y)$ exists. In case these limits exist, they are equal.
 ::::::
@@ -716,7 +728,7 @@ $$
 Note that $g^{-1}$ is one-to-one and continuous on an interval that contains $g(a)$. So now we can apply the first half of this proof to the function $h$ instead of $f$ and $g^{-1}$ instead of $g$ to conclude that 
 
 $$
- \lim_{x\rightarrow a}f(g(x))=\lim_{x\rightarrow a}h(x)=\lim_{x\rightarrow g^{-1}(g(a))}h(x)=\lim_{y\rightarrow g(a)}h(g^{-1}(y))=\lim_{y\rightarrow g(a)}f(y)=L.
+ \lim_{x\rightarrow a}f(g(x))=\lim_{x\rightarrow g^{-1}(g(a))}h(x)=\lim_{y\rightarrow g(a)}h(g^{-1}(y))=\lim_{y\rightarrow g(a)}f(y)=L.
 $$
 
 :::
@@ -799,17 +811,17 @@ A function $g(x)$ and a slider for the parameter $b$.
 
 ## Left and right continuity
 
-Consider the function from {prf:ref}`Ex:Continuity:Visual`. We saw that this function was not continuous at $-2$, since the left and right limit were unequal. However, we can read off from the graph that $\lim\limits_{x\rightarrow 2^-}f(x)=f(-2)$. So if we ignore the part of the function to the right of $-2$, the function is continuous. We say that the function is **left-continuous** at $-2$. Although left continuity (and the corresponding **right continuity**) is a bit weaker than regular continuity, it is still a useful concept to consider.
+Consider the function from {prf:ref}`Ex:Continuity:Visual`. We saw that this function was not continuous at $-2$, since the left and right limit were unequal. However, we can read off from the graph that $\lim\limits_{x\rightarrow -2^-}f(x)=f(-2)$. So if we ignore the part of the function to the right of $-2$, the function is continuous. We say that the function is **left-continuous** at $-2$. Although left continuity (and the corresponding **right continuity**) is a bit weaker than regular continuity, it is still a useful concept to consider.
 
 ::::::{prf:definition} 
 :label: Def:Continuity:Continuityleftright
 
 Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **left-continuous** at $a$ if $\lim\limits_{x\rightarrow a^-}f(x)=f(a)$. 
 
-Similarly, we say that $f$ is **right-continuous** at $a$ if $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$. 
+Similarly, $f$ is **right-continuous** at $a$ if $\lim\limits_{x\rightarrow a^+}f(x)=f(a)$. 
 ::::::
 
-::::::{prf:corollary} 
+::::::{prf:theorem} 
 :label: Thm:Continuity:Continuityleftright
 
 Suppose that the domain of $f$ contains an open interval $(b,c)$ and let $a$ in $(b,c)$. Then $f$ is continuous at $a$ precisely when $f$ is both left and right-continuous at $a$.
@@ -826,7 +838,7 @@ A function is both left and right-continuous at $a$, when both identities $\lim\
 Consider the function
 
 $$
-f(x)=\left\{\begin{array}{ll}3x+4,&\text{if }\,x\leq 0,\\ \ln(x)+3,&\text{if }\,0<x<1,\\ 3-x,&\text{if }\,x\geq 1. \end{array}\right.
+f(x)=\left\{\begin{array}{ll}3x+4,&\text{if }\,x\leq 0,\\ \ln(x)+3,&\text{if }\,0<x<1,\\ 3-x,&\text{if }\,1\leq x. \end{array}\right.
 $$
 
 We want to find out at which points $f$ is continuous (either regular, left or right). Since the functions $3x+4$, $\ln(x)+3$ and $3-x$ are continuous on their domains, the only problems can arise at the points where we switch between which formula is used to describe the function values, i.e. at $0$ and $1$. We can evaluate
@@ -847,14 +859,14 @@ Similarly, we can evaluate
   f(1)&=2.
 \end{align*}
 
-Hence, the limit $\lim\limits_{x\rightarrow 1}f(x)$ does not exist, so the function is not continuous at $1$. However, we do find that $\lim\limits_{x\rightarrow 1^+}f(x)=f(1)$. As such, the function is right-continuous at $1$ (but not left-continuous).
+Hence, the limit $\lim\limits_{x\rightarrow 1}f(x)$ does not exist, so the function is not continuous at $1$. However, we do find that $\lim\limits_{x\rightarrow 1^+}f(x)=f(1)$. We conclude that the function is right-continuous at $1$ (but not left-continuous).
 
 ::::{applet}
 :url: calculus/continuity/continuity_from_the_right
 :name: Fig:Continuity:Continuityleftright
 :class: dark-light
 
-The function $f$ as an example for continuity from the right.
+The function $f$ as an example for left and right continuity.
 ::::
 
 ::::::
