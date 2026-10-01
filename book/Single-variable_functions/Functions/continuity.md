@@ -417,9 +417,8 @@ If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continu
 
 ::::::
 
-::::{prf:example} Example of one-to-one function where continuity at point does not carry over to inverse
-:label: Example:Continuity:InverseDiscontinuity
-:class: dropdown
+::::{admonition} Example of one-to-one function where continuity at a point does not carry over to the inverse function
+:class: dropdown, bonus
 
 Consider the function $f(x)$, defined for $x$ in the interval $(-1,1)$, which has $f\left(\frac{1}{n}\right)=\frac{1}{2n}$ for all integers $n\geq 3$, $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$ for all integers $n\geq 3$ and $f(x)=x$ for all other values of $x$. First, we show that $f$ is one-to-one. Note that the points of the form $\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ even, while points of the form $1-\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ odd, so these points are not mapped to the same function values. Moreover, if $x$ is not of one of these forms, then $x$ is mapped to itself, which is not of the form $\frac{1}{m}$ for $m$ either even or odd. So indeed, different points are mapped to different function values, so the function is one-to-one.
 
@@ -435,9 +434,9 @@ So if a one-to-one function is continuous on an interval, then its inverse is co
 :url: calculus/continuity/continuity_and_inverse
 :name: Fig:Continuity:InverseDiscontinuity
 :class: dark-light
+:nonumber: 
 
-
-A graph of the function $f$ from {prf:ref}`Example:Continuity:InverseDiscontinuity`, which is continuous at $0$, but whose inverse is not continuous at $0$.
+A graph of the function $f$ described above, which is continuous at $0$, but whose inverse is not continuous at $0$.
 :::
 
 
@@ -735,7 +734,13 @@ The function $f(x)$ and a slider for the parameter $b$. Can you recreate the res
 :class: question
 :showanswer:
 
-Consider the function $g$ of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider`. The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
+Consider the next function $g$, of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider`:
+
+$$
+g(x)=\left\{\begin{array}{ll}-bx^4,&\text{if }\,x< 1,\\ b^2,&\text{if }\,x=1,\\ (b+1)x+1,&\text{if }\,x> 1. \end{array}\right.
+$$
+
+The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
 
 _Select all values of $b$ for which $g$ is continuous at $x=1$._
 ---
@@ -837,7 +842,13 @@ The function $f$ as an example for continuity from the right.
 :class: question
 :showanswer:
 
-Consider the function $g$ of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider2`. The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
+Consider the next function $g$, of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider2`:
+
+$$
+g(x)=\left\{\begin{array}{ll}-bx^4,&\text{if }\,x< 1,\\ b^2,&\text{if }\,x=1,\\ (b+1)x+1,&\text{if }\,x> 1. \end{array}\right.
+$$
+
+The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
 
 _Select all values of $b$ for which $g$ is not continuous at $x=1$, but is continuous from the right or from the left._
 ---
