@@ -2,141 +2,457 @@
 
 # First-order linear differential equations
 
-In this section we cover:
+## Introduction
 
-- standard form
-- Integrating factor
-- Solving linear first order differential equations
-- Mention name Bernoulli equations
-- Link with separable equations, same example?
 
-Another specific form of a differential equation for which we have a method for solving is a *linear* differential equation.
-
-::::::{prf:Definition}
-A first-order differential equation is called **linear** if it can be written in the form:
+In {numref}`Sec:ODE1:Separable` we have seen how we can solve separable first-order separable equations. However, in {prf:ref}`Ex:DiffSep:SepCheck2` we saw that even a seemingly simple differential equation such as 
 
 $$
-\frac{dy}{dx}+P(x)y=Q(x),
+ y'=t+y
 $$
 
-where $P(x)$ and $Q(x)$ are continuous functions on any interval.
+is not separable, so we are not able to solve it (yet). In {numref}`Subsec:DiffclassLinear` we introduced the concept of a linear differential equation. The differential equation above is linear. In this section, we will learn two different methods to solve first-order linear differential equations: using an **integarting factor** and the method of **variation of parameters**. 
+
+Let us first repeat a part of {prf:ref}`Def:ClassDiff:Linear` specifically for first-order differential equations.
+
+::::::{prf:definition}
+:label: Def:ODE1Lin:Linear
+
+A first-order differential equation $F(x,y,y')=0$ is called **linear** if it can be written in the form
+
+$$
+a_1(x)y'+a_0(x)y=f(x).
+$$
+
+The first-order differential equation is in **standard form**, when it is written as
+
+$$
+y'+p(x)y=q(x).
+$$
 ::::::
 
-We consider two methods to solve this kind of differential equations: using an *integrating factor* and the method of *variation of the parameter*.
-
-Using an **integrating factor**:
-
-If we multiply the differential equation (in standard form) by a factor $I(x)\neq0$, then the solutions remain the same. We try to find such a factor $I(x)$ such that
+::::::{prf:example} 
+:label: Ex:ODE1Lin:LinCheck1
+Consider the differential equation
 
 $$
-I(x)y'(x)+I(x)P(x)y(x)=I(x)Q(x)
+ e^x\frac{dy}{dx}=x^2y-\sin(x).
 $$
 
-implies that
+Even though this equation is not in the correct form yet, it is linear, since we can write
 
 $$
-\frac{d}{dx}\left(I(x)y(x)\right)=I(x)Q(x).
+ e^x\frac{dy}{dx}-x^2y=-\sin(x).
 $$
 
-Then we must have that: $I'(x)=I(x)P(x)$. Such a factor $I(x)$ is called an integrating factor because then we can integrate:
+It is important to realise that even though a linear differential equation needs to be linear in $y$ and $\dfrac{dy}{dx}$, it is no problem that it contains nonlinear functions of $x$, such as $e^x$, $-x^2$ and $-\sin(x)$. The standard form of this linear differential equation can be found by dividing the entire equation by $e^x$, i.e. by multiplying it by $e^{-x}$, which gives
 
 $$
-I(x)y(x)=\int I(x)Q(x)\,dx.
+\frac{dy}{dx}-e^{-x}x^2y=-e^{-x}\sin(x).
 $$
+::::::
 
-And since $I(x)\neq0$ this leads to the solution: $y(x)=\displaystyle\frac{1}{I(x)}\int I(x)Q(x)\,dx$.
-In order to find such an integrating factor $I(x)\neq0$ we have to solve the differential equation
-
-$$
-I'(x)=I(x)P(x).
-$$
-
-However, this is a separable differential equation. Note that $I(x)=\exp\left(\displaystyle\int P(x)\,dx\right)$ is a solution, where $\displaystyle\int P(x)\,dx$ denotes any antiderivative of $P(x)$.
-
-This leads to the following 'recipe':
-
-* Write the differential equation in the standard form $\displaystyle\frac{dy}{dx}+P(x)y=Q(x)$.
-
-* Find an (arbitrary) *integrating factor* $I(x)\neq0$ such that $I'(x)=I(x)P(x)$.
-
-* Multiply the differential equation in *standard form* by $I(x)$:
+::::::{prf:example} 
+:label: Ex:ODE1Lin:LinCheck12
+Consider the differential equation
 
 $$
-\underbrace{I(x)y'(x)+I(x)P(x)y(x)}_{\displaystyle\left(I(x)y(x)\right)'}=I(x)Q(x). 
+ y'=t^2+\frac{1}{y}.
 $$
- 
-* Integrate both sides of this equation: $I(x)y(x)=\displaystyle\int I(x)Q(x)\,dx$.
 
-* Divide by $I(x)\neq0$: $y(x)=\displaystyle\frac{1}{I(x)}\int I(x)Q(x)\,dx$.
-
-**Examples**
-
-::::::{prf:Example}
-Consider the differential equation $y'+2y=3$. 
-
-This has $I(x)=e^{2x}\neq0$ as an integrating factor (since $I'(x)=2I(x)$). Hence: 
+Because of the term $\dfrac{1}{y}$, the differential equation is not linear. Even if we were to multiply the equation by $y$, we would obtain
 
 $$
-y'+2y=3\quad\Longleftrightarrow\quad(e^{2x}y(x))'=3e^{2x}.
+ yy'=t^2y+1
+$$
+
+and the term $yy'$ cannot be a part of a linear differential equation.
+
+To be absolutely sure that it cannot be written in the correct form, we use {prf:ref}`Thm:ClassDiff:Linear`. We can rewrite the differential equation as $F(t,y,y')=0$ with
+
+$$
+ F(t,y,y')=y'-t^2-\frac{1}{y}.
+$$
+
+Then we see that
+
+$$
+ \frac{\partial^2}{\partial y_0^2}F(t,y_0,y_1)=-\frac{2}{y_0^3}\neq 0,
+$$
+
+so the differential equation is not linear.
+::::::
+
+## Integrating factor
+
+
+
+In order to derive a method for solving first-order linear differential equations, we first consider one of the form
+
+:::{math}
+:label: Eq:ODE1Lin:Step1
+ y(x)'=q(x).
+:::
+
+This is a first-order linear differential equation and it is written in standard form. Even better, we already know how to solve it: the differential equation asks us to find a function $y$ of which the derivative is the known function $q$. Then $y$ must be an antiderivative of $q$, i.e. we find that
+
+$$
+ y(x)=\int q(x)\,dx.
+$$
+
+So far so good, so let us consider the slightly more difficult first-order linear differential equation
+
+:::{math}
+:label: Eq:ODE1Lin:Step2
+ \left(y(x)I(x)\right)'=I(x)q(x),
+:::
+
+where $I(x)$ is some known function. Writing the differential equation like this might seem a bit weird, but it will turn out to be a convenient form. Just like {eq}`Eq:ODE1Lin:Step1`, the differential equation {eq}`Eq:ODE1Lin:Step2` asks us to find a function, this time called $y(x)I(x)$, of which the derivative is the known function $I(x)q(x)$. This means that, as before, $y(x)I(x)$ needs to be an antiderivative of $I(x)q(x)$, which gives
+
+$$
+ y(x)I(x)=\int I(x)q(x)\,dx.
+$$
+
+From this, we obtain
+
+$$
+ y(x)=\frac{1}{I(x)}\int I(x)q(x)\,dx.
+$$
+
+
+
+We are still going strong, so let us consider a first-order linear differential equation, which appears to be yet one step harder
+
+:::{math}
+:label: Eq:ODE1Lin:Step3
+ y'(x)I(x)+y(x)I'(x)=I(x)q(x).
+:::
+
+However, this equation is not harder at all, since it is the exact same equation as {eq}`Eq:ODE1Lin:Step2`. Indeed, we can use {prf:ref}`Thm:Productquotientrule:Productrule` to write out the term $(y(x)I(x))'$ in {eq}`Eq:ODE1Lin:Step2` to obtain
+
+$$
+ y'(x)I(x)+y(x)I'(x)=I(x)q(x),
+$$
+
+which exactly matches {eq}`Eq:ODE1Lin:Step3`. But then, we also know how to solve it: we first write it back into the form {eq}`Eq:ODE1Lin:Step2` and then integrate to obtain
+
+$$
+ y(x)=\frac{1}{I(x)}\int I(x)q(x)\,dx.
+$$
+
+We now feel confident enough to try to solve the most general case: a first-order linear differential equation in standard form, which is given by
+
+:::{math}
+:label: Eq:ODE1Lin:Step4
+ y'(x)+p(x)y(x)=q(x).
+:::
+
+If we multiply {eq}`Eq:ODE1Lin:Step4` by a function $I(x)$ with $I(x)\neq 0$ for all $x$, then the solutions do not change. Multiplying with the, as of now unknown, function $I(x)$, we obtain
+
+$$
+ y'(x)I(x)+p(x)y(x)I(x)=I(x)q(x).
 $$ 
 
-This implies that $e^{2x}y(x)=\displaystyle\int 3e^{2x}\,dx=\tfrac{3}{2}e^{2x}+C$ with $C$ an arbitrary (integration) constant. Hence: $y(x)=\frac{3}{2}+Ce^{-2x}$ with $C\in\mathbb{R}$.
+This is *almost* in the same form as {eq}`Eq:ODE1Lin:Step3`. The only thing we do need to ensure is that the coefficient of $y(x)$ matches, which means that we must have
+
+$$
+ I'(x)=p(x)I(x).
+$$
+
+This is a separable differential equation for $I(x)$, so we know how to solve it. Indeed, letting $P(x)$ denote any antiderivative of $p(x)$, we see that
+
+$$
+ I(x)=e^{P(x)}
+$$
+
+satisfies
+
+$$
+ I'(x)=e^{P(x)}P'(x)=I(x)p(x).
+$$
+
+This function $I(x)$ is called an **integrating factor** for the differential equation. We conclude that if we multiply {eq}`Eq:ODE1Lin:Step4` by $I(x)=e^{P(x)}$ we obtain an equation in the same form as {eq}`Eq:ODE1Lin:Step3`, which means that we obtain the solution
+
+$$
+ y(x)=\frac{1}{I(x)}\int I(x)q(x)\,dx.
+$$
+
+Let us formalise the terminology used here and, subsequently, turn this solution procedure into an algorithm that can be used to solve any first-order linear differential equation.
+
+::::::{prf:definition} 
+:label: Def:ODE1Lin:Integratingfactor
+For a first-order linear differential equation in $y(x)$ in standard form
+
+$$
+ y' + p(x)y = q(x),
+$$
+
+an **integrating factor** $I$ is given by
+
+$$
+ I(x)=e^{P(x)},
+$$
+
+where $P(x)$ is any antiderivative of $p(x)$.
+
+
+::::::
+
+::::::{prf:algorithm}
+:label: Alg:ODE1Lin:SolvingAlgorithm
+
+[^FootnoteCheck]: At this point, the left-hand side of the equation reads $I(x)y'(x)+I(x)p(x)y(x)$. You should verify that this expression is the same as $\left(I(x)y(x)\right)'$.
+
+Consider the first-oder linear differential equation $a_1(x)y'(x)+a_0(x)y(x)=f(x)$.
+
+1. Write the differential equation in the standard form.
+2. Find any integrating factor $I(x)$ for this differential equation.
+3. Multiply the result of step 1 by the integrating factor.[^FootnoteCheck]
+4. Take the antiderivative of both sides of the equation.
+5. Solve for $y$ to obtain the general solution.
+6. If applicable, use the initial condition to find the value of the arbitrary constant $C$.
+
+::::::
+
+
+
+
+::::::{prf:Example}
+:label: Def:ODE1Lin:ExConst
+
+[^FootnoteAntider]: There is no need to write $2x+C$ for the antiderivative of $2$. Indeed, we are only looking for some integrating factor that works, not for all of them. Picking a different antiderivative, such as $2x+5$ would give the same solution in the end.
+
+Consider the differential equation 
+
+$$
+ y'+2y=3.
+$$
+
+This is a first-order linear differential equation and it is written in standard form. The coefficient function of $y$ in this standard form is $2$, of which $2x$ is an antiderivative[^FootnoteAntider]. Hence, $I(x)=e^{2x}$ is an integrating factor for this differential equation. We multiply the differential equation by this integrating factor to obtain
+
+$$
+ e^{2x}y'+2e^{2x}y=3e^{2x}.
+$$
+
+By construction, we have
+
+$$
+ e^{2x}y'+2e^{2x}=\left(e^{2x}y\right)',
+$$
+
+which means that the differential equation becomes
+
+$$
+ \left(e^{2x}y\right)'=3e^{2x}.
+$$
+
+We integrate this equation to obtain
+
+$$
+ e^{2x}y=\int 3e^{2x}\,dx=\frac{3}{2}e^{2x}+C.
+$$
+
+We conclude that the general solution of the differential equation is given by
+
+$$
+ y(x)=\frac{3}{2}+Ce^{-2x}
+$$
+
+with $C\in\mathbb{R}$.
 ::::::
 
 ::::::{prf:Example}
-Consider the differential equation $y'-2xy=4x$. 
-
-This has $I(x)=e^{-x^2}\neq0$ as an integrating factor (since $I'(x)=-2xI(x)$). Hence: 
+:label: Ex:ODE1Lin:xy
+Consider the differential equation $y'=2xy$, which we solved in {prf:ref}`Ex:DiffSep:xy`. This differential equation is not only separable, but also linear. First we need to write it in standard form
 
 $$
-y'-2xy=4x\quad\Longleftrightarrow\quad(e^{-x^2}y(x))'=4xe^{-x^2}.
+ y'-2xy=0.
+$$
+
+The coefficient function of $y$ in this standard form is $-2x$, of which $-x^2$ is an antiderivative. Hence, $I(x)=e^{-x^2}$ is an integrating factor for this differential equation. We multiply the differential equation by this integrating factor to obtain
+
+$$
+ e^{-x^2}y'-2xe^{-x^2}y=0.
+$$
+
+By construction, we have
+
+$$
+ e^{-x^2}y'-2xe^{-x^2}y=\left(e^{-x^2}y\right)',
+$$
+
+which means that the differential equation becomes
+
+$$
+ \left(e^{-x^2}y\right)'=0.
+$$
+
+We integrate this equation to obtain
+
+$$
+ e^{-x^2}y=\int 0\,dx=C.
+$$
+
+We conclude that the general solution of the differential equation is given by
+
+$$
+ y(x)=Ce^{x^2}
+$$
+
+with $C\in\mathbb{R}$.
+::::::
+
+::::::{prf:Example}
+:label: Ex:ODE1Lin:1overx
+Consider the initial-value problem
+
+$$
+ xy'+y=1,\qquad y(1)=2
+$$
+
+with $x>0$. The differential equation is not in standard form, so we first write it as 
+
+$$
+ y'+\displaystyle\frac{1}{x}y=\frac{1}{x}.
+$$
+
+We then note that 
+
+$$
+ I(x)=e^{\int \frac{1}{x}\,dx}=e^{\ln(x)}=x
+$$
+
+is an integrating factor. We multiply the differential equation by this integrating factor to obtain
+
+$$
+ xy'+y=1.
+$$
+
+By construction, we have
+
+$$
+ xy'+y=\left(xy\right)',
+$$
+
+which means that the differential equation becomes
+
+$$
+ \left(xy\right)'=1.
+$$
+
+We integrate this equation to obtain
+
+$$
+ xy=\int 1\,dx=x+C.
+$$
+
+We conclude that the general solution of the differential equation is given by
+
+$$
+ y(x)=1+\frac{C}{x}
+$$
+
+with $C\in\mathbb{R}$. As the final step, we use the initial condition $y(1)=2$ to find the value of $C$. We must have
+
+$$
+ 2=y(1)=1+\frac{C}{1}=1+C,
+$$
+
+which gives $C=1$. So the solution of the inital-value problem is given by
+
+$$
+ y(x)=1+\frac{1}{x}.
+$$
+::::::
+
+## Variation of parameters
+
+Another method of solving linear first-order differential equations is the method of **variation of parameters**, also known as **variation of constants**. In general, this method is a little more work than the integrating factor and since the integrating factor already works for all linear first-order differential equations, variation of parameters will not allow us to solve any new equations. The one major advantage this method has over the integrating factor is that it can be generalised to second-order (and higher-order) differential equations, see {numref}`Sec:ODE2:Nonconst`.
+
+Consider a first-order linear differential equation in standard-form
+
+$$
+ y'+p(x)y=q(x).
+$$
+
+First consider the corresponding complementary equation (see {prf:ref}`Def:DE:ComplEq`)
+
+$$
+ y'+p(x)y=0.
+$$
+
+This differential equation is separable. Apart from the equilibrium solution $y=0$, we can solve it by writing 
+
+$$
+\frac{dy}{y}=-p(x)\,dx.
+$$
+
+Integrating both sides of the equation gives
+
+$$
+ \ln|y|=\int-p(x)\,dx.
+$$
+
+Writing $P(x)$ for an arbitrary antiderivative of $p(x)$, we can solve for $y$ to obtain
+
+$$
+ y=\pm e^{-P(x)+C}=\pm e^Ce^{-P(x)}.
+$$
+
+Combining this with the constant solution $y=0$, we obtain the solution
+
+$$
+ y=Ce^{-P(x)}.
+$$
+
+where $C$ is an arbitrary constant.
+
+We now set out to solve the original, nonhomogeneous, linear differential equation. The main idea of the method of variation of parameters is to replace the arbitrary constant $C$ in the solution to the complementary equation by an arbitrary function $u(x)$, i.e. to try to find a solution of the form
+
+$$
+ y(x)=u(x)e^{-P(x)}.
+$$
+
+Then substitution into the nonhomogeneous differential equation yields
+
+$$
+ u'(x)e^{-P(x)}-p(x)u(x)e^{-P(x)}+p(x)u(x)e^{-P(x)}=q(x)
+$$
+
+which gives
+
 $$ 
+ u'(x)=q(x)e^{P(x)}.
+$$
 
-This implies that $e^{-x^2}y(x)=\displaystyle\int 4xe^{-x^2}\,dx=-2e^{-x^2}+C$ with $C$ an arbitrary (integration) constant. Hence: $y(x)=-2+Ce^{x^2}$ with $C\in\mathbb{R}$.
+This equation can be integrated to find $u(x)$ including an arbitrary integration constant. Substitution into 
+$y(x)=u(x)e^{P(x)}$ then gives the general solution.
+
+This leads to the following algorithm.
+
+::::::{prf:algorithm}
+:label: Alg:ODE1Lin:SolvingAlgorithm2
+
+Consider the first-oder linear differential equation $a_1(x)y'(x)+a_0(x)y(x)=f(x)$.
+
+1. Write the differential equation in the standard form.
+2. Solve the complementary equation, which is separable to obtain a solution of the form $y(x)=Cw(x)$.
+3. In the differential equation found in step 1, substitute a solution of the form $y(x)=u(x)w(x)$.
+4. Solve for $u(x)$.
+5. Give the general solution $y(x)=u(x)w(x)$.
+6. If applicable, use the initial condition to find the value of the arbitrary constant $C$.
+
 ::::::
 
 ::::::{prf:Example}
-The differential equation $xy'+y=1$ with $x>0$ is not in *standard form*. So, first we write it as $y'+\displaystyle\frac{1}{x}y=\frac{1}{x}$ and then note that $I(x)=e^{\ln(x)}=x>0$ is an integrating factor (since $I'(x)=\displaystyle\frac{1}{x}I(x)$). Then we have: 
+:label: Def:ODE1Lin:ExConstv2
+Consider the differential equation 
 
 $$
-xy'+y=1\quad\Longrightarrow\quad(xy(x))'=1
+ y'+2y=3,
 $$
 
-and therefore $xy(x)=x+C$ with $C$ an arbitrary (integration) constant. Hence: $y(x)=\displaystyle\frac{x+C}{x}=1+\frac{C}{x}$ with $C\in\mathbb{R}$.
-::::::
-
-We might also use **variation of the parameter**:
-
-First consider the corresponding homogeneous differential equation (also in *standard form* with 
-$Q(x)$ replaced by $0$):
-
-$$
-\frac{dy}{dx}+P(x)y=0.
-$$
-
-This differential equation is separable, since for $y\neq0$ it can be written in the form
-
-$$
-\frac{dy}{y}=-P(x)\,dx\quad\Longrightarrow\quad\ln|y(x)|=-\int P(x)\,dx.
-$$
-
-This leads to a general solution of the form $y(x)=C\exp\left(-\displaystyle\int P(x)\,dx\right)$ with $C$ an arbitrary (integration) constant.
-
-Now we replace this constant by a function of $x$, say $u(x)$, then substitution into the inhomogeneous differential equation implies:
-
-$$
-\begin{align*}
-&u'(x)\exp\left(-\int P(x)\,dx\right)-P(x)u(x)\exp\left(-\int P(x)\,dx\right)\\
-&{}\quad{}+P(x)u(x)\exp\left(-\int P(x)\,dx\right)=Q(x)\\
-&{}\hspace{25mm}\Longleftrightarrow\quad u'(x)=Q(x)\exp\left(\int P(x)\,dx\right).
-\end{align*}
-$$
-
-Integration then leads to $u(x)$ including an arbitrary (integration) constant. Substitution into 
-$y(x)=u(x)\left(-\displaystyle\int P(x)\,dx\right)$ then gives the general solution.
-
-::::::{prf:Example}
-Consider the differential equation $y'+2y=3$. 
+which we solved in {prf:ref}`Def:ODE1Lin:ExConst`.  TOT HIER!
 
 Now we first consider the homogeneous equation $y'+2y=0$ with general solution $y(x)=Ce^{-2x}$. 
 
