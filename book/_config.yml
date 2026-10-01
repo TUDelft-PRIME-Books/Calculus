@@ -32,6 +32,11 @@ sphinx:
     math_punctuation: _ext/
     unnumbered_sections: _ext/
   config:
+    teachbooks_questions:
+      feedbacks:
+        multiple-choice:
+          multiple-select:
+            correct: "Well done, you got everything right!"
     patch_config:
       disabled-patches: ["hash"]
     # prime_applets_base_url: "http://localhost:5173/applet/"
