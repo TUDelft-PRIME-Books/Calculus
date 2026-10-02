@@ -357,6 +357,10 @@ A natural application where first-order differential equations arise, is when de
 :label: Ex:ODE1:MixingProblemExample1
 Suppose that a tank contains $100\;\text{g}$ salt dissolved in $250\;\text{L}$ water. This solution is kept thoroughly mixed and drains from the tank at a rate of $5\;\text{L}/\text{min}$. Simultaneously, brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$. Let us see if we can figure out after how many minutes the amount of salt in the tank is equal to $1300\;\text{g}$.
 
+:::{todo}
+Include a schematic picture of the situation sketched here.
+:::
+
 [^Footnoteunits]: As an extra check, you can see that the units are what they need to be: the unit of $\dfrac{dy}{dt}$ is $\text{g}/\text{min}$, so the rate at which the water enters should have this unit as well. Here, we multiply $10\;\text{g}/\text{L}$ by $5\;\text{L}/\text{min}$, which, indeed, gives a quantity of which the unit is $\text{g}/\text{min}$.
 
 Let $y(t)$ denote the amount of salt (in $\text{g}$) in the tank at time $t$ (in $\text{min}$). We want to set up a differential equation for $y$. Since $\dfrac{dy}{dt}$ represent the rate at which the amount of salt changes, this $\dfrac{dy}{dt}$ must be given by the rate at which salt enters the tank, minus the rate at which salt leaves the tank. We know that brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$, which means that the rate at which the salt comes in equals $10\cdot 5=50\;\text{g}/\text{min}$.[^Footnoteunits] 
@@ -424,6 +428,10 @@ This implies that after $50\ln(2)\approx35$ minutes the amount of salt in the ta
 ::::::{prf:example}
 :label: Ex:ODE1:MixingProblemExample2
 Suppose that a tank contains $100\;\text{L}$ beer with $5\%$ alcohol. Beer with $7\%$ alcohol is pumped into the tank at a rate of $1\;\text{L}/\text{min}$. The fluid in the tank is kept thoroughly mixed and drains from the tank at a rate of $1\;\text{L}/\text{min}$. Let us try to find the alcohol percentage of the beer in the tank after $1$ hour ($60$ minutes).
+
+:::{todo}
+Include a schematic picture of the situation sketched here.
+:::
 
 Let $y(t)$ denote the amount of alcohol (in $\text{L}$) in the tank at time $t$ (in $\text{min}$). Since the tank initially contains $100\;\text{L}$ beer with $5\%$ alcohol, we find that
 
