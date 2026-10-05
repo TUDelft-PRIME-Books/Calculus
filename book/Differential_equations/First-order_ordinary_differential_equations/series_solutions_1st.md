@@ -7,7 +7,7 @@ In this section we cover:
 - Ordinary and singular points
 - Power series solutions around ordinary points, including Taylor series
 
-:::{prf:remark}
+:::{note}
 Restrict to first-order differential equations.
 :::
 
@@ -24,6 +24,7 @@ Sometimes these differential equations can't be solved explicitly in terms of fi
 In the case of linear differential equations it is sometimes possible to find a solution in terms of power series. The method is to substitute such a power series into the differential equation and try to determine the values of the coefficients. We first illustrate the method by solving the differential equation $y'=y$ for which we already know the general solution: $y(x)=Ce^x$ with $C\in\mathbb{R}$.
 
 ::::::{prf:example}
+:label: Ex:ODE1:PowerSeries
 Use power series to solve the differential equation $y'=y$.
 
 Solution. We assume that there is a solution of the form $y=\displaystyle\sum_{n=0}^{\infty}c_nx^n$. Then we have: $y'=\displaystyle\sum_{n=1}^{\infty}nc_nx^{n-1}$. Substitution leads to

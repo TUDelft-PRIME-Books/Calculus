@@ -1467,7 +1467,7 @@ $$
 ::::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/9148d4cc-2c20-43e2-b41d-7af72987abcc?id=78936
-:label: Grasple:78936
+:label: Grasple:78936:2
 :dropdown:
 :description: Application: mixing problem
 ::::::

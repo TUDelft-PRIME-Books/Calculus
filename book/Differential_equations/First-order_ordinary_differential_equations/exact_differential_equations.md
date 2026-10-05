@@ -27,7 +27,8 @@ $$
 
 This implies that $\Phi(x,y)=C$ with $C$ an arbitrary constant is an *implicit form* of the general solution.
 
-::::::{prf:Definition}
+::::::{prf:definition}
+:label: DEF:ODE1:Exact
 A first-order differential equation is called **exact** if it can be written in the form:
 
 $$
@@ -43,6 +44,7 @@ $$
 ::::::
 
 ::::::{prf:example}
+:label: Ex:ODE1:Exact
 Consider the differential equation $2x+y^2+2xy\dfrac{dy}{dx}=0$.
 
 Then: $M(x,y)=2x+y^2$ and $N(x,y)=2xy$, which implies that
@@ -77,6 +79,8 @@ is the general implicit solution of the differential equation.
 Note that we did not need the general solution for $\Phi(x,y)$ above. Only one particular solution for $\Phi(x,y)$ suffices to find the general implicit solution of the differential equation: $\Phi(x,y)=c$ with $c\in\mathbb{R}$.
 
 ::::::{prf:example}
+:label: Ex:ODE1:Exact2
+
 Consider the differential equation 
 
 $$
@@ -168,6 +172,7 @@ $$
 If $\dfrac{N_x-M_y}{M}$ is a function of $y$ only, this differential equation is both separable and linear and can be solved to find a particular solution $\mu(y)$.
 
 ::::::{prf:example}
+:label: Ex:ODE1:Exact3
 Consider the differential equation $3xy+2y^2+(x^2+2xy)\dfrac{dy}{dx}=0$.
 
 This differential equation is not exact since
@@ -222,6 +227,8 @@ is the general implicit solution of the differential equation.
 ::::::
 
 ::::::{prf:example}
+:label: Ex:ODE1:Exact4
+
 Consider the differential equation $9x^2y+2y^2+(9x^3+8xy)\dfrac{dy}{dx}=0$.
 
 This differential equation is not exact since
