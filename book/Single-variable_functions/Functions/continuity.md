@@ -256,7 +256,7 @@ We claim that $f(c)=d$. For this, we first prove that $c$ cannot be equal to eit
 
 Similarly, we can write $\varepsilon_2=f(b)-d>0$. Since $f$ is continuous at $b$, we can find $\delta_2>0$ such that for all $x$ with $|x-b|<\delta_2$ we have $|f(x)-f(b)|<\epsilon_2$. Then we can take any $x$ in $[a,b]$ with $|x-b|<\delta_2$ and for such $x$ we have $|f(b)-f(x)|<\epsilon_2=f(b)-d$, which means $f(x)>d$ and therefore this $x$ cannot be in $S$. Hence, there are numbers below $b$ that are not in $S$, so $b$ cannot be the smallest upper bound of $S$. As such, we must have $c<b$.
 
-Combining the two inequalities, we must have $a<c<b$. As such, we can find $\delta_3>0$ in such a way that $a+\delta_3<c<b-\delta_3$. Now let $\varepsilon>0$ be given. $f$ is continuous at $c$, so we can find $\delta_4>0$ such that for all $x$ with $0<|x-c|<\delta_4$ we have $|f(x)-f(c)|<\varepsilon$, i.e. $f(x)-\varepsilon<f(c)<f(x)+\varepsilon$. We take $\delta=\operatorname{min}\left(\delta_3,\delta_4\right)$, so $\delta$ is the smallest of the values $\delta_3$ and $\delta_4$. Because of how we chose $\delta_3$, each $x$ with $c-\delta<x<c+\delta$ is in the interval $[a,b]$. Since $c$ is the smallest upper bound of the set $S$, there must be a number $p$ with $c-\delta<p<c$ which is in $S$, since otherwise $c-\delta$ would be an even smaller upper bound for $S$. For this number $p$, we have $|p-c|<\delta$ and $p$ is in $S$, i.e. $f(p)<d$, so we find
+Combining the two inequalities, we must have $a<c<b$. As such, we can find $\delta_3>0$ in such a way that $a+\delta_3<c<b-\delta_3$. Now let $\varepsilon>0$ be given. $f$ is continuous at $c$, so we can find $\delta_4>0$ such that for all $x$ with $0<|x-c|<\delta_4$ we have $|f(x)-f(c)|<\varepsilon$, i.e. $f(x)-\varepsilon<f(c)<f(x)+\varepsilon$. We take $\delta=\min\left(\delta_3,\delta_4\right)$, so $\delta$ is the smallest of the values $\delta_3$ and $\delta_4$. Because of how we chose $\delta_3$, each $x$ with $c-\delta<x<c+\delta$ is in the interval $[a,b]$. Since $c$ is the smallest upper bound of the set $S$, there must be a number $p$ with $c-\delta<p<c$ which is in $S$, since otherwise $c-\delta$ would be an even smaller upper bound for $S$. For this number $p$, we have $|p-c|<\delta$ and $p$ is in $S$, i.e. $f(p)<d$, so we find
 
 $$
  f(c)<f(p)+\varepsilon<d+\varepsilon.
@@ -337,7 +337,6 @@ The name Weierstrass Nullstellensatz, named after the German mathematician [Karl
 
 ::::::{prf:example} 
 :label: Ex:Continuity:IVTnoncont
-:class: full-width
 
 The assumption that the function $f$ in the Intermediate Value Theorem is continuous is essential. Indeed, consider the function 
 
@@ -349,32 +348,13 @@ Then $f$ is not continuous at the point $1$, since the function values jump from
 
 It is also important that the function is defined at each point of the closed interval $[a,b]$. Indeed, consider the function $g(x)=\frac{1}{x}$. Then $g$ is continuous on its maximal domain (as it is the quotient of two polynomials), which does not include $x=0$. Note that $f(-1)=-1$ and $f(1)=1$. However, there is no $x$ between $-1$ and $1$ with $f(x)=0$.
 
-::::{figure-start}
+:::{applet}
+:url: calculus/continuity/continuity_for_IVT
+:class: dark-light
 :name: Fig:Continuity:IVTnoncont
 
 The function $f$ on the left, the function $g$ on the right.
-::::
-
-::::{grid} 2 2 2 2
-
-:::{grid-item}
-```{applet}
-:url: calculus/continuity/continuity_for_IVT_1 
-:class: dark-light
-```
 :::
-
-:::{grid-item}
-```{applet}
-:url: calculus/continuity/continuity_for_IVT_2
-:class: dark-light
-```
-:::
-
-::::
-
-::::{figure-end}
-::::
 
 ::::::
 
@@ -446,9 +426,8 @@ If $f$ is a one-to-one function, defined on an interval $(a,b)$, that is continu
 
 ::::::
 
-::::{prf:example} Example of one-to-one function where continuity at point does not carry over to inverse
-:label: Example:Continuity:InverseDiscontinuity
-:class: dropdown
+::::{admonition} Example of one-to-one function where continuity at a point does not carry over to the inverse function
+:class: dropdown, bonus
 
 Consider the function $f(x)$, defined for $x$ in the interval $(-1,1)$, which has $f\left(\frac{1}{n}\right)=\frac{1}{2n}$ for all integers $n\geq 3$, $f\left(1-\frac{1}{n}\right)=\frac{1}{2n+1}$ for all integers $n\geq 3$ and $f(x)=x$ for all other values of $x$. First, we show that $f$ is one-to-one. Note that the points of the form $\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ even, while points of the form $1-\frac{1}{n}$ are mapped to points of the form $\frac{1}{m}$ with $m$ odd, so these points are not mapped to the same function values. Moreover, if $x$ is not of one of these forms, then $x$ is mapped to itself, which is not of the form $\frac{1}{m}$ for $m$ either even or odd. So indeed, different points are mapped to different function values, so the function is one-to-one.
 
@@ -464,9 +443,9 @@ So if a one-to-one function is continuous on an interval, then its inverse is co
 :url: calculus/continuity/continuity_and_inverse
 :name: Fig:Continuity:InverseDiscontinuity
 :class: dark-light
+:nonumber: 
 
-
-A graph of the function $f$ from {prf:ref}`Example:Continuity:InverseDiscontinuity`, which is continuous at $0$, but whose inverse is not continuous at $0$.
+A graph of the function $f$ described above, which is continuous at $0$, but whose inverse is not continuous at $0$.
 :::
 
 
@@ -493,7 +472,7 @@ The following functions are continuous on their maximal domain.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:Continuity:Standardfunctions`
-:class: tudproof, dropdown, full-width
+:class: tudproof, dropdown, full-width-dropdown
 
 [^Footnoterange]: This would not be possible if $a=0$ and $r$ is not of the form $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with both $p$ and $q$ odd, since then we would have $a-\varepsilon<0$ no matter how small $\varepsilon$ is, and for these values of $r$ it is not possible to take the $\dfrac{1}{r}$th power of a negative number.
 
@@ -607,7 +586,7 @@ $$
 Hence, the cosine is continuous at $0$.
 
 
-Now we consider any point $a$ and we will show that the sine is continuous at $a$. For any $x$ we write $\sin(x)=\sin(a+(x-a))=\sin(a)\cos(x-a)+\cos(a)\sin(x-a)$. Let $\varepsilon>0$ be given. Since the cosine is continuous at $0$, we can take $\delta_1>0$ such that for all $x$ with $0<|x|<\delta_1$ we have $|\cos(x)-1|<\frac{\varepsilon}{2}$. Also, since the sine is continuous at $0$, we can take $\delta_2>0$ such that for all $x$ with $0<|x|<\delta_2$ we have $|\sin(x)|<\frac{\varepsilon}{2}$. We let $\delta=\operatorname{min}(\delta_1,\delta_2)$, i.e. $\delta$ is the smallest of $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we can estimate
+Now we consider any point $a$ and we will show that the sine is continuous at $a$. For any $x$ we write $\sin(x)=\sin(a+(x-a))=\sin(a)\cos(x-a)+\cos(a)\sin(x-a)$. Let $\varepsilon>0$ be given. Since the cosine is continuous at $0$, we can take $\delta_1>0$ such that for all $x$ with $0<|x|<\delta_1$ we have $|\cos(x)-1|<\frac{\varepsilon}{2}$. Also, since the sine is continuous at $0$, we can take $\delta_2>0$ such that for all $x$ with $0<|x|<\delta_2$ we have $|\sin(x)|<\frac{\varepsilon}{2}$. We let $\delta=\min(\delta_1,\delta_2)$, i.e. $\delta$ is the smallest of $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we can estimate
 
 $$
  \begin{array}{lcll}|\sin(x)-\sin(a)|&=&|\sin(a)\cos(x-a)+\cos(a)\sin(x-a)-\sin(a)|&\\
@@ -776,7 +755,13 @@ The function $f(x)$ and a slider for the parameter $b$. Can you recreate the res
 :class: question
 :showanswer:
 
-Consider the function $g$ of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider`. The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
+Consider the next function $g$, of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider`:
+
+$$
+g(x)=\left\{\begin{array}{ll}-bx^4,&\text{if }\,x< 1,\\ b^2,&\text{if }\,x=1,\\ (b+1)x+1,&\text{if }\,x> 1. \end{array}\right.
+$$
+
+The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
 
 _Select all values of $b$ for which $g$ is continuous at $x=1$._
 ---
@@ -878,7 +863,13 @@ The function $f$ as an example for left and right continuity.
 :class: question
 :showanswer:
 
-Consider the function $g$ of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider2`. The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
+Consider the next function $g$, of which the graph is shown in {numref}`Fig:Continuity:PollQuestionSlider2`:
+
+$$
+g(x)=\left\{\begin{array}{ll}-bx^4,&\text{if }\,x< 1,\\ b^2,&\text{if }\,x=1,\\ (b+1)x+1,&\text{if }\,x> 1. \end{array}\right.
+$$
+
+The value of the parameter $b$ can be changed using the slider, which in turn affects function $g$ and its graph.
 
 _Select all values of $b$ for which $g$ is not continuous at $x=1$, but is continuous from the right or from the left._
 ---
