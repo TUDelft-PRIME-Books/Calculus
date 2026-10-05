@@ -201,7 +201,7 @@ $$
 In our case $x=0.6$ meter and $h=0.01$ meter, so the change in volume is approximately equal to
 
 $$
-\Delta V \approx 4\pi \cdot 0.6 \cdot 0.01 \approx 0.0754 {\rm m}^3,
+\Delta V \approx 4\pi \cdot 0.6 \cdot 0.01 \approx 0.0754 {\text{m}}^3,
 $$
 
 and the relative change in volume with respect to the original volume is approximately equal to
