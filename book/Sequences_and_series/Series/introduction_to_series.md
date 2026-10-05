@@ -1,17 +1,17 @@
 (Chapter:Series:Introduction)=
-# Series, sums and convergence
+# Introduction to series
 
 ## Introduction
 
-In {numref}`Chapter:Sequences` we have studied sequences, which are ordered lists of numbers. In this chapter we will study what happens if we add the terms of a sequence. Because sequences can be finite or infinite, we will have to distinguish between the addition of a finite number of numbers and the addition of an infinite number of numbers.
+In {numref}`Chapter:Sequences` we have studied sequences, which are ordered lists of numbers. In this chapter we will study what happens if we add the terms of a sequence. Since sequences can be finite or infinite, we will have to distinguish between the addition of a finite number of numbers and the addition of an infinite number of numbers.
 
-In {numref}`Sec:SumsAndProducts` we already dealt with finite summations, id est summations of finite sequences. In this chapter we only consider summations of infinite sequences.
+Since we already dealt with finite summations in {numref}`Sec:SumsAndProducts`, we only consider summations of infinite sequences in this chapter. We will study the convergence of series, which is the question whether the sum of an infinite number of terms makes sense.
 
-We start with defining the term series, which is the summation of an infinite sequence of numbers. We will also use the notation $\sum$ to denote such a summation. We will study the convergence of series, which is the question whether the sum of an infinite number of numbers makes sense.
+We start with defining the term *series*, which is the limit of the sequence of *partial sums*. 
 
 ## Series and sums
 
-In {numref}`Sec:SumsAndProducts:Sums` we have already introduced the summation symbol $\sum$ (capital Greek letter sigma) to denote the addition of any number of numbers. As sequences are (ordered) sets of numbers, we can use the summation symbol to denote the addition of the terms of a sequence. This is called a series:
+In {numref}`Sec:SumsAndProducts:Sums` we have already introduced the summation symbol $\sum$ (capital Greek letter sigma) to denote the addition of any number of terms. As sequences are (ordered) sets of numbers, we can use the summation symbol to denote the addition of the terms of a sequence. This is called a series:
 
 ::::{prf:definition}
 :label: Def:Series:Definition
