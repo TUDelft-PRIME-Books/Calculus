@@ -11,7 +11,7 @@ $$
  y'=t+y
 $$
 
-is not separable, so we are not able to solve it (yet). In {numref}`Subsec:DiffclassLinear` we introduced the concept of a linear differential equation. The differential equation above is linear. In this section, we will learn two different methods to solve first-order linear differential equations: using an **integarting factor** and the method of **variation of parameters**. We will also consider two classes of first-order differential equations that, while nonlinear, can be turned into linear first-order differential equations using appropriate substitutions.
+is not separable, so we are not able to solve it (yet). In {numref}`Subsec:DiffclassLinear` we introduced the concept of a linear differential equation. The differential equation above is linear. In this section, we will learn two different methods to solve first-order linear differential equations: using an **integrating factor** and the method of **variation of parameters**. We will also consider two classes of first-order differential equations that, while nonlinear, can be turned into linear first-order differential equations using appropriate substitutions.
 
 Let us first repeat a part of {prf:ref}`Def:ClassDiff:Linear` specifically for first-order differential equations.
 
@@ -261,7 +261,7 @@ $$
 with $C\in\mathbb{R}$.
 ::::::
 
-::::::{prf:Example} {prf:ref}`Ex:DiffSep:xy` revisisted
+::::::{prf:Example} {prf:ref}`Ex:DiffSep:xy` revisited
 :label: Ex:ODE1Lin:xy
 Consider the differential equation $y'=2xy$, which we solved in {prf:ref}`Ex:DiffSep:xy`. This differential equation is not only separable, but also linear. First we need to write it in standard form
 
@@ -358,7 +358,7 @@ $$
  2=y(1)=1+\frac{C}{1}=1+C,
 $$
 
-which gives $C=1$. So the solution of the inital-value problem is given by
+which gives $C=1$. So the solution of the initial-value problem is given by
 
 $$
  y(x)=1+\frac{1}{x}.
@@ -631,7 +631,7 @@ $$
  y^{-n}y'+p(x)y^{1-n}=q(x).
 $$
 
-We now use the substitution $u=y^{1-n}$. For this subtitution we have
+We now use the substitution $u=y^{1-n}$. For this substitution we have
 
 $$
  u'=(1-n)y^{-n} y'.
@@ -961,7 +961,7 @@ of the Riccati equation {eq}`Eq:ODE1:RiccatiRemark`.
 
 The solution method for the Ricatti equation leans heavily on the known particular solution. If no particular solution is known, there is another method that changes the Riccati equation into a second-order linear differential equation that might be solvable.
 
-We start again with the Ricatti equation {eq}`Eq:ODE1:Riccati`. Using the subsitution $y=-\dfrac{1}{r(x)}\dfrac{v'}{v}$, which has
+We start again with the Ricatti equation {eq}`Eq:ODE1:Riccati`. Using the substitution $y=-\dfrac{1}{r(x)}\dfrac{v'}{v}$, which has
 
 $$
 y'=-\frac{v''r(x)v-r'(x)vv'-r(x)(v')^2}{r(x)^2v^2}
@@ -988,7 +988,7 @@ $$
 This is a second-order linear differential equation in $v(x)$. In {numref}`Sec:ODE2:Homogeneous` and {numref}`Sec:ODE2:Inhomogeneous` we will see how second order equations with constant coefficients can be solved. In {numref}`Sec:ODE2:Nonconst` and {numref}`Sec:ODE2:Series` we also discuss some techniques to solve second-order linear differential equations with non-constant coefficients, though no general technique exists to find explicit solutions of any linear second-order differential equation.
 
 
-:::::{prf:example} {prf:ref}`Ex:ODE1Lin:Ricatti2` revisisted
+:::::{prf:example} {prf:ref}`Ex:ODE1Lin:Ricatti2` revisited
 :label: Ex:ODE1Lin:Ricatti2ndorder
 We again consider the Ricatti equation
 
@@ -1300,7 +1300,7 @@ $$
  \frac{dy}{dt}=10−1\cdot\frac{y}{100+t}.
 $$
 
-In addition, we have the initial condition $y(0)=25$. As we noted earlier, this differential equation is only valide when $0\leq t\leq 400$, since after that moment the tank overflows.
+In addition, we have the initial condition $y(0)=25$. As we noted earlier, this differential equation is only valid when $0\leq t\leq 400$, since after that moment the tank overflows.
 
 This differential equation is linear (and not separable). So we first write it in standard form
 
