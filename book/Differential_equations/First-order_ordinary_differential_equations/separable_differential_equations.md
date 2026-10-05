@@ -22,7 +22,7 @@ for some functions $f$ and $g$ that are both defined and continuous on some open
 ::::::
 That is, a first-order differential equation is separable if the right-hand side can be written as the product of a part that only depends on $x$ and a part that only depends on $y$.
 
-Often, the quickest way to see that a differential equation is separable is to write it into the correct form. Of course, if you cannot figure out how to do this for a certain first-order differentiable equation it might very well be possible that the differential equation is not separable, but it might also be the case that you simply do not 'see' the right functions $f$ and $g$. If you want to make sure that a differential equation is not separable, you can use the following criterion, which uses partial derivatives (see {numref}`Sec:PartialDerivatives`).
+Often, the quickest way to see that a differential equation is separable is to write it into the correct form. Of course, if you cannot figure out how to do this for a certain first-order differentiable equation it might very well be possible that the differential equation is not separable, but it might also be the case that you simply do not 'see' the right functions $f$ and $g$. If you want to make sure that a differential equation is not separable, you can use the following criterion.
 
 ::::::{prf:theorem}
 :label: Thm:DiffSep:CheckSep
@@ -32,85 +32,45 @@ $$
  \frac{dy}{dx}=F(x,y)
 $$
 
-and suppose that $F$ and its first and second partial derivatives are continuous. Then the differential equation is separable if, and only if, we have
+and suppose that $F\neq 0$ and that $F$ and its first order partial derivatives are continuous. Consider any $y_0\in\mathbb{R}$ such that there exists $x_0\in\mathbb{R}$ with $F(x_0,y_0)\neq 0$. Then the differential equation is separable if, and only if, the function
 
 $$
- FF_{xy}-F_xF_y=0.
+ G(x,y)=\frac{F(x,y)}{F(x,y_0)},
 $$
+
+defined for $(x,y)$ with $F(x,y_0)\neq 0$, does not depend on $x$. If this is the case, then $F(x,y)=f(x)g(y)$ with $f(x)=F(x,y_0)$ and $g(y)=G(x_0,y)$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:DiffSep:CheckSep`
 :class: tudproof, dropdown
-Suppose that the differential equation is separable, which means that we can write $F(x,y)=f(x)g(y)$. Then we obtain
+Suppose that the differential equation is separable, which means that we can write $F(x,y)=f(x)g(y)$. Consider any $y_0$ with $g(y_0)\neq 0$. We can then write for any $x$ with $F(x,y_0)\neq 0$
 
 $$
- FF_{xy}-F_xF_y=\left(f(x)g(y)\right)\left(f'(x)g'(y)\right)-\left(f'(x)g(y)\right)\left(f(x)g'(y)\right)=0.
+ G(x,y)=\frac{F(x,y)}{F(x,y_0)}=\frac{f(x)g(y)}{f(x)g(y_0)}=\frac{g(y)}{g(y_0)}.
 $$
 
-On the other hand, suppose that $FF_{xy}-F_xF_y=0$. Let $R$ be any connected subset of the domain of $F$ such that $F(x,y)\neq 0$ for all $(x,y)\in R$. On $R$, we define the function
+From this expression, we directly see that $G$ does not depend on $x$.
+
+On the other hand, suppose that we have $(x_0,y_0)$ with $F(x_0,y_0)\neq 0$ and suppose that the function
 
 $$
- G(x,y)=\ln|F(x,y)|.
+ G(x,y)=\frac{F(x,y)}{F(x,y_0)},
 $$
 
-Using {prf:ref}`Thm:Diffinverse:Logdiff` we obtain
+defined for $(x,y)$ with $F(x,y_0)\neq 0$, does not depend on $x$. Write $f(x)=F(x,y_0)$ and $g(y)=G(x_0,y)$. If $F(x,y_0)\neq 0$, we have $G(x,y)=G(x_0,y)$, since $G$ does not depend on $x$, so we obtain
 
 $$
- G_x=\frac{F_x}{F}.
+ f(x)g(y)=F(x,y_0)G(x_0,y)=F(x,y_0)G(x,y)=F(x,y_0)\frac{F(x,y)}{F(x,y_0)}=F(x,y).
 $$
 
-In addition, we obtain using the quotient rule and our assumption $FF_{xy}-F_xF_y=0$ that
+Now consider $(x,y)$ with $F(x,y_0)=0$. Then we find
 
 $$
- G_{xy}=\frac{FF_{xy}-F_xF_y}{F^2}=0.
+ f(x)g(y)=F(x,y_0)G(x_0,y)=0G(x_0,y)=0=F(x,y).
 $$
 
-Since $R$ is connected, we find that
 
-$$
- G_x=a(x)
-$$
-
-for some function $a$. Integrating this equation with respect to $x$, we find
-
-$$
- G(x,y)=\int a(x)\,dx=A(x)+B(y)
-$$
-
-for some continuous functions $A$ and $B$. Taking the exponent of this expression, we find
-
-$$
- |F(x,y)|=e^{G(x,y)}=e^{A(x)}e^{B(y)}.
-$$
-
-Since $S$ is connected, $F\neq 0$ on $R$ and $F$ is continuous, the sign of $F$ is constant on $R$, so we obtain
-
-$$
- F(x,y)=e^{A(x)}e^{B(y)},\qquad\text{or}\qquad F(x,y)=-e^{A(x)}e^{B(y)}.
-$$
-
-In both cases, we have $F(x,y)=f(x)g(y)$ for some continuous functions $f$ and $g$ for $(x,y)\in R$. With this, we have defined the functions $f$ and $g$ on the set
-
-$$
- S=\left\{(x,y)\in\mathbb{R}^2\,\middle|\,F(x,y)\neq 0\right\}.
-$$
-
-Since $f$ and $g$ are continuous on each connected component of $S$, they are continuous on $S$.
-
-We now only need to show that these functions can be extended continuously to the full domain of $F$. Let $(x_0,y_0)$ in the domain of $F$ with $F(x_0,y_0)=0$. If there is an open neighbourhood of $(x_0,y_0)$ on which $F$ is identically $0$, we can extende $X$ and and $Y$ to be $0$ on this neighbourhood and they will be continuous there. So we assume that for any neighbourhood of $(x_0,y_0)$ the function $F$ is not identically $0$. Let $(a,b)$ be any point in $S$. Then we note that for any $(x,y)$ in $S$ we have
-
-$$
- F(x,b)\frac{F(a,y)}{F(a,b)}=\frac{F(x,b)F(a,y)}{F(a,b)}=\frac{f(x)g(b)f(a)g(y)}{f(a)f(b)}=f(x)g(y).
-$$
-
-This means that on $S$ we have
-
-$$
- f(x)=F(x,b),\qquad g(y)=\frac{F(a,y)}{F(a,b)}.
-$$
-
-Since $F$ is continuous, we see that we can extend $f$ and $g$ continuously to the domain of $F$.
-
+As such, we obtain that $F(x,y)=f(x)g(y)$ for all $(x,y)$, so the differential equation is separable.
 :::
 
 ::::::{prf:example} 
@@ -138,13 +98,13 @@ $$
 
 Although we clearly see a part that only depends on $t$ and a part that only depends on $y$, this equation is not separable. In order for it to be separable, the right-hand side of the equation needs to be a product of a part that only depends on $t$ and a part that only depends on $y$, while here we see a sum. We can manipulate this equation all we want, it is not possible to bring it into the correct form.
 
-To be absolutely sure that it cannot be written in the correct form, we use {prf:ref}`Thm:DiffSep:CheckSep`. Writing $F(t,y)=t+y$, we see that
+To be absolutely sure that it cannot be written in the correct form, we use {prf:ref}`Thm:DiffSep:CheckSep`. Writing $F(t,y)=t+y$, we see that, for instance for $(t_0,y_0)=(1,2)$ we have $F(t_0,y_0)=3\neq 0$. Then the function
 
 $$
- FF_{ty}-F_tF_y=(t+y)\cdot 0-1\cdot 1\neq 0,
+ G(t,y)=\frac{F(t,y)}{F(t,y_0)}=\frac{t+y}{t+y_0},
 $$
 
-which means that the differential equation is not separable, as we suspected already.
+defined for those $(t,y)$ with $F(t,y_0)\neq 0$, does depend on $t$. Indeed, we see that $G(0,1)=\dfrac{1}{2}$, while $G(1,1)=\dfrac{2}{3}$. This means that the differential equation is not separable, as we suspected already.
 ::::::
 
 Now the main question arises: how should we solve a separable differential equation? For this, we consider the separable differential equation
@@ -397,6 +357,10 @@ A natural application where first-order differential equations arise, is when de
 :label: Ex:ODE1:MixingProblemExample1
 Suppose that a tank contains $100\;\text{g}$ salt dissolved in $250\;\text{L}$ water. This solution is kept thoroughly mixed and drains from the tank at a rate of $5\;\text{L}/\text{min}$. Simultaneously, brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$. Let us see if we can figure out after how many minutes the amount of salt in the tank is equal to $1300\;\text{g}$.
 
+:::{todo}
+Include a schematic picture of the situation sketched here.
+:::
+
 [^Footnoteunits]: As an extra check, you can see that the units are what they need to be: the unit of $\dfrac{dy}{dt}$ is $\text{g}/\text{min}$, so the rate at which the water enters should have this unit as well. Here, we multiply $10\;\text{g}/\text{L}$ by $5\;\text{L}/\text{min}$, which, indeed, gives a quantity of which the unit is $\text{g}/\text{min}$.
 
 Let $y(t)$ denote the amount of salt (in $\text{g}$) in the tank at time $t$ (in $\text{min}$). We want to set up a differential equation for $y$. Since $\dfrac{dy}{dt}$ represent the rate at which the amount of salt changes, this $\dfrac{dy}{dt}$ must be given by the rate at which salt enters the tank, minus the rate at which salt leaves the tank. We know that brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$, which means that the rate at which the salt comes in equals $10\cdot 5=50\;\text{g}/\text{min}$.[^Footnoteunits] 
@@ -464,6 +428,10 @@ This implies that after $50\ln(2)\approx35$ minutes the amount of salt in the ta
 ::::::{prf:example}
 :label: Ex:ODE1:MixingProblemExample2
 Suppose that a tank contains $100\;\text{L}$ beer with $5\%$ alcohol. Beer with $7\%$ alcohol is pumped into the tank at a rate of $1\;\text{L}/\text{min}$. The fluid in the tank is kept thoroughly mixed and drains from the tank at a rate of $1\;\text{L}/\text{min}$. Let us try to find the alcohol percentage of the beer in the tank after $1$ hour ($60$ minutes).
+
+:::{todo}
+Include a schematic picture of the situation sketched here.
+:::
 
 Let $y(t)$ denote the amount of alcohol (in $\text{L}$) in the tank at time $t$ (in $\text{min}$). Since the tank initially contains $100\;\text{L}$ beer with $5\%$ alcohol, we find that
 
