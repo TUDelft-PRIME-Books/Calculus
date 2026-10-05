@@ -325,7 +325,6 @@ The name Weierstrass Nullstellensatz, named after the German mathematician [Karl
 
 ::::::{prf:example} 
 :label: Ex:Continuity:IVTnoncont
-:class: full-width
 
 The assumption that the function $f$ in the Intermediate Value Theorem is continuous is essential. Indeed, consider the function 
 
@@ -337,32 +336,13 @@ Then $f$ is not continuous at the point $1$, since the function values jump from
 
 It is also important that the function is defined in each point of the closed interval $[a,b]$. Indeed, consider the function $g(x)=\frac{1}{x}$. Then $g$ is continuous on its maximal domain (as it is the quotient of two polynomials), which does not include $x=0$. Note that $f(-1)=-1$ and $f(1)=1$. However, there is no $x$ in between $-1$ and $1$ with $f(x)=0$.
 
-::::{figure-start}
+:::{applet}
+:url: calculus/continuity/continuity_for_IVT
+:class: dark-light
 :name: Fig:Continuity:IVTnoncont
 
 The function $f$ on the left, the function $g$ on the right.
-::::
-
-::::{grid} 2 2 2 2
-
-:::{grid-item}
-```{applet}
-:url: calculus/continuity/continuity_for_IVT_1 
-:class: dark-light
-```
 :::
-
-:::{grid-item}
-```{applet}
-:url: calculus/continuity/continuity_for_IVT_2
-:class: dark-light
-```
-:::
-
-::::
-
-::::{figure-end}
-::::
 
 ::::::
 
@@ -463,7 +443,7 @@ The following functions are continuous on their maximal domain.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Theorem:Continuity:Standardfunctions`
-:class: tudproof, dropdown, full-width
+:class: tudproof, dropdown, full-width-dropdown
 
 [^Footnoterange]: This happens when $a^r-\varepsilon<0$ and $r$ is not of the form $r=\dfrac{p}{q}$ with $p$ and $q>0$ integers with $q$ odd.
 [^Footnotesmalleps]: As we saw earlier, small values of $\varepsilon$ are the most interesting cases anyway.
