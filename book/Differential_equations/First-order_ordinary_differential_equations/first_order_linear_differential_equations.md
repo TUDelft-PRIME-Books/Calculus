@@ -11,7 +11,7 @@ $$
  y'=t+y
 $$
 
-is not separable, so we are not able to solve it (yet). In {numref}`Subsec:DiffclassLinear` we introduced the concept of a linear differential equation. The differential equation above is linear. In this section, we will learn two different methods to solve first-order linear differential equations: using an **integarting factor** and the method of **variation of parameters**. We will also consider two classes of first-order differential equations that, while nonlinear, can be turned into linear first-order differential equations using appropriate substitutions.
+is not separable, so we are not able to solve it (yet). In {numref}`Subsec:DiffclassLinear` we introduced the concept of a linear differential equation. The differential equation above is linear. In this section, we will learn two different methods to solve first-order linear differential equations: using an **integrating factor** and the method of **variation of parameters**. We will also consider two classes of first-order differential equations that, while nonlinear, can be turned into linear first-order differential equations using appropriate substitutions.
 
 Let us first repeat a part of {prf:ref}`Def:ClassDiff:Linear` specifically for first-order differential equations.
 
@@ -261,7 +261,7 @@ $$
 with $C\in\mathbb{R}$.
 ::::::
 
-::::::{prf:Example} {prf:ref}`Ex:DiffSep:xy` revisisted
+::::::{prf:Example} {prf:ref}`Ex:DiffSep:xy` revisited
 :label: Ex:ODE1Lin:xy
 Consider the differential equation $y'=2xy$, which we solved in {prf:ref}`Ex:DiffSep:xy`. This differential equation is not only separable, but also linear. First we need to write it in standard form
 
@@ -358,7 +358,7 @@ $$
  2=y(1)=1+\frac{C}{1}=1+C,
 $$
 
-which gives $C=1$. So the solution of the inital-value problem is given by
+which gives $C=1$. So the solution of the initial-value problem is given by
 
 $$
  y(x)=1+\frac{1}{x}.
@@ -617,7 +617,7 @@ Consider a Bernoulli equation
 
 $$
 y'+p(x)y=q(x)y^n,
-$$:::$$
+$$
 
 where $n\in\mathbb{N}$. Since we already know that $y=0$ is a solution, we can assume that $y\neq 0$. If we divide this equation by $y^n$ we obtain
 
@@ -631,7 +631,7 @@ $$
  y^{-n}y'+p(x)y^{1-n}=q(x).
 $$
 
-We now use the substitution $u=y^{1-n}$. For this subtitution we have
+We now use the substitution $u=y^{1-n}$. For this substitution we have
 
 $$
  u'=(1-n)y^{-n} y'.
@@ -961,7 +961,7 @@ of the Riccati equation {eq}`Eq:ODE1:RiccatiRemark`.
 
 The solution method for the Ricatti equation leans heavily on the known particular solution. If no particular solution is known, there is another method that changes the Riccati equation into a second-order linear differential equation that might be solvable.
 
-We start again with the Ricatti equation {eq}`Eq:ODE1:Riccati`. Using the subsitution $y=-\dfrac{1}{r(x)}\dfrac{v'}{v}$, which has
+We start again with the Ricatti equation {eq}`Eq:ODE1:Riccati`. Using the substitution $y=-\dfrac{1}{r(x)}\dfrac{v'}{v}$, which has
 
 $$
 y'=-\frac{v''r(x)v-r'(x)vv'-r(x)(v')^2}{r(x)^2v^2}
@@ -988,7 +988,7 @@ $$
 This is a second-order linear differential equation in $v(x)$. In {numref}`Sec:ODE2:Homogeneous` and {numref}`Sec:ODE2:Inhomogeneous` we will see how second order equations with constant coefficients can be solved. In {numref}`Sec:ODE2:Nonconst` and {numref}`Sec:ODE2:Series` we also discuss some techniques to solve second-order linear differential equations with non-constant coefficients, though no general technique exists to find explicit solutions of any linear second-order differential equation.
 
 
-:::::{prf:example} {prf:ref}`Ex:ODE1Lin:Ricatti2` revisisted
+:::::{prf:example} {prf:ref}`Ex:ODE1Lin:Ricatti2` revisited
 :label: Ex:ODE1Lin:Ricatti2ndorder
 We again consider the Ricatti equation
 
@@ -1095,13 +1095,13 @@ $$
  P(t)=M+Ce^{-kt}.
 $$
 
-```{figure} Images/learning.png
----
-width: 50%
-name: Learning curve
-align: center
----
-```
+
+:::{figure} Images/learning.png
+:name: Fig:LearningCurve
+:class: dark-light
+
+A learning curve.
+:::
 
 :::{todo}
 Turn the picture into an applet.
@@ -1111,17 +1111,13 @@ The interpretation of this solution is that if you are very far away from your m
 
 ### Free fall
 
-```{figure} Images/freefall.png
----
-width: 50%
-name: Free fall
-align: center
----
-```
+::::{margin}
+:::{figure} Images/freefall.png
+:name: Fig:FreeFall
 
-:::{todo}
-Credits and such for the picture?
+A skydiver in free fall.
 :::
+::::
 
 If a skydiver jumps out of a plane with no initial velocity, the air resistance will be proportional to its velocity. A model for the velocity of the skydiver is given by
 
@@ -1204,14 +1200,18 @@ We conclude that it takes approximately $25.8$ seconds to reach a speed of $58\;
 
 In {numref}`SubSec:ODE1:SeparableAppl` we studied mixing problems. When the volume of water in the tank is constant, these problems can be modeled by means of a separable differential equation (which is also linear). Otherwise, the resulting differential equation is not separable, but it remains linear. Let us consider some examples where the volume in the tank is not constant.
 
+::::{margin}
+:::{figure} Images/Mixing_problem.png
+:name: Fig:ODE1Lin:MixingProblem:
+
+A schematic picture of a mixing problem.
+:::
+::::
+
 :::::{prf:example} 
 :label: Ex:ODE1Lin:Mixingempty
 Suppose that a tank contains $100\;\text{L}$ brine with $100\;\text{g}$ salt dissolved in water. This solution is kept thoroughly mixed and drains from the tank at a rate of $3\;\text{L}/\text{min}$. Simultaneously, brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at a rate of $1\;\text{L}/\text{min}$. Let us try to figure out the amount of salt (in $\text{g}$) in the tank after $25$ minutes.
 
-
-:::{todo}
-Include a schematic picture of the situation sketched here.
-:::
 
 We let $y(t)$ denote the amount of salt (in $\text{g}$) in the tank at time $t$ (in $\text{min}$). We first note that the volume in the tank is not constant, as more water leaves per minute than the amount of water that enters the tank. Specifically, if we let $V(t)$ denote the volume of water in the tank, we see that
 
@@ -1286,11 +1286,6 @@ Note that the solution is only defined for $0\leq t\leq 50$. After $50$ minutes 
 :label: Ex:ODE1Lin:Mixingoverflow
 Suppose that a tank with a volume of $500\;\text{L}$ contains $25\;\text{g}$ salt dissolved in $100\;\text{L}$ water. This solution is kept thoroughly mixed and drains from the tank at a rate of $1\;\text{L}/\text{min}$. Simultaneously, brine with a concentration of $5\;\text{g}/\text{L}$ enters the tank at a rate of $2\;\text{L}/\text{min}$. Let us try to find the amount of salt (in $\text{g}$) in the tank after $25$ minutes.
 
-
-:::{todo}
-Include a schematic picture of the situation sketched here.
-:::
-
 Let $y(t)$ denote the amount of salt (in $\text{g}$) in the tank at time $t$ (in $\text{min}$). As was the case in {prf:ref}`Ex:ODE1Lin:Mixingempty`, the volume of water in the tank is not constant, this time because more water enters than leaves. This volume $V(t)$ is given by
 
 $$
@@ -1305,7 +1300,7 @@ $$
  \frac{dy}{dt}=10−1\cdot\frac{y}{100+t}.
 $$
 
-In addition, we have the initial condition $y(0)=25$. As we noted earlier, this differential equation is only valide when $0\leq t\leq 400$, since after that moment the tank overflows.
+In addition, we have the initial condition $y(0)=25$. As we noted earlier, this differential equation is only valid when $0\leq t\leq 400$, since after that moment the tank overflows.
 
 This differential equation is linear (and not separable). So we first write it in standard form
 
