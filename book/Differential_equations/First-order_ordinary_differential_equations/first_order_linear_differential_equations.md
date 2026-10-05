@@ -617,7 +617,7 @@ Consider a Bernoulli equation
 
 $$
 y'+p(x)y=q(x)y^n,
-$$:::$$
+$$
 
 where $n\in\mathbb{N}$. Since we already know that $y=0$ is a solution, we can assume that $y\neq 0$. If we divide this equation by $y^n$ we obtain
 
@@ -1095,13 +1095,13 @@ $$
  P(t)=M+Ce^{-kt}.
 $$
 
-```{figure} Images/learning.png
----
-width: 50%
-name: Learning curve
-align: center
----
-```
+
+:::{figure} Images/learning.png
+:name: Fig:LearningCurve
+:class: dark-light
+
+A learning curve.
+:::
 
 :::{todo}
 Turn the picture into an applet.
@@ -1111,17 +1111,13 @@ The interpretation of this solution is that if you are very far away from your m
 
 ### Free fall
 
-```{figure} Images/freefall.png
----
-width: 50%
-name: Free fall
-align: center
----
-```
+::::{margin}
+:::{figure} Images/freefall.png
+:name: Fig:FreeFall
 
-:::{todo}
-Credits and such for the picture?
+A skydiver in free fall.
 :::
+::::
 
 If a skydiver jumps out of a plane with no initial velocity, the air resistance will be proportional to its velocity. A model for the velocity of the skydiver is given by
 
@@ -1204,14 +1200,18 @@ We conclude that it takes approximately $25.8$ seconds to reach a speed of $58\;
 
 In {numref}`SubSec:ODE1:SeparableAppl` we studied mixing problems. When the volume of water in the tank is constant, these problems can be modeled by means of a separable differential equation (which is also linear). Otherwise, the resulting differential equation is not separable, but it remains linear. Let us consider some examples where the volume in the tank is not constant.
 
+::::{margin}
+:::{figure} Images/Mixing_problem.png
+:name: Fig:ODE1Lin:MixingProblem:
+
+A schematic picture of a mixing problem.
+:::
+::::
+
 :::::{prf:example} 
 :label: Ex:ODE1Lin:Mixingempty
 Suppose that a tank contains $100\;\text{L}$ brine with $100\;\text{g}$ salt dissolved in water. This solution is kept thoroughly mixed and drains from the tank at a rate of $3\;\text{L}/\text{min}$. Simultaneously, brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at a rate of $1\;\text{L}/\text{min}$. Let us try to figure out the amount of salt (in $\text{g}$) in the tank after $25$ minutes.
 
-
-:::{todo}
-Include a schematic picture of the situation sketched here.
-:::
 
 We let $y(t)$ denote the amount of salt (in $\text{g}$) in the tank at time $t$ (in $\text{min}$). We first note that the volume in the tank is not constant, as more water leaves per minute than the amount of water that enters the tank. Specifically, if we let $V(t)$ denote the volume of water in the tank, we see that
 
@@ -1285,11 +1285,6 @@ Note that the solution is only defined for $0\leq t\leq 50$. After $50$ minutes 
 :::::{prf:example} 
 :label: Ex:ODE1Lin:Mixingoverflow
 Suppose that a tank with a volume of $500\;\text{L}$ contains $25\;\text{g}$ salt dissolved in $100\;\text{L}$ water. This solution is kept thoroughly mixed and drains from the tank at a rate of $1\;\text{L}/\text{min}$. Simultaneously, brine with a concentration of $5\;\text{g}/\text{L}$ enters the tank at a rate of $2\;\text{L}/\text{min}$. Let us try to find the amount of salt (in $\text{g}$) in the tank after $25$ minutes.
-
-
-:::{todo}
-Include a schematic picture of the situation sketched here.
-:::
 
 Let $y(t)$ denote the amount of salt (in $\text{g}$) in the tank at time $t$ (in $\text{min}$). As was the case in {prf:ref}`Ex:ODE1Lin:Mixingempty`, the volume of water in the tank is not constant, this time because more water enters than leaves. This volume $V(t)$ is given by
 
