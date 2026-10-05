@@ -676,8 +676,8 @@ Because the right-hand side of this equation is $0$, the differential equation i
 
 If we want to find the general solution of this differential equation, we want to find all functions that satisfy this equation. That is, we look for all functions of which the second derivative is equal to minus the original function. In {numref}`Sec:ODE2:Homogeneous` we will see how you can solve this differential equation systematically, but for this particular equation it is possible to guess the solutions. Can you come up with one or more functions that satisfy this equation?
 
-:::{admonition} Click to see the solution
-:class: tudproof, dropdown
+:::{admonition} Find out the answer
+:class: bonus, dropdown
 One example of a function of which the second derivative is minus the original function is $y_1(t)=\sin(t)$. Indeed, for this function we have
 
 $$
@@ -1059,6 +1059,16 @@ The boundary condition at $x=0$ is a {gap} and the boundary condition at $x=\pi$
 :description: Find equilibrium solutions and check if the differential equation is autonomous.
 ::::::
 
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7514cf67-5001-4f8c-aa25-d2bc5abf1b69?id=71428
+:label: Grasple:71428
+:dropdown:
+:description: Is the differential equation linear? If so, is it homogeneous?
+::::::
+
+
 ::::::{grasple}
 :iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/fa7c4299-9811-428f-80dc-ee1ad8503e6c?id=79449
@@ -1212,6 +1222,15 @@ The boundary condition at $x=0$ is a {gap} and the boundary condition at $x=\pi$
 :label: Grasple:79418
 :dropdown:
 :description: Application: Electrical circuit.
+::::::
+
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2c83bc57-8879-4bfb-94d5-5c66f40108ba?id=79434
+:label: Grasple:79434
+:dropdown:
+:description: Application: RL electrical circiut
 ::::::
 
 

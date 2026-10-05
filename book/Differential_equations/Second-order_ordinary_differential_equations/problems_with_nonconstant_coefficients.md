@@ -1,3 +1,5 @@
+(Sec:ODE2:Nonconst)=
+
 # Problems with nonconstant coefficients
 
 In this section we cover:

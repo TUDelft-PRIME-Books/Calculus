@@ -22,7 +22,7 @@ for some functions $f$ and $g$ that are both defined and continuous on some open
 ::::::
 That is, a first-order differential equation is separable if the right-hand side can be written as the product of a part that only depends on $x$ and a part that only depends on $y$.
 
-Often, the quickest way to see that a differential equation is separable is to write it into the correct form. Of course, if you cannot figure out how to do this for a certain first-order differentiable equation it might very well be possible that the differential equation is not separable, but it might also be the case that you simply do not 'see' the right functions $f$ and $g$. If you want to make sure that a differential equation is not separable, you can use the following criterion, which uses partial derivatives (see {numref}`Sec:PartialDerivatives`).
+Often, the quickest way to see that a differential equation is separable is to write it into the correct form. Of course, if you cannot figure out how to do this for a certain first-order differentiable equation it might very well be possible that the differential equation is not separable, but it might also be the case that you simply do not 'see' the right functions $f$ and $g$. If you want to make sure that a differential equation is not separable, you can use the following criterion.
 
 ::::::{prf:theorem}
 :label: Thm:DiffSep:CheckSep
@@ -32,85 +32,45 @@ $$
  \frac{dy}{dx}=F(x,y)
 $$
 
-and suppose that $F$ and its first and second partial derivatives are continuous. Then the differential equation is separable if, and only if, we have
+and suppose that $F\neq 0$ and that $F$ and its first order partial derivatives are continuous. Consider any $y_0\in\mathbb{R}$ such that there exists $x_0\in\mathbb{R}$ with $F(x_0,y_0)\neq 0$. Then the differential equation is separable if, and only if, the function
 
 $$
- FF_{xy}-F_xF_y=0.
+ G(x,y)=\frac{F(x,y)}{F(x,y_0)},
 $$
+
+defined for $(x,y)$ with $F(x,y_0)\neq 0$, does not depend on $x$. If this is the case, then $F(x,y)=f(x)g(y)$ with $f(x)=F(x,y_0)$ and $g(y)=G(x_0,y)$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:DiffSep:CheckSep`
 :class: tudproof, dropdown
-Suppose that the differential equation is separable, which means that we can write $F(x,y)=f(x)g(y)$. Then we obtain
+Suppose that the differential equation is separable, which means that we can write $F(x,y)=f(x)g(y)$. Consider any $y_0$ with $g(y_0)\neq 0$. We can then write for any $x$ with $F(x,y_0)\neq 0$
 
 $$
- FF_{xy}-F_xF_y=\left(f(x)g(y)\right)\left(f'(x)g'(y)\right)-\left(f'(x)g(y)\right)\left(f(x)g'(y)\right)=0.
+ G(x,y)=\frac{F(x,y)}{F(x,y_0)}=\frac{f(x)g(y)}{f(x)g(y_0)}=\frac{g(y)}{g(y_0)}.
 $$
 
-On the other hand, suppose that $FF_{xy}-F_xF_y=0$. Let $R$ be any connected subset of the domain of $F$ such that $F(x,y)\neq 0$ for all $(x,y)\in R$. On $R$, we define the function
+From this expression, we directly see that $G$ does not depend on $x$.
+
+On the other hand, suppose that we have $(x_0,y_0)$ with $F(x_0,y_0)\neq 0$ and suppose that the function
 
 $$
- G(x,y)=\ln|F(x,y)|.
+ G(x,y)=\frac{F(x,y)}{F(x,y_0)},
 $$
 
-Using {prf:ref}`Thm:Diffinverse:Logdiff` we obtain
+defined for $(x,y)$ with $F(x,y_0)\neq 0$, does not depend on $x$. Write $f(x)=F(x,y_0)$ and $g(y)=G(x_0,y)$. If $F(x,y_0)\neq 0$, we have $G(x,y)=G(x_0,y)$, since $G$ does not depend on $x$, so we obtain
 
 $$
- G_x=\frac{F_x}{F}.
+ f(x)g(y)=F(x,y_0)G(x_0,y)=F(x,y_0)G(x,y)=F(x,y_0)\frac{F(x,y)}{F(x,y_0)}=F(x,y).
 $$
 
-In addition, we obtain using the quotient rule and our assumption $FF_{xy}-F_xF_y=0$ that
+Now consider $(x,y)$ with $F(x,y_0)=0$. Then we find
 
 $$
- G_{xy}=\frac{FF_{xy}-F_xF_y}{F^2}=0.
+ f(x)g(y)=F(x,y_0)G(x_0,y)=0G(x_0,y)=0=F(x,y).
 $$
 
-Since $R$ is connected, we find that
 
-$$
- G_x=a(x)
-$$
-
-for some function $a$. Integrating this equation with respect to $x$, we find
-
-$$
- G(x,y)=\int a(x)\,dx=A(x)+B(y)
-$$
-
-for some continuous functions $A$ and $B$. Taking the exponent of this expression, we find
-
-$$
- |F(x,y)|=e^{G(x,y)}=e^{A(x)}e^{B(y)}.
-$$
-
-Since $S$ is connected, $F\neq 0$ on $R$ and $F$ is continuous, the sign of $F$ is constant on $R$, so we obtain
-
-$$
- F(x,y)=e^{A(x)}e^{B(y)},\qquad\text{or}\qquad F(x,y)=-e^{A(x)}e^{B(y)}.
-$$
-
-In both cases, we have $F(x,y)=f(x)g(y)$ for some continuous functions $f$ and $g$ for $(x,y)\in R$. With this, we have defined the functions $f$ and $g$ on the set
-
-$$
- S=\left\{(x,y)\in\mathbb{R}^2\,\middle|\,F(x,y)\neq 0\right\}.
-$$
-
-Since $f$ and $g$ are continuous on each connected component of $S$, they are continuous on $S$.
-
-We now only need to show that these functions can be extended continuously to the full domain of $F$. Let $(x_0,y_0)$ in the domain of $F$ with $F(x_0,y_0)=0$. If there is an open neighbourhood of $(x_0,y_0)$ on which $F$ is identically $0$, we can extende $X$ and and $Y$ to be $0$ on this neighbourhood and they will be continuous there. So we assume that for any neighbourhood of $(x_0,y_0)$ the function $F$ is not identically $0$. Let $(a,b)$ be any point in $S$. Then we note that for any $(x,y)$ in $S$ we have
-
-$$
- F(x,b)\frac{F(a,y)}{F(a,b)}=\frac{F(x,b)F(a,y)}{F(a,b)}=\frac{f(x)g(b)f(a)g(y)}{f(a)f(b)}=f(x)g(y).
-$$
-
-This means that on $S$ we have
-
-$$
- f(x)=F(x,b),\qquad g(y)=\frac{F(a,y)}{F(a,b)}.
-$$
-
-Since $F$ is continuous, we see that we can extend $f$ and $g$ continuously to the domain of $F$.
-
+As such, we obtain that $F(x,y)=f(x)g(y)$ for all $(x,y)$, so the differential equation is separable.
 :::
 
 ::::::{prf:example} 
@@ -138,13 +98,13 @@ $$
 
 Although we clearly see a part that only depends on $t$ and a part that only depends on $y$, this equation is not separable. In order for it to be separable, the right-hand side of the equation needs to be a product of a part that only depends on $t$ and a part that only depends on $y$, while here we see a sum. We can manipulate this equation all we want, it is not possible to bring it into the correct form.
 
-To be absolutely sure that it cannot be written in the correct form, we use {prf:ref}`Thm:DiffSep:CheckSep`. Writing $F(t,y)=t+y$, we see that
+To be absolutely sure that it cannot be written in the correct form, we use {prf:ref}`Thm:DiffSep:CheckSep`. Writing $F(t,y)=t+y$, we see that, for instance for $(t_0,y_0)=(1,2)$ we have $F(t_0,y_0)=3\neq 0$. Then the function
 
 $$
- FF_{ty}-F_tF_y=(t+y)\cdot 0-1\cdot 1\neq 0,
+ G(t,y)=\frac{F(t,y)}{F(t,y_0)}=\frac{t+y}{t+y_0},
 $$
 
-which means that the differential equation is not separable, as we suspected already.
+defined for those $(t,y)$ with $F(t,y_0)\neq 0$, does depend on $t$. Indeed, we see that $G(0,1)=\dfrac{1}{2}$, while $G(1,1)=\dfrac{2}{3}$. This means that the differential equation is not separable, as we suspected already.
 ::::::
 
 Now the main question arises: how should we solve a separable differential equation? For this, we consider the separable differential equation
@@ -393,6 +353,12 @@ $$
 
 A natural application where first-order differential equations arise, is when dealing with so-called mixing problems. These problems usually involve a large tank of water, in which a certain substance is dissolved (e.g. salt or detergent). Water then enters with a different concentration of this substance. The water in the tank is assumed to be continuously mixed at all times, so that all the water in the tank has the same concentration at a certain moment in time. Usually, water from the tank also leaves at a certain rate. The mass of the product that is dissolved in the tank then satisfies a first-order differential equation. This differential equation is not always separable, but it will be when the rate at which the water flows into the tank is the same as the rate at which it flows out of the tank, so that the volume of water in the tank is constant. Let us consider some examples to see how this works in practice.
 
+:::{figure} Images/Mixing_problem.png
+:name: Fig:ODE1:MixingProblem:
+
+A schematic picture of a mixing problem.
+:::
+
 ::::::{prf:example}
 :label: Ex:ODE1:MixingProblemExample1
 Suppose that a tank contains $100\;\text{g}$ salt dissolved in $250\;\text{L}$ water. This solution is kept thoroughly mixed and drains from the tank at a rate of $5\;\text{L}/\text{min}$. Simultaneously, brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$. Let us see if we can figure out after how many minutes the amount of salt in the tank is equal to $1300\;\text{g}$.
@@ -401,13 +367,13 @@ Suppose that a tank contains $100\;\text{g}$ salt dissolved in $250\;\text{L}$ w
 
 Let $y(t)$ denote the amount of salt (in $\text{g}$) in the tank at time $t$ (in $\text{min}$). We want to set up a differential equation for $y$. Since $\dfrac{dy}{dt}$ represent the rate at which the amount of salt changes, this $\dfrac{dy}{dt}$ must be given by the rate at which salt enters the tank, minus the rate at which salt leaves the tank. We know that brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$, which means that the rate at which the salt comes in equals $10\cdot 5=50\;\text{g}/\text{min}$.[^Footnoteunits] 
 
-For the rate at which salt leaves the tank, we recall that the water drains at a rate of $5\;\text{L}/\text{min}$. The concentration of the water that drains is *not* constant. It is equal to the concentration of the water of the tank, which by definition is the amount of salt divided by the amout of litres in the tank, i.e. it is $\frac{y(t)}{250}\;\text{g}/\text{min}$. We obtain the differential equation
+For the rate at which salt leaves the tank, we recall that the water drains at a rate of $5\;\text{L}/\text{min}$. The concentration of the water that drains is *not* constant. It is equal to the concentration of the water of the tank, which by definition is the amount of salt divided by the amount of litres in the tank, i.e. it is $\frac{y(t)}{250}\;\text{g}/\text{min}$. We obtain the differential equation
 
 $$
  \frac{dy}{dt}=\text{"rate in"}-\text{"rate out"}=50-\frac{y(t)}{250}.
 $$
 
-In addition, the tank contains $100\;\text{g}$ salt at $t=0$, so we obtian the initial condition $y(0)=100$. The differential equation is separable. Note that $y=2500$ is the only equilibrium solution of this differential equation. For $y(t)\neq2500$ we can separate the terms to obtain
+In addition, the tank contains $100\;\text{g}$ salt at $t=0$, so we obtain the initial condition $y(0)=100$. The differential equation is separable. Note that $y=2500$ is the only equilibrium solution of this differential equation. For $y(t)\neq2500$ we can separate the terms to obtain
 
 $$
 \frac{dy}{2500-y}=\frac{dt}{50}.
@@ -603,8 +569,8 @@ $$
 
 where $k>0$ is a proportionality constant. You might notice the minus sign in front of this $k$. Can you figure out why it is there?
 
-:::{admonition} Click to see the solution
-:class: tudproof, dropdown
+:::{admonition} Find out the answer
+:class: bonus, dropdown
 The minus sign is there, since otherwise we obtain get some very unphysical behaviour. Indeed, with the minus sign, we see that $\dfrac{dT}{dT}<0$ when $T>T_s$, since we assumed $k>0$. This means the temperature of the object decreases if it is higher than the temperature of the surroundings, which is, of course, what we expect here. If the minus were not there, the object would heat up instead. A similar argument can be made for the situation where $T<T_s$.
 :::
 
@@ -695,7 +661,7 @@ $$
  T(60)= 5+15e^{\frac{1}{30}\ln\left(\frac{2}{3}\right)\cdot60}\approx11.7^{\circ}\;\text{C}.
 $$
 
-So, the temperatue of the soda pop after one hour is approximately $11.7^{\circ}\;\text{C}$.
+So, the temperature of the soda pop after one hour is approximately $11.7^{\circ}\;\text{C}$.
 
 In order to answer the second question, we need to find $t$ for which we have $T(t)=10$. This means that we need to solve
 
@@ -714,7 +680,7 @@ This implies that it takes approximately $\displaystyle\frac{\ln\left(\frac{1}{3
 ::::::
 
 %::::::{prf:example}
-%A cup of coffee with a temperature of $95^{\circ}\;\text{C}$ is placed in a room where the temperature is $20^{\circ}\;\text{C}$. After $10$ minutes the coffee has cooled to $75^{\circ}\;%\text{C}$.
+%A cup of coffee with a temperature of $95^{\circ}\;\text{C}$ is placed in a room where the temperature is $20^{\circ}\;\text{C}$. After $10$ minutes the coffee has cooled to $75^{\circ}\;\text{C}$.
 
 %1) What is the temperature of the coffee after $15$ minutes?
 
@@ -747,13 +713,14 @@ This implies that it takes approximately $\displaystyle\frac{\ln\left(\frac{1}{3
 
 ### Torricelli's law
 
-```{figure} Images/torricelli.png
----
-width: 50%
-name: Fig:DiffSep:Torricelli
-align: right
----
-```
+::::{margin}
+:::{figure} Images/torricelli.png
+:name: Fig:DiffSep:Torricelli
+
+A cylindrical tank that has a hole in the bottom.
+:::
+::::
+
 Torricelli's law, also known as Torricelli's theorem, is a theorem in fluid dynamics relating the speed of fluid flowing out of an orifice to the height of the fluid above the hole. The law states that the speed of efflux $v$ of a fluid through a sharp-edged hole at the bottom of a tank filled to a depth $h$ is the same as the speed that a body (in this case a drop of water) would acquire in falling freely from a height $h$, i.e. $v=\sqrt{2gh}$, where $g$ is the acceleration due to gravity ($9.81\;\text{m}/\text{s}^2$ near the surface of the earth).
 
 Now consider a cylindrical tank that has a hole with area $a$ in its bottom (see {numref}`Fig:DiffSep:Torricelli`) and assume that water is draining from the hole. If $V(t)$ denotes the volume of the water at time $t$, then Torricelli's law leads to
@@ -807,12 +774,12 @@ $$
 h(t)=\left(\frac{200\sqrt{10}-\sqrt{2g}t}{200}\right)^2.
 $$
 
-Now we can determine when the taking is empty. Solving the equation $h(t)=0$ gives $t=\displaystyle\frac{200\sqrt{10}}{\sqrt{2g}}$. This implies that the tank will be empy after $\displaystyle\frac{200\sqrt{10}}{\sqrt{2g}}\approx14.3$ seconds.
+Now we can determine when the taking is empty. Solving the equation $h(t)=0$ gives $t=\displaystyle\frac{200\sqrt{10}}{\sqrt{2g}}$. This implies that the tank will be empty after $\displaystyle\frac{200\sqrt{10}}{\sqrt{2g}}\approx14.3$ seconds.
 
 What happens after the the moment the tank is empty? Physically speaking, that is a silly question: the tank will obviously stay empty. However, the function $h(t)$ above is defined for all $t$ and if we plot this function, we see that $h$ starts increasing again after hitting $0$. So that would mean that the tank would fill up again, which is nonsensical. So what is wrong here? A first guess might be that it has to do with the fact that the differential equation is only defined for $h\geq 0$. That is not (directly at least) the issue here, as this particular function $h$ has $h(t)\geq 0$ for all $t$. Can you come up with the actual reason?
 
-:::{admonition} Click to see the solution
-:class: tudproof, dropdown
+:::{admonition} Find out the answer
+:class: bonus, dropdown
 We introduced this problem ourselves by squaring the implicit solution $200\sqrt{h}=-\sqrt{2g}t+200\sqrt{10}$. Since $200\sqrt{h}$ can never be negative, this implicit solution is only valid when 
 
 $$
