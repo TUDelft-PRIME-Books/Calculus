@@ -15,7 +15,7 @@ An **angle** is a measure for the amount of space between two half lines.
 
 :::
 
-Angles can be measured in degrees or in radians (abbreviated as $\operatorname{rad}$). The angle given by a complete revolution equals $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
+Angles can be measured in degrees or in radians (abbreviated as $\text{rad}$). The angle given by a complete revolution equals $360^{\circ}$, which is the same as $2\pi$ rad. Therefore:
 
 $$\pi\;\text{rad}=180^{\circ}\quad\Longrightarrow\quad 1\;\text{rad}=\left(\dfrac{180}{\pi}\right)^{\circ}\quad\text{and}\quad 1^{\circ}=\dfrac{\pi}{180}\;\text{rad}.$$ 
 
