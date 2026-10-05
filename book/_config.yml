@@ -32,6 +32,11 @@ sphinx:
     math_punctuation: _ext/
     unnumbered_sections: _ext/
   config:
+    teachbooks_questions:
+      feedbacks:
+        multiple-choice:
+          multiple-select:
+            correct: "Well done, you got everything right!"
     patch_config:
       disabled-patches: ["hash"]
     # prime_applets_base_url: "http://localhost:5173/applet/"
@@ -104,9 +109,8 @@ sphinx:
           "ip" : "\\cdot"
           "cp": ["\\times "]
           "erf": "\\operatorname{erf}"
-          dropsign: ["\\llap{\\lower5pt{#1}\\kern4pt}", 1]
-          uuline: ["\\underline{\\underline{#1}}", 1]
-          ooline: ["\\overline{\\overline{#1}}", 1]
+          "uuline": ["\\underline{\\underline{#1}}", 1]
+          "ooline": ["\\overline{\\overline{#1}}", 1]
     inverter_all: false
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js # Required for live code: https://teachbooks.io/manual/features/live_code.html

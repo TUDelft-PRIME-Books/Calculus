@@ -353,25 +353,27 @@ $$
 
 A natural application where first-order differential equations arise, is when dealing with so-called mixing problems. These problems usually involve a large tank of water, in which a certain substance is dissolved (e.g. salt or detergent). Water then enters with a different concentration of this substance. The water in the tank is assumed to be continuously mixed at all times, so that all the water in the tank has the same concentration at a certain moment in time. Usually, water from the tank also leaves at a certain rate. The mass of the product that is dissolved in the tank then satisfies a first-order differential equation. This differential equation is not always separable, but it will be when the rate at which the water flows into the tank is the same as the rate at which it flows out of the tank, so that the volume of water in the tank is constant. Let us consider some examples to see how this works in practice.
 
+:::{figure} Images/Mixing_problem.png
+:name: Fig:ODE1:MixingProblem:
+
+A schematic picture of a mixing problem.
+:::
+
 ::::::{prf:example}
 :label: Ex:ODE1:MixingProblemExample1
 Suppose that a tank contains $100\;\text{g}$ salt dissolved in $250\;\text{L}$ water. This solution is kept thoroughly mixed and drains from the tank at a rate of $5\;\text{L}/\text{min}$. Simultaneously, brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$. Let us see if we can figure out after how many minutes the amount of salt in the tank is equal to $1300\;\text{g}$.
-
-:::{todo}
-Include a schematic picture of the situation sketched here.
-:::
 
 [^Footnoteunits]: As an extra check, you can see that the units are what they need to be: the unit of $\dfrac{dy}{dt}$ is $\text{g}/\text{min}$, so the rate at which the water enters should have this unit as well. Here, we multiply $10\;\text{g}/\text{L}$ by $5\;\text{L}/\text{min}$, which, indeed, gives a quantity of which the unit is $\text{g}/\text{min}$.
 
 Let $y(t)$ denote the amount of salt (in $\text{g}$) in the tank at time $t$ (in $\text{min}$). We want to set up a differential equation for $y$. Since $\dfrac{dy}{dt}$ represent the rate at which the amount of salt changes, this $\dfrac{dy}{dt}$ must be given by the rate at which salt enters the tank, minus the rate at which salt leaves the tank. We know that brine with a concentration of $10\;\text{g}/\text{L}$ enters the tank at the same rate of $5\;\text{L}/\text{min}$, which means that the rate at which the salt comes in equals $10\cdot 5=50\;\text{g}/\text{min}$.[^Footnoteunits] 
 
-For the rate at which salt leaves the tank, we recall that the water drains at a rate of $5\;\text{L}/\text{min}$. The concentration of the water that drains is *not* constant. It is equal to the concentration of the water of the tank, which by definition is the amount of salt divided by the amout of litres in the tank, i.e. it is $\frac{y(t)}{250}\;\text{g}/\text{min}$. We obtain the differential equation
+For the rate at which salt leaves the tank, we recall that the water drains at a rate of $5\;\text{L}/\text{min}$. The concentration of the water that drains is *not* constant. It is equal to the concentration of the water of the tank, which by definition is the amount of salt divided by the amount of litres in the tank, i.e. it is $\frac{y(t)}{250}\;\text{g}/\text{min}$. We obtain the differential equation
 
 $$
  \frac{dy}{dt}=\text{"rate in"}-\text{"rate out"}=50-\frac{y(t)}{250}.
 $$
 
-In addition, the tank contains $100\;\text{g}$ salt at $t=0$, so we obtian the initial condition $y(0)=100$. The differential equation is separable. Note that $y=2500$ is the only equilibrium solution of this differential equation. For $y(t)\neq2500$ we can separate the terms to obtain
+In addition, the tank contains $100\;\text{g}$ salt at $t=0$, so we obtain the initial condition $y(0)=100$. The differential equation is separable. Note that $y=2500$ is the only equilibrium solution of this differential equation. For $y(t)\neq2500$ we can separate the terms to obtain
 
 $$
 \frac{dy}{2500-y}=\frac{dt}{50}.
@@ -428,10 +430,6 @@ This implies that after $50\ln(2)\approx35$ minutes the amount of salt in the ta
 ::::::{prf:example}
 :label: Ex:ODE1:MixingProblemExample2
 Suppose that a tank contains $100\;\text{L}$ beer with $5\%$ alcohol. Beer with $7\%$ alcohol is pumped into the tank at a rate of $1\;\text{L}/\text{min}$. The fluid in the tank is kept thoroughly mixed and drains from the tank at a rate of $1\;\text{L}/\text{min}$. Let us try to find the alcohol percentage of the beer in the tank after $1$ hour ($60$ minutes).
-
-:::{todo}
-Include a schematic picture of the situation sketched here.
-:::
 
 Let $y(t)$ denote the amount of alcohol (in $\text{L}$) in the tank at time $t$ (in $\text{min}$). Since the tank initially contains $100\;\text{L}$ beer with $5\%$ alcohol, we find that
 
@@ -571,8 +569,8 @@ $$
 
 where $k>0$ is a proportionality constant. You might notice the minus sign in front of this $k$. Can you figure out why it is there?
 
-:::{admonition} Click to see the solution
-:class: tudproof, dropdown
+:::{admonition} Find out the answer
+:class: bonus, dropdown
 The minus sign is there, since otherwise we obtain get some very unphysical behaviour. Indeed, with the minus sign, we see that $\dfrac{dT}{dT}<0$ when $T>T_s$, since we assumed $k>0$. This means the temperature of the object decreases if it is higher than the temperature of the surroundings, which is, of course, what we expect here. If the minus were not there, the object would heat up instead. A similar argument can be made for the situation where $T<T_s$.
 :::
 
@@ -663,7 +661,7 @@ $$
  T(60)= 5+15e^{\frac{1}{30}\ln\left(\frac{2}{3}\right)\cdot60}\approx11.7^{\circ}\;\text{C}.
 $$
 
-So, the temperatue of the soda pop after one hour is approximately $11.7^{\circ}\;\text{C}$.
+So, the temperature of the soda pop after one hour is approximately $11.7^{\circ}\;\text{C}$.
 
 In order to answer the second question, we need to find $t$ for which we have $T(t)=10$. This means that we need to solve
 
@@ -682,7 +680,7 @@ This implies that it takes approximately $\displaystyle\frac{\ln\left(\frac{1}{3
 ::::::
 
 %::::::{prf:example}
-%A cup of coffee with a temperature of $95^{\circ}\;\text{C}$ is placed in a room where the temperature is $20^{\circ}\;\text{C}$. After $10$ minutes the coffee has cooled to $75^{\circ}\;%\text{C}$.
+%A cup of coffee with a temperature of $95^{\circ}\;\text{C}$ is placed in a room where the temperature is $20^{\circ}\;\text{C}$. After $10$ minutes the coffee has cooled to $75^{\circ}\;\text{C}$.
 
 %1) What is the temperature of the coffee after $15$ minutes?
 
@@ -715,13 +713,14 @@ This implies that it takes approximately $\displaystyle\frac{\ln\left(\frac{1}{3
 
 ### Torricelli's law
 
-```{figure} Images/torricelli.png
----
-width: 50%
-name: Fig:DiffSep:Torricelli
-align: right
----
-```
+::::{margin}
+:::{figure} Images/torricelli.png
+:name: Fig:DiffSep:Torricelli
+
+A cylindrical tank that has a hole in the bottom.
+:::
+::::
+
 Torricelli's law, also known as Torricelli's theorem, is a theorem in fluid dynamics relating the speed of fluid flowing out of an orifice to the height of the fluid above the hole. The law states that the speed of efflux $v$ of a fluid through a sharp-edged hole at the bottom of a tank filled to a depth $h$ is the same as the speed that a body (in this case a drop of water) would acquire in falling freely from a height $h$, i.e. $v=\sqrt{2gh}$, where $g$ is the acceleration due to gravity ($9.81\;\text{m}/\text{s}^2$ near the surface of the earth).
 
 Now consider a cylindrical tank that has a hole with area $a$ in its bottom (see {numref}`Fig:DiffSep:Torricelli`) and assume that water is draining from the hole. If $V(t)$ denotes the volume of the water at time $t$, then Torricelli's law leads to
@@ -775,12 +774,12 @@ $$
 h(t)=\left(\frac{200\sqrt{10}-\sqrt{2g}t}{200}\right)^2.
 $$
 
-Now we can determine when the taking is empty. Solving the equation $h(t)=0$ gives $t=\displaystyle\frac{200\sqrt{10}}{\sqrt{2g}}$. This implies that the tank will be empy after $\displaystyle\frac{200\sqrt{10}}{\sqrt{2g}}\approx14.3$ seconds.
+Now we can determine when the taking is empty. Solving the equation $h(t)=0$ gives $t=\displaystyle\frac{200\sqrt{10}}{\sqrt{2g}}$. This implies that the tank will be empty after $\displaystyle\frac{200\sqrt{10}}{\sqrt{2g}}\approx14.3$ seconds.
 
 What happens after the the moment the tank is empty? Physically speaking, that is a silly question: the tank will obviously stay empty. However, the function $h(t)$ above is defined for all $t$ and if we plot this function, we see that $h$ starts increasing again after hitting $0$. So that would mean that the tank would fill up again, which is nonsensical. So what is wrong here? A first guess might be that it has to do with the fact that the differential equation is only defined for $h\geq 0$. That is not (directly at least) the issue here, as this particular function $h$ has $h(t)\geq 0$ for all $t$. Can you come up with the actual reason?
 
-:::{admonition} Click to see the solution
-:class: tudproof, dropdown
+:::{admonition} Find out the answer
+:class: bonus, dropdown
 We introduced this problem ourselves by squaring the implicit solution $200\sqrt{h}=-\sqrt{2g}t+200\sqrt{10}$. Since $200\sqrt{h}$ can never be negative, this implicit solution is only valid when 
 
 $$
