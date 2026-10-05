@@ -571,8 +571,8 @@ $$
 
 where $k>0$ is a proportionality constant. You might notice the minus sign in front of this $k$. Can you figure out why it is there?
 
-:::{admonition} Click to see the solution
-:class: tudproof, dropdown
+:::{admonition} Find out the answer
+:class: bonus, dropdown
 The minus sign is there, since otherwise we obtain get some very unphysical behaviour. Indeed, with the minus sign, we see that $\dfrac{dT}{dT}<0$ when $T>T_s$, since we assumed $k>0$. This means the temperature of the object decreases if it is higher than the temperature of the surroundings, which is, of course, what we expect here. If the minus were not there, the object would heat up instead. A similar argument can be made for the situation where $T<T_s$.
 :::
 
