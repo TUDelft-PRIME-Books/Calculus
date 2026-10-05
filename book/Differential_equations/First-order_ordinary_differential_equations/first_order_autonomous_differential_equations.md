@@ -25,6 +25,7 @@ $$
 is called an **equilibrium solution** since then $y'=0$ as well. For other values of $y$ the function $f(y)$ is either positive or negative, which implies that $y'$ is either positive or negative. When $y'$ is positive, the solution $y$ increases. And when $y'$ is negative, the solution $y$ decreases.
 
 ::::::{prf:example}
+:label: Ex:ODE1:AutonomousDEs
 Consider the autonomous differential equation
 
 $$

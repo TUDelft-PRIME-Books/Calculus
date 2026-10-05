@@ -29,6 +29,7 @@ This method can be applied when the right-hand side $G(x)$ is an exponential fun
 We start with the situation that the right-hand side $G(x)$ is an exponential function. If this exponential function is not a solution of the corresponding homogeneous differential equation, we might just take a constant times the exponential equation as a 'guess' for a particular solution.
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem
 If $y''-2y'-8y=e^{3x}$, then $y_h(x)=c_1e^{-2x}+c_2e^{4x}$. Now take $y_p(x)=Ae^{3x}$, then we have $y_p'(x)=3Ae^{3x}$ and $y_p''(x)=9Ae^{3x}$. Substitution then gives
 
 $$
@@ -41,6 +42,8 @@ Hence: $y_p(x)=-\frac{1}{5}e^{3x}$ is a particular solution. Then the general so
 If the exponential function is a solution of the corresponding homogeneous differential equation, this will not work since every constant multiplied by the exponential function will give zero when we substitute this into the left-hand side of the differential equation. Similarly as in the case of 'double' roots of the characteristic equation, we multiply by a factor $x$ (the variable). 
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem2
+
 If $y''-2y'-8y=e^{4x}$, then $y_h(x)=c_1e^{-2x}+c_2e^{4x}$. Now, take $y_p(x)=Axe^{4x}$, then we have $y_p'(x)=A(4x+1)e^{4x}$ and $y_p''(x)=A(16x+8)e^{4x}$. Substitution then gives
 
 $$
@@ -56,6 +59,8 @@ Hence: $y_p(x)=\frac{1}{6}xe^{4x}$ is a particular solution. Then the general so
 Combinations of exponential functions can be treated likewise.
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem3
+
 If $y''-2y'-8y=8e^{2x}-6e^{-2x}$, then $y_h(x)=c_1e^{-2x}+c_2e^{4x}$. Now take $y_p(x)=Ae^{2x}+Bxe^{-2x}$, then we have $y_p'(x)=2Ae^{2x}+B(-2x+1)$ and $y_p''(x)=4Ae^{2x}+B(4x-2)e^{-2x}$. Substitution then gives
 
 $$
@@ -72,6 +77,8 @@ Hence: $y_p(x)=xe^{-2x}-e^{2x}$ is a particular solution. Then the general solut
 If the exponential function and the multiplication by $x$ (the variable) are both solutions of corresponding homogeneous differential equation, we multiply by an extra factor $x$: 
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem4
+
 If $y''-4y'+4y=e^{2x}$, then $y_h(x)=c_1e^{2x}+c_2xe^{2x}$. Now take $y_p(x)=Ax^2e^{2x}$, then we have $y_p'(x)=A(2x^2+2x)e^{2x}$ and $y_p''(x)=A(4x^2+8x+2)e^{2x}$. Substitution then gives
 
 $$
@@ -87,6 +94,8 @@ Hence: $y_p(x)=\frac{1}{2}x^2e^{2x}$ is a particular solution. Then the general 
 If the exponential function is multiplied by a polynomial, we take the exponential function multiplied by a general polynomial of the same degree.
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem5
+
 If $y''-2y'-8y=5xe^{3x}$, then $y_h(x)=c_1e^{-2x}+c_2e^{4x}$. Now take $y_p(x)=(Ax+B)e^{3x}$, then we have $y_p'(x)=(3Ax+A+3B)e^{3x}$ and $y_p''(x)=(9Ax+6A+9B)e^{3x}$. Substitution then gives
 
 $$
@@ -103,6 +112,8 @@ Hence: $y_p(x)=-(x+\frac{4}{5})e^{3x}$ is a particular solution. Then the genera
 If the exponential function is a solution of the corresponding homogeneous differential equation, we add an extra factor $x$ (the variable).
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem6
+
 If $y''-2y'-8y=12xe^{4x}$, then $y_h(x)=c_1e^{-2x}+c_2e^{4x}$. Now take $y_p(x)=(Ax^2+Bx)e^{4x}$, then we have $y_p'(x)=(4Ax^2+2Ax+4Bx+B)e^{3x}$ and $y_p''(x)=(16Ax^2+16Ax+16Bx+8B)e^{4x}$. Substitution then gives
 
 $$
@@ -120,6 +131,8 @@ Hence: $y_p(x)=(x^2-\frac{1}{3}x)e^{4x}$ is a particular solution. Then the gene
 If the right-hand side $G(x)$ is a polynomial, we just take a general polynomial of the same degree. In fact, this is the same situation as above combined with an exponential function $e^{0x}=1$.
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem7
+
 If $y''+3y'+2y=4x$, then $y_h(x)=c_1e^{-x}+c_2e^{-2x}$. Now take $y_p(x)=Ax+B$, then we have $y_p'(x)=A$ and $y_p''(x)=0$. Substitution then gives
 
 $$
@@ -133,6 +146,8 @@ Hence: $y_p(x)=2x-3$ is a particular solution. Then the general solution is: $y(
 ::::::
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem8
+
 If $y''+4y'+5y=25x^2$, then $y_h(x)=c_1e^{-2x}\cos(x)+c_2e^{-2x}\sin(x)$. Now take $y_p(x)=Ax^2+Bx+C$, then we have $y_p'(x)=2Ax+B$ and $y_p''(x)=2A$. Substitution then gives
 
 $$
@@ -148,6 +163,8 @@ This implies that $A=5$, $B=-8$ and $C=\frac{22}{5}$. Hence: $y_p(x)=5x^2-8x+\fr
 Note that the invisible factor $e^{0x}=1$ corresponds to a root $0$ of the characteristic equation. So, in that case we have to add an extra factor $x$ (the variable).
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem9
+
 If $y''+4y'=8x$, then $y_h(x)=c_1+c_2e^{-4x}$. Now take $y_p(x)=Ax^2+Bx$, then we have $y_p'(x)=2Ax+B$ and $y_p''(x)=2A$. Substitution then gives
 
 $$
@@ -163,6 +180,8 @@ Hence: $y_p(x)=x^2-\frac{1}{2}x$ is a particular solution. Then the general solu
 If the right-hand side $G(x)$ is a sine or a cosine, we try a linear combination of the sine and the cosine as a 'guess' for a particular solution. Note that the substitution of a sine or a cosine gives rise to the other one when we differentiate.
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem10
+
 If $y''-3y'+2y=10\cos(x)$, then $y_h(x)=c_1e^x+c_2e^{2x}$. Now take $y_p(x)=A\cos(x)+B\sin(x)$, then we have $y_p'(x)=-A\sin(x)+B\cos(x)$ and $y_p''(x)=-A\cos(x)-B\sin(x)$. Substitution then gives
 
 $$
@@ -178,6 +197,8 @@ This implies that $A=1$ and $B=-3$. Hence: $y_p(x)=\cos(x)-3\sin(x)$ is a partic
 ::::::
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem11
+
 If $y''+2y'+5y=17\sin(x)$, then $y_h(x)=c_1e^{-x}\cos(2x)+c_2e^{-x}\sin(2x)$. Now take $y_p(x)=A\cos(2x)+B\sin(2x)$, then we have $y_p'(x)=-2A\sin(2x)+2B\cos(2x)$ and $y_p''(x)=-4A\cos(2x)-4B\sin(2x)$. Substitution then gives
 
 $$
@@ -195,6 +216,8 @@ This implies that $A=-4$ and $B=1$. Hence: $y_p(x)=-4\cos(x)+\sin(x)$ is a parti
 If the right-hand side is a solution of the corresponding homogeneous differential equation, we add an extra factor $x$ (the variable) again.
 
 ::::::{prf:example}
+:label: Ex:ODE2:InhomogeneousProblem12
+
 If $y''+9y=6\sin(3x)$, then $y_h(x)=c_1\cos(3x)+c_2\sin(3x)$. Now take $y_p(x)=Ax\cos(3x)+Bx\sin(3x)$, then we have $y_p'(x)=A\left(\cos(3x)-3x\sin(3x)\right)+B\left(\sin(3x)+3x\cos(3x)\right)$ and $y_p''(x)=A\left(-6\sin(3x)-9x\cos(3x)\right)+B\left(6\cos(3x)-9x\sin(3x)\right)$. Substitution then gives
 
 $$
