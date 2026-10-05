@@ -363,7 +363,7 @@ Since we can determine whether a function has an inverse function by finding out
 
 ::::::{prf:theorem}
 :label: Thm:Inverse:MonotonicOnetoone
-If an onto function $f$ is strictly monotonic on its domain, then $f$ is one-to-one. In particular, such a function $f$ is invertible. In such a case, the inverse function is strictly monotonic as well.
+If an onto function $f$ is strictly monotonic on its domain, then $f$ is one-to-one. In particular, such a function $f$ is invertible. In such a case, if $f$ is strictly increasing then so is the inverse function $f^{-1}$, and if $f$ is strictly decreasing then so is $f^{-1}$.
 
 ::::::
 

@@ -314,7 +314,7 @@ A first-order differential equation is called **autonomous** if it can be writte
 
 Note that the *logistic equation* is an example of an autonomous differential equation. This equation will be solved in {numref}`Sec:ODE1:Separable`.
 
-Usually, it is directly visible whether a differential equation is autonomous or not, but it is sometimes useful to use the following criterion.
+Usually, it is directly visible whether a differential equation is autonomous or not, but it is sometimes useful to use the following criterion, which uses partial derivatives (see {numref}`Sec:PartialDerivatives`).
 
 ::::::{prf:theorem}
 :label: Thm:ClassDiff:Autonomous
@@ -676,8 +676,8 @@ Because the right-hand side of this equation is $0$, the differential equation i
 
 If we want to find the general solution of this differential equation, we want to find all functions that satisfy this equation. That is, we look for all functions of which the second derivative is equal to minus the original function. In {numref}`Sec:ODE2:Homogeneous` we will see how you can solve this differential equation systematically, but for this particular equation it is possible to guess the solutions. Can you come up with one or more functions that satisfy this equation?
 
-:::{admonition} Click to see the solution
-:class: tudproof, dropdown
+:::{admonition} Find out the answer
+:class: bonus, dropdown
 One example of a function of which the second derivative is minus the original function is $y_1(t)=\sin(t)$. Indeed, for this function we have
 
 $$
@@ -1004,7 +1004,7 @@ $$
  y(x)=A\cos(k x)+B\sin(k x).
 $$
 
-We note that $y(x)=0$ is a solution that satisfies both boundary conditions. This solution is often referred to as the **trivial solution** An important question is whether there are values of $k>0$ for which other solutions exist.
+We note that $y(x)=0$ is a solution that satisfies both boundary conditions. This solution is often referred to as the **trivial solution**. An important question is whether there are values of $k>0$ for which other solutions exist. A value of $k$ for which a nontrivial solution (i.e. a solution that is not zero) exists, is called an **eigenvalue**, and the corresponding solution is called an **eigenfunction**.
 
 Complete the following sentences:
 ---
@@ -1012,7 +1012,7 @@ DS[{Dirichlet boundary condition};Neumann boundary condition;Robin boundary cond
 DS[{Dirichlet boundary condition};Neumann boundary condition;Robin boundary condition]
 M[A=0]
 DS[A;B;{k}]
-DS[A should be 0;A should be 1;B should be 0;B should be 1;k can be anything;{k should be a positive integer}]
+DS[A should be 0;A should be 1;B should be 0;B should be 1;k should be an integer multiple of π;{k should be a positive integer};something else]
 ^^^
 ? :::{card}
 The boundary condition at $x=0$ is a {gap} and the boundary condition at $x=\pi$ is a {gap}. In order to satisfy the boundary condition at $x=0$, we need to have {gap}. Afterwards, in order to ensure that $y\neq 0$ and the condition at $x=\pi$ is satisfied, we obtain a condition on the possible values of {gap}. In particular, we find that {gap}.
@@ -1058,6 +1058,16 @@ The boundary condition at $x=0$ is a {gap} and the boundary condition at $x=\pi$
 :dropdown:
 :description: Find equilibrium solutions and check if the differential equation is autonomous.
 ::::::
+
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7514cf67-5001-4f8c-aa25-d2bc5abf1b69?id=71428
+:label: Grasple:71428
+:dropdown:
+:description: Is the differential equation linear? If so, is it homogeneous?
+::::::
+
 
 ::::::{grasple}
 :iframeclass: dark-light
@@ -1212,6 +1222,15 @@ The boundary condition at $x=0$ is a {gap} and the boundary condition at $x=\pi$
 :label: Grasple:79418
 :dropdown:
 :description: Application: Electrical circuit.
+::::::
+
+
+::::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/2c83bc57-8879-4bfb-94d5-5c66f40108ba?id=79434
+:label: Grasple:79434
+:dropdown:
+:description: Application: RL electrical circuit.
 ::::::
 
 

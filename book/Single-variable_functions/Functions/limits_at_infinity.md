@@ -350,9 +350,9 @@ Intuitively, these computation rules make sense: if the function values $f(x)$ a
 
 ::::::{prf:theorem} Substitution for limit at plus or minus infinity
 :label: Theorem:LimitAtInfinity:Substitution
-Suppose $f$ is a polynomial, rational function, power function, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. Moreover, suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
+Suppose $f$ is a polynomial, rational function, power function, (inverse) trigonometric function, exponential function or logarithmic function and that $b$ is in the domain of $f$. In addition, let $g$ be a function of which the domain contains an interval of the form $[d,\infty)$ and suppose that $\lim\limits_{x\rightarrow \infty}g(x)=b$. Then $\lim\limits_{x\rightarrow \infty}f(g(x))=f\left(\lim\limits_{x\rightarrow \infty}g(x)\right)=f(b)$.
 
-In addition, suppose  $h$ is any function for which the composition $f\circ h$. If $\lim\limits_{x\rightarrow\infty}h(x)=\infty$, then we also have the limit $\lim\limits_{x\rightarrow \infty}f(h(x))=\lim\limits_{x\rightarrow\infty}f(x)$. Similarly, if $\lim\limits_{x\rightarrow\infty}h(x)=-\infty$, then we have $\lim\limits_{x\rightarrow \infty}f(h(x))=\lim\limits_{x\rightarrow-\infty}f(x)$.
+In addition, suppose  $h$ is any function for which the composition $f\circ h$ exists. If $\lim\limits_{x\rightarrow\infty}h(x)=\infty$, then we also have the limit $\lim\limits_{x\rightarrow \infty}f(h(x))=\lim\limits_{x\rightarrow\infty}f(x)$. Similarly, if $\lim\limits_{x\rightarrow\infty}h(x)=-\infty$, then we have $\lim\limits_{x\rightarrow \infty}f(h(x))=\lim\limits_{x\rightarrow-\infty}f(x)$.
 
 A similar result holds for limits at minus infinity.
 ::::::

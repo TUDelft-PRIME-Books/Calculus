@@ -435,9 +435,15 @@ Let $y> 0$ and $z> 0$ and let $p$ and $q$ be rational numbers.
 - If $y>1$ and $p<q$ then $y^p<y^q$.
 - If $0<y<1$ and $p<q$ then $y^p>y^q$.
 - If $p>0$ and $y<z$ then $y^p<z^p$.
-- If $p=\dfrac{a}{b}$ for integers $a>0$ and $b>0$ with $b$ odd then for any two real numbers $\tilde{y}<\tilde{z}$ we have $\tilde{y}^p<\tilde{y}^q$.
 - If $p<0$ and $y<z$ then $y^p>z^p$.
+- If $p=\dfrac{a}{b}$ for integers $a>0$ and $b>0$ with both $a$ and $b$ odd then for any two real numbers $\tilde{y}<\tilde{z}$ we have $\tilde{y}^p<\tilde{y}^q$.
+- If $p=\dfrac{a}{b}$ for integers $a>0$ and $b>0$ with $a$ even and $b$ odd then for $\tilde{y}<\tilde{z}<0$ we have $\tilde{y}^p>\tilde{y}^q$.
+
 ::::::
+
+:::{todo}
+Prove final two identities
+:::
 
 :::{admonition} Proof of {prf:ref}`Thm:RealNumbers:ExpCalcRat`
 :class: tudproof, dropdown

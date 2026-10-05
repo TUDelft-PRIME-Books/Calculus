@@ -1,4 +1,0 @@
-# Overviews from algebra
-
-```{tableofcontents}
-```
