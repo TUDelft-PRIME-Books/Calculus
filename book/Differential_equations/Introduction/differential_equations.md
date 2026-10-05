@@ -1230,7 +1230,7 @@ The boundary condition at $x=0$ is a {gap} and the boundary condition at $x=\pi$
 :url: https://embed.grasple.com/exercises/2c83bc57-8879-4bfb-94d5-5c66f40108ba?id=79434
 :label: Grasple:79434
 :dropdown:
-:description: Application: RL electrical circiut
+:description: Application: RL electrical circuit.
 ::::::
 
 

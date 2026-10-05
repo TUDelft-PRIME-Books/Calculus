@@ -185,3 +185,4 @@ parts:
     - file: "Progress_reports/overview.md"
       sections:
       - file: "Progress_reports/2026_09_17.md"
+      - file: "Progress_reports/2026_10_05.md"

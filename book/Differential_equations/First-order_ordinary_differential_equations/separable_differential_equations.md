@@ -10,7 +10,9 @@ In {numref}`Sec:DE:Intro` we mentioned that differential equations can only be s
 
 ## Solving separable differential equations
 
-::::::{prf:Definition}
+::::::{prf:definition}
+:label: Def:ODE1:Separable
+
 A first-order differential equation is called **separable** if it can be written in the form
 
 $$
