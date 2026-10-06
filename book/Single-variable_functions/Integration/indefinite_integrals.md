@@ -4,7 +4,9 @@
 
 ## Introduction
 
-In {numref}`Chapter:Differentiation` we saw the concept of the derivative of a function. It turns out that there is a reverse operation, called *integration*, which allows us to find a function if we know its derivative. In this section we introduce the concepts of *antiderivatives* and *indefinite integrals* as the reverse operation of differentiation.
+In {numref}`Chapter:Differentiation` we saw the concept of the derivative of a function. It turns out that there is a reverse operation, called *integration*, which allows us to find a function if we know its derivative. In this section we introduce the concepts of *antiderivatives* and *indefinite integrals* as the inverse operation of differentiation.
+
+Although the definition of an *indefinite integral* turns out to be very different from the definition of a *definite integral* (see: {numref}`Sec:Integration:DefiniteIntegrals`), the two concepts are closely related as we will see in {numref}`Sec:Integration:FundamentalTheorem`.
 
 ## Antiderivatives
 
@@ -27,21 +29,21 @@ Note that an antiderivative $F$ of a function $f$ is not a unique function, as t
 ::::::{prf:Theorem}
 :label: Thm:Integration:AntiderivativeConstant
 
-If $F$ is an antiderivative of a function $f$ on an open interval $I$ and $C$ is an arbitrary real constant, then the family of functions $G$ defined by
+If $F$ is an antiderivative of a function $f$ on an open interval $I$ and $C$ is an arbitrary real constant, then every function $G$ defined by
 
 $$
 G(x)=F(x)+C\quad\text{for all}\quad x\in I
 $$
 
-are also antiderivatives of $f$ on $I$.
+is also an antiderivative of $f$ on $I$.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Integration:AntiderivativeConstant`
 :class: tudproof
 
-Because $F$ is an antiderivative of $f$ on $I$ we have $F'(x)=f(x)$ for all $x\in I$.
+Since $F$ is an antiderivative of $f$ on $I$ we have $F'(x)=f(x)$ for all $x\in I$.
 
-Because $C$ is an arbitrary real constant with derivative $0$, we find that
+Since $C$ is an arbitrary real constant with derivative $0$, we find that
 
 $$
 G'(x)=\frac{d}{dx}\left[F(x)+C\right]=F'(x)+0=f(x)\quad\text{for all}\quad x\in I,
@@ -50,10 +52,7 @@ $$
 showing that $G$ is also an antiderivative of $f$ on $I$.
 ::::::
 
-::::::{prf:Example}
-:label: Ex:Integration:Antiderivatives
-Note that $-\frac{1}{2}\cos(2x)$, $\sin^2(x)$ and $-\cos^2(x)$ are all antiderivatives of $\sin(2x)$.
-::::::
+In {numref}`Sec:Integration:FundamentalTheorem` we will see that every *continuous* function defined on an interval $I$ has an antiderivative. So, for *piecewise-continuous* functions defined on an interval, on every subinterval where the function is continuous an antiderivative exists.
 
 Because of the close relation between derivates and antiderivatives we have the following important observation:
 
@@ -63,7 +62,14 @@ Because of the close relation between derivates and antiderivatives we have the 
 In many cases an antiderivative $F$ of a function $f$ is easily checked by differentiation. The derivative $F'$ should be equal to the function $f$.
 ::::::
 
-For many (standard) functions we are familiar with their derivatives. The other way around these derivatives give rise to antiderivatives in terms of these (standard) functions:
+::::::{prf:Example}
+:label: Ex:Integration:Antiderivatives
+Note that $-\frac{1}{2}\cos(2x)$, $\sin^2(x)$ and $-\cos^2(x)$ are all antiderivatives of $\sin(2x)$.
+
+Check for yourself by differentiating the antiderivaties.
+::::::
+
+For many (standard) functions we are familiar with their derivatives. These (standard) functions are themselves antiderivatives of their derivatives. This leads to the following list of antiderivatives of standard functions:
 
 ```{table} Standard functions and their antiderivatives.
 :widths: auto
@@ -71,19 +77,19 @@ For many (standard) functions we are familiar with their derivatives. The other 
 :class: mid-align center-align
 :name: Tab:Integration:StandardAntiderivatives
 
-| Standard function | An antiderivative | Remark |
+| Standard function | An antiderivative | Condition |
 |---|---|---|
 | $\displaystyle e^x$ | $\displaystyle e^x$ |  |
 | $\displaystyle x^{\alpha}$ | $\displaystyle \frac{1}{\alpha+1}x^{\alpha+1}$ | $\alpha\neq-1$ |
 | $\displaystyle\frac{1}{x}$ | $\displaystyle \ln\lvert x\rvert$ | $x\neq0$ |
 | $\displaystyle\cos(x)$ | $\displaystyle \sin(x)$| |
 | $\displaystyle\sin(x)$ | $\displaystyle -\cos(x)$ | |
-| $\displaystyle\frac{1}{\cos^2(x)}$ | $\displaystyle \tan(x)$| |
-| $\displaystyle\tan^2(x)$ | $\displaystyle \tan(x)-x$| |
+| $\displaystyle\frac{1}{\cos^2(x)}$ | $\displaystyle \tan(x)$| $\cos(x)\neq0$ |
+| $\displaystyle\tan^2(x)$ | $\displaystyle \tan(x)-x$| $\cos(x)\neq0$ |
 | $\displaystyle\cosh(x)$ | $\displaystyle \sinh(x)$ | |
 | $\displaystyle\sinh(x)$ | $\displaystyle \cosh(x)$ | |
 | $\displaystyle\frac{1}{\sqrt{1-x^2}}$ | $\displaystyle \arcsin(x)$ | $-1<x<1$ |
-| $\displaystyle-\frac{1}{\sqrt{1-x^2}}$ | $\displaystyle \arccos(x)$ | $-1<x<1$ |
+| $\displaystyle\frac{-1}{\sqrt{1-x^2}}$ | $\displaystyle \arccos(x)$ | $-1<x<1$ |
 | $\displaystyle\frac{1}{1+x^2}$ | $\displaystyle \arctan(x)$ | |
 
 ```
@@ -165,19 +171,19 @@ We can transform {numref}`Tab:Integration:StandardAntiderivatives` into a table 
 :class: mid-align center-align
 :name: Tab:Integration:StandardIndefiniteIntegrals
 
-| Indefinite integral | Remark |
+| Indefinite integral | Condition |
 |---|---|
 | $\displaystyle \int e^x \,dx= e^x+C$ |  |
 | $\displaystyle \int x^{\alpha} \,dx= \frac{1}{\alpha+1}x^{\alpha+1}+C$ | $\alpha\neq-1$ |
 | $\displaystyle \int \frac{1}{x} \,dx= \ln\lvert x\rvert+C$ | $x\neq0$ |
 | $\displaystyle \int \cos(x) \,dx= \sin(x)+C$| |
 | $\displaystyle \int \sin(x) \,dx= -\cos(x)+C$ | |
-| $\displaystyle \int \frac{1}{\cos^2(x)} \,dx= \tan(x)+C$| |
-| $\displaystyle \int \tan^2(x) \,dx= \tan(x)-x+C$| |
+| $\displaystyle \int \frac{1}{\cos^2(x)} \,dx= \tan(x)+C$| $\cos(x)\neq0$ |
+| $\displaystyle \int \tan^2(x) \,dx= \tan(x)-x+C$| $\cos(x)\neq0$ |
 | $\displaystyle \int \cosh(x) \,dx= \sinh(x)+C$ | |
 | $\displaystyle \int \sinh(x) \,dx= \cosh(x)+C$ | |
 | $\displaystyle \int \frac{1}{\sqrt{1-x^2}} \,dx= \arcsin(x)+C$ | $-1<x<1$ |
-| $\displaystyle -\int \frac{1}{\sqrt{1-x^2}} \,dx= \arccos(x)+C$ | $-1<x<1$ |
+| $\displaystyle \int \frac{-1}{\sqrt{1-x^2}} \,dx= \arccos(x)+C$ | $-1<x<1$ |
 | $\displaystyle \int \frac{1}{1+x^2} \,dx= \arctan(x)+C$ | |
 ```
 
@@ -193,18 +199,20 @@ $$
 
 ## Properties of indefinite integrals
 
-Just like definite integrals have several properties, indefinite integrals also have some useful properties:
+Just like definite integrals, indefinite integrals satisfy the linearity properties:
 
 ::::{prf:theorem}
 :label: Thm:Integration:IndefiniteProperties
 
-- $\displaystyle\int\left(f(x)+g(x)\right)\,dx=\int f(x)\,dx+\int g(x)\,dx$ for $f$ and $g$ continuous on some open interval $I$;
+Let $f$ and $g$ be continuous on some interval $I$ and $c$ any real number, then
 
-- $\displaystyle\int cf(x)\,dx=c\int f(x)\,dx$ for any real number $c$ and $f$ continuous on some open interval $I$.
+- $\displaystyle\int\left(f(x)+g(x)\right)\,dx=\int f(x)\,dx+\int g(x)\,dx$;
+
+- $\displaystyle\int cf(x)\,dx=c\int f(x)\,dx$.
 
 ::::
 
-Using these so-called linear properties we can also determine indefinite integrals of linear combinations of functions. Two examples are given below.
+Using these properties we can also determine indefinite integrals of linear combinations of functions. Two examples are given below.
 
 ::::::{prf:Example}
 :label: Ex:Integration:IndefiniteExample1
@@ -239,7 +247,7 @@ In {numref}`Sec:Differentiation:ChainRule` we saw the chain rule for derivatives
 
 :::{prf:theorem}
 :label: Thm:Integration:IndefiniteLinearSubstitution
-Let $f$ be a continuous function on some open interval $I$, and let $\alpha,\beta\in\mathbb{R}$ with $\alpha\neq0$ such that the linear function $g(x)=\alpha x+\beta$ has its image in $I$. Then
+Let $f$ be a continuous function on some open interval $I$, let $\alpha,\beta\in\mathbb{R}$ with $\alpha\neq0$, and let $x$ be such that the linear function $g(x)=\alpha x+\beta$ has its image in $I$. Then
 
 $$
 \int f(\alpha x+\beta)\,dx=\frac{1}{\alpha}F(\alpha x+\beta)+C,
@@ -279,19 +287,7 @@ Using {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` we can determine t
 {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` is only valid for *linear substitutions* of the form $\alpha x+\beta$ with $\alpha,\beta\in\mathbb{R}$ and $\alpha\neq0$. For more general substitutions we need the method of *integration by substitution*, which will be explained in {numref}`Sec:Integration:Substitution`.
 ::::
 
-::::::{prf:Remark}
-:label: Rk:Integration:IndefiniteLinearSubstitution
-
-In the section on integration of rational functions we will frequently use that
-
-$$
-\int\frac{dx}{\alpha x+\beta}=\frac{1}{\alpha}\int\frac{dx}{x+\frac{\beta}{\alpha}}=\frac{1}{\alpha}\ln\left|x+\tfrac{\beta}{\alpha}\right|+C,\quad\alpha,\beta\in\mathbb{R},\quad\alpha\neq0.
-$$
-
-::::::
-
 In the next section we will explain the relation between definite and indefinite integrals.
-
 
 ## Grasple exercises
 
@@ -333,10 +329,19 @@ In the next section we will explain the relation between definite and indefinite
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/ff7dc168-0283-4be7-acc3-1aaadecd20cc?id=64405
-:label: Grasple:64405
+:url: https://embed.grasple.com/exercises/8be30748-bf22-4523-b759-0a62e953926e?id=64408
+:label: Grasple:64408
 :dropdown:
-:description: Find the antiderivatives of a reciprocal function.
+:description: Find the antiderivatives of a square root function.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/f19bdb1c-3728-47c2-b642-afc925dc298f?id=64596
+:label: Grasple:64596
+:dropdown:
+:description: Find the antiderivatives of the reciprocal of a square root function.
 
 ::::
 
