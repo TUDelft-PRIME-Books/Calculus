@@ -55,7 +55,7 @@ We start off by giving a few essential definitions.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Function
-
+Deze wordt een note, geen def.
 A **function** $f$ assigns to each $x$ in a set $D$ a *unique* element, usually denoted by $f(x)$, in a set $C$. The set $D$ is called the **domain** of the function, while the set $C$ is called the **codomain** of the function.
 
 ::::::
@@ -72,15 +72,15 @@ If $f$ has domain $D$ and codomain $C$ we write $f:D\rightarrow C$. We also writ
 If we do not explicitly specify the domain and/or codomain of a function $f$, we use the symbols $D_f$ for the domain of $f$ and $C_f$ for the codomain of $f$.
 ::::::
 
-{prf:ref}`Def:Functions1var:Function` is good enough for the purpose of this book, but for those of you who are interested, we also provide the formal definition of a function.
+{prf:ref}`Def:Functions1var:Function` is good enough for the purpose of this book, but for those of you who are interested, we also provide the formal definition of a function. Deze zin moet weg
 
 ::::::{prf:definition} Formal definition of a function
 :label: Def:Functions1var:Functionformal
 :class: bonus, dropdown
-
+Product set naar 1.1. G graph noemen.
 Let $D$ and $C$ be sets. Then the **product set** $D\times C$ is the set of all ordered pairs $(x,y)$ with $x$ in $D$ and $y$ in $C$.
 
-A **function** $f$ with **domain** $D$ and **codomain** $C$ is a subset $f\subset (D\times C)$ such that for each $x\in D$ there is exactly one $y\in C$ with $(x,y)\in f$. For each pair $(x,y)\in f$ we write $y=f(x)$.
+A **function** $f$ with **domain** $D$ and **codomain** $C$ is a triplet $f=(D,C,G)$, where $G\subset (D\times C)$ such that for each $x\in D$ there is exactly one $y\in C$ with $(x,y)\in E$. For each pair $(x,y)\in E$ we write $y=f(x)$.
 
 ::::::
 
@@ -164,7 +164,13 @@ The codomain of a function should be thought of as the set of all potential outp
 Let $f$ be a function with domain $D$ and codomain $C$. Then the **range** $R$ of $f$ is the set of all function values of $f$. That is, we have
 
 $$
- R=\left\{y\,\,\text{in}\,\,C\,\middle|\,\text{There is an }x\,\text{in}\,D\,\text{with}\,f(x)=y\right\}=\left\{f(x)\,\middle|\,x\,\text{in}\,D\right\}.
+ R=\left\{y\,\,\text{in}\,\,C\,\middle|\,\text{There is an }x\,\text{in}\,D\,\text{with}\,f(x)=y\right\},
+$$
+
+which can be written more compactly as
+
+$$
+ R=\left\{f(x)\,\middle|\,x\,\text{in}\,D\right\}.
 $$
 ::::::
 
