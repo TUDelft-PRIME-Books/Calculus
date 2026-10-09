@@ -1,26 +1,26 @@
-(Sec:SeqAndTypes)=
-# Sequences and their types
+(Sec:Sequences)=
+# Introduction to sequences
 
 ## Introduction
 
 Consider the following five numbers:
 
 ::::{math}
-:label: Eq:SeqAndTypes:PositiveIntegersFiniteList
+:label: Eq:Sequences:PositiveIntegersFiniteList
 1,2,3,4,5.
 ::::
 
 As you can see, these numbers are ordered, and even contain a pattern: each number is one more than the previous one. We could continue this pattern indefinitely by adding $1$ to the last number to obtain the next number. This gives us the infinite list of numbers
 
 ::::{math}
-:label: Eq:SeqAndTypes:PositiveIntegersList
+:label: Eq:Sequences:PositiveIntegersList
 1,2,3,4,5,6,7,8,9,10,\ldots
 ::::
 
 Now consider the following five numbers:
 
 ::::{math}
-:label: Eq:SeqAndTypes:ReciprocalPerfectSquaresFiniteList
+:label: Eq:Sequences:ReciprocalPerfectSquaresFiniteList
 1,\frac{1}{4},\frac{1}{9},\frac{1}{16},\frac{1}{25}.
 ::::
 
@@ -29,11 +29,11 @@ Now consider the following five numbers:
 Each number is the reciprocal of a perfect square[^perfect-squares]. We can continue this pattern indefinitely by taking the reciprocal of the next perfect square to obtain the next number. This gives us the infinite list of numbers
 
 ::::{math}
-:label: Eq:SeqAndTypes:ReciprocalPerfectSquaresList
+:label: Eq:Sequences:ReciprocalPerfectSquaresList
 1,\frac{1}{4},\frac{1}{9},\frac{1}{16},\frac{1}{25},\frac{1}{36},\frac{1}{49},\frac{1}{64},\frac{1}{81},\frac{1}{100},\ldots
 ::::
 
-The lists in Equations {eq}`Eq:SeqAndTypes:PositiveIntegersFiniteList`, {eq}`Eq:SeqAndTypes:PositiveIntegersList`, {eq}`Eq:SeqAndTypes:ReciprocalPerfectSquaresFiniteList` and {eq}`Eq:SeqAndTypes:ReciprocalPerfectSquaresList` are _all_ examples of **sequences**. In the next sections we will give a precise definition of what sequences are, how you can represent them, and we will give some types of common sequences. We end with showing some famous sequences. 
+The lists in Equations {eq}`Eq:Sequences:PositiveIntegersFiniteList`, {eq}`Eq:Sequences:PositiveIntegersList`, {eq}`Eq:Sequences:ReciprocalPerfectSquaresFiniteList` and {eq}`Eq:Sequences:ReciprocalPerfectSquaresList` are examples of **sequences**, although we will introduce another notation. In the next subsections we will give a precise definition of what sequences are, how you can represent them, and we will give some types of common sequences. We end by showing some famous sequences. 
 
 ## Sequences
 
@@ -42,7 +42,7 @@ We start of with the definition of sequences and some relevant terminology.[^ext
 [^extensionCh1]: The content of this section is an extension of the content of {numref}`Sec:SumsAndProducts:FiniteSequences`.
 
 ::::::{prf:definition}
-:label: Def:SeqAndTypes:Definition
+:label: Def:Sequences:Definition
 
 A **sequence** is a list of numbers arranged in a specific order.
 
@@ -56,56 +56,66 @@ Note that a sequence does not have to be defined by a pattern. Also, the startin
 There are several ways to represent a sequence:
 
 ::::{prf:notation}
-:label: Not:SeqAndTypes:SequenceNotation
+:label: Not:Sequences:Notation
 
 The following are both different notations for the same _finite_ sequence:
 
-- $\displaystyle\{a_n\}_{n=p}^{q}$.
-- $\displaystyle a_p,a_{p+1},a_{p+2},\ldots,a_q$.
+- $\displaystyle\left(a_n\right)_{n=p}^{q}$.
+- $\displaystyle\left(a_p,a_{p+1},a_{p+2},\ldots,a_q\right)$.
 
 In this case the integer $p$ is the starting index and the integer $q$ is the ending index.
 
 The following are both different notations for the same _infinite_ sequence:
 
-- $\displaystyle\{a_n\}_{n=p}^{\infty}$.
-- $\displaystyle a_p,a_{p+1},a_{p+2},\ldots$
+- $\displaystyle\left(a_n\right)_{n=p}^{\infty}$.
+- $\displaystyle\left(a_p,a_{p+1},a_{p+2},\ldots\right)$.
 
 The integer $p$ is again the starting index, but there is no ending index since the sequence is infinite.
 
 The letter $n$ is often used to denote the index, but we can also use any other letter for the index.
 
-Sometimes we just write $\{a_n\}$ to denote a sequence, so if we do, please be aware that the context is relevant in that case.
+Sometimes we just write $\left(a_n\right)$ to denote a sequence, so if we do, please be aware that the context is relevant in that case.
 
 ::::
 
+:::{note}
+In other books sequences are often denoted as $\{a_1,a_2,a_3,\ldots\}$. However, to distinguish sequences and sets we use the notation $\left(a_1,a_2,a_3,\ldots\right)$. 
+
+For sets the order of the elements is irrelevant, so for instance we have $\{1,2\}=\{2,1\}$.
+
+However, just like for points &mdash; $(1,2)\neq(2,1)$ &mdash; the order of the terms of a sequence is fixed.
+:::
+
 :::{prf:remark}
-:label: Rmk:SeqAndTypes
+:label: Rmk:Sequences:Finite
 
 In the sequel of this book we nearly never consider _finite_ sequences, so if we use the term _sequence_, we often mean an _infinite_ sequence.
 :::
 
-In many cases the terms of an sequence are defined by an explicit formula for the general term in terms of the index:
+In many cases the terms of a sequence are defined by an explicit formula for the general term in terms of the index:
 
 ::::{prf:definition}
-:label: Def:SeqAndTypes:ExplicitFormula
+:label: Def:Sequences:ExplicitFormula
 
-An **explicit formula for a sequence** $\{a_n\}$ is a formula that gives the $n$th term $a_n$ of the sequence directly in terms of the index $n$ for all integers $n$ larger than the starting index.
+An **explicit formula for a sequence** $\left(a_n\right)$ is a formula that gives the $n$th term $a_n$ of the sequence directly in terms of the index $n$ for all integers $n$ larger than the starting index.
 ::::
 
 ::::{prf:example}
-:label: Ex:SeqAndTypes:PositiveIntegersExplicitFormula
-The sequence of positive integers $1,2,3,4,5,\ldots$ of Equation {eq}`Eq:SeqAndTypes:PositiveIntegersList` can be defined by the explicit formula
+:label: Ex:Sequences:PositiveIntegersExplicitFormula
+
+The sequence of positive integers $\left(1,2,3,4,5,\ldots\right)$ of Equation {eq}`Eq:Sequences:PositiveIntegersList` can be defined by the explicit formula
 
 $$
 a_n=n\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
-Note that it is convenient to start with the index $n=1$. However, we could also have started with $n=0$ and define $a_n=n+1$ for $n=0,1,2,\ldots$ instead.
+Note that it is convenient to start with the index $n=1$. However, we could also have started with $n=0$ and defined $a_n=n+1$ for $n=0,1,2,\ldots$ instead.
 ::::
 
 ::::{prf:example}
-:label: Ex:SeqAndTypes:ReciprocalPerfectSquaresExplicitFormula
-The sequence of reciprocals of perfect squares $1,\dfrac{1}{4},\dfrac{1}{9},\dfrac{1}{16},\dfrac{1}{25},\ldots$ of Equation {eq}`Eq:SeqAndTypes:ReciprocalPerfectSquaresList` can be defined by the explicit formula
+:label: Ex:Sequences:ReciprocalPerfectSquaresExplicitFormula
+
+The sequence of reciprocals of perfect squares $\left(1,\dfrac{1}{4},\dfrac{1}{9},\dfrac{1}{16},\dfrac{1}{25},\ldots\right)$ of Equation {eq}`Eq:Sequences:ReciprocalPerfectSquaresList` can be defined by the explicit formula
 
 $$
 b_n=\frac{1}{n^2}\quad\text{for}\quad n=1,2,3,\ldots
@@ -113,9 +123,9 @@ $$
 ::::
 
 ::::{prf:example}
-:label: Ex:SeqAndTypes:ExplicitFormula
+:label: Ex:Sequences:ExplicitFormula
 
-Now consider the sequence $\{c_n\}_{n=1}^{\infty}$ with $c_n=\dfrac{n}{n^2+1}$ for $n=1,2,3,\ldots$.
+Now consider the sequence $\left(c_n\right)_{n=1}^{\infty}$ with $c_n=\dfrac{n}{n^2+1}$ for $n=1,2,3,\ldots$.
 
 This means, by substituting $n=1$ in the explicit formula, that the first term of the sequence is
 
@@ -138,23 +148,24 @@ $$
 and so on. We could write the sequence out as
 
 $$
-\{c_n\}_{n=1}^{\infty} = \left\{\frac{1}{2},\frac{2}{5},\frac{3}{10},\frac{4}{17},\frac{5}{26},\ldots\right\}.
+\left(c_n\right)_{n=1}^{\infty} = \left(\frac{1}{2},\frac{2}{5},\frac{3}{10},\frac{4}{17},\frac{5}{26},\ldots\right).
 $$
 
 ::::
 
-In other cases, or even the same, the terms of a sequence are not expressed with an explicit formula, but with a recursive formula:
+Sometimes, the terms of a sequence are not expressed with an explicit formula, but with a recursive formula:
 
 ::::{prf:definition}
-:label: Def:SeqAndTypes:RecursiveFormula
+:label: Def:Sequences:RecursiveFormula
 
-A **recursive formula for a sequence** $\{a_n\}_{n=p}^{\infty}$ is a formula that gives the $n$th term $a_n$ of the sequence in terms of $k$ of the preceding terms for all integers $n>p+k$ in combination with formulas for the first $k$ terms $a_p,a_{p+1},\ldots,a_{p+k}$ of the sequence.
+A **recursive formula for a sequence** $\left(a_n\right)_{n=p}^{\infty}$ is a formula that gives the $n$th term $a_n$ of the sequence in terms of $k$ of the preceding terms for all integers $n>p+k$ in combination with formulas for the first $k$ terms $a_p,a_{p+1},\ldots,a_{p+k}$ of the sequence.
 
 ::::
 
 ::::{prf:example}
-:label: Ex:SeqAndTypes:PositiveIntegersRecursiveFormula
-The sequence of positive integers $1,2,3,4,5,\ldots$ of Equation {eq}`Eq:SeqAndTypes:PositiveIntegersList` can be defined by the recursive formula
+:label: Ex:Sequences:PositiveIntegersRecursiveFormula
+
+The sequence of positive integers $\left(1,2,3,4,5,\ldots\right)$ of Equation {eq}`Eq:Sequences:PositiveIntegersList` can be defined by the recursive formula
 
 $$
 a_1=1,\quad a_{n+1}=a_n+1\quad\text{for}\quad n=1,2,3,\ldots
@@ -163,29 +174,31 @@ $$
 ::::
 
 ::::{prf:example} 
-:label: Ex:SeqAndTypes:RecursiveFormula
+:label: Ex:Sequences:RecursiveFormula
 
-The sequence $\{b_n\}_{n=0}^{\infty}$ defined by $b_{n+1}=-\dfrac12b_n$ with $n=0,1,2,\ldots$ and $b_0=1$ can be written out as:
+The sequence $\left(b_n\right)_{n=0}^{\infty}$ defined by $b_{n+1}=-\dfrac{1}{2}b_n$ with $n=0,1,2,\ldots$ and $b_0=1$ can be written out as:
 
 $$
-\{b_n\}_{n=0}^{\infty} = \left\{1,-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},-\frac{1}{32},\ldots\right\}.
+\left(b_n\right)_{n=0}^{\infty} = \left(1,-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},-\frac{1}{32},\ldots\right).
 $$
 
 ::::
 
-(Sec:SeqAndTypes:Types)=
-## Types of common sequences
+(Sec:Sequences:Types)=
+## Common types of sequences
 
 We start with an easy type of sequence, which is the arithmetic sequence.
 
 ::::::{prf:definition}
-:label: Def:SeqAndTypes:ArithmeticSequence
-A sequence $\{a_n\}$ is called an **arithmetic sequence** if the difference $a_{n+1}-a_n$ between two consecutive terms is constant. This difference is called the **common difference**. 
+:label: Def:Sequences:ArithmeticSequence
+
+A sequence $\left(a_n\right)$ is called an **arithmetic sequence** if the difference $a_{n+1}-a_n$ between two consecutive terms is constant. This difference is called the **common difference**. 
 ::::::
 
 ::::::{prf:theorem}
-:label: Thm:SeqAndTypes:ArithmeticSequence
-Let $\{a_n\}_{n=p}^{\infty}$ be an arithmetic sequence with common difference $d$ and initial term $a_p=b$.
+:label: Thm:Sequences:ArithmeticSequence
+
+Let $\left(a_n\right)_{n=p}^{\infty}$ be an arithmetic sequence with common difference $d$ and initial term $a_p=b$.
 
 Then the sequence can be defined by the *explicit formula*
 
@@ -201,10 +214,24 @@ $$
 
 ::::::
 
-::::::{prf:example}
-:label: Ex:SeqAndTypes:ArithmeticSequencePositiveIntegers
+::::{admonition} Proof of {prf:ref}`Thm:Sequences:ArithmeticSequence`
+:class: tudproof
 
-The sequence of positive integers $1,2,3,4,5,\ldots$ is an arithmetic sequence with common difference $1$ and initial term $1$.
+The common difference $a_{n+1}-a_n$ equals $d$ and therefore we have $a_{n+1}=a_n+d$ for $n=p,p+1,p+2,\ldots$.
+
+Since $a_p=b$ is the initial term, we obtain
+
+$$
+a_{p+1}=b+d,\quad a_{p+2}=b+2d,\quad a_{p+3}=b+3d,\quad\ldots,
+$$
+
+which leads to $a_n=b+(n-p)d$ for $n=p,p+1,p+2,\ldots$.
+::::
+
+::::::{prf:example}
+:label: Ex:Sequences:ArithmeticSequencePositiveIntegers
+
+The sequence of positive integers $\left(1,2,3,4,5,\ldots\right)$ is an arithmetic sequence with common difference $1$ and initial term $1$.
 
 An explicit formula is
 
@@ -221,9 +248,9 @@ $$
 ::::::
 
 ::::::{prf:example}
-:label: Ex:SeqAndTypes:ArithmeticSequencePositive
+:label: Ex:Sequences:ArithmeticSequencePositive
 
-The sequence $\{1,3,5,7,9,\ldots\}$ is an arithmetic sequence with common difference $2$ and initial term $1$.
+The sequence $\left(1,3,5,7,9,\ldots\right)$ is an arithmetic sequence with common difference $2$ and initial term $1$.
 
 An explicit formula is
 
@@ -240,9 +267,9 @@ $$
 ::::::
 
 ::::::{prf:example}
-:label: Ex:SeqAndTypes:ArithmeticSequenceNegative
+:label: Ex:Sequences:ArithmeticSequenceNegative
 
-The sequence $\{3,1,-1,-3,-5,\ldots\}$ is an arithmetic sequence with common difference $-2$ and initial term $3$.
+The sequence $\left(3,1,-1,-3,-5,\ldots\right)$ is an arithmetic sequence with common difference $-2$ and initial term $3$.
 
 An explicit formula is
 
@@ -262,13 +289,62 @@ Next up are the harmonic sequences.
 
 ::::::{prf:definition}
 :label: Def:Sequences:HarmonicSequence
+
 A sequence is called a **harmonic sequence** if the reciprocals of its terms form an arithmetic sequence. 
 ::::::
 
-::::::{prf:example}
-:label: Ex:SeqAndTypes:HarmonicSequence1
+::::::{prf:theorem}
+:label: Thm:Sequences:HarmonicSequence
 
-The sequence $\left\{1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\frac{1}{5},\ldots\right\}$ is a harmonic sequence, because the reciprocals of its terms form an arithmetic sequence $\{1,2,3,4,5,\ldots\}$ with common difference $1$ and initial term $1$.
+Let $\left(a_n\right)_{n=p}^{\infty}$ be a harmonic sequence such that $\left(\frac{1}{a_n}\right)_{n=p}^{\infty}$ is an arithmetic sequence with common difference $d$, i.e. $\frac{1}{a_n+1}-\frac{1}{a_n}=d$, and let $a_p=b$ be the initial term.
+
+Then the sequence can be defined by the *explicit formula*
+
+$$
+a_n=\frac{b}{1+(n-p)bd}\quad\text{for}\quad n=p,p+1,p+2,\ldots.
+$$
+
+It can also be defined by the *recursive formula* $a_p=b$ and
+
+$$
+a_{n+1}=\frac{1}{\frac{1}{a_n}+d}\quad\text{for}\quad n=p,p+1,p+2,\ldots
+$$
+
+::::::
+
+::::{admonition} Proof of {prf:ref}`Thm:Sequences:HarmonicSequence`
+:class: tudproof
+
+Since $\left(\frac{1}{a_n}\right)_{n=p}^{\infty}$ is an arithmetic sequence with common difference $\frac{1}{a_{n+1}}-\frac{1}{a_n}=d$, and $a_p=b$ is the initial term, {ref:prf}`Thm:Sequences:ArithmeticSequence` implies that
+
+$$
+\frac{1}{a_n}=\frac{1}{b}+(n-p)d=\frac{1+(n-p)bd}{b},\quad n=p,p+1,p+2,\ldots.
+$$
+
+Hence we have
+
+$$
+a_n=\frac{b}{1+(n-p)bd},\quad n=p,p+1,p+2,\ldots.
+$$
+
+Further we have
+
+$$
+\frac{1}{a_{n+1}}-\frac{1}{a_n}=d\quad\Longrightarrow\quad\frac{1}{a_{n+1}}=\frac{1}{a_n}+d=\frac{1+da_n}{a_n},
+$$
+
+which leads to
+
+$$
+a_{n+1}=\frac{a_n}{1+da_n}=\frac{1}{\frac{1}{a_n}+d},\quad n=p,p+1,p+2,\ldots.
+$$
+
+::::
+
+::::::{prf:example}
+:label: Ex:Sequences:HarmonicSequence1
+
+The sequence $\left(1,\frac{1}{2},\frac{1}{3},\frac{1}{4},\frac{1}{5},\ldots\right)$ is a harmonic sequence, because the reciprocals of its terms form an arithmetic sequence $\left(1,2,3,4,5,\ldots\right)$ with common difference $1$ and initial term $1$.
 
 An explicit formula is
 
@@ -285,9 +361,9 @@ $$
 ::::::
 
 ::::::{prf:example}
-:label: Ex:SeqAndTypes:HarmonicSequence2
+:label: Ex:Sequences:HarmonicSequence2
 
-The sequence $\left\{1,\frac{1}{3},\frac{1}{5},\frac{1}{7},\frac{1}{9},\ldots\right\}$ is a harmonic sequence, because the reciprocals of its terms form an arithmetic sequence $\{1,3,5,7,9,\ldots\}$ with common difference $2$ and initial term $1$.
+The sequence $\left(1,\frac{1}{3},\frac{1}{5},\frac{1}{7},\frac{1}{9},\ldots\right)$ is a harmonic sequence, because the reciprocals of its terms form an arithmetic sequence $\left(1,3,5,7,9,\ldots\right)$ with common difference $2$ and initial term $1$.
 
 An explicit formula is
 
@@ -304,9 +380,9 @@ $$
 ::::::
 
 ::::{prf:example}
-:label: Ex:SeqAndTypes:HarmonicSequence3
+:label: Ex:Sequences:HarmonicSequence3
 
-The sequence $\left\{\frac{1}{3},1,-1,-\frac{1}{3},-\frac{1}{5},\ldots\right\}$ is a harmonic sequence, because the reciprocals of its terms form an arithmetic sequence $\{3,1,-1,-3,-5,\ldots\}$ with common difference $-2$ and initial term $3$.
+The sequence $\left(\frac{1}{3},1,-1,-\frac{1}{3},-\frac{1}{5},\ldots\right)$ is a harmonic sequence, because the reciprocals of its terms form an arithmetic sequence $\left(3,1,-1,-3,-5,\ldots\right)$ with common difference $-2$ and initial term $3$.
 
 An explicit formula is
 
@@ -324,24 +400,39 @@ $$
 The geometric sequences are also very common.
 
 ::::::{prf:definition}
-:label: Def:SeqAndTypes:GeometricSequence
-A sequence is called a **geometric sequence** if each term, except for the first one, is obtained by multiplying the previous term by a fixed nonzero number, called the **common ratio**. 
+:label: Def:Sequences:GeometricSequence
+
+A sequence $\left(a_n\right)$ is called a **geometric sequence** if the ratio $\dfrac{a_{n+1}}{a_n}$ of two consecutive terms is constant. This ratio is called the **common ratio**. 
 ::::::
 
 ::::::{prf:theorem}
-:label: Thm:SeqAndTypes:GeometricSequence
+:label: Thm:Sequences:GeometricSequence
 
-Let $\{a_n\}_{n=p}^{\infty}$ be a geometric sequence with common ratio $r$ and initial term $a_p=b$.
+Let $\left(a_n\right)_{n=p}^{\infty}$ be a geometric sequence with common ratio $r$ and initial term $a_p=b$.
 
 Then it can be defined by the *explicit formula* $a_n=br^{n-p}$ for $n=p,p+1,p+2,\ldots$.
 
 It can also be defined by the *recursive formula* $a_p=b$ and $a_{n+1}=ra_n$ for $n=p,p+1,p+2,\ldots$.
 ::::::
 
-::::::{prf:example}
-:label: Ex:SeqAndTypes:GeometricSequence1
+::::{admonition} Proof of {prf:ref}`Thm:Sequences:GeometricSequence`
+:class: tudproof
 
-The sequence $\{1,2,4,8,16,\ldots\}$ is a geometric sequence with common ratio $2$ and initial term $1$. 
+The common ratio $\dfrac{a_{n+1}}{a_n}$ equals $r$ and therefore we have $a_{n+1}=ra_n$.
+
+Since $a_p=b$ is the initial term, we obtain
+
+$$
+a_{p+1}=br,\quad a_{p+2}=br^2,\quad a_{p+3}=br^3,\quad\ldots,
+$$
+
+which leads to $a_n=br^{n-p}$ for $n=p,p+1,p+2,\ldots$.
+::::
+
+::::::{prf:example}
+:label: Ex:Sequences:GeometricSequence1
+
+The sequence $\left(1,2,4,8,16,\ldots\right)$ is a geometric sequence with common ratio $2$ and initial term $1$. 
 
 An explicit formula is
 
@@ -357,9 +448,9 @@ $$
 ::::::
 
 ::::::{prf:example}
-:label: Ex:SeqAndTypes:GeometricSequence2
+:label: Ex:Sequences:GeometricSequence2
 
-The sequence $\left\{1,\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16},\ldots\right\}$ is a geometric sequence with common ratio $\frac{1}{2}$ and initial term $1$.
+The sequence $\left(1,\frac{1}{2},\frac{1}{4},\frac{1}{8},\frac{1}{16},\ldots\right)$ is a geometric sequence with common ratio $\frac{1}{2}$ and initial term $1$.
 
 An explicit formula is
 
@@ -376,9 +467,9 @@ $$
 ::::::
 
 ::::::{prf:example}
-:label: Ex:SeqAndTypes:GeometricSequence3
+:label: Ex:Sequences:GeometricSequence3
 
-The sequence $\{-1,1,-1,1,-1,\ldots\}$ is a geometric sequence with common ratio $-1$ and initial term $-1$.
+The sequence $\left(-1,1,-1,1,-1,\ldots\right)$ is a geometric sequence with common ratio $-1$ and initial term $-1$.
 
 An explicit formula is
 
@@ -394,24 +485,18 @@ $$
 
 ::::::
 
-The last example is a nice example of an alternating sequence:
+This is a nice example of an *alternating* sequence.
 
 ::::::{prf:definition}
 :label: Def:Sequences:AlternatingSequence
-A sequence is called an **alternating sequence** if all two consecutive terms of the sequence have opposite signs.
+
+A sequence $\left(a_n\right)_{n=p}^{\infty}$ is called an **alternating sequence** if every two consecutive terms are non-zero and have opposite signs, i.e. if $a_na_{n+1}<0$ for all integers $n\geq p$.
 ::::::
 
-::::{prf:theorem}
-:label: Thm:Sequences:AlternatingSequence
-
-A sequence $\{a_n\}_{n=p}^{\infty}$ is an **alternating sequence** if and only if $a_na_{n+1}<0$ for all integers $n\geq p$.
-::::
-
-
 ::::::{prf:example}
-:label: Ex:SeqAndTypes:AlternatingSequenceCos
+:label: Ex:Sequences:AlternatingSequenceCos
 
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\cos(n\pi)$.
+Consider the sequence $\left(a_n\right)_{n=1}^{\infty}$ with $a_n=\cos(n\pi)$.
 
 Because $\cos(\pi)=-1$, $\cos(2\pi)=1$ and the cosine function is $2\pi$-periodic, we have that
 
@@ -425,9 +510,9 @@ So the sequence is an alternating sequence.
 ::::::
 
 ::::::{prf:example}
-:label: Ex:SeqAndTypes:AlternatingSequencePower
+:label: Ex:Sequences:AlternatingSequencePower
 
-The sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=(-1)^{n-1}2^n$ is also an alternating sequence.
+The sequence $\left(b_n\right)_{n=1}^{\infty}$ with $b_n=(-1)^{n-1}2^n$ is also an alternating sequence.
 
 We can show this by using the explicit formula to find that
 
@@ -442,25 +527,26 @@ which is negative for all integers $n\geq1$. Hence the sequence is an alternatin
 ::::::
 
 ::::::{prf:example}
-:label: Ex:SeqAndTypes:AlternatingSequenceFraction
+:label: Ex:Sequences:AlternatingSequenceFraction
 
-The sequence $\left\{1,-\frac{1}{2},\frac{1}{3},-\frac{1}{4},\frac{1}{5},\ldots\right\}$ is an alternating sequence with explicit formula
+The sequence $\left(1,-\frac{1}{2},\frac{1}{3},-\frac{1}{4},\frac{1}{5},\ldots\right)$ is an alternating sequence with explicit formula
 
 $$
 c_n=\frac{(-1)^{n-1}}{n}\quad\text{for}\quad n=1,2,3,\ldots
 $$
 
-Similar as in the previous example we can show that the product $c_nc_{n+1}$ of two consecutive terms is negative for all integers $n\geq1$ to conclude that the sequence is an alternating sequence.
+Similar as in the previous example we can show that the product $c_nc_{n+1}$ of two consecutive terms is negative for all integers $n\geq1$ and conclude that the sequence is an alternating sequence.
 ::::::
 
-(Sec:SeqAndTypes:Fibonacci)=
+(Sec:Sequences:Fibonacci)=
 ## The Fibonacci sequence
 
 One of the most famous sequences is the Fibonacci sequence.
 
 ::::::{prf:definition} Fibonacci sequence
-:label: Def:SeqAndTypes:FibonacciSequence
-The **Fibonacci sequence** $\{F_n\}_{n=1}^{\infty}$ is defined by the recursive formula
+:label: Def:Sequences:FibonacciSequence
+
+The **Fibonacci sequence** $\left(F_n\right)_{n=1}^{\infty}$ is defined by the recursive formula
 
 $$
 F_{n+2}=F_n+F_{n+1}\quad\text{for}\quad n=1,2,3,\ldots
@@ -476,7 +562,7 @@ $$
 $$
 
 ::::::{note}
-:name: Note:SeqAndTypes:FibonacciSequenceAlternativeDefinition
+:name: Note:Sequences:FibonacciSequenceAlternativeDefinition
 
 Alternatively, one might define the Fibonacci sequence by 
 
@@ -494,19 +580,7 @@ We now look at the summation of the first $n$ terms of the Fibonacci sequence an
 ::::{prf:example}
 :label: Ex:Series:FibonacciTelescoping
 
-The Fibonacci sequence $\{F_n\}_{n=1}^{\infty}$ is defined by 
-
-$$
-F_{n+2}=F_n+F_{n+1}\quad\text{for}\quad n=1,2,3,\ldots
-$$ 
-
-with $F_1=F_2=1$. Note that this also implies that 
-
-$$
-F_k=F_{k+2}-F_{k+1}\quad\text{for all}\quad k\in\{1,2,3,\ldots\}.
-$$
-
-If we only consider the _finite_ sequence $\{F_k\}_{k=1}^n$, then we can find the sum of the related finite summation $\displaystyle\sum_{k=1}^nF_k$ as follows:
+Let $\left(F_n\right)_{n=1}^{\infty}$ be the sequence of Fibonacci numbers, then we have
 
 :::{math}
 :label: Eq:Series:FibonacciTelescoping
@@ -514,11 +588,11 @@ If we only consider the _finite_ sequence $\{F_k\}_{k=1}^n$, then we can find th
 \sum_{k=1}^nF_k&=\sum_{k=1}^n\left(F_{k+2}-F_{k+1}\right)\\
 &=F_{n+2}-\cancel{F_{n+1}}+\cancel{F_{n+1}}-\cancel{F_n}\\
 &{}\quad{}+\cdots+\cancel{F_4}-\cancel{F_3}+\cancel{F_3}-F_2\\
-&=F_{n+2}-2.
+&=F_{n+2}-1.
 \end{align*}
 :::
 
-So the sum of the first $n$ terms of the Fibonacci sequence equals $F_{n+2}-2$. Note that in the second line of Equation {eq}`Eq:Series:FibonacciTelescoping` we have _cancelled_ many terms because those terms appear twice with opposite signs.
+So the sum of the first $n$ terms of the Fibonacci sequence equals $F_{n+2}-1$. Note that in the second line of Equation {eq}`Eq:Series:FibonacciTelescoping` we have _cancelled_ many terms because those terms appear twice with opposite signs.
 
 ::::
 
@@ -527,7 +601,7 @@ As you may have noticed, the Fibonacci sequence is defined by a recursive formul
 Amongst many others, the French mathematician [Jacques Philippe Marie Binet](https://en.wikipedia.org/wiki/Jacques_Philippe_Marie_Binet) asked the same question and came up with a formula commonly known as Binet's formula:
 
 ::::{prf:theorem} Binet's formula
-:label: Thm:SeqAndTypes:BinetFormula
+:label: Thm:Sequences:BinetFormula
 
 An explicit formula for the $n$th Fibonacci number is given by
 
@@ -543,7 +617,7 @@ $$
 
 ::::
 
-::::{admonition} Proof of {prf:ref}`Thm:SeqAndTypes:BinetFormula`
+::::{admonition} Proof of {prf:ref}`Thm:Sequences:BinetFormula`
 :class: tudproof
 
 Let us start with the recursive formula for the Fibonacci sequence and rearrange it to obtain
@@ -552,9 +626,9 @@ $$
 F_{n+2}=F_n+F_{n+1}\quad\Longleftrightarrow\quad F_{n+2}-F_{n+1}-F_n=0.
 $$
 
-The last equation is called a *difference equation*. In this case a linear difference equation with constant coefficients. More on these types of equations can be found in [Subsection 9.1.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter9/DynSystDiscrete.html#application-linear-difference-equations).
+The last equation is called a *difference equation*, in this case a linear difference equation with constant coefficients. More on these types of equations can be found in [Subsection 9.1.4 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter9/DynSystDiscrete.html#application-linear-difference-equations).
 
-We try to find a solution of the form $F_n=r^n$ for a certain $r\in\mathbb{R}$, then we have:
+We try to find a solution of the form $F_n=r^n$ for a certain $r\in\mathbb{R}$. We then have:
 
 $$
 r^{n+2}-r^{n+1}-r^n=0\quad\Longleftrightarrow\quad r^n(r^2-r-1)=0.
@@ -566,7 +640,7 @@ $$
 r^2-r-1=0.
 $$
 
-This is called an auxiliary equation. This auxiliary equation has two (different) real solutions:
+This equation has two (different) real solutions:
 
 $$
 r=\frac{1\pm\sqrt{5}}{2}.
@@ -618,10 +692,10 @@ $$
 F_{100}=\frac{(1+\sqrt{5})^{100}-(1-\sqrt{5})^{100}}{2^{100}\sqrt{5}}=354224848179261915075.
 $$
 
-The number $\varphi=\displaystyle\frac{1+\sqrt{5}}{2}\approx1.618$ is so special, that is has it's own name:
+The number $\varphi=\displaystyle\frac{1+\sqrt{5}}{2}\approx1.618$ is so special, that is has its own name:
 
 ::::{prf:definition}
-:label: Def:SeqAndTypes:GoldenRatio
+:label: Def:Sequences:GoldenRatio
 
 The number
 
@@ -632,13 +706,13 @@ $$
 is called the **golden ratio**.
 ::::
 
-The *golden ratio* often appears in nature and art, for example in spirals. {numref}`Fig:SeqAndTypes:FibonacciSpiral` shows two stages of the Fibonacci spiral. Such a spiral is constructed by drawing quarter-circle arcs connecting the opposite corners of a sequence of squares, whose side lengths correspond to the Fibonacci numbers.
+The *golden ratio* often appears in nature and art, for example in spirals. {numref}`Fig:Sequences:FibonacciSpiral` shows two stages of the Fibonacci spiral. Such a spiral is constructed by drawing quarter-circle arcs connecting the opposite corners of a sequence of squares, whose side lengths correspond to the Fibonacci numbers.
 
 :::{figure-start}
 :width: 100%
-:name: Fig:SeqAndTypes:FibonacciSpiral
+:name: Fig:Sequences:FibonacciSpiral
 
-Two stages of the Fibonacci spiral.
+The Fibonacci spiral.
 :::
 
 ::::{grid} 2
@@ -658,13 +732,13 @@ Two stages of the Fibonacci spiral.
 :::
 
 :::{todo}
-Replace {numref}`Fig:SeqAndTypes:FibonacciSpiral` with an applet or animation?
+Replace {numref}`Fig:Sequences:FibonacciSpiral` with an applet or animation?
 :::
 
-It turns out, that the ratio of the side lengths of the squares approaches the golden ratio as we continue to add squares. Or in mathematical words:
+It turns out that the ratio of the side lengths of two consecutive squares approaches the golden ratio as we continue to add squares. Or in mathematical words:
 
 ::::{prf:theorem}
-:label: Thm:SeqAndTypes:FibonacciSpiral
+:label: Thm:Sequences:FibonacciSpiral
 
 With $F_n$ the $n$th Fibonacci number, we have
 
@@ -674,16 +748,16 @@ $$
 
 ::::
 
-::::{admonition} Proof of {prf:ref}`Thm:SeqAndTypes:FibonacciSpiral`
+::::{admonition} Proof of {prf:ref}`Thm:Sequences:FibonacciSpiral`
 :class: tudproof
 
 In order to prove that $\displaystyle\lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n}=\varphi$ we use the fact that 
 
 $$
--1<\frac{1-\varphi}{\varphi}=\frac{1-\sqrt{5}}{1+\sqrt{5}}<0
+-1<\frac{1-\varphi}{\varphi}=\frac{1-\frac{1+\sqrt{5}}{2}}{\frac{1+\sqrt{5}}{2}}=\frac{1-\sqrt{5}}{1+\sqrt{5}}<0
 $$ 
 
-to obtain
+and hence $\displaystyle\lim\limits_{n\to\infty}\left(\frac{1-\varphi}{\varphi}\right)=0$. This implies that
 
 \begin{align*}
 \lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n} &= \lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n} \\
@@ -696,15 +770,15 @@ to obtain
 
 ## Collatz sequences
 
-We end this section with a special set of sequences, which are called Collatz sequences. These sequences are defined by a simple recursive formula, but they give rise to a very difficult problem in mathematics. It is so difficult, you can even win a price if you solve it[^Bakuage].
+We end this section with a special set of sequences, which are called Collatz sequences. These sequences are defined by a simple recursive formula, but they give rise to a very difficult problem in mathematics. It is so difficult, you can even win a prize if you solve it[^Bakuage].
 
 [^Bakuage]: See [Bakuage Offers Prize of 120 Million JPY to Whoever Solves Collatz Conjecture, Math Problem Unsolved for 84 Years](https://www.prnewswire.com/news-releases/bakuage-offers-prize-of-120-million-jpy-to-whoever-solves-collatz-conjecture-math-problem-unsolved-for-84-years-301326629.html).
 
 
 ::::{prf:definition} Collatz sequences
-:label: Def:SeqAndTypes:CollatzSequences
+:label: Def:Sequences:CollatzSequences
 
-A **Collatz sequence** for some number $N$ is defined by the recursive relation $a_1=N$ and
+A **Collatz sequence** for some positive integer $N$ is defined by the recursive relation $a_1=N$ and
 
 $$
 a_{n+1}=\begin{cases}\dfrac{a_n}{2} &\text{if }a_n \text{ is even}\\3a_n+1 &\text{if } a_n \text{ is odd.}\end{cases}
@@ -719,23 +793,23 @@ For every choice of $N\in\{1,2,3,\ldots\}$ we obtain a different sequence, but t
 For $N=1$ we obtain:
 
 $$
-1,4,2,1,4,2,1,\ldots
+1, 4, 2, 1, 4, 2, 1, \ldots
 $$
 
-As you can see, we end up in the cycle $\{4,2,1\}$. This means that if we encounter $1$, $4$ or $2$ anywhere in a Collatz sequence, we will end up in the cycle $\{4,2,1\}$ again. Obviously this is the case if $N=2$ and $N=4$ for instance.
+As you can see, we end up in the cycle $\left(4,2,1\right)$. This means that if we encounter $1$, $4$ or $2$ anywhere in a Collatz sequence, we will end up in the cycle $\left(4,2,1\right)$ again. Obviously this is the case if $N=2$ and $N=4$ for instance.
 
 For $N=3$ we obtain:
 
 $$
-3,10,5,16,8,4,2,1,4,2,1,\ldots
+3, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1, \ldots
 $$
 
-and we end up in the same cycle $\{4,2,1\}$ as for $N=1$. If you look at the sequence, you can see that we encounter $4$ at the sixth term, so we end up in the cycle $\{4,2,1\}$ from there on. This also holds for $N=5$, $N=8$, $N=10$ and $N=16$, since these numbers appear in the sequence for $N=3$.
+and we end up in the same cycle $\left(4,2,1\right)$ as for $N=1$. If you look at the sequence, you can see that we encounter $4$ at the sixth term, so we end up in the cycle $\left(4,2,1\right)$ from there on. This also holds for $N=5$, $N=8$, $N=10$ and $N=16$, since these numbers appear in the sequence for $N=3$.
 
 For $N=6$ we obtain
 
 $$
-6,3,10,5,16,8,4,2,1,4,2,1
+6, 3, 10, 5, 16, 8, 4, 2, 1, 4, 2, 1
 $$
 
 and we end up in the same cycle, as the second term of the sequence is $3$.
@@ -743,7 +817,7 @@ and we end up in the same cycle, as the second term of the sequence is $3$.
 For $N=7$ we obtain:
 
 $$
-7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4,2,1\ldots
+7, 22, 11, 34, 17, 52, 26, 13, 40, 20, 10, 5, 16, 8, 4, 2, 1, \ldots
 $$
 
 and we end up in the same cycle again!
@@ -751,8 +825,9 @@ and we end up in the same cycle again!
 This gives rise to the **Collatz conjecture**:
 
 ::::{prf:conjecture} Collatz conjecture
-:label: Conj:SeqAndTypes:Collatz
-For every choice of $N\in\{1,2,3,\ldots\}$ we eventually end up in the cycle $\{4,2,1\}$.
+:label: Conj:Sequences:Collatz
+
+For every choice of $N\in\{1,2,3,\ldots\}$ we eventually end up in the cycle $\left(4,2,1\right)$.
 
 ::::::
 
