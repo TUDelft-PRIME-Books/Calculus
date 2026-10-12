@@ -10,6 +10,16 @@ We will also introduce the special notations for natural numbers, integers and r
 Write {numref}`Sec:Algebra:SetTheoryAndLogic` in more detail, including examples and exercises.
 :::
 
+
+::::::{prf:definition} 
+:label: Def:SetTheory:Productset
+
+Let $A$ and $B$ be sets. Then the **product set** $A\times B$ is the set of all ordered pairs $(a,b)$ with $a$ in $A$ and $b$ in $B$.
+
+
+::::::
+
+
 ## Mathematical induction
 
 Sometimes we will consider a statement $S_n$ in terms of an integer $n$. In order to prove that the statement holds for all $n\in\mathbb{N}$ we often use the **principle of mathematical induction**, which is explained in the following theorem.

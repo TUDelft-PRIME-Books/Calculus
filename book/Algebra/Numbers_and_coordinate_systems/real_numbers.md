@@ -244,6 +244,15 @@ $
 
 ## (In)equalities and absolute values
 
+::::{prf:definition} 
+:label: def:realnumbers:abs
+The **absolute value** $|x|$ of a real number $x$ is defined as $|x|=x$ if $x\geq 0$, while $|x|=-x$ if $x<0$.
+::::
+
+:::{note}
+On the number line $\mathbb{R}$, the absolute value $|x|$ represents the distance of $x$ to $0$.
+:::
+
 ::::{prf:theorem} Triangle inequality for real numbers
 :label: thm:triangle_inequality_real_numbers
 
