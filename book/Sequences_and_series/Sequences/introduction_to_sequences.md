@@ -215,7 +215,7 @@ $$
 ::::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:Sequences:ArithmeticSequence`
-:class: tudproof
+:class: tudproof, dropdown
 
 The common difference $a_{n+1}-a_n$ equals $d$ and therefore we have $a_{n+1}=a_n+d$ for $n=p,p+1,p+2,\ldots$.
 
@@ -313,7 +313,7 @@ $$
 ::::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:Sequences:HarmonicSequence`
-:class: tudproof
+:class: tudproof, dropdown
 
 Since $\left(\frac{1}{a_n}\right)_{n=p}^{\infty}$ is an arithmetic sequence with common difference $\frac{1}{a_{n+1}}-\frac{1}{a_n}=d$, and $a_p=b$ is the initial term, {ref:prf}`Thm:Sequences:ArithmeticSequence` implies that
 
@@ -416,7 +416,7 @@ It can also be defined by the *recursive formula* $a_p=b$ and $a_{n+1}=ra_n$ for
 ::::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:Sequences:GeometricSequence`
-:class: tudproof
+:class: tudproof, dropdown
 
 The common ratio $\dfrac{a_{n+1}}{a_n}$ equals $r$ and therefore we have $a_{n+1}=ra_n$.
 
@@ -618,7 +618,7 @@ $$
 ::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:Sequences:BinetFormula`
-:class: tudproof
+:class: tudproof, dropdown
 
 Let us start with the recursive formula for the Fibonacci sequence and rearrange it to obtain
 
@@ -749,7 +749,7 @@ $$
 ::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:Sequences:FibonacciSpiral`
-:class: tudproof
+:class: tudproof, dropdown
 
 In order to prove that $\displaystyle\lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n}=\varphi$ we use the fact that 
 
