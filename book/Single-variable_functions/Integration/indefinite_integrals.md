@@ -14,6 +14,7 @@ We start with the following definition:
 
 ::::{prf:definition}
 :label: Def:Integration:Antiderivative
+
 Let $f$ be a function defined on some open (possibly infinite) interval $I$. A function $F$ defined on $I$ is called an **antiderivative** of $f$ if
 
 $$
@@ -64,6 +65,7 @@ In many cases an antiderivative $F$ of a function $f$ is easily checked by diffe
 
 ::::::{prf:Example}
 :label: Ex:Integration:Antiderivatives
+
 Note that $-\frac{1}{2}\cos(2x)$, $\sin^2(x)$ and $-\cos^2(x)$ are all antiderivatives of $\sin(2x)$.
 
 Check for yourself by differentiating the antiderivaties.
@@ -148,6 +150,7 @@ Just like with derivatives we would like to have a notation for antiderivatives.
 
 ::::::{prf:Definition}
 :label: Def:Integration:IndefiniteIntegral
+
 Let $f$ be a *continuous* function defined on some open (possibly infinite) interval $I$. Then the **indefinite integral** of $f$ is the set of all its *antiderivatives*, and is denoted by:
 
 $$
@@ -189,6 +192,7 @@ We can transform {numref}`Tab:Integration:StandardAntiderivatives` into a table 
 
 ::::::{prf:Notation}
 :label: Not:Integration:IndefiniteIntegralNotation
+
 Sometimes we place the differential $dx$ in the numerator of the integrand, such as
 
 $$
@@ -247,7 +251,8 @@ In {numref}`Sec:Differentiation:ChainRule` we saw the chain rule for derivatives
 
 :::{prf:theorem}
 :label: Thm:Integration:IndefiniteLinearSubstitution
-Let $f$ be a continuous function on some open interval $I$, let $\alpha,\beta\in\mathbb{R}$ with $\alpha\neq0$, and let $x$ be such that the linear function $g(x)=\alpha x+\beta$ has its image in $I$. Then
+
+Let $f$ be a continuous function on some open interval $(c,d)\subset\mathbb{R}$ with $c<d$, let $\alpha,\beta\in\mathbb{R}$ with $\alpha\neq0$, and let $x$ be such that $c<\alpha x+\beta<d$. Then
 
 $$
 \int f(\alpha x+\beta)\,dx=\frac{1}{\alpha}F(\alpha x+\beta)+C,
