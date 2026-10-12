@@ -891,6 +891,15 @@ Add Grasple exercises for {numref}`Sec:Series:SpecialSeries`.
 
 ::::
 
+::::{grasple}
+:iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/dda2e98b-e046-4c57-8da7-5921061cd5ba?id=135064
+:label: Grasple:135064
+:dropdown:
+:description: Telescoping series involving Fibonacci numbers.
+
+::::
+
 ### Alternating series 
 
 ::::{grasple}

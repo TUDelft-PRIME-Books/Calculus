@@ -32,28 +32,36 @@ There are several ways to represent a sequence:
 
 The following are all different notations for the same _finite_ sequence:
 
-- $\displaystyle\{a_n\}_{n=p}^{q}$.
-- $\displaystyle a_p,a_{p+1},a_{p+2},\ldots,a_q$.
+- $\displaystyle\left(a_n\right)_{n=p}^{q}$.
+- $\displaystyle\left(a_p,a_{p+1},a_{p+2},\ldots,a_q\right)$.
 
 Here, the integer $p$ is the starting index and the integer $q$ is the ending index.
 
 The letter $n$ is often used to denote the index, but we can also use any other letter for the index.
 
-Sometimes we just write $\{a_n\}$ to denote a sequence, so if we do, please be aware that the context is relevant in that case.
+Sometimes we just write $\left(a_n\right)$ to denote a sequence, so if we do, please be aware that the context is relevant in that case.
 
 ::::
+
+:::{note}
+In other books sequences are often denoted as $\{a_p,a_{p+1},a_{p+2},\ldots,a_q\}$. However, to distinguish sequences and sets we use the notation $\left(a_p,a_{p+1},a_{p+2},\ldots,a_q\right)$. 
+
+For sets the order of the elements is irrelevant, so for instance we have $\{1,2\}=\{2,1\}$.
+
+However, just like for points &mdash; $(1,2)\neq(2,1)$ &mdash; the order of the terms of a sequence is fixed.
+:::
 
 In many cases the terms of a sequence are defined by an explicit formula for the general term in terms of the index:
 
 ::::{prf:definition}
 :label: Def:SumsAndProducts:ExplicitFormula
 
-An **explicit formula for a sequence** $\{a_n\}$ is a formula that gives the $n$th term $a_n$ of the sequence directly in terms of the index $n$ for all integers $n$ larger than or equal to the starting index and smaller than or equal to the ending index.
+An **explicit formula for a sequence** $\left(a_n\right)$ is a formula that gives the $n$th term $a_n$ of the sequence directly in terms of the index $n$ for all integers $n$ larger than or equal to the starting index and smaller than or equal to the ending index.
 ::::
 
 ::::{prf:example}
 :label: Ex:SumsAndProducts:PositiveIntegersExplicitFormula
-The sequence of the first $q$ positive integers $1,2,3,4,5,\ldots,q$ can be defined by the explicit formula
+The sequence of the first $q$ positive integers $\left(1,2,3,4,5,\ldots,q\right)$ can be defined by the explicit formula
 
 $$
 a_n=n\quad\text{for}\quad n=1,2,3,\ldots,q.
@@ -64,7 +72,10 @@ Note that it makes sense to start with $n=1$ since the first term of the sequenc
 
 ::::{prf:example}
 :label: Ex:SumsAndProducts:ReciprocalPerfectSquaresExplicitFormula
-The sequence of reciprocals of the first $q$ perfect squares $1,\frac{1}{4},\frac{1}{9},\frac{1}{16},\frac{1}{25},\ldots,\frac{1}{q^2}$ can be defined by the explicit formula
+
+[^perfect-squares]: A perfect square is a square of a positive integer.
+
+The sequence of reciprocals of the first $q$ perfect squares[^perfect-squares] $\left(1,\frac{1}{4},\frac{1}{9},\frac{1}{16},\frac{1}{25},\ldots,\frac{1}{q^2}\right)$ can be defined by the explicit formula
 
 $$
 b_n=\frac{1}{n^2}\quad\text{for}\quad n=1,2,3,\ldots,q.
@@ -74,7 +85,7 @@ $$
 ::::{prf:example}
 :label: Ex:SumsAndProducts:ExplicitFormula
 
-Now consider the sequence $\{c_n\}_{n=1}^{q}$ with $c_n=\dfrac{n}{n^2+1}$ for $n=1,2,3,\ldots,q$.
+Now consider the sequence $\left(c_n\right)_{n=1}^{q}$ with $c_n=\dfrac{n}{n^2+1}$ for $n=1,2,3,\ldots,q$.
 
 This means, by substituting $n=1$ in the explicit formula, that the first term of the sequence is
 
@@ -97,7 +108,7 @@ $$
 and so on. We could write the sequence out as
 
 $$
-\{c_n\}_{n=1}^{q} = \left\{\frac{1}{2},\frac{2}{5},\frac{3}{10},\frac{4}{17},\frac{5}{26},\ldots,\frac{q}{q^2+1}\right\}.
+\left(c_n\right)_{n=1}^{q} = \left(\frac{1}{2},\frac{2}{5},\frac{3}{10},\frac{4}{17},\frac{5}{26},\ldots,\frac{q}{q^2+1}\right).
 $$
 
 ::::
@@ -107,13 +118,13 @@ In other cases, or even the same, the terms of a sequence are not expressed with
 ::::{prf:definition}
 :label: Def:SumsAndProducts:RecursiveFormula
 
-A **recursive formula for a sequence** $\{a_n\}_{n=p}^{q}$ is a formula that gives the $n$th term $a_n$ of the sequence in terms of $k$ of the preceding terms for all integers $n>p+k$ in combination with formulas for the first $k$ terms $a_p,a_{p+1},a_{p+2},\ldots,a_{p+k}$ of the sequence.
+A **recursive formula for a sequence** $\left(a_n\right)_{n=p}^{q}$ is a formula that gives the $n$th term $a_n$ of the sequence in terms of $k$ of the preceding terms for all integers $n>p+k$ in combination with formulas for the first $k$ terms $a_p,a_{p+1},a_{p+2},\ldots,a_{p+k}$ of the sequence.
 
 ::::
 
 ::::{prf:example}
 :label: Ex:SumsAndProducts:PositiveIntegersRecursiveFormula
-The sequence of the first $q$ positive integers $1,2,3,4,5,\ldots,q$ can be defined by the recursive formula
+The sequence of the first $q$ positive integers $\left(1,2,3,4,5,\ldots,q\right)$ can be defined by the recursive formula
 
 $$
 a_1=1,\quad a_{n+1}=a_n+1\quad\text{for}\quad n=1,2,3,\ldots
@@ -124,10 +135,10 @@ $$
 ::::{prf:example} 
 :label: Ex:SumsAndProducts:RecursiveFormula
 
-The sequence $\{b_n\}_{n=0}^{q}$ defined by $b_{n+1}=-\dfrac12b_n$ with $n=0,1,2,\ldots,q-1$ and $b_0=1$ can be written out as:
+The sequence $\left(b_n\right)_{n=0}^{q}$ defined by $b_{n+1}=-\dfrac{1}{2}b_n$ with $n=0,1,2,\ldots,q-1$ and $b_0=1$ can be written out as:
 
 $$
-\{b_n\}_{n=0}^{q} = \left\{1,-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},-\frac{1}{32},\ldots,\frac{(-1)^q}{2^q}\right\}.
+\left(b_n\right)_{n=0}^{q} = \left(1,-\frac{1}{2},\frac{1}{4},-\frac{1}{8},\frac{1}{16},-\frac{1}{32},\ldots,\frac{(-1)^q}{2^q}\right).
 $$
 
 ::::
@@ -142,7 +153,7 @@ The summation symbol $\sum$ (the capital Greek letter sigma) is used to denote t
 
 The **summation symbol** $\sum$ is used to denote the addition of a finite sequence.
 
-If $\{a_n\}_{n=p}^{q}$ is a finite sequence, then $\displaystyle\sum_{n=p}^qa_n$ is an abbreviation for the addition of the numbers $a_p,a_{p+1},a_{p+2},\ldots,a_q$, that is
+If $\left(a_n\right)_{n=p}^{q}$ is a finite sequence, then $\displaystyle\sum_{n=p}^qa_n$ is an abbreviation for the addition of the numbers $a_p,a_{p+1},a_{p+2},\ldots,a_q$, that is
 
 $$
 \sum_{n=p}^qa_n=a_p+a_{p+1}+a_{p+2}+\cdots+a_q.
@@ -167,7 +178,7 @@ The sum of a finite summation exists.
 ::::{admonition} Proof of {prf:ref}`Thm:SumsAndProducts:Sum`
 :class: tudproof, dropdown
 
-Assume $\{a_n\}_{n=p}^q$ is a finite sequence of terms, then we have
+Assume $\left(a_n\right)_{n=p}^q$ is a finite sequence of terms, then we have
 
 $$
 \sum_{n=p}^qa_n=a_p+a_{p+1}+a_{p+2}+\cdots+a_q.
@@ -407,7 +418,7 @@ As you may have observed, we could _cancel_ many terms in the series because tho
 ::::{prf:definition}
 :label: Def:SumsAndProducts:TelescopingSum
 
-A finite summation $\displaystyle\sum_{k=m}^na_k$ is called a **telescoping summation** if there exists a sequence $\{b_k\}_{k=m}^{n+p}$ and an integer $p\geq1$ such that $a_k=b_{k}-b_{k+p}$ for all $k\in\{m,m+1,m+2,\ldots,n\}$.
+A finite summation $\displaystyle\sum_{k=m}^na_k$ is called a **telescoping summation** if there exists a sequence $\left(b_k\right)_{k=m}^{n+p}$ and an integer $p\geq1$ such that $a_k=b_{k}-b_{k+p}$ for all $k\in\{m,m+1,m+2,\ldots,n\}$.
 
 The property that allows us to cancel many terms in a telescoping summation is called the **telescoping property**.
 ::::
@@ -441,7 +452,7 @@ Using the telescoping property, we can also determine the sum of this telescopin
 
 Notice that in the fourth line we have used the change of the index of summation to make the two summations look more similar, which makes it easier to see that many terms cancel. Also notice that in the fifth line we have used the telescoping property to cancel many terms and find the sum of the telescoping summation.
 
-Even better, notice that the sum of the telescoping summation is the sum of the first two terms of the sequence $\left\{\dfrac{1}{2}\dfrac{1}{k+1}\right\}_{k=0}^{n+2}$ minus the sum of the last two terms of this sequence, which is a direct consequence of the telescoping property. We summarise this in the next theorem:
+Even better, notice that the sum of the telescoping summation is the sum of the first two terms of the sequence $\left(\dfrac{1}{2}\dfrac{1}{k+1}\right)_{k=0}^{n+2}$ minus the sum of the last two terms of this sequence, which is a direct consequence of the telescoping property. We summarise this in the next theorem:
 
 ::::
 
@@ -561,7 +572,7 @@ Similarly, the multiplication symbol $\prod$ (capital Greek letter pi) is used t
 
 The **product symbol** $\prod$ is used to denote the multiplication of a set of ordered numbers.
 
-If $\{a_n\}_{n=p}^{q}$ is a finite sequence, then $\displaystyle\prod_{n=p}^qa_n$ is an abbreviation for the multiplication of the numbers $a_p,a_{p+1},a_{p+2},\ldots,a_q$, that is
+If $\left(a_n\right)_{n=p}^{q}$ is a finite sequence, then $\displaystyle\prod_{n=p}^qa_n$ is an abbreviation for the multiplication of the numbers $a_p,a_{p+1},a_{p+2},\ldots,a_q$, that is
 
 $$
 \prod_{n=p}^qa_n=a_p\cdot a_{p+1}\cdots a_q.
