@@ -8,16 +8,18 @@
 
 [^MyFootnote1]: If you do not live close to Delft, you should come visit once. Then you can experience all the nice (and maybe also the not so nice) things about cycling through a crowded, old town. 
 
+[^FootnoteVel]: Normally, velocity is a vector, but for the sake of simplicity we assume that the movement is one-dimensional and model it as a scalar quantity.
 
-Suppose you are riding your bicycle through the city center of Delft.[^MyFootnote1] As you move along, your speed might change. For instance, sometimes you have to wait for other traffic, or you speed up because you move down a small ramp (we do not have hills here in the Netherlands to use to increase your speed). So, for instance, after cycling for $120$ seconds, your speed might be $5$ meters per second, while after $300$ seconds you are at a traffic light and your speed is $0$. We can denote this by using the symbol $v$ for speed and writing $v(120)=5$ and $v(300)=0$. So a more general equation $v(t)=c$ should be read as that after cycling for $t$ seconds the speed $v$ is equal to $c$. This way, we have written the speed $v$ as a **function** of $t$. The time takes the role of the **input variable**, while the speed takes the role of the **output value** or **function value**. What makes a function a function is that for each input $t$ we have a corresponding **single** output $v(t)$, i.e. the speed $v$ at that particular point in time $t$. 
 
-Instead of prescribing what the speed is at several different points in time, we could also try to be more efficient. Often, it is possible to give a formula that expresses the speed in terms of the time that has passed. For instance, we could have that
+Suppose you are riding your bicycle through the city center of Delft.[^MyFootnote1] As you move along, your velocity might change. For instance, sometimes you have to wait for other traffic, or you speed up because you move down a small ramp (we do not have hills here in the Netherlands to use to increase your speed). So, for instance, after cycling for $120$ seconds, your velocity might be $5$ meters per second[^FootnoteVel], while after $300$ seconds you are at a traffic light and your velocity is $0$. We can denote this by using the symbol $v$ for velocity and writing $v(120)=5$ and $v(300)=0$. So a more general equation $v(t)=c$ should be read as that after cycling for $t$ seconds the velocity $v$ is equal to $c$. This way, we have written the velocity $v$ as a **function** of $t$. The time is the **input variable**, as it tells us when we are looking at the cyclist. The velocity is the **output value** or **function value**, as it tells us the cyclist's velocity at that particular moment in time. That is, the velocity depends on time. The defining property of a function is that for each input $t$ we have a corresponding **single** output $v(t)$, i.e. the velocity $v$ at that particular point in time $t$. 
+
+Instead of prescribing what the velocity is at several different points in time, we could also try to be more efficient. Often, it is possible to give a formula that expresses the velocity in terms of the time that has passed. For instance, we could have that
 
 $$
- v(t)=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi t}{60}\right)
+ v(t)=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi t}{60}\right),
 $$
 
-for $0\leq t\leq 600$. Here $t$ describes the number of second that has passed since we have started cycling and since we consider values of $t$ with $0\leq t\leq 600$ we are describing the first $10$ minutes that we are cycling. At different points in time, we could fill in the value of $t$ to find the (single!) corresponding value of $v$. For instance, we find
+for $0\leq t\leq 600$. Here $t$ describes the number of second that has passed since we have started cycling and since we consider values of $t$ with $0\leq t\leq 600$ we are describing the first $10$ minutes that we are cycling. At different points in time, we could fill in the value of $t$ to find the (unique!) corresponding value of $v$. For instance, we find
 
 \begin{align*}
  v(120)&=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 120}{60}\right)=\frac{5}{2}+\frac{5}{2}\cos(2\pi)=\frac{5}{2}+\frac{5}{2}\cdot 1=5,\\ v(300)&=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 300}{60}\right)=\frac{5}{2}+\frac{5}{2}\cos(5\pi)=\frac{5}{2}+\frac{5}{2}\cdot (-1)=0.
@@ -26,22 +28,22 @@ for $0\leq t\leq 600$. Here $t$ describes the number of second that has passed s
 So this formula indeed gives the right values at the moments in time $t=120$ and $t=300$. However, there are many other formulas with this property. For instance, we could consider
 
 $$
- \tilde{v}(t)=\frac{25}{3}-\frac{t}{36}
+ w(t)=\frac{25}{3}-\frac{t}{36}
 $$
 
-for $0\leq t\leq 600$ (we use the symbol $\tilde{v}$ to distinguish between this formula and the previous one). Since we still have a single speed corresponding to each point in time, $\tilde{v}$ is a function of $t$. Then, we find
+for $0\leq t\leq 600$ (we use the symbol $w$ to distinguish between this formula and the previous one). Since we still have a single velocity corresponding to each point in time, $w$ is a function of $t$. Then, we find
 
 \begin{align*}
- \tilde{v}(120)=\frac{25}{3}-\frac{120}{36}=5,\qquad \tilde{v}(300)=\frac{25}{3}-\frac{300}{36}=0
+ w(120)=\frac{25}{3}-\frac{120}{36}=5,\qquad w(300)=\frac{25}{3}-\frac{300}{36}=0
 \end{align*}
 
 so this formula also gives the right values at the moments in time $t=120$ and $t=300$. So which of these is correct? Without knowing more about our journey, it is impossible to know for sure, but, in this case, one is definitely more realistic than the other. For instance, we have $v(t)\geq 0$ for all $t$, while at $t=600$ we have
 
 $$
- \tilde{v}(600)=\frac{25}{4}-\frac{600}{48}=-\frac{25}{4}
+ w(600)=\frac{25}{4}-\frac{600}{48}=-\frac{25}{4}
 $$
 
-So for the formula $\tilde{v}(t)=\frac{25}{4}-\frac{t}{48}$ we obtain a negative speed and since we were not taking into account in which direction we were moving a negative speed does not make any sense. So the first formula is, physically speaking, more realistic. Does that mean that it is correct, though? Probably not, since we have only specified the speed at two points in time and a lot can happen at different points. Hence, it would be a major coincidence that the formula we provided perfectly described our movement. Still, we can use this formula to model our journey. Moreover the more points in time we specify what the speed should be, the more realistic we can choose our model.
+So for the formula $w(t)=\frac{25}{4}-\frac{t}{48}$ we obtain a negative velocity, which means we would start moving backwards. So the first formula is likely more realistic. Does that mean that it is correct, though? Probably not, since we have only specified the velocity at two points in time and a lot can happen at different points. Hence, it would be a major coincidence that the formula we provided perfectly described our movement. Still, we can use this formula to model our journey. Moreover the more points in time we specify what the velocity should be, the more realistic we can choose our model.
 
 In fact, in almost all processes in nature, science and engineering one quantity depends on another quantity (or perhaps on multiple quantities) and can, therefore, be described by means of a function. The branch of mathematics concerned with finding functions describing natural phenomena is called **mathematical modelling**. In this book, the focus is not on the modelling part. Instead, we usually assume that the function is given to us and by analyzing it, we aim to understand the underlying process. 
 
@@ -51,14 +53,16 @@ From a purely mathematical standpoint, functions are one of the most central obj
 
 ## Basic concepts
 
-We start off by giving a few essential definitions.
+We start off by giving a few essential definitions. For this, we recall the definition of a product set that was given in {prf:ref}`Def:SetTheory:Productset`.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Function
-Deze wordt een note, geen def.
-A **function** $f$ assigns to each $x$ in a set $D$ a *unique* element, usually denoted by $f(x)$, in a set $C$. The set $D$ is called the **domain** of the function, while the set $C$ is called the **codomain** of the function.
+
+A **function** $f$ with **domain** $D$, **codomain** $C$ and **graph** $G$ is the triplet $f=(D,C,G)$, where $G\subset (D\times C)$ and satisfies the property that for each $x\in D$ there is exactly one $y\in C$ with $(x,y)\in G$. For each $x\in D$ the unique element $y\in C$ with $(x,y)\in G$ is denoted by $f(x)$.
 
 ::::::
+
+
 
 ::::::{prf:notation} 
 :label: Notation:Functions1var:Function
@@ -72,22 +76,12 @@ If $f$ has domain $D$ and codomain $C$ we write $f:D\rightarrow C$. We also writ
 If we do not explicitly specify the domain and/or codomain of a function $f$, we use the symbols $D_f$ for the domain of $f$ and $C_f$ for the codomain of $f$.
 ::::::
 
-{prf:ref}`Def:Functions1var:Function` is good enough for the purpose of this book, but for those of you who are interested, we also provide the formal definition of a function. Deze zin moet weg
-
-::::::{prf:definition} Formal definition of a function
-:label: Def:Functions1var:Functionformal
-:class: bonus, dropdown
-Product set naar 1.1. G graph noemen.
-Let $D$ and $C$ be sets. Then the **product set** $D\times C$ is the set of all ordered pairs $(x,y)$ with $x$ in $D$ and $y$ in $C$.
-
-A **function** $f$ with **domain** $D$ and **codomain** $C$ is a triplet $f=(D,C,G)$, where $G\subset (D\times C)$ such that for each $x\in D$ there is exactly one $y\in C$ with $(x,y)\in E$. For each pair $(x,y)\in E$ we write $y=f(x)$.
-
-::::::
 
 
-So how should you think about a function? There are several different perspectives you can take, but it may be helpful to think about a function as a machine that takes an **input value** $x$ and turns this into an **output value** or **function value** $f(x)$. We also say that $x$ is **mapped to** $f(x)$. 
 
-Note that a function only works in one direction: we can always insert an element of the domain to obtain an element of the codomain, but it is not always possible to go back, see {numref}`Fig:Functions1var:Diagram` (we will dive deeper into the question if/when it is possible to go back in {numref}`Section:Inverse`).
+So how should you think about a function? There are several different perspectives you can take, but it may be helpful to think about a function as a rule or a machine that takes an **input value** $x$ and turns this into an **output value** or **function value** $f(x)$. We also say that $x$ is **mapped to** $f(x)$. 
+
+Note that a function often only works in one direction: we can always insert an element of the domain to obtain an element of the codomain, but it is not always possible to go back, see {numref}`Fig:Functions1var:Diagram` (we will dive deeper into the question if/when it is possible to go back in {numref}`Section:Inverse`).
 
 :::{applet}
 :url: calculus/functions_of_one_variable/diagram
@@ -99,7 +93,9 @@ A diagram can be used to graphically represent that a function $f$ maps an eleme
 
 In addition, if $f$ is a function and we have $f(x)=y$ for some $x$ in $D_f$ and $y$ in $C_f$, we see that $y$ is determined by $x$. That means that the value of $y$ depends on the value of $x$, while the value of $x$ can be chosen freely (within the domain of $f$). As such, for this formula $f(x)=y$ the variable $y$ is referred to as the **dependent variable**, while $x$ is an **independent variable**.
 
-In this book, the domain and codomain will almost always be (subsets of) $\mathbb{R}^n$ and $\mathbb{R}^m$ respectively, for some integers $n,m\geq 1$. In the first few chapters, we will specifically focus on functions where the domain and codomain are both (subsets of) the real numbers $\mathbb{R}$. Such a function is usually referred to as a **function of one variable** or a **function of a single variable**. For many such functions, it is possible to define the function by means of a formula, of which an example is given below. 
+[^FootnoteComplex]: Though, these are definitely not the only interesting functions out there. For instance, functions with domain and codomain $\mathbb{C}$ are also useful and important, but they are beyond the scope of this book.
+
+In this book, the domain and codomain will almost always be (subsets of) $\mathbb{R}^n$ and $\mathbb{R}^m$ respectively, for some integers $n,m\geq 1$[^FootnoteComplex]. In the first few chapters, we will specifically focus on functions where the domain and codomain are both (subsets of) the real numbers $\mathbb{R}$. Such a function is usually referred to as a **function of one variable** or a **function of a single variable**. For many such functions, it is possible to define the function by means of a formula, of which an example is given below. 
 
 ::::::{prf:example} 
 :label: Ex:Functions1var:Formula
@@ -128,6 +124,10 @@ so both the input values $-3$ and $3$ are mapped to the output value $9$. Finall
 
 ::::::
 
+:::{warning}
+Even though we can use formulas to define functions, a function is not the same as the formula describing it. 
+:::
+
 ::::::{prf:example} 
 :label: Ex:Functions1var:NoFormula
 
@@ -135,12 +135,12 @@ Although most functions in this book can be described by means of a formula, thi
 
 ::::::
 
-Although the domain and codomain of a function are integral parts of the function, we often do not explicitly state them. Most functions that we will encounter are defined by a formula and for those functions we will implicitly assume that the domain consists precisely of those values of $x$ for which the formula 'makes sense'. In addition, almost all functions in this book will have $\mathbb{R}$ as the codomain (exceptions can be found in {numref}`Chapter:VectorCalculusIntro`), so we will implicitly assume that we are always dealing with these type of functions. Let us make these conventions a bit more explicit.
+Although the domain and codomain of a function are part of the definition of the function, we often do not explicitly state them. Most functions that we will encounter are defined by a formula and for those functions we will implicitly assume that the domain consists precisely of those values of $x$ for which the formula 'makes sense'. In addition, almost all functions in this book will have $\mathbb{R}$ as the codomain (exceptions can be found in {numref}`Chapter:VectorCalculusIntro`), so we will implicitly assume that we are always dealing with these type of functions. Let us make these conventions a bit more explicit.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:MaxDomain
 
-Let $f$ be a function of which the domain is a subset of $\mathbb{R}^n$, that has codomain $\mathbb{R}$ and that is defined by a formula. Then the **maximal domain** or **natural domain** is the set of all values of $x$ for which this formula makes sense.
+Let $f$ be a function of which the domain is a subset of $\mathbb{R}^n$, that has codomain $\mathbb{R}$ and that is defined by a formula. Then the **maximal domain** or **natural domain** is the set of all values of $x$ for which this formula produces a real number.
 
 ::::::
 
@@ -149,7 +149,7 @@ Whenever we do not specify the codomain of a function, we assume this codomain i
 ::::::
 
 ::::::{important}
-Whenever we define a function by means of a formula and we do not specify the domain, we assume that the domain is equal to the maximal domain.
+Whenever we define a function by means of a formula and we do not specify the domain, we assume that the domain is the maximal domain.
 ::::::
 
 ::::::{important}
@@ -177,6 +177,10 @@ $$
 ::::::{note}
 The range is a subset of the codomain.
 ::::::
+
+:::{todo}
+Zet hier een variant van {numref}`Fig:Functions1var:Diagram` waar ook de range in zichtbaar is.
+:::
 
 ::::::{prf:notation} 
 :label: Not:Functions1var:Range
@@ -221,7 +225,7 @@ we see that if the pressure increases the temperature increases, while if the pr
 
 ## Graphs
 
-An essential part of understanding functions of a single variable is to try to visualise their behaviour. In principle, a function is a rule that maps an element $x$ to another element $f(x)$, so how is it possible to visualise this? Since each $x$ in the domain corresponds to exactly one $f(x)$, we could try to plot the point $(x,f(x))$ in $\mathbb{R}^2$. If we do this for each value of $x$, we have captured the full behaviour of the function in one picture. Such a plot is called the **graph** of a function. So for each point $(x,y)$ on the graph of $f$ we necessarily have $f(x)=y$. 
+An essential part of understanding functions of a single variable is to try to visualise their behaviour. In principle, a function is a rule that maps an element $x$ to another element $f(x)$, so how is it possible to visualise this? Since each $x$ in the domain corresponds to exactly one $f(x)$, we could try to plot the point $(x,f(x))$ in $\mathbb{R}^2$. If we do this for each value of $x$, we have captured the full behaviour of the function in one picture. We recall from {prf:ref}`Def:Functions1var:Function` that the set $\left\{(x,f(x))\,\middle|\,x\,\,\text{in}\,\,D_f\right\}$ is called the **graph** of a function. This means that the graph is the part of the function that can be plotted. For each point $(x,y)$ on the graph of $f$ we necessarily have $f(x)=y$. 
 
 
 ::::{applet}
@@ -232,12 +236,8 @@ An essential part of understanding functions of a single variable is to try to v
 The graph of a function $f$ can be used to read off the value $f(a)$ for a given value $a$. The domain and range of $f$ can also be read off from the graph.
 ::::
 
-::::::{prf:definition} 
-:label: Def:Functions1var:Graph
-If $f$ is a function with domain $D$ then the **graph** of $f$ is the set of all pairs $(x,f(x))$. That is, it is the set $\left\{(x,f(x))\,\middle|\,x\,\,\text{in}\,\,D\right\}$. 
-::::::
 
-There is one major restriction when sketching a graph, and that is that we only have a finite amount of space to draw the plot on. So, for instance, if the function is defined for all $x$ in $\mathbb{R}$ it is impossible to plot the full graph of the function, since we would need an infinite amount of space to do so. Still, in such a case it is possible to plot only part of the graph and try to make sure that this part captures as much qualitative behaviour of the function as possible.
+There is one major restriction when sketching a graph, which is that we only have a finite amount of space to draw the plot on. So, for instance, if the function is defined for all $x$ in $\mathbb{R}$ it is impossible to plot the full graph of the function, since we would need an infinite amount of space to do so. Still, in such a case it is possible to plot only part of the graph and try to make sure that this part captures as much qualitative behaviour of the function as possible.
 
 :::{note}
 When plotting the graph of a function, we use a solid dot (or solid square/triangle/...) to indicate that a certain point is part of the graph, while we use an open dot (or open square/triangle/...) to exclude a point from the graph. For instance, in {numref}`Fig:Functions1var:Graph` the left endpoint $(L,f(L))$ is not part of the graph (i.e. $L$ is not in the domain of $f$), while the right endpoint $(R,f(R))$ is part of the graph.
@@ -247,9 +247,9 @@ When analysing functions, it is often interesting to determine if and where the 
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:Intercepts
-Let $f$ be a function. Then $x$ in the domain of $f$ is called a **zero**, **root**, **$x$-intercept** or **horizontal intercept** when $f(x)=0$, i.e. the $x$-value of a point where the graph of $f$ intersects the $x$-axis.
+Let $f$ be a function. Then $x$ in the domain of $f$ is called a **zero** or **root** when $f(x)=0$, i.e. the $x$-value of a point where the graph of $f$ intersects the $x$-axis. In that case, the intersection point $(x,0)$ is called an **$x$-intercept** or **horizontal intercept**.
 
-$y$ in the range of $f$ is called a **$y$-intercept** or **vertical intercept** when $f(0)=y$, i.e. the $y$-value of a point where the graph of $f$ intersects the $y$-axis.
+When $y$ is in the range of $f$, the point $(0,y)$ is called a **$y$-intercept** or **vertical intercept** when $f(0)=y$, i.e. the point where the graph of $f$ intersects the $y$-axis.
 ::::::
 
 For most functions that we will encounter in this book, the graph looks like one or several curves in $\mathbb{R}^2$. For instance, the graph of the function $f(x)=x^2$ is the curve of all points $(x,y)$ with $y=x^2$, so the graph is a parabola. So we might wonder: is any curve in $\mathbb{R}^2$ the graph of a certain function? For instance, is the circle with radius $1$, centered around the origin, the graph of some function? Well, suppose that there is some function $f$ which has this circle as its graph. Since the point $(0,1)$ is on the circle, that means that $f(0)=1$. However, the point $(0,-1)$ is also on this circle, so that should mean that $f(0)=-1$. Since for a function, a given input ($0$ in this case) can only have a single output, it is impossible that $f(0)$ is both $1$ and $-1$ at the same time. As such, this circle cannot be the graph of any function.
@@ -323,7 +323,7 @@ $$
 
 Now, the expression $\pm x$ might look like a formula describing a function to you, but it is not. Indeed, for $x=1$, we obtain $y=\pm 1$, so we obtain two different output values for a single input value, which is impossible. So this curve cannot be the graph of a function.
 
-This result is also visible in the plot of the two curves, shown below.
+This result is also visible in {numref}`Fig:Functions1var:VerticalLine2`.
 
 :::{applet}
 :url: calculus/functions_of_one_variable/two_implicit_curves
@@ -343,7 +343,7 @@ The curves $C_1$ and $C_2$.
 :admonition:
 :class: question
 
-Consider the curves given by all points $(x,y)$ that satisfy the equation $x^p+y^q=b$, where $p$ can be chosen from $\{2,3,\ldots,9\}$, $q$ from $\{2,3,\ldots,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$. You can show curves for different values of $p$, $q$ and $b$ in {numref}`Fig:Functions1var:VerticalLineQuestion`. The first slider controls the value of $p$, the second slider controls the value of $q$ and the third slider controls the value of $b$.
+Consider the curves given by all points $(x,y)$ that satisfy the equation $x^p+y^q=b$, where $p$ can be chosen from $\{2,3,4,5,6,7,8,9\}$, $q$ from $\{2,3,4,5,6,7,8,9\}$ and $b$ from $\{-9,-4,-1,0,1,4,9\}$. You can show curves for different values of $p$, $q$ and $b$ in {numref}`Fig:Functions1var:VerticalLineQuestion`. The first slider controls the value of $p$, the second slider controls the value of $q$ and the third slider controls the value of $b$.
 
 _Complete the following sentences by selecting the correct options from the dropdown menus. You can use the vertical line test in {numref}`Fig:Functions1var:VerticalLineQuestion`._
 
@@ -388,9 +388,9 @@ A function $f$ is called a **polynomial function** if $f(x)=a_nx^n+a_{n-1}x^{n-1
 
 If the polynomial function consists of only one term, so if $f(x)=a_nx^n$, then we call it a **monomial function**.
 
-If $a_n\neq 0$ (so that $x^n$ is highest power of $x$ that occurs in the formula describing $f$), we say that the **degree of the polynomial** is $n$.
+If $a_n\neq 0$ (so that $x^n$ is highest power of $x$ that occurs in the formula describing $f$), we say that the **degree of the polynomial** is $n$. The degree of the polynomial function $f(x)=0$ is undefined.
 
-A **constant function** is a polynomial function of degree $0$, i.e. one that can be written as $f(x)=a_0$.
+A **constant function** is either the zero function or a polynomial function of degree $0$, i.e. one that can be written as $f(x)=a_0$.
 
 A **linear function** is a polynomial function of degree $1$, i.e. one that can be written as $f(x)=a_1x+a_0$.
 
@@ -442,11 +442,11 @@ $$
 
 
 
-In {numref}`Section:RealNumbers` we saw that for a base $b\geq 0$ and an exponent $r$ in $\mathbb{R}$ we could define the exponentiation $b^r$. This concept actually leads to two different types of functions: one where we vary $b$ and one where we vary $r$. For the second type, the one with base $e$, see {numref}`Subsec:RealNumbersE`, plays a particularly important role in calculus.
+In {numref}`Section:RealNumbers` we saw that for a base $b\geq 0$ and an exponent $r$ in $\mathbb{R}$ we could define the power $b^r$. This concept actually leads to two different types of functions: one where we vary $b$ and one where we vary $r$. For the second type, the one with base $e$, see {numref}`Subsec:RealNumbersE`, plays a particularly important role in calculus.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:PowerFunction
-If $r$ is a real number, then the function $f(x)=x^r$ is called a **power function**.
+If $r$ is a real number, then the function $f(x)=x^r$ is called a **power function**. $r$ is called the **exponent** of the power function.
 
 If $r=-1$ then the function $f(x)=x^{-1}=\frac{1}{x}$ is sometimes referred to as the **reciprocal function**.
 
@@ -465,7 +465,7 @@ The maximal domain of a power function $f(x)=x^r$ depends on $r$.
 
 ::::::{prf:definition} 
 :label: Def:Functions1var:ExponentialFunction
-For $b\geq 0$ the function $f(x)=b^x$ is called an **exponential function**.
+For $b\geq 0$ the function $f(x)=b^x$ is called an **exponential function**. $b$ is called the **base** of the exponential function.
 
 The function $f(x)=e^x$ is referred to as the **natural exponential function**, or sometimes simply **the exponential function**.
 ::::::
@@ -494,9 +494,11 @@ Consider the function given by $f(x)=2x+3$. This is a polynomial function, in pa
 The graph of the linear function $f(x)=ax+b$ (with initial values $a=2$ and $a=3$). The values of $a$ and $b$ can be changed using the sliders.
 :::
 
-As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out where the numbers $2$ and $3$ in the definition of the function come back in the graph?
+As you can see, the graph of this function is a straight line, which is always the case for linear functions. Can we find out how the coefficients $2$ and $3$ influence the graph?
 
-We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increases by any value $\Delta x$, $y$ will increase by $\Delta y=2\Delta x$. We say that $2$ is the **slope** of the line. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope to other curves than straight lines in {numref}`Chapter:Differentiation`.
+[^FootnoteTan]: We can also interpret the slope as follows: consider the right triangle with vertices $A=(x,y)$, $B=(x+\Delta x,y)$ and $C=(x+\Delta x,y+\Delta y)$ and let $\theta$ be the angle $\angle BAC$. Then the slope of the line equals $\tan(\theta)$.
+
+We note that the graph of the function crosses the $y$-axis at the point $(0,3)$. Indeed, we have $f(0)=2\cdot 0+3=3$. So for linear functions of the form $g(x)=ax+b$, the number $b$ specifies at which value of $y$ the graph of $g$ crosses the $y$-axis. The $2$ in the definition of $f$ also comes back in the graph of $f$, though it is not as directly visible. Note that if $x$ increases by $1$, $y$ increases by $2$. In fact, when $x$ increases by any value $\Delta x$, $y$ will increase by $\Delta y=2\Delta x$. We say that $2$ is the **slope** of the line[^FootnoteTan]. In general, for a linear function of the form $g(x)=ax+b$ the number $a$ specifies the slope of the graph of $g$. We will generalise the concept of a slope to other curves than straight lines in {numref}`Chapter:Differentiation`.
 ::::::
 
 ::::::{prf:example} Quadratic function
@@ -597,7 +599,7 @@ Note that as $n$ gets larger the graphs become more flat for $x$ between $-1$ an
 
 ::::::{prf:example} Reciprocal function
 :label: Ex:Functions1var:IdealGas2
-Let us return to the Ideal Gas Law that was discussed in {prf:ref}`Ex:Functions1var:NaturalDomain`. However, instead of assuming that the volume is constant, we now assume that the temperature $T$ is constant. Then the pressure $P$ can be written as a function of the volume $V$ by writing
+Let us return to the Ideal Gas Law that was discussed in {prf:ref}`Ex:Functions1var:NaturalDomain`. However, instead of assuming that the volume is constant, we now assume that the temperature $T$ is constant. A curve that relates $V$ and $P$ with constant temperature is known as an *isotherm*. Then the pressure $P$ can be written as a function of the volume $V$ by writing
 
 $$
  P=\frac{nRT}{V}=nRTV^{-1}.
@@ -707,11 +709,11 @@ Finally, we note that the graphs of the functions $f$ and $g$ intersect for $x$ 
 
 ## Piecewise defined functions
 
-In most cases, functions are defined in terms of a single formula. For instance, for functions like $f(x)=\sin\left(x^2+2\right)$, $g(x)=\frac{1}{3e^{2x}}$ or $h(x)=\sqrt{x^3+1}$, the function value corresponding to a certain value of $x$ can be found by plugging in $x$ into the one and only formula describing the function. However, sometimes you want the function to behave differently on different parts of the domain. In such a case, it is possible to use different formulas describing the function on different parts of the domain. If a function is defined using different formulas, we usually refer to it as a **piecewise defined function**.
+In most cases, functions are defined in terms of a single formula. For instance, for functions like $f(x)=3e^{2x}$, $g(x)=\dfrac{1}{\sin\left(x+2\right)}$ or $h(x)=\sqrt{x^3+1}$, the function value corresponding to a certain value of $x$ can be found by plugging in $x$ into the one and only formula describing the function. However, sometimes you want the function to behave differently on different parts of the domain, which means that we should use different formulas on each of these parts. If a function is defined using different formulas, we usually refer to it as a **piecewise defined function**.
 
 ::::::{prf:example} 
 :label: Ex:Functions1var:Abs
-The absolute value $|x|$ of a number $x$ is actually a shorthand for $x$ if $x$ is positive or $-x$ if $x$ is negative. So the function $a(x)=|x|$ can alternatively be written as
+The absolute value $|x|$ of a number $x$ that was defined in {prf:ref}`def:realnumbers:abs` is actually a shorthand for $x$ if $x$ is positive or $-x$ if $x$ is negative. So the function $a(x)=|x|$ can alternatively be written as
 
 $$
  a(x)=\left\{\begin{array}{lll}x,\qquad&\text{if }&x\geq 0,\\ -x,&\text{if }&x<0.\end{array}\right.
