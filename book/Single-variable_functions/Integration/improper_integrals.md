@@ -22,17 +22,22 @@ Any other definite integral $\displaystyle\int_a^bf(x)\,dx$ is called an **impro
 
 Note that $[a,b]$ is always considered closed for all definite integrals from now on, so we will not explicitly mention that anymore.
 
-But this means that an integral is improper if
+This means that an integral is improper if
 
-- the interval of integration is not closed and/or not finite,
+- the interval of integration is _not finite_,
 
 and/or
 
-- the integrand is not continuous.
+- the integrand is _not continuous_.
 
 In the next subsections we will first consider the two cases separately and then the combination of these cases.
 
-## Infinite interval of integration
+:::{prf:remark}
+:label: Rem:Integration:NotContinuous
+Note that we use the term _not continuous_ and similar terms, as this is more general than the term _discontinuous_, as the latter implies that the point where continuity fails is part of the domain, where the former does not.
+:::
+
+## Not-finite interval of integration
 
 Let us first consider the case where the interval of integration is *not finite*. This means that the interval of integration is infinite, i.e., it is of the form $[a,\infty)$, $(-\infty,b]$ or $(-\infty,\infty)$. Note that these intervals are all closed.
 
@@ -317,28 +322,24 @@ $$
 
 ::::::
 
-## Discontinuous integrands
+## Not-continuous integrands
 
 Having discussed the intervals of integration, we now turn our attention to the integrand. For this subsection we assume that the interval of integration is closed and finite, i.e., of the form $[a,b]$.
 
-{numref}`Section:Continuity` discusses what we consider to be continuity with respect to a function. As continuity is a local property, we will discuss three possible cases of discontinuity of the integrand $f$ on the interval $[a,b]$:
+{numref}`Section:Continuity` discusses what we consider to be continuity with respect to a function. As continuity is a local property, we will discuss three possible cases of where the continuity of the integrand $f$ fails on the interval $[a,b]$:
 
 - the integrand $f$ is not right-continuous at $x=a$ (i.e. at the left of the interval).
 - the integrand $f$ is not left-continuous at $x=b$ (i.e. at the right of the interval).
-- the integrand $f$ is discontinuous at some point $c\in(a,b)$ (i.e. in the interior of the interval).
+- the integrand $f$ is not continuous at some point $c\in(a,b)$ (i.e. in the interior of the interval).
 
-Note that we consider discontinuity (or being not continuous) in general. Examples of discontinuity include jump discontinuity, infinite discontinuity and removable discontinuity.
+In particular, we do not require the integrand to be unbounded near the point of failing continuity, but it may be unbounded as well.
 
-In particular, we do not require the integrand to be unbounded near the point of discontinuity, but it may be unbounded as well.
-
-In fact, we consider integrands that are discontinuous in a finite number of points, but which are not piecewise continuous. So, at these points at least one-sided limit does not exist.
-
-The way we define improper integrals with a discontinuous integrand is more general than the way it is often defined in other textbooks, where the integrand is required to be unbounded near the point of discontinuity.
+The way we define improper integrals with an integrand that is not continuous is more general than the way it is often defined in other textbooks, where the integrand is required to be unbounded near the point of where continuity fails.
 
 For each of the three cases we will define how to handle the improper integral $\displaystyle\int_a^bf(x)\,dx$.
 
-::::::{prf:Definition} Improper integrals with discontinuous integrand at left endpoint
-:label: Def:Integration:ImproperIntegralLeftDiscontinuousIntegrand
+::::::{prf:Definition} Improper integrals with not-continuous integrand at left endpoint
+:label: Def:Integration:ImproperIntegralLeftNotContinuousIntegrand
 
 If $f$ is continuous on the interval $(a,b]$, then
 
@@ -352,8 +353,8 @@ If the limit exists, we say that the improper integral $\displaystyle\int_a^bf(x
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integrals with discontinuous integrand at right endpoint
-:label: Def:Integration:ImproperIntegralRightDiscontinuousIntegrand
+::::::{prf:Definition} Improper integrals with not-continuous integrand at right endpoint
+:label: Def:Integration:ImproperIntegralRightNotContinuousIntegrand
 
 If $f$ is continuous on the interval $[a,b)$, then
 
@@ -367,10 +368,10 @@ If the limit exists, we say that the improper integral $\displaystyle\int_a^bf(x
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integrals with discontinuous integrand at internal point
-:label: Def:Integration:ImproperIntegralInternalDiscontinuousIntegrand
+::::::{prf:Definition} Improper integrals with not-continuous integrand at internal point
+:label: Def:Integration:ImproperIntegralInternalNotContinuousIntegrand
 
-If $f$ is discontinuous at some point $c\in(a,b)$, then
+If $f$ is not continuous at some point $c\in(a,b)$, then
 
 $$
 \int_a^bf(x)\,dx=\int_a^cf(x)\,dx+\int_c^bf(x)\,dx
@@ -387,10 +388,10 @@ If one of the improper integrals on the right converges and the other one diverg
 
 ::::::
 
-We start with an example of an improper integral with a discontinuous integrand at an internal point of the interval of integration.
+We start with an example of an improper integral with an integrand that is not continuous at an internal point of the interval of integration.
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample1
+:label: Ex:Integration:ImproperIntegralsNotContinuousIntegrandExample1
 
 We integrate the function $\displaystyle\frac{1}{x^2}$ on the interval $[-1,1]$. 
 
@@ -404,7 +405,7 @@ figclass: center
 The function $\displaystyle\frac{1}{x^2}$.
 ```
 
-This function is continuous on $[-1,0)$ and on $(0,1]$ but is not continuous at $x=0$. Hence, we can define the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ as in {prf:ref}`Def:Integration:ImproperIntegralInternalDiscontinuousIntegrand`. We have
+This function is continuous on $[-1,0)$ and on $(0,1]$ but is not continuous at $x=0$. Hence, we can define the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ as in {prf:ref}`Def:Integration:ImproperIntegralInternalNotContinuousIntegrand`. We have
 
 $$
 \int_{-1}^1\frac{dx}{x^2}=\int_{-1}^0\frac{dx}{x^2}+\int_0^1\frac{dx}{x^2}.
@@ -437,7 +438,7 @@ $$
 ::::::
 
 ::::::{warning}
-:name: Warning:Integration:ImproperIntegralsDiscontinuousIntegrandWarning1
+:name: Warning:Integration:ImproperIntegralsNotContinuousIntegrandWarning1
 
 The calculation
 
@@ -449,7 +450,7 @@ is clearly wrong! Note that the integrand is positive on $[-1,1]$. The evaluatio
 ::::::
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample2
+:label: Ex:Integration:ImproperIntegralsNotContinuousIntegrandExample2
 
 Consider the function $\dfrac{1}{x-1}$ on the interval $[0,3]$.
 
@@ -492,7 +493,7 @@ Because both integrals diverge, we say that the improper integral $\displaystyle
 ::::::
 
 ::::::{warning}
-:name: Warning:Integration:ImproperIntegralsDiscontinuousIntegrandWarning2
+:name: Warning:Integration:ImproperIntegralsNotContinuousIntegrandWarning2
 
 It would be wrong to conclude that
 
@@ -506,11 +507,11 @@ $$
 \int_0^3\frac{dx}{x-1}=\ln|x-1|\bigg|_0^3=\ln(2)-\ln(1)=\ln(2).
 $$
 
-Since the integrand is discontinuous at $x=1$ the fundamental theorem does not apply on $[0,3]$.
+Since the integrand is not continuous at $x=1$ the fundamental theorem does not apply on $[0,3]$.
 ::::::
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample3
+:label: Ex:Integration:ImproperIntegralsNotContinuousIntegrandExample3
 
 Consider $\displaystyle\int_0^1\ln(x)\,dx$. 
 
@@ -555,17 +556,30 @@ $$
 
 ::::::
 
-Finally, we consider an example of both an infinite interval of integration and a discontinuous integrand.
+
+It may happen that a definite integral $\displaystyle\int_a^bf(x)\,dx$ is improper because $f$ is not continuous in more than one point in the interval $[a,b]$. If that happens, you can repeatedly apply {prf:ref}`Def:Integration:ImproperIntegralLeftNotContinuousIntegrand`, {prf:ref}`Def:Integration:ImproperIntegralRightNotContinuousIntegrand` and {prf:ref}`Def:Integration:ImproperIntegralInternalNotContinuousIntegrand`.
+
+## Combinations of improperness
+
+If the integrand $f$ is not continuous on the interval of integration and the interval of integration is infinite, we repeatedly apply the definitions {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight` until {prf:ref}`Def:Integration:ImproperIntegralInternalNotContinuousIntegrand` from the previous two subsections, which we showcase in the next example.
 
 ::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsDiscontinuousIntegrandExample4
+:label: Ex:Integration:ImproperIntegralsNotContinuousIntegrandExample4
 
 Consider $\displaystyle\int_0^{\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx$.
 
-Using {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight` and {prf:ref}`Def:Integration:ImproperIntegralLeftDiscontinuousIntegrand` we write
+This integral is improper, because the integrand is not continuous in $0$ and because the interval of integration is infinite.
+
+Using {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight` we write
 
 $$
-\int_0^{\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx=\lim_{R\to\infty}\lim_{t\to 0^+}\int_t^R\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx.
+\int_0^{\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx = \lim_{R\rightarrow\infty}\int_0^{R}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx.
+$$
+
+To evaluate the limit, we must first evaluate the new integral, which using {prf:ref}`Def:Integration:ImproperIntegralLeftNotContinuousIntegrand` becomes
+
+$$
+\int_0^{R}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx = \lim_{t\rightarrow0^{+}}\int_t^{R}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx.
 $$
 
 For $0<t<x<R$ we apply the substitution $x=u^2$ and therefore $dx=2u\,du$ to obtain
@@ -586,6 +600,8 @@ Hence, we have
 &=2-0\\
 &=2.
 \end{align*}
+
+Note that the order in which we apply {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight` and {prf:ref}`Def:Integration:ImproperIntegralLeftNotContinuousIntegrand` can be switched without changing the result. 
 
 ::::::
 
@@ -994,7 +1010,7 @@ $$
 
 There exist many special improper integrals that are often used in various applications. We will discuss some of them here.
 
-### $p$-Integrals
+### $p$-integrals
 
 We start with the so-called *$p$-integrals*:
 
