@@ -43,7 +43,7 @@ Let us first consider the case where the interval of integration is *not finite*
 
 Improper integrals over such intervals are defined as a (sum of) limit(s) which may or may not exist. We will give a definition for each of the three types of infinite intervals of integration.
 
-::::::{prf:Definition} Improper integrals with right-infinite interval of integration
+::::::{prf:Definition} Improper integral with right-infinite interval of integration
 :label: Def:Integration:ImproperIntegralInfiniteIntervalRight
 
 If $f$ is continuous on the interval $[a,\infty)$, then
@@ -58,7 +58,7 @@ If the limit exists, we say that the improper integral $\displaystyle\int_a^{\in
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integrals with left-infinite interval of integration
+::::::{prf:Definition} Improper integral with left-infinite interval of integration
 :label: Def:Integration:ImproperIntegralInfiniteIntervalLeft
 
 If $f$ is continuous on the interval $(-\infty,b]$, then
@@ -73,7 +73,7 @@ If the limit exists, we say that the improper integral $\displaystyle\int_{-\inf
 If the limit does not exist, we say that the improper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integrals with double-infinite interval of integration
+::::::{prf:Definition} Improper integral with double-infinite interval of integration
 :label: Def:Integration:ImproperIntegralInfiniteIntervalDouble
 
 If $f$ is continuous on the interval $(-\infty,\infty)$, then
@@ -100,14 +100,13 @@ So how do we evaluate an improper integral? We will see that in some cases we ca
 
 Consider the function $\displaystyle\frac{1}{x\sqrt{x}}$ on the interval $[1,\infty)$:
 
-```{figure} Images/improper1.png
----
-width: 50%
-name: Fig:Integration:ImproperIntegral1
-align: center
----
+:::{applet}
+:url: calculus/improper_integrals/improper_integral_with_right-infinite_interval_of_integration
+:name: Fig:Integration:ImproperIntegral1
+:class: dark-light
+
 The function $\displaystyle\frac{1}{x\sqrt{x}}$ on the interval $[1,\infty)$.
-```
+:::
 
 This function $\displaystyle\frac{1}{x\sqrt{x}}$ is continuous on $[1,\infty)$ and therefore we can define the improper integral $\displaystyle\int_1^{\infty}\frac{dx}{x\sqrt{x}}$ as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight`. We have
 
@@ -124,14 +123,13 @@ This function $\displaystyle\frac{1}{x\sqrt{x}}$ is continuous on $[1,\infty)$ a
 :label: Ex:Integration:ImproperIntegralsInfiniteIntervalExample2
 Now consider the function $\displaystyle\frac{1}{\sqrt{x}}$ on the same interval $[1,\infty)$:
 
-```{figure} Images/improper2.png
----
-width: 50%
-name: Fig:Integration:ImproperIntegral2
-align: center
----
+:::{applet}
+:url: calculus/improper_integrals/improper_integral_with_right-infinite_interval_of_integration_2
+:name: Fig:Integration:ImproperIntegral2
+:class: dark-light
+
 The function $\displaystyle\frac{1}{\sqrt{x}}$ on the interval $[1,\infty)$.
-```
+:::
 
 In this case we have another function that is continuous on $[1,\infty)$ and therefore we can define the improper integral $\displaystyle\int_1^{\infty}\frac{dx}{\sqrt{x}}$ as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight`. We have 
 
@@ -150,14 +148,13 @@ This last limit does not exist, and equals $\infty$. In this case we say that th
 
 Now we consider the function $\dfrac{1}{1+x^2}$ that is continuous on $(-\infty,\infty)$ and therefore we can define the improper integral $\displaystyle\int_{-\infty}^{\infty}\frac{dx}{1+x^2}$ as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalDouble`.
 
-```{figure} Images/improper3.png
----
-width: 50%
-name: Fig:Integration:ImproperIntegral3
-align: center
----
+:::{applet}
+:url: calculus/improper_integrals/improper_integral_with_double-infinite_interval_of_integration
+:name: Fig:Integration:ImproperIntegral3
+:class: dark-light
+
 The function $\displaystyle\frac{1}{1+x^2}$ on the interval $(-\infty,\infty)$.
-```
+:::
 
 We start by splitting the integral into two integrals as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalDouble`:
 
@@ -196,14 +193,13 @@ $$
 ::::::{note}
 :name: Note:Integration:ImproperIntegralsInfiniteIntervalExample3
 
-```{figure} Images/cauchy.png
----
-width: 50%
-name: Fig:Integration:CauchyDistribution
-align: center
----
+:::{applet}
+:url: calculus/improper_integrals/standard_Cauchy_distribution
+:name: Fig:Integration:CauchyDistribution
+:class: dark-light
+
 The probability density function of the standard Cauchy distribution.
-```
+:::
 
 In probability and statistics the function $\displaystyle\frac{1}{\pi}\cdot\frac{1}{1+x^2}$ is the probability density function of the standard Cauchy distribution, which is named after the French mathematician [Augustin-Louis Cauchy (1789-1857)](https://en.wikipedia.org/wiki/Augustin-Louis_Cauchy).
 
@@ -292,14 +288,14 @@ $$
 
 We can also attempt to integrate trigonometric functions over infinite intervals, for example the cosine function over the interval $[0,\infty)$:
 
-```{figure} Images/improper4.png
----
-width: 50%
-name: Fig:Integration:ImproperIntegral4
-align: center
----
+:::{applet}
+:url: calculus/improper_integrals/improper_integral_with_right-infinite_interval_of_integration_3
+:name: Fig:Integration:ImproperIntegral4
+:class: dark-light
+
 The function $\displaystyle\cos(x)$ on the interval $[0,\infty)$.
-```
+:::
+
 
 \begin{align*}
 \int_0^{\infty}\cos(x)\,dx &= \lim_{R\to\infty}\int_0^R\cos(x)\,dx \\
@@ -338,7 +334,7 @@ The way we define improper integrals with an integrand that is not continuous is
 
 For each of the three cases we will define how to handle the improper integral $\displaystyle\int_a^bf(x)\,dx$.
 
-::::::{prf:Definition} Improper integrals with not-continuous integrand at left endpoint
+::::::{prf:Definition} Improper integral with not-continuous integrand at left endpoint
 :label: Def:Integration:ImproperIntegralLeftNotContinuousIntegrand
 
 If $f$ is continuous on the interval $(a,b]$, then
@@ -353,7 +349,7 @@ If the limit exists, we say that the improper integral $\displaystyle\int_a^bf(x
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integrals with not-continuous integrand at right endpoint
+::::::{prf:Definition} Improper integral with not-continuous integrand at right endpoint
 :label: Def:Integration:ImproperIntegralRightNotContinuousIntegrand
 
 If $f$ is continuous on the interval $[a,b)$, then
@@ -368,7 +364,7 @@ If the limit exists, we say that the improper integral $\displaystyle\int_a^bf(x
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integrals with not-continuous integrand at internal point
+::::::{prf:Definition} Improper integral with not-continuous integrand at internal point
 :label: Def:Integration:ImproperIntegralInternalNotContinuousIntegrand
 
 If $f$ is not continuous at some point $c\in(a,b)$, then
@@ -395,15 +391,13 @@ We start with an example of an improper integral with an integrand that is not c
 
 We integrate the function $\displaystyle\frac{1}{x^2}$ on the interval $[-1,1]$. 
 
-```{figure} Images/improper5.png
----
-width: 50%
-name: Fig:Integration:ImproperIntegral5
-align: center
-figclass: center
----
-The function $\displaystyle\frac{1}{x^2}$.
-```
+:::{applet}
+:url: calculus/improper_integrals/improper_integral_with_not-continuous_integrand_at_internal_point
+:name: Fig:Integration:ImproperIntegral5
+:class: dark-light
+
+The function $\displaystyle\frac{1}{x^2}$ on the interval $[-1,1]$.
+:::
 
 This function is continuous on $[-1,0)$ and on $(0,1]$ but is not continuous at $x=0$. Hence, we can define the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ as in {prf:ref}`Def:Integration:ImproperIntegralInternalNotContinuousIntegrand`. We have
 
@@ -454,15 +448,13 @@ is clearly wrong! Note that the integrand is positive on $[-1,1]$. The evaluatio
 
 Consider the function $\dfrac{1}{x-1}$ on the interval $[0,3]$.
 
-```{figure} Images/improper6.png
----
-width: 50%
-name: Fig:Integration:ImproperIntegral6
-align: center
-figclass: center
----
-The function $\displaystyle\frac{1}{x-1}$.
-```
+:::{applet}
+:url: calculus/improper_integrals/improper_integral_with_not-continuous_integrand_at_internal_point_2
+:name: Fig:Integration:ImproperIntegral6
+:class: dark-light
+
+The function $\displaystyle\frac{1}{x-1}$ on the interval $[0,3]$.
+:::
 
 Since $\dfrac{1}{x-1}$ is continuous for all $x\in\mathbb{R}$ except at $x=1$, we have
 
@@ -515,15 +507,13 @@ Since the integrand is not continuous at $x=1$ the fundamental theorem does not 
 
 Consider $\displaystyle\int_0^1\ln(x)\,dx$. 
 
-```{figure} Images/improper7.png
----
-width: 50%
-name: Fig:Integration:ImproperIntegral7
-align: center
-figclass: center
----
-The function $\displaystyle\ln(x)$.
-```
+:::{applet}
+:url: calculus/improper_integrals/improper_integral_with_not-continuous_integrand_at_left_endpoint
+:name: Fig:Integration:ImproperIntegral7
+:class: dark-light
+
+The function $\displaystyle\ln(x)$ on the interval $[0,1]$.
+:::
 
 Using integration by parts, we have
 
@@ -698,24 +688,6 @@ $$
 
 ::::::
 
-::::::{prf:remark}
-:label: Note:Integration:ImproperIntegralsGaussianIntegral
-
-Later (see: {prf:ref}`Ex:MultivariableIntegration:PolarApplicationsExample2`) we will see that $\displaystyle\int_0^{\infty}e^{-x^2}\,dx=\frac{1}{2}\sqrt{\pi}\approx0.88623$.
-
-By symmetry, we also have: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sqrt{\pi}$, which is called the **Gaussian integral**, named after the German mathematician [Johann Carl Friedrich Gauss (1777-1855)](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss).
-
-```{figure} Images/normal.png
----
-width: 50%
-name: Fig:Integration:NormalDistribution
-align: center
----
-The probability density function of the standard normal distribution.
-```
-
-In probability and statistics the function $\displaystyle\frac{1}{\sqrt{2\pi}}\cdot e^{-\frac12x^2}$ is known as the probability density function of the **standard normal distribution** or **Gaussian distribution**. The curve is sometimes referred to as the **bell curve**.
-::::::
 
 ::::{question}
 :type: short-answer
@@ -725,80 +697,122 @@ In probability and statistics the function $\displaystyle\frac{1}{\sqrt{2\pi}}\c
 :admonition:
 :showanswer:
 
-Fill in the correct answer in the input fields.
+In {prf:ref}`Ex:Integration:ImproperIntegralsComparisonExample2` we used the inequality $e^{-x^2}\leq e^{-x}$ for the comparison test for improper integrals, which also resulted in an approximation for the integral $\displaystyle\int_{0}^{\infty}e^{-x^2}\,dx$.
 
-In order to find a better approximation, we want to find another linear function of the form $-x+c$ with $c\in\mathbb{R}$ such that $-x^2\leq-x+c$ for all $x\geq0$.
+In order to find another approximation and not wanting to split the integral in two parts, we want to find a $c\in\mathbb{R}$ such that
+
+- $e^{-x^2}\leq e^{-x+c}$ for all $x\geq0$;
+
+- The resulting approximation of $\displaystyle\int_{0}^{\infty}e^{-x^2}\,dx$ using $\displaystyle\int_{0}^{\infty}e^{-x+c}\,dx$ is as good as possible.
+
+Use {numref}`Fig:IntegrationImproperIntegralsComparisonQuestion` to find the optimal value of $c$, and then calculate $\displaystyle\int_{0}^{\infty}e^{-x+c}\,dx$.
 
 ---
-M[\frac{1}{4}] Then the optimal value of $c$ is
-= Note that $-x^2\leq-x+c$ is equivalent to $x^2-x+c\geq0$. The discriminant $D$ of $x^2-x+c=0$ is $D=1-4c$ which equals zero if $c=\frac{1}{4}$.
-> Consider $x^2-x+c\geq0$ and use the discriminant.
+M[\frac{1}{4}] The optimal value of $c$ is
+= Using the graph, we find that for $c\geq\dfrac14$ we have $e^{-x^2}\leq e^{-x+c}$ for all $x\geq0$. If we increase the value of $c$ past $\dfrac14$, the area below $\displaystyle\int_{0}^{\infty}e^{-x+c}\,dx$ increases more and more, indicating that $c=\dfrac14$ is the optimal value of $c$.
 
-Use this value of $c$ to find an upper bound for $\displaystyle\int_0^{\infty}e^{-x^2}\,dx$:
-M[e^{\frac{1}{4}}] $\displaystyle\int_0^{\infty}e^{-x+c}\,dx=$
-= Note that $x^2-x+\frac{1}{4}\geq0$ is equivalent to $(x-\frac{1}{2})^2\geq0$. Now $-x^2\leq-x+\frac{1}{4}$ leads to $e^{-x^2}\leq e^{-x+\frac{1}{4}}$ and
+Alternatively, we can do this algebraically. The optimal $c$ would be the value of $c$ for which the graph of $e^{-x^2}$ and $e^{-x+c}$ only intersect once, which can only occur if the equation
 
 $$
+-x^2 = -x +c
+$$
+
+has one solution. The discriminant $1-4c$ of the equivalent equation $x^2-x+c=0$ is zero when $c=\dfrac14$.
+
+> The optimal $c$ would be the value of $c$ for which the graph of $e^{-x^2}$ and $e^{-x+c}$ only intersect once. Can you find this value?
+
+M[e^{\frac{1}{4}}] With the optimal value for $c$, $\displaystyle\int_0^{\infty}e^{-x+c}\,dx=$
+= $$
 \int_0^{\infty}e^{-x+\frac{1}{4}}\,dx=\left[-e^{-x+\frac{1}{4}}\right]_0^{\infty}=e^{\frac{1}{4}}\approx1.28403.
 $$
 
-> Evaluate $\displaystyle\int_0^{\infty}e^{-x+\frac{1}{4}}\,dx$.
-
-Replacing the linear function $-x+c$ by a function of the form $-ax+b$, what would be the optimal value of $b$ (in terms of $a$)?
-[\frac{1}{4}a^2] $b=$
-= Note that $-x^2\leq-ax+b$ is equivalent to $x^2-ax+b\geq0$. The discriminant $D$ of $x^2-ax+b=0$ is $D=a^2-4b$ which equals zero if $b=\frac{1}{4}a^2$.
-> Consider $x^2-ax+b\geq0$ and use the discriminant.
-
-In order to find the best approximation, what should be the value of $a$?
-[\sqrt{2}] $a=$
-= Now we have
-
-$$
-\int_0^{\infty}e^{-ax+\frac{1}{4}a^2}\,dx=\left[-\frac{1}{a}e^{-ax+\frac{1}{4}a^2}\right]_{x=0}^{\infty}=\frac{1}{a}e^{\frac{1}{4}a^2}.
-$$
-
-Let $f(x)=\dfrac{1}{x}e^{\frac{1}{4}x^2}$, then
-
-$$
-f'(x)=\frac{1}{x}e^{\frac{1}{4}x^2}\cdot\frac{1}{2}x-\frac{1}{x^2}e^{\frac{1}{4}x^2}=\left(\frac{1}{2}-\frac{1}{x^2}\right)e^{\frac{1}{4}x^2},
-$$
-
-which equals zero if $x=\pm\sqrt{2}$. Since $a$ should be positive, we conclude that $a=\sqrt{2}$.
-> Evaluate $\displaystyle\int_0^{\infty}e^{-ax+\frac{1}{4}a^2}\,dx$ and find its minimal value.
-
-Find the least upper bound for this value of $a$.
-[\frac{1}{\sqrt{2}}e^{\frac{1}{2}}] $\displaystyle\int_0^{\infty}e^{-x^2}\,dx\leq$
-= 
-
-$$
-\int_0^{\infty}e^{-\sqrt{2}x+\frac{1}{2}}\,dx=\frac{1}{\sqrt{2}}e^{\frac{1}{2}}\approx1.16582.
-$$
-
-> Use $\displaystyle\int_0^{\infty}e^{-ax+\frac{1}{4}a^2}\,dx=\frac{1}{a}e^{\frac{1}{4}a^2}$ for $a=\sqrt{2}$.
+> Hint: The optimal value for $c$ is $\dfrac14$.
 ---
+
+:::{applet}
+:url: calculus/improper_integrals/comparing_improper_integrals
+:name: Fig:IntegrationImproperIntegralsComparisonQuestion
+:class: dark-light
+
+The functions $e^{-x^2}$ and $e^{-x+c}$, with the value of $c$ changeable with the slider, on the interval $[0,\infty)$. 
+:::
 
 ::::
 
-```{figure} Images/exponential1.png
----
-width: 50%
-name: exponential1
-align: center
----
-The graphs of $e^{-x^2}$ and $e^{-x+\frac{1}{4}}$.
-```
+::::{prf:example}
+:label: Ex:Integration:ImproperIntegralsComparisonExample2Continued
 
-```{figure} Images/exponential2.png
----
-width: 50%
-name: exponential2
-align: center
----
-The graphs of $e^{-x^2}$ and $e^{-x\sqrt{2}+\frac{1}{2}}$.
-```
+Instead of using a function of the form $e^{-x+c}$ to use in the comparison with $e^{-x^2}$ to get an upper bound for $\displaystyle\int_{0}^{\infty}e^{-x^2}\,dx$, we can take it one step further and use a function of the form $e^{bx+c}$.
+
+Similar to the question above, we want $b$ and $c$ such that the equation $-x^2=bx+c$ has one solution for $x$. This only occurs if the discriminant $b^2-4c$ of the equivalent equation $x^2+bx+c=0$ equals zero. Solving for $b$ gives the relation
+
+$$
+c = \frac14b^2,
+$$
+
+Using this relation to find an upper bound for $\displaystyle\int_{0}^{\infty}e^{-x^2}\,dx$ gives:
+
+\begin{align*}
+\int_{0}^{\infty}e^{-x^2}\,dx &\leq \int_{0}^{\infty}e^{bx+c}\,dx \\
+&= \bigg[\frac{1}{\sqrt{b}}e^{bx+\frac14b^2}\bigg]_{0}^{\infty}
+&= \left\{\begin{array}{rcl}
+-\frac{1}{b}e^{\frac14b^2} & \text{for} & b<0, \\
+\infty & \text{for} & b\geq0, \\
+\end{array}\right\}
+\end{align*}
+
+Note that if $b<0$, the approximation becomes positive, as we should expect.
+
+Now we can determine the value of $b$ for which the upper bound is as small as possible. To this end, define
+
+$$
+I(b) = -\frac{1}{b}e^{\frac14b^2}.
+$$
+
+We differentiate with respect to $b$ and equate to zero to find the equation
+
+$$
+\frac{2 - b^2}{2b^2} e^{\frac14b^2}=0.
+$$
+
+The only viable solution of this equation is $b=-\sqrt{2}$, as $b$ should be negative, and gives the upper bound:
+
+$$
+\int_{0}^{\infty}e^{-x^2}\,dx \leq I(\sqrt{2}) = \frac{\sqrt{e}}{\sqrt{2}}.
+$$
+
+{numref}`Fig:IntegrationImproperIntegralsComparisonB` shows the both the original function and our new approximation.
+
+:::{applet}
+:url: calculus/improper_integrals/comparing_improper_integrals_2
+:name: Fig:IntegrationImproperIntegralsComparisonB
+:class: dark-light
+
+The functions $e^{-x^2}$ and $e^{-bx+\frac14b^2}$, with the value of $b$ changeable with the slider, on the interval $[0,\infty)$. 
+:::
+
+::::
+
+::::::{prf:remark}
+:label: Note:Integration:ImproperIntegralsGaussianIntegral
+
+Later (see: {prf:ref}`Ex:MultivariableIntegration:PolarApplicationsExample2`) we will see that $\displaystyle\int_0^{\infty}e^{-x^2}\,dx=\frac{1}{2}\sqrt{\pi}\approx0.88623$.
+
+By symmetry, we also have: $\displaystyle\int_{-\infty}^{\infty}e^{-x^2}\,dx=\sqrt{\pi}$, which is called the **Gaussian integral**, named after the German mathematician [Johann Carl Friedrich Gauss (1777-1855)](https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss).
+
+:::{applet}
+:url: calculus/improper_integrals/standard_normal_distribution
+:name: Fig:Integration:NormalDistribution
+:class: dark-light
+
+The probability density function of the standard normal distribution.
+:::
+
+In probability and statistics the function $\displaystyle\frac{1}{\sqrt{2\pi}}\cdot e^{-\frac12x^2}$ is known as the probability density function of the **standard normal distribution** or **Gaussian distribution**. The curve is sometimes referred to as the **bell curve**.
+::::::
 
 :::{todo}
-Can pictures like these be used in the question above?
+Hier gebleven.
 :::
 
 ::::::{prf:Example}
