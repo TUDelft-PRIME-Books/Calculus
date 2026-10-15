@@ -30,6 +30,14 @@ Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$
 If a function $f$ is continuous at each points in its domain, we say that $f$ is **continuous**. 
 ::::::
 
+:::{prf:remark}
+:label: Rem:Continuity:Continuity
+
+If we state that a function $f$ is _discontinuous_ at a point $a$, we indirectly imply that $a$ is in the domain of $a$, as stated by {prf:ref}`Def:Continuity:ContinuityLimit`.
+
+If we state that a function $f$ is _not continuous_ at a point $b$, either $b$ is not in the domain of $f$, or $b$ is in the domain of $f$ and $f$ is discontinuous at $b$.
+:::
+
 In most situations, continuity of a function can conveniently be expressed in terms of limits.
 
 ::::::{prf:theorem} 
