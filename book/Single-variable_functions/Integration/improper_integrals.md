@@ -758,7 +758,7 @@ Using this relation to find an upper bound for $\displaystyle\int_{0}^{\infty}e^
 &= \left\{\begin{array}{rcl}
 -\frac{1}{b}e^{\frac14b^2} & \text{for} & b<0, \\
 \infty & \text{for} & b\geq0, \\
-\end{array}\right\}
+\end{array}\right.
 \end{align*}
 
 Note that if $b<0$, the approximation becomes positive, as we should expect.
@@ -811,10 +811,6 @@ The probability density function of the standard normal distribution.
 In probability and statistics the function $\displaystyle\frac{1}{\sqrt{2\pi}}\cdot e^{-\frac12x^2}$ is known as the probability density function of the **standard normal distribution** or **Gaussian distribution**. The curve is sometimes referred to as the **bell curve**.
 ::::::
 
-:::{todo}
-Hier gebleven.
-:::
-
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsComparisonExample3
 Consider $\displaystyle\int_1^{\infty}\frac{2+\cos(x)}{x}\,dx$.
@@ -827,14 +823,13 @@ $$
 
 This implies that $\displaystyle\int_1^{\infty}\frac{2+\cos(x)}{x}\,dx$ is divergent.
 
-```{figure} Images/comparison1.png
----
-width: 50%
-name: comparison1
-align: center
----
-The graphs of $\dfrac{2+\cos(x)}{x}$ and $\dfrac{1}{x}$.
-```
+:::{applet}
+:url: calculus/improper_integrals/comparing_improper_integrals_3
+:name: Fig:Integration:ImproperIntegralsComparisonExample3
+:class: dark-light
+
+The graphs of $\dfrac{2+\cos(x)}{x}$ and $\dfrac{1}{x}$ on the interval $[1,\infty)$.
+:::
 
 ::::::
 
@@ -850,179 +845,19 @@ $$
 
 We conclude that $\displaystyle\int_1^{\infty}\frac{1+e^{-x}}{\sqrt{x}}\,dx$ is divergent.
 
-```{figure} Images/comparison2.png
----
-width: 50%
-name: comparison2
-align: center
----
-The graphs of $\dfrac{1+e^{-x}}{\sqrt{x}}$ and $\dfrac{1}{\sqrt{x}}$.
-```
+:::{applet}
+:url: calculus/improper_integrals/comparing_improper_integrals_4
+:name: Fig:Integration:ImproperIntegralsComparisonExample4
+:class: dark-light
 
-::::::
-
-(Sec:Integration:Feynman)=
-
-## The Feynman technique
-
-Sometimes an integral is easier to evaluate if we modify the integrand by inserting a parameter such that a specific value of this parameter leads to the original integral. We have already seen an example of this trick in {numref}`Sec:Integration:Parts`. This technique was developed by the American theoretical physicist [Richard Phillips Feynman (1918-1988)](https://en.wikipedia.org/wiki/Richard_Feynman) and is based on the following theorem.
-
-::::::{prf:Theorem}
-:label: Thm:Integration:ImproperIntegralsFeynmanTechnique
-If $g(x,t)$ and $\displaystyle\frac{\partial}{\partial t}g(x,t)$ are both continuous for all $x\in[a,b]$, then
-
-$$
-\frac{d}{dt}\int_a^bg(x,t)\,dx=\int_a^b\frac{\partial}{\partial t}g(x,t)\,dx.
-$$
-
-::::::
-
-::::::{note}
-:name: Note:Integration:ImproperIntegralsMultivariableFunctionsAndPartialDerivatives
-
-The notation $g(x,t)$ indicates that $g$ is a function of two variables $x$ and $t$, and will be explained in more detail in {numref}`Sec:MultivariableFunctions`. For now, just assume that $g(x,t)$ is a function of two variables and that $g(x,t_0)$ means that you must substitute $t$ with $t_0$ in the function $g$.
-
-The notation $\dfrac{\partial}{\partial t}$ denotes the derivative with respect to $t$ and will be explained in {numref}`Sec:PartialDerivatives`. For now, $\dfrac{\partial}{\partial t}$ means that you must take the derivative of the function with respect to $t$ while treating $x$ as a constant. For example, if $f(x,t)=x^t$, then $\dfrac{\partial}{\partial t}f(x,t)=x^t\ln(x)$.
-::::::
-
-The Feynman method itself is most naturally described by the following algorithm:
-
-:::{prf:algorithm} Feynman method
-For any definite integral of the form $\displaystyle\int_a^bf(x)\,dx$ perform the following steps:
-
-1. Introduce a parameter-dependent function $g$ based on the integrand $f$ and define $I(t)=\displaystyle\int_a^bg(x,t)\,dx$ such that
-
-    - $I(t_0)=\alpha$ for some value of $t_0$ and some constant $\alpha\in\mathbb{R}$.
-
-    - $g(x,t_1)=f(x)$ for some value of $t_1$. This implies that $I(t_1)=\displaystyle\int_a^bf(x)\,dx$.
-
-3. Find the partial derivative $\displaystyle\frac{\partial}{\partial t}g(x,t)$.
-
-4. Evaluate the integral $I'(t)=\displaystyle\int_a^b\frac{\partial}{\partial t}g(x,t)\,dx$.
-
-5. Integrate $I'(t)$ with respect to $t$ to find $I(t)$ (including a constant of integration).
-
-6. Determine the value of the constant of integration using the value of $I(t_0)=\alpha$.
-
-6. Evaluate $I(t_1)$ to find the value of the original integral $\displaystyle\int_a^bf(x)\,dx$.
+The graphs of $\dfrac{1+e^{-x}}{\sqrt{x}}$ and $\dfrac{1}{\sqrt{x}}$ on the interval $[1,\infty)$.
 :::
-
-Finding a function $g(x,t)$ that works can be very hard. We will give three examples, where this function will be given.
-
-::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsFeynmanExample1
-Consider the improper integral $\displaystyle\int_0^1\frac{x-1}{\ln(x)}\,dx$, which is extremely difficult to evaluate by any other means.
-
-Define $g(x,t)=\dfrac{x^t-1}{\ln(x)}$ and $I(t)=\displaystyle\int_0^1\frac{x^t-1}{\ln(x)}\,dx$ for $t\geq0$, then we have $I(0)=0$,
-
-$$
-\frac{\partial}{\partial t}g(x,t)=\frac{x^t\ln(x)}{\ln(x)}=x^t,
-$$
-
-and
-
-$$
-I'(t)=\int_0^1\frac{\partial}{\partial t}\frac{x^t-1}{\ln(x)}\,dx=\int_0^1x^t\,dx=\frac{x^{t+1}}{t+1}\bigg|_{x=0}^1=\frac{1}{t+1}.
-$$
-
-This implies that $I(t)=\ln|t+1|+C$ with $C=I(0)=0$. This gives
-
-$$
-I(t)=\int_0^1\frac{x^t-1}{\ln(x)}\,dx=\ln(t+1)
-$$
-
-for $t\geq0$. We conclude that
-
-$$
-I(1)=\int_0^1\frac{x-1}{\ln(x)}\,dx=\ln(2).
-$$
-
-Similarly, we find that 
-
-$$
-I(2)=\int_0^1\frac{x^2-1}{\ln(x)}\,dx=\ln(3)
-$$ 
-
-and 
-
-$$
-I(\tfrac{1}{2})=\int_0^1\frac{\sqrt{x}-1}{\ln(x)}\,dx=\ln\left(\tfrac{3}{2}\right),
-$$ 
-
-for instance.
-
-::::::
-
-::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsFeynmanExample2
-Consider the integral $\displaystyle\int_0^1\frac{\sin(\ln(x))}{\ln(x)}\,dx$.
-
-Let $I(t)=\displaystyle\int_0^1\frac{\sin(t\ln(x))}{\ln(x)}\,dx$, then we have $I(0)=0$ and using the substitution $\ln(x)=y$ or $x=e^y$
-
-$$
-I'(t)=\int_0^1\cos(t\ln(x))\,dx=\int_{-\infty}^0\cos(ty)e^y\,dy=\int_0^{\infty}e^{-y}\cos(ty)\,dy.
-$$
-
-Now we have using integration by parts
-
-\begin{align*}
-\int_0^{\infty}e^{-y}\cos(ty)\,dy&=-e^{-y}\cos(ty)\bigg|_0^{\infty}-t\int_0^{\infty}e^{-y}\sin(ty)\,dy\\
-&=1+te^{-y}\sin(ty)\bigg|_{y=0}^{\infty}-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy\\
-&=1-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy.
-\end{align*}
-
-Because the integral $I'(t)$ appears on both sides of the equation, we can solve for $I'(t)$ to find that
-
-$$
-I'(t)=\int_0^{\infty}e^{-y}\cos(ty)\,dy=\frac{1}{1+t^2}.
-$$
-
-Since $I(0)=0$ this implies that $I(t)=\arctan(t)$.
-
-We finally arrive at
-
-$$
-\int_0^1\frac{\sin(\ln(x))}{\ln(x)}\,dx=I(1)=\arctan(1)=\frac{1}{4}\pi.
-$$
-
-::::::
-
-::::::{prf:Example}
-:label: Ex:Integration:ImproperIntegralsFeynmanExample3
-Consider the integral $I(t)=\displaystyle\int_0^{\infty}\frac{e^{-x}\sin(xt)}{x}\,dx$ for $t\geq0$. Since $\displaystyle\lim\limits_{x\to 0^+}\frac{\sin(xt)}{x}=t$, the integral is convergent. Then we have $I(0)=0$ and using integration by parts
-
-\begin{align*}
-I'(t)&=\int_0^{\infty}e^{-x}\cos(xt)\,dx\\
-&=-e^{-x}\cos(xt)\bigg|_{x=0}^{\infty}-t\int_0^{\infty}e^{-x}\sin(xt)\,dt\\
-&=1+te^{-x}\sin(xt)\bigg|_{x=0}^{\infty}-t^2\int_0^{\infty}e^{-x}\cos(xt)\,dt\\
-&=1+0-t^2I'(t),
-\end{align*}
-
-and therefore $I'(t)=\dfrac{1}{1+t^2}$. This implies that $I(t)=\displaystyle\arctan(t)$.
-
-For instance, this implies that $\displaystyle\int_0^{\infty}\frac{e^{-x}\sin(x)}{x}\,dx=\arctan(1)=\frac{1}{4}\pi$. Using the substitution $x=\alpha t$ this implies that
-
-$$
-\int_0^{\infty}\frac{e^{-\alpha t}\sin(\alpha t)}{t}\,dt=\frac{1}{4}\pi\quad\text{for all}\quad\alpha>0.
-$$ 
-
-Furthermore, we have
-
-$$
-\int_0^{\infty}\frac{e^{-x}\sin(x\sqrt{3})}{x}\,dx=\arctan\left(\sqrt{3}\right)=\frac{1}{3}\pi
-$$
-
-and
-
-$$
-\int_0^{\infty}\frac{e^{-t\sqrt{3}}\sin(t)}{t}\,dt=\int_0^{\infty}\frac{e^{-x}\sin\left(\frac{x}{\sqrt{3}}\right)}{x}\,dx=\arctan\left(\tfrac{1}{\sqrt{3}}\right)=\frac{1}{6}\pi.
-$$
 
 ::::::
 
 ## Special improper integrals
 
-There exist many special improper integrals that are often used in various applications. We will discuss some of them here.
+There exist many special improper integrals that are often used in various applications. We will discuss two of them here.
 
 ### $p$-integrals
 
@@ -1039,55 +874,67 @@ $p$-integrals can easily be analysed using the next theorem.
 :label: Thm:Integration:ImproperIntegralsPIntegrals
 For $0<a<\infty$ we have
 
-(a) $\displaystyle\int_a^{\infty}\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{p-1}, &p>1\\\infty, &p\leq1.\end{cases}$
+1. $\displaystyle\int_a^{\infty}\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{p-1}, &p>1\\\infty, &p\leq1.\end{cases}$
 
-(b) $\displaystyle\int_0^a\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{1-p}, &p<1\\\infty, &p\geq1.\end{cases}$
+1. $\displaystyle\int_0^a\frac{dx}{x^p}=\begin{cases}\dfrac{a^{1-p}}{1-p}, &p<1\\\infty, &p\geq1.\end{cases}$
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Integration:ImproperIntegralsPIntegrals`
 :class: tudproof, dropdown
 :name: Proof:Integration:ImproperIntegralsPIntegrals
 
-(a) For $p\neq1$ we have
+1. For $p\neq1$ we have
 
-$$
-\int_a^{\infty}\frac{dx}{x^p}=\lim_{R\to\infty}\int_a^R\frac{dx}{x^p}=\lim_{R\to\infty}\bigg[\frac{x^{1-p}}{1-p}\bigg]_a^R=\lim_{R\to\infty}\left(\frac{R^{1-p}}{1-p}-\frac{a^{1-p}}{1-p}\right).
-$$
+   $$
+   \int_a^{\infty}\frac{dx}{x^p}=\lim_{R\to\infty}\int_a^R\frac{dx}{x^p}=\lim_{R\to\infty}\bigg[\frac{x^{1-p}}{1-p}\bigg]_a^R=\lim_{R\to\infty}\left(\frac{R^{1-p}}{1-p}-\frac{a^{1-p}}{1-p}\right).
+   $$
 
-This limit exists if $1-p<0$ (then: $\displaystyle\lim_{R\to\infty}\frac{R^{1-p}}{1-p}=0$) and $\displaystyle\lim_{R\to\infty}\frac{R^{1-p}}{1-p}$ equals $\infty$ if $1-p>0$. For $p=1$ the integral reads $\displaystyle\int_a^{\infty}\frac{dx}{x}$ which is divergent.
+   This limit exists if $1-p<0$ (then: $\displaystyle\lim_{R\to\infty}\frac{R^{1-p}}{1-p}=0$) and $\displaystyle\lim_{R\to\infty}\frac{R^{1-p}}{1-p}$ equals $\infty$ if $1-p>0$.
+   
+   For $p=1$ the integral reads
+   
+   $$
+   \int_a^{\infty}\frac{dx}{x},
+   $$
+   
+   which is divergent.
 
-(b) For $p\neq$ we have
+1. For $p\neq1$ we have
+   
+   $$
+   \int_0^a\frac{dx}{x^p}=\lim_{c\to 0^+}\int_c^a\frac{dx}{x^p}=\lim_{c\to 0^+}\bigg[\frac{x^{1-p}}{1-p}\bigg]_c^a=\lim_{c\to 0^+}\left(\frac{a^{1-p}}{1-p}-\frac{c^{1-p}}{1-p}\right).
+   $$
 
-$$
-\int_0^a\frac{dx}{x^p}=\lim_{c\to 0^+}\int_c^a\frac{dx}{x^p}=\lim_{c\to 0^+}\bigg[\frac{x^{1-p}}{1-p}\bigg]_c^a=\lim_{c\to 0^+}\left(\frac{a^{1-p}}{1-p}-\frac{c^{1-p}}{1-p}\right).
-$$
-
-This limit exists if $1-p>0$ (then: $\displaystyle\lim_{c\to 0^+}\frac{c^{1-p}}{1-p}=0$) and $\displaystyle\lim_{c\to 0^+}\frac{c^{1-p}}{1-p}$ equals $-\infty$ if $1-p<0$. For $p=1$ the integral reads $\displaystyle\int_0^a\frac{dx}{x}$ which is divergent.
+   This limit exists if $1-p>0$ (then: $\displaystyle\lim_{c\to 0^+}\frac{c^{1-p}}{1-p}=0$) and $\displaystyle\lim_{c\to 0^+}\frac{c^{1-p}}{1-p}$ equals $-\infty$ if $1-p<0$.
+   
+   For $p=1$ the integral reads
+   
+   $$
+   \int_0^a\frac{dx}{x},
+   $$
+   
+   which is divergent.
 
 ::::::
-
-:::{todo}
-Insert an applet with the graph of $\dfrac{1}{x^p}$ where the value of $p$ can be changed (by a slider?).
-:::
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsPIntegralsExample1
 
-1) The integral $\displaystyle\int_1^{\infty}\frac{dx}{x^2}$ is convergent since it is a $p$-integral with $p=2>1$. Furthermore, we have $\displaystyle\int_1^{\infty}\frac{dx}{x^2}=1$.
+1. The integral $\displaystyle\int_1^{\infty}\frac{dx}{x^2}$ is convergent since it is a $p$-integral with $p=2>1$. Furthermore, we have $\displaystyle\int_1^{\infty}\frac{dx}{x^2}=1$.
+   
+   Using the definition, we have
+   
+   $$
+   \int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\int_1^R\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(1-\frac{1}{R}\right)=1.
+   $$
 
-Using the definition, we have
+2. The integral $\displaystyle\int_1^{\infty}\frac{dx}{x}$ is divergent since it is a $p$-integral with $p=1\leq1$.
+   
+   Using the definition, we have
 
-$$
-\int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\int_1^R\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(1-\frac{1}{R}\right)=1.
-$$
-
-2) The integral $\displaystyle\int_1^{\infty}\frac{dx}{x}$ is divergent since it is a $p$-integral with $p=1\leq1$. 
-
-Using the definition, we have
-
-$$
-\int_1^{\infty}\frac{dx}{x}=\lim_{R\to\infty}\int_1^R\frac{dx}{x}=\lim_{R\to\infty}\bigg[\ln(x)\bigg]_1^R=\lim_{R\to\infty}\ln(R)=\infty.
-$$
+   $$
+   \int_1^{\infty}\frac{dx}{x}=\lim_{R\to\infty}\int_1^R\frac{dx}{x}=\lim_{R\to\infty}\bigg[\ln(x)\bigg]_1^R=\lim_{R\to\infty}\ln(R)=\infty.
+   $$
 
 ::::::
 
@@ -1120,34 +967,171 @@ Next up is the *gamma function*:
 The **gamma function** $\Gamma(x)$ is defined by the improper integral
 
 $$
-\Gamma(x)=\int_0^{\infty}t^{x-1}e^{-t}\,dt,\quad x>0.
+\Gamma(x)=\int_0^{\infty}t^{x-1}e^{-t}\,dt.
 $$
 :::
 
-This gamma function converges for all $x>0$ and has many remarkable properties. We start by showing its convergence and then we will discuss some of its properties.
+The domain of the gamma function is $(0,\infty)$ and has many remarkable properties. We start by showing its domain, for which the proof uses the theory from this section, and then we will discuss some of its properties.
 
-Let $\displaystyle\int_0^{\infty}t^{x-1}e^{-t}\,dt=\int_0^1t^{x-1}e^{-t}\,dt+\int_1^{\infty}t^{x-1}e^{-t}\,dt$.
+:::{prf:theorem}
+:label: Thm:Integration:GammaFunctionDomain
 
-For $0\leq t\leq1$ we have $t^{x-1}e^{-1}\leq t^{x-1}e^{-t}\leq t^{x-1}$ and 
+The maximal domain $D_\Gamma$ of the gamma function is $D_\Gamma=(0,\infty)$.
+:::
 
-$$
-\int_0^1t^{x-1}\,dt=\frac{t^x}{x}\bigg|_{t=0}^1=\frac{1}{x},\quad x>0.
-$$
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:GammaFunctionDomain`
+:class: tudproof, dropdown
 
-For $t\geq1$ we use {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates` to conclude that $e^{\frac{1}{2}t}>t^{x-1}$ if $t$ is large enough. Hence there exists an integer $N$ such that for $t\geq N$ we have $e^{\frac{1}{2}t}>t^{x-1}$. Then we have
-
-$$
-\int_1^{\infty}e^{-t}t^{x-1}\,dt=\int_1^Ne^{-t}t^{x-1}\,dt+\int_N^{\infty}e^{-t}t^{x-1}\,dt
-$$
-
-with
+The maximal domain $D_\Gamma$ of the gamma function
 
 $$
-\int_N^{\infty}e^{-t}t^{x-1}\,dt < \int_N^{\infty}e^{-t}e^{\frac{1}{2}t}\,dt
-=\int_N^{\infty}e^{-\frac{1}{2}t}\,dt=\left[-2e^{-\frac{1}{2}t}\right]_N^{\infty}=2e^{\frac{1}{2}N}.
+\Gamma(x)=\int_0^{\infty}t^{x-1}e^{-t}\,dt,
 $$
 
-We conclude that $\displaystyle\int_0^{\infty}t^{x-1}e^{-t}\,dt$ converges for all $x>0$.
+is precisely the values of $x$ for which the improper integral converges.
+
+We investigate the convergence of the integral by splitting the integral in two parts:
+
+$$
+\int_0^{\infty}t^{x-1}e^{-t}\,dt=\int_0^1t^{x-1}e^{-t}\,dt+\int_1^{\infty}t^{x-1}e^{-t}\,dt.
+$$
+
+We first investigate the first part $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$. Note that for $0\leq t\leq 1$
+
+$$
+t^{x-1}e^{-1} \leq t^{x-1}e^{-t} \leq t^{x-1}.
+$$
+
+We consider four cases:
+
+1. If $x<0$, we have $x-1<0$ and as such the function $t^{x-1}$ is not continuous at $t=0$, and we find
+   
+   \begin{align*}
+   \int_0^1t^{x-1}e^{-t}\,dt &\geq \int_0^1t^{x-1}e^{-1}\,dt \\
+   &= \lim_{s\rightarrow0^+}\bigg[\frac{t^{x}}{x}e^{-1}\bigg]_s^1 \\
+   &= \lim_{s\rightarrow0^+}\frac{1}{x}e^{-1}\bigg(1- s^{x}\bigg)\\
+   &= \infty.
+   \end{align*}
+
+   So for $x<0$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ diverges and thus is $(-\infty,0)$ not part of $D_\Gamma$.
+
+1. If $x=0$, we find 
+   
+   \begin{align*}
+   \int_0^1t^{-1}e^{-t}\,dt &\geq \int_0^1t^{-1}e^{-1}\,dt \\
+   &= \lim_{s\rightarrow0^+}\bigg[\ln(t)e^{-1}\bigg]_s^1 \\
+   &= \lim_{s\rightarrow0^+}e^{-1}\bigg(0- \ln(s)\bigg)\\
+   &= \infty.
+   \end{align*}
+
+   So for $x=0$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ diverges and thus is ${0}$ not part of $D_\Gamma$.
+
+1. If $0<x<1$, we have $-1<x-1<0$ and and find
+   
+   \begin{align*}
+   \int_0^1t^{x-1}e^{-t}\,dt &\leq \int_0^1t^{x-1}\,dt \\
+   &= \lim_{s\rightarrow0^+}\bigg[\frac{t^{x}}{x}e^{-1}\bigg]_s^1 \\
+   &= \lim_{s\rightarrow0^+}e^{-1}\bigg(1- s^{x}\bigg)\\
+   &= e{-1}.
+   \end{align*}
+
+   So for $0<x<1$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ converges and thus $(0,1)$ can still be part of $D_\Gamma$.
+
+1. If $x\geq1$ the calculations become
+   
+   \begin{align*}
+   \int_0^1t^{x-1}e^{-t}\,dt &\leq \int_0^1t^{x-1}\,dt \\
+   &= \bigg[\frac{t^{x}}{x}e^{-1}\bigg]_0^1 \\
+   &= e^{-1}\bigg(1- 0\bigg)\\
+   &= e{-1}.
+   \end{align*}
+
+   So for $x\geq1$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ exists and thus $[1,\infty)$ can still be part $D_\Gamma$.
+
+From the above we find that $D_\Gamma\subseteq(0,\infty)$.
+
+Now we turn to the second part $\displaystyle\int_1^\infty t^{x-1}e^{-t}\,dt$ and show this improper integral converges. We consider two cases:
+
+1. If $0<x<1$, we have the comparison
+   
+   $$
+   t^{x-1}\leq 1,
+   $$
+
+   which gives the calculations
+
+   \begin{align*}
+   \int_1^\infty t^{x-1}e^{-t}\,dt &\leq \int_1^\infty e^{-t}\,dt \\
+   &= \lim_{R\rightarrow\infty}\bigg[-e^{-t}\bigg]_0^R \\
+   &= \lim_{s\rightarrow0^+}1-e^{-R}\\
+   &= 1.
+   \end{align*}
+
+   So for $0<x<1$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ converges and thus $(0,1)$ is part of $D_\Gamma$.
+
+1. If $x\geq1$, the above comparison does not work, but we can use {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates`. This theorem gives that the function $t^{x-1}$ grows slower than any function of the form $e^{ax}$ with $a>0$.
+
+   This means that for every $a>0$ there is some value $N\geq1$ so that
+ 
+   $$
+   t^{x-1} \leq e^{at}.
+   $$
+
+   We can use this as follows by writing, for any $a>0$,
+   
+   $$
+   \int_1^\infty t^{x-1}e^{-t}\,dt = \int_1^N t^{x-1}e^{-t}\,dt + \int_N^\infty t^{x-1}e^{-t}\,dt.
+   $$
+
+   The first integral is proper, so gives a finite value as a result. The second integral can be investigated as follows:
+
+   \begin{align*}
+   \int_N^\infty t^{x-1}e^{-t}\,dt &\leq \int_N^\infty e^{at}e^{-t}\,dt \\
+   &= \lim_{R\rightarrow\infty}\int_N^R e^{(a-1)t}\,dt \\
+   &= \lim_{R\rightarrow\infty}\bigg[\frac{1}{a-1}e^{(a-1)t}\bigg]_N^R \\
+   &= \lim_{R\rightarrow\infty}\frac{1}{a-1}\bigg(e^{(a-1)R}-e^{(a-1)N}\bigg).
+   \end{align*}
+
+   This last limit exists when $a<1$. As the above held for any $a>0$, and we only need one, we pick $a=\dfrac12$.
+   
+   We find that $\displaystyle\int_1^\infty t^{x-1}e^{-t}\,dt$ converges for $x\geq1$ and and thus $[1,\infty)$ is part of $D_\Gamma$.
+  
+In conclusion, the maximal domain $D_\Gamma$ is $(0,1)\cup[1,\infty)=(0,\infty)$.
+
+::::::
+
+In {numref}`Fig:Integration:GammaFunction` you can see the gamma function. We have alo added several circles at positions of the form $(n,n!)$, where $n!$ is the factorial of a non-negative integer $n$, see {prf:ref}`Def:SumsAndProducts:Factorial`.
+
+:::{applet}
+:url: calculus/improper_integrals/gamma_function
+:name: Fig:Integration:GammaFunction
+:class: dark-light
+
+The gamma function $\Gamma$ on its maximal domain $D_\Gamma=(0,\infty)$.\
+The vertical axis uses a logarithmic scale, so the horizontal axis represents $y=1$.
+:::
+
+
+Note that the gamma function seems to be increasing as fast as the factorials, but with a slight delay. The next theorem gives the direct relation between the gamma function and the factorial.
+
+:::{prf:theorem}
+:label: Thm:Integration:GammaFunctionFactorial
+
+For any $x>0$
+
+$$
+\Gamma(x+1) = x\Gamma(x),
+$$
+
+and for any integer $n\geq0$
+
+$$
+\Gamma(n+1)=n!.
+$$
+:::
+
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:GammaFunctionFactorial`
+:class: tudproof
 
 Note that $\Gamma(1)=\displaystyle\int_0^{\infty}e^{-t}\,dt=-e^{-t}\bigg|_0^{\infty}=1$.
 
@@ -1155,12 +1139,18 @@ Using integration by parts we obtain for $x>0$
 
 \begin{align*}
 \Gamma(x+1)&=\int_0^{\infty}t^xe^{-t}\,dt\\
-&=-t^xe^{-t}\bigg|_{t=0}^{\infty}+\int_0^{\infty}e^{-t}\,xt^{x-1}\,dt\\
+&=\bigg[-t^xe^{-t}\bigg]_{t=0}^{\infty}+\int_0^{\infty}e^{-t}\,xt^{x-1}\,dt\\
 &=0+x\int_0^{\infty}t^{x-1}e^{-t}\,dt\\
 &=x\Gamma(x).
 \end{align*}
 
-Then we have $\Gamma(2)=1\cdot\Gamma(1)=1$, $\Gamma(3)=2\cdot\Gamma(2)=2\cdot1=2$, $\Gamma(4)=3\cdot\Gamma(3)=3\cdot2=6$, and so on. We conclude that $\Gamma(n+1)=n!$ for $n=0,1,2,\ldots$. So, the gamma function can be seen as a generalisation of the factorial.
+Then we have $\Gamma(2)=1\cdot\Gamma(1)=1$, $\Gamma(3)=2\cdot\Gamma(2)=2\cdot1=2$, $\Gamma(4)=3\cdot\Gamma(3)=3\cdot2=6$, and so on.
+
+We conclude that $\Gamma(n+1)=n!$ for $n=0,1,2,\ldots$.
+
+::::::
+
+So, the gamma function can be seen as a generalisation of the factorial. You can investigate this relation using the toggle in {numref}`Fig:Integration:GammaFunction`.
 
 Furthermore, using the substitution $t=u^2$ we have
 
@@ -1170,96 +1160,7 @@ $$
  
 Later (see {prf:ref}`Ex:MultivariableIntegration:PolarApplicationsExample2`) we will prove that $\displaystyle\int_0^{\infty}e^{-u^2}\,du=\frac{1}{2}\sqrt{\pi}$. This implies that $\Gamma(\frac{1}{2})=\sqrt{\pi}$.
 
-### The Dirichlet integral
 
-Now we turn our attention to the *Dirichlet integral*:
-
-:::{prf:definition} The Dirichlet integral
-:label: Def:Integration:ImproperIntegralsDirichletIntegral
-
-The **Dirichlet integral** is defined by the improper integral
-
-$$
-\int_0^{\infty}\frac{\sin(x)}{x}\,dx.
-$$
-
-:::
-
-This integral is named after the German mathematician [Johann Peter Gustav Lejeune Dirichlet (1805-1859)](https://en.wikipedia.org/wiki/Peter_Gustav_Lejeune_Dirichlet).
-
-This special integral can be evaluated using the Feynman method, which leads to the following result.
-
-::::::{prf:Theorem} The Dirichlet integral
-:label: Thm:Integration:ImproperIntegralsDirichletIntegral
-
-$$
-\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\frac{1}{2}\pi.
-$$
-
-::::::
-
-::::::{admonition} Proof of {prf:ref}`Thm:Integration:ImproperIntegralsDirichletIntegral`
-:class: tudproof, dropdown
-:name: Proof:Integration:ImproperIntegralsDirichletIntegral
-
-We start by showing that the integral converges. First we write
-
-$$
-\int_0^{\infty}\frac{\sin(x)}{x}\,dx=\int_0^1\frac{\sin(x)}{x}\,dx+\int_1^{\infty}\frac{\sin(x)}{x}\,dx.
-$$
-
-Since $\displaystyle\lim\limits_{x\to 0^+}\frac{\sin(x)}{x}=1$, the first integral on the right exists. For the second integral on the right we have
-
-$$
-\int_1^{\infty}\frac{\sin(x)}{x}\,dx=\lim_{R\to\infty}\int_1^R\frac{\sin(x)}{x}\,dx.
-$$
-
-Using integration by parts we obtain
-
-\begin{align*}
-\int_1^R\frac{\sin(x)}{x}\,dx&=-\frac{\cos(x)}{x}\bigg|_1^R-\int_1^R\frac{\cos(x)}{x^2}\,dx\\
-&=\cos(1)-\frac{\cos(R)}{R}-\int_1^R\frac{\cos(x)}{x^2}\,dx.
-\end{align*}
-
-Now we have
-
-$$
-\left|\int_1^R\frac{\cos(x)}{x^2}\,dx\right|\leq\int_1^R\left|\frac{\cos(x)}{x^2}\right|\,dx\leq\int_1^R\frac{1}{x^2}\,dx=\left[-\frac{1}{x}\right]_1^R=1-\frac{1}{R}.
-$$
-
-Since $\displaystyle\lim_{R\to\infty}\frac{\cos(R)}{R}=0$ and $\displaystyle\lim_{R\to\infty}\frac{1}{R}=0$ we conclude that $\displaystyle\int_1^{\infty}\frac{\sin(x)}{x}\,dx$ converges.
-
-This shows that $\displaystyle\int_0^{\infty}\frac{\sin(x)}{x}\,dx$ is convergent.
-
-Now let: $I(t)=\displaystyle\int_0^{\infty}e^{-xt}\frac{\sin(x)}{x}\,dx$. Then we have
-
-\begin{align*}
-I'(t)&=-\int_0^{\infty}e^{-xt}\sin(x)\,dx\\
-&=e^{-xt}\cos(x)\bigg|_0^{\infty}-\int_0^{\infty}\cos(x)\,(-t)e^{-xt}\,dx\\
-&=-1+t\int_0^{\infty}e^{-xt}\cos(x)\,dx\\
-&=-1+te^{-xt}\sin(x)\bigg|_0^{\infty}-t\int_0^{\infty}\sin(x)\,(-t)e^{-xt}\,dx\\
-&=-1+t^2\int_0^{\infty}e^{-xt}\sin(x)\,dx.
-\end{align*}
-
-This implies that $\displaystyle\int_0^{\infty}e^{-xt}\sin(x)\,dx=\frac{1}{1+t^2}$ and therefore $I'(t)=-\dfrac{1}{1+t^2}$. So
-
-$$
-I(t)=-\arctan(t)+C.
-$$
-
-Note that $0=\displaystyle\lim\limits_{t\to\infty}I(t)=-\frac{1}{2}\pi+C$, which implies that $C=\dfrac{1}{2}\pi$. We conclude that
-
-$$
-I(t)=-\arctan(t)+\frac{1}{2}\pi
-$$
-
-and finally that
-
-$$
-\int_0^{\infty}\frac{\sin(x)}{x}\,dx=I(0)=\frac{1}{2}\pi.
-$$
-
-::::::
 
 ## Grasple exercises
 
