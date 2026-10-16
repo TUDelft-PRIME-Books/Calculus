@@ -1,3 +1,5 @@
+(Section:SurfacesR3)=
+
 # Surfaces in $\mathbb{R}^3$
 
 In this section we cover:
