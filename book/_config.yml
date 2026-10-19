@@ -89,6 +89,10 @@ sphinx:
       'in {numref}`Section %s <Sec:DeterminantsViaCofactors>`': "in [Section 5.1 of our Linear Algebra book](https://interactivetextbooks.tudelft.nl/linear-algebra/Chapter5/DeterminantsViaCofactors.html)"
       '```{iframe} ../references.html': "```{iframe} ../../../../../references.html"
       ':url: vectors/3Daddition': ":url: vectors/3Daddition\n:name: Fig:Vectors:3DAddition"
+      '<!-- DO NOT REMOVE/CHANGE THIS COMMENT: It is used in the Calculus Book to add a necessary remark. HexCode: 36a611 -->': |
+        :::{important}
+        We have now given two, seemingly distinct, definitions of $\mathbb{R}^n$: in {numref}`Sec:CoordinateSystems` we have introduced $\mathbb{R}^n$ as the set of all points with $n$ entries, while in {prf:ref}`Dfn:Vectors:Vectors` we have defined it as the set of all (column) vectors with $n$ entries. Since there is a direct correspondence between the point $(x_1,\ldots,x_n)$ and the vector $\begin{pmatrix}x_{1}\\x_{2}\\\vdots\\x_{n}\end{pmatrix}$ this is no issue in practice. Throughout this book, we will sometimes interpret elements of $\mathbb{R}^n$ as points and sometimes as column vectors, depending on the context. At the end of this section, we will also see that there is a direct geometrical connection between these two interpretations.
+        :::
     mathjax3_config:
       loader:
         load: ['[tex]/cancel']
