@@ -32,16 +32,6 @@ $$
 
 ::::::
 
-:::{important}
-We have now given two, seemingly distinct, definitions of $\mathbb{R}^n$: in {numref}`Sec:CoordinateSystems` we have introduced $\mathbb{R}^n$ as the set of all points with $n$ entries, while in {prf:ref}`Dfn:Vectors:Vectors` we have defined it as the set of all (column) vectors with $n$ entries. Since there is a direct correspondence between the point $(x_1,\ldots,x_n)$ and the vector $\begin{pmatrix}
-x_{1}\\x_{2}\\\vdots\\x_{n}
-\end{pmatrix}$ this is no issue in practice. Throughout this book, we will sometimes interpret elements of $\mathbb{R}^n$ as points and sometimes as column vectors, depending on the context. At the end of this section, we will also see that there is a direct geometrical connection between these two interpretations.
-:::
-
-:::{todo}
-Move this important block below Definition 2.1.1.
-:::
-
 :::{fetch} {prf:ref}`Notation:Functions1var:Codomain`
 :::
 
@@ -244,7 +234,7 @@ $$
 
 Since $D_f$ is a subset of $\mathbb{R}^n$, we can view the graph of $f$ as a subset of $\mathbb{R}^{n+1}$, where for each point in this graph the first $n$ entries correspond to the input variables and the final entry corresponds to the output variable. This means that we can visualise graphs of functions of two variables as surfaces in $\mathbb{R}^3$. Drawing these by hand is typically harder than drawing graphs of single-variable functions, but it is often doable and otherwise, computer graphing software can be used to visualise the graph. 
 
-:::{figure} Images/Fig-Functionsmultivar-Graph2d.png
+:::{figure} images/Fig-Functionsmultivar-Graph2d.png
 :name: Fig:Graph2d
 :class: dark-light
 
