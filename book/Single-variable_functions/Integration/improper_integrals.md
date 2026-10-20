@@ -43,7 +43,7 @@ Let us first consider the case where the interval of integration is *not finite*
 
 Improper integrals over such intervals are defined as a (sum of) limit(s) which may or may not exist. We will give a definition for each of the three types of infinite intervals of integration.
 
-::::::{prf:Definition} Improper integral with right-infinite interval of integration
+::::::{prf:Definition} Improper integral with a right-infinite interval of integration
 :label: Def:Integration:ImproperIntegralInfiniteIntervalRight
 
 If $f$ is continuous on the interval $[a,\infty)$, then
@@ -58,7 +58,7 @@ If the limit exists, we say that the improper integral $\displaystyle\int_a^{\in
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^{\infty}f(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integral with left-infinite interval of integration
+::::::{prf:Definition} Improper integral with a left-infinite interval of integration
 :label: Def:Integration:ImproperIntegralInfiniteIntervalLeft
 
 If $f$ is continuous on the interval $(-\infty,b]$, then
@@ -73,7 +73,7 @@ If the limit exists, we say that the improper integral $\displaystyle\int_{-\inf
 If the limit does not exist, we say that the improper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_{-\infty}^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integral with double-infinite interval of integration
+::::::{prf:Definition} Improper integral with a double-infinite interval of integration
 :label: Def:Integration:ImproperIntegralInfiniteIntervalDouble
 
 If $f$ is continuous on the interval $(-\infty,\infty)$, then
@@ -113,7 +113,7 @@ This function $\displaystyle\frac{1}{x\sqrt{x}}$ is continuous on $[1,\infty)$ a
 \begin{align*}
 \int_1^{\infty}\frac{dx}{x\sqrt{x}} &= \lim_{R\to\infty}\int_1^R\frac{dx}{x\sqrt{x}} \\
 &= \lim_{R\to\infty}\bigg[-\frac{2}{\sqrt{x}}\bigg]_1^R \\
-&= \lim_{R\to\infty}\left(2-\frac{2}{\sqrt{R}}\right) \\
+&= \lim_{R\to\infty}\left(-\frac{2}{\sqrt{R}}+2\right) \\
 &= 2.
 \end{align*}
 
@@ -159,34 +159,38 @@ The function $\displaystyle\frac{1}{1+x^2}$ on the interval $(-\infty,\infty)$.
 We start by splitting the integral into two integrals as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalDouble`:
 
 $$
-\int_{-\infty}^{\infty}\frac{dx}{1+x^2}=\int_{-\infty}^0\frac{dx}{1+x^2}+\int_0^{\infty}\frac{dx}{1+x^2}.
+\int_{-\infty}^{\infty}\frac{dx}{1+x^2}=\int_{-\infty}^0\frac{dx}{1+x^2}+\int_0^{\infty}\frac{dx}{1+x^2}
 $$
 
-In this case we choose the central point $c=0$ but we could have chosen any other value of $c\in\mathbb{R}$ as well. The value of the integral does not depend on the choice of $c$. 
+with $c\in\mathbb{R}$ arbitrary.
 
 Now we have for the first integral
 
 \begin{align*}
-\int_{-\infty}^0\frac{dx}{1+x^2} &= \lim_{R\to-\infty}\int_R^0\frac{dx}{1+x^2} \\
-&= \lim_{R\to-\infty}\bigg[\arctan(x)\bigg]_R^0\\
-&= \lim_{R\to-\infty}\left(-\arctan(R)\right) \\
-&=\frac{1}{2}\pi
+\int_{-\infty}^c\frac{dx}{1+x^2} &= \lim_{R\to-\infty}\int_R^c\frac{dx}{1+x^2} \\
+&= \lim_{R\to-\infty}\bigg[\arctan(x)\bigg]_R^c\\
+&= \lim_{R\to-\infty}\left(\arctan(c)-\arctan(R)\right) \\
+&=\arctan(c)+\frac{1}{2}\pi
 \end{align*}
 
 and for the second integral
 
 \begin{align*}
-\int_0^{\infty}\frac{dx}{1+x^2}&=\lim_{R\to\infty}\int_0^R\frac{dx}{1+x^2}\\
-&=\lim_{R\to\infty}\bigg[\arctan(x)\bigg]_0^R\\
-&=\lim_{R\to\infty}\arctan(R)\\
-&=\frac{1}{2}\pi.
+\int_c^{\infty}\frac{dx}{1+x^2}&=\lim_{R\to\infty}\int_c^R\frac{dx}{1+x^2}\\
+&=\lim_{R\to\infty}\bigg[\arctan(x)\bigg]_c^R\\
+&=\lim_{R\to\infty}\left(\arctan(R)-\arctan(c)\right)\\
+&=\frac{1}{2}\pi-\arctan(c).
 \end{align*}
 
 Hence, we have
 
-$$
-\int_{-\infty}^{\infty}\frac{dx}{1+x^2} = \int_{-\infty}^0\frac{dx}{1+x^2}+\int_0^{\infty}\frac{dx}{1+x^2} = \frac{1}{2}\pi+\frac{1}{2}\pi = \pi.
-$$
+\begin{align*}
+\int_{-\infty}^{\infty}\frac{dx}{1+x^2} &= \int_{-\infty}^c\frac{dx}{1+x^2}+\int_c^{\infty}\frac{dx}{1+x^2}\\
+&= \arctan(c)+\frac{1}{2}\pi+\frac{1}{2}\pi-\arctan(c)\\
+&= \pi.
+\end{align*}
+
+Note that the value of the integral does not depend on the choice of $c$. So, we could have chosen $c=0$ for simplicity.
 
 ::::::
 
@@ -244,6 +248,7 @@ $$
 
 since $\infty$ is not a real number.
 
+Hence, the integral $\displaystyle\int_{-\infty}^{\infty}\frac{x}{1+x^2}\,dx$ *diverges*.
 ::::::
 
 ::::::{prf:Example}
@@ -313,7 +318,7 @@ This limit does not exist and is neither $\infty$ nor $-\infty$. In this case we
 We will often use the short notation $\displaystyle\int_1^{\infty}\frac{dx}{x^2}=\bigg[-\frac{1}{x}\bigg]_1^{\infty}=1$. This means
 
 $$
-\int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(1-\frac{1}{R}\right)=1.
+\int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(-\frac{1}{R}+1\right)=1.
 $$
 
 ::::::
@@ -330,11 +335,11 @@ Having discussed the intervals of integration, we now turn our attention to the 
 
 In particular, we do not require the integrand to be unbounded near the point of failing continuity, but it may be unbounded as well.
 
-The way we define improper integrals with an integrand that is not continuous is more general than the way it is often defined in other textbooks, where the integrand is required to be unbounded near the point of where continuity fails.
+The way we define improper integrals with an integrand that is not continuous is more general than the way it is often defined in other textbooks, where the integrand is required to be unbounded at the point of where continuity fails.
 
 For each of the three cases we will define how to handle the improper integral $\displaystyle\int_a^bf(x)\,dx$.
 
-::::::{prf:Definition} Improper integral with not-continuous integrand at left endpoint
+::::::{prf:Definition} Improper integral with not-continuous integrand at the left endpoint
 :label: Def:Integration:ImproperIntegralLeftNotContinuousIntegrand
 
 If $f$ is continuous on the interval $(a,b]$, then
@@ -349,7 +354,7 @@ If the limit exists, we say that the improper integral $\displaystyle\int_a^bf(x
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integral with not-continuous integrand at right endpoint
+::::::{prf:Definition} Improper integral with not-continuous integrand at the right endpoint
 :label: Def:Integration:ImproperIntegralRightNotContinuousIntegrand
 
 If $f$ is continuous on the interval $[a,b)$, then
@@ -364,7 +369,7 @@ If the limit exists, we say that the improper integral $\displaystyle\int_a^bf(x
 If the limit does not exist, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ is **divergent**. If the limit does not exist and equals $\infty$ or $-\infty$, we say that the improper integral $\displaystyle\int_a^bf(x)\,dx$ **diverges to infinity** or **diverges to negative infinity**, respectively.
 ::::::
 
-::::::{prf:Definition} Improper integral with not-continuous integrand at internal point
+::::::{prf:Definition} Improper integral with not-continuous integrand at an internal point
 :label: Def:Integration:ImproperIntegralInternalNotContinuousIntegrand
 
 If $f$ is not continuous at some point $c\in(a,b)$, then
@@ -423,7 +428,7 @@ At this point we can already conclude that the integral $\displaystyle\int_{-1}^
 &= \infty.
 \end{align*}
 
-Because both integrals diverge to infinity, we say that the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ diverges to infinity, which we can write (informally) as
+Since both integrals diverge to infinity, we say that the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ diverges to infinity, which we can write (informally) as
 
 $$
 \int_{-1}^1\frac{dx}{x^2}=\infty.
@@ -480,7 +485,7 @@ and
 &= \infty.
 \end{align*}
 
-Because both integrals diverge, we say that the improper integral $\displaystyle\int_0^3\frac{dx}{x-1}$ diverges.
+Since both integrals diverge, we say that the improper integral $\displaystyle\int_0^3\frac{dx}{x-1}$ diverges.
 
 ::::::
 
@@ -499,7 +504,7 @@ $$
 \int_0^3\frac{dx}{x-1}=\ln|x-1|\bigg|_0^3=\ln(2)-\ln(1)=\ln(2).
 $$
 
-Since the integrand is not continuous at $x=1$ the fundamental theorem does not apply on $[0,3]$.
+Since the integrand is not continuous at $x=1$ the fundamental theorem does not apply.
 ::::::
 
 ::::::{prf:Example}
@@ -551,7 +556,7 @@ It may happen that a definite integral $\displaystyle\int_a^bf(x)\,dx$ is improp
 
 ## Combinations of improperness
 
-If the integrand $f$ is not continuous on the interval of integration and the interval of integration is infinite, we repeatedly apply the definitions {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight` until {prf:ref}`Def:Integration:ImproperIntegralInternalNotContinuousIntegrand` from the previous two subsections, which we showcase in the next example.
+If the integrand $f$ is not continuous on the interval of integration and the interval of integration is infinite, we repeatedly apply the definitions {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight` until {prf:ref}`Def:Integration:ImproperIntegralInternalNotContinuousIntegrand` from the previous two subsections, which we show in the next example.
 
 ::::::{prf:Example}
 :label: Ex:Integration:ImproperIntegralsNotContinuousIntegrandExample4
@@ -566,7 +571,7 @@ $$
 \int_0^{\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx = \lim_{R\rightarrow\infty}\int_0^{R}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx.
 $$
 
-To evaluate the limit, we must first evaluate the new integral, which using {prf:ref}`Def:Integration:ImproperIntegralLeftNotContinuousIntegrand` becomes
+To evaluate the limit, we must first evaluate the latter integral, which using {prf:ref}`Def:Integration:ImproperIntegralLeftNotContinuousIntegrand` becomes
 
 $$
 \int_0^{R}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx = \lim_{t\rightarrow0^{+}}\int_t^{R}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx.
@@ -578,16 +583,17 @@ For $0<t<x<R$ we apply the substitution $x=u^2$ and therefore $dx=2u\,du$ to obt
 \int_t^R\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx&=\int_{\sqrt{t}}^{\sqrt{R}}\frac{e^{-u}}{u}\cdot2u\,du\\
 &=\int_{\sqrt{t}}^{\sqrt{R}}2e^{-u}\,dx\\
 &=\Big[-2e^{-u}\Big]_{\sqrt{t}}^{\sqrt{R}}\\
-&=2e^{-\sqrt{t}}-2e^{-\sqrt{R}}.
+&=-2e^{-\sqrt{R}}+2e^{-\sqrt{t}}.
 \end{align*}
 
 Hence, we have
 
 \begin{align*}
-\int_0^{\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx&=\lim_{R\to\infty}\lim_{t\to 0^+}\int_t^R\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx\\
-&=\lim_{R\to\infty}\lim_{t\to 0^+}\left(2e^{-\sqrt{t}}-2e^{-\sqrt{R}}\right)\\
-&=\lim_{t\to 0^+}2e^{-\sqrt{t}}-\lim_{R\to\infty}2e^{-\sqrt{R}}\\
-&=2-0\\
+\int_0^{\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx
+&=\lim_{R\to\infty}\lim_{t\to 0^+}\int_t^R\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx\\
+&=\lim_{R\to\infty}\lim_{t\to 0^+}\left(-2e^{-\sqrt{R}}+2e^{-\sqrt{t}}\right)\\
+&=-\lim_{R\to\infty}2e^{-\sqrt{R}}+\lim_{t\to 0^+}2e^{-\sqrt{t}}\\
+&=0+2\\
 &=2.
 \end{align*}
 
@@ -671,7 +677,7 @@ $$
 For $0\leq x\leq1$ we have $0<e^{-x^2}\leq1$, and thus
 
 $$
-0<\int_0^{\infty}e^{-x^2}\,dx\leq\int_0^1\,dx=1.
+0<\int_0^1e^{-x^2}\,dx\leq\int_0^1\,dx=1.
 $$
 
 For $x\geq1$ we have $x^2\geq x$, so $-x^2\leq-x$ and $0<e^{-x^2}\leq e^{-x}$. Thus
@@ -699,7 +705,7 @@ $$
 
 In {prf:ref}`Ex:Integration:ImproperIntegralsComparisonExample2` we used the inequality $e^{-x^2}\leq e^{-x}$ for the comparison test for improper integrals, which also resulted in an approximation for the integral $\displaystyle\int_{0}^{\infty}e^{-x^2}\,dx$.
 
-In order to find another approximation and not wanting to split the integral in two parts, we want to find a $c\in\mathbb{R}$ such that
+In order to find another approximation and not needing to split the integral into two parts, we want to find a $c\in\mathbb{R}$ such that
 
 - $e^{-x^2}\leq e^{-x+c}$ for all $x\geq0$;
 
@@ -744,22 +750,28 @@ The functions $e^{-x^2}$ and $e^{-x+c}$, with the value of $c$ changeable with t
 
 Instead of using a function of the form $e^{-x+c}$ to use in the comparison with $e^{-x^2}$ to get an upper bound for $\displaystyle\int_{0}^{\infty}e^{-x^2}\,dx$, we can take it one step further and use a function of the form $e^{bx+c}$.
 
-Similar to the question above, we want $b$ and $c$ such that the equation $-x^2=bx+c$ has one solution for $x$. This only occurs if the discriminant $b^2-4c$ of the equivalent equation $x^2+bx+c=0$ equals zero. Solving for $b$ gives the relation
+Similar to the question above, we want $b$ and $c$ such that the equation $-x^2=bx+c$ has one solution for $x$. This only occurs if $b\neq0$ and the discriminant $b^2-4c$ of the equivalent equation $x^2+bx+c=0$ equals zero. Solving for $c$ gives the relation
 
 $$
-c = \frac14b^2,
+c = \frac14b^2.
+$$
+
+Hence, we have
+
+$$
+e^{-x^2}\leq e^{bx+c}=e^{bx+\frac{1}{4}b^2}\quad\text{for all}\quad x\geq 0.
 $$
 
 Using this relation to find an upper bound for $\displaystyle\int_{0}^{\infty}e^{-x^2}\,dx$ gives:
 
-\begin{align*}
-\int_{0}^{\infty}e^{-x^2}\,dx &\leq \int_{0}^{\infty}e^{bx+c}\,dx \\
-&= \bigg[\frac{1}{\sqrt{b}}e^{bx+\frac14b^2}\bigg]_{0}^{\infty}
-&= \left\{\begin{array}{rcl}
+$$
+\int_0^{\infty}e^{-x^2}\,dx \leq \int_0^{\infty}e^{bx+\frac{1}{4}b^2}\,dx
+= \bigg[\frac{1}{b}e^{bx+\frac14b^2}\bigg]_{0}^{\infty}
+= \left\{\begin{array}{rcl}
 -\frac{1}{b}e^{\frac14b^2} & \text{for} & b<0, \\
-\infty & \text{for} & b\geq0, \\
+\infty & \text{for} & b>0. \\
 \end{array}\right.
-\end{align*}
+$$
 
 Note that if $b<0$, the approximation becomes positive, as we should expect.
 
@@ -778,10 +790,10 @@ $$
 The only viable solution of this equation is $b=-\sqrt{2}$, as $b$ should be negative, and gives the upper bound:
 
 $$
-\int_{0}^{\infty}e^{-x^2}\,dx \leq I(\sqrt{2}) = \frac{\sqrt{e}}{\sqrt{2}}.
+\int_{0}^{\infty}e^{-x^2}\,dx \leq I(\sqrt{2}) = \frac{1}{\sqrt{2}}e^{\frac{1}{2}} = \sqrt{\frac{e}{2}}.
 $$
 
-{numref}`Fig:IntegrationImproperIntegralsComparisonB` shows the both the original function and our new approximation.
+{numref}`Fig:IntegrationImproperIntegralsComparisonB` shows both the original function and our new approximation.
 
 :::{applet}
 :url: calculus/improper_integrals/comparing_improper_integrals_2
@@ -925,7 +937,7 @@ For $0<a<\infty$ we have
    Using the definition, we have
    
    $$
-   \int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\int_1^R\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(1-\frac{1}{R}\right)=1.
+   \int_1^{\infty}\frac{dx}{x^2}=\lim_{R\to\infty}\int_1^R\frac{dx}{x^2}=\lim_{R\to\infty}\bigg[-\frac{1}{x}\bigg]_1^R=\lim_{R\to\infty}\left(-\frac{1}{R}+1\right)=1.
    $$
 
 2. The integral $\displaystyle\int_1^{\infty}\frac{dx}{x}$ is divergent since it is a $p$-integral with $p=1\leq1$.
@@ -971,7 +983,7 @@ $$
 $$
 :::
 
-The domain of the gamma function is $(0,\infty)$ and has many remarkable properties. We start by showing its domain, for which the proof uses the theory from this section, and then we will discuss some of its properties.
+The domain of the gamma function is $(0,\infty)$ and it has many remarkable properties. We start by showing its domain, for which the proof uses the theory from this section, and then we will discuss some of its properties.
 
 :::{prf:theorem}
 :label: Thm:Integration:GammaFunctionDomain
@@ -1009,41 +1021,41 @@ We consider four cases:
    \begin{align*}
    \int_0^1t^{x-1}e^{-t}\,dt &\geq \int_0^1t^{x-1}e^{-1}\,dt \\
    &= \lim_{s\rightarrow0^+}\bigg[\frac{t^{x}}{x}e^{-1}\bigg]_s^1 \\
-   &= \lim_{s\rightarrow0^+}\frac{1}{x}e^{-1}\bigg(1- s^{x}\bigg)\\
+   &= \lim_{s\rightarrow0^+}\frac{1}{x}e^{-1}\left(1-s^{x}\right)\\
    &= \infty.
    \end{align*}
 
    So for $x<0$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ diverges and thus is $(-\infty,0)$ not part of $D_\Gamma$.
 
-1. If $x=0$, we find 
+2. If $x=0$, we find 
    
    \begin{align*}
-   \int_0^1t^{-1}e^{-t}\,dt &\geq \int_0^1t^{-1}e^{-1}\,dt \\
+   \int_0^1t^{x-1}e^{-t}\,dt &= \int_0^1t^{-1}e^{-1}\,dt \\
    &= \lim_{s\rightarrow0^+}\bigg[\ln(t)e^{-1}\bigg]_s^1 \\
-   &= \lim_{s\rightarrow0^+}e^{-1}\bigg(0- \ln(s)\bigg)\\
+   &= \lim_{s\rightarrow0^+}e^{-1}\left(0-\ln(s)\right)\\
    &= \infty.
    \end{align*}
 
    So for $x=0$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ diverges and thus is ${0}$ not part of $D_\Gamma$.
 
-1. If $0<x<1$, we have $-1<x-1<0$ and and find
+3. If $0<x<1$, we have $-1<x-1<0$ and we find
    
    \begin{align*}
    \int_0^1t^{x-1}e^{-t}\,dt &\leq \int_0^1t^{x-1}\,dt \\
-   &= \lim_{s\rightarrow0^+}\bigg[\frac{t^{x}}{x}e^{-1}\bigg]_s^1 \\
-   &= \lim_{s\rightarrow0^+}e^{-1}\bigg(1- s^{x}\bigg)\\
-   &= e{-1}.
+   &= \lim_{s\rightarrow0^+}\bigg[\frac{t^{x}}{x}\bigg]_s^1 \\
+   &= \lim_{s\rightarrow0^+}\frac{1}{x}\left(1-s^{x}\right)\\
+   &= \frac{1}{x}.
    \end{align*}
 
    So for $0<x<1$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ converges and thus $(0,1)$ can still be part of $D_\Gamma$.
 
-1. If $x\geq1$ the calculations become
+4. If $x\geq1$ the calculations become
    
    \begin{align*}
    \int_0^1t^{x-1}e^{-t}\,dt &\leq \int_0^1t^{x-1}\,dt \\
-   &= \bigg[\frac{t^{x}}{x}e^{-1}\bigg]_0^1 \\
-   &= e^{-1}\bigg(1- 0\bigg)\\
-   &= e{-1}.
+   &= \bigg[\frac{t^{x}}{x}\bigg]_0^1 \\
+   &= \frac{1}{x}\left(1- 0\right)\\
+   &= \frac{1}{x}.
    \end{align*}
 
    So for $x\geq1$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ exists and thus $[1,\infty)$ can still be part $D_\Gamma$.
@@ -1063,18 +1075,18 @@ Now we turn to the second part $\displaystyle\int_1^\infty t^{x-1}e^{-t}\,dt$ an
    \begin{align*}
    \int_1^\infty t^{x-1}e^{-t}\,dt &\leq \int_1^\infty e^{-t}\,dt \\
    &= \lim_{R\rightarrow\infty}\bigg[-e^{-t}\bigg]_0^R \\
-   &= \lim_{s\rightarrow0^+}1-e^{-R}\\
+   &= \lim_{s\rightarrow0^+}\left(-e^{-R}+1\right)\\
    &= 1.
    \end{align*}
 
    So for $0<x<1$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ converges and thus $(0,1)$ is part of $D_\Gamma$.
 
-1. If $x\geq1$, the above comparison does not work, but we can use {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates`. This theorem gives that the function $t^{x-1}$ grows slower than any function of the form $e^{ax}$ with $a>0$.
+2. If $x\geq1$, the above comparison does not work, but we can use {prf:ref}`Theorem:LimitAtInfinity:Standardgrowthrates`. This theorem gives that the function $t^{x-1}$ grows slower than any function of the form $e^{ax}$ with $a>0$.
 
    This means that for every $a>0$ there is some value $N\geq1$ so that
  
    $$
-   t^{x-1} \leq e^{at}.
+   t^{x-1} \leq e^{at}\quad\text{for}\quad t\geq N.
    $$
 
    We can use this as follows by writing, for any $a>0$,
@@ -1094,13 +1106,61 @@ Now we turn to the second part $\displaystyle\int_1^\infty t^{x-1}e^{-t}\,dt$ an
 
    This last limit exists when $a<1$. As the above held for any $a>0$, and we only need one, we pick $a=\dfrac12$.
    
-   We find that $\displaystyle\int_1^\infty t^{x-1}e^{-t}\,dt$ converges for $x\geq1$ and and thus $[1,\infty)$ is part of $D_\Gamma$.
+   We find that $\displaystyle\int_1^\infty t^{x-1}e^{-t}\,dt$ converges for $x\geq1$ and thus $[1,\infty)$ is part of $D_\Gamma$.
   
 In conclusion, the maximal domain $D_\Gamma$ is $(0,1)\cup[1,\infty)=(0,\infty)$.
 
 ::::::
 
-In {numref}`Fig:Integration:GammaFunction` you can see the gamma function. We have alo added several circles at positions of the form $(n,n!)$, where $n!$ is the factorial of a non-negative integer $n$, see {prf:ref}`Def:SumsAndProducts:Factorial`.
+The Gamma function satisfies the so-called *functional relation* given in the next theorem.
+
+:::{prf:theorem}
+:label: Thm:Integration:GammaFunctionRelation
+
+For any $x>0$ we have
+
+$$
+\Gamma(x+1) = x\,\Gamma(x).
+$$
+
+:::
+
+::::::{admonition} Proof of {prf:ref}`Thm:Integration:GammaFunctionRelation`
+:class: tudproof
+
+Using integration by parts we obtain for $x>0$
+
+\begin{align*}
+\Gamma(x+1)&=\int_0^{\infty}t^xe^{-t}\,dt\\
+&=\bigg[-t^xe^{-t}\bigg]_{t=0}^{\infty}+\int_0^{\infty}e^{-t}\,xt^{x-1}\,dt\\
+&=0+x\int_0^{\infty}t^{x-1}e^{-t}\,dt\\
+&=x\,\Gamma(x).
+\end{align*}
+
+::::::
+
+:::{prf:corollary}
+:label: Cor:Integration:GammaFunctionFactorial
+
+For any integer $n\geq0$ we have
+
+$$
+\Gamma(n+1)=n!.
+$$
+
+:::
+
+::::::{admonition} Proof of {prf:ref}`Cor:Integration:GammaFunctionFactorial`
+:class: tudproof
+
+Note that $\Gamma(1)=\displaystyle\int_0^{\infty}e^{-t}\,dt=-e^{-t}\bigg|_0^{\infty}=1$.
+
+Then, using {prf:ref}`Thm:Integration:GammaFunctionRelation`, we have $\Gamma(2)=1\cdot\Gamma(1)=1$, $\Gamma(3)=2\cdot\Gamma(2)=2\cdot1=2$, $\Gamma(4)=3\cdot\Gamma(3)=3\cdot2=6$, and so on.
+
+We conclude that $\Gamma(n+1)=n!$ for $n=0,1,2,\ldots$.
+::::::
+
+So, the gamma function can be seen as a generalisation of the factorial, which is illustrated in {numref}`Fig:Integration:GammaFunction`.
 
 :::{applet}
 :url: calculus/improper_integrals/gamma_function
@@ -1111,56 +1171,17 @@ The gamma function $\Gamma$ on its maximal domain $D_\Gamma=(0,\infty)$.\
 The vertical axis uses a logarithmic scale, so the horizontal axis represents $y=1$.
 :::
 
-
-Note that the gamma function seems to be increasing as fast as the factorials, but with a slight delay. The next theorem gives the direct relation between the gamma function and the factorial.
-
-:::{prf:theorem}
-:label: Thm:Integration:GammaFunctionFactorial
-
-For any $x>0$
-
-$$
-\Gamma(x+1) = x\Gamma(x),
-$$
-
-and for any integer $n\geq0$
-
-$$
-\Gamma(n+1)=n!.
-$$
-:::
-
-::::::{admonition} Proof of {prf:ref}`Thm:Integration:GammaFunctionFactorial`
-:class: tudproof
-
-Note that $\Gamma(1)=\displaystyle\int_0^{\infty}e^{-t}\,dt=-e^{-t}\bigg|_0^{\infty}=1$.
-
-Using integration by parts we obtain for $x>0$
-
-\begin{align*}
-\Gamma(x+1)&=\int_0^{\infty}t^xe^{-t}\,dt\\
-&=\bigg[-t^xe^{-t}\bigg]_{t=0}^{\infty}+\int_0^{\infty}e^{-t}\,xt^{x-1}\,dt\\
-&=0+x\int_0^{\infty}t^{x-1}e^{-t}\,dt\\
-&=x\Gamma(x).
-\end{align*}
-
-Then we have $\Gamma(2)=1\cdot\Gamma(1)=1$, $\Gamma(3)=2\cdot\Gamma(2)=2\cdot1=2$, $\Gamma(4)=3\cdot\Gamma(3)=3\cdot2=6$, and so on.
-
-We conclude that $\Gamma(n+1)=n!$ for $n=0,1,2,\ldots$.
-
-::::::
-
-So, the gamma function can be seen as a generalisation of the factorial. You can investigate this relation using the toggle in {numref}`Fig:Integration:GammaFunction`.
-
-Furthermore, using the substitution $t=u^2$ we have
+Finally, using the substitution $t=u^2$ we have
 
 $$
 \Gamma(\tfrac{1}{2})=\int_0^{\infty}t^{-\frac{1}{2}}e^{-t}\,dt=\int_0^{\infty}u^{-1}e^{-u^2}\cdot2u\,du=2\int_0^{\infty}e^{-u^2}\,du.
 $$
  
-Later (see {prf:ref}`Ex:MultivariableIntegration:PolarApplicationsExample2`) we will prove that $\displaystyle\int_0^{\infty}e^{-u^2}\,du=\frac{1}{2}\sqrt{\pi}$. This implies that $\Gamma(\frac{1}{2})=\sqrt{\pi}$.
+Later (see {prf:ref}`Ex:MultivariableIntegration:PolarApplicationsExample2`) we will prove that $\displaystyle\int_0^{\infty}e^{-u^2}\,du=\frac{1}{2}\sqrt{\pi}$. This implies that 
 
-
+$$
+\Gamma(\tfrac{1}{2})=\sqrt{\pi}.
+$$
 
 ## Grasple exercises
 
