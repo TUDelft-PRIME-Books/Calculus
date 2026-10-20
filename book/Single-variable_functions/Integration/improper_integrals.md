@@ -159,7 +159,7 @@ The function $\displaystyle\frac{1}{1+x^2}$ on the interval $(-\infty,\infty)$.
 We start by splitting the integral into two integrals as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalDouble`:
 
 $$
-\int_{-\infty}^{\infty}\frac{dx}{1+x^2}=\int_{-\infty}^0\frac{dx}{1+x^2}+\int_0^{\infty}\frac{dx}{1+x^2}
+\int_{-\infty}^{\infty}\frac{dx}{1+x^2}=\int_{-\infty}^c\frac{dx}{1+x^2}+\int_c^{\infty}\frac{dx}{1+x^2}
 $$
 
 with $c\in\mathbb{R}$ arbitrary.
