@@ -34,7 +34,7 @@ $$
  \frac{dy}{dx}=F(x,y)
 $$
 
-and suppose that $F\neq 0$ and that $F$ and its first order partial derivatives are continuous. Consider any $y_0\in\mathbb{R}$ such that there exists $x_0\in\mathbb{R}$ with $F(x_0,y_0)\neq 0$. Then the differential equation is separable if, and only if, the function
+and suppose that $F\neq 0$ and that $F$ and its first-order partial derivatives are continuous. Consider any $y_0\in\mathbb{R}$ such that there exists $x_0\in\mathbb{R}$ with $F(x_0,y_0)\neq 0$. Then the differential equation is separable if, and only if, the function
 
 $$
  G(x,y)=\frac{F(x,y)}{F(x,y_0)},
@@ -301,7 +301,7 @@ for $C\in\mathbb{R}$.
 
 ::::::{prf:Example}
 :label: Ex:DiffSep:xovery
-Consider the initial-value problem
+Consider the initial value problem
 
 $$
  \frac{dy}{dx}=\frac{x}{y},\qquad y(0)=-2.
@@ -407,7 +407,7 @@ $$
 
 for $K\in\mathbb{R}$. 
 
-Finally, the initial condition $y(0)=100$ leads to $K=2400$. So the solution of the initial-value problem is 
+Finally, the initial condition $y(0)=100$ leads to $K=2400$. So the solution of the initial value problem is 
 
 $$
  y(t)=2500-2400e^{-\frac{1}{50}t}.
@@ -439,7 +439,7 @@ $$
  y(0)=0.05\cdot 100=5.
 $$
 
-In order to find the differential equation for $y(t)$, we notice that rate at which the alcohol enters the tank is $0.07\cdot 1=\dfrac{7}{100}\;\text{L}/\text{min}$. The rate at which the alcohol leaves the tank is $1\;\text{L}/\text{min}$ times the concentration of alcohol that leaves the tank, i.e. it is $1\cdot \dfrac{y}{100}=\dfrac{y}{100}\;\text{L}/\text{min}$. Hence, $y$ must satisfy the initial-value problem
+In order to find the differential equation for $y(t)$, we notice that rate at which the alcohol enters the tank is $0.07\cdot 1=\dfrac{7}{100}\;\text{L}/\text{min}$. The rate at which the alcohol leaves the tank is $1\;\text{L}/\text{min}$ times the concentration of alcohol that leaves the tank, i.e. it is $1\cdot \dfrac{y}{100}=\dfrac{y}{100}\;\text{L}/\text{min}$. Hence, $y$ must satisfy the initial value problem
 
 $$
  \frac{dy}{dt}=\frac{7}{100}-\frac{y}{100},\quad y(0)=5.
@@ -477,7 +477,7 @@ $$
 
 for $K\in\mathbb{R}$. Finally, the initial condition $y(0)=5$ leads to $K=2$.
 
-So the solution of the initial-value problem is 
+So the solution of the initial value problem is 
 
 $$
  y(t)=7-2e^{-\frac{1}{100}t}
@@ -748,7 +748,7 @@ $$
 A=100\pi\;\text{cm}^3,\quad a=\pi\;\text{cm}^3\quad\text{and}\quad h=10\;\text{cm}.
 $$
 
-In particular, we are dealing with the initial-value problem
+In particular, we are dealing with the initial value problem
 
 $$
 100\frac{dh}{dt}=-\sqrt{2gh},\quad h(0)=10.
@@ -804,7 +804,7 @@ $$
  h(t)=\begin{cases} \left(\frac{200\sqrt{10}-\sqrt{2g}t}{200}\right)^2,\qquad &t\leq \frac{200\sqrt{10}}{\sqrt{2g}};\\ 0,\qquad &t>\frac{200\sqrt{10}}{\sqrt{2g}}.\end{cases}
 $$
 
-Let us check that this function is, mathematically speaking, also the solution of the initial-value problem. By construction, it satisfies the differential equation when $t<\frac{200\sqrt{10}}{\sqrt{2g}}$. It also satisfies the initial condition. Since $0$ is an equilibrium solution, it satisfies the differential equation for $t>\frac{200\sqrt{10}}{\sqrt{2g}}$. So we only need to check the behaviour at $t=\frac{200\sqrt{10}}{\sqrt{2g}}$. We note that for $t<\frac{200\sqrt{10}}{\sqrt{2g}}$ we have
+Let us check that this function is, mathematically speaking, also the solution of the initial value problem. By construction, it satisfies the differential equation when $t<\frac{200\sqrt{10}}{\sqrt{2g}}$. It also satisfies the initial condition. Since $0$ is an equilibrium solution, it satisfies the differential equation for $t>\frac{200\sqrt{10}}{\sqrt{2g}}$. So we only need to check the behaviour at $t=\frac{200\sqrt{10}}{\sqrt{2g}}$. We note that for $t<\frac{200\sqrt{10}}{\sqrt{2g}}$ we have
 
 $$
  h'(t)=-\frac{1}{100}\sqrt{2gh(t)},
@@ -970,7 +970,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/d12048c1-c31a-4d1d-9c84-9f4418258819?id=63869
 :label: Grasple:63869
 :dropdown:
-:description: Find an implicit equation for the solution of an initial-value problem.
+:description: Find an implicit equation for the solution of an initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -978,7 +978,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/5f064275-7dec-45f6-b5b7-da5790682345?id=63892
 :label: Grasple:63892
 :dropdown:
-:description: Find an implicit equation for the solution of an initial-value problem.
+:description: Find an implicit equation for the solution of an initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -986,7 +986,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/e6a2f44c-e1c5-4f22-aa26-f53f16cbb4bd?id=63896
 :label: Grasple:63896
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -994,7 +994,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/15504676-92b6-4d0c-b681-d724fc4cffb6?id=63894
 :label: Grasple:63894
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1002,7 +1002,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/c810a536-88bf-459c-88bc-fb4d7602a0df?id=63867
 :label: Grasple:63867
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1010,7 +1010,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/21af550c-dd42-4fa8-b12e-70d7cd08b616?id=63866
 :label: Grasple:63866
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1018,7 +1018,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/e8c3ea19-6c17-4bf8-bdb8-6ac722d65411?id=78843
 :label: Grasple:78843
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1026,7 +1026,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/20968844-29ce-4bcc-b753-137fa62fe80f?id=63909
 :label: Grasple:63909
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1034,7 +1034,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/6473b06b-91a4-441b-be93-f8ad539b1ca4?id=63871
 :label: Grasple:63871
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1042,7 +1042,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/36832dfa-9660-4c93-9bea-edb1493e9079?id=63876
 :label: Grasple:63876
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1050,7 +1050,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/c9173f0f-2942-4850-ac7c-3fc9eb33d38c?id=116703
 :label: Grasple:116703
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}

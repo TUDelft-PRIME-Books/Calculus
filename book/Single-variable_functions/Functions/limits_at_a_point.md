@@ -283,7 +283,7 @@ An illustration of the piecewise defined function $f(x)$ near the point $x=2$, s
 
 ::::::
 
-Note that in {prf:ref}`Ex:LimitAtPoint:LimitLeftRightPiecewise` the function $f$ was defined in the point $x=2$, but that did not influence the value of the limit at all; in fact, the limit $\lim\limits_{x\rightarrow 2}f(x)$ is unequal to $f(2)$. This is because, when evaluating a limit, we are only interested in the behaviour of the function values $f(x)$ for $x$ close to, but *unequal to* $a$. We can summarize this observation as follows.
+Note that in {prf:ref}`Ex:LimitAtPoint:LimitLeftRightPiecewise` the function $f$ was defined in the point $x=2$, but that did not influence the value of the limit at all; in fact, the limit $\lim\limits_{x\rightarrow 2}f(x)$ is unequal to $f(2)$. This is because, when evaluating a limit, we are only interested in the behaviour of the function values $f(x)$ for $x$ close to, but *unequal to* $a$. We can summarise this observation as follows.
 
 ::::::{prf:remark}
 :label: RemarkLimitatPoint:Valueirrelevant

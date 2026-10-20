@@ -108,7 +108,7 @@ The **general solution** of a differential equation is an expression for all sol
 ::::::
 
 
-In this book we will mostly consider ordinary differential equations of first order ({numref}`Chapter:FirstorderDE`) and second order ({numref}`Chapter:SecondorderDE`). It is also interesting to consider equations, such as
+In this book we will mostly consider ordinary differential equations of first-order ({numref}`Chapter:FirstorderDE`) and second-order ({numref}`Chapter:SecondorderDE`). It is also interesting to consider equations, such as
 
 $$
  u_t(t,x)+u_x(t,x)=0,
@@ -138,7 +138,7 @@ $$
  r^2e^{rt}=y''(t)=4y(t)=4e^{rt}.
 $$
 
-We can divide by the nonzero term $e^{rt}$ to obtain the equation
+We can divide by the non-zero term $e^{rt}$ to obtain the equation
 
 $$
  r^2=4.
@@ -809,9 +809,9 @@ y(t)=y_c(t)+y_p(t)=c_1\sin(t)+c_2\cos(t)+1.
 $$
 ::::::
 
-## Initial-value problems
+## initial value problems
 
-In many cases we are not interested in finding all solutions (the *general solution*), but rather a specific solution that also satisfies some additional requirement(s). In many physical problems, we need to find a particular solution of a first-order differential equation that also satisfies a condition of the form $y(t_0)=y_0$. This is called an **initial condition**. The problem of finding a solution of a first-order differential equation that also satisfies such an initial condition is called an **initial-value problem**.
+In many cases we are not interested in finding all solutions (the *general solution*), but rather a specific solution that also satisfies some additional requirement(s). In many physical problems, we need to find a particular solution of a first-order differential equation that also satisfies a condition of the form $y(t_0)=y_0$. This is called an **initial condition**. The problem of finding a solution of a first-order differential equation that also satisfies such an initial condition is called an **initial value problem**.
 
 ::::::{prf:definition}
 :label: Def:ClassDiff:IVP
@@ -843,7 +843,7 @@ $$
 y(t_0)=y_0,y'(t_0)=y_1,\ldots,y^{(n-1)}(t_0)=y_{n-1}.
 $$
 
-A differential equation combined with an initial condition is called an **initial-value problem**.
+A differential equation combined with an initial condition is called an **initial value problem**.
 ::::::
 
 In {numref}`Sec:DE:ExistenceUniqueness` it will be shown that a first-order differential equation, that satisfies certain conditions, has a general solution with one degree of freedom; somewhere in the process of solving such a differential equation we have to integrate once which gives rise to an arbitrary constant of integration.
@@ -888,7 +888,7 @@ $$
 
 with $p$, $q$ and $g$ continuous functions, has a general solution with two degrees of freedom; it contains two arbitrary constants of integration. These can be chosen in a single way such that the solution also satisfies two initial conditions $y(t_0)=y_0$ and $y'(t_0)=y_0'$.
 
-Note that this implies that the solution of the **initial-value problem**
+Note that this implies that the solution of the **initial value problem**
 
 $$
 y''+p(t)y'+q(t)y=g(t),\quad y(t_0)=y_0,\quad y'(t_0)=y_1
@@ -903,7 +903,7 @@ $$
 y''+y=0.
 $$
 
-In {prf:ref}`Ex:Classdiff:secondordersol` we saw that $y(t)=c_1\cos(t)+c_2\sin(t)$ is the general solution. Now we consider the initial-value problem
+In {prf:ref}`Ex:Classdiff:secondordersol` we saw that $y(t)=c_1\cos(t)+c_2\sin(t)$ is the general solution. Now we consider the initial value problem
 
 $$
 y''+y=0,\quad y(0)=\alpha,\quad y'(0)=\beta
@@ -915,7 +915,7 @@ $$
 \begin{cases}y(0)=\alpha\\ \\y'(0)=\beta\end{cases}\quad\Longleftrightarrow\quad\begin{cases}c_1=\alpha\\ \\c_2=\beta.\end{cases}
 $$
 
-This means that the solution of the initial-value problem is given by
+This means that the solution of the initial value problem is given by
 
 $$
  y(t)=\alpha\cos(t)+\beta\sin(t).
@@ -925,7 +925,7 @@ $$
 
 ## Boundary-value problems
 
-Instead of initial-value problems we might consider boundary-value problems, where we try to fix the solution $y(x)$ defined on some interval $[a,b]$ such that the value at the boundary points $x=a$ and $x=b$ are fixed: $y(a)=\alpha$ and $y(b)=\beta$. We could also try to fix the value of the derivative at the boundary: $y'(a)=\gamma$ and $y'(b)=\delta$, or we can even try combinations of the two.
+Instead of initial value problems we might consider boundary-value problems, where we try to fix the solution $y(x)$ defined on some interval $[a,b]$ such that the value at the boundary points $x=a$ and $x=b$ are fixed: $y(a)=\alpha$ and $y(b)=\beta$. We could also try to fix the value of the derivative at the boundary: $y'(a)=\gamma$ and $y'(b)=\delta$, or we can even try combinations of the two.
 
 ::::::{prf:definition}
 :label: Def:ClassDiff:BVP

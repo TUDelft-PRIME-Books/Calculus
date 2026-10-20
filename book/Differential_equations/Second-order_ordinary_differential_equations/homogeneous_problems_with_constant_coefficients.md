@@ -26,7 +26,7 @@ $$
  re^{rt}=-\frac{b}{a}e^{rt}.
 $$
 
-We can divide by $e^{rt}$, which is nonzero, and obtain the equation
+We can divide by $e^{rt}$, which is non-zero, and obtain the equation
 
 $$
  r=-\frac{b}{a}.
@@ -421,7 +421,7 @@ In {numref}`Fig:ODE2:Twocomplex` you can see on the left the graph of the two li
 
 We summarise the three cases in the following table.
 
-```{list-table} General solution of second order, linear, homogeneous differential equation
+```{list-table} General solution of second-order, linear, homogeneous differential equation
 :header-rows: 1
 :align: center
 :class: mid-align
@@ -439,9 +439,9 @@ We summarise the three cases in the following table.
 
 ```
 
-### Initial-value problems
+### initial value problems
 
-In {numref}`Sec:DE:ExistenceUniqueness` we have seen that an initial-value problem of the form
+In {numref}`Sec:DE:ExistenceUniqueness` we have seen that an initial value problem of the form
 
 $$
 \begin{cases}ay''+by'+cy=0,\\ \\y(t_0)=y_0,\quad y'(t_0)=y_0'\end{cases}
@@ -451,7 +451,7 @@ has a unique solution. Here $a\neq 0$, $b$, $c$, $y_0$ and $y_0'$ are real const
 
 ::::::{prf:example}
 :label: Ex:ODE2:IVP
-Suppose we want to find the unique solution of the initial-value problem 
+Suppose we want to find the unique solution of the initial value problem 
 
 $$
  \begin{cases}y''+y'-6y=0\\ \\y(0)=5,\quad y'(0)=0.\end{cases}
@@ -507,7 +507,7 @@ $$
  \begin{cases}c_1=3,\\ \\c_2=2.\end{cases}
 $$
 
-Hence, $y(t)=3e^{2t}+2e^{-3t}$ is the unique solution of the initial-value problem.
+Hence, $y(t)=3e^{2t}+2e^{-3t}$ is the unique solution of the initial value problem.
 ::::::
 
 ### Boundary-value problems
@@ -603,7 +603,7 @@ $$
 
 where $c_1,c_2,c_3,c_4$ and $c_5$ are real constants.
 
-Note that an initial-value problem with a unique solution now requires the knowledge of $y(0)$, $y'(0)$, $y''(0)$, $y^{(3)}(0)$ and $y^{(4)}(0)$.
+Note that an initial value problem with a unique solution now requires the knowledge of $y(0)$, $y'(0)$, $y''(0)$, $y^{(3)}(0)$ and $y^{(4)}(0)$.
 ::::::
 
 ## Applications
@@ -639,7 +639,7 @@ $$
 \theta(t)=c_1\cos(rt)+c_2\sin(rt)\quad\text{with}\quad r=\sqrt{\frac{g}{L}}\quad\text{and}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-So, if (for instance) the starting position of the pendulum is $\theta_0$ and it is released with no initial velocity, then this leads to the initial-value problem
+So, if (for instance) the starting position of the pendulum is $\theta_0$ and it is released with no initial velocity, then this leads to the initial value problem
 
 $$
 \theta''(t)+\frac{g}{L}\theta(t)=0,\quad\theta(0)=\theta_0,\quad\theta'(0)=0
@@ -1133,7 +1133,7 @@ $$
 :url: https://embed.grasple.com/exercises/c9f9a07a-423c-4681-8309-e0f435987724?id=76561
 :label: Grasple:76561
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1141,7 +1141,7 @@ $$
 :url: https://embed.grasple.com/exercises/d22c5bf7-4203-4051-81db-9e4475776da7?id=76560
 :label: Grasple:76560
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1149,7 +1149,7 @@ $$
 :url: https://embed.grasple.com/exercises/2719c2f6-59fc-41ee-81fa-f3ebc7820ed6?id=76559
 :label: Grasple:76559
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1157,7 +1157,7 @@ $$
 :url: https://embed.grasple.com/exercises/994fdf7e-e5ab-42b7-9bc7-7e3f7bf04957?id=76558
 :label: Grasple:76558
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1165,7 +1165,7 @@ $$
 :url: https://embed.grasple.com/exercises/82dfd24d-bb24-4582-bfbc-cddf23da7ff7?id=76557
 :label: Grasple:76557
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1173,7 +1173,7 @@ $$
 :url: https://embed.grasple.com/exercises/8981cbff-d395-4c04-87fe-c18b1bc45c86?id=76562
 :label: Grasple:76562
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1181,7 +1181,7 @@ $$
 :url: https://embed.grasple.com/exercises/d6922b52-9fc8-4672-92db-212c8d179d8a?id=76563
 :label: Grasple:76563
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1197,7 +1197,7 @@ $$
 :url: https://embed.grasple.com/exercises/e2f2de74-8c65-40dc-b153-ee6e6ec599ba?id=136611
 :label: Grasple:136611
 :dropdown:
-:description: Find nontrivial (i.e. nonzero) solutions to a boundary-value problem.
+:description: Find nontrivial (i.e. non-zero) solutions to a boundary-value problem.
 ::::::
 
 ::::::{grasple}
@@ -1205,7 +1205,7 @@ $$
 :url: https://embed.grasple.com/exercises/8a369a73-6474-490e-95b4-d3115587a048?id=136598
 :label: Grasple:136598
 :dropdown:
-:description: Find nontrivial (i.e. nonzero) solutions to a boundary-value problem.
+:description: Find nontrivial (i.e. non-zero) solutions to a boundary-value problem.
 ::::::
 
 ::::::{grasple}
@@ -1213,7 +1213,7 @@ $$
 :url: https://embed.grasple.com/exercises/60e941b6-cf2f-49b7-9c87-502b3df75979?id=136608
 :label: Grasple:136608
 :dropdown:
-:description: Find nontrivial (i.e. nonzero) solutions to a boundary-value problem.
+:description: Find nontrivial (i.e. non-zero) solutions to a boundary-value problem.
 ::::::
 
 

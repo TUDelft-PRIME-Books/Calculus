@@ -201,13 +201,13 @@ Complete the following sentences:
 ---
 M[3]
 DS[a vertical tangent;a horizontal tangent;a sharp turn;{self-intersection}]
-DS[zero;{an undefined};nonzero]
+DS[zero;{an undefined};non-zero]
 DS[a vertical tangent;a horizontal tangent;{a sharp turn};self-intersection]
-DS[zero;{an undefined};nonzero]
+DS[zero;{an undefined};non-zero]
 DS[{a vertical tangent};a horizontal tangent;a sharp turn;self-intersection]
-DS[zero;{an undefined};nonzero]
+DS[zero;{an undefined};non-zero]
 DS[a vertical tangent;{a horizontal tangent};a sharp turn;self-intersection]
-DS[{zero};an undefined;nonzero]
+DS[{zero};an undefined;non-zero]
 ^^^
 ? :::{card}
 Implicit differentiation can be used to find the slope of the curve at all except {gap} points.
@@ -308,7 +308,7 @@ $$
  \frac{dy}{dt}=\frac{dy}{dx}\frac{dx}{dt}.
 $$
 
-By dividing by $\frac{dx}{dt}$ (assuming it is nonzero), we obtain
+By dividing by $\frac{dx}{dt}$ (assuming it is non-zero), we obtain
 
 $$
  \frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{y'(t)}{x'(t)}.

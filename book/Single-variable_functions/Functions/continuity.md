@@ -323,7 +323,7 @@ Note also that $f(a)$ and $f(b)$ do need to be of opposite sign to be sure that 
 ::::::
 
 
-The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalized to obtain the following result and is known as the **Intermediate Zero Theorem** or **Bolzano's Theorem**, named after the Bohemian mathematician [Bernardus Placidus Johann Nepomuk Bolzano (1781-1848)](https://en.wikipedia.org/wiki/Bernard_Bolzano). Long before the formal formulation of this theorem, the result was known and used already by the Flemish mathematician [Simon Stevin (1548-1620)](https://en.wikipedia.org/wiki/Simon_Stevin).
+The reasoning in {prf:ref}`Ex:Continuity:IVT` can be generalised to obtain the following result and is known as the **Intermediate Zero Theorem** or **Bolzano's Theorem**, named after the Bohemian mathematician [Bernardus Placidus Johann Nepomuk Bolzano (1781-1848)](https://en.wikipedia.org/wiki/Bernard_Bolzano). Long before the formal formulation of this theorem, the result was known and used already by the Flemish mathematician [Simon Stevin (1548-1620)](https://en.wikipedia.org/wiki/Simon_Stevin).
 
 ::::::{prf:corollary} Bolzano's Theorem
 :label: Cor:Continuity:IVT

@@ -191,7 +191,7 @@ $$
 :::{admonition} Proof of {prf:ref}`Thm:Functionsmultivar:Linear`
 :class: tudproof, dropdown
 
-Since $f$ is a linear function, we have $f(\mathbf{x})=P(\mathbf{x})$ where $P$ is a polynomial of degree $1$. By definition, $P$ is a finite sum of unlike monomials with degree at most $1$, of which at least one monomial has degree $1$. The only type of monomial with degree $0$ is a nonzero constant. So if one of the terms of $P$ is a monomial with degree $0$, we take that term as $c$; otherwise, we take $c=0$. Since the degree of a monomial $ax_1^{m_1}x_2^{m_2}\cdot\ldots\cdot x_n^{m_n}$ with $a\neq 1$ equals $m_1+\ldots+m_n$ and $m_1,\ldots,m_n$ are non-negative integers, we see that we only obtain a monomial of degree $1$ if $m_i=1$ for some $1\leq i\leq n$ and $m_j=0$ for $j\neq i$. So we can uniquely write for $\mathbf{x}=\begin{pmatrix}x_1\\ \vdots\\ x_n\end{pmatrix}$
+Since $f$ is a linear function, we have $f(\mathbf{x})=P(\mathbf{x})$ where $P$ is a polynomial of degree $1$. By definition, $P$ is a finite sum of unlike monomials with degree at most $1$, of which at least one monomial has degree $1$. The only type of monomial with degree $0$ is a non-zero constant. So if one of the terms of $P$ is a monomial with degree $0$, we take that term as $c$; otherwise, we take $c=0$. Since the degree of a monomial $ax_1^{m_1}x_2^{m_2}\cdot\ldots\cdot x_n^{m_n}$ with $a\neq 1$ equals $m_1+\ldots+m_n$ and $m_1,\ldots,m_n$ are non-negative integers, we see that we only obtain a monomial of degree $1$ if $m_i=1$ for some $1\leq i\leq n$ and $m_j=0$ for $j\neq i$. So we can uniquely write for $\mathbf{x}=\begin{pmatrix}x_1\\ \vdots\\ x_n\end{pmatrix}$
 
 $$
  P(\mathbf{x})=c+v_1x_1+\ldots+v_nx_n

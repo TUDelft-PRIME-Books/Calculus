@@ -11,6 +11,6 @@ In this section we cover:
   - Quasi-Newton method
   - Secant method
   - Regula-Falsi method
-- Solving optimization problems:
+- Solving optimisation problems:
   - Golden section search
-  - Newton's method for optimization
+  - Newton's method for optimisation

@@ -16,7 +16,7 @@ In the previous section we showed that boundary-value problems might have no sol
 
 Furthermore, we mentioned that a first-order differential equation has a solution with one degree of freedom denoted by an arbitrary constant of integration. This constant can be determined by using an initial value. In this section we prove this, first for linear differential equations and then for more general (not necessary linear) differential equations.
 
-For second-order differential equations we prove an existence and uniqueness theorem for initial-value problems in the case of a linear differential equation.
+For second-order differential equations we prove an existence and uniqueness theorem for initial value problems in the case of a linear differential equation.
 
 ## First-order differential equations
 
@@ -40,7 +40,7 @@ $$
 where $y_0$ is an arbitrary prescribed initial value.
 ::::::
 
-Note that {prf:ref}`Thm:DE:ExistenceUniquenessODE1Linear` states that the initial-value problem *has* a solution (existence) and furthermore that it has *only one* solution (uniqueness).
+Note that {prf:ref}`Thm:DE:ExistenceUniquenessODE1Linear` states that the initial value problem *has* a solution (existence) and furthermore that it has *only one* solution (uniqueness).
 
 ::::::{admonition} Proof of {prf:ref}`Thm:DE:ExistenceUniquenessODE1Linear`
 :class: tudproof, dropdown
@@ -83,7 +83,7 @@ In the case of first-order differential equations one can also prove a more gene
 
 ::::::{prf:theorem} Picard-Lindelöf theorem
 :label: Thm:DE:ExistenceUniquenessODE1Nonlinear
-Let the functions $f$ and $\partial f/\partial y$ be continuous in some rectangle $\alpha<t<\beta$ and $\gamma<y<\delta$ containing the point $(t_0,y_0)$. Then, in some interval $(t_0-h,t_0+h)$ contained in $(\alpha,\beta)$ there exists a unique solution $y=\phi(t)$ of the initial-value problem
+Let the functions $f$ and $\partial f/\partial y$ be continuous in some rectangle $\alpha<t<\beta$ and $\gamma<y<\delta$ containing the point $(t_0,y_0)$. Then, in some interval $(t_0-h,t_0+h)$ contained in $(\alpha,\beta)$ there exists a unique solution $y=\phi(t)$ of the initial value problem
 
 :::{math}
 :label: Eq:DE:ODE1NonLinear
@@ -130,7 +130,7 @@ In the case of a linear second-order differential equation we have:
 
 ::::::{prf:theorem} 
 :label: Thm:DE:ExistenceUniquenessODE2Linear
-Consider the initial-value problem
+Consider the initial value problem
 
 $$ 
 y''+p(t)y'+q(t)y=g(t),\quad y(t_0)=y_0,\quad y'(t_0)=y_0',
@@ -143,7 +143,7 @@ Also for second-order differential equations one can prove a more general result
 
 ::::::{prf:theorem}
 :label: Thm:DE:ExistenceUniquenessODE2Nonlinear
-Let the functions $f$, $\partial f/\partial y$ and $\partial f/\partial y'$ be continuous in some open region containing the point $(t_0,y_0,y_0')$. Then, there exists a unique solution $y=\phi(t)$ of the initial-value problem
+Let the functions $f$, $\partial f/\partial y$ and $\partial f/\partial y'$ be continuous in some open region containing the point $(t_0,y_0,y_0')$. Then, there exists a unique solution $y=\phi(t)$ of the initial value problem
 
 :::{math}
 :label: Eq:DE:ODE2NonLinear

@@ -291,7 +291,7 @@ Let $f$ be a positive differentiable function and let $g$ be any differentiable 
 
 
 [ ] $\displaystyle f(x)^{g(x)}g'(x)$
-> It looks like you recognized that the exponent $g(x)$ changes with $x$, but you may not have accounted for the fact that the base $f(x)$ changes as well. Also, differentiating a variable exponent introduces a factor of $\ln(f(x))$.
+> It looks like you recognised that the exponent $g(x)$ changes with $x$, but you may not have accounted for the fact that the base $f(x)$ changes as well. Also, differentiating a variable exponent introduces a factor of $\ln(f(x))$.
 
 [x] $\displaystyle f(x)^{g(x)-1}g(x)f'(x)+f(x)^{g(x)}\ln(f(x))g'(x)$
 > We use logarithmic differentiation. We can evaluate

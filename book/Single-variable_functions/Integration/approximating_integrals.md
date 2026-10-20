@@ -147,7 +147,7 @@ An illustration of the Simpson's rule.
 
 :::
 
-To summarize:
+To summarise:
 
 ::::{prf:definition}
 :label: Def:ApproximatingIntegrals:simple_rules

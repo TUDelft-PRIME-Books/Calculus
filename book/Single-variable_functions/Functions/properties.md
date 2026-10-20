@@ -189,7 +189,7 @@ In {prf:ref}`Ex:PropertiesFunctions:Sum` we saw that we can obtain the graph of 
 
 Similarly, we can perform a **vertical shift** of $2$ downwards to the graph of $f$ to obtain the graph of a new function $h$. Since $(x,y)$ is on the graph of $h$ precisely when $(x,y+2)$ on the graph of $f$, we find that $h(x)=f(x)-2$.
 
-We can generalize these considerations as follows.
+We can generalise these considerations as follows.
 
 ::::::{prf:theorem} 
 :label: Thm:PropertiesFunctions:Shifts
@@ -826,7 +826,7 @@ Periodic functions play an important role in many fields of science and engineer
 
 
 
-Notice that if $T$ is a period of a periodic function $f$, then any number of the form $nT$ with $n\geq 1$ a nonzero natural number is again a period of $f$. For instance, for $n=3$ we have for all $x$ that
+Notice that if $T$ is a period of a periodic function $f$, then any number of the form $nT$ with $n\geq 1$ a non-zero natural number is again a period of $f$. For instance, for $n=3$ we have for all $x$ that
 
 $$
  f(x+3T)=f((x+2T)+T)=f(x+2T)=f((x+T)+T)=f(x+T)=f(x).
@@ -992,11 +992,11 @@ Using the identities $\cos(a)-\cos(b)=-2\sin\left(\frac{a+b}{2}\right)\sin\left(
 The left-hand side of this equation is either identically $0$ if $T$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{2}=\pi$. Similarly, the right-hand side of this equation is either identically $0$ if $\dfrac{\pi T}{2}$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{\pi}=2$. Since the left-hand and right-hand side of the equation are equal and cannot have both fundamental period $\pi$ and $2$, the only option is that both sides of the equation are identically $0$. However, in that case $T$ would need to be both an integer multiple of $\pi$, and of $\dfrac{\pi}{\frac{\pi}{2}}=2$, which is also not possible. So the function $h$ cannot be periodic.
 ::::::
 
-We summarize the observations about the periodicity of the sum of periodic function from the preceding examples in the following result.
+We summarise the observations about the periodicity of the sum of periodic function from the preceding examples in the following result.
 
 ::::::{prf:theorem}
 :label: Thm:PropertiesFunctions:Sumperiodic
-Let $f$ and $g$ be periodic functions with periods $T_1$ and $T_2$ respectively. If $\dfrac{T_1}{T_2}$ is a rational number, i.e. if there are nonzero positive integers $p$ and $q$ with $pT_1=qT_2$, the sum function $f+g$ is periodic with period $T=pT_1=qT_2$.  
+Let $f$ and $g$ be periodic functions with periods $T_1$ and $T_2$ respectively. If $\dfrac{T_1}{T_2}$ is a rational number, i.e. if there are non-zero positive integers $p$ and $q$ with $pT_1=qT_2$, the sum function $f+g$ is periodic with period $T=pT_1=qT_2$.  
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:PropertiesFunctions:Sumperiodic`

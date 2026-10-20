@@ -485,7 +485,7 @@ An approximation of the area $\Delta A$ of $R$ now is: $\displaystyle\Delta A\ap
 :::::{prf:theorem}
 :label: Thm:MultivariableIntegration:GeneralTransformation
 
-Suppose that $T$ is a one-to-one transformation whose Jacobian is nonzero and that $T$ maps a region $S$ in the $uv$-plane onto a region $R$ in the $xy$-plane. Suppose that $f$ is continuous on 
+Suppose that $T$ is a one-to-one transformation whose Jacobian is non-zero and that $T$ maps a region $S$ in the $uv$-plane onto a region $R$ in the $xy$-plane. Suppose that $f$ is continuous on 
 $R$ and that $R$ and $S$ are plane regions that are either $x$-simple or $y$-simple. Then:
 
 $$

@@ -4,7 +4,7 @@
 
 ## Introduction 
 
-Many problems in nature and engineering feature quantities that, for relatively short periods of time, fluctuate or change rapidly, before stabilizing and moving towards a certain equilibrium. In such cases, we are often mainly interested in what happens in the long term.
+Many problems in nature and engineering feature quantities that, for relatively short periods of time, fluctuate or change rapidly, before stabilising and moving towards a certain equilibrium. In such cases, we are often mainly interested in what happens in the long term.
 
 :::::{margin}
 ::::{figure} Images/Fig-LimitAtInfinity-RefrigeratorCauliflower.png
@@ -495,7 +495,7 @@ $$
  \lim_{x\rightarrow\infty}\frac{1}{h(x)}=\lim_{x\rightarrow\infty}h(f(x))=\lim_{x\rightarrow\infty}h(x)=\lim_{x\rightarrow\infty}\frac{1}{x}=0.
 $$
 
-In particular, the limit cannot be nonzero.
+In particular, the limit cannot be non-zero.
 
 [ ] $\displaystyle\lim_{x\rightarrow\infty}\frac{1}{f(x)}$ does not exist.
 > The function $\dfrac{1}{f(x)}$ can be written as $h\circ f$ with $h(x)=\dfrac{1}{x}$. On account of {prf:ref}`Theorem:LimitAtInfinity:Substitution2` we find

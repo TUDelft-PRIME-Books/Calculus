@@ -792,7 +792,7 @@ If the derivative $f'$ is differentiable, then its derivative $(f')'$ is called 
 
 Similarly, if the second derivative is again differentiable, its derivative is called the **third derivative** of $f$ and is denoted by $f^{(3)}$. If the third derivative exists, we say that $f$ is **three times differentiable**.
 
-In general, if $n>0$ is a nonzero natural number, then the $n$th derivative of $f$ is the derivative of the $(n-1)$th derivative and is denoted by $f^{(n)}$. If the $n$th derivative exists, we say that $f$ is **$n$ times differentiable**.
+In general, if $n>0$ is a non-zero natural number, then the $n$th derivative of $f$ is the derivative of the $(n-1)$th derivative and is denoted by $f^{(n)}$. If the $n$th derivative exists, we say that $f$ is **$n$ times differentiable**.
 
 A function of which the $n$th derivative exists for each natural number $n$ is called **smooth**.
 ::::::
@@ -801,7 +801,7 @@ The prime notation is only customary for the first and second derivatives (and s
 
 ::::::{prf:notation} 
 :label: Not:Differentiability:Higherorderderivative
-Let $f$ be a function and $n>0$ a nonzero natural number. Then the following notations all represent the $n$th derivative of $f$
+Let $f$ be a function and $n>0$ a non-zero natural number. Then the following notations all represent the $n$th derivative of $f$
 
 $$
  f^{(n)}(x)=\frac{d^n}{dx^n}f(x)=\frac{d^nf}{dx^n}(x)=\frac{d^nf(x)}{dx^n}=D^nf(x).
@@ -899,7 +899,7 @@ So $f$ is twice differentiable in $0$ and $f''(0)=0$. In addition, we note that 
 ::::::{prf:remark}
 :label: Remark:Differentiability:Nbutnotnplus1
 
-The idea from {prf:ref}`Ex:Differentiability:Higherorderderivative3` works more general: if $n>0$ is a nonzero natural number the function 
+The idea from {prf:ref}`Ex:Differentiability:Higherorderderivative3` works more general: if $n>0$ is a non-zero natural number the function 
 
 $$
  f(x)=\left\{\begin{array}{l}0,\qquad&\text{if}\,x\leq 0,\\ x^n,\qquad &\text{if}\,x>0.\end{array}\right.

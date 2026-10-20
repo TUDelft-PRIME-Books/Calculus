@@ -8,9 +8,9 @@ This page is based on {cite:t}`Vuik_2023`.
 
 ## Introduction
 
-An initial-value problem is a mathematical description (as in Equation {eq}`Eq:ApproximatingSolutions:IVP`) usually of a time-dependent problem. The conditions, necessary to determine a unique solution, are given at the starting time, $t_0$, and are called _initial conditions_.
+An initial value problem is a mathematical description (as in Equation {eq}`Eq:ApproximatingSolutions:IVP`) usually of a time-dependent problem. The conditions, necessary to determine a unique solution, are given at the initial time, $t_0$, and are called _initial conditions_.
 
-As an example, we consider a water discharge from a storage reservoir through a pipe ({numref}`Figure %s <Fig:ApproximatingSolutions:stuwmeer>`). The water is at rest until, at $t_0 = 0$, the latch is instantaneously opened. This results in a imbalance of forces. And gravity causes a gradual development of the flow of water. If this flowing water is used to generate electricity, for example like the [Picote Dam](https://en.wikipedia.org/wiki/Picote_Dam), then it is important to know how long it will take before the turbines work at full power.
+As an example, we consider a water discharge from a storage reservoir through a pipe ({numref}`Figure %s <Fig:ApproximatingSolutions:stuwmeer>`). The water is at rest until, at $t_0 = 0$, the latch is instantaneously opened. This results in an imbalance of forces and gravity causes a gradual development of the flow of water. If this flowing water is used to generate electricity, for example like the [Picote Dam](https://en.wikipedia.org/wiki/Picote_Dam), then it is important to know how long it will take before the turbines work at full power.
 
 :::{figure} Images/Fig-NumericalMethods-stuwmeer.png
 :name: Fig:ApproximatingSolutions:stuwmeer
@@ -19,7 +19,7 @@ The storage reservoir, the drain pipe and the latch in closed position.
 
 :::
 
-This process is described by the nonlinear initial-value problem
+This process is described by the non-linear initial value problem
 
 :::{math}
 :label: Eq:ApproximatingSolutions:ivp_intro
@@ -33,23 +33,23 @@ This process is described by the nonlinear initial-value problem
 
 ::::
 
-In this problem, $q (\text{m}^{3}/\text{s})$ is the mass flow rate, $p$ is the driving force, which is equal to 
+In this problem, $q$ is the mass flow rate, measured in $\text{m}^{3}/\text{s}$, $p$ is the driving force, which is equal to 
 
 $$
 \frac{\text{force/length}}{\text{density}} \quad\text{and measured in}\quad \frac{\text{N}/\text{m}}{\text{kg}/\text{m}^{3}}= \frac{\text{m}^{3}}{\text{s}^{2}},
 $$
 
-and $aq^{2}$ is the friction. The driving force depends --among other things-- on the water level in the reservoir. Assuming that $p(t)$ is constant $(p(t)=p_{0}$), a solution in closed form is known:
+and $aq^{2}$ is the friction measured the same as $p$. The driving force depends --among other things-- on the water level in the reservoir. If $p(t)=p_0$ in Equation {eq}`Eq:ApproximatingSolutions:ivp_intro`, the following solution can be found:
 
 $$
 q(t)= \sqrt{\frac{p_{0}}{a}} \tanh \left(t \sqrt{ap_{0}}\right).
 $$
 
-For general functions $p$, an analytic solution cannot be obtained. In that case, a numerical method must be used to approximate the solution.
+For general functions $p$, an exact formula for the solution cannot be obtained. In that case, a numerical method can be used to approximate the solution.
 
-In contrast to the example in Equation {eq}`Eq:ApproximatingSolutions:ivp_intro`, for many initial-value problems it is impossible to determine a solution explicitly. Although there are generally applicable techniques to find qualitative properties of the solution, these properties usually provide insufficient quantitative information. For that purpose, numerical methods are designed to approximate the solution. Most numerical methods are designed for first-order initial-value problems. Numerical time-integration methods that can be applied directly to higher-order initial-value problems do exist but are not treated here.
+For many initial value problems it is impossible to determine a solution explicitly. Although there are generally applicable techniques to find qualitative properties of the solution, these properties usually provide insufficient quantitative information. For that purpose, numerical methods are designed to approximate the solution. Most numerical methods are designed for first-order initial value problems. Numerical time-integration methods that can be applied directly to higher-order initial value problems do exist but are not treated here.
 
-In this section, several methods will be presented that can be used to approximate the solution to the initial-value problem based on the scalar first-order differential equation
+In this section, several methods will be presented that can be used to approximate the solution to the initial value problem based on the scalar first-order differential equation
 
 
 ::::{math}
@@ -64,13 +64,19 @@ In this section, several methods will be presented that can be used to approxima
 
 ::::
 
-Therefore, it is illuminating to consider the slope field generated by the differential equation. A differential equation is a rule that provides the slope of the tangent of a solution curve at each point in the $(t,y)$-plane. A specific solution curve is selected by specifying a point through which that solution curve passes. A formal expression for the solution curve through a point $(t_0, y_0)$ is generated by integrating the differential equation over $t$:
+A differential equation is a rule that provides the slope of the tangent of a solution curve at each point in the $(t,y)$-plane. A specific solution curve is selected by specifying a point through which that solution curve passes, which in our case is $(t_0,y(t_0))=(t_0,y_0)$. A formal expression for the solution curve through the point $(t_0, y_0)$ is generated by integrating the differential equation over $t$ from $t_0$ to some time $T$:
 
 $$
-y(t) = y(t_0) + \int_{t_0}^t f(\tau, y(\tau))\ d\tau.
+\int_{t_0}^{T}y'(t)\,dt=\int_{t_0}^{T}f(t,y(t))\,dt.
 $$
 
-Because the unknown function $y$ appears under the integral sign, this equation is called an _integral equation_. Although the integral equation is as difficult to solve as the original initial-value problem, it provides a better starting point for approximating the solution.
+Using {prf:ref}`Thm:Integration:FundamentalTheoremPart2`, we find
+
+$$
+y(T) = y(t_0) + \int_{t_0}^T f(t, y(t))\,dt.
+$$
+
+Because the unknown function $y$ appears under the integral sign, this equation is called an _integral equation_. Although the integral equation is as difficult to solve as the original initial value problem, it provides a better starting point for approximating the solution.
 
 In order to approximate the solution to the integral equation numerically, the time axis is divided into a set of discrete points $t_n = t_0 + n \Delta t$, $n=0,1,\ldots$. The solution at each time step is computed using the integral equation. Assume that the solution to the differential equation at time $t_n$ is known, and denoted by $y_n = y(t_n)$. Then, the solution at $t_{n+1}$ is equal to 
 
@@ -81,13 +87,13 @@ y_{n+1} = y_n + \int_{t_n}^{t_{n+1}} f(t,y(t))\ dt. \label{eqn:int}
 
 ::::
 
-The numerical time-integration methods that are presented in this section can be characterized by the approximation of the integral term $\int_{t_n}^{t_{n+1}} f(t, y(t))\ dt$: different numerical integration rules can be used. 
+The numerical time-integration methods that are presented in this section can be characterised by the approximation of the integral term $\displaystyle\int_{t_n}^{t_{n+1}} f(t, y(t))\ dt$: different numerical integration rules can be used. 
 
 The numerical approximation of the solution at $t_n$ is denoted by $\tilde{y}_n$, $n=0,1,\ldots$, where $\tilde{y}_0 = y_0$.
 
 ## Forward Euler method
 
-First, the _Forward Euler method_ will be presented, which is the most simple, earliest, and best-known time-integration method. In this method, an approximation of the integral in Equation {eq}`Eq:ApproximatingSolutions:int_eq` is obtained by using the left Rectangle rule ({numref}`Figure %s <Fig:ApproximatingSolutions:leftRectangle>`):
+First, the _Forward Euler method_ will be presented, which is the most simple, earliest, and best-known time-integration method. In this method, an approximation of the integral in Equation {eq}`Eq:ApproximatingSolutions:int_eq` is obtained by using the left Rectangle rule, see {prf:ref}`Def:ApproximatingIntegrals:simple_rules`.
 
 ::::{math}
 :label: Eq:ApproximatingSolutions:rkl1
@@ -96,12 +102,18 @@ y_{n+1} \approx y_n + (t_{n+1}-t_n)f(t_n,y_n).
 
 ::::
 
+This integral is illustrated in {numref}`Fig:ApproximatingSolutions:leftRectangle`.
+
 :::{figure} Images/Fig-NumericalMethods-leftRectangle.svg
 :name: Fig:ApproximatingSolutions:leftRectangle
 :class: dark-light
 
-Left Rectangle rule. The blue line represents $f(t,y(t))$, so if the value of $t$ changes, the value of $y$ changes accordingly.
+The left Rectangle rule applied to $f(t,y(t))$. \
+Remark: The blue line represents a possibility for $f(t,y(t))$, assuming we would have known $y(t)$.
+:::
 
+:::{todo}
+Replace {numref}`Fig:ApproximatingSolutions:leftRectangle` by an applet.
 :::
 
 Note that $f(t_n, y_n)$ is the slope of the tangent in $(t_n, y_n)$. The numerical approximation of the solution at $t_{n+1}$, denoted by $\tilde{y}_{n+1}$, is computed by
@@ -113,23 +125,16 @@ Note that $f(t_n, y_n)$ is the slope of the tangent in $(t_n, y_n)$. The numeric
 
 ::::
 
-in which $f(t_n, \tilde{y}_n)$ is the slope of the tangent in $(t_n, \tilde{y}_n)$. 
-This procedure leads to a sequence $\{t_n,\tilde{y}_n \}$, $n=0,1,\ldots$ of approximation points. Geometrically this represents a piecewise-linear approximation of the solution curve,  the _Euler polygon_, see {numref}`Figure %s <Fig:ApproximatingSolutions:eulerPolygon>`. 
+in which $f(t_n, \tilde{y}_n)$ is the slope of the tangent in $(t_n, \tilde{y}_n)$.
 
-:::{figure} Images/Fig-NumericalMethods-eulerPolygon.svg
-:name: Fig:ApproximatingSolutions:eulerPolygon
-:class: dark-light
+This procedure leads to a sequence $((t_n,\tilde{y}_n))$, $n=0,1,\ldots$ of approximation points.
 
-Approximation of a solution using the Forward Euler method, showing the Euler polygon.
-
-:::
-
-To summarize:
+To summarise:
 
 ::::{prf:definition}
 :label: Def:ApproximatingSolutions:FE
 
-Consider the general IVP Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
+Consider the general initial value problem Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
 
 Then the **Forward Euler method** is defined by the discrete dynamical system
 
@@ -149,7 +154,7 @@ Because $\tilde{y}_{n+1}$ can be computed directly from Equation {eq}`Eq:Approxi
 ::::{prf:example} 
 :label: Ex:ApproximatingSolutions:FE
 
-Consider the following initial-value problem:
+Consider the following initial value problem:
 
 $$
 \left\{\begin{array}{rclll}
@@ -177,6 +182,18 @@ Then we calculate $\tilde{y}_2$, which is an approximation to $y_2=y(t_2)=y(t_0+
 	&= 1.06.
 \end{align*}
 We can keep doing time steps, and if we do, we would obtain the approximation shown in {numref}`Figure %s <Fig:ApproximatingSolutions:eulerPolygon>`.
+
+
+:::{figure} Images/Fig-NumericalMethods-eulerPolygon.svg
+:name: Fig:ApproximatingSolutions:eulerPolygon
+:class: dark-light
+
+Approximation of a solution using the Forward Euler method.
+:::
+
+:::{todo}
+Replace {numref}`Fig:ApproximatingSolutions:eulerPolygon` by an applet.
+:::
 
 ::::
 
@@ -212,8 +229,14 @@ Any numerical approximation should resemble in some sense this (hard) solution. 
 :name: Fig:ApproximatingSolutions:Euler8
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler method with $\Delta t=8$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler method with $\Delta t=8$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Replace {numref}`Fig:ApproximatingSolutions:Euler8` by an applet with a slider for $\Delta t$, starting at $8$ and ending at $1$.
+
+Make sure the legend says Forward Euler.
 :::
 
 For this initial value problem the exact solution is known. Generally it is not possible to compare a numerical approximation to the exact solution of the initial value problem. At such times the slope or directional field are a good alternative to asses the accuracy of a numerical approximation. As you can see, the shape of the numerical approximation deviates wildly from the direction of the slope field. As such this numerical approximation will not resemble the exact solution. So let us see what happens when $\Delta t=4$. We did the computations again and this gives {numref}`Figure %s <Fig:ApproximatingSolutions:Euler4>`.
@@ -222,8 +245,12 @@ For this initial value problem the exact solution is known. Generally it is not 
 :name: Fig:ApproximatingSolutions:Euler4
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler method with $\Delta t=4$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler method with $\Delta t=4$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Remove {numref}`Fig:ApproximatingSolutions:Euler4` and rewrite text to use applet from {numref}`Fig:ApproximatingSolutions:Euler8`.
 :::
 
 The numerical result now somewhat follows the slope field, but still deviates too much. So let us try two more times, once with $\Delta t=2$, see {numref}`Figure %s <Fig:ApproximatingSolutions:Euler2>`, and a final time with $\Delta t=1$, see {numref}`Figure %s <Fig:ApproximatingSolutions:Euler1>`.
@@ -232,16 +259,24 @@ The numerical result now somewhat follows the slope field, but still deviates to
 :name: Fig:ApproximatingSolutions:Euler2
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler method with $\Delta t=2$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler method with $\Delta t=2$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Remove {numref}`Fig:ApproximatingSolutions:Euler2` and rewrite text to use applet from {numref}`Fig:ApproximatingSolutions:Euler8`.
 :::
 
 :::{figure} Images/Fig-NumericalMethods-Euler1.svg
 :name: Fig:ApproximatingSolutions:Euler1
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler method with $\Delta t=1$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler method with $\Delta t=1$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Remove {numref}`Fig:ApproximatingSolutions:Euler1` and rewrite text to use applet from {numref}`Fig:ApproximatingSolutions:Euler8`.
 :::
 
 If we compare all the results, we can definitely see that for $\Delta t=1$ the numerical approximations finally behaves in a manner predicted by the slope field. Using the slope field gives a crude estimate for accuracy and we can only say the approximation is close (enough) to the exact solution.
@@ -250,9 +285,48 @@ If we compare all the results, we can definitely see that for $\Delta t=1$ the n
 
 So always remember to check your results and adjust $\Delta t$ if needed. For each of the methods in this chapter you should remember this.
 
+::::{question}
+:type: short-answer
+:variant: blocks
+:admonition:
+:class: question
+:showanswer:
+
+Consider the initial value problem
+
+$$
+\left\{\begin{array}{rclll}
+y'(t) & = & 1+(t-y)^2,& {\rm for} & t \geq 2,\\
+y(2) & = & 1.
+\end{array}\right.
+$$
+
+Calculate $\tilde{y}_1$ and $\tilde{y}_2$ to approximate $y(2.5)$ and $y(3)$ with the Forward Euler method using $\Delta t=\frac12$.
+
+---
+M[2] $\tilde{y}_1=$
+= Direct application of the method gives
+
+\begin{align*}
+\tilde{y}_1 &= \tilde{y}_0 +\Delta t f(t_0,y_0) \\
+&= 1 + \frac12\cdot\left(1+(2-1)^2\right) \\
+&= 2.
+\end{align*}
+
+M[\frac{21}{8}] $\tilde{y}_2=$
+= Direct application of the method gives
+
+\begin{align*}
+\tilde{y}_2 &= \tilde{y}_1 +\Delta t f(t_1,y_1) \\
+&= 1 + \frac12\cdot\left(1+(2.5-2)^2\right) \\
+&= \frac{21}{8}.
+\end{align*}
+---
+::::
+
 ## Backward Euler method
 
-The _Backward Euler method_ is obtained by using the right Rectangle rule to approximate the integrals. At time $t_{n+1}$, the solution is approximated by
+The _Backward Euler method_ is obtained by using the right Rectangle rule to approximate the integrals, see {prf:ref}`Def:ApproximatingIntegrals:simple_rules`. At time $t_{n+1}$, the solution is approximated by
 
 $$
 y_{n+1} = y_n + \int_{t_n}^{t_{n+1}} f(t,y(t))\ dt \approx y_n + \Delta t f(t_{n+1}, y_{n+1}). 
@@ -269,14 +343,14 @@ The numerical approximation at $t = t_{n+1}$ equals
 
 Note that the unknown $\tilde{y}_{n+1}$ also occurs on the right-hand side. For that reason, the Backward Euler method is called an _implicit method_. If $f$ depends linearly on $y$, then the solution to Equation {eq}`Eq:ApproximatingSolutions:BE` can be easily computed. 
 
-For nonlinear initial-value problems, the solution to Equation {eq}`Eq:ApproximatingSolutions:BE` is non-trivial. In that case, a numerical nonlinear solver has to be applied. This means that the Backward Euler method uses more computation time per time step than the Forward Euler method. However, the Backward Euler method also has some advantages, which you will learn about in a Numerical Analysis course.
+For non-linear initial value problems, the solution to Equation {eq}`Eq:ApproximatingSolutions:BE` may be non-trivial. In that case, a numerical non-linear solver has to be applied, see {numref}`Sec:IterativeMethodsForVariousProblems`. This means that the Backward Euler method uses more computation time per time step than the Forward Euler method. However, the Backward Euler method also has some advantages, which you can learn about in a Numerical Analysis course.
 
-To summarize:
+To summarise:
 
 ::::{prf:definition}
 :label: Def:ApproximatingSolutions:BE
 
-Consider the general IVP Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
+Consider the general initial value problem from Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
 
 Then the **Backward Euler method** is defined by the discrete dynamical system
 
@@ -290,6 +364,70 @@ $$
 where $t_{n}=t_0+n\Delta t$.
 
 ::::
+
+::::{prf:example} 
+:label: Ex:ApproximatingSolutions:BE
+
+Consider the following initial value problem:
+
+$$
+\left\{\begin{array}{rclll}
+	y'(t) & = & -2ty^2, & \text{for} & t\geq -0.2, \\
+	y(-0.2) & = & 1.
+\end{array}\right.
+$$
+
+We will perform two time steps with the Backward Euler method with $\Delta t=0.1$.
+
+First, we note that $t_0=-0.2$, $\tilde{y}_0=y(t_0)=y(-0.2)=1$ and $f(t,y)=-2ty^2$.
+
+Then we calculate $\tilde{y}_1$, which is an approximation of $y_1=y(t_1)=y(t_0+\Delta t)=y(-0.2+0.1)=y(-0.1)$:
+
+$$
+\begin{array}{rrcl}
+&	\tilde{y}_1 &=& \tilde{y}_0 + \Delta t f(t_1,\tilde{y}_1) \\
+\Rightarrow & \tilde{y}_1 &=& 1 + 0.1\cdot\left(-2\cdot(-0.1)\cdot(\tilde{y}_1)^2\right) \\
+\Rightarrow & \tilde{y}_1 &=& 1 + 0.02\cdot\left(\tilde{y}_1\right)^2 \\
+\Rightarrow & 0.02\cdot\left(\tilde{y}_1\right)^2 - \tilde{y}_1 + 1 &=& 0 \\
+\Rightarrow & \left(\tilde{y}_1\right)^2 - 50\tilde{y}_1 + 50 &=& 0 \\
+\Rightarrow & \tilde{y}_1 &=& 25\pm5\sqrt{23}. \\
+\end{array}
+$$
+
+As you notice, we find two possible values for $\tilde{y}_1$, and the question is which we should take. We can expect that the value of $\tilde{y}_1$ is reasonably close to the value of $\tilde{y}_0=1$. Of the two values we found, this is
+
+$$
+\tilde{y}_1=25-5\sqrt{23}.
+$$
+
+Next we calculate $\tilde{y}_2$, which is an approximation to $y_2=y(t_2)=y(t_0+2\Delta t)=y(-0.2+2\cdot0.1)=y(0)$:
+
+$$
+\begin{array}{rrcl}
+&	\tilde{y}_2 &=& \tilde{y}_1 + \Delta t f(t_2,\tilde{y}_2) \\
+\Rightarrow & \tilde{y}_2 &=& 25-5\sqrt{23} + 0.1\cdot\left(-2\cdot(0)\cdot(\tilde{y}_2)^2\right) \\
+\Rightarrow & \tilde{y}_2 &=& 25-5\sqrt{23}.
+\end{array}
+$$
+
+In this case we, luckily, only find one value for $\tilde{y}_2$.
+
+We can keep doing time steps, and if we do, we would obtain the approximation shown in {numref}`Figure %s <Fig:ApproximatingSolutions:eulerPolygon-B>`.
+
+
+:::{figure} Images/Fig-NumericalMethods-eulerPolygon.svg
+:name: Fig:ApproximatingSolutions:eulerPolygon-B
+:class: dark-light
+
+Approximation of a solution using the Backward Euler method.
+:::
+
+:::{todo}
+Replace {numref}`Fig:ApproximatingSolutions:eulerPolygon-B` by an applet. The solution shown is not correct.
+:::
+
+::::
+
 
 ::::{prf:example}
 :label: Ex:ApproximatingSolutions:EX3
@@ -318,8 +456,14 @@ Let us compare the Backward Euler approximation of this problem with the Forward
 :name: Fig:ApproximatingSolutions:Euler8-B
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward and Backward Euler methods with $\Delta t=8$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward and Backward Euler methods with $\Delta t=8$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Replace {numref}`Fig:ApproximatingSolutions:Euler8-B` by an applet with a slider for $\Delta t$, starting at $8$ and ending at $1$.
+
+Make sure the legend says Forward and Backward Euler.
 :::
 
 The overall shape of the Backward Euler method compared to the Forward Euler method follows the slope field better. However, near $t=0$ it is still deviating from the expected behaviour. This numerical approximation will not resemble the exact solution either, so let us see what happens when $\Delta t=4$. We did the computations again and this gives {numref}`Figure %s <Fig:ApproximatingSolutions:Euler4-B>`.
@@ -328,8 +472,12 @@ The overall shape of the Backward Euler method compared to the Forward Euler met
 :name: Fig:ApproximatingSolutions:Euler4-B
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward and Backward Euler methods with $\Delta t=4$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward and Backward Euler methods with $\Delta t=4$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Remove {numref}`Fig:ApproximatingSolutions:Euler4-B` and rewrite text to use applet from {numref}`Fig:ApproximatingSolutions:Euler8-B`.
 :::
 
 While the Forward Euler approximation somewhat improved, the Backward Euler approximation while smoother seems to still deviate near $t=0$. So let us try two more times, once with $\Delta t=2$, see {numref}`Figure %s <Fig:ApproximatingSolutions:Euler2-B>`, and a final time with $\Delta t=1$, see {numref}`Figure %s <Fig:ApproximatingSolutions:Euler1-B>`.
@@ -338,16 +486,24 @@ While the Forward Euler approximation somewhat improved, the Backward Euler appr
 :name: Fig:ApproximatingSolutions:Euler2-B
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward and Backward Euler methods with $\Delta t=2$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward and Backward Euler methods with $\Delta t=2$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Remove {numref}`Fig:ApproximatingSolutions:Euler2-B` and rewrite text to use applet from {numref}`Fig:ApproximatingSolutions:Euler8-B`.
 :::
 
 :::{figure} Images/Fig-NumericalMethods-Euler1-B.svg
 :name: Fig:ApproximatingSolutions:Euler1-B
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward and Backward Euler methods with $\Delta t=1$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward and Backward Euler methods with $\Delta t=1$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Remove {numref}`Fig:ApproximatingSolutions:Euler1-B` and rewrite text to use applet from {numref}`Fig:ApproximatingSolutions:Euler8-B`.
 :::
 
 If we compare all results, we can definitely see that for $\Delta t=1$ the numerical approximations for both methods finally behave in a way that resembles the slope field. However, they still differ from each other and thus it is difficult to asses which is the best approximation for the exact solution.
@@ -358,7 +514,7 @@ Overall, we can asses, that for this initial value problem, given a larger $\Del
 
 ## Trapezoidal method
 
-The _Trapezoidal method_ is constructed using the Trapezoidal rule to approximate the integral (see {numref}`Figure %s <Fig:ApproximatingSolutions:trapezoidal>`). This means that 
+The _Trapezoidal method_ is constructed using the Trapezoidal rule to approximate the integral (see {prf:ref}`Def:ApproximatingIntegrals:simple_rules`). This means that 
 
 $$
 y_{n+1} = y_n + \int_{t_n}^{t_{n+1}} f(t,y(t))\ dt \approx y_n + \frac{\Delta t}{2}\left(f(t_n,y_n)+ f(t_{n+1},y_{n+1})\right).
@@ -375,18 +531,10 @@ The approximation of the solution at $t = t_{n+1}$ equals
 
 Note that the Trapezoidal method is also an _implicit_ method. 
 
-:::{figure} Images/Fig-NumericalMethods-trapezoidal.svg
-:name: Fig:ApproximatingSolutions:trapezoidal
-:class: dark-light
-
-Trapezoidal method. The blue line represents $f(t,y(t))$, so if the value of $t$ changes, the value of $y$ changes accordingly.
-
-:::
-
 ::::{prf:example}
 :label: Ex:ApproximatingSolutions:EX4-TR
 
-We can apply the Trapezoidal method to the same initial-value problem as in {prf:ref}`Ex:ApproximatingSolutions:FE`.
+We can apply the Trapezoidal method to the same initial value problem as in {prf:ref}`Ex:ApproximatingSolutions:FE`.
 
 If we do this, we will obtain the solution as shown in {numref}`Figure %s <Fig:ApproximatingSolutions:trapezoidalPolygon>`.
 
@@ -400,12 +548,12 @@ Approximation of a solution using the Trapezoidal method.
 
 ::::
 
-To summarize:
+To summarise:
 
 ::::{prf:definition}
 :label: Def:ApproximatingSolutions:TM
 
-Consider the general IVP Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
+Consider the general initial value problem from Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
 
 Then the **Trapezoidal method** is defined by the discrete dynamical system
 
@@ -425,21 +573,12 @@ where $t_{n}=t_0+n\Delta t$.
 :label: Ex:ApproximatingSolutions:EX4
 Consider again the initial value problem given in Equation {eq}`Eq:ApproximatingSolutions:EX2`
 
-%:::{math}
-%:label: Eq:ApproximatingSolutions:EX2
 $$
 \left\{\begin{array}{rclll}
 	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & \text{for} & t\geq 0, \\
 	y(0) & = & 30.
 \end{array}\right.
 $$
-%:::
-
-%The exact solution is equal to
-
-%$$
-%y(t)=\frac{150 \left(95 + \sqrt{9345} + \left(-95 + \sqrt{9345}\right) e^{\frac{1}{10} \sqrt{\frac{623} {15}} t}\right)}{483 + 5 \sqrt{9345} + \left(-483 + 5 \sqrt{9345}\right) e^{\frac{1}{10} \sqrt{\frac{623}%{15}} t}}
-%$$
 
 Let us compare the Trapezoidal approximation of this problem with the two Euler approximations performed in {prf:ref}`Ex:ApproximatingSolutions:EX3`. Similar to before, let us apply the methods using $\Delta t=8,4,2,1$ to this initial value problem and stop at $t=64$. This gives the results in {numref}`Figure %s <Fig:ApproximatingSolutions:Euler8-T>`, {numref}`Figure %s <Fig:ApproximatingSolutions:Euler4-T>`, {numref}`Figure %s <Fig:ApproximatingSolutions:Euler2-T>` and {numref}`Figure %s <Fig:ApproximatingSolutions:Euler1-T>`.
 
@@ -447,8 +586,14 @@ Let us compare the Trapezoidal approximation of this problem with the two Euler 
 :name: Fig:ApproximatingSolutions:Euler8-T
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler, Backward Euler and Trapezoidal methods with $\Delta t=8$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler, Backward Euler and Trapezoidal methods with $\Delta t=8$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Replace {numref}`Fig:ApproximatingSolutions:Euler8-T` by an applet with a slider for $\Delta t$, starting at $8$ and ending at $1$.
+
+Make sure the legend says Forward and Backward Euler.
 :::
 
 %The overall shape of the Backward Euler method compared to the Forward Euler method follows the slope field better. However, near $t=0$ it is still deviating from the expected shape. This numerical approximation will not resemble the exact solution either, so let us see what happens when $\Delta t=4$. We did the computations again and this gives {numref}`Figure %s <Fig:ApproximatingSolutions:Euler4-T>`.
@@ -457,26 +602,36 @@ The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` usin
 :name: Fig:ApproximatingSolutions:Euler4-T
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler, Backward Euler and Trapezoidal methods with $\Delta t=4$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler, Backward Euler and Trapezoidal methods with $\Delta t=4$ visualised with the slope field.
 
 :::
 
-%While the Forward Euler method some what improved the Backward Euler method seems to have the same problem near $t=0$. So let us try two more times, once with $\Delta t=2$, see {numref}`Figure %s <Fig:ApproximatingSolutions:Euler2-T>`, and a final time with $\Delta t=1$, see {numref}`Figure %s <Fig:ApproximatingSolutions:Euler1-T>`.
+:::{todo}
+Remove {numref}`Fig:ApproximatingSolutions:Euler4-T` and rewrite text to use applet from {numref}`Fig:ApproximatingSolutions:Euler8-T`.
+:::
 
 :::{figure} Images/Fig-NumericalMethods-Euler2-T.svg
 :name: Fig:ApproximatingSolutions:Euler2-T
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler, Backward Euler and Trapezoidal methods with $\Delta t=2$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler, Backward Euler and Trapezoidal methods with $\Delta t=2$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Remove {numref}`Fig:ApproximatingSolutions:Euler2-T` and rewrite text to use applet from {numref}`Fig:ApproximatingSolutions:Euler8-T`.
 :::
 
 :::{figure} Images/Fig-NumericalMethods-Euler1-T.svg
 :name: Fig:ApproximatingSolutions:Euler1-T
 :class: dark-light
 
-The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler, Backward Euler and Trapezoidal methods with $\Delta t=1$ visualized with the slope field.
+The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward Euler, Backward Euler and Trapezoidal methods with $\Delta t=1$ visualised with the slope field.
 
+:::
+
+:::{todo}
+Remove {numref}`Fig:ApproximatingSolutions:Euler1-T` and rewrite text to use applet from {numref}`Fig:ApproximatingSolutions:Euler8-T`.
 :::
 
 If we compare all results, we can definitely see that for $\Delta t=1$ the numerical approximations for all methods behave in a way that resembles the slope field. However, they still differ from each other and thus it is difficult to asses which is the best approximation for the exact solution. For a more exact approach to find the accuracy of numerical time-integration method check out the section {ref}`subsec:Accuracy`. 
@@ -544,7 +699,7 @@ $$
 
 ::::
 
-We can generalize our observations to a theorem:
+We can generalise our observations to a theorem:
 
 ::::{prf:theorem}
 :label: Th:ApproximatingSolutions:accuracy
@@ -578,7 +733,7 @@ A proof of this theorem is too much for this course, but you can find it in {cit
 |RK4 (see {ref}`Sec:Bonus`) |$4$|
 ```
 
-As you may notice, performing these computations by hand can be a lot of work for one time step, let alone for many time steps. Therefore we commonly use a computer to perform all of the calculations. And that is one of the reasons you will learn a programming language in your education.
+As you may notice, performing these computations by hand can be a lot of work for one time step, let alone for many time steps. Therefore we commonly use a computer to perform all of the calculations. To perform these calculations on a computer, might require some programming skills.
 
 ## Grasple exercises
 
@@ -596,7 +751,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 :url: https://embed.grasple.com/exercises/be00ce13-7564-41ad-8512-ddf664f7f1d3?id=104317
 :label: Grasple:104317
 :dropdown:
-:description: Applying the Forward Euler method to an autonomous initial-value problem.
+:description: Applying the Forward Euler method to an autonomous initial value problem.
 
 ::::
 
@@ -605,7 +760,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 :url: https://embed.grasple.com/exercises/aacbf529-fdd3-41e8-a682-b0bc1700527a?id=104315
 :label: Grasple:104315
 :dropdown:
-:description: Applying the Forward Euler method to a non-autonomous initial-value problem.
+:description: Applying the Forward Euler method to a non-autonomous initial value problem.
 
 ::::
 
@@ -614,7 +769,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 :url: https://embed.grasple.com/exercises/ddcac16d-d02b-4b1a-94f8-a35add610f00?id=104320
 :label: Grasple:104320
 :dropdown:
-:description: Applying the Backward Euler method to an autonomous initial-value problem.
+:description: Applying the Backward Euler method to an autonomous initial value problem.
 
 ::::
 
@@ -623,7 +778,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 :url: https://embed.grasple.com/exercises/eeff4834-84bf-491b-bb25-0a3822b39f9a?id=104325
 :label: Grasple:104325
 :dropdown:
-:description: Applying the Backward Euler method to a non-autonomous initial-value problem.
+:description: Applying the Backward Euler method to a non-autonomous initial value problem.
 
 ::::
 
@@ -632,7 +787,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 :url: https://embed.grasple.com/exercises/37649bc8-2eab-4dae-bf51-7ab67730f4a6?id=104333
 :label: Grasple:104333
 :dropdown:
-:description: Applying the Trapezoidal method to an autonomous initial-value problem.
+:description: Applying the Trapezoidal method to an autonomous initial value problem.
 
 ::::
 
@@ -641,7 +796,7 @@ As you may notice, performing these computations by hand can be a lot of work fo
 :url: https://embed.grasple.com/exercises/e4af23ea-6cbf-405c-a75b-572c09d5eb32?id=104336
 :label: Grasple:104336
 :dropdown:
-:description: Applying the Trapezoidal method to a non-autonomous initial-value problem.
+:description: Applying the Trapezoidal method to a non-autonomous initial value problem.
 
 ::::
 
@@ -692,12 +847,12 @@ $$
 
 From $\tilde{y}_n$ (calculated in the previous time step), the predictor $\overline{y}_{n+1}$ can be computed. Using this value in the corrector, this results in an _explicit_ formula: the _Modified Euler method_.
 
-To summarize:
+To summarise:
 
 ::::{prf:definition}
 :label: Def:ApproximatingSolutions:ME
 
-Consider the general IVP Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
+Consider the general initial value problem from Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
 
 Then the **Modified Euler method** is defined by the discrete dynamical system
 
@@ -718,7 +873,7 @@ where $t_{n}=t_0+n\Delta t$.
 :url: https://embed.grasple.com/exercises/532fe514-957b-4244-89eb-a6803366a665?id=79566
 :label: Grasple:79566
 :dropdown:
-:description: Applying the Modified Euler method to an autonomous initial-value problem.
+:description: Applying the Modified Euler method to an autonomous initial value problem.
 
 ::::
 
@@ -754,12 +909,12 @@ y(t_{n+1}) &= y(t_n) + \int_{t_n}^{t_{n+1}} f(t,y(t))dt \\
 \end{align*}
 Here, $y(t_n)$ is approximated by $\tilde{y}_n$, and the values of $y(t_n+\frac12\Delta t)$ and $y(t_n+\Delta t)$ have to be predicted. From Equation {eq}`Eq:ApproximatingSolutions:RK4` it follows that both $\tilde{y}_n + \frac12k_1$ and $\tilde{y}_n + \frac12k_2$ approximate $y(t_n + \frac12\Delta t)$, and that $y(t_n+\Delta t)$ is predicted by $\tilde{y}_n + k_3$.
 
-To summarize:
+To summarise:
 
 ::::{prf:definition}
 :label: Def:ApproximatingSolutions:RK4
 
-Consider the general IVP Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
+Consider the general initial value problem from Equation {eq}`Eq:ApproximatingSolutions:IVP`. Define $\tilde{y}_n$ as the numerical approximation of $y(t_n)$.
 
 Then the **Fourth-order method of Runge-Kutta** (a.k.a. _RK4 method_) is defined by the discrete dynamical system
 
@@ -781,7 +936,7 @@ where $t_{n}=t_0+n\Delta t$.
 ::::{prf:example} 
 :label: Ex:ApproximatingSolutions:RK4
 
-Consider the following initial-value problem:
+Consider the following initial value problem:
 
 $$
 \left\{\begin{array}{rclll}
@@ -828,7 +983,7 @@ Now we calculate $\tilde{y}_1$:
 :url: https://embed.grasple.com/exercises/c448c769-57fa-4b55-8c64-2e6e4ec8d6aa?id=79569
 :label: Grasple:79569
 :dropdown:
-:description: Applying the RK4 method to an autonomous initial-value problem.
+:description: Applying the RK4 method to an autonomous initial value problem.
 
 ::::
 

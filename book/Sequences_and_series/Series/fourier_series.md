@@ -899,7 +899,7 @@ f_{\mathrm{odd}}(x-2), & x > 1.
 
 Note that to avoid defining the value of $f_{\mathrm{odd}}$ at $-1+2n$ for any integer $n$ twice, we have defined $f_{\mathrm{odd}}$ at those points as $f_{\mathrm{odd}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{odd}}(x-2)$ for $x > 1$. This is just a technicality to avoid defining the value of $f_{\mathrm{odd}}$ at those points twice, and it does not change the function $f$ itself on the interval $(0,1]$.
 
-The function $f_{\mathrm{odd}}$ turns out to be exactly the function $f$ defined in {prf:ref}`Ex:Series:FourierExample2`, which was a sawtooth wave. The Fourier sine series of $f_{\mathrm{odd}}$ is given by Equation {eq}`Eq:Series:SawToothFourier` and a visualization of the Fourier sine series of $f_{\mathrm{odd}}$ can be found in {numref}`Fig:Series:SawToothFourier`.
+The function $f_{\mathrm{odd}}$ turns out to be exactly the function $f$ defined in {prf:ref}`Ex:Series:FourierExample2`, which was a sawtooth wave. The Fourier sine series of $f_{\mathrm{odd}}$ is given by Equation {eq}`Eq:Series:SawToothFourier` and a visualisation of the Fourier sine series of $f_{\mathrm{odd}}$ can be found in {numref}`Fig:Series:SawToothFourier`.
 
 If we define $f_{\mathrm{even}}$ as the even periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{even}}$ is given by
 

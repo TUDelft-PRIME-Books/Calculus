@@ -239,7 +239,7 @@ zw &= (r\cos(\theta) + i r \sin(\theta)) (s\cos(\phi) + is \sin(\phi))
 
 :::
 
-We recognize this product as the complex number with modulus $|zw|=rs$ and argument $\arg(zw) = \theta+\phi$. In particular we obtain the following theorem.
+We recognise this product as the complex number with modulus $|zw|=rs$ and argument $\arg(zw) = \theta+\phi$. In particular we obtain the following theorem.
 
 ::::{prf:theorem}
 :label: Thm:ComplexNumbers:polarmultdiv
@@ -1147,7 +1147,7 @@ y(0) & = & 1.
 
 :::
 
-From {numref}`Chapter:FirstorderDE`, we know that for any real number $k$, the function the function $y(\theta)=e^{k\theta}$ is the unique solution to the initial-value problem
+From {numref}`Chapter:FirstorderDE`, we know that for any real number $k$, the function the function $y(\theta)=e^{k\theta}$ is the unique solution to the initial value problem
 
 
 $$

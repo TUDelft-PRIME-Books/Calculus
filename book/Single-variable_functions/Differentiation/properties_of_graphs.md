@@ -6,7 +6,7 @@
 
 
 
-In this section, we will specifically see what the first and second derivatives say about the graph of a function. The ideas presented here can be generalized to give interpretations of higher order derivatives, but these are typically less useful in practice.
+In this section, we will specifically see what the first and second derivatives say about the graph of a function. The ideas presented here can be generalised to give interpretations of higher order derivatives, but these are typically less useful in practice.
 
 ## Convexity, concavity and inflection points
 
