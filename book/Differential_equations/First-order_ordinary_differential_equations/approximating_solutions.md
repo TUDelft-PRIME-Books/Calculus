@@ -308,18 +308,18 @@ M[2] $\tilde{y}_1=$
 = Direct application of the method gives
 
 \begin{align*}
-\tilde{y}_1 &= \tilde{y}_0 +\Delta t f(t_0,y_0) \\
-&= 1 + \frac12\cdot\left(1+(2-1)^2\right) \\
-&= 2.
+\tilde{y}_1 &= \tilde{y}_0 +\Delta t f(t_0,\tilde{y}_0) \\
+ &= 1 + \frac12\cdot\left(1+(2-1)^2\right) \\
+ &= 2.
 \end{align*}
 
 M[\frac{21}{8}] $\tilde{y}_2=$
 = Direct application of the method gives
 
 \begin{align*}
-\tilde{y}_2 &= \tilde{y}_1 +\Delta t f(t_1,y_1) \\
-&= 1 + \frac12\cdot\left(1+(2.5-2)^2\right) \\
-&= \frac{21}{8}.
+\tilde{y}_2 &= \tilde{y}_1 +\Delta t f(t_1,\tilde{y}_1) \\
+ &= 1 + \frac12\cdot\left(1+(2.5-2)^2\right) \\
+ &= \frac{21}{8}.
 \end{align*}
 ---
 ::::
@@ -510,6 +510,42 @@ If we compare all results, we can definitely see that for $\Delta t=1$ the numer
 
 Overall, we can asses, that for this initial value problem, given a larger $\Delta t$ the Backward Euler method behaves better than the Forward Euler method. And both methods improve as $\Delta t$ gets smaller.
 
+::::
+
+::::{question}
+:type: short-answer
+:variant: blocks
+:admonition:
+:class: question
+:showanswer:
+
+Consider the initial value problem
+
+$$
+\left\{\begin{array}{rclll}
+y'(t) & = & 1+(t-y)^2,& {\rm for} & t \geq 2,\\
+y(2) & = & 1.
+\end{array}\right.
+$$
+
+Calculate $\tilde{y}_1$ to approximate $y(2.5)$ with the Backward Euler method using $\Delta t=\frac12$.
+
+---
+M[\frac72-\sqrt{3}] $\tilde{y}_1=$
+= Direct application of the method gives
+
+$$
+\begin{array}{rrcl}
+ & \tilde{y}_1 &=& \tilde{y}_0 +\Delta t f(t_1,\tilde{y}_1) \\
+\Rightarrow & \tilde{y}_1 &=& 1 + \frac12\cdot\left(1+(2.5-\tilde{y}_1)^2\right) \\
+\Rightarrow & \frac12(\tilde{y}_1)^2-\frac72\tilde{y}_1-\frac{37}8 &=& 0 \\
+\Rightarrow & \tilde{y}_1 &=& \frac72\pm\sqrt{3}.
+\end{array}
+$$
+
+We should take the solution closest to $\tilde{y}_0=1$, and find $\tilde{y}_1 = \frac72-\sqrt{3}$.
+
+---
 ::::
 
 ## Trapezoidal method
