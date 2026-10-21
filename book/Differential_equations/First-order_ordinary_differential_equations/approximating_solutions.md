@@ -188,11 +188,11 @@ We can keep doing time steps, and if we do, we would obtain the approximation sh
 :name: Fig:ApproximatingSolutions:eulerPolygon
 :class: dark-light
 
-Approximation of a solution using the Forward Euler method.
+Approximation of a solution using the Forward Euler method. For comparison the exact solution and the direction field is also shown.
 :::
 
 :::{todo}
-Replace {numref}`Fig:ApproximatingSolutions:eulerPolygon` by an applet.
+Replace {numref}`Fig:ApproximatingSolutions:eulerPolygon` by an applet. Include direction field.
 :::
 
 ::::
@@ -419,11 +419,11 @@ We can keep doing time steps, and if we do, we would obtain the approximation sh
 :name: Fig:ApproximatingSolutions:eulerPolygon-B
 :class: dark-light
 
-Approximation of a solution using the Backward Euler method.
+Approximation of a solution using the Backward Euler method. For comparison the exact solution and the direction field is also shown.
 :::
 
 :::{todo}
-Replace {numref}`Fig:ApproximatingSolutions:eulerPolygon-B` by an applet. The solution shown is not correct.
+Replace {numref}`Fig:ApproximatingSolutions:eulerPolygon-B` by an applet. The solution shown is not correct. Include direction field.
 :::
 
 ::::
@@ -570,16 +570,62 @@ Note that the Trapezoidal method is also an _implicit_ method.
 ::::{prf:example}
 :label: Ex:ApproximatingSolutions:EX4-TR
 
-We can apply the Trapezoidal method to the same initial value problem as in {prf:ref}`Ex:ApproximatingSolutions:FE`.
+We can apply the Trapezoidal method to the same initial value problem as in {prf:ref}`Ex:ApproximatingSolutions:FE`:
 
-If we do this, we will obtain the solution as shown in {numref}`Figure %s <Fig:ApproximatingSolutions:trapezoidalPolygon>`.
+$$
+\left\{\begin{array}{rclll}
+	y'(t) & = & -2ty^2, & \text{for} & t\geq -0.2, \\
+	y(-0.2) & = & 1.
+\end{array}\right.
+$$
+
+We will perform two time steps with the Trapezoidal method with $\Delta t=0.1$.
+
+First, we note that $t_0=-0.2$, $\tilde{y}_0=y(t_0)=y(-0.2)=1$ and $f(t,y)=-2ty^2$.
+
+Then we calculate $\tilde{y}_1$, which is an approximation of $y_1=y(t_1)=y(t_0+\Delta t)=y(-0.2+0.1)=y(-0.1)$:
+
+$$
+\begin{array}{rrcl}
+&	\tilde{y}_1 &=& \tilde{y}_0 + \dfrac{\Delta t}{2}\left( f(t_0,\tilde{y}_0) + f(t_1,\tilde{y}_1) \right) \\
+\Rightarrow & \tilde{y}_1 &=& 1 + 0.05\cdot\left(-2\cdot(-0.2)\cdot(1)^2-2\cdot(-0.1)\cdot(\tilde{y}_1)^2\right) \\
+\Rightarrow & \tilde{y}_1 &=& 1.02 + 0.01\cdot\left(\tilde{y}_1\right)^2 \\
+\Rightarrow & 0.01\cdot\left(\tilde{y}_1\right)^2 - \tilde{y}_1 + 1.02 &=& 0 \\
+\Rightarrow & \left(\tilde{y}_1\right)^2 - 100\tilde{y}_1 + 102 &=& 0 \\
+\Rightarrow & \tilde{y}_1 &=& 50\pm\sqrt{2398}. \\
+\end{array}
+$$
+
+As you notice, similar to the result we got with the Backward Euler method in {prf:ref}`Ex:ApproximatingSolutions:BE`, we find two possible values for $\tilde{y}_1$, and the question is which we should take. We can expect that the value of $\tilde{y}_1$ is reasonably close to the value of $\tilde{y}_0=1$. Of the two values we found, this is
+
+$$
+\tilde{y}_1=50-\sqrt{2398}.
+$$
+
+Next we calculate $\tilde{y}_2$, which is an approximation to $y_2=y(t_2)=y(t_0+2\Delta t)=y(-0.2+2\cdot0.1)=y(0)$:
+
+$$
+\begin{array}{rrcl}
+&	\tilde{y}_2 &=& \tilde{y}_1 + \dfrac{\Delta t}{2} \left(f(t_1,\tilde{y}_1) + f(t_2,\tilde{y}_2)\right) \\
+\Rightarrow & \tilde{y}_2 &=& 50-\sqrt{2398} + 0.05\cdot\left(-2\cdot(-0.1)\cdot(50-\sqrt{2398})^2-2\cdot(0)\cdot(\tilde{y}_2)^2\right) \\
+\Rightarrow & \tilde{y}_2 &=& \dfrac{4949}{50} - 2\sqrt(2398).
+\end{array}
+$$
+
+In this case we, luckily, only find one value for $\tilde{y}_2$.
+
+We can keep doing time steps, and if we do, we would obtain the approximation shown in {numref}`Figure %s <Fig:ApproximatingSolutions:trapezoidalPolygon>`.
 
 :::{figure} Images/Fig-NumericalMethods-trapezoidalPolygon.svg
 :name: Fig:ApproximatingSolutions:trapezoidalPolygon
 :class: dark-light
 
-Approximation of a solution using the Trapezoidal method.
+Approximation of a solution using the Trapezoidal method. For comparison the exact solution and the direction field is also shown.
 
+:::
+
+:::{todo}
+Replace {numref}`Fig:ApproximatingSolutions:trapezoidalPolygon` by an applet. Include direction field.
 :::
 
 ::::
@@ -676,12 +722,29 @@ Overall, we can asses, that for this initial value problem, given a larger $\Del
 
 ::::
 
+As you may notice, performing these computations by hand can be a lot of work for one time step, let alone for many time steps. Therefore we commonly use a computer to perform all of the calculations. To perform these calculations on a computer, might require some programming skills. The next example includes some code written in the programming language Python that applies our three methods to an initial value problem.
+
+:::{todo}
+Include Python code that can be used to approximate the solutions.
+
+Consider the initial value problem
+
+$$
+\left\{\begin{array}{rclll}
+y'(t) & = & 1+(t-y)^3,& {\rm for} & t \geq 2,\\
+y(2) & = & 1.
+\end{array}\right.
+$$
+
+Just three methods, not the bonus methods, and use fixed-point iterations with an absolute accuracy of $10^{-9}$.
+:::
+
 (subsec:Accuracy)=
 ## Accuracy
 
 So far, we have presented three numerical time-integration methods. In obtaining these numerical time-integration methods, we have used the composite integration rules (see {ref}`Sec:ApproximatingIntegrals`). 
 
-Since these rules are repeatedly used to approximate the integral $\int_{t_0}^t f(\tau, y(\tau))d\tau$, we know that there is a difference between the numerical solution $ \tilde{y}_n $ and the exact solution $ y(t) $.
+Since these rules are repeatedly used to approximate the integral $\displaystyle\int_{t_n}^{t_{n+1}} f(t, y(t))\,dt$, we know that there can be a difference between the numerical solution $ \tilde{y}_n $ and the exact solution $y(t)$.
 
 Let us investigate this difference in an example.
 
@@ -709,6 +772,10 @@ The exact solution and the numerical approximations of the initial value problem
 
 :::
 
+:::{todo}
+Replace {numref}`Fig:ApproximatingSolutions:Euler1-t=15` with an applet.
+:::
+
 If $\tilde{y}_N$ is the approximation we obtain after $N=\frac{15}{\Delta t}$ steps, the absolute error is $|y(15)-\tilde{y}_N|$.
 
 The results can be found in {numref}`Figure %s <Fig:ApproximatingSolutions:accuracy>`.
@@ -721,7 +788,13 @@ Absolute error of different methods for different time steps.
 
 :::
 
-If you look at these errors, you can see that in the $\log\log$ scale the errors are linear functions of the time step. In symbols this can be represented as
+:::{todo}
+Replace {numref}`Fig:ApproximatingSolutions:accuracy` with an applet, preferably with a slider for $T\in[0,60]$, initially at $T=15$, that shows the errors.
+
+Perhaps include {numref}`Fig:ApproximatingSolutions:Euler1-t=15` as a smaller subplot where the value of $T$ can be dragged. 
+:::
+
+If you look at these errors, you can see that in the $\log-\log$ scale the errors seem to be linear functions of the time step for small values of $\Delta t$. In symbols this can be represented as
 
 $$
 \log|y(15)-\tilde{y}_N|=A+p\log(\Delta t),
@@ -735,7 +808,19 @@ $$
 
 ::::
 
-We can generalise our observations to a theorem:
+We can generalise our observations to a definition and a theorem:
+
+::::{prf:definition}
+:label: Def:ApproximatingSolutions:Error
+
+Assume $\tilde{y}_N$ is an approximation of $y(T)$ using a numerical time-integration method with time step $\Delta t$ and $T=t_0+N\Delta t$.
+
+Then the **absolute error** $E(T,N)$ is defined as
+
+$$
+E(T,N) = \left|y(T)-\tilde{y}_{N}\right|.
+$$
+::::
 
 ::::{prf:theorem}
 :label: Th:ApproximatingSolutions:accuracy
@@ -745,15 +830,14 @@ Assume $\tilde{y}_N$ is an approximation of $y(T)$ using a numerical time-integr
 Then there exist a number $C>0$ and an integer $p$ such that
 
 $$
-\left|y(T)-\tilde{y}_N\right| \approx C\,\Delta t^p,
+E(T,N) \approx C\,\Delta t^p,
 $$
 
 where $p$ is independent of the function $y$.
 
 ::::
 
-A proof of this theorem is too much for this course, but you can find it in {cite:t}`Vuik_2023`. There you can also find the results in the following table:
-
+A proof of this theorem is too much for this course, but you can find it in {cite:t}`Vuik_2023`. In {prf:ref}`Th:ApproximatingSolutions:accuracy` the value of $p$ is independent of the solution $y$, which means that it only depends on the chosen method. As such, see {cite:t}`Vuik_2023`, we have the following results:
 
 ```{table} Order of accuracy of different time-integration methods.
 :widths: auto
@@ -769,7 +853,112 @@ A proof of this theorem is too much for this course, but you can find it in {cit
 |RK4 (see {ref}`Sec:Bonus`) |$4$|
 ```
 
-As you may notice, performing these computations by hand can be a lot of work for one time step, let alone for many time steps. Therefore we commonly use a computer to perform all of the calculations. To perform these calculations on a computer, might require some programming skills.
+The number $p$ is so important, that we give it a name:
+
+:::{prf:definition}
+:label: Def:ApproximatingSolutions:order
+
+The number $p$ in {prf:ref}`Th:ApproximatingSolutions:accuracy` is called the **order of accuracy** of the numerical time-integration method.
+:::
+
+::::{question} Multiple-choice Single-select
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+
+Given is a first-order initial value problem with $y$ and $t$ independent and dependent variable, respectively. Let $t_0=3$ and $T=11$.
+
+Suppose we divide the interval $[t_0,T]=[3,11]$ in $10$ steps with step size $\Delta t=\dfrac{8}{10}$, and perform $10$ steps with the _Trapezoidal method_ to approximate $y(T)=y(11)$. This leads to the absolute error $E(11,10)$.
+
+Now suppose we redo the computations using $20$ instead of $10$ steps.
+
+Then $E(11,20)$ equals
+---
+[ ] $8E(11,10)$.
+> When $N$ increases from $10$ to $20$, the step size is scaled by a factor $\frac12$. {prf:ref}`Th:ApproximatingSolutions:accuracy` gives that the absolute error is of the form $C\Delta t^p$, where $p$ is the order of the used method. So if $\Delta t$ becomes smaller, the error should also becomes smaller. 
+[ ] $4E(11,10)$.
+> When $N$ increases from $10$ to $20$, the step size is scaled by a factor $\frac12$. {prf:ref}`Th:ApproximatingSolutions:accuracy` gives that the absolute error is of the form $C\Delta t^p$, where $p$ is the order of the used method. So if $\Delta t$ becomes smaller, the error should also becomes smaller. 
+[ ] $2E(11,10)$.
+> When $N$ increases from $10$ to $20$, the step size is scaled by a factor $\frac12$. {prf:ref}`Th:ApproximatingSolutions:accuracy` gives that the absolute error is of the form $C\Delta t^p$, where $p$ is the order of the used method. So if $\Delta t$ becomes smaller, the error should also becomes smaller. 
+[ ] $E(11,10)$.
+> When $N$ increases from $10$ to $20$, the step size is scaled by a factor $\frac12$. {prf:ref}`Th:ApproximatingSolutions:accuracy` gives that the absolute error is of the form $C\Delta t^p$, where $p$ is the order of the used method. What is the order of the Trapezoidal method? This answer suggests that it would be zero, which is wrong. 
+[ ] $\dfrac12E(11,10)$.
+> When $N$ increases from $10$ to $20$, the step size is scaled by a factor $\frac12$. {prf:ref}`Th:ApproximatingSolutions:accuracy` gives that the absolute error is of the form $C\Delta t^p$, where $p$ is the order of the used method. What is the order of the Trapezoidal method? This answer suggests that it would be one, which is wrong.
+[x] $\dfrac14E(11,10)$.
+> When $N$ increases from $10$ to $20$, the step size is scaled by a factor $\frac12$. {prf:ref}`Th:ApproximatingSolutions:accuracy` gives that the absolute error is of the form $C\Delta t^p$, where $p$ is the order of the used method, which for the Trapezoidal method gives $p=2$. This implies that if $\Delta t$ is scaled by $\frac12$, the error is scaled by $\left(\frac12\right)^2=\frac14.
+[ ] $\dfrac18E(11,10)$.
+> When $N$ increases from $10$ to $20$, the step size is scaled by a factor $\frac12$. {prf:ref}`Th:ApproximatingSolutions:accuracy` gives that the absolute error is of the form $C\Delta t^p$, where $p$ is the order of the used method. What is the order of the Trapezoidal method? This answer suggests that it would be three, which is wrong.
+---
+::::
+
+{prf:ref}`Th:ApproximatingSolutions:accuracy` can not only be used to estimate the absolute error of a method when changing the value of the time step, but also the estimate the order of a method, which the next example shows.
+
+::::{prf:example}
+:label: Ex:ApproximatingSolutions:EstimateOrder
+
+Consider the differential equation
+
+$$
+\left\{\begin{array}{rcll}
+y' & = & f(t,y), & t\geq 0, \\
+y(0) &=& 70.
+\end{array}\right.
+$$
+
+We used some numerical time-integration method, of which we do not know the order, with two different values for $\Delta t$ to approximate the solution  $y$ of the initial value problem at time $T=8$. This gave us the following table:
+
+```{table} Several errors.
+:widths: auto
+:align: center
+:name: Tab:ApproximatingSolutions:EstimateOrder
+
+|$\Delta t$|$N$|$E(8,N)$|
+|-|-|-|
+|$0.8$|$10$|$1.650$|
+|$0.2$|$40$|$0.022$|
+```
+
+We can use these results to estimate the order $p$ of the method we used.
+
+{prf:ref}`Th:ApproximatingSolutions:accuracy` gives that we have
+
+$$
+E(8,10)\approx C\left(0.8\right)^p,
+$$
+
+and also
+
+$$
+E(8,40)\approx C\left(0.2\right)^p.
+$$
+
+If we divide the first error by the second error, we find
+
+$$
+\frac{E(8,10)}{E(8,40)} \approx 4^p,
+$$
+
+or even better
+
+$$
+E(8,10) \approx 4^pE(8,40).
+$$
+
+Since we know both errors, we can try some value of $p$ in increasing order:
+
+- If $p=1$, we would find $E(8,10)\approx4^1E(8,40) = 4\cdot0.022 = 0.088$, which is not really close to $E(8,10)=1.650$, so $p=1$ is unlikely.
+
+- $p=2$ gives $E(8,10)\approx4^2E(8,40) = 16\cdot0.022 = 0.352$, which again deviates a lot from $1.650=E(8,10)$ and we ignore it further.
+
+- Next $p=3$, which gives $E(8,10)\approx4^3E(8,40) = 64\cdot0.022 = 1.408$, which is pretty close to $1.650$, so is a likely candidate.
+
+- To be sure, if $p=4$, we obtain $E(8,10)\approx4^4E(8,40) = 256\cdot0.022 = 5.632$, which is way larger than $1.650$ so $4$ is a too large value for the order of the method.
+
+We conclude that $p=3$ is the most likely order of accuracy for the method we used.
+
+::::
 
 ## Grasple exercises
 
