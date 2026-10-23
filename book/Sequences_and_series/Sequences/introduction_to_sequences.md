@@ -516,11 +516,13 @@ The sequence $\left(b_n\right)_{n=1}^{\infty}$ with $b_n=(-1)^{n-1}2^n$ is also 
 
 We can show this by using the explicit formula to find that
 
+$$
 \begin{align*}
 b_{n}b_{n+1} &= (-1)^{n-1}2^n \cdot (-1)^{n}2^{n+1} \\
 &= (-1)^{2n-1}\cdot2^{2n+1} \\
 &= -1\cdot2^{2n+1}
 \end{align*}
+$$
 
 which is negative for all integers $n\geq1$. Hence the sequence is an alternating sequence.
 
@@ -584,12 +586,14 @@ Let $\left(F_n\right)_{n=1}^{\infty}$ be the sequence of Fibonacci numbers, then
 
 :::{math}
 :label: Eq:Series:FibonacciTelescoping
+$$
 \begin{align*}
 \sum_{k=1}^nF_k&=\sum_{k=1}^n\left(F_{k+2}-F_{k+1}\right)\\
 &=F_{n+2}-\cancel{F_{n+1}}+\cancel{F_{n+1}}-\cancel{F_n}\\
 &{}\quad{}+\cdots+\cancel{F_4}-\cancel{F_3}+\cancel{F_3}-F_2\\
 &=F_{n+2}-1.
 \end{align*}
+$$
 :::
 
 So the sum of the first $n$ terms of the Fibonacci sequence equals $F_{n+2}-1$. Note that in the second line of Equation {eq}`Eq:Series:FibonacciTelescoping` we have _cancelled_ many terms because those terms appear twice with opposite signs.
@@ -672,11 +676,13 @@ which gives that $c_1=\displaystyle\frac{1}{\sqrt{5}}$ and $c_2=-\displaystyle\f
 
 This means we have for $n=0,1,2,\ldots$ that
 
+$$
 \begin{align*}
 F_n&=\frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^n-\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^n\\
 &=\frac{(1+\sqrt{5})^n-(1-\sqrt{5})^n}{2^n\sqrt{5}} \\
 &= \frac{\varphi^n-(1-\varphi)^n}{\sqrt{5}}
 \end{align*}
+$$
 
 with
 
@@ -759,12 +765,14 @@ $$
 
 and hence $\displaystyle\lim\limits_{n\to\infty}\left(\frac{1-\varphi}{\varphi}\right)=0$. This implies that
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\frac{F_{n+1}}{F_n} &= \lim\limits_{n\to\infty}\frac{\varphi^{n+1}+(1-\varphi)^{n+1}}{\varphi^n+(1-\varphi)^n} \\
 &= \lim\limits_{n\to\infty}\frac{\varphi+(1-\varphi)\left(\frac{1-\varphi}{\varphi}\right)^n}{1+\left(\frac{1-\varphi}{\varphi}\right)^n}\\
 &=\frac{\varphi+0}{1+0} \\
 &=\varphi.
 \end{align*}
+$$
 
 ::::
 

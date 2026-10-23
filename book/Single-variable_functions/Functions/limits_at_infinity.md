@@ -14,7 +14,7 @@ A cauliflower in a refrigerator.
 ::::
 :::::
 
-Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling (see {numref}`SubSec:ODE1:SeparableAppl`), it can be shown that $T(t)=T_{\mathrm{env}}+(T(0)-T_{\mathrm{env}})e^{-rt}$. Here, $T_{\mathrm{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
+Suppose, for instance, that we buy a cauliflower at the supermarket, which has a temperature of $20$ °C. We place it into a refrigerator, which has a temperature of $5$ °C and we want to know how the temperature $T$ (in degrees Celsius) of the cauliflower changes as a function of time $t$ (in minutes). Using Newton's law of cooling (see {numref}`SubSec:ODE1:SeparableAppl`), it can be shown that $T(t)=T_{\text{env}}+(T(0)-T_{\text{env}})e^{-rt}$. Here, $T_{\text{env}}=5$ °C is the temperature of the refrigerator and $r>0$ is a constant representing the rate of the heat transfer between the object and the environment.
 
 Let us take, for example, $r=1\ \operatorname{min}^{-1}$ here. Note that $T(0)=20$ °C, since the object starts at this temperature when we place it into the refrigerator. In particular, we can write $T(t)=5+15e^{-t}$ °C. What happens after a very long time? Intuitively, we know the answer: the temperature of the cauliflower will be very close to the temperature of the refrigerator, which is $5$ °C. Indeed, we can also observe this when we plot the temperature as a function of time.
 
@@ -667,11 +667,13 @@ Now consider a limit of the form $\lim\limits_{x\rightarrow \infty}\left(p(x)-q(
 :label: Ex:LimitAtInfinity:Squareroottrick.
 Suppose we want to evaluate $\lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+x}$. Notice that both the function is of the form described above and that $\lim\limits_{x\rightarrow\infty }x=\lim\limits_{x\rightarrow\infty }\sqrt{x^2+x}=\infty$. Hence, the limit is of the form "$\infty-\infty$" and as such, it is not clear what happens. Using the square root trick we can evaluate the limit by rewriting
 
+$$
 \begin{align*}
  \lim\limits_{x\rightarrow \infty}x-\sqrt{x^2+x} &= \lim\limits_{x\rightarrow \infty}\left(x-\sqrt{x^2+x}\right)\dfrac{x+\sqrt{x^2+x}}{x+\sqrt{x^2+x}} \\
  &= \lim\limits_{x\rightarrow \infty}\dfrac{x^2-(x^2+x)}{x+\sqrt{x^2+1x}} \\
  &= \lim\limits_{x\rightarrow \infty}\frac{-x}{x+\sqrt{x^2+x}}.
 \end{align*}
+$$
 Note that the dominant term in this expression is $x$ and we divide both parts of the fraction by $x$ to evaluate
 
 $$
@@ -766,6 +768,7 @@ In that case, $f$ has the oblique asymptote $y=ax+b$ at both infinity and minus 
 
 The result follows almost directly from {prf:ref}`Thm:RationalFunctions:PolynomialLongDivision`. Indeed, this result allows us to write $f(x)=\frac{r(x)}{q(x)}+s(x)$ where $r(x)$ and $s(x)$ are polynomials with $\operatorname{deg}(r)<\operatorname{deg}(q)$ and $\operatorname{deg}(s)=\operatorname{deg}(p)-\operatorname{deg}(q)$. Since $\operatorname{deg}(p)=\operatorname{deg}(q)+1$, we obtain $\operatorname{deg}(s)=1$, so $s(x)=ax+b$ for some $a\neq 0$ and $b$. In order to show that $y=ax+b$ is indeed an oblique asymptote, we write $r(x)=a_nx^n+\ldots+a_1x+a_0$ and $q(x)=b_mx^m+\ldots+b_1x+b_0$ with $a_n\neq 0$ and $b_m\neq 0$. Since $\operatorname{deg}(r)<\operatorname{deg}(q)$ we have $n<m$. As such, the dominant term in the expression $\frac{r(x)}{q(x)}$ is $x^m$. Hence, we can evaluate the limit as
 
+$$
 \begin{align*}
  \lim_{x\rightarrow\infty}f(x)-(ax+b) &=\lim_{x\rightarrow\infty}\frac{r(x)}{q(x)}+s(x)-(ax+b)\\
  &= \lim_{x\rightarrow\infty}\frac{a_nx^n+\ldots+a_1x+a_0}{b_mx^m+\ldots+b_1x+b_0}+ax+b-(ax+b)\\
@@ -773,6 +776,7 @@ The result follows almost directly from {prf:ref}`Thm:RationalFunctions:Polynomi
  &= \frac{0+\ldots+0}{b_m+0+\ldots+0}\\
  &= 0.
 \end{align*}
+$$
 As such, $y=ax+b$ is indeed the oblique asymptote of $f$ at infinity. The computation for the oblique asymptote at minus infinity is identical.
 ::::::
 
@@ -967,12 +971,14 @@ We conclude that $\lim\limits_{x\rightarrow \infty}cf(x)=cL$.
 
 Now we prove the sum rule. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow \infty}f(x)=L$, we can pick $N_1$ in such a way that for $x$ with $x> N_1$ we have $|f(x)-L|<\frac{\varepsilon}{2}$. Similarly we can pick $N_2$ in such a way that for $x$ with $x> N_2$ we have $|g(x)-M|<\frac{\varepsilon}{2}$. We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x$ with $x> N$ we have both $x> N_1$ and $x> N_2$, so we can estimate
 
+$$
 \begin{align*}
  |f(x)+g(x)-(L+M)| &= |(f(x)-L)+(g(x)-M)| \\
  &\leq |f(x)-L|+|g(x)-M| \\
  &< \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \\
  &= \varepsilon.
 \end{align*}
+$$
 Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow \infty}\left(f(x)+g(x)\right)=L+M$.
 
 Next we prove the product rule. Let $\varepsilon>0$ be given. We pick $N_1$ in such a way that for $x$ with $x> N_1$ we have both $|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}$ and $|f(x)-L|<1$. The inequality $|f(x)-L|<1$ means that $L-1<f(x)<1+L$, which implies that $|f(x)|<|L|+1$. Now we pick $N_2$ in such a way that for $x$ with $x> N_2$ we hav $|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}$. We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers $N_1$ and $N_2$. Then for $x$ with $x> N$ we have both $x>N_1$ and $x> N_2$, so we can estimate
@@ -1046,12 +1052,14 @@ We set $N=\max\left(N_1,N_2\right)$, i.e. $N$ is the largest of the two numbers 
 
 As such, we can estimate for $x$ with $x>N$:
 
+$$
 \begin{align*}
  L-\varepsilon &< f(x) \\
  &\leq g(x) \\
  &\leq h(x) \\
  &< L+\varepsilon.
 \end{align*}
+$$
 
 In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varepsilon$, which yields $|g(x)-L|<\varepsilon$. We conclude that $\lim\limits_{x\rightarrow \infty}g(x)=L$.
 ::::::

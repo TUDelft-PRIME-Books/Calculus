@@ -7,6 +7,7 @@ sphinx-prime-applets == 1.4.0
 sphinx-indexed-definitions == 1.2.2
 sphinx-new-tab-link == 0.8.1
 sphinx-apa-references == 1.0
+sphinxcontrib-katex == 0.9.11
 
 # Our favourite Sphinx extensions in one line, replace with individual extensions if you prefer some extensions not to be included (https://github.com/TeachBooks/TeachBooks-Favourites)
-git+https://github.com/TeachBooks/TeachBooks-Favourites@v1.15.4
+git+https://github.com/TeachBooks/TeachBooks-Favourites@v1.15.5

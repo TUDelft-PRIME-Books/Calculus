@@ -54,15 +54,15 @@ Below we have performed the long division of $96789$ by $231$ and written it dow
 :margin: 0
 
 $\displaystyle
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{rr}
-& \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+& \htmlClass{tud-cyan}{4}\htmlClass{tud-green}{1}\htmlClass{tud-pink}{9} \\
 231  & \overline{\big)96789} \\
-& \underline{\class{tud-red}{924}}\phantom{00} \\
+& \underline{\htmlClass{tud-red}{924}}\phantom{00} \\
 & 438\phantom{0} \\
-& \underline{\class{tud-blue}{231}}\phantom{0} \\
+& \underline{\htmlClass{tud-blue}{231}}\phantom{0} \\
 & 2079 \\
-& \underline{\class{tud-orange}{2079}} \\
+& \underline{\htmlClass{tud-orange}{2079}} \\
 & 0 \\
 \end{array}
 }
@@ -87,14 +87,14 @@ $
 :margin: 0
 
 $\displaystyle
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{rclcl}
-231 & \Big/ & 96789 & \Big\\ & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
-& & \underline{\class{tud-red}{924}}\phantom{00} \\
+231 & \Big/ & 96789 & \Big\backslash & \htmlClass{tud-cyan}{4}\htmlClass{tud-green}{1}\htmlClass{tud-pink}{9} \\
+& & \underline{\htmlClass{tud-red}{924}}\phantom{00} \\
 & & \phantom{0}438\phantom{0} \\
-& & \phantom{0}\underline{\class{tud-blue}{231}}\phantom{0} \\
+& & \phantom{0}\underline{\htmlClass{tud-blue}{231}}\phantom{0} \\
 & & \phantom{0}2079 \\
-& & \phantom{0}\underline{\class{tud-orange}{2079}} \\
+& & \phantom{0}\underline{\htmlClass{tud-orange}{2079}} \\
 & & \phantom{0000}0 \\
 \end{array}
 }
@@ -119,14 +119,14 @@ $
 :margin: 0
 
 $\displaystyle
-\hspace{-0.2em}\class{longdivision}{
+\hspace{-0.2em}\htmlClass{longdivision}{
 \begin{array}{rclcl}
-96789 & \,\div\, & 231 & \,=\, & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
-\underline{\class{tud-red}{924}}\phantom{00} \\
+96789 & \,\div\, & 231 & \,=\, & \htmlClass{tud-cyan}{4}\htmlClass{tud-green}{1}\htmlClass{tud-pink}{9} \\
+\underline{\htmlClass{tud-red}{924}}\phantom{00} \\
 \phantom{0}438\phantom{0} \\
-\phantom{0}\underline{\class{tud-blue}{231}}\phantom{0} \\
+\phantom{0}\underline{\htmlClass{tud-blue}{231}}\phantom{0} \\
 \phantom{0}2079 \\
-\phantom{0}\underline{\class{tud-orange}{2079}} \\
+\phantom{0}\underline{\htmlClass{tud-orange}{2079}} \\
 \phantom{0000}0 \\
 \end{array}
 }
@@ -151,14 +151,14 @@ $
 :margin: 0
 
 $\displaystyle
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{rcl}
 96789 & | & \underline{231} \\
--\underline{\class{tud-red}{924}}\phantom{00} & | & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
+-\underline{\htmlClass{tud-red}{924}}\phantom{00} & | & \htmlClass{tud-cyan}{4}\htmlClass{tud-green}{1}\htmlClass{tud-pink}{9} \\
 438\phantom{0} \\
--\underline{\class{tud-blue}{231}}\phantom{0} \\
+-\underline{\htmlClass{tud-blue}{231}}\phantom{0} \\
 2079 \\
--\underline{\class{tud-orange}{2079}} \\
+-\underline{\htmlClass{tud-orange}{2079}} \\
 0 \\
 \end{array}
 }
@@ -183,14 +183,14 @@ $
 :margin: 0
 
 $\displaystyle
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{rcl}
 96789 & | & \underline{231} \\
--\underline{\class{tud-red}{924}}\phantom{00} & | & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9}\\
+-\underline{\htmlClass{tud-red}{924}}\phantom{00} & | & \htmlClass{tud-cyan}{4}\htmlClass{tud-green}{1}\htmlClass{tud-pink}{9}\\
 438\phantom{0} & | \\
--\underline{\class{tud-blue}{231}}\phantom{0} & | \\
+-\underline{\htmlClass{tud-blue}{231}}\phantom{0} & | \\
 2079 & | \\
--\underline{\class{tud-orange}{2079}} & | \\
+-\underline{\htmlClass{tud-orange}{2079}} & | \\
 0 & | \\
 \end{array}
 }
@@ -215,14 +215,14 @@ $
 :margin: 0
 
 $\displaystyle
-\hspace{-0.5em}\class{longdivision}{
+\hspace{-0.5em}\htmlClass{longdivision}{
 \begin{array}{rclcl}
-96789 & \,:\, & 231 & \,=\, & \class{tud-cyan}{4}\class{tud-green}{1}\class{tud-pink}{9} \\
--\underline{\class{tud-red}{924}}\phantom{00} \\
+96789 & \,:\, & 231 & \,=\, & \htmlClass{tud-cyan}{4}\htmlClass{tud-green}{1}\htmlClass{tud-pink}{9} \\
+-\underline{\htmlClass{tud-red}{924}}\phantom{00} \\
 \phantom{0}438\phantom{0} \\
-\phantom{0}-\underline{\class{tud-blue}{231}}\phantom{0} \\
+\phantom{0}-\underline{\htmlClass{tud-blue}{231}}\phantom{0} \\
 \phantom{0}2079 \\
-\phantom{0}-\underline{\class{tud-orange}{2079}} \\
+\phantom{0}-\underline{\htmlClass{tud-orange}{2079}} \\
 \phantom{0000}0 \\
 \end{array}
 }
@@ -239,6 +239,62 @@ $
 :::::
 
 ::::::
+
+:::::{prf:example}
+:label: Ex:RealNumbers:longdivisionnum
+
+Let us calculate $\frac{97813}{382}$ using long division. To the right of the long division you can see the explanation of the steps, on the left you can see the actual long division.
+
+::::{grid} 2 2 2 2
+
+:::{grid-item}
+
+$$
+\htmlClass{longdivision}{
+\begin{array}{rcl}
+97813 & / & \uuline{382} \\
+\underline{\htmlClass{tud-red}{764}}\phantom{00} & | & \htmlClass{tud-cyan}{2}\htmlClass{tud-green}{5}\htmlClass{tud-pink}{6}\\
+2141\phantom{0} & | \\
+\underline{\htmlClass{tud-blue}{1910}}\phantom{0} & | \\
+2313 & | \\
+\underline{\htmlClass{tud-orange}{2292}} & | \\
+21 & | \\
+\end{array}
+}
+$$
+
+:::
+
+:::{grid-item}
+$$
+\begin{align*}
+\htmlClass{tud-cyan}{2} \,\cdot\,\, \phantom{0}382 &= \phantom{0}\htmlClass{tud-red}{764} \\
+978 - \phantom{0}\htmlClass{tud-red}{764} &= \phantom{0}214 \\
+\htmlClass{tud-green}{5} \,\cdot\,\, \phantom{0}382 &= \htmlClass{tud-blue}{1910} \\
+2141 - \phantom{0}\htmlClass{tud-blue}{1910} &= \phantom{0}231 \\
+\htmlClass{tud-pink}{6} \,\cdot\,\, \phantom{0}382 &= \htmlClass{tud-orange}{2292} \\
+2313 - \htmlClass{tud-orange}{2292} &= \phantom{0}\phantom{0}21 \\
+\end{align*}
+$$
+:::
+
+::::
+
+Here, the calculation behind the long division has been written down concisely:
+
+$$
+\frac{97813}{382} = 200 + \frac{21413}{382} = 250 + \frac{2313}{382} = 256 + \frac{21}{382}.
+$$
+
+You can see this as follows:
+
+- Because $97813$ is a multiple of $10^4$ and $382$ is a multiple of $10^2$, we start with subtracting as many multiples of $\dfrac{10^4}{10^2}\cdot 382=100\cdot 382$ from $97813$ as possible, so that the remainder remains non-negative.
+
+- Next, we subtract as many multiples of $\dfrac{10^3}{10^2}\cdot 382=10\cdot 382$ from the remainder $21413$ as possible, so that the remainder remains non-negative.
+
+- Finally, we subtract as many multiples of $\dfrac{10^2}{10^2}\cdot 382=1\cdot 382$ from the remainder $2313$ as possible, so that the remainder remains non-negative.
+
+:::::
 
 (Subsec:R:IneqAbs)=
 
@@ -262,61 +318,7 @@ $$
 |a+b| \leq |a| + |b|.
 $$
 
-::::::
-
-:::::{prf:example}
-:label: Ex:RealNumbers:longdivisionnum
-
-Let us calculate $\frac{97813}{382}$ using long division. To the right of the long division you can see the explanation of the steps, on the left you can see the actual long division.
-
-::::{grid} 2 2 2 2
-
-:::{grid-item}
-
-$$
-\class{longdivision}{
-\begin{array}{rcl}
-97813 & / & \uuline{382} \\
-\underline{\class{tud-red}{764}}\phantom{00} & | & \class{tud-cyan}{2}\class{tud-green}{5}\class{tud-pink}{6}\\
-2141\phantom{0} & | \\
-\underline{\class{tud-blue}{1910}}\phantom{0} & | \\
-2313 & | \\
-\underline{\class{tud-orange}{2292}} & | \\
-21 & | \\
-\end{array}
-}
-$$
-
-:::
-
-:::{grid-item}
-\begin{align*}
-\class{tud-cyan}{2} \,\cdot\,\, \phantom{0}382 &= \phantom{0}\class{tud-red}{764} \\
-978 - \phantom{0}\class{tud-red}{764} &= \phantom{0}214 \\
-\class{tud-green}{5} \,\cdot\,\, \phantom{0}382 &= \class{tud-blue}{1910} \\
-2141 - \phantom{0}\class{tud-blue}{1910} &= \phantom{0}231 \\
-\class{tud-pink}{6} \,\cdot\,\, \phantom{0}382 &= \class{tud-orange}{2292} \\
-2313 - \class{tud-orange}{2292} &= \phantom{0}\phantom{0}21 \\
-\end{align*}
-:::
-
 ::::
-
-Here, the calculation behind the long division has been written down concisely:
-
-$$
-\frac{97813}{382} = 200 + \frac{21413}{382} = 250 + \frac{2313}{382} = 256 + \frac{21}{382}.
-$$
-
-You can see this as follows:
-
-- Because $97813$ is a multiple of $10^4$ and $382$ is a multiple of $10^2$, we start with subtracting as many multiples of $\dfrac{10^4}{10^2}\cdot 382=100\cdot 382$ from $97813$ as possible, so that the remainder remains non-negative.
-
-- Next, we subtract as many multiples of $\dfrac{10^3}{10^2}\cdot 382=10\cdot 382$ from the remainder $21413$ as possible, so that the remainder remains non-negative.
-
-- Finally, we subtract as many multiples of $\dfrac{10^2}{10^2}\cdot 382=1\cdot 382$ from the remainder $2313$ as possible, so that the remainder remains non-negative.
-
-:::::
 
 (Subsec:RealnumbersExp)=
 ## Exponentiation
@@ -363,17 +365,21 @@ Let $y>0$. Consider the set $S=\{x\in\mathbb{R}\,|\,x\geq 0\,\text{and}\,x^2<y\}
 
 Now we will show that $x_*^2=y$. We argue by contradiction, so we assume that this is not the case. First suppose that $x_*^2<y$. For any small number $0<\varepsilon<1$ we have $\varepsilon^2<\varepsilon$, so we can estimate
 
+$$
 \begin{align*}
  (x_*+\varepsilon)^2&=x_*^2+2\varepsilon x_*+\varepsilon^2\\ &\leq x_*^2+2\varepsilon x_*+\varepsilon\\ &\leq x_*^2+2\varepsilon m+\varepsilon\\ &=x_*^2+(2m+1)\varepsilon.
 \end{align*}
+$$
 
 Since $x_*^2<y$ we can choose $\varepsilon$ small enough that $x_*^2+(2m+1)\varepsilon<y$. In that case, we have $(x_*+\varepsilon)^2<y$, so we must have $x_*+\varepsilon$ in $S$. However, this contradicts the fact that $x_*$ is the supremum of $S$.
 
 Now suppose that $x_*^2>y$. Then for $0<\varepsilon<1$ we can estimate
 
+$$
 \begin{align*}
  (x_*-\varepsilon)^2&=x_*^2-2\varepsilon x_*+\varepsilon^2\\ &\geq x_*^2-2\varepsilon x_*\\ &\geq x_*^2-2\varepsilon \frac{1}{k}.
 \end{align*}
+$$
 
 Since $x_*^2>y$ we can choose $\varepsilon$ small enough that $x_*^2-2\varepsilon \frac{1}{k}>y$ and $x_*-\varepsilon>0$. In that case, we have $(x_*-\varepsilon)^2>y$. We claim that $x_*-\varepsilon>x$ for all $x$ in $S$. Indeed, if $0<x_*-\varepsilon<x$ for some $x$ in $S$ then we would have $y<(x_*-\varepsilon)^2<x^2<y$, which gives a contradiction. Hence, $x_*-\varepsilon$ is an upper bound of $S$, smaller than $x_*$. However, this contradicts the fact that $x_*$ is the supremum of $S$.
 
@@ -458,6 +464,7 @@ Prove final two identities
 :class: tudproof, dropdown
 Before we can prove any of the properties, we actually need to check that our definition of $y^{\frac{a}{b}}$ is well-defined. What we mean by this, is that there are multiple ways to represent a rational number as a fraction of an integer and a positive integer and we need to check whether different representations give the same definition of $y^{\frac{a}{b}}$. For this we let $r\neq 0$ be a rational number. We write $r=\frac{a}{b}$ for integers $a$ and $b$ with $b>0$ in such a way that the fraction $\frac{a}{b}$ cannot be simplified any further (that is to say, the [greatest common divisor](https://en.wikipedia.org/wiki/Greatest_common_divisor) of $a$ and $b$ should be $1$). Then if $r=\frac{c}{d}$ with $c$ and $d$ integers and $d>0$, we must have $c=na$ and $d=nb$ for some positive integer $n$. For this, we check that $\left(y^{\frac{a}{b}}\right)^{nb}=y^{na}$, which must mean that $y^{\frac{a}{b}}=\sqrt[nb]{y^{na}}=y^{\frac{na}{nb}}$. We can compute if $a>0$
 
+$$
 \begin{align*}
  \left(y^{\frac{a}{b}}\right)^{nb}&=\underbrace{y^{\frac{a}{b}}\cdot\cdots\cdot  y^{\frac{a}{b}}}_{nb\text{ times}}\\
  &=\underbrace{\underbrace{y^{\frac{a}{b}}\cdot\cdots\cdot  y^{\frac{a}{b}}}_{b\text{ times}}\cdot\cdots\cdot \underbrace{y^{\frac{a}{b}}\cdot\cdots\cdot  y^{\frac{a}{b}}}_{b\text{ times}}}_{n\text{ times}}\\
@@ -467,6 +474,7 @@ Before we can prove any of the properties, we actually need to check that our de
  &=\underbrace{y\cdot\cdots\cdot y}_{na\text{ times}}\\
  &=y^{na}.
 \end{align*}
+$$
 
 If $a<0$ the same computation and conclusion holds, except that we should write $y^a=\underbrace{\frac{1}{y}\cdot\cdots\cdot \frac{1}{y}}_{|a|\text{ times}}$. We conclude that $y^{\frac{a}{b}}=y^{\frac{na}{nb}}$, so the choice of how we represent the rational power does not influence the outcome.
 
@@ -484,6 +492,7 @@ $$
 
 We set out to show that $\left(\left(y^p\right)^q\right)^{bd}=y^{ac}$, which must imply that $\left(y^p\right)^q=\sqrt[bd]{y^{ac}}=y^{pq}$ For convenience, we assume that $a>0$ and $c>0$. In that case, we find
 
+$$
 \begin{align*}
  \left(\left(y^p\right)^q\right)^{bd}&=\left(\sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}\right)^{bd}\\
  &=\underbrace{\sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}\cdot\cdots\cdot \sqrt[d]{\left(\sqrt[b]{y^a}\right)^c}}_{bd\text{ times}}\\
@@ -499,6 +508,7 @@ We set out to show that $\left(\left(y^p\right)^q\right)^{bd}=y^{ac}$, which mus
  &=\underbrace{y\cdot\cdots y}_{ac\text{ times}}\\
  &=y^{ac},
 \end{align*}
+$$
 
 as desired. If $a$ and/or $c$ is negative then expressions like $y^a$ should be written like $\underbrace{\frac{1}{y}\cdot\cdots\cdot{1}{y}}_{|a|\text{ times}}$, but otherwise the computation does not change. As such, we find that $\left(y^p\right)^q=\sqrt[bd]{y^{ac}}=y^{pq}$.
 
@@ -639,9 +649,11 @@ $$
 
  Since $d>0$ we have $1+\frac{d}{2y^{u_0}}>1$. As such, we can find a (possibly very large) natural number $n$ with $y<\left(1+\frac{d}{2y^{u_0}}\right)^{10^n}$. By {prf:ref}`Thm:RealNumbers:ExpCalcRat` we have, for this value of $n$, that 
 
+$$
 \begin{align*}
  y^{u_n}-y^{l_n}&\leq \left(y^{\frac{1}{10^n}}-1\right)y^{u_0}\\ &\leq \left(\left(\left(1+\frac{d}{2y^{u_0}}\right)^{10^n}\right)^{\frac{1}{10^n}}-1\right)y^{u_0}\\ &=\left(1+\frac{d}{2y^{u_0}}-1\right)y^{u_0}\\ &=\frac{d}{2}.
 \end{align*}
+$$
 
 However, since $y^{u_n}\geq u_*$ and $y^{l_n}\leq l_*$ we now obtain
 
@@ -783,6 +795,7 @@ $$
 
 Then we let $N=\max\left\{N_1,N_2,N_3\right\}$, i.e. $N$ is the largest of the three numbers $N_1$, $N_2$ and $N_3$. Then using the properties we already proved as well as the triangle inequality {prf:ref}`thm:triangle_inequality_real_numbers`, we have for $n\geq N$ that
 
+$$
 \begin{align*}
  \left|\left(y^p\right)^q-\left(y^{p_n}\right)^{q_n}\right|&=\left|\left(y^p\right)^q-\left(y^{p}\right)^{q_n}+\left(y^{p}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
  &\leq \left|\left(y^p\right)^q-\left(y^{p}\right)^{q_n}\right|+\left|\left(y^{p}\right)^{q_n}-\left(y^{p_n}\right)^{q_n}\right|\\
@@ -793,6 +806,7 @@ Then we let $N=\max\left\{N_1,N_2,N_3\right\}$, i.e. $N$ is the largest of the t
  &=\frac{\varepsilon}{2}+\left|\left(\left(y^{p-p_n}\right)^{q_n}-1\right)\left(y^{p_n}\right)^{q_n}\right|\\
  &=\frac{\varepsilon}{2}+\left|\left(y^{p-p_n}\right)^{q_n}-1\right|\left(y^{p_n}\right)^{q_n}.
 \end{align*}
+$$
 
 Now if $q_n\geq 0$ we have since $n\geq N_2$ that 
 
@@ -820,6 +834,7 @@ $$
 
 which means that $\left|\left(y^{p-p_n}\right)^{q_n}-1\right|\leq \frac{\varepsilon}{2L}$. As such, we find, in both cases, that
 
+$$
 \begin{align*}
  \left|\left(y^p\right)^q-\left(y^{p_n}\right)^{q_n}\right|&\leq\frac{\varepsilon}{2}+\left|\left(y^{p-p_n}\right)^{q_n}-1\right|\left(y^{p_n}\right)^{q_n}\\
  &\leq\frac{\varepsilon}{2}+\left(\frac{\varepsilon}{2L}\right)\left(y^{p_n}\right)^{q_n}\\
@@ -827,6 +842,7 @@ which means that $\left|\left(y^{p-p_n}\right)^{q_n}-1\right|\leq \frac{\varepsi
  &\leq \frac{\varepsilon}{2}+\frac{\epsilon}{2L}L\\
  &=\varepsilon.
 \end{align*}
+$$
 
 As such, we find that the sequence $\left\{\left(y^{p_n}\right)^{q_n}\right\}_{n=1}^\infty$ converges to $\left(y^p\right)^q$. For any value of $n$ we have, since $p_n$ and $q_n$ are rational numbers, that $y^{p_nq_n}=\left(y^{p_n}\right)^{q_n}$. Hence, we obtain
 
@@ -952,9 +968,11 @@ $$
 
 As such, $\displaystyle\sum_{n=q+1}^\infty \frac{q!}{n!}$ is an integer, as it is the difference of two integers. However, we also see that
 
+$$
 \begin{align*}
  0&<\sum_{n=q+1}^\infty \frac{q!}{n!}\\ &=\frac{1}{q+1}+\frac{1}{(q+2)(q+1)}+\frac{1}{(q+3)(q+2)(q+1)}\ldots\\ &<\frac{1}{q+1}+\frac{1}{(q+1)(q+1)}+\frac{1}{(q+1)(q+1)(q+1)}+\ldots\\ &=\sum_{n=1}^\infty \frac{1}{(q+1)^n}.
 \end{align*}
+$$
 
 Note that $\displaystyle\sum_{n=1}^\infty \frac{1}{(q+1)^n}$ is a geometric series, so by {prf:ref}`Thm:Series:GeometricSeries`, we find that $\displaystyle\sum_{n=1}^\infty \frac{1}{(q+1)^n}=\frac{\frac{1}{q+1}}{1-\frac{1}{q+1}}=\frac{1}{q}$. Since we assume that $q>1$, we obtain 
 

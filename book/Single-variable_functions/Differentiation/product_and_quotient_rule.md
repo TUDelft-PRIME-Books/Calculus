@@ -41,10 +41,12 @@ $$
 
 Now we can plug in the approximations for $\Delta w$ and $\Delta \ell$ in terms of the derivatives to find
 
+$$
 \begin{align*}
  A(x+\Delta x) &\approx \left(w(x)+w'(x)\Delta x\right)\left(\ell(x)+\ell'(x)\Delta x\right) \\
  &= w(x)\ell(x)+w(x)\ell'(x)\Delta x+\ell(x) w'(x)\Delta x+w'(x)\ell'(x)\left(\Delta x\right)^2.
 \end{align*}
+$$
 
 The term $w(x)\ell(x)$ is simply the old area $A(x)$. As such, the new area is the old area plus three new terms, of which one, the one with $\left(\Delta x\right)^2$, is much smaller than the other two. So we find that the change in area divided by $\Delta x$ is approximately
 
@@ -54,11 +56,13 @@ $$
 
 Taking the limit as $\Delta x\rightarrow 0$, we obtain an expression for the rate of change of the area:
 
+$$
 \begin{align*}
  A'(x) &= \lim_{\Delta x\rightarrow 0}\frac{A(x+\Delta x)-A(x)}{\Delta x} \\
  &\approx \lim_{\Delta x\rightarrow 0} \left(w(x)\ell'(x)+\ell(x)w'(x)+w'(x)\ell'(x)\Delta x\right) \\
  &= w(x)\ell'(x)+\ell(x)w'(x).
 \end{align*}
+$$
 
 It turns out that because $\dfrac{\Delta w}{\Delta x}\rightarrow w'(x)$ and $\dfrac{\Delta \ell}{\Delta x}\rightarrow \ell'(x)$ as $\Delta x\rightarrow 0$, this expression is in fact exact, so we have found
 
@@ -94,25 +98,31 @@ $$
 
 Now we add the term $-f(a+h)g(a)+f(a+h)g(a)$, which is just a very fancy way of writing zero, to the numerator of this expression. Then we can split the limit in two parts and obtain
 
+$$
 \begin{align*}
  p'(a) &= \lim_{h\rightarrow 0}\frac{f(a+h)g(a+h)-f(a)g(a)}{h} \\
  &= \lim_{h\rightarrow 0}\frac{f(a+h)g(a+h)-f(a+h)g(a)+f(a+h)g(a)-f(a)g(a)}{h} \\
  &= \lim_{h\rightarrow 0}\frac{f(a+h)g(a+h)-f(a+h)g(a)}{h}+\lim_{h\rightarrow 0}\frac{f(a+h)g(a)-f(a)g(a)}{h}.
 \end{align*}
+$$
 
 Now we can write both of these limits as a product of two limits to obtain
 
+$$
 \begin{align*}
  p'(a) &= \lim_{h\rightarrow 0}\frac{f(a+h)g(a+h)-f(a+h)g(a)}{h}+\lim_{h\rightarrow 0}\frac{f(a+h)g(a)-f(a)g(a)}{h} \\
  &= \lim_{h\rightarrow 0}f(a+h)\lim_{h\rightarrow 0}\frac{g(a+h)-g(a)}{h}+\lim_{h\rightarrow 0}g(a)\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}.
 \end{align*}
+$$
 
 Note that since $f$ is differentiable at $a$, it must be continuous at $a$ as well, see {prf:ref}`Thm:Differentiability:Diffimpliescont`, so we must have $\displaystyle \lim_{h\rightarrow 0}f(a+h)=f(a)$. Then we also use that $f$ and $g$ are differentiable at $h$ to obtain
 
+$$
 \begin{align*}
  p'(a) &= \lim_{h\rightarrow 0}f(a+h)\lim_{h\rightarrow 0}\frac{g(a+h)-g(a)}{h}+\lim_{h\rightarrow 0}g(a)\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h} \\
  &= f(a)g'(a)+g(a)f'(a),
 \end{align*}
+$$
 
 as desired.
 
@@ -124,7 +134,7 @@ as desired.
 The most common error when trying to use the product rule is to take the product of the two derivatives. In that case, the incorrect expression would become
 
 $$
- (f g)'(x)=f'(x)g'(x)\qquad\qquad \left(\class{tud-red}{\textbf{INCORRECT}}\right).
+ (f g)'(x)=f'(x)g'(x)\qquad\qquad \left(\htmlClass{tud-red}{\textbf{INCORRECT}}\right).
 $$
 
 Make sure to avoid this error and to use the product rule as stated.
@@ -147,10 +157,12 @@ $$
 :label: Ex:Productquotientrule:Example2
 Consider the function $r(t)=2^t\sinh(t)$. Then $r$ is the product of the two functions $p(t)=2^t$ and $q(t)=\sinh(t)$. In {numref}`Sec:Differentiation:ChainRule` we obtained the derivatives of these functions. As such, we can use the product rule to obtain
 
+$$
 \begin{align*}
  r'(t)=p'(t)q(t)+p(t)q'(t)&=\left(\ln(2)2^t\right)\sinh(t)+2^t\cosh(t)\\
  &=2^t\left(\ln(2)\sinh(t)+\cosh(t)\right).
 \end{align*}
+$$
 
 ::::::
 
@@ -211,9 +223,10 @@ If $f$ and $g$ are differentiable functions, then $(fg)''$ equals
 > Correct! Applying the product rule twice gives
 
    $$
-    \begin{align*}
+\begin{align*}
  (fg)'' &= (f'g + fg')'\\ &= f''g + f'g' + f'g' + fg'' \\ &= f''g + 2f'g' + fg''.
     \end{align*}
+$$
     $$
 
 [ ] $f''g'' + 2f'g'$
@@ -240,11 +253,13 @@ $$
 
 Combining these equations gives
 
+$$
 \begin{align*}
  f'(x) &=2x\sin\left(x^3+2x+1\right)+x^2h'(x) \\
  &=2x\sin\left(x^3+2x+1\right)+x^2\cos\left(x^3+2x+1\right)\left(3x^2+2\right) \\
  &=2x\sin\left(x^3+2x+1\right)+\left(3x^4+2x^2\right)\cos\left(x^3+2x+1\right).
 \end{align*}
+$$
 
 ::::::
 
@@ -294,7 +309,7 @@ So $q$ is differentiable at $a$ and $\displaystyle q'(a)=\frac{f'(a)g(a)-g'(a)f(
 The most common error when trying to use the quotient rule to $\dfrac{f}{g}$ is to swap the roles of $f$ and $g$ in the numerator of the derivative. In that case, the incorrect expression would become
 
 $$
- \left(\frac{f}{g}\right)'(x)=\frac{f(x)g'(x)-f'(x)g(x)}{g(x)^2}\qquad\qquad \left(\class{tud-red}{\textbf{INCORRECT}}\right).
+ \left(\frac{f}{g}\right)'(x)=\frac{f(x)g'(x)-f'(x)g(x)}{g(x)^2}\qquad\qquad \left(\htmlClass{tud-red}{\textbf{INCORRECT}}\right).
 $$
 
 Make sure to avoid this error and to use the quotient rule as stated.
@@ -316,50 +331,60 @@ We have the following standard derivatives.
 :class: tudproof, dropdown
 We know that $\tan(x)=\dfrac{\sin(x)}{\cos(x)}$, so we can use the quotient rule to evaluate
 
+$$
 \begin{align*}
  \dfrac{d}{dx}\tan(x) &= \frac{\cos(x)\frac{d}{dx}\sin(x)-\sin(x)\frac{d}{dx}\cos(x)}{\cos(x)^2} \\
  &= \frac{\cos(x)\cos(x)-\sin(x)(-\sin(x))}{\cos^2(x)} \\
  &= \frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)} \\
  &= \frac{1}{\cos^2(x)}.
 \end{align*}
+$$
 
 Alternatively, we can rewrite this expression to
 
+$$
 \begin{align*}
  \dfrac{d}{dx}\tan(x) &= \frac{\cos^2(x)+\sin^2(x)}{\cos^2(x)} \\
  &= \frac{\cos^2(x)}{\cos^2(x)}+\frac{\sin^2(x)}{\cos^2(x)} \\
  &= 1+\left(\frac{\sin(x)}{\cos(x)}\right)^2 \\
  &= 1+\tan^2(x).
 \end{align*}
+$$
 
 Similarly, we know that that $\tanh(x)=\dfrac{\sinh(x)}{\cosh(x)}$, so we can use the quotient rule to evaluate
 
+$$
 \begin{align*}
  \dfrac{d}{dx}\tanh(x) &= \frac{\cosh(x)\frac{d}{dx}\sinh(x)-\sinh(x)\frac{d}{dx}\cosh(x)}{\cosh(x)^2} \\
  &= \frac{\cosh(x)\cosh(x)-\sinh(x)\sinh(x)}{\cosh^2(x)} \\
  &= \frac{\cosh^2(x)-\sinh^2(x)}{\cosh^2(x)} \\
  &= \frac{1}{\cosh^2(x)}.
 \end{align*}
+$$
 
 Alternatively, we can rewrite this expression to
 
+$$
 \begin{align*}
  \dfrac{d}{dx}\tanh(x) &= \frac{\cosh^2(x)-\sinh^2(x)}{\cosh^2(x)} \\
  &= \frac{\cosh^2(x)}{\cosh^2(x)}-\frac{\sinh^2(x)}{\cosh^2(x)} \\
  &= 1-\left(\frac{\sinh(x)}{\cosh(x)}\right)^2 \\
  &= 1-\tanh^2(x).
 \end{align*}
+$$
 :::
 
 ::::::{prf:example} 
 :label: Ex:Productquotientrule:QuotExample1
 Consider the rational function $f(x)=\dfrac{x^2+2x-3}{x^3-x}$. Then $f$ is the quotient of two functions, since we can write $f=\dfrac{g}{h}$ with $g(x)=x^2+2x-3$ and $h(x)=x^3-x$. Hence, we can use the quotient rule to evaluate
 
+$$
 \begin{align*}
  f'(x) &= \frac{h(x)g'(x)-g(x)h'(x)}{h(x)^2} \\
  &= \frac{(x^3-x)(2x+2)-(x^2+2x-3)(3x^2-1)}{(x^3-x)^2} \\
  &= \frac{-x^4 - 4 x^3 + 8 x^2 - 3}{(x^3-x)^2}.
 \end{align*}
+$$
 
 In fact, this expression can be simplified a little further by observing that there is a common factor $(x-1)^2$ in both the numerator and the denominator and we have
 
@@ -415,11 +440,13 @@ $$
 
 For $x\neq 0$, the function is differentiable, since it can be written as $f(x)=g(x)h(k(x))$ with $g(x)=x^2$, $h(x)=\sin(x)$ and $k(x)=\dfrac{1}{x}$ and these functions are all differentiable on their maximal domain. Using the product and the chain rule, the derivative is given by
 
+$$
 \begin{align*}
  f'(x)=&g(x)h'\left(k(x)\right)k'(x)+g'(x)h(k(x))\\ 
  =&x^2\cos\left(\frac{1}{x}\right)\left(-\frac{1}{x^2}\right)+2x\sin\left(\frac{1}{x}\right)\\
  =&-\cos\left(\frac{1}{x}\right)+2x\sin\left(\frac{1}{x}\right).
 \end{align*}
+$$
 
 For $x=0$, we evaluate the derivative using the limit definition
 

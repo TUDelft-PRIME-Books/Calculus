@@ -13,3 +13,11 @@ mjx-mtable.longdivision-short[justify="right"] {
 mjx-utext[variant="-explicitFont"] {
     min-width: fit-content !important;
 }
+
+/* Core instruction applied to text tokens */
+span.katex span.mord.text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 83%;
+}

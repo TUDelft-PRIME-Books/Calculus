@@ -264,6 +264,7 @@ $$
 
 The reason why the derivative $\displaystyle\frac{d}{dx}\ln\left(x^3\left(g(x)\right)^4\left(h(x)\right)^5\right)$ is easier to evaluate than the original derivative is that we can use the standard computation rule for the logarithm to split the logarithm of a product into the sum of logarithms. In addition, we can take out the powers. We then obtain
 
+$$
 \begin{align*}
 
  \frac{d}{dx}\left(x^3\left(g(x)\right)^4\left(h(x)\right)^5\right)&=x^3\left(g(x)\right)^4\left(h(x)\right)^5\frac{d}{dx}\ln\left(x^3\left(g(x)\right)^4\left(h(x)\right)^5\right)\\
@@ -271,6 +272,7 @@ The reason why the derivative $\displaystyle\frac{d}{dx}\ln\left(x^3\left(g(x)\r
  &=x^3\left(g(x)\right)^4\left(h(x)\right)^5\left(\frac{3}{x}+\frac{4g'(x)}{g(x)}+\frac{5h'(x)}{h(x)}\right).
 
 \end{align*}
+$$
 
 ::::::
 
@@ -296,12 +298,14 @@ Let $f$ be a positive differentiable function and let $g$ be any differentiable 
 [x] $\displaystyle f(x)^{g(x)-1}g(x)f'(x)+f(x)^{g(x)}\ln(f(x))g'(x)$
 > We use logarithmic differentiation. We can evaluate
 
+$$
 \begin{align*}
  \frac{d}{dx}f(x)^{g(x)}&=f(x)^{g(x)}\frac{d}{dx}\ln\left(f(x)^{g(x)}\right)\\
  &=f(x)^{g(x)}\frac{d}{dx}\left(g(x)\ln\left(f(x)\right)\right)\\
  &=f(x)^{g(x)}\left(g(x)\frac{f'(x)}{f(x)}+g'(x)\ln\left(f(x)\right)\right)\\
  &=f(x)^{g(x)-1}g(x)f'(x)+f(x)^{g(x)}\ln(f(x))g'(x).
 \end{align*}
+$$
 
 In this computation, we used the product rule.
 [ ] $\displaystyle f(x)^{g(x)-1}g(x)f'(x)+f(x)^{g(x)}g'(x)$
@@ -364,6 +368,7 @@ $$
 
 We let $g(y)=\dfrac{f^{-1}(y)-c}{y-d}$ for $y$ in $(f(a-\delta),f(a+\delta))$ with $y\neq d$. Then we note that $x\rightarrow c$ precisely when $f(x)\rightarrow d$. However, we do not know a priori that $g$ can be defined in such a way at $y=d$ to make it continuous, so we cannot use the regular substitution for limits. Instead, we use {prf:ref}`Theorem:Continuity:SubstitutionAlt` to obtain
 
+$$
 \begin{align*}
  \frac{1}{f'(c)} &= \lim_{x\rightarrow c}\frac{f^{-1}(f(x))-c}{f(x)-d} \\
  &= \lim_{x\rightarrow c}g(f(x)) \\
@@ -372,6 +377,7 @@ We let $g(y)=\dfrac{f^{-1}(y)-c}{y-d}$ for $y$ in $(f(a-\delta),f(a+\delta))$ wi
  &= \lim_{y\rightarrow d}\frac{f^{-1}(y)-f^{-1}(d)}{y-d} \\
  &= (f^{-1})'(d).
 \end{align*}
+$$
 
 So $f^{-1}$ is differentiable in $d$. Moreover, since $f'$ is continuous we see that $(f^{-1})'$ is continuous. In particular, when $c=a$ we have $d=b$ and we have
 

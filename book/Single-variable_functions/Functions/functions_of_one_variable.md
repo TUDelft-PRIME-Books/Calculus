@@ -21,9 +21,11 @@ $$
 
 for $0\leq t\leq 600$. Here $t$ describes the number of second that has passed since we have started cycling and since we consider values of $t$ with $0\leq t\leq 600$ we are describing the first $10$ minutes that we are cycling. At different points in time, we could fill in the value of $t$ to find the (unique!) corresponding value of $v$. For instance, we find
 
+$$
 \begin{align*}
  v(120)&=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 120}{60}\right)=\frac{5}{2}+\frac{5}{2}\cos(2\pi)=\frac{5}{2}+\frac{5}{2}\cdot 1=5,\\ v(300)&=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 300}{60}\right)=\frac{5}{2}+\frac{5}{2}\cos(5\pi)=\frac{5}{2}+\frac{5}{2}\cdot (-1)=0.
 \end{align*}
+$$
 
 So this formula indeed gives the right values at the moments in time $t=120$ and $t=300$. However, there are many other formulas with this property. For instance, we could consider
 
@@ -33,9 +35,11 @@ $$
 
 for $0\leq t\leq 600$ (we use the symbol $w$ to distinguish between this formula and the previous one). Since we still have a single velocity corresponding to each point in time, $w$ is a function of $t$. Then, we find
 
+$$
 \begin{align*}
  w(120)=\frac{25}{3}-\frac{120}{36}=5,\qquad w(300)=\frac{25}{3}-\frac{300}{36}=0
 \end{align*}
+$$
 
 so this formula also gives the right values at the moments in time $t=120$ and $t=300$. So which of these is correct? Without knowing more about our journey, it is impossible to know for sure, but, in this case, one is definitely more realistic than the other. For instance, we have $v(t)\geq 0$ for all $t$, while at $t=600$ we have
 
@@ -619,7 +623,7 @@ The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the func
 
 ::::::{prf:example} Power function with power $-2$
 :label: Ex:Functions1var:Gravity
-Consider two objects with masses $m_1$ and $m_2$ respectively (measured in $\mathrm{kg}$). Then [Newton's law of universal gravitation](https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation) states that the gravitational force $F$ (measured in $\mathrm{N}$) acting between the two objects is a function of the distance $r$ (measured in $\mathrm{m}$) between the two objects
+Consider two objects with masses $m_1$ and $m_2$ respectively (measured in $\text{kg}$). Then [Newton's law of universal gravitation](https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation) states that the gravitational force $F$ (measured in $\text{N}$) acting between the two objects is a function of the distance $r$ (measured in $\text{m}$) between the two objects
 
 $$
  F(r)=G\frac{m_1m_2}{r^2}=Gm_1m_2r^{-2}.

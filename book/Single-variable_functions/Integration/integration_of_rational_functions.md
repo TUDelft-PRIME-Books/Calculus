@@ -51,11 +51,13 @@ Case 4 follows from the substitution $u=\dfrac{x-b}{c}$ and {numref}`Tab:Integra
 
 Finally, case 6 follows from the substitution $x=b+c\tan(t)$, which leads to $dx=c(1+\tan^2(t))\,dt$ and therefore
 
+$$
 \begin{align*}
 \int\frac{1}{((x-b)^2+c^2)^m}\,dx&=\int\frac{c(1+\tan^2(t))}{(c^2(1+\tan^2(t)))^m}\,dt\\
 &= \int\frac{1}{c}\cdot\frac{1}{(1+\tan^2(t))^{m-1}}\,dt\\
 &=\frac{1}{c}\int\cos^{2m-2}(t)\,dt,
 \end{align*}
+$$
 
 where in the last step we used the identity $1+\tan^2(t)=\dfrac{1}{\cos^2(t)}$.
 
@@ -112,10 +114,12 @@ $$
 
 Hence, we have
 
+$$
 \begin{align*}
 \int\frac{x^3}{x^2+5x+6}\,dx&=\int\left(x-5-\frac{8}{x+2}+\frac{27}{x+3}\right)\,dx\\
 &=\frac{1}{2}x^2-5x-8\ln|x+2|+27\ln|x+3|+C.
 \end{align*}
+$$
 
 ::::::
 
@@ -125,18 +129,22 @@ Now we take a look at $\displaystyle\int\frac{6x^2-4x-1}{2x^3+x^2-x}\,dx$.
 
 Note that the integrand is a proper rational function since the degree of the numerator is less than the degree of the denominator. Furthermore, we have $2x^3+x^2-x=2x(x-\frac12)(x+1)$ and therefore
 
+$$
 \begin{align*}
 \frac{6x^2-4x-1}{2x^3+x^2-x} &= \frac{6x^2-4x-1}{2x(x-\frac12)(x+1)} \\
 &= \frac{3x^2-2x-\frac12}{x(x-\frac12)(x+1)} \\
 &= \frac{1}{x}-\frac{1}{x-\frac12}+\frac{3}{x+1}.
 \end{align*}
+$$
 
 This leads to
 
+$$
 \begin{align*}
 \int\frac{6x^2-4x-1}{2x^3+x^2-x}\,dx&=\int\left(\frac{1}{x}-\frac{1}{x-\frac12}+\frac{3}{x+1}\right)\,dx\\
 &=\ln|x|-\ln|x-\tfrac{1}{2}|+3\ln|x+1|+C.
 \end{align*}
+$$
 
 Note that $\ln|x-\tfrac12|=\ln|\frac12(2x-1)|=\ln(\tfrac12)+\ln|2x-1|$. This implies that the result can also be written as (with a different  constant of integration)
 
@@ -161,11 +169,13 @@ $$
 
 with $A=\dfrac{1}{2\alpha}$ and $B=-\dfrac{1}{2\alpha}$. Hence, we have
 
+$$
 \begin{align*}
 \int\frac{dx}{x^2-\alpha^2}&=\frac{1}{2\alpha}\int\left(\frac{1}{x-\alpha}-\frac{1}{x+\alpha}\right)\,dx\\
 &=\frac{1}{2\alpha}\left(\ln|x-\alpha|-\ln|x+\alpha|\right)+C\\
 &=\frac{1}{2\alpha}\ln\left|\frac{x-\alpha}{x+\alpha}\right|+C.
 \end{align*}
+$$
 :::
 
 ## Repeated linear factors
@@ -190,10 +200,12 @@ $$
 
 Hence we have
 
+$$
 \begin{align*}
 \int\frac{x^2}{x^2+2x+1}\,dx&=\int\left(1-\frac{2}{x+1}+\frac{1}{(x+1)^2}\right)\,dx\\
 &=x-2\ln|x+1|-\frac{1}{x+1}+C.
 \end{align*}
+$$
 ::::::
 
 ::::::{prf:Example}
@@ -208,10 +220,12 @@ $$
 
 We conclude that
 
+$$
 \begin{align*}
 \int\frac{x(3x+5)}{(x+1)^3}\,dx&=\int\left(\frac{3}{x+1}-\frac{1}{(x+1)^2}-\frac{2}{(x+1)^3}\right)\,dx\\
 &=3\ln|x+1|+\frac{1}{x+1}+\frac{1}{(x+1)^2}+C.
 \end{align*}
+$$
 ::::::
 
 ## Unrepeated irreducible quadratic factors
@@ -235,11 +249,13 @@ $$
 
 which implies that
 
+$$
 \begin{align*}
 \int\frac{6x^3-7x^2+12x-4}{x^4+5x^2+4}\,dx&=\int\left(\frac{2x+1}{x^2+1}+\frac{4x-8}{x^2+4}\right)\,dx\\
 &= \int\left(\frac{2x}{x^2+1}+\frac{1}{x^2+1}+\frac{4x}{x^2+4}-\frac{8}{x^2+4}\right)\,dx \\
 &=\ln(x^2+1)+\arctan(x)+2\ln(x^2+4)-4\arctan(\tfrac{1}{2}x)+C.
 \end{align*}
+$$
 
 ::::::
 
@@ -249,21 +265,25 @@ Consider $\displaystyle\int\frac{2x+5}{x^2+4x+8}\,dx$.
 
 Note that $x^2+4x+8=(x+2)^2+4$ and with that the integrand already becomes a partial fraction decomposition. Hence, we have
 
+$$
 \begin{align*}
 \int\frac{2x+5}{x^2+4x+8}\,dx&=\int\frac{2(x+2)+1}{(x+2)^2+4}\,dx\\
 &=\int\frac{2(x+2)}{(x+2)^2+4}+\frac{1}{(x+2)^2+4}\,dx\\
 &= \ln\left((x+2)^2+4\right)+\frac{1}{2}\arctan\left(\frac{x+2}{2}\right)+C \\
 &= \ln(x^2+4x+8)+\frac{1}{2}\arctan\left(\frac{x+2}{2}\right)+C.
 \end{align*}
+$$
 
 Note that in this case we also could have used the substitution $u=x+2$:
 
+$$
 \begin{align*}
 \int\frac{2x+5}{x^2+4x+8}\,dx&=\int\frac{2u+1}{u^2+4}\,du\\
 &=\ln(u^2+4)+\frac{1}{2}\arctan\left(\frac{u}{2}\right)+C\\
 &=\ln((x+2)^2+4)+\frac{1}{2}\arctan\left(\frac{x+2}{2}\right)+C\\
 &=\ln(x^2+4x+8)+\frac{1}{2}\arctan\left(\frac{x+2}{2}\right)+C.
 \end{align*}
+$$
 
 ::::::
 
@@ -277,18 +297,22 @@ Consider $\displaystyle\int\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(
 
 Using some tedious computations, the partial fraction decomposition of the integrand gives
 
+$$
 \begin{align*}
 &\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(x^2+2)^2}\\
 &{}\quad{} = \frac{2x+1}{x^2+1}-\frac{2x}{(x^2+1)^2}+\frac{4x}{(x^2+2)^2}.
 \end{align*}
+$$
 
 Hence we have
 
+$$
 \begin{align*}
 &\int\frac{2x^7+x^6+12x^5+5x^4+16x^3+8x^2+4x+4}{(x^2+1)^2(x^2+2)^2}\,dx\\
 &{}\quad\quad{}=\int\left(\frac{2x}{x^2+1}+\frac{1}{x^2+1}-\frac{2x}{(x^2+1)^2}+\frac{4x}{(x^2+2)^2}\right)\,dx\\
 &{}\quad\quad{}=\ln(x^2+1)+\arctan(x)+\frac{1}{2(x^2+1)^2}-\frac{1}{(x^2+2)^2}+C.
 \end{align*}
+$$
 ::::::
 
 Note that we were lucky that the partial fraction decomposition did not contain terms for the sixth case in {prf:ref}`Thm:RationalFunctions:Cases`. Otherwise, we had to deal with multiples of the integrals 
@@ -311,12 +335,14 @@ $$
 
 Now we use $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ to find that
 
+$$
 \begin{align*}
 \int_0^1\frac{1}{(1+x^2)^2}\,dx&=\int_0^{\frac{1}{4}\pi}\cos^2(t)\,dt \\
 &=\int_0^{\frac{1}{4}\pi}\frac{1}{2}(1+\cos(2t))\,dt\\
 &=\bigg[\frac{1}{2}t+\frac{1}{4}\sin(2t)\bigg]_0^{\frac{1}{4}\pi}\\
 &=\frac{1}{8}\pi+\frac{1}{4}.
 \end{align*}
+$$
 ::::::
 
 ::::::{prf:Example}
@@ -331,11 +357,13 @@ $$
 
 Now we use $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ to find that
 
+$$
 \begin{align*}
 \cos^4(t)&=\frac{1}{4}(1+\cos(2t))^2\\
 &=\frac{1}{4}(1+2\cos(2t)+\cos^2(2t))\\
 &=\frac{1}{4}+\frac{1}{2}\cos(2t)+\frac{1}{4}\cos^2(2t).
 \end{align*}
+$$
 
 Finally, using $\cos^2(2t)=\frac{1}{2}(1+\cos(4t))$, we obtain
 
@@ -345,6 +373,7 @@ $$
 
 Hence, we have
 
+$$
 \begin{align*}
 \int_1^{\sqrt{3}}\frac{dx}{(1+x^2)^3}&=\int_{\frac{1}{4}\pi}^{\frac{1}{3}\pi}\cos^4(t)\,dt\\
 &=\int_{\frac{1}{4}\pi}^{\frac{1}{3}\pi}\left(\frac{3}{8}+\frac{1}{2}\cos(2t)+\frac{1}{8}\cos(4t)\right)\,dt\\
@@ -352,6 +381,7 @@ Hence, we have
 &=\frac{1}{8}\pi+\frac{1}{8}\sqrt{3}-\frac{1}{64}\sqrt{3}-\frac{3}{32}\pi-\frac{1}{4}\\
 &= \frac{1}{32}\pi + \frac{7}{64}\sqrt{3} - \frac{1}{4}.
 \end{align*}
+$$
 ::::::
 
 ## Grasple exercises

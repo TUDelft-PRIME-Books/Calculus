@@ -126,7 +126,6 @@ For the left and right limits, several different notations are used throughout t
 $$
  \lim_{x\rightarrow a^-}f(x)=\lim_{x\uparrow a}f(x)=f(a^-).
 $$
-$$
  \lim_{x\rightarrow a^+}f(x)=\lim_{x\downarrow a}f(x)=f(a^+).
 $$
 ::::::
@@ -475,11 +474,13 @@ Now consider a limit of the form $\lim\limits_{x\rightarrow a}\frac{f(x)}{g(x)}$
 :label: Ex:LimitAtPoint:Squareroottrick.
 Suppose we want to evaluate $\lim\limits_{x\rightarrow 0}\dfrac{2-\sqrt{x+4}}{x}$. Notice that both the numerator and the denominator are $0$ at $x=0$, and that the numerator is of the form described above. Using the square root trick we can evaluate the limit by rewriting
 
+$$
 \begin{align*}
  \lim\limits_{x\rightarrow 0}\dfrac{2-\sqrt{x+4}}{x} &= \lim\limits_{x\rightarrow 0}\dfrac{2-\sqrt{x+4}}{x}\dfrac{2+\sqrt{x+4}}{2+\sqrt{x+4}} \\
  &= \lim\limits_{x\rightarrow 0}\dfrac{4-(x+4)}{x(2+\sqrt{x+4})} \\
  &= \lim\limits_{x\rightarrow 0}\frac{-x}{x(2+\sqrt{x+4})}.
 \end{align*}
+$$
 Note that the new numerator and denominator both contain the common factor $x$, so we can cancel out this factor and evaluate
 
 $$
@@ -779,12 +780,14 @@ We conclude that $\lim\limits_{x\rightarrow a}cf(x)=cL$.
 
 Now we prove the sum rule. Let $\varepsilon>0$ be given. Since $\lim\limits_{x\rightarrow a}f(x)=L$, we can pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have $|f(x)-L|<\frac{\varepsilon}{2}$. Similarly we can pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have $|g(x)-M|<\frac{\varepsilon}{2}$. We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$, so we can estimate
 
+$$
 \begin{align*}
  |f(x)+g(x)-(L+M)| &= |(f(x)-L)+(g(x)-M)| \\
  &\leq |f(x)-L|+|g(x)-M| \\
  &< \frac{\varepsilon}{2}+\frac{\varepsilon}{2} \\
  &= \varepsilon.
 \end{align*}
+$$
 Here we used the triangle inequality for absolute values ({prf:ref}`thm:triangle_inequality_real_numbers`). We conclude that $\lim\limits_{x\rightarrow a}f(x)+g(x)=L+M$.
 
 Next we prove the product rule. Let $\varepsilon>0$ be given and write $\varepsilon'=\min\left(\frac{\varepsilon}{2(|M|+1)},1\right)$. The "$+1$" in the denominator of $\frac{\varepsilon}{2(|M|+1)}$ is only there to ensure that we are not accidentally dividing by $0$ when $M=0$. Since $\varepsilon'>0$ we pick $\delta_1>0$ in such a way that for $x$ with $0<|x-a|<\delta_1$ we have have $|f(x)-L|<\varepsilon'$. This means that for $x$ with $0<|x-a|<\delta_1$ we have $|f(x)-L|<\frac{\varepsilon}{2(|M|+1)}$ and $|f(x)-L|<1$. The inequality $|f(x)-L|<1$ means that $L-1<f(x)<1+L$, which implies that $|f(x)|<|L|+1$. Now we pick $\delta_2>0$ in such a way that for $x$ with $0<|x-a|<\delta_2$ we have $|g(x)-M|<\frac{\varepsilon}{2(|L|+1)}$. We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smallest of the two numbers $\delta_1$ and $\delta_2$. Then for $x$ with $0<|x-a|<\delta$ we have both $0<|x-a|<\delta_1$ and $0<|x-a|<\delta_2$, so we can estimate
@@ -844,12 +847,14 @@ We set $\delta=\min\left(\delta_1,\delta_2\right)$, i.e. $\delta$ is the smalles
 
 As such, we can estimate for $x$ with $0<|x-a|<\delta$:
 
+$$
 \begin{align*}
  L-\varepsilon &< f(x) \\
  &\leq g(x) \\
  &\leq h(x) \\
  &< L+\varepsilon.
 \end{align*}
+$$
 
 In particular, we find for these values of $x$ that $L-\varepsilon<g(x)<L+\varepsilon$, which yields $|g(x)-L|<\varepsilon$. We conclude that $\lim\limits_{x\rightarrow a}g(x)=L$.
 ::::::

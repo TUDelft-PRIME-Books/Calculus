@@ -1,6 +1,17 @@
 (index)=
 # Calculus
 
+:::{card} Math vs. text vs. text in math
+
+Display style:
+
+$$
+\quad \text{Display style}
+$$
+
+Inline style: $\text{Inline style}$
+:::
+
 This is a book about calculus. More information to come.
 
 :::{figure} images/front_cover.png

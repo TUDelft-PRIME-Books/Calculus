@@ -76,11 +76,13 @@ So, for $x=2$, the series reduces to $1+0+0+\cdots=1$. This means that the serie
 
 For $x\neq2$ we apply the ratio test: let $a_n=\displaystyle\frac{1}{n}(x-2)^{n-1}=\dfrac{(x-2)^{n-1}}{n}$, then we have:
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(x-2)^n}{n+1}\cdot\frac{n}{(x-2)^{n-1}}\right|\\
 &=\lim\limits_{n\to\infty}\frac{n}{n+1}\cdot|x-2| \\
 &=|x-2|.
 \end{align*}
+$$
 
 Hence, the series is absolutely convergent if $|x-2|<1$ and is divergent if $|x-2|>1$.
 
@@ -185,11 +187,13 @@ The series converges for $x=1$ with sum $1$.
 
 For $x\neq1$ we apply the ratio test: let $a_n=n!(x-1)^n$, then we have:
 
+$$
 \begin{align*} 
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(n+1)!(x-1)^{n+1}}{n!(x-1)^n}\right| \\
 &= \lim\limits_{n\to\infty}(n+1)|x-1| \\
 &=\infty, 
 \end{align*}
+$$
   
 since $|x-1| > 0$.
 
@@ -205,11 +209,13 @@ Hence, the series converges for $x=-2$ with sum $1$.
 
 For $x\neq-2$ we set $a_n=\displaystyle\frac{(x+2)^n}{n!}$ and use the ratio test:
 
+$$
 \begin{align*} 
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| &= \lim\limits_{n\to\infty}\left|\frac{(x+2)^{n+1}}{(n+1)!}\cdot\frac{n!}{(x+2)^n}\right| \\
 &=\lim\limits_{n\to\infty}\frac{|x+2|}{n+1} \\
 &=0. 
-\end{align*} 
+\end{align*}
+$$ 
  
 This implies that the series converges for all $x\neq-2$ as well. Hence, the series converges for all $x\in\mathbb{R}$ and the radius of convergence is $R=\infty$.
 
@@ -223,11 +229,13 @@ For $x=0$ the series converges with sum $0$.
 
 For $x\neq0$ we turn to the ratio test. We choose $a_n=\displaystyle\frac{x^{n+1}}{n^2}$ and find:
 
+$$
 \begin{align*} 
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{x^{n+2}}{(n+1)^2}\cdot\frac{n^2}{x^{n+1}}\right| \\
 &=\lim\limits_{n\to\infty}\left(\frac{n}{n+1}\right)^2|x|\\
 &=|x|. 
 \end{align*}
+$$
  
 This implies that the series absolutely converges for $|x| < 1$ and diverges for $|x| > 1$. So the radius of convergence is $R=1$.
 
@@ -245,11 +253,13 @@ The series $\displaystyle\sum_{n=0}^{\infty}\frac{(3-x)^n}{n+1}$ is a power seri
 
 The ratio test for $x\neq3$ gives with $a_n=\displaystyle\frac{(3-x)^n}{n+1}$:
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(3-x)^{n+1}}{n+2}\cdot\frac{n+1}{(3-x)^n}\right|\\
 &=\lim\limits_{n\to\infty}\frac{n+1}{n+2}\cdot|3-x|\\
 &=|3-x|.
 \end{align*}
+$$
 
 Hence, the series is absolutely convergent if $|3-x| < 1$, is divergent if $|3-x| > 1$ and the radius of convergence is $R=1$.
 
@@ -265,11 +275,13 @@ The series $\displaystyle\sum_{n=1}^{\infty}n\left(\frac{x-5}{2}\right)^n$ is a 
 
 For $x\neq5$ we might apply the ratio test: let $a_n=\displaystyle n\left(\frac{x-5}{2}\right)^n$, then we have:
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|(n+1)\left(\frac{x-5}{2}\right)^{n+1}\cdot\frac{1}{n}\left(\frac{2}{x-5}\right)^n\right|\\
 &=\lim\limits_{n\to\infty}\frac{n+1}{n}\cdot\left|\frac{x-5}{2}\right|\\
 &=\left|\frac{x-5}{2}\right|.
 \end{align*}
+$$
 
 The series is thus absolutely convergent if $\displaystyle\left|\frac{x-5}{2}\right| < 1$ or equivalently $|x-5| < 2$ and is divergent if $\displaystyle\left|\frac{x-5}{2}\right| > 1$ or equivalently $|x-5| > 2$. So the radius of convergence is $R=2$.
 
@@ -315,11 +327,13 @@ Consider the function $\dfrac{1}{5+x}$.
 
 Replacing $x$ by $-x-4$ in Equation {eq}`Eq:Series:GeometricSeries` we obtain
 
+$$
 \begin{align*}
 \frac{1}{5+x}&=\frac{1}{1-(-x-4)}\\
 &=\sum_{n=0}^{\infty}(-x-4)^n\\
 &=\sum_{n=0}^{\infty}(-1)^n(x+4)^n,
 \end{align*}
+$$
 
 which is valid for $|-x-4|<1$ or equivalently for $|x+4|<1$. This is a power series about $-4$ with radius of convergence $R=1$. Note that both for $x=-5$ and $x=-3$ the series diverges. This implies that the interval of convergence is the open interval $(-5,-3)$.
 ::::::
@@ -328,11 +342,13 @@ which is valid for $|-x-4|<1$ or equivalently for $|x+4|<1$. This is a power ser
 :label: Ex:Series:PowerSeriesFunctions2
 Instead of using the substitution $-x-4$ for $x$ we could also substitute $-\dfrac{x}{5}$ for $x$ instead in Equation {eq}`Eq:Series:GeometricSeries`. This gives
 
+$$
 \begin{align*}
 \frac{1}{5+x}&=\frac{1}{5}\cdot\frac{1}{1+\dfrac{x}{5}}\\
 &=\frac{1}{5}\sum_{n=0}^{\infty}\left(-\frac{x}{5}\right)^n\\
 &=\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n,
 \end{align*}
+$$
 
 which is valid for $\left|-\dfrac{x}{5}\right|<1$ or equivalently for $|x|<5$. This is a power series about $0$ with radius of convergence $R=5$. Note that both for $x=-5$ and for $x=5$ the series diverges. This implies that the interval of convergence is the open interval $(-5,5)$.
 
@@ -371,12 +387,14 @@ $$
 
 Our target function is $g(x)=\dfrac{x^2}{5+x}$, which is equal to $x^2f(x)$. Hence, we can find a power series representation of $g$ by multiplying the power series representation of $f$ by $x^2$:
 
+$$
 \begin{align*}
 g(x) &= \frac{x^2}{5+x} \\
 &= x^2f(x) \\
 &= x^2\sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^n \\
 &= \sum_{n=0}^{\infty}\frac{(-1)^n}{5^{n+1}}x^{n+2},
 \end{align*}
+$$
 
 provided that $|x|<5$. This is a power series about $0$ with radius of convergence $R=5$. Note that both for $x=-5$ and for $x=5$ the series diverges. This implies that the interval of convergence is the open interval $(-5,5)$.
 
@@ -419,10 +437,12 @@ $$
 
 and
 
+$$
 \begin{align*}
 \int f(x)\,dx&=C+c_0(x-a)+\frac{1}{2}c_1(x-a)^2+\frac{1}{3}c_2(x-a)^3+\cdots\\
 &=C+\sum_{n=0}^{\infty}\frac{c_n}{n+1}(x-a)^{n+1},
 \end{align*}
+$$
 
 with $C\in\mathbb{R}$ an arbitrary constant. 
 
@@ -559,19 +579,23 @@ Using a power series representation of the integrand, we can find a power series
 
 We start with $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ for $|x|<1$. This implies that
 
+$$
 \begin{align*}
 &~ & \frac{1}{1+x^8} &= \sum_{n=0}^{\infty}(-1)^nx^{8n} \\
 &\Longrightarrow & \frac{x^2}{1+x^8} &= \sum_{n=0}^{\infty}(-1)^nx^{8n+2} \\
 &\Longrightarrow & \int\frac{x^2}{1+x^8}\,dx &= C+\sum_{n=0}^{\infty}\frac{(-1)^n}{8n+3}x^{8n+3},\quad |x| < 1. 
 \end{align*}
+$$
 
 This implies that
 
+$$
 \begin{align*}
 \int_0^{0.5}\frac{x^2}{1+x^8}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n(0.5)^{8n+3}}{8n+3} - \sum_{n=0}^{\infty}\frac{(-1)^n(0)^{8n+3}}{8n+3}\\
 &=\frac{(0.5)^3}{3}-\frac{(0.5)^{11}}{11}+\frac{(0.5)^{19}}{19}-\frac{(0.5)^{27}}{27}+\cdots\\
 &\approx\frac{(0.5)^3}{3}=0.041666\ldots
 \end{align*}
+$$
 ::::::
 
 In the above discussions, we only considered the differentiation and integration of power series representations of functions and sometimes multiplied a power series representation of a function by a power of $x$ to find a power series representation of the product of the function and the power of $x$. But we can also multiply two power series representations of functions to find a power series representation of the product of the two functions. In that case the {prf:ref}`Cauchy product <Thm:Series:CauchyProduct>` might be applied. In the case of two power series we get:

@@ -110,11 +110,13 @@ Without further ado, let us now apply the tools that we have developed for limit
 
 Consider the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n^2-3n+4}{3n^2+4n+5}$. Then
 
+$$
 \begin{align*}
 \lim_{n\to\infty}\frac{2n^2-3n+4}{3n^2+4n+5} &= \lim_{n\to\infty}\frac{2-\dfrac{3}{n}+\dfrac{4}{n^2}}{3+\dfrac{4}{n}+\dfrac{5}{n^2}} \\
 &= \frac{2-0+0}{3+0+0} \\
 &= \frac{2}{3}.
 \end{align*}
+$$
 
 This means that as $n$ increases, the terms of the sequence $\{a_n\}$ get closer and closer to $\dfrac{2}{3}$, and therefore $\{a_n\}$ is convergent and $\lim\limits_{n\to\infty}a_n=\dfrac{2}{3}$.
 
@@ -125,11 +127,13 @@ This means that as $n$ increases, the terms of the sequence $\{a_n\}$ get closer
 
 For the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n-1}{\sqrt{n^2+1}}$ we have
 
+$$
 \begin{align*}
 \lim_{n\to\infty}\frac{2n-1}{\sqrt{n^2+1}} &= \lim_{n\to\infty}\frac{2-\dfrac{1}{n}}{\sqrt{1+\dfrac{1}{n^2}}} \\
 &=\frac{2-0}{\sqrt{1+0}} \\
 &=2.
 \end{align*}
+$$
 
 :::::
 
@@ -138,6 +142,7 @@ For the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n-1}{\sqrt{n^2+1}}$ 
 
 Negative limits also can occur. For instance, for the sequence $\{c_n\}_{n=1}^{\infty}$ with $c_n=n-\sqrt{n(n+2)}$ we have       
 
+$$
 \begin{align*}
 \lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right) &= \lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right)\cdot\frac{n+\sqrt{n(n+2)}}{n+\sqrt{n(n+2)}} \\
 &= \lim_{n\to\infty}\frac{n^2-n(n+2)}{n+\sqrt{n(n+2)}} \\
@@ -146,6 +151,7 @@ Negative limits also can occur. For instance, for the sequence $\{c_n\}_{n=1}^{\
 &= \frac{-2}{1+\sqrt{1+0}} \\
 &= -1.
 \end{align*}
+$$
 
 :::::
 
@@ -356,10 +362,12 @@ We have seen that the sequence strictly decreases and is bounded below by $0$. T
 
 Let $L=\lim\limits_{n\to\infty}b_n$, then we also have $\lim\limits_{n\to\infty}b_{n+1}=L$ and
 
+$$
 \begin{align*}
 L=\sqrt{L+6}\quad\Longrightarrow\quad L^2=L+6&\quad\Longleftrightarrow\quad L^2-L-6=0\\
 &\quad\Longleftrightarrow\quad(L-3)(L+2)=0.
 \end{align*}
+$$
 Hence: $L=3$ or $L=-2$. Since the sequence is bounded below by $0$, we conclude that $L=3$.
 ::::::
 

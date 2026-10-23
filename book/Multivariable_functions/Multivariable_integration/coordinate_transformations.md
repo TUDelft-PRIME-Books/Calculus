@@ -48,12 +48,14 @@ $$
 
 with area (let: $r_i^*=(r_i+r_{i-1})/2$)
 
+$$
 \begin{align*}
 \Delta A_{ij}&=\frac{1}{2}r_i^2\,\Delta\theta-\frac{1}{2}r_{i-1}^2\,\Delta\theta\\
 &=\frac{1}{2}(r_i^2-r_{i-1}^2)\,\Delta\theta\\
 &=\frac{1}{2}(r_i+r_{i-1})(r_i-r_{i-1})\,\Delta\theta\\
 &=r_i^*\,\Delta r\,\Delta\theta. 
 \end{align*}
+$$
  
 Here we have: $\Delta r=r_i-r_{i-1}$ and $\Delta\theta=\theta_j-\theta_{j-1}$.
 
@@ -92,6 +94,7 @@ $$
 
 Hence we have using $\cos(2\theta)=1-2\sin^2(\theta)$:
 
+$$
 \begin{align*}
 \iint\limits_R(3x+4y^2)\,dA&=\int_0^{\pi}\int_1^2\left(3r\cos(\theta)+4r^2\sin^2(\theta)\right)\,r\,dr\,d\theta\\
 &=\int_0^{\pi}\bigg[r^3\cos(\theta)+r^4\sin^2(\theta)\bigg]_{r=1}^2\,d\theta\\
@@ -100,6 +103,7 @@ Hence we have using $\cos(2\theta)=1-2\sin^2(\theta)$:
 &=\bigg[7\sin(\theta)+\frac{15}{2}\theta-\frac{15}{4}\sin(2\theta)\bigg]_{\theta=0}^{\pi}\\
 &=\frac{15}{2}\pi.
 \end{align*}
+$$
 
 :::::
 
@@ -125,6 +129,7 @@ $$
 
 Hence the volume equals
 
+$$
 \begin{align*}
 V&=\iint\limits_D(1-x^2-y^2)\,dA\\
 &=\int_0^{2\pi}\int_0^2(1-r^2)\,r\,dr\,d\theta\\
@@ -132,6 +137,7 @@ V&=\iint\limits_D(1-x^2-y^2)\,dA\\
 &=2\pi\bigg[\frac{1}{2}r^2-\frac{1}{4}r^4\bigg]_{r=0}^1\\
 &=\frac{1}{2}\pi.
 \end{align*}
+$$
 
 :::::
 
@@ -184,6 +190,7 @@ $$
  
 Hence we have using $\cos(2x)=2\cos^2(x)-1$:
 
+$$
 \begin{align*}
 \operatorname{area}(D)&=\iint\limits_D1\,dA\\
 &=\int_{-\frac{1}{4}\pi}^{\frac{1}{4}\pi}\int_0^{\cos(2\theta)}r\,dr\,d\theta\\
@@ -192,7 +199,8 @@ Hence we have using $\cos(2x)=2\cos^2(x)-1$:
 &=\frac{1}{4}\int_{-\frac{1}{4}\pi}^{\frac{1}{4}\pi}\left(1+\cos(4\theta)\right)\,d\theta\\
 &=\frac{1}{4}\bigg[\theta+\frac{1}{4}\sin(4\theta)\bigg]_{\theta=-\frac{1}{4}\pi}^{\frac{1}{4}\pi}\\
 &=\frac{1}{8}\pi.
-\end{align*} 
+\end{align*}
+$$ 
 
 :::::
 
@@ -227,6 +235,7 @@ $$
  
 Hence the volume equals using $\cos(2\theta)=2\cos^2(\theta)-1$
 
+$$
 \begin{align*}
 V&=\iint\limits_D(x^2+y^2)\,dA\\
 &=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\int_0^{2\cos(\theta)}r^2\,r\,dr\,d\theta\\
@@ -238,6 +247,7 @@ V&=\iint\limits_D(x^2+y^2)\,dA\\
 &=\bigg[3\theta+2\sin(2\theta)+\frac{1}{2}\sin(4\theta)\bigg]_{\theta=0}^{\frac{1}{2}\pi}\\
 &=\frac{3}{2}\pi.
 \end{align*}
+$$
 
 :::::
 
@@ -267,6 +277,7 @@ Then the volume is given by $V=\displaystyle\iint\limits_{x^2+y^2\leq25}\frac{x+
 
 Using polar coordinates we obtain
 
+$$
 \begin{align*}
 V&=\int_0^{2\pi}\int_0^5\frac{r\cos(\theta)+15}{10}\,r\,dr\,d\theta\\
 &=\int_0^{2\pi}\bigg[\frac{1}{30}r^3\cos(\theta)+\frac{3}{4}r^2\bigg]_{r=0}^5\,d\theta\\
@@ -274,6 +285,7 @@ V&=\int_0^{2\pi}\int_0^5\frac{r\cos(\theta)+15}{10}\,r\,dr\,d\theta\\
 &=0+\frac{75}{4}\cdot2\pi\\
 &=\frac{75}{2}\pi.
 \end{align*}
+$$
 
 :::::
 
@@ -325,19 +337,23 @@ The region $[0,R]\times[0,R]$ and the quarter circles $C_1$ and $C_2$.
 
 Now we use polar coordinates to obtain
 
+$$
 \begin{align*}
 \iint\limits_{C_1}e^{-x^2-y^2}\,dA&=\int_0^{\frac{1}{2}\pi}\int_0^Re^{-r^2}\,r\,dr\,d\theta\\
 &=\frac{1}{2}\pi\bigg[-\frac{1}{2}e^{-r^2}\bigg]_{r=0}^R\\
 &=\frac{1}{4}\pi\left(1-e^{-R^2}\right) 
 \end{align*}
+$$
  
 and
 
+$$
 \begin{align*}
 \iint\limits_{C_2}e^{-x^2-y^2}\,dA&=\int_0^{\frac{1}{2}\pi}\int_0^{R\sqrt{2}}e^{-r^2}\,r\,dr\,d\theta\\
 &=\frac{1}{2}\pi\bigg[-\frac{1}{2}e^{-r^2}\bigg]_{r=0}^{R\sqrt{2}}\\
 &=\frac{1}{4}\pi\left(1-e^{-2R^2}\right).
 \end{align*}
+$$
  
 Finally we take the limit $R\to\infty$ and use the squeeze theorem to obtain that 
 
@@ -519,12 +535,14 @@ $$
 
 Hence we have
 
+$$
 \begin{align*}
 \iint\limits_Ry\,dA&=\iint\limits_S2uv\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv
 =\int_0^1\int_0^12uv\cdot4(u^2+v^2)\,du\,dv\\
 &=8\int_0^1\int_0^1(u^3v+uv^3)\,du\,dv=8\int_0^1\bigg[\frac{1}{4}u^4v+\frac{1}{2}u^2v^3\bigg]_{u=0}^1\,dv\\
 &=\int_0^1\left(2v+4v^3\right)\,dv=\bigg[v^2+v^4\bigg]_{v=0}^1=2.
 \end{align*}
+$$
 
 :::::
 
@@ -572,12 +590,14 @@ $$
 
 Hence we have
 
+$$
 \begin{align*}
 \iint\limits_Re^{(x+y)/(x-y)}\,dA&=\iint\limits_Se^{u/v}\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv
 =\int_1^2\int_{-v}^ve^{u/v}\cdot\frac{1}{2}\,du\,dv=\frac{1}{2}\int_1^2\bigg[ve^{u/v}\bigg]_{u=-v}^v\,dv\\
 &=\frac{1}{2}\int_1^2\left(e-e^{-1}\right)v\,dv
 =\frac{1}{2}\left(e-e^{-1}\right)\bigg[\frac{1}{2}v^2\bigg]_{v=1}^2=\frac{3}{4}\left(e-e^{-1}\right).
 \end{align*}
+$$
 
 :::::
 
@@ -618,10 +638,12 @@ $$
 
 in the $xy$-plane. Hence we have
 
+$$
 \begin{align*}
 \iint\limits_Rf(x,y)\,dA&=\iint\limits_Sf(r\cos(\theta),r\sin(\theta))\left|\frac{\partial(x,y)}{\partial(r,\theta)}\right|\,dr\,d\theta\\
 &=\int_{\alpha}^{\beta}\int_a^bf(r\cos(\theta),r\sin(\theta))\,r\,dr\,d\theta.
-\end{align*} 	 
+\end{align*}
+$$ 	 
 
 ## More applications
 
@@ -657,6 +679,7 @@ The centroid of the cardioid given by $r=2+2\cos(\theta)$ in polar coordinates.
 
 Because of the symmetry we conclude that the centroid is $(\overline{x},\overline{y})$ with $\overline{y}=0$. Now we have using $\cos(2\theta)=2\cos^2(\theta)-1$:
 
+$$
 \begin{align*}
 \text{area}(D)&=\iint\limits_D1\,dA\\
 &=\int_0^{2\pi}\int_0^{2+2\cos(\theta)}r\,dr\,d\theta\\
@@ -665,17 +688,20 @@ Because of the symmetry we conclude that the centroid is $(\overline{x},\overlin
 &=\int_0^{2\pi}\left(3+4\cos(\theta)+\cos(2\theta)\right)\,d\theta\\
 &=\bigg[3\theta+4\sin(\theta)+\frac{1}{2}\sin(2\theta)\bigg]_{\theta=0}^{2\pi}\\
 &=6\pi
-\end{align*} 	
+\end{align*}
+$$ 	
  
 and (check the details)
 
+$$
 \begin{align*}
 \iint\limits_Dx\,dA&=\int_0^{2\pi}\int_0^{2+2\cos(\theta)}r\cos(\theta)\cdot r\,dr\,d\theta\\
 &=\int_0^{2\pi}\frac{1}{3}(2+2\cos(\theta))^3\cos(\theta)\,d\theta\\
 &=\int_0^{2\pi}\left(\frac{8}{3}\cos(\theta)+8\cos^2(\theta)+8\cos^3(\theta)+\frac{8}{3}\cos^4(\theta)\right)\,d\theta\\
 &=0+8\pi+0+2\pi\\
 &=10\pi.
-\end{align*} 	
+\end{align*}
+$$ 	
  
 We conclude that $\overline{x}=\frac{10\pi}{6\pi}=\frac{5}{3}$. So, the centroid is $(\frac{5}{3},0)$.
 :::::
@@ -698,6 +724,7 @@ The region $D$ enclosed by the circles $x^2+y^2=1$ and $x^2+y^2=4$ and the lines
 
 Using polar coordinates we obtain for the area of $D$:
 
+$$
 \begin{align*}
 \operatorname{area}(D)&=\iint\limits_R1\,dA\\
 &=\int_{\arctan\left(\frac{1}{\sqrt{3}}\right)}^{\arctan\left(\sqrt{3}\right)}\int_1^2r\,dr\,d\theta\\
@@ -705,6 +732,7 @@ Using polar coordinates we obtain for the area of $D$:
 &=\left(\frac{1}{3}\pi-\frac{1}{6}\pi\right)\bigg[\frac{1}{2}r^2\bigg]_{r=1}^2\\
 &=\frac{1}{6}\pi\cdot\frac{3}{2}=\frac{1}{4}\pi.
 \end{align*}
+$$
  
 Instead it is also possible to apply the change of variables $u=x^2+y^2$ and $v=\displaystyle\frac{y}{x}$ which transforms the region
 
@@ -720,6 +748,7 @@ $$
  
 in the $uv$-plane. Note that
 
+$$
 \begin{align*}
 &\frac{\partial(u,v)}{\partial(x,y)}=\begin{vmatrix}\displaystyle\frac{\partial u}{\partial x} & \displaystyle\frac{\partial u}{\partial y}\\
 \displaystyle\frac{\partial v}{\partial x} & \displaystyle\frac{\partial v}{\partial y}\end{vmatrix}
@@ -727,9 +756,11 @@ in the $uv$-plane. Note that
 &{}\quad\Longrightarrow\quad
 \frac{\partial(x,y)}{\partial(u,v)}=\frac{1}{\displaystyle\frac{\partial(u,v)}{\partial(x,y)}}=\frac{1}{2(1+v^2)}.
 \end{align*}
+$$
  
 This leads to
 
+$$
 \begin{align*}
 \operatorname{area}(D)&=\iint\limits_R1\,dA\\
 &=\int_{\frac{1}{\sqrt{3}}}^{\sqrt{3}}\int_1^4\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv\\
@@ -737,7 +768,8 @@ This leads to
 &=\frac{3}{2}\left(\arctan\left(\sqrt{3}\right)-\arctan\left(\frac{1}{\sqrt{3}}\right)\right)\\
 &=\frac{3}{2}\left(\frac{1}{3}\pi-\frac{1}{6}\pi\right)\\
 &=\frac{3}{2}\cdot\frac{1}{6}\pi=\frac{1}{4}\pi.
-\end{align*} 
+\end{align*}
+$$ 
  
 :::::
 
@@ -769,10 +801,12 @@ $$
  
 to obtain that
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\frac{dx\,dy}{1-xy}&=\iint\limits_S\frac{1}{1-(u+v)(u-v)}\left|\frac{\partial(x,y)}{\partial(u,v)}\right|\,du\,dv\\
 &=2\iint\limits_S\frac{du\,dv}{1-u^2+v^2}, 
 \end{align*}
+$$
  
 where $S$ is the square with vertices $(0,0)$, $(\frac{1}{2},-\frac{1}{2})$, $(1,0)$ and $(\frac{1}{2},\frac{1}{2})$:
 
@@ -787,13 +821,15 @@ The square $S$.
 
 Using the symmetry we obtain that
 
+$$
 \begin{align*}
 \zeta(2)&=2\iint\limits_S\frac{du\,dv}{1-u^2+v^2}\\
 &=4\int_0^{\frac{1}{2}}\int_0^u\frac{dv\,du}{1-u^2+v^2}
 +4\int_{\frac{1}{2}}^1\int_0^{1-u}\frac{dv\,du}{1-u^2+v^2}\\
 &=4\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{u}{\sqrt{1-u^2}}\right)\,du\\
 &{}\quad{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du.
-\end{align*} 
+\end{align*}
+$$ 
  
 Observe that
 
@@ -809,6 +845,7 @@ $$
 
 for $-1 < u < 1$. This implies that
 
+$$
 \begin{align*}
 \zeta(2)&=4\int_0^{\frac{1}{2}}\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{u}{\sqrt{1-u^2}}\right)\,du\\
 &{}\quad{}+4\int_{\frac{1}{2}}^1\frac{1}{\sqrt{1-u^2}}\arctan\left(\frac{1-u}{\sqrt{1-u^2}}\right)\,du\\
@@ -817,7 +854,8 @@ for $-1 < u < 1$. This implies that
 &=2\left(\frac{1}{6}\pi\right)^2+\left(\frac{1}{3}\pi\right)^2\\
 &=\frac{1}{18}\pi^2+\frac{1}{9}\pi^2\\
 &=\frac{1}{6}\pi^2.
-\end{align*} 
+\end{align*}
+$$ 
  
 ::::::
 
@@ -842,6 +880,7 @@ $$
  
 Applying the change of variables $x=\sin(u)/\cos(v)$ and $y=\sin(v)/\cos(u)$ with Jacobian
 
+$$
 \begin{align*} 
 \frac{\partial(x,y)}{\partial(u,v)}&=\begin{vmatrix}\displaystyle\frac{\partial x}{\partial u} & \displaystyle\frac{\partial x}{\partial v}\\
 \displaystyle\frac{\partial y}{\partial u} & \displaystyle\frac{\partial y}{\partial v}\end{vmatrix}\\
@@ -850,6 +889,7 @@ Applying the change of variables $x=\sin(u)/\cos(v)$ and $y=\sin(v)/\cos(u)$ wit
 &=1-\frac{\sin^2(u)\sin^2(v)}{\cos^2(u)\cos^2(v)}\\
 &=1-x^2y^2, 
 \end{align*}
+$$
  
 we obtain
 
@@ -870,9 +910,11 @@ The triangle $T$.
 
 Hence we have
 
+$$
 \begin{align*}
 &\frac{3}{4}\zeta(2)=\iint\limits_Tdu\,dv=\operatorname{area}(T)=\frac{1}{2}\cdot\frac{1}{4}\pi^2=\frac{1}{8}\pi^2\\
 &{}\quad\Longrightarrow\quad\zeta(2)=\frac{4}{3}\cdot\frac{1}{8}\pi^2=\frac{1}{6}\pi^2. 
 \end{align*}
+$$
 
 ::::::
