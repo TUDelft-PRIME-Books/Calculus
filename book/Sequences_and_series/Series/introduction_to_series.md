@@ -588,7 +588,7 @@ s_{2N} &= \sum_{n=1}^{2N}\frac{(-1)^{n-1}}{n} \\
 &= 1 - \sum_{n=1}^{N-1}\frac{1}{(2n)(2n+1)} - \frac{1}{2N}.
 \end{align*}
 
-Because of the positivity of all terms in the sum $\displaystyle\sum_{n=1}^{N-1}\frac{1}{(2n)(2n+1)}$ and the term $\dfrac{1}{2N}$, we have found that $\{s_{2N}\}$ is bounded from above by $1$. Also, we have already found that $\{s_{2N}\}$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\left(s_{2N}\right)$ is convergent, so $\lim\limits_{n\to\infty}s_{2N}=S$ exists.
+Because of the positivity of all terms in the sum $\displaystyle\sum_{n=1}^{N-1}\frac{1}{(2n)(2n+1)}$ and the term $\dfrac{1}{2N}$, we have found that $(s_{2N})$ is bounded from above by $1$. Also, we have already found that $(s_{2N})$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\left(s_{2N}\right)$ is convergent, so $\lim\limits_{n\to\infty}s_{2N}=S$ exists.
 
 Now we turn to the sequence $\left(s_{2N+1}\right)$. We have
 

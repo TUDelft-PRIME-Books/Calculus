@@ -79,13 +79,13 @@ $$
 s_n\leq a_1+\int_1^{\infty}f(x)\,dx\leq a_1+M.
 $$
 
-This means that the sequence $\{s_n\}$ is bounded above. Further we have
+This means that the sequence $(s_n)$ is bounded above. Further we have
 
 $$
 s_{n+1}=s_n+a_{n+1} > s_n,
 $$
 
-since $a_{n+1}=f(n+1) > 0$. Thus, $\{s_n\}$ is a strictly increasing sequence that is bounded above. Hence, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded`. This means by {prf:ref}`Thm:Series:ConvergenceSum` that $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent if $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent.
+since $a_{n+1}=f(n+1) > 0$. Thus, $(s_n)$ is a strictly increasing sequence that is bounded above. Hence, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded`. This means by {prf:ref}`Thm:Series:ConvergenceSum` that $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent if $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent.
 
 Now we prove the divergent case. If we draw the rectangles to the right, then we have, see {numref}`Fig:Series:IntegralTest`(b):
 
@@ -407,7 +407,7 @@ t_N &= \sum_{n=1}^N b_n.
 
 1) Assume that $0<a_n\leq b_n$ for all $n\geq 1$ and that $\displaystyle\sum_{n=1}^{\infty} b_n$ is convergent with sum $t$. Since $\displaystyle\sum_{n=1}^{\infty} b_n$ is convergent with sum $t$, the limit $\lim\limits_{N\to\infty}t_N=t$ exists.
 
-Because $b_n>0$ for all $n\geq 1$, we have $t_{n+1}=t_n+b_{n+1}>t_n $ for all $n\geq 1$,. which makes $\{t_n\}$ a strictly increasing sequence. Since $\{t_n\}$ is a strictly increasing sequence that converges to $t$, it is bounded above by $t$. Hence, we have $t_n<t$ for all $n\geq 1$.
+Because $b_n>0$ for all $n\geq 1$, we have $t_{n+1}=t_n+b_{n+1}>t_n $ for all $n\geq 1$,. which makes $(t_n)$ a strictly increasing sequence. Since $(t_n)$ is a strictly increasing sequence that converges to $t$, it is bounded above by $t$. Hence, we have $t_n<t$ for all $n\geq 1$.
 
 For the partial sum $s_N$ we have
 
@@ -415,9 +415,9 @@ $$
 s_N = \sum_{n=1}^N a_n \leq \sum_{n=1}^N b_n = t_N.
 $$
 
-As a consequence, we have $s_N<t$ for all $n\geq 1$. $\{s_n\}$ is also a strictly increasing sequence since $a_n>0$ for all $n\geq 1$ and $s_{n+1}=s_n+a_{n+1}>s_n$ for all $n\geq 1$.
+As a consequence, we have $s_N<t$ for all $n\geq 1$. $(s_n)$ is also a strictly increasing sequence since $a_n>0$ for all $n\geq 1$ and $s_{n+1}=s_n+a_{n+1}>s_n$ for all $n\geq 1$.
 
-Since $\{s_n\}$ is a strictly increasing sequence that is bounded above by $t$, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded` with $\lim\limits_{N\to\infty}s_N=s<t$ for some number $s$. Hence, $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent.
+Since $(s_n)$ is a strictly increasing sequence that is bounded above by $t$, it is convergent by {prf:ref}`Thm:Sequences:MonotonicBounded` with $\lim\limits_{N\to\infty}s_N=s<t$ for some number $s$. Hence, $\displaystyle\sum_{n=1}^{\infty} a_n$ is convergent.
 
 2) Assume that $a_n\geq b_n>0$ for all $n\geq 1$ and $\displaystyle\sum_{n=1}^{\infty} b_n$ is divergent. This indicates that for every number $M>0$ there exists an integer $N$ such that $t_N>M$. Since $a_n\geq b_n$ for all $n\geq 1$, we have
 

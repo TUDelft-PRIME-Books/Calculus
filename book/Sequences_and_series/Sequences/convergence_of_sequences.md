@@ -4,9 +4,9 @@
 
 ## Introduction
 
-In the previous section we have seen that it is sometimes useful to think of a sequence $\{a_n\}$ as a function $f:\mathbb{N}\to\mathbb{R}$ with $f(n)=a_n$ for every $n=1,2,3,\ldots$. This allowed us to use the tools of calculus to study the properties of sequences, such as whether a sequence is strictly increasing, strictly decreasing, non-increasing or non-decreasing and whether it is bounded above or below.
+In the previous section we have seen that it is sometimes useful to think of a sequence $(a_n)$ as a function $f:\mathbb{N}\to\mathbb{R}$ with $f(n)=a_n$ for every $n=1,2,3,\ldots$. This allowed us to use the tools of calculus to study the properties of sequences, such as whether a sequence is strictly increasing, strictly decreasing, non-increasing or non-decreasing and whether it is bounded above or below.
 
-During our study, we already took a quick look at how the values evolve as $n$ increases, when we were considering the bounds. For instance, in {prf:ref}`Ex:Sequences:BoundedExample1` we saw that the sequence $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing and bounded above by $1$. This suggests that the terms of the sequence get closer and closer to $1$ as $n$ increases. If we would reuse the terms from {numref}`Section:Limitinf`,we would say that the sequence $\{a_n\}$ converges to $1$. In this section we will define what we mean by convergence of a sequence and we will see how to determine whether a sequence converges or diverges and how to find the limit of a convergent sequence.
+During our study, we already took a quick look at how the values evolve as $n$ increases, when we were considering the bounds. For instance, in {prf:ref}`Ex:Sequences:BoundedExample1` we saw that the sequence $(a_n)$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing and bounded above by $1$. This suggests that the terms of the sequence get closer and closer to $1$ as $n$ increases. If we would reuse the terms from {numref}`Section:Limitinf`,we would say that the sequence $(a_n)$ converges to $1$. In this section we will define what we mean by convergence of a sequence and we will see how to determine whether a sequence converges or diverges and how to find the limit of a convergent sequence.
 
 ## Limits and convergence
 
@@ -15,28 +15,28 @@ In the study of sequences the notion of **convergence** is important. The concep
 ::::::{prf:definition} Limit of a sequence
 :label: Def:Sequences:LimitSequence
 
-A sequence $\{a_n\}$ converges to a **limit** $L$ if for every positive real number $\varepsilon$ there exists an integer $N$ such that if $n\geq N$, then $|a_n-L|<\varepsilon$. 
+A sequence $(a_n)$ converges to a **limit** $L$ if for every positive real number $\varepsilon$ there exists an integer $N$ such that if $n\geq N$, then $|a_n-L|<\varepsilon$. 
 
-If $\{a_n\}$ converges to $L$, then we write
+If $(a_n)$ converges to $L$, then we write
 
 $$
 \lim\limits_{n\to\infty}a_n=L.
 $$
 ::::::
 
-In a more intuitive way, we can say that a sequence $\{a_n\}$ converges to $L$ if the terms of the sequence get closer and closer to $L$ as $n$ increases, or the distance from $a_n$ to $L$ approaches $0$ as $n$ increases towards $\infty$.
+In a more intuitive way, we can say that a sequence $(a_n)$ converges to $L$ if the terms of the sequence get closer and closer to $L$ as $n$ increases, or the distance from $a_n$ to $L$ approaches $0$ as $n$ increases towards $\infty$.
 
 We already used the term *converge* in the previous definition, but let us now give a precise definition of what we mean by convergence of a sequence.
 
 ::::::{prf:definition} Convergence and divergence of a sequence
 :label: Def:Sequences:ConvergenceSequence
-A sequence $\{a_n\}$ is called **convergent** if $\lim\limits_{n\to\infty}a_n$ exists. Otherwise, the sequence is called **divergent**. 
+A sequence $(a_n)$ is called **convergent** if $\lim\limits_{n\to\infty}a_n$ exists. Otherwise, the sequence is called **divergent**. 
 ::::::
 
 ::::::{note}
 :name: Note:SeqAndTypes:ConvergenceDivergence
 
-A sequence $\{a_n\}$ either converges or diverges. That is, either $\lim\limits_{n\to\infty}a_n=L$ exists (as a real number) or $\lim\limits_{n\to\infty}a_n$ does not exist.
+A sequence $(a_n)$ either converges or diverges. That is, either $\lim\limits_{n\to\infty}a_n=L$ exists (as a real number) or $\lim\limits_{n\to\infty}a_n$ does not exist.
 
 If $\lim\limits_{n\to\infty}a_n=\infty$ we say that the sequence *diverges* to $\infty$, but the limit $\lim\limits_{n\to\infty}a_n$ does not exist, since $\infty$ is not a real number.
 
@@ -49,7 +49,7 @@ Before we dive into depth of convergence of sequences, we will state the most im
 
 ::::::{prf:theorem}
 :label: Thm:Sequences:LimitFunctionSequence
-Consider the sequence $\{a_n\}_{n=p}^{\infty}$ with $a_n=f(n)$ for all $n=p,p+1,p+2,\ldots$.
+Consider the sequence $(a_n)_{n=p}^{\infty}$ with $a_n=f(n)$ for all $n=p,p+1,p+2,\ldots$.
 
 If $f$ is defined on $[p,\infty)$ and $\lim\limits_{x\to\infty}f(x)=L$, then $\lim\limits_{n\to\infty}a_n=L$.
 ::::::
@@ -92,7 +92,7 @@ We state, without proof, the rules of calculations for limits of sequences, whic
 ::::{prf:theorem}
 :label: Thm:Sequences:LimitCalculationRules
 
-Suppose that $\{a_n\}$ and $\{b_n\}$ are two sequences such that $\lim\limits_{n\to\infty}a_n=L$ and $\lim\limits_{n\to\infty}b_n=M$. Let $c$ be a real number. Then:
+Suppose that $(a_n)$ and $(b_n)$ are two sequences such that $\lim\limits_{n\to\infty}a_n=L$ and $\lim\limits_{n\to\infty}b_n=M$. Let $c$ be a real number. Then:
 
 - $\lim\limits_{n\to\infty}ca_n=cL$.
 
@@ -108,7 +108,7 @@ Without further ado, let us now apply the tools that we have developed for limit
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample1
 
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n^2-3n+4}{3n^2+4n+5}$. Then
+Consider the sequence $(a_n)_{n=1}^{\infty}$ with $a_n=\dfrac{2n^2-3n+4}{3n^2+4n+5}$. Then
 
 \begin{align*}
 \lim_{n\to\infty}\frac{2n^2-3n+4}{3n^2+4n+5} &= \lim_{n\to\infty}\frac{2-\dfrac{3}{n}+\dfrac{4}{n^2}}{3+\dfrac{4}{n}+\dfrac{5}{n^2}} \\
@@ -116,14 +116,14 @@ Consider the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{2n^2-3n+4}{3n^2+
 &= \frac{2}{3}.
 \end{align*}
 
-This means that as $n$ increases, the terms of the sequence $\{a_n\}$ get closer and closer to $\dfrac{2}{3}$, and therefore $\{a_n\}$ is convergent and $\lim\limits_{n\to\infty}a_n=\dfrac{2}{3}$.
+This means that as $n$ increases, the terms of the sequence $(a_n)$ get closer and closer to $\dfrac{2}{3}$, and therefore $(a_n)$ is convergent and $\lim\limits_{n\to\infty}a_n=\dfrac{2}{3}$.
 
 ::::::
 
 :::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample2
 
-For the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n-1}{\sqrt{n^2+1}}$ we have
+For the sequence $(b_n)_{n=1}^{\infty}$ with $b_n=\dfrac{2n-1}{\sqrt{n^2+1}}$ we have
 
 \begin{align*}
 \lim_{n\to\infty}\frac{2n-1}{\sqrt{n^2+1}} &= \lim_{n\to\infty}\frac{2-\dfrac{1}{n}}{\sqrt{1+\dfrac{1}{n^2}}} \\
@@ -136,7 +136,7 @@ For the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n-1}{\sqrt{n^2+1}}$ 
 :::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample3
 
-Negative limits also can occur. For instance, for the sequence $\{c_n\}_{n=1}^{\infty}$ with $c_n=n-\sqrt{n(n+2)}$ we have       
+Negative limits also can occur. For instance, for the sequence $(c_n)_{n=1}^{\infty}$ with $c_n=n-\sqrt{n(n+2)}$ we have       
 
 \begin{align*}
 \lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right) &= \lim_{n\to\infty}\left(n-\sqrt{n(n+2)}\right)\cdot\frac{n+\sqrt{n(n+2)}}{n+\sqrt{n(n+2)}} \\
@@ -152,17 +152,17 @@ Negative limits also can occur. For instance, for the sequence $\{c_n\}_{n=1}^{\
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample4
 
-The geometric sequence $\{d_n\}$ with $d_n=\dfrac{1}{2^n}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$.
+The geometric sequence $(d_n)$ with $d_n=\dfrac{1}{2^n}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$.
 
 This follows directly from {prf:ref}`Thm:Sequences:LimitFunctionSequence` and {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`.
 ::::::
 
-For geometric sequences, we can go even further and determine for which values of $r\in\mathbb{R}$ the geometric sequence $\{a_n\}$ with $a_n=r^n$ is convergent or divergent and what the limit is in case it is convergent.
+For geometric sequences, we can go even further and determine for which values of $r\in\mathbb{R}$ the geometric sequence $(a_n)$ with $a_n=r^n$ is convergent or divergent and what the limit is in case it is convergent.
 
 ::::::{prf:theorem}
 :label: Thm:Sequences:ConvergenceGeometric
 
-The geometric sequence $\{a_n\}_{n=0}^{\infty}$ with $a_n=br^n$, $b\neq0$, is convergent for $-1<r\leq1$ and divergent for all other values of $r\in\mathbb{R}$.
+The geometric sequence $(a_n)_{n=0}^{\infty}$ with $a_n=br^n$, $b\neq0$, is convergent for $-1<r\leq1$ and divergent for all other values of $r\in\mathbb{R}$.
 
 Moreover, if $-1<r<1$, then $\lim\limits_{n\to\infty}r^n=0$, and  if $r=1$, then $\lim\limits_{n\to\infty}r^n=b$.
 ::::::
@@ -185,20 +185,20 @@ This proves the theorem.
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample5
-The sequence $\{a_n\}$ with $a_n=\left(-\dfrac{4}{5}\right)^n$ is a geometric sequence with $r=-\dfrac{4}{5}$, so $-1<r<1$, and is thus convergent and $\lim\limits_{n\to\infty}a_n=0$.
+The sequence $(a_n)$ with $a_n=\left(-\dfrac{4}{5}\right)^n$ is a geometric sequence with $r=-\dfrac{4}{5}$, so $-1<r<1$, and is thus convergent and $\lim\limits_{n\to\infty}a_n=0$.
 
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample6
-The sequence $\{b_n\}$ with $b_n=2^n$ diverges to $\infty$, because $2>1$ and it is a geometric sequence.
+The sequence $(b_n)$ with $b_n=2^n$ diverges to $\infty$, because $2>1$ and it is a geometric sequence.
 
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample7
 
-The sequence $\{c_n\}$ with $c_n=(-1)^n$ is divergent. It does not diverge to $\infty$ or $-\infty$.
+The sequence $(c_n)$ with $c_n=(-1)^n$ is divergent. It does not diverge to $\infty$ or $-\infty$.
 ::::::
 
 ## Using continuity
@@ -216,20 +216,20 @@ This is an immediate consequence of {prf:ref}`Theorem:Continuity:SubstitutionInf
 ::::::
 
 ::::::{prf:example}
-1) The sequence $\{a_n\}$ with $a_n=\sin\left(\dfrac{1}{n}\right)$ is convergent and $\lim\limits_{n\to\infty}a_n=\sin(0)=0$.
+1) The sequence $(a_n)$ with $a_n=\sin\left(\dfrac{1}{n}\right)$ is convergent and $\lim\limits_{n\to\infty}a_n=\sin(0)=0$.
 
-2) The sequence $\{b_n\}$ with $b_n=\cos\left(\dfrac{n\pi}{n+1}\right)$ is convergent and $\lim\limits_{n\to\infty}b_n=\cos(\pi)=-1$.
+2) The sequence $(b_n)$ with $b_n=\cos\left(\dfrac{n\pi}{n+1}\right)$ is convergent and $\lim\limits_{n\to\infty}b_n=\cos(\pi)=-1$.
 
-3) The sequence $\{c_n\}$ with $c_n=\arctan\left(\dfrac{n+1}{n+2}\right)$ is convergent and $\lim\limits_{n\to\infty}c_n=\arctan(1)=\frac{1}{4}\pi$.
+3) The sequence $(c_n)$ with $c_n=\arctan\left(\dfrac{n+1}{n+2}\right)$ is convergent and $\lim\limits_{n\to\infty}c_n=\arctan(1)=\frac{1}{4}\pi$.
 ::::::
 
 ## Connecting monotonicity, boundedness and convergence
 
-Let us revisit {prf:ref}`Ex:Sequences:IncreasingExample1Function` and {prf:ref}`Ex:Sequences:IncreasingExample2Function` to determine whether the sequences $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ and $\{b_b\}$ with $b_n=\dfrac{2n}{n^2+1}$ are convergent or divergent and to find the limit in case they are convergent.
+Let us revisit {prf:ref}`Ex:Sequences:IncreasingExample1Function` and {prf:ref}`Ex:Sequences:IncreasingExample2Function` to determine whether the sequences $(a_n)$ with $a_n=\dfrac{n}{n+1}$ and $(b_n)$ with $b_n=\dfrac{2n}{n^2+1}$ are convergent or divergent and to find the limit in case they are convergent.
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExampleIncreasing
-We show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is convergent.
+We show that the sequence $(a_n)_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is convergent.
 
 ```{figure} Images/sequence1.png
 ---
@@ -238,7 +238,7 @@ name: Fig:Sequences:ConvergenceExampleIncreasing
 align: center
 class: dark-light
 ---
-The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
+The terms of the sequence $(a_n)$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
 ```
 
 :::{todo}
@@ -251,12 +251,12 @@ $$
 \lim_{x\to\infty}f(x)=\lim_{x\to\infty}\frac{x}{x+1}=1.
 $$
 
-This implies that the sequence $\{a_n\}_{n=1}^{\infty}$ is convergent and $\lim\limits_{n\to\infty}a_n=1$.
+This implies that the sequence $(a_n)_{n=1}^{\infty}$ is convergent and $\lim\limits_{n\to\infty}a_n=1$.
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExampleDecreasing
-We show that the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$ is convergent.
+We show that the sequence $(b_n)_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$ is convergent.
 
 ```{figure} Images/sequence2.png
 ---
@@ -265,7 +265,7 @@ name: Fig:Sequences:ConvergenceExampleDecreasing
 align: center
 class: dark-light
 ---
-The terms of the sequence $\{b_n\}$ lie on the graph of $g(x)=\dfrac{2x}{x^2+1}$.
+The terms of the sequence $(b_n)$ lie on the graph of $g(x)=\dfrac{2x}{x^2+1}$.
 ```
 
 :::{todo}
@@ -278,12 +278,12 @@ $$
 \lim_{x\to\infty}g(x)=\lim_{x\to\infty}\frac{2x}{x^2+1}=0.
 $$
 
-This implies that the sequence $\{b_n\}_{n=1}^{\infty}$ is convergent and $\lim\limits_{n\to\infty}b_n=0$.
+This implies that the sequence $(b_n)_{n=1}^{\infty}$ is convergent and $\lim\limits_{n\to\infty}b_n=0$.
 ::::::
 
-From {prf:ref}`Ex:Sequences:IncreasingExample1Function`, {prf:ref}`Ex:Sequences:BoundedExample1` and {prf:ref}`Ex:Sequences:ConvergenceExampleIncreasing` we can conclude that the sequence $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing, bounded above (by $1$) and convergent. From {prf:ref}`Ex:Sequences:IncreasingExample2Function`, {prf:ref}`Ex:Sequences:BoundedExample2` and {prf:ref}`Ex:Sequences:ConvergenceExampleDecreasing` we can conclude that the sequence $\{b_n\}$ with $b_n=\dfrac{2n}{n^2+1}$ is strictly decreasing, bounded below (by $0$) and convergent.
+From {prf:ref}`Ex:Sequences:IncreasingExample1Function`, {prf:ref}`Ex:Sequences:BoundedExample1` and {prf:ref}`Ex:Sequences:ConvergenceExampleIncreasing` we can conclude that the sequence $(a_n)$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing, bounded above (by $1$) and convergent. From {prf:ref}`Ex:Sequences:IncreasingExample2Function`, {prf:ref}`Ex:Sequences:BoundedExample2` and {prf:ref}`Ex:Sequences:ConvergenceExampleDecreasing` we can conclude that the sequence $(b_n)$ with $b_n=\dfrac{2n}{n^2+1}$ is strictly decreasing, bounded below (by $0$) and convergent.
 
-Every strictly increasing sequence is also non-decreasing, and every strictly decreasing sequence is also non-increasing. So, we can also say that the sequence $\{a_n\}$ with $a_n=\dfrac{n}{n+1}$ is non-decreasing, bounded above (by $1$) and convergent, and that the sequence $\{b_n\}$ with $b_n=\dfrac{2n}{n^2+1}$ is non-increasing, bounded below (by $0$) and convergent.
+Every strictly increasing sequence is also non-decreasing, and every strictly decreasing sequence is also non-increasing. So, we can also say that the sequence $(a_n)$ with $a_n=\dfrac{n}{n+1}$ is non-decreasing, bounded above (by $1$) and convergent, and that the sequence $(b_n)$ with $b_n=\dfrac{2n}{n^2+1}$ is non-increasing, bounded below (by $0$) and convergent.
 
 As you may expect this is no coincidence, and in fact we have the following important theorem:
 
@@ -307,7 +307,7 @@ A non-decreasing sequence that is bounded above.
 Replace {numref}`Fig:Sequences:MonotonicBounded` with an applet.
 :::
 
-Suppose that $\{a_n\}$ is a non-decreasing sequence that is bounded above. Then it has a *least upper bound* $L$. Let $\epsilon>0$, then $L-\epsilon$ is *not* an upper bound, since $L$ is the least upper bound. Therefore
+Suppose that $(a_n)$ is a non-decreasing sequence that is bounded above. Then it has a *least upper bound* $L$. Let $\epsilon>0$, then $L-\epsilon$ is *not* an upper bound, since $L$ is the least upper bound. Therefore
 
 $$
 a_N>L-\epsilon
@@ -334,7 +334,7 @@ A similar proof, using the greatest lower bound, works for a non-increasing sequ
 
 ::::::{prf:example}
 :label: Ex:Sequences:MonotonicBoundedExample1
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
+Consider the sequence $(a_n)_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
 
 We have seen that the sequence strictly increases and is bounded above. This implies that the sequence converges. So, the limit $\lim\limits_{n\to\infty}a_n$ exists.
 
@@ -348,7 +348,7 @@ $$
 
 ::::::{prf:example}
 :label: Ex:Sequences:MonotonicBoundedExample2
-Consider the sequence $\{b_n\}_{n=1}^{\infty}$ given by $b_1=10$ and $b_{n+1}=\sqrt{b_n+6}$ for $n=1,2,3,\ldots$. 
+Consider the sequence $(b_n)_{n=1}^{\infty}$ given by $b_1=10$ and $b_{n+1}=\sqrt{b_n+6}$ for $n=1,2,3,\ldots$. 
 
 We will show that the sequence converges and find its limit.
 
@@ -402,26 +402,26 @@ You can prove this using {prf:ref}`Theorem:LimitAtInfinity:Squeezetheorem` and {
 
 ::::::{prf:example}
 :label: Ex:Sequences:SqueezeTheoremExample1
-The sequence $\{a_n\}$ with $a_n=\dfrac{(-1)^n}{n}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$ because $|a_n|=\dfrac{1}{n}\to 0$ as $n\to\infty$.
+The sequence $(a_n)$ with $a_n=\dfrac{(-1)^n}{n}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$ because $|a_n|=\dfrac{1}{n}\to 0$ as $n\to\infty$.
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:SqueezeTheoremExample2
-The sequence $\{b_n\}$ with $b_n=\dfrac{\cos(n)}{\sqrt{n}}$ is convergent and $\lim\limits_{n\to\infty}b_n=0$ because $|b_n|\leq\dfrac{1}{\sqrt{n}}\to 0$ as $n\to\infty$.
+The sequence $(b_n)$ with $b_n=\dfrac{\cos(n)}{\sqrt{n}}$ is convergent and $\lim\limits_{n\to\infty}b_n=0$ because $|b_n|\leq\dfrac{1}{\sqrt{n}}\to 0$ as $n\to\infty$.
 ::::::
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:SqueezeTheoremExample3
-The sequence $\{c_n\}$ with $c_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\limits_{n\to\infty}c_n=0$ because $|c_n|\leq\dfrac{1}{n}\to 0$ as $n\to\infty$.
+The sequence $(c_n)$ with $c_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\limits_{n\to\infty}c_n=0$ because $|c_n|\leq\dfrac{1}{n}\to 0$ as $n\to\infty$.
 ::::::
 
 ## Grasple exercises
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/054ba52c-921d-41bc-a9c2-30258b2232b2?id=65159
-:label: Grasple:65159
+:url: https://embed.grasple.com/exercises/69ebe4b2-b742-4d10-bd9b-9920bc312010?id=138371
+:label: Grasple:138371
 :dropdown:
 :description: Is the sequence convergent or divergent?
 
@@ -429,8 +429,8 @@ The sequence $\{c_n\}$ with $c_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\l
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/b1946f7e-8b02-4f53-85cc-53ebbc2abef5?id=78990
-:label: Grasple:78990
+:url: https://embed.grasple.com/exercises/22fc28f9-f409-4ead-927a-fa4f5f17f817?id=138372
+:label: Grasple:138372
 :dropdown:
 :description: Is the sequence convergent or divergent?
 
@@ -438,8 +438,8 @@ The sequence $\{c_n\}$ with $c_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\l
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/892bd757-0321-4758-81cb-c13235b6e739?id=78976
-:label: Grasple:78976
+:url: https://embed.grasple.com/exercises/4ca7ce87-f70f-49a2-ad8b-7ad4fa6072ce?id=138373
+:label: Grasple:138373
 :dropdown:
 :description: Is the sequence convergent or divergent?
 

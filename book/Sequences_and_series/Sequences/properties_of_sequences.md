@@ -11,9 +11,9 @@ Consider the following sequences:
 
 $$
 \begin{array}{rcl}
-\{a_n\}_{n=1}^{\infty} & \text{with} & a_n=\dfrac{n}{2}, \\
-\{b_n\}_{n=1}^{\infty} & \text{with} & b_n=\dfrac{5}{n^2}, \\
-\{c_n\}_{n=1}^{\infty} & \text{with} & c_n=\dfrac{5}{2}+\cos(n\pi).
+(a_n)_{n=1}^{\infty} & \text{with} & a_n=\dfrac{n}{2}, \\
+(b_n)_{n=1}^{\infty} & \text{with} & b_n=\dfrac{5}{n^2}, \\
+(c_n)_{n=1}^{\infty} & \text{with} & c_n=\dfrac{5}{2}+\cos(n\pi).
 \end{array}
 $$
 
@@ -23,7 +23,7 @@ Although these sequences are all infinite, we can graph several of their terms t
 :name: Fig:PropertiesOfSequences:Introduction
 :class: dark-light
 
-The first $10$ terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above.
+The first $10$ terms of the sequences $(a_n)$, $(b_n)$ and $(c_n)$ are plotted in the graph above.
 ```
 
 :::{todo}
@@ -32,18 +32,18 @@ Make an applet from {numref}`Fig:PropertiesOfSequences:Introduction` that allows
 The applet should have a parameter in the url to set the initial number of terms shown.
 :::
 
-As you can see, the terms of the sequence $\{a_n\}$ seem to keep going up, the terms of the sequence $\{b_n\}$ seem to keep going down, but are staying above zero, and the terms of the sequence $\{c_n\}$ seem to switch between two values. These observations can also be described using some terminology, which we will define next:
+As you can see, the terms of the sequence $(a_n)$ seem to keep going up, the terms of the sequence $(b_n)$ seem to keep going down, but are staying above zero, and the terms of the sequence $(c_n)$ seem to switch between two values. These observations can also be described using some terminology, which we will define next:
 
 ::::{prf:definition}
 :label: Def:PropertiesOfSequences:Affirming
 
-A sequence $\{a_n\}_{n=p}^{\infty}$ is called **strictly increasing** if $a_{n+1} > a_n$ for all $n\geq p$.
+A sequence $(a_n)_{n=p}^{\infty}$ is called **strictly increasing** if $a_{n+1} > a_n$ for all $n\geq p$.
 
-A sequence $\{a_n\}_{n=p}^{\infty}$ is called **strictly decreasing** if $a_{n+1} < a_n$ for all $n\geq p$.
+A sequence $(a_n)_{n=p}^{\infty}$ is called **strictly decreasing** if $a_{n+1} < a_n$ for all $n\geq p$.
 
-A sequence $\{a_n\}_{n=p}^{\infty}$ is called **ultimately increasing** if there exists a number $N\geq p$ such that $a_{n+1} > a_n$ for all $n\geq N$.
+A sequence $(a_n)_{n=p}^{\infty}$ is called **ultimately increasing** if there exists a number $N\geq p$ such that $a_{n+1} > a_n$ for all $n\geq N$.
 
-A sequence $\{a_n\}_{n=p}^{\infty}$ is called **ultimately decreasing** if there exists a number $N\geq p$ such that $a_{n+1} < a_n$ for all $n\geq N$.
+A sequence $(a_n)_{n=p}^{\infty}$ is called **ultimately decreasing** if there exists a number $N\geq p$ such that $a_{n+1} < a_n$ for all $n\geq N$.
 
 ::::
 
@@ -52,9 +52,9 @@ Next to the affirming definitions of {prf:ref}`Def:PropertiesOfSequences:Affirmi
 ::::{prf:definition}
 :label: Def:PropertiesOfSequences:Invalidating
 
-A sequence $\{a_n\}_{n=p}^{\infty}$ is called **non-increasing** if $a_{n+1} \leq a_n$ for all $n\geq p$.
+A sequence $(a_n)_{n=p}^{\infty}$ is called **non-increasing** if $a_{n+1} \leq a_n$ for all $n\geq p$.
 
-A sequence $\{a_n\}_{n=p}^{\infty}$ is called **non-decreasing** if $a_{n+1} \geq a_n$ for all $n\geq p$.
+A sequence $(a_n)_{n=p}^{\infty}$ is called **non-decreasing** if $a_{n+1} \geq a_n$ for all $n\geq p$.
 
 ::::::
 
@@ -73,19 +73,19 @@ Let us revisit the three sequences we introduced at the beginning of this sectio
 ::::{prf:example}
 :label: Ex:PropertiesOfSequences:Example1
 
-We look at the difference between two consecutive terms in the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{2}$:
+We look at the difference between two consecutive terms in the sequence $(a_n)_{n=1}^{\infty}$ with $a_n=\dfrac{n}{2}$:
 
 $$
 a_{n+1} - a_n = \dfrac{n+1}{2} - \dfrac{n}{2} = \dfrac{1}{2}>0.
 $$
 
-As this difference is positive for all $n\in\{1,2,3,\ldots\}$, we conclude that the sequence $\{a_n\}_{n=1}^{\infty}$ is _strictly increasing_.
+As this difference is positive for all $n\in\{1,2,3,\ldots\}$, we conclude that the sequence $(a_n)_{n=1}^{\infty}$ is _strictly increasing_.
 ::::
 
 ::::{prf:example}
 :label: Ex:PropertiesOfSequences:Example2
 
-We look at the difference between two consecutive terms in the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{5}{n^2}$:
+We look at the difference between two consecutive terms in the sequence $(b_n)_{n=1}^{\infty}$ with $b_n=\dfrac{5}{n^2}$:
 
 \begin{align*}
 b_{n+1} - b_n &= \dfrac{5}{(n+1)^2} - \dfrac{5}{n^2} \\
@@ -97,13 +97,13 @@ b_{n+1} - b_n &= \dfrac{5}{(n+1)^2} - \dfrac{5}{n^2} \\
 
 for all $n\in\{1,2,3,\ldots\}$.
 
-We conclude that the sequence $\{b_n\}_{n=1}^{\infty}$ is _strictly decreasing_.
+We conclude that the sequence $(b_n)_{n=1}^{\infty}$ is _strictly decreasing_.
 ::::
 
 ::::{prf:example}
 :label: Ex:PropertiesOfSequences:Example3
 
-We look at the difference between two consecutive terms in the sequence $\{c_n\}_{n=1}^{\infty}$ with $c_n=\dfrac{5}{2}+\cos(n\pi)$:
+We look at the difference between two consecutive terms in the sequence $(c_n)_{n=1}^{\infty}$ with $c_n=\dfrac{5}{2}+\cos(n\pi)$:
 
 \begin{align*}
 c_{n+1} - c_n &= \left(\dfrac52+\cos((n+1)\pi)\right)-\left(\dfrac52+\cos(n\pi)\right) \\
@@ -116,7 +116,7 @@ c_{n+1} - c_n &= \left(\dfrac52+\cos((n+1)\pi)\right)-\left(\dfrac52+\cos(n\pi)\
 
 Because $(-1)^n$ is either $1$ or $-1$, the sign of this difference is alternating between positive and negative.
 
-We conclude that the sequence $\{c_n\}$ is *non-monotonic*, as it is neither non-increasing nor non-decreasing.
+We conclude that the sequence $(c_n)$ is *non-monotonic*, as it is neither non-increasing nor non-decreasing.
 ::::
 
 For several of the common types of sequences of {numref}`Sec:SeqAndTypes:Types` we can easily determine whether they are strictly increasing, strictly decreasing or non-monotonic:
@@ -140,7 +140,7 @@ For sequences that are not of such a common type, it sometimes is harder to show
 ::::::{prf:example}
 :label: Ex:Sequences:IncreasingExample
 
-We show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing.
+We show that the sequence $(a_n)_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing.
 
 To do so, we want to show that $\dfrac{n+1}{n+2} > \dfrac{n}{n+1}$ for all $n=1,2,3,\ldots$.
 
@@ -157,7 +157,7 @@ The last inequality reduces to $1 > 0$, which definitely is true. This shows tha
 ::::::{prf:example}
 :label: Ex:Sequences:DereasingExample
 
-Consider the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$.
+Consider the sequence $(b_n)_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$.
 
 We will show that $\dfrac{2(n+1)}{(n+1)^2+1} < \dfrac{2n}{n^2+1}$ for all $n=1,2,3,\ldots$.
 
@@ -178,7 +178,7 @@ This is true for $n\geq1$, so the sequence is *strictly decreasing*.
 ::::::{prf:example}
 :label: Ex:Sequences:UltimateIncreasingExample
 
-Consider the sequence $\{c_n\}_{n=1}^{\infty}$ with $c_n=\dfrac{n^2}{2^n}$. Then the first terms are
+Consider the sequence $(c_n)_{n=1}^{\infty}$ with $c_n=\dfrac{n^2}{2^n}$. Then the first terms are
 
 $$
 \frac{1}{2},\quad1,\quad\frac{9}{8},\quad1,\quad\frac{25}{32},\quad\frac{9}{16},\quad\frac{49}{128},\quad\ldots
@@ -216,9 +216,9 @@ In {numref}`Fig:PropertiesOfSequences:Functions` we show the sequences from {num
 
 $$
 \begin{array}{rcl}
-\{a_n\}_{n=1}^{\infty} & \text{with} & a_n=\dfrac{n}{2}, \\
-\{b_n\}_{n=1}^{\infty} & \text{with} & b_n=\dfrac{5}{n^2}, \\
-\{c_n\}_{n=1}^{\infty} & \text{with} & c_n=\dfrac{5}{2}+\cos(n\pi),
+(a_n)_{n=1}^{\infty} & \text{with} & a_n=\dfrac{n}{2}, \\
+(b_n)_{n=1}^{\infty} & \text{with} & b_n=\dfrac{5}{n^2}, \\
+(c_n)_{n=1}^{\infty} & \text{with} & c_n=\dfrac{5}{2}+\cos(n\pi),
 \end{array}
 $$
 
@@ -236,7 +236,7 @@ $$
 :name: Fig:PropertiesOfSequences:Functions
 :class: dark-light
 
-The first $10$ terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above, including the three functions $f$, $g$ and $h$ associated with these sequences.
+The first $10$ terms of the sequences $(a_n)$, $(b_n)$ and $(c_n)$ are plotted in the graph above, including the three functions $f$, $g$ and $h$ associated with these sequences.
 ```
 
 :::{todo}
@@ -245,24 +245,24 @@ Make an applet from {numref}`Fig:PropertiesOfSequences:Functions` that allows th
 The applet should have a parameter in the url to set the initial number of terms shown.
 :::
 
-As you can see, the function $f$, just like the sequence $\{a_n\}$, is strictly increasing. Even better, the function $g$ is strictly decreasing, similar to how the sequence $\{b_n\}$ is strictly decreasing. Finally, the non-monotonic nature of the sequence $\{c_n\}$ is also reflected in the function $h$.
+As you can see, the function $f$, just like the sequence $(a_n)$, is strictly increasing. Even better, the function $g$ is strictly decreasing, similar to how the sequence $(b_n)$ is strictly decreasing. Finally, the non-monotonic nature of the sequence $(c_n)$ is also reflected in the function $h$.
 
 This relation between sequences and functions can be formalised in the next theorem:
 
 ::::{prf:theorem}
 :label: Thm:PropertiesOfSequences:Functions
 
-Let $\{a_n\}_{n=p}^{\infty}$ be a sequence and $f:\mathbb{R}\rightarrow\mathbb{R}$ a function such that $f(n)=a_n$ for $n=p,p+1,p+2,\ldots$
+Let $(a_n)_{n=p}^{\infty}$ be a sequence and $f:\mathbb{R}\rightarrow\mathbb{R}$ a function such that $f(n)=a_n$ for $n=p,p+1,p+2,\ldots$
 
-- If $f$ is a strictly increasing function for $x\geq p$, then $\{a_n\}_{n=p}^{\infty}$ is a strictly increasing sequence.
+- If $f$ is a strictly increasing function for $x\geq p$, then $(a_n)_{n=p}^{\infty}$ is a strictly increasing sequence.
 
-- If $f$ is a strictly decreasing function for $x\geq p$, then $\{a_n\}_{n=p}^{\infty}$ is a strictly decreasing sequence.
+- If $f$ is a strictly decreasing function for $x\geq p$, then $(a_n)_{n=p}^{\infty}$ is a strictly decreasing sequence.
 
-- If $f$ is a monotonic function for $x\geq p$, then $\{a_n\}_{n=p}^{\infty}$ is a monotonic sequence.
+- If $f$ is a monotonic function for $x\geq p$, then $(a_n)_{n=p}^{\infty}$ is a monotonic sequence.
 
-- If $f$ is a strictly increasing function for $x\geq N>p$ for some integer $N$, then $\{a_n\}_{n=p}^{\infty}$ is an ultimately increasing sequence (for $n\geq N$).
+- If $f$ is a strictly increasing function for $x\geq N>p$ for some integer $N$, then $(a_n)_{n=p}^{\infty}$ is an ultimately increasing sequence (for $n\geq N$).
 
-- If $f$ is a strictly decreasing function for $x\geq N>p$ for some integer $N$, then $\{a_n\}_{n=p}^{\infty}$ is an ultimately decreasing sequence (for $n\geq N$).
+- If $f$ is a strictly decreasing function for $x\geq N>p$ for some integer $N$, then $(a_n)_{n=p}^{\infty}$ is an ultimately decreasing sequence (for $n\geq N$).
 
 ::::
 
@@ -276,7 +276,7 @@ Note that this theorem only states a relation between the affirmative properties
 ::::::{prf:example}
 :label: Ex:Sequences:IncreasingExample1Function
 
-We show that the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is increasing by looking at an appropriate function:
+We show that the sequence $(a_n)_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is increasing by looking at an appropriate function:
 
 ```{figure} Images/sequence1.png
 ---
@@ -284,7 +284,7 @@ width: 50%
 name: Fig:Sequences:IncreasingExample1Function
 align: center
 ---
-The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
+The terms of the sequence $(a_n)$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
 ```
 
 :::{todo}
@@ -303,7 +303,7 @@ This implies that $f$ is strictly increasing and therefore that the sequence str
 ::::::{prf:example}
 :label: Ex:Sequences:IncreasingExample2Function
 
-We show that the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$ is decreasing.
+We show that the sequence $(b_n)_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$ is decreasing.
 
 ```{figure} Images/sequence2.png
 ---
@@ -312,7 +312,7 @@ name: Fig:Sequences:IncreasingExample2Function
 align: center
 class: dark-light
 ---
-The terms of the sequence $\{b_n\}$ lie on the graph of $g(x)=\dfrac{2x}{x^2+1}$.
+The terms of the sequence $(b_n)$ lie on the graph of $g(x)=\dfrac{2x}{x^2+1}$.
 ```
 
 :::{todo}
@@ -326,7 +326,7 @@ $$
 g'(x)=\frac{2(x^2+1)-2x\cdot2x}{(x^2+1)^2}=\frac{2(1-x^2)}{(x^2+1)^2},
 $$
 
-which is negative for $x>1$. This implies that $g$ is strictly decreasing on $(1,\infty)$ and so $g(n+1)<g(n)$. Therefore $\{b_n\}$ is strictly decreasing.
+which is negative for $x>1$. This implies that $g$ is strictly decreasing on $(1,\infty)$ and so $g(n+1)<g(n)$. Therefore $(b_n)$ is strictly decreasing.
 ::::::
 
 If a sequence is defined by a recursive formula, it is often somewhat more difficult to show any of the properties. However, not always, as in the next example:
@@ -363,7 +363,7 @@ In many other situations the {prf:ref}`principle of mathematical induction <Thm:
 ::::::{prf:example}
 :label: Ex:Sequences:RecurrenceExample1
 
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
+Consider the sequence $(a_n)_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
 
 We will apply the {prf:ref}`principle of mathematical induction <Thm:Algebra:MathematicalInduction>` to show that the sequence strictly increases.
 
@@ -385,7 +385,7 @@ This shows that $a_{n+1} > a_n$ for all $n=1,2,3,\ldots$ and so the sequence is 
 ::::::{prf:example}
 :label: Ex:Sequences:RecurrenceExample2
 
-Consider the sequence $\{b_n\}_{n=1}^{\infty}$ given by $b_1=10$ and $b_{n+1}=\sqrt{b_n+6}$ for $n=1,2,3,\ldots$. 
+Consider the sequence $(b_n)_{n=1}^{\infty}$ given by $b_1=10$ and $b_{n+1}=\sqrt{b_n+6}$ for $n=1,2,3,\ldots$. 
 
 We want to prove that $b_{n+1} < b_n$ for all $n=1,2,3,\ldots$.
 
@@ -410,9 +410,9 @@ Again we consider the same sequences as before:
 
 $$
 \begin{array}{rcl}
-\{a_n\}_{n=1}^{\infty} & \text{with} & a_n=\dfrac{n}{2}, \\
-\{b_n\}_{n=1}^{\infty} & \text{with} & b_n=\dfrac{5}{n^2}, \\
-\{c_n\}_{n=1}^{\infty} & \text{with} & c_n=\dfrac{5}{2}+\cos(n\pi).
+(a_n)_{n=1}^{\infty} & \text{with} & a_n=\dfrac{n}{2}, \\
+(b_n)_{n=1}^{\infty} & \text{with} & b_n=\dfrac{5}{n^2}, \\
+(c_n)_{n=1}^{\infty} & \text{with} & c_n=\dfrac{5}{2}+\cos(n\pi).
 \end{array}
 $$
 
@@ -422,7 +422,7 @@ $$
 :name: Fig:PropertiesOfSequences:Bounds
 :class: dark-light
 
-The first $50$ terms of the sequences $\{a_n\}$, $\{b_n\}$ and $\{c_n\}$ are plotted in the graph above.
+The first $50$ terms of the sequences $(a_n)$, $(b_n)$ and $(c_n)$ are plotted in the graph above.
 ```
 
 :::{todo}
@@ -438,9 +438,9 @@ In this figure, you can clearly see that the first sequence keeps on increasing 
 
 We define the follow affirming terms:
 
-- A sequence $\{a_n\}_{n=p}^{\infty}$ is called **bounded above** if there exists a number $M$ such that $a_n\leq M$ for all $n\geq p$.
+- A sequence $(a_n)_{n=p}^{\infty}$ is called **bounded above** if there exists a number $M$ such that $a_n\leq M$ for all $n\geq p$.
 
-- A sequence $\{a_n\}_{n=p}^{\infty}$ is called **bounded below** if there exists a number $m$ such that $m\leq a_n$ for all $n\geq p$.
+- A sequence $(a_n)_{n=p}^{\infty}$ is called **bounded below** if there exists a number $m$ such that $m\leq a_n$ for all $n\geq p$.
 
 - A sequence is called **bounded** if it is *both bounded above and bounded below*.
 
@@ -485,7 +485,7 @@ The next example gives some quick examples of sequences and their bounds.
 ::::::{prf:example}
 :label: Ex:Sequences:BoundedExample1
 
-We investigate whether the sequence $\{a_n\}_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ has bounds.
+We investigate whether the sequence $(a_n)_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ has bounds.
 
 ```{figure} Images/sequence1.png
 ---
@@ -494,7 +494,7 @@ name: Fig:Sequences:BoundedExample1
 align: center
 class: dark-light
 ---
-The terms of the sequence $\{a_n\}$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
+The terms of the sequence $(a_n)$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
 ```
 
 :::{todo}
@@ -518,7 +518,7 @@ This implies that the sequence is bounded with $M\geq1$ and $m\leq\frac{1}{2}$.
 ::::::{prf:example}
 :label: Ex:Sequences:BoundedExample2
 
-Now consider the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$ and its bounds.
+Now consider the sequence $(b_n)_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$ and its bounds.
 
 ```{figure} Images/sequence2.png
 ---
@@ -527,7 +527,7 @@ name: Fig:Sequences:BoundedExample2
 align: center
 class: dark-light
 ---
-The terms of the sequence $\{b_n\}$ lie on the graph of $g(x)=\dfrac{2x}{x^2+1}$.
+The terms of the sequence $(b_n)$ lie on the graph of $g(x)=\dfrac{2x}{x^2+1}$.
 ```
 
 :::{todo}
@@ -550,7 +550,7 @@ This implies that the sequence is bounded with $M\geq1$ and $m\leq0$.
 ::::::{prf:example}
 :label: Ex:Sequences:BoundedExample3
 
-Consider the sequence $\{a_n\}_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
+Consider the sequence $(a_n)_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
 
 We show that the sequence is bounded above.
 
@@ -571,7 +571,7 @@ This shows that $a_n<10$ for all $n=1,2,3,\ldots$.
 ::::::{prf:example}
 :label: Ex:Sequences:BoundedExample4
 
-Consider the sequence $\{b_n\}_{n=1}^{\infty}$ given by $b_1=10$ and $b_{n+1}=\sqrt{b_n+6}$ for $n=1,2,3,\ldots$. 
+Consider the sequence $(b_n)_{n=1}^{\infty}$ given by $b_1=10$ and $b_{n+1}=\sqrt{b_n+6}$ for $n=1,2,3,\ldots$. 
 
 Now we show that the sequence is bounded below.
 

@@ -359,7 +359,7 @@ In {prf:ref}`Def:SumsAndProducts:TelescopingSum` we already encountered finite s
 ::::{prf:definition}
 :label: Def:Series:TelescopingSeries
 
-An infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$ is called a **telescoping series** if there exists a sequence $\{b_n\}_{n=p}^{\infty}$ and a positive integer $q$ such that $a_n=b_{n}-b_{n+q}$ for all $n\in\{p,p+1,p+2,\ldots\}$.
+An infinite series $\displaystyle\sum_{n=p}^{\infty}a_n$ is called a **telescoping series** if there exists a sequence $(b_n)_{n=p}^{\infty}$ and a positive integer $q$ such that $a_n=b_{n}-b_{n+q}$ for all $n\in\{p,p+1,p+2,\ldots\}$.
 ::::
 
 ::::::{prf:example}
@@ -419,7 +419,7 @@ $$
 
 ::::::
 
-If we inspect the last three examples, we see that the sum of a telescoping series is the addition of the first $q$ terms of the sequence $\{b_n\}$ minus $q$ times the limit of the sequence $\{b_n\}$, which is a direct consequence of the telescoping property. This leads to the following theorem:
+If we inspect the last three examples, we see that the sum of a telescoping series is the addition of the first $q$ terms of the sequence $(b_n)$ minus $q$ times the limit of the sequence $(b_n)$, which is a direct consequence of the telescoping property. This leads to the following theorem:
 
 ::::{prf:theorem} Telescoping series
 :label: Thm:Series:SumTelescopingSeries
@@ -463,13 +463,13 @@ $$
 \sum_{n=p}^{\infty}a_n=\sum_{n=p}^{p+q-1}b_n-q\cdot\lim_{N\to\infty}b_N.
 $$
 
-If the limit $\lim\limits_{N\to\infty}b_N$ does not exist, the limit of the sequence of partial sums $\{s_N\}$ also does not exist, so the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is divergent.
+If the limit $\lim\limits_{N\to\infty}b_N$ does not exist, the limit of the sequence of partial sums $(s_N)$ also does not exist, so the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is divergent.
 
 ::::
 
 ## Alternating series
 
-In {prf:ref}`Def:Sequences:AlternatingSequence` we defined an *alternating sequence* being a sequence $\{a_n\}$ with $a_na_{n+1}<0$ for all $n$, meaning every two consecutive terms have opposite signs. Trying to add the terms of such an alternating sequence leads to an *alternating series*.
+In {prf:ref}`Def:Sequences:AlternatingSequence` we defined an *alternating sequence* being a sequence $(a_n)$ with $a_na_{n+1}<0$ for all $n$, meaning every two consecutive terms have opposite signs. Trying to add the terms of such an alternating sequence leads to an *alternating series*.
 
 ::::::{prf:definition}
 :label: Def:Series:AlternatingSeries
@@ -506,7 +506,7 @@ What can be said about the convergence of an alternating series?
 
 An initial step could be to investigate whether the general term tends to zero. If not, it is divergent by the {prf:ref}`test for divergence <Thm:Series:GeneralTermCorollary>` as in {prf:ref}`Ex:Series:AlternatingSeries1`. Then we could investigate whether the series is absolutely convergent. If it is, then we know that the series is convergent, just like in {prf:ref}`Ex:Series:AbsoluteConvergence1`. However, if the series is not absolutely convergent, it could still be (conditionally) convergent. In fact, many alternating series are not absolutely convergent but are still convergent, which is shown by {prf:ref}`Ex:Series:AbsoluteConvergence2`.
 
-At least, the absolute value of the general term $b_n$ should tend to zero. Furthermore, in {prf:ref}`Ex:Series:AbsoluteConvergence1` and {prf:ref}`Ex:Series:AbsoluteConvergence2` the sequence $\{b_n\}$ is decreasing. It turns out that these two conditions are sufficient for the convergence of an alternating series:
+At least, the absolute value of the general term $b_n$ should tend to zero. Furthermore, in {prf:ref}`Ex:Series:AbsoluteConvergence1` and {prf:ref}`Ex:Series:AbsoluteConvergence2` the sequence $(b_n)$ is decreasing. It turns out that these two conditions are sufficient for the convergence of an alternating series:
 
 :::::{prf:theorem} Alternating series test
 :label: Thm:Series:AlternatingSeriesTest
@@ -544,7 +544,7 @@ Replace {numref}`Fig:Series:AlternatingSeriesTest` with an applet.
 Make $b_n$ a function of $n$ that the user can change to see how the graph changes?
 :::
 
-The alternating nature of the series implies $s_1$ is to the right of $0$, $s_2$ is to the left of $s_1$, $s_3$ is to the right of $s_2$, and so on. Because $b_n$ is a decreasing sequence that tends to zero, the amount you jump to the right or to the left becomes smaller and smaller, so the partial sums seem to get closer and closer to a certain number $s$. This is exactly what it means for the series to be convergent, so it seems that the theorem is plausible. The proof of the theorem will make this intuition rigorous, and makes use of the observation that the sequence of even partial sums $\{s_2,s_4,s_6,\ldots\}=\{s_{2n}\}$ seems to be located on the left of $s$, and the sequence of odd partial sums $\{s_1,s_3,s_5,\ldots\}=\{s_{2n+1}\}$ seems to be located on the right of $s$, but both sequences seem to converge to that same number $s$.
+The alternating nature of the series implies $s_1$ is to the right of $0$, $s_2$ is to the left of $s_1$, $s_3$ is to the right of $s_2$, and so on. Because $b_n$ is a decreasing sequence that tends to zero, the amount you jump to the right or to the left becomes smaller and smaller, so the partial sums seem to get closer and closer to a certain number $s$. This is exactly what it means for the series to be convergent, so it seems that the theorem is plausible. The proof of the theorem will make this intuition rigorous, and makes use of the observation that the sequence of even partial sums $(s_2,s_4,s_6,\ldots)=(s_{2n})$ seems to be located on the left of $s$, and the sequence of odd partial sums $(s_1,s_3,s_5,\ldots)=(s_{2n+1})$ seems to be located on the right of $s$, but both sequences seem to converge to that same number $s$.
 
 :::{admonition} Proof of {prf:ref}`Thm:Series:AlternatingSeriesTest`
 :class: tudproof, dropdown
@@ -567,7 +567,7 @@ $$
 s_{2n}=b_1-(b_2-b_3)-(b_4-b_5)-\cdots-(b_{2n-2}-b_{2n-1})-b_{2n}\leq b_1.
 $$
 
-Hence the sequence $\{s_{2n}\}$ of even partial sums is strictly increasing and bounded above and therefore convergent. Say: $\lim\limits_{n\to\infty}s_{2n}=s$. Then we have
+Hence the sequence $(s_{2n})$ of even partial sums is strictly increasing and bounded above and therefore convergent. Say: $\lim\limits_{n\to\infty}s_{2n}=s$. Then we have
 
 $$
 \lim\limits_{n\to\infty}s_{2n+1}=\lim\limits_{n\to\infty}(s_{2n}+b_{2n+1})=\lim\limits_{n\to\infty}s_{2n}+\lim\limits_{n\to\infty}b_{2n+1}=s+0=s.
@@ -590,7 +590,7 @@ $$
 f'(x)=\frac{2x(x^3+1)-3x^4}{(x^3+1)^2}=\frac{x(2-x^3)}{(x^3+1)^2}<0\quad\text{for}\quad x>1.
 $$
 
-This implies that $b_{n+1}\leq b_n$ for $n\geq2$. We also have that $b_1=\frac{1}{2}$ and $b_2=\frac{4}{9}$, so the sequence $\{b_n\}$ is non-increasing for $n\geq1$.
+This implies that $b_{n+1}\leq b_n$ for $n\geq2$. We also have that $b_1=\frac{1}{2}$ and $b_2=\frac{4}{9}$, so the sequence $(b_n)$ is non-increasing for $n\geq1$.
 
 Finally, we have
 
@@ -615,21 +615,21 @@ b_n=\begin{cases}
 \end{cases}
 $$
 
-First we take a look at the "odd sequence" $\{b_{2n+1}\}$:
+First we take a look at the "odd sequence" $(b_{2n+1})$:
 
 $$
 \lim\limits_{n\to\infty}b_{2n+1}=\lim\limits_{n\to\infty}\frac{2}{2n+4} = 0
 $$
 
-For the "even sequence" $\{b_{2n}\}$ we have
+For the "even sequence" $(b_{2n})$ we have
 
 $$
 \lim\limits_{n\to\infty}b_{2n}=\lim\limits_{n\to\infty}\frac{4}{(2n+2)^2} = 0
 $$
 
-So all terms of the sequence $\{b_n\}$ tend to zero, and the first condition of the alternating series test is satisfied. Next we check whether the sequence $\{b_n\}$ is non-increasing.
+So all terms of the sequence $(b_n)$ tend to zero, and the first condition of the alternating series test is satisfied. Next we check whether the sequence $(b_n)$ is non-increasing.
 
-The first terms of the sequence $\{b_n\}$ are
+The first terms of the sequence $(b_n)$ are
 
 $$
 \frac{1}{2},\frac{1}{4},\frac{1}{3},\frac{1}{9},\frac{1}{4},\frac{1}{16},\ldots
@@ -641,7 +641,7 @@ $$
 \frac{1}{2},\frac{1}{2^2},\frac{1}{3},\frac{1}{3^2},\frac{1}{4},\frac{1}{4^2},\ldots
 $$
 
-As $\dfrac{1}{k+1}>\dfrac{1}{(k+1)^2}$ for all $k\geq1$, we have $b_{2n+1}>b_{2n}$ for all $n\geq1$. Hence the sequence $\{b_n\}$ is not _always_ non-increasing, so the second condition of the alternating series test is not satisfied. Therefore, we cannot conclude that the series $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}b_n$ is convergent by the alternating series test.
+As $\dfrac{1}{k+1}>\dfrac{1}{(k+1)^2}$ for all $k\geq1$, we have $b_{2n+1}>b_{2n}$ for all $n\geq1$. Hence the sequence $(b_n)$ is not _always_ non-increasing, so the second condition of the alternating series test is not satisfied. Therefore, we cannot conclude that the series $\displaystyle\sum_{n=1}^{\infty}(-1)^{n-1}b_n$ is convergent by the alternating series test.
 
 To further investigate the convergence of this series, we need more tests that we do not have yet.
 
