@@ -7,6 +7,7 @@
   - Not only discuss with $z$ as height, but also $x$ or $y$ as height of the cylinder.
 - Spherical coordinates in $\mathbb{R}^3$
 - General coordinate systems in $\mathbb{R}^2$ and $\mathbb{R}^3$
+- Some terminology in $\mathbb{R}^n$ such as coordinate hyperplane (space of the form $x_i=0$)
 
 ## Cartesian coordinates in $\mathbb{R}^2$ and $\mathbb{R}^3$
 
