@@ -215,13 +215,11 @@ The polar form of a complex number can very conveniently be used to give a geome
 :::{math}
 :label: Eq:ComplexNumbers:calcconj
 
-$$
 \begin{align*}
 \overline{z} &= r\cos(\theta) - i r\sin(\theta) \\
 &= r\cos(\theta) + i r\sin(-\theta) \\
 &= r\cos(-\theta) + i r\sin(-\theta).
 \end{align*}
-$$
 
 :::
 
@@ -232,14 +230,12 @@ We can now see what happens to the product of two complex numbers. Suppose we ha
 :::{math}
 :label: Eq:ComplexNumbers:calcproduct
 
-$$
 \begin{align*}
 zw &= (r\cos(\theta) + i r \sin(\theta)) (s\cos(\phi) + is \sin(\phi))
 \\&= rs \cos(\theta) \cos(\phi) + irs \cos(\theta) \sin(\phi) + irs \sin(\theta) \cos(\phi) + i^2 rs \sin(\theta) \sin(\phi)
 \\&= rs( \cos(\theta) \cos(\phi) - \sin(\theta) \sin(\phi)) + irs (\cos(\theta) \sin(\phi) + \sin(\theta) \cos(\phi))
 \\&= rs \cos(\theta + \phi) + irs \sin(\theta+\phi).
 \end{align*}
-$$
 
 :::
 

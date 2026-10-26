@@ -1,23 +1,11 @@
-.longdivision mjx-mtd,
-.longdivision-short mjx-mtd { padding: 0 !important; }
+.longdivision .mtable .arraycolsep,
+.longdivision-short .mtable .arraycolsep {
+    width: 0em !important;
+}
 .longdivision-short { overflow-y: hidden !important; }
-
-.compact mjx-mtd { padding: 0.1rem !important; }
-
-mjx-mtable.compact[justify="right"],
-mjx-mtable.longdivision[justify="right"],
-mjx-mtable.longdivision-short[justify="right"] {
+.compact .mtable .arraycolsep {
+    width: 0.1em !important;
+}
+.compact .mtable {
     text-align: center !important;
-}
-
-mjx-utext[variant="-explicitFont"] {
-    min-width: fit-content !important;
-}
-
-/* Core instruction applied to text tokens */
-span.katex span.mord.text {
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 83%;
 }

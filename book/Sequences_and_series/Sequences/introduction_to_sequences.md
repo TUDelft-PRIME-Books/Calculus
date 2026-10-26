@@ -586,14 +586,14 @@ Let $\left(F_n\right)_{n=1}^{\infty}$ be the sequence of Fibonacci numbers, then
 
 :::{math}
 :label: Eq:Series:FibonacciTelescoping
-$$
+
 \begin{align*}
 \sum_{k=1}^nF_k&=\sum_{k=1}^n\left(F_{k+2}-F_{k+1}\right)\\
 &=F_{n+2}-\cancel{F_{n+1}}+\cancel{F_{n+1}}-\cancel{F_n}\\
 &{}\quad{}+\cdots+\cancel{F_4}-\cancel{F_3}+\cancel{F_3}-F_2\\
 &=F_{n+2}-1.
 \end{align*}
-$$
+
 :::
 
 So the sum of the first $n$ terms of the Fibonacci sequence equals $F_{n+2}-1$. Note that in the second line of Equation {eq}`Eq:Series:FibonacciTelescoping` we have _cancelled_ many terms because those terms appear twice with opposite signs.

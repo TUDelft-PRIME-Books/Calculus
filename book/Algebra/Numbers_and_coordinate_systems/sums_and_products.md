@@ -353,12 +353,11 @@ First, consider the finite summation that starts at $1$ and ends at $(n+1)^2$, t
 
 :::{math}
 :label: Eq:SumsAndProducts:SumOfIntegersSquares1
-$$
+
 \begin{align*}
 \sum_{k=1}^{(n+1)^2}k&=\frac{1}{2}(n+1)^2((n+1)^2+1)\\
 &=\frac12(n^4+4n^3+7n^2+6n+2).
 \end{align*}
-$$
 :::
 
 Next, consider the finite summation that starts at $1$ and ends at $n^2$, then we have

@@ -25,19 +25,19 @@ html:
 
 sphinx:
   local_extensions:
-    text_replacer: _ext/
-    check_captions: _ext/
-    image_checker: _ext/
-    numref_section: _ext/
-    math_punctuation: _ext/
-    unnumbered_sections: _ext/
+    # text_replacer: _ext/
+    # check_captions: _ext/
+    # image_checker: _ext/
+    # numref_section: _ext/
+    # math_punctuation: _ext/
+    # unnumbered_sections: _ext/
   config:
-    katex_prerender: false # for now false, then if it works set to true and see how that goes
+    katex_prerender: false
+    katex_inherit_font: true
     katex_options: |
       {
         trust: true,
         strict: false,
-        processEnvironments: true,
         macros: {
           "\\Re": "\\operatorname{Re}\\left(#1\\right)",
           "\\Im": "\\operatorname{Im}\\left(#1\\right)",

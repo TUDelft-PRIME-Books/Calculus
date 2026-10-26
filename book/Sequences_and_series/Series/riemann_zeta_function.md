@@ -49,13 +49,13 @@ and
 
 :::{math}
 :label: Eq:Series:RiemannZetaFunction2
-$$
+
 \begin{align*}
 \sum_{n=0}^{\infty}\frac{(-1)^n}{(n+1)^s}&=\sum_{n=0}^{\infty}\frac{1}{(2n+1)^s}-\sum_{n=1}^{\infty}\frac{1}{(2n)^s}\\
 &=\sum_{n=1}^{\infty}\frac{1}{n^s}-2\sum_{n=1}^{\infty}\frac{1}{(2n)^s}\\
 &=\left(1-\frac{1}{2^{s-1}}\right)\zeta(s).
 \end{align*}
-$$
+
 :::
 
 :::::{prf:example}

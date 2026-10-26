@@ -442,22 +442,6 @@ Replace {numref}`Fig:ApproximatingSolutions:eulerPolygon-B` by an applet. The so
 
 Consider again the initial value problem given in Equation {eq}`Eq:ApproximatingSolutions:EX2`
 
-%:::{math}
-%:label: Eq:ApproximatingSolutions:EX2
-$$
-\left\{\begin{array}{rclll}
-	y' & = & \frac7{10}\left(1-\frac{y}{750}\right)y-20, & \text{for} & t\geq 0, \\
-	y(0) & = & 30.
-\end{array}\right.
-$$
-%:::
-
-%The exact solution is equal to
-
-%$$
-%y(t)=\frac{150 \left(95 + \sqrt{9345} + \left(-95 + \sqrt{9345}\right) e^{\frac{1}{10} \sqrt{\frac{623} {15}} t}\right)}{483 + 5 \sqrt{9345} + \left(-483 + 5 \sqrt{9345}\right) e^{\frac{1}{10} \sqrt{\frac{623}%{15}} t}}
-%$$
-
 Let us compare the Backward Euler approximation of this problem with the Forward Euler approximation from {prf:ref}`Ex:ApproximatingSolutions:EX2`. Similar to before, let us apply the two Euler methods using $\Delta t=8$ to this initial value problem and stop at $t=64$. This gives the results in {numref}`Figure %s <Fig:ApproximatingSolutions:Euler8-B>`.
 
 :::{figure} Images/Fig-NumericalMethods-Euler8-B.svg
