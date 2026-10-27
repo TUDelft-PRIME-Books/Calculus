@@ -116,28 +116,6 @@ sphinx:
         :::{important}
         We have now given two, seemingly distinct, definitions of $\mathbb{R}^n$: in {numref}`Sec:CoordinateSystems` we have introduced $\mathbb{R}^n$ as the set of all points with $n$ entries, while in {prf:ref}`Dfn:Vectors:Vectors` we have defined it as the set of all (column) vectors with $n$ entries. Since there is a direct correspondence between the point $(x_1,\ldots,x_n)$ and the vector $\begin{pmatrix}x_{1}\\x_{2}\\\vdots\\x_{n}\end{pmatrix}$ this is no issue in practice. Throughout this book, we will sometimes interpret elements of $\mathbb{R}^n$ as points and sometimes as column vectors, depending on the context. At the end of this section, we will also see that there is a direct geometrical connection between these two interpretations.
         :::
-    mathjax3_config:
-      loader:
-        load: ['[tex]/cancel']
-      tex:
-        packages:
-          '[+]': ['cancel']
-        inlineMath: [ ['$','$'], ['\(','\)'] ]
-        displayMath: [ ['$$','$$'], ['\[','\]'] ]
-        macros:
-          "Re": ["\\operatorname{Re}\\left(#1\\right)",1]
-          "Im": ["\\operatorname{Im}\\left(#1\\right)",1]
-          "vect": ["\\mathbf{#1}",1]
-          "vec": ["\\mathbf{#1}",1]
-          "nicefrac": ["\\frac{#1}{#2}", 2]
-          "R": "\\mathbb{R}"
-          "C": "\\mathbb{C}"
-          "norm": ["\\left\\Vert #1 \\right\\Vert",1]
-          "ip" : "\\cdot"
-          "cp": ["\\times "]
-          "erf": "\\operatorname{erf}"
-          "uuline": ["\\underline{\\underline{#1}}", 1]
-          "ooline": ["\\overline{\\overline{#1}}", 1]
     inverter_all: false
     html_js_files:
     - https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js # Required for live code: https://teachbooks.io/manual/features/live_code.html
