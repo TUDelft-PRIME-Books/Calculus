@@ -39,6 +39,7 @@ sphinx:
         trust: true,
         strict: false,
         macros: {
+          "\\class": "\\htmlClass{#1}{#2}",
           "\\Re": "\\operatorname{Re}\\left(#1\\right)",
           "\\Im": "\\operatorname{Im}\\left(#1\\right)",
           "\\vect": "\\mathbf{#1}",
