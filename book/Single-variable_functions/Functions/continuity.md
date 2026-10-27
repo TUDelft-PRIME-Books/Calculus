@@ -732,6 +732,7 @@ $$
 
 We want to find out for which value of $b$, if any, the function is continuous. By {prf:ref}`Theorem:Continuity:Standardfunctions` and {prf:ref}`Theorem:Continuity:Basiccomputationrules` the function $f$ is continuous at each point $a$ except possibly at $a=2$. In order to establish when (if ever) $f$ is continuous at $a=2$, we evaluate
 
+$$
 \begin{align*}
  \lim\limits_{x\rightarrow2^-}f(x) &= \lim\limits_{x\rightarrow2^-}2^x+b \\
  &=2^2+b \\
@@ -741,6 +742,7 @@ We want to find out for which value of $b$, if any, the function is continuous. 
  &=-2,\\
  f(2)&=2b+10.
 \end{align*}
+$$
 
 So in order for $f$ to be continuous at $2$, we need to have $4+b=-2=2b+10$, i.e. $b=-6$. So $f$ is continuous everywhere if $b=-6$ and otherwise, it is continuous everywhere except at $2$.
 
@@ -836,21 +838,25 @@ $$
 
 We want to find out at which points $f$ is continuous (either regular, left or right). Since the functions $3x+4$, $\ln(x)+3$ and $3-x$ are continuous on their domains, the only problems can arise at the points where we switch between which formula is used to describe the function values, i.e. at $0$ and $1$. We can evaluate
 
+$$
 \begin{align*}
  \lim\limits_{x\rightarrow 0^-}f(x)&=\lim\limits_{x\rightarrow 0^-}3x+4=4,\\
   \lim\limits_{x\rightarrow 0^+}f(x)&=\lim\limits_{x\rightarrow 0^+}\ln(x)+3=-\infty,\\
   f(0)&=4.
 \end{align*}
+$$
 
 Hence, the limit $\lim\limits_{x\rightarrow 0}f(x)$ does not exist, so the function is not continuous at $0$. However, we do find that $\lim\limits_{x\rightarrow 0^-}f(x)=f(0)$. As such, the function is left-continuous at $0$ (but not right-continuous).
 
 Similarly, we can evaluate
 
+$$
 \begin{align*}
  \lim\limits_{x\rightarrow 1^-}f(x)&=\lim\limits_{x\rightarrow 1^-}\ln(x)+3=3,\\
   \lim\limits_{x\rightarrow 1^+}f(x)&=\lim\limits_{x\rightarrow 1^+}3-x=2,\\
   f(1)&=2.
 \end{align*}
+$$
 
 Hence, the limit $\lim\limits_{x\rightarrow 1}f(x)$ does not exist, so the function is not continuous at $1$. However, we do find that $\lim\limits_{x\rightarrow 1^+}f(x)=f(1)$. We conclude that the function is right-continuous at $1$ (but not left-continuous).
 

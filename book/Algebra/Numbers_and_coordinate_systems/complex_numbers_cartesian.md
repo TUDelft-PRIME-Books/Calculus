@@ -135,12 +135,14 @@ You can add, subtract, multiply and, in most cases, divide real numbers to obtai
 :label: Def:ComplexNumbers:Arithmetics
 If $z=a+bi$ and $w=c+di$ are complex numbers (with $a,b,c,d\in\mathbb{R}$), then we define the **sum** $z+w$, the **difference** $z-w$ and the **product** $zw$, as well as the complex number $-z$ (which is called the **additive inverse** of $z$, or simply **minus $z$**), as the complex numbers
 
+$$
 \begin{align*}
 z+w &= (a+c)+(b+d)i, \\
 z-w &= (a-c)+(b-d)i, \\
 zw &= (ac-bd)+(ad+bc)i,\\
 -z&=-a+(-b)i.
 \end{align*}
+$$
 
 In addition, if $n\in\mathbb{Z}$ with $n\geq 1$, we define the $n$th **power** of $z$ as
 
@@ -157,6 +159,7 @@ The standard computation rules that hold for real numbers, hold for complex numb
 :label: Thm:ComplexNumbers:Commassdistr
 Let $z_1$, $z_2$ and $z_3$ be complex numbers. Then we have
 
+$$
 \begin{align*}
 z_1-z_1&=0,&\\
 z_1+z_2 &= z_2+z_1,\qquad&\text{commutativity of addition} \\
@@ -167,6 +170,7 @@ z_1(z_2+z_3)&=z_1z_2+z_1z_3,\qquad&\text{distributivity}\\
 z_1+0&=0+z_1=z_1,\qquad&0\text{ is the neutral element for addition}\\
 1z_1&=z_11=z_1.\qquad&1\text{ is the neutral element for multiplication}\\
 \end{align*}
+$$
 
 Finally, if $z_1z_2=0$ then we must have $z_1=0$ or $z_2=0$.
 ::::
@@ -178,20 +182,24 @@ All of these rules follow by writing out both sides of the equation using the de
 
 For instance, if we want to show associativity of multiplication, we write $z_1=a+bi$, $z_2=c+di$ and $z_3=x+yi$ with $a,b,c,d,x,y\in \mathbb{R}$. Then we have
 
+$$
 \begin{align*}
 (z_1z_2)z_3&=((ac-bd)+(ad+bc)i)(x+yi)\\
 &=\left((ac-bd)x-(ad+bc)y\right)+\left((ac-bd)y+(ad+bc)x\right)i\\
 &=\left(acx-bdx-ady-bcy\right)+\left(acy-bdy+adx+bcx\right)i,
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
 z_1(z_2z_3)&=(a+bi)((cx-dy)+(cy+dx)i)\\
 &=\left(a(cx-dy)-b(cy+dx)\right)+\left(a(cy+dx)+b(cx-dy)\right)i\\
 &=\left(acx-ady-bcy-bdx\right)+\left(acy+adx+bcx-bdy\right)\\
 &=\left(acx-bdx-ady-bcy\right)+\left(acy-bdy+adx+bcx\right)i.
 \end{align*}
+$$
 
 We conclude that $(z_1z_2)z_3=z_1(z_2z_3)$.
 
@@ -227,6 +235,7 @@ Again, since $a^2+b^2>0$ and $d$ is real, we must have $d=0$. We then find $z_2=
 :::{note}
 The rules from {prf:ref}`Thm:ComplexNumbers:Commassdistr` also show why it make sense to define addition and multiplication like we did. Indeed, if $z=a+bi$ and $w=c+di$ then we can work out the brackets to obtain
 
+$$
 \begin{align*}
 (a+bi) + (c+di)
 &= a + bi + c + di \\
@@ -234,9 +243,11 @@ The rules from {prf:ref}`Thm:ComplexNumbers:Commassdistr` also show why it make 
 &= (a+c)+(b+d)i\\
 &=z+w
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
 (a+bi)(c+di)&= a(c+di)+bi(c+di) \\
 &= ac+adi+bci+bdi^2 \\
@@ -245,6 +256,7 @@ and
 &= (ac-bd)+(ad+bc)i\\
 &=zw.
 \end{align*}
+$$
 
 :::
 
@@ -256,21 +268,25 @@ In practice, you add, subtract and multiply complex numbers by working out the b
 :label: Ex:ComplexNumbers:Addition
 Addition of complex numbers is very straightforward. Indeed, suppose we have $z=4+3i$ and $w=-1-2i$. Then we can compute
 
+$$
 \begin{align*}
 z+w &= (4+3i)+(-1-2i) \\
 &= 4+3i+(-1)-2i \\
 &= 4+(-1)+3i-2i \\
 &= 3+i.
 \end{align*}
+$$
 
 Similarly, subtraction is done by subtracting the real parts and subtracting the imaginary parts. In this case, we obtain
 
+$$
 \begin{align*}
 z-w &= (4+3i)-(-1-2i) \\
 &= 4+3i-(-1)-(-2i) \\
 &= 4+1+3i+2i \\
 &= 5+5i.
 \end{align*}
+$$
 
 ::::
 
@@ -278,6 +294,7 @@ z-w &= (4+3i)-(-1-2i) \\
 :label: Ex:ComplexNumbers:Multiplication
 Suppose we want to multiply $z=4+3i$ and $w=-1-2i$. Then we can expand the brackets to obtain
 
+$$
 \begin{align*}
 zw &= (4+3i)(-1-2i) \\
 &= 4(-1-2i)+3i(-1-2i) \\
@@ -285,6 +302,7 @@ zw &= (4+3i)(-1-2i) \\
 &= -4-8i-3i-6 \cdot(-1)\\
 &= 2-11i.
 \end{align*}
+$$
 
 ::::
 
@@ -376,6 +394,7 @@ $$
 
 To solve $z^2+2z+5=0$, we can now write
 
+$$
 \begin{align*}
 &z^2+2z+5 =0 \\
 \Longleftrightarrow\qquad&(z+1)^2+4=0 \\
@@ -383,6 +402,7 @@ To solve $z^2+2z+5=0$, we can now write
 \Longleftrightarrow\qquad & z+1 = \pm 2i \\
 \Longleftrightarrow\qquad &z = -1 \pm 2i.
 \end{align*}
+$$
 
 Here we used {prf:ref}`Thm:ComplexNumbers:roots`.
 
@@ -544,6 +564,7 @@ is a non-negative real number.
 :class: dropdown, tudproof 
 We have $\overline{z}=a-bi$, so we can work out the product $z\overline{z}$ as
 
+$$
 \begin{align*}
 z\overline{z} &= (a+bi)(a-bi) \\
 &= a(a-bi)+bi(a-bi) \\
@@ -551,6 +572,7 @@ z\overline{z} &= (a+bi)(a-bi) \\
 &= a^2-abi+bai-b^2\cdot(-1) \\
 &= a^2+b^2.
 \end{align*}
+$$
 
 Since $a$ and $b$ are real numbers, $a^2+b^2$ is a non-negative real number.
 ::::
@@ -696,6 +718,7 @@ We can combine the complex conjugate with the other four operations, which gives
 
 If $z$ and $w$ are complex numbers, then the following identities hold.
 
+$$
 \begin{align*}
 \overline{\overline{z}} &= z, \\
 \overline{z+w} &= \overline{z}+\overline{w}, \\
@@ -703,6 +726,7 @@ If $z$ and $w$ are complex numbers, then the following identities hold.
 \overline{zw} &= \overline{z}\,\overline{w}, \\
 \overline{\left(\frac{z}{w}\right)} &= \frac{\overline{z}}{\overline{w}}, & (\text{assuming}\ w\neq0).
 \end{align*}
+$$
 
 In addition, if $n\in\mathbb{Z}$ we have the identity
 
@@ -719,33 +743,40 @@ We assume $z=a+bi$ and $w=c+di$, $a,b,c,d\in\mathbb{R}$. Then we obtain each of 
 
 _Double conjugation_:
 
+$$
 \begin{align*}
 \overline{\overline{z}} &= \overline{\overline{a+bi}} \\
 &= \overline{a-bi} \\
 &= a+bi \\
 &= z.
 \end{align*}
+$$
 
 _Addition and conjugation_:
 
+$$
 \begin{align*}
 \overline{z+w} &= \overline{(a+c)+(b+d)i} \\
 &= (a+c)-(b+d)i \\
 &= (a-bi)+(c-di) \\
 &= \overline{z}+\overline{w}.
 \end{align*}
+$$
 
 _Subtraction and conjugation_:
 
+$$
 \begin{align*}
 \overline{z-w} &= \overline{(a-c)+(b-d)i} \\
 &= (a-c)-(b-d)i \\
 &= (a-bi)-(c+di) \\
 &= \overline{z}-\overline{w}.
 \end{align*}
+$$
 
 _Multiplication and conjugation_:
 
+$$
 \begin{align*}
 \overline{zw} &= \overline{(ac-bd)+(ad+bc)i} \\
 &= (ac-bd)-(ad+bc)i \\
@@ -756,9 +787,11 @@ _Multiplication and conjugation_:
 &= (a-bi)(c-di) \\
 &= \overline{z}\overline{w}.
 \end{align*}
+$$
 
 _Division and conjugation_:
 
+$$
 \begin{align*}
 \overline{\left(\frac{z}{w}\right)} &= \overline{\frac{ac+bd}{c^2+d^2}+\frac{bc-ad}{c^2+d^2}i} \\
 &= \frac{ac+bd}{c^2+d^2}-\frac{bc-ad}{c^2+d^2}i \\
@@ -767,16 +800,19 @@ _Division and conjugation_:
 &= \frac{a-bi}{c-di}\frac{c+di}{c+di} \\
 &= \frac{\overline{z}}{\overline{w}}.
 \end{align*}
+$$
 
 _Powers and conjugation_:
 
 If $n>0$ we have, using the multiplicative property,
 
+$$
 \begin{align*}
 \overline{z^n}&=\overline{\underbrace{z\cdot\cdots\cdot z}_{n\text{ times}}}\\
 &=\underbrace{\overline{z}\cdot\cdots\cdot\overline{z}}_{n\text{ times}}\\
 &=\overline{z}^n.
 \end{align*}
+$$
 
 For $n=0$, we find
 
@@ -786,12 +822,14 @@ $$
 
 Finally, for $n<0$, we find, using the other properties and using that $-n>0$
 
+$$
 \begin{align*}
 \overline{z^n}&=\overline{\frac{1}{z^{-n}}}\\
 &=\frac{\overline{1}}{\overline{z^{-n}}}\\
 &=\frac{1}{\overline{z}^{-n}}\\
 &=\overline{z}^n.
 \end{align*}
+$$
 
 ::::
 
@@ -803,10 +841,12 @@ Even better, we can relate the complex conjugate to the real and imaginary part 
 
 If $z$ is a complex number, then the following identities hold:
 
+$$
 \begin{align*}
 \frac{z+\overline{z}}{2} &= \Re{z}, \\
 \frac{z-\overline{z}}{2i} &= \Im{z}.
 \end{align*}
+$$
 
 ::::
 
@@ -818,21 +858,25 @@ We assume $z=a+bi$, $a,b\in\mathbb{R}$. Then we find
 
 _Conjugation and real part_:
 
+$$
 \begin{align*}
 \frac{z+\overline{z}}{2} &= \frac{(a+bi)+(a-bi)}{2} \\
 &= \frac{2a}{2} \\
 &= a \\
 &= \Re{z}.
 \end{align*}
+$$
 
 _Conjugation and imaginary part_:
 
+$$
 \begin{align*}
 \frac{z-\overline{z}}{2i} &= \frac{(a+bi)-(a-bi)}{2i} \\
 &= \frac{2bi}{2i} \\
 &= b \\
 &= \Im{z}.
 \end{align*}
+$$
 
 
 ::::
@@ -878,19 +922,23 @@ As far as the authors of this book are aware, there is no elementary proof of th
 :class: dropdown, tudproof
 We will consider the modulus $|p(z)|$ of $p(z)$, see {numref}`Ch:ComplexNumbersPolar`. Using the reverse triangle inequality form {prf:ref}`Thm:ComplexNumbers:complextriangle` we have
 
+$$
 \begin{align*}
  |p(z)|&=\left|a_nz^n+\left(a_{n-1} z^{n-1} + \cdots + a_1 z + a_0\right)\right|\\
  &\geq \left|\left|a_nz^n\right|-\left|a_{n-1} z^{n-1} + \cdots + a_1 z + a_0\right|\right|\\
  &\geq \left|a_nz^n\right|-\left|a_{n-1} z^{n-1} + \cdots + a_1 z + a_0\right|
 \end{align*}
+$$
 
 Now we use the triangle inequality from {prf:ref}`Thm:ComplexNumbers:complextriangle` and {prf:ref}`Thm:ComplexNumbers:polarmultdiv` we obtain
 
+$$
 \begin{align*}
  |p(z)|&\geq \left|a_nz^n\right|-\left|a_{n-1} z^{n-1} + \cdots + a_1 z + a_0\right|\\
  &\geq \left|a_nz^n\right|-\left(\left|a_{n-1}z^{n-1}\right|+\cdots+\left|a_1z\right|+\left|a_0\right|\right)\\
  &=\left|a_n\right||z|^n-\left|a_{n-1}\right||z|^{n-1}-....-\left|a_1\right||z|-\left|a_0\right|.
 \end{align*}
+$$
 
 Since $a_n\neq 0$, we see that the right-hand side of this inequality tends to $\infty$ as $|z|\rightarrow \infty$ (see {numref}`Section:Limitinf`). As such, there must exist some $R>0$ such that for all $z\in\mathbb{C}$ with $|z|\geq R$ we have
 
@@ -1329,14 +1377,14 @@ $$
 Therefore, $z-1$ must be a factor. If we calculate this division we obtain
 
 $$
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{rcl}
 z^3 + 3z^2 + \phantom{4}z - 5 & / & {z-1} \\
-\underline{\class{tud-red}{z^3 - \!\phantom{3}z^2}} \hspace0.45em\phantom{+ 4z - 0} & | & \ooline{\class{tud-cyan}{z^2}+\class{tud-green}{4z}+\class{tud-pink}{5}} \\
+\underline{\htmlClass{tud-red}{z^3 - \!\phantom{3}z^2}} \hspace0.45em\phantom{+ 4z - 0} & | & \ooline{\htmlClass{tud-cyan}{z^2}+\htmlClass{tud-green}{4z}+\htmlClass{tud-pink}{5}} \\
 4z^2 + \phantom{4}z - 5 & | \\
-\underline{\class{tud-blue}{4z^2 - 4z}} \hspace0.45em\phantom{-5} & | \\
+\underline{\htmlClass{tud-blue}{4z^2 - 4z}} \hspace0.45em\phantom{-5} & | \\
 5z-5 & | \\
-\underline{\class{tud-orange}{5z-5}} & | \\
+\underline{\htmlClass{tud-orange}{5z-5}} & | \\
 0 & |
 \end{array}
 }
@@ -1344,14 +1392,16 @@ $$
 
 The calculations behind the long division are
 
+$$
 \begin{align*}
-\class{tud-cyan}{z^2} \cdot (z-1) &= \class{tud-red}{z^3 - z^2} \\
-(z^3 + 3z^2 + z - 5) - (\class{tud-red}{z^3 - z^2}) &= 4z^2 + z - 5 \\
-\class{tud-green}{4z} \cdot (z-1) &= \class{tud-blue}{4z^2 - 4z} \\
-(4z^2 + z - 5) - (\class{tud-blue}{4z^2 - 4z}) &= 5z - 5 \\
-\class{tud-pink}{5} \cdot (z-1) &= \class{tud-orange}{5z - 5} \\
-(5z - 5) - (\class{tud-orange}{5z - 5}) &= 0
+\htmlClass{tud-cyan}{z^2} \cdot (z-1) &= \htmlClass{tud-red}{z^3 - z^2} \\
+(z^3 + 3z^2 + z - 5) - (\htmlClass{tud-red}{z^3 - z^2}) &= 4z^2 + z - 5 \\
+\htmlClass{tud-green}{4z} \cdot (z-1) &= \htmlClass{tud-blue}{4z^2 - 4z} \\
+(4z^2 + z - 5) - (\htmlClass{tud-blue}{4z^2 - 4z}) &= 5z - 5 \\
+\htmlClass{tud-pink}{5} \cdot (z-1) &= \htmlClass{tud-orange}{5z - 5} \\
+(5z - 5) - (\htmlClass{tud-orange}{5z - 5}) &= 0
 \end{align*}
+$$
 
 Note that the remainder is zero, as we should have expected.
 

@@ -153,14 +153,17 @@ as desired.
 
 Now suppose that for all $x$ and $y$ in the interval we have $f(y)\geq f(x)+f'(x)(y-x)$. Let $a<b$ in $I$ and let $c$ in $(a,b)$. Then we want to show $f(a)+\frac{f(b)-f(a)}{b-a}(c-a)\geq f(c)$, i.e. $f(a)+\frac{f(b)-f(a)}{b-a}(c-a)-f(c)\geq 0$. Then we can write 
 
+$$
 \begin{align*}
  f(c) &= 1\cdot f(c) \\
  &= \left(1-\frac{c-a}{b-a}+\frac{c-a}{b-a}\right)f(c) \\
  &= \left(1-\frac{c-a}{b-a}\right)f(c)+\frac{c-a}{b-a}f(c).
 \end{align*}
+$$
 
 With this, we have 
 
+$$
 \begin{align*}
  f(a)+\frac{f(b)-f(a)}{b-a}(c-a)-f(c) &= f(a)+\frac{f(b)-f(a)}{b-a}(c-a) \\
  &\phantom{=} \quad\quad\quad-\left(1-\frac{c-a}{b-a}\right)f(c)-\frac{c-a}{b-a}f(c)\\
@@ -168,9 +171,11 @@ With this, we have
  &\phantom{=} \quad\quad\quad -\left(1-\frac{c-a}{b-a}\right)f(c)-\frac{c-a}{b-a}f(c)\\
  &=\Big(f(a)-f(c)\Big)\left(1-\frac{c-a}{b-a}\right)+\Big(f(b)-f(c)\Big)\frac{c-a}{b-a}.
 \end{align*}
+$$
 
 Since $a$, $b$ and $c$ are all points in the interval $I$, and since $1-\dfrac{c-a}{b-a}>0$ and $\dfrac{c-a}{b-a} >0$ we can use our assumption to obtain the estimate
 
+$$
 \begin{align*}
 &\phantom{=} f(a)+\frac{f(b)-f(a)}{b-a}(c-a)-f(c) \\
 &= \Big(f(a)-f(c)\Big)\left(1-\frac{c-a}{b-a}\right)+\Big(f(b)-f(c)\Big)\frac{c-a}{b-a} \\
@@ -180,6 +185,7 @@ Since $a$, $b$ and $c$ are all points in the interval $I$, and since $1-\dfrac{c
 &= f'(c)\cdot 0 \\
 &= 0.
 \end{align*}
+$$
 
 Hence, we must have $f(a)+\frac{f(b)-f(a)}{b-a}(c-a)\geq f(c)$, which means that $f$ is convex.
 
@@ -255,11 +261,13 @@ $$
 
 Now we subtract $(b-a)f(a)$ from both sides of the inequality to obtain
 
+$$
 \begin{align*}
  (b-a)f(c)-(b-a)f(a) &\leq (b-c)f(a)+(c-a)f(b)-(b-a)f(a) \\
  &= (a-c)f(a)+(c-a)f(b) \\
  &= (c-a)f(b)-(c-a)f(a).
 \end{align*}
+$$
 
 Then we divide both sides of the inequality by the positive term $(b-a)(c-a)$ to obtain
 
@@ -281,10 +289,12 @@ $$
 
 Then, we add $(b-c)f(b)$ to both sides of the equation to obtain
 
+$$
 \begin{align*}
  (b-c)f(b)-(b-c)f(a) &\leq (c-a)f(b)-(b-a)f(c)+(b-c)f(b) \\
  &= (b-a)f(b)-(b-a)f(c).
 \end{align*}
+$$
 
 Then we divide both sides of the inequality by the positive term $(b-a)(b-c)$ to obtain
 

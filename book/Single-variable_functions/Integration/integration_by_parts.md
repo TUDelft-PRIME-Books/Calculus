@@ -89,10 +89,12 @@ Let us revisit the integral $\displaystyle\int x\cos(x)\,dx$ introduced at the b
 
 Taking $u=x$ and $dv=\cos(x)\,dx$, we obtain $du=dx$ and we might choose $v=\sin(x)$. Applying this to Equation {eq}`Eq:Integration:PartsIndefiniteIntegralDifferentialNotation` we obtain
 
+$$
 \begin{align*}
 \int x\cos(x)\,dx&=x\sin(x)-\int\sin(x)\,dx\\
 &=x\sin(x)+\cos(x)+C.
 \end{align*}
+$$
 
 In {numref}`Fig:Integration:PartsPowerCos` you can see the graph of the integrand $x\cos(x)$ and the graph of the antiderivative $x\sin(x)+\cos(x)$. The indicated slope of the antiderivative at the selected point always equals the value of the integrand at that point.
 
@@ -121,24 +123,30 @@ Sometimes we have to apply the method more than once. This is shown in the next 
 
 We start with applying the method of integration by parts to the integral $\displaystyle\int x^2e^{2x}\,dx$. Taking $u=x^2$ and $dv=e^{2x}\,dx$, we obtain $du=2x\,dx$ and choose $v=\dfrac{1}{2}e^{2x}$. Applying this to Equation {eq}`Eq:Integration:PartsIndefiniteIntegralDifferentialNotation` we obtain
 
+$$
 \begin{align*}
 \int x^2e^{2x}\,dx&=\frac{1}{2}x^2e^{2x}-\int \frac{1}{2}e^{2x}\,2x\,dx\\
 &=\frac{1}{2}x^2e^{2x}-\int xe^{2x}\,dx.
 \end{align*}
+$$
 
 Note that the integral $\displaystyle\int xe^{2x}\,dx$ looks easier to evaluate than the original integral $\displaystyle\int x^2e^{2x}\,dx$. However, we still don't know an antiderivative of the integrand. Using integration by parts once more on the remaining indefinite integral, we obtain, by choosing $u=x$ and $dv=e^{2x}\,dx$ (which implies that $du=dx$ and $v=\dfrac{1}{2}e^{2x}$ for instance):
 
+$$
 \begin{align*}
 \int xe^{2x}\,dx &= \frac{1}{2}xe^{2x}-\int \frac{1}{2}e^{2x}\,dx \\
 &= \frac{1}{2}xe^{2x}-\frac{1}{4}e^{2x}+C.
 \end{align*}
+$$
 
 We conclude that
 
+$$
 \begin{align*}
 \int x^2e^{2x}\,dx &= \frac{1}{2}x^2e^{2x}-\left(\frac{1}{2}xe^{2x}-\frac{1}{4}e^{2x}+C\right) \\
 &= \frac{1}{2}x^2e^{2x}-\frac{1}{2}xe^{2x}+\frac{1}{4}e^{2x}-C.
 \end{align*}
+$$
 
 ::::::
 
@@ -150,10 +158,12 @@ If the integrand consists of only one function, we may choose $u$ to be the inte
 :label: Ex:Integration:PartsAntiderivativeArctan
 In order to find an antiderivative of $\arctan(x)$ we apply integration by parts using $u=\arctan(x)$ and $dv=dx$:
 
+$$
 \begin{align*}
 \int\arctan(x)\,dx&=x\arctan(x)-\int x\,\frac{1}{1+x^2}\,dx\\
 &=x\arctan(x)-\frac{1}{2}\ln(1+x^2)+C,
 \end{align*}
+$$
 
 where the substitution $t=1+x^2$ is used to evaluate the final remaining integral.
 
@@ -212,11 +222,13 @@ Consider $\displaystyle\int x^3\ln(x)\,dx$ for $x>0$.
 
 Note that $x^3$ is an algebraic function and $\ln(x)$ is a logarithm. So, if we choose $u=\ln(x)$ and $dv=x^3\,dx$, we obtain that $\displaystyle du=\frac{1}{x}\,dx$ and we might choose $v=\frac14x^4$. We have
 
+$$
 \begin{align*}
 \int x^3\ln(x)\,dx&=\frac{1}{4}x^4\ln(x)-\int \frac{1}{4}x^4\,\frac{1}{x}\,dx\\
 &=\frac{1}{4}x^4\ln(x)-\int \frac{1}{4}x^3\,dx\\
 &=\frac{1}{4}x^4\ln(x)-\frac{1}{16}x^4+C.
 \end{align*}
+$$
 
 ::::::
 
@@ -230,10 +242,12 @@ The integral $\displaystyle\int\frac{\ln(x)}{x}\,dx$ can be evaluated using the 
 
 However, it can also be done using integration by parts. The LIATE rule suggests to use $u=\ln(x)$ and $dv=\dfrac{1}{x}\,dx$, which implies that $du=\dfrac{1}{x}\,dx$ and $v=\ln(x)$, for instance. We have
 
+$$
 \begin{align*}
 \int\frac{\ln(x)}{x}\,dx&=\ln(x)\cdot\ln(x)-\int\ln(x)\,\dfrac{1}{x}\,dx\\
 &=(\ln(x))^2-\int\frac{\ln(x)}{x}\,dx+C.
 \end{align*}
+$$
 Hence, we have
 
 :::{math}
@@ -337,6 +351,7 @@ $$
 
 In the new indefinite integral, we again choose the trigonometric function for $u$. So we pick $u=\sin(3x)$ and $dv=e^{-2x}\,dx$, which implies that $du=3\cos(3x)\,dx$ and $v=-\dfrac{1}{2}e^{-2x}$, for instance. We continue:
 
+$$
 \begin{align*}
 \int e^{-2x}\cos(3x)\,dx &= -\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int  e^{-2x}\sin(3x)\,dx \\
 &= -\frac{1}{2}e^{-2x}\cos(3x)\\
@@ -344,13 +359,16 @@ In the new indefinite integral, we again choose the trigonometric function for $
 &= -\frac{1}{2}e^{-2x}\cos(3x)\\
 &{}\hspace{10mm}{}+\frac{3}{4}e^{-2x}\sin(3x)-\dfrac{9}{4}\int e^{-2x}\cos(3x)\,dx.
 \end{align*}
+$$
 
 Notice that the integral in the final step equals $I$, the integral we would like to evaluate. This means that we have:
 
+$$
 \begin{align*}
 &~ & I &=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\sin(3x)-\frac{9}{4}I\\
 &\Longrightarrow & \left(1+\frac{9}{4}\right)I &= -\frac{1}{2}e^{-2x}\cos(3x)+\frac{3}{4}e^{-2x}\sin(3x)+K
 \end{align*}
+$$
 
 with $K\in\mathbb{R}$ arbitrary. Since $1+\dfrac{9}{4}=\dfrac{13}{4}$ we conclude that
 
@@ -375,11 +393,13 @@ The graph of the integrand $e^{-2x}\cos(3x)$ (_top_) and the graph of the antide
 
 Here we chose the trigonometric function for $u$ in both the first and the second step. In this case we could have chosen the exponential function instead. See {numref}`Grasple:133577`. However, it is important to stick to the same choice (trigonometric or exponential function) in the second step. Otherwise, we return to the original integral without any result:
 
+$$
 \begin{align*}
 \int e^{-2x}\cos(3x)\,dx &=-\frac{1}{2}e^{-2x}\cos(3x)-\frac{3}{2}\int e^{-2x}\sin(3x)\,dx\\
 &=-\frac{1}{2}e^{-2x}\cos(3x)+\frac{1}{2}e^{-2x}\cos(3x)+\int e^{-2x}\cos(3x)\,dx.\\
 &=\int e^{-2x}\cos(3x)\,dx.
 \end{align*}
+$$
 
 ## Definite integrals
 
@@ -468,17 +488,21 @@ Sometimes we need to combine the method of integration by parts and the method o
 
 Let us try to evaluate the integral $\displaystyle\int_0^{\frac{1}{2}}\arcsin(x)\,dx$. We start with the application of the method of integration by parts:
 
+$$
 \begin{align*}
 \int_0^{\frac{1}{2}}\arcsin(x)\,dx&=x\arcsin(x)\bigg|_0^{\frac{1}{2}}-\int_0^{\frac{1}{2}}x\,\frac{1}{\sqrt{1-x^2}}\,dx\\
 &=\frac{1}{2}\cdot\frac{1}{6}\pi-\int_0^{\frac{1}{2}}\frac{x}{\sqrt{1-x^2}}\,dx.
 \end{align*}
+$$
 
 For the latter integral we use the substitution $u=1-x^2$ to obtain
 
+$$
 \begin{align*}
 \int_0^{\frac{1}{2}}\arcsin(x)\,dx&=\frac{1}{12}\pi+\sqrt{1-x^2}\bigg|_0^{\frac{1}{2}}\\
 &=\frac{1}{12}\pi+\frac{1}{2}\sqrt{3}-1.
 \end{align*}
+$$
 
 ::::::
 
@@ -496,6 +520,7 @@ $$
 
 Now we use integration by parts, with $u=t$ and $dv=e^t\,dt$ and therefore $du=dt$ and $v=e^t$ for instance, to obtain
 
+$$
 \begin{align*}
 \int_4^9e^{\sqrt{x}}\,dx&=2\int_2^3te^t\,dt \\
 &=2te^t\bigg|_2^3-2\int_2^3e^t\,dt\\
@@ -503,6 +528,7 @@ Now we use integration by parts, with $u=t$ and $dv=e^t\,dt$ and therefore $du=d
 &=6e^3-4e^2-2e^3+2e^2\\
 &=4e^3-2e^2.
 \end{align*}
+$$
 ::::::
 
 In {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we have seen that $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{8}\pi\ln(2)$. This result can also be used to evaluate a similar integral involving the inverse tangent function:
@@ -512,10 +538,12 @@ In {prf:ref}`Ex:Integration:SubstitutionTrigSerretsIntegral` we have seen that $
 
 Since we recognise $\dfrac{1}{1+x^2}$ as the derivative of $\arctan(x)$, we can use integration by parts to find that
 
+$$
 \begin{align*}
 \int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\ln(1+x)\arctan(x)\bigg|_0^1-\int_0^1\frac{\arctan(x)}{1+x}\,dx\\
 &=\frac{1}{4}\pi\ln(2)-\int_0^1\frac{\arctan(x)}{1+x}\,dx.
 \end{align*}
+$$
 
 Since $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx=\frac{1}{8}\pi\ln(2)$ this implies that 
 
@@ -557,6 +585,7 @@ You can easily check this right now. In {numref}`Sec:Integration:RationalFunctio
 
 Then we have
 
+$$
 \begin{align*}
 &\int_0^{\alpha}\frac{x}{(1+x^2)(1+\alpha x)}\,dx\\
 &=\frac{1}{1+\alpha^2}\int_0^{\alpha}\left(\frac{\alpha+x}{1+x^2}-\frac{\alpha}{1+\alpha x}\right)\,dx\\
@@ -564,14 +593,17 @@ Then we have
 &=\frac{1}{1+\alpha^2}\left(\alpha\arctan(\alpha)+\frac{1}{2}\ln(1+\alpha^2)-\ln(1+\alpha^2)\right)\\
 &=\frac{\alpha}{1+\alpha^2}\arctan(\alpha)-\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}.
 \end{align*}
+$$
 
 Hence we have: $I'(\alpha)=\displaystyle\frac{\alpha}{1+\alpha^2}\arctan(\alpha)+\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}$. Using integration by parts this implies that
 
+$$
 \begin{align*}
 I(\alpha)&=\int\frac{\alpha}{1+\alpha^2}\arctan(\alpha)\,d\alpha+\int\frac{\ln(1+\alpha^2)}{2(1+\alpha^2)}\,d\alpha\\
 &=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)-\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha+\frac{1}{2}\int\frac{\ln(1+\alpha^2)}{1+\alpha^2}\,d\alpha\\
 &=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)+C.
 \end{align*}
+$$
 
 Since $I(0)=0$, we conclude that $\displaystyle\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx=\frac{1}{2}\arctan(\alpha)\ln(1+\alpha^2)$.
 
@@ -583,10 +615,12 @@ $$
 
 Similarly, using integration by parts, the integral $\displaystyle\int_0^1\frac{\arctan(x)}{1+x}\,dx$ is a special case of
 
+$$
 \begin{align*}
 \alpha\int_0^{\alpha}\frac{\arctan(x)}{1+\alpha x}\,dx&=\arctan(x)\ln(1+\alpha x)\bigg|_0^{\alpha}-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx\\
 &=\arctan(\alpha)\ln(1+\alpha^2)-\int_0^{\alpha}\frac{\ln(1+\alpha x)}{1+x^2}\,dx.
 \end{align*}
+$$
 This implies that: 
 
 $$
@@ -609,10 +643,12 @@ Fill in the correct answer in the input field.
 M[0] Let $f$ be a function that satisfies $f(x)\cos(x)=f'(x)\sin(x)$. Then $\displaystyle\int_0^{\pi}f(x)\cos(x)\,dx=$
 = Using integration by parts we obtain
 
+$$
 \begin{align*}
 \int_0^{\pi}f(x)\cos(x)\,dx&=\int_0^{\pi}f'(x)\sin(x)\,dx\\
  &=f(x)\sin(x)\bigg|_0^{\pi}-\int_0^{\pi}f(x)\cos(x)\,dx.
 \end{align*}
+$$
 
 Hence, we have
 
@@ -658,10 +694,12 @@ $$
 
 and so on. Note that we can simplify and rename the constant of integration in each step. Moreover, if we put the factor $e^x$ outside the brackets, we find that, for example,
 
+$$
 \begin{align*}
 I_{10}&=\left(x^{10}-10x^9+90x^8-720x^7+5040x^6-30240x^5+151200x^4\right.\\
 &{}\quad\quad\quad\left.{}-604800x^3+1814400x^2-3628800x+3628800\right)e^x+C_{10}.
 \end{align*}
+$$
 
 In {prf:ref}`Ex:Integration:PartsPowerCos` we evaluated the integral $\displaystyle\int x\cos(x)\,dx$ using integration by parts. What happens if we replace $x$ by a higher power of $x$?
 
@@ -673,10 +711,12 @@ $$
 
 Applying integration by parts once more, we find that
 
+$$
 \begin{align*}
 \int x^n\cos(x)\,dx&=x^n\sin(x)-n\int x^{n-1}\sin(x)\,dx\\
 &=x^n\sin(x)+nx^{n-1}\cos(x)-n(n-1)\int x^{n-2}\cos(x)\,dx.
 \end{align*}
+$$
 So, if we define $I_n=\displaystyle\int x^n\cos(x)\,dx$, then we have: 
 
 $$
@@ -689,10 +729,12 @@ $$
 I_2=x^2\sin(x)+2x\cos(x)-2I_0=x^2\sin(x)+2x\cos(x)-2\sin(x)+C_2,
 $$
 
+$$
 \begin{align*}
 I_3&=x^3\sin(x)+3x^2\cos(x)-6I_1\\
 &=x^3\sin(x)+3x^2\cos(x)-6x\sin(x)-6\cos(x)+C_3,
 \end{align*}
+$$
 and so on.
 
 We will see more reduction formulas in {numref}`Sec:Integration:TrigonometricFunctions`.

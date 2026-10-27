@@ -205,6 +205,7 @@ as desired. So this equation defines the unique line with slope $f'(a)$ that pas
 :label: Ex:Differentiability:Usinglimit
 Consider the function $f(x)=x^2$. We will use the definition of the derivative to find the derivative of this function. For any value of $x$ we can evaluate the limit
 
+$$
 \begin{align*}
  f'(x) &= \lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h} \\
  &= \lim_{h\rightarrow 0}\frac{(x+h)^2-x^2}{h} \\
@@ -213,6 +214,7 @@ Consider the function $f(x)=x^2$. We will use the definition of the derivative t
  &= \lim_{h\rightarrow 0}\left(2x+h\right) \\
  &= 2x.
 \end{align*}
+$$
 
 As such, we find that the function $f(x)=x^2$ is differentiable everywhere and that the derivative is given by $f'(x)=2x$.
 
@@ -256,6 +258,7 @@ Consider the function $k(t)=|t|$. We will try to use the definition of the deriv
 
 First consider any $t>0$. If $h$ is close enough to $0$, we can ensure that $t+h>0$ as well. In that case, we will have $|t|=t$ and $|t+h|=t+h$. Hence, we can find the derivative by evaluating
 
+$$
 \begin{align*}
  \frac{dk}{dt}(t) &= \lim_{h\rightarrow 0}\frac{k(t+h)-k(t)}{h} \\
  &= \lim_{h\rightarrow 0}\frac{|t+h|-|t|}{h} \\
@@ -264,9 +267,11 @@ First consider any $t>0$. If $h$ is close enough to $0$, we can ensure that $t+h
  &= \lim_{h\rightarrow 0}1 \\
  &= 1.
 \end{align*}
+$$
 
 Now we consider any $t<0$. If $h$ is close enough to $0$, we can ensure that $t+h<0$ as well. In that case, we will have $|t|=-t$ and $|t+h|=-(t+h)=-t-h$. Hence, we can find the derivative by evaluating
 
+$$
 \begin{align*}
  \frac{dk}{dt}(t) &= \lim_{h\rightarrow 0}\frac{k(t+h)-k(t)}{h} \\
  &= \lim_{h\rightarrow 0}\frac{|t+h|-|t|}{h} \\
@@ -275,24 +280,29 @@ Now we consider any $t<0$. If $h$ is close enough to $0$, we can ensure that $t+
  &= \lim_{h\rightarrow 0}-1 \\
  &= -1.
 \end{align*}
+$$
 
 Finally, we consider $t=0$. Here, we need to consider the left and right limits separately, because for $h<0$ we have $|0+h|=|h|=-h$, while for $h>0$ we have $|0+h|=|h|=h$. Then we find
 
+$$
 \begin{align*}
  \lim_{h\rightarrow 0^-}\frac{k(0+h)-k(0)}{h} &= \lim_{h\rightarrow 0^-}\frac{|0+h|-|0|}{h} \\
  &= \lim_{h\rightarrow 0^-}\frac{-h}{h} \\
  &= \lim_{h\rightarrow 0^-}-1 \\
  &= -1
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
  \lim_{h\rightarrow 0^+}\frac{k(0+h)-k(0)}{h} &= \lim_{h\rightarrow 0^+}\frac{|0+h|-|0|}{h} \\
  &= \lim_{h\rightarrow 0^+}\frac{h}{h} \\
  &= \lim_{h\rightarrow 0^+}1 \\
  &= 1.
 \end{align*}
+$$
 
 Since the left and right limits are unequal, we know from {prf:ref}`Theorem:LimitAtPoint:Leftrightequal` that the limit
 
@@ -334,12 +344,14 @@ $$
 
 On account of {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` the limit of the product of these functions exists and is equal to the product of the limits. This means that
 
+$$
 \begin{align*}
  \lim_{x\rightarrow a}\left(f(x)-f(a)\right) &= \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}(x-a) \\
  &= \lim_{x\rightarrow a}\frac{f(x)-f(a)}{x-a}\cdot\lim_{x\rightarrow a}(x-a) \\
  &= f'(a)\cdot0 \\
  &= 0.
 \end{align*}
+$$
 
 By definition, this means that $f$ is continuous at $a$.
 
@@ -479,21 +491,25 @@ $$
 :class: tudproof
 Because of {prf:ref}`Theorem:LimitAtPoint:Basiccomputationrules` we find that
 
+$$
 \begin{align*}
  \lim_{h\rightarrow 0}\frac{(cf)(a+h)-(cf)(a)}{h} &= \lim_{h\rightarrow 0}\frac{c\left(f(a+h)-f(a)\right)}{h} \\
  &= c\lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h} \\
  &= cf'(a).
 \end{align*}
+$$
 
 This means that $cf$ is also differentiable at $a$ and that $(cf)'(a)=cf'(a)$.
 
 Similarly, we find that
 
+$$
 \begin{align*}
  \lim_{h\rightarrow 0}\frac{(f+g)(a+h)-(f+g)(a)}{h} &= \lim_{h\rightarrow 0}\frac{f(a+h)+g(a+h)-f(a)-g(a)}{h} \\
  &= \lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}+\lim_{h\rightarrow 0}\frac{g(a+h)-g(a)}{h} \\
  &= f'(a)+g'(a).
 \end{align*}
+$$
 
 This means that $f+g$ is also differentiable at $a$ and that $(f+g)'(a)=f'(a)+g'(a)$.
 
@@ -541,10 +557,12 @@ $$
 
 Now we use {prf:ref}`Thm:SumsAndProducts:MagicRule` to rewrite $x^n-a^n$. Indeed, we obtain
 
+$$
 \begin{align*}
 x^n-a^n&=\quad(x-a)\sum_{k=1}^n a^{n-k}x^{k-1}\\
 &=\quad (x-a)\left(a^{n-1}+a^{n-2}x+a^{n-3}x^2+\ldots+ax^{n-2}+x^{n-1}\right) 
 \end{align*}
+$$
 
 We use this formula to evaluate the limit. Indeed, we find
 
@@ -698,36 +716,44 @@ Derivatives of power functions of the form $f(x)=x^r$ for $r$ any real number fo
 :label: Ex:Differentiability:Usingrules
 Consider the function $f(x)=6x^3+5x-4$. We will find the derivative of this function using the basic computation rules {prf:ref}`Thm:Differentiability:Sumscalar` and the standard derivatives {prf:ref}`Thm:Differentiability:Standard1`. First, we note that we have
 
+$$
 \begin{align*}
  f'(x) &= \frac{d}{dx}\left(6x^3+5x^2-4\right) \\
  &= 6\frac{d}{dx}x^3+5\frac{d}{dx}x^2-4\frac{d}{dx}1.
 \end{align*}
+$$
 
 Each of the derivatives of $x^3$, $x^2$ and $1$ are standard derivatives, and we find
 
+$$
 \begin{align*}
  f'(x) &= 6\frac{d}{dx}x^3+5\frac{d}{dx}x^2-4\frac{d}{dx}1 \\
  &= 6\left(3x^{3-1}\right)+5\left(2x^{2-1}\right)-4\cdot 0 \\
  &= 18x^2+10x.
 \end{align*}
+$$
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:Differentiability:Usingrules2
 Consider the function $h(t)=2\cos(t)-3\sin(t)$. We will find the derivative of this function using the basic computation rules {prf:ref}`Thm:Differentiability:Sumscalar` and the standard derivatives {prf:ref}`Thm:Differentiability:Standard1`. First, we note that we have
 
+$$
 \begin{align*}
  h'(t) &=\frac{d}{dt}\left(2\cos(t)-3\sin(t)\right) \\
  &=2\frac{d}{dt}\cos(t)-3\frac{d}{dt}\sin(t).
 \end{align*}
+$$
 
 As we know the derivatives of $\cos(t)$ and $\sin(t)$, we find
 
+$$
 \begin{align*}
  h'(t) &= 2\frac{d}{dt}\cos(t)-3\frac{d}{dt}\sin(t) \\
  &= 2(-\sin(t))-3(\cos(t)) \\
  &= -2\sin(t)-3\cos(t).
 \end{align*}
+$$
 ::::::
 
 ::::::{prf:example} 
@@ -758,6 +784,7 @@ $$
 
 For $x=1$, on the other hand, we obtain 
 
+$$
 \begin{align*}
  \lim_{h\rightarrow 0^-}\frac{f(1+h)-f(1)}{h} &= \lim_{h\rightarrow 0^-}\frac{(1+h)^2-1}{h} \\
  &=\lim_{h\rightarrow 0^-}\frac{1+2h+h^2-1}{h} \\
@@ -765,9 +792,11 @@ For $x=1$, on the other hand, we obtain
  &=\lim_{h\rightarrow 0^-}\left(2+h\right)\\
  &=2,
 \end{align*}
+$$
 
 while
 
+$$
 \begin{align*}
  \lim_{h\rightarrow 0^+}\frac{f(1+h)-f(1)}{h} &= \lim_{h\rightarrow 0^+}\frac{3-2(1+h)-1}{h} \\
  &=\lim_{h\rightarrow 0^+}\frac{3-2-2h-1}{h} \\
@@ -775,6 +804,7 @@ while
  &=\lim_{h\rightarrow 0^+}\left(-2\right)\\
  &=-2.
 \end{align*}
+$$
 
 Since the left and right limits are unequal, the limit $\displaystyle\lim_{h\rightarrow 0}\frac{f(1+h)-f(1)}{h}$ does not exist. So this means that $f$ is not differentiable in $x=1$.
 ::::::
@@ -827,32 +857,38 @@ $$
 :label: Ex:Differentiability:Higherorderderivative1
 Consider the function $g(t)=-3\cos(t)+4t^3-t$. Using the basic computation rules {prf:ref}`Thm:Differentiability:Sumscalar` and the standard derivatives {prf:ref}`Thm:Differentiability:Standard1` we find that
 
+$$
 \begin{align*}
 \frac{dg}{dt} &= -3\frac{d\cos(t)}{dt}+4\frac{dt^3}{dt}-\frac{dt}{dt} \\
 &=-3(-\sin(t))+4(3t^{3-1})-1 \\
 &=-3\sin(t)+12t^2-1.
 \end{align*}
+$$
 
 The resulting function is again differentiable and we obtain
 
+$$
 \begin{align*}
 \frac{d^2g}{dt^2} &=\frac{d}{dt}\left(\frac{dg}{dt}\right) \\
 &= -3\frac{d\sin(t)}{dt}+12\frac{dt^2}{dt}-\frac{d1}{dt} \\
 &= -3\cos(t)+12(2t^{2-1})-0 \\
 &= -3\cos(t)+24t.
 \end{align*}
+$$
 ::::::
 
 ::::::{prf:example} 
 :label: Ex:Differentiability:Higherorderderivative2
 Consider the function $h(\theta)=\sin(\theta)$. Then we find
 
+$$
 \begin{align*}
 h'(\theta)&=\cos(\theta), \\
 h''(\theta)&=-\sin(\theta), \\
 h^{(3)}(\theta)&=-\cos(\theta), \\
 h^{(4)}(\theta)&=\sin(\theta).
 \end{align*}
+$$
 
 So after differentiating $4$ times, we obtain the original function again. This allows us to find high order derivatives of this function very quickly.
 

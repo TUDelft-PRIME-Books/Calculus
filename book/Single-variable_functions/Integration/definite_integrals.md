@@ -154,10 +154,12 @@ The integral $\displaystyle\int_a^bf(x)\,dx$ for a function that takes on both p
 The integral $\displaystyle\int_0^{2\pi}\cos(x)\,dx$ visualised.
 ```
 
+$$
 \begin{align*}
 \int_0^{2\pi}\cos(x)\,dx&=\int_0^{\frac{1}{2}\pi}\cos(x)\,dx+\int_{\frac{1}{2}\pi}^{\pi}\cos(x)\,dx\\
 &{}\quad{}+\int_{\pi}^{\frac{3}{2}\pi}\cos(x)\,dx+\int_{\frac{3}{2}\pi}^{2\pi}\cos(x)\,dx=0.
 \end{align*}
+$$
 
 ::::
 
@@ -216,6 +218,7 @@ The graph of a piecewise-continuous function that takes on both positive and neg
 
 The integral $\displaystyle\int_{-2}^5f(x)\,dx$ can be calculated as follows:
 
+$$
 \begin{align*}
 \int_{-2}^{5}f(x)\,dx &= \int_{-2}^{0}1\,dx+\int_{0}^{2}(2x-4)\,dx+\int_{2}^{5}(-x+4)\,dx\\
 &= \int_{-2}^{0}1\,dx+\int_{0}^{2}(2x-4)\,dx\\
@@ -224,6 +227,7 @@ The integral $\displaystyle\int_{-2}^5f(x)\,dx$ can be calculated as follows:
 &= 2 - 4 + 2 - \frac12 \\
 &= -\frac12.
 \end{align*}
+$$
 
 In the second step we have split the last integral into two parts: one part from $2$ to $4$ where the function is positive and one part from $4$ to $5$ where the function is negative. After that we used the formulas for the areas of rectangles and triangles to calculate the areas and introduced the appropriate signs.
 
@@ -339,6 +343,7 @@ As sample points we choose the right endpoints of each subinterval, $x_n^*=\frac
 
 Then the Riemann sum $R_N$ equals,
 
+$$
 \begin{align*}
 R_N&= \sum_{n=1}^Nf(x_n^*)\Delta x \\
 &= \sum_{n=1}^N\frac{n^2}{N^2}\cdot\frac{1}{N} \\
@@ -348,6 +353,7 @@ R_N&= \sum_{n=1}^Nf(x_n^*)\Delta x \\
 &= \frac{(N+1)(2N+1)}{6N^2} \\
 &= \frac{2N^2+3N+1}{6N^2}.
 \end{align*}
+$$
 
 Here we used the result from {numref}`Grasple:134138`.
 

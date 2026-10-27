@@ -594,7 +594,7 @@ If a function is only defined on an interval of the form $(0,a)$ it is possible 
 Let $a>0$ or $a=\infty$ and let $f$ be a function that is defined on the interval $(0,a)$. Then the function 
 
 $$
- f_{\mathrm{odd}}(x)=\left\{\begin{array}{l}f(x),\quad&\text{if}\,x\in(0,a)\\ 0,\quad &\text{if}\,x=0\\ -f(-x),\quad&\text{if}\,x\in(-a,0)\end{array}\right.
+ f_{\text{odd}}(x)=\left\{\begin{array}{l}f(x),\quad&\text{if}\,x\in(0,a)\\ 0,\quad &\text{if}\,x=0\\ -f(-x),\quad&\text{if}\,x\in(-a,0)\end{array}\right.
 $$
 
 is odd on $(-a,a)$. It is called the **odd extension of $f$** to $(-a,a)$.
@@ -602,7 +602,7 @@ is odd on $(-a,a)$. It is called the **odd extension of $f$** to $(-a,a)$.
 Similarly, if $f$ is defined on the interval $[0,a)$, then the function 
 
 $$
- f_{\mathrm{even}}(x)=\left\{\begin{array}{l}f(x),\quad&\text{if}\,x\in[0,a)\\  f(-x),\quad&\text{if}\,x\in(-a,0)\end{array}\right.
+ f_{\text{even}}(x)=\left\{\begin{array}{l}f(x),\quad&\text{if}\,x\in[0,a)\\  f(-x),\quad&\text{if}\,x\in(-a,0)\end{array}\right.
 $$
 
 is even on $(-a,a)$. It is called the **even extension of $f$** to $(-a,a)$..
@@ -613,16 +613,16 @@ is even on $(-a,a)$. It is called the **even extension of $f$** to $(-a,a)$..
 For $x\in(0,a)$ we have $-x\in(-a,0)$ so we have
 
 $$
- f_{\mathrm{odd}}(-x)=-f_{\mathrm{odd}}(-(-x))=-f_{\mathrm{odd}}(x)
+ f_{\text{odd}}(-x)=-f_{\text{odd}}(-(-x))=-f_{\text{odd}}(x)
 $$
 
 and
 
 $$
- f_{\mathrm{even}}(-x)=f_{\mathrm{even}}(-(-x))=f_{\mathrm{even}}(x).
+ f_{\text{even}}(-x)=f_{\text{even}}(-(-x))=f_{\text{even}}(x).
 $$ 
 
-Finally, for $x=0$, we have $f_{\mathrm{odd}}(0)=0=-f_{\mathrm{odd}}(-0)$. This means that $f_{\mathrm{odd}}$ is odd on $(-a,a)$ and $f_{\mathrm{even}}$ is even on $(-a,a)$.
+Finally, for $x=0$, we have $f_{\text{odd}}(0)=0=-f_{\text{odd}}(-0)$. This means that $f_{\text{odd}}$ is odd on $(-a,a)$ and $f_{\text{even}}$ is even on $(-a,a)$.
 :::
 
 ::::{question}
@@ -680,31 +680,37 @@ $$
 
 Moreover, we find that
 
+$$
 \begin{align*}
  f_e(x)+f_o(x) &= \frac{f(x)+f(-x)}{2}+\frac{f(x)-f(-x)}{2} \\
  &= \frac{f(x)+f(-x)+f(x)-f(-x)}{2} \\
  &= \frac{2f(x)}{2} \\
  &= f(x).
 \end{align*}
+$$
 
 So we obtain that $f=f_e+f_o$ and that $f_e$ is even and $f_o$ is odd.
 
 Now we show that this decomposition is unique, so we write $f=g+h$ with $g$ even and $h$ odd and aim to show that $g=f_e$ and $h=f_o$. Then we find
 
+$$
 \begin{align*}
 2f_e(x) &= f(x)+f(-x) \\
 &= \left(g(x)+h(x)\right)+\left(g(-x)+h(-x)\right) \\
 &= \left(g(x)+h(x)\right)+\left(g(x)-h(x)\right) \\
 &= 2g(x)
 \end{align*}
+$$
 and
 
+$$
 \begin{align*}
  2f_o(x) &= f(x)-f(-x) \\
  &= \left(g(x)+h(x)\right)-\left(g(-x)+h(-x)\right) \\
  &= \left(g(x)+h(x)\right)-\left(g(x)-h(x)\right) \\
  &= 2h(x).
 \end{align*}
+$$
 
 Hence, we must have $g=f_e$ and $h=f_o$, as desired.
 :::
@@ -791,12 +797,14 @@ $$
 
 The final property follows from the definition of the hyperbolic cosine and sine functions, which gives that
 
+$$
 \begin{align*}
  \cosh^2(x)-\sinh^2(x) &= \left(\frac{e^x+e^{-x}}{2}\right)^2-\left(\frac{e^x-e^{-x}}{2}\right)^2 \\
  &= \frac{e^{2x}+2+e^{-2x}}{4}-\frac{e^{2x}-2+e^{-2x}}{4} \\
  &= \frac{4}{4} \\
  &= 1.
 \end{align*}
+$$
 
 :::
 
@@ -935,9 +943,11 @@ So the fundamental period of $f$ is actually $\frac{\pi}{2}$. Similarly, the fun
 
 However, while this argument shows that $\pi$ is a period of $h$, it does not rigorously show that this is the fundamental period of $h$. To precisely show that it is the fundamental period, we let $T$ be any period of $h$ and we will show that $T$ must be an integer multiple of $\pi$. Since $T$ is a period of $h$ we have
 
+$$
 \begin{align*}
  h(x+T)&=\cos(4(x+T))+\sin(6(x+T))\\  &=\cos(4x+4T)+\sin(6x+6T)\\ &=\cos(4x)+\sin(6x)\\ &=h(x)
 \end{align*}
+$$
  
 
 for any $x$. This equation can be rewritten as
@@ -948,9 +958,11 @@ $$
 
 Using the identities $\cos(a)-\cos(b)=-2\sin\left(\frac{a+b}{2}\right)\sin\left(\frac{a}{2}-\frac{b}{2}\right)$ and $\sin(a)-\sin(b)=2\cos\left(\frac{a+b}{2}\right)\sin\left(\frac{a-b}{2}\right)$, the first of which follows from {prf:ref}`Thm:Trigonometry:ProductFormulas`, while the second is established in {numref}`Grasple:133113`,  we obtain
 
+$$
 \begin{align*}
  -2\sin\left(4x+2T\right)\sin\left(2T\right)&=2\cos\left(6x+3T\right)\sin\left(-3T\right)\\ &=-2\cos\left(6x+3T\right)\sin\left(3T\right).
 \end{align*}
+$$
 
 The left-hand side of this equation is either identically $0$ if $2T$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{4}=\dfrac{\pi}{2}$. Similarly, the right-hand side of this equation is either identically $0$ if $3T$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{3}$. Since the left-hand and right-hand side of the equation are equal and cannot have both fundamental period $\dfrac{\pi}{2}$ and $\dfrac{2\pi}{3}$, the only option is that both sides of the equation are identically $0$. As such, both $2T$ and $3T$ must be integer multiples of $\pi$, which means that $T$ must be an integer multiple of both $\dfrac{\pi}{2}$ and $\dfrac{\pi}{3}$. So $T$ must be an integer multiple of $\pi$, which means that $\pi$ is the fundamental period of $h$.
 ::::::
@@ -972,9 +984,11 @@ Following a similar reasoning to {prf:ref}`Ex:PropertiesFunctions:PeriodicCombin
 
 If we want to make this argument rigorous, we argue by contradiction and assume that $h$ is periodic. We let $T$ be any period of $h$. Since $T$ is a period of $h$ we have
 
+$$
 \begin{align*}
  h(x+T)&=\cos(2(x+T))+\sin(\pi(x+T))\\ &=\cos(2x+2T)+\sin(\pi x+ \pi T)\\ &=\cos(2x)+\sin(\pi x)\\ &=h(x)
 \end{align*}
+$$
  
 
 for any $x$. This equation can be rewritten as
@@ -985,9 +999,11 @@ $$
 
 Using the identities $\cos(a)-\cos(b)=-2\sin\left(\frac{a+b}{2}\right)\sin\left(\frac{a}{2}-\frac{b}{2}\right)$ and $\sin(a)-\sin(b)=2\cos\left(\frac{a+b}{2}\right)\sin\left(\frac{a-b}{2}\right)$, the first of which follows from {prf:ref}`Thm:Trigonometry:ProductFormulas`, while the second is established in {numref}`Grasple:133113`,  we obtain
 
+$$
 \begin{align*}
  -2\sin\left(2x+T\right)\sin\left(T\right)&=2\cos\left(\pi x+\frac{\pi T}{2}\right)\sin\left(-\frac{\pi T}{2}\right)\\ &=-2\cos\left(\pi x+\frac{\pi T}{2}\right)\sin\left(\frac{\pi T}{2}\right).
 \end{align*}
+$$
 
 The left-hand side of this equation is either identically $0$ if $T$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{2}=\pi$. Similarly, the right-hand side of this equation is either identically $0$ if $\dfrac{\pi T}{2}$ is an integer multiple of $\pi$, or it is a periodic function with fundamental period $\dfrac{2\pi}{\pi}=2$. Since the left-hand and right-hand side of the equation are equal and cannot have both fundamental period $\pi$ and $2$, the only option is that both sides of the equation are identically $0$. However, in that case $T$ would need to be both an integer multiple of $\pi$, and of $\dfrac{\pi}{\frac{\pi}{2}}=2$, which is also not possible. So the function $h$ cannot be periodic.
 ::::::
@@ -1027,7 +1043,7 @@ If a function is only defined on an interval of the form $[a,b)$ it is possible 
 Let $a<b$, let $f$ be a function that is defined on $[a,b)$ and write $\ell=b-a$. Then the function 
 
 $$
- f_{\mathrm{ext}}(x+n\ell)=f(x)
+ f_{\text{ext}}(x+n\ell)=f(x)
 $$
 
 for $x$ in $[a,b)$ and an integer $n$ is a periodic function with period $\ell$. It is called the **periodic extension of $f$**.
@@ -1035,7 +1051,7 @@ for $x$ in $[a,b)$ and an integer $n$ is a periodic function with period $\ell$.
 Equivalently, we can define the period extension of $f$ by writing
 
 $$
- f_{\mathrm{ext}}(x)=\begin{cases}f(x),\quad&\text{if}\ x\in[a,b)\\ f_{\mathrm{ext}}(x+2),\quad&\text{if}\ x<a,\\ f_{\mathrm{ext}}(x-2),\quad&\text{if}\ x\geq b.\end{cases}
+ f_{\text{ext}}(x)=\begin{cases}f(x),\quad&\text{if}\ x\in[a,b)\\ f_{\text{ext}}(x+2),\quad&\text{if}\ x<a,\\ f_{\text{ext}}(x-2),\quad&\text{if}\ x\geq b.\end{cases}
 $$
 ::::::
 
@@ -1049,21 +1065,21 @@ This follows directly from the construction of the periodic extension.
 Consider the functions 
 
 $$
- f(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,0\leq x<1,\\ 0,\quad &\mathrm{if}\,1\leq x<4,\end{array}\right.\qquad\text{and}\qquad g(x)=\left\{\begin{array}{l}1,\quad&\mathrm{if}\,2\leq x<3,\\ 0,\quad &\mathrm{if}\,3\leq x<6,\end{array}\right.
+ f(x)=\left\{\begin{array}{l}1,\quad&\text{if}\,0\leq x<1,\\ 0,\quad &\text{if}\,1\leq x<4,\end{array}\right.\qquad\text{and}\qquad g(x)=\left\{\begin{array}{l}1,\quad&\text{if}\,2\leq x<3,\\ 0,\quad &\text{if}\,3\leq x<6,\end{array}\right.
 $$
 
-and let $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ denote their periodic extensions.
+and let $f_{\text{ext}}$ and $g_{\text{ext}}$ denote their periodic extensions.
 
-Then both $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ have fundamental period $4$. According to {prf:ref}`Thm:PropertiesFunctions:Sumperiodic`, $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ is periodic with period $4$. It is very tempting to think that the fundamental period of $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ is also $4$, but this is not the case. Take a look at {numref}`Fig:PropertiesFunctions:PeriodicCombining3`, which shows the graph $f_{\mathrm{ext}}+g_{\mathrm{ext}}$.
+Then both $f_{\text{ext}}$ and $g_{\text{ext}}$ have fundamental period $4$. According to {prf:ref}`Thm:PropertiesFunctions:Sumperiodic`, $f_{\text{ext}}+g_{\text{ext}}$ is periodic with period $4$. It is very tempting to think that the fundamental period of $f_{\text{ext}}+g_{\text{ext}}$ is also $4$, but this is not the case. Take a look at {numref}`Fig:PropertiesFunctions:PeriodicCombining3`, which shows the graph $f_{\text{ext}}+g_{\text{ext}}$.
 
-Indeed, we note that $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=1$ for $x$ in intervals of the form $[n,n+1)$ with $n$ even (since $f_{\mathrm{ext}}$ is $1$ and $g_{\mathrm{ext}}$ is $0$ on this interval if $n$ is divisible by $4$ and the other way around if $n$ is not divisible by $4$), while $(f_{\mathrm{ext}}+g_{\mathrm{ext}})(x)=0$ for $x$ in intervals of the form $[n,n+1)$ with $n$ odd (since $f_{\mathrm{ext}}$ and $g_{\mathrm{ext}}$ are both $0$ on these intervals). As such, we see that $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ has fundamental period $2$. 
+Indeed, we note that $(f_{\text{ext}}+g_{\text{ext}})(x)=1$ for $x$ in intervals of the form $[n,n+1)$ with $n$ even (since $f_{\text{ext}}$ is $1$ and $g_{\text{ext}}$ is $0$ on this interval if $n$ is divisible by $4$ and the other way around if $n$ is not divisible by $4$), while $(f_{\text{ext}}+g_{\text{ext}})(x)=0$ for $x$ in intervals of the form $[n,n+1)$ with $n$ odd (since $f_{\text{ext}}$ and $g_{\text{ext}}$ are both $0$ on these intervals). As such, we see that $f_{\text{ext}}+g_{\text{ext}}$ has fundamental period $2$. 
 
 :::{applet}
 :url: calculus/properties_of_functions/sum_of_periodic_extensions
 :name: Fig:PropertiesFunctions:PeriodicCombining3
 :class: dark-light
 
-The graph of the function $f_{\mathrm{ext}}+g_{\mathrm{ext}}$. You can toggle the visibility of the graphs of $f_{\mathrm{ext}}$, $g_{\mathrm{ext}}$ and $f_{\mathrm{ext}}+g_{\mathrm{ext}}$ by clicking on the checkboxes in the legend.
+The graph of the function $f_{\text{ext}}+g_{\text{ext}}$. You can toggle the visibility of the graphs of $f_{\text{ext}}$, $g_{\text{ext}}$ and $f_{\text{ext}}+g_{\text{ext}}$ by clicking on the checkboxes in the legend.
 
 :::
 
@@ -1089,72 +1105,76 @@ The symmetries of the odd and even extensions of $f$ carry over to the odd and e
 
 Consider $f(x)=2x$ for $0\leq x\leq 1$, so the value of $a$ from {prf:ref}`Def:PropertiesFunctions:OddEvenPeriodicExtension` is $1$. We want to find the odd and even periodic extensions of $f$.
 
-If we define $f_{\mathrm{odd}}$ as the odd periodic extension of $f$ to $\mathbb{R}$ with period $T=2$, we find that $f_{\mathrm{odd}}$ is given by
+If we define $f_{\text{odd}}$ as the odd periodic extension of $f$ to $\mathbb{R}$ with period $T=2$, we find that $f_{\text{odd}}$ is given by
 
+$$
 \begin{align*}
-f_{\mathrm{odd}}(x) &= \begin{cases}
-f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+f_{\text{odd}}(x) &= \begin{cases}
+f_{\text{odd}}(x+2), & x \leq -1, \\
 -f(-x), & -1 < x < 0, \\
 0, & x=0, \\
 f(x), & 0 < x \leq 1, \\
-f_{\mathrm{odd}}(x-2), & x > 1,
+f_{\text{odd}}(x-2), & x > 1,
 \end{cases}
 \\ &=
 \begin{cases}
-f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+f_{\text{odd}}(x+2), & x \leq -1, \\
 -2(-x), & -1 < x < 0, \\
 0, & x=0, \\
 2x, & 0 < x \leq 1, \\
-f_{\mathrm{odd}}(x-2), & x > 1,
+f_{\text{odd}}(x-2), & x > 1,
 \end{cases}
 \\ &=
 \begin{cases}
-f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+f_{\text{odd}}(x+2), & x \leq -1, \\
 2x, & -1 < x \leq 1, \\
-f_{\mathrm{odd}}(x-2), & x > 1.
+f_{\text{odd}}(x-2), & x > 1.
 \end{cases}
 \end{align*}
+$$
 
-Note that to avoid defining the value of $f_{\mathrm{odd}}$ at $-1+2n$ for any integer $n$ twice, we have defined $f_{\mathrm{odd}}$ at those points as $f_{\mathrm{odd}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{odd}}(x-2)$ for $x > 1$. This is just a technicality to avoid defining the value of $f_{\mathrm{odd}}$ at those points twice, and it does not change the function $f$ itself on the interval $(0,1]$.
+Note that to avoid defining the value of $f_{\text{odd}}$ at $-1+2n$ for any integer $n$ twice, we have defined $f_{\text{odd}}$ at those points as $f_{\text{odd}}(x+2)$ for $x \leq -1$ and as $f_{\text{odd}}(x-2)$ for $x > 1$. This is just a technicality to avoid defining the value of $f_{\text{odd}}$ at those points twice, and it does not change the function $f$ itself on the interval $(0,1]$.
 
-You can see the graph of $f_{\mathrm{odd}}$ and $f$ in {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension`. The function $f_{\mathrm{odd}}$ is odd and periodic with period $T=2$. Note that the graph of $f_{\mathrm{odd}}$ contains jumps at $x=-1+2n$ for any integer $n$.
+You can see the graph of $f_{\text{odd}}$ and $f$ in {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension`. The function $f_{\text{odd}}$ is odd and periodic with period $T=2$. Note that the graph of $f_{\text{odd}}$ contains jumps at $x=-1+2n$ for any integer $n$.
 
 :::{applet}
 :url: calculus/properties_of_functions/odd_and_even_periodic_extensions
 :name: Fig:PropertiesFunctions:EvenOddPeriodicExtension
 :class: dark-light
 
-The odd and even periodic extensions of the function $f(x)=2x$ for $0\leq x\leq 1$. You can toggle the visibility of the graphs of $f$, $f_{\mathrm{odd}}$ and $f_{\mathrm{even}}$ by clicking on the checkboxes in the legend. Initially, the graph of $f$ and the odd periodic extension $f_{\mathrm{odd}}$ are shown.
+The odd and even periodic extensions of the function $f(x)=2x$ for $0\leq x\leq 1$. You can toggle the visibility of the graphs of $f$, $f_{\text{odd}}$ and $f_{\text{even}}$ by clicking on the checkboxes in the legend. Initially, the graph of $f$ and the odd periodic extension $f_{\text{odd}}$ are shown.
 :::
 
-If we define $f_{\mathrm{even}}$ as the even periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{even}}$ is given by
+If we define $f_{\text{even}}$ as the even periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\text{even}}$ is given by
 
+$$
 \begin{align*}
-f_{\mathrm{even}}(x) &= \begin{cases}
-f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f_{\text{even}}(x) &= \begin{cases}
+f_{\text{even}}(x+2), & x \leq -1, \\
 f(-x), & -1 < x < 0, \\
 f(x), & 0 \leq x \leq 1, \\
-f_{\mathrm{even}}(x-2), & x > 1,
+f_{\text{even}}(x-2), & x > 1,
 \end{cases}
 \\ &=
 \begin{cases}
-f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f_{\text{even}}(x+2), & x \leq -1, \\
 f(-x), & -1 < x < 0, \\
 f(x), & 0 \leq x \leq 1, \\
-f_{\mathrm{even}}(x-2), & x > 1,
+f_{\text{even}}(x-2), & x > 1,
 \end{cases}
 \\ &=
 \begin{cases}
-f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f_{\text{even}}(x+2), & x \leq -1, \\
 -2x, & -1 < x < 0, \\
 2x, & 0 \leq x \leq 1, \\
-f_{\mathrm{even}}(x-2), & x > 1.
+f_{\text{even}}(x-2), & x > 1.
 \end{cases}
 \end{align*}
+$$
 
-Again, we avoid double values at $x=-1+2n$ for any integer $n$ by defining $f_{\mathrm{even}}$ at those points as $f_{\mathrm{even}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{even}}(x-2)$ for $x > 1$.
+Again, we avoid double values at $x=-1+2n$ for any integer $n$ by defining $f_{\text{even}}$ at those points as $f_{\text{even}}(x+2)$ for $x \leq -1$ and as $f_{\text{even}}(x-2)$ for $x > 1$.
 
-You can see the graph of $f_{\mathrm{even}}$ in {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension` by toggling the visibility of the graph of $f_{\mathrm{even}}$ in the legend. The function $f_{\mathrm{even}}$ is even and periodic with period $T=2$. Note that the graph of $f_{\mathrm{even}}$ does not contain jumps at $x=-1+2n$ for any integer $n$.
+You can see the graph of $f_{\text{even}}$ in {numref}`Fig:PropertiesFunctions:EvenOddPeriodicExtension` by toggling the visibility of the graph of $f_{\text{even}}$ in the legend. The function $f_{\text{even}}$ is even and periodic with period $T=2$. Note that the graph of $f_{\text{even}}$ does not contain jumps at $x=-1+2n$ for any integer $n$.
 
 ::::::
 
@@ -1195,7 +1215,7 @@ The fundamental period of the odd and even periodic extensions of the function $
 :name: Fig:PropertiesFunctions:EvenOddPeriodicExtension2
 :class: dark-light
 
-The odd and even periodic extensions of a given function $f$ for $0\leq x\leq 2$. You can toggle the visibility of the graphs of $f$, $f_{\mathrm{odd}}$ and $f_{\mathrm{even}}$ by clicking on the checkboxes in the legend. Initially, the graph of $f$ and the odd periodic extension $f_{\mathrm{odd}}$ are shown.
+The odd and even periodic extensions of a given function $f$ for $0\leq x\leq 2$. You can toggle the visibility of the graphs of $f$, $f_{\text{odd}}$ and $f_{\text{even}}$ by clicking on the checkboxes in the legend. Initially, the graph of $f$ and the odd periodic extension $f_{\text{odd}}$ are shown.
 :::
 ::::
 

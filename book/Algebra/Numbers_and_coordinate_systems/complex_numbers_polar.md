@@ -310,11 +310,13 @@ _Proof for division_
 
 For division (assuming $w\neq0$) we obtain
 
+$$
 \begin{align*}
 \frac{z}{w} &= \frac{z\overline{w}}{w\overline{w}} \\
 &= \frac{rs\left(\cos(\theta-\phi)+i\sin(\theta-\phi)\right)}{s^2} \\
 &= \frac{r}{s}\left(\cos(\theta-\phi)+i\sin(\theta-\phi)\right),
 \end{align*}
+$$
 where the last line shows that $\left|\frac{z}{w}\right| = \frac{|z|}{|w|}$ and $\arg\left(\frac{z}{w}\right) = \arg(z) - \arg(w)$.
 
 ::::
@@ -355,10 +357,12 @@ In order to see how the modulus interacts with the sum of two complex numbers, w
 
 Let $z,w\in\mathbb{C}$ be complex numbers. Then we have the following inequalities
 
+$$
 \begin{align*}
 |z+w|&\leq|z|+|w|,\qquad\text{triangle inequality},\\
 \left|z-w\right|&\geq\left||z|-|w|\right|,\qquad\text{reverse triangle inequality}.
 \end{align*}
+$$
 
 ::::
 
@@ -564,6 +568,7 @@ As promised, the complex exponential satisfies several properties similar to the
 
 Let $z\in\mathbb{C}$ and $w\in\mathbb{C}$. Then we have
 
+$$
 \begin{align*}
 e^{z+w}&=e^ze^w,\\
 e^{-z}&=\frac{1}{e^z},\\
@@ -573,6 +578,7 @@ e^{z-w}&=\frac{e^z}{e^w},\\
 \overline{e^z}=e^{\overline{z}}
 .\\
 \end{align*}
+$$
 
 Finally, if $n\in\mathbb{Z}$ is an integer, we have
 
@@ -595,12 +601,14 @@ $$
 
 Using {prf:ref}`Thm:RealNumbers:ExpCalcReal` and {prf:ref}`Thm:ComplexNumbers:polarmultdiv` we obtain
 
+$$
 \begin{align*}
  e^{z+w}&=e^{a+c}\left(\cos(b+d)+i\sin(b+d)\right)\\
  &=e^ae^c\left(\cos(b)+i\sin(b)\right)\left(\cos(d)+i\sin(d)\right)\\
  &=e^a\left(\cos(b)+i\sin(b)\right)e^c\left(\cos(d)+i\sin(d)\right)\\
  &=e^ze^w,
 \end{align*}
+$$
 
 as desired.
 
@@ -688,6 +696,7 @@ $$
 
 The proof is again straight forward:
 
+$$
 \begin{align*}
 \frac{d}{d\theta}\left(e^{i\theta}\right) &= \frac{d}{d\theta}\left(\cos(\theta)+i\sin(\theta)\right) \\
 &= \frac{d}{d\theta}\left(\cos(\theta)\right)+i\frac{d}{d\theta}\left(\sin(\theta)\right) \\
@@ -697,6 +706,7 @@ The proof is again straight forward:
 &= i\left(\cos(\theta)+i\sin(\theta)\right) \\
 &= ie^{i\theta}.
 \end{align*}
+$$
 
 ::::
 
@@ -776,17 +786,21 @@ $$
 
 De Moivre's identity allows us to find an expression for $\cos(3\theta)$ in terms of $\cos(\theta)$ and $\sin(\theta)$. Indeed, expanding the right-hand side of the identity we have
 
+$$
 \begin{align*}
 \cos(3\theta) + i\sin(3\theta) &= \cos(\theta)^3 + 3i\cos(\theta)^2 \sin(\theta) + 3i^2 \cos(\theta) \sin(\theta)^2 + i^3 \sin(\theta)^3
 \\&= \cos(\theta)^3 - 3\cos(\theta) \sin(\theta)^2 + i \big(3\cos(\theta)^2\sin(\theta) -\sin(\theta)^3\big).
 \end{align*}
+$$
 
 Comparing the real and imaginary parts on both sides of this equation we find
 
+$$
 \begin{align*}
 \cos(3\theta) &= \cos(\theta)^3-3\cos(\theta)\sin(\theta)^2, \\
 \sin(3\theta) &= 3\cos(\theta)^2 \sin(\theta) - \sin(\theta)^3.
 \end{align*}
+$$
 
 ::::
 
@@ -798,6 +812,7 @@ You can also derive other formulas.
 
 Formulas for $\cos(\theta+\phi)$ and $\sin(\theta+\phi)$ are often used in calculus courses. These formulas can be derived using De Moivre's identity.
 
+$$
 \begin{align*}
 \cos(\theta+\phi) + i \sin(\theta +\phi) &= e^{i(\theta+ \phi)} \\
 &= e^{i\theta} e^{i\phi} \\
@@ -805,6 +820,7 @@ Formulas for $\cos(\theta+\phi)$ and $\sin(\theta+\phi)$ are often used in calcu
 \\&= \cos(\theta) \cos(\phi) + i \cos(\theta) \sin(\phi) + i \sin(\theta) \cos(\phi) + i^2 \sin(\theta) \sin(\phi)
 \\&=\cos(\theta) \cos(\phi) - \sin(\theta) \sin(\phi) + i \big(\sin(\theta) \cos(\phi) +\cos(\theta) \sin(\phi)\big)
 \end{align*}
+$$
 
 Thus $\cos(\theta+\phi) = \cos(\theta) \cos(\phi) - \sin(\theta) \sin(\phi)$ and $\sin(\theta +\phi)=\sin(\theta) \cos(\phi) +\cos(\theta) \sin(\phi)$.
 
@@ -919,10 +935,12 @@ $$
 
 Comparing the modulus and argument of these two expressions, we find
 
+$$
 \begin{align*}
 r^3&=|z^3|= |-16+16i| = 16\sqrt{2},\\
 3\phi &= \arg(z^3) = \arg(-16+16i) = \frac{3\pi}{4}.
 \end{align*}
+$$
 
 Taking a cube root of the equation $r^3=16\sqrt{2}$, we find $r=2\sqrt{2}$. Note that $r\geq 0$ is real, so here we need to consider only the single positive real solution; we do not want to find the complex solutions.
 
@@ -1055,11 +1073,13 @@ Take $f(t) = \cos(2t) + \sqrt{3} \sin(2t)$. If you plot the graph of this functi
 
 Indeed, we have
 
+$$
 \begin{align*}
 f(t) &= \cos(2t) + \sqrt{3} \sin(2t) \\& = \Re{e^{2it}} + \Re{-i\sqrt{3} e^{2it}}
 \\&= \Re{ e^{2it} -i\sqrt{3} e^{2it}} \\&= \Re{(1-i\sqrt{3}) e^{2it}}
 \\&= \Re{ 2 e^{-\frac13 \pi i} e^{2it}} \\&= \Re{2 e^{i(2t-\frac{\pi}{3})}} \\&= 2\cos\left(2t-\frac13 \pi\right).
 \end{align*}
+$$
 
 We first wrote both the cosine as the sine as real parts of complex exponentials. For the sine, we use that $-ie^{i\theta} = -i\cos(\theta) + \sin(\theta)$, so $\Re{-ie^{i\theta}} = \sin(\theta)$. Subsequently, we can take out the common factor $e^{2it}$; it is a common factor as the periods of both the cosine and sine are identical. Next, we rewrite $1-i\sqrt{3}$ in polar coordinates and work out what the result is.
 
@@ -1078,12 +1098,14 @@ The graph of the sum of a cosine and a sine of identical period is a sinusoid as
 
 In the same way you can add two cosines (or sines) with shifted arguments.
 
+$$
 \begin{align*}
 \cos\left(t+\frac{\pi}{3}\right) + \cos\left(t-\frac{\pi}{3}\right) &= \Re{e^{i\left(t+\frac{\pi}{3}\right)}} + \Re{e^{i\left(t-\frac{\pi}{3}\right)}}
 \\&= \Re{\left(e^{\frac13 \pi i} +e^{-\frac{\pi}{3} i}\right) e^{it}}
 \\&= \Re{ \left( \left( \frac12+\frac12\sqrt{3} i\right) + \left(\frac12 -\frac12\sqrt{3}i\right)\right)e^{it}}
 \\&= \Re{ e^{it}}\\&= \cos(t).  
 \end{align*}
+$$
 
 ::::
 
@@ -1108,6 +1130,7 @@ $$
 
 Then we obtain
 
+$$
 \begin{align*}
 b\cos(t)+c\sin(t)&=b\cos(-t)+c\sin(t)\\
 &=\operatorname{Re}\left(be^{-it}\right)+\operatorname{Re}\left(ice^{-it}\right)\\
@@ -1117,6 +1140,7 @@ b\cos(t)+c\sin(t)&=b\cos(-t)+c\sin(t)\\
 &=A\cos(\phi-t)\\
 &=A\cos(t-\phi),
 \end{align*}
+$$
 
 as desired.
 
@@ -1177,14 +1201,17 @@ q(\theta) = \cos(\theta)+i\sin(\theta).
 
 Let us calculate first the value of $q$ in $\theta=0$:
 
+$$
 \begin{align*}
 q(0) &= \cos(0)+i\sin(0) \\
 &= 1-0i \\
 &= 1.
 \end{align*}
+$$
 
 This indicates that $q$ satisfies the same initial condition from Equation {eq}`Eq:ComplexNumbers:exp_de` as the function $y$ from Equation {eq}`Eq:ComplexNumbers:exp_sol`. Could it also be that $q$ is a solution to the differential equation from Equation {eq}`Eq:ComplexNumbers:exp_de`? Let us investigate by looking at the first derivative of $q$:
 
+$$
 \begin{align*}
 \frac{dq}{d\theta} &= \frac{d}{d\theta}\Bigl[\cos(\theta)+i\sin(\theta)\Bigr] \\
 &= -\sin(\theta)+i\cos(\theta) \\
@@ -1193,6 +1220,7 @@ This indicates that $q$ satisfies the same initial condition from Equation {eq}`
 &= i\bigr(\cos(\theta)+i\sin(\theta)\bigr) \\
 &= iq(\theta).
 \end{align*}
+$$
 
 So we found that our function $q$ from Equation {eq}`Eq:ComplexNumbers:exp_sol_alt` is also a solution to the initial value problem from Equation {eq}`Eq:ComplexNumbers:exp_de`.
 
@@ -1286,11 +1314,13 @@ $$
 
 Hence, we can use {prf:ref}`Thm:lHospital:lHospitalinf` to obtain
 
+$$
 \begin{align*}
 \lim_{x\rightarrow\infty}\dfrac{\arctan\left(\frac{\theta}{x}\right)}{\frac{1}{x}}&=\lim_{x\rightarrow\infty}\dfrac{-\dfrac{\theta}{\theta^2+x^2}}{-\frac{1}{x^2}}\\
 &=\lim_{x\rightarrow\infty}-\frac{\theta }{\frac{\theta^2}{x^2}+1}\\
 &=\frac{\theta}{0+1}=\theta.
 \end{align*}
+$$
 
 Then {prf:ref}`Thm:Sequences:LimitFunctionSequence` tells us that
 
@@ -1301,11 +1331,13 @@ $$
 
 For the limit of the moduli of $z_n$, we first consider the natural logarithm (see {numref}`Section:Inverse`) of $|z_n|$ and we find using the computation rules for the logarithm
 
+$$
 \begin{align*}
  \ln(|z_n|)&=\ln\left(\left(\sqrt{1+\frac{\theta^2}{n^2}}\right)^n\right)\\
  &=\frac{n}{2}\ln\left(1+\frac{\theta^2}{n^2}\right)\\
  &=\dfrac{\ln\left(1+\frac{\theta^2}{n^2}\right)}{\dfrac{2}{n}}.
 \end{align*}
+$$
 
 We now consider the real-valued function
 
@@ -1321,12 +1353,14 @@ $$
 
 we can use {prf:ref}`Thm:lHospital:lHospitalinf` to obtain
 
+$$
 \begin{align*}
 \lim_{x\rightarrow\infty}\dfrac{\ln\left(1+\frac{\theta^2}{x^2}\right)}{\dfrac{2}{x}}&=\lim_{x\rightarrow\infty}\dfrac{-\dfrac{2\theta^2}{\theta^2x+x^3}}{\dfrac{-1}{x^2}}\\
 &=\lim_{x\rightarrow\infty}\dfrac{2\theta^2x^2}{\theta^2 x+x^3}\\
 &=\lim_{x\rightarrow\infty}\dfrac{\frac{2\theta^2}{x}}{\frac{\theta^2}{x^2}+1}\\
 &=\frac{0}{1}=0.
 \end{align*}
+$$
 
 Then {prf:ref}`Thm:Sequences:LimitFunctionSequence` tells us that
 
@@ -1357,22 +1391,26 @@ $$
 
 Euler's formula can also be derived using series. You may already be familiar with the following three power series (see {numref}`Chapter:Series`)
 
+$$
 \begin{align*}
 e^x &= \sum_{n=0}^\infty\frac{x^n}{n!}, \\
 \cos(x) &= \sum_{k=0}^\infty(-1)^k\frac{x^{2k}}{(2k)!}, \\
 \sin(x) &= \sum_{l=0}^\infty(-1)^l\frac{x^{2l+1}}{(2l+1)!}.
 \end{align*}
+$$
 
 We can use these series to derive Euler's formula.
 
 First consider the following $12$ powers of the complex number $i\theta$ with $\theta\in\mathbb{R}$:
 
+$$
 \begin{align*}
 (i\theta)^0 &= 1 & (i\theta)^4 &= \theta^4 & (i\theta)^8 &= \theta^8 \\
 (i\theta)^1 &= i\theta & (i\theta)^5 &= \theta^5 i & (i\theta)^9 &= \theta^9 i \\
 (i\theta)^2 &= -\theta^2 & (i\theta)^6 &= -\theta^6 & (i\theta)^{10} &= -\theta^{10}i \\
 (i\theta)^3 &= -\theta^3 i & (i\theta)^7 &= -\theta^7 i & (i\theta)^{11} &= -\theta^{11}i \\
 \end{align*}
+$$
 
 Do you notice the pattern that _even_ powers give _real_ numbers and _odd_ powers give _complex_ numbers with zero real part? And also that for the list of even powers the sign flips each time? And the same for the odd powers?
 
@@ -1381,7 +1419,7 @@ Now let us consider $e^{i\theta }$ and expand the series of the exponential func
 $$
 \begin{align*}
 e^{i\theta} &= \sum_{n=0}^\infty\frac{(i\theta)^n}{n!} & &\text{Using the series of}\ e^x \\
-&= \sum_{\substack{n=0\\n~{\rm even}}}^\infty\frac{(i\theta)^n}{n!}+\sum_{\substack{n=0\\n~{\rm odd}}}^\infty\frac{(i\theta)^n}{n!} & &\text{Using the odd/even pattern seen above.} \\
+&= \sum_{\substack{n=0\\n~{\text{even}}}}^\infty\frac{(i\theta)^n}{n!}+\sum_{\substack{n=0\\n~{\text{odd}}}}^\infty\frac{(i\theta)^n}{n!} & &\text{Using the odd/even pattern seen above.} \\
 &= \sum_{k=0}^\infty\frac{(i\theta)^{2k}}{(2k)!}+\sum_{l=0}^\infty\frac{(i\theta)^{2l+1}}{(2l+1)!} & &\text{Changing the indices using $n=2k$ and $n=2l+1$.} \\
 &= \sum_{k=0}^\infty(-1)^{k}\frac{\theta^{2k}}{(2k)!}+\sum_{l=0}^\infty(-1)^l\frac{\theta^{2l+1}i}{(2l+1)!} & &\text{Using the alternating patterns seen above.} \\
 &= \sum_{k=0}^\infty(-1)^{k}\frac{\theta^{2k}}{(2k)!}+i\sum_{l=0}^\infty(-1)^l\frac{\theta^{2l+1}}{(2l+1)!} & &\text{Taking $i$ out of the second series.} \\
@@ -1413,11 +1451,13 @@ $$
 
 where $\alpha(\theta)=\arg\left(e^{i\theta}\right)$. It is important to realise that we did not assume that $\arg\left(e^{i\theta}\right)=\theta$. By axiom (ii) we have, using {prf:ref}`Thm:Chainrule:Chainrule`
 
+$$
 \begin{align*}
  ie^{i\theta}&=\dfrac{d}{d\theta}e^{i\theta}\\
  &=\dfrac{d}{d\theta}\left(\cos\left(\alpha(\theta)\right)+i\sin\left(\alpha(\theta)\right)\right)\\
  &=-\sin(\alpha(\theta))\alpha'(\theta)+i\cos(\alpha(\theta))\alpha'(\theta).
 \end{align*}
+$$
 
 On the other hand, we have
 

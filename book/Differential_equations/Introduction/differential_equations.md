@@ -218,7 +218,7 @@ $$
 
 This is a second-order differential equation, as it involves the unknown function $u(t)$ and its second derivative $u''(t)$.
 
-When damping is involved, for example because (a part of) the system is submerged in a fluid, see {numref}`Fig:Diffclass:mass-spring3`, it is reasonable to assume that the damping force is of the form $F_{\mathrm{damping}}=-c\dfrac{du}{dt}$, where $c$ is a positive constant, called the *damping constant*. Then Newton's second law gives
+When damping is involved, for example because (a part of) the system is submerged in a fluid, see {numref}`Fig:Diffclass:mass-spring3`, it is reasonable to assume that the damping force is of the form $F_{\text{damping}}=-c\dfrac{du}{dt}$, where $c$ is a positive constant, called the *damping constant*. Then Newton's second law gives
 
 $$
 m\cdot\frac{d^2u}{dt^2}=-k\cdot u(t)-c\cdot\dfrac{du}{dt}.

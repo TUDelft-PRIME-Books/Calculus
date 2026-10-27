@@ -337,15 +337,19 @@ Now we wonder whether we should have $x=2+\sqrt{4+y}$ or $x=2-\sqrt{4+y}$. For t
 
 In order to check that our answer is correct, we first note that the domain of $2-\sqrt{4+x}$ is the interval $[-4,\infty)$, since $\sqrt{4+x}$ is only defined when $4+x\geq 0$, i.e. when $x\geq -4$. This interval is also equal to the range of $f$, since we already noticed that the graph of $f$ is the left half of the parabola $y=x^2-4x$. The lowest value of $y$ on this parabola is at $x=2$, where $y=2^2-4\cdot2=-4$. So indeed, the range of $f$ is also equal to $[-4,\infty)$. Moreover, the cancelling equations hold: for $x\leq 2$ we have
 
+$$
 \begin{align*}
  f^{-1}(f(x))&=f^{-1}\left(x^2-4x\right)=2-\sqrt{4+x^2-4x}\\ &=2-\sqrt{(x-2)^2}=2-|x-2|=2-(2-x)=x,
 \end{align*}
+$$
 
 since $x\leq 2$ implies $|x-2|=2-x$. Similarly, we find for $y\geq -4$ that
 
+$$
 \begin{align*}
  f\left(f^{-1}(y)\right)&=f\left(2-\sqrt{4+y}\right)=\left(2-\sqrt{4+y}\right)^2-4\left(2-\sqrt{4+y}\right)\\ &=4-4\sqrt{4+y}+(4+y)-8+4\sqrt{4+y}=y.
 \end{align*}
+$$
 
 So indeed, the domain of $f^{-1}$ is the range of $f$ and both cancelling equations hold, which means that our answer must be correct.
 
@@ -571,9 +575,11 @@ Hence, $z=p\log_b(x)$ also satisfies $b^z=x^p$, so we must have $\log_b\left(x^p
 
 To prove the second property, we rewrite and use the first and third properties to find
 
+$$
 \begin{align*}
  \log_b\left(\frac{x}{y}\right)&=\log_b\left(x\frac{1}{y}\right)=\log_b(x)+\log_b\left(\frac{1}{y}\right)\\ &=\log_b(x)+\log_b\left(y^{-1}\right)=\log_b(x)-\log_b(y).
 \end{align*}
+$$
 
 :::
 

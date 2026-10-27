@@ -213,7 +213,7 @@ We show that the sum $S$ of the first $n$ positive integers equals $\frac{1}{2}n
 Let $S=\displaystyle\sum_{k=1}^nk$, then we have:
 
 $$
-\class{compact}{
+\htmlClass{compact}{
 \begin{array}{ccccccccccc}
 S & = & 1 & + &     2 & + & \cdots & + & (n-1) & + & n \\
 S & = & n & + & (n-1) & + & \cdots & + &     2 & + & 1.
@@ -324,6 +324,7 @@ which makes the statement true for $n=1$.
 
 Now suppose that $\displaystyle\sum_{k=1}^nk=\frac{1}{2}n(n+1)$ holds for a certain value of $n$. Then we have
 
+$$
 \begin{align*}
 \sum_{k=1}^{n+1}k &= \left(\sum_{k=1}^nk\right)+(n+1) \\
 &= \frac{1}{2}n(n+1)+(n+1) \\
@@ -331,6 +332,7 @@ Now suppose that $\displaystyle\sum_{k=1}^nk=\frac{1}{2}n(n+1)$ holds for a cert
 &= \frac{1}{2}(n+1)(n+2) \\
 &= \frac{1}{2}(n+1)((n+1)+1).
 \end{align*}
+$$
 
 Since this is exactly the formula with $n$ replaced by $n+1$, this proves the statement for all $n\in\{1,2,3,\ldots\}$.
 
@@ -351,6 +353,7 @@ First, consider the finite summation that starts at $1$ and ends at $(n+1)^2$, t
 
 :::{math}
 :label: Eq:SumsAndProducts:SumOfIntegersSquares1
+
 \begin{align*}
 \sum_{k=1}^{(n+1)^2}k&=\frac{1}{2}(n+1)^2((n+1)^2+1)\\
 &=\frac12(n^4+4n^3+7n^2+6n+2).
@@ -366,6 +369,7 @@ Next, consider the finite summation that starts at $1$ and ends at $n^2$, then w
 
 If we subtract Equation {eq}`Eq:SumsAndProducts:SumOfIntegersSquares2` from Equation {eq}`Eq:SumsAndProducts:SumOfIntegersSquares1`, we obtain
 
+$$
 \begin{align*}
 \sum_{k=n^2+1}^{(n+1)^2}k&=\sum_{k=1}^{(n+1)^2}k-\sum_{k=1}^{n^2}k\\
 &=\frac12(n^4+4n^3+7n^2+6n+2)-\frac12(n^4+n^2)\\
@@ -373,6 +377,7 @@ If we subtract Equation {eq}`Eq:SumsAndProducts:SumOfIntegersSquares2` from Equa
 &=2n^3+3n^2+3n+1 \\
 &=n^3+(n+1)^3.
 \end{align*}
+$$
 
 ::::::
 
@@ -403,6 +408,7 @@ $$
 
 which implies that
 
+$$
 \begin{align*}
 \sum_{k=1}^n\frac{1}{k(k+1)}&=\sum_{k=1}^n\left(\frac{1}{k}-\frac{1}{k+1}\right)\\
 &=\frac{1}{1}-\cancel{\frac{1}{2}}+\cancel{\frac{1}{2}}-\cancel{\frac{1}{3}}\\
@@ -410,6 +416,7 @@ which implies that
 &=1-\frac{1}{n+1}\\
 &=\frac{n}{n+1}.
 \end{align*}
+$$
 
 ::::
 
@@ -440,6 +447,7 @@ So if we take $p=2$ and $b_k=\dfrac{1}{2}\dfrac{1}{k-1}$ for $k\in\{2,3,4,\ldots
 
 Using the telescoping property, we can also determine the sum of this telescoping summation as follows:
 
+$$
 \begin{align*}
 \sum_{k=2}^n\frac{1}{k^2-1}&=\sum_{k=2}^n\left(\frac{1}{2}\frac{1}{k-1}-\frac{1}{2}\frac{1}{k+1}\right) \\
 &=\frac{1}{2}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+1}\right) \\
@@ -449,6 +457,7 @@ Using the telescoping property, we can also determine the sum of this telescopin
 &=\frac{1}{2}\left(\left(1+\frac{1}{2}\right)-\left(\frac{1}{n}+\frac{1}{n+1}\right)\right) \\
 &= \frac{3}{4}-\frac{1}{2}\frac{2n+1}{n(n+1)}.
 \end{align*}
+$$
 
 Notice that in the fourth line we have used the change of the index of summation to make the two summations look more similar, which makes it easier to see that many terms cancel. Also notice that in the fifth line we have used the telescoping property to cancel many terms and find the sum of the telescoping summation.
 
@@ -470,6 +479,7 @@ $$
 
 Using the telescoping property we have
 
+$$
 \begin{align*}
 \sum_{k=m}^na_k&=\sum_{k=m}^n\left(b_{k}-b_{k+p}\right)\\
 &=\sum_{k=m}^nb_k-\sum_{k=m}^nb_{k+p}\\
@@ -478,6 +488,7 @@ Using the telescoping property we have
 &=\sum_{k=m}^{m+p-1}b_k+\left(\sum_{k=m+p}^nb_k-\sum_{k=m+p}^{n}b_{k}\right)-\sum_{k=n+1}^{n+p}b_{k}\\
 &= \sum_{k=m}^{m+p-1}b_k-\sum_{k=n+1}^{n+p}b_{k},
 \end{align*}
+$$
 
 which proves the theorem.
 
@@ -492,7 +503,7 @@ Let $S=\displaystyle\sum_{k=1}^nar^{k-1}=a+ar+ar^2+\cdots+ar^{n-1}$ with $r\neq1
 Then we have:
 
 $$
-\class{compact}{
+\htmlClass{compact}{
 \begin{array}{lllllllllllllllllllll}
  S & = & a & + & ar & + & ar^2 & + & \cdots & + & ar^{n-2} & + & ar^{n-1} \\
 rS & = &   &   & ar & + & ar^2 & + & \cdots & + & ar^{n-2} & + & ar^{n-1} & + & ar^n.
@@ -548,6 +559,7 @@ $$
 
 then we have
 
+$$
 \begin{align*}
 (a-b)\sum_{k=1}^{n+1}a^{n+1-k}b^{k-1}&=(a-b)\left(\sum_{k=1}^{n}a^{n+1-k}b^{k-1}+a^{n+1-(n+1)}b^{(n+1)-1}\right) \\
 &=(a-b)\left(a\sum_{k=1}^{n}a^{n-k}b^{k-1}+b^n\right) \\
@@ -556,6 +568,7 @@ then we have
 &=a^{n+1}-ab^n+ab^n-b^{n+1} \\
 &=a^{n+1}-b^{n+1}.
 \end{align*}
+$$
 
 This proves the statement for all $n\in\{1,2,3,\ldots\}$.
 

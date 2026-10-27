@@ -62,23 +62,28 @@ $$
 
 are called the **harmonic numbers**. The first ten are
 
+$$
 \begin{align*}
 &H_1=1,\quad H_2=1+\tfrac{1}{2}=\tfrac{3}{2},\quad H_3=\tfrac{3}{2}+\tfrac{1}{3}=\tfrac{11}{6},\quad H_4=\tfrac{11}{6}+\tfrac{1}{4}=\tfrac{25}{12},\\
 &\quad H_5=\tfrac{25}{12}+\tfrac{1}{5}=\tfrac{137}{60},\quad H_6=\tfrac{137}{60}+\tfrac{1}{6}=\tfrac{49}{20},\quad H_7=\tfrac{49}{20}+\tfrac{1}{7}=\tfrac{363}{140},\\
 &\quad\quad H_8=\tfrac{363}{140}+\tfrac{1}{8}=\tfrac{761}{280},\quad H_9=\tfrac{761}{280}+\tfrac{1}{9}=\tfrac{7129}{2520},\quad H_{10}=\tfrac{7129}{2520}+\tfrac{1}{10}=\tfrac{7381}{2520}.
 \end{align*}
+$$
 
 Note that
 
+$$
 \begin{align*}
 \sum_{n=1}^{\infty}\frac{H_n}{n^2}&=\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}\\
 &=\sum_{k=1}^{\infty}\sum_{n=k}^{\infty}\frac{1}{kn^2}\\
 &=\sum_{k=1}^{\infty}\sum_{n=0}^{\infty}\frac{1}{k(n+k)^2}\\
 &=\sum_{k=1}^{\infty}\frac{1}{k^3}+\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{k(n+k)^2}.
 \end{align*}
+$$
 
 Now we have
 
+$$
 \begin{align*}
 \sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\frac{1}{k(n+k)^2}
 &=\frac{1}{2}\sum_{k=1}^{\infty}\sum_{n=1}^{\infty}\left(\frac{1}{k(n+k)^2}+\frac{1}{n(k+n)^2}\right)\\
@@ -89,6 +94,7 @@ Now we have
 &=\frac{1}{2}\sum_{n=1}^{\infty}\frac{1}{n^2}\sum_{k=1}^n\frac{1}{k}\\
 &=\frac{1}{2}\sum_{n=1}^{\infty}\frac{H_n}{n^2}.
 \end{align*}
+$$
 
 So we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{H_n}{n^2}=\sum_{k=1}^{\infty}\frac{1}{k^3}+\frac{1}{2}\sum_{n=1}^{\infty}\frac{H_n}{n^2}$, which implies that
 
@@ -148,6 +154,7 @@ $$
 
 Since $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ and $-\ln(1-x)=\displaystyle\sum_{k=1}^{\infty}\frac{x^k}{k}$, the Cauchy product implies that
 
+$$
 \begin{align*}
 -\frac{\ln(1-x)}{1-x}&=\sum_{n=0}^{\infty}x^n\sum_{k=1}^{\infty}\frac{x^k}{k}\\
 &=\sum_{n=0}^{\infty}\sum_{k=1}^{\infty}\frac{x^{n+k}}{k}\\
@@ -156,6 +163,7 @@ Since $\displaystyle\frac{1}{1-x}=\sum_{n=0}^{\infty}x^n$ and $-\ln(1-x)=\displa
 &=\sum_{n=1}^{\infty}\left(\sum_{k=1}^n\frac{1}{k}\right)x^n\\
 &=\sum_{n=1}^{\infty}H_nx^n,\quad |x| < 1.
 \end{align*}
+$$
 
 Differentiation leads to
 
@@ -167,11 +175,13 @@ For instance, this implies that $\displaystyle\sum_{n=1}^{\infty}\frac{nH_n}{2^n
 
 Differentiation once more gives
 
+$$
 \begin{align*}
 \sum_{n=2}^{\infty}n(n-1)H_nx^{n-2}&=\frac{1-x+2(1-x)\left(1-\ln(1-x)\right)}{(1-x)^4}\\
 &=\frac{1+2\left(1-\ln(1-x)\right)}{(1-x)^3}\\
 &=\frac{3-2\ln(1-x)}{(1-x)^3},\quad|x|<1.
 \end{align*}
+$$
 
 For instance, this implies that $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)H_n}{2^n}=\frac{1}{4}\cdot\frac{3-2\ln(\frac{1}{2})}{(\frac{1}{2})^3}=6+4\ln(2)$.
 
@@ -189,12 +199,14 @@ For computational reasons we use $F_{n+2}=F_n+F_{n+1}$ for $n=0,1,2,\ldots$ with
 
 Now we consider the *generating function* $G(x)=\displaystyle\sum_{n=1}^{\infty}F_nx^n=\sum_{n=0}^{\infty}F_nx^n$, then we have
 
+$$
 \begin{align*}
 x^2G(x)&=\sum_{n=0}^{\infty}F_nx^{n+2}\\
 &=\sum_{n=0}^{\infty}F_{n+2}x^{n+2}-\sum_{n=0}^{\infty}F_{n+1}x^{n+2}\\
 &=\sum_{n=1}^{\infty}F_nx^n-F_1x-x\sum_{n=1}^{\infty}F_nx^n\\
 &=G(x)-x-xG(x). 
 \end{align*}
+$$
 
 This implies that
 
@@ -225,22 +237,26 @@ For instance, this implies that $\displaystyle\sum_{n=1}^{\infty}\frac{nF_n}{2^n
 
 Differentiating once more we obtain
 
+$$
 \begin{align*}
 \sum_{n=2}^{\infty}n(n-1)F_nx^{n-2}&=G''(x)\\
 &=\frac{2x(1-x-x^2)^2-2(1-x-x^2)(-1-2x)(1+x^2)}{(1-x-x^2)^4}\\
 &=\frac{2(x-x^2-x^3+1+x^2+2x+2x^3)}{(1-x-x^2)^3}\\
 &=\frac{2(1+3x+x^3)}{(1-x-x^2)^3}.
 \end{align*}
+$$
 
 For instance, this implies that $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)F_n}{2^n}=\tfrac{1}{4}G''(\tfrac{1}{2})=\frac{2\left(1+\frac{3}{2}+\frac{1}{8}\right)}{4\left(1-\frac{1}{2}-\frac{1}{4}\right)^3}=84$.
 
 Finally, let's try to solve $G(x)=1$ with $\displaystyle|x|<\frac{1}{\varphi}=\varphi-1\approx0.618$:
 
+$$
 \begin{align*}
 \frac{x}{1-x-x^2}=1&\quad\Longleftrightarrow\quad x=1-x-x^2\\
 &\quad\Longleftrightarrow\quad(x+1)^2=2\\
 &\quad\Longleftrightarrow\quad x=-1\pm\sqrt{2}.
 \end{align*}
+$$
 Since $\sqrt{2}-1\approx0.414$ this leads to the remarkable result that $\displaystyle\sum_{n=1}^{\infty}\left(\sqrt{2}-1\right)^nF_n=1$.
 
 ## Grasple exercises

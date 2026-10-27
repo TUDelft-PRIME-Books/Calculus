@@ -12,13 +12,16 @@ In this section we will find power series representations of more functions, whi
 
 Let $f$ be such an infinitely differentiable function and suppose that $f$ can be represented by a power series for $|x-a|<R$ for some $R>0$, that is, suppose that: 
 
+$$
 \begin{align*}
 f(x)&=c_0+c_1(x-a)+c_2(x-a)^2+c_3(x-a)^3+c_4(x-a)^4+\ldots\\
 &=\sum_{n=0}^{\infty}c_n(x-a)^n,\quad|x-a| < R.
 \end{align*}
+$$
 
 Again, $R$ is the radius of convergence of this power series. Since $f$ is infinitely differentiable, we can differentiate the power series term by term to obtain that for $|x-a|<R$ we have
 
+$$
 \begin{align*}
 f'(x) &=c_1+2c_2(x-a)+3c_3(x-a)^2+4c_4(x-a)^3+5c_5(x-a)^4+\ldots\\
  &=\sum_{n=1}^{\infty}n(x-a)^{n-1}, \\
@@ -27,14 +30,17 @@ f''(x)&=2c_2+2\cdot3c_3(x-a)+3\cdot4c_4(x-a)^2+4\cdot5c_5(x-a)^3+\ldots\\
 f^{(3)}(x)&=2\cdot3c_3+2\cdot3\cdot4c_4(x-a)+3\cdot4\cdot5c_5(x-a)^2+4\cdot5\cdot6c_6(x-a)^3+\ldots\\
 &=\sum_{n=3}^{\infty}n(n-1)(n-2)(x-a)^{n-3},
 \end{align*}
+$$
 
 and so on. Since all these power series converge at least at $x=a$ we substitute $x=a$ to obtain that
 
+$$
 \begin{align*}
 &~ f(a)=c_0,\quad f'(a)=c_1,\quad f''(a)=2c_2,\quad f^{(3)}(a)=2\cdot3c_3,\quad\ldots\\
 &\Longrightarrow f^{(n)}(a)=1\cdot2\cdot3\cdot4\cdots nc_n=n!c_n,\quad 
 n=1,2,3,\ldots 
 \end{align*}
+$$
 
 This leads to the following theorem. 
 
@@ -59,10 +65,12 @@ $$
 :label: Def:Series:TaylorSeries 
 The series 
 
+$$
 \begin{align*}
 &\sum_{n=0}^{\infty}\frac{f^{(n)}(a)}{n!}(x-a)^n\\
 &\quad{}=f(a)+\frac{f'(a)}{1!}(x-a)+\frac{f''(a)}{2!}(x-a)^2+\frac{f^{(3)}(a)}{3!}(x-a)^3+\ldots
 \end{align*}
+$$
 
 is called the **Taylor series** or the **Taylor expansion** of the function $f$ at $x=a$. 
 
@@ -168,10 +176,12 @@ $$
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n+1)!}x^{2n+1}$, then we have
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+3}}{(2n+3)!}\cdot\frac{(2n+1)!}{(-1)^nx^{2n+1}}\right|\\
 &=\lim\limits_{n\to\infty}\frac{x^2}{(2n+2)(2n+3)}=0.
 \end{align*}
+$$
 This implies that the Taylor series for $\sin(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$.
 
 In {numref}`Fig:Series:SinCosTaylor` you can investigate this convergence yourself by increasing the number of terms in the Taylor polynomial that approximate the function.
@@ -201,10 +211,12 @@ $$
 
 In order to find the radius of convergence, we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\frac{(-1)^n}{(2n)!}x^{2n}$, then we have
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{(-1)^{n+1}x^{2n+2}}{(2n+2)!}\cdot\frac{(2n)!}{(-1)^nx^{2n}}\right|\\
 &=\lim\limits_{n\to\infty}\frac{x^2}{(2n+1)(2n+2)}=0.
 \end{align*}
+$$
 This implies that the Taylor series for $\cos(x)$ converges for all $x\in\mathbb{R}$, so the radius of convergence is $R=\infty$.
 
 In {numref}`Fig:Series:SinCosTaylor` you can investigate this convergence yourself by increasing the number of terms in the Taylor polynomial that approximate the function.
@@ -267,24 +279,29 @@ This is called **Lagrange's form of the remainder term**.
 
 First consider $n=0$:
 
+$$
 \begin{align*}
 R_0(x) &= f(x) - T_0(x) \\
 &= f(x) - f(a) \\
 &= \int_a^x f'(t)\,dt \\
 &= \frac{1}{0!}\int_a^x(x-t)^0f'(t)\,dt.
 \end{align*}
+$$
 
 Now assume that the formula holds for a certain value of $n$. Then we have
 
+$$
 \begin{align*}
 R_{n+1}(x) &= f(x) - T_{n+1}(x) \\
 &= f(x) - T_n(x) - \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1} \\
 &= R_n(x) - \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1} \\
 &= \frac{1}{n!}\int_a^x(x-t)nf^{(n+1)}(t)\,dt - \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1}.
 \end{align*}
+$$
 
 In the last step we used the induction hypothesis. Now we apply integration by parts to the integral term, using $u=f^{(n+1)}(t)$ and $dv=(x-t)^n\,dt$, which implies that $du=f^{(n+2)}(t)\,dt$ and $v=-\frac{1}{n+1}(x-t)^{n+1}$, to obtain that
 
+$$
 \begin{align*}
 R_{n+1}(x) &= \frac{1}{n!}\left(\left[-\frac{1}{n+1}(x-t)^{n+1}f^{(n+1)}(t)\right]_{t=a}^{x} + \int_a^x \frac{1}{n+1}(x-t)^{n+1}f^{(n+2)}(t)\,dt \right) \\
 &~ \quad\quad- \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1} \\
@@ -292,17 +309,20 @@ R_{n+1}(x) &= \frac{1}{n!}\left(\left[-\frac{1}{n+1}(x-t)^{n+1}f^{(n+1)}(t)\righ
 &~ \quad\quad- \frac{f^{(n+1)}(a)}{(n+1)!}(x-a)^{n+1} \\
 &= \frac{1}{(n+1)!}\int_a^x(x-t)^{n+1}f^{(n+2)}(t)\,dt.
 \end{align*}
+$$
 
 This proves the first part of the theorem.
 
 For the next part, we use the {prf:ref}`mean value theorem for integrals <Thm:Integration:MeanValueTheorem>`, to obtain that there exists a number $c$ between $a$ and $x$ such that
 
+$$
 \begin{align*}
 R_n(x) &= \frac{1}{n!}\int_a^x(x-t)^nf^{(n+1)}(t)\,dt \\
 &= \frac{f^{(n+1)}(c)}{n!}\int_a^x(x-t)^n\,dt \\
 &= \frac{f^{(n+1)}(c)}{n!}\cdot\frac{1}{n+1}(x-a)^{n+1} \\
 &= \frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}.
 \end{align*}
+$$
 
 This concludes the proof of the theorem.
 :::
@@ -336,11 +356,13 @@ $$
 
 Assume $M$ is an upper bound for $|f^{(n+1)}(x)|$ on an interval $D$ that contains $a$ and $x$, then we have
 
+$$
 \begin{align*}
 |R_n(x)|&=\left|\frac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}\right|\\
 &=\frac{|f^{(n+1)}(c)|}{(n+1)!}|x-a|^{n+1} \\
 &\leq \frac{M}{(n+1)!}|x-a|^{n+1}.
 \end{align*}
+$$
 
 :::
 
@@ -384,15 +406,18 @@ $$
 
 Let $a_n=\frac{1}{(2n)!}x^{2n}$, then the ratio test with $x\neq0$ gives us that
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\frac{1}{(2n+2)!}x^{2n+2}\cdot\frac{(2n)!}{1}x^{-2n}\right|\\
 &=\lim\limits_{n\to\infty}\frac{x^2}{(2n+1)(2n+2)}=0,
 \end{align*}
+$$
 
 so the radius of convergence is $R=\infty$.
 
 Because the radius of convergence is infinite, we can use Taylor's inequality to find an approximation of $\cosh(1)$ exact to three decimal places. We do have to pick an interval that contains $0$ and $1$ to find an upper bound for $|f^{(n+1)}(x)|$. We choose the interval $[0,\ln(3)]$, as $\cosh(x)$ and $\sinh(x)$ are both positive on this interval and therefore also increasing on this interval. This implies that for $x\in[0,\ln(3)]$ we have
 
+$$
 \begin{align*}
 |f^{(n+1)}(x)| &= \begin{cases}
 \sinh(x) & \text{if } n \text{ is even}, \\
@@ -408,6 +433,7 @@ Because the radius of convergence is infinite, we can use Taylor's inequality to
 \end{cases} \\
 &\leq \frac{5}{3}.
 \end{align*}
+$$
 
 This implies that we can take $M=\frac{5}{3}$ in Taylor's inequality. We want to find an approximation of $\cosh(1)$ exact to three decimal places, so we want to find $n$ such that
 
@@ -484,6 +510,7 @@ The Taylor series of these functions at $x=0$ can be used in many applications, 
 
 Using the Taylor series of $e^x$ at $x=0$ we can find for $x\neq 0$ that:
 
+$$
 \begin{align*}
 \frac{e^x-1-x}{x^2} &= \frac{\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!} - 1 - x}{x^2} \\
 &= \frac{\left(1+x + \displaystyle\sum_{n=2}^{\infty}\frac{x^n}{n!}\right) - 1 - x}{x^2} \\
@@ -491,14 +518,17 @@ Using the Taylor series of $e^x$ at $x=0$ we can find for $x\neq 0$ that:
 &= \displaystyle\sum_{n=2}^{\infty}\frac{x^{n-2}}{n!} \\
 &= \frac{1}{2}+\frac{1}{6}x+\frac{1}{24}x^2+\cdots.
 \end{align*}
+$$
 
 This means that if we take the limit as $x$ approaches $0$, then we have
 
+$$
 \begin{align*}
 \lim\limits_{x\to 0}\frac{e^x-1-x}{x^2} &= \lim\limits_{x\to 0}\left(\frac{1}{2}+\frac{1}{6}x+\frac{1}{24}x^2+\cdots\right)\\
 &=\frac{1}{2}+0+0+\cdots \\
 &=\frac{1}{2}.
 \end{align*}
+$$
 
 ::::::
 
@@ -507,6 +537,7 @@ This means that if we take the limit as $x$ approaches $0$, then we have
 
 In a similar fashion as in the previous example, we find that
 
+$$
 \begin{align*}
 \lim\limits_{x\to 0}\frac{\cos(x)-1+\frac{1}{2}x^2}{x^4}
 &= \lim\limits_{x\to 0}\frac{\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{x^{2n}}{(2n)!}-1+\frac{1}{2}x^2}{x^4} \\
@@ -517,6 +548,7 @@ In a similar fashion as in the previous example, we find that
 &=-\frac{1}{24}+0-0+\cdots \\
 &=-\frac{1}{24}.
 \end{align*}
+$$
 
 ::::::
 
@@ -525,6 +557,7 @@ In a similar fashion as in the previous example, we find that
 
 Using $\sin(x)=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ for all $x\in\mathbb{R}$ we obtain that
 
+$$
 \begin{align*}
 \int_0^1x\sin(x^3)\,dx
 &= \int_0^1x\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}(x^3)^{2n+1}\,dx \\
@@ -535,6 +568,7 @@ Using $\sin(x)=\displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}x^{2n+1}$ f
 &= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)!}\frac{1}{6n+5} \\
 &= \frac{1}{5}-\frac{1}{66}+\frac{1}{2040}-\frac{1}{115920}+\cdots
 \end{align*}
+$$
 
 We can use this series representation of the definite integral to find an approximation of the value of the integral by truncating the series after a finite number of terms. {numref}`Tab:Series:TaylorIntegralSin` shows the approximations of the value of the integral using one, two, three and four term(s).
 
@@ -564,6 +598,7 @@ Note that with $n=1$ we already have an approximation of the value of the integr
 
 Using $e^x=\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$ for all $x\in\mathbb{R}$ we obtain that
 
+$$
 \begin{align*}
 \int_0^{\frac{1}{2}}xe^{-x^4}\,dx
 &= \int_0^{\frac{1}{2}}x\displaystyle\sum_{n=0}^{\infty}\frac{(-x^4)^n}{n!}\,dx \\
@@ -573,6 +608,7 @@ Using $e^x=\displaystyle\sum_{n=0}^{\infty}\frac{x^n}{n!}$ for all $x\in\mathbb{
 &= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\int_0^{\frac{1}{2}}x^{4n+1}\,dx \\
 &= \displaystyle\sum_{n=0}^{\infty}\frac{(-1)^n}{n!}\frac{1}{4n+2}\left(\frac12\right)^{4n+2}.
 \end{align*}
+$$
 
 We can use this series representation of the definite integral to find an approximation of the value of the integral by truncating the series after a finite number of terms. {numref}`Tab:Series:TaylorIntegralExp` shows the approximations of the value of the integral using one, two, three and four term(s).
 

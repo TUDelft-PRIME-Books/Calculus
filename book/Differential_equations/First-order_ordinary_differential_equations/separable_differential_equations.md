@@ -892,12 +892,14 @@ $$
 
 We now use integration by parts to obtain
 
+$$
 \begin{align*}
  I'(t)$=-\int_0^{\infty}xe^{-x^2}\sin(xt)\,dx\\
  &=\bigg[\frac{1}{2}e^{-x^2}\sin(xt)\bigg]_0^{\infty}-\frac{1}{2}\int_0^{\infty}e^{-x^2}t\cos(xt)\,dx\\
  &=0-\frac{1}{2}t\int_0^{\infty}e^{-x^2}\cos(xt)\,dx\\
  &=-\frac{1}{2}tI(t).
 \end{align*}
+$$
 
 As such, the function $I(t)$ satisfies the differential equation
 

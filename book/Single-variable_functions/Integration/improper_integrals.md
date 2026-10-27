@@ -110,12 +110,14 @@ The function $\displaystyle\frac{1}{x\sqrt{x}}$ on the interval $[1,\infty)$.
 
 This function $\displaystyle\frac{1}{x\sqrt{x}}$ is continuous on $[1,\infty)$ and therefore we can define the improper integral $\displaystyle\int_1^{\infty}\frac{dx}{x\sqrt{x}}$ as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight`. We have
 
+$$
 \begin{align*}
 \int_1^{\infty}\frac{dx}{x\sqrt{x}} &= \lim_{R\to\infty}\int_1^R\frac{dx}{x\sqrt{x}} \\
 &= \lim_{R\to\infty}\bigg[-\frac{2}{\sqrt{x}}\bigg]_1^R \\
 &= \lim_{R\to\infty}\left(2-\frac{2}{\sqrt{R}}\right) \\
 &= 2.
 \end{align*}
+$$
 
 ::::::
 
@@ -133,11 +135,13 @@ The function $\displaystyle\frac{1}{\sqrt{x}}$ on the interval $[1,\infty)$.
 
 In this case we have another function that is continuous on $[1,\infty)$ and therefore we can define the improper integral $\displaystyle\int_1^{\infty}\frac{dx}{\sqrt{x}}$ as in {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight`. We have 
 
+$$
 \begin{align*}
 \int_1^{\infty}\frac{dx}{\sqrt{x}} &= \lim_{R\to\infty}\int_1^R\frac{dx}{\sqrt{x}} \\
 &= \lim_{R\to\infty}\bigg[2\sqrt{x}\bigg]_1^R \\
 &= \lim_{R\to\infty}\left(2\sqrt{R}-2\right) \\
 \end{align*}
+$$
 
 This last limit does not exist, and equals $\infty$. In this case we say that the improper integral diverges to infinity.
 
@@ -166,21 +170,25 @@ In this case we choose the central point $c=0$ but we could have chosen any othe
 
 Now we have for the first integral
 
+$$
 \begin{align*}
 \int_{-\infty}^0\frac{dx}{1+x^2} &= \lim_{R\to-\infty}\int_R^0\frac{dx}{1+x^2} \\
 &= \lim_{R\to-\infty}\bigg[\arctan(x)\bigg]_R^0\\
 &= \lim_{R\to-\infty}\left(-\arctan(R)\right) \\
 &=\frac{1}{2}\pi
 \end{align*}
+$$
 
 and for the second integral
 
+$$
 \begin{align*}
 \int_0^{\infty}\frac{dx}{1+x^2}&=\lim_{R\to\infty}\int_0^R\frac{dx}{1+x^2}\\
 &=\lim_{R\to\infty}\bigg[\arctan(x)\bigg]_0^R\\
 &=\lim_{R\to\infty}\arctan(R)\\
 &=\frac{1}{2}\pi.
 \end{align*}
+$$
 
 Hence, we have
 
@@ -220,21 +228,25 @@ $$
 
 Then we have
 
+$$
 \begin{align*}
 \int_0^{\infty}\frac{x}{1+x^2}\,dx&=\lim_{R\to\infty}\int_0^R\frac{x}{1+x^2}\,dx\\
 &=\lim_{R\to\infty}\left[\frac{1}{2}\ln(1+x^2)\right]_0^R\\
 &=\lim_{R\to\infty}\frac{1}{2}\ln(1+R^2)\\
 &=\infty.
 \end{align*}
+$$
 
 This implies that the integral *diverges*. Nevertheless, we also have
 
+$$
 \begin{align*}
 \int_{-\infty}^0\frac{x}{1+x^2}\,dx&=\lim_{R\to-\infty}\int_R^0\frac{x}{1+x^2}\,dx\\
 &=\lim_{R\to-\infty}\left[\frac{1}{2}\ln(1+x^2)\right]_R^0\\
 &=\lim_{R\to-\infty}\left(-\frac{1}{2}\ln(1+R^2)\right)\\
 &=-\infty.
 \end{align*}
+$$
 
 We *cannot* conclude that 
 
@@ -257,6 +269,7 @@ $$
 
 Then we have
 
+$$
 \begin{align*}
 \int_0^{\infty}\frac{x}{1+x^4}\,dx&=\lim_{R\to\infty}\int_0^R\frac{x}{1+x^4}\,dx\\
 &=\lim_{R\to\infty}\left[\frac{1}{2}\arctan(x^2)\right]_0^R\\
@@ -264,9 +277,11 @@ Then we have
 &=\frac{1}{2}\cdot\frac{1}{2}\pi\\
 &=\frac{1}{4}\pi
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
 \int_{-\infty}^0\frac{x}{1+x^4}\,dx&=\lim_{R\to-\infty}\int_R^0\frac{x}{1+x^4}\,dx\\
 &=\lim_{R\to-\infty}\left[\frac{1}{2}\arctan(x^2)\right]_R^0\\
@@ -274,6 +289,7 @@ and
 &=-\frac{1}{2}\cdot\frac{1}{2}\pi\\
 &=-\frac{1}{4}\pi.
 \end{align*}
+$$
 
 Hence, we have
 
@@ -297,11 +313,13 @@ The function $\displaystyle\cos(x)$ on the interval $[0,\infty)$.
 :::
 
 
+$$
 \begin{align*}
 \int_0^{\infty}\cos(x)\,dx &= \lim_{R\to\infty}\int_0^R\cos(x)\,dx \\
 &= \lim_{R\to\infty}\bigg[\sin(x)\bigg]_0^R \\
 &=\lim_{R\to\infty}\sin(R).
 \end{align*}
+$$
 
 This limit does not exist and is neither $\infty$ nor $-\infty$. In this case we can only say that the integral diverges.
 
@@ -407,21 +425,25 @@ $$
 
 Now we have
 
+$$
 \begin{align*}
 \int_{-1}^0\frac{dx}{x^2} &= \lim_{t\to 0^-}\int_{-1}^t\frac{dx}{x^2} \\
 &= \lim_{t\to0^-}\bigg[-\frac{1}{x}\bigg]_{-1}^t \\
 &= \lim_{t\to 0^-}\left(-\frac{1}{t}-1\right) \\
 &= \infty.
 \end{align*}
+$$
 
 At this point we can already conclude that the integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ is divergent. Nevertheless, we evaluate the second integral to show that it also diverges to infinity:
 
+$$
 \begin{align*}
 \int_0^1\frac{dx}{x^2} &= \lim_{t\to 0^+}\int_t^1\frac{dx}{x^2} \\
 &= \lim_{t\to 0^+}\bigg[-\frac{1}{x}\bigg]_t^1 \\
 &= \lim_{t\to 0^+}\left(-1+\frac{1}{t}\right) \\
 &= \infty.
 \end{align*}
+$$
 
 Because both integrals diverge to infinity, we say that the improper integral $\displaystyle\int_{-1}^1\frac{dx}{x^2}$ diverges to infinity, which we can write (informally) as
 
@@ -464,21 +486,25 @@ $$
 
 with
 
+$$
 \begin{align*}
 \int_0^1\frac{dx}{x-1} &= \lim_{c\to 1^-}\int_0^c\frac{dx}{x-1} \\
 &= \lim_{c\to 1^-}\bigg[\ln|x-1|\bigg]_0^c \\
 &= \lim_{c\to 1^-}\ln|c-1| \\
 &= -\infty
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
 \int_1^3\frac{dx}{x-1} &= \lim_{c\to1^+}\int_c^3\frac{dx}{x-1} \\
 &= \lim_{c\to 1^+}\bigg[\ln|x-1|\bigg]_c^3 \\
 &= \lim_{c\to 1^+}\left(\ln(2)-\ln|c-1|\right) \\
 &= \infty.
 \end{align*}
+$$
 
 Because both integrals diverge, we say that the improper integral $\displaystyle\int_0^3\frac{dx}{x-1}$ diverges.
 
@@ -517,26 +543,32 @@ The function $\displaystyle\ln(x)$ on the interval $[0,1]$.
 
 Using integration by parts, we have
 
+$$
 \begin{align*}
 \int\ln(x)\,dx &= x\ln(x)-\int x\cdot\frac{1}{x}\,dx \\
 &= x\ln(x)-x+C.
 \end{align*}
+$$
 
 Hence, we have
 
+$$
 \begin{align*}
 \int_0^1\ln(x)\,dx &= \lim_{t\to o^+}\bigg[x\ln(x)-x\bigg]_t^1 \\
 &= \lim_{t\to 0^+}\left(-1-t\ln(t)+t\right).
 \end{align*}
+$$
 
 Using l'Hospital's rule, we obtain
 
+$$
 \begin{align*}
 \lim_{t\to 0^+}t\ln(t) &= \lim_{t\to 0^+}\frac{\ln(t)}{1/t} \\
 &= \lim_{t\to 0^+}\frac{1/t}{-1/t^2} \\
 &= \lim_{t\to 0^+}\left(-t\right) \\
 &=0.
 \end{align*}
+$$
 
 We conclude that
 
@@ -574,15 +606,18 @@ $$
 
 For $0<t<x<R$ we apply the substitution $x=u^2$ and therefore $dx=2u\,du$ to obtain
 
+$$
 \begin{align*}
 \int_t^R\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx&=\int_{\sqrt{t}}^{\sqrt{R}}\frac{e^{-u}}{u}\cdot2u\,du\\
 &=\int_{\sqrt{t}}^{\sqrt{R}}2e^{-u}\,dx\\
 &=\Big[-2e^{-u}\Big]_{\sqrt{t}}^{\sqrt{R}}\\
 &=2e^{-\sqrt{t}}-2e^{-\sqrt{R}}.
 \end{align*}
+$$
 
 Hence, we have
 
+$$
 \begin{align*}
 \int_0^{\infty}\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx&=\lim_{R\to\infty}\lim_{t\to 0^+}\int_t^R\frac{e^{-\sqrt{x}}}{\sqrt{x}}\,dx\\
 &=\lim_{R\to\infty}\lim_{t\to 0^+}\left(2e^{-\sqrt{t}}-2e^{-\sqrt{R}}\right)\\
@@ -590,6 +625,7 @@ Hence, we have
 &=2-0\\
 &=2.
 \end{align*}
+$$
 
 Note that the order in which we apply {prf:ref}`Def:Integration:ImproperIntegralInfiniteIntervalRight` and {prf:ref}`Def:Integration:ImproperIntegralLeftNotContinuousIntegrand` can be switched without changing the result. 
 
@@ -752,6 +788,7 @@ $$
 
 Using this relation to find an upper bound for $\displaystyle\int_{0}^{\infty}e^{-x^2}\,dx$ gives:
 
+$$
 \begin{align*}
 \int_{0}^{\infty}e^{-x^2}\,dx &\leq \int_{0}^{\infty}e^{bx+c}\,dx \\
 &= \bigg[\frac{1}{\sqrt{b}}e^{bx+\frac14b^2}\bigg]_{0}^{\infty}
@@ -760,6 +797,7 @@ Using this relation to find an upper bound for $\displaystyle\int_{0}^{\infty}e^
 \infty & \text{for} & b\geq0, \\
 \end{array}\right.
 \end{align*}
+$$
 
 Note that if $b<0$, the approximation becomes positive, as we should expect.
 
@@ -1006,45 +1044,53 @@ We consider four cases:
 
 1. If $x<0$, we have $x-1<0$ and as such the function $t^{x-1}$ is not continuous at $t=0$, and we find
    
-   \begin{align*}
+$$
+\begin{align*}
    \int_0^1t^{x-1}e^{-t}\,dt &\geq \int_0^1t^{x-1}e^{-1}\,dt \\
    &= \lim_{s\rightarrow0^+}\bigg[\frac{t^{x}}{x}e^{-1}\bigg]_s^1 \\
    &= \lim_{s\rightarrow0^+}\frac{1}{x}e^{-1}\bigg(1- s^{x}\bigg)\\
    &= \infty.
    \end{align*}
+$$
 
    So for $x<0$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ diverges and thus is $(-\infty,0)$ not part of $D_\Gamma$.
 
 1. If $x=0$, we find 
    
-   \begin{align*}
+$$
+\begin{align*}
    \int_0^1t^{-1}e^{-t}\,dt &\geq \int_0^1t^{-1}e^{-1}\,dt \\
    &= \lim_{s\rightarrow0^+}\bigg[\ln(t)e^{-1}\bigg]_s^1 \\
    &= \lim_{s\rightarrow0^+}e^{-1}\bigg(0- \ln(s)\bigg)\\
    &= \infty.
    \end{align*}
+$$
 
    So for $x=0$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ diverges and thus is ${0}$ not part of $D_\Gamma$.
 
 1. If $0<x<1$, we have $-1<x-1<0$ and and find
    
-   \begin{align*}
+$$
+\begin{align*}
    \int_0^1t^{x-1}e^{-t}\,dt &\leq \int_0^1t^{x-1}\,dt \\
    &= \lim_{s\rightarrow0^+}\bigg[\frac{t^{x}}{x}e^{-1}\bigg]_s^1 \\
    &= \lim_{s\rightarrow0^+}e^{-1}\bigg(1- s^{x}\bigg)\\
    &= e{-1}.
    \end{align*}
+$$
 
    So for $0<x<1$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ converges and thus $(0,1)$ can still be part of $D_\Gamma$.
 
 1. If $x\geq1$ the calculations become
    
-   \begin{align*}
+$$
+\begin{align*}
    \int_0^1t^{x-1}e^{-t}\,dt &\leq \int_0^1t^{x-1}\,dt \\
    &= \bigg[\frac{t^{x}}{x}e^{-1}\bigg]_0^1 \\
    &= e^{-1}\bigg(1- 0\bigg)\\
    &= e{-1}.
    \end{align*}
+$$
 
    So for $x\geq1$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ exists and thus $[1,\infty)$ can still be part $D_\Gamma$.
 
@@ -1060,12 +1106,14 @@ Now we turn to the second part $\displaystyle\int_1^\infty t^{x-1}e^{-t}\,dt$ an
 
    which gives the calculations
 
-   \begin{align*}
+$$
+\begin{align*}
    \int_1^\infty t^{x-1}e^{-t}\,dt &\leq \int_1^\infty e^{-t}\,dt \\
    &= \lim_{R\rightarrow\infty}\bigg[-e^{-t}\bigg]_0^R \\
    &= \lim_{s\rightarrow0^+}1-e^{-R}\\
    &= 1.
    \end{align*}
+$$
 
    So for $0<x<1$ the integral $\displaystyle\int_0^1t^{x-1}e^{-t}\,dt$ converges and thus $(0,1)$ is part of $D_\Gamma$.
 
@@ -1085,12 +1133,14 @@ Now we turn to the second part $\displaystyle\int_1^\infty t^{x-1}e^{-t}\,dt$ an
 
    The first integral is proper, so gives a finite value as a result. The second integral can be investigated as follows:
 
-   \begin{align*}
+$$
+\begin{align*}
    \int_N^\infty t^{x-1}e^{-t}\,dt &\leq \int_N^\infty e^{at}e^{-t}\,dt \\
    &= \lim_{R\rightarrow\infty}\int_N^R e^{(a-1)t}\,dt \\
    &= \lim_{R\rightarrow\infty}\bigg[\frac{1}{a-1}e^{(a-1)t}\bigg]_N^R \\
    &= \lim_{R\rightarrow\infty}\frac{1}{a-1}\bigg(e^{(a-1)R}-e^{(a-1)N}\bigg).
    \end{align*}
+$$
 
    This last limit exists when $a<1$. As the above held for any $a>0$, and we only need one, we pick $a=\dfrac12$.
    
@@ -1137,12 +1187,14 @@ Note that $\Gamma(1)=\displaystyle\int_0^{\infty}e^{-t}\,dt=-e^{-t}\bigg|_0^{\in
 
 Using integration by parts we obtain for $x>0$
 
+$$
 \begin{align*}
 \Gamma(x+1)&=\int_0^{\infty}t^xe^{-t}\,dt\\
 &=\bigg[-t^xe^{-t}\bigg]_{t=0}^{\infty}+\int_0^{\infty}e^{-t}\,xt^{x-1}\,dt\\
 &=0+x\int_0^{\infty}t^{x-1}e^{-t}\,dt\\
 &=x\Gamma(x).
 \end{align*}
+$$
 
 Then we have $\Gamma(2)=1\cdot\Gamma(1)=1$, $\Gamma(3)=2\cdot\Gamma(2)=2\cdot1=2$, $\Gamma(4)=3\cdot\Gamma(3)=3\cdot2=6$, and so on.
 

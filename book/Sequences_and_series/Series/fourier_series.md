@@ -43,45 +43,55 @@ $$
 :class: tudproof, dropdown
 Using the product formula $\cos(a)\cos(b)=\frac{1}{2}\left(\cos(a-b)+\cos(a+b)\right)$ (see {prf:ref}`Thm:Trigonometry:ProductFormulas`) we obtain for $m\neq n$
 
+$$
 \begin{align*}
 &\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m-n)\pi x}{L}\right)\,dx+\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m+n)\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\left[\frac{L}{(m-n)\pi}\sin\left(\frac{(m-n)\pi x}{L}\right)+\frac{L}{(m+n)\pi}\sin\left(\frac{(m+n)\pi x}{L}\right)\right]_{-L}^L\\
 &=0,
 \end{align*}
+$$
 
 and for $m=n$ we use $\cos(2a)=2\cos^2(a)-1$ to find that
 
+$$
 \begin{align*}
 \int_{-L}^L\left\{\cos\left(\frac{n\pi x}{L}\right)\right\}^2\,dx&=\frac{1}{2}\int_{-L}^L\left\{1+\cos\left(\frac{2n\pi x}{L}\right)\right\}\,dx\\
 &=\frac{1}{2}\left[x+\frac{L}{2n\pi}\sin\left(\frac{2n\pi x}{L}\right)\right]_{-L}^L \\
 &=L.
 \end{align*}
+$$
 
 Using the product formula $\sin(a)\sin(b)=\frac{1}{2}\left(\cos(a-b)-\cos(a+b)\right)$ (see  {prf:ref}`Thm:Trigonometry:ProductFormulas`) we obtain for $m\neq n$
 
+$$
 \begin{align*}
 &\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m-n)\pi x}{L}\right)\,dx-\frac{1}{2}\int_{-L}^L\cos\left(\frac{(m+n)\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\left[\frac{L}{(m-n)\pi}\sin\left(\frac{(m-n)\pi x}{L}\right)-\frac{L}{(m+n)\pi}\sin\left(\frac{(m+n)\pi x}{L}\right)\right]_{-L}^L\\
 &=0,
 \end{align*}
+$$
 and for $m=n$ we use $\cos(2a)=1-2\sin^2(a)$ to find that
 
+$$
 \begin{align*}
 \int_{-L}^L\left\{\sin\left(\frac{n\pi x}{L}\right)\right\}^2\,dx&=\frac{1}{2}\int_{-L}^L\left\{1-\cos\left(\frac{2n\pi x}{L}\right)\right\}\,dx\\
 &=\frac{1}{2}\left[x-\frac{L}{2n\pi}\sin\left(\frac{2n\pi x}{L}\right)\right]_{-L}^L \\
 &=L.
 \end{align*}
+$$
 
 Finally we use the product formula $\cos(a)\sin(b)=\frac{1}{2}\left(\sin(a+b)-\sin(a-b)\right)$ (see  {prf:ref}`Thm:Trigonometry:ProductFormulas`) to obtain for $m\neq n$
 
+$$
 \begin{align*}
 &\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\int_{-L}^L\sin\left(\frac{(m+n)\pi x}{L}\right)\,dx-\frac{1}{2}\int_{-L}^L\sin\left(\frac{(m-n)\pi x}{L}\right)\,dx\\
 &=\frac{1}{2}\left[-\frac{L}{(m+n)\pi}\cos\left(\frac{(m+n)\pi x}{L}\right)+\frac{L}{(m-n)\pi}\cos\left(\frac{(m-n)\pi x}{L}\right)\right]_{-L}^L\\
 &=0,
 \end{align*}
+$$
 
 and for $m=n$ we use $\sin(2a)=2\sin(a)\cos(a)$ to find that
 
@@ -136,11 +146,13 @@ $$
 
 then $g$ is a function that oscillates around $0$. Even better: $g$ is a multiple of one of the functions of the form $\displaystyle\cos\left(\frac{n\pi x}{L}\right)$ with $n=1$ and $L=3$. But this also means that if we multiply $g$ by $\displaystyle\cos\left(\frac{n\pi x}{3}\right)$ and then integrate from $-3$ to $3$, we would get zero for all $n$ except for $n=1$. Integrating $g$ gives in that case:
 
+$$
 \begin{align*}
 \int_{-3}^3g(x)\cos\left(\frac{\pi x}{3}\right)\,dx&=\int_{-3}^3\frac12\cos\left(\frac{\pi x}{3}\right)\cos\left(\frac{\pi x}{3}\right)\,dx\\
 &=\frac12\int_{-3}^3\cos^2\left(\frac{\pi x}{3}\right)\,dx \\
 &=\frac12\cdot3.
 \end{align*}
+$$
 
 But this also means that 
 
@@ -150,6 +162,7 @@ $$
 
 which is exactly the coefficient of $\displaystyle\cos\left(\frac{\pi x}{3}\right)$ in the definition of $g$. If we replace $g$ by $f$, then we find
 
+$$
 \begin{align*}
 \frac{1}{3}\int_{-3}^3f(x)\cos\left(\frac{\pi x}{3}\right)\,dx &= \frac{1}{3}\int_{-3}^3(g(x)+7)\cos\left(\frac{\pi x}{3}\right)\,dx \\
 &= \frac{1}{3}\int_{-3}^3\left(g(x)\cos\left(\frac{\pi x}{3}\right)+7\cos\left(\frac{\pi x}{3}\right)\right)\,dx \\
@@ -157,17 +170,20 @@ which is exactly the coefficient of $\displaystyle\cos\left(\frac{\pi x}{3}\righ
 &= \frac{1}{2} + 0 \\
 &= \frac{1}{2},
 \end{align*}
+$$
 
 which is exactly the coefficient of $\displaystyle\cos\left(\frac{\pi x}{3}\right)$ in the definition of $f$.
 
 Now, instead of substituting multiplying $g$ by a cosine function, we can also just integrate $f$ from $-3$ to $3$ and then divide by $3$. This gives:
 
+$$
 \begin{align*}
 \frac{1}{3}\int_{-3}^3f(x)\,dx&=\frac{1}{3}\int_{-3}^3\left(7+\frac12\cos\left(\frac{\pi x}{3}\right)\right)\,dx\\
 &=\frac{1}{3}\int_{-3}^37\,dx\\
 &=\frac{1}{3}\cdot6\cdot7\\
 &=2\cdot7.
 \end{align*}
+$$
 
 This last result is exactly two times the constant term $7$ in the definition of $f$.
 
@@ -297,10 +313,12 @@ $$
 
 and for $n=1,2,3,\ldots$ 
 
+$$
 \begin{align*}
 a_n &= \frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx, \\
 b_n &= \frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx.
 \end{align*}
+$$
 
 The formulas for $a_n$, $n=0,1,2,3,\ldots$ and $b_n$, $n=1,2,3,\ldots$ are called the **Euler-Fourier formulas**, named after the Swiss mathematician [Leonhard Euler (1707-1783)](https://en.wikipedia.org/wiki/Leonhard_Euler) and the French mathematician [Jean-Baptiste Joseph Fourier (1768-1830)](https://en.wikipedia.org/wiki/Joseph_Fourier).
 ::::::
@@ -316,10 +334,12 @@ $$
 
 Then integration gives
 
+$$
 \begin{align*}
 \int_{-L}^Lf(x)\,dx&=\frac{a_0}{2}\int_{-L}^L\,dx\\
 &{}\quad\quad{}+\sum_{n=1}^{\infty}\left(a_n\int_{-L}^L\cos\left(\frac{n\pi x}{L}\right)\,dx+b_n\int_{-L}^L\sin\left(\frac{n\pi x}{L}\right)\,dx\right).
 \end{align*}
+$$
 Note that $\displaystyle\int_{-L}^L\,dx=2L$, $\displaystyle\int_{-L}^L\cos\left(\frac{n\pi x}{L}\right)\,dx=0$ and $\displaystyle\int_{-L}^L\sin\left(\frac{n\pi x}{L}\right)\,dx=0$. Hence we have
 
 $$
@@ -328,11 +348,13 @@ $$
 
 If we multiply by $\displaystyle\cos\left(\frac{m\pi x}{L}\right)$ and then integrate, we obtain
 
+$$
 \begin{align*}
 \int_{-L}^Lf(x)\cos\left(\frac{m\pi x}{L}\right)\,dx&=\frac{a_0}{2}\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\,dx\\
 &{}\quad\quad{}+\sum_{n=1}^{\infty}a_n\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
 &{}\quad\quad{}+\sum_{n=1}^{\infty}b_n\int_{-L}^L\cos\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx.
 \end{align*}
+$$
 
 Then {prf:ref}`Thm:Series:Orthogonality` implies that for $m=1,2,3,\ldots$
 
@@ -342,11 +364,13 @@ $$
 
 If we multiply by $\displaystyle\sin\left(\frac{m\pi x}{L}\right)$ and then integrate, we obtain
 
+$$
 \begin{align*}
 \int_{-L}^Lf(x)\sin\left(\frac{m\pi x}{L}\right)\,dx&=\frac{a_0}{2}\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\,dx\\
 &{}\quad\quad{}+\sum_{n=1}^{\infty}a_n\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
 &{}\quad\quad{}+\sum_{n=1}^{\infty}b_n\int_{-L}^L\sin\left(\frac{m\pi x}{L}\right)\sin\left(\frac{n\pi x}{L}\right)\,dx.
 \end{align*}
+$$
 Then {prf:ref}`Thm:Series:Orthogonality` implies that for $m=1,2,3,\ldots$
 
 $$
@@ -389,6 +413,7 @@ $$
 
 We start with calculating the Fourier coefficients of $f$. Using $L=2$, we have
 
+$$
 \begin{align*}
 a_0 &= \frac{1}{2}\int_{-2}^2f(x)\,dx \\
 &= \frac{1}{2}\int_{-2}^0 0 \, dx + \frac{1}{2}\int_0^2 x \, dx \\
@@ -408,13 +433,16 @@ b_n &= \frac{1}{2}\int_{-2}^2f(x)\sin\left(\frac{n\pi x}{2}\right)\,dx \\
 &= \frac{2}{n^2\pi^2}\left(0-n\pi(-1)^n\right) \\
 &= \frac{2(-1)^{n+1}}{n\pi}.
 \end{align*}
+$$
 
 The entire Fourier series of $f$ is therefore given by
 
+$$
 \begin{align*}
 &\frac{1}{2} + \sum_{k=1}^{\infty}\frac{-4}{(2k-1)^2\pi^2}\cos\left(\frac{(2k-1)\pi x}{2}\right)\\
 &{}\quad{}+\sum_{n=1}^{\infty}\frac{2(-1)^{n+1}}{n\pi}\sin\left(\frac{n\pi x}{2}\right).
 \end{align*}
+$$
 
 Because $f$ is continuous at all points $x$ except for points of the form $x=2+4k$ for any integer $k$, {prf:ref}`Thm:Series:FourierConvergence` gives that the Fourier series equals $f(x)$ for all points $x$ except for points of the form $x=2+4k$ for any integer $k$. At these points we have
 
@@ -497,12 +525,14 @@ which is true for all $x$ in $(-L,L)$ where $f$ is continuous. At points where $
 
 Multiplication of this expression by $f(x)$ and integration over $(-L,L)$ then gives
 
+$$
 \begin{align*}
 \frac{1}{L}\int_{-L}^L\left\{f(x)\right\}^2\,dx&=\frac{a_0}{2}\cdot\frac{1}{L}\int_{-L}^Lf(x)\,dx\\
 &{}\quad\quad{}+\sum_{n=1}^{\infty}a_n\cdot\frac{1}{L}\int_{-L}^Lf(x)\cos\left(\frac{n\pi x}{L}\right)\,dx\\
 &{}\quad\quad{}+\sum_{n=1}^{\infty}b_n\cdot\frac{1}{L}\int_{-L}^Lf(x)\sin\left(\frac{n\pi x}{L}\right)\,dx\\
 &=\frac{a_0^2}{2}+\sum_{n=1}^{\infty}\left(a_n^2+b_n^2\right).
 \end{align*}
+$$
 
 :::
 
@@ -537,6 +567,7 @@ $$
 
 and
 
+$$
 \begin{align*}
 b_n&=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx\\
 &=\frac{1}{\pi}\int_0^{\pi}\sin(nx)\,dx\\
@@ -544,6 +575,7 @@ b_n&=\frac{1}{\pi}\int_{-\pi}^{\pi}f(x)\sin(nx)\,dx\\
 &=\frac{1-\cos(n\pi)}{n\pi}\\
 &=\frac{1-(-1)^n}{n\pi}.
 \end{align*}
+$$
 
 Note that $b_{2k}=0$ and $b_{2k-1}=\displaystyle\frac{2}{(2k-1)\pi}$ for $k=1,2,3,\ldots$. Then we have that the Fourier series of $f$ is given by
 
@@ -568,19 +600,23 @@ Notice that around the jump points the _Gibbs phenomenon_ is visible.
 
 At $x=\frac{1}{2}\pi$ the function $f$ is continuous, so the Fourier series converges to $f(x)$, which implies:
 
+$$
 \begin{align*}
 1=\frac{1}{2}+\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{\sin(k-\frac{1}{2})\pi}{2k-1}&\quad\Longleftrightarrow\quad
 \frac{1}{2}=\frac{2}{\pi}\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}\\
 &\quad\Longleftrightarrow\quad
 \sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}=\frac{1}{4}\pi.
 \end{align*}
+$$
 
 Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we also find that
 
+$$
 \begin{align*}
 &\frac{1}{2}+\frac{4}{\pi^2}\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{\pi}\int_{-\pi}^{\pi}\{f(x)\}^2\,dx=\frac{1}{\pi}\int_0^{\pi}dx=1\\
 &{}\quad\Longrightarrow\quad\sum_{k=1}^{\infty}\frac{1}{(2k-1)^2}=\frac{1}{8}\pi^2.
 \end{align*}
+$$
 
 ::::::
 
@@ -699,6 +735,7 @@ $$
 
 Then $L=1$ and $f$ is odd on $(-1,1)$. This means that the Fourier series of $f$ is a Fourier sine series, and we only have to calculate the Fourier sine coefficients $b_n$ for $n=1,2,3,\ldots$:
 
+$$
 \begin{align*}
 b_n&=\frac{1}{1}\int_{-1}^1f(x)\sin(n\pi x)\,dx\\
 &=\int_{-1}^12x\sin(n\pi x)\,dx\\
@@ -706,6 +743,7 @@ b_n&=\frac{1}{1}\int_{-1}^1f(x)\sin(n\pi x)\,dx\\
 &=-\frac{4\cos(n\pi)}{n\pi}\\
 &=\frac{4(-1)^{n+1}}{n\pi}.
 \end{align*}
+$$
 
 Hence the Fourier series of $f$ is given by
 
@@ -733,17 +771,21 @@ Around the jump points the Gibbs phenomenon is visible.
 
 For $x=\frac{1}{2}$ the function {prf:ref}`Fourier's convergence theorem <Thm:Series:FourierConvergence>` implies:
 
+$$
 \begin{align*}
 &1=\frac{4}{\pi}\sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}\sin\left(\frac{n\pi}{2}\right)=\frac{4}{\pi}\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}\\
 &{}\quad\Longrightarrow\quad\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{2k-1}=\frac{1}{4}\pi.
 \end{align*}
+$$
 
 Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
 
+$$
 \begin{align*}
 &\frac{16}{\pi^2}\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{1}\int_{-1}^1\{f(x)\}^2\,dx=\int_{-1}^14x^2\,dx=\frac{4}{3}x^3\bigg|_{-1}^1=\frac{8}{3}\\
 &{}\quad\Longrightarrow\quad\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{1}{6}\pi^2.
 \end{align*}
+$$
 ::::::
 
 ::::::{prf:example}
@@ -767,6 +809,7 @@ $$
 
 and
 
+$$
 \begin{align*}
 a_n&=\frac{1}{1}\int_{-1}^1f(x)\cos(n\pi x)\,dx\\
 &=\int_{-1}^1(1-x^2)\cos(n\pi x)\,dx\\
@@ -776,6 +819,7 @@ a_n&=\frac{1}{1}\int_{-1}^1f(x)\cos(n\pi x)\,dx\\
 &=-\frac{4\cos(n\pi)}{n^2\pi^2}\\
 &=\frac{4(-1)^{n+1}}{n^2\pi^2},\quad n=1,2,3,\ldots
 \end{align*}
+$$
 
 This means that the Fourier series of $f$ is given by
 
@@ -816,10 +860,12 @@ $$
 
 Using {prf:ref}`Parseval's identity <Thm:Series:Parseval>` we have:
 
+$$
 \begin{align*}
 \frac{8}{9}+\frac{16}{\pi^4}\sum_{n=1}^{\infty}\frac{1}{n^4}&=\frac{1}{1}\int_{-1}^1\{f(x)\}^2\,dx=\int_{-1}^1(1-x^2)^2\,dx\\
 &=\int_{-1}^1(1-2x^2+x^4)\,dx=\left[x-\frac{2}{3}x^3+\frac{1}{5}x^5\right]_{-1}^1=\frac{16}{15}
 \end{align*}
+$$
 or equivalently
 
 $$
@@ -856,11 +902,11 @@ Next up, making the function periodic with period $2L$. Here {numref}`Section:Pr
 Another, but equivalent, way to define the periodic extension of $f$ to a function defined on $[a,b)$ that is periodic with period $\ell=b-a$ is to define it as
 
 $$
-f_{\mathrm{ext}} =
+f_{\text{ext}} =
 \begin{cases}
-f_{\mathrm{ext}}(x+\ell), & x < a, \\
+f_{\text{ext}}(x+\ell), & x < a, \\
 f(x), & a \leq x < b, \\
-f_{\mathrm{ext}}(x-\ell), & x \geq b.
+f_{\text{ext}}(x-\ell), & x \geq b.
 \end{cases}
 $$
 
@@ -873,60 +919,64 @@ Let us do an example to see how this works in practice.
 
 Consider $f(x)=2x$ for $0\leq x\leq 1$, so $L=1$ in this case. We want to find a Fourier series of $f$.
 
-If we define $f_{\mathrm{odd}}$ as the odd periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{odd}}$ is given by
+If we define $f_{\text{odd}}$ as the odd periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\text{odd}}$ is given by
 
+$$
 \begin{align*}
-f_{\mathrm{odd}}(x) &= \begin{cases}
-f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+f_{\text{odd}}(x) &= \begin{cases}
+f_{\text{odd}}(x+2), & x \leq -1, \\
 -f(-x), & -1 < x < 0, \\
 0, & x=0, \\
 f(x), & 0 < x \leq 1, \\
-f_{\mathrm{odd}}(x-2), & x > 1,
+f_{\text{odd}}(x-2), & x > 1,
 \end{cases}\\[2.5mm] 
 &= \begin{cases}
-f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+f_{\text{odd}}(x+2), & x \leq -1, \\
 -2(-x), & -1 < x < 0, \\
 0, & x=0, \\
 2x, & 0 < x \leq 1, \\
-f_{\mathrm{odd}}(x-2), & x > 1,
+f_{\text{odd}}(x-2), & x > 1,
 \end{cases}\\[2.5mm]
 &= \begin{cases}
-f_{\mathrm{odd}}(x+2), & x \leq -1, \\
+f_{\text{odd}}(x+2), & x \leq -1, \\
 2x, & -1 < x \leq 1, \\
-f_{\mathrm{odd}}(x-2), & x > 1.
+f_{\text{odd}}(x-2), & x > 1.
 \end{cases}
 \end{align*}
+$$
 
-Note that to avoid defining the value of $f_{\mathrm{odd}}$ at $-1+2n$ for any integer $n$ twice, we have defined $f_{\mathrm{odd}}$ at those points as $f_{\mathrm{odd}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{odd}}(x-2)$ for $x > 1$. This is just a technicality to avoid defining the value of $f_{\mathrm{odd}}$ at those points twice, and it does not change the function $f$ itself on the interval $(0,1]$.
+Note that to avoid defining the value of $f_{\text{odd}}$ at $-1+2n$ for any integer $n$ twice, we have defined $f_{\text{odd}}$ at those points as $f_{\text{odd}}(x+2)$ for $x \leq -1$ and as $f_{\text{odd}}(x-2)$ for $x > 1$. This is just a technicality to avoid defining the value of $f_{\text{odd}}$ at those points twice, and it does not change the function $f$ itself on the interval $(0,1]$.
 
-The function $f_{\mathrm{odd}}$ turns out to be exactly the function $f$ defined in {prf:ref}`Ex:Series:FourierExample2`, which was a sawtooth wave. The Fourier sine series of $f_{\mathrm{odd}}$ is given by Equation {eq}`Eq:Series:SawToothFourier` and a visualisation of the Fourier sine series of $f_{\mathrm{odd}}$ can be found in {numref}`Fig:Series:SawToothFourier`.
+The function $f_{\text{odd}}$ turns out to be exactly the function $f$ defined in {prf:ref}`Ex:Series:FourierExample2`, which was a sawtooth wave. The Fourier sine series of $f_{\text{odd}}$ is given by Equation {eq}`Eq:Series:SawToothFourier` and a visualisation of the Fourier sine series of $f_{\text{odd}}$ can be found in {numref}`Fig:Series:SawToothFourier`.
 
-If we define $f_{\mathrm{even}}$ as the even periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\mathrm{even}}$ is given by
+If we define $f_{\text{even}}$ as the even periodic extension of $f$ to $\mathbb{R}$ with period $2L=2$, we find that $f_{\text{even}}$ is given by
 
+$$
 \begin{align*}
-f_{\mathrm{even}}(x) &= \begin{cases}
-f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f_{\text{even}}(x) &= \begin{cases}
+f_{\text{even}}(x+2), & x \leq -1, \\
 f(-x), & -1 < x < 0, \\
 f(x), & 0 \leq x \leq 1, \\
-f_{\mathrm{even}}(x-2), & x > 1,
+f_{\text{even}}(x-2), & x > 1,
 \end{cases}\\[2.5mm]
 &= \begin{cases}
-f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f_{\text{even}}(x+2), & x \leq -1, \\
 f(-x), & -1 < x < 0, \\
 f(x), & 0 \leq x \leq 1, \\
-f_{\mathrm{even}}(x-2), & x > 1,
+f_{\text{even}}(x-2), & x > 1,
 \end{cases}\\[2.5mm]
 &= \begin{cases}
-f_{\mathrm{even}}(x+2), & x \leq -1, \\
+f_{\text{even}}(x+2), & x \leq -1, \\
 -2x, & -1 < x < 0, \\
 2x, & -1 < x \leq 1, \\
-f_{\mathrm{even}}(x-2), & x > 1.
+f_{\text{even}}(x-2), & x > 1.
 \end{cases}
 \end{align*}
+$$
 
-Again, we avoid double values at $x=-1+2n$ for any integer $n$ by defining $f_{\mathrm{even}}$ at those points as $f_{\mathrm{even}}(x+2)$ for $x \leq -1$ and as $f_{\mathrm{even}}(x-2)$ for $x > 1$.
+Again, we avoid double values at $x=-1+2n$ for any integer $n$ by defining $f_{\text{even}}$ at those points as $f_{\text{even}}(x+2)$ for $x \leq -1$ and as $f_{\text{even}}(x-2)$ for $x > 1$.
 
-Now we have an even periodic extension $f_{\mathrm{even}}$ of $f$ to $\mathbb{R}$ with period $2L=2$, so we can apply {prf:ref}`Thm:Series:FourierCosineSeries` to find the Fourier cosine series of $f_{\mathrm{even}}$. We have for that
+Now we have an even periodic extension $f_{\text{even}}$ of $f$ to $\mathbb{R}$ with period $2L=2$, so we can apply {prf:ref}`Thm:Series:FourierCosineSeries` to find the Fourier cosine series of $f_{\text{even}}$. We have for that
 
 $$
 a_0=\frac{2}{1}\int_0^1f(x)\,dx=2\int_0^12x\,dx=2x^2\bigg|_0^1=2,
@@ -934,6 +984,7 @@ $$
 
 and for $n=0,1,2,3,\ldots$
 
+$$
 \begin{align*}
 a_n&=\frac{2}{1}\int_0^1f(x)\cos(n\pi x)\,dx \\
 &=2\int_0^12x\cos(n\pi x)\,dx\\
@@ -941,20 +992,21 @@ a_n&=\frac{2}{1}\int_0^1f(x)\cos(n\pi x)\,dx \\
 &=\frac{4}{n^2\pi^2}\cos(n\pi x)\bigg|_0^1 \\
 &=\frac{4\left((-1)^{n}-1\right)}{n^2\pi^2},
 \end{align*}
+$$
 
-and therefore, the Fourier cosine series of $f_{\mathrm{even}}$ is given by
+and therefore, the Fourier cosine series of $f_{\text{even}}$ is given by
 
 $$
 1+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos(n\pi x).
 $$
 
-Because our function $f_{\mathrm{even}}$ is continuous on $\mathbb{R}$, the Gibbs phenomenon does not occur and we have that 
+Because our function $f_{\text{even}}$ is continuous on $\mathbb{R}$, the Gibbs phenomenon does not occur and we have that 
 
 $$
-f_{\mathrm{even}}(x)=1+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos(n\pi x)\;\text{for all}\;x\in\mathbb{R}.
+f_{\text{even}}(x)=1+\frac{4}{\pi^2}\sum_{n=1}^{\infty}\frac{(-1)^n-1}{n^2}\cos(n\pi x)\;\text{for all}\;x\in\mathbb{R}.
 $$
 
-{numref}`Fig:Series:TriangularWave` shows a plot of the partial sums of the Fourier cosine series of $f_{\mathrm{even}}$ together with the function $f_{\mathrm{even}}$ itself. We also included the partial sums of the Fourier sine series of $f_{\mathrm{odd}}$ in the plot to show the difference between the two extensions.
+{numref}`Fig:Series:TriangularWave` shows a plot of the partial sums of the Fourier cosine series of $f_{\text{even}}$ together with the function $f_{\text{even}}$ itself. We also included the partial sums of the Fourier sine series of $f_{\text{odd}}$ in the plot to show the difference between the two extensions.
 You can change the value of $N$ to see how the approximation changes.
 
 :::{figure} Images/fourier5.png
@@ -968,11 +1020,11 @@ Truncated Fourier series of the even and odd periodic extensions of $f(x)=2x$ on
 Replace {numref}`Fig:Series:TriangularWave` with an applet, where you can change the value of $N$ to see how the approximation changes.
 :::
 
-The even periodic extension $f_{\mathrm{even}}$ is an example of a *triangular wave*.
+The even periodic extension $f_{\text{even}}$ is an example of a *triangular wave*.
 
 ::::::
 
-The last example shows that if we want to avoid the Gibbs phenomenon, we should extend $f$ to a function that is continuous on $\mathbb{R}$, if possible. In the example we have seen that the odd periodic extension $f_{\mathrm{odd}}$ of $f$ is not continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon occurs in the Fourier sine series of $f_{\mathrm{odd}}$. On the other hand, the even periodic extension $f_{\mathrm{even}}$ of $f$ is continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon does not occur in the Fourier cosine series of $f_{\mathrm{even}}$.
+The last example shows that if we want to avoid the Gibbs phenomenon, we should extend $f$ to a function that is continuous on $\mathbb{R}$, if possible. In the example we have seen that the odd periodic extension $f_{\text{odd}}$ of $f$ is not continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon occurs in the Fourier sine series of $f_{\text{odd}}$. On the other hand, the even periodic extension $f_{\text{even}}$ of $f$ is continuous on $\mathbb{R}$, and therefore the Gibbs phenomenon does not occur in the Fourier cosine series of $f_{\text{even}}$.
 
 In practice using an even periodic extension is more common than using an odd periodic extension of $f$, as the even periodic extension of a function $f$ that is continuous on $[0,L]$ is also continuous on $\mathbb{R}$, while the odd periodic extension of a function $f$ that is continuous on $[0,L]$ can only be continuous on $\mathbb{R}$ if $f(0)=0=f(L)$.
 

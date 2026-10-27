@@ -206,10 +206,12 @@ Without loss of generality we assume that $p\leq q$. The case $p=q$ is trivial, 
 
 If $\displaystyle\sum_{n=q}^{\infty}a_n$ is convergent with sum $S$, then
 
+$$
 \begin{align*}
 \sum_{n=p}^{\infty}a_n&=a_p+a_{p+1}+a_{p+2}+\cdots+a_{q-1}+\sum_{n=q}^{\infty}a_n\\
 &=a_p+a_{p+1}+a_{p+2}+\cdots+a_{q-1}+S.
 \end{align*}
+$$
 
 Note that $a_p+a_{p+1}+a_{p+2}+\cdots+a_{q-1}$ is a finite summation of $q-p$ terms. This implies that $\displaystyle\sum_{n=p}^{\infty}a_n$ is convergent as well, which proves the theorem.
 ::::::
@@ -453,11 +455,13 @@ First we define two new series $\displaystyle\sum a_n^+$ with $a_n^+=\max\{a_n,0
 
 Now consider the following three partials sums:
 
+$$
 \begin{align*}
 t_N = \sum_{n=1}^N |a_n| \\
 p_N = \sum_{n=1}^N a_n^+ \\
 q_N = \sum_{n=1}^N a_n^-.
 \end{align*}
+$$
 
 From the convergence of $\displaystyle\sum|a_n|$ we have that $\lim\limits_{N\to\infty}t_N=T$ exists. We also have that 
 
@@ -497,11 +501,13 @@ so the sequence $\left(q_N\right)$ is also bounded from above. By {prf:ref}`Thm:
 
 Now we can turn to the original series $\displaystyle\sum a_n$. The $n$th partial sum of this series is
 
+$$
 \begin{align*}
 s_N&=\sum_{n=1}^Na_n=\sum_{n=1}^N(a_n^+-a_n^-)\\
 &=\sum_{n=1}^Na_n^+-\sum_{n=1}^Na_n^-\\
 &=p_N-q_N.
 \end{align*}
+$$
 
 Because $\lim\limits_{N\to\infty}p_N=P$ and $\lim\limits_{N\to\infty}q_N=Q$, we have
 
@@ -532,6 +538,7 @@ Replace {numref}`Fig:Series:AbsoluteConvergence1` with an applet.
 
 Note that for the $N$th rectangle the top right corner aligns with the graph of $f(x)=\dfrac{1}{x^2}$ for $x\geq1$. This means that the area of the $N$th rectangle is less than the area under the graph of $f$ between $N-1$ and $N$ for $N\geq2$. Hence, we have
 
+$$
 \begin{align*}
 t_N &= \sum_{n=1}^N\frac{1}{n^2} \\
 &= 1+\sum_{n=2}^N\frac{1}{n^2} \\
@@ -542,6 +549,7 @@ t_N &= \sum_{n=1}^N\frac{1}{n^2} \\
 &= 2-\frac{1}{N} \\
 &< 2.
 \end{align*}
+$$
 
 This means that the sequence of partial sums $\left(t_N\right)$ is bounded from above by $2$. Also, we have
 
@@ -569,6 +577,7 @@ $$
 
 For these partial sums we have the following property:
 
+$$
 \begin{align*}
 s_{2N+2}-s_{2N} &= \sum_{n=1}^{2N+2}\frac{(-1)^{n-1}}{n}-\sum_{n=1}^{2N}\frac{(-1)^{n-1}}{n} \\
 &= \sum_{n=2N+1}^{2N+2}\frac{(-1)^{n-1}}{n} \\
@@ -576,9 +585,11 @@ s_{2N+2}-s_{2N} &= \sum_{n=1}^{2N+2}\frac{(-1)^{n-1}}{n}-\sum_{n=1}^{2N}\frac{(-
 &= \frac{1}{2N+1}-\frac{1}{2N+2} \\
 &= \frac{1}{(2N+1)(2N+2)}.
 \end{align*}
+$$
 
 As this value is positive, the sequence $\left(s_{2N}\right)$ is strictly increasing. If we now consider only the partial sum $s_{2N}$ we find
 
+$$
 \begin{align*}
 s_{2N} &= \sum_{n=1}^{2N}\frac{(-1)^{n-1}}{n} \\
 &= 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} - \frac{1}{7} + \cdots - \frac{1}{2n-2} + \frac{1}{2n-1} - \frac{1}{2N} \\
@@ -587,16 +598,19 @@ s_{2N} &= \sum_{n=1}^{2N}\frac{(-1)^{n-1}}{n} \\
 &= 1 - \sum_{n=1}^{N-1}\left(\frac{1}{2n} - \frac{1}{2n+1}\right) - \frac{1}{2N} \\
 &= 1 - \sum_{n=1}^{N-1}\frac{1}{(2n)(2n+1)} - \frac{1}{2N}.
 \end{align*}
+$$
 
 Because of the positivity of all terms in the sum $\displaystyle\sum_{n=1}^{N-1}\frac{1}{(2n)(2n+1)}$ and the term $\dfrac{1}{2N}$, we have found that $\{s_{2N}\}$ is bounded from above by $1$. Also, we have already found that $\{s_{2N}\}$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\left(s_{2N}\right)$ is convergent, so $\lim\limits_{n\to\infty}s_{2N}=S$ exists.
 
 Now we turn to the sequence $\left(s_{2N+1}\right)$. We have
 
+$$
 \begin{align*}
 s_{2N+1} &= \sum_{n=1}^{2N+1}\frac{(-1)^{n-1}}{n} \\
 &= \sum_{n=1}^{2N}\frac{(-1)^{n-1}}{n} + \frac{(-1)^{2N}}{2N+1} \\
 &= s_{2N} + \frac{1}{2N+1}.
 \end{align*}
+$$
 
 But this means that
 

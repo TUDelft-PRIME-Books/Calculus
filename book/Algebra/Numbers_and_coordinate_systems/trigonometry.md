@@ -288,10 +288,12 @@ $$
 
 Let $\alpha=\angle ACM$ and $\beta=\angle MCB$. Since $MA=MC=MB$, the radius of the circle, triangles $\triangle AMC$ and $\triangle BMC$ are isosceles. Hence
 
+$$
 \begin{align*}
 \angle AMC &= \pi - 2\alpha, \\
 \angle CMB &= \pi - 2\beta,
 \end{align*}
+$$
 
 Because $C$ lies on the same side as the chord $AB$ as $M$,
 
@@ -681,6 +683,7 @@ $$
 
 Using {numref}`Fig:Trigonometry:UnitCircle` and the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` with $a=x=\cos(\theta)$ and $b=y=\sin(\theta)$ and $c=1$ we have:
 
+$$
 \begin{align*}
 \sin^2(\theta)+\cos^2(\theta) &= y^2+x^2 \\
 &= x^2 +y^2 \\
@@ -688,6 +691,7 @@ Using {numref}`Fig:Trigonometry:UnitCircle` and the {prf:ref}`Pythagorean theore
 & = c^2 \\
 & = 1.
 \end{align*}
+$$
 ::::::
 
 ::::::{prf:theorem} Periodicity
@@ -883,65 +887,77 @@ Fill in the correct answer in the input fields.
 M[-\frac{\sqrt{2}}{2}] $\sin(\frac{5}{4}\pi)=$
 = For instance, 
 
+$$
 \begin{align*}
 \sin(\tfrac{5}{4}\pi)&=\sin(\pi-\tfrac{5}{4}\pi)\\
  &=\sin(-\tfrac{1}{4}\pi)\\
  &=-\sin(\tfrac{1}{4}\pi)\\
  &=-\frac{\sqrt{2}}{2}.
 \end{align*}
+$$
 > Use $\sin(x)=\sin(\pi-x)$ for instance.
 
 M[\frac{\sqrt{2}}{2}] $\cos(\frac{7}{4}\pi)=$
 = For instance, 
 
+$$
 \begin{align*}
 \cos(\tfrac{7}{4}\pi)&=-\cos(\pi-\tfrac{7}{4}\pi)\\
  &=-\cos(-\tfrac{3}{4}\pi)\\
  &=-\cos(\tfrac{3}{4}\pi)\\
  &=\frac{\sqrt{2}}{2}.
 \end{align*}
+$$
 > Use $\cos(x)=-\cos(\pi-x)$ for instance.
 
 M[-\frac{1}{2}] $\sin(\frac{7}{6}\pi)=$
 = For instance, 
 
+$$
 \begin{align*}
 \sin(\tfrac{7}{6}\pi)&=\sin(\pi-\tfrac{7}{6}\pi)\\
  &=\sin(-\tfrac{1}{6}\pi)\\
  &=-\sin(\tfrac{1}{6}\pi)\\
  &=-\frac{1}{2}.
 \end{align*}
+$$
 > Use $\sin(x)=\sin(\pi-x)$ for instance.
 
 M[\frac{\sqrt{3}}{2}] $\cos(\frac{11}{6}\pi)=$
 = For instance, 
 
+$$
 \begin{align*}
 \cos(\tfrac{11}{6}\pi)&=-\cos(\pi-\tfrac{11}{6}\pi)\\
  &=-\cos(-\tfrac{5}{6}\pi)\\
  &=-\cos(\tfrac{5}{6}\pi)\\
  &=\frac{\sqrt{3}}{2}.
 \end{align*}
+$$
 > Use $\cos(x)=-\cos(\pi-x)$ for instance.
 
 M[-\frac{\sqrt{2}}{2}] $\cos(\frac{19}{4}\pi)=$
 = For instance, 
 
+$$
 \begin{align*}
 \cos(\tfrac{19}{4}\pi)&=\cos(4\pi+\tfrac{3}{4}\pi)\\
  &=\cos(\tfrac{3}{4}\pi)\\
  &=-\frac{\sqrt{2}}{2}.
 \end{align*}
+$$
 > Use $\cos(x)=\cos(x+2\pi)$.
 
 M[\frac{1}{2}] $\sin(\frac{25}{6}\pi)=$
 = For instance, 
 
+$$
 \begin{align*}
 \sin(\tfrac{25}{6}\pi)&=\sin(4\pi+\tfrac{1}{6}\pi)\\
  &=\sin(\tfrac{1}{6}\pi)\\
  &=\frac{1}{2}.
 \end{align*}
+$$
 > Use $\sin(x)=\sin(x+2pi)$.
 ---
 
@@ -952,20 +968,25 @@ M[\frac{1}{2}] $\sin(\frac{25}{6}\pi)=$
 
 For every $x,y\in\mathbb{R}$ we have
 
+$$
 \begin{align*}
 \sin(x+y) &= \sin(x)\cos(y)+\cos(x)\sin(y), \\
 \cos(x+y) &= \cos(x)\cos(y)-\sin(x)\sin(y),
 \end{align*}
+$$
 \begin{align*}
 \sin(x-y) &=\sin(x)\cos(y)-\cos(x)\sin(y), \\
 \cos(x-y) &=\cos(x)\cos(y)+\sin(x)\sin(y),
 \end{align*}
+$$
 and
 
+$$
 \begin{align*}
 \tan(x+y) &=\frac{\tan(x)+\tan(y)}{1-\tan(x)\tan(y)}, \\
 \tan(x-y) &=\frac{\tan(x)-\tan(y)}{1+\tan(x)\tan(y)}.
 \end{align*}
+$$
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Trigonometry:AdditionSubtractionFormulas`
@@ -990,23 +1011,27 @@ $$
 
 On the other hand, this distance can also be computed using the {prf:ref}`Pythagorean theorem <Thm:Trigonometry:Pythagoras>` as
 
+$$
 \begin{align*}
 |PQ|^2&=(\cos(\beta)-\cos(\alpha))^2+(\sin(\beta)-\sin(\alpha))^2\\
 &=\cos^2(\beta)-2\cos(\alpha)\cos(\beta)+\cos^2(\alpha)\\
 &{}\hspace{25mm}{}+\sin^2(\beta)-2\sin(\alpha)\sin(\beta)+\sin^2(\alpha)\\
 &=2-2\left(\cos(\alpha)\cos(\beta)+\sin(\alpha)\cos(\alpha)\right).
 \end{align*}
+$$
 This implies that $\cos(\alpha-\beta)=\cos(\alpha)\cos(\beta)+\sin(\alpha)\sin(\beta)$.
 
 Replacing $\beta$ with $-\beta$ we obtain that $\cos(\alpha+\beta)=\cos(\alpha)\cos(\beta)-\sin(\alpha)\sin(\beta)$.
 
 In {prf:ref}`Thm:Trigonometry:ComplementaryAngles` we obtained that $\sin(\frac{1}{2}\pi-\theta)=\cos(\theta)$ and $\cos(\frac{1}{2}\pi-\theta)=\sin(\theta)$. Using these complementary angles formulas, we obtain
 
+$$
 \begin{align*}
 \sin(\alpha+\beta)&=\cos(\tfrac{1}{2}\pi-\alpha-\beta)\\
 &=\cos(\tfrac{1}{2}\pi-\alpha)\cos(\beta)+\sin(\tfrac{1}{2}\pi-\alpha)\sin(\beta)\\
 &=\sin(\alpha)\cos(\beta)+\cos(\alpha)\sin(\beta).
 \end{align*}
+$$
 Replacing $\beta$ with $-\beta$ we obtain $\sin(\alpha-\beta)=\sin(\alpha)\cos(\beta)-\cos(\alpha)\sin(\beta)$.
 
 Now the summation formulas for the tangent follow from these summation formulas for the sine and the cosine:

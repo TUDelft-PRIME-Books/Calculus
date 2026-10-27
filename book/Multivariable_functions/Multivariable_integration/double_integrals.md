@@ -113,6 +113,7 @@ We evaluate $\displaystyle\iint\limits_R(x-3y^2)\,dA$, where $R=[0,2]\times[1,2]
 
 We have
 
+$$
 \begin{align*}
 \iint\limits_R(x-3y^2)\,dA&=\int_0^2\int_1^2(x-3y^2)\,dy\,dx\\
 &=\int_0^2\bigg[xy-y^3\bigg]_{y=1}^2\,dx\\
@@ -120,9 +121,11 @@ We have
 &=\bigg[\frac{1}{2}x^2-7x\bigg]_{x=0}^2\\
 &=-12
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
 \iint\limits_R(x-3y^2)\,dA&=\int_1^2\int_0^2(x-3y^2)\,dx\,dy\\
 &=\int_1^2\bigg[\frac{1}{2}x^2-3xy^2\bigg]_{x=0}^2\,dy\\
@@ -130,6 +133,7 @@ and
 &=\bigg[2y-2y^3\bigg]_{y=1}^2\\
 &=-12.
 \end{align*}
+$$
 
 :::::
 
@@ -138,6 +142,7 @@ Consider $\displaystyle\iint\limits_Ry\sin(xy)\,dA$, where $R=[1,2]\times[0,\pi]
 
 We have
 
+$$
 \begin{align*}
 \iint\limits_Ry\sin(xy)\,dA&=\int_0^{\pi}\int_1^2y\sin(xy)\,dx\,dy\\
 &=\int_0^{\pi}\bigg[-\cos(xy)\bigg]_{x=1}^2\,dy\\
@@ -145,21 +150,26 @@ We have
 &=\bigg[\sin(x)-\frac{1}{2}\sin(2x)\bigg]_{x=0}^{\pi}\\
 &=0.
 \end{align*}
+$$
 
 Here the other order is much more difficult. Using integration by parts we have
 
+$$
 \begin{align*}
 \int y\sin(xy)\,dy&=-\frac{y}{x}\cos(xy)+\frac{1}{x}\int\cos(xy)\,dy\\
 &=-\frac{y}{x}\cos(xy)+\frac{1}{x^2}\sin(xy)+C.
 \end{align*}
+$$
  
 Hence we have:
 
+$$
 \begin{align*}
 \iint\limits_Ry\sin(xy)\,dA&=\int_1^2\int_0^{\pi}y\sin(xy)\,dy\,dx\\
 &=\int_1^2\bigg[-\frac{y}{x}\cos(xy)+\frac{1}{x^2}\sin(xy)\bigg]_{y=0}^{\pi}\\
 &=\int_1^2\left(-\frac{\pi}{x}\cos(\pi x)+\frac{1}{x^2}\sin(\pi x)\right)\,dx.
 \end{align*}
+$$
  
 Note that $-\displaystyle\frac{1}{x}\sin(\pi x)$ is an antiderivative, since using the chain rule we have: 
  
@@ -169,6 +179,7 @@ $$
  
 Hence:
 
+$$
 \begin{align*}
 \iint\limits_Ry\sin(xy)\,dA&=\int_1^2\int_0^{\pi}y\sin(xy)\,dy\,dx\\
 &=\int_1^2\left(-\frac{\pi}{x}\cos(\pi x)+\frac{1}{x^2}\sin(\pi x)\right)\,dx\\
@@ -176,6 +187,7 @@ Hence:
 &=\sin(\pi)-\frac{1}{2}\sin(2\pi)\\
 &=0.
 \end{align*}
+$$
 
 :::::
 
@@ -198,6 +210,7 @@ $$
 
 Consider a metal plate $D=[0,2]\times[0,1]$, where the temperature $T$ (in ${}^{\circ}\text{C}$) in each point $(x,y)\in D$ is given by $T(x,y)=10+3x+2y$. Then we have: $\text{area}(D)=2\cdot1=2$ and
 
+$$
 \begin{align*}
 \iint_D\left(10+3x+2y\right)\,dA&=\int_0^2\int_0^1\left(10+3x+2y\right)\,dy\,dx\\
 &=\int_0^2\bigg[10y+3xy+y^2\bigg]_{y=0}^1\\
@@ -206,6 +219,7 @@ Consider a metal plate $D=[0,2]\times[0,1]$, where the temperature $T$ (in ${}^{
 &=22+6\\
 &=28.
 \end{align*}
+$$
 
 Hence, the average temperature in $D$ equals $\dfrac{28}{2}=14^{\circ}\text{C}$.
 
@@ -230,6 +244,7 @@ $$
 
 Using the series representation $\displaystyle\frac{1}{1-xy}=\sum_{n=0}^{\infty}(xy)^n$ for $|xy|<1$ we obtain
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\frac{dx\,dy}{1-xy}&=\int_0^1\int_0^1\sum_{n=0}^{\infty}(xy)^n\,dx\,dy\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1x^n\,dx\right)\left(\int_0^1y^n\,dy\right)\\
@@ -238,6 +253,7 @@ Using the series representation $\displaystyle\frac{1}{1-xy}=\sum_{n=0}^{\infty}
 &=\zeta(2)\\
 &=\frac{1}{6}\pi^2.
 \end{align*}
+$$
 
 In {numref}`Sec:Series:RiemannZetFunctionApplications` we have seen that
 
@@ -259,6 +275,7 @@ $$
 
 Now we have
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\frac{\ln(x)}{1-xy}\,dx\,dy&=\int_0^1\int_0^1\ln(x)\sum_{n=0}^{\infty}(xy)^n\,dx\,dy\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1x^n\ln(x)\,dx\right)\left(\int_0^1y^n\,dy\right)\\
@@ -267,11 +284,13 @@ Now we have
 &=-\sum_{n=1}^{\infty}\frac{1}{n^3}\\
 &=-\zeta(3).
 \end{align*}
+$$
 
 This implies that $\displaystyle\int_0^1\int_0^1\frac{\ln(xy)}{1-xy}\,dx\,dy=-2\zeta(3)$. 
 
 Similarly, we have
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\frac{\ln(x)\ln(y)}{1-xy}\,dx\,dy&=\int_0^1\int_0^1\ln(x)\ln(y)\sum_{n=1}^{\infty}(xy)^n\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1x^n\ln(x)\,dx\right)\left(\int_0^1y^n\ln(y)\,dy\right)\\
@@ -281,9 +300,11 @@ Similarly, we have
 &=\zeta(4)\\
 &=\frac{1}{90}\pi^4.
 \end{align*}
+$$
 
 Similarly, using the series representation $\displaystyle\frac{1}{1-x^2y^2}=\sum_{n=0}^{\infty}(xy)^{2n}$ for $|xy|<1$ and {eq}`Eq:Series:RiemannZetaFunction1` we obtain
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\frac{dx\,dy}{1-x^2y^2}&=\int_0^1\int_0^1\sum_{n=0}^{\infty}(xy)^{2n}\,dx\,dy\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1x^{2n}\,dx\right)\left(\int_0^1y^{2n}\,dy\right)\\
@@ -293,6 +314,7 @@ Similarly, using the series representation $\displaystyle\frac{1}{1-x^2y^2}=\sum
 &=\frac{3}{4}\cdot\frac{1}{6}\pi^2\\
 &=\frac{1}{8}\pi^2.
 \end{align*}
+$$
 
 ## Catalan's constant
 
@@ -312,21 +334,25 @@ $$
 
 The proof is straightforward:
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\frac{dx\,dy}{1+x^2y^2}&=\int_0^1\int_0^1\frac{dy\,dx}{1+x^2y^2}\\
 &=\int_0^1\bigg[\frac{\arctan(xy)}{x}\bigg]_{y=0}^1\,dx\\
 &=\int_0^1\frac{\arctan(x)}{x}\,dx\\
 &=G.
 \end{align*}
+$$
  
 Alternatively, we might use $\displaystyle\frac{1}{1-t}=\sum_{n=0}^{\infty}t^n$ for $|t|<1$ to find that
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\frac{dx\,dy}{1+x^2y^2}&=\sum_{n=0}^{\infty}(-1)^n\int_0^1\int_0^1(xy)^{2n}\,dx\,dy\\
 &=\sum_{n=0}^{\infty}(-1)^n\left(\int_0^1x^{2n}\,dx\right)\left(\int_0^1y^{2n}\,dy\right)\\
 &=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\\
 &=G.
 \end{align*}
+$$
 
 ## Double integrals over general regions
 
@@ -521,6 +547,7 @@ $$
 
 Hence we have
 
+$$
 \begin{align*}
 \iint\limits_D(x+2y)\,dA&=\int_{-1}^1\int_{3x^2}^{1+2x^2}(x+2y)\,dy\,dx\\
 &=\int_{-1}^1\bigg[xy+y^2\bigg]_{y=3x^2}^{1+2x^2}\,dx\\
@@ -530,6 +557,7 @@ Hence we have
 &=2\cdot\frac{4}{3}\\
 &=\frac{8}{3}.
 \end{align*}
+$$
 
 :::
 
@@ -553,6 +581,7 @@ $$
 
 Therefore the volume under $z=x^2+y^2$ and above $D$ is
 
+$$
 \begin{align*}
 V&=\iint\limits_D(x^2+y^2)\,dA\\
 &=\int_0^1\int_{x^2}^x(x^2+y^2)\,dy\,dx\\
@@ -565,6 +594,7 @@ V&=\iint\limits_D(x^2+y^2)\,dA\\
 &=\frac{9}{105}\\
 &=\frac{3}{35}.
 \end{align*}
+$$
  
 As a $y$-simple region we have:
 
@@ -574,6 +604,7 @@ $$
  
 Therefore the volume can also be obtained as
 
+$$
 \begin{align*}
 V&=\iint\limits_D(x^2+y^2)\,dA\\
 &=\int_0^1\int_{y}^{\sqrt{y}}(x^2+y^2)\,dx\,dy\\
@@ -586,6 +617,7 @@ V&=\iint\limits_D(x^2+y^2)\,dA\\
 &=\frac{9}{105}\\
 &=\frac{3}{35}.
 \end{align*}
+$$
 
 :::
 
@@ -615,6 +647,7 @@ $$
  
 Therefore we obtain
 
+$$
 \begin{align*}
 \iint\limits_Dxy\,dA&=\int_{-2}^3\int_{y^2-5}^{y+1}xy\,dx\,dy\\
 &=\int_{-2}^3\bigg[\frac{1}{2}x^2y\bigg]_{x=y^2-5}^{y+1}\,dy\\
@@ -626,6 +659,7 @@ Therefore we obtain
 &=\frac{-280+891-486}{8}\\
 &=\frac{125}{8}.
 \end{align*}
+$$
 
 :::
 
@@ -649,6 +683,7 @@ $$
  
 Therefore the volume equals
 
+$$
 \begin{align*}
 V&=\iint\limits_D(2-2x-y)\,dA\\
 &=\int_0^{\frac{1}{2}}\int_{2x}^{2-2x}(2-2x-y)\,dy\,dx\\
@@ -659,6 +694,7 @@ V&=\iint\limits_D(2-2x-y)\,dA\\
 &=\bigg[2x-4x^2+\frac{8}{3}x^3\bigg]_0^{\frac{1}{2}}\\
 &=\frac{1}{3}.
 \end{align*}
+$$
 
 :::
 
@@ -694,6 +730,7 @@ $$
 
 Hence we have
 
+$$
 \begin{align*}
 \int_0^1\int_x^1\cos(y^2)\,dy\,dx&=\iint\limits_D\cos(y^2)\,dA\\
 &=\int_0^1\int_0^y\cos(y^2)\,dx\,dy\\
@@ -701,6 +738,7 @@ Hence we have
 &=\bigg[\frac{1}{2}\sin(y^2)\bigg]_{y=0}^1\\
 &=\frac{1}{2}\sin(1).
 \end{align*}
+$$
 
 :::
 
@@ -765,13 +803,15 @@ $$
 
 that
 
+$$
 \begin{align*}
 \int_0^{\infty}e^{-\alpha x}\frac{\sin(x)}{x}\,dx&=\int_0^{\infty}e^{-\alpha x}\int_0^1\cos(xy)\,dy\,dx\\
 &=\int_0^1\int_0^{\infty}e^{-\alpha x}\cos(xy)\,dx\,dy\\
 &=\int_0^1\frac{\alpha}{\alpha^2+y^2}\,dy\\
 &=\arctan\left(\frac{y}{\alpha}\right)\bigg|_0^1\\
 &=\arctan\left(\frac{1}{\alpha}\right),\quad\alpha>0.
-\end{align*} 
+\end{align*}
+$$ 
  
 Finally we have: 
 
@@ -789,13 +829,15 @@ Note that for $\alpha=1$ we obtain: $\displaystyle\int_0^{\infty}\frac{e^{-x}\si
 
 Note that $\displaystyle\frac{\partial}{\partial y}\left(\frac{\arctan(xy)}{x}\right)=\frac{1}{1+x^2y^2}$. Then we have for $0<\alpha<\beta$:
 
+$$
 \begin{align*}
 \int_0^{\infty}\frac{\arctan(\beta x)-\arctan(\alpha x)}{x}\,dx&=\int_0^{\infty}\int_{\alpha}^{\beta}\frac{1}{1+x^2y^2}\,dy\,dx\\
 &=\int_{\alpha}^{\beta}\int_0^{\infty}\frac{1}{1+x^2y^2}\,dx\,dy\\
 &=\int_{\alpha}^{\beta}\left[\frac{\arctan(xy)}{y}\right]_{x=0}^{\infty}\,dy\\
 &=\frac{1}{2}\pi\int_{\alpha}^{\beta}\frac{1}{y}\,dy\\
 &=\frac{1}{2}\pi\left(\ln(\beta)-\ln(\alpha)\right).
-\end{align*} 
+\end{align*}
+$$ 
 
 :::::
 
@@ -804,21 +846,25 @@ Note that $\displaystyle\frac{\partial}{\partial y}\left(\frac{\arctan(xy)}{x}\r
 
 Using $\displaystyle\frac{\partial}{\partial y}\left(\frac{e^{-xy}}{x}\right)=-e^{-xy}$ and integration by parts we obtain for $0<\alpha<\beta$:
 
+$$
 \begin{align*}
 \int_0^{\infty}\frac{(e^{-\alpha x}-e^{-\beta x})\sin(x)}{x}\,dx&=\int_0^{\infty}\sin(x)\int_{\alpha}^{\beta}e^{-xy}\,dy\,dx\\
 &=\int_{\alpha}^{\beta}\int_0^{\infty}e^{-xy}\sin(x)\,dx\,dy\\
 &=\int_{\alpha}^{\beta}\frac{1}{1+y^2}\,dy\\
 &=\arctan(\beta)-\arctan(\alpha)
-\end{align*} 
+\end{align*}
+$$ 
  
 and
 
+$$
 \begin{align*}
 \int_0^{\infty}\frac{(e^{-\alpha x}-e^{-\beta x})\cos(x)}{x}\,dx&=\int_0^{\infty}\cos(x)\int_{\alpha}^{\beta}e^{-xy}\,dy\,dx\\
 &=\int_{\alpha}^{\beta}\int_0^{\infty}e^{-xy}\cos(x)\,dx\,dy\\
 &=\int_{\alpha}^{\beta}\frac{y}{1+y^2}\,dy\\
 &=\frac{1}{2}\ln(1+\beta^2)-\frac{1}{2}\ln(1+\alpha^2).
 \end{align*}
+$$
 
 :::::
 
@@ -827,10 +873,12 @@ and
 
 Finally, we consider the integral $\displaystyle\int_0^{\frac{1}{2}\pi}\ln\left(1+\alpha\cos^2(x)\right)\,dx$ for $\alpha>0$. Since $\displaystyle\frac{\partial}{\partial y}\ln\left(1+y\cos^2(x)\right)=\frac{\cos^2(x)}{1+y\cos^2(x)}$ we find for $\alpha>0$ 
 
+$$
 \begin{align*}
 \int_0^{\frac{1}{2}\pi}\ln\left(1+\alpha\cos^2(x)\right)\,dx&=\int_0^{\frac{1}{2}\pi}\int_0^{\alpha}\frac{\cos^2(x)}{1+y\cos^2(x)}\,dy\,dx\\
 &=\int_0^{\alpha}\int_0^{\frac{1}{2}\pi}\frac{\cos^2(x)}{1+y\cos^2(x)}\,dx\,dy. 
-\end{align*} 
+\end{align*}
+$$ 
  
 Now we use that $\displaystyle\frac{1}{\cos^2(x)}=\frac{\sin^2(x)+\cos^2(x)}{\cos^2(x)}=1+\tan^2(x)$ and find that
 
@@ -846,20 +894,24 @@ $$
  
 Using partial fractions we now obtain for $y>0$
 
+$$
 \begin{align*}
 &\int_0^{\infty}\frac{dt}{(1+y+t^2)(1+t^2)}\\
 &{}\quad{}=\frac{1}{y}\int_0^{\infty}\left(\frac{1}{1+t^2}-\frac{1}{1+y+t^2}\right)\,dt\\
 &{}\quad{}=\frac{1}{y}\left[\arctan(t)-\frac{1}{\sqrt{1+y}}\arctan\left(\frac{t}{\sqrt{1+y}}\right)\right]_{t=0}^{\infty}\\
 &{}\quad{}=\frac{1}{2}\pi\cdot\frac{1}{y}\left(1-\frac{1}{\sqrt{1+y}}\right).
-\end{align*} 
+\end{align*}
+$$ 
  
 Now we use the substitution $\sqrt{1+y}=t$ or $y=t^2-1$ and obtain that
 
+$$
 \begin{align*}
 \int_0^{\alpha}\frac{1}{y}\left(1-\frac{1}{\sqrt{1+y}}\right)\,dy&=\int_1^{\sqrt{1+\alpha}}\frac{1}{t^2-1}\left(1-\frac{1}{t}\right)2t\,dt\\
 &=2\int_0^{\sqrt{1+\alpha}}\frac{dt}{1+t}\\
 &=2\ln\left(\frac{1+\sqrt{1+\alpha}}{2}\right).
-\end{align*} 
+\end{align*}
+$$ 
  
 Hence: $\displaystyle\int_0^{\frac{1}{2}\pi}\ln\left(1+\alpha\cos^2(x)\right)\,dx=\pi\ln\left(\frac{1+\sqrt{1+\alpha}}{2}\right)$ for $\alpha>0$.
 
@@ -886,13 +938,15 @@ b) Find $\displaystyle\int_0^{\infty}\frac{e^{-x}(1-\cos(x))}{x}\,dx$.
 
 a) For $\alpha>0$ we have
 
+$$
 \begin{align*}
 \int_0^{\infty}e^{-\alpha x}\frac{1-\cos(x)}{x}\,dx&=\int_0^{\infty}e^{-\alpha x}\int_0^1\sin(xy)\,dy\,dx\\
 &=\int_0^1\int_0^{\infty}e^{-\alpha x}\sin(xy)\,dx\,dy\\
 &=\int_0^1\frac{y}{\alpha^2+y^2}\,dy\\
 &=\frac{1}{2}\ln(\alpha^2+y^2)\bigg|_0^1\\
 &=\frac{1}{2}\ln(\alpha^2+1)-\ln(\alpha).
-\end{align*} 
+\end{align*}
+$$ 
  
 b) The special case $\alpha=1$ reads $\displaystyle\int_0^{\infty}\frac{e^{-x}(1-\cos(x))}{x}\,dx=\frac{1}{2}\ln(2)$.
 
@@ -910,11 +964,13 @@ Use the fact that $\displaystyle\frac{\partial}{\partial y}\left(\frac{e^{-xy}}{
 
 Since $\displaystyle\frac{\partial}{\partial y}\left(\frac{e^{-xy}}{x}\right)=-e^{-xy}$, we obtain for $0<\alpha<\beta$:
 
+$$
 \begin{align*}
 \int_0^{\infty}\frac{e^{-\alpha x}-e^{-\beta x}}{x}\,dx&=\int_0^{\infty}\int_{\alpha}^{\beta}e^{-xy}\,dy\,dx\\
 &=\int_{\alpha}^{\beta}\int_0^{\infty}e^{-xy}\,dx\,dy\\
 &=\int_{\alpha}^{\beta}\left[-\frac{e^{-xy}}{y}\right]_{x=0}^{\infty}\,dy\\
 &=\int_{\alpha}^{\beta}\frac{1}{y}\,dy=\ln(\beta)-\ln(\alpha).
 \end{align*}
+$$
 
 :::

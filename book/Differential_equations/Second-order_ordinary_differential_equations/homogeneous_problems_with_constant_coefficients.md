@@ -338,19 +338,23 @@ with $c_1,c_2\in\mathbb{R}$.
 :class: tudproof, dropdown 
 The functions $\tilde{y}_1(t)=e^{(\alpha+i\beta)t}$ and $\tilde{y}_2(t)=e^{(\alpha-i\beta)t}$ are complex-valued solutions of the differential equation by construction. By {prf:ref}`Thm:DE:SuperpositionPrinciple`, the functions
 
+$$
 \begin{align*}
  y_1(t)=&\frac{1}{2}\left(\tilde{y}_1(t)+\tilde{y}_2(t)\right)\\
  =&\frac{1}{2}\left(e^{\alpha t}(\cos(\beta t)+i\sin(\beta t))+e^{\alpha t}(\cos(-\beta t)+i\sin(-\beta t))\right)\\
  =&e^{\alpha t}\cos(\beta t)
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
  y_2(t)=&\frac{1}{2i}\left(\tilde{y}_1(t)-\tilde{y}_2(t)\right)\\
  =&\frac{1}{2i}\left(e^{\alpha t}(\cos(\beta t)+i\sin(\beta t))-e^{\alpha t}(\cos(-\beta t)+i\sin(-\beta t))\right)\\
  =&e^{\alpha t}\sin(\beta t)
 \end{align*}
+$$
 
 are solutions of this differential equation as well. We see that these solutions are both real-valued.
 
@@ -590,10 +594,12 @@ $$
 
 [It can be shown that there is no general method to find roots of a fifth order polynomial equation](https://en.wikipedia.org/wiki/Abel%E2%80%93Ruffini_theorem). Fortunately, we made this example ourselves so we constructed it in such a way that we know the roots. These are $r_1=1$ (with multiplicity $2$), $r_2=2$, $r_3=1+i$ and $r_4=1-i$. Following the same ideas as earlier in this section, we obtain the five real solutions
 
+$$
 \begin{align*}
 &y_1(t)=e^t, \quad y_2(t)=te^t,\quad y_3(t)=e^{2t},\\
 &{}\quad y_4(t)=e^t\cos(t),\quad y_5(t)=e^t\sin(t).
 \end{align*}
+$$
 
 Since these solutions are linearly independent, we obtain the general solution
 
@@ -1000,19 +1006,23 @@ $$
 
 Moreover, since we integrate over $x$ we can differentiate the integral with respect to $t$ and bring this derivative inside to obtain
 
+$$
 \begin{align*}
 I'(t)&=\frac{d}{dt}\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx\\
 &=\int_0^{\infty}\frac{d}{dt}\frac{\cos(xt)}{x^2+\alpha^2}\,dx\\
 &=-\int_0^{\infty}\frac{x\sin(xt)}{x^2+\alpha^2}\,dx.
 \end{align*}
+$$
 
 Now we rewrite this integral to obtain
 
+$$
 \begin{align*}
 I'(t)&=-\int_0^{\infty}\frac{x\sin(xt)}{x^2+\alpha^2}\,dx\\
 &=-\int_0^{\infty}\frac{(x^2+\alpha^2-\alpha^2)\sin(xt)}{x(x^2+\alpha^2)}\,dx\\
 &=-\int_0^{\infty}\frac{\sin(xt)}{x}\,dx+\alpha^2\int_0^{\infty}\frac{\sin(xt)}{x(x^2+\alpha^2)}\,dx.
 \end{align*}
+$$
 
 Using the substitution $xt=u$, which has $du=t\,dx$, we can use {prf:ref}`Thm:Integration:ImproperIntegralsDirichletIntegral` to obtain for $t>0$ that 
 

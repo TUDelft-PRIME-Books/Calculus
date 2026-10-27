@@ -258,10 +258,12 @@ $$
 
 The derivative of $\dfrac{dy}{dx}$ is, by definition, the second derivative $\dfrac{d^2y}{dx^2}$. For the derivative of the right-hand side we use the quotient rule and the chain rule to obtain
 
+$$
 \begin{align*}
  \frac{d}{dx}\left(\frac{-2x-y}{x+2y}\right)&=\frac{(x+2y)\left(-2-\frac{dy}{dx}\right)-\left(-2x-y\right)\left(1+2\frac{dy}{dx}\right)}{\left(x+2y\right)^2}\\
  &=\frac{3x\frac{dy}{dx}-3y}{\left(x+2y\right)^2}.
 \end{align*}
+$$
 
 Combining these expressions, we obtain
 

@@ -125,12 +125,14 @@ $$
 
 Using the linearisation, we can approximate this change by performing the following calculation:
 
+$$
 \begin{align*}
 \Delta f &= f(a+h)-f(a) \\
 & \approx L(a+h)-f(a) \\
 & = \left( f(a) + f'(a)(a+h-a) \right) -f(a) \\
 & = f'(a) \cdot h.
 \end{align*}
+$$
 In other words, we have the following property:
 
 ::::{prf:property}
@@ -186,11 +188,13 @@ $$
 
 and if the diameter increases from $x$ to $x+h$, the change in volume can be approximated by
 
+$$
 \begin{align*}
 \Delta V &= V(x+h)-V(x) \\
 &\approx V'(x) h \\
 &= 4\pi x h.
 \end{align*}
+$$
 
 The relative change in volume with respect to the original volume is approximately equal to
 
@@ -235,10 +239,12 @@ $$
 
 The first-order and second-order derivatives of this function are equal to
 
+$$
 \begin{align*}
 T_2'(x) &= c_1 + 2c_2(x-a), \\
 T_2''(x) &= 2c_2.
 \end{align*}
+$$
 
 If we now use these formulas to write down the requirements that $T_2$ should satisfy, we get
 
@@ -301,6 +307,7 @@ The function $\sqrt[3]{x}$ and the Taylor polynomials $T_1(x)$ and $T_2(x)$.
 
 Let us use this observation to _approximate_ $\sqrt[3]{9}$:
 
+$$
 \begin{align*}
 \sqrt[3]{9} &= f(9) \\
  &\approx T_2(9) \\
@@ -309,6 +316,7 @@ Let us use this observation to _approximate_ $\sqrt[3]{9}$:
  &= \frac{599}{288} \\
  &= 2.07986\overline{11}.
 \end{align*}
+$$
 
 ::::
 
@@ -467,7 +475,7 @@ $$
 What do we obtain when we use it to approximate $\sqrt[3]{9}$?
 
 $$
-\sqrt[3]{\class{tud-red}{9}} = f(\class{tud-red}{9}) \ \approx T_1(\class{tud-red}{9}) =  \ 2+\frac{1}{12}(\class{tud-red}{9}-8) \ = \ \frac{25}{12} \ = \ 2.0833\ldots
+\sqrt[3]{\htmlClass{tud-red}{9}} = f(\htmlClass{tud-red}{9}) \ \approx T_1(\htmlClass{tud-red}{9}) =  \ 2+\frac{1}{12}(\htmlClass{tud-red}{9}-8) \ = \ \frac{25}{12} \ = \ 2.0833\ldots
 $$
 
 How accurate is this approximation? The actual value of $\sqrt[3]{9}$ is $2.0801\ldots$. This means that the approximation error is in this case equal to:
@@ -485,7 +493,7 @@ $$
 This gives us the following approximation of $\sqrt[3]{9}$:
 
 $$
-T_2(\class{tud-red}{9}) = 2+\frac{1}{12}(\class{tud-red}{9}-8)-\frac{1}{288}(\class{tud-red}{9}-8)^2 \ = \  \frac{599}{288} \ = \ 2.0798\ldots
+T_2(\htmlClass{tud-red}{9}) = 2+\frac{1}{12}(\htmlClass{tud-red}{9}-8)-\frac{1}{288}(\htmlClass{tud-red}{9}-8)^2 \ = \  \frac{599}{288} \ = \ 2.0798\ldots
 $$
 
 For this approximation the error is equal to
@@ -549,12 +557,14 @@ $$
 
 Now we know this, we can also estimate the _maximum_ position after $10$ seconds:
 
+$$
 \begin{align*}
 x(10) &\leq x(0) + \int_{0}^{10}v(t)\,dt \\
 &= 5 + \int_0^{10}\left(10+0.1t\right)\,dt \\
 &= 5 + \left[10t+0.05 t^2\right]_{t=0}^{10} \\&
 = 5 + \left(605 - 500\right) \\&= 110.
 \end{align*}
+$$
 
 In conclusion, we found that the position of the scooter after $10$ seconds satisfies
 
@@ -616,18 +626,22 @@ $$
 
 We can use this to construct different Taylor polynomials of $f$ centred at $0$. For example, the Taylor polynomial of orders $1$, $2$, and $3$ centred at $0$ are equal to
 
+$$
 \begin{align*}
 T_1(x) & = 1+x, \\
 T_2(x) & = 1+x-\frac{1}{2}x^2, \\
 T_3(x) & = 1+x-\frac{1}{2}x^2-\frac{1}{6}x^3.
 \end{align*}
+$$
 
 Now we turn our attention to the approximation error of these Taylor polynomials on the interval $D=(-\infty,\infty)$. We want to find an upper bound for the error, so we need to find an $M$ such that $|f^{(n+1)}(x)|\leq M$ for all $x$ in some interval $D$ that contains $0$. The $(n+1)$-th derivative of $f$ is equal to $\pm \cos(x)\pm \sin(x)$, so we need to find an upper bound for $|\pm \cos(x)\pm \sin(x)|$. Using the triangle inequality, we have
 
+$$
 \begin{align*}
 |\pm \cos(x)\pm \sin(x)| &\leq |\cos(x)| + |\sin(x)| \\
 &\leq 1+1 = 2,
 \end{align*}
+$$
 
 as we know that $\cos(x)$ and $\sin(x)$ are both between $-1$ and $1$.
 
@@ -685,18 +699,20 @@ $$
 The approximation that we find is
 
 $$
-\cos(\class{tud-red}{0.5})=f(\class{tud-red}{0.5}) \ \approx T_4(\class{tud-red}{0.5}) = 1-\frac{1}{2}\left(\class{tud-red}{0.5}\right)^2+\frac{1}{24}\left(\class{tud-red}{0.5}\right)^4 \ = \ 0.877604\ldots
+\cos(\htmlClass{tud-red}{0.5})=f(\htmlClass{tud-red}{0.5}) \ \approx T_4(\htmlClass{tud-red}{0.5}) = 1-\frac{1}{2}\left(\htmlClass{tud-red}{0.5}\right)^2+\frac{1}{24}\left(\htmlClass{tud-red}{0.5}\right)^4 \ = \ 0.877604\ldots
 $$
 
 In order to find an upper bound for the approximation error we will need to find an $M$ such that the fifth derivative $f^{(5)}$ of the cosine function is smaller than $M$ for all numbers $x$ in the interval $[0, 0.5]$. The fifth derivative of $f(x)=\cos(x)$ is equal to $f^{(5)}(x)=-\sin(x)$. We know that $|-\sin(x)|\leq 1$ for all values of $x$, so we can choose $M$ to be equal to $1$. We get the following upper bound for the remainder:
 
+$$
 \begin{align*}
-\left|R_4\left(\class{tud-red}{0.5}\right)\right| &= |f(\class{tud-red}{0.5})-T_4(\class{tud-red}{0.5})| \\
-&\leq \frac{1\cdot |\class{tud-red}{0.5}-0|^{4+1}}{(4+1)!} \\
+\left|R_4\left(\htmlClass{tud-red}{0.5}\right)\right| &= |f(\htmlClass{tud-red}{0.5})-T_4(\htmlClass{tud-red}{0.5})| \\
+&\leq \frac{1\cdot |\htmlClass{tud-red}{0.5}-0|^{4+1}}{(4+1)!} \\
 &= \frac{(0.5)^{5}}{5!} \\
 &= \frac{0.03125}{120} \\
 &= 0.00026\ldots
 \end{align*}
+$$
 Thus, the approximation error is at most $0.00027$, as we must round up to ensure a proper upper bound.
 
 Now we have an upper bound for the _absolute_ value of the error, we can even find an interval in which the _exact_ value of $\cos(0.5)$ lies:
@@ -753,7 +769,7 @@ $$
 There is no term of degree six since the sixth derivative of $\sin(x)$ is zero in $x=0$. The approximation that we find is
 
 $$
-T_6\left( \class{tud-red}{0.8} \right) \ = \ \class{tud-red}{0.8}-\frac{1}{6}\left( \class{tud-red}{0.8} \right)^3+\frac{1}{120}\left( \class{tud-red}{0.8} \right)^5 \ = \ 0.717397\ldots
+T_6\left( \htmlClass{tud-red}{0.8} \right) \ = \ \htmlClass{tud-red}{0.8}-\frac{1}{6}\left( \htmlClass{tud-red}{0.8} \right)^3+\frac{1}{120}\left( \htmlClass{tud-red}{0.8} \right)^5 \ = \ 0.717397\ldots
 $$
 
 Since the error is smaller than $0.0001$ this means that the actual value of $\sin(0.8)$ lies in between $0.7172$ and $0.7175$.
