@@ -104,16 +104,13 @@ y_{n+1} \approx y_n + (t_{n+1}-t_n)f(t_n,y_n).
 
 This integral is illustrated in {numref}`Fig:ApproximatingSolutions:leftRectangle`.
 
-:::{figure} Images/Fig-NumericalMethods-leftRectangle.svg
+:::{applet}
+:url: calculus/approximating_solutions/left_Rectangle_rule_applied_to_an_ivp
 :name: Fig:ApproximatingSolutions:leftRectangle
 :class: dark-light
 
 The left Rectangle rule applied to $f(t,y(t))$. \
 Remark: The blue line represents a possibility for $f(t,y(t))$, assuming we would have known $y(t)$.
-:::
-
-:::{todo}
-Replace {numref}`Fig:ApproximatingSolutions:leftRectangle` by an applet.
 :::
 
 Note that $f(t_n, y_n)$ is the slope of the tangent in $(t_n, y_n)$. The numerical approximation of the solution at $t_{n+1}$, denoted by $\tilde{y}_{n+1}$, is computed by
@@ -158,45 +155,42 @@ Consider the following initial value problem:
 
 $$
 \left\{\begin{array}{rclll}
-	y'(t) & = & -2ty^2, & \text{for} & t\geq -0.2, \\
-	y(-0.2) & = & 1.
+	y'(t) & = & -\frac15ty^2, & \text{for} & t\geq -2, \\
+	y(-2) & = & 1.
 \end{array}\right.
 $$
 
-We will perform two time steps with the Forward Euler method with $\Delta t=0.1$.
+We will perform two time steps with the Forward Euler method with $\Delta t=1$.
 
-First, we note that $t_0=-0.2$, $\tilde{y}_0=y(t_0)=y(-0.2)=1$ and $f(t,y)=-2ty^2$.
+First, we note that $t_0=-2$, $\tilde{y}_0=y(t_0)=y(-2)=1$ and $f(t,y)=-\frac15ty^2$.
 
-Then we calculate $\tilde{y}_1$, which is an approximation of $y_1=y(t_1)=y(t_0+\Delta t)=y(-0.2+0.1)=y(-0.1)$:
+Then we calculate $\tilde{y}_1$, which is an approximation of $y_1=y(t_1)=y(t_0+\Delta t)=y(-2+1)=y(-1)$:
 
 $$
 \begin{align*}
 	\tilde{y}_1 &= \tilde{y}_0 + \Delta t f(t_0,\tilde{y}_0) \\
-	&= 1 + 0.1\cdot\left(-2\cdot(-0.2)\cdot(1)^2\right) \\
-	&= 1.04.
+	&= 1 + 1\cdot\left(-\frac15\cdot(-2)\cdot(1)^2\right) \\
+	&= 1.4.
 \end{align*}
 $$
-Then we calculate $\tilde{y}_2$, which is an approximation to $y_2=y(t_2)=y(t_0+2\Delta t)=y(-0.2+2\cdot0.1)=y(0)$:
+
+Then we calculate $\tilde{y}_2$, which is an approximation to $y_2=y(t_2)=y(t_0+2\Delta t)=y(-2+2\cdot1)=y(0)$:
 
 $$
 \begin{align*}
 	\tilde{y}_2 &= \tilde{y}_1 + \Delta t f(t_1,\tilde{y}_1) \\
-	&= 1.04 + 0.1\cdot\left(-2\cdot(-0.1)\cdot(1.04)^2\right) \\
-	&= 1.06.
+	&= 1.4 + 1\cdot\left(-\frac15\cdot(-1)\cdot(1.4)^2\right) \\
+	&= 1.792.
 \end{align*}
 $$
 We can keep doing time steps, and if we do, we would obtain the approximation shown in {numref}`Figure %s <Fig:ApproximatingSolutions:eulerPolygon>`.
 
-
-:::{figure} Images/Fig-NumericalMethods-eulerPolygon.svg
+:::{applet}
+:url: calculus/approximating_solutions/forward_Euler_method
 :name: Fig:ApproximatingSolutions:eulerPolygon
 :class: dark-light
 
-Approximation of a solution using the Forward Euler method. For comparison the exact solution and the direction field is also shown.
-:::
-
-:::{todo}
-Replace {numref}`Fig:ApproximatingSolutions:eulerPolygon` by an applet. Include direction field.
+Approximation of a solution using the Forward Euler method. For comparison the exact solution and the direction field are also shown.
 :::
 
 ::::
@@ -1055,11 +1049,11 @@ We conclude that $p=3$ is the most likely order of accuracy for the method we us
 To derive an explicit variant of Equation {eq}`Eq:ApproximatingSolutions:TM`, the unknown $\tilde{y}_{n+1}$ in the right-hand side of Equation {eq}`Eq:ApproximatingSolutions:TM` is predicted using the Forward Euler method. This results in the following _predictor-corrector_ formula:
 
 $$
-\begin{align}
+\begin{align*}
 	\text{predictor:}\ \ \ \overline{y}_{n+1}&=\tilde{y}_n+\Delta tf(t_n,\tilde{y}_n),\\
 	\text{corrector:}\ \ \ \tilde{y}_{n+1}&=\tilde{y}_n+\frac{\Delta t}{2}
 	\left(f(t_n,\tilde{y}_n)+f(t_{n+1},\overline{y}_{n+1})\right).
-\end{align}
+\end{align*}
 $$
 
 From $\tilde{y}_n$ (calculated in the previous time step), the predictor $\overline{y}_{n+1}$ can be computed. Using this value in the corrector, this results in an _explicit_ formula: the _Modified Euler method_.
@@ -1109,12 +1103,12 @@ in which the predictors $k_1$ to $k_4$ are given by
 ::::{math}
 :label: Eq:ApproximatingSolutions:RK4
 
-\begin {align}
+\begin {align*}
 k_1&=\Delta tf(t_n,\tilde{y}_n), \\
 k_2&=\Delta tf(t_n+\frac{1}{2}\Delta t,\tilde{y}_n+\frac{1}{2}k_1),\\ 
 k_3&=\Delta tf(t_n+\frac{1}{2}\Delta t,\tilde{y}_n+\frac{1}{2}k_2),\\ 
 k_4&=\Delta tf(t_n+\Delta t,\tilde{y}_n+k_3).
-\end{align}
+\end{align*}
 
 ::::
 
