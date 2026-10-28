@@ -62,7 +62,7 @@ sphinx:
             correct: "Well done, you got everything right!"
     patch_config:
       disabled-patches: ["hash"]
-    prime_applets_base_url: "http://localhost:5173/applet/"
+    # prime_applets_base_url: "http://localhost:5173/applet/"
     # prime_applets_base_url: "https://deploy-preview-532--openla-preview.netlify.app/applet/"
     sticky_margin:
       trigger: partial
