@@ -25,14 +25,14 @@ html:
 
 sphinx:
   local_extensions:
-    # text_replacer: _ext/
-    # check_captions: _ext/
-    # image_checker: _ext/
-    # numref_section: _ext/
-    # math_punctuation: _ext/
-    # unnumbered_sections: _ext/
+    text_replacer: _ext/
+    check_captions: _ext/
+    image_checker: _ext/
+    numref_section: _ext/
+    math_punctuation: _ext/
+    unnumbered_sections: _ext/
   config:
-    katex_prerender: false
+    katex_prerender: true
     katex_inherit_font: true
     katex_options: |
       {
@@ -62,7 +62,7 @@ sphinx:
             correct: "Well done, you got everything right!"
     patch_config:
       disabled-patches: ["hash"]
-    # prime_applets_base_url: "http://localhost:5173/applet/"
+    prime_applets_base_url: "http://localhost:5173/applet/"
     # prime_applets_base_url: "https://deploy-preview-532--openla-preview.netlify.app/applet/"
     sticky_margin:
       trigger: partial

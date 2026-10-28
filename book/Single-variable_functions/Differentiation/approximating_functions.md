@@ -57,7 +57,7 @@ $$
 \sqrt[3] x \ \approx \  2+\frac{1}{12}(x-8).
 $$
 
-{numref}`Figure %s <Fig:ApproximatingFunctions:cuberoot>` shows the graphs of $\sqrt[3]{x}$ and of the linearisation $L(x)$.
+{numref}`Fig:ApproximatingFunctions:cuberoot` shows the graphs of $\sqrt[3]{x}$ and of the linearisation $L(x)$.
 
 :::{applet}
 :url: calculus/approximating_functions/linearisation
@@ -293,7 +293,7 @@ $$
 \sqrt[3] x \ \approx \ 2+\frac 1{12}(x-8)-\frac 1{288}(x-8)^2.
 $$
 
-In {numref}`Figure %s <Fig:ApproximatingFunctions:cuberootquad>` you can see that the graph of this quadratic polynomial $T_2$ follows the curvature of the graph of the function $\sqrt[3]{x}$ more closely than the graph of the linear function $T_1$.
+In {numref}`Fig:ApproximatingFunctions:cuberootquad` you can see that the graph of this quadratic polynomial $T_2$ follows the curvature of the graph of the function $\sqrt[3]{x}$ more closely than the graph of the linear function $T_1$.
 
 :::{applet}
 :url: calculus/approximating_functions/taylor_polynomial_of_order_2

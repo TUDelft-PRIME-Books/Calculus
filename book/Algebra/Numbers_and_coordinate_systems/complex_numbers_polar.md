@@ -55,7 +55,7 @@ $$
  |z|=\sqrt{3^2+3^2}=3\sqrt{2}.
 $$
 
-The argument, the corresponding angle, equals $\dfrac{\pi}{4}$ as you can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex1>`.
+The argument, the corresponding angle, equals $\dfrac{\pi}{4}$ as you can see in {numref}`Fig:ComplexNumbers:polarex1`.
 
 :::{applet}
 :url: calculus/complex_numbers/polar_coordinates_2
@@ -77,7 +77,7 @@ $$
  |w|=\sqrt{3^2+2^2} = \sqrt{13}.
 $$
 
-The argument can't be deduced immediately from a picture, see {numref}`Figure %s <Fig:ComplexNumbers:polarex2>`, but we do see that
+The argument can't be deduced immediately from a picture, see {numref}`Fig:ComplexNumbers:polarex2`, but we do see that
 
 $$
 \tan(\arg(w)) = \frac{\text{opposite}}{\text{adjacent}} = \frac{\text{imaginary part}}{\text{real part}} = \frac{2}{3}\approx 0.67.
@@ -113,9 +113,9 @@ $$
  \tan(\arg(v)) = \frac{2}{-1}=-2.
 $$
 
-Again, there is no 'pretty' angle of which the tangent is $-2$. By making a good sketch (such as the one in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>`) and measuring the angle, or by trying some angles, we find that that we approximately have $\arg(v)\approx 2.03$, since $\tan(2.03)\approx -2.02$.
+Again, there is no 'pretty' angle of which the tangent is $-2$. By making a good sketch (such as the one in {numref}`Fig:ComplexNumbers:polarex3`) and measuring the angle, or by trying some angles, we find that that we approximately have $\arg(v)\approx 2.03$, since $\tan(2.03)\approx -2.02$.
 
-If we were to use the arctangent (see {numref}`Section:Inverse`) to find an exact expression for the angle, we would expect that $\arg(v) = \arctan( -2) \approx -1.11$. But this answer is negative, while we can see in {numref}`Figure %s <Fig:ComplexNumbers:polarex3>` that the true argument is something between $\dfrac{\pi}{2}$ and $\pi$. Thus, this argument cannot be correct.
+If we were to use the arctangent (see {numref}`Section:Inverse`) to find an exact expression for the angle, we would expect that $\arg(v) = \arctan( -2) \approx -1.11$. But this answer is negative, while we can see in {numref}`Fig:ComplexNumbers:polarex3` that the true argument is something between $\dfrac{\pi}{2}$ and $\pi$. Thus, this argument cannot be correct.
 
 It turns out that if we multiply both the real and imaginary parts of a complex number by $-1$, then the quotient used within the arctangent stays the same. So In this case the arctangent gives the argument of $1-2i$ instead. Fortunately, we can easily find the correct argument as it is exactly $\pi$ higher[^others]. We find $\arg(v) = \arctan(-2) + \pi \approx 2.03$.
 
@@ -1006,7 +1006,7 @@ $$
  z^3-(-16+16i)=(z-z_0)(z-z_1)(z-z_2).
 $$
 
-You can find a visualisation of these three solutions in {numref}`Figure %s <Fig:ComplexNumbers:threesolfig>`.
+You can find a visualisation of these three solutions in {numref}`Fig:ComplexNumbers:threesolfig`.
 
 :::{applet}
 :url: calculus/complex_numbers/using_De_Moivre
@@ -1069,7 +1069,7 @@ Quite often, you come across expressions where a cosine and a sine of identical 
 ::::{prf:example}
 :label: Ex:ComplexNumbers:sinusoid
 
-Take $f(t) = \cos(2t) + \sqrt{3} \sin(2t)$. If you plot the graph of this function (see {numref}`Figure %s <Fig:ComplexNumbers:sinusoid>`), you notice it is a single wave.
+Take $f(t) = \cos(2t) + \sqrt{3} \sin(2t)$. If you plot the graph of this function (see {numref}`Fig:ComplexNumbers:sinusoid`), you notice it is a single wave.
 
 Indeed, we have
 

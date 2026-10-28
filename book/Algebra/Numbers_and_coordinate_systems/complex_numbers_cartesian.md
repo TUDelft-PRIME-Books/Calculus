@@ -114,7 +114,7 @@ $$
 
 ::::
 
-Just like we can visualise real numbers on a number line, we can visualise complex numbers in the complex plane. By convention, the horizontal axis indicates the value of the real part of a complex number and the vertical axis indicates the imaginary part of the same complex number. In {numref}`Figure %s <Fig:ComplexNumbers:complexplane>` you can see this visualisation. 
+Just like we can visualise real numbers on a number line, we can visualise complex numbers in the complex plane. By convention, the horizontal axis indicates the value of the real part of a complex number and the vertical axis indicates the imaginary part of the same complex number. In {numref}`Fig:ComplexNumbers:complexplane` you can see this visualisation. 
 
 :::{applet}
 :url: calculus/complex_numbers/visualisation_of_the_complex_plane
@@ -306,7 +306,7 @@ $$
 
 ::::
 
-Now we consider the geometric interpretation of adding complex numbers. If we add $z=a+bi$ and $w=c+di$, we add the real and imaginary parts to obtain $z+w=(a+c)+(b+d)i$. This means we add the coordinates of the corresponding points. This works similar to the addition of vectors, see {numref}`Chapter:VectorAlgebra`. Thus, geometrically we can add two complex numbers by following the parallelogram rule. That is, the lines from the origin to the two complex numbers form two sides of a parallelogram with vertices $0$, $z$, $z+w$, and $w$; see {numref}`Figure %s <Fig:ComplexNumbers:complexadd>`.
+Now we consider the geometric interpretation of adding complex numbers. If we add $z=a+bi$ and $w=c+di$, we add the real and imaginary parts to obtain $z+w=(a+c)+(b+d)i$. This means we add the coordinates of the corresponding points. This works similar to the addition of vectors, see {numref}`Chapter:VectorAlgebra`. Thus, geometrically we can add two complex numbers by following the parallelogram rule. That is, the lines from the origin to the two complex numbers form two sides of a parallelogram with vertices $0$, $z$, $z+w$, and $w$; see {numref}`Fig:ComplexNumbers:complexadd`.
 
 :::{applet}
 :url: calculus/complex_numbers/adding_complex_numbers
@@ -535,7 +535,7 @@ By {prf:ref}`Thm:ComplexNumbers:Commassdistr` we must have $b=0$, which gives $z
 
 ::::
 
-Now we look at the geometric interpretation of complex conjugation. The complex conjugate $\bar z$ changes the sign of the imaginary part of the number $z$, that is $\overline{a+bi} = a-bi$. As the imaginary part of a complex number corresponds to the second coordinate of its representation in the complex plane, taking the complex conjugate of a complex number reflects it across the real axis (the horizontal axis). See {numref}`Figure %s <Fig:ComplexNumbers:complexconj>`.
+Now we look at the geometric interpretation of complex conjugation. The complex conjugate $\bar z$ changes the sign of the imaginary part of the number $z$, that is $\overline{a+bi} = a-bi$. As the imaginary part of a complex number corresponds to the second coordinate of its representation in the complex plane, taking the complex conjugate of a complex number reflects it across the real axis (the horizontal axis). See {numref}`Fig:ComplexNumbers:complexconj`.
 
 :::{applet}
 :url: calculus/complex_numbers/complex_conjugation

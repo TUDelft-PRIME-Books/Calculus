@@ -10,7 +10,7 @@ This page is based on {cite:t}`Vuik_2023`.
 
 Determining the physical quantities of a system (for example volume, mass, or length) often involves the integral of a function. In many cases, an analytic evaluation of the integral is not possible. In such cases one has to resort to numerical quadratures.
 
-As an example, we investigate the production of a spoiler that is mounted onto the cabin of a truck ({numref}`Figure %s <Fig:ApproximatingIntegrals:truck>`). The shape of the spoiler is described by a sine function with a $2\pi$ meter period. The aluminium spoiler is made out of a flat plate by extrusion. The manufacturer wants to know the width of the plate such that the horizontal dimension of the spoiler will be 80 cm. The answer to this question is provided by the arc length of the curve (after a conversion to meters)
+As an example, we investigate the production of a spoiler that is mounted onto the cabin of a truck ({numref}`Fig:ApproximatingIntegrals:truck`). The shape of the spoiler is described by a sine function with a $2\pi$ meter period. The aluminium spoiler is made out of a flat plate by extrusion. The manufacturer wants to know the width of the plate such that the horizontal dimension of the spoiler will be 80 cm. The answer to this question is provided by the arc length of the curve (after a conversion to meters)
 
 $$
  \left\{ \begin{array}{cl}
@@ -49,7 +49,7 @@ However, this integral cannot be evaluated in a simple way using only elementary
 
 ## Riemann sums and integrals
 
-A Riemann sum and a corresponding set of intermediate points $x_k^*$ are shown in {numref}`Figure %s <Fig:ApproximatingIntegrals:riemann>`.
+A Riemann sum and a corresponding set of intermediate points $x_k^*$ are shown in {numref}`Fig:ApproximatingIntegrals:riemann`.
 
 ::::{applet}
 :url: calculus/riemann_sum/riemann_sum_2d?rule=random
@@ -80,7 +80,7 @@ $$
 $$
 which use the left and the right end point of the interval, respectively.
 
-The left Rectangle rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:leftRectangle>`.
+The left Rectangle rule is depicted in {numref}`Fig:ApproximatingIntegrals:leftRectangle`.
 
 ::::{applet}
 :url: calculus/integration/simple_methods
@@ -106,7 +106,7 @@ The corresponding approximation of the integral is given by
 \int_{x_L}^{x_R} f(x)\,dx \approx \int^{x_R}_{x_L} L_1(x) \,dx = \frac{x_R - x_L}{2}(f(x_L) + f(x_R)).
 :::
 
-This approximation is called the _Trapezoidal rule_, since Equation {eq}`Eq:ApproximatingIntegrals:single_trap` equals the area of the trapezium with vertices $(x_L, 0), \; (x_R, 0),\; (x_R, f(x_R))$ and $(x_L, f(x_L))$. The Trapezoidal rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:Trapezoidal>`.
+This approximation is called the _Trapezoidal rule_, since Equation {eq}`Eq:ApproximatingIntegrals:single_trap` equals the area of the trapezium with vertices $(x_L, 0), \; (x_R, 0),\; (x_R, f(x_R))$ and $(x_L, f(x_L))$. The Trapezoidal rule is depicted in {numref}`Fig:ApproximatingIntegrals:Trapezoidal`.
 
 ::::{applet}
 :url: calculus/integration/simple_methods?rule=trapezoid
@@ -115,37 +115,6 @@ This approximation is called the _Trapezoidal rule_, since Equation {eq}`Eq:Appr
 
 An illustration of the Trapezoidal rule.
 ::::
-
-:::{admonition} Two more rules
-:class: bonus, dropdown
-
-**Midpoint rule**
-
-The Midpoint rule uses the integration point $x_M = \frac{x_L + x_R}{2}$, which leads to
-
-$$
-\int_{x_L}^{x_R} f(x)\,dx \approx (x_R - x_L)f (x_M).
-$$
-
-**Simpson's rule**
-
-Using a quadratic interpolation polynomial with interpolation nodes $x_L$, $x_M = \frac{x_L + x_R}{2}$, and $x_R$, the Simpson's rule can be derived. The integral of $f$ is approximated by
-
-$$
-\int_{x_L}^{x_R} f(x)\,dx \approx \frac{x_R - x_L}{6} (f(x_{L}) + 4 f (x_{M}) + f(x_{R})).
-$$
-
-The Simpson's rule is depicted in {numref}`Figure %s <Fig:ApproximatingIntegrals:Simpsons>`.
-
-::::{applet}
-:url: calculus/integration/simple_methods?rule=simpson
-:name: Fig:ApproximatingIntegrals:Simpsons
-:class: dark-light
-
-An illustration of the Simpson's rule.
-::::
-
-:::
 
 To summarise:
 
@@ -258,7 +227,7 @@ $$
  \int_a^b f(x)\,dx = \sum_{k=1}^n \int_{x_{k-1}}^{x_k} f(x)\,dx \approx \sum_{k=1}^n I_k = I.
 $$
 
-This is called a _composite integration rule_ and the idea is illustrated in {numref}`Figure %s <Fig:ApproximatingIntegrals:composite>`.
+This is called a _composite integration rule_ and the idea is illustrated in {numref}`Fig:ApproximatingIntegrals:composite`.
 
 ::::{applet}
 :url: calculus/riemann_sum/riemann_sum_2d?rule=left
@@ -300,29 +269,6 @@ For the Trapezoidal rule, the composite version is
 $$
  I_T = \frac{h}{2} \sum_{k=1}^n (f(x_{k-1}) + f(x_k)) = h \left( \frac{1}{2} f(a) + f(a+h) + \ldots + f(b-h) + \frac{1}{2} f(b) \right).
 $$
-
-:::{admonition} Two more composite rules
-:class: bonus, dropdown, full-width
-
-**Midpoint rule**
-
-The composite Midpoint rule is given by
-
-$$
-I_{M} = h \sum_{k=1}^n f\left(\frac{x_{k-1} + x_k}{2} \right)= h \left( f(a + \frac{1}{2}h) + f(a + \frac{3}{2}h) + \ldots + f(b - \frac{1}{2}h) \right).
-$$
-
-**Simpson's rule**
-
-The composite Simpson's rule is given by
-
-$$
-\begin{align*}
-  I_S &= \frac{h}{6} \sum_{k=1}^n \left( f(x_{k-1}) + 4 f\left( \frac{x_{k-1} + x_k}{2} \right)  + f(x_k) \right) \\
-&= h\left( \frac{1}{6} f(a) + \frac{2}{3} f(a + \frac{1}{2} h) + \frac{1}{3} f(a + h) +  \frac{2}{3} f(a + \frac{3}{2} h) +  \ldots + \frac{1}{3}f(b-h)+\frac{2}{3} f(b - \frac{1}{2} h) + \frac{1}{6} f(b) \right).
-\end{align*}
-$$
-:::
 
 Let us apply one of these composite rules methods to the example of the spoiler:
 
@@ -374,7 +320,7 @@ As this is still very far from the exact value (see {prf:ref}`Ex:ApproximatingIn
 
 Do you notice anything that happens in the last column?
 
-You can see that the error in the approximation _halves_ each time the value of $h$ _halves_. Something similar is true for each of our composite integration rules, which you can see in {numref}`Figure %s <Fig:ApproximatingIntegrals:errors>`.
+You can see that the error in the approximation _halves_ each time the value of $h$ _halves_. Something similar is true for each of our composite integration rules, which you can see in {numref}`Fig:ApproximatingIntegrals:errors`.
 
 ::::{applet}
 :url: calculus/integration/method_errors
