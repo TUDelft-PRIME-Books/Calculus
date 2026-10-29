@@ -523,16 +523,16 @@ to simplify the limit?
 [ ] $\sqrt[3]{\left(x^3-7\right)^2}+1$.
 > Hint: use $a=1$ and $b=\sqrt[3]{x^3-7}$ in the identity.
 [x] $\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1$.
-> let $a=1$ and $b=\sqrt[3]{x^3-7}$, so that the denominator of the function in the limit is $a-b$. Then we multiply both parts of the fraction by $a^2+ab+b^2=\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1$ to obtain
+> Let $a=1$ and $b=\sqrt[3]{x^3-7}$, so that the denominator of the function in the limit is $a-b$. Then we multiply both parts of the fraction by $a^2+ab+b^2=\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1$ to obtain
 
 $$
- \begin{array}{lcl}\lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}&=&\lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}\cdot\frac{\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1}{\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1}\\ &=&\lim_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{\left(\sqrt[3]{x^2-7}\right)^3-1^3}\\ &=&\lim_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^3-8}.\end{array}
+ \begin{array}{lcl}\lim\limits_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}&=&\lim\limits_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}\cdot\frac{\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1}{\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1}\\ &=&\lim\limits_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{\left(\sqrt[3]{x^2-7}\right)^3-1^3}\\ &=&\lim\limits_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^3-8}.\end{array}
 $$
 
 Now in order to evaluate the resulting limit, we note that $x^2-4=(x-2)(x+2)$ and $x^3-8=(x-2)(x^2+2x+4)$. This gives
 
 $$
- \begin{array}{lcl}\lim_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}&=&\lim_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^3-8}\\ &=&\lim_{x\rightarrow 2}\frac{\left(x+2\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^2+2x+4}\\ &=&\frac{(2+2)\left(\sqrt[3]{1}+\sqrt[3]{1}+1\right)}{12}\\&=&1. \end{array}
+ \begin{array}{lcl}\lim\limits_{x\rightarrow 2}\frac{x^2-4}{1-\sqrt[3]{x^3-7}}&=&\lim\limits_{x\rightarrow 2}\frac{\left(x^2-4\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^3-8}\\ &=&\lim\limits_{x\rightarrow 2}\frac{\left(x+2\right)\left(\sqrt[3]{\left(x^3-7\right)^2}+2\sqrt[3]{x^3-7}+1\right)}{x^2+2x+4}\\ &=&\frac{(2+2)\left(\sqrt[3]{1}+\sqrt[3]{1}+1\right)}{12}\\&=&1. \end{array}
 $$
 [ ] It is impossible to simplify this limit.
 > Hint: use $a=1$ and $b=\sqrt[3]{x^3-7}$ in the identity.

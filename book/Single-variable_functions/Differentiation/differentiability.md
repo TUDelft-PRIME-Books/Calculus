@@ -108,6 +108,8 @@ $$
 $$
 
 provided this limit exists. If the limit exists, we say that $f$ is **differentiable** in $a$.
+
+If a function $f$ is differentiable at each point in its domain, we say that $f$ is **differentiable**. 
 ::::::
 
 Alternatively, we can find the derivative of $f$ by evaluating a different limit.

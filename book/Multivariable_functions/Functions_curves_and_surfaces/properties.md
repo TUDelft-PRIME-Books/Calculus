@@ -63,7 +63,11 @@ The functions $f_1,\ldots,f_n$ are known as the **components** of the pairing $\
 ::::::
 
 :::{note}
-Since the pairing $\left\langle f_1,\ldots,f_n\right\rangle$ has codomain $\mathbb{R}^n$, it is a different type of function than what we have studied before. If $f_1,\ldots,f_n$ are functions of $n$ variables, then we call this pairing a **vector field** on $\mathbb{R}^n$. Vector fields will be studied in more detail in {numref}`Chapter:VectorCalculusIntro`.
+Since the pairing $\left\langle f_1,\ldots,f_n\right\rangle$ has codomain $\mathbb{R}^n$, it is a different type of function than what we have studied before. 
+
+If $f_1,\ldots,f_n$ are single-variable functions, then we call this pairing a **vector function** or **vector-valued funcion**. Vector functions will be studied in more detail in {numref}`Section:Curves3d`.
+
+If $f_1,\ldots,f_n$ are functions of $n$ variables, then we call this pairing a **vector field** on $\mathbb{R}^n$. Vector fields will be studied in more detail in {numref}`Chapter:VectorCalculusIntro`.
 :::
 
 Since the output of a pairing of $n$ functions is an element of $\mathbb{R}^n$, we can use this as an input for a function of $n$ variables. Specifically, if $f_1,\ldots,f_n$ are all functions of $m$ variables that are defined on some domain $D\subset\mathbb{R}^m$ and $g$ is a function of $n$ variables, then the composition

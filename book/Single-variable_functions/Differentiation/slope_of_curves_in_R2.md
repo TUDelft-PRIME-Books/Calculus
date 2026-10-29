@@ -333,10 +333,10 @@ $$
 is a tangent vector of $\mathcal{C}$ at $(x(t),y(t))$, as long as $\mathbf{r}'(t)\neq\mathbf{0}$. In that case, the vector
 
 $$
- \mathbf{T}(t)=\frac{1}{|\mathbf{r}'(t)|}\mathbf{r}'(t)=\frac{1}{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}\begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix}
+ \mathbf{T}(t)=\frac{1}{\|\mathbf{r}'(t)\|}\mathbf{r}'(t)=\frac{1}{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}\begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix}
 $$
 
-is a unit tangent vector of $\mathcal{C}$ at $(x(t),y(t))$.
+is a unit tangent vector of $\mathcal{C}$ at $(x(t),y(t))$. 
 ::::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:SlopeCurves:Tangentvector`
@@ -370,7 +370,7 @@ $$
 is a tangent vector to $\mathcal{C}$ at $(0,2)$, and that
 
 $$
- \mathbf{T}(0)=\frac{1}{|\mathbf{r}'(0)|}\mathbf{r}'(0)=\begin{pmatrix}\frac{-5}{\sqrt{26}}\\ \frac{1}{\sqrt{26}}\end{pmatrix}
+ \mathbf{T}(0)=\frac{1}{\|\mathbf{r}'(0)\|}\mathbf{r}'(0)=\begin{pmatrix}\frac{-5}{\sqrt{26}}\\ \frac{1}{\sqrt{26}}\end{pmatrix}
 $$
 
 is a unit tangent vector.
