@@ -391,7 +391,7 @@ Let us compare the Backward Euler approximation of this problem with the Forward
 The numerical approximation of Equation {eq}`Eq:ApproximatingSolutions:EX2` using the Forward and Backward Euler methods with $\Delta t=8$ (initially) visualised together with the slope field.
 :::
 
-The overall shape of the Backward Euler method compared to the Forward Euler method follows the slope field better. However, near $t=0$ it is still deviating from the expected behaviour. This numerical approximation will not resemble the exact solution either, so let us see what happens when $\Delta t=4$. Change the slider in {numref}`Fig:ApproximatingSolutions:Euler8-B` to see the results for $\Delta t=4$.\
+The overall shape of the Backward Euler method compared to the Forward Euler method follows the slope field better. However, near $t=0$ it is still deviating from the expected behaviour. This numerical approximation will not resemble the exact solution either, so let us see what happens when $\Delta t=4$. Change the slider in {numref}`Fig:ApproximatingSolutions:Euler8-B` to see the results for $\Delta t=4$.
 
 While the Forward Euler approximation somewhat improved, the Backward Euler approximation, while smoother, seems to still deviate near $t=0$. So let us try two more times, once with $\Delta t=2$ and a final time with $\Delta t=1$, see {numref}`Fig:ApproximatingSolutions:Euler8-B` and use the slider twice more. 
 
