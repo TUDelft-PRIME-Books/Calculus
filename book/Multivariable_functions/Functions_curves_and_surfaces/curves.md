@@ -104,9 +104,53 @@ $$
 is a parametrisation of $\mathcal{L}$, which means that $\mathcal{L}$ is a space curve.
 ::::::
 
+::::::{prf:example} 
+:label: Ex:Curves3d:IntersectionSurface
+Consider the cylinder $S$ in $\mathbb{R}^3$ given by the equation
+
+$$
+ x^2+z^2=9.
+$$
+
+This is a cylinder of radius $2$ of which the axis is the $y$-axis. In addition, we consider the plane $P$ give by the equation
+
+$$
+ 2x+3y+4z=3.
+$$
+
+The intersection $\mathcal{C}$ of $S$ and $P$ is a curve in $\mathbb{R}^3$ so we let us try to find a parametrisation of $\mathcal{C}$. Inspired by the standard parametrisation for a circle (see {prf:ref}`Thm:Curves:EllipseParam`) we choose
+
+$$
+ x(t)=3\cos(t),\qquad z(t)=3\sin(t)
+$$
+
+for $0\leq t\leq 2\pi$. This way, we have 
+
+$$
+ \left(x(t)\right)^2+\left(z(t)\right)^2=9
+$$
+
+for $0\leq t\leq 2\pi$, so now matter what we choose as $y(t)$, the curve will lie on the cylinder $S$. In order to ensure that it also lies on the plane $P$, we plug in our chosen expressions for $x(t)$ and $y(t)$ to obtain
+
+$$
+ 6\cos(t)+3y+12\sin(t)=3.
+$$
+
+We can then solve for $y$ to find
+
+$$
+ y=1-2\cos(t)-4\sin(t).
+$$
+
+As such, we find that $\mathbf{r}(t)=\begin{pmatrix}3\cos(t)\\ 1-2\cos(t)-4\sin(t)\\ 3\sin(t)\end{pmatrix}$ for $0\leq t\leq 2\pi$ is a parametristion of the curve of intersection $\mathcal{C}$. Of course, there are many other parametrisations possible for this curve.
+
+:::{todo}
+Include an applet showing $S$, $P$ and $\mathcal{C}$, preferable with a slider (or something) moving $t$ along the curve.
+::::::
 
 
-## Limits, continuity, derivatives and integrals
+
+## Vector functions
 
 An essential component of the parametrisation of a curve is the vector function $\mathbf{r}(t)$, so it is important to see what we can do with these functions. Although the focus of this section is mostly on curves in $\mathbb{R}^3$, it takes little effort to study vector function is the more general setting where these functions have $n$ components. Since the component functions of $\mathbf{r}$ are single-variable functions, we know how concepts like limits, derivatives and integrals work for these component functions. In this subsection, we extend these concepts to vector functions. As usual, we start with limits.
 
@@ -243,7 +287,214 @@ $$
 $$
 :::
 
-For curves in $\mathbb{R}^2$ or $\mathbb{R}^3$ we can obtain the geometric interpretation of the vector $\mathbb{r}'(t)$ by visualising it. Consider a curve $\mathcal{C}$ in $\mathbb{R}^2$ with parametrisation $\begin{pmatrix} x\\ y\end{pmatrix}=\mathbf{r}(t)$ for $t\in I$ and suppose that $\mathbf{r}$ is differentiable. Let $P$ be the point $\mathbf{r}(t)$ and $Q$ the point $\mathbf{r}(t+h)$. Then the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ represents the vector from $P$ to $Q$. As $h$ goes to $0$, the point $Q$ moves towards $P$ so that the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ decreases in length. The vector $\dfrac{1}{h}\left(\mathbf{r}(t+h)-\mathbf{r}(t)\right)$ points in the same direction as the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$, but for $0<h<1$ the length increases again. By inspecting {numref}`Fig:Tangentvector` we see that the vector $\mathbf{r}'(t)$ appears to be tangent to the curve. This leads to the following definition.
+If the vector function $\mathbf{r}(t)$ represent the **position** of some particle, then the derivative $\mathbf{r}'(t)$ represent its **velocity**. Indeed, we should think of velocity as a vector-valued quantity as it has both a direction and a magnitude (the magnitude of the velocity is typically called the **speed**). 
+
+Just like for derivatives of single-variable functions, there are several computation rules for finding derivatives of vector functions. These usually follow from their single-variable equivalents. The most important ones are listed in the theorem below.
+
+::::::{prf:theorem} 
+:label: Thm:Curves3d:Basiccomputationrules
+Let $\mathbf{r}:D\rightarrow\mathbb{R}^n$ and $\mathbf{r}:D\rightarrow\mathbb{R}^n$ with $D\subset\mathbb{R}$ be vector functions. Let $a\in I$ and assume that $\mathbf{r}$ and $\mathbf{s}$ are differentiable at $a$. 
+
+- $(\mathbf{r}+\mathbf{s})$ is differentiable at $a$ and we have $(\mathbf{r}+\mathbf{s})'(a)=\mathbf{r}'(a)+\mathbf{s}'(a)$. (sum rule)
+- If $c\in\mathbb{R}$, then $c\mathbf{r}$ is differentiable at $a$ and we have $(c\mathbf{r})'(a)=c\mathbf{r}'(a)$. (scalar multiple rule)
+- If $f$ is a single-variable function that is differentiable at $a$ then $(f\mathbf{r})(t)=f(t)\mathbf{r}(t)$ is differentiable at $a$ and we have $(f\mathbf{r})'(a)=f'(a)\mathbf{r}(a)+f(a)\mathbf{r}'(a)$. (product rule)
+- If $g$ is a single variable function and $b$ is in the domain of $g$ in such a way that $g(b)=a$ and $g$ is differentiable at $b$, then $\mathbf{r}\circ g$ is differentiable at $b$ and we have $(\mathbf{r}\circ g)'(b)=g'(b)\mathbf{r}'(a)$. (chain rule)
+- $\mathbf{r}\cdot\mathbf{s}$ is differentiable at $a$ and we have $(\mathbf{r}\cdot\mathbf{s})(a)=\mathbf{r}'(a)\cdot \mathbf{s}(a)+\mathbf{r}(a)\cdot \mathbf{s}'(a)$. (dot product rule)
+- If the codomain of $\mathbf{r}$ and $\mathbf{s}$ is $\mathbb{R}^3$ then $\mathbf{r}\times\mathbf{s}$ is differentialbe at $a$ and we have $\left(\mathbf{r}\times\mathbf{s}\right)(a)=\mathbf{r}'(a)\times\mathbf{s}(a)+\mathbf{r}(a)\times \mathbf{s}'(a)$. (cross product rule)
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves3d:Basiccomputationrules`
+:class: tudproof, dropdown
+**Proof of sum rule**. This follows directly from {prf:ref}`Thm:Curves3d:Diff` and {prf:ref}`Thm:Differentiability:Sumscalar`.
+
+**Proof of scalar multiple rule**. This follows directly from {prf:ref}`Thm:Curves3d:Diff` and {prf:ref}`Thm:Differentiability:Sumscalar`.
+
+**Proof of product rule**.  This follows directly from {prf:ref}`Thm:Curves3d:Diff` and {prf:ref}`Thm:Productquotientrule:Productrule`
+
+**Proof of chain rule**. We write $\mathbf{r}(t)=\begin{pmatrix}x_1(t)\\ \vdots\\ x_n(t)\end{pmatrix}$. Then we have $\left(\mathbf{r}\circ g\right)(t)=\begin{pmatrix}x_1(g(t))\\ \vdots\\ x_n(g(t))\end{pmatrix}$. By {prf:ref}`Thm:Curves3d:Diff` the functions $x_1,\ldots,x_n$ are all differentiable at $a$. So by {prf:ref}`Thm:Chainrule:Chainrule` the functions $(x_1\circ g),\ldots, (x_n\circ g)$ are all differentiable at $b$ and we have for all $1\leq k\leq n$
+
+$$
+ (x_k\circ g)'(b)=g'(b)x_k(g(b))=g'(b)x_k(a).
+$$
+
+Then by {prf:ref}`Thm:Curves3d:Diff` the composition $\mathbf{r}\circ g$ is differentiable at $b$ and we have
+
+$$
+ (\mathbf{r}\circ g)'(b)=\begin{pmatrix}g'(b)x_1'(a)\\ \vdots \\ g'(b)x_n'(a) \end{pmatrix}=g'(b)\mathbf{r}'(a).
+$$
+
+**Proof of dot product rule**. We write $\mathbf{r}(t)=\begin{pmatrix}x_1(t)\\ \vdots\\ x_n(t)\end{pmatrix}$ and $\mathbf{s}(t)=\begin{pmatrix}y_1(t)\\ \vdots\\ y_n(t)\end{pmatrix}$. Then we have
+
+$$
+ \mathbf{r}(t)\cdot \mathbf{s}(t)=\sum_{k=1}^n x_k(t)y_k(t).
+$$
+
+By {prf:ref}`Thm:Curves3d:Diff` the functions $x_1,\ldots,x_n,y_1,\ldots,y_n$ are all differentiable at $a$. So by {prf:ref}`Thm:Differentiability:Sumscalar` and {prf:ref}`Thm:Productquotientrule:Productrule` the dot product $\mathbf{r}\cdot \mathbf{s}$ is also differentiable at $a$ and we obtain
+
+\begin{align*}
+ (\mathbf{r}\cdot\mathbf{s})(a)&=\sum_{k=1}^n \left(x_k'(a)y_k(a)+x_k(a)y_k'(a)\right)\\ &=\sum_{k=1}^n x_k'(a)y_k(a)+\sum_{k=1}^nx_k(a)y_k'(a)\\ &=\mathbf{r}'(a)\cdot \mathbf{s}(a)+\mathbf{r}(a)\cdot \mathbf{s}'(a).
+$$
+
+**Proof of cross product rule**. We write $\mathbf{r}(t)=\begin{pmatrix}x_1(t)\\ x_2(t)\\ x_3(t)\end{pmatrix}$ and $\mathbf{s}(t)=\begin{pmatrix}y_1(t)\\ y_2(t)\\ y_3(t)\end{pmatrix}$. Then we have
+
+$$
+ (\mathbf{r}\times\mathbf{s})(t)=\begin{pmatrix}x_2(t)y_3(t)-x_3(t)y_2(t)\\ x_3(t)y_1(t)-x_1(t)y_3(t)\\ x_1(t)y_2(t)-x_2(t)y_1(t)\end{pmatrix}.
+$$
+
+By {prf:ref}`Thm:Curves3d:Diff` the functions $x_1,x_2,x_3,y_1,y_2,y_3$ are all differentiable at $a$. So by {prf:ref}`Thm:Differentiability:Sumscalar` and {prf:ref}`Thm:Productquotientrule:Productrule` the cross product $\mathbf{r}\times \mathbf{s}$ is also differentiable at $a$ and we obtain
+
+\begin{align*}
+ (\mathbf{r}\times\mathbf{s})'(a)&=\begin{pmatrix}x_2'(a)y_3(a)+x_2(a)y_3'(a)-x_3'(a)y_2(a)-x_3(a)y_2'(a)\\ x_3'(a)y_1(a)+x_3(a)y_1'(a)-x_1'(a)y_3(a)-x_1(a)y_3'(a)\\ x_1'(a)y_2(a)+x_1(a)y_2'(a)-x_2'(a)y_1(a)-x_2(a)y_1'(a)\end{pmatrix}\\
+ &=\begin{pmatrix}x_2'(a)y_3(a)-x_3'(a)y_2(a)\\ x_3'(a)y_1(a)-x_1'(a)y_3(a)\\ x_1'(a)y_2(a)-x_2'(a)y_1(a)\end{pmatrix}+\begin{pmatrix}x_2(a)y_3'(a)-x_3(a)y_2'(a)\\ x_3(a)y_1'(a)-x_1(a)y_3'(a)\\ x_1(a)y_2'(a)-x_2(a)y_1'(a)\end{pmatrix}\\
+ &=\mathbf{r}'(a)\times\mathbf{s}(a)+\mathbf{r}(a)\times \mathbf{s}'(a)
+\end{align*}
+:::
+
+As a consequence of the dot product rule, we can also find an expression for the derivative of the norm of a vector function.
+
+::::::{prf:theorem} 
+:label: Thm:Curves3d:Normvector
+Let $\mathbf{r}:D\rightarrow\mathbb{R}^n$ with $D\subset\mathbb{R}$ be a differentiable vector function. Then the function $\left|\mathbf{r}(t)\right|^2$ is differentiable and we find
+
+$$
+ \frac{d}{dt}\left|\mathbf{r}(t)\right|^2=2\mathbf{r}(t)\cdot \mathbf{r}'(t).
+$$
+
+In addition, if $\mathbf{r}(t)\neq\mathbf{0}$ we have
+
+$$
+ \frac{d}{dt}\left|\mathbf{r}(t)\right|=\frac{\mathbf{r}(t)\cdot \mathbf{r}'(t)}{|\mathbf{r}(t)|}.
+$$
+
+As a consequence, if $\left|\mathbf{r}(t)\right|$ is constant on $D$, then the vectors $\mathbf{r}(t)$ and $\mathbf{r}'(t)$ are orthogonal for each $t\in D$.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves3d:Normvector`
+:class: tudproof, dropdown
+We note that
+
+$$
+ \left|\mathbf{r}(t)\right|^2=\mathbf{r}(t)\cdot \mathbf{r}(t).
+$$
+
+So by the dot product rule from {prf:ref}`Thm:Curves3d:Basiccomputationrules` we find
+
+$$
+ \frac{d}{dt}\left|\mathbf{r}(t)\right|^2=\mathbf{r}'(t)\cdot\mathbf{r}(t)+\mathbf{r}(t)\cdot\mathbf{r}'(t)=2\mathbf{r}(t)\cdot \mathbf{r}'(t).
+$$
+
+If $\mathbf{r}(t)\neq \mathbf{0}$ we find using the chain rule
+
+\begin{align*}
+ \dfrac{d}{dt}\left|\mathbf{r}(t)\right|&=\dfrac{d}{dt}\sqrt{\left|\mathbf{r}(t)\right|^2}\\
+ &=\dfrac{1}{2\sqrt{\left|\mathbf{r}(t)\right|^2}}\frac{d}{dt}\left(\left|\mathbf{r}(t)\right|^2\right)\\
+ &=\dfrac{1}{2\left|\mathbf{r}(t)\right|}2\left(\mathbf{r}(t)\cdot \mathbf{r}'(t)\right)\\
+ &=\dfrac{\mathbf{r}(t)\cdot \mathbf{r}'(t)}{|\mathbf{r}(t)|}
+\end{align*}
+
+If $\left|\mathbf{r}(t)\right|$ is constant on $D$, then its derivative must be $0$ for each $t\in D$. We then obtain $\mathbf{r}(t)\cdot \mathbf{r}'(t)=0$, which means that the vectors $\mathbf{r}(t)$ and $\mathbf{r}'(t)$ are orthogonal.
+:::
+
+It is also useful to consider higher order derivatives. For instance, if $\mathbf{r}(t)$ represent the position vector of some particle, then its second derivative $\mathbf{r}''(t)$ represents the **acceleration**. For instance, Newton's second law $\mathbf{F}=m\mathbf{a}$ can be represented as $\mathbf{F}=m\mathbf{r}''$. The second derivative will also play an important role later when computing the curvature of a space curve.
+
+::::::{prf:definition} 
+:label: Def:Curves3d:HigherDiff
+Let $\mathbf{r}:D\rightarrow\mathbb{R}^n$ with $D\subset \mathbb{R}$ be a vector function and let $a$ be a point in the domain of $\mathbf{r}$ such that $\mathbf{r}$ is differentiable at $a$. If $\mathbf{r}'$ is differentiable at $a$, then its derivative $(\mathbf{r}')'(a)$ is called the **second derivative** of $\mathbf{r}$ at $a$ and is denoted by $\mathbf{r}''(a)$. If the second derivative of $\mathbf{r}$ exists at each point in its domain, we say that $\mathbf{r}$ is **twice differentiable** and we call the vector function $\mathbf{r}''$ the **second derivative** of $\mathbf{r}$.
+
+In general, if $n>0$ is a nonzero natuarly number, then the **$n$th derivative** of $\mathbf{r}$ at $a$ is the derivative of the $(n-1)$th derivative of $\mathbf{r}$ at $a$, provided it exists, and is denoted by $\mathbf{r}^{(n)}(a)$. If the $n$th derivative of $\mathbf{r}$ exists at each point in its domain, we say that $\mathbf{r}$ is **$n$ times differentiable** and we call the vector function $\mathbf{r}^{(n)}$ the **$n$th derivative** of $\mathbf{r}$.
+::::::
+
+
+
+::::::{prf:example} 
+:label: Ex:Curves3d:Deriv
+For the vector function
+
+$$
+ \mathbf{r}(t)=\begin{pmatrix}t^3\\ \cos(2t)\\ e^{-t}\end{pmatrix},
+$$
+
+we find the derivative by differentiating each of the component functions. We obtain
+
+$$
+ \mathbf{r}'(t)=\begin{pmatrix}3t^2\\ -2\sin(2t)\\ -e^{-t}\end{pmatrix}.
+$$
+
+This vector function is differentiable again, and we find
+
+$$
+ \mathbf{r}''(t)=\begin{pmatrix}6t\\ -4\cos(2t)\\ e^{-t}\end{pmatrix}.
+$$
+::::::
+
+
+
+So far, we have defined introduced limits, continuity and derivatives by lifting the single-variable definitions to the vector function setting and then we showed that we can evaluate them component-wise. For (definite) integrals, there is no nice way to lift {prf:ref}`Def:Integration:DefiniteGeneral` to the vector setting. Instead, we will define the integral of a vector function component-wise.
+
+::::::{prf:definition} 
+:label: Def:Curves3d:Integral
+Let $\mathbf{r}:[a,b]\rightarrow\mathbb{R}^n$ be a vector function. We write $\mathbf{r}(t)=\begin{pmatrix}x_1(t)\\ \vdots\\ x_n(t)\end{pmatrix}$ and assume that $x_1,\ldots,x_n$ are piecewise-continuous and bounded on $[a,b]$. Then the **definite integral** $\displaystyle \int_a^b\mathbf{r}(t)\,dt$ of $\mathbf{r}$ is defined as
+
+$$
+ \int_a^b\mathbf{r}(t)\,dt =\begin{pmatrix}\int\limits_a^b x_1(t)\,dt\\ \vdots \\ \int\limits_a^b x_n(t)\,dt\end{pmatrix}.
+$$
+::::::
+
+We can evaluate definite integrals of a vector function the same way as we would for a single-variable function: by finding an antiderivative and by using the fundamental theorem of calculus.
+
+::::::{prf:definition} 
+:label: Def:Curves3d:Antiderivative
+Let $\mathbf{r}:D\rightarrow\mathbb{R}^n$ with $D\subset \mathbb{R}$ be a vector function. A vector function $\mathbf{R}$ is known as an **antiderivative** of $\mathbf{r}$ on $D$ if it is differentiable and $\mathbf{R}'(t)=\mathbf{r}(t)$ for all $t\in D$.
+::::::
+
+::::::{prf:theorem} 
+:label: Thm:Curves3d:FundamentalTheorem
+Let $\mathbf{r}:[a,b]\rightarrow\mathbb{R}^n$ be a continuous vector function. Then the vector function
+
+$$
+ \mathbf{R}(t)=\int_a^t \mathbf{r}(s)\,ds
+$$
+
+is an antiderivative of $\mathbf{r}$.
+
+In addition, if $\mathbf{S}$ is any antiderivative of $\mathbf{r}$ on $[a,b]$ then we have
+
+$$
+ \int_a^b\mathbf{r}(t)\,dt=\mathbf{S}(b)-\mathbf{S}(a).
+$$
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves3d:FundamentalTheorem`
+:class: tudproof, dropdown
+Since integration is defined component-wise, these results follow directly from {prf:ref}`Thm:Integration:FundamentalTheoremPart1` and {prf:ref}`Thm:Integration:FundamentalTheoremPart2`.
+:::
+
+::::::{prf:example} 
+:label: Ex:Curves3d:Int
+We again consider the vector function
+
+$$
+ \mathbf{r}(t)=\begin{pmatrix}t^3\\ \cos(2t)\\ e^{-t}\end{pmatrix}
+$$
+
+from {prf:ref}`Ex:Curves3d:Deriv`. By integrating the three component functions, we see that the vector function
+
+$$
+ \mathbf{R}(t)=\begin{pmatrix}\int t^3\,dt\\ \int\cos(2t)\,dt\\ \int e^{-t}\,dt\end{pmatrix}=\begin{pmatrix}\frac{1}{4}t^4\\ \frac{1}{2}\sin(2t)\\ -e^{-t}\end{pmatrix}
+$$
+
+is an antiderivative of $\mathbf{r}$. As such, we can evaluate the definite integral
+
+$$
+ \int_0^{1}\mathbf{r}(t)\,dt=\mathbf{R}(1)-\mathbf{R}(0)=\begin{pmatrix}\frac{1}{4}\\ \frac{1}{2}\sin(2)\\ -e^{-1}\end{pmatrix}-\begin{pmatrix}0\\ 0\\ -1\end{pmatrix}=\begin{pmatrix}\frac{1}{4}\\ \frac{1}{2}\sin(2)\\ 1-e^{-1}\end{pmatrix}.
+$$
+
+::::::
+
+## Orientation and smoothness of curves
+
+
+For curves in $\mathbb{R}^2$ or $\mathbb{R}^3$ we can obtain a geometric interpretation of the vector $\mathbb{r}'(t)$ by visualising it. Consider a curve $\mathcal{C}$ in $\mathbb{R}^2$ with parametrisation $\begin{pmatrix} x\\ y\end{pmatrix}=\mathbf{r}(t)$ for $t\in I$ and suppose that $\mathbf{r}$ is differentiable. Let $P$ be the point $\mathbf{r}(t)$ and $Q$ the point $\mathbf{r}(t+h)$. Then the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ represents the vector from $P$ to $Q$. As $h$ goes to $0$, the point $Q$ moves towards $P$ so that the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ decreases in length. The vector $\dfrac{1}{h}\left(\mathbf{r}(t+h)-\mathbf{r}(t)\right)$ points in the same direction as the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$, but for $0<h<1$ the length increases again. By inspecting {numref}`Fig:Tangentvector` we see that the vector $\mathbf{r}'(t)$ appears to be tangent to the curve. This leads to the following definition.
 
 :::{figure} images/Fig-Curves3d-Tangentvector2d.png
 :name: Fig:Tangentvector
@@ -298,4 +549,22 @@ $$
 for $t\in\mathbb{R}$.
 ::::::
 
-Moet nog: rekenregels, hogere orde afgeleiden, interpretatie als velocity, integralen
+::::::{prf:example} 
+:label: Ex:Curves3d:Spheretang
+
+Consider any space curve $\mathcal{C}$ with a differentiable parametrisation $\mathbf{r}(t)$ for $t\in I$ that lies on the sphere
+
+$$
+ x^2+y^2+z^2=R^2.
+$$
+
+Then for any $t\in I$ we have that $\mathbf{r}(t)$ lies on this sphere, so we find $\left|\mathbf{r}(t)\right|=R$. From {prf:ref}`Thm:Curves3d:Normvector` we find that the tangent vector $\mathbf{r}'(t)$ must be orthogonal to the position vector $\mathbf{r}(t)$. This can also be seen in {numref}`Fig:Tangentsphere`.
+
+
+:::{todo}
+Make an applet which shows a curve on a sphere, with a position vector $\mathbf{r}(t)$ and the corresponding tangent vector $\mathbf{r}'(t)$. The applet should have label Fig:Tangentsphere (or change the references).
+:::
+::::::
+
+
+Moet nog: voorbeeld met snijden van twee oppervlakken (meer in 8.4), (piecewise) smoothness
