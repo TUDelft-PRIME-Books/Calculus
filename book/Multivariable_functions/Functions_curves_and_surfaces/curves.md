@@ -350,6 +350,10 @@ By {prf:ref}`Thm:Curves3d:Diff` the functions $x_1,x_2,x_3,y_1,y_2,y_3$ are all 
 \end{align*}
 :::
 
+:::{note}
+The three rules called the product rule, dot product rule and cross product rule all resemble the product rule for single-variable functions ({prf:ref}`Thm:Productquotientrule:Productrule`). It is important to note that for the cross product rule, the vector functions $\mathbf{r}\times \mathbf{s}$ and $\mathbf{s}\times \mathbf{r}$ are, typically, not the same, so their derivatives are different as well. Similarly, we also have to pay attention to the order of the terms in the derivative.
+:::
+
 As a consequence of the dot product rule, we can also find an expression for the derivative of the norm of a vector function.
 
 ::::::{prf:theorem} 
@@ -489,9 +493,17 @@ $$
  \int_0^{1}\mathbf{r}(t)\,dt=\mathbf{R}(1)-\mathbf{R}(0)=\begin{pmatrix}\frac{1}{4}\\ \frac{1}{2}\sin(2)\\ -e^{-1}\end{pmatrix}-\begin{pmatrix}0\\ 0\\ -1\end{pmatrix}=\begin{pmatrix}\frac{1}{4}\\ \frac{1}{2}\sin(2)\\ 1-e^{-1}\end{pmatrix}.
 $$
 
+The indefinite integral of $\mathbf{r}$ takes the form
+
+$$
+ \int\mathbf{r}(t)\,dt=\mathbf{R}(t)+\mathbf{C},
+$$
+
+where $\mathbf{C}$ is a vector of integration constants, i.e. $\mathbf{C}=\begin{pmatrix} C_1\\ C_2\\ C_3\end{pmatrix}$.
+
 ::::::
 
-## Orientation and smoothness of curves
+## Smoothness and orientation
 
 
 For curves in $\mathbb{R}^2$ or $\mathbb{R}^3$ we can obtain a geometric interpretation of the vector $\mathbb{r}'(t)$ by visualising it. Consider a curve $\mathcal{C}$ in $\mathbb{R}^2$ with parametrisation $\begin{pmatrix} x\\ y\end{pmatrix}=\mathbf{r}(t)$ for $t\in I$ and suppose that $\mathbf{r}$ is differentiable. Let $P$ be the point $\mathbf{r}(t)$ and $Q$ the point $\mathbf{r}(t+h)$. Then the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ represents the vector from $P$ to $Q$. As $h$ goes to $0$, the point $Q$ moves towards $P$ so that the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ decreases in length. The vector $\dfrac{1}{h}\left(\mathbf{r}(t+h)-\mathbf{r}(t)\right)$ points in the same direction as the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$, but for $0<h<1$ the length increases again. By inspecting {numref}`Fig:Tangentvector` we see that the vector $\mathbf{r}'(t)$ appears to be tangent to the curve. This leads to the following definition.
@@ -516,7 +528,7 @@ $$
 $$
 ::::::
 
-
+If we imagine a particle following a curve $\mathcal{C}$ defined by the position vector $\mathbf{r}(t)$ then we can think of the tangent vector $\mathbf{r}'(t_0)$ at a certain point $t_0$ in time as the **direction** in which the particle will move next. We will make the concept of a direction more rigorous later on.
 
 
 ::::::{prf:example} 
@@ -566,5 +578,129 @@ Make an applet which shows a curve on a sphere, with a position vector $\mathbf{
 :::
 ::::::
 
+If we want to able to define a (unit) tangent vector at each point of a curve dfeined by the position vector $\mathbf{r}(t)$, the derivative $\mathbf{r}'(t)$ should be nonzero for all relevant values of $t$. This is such an important property that it warrants its own definition.
 
-Moet nog: voorbeeld met snijden van twee oppervlakken (meer in 8.4), (piecewise) smoothness
+
+::::::{prf:definition} 
+:label: Def:Curves3d:Smooth
+Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ parametrised by a differentiable vector function $\mathbf{r}(t)$ for $t\in I$. The paramteric curve $\mathcal{C}$ is **smooth** when $\mathbf{r}'$ is continuous and $\mathbf{r}'(t)\neq\mathbf{0}$ for all $t\in I$.
+
+::::::
+
+:::{note}
+The smoothness of a parametric curve is inherently linked to the parametrisation that is used. As such, some curves have both smooth and non-smooth parametrisations, see {prf:ref}`Ex:Curves3d:Smooth`.
+:::
+
+:::{note}
+In {prf:ref}`Def:Differentiability:Higherorderderivative` we defined smoothness for a single-variable function. Though the same word is used, the definitions are rather different. For a smooth single-variable function, it is allowed for the derivative to be $0$. For a smooth parametric curve, it is allowed for the second derivative to not exist. 
+:::
+
+::::::{prf:example} 
+:label: Ex:Curves3d:Smooth
+Consider the planar curve $\mathcal{C}$ with parametrisation
+
+$$
+ \mathbf{r}(t)=\begin{pmatrix} t^3\\ t^6\end{pmatrix}
+$$
+   
+for $-1\leq t\leq 0$, 
+
+$$
+ \mathbf{r}(t)=\begin{pmatrix} 0 \\ 0\end{pmatrix}
+$$
+
+for $0<t<1$ and 
+
+$$
+ \mathbf{r}(t)=\begin{pmatrix} (t-1)^3\\ (t-1)^6\end{pmatrix}
+$$
+
+for $1\leq t\leq 2$. Then the vector function $\mathbf{r}$ is differentiable and $\mathbf{r}'$ is continuous. Since $\mathbf{r}'(t)=\mathbf{0}$ for $0\leq t\leq 1$, the curve $\mathcal{C}$ with this parametrisation is not smooth.
+
+Note that for each point on the curve we have $(x(t))^2=y(t)$. So the curve is part of the parabola $y=x^2$. As such, a different parametrisation for the same curve would be
+
+$$
+ \mathbf{s}(t)=\begin{pmatrix} t\\ t^2\end{pmatrix}
+$$
+
+for $-1\leq t\leq 1$. Since $\mathbf{s}'$ is continuous and $\mathbf{s}'(t)\neq \mathbf{0}$ for $-1\leq t\leq 1$ the curve is smooth with this parametrisation.
+
+The reason why this first parametrisation is not smooth is that if we imagine a particle follows the trajectory prescribed by the position vector $\mathbf{r}(t)$, the particle will rest at the origin for $0\leq t\leq 1$. Since it does not move, it has no direction in which it will go next, so it has no meaningfully defined direction vector. Using the second parametristion, on the other hand, the particle will only be at the origin at $t=0$, which means that it has a meaningful direction.
+::::::
+
+
+::::::{prf:example} 
+:label: Ex:Curves3d:Sharp
+Some curves are not smooth, irrespectively of which parametrisation is chosen. Let $\mathcal{C}$ be the planar curve that is the part of the graph of the function $y=|x|$ for $-1\leq x\leq 1$. Consider any parametrisation $\mathbf{r}(t)=\begin{pmatrix} x(t)\\ y(t)\end{pmatrix}$ for $a\leq t\leq b$ and suppose that this parametrisation is smooth. Since this curve is the graph of $y=|x|$ we must have $x(t)=y(t)$ when $x(t)\geq 0$ and $x(t)=-y(t)$ when $x(t)<0$. We choose $t_0$ in such a way that $\mathbf{r}(t_0)=\begin{pmatrix}0\\ 0\end{pmatrix}$. Since we assumed that the paramtrisation is smooth, we have $\mathbf{r}'(t_0)\neq \mathbf{0}$, so at least one of the two derivatives $x'(t_0)$ and $y'(t_0)$ must be nonzero. Since $x'$ and $y'$ are continuous, the derivative which is nonzero at $t_0$ must be nonzero for $t$ in an open interval $(t_0-\delta,t_0+\delta)$. On this interval, the corresponding function $x(t)$ or $y(t)$ must be strictly monotonic, i.e. either strictly increasing or strictly decreasing. Since $y(t)\geq 0$ for all $t$ and $y(t_0)=0$, $t_0$ must be a local minimum of $y$, so $y$ cannot be strictly monotonic. Hence, $x(t)$ must be strictly monotonic on $(t_0-\delta,t_0+\delta)$.
+
+We now suppose that $x(t)$ is strictly increasing on $(t_0-\delta,t_0+\delta)$. Then for $t<t_0$ we have $x(t)<0$. Since for these values of $t$ we have $y(t)=-x(t)$, $\mathbf{r}'(t)$ must be a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$. Since $\mathbf{r'}$ is continuous, $\mathbf{r}'(t_0)$ must be a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$ as well. For $t>t_0$, we have $x(t)>0$, so then we have $y(t)=x(t)$. This means that $\mathbf{r}'(t)$ must be a constant multiple of $\begin{pmatrix}1\\ 1\end{pmatrix}$. By continuity, $\mathbf{r}'(t_0)$ is a constant multiple of $\begin{pmatrix}1\\ 1\end{pmatrix}$. The only vector that is both a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$ and of $\begin{pmatrix}1\\ 1\end{pmatrix}$ is the zero vector, so $\mathbf{r}'(t_0)=\mathbf{0}$, which gives a contradiction since we assumed that the parametristion is smooth. A similar argument holds when $x(t)$ is strictly decreasing.
+
+Intuitively, it makes sense that this curve does not have a smooth parametrisation: it has a sharp corner at the origin, so there is no way to smoothly follow the curve without suddenly changing direction.
+
+:::{todo}
+Make an applet showing this curve.
+:::
+
+::::::
+
+For many curves that we encounter in practice, there are only finitely many points where the parameristation is not differentiable, or where the derivative is either $\mathbf{0}$ or not continuous. Such a curve can be split up into curves that are smooth. Let us properly define these curves.
+
+::::::{prf:definition} 
+:label: Def:Curves3d:Smooth
+Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ parametrised by a continuous vector function $\mathbf{r}(t)$ for $t\in I$. The paramteric curve $\mathcal{C}$ is **piecewise smooth** if there exists a finite set $S$ such that $\mathbf{r}$ is differentiable on $I\setminus S$,  $\mathbf{r}'$ is continuous on $I\setminus S$ and $\mathbf{r}'(t)\neq\mathbf{0}$ for all $t\in I\setminus S$.
+
+::::::
+
+
+::::::{prf:theorem} 
+:label: Thm:Curves3d:SmoothPiecewise
+Let $\mathcal{C}$ be a curve. Suppose that $\mathcal{C}$ can be written as $\mathcal{C}=\mathcal{C}_1\cup\mathcal{C}_2\cup\ldots\cup\mathcal{C}_n$, where each $\mathcal{C}_i$ is a curve with a smooth parametrisation $\mathbf{r}_i(t)$ for $a_i\leq t\leq b_i$ in such a way that $\mathbf{r}_i(b_i)=\mathbf{r}_{i+1}(a_i)$ for $1\leq i\leq n-1$, i.e. the end point of $\mathcal{C}_i$ is the start point of $\mathcal{C}_{i+1}$. Then $\mathcal{C}$ has a piecewise smooth parametristion.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves3d:SmoothPiecewise`
+:class: tudproof, dropdown
+We let $s_1=a_1$ and for $2\leq i\leq n$ we recursively define 
+
+$$
+ s_i=s_{i-1}+(b_{i-1}-a_{i-1}).
+$$
+
+Then we defined the parametrisation $\mathbf{r}(t)$ for $s_1\leq t\leq s_n+(b_n-a_n)$ 
+
+$$
+ \mathbf{r}(t)=\mathbf{r}_i(t-s_i),\qquad\text{when}\ s_i\leq t\leq s_{i+1}.
+$$
+
+By construction this vector function is continuous at each point $s_i$, since the end point of the curve $\mathcal{C}_{i-1}$ is the start point of the curve $\mathcal{C}_i$. At all other values of $t$, the parametrisation is differentiable, the derivative is continuous and $\mathbf{r}'(t)\neq\mathbf{0}$, which means that $\mathbf{r}$ is a piecewise smooth parametrisation of $\mathcal{C}$.
+:::
+
+:::{figure} images/Fig-Curves3d-PiecewiseSmooth.png
+:name: Fig:PiecewiseSmooth
+:class: dark-light
+
+
+:::
+
+:::{todo}
+Turn {numref}`Fig:PiecewiseSmooth` into an applet.
+:::
+
+
+
+::::::{prf:example} 
+:label: Ex:Curves3d:SharpPiecewise
+We again consider the curve from {prf:ref}`Ex:Curves3d:Sharp` that is part of the graph of the function $y=|x|$ for $-1\leq x\leq 1$. We consider the parametrisation
+
+$$
+ \mathbf{r}(t)=\begin{pmatrix}t\\ |t|\end{pmatrix}
+$$
+
+for $-1\leq t\leq 1$. The vector function $\mathbf{r}$ is continuous and for any $t\neq 0$, it is differentiable and we have $\mathbf{r}'(t)\neq\mathbf{0}$. This means that this parametrised curve is piecewise smooth.
+
+We could have also constructed a piecewise smooth parametrisation of this curve by making smooth parametrisations of the part of the curve with $-1\leq x\leq 0$ and the part with $0\leq x\leq 1$ and by applying  {prf:ref}`Thm:Curves3d:SmoothPiecewise`.
+::::::
+
+It is important to note that if $\mathcal{C}$ is a curve defined by the position vector $\mathbf{r}(t)$ and if the tangent vector $\mathbf{r}'$ is nonzero at $\mathbf{r}(a)$ there are *two* vectors of unit length that are tangent to $\mathcal{C}$ at $\mathbf{r}(a)$: the unit tangent vector $\mathbf{T}(a)$ *and* the vector $-\mathbf{T}(a)$, which points in exactly the opposite direction. If you look at the curve from a purely geometrical point of view, there is no reason why we would prefer one of these choices over the other choice. 
+
+Moet nog: direction, orientation
