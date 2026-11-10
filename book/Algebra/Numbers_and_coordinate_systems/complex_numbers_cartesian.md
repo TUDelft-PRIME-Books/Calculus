@@ -1380,9 +1380,9 @@ $$
 \htmlClass{longdivision}{
 \begin{array}{rcl}
 z^3 + 3z^2 + \phantom{4}z - 5 & / & {z-1} \\
-\underline{\htmlClass{tud-red}{z^3 - \!\phantom{3}z^2}} \hspace0.45em\phantom{+ 4z - 0} & | & \ooline{\htmlClass{tud-cyan}{z^2}+\htmlClass{tud-green}{4z}+\htmlClass{tud-pink}{5}} \\
+\underline{\htmlClass{tud-red}{z^3 - \!\phantom{3}z^2}} \hspace{0.45em}\phantom{+ 4z - 0} & | & \ooline{\htmlClass{tud-cyan}{z^2}+\htmlClass{tud-green}{4z}+\htmlClass{tud-pink}{5}} \\
 4z^2 + \phantom{4}z - 5 & | \\
-\underline{\htmlClass{tud-blue}{4z^2 - 4z}} \hspace0.45em\phantom{-5} & | \\
+\underline{\htmlClass{tud-blue}{4z^2 - 4z}} \hspace{0.45em}\phantom{-5} & | \\
 5z-5 & | \\
 \underline{\htmlClass{tud-orange}{5z-5}} & | \\
 0 & |

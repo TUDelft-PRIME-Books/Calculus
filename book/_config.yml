@@ -66,7 +66,6 @@ sphinx:
     # prime_applets_base_url: "https://deploy-preview-532--openla-preview.netlify.app/applet/"
     sticky_margin:
       trigger: partial
-    tippy_enable_mathjax: false # disables because tippy only works with MathJax
     tippy_skip_urls:
       - https://en.wikipedia.org/wiki/File:Parametric_ellipse.gif
     todo_include_todos: true
