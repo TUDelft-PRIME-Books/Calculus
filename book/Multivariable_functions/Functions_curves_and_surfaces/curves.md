@@ -41,16 +41,10 @@ $$
 for $t$ in some set $I\subset\mathbb{R}$, where $f$, $g$ and $h$ are given single-variable functions called the **component functions**. Here $t$ is called a **parameter**. The vector function
 
 $$
- \mathbf{r}(t)=\begin{pmatrix}x\\ y\\ z\end{pmatrix}
-$$
-
-is known as the **position vector** of the curve. The equation
-
-$$
  \mathbf{r}(t)=\begin{pmatrix}f(t)\\ g(t)\\ h(t)\end{pmatrix},\qquad t\in I
 $$
 
-is called a **parametrisation** of the curve.
+is called a **parametrisation** or **position vector** of the curve.
 
 If $I$ is the closed interval $[a,b]$, then the point $(x,y,z)=(f(a),g(a),h(a))$ is called the **start point** or **initial point** of $\mathcal{C}$, while the point $(x,y,z)=(f(b),g(b),h(b))$ is called the **end point** or **terminal point** of $\mathcal{C}$. Whenever the start point and the end point of the curve coincide, we say that the curve is **closed**.
 
@@ -58,6 +52,11 @@ If $I$ is the closed interval $[a,b]$, then the point $(x,y,z)=(f(a),g(a),h(a))$
 
 :::{note}
 A curve in $\mathbb{R}^3$ is also known as a **space curve**, while a curve in $\mathbb{R}^2$ is known as a **planar curve**.
+:::
+
+
+:::{note}
+A curve is the range of its parametrisation.
 :::
 
 :::{note}
@@ -295,12 +294,43 @@ Just like for derivatives of single-variable functions, there are several comput
 :label: Thm:Curves3d:Basiccomputationrules
 Let $\mathbf{r}:D\rightarrow\mathbb{R}^n$ and $\mathbf{r}:D\rightarrow\mathbb{R}^n$ with $D\subset\mathbb{R}$ be vector functions. Let $a\in I$ and assume that $\mathbf{r}$ and $\mathbf{s}$ are differentiable at $a$. 
 
-- $(\mathbf{r}+\mathbf{s})$ is differentiable at $a$ and we have $(\mathbf{r}+\mathbf{s})'(a)=\mathbf{r}'(a)+\mathbf{s}'(a)$. (sum rule)
-- If $c\in\mathbb{R}$, then $c\mathbf{r}$ is differentiable at $a$ and we have $(c\mathbf{r})'(a)=c\mathbf{r}'(a)$. (scalar multiple rule)
-- If $f$ is a single-variable function that is differentiable at $a$ then $(f\mathbf{r})(t)=f(t)\mathbf{r}(t)$ is differentiable at $a$ and we have $(f\mathbf{r})'(a)=f'(a)\mathbf{r}(a)+f(a)\mathbf{r}'(a)$. (product rule)
-- If $g$ is a single variable function and $b$ is in the domain of $g$ in such a way that $g(b)=a$ and $g$ is differentiable at $b$, then $\mathbf{r}\circ g$ is differentiable at $b$ and we have $(\mathbf{r}\circ g)'(b)=g'(b)\mathbf{r}'(a)$. (chain rule)
-- $\mathbf{r}\cdot\mathbf{s}$ is differentiable at $a$ and we have $(\mathbf{r}\cdot\mathbf{s})(a)=\mathbf{r}'(a)\cdot \mathbf{s}(a)+\mathbf{r}(a)\cdot \mathbf{s}'(a)$. (dot product rule)
-- If the codomain of $\mathbf{r}$ and $\mathbf{s}$ is $\mathbb{R}^3$ then $\mathbf{r}\times\mathbf{s}$ is differentialbe at $a$ and we have $\left(\mathbf{r}\times\mathbf{s}\right)(a)=\mathbf{r}'(a)\times\mathbf{s}(a)+\mathbf{r}(a)\times \mathbf{s}'(a)$. (cross product rule)
+- **Sum rule**: $(\mathbf{r}+\mathbf{s})$ is differentiable at $a$ and we have 
+
+$$
+ (\mathbf{r}+\mathbf{s})'(a)=\mathbf{r}'(a)+\mathbf{s}'(a).
+$$
+
+
+- **Scalar multiple rule**: If $c\in\mathbb{R}$, then $c\mathbf{r}$ is differentiable at $a$ and we have 
+
+$$
+ (c\mathbf{r})'(a)=c\mathbf{r}'(a).
+$$
+
+- **Product rule**: If $f$ is a single-variable function that is differentiable at $a$ then $(f\mathbf{r})(t)=f(t)\mathbf{r}(t)$ is differentiable at $a$ and we have
+
+$$
+ (f\mathbf{r})'(a)=f'(a)\mathbf{r}(a)+f(a)\mathbf{r}'(a).
+$$
+
+- **Chain rule**: If $g$ is a single-variable function and $b$ is in the domain of $g$ in such a way that $g(b)=a$ and $g$ is differentiable at $b$, then $\mathbf{r}\circ g$ is differentiable at $b$ and we have 
+
+$$
+ (\mathbf{r}\circ g)'(b)=g'(b)\mathbf{r}'(a).
+$$
+
+- **Dot product rule**: $\mathbf{r}\cdot\mathbf{s}$ is differentiable at $a$ and we have 
+
+$$
+ (\mathbf{r}\cdot\mathbf{s})(a)=\mathbf{r}'(a)\cdot \mathbf{s}(a)+\mathbf{r}(a)\cdot \mathbf{s}'(a).
+$$
+
+- **Cross product rule**: If the codomain of $\mathbf{r}$ and $\mathbf{s}$ is $\mathbb{R}^3$ then $\mathbf{r}\times\mathbf{s}$ is differentiable at $a$ and we have 
+
+$$
+ \left(\mathbf{r}\times\mathbf{s}\right)(a)=\mathbf{r}'(a)\times\mathbf{s}(a)+\mathbf{r}(a)\times \mathbf{s}'(a).
+$$
+
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Curves3d:Basiccomputationrules`
@@ -369,8 +399,6 @@ In addition, if $\mathbf{r}(t)\neq\mathbf{0}$ we have
 $$
  \frac{d}{dt}\left|\mathbf{r}(t)\right|=\frac{\mathbf{r}(t)\cdot \mathbf{r}'(t)}{|\mathbf{r}(t)|}.
 $$
-
-As a consequence, if $\left|\mathbf{r}(t)\right|$ is constant on $D$, then the vectors $\mathbf{r}(t)$ and $\mathbf{r}'(t)$ are orthogonal for each $t\in D$.
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Curves3d:Normvector`
@@ -395,8 +423,16 @@ If $\mathbf{r}(t)\neq \mathbf{0}$ we find using the chain rule
  &=\dfrac{1}{2\left|\mathbf{r}(t)\right|}2\left(\mathbf{r}(t)\cdot \mathbf{r}'(t)\right)\\
  &=\dfrac{\mathbf{r}(t)\cdot \mathbf{r}'(t)}{|\mathbf{r}(t)|}
 \end{align*}
+:::
 
-If $\left|\mathbf{r}(t)\right|$ is constant on $D$, then its derivative must be $0$ for each $t\in D$. We then obtain $\mathbf{r}(t)\cdot \mathbf{r}'(t)=0$, which means that the vectors $\mathbf{r}(t)$ and $\mathbf{r}'(t)$ are orthogonal.
+::::::{prf:corollary} 
+:label: Cor:Curves3d:Normvectorconst
+Let $\mathbf{r}:D\rightarrow\mathbb{R}^n$ with $D\subset\mathbb{R}$ be a differentiable vector function. If $\left|\mathbf{r}(t)\right|$ is constant on $D$, then the vectors $\mathbf{r}(t)$ and $\mathbf{r}'(t)$ are orthogonal for each $t\in D$.
+::::::
+
+:::{admonition} Proof of {prf:ref}`Cor:Curves3d:Normvectorconst`
+:class: tudproof, dropdown
+If $\left|\mathbf{r}(t)\right|$ is constant on $D$, then its derivative must be $0$ for each $t\in D$. From {prf:ref}`Thm:Curves3d:Normvector` we obtain $\mathbf{r}(t)\cdot \mathbf{r}'(t)=0$, which means that the vectors $\mathbf{r}(t)$ and $\mathbf{r}'(t)$ are orthogonal.
 :::
 
 It is also useful to consider higher order derivatives. For instance, if $\mathbf{r}(t)$ represent the position vector of some particle, then its second derivative $\mathbf{r}''(t)$ represents the **acceleration**. For instance, Newton's second law $\mathbf{F}=m\mathbf{a}$ can be represented as $\mathbf{F}=m\mathbf{r}''$. The second derivative will also play an important role later when computing the curvature of a space curve.
@@ -405,7 +441,7 @@ It is also useful to consider higher order derivatives. For instance, if $\mathb
 :label: Def:Curves3d:HigherDiff
 Let $\mathbf{r}:D\rightarrow\mathbb{R}^n$ with $D\subset \mathbb{R}$ be a vector function and let $a$ be a point in the domain of $\mathbf{r}$ such that $\mathbf{r}$ is differentiable at $a$. If $\mathbf{r}'$ is differentiable at $a$, then its derivative $(\mathbf{r}')'(a)$ is called the **second derivative** of $\mathbf{r}$ at $a$ and is denoted by $\mathbf{r}''(a)$. If the second derivative of $\mathbf{r}$ exists at each point in its domain, we say that $\mathbf{r}$ is **twice differentiable** and we call the vector function $\mathbf{r}''$ the **second derivative** of $\mathbf{r}$.
 
-In general, if $n>0$ is a nonzero natuarly number, then the **$n$th derivative** of $\mathbf{r}$ at $a$ is the derivative of the $(n-1)$th derivative of $\mathbf{r}$ at $a$, provided it exists, and is denoted by $\mathbf{r}^{(n)}(a)$. If the $n$th derivative of $\mathbf{r}$ exists at each point in its domain, we say that $\mathbf{r}$ is **$n$ times differentiable** and we call the vector function $\mathbf{r}^{(n)}$ the **$n$th derivative** of $\mathbf{r}$.
+In general, if $n>0$ is a nonzero natural number, then the **$n$th derivative** of $\mathbf{r}$ at $a$ is the derivative of the $(n-1)$th derivative of $\mathbf{r}$ at $a$, provided it exists, and is denoted by $\mathbf{r}^{(n)}(a)$. If the $n$th derivative of $\mathbf{r}$ exists at each point in its domain, we say that $\mathbf{r}$ is **$n$ times differentiable** and we call the vector function $\mathbf{r}^{(n)}$ the **$n$th derivative** of $\mathbf{r}$.
 ::::::
 
 
@@ -506,7 +542,7 @@ where $\mathbf{C}$ is a vector of integration constants, i.e. $\mathbf{C}=\begin
 ## Smoothness and orientation
 
 
-For curves in $\mathbb{R}^2$ or $\mathbb{R}^3$ we can obtain a geometric interpretation of the vector $\mathbb{r}'(t)$ by visualising it. Consider a curve $\mathcal{C}$ in $\mathbb{R}^2$ with parametrisation $\begin{pmatrix} x\\ y\end{pmatrix}=\mathbf{r}(t)$ for $t\in I$ and suppose that $\mathbf{r}$ is differentiable. Let $P$ be the point $\mathbf{r}(t)$ and $Q$ the point $\mathbf{r}(t+h)$. Then the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ represents the vector from $P$ to $Q$. As $h$ goes to $0$, the point $Q$ moves towards $P$ so that the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ decreases in length. The vector $\dfrac{1}{h}\left(\mathbf{r}(t+h)-\mathbf{r}(t)\right)$ points in the same direction as the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$, but for $0<h<1$ the length increases again. By inspecting {numref}`Fig:Tangentvector` we see that the vector $\mathbf{r}'(t)$ appears to be tangent to the curve. This leads to the following definition.
+For curves in $\mathbb{R}^2$ or $\mathbb{R}^3$ we can obtain a geometric interpretation of the vector $\mathbf{r}'(t)$ by visualising it. Consider a curve $\mathcal{C}$ in $\mathbb{R}^2$ with parametrisation $\mathbf{r}(t)$ for $t\in I$ and suppose that $\mathbf{r}$ is differentiable. Let $P$ be the point $\mathbf{r}(t)$ and $Q$ the point $\mathbf{r}(t+h)$. Then the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ represents the vector from $P$ to $Q$. As $h$ goes to $0$, the point $Q$ moves towards $P$ so that the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ decreases in length. The vector $\dfrac{1}{h}\left(\mathbf{r}(t+h)-\mathbf{r}(t)\right)$ points in the same direction as the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$, but for $0<h<1$ the length increases again. By inspecting {numref}`Fig:Tangentvector` we see that the vector $\mathbf{r}'(t)$ appears to be tangent to the curve. This leads to the following definition.
 
 :::{figure} images/Fig-Curves3d-Tangentvector2d.png
 :name: Fig:Tangentvector
@@ -578,7 +614,7 @@ Make an applet which shows a curve on a sphere, with a position vector $\mathbf{
 :::
 ::::::
 
-If we want to able to define a (unit) tangent vector at each point of a curve dfeined by the position vector $\mathbf{r}(t)$, the derivative $\mathbf{r}'(t)$ should be nonzero for all relevant values of $t$. This is such an important property that it warrants its own definition.
+If we want to able to define a (unit) tangent vector at each point of a curve defined by the position vector $\mathbf{r}(t)$, the derivative $\mathbf{r}'(t)$ should be nonzero for all relevant values of $t$. This is such an important property that it warrants its own definition.
 
 
 ::::::{prf:definition} 
@@ -631,11 +667,18 @@ The reason why this first parametrisation is not smooth is that if we imagine a 
 
 ::::::{prf:example} 
 :label: Ex:Curves3d:Sharp
-Some curves are not smooth, irrespectively of which parametrisation is chosen. Let $\mathcal{C}$ be the planar curve that is the part of the graph of the function $y=|x|$ for $-1\leq x\leq 1$. Consider any parametrisation $\mathbf{r}(t)=\begin{pmatrix} x(t)\\ y(t)\end{pmatrix}$ for $a\leq t\leq b$ and suppose that this parametrisation is smooth. Since this curve is the graph of $y=|x|$ we must have $x(t)=y(t)$ when $x(t)\geq 0$ and $x(t)=-y(t)$ when $x(t)<0$. We choose $t_0$ in such a way that $\mathbf{r}(t_0)=\begin{pmatrix}0\\ 0\end{pmatrix}$. Since we assumed that the paramtrisation is smooth, we have $\mathbf{r}'(t_0)\neq \mathbf{0}$, so at least one of the two derivatives $x'(t_0)$ and $y'(t_0)$ must be nonzero. Since $x'$ and $y'$ are continuous, the derivative which is nonzero at $t_0$ must be nonzero for $t$ in an open interval $(t_0-\delta,t_0+\delta)$. On this interval, the corresponding function $x(t)$ or $y(t)$ must be strictly monotonic, i.e. either strictly increasing or strictly decreasing. Since $y(t)\geq 0$ for all $t$ and $y(t_0)=0$, $t_0$ must be a local minimum of $y$, so $y$ cannot be strictly monotonic. Hence, $x(t)$ must be strictly monotonic on $(t_0-\delta,t_0+\delta)$.
+Some curves are not smooth, irrespectively of which parametrisation is chosen. Let $\mathcal{C}$ be the planar curve that is the part of the graph of the function 
+
+$$
+ y=|x|,\qquad \text{for }-1\leq x\leq 1.
+$$
+
+Intuitively, it makes sense that this curve does not have a smooth parametrisation: it has a sharp corner at the origin, so there is no way to smoothly follow the curve without suddenly changing direction. Let us see if we can make this argument more rigorous.
+
+Consider any parametrisation $\mathbf{r}(t)=\begin{pmatrix} x(t)\\ y(t)\end{pmatrix}$ for $a\leq t\leq b$ and suppose that this parametrisation is smooth. Since this curve is the graph of $y=|x|$ we must have $x(t)=y(t)$ when $x(t)\geq 0$ and $x(t)=-y(t)$ when $x(t)<0$. We choose $t_0$ in such a way that $\mathbf{r}(t_0)=\begin{pmatrix}0\\ 0\end{pmatrix}$. Since we assumed that the paramtrisation is smooth, we have $\mathbf{r}'(t_0)\neq \mathbf{0}$, so at least one of the two derivatives $x'(t_0)$ and $y'(t_0)$ must be nonzero. Since $x'$ and $y'$ are continuous, the derivative which is nonzero at $t_0$ must be nonzero for $t$ in an open interval $(t_0-\delta,t_0+\delta)$. On this interval, the corresponding function $x(t)$ or $y(t)$ must be strictly monotonic, i.e. either strictly increasing or strictly decreasing. Since $y(t)\geq 0$ for all $t$ and $y(t_0)=0$, $t_0$ must be a local minimum of $y$, so $y$ cannot be strictly monotonic. Hence, $x(t)$ must be strictly monotonic on $(t_0-\delta,t_0+\delta)$.
 
 We now suppose that $x(t)$ is strictly increasing on $(t_0-\delta,t_0+\delta)$. Then for $t<t_0$ we have $x(t)<0$. Since for these values of $t$ we have $y(t)=-x(t)$, $\mathbf{r}'(t)$ must be a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$. Since $\mathbf{r'}$ is continuous, $\mathbf{r}'(t_0)$ must be a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$ as well. For $t>t_0$, we have $x(t)>0$, so then we have $y(t)=x(t)$. This means that $\mathbf{r}'(t)$ must be a constant multiple of $\begin{pmatrix}1\\ 1\end{pmatrix}$. By continuity, $\mathbf{r}'(t_0)$ is a constant multiple of $\begin{pmatrix}1\\ 1\end{pmatrix}$. The only vector that is both a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$ and of $\begin{pmatrix}1\\ 1\end{pmatrix}$ is the zero vector, so $\mathbf{r}'(t_0)=\mathbf{0}$, which gives a contradiction since we assumed that the parametristion is smooth. A similar argument holds when $x(t)$ is strictly decreasing.
 
-Intuitively, it makes sense that this curve does not have a smooth parametrisation: it has a sharp corner at the origin, so there is no way to smoothly follow the curve without suddenly changing direction.
 
 :::{todo}
 Make an applet showing this curve.
@@ -701,6 +744,245 @@ for $-1\leq t\leq 1$. The vector function $\mathbf{r}$ is continuous and for any
 We could have also constructed a piecewise smooth parametrisation of this curve by making smooth parametrisations of the part of the curve with $-1\leq x\leq 0$ and the part with $0\leq x\leq 1$ and by applying  {prf:ref}`Thm:Curves3d:SmoothPiecewise`.
 ::::::
 
-It is important to note that if $\mathcal{C}$ is a curve defined by the position vector $\mathbf{r}(t)$ and if the tangent vector $\mathbf{r}'$ is nonzero at $\mathbf{r}(a)$ there are *two* vectors of unit length that are tangent to $\mathcal{C}$ at $\mathbf{r}(a)$: the unit tangent vector $\mathbf{T}(a)$ *and* the vector $-\mathbf{T}(a)$, which points in exactly the opposite direction. If you look at the curve from a purely geometrical point of view, there is no reason why we would prefer one of these choices over the other choice. 
+It is important to note that if $\mathcal{C}$ is a curve defined by the position vector $\mathbf{r}(t)$ and if the tangent vector $\mathbf{r}'$ is nonzero at $\mathbf{r}(a)$ there are *two* vectors of unit length that are tangent to $\mathcal{C}$ at $\mathbf{r}(a)$: the unit tangent vector $\mathbf{T}(a)$ *and* the vector $-\mathbf{T}(a)$, which points in exactly the opposite direction. If you look at the curve from a purely geometrical point of view, there is no reason why we would prefer one of these choices over the other choice. If we have two smooth parametrisations of the same curve, then we will see that the unit tangents vectors corresponding to these two parametristions either are the same at each point, or are opposite of each other at each point.
 
-Moet nog: direction, orientation
+This means that the parametrisation tells us in which **direction** the curve is traversed and that there are two possible choices for this direction. Depending on the curve we are dealing with, we can use terms like "clockwise" or "forward" to describe this direction. 
+
+Let us make these concepts a bit more rigorous. We first cover the case where the curve is not closed, and then the case where the curve is closed.
+
+::::::{prf:theorem} 
+:label: Thm:Curves3d:Orientation
+Let $\mathcal{C}$ be a curve and suppose that $\mathbf{r}(t)$ for $t$ in an interval $I_1$ and $\mathbf{s}(t)$ for $t$ in an interval $I_2$ are two smooth parametrisations that both cover $\mathcal{C}$ exactly once. Let $\mathbf{T}_r$ and $\mathbf{T}_s$ denote the corresponding unit tangent vectors. Then either for all $s\in I_1$ and $t\in I_2$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=\mathbf{T}_s$ or for all $s\in I_1$ and $t\in I_2$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=-\mathbf{T}_s$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves3d:Orientation`
+:class: tudproof, dropdown
+By assumption, the function $\mathbf{r}$ is bijective, so it has an inverse function $\mathbf{r}^{-1}:\mathcal{C}\rightarrow I_1$. We define the function
+
+$$
+ \phi=\mathbf{r}^{-1}\circ \mathbf{s}.
+$$
+
+Note that for each $t\in I_2$ we have
+
+$$
+ \left(\mathbf{r}\circ \phi\right)=\mathbf{r}\left(\mathbf{r}^{-1}\mathbf{s}(t)\right)=\mathbf{s}(t),
+$$
+
+so we have
+
+$$
+ \mathbf{s}=\mathbf{r}\circ \phi.
+$$
+
+We will first show that $\phi:I_2\rightarrow I_1$ is differentiable. Choose any $t_0\in I_1$. Since $\mathbf{r}'(t_0)\neq\mathbf{0}$ some component $r_j$ satisfies $r_j'(t_0)\neq 0$. Since $\mathbf{r}'$ is continuous, we can find an interval $I\subset I_1$ with $t_0\in I$ such that $r_j'(t)\neq 0$ for all $t\in I$. By {prf:ref}`Thm:Diffinverse:IFT` the function $r_j:I\rightarrow r_j(I)$ is invertible and $r_j^{-1}:r_j(I)\rightarrow I$ is continuously differentiable. Now for $t\in I$ we write $\mathbf{x}=\mathbf{r}(t)$ and let $x_j$ denote the $j$-th coordinate of $\mathbf{x}$. Then we see that
+
+$$
+ \mathbf{r}^{-1}(\mathbf{x})=t=\mathbf{r}_j^{-1}(x_j).
+$$
+
+So if $s_j$ denotes the $j$th component of $\mathbf{s}$ we have for $t\in I_2$ with $\mathbf{s}(t)\in \mathbf{r}(I)$ that
+
+$$
+ \phi(t)=\mathbf{r}^{-1}(\mathbf{s}(t))=r_j^{-1}(s_j(t)).
+$$
+
+Since $\mathbf{s}$ is smooth, $s_j$ is differentiable in $t$. Since $r_j^{-1}$ is differentiable at $s_j(t)$, we find that $\phi$ is differentiable at $t$. In particular, $\phi$ is differentiable at $\phi^{-1}(t_0)$. Since $t_0$ was arbitrary and $\phi$ is bijective, $\phi$ is differentiable.
+
+By {prf:ref}`Thm:Curves3d:Basiccomputationrules` we obtain for $t\in I_2$ that
+
+$$
+ \mathbf{s}'(t)=\phi'(t)\mathbf{r}'(\phi(t)).
+$$
+
+We first show that $\phi'$ is continuous. Fix $t_0\in I_2$. Since $\mathbf{r}$ is smooth, we can choose a component $r_j$ of $\mathbf{r}$ such that
+
+$$
+ r_j'(\phi(t_0))\neq 0.
+$$
+
+Since $r_j'$ and $\phi$ are continuous, we can choose an interval $J\subset I_2$ with $t_0\in J$ such that $r_j'(\phi(t))\neq 0$ for all $t\in J$. Then for $t\in J$, we find
+
+$$
+ \phi'(t)=\frac{s_j'(t)}{r_j'(\phi(t))}.
+$$
+
+Since both parametrisations are smooth, we find that $s_j'$ and $r_j'\circ\phi$ are continuous, so $\phi'$ is continuous.
+
+We now return to the expression
+
+$$
+ \mathbf{s}'(t)=\phi'(t)\mathbf{r}'(\phi(t)).
+$$
+
+Since both parametrisations are smooth, we have $\mathbf{r}'(\phi(t))\neq\mathbf{0}$ and $\mathbf{s}'(t)\neq 0$, so we find $\phi'(t)\neq 0$ for all $t\in I_2$. So we must have either $\phi'(t)>0$ for all $t\in I_2$ or $\phi'(t)<0$ for all $t\in I_2$. Dividing both sides of this expression by their length (which must be the same), we obtain
+
+$$
+ \frac{\mathbf{s}'(t)}{\|\mathbf{s}'(t)\|}=\frac{\phi'(t)\mathbf{r}'(\phi(t))}{\|\phi'(t)\mathbf{r}'(\phi(t))\|}=\frac{\phi'(t)}{|\phi'(t)|}\frac{\mathbf{r}'(\phi(t))}{\|\mathbf{r}'(\phi(t))\|}.
+$$
+
+In case $\phi'(t)>0$ for all $t\in I_2$ we obtain for all $t\in I_2$ that
+
+$$
+ \frac{\mathbf{s}'(t)}{\|\mathbf{s}'(t)\|}=\frac{\mathbf{r}'(\phi(t))}{\|\mathbf{r}'(\phi(t))\|}.
+$$
+
+By construction, we have $\mathbf{s}(t)=\mathbf{r}(\phi(t))$, so they describe the same point on the curve $\mathcal{C}$. So in this case, the unit tangent vectors at the curve corresponding to the two different parametrisations are the same at every point. Similarly, in case $\phi'(t)>0$ for all $t\in I_2$ we obtain for all $t\in I_2$ that
+
+$$
+ \frac{\mathbf{s}'(t)}{\|\mathbf{s}'(t)\|}=-\frac{\mathbf{r}'(\phi(t))}{\|\mathbf{r}'(\phi(t))\|},
+$$
+
+which means that the unit tangent vectors point in opposite directions at every point.
+
+:::
+
+::::::{prf:theorem} 
+:label: Thm:Curves3d:OrientationClosed
+Let $\mathcal{C}$ be a curve and suppose that $\mathbf{r}(t)$ for $t$ in an interval $[a,b]$ and $\mathbf{s}(t)$ for $t$ in an interval $[c,d]$ are two smooth parametrisations for which the start and endpoint of both paramterisations are the same point $P$, and that both $\mathbf{r}(t)$ for $t\in(a,b)$ and $\mathbf{s}(t)$ for $t\in(c,d)$ cover $\mathcal{C}\setminus\{P\}$ exactly once. Let $\mathbf{T}_r$ and $\mathbf{T}_s$ denote the corresponding unit tangent vectors. Then either for all $s\in (a,b)$ and $t\in (c,d)$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=\mathbf{T}_s$ or for all $s\in (a,b)$ and $t\in (c,d)$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=-\mathbf{T}_s$.
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves3d:OrientationClosed`
+:class: tudproof, dropdown
+By assumption, the vector functions $\mathbf{r}$ with domain $(a,b)$ and $\mathbf{s}$ with domain $(c,d)$ are smooth parametrisations of the curve $\mathcal{C}\setminus\{P\}$ that both cover this curve exactly once. As such, the result follows directly from  {prf:ref}`Thm:Curves3d:Orientation`.
+
+:::
+
+::::::{prf:definition} 
+:label: Def:Curves3d:Orientation
+Consider the situation of {prf:ref}`Thm:Curves3d:Orientation` or {prf:ref}`Thm:Curves3d:OrientationClosed`. If the unit tangent vectors are the same at each point, except possibly at the start/end point in case of a closed curve, we say that the two parametrisations have the **same orientation** and otherwise, we say that they have **opposite orientation**.
+
+A curve $\mathcal{C}$ with a specified orientation is called an **oriented curve**.
+::::::
+
+::::::{prf:theorem} 
+:label: Thm:Curves3d:MinC
+Let $\mathcal{C}$ be a curve parametrised by a smooth parametrisation $\mathbf{r}(t)$ for $t\in [a,b]$. Then the vector function
+
+$$
+ \mathbf{s}(t)=\mathbf{r}(a+b-t),\qquad t\in[a,b]
+$$
+
+is a smooth parametrisation of $\mathcal{C}$ with opposite orientation.
+
+
+::::::
+
+:::{admonition} Proof of {prf:ref}`Thm:Curves3d:MinC`
+:class: tudproof, dropdown
+Note that for each $t\in [a,b]$ we have 
+
+$$
+ a+b-t\geq a+b-b=a,\qquad a+b-t\leq a+b-a=b,
+$$
+
+so we have $a+b-t\in[a,b]$. This means that $\mathbf{s}(t)$ describes a point on $\mathcal{C}$. Since the function $f(t)=a+b-t$ is bijective and each point on $\mathcal{C}$ is covered by $\mathbf{r}$, each point is also covered by $\mathcal{s}$. So $\mathcal{s}(t)$ for $t\in[a,b]$ is a parametrisation of $\mathcal{C}$. Since $\mathbf{s}=\mathbf{r}\circ f$ for the function $f(t)=a+b-t$, we find with {prf:ref}`Thm:Curves3d:Basiccomputationrules` that $\mathbf{s}$ is differentiable and
+
+$$
+ \mathbf{s}'(t)=f'(t)\mathbf{r}'(f(t))=-\mathbf{r}'(a+b-t).
+$$
+
+Since $\mathbf{r}$ is smooth, $\mathbf{s}'$ is continuous and never $\mathbf{0}$, so $\mathbf{s}$ is smooth as well. Finally, the unit tangent vector $\mathbf{T}_s$ for $\mathbf{s}$ can be related to the unit tangent vector $\mathbf{T}_r$ for $\mathbf{r}$ by
+
+$$
+ \mathbf{T}_s(t)=\frac{\mathbf{s}'(t)}{\|\mathbf{s}'(t)\|}=\frac{-\mathbf{r}'(a+b-t)}{\|-\mathbf{r}'(a+b-t)\|}=-\mathbf{T}_r(a+b-t).
+$$
+
+This means that the two parametrisations correspond to opposite orientations.
+
+:::
+
+::::::{prf:notation} 
+:label: Not:Curves3d:MinC
+Let $\mathcal{C}$ be a curve parametrised by a smooth parametrisation $\mathbf{r}(t)$ for $t\in [a,b]$. Then the curve $\mathcal{C}$ with the opposite orientation from {prf:ref}`Thm:Curves3d:MinC` is denoted by $-\mathcal{C}$.
+
+
+::::::
+
+
+::::::{prf:example} 
+:label: Ex:Curves3d:Orientation
+Let $\mathcal{C}$ be the part of the unit circle
+
+$$
+ x^2+y^2=1
+$$
+
+with $x<0$. A standard choice for a parametrisation is to consider
+
+$$
+ \mathbf{r}(t)=\begin{pmatrix}\cos(t)\\ \sin(t)\end{pmatrix},\qquad \frac{1}{2}\pi\leq t\leq \frac{3}{2}\pi.
+$$
+
+A different parametrisation would be to take
+
+$$
+ \mathbf{s}(t)=\begin{pmatrix}-\sqrt{1-t^2}\\ t\end{pmatrix},\qquad -1\leq t\leq 1.
+$$
+
+Both parametrisations are smooth. For the first one, we can find the unit tangent vector
+
+$$
+ \mathbf{T}_r(t)=\frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|}=\frac{1}{\sqrt{\left(-\sin(t)\right)^2+\left(\cos(t)\right)^2}}\begin{pmatrix}-\sin(t)\\ \cos(t)\end{pmatrix}=\begin{pmatrix}-\sin(t)\\ \cos(t)\end{pmatrix},
+$$
+
+while for the second one we obtain
+
+$$
+ \mathbf{T}_s(T)=\frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|}=\frac{1}{\sqrt{\left(\frac{t}{\sqrt{1-t^2}}\right)^2+1^2}}\begin{pmatrix}\frac{t}{\sqrt{1-t^2}}\\ 1\end{pmatrix}=\begin{pmatrix}t\\ \sqrt{1-t^2}\end{pmatrix}.
+$$
+
+We see that for the first parametrisation, the $y$-component of the unit tangent vector is always negative (since we have $\frac{1}{2}\pi\leq t\leq\frac{3}{2}\pi$), while for the second parametrisation, the $y$-component of the unit tangent vector is always positive. This means that the two parametrisations have opposite orientations. 
+
+We can also see this graphically. The first parametrisation starts at $\begin{pmatrix}0\\ 1\end{pmatrix}$ and moves counterclockwise until it hits $\begin{pmatrix} 0\\ -1\end{pmatrix}$. On the other hand, the second parametrisation starts at $\begin{pmatrix}0\\ -1\end{pmatrix}$ and moves counterclockwise until it hits $\begin{pmatrix} 0\\ 1\end{pmatrix}$. As such, we say that the first parametrisation is a **counterclockwise parametrisation**, while the second one is a **clockwise parametrisation**.
+
+:::{todo}
+Include an applet where the curve is visible, as well as the two unit tangent vectors which should be draggable across the curve.
+:::
+
+::::::
+
+::::::{prf:example} 
+:label: Ex:Curves3d:OrientationClosedCounterEx
+
+In {prf:ref}`Thm:Curves3d:OrientationClosed` we specifically did not say that there are only two possibilities for the unit tangent vector at the start/end point of a closed curve with a smooth parametrisation. In some cases, there are more options. Consider the planar curve $\mathcal{C}$ with the parametrisation
+
+$$
+ \mathbf{r}(t)=\begin{cases} \left(\left(\frac12-\frac{2}{\pi}\right)t,\;t\right), & 0\le t\le \frac14, \\[3mm] \left( \frac14\left(\frac12-\frac{2}{\pi}\right) +\frac{\sqrt2}{\pi} \left(\sin(\pi t)-\frac{\sqrt2}{2}\right) -\left(\frac12+\frac{2}{\pi}\right) \left(t-\frac14\right), \; \frac14 -\frac{\sqrt2}{\pi} \left(\cos(\pi t)-\frac{\sqrt2}{2}\right) \right), & \frac14< t<\frac34, \\[3mm] \left( \frac14\left(\frac12-\frac{2}{\pi}\right) +\left(\frac12-\frac{2}{\pi}\right) \left(t-\frac34\right), \; \frac14-\left(t-\frac34\right) \right), & \frac34\le t\le 1. \end{cases}.
+$$
+
+
+The formula for $\frac{1}{4}< t< \frac{3}{4}$ is chosen in such a way that $\mathbf{r}$ and $\mathbf{r}'$ are continuous. We have
+
+$$
+ \mathbf{r}'(t)=\begin{cases}\begin{pmatrix}1\\ 1\end{pmatrix},\qquad &0\leq t\leq \frac{1}{4}\\
+ \begin{pmatrix}\sqrt{2}\cos\left(\pi t\right)\\ \sqrt{2}\sin\left(\pi t\right)\end{pmatrix} \qquad &\frac{1}{4}< t< \frac{3}{4}\\
+ \begin{pmatrix}-1\\ 1\end{pmatrix},\qquad &\frac{3}{4}\leq t\leq 1\end{cases}
+$$
+
+Then we can directly see that $\mathbf{r}$ and $\mathbf{r}'$ are indeed continuous. We observe that $\mathbf{r}'(t)\neq \mathbf{0}$ for all $0\leq t\leq 1$, so the parametrisation is smooth. The curve is closed, since $\mathbf{r}(0)=\mathbf{r}(1)=\begin{pmatrix}0\\ 0\end{pmatrix}$. The unit tangent vector at $t=0$ is given by
+
+$$
+ \mathbf{T}(0)=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\ 1\end{pmatrix},
+$$
+
+while the one at $t=1$ is given by
+
+$$
+ \mathbf{T}(1)=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\ 1\end{pmatrix}.
+$$
+
+Note that $\mathbf{T}(1)$ is neither $\mathbf{T}(0)$ nor $-\mathbf{T}(0)$. By alternatively considering the curve $-\mathcal{C}$ given by {prf:ref}`Thm:Curves3d:MinC` we see that this curve has (at least) four possible unit tangent vectors at the origin: $\frac{1}{\sqrt{2}}\begin{pmatrix}1\\ 1\end{pmatrix}$, $\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\ 1\end{pmatrix}$, $\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\ -1\end{pmatrix}$ and $\frac{1}{\sqrt{2}}\begin{pmatrix}1\\ -1\end{pmatrix}$.
+
+The reason for this is because the curve has a sharp corner at the origin. Since the origin is the start and end point of the curve, this does not directly reflect back in the smoothness of the parametrisation. It does mean that the curve has several different tangent directions at the origin.
+
+:::{todo}
+Include an applet showing the curve.
+:::
+::::::
+
+VOORBEELD NOG NIET AF, KLOPT MOGELIJK NIETS VAN
+
+SMOOTH -> REGULAR
