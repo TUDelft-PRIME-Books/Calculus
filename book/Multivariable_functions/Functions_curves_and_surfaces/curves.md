@@ -539,7 +539,7 @@ where $\mathbf{C}$ is a vector of integration constants, i.e. $\mathbf{C}=\begin
 
 ::::::
 
-## Smoothness and orientation
+## Regularity and orientation
 
 
 For curves in $\mathbb{R}^2$ or $\mathbb{R}^3$ we can obtain a geometric interpretation of the vector $\mathbf{r}'(t)$ by visualising it. Consider a curve $\mathcal{C}$ in $\mathbb{R}^2$ with parametrisation $\mathbf{r}(t)$ for $t\in I$ and suppose that $\mathbf{r}$ is differentiable. Let $P$ be the point $\mathbf{r}(t)$ and $Q$ the point $\mathbf{r}(t+h)$. Then the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ represents the vector from $P$ to $Q$. As $h$ goes to $0$, the point $Q$ moves towards $P$ so that the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$ decreases in length. The vector $\dfrac{1}{h}\left(\mathbf{r}(t+h)-\mathbf{r}(t)\right)$ points in the same direction as the vector $\mathbf{r}(t+h)-\mathbf{r}(t)$, but for $0<h<1$ the length increases again. By inspecting {numref}`Fig:Tangentvector` we see that the vector $\mathbf{r}'(t)$ appears to be tangent to the curve. This leads to the following definition.
@@ -618,21 +618,28 @@ If we want to able to define a (unit) tangent vector at each point of a curve de
 
 
 ::::::{prf:definition} 
-:label: Def:Curves3d:Smooth
-Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ parametrised by a differentiable vector function $\mathbf{r}(t)$ for $t\in I$. The paramteric curve $\mathcal{C}$ is **smooth** when $\mathbf{r}'$ is continuous and $\mathbf{r}'(t)\neq\mathbf{0}$ for all $t\in I$.
+:label: Def:Curves3d:Regular
+Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ parametrised by a differentiable vector function $\mathbf{r}(t)$ for $t\in I$. The paramteric curve $\mathcal{C}$ is **regular** when $\mathbf{r}'$ is continuous and $\mathbf{r}'(t)\neq\mathbf{0}$ for all $t\in I$.
 
 ::::::
 
 :::{note}
-The smoothness of a parametric curve is inherently linked to the parametrisation that is used. As such, some curves have both smooth and non-smooth parametrisations, see {prf:ref}`Ex:Curves3d:Smooth`.
+The regularity of a parametric curve is inherently linked to the parametrisation that is used. As such, some curves have both regular and non-regular parametrisations, see {prf:ref}`Ex:Curves3d:Regular`.
 :::
 
 :::{note}
-In {prf:ref}`Def:Differentiability:Higherorderderivative` we defined smoothness for a single-variable function. Though the same word is used, the definitions are rather different. For a smooth single-variable function, it is allowed for the derivative to be $0$. For a smooth parametric curve, it is allowed for the second derivative to not exist. 
+In some literature, the term smooth curve is used for what we call a regular curve. This is confusing terminology, as it does not match with the definition of smoothness for single-variable function which was given in {prf:ref}`Def:Differentiability:Higherorderderivative` and which is standard terminology. Instead, we will use the term smooth in the context of curves in the same way as we do for single-variable functions, as can be seen from the following definition.
 :::
 
+::::::{prf:definition} 
+:label: Def:Curves3d:Smooth
+Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ parametrised by a differentiable vector function $\mathbf{r}(t)$ for $t\in I$. The paramteric curve $\mathcal{C}$ is **smooth** when the $n$th derivative $\mathbf{r}^{(n)}$ exists for all natural numbers $n$.
+
+::::::
+
+
 ::::::{prf:example} 
-:label: Ex:Curves3d:Smooth
+:label: Ex:Curves3d:Regular
 Consider the planar curve $\mathcal{C}$ with parametrisation
 
 $$
@@ -651,7 +658,7 @@ $$
  \mathbf{r}(t)=\begin{pmatrix} (t-1)^3\\ (t-1)^6\end{pmatrix}
 $$
 
-for $1\leq t\leq 2$. Then the vector function $\mathbf{r}$ is differentiable and $\mathbf{r}'$ is continuous. Since $\mathbf{r}'(t)=\mathbf{0}$ for $0\leq t\leq 1$, the curve $\mathcal{C}$ with this parametrisation is not smooth.
+for $1\leq t\leq 2$. Then the vector function $\mathbf{r}$ is differentiable and $\mathbf{r}'$ is continuous. Since $\mathbf{r}'(t)=\mathbf{0}$ for $0\leq t\leq 1$, the curve $\mathcal{C}$ with this parametrisation is not regular.
 
 Note that for each point on the curve we have $(x(t))^2=y(t)$. So the curve is part of the parabola $y=x^2$. As such, a different parametrisation for the same curve would be
 
@@ -659,25 +666,46 @@ $$
  \mathbf{s}(t)=\begin{pmatrix} t\\ t^2\end{pmatrix}
 $$
 
-for $-1\leq t\leq 1$. Since $\mathbf{s}'$ is continuous and $\mathbf{s}'(t)\neq \mathbf{0}$ for $-1\leq t\leq 1$ the curve is smooth with this parametrisation.
+for $-1\leq t\leq 1$. Since $\mathbf{s}'$ is continuous and $\mathbf{s}'(t)\neq \mathbf{0}$ for $-1\leq t\leq 1$ the curve is regular with this parametrisation.
 
-The reason why this first parametrisation is not smooth is that if we imagine a particle follows the trajectory prescribed by the position vector $\mathbf{r}(t)$, the particle will rest at the origin for $0\leq t\leq 1$. Since it does not move, it has no direction in which it will go next, so it has no meaningfully defined direction vector. Using the second parametristion, on the other hand, the particle will only be at the origin at $t=0$, which means that it has a meaningful direction.
+The reason why this first parametrisation is not regular is that if we imagine a particle follows the trajectory prescribed by the position vector $\mathbf{r}(t)$, the particle will rest at the origin for $0\leq t\leq 1$. Since it does not move, it has no direction in which it will go next, so it has no meaningfully defined direction vector. Using the second parametristion, on the other hand, the particle will only be at the origin at $t=0$, which means that it has a meaningful direction.
+::::::
+
+::::::{prf:example} 
+:label: Ex:Curves3d:Smooth
+To illustrate that regular curves should not be confused with smooth ones, consider the planar curve with parametrisation
+
+$$
+ \mathbf{r}(t)=\begin{pmatrix}t^2\\ t^3\end{pmatrix},\qquad -1\leq t\leq 1.
+$$
+
+Then the parametrisation is smooth, in the sense that the $n$th derivative $\mathbf{r}^{(n)}$ exists for each natural number $n$. It is not smooth, though, since we note that
+
+$$
+ \mathbf{r}'(0)=\begin{pmatrix}0\\ 0\end{pmatrix}.
+$$
+
+In addition, we also see the lack of regularity when we plot the curve, since it has a cusp at the origin.
+
+:::{todo}
+Inculde an applet with this curve.
+:::
 ::::::
 
 
 ::::::{prf:example} 
 :label: Ex:Curves3d:Sharp
-Some curves are not smooth, irrespectively of which parametrisation is chosen. Let $\mathcal{C}$ be the planar curve that is the part of the graph of the function 
+Some curves are not regular, irrespectively of which parametrisation is chosen. Let $\mathcal{C}$ be the planar curve that is the part of the graph of the function 
 
 $$
  y=|x|,\qquad \text{for }-1\leq x\leq 1.
 $$
 
-Intuitively, it makes sense that this curve does not have a smooth parametrisation: it has a sharp corner at the origin, so there is no way to smoothly follow the curve without suddenly changing direction. Let us see if we can make this argument more rigorous.
+Intuitively, it makes sense that this curve does not have a regular parametrisation: it has a sharp corner at the origin, so there is no way to regularly follow the curve without suddenly changing direction. Let us see if we can make this argument more rigorous.
 
-Consider any parametrisation $\mathbf{r}(t)=\begin{pmatrix} x(t)\\ y(t)\end{pmatrix}$ for $a\leq t\leq b$ and suppose that this parametrisation is smooth. Since this curve is the graph of $y=|x|$ we must have $x(t)=y(t)$ when $x(t)\geq 0$ and $x(t)=-y(t)$ when $x(t)<0$. We choose $t_0$ in such a way that $\mathbf{r}(t_0)=\begin{pmatrix}0\\ 0\end{pmatrix}$. Since we assumed that the paramtrisation is smooth, we have $\mathbf{r}'(t_0)\neq \mathbf{0}$, so at least one of the two derivatives $x'(t_0)$ and $y'(t_0)$ must be nonzero. Since $x'$ and $y'$ are continuous, the derivative which is nonzero at $t_0$ must be nonzero for $t$ in an open interval $(t_0-\delta,t_0+\delta)$. On this interval, the corresponding function $x(t)$ or $y(t)$ must be strictly monotonic, i.e. either strictly increasing or strictly decreasing. Since $y(t)\geq 0$ for all $t$ and $y(t_0)=0$, $t_0$ must be a local minimum of $y$, so $y$ cannot be strictly monotonic. Hence, $x(t)$ must be strictly monotonic on $(t_0-\delta,t_0+\delta)$.
+Consider any parametrisation $\mathbf{r}(t)=\begin{pmatrix} x(t)\\ y(t)\end{pmatrix}$ for $a\leq t\leq b$ and suppose that this parametrisation is regular. Since this curve is the graph of $y=|x|$ we must have $x(t)=y(t)$ when $x(t)\geq 0$ and $x(t)=-y(t)$ when $x(t)<0$. We choose $t_0$ in such a way that $\mathbf{r}(t_0)=\begin{pmatrix}0\\ 0\end{pmatrix}$. Since we assumed that the paramtrisation is regular, we have $\mathbf{r}'(t_0)\neq \mathbf{0}$, so at least one of the two derivatives $x'(t_0)$ and $y'(t_0)$ must be nonzero. Since $x'$ and $y'$ are continuous, the derivative which is nonzero at $t_0$ must be nonzero for $t$ in an open interval $(t_0-\delta,t_0+\delta)$. On this interval, the corresponding function $x(t)$ or $y(t)$ must be strictly monotonic, i.e. either strictly increasing or strictly decreasing. Since $y(t)\geq 0$ for all $t$ and $y(t_0)=0$, $t_0$ must be a local minimum of $y$, so $y$ cannot be strictly monotonic. Hence, $x(t)$ must be strictly monotonic on $(t_0-\delta,t_0+\delta)$.
 
-We now suppose that $x(t)$ is strictly increasing on $(t_0-\delta,t_0+\delta)$. Then for $t<t_0$ we have $x(t)<0$. Since for these values of $t$ we have $y(t)=-x(t)$, $\mathbf{r}'(t)$ must be a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$. Since $\mathbf{r'}$ is continuous, $\mathbf{r}'(t_0)$ must be a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$ as well. For $t>t_0$, we have $x(t)>0$, so then we have $y(t)=x(t)$. This means that $\mathbf{r}'(t)$ must be a constant multiple of $\begin{pmatrix}1\\ 1\end{pmatrix}$. By continuity, $\mathbf{r}'(t_0)$ is a constant multiple of $\begin{pmatrix}1\\ 1\end{pmatrix}$. The only vector that is both a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$ and of $\begin{pmatrix}1\\ 1\end{pmatrix}$ is the zero vector, so $\mathbf{r}'(t_0)=\mathbf{0}$, which gives a contradiction since we assumed that the parametristion is smooth. A similar argument holds when $x(t)$ is strictly decreasing.
+We now suppose that $x(t)$ is strictly increasing on $(t_0-\delta,t_0+\delta)$. Then for $t<t_0$ we have $x(t)<0$. Since for these values of $t$ we have $y(t)=-x(t)$, $\mathbf{r}'(t)$ must be a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$. Since $\mathbf{r'}$ is continuous, $\mathbf{r}'(t_0)$ must be a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$ as well. For $t>t_0$, we have $x(t)>0$, so then we have $y(t)=x(t)$. This means that $\mathbf{r}'(t)$ must be a constant multiple of $\begin{pmatrix}1\\ 1\end{pmatrix}$. By continuity, $\mathbf{r}'(t_0)$ is a constant multiple of $\begin{pmatrix}1\\ 1\end{pmatrix}$. The only vector that is both a constant multiple of $\begin{pmatrix}1\\ -1\end{pmatrix}$ and of $\begin{pmatrix}1\\ 1\end{pmatrix}$ is the zero vector, so $\mathbf{r}'(t_0)=\mathbf{0}$, which gives a contradiction since we assumed that the parametristion is regular. A similar argument holds when $x(t)$ is strictly decreasing.
 
 
 :::{todo}
@@ -686,22 +714,22 @@ Make an applet showing this curve.
 
 ::::::
 
-For many curves that we encounter in practice, there are only finitely many points where the parameristation is not differentiable, or where the derivative is either $\mathbf{0}$ or not continuous. Such a curve can be split up into curves that are smooth. Let us properly define these curves.
+For many curves that we encounter in practice, there are only finitely many points where the parameristation is not differentiable, or where the derivative is either $\mathbf{0}$ or not continuous. Such a curve can be split up into curves that are regular. Let us properly define these curves.
 
 ::::::{prf:definition} 
-:label: Def:Curves3d:Smooth
-Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ parametrised by a continuous vector function $\mathbf{r}(t)$ for $t\in I$. The paramteric curve $\mathcal{C}$ is **piecewise smooth** if there exists a finite set $S$ such that $\mathbf{r}$ is differentiable on $I\setminus S$,  $\mathbf{r}'$ is continuous on $I\setminus S$ and $\mathbf{r}'(t)\neq\mathbf{0}$ for all $t\in I\setminus S$.
+:label: Def:Curves3d:Regular
+Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ parametrised by a continuous vector function $\mathbf{r}(t)$ for $t\in I$. The paramteric curve $\mathcal{C}$ is **piecewise regular** if there exists a finite set $S$ such that $\mathbf{r}$ is differentiable on $I\setminus S$,  $\mathbf{r}'$ is continuous on $I\setminus S$ and $\mathbf{r}'(t)\neq\mathbf{0}$ for all $t\in I\setminus S$.
 
 ::::::
 
 
 ::::::{prf:theorem} 
-:label: Thm:Curves3d:SmoothPiecewise
-Let $\mathcal{C}$ be a curve. Suppose that $\mathcal{C}$ can be written as $\mathcal{C}=\mathcal{C}_1\cup\mathcal{C}_2\cup\ldots\cup\mathcal{C}_n$, where each $\mathcal{C}_i$ is a curve with a smooth parametrisation $\mathbf{r}_i(t)$ for $a_i\leq t\leq b_i$ in such a way that $\mathbf{r}_i(b_i)=\mathbf{r}_{i+1}(a_i)$ for $1\leq i\leq n-1$, i.e. the end point of $\mathcal{C}_i$ is the start point of $\mathcal{C}_{i+1}$. Then $\mathcal{C}$ has a piecewise smooth parametristion.
+:label: Thm:Curves3d:RegularPiecewise
+Let $\mathcal{C}$ be a curve. Suppose that $\mathcal{C}$ can be written as $\mathcal{C}=\mathcal{C}_1\cup\mathcal{C}_2\cup\ldots\cup\mathcal{C}_n$, where each $\mathcal{C}_i$ is a curve with a regular parametrisation $\mathbf{r}_i(t)$ for $a_i\leq t\leq b_i$ in such a way that $\mathbf{r}_i(b_i)=\mathbf{r}_{i+1}(a_i)$ for $1\leq i\leq n-1$, i.e. the end point of $\mathcal{C}_i$ is the start point of $\mathcal{C}_{i+1}$. Then $\mathcal{C}$ has a piecewise regular parametristion.
 
 ::::::
 
-:::{admonition} Proof of {prf:ref}`Thm:Curves3d:SmoothPiecewise`
+:::{admonition} Proof of {prf:ref}`Thm:Curves3d:RegularPiecewise`
 :class: tudproof, dropdown
 We let $s_1=a_1$ and for $2\leq i\leq n$ we recursively define 
 
@@ -715,18 +743,18 @@ $$
  \mathbf{r}(t)=\mathbf{r}_i(t-s_i),\qquad\text{when}\ s_i\leq t\leq s_{i+1}.
 $$
 
-By construction this vector function is continuous at each point $s_i$, since the end point of the curve $\mathcal{C}_{i-1}$ is the start point of the curve $\mathcal{C}_i$. At all other values of $t$, the parametrisation is differentiable, the derivative is continuous and $\mathbf{r}'(t)\neq\mathbf{0}$, which means that $\mathbf{r}$ is a piecewise smooth parametrisation of $\mathcal{C}$.
+By construction this vector function is continuous at each point $s_i$, since the end point of the curve $\mathcal{C}_{i-1}$ is the start point of the curve $\mathcal{C}_i$. At all other values of $t$, the parametrisation is differentiable, the derivative is continuous and $\mathbf{r}'(t)\neq\mathbf{0}$, which means that $\mathbf{r}$ is a piecewise regular parametrisation of $\mathcal{C}$.
 :::
 
-:::{figure} images/Fig-Curves3d-PiecewiseSmooth.png
-:name: Fig:PiecewiseSmooth
+:::{figure} images/Fig-Curves3d-PiecewiseRegular.png
+:name: Fig:PiecewiseRegular
 :class: dark-light
 
 
 :::
 
 :::{todo}
-Turn {numref}`Fig:PiecewiseSmooth` into an applet.
+Turn {numref}`Fig:PiecewiseRegular` into an applet.
 :::
 
 
@@ -739,12 +767,12 @@ $$
  \mathbf{r}(t)=\begin{pmatrix}t\\ |t|\end{pmatrix}
 $$
 
-for $-1\leq t\leq 1$. The vector function $\mathbf{r}$ is continuous and for any $t\neq 0$, it is differentiable and we have $\mathbf{r}'(t)\neq\mathbf{0}$. This means that this parametrised curve is piecewise smooth.
+for $-1\leq t\leq 1$. The vector function $\mathbf{r}$ is continuous and for any $t\neq 0$, it is differentiable and we have $\mathbf{r}'(t)\neq\mathbf{0}$. This means that this parametrised curve is piecewise regular.
 
-We could have also constructed a piecewise smooth parametrisation of this curve by making smooth parametrisations of the part of the curve with $-1\leq x\leq 0$ and the part with $0\leq x\leq 1$ and by applying  {prf:ref}`Thm:Curves3d:SmoothPiecewise`.
+We could have also constructed a piecewise regular parametrisation of this curve by making regular parametrisations of the part of the curve with $-1\leq x\leq 0$ and the part with $0\leq x\leq 1$ and by applying  {prf:ref}`Thm:Curves3d:RegularPiecewise`.
 ::::::
 
-It is important to note that if $\mathcal{C}$ is a curve defined by the position vector $\mathbf{r}(t)$ and if the tangent vector $\mathbf{r}'$ is nonzero at $\mathbf{r}(a)$ there are *two* vectors of unit length that are tangent to $\mathcal{C}$ at $\mathbf{r}(a)$: the unit tangent vector $\mathbf{T}(a)$ *and* the vector $-\mathbf{T}(a)$, which points in exactly the opposite direction. If you look at the curve from a purely geometrical point of view, there is no reason why we would prefer one of these choices over the other choice. If we have two smooth parametrisations of the same curve, then we will see that the unit tangents vectors corresponding to these two parametristions either are the same at each point, or are opposite of each other at each point.
+It is important to note that if $\mathcal{C}$ is a curve defined by the position vector $\mathbf{r}(t)$ and if the tangent vector $\mathbf{r}'$ is nonzero at $\mathbf{r}(a)$ there are *two* vectors of unit length that are tangent to $\mathcal{C}$ at $\mathbf{r}(a)$: the unit tangent vector $\mathbf{T}(a)$ *and* the vector $-\mathbf{T}(a)$, which points in exactly the opposite direction. If you look at the curve from a purely geometrical point of view, there is no reason why we would prefer one of these choices over the other choice. If we have two regular parametrisations of the same curve, then we will see that the unit tangents vectors corresponding to these two parametristions either are the same at each point, or are opposite of each other at each point.
 
 This means that the parametrisation tells us in which **direction** the curve is traversed and that there are two possible choices for this direction. Depending on the curve we are dealing with, we can use terms like "clockwise" or "forward" to describe this direction. 
 
@@ -752,7 +780,7 @@ Let us make these concepts a bit more rigorous. We first cover the case where th
 
 ::::::{prf:theorem} 
 :label: Thm:Curves3d:Orientation
-Let $\mathcal{C}$ be a curve and suppose that $\mathbf{r}(t)$ for $t$ in an interval $I_1$ and $\mathbf{s}(t)$ for $t$ in an interval $I_2$ are two smooth parametrisations that both cover $\mathcal{C}$ exactly once. Let $\mathbf{T}_r$ and $\mathbf{T}_s$ denote the corresponding unit tangent vectors. Then either for all $s\in I_1$ and $t\in I_2$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=\mathbf{T}_s$ or for all $s\in I_1$ and $t\in I_2$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=-\mathbf{T}_s$.
+Let $\mathcal{C}$ be a curve and suppose that $\mathbf{r}(t)$ for $t$ in an interval $I_1$ and $\mathbf{s}(t)$ for $t$ in an interval $I_2$ are two regular parametrisations that both cover $\mathcal{C}$ exactly once. Let $\mathbf{T}_r$ and $\mathbf{T}_s$ denote the corresponding unit tangent vectors. Then either for all $s\in I_1$ and $t\in I_2$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=\mathbf{T}_s$ or for all $s\in I_1$ and $t\in I_2$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=-\mathbf{T}_s$.
 
 ::::::
 
@@ -788,7 +816,7 @@ $$
  \phi(t)=\mathbf{r}^{-1}(\mathbf{s}(t))=r_j^{-1}(s_j(t)).
 $$
 
-Since $\mathbf{s}$ is smooth, $s_j$ is differentiable in $t$. Since $r_j^{-1}$ is differentiable at $s_j(t)$, we find that $\phi$ is differentiable at $t$. In particular, $\phi$ is differentiable at $\phi^{-1}(t_0)$. Since $t_0$ was arbitrary and $\phi$ is bijective, $\phi$ is differentiable.
+Since $\mathbf{s}$ is regular, $s_j$ is differentiable in $t$. Since $r_j^{-1}$ is differentiable at $s_j(t)$, we find that $\phi$ is differentiable at $t$. In particular, $\phi$ is differentiable at $\phi^{-1}(t_0)$. Since $t_0$ was arbitrary and $\phi$ is bijective, $\phi$ is differentiable.
 
 By {prf:ref}`Thm:Curves3d:Basiccomputationrules` we obtain for $t\in I_2$ that
 
@@ -796,7 +824,7 @@ $$
  \mathbf{s}'(t)=\phi'(t)\mathbf{r}'(\phi(t)).
 $$
 
-We first show that $\phi'$ is continuous. Fix $t_0\in I_2$. Since $\mathbf{r}$ is smooth, we can choose a component $r_j$ of $\mathbf{r}$ such that
+We first show that $\phi'$ is continuous. Fix $t_0\in I_2$. Since $\mathbf{r}$ is regular, we can choose a component $r_j$ of $\mathbf{r}$ such that
 
 $$
  r_j'(\phi(t_0))\neq 0.
@@ -808,7 +836,7 @@ $$
  \phi'(t)=\frac{s_j'(t)}{r_j'(\phi(t))}.
 $$
 
-Since both parametrisations are smooth, we find that $s_j'$ and $r_j'\circ\phi$ are continuous, so $\phi'$ is continuous.
+Since both parametrisations are regular, we find that $s_j'$ and $r_j'\circ\phi$ are continuous, so $\phi'$ is continuous.
 
 We now return to the expression
 
@@ -816,7 +844,7 @@ $$
  \mathbf{s}'(t)=\phi'(t)\mathbf{r}'(\phi(t)).
 $$
 
-Since both parametrisations are smooth, we have $\mathbf{r}'(\phi(t))\neq\mathbf{0}$ and $\mathbf{s}'(t)\neq 0$, so we find $\phi'(t)\neq 0$ for all $t\in I_2$. So we must have either $\phi'(t)>0$ for all $t\in I_2$ or $\phi'(t)<0$ for all $t\in I_2$. Dividing both sides of this expression by their length (which must be the same), we obtain
+Since both parametrisations are regular, we have $\mathbf{r}'(\phi(t))\neq\mathbf{0}$ and $\mathbf{s}'(t)\neq 0$, so we find $\phi'(t)\neq 0$ for all $t\in I_2$. So we must have either $\phi'(t)>0$ for all $t\in I_2$ or $\phi'(t)<0$ for all $t\in I_2$. Dividing both sides of this expression by their length (which must be the same), we obtain
 
 $$
  \frac{\mathbf{s}'(t)}{\|\mathbf{s}'(t)\|}=\frac{\phi'(t)\mathbf{r}'(\phi(t))}{\|\phi'(t)\mathbf{r}'(\phi(t))\|}=\frac{\phi'(t)}{|\phi'(t)|}\frac{\mathbf{r}'(\phi(t))}{\|\mathbf{r}'(\phi(t))\|}.
@@ -840,13 +868,13 @@ which means that the unit tangent vectors point in opposite directions at every 
 
 ::::::{prf:theorem} 
 :label: Thm:Curves3d:OrientationClosed
-Let $\mathcal{C}$ be a curve and suppose that $\mathbf{r}(t)$ for $t$ in an interval $[a,b]$ and $\mathbf{s}(t)$ for $t$ in an interval $[c,d]$ are two smooth parametrisations for which the start and endpoint of both paramterisations are the same point $P$, and that both $\mathbf{r}(t)$ for $t\in(a,b)$ and $\mathbf{s}(t)$ for $t\in(c,d)$ cover $\mathcal{C}\setminus\{P\}$ exactly once. Let $\mathbf{T}_r$ and $\mathbf{T}_s$ denote the corresponding unit tangent vectors. Then either for all $s\in (a,b)$ and $t\in (c,d)$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=\mathbf{T}_s$ or for all $s\in (a,b)$ and $t\in (c,d)$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=-\mathbf{T}_s$.
+Let $\mathcal{C}$ be a curve and suppose that $\mathbf{r}(t)$ for $t$ in an interval $[a,b]$ and $\mathbf{s}(t)$ for $t$ in an interval $[c,d]$ are two regular parametrisations for which the start and endpoint of both paramterisations are the same point $P$, and that both $\mathbf{r}(t)$ for $t\in(a,b)$ and $\mathbf{s}(t)$ for $t\in(c,d)$ cover $\mathcal{C}\setminus\{P\}$ exactly once. Let $\mathbf{T}_r$ and $\mathbf{T}_s$ denote the corresponding unit tangent vectors. Then either for all $s\in (a,b)$ and $t\in (c,d)$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=\mathbf{T}_s$ or for all $s\in (a,b)$ and $t\in (c,d)$ with $\mathbf{r}(s)=\mathbf{s}(t)$ we have $\mathbf{T}_r(s)=-\mathbf{T}_s$.
 
 ::::::
 
 :::{admonition} Proof of {prf:ref}`Thm:Curves3d:OrientationClosed`
 :class: tudproof, dropdown
-By assumption, the vector functions $\mathbf{r}$ with domain $(a,b)$ and $\mathbf{s}$ with domain $(c,d)$ are smooth parametrisations of the curve $\mathcal{C}\setminus\{P\}$ that both cover this curve exactly once. As such, the result follows directly from  {prf:ref}`Thm:Curves3d:Orientation`.
+By assumption, the vector functions $\mathbf{r}$ with domain $(a,b)$ and $\mathbf{s}$ with domain $(c,d)$ are regular parametrisations of the curve $\mathcal{C}\setminus\{P\}$ that both cover this curve exactly once. As such, the result follows directly from  {prf:ref}`Thm:Curves3d:Orientation`.
 
 :::
 
@@ -859,13 +887,13 @@ A curve $\mathcal{C}$ with a specified orientation is called an **oriented curve
 
 ::::::{prf:theorem} 
 :label: Thm:Curves3d:MinC
-Let $\mathcal{C}$ be a curve parametrised by a smooth parametrisation $\mathbf{r}(t)$ for $t\in [a,b]$. Then the vector function
+Let $\mathcal{C}$ be a curve parametrised by a regular parametrisation $\mathbf{r}(t)$ for $t\in [a,b]$. Then the vector function
 
 $$
  \mathbf{s}(t)=\mathbf{r}(a+b-t),\qquad t\in[a,b]
 $$
 
-is a smooth parametrisation of $\mathcal{C}$ with opposite orientation.
+is a regular parametrisation of $\mathcal{C}$ with opposite orientation.
 
 
 ::::::
@@ -884,7 +912,7 @@ $$
  \mathbf{s}'(t)=f'(t)\mathbf{r}'(f(t))=-\mathbf{r}'(a+b-t).
 $$
 
-Since $\mathbf{r}$ is smooth, $\mathbf{s}'$ is continuous and never $\mathbf{0}$, so $\mathbf{s}$ is smooth as well. Finally, the unit tangent vector $\mathbf{T}_s$ for $\mathbf{s}$ can be related to the unit tangent vector $\mathbf{T}_r$ for $\mathbf{r}$ by
+Since $\mathbf{r}$ is regular, $\mathbf{s}'$ is continuous and never $\mathbf{0}$, so $\mathbf{s}$ is regular as well. Finally, the unit tangent vector $\mathbf{T}_s$ for $\mathbf{s}$ can be related to the unit tangent vector $\mathbf{T}_r$ for $\mathbf{r}$ by
 
 $$
  \mathbf{T}_s(t)=\frac{\mathbf{s}'(t)}{\|\mathbf{s}'(t)\|}=\frac{-\mathbf{r}'(a+b-t)}{\|-\mathbf{r}'(a+b-t)\|}=-\mathbf{T}_r(a+b-t).
@@ -896,7 +924,7 @@ This means that the two parametrisations correspond to opposite orientations.
 
 ::::::{prf:notation} 
 :label: Not:Curves3d:MinC
-Let $\mathcal{C}$ be a curve parametrised by a smooth parametrisation $\mathbf{r}(t)$ for $t\in [a,b]$. Then the curve $\mathcal{C}$ with the opposite orientation from {prf:ref}`Thm:Curves3d:MinC` is denoted by $-\mathcal{C}$.
+Let $\mathcal{C}$ be a curve parametrised by a regular parametrisation $\mathbf{r}(t)$ for $t\in [a,b]$. Then the curve $\mathcal{C}$ with the opposite orientation from {prf:ref}`Thm:Curves3d:MinC` is denoted by $-\mathcal{C}$.
 
 
 ::::::
@@ -922,7 +950,7 @@ $$
  \mathbf{s}(t)=\begin{pmatrix}-\sqrt{1-t^2}\\ t\end{pmatrix},\qquad -1\leq t\leq 1.
 $$
 
-Both parametrisations are smooth. For the first one, we can find the unit tangent vector
+Both parametrisations are regular. For the first one, we can find the unit tangent vector
 
 $$
  \mathbf{T}_r(t)=\frac{\mathbf{r}'(t)}{\|\mathbf{r}'(t)\|}=\frac{1}{\sqrt{\left(-\sin(t)\right)^2+\left(\cos(t)\right)^2}}\begin{pmatrix}-\sin(t)\\ \cos(t)\end{pmatrix}=\begin{pmatrix}-\sin(t)\\ \cos(t)\end{pmatrix},
@@ -947,22 +975,24 @@ Include an applet where the curve is visible, as well as the two unit tangent ve
 ::::::{prf:example} 
 :label: Ex:Curves3d:OrientationClosedCounterEx
 
-In {prf:ref}`Thm:Curves3d:OrientationClosed` we specifically did not say that there are only two possibilities for the unit tangent vector at the start/end point of a closed curve with a smooth parametrisation. In some cases, there are more options. Consider the planar curve $\mathcal{C}$ with the parametrisation
+In {prf:ref}`Thm:Curves3d:OrientationClosed` we specifically did not say that there are only two possibilities for the unit tangent vector at the start/end point of a closed curve with a regular parametrisation. In some cases, there are more options. Consider the planar curve $\mathcal{C}$ with the parametrisation
 
 $$
- \mathbf{r}(t)=\begin{cases} \left(\left(\frac12-\frac{2}{\pi}\right)t,\;t\right), & 0\le t\le \frac14, \\[3mm] \left( \frac14\left(\frac12-\frac{2}{\pi}\right) +\frac{\sqrt2}{\pi} \left(\sin(\pi t)-\frac{\sqrt2}{2}\right) -\left(\frac12+\frac{2}{\pi}\right) \left(t-\frac14\right), \; \frac14 -\frac{\sqrt2}{\pi} \left(\cos(\pi t)-\frac{\sqrt2}{2}\right) \right), & \frac14< t<\frac34, \\[3mm] \left( \frac14\left(\frac12-\frac{2}{\pi}\right) +\left(\frac12-\frac{2}{\pi}\right) \left(t-\frac34\right), \; \frac14-\left(t-\frac34\right) \right), & \frac34\le t\le 1. \end{cases}.
+ \mathbf{r}(t)=\begin{cases} \begin{pmatrix} t\\ t\end{pmatrix},\qquad &0\leq t\leq 1,\\[0.2cm]
+ \begin{pmatrix}\frac{3}{2}-\frac{1}{2}(t-2)^2\\ (t-2)^3-2(t-2)\end{pmatrix},\qquad &1<t<4, \\[0.2cm]
+ \begin{pmatrix}4-t\\ t-4\end{pmatrix},\qquad &3\leq t\leq 4.\end{cases}
 $$
 
 
-The formula for $\frac{1}{4}< t< \frac{3}{4}$ is chosen in such a way that $\mathbf{r}$ and $\mathbf{r}'$ are continuous. We have
+The formula for $1<t<3$ is chosen in such a way that $\mathbf{r}$ and $\mathbf{r}'$ are continuous. We have
 
 $$
- \mathbf{r}'(t)=\begin{cases}\begin{pmatrix}1\\ 1\end{pmatrix},\qquad &0\leq t\leq \frac{1}{4}\\
- \begin{pmatrix}\sqrt{2}\cos\left(\pi t\right)\\ \sqrt{2}\sin\left(\pi t\right)\end{pmatrix} \qquad &\frac{1}{4}< t< \frac{3}{4}\\
- \begin{pmatrix}-1\\ 1\end{pmatrix},\qquad &\frac{3}{4}\leq t\leq 1\end{cases}
+ \mathbf{r}'(t)=\begin{cases}\begin{pmatrix}1\\ 1\end{pmatrix},\qquad &0\leq t\leq 1,\\
+ \begin{pmatrix}-(t-2)\\ 3(t-2)^2-2\end{pmatrix} \qquad &1<t<3, \\
+ \begin{pmatrix}-1\\ 1\end{pmatrix},\qquad &3\leq t\leq 4.\end{cases}
 $$
 
-Then we can directly see that $\mathbf{r}$ and $\mathbf{r}'$ are indeed continuous. We observe that $\mathbf{r}'(t)\neq \mathbf{0}$ for all $0\leq t\leq 1$, so the parametrisation is smooth. The curve is closed, since $\mathbf{r}(0)=\mathbf{r}(1)=\begin{pmatrix}0\\ 0\end{pmatrix}$. The unit tangent vector at $t=0$ is given by
+Then we can directly see that $\mathbf{r}$ and $\mathbf{r}'$ are indeed continuous. We observe that $\mathbf{r}'(t)\neq \mathbf{0}$ for all $0\leq t\leq 4$, so the parametrisation is regular. The curve is closed, since $\mathbf{r}(0)=\mathbf{r}(4)=\begin{pmatrix}0\\ 0\end{pmatrix}$. The unit tangent vector at $t=0$ is given by
 
 $$
  \mathbf{T}(0)=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\ 1\end{pmatrix},
@@ -971,18 +1001,17 @@ $$
 while the one at $t=1$ is given by
 
 $$
- \mathbf{T}(1)=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\ 1\end{pmatrix}.
+ \mathbf{T}(4)=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\ 1\end{pmatrix}.
 $$
 
-Note that $\mathbf{T}(1)$ is neither $\mathbf{T}(0)$ nor $-\mathbf{T}(0)$. By alternatively considering the curve $-\mathcal{C}$ given by {prf:ref}`Thm:Curves3d:MinC` we see that this curve has (at least) four possible unit tangent vectors at the origin: $\frac{1}{\sqrt{2}}\begin{pmatrix}1\\ 1\end{pmatrix}$, $\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\ 1\end{pmatrix}$, $\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\ -1\end{pmatrix}$ and $\frac{1}{\sqrt{2}}\begin{pmatrix}1\\ -1\end{pmatrix}$.
+Note that $\mathbf{T}(4)$ is neither $\mathbf{T}(0)$ nor $-\mathbf{T}(0)$. By alternatively considering the curve $-\mathcal{C}$ given by {prf:ref}`Thm:Curves3d:MinC` we see that this curve has (at least) four possible unit tangent vectors at the origin: $\frac{1}{\sqrt{2}}\begin{pmatrix}1\\ 1\end{pmatrix}$, $\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\ 1\end{pmatrix}$, $\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\ -1\end{pmatrix}$ and $\frac{1}{\sqrt{2}}\begin{pmatrix}1\\ -1\end{pmatrix}$.
 
-The reason for this is because the curve has a sharp corner at the origin. Since the origin is the start and end point of the curve, this does not directly reflect back in the smoothness of the parametrisation. It does mean that the curve has several different tangent directions at the origin.
+The reason for this is because the curve has a sharp corner at the origin. Since the origin is the start and end point of the curve, this does not directly reflect back in the regularity of the parametrisation. It does mean that the curve has several different tangent directions at the origin.
 
 :::{todo}
 Include an applet showing the curve.
 :::
 ::::::
 
-VOORBEELD NOG NIET AF, KLOPT MOGELIJK NIETS VAN
 
-SMOOTH -> REGULAR
+Daarna arc-lengthca
