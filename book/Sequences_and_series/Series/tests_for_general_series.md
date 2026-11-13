@@ -63,7 +63,7 @@ $$
 \lim\limits_{n\to\infty}|a_n|=0.
 $$
 
-This implies that the terms of the sequence $\{|a_n|\}$ become smaller and smaller and therefore
+This implies that the terms of the sequence $(|a_n|)$ become smaller and smaller and therefore
 
 $$
 |a_{n+1}|<|a_n|\quad\Longrightarrow\quad\left|\frac{a_{n+1}}{a_n}\right|\leq\frac{|a_{n+1}|}{|a_n|}<1
