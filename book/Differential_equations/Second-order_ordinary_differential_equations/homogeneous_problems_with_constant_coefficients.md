@@ -26,7 +26,7 @@ $$
  re^{rt}=-\frac{b}{a}e^{rt}.
 $$
 
-We can divide by $e^{rt}$, which is nonzero, and obtain the equation
+We can divide by $e^{rt}$, which is non-zero, and obtain the equation
 
 $$
  r=-\frac{b}{a}.
@@ -338,19 +338,23 @@ with $c_1,c_2\in\mathbb{R}$.
 :class: tudproof, dropdown 
 The functions $\tilde{y}_1(t)=e^{(\alpha+i\beta)t}$ and $\tilde{y}_2(t)=e^{(\alpha-i\beta)t}$ are complex-valued solutions of the differential equation by construction. By {prf:ref}`Thm:DE:SuperpositionPrinciple`, the functions
 
+$$
 \begin{align*}
  y_1(t)=&\frac{1}{2}\left(\tilde{y}_1(t)+\tilde{y}_2(t)\right)\\
  =&\frac{1}{2}\left(e^{\alpha t}(\cos(\beta t)+i\sin(\beta t))+e^{\alpha t}(\cos(-\beta t)+i\sin(-\beta t))\right)\\
  =&e^{\alpha t}\cos(\beta t)
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
  y_2(t)=&\frac{1}{2i}\left(\tilde{y}_1(t)-\tilde{y}_2(t)\right)\\
  =&\frac{1}{2i}\left(e^{\alpha t}(\cos(\beta t)+i\sin(\beta t))-e^{\alpha t}(\cos(-\beta t)+i\sin(-\beta t))\right)\\
  =&e^{\alpha t}\sin(\beta t)
 \end{align*}
+$$
 
 are solutions of this differential equation as well. We see that these solutions are both real-valued.
 
@@ -421,7 +425,7 @@ In {numref}`Fig:ODE2:Twocomplex` you can see on the left the graph of the two li
 
 We summarise the three cases in the following table.
 
-```{list-table} General solution of second order, linear, homogeneous differential equation
+```{list-table} General solution of second-order, linear, homogeneous differential equation
 :header-rows: 1
 :align: center
 :class: mid-align
@@ -439,9 +443,9 @@ We summarise the three cases in the following table.
 
 ```
 
-### Initial-value problems
+### initial value problems
 
-In {numref}`Sec:DE:ExistenceUniqueness` we have seen that an initial-value problem of the form
+In {numref}`Sec:DE:ExistenceUniqueness` we have seen that an initial value problem of the form
 
 $$
 \begin{cases}ay''+by'+cy=0,\\ \\y(t_0)=y_0,\quad y'(t_0)=y_0'\end{cases}
@@ -451,7 +455,7 @@ has a unique solution. Here $a\neq 0$, $b$, $c$, $y_0$ and $y_0'$ are real const
 
 ::::::{prf:example}
 :label: Ex:ODE2:IVP
-Suppose we want to find the unique solution of the initial-value problem 
+Suppose we want to find the unique solution of the initial value problem 
 
 $$
  \begin{cases}y''+y'-6y=0\\ \\y(0)=5,\quad y'(0)=0.\end{cases}
@@ -507,7 +511,7 @@ $$
  \begin{cases}c_1=3,\\ \\c_2=2.\end{cases}
 $$
 
-Hence, $y(t)=3e^{2t}+2e^{-3t}$ is the unique solution of the initial-value problem.
+Hence, $y(t)=3e^{2t}+2e^{-3t}$ is the unique solution of the initial value problem.
 ::::::
 
 ### Boundary-value problems
@@ -590,10 +594,12 @@ $$
 
 [It can be shown that there is no general method to find roots of a fifth order polynomial equation](https://en.wikipedia.org/wiki/Abel%E2%80%93Ruffini_theorem). Fortunately, we made this example ourselves so we constructed it in such a way that we know the roots. These are $r_1=1$ (with multiplicity $2$), $r_2=2$, $r_3=1+i$ and $r_4=1-i$. Following the same ideas as earlier in this section, we obtain the five real solutions
 
+$$
 \begin{align*}
 &y_1(t)=e^t, \quad y_2(t)=te^t,\quad y_3(t)=e^{2t},\\
 &{}\quad y_4(t)=e^t\cos(t),\quad y_5(t)=e^t\sin(t).
 \end{align*}
+$$
 
 Since these solutions are linearly independent, we obtain the general solution
 
@@ -603,7 +609,7 @@ $$
 
 where $c_1,c_2,c_3,c_4$ and $c_5$ are real constants.
 
-Note that an initial-value problem with a unique solution now requires the knowledge of $y(0)$, $y'(0)$, $y''(0)$, $y^{(3)}(0)$ and $y^{(4)}(0)$.
+Note that an initial value problem with a unique solution now requires the knowledge of $y(0)$, $y'(0)$, $y''(0)$, $y^{(3)}(0)$ and $y^{(4)}(0)$.
 ::::::
 
 ## Applications
@@ -639,7 +645,7 @@ $$
 \theta(t)=c_1\cos(rt)+c_2\sin(rt)\quad\text{with}\quad r=\sqrt{\frac{g}{L}}\quad\text{and}\quad c_1,c_2\in\mathbb{R}.
 $$
 
-So, if (for instance) the starting position of the pendulum is $\theta_0$ and it is released with no initial velocity, then this leads to the initial-value problem
+So, if (for instance) the starting position of the pendulum is $\theta_0$ and it is released with no initial velocity, then this leads to the initial value problem
 
 $$
 \theta''(t)+\frac{g}{L}\theta(t)=0,\quad\theta(0)=\theta_0,\quad\theta'(0)=0
@@ -1000,19 +1006,23 @@ $$
 
 Moreover, since we integrate over $x$ we can differentiate the integral with respect to $t$ and bring this derivative inside to obtain
 
+$$
 \begin{align*}
 I'(t)&=\frac{d}{dt}\int_0^{\infty}\frac{\cos(xt)}{x^2+\alpha^2}\,dx\\
 &=\int_0^{\infty}\frac{d}{dt}\frac{\cos(xt)}{x^2+\alpha^2}\,dx\\
 &=-\int_0^{\infty}\frac{x\sin(xt)}{x^2+\alpha^2}\,dx.
 \end{align*}
+$$
 
 Now we rewrite this integral to obtain
 
+$$
 \begin{align*}
 I'(t)&=-\int_0^{\infty}\frac{x\sin(xt)}{x^2+\alpha^2}\,dx\\
 &=-\int_0^{\infty}\frac{(x^2+\alpha^2-\alpha^2)\sin(xt)}{x(x^2+\alpha^2)}\,dx\\
 &=-\int_0^{\infty}\frac{\sin(xt)}{x}\,dx+\alpha^2\int_0^{\infty}\frac{\sin(xt)}{x(x^2+\alpha^2)}\,dx.
 \end{align*}
+$$
 
 Using the substitution $xt=u$, which has $du=t\,dx$, we can use {prf:ref}`Thm:Integration:ImproperIntegralsDirichletIntegral` to obtain for $t>0$ that 
 
@@ -1133,7 +1143,7 @@ $$
 :url: https://embed.grasple.com/exercises/c9f9a07a-423c-4681-8309-e0f435987724?id=76561
 :label: Grasple:76561
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1141,7 +1151,7 @@ $$
 :url: https://embed.grasple.com/exercises/d22c5bf7-4203-4051-81db-9e4475776da7?id=76560
 :label: Grasple:76560
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1149,7 +1159,7 @@ $$
 :url: https://embed.grasple.com/exercises/2719c2f6-59fc-41ee-81fa-f3ebc7820ed6?id=76559
 :label: Grasple:76559
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1157,7 +1167,7 @@ $$
 :url: https://embed.grasple.com/exercises/994fdf7e-e5ab-42b7-9bc7-7e3f7bf04957?id=76558
 :label: Grasple:76558
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1165,7 +1175,7 @@ $$
 :url: https://embed.grasple.com/exercises/82dfd24d-bb24-4582-bfbc-cddf23da7ff7?id=76557
 :label: Grasple:76557
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1173,7 +1183,7 @@ $$
 :url: https://embed.grasple.com/exercises/8981cbff-d395-4c04-87fe-c18b1bc45c86?id=76562
 :label: Grasple:76562
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1181,7 +1191,7 @@ $$
 :url: https://embed.grasple.com/exercises/d6922b52-9fc8-4672-92db-212c8d179d8a?id=76563
 :label: Grasple:76563
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1197,7 +1207,7 @@ $$
 :url: https://embed.grasple.com/exercises/e2f2de74-8c65-40dc-b153-ee6e6ec599ba?id=136611
 :label: Grasple:136611
 :dropdown:
-:description: Find nontrivial (i.e. nonzero) solutions to a boundary-value problem.
+:description: Find nontrivial (i.e. non-zero) solutions to a boundary-value problem.
 ::::::
 
 ::::::{grasple}
@@ -1205,7 +1215,7 @@ $$
 :url: https://embed.grasple.com/exercises/8a369a73-6474-490e-95b4-d3115587a048?id=136598
 :label: Grasple:136598
 :dropdown:
-:description: Find nontrivial (i.e. nonzero) solutions to a boundary-value problem.
+:description: Find nontrivial (i.e. non-zero) solutions to a boundary-value problem.
 ::::::
 
 ::::::{grasple}
@@ -1213,7 +1223,7 @@ $$
 :url: https://embed.grasple.com/exercises/60e941b6-cf2f-49b7-9c87-502b3df75979?id=136608
 :label: Grasple:136608
 :dropdown:
-:description: Find nontrivial (i.e. nonzero) solutions to a boundary-value problem.
+:description: Find nontrivial (i.e. non-zero) solutions to a boundary-value problem.
 ::::::
 
 

@@ -21,9 +21,11 @@ $$
 
 for $0\leq t\leq 600$. Here $t$ describes the number of second that has passed since we have started cycling and since we consider values of $t$ with $0\leq t\leq 600$ we are describing the first $10$ minutes that we are cycling. At different points in time, we could fill in the value of $t$ to find the (unique!) corresponding value of $v$. For instance, we find
 
+$$
 \begin{align*}
  v(120)&=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 120}{60}\right)=\frac{5}{2}+\frac{5}{2}\cos(2\pi)=\frac{5}{2}+\frac{5}{2}\cdot 1=5,\\ v(300)&=\frac{5}{2}+\frac{5}{2}\cos\left(\frac{\pi \cdot 300}{60}\right)=\frac{5}{2}+\frac{5}{2}\cos(5\pi)=\frac{5}{2}+\frac{5}{2}\cdot (-1)=0.
 \end{align*}
+$$
 
 So this formula indeed gives the right values at the moments in time $t=120$ and $t=300$. However, there are many other formulas with this property. For instance, we could consider
 
@@ -33,9 +35,11 @@ $$
 
 for $0\leq t\leq 600$ (we use the symbol $w$ to distinguish between this formula and the previous one). Since we still have a single velocity corresponding to each point in time, $w$ is a function of $t$. Then, we find
 
+$$
 \begin{align*}
  w(120)=\frac{25}{3}-\frac{120}{36}=5,\qquad w(300)=\frac{25}{3}-\frac{300}{36}=0
 \end{align*}
+$$
 
 so this formula also gives the right values at the moments in time $t=120$ and $t=300$. So which of these is correct? Without knowing more about our journey, it is impossible to know for sure, but, in this case, one is definitely more realistic than the other. For instance, we have $v(t)\geq 0$ for all $t$, while at $t=600$ we have
 
@@ -45,7 +49,7 @@ $$
 
 So for the formula $w(t)=\frac{25}{4}-\frac{t}{48}$ we obtain a negative velocity, which means we would start moving backwards. So the first formula is likely more realistic. Does that mean that it is correct, though? Probably not, since we have only specified the velocity at two points in time and a lot can happen at different points. Hence, it would be a major coincidence that the formula we provided perfectly described our movement. Still, we can use this formula to model our journey. Moreover the more points in time we specify what the velocity should be, the more realistic we can choose our model.
 
-In fact, in almost all processes in nature, science and engineering one quantity depends on another quantity (or perhaps on multiple quantities) and can, therefore, be described by means of a function. The branch of mathematics concerned with finding functions describing natural phenomena is called **mathematical modelling**. In this book, the focus is not on the modelling part. Instead, we usually assume that the function is given to us and by analyzing it, we aim to understand the underlying process. 
+In fact, in almost all processes in nature, science and engineering one quantity depends on another quantity (or perhaps on multiple quantities) and can, therefore, be described by means of a function. The branch of mathematics concerned with finding functions describing natural phenomena is called **mathematical modelling**. In this book, the focus is not on the modelling part. Instead, we usually assume that the function is given to us and by analysing it, we aim to understand the underlying process. 
 
 From a purely mathematical standpoint, functions are one of the most central objects of investigation. Indeed, most mathematical procedures where one mathematical object is turned into another object can be described by means of a function. Understanding what functions are and what you can and cannot do with them is essentially everything that we do in calculus, and mathematical analysis more broadly.
 
@@ -254,7 +258,7 @@ When $y$ is in the range of $f$, the point $(0,y)$ is called a **$y$-intercept**
 
 For most functions that we will encounter in this book, the graph looks like one or several curves in $\mathbb{R}^2$. For instance, the graph of the function $f(x)=x^2$ is the curve of all points $(x,y)$ with $y=x^2$, so the graph is a parabola. So we might wonder: is any curve in $\mathbb{R}^2$ the graph of a certain function? For instance, is the circle with radius $1$, centered around the origin, the graph of some function? Well, suppose that there is some function $f$ which has this circle as its graph. Since the point $(0,1)$ is on the circle, that means that $f(0)=1$. However, the point $(0,-1)$ is also on this circle, so that should mean that $f(0)=-1$. Since for a function, a given input ($0$ in this case) can only have a single output, it is impossible that $f(0)$ is both $1$ and $-1$ at the same time. As such, this circle cannot be the graph of any function.
 
-How could we have seen this in advance? Well, the reason why the circle is not the graph of a function was that there are two different points on this circle which have the same $x$-coordinate. That means that the vertical line $x=0$ intersects the circle at two different points. This idea can be generalized as follows: the only reason a curve is not the graph of some function, is that there are two different points on the curve that have the same $x$-coordinate. In such a case, there is a vertical line that intersects the curve more than once. Conversely, a vertical line $x=a$ intersect the graph of a function $f$ exactly once if $a$ is in the domain of $f$ (they intersect at the point $(a,f(a))$), while such a vertical line does not intersect the graph at all if $a$ is not in the domain of $f$. We can formulate this result as follows.
+How could we have seen this in advance? Well, the reason why the circle is not the graph of a function was that there are two different points on this circle which have the same $x$-coordinate. That means that the vertical line $x=0$ intersects the circle at two different points. This idea can be generalised as follows: the only reason a curve is not the graph of some function, is that there are two different points on the curve that have the same $x$-coordinate. In such a case, there is a vertical line that intersects the curve more than once. Conversely, a vertical line $x=a$ intersect the graph of a function $f$ exactly once if $a$ is in the domain of $f$ (they intersect at the point $(a,f(a))$), while such a vertical line does not intersect the graph at all if $a$ is not in the domain of $f$. We can formulate this result as follows.
 
 ::::::{prf:theorem} Vertical line test 
 :label: Thm:Functions1var:VerticalLineTest
@@ -619,7 +623,7 @@ The graph of the function $P(V)=\frac{nRT}{V}$ to indicate the shape of the func
 
 ::::::{prf:example} Power function with power $-2$
 :label: Ex:Functions1var:Gravity
-Consider two objects with masses $m_1$ and $m_2$ respectively (measured in $\mathrm{kg}$). Then [Newton's law of universal gravitation](https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation) states that the gravitational force $F$ (measured in $\mathrm{N}$) acting between the two objects is a function of the distance $r$ (measured in $\mathrm{m}$) between the two objects
+Consider two objects with masses $m_1$ and $m_2$ respectively (measured in $\text{kg}$). Then [Newton's law of universal gravitation](https://en.wikipedia.org/wiki/Newton%27s_law_of_universal_gravitation) states that the gravitational force $F$ (measured in $\text{N}$) acting between the two objects is a function of the distance $r$ (measured in $\text{m}$) between the two objects
 
 $$
  F(r)=G\frac{m_1m_2}{r^2}=Gm_1m_2r^{-2}.

@@ -26,11 +26,13 @@ $$
 
 The $n$th partial sum of this series is, using $a=r=\frac{1}{2}$ in {prf:ref}`Ex:SumsAndProducts:IntroductionFiniteGeometric`:
 
+$$
 \begin{align*}
 s_n &= \sum_{k=1}^n\left(\frac{1}{2}\right)^k \\
 &= \frac{1}{2}\cdot\frac{1-\left(\frac{1}{2}\right)^n}{1-\frac{1}{2}} \\
 &= 1-\left(\frac{1}{2}\right)^n.
 \end{align*}
+$$
 
 This means that
 
@@ -66,10 +68,12 @@ $$
 
 Then we have (compare with {prf:ref}`Ex:SumsAndProducts:IntroductionFiniteGeometric`)
 
+$$
 \begin{align*}
 s_n&=a&+ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&\\
 rs_n&=&ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&+ar^n.
 \end{align*}
+$$
 Subtracting the two equations we obtain
 
 $$
@@ -146,28 +150,34 @@ In {numref}`Sec:Decimals` we introduced the notation $0.\overline{12}=0.12121212
 
 Notice that $0.\overline{12}$ can be written as:
 
+$$
 \begin{align*}
 0.\overline{12} &= 0.12121212\ldots \\
 &= 0.12 + 0.0012 + 0.000012 + 0.00000012 \cdots \\
 &= \frac{12}{100} + \frac{12}{100^2} + \frac{12}{100^3} + \frac{12}{100^4} + \cdots \\
 &= \sum_{n=1}^{\infty}\frac{12}{100}\left(\frac{1}{100}\right)^{n-1}.
 \end{align*}
+$$
 
 By {prf:ref}`Thm:Series:GeometricSeries` the geometric series $\displaystyle\sum_{n=1}^{\infty}\frac{12}{100}\left(\frac{1}{100}\right)^{n-1}$ converges and its sum equals
 
+$$
 \begin{align*}
 \displaystyle\sum_{n=1}^{\infty}\frac{12}{100}\left(\frac{1}{100}\right)^{n-1} &= \frac{\frac{12}{100}}{1-\frac{1}{100}} \\
 &= \frac{\frac{12}{100}}{\frac{99}{100}} \\
 &= \frac{12}{99} \\
 &= \frac{4}{33}.
 \end{align*}
+$$
 
 Although this shows the power of geometric series, it is a bit of an overkill to use the formula for the sum of a geometric series to find a fraction for $0.\overline{12}$. The method used in {numref}`Sec:Decimals` is much more straightforward:
 
+$$
 \begin{align*}
 &100p=12.\overline{12}=12+0.\overline{12}=12p\\
 &\quad\Longrightarrow\quad99p=12\quad\Longleftrightarrow\quad p=\frac{12}{99}=\frac{4}{33}.
 \end{align*}
+$$
 
 ::::::
 
@@ -188,10 +198,12 @@ $$
 
 Second, let $q=0.\overline{135}$, then we have
 
+$$
 \begin{align*}
 &1000q=135.\overline{135}=135+0.\overline{135}=135+q\\
 &\quad\Longrightarrow\quad999q=135\quad\Longleftrightarrow\quad q=\frac{135}{999}=\frac{15}{111}=\frac{5}{37}.
 \end{align*}
+$$
 
 ::::::
 
@@ -238,6 +250,7 @@ Make $p=2$ by default, but allow the user to change $p$ and $n$ to see how the g
 
 The area of the $n$th rectangle is $\dfrac{1}{n^p}$, so the area of all the rectangles is exactly the $n$th partial sum of the $p$-series. The graph of $f(x)=\dfrac{1}{x^p}$ is also given for comparison. Again we can use the fact that $f$ is a decreasing function to find a lower bound for the $n$th partial sum:
 
+$$
 \begin{align*}
 s_n &= \sum_{k=1}^n\frac{1}{k^p} \\
 &> \sum_{k=1}^n\int_k^{k+1}\frac{1}{x^p}dx \\
@@ -246,6 +259,7 @@ s_n &= \sum_{k=1}^n\frac{1}{k^p} \\
 &= \frac{1}{1-p}\frac{1}{(n+1)^{p-1}} - \frac{1}{1-p}\frac{1}{1^{p-1}} \\
 &= \frac{1}{1-p}\left(\frac{1}{(n+1)^{p-1}} - 1\right).
 \end{align*}
+$$
 
 Because $p>1$, we have $p-1>0$, so $\displaystyle\lim_{n\to\infty}\frac{1}{(n+1)^{p-1}}=0$. Hence, we have
 
@@ -261,6 +275,7 @@ $$
 
 On the other hand, we can also find an upper bound for the $n$th partial sum by comparison with the graph of $g(x)=\frac{1}{(x-1)^p}$ for $x\geq2$, as $g$ is also a decreasing function and each rectangle is below the graph of $g$. Hence, we have
 
+$$
 \begin{align*}
 s_n &= \sum_{k=1}^n\frac{1}{k^p} \\
 &= \frac{1}{1^p} + \sum_{k=2}^{n}\frac{1}{k^p} \\
@@ -270,6 +285,7 @@ s_n &= \sum_{k=1}^n\frac{1}{k^p} \\
 &= 1 + \frac{1}{1-p}\frac{1}{n^{p-1}} - \frac{1}{1-p}\frac{1}{1^{p-1}} \\
 &= 1 + \frac{1}{1-p}\left(\frac{1}{n^{p-1}} - 1\right).
 \end{align*}
+$$
 
 Again we take the limit as $n$ approaches infinity and we find
 
@@ -385,12 +401,14 @@ $$
 :label: Ex:Series:TelescopingSeries2
 Another example is: $\displaystyle\sum_{n=2}^{\infty}\frac{1}{n^2-1}$. Then we have
 
+$$
 \begin{align*}
 \sum_{k=2}^n\frac{1}{k^2-1}&=\sum_{k=2}^n\frac{1}{(k-1)(k+1)}=\frac{1}{2}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+1}\right)\\
 &=\frac{1}{2}\left(\frac{1}{1}-\cancel{\frac{1}{3}}+\frac{1}{2}-\cancel{\frac{1}{4}}+\cancel{\frac{1}{3}}-\cancel{\frac{1}{5}}+\cancel{\frac{1}{4}}-\cancel{\frac{1}{6}}+\right.\\
 &{}\quad\quad\quad\quad\quad\left.{}\cdots+\cancel{\frac{1}{n-2}}-\frac{1}{n}+\cancel{\frac{1}{n-1}}-\frac{1}{n+1}\right)\\
 &=\frac{1}{2}\left(1+\frac{1}{2}-\frac{1}{n}-\frac{1}{n+1}\right).
 \end{align*}
+$$
 This implies that the series converges and that 
 
 $$
@@ -404,12 +422,14 @@ $$
 :label: Ex:Series:TelescopingSeries3
 A third example is: $\displaystyle\sum_{n=2}^{\infty}\frac{1}{(n-1)(n+2)}$. Then we have
 
+$$
 \begin{align*}
 &\sum_{k=2}^n\frac{1}{(k-1)(k+2)}=\frac{1}{3}\sum_{k=2}^n\left(\frac{1}{k-1}-\frac{1}{k+2}\right)\\
 &=\frac{1}{3}\left(\frac{1}{1}-\cancel{\frac{1}{4}}+\frac{1}{2}-\cancel{\frac{1}{5}}+\frac{1}{3}-\cancel{\frac{1}{6}}+\cancel{\frac{1}{4}}-\cancel{\frac{1}{7}}+\right.\\
 &{}\quad\quad\quad\quad\quad\left.{}\cdots+\cancel{\frac{1}{n-3}}-\frac{1}{n}+\cancel{\frac{1}{n-2}}-\frac{1}{n+1}+\cancel{\frac{1}{n-1}}-\frac{1}{n+2}\right)\\
 &=\frac{1}{3}\left(1+\frac{1}{2}+\frac{1}{3}-\frac{1}{n}-\frac{1}{n+1}-\frac{1}{n+2}\right).
 \end{align*}
+$$
 This implies that the series converges and that 
 
 $$
@@ -439,6 +459,7 @@ If the limit $\lim\limits_{n\to\infty}b_n$ does not exist, the series $\displays
 
 The $N$th partial sum of the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is
 
+$$
 \begin{align*}
 s_N &= \sum_{n=p}^Na_n \\
 &= \sum_{n=p}^N(b_n - b_{n+q}) \\
@@ -447,15 +468,18 @@ s_N &= \sum_{n=p}^Na_n \\
 &= \sum_{n=p}^{p+q-1}b_n + \sum_{n=p+q}^Nb_n - \sum_{n=p+q}^{N+q}b_n \\
 &= \sum_{n=p}^{p+q-1}b_n - \sum_{n=N+1}^{N+q}b_n.
 \end{align*}
+$$
 
 Now assume that $\lim\limits_{N\to\infty}b_N$ exists. We take the limit as $N$ approaches infinity and we find
 
+$$
 \begin{align*}
 \lim_{N\to\infty}s_N &= \lim_{N\to\infty}\left(\sum_{n=p}^{p+q-1}b_n - \sum_{n=N+1}^{N+q}b_n\right) \\
 &= \sum_{n=p}^{p+q-1}b_n - \lim_{N\to\infty}\sum_{n=N+1}^{N+q}b_n \\
 &= \sum_{n=p}^{p+q-1}b_n - \lim_{N\to\infty}\left(b_{N+1}+b_{N+2}+b_{N+3}+\cdots+b_{N+q}\right) \\
 &= \sum_{n=p}^{p+q-1}b_n - q\cdot\lim_{N\to\infty}b_N.
 \end{align*}
+$$
 
 Hence, we have
 
@@ -675,12 +699,14 @@ If we use the first $10$ terms of the series $\displaystyle\sum_{n=1}^{\infty}\f
 
 The $10$th partial sum is
 
+$$
 \begin{align*}
 s_{10}&=\sum_{n=1}^{10}\frac{(-1)^{n-1}}{n^2}\\
 &=1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+\frac{1}{25}-\frac{1}{36}+\frac{1}{49}-\frac{1}{64}+\frac{1}{81}-\frac{1}{100}\\
 &=\frac{5194387}{6350400}\\
 &\approx0.81796.
 \end{align*}
+$$
 
 Then {prf:ref}`Thm:Series:EstimatingSumAlternatingSeries` implies that the remainder satisfies:
 
@@ -721,12 +747,14 @@ Note that we round to three decimal places, so the approximation should be corre
 
 To check that we indeed found an approximation which is correct to three decimal places, we can calculate also the next partial sum:
 
+$$
 \begin{align*}
 \sum_{n=2}^7\frac{(-1)^n}{n!}&=\frac{1}{2}-\frac{1}{6}+\frac{1}{24}-\frac{1}{120}+\frac{1}{720}-\frac{1}{5040}\\
 &=\frac{103}{280}\\
 &=0.367\overline{857142}\\
 &\approx0.368.
 \end{align*}
+$$
 
 After rounding to three decimal places, we get the same approximation, so we can be sure that the approximation is correct to three decimal places.
 

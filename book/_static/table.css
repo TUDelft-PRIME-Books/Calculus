@@ -37,3 +37,8 @@ table.center {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+table a.headerlink {
+  font-size: inherit;
+  position: absolute;
+}

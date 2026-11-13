@@ -201,13 +201,13 @@ Complete the following sentences:
 ---
 M[3]
 DS[a vertical tangent;a horizontal tangent;a sharp turn;{self-intersection}]
-DS[zero;{an undefined};nonzero]
+DS[zero;{an undefined};non-zero]
 DS[a vertical tangent;a horizontal tangent;{a sharp turn};self-intersection]
-DS[zero;{an undefined};nonzero]
+DS[zero;{an undefined};non-zero]
 DS[{a vertical tangent};a horizontal tangent;a sharp turn;self-intersection]
-DS[zero;{an undefined};nonzero]
+DS[zero;{an undefined};non-zero]
 DS[a vertical tangent;{a horizontal tangent};a sharp turn;self-intersection]
-DS[{zero};an undefined;nonzero]
+DS[{zero};an undefined;non-zero]
 ^^^
 ? :::{card}
 Implicit differentiation can be used to find the slope of the curve at all except {gap} points.
@@ -258,10 +258,12 @@ $$
 
 The derivative of $\dfrac{dy}{dx}$ is, by definition, the second derivative $\dfrac{d^2y}{dx^2}$. For the derivative of the right-hand side we use the quotient rule and the chain rule to obtain
 
+$$
 \begin{align*}
  \frac{d}{dx}\left(\frac{-2x-y}{x+2y}\right)&=\frac{(x+2y)\left(-2-\frac{dy}{dx}\right)-\left(-2x-y\right)\left(1+2\frac{dy}{dx}\right)}{\left(x+2y\right)^2}\\
  &=\frac{3x\frac{dy}{dx}-3y}{\left(x+2y\right)^2}.
 \end{align*}
+$$
 
 Combining these expressions, we obtain
 
@@ -308,7 +310,7 @@ $$
  \frac{dy}{dt}=\frac{dy}{dx}\frac{dx}{dt}.
 $$
 
-By dividing by $\frac{dx}{dt}$ (assuming it is nonzero), we obtain
+By dividing by $\frac{dx}{dt}$ (assuming it is non-zero), we obtain
 
 $$
  \frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{y'(t)}{x'(t)}.

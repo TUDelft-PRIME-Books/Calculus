@@ -92,10 +92,12 @@ Sometimes the ratio test is called **d'Alembert's criterion**, named after the F
 :class: tudproof, dropdown
 1) If $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L<1$ we can choose a number $r$ such that $L<r<1$. Then $\displaystyle\lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|=L$ implies that there exists an integer $N$ such that $\displaystyle\left|\frac{a_{n+1}}{a_n}\right| < r$ for all $n\geq N$ or equivalently $|a_{n+1}| < |a_n|r$ for all $n\geq N$. Hence we have:
 
-   \begin{align*}
+$$
+\begin{align*}
    &|a_{N+1}| < |a_N|r,\quad |a_{N+2}| < |a_{N+1}|r < |a_N|r^2,\\
    &{}\quad|a_{N+3}| < |a_{N+2}|r < |a_N|r^3,\quad\ldots
    \end{align*}
+$$
   
    So we have: $|a_{N+k}| < |a_N|r^k$ for $k=1,2,3,\ldots$. Now the series $\displaystyle\sum_{k=1}^{\infty}|a_N|r^k$ is convergent because it is a geometric series with common ratio $r$ and $0 < r < 1$. This implies that the series $\displaystyle\sum_{n=N+1}^{\infty}|a_n|=\sum_{k=1}^{\infty}|a_{N+k}|$ is convergent. Hence the series $\displaystyle\sum|a_n|$ is convergent.
 
@@ -114,12 +116,14 @@ Consider the alternating series $\displaystyle\sum_{n=0}^{\infty}(-1)^n\frac{2n+
 
 Let $a_n=\displaystyle(-1)^n\frac{2n+1}{2^n}$, then we have:
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|(-1)^{n+1}\frac{2n+3}{2^{n+1}}\cdot(-1)^n\frac{2^n}{2n+1}\right|\\
 &=\lim\limits_{n\to\infty}\frac{2n+3}{2n+1}\cdot\frac{1}{2} \\
 &=\frac{1}{2} \\
 &<1.
 \end{align*}
+$$
 
 This implies that the series is absolutely convergent.
 
@@ -131,11 +135,13 @@ Consider the series $\displaystyle\sum_{n=0}^{\infty}\frac{n!}{5^n}$.
 
 Let $a_n=\displaystyle\frac{n!}{5^n}$, then we have:
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| &= \lim\limits_{n\to\infty}\left|\frac{(n+1)!}{5^{n+1}}\cdot\frac{5^n}{n!}\right| \\
 &=\lim\limits_{n\to\infty}\frac{1}{5}(n+1) \\
 &=\infty.
 \end{align*}
+$$
  
 This implies that the series is divergent.
 ::::::
@@ -210,6 +216,7 @@ so by the divergence test, the series $\displaystyle\sum_{n=1}^{\infty}b_n$ is d
 
 However, for the series $\displaystyle\sum_{n=1}^{\infty}a_n$ we have
 
+$$
 \begin{align*}
 \sum_{n=1}^{\infty}a_n&=\sum_{\substack{n=1\\n\text{ odd}}}^{\infty}a_n+\sum_{\substack{n=1\\n\text{ even}}}^{\infty}a_n\\
 &=\sum_{\substack{n=1\\n\text{ odd}}}^{\infty}\frac{1}{2^{n}}+\sum_{\substack{n=1\\n\text{ even}}}^{\infty}\frac{1}{2^{n-2}}\\
@@ -220,6 +227,7 @@ However, for the series $\displaystyle\sum_{n=1}^{\infty}a_n$ we have
 &=\frac{2}{3}+\frac{4}{3} \\
 &=2.
 \end{align*}
+$$
 
 This shows that the series $\displaystyle\sum_{n=1}^{\infty}a_n$ is (absolutely) convergent, while the series $\displaystyle\sum_{n=1}^{\infty}b_n$ is divergent, even though the ratios $\displaystyle\left|\frac{a_{n+1}}{a_n}\right|$ and $\displaystyle\left|\frac{b_{n+1}}{b_n}\right|$ do not have a limit as $n$ tends to infinity.
 
@@ -307,12 +315,14 @@ Sometimes the root test is called **Cauchy's criterion**, named after the French
 
    The series $\displaystyle\sum a_n$ is convergent due to the integral test, since by using the substitution $t=\sqrt{x}$ and integration by parts we have
 
-   \begin{align*}
+$$
+\begin{align*}
    \int_0^{\infty}e^{-\sqrt{x}}\,dx&=\int_0^{\infty}e^{-t}\,2t\,dt\\
    &=-2te^{-t}\bigg|_0^{\infty}+2\int_0^{\infty}e^{-t}\,dt \\
    &=0-2e^{-t}\bigg|_0^{\infty}\\
    &=2.
    \end{align*}
+$$
 
    The series $\displaystyle\sum b_n$ is divergent, since 
 
@@ -397,6 +407,7 @@ $$
 
 The series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent, since
 
+$$
 \begin{align*}
 \sum_{n=1}^{\infty}a_n&=\sum_{\substack{n=1\\n\text{ odd}}}^{\infty}a_n+\sum_{\substack{n=1\\n\text{ even}}}^{\infty}a_n\\
 &=\sum_{\substack{n=1\\n\text{ odd}}}^{\infty}\frac{1}{2^{n}}+\sum_{\substack{n=1\\n\text{ even}}}^{\infty}0 \\
@@ -405,6 +416,7 @@ The series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent, since
 &=\frac{\frac{1}{4}}{1-\frac{1}{4}} \\
 &=\frac{1}{3}.
 \end{align*}
+$$
 
 The series $\displaystyle\sum_{n=1}^{\infty}b_n$ is divergent, since $\lim\limits_{n\to\infty}b_n$ does not exist.
 

@@ -84,20 +84,24 @@ The iterated integral on the right can be written in six different orders, all w
 
 We evaluate the triple integral $\displaystyle\iiint\limits_Bx^2yz\,dV$, where $B$ is the rectangular box given by
 
+$$
 \begin{align*}
 B&=[0,1]\times[-1,2]\times[0,3]\\
 &=\{(x,y,z)\,|\,0\leq x\leq1,\;-1\leq y\leq2,\;0\leq z\leq3\}.
 \end{align*}
+$$
 
 Note that
 
+$$
 \begin{align*}
 \iiint\limits_Bx^2yz\,dV&=\int_0^3\int_{-1}^2\int_0^1x^2yz\,dx\,dy\,dz\\
 &=\left(\int_0^1x^2\,dx\right)\left(\int_{-1}^2y\,dy\right)\left(\int_0^3z\,dz\right)\\
 &=\bigg[\frac{1}{3}x^3\bigg]_{x=0}^1\bigg[\frac{1}{2}y^2\bigg]_{y=-1}^2\bigg[\frac{1}{2}z^2\bigg]_{z=0}^3\\
 &=\frac{1}{3}\cdot\frac{3}{2}\cdot\frac{9}{2}\\
 &=\frac{9}{4}.
-\end{align*} 	
+\end{align*}
+$$ 	
 
 :::
 
@@ -114,6 +118,7 @@ $$
 
 Consider a metal box $B=[-5,5]\times[-3,3]\times[-1,1]$, where the temperature $T$ (in ${}^{\circ}\text{C}$) in each point $(x,y,z)\in B$ is given by $T(x,y,z)=50-3x^2-3y^2-3z^2$. Then we have: $\operatorname{vol}(B)=10\cdot6\cdot1=60$ and
 
+$$
 \begin{align*}
 &\iiint_B\left(50-3x^2-3y^2-3z^2\right)\,dV\\
 &{}\quad{}=\int_{-5}^5\int_{-3}^3\int_{-1}^1\left(50-3x^2-3y^2-3z^2\right)\,dz\,dy\,dx\\
@@ -125,6 +130,7 @@ Consider a metal box $B=[-5,5]\times[-3,3]\times[-1,1]$, where the temperature $
 &{}\quad{}=2\cdot\left(2400-1500\right)\\
 &{}\quad{}=1800.
 \end{align*}
+$$
 
 Hence, the average temperature in $B$ equals $\dfrac{1800}{60}=30^{\circ}\text{C}$.
 
@@ -141,6 +147,7 @@ $$
 
 Similarly, using the series representation $\displaystyle\frac{1}{1-xyz}=\sum_{n=0}^{\infty}(xyz)^n$ for $|xyz|<1$ we obtain
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\int_0^1\frac{dx\,dy\,dz}{1-xyz}&=\int_0^1\int_0^1\int_0^1\sum_{n=0}^{\infty}(xyz)^n\,dx\,dy\,dz\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1x^n\,dx\right)\left(\int_0^1y^n\,dy\right)\left(\int_0^1z^n\,dz\right)\\
@@ -148,6 +155,7 @@ Similarly, using the series representation $\displaystyle\frac{1}{1-xyz}=\sum_{n
 &=\sum_{n=1}^{\infty}\frac{1}{n^3}\\
 &=\zeta(3).
 \end{align*}
+$$
 
 Moreover, we obtained that
 
@@ -157,6 +165,7 @@ $$
 
 Similarly, using the series representation $\displaystyle\frac{1}{1-x^2y^2z^2}=\sum_{n=0}^{\infty}(xyz)^{2n}$ for $|xyz|<1$ and {eq}`Eq:Series:RiemannZetaFunction1` we obtain
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\int_0^1\frac{dx\,dy\,dz}{1-x^2y^2z^2}&=\int_0^1\int_0^1\int_0^1\sum_{n=0}^{\infty}(xyz)^{2n}\,dx\,dy\,dz\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1x^{2n}\,dx\right)\left(\int_0^1y^{2n}\,dy\right)\left(\int_0^1z^{2n}\,dz\right)\\
@@ -164,6 +173,7 @@ Similarly, using the series representation $\displaystyle\frac{1}{1-x^2y^2z^2}=\
 &=\left(1-\frac{1}{8}\right)\zeta(3)\\
 &=\frac{7}{8}\zeta(3).
 \end{align*}
+$$
 
 ## General regions
 
@@ -277,6 +287,7 @@ $$
 
 Using the description of $E$ as a $z$-simple region, the tetrahedron is between the planes $z=0$ and $z=1-x-y$, we have:
 
+$$
 \begin{align*}
 \iiint\limits_Ex\,dV&=\iint\limits_D\left(\int_0^{1-x-y}x\,dz\right)\,dA\\
 &=\iint\limits_Dx(1-x-y)\,dA\\
@@ -290,6 +301,7 @@ Using the description of $E$ as a $z$-simple region, the tetrahedron is between 
 &=\frac{1}{6}-\frac{1}{8}\\
 &=\frac{1}{24}.
 \end{align*}
+$$
 
 Note that the projection of $E$ on the $yz$-plane is
 
@@ -299,6 +311,7 @@ $$
 
 Using the description of $E$ as a $x$-simple region, the tetrahedron is between the planes $x=0$ and $x=1-y-z$, we have:
 
+$$
 \begin{align*}
 \iiint\limits_Ex\,dV&=\iint\limits_D\left(\int_0^{1-y-z}x\,dx\right)\,dA\\
 &=\frac{1}{2}\iint\limits_D(1-y-z)^2\,dA\\
@@ -308,6 +321,7 @@ Using the description of $E$ as a $x$-simple region, the tetrahedron is between 
 &=-\frac{1}{24}(1-y)^4\bigg|_0^1\\
 &=\frac{1}{24}.
 \end{align*}
+$$
 
 :::
 
@@ -366,13 +380,16 @@ $$
 
 Then we have:
 
+$$
 \begin{align*}
 \iiint\limits_E\sqrt{x^2+z^2}\,dV&=\iint\limits_D\left(\int_{x^2+z^2}^4\sqrt{x^2+z^2}\,dy\right)\,dA\\
 &=\iint\limits_{D_3}(4-x^2-z^2)\sqrt{x^2+z^2}\,dA.
 \end{align*}
+$$
  
 Using polar coordinates we now obtain
 
+$$
 \begin{align*}
 \iiint\limits_E\sqrt{x^2+z^2}\,dV&=\iint\limits_{D_3}(4-x^2-z^2)\sqrt{x^2+z^2}\,dA\\
 &=\int_0^{2\pi}\int_0^2(4-r^2)\,r\,r\,dr\,d\theta\\
@@ -382,6 +399,7 @@ Using polar coordinates we now obtain
 &=2\pi\cdot32\cdot\frac{2}{15}\\
 &=\frac{128}{15}\pi.
 \end{align*}
+$$
 
 :::
 
@@ -409,10 +427,12 @@ are the **moments** of $E$ about the three coordinate planes $x=0$, $y=0$ and $z
 
 The **center of mass** of $E$ is located at the point $(\overline{x},\overline{y},\overline{z})$ with
  
+$$
 \begin{align*}
 &\overline{x}=\frac{1}{m}\iiint\limits_Ex\,\rho(x,y,z)\,dV,\quad\overline{y}=\frac{1}{m}\iiint\limits_Ey\,\rho(x,y,z)\,dV\\
 &{}\quad\text{and}\quad\overline{z}=\frac{1}{m}\iiint\limits_Ez\,\rho(x,y,z)\,dV,
 \end{align*}
+$$
 
 where $m=\displaystyle\iiint\limits_E\rho(x,y,z)\,dV$ denotes the (total) mass of  $E$.
 
@@ -420,10 +440,12 @@ If the mass density function $\rho(x,y,z)$ is constant, then the center of mass 
 
 If $\rho(x,y,z)\geq0$ is a mass density function defined on a solid $E$ in $\mathbb{R}^3$, then the integrals
 
+$$
 \begin{align*}
 &I_x=\iiint\limits_E(y^2+z^2)\rho(x,y,z)\,dV,\quad I_y=\iiint\limits_E(x^2+z^2)\rho(x,y,z)\,dV\\
 &{}\quad\text{and}\quad I_z=\iiint\limits_E(x^2+y^2)\rho(x,y,z)\,dV  
 \end{align*}
+$$
 
 are the **moments of inertia** of the solid $E$ about the $x$-axis, the $y$-axis and the $z$-axis, respectively.
 
@@ -434,6 +456,7 @@ In {prf:ref}`Ex:MultivariableIntegration:DirichletIntegral`, {prf:ref}`Ex:Multiv
 
 For $\alpha>0$ and $\beta>0$ we have
 
+$$
 \begin{align*}
 \int_0^{\infty}\frac{(1-e^{-\alpha x})(1-e^{-\beta x})}{x^2}\,dx&=\int_0^{\infty}\left(\int_0^{\alpha}e^{-xy}\,dy\right)\left(\int_0^{\beta}e^{-xz}\,dz\right)\,dx\\
 &=\int_0^{\alpha}\int_0^{\beta}\left(\int_0^{\infty}e^{-x(y+z)}\,dx\right)\,dz\,dy\\
@@ -442,5 +465,6 @@ For $\alpha>0$ and $\beta>0$ we have
 &=\bigg[(y+\beta)\ln(y+\beta)-y\ln(y)\bigg]_0^{\alpha}\\
 &=(\alpha+\beta)\ln(\alpha+\beta)-\alpha\ln(\alpha)-\beta\ln(\beta).
 \end{align*}
+$$
 
 :::::

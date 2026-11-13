@@ -17,6 +17,7 @@ $$
 
 Similarly, using the series representation $\displaystyle\frac{1}{1-wxyz}=\sum_{n=0}^{\infty}(wxyz)^n$ for $|wxyz|<1$ we obtain
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\int_0^1\int_0^1\frac{dw\,dx\,dy\,dz}{1-wxyz}&=\int_0^1\int_0^1\int_0^1\int_0^1\sum_{n=0}^{\infty}(wxyz)^n\,dw\,dx\,dy\,dz\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1w^n\,dw\right)\left(\int_0^1x^n\,dx\right)\\
@@ -26,6 +27,7 @@ Similarly, using the series representation $\displaystyle\frac{1}{1-wxyz}=\sum_{
 &=\zeta(4)\\
 &=\frac{1}{90}\pi^4.
 \end{align*}
+$$
 
 In {numref}`Sec:MultivariableIntegration:RiemannZetaFunction1` and {numref}`Sec:MultivariableIntegration:RiemannZetaFunction2` we also obtained that
 
@@ -35,6 +37,7 @@ $$
 
 Similarly, using the series representation $\displaystyle\frac{1}{1-w^2x^2y^2z^2}=\sum_{n=0}^{\infty}(wxyz)^{2n}$ for $|wxyz|<1$ and {eq}`Eq:Series:RiemannZetaFunction1` we obtain
 
+$$
 \begin{align*}
 \int_0^1\int_0^1\int_0^1\int_0^1\frac{dx\,dy\,dz}{1-w^2x^2y^2z^2}&=\int_0^1\int_0^1\int_0^1\int_0^1\sum_{n=0}^{\infty}(wxyz)^{2n}\,dw\,dx\,dy\,dz\\
 &=\sum_{n=0}^{\infty}\left(\int_0^1w^{2n}\,dw\right)\left(\int_0^1x^{2n}\,dx\right)\\
@@ -45,3 +48,4 @@ Similarly, using the series representation $\displaystyle\frac{1}{1-w^2x^2y^2z^2
 &=\frac{15}{16}\cdot\frac{1}{90}\pi^4\\
 &=\frac{1}{96}\pi^4.
 \end{align*}
+$$

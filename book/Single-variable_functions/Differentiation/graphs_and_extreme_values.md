@@ -687,17 +687,21 @@ $$
 
 This function is a linear combination of two functions that are continuous on $[a,b]$ and differentiable on $(a,b)$, so the new function $h$ has these properties as well. In addition, we see that $h(a)=h(b)$, since
 
+$$
 \begin{align*}
  h(a) &= (g(b)-g(a))f(a)-(f(b)-f(a))g(a) \\
  &= g(b)f(a)-f(b)g(a) 
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
  h(b) &= (g(b)-g(a))f(b)-(f(b)-f(a))g(b) \\
  &= g(b)f(a)-f(b)g(a) .
 \end{align*}
+$$
 
 As such, we can use Rolle's theorem to obtain $c$ in $(a,b)$ with $h'(c)=0$. We can evaluate the derivative of $h$ as
 

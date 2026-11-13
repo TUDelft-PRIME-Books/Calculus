@@ -1,15 +1,11 @@
-.longdivision mjx-mtd,
-.longdivision-short mjx-mtd { padding: 0 !important; }
-.longdivision-short { overflow-y: hidden !important; }
-
-.compact mjx-mtd { padding: 0.1rem !important; }
-
-mjx-mtable.compact[justify="right"],
-mjx-mtable.longdivision[justify="right"],
-mjx-mtable.longdivision-short[justify="right"] {
-    text-align: center !important;
+.longdivision .mtable .arraycolsep,
+.longdivision-short .mtable .arraycolsep {
+    width: 0em !important;
 }
-
-mjx-utext[variant="-explicitFont"] {
-    min-width: fit-content !important;
+.longdivision-short { overflow-y: hidden !important; }
+.compact .mtable .arraycolsep {
+    width: 0.1em !important;
+}
+.compact .mtable {
+    text-align: center !important;
 }
