@@ -223,12 +223,14 @@ Using these properties we can also determine indefinite integrals of linear comb
 
 Indefinite integrals of polynomials are found using the linear properties of indefinite integrals and the power rule from {numref}`Tab:Integration:StandardIndefiniteIntegrals`. For example:
 
+$$
 \begin{align*}
 \int(x^2-3)^2\,dx&=\int(x^4-6x^2+9)\,dx\\
 &=\int x^4\,dx-6\int x^2\,dx+\int 9\,dx\\
 &=\frac{1}{5}x^5-6\cdot\frac{1}{3}x^3+9x+C\\
 &=\frac{1}{5}x^5-2x^3+9x+C.
 \end{align*}
+$$
 ::::::
 
 Note that in each of the three integrals $\displaystyle\int x^4\,dx$, $\displaystyle\int x^2\,dx$ and $\displaystyle\int 9\,dx$ we obtain an arbitrary constant of integration. However, the linear combination of these constants of integration can be replaced by only one constant of integration $C$.
@@ -238,12 +240,14 @@ Note that in each of the three integrals $\displaystyle\int x^4\,dx$, $\displays
 
 But why restrict ourselves to polynomials? We can use the same approach for more complicated functions as well. For $x>0$ we have:
 
+$$
 \begin{align*}
 \int\frac{\sqrt{x}-2+3x\sqrt{x}}{x}\,dx &= \int\left(\frac{1}{\sqrt{x}}-\frac{2}{x}+3\sqrt{x}\right)\,dx \\
 &= \int x^{-\frac{1}{2}}\,dx - 2\int x^{-1}\,dx + 3\int x^{\frac{1}{2}}\,dx \\
 &= 2x^{\frac{1}{2}}-2\ln|x|+2x^{\frac{3}{2}}+C \\
 &= 2\sqrt{x}-2\ln(x)+2x\sqrt{x}+C.
 \end{align*}
+$$
 
 ::::::
 
@@ -266,11 +270,13 @@ where $F$ is any antiderivative of $f$ on $I$ and $C\in\mathbb{R}$ is an arbitra
 
 Assume $f$, $F$, $\alpha$, $\beta$ and $C$ are as in the theorem. We differentiate the right-hand side:
 
+$$
 \begin{align*}
 \frac{d}{dx}\left[\frac{1}{\alpha}F(\alpha x+\beta)+C\right] &= \frac{1}{\alpha}\cdot F'(\alpha x+\beta)\cdot \alpha + 0 \\
 &= F'(\alpha x+\beta) \\
 &= f(\alpha x+\beta).
 \end{align*}
+$$
 
 This shows that the right-hand side is an antiderivative of $f(\alpha x+\beta)$, which proves the theorem.
 ::::
@@ -280,10 +286,12 @@ This shows that the right-hand side is an antiderivative of $f(\alpha x+\beta)$,
 
 Using {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` we can determine the next indefinite integral:
 
+$$
 \begin{align*}
 \int 3\cos(2x+1)\,dx &= 3\cdot\frac{1}{2}\sin(2x+1)+C \\
 &= \frac{3}{2}\sin(2x+1)+C.
 \end{align*}
+$$
 
 :::
 

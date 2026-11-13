@@ -23,6 +23,7 @@ $$
 
 If we want to select $k$ elements from a set of $n$ distinct elements and the order matters, the number of possible arrangements $P(n,k)$ is given by multiplying the number of options for the first choice with the number of options for the second choice, etcetera, until we have made $k$ choices. This leads to
 
+$$
 \begin{align*}
 P(n,k) &= n(n-1)(n-2)\cdots(n-k+1) \\
 &= \prod_{j=0}^{k-1}(n-j) \\
@@ -31,6 +32,7 @@ P(n,k) &= n(n-1)(n-2)\cdots(n-k+1) \\
 &= \frac{\prod\limits_{q=1}^{n}q}{\prod\limits_{p=1}^{n-k}p} \\
 &= \frac{n!}{(n-k)!}.
 \end{align*}
+$$
 
 This number $P(n,k)$ is called the number of **permutations** of $n$ distinct objects taken $k$ at a time:
 
@@ -72,10 +74,12 @@ If $k>n$, then we define $C(n,k)=0$.
 ::::::{prf:example}
 Consider the set $\{a,b,c,d\}$, then choosing two elements leads to $P(4,2)=\frac{4!}{(4-2)!}=\frac{4!}{2!}=12$ where the order matters:
 
+$$
 \begin{align*}
 &~ \{a,b\}, \{a,c\}, \{a,d\}, \;\; \{b,a\}, \{b,c\}, \{b,d\},\\[2.5mm]
 &~ \{c,a\}, \{c,b\}, \{c,d\}, \;\; \{d,a\}, \{d,b\}, \{d,c\}.
 \end{align*}
+$$
 
 If the order does not matter, then we have $C(4,2)=\binom{4}{2}=\frac{4!}{2!\,2!}=\frac{3\cdot4}{1\cdot2}=6$ combinations:
 
@@ -222,6 +226,7 @@ $$
 :::{admonition} Proof of {prf:ref}`Thm:Series:Pascal`
 :class: tudproof, dropdown
 
+$$
 \begin{align*}
 \binom{n-1}{k-1}+\binom{n-1}{k}&=\frac{(n-1)!}{(k-1)!\,(n-k)!}+\frac{(n-1)!}{k!\,(n-k-1)!}\\
 &=\frac{(n-1)!}{k!\,(n-k)!}\left[k+(n-k)\right]\\
@@ -229,12 +234,14 @@ $$
 &=\frac{n!}{k!\,(n-k)!}\\
 &=\binom{n}{k}.
 \end{align*}
+$$
 :::
 
 So what do the binomial coefficients and Pascal's triangle have to do with series?
 
 Well consider the expansion of $(a+b)^n$ for $n=0,1,2,\ldots$:
 
+$$
 \begin{align*}
 (a+b)^0&=1,\\[2.5mm]
 (a+b)^1&=a+b,\\[2.5mm]
@@ -243,6 +250,7 @@ Well consider the expansion of $(a+b)^n$ for $n=0,1,2,\ldots$:
 (a+b)^4&=a^4+4a^3b+6a^2b^2+4ab^3+b^4,\\[2.5mm]
 \text{etcetera.}
 \end{align*}
+$$
 
 As you may notice, each term in the expansion of $(a+b)^n$ has a coefficient which is a binomial coefficient occurring in Pascal's triangle. For example, the coefficient of the term $a^2b^2$ in the expansion of $(a+b)^4$ is $6$, which is equal to $\displaystyle\binom{4}{2}$, and corresponds with the third number ($k=2$) in the fifth row ($n=4$) of Pascal's triangle.
 
@@ -263,6 +271,7 @@ $$
 :class: tudproof, dropdown
 By mathematical induction: for $n=0$ it reads $(a+b)^0=1=\displaystyle\binom{0}{0}a^0b^0$ which is true by definition. Suppose that the formula is true for certain value of $n$, then we have:
 
+$$
 \begin{align*}
 (a+b)^{n+1}&=(a+b)(a+b)^n \\
 &=(a+b)\sum_{k=0}^n\binom{n}{k}a^{n-k}b^k\\
@@ -272,6 +281,7 @@ By mathematical induction: for $n=0$ it reads $(a+b)^0=1=\displaystyle\binom{0}{
 &=a^{n+1}+\sum_{k=1}^n\binom{n+1}{k}a^{n+1-k}b^k+b^{n+1} \\
 &=\sum_{k=0}^{n+1}\binom{n+1}{k}a^{n+1-k}b^k.
 \end{align*}
+$$
 Since this is exactly the formula with $n$ replaced by $n+1$, this proves the theorem.
 :::
 
@@ -280,11 +290,13 @@ Since this is exactly the formula with $n$ replaced by $n+1$, this proves the th
 
 To expand $(1+x)^7$ we can use the binomial theorem with $a=1$, $b=x$ and $n=7$, which gives
 
+$$
 \begin{align*}
 (1+x)^7 &= \sum_{k=0}^7\binom{7}{k}(1)^{7-k}x^k \\
 &= \binom{7}{0}+\binom{7}{1}x+\binom{7}{2}x^2+\binom{7}{3}x^3\\
 &{}\quad{}+\binom{7}{4}x^4+\binom{7}{5}x^5+\binom{7}{6}x^6+\binom{7}{7}x^7.
 \end{align*}
+$$
 
 Using the eighth row ($n=7$) of Pascal's triangle, see {numref}`Fig:Series:PascalsTriangle`, we can find the binomial coefficients $\binom{7}{0}=1$, $\binom{7}{1}=7$, $\binom{7}{2}=21$, $\binom{7}{3}=35$, $\binom{7}{4}=35$, $\binom{7}{5}=21$, $\binom{7}{6}=7$ and $\binom{7}{7}=1$. This gives
 
@@ -331,21 +343,25 @@ $$
 
 for a certain value of $n$, then we have
 
+$$
 \begin{align*}
 \sum_{k=0}^n\binom{2n-k}{k} &= 1+\sum_{k=1}^n\binom{2n-k-1}{k}+\sum_{k=1}^n\binom{2n-k-1}{k-1}\\
 &=\sum_{k=0}^n\binom{2n-k-1}{k}+\sum_{k=0}^{n-1}\binom{2n-k-2}{k} \\
 &= F_{2n}+F_{2n-1} \\
 &=F_{2n+1}
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
 \sum_{k=0}^{n+1}\binom{2n-k+1}{k}&=1+\sum_{k=1}^{n+1}\binom{2n-k}{k}+\sum_{k=1}^{n+1}\binom{2n-k}{k-1}\\
 &=\sum_{k=0}^{n+1}\binom{2n-k}{k}+\sum_{k=0}^n\binom{2n-k-1}{k} \\
 &= F_{2n+1}+F_{2n} \\
 &= F_{2n+2}.
 \end{align*}
+$$
 
 Using these results, we can prove the next theorem:
 
@@ -370,12 +386,14 @@ $$
 
 for a certain value of $n$. Then we have
 
+$$
 \begin{align*}
 \sum_{k=0}^{n+1}\binom{n+1}{k}F_{m+k}&=F_m+\sum_{k=1}^{n+1}\left\{\binom{n}{k}+\binom{n}{k-1}\right\}F_{m+k}\\
 &=\sum_{k=0}^n\binom{n}{k}F_{m+k}+\sum_{k=0}^n\binom{n}{k}F_{m+k+1}\\
 &=F_{m+2n}+F_{m+2n+1}\\
 &=F_{m+2n+2}.
 \end{align*}
+$$
 
 This is the original formula with $n$ replaced by $n+1$, which proves {prf:ref}`Thm:Series:FibonacciPascal`.
 :::
@@ -392,6 +410,7 @@ $$
 
 In {prf:ref}`Ex:Series:BinomialTheorem` we have seen that the binomial theorem can be used to expand $(1+x)^7$. In that case we achieve a _finite_ expansion of $(1+x)^7$. If we set $f(x)=(1+x)^7$, and derive the Taylor series expansion of $f$ around $x=0$, the first step is determining the derivatives of $f$:
 
+$$
 \begin{align*}
 f(x) &= (1+x)^7,\\
 f'(x) &= 7(1+x)^6,\\
@@ -403,9 +422,11 @@ f^{(6)}(x) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2(1+x),\\
 f^{(7)}(x) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1,\\
 f^{(n)}(x) &= 0\quad\text{for }n=8,9,10,\ldots
 \end{align*}
+$$
 
 Substituting $x=0$ gives 
 
+$$
 \begin{align*}
 f(0) &= 1 = \dfrac{7!}{7!} ,\\
 f'(0) &= 7 = \dfrac{7!}{6!} ,\\
@@ -417,6 +438,7 @@ f^{(6)}(0) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2 = \dfrac{7!}{1!} ,\\
 f^{(7)}(0) &= 7\cdot6\cdot5\cdot4\cdot3\cdot2\cdot1 = \dfrac{7!}{0!} ,\\
 f^{(n)}(0) &= 0\quad\text{for }n=8,9,10,\ldots
 \end{align*}
+$$
 
 This means that the Taylor series expansion of $f$ around $x=0$ is given by
 
@@ -430,6 +452,7 @@ So what happens if we replace the exponent $7$ by an arbitrary real number $\alp
 
 To that end, consider the function $f(x)=(1+x)^{\alpha}$ with $\alpha\in\mathbb{R}$. then we have
 
+$$
 \begin{align*}
 f(x) &= (1+x)^{\alpha},\\
 f'(x) &= \alpha(1+x)^{\alpha-1}, \\
@@ -437,6 +460,7 @@ f''(x) &= \alpha(\alpha-1)(1+x)^{\alpha-2}, \\
 f^{(3)}(x) &= \alpha(\alpha-1)(\alpha-2)(1+x)^{\alpha-3}, \\
 &\vdots \\
 \end{align*}
+$$
 
 This implies that $f(0)=1$ and 
 
@@ -470,10 +494,12 @@ In that case, we have a short and precise form for the Taylor series expansion o
 :label: Thm:Series:BinomialSeries
 If $\alpha\in\mathbb{R}$, then we have
 
+$$
 \begin{align*}
 (1+x)^{\alpha}&=\sum_{n=0}^{\infty}\binom{\alpha}{n}x^n\\
 &=1+\frac{\alpha}{1!}x+\frac{\alpha(\alpha-1)}{2!}x^2+\frac{\alpha(\alpha-1)(\alpha-2)}{3!}x^3+\cdots,\quad|x| < 1.
 \end{align*}
+$$
 
 This Taylor series expansion of $(1+x)^{\alpha}$ around $x=0$ is called a **binomial series**.
 
@@ -486,12 +512,14 @@ The proof of this theorem is by construction of the Taylor series expansion of $
 
 In order to see that the radius of convergence equals $R=1$ we apply the ratio test: for $x\neq0$ let $a_n=\displaystyle\binom{\alpha}{n}x^n$, then we have:
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right|&=\lim\limits_{n\to\infty}\left|\binom{\alpha}{n+1}x^{n+1}\bigg/\binom{\alpha}{n}x^n\right|\\
 &=\lim\limits_{n\to\infty}\left|\frac{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)(\alpha-n)}{\alpha(\alpha-1)(\alpha-2)\cdots(\alpha-n+1)}\frac{n!}{(n+1)!}x\right|\\
 &=\lim\limits_{n\to\infty}\left|\frac{\alpha-n}{n+1}x\right|\\
 &=|x|.
 \end{align*}
+$$
 
 This shows that the radius of convergence equals $R=1$.
 
@@ -515,6 +543,7 @@ The convergence for $|x|=1$ depends on the value of $\alpha$. Without further pr
 
 Consider $\displaystyle\sqrt{1+x}=(1+x)^{\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^n$ for $|x|<1$. Then we have
 
+$$
 \begin{align*}
 \binom{\frac{1}{2}}{0} &=1, \\
 \binom{\frac{1}{2}}{1} &= \frac{1}{2}, \\
@@ -522,14 +551,17 @@ Consider $\displaystyle\sqrt{1+x}=(1+x)^{\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{
 \binom{\frac{1}{2}}{3} &= \frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)}{3!}=\frac{1}{16},\\
 \binom{\frac{1}{2}}{4} &= \frac{\frac{1}{2}\left(\frac{1}{2}-1\right)\left(\frac{1}{2}-2\right)\left(\frac{1}{2}-3\right)}{4!}=-\frac{5}{128},\\
 \end{align*}
+$$
 
 and so on, and therefore
 
+$$
 \begin{align*}
 \sqrt{1+x}&=(1+x)^{\frac{1}{2}} \\
 &=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^n\\
 &=1+\frac{1}{2}x-\frac{1}{8}x^2+\frac{1}{16}x^3-\frac{5}{128}x^4+\cdots,
 \end{align*}
+$$
 
 provided that $|x|<1$.
 
@@ -539,20 +571,24 @@ provided that $|x|<1$.
 :label: Ex:Series:BinomialSeriesSqrtInverse
 Consider $\displaystyle\frac{1}{\sqrt{1+x}}=(1+x)^{-\frac{1}{2}}=\sum_{n=0}^{\infty}\binom{-\frac{1}{2}}{n}x^n$ for $|x|<1$. Then we have
 
+$$
 \begin{align*}
 \binom{-\frac{1}{2}}{0} &= 1, \\
 \binom{-\frac{1}{2}}{1} &= -\frac{1}{2}, \\
 \binom{-\frac{1}{2}}{2} &= \frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)}{2!}=\frac{3}{8},\\
 \binom{-\frac{1}{2}}{3} &= \frac{-\frac{1}{2}\left(-\frac{1}{2}-1\right)\left(-\frac{1}{2}-2\right)}{3!}=\frac{5}{16},\\
 \end{align*}
+$$
 
 and so on, and therefore
 
+$$
 \begin{align*}
 \frac{1}{\sqrt{1+x}} &= (1+x)^{-\frac{1}{2}} \\
 &= \sum_{n=0}^{\infty}\binom{-\frac{1}{2}}{n}x^n \\
 &= 1-\frac{1}{2}x+\frac{3}{8}x^2-\frac{5}{16}x^3+\cdots,\quad |x|<1.
 \end{align*}
+$$
 ::::
 
 :::{prf:example}
@@ -599,12 +635,14 @@ $$
 
 The binomial series can be used to calculate limits. For example we can use $\displaystyle\sqrt{1+x^2}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{2n}=1+\frac{1}{2}x^2-\frac{1}{8}x^4+\frac{1}{16}x^6+\cdots$ for $|x|<1$ and find that
 
+$$
 \begin{align*}
 \lim\limits_{x\to 0}\frac{\sqrt{1+x^2}-1-\frac{1}{2}x^2}{x^4} &= \lim\limits_{x\to 0}\frac{1+\frac{1}{2}x^2-\frac{1}{8}x^4+\frac{1}{16}x^6+\cdots-1-\frac{1}{2}x^2}{x^4} \\
 &= \lim\limits_{x\to 0}\frac{-\frac{1}{8}x^4+\frac{1}{16}x^6+\cdots}{x^4} \\
 &= \lim\limits_{x\to 0}-\frac{1}{8}+\frac{1}{16}x^2+\cdots\\
 &=-\frac{1}{8}.
 \end{align*}
+$$
 
 ::::::
 
@@ -613,6 +651,7 @@ The binomial series can be used to calculate limits. For example we can use $\di
 
 Similarly, using $\displaystyle\sqrt{1+x^3}=\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{3n}$ for $|x|<1$ we find that
 
+$$
 \begin{align*}
 \int_0^{\frac{1}{2}}\sqrt{1+x^3}\,dx &= \int_0^{\frac{1}{2}}\sum_{n=0}^{\infty}\binom{\frac{1}{2}}{n}x^{3n}\,dx \\
 &= \sum_{n=0}^{\infty}\int_0^{\frac{1}{2}}\binom{\frac{1}{2}}{n}x^{3n}\,dx \\
@@ -621,6 +660,7 @@ Similarly, using $\displaystyle\sqrt{1+x^3}=\sum_{n=0}^{\infty}\binom{\frac{1}{2
 &= \frac{1}{2}+\frac{1}{128}-\frac{1}{7168}+\cdots \\
 &= 0.507678\ldots
 \end{align*}
+$$
 
 ::::::
 

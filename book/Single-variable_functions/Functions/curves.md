@@ -216,12 +216,14 @@ $$
 
 gives a parametrisation of this curve. Indeed, for any $t\neq -1$ we have
 
+$$
 \begin{align*}
  x^3+y^3 &= \left(\frac{3t}{1+t^3}\right)^3+\left(\frac{3t^2}{1+t^3}\right)^3 \\
  &= \frac{27t^3}{(1+t^3)^3}+\frac{27t^6}{(1+t^3)^3} \\
  &= \frac{27t^3(1+t^3)}{(1+t^3)^3} \\
  &= \frac{27t^3}{(1+t^3)^2}
 \end{align*}
+$$
 
 and
 
@@ -519,12 +521,14 @@ $$
 
 Note that both at $t=0$ and at $t=2\pi$ we have $(x(t),y(t))=(-1,8)$, so this curve starts and ends at the vertex $(-1,8)$. Moreover, since the fundamental period of the sine and cosine is $2\pi$, the fundamental period of $\sin(2t)$ and $\cos(2t)$ must be $\pi$ (see {numref}`Subsec:PropertiesFunctionsPeriodic`). Hence, the parametrisation covers the ellipse **twice**. Indeed, for any $0\leq t\leq \pi$ we have
 
+$$
 \begin{align*}
  (x(t+\pi),y(t+\pi)) &= \left(-1+2\sin(2(t+\pi)),5+3\cos(2(t+\pi))\right) \\
  &= \left(-1+2\sin(2t+2\pi),5+3\cos(2t+2\pi)\right) \\
  &= \left(-1+2\sin(2t),5+3\cos(2t)\right) \\
  &= (x(t),y(t)).
 \end{align*}
+$$
 
 Finally, we notice that for $0<t<\frac{\pi}{4}$ we have $x(t)>-1=x(0)$, so the parametrisation describes a clockwise traversal of the ellipse.
 
@@ -796,19 +800,23 @@ Consider the graph of the function $f(x)=\dfrac{1}{x}$. We claim that this is a 
 
 Pick any point $P:(x,y)$ on the graph of $f$. We want to show that the absolute difference between the distances from $P$ to $F_1$ and to $F_2$ is constant. In that case, we have $y=f(x)=\frac{1}{x}$. The distance from $P$ to $F_1$ is 
 
+$$
 \begin{align*}
  \operatorname{dist}(P,F_1) &= \sqrt{\left(x-\left(-\sqrt{2}\right)\right)^2+\left(\frac{1}{x}-\left(-\sqrt{2}\right)\right)^2} \\
  &= \sqrt{x^2+2\sqrt{2}x+2+\frac{1}{x^2}+\frac{2\sqrt{2}}{x}+2} \\
  &= \sqrt{x^2+x^{-2}+2+2\sqrt{2}\left(x+x^{-1}\right)+2},
 \end{align*}
+$$
 
 while the distance from $P$ to $F_2$ is
 
+$$
 \begin{align*}
  \operatorname{dist}(P,F_2) &= \sqrt{\left(x-\sqrt{2}\right)^2+\left(\frac{1}{x}-\sqrt{2}\right)^2} \\
  &= \sqrt{x^2-2\sqrt{2}x+2+\frac{1}{x^2}-\frac{2\sqrt{2}}{x}+2} \\
  &= \sqrt{x^2+x^{-2}+2-2\sqrt{2}\left(x+x^{-1}\right)+2}.
 \end{align*}
+$$
 
 In order to simplify these distances, we note that
 
@@ -818,19 +826,23 @@ $$
 
 As such, we can write
 
+$$
 \begin{align*}
  \sqrt{x^2+x^{-2}+2+2\sqrt{2}\left(x+x^{-1}\right)+2} &= \sqrt{(x+x^{-1})^2+2\sqrt{2}\left(x+x^{-1}\right)+(\sqrt{2})^2} \\
  &= \sqrt{\left(\left(x+x^{-1}\right)+\sqrt{2}\right)^2} \\
  &= \left|\left(x+x^{-1}\right)+\sqrt{2}\right|
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
  \sqrt{x^2+x^{-2}+2-2\sqrt{2}\left(x+x^{-1}\right)+2} &= \sqrt{(x+x^{-1})^2-2\sqrt{2}\left(x+x^{-1}\right)+(-\sqrt{2})^2} \\
  &= \sqrt{\left(\left(x+x^{-1}\right)-\sqrt{2}\right)^2} \\
  &= \left|\left(x+x^{-1}\right)-\sqrt{2}\right|.
 \end{align*}
+$$
 
 Now we will show that for any $x>0$ we have $x+x^{-1}>\sqrt{2}$. Indeed, for $0<x\leq \frac{1}{2}$ we have
 
@@ -858,11 +870,13 @@ $$
 
 As such, if $x>0$ the absolute difference of the distances between $P$ and the focal points is
 
+$$
 \begin{align*}
  \left|\operatorname{dist}(P,F_1)-\operatorname{dist}(P,F_2)\right| &= \left|\left(x+x^{-1}\right)+\sqrt{2}\right|-\left|\left(x+x^{-1}\right)-\sqrt{2}\right| \\
  &= \left(\left(x+x^{-1}\right)+\sqrt{2}\right)-\left(\left(x+x^{-1}\right)-\sqrt{2}\right) \\
  &=2\sqrt{2}.
 \end{align*}
+$$
 
 Using a similar argument, the absolute difference of the distances between $P$ and the focal points is $2\sqrt{2}$ as well if $x<0$.
 
@@ -969,6 +983,7 @@ $$
 
 which gives that the requested distance is
 
+$$
 \begin{align*}
  \operatorname{dist}(d,P) &= \sqrt{\left(x_0+\frac{-ax_0-by_0-c}{a^2+b^2}a-x_0\right)^2+\left(y_0+\frac{-ax_0-by_0-c}{a^2+b^2}b-y_0\right)^2} \\
  &~ \quad\cdot\sqrt{\left(-ax_0-by_0-c\right)\frac{a^2}{\left(a^2+b^2\right)^2}+\left(-ax_0-by_0-c\right)\frac{b^2}{\left(a^2+b^2\right)^2}} \\
@@ -976,6 +991,7 @@ which gives that the requested distance is
  &= \sqrt{\left(-ax_0-by_0-c\right)^2\frac{1}{a^2+b^2}} \\
  &= \frac{|-ax_0-by_0-c|}{\sqrt{a^2+b^2}}.
 \end{align*}
+$$
 
 Since the parabola consists of those points for which $\operatorname{dist}(d,P)=\operatorname{dist}(P,F)$, or equivalently when $\left(\operatorname{dist}(d,P)\right)^2=\left(\operatorname{dist}(P,F)\right)^2$ we find that $(x_0,y_0)$ lies on the parabola precisely when
 

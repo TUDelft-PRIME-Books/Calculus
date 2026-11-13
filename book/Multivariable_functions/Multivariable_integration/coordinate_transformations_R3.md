@@ -134,6 +134,7 @@ In the case of cylindrical coordinates we have: $\displaystyle T(r,\theta,z)=(x,
 
 The Jacobian of $T$ is (see the course on Linear Algebra for details about the computation)
 
+$$
 \begin{align*}
 \frac{\partial(x,y,z)}{\partial(r,\theta,z)}&=\begin{vmatrix}\displaystyle\frac{\partial x}{\partial r} & \displaystyle\frac{\partial x}{\partial\theta} & \displaystyle\frac{\partial x}{\partial z}\\
 \displaystyle\frac{\partial y}{\partial r} & \displaystyle\frac{\partial y}{\partial\theta} & \displaystyle\frac{\partial y}{\partial z}\\
@@ -141,6 +142,7 @@ The Jacobian of $T$ is (see the course on Linear Algebra for details about the c
 &=\begin{vmatrix}\cos(\theta) & -\sin(\theta) & 0\\r\sin(\theta) & r\cos(\theta) & 0\\0 & 0 & 1\end{vmatrix}\\
 &=\begin{vmatrix}\cos(\theta) & -\sin(\theta)\\r\sin(\theta) & r\cos(\theta)\end{vmatrix}=r>0.
 \end{align*}
+$$
 
 ### Spherical coordinates
 
@@ -149,6 +151,7 @@ In the case of spherical coordinates we have: $\displaystyle T(\rho,\phi,\theta)
 
 The Jacobian of $T$ is (see the course on Linear Algebra for details about the computation)
 
+$$
 \begin{align*}
 \frac{\partial(x,y,z)}{\partial(\rho,\phi,\theta)}&=\begin{vmatrix}\displaystyle\frac{\partial x}{\partial\rho} & \displaystyle\frac{\partial x}{\partial\phi} & \displaystyle\frac{\partial x}{\partial\theta}\\
 \displaystyle\frac{\partial y}{\partial\rho} & \displaystyle\frac{\partial y}{\partial\phi} & \displaystyle\frac{\partial y}{\partial\theta}\\
@@ -165,3 +168,4 @@ The Jacobian of $T$ is (see the course on Linear Algebra for details about the c
 &=\rho^2\sin(\phi)\left(\cos^2(\phi)+\sin^2(\phi)\right)\\
 &=\rho^2\sin(\phi)>0.
 \end{align*}
+$$

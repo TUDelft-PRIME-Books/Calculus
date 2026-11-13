@@ -40,12 +40,14 @@ An illustration of the integral $\displaystyle \frac{1}{h}\int_x^{x+h}f(t)\,dt$ 
 
 Using the third rule of {prf:ref}`Thm:Integration:DefinitePropertiesArea` and {prf:ref}`Def:Differentiability:Derivative`, we obtain
 
+$$
 \begin{align*}
 F'(x)&=\lim_{h\to 0}\frac{F(x+h)-F(x)}{h}\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\left(\int_a^{x}f(t)\,dt+\int_x^{x+h}f(t)\,dt-\int_a^xf(t)\,dt\right)\\
 &=\lim_{h\to 0}\frac{1}{h}\int_x^{x+h}f(t)\,dt.
 \end{align*}
+$$
 
 Because $f$ is continuous on $[a,b]$, we can use the third rule of {prf:ref}`Thm:Integration:DefiniteComparison` to conclude that there exist values $c$ and $d$ between $x$ and $x+h$ such that $f(c)\leq f(t)\leq f(d)$ for all $t$ between $x$ and $x+h$ and that we have
 
@@ -170,12 +172,14 @@ $$
 
 Note that this even works if $x^2<x$ and if $x>0$. Now we can differentiate both integrals separately using the fundamental theorem of calculus and the chain rule:
 
+$$
 \begin{align*}
 \frac{d}{dx}\int_x^{x^2}\ln(1+t^2)\,dt&=\frac{d}{dx}\left(\int_x^0\ln(1+t^2)\,dt+\int_0^{x^2}\ln(1+t^2)\,dt\right)\\
 &=\frac{d}{dx}\int_x^0\ln(1+t^2)\,dt+\frac{d}{dx}\int_0^{x^2}\ln(1+t^2)\,dt\\
 &=-\ln(1+x^2)\cdot\frac{d}{dx}(x)+\ln\left(1+\left(x^2\right)^2\right)\cdot\frac{d}{dx}(x^2)\\
 &=-\ln(1+x^2)+2x\ln(1+x^4).
 \end{align*}
+$$
 
 ::::::
 
@@ -250,12 +254,14 @@ $$
 
 This means that:
 
+$$
 \begin{align*}
 \int_a^bf(x)\,dx &= G(b) \\
 &= G(b)-G(a) \\
 &= \left(F(b)-C\right) - \left(F(a)-C\right) \\
 &= F(b)-F(a),
 \end{align*}
+$$
 
 which completes the proof.
 

@@ -68,12 +68,14 @@ $$
 
 If there is some interval $(a-\delta,a+\delta)$ such that for each $x$ in $(a-\delta,a+\delta)$ we have $g(x)\neq g(a)$, then we can directly evaluate the limit as $x$ approaches $a$ as
 
+$$
 \begin{align*}
  \lim_{x\rightarrow a}\frac{h(x)-h(a)}{x-a} &= \lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{x-a} \\
  &= \lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\frac{g(x)-g(a)}{x-a} \\
  &= \lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{g(x)-g(a)}\cdot\lim_{x\rightarrow a}\frac{g(x)-g(a)}{x-a} \\
  &= f'(g(a))\cdot g'(a)
 \end{align*}
+$$
 
 using {prf:ref}`Thm:Differentiability:Derivativealt`. In that case, we directly obtain $h'(a)=f'(g(a))\cdot g'(a)$.
 
@@ -106,11 +108,13 @@ $$
 
 So the identity $\displaystyle k(g(x))\frac{g(x)-g(a)}{x-a}=\frac{f(g(x))-f(g(a))}{x-a}$ holds for all $x\neq a$. Then, we find that
 
+$$
 \begin{align*}
  \lim_{x\rightarrow a}\frac{h(x)-h(a)}{x-a} &= \lim_{x\rightarrow a}\frac{f(g(x))-f(g(a))}{x-a} \\
  &= \lim_{x\rightarrow a}k(g(x))\frac{g(x)-g(a)}{x-a} \\
  &= \lim_{x\rightarrow a}k(g(x))\cdot \lim_{x\rightarrow a}\frac{g(x)-g(a)}{x-a}.
 \end{align*}
+$$
 
 Now since $k\circ g$ is continuous at $a$, we obtain
 
@@ -128,13 +132,13 @@ This establishes the chain rule in the general setting.
 There are two common errors when using the chain rule to find the derivative $(f\circ g)'(x)$. The first is that, instead of evaluating $f'$ at $g(x)$, $f'$ is evaluated at $x$, i.e.,
 
 $$
- (f\circ g)'(x)=f'(x)g'(x)\qquad\qquad \left(\class{tud-red}{\textbf{INCORRECT}}\right).
+ (f\circ g)'(x)=f'(x)g'(x)\qquad\qquad \left(\htmlClass{tud-red}{\textbf{INCORRECT}}\right).
 $$
 
 The most common error, however, is forgetting to multiply by $g'(x)$. In that case, the incorrect expression would become
 
 $$
- (f\circ g)'(x)=f'(g(x))\qquad\qquad \left(\class{tud-red}{\textbf{INCORRECT}}\right).
+ (f\circ g)'(x)=f'(g(x))\qquad\qquad \left(\htmlClass{tud-red}{\textbf{INCORRECT}}\right).
 $$
 
 Make sure to avoid both errors and use the chain rule as stated.
@@ -294,10 +298,12 @@ $$
 
 Now we can use the chain rule again to find the derivative of  $3^{x^2+1}$. This gives
 
+$$
 \begin{align*}
  f'(x) &= \cos\left(3^{x^2+1}\right)\frac{d}{dx}\left(3^{x^2+1}\right) \\
  \cos\left(3^{x^2+1}\right)\ln(3)3^{x^2+1}\left(2x+1\right).
 \end{align*}
+$$
 
 ::::::
 
@@ -311,11 +317,13 @@ $$
 
 Now we can use the chain rule again to find the derivative $(h\circ k)'(x)$. This gives
 
+$$
 \begin{align*}
  f'(x) &= g'(h(k(x)))(h\circ k)'(x) \\
  &= g'(h(k(x)))h'(k(x))k'(x) \\
 &= \cos\left(3^{k(x)}\right)\ln(3)3^{k(x)}k'(x).
 \end{align*}
+$$
 
 ::::::
 
