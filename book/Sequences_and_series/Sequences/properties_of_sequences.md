@@ -87,6 +87,7 @@ As this difference is positive for all $n\in\{1,2,3,\ldots\}$, we conclude that 
 
 We look at the difference between two consecutive terms in the sequence $\{b_n\}_{n=1}^{\infty}$ with $b_n=\dfrac{5}{n^2}$:
 
+$$
 \begin{align*}
 b_{n+1} - b_n &= \dfrac{5}{(n+1)^2} - \dfrac{5}{n^2} \\
 &= \dfrac{5n^2}{n^2(n+1)^2} - \dfrac{5(n+1)^2}{n^2(n+1)^2} \\
@@ -94,6 +95,7 @@ b_{n+1} - b_n &= \dfrac{5}{(n+1)^2} - \dfrac{5}{n^2} \\
 &= \dfrac{5n^2 - 5(n^2+2n+1)}{n^2(n+1)^2} \\
 &= -\dfrac{10n+5}{n^2(n+1)^2}<0
 \end{align*}
+$$
 
 for all $n\in\{1,2,3,\ldots\}$.
 
@@ -105,6 +107,7 @@ We conclude that the sequence $\{b_n\}_{n=1}^{\infty}$ is _strictly decreasing_.
 
 We look at the difference between two consecutive terms in the sequence $\{c_n\}_{n=1}^{\infty}$ with $c_n=\dfrac{5}{2}+\cos(n\pi)$:
 
+$$
 \begin{align*}
 c_{n+1} - c_n &= \left(\dfrac52+\cos((n+1)\pi)\right)-\left(\dfrac52+\cos(n\pi)\right) \\
 &= \cos((n+1)\pi)-\cos(n\pi) \\
@@ -113,6 +116,7 @@ c_{n+1} - c_n &= \left(\dfrac52+\cos((n+1)\pi)\right)-\left(\dfrac52+\cos(n\pi)\
 &= -2\cos(n\pi) \\
 &= -2(-1)^n.
 \end{align*}
+$$
 
 Because $(-1)^n$ is either $1$ or $-1$, the sign of this difference is alternating between positive and negative.
 
@@ -163,6 +167,7 @@ We will show that $\dfrac{2(n+1)}{(n+1)^2+1} < \dfrac{2n}{n^2+1}$ for all $n=1,2
 
 Note that
 
+$$
 \begin{align*}
 &~ & \dfrac{2n+2}{n^2+2n+2} & < \dfrac{2n}{n^2+1} \\
 &\Longleftrightarrow & (2n+2)(n^2+1) & < 2n(n^2+2n+2) \\
@@ -170,6 +175,7 @@ Note that
 &\Longleftrightarrow & 2 & < 2n^2+2n \\
 &\Longleftrightarrow & 1 & < n(n+1).
 \end{align*}
+$$
 
 This is true for $n\geq1$, so the sequence is *strictly decreasing*.
 
@@ -188,14 +194,17 @@ Note that $c_2-c_1=\frac{1}{2}>0$ and $c_3-c_2=\frac{1}{8}>0$, However, $c_4-c_3
 
 To investigate this, we consider the ratio between two consecutive terms:
 
+$$
 \begin{align*}
 \dfrac{c_{n+1}}{c_n} &= \dfrac{(n+1)^2}{2^{n+1}}\cdot\dfrac{2^{n}}{n^2} \\
 &= \dfrac{2^n}{2^{n+1}}\cdot\dfrac{(n+1)^2}{n^2} \\
 &= \dfrac{1}{2}\cdot\dfrac{(n+1)^2}{n^2}.
 \end{align*}
+$$
 
 If this sequence would be ultimately decreasing, then we should be able to find an integer $N\geq 1$ such $\dfrac{1}{2}\cdot\dfrac{(n+1)^2}{n^2}<1$ for all $n\geq N$. We will solve this inequality to find such an integer $N$:
 
+$$
 \begin{align*}
 &~ & \dfrac{1}{2}\cdot\dfrac{(n+1)^2}{n^2} & < 1  \\
 &\Longleftrightarrow & \dfrac{(n+1)^2}{n^2} & < 2 \\
@@ -204,6 +213,7 @@ If this sequence would be ultimately decreasing, then we should be able to find 
 &\Longleftrightarrow & 2n + 1 & < n^2 \\
 &\Longleftrightarrow & 0 & < n^2 - 2n - 1.
 \end{align*}
+$$
 
 The quadratic expression on the right of the last inequality would be zero if $n=1-\sqrt{2}\approx -0.414<0$ or if $n=1+\sqrt{2}\approx 2.414>0$. Since $n$ is a positive integer, we conclude that $n^2 - 2n - 1>0$ for all $n\geq3$. Hence, we have $\dfrac{1}{2}\cdot\dfrac{(n+1)^2}{n^2}<1$ for all $n\geq3$.
 

@@ -103,7 +103,7 @@ $$
  y(t)=\dfrac{5}{4}e^{2t}-\frac{t}{2}-\frac{1}{4}
 $$
 
-of this initial-value problem. You can see that we found the linearly decreasing behaviour for negative $t$ (the exponential is very small for negative $t$ compared to the linear term), and the exponentially increasing behaviour for positive $t$, just by a careful sketch of the slope field.
+of this initial value problem. You can see that we found the linearly decreasing behaviour for negative $t$ (the exponential is very small for negative $t$ compared to the linear term), and the exponentially increasing behaviour for positive $t$, just by a careful sketch of the slope field.
 
 ::::::
 

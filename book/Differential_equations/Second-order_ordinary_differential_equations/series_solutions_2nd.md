@@ -186,7 +186,7 @@ The Bessel functions of the first kind of order $\pm\frac{1}{2}$
 
 :::::
 
-In cases like this we need so-called generalized power series to find the general solution. This method, named after the German mathematician [Ferdinand Georg Frobenius (1849-1917)](https://en.wikipedia.org/wiki/Ferdinand_Georg_Frobenius), does not fit in the scope of this book. We refer to more advanced text on differential equation for this.
+In cases like this we need so-called generalised power series to find the general solution. This method, named after the German mathematician [Ferdinand Georg Frobenius (1849-1917)](https://en.wikipedia.org/wiki/Ferdinand_Georg_Frobenius), does not fit in the scope of this book. We refer to more advanced text on differential equation for this.
 
 ::::::{prf:definition} Ordinary and singular points (1)
 A point $x_0$ is called an **ordinary point** or **regular point** of the differential equation {eq}`Eq:ODE2:Hom` if $P(x_0)\neq0$. Otherwise, so if $P(x_0)=0$, it is called a **singular point**.

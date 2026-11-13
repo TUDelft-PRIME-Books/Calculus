@@ -655,17 +655,21 @@ $$
 
 so we are dealing with an indeterminate form of type $\dfrac{\infty}{\infty}$. In addition, the functions $f(x)=x+\sin(x)\cos(x)$ and $g(x)=\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}$ are differentiable everywhere. We evaluate
 
+$$
 \begin{align*}
  g'(x) &= \left(1+\cos^2(x)-\sin^2(x)\right)e^{\sin(x)}+\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}\cos(x) \\
  &= \left(2\cos^2(x)\right)e^{\sin(x)}+\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}\cos(x),
 \end{align*}
+$$
 
 which is $0$ for each $x$ for which $\cos(x)=0$, i.e. for $x=\dfrac{\pi}{2}+k\pi$ for some integer $k$. This means that there is no interval of the form $(a,\infty)$ on which $g'(x)\neq 0$. We will check that l'Hospital's rule indeed gives the incorrect conclusion here. First, we evaluate
 
+$$
 \begin{align*}
  \lim_{x\rightarrow \infty}\frac{f'(x)}{g'(x)} &= \lim_{x\rightarrow \infty}\frac{2\cos^2(x)}{\left(2\cos^2(x)\right)e^{\sin(x)}+\left(x+\sin(x)\cos(x)\right)e^{\sin(x)}\cos(x)} \\
  &= \lim_{x\rightarrow \infty}\frac{2\cos(x)}{2\cos(x)+\left(x+\sin(x)\cos(x)\right)}e^{-\sin(x)}.
 \end{align*}
+$$
 
 Note that for sufficiently large values of $x$ we have
 

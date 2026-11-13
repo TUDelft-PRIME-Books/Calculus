@@ -26,10 +26,12 @@ $$
 
 Now consider the indefinite integral $\displaystyle\int F'(g(x))g'(x)\,dx$:
 
+$$
 \begin{align*}
 \int F'(g(x))g'(x)\,dx &= \int \frac{d}{dx}F(g(x))\,dx\\
 &= F(g(x))+C.
 \end{align*}
+$$
 
 If we assume that $F'=f$, so $F$ is an antiderivative of $f$, then we have $F'(g(x))=f(g(x))$ and therefore
 
@@ -55,6 +57,7 @@ If $u=g(x)$ is a differentiable function whose range is an interval $I$ and $f$ 
 :class: tudproof, dropdown
 Let $F$ be an antiderivative of $f$ on $I$, so $F'=f$. Then:
 
+$$
 \begin{align*}
 \int f(g(x))g'(x)\,dx &= \int F'(g(x))g'(x)\,dx\\
 &= \int \frac{d}{dx}F(g(x))\,dx\\
@@ -62,6 +65,7 @@ Let $F$ be an antiderivative of $f$ on $I$, so $F'=f$. Then:
 &= \left[F(u)+C\right]_{u=g(x)}\\
 &= \left[\int f(u)\,du\right]_{u=g(x)}.
 \end{align*}
+$$
 ::::
 
 ::::::{prf:notation}
@@ -147,12 +151,14 @@ $$
 
 If we set $u=t^3$, we obtain that $du=3t^2\,dt$. Hence, we find that
 
+$$
 \begin{align*}
 \int t^2\cos(t^3)\,dt&= \int\frac{1}{3}\cos(t^3)\cdot 3t^2\,dt\\
 &= \int\frac{1}{3}\cos(u)\,du\\
 &= \frac{1}{3}\sin(u)+C\\
 &= \frac{1}{3}\sin(t^3)+C.
 \end{align*}
+$$
 
 ::::::
 
@@ -170,12 +176,14 @@ We also recognise $\dfrac{1}{\sqrt{x}}$ as the derivative of $2\sqrt{x}$ and $\s
 
 If we set $u=\sqrt{x}$, we obtain that $du=\dfrac{1}{2\sqrt{x}}\,dx$ or $\dfrac{1}{\sqrt{x}}\,dx=2\,du$. Hence, we find that
 
+$$
 \begin{align*}
 \int\frac{1}{(1+x)\sqrt{x}}\,dx &= \int\frac{1}{1+x}\,\frac{1}{\sqrt{x}}\,dx \\
 &= \int\frac{1}{1+u^2}\,2\,du \\
 &= 2\arctan(u)+C \\
 &= 2\arctan(\sqrt{x})+C.
 \end{align*}
+$$
 
 ::::::
 
@@ -195,12 +203,14 @@ $$
 
 If we set $u=1-t^2$, we obtain that $du=-2t\,dt$. Hence, we find that
 
+$$
 \begin{align*}
 \int\frac{t}{\sqrt{1-t^2}}\,dt &= \int-\frac{1}{2}\frac{1}{\sqrt{1-t^2}}\cdot(-2t)\,dt \\
 &= \int-\frac{1}{2}\frac{1}{\sqrt{u}}\,du \\
 &= -\sqrt{u}+C \\
 &= -\sqrt{1-t^2}+C.
 \end{align*}
+$$
 
 Another approach would be to use $t^2$ instead of $1-t^2$:
 
@@ -217,11 +227,13 @@ $$
 
 Now we use the techniques of the previous section to obtain
 
+$$
 \begin{align*}
 \int\frac{t}{\sqrt{1-t^2}}\,dt&= \int\frac{1}{2}\frac{1}{\sqrt{1-u}}\,du\\
 &= -\sqrt{1-u}+C\\
 &= -\sqrt{1-t^2}+C.
 \end{align*}
+$$
 
 ::::::
 
@@ -264,12 +276,14 @@ We applied $u=\sqrt{x}$ previously. The function $g(x)=\sqrt{x}$ is invertible o
 3. We compute $dx=2u\,du$.
 4. and 5. We substitute in the integral and evaluate:
 
+$$
 \begin{align*}
 \int\frac{1}{(1+x)\sqrt{x}}\,dx &= \int\frac{1}{(1+u^2)u}\,2u\,du \\
 &= \int\frac{2}{1+u^2}\,du \\
 &= 2\arctan(u)+C \\
 &= 2\arctan(\sqrt{x})+C.
 \end{align*}
+$$
 
 ::::::
 
@@ -281,20 +295,24 @@ Now we have some experience with the method of integration by substitution for i
 
 Consider the definite integral $\displaystyle\int_a^b f(g(x))g'(x)\,dx$ and assume $f$, $g$, $a$ and $b$ are such that the indefinite integral $\displaystyle\int f(g(x))g'(x)\,dx$ can be evaluated using {prf:ref}`Thm:Integration:SubstitutionIndefiniteIntegral`. Also assume that $F$ is an antiderivative of $f$. Then we have:
 
+$$
 \begin{align*}
 \int f(g(x))g'(x)\,dx &= \int f(u)\,du \\
 &= F(u)+C \\
 &= F(g(x))+C.
 \end{align*}
+$$
 
 For the definite integral we then find that
 
+$$
 \begin{align*}
 \int_a^b f(g(x))g'(x)\,dx &= \Big[F(g(x))\Big]_a^b \\
 &= F(g(b))-F(g(a)) \\
 &= \Big[F(u)\Big]_{u=g(a)}^{u=g(b)} \\
 &= \int_{g(a)}^{g(b)} f(u)\,du.
 \end{align*}
+$$
 
 But this means that we have proved the following theorem:
 
@@ -373,12 +391,14 @@ Consider $\displaystyle\int_{\frac{1}{4}}^1\frac{e^{\frac{1}{\sqrt{x}}}}{x\sqrt{
 
 If we set $u=\dfrac{1}{\sqrt{x}}$, then we have $du=-\dfrac{1}{2x\sqrt{x}}\,dx$ or $\dfrac{1}{x\sqrt{x}}\,dx=-2\,du$. Furthermore, we have if $x=\frac{1}{4}$ then $u=\frac{1}{\sqrt{\frac{1}{4}}}=\frac{1}{\frac{1}{2}}=2$, and if $x=1$ then $u=\frac{1}{\sqrt{1}}=1$. Now we find that
 
+$$
 \begin{align*}
 \int_{\frac{1}{4}}^1\frac{e^{\frac{1}{\sqrt{x}}}}{x\sqrt{x}}\,dx &= \int_2^1 e^u\left(-2\right)\,du \\
 &= \int_1^2 2e^u\,du \\
 &= 2e^u\bigg|_1^2 \\
 &= 2(e^2-e).
 \end{align*}
+$$
 
 ::::::
 
@@ -443,10 +463,12 @@ $$
 
 Note that $\cos(t)\geq0$ for $-\frac{1}{2}\pi\leq t\leq\frac{1}{2}\pi$. Using $\cos^2(t)=\frac{1}{2}(1+\cos(2t))$ we then obtain
 
+$$
 \begin{align*}
 \int_{-1}^1\sqrt{1-x^2}\,dx&=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1+\cos(2t))\,dt\\
 &=\left[\frac{1}{2}t+\frac{1}{4}\sin(2t)\right]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{2}\pi.
 \end{align*}
+$$
 
 {numref}`Fig:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1` illustrates the original integral on the bottom-left and the new integral on the bottom-right.
 
@@ -571,10 +593,12 @@ We evaluate $\displaystyle\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx$.
 
 Let $x=\dfrac{1}{\cos(t)}$, then we have $dx=\dfrac{\sin(t)}{\cos^2(t)}\,dt$. Furthermore, if $x=1$ then $t=0$ and if $x=\sqrt{2}$ then $t=\frac{1}{4}\pi$. Hence we find that
 
+$$
 \begin{align*}
 \int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx&=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt\\
 &=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt.
 \end{align*}
+$$
 
 Now we use $\cos^2(t)=1-\sin^2(t)$ and the substitution $u=\sin(t)$ to find that
 
@@ -590,6 +614,7 @@ $$
 
 to find that
 
+$$
 \begin{align*}
 &\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du\\
 &=\frac{1}{4}\int_0^{\frac{1}{2}\sqrt{2}}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,dt\\
@@ -597,6 +622,7 @@ to find that
 &=\frac{1}{4}\left(\ln(1-\tfrac{1}{2}\sqrt{2})+\frac{1}{1-\frac{1}{2}\sqrt{2}}-\ln(1+\tfrac{1}{2}\sqrt{2})-\frac{1}{1+\frac{1}{2}\sqrt{2}}\right)\\
 &=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}.
 \end{align*}
+$$
 
 We conclude that $\displaystyle\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}$.
 ::::::
@@ -608,17 +634,21 @@ Consider Serret's integral $\displaystyle\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx$, wh
 
 One way to evaluate the integral is by using the substitution $x=\tan(\theta)$:
 
+$$
 \begin{align*}
 \int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\ln\left(1+\tan(\theta)\right)\,d\theta\\
 &=\int_0^{\frac{1}{4}\pi}\ln\left(\frac{\cos(\theta)+\sin(\theta)}{\cos(\theta)}\right)\,d\theta\\
 &=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos(\theta)+\sin(\theta)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta.
 \end{align*}
+$$
 Now we use $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$ (see {numref}`Grasple:134398`) to obtain
 
+$$
 \begin{align*}
 \int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta\\
 &=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\right)+\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta.
 \end{align*}
+$$
 Finally, the substitution $t=\frac{1}{4}\pi-\theta$ or $\theta=\frac{1}{4}\pi-t$ shows that
 
 $$
@@ -633,10 +663,12 @@ $$
 
 In this evaluation we obtained that
 
+$$
 \begin{align*}
 &\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt\\
 &{}\quad\Longrightarrow\quad\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta=0.
 \end{align*}
+$$
 The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later in {numref}`Sec:CatalansConstant`. 
 
 :::
@@ -648,10 +680,12 @@ In {numref}`Sec:Integration:TrigonometricFunctions` we deal with the integration
 
 Using the substitution $x=a+b-t$ or $t=a+b-x$ we obtain that a definite integral of the form $I=\displaystyle\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx$ can be evaluated as follows. First apply the substitution:
 
+$$
 \begin{align*}
 I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx&=-\int_b^a\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt\\
 &=\int_a^b\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt.
 \end{align*}
+$$
 This implies that, using a change of variable back to $x$ in the last integral,
 
 $$

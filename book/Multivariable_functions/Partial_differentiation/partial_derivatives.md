@@ -108,11 +108,13 @@ $$
 
 Now we have using integration by parts
 
+$$
 \begin{align*}
 \int_0^{\infty}e^{-y}\cos(ty)\,dy&=-e^{-y}\cos(ty)\bigg|_0^{\infty}-t\int_0^{\infty}e^{-y}\sin(ty)\,dy\\
 &=1+te^{-y}\sin(ty)\bigg|_{y=0}^{\infty}-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy\\
 &=1-t^2\int_0^{\infty}e^{-y}\cos(ty)\,dy.
 \end{align*}
+$$
 
 Because the integral $I'(t)$ appears on both sides of the equation, we can solve for $I'(t)$ to find that
 
@@ -134,12 +136,14 @@ $$
 :label: Ex:Integration:ImproperIntegralsFeynmanExample3
 Consider the integral $I(t)=\displaystyle\int_0^{\infty}\frac{e^{-x}\sin(xt)}{x}\,dx$ for $t\geq0$. Since $\displaystyle\lim\limits_{x\to 0^+}\frac{\sin(xt)}{x}=t$, the integral is convergent. Then we have $I(0)=0$ and using integration by parts
 
+$$
 \begin{align*}
 I'(t)&=\int_0^{\infty}e^{-x}\cos(xt)\,dx\\
 &=-e^{-x}\cos(xt)\bigg|_{x=0}^{\infty}-t\int_0^{\infty}e^{-x}\sin(xt)\,dt\\
 &=1+te^{-x}\sin(xt)\bigg|_{x=0}^{\infty}-t^2\int_0^{\infty}e^{-x}\cos(xt)\,dt\\
 &=1+0-t^2I'(t),
 \end{align*}
+$$
 
 and therefore $I'(t)=\dfrac{1}{1+t^2}$. This implies that $I(t)=\displaystyle\arctan(t)$.
 
@@ -213,10 +217,12 @@ $$
 
 Using integration by parts we obtain
 
+$$
 \begin{align*}
 \int_1^R\frac{\sin(x)}{x}\,dx&=\bigg[-\frac{\cos(x)}{x}\bigg]_1^R-\int_1^R\frac{\cos(x)}{x^2}\,dx\\
 &=\cos(1)-\frac{\cos(R)}{R}-\int_1^R\frac{\cos(x)}{x^2}\,dx.
 \end{align*}
+$$
 
 Now we have
 
@@ -236,6 +242,7 @@ $$
 
 Then we have
 
+$$
 \begin{align*}
 I'(t)&=\int_0^{\infty}\frac{\partial}{\partial t}\left(e^{-xt}\frac{\sin(x)}{x}\right)\,dx\\
 &=\int_0^{\infty}-e^{-xt}\sin(x)\,dx\\
@@ -245,6 +252,7 @@ I'(t)&=\int_0^{\infty}\frac{\partial}{\partial t}\left(e^{-xt}\frac{\sin(x)}{x}\
 &=-1+t^2\int_0^{\infty}e^{-xt}\sin(x)\,dx \\
 &= -1-t^2I'(t)
 \end{align*}
+$$
 
 This implies that $I'(t)=\displaystyle\int_0^{\infty}e^{-xt}\sin(x)\,dx=\dfrac{-1}{1+t^2}$ and therefore $I'(t)=\dfrac{-1}{1+t^2}$. So
 

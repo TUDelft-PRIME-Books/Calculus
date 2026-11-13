@@ -304,7 +304,7 @@ with $C\in\mathbb{R}$.
 
 ::::::{prf:Example}
 :label: Ex:ODE1Lin:1overx
-Consider the initial-value problem
+Consider the initial value problem
 
 $$
  xy'+y=1,\qquad y(1)=2
@@ -358,7 +358,7 @@ $$
  2=y(1)=1+\frac{C}{1}=1+C,
 $$
 
-which gives $C=1$. So the solution of the initial-value problem is given by
+which gives $C=1$. So the solution of the initial value problem is given by
 
 $$
  y(x)=1+\frac{1}{x}.
@@ -985,7 +985,7 @@ $$
 r(x)v''-(r(x)'+q(x)r(x))v'+p(x)r(x)v=0.
 $$
 
-This is a second-order linear differential equation in $v(x)$. In {numref}`Sec:ODE2:Homogeneous` and {numref}`Sec:ODE2:Inhomogeneous` we will see how second order equations with constant coefficients can be solved. In {numref}`Sec:ODE2:Nonconst` and {numref}`Sec:ODE2:Series` we also discuss some techniques to solve second-order linear differential equations with non-constant coefficients, though no general technique exists to find explicit solutions of any linear second-order differential equation.
+This is a second-order linear differential equation in $v(x)$. In {numref}`Sec:ODE2:Homogeneous` and {numref}`Sec:ODE2:Inhomogeneous` we will see how second-order equations with constant coefficients can be solved. In {numref}`Sec:ODE2:Nonconst` and {numref}`Sec:ODE2:Series` we also discuss some techniques to solve second-order linear differential equations with non-constant coefficients, though no general technique exists to find explicit solutions of any linear second-order differential equation.
 
 
 :::::{prf:example} {prf:ref}`Ex:ODE1Lin:Ricatti2` revisited
@@ -1403,7 +1403,7 @@ $$
 :url: https://embed.grasple.com/exercises/144ecae1-94db-4e47-adc6-1c74e4279bc9?id=63940
 :label: Grasple:63940
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1411,7 +1411,7 @@ $$
 :url: https://embed.grasple.com/exercises/6f9d2b03-b16a-457b-9cd4-87872bddc47a?id=64412
 :label: Grasple:64412
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 ::::::{grasple}
@@ -1419,7 +1419,7 @@ $$
 :url: https://embed.grasple.com/exercises/13717857-53d0-4f81-b20d-078abdc8411c?id=64400
 :label: Grasple:64400
 :dropdown:
-:description: Solve the initial-value problem.
+:description: Solve the initial value problem.
 ::::::
 
 

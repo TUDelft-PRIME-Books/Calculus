@@ -59,6 +59,7 @@ The proof follows the same idea as in {prf:ref}`Ex:Series:HarmonicSeries`, {prf:
 
 Let us start with the convergent case. If we draw the rectangles to the left, then we have, see {numref}`Fig:Series:IntegralTest`(a):
 
+$$
 \begin{align*}
 s_n &= \sum_{k=1}^na_k \\
 &= a_1 + \sum_{k=2}^na_k \\
@@ -66,6 +67,7 @@ s_n &= \sum_{k=1}^na_k \\
 &\leq a_1 + \sum_{k=1}^{n-1}\int_{k}^{k+1}f(x)\,dx \\
 &= a_1 + \int_1^nf(x)\,dx.
 \end{align*}
+$$
 
 This follows from the fact that $a_n=f(n)$ and $f$ is non-increasing on $[1,\infty)$. Now, if $\displaystyle\int_1^{\infty}f(x)\,dx$ is convergent, then we have
 
@@ -89,11 +91,13 @@ since $a_{n+1}=f(n+1) > 0$. Thus, $\{s_n\}$ is a strictly increasing sequence th
 
 Now we prove the divergent case. If we draw the rectangles to the right, then we have, see {numref}`Fig:Series:IntegralTest`(b):
 
+$$
 \begin{align*}
 s_n &= \sum_{k=1}^na_k \\
 &> \sum_{k=1}^{n-1}a_k \\
 &\geq \int_1^nf(x)\,dx.
 \end{align*}
+$$
 
 If $\displaystyle\int_1^{\infty}f(x)\,dx$ is divergent, then
 
@@ -303,12 +307,14 @@ Consider $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ and let $s$ denote it
 
 Let's take $K=10$ and use $s_{10}$ as an approximation of $s\approx1.07667$ (see {prf:ref}`Rem:Series:IntegralTestExample1`). We find:
 
+$$
 \begin{align*}
 s_{10}=\sum_{n=1}^{10}\frac{1}{n^2+1}&=\frac{1}{2}+\frac{1}{5}+\frac{1}{10}+\frac{1}{17}+\frac{1}{26}+\frac{1}{37}+\frac{1}{50}\\
 &{}\quad\quad{}+\frac{1}{65}+\frac{1}{82}+\frac{1}{101} \\
 &= \frac{1662222227}{1693047850} \\
 &\approx 0.98179.
 \end{align*}
+$$
 
 How good is this approximation? Let
 
@@ -400,10 +406,12 @@ Suppose that $\displaystyle\sum_{n=1}^{\infty} a_n$ and $\displaystyle\sum_{n=1}
 :class: tudproof, dropdown
 We define $s_N$ and $t_N$ as the $N$th partial sums of $\displaystyle\sum_{n=1}^{\infty} a_n$ and $\displaystyle\sum_{n=1}^{\infty} b_n$, respectively:
 
+$$
 \begin{align*}
 s_N &=\sum_{n=1}^N a_n, \\
 t_N &= \sum_{n=1}^N b_n.
 \end{align*}
+$$
 
 1) Assume that $0<a_n\leq b_n$ for all $n\geq 1$ and that $\displaystyle\sum_{n=1}^{\infty} b_n$ is convergent with sum $t$. Since $\displaystyle\sum_{n=1}^{\infty} b_n$ is convergent with sum $t$, the limit $\lim\limits_{N\to\infty}t_N=t$ exists.
 
@@ -578,6 +586,7 @@ Consider $\displaystyle\sum_{n=1}^{\infty}\frac{2n+3}{n^3-2n+5}$. Let $a_n=\dfra
 
 So, let $b_n=\dfrac{1}{n^2}$, then
 
+$$
 \begin{align*}
 \lim_{n\to\infty}\frac{a_n}{b_n} &= \lim_{n\to\infty}\frac{\dfrac{2n+3}{n^3-2n+5}}{\dfrac{1}{n^2}} \\
 &= \lim_{n\to\infty}\frac{(2n+3)n^2}{n^3-2n+5}\\
@@ -585,6 +594,7 @@ So, let $b_n=\dfrac{1}{n^2}$, then
 &= \frac{2+0}{1-0+0} \\
 &= 2.
 \end{align*}
+$$
 
 Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ converges ($p$-series with $p=2>1$), we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{2n+3}{n^3-2n+5}$ converges as well.
 
@@ -597,12 +607,14 @@ Consider $\displaystyle\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$. 
 
 Now take $b_n=\displaystyle\frac{\sqrt{n^4}}{n^5}=\frac{n^2}{n^5}=\frac{1}{n^3}$, then
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\frac{a_n}{b_n} &= \lim\limits_{n\to\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}\cdot\frac{n^3}{1} \\
 &= \lim\limits_{n\to\infty}\frac{\sqrt{1+4n^{-3}+5n^{-4}}}{2+3n^{-3}+n^{-5}} \\
 &= \frac{\sqrt{1+0+0}}{2+0+0} \\
 &= \frac{1}{2}.
 \end{align*}
+$$
 
 Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^3}$ is a $p$-series with $p=3>1$, which is convergent, we conclude that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$ is convergent too.
 
@@ -613,12 +625,14 @@ Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^3}$ is 
 
 Consider $\displaystyle\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$. Let $a_n=\displaystyle\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ and $b_n=\displaystyle\frac{n^2}{\sqrt{n^5}}=\frac{n^2}{n^{\frac{5}{2}}}=\frac{1}{n^{\frac{1}{2}}}$, then
 
+$$
 \begin{align*}
 \lim\limits_{n\to\infty}\frac{a_n}{b_n} &= \lim\limits_{n\to\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}\cdot\frac{n^{\frac{1}{2}}}{1} \\
 &= \lim\limits_{n\to\infty}\frac{3+5n^{-1}+2n^{-2}}{\sqrt{2+4n^{-2}+3n^{-5}}} \\
 &=\frac{3+0+0}{\sqrt{2+0+0}} \\
 &= \frac{3}{\sqrt{2}}.
 \end{align*}
+$$
 
 Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^{\frac{1}{2}}}$ is a $p$-series with $p=\displaystyle\frac{1}{2}\leq1$, which is divergent, we conclude that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ is divergent too.
 

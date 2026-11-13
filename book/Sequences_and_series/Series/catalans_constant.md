@@ -30,12 +30,14 @@ $$
 
 we have
 
+$$
 \begin{align*}
 \int_0^1\frac{\arctan(x)}{x}\,dx&=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\int_0^1x^{2n}\,dx\\
 &=\sum_{n=0}^{\infty}\frac{(-1)^n}{2n+1}\cdot\frac{x^{2n+1}}{2n+1}\bigg|_0^1\\
 &=\sum_{n=0}^{\infty}\frac{(-1)^n}{(2n+1)^2}\\
 &=G.
 \end{align*}
+$$
 
 Using the substitution $x=e^{-t}$ and therefore $dx=-e^{-t}\,dt$ we obtain
 
@@ -57,12 +59,14 @@ $$
 
 Using integration by parts we obtain
 
+$$
 \begin{align*}
 \int_0^1x^n\ln(x)\,dx&=\frac{1}{n+1}x^{n+1}\ln(x)\bigg|_0^1-\frac{1}{n+1}\int_0^1x^{n+1}\cdot\frac{1}{x}\,dx\\
 &=0-\frac{1}{n+1}\int_0^1x^n\,dx\\
 &=-\frac{1}{(n+1)^2}x^{n+1}\bigg|_0^1\\
 &=-\frac{1}{(n+1)^2},\quad n=0,1,2,\ldots
 \end{align*}
+$$
 
 With $\displaystyle\frac{1}{1+x^2}=\sum_{n=0}^{\infty}(-x^2)^n=\sum_{n=0}^{\infty}(-1)^nx^{2n}$ for $|x|<1$ this implies that
 
@@ -113,11 +117,13 @@ $$
  
 leads to another interesting representation
 
+$$
 \begin{align*}
 G&=-\int_0^{\frac{1}{4}\pi}\ln\left(\tan(\theta)\right)\,d\theta\\
 &=-\frac{1}{2}\int_0^{\frac{1}{4}\pi}\ln\left(\tan^2(\theta)\right)\,d\theta\\
 &=-\frac{1}{2}\int_0^{\frac{1}{4}\pi}\ln\left(\frac{1-\cos(2\theta)}{1+\cos(2\theta)}\right)\,d\theta,
 \end{align*}
+$$
 
 which is equivalent to
 
@@ -152,10 +158,12 @@ $$
  
 If we apply the substitution $2x=t$ we find that
 
+$$
 \begin{align*}
 \int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx&=\frac{1}{2}\int_0^{\pi}\ln(\sin(t))\,dt\\
 &=\frac{1}{2}\int_0^{\frac{1}{2}\pi}\ln(\sin(t))\,dt+\frac{1}{2}\int_{\frac{1}{2}\pi}^{\pi}\ln(\sin(t))\,dt.
 \end{align*}
+$$
 Then we apply the substitution $t=\pi-x$ to the latter integral to find that
 
 $$ 
@@ -166,6 +174,7 @@ Hence we have $\displaystyle\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx=\int_0^{\fr
  
 Finally, we derive for $I=\displaystyle\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx$ that 
 
+$$
 \begin{align*}
 I&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\ln(\sin(2x))\,dx\\
@@ -174,6 +183,7 @@ I&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\ln(2)\,dx+\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx+\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx\\
 &=\frac{1}{2}\pi\ln(2)+2I,
 \end{align*}
+$$
 
 which implies that $I=-\dfrac{1}{2}\pi\ln(2)$. The substitution $x=\dfrac{1}{2}\pi-t$ now leads to
 
@@ -189,11 +199,13 @@ $$
 
 Hence we have
 
+$$
 \begin{align*}
 \int_0^{\frac{1}{4}\pi}\ln(\sin(x))\,dx+\int_0^{\frac{1}{4}\pi}\ln(\cos(x))\,dx&=\int_0^{\frac{1}{2}\pi}\ln(\sin(x))\,dx\\
 &=\int_0^{\frac{1}{2}\pi}\ln(\cos(x))\,dx\\
 &=-\frac{1}{2}\pi\ln(2)
 \end{align*}
+$$
 
 and
 
@@ -255,6 +267,7 @@ $$
 
 Now we have
 
+$$
 \begin{align*}
 \int_0^{\pi}x^2(\pi-x)^2\,dx&=\int_0^{\pi}x^2(\pi^2-2\pi x+x^2)\,dx\\
 &=\left[\frac{1}{3}\pi^2x^3-\frac{1}{2}\pi x^4+\frac{1}{5}x^5\right]_0^{\pi}\\
@@ -262,6 +275,7 @@ Now we have
 &=\frac{10-15+6}{30}\pi^5\\
 &=\frac{1}{30}\pi^5.
 \end{align*}
+$$
 
 Hence, we have
 
@@ -271,10 +285,12 @@ $$
 
 Finally, Equation {eq}`Eq:Series:RiemannZetaFunction1` implies that
 
+$$
 \begin{align*}
 &\sum_{n=0}^{\infty}\frac{1}{(2n+1)^6}=\left(1-\frac{1}{2^6}\right)\zeta(6)=\frac{63}{64}\zeta(6)\\
 &{}\quad\Longrightarrow\quad\zeta(6)=\frac{64}{63}\cdot\frac{\pi^6}{15\cdot64}=\frac{\pi^6}{15\cdot63}=\frac{1}{945}\pi^6.
 \end{align*}
+$$
 
 ## Grasple exercises
 

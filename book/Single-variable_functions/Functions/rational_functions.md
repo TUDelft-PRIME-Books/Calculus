@@ -36,6 +36,7 @@ An **improper rational function** is a rational function where the degree of the
 
 Consider the following four functions:
 
+$$
 \begin{align*}
 f(x) &= \frac{x^4-4x^3+3x^2+4x-4}{x^3-x^2-8x}, \\
 g(x) &= 2x^2+1 + \frac{-x^2+4x-2}{x^3-2x+1},
@@ -44,16 +45,19 @@ h(x) &= \frac{-x^2+4x-2}{x^3-2x+1}, \\
 k(x) &= \frac{x+\sqrt{x}+3}{x^2-5}, \\
 \ell(x) &= 3x^2+2x+1.
 \end{align*}
+$$
 
 The function $f$ is a rational function, as can be seen directly from its definition as a ratio of two polynomials, but it is not a proper rational function since the degree of the numerator ($4$) is greater than the degree of the denominator ($3$).
 
 The function $g$ is also a rational function. This can be seen by rewriting it to a single fraction:
 
+$$
 \begin{align*}
 g(x) &= 2x^2+1 + \frac{-x^2+4x-2}{x^3-2x+1} \\
 &= \frac{(2x^2+1)(x^3-2x+1) + (-x^2+4x-2)}{x^3-2x+1} \\
 &= \frac{2x^5-3x^3+x^2+2x-1}{x^3-2x+1}.
 \end{align*}
+$$
 
 $g$ is again not a proper rational function since the degree of the numerator ($5$) is greater than the degree of the denominator ($3$).
 
@@ -186,7 +190,7 @@ $$
 we can apply the technique of long division. We start by denoting the polynomial we want to factor, i.e. the numerator, on the left and the polynomial which we want to factor out, i.e. the denominator, on the right as follows:
 
 $$
-\class{longdivision-short}{
+\htmlClass{longdivision-short}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
 \phantom{\underline{x^4-2x^3}\phantom{+3x^2+4x-4}} & \phantom{|} & \ooline{\phantom{x^3-2x^2-x+2}}    \\
@@ -199,7 +203,7 @@ In between the denominator and the numerator we have a slanted line which indica
 Now we consider by what monomial $ax^n$ we should multiply the polynomial at the top on the right in order to match the highest order term of the polynomial on the left. In this case we find it should be $x^3$. We multiply $x^3$ by $x-2$ and subtract the obtained polynomial from the polynomial in the middle as indicated. We write the monomial we had to multiply with on the right below on the second line.
 
 $$
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
 \underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \ooline{x^3\phantom{-2x^2-x+2}}    \\
@@ -212,7 +216,7 @@ $$
 Now we repeat this step with the same polynomial at the top on the right, but the new polynomial at the bottom on the left. For this second step we find that we should multiply by $-2x^2$ which we add on the second line on the right:
 
 $$
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
 \underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \ooline{x^3-2x^2\phantom{-x+2}}    \\
@@ -226,7 +230,7 @@ $$
 We repeat the step again and this time we find $-x$.
 
 $$
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
 \underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \ooline{x^3-2x^2-x\phantom{+2}}    \\
@@ -242,7 +246,7 @@ $$
 We repeat one more time and this time we find $+2$:
 
 $$
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{lcl}
 x^4-4x^3+3x^2+4x-4 & / & x-2 \\
 \underline{x^4-2x^3}\phantom{+3x^2+4x-4} & | & \ooline{x^3-2x^2-x+2}    \\
@@ -287,7 +291,7 @@ $$
 In order to write this as a linear function plus a proper rational function we can apply long division. Again we put the denominator on the right and the numerator on the left with a slanted line in between and a double horizontal line below the denominator.
 
 $$
-\class{longdivision-short}{
+\htmlClass{longdivision-short}{
 \begin{array}{lcl}
 \frac12x^3+x^2-\frac{23}{2}x-24 & / & \uuline{x^2-25}
 \end{array}
@@ -297,7 +301,7 @@ $$
 This time the first monomial on the right in the second line should be $\frac{1}{2}x$. 
 
 $$
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{lcl}
 \frac12x^3+x^2-\frac{23}{2}x-24 & / & \uuline{x^2-25} \\
 \underline{\frac12x^3\phantom{+x^2\,\,}\kern1pt-\frac{25}{2}x} & | & \frac12x    \\
@@ -309,7 +313,7 @@ $$
 Then we proceed with the monomial $+1$. After this the remainder is lower in degree than the polynomial on the left so the long division terminates. 
 
 $$
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{lcl}
 \frac12x^3+x^2-\frac{23}{2}x-24 & / & \uuline{x^2-25} \\
 \underline{\frac12x^3\phantom{+x^2\,\,}\kern1pt-\frac{25}{2}x} & | & \frac12x+1    \\
@@ -340,7 +344,7 @@ $$\frac{2x^5-3x^3+x^2+2x-1}{x^3-2x+1}.$$
 The long division results in
 
 $$
-\class{longdivision}{
+\htmlClass{longdivision}{
 \begin{array}{lcl}
 2x^5-3x^3+\phantom{2}x^2+2x-1 & / & \uuline{x^3-2x+1} \\
 \underline{2x^5-4x^3+2x^2} & | & 2x^2+1    \\
@@ -489,12 +493,14 @@ $$
 
 If we have two rational functions, we can do the same. For instance consider the next calculation:
 
+$$
 \begin{align*}
 \frac{1}{x+2}+\frac{3}{x-5} &= \frac{1}{x+2}\frac{x-5}{x-5}+\frac{3}{x-5}\frac{x+2}{x+2} \\
 &= \frac{x-5}{(x+2)(x-5)} + \frac{3(x+2)}{(x-5)(x+2)} \\
 &= \frac{x-5 + 3(x+2)}{(x+2)(x-5)} \\
 &= \frac{4x+1}{x^2-3x-10}.
 \end{align*}
+$$
 
 This method of rewriting the sum of rational functions into a single rational function is exactly the opposite of the method of partial fraction decomposition. In partial fraction decomposition we start with a proper rational function, such as $\frac{4x+1}{x^2-3x-10}$ and we want to rewrite it as the sum of simpler rational functions, such as $\frac{1}{x+2}+\frac{3}{x-5}$.
 
@@ -520,11 +526,13 @@ r(x) = \frac{A}{x-1} + \frac{B}{x+1}
 
 holds. We start by taking the right-hand side of Equation {eq}`Eq:RationalFunctions:PartialFractionDecomposition1` and rewriting it as a single rational function:
 
+$$
 \begin{align*}
 \frac{A}{x-1} + \frac{B}{x+1} &= \frac{A(x+1)}{(x-1)(x+1)} + \frac{B(x-1)}{(x+1)(x-1)} \\
 &= \frac{A(x+1) + B(x-1)}{(x-1)(x+1)} \\
 &= \frac{(A+B)x + (A-B)}{x^2-1}.
 \end{align*}
+$$
 
 If we compare the numerator $(A+B)x + (A-B)$ of this result with the original numerator $p(x)=4x+2$ of $r(x)$ we see that we should have that $A+B=4$ and $A-B=2$. Solving this system of equations results in $A=3$ and $B=1$. This means we have found the partial fraction decomposition of $r$:
 
@@ -582,10 +590,12 @@ Let $k$ be any integer such that $1\leq k \leq n$. We will show that the constan
 
 We multiply Equation {eq}`Eq:RationalFunctions:ToShow` by $x-b_k$, to obtain
 
+$$
 \begin{align*}
 \frac{A_1(x-b_k)}{x-b_1} &+ \ldots + \frac{A_{k-1}(x-b_k)}{x-b_{k-1}} + A_k + \frac{A_{k+1}(x-b_k)}{x-b_{k+1}} \cdots + \frac{A_n}{x-b_n} \\
 &= \frac{p(x)}{a_n(x-b_1)(x-b_2)\cdots(x-b_{k-1})(x-b_{k+1})\cdots(x-b_n)}.
 \end{align*}
+$$
 
 Note that we have canceled the common factor $x-b_k$ on both sides of the equation. Now we substitute $x=b_k$ in the above expression to obtain
 
@@ -698,6 +708,7 @@ Solving this system again results in $A_1=-1$, $A_2=4$ and $A_3=-3$.
 _Alternative 2_:
 Instead of manipulating the equation obtained by comparing numerators, we can also use limits to find the constants $A_1,A_2,\ldots,A_n$. For instance, in the previous example, we can find $A_1$ by calculating the limit of $x$ times the rational function $r$ as $x$ approaches $0$:
 
+$$
 \begin{align*}
 A_1 &= \lim_{x \to 0} x\, r(x) \\
 &= \lim_{x \to 0} x \frac{15x+3}{x(x-3)(x+1)} \\
@@ -705,17 +716,21 @@ A_1 &= \lim_{x \to 0} x\, r(x) \\
 &= \frac{3}{(-3)(1)} \\
 &= -1.
 \end{align*}
+$$
 
 This works because of the following calculation:
 
+$$
 \begin{align*}
 \lim_{x \to 0} x \, r(x) &= \lim_{x \to 0} x \, \left(\frac{A_1}{x} + \frac{A_2}{x-3} + \frac{A_3}{x+1}\right) \\
 &= \lim_{x \to 0} \left(A_1 + \frac{A_2 x}{x-3} + \frac{A_3 x}{x+1}\right) \\
 &= A_1.
 \end{align*}
+$$
 
 For the other constants we find that
 
+$$
 \begin{align*}
 A_2 &= \lim_{x \to 3} (x-3) r(x) \\
 &= \lim_{x \to 3} (x-3) \frac{15x+3}{x(x-3)(x+1)} \\
@@ -723,9 +738,11 @@ A_2 &= \lim_{x \to 3} (x-3) r(x) \\
 &= \frac{48}{3(4)} \\
 &= 4,
 \end{align*}
+$$
 
 and
 
+$$
 \begin{align*}
 A_3 &= \lim_{x \to -1} (x+1) r(x) \\
 &= \lim_{x \to -1} (x+1) \frac{15x+3}{x(x-3)(x+1)} \\
@@ -733,6 +750,7 @@ A_3 &= \lim_{x \to -1} (x+1) r(x) \\
 &= \frac{-12}{(-1)(-4)} \\
 &= -3.
 \end{align*}
+$$
 
 ::::
 
@@ -797,21 +815,25 @@ $$
 
 Let $p(x)=Ax^2+Bx+C$ be an irreducible quadratic polynomial. Since $p$ is irreducible, the discriminant $B^2-4AC$ is negative. This means that if we define $c=-\frac{B}{2A}$ and $d=\frac{\sqrt{4AC-B^2}}{2A}>0$, then we have that
 
+$$
 \begin{align*}
 -2c &= -2\left(-\frac{B}{2A}\right) = \frac{B}{A}, \\
 c^2 &= \left(-\frac{B}{2A}\right)^2 = \frac{B^2}{4A^2}, \\
 d^2 &= \left(\frac{\sqrt{4AC-B^2}}{2A}\right)^2 = \frac{4AC-B^2}{4A^2}, \\
 c^2 + d^2 &= \frac{B^2}{4A^2} + \frac{4AC-B^2}{4A^2} = \frac{4AC}{4A^2} = \frac{C}{A}.
 \end{align*}
+$$
 
 This means that we also have that
 
+$$
 \begin{align*}
 A\left((x-c)^2+d^2\right) &= A\left(x^2-2cx+c^2+d^2\right) \\
 &= Ax^2 + A\left(-2c\right)x + A\left(c^2+d^2\right) \\
 &= Ax^2 + Bx + C \\
 &= p(x).
 \end{align*}
+$$
 
 This completes the proof.
 ::::
@@ -899,11 +921,13 @@ $$
 
 Rewriting the right-hand side to a single rational function and comparing the numerators results in the equation
 
+$$
 \begin{align*}
 \frac52x^2+12x+\frac72 &= \left(A_1+A_2+A_3\right)x^2 \\
 &~ \qquad + \left( -2A_1+(2-2i)A_2+(2+2i)A_3\right)x \\
 &~ \qquad +\left(5A_1+(-3-6i)A_2+( -3+6i)A_3\right).
 \end{align*}
+$$
 
 Comparing coefficients results in a system of equations that has the solution
 
@@ -945,19 +969,23 @@ The next theorem states that the idea of {prf:ref}`Ex:RationalFunctions:PartialF
 
 Let $r(x) = \frac{p(x)}{q(x)}$ be a proper rational function where the denominator $q$ can be factored into $\ell$ _distinct and real linear factors_ and $m$ _distinct irreducible quadratics_, i.e.
 
+$$
 \begin{align*}
 q(x) &= a_n(x-b_1)(x-b_2)\cdots(x-b_\ell) \\
 &~ \qquad \cdot ( (x-c_1)^2 + d_1^2 )( (x-c_2)^2 + d_2^2 ) \cdots ( (x-c_m)^2 + d_m^2 ),
 \end{align*}
+$$
 
 where $b_1,b_2,\ldots,b_\ell$ are _distinct real numbers_, $(c_1,d_1^2),(c_2,d_2^2),\ldots,(c_m,d_m^2)$ are _distinct real number pairs_ with $d_1,d_2,\ldots,d_m\neq0$, and $a_n$ is the leading coefficient of $q$.
 
 Then there exist real constants $A_1,A_2,\ldots,A_\ell$, $B_1,\ldots,B_m$ and $C_1,\ldots,C_m$ such that
 
+$$
 \begin{align*}
 r(x) &= \frac{A_1}{x-b_1} + \frac{A_2}{x-b_2} + \cdots + \frac{A_\ell}{x-b_\ell} \\
 &~ \qquad + \frac{B_1x + C_1}{(x-c_1)^2 + d_1^2} + \cdots + \frac{B_mx + C_m}{(x-c_m)^2 + d_m^2}.
 \end{align*}
+$$
 
 ::::
 
@@ -998,10 +1026,12 @@ $$
 
 The denominator of this expression is not equal to the original denominator of the rational function $r$, so we cannot compare the numerators directly. If we multiply both the denominator and the numerator of the last expression with $x+1$, we obtain
 
+$$
 \begin{align*}
 r(x) &= \frac{((A+B)x + (2A+B))(x+1)}{(x+1)^2(x+2)} \\
 &= \frac{(A+B)x^2 + (2A+B)x + (2A+B)}{(x+1)^2(x+2)}.
 \end{align*}
+$$
 
 Now the denominator is equal to the original denominator of $r$ and we can compare the numerators. This results in the system of equations
 
@@ -1079,10 +1109,12 @@ $$
 
 Rewriting the right-hand side to a single rational function gives:
 
+$$
 \begin{align*}
 r(x) &= \frac{A(x+1)(x+2) + B(x+2) + C(x+1)^2}{(x+1)^2(x+2)} \\
 &= \frac{(A+C)x^2 + (3A+B+2C)x + (2A+2B+C)}{(x+1)^2(x+2)}.
 \end{align*}
+$$
 
 Comparing the numerators results in the system of equations
 
@@ -1218,11 +1250,13 @@ Investigate yourself whether this system has one or infinitely many solutions or
 [x] Yes, because we will find a unique solution for $A$, $B$ and $C$.
 > Although the suggested decomposition is not a standard partial fraction decomposition, we can show that for this particular rational function, we will find $A=4$, $B=-3$ and $C=8$ as the unique solution for $A$, $B$ and $C$. The notice that
 
+$$
 \begin{align*}
 \dfrac{Bx+C}{(x-1)^2} &= \dfrac{-3x+8}{(x-1)^2} \\
 &=  \dfrac{-3(x-1)+5}{(x-1)^2} \\
 &=  \dfrac{-3}{x-1} + \dfrac{5}{(x-1)^2}.
 \end{align*}
+$$
 
 So after this step, the suggested decomposition can be rewritten to the standard form of a partial fraction decomposition, which turns out to be
 
