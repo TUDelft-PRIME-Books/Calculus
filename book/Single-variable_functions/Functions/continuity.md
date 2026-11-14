@@ -27,7 +27,7 @@ The circuit described above with a resistor with resistance $R$ and a capacitor 
 
 Let $f$ be a function and $a$ a point in the domain of $f$. Then we say that $f$ is **continuous** at $a$ whenever for every $\varepsilon>0$ there exists a $\delta>0$ such that for every $x$ in the domain of $f$ with $|x-a|<\delta$ we have $|f(x)-f(a)|<\varepsilon$. If $f$ is not continuous at $a$, we say that it is **discontinuous** at $a$.
 
-If a function $f$ is continuous at each points in its domain, we say that $f$ is **continuous**. 
+If a function $f$ is continuous at each point in its domain, we say that $f$ is **continuous**. 
 ::::::
 
 :::{prf:remark}

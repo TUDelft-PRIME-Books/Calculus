@@ -108,6 +108,8 @@ $$
 $$
 
 provided this limit exists. If the limit exists, we say that $f$ is **differentiable** in $a$.
+
+If a function $f$ is differentiable at each point in its domain, we say that $f$ is **differentiable**. 
 ::::::
 
 Alternatively, we can find the derivative of $f$ by evaluating a different limit.
@@ -817,7 +819,7 @@ In general, whenever we have a differentiable function $f$, the derivative $f'$ 
 
 
 ::::::{prf:definition} 
-:label: Ex:Differentiability:Higherorderderivative
+:label: Def:Differentiability:Higherorderderivative
 If the derivative $f'$ is differentiable, then its derivative $(f')'$ is called the **second derivative** of $f$ and is denoted by $f''$. If the second derivative exists, we say that $f$ is **twice differentiable**.
 
 Similarly, if the second derivative is again differentiable, its derivative is called the **third derivative** of $f$ and is denoted by $f^{(3)}$. If the third derivative exists, we say that $f$ is **three times differentiable**.
@@ -854,7 +856,7 @@ $$
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:Differentiability:Higherorderderivative1
+:label: Def:Differentiability:Higherorderderivative1
 Consider the function $g(t)=-3\cos(t)+4t^3-t$. Using the basic computation rules {prf:ref}`Thm:Differentiability:Sumscalar` and the standard derivatives {prf:ref}`Thm:Differentiability:Standard1` we find that
 
 $$
@@ -878,7 +880,7 @@ $$
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:Differentiability:Higherorderderivative2
+:label: Def:Differentiability:Higherorderderivative2
 Consider the function $h(\theta)=\sin(\theta)$. Then we find
 
 $$
@@ -896,7 +898,7 @@ Indeed, if we want to know the $1001$st derivative of $h$, we notice that $1000$
 ::::::
 
 ::::::{prf:example} 
-:label: Ex:Differentiability:Higherorderderivative3
+:label: Def:Differentiability:Higherorderderivative3
 Consider the function 
 
 $$
@@ -935,7 +937,7 @@ So $f$ is twice differentiable in $0$ and $f''(0)=0$. In addition, we note that 
 ::::::{prf:remark}
 :label: Remark:Differentiability:Nbutnotnplus1
 
-The idea from {prf:ref}`Ex:Differentiability:Higherorderderivative3` works more general: if $n>0$ is a non-zero natural number the function 
+The idea from {prf:ref}`Def:Differentiability:Higherorderderivative3` works more general: if $n>0$ is a nonzero natural number the function 
 
 $$
  f(x)=\left\{\begin{array}{l}0,\qquad&\text{if}\,x\leq 0,\\ x^n,\qquad &\text{if}\,x>0.\end{array}\right.
