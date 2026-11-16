@@ -182,15 +182,19 @@ $$
 The range is a subset of the codomain.
 ::::::
 
-:::{todo}
-Zet hier een variant van {numref}`Fig:Functions1var:Diagram` waar ook de range in zichtbaar is.
-:::
-
 ::::::{prf:notation} 
 :label: Not:Functions1var:Range
 
 If $f$ is a function, then we denote its range by $R_f$.
 ::::::
+
+:::{applet}
+:url: calculus/functions_of_one_variable/diagram_with_range
+:name: Fig:Functions1var:DiagramWithRange
+:class: dark-light
+
+A diagram can be used to graphically represent that a function $f$ maps an element $x$ in the domain $D_f$ to another element $f(x)$ in the codomain $C_f$. Note that $f(x)$ is part of the range $R_f$.
+:::
 
 ::::::{prf:example} 
 :label: Ex:Functions1var:MaxDomRange
