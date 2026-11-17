@@ -182,12 +182,14 @@ By definition, we have $\lim\limits_{t\rightarrow a}x_k(t)=v_k$.
 
 Now suppose that for all $1\leq k\leq n$ we have $\lim\limits_{t\rightarrow a}x_k(t)=v_k$. Note that by construction the component functions $x_1,\ldots,x_n$ have the same domain as $\mathbf{r}$. Let $\varepsilon>0$ be given. For each $1\leq k\leq n$, we pick $\delta>0$ such that for for all $t$ in the domain of $\mathbf{r}$ with $0<|t-a|<\delta_k$, we have $|x_k(t)-v_k|<\dfrac{\varepsilon}{\sqrt{k}}$. Let $\delta=\mathrm{min}\left\{\delta_1,\ldots,\delta_k\right\}$, i.e. $\delta$ is the smallest of each of the $\delta_k$. Then for $t$ in the domain of $\mathbf{r}$ with $0<|t-a|<\delta$ we have
 
+$$
 \begin{align*}
  \|\mathbf{r}(t)-\mathbf{v}\|&=\sqrt{(x_1(t)-v_1)^2+\ldots +(x_n(t)-v_n)^2}\\
  &\leq \sqrt{\left(\frac{\varepsilon}{\sqrt{k}}\right)^2+\ldots+\left(\frac{\varepsilon}{\sqrt{k}}\right)^2}\\
  &=\sqrt{k\frac{\varepsilon^2}{k}}\\
  =\varepsilon.
 \end{align*}
+$$
 
 We conclude that $\lim\limits_{t\rightarrow a}\mathbf{r}(t)=\mathbf{v}$.
 :::
@@ -285,6 +287,7 @@ By {prf:ref}`Thm:Curves3d:Limit` we have that $\lim\limits_{h\rightarrow 0}\frac
 $$ 
  \mathbf{r}'(a)=\lim\limits_{h\rightarrow 0}\dfrac{x_k(a+h)-x_k(a)}{h}=\begin{pmatrix}\frac{\lim\limits_{h\rightarrow 0}x_1(a+h)-x_1(a)}{h}\\ \vdots \\ \lim\limits_{h\rightarrow 0}\frac{x_n(a+h)-x_n(a)}{h}\end{pmatrix}=\begin{pmatrix}x_1'(a)\\ \vdots\\ x_n'(a)\end{pmatrix}.
 $$
+
 :::
 
 If the vector function $\mathbf{r}(t)$ represent the **position** of some particle, then the derivative $\mathbf{r}'(t)$ represent its **velocity**. Indeed, we should think of velocity as a vector-valued quantity as it has both a direction and a magnitude (the magnitude of the velocity is typically called the **speed**). 
@@ -362,8 +365,10 @@ $$
 
 By {prf:ref}`Thm:Curves3d:Diff` the functions $x_1,\ldots,x_n,y_1,\ldots,y_n$ are all differentiable at $a$. So by {prf:ref}`Thm:Differentiability:Sumscalar` and {prf:ref}`Thm:Productquotientrule:Productrule` the dot product $\mathbf{r}\cdot \mathbf{s}$ is also differentiable at $a$ and we obtain
 
+$$
 \begin{align*}
  (\mathbf{r}\cdot\mathbf{s})(a)&=\sum_{k=1}^n \left(x_k'(a)y_k(a)+x_k(a)y_k'(a)\right)\\ &=\sum_{k=1}^n x_k'(a)y_k(a)+\sum_{k=1}^nx_k(a)y_k'(a)\\ &=\mathbf{r}'(a)\cdot \mathbf{s}(a)+\mathbf{r}(a)\cdot \mathbf{s}'(a).
+\end{align*}
 $$
 
 **Proof of cross product rule**. We write $\mathbf{r}(t)=\begin{pmatrix}x_1(t)\\ x_2(t)\\ x_3(t)\end{pmatrix}$ and $\mathbf{s}(t)=\begin{pmatrix}y_1(t)\\ y_2(t)\\ y_3(t)\end{pmatrix}$. Then we have
@@ -374,11 +379,14 @@ $$
 
 By {prf:ref}`Thm:Curves3d:Diff` the functions $x_1,x_2,x_3,y_1,y_2,y_3$ are all differentiable at $a$. So by {prf:ref}`Thm:Differentiability:Sumscalar` and {prf:ref}`Thm:Productquotientrule:Productrule` the cross product $\mathbf{r}\times \mathbf{s}$ is also differentiable at $a$ and we obtain
 
+$$
 \begin{align*}
  (\mathbf{r}\times\mathbf{s})'(a)&=\begin{pmatrix}x_2'(a)y_3(a)+x_2(a)y_3'(a)-x_3'(a)y_2(a)-x_3(a)y_2'(a)\\ x_3'(a)y_1(a)+x_3(a)y_1'(a)-x_1'(a)y_3(a)-x_1(a)y_3'(a)\\ x_1'(a)y_2(a)+x_1(a)y_2'(a)-x_2'(a)y_1(a)-x_2(a)y_1'(a)\end{pmatrix}\\
  &=\begin{pmatrix}x_2'(a)y_3(a)-x_3'(a)y_2(a)\\ x_3'(a)y_1(a)-x_1'(a)y_3(a)\\ x_1'(a)y_2(a)-x_2'(a)y_1(a)\end{pmatrix}+\begin{pmatrix}x_2(a)y_3'(a)-x_3(a)y_2'(a)\\ x_3(a)y_1'(a)-x_1(a)y_3'(a)\\ x_1(a)y_2'(a)-x_2(a)y_1'(a)\end{pmatrix}\\
  &=\mathbf{r}'(a)\times\mathbf{s}(a)+\mathbf{r}(a)\times \mathbf{s}'(a)
 \end{align*}
+$$
+
 :::
 
 :::{note}
@@ -418,12 +426,15 @@ $$
 
 If $\mathbf{r}(t)\neq \mathbf{0}$ we find using the chain rule
 
+$$
 \begin{align*}
  \dfrac{d}{dt}\left|\mathbf{r}(t)\right|&=\dfrac{d}{dt}\sqrt{\left|\mathbf{r}(t)\right|^2}\\
  &=\dfrac{1}{2\sqrt{\left|\mathbf{r}(t)\right|^2}}\frac{d}{dt}\left(\left|\mathbf{r}(t)\right|^2\right)\\
  &=\dfrac{1}{2\left|\mathbf{r}(t)\right|}2\left(\mathbf{r}(t)\cdot \mathbf{r}'(t)\right)\\
  &=\dfrac{\mathbf{r}(t)\cdot \mathbf{r}'(t)}{|\mathbf{r}(t)|}
 \end{align*}
+$$
+
 :::
 
 ::::::{prf:corollary} 
@@ -466,6 +477,7 @@ This vector function is differentiable again, and we find
 $$
  \mathbf{r}''(t)=\begin{pmatrix}6t\\ -4\cos(2t)\\ e^{-t}\end{pmatrix}.
 $$
+
 ::::::
 
 
@@ -1191,4 +1203,90 @@ $$
 
 ::::
 
-Daarna arc-lengthca
+
+::::::{prf:example} 
+:label: Ex:Curves3d:ArclengthHelix
+
+We again consider the space curve $\mathcal{C}$ with parametrisation $\mathbf{r}(t)=\begin{pmatrix}4\cos(2t)\\ 4\sin(2t)\\ t\end{pmatrix}$ for $0\leq t\leq 3\pi$ from {prf:ref}`Ex:Curves3d:Helix`. Then we have
+
+$$
+ \mathbf{r}'(t)=\begin{pmatrix}-8\sin(2t)\\ 8\cos(2t)\\ 1\end{pmatrix},
+$$
+
+so using {prf:ref}`Thm:Curves3d:ArclengthCompute` the arc length $L$ of this curve can be computed as
+
+$$
+\begin{align*}
+ L&=\int_{0}^{3\pi}\|\mathbf{r}'(t)\|\,dt\\
+ &=\int_0^{3\pi}\sqrt{\left(-8\cos(2t)\right)^2+\left(8\cos(2t)\right)^2+1^2}\,dt\\
+ &=\int_0^{3\pi}\sqrt{64\left(\cos^2(2t)+\sin^2(2t)\right)+1}\,dt
+ &=\int_0^{3\pi}\sqrt{64+1}\,dt
+ &=3\pi\sqrt{65}.
+\end{align*}
+$$
+
+In this computation, we used the identity
+
+$$
+ \cos^2(2t)+\sin^2(2t)=1,
+$$
+
+which follows from {prf:ref}`Thm:Trigonometry:UnitCircleIdentity`.
+
+::::::
+
+Since graphs of single-variable functions are curves, we can now also compute their arc lengths.
+
+::::::{prf:theorem} 
+:label: Thm:Curves3d:ArclengthFunction1d
+
+Let $f:[a,b]\rightarrow\mathbb{R}$ be a continuously differentiable function. Then the arc length $L$ of the graph of $f$ for $a\leq x\leq b$ is given by
+
+$$
+ L=\int_a^b \sqrt{1+\left(f'(x)\right)^2}\,dx.
+$$
+
+::::::
+
+::::{admonition} Proof of {prf:ref}`Thm:Curves3d:ArclengthFunction1d`
+:class: tudproof, dropdown
+A paramterisation for the graph of $f$ is given by
+
+$$
+ \mathbf{r}(x)=\begin{pmatrix}x\\ f(x)\end{pmatrix}
+$$
+
+for $a\leq x\leq b$, which has
+
+$$
+ \mathbf{r}'(x)=\begin{pmatrix}1\\ f'(x)\end{pmatrix}
+$$
+
+Since $f$ is continuously differentiable, the parametrisation is regular. So using {prf:ref}`Thm:Curves3d:ArclengthCompute` we find
+
+$$
+ L=\int_a^b\|\mathbf{r}'(x)\|\,dx=\int_a^b \sqrt{1^2+\left(f'(x)\right)^2}\,dx.
+$$
+
+::::
+
+The major limitation of this rule that that integrals of functions of the form $\sqrt{1+\left(f'(x)\right)^2}$ are often very hard to compute. 
+
+::::::{prf:example} 
+:label: Ex:Curves3d:ArclengthFunction1d
+
+Consider the function $f(x)=\dfrac{1}{2}x^2$ for $1\leq x\leq 2$. Then according to {prf:ref}`Thm:Curves3d:ArclengthFunction1d` the arc length $L$ of the graph of $f$ is given by
+
+$$
+ L=\int_1^2 \sqrt{1+\left(f'(x)\right)^2}\,dx=\int_1^2 \sqrt{1+x^2}\,dx.
+$$
+
+Using the ideas from {numref}`Subsec:TrigSub` it can be shown that 
+::::::
+
+## Arc length parametrisation
+
+One major disadvantage of using parametrisations to describe curves, is that when plotting the curve the parameter is no longer visible. If we imagine the parametrisation describing the position of a particle that follows the curve, we cannot "see" in the curve itself where the particle is at which moment in time, nor what its velocity is. In this sense, it would be convenient to have a parametrisation where this is possible. One way to ensure this is to make sure that the particle traverses the curve with constant speed. The so-called **arc length parametrisation** has precisely this property. In order to construct this parametrisation for a given curve, we first need to introduce the arc length function.
+
+
+VOORBEELD ARCLENGTH FUNCTIE EN TEKST ERVOOR MOET NOG.
