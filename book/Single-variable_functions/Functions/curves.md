@@ -211,7 +211,7 @@ for each $x$ in the domain of $f$, since the graph of $f$ is part of the curve $
 Finding a parametrisation for the folium of Descartes is very tricky, as there is no obvious way to start. It turns out that 
 
 $$
- \left\{\begin{array}{lcl}x&=&\frac{3t}{1+t^3},\\ y&=&\frac{3t^2}{1+t^3},\end{array}\right.\qquad -\infty<t<-1,\ -1<t<\infty
+\left\{\begin{array}{lcl}x&=&\frac{3t}{1+t^3},\\ y&=&\frac{3t^2}{1+t^3},\end{array}\right.\qquad -\infty < t < -1,\ -1 < t < \infty
 $$
 
 gives a parametrisation of this curve. Indeed, for any $t\neq -1$ we have

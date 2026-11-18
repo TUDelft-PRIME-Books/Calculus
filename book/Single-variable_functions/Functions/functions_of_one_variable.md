@@ -766,7 +766,7 @@ The graph of the piecewise defined function $H(t)$ with initially the _right-con
 Consider the piecewise defined function
 
 $$
- f(x)=\left\{\begin{array}{lll}2x+3,\qquad&\text{if }&x\leq -1,\\ 3,&\text{if }&0<x\leq 1,\\ 2-x^2,&\text{if }&x>1.\end{array}\right.
+f(x)=\left\{\begin{array}{lll}2x+3,\qquad&\text{if }&x\leq -1,\\ 3,&\text{if }&0 < x \leq 1,\\ 2-x^2,&\text{if }&x > 1.\end{array}\right.
 $$
 
 This means that in order to evaluate $f(-2)$, we should look in which of the defining intervals $-2$ lies. In this case, we have $-2\leq -1$, so on this part of the domain the function follows the formula $2x+3$. This means that $f(-2)=2(-2)+3=-1$. 
