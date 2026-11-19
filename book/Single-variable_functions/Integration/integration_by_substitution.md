@@ -439,6 +439,8 @@ $$
 
 ::::::
 
+(Subsec:TrigSub)=
+
 ## Trigonometric substitutions
 
 For certain integrals involving square roots of the form $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$ or $\sqrt{x^2-a^2}$ we might use a **trigonometric substitution** in order to get rid of the square root. This will lead to integrals involving trigonometric functions, which will be treated in {numref}`Sec:Integration:TrigonometricFunctions`. However, here we will show how the method of trigonometric substitution works.
