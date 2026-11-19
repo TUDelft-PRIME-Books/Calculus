@@ -1,6 +1,9 @@
 (Section:Curves3d)=
-
 # Curves in $\mathbb{R}^3$
+
+- What is a parametrisation?
+- Standard examples
+- No implicit equations
 
 In this section we cover:
 

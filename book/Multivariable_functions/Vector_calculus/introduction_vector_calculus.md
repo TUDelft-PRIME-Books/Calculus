@@ -1,6 +1,6 @@
 (Chapter:VectorCalculusIntro)=
 
-# Vector calculus
+# Vector-field calculus
 In this chapter: Under Construction
 
 :::{todo}
