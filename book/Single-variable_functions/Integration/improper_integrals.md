@@ -1237,8 +1237,8 @@ $$
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/4bc56611-e3cb-4f5a-b99e-96a54f7a6f63?id=133534
-:label: Grasple:133534
+:url: https://embed.grasple.com/exercises/d0d22939-7c9f-4290-9187-b4219ea83898?id=64168
+:label: Grasple:64168
 :dropdown:
 :description: Evaluate the integral if possible.
 
@@ -1246,8 +1246,8 @@ $$
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/908b4739-bd46-4030-a584-613f5e5132e0?id=133535
-:label: Grasple:133535
+:url: https://embed.grasple.com/exercises/5c8e9f35-39c8-4ed2-819b-5db6281823e4?id=64212
+:label: Grasple:64212
 :dropdown:
 :description: Evaluate the integral if possible.
 
@@ -1255,8 +1255,8 @@ $$
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/50d7af4a-e5d5-429b-80af-548619f6de3b?id=133537
-:label: Grasple:133537
+:url: https://embed.grasple.com/exercises/7170cd66-1318-44d0-bf9c-15e486cc6819?id=64170
+:label: Grasple:64170
 :dropdown:
 :description: Evaluate the integral if possible.
 
@@ -1264,8 +1264,8 @@ $$
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/419e3b07-2e9f-42a4-ae53-3684a413fcd1?id=133538
-:label: Grasple:133538
+:url: https://embed.grasple.com/exercises/286fc344-15b0-4b0c-98ea-234802650c52?id=78804
+:label: Grasple:78804
 :dropdown:
 :description: Evaluate the integral if possible.
 
@@ -1273,8 +1273,8 @@ $$
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/766f1dc7-f1df-4723-bd3f-ef267f8c6482?id=133539
-:label: Grasple:133539
+:url: https://embed.grasple.com/exercises/c6932c78-c47b-49ac-9bfb-010ff2afffbf?id=64167
+:label: Grasple:64167
 :dropdown:
 :description: Evaluate the integral if possible.
 
@@ -1282,8 +1282,8 @@ $$
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/2b020706-0274-4fbb-a65d-5c74eb9f31fa?id=133540
-:label: Grasple:133540
+:url: https://embed.grasple.com/exercises/f646da33-693a-4d8d-90af-732a84d94bda?id=78803
+:label: Grasple:78803
 :dropdown:
 :description: Evaluate the integral if possible.
 
@@ -1333,8 +1333,8 @@ Here we showed that $\displaystyle-\int_0^1\frac{\ln(x)}{1+x^2}\,dx=\int_1^{\inf
 
 ::::{grasple}
 :iframeclass: dark-light
-:url: https://embed.grasple.com/exercises/ba0412df-e79f-486b-bd82-26cdfedf09a6?id=133541
-:label: Grasple:133541
+:url: https://embed.grasple.com/exercises/29b4668a-cf34-475d-ab94-5dad192775b7?id=64196
+:label: Grasple:64196
 :dropdown:
 :description: Use a comparison theorem to determine whether the integrals converge or diverge.
 
