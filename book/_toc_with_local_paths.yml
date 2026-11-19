@@ -64,6 +64,14 @@ parts:
     - file: Single-variable_functions/Integration/improper_integrals.md
     - file: Single-variable_functions/Integration/approximating_integrals.md
     - file: Single-variable_functions/Integration/review_integration.md
+  - file: Single-variable_functions/Curves/introduction_curves.md
+    sections:
+    - file: Single-variable_functions/Curves/vector_functions.md
+    - file: Single-variable_functions/Curves/curves_in_R2.md
+    - file: Single-variable_functions/Curves/curves_in_R3.md
+    - file: Single-variable_functions/Curves/slope_of_curves.md
+    - file: Single-variable_functions/Curves/arc_length.md
+    - file: Single-variable_functions/Curves/curvature.md
   numbered: 3
 - caption: Sequences and series
   chapters:
@@ -95,8 +103,7 @@ parts:
     sections:
     - file: Multivariable_functions/Functions_curves_and_surfaces/functions_of_two_or_more_variables.md
     - file: Multivariable_functions/Functions_curves_and_surfaces/properties.md
-    - file: Multivariable_functions/Functions_curves_and_surfaces/curves.md
-    - file: Multivariable_functions/Functions_curves_and_surfaces/surfaces.md
+    - file: Multivariable_functions/Functions_curves_and_surfaces/implicit_equations.md
     - file: Multivariable_functions/Functions_curves_and_surfaces/level_curves_and_surfaces.md
     - file: Multivariable_functions/Functions_curves_and_surfaces/limits_and_continuity.md
     - file: Multivariable_functions/Functions_curves_and_surfaces/nonlinear_systems_in_two_variables.md
@@ -120,6 +127,13 @@ parts:
     - file: Multivariable_functions/Multivariable_integration/line_integrals.md
     - file: Multivariable_functions/Multivariable_integration/surface_integrals.md
     - file: Multivariable_functions/Multivariable_integration/review_multivariable_integration.md
+  - file: Multivariable_functions/Surfaces/introduction_surfaces.md
+    sections:
+    - file: Multivariable_functions/Surfaces/functions_from_R2_to_R3.md
+    - file: Multivariable_functions/Surfaces/parametric_surfaces.md
+    - file: Multivariable_functions/Surfaces/slopes_of_surfaces.md
+    - file: Multivariable_functions/Surfaces/curvature.md
+    - file: Multivariable_functions/Surfaces/surface_integrals.md
   - file: Multivariable_functions/Vector_calculus/introduction_vector_calculus.md
     sections:
     - file: Multivariable_functions/Vector_calculus/vector_fields.md
