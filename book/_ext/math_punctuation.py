@@ -1,7 +1,9 @@
+import re
+
 from docutils import nodes
 from sphinx.transforms import SphinxTransform
 
-PUNCTUATION = {".", ",", ";", ":", "!", "?"}
+PUNCTUATION_RUN = re.compile(r"[.,;:!?)](?:[.,;:!?) ]*[.,;:!?)])?")
 
 class InlineMathPunctuationIntoText(SphinxTransform):
     """
@@ -20,12 +22,13 @@ class InlineMathPunctuationIntoText(SphinxTransform):
                     next_node = parent[index + 1]
                     if next_node and isinstance(next_node, nodes.Text):
                         text = next_node.astext()
-                        if text and text[0] in PUNCTUATION:
-                            punctuation = text[0]
+                        match = PUNCTUATION_RUN.match(text)
+                        if match:
+                            punctuation = match.group()
                             new_latex = f"{math.astext()}\\text{{{punctuation}}}"
                             new_math = nodes.math(new_latex, new_latex)
                             math.replace_self(new_math)
-                            new_text = text[1:]  # Remove the punctuation
+                            new_text = text[len(punctuation):]  # Remove the punctuation
                             if new_text:
                                 new_next_node = nodes.Text(new_text)
                                 idx_next = parent.index(next_node)
