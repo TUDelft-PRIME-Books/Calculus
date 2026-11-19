@@ -1,6 +1,6 @@
 (Section:Curves)=
 
-# Curves in $\mathbb{R}^2$
+# Implicit equations in $\mathbb{R}^2$
 
 (Subsec:CurvesIntro)=
 

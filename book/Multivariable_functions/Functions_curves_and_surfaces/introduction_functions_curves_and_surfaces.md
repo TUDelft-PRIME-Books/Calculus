@@ -1,5 +1,5 @@
 (Chapter:FunctionsCurvesAndSurfaces)=
-# Functions, curves and surfaces
+# Functions and equations
 
 In this chapter: Under Construction
 

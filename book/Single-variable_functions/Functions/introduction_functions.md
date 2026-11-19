@@ -1,5 +1,5 @@
 (Chapter:FunctionsAndCurves)=
-# Functions and curves
+# Functions and equations
 
 :::{todo}
 Write introduction of {numref}`Chapter:FunctionsAndCurves`.

@@ -300,6 +300,44 @@ $$
 {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` is only valid for *linear substitutions* of the form $\alpha x+\beta$ with $\alpha,\beta\in\mathbb{R}$ and $\alpha\neq0$. For more general substitutions we need the method of *integration by substitution*, which will be explained in {numref}`Sec:Integration:Substitution`.
 ::::
 
+::::{question}
+:type: short-answer
+:variant: blocks
+:admonition:
+:class: question
+:showanswer:
+
+Consider {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` and {numref}`Fig:Question:Theorem`.
+
+For each of the case below, determine the values of $x$ for which {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` is valid.
+
+GIve you answer in the notation $(a,b)$ with $a<b$.
+---
+M[(-1,1)] If $c=-2$, $d=4$, $\alpha=3$ and $\beta=1$, then $x$ should be in the interval:
+> Did you use {numref}`Fig:Question:Theorem`? You can use the two sliders to set the values of $\alpha$ and $\beta$, and you can drag the horizontal lines for $c$ and $d$. You can also try to solve
+
+$$
+-2<3x+1<4.
+$$
+
+M[(-3,1)] If $c=1$, $d=9$, $\alpha=-2$ and $\beta=3$, then $x$ should be in the interval:
+> Did you use {numref}`Fig:Question:Theorem`? You can use the two sliders to set the values of $\alpha$ and $\beta$, and you can drag the horizontal lines for $c$ and $d$.
+
+ You can also try to solve
+
+$$
+1<-2x+3<9.
+$$
+---
+:::{applet}
+:url: calculus/indefinite_integrals/a_function
+:name: Fig:Question:Theorem
+:class: dark-light
+
+The function $f$.
+:::
+::::
+
 In the next section we will explain the relation between definite and indefinite integrals.
 
 ## Grasple exercises
