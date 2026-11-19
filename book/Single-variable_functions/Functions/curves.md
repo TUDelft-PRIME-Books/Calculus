@@ -1149,6 +1149,7 @@ A straightforward parametrisation of this parabola is given by
 $$
  x=t,\qquad y=-\frac{1}{4}t^2+\frac{1}{2}t+\frac{23}{4},\qquad -\infty<t<\infty.
 $$
+
 ::::::
 
 ::::::{prf:example} 
