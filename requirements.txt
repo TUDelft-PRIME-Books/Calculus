@@ -12,4 +12,4 @@ sphinx-apa-references == 1.0
 git+https://github.com/TeachBooks/TeachBooks-Favourites@v1.15.8
 
 # pending https://github.com/hagenw/sphinxcontrib-katex/pull/146
-git+https://github.com/TeachBooks/sphinxcontrib-katex
+git+https://github.com/TeachBooks/sphinxcontrib-katex@aa30398
