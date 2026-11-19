@@ -38,7 +38,7 @@ $$
 
 
 ::::::{prf:definition} 
-:label: Def:Functions1var:Range
+:label: Def:Functionsmultivar:Range
 
 Let $f$ be a multivariable function with domain $D$. Then the **range** $R$ of $f$ is the set of all function values of $f$. That is, we have
 
