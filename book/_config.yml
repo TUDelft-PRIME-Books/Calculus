@@ -34,27 +34,25 @@ sphinx:
   config:
     katex_prerender: false
     katex_inherit_font: true
-    katex_options: |
-      {
-        trust: true,
-        strict: false,
-        macros: {
-          "\\class": "\\htmlClass{#1}{#2}",
-          "\\Re": "\\operatorname{Re}\\left(#1\\right)",
-          "\\Im": "\\operatorname{Im}\\left(#1\\right)",
-          "\\vect": "\\mathbf{#1}",
-          "\\vec": "\\mathbf{#1}",
-          "\\nicefrac": "\\frac{#1}{#2}",
-          "\\R": "\\mathbb{R}",
-          "\\C": "\\mathbb{C}",
-          "\\norm": "\\left\\Vert #1 \\right\\Vert",
-          "\\ip" : "\\cdot",
-          "\\cp": "\\times ",
-          "\\erf": "\\operatorname{erf}",
-          "\\ooline": "\\overline{\\overline{#1}}",
-          "\\uuline": "\\underline{\\underline{#1}}"
-        }
-      }
+    katex_custom_css: teachbooks-katex-math.css
+    katex_options:
+      trust: true
+      strict: false
+      macros:
+        "\\class": "\\htmlClass{#1}{#2}"
+        "\\Re": "\\operatorname{Re}\\left(#1\\right)"
+        "\\Im": "\\operatorname{Im}\\left(#1\\right)"
+        "\\vect": "\\mathbf{#1}"
+        "\\vec": "\\mathbf{#1}"
+        "\\nicefrac": "\\frac{#1}{#2}"
+        "\\R": "\\mathbb{R}"
+        "\\C": "\\mathbb{C}"
+        "\\norm": "\\left\\Vert #1 \\right\\Vert"
+        "\\ip" : "\\cdot"
+        "\\cp": "\\times "
+        "\\erf": "\\operatorname{erf}"
+        "\\ooline": "\\overline{\\overline{#1}}"
+        "\\uuline": "\\underline{\\underline{#1}}"
     teachbooks_questions:
       feedbacks:
         multiple-choice:
