@@ -34,7 +34,6 @@ sphinx:
   config:
     katex_prerender: false
     katex_inherit_font: true
-    katex_custom_css: teachbooks-katex-math.css
     katex_options:
       trust: true
       strict: false
@@ -142,7 +141,8 @@ sphinx:
     - sphinx_new_tab_link
     - sphinx_apa_references                     # For APA citations
     - sphinx.ext.todo
-    - sphinxcontrib.katex                       # For quicker loading
+    # - sphinxcontrib.katex                       # For quicker loading
+    - teachbooks_katex
 
 bibtex_bibfiles: 
   - references.bib

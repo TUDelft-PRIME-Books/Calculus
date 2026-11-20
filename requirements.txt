@@ -11,5 +11,4 @@ sphinx-apa-references == 1.0
 # Our favourite Sphinx extensions in one line, replace with individual extensions if you prefer some extensions not to be included (https://github.com/TeachBooks/TeachBooks-Favourites)
 git+https://github.com/TeachBooks/TeachBooks-Favourites@v1.15.8
 
-# pending https://github.com/hagenw/sphinxcontrib-katex/pull/146
-git+https://github.com/TeachBooks/sphinxcontrib-katex@382eb35
+git+https://github.com/TeachBooks/TeachBooks-KaTeX
