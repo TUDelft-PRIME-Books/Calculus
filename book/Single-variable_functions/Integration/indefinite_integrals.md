@@ -314,27 +314,29 @@ For each of the case below, determine the values of $x$ for which {prf:ref}`Thm:
 GIve you answer in the notation $(a,b)$ with $a<b$.
 ---
 M[(-1,1)] If $c=-2$, $d=4$, $\alpha=3$ and $\beta=1$, then $x$ should be in the interval:
-> Did you use {numref}`Fig:Question:Theorem`? You can use the two sliders to set the values of $\alpha$ and $\beta$, and you can drag the horizontal lines for $c$ and $d$. You can also try to solve
+> Did you use {numref}`Fig:Question:Theorem`? You can use the two sliders to set the values of $\alpha$ and $\beta$, and you can drag the pulsing points for $c$ and $d$.
+
+You can also try to solve
 
 $$
 -2<3x+1<4.
 $$
 
 M[(-3,1)] If $c=1$, $d=9$, $\alpha=-2$ and $\beta=3$, then $x$ should be in the interval:
-> Did you use {numref}`Fig:Question:Theorem`? You can use the two sliders to set the values of $\alpha$ and $\beta$, and you can drag the horizontal lines for $c$ and $d$.
+> Did you use {numref}`Fig:Question:Theorem`? You can use the two sliders to set the values of $\alpha$ and $\beta$, and you can drag the pulsing points for $c$ and $d$.
 
- You can also try to solve
+You can also try to solve
 
 $$
 1<-2x+3<9.
 $$
 ---
 :::{applet}
-:url: calculus/indefinite_integrals/a_function
+:url: calculus/indefinite_integrals/linear_substitution
 :name: Fig:Question:Theorem
 :class: dark-light
 
-The function $f$.
+You can use the two sliders to set the values of $\alpha$ and $\beta$, and you can drag the pulsing points for $c$ and $d$.
 :::
 ::::
 
