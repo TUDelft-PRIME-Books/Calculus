@@ -54,7 +54,7 @@ If $I$ is the closed interval $[a,b]$, then the point $(x,y,z)=(f(a),g(a),h(a))$
 ::::::
 
 :::{note}
-A curve in $\mathbb{R}^3$ is also known as a **space curve**, while a curve in $\mathbb{R}^2$ is known as a **planar curve**.
+A curve in $\mathbb{R}^3$ is also known as a **space curve**.
 :::
 
 
@@ -150,6 +150,5 @@ As such, we find that $\mathbf{r}(t)=\begin{pmatrix}3\cos(t)\\ 1-2\cos(t)-4\sin(
 Include an applet showing $S$, $P$ and $\mathcal{C}$, preferable with a slider (or something) moving $t$ along the curve.
 ::::::
 
-We like to think of curves as lines that are not necessarily straight. However, more sets are curves than you might think initially. For instance, there exist closed planar curves, with a continuous parametrisation, which fill up the entire filled square $\left\{(x,y)\in\mathbb{R}^2\middle|0\leq x\leq 1,0\leq y\leq 1\right\}$. Such a curve is known as a [space-filling curve](https://en.wikipedia.org/wiki/Space-filling_curve). We will not delve deeper into these space-filling curves, but it is useful to realise that they exist.
 
 
