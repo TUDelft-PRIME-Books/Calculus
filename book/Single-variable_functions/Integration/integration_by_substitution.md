@@ -546,7 +546,7 @@ $$
 &=4\int_0^{\frac{1}{2}\sqrt{2}}\frac{du}{(1-u^2)^2}\\
 &=\int_0^{\frac{1}{2}\sqrt{2}}\left(\frac{1}{1-u}+\frac{1}{(1-u)^2}+\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,du\\
 &=\left[-\ln|1-u|+\frac{1}{1-u}+\ln|1+u|-\frac{1}{1+u}\right]_0^{\frac{1}{2}\sqrt{2}}\\
-&=-\ln(1-\frac{1}{2}\sqrt{2})+\frac{1}{1-\frac{1}{2}\sqrt{2}}+\ln(1+\frac{1}{2}\sqrt{2})-\frac{1}{1+\frac{1}{2}\sqrt{2}}\\
+&=-\ln(1-\tfrac{1}{2}\sqrt{2})+\frac{1}{1-\frac{1}{2}\sqrt{2}}+\ln(1+\tfrac{1}{2}\sqrt{2})-\frac{1}{1+\frac{1}{2}\sqrt{2}}\\
 &=\ln\left(\frac{2+\sqrt{2}}{2-\sqrt{2}}\right)+2\sqrt{2}.
 \end{align*}
 $$

@@ -234,19 +234,7 @@ $$
 \int\sin^m(x)\cos^n(x)\,dx
 $$
 
-with $m$ and $n$ positive even integers. If $\ell=\min(m,n)$, replace 
-
-$$
-(\sin(x)\cos(x))^{\ell}
-$$
-
-by
-
-$$
-\left(\tfrac{1}{2}\sin(2x)\right)^{\ell}.
-$$
-
-The remaining factor is either an even power of $\cos(x)$ (then use $\cos^2(x)=\frac{1}{2}(1+\cos(2x))$) or an even power of $\sin(x)$ (then use $\sin^2(x)=\frac{1}{2}(1-\cos(2x))$). The result will be a sum of integrals of powers of (other) sines and cosines with lower powers than before. If any of these powers is odd, we use a substitution as in {prf:ref}`Ex:Integration:TrigFunctionsPowerOddSinEvenCos` or {prf:ref}`Ex:Integration:TrigFunctionsPowerEvenSinOddCos`. If both powers are even, we repeat the procedure.
+with $m$ and $n$ positive even integers. If $\ell=\min(m,n)$, replace $(\sin(x)\cos(x))^{\ell}$ by $\left(\tfrac{1}{2}\sin(2x)\right)^{\ell}$. The remaining factor is either an even power of $\cos(x)$, then use $\cos^2(x)=\frac{1}{2}(1+\cos(2x))$, or an even power of $\sin(x)$, then use $\sin^2(x)=\frac{1}{2}(1-\cos(2x))$. The result will be a sum of integrals of powers of (other) sines and cosines with lower powers than before. If any of these powers is odd, we use a substitution as in {prf:ref}`Ex:Integration:TrigFunctionsPowerOddSinEvenCos` or {prf:ref}`Ex:Integration:TrigFunctionsPowerEvenSinOddCos`. If both powers are even, we repeat the procedure.
 
 :::{prf:remark}
 :label: Rmk:Integration:TrigFunctionsPowers
