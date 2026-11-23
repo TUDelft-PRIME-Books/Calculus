@@ -2,15 +2,13 @@
 
 # Arc length
 
-- Arc length
-- Arc-length parametrisations
-- Maybe integrals using arc-length parametrisation
+## Introduction
 
+Consider a stunt plane that makes a flight of $180$ seconds. If $\mathbf{r}(t)$ for $0\leq t\leq 180$ describes the position of the plane at time $t$, then it is a natural question to ask what distance the plane has traveled during this flight. If we visualise the trajectory of the plane as a curve in $\mathbb{R}^3$, then this question comes down to finding the length of this curve. In the context of parametric curves, this length is known as the **arc length** of the curve. In this section, we will see how, for a given curve, we can evaluate the arc length and, subsequently, how the arc length can be used to (re)-parametrise the curve.
 
+## Arc length of a curve
 
-## Arc length
-
-When a curve describes the position of a wire, it is a natural question to want to know the length $L$ of the wire. In the context of parametric curves, this length is known as the **arc length** of the curve. Consider a curve $\mathcal{C}$ with regular parametrisation $\mathbf{r}(t)$ for $a\leq t\leq b$, which is shown in the figure below.
+Consider a curve $\mathcal{C}$ with regular parametrisation $\mathbf{r}(t)$ for $a\leq t\leq b$, which is shown in the figure below.
 
 :::{figure} images/Fig_Curves3d-Arclengthstart.png
 :name: Fig:ArclengthStart
@@ -201,8 +199,8 @@ $$
 \begin{align*}
  L&=\int_{0}^{3\pi}\|\mathbf{r}'(t)\|\,dt\\
  &=\int_0^{3\pi}\sqrt{\left(-8\cos(2t)\right)^2+\left(8\cos(2t)\right)^2+1^2}\,dt\\
- &=\int_0^{3\pi}\sqrt{64\left(\cos^2(2t)+\sin^2(2t)\right)+1}\,dt
- &=\int_0^{3\pi}\sqrt{64+1}\,dt
+ &=\int_0^{3\pi}\sqrt{64\left(\cos^2(2t)+\sin^2(2t)\right)+1}\,dt\\
+ &=\int_0^{3\pi}\sqrt{64+1}\,dt\\
  &=3\pi\sqrt{65}.
 \end{align*}
 $$
@@ -252,7 +250,7 @@ $$
 
 ::::
 
-The major limitation of this rule that that integrals of functions of the form $\sqrt{1+\left(f'(x)\right)^2}$ are often very hard to compute, as can be seen from the following example. 
+The major limitation of this rule that that integrals of functions of the form $\sqrt{1+\left(f'(x)\right)^2}$ are often very hard to compute. In the upcoming example, we take a look at one of the few examples where it is possible to evaluate the integral by hand.
 
 ::::::{prf:example} 
 :label: Ex:ArcLength:ArclengthFunction1d
@@ -272,20 +270,137 @@ $$
 As such, the arc length is given by
 
 $$
-\begin{align*}
- L&=\int_1^2 \sqrt{1+x^2}\,dx\\
- &=\left[\frac{1}{2}x\sqrt{x^2+1}+\frac{1}{2}\ln\left(\sqrt{x^2+1}+x\right)\right]_1^2\\
- &=\sqrt{5}+\frac{1}{2}\ln\left(\sqrt{5}+2\right)-\frac{1}{2}\sqrt{2}-\frac{1}{2}\ln\left(\sqrt{2}+1\right)\\
- &=\sqrt{5}-\frac{1}{2}\sqrt{2}+\frac{1}{2}\ln\left(\frac{\sqrt{5}+2}{\sqrt{2}+1}).
-\end{align*}
+ \begin{align*}
+  L&=\int_1^2 \sqrt{1+x^2}\,dx\\
+  &=\left[\frac{1}{2}x\sqrt{x^2+1}+\frac{1}{2}\ln\left(\sqrt{x^2+1}+x\right)\right]_1^2\\
+  &=\sqrt{5}+\frac{1}{2}\ln\left(\sqrt{5}+2\right)-\frac{1}{2}\sqrt{2}-\frac{1}{2}\ln\left(\sqrt{2}+1\right)\\
+  &=\sqrt{5}-\frac{1}{2}\sqrt{2}+\frac{1}{2}\ln\left(\frac{\sqrt{5}+2}{\sqrt{2}+1}\right).
+ \end{align*}
 $$
 
-Approximately, we find $L\approx 1.81$. This number makes sense, as the straight line piece from $\left(1,\frac{1}{2}\right)$ to $\left(2,2\right)$ has length $1.75$, which is also the shortest distance between these two points. Since the graph of $f$ is not a straight line, its length should, indeed, be slightly larger than $1.75$.
+Approximately, we find $L\approx 1.81$. This number makes sense, as the straight line piece from $\left(1,\frac{1}{2}\right)$ to $\left(2,2\right)$ has length $\sqrt{1+\frac{9}{4}}\approx 1.80$, which is also the shortest distance between these two points. Since the graph of $f$ is not a straight line, its length should, indeed, be slightly larger than $\sqrt{1+\frac{9}{4}}$.
 ::::::
 
 ## Arc length parametrisation
 
-One major disadvantage of using parametrisations to describe curves, is that when plotting the curve the parameter is no longer visible. If we imagine the parametrisation describing the position of a particle that follows the curve, we cannot "see" in the curve itself where the particle is at which moment in time, nor what its velocity is. In this sense, it would be convenient to have a parametrisation where this is possible. One way to ensure this is to make sure that the particle traverses the curve with constant speed. The so-called **arc length parametrisation** has precisely this property. In order to construct this parametrisation for a given curve, we first need to introduce the arc length function.
+One major disadvantage of using parametrisations to describe curves, is that when plotting the curve the parameter is no longer visible. If we imagine the parametrisation describing the position of a particle that follows the curve, we cannot "see" in the curve itself where the particle is at which moment in time, nor what its velocity is. In this sense, it would be convenient to have a parametrisation where this is possible. One way to ensure this is to make sure that the particle traverses the curve with constant speed. If make the somewhat stronger restriction that this speed should be $1$ we obtain the following definition.
+
+::::::{prf:definition} 
+:label: Def:ArcLength:ArclengthParam
+Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$. Then a regular parametrisation $\mathbf{r}(s)$ for $s$ in some interval $I$ is called an **arc-length parametrisation** of $\mathcal{C}$ if
+
+$$
+ \|\mathbf{r}(s)\|=1
+$$
+
+for all $s\in I$. 
+::::::
+
+We can directly verify that the arc-length parametrisation does what it intends to do: making sure that a parameter interval of length $L$ corresponds to a part of the curve of length $L$.
+
+::::::{prf:theorem} 
+:label: Thm:ArcLength:ArclengthParam
+Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ with an arc-length paramterisation $\mathbf{r}(s)$ for $s$ in some interval $I$. Then for each subinterval $[a,b]\subset I$ the arc length of the part of $\mathcal{C}$ between $\mathbf{r}(a)$ and $\mathbf{r}(b)$ equals $b-a$.
+::::::
 
 
-VOORBEELD ARCLENGTH FUNCTIE EN TEKST ERVOOR MOET NOG.
+::::{admonition} Proof of {prf:ref}`Thm:ArcLength:ArclengthParam`
+:class: tudproof, dropdown
+Let $[a,b]\subset I$ and let $L$ denote the arc length of the part of $\mathcal{C}$ between $\mathbf{r}(a)$ and $\mathbf{r}(b)$. Then by {prf:ref}`Thm:ArcLength:ArclengthCompute` we have
+
+$$
+ L=\int_a^b\|\mathbf{r}'(s)\|\,ds=\int_a^b1\,ds=b-a,
+$$
+
+as desired.
+::::
+
+::::::{prf:corollary} 
+:label: Cor:ArcLength:ArclengthParam
+Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ with an arc-length paramterisation $\mathbf{r}(s)$ for $s$ in some interval $[a,b]$. Then the arc length of $\mathcal{C}$ is given by $b-a$.
+::::::
+
+::::{admonition} Proof of {prf:ref}`Cor:ArcLength:ArclengthParam`
+:class: tudproof, dropdown
+This follows directly by applying {prf:ref}`Thm:ArcLength:ArclengthParam` to the interval $[a,b]$.
+::::
+
+:::{figure} images/Fig-ArcLength-ArcParam.png
+:name: Fig:ArcParam
+:class: dark-light
+
+A regular parametrisation of a curve (top) and an arc-length parametrisation of the same curve (bottom).
+:::
+
+:::{todo}
+Turn {numref}`Fig:ArcParam` into an applet.
+:::
+
+There are many practical situations, where we, likely unknowingly, use an arc-length parametrisation. For instance, we travelling in a car, you can look at a clock to see how much time you have travelled to determine where you are on the route, but in most cases it is better to check your odometer to see how much distance you have traveled. Checking the clock is using a normal parametrisation for your trajectory, while checking the odometer corresponds to using the arc-length parametrisation as you use the distance you have traveled to determine the current position.
+
+In order to construct this arc-length parametrisation for a given curve, we first need to introduce the arc length function.
+
+::::::{prf:definition} 
+:label: Def:ArcLength:ArclengthFunction
+Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ with a regular parametrisation $\mathbf{r}(t)$ for $t\in [a,b]$ that covers all except possibly finitely many points on the curve exactly once. Then the **arc length function** $s$ of $\mathcal{C}$ is the function $s:[a,b]\rightarrow \mathbb{R}$ given by
+
+$$
+ s(t)=\int_a^t \|\mathbf{r}'(\tau)\|\,d\tau.
+$$
+::::::
+
+That is, $s(t)$ is the arc length of the part of the curve between $\mathbf{r}(a)$ and $\mathbf{r}(t)$. 
+
+If $\mathbf{r}(t)$ for $t\in I$ is some parametrisation of a curve $\mathcal{C}$, then in some cases it is possible to explicitly calculate the arc length function $s(t)$ and to, subsequently, invert this function and write $t$ as a function of $s$, i.e. write $t=t(s)$. In that, case the vector funtion 
+
+$$
+ \mathbf{s}(s)=\mathbf{r}(t(s))
+$$
+
+can be used as an arc-length paramterisation for the curve. Unfortunately, for many paramterisations it is rather hard to find this arc-length paramterisation explicitly. Let us conclude by considering a few examples of this procedure.
+
+
+::::::{prf:example} 
+:label: Def:ArcLength:ArclengthParamHelix
+
+Consider the space curve $\mathcal{C}$ with parametrisation $\mathbf{r}(t)=\begin{pmatrix}4\cos(2t)\\ 4\sin(2t)\\ t\end{pmatrix}$ for $0\leq t\leq 3\pi$ from {prf:ref}`Ex:Curves3d:Helix`, which we also studied in {prf:ref}`Ex:ArcLength:ArclengthHelix`. Then the arc length function is given by
+
+$$
+\begin{align*}
+ s(t)=\int_0^t\|\mathbf{r}'(\tau)\|\,d\tau\\
+ &=\int_0^{t}\sqrt{\left(-8\cos(2\tau)\right)^2+\left(8\cos(2\tau)\right)^2+1^2}\,d\tau\\
+ &=\int_0^{t}\sqrt{64\left(\cos^2(2t)+\sin^2(2t)\right)+1}\,d\tau\\
+ &=\int_0^{t}\sqrt{64+1}\,d\tau\\
+ &=\sqrt{65}t.
+\end{align*} 
+$$
+
+We can invert this relation to find
+
+$$
+ t=\frac{s}{\sqrt{65}},
+$$
+
+which gives rise to the arc length parametrisation 
+
+$$
+ \mathbf{s}(s)=\mathbf{r}(t(s))=\begin{pmatrix}4\cos\left(\frac{2s}{\sqrt{65}}\right)\\ 4\sin\left(\frac{2s}{\sqrt{65}}\right)\\ \frac{s}{\sqrt{65}}\end{pmatrix}
+$$
+
+for $0\leq s\leq 3\pi\sqrt{65}$.
+::::::
+
+::::::{prf:example} 
+:label: Def:ArcLength:ArclengthParamFunction1d
+
+
+Consider the function $f(x)=\dfrac{1}{2}x^2$ for $1\leq x\leq 2$ that we studied in {prf:ref}`Ex:ArcLength:ArclengthFunction1d`. For the graph of this function, parametrised using $\mathbf{r}(x)=\begin{pmatrix} x\\ f(x)\end{pmatrix}$ for $1\leq x\leq 2$ the arc length function is given by
+
+$$
+ s(x)=\int_0^x \sqrt{1+\tau^2}\,d\tau=\frac{1}{2}x\sqrt{1+x^2}+\frac{1}{2}\ln\left(x+\sqrt{1+x^2}\right).
+$$
+
+This expresion can, in theory, be inverted since its derivative is positive, but it turns out that it is not possible to express the inverse in terms of elementary functions. As such, it is not possible to find the arc length parametrisation for this curve.
+
+::::::
+

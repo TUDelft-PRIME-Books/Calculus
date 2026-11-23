@@ -1,4 +1,4 @@
-# Slopes of curves
+# Slope
 
 
 ## Introduction
