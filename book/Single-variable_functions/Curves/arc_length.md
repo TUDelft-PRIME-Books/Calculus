@@ -252,7 +252,7 @@ $$
 
 ::::
 
-The major limitation of this rule that that integrals of functions of the form $\sqrt{1+\left(f'(x)\right)^2}$ are often very hard to compute. 
+The major limitation of this rule that that integrals of functions of the form $\sqrt{1+\left(f'(x)\right)^2}$ are often very hard to compute, as can be seen from the following example. 
 
 ::::::{prf:example} 
 :label: Ex:ArcLength:ArclengthFunction1d
@@ -263,7 +263,24 @@ $$
  L=\int_1^2 \sqrt{1+\left(f'(x)\right)^2}\,dx=\int_1^2 \sqrt{1+x^2}\,dx.
 $$
 
-Using the ideas from {numref}`Subsec:TrigSub` it can be shown that 
+Using an approach similar to {prf:ref}`Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample2` it can be shown that
+
+$$
+ \int \sqrt{1+x^2}\,dx=\frac{1}{2}x\sqrt{x^2+1}+\frac{1}{2}\ln\left(\sqrt{x^2+1}+x\right)+C.
+$$
+
+As such, the arc length is given by
+
+$$
+\begin{align*}
+ L&=\int_1^2 \sqrt{1+x^2}\,dx\\
+ &=\left[\frac{1}{2}x\sqrt{x^2+1}+\frac{1}{2}\ln\left(\sqrt{x^2+1}+x\right)\right]_1^2\\
+ &=\sqrt{5}+\frac{1}{2}\ln\left(\sqrt{5}+2\right)-\frac{1}{2}\sqrt{2}-\frac{1}{2}\ln\left(\sqrt{2}+1\right)\\
+ &=\sqrt{5}-\frac{1}{2}\sqrt{2}+\frac{1}{2}\ln\left(\frac{\sqrt{5}+2}{\sqrt{2}+1}).
+\end{align*}
+$$
+
+Approximately, we find $L\approx 1.81$. This number makes sense, as the straight line piece from $\left(1,\frac{1}{2}\right)$ to $\left(2,2\right)$ has length $1.75$, which is also the shortest distance between these two points. Since the graph of $f$ is not a straight line, its length should, indeed, be slightly larger than $1.75$.
 ::::::
 
 ## Arc length parametrisation
