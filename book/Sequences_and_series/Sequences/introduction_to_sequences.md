@@ -72,6 +72,8 @@ The following are both different notations for the same _infinite_ sequence:
 
 The integer $p$ is again the starting index, but there is no ending index since the sequence is infinite.
 
+A sequence $\left(a_n\right)_{n=p}^{\infty}$ can be seen as a function $f:\mathbb{N}\to\mathbb{R}$ with $f(n)=a_n$ for every $n=p,p+1,p+2,\ldots$.
+
 The letter $n$ is often used to denote the index, but we can also use any other letter for the index.
 
 Sometimes we just write $\left(a_n\right)$ to denote a sequence, so if we do, please be aware that the context is relevant in that case.

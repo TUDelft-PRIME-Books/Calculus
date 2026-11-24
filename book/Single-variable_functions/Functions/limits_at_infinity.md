@@ -857,7 +857,7 @@ This definition should be interpreted as follows. The arbitrary constant $\varep
 :label: Def:LimitAtInfinity:Precisedef
 Let $f$ be a function that is defined for values of $x>d$ for some $d$. We say that $f$ has an **infinite limit at infinity**, and we write $\lim\limits_{x\rightarrow \infty}f(x)=\infty$, whenever for each $B$ there exists an $N\geq d$, such that for all $x$ with $x> N$, we have $f(x)\geq B$.
 
-Similarly, we say that $f$ has a **negative limit at infinity**, and we write $\lim\limits_{x\rightarrow \infty}f(x)=-\infty$, whenever for each $B$ there exists an $N\geq d$, such that for all $x$ with $x> N$, we have $f(x)\leq B$.
+Similarly, we say that $f$ has a **negative infinite limit at infinity**, and we write $\lim\limits_{x\rightarrow \infty}f(x)=-\infty$, whenever for each $B$ there exists an $N\geq d$, such that for all $x$ with $x> N$, we have $f(x)\leq B$.
 
 Finally, we have the corresponding notations $\lim\limits_{x\rightarrow -\infty}f(x)=\infty$ and $\lim\limits_{x\rightarrow- \infty}f(x)=-\infty$ for a positive or negative **infinite limit at minus infinity**.
 ::::::

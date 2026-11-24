@@ -326,7 +326,6 @@ $$
 
 ::::::
 
-
 :::{prf:remark}
 :label: Rm:Integration:NoBacksies
 
@@ -359,7 +358,6 @@ To evaluate a definite integral of the form $\displaystyle\int_a^b I(x)\,dx$ usi
 6. Try to evaluate the resulting definite integral using standard methods.
 
 ::::::
-
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralExample1
@@ -443,18 +441,19 @@ $$
 
 ## Trigonometric substitutions
 
-For certain integrals involving square roots of the form $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$ or $\sqrt{x^2-a^2}$ we might use a **trigonometric substitution** in order to get rid of the square root. This will lead to integrals involving trigonometric functions, which will be treated in {numref}`Sec:Integration:TrigonometricFunctions`. However, here we will show how the method of trigonometric substitution works.
+For certain integrals involving expressions of the form $\sqrt{a^2-x^2}$, $\sqrt{a^2+x^2}$ or $\sqrt{x^2-a^2}$ we might use a **trigonometric substitution** in order to get rid of the square root. This will lead to integrals involving trigonometric functions, which will be treated in {numref}`Sec:Integration:TrigonometricFunctions`. However, here we will show how the method of trigonometric substitution works.
 
 Note that $1-\sin^2(x)=\cos^2(x)$. So if we set $x=a\sin(t)$ in $\sqrt{a^2-x^2}$ we obtain 
 
 $$
-\sqrt{a^2-a^2\sin^2(t)}=\sqrt{a^2\cos^2(t)}=|a\cos(t)|.
+\sqrt{a^2-x^2}=\sqrt{a^2-a^2\sin^2(t)}=\sqrt{a^2\cos^2(t)}=|a\cos(t)|.
 $$
 
 Combined with $dx=a\cos(t)\,dt$ this leads to an integral involving trigonometric functions.
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample1
+
 We want to determine $\displaystyle\int_{-1}^1\sqrt{1-x^2}\,dx$.
 
 Let $x=\sin(t)$, then we have $dx=\cos(t)\,dt$. Furthermore, if $x=-1$ then $t=-\frac{1}{2}\pi$ and if $x=1$ then $t=\frac{1}{2}\pi$. Hence we find that
@@ -467,8 +466,10 @@ Note that $\cos(t)\geq0$ for $-\frac{1}{2}\pi\leq t\leq\frac{1}{2}\pi$. Using $\
 
 $$
 \begin{align*}
-\int_{-1}^1\sqrt{1-x^2}\,dx&=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\cos^2(t)\,dt=\frac{1}{2}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1+\cos(2t))\,dt\\
-&=\left[\frac{1}{2}t+\frac{1}{4}\sin(2t)\right]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}=\frac{1}{2}\pi.
+\int_{-1}^1\sqrt{1-x^2}\,dx&=\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\cos^2(t)\,dt\\
+&=\frac{1}{2}\int_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}(1+\cos(2t))\,dt\\
+&=\left[\frac{1}{2}t+\frac{1}{4}\sin(2t)\right]_{-\frac{1}{2}\pi}^{\frac{1}{2}\pi}\\
+&=\frac{1}{2}\pi.
 \end{align*}
 $$
 
@@ -506,6 +507,59 @@ Combined with $dx=\dfrac{a}{\cos^2(t)}\,dt$ this will also give rise to an integ
 
 ::::::{prf:Example}
 :label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample2
+
+Consider $\displaystyle\int_0^2\sqrt{4+x^2}\,dx$.
+
+Let $x=2\tan(t)$, then we have $dx=\dfrac{2}{\cos^2(t)}\,dt$. Furthermore, if $x=0$ then $t=0$ and if $x=1$ then $t=\frac{1}{4}\pi$. Hence we find that
+
+$$
+\int_0^2\sqrt{4+x^2}\,dx=\int_0^{\frac{1}{4}\pi}\left|\frac{2}{\cos(t)}\right|\frac{2}{\cos^2(t)}\,dt.
+$$
+
+Note that $\cos(t)\geq0$ for $0\leq t\leq\frac{1}{4}\pi$. Hence we have
+
+$$
+\int_0^2\sqrt{4+x^2}\,dx=4\int_0^{\frac{1}{4}\pi}\frac{dt}{\cos^3(t)}.
+$$
+
+Now we use $\cos^2(t)=1-\sin^2(t)$ and the substitution $u=\sin(t)$ to find that
+
+$$
+\begin{align*}
+\int_0^{\frac{1}{4}\pi}\frac{dt}{\cos^3(t)}&=\int_0^{\frac{1}{4}\pi}\frac{\cos(t)\,dt}{\cos^4(t)}\\
+&=\int_0^{\frac{1}{4}\pi}\frac{\cos(t)\,dt}{(1-\sin^2(t))^2}\\
+&=\int_0^{\frac{1}{2}\sqrt{2}}\frac{du}{(1-u^2)^2}.
+\end{align*}
+$$
+
+Then we use the partial fraction decomposition (see {numref}`sec:PartialFractionDecomposition`)
+
+$$
+\frac{1}{(1-u^2)^2}=\frac{1}{4}\left(\frac{1}{1-u}+\frac{1}{(1-u)^2}+\frac{1}{1+u}+\frac{1}{(1+u)^2}\right),
+$$
+
+to find that
+
+$$
+\begin{align*}
+&\int_0^2\sqrt{4+x^2}\,dx\\
+&=4\int_0^{\frac{1}{2}\sqrt{2}}\frac{du}{(1-u^2)^2}\\
+&=\int_0^{\frac{1}{2}\sqrt{2}}\left(\frac{1}{1-u}+\frac{1}{(1-u)^2}+\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,du\\
+&=\left[-\ln|1-u|+\frac{1}{1-u}+\ln|1+u|-\frac{1}{1+u}\right]_0^{\frac{1}{2}\sqrt{2}}\\
+&=-\ln(1-\tfrac{1}{2}\sqrt{2})+\frac{1}{1-\frac{1}{2}\sqrt{2}}+\ln(1+\tfrac{1}{2}\sqrt{2})-\frac{1}{1+\frac{1}{2}\sqrt{2}}\\
+&=\ln\left(\frac{2+\sqrt{2}}{2-\sqrt{2}}\right)+2\sqrt{2}.
+\end{align*}
+$$
+
+::::::
+
+Later, in {numref}`Sec:Integration:TrigonometricFunctions` and {numref}`Sec:Integration:RationalFunctions`, we will cover integrals of trigonometric functions and integrals of rational functions in more detail.
+
+In the next example we use a special substitution to evaluate the final integral.
+
+::::::{prf:Example}
+:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample3
+
 We evaluate $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx$.
 
 Let $x=\tan(t)$, then we have $dx=\dfrac{dt}{\cos^2(t)}$. Furthermore, if $x=0$ then $t=0$ and if $x=1$ then $t=\frac{1}{4}\pi$. Hence we find that
@@ -522,11 +576,13 @@ $$
 
 In 1668 the Scottish mathematician [James Gregory (1638-1675)](https://en.wikipedia.org/wiki/James_Gregory_(mathematician)) discovered that[^Gregory]
 
-[^Gregory]: See {prf:ref}`Thm:Integration:GregoryIntegralCos` below.
+[^Gregory]: See the proof below.
 
-$$
+:::{math}
+:label: Eq:Integration:GregoryIntegralCos
+
 \int\frac{dt}{\cos(t)}=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
-$$
+:::
 
 We conclude that
 
@@ -537,19 +593,10 @@ $$
 and therefore $\displaystyle\int_0^1\frac{1}{\sqrt{1+x^2}}\,dx=\ln(1+\sqrt{2})$.
 ::::::
 
-:::{prf:theorem}
-:label: Thm:Integration:GregoryIntegralCos
-
-The substitution $u=\tan(t)+\dfrac{1}{\cos(t)}$ leads to 
-
-$$
-\int\frac{dt}{\cos(t)}=\int\frac{du}{u}=\ln|u|+C=\ln\left|\tan(t)+\frac{1}{\cos(t)}\right|+C.
-$$
-
-:::
-
-:::{admonition} Proof of {prf:ref}`Thm:Integration:GregoryIntegralCos`
+::::{admonition} Proof of Equation {eq}`Eq:Integration:GregoryIntegralCos`
 :class: tudproof, dropdown
+
+We evaluate $\displaystyle\int\frac{dt}{\cos(t)}$.
 
 Multiplying both the numerator and the denominator of the integrand by 
 
@@ -581,23 +628,24 @@ $$
 \int\frac{dt}{\cos(t)}=\ln\left|\frac{1+\sin(t)}{\cos(t)}\right|+C=-\ln\left|\frac{1-\sin(t)}{\cos(t)}\right|+C
 $$
 
-:::
+::::::
 
-In the case of $\sqrt{x^2-a^2}$ we use the substitution $x=\dfrac{a}{\cos(t)}$. Then we have $dx=\dfrac{a\sin(t)}{\cos^2(t)}$ and
+In the case of $\sqrt{x^2-a^2}$ we use the substitution $x=\dfrac{a}{\cos(t)}$. Then we have $dx=\dfrac{a\sin(t)}{\cos^2(t)}\,dt$ and
 
 $$
 \sqrt{x^2-a^2}=\sqrt{\frac{a^2}{\cos^2(t)}-a^2}=\sqrt{\frac{a^2-a^2\cos^2(t)}{\cos^2(t)}}=\sqrt{\frac{a^2\sin^2(t)}{\cos^2(t)}}=|a\tan(t)|.
 $$
 
 ::::::{prf:Example}
-:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample3
+:label: Ex:Integration:SubstitutionDefiniteIntegralTrigSubstitutionExample4
 We evaluate $\displaystyle\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx$.
 
 Let $x=\dfrac{1}{\cos(t)}$, then we have $dx=\dfrac{\sin(t)}{\cos^2(t)}\,dt$. Furthermore, if $x=1$ then $t=0$ and if $x=\sqrt{2}$ then $t=\frac{1}{4}\pi$. Hence we find that
 
 $$
 \begin{align*}
-\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx&=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt\\
+\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx&=\int_0^{\frac{1}{4}\pi}|\tan(t)|\frac{\sin(t)}{\cos^2(t)}\,dt\\
+&=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^3(t)}\,dt\\
 &=\int_0^{\frac{1}{4}\pi}\frac{\sin^2(t)}{\cos^4(t)}\cos(t)\,dt.
 \end{align*}
 $$
@@ -619,7 +667,7 @@ to find that
 $$
 \begin{align*}
 &\int_0^{\frac{1}{2}\sqrt{2}}\frac{u^2}{(1-u^2)^2}\,du\\
-&=\frac{1}{4}\int_0^{\frac{1}{2}\sqrt{2}}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,dt\\
+&=\frac{1}{4}\int_0^{\frac{1}{2}\sqrt{2}}\left(-\frac{1}{1-u}+\frac{1}{(1-u)^2}-\frac{1}{1+u}+\frac{1}{(1+u)^2}\right)\,du\\
 &=\frac{1}{4}\left[\ln|1-u|+\frac{1}{1-u}-\ln|1+u|-\frac{1}{1+u}\right]_0^{\frac{1}{2}\sqrt{2}}\\
 &=\frac{1}{4}\left(\ln(1-\tfrac{1}{2}\sqrt{2})+\frac{1}{1-\frac{1}{2}\sqrt{2}}-\ln(1+\tfrac{1}{2}\sqrt{2})-\frac{1}{1+\frac{1}{2}\sqrt{2}}\right)\\
 &=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}.
@@ -628,6 +676,25 @@ $$
 
 We conclude that $\displaystyle\int_1^{\sqrt{2}}\sqrt{x^2-1}\,dx=\frac{1}{4}\ln\left(\frac{2-\sqrt{2}}{2+\sqrt{2}}\right)+\frac{1}{2}\sqrt{2}$.
 ::::::
+
+In {numref}`Tab:Integration:TrigonometricSubstitutions` we summarise the treated trigonometric substitutions.
+
+```{table} Trigonometric substitutions.
+:widths: auto
+:align: center
+:class: mid-align center-align
+:name: Tab:Integration:TrigonometricSubstitutions
+
+| Expression | Substitution | Differential |
+|---|---|---|
+| $\sqrt{a^2-x^2}=\lvert a\cos(t)\rvert$| $x=a\sin(t)$ | $dx=a\cos(t)\,dt$ |
+| $\sqrt{a^2-x^2}=\lvert a\sin(t)\rvert$| $x=a\cos(t)$ | $dx=-a\sin(t)\,dt$ |
+| $\displaystyle \sqrt{a^2+x^2}=\left\lvert \frac{a}{\cos(t)}\right\rvert$| $x=a\tan(t)$ | $\displaystyle dx=\frac{a}{\cos(t)}\,dt$ |
+| $\sqrt{x^2-a^2}=\lvert a\tan(t)\rvert$| $\displaystyle x=\frac{a}{\cos(t)}$ | $\displaystyle dx=\frac{a\sin(t)}{\cos^2(t)}\,dt$ |
+
+```
+
+Finally, we consider Serret's integral which can also be evaluated using a trigonometric substitution. 
 
 :::{prf:example} Serret's integral
 :label: Ex:Integration:SubstitutionTrigSerretsIntegral
@@ -643,18 +710,24 @@ $$
 &=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos(\theta)+\sin(\theta)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta.
 \end{align*}
 $$
+
 Now we use $\cos(\theta)+\sin(\theta)=\sqrt{2}\cos(\theta-\frac{1}{4}\pi)$ (see {numref}`Grasple:134398`) to obtain
 
 $$
 \begin{align*}
-\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta\\
+&\int_0^1\frac{\ln(1+x)}{1+x^2}\,dx\\
+&=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\cos(\theta-\tfrac{1}{4}\pi)\right)-\ln\left(\cos(\theta)\right)\right)\,d\theta\\
 &=\int_0^{\frac{1}{4}\pi}\left(\ln\left(\sqrt{2}\right)+\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta.
 \end{align*}
 $$
+
 Finally, the substitution $t=\frac{1}{4}\pi-\theta$ or $\theta=\frac{1}{4}\pi-t$ shows that
 
 $$
-\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta=-\int_{\frac{1}{4}\pi}^0\ln\left(\cos(t)\right)\,dt=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt,
+\begin{align*}
+\int_0^{\frac{1}{4}\pi}\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)\right)\,d\theta&=-\int_{\frac{1}{4}\pi}^0\ln\left(\cos(t)\right)\,dt\\
+&=\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt,
+\end{align*}
 $$
 
 which implies that
@@ -671,12 +744,12 @@ $$
 &{}\quad\Longrightarrow\quad\int_0^{\frac{1}{4}\pi}\left(\ln\left(\cos\left(\theta-\tfrac{1}{4}\pi\right)-\ln\left(\cos(\theta)\right)\right)\right)\,d\theta=0.
 \end{align*}
 $$
+
 The value of the integral $\displaystyle\int_0^{\frac{1}{4}\pi}\ln\left(\cos(t)\right)\,dt$ is closely related to *Catalan's constant*, which will be considered later in {numref}`Sec:CatalansConstant`. 
 
 :::
 
 In {numref}`Sec:Integration:TrigonometricFunctions` we deal with the integration of trigonometric functions in more details. There we will also cover the so-called *tangent half-angle substitution*. See {numref}`Sec:Integration:HalfAngle`.
-
 
 ## Using symmetry
 
@@ -688,22 +761,27 @@ I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx&=-\int_b^a\frac{f(a+b-t)}{f(a+b-t)+f(t)
 &=\int_a^b\frac{f(a+b-t)}{f(a+b-t)+f(t)}\,dt.
 \end{align*}
 $$
+
 This implies that, using a change of variable back to $x$ in the last integral,
 
 $$
 I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=\int_a^b\frac{f(a+b-x)}{f(a+b-x)+f(x)}\,dx.
 $$
 
-Hence we have
+Hence we have by adding the two integrals
 
 $$
-2I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx+\int_a^b\frac{f(a+b-x)}{f(a+b-x)+f(x)}\,dx=\int_a^b1\,dx=b-a,
+\begin{align*}
+2I&=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx+\int_a^b\frac{f(a+b-x)}{f(a+b-x)+f(x)}\,dx\\
+&=\int_a^b1\,dx\\
+&=b-a,
+\end{align*}
 $$
 
 which implies that
 
 $$
-\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=\frac{b-a}{2}.
+I=\int_a^b\frac{f(x)}{f(x)+f(a+b-x)}\,dx=\frac{b-a}{2}.
 $$
 
 ::::::{prf:Example}
