@@ -70,7 +70,7 @@ A curve in $\mathbb{R}^3$ can have many different parametrisations.
 When writing down a parametrisation of a curve, you should always explicitly write down for which values of the parameter the parametric equations hold, i.e. a parametrisation can be of the form $\mathbf{r}(t)$ for $a\leq t\leq b$, but only writing $\mathbf{r}(t)$ is not enough.
 :::
 
-Unlike planar curves, space curves can typically not be described by an (implicit) equation, because a single equation usually describes a surface instead of a curve. Instead, curves can arise naturally when intersection two surfaces. We will consider this in more detail in {numref}`Section:SurfacesR3`. 
+Unlike planar curves, space curves can typically not be described by an (implicit) equation, because a single equation usually describes a surface instead of a curve. Instead, curves can arise naturally when intersection two surfaces. We will consider this in more detail in {numref}`Ch:Surfaces`. 
 
 ::::::{prf:example} 
 :label: Ex:Curves3d:Helix
@@ -733,7 +733,7 @@ Make an applet showing this curve.
 For many curves that we encounter in practice, there are only finitely many points where the parameristation is not differentiable, or where the derivative is either $\mathbf{0}$ or not continuous. Such a curve can be split up into curves that are regular. Let us properly define these curves.
 
 ::::::{prf:definition} 
-:label: Def:Curves3d:Regular
+:label: Def:Curves3d:RegularPiecewise
 Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ parametrised by a continuous vector function $\mathbf{r}(t)$ for $t\in I$. The paramteric curve $\mathcal{C}$ is **piecewise regular** if there exists a finite set $S$ such that $\mathbf{r}$ is differentiable on $I\setminus S$,  $\mathbf{r}'$ is continuous on $I\setminus S$ and $\mathbf{r}'(t)\neq\mathbf{0}$ for all $t\in I\setminus S$.
 
 ::::::
@@ -1137,7 +1137,7 @@ $$
 For piecewise regular curves, we can break the curve into regular pieces, evaluate the length of each piece and add them back together.
 
 ::::::{prf:theorem} 
-:label: Thm:Curves3d:RegularPiecewise
+:label: Thm:Curves3d:RegularPiecewiseArcLength
 Let $\mathcal{C}$ be a curve. Suppose that $\mathcal{C}$ can be written as $\mathcal{C}=\mathcal{C}_1\cup\mathcal{C}_2\cup\ldots\cup\mathcal{C}_n$, where each $\mathcal{C}_i$ is a curve with a regular parametrisation $\mathbf{r}_i(t)$ for $a_i\leq t\leq b_i$ in such a way that $\mathbf{r}_i(b_i)=\mathbf{r}_{i+1}(a_i)$ for $1\leq i\leq n-1$, i.e. the end point of $\mathcal{C}_i$ is the start point of $\mathcal{C}_{i+1}$. Then the arc length $L$ of $\mathcal{C}$ is given by
 
 $$

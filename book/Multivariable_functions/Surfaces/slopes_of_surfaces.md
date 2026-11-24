@@ -1,4 +1,4 @@
-# Slopes of surfaces
+# Slope
 
 - Tangent lines
 - Normal vectors

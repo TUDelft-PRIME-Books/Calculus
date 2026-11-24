@@ -46,7 +46,7 @@ $$
 \sum_{n=1}^{\infty}\left(\frac{1}{2}\right)^n=\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1.
 $$
 
-Compare with {prf:ref}`Ex:Series:GeometricSeriesExample`.
+Compare with {prf:ref}`Ex:SeriesIntro:GeometricSeriesExample1`.
 ::::::
 
 The result of {prf:ref}`Ex:SumsAndProducts:IntroductionFiniteGeometric` can be used to find the sum of any convergent geometric series:
@@ -364,7 +364,7 @@ This shows that $\lim\limits_{n\to\infty}c_n\neq0$ which implies that the series
 
 :::::{margin}
 ::::{figure} Images/telescope.png
-:name: Fig:SumsAndProducts:Telescope
+:name: Fig:Series:Telescope
 
 A pirate using a telescope.
 ::::

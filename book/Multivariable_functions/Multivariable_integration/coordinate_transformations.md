@@ -519,7 +519,7 @@ $x$-axis and the parabolas $y^2=4-4x$ and $y^2=4+4x$ with $y\geq0$.
 ```{figure} Images/transformation2.png
 ---
 width: 50%
-name: transformation2
+name: transformation2a
 align: right
 ---
 The image of the square $[0,1]\times[0,1]$.
@@ -549,7 +549,7 @@ $$
 :::::{prf:example}
 :label: Ex:MultivariableIntegration:GeneralTransformationsExample3
 
-```{figure} Images/transformation4.png
+```{figure} Images/transformation1.png
 ---
 width: 50%
 name: transformation4
