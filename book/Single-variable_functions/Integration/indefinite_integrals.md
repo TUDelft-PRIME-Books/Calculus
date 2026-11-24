@@ -309,9 +309,9 @@ $$
 
 Consider {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` and {numref}`Fig:Question:Theorem`.
 
-For each of the case below, determine the values of $x$ for which {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` is valid.
+For each of the cases below, determine the values of $x$ for which {prf:ref}`Thm:Integration:IndefiniteLinearSubstitution` is valid.
 
-GIve you answer in the notation $(a,b)$ with $a<b$.
+GIve your answer in the form $(a,b)$ with $a<b$.
 ---
 M[(-1,1)] If $c=-2$, $d=4$, $\alpha=3$ and $\beta=1$, then $x$ should be in the interval:
 > Did you use {numref}`Fig:Question:Theorem`? You can use the two sliders to set the values of $\alpha$ and $\beta$, and you can drag the pulsing points for $c$ and $d$.
