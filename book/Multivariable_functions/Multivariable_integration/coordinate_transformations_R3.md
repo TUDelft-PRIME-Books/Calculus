@@ -20,7 +20,7 @@ $$
 ```{figure} Images/cylindrical.png
 ---
 width: 50%
-name: cylindrical
+name: cylindrical:R3
 align: center
 ---
 Cylindrical coordinates.
@@ -65,7 +65,7 @@ $$
 ```{figure} Images/spherical.png
 ---
 width: 50%
-name: spherical
+name: spherical:R3
 align: center
 ---
 Spherical coordinates.

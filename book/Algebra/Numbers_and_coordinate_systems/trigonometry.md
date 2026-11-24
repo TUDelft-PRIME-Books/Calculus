@@ -974,11 +974,14 @@ $$
 \cos(x+y) &= \cos(x)\cos(y)-\sin(x)\sin(y),
 \end{align*}
 $$
+
+$$
 \begin{align*}
 \sin(x-y) &=\sin(x)\cos(y)-\cos(x)\sin(y), \\
 \cos(x-y) &=\cos(x)\cos(y)+\sin(x)\sin(y),
 \end{align*}
 $$
+
 and
 
 $$
