@@ -140,6 +140,7 @@ sphinx:
     - sphinx_apa_references                     # For APA citations
     - sphinx.ext.todo
     - teachbooks_katex
+    - sphinx_persistence
 
 bibtex_bibfiles: 
   - references.bib
