@@ -13,4 +13,4 @@ git+https://github.com/TeachBooks/TeachBooks-Favourites@v1.15.11
 
 git+https://github.com/TeachBooks/TeachBooks-KaTeX
 
-https://github.com/douden/sphinx-persistence
+git+https://github.com/douden/sphinx-persistence
