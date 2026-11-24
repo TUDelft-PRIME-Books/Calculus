@@ -82,6 +82,15 @@ A curve can have many different parametrisations.
 
 ::::::
 
+
+::::::{important}
+:name: Important:Curves:tInterval
+
+When writing down a parametrisation of a curve, you should always explicitly write down for which values of the parameter the parametric equations hold, i.e. a parametrisation can be of the form $\mathbf{r}(t)$ for $a\leq t\leq b$, but only writing $\mathbf{r}(t)$ is not enough.
+
+::::::
+
+
 ::::::{note}
 
 A parametrisation is allowed to cover (some parts of) a curve several times. For instance, the parametrisation
@@ -94,13 +103,16 @@ covers each point on the unit circle twice. However, there are situations where 
 
 ::::::
 
-::::::{important}
-:name: Important:Curves:tInterval
+In some cases, it is important to specify that a parametrisation covers each point of the curve exactly once, where an exception is always made for the start and end point of a closed curve. For these cases, we have the following definition.
 
-When writing down a parametrisation of a curve, you should always explicitly write down for which values of the parameter the parametric equations hold, i.e. a parametrisation can be of the form $\mathbf{r}(t)$ for $a\leq t\leq b$, but only writing $\mathbf{r}(t)$ is not enough.
+::::::{prf:definition} 
+:label: Def:Curves2d:SelfIntersect
+Let $\mathcal{C}$ be a planar curve with paramametrisation $\mathbf{r}(t)$ for $t\in I$. 
 
+If $\mathcal{C}$ is not closed, we say that $\mathcal{C}$ is **simple** or **non-self intersecting** when for all $t_1,t_2\in I$ with $t_1\neq t_2$ we have $\mathbf{r}(t_1)\neq\mathbf{r}(t_2)$; otherwise $\mathcal{C}$ **self-intersects**. 
+
+If $I=[a,b]$ and $\mathcal{C}$ is closed, we say that $\mathcal{C}$ is **simple** or **non-self intersecting** when for all $t_1,t_2\in [a,b)$ with $t_1\neq t_2$ we have $\mathbf{r}(t_1)\neq\mathbf{r}(t_2)$; otherwise $\mathcal{C}$ **self-intersects**.
 ::::::
-
 
 We like to think of curves as lines that are not necessarily straight. However, more sets are curves than you might think initially. For instance, there exist closed planar curves, with a continuous parametrisation, which fill up the entire filled square $\left\{(x,y)\in\mathbb{R}^2\middle|0\leq x\leq 1,0\leq y\leq 1\right\}$. Such a curve is known as a [space-filling curve](https://en.wikipedia.org/wiki/Space-filling_curve). We will not delve deeper into these space-filling curves, but it is useful to realise that they exist.
 
@@ -167,6 +179,36 @@ are both valid parametric equations of the same curve, but in computations the l
 
 ::::::
 
+
+
+::::::{prf:example} 
+:label: Ex:CurvesR2:SelfInt
+
+We consider the planar curve $\mathcal{C}$ with paramterisation
+
+$$
+ \mathbf{r}(t)=\begin{pmatrix}\sin(t),\sin(2t)\end{pmatrix},\qquad 0\leq t\leq 2\pi.
+$$
+
+Since we have
+
+$$
+ \mathbf{r}(0)=\mathbf{r}(2\pi)=\begin{pmatrix}0\\ 0\end{pmatrix}
+$$
+
+the curve $\mathcal{C}$ is closed. In addition, we notice that
+
+$$
+ \mathbf{r}(\pi)=\begin{pmatrix}0\\ 0\end{pmatrix},
+$$
+
+so the curve self-intersects at the origin. 
+
+:::{todo}
+Include an applet of this curve.
+:::
+
+::::::
 
 ::::::{prf:example} 
 :label: Ex:CurvesR2:FoliumDescartes
