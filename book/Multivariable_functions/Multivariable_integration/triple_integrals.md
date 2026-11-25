@@ -67,7 +67,7 @@ $$
 ## Fubini's theorem
 
 :::::{prf:theorem} Fubini
-:label: Thm:MultivariableIntegration:Fubini
+:label: Thm:MultivariableIntegration:Fubini:R3
 
 If $\rho$ is continuous on the rectangular box $B=[a,b]\times[c,d]\times[e,f]$, then
 

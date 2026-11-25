@@ -596,9 +596,10 @@ In this subsection we consider a special type of first-order differential equati
 
 A first-order differential equation is called a **Bernoulli equation** if it can be written in the form
 
-$$
+:::{math}
+:label: Eq:ODE1:Bernoulli
 y'+p(x)y=q(x)y^n
-$$
+:::
 
 for some natural number $n$.
 ::::::

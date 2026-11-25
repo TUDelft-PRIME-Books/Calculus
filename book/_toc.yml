@@ -61,8 +61,8 @@ parts:
       - file: "Single-variable_functions/Integration/fundamental_theorem_of_calculus.md" 
       - file: "Single-variable_functions/Integration/integration_by_substitution.md" 
       - file: "Single-variable_functions/Integration/integration_by_parts.md" 
-      - file: "Single-variable_functions/Integration/integration_of_trigonometric_functions.md" 
       - file: "Single-variable_functions/Integration/integration_of_rational_functions.md" 
+      - file: "Single-variable_functions/Integration/integration_of_trigonometric_functions.md" 
       - file: "Single-variable_functions/Integration/improper_integrals.md" 
       - file: "Single-variable_functions/Integration/approximating_integrals.md"
       - file: "Single-variable_functions/Integration/review_integration.md"
@@ -127,7 +127,6 @@ parts:
       - file: "Multivariable_functions/Multivariable_integration/coordinate_transformations_R3.md" 
       - file: "Multivariable_functions/Multivariable_integration/multivariable_integrals.md" 
       - file: "Multivariable_functions/Multivariable_integration/line_integrals.md" 
-      - file: "Multivariable_functions/Multivariable_integration/surface_integrals.md"
       - file: "Multivariable_functions/Multivariable_integration/review_multivariable_integration.md"
     - file: "Multivariable_functions/Surfaces/introduction_surfaces.md"
       sections:

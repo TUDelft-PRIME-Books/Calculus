@@ -50,7 +50,7 @@ $$
 
 :::
 
-In this section we will study the sequence of {prf:ref}`Fibonacci numbers <Def:SeqAndTypes:FibonacciSequence>`, but we will start with the sequence of so-called *harmonic numbers*.
+In this section we will study the sequence of {prf:ref}`Fibonacci numbers <Def:Sequences:FibonacciSequence>`, but we will start with the sequence of so-called *harmonic numbers*.
 
 ## The harmonic numbers
 
@@ -187,7 +187,7 @@ For instance, this implies that $\displaystyle\sum_{n=2}^{\infty}\frac{n(n-1)H_n
 
 ## A generating function for the Fibonacci numbers
 
-Earlier we have seen that the sequence of {prf:ref}`Fibonacci numbers <Def:SeqAndTypes:FibonacciSequence>` 
+Earlier we have seen that the sequence of {prf:ref}`Fibonacci numbers <Def:Sequences:FibonacciSequence>` 
 
 $$
 1,1,2,3,5,8,13,21,34,55,89,\ldots

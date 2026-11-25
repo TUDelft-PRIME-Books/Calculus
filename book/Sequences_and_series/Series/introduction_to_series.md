@@ -32,7 +32,7 @@ since the result grows beyond any finite real number.
 :::::
 
 :::::{prf:example}
-:label: Ex:Series:GeometricSeriesExample
+:label: Ex:SeriesIntro:GeometricSeriesExample
 
 $$
 \sum_{n=1}^{\infty}\frac{1}{2^n}=\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1.
@@ -142,10 +142,10 @@ $$
 
 ::::
 
-In {prf:ref}`Ex:Series:GeometricSeriesExample1` we showed that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}=1$. Now we use the definition to obtain this result.
+In {prf:ref}`Ex:SeriesIntro:GeometricSeriesExample1` we showed that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}=1$. Now we use the definition to obtain this result.
 
 :::::{prf:example}
-:label: Ex:Series:GeometricSeriesExample2
+:label: Ex:SeriesIntro:GeometricSeriesExample2
 
 Note that we have
 

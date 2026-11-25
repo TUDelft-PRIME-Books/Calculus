@@ -527,7 +527,7 @@ $$
 ::::::
 
 :::{prf:remark}
-:label: Rem:Series:PowerSeriesFunctions
+:label: Rem:Series:PowerSeriesConstants
 
 Note that in the previous example we had to introduce two arbitrary constants $C$ and $D$ when we integrated the power series and the function, respectively. However, these two arbitrary constants only lead to one arbitrary constant $E$ in the final result. This is because the difference of two arbitrary constants is again an arbitrary constant.
 
