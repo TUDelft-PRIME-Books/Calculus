@@ -5,3 +5,4 @@
 - Binormal vectors(!) for R3 curves
 - Torsion
 - Frenet formulas
+- Convexity

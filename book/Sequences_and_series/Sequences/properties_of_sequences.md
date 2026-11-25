@@ -123,7 +123,7 @@ Because $(-1)^n$ is either $1$ or $-1$, the sign of this difference is alternati
 We conclude that the sequence $(c_n)$ is *non-monotonic*, as it is neither non-increasing nor non-decreasing.
 ::::
 
-For several of the common types of sequences of {numref}`Sec:SeqAndTypes:Types` we can easily determine whether they are strictly increasing, strictly decreasing or non-monotonic:
+For several of the common types of sequences of {numref}`Sec:Sequences:Types` we can easily determine whether they are strictly increasing, strictly decreasing or non-monotonic:
 
 ::::{prf:theorem}
 :label: Thm:PropertiesOfSequences:CommonTypesBehaviour
@@ -344,7 +344,7 @@ If a sequence is defined by a recursive formula, it is often somewhat more diffi
 ::::::{prf:example}
 :label: Ex:PropertiesOfSequences:Fibonacci
 
-We revisit the Fibonacci sequence from {numref}`Sec:SeqAndTypes:Fibonacci`: $\{F_n\}_{n=1}^{\infty}$ with $F_1=F_2=1$ and 
+We revisit the Fibonacci sequence from {numref}`Sec:Sequences:Fibonacci`: $\{F_n\}_{n=1}^{\infty}$ with $F_1=F_2=1$ and 
 
 $$
 F_{n+2}=F_{n+1}+F_n\quad\text{for}\quad n=1,2,3,\ldots.
@@ -464,7 +464,7 @@ We define the follow invalidating terms:
 
 ::::::
 
-For several of the common types of sequences of {numref}`Sec:SeqAndTypes:Types` we can easily determine whether they are bounded above, bounded below or both.
+For several of the common types of sequences of {numref}`Sec:Sequences:Types` we can easily determine whether they are bounded above, bounded below or both.
 
 ::::{prf:theorem}
 :label: Thm:PropertiesOfSequences:CommonTypesBounds

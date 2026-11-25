@@ -1,3 +1,5 @@
+(Section:SlopeCurves)=
+
 # Slopes of curves in $\mathbb{R}^2$
 
 (Subsec:SlopeCurveIntro)=
@@ -31,7 +33,7 @@ is tangent to the unit circle at $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$.
 The unit circle with the tangent line at $\left(\frac{1}{2},\frac{1}{2}\sqrt{3}\right)$. You can drag the point along the circle and the tangent line will update accordingly.
 :::
 
-We conclude that when it is possible to write (part of) a curve as the graph of a function, we can find the slope of a curve. However, what should we do if that is not the case, either because it is hard (or even impossible) to explicitly express $y$ as a function of $x$, or because the curve is defined by a parametrisation? In those cases, we need other tools, which will be the main topic of this section.
+We conclude that when it is possible to write (part of) a curve as the graph of a function, we can find the slope of a curve. However, what should we do if that is not the case, for instance because it is hard (or even impossible) to explicitly express $y$ as a function of $x$. In that case, we need other tools, which will be the main topic of this section.
 
 (Subsec:ImplicitDiff)=
 
@@ -149,35 +151,6 @@ The folium of Descartes with the point with a horizontal tangent.
 
 ::::::
 
-In the previous examples, we have assumed that $y$ is implicitly a differentiable function of $x$, but is that always the case? Unfortunately, this is not always the case. Indeed, we saw in {prf:ref}`Ex:SlopeCurves:Folium` that the expression for $\dfrac{dy}{dx}$ did not exist at the point $(0,0)$, which does lie on the curve. This is because the curve self-intersects at this point, and there is no meaningful way to define a slope there. Similarly, the expression we found for $\dfrac{dy}{dx}$ does not exist at the point $\left(\sqrt[3]{4},\sqrt[3]{2}\right)$, which also lies on the curve. This is because the tangent line to the curve at that point is vertical. 
-
-In addition, the equation
-
-$$
- x^2+y^2=0
-$$
-
-only defines the point $(0,0)$ and it is impossible to meaningfully define the slope at a single point. Even worse, we could be dealing with an implicit equation that does not even define a curve. The equation
-
-$$
- x^2+y^2=-1
-$$
-
-has no solutions in $\mathbb{R}^2$. So is there a way to know, in advance, whether we can assume that $y$ is implicitly a differentiable function of $x$ on the curve?
-
-The good news is that the answer is yes. This result is a well-known theorem in analysis, called the **implicit function theorem**. The bad news is that proving this result is way beyond our current capabilities. We will state the theorem now, and we will postpone the proof to {numref}`Sec:DE:ExistenceUniqueness`.
-
-::::::{prf:theorem} Implicit function theorem
-:label: Thm:SlopeCurves:IFT
-Consider a curve that is implicitly defined by an equation $F(x,y)=0$ and let $(x_0,y_0)$ be a point on the curve. Let $g(x)=F(x,y_0)$ and $h(y)=F(x_0,y)$.
-
-If $g$ is continuously differentiable on an open interval containing $x_0$ and $h$ is continuously differentiable on an open interval containing $y_0$ and $h'(y_0)\neq 0$, then there exists a unique differentiable function $k$ with $k(x_0)=y_0$ and $F(x,k(x))=0$ on an open interval containing $x_0$.
-
-That is, on this interval, $y$ is implicitly defined as a differentiable function of $x$.
-::::::
-
-This result shows that we can apply implicit differentiation as long as we we can take the derivatives we want to and we subsequently do not divide by $0$ (it should not come as a surprise that we want to avoid dividing by $0$).
-
 ::::{question}
 :type: short-answer
 :variant: gaps
@@ -223,6 +196,49 @@ At the point $(1,4)$ the curve has {gap}, so it has {gap} slope.
 ---
 
 ::::
+
+
+
+
+
+::::::{prf:example} 
+:label: Ex:SlopeCurves:QuotientRule
+As a slightly more theoretical application, we can also use implicit differentiation to derive the quotient rule. In {numref}`Section:DiffProdQuot` we derived this rule by combining the product rule and chain rule. 
+
+We write 
+
+$$
+ y=\dfrac{f(x)}{g(x)}
+$$
+
+for some differentiable functions $f$ and $g$. This equation defines $y$ as an explicit function $x$, but we can turn it into an implicit equation by writing
+
+$$
+ g(x)y=f(x).
+$$
+
+Since $y$ is a differentiable function of $x$, we can take the derivative of both sides of the equation to find
+
+$$
+ \frac{d}{dx}\left(g(x)y\right)=\frac{d}{dx}f(x).
+$$
+
+Using the product rule, we obtain
+
+$$
+ g'(x)y+g(x)y'(x)=f'(x).
+$$
+
+Solving for $y'(x)$, we obtain
+
+$$
+ y'(x)=\frac{f'(x)-g'(x)y}{g(x)}=\frac{f'(x)-g'(x)\dfrac{f(x)}{g(x)}}{g(x)}=\frac{f'(x)g(x)-g'(x)f(x)}{\left(g(x)\right)^2},
+$$
+
+which is the quotient rule as we have seen in {numref}`Section:DiffProdQuot`.
+::::::
+
+## Second derivatives
 
 ::::::{prf:example} 
 :label: Ex:SlopeCurves:Seconddiv
@@ -285,139 +301,42 @@ $$
 
 ::::::
 
-(Subsec:Slopeparam)=
 
-## Slopes of parametrised curves
 
-In {numref}`Section:Curves` we saw that for many curves it is easier to describe them using a parametrisation rather than an (implicit) equation. In addition, if you only have a parametrisation of a curve, it can be hard, or even impossible, to turn this into an equation. For those types of curves, we could still want to find the slope. In that case, we have the following result.
+## The implicit function theorem
 
-::::::{prf:theorem} 
-:label: Thm:SlopeCurves:Param
-Let $\mathcal{C}$ be a curve with parametrisation $x=x(t)$ and $y=y(t)$ for $t_0\leq t\leq t_1$. Suppose $x$ and $y$ are both differentiable functions of $t$.
+In the previous examples, we have assumed that $y$ is implicitly a differentiable function of $x$, but is that always the case? Unfortunately, this is not always the case. Indeed, we saw in {prf:ref}`Ex:SlopeCurves:Folium` that the expression for $\dfrac{dy}{dx}$ did not exist at the point $(0,0)$, which does lie on the curve. This is because the curve self-intersects at this point, and there is no meaningful way to define a slope there. Similarly, the expression we found for $\dfrac{dy}{dx}$ does not exist at the point $\left(\sqrt[3]{4},\sqrt[3]{2}\right)$, which also lies on the curve. This is because the tangent line to the curve at that point is vertical. 
 
-Then for any $t_0<t<t_1$ with $x'(t)\neq 0$ we have 
+In addition, the equation
 
 $$
- \frac{dy}{dx}=\frac{y'(t)}{x'(t)}.
+ x^2+y^2=0
 $$
+
+only defines the point $(0,0)$ and it is impossible to meaningfully define the slope at a single point. Even worse, we could be dealing with an implicit equation that does not even define a curve. The equation
+
+$$
+ x^2+y^2=-1
+$$
+
+has no solutions in $\mathbb{R}^2$. So is there a way to know, in advance, whether we can assume that $y$ is implicitly a differentiable function of $x$ on the curve?
+
+The good news is that the answer is yes. This result is a well-known theorem in analysis, called the **implicit function theorem**. The bad news is that proving this result is way beyond our current capabilities. We will state the theorem now, and we will postpone the proof to {numref}`Sec:DE:ExistenceUniqueness`.
+
+::::::{prf:theorem} Implicit function theorem
+:label: Thm:SlopeCurves:IFT
+Consider a curve that is implicitly defined by an equation $F(x,y)=0$ and let $(x_0,y_0)$ be a point on the curve. Let $g(x)=F(x,y_0)$ and $h(y)=F(x_0,y)$.
+
+If $g$ is continuously differentiable on an open interval containing $x_0$ and $h$ is continuously differentiable on an open interval containing $y_0$ and $h'(y_0)\neq 0$, then there exists a unique differentiable function $k$ with $k(x_0)=y_0$ and $F(x,k(x))=0$ on an open interval containing $x_0$.
+
+That is, on this interval, $y$ is implicitly defined as a differentiable function of $x$.
 ::::::
 
-::::{admonition} Proof of {prf:ref}`Thm:SlopeCurves:Param`
-:class: tudproof, dropdown
-We can assume that $y$ is implicitly a function of $x$. Then, by the chain rule, we obtain
-
-$$
- \frac{dy}{dt}=\frac{dy}{dx}\frac{dx}{dt}.
-$$
-
-By dividing by $\frac{dx}{dt}$ (assuming it is non-zero), we obtain
-
-$$
- \frac{dy}{dx}=\frac{\frac{dy}{dt}}{\frac{dx}{dt}}=\frac{y'(t)}{x'(t)}.
-$$
-::::
-
-Instead of looking at tangent lines to parametric curves, it is also interesting to look at tangent vectors. These are vectors that are tangent to the curve at a certain point, meaning that they point in the same direction as the tangent line at this point.
-
-::::::{prf:definition} 
-:label: Def:SlopeCurves:Tangentvector
-Let $\mathcal{C}$ be parametric curve. A **tangent vector** of $\mathcal{C}$ at a point $(x,y)$ is a direction vector of the tangent line of $\mathcal{C}$ at this point, provided this tangent line exists. A **unit tangent vector** is a tangent vector that has length $1$.
-::::::
-
-::::::{prf:theorem} 
-:label: Thm:SlopeCurves:Tangentvector
-Let $\mathcal{C}$ be a curve with parametrisation $x=x(t)$ and $y=y(t)$ for $t_0\leq t\leq t_1$. Suppose $x$ and $y$ are both differentiable functions of $t$. Then the vector 
-
-$$
- \mathbf{r}'(t)=\begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix}
-$$
-
-is a tangent vector of $\mathcal{C}$ at $(x(t),y(t))$, as long as $\mathbf{r}'(t)\neq\mathbf{0}$. In that case, the vector
-
-$$
- \mathbf{T}(t)=\frac{1}{\|\mathbf{r}'(t)\|}\mathbf{r}'(t)=\frac{1}{\sqrt{\left(x'(t)\right)^2+\left(y'(t)\right)^2}}\begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix}
-$$
-
-is a unit tangent vector of $\mathcal{C}$ at $(x(t),y(t))$. 
-::::::
-
-::::{admonition} Proof of {prf:ref}`Thm:SlopeCurves:Tangentvector`
-:class: tudproof, dropdown
-According to {prf:ref}`Thm:SlopeCurves:Param`, the slope of the tangent line at $(x(t),y(t))$ is $\dfrac{y'(t)}{x'(t)}$, provided $x'(t)\neq 0$. This means that a direction vector for this line is $\begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix}$, which must mean that this vector is a tangent vector. If we divide this vector by its length, we obtain a vector with length $1$.
-
-If $x'(t)=0$, then the curve does not change in the $x$-direction, so the tangent line must be vertical. In addition, we must have $y'(t)\neq 0$, since $\mathbf{r}'(t)\neq \mathbf{0}$. As such, the vector $\begin{pmatrix}x'(t)\\ y'(t)\end{pmatrix}=\begin{pmatrix}0\\ y'(t)\end{pmatrix}$ is a direction vector of this tangent line.
-::::
-
-
-::::::{prf:example} 
-:label: Ex:SlopeCurves:Param
-Let $\mathcal{C}$ be a curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}-3$ for $-\frac12\leq t\leq \frac12$. Suppose we want to find the slope at $t=0$, i.e. at the point $(x,y)=\left(0,2\right)$. It does not seem feasible to find an implicit equation for this curve and to use implicit differentiation, so we will use {prf:ref}`Thm:SlopeCurves:Param`. Using this theorem, we find
-
-$$
- \frac{dy}{dx}=\frac{\frac{d}{dt}\left(e^{3t}+4e^{-2t}-3\right)}{\frac{d}{dt}\left(e^{2t}-e^t\right)}=\frac{3e^{3t}-8e^{-2t}}{2e^{2t}-e^t}.
-$$
-
-Plugging in $t=0$ gives
-
-$$
- \left.\frac{dy}{dx}\right|_{(x,y)=(0,2)}=\frac{3e^{3\cdot 0}-8e^{-2\cdot 0}}{2e^{2\cdot 0}-e^0}=\frac{-5}{1}=-5.
-$$
-
-In addition, we find that the vector
-
-$$
- \mathbf{r}'(0)=\begin{pmatrix}-5\\ 1\end{pmatrix}
-$$
-
-is a tangent vector to $\mathcal{C}$ at $(0,2)$, and that
-
-$$
- \mathbf{T}(0)=\frac{1}{\|\mathbf{r}'(0)\|}\mathbf{r}'(0)=\begin{pmatrix}\frac{-5}{\sqrt{26}}\\ \frac{1}{\sqrt{26}}\end{pmatrix}
-$$
-
-is a unit tangent vector.
-
-:::{applet}
-:url: calculus/slopes_of_curves_in_R2/parametric_curve
-:name: Fig:SlopeCurve:Param
-:class: dark-light
-
-The curve with parametrisation $x=e^{2t}-e^t$ and $y=e^{3t}+4e^{-2t}-3$ for $-\frac12\leq t\leq \frac12$ with the tangent line at $t=0$.
-:::
-
-::::::
-
-::::::{prf:example} 
-:label: Ex:SlopeCurves:ParamVert
-Let $\mathcal{C}$ be a curve with parametrisation $x=t^2+2t$ and $y=t^3$ for $-2\leq t\leq 2$. Suppose we want to find all points on the curve where the tangent line is vertical. A vertical tangent line means that we are dealing with an "infinite slope". For most values of $t$, the slope is given by 
-
-$$
- \frac{dy}{dx}=\frac{\frac{d}{dt}t^3}{\frac{d}{dt}\left(t^2+2t\right)}=\frac{3t^2}{2t+2}.
-$$
-
-We see that for $t\neq -1$ this slope is a well-defined number, so there will be no vertical tangent lines for those values of $t$. However, we see that
-
-$$
- \lim_{t\rightarrow -1}\left|\frac{3t^2}{2t+2}\right|=\infty,
-$$
-
-since the numerator goes to $3$ while the denominator goes to $0$ as $t\rightarrow -1$. As such, we obtain a vertical tangent line for $t=-1$, which is at the point $(-1,-1)$.
-
-:::{applet}
-:url: calculus/slopes_of_curves_in_R2/vertical_tangent_line
-:name: Fig:SlopeCurve:ParamVert
-:class: dark-light
-
-The curve with parametrisation $x=t^2+2t$ and $y=t^3$ for $-2\leq t\leq 2$ with the tangent line at $t=-1$.
-:::
-
-
-::::::
+This result shows that we can apply implicit differentiation as long as we we can take the derivatives we want to and we subsequently do not divide by $0$ (it should not come as a surprise that we want to avoid dividing by $0$).
 
 
 ## Grasple exercises
 
-### Exercises on implicit differentiation
 
 ::::{grasple}
 :iframeclass: dark-light
