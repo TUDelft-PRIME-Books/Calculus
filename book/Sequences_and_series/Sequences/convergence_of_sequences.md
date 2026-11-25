@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In the previous section we have seen that it is sometimes useful to think of a sequence $(a_n)$ as a function $f:\mathbb{N}\to\mathbb{R}$ with $f(n)=a_n$ for every $n=1,2,3,\ldots$. This allowed us to use the tools of calculus to study the properties of sequences, such as whether a sequence is strictly increasing, strictly decreasing, non-increasing or non-decreasing and whether it is bounded above or below.
+In the previous section we have seen that it is sometimes useful to think of a sequence $(a_n)_{n=p}^{\infty}$ as a function $f:\mathbb{N}\to\mathbb{R}$ with $f(n)=a_n$ for every $n=p,p+1,p+2,\ldots$. This allowed us to use the tools of calculus to study the properties of sequences, such as whether a sequence is strictly increasing, strictly decreasing, non-increasing or non-decreasing and whether it is bounded above or below. Furthermore, we use the concept of a limit at infinity to find out what the terms will look like in the long run.
 
 During our study, we already took a quick look at how the values evolve as $n$ increases, when we were considering the bounds. For instance, in {prf:ref}`Ex:Sequences:BoundedExample1` we saw that the sequence $(a_n)$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing and bounded above by $1$. This suggests that the terms of the sequence get closer and closer to $1$ as $n$ increases. If we would reuse the terms from {numref}`Section:Limitinf`,we would say that the sequence $(a_n)$ converges to $1$. In this section we will define what we mean by convergence of a sequence and we will see how to determine whether a sequence converges or diverges and how to find the limit of a convergent sequence.
 
@@ -15,21 +15,18 @@ In the study of sequences the notion of **convergence** is important. The concep
 ::::::{prf:definition} Limit of a sequence
 :label: Def:Sequences:LimitSequence
 
-A sequence $(a_n)$ converges to a **limit** $L$ if for every positive real number $\varepsilon$ there exists an integer $N$ such that if $n\geq N$, then $|a_n-L|<\varepsilon$. 
+We say that the **limit** of a sequence $(a_n)_{n=p}^{\infty}$ is equal to $L$, and we write $\lim\limits_{n\rightarrow \infty}a_n=L$, whenever for each $\varepsilon>0$ there exists an $N\geq p$, such that for all $n$ with $n> N$, we have $|a_n-L|<\varepsilon$. If no such value $L$ exists we say that the limit does not exist.
 
-If $(a_n)$ converges to $L$, then we write
+We say that $(a_n)_{n=p}^{\infty}$ has an **infinite limit**, and we write $\lim\limits_{n\rightarrow \infty}a_n=\infty$, whenever for each $M$ there exists an $N\geq p$, such that for all $n$ with $n> N$, we have $a_n\geq M$.
 
-$$
-\lim\limits_{n\to\infty}a_n=L.
-$$
+Similarly, we say that $(a_n)_{n=p}^{\infty}$ has a **negative infinite limit**, and we write $\lim\limits_{n\rightarrow \infty}a_n=-\infty$, whenever for each $M$ there exists an $N\geq p$, such that for all $n$ with $n> N$, we have $a_n\leq M$.
 ::::::
 
-In a more intuitive way, we can say that a sequence $(a_n)$ converges to $L$ if the terms of the sequence get closer and closer to $L$ as $n$ increases, or the distance from $a_n$ to $L$ approaches $0$ as $n$ increases towards $\infty$.
-
-We already used the term *converge* in the previous definition, but let us now give a precise definition of what we mean by convergence of a sequence.
+In a more intuitive way, we can say that a sequence $(a_n)$ *converges* to $L$ if the terms of the sequence get closer and closer to $L$ as $n$ increases, or the distance from $a_n$ to $L$ approaches $0$ as $n$ increases. Now we give a precise definition of what we mean by *convergnce* of a sequence.
 
 ::::::{prf:definition} Convergence and divergence of a sequence
 :label: Def:Sequences:ConvergenceSequence
+
 A sequence $(a_n)$ is called **convergent** if $\lim\limits_{n\to\infty}a_n$ exists. Otherwise, the sequence is called **divergent**. 
 ::::::
 
@@ -45,13 +42,12 @@ If $\lim\limits_{n\to\infty}a_n=-\infty$ we say that the sequence *diverges* to 
 If $\lim\limits_{n\to\infty}a_n$ does not exist, but is not $\infty$ or $-\infty$, we can only say that the sequence *diverges*.
 :::::: 
 
-Before we dive into depth of convergence of sequences, we will state the most important theorem of this section, which gives us a powerful tool to determine whether a sequence converges or diverges and to find the limit of a convergent sequence:
+Before we dive into depth of the convergence of sequences, we will state the most important theorem of this section. It is a powerful tool to determine whether a sequence converges or diverges and to find the limit of a convergent sequence:
 
 ::::::{prf:theorem}
 :label: Thm:Sequences:LimitFunctionSequence
-Consider the sequence $(a_n)_{n=p}^{\infty}$ with $a_n=f(n)$ for all $n=p,p+1,p+2,\ldots$.
 
-If $f$ is defined on $[p,\infty)$ and $\lim\limits_{x\to\infty}f(x)=L$, then $\lim\limits_{n\to\infty}a_n=L$.
+If $f$ is a function defined at $[p,\infty)$, and for the sequence $(a_n)_{n=p}^{\infty}$ we have $f(n)=a_n$ for all $n=p,p+1,p+2,\ldots$, then we have: if $\lim\limits_{x\to\infty}f(x)=L$, then $\lim\limits_{n\to\infty}a_n=L$.
 ::::::
 
 ::::{admonition} Proof of {prf:ref}`Thm:Sequences:LimitFunctionSequence`
@@ -59,51 +55,25 @@ If $f$ is defined on $[p,\infty)$ and $\lim\limits_{x\to\infty}f(x)=L$, then $\l
 
 Let us first recall the definition of $\lim\limits_{x\to\infty}f(x)=L$ from {prf:ref}`Def:LimitAtInfinity:Precisedefplusminus`: for every $\varepsilon>0$ there exists a number $M>0$ such that if $x>M$, then $|f(x)-L|<\varepsilon$.
 
-By {prf:ref}`Def:Sequences:LimitSequence`, we need to show that for every $\varepsilon>0$ there exists an integer $N\geq p$ such that if $n\geq N$, then $|a_n-L|<\varepsilon$.
+By {prf:ref}`Def:Sequences:LimitSequence`, we need to show that for every $\varepsilon>0$ there exists an $N\geq p$ such that if $n\geq N$, then $|a_n-L|<\varepsilon$.
 
-So let us assume that $\varepsilon>0$ is given. Since $\lim\limits_{x\to\infty}f(x)=L$, there exists a number $M\geq p$ such that if $x>M$, then $|f(x)-L|<\varepsilon$.
-
-We set $N=\max\{p,\lceil M\rceil\}$, where $\lceil M\rceil$ is the smallest integer greater than or equal to $M$. Note that $N\geq M\geq p$.
-
-Since $n\geq M$, we have
+If $n\geq M$, we have
 
 $$
 |f(n)-L|<\varepsilon.
 $$
 
-Now, if $n\geq N$, then also $n\geq M\geq p$ and therefore $n$ is in the domain of $f$ and $a_n=f(n)$:
+Then also $n\geq M\geq p$ and therefore $n$ is in the domain of $f$ and $a_n=f(n)$. So, we also have
 
 $$
 |a_n-L|<\varepsilon.
 $$
 
-This shows that under the assumptions of the theorem, we have $\lim\limits_{n\to\infty}a_n=L$.
+This shows that, under the assumptions of the theorem, we have $\lim\limits_{n\to\infty}a_n=L$.
 
 ::::
 
-A huge advantage of {prf:ref}`Thm:Sequences:LimitFunctionSequence` is that it allows us to use every tool that we have developed in {numref}`Section:Limitinf` to determine whether a sequence converges or diverges and to find the limit of a convergent sequence. For instance, we can use the rules of calculations for limits of functions, the squeeze theorem, the continuity of functions, etc. We can even use l'Hospital's rule from {numref}`Section:lHospital` to find limits of sequences. 
-
-All these theorems indicate that we do not really have to go back and forth between sequences and functions, but that we can directly apply the tools that we have developed for limits of functions to determine whether a sequence converges or diverges and to find the limit of a convergent sequence, except when we use l'Hospital's rule from {numref}`Section:lHospital`, since l'Hospital's rule uses derivatives[^lHospital].
-
-[^lHospital]: But even then, sometimes we allow it.
-
-We state, without proof, the rules of calculations for limits of sequences, which are direct consequences of the rules of calculations for limits of functions, {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` and {prf:ref}`Thm:Sequences:LimitFunctionSequence`:
-
-::::{prf:theorem}
-:label: Thm:Sequences:LimitCalculationRules
-
-Suppose that $(a_n)$ and $(b_n)$ are two sequences such that $\lim\limits_{n\to\infty}a_n=L$ and $\lim\limits_{n\to\infty}b_n=M$. Let $c$ be a real number. Then:
-
-- $\lim\limits_{n\to\infty}ca_n=cL$.
-
-- $\lim\limits_{n\to\infty}(a_n+b_n)=L+M$.
-
-- $\lim\limits_{n\to\infty}(a_nb_n)=LM$.
-
-- If $M\neq0$, then $\lim\limits_{n\to\infty}\dfrac{a_n}{b_n}=\dfrac{L}{M}$.
-::::
-
-Without further ado, let us now apply the tools that we have developed for limits of functions to determine whether a sequence converges or diverges and to find the limit of a convergent sequence.
+A huge advantage of {prf:ref}`Thm:Sequences:LimitFunctionSequence` is that it allows us to use all the tools that we have developed in {numref}`Section:Limitinf` to determine whether a sequence converges or diverges and to find the limit of a convergent sequence. For instance, we can use the rules of calculation for limits of functions and the squeeze theorem. We can even use l'Hospital's rule from {numref}`Section:lHospital` to find limits of sequences. However, in that case we have to be careful with the notation, since l'Hospital's rule uses derivatives.
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample1
@@ -155,28 +125,36 @@ $$
 
 :::::
 
-::::::{prf:example}
-:label: Ex:Sequences:ConvergenceExample4
+We state, without proof, the rules of calculation for limits of sequences, which are direct consequences of the rules of calculation for limits of functions, {prf:ref}`Theorem:LimitAtInfinity:Basiccomputationrules` and {prf:ref}`Thm:Sequences:LimitFunctionSequence`:
 
-The geometric sequence $(d_n)$ with $d_n=\dfrac{1}{2^n}$ is convergent and $\lim\limits_{n\to\infty}a_n=0$.
+::::{prf:theorem}
+:label: Thm:Sequences:LimitCalculationRules
 
-This follows directly from {prf:ref}`Thm:Sequences:LimitFunctionSequence` and {prf:ref}`Theorem:LimitAtInfinity:Standardlimits`.
-::::::
+Suppose that $(a_n)$ and $(b_n)$ are two sequences such that $\lim\limits_{n\to\infty}a_n=L$ and $\lim\limits_{n\to\infty}b_n=M$. Let $c$ be a real number. Then:
 
-For geometric sequences, we can go even further and determine for which values of $r\in\mathbb{R}$ the geometric sequence $(a_n)$ with $a_n=r^n$ is convergent or divergent and what the limit is in case it is convergent.
+- $\lim\limits_{n\to\infty}ca_n=cL$.
+
+- $\lim\limits_{n\to\infty}(a_n+b_n)=L+M$.
+
+- $\lim\limits_{n\to\infty}(a_nb_n)=LM$.
+
+- If $M\neq0$, then $\lim\limits_{n\to\infty}\dfrac{a_n}{b_n}=\dfrac{L}{M}$.
+::::
+
+For geometric sequences, we can determine for which values of $r\in\mathbb{R}$ the geometric sequence $(a_n)$ with $a_n=br^n$, $b\neq0$ and $r\neq0$, is convergent or divergent and what the limit is in case it is convergent.
 
 ::::::{prf:theorem}
 :label: Thm:Sequences:ConvergenceGeometric
 
-The geometric sequence $(a_n)_{n=0}^{\infty}$ with $a_n=br^n$, $b\neq0$, is convergent for $-1<r\leq1$ and divergent for all other values of $r\in\mathbb{R}$.
+The geometric sequence $(a_n)_{n=0}^{\infty}$ with $a_n=br^n$, $b\neq0$ and $r\neq0$, is convergent for $-1<r\leq1$ and divergent for all other values of $r\in\mathbb{R}\setminus\{0\}$.
 
-Moreover, if $-1<r<1$, then $\lim\limits_{n\to\infty}r^n=0$, and  if $r=1$, then $\lim\limits_{n\to\infty}r^n=b$.
+Moreover, if $-1<r<1$, then $\lim\limits_{n\to\infty}r^n=0$, and if $r=1$, then $\lim\limits_{n\to\infty}r^n=b$.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Sequences:ConvergenceGeometric`
 :class: tudproof
 
-We distinguish four cases: $-1<r<1$, $r=1$, $r>1$ and $r<-1$.
+We distinguish four cases: $-1<r<1$, $r=1$, $r>1$ and $r\leq-1$.
 
 If $-1<r<1$, then $|r|<1$ and $\lim\limits_{n\to\infty}|r^n|=\lim\limits_{n\to\infty}|r|^n=0$, so also $\lim\limits_{n\to\infty}br^n=0$.
 
@@ -184,19 +162,19 @@ If $r=1$, then $\lim\limits_{n\to\infty}r^n=\lim\limits_{n\to\infty}1^n=1$ and s
 
 If $r>1$, then $\lim\limits_{n\to\infty}r^n=\infty$, so also $\lim\limits_{n\to\infty}br^n=\infty$ or $\lim\limits_{n\to\infty}br^n=-\infty$, depending on the sign of $b$.
 
-Finally, if $r<-1$, then $\lim\limits_{n\to\infty}r^n$ does not exist, since the terms of the sequence $r^n$ do not get closer and closer to a single real number as $n$ increases, but they oscillate between positive and negative values that get larger and larger in absolute value. So, also $\lim\limits_{n\to\infty}br^n$ does not exist.
-
-This proves the theorem.
+Finally, if $r\leq-1$, then $\lim\limits_{n\to\infty}r^n$ does not exist, since the terms oscillate between positive and negative values. So, also $\lim\limits_{n\to\infty}br^n$ does not exist.
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample5
+
 The sequence $(a_n)$ with $a_n=\left(-\dfrac{4}{5}\right)^n$ is a geometric sequence with $r=-\dfrac{4}{5}$, so $-1<r<1$, and is thus convergent and $\lim\limits_{n\to\infty}a_n=0$.
 
 ::::::
 
 ::::::{prf:example}
 :label: Ex:Sequences:ConvergenceExample6
+
 The sequence $(b_n)$ with $b_n=2^n$ diverges to $\infty$, because $2>1$ and it is a geometric sequence.
 
 ::::::
@@ -207,17 +185,19 @@ The sequence $(b_n)$ with $b_n=2^n$ diverges to $\infty$, because $2>1$ and it i
 The sequence $(c_n)$ with $c_n=(-1)^n$ is divergent. It does not diverge to $\infty$ or $-\infty$.
 ::::::
 
-## Using continuity
+## The usage of continuity
 
-Because of the close relation between limits of functions and continuity of functions, we can also reuse the tools that we have developed in {numref}`Section:Continuity` to determine whether a sequence converges or diverges and to find the limit of a convergent sequence, and especially {prf:ref}`Theorem:Continuity:SubstitutionInf`. The sequence version of this last theorem is worth stating explicitly:
+Because of the close relation between limits of functions and the continuity of functions, we can also reuse the tools that we have developed in {numref}`Section:Continuity` to determine whether a sequence converges or diverges and to find the limit of a convergent sequence. Especially, the sequence version of {prf:ref}`Theorem:Continuity:SubstitutionInf` is worth stating explicitly:
 
 ::::::{prf:theorem}
 :label: Thm:Sequences:Continuity
-If $\lim\limits_{x\to\infty}f(x)=L$ and the function $f$ is continuous at $L$, then $\lim\limits_{n\to\infty}f(a_n)=f(L)$.
+
+If $\lim\limits_{n\to\infty}a_n=L$ and the function $f$ is continuous at $L$, then $\lim\limits_{n\to\infty}f(a_n)=f(L)$.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Sequences:Continuity`
 :class: tudproof, dropdown
+
 This is an immediate consequence of {prf:ref}`Theorem:Continuity:SubstitutionInf` and {prf:ref}`Thm:Sequences:LimitFunctionSequence`.
 ::::::
 
@@ -287,11 +267,9 @@ $$
 This implies that the sequence $(b_n)_{n=1}^{\infty}$ is convergent and $\lim\limits_{n\to\infty}b_n=0$.
 ::::::
 
-From {prf:ref}`Ex:Sequences:IncreasingExample1Function`, {prf:ref}`Ex:Sequences:BoundedExample1` and {prf:ref}`Ex:Sequences:ConvergenceExampleIncreasing` we can conclude that the sequence $(a_n)$ with $a_n=\dfrac{n}{n+1}$ is strictly increasing, bounded above (by $1$) and convergent. From {prf:ref}`Ex:Sequences:IncreasingExample2Function`, {prf:ref}`Ex:Sequences:BoundedExample2` and {prf:ref}`Ex:Sequences:ConvergenceExampleDecreasing` we can conclude that the sequence $(b_n)$ with $b_n=\dfrac{2n}{n^2+1}$ is strictly decreasing, bounded below (by $0$) and convergent.
+From {prf:ref}`Ex:Sequences:IncreasingExample1Function`, {prf:ref}`Ex:Sequences:BoundedExample1` and {prf:ref}`Ex:Sequences:ConvergenceExampleIncreasing` we can conclude that the sequence $(a_n)$ with $a_n=\dfrac{n}{n+1}$ is non-decreasing, bounded above (by $1$) and convergent. From {prf:ref}`Ex:Sequences:IncreasingExample2Function`, {prf:ref}`Ex:Sequences:BoundedExample2` and {prf:ref}`Ex:Sequences:ConvergenceExampleDecreasing` we can conclude that the sequence $(b_n)$ with $b_n=\dfrac{2n}{n^2+1}$ is non-increasing, bounded below (by $0$) and convergent.
 
-Every strictly increasing sequence is also non-decreasing, and every strictly decreasing sequence is also non-increasing. So, we can also say that the sequence $(a_n)$ with $a_n=\dfrac{n}{n+1}$ is non-decreasing, bounded above (by $1$) and convergent, and that the sequence $(b_n)$ with $b_n=\dfrac{2n}{n^2+1}$ is non-increasing, bounded below (by $0$) and convergent.
-
-As you may expect this is no coincidence, and in fact we have the following important theorem:
+As you may expect this is not a coincidence, and in fact we have the following important theorem:
 
 ::::::{prf:theorem} Monotone convergence theorem
 :label: Thm:Sequences:MonotonicBounded
@@ -324,7 +302,7 @@ for some integer $N$.
 However, since the sequence is non-decreasing, we have $a_n\geq a_N$ for every $n>N$. Thus, if $n>N$, we have
 
 $$
-a_n>L-\epsilon\quad\Longrightarrow\quad0\leq L-a_n<\epsilon,
+L-\epsilon<a_n\quad\Longrightarrow\quad0\leq L-a_n<\epsilon,
 $$
 
 since $a_n\leq L$. Thus whenever $n>N$ we have
@@ -338,11 +316,14 @@ So, $\lim\limits_{n\to\infty}a_n=L$.
 A similar proof, using the greatest lower bound, works for a non-increasing sequence that is bounded below.
 ::::::
 
+If a sequence $\left(a_n\right)$ is given by a recursive relation $a_{n+1}=f(a_n)$ with $f$ a continuous function, then we have: if $\lim\limits_{n\to\infty}a_n=L$ exists, then $L$ is a solution of $L=f(L)$.
+
 ::::::{prf:example}
 :label: Ex:Sequences:MonotonicBoundedExample1
+
 Consider the sequence $(a_n)_{n=1}^{\infty}$ given by $a_1=1$ and $a_{n+1}=\frac{1}{2}(a_n+5)$ for $n=1,2,3,\ldots$. 
 
-We have seen that the sequence strictly increases and is bounded above. This implies that the sequence converges. So, the limit $\lim\limits_{n\to\infty}a_n$ exists.
+In {prf:ref}`Ex:Sequences:RecurrenceExample1` and {prf:ref}`Ex:Sequences:BoundedExample3` we have seen that the sequence strictly increases and is bounded above. This implies that the sequence converges. So, the limit $\lim\limits_{n\to\infty}a_n$ exists.
 
 Let $L=\lim\limits_{n\to\infty}a_n$, then we have $\lim\limits_{n\to\infty}a_{n+1}=L$ and
 
@@ -354,11 +335,12 @@ $$
 
 ::::::{prf:example}
 :label: Ex:Sequences:MonotonicBoundedExample2
+
 Consider the sequence $(b_n)_{n=1}^{\infty}$ given by $b_1=10$ and $b_{n+1}=\sqrt{b_n+6}$ for $n=1,2,3,\ldots$. 
 
 We will show that the sequence converges and find its limit.
 
-We have seen that the sequence strictly decreases and is bounded below by $0$. This implies that the sequence converges. So, the limit $\lim\limits_{n\to\infty}b_n$ exists.
+In {prf:ref}`Ex:Sequences:RecurrenceExample2` and {prf:ref}`Ex:Sequences:BoundedExample4` we have seen that the sequence strictly decreases and is bounded below by $0$. This implies that the sequence converges. So, the limit $\lim\limits_{n\to\infty}b_n$ exists.
 
 Let $L=\lim\limits_{n\to\infty}b_n$, then we also have $\lim\limits_{n\to\infty}b_{n+1}=L$ and
 
@@ -371,7 +353,6 @@ $$
 Hence: $L=3$ or $L=-2$. Since the sequence is bounded below by $0$, we conclude that $L=3$.
 ::::::
 
-
 ::::::{warning}
 :name: Warning:Sequences:ConvergenceAssumption
 
@@ -380,12 +361,12 @@ It is important that we first showed that the limit exists before setting $L=\li
 For instance, it is clear that the Fibonacci sequence, which is defined by 
 
 $$
-F_{n+2}+F_n+F_{n+1}\quad\text{for}\quad n=1,2,3,\ldots
+F_{n+2}=F_n+F_{n+1}\quad\text{for}\quad n=1,2,3,\ldots
 $$ 
 
 with $F_1=F_2=1$ is divergent. So, the limit $\lim\limits_{n\to\infty}F_n=\infty$ does not exist.
 
-If we would assume that $L=\lim\limits_{n\to\infty}F_n$, then we would have that
+If we would assume that $L=\lim\limits_{n\to\infty}F_n=\lim\limits_{n\to\infty}F_{n+1}=\lim\limits_{n\to\infty}F_{n+2}$, then we would have that
 
 $$
 L=L+L\quad\Longleftrightarrow\quad L=0.
@@ -400,11 +381,12 @@ Another important tool that we can reuse from {numref}`Section:Limitinf` is the 
 ::::::{prf:theorem}
 :label: Thm:Sequences:SqueezeTheorem
 
-If $\lim\limits_{n\to\infty}|a_n|=b$ for some $b\geq 0$, then $\lim\limits_{n\to\infty}a_n=b$.
+If $\lim\limits_{n\to\infty}|a_n|=0$, then $\lim\limits_{n\to\infty}a_n=0$.
 ::::::
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Sequences:SqueezeTheorem`
 :class: tudproof, dropdown
+
 You can prove this using {prf:ref}`Theorem:LimitAtInfinity:Squeezetheorem` and {prf:ref}`Thm:Sequences:LimitFunctionSequence`.
 ::::::
 
@@ -416,12 +398,6 @@ The sequence $(a_n)$ with $a_n=\dfrac{(-1)^n}{n}$ is convergent and $\lim\limits
 ::::::{prf:example}
 :label: Ex:Sequences:SqueezeTheoremExample2
 The sequence $(b_n)$ with $b_n=\dfrac{\cos(n)}{\sqrt{n}}$ is convergent and $\lim\limits_{n\to\infty}b_n=0$ because $|b_n|\leq\dfrac{1}{\sqrt{n}}\to 0$ as $n\to\infty$.
-::::::
-::::::
-
-::::::{prf:example}
-:label: Ex:Sequences:SqueezeTheoremExample3
-The sequence $(c_n)$ with $c_n=\dfrac{\sin(n^2)}{n}$ is convergent and $\lim\limits_{n\to\infty}c_n=0$ because $|c_n|\leq\dfrac{1}{n}\to 0$ as $n\to\infty$.
 ::::::
 
 ## Grasple exercises

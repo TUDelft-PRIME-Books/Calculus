@@ -391,7 +391,7 @@ The graph of $f$.
 ```{figure} Images/graph2.png
 ---
 width: 25%
-name: graph
+name: graph2
 align: right
 ---
 The graph of $F$.

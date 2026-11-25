@@ -72,6 +72,8 @@ The following are both different notations for the same _infinite_ sequence:
 
 The integer $p$ is again the starting index, but there is no ending index since the sequence is infinite.
 
+A sequence $\left(a_n\right)_{n=p}^{\infty}$ can be seen as a function $f:\mathbb{N}\to\mathbb{R}$ with $f(n)=a_n$ for every $n=p,p+1,p+2,\ldots$.
+
 The letter $n$ is often used to denote the index, but we can also use any other letter for the index.
 
 Sometimes we just write $\left(a_n\right)$ to denote a sequence, so if we do, please be aware that the context is relevant in that case.
@@ -315,7 +317,7 @@ $$
 ::::{admonition} Proof of {prf:ref}`Thm:Sequences:HarmonicSequence`
 :class: tudproof, dropdown
 
-Since $\left(\frac{1}{a_n}\right)_{n=p}^{\infty}$ is an arithmetic sequence with common difference $\frac{1}{a_{n+1}}-\frac{1}{a_n}=d$, and $a_p=b$ is the initial term, {ref:prf}`Thm:Sequences:ArithmeticSequence` implies that
+Since $\left(\frac{1}{a_n}\right)_{n=p}^{\infty}$ is an arithmetic sequence with common difference $\frac{1}{a_{n+1}}-\frac{1}{a_n}=d$, and $a_p=b$ is the initial term, {prf:ref}`Thm:Sequences:ArithmeticSequence` implies that
 
 $$
 \frac{1}{a_n}=\frac{1}{b}+(n-p)d=\frac{1+(n-p)bd}{b},\quad n=p,p+1,p+2,\ldots.

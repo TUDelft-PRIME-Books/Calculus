@@ -904,7 +904,7 @@ $$
 ::::::
 
 ::::::{prf:example} Indeterminate of type form $0^0$
-:label: Ex:lHospital:inftyto0
+:label: Ex:lHospital:0to0
 As our final example, we consider the limit
 
 $$
