@@ -796,16 +796,12 @@ If $\displaystyle\sum_{n=p}^{\infty}a_n$ is a negative series, then it is conver
 
 If $\displaystyle\sum_{n=p}^{\infty}a_n$ is a negative series, then $a_n<0$ for all $n\in\{p,p+1,p+2,\ldots\}$. Hence, we have $(-1)a_n>0$ for all $n\in\{p,p+1,p+2,\ldots\}$, so $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is a positive series.
 
-If the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is convergent, say with sum $S$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is convergent with sum $(-1)S$.
+If the series $\displaystyle\sum_{n=p}^{\infty}a_n$ is convergent, say with sum $s$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is convergent with sum $(-1)s$.
 
-If the series $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is convergent, say with sum $T$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=p}^{\infty}(-1)\cdot(-a_n)$ is convergent with sum $(-1)T$.
+If the series $\displaystyle\sum_{n=p}^{\infty}(-1)a_n$ is convergent, say with sum $t$, then we have from {prf:ref}`Thm:Series:CalculatingSums` that also $\displaystyle\sum_{n=p}^{\infty}(-1)\cdot(-a_n)$ is convergent with sum $(-1)t$.
 ::::
 
 ## Grasple exercises
-
-:::{todo}
-Add Grasple exercises for {numref}`Sec:Series:SpecialSeries`.
-:::
 
 ### Geometric series
 
