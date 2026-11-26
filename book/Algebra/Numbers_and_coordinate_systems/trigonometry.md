@@ -1243,6 +1243,15 @@ The factors of this infinite product give rise to all zeros of $\sin(\pi x)$ bei
 
 ::::{grasple}
 :iframeclass: dark-light
+:url: https://embed.grasple.com/exercises/7d139b7c-c13c-40a2-942f-6e51855e281b?id=133113
+:label: Grasple:133113
+:dropdown:
+:description: Show that $2\cos(x+y)\sin(x-y)=\sin(2x)-\sin(2y)$.
+
+::::
+
+::::{grasple}
+:iframeclass: dark-light
 :url: https://embed.grasple.com/exercises/30366c26-2670-43c6-a844-609a4a4b0446?id=133115
 :label: Grasple:133115
 :dropdown:

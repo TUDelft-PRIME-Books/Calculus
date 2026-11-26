@@ -504,7 +504,7 @@ Then we have:
 
 $$
 \htmlClass{compact}{
-\begin{array}{lllllllllllllllllllll}
+\begin{array}{rllllllllllllllllllll}
  S & = & a & + & ar & + & ar^2 & + & \cdots & + & ar^{n-2} & + & ar^{n-1} \\
 rS & = &   &   & ar & + & ar^2 & + & \cdots & + & ar^{n-2} & + & ar^{n-1} & + & ar^n.
 \end{array}
