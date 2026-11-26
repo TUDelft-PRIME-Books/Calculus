@@ -538,6 +538,8 @@ name: region3b
 align: center
 ---
 
+A region $D$ that is neither $x$-simple nor $y$-simple.
+
 ```
 
 $D=D_1\cup D_2$, where $D_1$ is $x$-simple and $D_2$ is $y$-simple.
@@ -553,6 +555,8 @@ width: 50%
 name: example1
 align: center
 ---
+
+The region $D$ that is bounded by the parabolas $y=3x^2$ and $y=1+2x^2$.
 
 ```
 
@@ -587,6 +591,8 @@ width: 50%
 name: example2
 align: center
 ---
+
+The region $D$ in the $xy$-plane bounded by the line $y=x$ and the parabola $y=x^2$.
 
 ```
 
@@ -648,6 +654,7 @@ name: example3
 align: center
 ---
 
+$D$ is the region bounded by the line $y=x-1$ and the parabola $y^2=x+5$.
 ```
 
 Again the region $D$ is both $x$-simple and $y$-simple. As an $x$-simple region we have to split the integral into two parts:
@@ -690,6 +697,8 @@ name: example4
 align: center
 ---
 
+$\displaystyle D=\{(x,y)\,|\,0\leq x\leq \tfrac{1}{2},\;2x\leq y\leq2-2x\}$.
+
 ```
 
 Note that, since the plane $2x+y+z=2$ intersects the $xy$-plane ($z=0$) in the line $2x+y=2$, the volume of the tetrahedron $T$ is the volume under the graph of the function $z=2-2x-y$ above the triangular region $D$ given by
@@ -724,6 +733,8 @@ width: 50%
 name: example5
 align: center
 ---
+
+The region $D$ defined by the iterated integral $\displaystyle\int_0^1\int_x^1\cos(y^2)\,dy\,dx$.
 
 ```
 
@@ -786,6 +797,8 @@ width: 50%
 name: area
 align: right
 ---
+
+The region $D$ in $\mathbb{R}^2$ bounded by the graphs of $y=x^2$ and $y=\sqrt{x}$.
 
 ```
 
