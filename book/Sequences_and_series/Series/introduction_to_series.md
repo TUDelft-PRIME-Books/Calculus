@@ -254,17 +254,12 @@ $$
 
 {numref}`Fig:Series:HarmonicSeries` gives a visualisation of the $N$th partial sum of the series.
 
-```{figure} Images/harmonic.png
----
-width: 50%
-name: Fig:Series:HarmonicSeries
-align: center
----
-Visualisation of the $N$th partial sum of the harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\dfrac{1}{x}$ is also given for comparison.
-```
+:::{applet}
+:url: calculus/introduction_to_series/harmonic_series
+:name: Fig:Series:HarmonicSeries
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Series:HarmonicSeries` with an applet.
+Visualisation of the $N$th partial sum of the harmonic series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\dfrac{1}{x}$ is also given for comparison. You can use the slider to change the value of $N$.
 :::
 
 Note that the top left corner of each rectangle aligns with the function $f(x)=\dfrac{1}{x}$. Because $f$ is a strictly decreasing function, the upper side of each rectangle is above the graph of $f$. This means that the area of each rectangle is greater than the area under the graph of $f$ between $n$ and $n+1$. Hence, we have
@@ -520,14 +515,12 @@ Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}$. Th
 
 In {numref}`Fig:Series:AbsoluteConvergence1` we have a visualisation of the $n$th partial sum $t_n$ of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$.
 
-```{figure} Images/integral.png
+:::{applet}
+:url: calculus/introduction_to_series/Basel_series
 :name: Fig:Series:AbsoluteConvergence1
+:class: dark-light
 
-Visualisation of the $N$th partial sum $t_N$ of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\dfrac{1}{x^2}$ is also given for comparison.
-```
-
-:::{todo}
-Replace {numref}`Fig:Series:AbsoluteConvergence1` with an applet.
+Visualisation of the $N$th partial sum $t_N$ of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$, which is given by the sum of the areas of the rectangles. The graph of $f(x)=\dfrac{1}{x^2}$ is also given for comparison. You can use the slider to change the value of $N$.
 :::
 
 Note that for the $N$th rectangle the top right corner aligns with the graph of $f(x)=\dfrac{1}{x^2}$ for $x\geq1$. This means that the area of the $N$th rectangle is less than the area under the graph of $f$ between $N-1$ and $N$ for $N\geq2$. Hence, we have
