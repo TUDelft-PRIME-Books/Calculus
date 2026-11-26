@@ -1069,7 +1069,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/eb39547d-1f15-4685-8f0d-2c09777965f9?id=63863
 :label: Grasple:63863
 :dropdown:
-:description: Application: a mixing problem
+:description: Application: a mixing problem.
 ::::::
 
 
@@ -1078,7 +1078,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/b041f047-91d9-460f-afd2-f2a379434eb4?id=63860
 :label: Grasple:63860
 :dropdown:
-:description: Application: a mixing problem
+:description: Application: a mixing problem.
 ::::::
 
 ::::::{grasple}
@@ -1086,7 +1086,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/697ea999-d14b-4a5d-a2dc-c2f276bbf99c?id=63858
 :label: Grasple:63858
 :dropdown:
-:description: Application: Newton's law of cooling
+:description: Application: Newton's law of cooling.
 ::::::
 
 ::::::{grasple}
@@ -1094,7 +1094,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/d62ee61a-85a4-48a9-a1a2-4dadcf47a52d?id=63895
 :label: Grasple:63895
 :dropdown:
-:description: Application: Newton's law of cooling
+:description: Application: Newton's law of cooling.
 ::::::
 
 ::::::{grasple}
@@ -1102,7 +1102,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/6928adcc-1906-4c45-8484-04dc0f3d0d3d?id=63882
 :label: Grasple:63882
 :dropdown:
-:description: Application: Torricelli's law
+:description: Application: Torricelli's law.
 ::::::
 
 ::::::{grasple}
@@ -1110,7 +1110,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/12cc3b35-01b3-4110-9601-544025150187?id=78875
 :label: Grasple:78875
 :dropdown:
-:description: Application: Chemical reaction
+:description: Application: Chemical reaction.
 ::::::
 
 ::::::{grasple}
@@ -1118,7 +1118,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/a5da4212-f724-4786-a164-fba1b17c898b?id=78933
 :label: Grasple:78933
 :dropdown:
-:description: Application: Chemical reaction
+:description: Application: Chemical reaction.
 ::::::
 
 
@@ -1127,7 +1127,7 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/6fed8a5e-0676-4618-aa97-4a755b9b307b?id=78845
 :label: Grasple:78845
 :dropdown:
-:description: Application: Channels in cell membrane
+:description: Application: Channels in cell membrane.
 ::::::
 
 ::::::{grasple}
@@ -1135,5 +1135,5 @@ We conclude that $I(t)=\frac{1}{2}\sqrt{\pi}e^{-\frac{1}{4}t^2}$.
 :url: https://embed.grasple.com/exercises/9b62831e-6f13-41a5-8ff6-53c170efb005?id=78889
 :label: Grasple:78889
 :dropdown:
-:description: Application: Logistic equation
+:description: Application: Logistic equation.
 ::::::

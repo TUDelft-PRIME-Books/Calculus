@@ -425,7 +425,7 @@ In {numref}`Fig:ODE2:Twocomplex` you can see on the left the graph of the two li
 
 We summarise the three cases in the following table.
 
-```{list-table} General solution of second-order, linear, homogeneous differential equation
+```{list-table} General solution of a second-order, linear, homogeneous differential equation.
 :header-rows: 1
 :align: center
 :class: mid-align

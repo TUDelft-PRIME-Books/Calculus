@@ -479,7 +479,7 @@ By {prf:ref}`Cor:Curves:Parabola` the equation for this parabola is $y=\frac{1}{
 :::
 
 ::::::{prf:example} 
-:label: Ex:Curves:Parabola1
+:label: Ex:Curves:Parabola1Param
 
 We consider the parabolya given by
 
@@ -499,7 +499,7 @@ Include a version of {numref}`Fig:Curves:Parabola1` that shows the parametrisati
 
 :::{applet}
 :url: calculus/curves_in_R%5E2/a_parabola
-:name: Fig:Curves:Parabola1
+:name: Fig:Curves:Parabola1:Param
 :class: dark-light
 
 The graph of the function $f(x)=-\frac{1}{4}x^2+\frac{1}{2}x+\frac{23}{4}$ is a parabola with axis $x=1$, vertex $\left(1,6\right)$, focus $\left(1,5\right)$ and directrix $y=7$.

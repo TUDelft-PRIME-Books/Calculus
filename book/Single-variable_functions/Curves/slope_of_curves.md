@@ -261,7 +261,7 @@ Make an applet showing this curve.
 For many curves that we encounter in practice, there are only finitely many points where the parameristation is not differentiable, or where the derivative is either $\mathbf{0}$ or not continuous. Such a curve can be split up into curves that are regular. Let us properly define these curves.
 
 ::::::{prf:definition} 
-:label: Def:SlopesParamCurves:Regular
+:label: Def:SlopesParamCurves:RegularPiecewise
 Let $\mathcal{C}$ be a curve in $\mathbb{R}^2$ or $\mathbb{R}^3$ parametrised by a continuous vector function $\mathbf{r}(t)$ for $t\in I$. The paramteric curve $\mathcal{C}$ is **piecewise regular** if there exists a finite set $S$ such that $\mathbf{r}$ is differentiable on $I\setminus S$,  $\mathbf{r}'$ is continuous on $I\setminus S$ and $\mathbf{r}'(t)\neq\mathbf{0}$ for all $t\in I\setminus S$.
 
 ::::::
@@ -290,7 +290,7 @@ $$
 By construction this vector function is continuous at each point $s_i$, since the end point of the curve $\mathcal{C}_{i-1}$ is the start point of the curve $\mathcal{C}_i$. At all other values of $t$, the parametrisation is differentiable, the derivative is continuous and $\mathbf{r}'(t)\neq\mathbf{0}$, which means that $\mathbf{r}$ is a piecewise regular parametrisation of $\mathcal{C}$.
 :::
 
-:::{figure} images/Fig-Curves3d-PiecewiseSmooth.png
+:::{figure} images/Fig-Curves3d-PiecewiseRegular.png
 :name: Fig:PiecewiseRegular
 :class: dark-light
 
