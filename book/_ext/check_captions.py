@@ -1,9 +1,14 @@
 
+import re
+
 from docutils import nodes
 from sphinx.util import logging
 from teachbooks_sphinx_grasple.nodes import grasple_exercise_enumerable_node
 
 logger = logging.getLogger(__name__)
+
+# Ends with any combination of . ? ! (optionally wrapped in \text{...}), each of which may be preceded by ')'
+END_PUNCTUATION_RE = re.compile(r'\)*(?:[.?!]|\\text\{\)*[.?!]\})+$')
 
 def check_captions(app, doctree, docname):
     """
@@ -24,8 +29,8 @@ def check_captions(app, doctree, docname):
             logger.info(f"No caption found for table in document {docname} at line {table.line}.", color="yellow")
             continue
 
-        # check if the caption ends with a .
-        if not caption.astext().strip().endswith(('.', '?', '!','\\text{.}', '\\text{?}', '\\text{!}')):
+        # check if the caption ends with a . or ? or !, any combination of those or even inside a \\text command
+        if not END_PUNCTUATION_RE.search(caption.astext().strip()):
             if caption.line is not None:
                 logger.info(f"Caption for table in document {docname} at line {caption.line} does not end with a period.", color="green")
 
@@ -43,7 +48,7 @@ def check_captions(app, doctree, docname):
             continue
 
         # check if the caption ends with a ., ? or !
-        if not caption.astext().strip().endswith(('.', '?', '!','\\text{.}', '\\text{?}', '\\text{!}')):
+        if not END_PUNCTUATION_RE.search(caption.astext().strip()):
             if caption.line is not None:
                 logger.info(f"Caption for figure in document {docname} at line {caption.line} does not end with a period: {caption.astext().strip()[-5:]}", color="blue")
 
@@ -65,7 +70,7 @@ def check_captions(app, doctree, docname):
 
         description_text = description.astext()
         # check if the description ends with a ., ? or !
-        if not description_text.endswith(('.', '?', '!','\\text{.}', '\\text{?}', '\\text{!}')):
+        if not END_PUNCTUATION_RE.search(description_text):
             # if description.line is not None:
             logger.info(f"Description for grasple exercise in document {docname} at line {grasple.line} does not end with a period: {description.astext().strip()[-5:]}", color="teal")
 

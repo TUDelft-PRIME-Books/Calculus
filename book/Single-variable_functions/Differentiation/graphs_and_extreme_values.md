@@ -747,7 +747,7 @@ $$
 :name: Fig:MinMax:CauchyMVT
 :class: dark-light
 
-An illustration of {prf:ref}`Thm:MinMax:MVTCauchy`. We see the curve with parametrisation $(f(x),g(x))$ for $a\leq x\leq b$. The slope of the vector from the start to the end point is $\frac{g(b)-g(a)}{f(b)-f(a)}$. The vector $\begin{pmatrix} f'(c)\\ g'(c)\end{pmatrix}$ is tangent to the curve at the point $c$ (it is the tangent vector, see {numref}`Subsec:Slopeparam`). The slope of this vector is $\frac{g'(c)}{f'(c)}$, which is equal to the slope of the vector from the start to the end point, as guaranteed by {prf:ref}`Thm:MinMax:MVTCauchy`. Note that the same holds for the point $(f(d),g(d))$, which is also shown in the figure.
+An illustration of {prf:ref}`Thm:MinMax:MVTCauchy`. We see the curve that is the set of all points of the form $(f(x),g(x))$ for $a\leq x\leq b$. The slope of the vector from the start to the end point is $\frac{g(b)-g(a)}{f(b)-f(a)}$. The vector $\begin{pmatrix} f'(c)\\ g'(c)\end{pmatrix}$ is tangent to the curve at the point $c$ (it is the tangent vector, see {numref}`Section:SlopeParamCurve`). The slope of this vector is $\frac{g'(c)}{f'(c)}$, which is equal to the slope of the vector from the start to the end point, as guaranteed by {prf:ref}`Thm:MinMax:MVTCauchy`. Note that the same holds for the point $(f(d),g(d))$, which is also shown in the figure.
 :::
 
 Let us see how the mean value theorem can be used in practice.
