@@ -194,6 +194,8 @@ name: z-simple
 align: center
 ---
 
+A $z$-simple region.
+
 ```
 
 A solid region $E$ in $\mathbb{R}^3$ is said to be $z$-simple if it lies between the graphs of two continuous functions of $x$ and $y$:
@@ -216,6 +218,8 @@ width: 50%
 name: x-simple
 align: center
 ---
+
+An $x$-simple region.
 
 ```
 
@@ -240,6 +244,7 @@ name: y-simple
 align: center
 ---
 
+An $y$-simple region.
 ```
 
 A solid region $E$ in $\mathbb{R}^3$ is said to be $y$-simple if it lies between the graphs of two continuous functions of $x$ and $z$:
@@ -268,6 +273,7 @@ name: triple1a
 align: left
 ---
 
+$E$ is the solid tetrahedron bounded by the four planes $x=0$, $y=0$, $z=0$ and $x+y+z=1$.
 ```
 
 ```{figure} Images/triple1b.png
@@ -277,6 +283,7 @@ name: triple1b
 align: right
 ---
 
+The projection of $E$ from {numref}`triple1a` on the $xy$-plane.
 ```
 
 Note that the projection of $E$ on the $xy$-plane is
@@ -337,6 +344,7 @@ name: triple2a
 align: left
 ---
 
+$E$ is the region bounded by the paraboloid $y=x^2+z^2$ and the plane $y=4$.
 ```
 
 ```{figure} Images/triple2b.png
@@ -346,6 +354,7 @@ name: triple2b
 align: right
 ---
 
+Tthe projection of $E$ from {numref}`triple2a` on the $xy$-plane.
 ```
 
 Note that the projection of $E$ on the $xy$-plane is
@@ -370,6 +379,7 @@ name: triple2c
 align: right
 ---
 
+The projection of $E$ from {numref}`triple2a` onto the $xz$-plane.
 ```
 
 However, if we consider $E$ as a $y$-simple region, the projection of $E$ onto the $xz$-plane is the disk
