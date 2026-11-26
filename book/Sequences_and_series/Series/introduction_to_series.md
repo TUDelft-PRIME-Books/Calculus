@@ -32,7 +32,7 @@ since the result grows beyond any finite real number.
 :::::
 
 :::::{prf:example}
-:label: Ex:SeriesIntro:GeometricSeriesExample1
+:label: Ex:SeriesIntro:GeometricSeriesExample
 
 $$
 \sum_{n=1}^{\infty}\frac{1}{2^n}=\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1.
@@ -134,10 +134,10 @@ For simplicity we will use the following notation:
 ::::{prf:notation}
 :label: Not:Series:Sum
 
-If a series $\displaystyle\sum_{n=p}^{\infty}a_n$ has the sum $S$, then we just write
+If a series $\displaystyle\sum_{n=p}^{\infty}a_n$ has the sum $s$, then we just write
 
 $$
-\sum_{n=p}^{\infty}a_n=S.
+\sum_{n=p}^{\infty}a_n=s.
 $$
 
 ::::
@@ -204,12 +204,12 @@ $$
 
 Without loss of generality we assume that $p\leq q$. The case $p=q$ is trivial, so let $p<q$. 
 
-If $\displaystyle\sum_{n=q}^{\infty}a_n$ is convergent with sum $S$, then
+If $\displaystyle\sum_{n=q}^{\infty}a_n$ is convergent with sum $s$, then
 
 $$
 \begin{align*}
 \sum_{n=p}^{\infty}a_n&=a_p+a_{p+1}+a_{p+2}+\cdots+a_{q-1}+\sum_{n=q}^{\infty}a_n\\
-&=a_p+a_{p+1}+a_{p+2}+\cdots+a_{q-1}+S.
+&=a_p+a_{p+1}+a_{p+2}+\cdots+a_{q-1}+s.
 \end{align*}
 $$
 
@@ -230,10 +230,10 @@ If the series $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\inf
 
 Let $\left(s_n\right)$ be the sequence of partial sums of the series $\displaystyle\sum a_n$.
 
-If $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\infty}s_n=S$ exists. Then we have
+If $\displaystyle\sum a_n$ is convergent, then $\lim\limits_{n\to\infty}s_n=s$ exists. Then we have
 
 $$
-\lim_{n\to\infty}a_n=\lim_{n\to\infty}\left(s_n-s_{n-1}\right)=\lim_{n\to\infty}s_n-\lim_{n\to\infty}s_{n-1}=S-S=0.
+\lim_{n\to\infty}a_n=\lim_{n\to\infty}\left(s_n-s_{n-1}\right)=\lim_{n\to\infty}s_n-\lim_{n\to\infty}s_{n-1}=s-s=0.
 $$
 
 ::::::
@@ -382,7 +382,7 @@ The test for divergence only gives us a test for divergence, but it does not giv
 
 ## Computation rules for series
 
-If you have determined that an infinite series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent with sum $S$, then you could also ask yourself whether the new series $\displaystyle\sum_{n=1}^{\infty}ca_n$ for some number $c$ is also convergent and if so, what its sum is. The next theorem gives us the answer to this question and even some more useful properties of sums of infinite series:
+If you have determined that an infinite series $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent with sum $s$, then you could also ask yourself whether the new series $\displaystyle\sum_{n=1}^{\infty}ca_n$ for some number $c$ is also convergent and if so, what its sum is. The next theorem gives us the answer to this question and even some more useful properties of sums of infinite series:
 
 ::::{prf:theorem}
 :label: Thm:Series:CalculatingSums
@@ -463,13 +463,13 @@ q_N = \sum_{n=1}^N a_n^-.
 \end{align*}
 $$
 
-From the convergence of $\displaystyle\sum|a_n|$ we have that $\lim\limits_{N\to\infty}t_N=T$ exists. We also have that 
+From the convergence of $\displaystyle\sum|a_n|$ we have that $\lim\limits_{N\to\infty}t_N=t$ exists. We also have that 
 
 $$
 t_{N+1}-t_N = \sum_{n=1}^{N+1}|a_n|-\sum_{n=1}^N|a_n| = |a_{N+1}|\geq0,
 $$
 
-so the sequence $\left(t_N\right)$ is non-decreasing with $T$ as an upper bound: $t_N\leq T$ for all $N$.
+so the sequence $\left(t_N\right)$ is non-decreasing with $t$ as an upper bound: $t_N\leq t$ for all $N$.
 
 For the partial sum $p_N$ we have
 
@@ -480,7 +480,7 @@ $$
 so the sequence $\left(p_N\right)$ is non-decreasing. Also,
 
 $$
-p_N = \sum_{n=1}^N a_n^+ \leq \sum_{n=1}^N (a_n^++a_n^-) = \sum_{n=1}^N |a_n| = t_N \leq T,
+p_N = \sum_{n=1}^N a_n^+ \leq \sum_{n=1}^N (a_n^++a_n^-) = \sum_{n=1}^N |a_n| = t_N \leq t,
 $$
 
 which makes the sequence $\left(p_N\right)$ bounded from above. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\left(p_N\right)$ is convergent, so $\lim\limits_{N\to\infty}p_N=P$ exists.
@@ -494,7 +494,7 @@ $$
 so the sequence $\left(q_N\right)$ is also non-decreasing. Also,
 
 $$
-q_N = \sum_{n=1}^N a_n^- \leq \sum_{n=1}^N (a_n^++a_n^-) = \sum_{n=1}^N |a_n| = t_N \leq T,
+q_N = \sum_{n=1}^N a_n^- \leq \sum_{n=1}^N (a_n^++a_n^-) = \sum_{n=1}^N |a_n| = t_N \leq t,
 $$
 
 so the sequence $\left(q_N\right)$ is also bounded from above. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\left(q_N\right)$ is also convergent, so $\lim\limits_{N\to\infty}q_N=Q$ exists.
@@ -509,10 +509,10 @@ s_N&=\sum_{n=1}^Na_n=\sum_{n=1}^N(a_n^+-a_n^-)\\
 \end{align*}
 $$
 
-Because $\lim\limits_{N\to\infty}p_N=P$ and $\lim\limits_{N\to\infty}q_N=Q$, we have
+Because $\lim\limits_{N\to\infty}p_N=p$ and $\lim\limits_{N\to\infty}q_N=q$, we have
 
 $$
-\lim_{N\to\infty}s_N = \lim_{N\to\infty}\left(p_N - q_N\right) = \lim_{N\to\infty}p_nN- \lim_{N\to\infty}q_N = P-Q.
+\lim_{N\to\infty}s_N = \lim_{N\to\infty}\left(p_N - q_N\right) = \lim_{N\to\infty}p_N- \lim_{N\to\infty}q_N = p-q.
 $$
 
 This shows that $\displaystyle\sum_{n=1}^{\infty}a_n$ is convergent, which proves the theorem.
@@ -557,7 +557,7 @@ $$
 t_{N+1}-t_N = \frac{1}{(N+1)^2} > 0,
 $$
 
-so the sequence $\left(t_N\right)$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\left(t_N\right)$ is convergent, so $\lim\limits_{n\to\infty}t_N=T$ exists.
+so the sequence $\left(t_N\right)$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\left(t_N\right)$ is convergent, so $\lim\limits_{n\to\infty}t_N=t$ exists.
 
 This means that the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ is convergent, so the original series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}$ is absolutely convergent by {prf:ref}`Def:Series:AbsoluteConvergence`, which means that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n^2}$ is also convergent by {prf:ref}`Thm:Series:AbsoluteConvergence`.
 
@@ -600,7 +600,7 @@ s_{2N} &= \sum_{n=1}^{2N}\frac{(-1)^{n-1}}{n} \\
 \end{align*}
 $$
 
-Because of the positivity of all terms in the sum $\displaystyle\sum_{n=1}^{N-1}\frac{1}{(2n)(2n+1)}$ and the term $\dfrac{1}{2N}$, we have found that $(s_{2N})$ is bounded from above by $1$. Also, we have already found that $(s_{2N})$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\left(s_{2N}\right)$ is convergent, so $\lim\limits_{n\to\infty}s_{2N}=S$ exists.
+Because of the positivity of all terms in the sum $\displaystyle\sum_{n=1}^{N-1}\frac{1}{(2n)(2n+1)}$ and the term $\dfrac{1}{2N}$, we have found that $(s_{2N})$ is bounded from above by $1$. Also, we have already found that $(s_{2N})$ is strictly increasing. By {prf:ref}`Thm:Sequences:MonotonicBounded` the sequence $\left(s_{2N}\right)$ is convergent, so $\lim\limits_{n\to\infty}s_{2N}=s$ exists.
 
 Now we turn to the sequence $\left(s_{2N+1}\right)$. We have
 
@@ -615,10 +615,10 @@ $$
 But this means that
 
 $$
-\lim_{N\to\infty}s_{2N+1} = \lim_{N\to\infty}s_{2N} + \lim_{N\to\infty}\frac{1}{2N+1} = S + 0 = S.
+\lim_{N\to\infty}s_{2N+1} = \lim_{N\to\infty}s_{2N} + \lim_{N\to\infty}\frac{1}{2N+1} = s + 0 = s.
 $$
 
-This tells us that all even partial sums *and* all odd partial sums converge to the same limit $S$, so all partial sums converge to $S$. Hence, the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is convergent.
+This tells us that all even partial sums *and* all odd partial sums converge to the same limit $S$, so all partial sums converge to $s$. Hence, the series $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{n-1}}{n}$ is convergent.
 
 ::::::
 
@@ -636,10 +636,6 @@ Later we will be able to show that $\displaystyle\sum_{n=1}^{\infty}\frac{(-1)^{
 This concludes our treatment of absolute and conditional convergence. As you may have noticed, showing (absolute or conditional) convergence can be a lot of work. In {numref}`Sec:Series:SpecialSeries`, we will see some special types of series for which we can easily determine whether they are convergent or divergent and find their sum if they are convergent. For other series, we will need to use more advanced tests, which we will discuss in the sections after that.
 
 ## Grasple exercises
-
-:::{todo}
-Add Grasple exercises for {numref}`Chapter:Series:Introduction`.
-:::
 
 ::::{grasple}
 :iframeclass: dark-light

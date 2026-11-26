@@ -542,6 +542,27 @@ $$
 Similar as in the previous example we can show that the product $c_nc_{n+1}$ of two consecutive terms is negative for all integers $n\geq1$ and conclude that the sequence is an alternating sequence.
 ::::::
 
+
+::::{question}
+:type: multiple-choice
+:variant: single-select
+:admonition:
+:class: question
+:showanswer:
+
+Which of the following sequences is defined recursively rather than by an explicit formula?
+---
+[ ] $\left(a_n\right)_{n=1}^{\infty}$ with $a_n=2n-1$.
+> This sequence gives a direct formula for the $n$th term. This means you can calculate any term immediately from the index $n$, so it is an *explicit formula*. A recursive formula is a formula that defines each term using one or more previous terms.
+[ ] $\left(b_n\right)_{n=1}^{\infty}$ with $b_n=\frac{1}{n}$.
+> This sequence gives a direct formula for the $n$th term. This means you can calculate any term immediately from the index $n$, so it is an *explicit formula*. A recursive formula is a formula that defines each term using one or more previous terms.
+[x] $\left(c_n\right)_{n=1}^{\infty}$ with $c_1=1$ and $c_{n+1}=2a_n$ for $n\geq1$.
+> This sequence is indeed recursive, because each new term is calculated from the previous term using the given rule. To find later terms, you need to know earlier terms, which is exactly how *recursive sequences* work. This idea will be important when you study the Fibonacci sequence next.
+[ ] $\left(d_n\right)_{n=1}^{\infty}$ with $d_n=(-1)^{n-1}$.
+> This sequence gives a direct formula for the $n$th term. This means you can calculate any term immediately from the index $n$, so it is an *explicit formula*. A recursive formula is a formula that defines each term using one or more previous terms.
+---
+::::
+
 (Sec:Sequences:Fibonacci)=
 ## The Fibonacci sequence
 
@@ -716,31 +737,12 @@ is called the **golden ratio**.
 
 The *golden ratio* often appears in nature and art, for example in spirals. {numref}`Fig:Sequences:FibonacciSpiral` shows two stages of the Fibonacci spiral. Such a spiral is constructed by drawing quarter-circle arcs connecting the opposite corners of a sequence of squares, whose side lengths correspond to the Fibonacci numbers.
 
-:::{figure-start}
-:width: 100%
+:::{applet}
+:url: calculus/introduction_to_sequences/fibonacci_spiral
 :name: Fig:Sequences:FibonacciSpiral
+:class: dark-light
 
-The Fibonacci spiral.
-:::
-
-::::{grid} 2
-:gutter: 5
-
-:::{grid-item}
-![number1](Images/fibonacci1.png)
-:::
-
-:::{grid-item}
-![number2](Images/fibonacci2.png)
-:::
-
-::::
-
-:::{figure-end}
-:::
-
-:::{todo}
-Replace {numref}`Fig:Sequences:FibonacciSpiral` with an applet or animation?
+The Fibonacci spiral. You can increase and decrease the amount of Fibonacci numbers, represented by the amount of squares, by dragging the slider, or pressing the play button.
 :::
 
 It turns out that the ratio of the side lengths of two consecutive squares approaches the golden ratio as we continue to add squares. Or in mathematical words:
@@ -850,7 +852,7 @@ This Collatz conjecture is still an open, unsolved, problem in mathematics.
 :url: https://embed.grasple.com/exercises/234212ac-14da-45d4-8f32-8ec39af825e5?id=134378
 :label: Grasple:134378
 :dropdown:
-:description: Which type of sequence? Find an explict and a recursive formula.
+:description: Which type of sequence? Find an explicit and a recursive formula.
 
 ::::
 
@@ -859,7 +861,7 @@ This Collatz conjecture is still an open, unsolved, problem in mathematics.
 :url: https://embed.grasple.com/exercises/7f2be52c-ee23-4e15-b80c-d19048cb2121?id=134382
 :label: Grasple:134382
 :dropdown:
-:description: Which type of sequence? Find an explict and a recursive formula.
+:description: Which type of sequence? Find an explicit and a recursive formula.
 
 ::::
 
@@ -868,7 +870,7 @@ This Collatz conjecture is still an open, unsolved, problem in mathematics.
 :url: https://embed.grasple.com/exercises/67217139-0861-48fc-b274-a928ac404c3a?id=134385
 :label: Grasple:134385
 :dropdown:
-:description: Which type of sequence? Find an explict and a recursive formula.
+:description: Which type of sequence? Find an explicit and a recursive formula.
 
 ::::
 
@@ -899,7 +901,7 @@ with $L_0=2$ and $L_1=1$.
 :url: https://embed.grasple.com/exercises/1c8fcd69-97c4-457f-a442-7dc1b0568e1f?id=134200
 :label: Grasple:134200
 :dropdown:
-:description: Find an explict formula for $L_n$ with $n=0,1,2,\ldots$ and show that $\displaystyle\lim_{n\to\infty}\frac{L_{n+1}}{L_n}=\varphi$.
+:description: Find an explicit formula for $L_n$ with $n=0,1,2,\ldots$ and show that $\displaystyle\lim_{n\to\infty}\frac{L_{n+1}}{L_n}=\varphi$.
 
 ::::
 

@@ -215,7 +215,7 @@ width: 50%
 name: polarcoord4
 align: left
 ---
-The disk $D$ with boundary circle given by $x^2+y^2=2x$
+The disk $D$ with boundary circle given by $x^2+y^2=2x$.
 ```
 
 ```{figure} Images/polarcoord5.png

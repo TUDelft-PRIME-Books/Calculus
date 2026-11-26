@@ -169,7 +169,7 @@ Include an applet showing $S$, $P$ and $\mathcal{C}$, preferable with a slider (
 
 
 ::::::{prf:example} 
-:label: Ex:Curves3d:IntersectionSurface
+:label: Ex:Curves3d:IntersectionSurface2
 We let $\mathcal{C}$ denote the curve of intersection of the two surfaces $S_1$, given by
 
 $$
