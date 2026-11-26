@@ -69,11 +69,14 @@ $$
 Then we have (compare with {prf:ref}`Ex:SumsAndProducts:IntroductionFiniteGeometric`)
 
 $$
-\begin{align*}
-s_n&=a&+ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&\\
-rs_n&=&ar&+ar^2&+\ldots&+ar^{n-2}&+ar^{n-1}&+ar^n.
-\end{align*}
+\htmlClass{compact}{
+\begin{array}{rllllllllllllllllllll}
+ s_n & = & a & + & ar & + & ar^2 & + & \cdots & + & ar^{n-2} & + & ar^{n-1} \\
+rs_n & = &   &   & ar & + & ar^2 & + & \cdots & + & ar^{n-2} & + & ar^{n-1} & + & ar^n.
+\end{array}
+}
 $$
+
 Subtracting the two equations we obtain
 
 $$

@@ -247,7 +247,7 @@ Turn {numref}`Fig:Graph2d` into an applet. Make sure to call the domain $D_f$ an
 
 However, for functions of three or more variables we run into a major issue: we live in a three-dimensional world, so it is not feasible to visualise a subset of a four- or higher-dimensional space. So while for these functions the graph exists as a mathematical concept, it cannot be used to visualise the behaviour of the function. In {numref}`Section:Levelcurves` we will consider an alternative method to visualise the behaviour of functions of two or three variables.
 
-Let us return to functions of two variables. We already stated that the graph of such a function is a surface in $\mathbb{R}^3$. We will study surfaces in more depth in {numref}`Section:Section:ImplicitEquationsR3`. Just like not every curve in $\mathbb{R}^2$ is the graph of a single-variable function, not every surface in $\mathbb{R}^3$ is the graph of a function of two variables. Recall that the defining property of a function is that for each input $(x,y)$ the function gives a *single* output $f(x,y)$. Just like we did for single-variable functions, we can check whether a surface is the graph of a function by verifying whether each vertical line, which in $\mathbb{R}^3$ takes the form $\begin{cases}x&=a,\\ y&=b,\end{cases}$, intersects the graph at most once. We can formulate this result as follows.
+Let us return to functions of two variables. We already stated that the graph of such a function is a surface in $\mathbb{R}^3$. We will study surfaces in more depth in {numref}`Section:ImplicitEquationsR3`. Just like not every curve in $\mathbb{R}^2$ is the graph of a single-variable function, not every surface in $\mathbb{R}^3$ is the graph of a function of two variables. Recall that the defining property of a function is that for each input $(x,y)$ the function gives a *single* output $f(x,y)$. Just like we did for single-variable functions, we can check whether a surface is the graph of a function by verifying whether each vertical line, which in $\mathbb{R}^3$ takes the form $\begin{cases}x&=a,\\ y&=b,\end{cases}$, intersects the graph at most once. We can formulate this result as follows.
 
 ::::::{prf:theorem} Vertical line test 
 :label: Thm:Functionsmultivar:VerticalLineTest
@@ -286,6 +286,12 @@ Since we now know what the graph of $f$ looks like when intersecting it with pla
 
 :::{todo}
 Include an applet with the graph for $f$, with a toggle that shows intersection with planes of the form $y=b$ or $x=a$. The label of the applet should be Fig:Functionsmultivar:Graphquad
+:::
+
+:::{figure}
+:name: Fig:Functionsmultivar:Graphquad
+
+The graph for $f(x,y)=3+(x-1)^2-(y-2)^2$, with a toggle that shows intersection with planes of the form $y=b$ or $x=a$.
 :::
 ::::::
 

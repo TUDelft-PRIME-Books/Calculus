@@ -149,6 +149,13 @@ Then for any $t\in I$ we have that $\mathbf{r}(t)$ lies on this sphere, so we fi
 :::{todo}
 Make an applet which shows a curve on a sphere, with a position vector $\mathbf{r}(t)$ and the corresponding tangent vector $\mathbf{r}'(t)$. The applet should have label Fig:Tangentsphere (or change the references).
 :::
+
+:::{figure}
+:name: Fig:Tangentsphere
+
+A sphere given by $x^2+y^2+z^2=R^2$ with a curve $\mathcal{C}$, a position vector $\mathbf{r}(t)$ and the corresponding tangent vector $\mathbf{r}'(t)$.
+:::
+
 ::::::
 
 
