@@ -479,7 +479,7 @@ By {prf:ref}`Cor:Curves:Parabola` the equation for this parabola is $y=\frac{1}{
 :::
 
 ::::::{prf:example} 
-:label: Ex:Curves:Parabola1
+:label: Ex:Curves:Parabola1Param
 
 We consider the parabolya given by
 

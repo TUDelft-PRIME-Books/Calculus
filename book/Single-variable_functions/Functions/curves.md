@@ -477,7 +477,7 @@ $$
 $$
 
 :::{todo} 
-Include a version of {numef}`Fig:CurvesR2:Hyperbola1` that does not show the parametrisation.
+Include a version of {numref}`Fig:CurvesR2:Hyperbola1` that does not show the parametrisation.
 :::
 
 ::::::
