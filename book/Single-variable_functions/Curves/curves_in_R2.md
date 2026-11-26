@@ -293,7 +293,7 @@ This parametrisation in {prf:ref}`Thm:CurvesR2:EllipseParam` is called the **sta
 
 :::{admonition} Proof of {prf:ref}`Thm:CurvesR2:EllipseParam`
 :class: tudproof, dropdown
-By {prf:ref}`Cor:CurvesR2:Ellipse` the equation for this ellipse is $\displaystyle \frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1$. Writing $x(t)=x_0+a\cos(t)$ and $y(t)=y_0+b\sin(t)$, we find
+By {prf:ref}`Cor:Curves:Ellipse` the equation for this ellipse is $\displaystyle \frac{\left(x-x_0\right)^2}{a^2}+\frac{\left(y-y_0\right)^2}{b^2}=1$. Writing $x(t)=x_0+a\cos(t)$ and $y(t)=y_0+b\sin(t)$, we find
 
 $$
  \frac{\left(x(t)-x_0\right)^2}{a^2}+\frac{\left(y(t)-y_0\right)^2}{b^2}=\frac{a^2\cos^2(t)}{a^2}+\frac{b^2\sin^2(t)}{b^2}=\cos^2(t)+\sin^2(t)=1.
@@ -316,7 +316,7 @@ Finally, we notice that for $0<t<\frac{\pi}{2}$ we have $y(t)=y_0+b\sin(t)>y_0$,
 ::::::{prf:remark} 
 :label: Remark:CurvesR2:EllipseParam
 
-Consider the parametrisation of an ellipse from {prf:ref}`Thm:Curves:EllipseParam`. If the ellipse is actually a circle (i.e. when $a=b$, or, equivalently, $c=0$), the parameter $t$ can be interpreted as the angle between the positive $x$-axis and the line segment from the origin to the point $(x(t),y(t))$ measured counterclockwise, as usual. However, for ellipses that are not circles this is not the case. The French painter and mathematician  [Philippe de La Hire (1640-1718)](https://en.wikipedia.org/wiki/Philippe_de_La_Hire) discovered the following interpretation of the parameter $t$.
+Consider the parametrisation of an ellipse from {prf:ref}`Thm:CurvesR2:EllipseParam`. If the ellipse is actually a circle (i.e. when $a=b$, or, equivalently, $c=0$), the parameter $t$ can be interpreted as the angle between the positive $x$-axis and the line segment from the origin to the point $(x(t),y(t))$ measured counterclockwise, as usual. However, for ellipses that are not circles this is not the case. The French painter and mathematician  [Philippe de La Hire (1640-1718)](https://en.wikipedia.org/wiki/Philippe_de_La_Hire) discovered the following interpretation of the parameter $t$.
 
 See {numref}`Fig:CurvesR2:deLaHire`. In this figure we have drawn everything in the $(x-x_0,y-y_0)$-plane. Consider two circles with the same center as the ellipse with radius $b$ and $a$, respectively. If we draw the line segment which has angle $t$ with the positive $x-x_0$-axis, then this line segment crosses the first circle at the point $B:(x_0+b\cos(t),y_0+b\sin(t))$ and the second circle at the point $A:(x_0+a\cos(t),y_0+a\sin(t))$. Then the point $(x,y)=(x_0+a\cos(t),y_0+b\sin(t))$ on the ellipse is found by intersecting the line through $B$ parallel to the horizontal $x-x_0$-axis of the ellipse with the line through $A$ parallel to the vertical $y-y_0$-axis of the ellipse, see the figure below.
 
