@@ -15,7 +15,7 @@ For curves in $\mathbb{R}^2$ or $\mathbb{R}^3$ we can obtain a geometric interpr
 :name: Fig:Tangentvector
 :class: dark-light
 
-
+A vector $\mathbf{r}'(t)$ that appears to be tangent to the curve $\mathcal{C}$.
 :::
 
 :::{todo}
@@ -294,7 +294,7 @@ By construction this vector function is continuous at each point $s_i$, since th
 :name: Fig:PiecewiseRegular
 :class: dark-light
 
-
+A regular curve (_left_) and a piecewise-regular curve (_right_).
 :::
 
 :::{todo}

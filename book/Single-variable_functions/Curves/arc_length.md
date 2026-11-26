@@ -14,6 +14,7 @@ Consider a curve $\mathcal{C}$ with regular parametrisation $\mathbf{r}(t)$ for 
 :name: Fig:ArclengthStart
 :class: dark-light
 
+A curve $\mathcal{C}$ from a point $A$ to a point $B$.
 :::
 
 :::{todo}
@@ -32,6 +33,7 @@ This approximation can be seen in the figure below.
 :name: Fig:Arclengthapprox
 :class: dark-light
 
+Approximating the arc length of a curve.
 :::
 
 :::{todo}
