@@ -3,14 +3,14 @@
 
 ## Introduction
 
-In {numref}`Chapter:Series:Introduction` we have talked about infinite series and whether they are convergent or divergent. We also introduced the concept of absolute convergence and conditional convergence. In this section we will give some tests to determine whether a series is convergent or divergent. These tests only work for series with *positive terms* or series that eventually only have positive terms. See: {prf:ref}`Def:Series:PositiveNegativeSeries`.
+In {numref}`Chapter:Series:Introduction` we have talked about series and whether they are convergent or divergent. We also introduced the concept of absolute convergence and conditional convergence. In this section we will give some tests to determine whether a series is convergent or divergent. These tests only work for series with *positive terms* or series that eventually only have positive terms. See: {prf:ref}`Def:Series:PositiveNegativeSeries`. Note that the tests will also work for series with *negative terms* or series that eventually only have negative terms because of {prf:ref}`Thm:Series:NegativeSeries`.
 
 (Sec:Series:PositiveSeries:IntegralTest)=
 ## The integral test
 
 In {prf:ref}`Ex:Series:HarmonicSeries`, {prf:ref}`Ex:Series:AbsoluteConvergence1` and the proof of {prf:ref}`Thm:Series:pSeries` we investigated $p$-series, which are series of the form $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^p}$, where $p$ is a positive real number. In the two examples and the proof, we compared the series with the integral of an appropriate function.
 
-This concept can be generalised to the **integral test**. {numref}`Fig:Series:IntegralTest` gives the idea behind the integral test: consider a function $f$ that is continuous, positive and non-increasing on $[1,\infty)$ such that $a_n=f(n)$. At each point $(n,f(n))$ you either draw rectangles to the left of the graph of $f$ (for divergence) or you draw rectangles to the right of the graph of $f$ (for divergence).
+This concept can be generalised to the **integral test**. {numref}`Fig:Series:IntegralTest` gives the idea behind the integral test: consider a function $f$ that is continuous, positive and non-increasing on $[1,\infty)$ such that $a_n=f(n)$. At each point $(n,f(n))$, you draw only one rectangle. It is important that you choose to draw it either to the left of the graph of $f$ (for divergence) or to the right of the graph of $f$ (for divergence), the same for all points.
 
 :::{figure-start}
 :width: 100%
@@ -45,6 +45,7 @@ Replace the two figures in {numref}`Fig:Series:IntegralTest` with applets.
 
 ::::::{prf:Theorem} Integral test
 :label: Thm:Series:IntegralTest
+
 Suppose that $f$ is a _continuous_, _positive_ and _non-increasing_ function on $[1,\infty)$. Let $\displaystyle\sum_{n=1}^{\infty} a_n$ be a _positive series_ with $a_n=f(n)$. Then we have:
 
 $$
@@ -55,6 +56,7 @@ $$
 
 ::::::{admonition} Proof of {prf:ref}`Thm:Series:IntegralTest`
 :class: tudproof, dropdown
+
 The proof follows the same idea as in {prf:ref}`Ex:Series:HarmonicSeries`, {prf:ref}`Ex:Series:AbsoluteConvergence1` and the proof of {prf:ref}`Thm:Series:pSeries`. For *convergence* we draw the rectangles to the *left* (below the graph of $f$) and for *divergence* we draw the rectangles to the *right* (above the graph of $f$), see {numref}`Fig:Series:IntegralTest`.
 
 Let us start with the convergent case. If we draw the rectangles to the left, then we have, see {numref}`Fig:Series:IntegralTest`(a):
@@ -148,7 +150,7 @@ $$
 
 ::::{question}
 :type: multiple-choice
-:variant: single-select
+:variant: multiple-select
 :admonition:
 :class: question
 :showanswer:
@@ -157,7 +159,7 @@ Note that $\displaystyle\int_1^{\infty}\frac{1}{x^2+1}\,dx=\frac{1}{4}\pi\approx
 
 Can you explain why $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}\approx1.07667$ is considerably larger?
 
-Select a correct answer.
+Select the correct answer(s).
 ---
 [ ] No, there should be a mistake in the remark above.
 > It is not our intention to make mistakes in this book.
@@ -174,9 +176,9 @@ Did you find all correct answers?
 It is not necessary that the series starts at $1$ or that all terms of the series are positive, as long as the terms are _eventually_ positive. The conditions on the function $f$ can also be relaxed. This is given by the next theorem.
 
 ::::::{prf:Theorem} Integral test (generalised)
-:label: Thm:Series:IntegralTestGeneralized
+:label: Thm:Series:IntegralTestGeneralised
 
-Let $\displaystyle\sum_{n=p}^{\infty} a_n$ be a series with terms $a_n\geq 0$ for $n\geq N$, where $N\geq p$ is some fixed integer. Suppose that $f$ is a continuous, positive and non-increasing function on $[M,\infty)$ such that $a_n=f(n)$ for all integers $n\geq M$ for some integer $M$. Then we have:
+Let $\displaystyle\sum_{n=p}^{\infty} a_n$ be a series with terms $a_n>0$ for $n\geq N$, where $N\geq p$ is some fixed integer. Suppose that $f$ is a continuous, positive and non-increasing function on $[M,\infty)$ such that $a_n=f(n)$ for all integers $n\geq M$ for some integer $M$. Then we have:
 
 $$
 \sum_{n=p}^{\infty}a_n\;\text{is convergent}\quad\Longleftrightarrow\quad\int_M^{\infty}f(x)\,dx\;\text{is convergent.}
@@ -211,7 +213,7 @@ This implies that the series $\displaystyle\sum_{n=2}^{\infty}\frac{\ln(n)}{n}$ 
 
 ::::::
 
-The generalised integral test can be used to find an estimation of the sum of a convergent series that satisfies the generalised integral test.
+If the generalised integral test applies, we can use it to estimate the sum of a convergent series.
 
 :::{figure-start}
 :width: 100%
@@ -247,7 +249,7 @@ Replace the two figures in {numref}`Fig:Series:IntegralTestEstimatingSum` with a
 ::::::{prf:Theorem}
 :label: Thm:Series:IntegralTestEstimatingSum
 
-Let $\displaystyle\sum_{n=p}^{\infty} a_n$ be a series with terms $a_n\geq 0$ for $n\geq N$, where $N\geq p$ is some fixed integer. Suppose that $f$ is a continuous, positive and non-increasing function on $[M,\infty)$ such that $a_n=f(n)$ for all integers $n\geq M$ for some integer $F$.
+Let $\displaystyle\sum_{n=p}^{\infty} a_n$ be a series with terms $a_n>0$ for $n\geq N$, where $N\geq p$ is some fixed integer. Suppose that $f$ is a continuous, positive and non-increasing function on $[M,\infty)$ such that $a_n=f(n)$ for all integers $n\geq M$ for some integer $M$.
 
 Finally, assume that $\displaystyle\sum_{n=p}^{\infty}a_n$ is convergent with sum $s$ and let $s_K=\displaystyle\sum_{n=p}^K a_n$ be the $K$th partial sum with $K\geq M$ and define the **remainder** $R_K=s-s_K$. Then
 
@@ -282,10 +284,58 @@ $$
 This proves the theorem.
 ::::::
 
+:::{todo}
+Idee van Christophe: plaatje met $a_1,\ldots,a_K$ en $R_K$. Laat de lezer $K$ kiezen (en $f$?).
+:::
+
+::::::{prf:Example}
+:label: Ex:Series:IntegralTestEstimatingSum
+
+Consider the convergent $p$-series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^3}$ with sum $s$.
+
+How many terms of the partial sum $s_K=\displaystyle\sum_{n=1}^K\frac{1}{n^3}$ should we take to find an estimation of the sum $s$ with an accuracy less than $0.001$?
+
+Note that $f(x)=\displaystyle\frac{1}{x^3}$ is a continuous, positive and non-increasing function on $[1,\infty)$ and that $\displaystyle\frac{1}{n^3}=f(n)$ for all $n\geq1$.
+
+Now we have
+
+$$
+R_K=\int_K^{\infty}\frac{1}{x^3}\,dx=\left[-\frac{1}{2x^2}\right]_K^{\infty}=\frac{1}{2K^2}.
+$$
+
+We want that $R_K<0.001$ which is equivalent to
+
+$$
+\frac{1}{2K^2}<\frac{1}{1000}\quad\Longleftrightarrow\quad 2K^2>1000\quad\Longleftrightarrow\quad K^2>500.
+$$
+
+We conclude that $K>\sqrt{500}\approx22.36$. Since $K$ should be an integer, we choose $K=23$.
+
+Since we have
+
+$$
+\int_{24}^{\infty}\frac{dx}{x^3}=\left[-\frac{1}{2x^2}\right]_{24}^{\infty}=\frac{1}{2(24)^2}=\frac{1}{1152}\approx0.000868
+$$
+
+and
+
+$$
+\int_{23}^{\infty}\frac{dx}{x^3}=\left[-\frac{1}{2x^2}\right]_{23}^{\infty}=\frac{1}{2(23)^2}=\frac{1}{1058}\approx0.000945,
+$$
+
+we conclude that
+
+$$
+0.000868\lesssim R_{23}\lesssim 0.000945.
+$$
+
+Using a calculator or computer we obtain that $s_{23}\approx1.201152$.
+::::::
+
 Using {prf:ref}`Thm:Series:IntegralTestEstimatingSum` we can find a range for the sum of a convergent series. The true value of the sum lies somewhere between the two bounds given by the integrals. In most cases we would like to have a better approximation of the sum than just the $K$th partial sum $s_K$. The next corollary gives an improved estimation of the sum of a convergent series that satisfies the generalised integral test.
 
 ::::::{prf:Corollary}
-:label: Thm:Series:IntegralTestImprovedEstimation
+:label: Cor:Series:IntegralTestImprovedEstimation
 
 Assume all conditions of {prf:ref}`Thm:Series:IntegralTestEstimatingSum` hold.
 
@@ -302,10 +352,47 @@ $$
 $$
 ::::::
 
-::::::{prf:Example}
-Consider $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ and let $s$ denote its sum. Note from {prf:ref}`Ex:Series:IntegralTestExample1` that the function $f(x)=\displaystyle\frac{1}{x^2+1}$ satisfies the conditions of the generalised integral test and we have $p=N=M=1$ in the theorems.
+::::{question} Short-answer blocks
+:type: short-answer
+:variant: blocks
+:admonition:
+:class: question
+:showanswer:
 
-Let's take $K=10$ and use $s_{10}$ as an approximation of $s\approx1.07667$ (see {prf:ref}`Rem:Series:IntegralTestExample1`). We find:
+Fill in the correct answer in the input fields.
+
+In {prf:ref}`Ex:Series:IntegralTestEstimatingSum` we obtained 
+
+$$
+T_{24}\approx0.000868\quad\text{and}\quad T_{23}\approx0.000945
+$$
+
+which led to 
+
+$$
+s_{23}\approx1.201152
+$$
+
+as an estimation of the sum $s$ of the series $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^3}$.
+
+If we apply {prf:ref}`Cor:Series:IntegralTestImprovedEstimation` we find that
+
+---
+M[1.2020585] $s^*=$
+> First take the average of $T_{23}$ and $T_{24}$ and add this to $s_{23}$.
+
+M[0.0000385] $|s-s^*|\leq$
+> Compute $\displaystyle\frac{T_{23}-T_{24}}{2}$.
+---
+
+::::
+
+::::::{prf:Example}
+:label: Ex:Series:IntegralTestImprovedEstimation
+
+Consider $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2+1}$ and let $s$ denote its sum. Note from {prf:ref}`Ex:Series:IntegralTestExample1` that the function $f(x)=\displaystyle\frac{1}{x^2+1}$ satisfies the conditions of the generalised integral test and we have $p=N=M=1$ in {prf:ref}`Thm:Series:IntegralTestGeneralised` and {prf:ref}`Thm:Series:IntegralTestEstimatingSum`.
+
+Let's take $K=10$ and use $s_{10}$ as an approximation of $s$ (see {prf:ref}`Rem:Series:IntegralTestExample1`). We find:
 
 $$
 \begin{align*}
@@ -328,7 +415,7 @@ $$
 T_{K+1}\leq R_K\leq T_K.
 $$
 
-For $K=10$ we obtain $T_11=\displaystyle\int_{11}^{\infty}\frac{dx}{x^2+1}=\dfrac12\pi-\arctan(11)\approx0.09066$ and $T_{10}=\displaystyle\int_{10}^{\infty}\frac{dx}{x^2+1}=\dfrac12\pi-\arctan(10)\approx0.09967$. Hence, we have
+For $K=10$ we obtain $T_{11}=\displaystyle\int_{11}^{\infty}\frac{dx}{x^2+1}=\dfrac12\pi-\arctan(11)\approx0.09066$ and $T_{10}=\displaystyle\int_{10}^{\infty}\frac{dx}{x^2+1}=\dfrac12\pi-\arctan(10)\approx0.09967$. Hence, we have
 
 $$
 0.09066 \lesssim R_{10}\lesssim  0.09967.
@@ -364,7 +451,7 @@ $$
 
 Instead of comparing series with integrals, we can also compare series with other series for which it is easier to determine whether they are convergent or divergent.
 
-For example, $p$-series, see {numref}`Sec:Series:pSeries`, will often be used in such comparisons in order to determine whether a more difficult series is convergent or divergent.
+Particularly $p$-series, see {numref}`Sec:Series:pSeries`, will often be used in such comparisons in order to determine whether a more difficult series is convergent or divergent.
 
 We start with an example to illustrate the idea of direct comparison tests.
 
@@ -437,12 +524,15 @@ This means that for every number $M>0$ there exists an integer $N$ such that $s_
 
 ::::::
 
-The series in {prf:ref}`Thm:Series:DirectComparisonTest` have starting index $1$, but this can be relaxed as well. As long as both series satisfy the next conditions, the direct comparison test can be applied:
+:::{note}
+The series in {prf:ref}`Thm:Series:DirectComparisonTest` have starting index $1$, but this can be relaxed as well. As long as both series satisfy the following conditions, the direct comparison test can be applied:
 
 - $a_n>0$ for all $n\geq N$ for some index $N$.
 - $b_n>0$ for all $n\geq M$ for some index $M$.
-- $a_n\leq b_n$ for all $n\geq C$ for some index $C\geq\max\{N,M\}$ for the convergent case.
-- $a_n\geq b_n$ for all $n\geq D$ for some index $D\geq\max\{N,M\}$ for the divergent case.
+- $a_n\leq b_n$ for all $n\geq P$ for some index $P$ for the convergent case.<br />
+$a_n\geq b_n$ for all $n\geq Q$ for some index $Q$ for the divergent case.
+
+:::
 
 ::::::{prf:example}
 :label: Ex:Series:DirectComparisonTest2
@@ -451,7 +541,7 @@ Consider the series $\displaystyle\sum_{n=1}^{\infty}\frac{\ln(n)}{n}$.
 
 Because $\ln(n)>0$ for $n>1$, the terms of the series are positive for $n\geq2$.
 
-For $n>e$ we have even $\ln(n)>1$, which implies that $\displaystyle\frac{\ln(n)}{n}>\frac{1}{n}$ for $n>e$. Since $e<3$, we have
+For $n>e$ we even have $\ln(n)>1$, which implies that $\displaystyle\frac{\ln(n)}{n}>\frac{1}{n}$ for $n>e$. Since $e<3$, we have
 
 $$
 \frac{\ln(n)}{n}>\frac{1}{n}
@@ -485,11 +575,22 @@ $$
 \frac{1}{2^n-1}>\frac{1}{2^n}
 $$
 
-for all $n\geq1$. Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ is a geometric series with common ratio $r=\dfrac{1}{2}$ which is convergent by {prf:ref}`Thm:Series:GeometricSeries`, the direct comparison test does not work in this case. We need to use a different test to determine whether $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ is convergent or divergent, which we will do next.
+for all $n\geq1$. Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ is a geometric series with common ratio $r=\dfrac{1}{2}$ which is convergent by {prf:ref}`Thm:Series:GeometricSeries`, the direct comparison test does not give any information in this case. We need to use a different test to compare $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ to $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$, which we will do in the next subsection.
+
+:::{note}
+We remark that $2^n-1\geq2^{n-1}$ also holds for all $n\geq1$. This implies that
+
+$$
+\frac{1}{2^n-1}\leq\frac{1}{2^{n-1}}
+$$
+
+for all $n\geq1$. Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^{n-1}}$ is a geometric series with common ratio $r=\dfrac{1}{2}$ which is convergent by {prf:ref}`Thm:Series:GeometricSeries`, we
+conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ is convergent as well.
+:::
 
 ## The limit comparison test
 
-For large values of $n$ the fraction $\dfrac{1}{2^n-1}$ becomes very close to $\dfrac{1}{2^n}$, which you can see in {numref}`Fig:Series:LimitComparisonTest`. This suggests that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ and $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ have the same behaviour, i.e. they are either both convergent or both divergent. The limit comparison test formalises this idea.
+For large values of $n$, the fraction $\dfrac{1}{2^n-1}$ becomes very close to $\dfrac{1}{2^n}$, which you can see in {numref}`Fig:Series:LimitComparisonTest`. This suggests that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n-1}$ and $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ have the same behaviour, i.e. they are either both convergent or both divergent. The limit comparison test formalises this idea.
 
 :::{figure} Images/Fig-Series-LimitComparisonTest.png
 :class: dark-light
@@ -521,7 +622,7 @@ $$
 0<\frac{a_n}{b_n}<L+1
 $$
 
-for $n$ sufficiently large. Hence by the positivity of $a_n$ and $b_n$, we have $0<a_n<(L+1)b_n$ for $n$ sufficiently large. If $\displaystyle\sum b_n$ is convergent, then $\displaystyle\sum (L+1)b_n$ is also convergent since $L+1$ is just a constant. Hence, $\displaystyle\sum a_n$ is convergent by the direct comparison test.
+for $n$ sufficiently large. Hence, by the positivity of $a_n$ and $b_n$, we have $0<a_n<(L+1)b_n$ for $n$ sufficiently large. If $\displaystyle\sum b_n$ is convergent, then $\displaystyle\sum (L+1)b_n$ is also convergent since $L+1$ is just a constant. Hence, $\displaystyle\sum a_n$ is convergent by the direct comparison test.
 
 2) Assume that $\displaystyle\sum a_n$ and $\displaystyle\sum b_n$ are series with positive terms and $\displaystyle\lim_{n\to\infty}\frac{a_n}{b_n}=L>0$. This means that
 
@@ -556,7 +657,12 @@ Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{2^n}$ converges (geometric serie
 Consider $\displaystyle\sum_{n=1}^{\infty}\frac{1}{1+\sqrt{n}}$. Let $a_n=\dfrac{1}{1+\sqrt{n}}$ and $b_n=\dfrac{1}{\sqrt{n}}$, then
 
 $$
-\lim_{n\to\infty}\frac{a_n}{b_n}=\lim_{n\to\infty}\frac{\dfrac{1}{1+\sqrt{n}}}{\dfrac{1}{\sqrt{n}}}=\lim_{n\to\infty}\frac{\sqrt{n}}{1+\sqrt{n}}=\lim_{n\to\infty}\frac{1}{\dfrac{1}{\sqrt{n}}+1}=\frac{1}{0+1}=1.
+\begin{align*}
+\lim_{n\to\infty}\frac{a_n}{b_n}&=\lim_{n\to\infty}\frac{\dfrac{1}{1+\sqrt{n}}}{\dfrac{1}{\sqrt{n}}}\\
+&=\lim_{n\to\infty}\frac{\sqrt{n}}{1+\sqrt{n}}\\
+&=\lim_{n\to\infty}\frac{1}{\dfrac{1}{\sqrt{n}}+1}\\
+&=\frac{1}{0+1}=1.
+\end{align*}
 $$
 
 Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{\sqrt{n}}$ is divergent ($p$-series with $p=\frac{1}{2}\leq1$), we conclude that $\displaystyle\sum_{n=1}^{\infty}\frac{1}{1+\sqrt{n}}$ is also divergent.
@@ -575,7 +681,7 @@ Replace {numref}`Fig:Series:LimitComparisonTest2` with an applet showing both in
 
 ::::::
 
-In most cases the series $\displaystyle\sum a_n$ is given, and we have to find a suitable series $\displaystyle\sum b_n$ to compare it with. If $a_n$ is a rational function of $n$ (i.e. a ratio of two polynomials in $n$), or is a root of a rational function, then it is often a good idea to compare it with a $p$-series $\displaystyle\sum \frac{1}{n^p}$ for some $p>0$. The value of $p$ in this case is determined by taking the highest power of $n$ in the numerator and the highest power of $n$ in the denominator.
+In most cases, the series $\displaystyle\sum a_n$ is given, and we have to find a suitable series $\displaystyle\sum b_n$ to compare it to. If $a_n$ is a rational function of $n$ (i.e. a ratio of two polynomials in $n$), or a root of a rational function, then it is often a good idea to compare it to a $p$-series $\displaystyle\sum \frac{1}{n^p}$ for some $p>0$. The value of $p$ is determined by taking the highest power of $n$ in the numerator and the highest power of $n$ in the denominator.
 
 The idea behind this is that for (very) large values of $n$, the lower degree terms in $a_n$ will become negligible compared to the higher degree terms, so $a_n$ will behave like a (root of a) rational function of $n$ that only contains the highest degree terms in the numerator and denominator. This new function will then be a $p$-series, which we can use for the limit comparison test.
 
@@ -588,9 +694,9 @@ So, let $b_n=\dfrac{1}{n^2}$, then
 
 $$
 \begin{align*}
-\lim_{n\to\infty}\frac{a_n}{b_n} &= \lim_{n\to\infty}\frac{\dfrac{2n+3}{n^3-2n+5}}{\dfrac{1}{n^2}} \\
+\lim_{n\to\infty}\frac{a_n}{b_n} &= \lim_{n\to\infty}\frac{2n+3}{n^3-2n+5}\cdot\frac{n^2}{1} \\
 &= \lim_{n\to\infty}\frac{(2n+3)n^2}{n^3-2n+5}\\
-&= \lim_{n\to\infty}\frac{2+\dfrac{3}{n}}{1-\dfrac{2}{n^2}+\dfrac{5}{n^3}} \\
+&= \lim_{n\to\infty}\frac{2+3n^{-1}}{1-2n^{-2}+5n^{-3}} \\
 &= \frac{2+0}{1-0+0} \\
 &= 2.
 \end{align*}
@@ -602,26 +708,6 @@ Since $\displaystyle\sum_{n=1}^{\infty}\frac{1}{n^2}$ converges ($p$-series with
 
 ::::::{prf:example}
 :label: Ex:Series:LimitComparisonTest4
-
-Consider $\displaystyle\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$. Let $a_n=\displaystyle\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$, which is the root of a rational function in $n$.
-
-Now take $b_n=\displaystyle\frac{\sqrt{n^4}}{n^5}=\frac{n^2}{n^5}=\frac{1}{n^3}$, then
-
-$$
-\begin{align*}
-\lim\limits_{n\to\infty}\frac{a_n}{b_n} &= \lim\limits_{n\to\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}\cdot\frac{n^3}{1} \\
-&= \lim\limits_{n\to\infty}\frac{\sqrt{1+4n^{-3}+5n^{-4}}}{2+3n^{-3}+n^{-5}} \\
-&= \frac{\sqrt{1+0+0}}{2+0+0} \\
-&= \frac{1}{2}.
-\end{align*}
-$$
-
-Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^3}$ is a $p$-series with $p=3>1$, which is convergent, we conclude that $\displaystyle\sum_{n=0}^{\infty}a_n=\sum_{n=0}^{\infty}\frac{\sqrt{n^4+4n+5}}{2n^5+3n^2+1}$ is convergent too.
-
-::::::
-
-::::::{prf:example}
-:label: Ex:Series:LimitComparisonTest5
 
 Consider $\displaystyle\sum_{n=0}^{\infty}\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$. Let $a_n=\displaystyle\frac{3n^2+5n+2}{\sqrt{2n^5+4n^3+3}}$ and $b_n=\displaystyle\frac{n^2}{\sqrt{n^5}}=\frac{n^2}{n^{\frac{5}{2}}}=\frac{1}{n^{\frac{1}{2}}}$, then
 
@@ -639,10 +725,6 @@ Since $\displaystyle\sum_{n=1}^{\infty}b_n=\sum_{n=1}^{\infty}\frac{1}{n^{\frac{
 ::::::
 
 ## Grasple exercises
-
-:::{todo}
-Add Grasple exercises for the integral test, direct comparison test and limit comparison test in {numref}`Sec:Series:PositiveSeries`.  
-:::
 
 ### The integral test
 
