@@ -121,7 +121,7 @@ width: 75%
 name: The Bessel function of the first kind of order $0$
 align: center
 ---
-The Bessel function of the first kind of order $0$
+The Bessel function of the first kind of order $0$.
 ```
 
 ::::::
@@ -181,7 +181,7 @@ width: 75%
 name: The Bessel functions of the first kind of order $\pm\frac{1}{2}$
 align: center
 ---
-The Bessel functions of the first kind of order $\pm\frac{1}{2}$
+The Bessel functions of the first kind of order $\pm\frac{1}{2}$.
 ```
 
 :::::

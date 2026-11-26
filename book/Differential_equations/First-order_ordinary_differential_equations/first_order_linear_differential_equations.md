@@ -1429,7 +1429,7 @@ $$
 :url: https://embed.grasple.com/exercises/7eacfe38-ea2b-437a-996c-72848b9c543a?id=64426
 :label: Grasple:64426
 :dropdown:
-:description: Application: electrical circuit
+:description: Application: electrical circuit.
 ::::::
 
 ::::::{grasple}
@@ -1437,7 +1437,7 @@ $$
 :url: https://embed.grasple.com/exercises/0be126e1-254e-43fe-8aaf-887aa6e0b3dd?id=64416
 :label: Grasple:64416
 :dropdown:
-:description: Application: free fall
+:description: Application: free fall.
 ::::::
 
 ::::::{grasple}
@@ -1445,7 +1445,7 @@ $$
 :url: https://embed.grasple.com/exercises/664b1c05-e1d5-4e7b-a6d6-8fdaceecdaef?id=64433
 :label: Grasple:64433
 :dropdown:
-:description: Application: mixing problem
+:description: Application: mixing problem.
 ::::::
 
 
@@ -1454,7 +1454,7 @@ $$
 :url: https://embed.grasple.com/exercises/d45e3eac-dd54-4e02-91b8-27c0529491f4?id=63933
 :label: Grasple:63933
 :dropdown:
-:description: Application: mixing problem
+:description: Application: mixing problem.
 ::::::
 
 ::::::{grasple}
@@ -1462,7 +1462,7 @@ $$
 :url: https://embed.grasple.com/exercises/3c654e88-3c72-4822-b269-08344569b08d?id=71444
 :label: Grasple:71444
 :dropdown:
-:description: Application: mixing problem
+:description: Application: mixing problem.
 ::::::
 
 ::::::{grasple}
@@ -1470,7 +1470,7 @@ $$
 :url: https://embed.grasple.com/exercises/9148d4cc-2c20-43e2-b41d-7af72987abcc?id=78936
 :label: Grasple:78936:2
 :dropdown:
-:description: Application: mixing problem
+:description: Application: mixing problem.
 ::::::
 
 

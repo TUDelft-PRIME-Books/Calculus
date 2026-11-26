@@ -414,6 +414,8 @@ name: region1a
 align: left
 ---
 
+An $x$-simple region.
+
 ```
 
 ```{figure} Images/region1b.png
@@ -422,6 +424,8 @@ width: 25%
 name: region1b
 align: center
 ---
+
+Another $x$-simple region. Note that the top and bottom functions can meet at the left of the region.
 
 ```
 
@@ -432,6 +436,9 @@ name: region1c
 align: right
 ---
 
+Another $x$-simple region. Note that the top and bottom functions can also meet at the right of the region.
+
+
 ```
 
 ```{figure} Images/region1d.png
@@ -440,6 +447,9 @@ width: 25%
 name: region1d
 align: right
 ---
+
+An $x$-simple region with an enclosing rectangle.
+
 
 ```
 
@@ -464,6 +474,8 @@ name: region2a
 align: left
 ---
 
+An $y$-simple region.
+
 ```
 
 ```{figure} Images/region2b.png
@@ -472,6 +484,9 @@ width: 25%
 name: region2b
 align: left
 ---
+
+Another $y$-simple region. Note that the left and right functions can meet at the bottom of the region.
+
 
 ```
 
@@ -503,6 +518,8 @@ width: 50%
 name: region3a
 align: left
 ---
+
+A more general region $D$.
 
 ```
 
