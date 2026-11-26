@@ -544,6 +544,7 @@ Similar as in the previous example we can show that the product $c_nc_{n+1}$ of 
 
 
 ::::{question}
+:columns: 1 1 1 1
 :type: multiple-choice
 :variant: single-select
 :admonition:
@@ -554,11 +555,12 @@ Which of the following sequences is defined recursively rather than by an explic
 ---
 [ ] $\left(a_n\right)_{n=1}^{\infty}$ with $a_n=2n-1$.
 > This sequence gives a direct formula for the $n$th term. This means you can calculate any term immediately from the index $n$, so it is an *explicit formula*. A recursive formula is a formula that defines each term using one or more previous terms.
-[ ] $\left(b_n\right)_{n=1}^{\infty}$ with $b_n=\frac{1}{n}$.
+[ ] $\left(b_n\right)_{n=1}^{\infty}$ with $b_n=(-1)^{n-1}$.
 > This sequence gives a direct formula for the $n$th term. This means you can calculate any term immediately from the index $n$, so it is an *explicit formula*. A recursive formula is a formula that defines each term using one or more previous terms.
-[x] $\left(c_n\right)_{n=1}^{\infty}$ with $c_1=1$ and $c_{n+1}=2a_n$ for $n\geq1$.
+[x] $\left(c_n\right)_{n=1}^{\infty}$ with $c_1=1$ and $c_{n+1}=2c_n$ for $n\geq1$.
 > This sequence is indeed recursive, because each new term is calculated from the previous term using the given rule. To find later terms, you need to know earlier terms, which is exactly how *recursive sequences* work. This idea will be important when you study the Fibonacci sequence next.
-[ ] $\left(d_n\right)_{n=1}^{\infty}$ with $d_n=(-1)^{n-1}$.
+[ ] $\left(d_n\right)_{n=1}^{\infty}$ with $d_n=\dfrac{1}{n}$.
+
 > This sequence gives a direct formula for the $n$th term. This means you can calculate any term immediately from the index $n$, so it is an *explicit formula*. A recursive formula is a formula that defines each term using one or more previous terms.
 ---
 ::::
@@ -742,7 +744,7 @@ The *golden ratio* often appears in nature and art, for example in spirals. {num
 :name: Fig:Sequences:FibonacciSpiral
 :class: dark-light
 
-The Fibonacci spiral. You can increase and decrease the amount of Fibonacci numbers, represented by the amount of squares, by dragging the slider, or pressing the play button.
+The Fibonacci spiral. You can increase and decrease the amount $N$ of Fibonacci numbers, represented by the amount of squares, by dragging the slider, or pressing the play button.
 :::
 
 It turns out that the ratio of the side lengths of two consecutive squares approaches the golden ratio as we continue to add squares. Or in mathematical words:

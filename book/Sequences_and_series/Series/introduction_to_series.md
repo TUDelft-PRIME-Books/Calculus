@@ -32,7 +32,7 @@ since the result grows beyond any finite real number.
 :::::
 
 :::::{prf:example}
-:label: Ex:SeriesIntro:GeometricSeriesExample
+:label: Ex:SeriesIntro:GeometricSeriesExample1
 
 $$
 \sum_{n=1}^{\infty}\frac{1}{2^n}=\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1.
@@ -40,19 +40,13 @@ $$
 
 This result can be visualised as shown in {numref}`Fig:Series:GeometricSeries`. The idea behind the visualisation is that when you take a unit square, which has area $1$, and you cut half of it off, then you are left with a rectangle with area $\frac{1}{2}$. If you cut half of this rectangle off, then you are left with a square with area $\frac{1}{4}$. If you cut half of this square off, then you are left with a rectangle with area $\frac{1}{8}$, and so on. If you keep cutting half of the remaining rectangle or square off, then the total area of the cut off rectangles or squares will be $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots$, which in the end approaches the area of the original unit square, which is $1$.
 
-```{figure} Images/geometric.png
----
-width: 50%
-name: Fig:Series:GeometricSeries
-align: center
----
-A visual proof of $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1$.
-```
+:::{applet}
+:url: calculus/introduction_to_series/dividing_a_unit_square
+:name: Fig:Series:GeometricSeries
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Series:GeometricSeries` with an applet.
-::: 
-
+A visual proof of $\frac{1}{2}+\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}+\cdots=1$. You can increase the number $N$ of terms shown by using the slider.
+:::
 :::::
 
 The formal definition of a *series* is the limit of the sequence of *partial sums* as we will see below. So we start with *partial sums*.
