@@ -740,11 +740,11 @@ is called the **golden ratio**.
 The *golden ratio* often appears in nature and art, for example in spirals. {numref}`Fig:Sequences:FibonacciSpiral` shows two stages of the Fibonacci spiral. Such a spiral is constructed by drawing quarter-circle arcs connecting the opposite corners of a sequence of squares, whose side lengths correspond to the Fibonacci numbers.
 
 :::{applet}
-:url: calculus/introduction_to_sequences/fibonacci_spiral_steps
+:url: calculus/introduction_to_sequences/fibonacci_spiral_zoom
 :name: Fig:Sequences:FibonacciSpiral
 :class: dark-light
 
-The Fibonacci spiral. You can increase and decrease the amount $N$ of Fibonacci numbers, represented by the amount of squares, by dragging the slider, or pressing the play button.
+The Fibonacci spiral. You can increase the amount $N$ of Fibonacci numbers, represented by the amount of squares, by using the button.
 :::
 
 It turns out that the ratio of the side lengths of two consecutive squares approaches the golden ratio as we continue to add squares. Or in mathematical words:
