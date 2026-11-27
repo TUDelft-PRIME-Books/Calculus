@@ -744,7 +744,7 @@ The *golden ratio* often appears in nature and art, for example in spirals. {num
 :name: Fig:Sequences:FibonacciSpiral
 :class: dark-light
 
-The Fibonacci spiral. You can increase and decrease the amount $N$ of Fibonacci numbers, represented by the amount of squares, by dragging the slider, or pressing the play button.
+The Fibonacci spiral. You can increase the amount $N$ of Fibonacci numbers, represented by the amount of squares, by using the button.
 :::
 
 It turns out that the ratio of the side lengths of two consecutive squares approaches the golden ratio as we continue to add squares. Or in mathematical words:
