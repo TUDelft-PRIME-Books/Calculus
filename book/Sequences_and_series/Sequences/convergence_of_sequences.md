@@ -22,7 +22,7 @@ We say that $(a_n)_{n=p}^{\infty}$ has an **infinite limit**, and we write $\lim
 Similarly, we say that $(a_n)_{n=p}^{\infty}$ has a **negative infinite limit**, and we write $\lim\limits_{n\rightarrow \infty}a_n=-\infty$, whenever for each $M$ there exists an $N\geq p$, such that for all $n$ with $n> N$, we have $a_n\leq M$.
 ::::::
 
-In a more intuitive way, we can say that a sequence $(a_n)$ *converges* to $L$ if the terms of the sequence get closer and closer to $L$ as $n$ increases, or the distance from $a_n$ to $L$ approaches $0$ as $n$ increases. Now we give a precise definition of what we mean by *convergnce* of a sequence.
+In a more intuitive way, we can say that a sequence $(a_n)$ *converges* to $L$ if the terms of the sequence get closer and closer to $L$ as $n$ increases, or the distance from $a_n$ to $L$ approaches $0$ as $n$ increases. Now we give a precise definition of what we mean by *convergence* of a sequence.
 
 ::::::{prf:definition} Convergence and divergence of a sequence
 :label: Def:Sequences:ConvergenceSequence
@@ -217,18 +217,12 @@ Let us revisit {prf:ref}`Ex:Sequences:IncreasingExample1Function` and {prf:ref}`
 :label: Ex:Sequences:ConvergenceExampleIncreasing
 We show that the sequence $(a_n)_{n=1}^{\infty}$ with $a_n=\dfrac{n}{n+1}$ is convergent.
 
-```{figure} Images/sequence1.png
----
-width: 50%
-name: Fig:Sequences:ConvergenceExampleIncreasing
-align: center
-class: dark-light
----
-The terms of the sequence $(a_n)$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
-```
+:::{applet}
+:url: calculus/convergence_of_sequences/rational_sequence
+:name: Fig:Sequences:ConvergenceExampleIncreasing
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Sequences:ConvergenceExampleIncreasing` with an applet.
+The terms of the sequence $(a_n)$ lie on the graph of $f(x)=\dfrac{x}{x+1}$.
 :::
 
 Note that $a_n=f(n)$ with $f(x)=\dfrac{x}{x+1}$. Now we have
@@ -244,18 +238,12 @@ This implies that the sequence $(a_n)_{n=1}^{\infty}$ is convergent and $\lim\li
 :label: Ex:Sequences:ConvergenceExampleDecreasing
 We show that the sequence $(b_n)_{n=1}^{\infty}$ with $b_n=\dfrac{2n}{n^2+1}$ is convergent.
 
-```{figure} Images/sequence2.png
----
-width: 50%
-name: Fig:Sequences:ConvergenceExampleDecreasing
-align: center
-class: dark-light
----
-The terms of the sequence $(b_n)$ lie on the graph of $g(x)=\dfrac{2x}{x^2+1}$.
-```
+:::{applet}
+:url: calculus/convergence_of_sequences/rational_sequence_2
+:name: Fig:Sequences:ConvergenceExampleDecreasing
+:class: dark-light
 
-:::{todo}
-Replace {numref}`Fig:Sequences:ConvergenceExampleDecreasing` with an applet.
+The terms of the sequence $(b_n)$ lie on the graph of $g(x)=\dfrac{2x}{x^2+1}$.
 :::
 
 Note that $b_n=g(n)$ with $g(x)=\dfrac{2x}{x^2+1}$. Then we have
@@ -279,16 +267,12 @@ Every *non-decreasing* sequence that is *bounded above* is convergent and every 
 ::::::{admonition} Proof of {prf:ref}`Thm:Sequences:MonotonicBounded`
 :class: tudproof, dropdown
 
-:::{figure} Images/convergent.png
-:width: 50%
+:::{applet}
+:url: calculus/convergence_of_sequences/non-decreasing-bounded-above
 :name: Fig:Sequences:MonotonicBounded
-:align: center
+:class: dark-light
 
 A non-decreasing sequence that is bounded above.
-:::
-
-:::{todo}
-Replace {numref}`Fig:Sequences:MonotonicBounded` with an applet.
 :::
 
 Suppose that $(a_n)$ is a non-decreasing sequence that is bounded above. Then it has a *least upper bound* $L$. Let $\epsilon>0$, then $L-\epsilon$ is *not* an upper bound, since $L$ is the least upper bound. Therefore
@@ -373,6 +357,27 @@ L=L+L\quad\Longleftrightarrow\quad L=0.
 $$
 
 ::::::
+
+::::{question}
+:columns: 1 1 1 1
+:type: multiple-choice
+:variant: multiple-select
+:admonition:
+:class: question
+:showanswer:
+
+A sequence $(a_n)$ is known to be _convergent_. Which of the following statements must be true?
+---
+[x] If $f$ is continuous and $L=\lim_{n\rightarrow\infty}a_n$, then $\lim_{n\rightarrow\infty}f(a_n)=f(L)$.
+> This is a direct application of {prf:ref}`Theorem:Continuity:SubstitutionInf`.
+[ ] If $(a_n)$ is bounded, it must be convergent.
+> Remember: boundedness alone is not enough to guarantee convergence.
+[x] $(a_n)$ is bounded.
+> Convergence guarantees that the terms eventually stay near the limit and remain bounded.
+[x] If $\lim_{n\rightarrow\infty}|a_n|=0$, then $\lim_{n\rightarrow\infty}a_n=0$.
+> A sequence can only have absolute value tending to 0 if its terms tend to 0.
+---
+::::
 
 ## A final squeeze
 
