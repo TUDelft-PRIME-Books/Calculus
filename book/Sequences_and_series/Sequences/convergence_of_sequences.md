@@ -272,7 +272,7 @@ Every *non-decreasing* sequence that is *bounded above* is convergent and every 
 :name: Fig:Sequences:MonotonicBounded
 :class: dark-light
 
-A non-decreasing sequence that is bounded above.
+A non-decreasing sequence that is bounded above. You can select a value of $L-\epsilon$ by dragging the point on the $y$-axis. You can check the allowed values for $N$ by dragging the point on the $n$-axis.
 :::
 
 Suppose that $(a_n)$ is a non-decreasing sequence that is bounded above. Then it has a *least upper bound* $L$. Let $\epsilon>0$, then $L-\epsilon$ is *not* an upper bound, since $L$ is the least upper bound. Therefore
